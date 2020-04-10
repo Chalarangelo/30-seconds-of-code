@@ -5,6 +5,7 @@ import Meta from 'components/organisms/meta';
 import Shell from 'components/organisms/shell';
 import SearchResults from 'components/organisms/searchResults';
 import { pushNewPage } from 'state/navigation';
+import { initializeIndex } from 'state/search';
 import literals from 'lang/en/client/search';
 
 const propTypes = {
@@ -13,6 +14,7 @@ const propTypes = {
     splashLogoSrc: PropTypes.string.isRequired,
     pageDescription: PropTypes.string.isRequired,
     recommendedSnippets: PropTypes.arrayOf(PropTypes.shape({})),
+    searchIndex: PropTypes.arrayOf(PropTypes.shape({})),
   }),
   searchQuery: PropTypes.string,
   dispatch: PropTypes.func,
@@ -28,12 +30,14 @@ const SearchPage = ({
     splashLogoSrc,
     recommendedSnippets,
     pageDescription,
+    searchIndex,
   },
   searchQuery,
   dispatch,
 }) => {
   React.useEffect(() => {
     dispatch(pushNewPage(literals.search, '/search'));
+    dispatch(initializeIndex(searchIndex));
   }, []);
 
   return (

@@ -5,7 +5,7 @@ import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 import SearchResults from './index';
-import { finishIndexFetch, searchByKeyphrase, pushNewQuery } from 'state/search';
+import { initializeIndex, searchByKeyphrase, pushNewQuery } from 'state/search';
 import { previewSnippet, previewBlogSnippet } from 'fixtures/snippets';
 
 configure({ adapter: new Adapter() });
@@ -16,7 +16,7 @@ describe('<SearchResults />', () => {
   let wrapper;
 
   beforeEach(() => {
-    store.dispatch(finishIndexFetch([previewBlogSnippet, previewSnippet]));
+    store.dispatch(initializeIndex([previewBlogSnippet, previewSnippet]));
     wrapper = mount(
       <Provider store={ store }>
         <SearchResults />
