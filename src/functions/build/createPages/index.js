@@ -1,5 +1,4 @@
 import createStaticPage from './createStaticPage';
-import createSettingsPage from './createSettingsPage';
 import createListingPages from './createListingPages';
 import createSearchPage from './createSearchPage';
 import createSnippetPages from './createSnippetPages';
@@ -58,13 +57,14 @@ const createPages = (query, templates, requirables) => ({ graphql, actions }) =>
         '/cookies'
       );
 
-      createSettingsPage(
+      createStaticPage(
         templates['SettingsPage'],
         createPage,
         {
           ...commonContext,
           stringLiterals: literals.settings,
-        }
+        },
+        '/settings'
       );
 
       createListingPages(
