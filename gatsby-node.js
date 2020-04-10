@@ -16,17 +16,15 @@ const {
 const {
   parseQueries,
   parseRequirables,
-  parseResolvers,
   parseTemplates,
 } = require(`./src/build/parsers`);
 const paths = require(`./src/config/paths`);
+
 const reducers = require(`./src/build/reducers`).default;
+const resolvers = require(`./src/build/resolvers`).default;
 
 const requirables = parseRequirables(paths.contentPath);
 console.log(`${green('success')} parse requirables`);
-
-const resolvers = parseResolvers(paths.contentPath);
-console.log(`${green('success')} parse resolvers`);
 
 const templates = parseTemplates(paths.templates, paths.templatesPath);
 console.log(`${green('success')} parse templates`);
