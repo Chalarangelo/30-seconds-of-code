@@ -1,7 +1,5 @@
-import {
-  rankingEngine as rankSnippet,
-  searchIndexingEngine as tokenizeSnippet
-} from 'engines';
+import rankSnippet from 'engines/rankingEngine';
+import tokenizeSnippet from 'engines/searchIndexingEngine';
 import { convertToSeoSlug, uniqueElements } from 'utils';
 import { determineExpertiseFromTags } from 'functions/transformers';
 

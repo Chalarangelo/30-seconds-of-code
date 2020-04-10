@@ -1,4 +1,4 @@
-import { recommendationEngine } from 'engines';
+import recommendationEngine from 'engines/recommendationEngine';
 import {
   transformSnippetIndex,
   transformSnippetContext,
