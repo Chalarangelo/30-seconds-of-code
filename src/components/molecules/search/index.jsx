@@ -3,7 +3,6 @@ import PropTypes from 'typedefs/proptypes';
 import { connect } from 'react-redux';
 import { combineClassNames, getURLParameters, throttle, getBaseURL, getRootURL } from 'utils';
 import { pushNewQuery, searchByKeyphrase } from 'state/search';
-import { useFetchSearchIndex } from 'components/hooks';
 import { AnchorButton } from 'components/atoms/button';
 import literals from 'lang/en/client/search';
 
@@ -72,8 +71,6 @@ const Search = ({
 }) => {
   const [value, setValue] = React.useState('');
 
-  useFetchSearchIndex(dispatch);
-
   React.useEffect(() => {
     if (isMainSearch) {
       const params = getURLParameters(window.location.href);
@@ -91,7 +88,7 @@ const Search = ({
     dispatch(pushNewQuery(value));
     dispatch(searchByKeyphrase(value, searchIndex));
     if (isMainSearch) handleHistoryUpdate(value);
-  }, 500), [value]);
+  }, 500), [value, searchIndex]);
 
   return (
     <>

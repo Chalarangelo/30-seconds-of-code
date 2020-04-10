@@ -7,7 +7,7 @@ import Adapter from 'enzyme-adapter-react-16';
 
 import Search from './index';
 
-import { pushNewQuery, finishIndexFetch } from 'state/search';
+import { pushNewQuery, initializeIndex } from 'state/search';
 
 configure({ adapter: new Adapter() });
 
@@ -90,7 +90,7 @@ describe('<Search />', () => {
   describe('when clicked and isMainSearch', () => {
     it('should push the state to history', () => {
       act(() => {
-        store.dispatch(finishIndexFetch([]));
+        store.dispatch(initializeIndex([]));
         store.dispatch(pushNewQuery('tes'));
         wrapper = mount(
           <Provider store={ store }>
