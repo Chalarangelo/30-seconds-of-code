@@ -1,5 +1,6 @@
 import {
   transformSnippetIndex,
+  transformSnippetDescription,
   transformSnippetContext
 } from './transformSnippets';
 
@@ -79,8 +80,8 @@ describe('transformSnippetIndex', () => {
         },
       },
     ];
-    const result = transformSnippetIndex(edges);
-    expect(result[0].searchTokens).toBe(edges[0].searchTokens);
+    const result = transformSnippetIndex(edges, true);
+    expect(result[0].searchTokens).toBe(edges[0].node.searchTokens);
   });
 });
 
@@ -147,5 +148,22 @@ describe('transformSnippetContext', () => {
       ...snippet, browserSupport: 'support',
     }, 'css');
     expect(result.browserSupport).toBe('support');
+  });
+});
+
+describe('transformSnippetDescription', () => {
+  it('returns the appropriate description for a normal snippet', () => {
+    expect(
+      transformSnippetDescription(
+        { text: { short: '`without` backticks'} }, 'blog'
+      )
+    ).toBe('without backticks');
+  });
+  it('returns the appropriate description for a blog snippet', () => {
+    expect(
+      transformSnippetDescription(
+        { title: 'test', language: { long: 'language' } }, 'notblog'
+      )
+    ).toBe('Learn how to code a test snippet in language on 30 seconds of code.');
   });
 });
