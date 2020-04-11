@@ -3,10 +3,11 @@ import { transformTagName } from './transformTags';
 import literals from 'lang/en/snippet';
 
 /**
-* Transform the indexed snippets to the appropriate format.
-*
-* Used in listing pages to render snippet previews.
-*/
+ * Transform the indexed snippets to the appropriate format.
+ * Used in listing pages to render snippet previews.
+ * @param {array} edges - An array of snippet edges.
+ * @param {bool} withSearchTokens - Should include search tokens in the result?
+ */
 export const transformSnippetIndex = (edges, withSearchTokens = false) =>
   edges.map(({ node }) => ({
     title: node.title,
@@ -20,21 +21,24 @@ export const transformSnippetIndex = (edges, withSearchTokens = false) =>
   }));
 
 /**
-* Given a snippet object with key-value pairs, creates an appropriate description.
-*
-* Used in snippet pages to render the page description.
-*/
+ * Given a snippet object with key-value pairs, creates an appropriate description.
+ * Used in snippet pages to render the page description.
+ * @param {object} snippet - The snippet object whose description to transform.
+ * @param {string} cardTemplate - A string that determines the card template.
+ */
 export const transformSnippetDescription = (snippet, cardTemplate) =>
   cardTemplate === 'blog'
     ? stripMarkdownFormat(snippet.text.short)
     : literals.pageDescription(snippet.title, snippet.language.long);
 
 /**
-* Given a snippet object with key-value pairs, removes all unnecessary
-* information that should not be sent to the JSX component rendering the snippet.
-*
-* Used in snippet pages to render individual snippets.
-*/
+ * Given a snippet object with key-value pairs, removes all unnecessary
+ * information that should not be sent to the JSX component rendering the snippet.
+ * Used in snippet pages to render individual snippets.
+ * @param {object} snippet - The snippet object to be transformed.
+ * @param {string} cardTemplate - A string that determines the card template.
+ * @param {array} imageContext - An array of image URIs.
+ */
 export const transformSnippetContext = (snippet, cardTemplate, imageContext) => {
   let templateProps = {};
   switch (cardTemplate) {

@@ -13,6 +13,9 @@ describe('transformTagName', () => {
   it('returns the correct version for a special tag', () => {
     expect(transformTagName('javascript')).toBe('JavaScript');
   });
+  it('returns an empty string for an empty tag', () => {
+    expect(transformTagName('')).toBe('');
+  });
 });
 
 describe('determineExpertiseFromTags', () => {
