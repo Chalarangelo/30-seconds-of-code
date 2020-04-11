@@ -1,5 +1,5 @@
 
-import { Snippet } from 'typedefs';
+import schema from 'typedefs';
 
 /**
  * Extension point to tell plugins to source nodes.
@@ -9,7 +9,7 @@ import { Snippet } from 'typedefs';
 const sourceNodes = (requirables, reducers) => ({ actions, createNodeId, createContentDigest, getNodesByType }) => {
   const { createTypes, createNode } = actions;
 
-  const typeDefs = `${Snippet}`;
+  const typeDefs = `${schema}`;
   createTypes(typeDefs);
 
   const markdownNodes = getNodesByType('MarkdownRemark');

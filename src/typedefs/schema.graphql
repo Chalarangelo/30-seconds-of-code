@@ -1,0 +1,77 @@
+type Snippet implements Node {
+  id: String
+  title: String
+  expertise: String
+  slug: String
+  tags: TagData
+  expertise: String
+  language: LanguageData
+  text: TextData
+  code: CodeData
+  html: HtmlData
+  path: String
+  url: String
+  ranking: Float
+  resolver: String
+  searchTokens: String
+  icon: String
+  browserSupport: BrowserSupportData
+  blog: Boolean
+  blogType: String
+  authors: [AuthorData]
+  cover: String
+}
+
+type TextData @infer {
+  full: String
+  short: String
+}
+
+type HtmlData @infer {
+  full: String
+  description: String
+  fullDescription: String
+  code: String
+  style: String
+  example: String
+  browserSupport: String
+  htmlCode: String
+  cssCode: String
+  jsCode: String
+}
+
+type CodeData @infer {
+  src: String
+  example: String
+  style: String
+  html: String
+  css: String
+  js: String
+  scopedCss: String
+}
+
+type TagData @infer {
+  primary: String
+  all: [String]
+}
+
+type SimpleLanguageData @infer {
+  long: String
+  short: String
+}
+
+type LanguageData @infer {
+  long: String
+  short: String
+  otherLanguages: [SimpleLanguageData]
+}
+
+type BrowserSupportData @infer {
+  supportPercentage: String
+  text: String
+}
+
+type AuthorData @infer {
+  name: String
+  profile: String
+}
