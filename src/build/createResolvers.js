@@ -2,7 +2,9 @@
  * Add custom field resolvers to the GraphQL schema.
  * Used to resolve the HTML parts of the Snippet nodes
  * asynchronously from the MarkdownRemark nodes.
+ * API docs: https://www.gatsbyjs.org/docs/node-apis/#createResolvers
  */
+/* istanbul ignore next */
 const createResolvers = resolvers => ({ createResolvers }) =>
   createResolvers({
     Snippet: {
