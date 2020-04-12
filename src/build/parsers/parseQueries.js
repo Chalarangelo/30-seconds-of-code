@@ -5,6 +5,7 @@ import path from 'path';
 /**
  * Combines the given GraphQL queries in the given directory, returning a
  * single query string to be run against the GraphQL schema.
+ * @param {string} contentDirPath - The path to the queries directory.
  */
 const parseQueries = queryDirPath => {
   // Load queries

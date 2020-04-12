@@ -1,5 +1,10 @@
 import literals from 'lang/en/listing';
 
+/**
+ * Combines the given requirables, creating a usable array of
+ * listing metadata objects.
+ * @param {array} requirables - An array of requirables.
+ */
 const parseListingMetas = requirables =>
   requirables
     .map(rq => ({

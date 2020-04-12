@@ -40,8 +40,8 @@ export const requirables = [
             'example': 'allEqual([1, 2, 3, 4, 5, 6]); // false\nallEqual([1, 1, 1, 1]); // true',
           },
           'tags': [
-            'array',
             'function',
+            'array',
             'beginner',
           ],
         },
@@ -141,7 +141,7 @@ export const requirables = [
       },
       reducer: 'stdReducer',
       resolver: 'stdResolver',
-      blog: false,
+      blog: true,
       slugPrefix: 'c-sharp/s',
       sourceDir: '30csharp/snippets',
       repoUrlPrefix:
