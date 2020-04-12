@@ -4,6 +4,7 @@ import path from 'path';
 /**
  * Combines the given configs, creating a usable array of
  * `gatsby-source-filesystem` plugin resolvers.
+ * @param {string} contentDirPath - The path to the content directory.
  */
 const parseConfigs = contentDirPath => {
   // Load configurations
@@ -16,6 +17,7 @@ const parseConfigs = contentDirPath => {
     });
   // Create the array of resolvers.
   return configs.reduce((acc, cfg) => {
+    /* istanbul ignore else */
     if (cfg.images && cfg.images.name && cfg.images.path) {
       acc.push({
         resolve: 'gatsby-source-filesystem',
