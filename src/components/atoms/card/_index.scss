@@ -35,7 +35,7 @@
   .card-meta {
     display: flex;
     align-items: flex-start;
-  
+
     .card-icon {
       position: relative;
       display: inline-block;
@@ -43,7 +43,7 @@
       width: 3rem;
       height: 3rem;
       border-radius: 0.75rem;
-  
+
       &:before {
         position: absolute;
         top: 0.5rem;
@@ -65,21 +65,24 @@
     }
 
     .card-data {
-      flex: 1
+      flex: 1 1;
+      max-width: calc(100% - 5rem);
     }
 
     .card-title {
       margin: 0.625rem 0.5rem 0 0.75rem;
       line-height: 1.5rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
-  
+
   .card-description {
     margin: 0;
     font-size: 0.875rem;
     color: var(--card-fore-color-light);
     line-height: 1.35;
-    
+
     > p {
       margin: 0.8125rem 0.5rem 1.5rem;
       line-height: 2;
