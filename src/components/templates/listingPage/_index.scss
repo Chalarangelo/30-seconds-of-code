@@ -4,10 +4,10 @@
   justify-content: center;
   align-items: center;
   color: var(--fore-color-dark);
-  margin: 0.5625rem 1rem 0.5rem;
+  margin: 0.5rem 1rem 0.5rem;
 
   @media screen and (min-width: 390px) {
-    margin: 0.5625rem 1.25rem 0.5rem;
+    margin: 0.5rem 1.25rem 0.5rem;
   }
 
   // Homepage logo
@@ -43,7 +43,7 @@
   }
 
   & ~ .listing-anchors-title {
-    margin: 3.5rem 1.25rem 0.8125rem;
+    margin: 3.5rem 1.25rem 0.875rem;
   }
 }
 
@@ -52,7 +52,7 @@
   transition: 0.3s ease all;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  margin: 0.8125rem 1.25rem 1.5rem;
+  margin: 0.75rem 1.25rem 1.5rem;
   color: var(--fore-color);
   text-align: center;
 

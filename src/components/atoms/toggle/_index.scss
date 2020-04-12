@@ -12,7 +12,7 @@
   width: 100%;
   position: relative;
   cursor: pointer;
-  margin: 0.8125rem 0.5rem 1.5rem;
+  margin: 0.875rem 0.5rem 1.5rem;
 }
 
 .toggle-switch {
@@ -50,7 +50,7 @@
 
   &:checked {
     background: var(--toggle-back-color-active);
-  
+
     &:before {
       background: var(--toggle-fore-color-active);
       left: calc(100% - 8px);
