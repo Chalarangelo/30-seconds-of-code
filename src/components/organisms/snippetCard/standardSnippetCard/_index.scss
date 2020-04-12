@@ -32,7 +32,7 @@
 
     .card-code + .card-code {
       border-top: 1px solid var(--pre-decorator-color);
-      padding-top: 2.4375rem;
+      padding-top: 2.5rem;
 
       &:before {
         top: .9375rem;
@@ -48,7 +48,7 @@
       color: var(--example-title-color);
 
       + pre {
-        padding: 0.1875rem 1.5rem 1.125rem;
+        padding: 0.25rem 1.5rem 1.125rem;
       }
     }
 
