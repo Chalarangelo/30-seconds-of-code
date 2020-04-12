@@ -2,7 +2,8 @@
 :root {
   --consent-back-color: rgba(19, 21, 27, 0.925);
   --consent-fore-color: #FFFFFF;
-  --consent-shadow-color: rgba(0, 32, 128, 0.26);
+  --consent-btn-back-color: #e2e4ee;
+  --consent-btn-fore-color: #212121;
 }
 
 .cookie-consent-popup {
@@ -30,6 +31,8 @@
   .btn {
     font-size: 0.875rem;
     padding: 0.625rem 1.375rem;
+    background: var(--consent-btn-back-color);
+    color: var(--consent-btn-fore-color);
 
     &.cookie-decline {
       margin-left: 1rem;
