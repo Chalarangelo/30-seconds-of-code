@@ -11,8 +11,24 @@ const ORDERS_MAP = {
 
 const CARDS_PER_PAGE = 40;
 
+/**
+ * Creates listing pages from the data provided.
+ * @param {*} indexedChunks - Chunked snippets.
+ * @param {*} listingPage - Listing page template.
+ * @param {*} createPage - Page creation method from gatsby.
+ * @param {*} context - Page context.
+ * @param {*} baseUrl - Base url slug.
+ * @param {*} slugOrderingSegment - Ordering segment for the url slug.
+ * @param {*} ordersList - List of orders.
+ */
 const createListingPages = (
-  indexedChunks, listingPage, createPage, context, baseUrl, slugOrderingSegment, ordersList
+  indexedChunks,
+  listingPage,
+  createPage,
+  context,
+  baseUrl,
+  slugOrderingSegment,
+  ordersList
 ) => {
   indexedChunks.forEach((chunk, i, chunks) => {
     createPage({
@@ -67,8 +83,24 @@ const createListingPages = (
   }
 };
 
+/**
+ * Creates listing pages using the provided orders and customization.
+ * @param {*} listingPage -  Listing page template.
+ * @param {*} createPage - Page creation method from gatsby.
+ * @param {*} context - Page context.
+ * @param {*} baseUrl - Base url slug.
+ * @param {*} orders - List of orders.
+ * @param {*} chunks - Chunked snippets.
+ * @param {*} contextCustomizer - A function for customizing context based on order.
+ */
 const createListingPagesWithOrderOptions = (
-  listingPage, createPage, context, baseUrl, orders, chunks, contextCustomizer = () => ({})
+  listingPage,
+  createPage,
+  context,
+  baseUrl,
+  orders,
+  chunks,
+  contextCustomizer = () => ({})
 ) => {
   orders.forEach((order, i) => {
     createListingPages(
@@ -83,17 +115,35 @@ const createListingPagesWithOrderOptions = (
   });
 };
 
+/**
+ * (Export) Creates all the listing pages, including data for order options.
+ * @param {*} searchIndex - The raw search index data.
+ * @param {*} listingMetas - Listing pages metadata.
+ * @param {*} listingPage - Listing page template.
+ * @param {*} createPage - Page creation method from gatsby.
+ * @param {*} context - Page context.
+ */
 /* eslint-disable no-extra-boolean-cast */
-const createAllListingPages = (searchIndex, listingMetas, listingPage, createPage, context) => {
-  // Create listing pages for the main listing
+const createAllListingPages = (
+  searchIndex,
+  listingMetas,
+  listingPage,
+  createPage,
+  context
+) => {
+  // 1. Create listing pages for the main listing:
+  // Tranform and chunk data for popularity, alphabetical and expertise ordering
   const transformedIndex = transformSnippetIndex(searchIndex.edges);
   const popularChunks = chunk(transformedIndex, CARDS_PER_PAGE);
-  const alphabeticalChunks = chunk(transformedIndex.sort((a, b) => a.title.localeCompare(b.title)), CARDS_PER_PAGE);
+  const alphabeticalChunks = chunk(transformedIndex.sort((a, b) =>
+    a.title.localeCompare(b.title)
+  ), CARDS_PER_PAGE);
   const expertiseChunks = chunk(transformedIndex.sort((a, b) =>
     a.expertise === b.expertise ? a.title.localeCompare(b.title) :
       !a.expertise ? 1 : !b.expertise ? -1 :
         EXPERTISE_LEVELS.indexOf(a.expertise) - EXPERTISE_LEVELS.indexOf(b.expertise)
   ), CARDS_PER_PAGE);
+  // Create main listing sublinks and customization method for context
   const mainListingSublinks = listingMetas
     .map(v => v.featured > 0 ? v : {...v, featured: 500 })
     .sort((a, b) => a.featured === b.featured ? a.name - b.name : a.featured - b.featured);
@@ -109,7 +159,7 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
         })),
     };
   };
-
+  // Create the listing pages with the order options provided
   createListingPagesWithOrderOptions(
     listingPage,
     createPage,
@@ -129,24 +179,94 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
     mainContextCustomizer
   );
 
-  listingMetas
-    .forEach(listingMeta => {
-      const slugPrefix = listingMeta.slugPrefix;
-      const searchIndexName = searchIndex.edges.find(s => s.node.slug.startsWith(`${slugPrefix}`)).node.language.long || '';
-      const searchIndexSlugData = searchIndex.edges.filter(s =>
-        s.node.slug.startsWith(`${slugPrefix}`) ||
+  // 2. Create listing pages for the language listings
+  listingMetas.forEach(listingMeta => {
+    // Determine slug prefix and relevant information, create chunks from data for
+    // each of the ordering options
+    const slugPrefix = listingMeta.slugPrefix;
+    const searchIndexName = searchIndex.edges
+      .find(s => s.node.slug.startsWith(`${slugPrefix}`)).node.language.long || '';
+    const searchIndexSlugData = searchIndex.edges.filter(s =>
+      s.node.slug.startsWith(`${slugPrefix}`) ||
         (s.node.blog && s.node.tags.all.find(t => t.toLowerCase() === searchIndexName.toLowerCase()))
-      );
-      const transformedSlugChunks = transformSnippetIndex(searchIndexSlugData);
-      const popularSlugChunks = chunk(transformedSlugChunks, CARDS_PER_PAGE);
-      const alphabeticalSlugChunks = chunk(transformedSlugChunks.sort((a, b) => a.title.localeCompare(b.title)), CARDS_PER_PAGE);
-      const expertiseSlugChunks = chunk(transformedSlugChunks.sort((a, b) =>
+    );
+    const transformedSlugChunks = transformSnippetIndex(searchIndexSlugData);
+    const popularSlugChunks = chunk(transformedSlugChunks, CARDS_PER_PAGE);
+    const alphabeticalSlugChunks = chunk(transformedSlugChunks.sort((a, b) =>
+      a.title.localeCompare(b.title)
+    ), CARDS_PER_PAGE);
+    const expertiseSlugChunks = chunk(transformedSlugChunks.sort((a, b) =>
+      a.expertise === b.expertise ? a.title.localeCompare(b.title) :
+        !a.expertise ? 1 : !b.expertise ? -1 :
+          EXPERTISE_LEVELS.indexOf(a.expertise) - EXPERTISE_LEVELS.indexOf(b.expertise)
+    ), CARDS_PER_PAGE);
+    // Determine tag prefixes for the listing
+    const searchIndexTagPrefixes = listingMeta.tags;
+    const slugContextCustomizer = order => {
+      return {
+        listingSublinks: listingMeta.blog ? [] : [
+          {
+            link: {
+              internal: true,
+              url: `${slugPrefix}/${order}/1`,
+            },
+            name: literals.tag('all'),
+            selected: true,
+          },
+          ...listingMeta.tags
+            .map(tag => ({
+              link: {
+                internal: true,
+                url: `${slugPrefix}/t/${tag}/${order}/1`,
+              },
+              name: literals.tag(tag),
+            })),
+        ],
+      };
+    };
+    // Create the listing pages with the order options provided
+    createListingPagesWithOrderOptions(
+      listingPage,
+      createPage,
+      {
+        ...context,
+        listingName: listingMeta.blog ? literals.blog : literals.codelang(searchIndexName),
+        listingTitle: listingMeta.blog ? literals.blog : literals.codelang(searchIndexName),
+        listingType: listingMeta.blog ? 'blog' : 'language',
+        pageDescription: literals.pageDescription(listingMeta.blog ? 'blog' : 'language', {
+          snippetCount: searchIndexSlugData.length,
+          listingLanguage: listingMeta.blog ? 'blog' : searchIndexName,
+        }),
+      },
+      `${slugPrefix}`,
+      ['p', 'a', 'e'],
+      [popularSlugChunks, alphabeticalSlugChunks, expertiseSlugChunks],
+      slugContextCustomizer
+    );
+
+    // 3. Create listing pages for the tag listings
+    searchIndexTagPrefixes.forEach(tagPrefix => {
+      // Determine slug prefix and relevant information, create chunks from data
+      // for each of the ordering options
+      const searchIndexTagData = searchIndex.edges
+        .filter(s =>
+          s.node.tags.primary === tagPrefix && s.node.slug.startsWith(`${slugPrefix}`) ||
+            ( s.node.blog &&
+              s.node.tags.all.find(t => t.toLowerCase() === searchIndexName.toLowerCase()) &&
+              s.node.tags.all.find(t => t.toLowerCase() === tagPrefix.toLowerCase())
+            )
+        );
+      const transformedTagChunks = transformSnippetIndex(searchIndexTagData);
+      const popularTagChunks = chunk(transformedTagChunks, CARDS_PER_PAGE);
+      const alphabeticalTagChunks = chunk(transformedTagChunks.sort((a, b) =>
+        a.title.localeCompare(b.title)
+      ), CARDS_PER_PAGE);
+      const expertiseTagChunks = chunk(transformedTagChunks.sort((a, b) =>
         a.expertise === b.expertise ? a.title.localeCompare(b.title) :
           !a.expertise ? 1 : !b.expertise ? -1 :
             EXPERTISE_LEVELS.indexOf(a.expertise) - EXPERTISE_LEVELS.indexOf(b.expertise)
       ), CARDS_PER_PAGE);
-      const searchIndexTagPrefixes = listingMeta.tags;
-      const slugContextCustomizer = order => {
+      const tagContextCustomizer = order => {
         return {
           listingSublinks: listingMeta.blog ? [] : [
             {
@@ -165,90 +285,31 @@ const createAllListingPages = (searchIndex, listingMetas, listingPage, createPag
                 },
                 name: literals.tag(tag),
               })),
-          ],
+          ].map(tag => ({ ...tag, selected: tag.link.url.indexOf(`/t/${tagPrefix}/`) !== -1 })),
         };
       };
-
+      // Create the listing pages with the order options provided
       createListingPagesWithOrderOptions(
         listingPage,
         createPage,
         {
           ...context,
-          listingName: listingMeta.blog ? literals.blog : literals.codelang(searchIndexName),
-          listingTitle: listingMeta.blog ? literals.blog : literals.codelang(searchIndexName),
-          listingType: listingMeta.blog ? 'blog' : 'language',
-          pageDescription: literals.pageDescription(listingMeta.blog ? 'blog' : 'language', {
+          listingName: literals.codelangTag(searchIndexName, tagPrefix),
+          listingTitle: literals.codelang(searchIndexName),
+          listingType: 'tag',
+          pageDescription: literals.pageDescription('tag', {
             snippetCount: searchIndexSlugData.length,
-            listingLanguage: listingMeta.blog ? 'blog' : searchIndexName,
+            listingLanguage: searchIndexName,
+            listingTag: tagPrefix,
           }),
         },
-        `${slugPrefix}`,
+        `${slugPrefix}/t/${tagPrefix}`,
         ['p', 'a', 'e'],
-        [popularSlugChunks, alphabeticalSlugChunks, expertiseSlugChunks],
-        slugContextCustomizer
+        [popularTagChunks, alphabeticalTagChunks, expertiseTagChunks],
+        tagContextCustomizer
       );
-
-      searchIndexTagPrefixes.forEach(tagPrefix => {
-        const searchIndexTagData = searchIndex.edges
-          .filter(s =>
-            s.node.tags.primary === tagPrefix && s.node.slug.startsWith(`${slugPrefix}`) ||
-            ( s.node.blog &&
-              s.node.tags.all.find(t => t.toLowerCase() === searchIndexName.toLowerCase()) &&
-              s.node.tags.all.find(t => t.toLowerCase() === tagPrefix.toLowerCase())
-            )
-          );
-        const transformedTagChunks = transformSnippetIndex(searchIndexTagData);
-        const popularTagChunks = chunk(transformedTagChunks, CARDS_PER_PAGE);
-        const alphabeticalTagChunks = chunk(transformedTagChunks.sort((a, b) => a.title.localeCompare(b.title)), CARDS_PER_PAGE);
-        const expertiseTagChunks = chunk(transformedTagChunks.sort((a, b) =>
-          a.expertise === b.expertise ? a.title.localeCompare(b.title) :
-            !a.expertise ? 1 : !b.expertise ? -1 :
-              EXPERTISE_LEVELS.indexOf(a.expertise) - EXPERTISE_LEVELS.indexOf(b.expertise)
-        ), CARDS_PER_PAGE);
-        const tagContextCustomizer = order => {
-          return {
-            listingSublinks: listingMeta.blog ? [] : [
-              {
-                link: {
-                  internal: true,
-                  url: `${slugPrefix}/${order}/1`,
-                },
-                name: literals.tag('all'),
-                selected: true,
-              },
-              ...listingMeta.tags
-                .map(tag => ({
-                  link: {
-                    internal: true,
-                    url: `${slugPrefix}/t/${tag}/${order}/1`,
-                  },
-                  name: literals.tag(tag),
-                })),
-            ].map(tag => ({ ...tag, selected: tag.link.url.indexOf(`/t/${tagPrefix}/`) !== -1 })),
-          };
-        };
-
-        createListingPagesWithOrderOptions(
-          listingPage,
-          createPage,
-          {
-            ...context,
-            listingName: literals.codelangTag(searchIndexName, tagPrefix),
-            listingTitle: literals.codelang(searchIndexName),
-            listingType: 'tag',
-            pageDescription: literals.pageDescription('tag', {
-              snippetCount: searchIndexSlugData.length,
-              listingLanguage: searchIndexName,
-              listingTag: tagPrefix,
-            }),
-          },
-          `${slugPrefix}/t/${tagPrefix}`,
-          ['p', 'a', 'e'],
-          [popularTagChunks, alphabeticalTagChunks, expertiseTagChunks],
-          tagContextCustomizer
-        );
-      });
     });
+  });
 };
 
 export default createAllListingPages;

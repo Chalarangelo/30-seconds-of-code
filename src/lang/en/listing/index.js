@@ -1,6 +1,6 @@
 import { capitalize } from 'utils';
 import config from 'config/global';
-
+/* istanbul ignore next */
 const literals = {
   orders: {
     popularity: 'Popularity',
