@@ -8,6 +8,12 @@ import {
 
 /**
  * Creates individual snippet pages.
+ * @param {array} snippets - An array of snippets.
+ * @param {*} snippetPage - Snippet page template.
+ * @param {*} createPage - Page creation method from gatsby.
+ * @param {*} commonContext - Context to be passed to the page.
+ * @param {array} allSnippets - List of all snippets.
+ * @param {array} imageContext - Image context.
  */
 const createSnippetPages = (
   snippets,
