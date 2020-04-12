@@ -1,0 +1,33 @@
+{
+  "rootDir": "../../",
+  "transform": {
+    "^.+\\.jsx?$": "./.jest/jest-preprocess.js",
+    "^.+\\.(css|less|scss)$": "./.jest/style-mock.js"
+  },
+  "setupFilesAfterEnv": [
+    "jest-enzyme"
+  ],
+  "testEnvironment": "enzyme",
+  "moduleDirectories": [
+    "node_modules",
+    "src"
+  ],
+  "testPathIgnorePatterns": [
+    "content/sources",
+    ".cache",
+    "public"
+  ],
+  "transformIgnorePatterns": [
+    "node_modules/(?!(gatsby)/)"
+  ],
+  "globals": {
+    "__PATH_PREFIX__": ""
+  },
+  "testURL": "https://localhost",
+  "setupFiles": [
+    "./.jest/loadershim.js"
+  ],
+  "testMatch": [
+    "**/?(*.)+(test).[jt]s?(x)"
+  ]
+}

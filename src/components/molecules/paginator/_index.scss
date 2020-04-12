@@ -1,0 +1,84 @@
+// Variables for the link-back icon
+$paginator-selected-color-light: #434ec7;
+$paginator-selected-color-dark: #5f91e7;
+
+// Colors
+:root {
+  --paginator-selected-color: #{$paginator-selected-color-light};
+}
+
+// Dark mode colors
+.page-container.dark {
+  --paginator-selected-color: #{$paginator-selected-color-dark};
+}
+
+.paginator {
+  margin: 1.75rem 1.25rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  padding: 0.0625rem 0.25rem;
+
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    padding: 0.0625rem 0.75rem;
+  }
+
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    padding: 0.0625rem 1.5rem;
+  }
+
+  .btn, a.btn {
+    transition: 0.3s ease all;
+    font-size: 1.125rem;
+    margin: 0.25rem 0;
+    padding: 0.625rem 0;
+    box-sizing: border-box;
+    line-height: 24px;
+    height: 44px;
+    min-width: 44px;
+    text-align: center;
+    box-shadow: none;
+    background: transparent;
+    font-size: 1.125rem;
+    color: var(--fore-color);
+
+    &:not(.current-page) {
+
+      &:hover, &:focus {
+        color: var(--paginator-selected-color);
+      }
+    }
+
+    &.current-page {
+      cursor: default;
+      font-size: 1.5rem;
+    }
+
+    &.previous-page, &.next-page {
+      color: var(--paginator-selected-color);
+      position: relative;
+      width: 52px;
+      box-sizing: border-box;
+
+      &:before {
+        position: absolute;
+        font-size: 28px;
+        width: 100%;
+        text-align: center;
+        left: 0;
+        top: 0;
+        line-height: 44px;
+      }
+    }
+
+  }
+
+  .paginator-separator {
+    display: block;
+    color: var(--fore-color-lighter);
+    opacity: 0.45;
+    letter-spacing: 2px;
+    line-height: 24px;
+    font-size: 1.5rem;
+  }
+}

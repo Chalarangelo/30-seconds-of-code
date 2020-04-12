@@ -7,7 +7,7 @@
 
 .page-container.dark {
   --code-fore-color: #d1dafe;
-  --code-back-color: #4f5fa0;
+  --code-back-color: #343b55;
   --code-selected-color: #0dbcfb;
 }
 
@@ -16,7 +16,7 @@ code, kbd, pre {
   font-size: 0.875em;
 }
 code, kbd, pre, code *, pre *, kbd *, code[class*="language-"], pre[class*="language-"] {
-  font-family: 'Roboto Mono', Menlo, Consolas, monospace; 
+  font-family: 'Roboto Mono', Menlo, Consolas, monospace;
 }
 
 code {

@@ -1,13 +1,13 @@
-import config from '../../config';
+const stateName = '30-sec-app';
 
 const createWhitelistConfig = (key, storage, whitelist) => ({
-  key: `${config.stateName}@${key}`,
+  key: `${stateName}@${key}`,
   storage,
   whitelist,
 });
 
 const createBlacklistConfig = (key, storage, blacklist) => ({
-  key: `${config.stateName}@${key}`,
+  key: `${stateName}@${key}`,
   storage,
   blacklist,
 });

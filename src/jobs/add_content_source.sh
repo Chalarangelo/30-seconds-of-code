@@ -9,27 +9,23 @@
 #  add_content_source https://github.com/30-seconds/30-seconds-of-yada 30yada "30 seconds of yada" yada
 add_content_source() {
   git submodule add $1 "./content/sources/$2"
-  echo "export default {
-  name: '$3',
-  dirName: '$2',
-  repoUrl: '$1',
-  snippetPath: 'snippets',
-  requirables: [
-    'snippet_data/snippets.json',
+  echo "{
+  \"name\": \"$3\",
+  \"dirName\": \"$2\",
+  \"repoUrl\": \"$1\",
+  \"snippetPath\": \"snippets\",
+  \"requirables\": [
+    \"snippet_data/snippets.json\",
   ],
-  slug: '$4',
-  featured: 500,
-  theme: {
-    backColor: '#ffffff',
-    foreColor: '#000000',
-    iconName: '$4',
+  \"slug\": \"$4\",
+  \"featured\": 500,
+  \"theme\": {
+    \"backColor\": \"#ffffff\",
+    \"foreColor\": \"#000000\",
+    \"iconName\": \"$4\",
   },
-  biasPenaltyMultiplier: 1.00,
-  tagScores: {
-  },
-  keywordScores: {
-  },
-};" >> "./content/configs/$2.js"
+  \"biasPenaltyMultiplier\": 1.00
+}" >> "./content/configs/$2.js"
 }
 
 add_content_source $1 $2 "$3" $4

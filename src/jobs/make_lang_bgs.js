@@ -1,7 +1,7 @@
 import glob from 'glob';
 import path from 'path';
 import fs from 'fs-extra';
-import config from '../../config';
+const paths = require('config/paths');
 
 /**
  * Read content configs, generating the SCSS code for their preview card icons.
@@ -9,10 +9,10 @@ import config from '../../config';
 const parseConfigs = contentDirPath => {
   // Load configurations
   let configs = [];
-  glob.sync(`${contentDirPath}/configs/*.js`)
+  glob.sync(`${contentDirPath}/configs/*.json`)
     .forEach( file => {
       configs.push(
-        require( path.resolve( file ) ).default
+        require( path.resolve( file ) )
       );
     });
   const scss = configs
@@ -27,4 +27,4 @@ const parseConfigs = contentDirPath => {
   fs.writeFileSync(`${__dirname}/../../src/styles/_icon_colors.scss`, scss);
 };
 
-parseConfigs(config.contentPath);
+parseConfigs(paths.contentPath);

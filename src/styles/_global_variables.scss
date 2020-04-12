@@ -1,18 +1,17 @@
 // Variables for the link-back icon
 $fore-color-dark-light: #1F253D;
-$fore-color-dark-dark: #B4BCD9;
+$fore-color-dark-dark: #c5cadd;
 
 // Variables for the paginator
 $fore-color-light: #404454;
-$fore-color-dark: #ABAFBF;
+$fore-color-dark: #c8cad5;
 
 :root {
   // Interface color palette
   --back-color: #F5F6FA;
-  --back-color-dark: #D7DDF3;
   --fore-color: #{$fore-color-light};
-  --fore-color-light: #575E7A;
-  --fore-color-lighter: #666E8F;
+  --fore-color-light: #4c526b;
+  --fore-color-lighter: #575e7a;
   --fore-color-dark: #{$fore-color-dark-light};
   --fore-color-darker: #060709;
 
@@ -23,17 +22,16 @@ $fore-color-dark: #ABAFBF;
 
 // Dark mode colors
 .page-container.dark {
-  --back-color: #2A314C;
-  --back-color-dark: #8993BE;
+  --back-color: #1f2028;
   --fore-color: #{$fore-color-dark};
-  --fore-color-light: #949AB3;
-  --fore-color-lighter: #707899;
+  --fore-color-light: #acb1c3;
+  --fore-color-lighter: #a4a9bc;
   --fore-color-dark: #{$fore-color-dark-dark};
-  --fore-color-darker: #FCFCFD;
+  --fore-color-darker: #fcfcfd;
 
   // Scrollbar
-  --scrollbar-back-color: #3e496f;
-  --scrollbar-fore-color: #707899;
+  --scrollbar-back-color: hsl(227, 21%, 9%);
+  --scrollbar-fore-color: hsl(228, 17%, 27%);
 }
 
 // Layout breakpoints

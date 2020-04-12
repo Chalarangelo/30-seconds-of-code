@@ -1,14 +1,15 @@
 /* eslint-disable */
-const { parseConfigs } = require('functions/parsers');
+const { parseConfigs } = require('build/parsers');
 
-const config = require('./config');
+const config = require('config/global');
+const paths = require('config/paths');
 
 module.exports = {
   siteMetadata: {
-    title: `${config.name}`,
-    description: `${config.description}`,
+    title: `${config.websiteName}`,
+    description: `${config.websiteDescription}`,
     author: `@30-seconds`,
-    siteUrl: `${config.siteUrl}`,
+    siteUrl: `${config.websiteUrl}`,
   },
   plugins: [
     `gatsby-plugin-resolve-src`,
@@ -18,7 +19,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `assets`,
-        path: `${__dirname}/${config.assetPath}`,
+        path: `${__dirname}/${paths.assetPath}`,
       },
     },
     {
@@ -42,7 +43,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `${config.name}`,
+        name: `${config.websiteName}`,
         short_name: `${config.shortName}`,
         start_url: `/`,
         background_color: `#1e253d`,

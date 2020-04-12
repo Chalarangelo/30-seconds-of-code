@@ -1,8 +1,0 @@
-{
-  "baseUrl": "http://localhost:8000/",
-  "integrationFolder": "src",
-  "testFiles": "**/?(*.)+(spec).[jt]s?(x)",
-  "fixturesFolder": ".cypress/fixtures",
-  "pluginsFile": ".cypress/plugins/index.js",
-  "supportFile": false
-}

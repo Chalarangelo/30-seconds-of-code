@@ -11,18 +11,11 @@
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/preset-env": "^7.8.7",
     "@babel/preset-react": "^7.8.3",
-    "@storybook/addon-contexts": "^5.3.14",
-    "@storybook/addon-docs": "^5.3.14",
-    "@storybook/addon-jest": "^5.3.14",
-    "@storybook/addon-knobs": "^5.3.14",
-    "@storybook/addon-viewport": "^5.3.14",
-    "@storybook/addons": "^5.3.14",
-    "@storybook/react": "^5.3.14",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "babel-preset-gatsby": "^0.2.33",
-    "concurrently": "^4.1.2",
+    "copy-to-clipboard": "^3.3.1",
     "cross-env": "^6.0.3",
     "css-loader": "^3.4.2",
     "cypress": "^3.8.3",
@@ -58,12 +51,11 @@
     "jest-environment-enzyme": "^7.1.2",
     "jest-enzyme": "^7.1.2",
     "kleur": "^3.0.3",
+    "lighthouse": "^5.6.0",
     "node-sass": "^4.13.1",
-    "prettier": "^1.19.1",
     "prismjs": "^1.19.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
-    "react-copy-to-clipboard": "^5.0.2",
     "react-dom": "^16.13.0",
     "react-helmet": "^5.2.1",
     "react-redux": "^7.2.0",
@@ -80,20 +72,21 @@
   ],
   "license": "MIT",
   "scripts": {
+    "make-icons": "icon-font-generator src/icons/*.svg -o assets --html=false --json=false --types='woff2' --csspath src/styles/_icons.scss --cssfontsurl='../../assets/' --selector='.icon'",
+    "make-lang-bgs": "NODE_PATH=src npx --node-arg '-r esm' ./src/jobs/make_lang_bgs.js",
     "prebuild": "./src/jobs/prepare_env.sh PRODUCTION; ./src/jobs/fetch_content_sources.sh; ./src/jobs/prepare_cache_key.sh; npm run make-icons; npm run make-lang-bgs",
     "predevelop": "./src/jobs/prepare_env.sh DEVELOPMENT;./src/jobs/prepare_cache_key.sh",
     "build": "NODE_PATH=src npx --node-arg '-r esm' gatsby build",
     "develop": "NODE_PATH=src npx --node-arg '-r esm' gatsby develop",
     "debug": "NODE_PATH=src npx --node-arg '-r esm --nolazy --inspect-brk' node_modules/.bin/gatsby develop",
     "serve": "NODE_PATH=src npx --node-arg '-r esm' gatsby serve",
-    "storybook": "cross-env NODE_PATH=src start-storybook -s ./assets -p 6006",
     "lint": "eslint './src/**/*.js' './src/**/*.jsx'",
-    "make-icons": "icon-font-generator src/icons/*.svg -o assets --html=false --json=false --types='woff2' --csspath src/styles/_icons.scss --cssfontsurl='../assets/' --selector='.icon'",
-    "make-lang-bgs": "NODE_PATH=src npx --node-arg '-r esm' ./src/jobs/make_lang_bgs.js",
-    "test": "cross-env NODE_PATH=src NODE_ENV=test jest --coverage",
-    "test:watch": "cross-env NODE_PATH=src NODE_ENV=test jest --watch",
-    "cy:open": "cypress open",
-    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open"
+    "cy:open": "NODE_PATH=src npx --node-arg '-r esm' cypress open --config-file src/config/cypress.json",
+    "cy:run": "NODE_PATH=src npx --node-arg '-r esm' cypress run --config-file src/config/cypress.json --env CYPRESS_NO_AUDIT=true",
+    "test": "cross-env NODE_PATH=src NODE_ENV=test jest --config src/config/jest.json --coverage",
+    "test:watch": "cross-env NODE_PATH=src NODE_ENV=test jest --config src/config/jest.json --watch",
+    "test:e2e": "CYPRESS_SUPPORT=y npm run build && start-server-and-test serve http://localhost:9000 cy:open",
+    "test:e2e-ci": "CYPRESS_SUPPORT=y npm run build && start-server-and-test serve http://localhost:9000 cy:run"
   },
   "repository": {
     "type": "git",
@@ -103,38 +96,6 @@
     "url": "https://github.com/30-seconds/30-seconds-web/issues"
   },
   "dependencies": {},
-  "jest": {
-    "transform": {
-      "^.+\\.jsx?$": "./.jest/jest-preprocess.js",
-      "^.+\\.(css|less|scss)$": "./.jest/style-mock.js"
-    },
-    "setupFilesAfterEnv": [
-      "jest-enzyme"
-    ],
-    "testEnvironment": "enzyme",
-    "moduleDirectories": [
-      "node_modules",
-      "src"
-    ],
-    "testPathIgnorePatterns": [
-      "content/sources",
-      ".cache",
-      "public"
-    ],
-    "transformIgnorePatterns": [
-      "node_modules/(?!(gatsby)/)"
-    ],
-    "globals": {
-      "__PATH_PREFIX__": ""
-    },
-    "testURL": "https://localhost",
-    "setupFiles": [
-      "./.jest/loadershim.js"
-    ],
-    "testMatch": [
-      "**/?(*.)+(test).[jt]s?(x)"
-    ]
-  },
   "browserslist": [
     "defaults and last 4 versions and not dead and not ie>0 and not ie_mob>0 and not op_mini all and not baidu>0 and not kaios>0 and not and_uc>0 and not and_qq>0 and not <0.2%"
   ]

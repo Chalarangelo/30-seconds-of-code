@@ -6,35 +6,24 @@ const {
   createResolvers,
   createPages,
   onCreateWebpackConfig,
-} = require(`./src/functions/build`);
-const {
-  createPagesQuery,
-  getLogoSrc,
-  getImages,
-  getSearchIndex,
-} = require(`./src/queries`);
+} = require(`./src/build`);
 const {
   parseQueries,
   parseRequirables,
-  parseReducers,
-  parseResolvers,
   parseTemplates,
-} = require(`./src/functions/parsers`);
-const config = require('./config');
+} = require(`./src/build/parsers`);
+const paths = require(`./src/config/paths`);
 
-const requirables = parseRequirables(config.contentPath);
+const reducers = require(`./src/build/reducers`).default;
+const resolvers = require(`./src/build/resolvers`).default;
+
+const requirables = parseRequirables(paths.contentPath);
 console.log(`${green('success')} parse requirables`);
 
-const reducers = parseReducers(config.contentPath);
-console.log(`${green('success')} parse reducers`);
-
-const resolvers = parseResolvers(config.contentPath);
-console.log(`${green('success')} parse resolvers`);
-
-const templates = parseTemplates(config.templates, config.templatesPath);
+const templates = parseTemplates(paths.templates, paths.templatesPath);
 console.log(`${green('success')} parse templates`);
 
-const pagesQuery = parseQueries(getLogoSrc, createPagesQuery, getSearchIndex, getImages);
+const pagesQuery = parseQueries(paths.queryPath);
 console.log(`${green('success')} parse queries`);
 
 exports.createPages = createPages(pagesQuery, templates, requirables);
