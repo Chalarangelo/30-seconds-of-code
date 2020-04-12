@@ -73,5 +73,14 @@ describe('<SettingsPage />', () => {
       expect(store.getState().shell.hasGithubLinksEnabled).toBe(true);
     });
   });
+
+  describe('when the cookies is clicked', () => {
+    it('changes the cookies setting', () => {
+      act(() => {
+        wrapper.find(`Toggle[children="${literals.settings.cookies}"]`).prop('onChange')();
+      });
+      expect(store.getState().shell.acceptsCookies).toBe(true);
+    });
+  });
 });
 
