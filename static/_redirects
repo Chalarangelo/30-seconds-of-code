@@ -44,6 +44,7 @@ css/s/calc/                            /css/p/1                                 
 js/s/filter-falsy/                     /js/s/compact                            301!
 python/s/function-name/                /python/s/check-prop                     301!
 python/s/map-object/                   /python/s/map-dictionary                 301!
+python/s/zip/                          /python/s/merge                          301!
 
 # -----------------------------------------------------------------------------
 #   LEGACY REDIRECTS:
