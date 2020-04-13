@@ -1848,6 +1848,31 @@
       }
     },
     {
+      "id": "merge",
+      "title": "merge",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "merge.md",
+        "text": "Merges two or more lists into a list of lists, combining elements from each of the input lists based on their positions.\n\nUse `max` combined with list comprehension to get the length of the longest list in the arguments. \nUse `range()` in combination with the `max_length` variable to loop as many times as there are elements in the longest list.\nIf a list is shorter than `max_length`, use `fill_value` for the remaining items (defaults to `None`).\n\n[`zip()`](https://docs.python.org/3/library/functions.html#zip) and [`itertools.zip_longest()`](https://docs.python.org/3/library/itertools.html#itertools.zip_longest) provide similar functionality to this snippet.\n\n",
+        "codeBlocks": {
+          "code": "def merge(*args, fill_value=None):\n  max_length = max([len(lst) for lst in args])\n  result = []\n  for i in range(max_length):\n    result.append([\n      args[k][i] if i < len(args[k]) else fill_value for k in range(len(args))\n    ])\n  return result",
+          "example": "merge(['a', 'b'], [1, 2], [True, False]) # [['a', 1, True], ['b', 2, False]]\nmerge(['a'], [1, 2], [True, False]) # [['a', 1, True], [None, 2, False]]\nmerge(['a'], [1, 2], [True, False], fill_value = '_') # [['a', 1, True], ['_', 2, False]]"
+        },
+        "tags": [
+          "list",
+          "math",
+          "advanced"
+        ]
+      },
+      "meta": {
+        "hash": "90ea2870f15a25e60c046bc5855929a5cab3985583bfe9491ed1ee5496dd5c31",
+        "firstSeen": "1586794152",
+        "lastUpdated": "1586794152",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "min_by",
       "title": "min_by",
       "type": "snippet",
@@ -2555,31 +2580,6 @@
         "lastUpdated": "1577989545",
         "updateCount": 2,
         "authorCount": 2
-      }
-    },
-    {
-      "id": "zip",
-      "title": "zip",
-      "type": "snippet",
-      "attributes": {
-        "fileName": "zip.md",
-        "text": "Creates a list of elements, grouped based on the position in the original lists.\n\nUse `max` combined with `list comprehension` to get the length of the longest list in the arguments. \nLoop for `max_length` times grouping elements. \nIf lengths of `lists` vary, use `fill_value` (defaults to `None`). \n\n[`zip()`](https://docs.python.org/3/library/functions.html#zip) and [`itertools.zip_longest()`](https://docs.python.org/3/library/itertools.html#itertools.zip_longest) provide similar functionality to this snippet.\n\n",
-        "codeBlocks": {
-          "code": "def zip(*args, fill_value=None):\n  max_length = max([len(lst) for lst in args])\n  result = []\n  for i in range(max_length):\n    result.append([\n      args[k][i] if i < len(args[k]) else fillvalue for k in range(len(args))\n    ])\n  return result",
-          "example": "zip(['a', 'b'], [1, 2], [True, False]) # [['a', 1, True], ['b', 2, False]]\nzip(['a'], [1, 2], [True, False]) # [['a', 1, True], [None, 2, False]]\nzip(['a'], [1, 2], [True, False], fill_value = '_') # [['a', 1, True], ['_', 2, False]]"
-        },
-        "tags": [
-          "list",
-          "math",
-          "intermediate"
-        ]
-      },
-      "meta": {
-        "hash": "a42a76e7a962aded1f6f30495095fe3c005be83d37f18e63285a3425184772ec",
-        "firstSeen": "1516462266",
-        "lastUpdated": "1578227158",
-        "updateCount": 19,
-        "authorCount": 6
       }
     }
   ],
