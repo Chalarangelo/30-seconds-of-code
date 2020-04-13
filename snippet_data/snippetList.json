@@ -1164,6 +1164,22 @@
       }
     },
     {
+      "id": "merge",
+      "type": "snippetListing",
+      "title": "merge",
+      "attributes": {
+        "text": "Merges two or more lists into a list of lists, combining elements from each of the input lists based on their positions.\n\nUse `max` combined with list comprehension to get the length of the longest list in the arguments. \nUse `range()` in combination with the `max_length` variable to loop as many times as there are elements in the longest list.\nIf a list is shorter than `max_length`, use `fill_value` for the remaining items (defaults to `None`).\n\n[`zip()`](https://docs.python.org/3/library/functions.html#zip) and [`itertools.zip_longest()`](https://docs.python.org/3/library/itertools.html#itertools.zip_longest) provide similar functionality to this snippet.\n\n",
+        "tags": [
+          "list",
+          "math",
+          "advanced"
+        ]
+      },
+      "meta": {
+        "hash": "90ea2870f15a25e60c046bc5855929a5cab3985583bfe9491ed1ee5496dd5c31"
+      }
+    },
+    {
       "id": "min_by",
       "type": "snippetListing",
       "title": "min_by",
@@ -1610,22 +1626,6 @@
       },
       "meta": {
         "hash": "8f04bf926446b8c1c73fe0127d3d9a59141d7287ea9e72e8fe4f71b1762f6049"
-      }
-    },
-    {
-      "id": "zip",
-      "type": "snippetListing",
-      "title": "zip",
-      "attributes": {
-        "text": "Creates a list of elements, grouped based on the position in the original lists.\n\nUse `max` combined with `list comprehension` to get the length of the longest list in the arguments. \nLoop for `max_length` times grouping elements. \nIf lengths of `lists` vary, use `fill_value` (defaults to `None`). \n\n[`zip()`](https://docs.python.org/3/library/functions.html#zip) and [`itertools.zip_longest()`](https://docs.python.org/3/library/itertools.html#itertools.zip_longest) provide similar functionality to this snippet.\n\n",
-        "tags": [
-          "list",
-          "math",
-          "intermediate"
-        ]
-      },
-      "meta": {
-        "hash": "a42a76e7a962aded1f6f30495095fe3c005be83d37f18e63285a3425184772ec"
       }
     }
   ],
