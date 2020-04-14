@@ -204,6 +204,21 @@
       }
     },
     {
+      "id": "javascript-shallow-deep-clone",
+      "type": "snippetListing",
+      "title": "How do I clone an object in JavaScript?",
+      "attributes": {
+        "text": "JavaScript's primitive data types, such as numbers, strings, null, undefined and booleans are immutable, meaning their value cannot change once created. However, objects and arrays are mutable, allowing their value to be altered after creation. What this means in practice is that primitives are passed by value, whereas objects and arrays are passed by reference. Consider the following example:\n\n```js\nlet str = 'Hello';\nlet copy = str;\ncopy = 'Hi';\n// str = 'Hello', copy = 'Hi'\n\nlet obj = { a: 1, b: 2 };\nlet objCopy = obj;\nobjCopy.b = 4;\n// obj = { a: 1, b: 4}, objCopy = { a: 1, b: 4 }\n```\n\nWhat happens in the of `obj` is that the object is passed by reference to `objCopy`, therefore changing the value of one of the variables also affects the other one. `objCopy` is effectively an alias referencing the same object. We can remedy this issue by cloning the object, using a variety of techniques such as the spread operator (`...`) or `Object.assign()` with an empty object:\n\n```js\nlet obj = { a: 1, b: 2};\nlet clone = { ...obj };\nclone.b = 4;\n// obj = { a: 1, b: 2}, clone = { a: 1, b: 4 }\n\nlet otherClone = Object.assign({}, obj);\notherClone.b = 6;\nclone.b = 4;\n// obj = { a: 1, b: 2}, otherClone = { a: 1, b: 6 }\n```\n\nBoth of these solutions showcase an example of shallow cloning, as they will work for the outer (shallow) object, but fail if we have nested (deep) objects which will ultimately be passed by reference. As usual, there are a few approaches to this problem, the simpler of which is using `JSON.stringify()` and `JSON.parse()` to deal with the situation:\n\n```js\nlet obj = { a: 1, b: { c: 2 } };\nlet clone = JSON.parseJSON.stringify(obj));\nclone.b.c = 4;\n// obj = { a: 1, b: { c: 2 }}, clone = { a: 1, b: { c: 4 } }\n```\n\nWhile the above example works, it has to serialize and deserialize the whole object, which can significantly impact the performance of your code, so it might not be appropriate for larger objects or in projects where performance is important.\n\nAlternatively, you can use a recursive function that deep clones an object and is a lot faster, such as the one in the [deepClone snippet](/js/s/deep-clone). Similarly, if you want a ready-to-use shallow cloning function, you can find one in the [shallowClone snippet](/js/s/shallow-clone).\n\n**Image credit:** [Joshua Ang](https://unsplash.com/@jangus231?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)\n",
+        "tags": [
+          "javascript",
+          "object"
+        ]
+      },
+      "meta": {
+        "hash": "5de8f6afdd97123712222e40e8a2864ca5fe9c02db7d3787205f4e6196627c99"
+      }
+    },
+    {
       "id": "javascript-singleton-proxy",
       "type": "snippetListing",
       "title": "How can I implement a singleton in JavaScript?",
