@@ -9,7 +9,8 @@ Use `Array.prototype.reduce()` to apply `fn` to each element in `arr` and combin
 Use `el` as the key for each property and the result of `fn` as the value.
 
 ```js
-const mapObject = (arr, fn) => 
+
+const mapObject = (arr, fn) =>
   arr.reduce((acc, el, i) => {
     acc[el] = fn(el, i, arr);
     return acc;
