@@ -1,19 +1,21 @@
 ---
 title: mapObject
-tags: array,object,advanced
+tags: array,object,intermediate
 ---
 
-Maps the values of an array to an object using a function, where the key-value pairs consist of the stringified value as the key and the mapped value.
+Maps the values of an array to an object using a function, where the key-value pairs consist of the original value as the key and the result of the function as the value.
 
-Use `Array.prototype.map()` to convert each element in `arr` to an `Object` literal with one property.
-Use `el` as the property's name (`el.toString()` will be called internally), and call the passed `fn` with `el` to derive the property's value.
-Use the `spread` operator (`...`) to call `Object.assign()` with the elements of the mapped array.
+Use `Array.prototype.reduce()` to apply `fn` to each element in `arr` and combine the results into an object.
+Use `el` as the key for each property and the result of `fn` as the value.
 
 ```js
-const mapObject = (arr, fn) => Object.assign(...arr.map(el => ({ [el]: fn(el) })));
+const mapObject = (arr, fn) => 
+  arr.reduce((acc, el, i) => {
+    acc[el] = fn(el, i, arr);
+    return acc;
+  }, {});
 ```
 
 ```js
-const squareIt = arr => mapObject(arr, a => a * a);
-squareIt([1, 2, 3]); // { 1: 1, 2: 4, 3: 9 }
+mapObject([1, 2, 3], a => a * a); // { 1: 1, 2: 4, 3: 9 }
 ```
