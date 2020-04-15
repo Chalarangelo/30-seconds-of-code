@@ -31,6 +31,22 @@
       }
     },
     {
+      "id": "6-javascript-regexp-tricks",
+      "type": "snippetListing",
+      "title": "6 JavaScript Regular Expression features you can use today",
+      "attributes": {
+        "text": "Regular expressions, while very powerful, are notoriously hard to master. Here are 6 useful features that can help you start using them in your JavaScript projects:\n\n**Capturing groups**\n\nCapturing groups allow you to get specific parts of the matched string, simply by wrapping part of the regular expression in parentheses `(...)`:\n\n```js\nconst str = 'JavaScript is a programming language';\n/(JavaScript) is a (.*)/.exec(str);\n/*\n  [\n    0: 'JavaScript is a programming language',\n    1: 'JavaScript',\n    2: 'programming language'\n  ]\n*/\n```\n\n**Non-capturing groups**\n\nNon-capturing groups are used for matching something without capturing it, like an either/or matching group that you do not really need. They are defined similarly to capturing groups, but prefixed with `?:`:\n\n```js\nconst str = 'JavaScript is a programming language';\n/(?:JavaScript|Python) is a (.+)/.exec(str);\n/*\n  [\n    0: 'JavaScript is a programming language',\n    1: 'programming language'\n  ]\n*/\n```\n\n**Named capturing groups**\n\nNamed capturing groups allow you to name a capturing group, by prefixing it with `<name>`:\n\n```js\nconst str = 'JavaScript is a programming language';\n/(?<subject>.+) is a (?<description>.+)/.exec(str);\n/*\n  [\n    0: 'JavaScript is a programming language',\n    1: 'JavaScript',\n    2: 'programming language',\n    groups: {\n      subject: 'JavaScript,\n      description: 'programming language'\n    }\n  ]\n*/\n```\n\n**Capturing group backreferences**\n\nBackreferences help you write shorter regular expressions, by repeating an existing capturing group, using `\\1`, `\\2` etc. Similarly, you can also repeat named capturing groups using `\\k<name>`:\n\n```js\nconst str = 'JavaScript is a programming language - an awesome programming language JavaScript is';\n/(.+) is a (?<description>.+) - an awesome \\k<description> \\1 is/.exec(str);\n/*\n  [\n    0: 'JavaScript is a programming language - an awesome programming language JavaScript is',\n    1: 'JavaScript',\n    2: 'programming language',\n    groups: {\n      subject: 'JavaScript,\n      description: 'programming language'\n    }\n  ]\n*/\n```\n\n**Lookaheads**\n\nLookaheads allow you to check if something is followed by a certain pattern, without actually matching it. You can create positive lookaheads using `?=` and negative lookaheads using `?!`:\n\n```js\nconst str = 'JavaScript is not the same as Java and you should remember that';\n/Java(?=Script)(.*)/.exec(str);\n/*\n  [\n    0: 'JavaScript is not the same as Java and you should remember that',\n    1: 'Script is not the same as Java and you should remember that'\n  ]\n*/\n\n/Java(?!Script)(.*)/.exec(str);\n/*\n  [\n    0: 'Java and you should remember that',\n    1: ' and you should remember that'\n  ]\n*/\n```\n\n**Unicode characters**\n\nFinally, you can match unicode characters, using `/p{...}` and the `/u` flag. Examples include, but are not limited to `{Emoji}`, `{Math_Symbols}` and `{Script=Greek}`:\n\n```js\nconst str = 'Greek looks like this: γεια';\n/\\p{Script=Greek}+/u.exec(str);\n/*\n  [\n    0: 'γεια'\n  ]\n*/\n```\n\n**Image credit:** [Kace Rodriguez](https://unsplash.com/@kace?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)\n",
+        "tags": [
+          "javascript",
+          "string",
+          "regexp"
+        ]
+      },
+      "meta": {
+        "hash": "2e6e5d06cb22bf4dfed8489172861f9361129f1fb83cf503d4817b332ae459bf"
+      }
+    },
+    {
       "id": "7-chrome-extensions-for-web-developers",
       "type": "snippetListing",
       "title": "7 essential Chrome extensions for web developers",
