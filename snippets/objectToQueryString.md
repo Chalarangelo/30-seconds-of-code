@@ -10,6 +10,7 @@ Determine the `symbol` to be either `?` or `&` based on the `length` of `querySt
 Return the `queryString` or an empty string when the `queryParameters` are falsy.
 
 ```js
+
 const objectToQueryString = queryParameters => {
   return queryParameters
     ? Object.entries(queryParameters).reduce((queryString, [key, val], index) => {

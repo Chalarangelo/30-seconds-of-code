@@ -72,12 +72,11 @@
         "tags": [
           "array",
           "string",
-          "utility",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "aeabb3d1d2be2d44fd8a20da3b069fdd1a8ad963f27e3e1ae9f5e8b40a8908cb"
+        "hash": "e5c607cd29800661ad8ea0506afaa42cd3f3936f835714939ceba49a5bd95638"
       }
     },
     {
@@ -120,12 +119,11 @@
         "tags": [
           "node",
           "string",
-          "utility",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "32988360d63d6d62251314a88d3f4482ec3a265d67154a92a86d4140bd61c54b"
+        "hash": "6b8f586d9f697e08949128ec6774022484444daa8575c45a28fb1f9c8ba2c2bc"
       }
     },
     {
@@ -294,12 +292,11 @@
         "tags": [
           "node",
           "string",
-          "utility",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "1c7836009987b8b1097b54a84c38144f6cb643477f08f00b1a37e274cf0c9f78"
+        "hash": "afb23f750b1460a89dca8424056fa581a7befd6e4f8b369ac2e93d50c94d9749"
       }
     },
     {
@@ -371,14 +368,13 @@
       "attributes": {
         "text": "Casts the provided value as an array if it's not one.\n\nUse `Array.prototype.isArray()` to determine if `val` is an array and return it as-is or encapsulated in an array accordingly.\n\n",
         "tags": [
-          "utility",
-          "array",
           "type",
+          "array",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "307add91ea4d5c2a122256f799120f580ac235567523dddeeadd6500f1e81e94"
+        "hash": "2f0d1b37cbcc8d6646fda98864848a41cb6ecaec02f7a0ba52bb45c87a210441"
       }
     },
     {
@@ -420,7 +416,6 @@
         "tags": [
           "function",
           "object",
-          "utility",
           "beginner"
         ]
       },
@@ -465,13 +460,14 @@
       "attributes": {
         "text": "Clones a regular expression.\n\nUse `new RegExp()`, `RegExp.source` and `RegExp.flags` to clone the given regular expression.\n\n",
         "tags": [
-          "utility",
+          "type",
+          "string",
           "regexp",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "3b7e9a506c229c792da093336574e3524cd1a8c794d18fc450f469f171ff83cf"
+        "hash": "8a748ad892a46df9ff2a5e64aba3b9a35fbd9a0d0351c21e2c2bf1d40a39c046"
       }
     },
     {
@@ -481,7 +477,7 @@
       "attributes": {
         "text": "Returns the first defined, non-null argument.\n\nUse `Array.prototype.find()` and `Array.prototype.includes()` to find the first value that is not equal to `undefined` or `null`.\n\n",
         "tags": [
-          "utility",
+          "type",
           "beginner"
         ]
       },
@@ -496,12 +492,12 @@
       "attributes": {
         "text": "Returns a customized coalesce function that returns the first argument that returns `true` from the provided argument validation function.\n\nUse `Array.prototype.find()` to return the first argument that returns `true` from the provided argument validation function.\n\n",
         "tags": [
-          "utility",
+          "type",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "b85ec57d815ff34ba3906195440fce5d2ad9f33b64d7d96159c0e1125fee283c"
+        "hash": "26bbe0fe97b8a037808ae4b7310e54cd3a31f6a0f0a0d9c6a2ae733046501132"
       }
     },
     {
@@ -528,13 +524,12 @@
         "text": "Add special characters to text to print in color in the console (combined with `console.log()`).\n\nUse template literals and special characters to add the appropriate color code to the string output.\nFor background colors, add a special character that resets the background color at the end of the string.\n\n",
         "tags": [
           "node",
-          "utility",
           "string",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "1ce726b8cbc9f87ff8ff6d68e0678325523b1118fa038b97f53ddad9031dbe23"
+        "hash": "d33a3685273eb81bf2a224330007c5425f434c2292859bdfebbe1fbafd5da48c"
       }
     },
     {
@@ -711,15 +706,14 @@
       "type": "snippetListing",
       "title": "createElement",
       "attributes": {
-        "text": "Creates an element from a string (without appending it to the document). \nIf the given string contains multiple elements, only the first one will be returned.\n\nUse `document.createElement()` to create a new element.\nSet its `innerHTML` to the string supplied as the argument. \nUse `ParentNode.firstElementChild` to return the element version of the string.\n\n",
+        "text": "Creates an element from a string (without appending it to the document).\nIf the given string contains multiple elements, only the first one will be returned.\n\nUse `document.createElement()` to create a new element.\nSet its `innerHTML` to the string supplied as the argument.\nUse `ParentNode.firstElementChild` to return the element version of the string.\n\n",
         "tags": [
           "browser",
-          "utility",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "d162fbc50166f304216db6ea700e5fc7f428ea33d50b204ae921e1c58552a4e0"
+        "hash": "de8ab0037be4b5d74805237ea414516a1ca227fa2b693b01190bd50f01d362bb"
       }
     },
     {
@@ -747,12 +741,11 @@
         "tags": [
           "string",
           "array",
-          "utility",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "3169ab83e588063262fa6a01f7d7df7bd9521345c65a7c7f874f577478c90305"
+        "hash": "e53a8dfbb2ab55c1678e462164268773fbc3876ce9cd8326fb44428694fb9f72"
       }
     },
     {
@@ -863,7 +856,7 @@
         ]
       },
       "meta": {
-        "hash": "77a01af8797ecbe71b9c9412d21c144c03a46a49dd3d0e7d869c3df38b39b2b4"
+        "hash": "0a4684d6fc79bdbbac31df3af6c493ba7c881936ada5bc52824b4f26ca177459"
       }
     },
     {
@@ -926,7 +919,7 @@
         ]
       },
       "meta": {
-        "hash": "6fa14364405f7b99aa49c2157bdc08c02b4ce2f288db29a4348a6983460933c7"
+        "hash": "a4e1e33c0688dbf1ca231d9d8ea315ffed93b7f83f5d8cbf0714f10fdfeda8cf"
       }
     },
     {
@@ -1065,7 +1058,7 @@
         ]
       },
       "meta": {
-        "hash": "bdc202436bee09f06a353d31841c6cfff33e8efead34c6c56ae1a1413284976d"
+        "hash": "484bd222e636e8a8409c30ddb1fe6e3fe72ab7a43f2edf089b2758d5e9bee528"
       }
     },
     {
@@ -1221,7 +1214,7 @@
         ]
       },
       "meta": {
-        "hash": "7738cec1d3804a4542cd80899d7f6d2890d8950aae5751a76e733b0ed270d802"
+        "hash": "ff5ed6bd1f89525d1481499cd24fcb5f1f4d5f5e268d42caef3b23076fd5fd91"
       }
     },
     {
@@ -1279,13 +1272,12 @@
       "attributes": {
         "text": "Extends a 3-digit color code to a 6-digit color code.\n\nUse `Array.prototype.map()`, `String.prototype.split()` and `Array.prototype.join()` to join the mapped array for converting a 3-digit RGB notated hexadecimal color-code to the 6-digit form.\n`Array.prototype.slice()` is used to remove `#` from string start since it's added once.\n\n",
         "tags": [
-          "utility",
           "string",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "34df599e00a3541dfecf1c0780514006d8d6cadfe28905ead9e782cc3903902c"
+        "hash": "6435af35454a85174aee2740e4a628f47b7fd5efbb73ca11044c78ac5340fc19"
       }
     },
     {
@@ -1301,7 +1293,7 @@
         ]
       },
       "meta": {
-        "hash": "6e9710c9117f500e74e65c0ee36b39fb80bd55537fa5ff9c4b1136b2667096f2"
+        "hash": "0eac852db7a7add352b0d36677b22718b342ed9dc12f11780cac87e3b8260a05"
       }
     },
     {
@@ -1501,12 +1493,11 @@
           "date",
           "math",
           "string",
-          "utility",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "176cd07a9486286924a7393fe631e83471e7123e3b6349309a7c1cee7746d764"
+        "hash": "b69c2666e5ce5a98b4c91b7efcbd715209381716d9f274e42f1b8b333ae3fb3f"
       }
     },
     {
@@ -1593,12 +1584,11 @@
         "text": "Logs the name of a function.\n\nUse `console.debug()` and the `name` property of the passed method to log the method's name to the `debug` channel of the console.\n\n",
         "tags": [
           "function",
-          "utility",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "9f8947652b9c2faba5f1bda82f992bdc81a71c67374fcc843e96ce2a327a28db"
+        "hash": "4919ad66b88f64d19d2bb661db604ccfd7544d2265ac0d8708a06204746e4439"
       }
     },
     {
@@ -1720,7 +1710,7 @@
         ]
       },
       "meta": {
-        "hash": "f9e6687cc28cd80e68f7a6776f893c7478aaa942710e0eb7144f105eba574a54"
+        "hash": "9e39c6a3a8ec5b51c5e16f69107fc9e90b2697b2cf2689850872071bb968723e"
       }
     },
     {
@@ -1759,14 +1749,14 @@
       "type": "snippetListing",
       "title": "getType",
       "attributes": {
-        "text": "Returns the native type of a value.\n\nReturn `\"undefined\"` or `\"null\"` if the value is `undefined` or `null`.\nOtherwise, use `Object.prototype.constructor.name` to get the name of the constructor, `String.prototype.toLowerCase()` to return it in lowercase.\n\n",
+        "text": "Returns the native type of a value.\n\nReturn `'undefined'` or `'null'` if the value is `undefined` or `null`.\nOtherwise, use `Object.prototype.constructor.name` to get the name of the constructor.\n\n",
         "tags": [
           "type",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "87c0b3cc13caebf6bb46f0769fecc8b13140ea133bbf096136c740154c1d456f"
+        "hash": "0a1f42c4c267fe273f3452f80ed1fbdbe45bc47793f86077c5733146a7018e44"
       }
     },
     {
@@ -1776,7 +1766,6 @@
       "attributes": {
         "text": "Returns an object containing the parameters of the current URL.\n\nUse `String.match()` with an appropriate regular expression to get all key-value pairs, `Array.prototype.reduce()` to map and combine them into a single object.\nPass `location.search` as the argument to apply to the current `url`.\n\n",
         "tags": [
-          "utility",
           "browser",
           "string",
           "url",
@@ -1784,7 +1773,7 @@
         ]
       },
       "meta": {
-        "hash": "460d0f75a526126cabbc1a0b7b727b78999332bec7876959519c187cd8db96db"
+        "hash": "6478f1648c76af5261784e25b95f1d344ecad8ff7886f049cd1c5c184fbf8444"
       }
     },
     {
@@ -1858,13 +1847,12 @@
         "text": "Creates a hash for a value using the [SHA-256](https://en.wikipedia.org/wiki/SHA-2) algorithm. Returns a promise.\n\nUse the [SubtleCrypto](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto) API to create a hash for the given value.\n\n",
         "tags": [
           "browser",
-          "utility",
           "advanced",
           "promise"
         ]
       },
       "meta": {
-        "hash": "beb6f68f5a8b63fd90a671758556aa72b5c061b681df049779cdf5631837966c"
+        "hash": "2a9b9f2743606d247f1074840edcabadb880c2c79f4e6deb3f2982bca2fe3307"
       }
     },
     {
@@ -1875,13 +1863,12 @@
         "text": "Creates a hash for a value using the [SHA-256](https://en.wikipedia.org/wiki/SHA-2) algorithm. Returns a promise.\n\nUse `crypto` API to create a hash for the given value, `setTimeout` to prevent blocking on a long operation, and a `Promise` to give it a familiar interface.\n\n",
         "tags": [
           "node",
-          "utility",
           "promise",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "e7b6164cfaacf4869f997747df3e135a1ec4342abf5a56498586513332272a96"
+        "hash": "66caf1183c70728fa7e9dd6256fc46cc49b3699decbaea8ec1269a2eec07992f"
       }
     },
     {
@@ -1936,14 +1923,13 @@
       "attributes": {
         "text": "Converts a color code to a `rgb()` or `rgba()` string if alpha value is provided.\n\nUse bitwise right-shift operator and mask bits with `&` (and) operator to convert a hexadecimal color code (with or without prefixed with `#`) to a string with the RGB values. If it's 3-digit color code, first convert to 6-digit version. If an alpha value is provided alongside 6-digit hex, give `rgba()` string in return.\n\n",
         "tags": [
-          "utility",
           "string",
           "math",
           "advanced"
         ]
       },
       "meta": {
-        "hash": "f61b08541372ded95a947cc570f57f7bbc9c7908ede569d59f294c5b9ef6feb1"
+        "hash": "b373e046d50f40ac11b6a538668cdcba6342afe7f92701a36ffe156a6e572edd"
       }
     },
     {
@@ -1969,9 +1955,8 @@
       "attributes": {
         "text": "Makes a `DELETE` request to the passed URL.\n\nUse `XMLHttpRequest` web api to make a `delete` request to the given `url`.\nHandle the `onload` event, by running the provided `callback` function.\nHandle the `onerror` event, by running the provided `err` function.\nOmit the third argument, `err` to log the request to the console's error stream by default.\n\n",
         "tags": [
-          "utility",
-          "url",
           "browser",
+          "url",
           "intermediate"
         ]
       },
@@ -1986,14 +1971,13 @@
       "attributes": {
         "text": "Makes a `GET` request to the passed URL.\n\nUse [`XMLHttpRequest`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest) web api to make a `get` request to the given `url`.\nHandle the `onload` event, by calling the given `callback` the `responseText`.\nHandle the `onerror` event, by running the provided `err` function.\nOmit the third argument, `err`, to log errors to the console's `error` stream by default.\n\n",
         "tags": [
-          "utility",
-          "url",
           "browser",
+          "url",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "c138c0e5f16d48997691a98de7c0bc43b228a0b4285f0ab2b26d230e209d1530"
+        "hash": "4c412ce4ed5d0573b7a87c273e07aa200c0151a564d41f828e6601202ea06416"
       }
     },
     {
@@ -2003,14 +1987,13 @@
       "attributes": {
         "text": "Makes a `POST` request to the passed URL.\n\nUse [`XMLHttpRequest`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest) web api to make a `post` request to the given `url`.\nSet the value of an `HTTP` request header with `setRequestHeader` method.\nHandle the `onload` event, by calling the given `callback` the `responseText`.\nHandle the `onerror` event, by running the provided `err` function.\nOmit the third argument, `data`, to send no data to the provided `url`.\nOmit the fourth argument, `err`, to log errors to the console's `error` stream by default.\n\n",
         "tags": [
-          "utility",
-          "url",
           "browser",
+          "url",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "5b29941074f19769531b3320ec8d61e2b2bdc69735fb781bf7e880ff2080ec04"
+        "hash": "d842ebdfd968b1dfdd8a8aaa0d27e69608c4c02078b180c8439da72bfa558ec1"
       }
     },
     {
@@ -2020,9 +2003,8 @@
       "attributes": {
         "text": "Makes a `PUT` request to the passed URL.\n\nUse `XMLHttpRequest` web api to make a `put` request to the given `url`.\nSet the value of an `HTTP` request header with `setRequestHeader` method.\nHandle the `onload` event, by running the provided `callback` function.\nHandle the `onerror` event, by running the provided `err` function.\nOmit the last argument, `err` to log the request to the console's error stream by default.\n\n",
         "tags": [
-          "utility",
-          "url",
           "browser",
+          "url",
           "intermediate"
         ]
       },
@@ -2099,12 +2081,11 @@
         "text": "Indents each line in the provided string.\n\nUse `String.replace` and a regular expression to add the character specified by `indent` `count` times at the start of each line.\nOmit the third parameter, `indent`, to use a default indentation character of `' '`.\n\n",
         "tags": [
           "string",
-          "utility",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "544ebe19f71cab5f4b4ad5a6121d4327ebf2b09f04451151e7339c90c8924789"
+        "hash": "e744d3d9c040feecdd17afc470078ea47047250ed521e138936d1434eba7898a"
       }
     },
     {
@@ -2350,14 +2331,13 @@
         "text": "Returns `true` if the given string is an absolute URL, `false` otherwise.\n\nUse a regular expression to test if the string is an absolute URL.\n\n",
         "tags": [
           "string",
-          "utility",
           "browser",
           "url",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "7523c5d3ab85075efa61efc135bb1c8d85e2a2e5407ddc5768099993d46f13b5"
+        "hash": "71c32c111d21f3ed9c1af2c7216b6f81e8ab652b353ab3f938418738c2a00ac7"
       }
     },
     {
@@ -2368,12 +2348,11 @@
         "text": "Check if a date is after another date.\n\nUse the greater than operator (`>`) to check if the first date comes after the second one.\n\n",
         "tags": [
           "date",
-          "utility",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "19efe22718bca00459c41fa9df56c3574270c500bdd670873358052ccc870f5b"
+        "hash": "6e1abb3cac28b9ccf95e55db3daec18aeff50735be56cce96ffb326ff99f7669"
       }
     },
     {
@@ -2405,7 +2384,7 @@
         ]
       },
       "meta": {
-        "hash": "0694b883486ca56109cb2c2ad8ed3477c0c4ee84d2fa81884409c40302a13fa7"
+        "hash": "e7668258c3cf902fa59107db45e7d73f7cf506a3a2074905b1eb79bb0f5c3d33"
       }
     },
     {
@@ -2416,12 +2395,11 @@
         "text": "Check if a date is before another date.\n\nUse the less than operator (`<`) to check if the first date comes before the second one.\n\n",
         "tags": [
           "date",
-          "utility",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "e0d70480b239a585f907c965214a037ce23ae15f5484ab80930ea9f57cbe529e"
+        "hash": "3c6950661df4657fc49636fc97050e5a46a9337caaae3f5dd584d3aaf436b451"
       }
     },
     {
@@ -2446,13 +2424,12 @@
       "attributes": {
         "text": "Determines if the current runtime environment is a browser so that front-end modules can run on the server (Node) without throwing errors.\n\nUse `Array.prototype.includes()` on the `typeof` values of both `window` and `document` (globals usually only available in a browser environment unless they were explicitly defined), which will return `true` if one of them is `undefined`.\n`typeof` allows globals to be checked for existence without throwing a `ReferenceError`.\nIf both of them are not `undefined`, then the current environment is assumed to be a browser.\n\n",
         "tags": [
-          "utility",
           "browser",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "6fb24837c043a0cc320a46695ef0e286a558aaf06e9354407569ae61c4a8d0bd"
+        "hash": "8aa110b4d9adf4e44eb0b770309dacb3b372268143223e862749519e6a896f1c"
       }
     },
     {
@@ -2588,12 +2565,11 @@
         "text": "Checks if a string is lower case.\n\nConvert the given string to lower case, using `String.toLowerCase()` and compare it to the original.\n\n",
         "tags": [
           "string",
-          "utility",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "e47bc176d868f3aab83f762997bf9d355258607594648573d2482faf7fc08826"
+        "hash": "a665c8ada73822926f03aa49bf65551ce20459dc4466ce5d5306690d53e04285"
       }
     },
     {
@@ -2604,12 +2580,11 @@
         "text": "Checks if the given value is equal to negative zero (`-0`).\n\nChecks whether a passed value is equal to `0` and if `1` divided by the value equals `-Infinity`.\n\n",
         "tags": [
           "math",
-          "utility",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "ec55fd2848f1443613e33d59634ecaefc9dc82b721424b5416830a7389e1ce6e"
+        "hash": "c8af31822c3b74d0e3e3099ff770aa467825ecd8edc3e6fb07f84a5af9d615af"
       }
     },
     {
@@ -2624,7 +2599,7 @@
         ]
       },
       "meta": {
-        "hash": "c09e927ebf399af3fa3bd3873b407f26130f86e6abb7871f88e1892baed899bf"
+        "hash": "f8d09a514807d27b893a37f2efc76fb01336ee118241e7df5a3913ef460850db"
       }
     },
     {
@@ -2767,7 +2742,7 @@
         ]
       },
       "meta": {
-        "hash": "2df9322464af125f8a33dad1f15a7df5ccd7d8f9322efe871dc026974971ac85"
+        "hash": "dc7d429725fc03d1b33fc1702fd881dfffce74fe4b8291225a54ec2214667822"
       }
     },
     {
@@ -2811,12 +2786,11 @@
         "text": "Check if a date is the same as another date.\n\nUse `Date.prototype.toISOString()` and strict equality checking (`===`) to check if the first date is the same as the second one.\n\n",
         "tags": [
           "date",
-          "utility",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "4accb95c8fb5ac770c73c78b6236938773499c74617df09a1f73a60abd6f44d7"
+        "hash": "f2cef555daea23fb46e93ad5bd556840c55f343924578b26329983c0407d88d5"
       }
     },
     {
@@ -2919,7 +2893,6 @@
         "text": "Checks if a string is upper case.\n\nConvert the given string to upper case, using `String.prototype.toUpperCase()` and compare it to the original.\n\n",
         "tags": [
           "string",
-          "utility",
           "beginner"
         ]
       },
@@ -3001,7 +2974,7 @@
         ]
       },
       "meta": {
-        "hash": "682a6b7cfeb58efe9ed7b6daf467c45397df0acecfc21cab59e5ffedd03503ba"
+        "hash": "362fddaa6244404741e84bca6fc442a101fdb642af53b299e8b9994d0d7162d8"
       }
     },
     {
@@ -3077,12 +3050,11 @@
         "tags": [
           "array",
           "string",
-          "utility",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "1277ce52444adcbc3a7b62d5c9019aa3cf01293e7749b8d0e1871ae2aa6a8c88"
+        "hash": "bc43866db3708c27d333faa8a71f9075af24899a7785496ca28206061d4910d1"
       }
     },
     {
@@ -3108,12 +3080,11 @@
         "text": "Implementation of the [Luhn Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) used to validate a variety of identification numbers, such as credit card numbers, IMEI numbers, National Provider Identifier numbers etc.\n\nUse `String.prototype.split('')`, `Array.prototype.reverse()` and `Array.prototype.map()` in combination with `parseInt()` to obtain an array of digits.\nUse `Array.prototype.splice(0,1)` to obtain the last digit.\nUse `Array.prototype.reduce()` to implement the Luhn Algorithm.\nReturn `true` if `sum` is divisible by `10`, `false` otherwise.\n\n",
         "tags": [
           "math",
-          "utility",
           "advanced"
         ]
       },
       "meta": {
-        "hash": "ab83bac8546d02dfe4227792750f0b4c64cd2c8f8ce6063eef2a3f4357210d63"
+        "hash": "d7c1a6ff15bf0d8f33dddfcebe892089a7902a94fc18803fafd5fe76ebdd3ffc"
       }
     },
     {
@@ -3173,12 +3144,11 @@
           "string",
           "array",
           "function",
-          "utility",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "c4df98d941aeadd165c6a02143d79f7a9bf013f8c221f709aa545bf83495a956"
+        "hash": "ef9621c9cc38b1f4ab76ed4246de33ef9125bfa44f4ecc8113e7890d99b61a01"
       }
     },
     {
@@ -3205,7 +3175,6 @@
         "text": "Replaces all but the last `num` of characters with the specified mask character.\n\nUse `String.prototype.slice()` to grab the portion of the characters that will remain unmasked and use `String.padStart()` to fill the beginning of the string with the mask character up to the original length.\nOmit the second argument, `num`, to keep a default of `4` characters unmasked. If `num` is negative, the unmasked characters will be at the start of the string.\nOmit the third argument, `mask`, to use a default character of `'*'` for the mask.\n\n",
         "tags": [
           "string",
-          "utility",
           "intermediate"
         ]
       },
@@ -3429,12 +3398,12 @@
       "attributes": {
         "text": "Returns the index of the function in an array of functions which executed the fastest.\n\nUse `Array.prototype.map()` to generate an array where each value is the total time taken to execute the function after `iterations` times. Use the difference in `performance.now()` values before and after to get the total time in milliseconds to a high degree of accuracy.\nUse `Math.min()` to find the minimum execution time, and return the index of that shortest time which corresponds to the index of the most performant function.\nOmit the second argument, `iterations`, to use a default of 10,000 iterations. The more iterations, the more reliable the result but the longer it will take.\n\n",
         "tags": [
-          "utility",
-          "function"
+          "function",
+          "intermediate"
         ]
       },
       "meta": {
-        "hash": "120e31fa38796906a99beccdc457e83a8075e6ec72b5a937e03913b2e996ae26"
+        "hash": "2334d95a86e23b04825a6b9f696d9866749f4d69e6c6003651cc69dccc71e98d"
       }
     },
     {
@@ -3506,13 +3475,12 @@
       "attributes": {
         "text": "Creates a function that gets the argument at index `n`. If `n` is negative, the nth argument from the end is returned.\n\nUse `Array.prototype.slice()` to get the desired argument at index `n`.\n\n",
         "tags": [
-          "utility",
           "function",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "1885078f5fddc5de00844a837ab3c427f770c5325a70d5362ecab26c1c904125"
+        "hash": "837bf47e8e264266d22fc1d8186b6b5561a94500a1b725ce897ffbd6e0df1b98"
       }
     },
     {
@@ -3585,14 +3553,13 @@
       "attributes": {
         "text": "Returns a query string generated from the key-value pairs of the given object.\n\nUse `Array.prototype.reduce()` on `Object.entries(queryParameters)` to create the query string.\nDetermine the `symbol` to be either `?` or `&` based on the `length` of `queryString` and concatenate `val` to `queryString` only if it's a string.\nReturn the `queryString` or an empty string when the `queryParameters` are falsy.\n\n",
         "tags": [
-          "utility",
           "object",
           "function",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "406723128cb71796de5503b04c137c89c9e9bd245164483c74b0229df50d2021"
+        "hash": "b031c3387ef66411ab5d295788eac4247ada5b4b068dda90603d3c973890bc26"
       }
     },
     {
@@ -3805,13 +3772,13 @@
       "attributes": {
         "text": "Parse an HTTP Cookie header string and return an object of all cookie name-value pairs.\n\nUse `String.prototype.split(';')` to separate key-value pairs from each other.\nUse `Array.prototype.map()` and `String.prototype.split('=')` to separate keys from values in each pair.\nUse `Array.prototype.reduce()` and `decodeURIComponent()` to create an object with all key-value pairs.\n\n",
         "tags": [
-          "utility",
+          "browser",
           "string",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "c25aef075df93042a81bd98ebd7b77aefb91df3f08b9f1d2e7859ec0d95ad55b"
+        "hash": "5bcee736e351fb23173369a678122d12b4278a02ab3204cfee2b3b0d3c598544"
       }
     },
     {
@@ -3938,7 +3905,7 @@
         ]
       },
       "meta": {
-        "hash": "345bea897a67c1b851ef4110b3db692140064c418703a5d102e057b002808de3"
+        "hash": "0eb844801e767edcaa6a882a6dce4b5b1dadecb53a92d6ec259d36c57b6a3dd0"
       }
     },
     {
@@ -3994,12 +3961,11 @@
         "text": "Returns the prefixed version (if necessary) of a CSS property that the browser supports.\n\nUse `Array.prototype.findIndex()` on an array of vendor prefix strings to test if `document.body` has one of them defined in its `CSSStyleDeclaration` object, otherwise return `null`.\nUse `String.prototype.charAt()` and `String.prototype.toUpperCase()` to capitalize the property, which will be appended to the vendor prefix string.\n\n",
         "tags": [
           "browser",
-          "utility",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "6668f37f9f1158b2bdd292ad64defea6e33a0b2908ea1e494b191dcaa9f039d6"
+        "hash": "942f8061fb78b9a96dc0da7e249bb8d5c1b2902f9101d6dbdae272c95a49ab92"
       }
     },
     {
@@ -4009,14 +3975,13 @@
       "attributes": {
         "text": "Converts a number in bytes to a human-readable string.\n\nUse an array dictionary of units to be accessed based on the exponent.\nUse `Number.toPrecision()` to truncate the number to a certain number of digits.\nReturn the prettified string by building it up, taking into account the supplied options and whether it is negative or not.\nOmit the second argument, `precision`, to use a default precision of `3` digits.\nOmit the third argument, `addSpace`, to add space between the number and unit by default.\n\n",
         "tags": [
-          "utility",
           "string",
           "math",
           "advanced"
         ]
       },
       "meta": {
-        "hash": "e752de4a4f2b339851e796a5289e7adde51cf7e672b8230fd97bf79cf7330758"
+        "hash": "7053095cc3085b11fde252bfec58b3888290d30936fe7cd7b570cd075d29225a"
       }
     },
     {
@@ -4132,15 +4097,15 @@
       "type": "snippetListing",
       "title": "randomHexColorCode",
       "attributes": {
-        "text": "Generates a random hexadecimal color code.\n\nUse `Math.random` to generate a random 24-bit(6x4bits) hexadecimal number. Use bit shifting and then convert it to an hexadecimal String using `toString(16)`.\n\n",
+        "text": "Generates a random hexadecimal color code.\n\nUse `Math.random` to generate a random 24-bit(6x4bits) hexadecimal number.\nUse bit shifting and then convert it to an hexadecimal String using `toString(16)`.\n\n",
         "tags": [
-          "utility",
+          "math",
           "random",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "42788f8392f5511db3641dbe2ab92b2c043b3b5209e95c386c73e5d96eaa63af"
+        "hash": "4af37a3a8c080de92657476319fc3a6d4ff7febfe34f8391b81d97336bb147d6"
       }
     },
     {
@@ -4151,13 +4116,12 @@
         "text": "Returns an array of n random integers in the specified range.\n\nUse `Array.from()` to create an empty array of the specific length, `Math.random()` to generate a random number and map it to the desired range, using `Math.floor()` to make it an integer.\n\n",
         "tags": [
           "math",
-          "utility",
           "random",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "7bff02cd849d994da1229f3153cca71b4c054d6774ab732101a5f60a0a04ba3a"
+        "hash": "6887efc77e1a29d40b7194fe16a2005b8f33f15bb92ee3f0329b55be27f21225"
       }
     },
     {
@@ -4168,13 +4132,12 @@
         "text": "Returns a random integer in the specified range.\n\nUse `Math.random()` to generate a random number and map it to the desired range, using `Math.floor()` to make it an integer.\n\n",
         "tags": [
           "math",
-          "utility",
           "random",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "8d8cca3d593e677c8a4ffc17e9f97b3018f800e7c014daa3462edc152fbbeec7"
+        "hash": "939080b53f5ebf57e2fcb7b88cc827902a3d01c428eed9e989dd2545c3717b6f"
       }
     },
     {
@@ -4185,13 +4148,12 @@
         "text": "Returns a random number in the specified range.\n\nUse `Math.random()` to generate a random value, map it to the desired range using multiplication.\n\n",
         "tags": [
           "math",
-          "utility",
           "random",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "c86e3227e32565afb301805798da3a46756e13bff0115b880fcc3175a58d95af"
+        "hash": "209c6f231e06e1840d46fd6f836961f9dfc8c954e6675a230863eb0824a35c7c"
       }
     },
     {
@@ -4231,15 +4193,14 @@
       "type": "snippetListing",
       "title": "recordAnimationFrames",
       "attributes": {
-        "text": "Invokes the provided callback on each animation frame.\n\nUse recursion. \nProvided that `running` is `true`, continue invoking `window.requestAnimationFrame()` which invokes the provided callback. \nReturn an object with two methods `start` and `stop` to allow manual control of the recording. \nOmit the second argument, `autoStart`, to implicitly call `start` when the function is invoked.\n\n",
+        "text": "Invokes the provided callback on each animation frame.\n\nUse recursion.\nProvided that `running` is `true`, continue invoking `window.requestAnimationFrame()` which invokes the provided callback.\nReturn an object with two methods `start` and `stop` to allow manual control of the recording.\nOmit the second argument, `autoStart`, to implicitly call `start` when the function is invoked.\n\n",
         "tags": [
           "browser",
-          "utility",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "b780a5af9c22faa9601191aff53c24d55f5e88b62ac79fd2e02517f9a724b502"
+        "hash": "f734a70077b4723415eae15573378f1596b6b8810831d8784e730771fdba0bfa"
       }
     },
     {
@@ -4332,7 +4293,7 @@
         ]
       },
       "meta": {
-        "hash": "0b549930f468d934adcb898f371ef590beff15bf2816d7e5c65264a567d68486"
+        "hash": "be8ec39c092128ba679a3f0421b6abc34ad891dec85354caa419dc4104687a05"
       }
     },
     {
@@ -4389,12 +4350,13 @@
       "attributes": {
         "text": "Converts the values of RGB components to a color code.\n\nConvert given RGB parameters to hexadecimal string using bitwise left-shift operator (`<<`) and `toString(16)`, then `String.padStart(6,'0')` to get a 6-digit hexadecimal value.\n\n",
         "tags": [
-          "utility",
+          "string",
+          "math",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "592446fabae44d631396de3441738710626c4d274eaabe3dfdb9b822ce3a5179"
+        "hash": "85235b8cc5276d21a4f2659a8e04c65dd1b3cab52d1ff700750253dc11b5b5be"
       }
     },
     {
@@ -4501,12 +4463,11 @@
         "text": "Hashes the input string into a whole number.\n\nUse `String.prototype.split('')` and `Array.prototype.reduce()` to create a hash of the input string, utilizing bit shifting.\n\n",
         "tags": [
           "math",
-          "utility",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "58d91b4760b4af29df95cf1b073166c02660f9af3d46c950fba64b922c999ba1"
+        "hash": "957622c5cf0b59acacea276978fcf66cef1bdc6f5cc16dde77eda3bc8c3686c8"
       }
     },
     {
@@ -4516,13 +4477,13 @@
       "attributes": {
         "text": "Serialize a cookie name-value pair into a Set-Cookie header string.\n\nUse template literals and `encodeURIComponent()` to create the appropriate string.\n\n",
         "tags": [
-          "utility",
+          "browser",
           "string",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "defdaa306864196a4f561c37c4c7f74ffc159406c4538a0f7e1f3f153840eebe"
+        "hash": "740ef7d2635d22c19eca6fdce566d679ddfeb5f2a3c382665efe205c2cb1001b"
       }
     },
     {
@@ -4648,7 +4609,7 @@
         ]
       },
       "meta": {
-        "hash": "f77974f024d9c020fe8efe4ecc77686faf8ad690122f4c071fe5205df921e052"
+        "hash": "24b93b68a59b49f245590930fed6fb82e286ce09f90e292466cde63c1784c347"
       }
     },
     {
@@ -4851,13 +4812,12 @@
         "text": "Removes HTML/XML tags from string.\n\nUse a regular expression to remove HTML/XML tags from a string.\n\n",
         "tags": [
           "string",
-          "utility",
           "regexp",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "a33dbe87821f5017cf4238c69d9effcfe993698f055fec5e915f4fff68c01e34"
+        "hash": "5d500a11b098ee757fd6803e199a191c529e4070d47e0d576a6f290d0b6c3d14"
       }
     },
     {
@@ -5070,12 +5030,12 @@
       "attributes": {
         "text": "Measures the time taken by a function to execute.\n\nUse `console.time()` and `console.timeEnd()` to measure the difference between the start and end times to determine how long the callback took to execute.\n\n",
         "tags": [
-          "utility",
+          "function",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "26246364ba1e8e3f52a51c8e1f329af721b05a5d307ed88bf31ccd2620c0deee"
+        "hash": "8017947366418af3f9991be27f5f622bee0b1cb97f54b46395455800fa015139"
       }
     },
     {
@@ -5101,12 +5061,13 @@
       "attributes": {
         "text": "Take a number and return specified currency formatting.\n\nUse `Intl.NumberFormat` to enable country / currency sensitive formatting.\n\n",
         "tags": [
-          "utility",
+          "math",
+          "string",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "2f817f7dc3ca24a50bfaa1a59dec3ec6d8ee3392ac2d7f3ecae3a93a9c96f09c"
+        "hash": "41156e65825b59559469feca57214c9f802cb42fba5a16f5fb5990033a2f7059"
       }
     },
     {
@@ -5116,7 +5077,6 @@
       "attributes": {
         "text": "Converts a number to a decimal mark formatted string.\n\nUse `Number.prototype.toLocaleString()` to convert the numbre to decimal mark format.\n\n",
         "tags": [
-          "utility",
           "math",
           "beginner"
         ]
@@ -5193,13 +5153,12 @@
       "attributes": {
         "text": "Adds an ordinal suffix to a number.\n\nUse the modulo operator (`%`) to find values of single and tens digits.\nFind which ordinal pattern digits match.\nIf digit is found in teens pattern, use teens ordinal.\n\n",
         "tags": [
-          "utility",
           "math",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "0ebd3351685fd96bf678c2baa38fabc9aa18bd6a3fa6674ea0bae9663424ea5f"
+        "hash": "b9a61d3a7c80d3140aa3cbfea42f8af1ed15cc47bc8d224685c0d9127e74813c"
       }
     },
     {
@@ -5572,13 +5531,12 @@
         "text": "Joins all given URL segments together, then normalizes the resulting URL.\n\nUse `String.prototype.join('/')` to combine URL segments, then a series of `String.prototype.replace()` calls with various regexps to normalize the resulting URL (remove double slashes, add proper slashes for protocol, remove slashes before parameters, combine parameters with `'&'` and normalize first parameter delimiter).\n\n",
         "tags": [
           "string",
-          "utility",
           "regexp",
           "advanced"
         ]
       },
       "meta": {
-        "hash": "6050cfa3a2a39089151bacfce1f5cedaec12f5da253dbc20a56dfaf50cb8924b"
+        "hash": "1de784a29009c7bf3e08cc95110316c4362125f603e862c29c07be50f54186d9"
       }
     },
     {
@@ -5589,13 +5547,12 @@
         "text": "Generates a UUID in a browser.\n\nUse `crypto` API to generate a UUID, compliant with [RFC4122](https://www.ietf.org/rfc/rfc4122.txt) version 4.\n\n",
         "tags": [
           "browser",
-          "utility",
           "random",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "9f84a12da85558ebdb189097dbc581b338e07d52eedc5975f1001133b123aad2"
+        "hash": "24c28431e9eb84a8a0f8e38370c3635ea9b68482c7a894895fd8ef09c1eb02aa"
       }
     },
     {
@@ -5606,13 +5563,12 @@
         "text": "Generates a UUID in Node.JS.\n\nUse `crypto` API to generate a UUID, compliant with [RFC4122](https://www.ietf.org/rfc/rfc4122.txt) version 4.\n\n",
         "tags": [
           "node",
-          "utility",
           "random",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "79604b0f854a91af789fea8416c7099acfb3633259ef387f52a21337d2242478"
+        "hash": "2322d2d42be4e3037ec6d4e707358bd114f1378cd64dee48e9a0cb8c918efa3f"
       }
     },
     {
@@ -5622,13 +5578,12 @@
       "attributes": {
         "text": "Returns `true` if the given value is a number, `false` otherwise.\n\nUse `!isNaN()` in combination with `parseFloat()` to check if the argument is a number.\nUse `isFinite()` to check if the number is finite.\nUse `Number()` to check if the coercion holds.\n\n",
         "tags": [
-          "utility",
           "math",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "73fc55564fa0b59a71553aa442bda666cbcddbcd618f9ca53c2b55e42a7c26ca"
+        "hash": "dffaec8a8f2b3c66e709b2e9ee0a57082be53305f000db3d75983ae103866607"
       }
     },
     {
@@ -5731,13 +5686,13 @@
       "attributes": {
         "text": "Returns `true` if the string is `y`/`yes` or `false` if the string is `n`/`no`.\n\nUse `RegExp.test()` to check if the string evaluates to `y/yes` or `n/no`.\nOmit the second argument, `def` to set the default answer as `no`.\n\n",
         "tags": [
-          "utility",
+          "string",
           "regexp",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "6365f144def8abb711b890f8689ff8c9f1f1aee092525583fa913057ba623472"
+        "hash": "8b858ab37c0cd7f7a09f54810b9f435037922cdbf7c4dd659899790476152479"
       }
     },
     {

@@ -118,15 +118,14 @@
         "tags": [
           "array",
           "string",
-          "utility",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "aeabb3d1d2be2d44fd8a20da3b069fdd1a8ad963f27e3e1ae9f5e8b40a8908cb",
+        "hash": "e5c607cd29800661ad8ea0506afaa42cd3f3936f835714939ceba49a5bd95638",
         "firstSeen": "1530120403",
-        "lastUpdated": "1565681352",
-        "updateCount": 11,
+        "lastUpdated": "1587067653",
+        "updateCount": 12,
         "authorCount": 5
       }
     },
@@ -196,15 +195,14 @@
         "tags": [
           "node",
           "string",
-          "utility",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "32988360d63d6d62251314a88d3f4482ec3a265d67154a92a86d4140bd61c54b",
+        "hash": "6b8f586d9f697e08949128ec6774022484444daa8575c45a28fb1f9c8ba2c2bc",
         "firstSeen": "1516218201",
-        "lastUpdated": "1565681352",
-        "updateCount": 4,
+        "lastUpdated": "1587067653",
+        "updateCount": 5,
         "authorCount": 3
       }
     },
@@ -480,15 +478,14 @@
         "tags": [
           "node",
           "string",
-          "utility",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "1c7836009987b8b1097b54a84c38144f6cb643477f08f00b1a37e274cf0c9f78",
+        "hash": "afb23f750b1460a89dca8424056fa581a7befd6e4f8b369ac2e93d50c94d9749",
         "firstSeen": "1516218201",
-        "lastUpdated": "1565681352",
-        "updateCount": 5,
+        "lastUpdated": "1587067653",
+        "updateCount": 6,
         "authorCount": 3
       }
     },
@@ -607,17 +604,16 @@
           "example": "castArray('foo'); // ['foo']\ncastArray([1]); // [1]"
         },
         "tags": [
-          "utility",
-          "array",
           "type",
+          "array",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "307add91ea4d5c2a122256f799120f580ac235567523dddeeadd6500f1e81e94",
+        "hash": "2f0d1b37cbcc8d6646fda98864848a41cb6ecaec02f7a0ba52bb45c87a210441",
         "firstSeen": "1516733652",
-        "lastUpdated": "1565681352",
-        "updateCount": 5,
+        "lastUpdated": "1587067653",
+        "updateCount": 6,
         "authorCount": 4
       }
     },
@@ -686,15 +682,14 @@
         "tags": [
           "function",
           "object",
-          "utility",
           "beginner"
         ]
       },
       "meta": {
         "hash": "52eca7b91d4205abe619c672895a773fc7ed7c2e151fd37e83ceda54ee74ad71",
         "firstSeen": "1552787580",
-        "lastUpdated": "1577784150",
-        "updateCount": 77,
+        "lastUpdated": "1587067653",
+        "updateCount": 78,
         "authorCount": 7
       }
     },
@@ -761,16 +756,17 @@
           "example": "const regExp = /lorem ipsum/gi;\nconst regExp2 = cloneRegExp(regExp); // /lorem ipsum/gi"
         },
         "tags": [
-          "utility",
+          "type",
+          "string",
           "regexp",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "3b7e9a506c229c792da093336574e3524cd1a8c794d18fc450f469f171ff83cf",
+        "hash": "8a748ad892a46df9ff2a5e64aba3b9a35fbd9a0d0351c21e2c2bf1d40a39c046",
         "firstSeen": "1514828747",
-        "lastUpdated": "1565681352",
-        "updateCount": 3,
+        "lastUpdated": "1587067653",
+        "updateCount": 4,
         "authorCount": 2
       }
     },
@@ -787,15 +783,15 @@
           "example": "coalesce(null, undefined, '', NaN, 'Waldo'); // ''"
         },
         "tags": [
-          "utility",
+          "type",
           "beginner"
         ]
       },
       "meta": {
         "hash": "7c0db11447039e7d9bce2ed420ca1f69671b25928d272596587192a84aa78e31",
         "firstSeen": "1513498135",
-        "lastUpdated": "1583442418",
-        "updateCount": 11,
+        "lastUpdated": "1587067653",
+        "updateCount": 12,
         "authorCount": 6
       }
     },
@@ -812,15 +808,15 @@
           "example": "const customCoalesce = coalesceFactory(_ => ![null, undefined, '', NaN].includes(_));\ncustomCoalesce(undefined, null, NaN, '', 'Waldo'); // \"Waldo\""
         },
         "tags": [
-          "utility",
+          "type",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "b85ec57d815ff34ba3906195440fce5d2ad9f33b64d7d96159c0e1125fee283c",
+        "hash": "26bbe0fe97b8a037808ae4b7310e54cd3a31f6a0f0a0d9c6a2ae733046501132",
         "firstSeen": "1513592136",
-        "lastUpdated": "1565681352",
-        "updateCount": 6,
+        "lastUpdated": "1587067653",
+        "updateCount": 7,
         "authorCount": 5
       }
     },
@@ -864,16 +860,15 @@
         },
         "tags": [
           "node",
-          "utility",
           "string",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "1ce726b8cbc9f87ff8ff6d68e0678325523b1118fa038b97f53ddad9031dbe23",
+        "hash": "d33a3685273eb81bf2a224330007c5425f434c2292859bdfebbe1fbafd5da48c",
         "firstSeen": "1515843419",
-        "lastUpdated": "1565681352",
-        "updateCount": 4,
+        "lastUpdated": "1587067653",
+        "updateCount": 5,
         "authorCount": 3
       }
     },
@@ -1162,7 +1157,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "createElement.md",
-        "text": "Creates an element from a string (without appending it to the document). \nIf the given string contains multiple elements, only the first one will be returned.\n\nUse `document.createElement()` to create a new element.\nSet its `innerHTML` to the string supplied as the argument. \nUse `ParentNode.firstElementChild` to return the element version of the string.\n\n",
+        "text": "Creates an element from a string (without appending it to the document).\nIf the given string contains multiple elements, only the first one will be returned.\n\nUse `document.createElement()` to create a new element.\nSet its `innerHTML` to the string supplied as the argument.\nUse `ParentNode.firstElementChild` to return the element version of the string.\n\n",
         "codeBlocks": {
           "es6": "const createElement = str => {\n  const el = document.createElement('div');\n  el.innerHTML = str;\n  return el.firstElementChild;\n};",
           "es5": "var createElement = function createElement(str) {\n  var el = document.createElement('div');\n  el.innerHTML = str;\n  return el.firstElementChild;\n};",
@@ -1170,15 +1165,14 @@
         },
         "tags": [
           "browser",
-          "utility",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "d162fbc50166f304216db6ea700e5fc7f428ea33d50b204ae921e1c58552a4e0",
+        "hash": "de8ab0037be4b5d74805237ea414516a1ca227fa2b693b01190bd50f01d362bb",
         "firstSeen": "1515169304",
-        "lastUpdated": "1565681352",
-        "updateCount": 5,
+        "lastUpdated": "1587067653",
+        "updateCount": 6,
         "authorCount": 3
       }
     },
@@ -1223,15 +1217,14 @@
         "tags": [
           "string",
           "array",
-          "utility",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "3169ab83e588063262fa6a01f7d7df7bd9521345c65a7c7f874f577478c90305",
+        "hash": "e53a8dfbb2ab55c1678e462164268773fbc3876ce9cd8326fb44428694fb9f72",
         "firstSeen": "1530122274",
-        "lastUpdated": "1565681352",
-        "updateCount": 5,
+        "lastUpdated": "1587067653",
+        "updateCount": 6,
         "authorCount": 4
       }
     },
@@ -1398,7 +1391,7 @@
         "fileName": "deepClone.md",
         "text": "Creates a deep clone of an object.\n\nUse recursion.\nCheck if the passed object is `null` and, if so, return `null`.\nUse `Object.assign()` and an empty object (`{}`) to create a shallow clone of the original.\nUse `Object.keys()` and `Array.prototype.forEach()` to determine which key-value pairs need to be deep cloned.\n\n",
         "codeBlocks": {
-          "es6": "const deepClone = obj => {\n  if (obj === null) return null;\n  let clone = Object.assign({}, obj);\n  Object.keys(clone).forEach(\n    key => (clone[key] = typeof obj[key] === 'object' ? deepClone(obj[key]) : obj[key])\n  );\n  return Array.isArray(obj) && obj.length\n    ? (clone.length = obj.length) && Array.from(clone)\n    : Array.isArray(obj)\n      ? Array.from(obj)\n      : clone;\n};",
+          "es6": "const deepClone = obj => {\n  if (obj === null) return null;\n  let clone = Object.assign({}, obj);\n  Object.keys(clone).forEach(\n    key => (clone[key] = typeof obj[key] === 'object' ? deepClone(obj[key]) : obj[key])\n  );\n  return Array.isArray(obj) && obj.length\n    ? (clone.length = obj.length) && Array.from(clone)\n    : Array.isArray(obj)\n    ? Array.from(obj)\n    : clone;\n};",
           "es5": "function _typeof(obj) { \"@babel/helpers - typeof\"; if (typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }; } return _typeof(obj); }\n\nvar deepClone = function deepClone(obj) {\n  if (obj === null) return null;\n  var clone = Object.assign({}, obj);\n  Object.keys(clone).forEach(function (key) {\n    return clone[key] = _typeof(obj[key]) === 'object' ? deepClone(obj[key]) : obj[key];\n  });\n  return Array.isArray(obj) && obj.length ? (clone.length = obj.length) && Array.from(clone) : Array.isArray(obj) ? Array.from(obj) : clone;\n};",
           "example": "const a = { foo: 'bar', obj: { a: 1, b: 2 } };\nconst b = deepClone(a); // a !== b, a.obj !== b.obj"
         },
@@ -1409,10 +1402,10 @@
         ]
       },
       "meta": {
-        "hash": "77a01af8797ecbe71b9c9412d21c144c03a46a49dd3d0e7d869c3df38b39b2b4",
+        "hash": "0a4684d6fc79bdbbac31df3af6c493ba7c881936ada5bc52824b4f26ca177459",
         "firstSeen": "1516733326",
-        "lastUpdated": "1587043509",
-        "updateCount": 86,
+        "lastUpdated": "1587046062",
+        "updateCount": 87,
         "authorCount": 9
       }
     },
@@ -1501,7 +1494,7 @@
         "fileName": "deepMapKeys.md",
         "text": "Deep maps an object's keys.\n\nCreates an object with the same values as the provided object and keys generated by running the provided function for each key.\nUse `Object.keys(obj)` to iterate over the object's keys. \nUse `Array.prototype.reduce()` to create a new object with the same values and mapped keys using `fn`.\n\n",
         "codeBlocks": {
-          "es6": "const deepMapKeys = (obj, f) =>\n  Array.isArray(obj)\n    ? obj.map(val => deepMapKeys(val, f))\n    : typeof obj === 'object'\n      ? Object.keys(obj).reduce((acc, current) => {\n        const val = obj[current];\n        acc[f(current)] =\n          val !== null && typeof val === 'object' ? deepMapKeys(val, f) : (acc[f(current)] = val);\n        return acc;\n      }, {})\n      : obj;",
+          "es6": "const deepMapKeys = (obj, f) =>\n  Array.isArray(obj)\n    ? obj.map(val => deepMapKeys(val, f))\n    : typeof obj === 'object'\n    ? Object.keys(obj).reduce((acc, current) => {\n        const val = obj[current];\n        acc[f(current)] =\n          val !== null && typeof val === 'object' ? deepMapKeys(val, f) : (acc[f(current)] = val);\n        return acc;\n      }, {})\n    : obj;",
           "es5": "function _typeof(obj) { \"@babel/helpers - typeof\"; if (typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }; } return _typeof(obj); }\n\nvar deepMapKeys = function deepMapKeys(obj, f) {\n  return Array.isArray(obj) ? obj.map(function (val) {\n    return deepMapKeys(val, f);\n  }) : _typeof(obj) === 'object' ? Object.keys(obj).reduce(function (acc, current) {\n    var val = obj[current];\n    acc[f(current)] = val !== null && _typeof(val) === 'object' ? deepMapKeys(val, f) : acc[f(current)] = val;\n    return acc;\n  }, {}) : obj;\n};",
           "example": "const obj = {\n  foo: '1',\n  nested: {\n    child: {\n      withArray: [\n        {\n          grandChild: ['hello']\n        }\n      ]\n    }\n  }\n};\nconst upperKeysObj = deepMapKeys(obj, key => key.toUpperCase());\n/*\n{\n  \"FOO\":\"1\",\n  \"NESTED\":{\n    \"CHILD\":{\n      \"WITHARRAY\":[\n        {\n          \"GRANDCHILD\":[ 'hello' ]\n        }\n      ]\n    }\n  }\n}\n*/"
         },
@@ -1512,10 +1505,10 @@
         ]
       },
       "meta": {
-        "hash": "6fa14364405f7b99aa49c2157bdc08c02b4ce2f288db29a4348a6983460933c7",
+        "hash": "a4e1e33c0688dbf1ca231d9d8ea315ffed93b7f83f5d8cbf0714f10fdfeda8cf",
         "firstSeen": "1544374334",
-        "lastUpdated": "1587043509",
-        "updateCount": 98,
+        "lastUpdated": "1587046062",
+        "updateCount": 99,
         "authorCount": 4
       }
     },
@@ -1730,7 +1723,7 @@
         "fileName": "dig.md",
         "text": "Returns the target value in a nested JSON object, based on the given key.\n\nUse the `in` operator to check if `target` exists in `obj`.\nIf found, return the value of `obj[target]`, otherwise use `Object.values(obj)` and `Array.prototype.reduce()` to recursively call `dig` on each nested object until the first matching key/value pair is found.\n\n",
         "codeBlocks": {
-          "es6": "const dig = (obj, target) =>\n  target in obj\n    ? obj[target]\n    : Object.values(obj).reduce((acc, val) => {\n      if (acc !== undefined) return acc;\n      if (typeof val === 'object') return dig(val, target);\n    }, undefined);",
+          "es6": "const dig = (obj, target) =>\n  target in obj\n    ? obj[target]\n    : Object.values(obj).reduce((acc, val) => {\n        if (acc !== undefined) return acc;\n        if (typeof val === 'object') return dig(val, target);\n      }, undefined);",
           "es5": "function _typeof(obj) { \"@babel/helpers - typeof\"; if (typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }; } return _typeof(obj); }\n\nvar dig = function dig(obj, target) {\n  return target in obj ? obj[target] : Object.values(obj).reduce(function (acc, val) {\n    if (acc !== undefined) return acc;\n    if (_typeof(val) === 'object') return dig(val, target);\n  }, undefined);\n};",
           "example": "const data = {\n  level1: {\n    level2: {\n      level3: 'some data'\n    }\n  }\n};\ndig(data, 'level3'); // 'some data'\ndig(data, 'level4'); // undefined"
         },
@@ -1741,10 +1734,10 @@
         ]
       },
       "meta": {
-        "hash": "bdc202436bee09f06a353d31841c6cfff33e8efead34c6c56ae1a1413284976d",
+        "hash": "484bd222e636e8a8409c30ddb1fe6e3fe72ab7a43f2edf089b2758d5e9bee528",
         "firstSeen": "1531080384",
-        "lastUpdated": "1587043509",
-        "updateCount": 123,
+        "lastUpdated": "1587046062",
+        "updateCount": 124,
         "authorCount": 5
       }
     },
@@ -1987,7 +1980,7 @@
         "codeBlocks": {
           "es6": "const equals = (a, b) => {\n  if (a === b) return true;\n  if (a instanceof Date && b instanceof Date) return a.getTime() === b.getTime();\n  if (!a || !b || (typeof a !== 'object' && typeof b !== 'object')) return a === b;\n  if (a.prototype !== b.prototype) return false;\n  let keys = Object.keys(a);\n  if (keys.length !== Object.keys(b).length) return false;\n  return keys.every(k => equals(a[k], b[k]));\n};",
           "es5": "function _typeof(obj) { \"@babel/helpers - typeof\"; if (typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }; } return _typeof(obj); }\n\nvar equals = function equals(a, b) {\n  if (a === b) return true;\n  if (a instanceof Date && b instanceof Date) return a.getTime() === b.getTime();\n  if (!a || !b || _typeof(a) !== 'object' && _typeof(b) !== 'object') return a === b;\n  if (a.prototype !== b.prototype) return false;\n  var keys = Object.keys(a);\n  if (keys.length !== Object.keys(b).length) return false;\n  return keys.every(function (k) {\n    return equals(a[k], b[k]);\n  });\n};",
-          "example": "equals({ a: [2, { e: 3 }], b: [4], c: 'foo' }, { a: [2, { e: 3 }], b: [4], c: 'foo' }); // true"
+          "example": "equals({ a: [2, { e: 3 }], b: [4], c: 'foo' }, { a: [2, { e: 3 }], b: [4], c: 'foo' }); // true\nequals([1, 2, 3], { 0: 1, 1: 2, 2: 3 }); // true"
         },
         "tags": [
           "object",
@@ -1997,10 +1990,10 @@
         ]
       },
       "meta": {
-        "hash": "7738cec1d3804a4542cd80899d7f6d2890d8950aae5751a76e733b0ed270d802",
+        "hash": "ff5ed6bd1f89525d1481499cd24fcb5f1f4d5f5e268d42caef3b23076fd5fd91",
         "firstSeen": "1516034051",
-        "lastUpdated": "1570640396",
-        "updateCount": 8,
+        "lastUpdated": "1587067469",
+        "updateCount": 10,
         "authorCount": 6
       }
     },
@@ -2095,16 +2088,15 @@
           "example": "extendHex('#03f'); // '#0033ff'\nextendHex('05a'); // '#0055aa'"
         },
         "tags": [
-          "utility",
           "string",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "34df599e00a3541dfecf1c0780514006d8d6cadfe28905ead9e782cc3903902c",
+        "hash": "6435af35454a85174aee2740e4a628f47b7fd5efbb73ca11044c78ac5340fc19",
         "firstSeen": "1513526151",
-        "lastUpdated": "1565681352",
-        "updateCount": 12,
+        "lastUpdated": "1587067653",
+        "updateCount": 13,
         "authorCount": 7
       }
     },
@@ -2116,7 +2108,7 @@
         "fileName": "factorial.md",
         "text": "Calculates the factorial of a number.\n\nUse recursion.\nIf `n` is less than or equal to `1`, return `1`.\nOtherwise, return the product of `n` and the factorial of `n - 1`.\nThrows an exception if `n` is a negative number.\n\n",
         "codeBlocks": {
-          "es6": "const factorial = n =>\n  n < 0\n    ? (() => {\n      throw new TypeError('Negative numbers are not allowed!');\n    })()\n    : n <= 1\n      ? 1\n      : n * factorial(n - 1);",
+          "es6": "const factorial = n =>\n  n < 0\n    ? (() => {\n        throw new TypeError('Negative numbers are not allowed!');\n      })()\n    : n <= 1\n    ? 1\n    : n * factorial(n - 1);",
           "es5": "var factorial = function factorial(n) {\n  return n < 0 ? function () {\n    throw new TypeError('Negative numbers are not allowed!');\n  }() : n <= 1 ? 1 : n * factorial(n - 1);\n};",
           "example": "factorial(6); // 720"
         },
@@ -2127,10 +2119,10 @@
         ]
       },
       "meta": {
-        "hash": "6e9710c9117f500e74e65c0ee36b39fb80bd55537fa5ff9c4b1136b2667096f2",
+        "hash": "0eac852db7a7add352b0d36677b22718b342ed9dc12f11780cac87e3b8260a05",
         "firstSeen": "1512650493",
-        "lastUpdated": "1587043509",
-        "updateCount": 129,
+        "lastUpdated": "1587046062",
+        "updateCount": 130,
         "authorCount": 6
       }
     },
@@ -2457,15 +2449,14 @@
           "date",
           "math",
           "string",
-          "utility",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "176cd07a9486286924a7393fe631e83471e7123e3b6349309a7c1cee7746d764",
+        "hash": "b69c2666e5ce5a98b4c91b7efcbd715209381716d9f274e42f1b8b333ae3fb3f",
         "firstSeen": "1515050802",
-        "lastUpdated": "1565681352",
-        "updateCount": 9,
+        "lastUpdated": "1587067653",
+        "updateCount": 10,
         "authorCount": 6
       }
     },
@@ -2609,15 +2600,14 @@
         },
         "tags": [
           "function",
-          "utility",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "9f8947652b9c2faba5f1bda82f992bdc81a71c67374fcc843e96ce2a327a28db",
+        "hash": "4919ad66b88f64d19d2bb661db604ccfd7544d2265ac0d8708a06204746e4439",
         "firstSeen": "1513526151",
-        "lastUpdated": "1565681352",
-        "updateCount": 6,
+        "lastUpdated": "1587067653",
+        "updateCount": 7,
         "authorCount": 4
       }
     },
@@ -2806,7 +2796,7 @@
         "fileName": "getMeridiemSuffixOfInteger.md",
         "text": "Converts an integer to a suffixed string, adding `am` or `pm` based on its value.\n\nUse the modulo operator (`%`) and conditional checks to transform an integer to a stringified 12-hour format with meridiem suffix.\n\n",
         "codeBlocks": {
-          "es6": "const getMeridiemSuffixOfInteger = num =>\n  num === 0 || num === 24\n    ? 12 + 'am'\n    : num === 12\n      ? 12 + 'pm'\n      : num < 12\n        ? (num % 12) + 'am'\n        : (num % 12) + 'pm';",
+          "es6": "const getMeridiemSuffixOfInteger = num =>\n  num === 0 || num === 24\n    ? 12 + 'am'\n    : num === 12\n    ? 12 + 'pm'\n    : num < 12\n    ? (num % 12) + 'am'\n    : (num % 12) + 'pm';",
           "es5": "var getMeridiemSuffixOfInteger = function getMeridiemSuffixOfInteger(num) {\n  return num === 0 || num === 24 ? 12 + 'am' : num === 12 ? 12 + 'pm' : num < 12 ? num % 12 + 'am' : num % 12 + 'pm';\n};",
           "example": "getMeridiemSuffixOfInteger(0); // \"12am\"\ngetMeridiemSuffixOfInteger(11); // \"11am\"\ngetMeridiemSuffixOfInteger(13); // \"1pm\"\ngetMeridiemSuffixOfInteger(25); // \"1pm\""
         },
@@ -2816,10 +2806,10 @@
         ]
       },
       "meta": {
-        "hash": "f9e6687cc28cd80e68f7a6776f893c7478aaa942710e0eb7144f105eba574a54",
+        "hash": "9e39c6a3a8ec5b51c5e16f69107fc9e90b2697b2cf2689850872071bb968723e",
         "firstSeen": "1515856488",
-        "lastUpdated": "1587043509",
-        "updateCount": 88,
+        "lastUpdated": "1587046062",
+        "updateCount": 89,
         "authorCount": 4
       }
     },
@@ -2880,11 +2870,11 @@
       "type": "snippet",
       "attributes": {
         "fileName": "getType.md",
-        "text": "Returns the native type of a value.\n\nReturn `\"undefined\"` or `\"null\"` if the value is `undefined` or `null`.\nOtherwise, use `Object.prototype.constructor.name` to get the name of the constructor, `String.prototype.toLowerCase()` to return it in lowercase.\n\n",
+        "text": "Returns the native type of a value.\n\nReturn `'undefined'` or `'null'` if the value is `undefined` or `null`.\nOtherwise, use `Object.prototype.constructor.name` to get the name of the constructor.\n\n",
         "codeBlocks": {
-          "es6": "const getType = v =>\n  v === undefined ? 'undefined' : v === null ? 'null' : v.constructor.name.toLowerCase();",
-          "es5": "var getType = function getType(v) {\n  return v === undefined ? 'undefined' : v === null ? 'null' : v.constructor.name.toLowerCase();\n};",
-          "example": "getType(new Set([1, 2, 3])); // 'set'"
+          "es6": "const getType = v => (v === undefined ? 'undefined' : v === null ? 'null' : v.constructor.name);",
+          "es5": "var getType = function getType(v) {\n  return v === undefined ? 'undefined' : v === null ? 'null' : v.constructor.name;\n};",
+          "example": "getType(new Set([1, 2, 3])); // 'Set'"
         },
         "tags": [
           "type",
@@ -2892,11 +2882,11 @@
         ]
       },
       "meta": {
-        "hash": "87c0b3cc13caebf6bb46f0769fecc8b13140ea133bbf096136c740154c1d456f",
+        "hash": "0a1f42c4c267fe273f3452f80ed1fbdbe45bc47793f86077c5733146a7018e44",
         "firstSeen": "1513526151",
-        "lastUpdated": "1583442386",
-        "updateCount": 11,
-        "authorCount": 6
+        "lastUpdated": "1587067469",
+        "updateCount": 13,
+        "authorCount": 7
       }
     },
     {
@@ -2912,7 +2902,6 @@
           "example": "getURLParameters('http://url.com/page?name=Adam&surname=Smith'); // {name: 'Adam', surname: 'Smith'}\ngetURLParameters('google.com'); // {}"
         },
         "tags": [
-          "utility",
           "browser",
           "string",
           "url",
@@ -2920,10 +2909,10 @@
         ]
       },
       "meta": {
-        "hash": "460d0f75a526126cabbc1a0b7b727b78999332bec7876959519c187cd8db96db",
+        "hash": "6478f1648c76af5261784e25b95f1d344ecad8ff7886f049cd1c5c184fbf8444",
         "firstSeen": "1513526151",
-        "lastUpdated": "1565681352",
-        "updateCount": 11,
+        "lastUpdated": "1587067653",
+        "updateCount": 12,
         "authorCount": 6
       }
     },
@@ -3044,16 +3033,15 @@
         },
         "tags": [
           "browser",
-          "utility",
           "advanced",
           "promise"
         ]
       },
       "meta": {
-        "hash": "beb6f68f5a8b63fd90a671758556aa72b5c061b681df049779cdf5631837966c",
+        "hash": "2a9b9f2743606d247f1074840edcabadb880c2c79f4e6deb3f2982bca2fe3307",
         "firstSeen": "1516190941",
-        "lastUpdated": "1565681352",
-        "updateCount": 6,
+        "lastUpdated": "1587067653",
+        "updateCount": 7,
         "authorCount": 3
       }
     },
@@ -3071,16 +3059,15 @@
         },
         "tags": [
           "node",
-          "utility",
           "promise",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "e7b6164cfaacf4869f997747df3e135a1ec4342abf5a56498586513332272a96",
+        "hash": "66caf1183c70728fa7e9dd6256fc46cc49b3699decbaea8ec1269a2eec07992f",
         "firstSeen": "1516190941",
-        "lastUpdated": "1565681352",
-        "updateCount": 8,
+        "lastUpdated": "1587067653",
+        "updateCount": 9,
         "authorCount": 4
       }
     },
@@ -3172,17 +3159,16 @@
           "example": "hexToRGB('#27ae60ff'); // 'rgba(39, 174, 96, 255)'\nhexToRGB('27ae60'); // 'rgb(39, 174, 96)'\nhexToRGB('#fff'); // 'rgb(255, 255, 255)'"
         },
         "tags": [
-          "utility",
           "string",
           "math",
           "advanced"
         ]
       },
       "meta": {
-        "hash": "f61b08541372ded95a947cc570f57f7bbc9c7908ede569d59f294c5b9ef6feb1",
+        "hash": "b373e046d50f40ac11b6a538668cdcba6342afe7f92701a36ffe156a6e572edd",
         "firstSeen": "1513526151",
-        "lastUpdated": "1565681352",
-        "updateCount": 10,
+        "lastUpdated": "1587067653",
+        "updateCount": 11,
         "authorCount": 8
       }
     },
@@ -3225,17 +3211,16 @@
           "example": "httpDelete('https://jsonplaceholder.typicode.com/posts/1', request => {\n  console.log(request.responseText);\n}); /*\nLogs: {}\n*/"
         },
         "tags": [
-          "utility",
-          "url",
           "browser",
+          "url",
           "intermediate"
         ]
       },
       "meta": {
         "hash": "f41090864871a22e83896f869524d3037dc552f18f37f3a77128119698a3fa4e",
         "firstSeen": "1587025293",
-        "lastUpdated": "1587025293",
-        "updateCount": 2,
+        "lastUpdated": "1587067653",
+        "updateCount": 3,
         "authorCount": 2
       }
     },
@@ -3252,17 +3237,16 @@
           "example": "httpGet(\n  'https://jsonplaceholder.typicode.com/posts/1',\n  console.log\n); /*\nLogs: {\n  \"userId\": 1,\n  \"id\": 1,\n  \"title\": \"sunt aut facere repellat provident occaecati excepturi optio reprehenderit\",\n  \"body\": \"quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto\"\n}\n*/"
         },
         "tags": [
-          "utility",
-          "url",
           "browser",
+          "url",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "c138c0e5f16d48997691a98de7c0bc43b228a0b4285f0ab2b26d230e209d1530",
+        "hash": "4c412ce4ed5d0573b7a87c273e07aa200c0151a564d41f828e6601202ea06416",
         "firstSeen": "1515428512",
-        "lastUpdated": "1565681352",
-        "updateCount": 12,
+        "lastUpdated": "1587067653",
+        "updateCount": 13,
         "authorCount": 4
       }
     },
@@ -3279,17 +3263,16 @@
           "example": "const newPost = {\n  userId: 1,\n  id: 1337,\n  title: 'Foo',\n  body: 'bar bar bar'\n};\nconst data = JSON.stringify(newPost);\nhttpPost(\n  'https://jsonplaceholder.typicode.com/posts',\n  data,\n  console.log\n); /*\nLogs: {\n  \"userId\": 1,\n  \"id\": 1337,\n  \"title\": \"Foo\",\n  \"body\": \"bar bar bar\"\n}\n*/\nhttpPost(\n  'https://jsonplaceholder.typicode.com/posts',\n  null, // does not send a body\n  console.log\n); /*\nLogs: {\n  \"id\": 101\n}\n*/"
         },
         "tags": [
-          "utility",
-          "url",
           "browser",
+          "url",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "5b29941074f19769531b3320ec8d61e2b2bdc69735fb781bf7e880ff2080ec04",
+        "hash": "d842ebdfd968b1dfdd8a8aaa0d27e69608c4c02078b180c8439da72bfa558ec1",
         "firstSeen": "1515442022",
-        "lastUpdated": "1565681352",
-        "updateCount": 30,
+        "lastUpdated": "1587067653",
+        "updateCount": 31,
         "authorCount": 5
       }
     },
@@ -3306,17 +3289,16 @@
           "example": "const password = 'fooBaz';\nconst data = JSON.stringify({\n  id: 1,\n  title: 'foo',\n  body: 'bar',\n  userId: 1\n});\nhttpPut('https://jsonplaceholder.typicode.com/posts/1', data, request => {\n  console.log(request.responseText);\n}); /*\nLogs: {\n  id: 1,\n  title: 'foo',\n  body: 'bar',\n  userId: 1\n}\n*/"
         },
         "tags": [
-          "utility",
-          "url",
           "browser",
+          "url",
           "intermediate"
         ]
       },
       "meta": {
         "hash": "69d235228441b9dff3092419365e0c4a0bd293b6c3f940de4a31d1f01fb7fcba",
         "firstSeen": "1587025293",
-        "lastUpdated": "1587039270",
-        "updateCount": 4,
+        "lastUpdated": "1587067653",
+        "updateCount": 5,
         "authorCount": 3
       }
     },
@@ -3435,15 +3417,14 @@
         },
         "tags": [
           "string",
-          "utility",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "544ebe19f71cab5f4b4ad5a6121d4327ebf2b09f04451151e7339c90c8924789",
+        "hash": "e744d3d9c040feecdd17afc470078ea47047250ed521e138936d1434eba7898a",
         "firstSeen": "1537816467",
-        "lastUpdated": "1565681352",
-        "updateCount": 4,
+        "lastUpdated": "1587067653",
+        "updateCount": 5,
         "authorCount": 3
       }
     },
@@ -3846,17 +3827,16 @@
         },
         "tags": [
           "string",
-          "utility",
           "browser",
           "url",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "7523c5d3ab85075efa61efc135bb1c8d85e2a2e5407ddc5768099993d46f13b5",
+        "hash": "71c32c111d21f3ed9c1af2c7216b6f81e8ab652b353ab3f938418738c2a00ac7",
         "firstSeen": "1514724165",
-        "lastUpdated": "1565681352",
-        "updateCount": 4,
+        "lastUpdated": "1587067653",
+        "updateCount": 5,
         "authorCount": 3
       }
     },
@@ -3874,15 +3854,14 @@
         },
         "tags": [
           "date",
-          "utility",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "19efe22718bca00459c41fa9df56c3574270c500bdd670873358052ccc870f5b",
+        "hash": "6e1abb3cac28b9ccf95e55db3daec18aeff50735be56cce96ffb326ff99f7669",
         "firstSeen": "1538218718",
-        "lastUpdated": "1565681352",
-        "updateCount": 3,
+        "lastUpdated": "1587067653",
+        "updateCount": 4,
         "authorCount": 2
       }
     },
@@ -3922,7 +3901,7 @@
         "codeBlocks": {
           "es6": "const isArrayLike = obj => obj != null && typeof obj[Symbol.iterator] === 'function';",
           "es5": "var isArrayLike = function isArrayLike(obj) {\n  return obj != null && typeof obj[Symbol.iterator] === 'function';\n};",
-          "example": "isArrayLike(document.querySelectorAll('.className')); // true\nisArrayLike('abc'); // true\nisArrayLike(null); // false"
+          "example": "isArrayLike([1, 2, 3]); // true\nisArrayLike(document.querySelectorAll('.className')); // true\nisArrayLike('abc'); // true\nisArrayLike(null); // false"
         },
         "tags": [
           "type",
@@ -3931,10 +3910,10 @@
         ]
       },
       "meta": {
-        "hash": "0694b883486ca56109cb2c2ad8ed3477c0c4ee84d2fa81884409c40302a13fa7",
+        "hash": "e7668258c3cf902fa59107db45e7d73f7cf506a3a2074905b1eb79bb0f5c3d33",
         "firstSeen": "1514724781",
-        "lastUpdated": "1565681352",
-        "updateCount": 18,
+        "lastUpdated": "1587067279",
+        "updateCount": 19,
         "authorCount": 5
       }
     },
@@ -3952,15 +3931,14 @@
         },
         "tags": [
           "date",
-          "utility",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "e0d70480b239a585f907c965214a037ce23ae15f5484ab80930ea9f57cbe529e",
+        "hash": "3c6950661df4657fc49636fc97050e5a46a9337caaae3f5dd584d3aaf436b451",
         "firstSeen": "1538218718",
-        "lastUpdated": "1565681352",
-        "updateCount": 3,
+        "lastUpdated": "1587067653",
+        "updateCount": 4,
         "authorCount": 2
       }
     },
@@ -4002,16 +3980,15 @@
           "example": "isBrowser(); // true (browser)\nisBrowser(); // false (Node)"
         },
         "tags": [
-          "utility",
           "browser",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "6fb24837c043a0cc320a46695ef0e286a558aaf06e9354407569ae61c4a8d0bd",
+        "hash": "8aa110b4d9adf4e44eb0b770309dacb3b372268143223e862749519e6a896f1c",
         "firstSeen": "1521427855",
-        "lastUpdated": "1565681352",
-        "updateCount": 7,
+        "lastUpdated": "1587067653",
+        "updateCount": 8,
         "authorCount": 5
       }
     },
@@ -4234,15 +4211,14 @@
         },
         "tags": [
           "string",
-          "utility",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "e47bc176d868f3aab83f762997bf9d355258607594648573d2482faf7fc08826",
+        "hash": "a665c8ada73822926f03aa49bf65551ce20459dc4466ce5d5306690d53e04285",
         "firstSeen": "1515230165",
-        "lastUpdated": "1565681352",
-        "updateCount": 7,
+        "lastUpdated": "1587067653",
+        "updateCount": 8,
         "authorCount": 4
       }
     },
@@ -4260,15 +4236,14 @@
         },
         "tags": [
           "math",
-          "utility",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "ec55fd2848f1443613e33d59634ecaefc9dc82b721424b5416830a7389e1ce6e",
+        "hash": "c8af31822c3b74d0e3e3099ff770aa467825ecd8edc3e6fb07f84a5af9d615af",
         "firstSeen": "1542030336",
-        "lastUpdated": "1565681352",
-        "updateCount": 4,
+        "lastUpdated": "1587067653",
+        "updateCount": 5,
         "authorCount": 3
       }
     },
@@ -4282,7 +4257,7 @@
         "codeBlocks": {
           "es6": "const isNil = val => val === undefined || val === null;",
           "es5": "var isNil = function isNil(val) {\n  return val === undefined || val === null;\n};",
-          "example": "isNil(null); // true\nisNil(undefined); // true"
+          "example": "isNil(null); // true\nisNil(undefined); // true\nisNil(''); // false"
         },
         "tags": [
           "type",
@@ -4290,10 +4265,10 @@
         ]
       },
       "meta": {
-        "hash": "c09e927ebf399af3fa3bd3873b407f26130f86e6abb7871f88e1892baed899bf",
+        "hash": "f8d09a514807d27b893a37f2efc76fb01336ee118241e7df5a3913ef460850db",
         "firstSeen": "1516114221",
-        "lastUpdated": "1583442386",
-        "updateCount": 4,
+        "lastUpdated": "1587067279",
+        "updateCount": 5,
         "authorCount": 2
       }
     },
@@ -4512,7 +4487,7 @@
         "codeBlocks": {
           "es6": "const isPrimitive = val => Object(val) !== val;",
           "es5": "var isPrimitive = function isPrimitive(val) {\n  return Object(val) !== val;\n};",
-          "example": "isPrimitive(null); // true\nisPrimitive(50); // true\nisPrimitive('Hello!'); // true\nisPrimitive(false); // true\nisPrimitive(Symbol()); // true\nisPrimitive([]); // false"
+          "example": "isPrimitive(null); // true\nisPrimitive(undefined); // true\nisPrimitive(50); // true\nisPrimitive('Hello!'); // true\nisPrimitive(false); // true\nisPrimitive(Symbol()); // true\nisPrimitive([]); // false\nisPrimitive({}); // false"
         },
         "tags": [
           "type",
@@ -4523,10 +4498,10 @@
         ]
       },
       "meta": {
-        "hash": "2df9322464af125f8a33dad1f15a7df5ccd7d8f9322efe871dc026974971ac85",
+        "hash": "dc7d429725fc03d1b33fc1702fd881dfffce74fe4b8291225a54ec2214667822",
         "firstSeen": "1514717293",
-        "lastUpdated": "1565681352",
-        "updateCount": 9,
+        "lastUpdated": "1587067279",
+        "updateCount": 10,
         "authorCount": 6
       }
     },
@@ -4597,15 +4572,14 @@
         },
         "tags": [
           "date",
-          "utility",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "4accb95c8fb5ac770c73c78b6236938773499c74617df09a1f73a60abd6f44d7",
+        "hash": "f2cef555daea23fb46e93ad5bd556840c55f343924578b26329983c0407d88d5",
         "firstSeen": "1538218718",
-        "lastUpdated": "1565681352",
-        "updateCount": 4,
+        "lastUpdated": "1587067653",
+        "updateCount": 5,
         "authorCount": 2
       }
     },
@@ -4775,15 +4749,14 @@
         },
         "tags": [
           "string",
-          "utility",
           "beginner"
         ]
       },
       "meta": {
         "hash": "e9f213bd74fba0cfc5e7706967f03dee72ee516e213715dab97c5fd32ba7f4f3",
         "firstSeen": "1515230165",
-        "lastUpdated": "1567395249",
-        "updateCount": 8,
+        "lastUpdated": "1587067653",
+        "updateCount": 9,
         "authorCount": 5
       }
     },
@@ -4907,10 +4880,10 @@
         ]
       },
       "meta": {
-        "hash": "682a6b7cfeb58efe9ed7b6daf467c45397df0acecfc21cab59e5ffedd03503ba",
+        "hash": "362fddaa6244404741e84bca6fc442a101fdb642af53b299e8b9994d0d7162d8",
         "firstSeen": "1514801920",
-        "lastUpdated": "1587043509",
-        "updateCount": 95,
+        "lastUpdated": "1587067469",
+        "updateCount": 97,
         "authorCount": 7
       }
     },
@@ -5033,15 +5006,14 @@
         "tags": [
           "array",
           "string",
-          "utility",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "1277ce52444adcbc3a7b62d5c9019aa3cf01293e7749b8d0e1871ae2aa6a8c88",
+        "hash": "bc43866db3708c27d333faa8a71f9075af24899a7785496ca28206061d4910d1",
         "firstSeen": "1515440027",
-        "lastUpdated": "1565681352",
-        "updateCount": 13,
+        "lastUpdated": "1587067653",
+        "updateCount": 14,
         "authorCount": 7
       }
     },
@@ -5084,15 +5056,14 @@
         },
         "tags": [
           "math",
-          "utility",
           "advanced"
         ]
       },
       "meta": {
-        "hash": "ab83bac8546d02dfe4227792750f0b4c64cd2c8f8ce6063eef2a3f4357210d63",
+        "hash": "d7c1a6ff15bf0d8f33dddfcebe892089a7902a94fc18803fafd5fe76ebdd3ffc",
         "firstSeen": "1514970155",
-        "lastUpdated": "1565681352",
-        "updateCount": 13,
+        "lastUpdated": "1587067653",
+        "updateCount": 14,
         "authorCount": 6
       }
     },
@@ -5189,15 +5160,14 @@
           "string",
           "array",
           "function",
-          "utility",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "c4df98d941aeadd165c6a02143d79f7a9bf013f8c221f709aa545bf83495a956",
+        "hash": "ef9621c9cc38b1f4ab76ed4246de33ef9125bfa44f4ecc8113e7890d99b61a01",
         "firstSeen": "1531555196",
-        "lastUpdated": "1565681352",
-        "updateCount": 5,
+        "lastUpdated": "1587067653",
+        "updateCount": 6,
         "authorCount": 4
       }
     },
@@ -5241,15 +5211,14 @@
         },
         "tags": [
           "string",
-          "utility",
           "intermediate"
         ]
       },
       "meta": {
         "hash": "d95e586ebffdfdbaa182feb6a21c41619d6bacde9b7a49ace88b2c958480f25d",
         "firstSeen": "1514804579",
-        "lastUpdated": "1579690066",
-        "updateCount": 17,
+        "lastUpdated": "1587067653",
+        "updateCount": 18,
         "authorCount": 8
       }
     },
@@ -5605,15 +5574,15 @@
           "example": "mostPerformant([\n  () => {\n    // Loops through the entire array before returning `false`\n    [1, 2, 3, 4, 5, 6, 7, 8, 9, '10'].every(el => typeof el === 'number');\n  },\n  () => {\n    // Only needs to reach index `1` before returning false\n    [1, '2', 3, 4, 5, 6, 7, 8, 9, 10].every(el => typeof el === 'number');\n  }\n]); // 1"
         },
         "tags": [
-          "utility",
-          "function"
+          "function",
+          "intermediate"
         ]
       },
       "meta": {
-        "hash": "120e31fa38796906a99beccdc457e83a8075e6ec72b5a937e03913b2e996ae26",
+        "hash": "2334d95a86e23b04825a6b9f696d9866749f4d69e6c6003651cc69dccc71e98d",
         "firstSeen": "1518608325",
-        "lastUpdated": "1565681352",
-        "updateCount": 6,
+        "lastUpdated": "1587067653",
+        "updateCount": 7,
         "authorCount": 5
       }
     },
@@ -5732,16 +5701,15 @@
           "example": "const third = nthArg(2);\nthird(1, 2, 3); // 3\nthird(1, 2); // undefined\nconst last = nthArg(-1);\nlast(1, 2, 3, 4, 5); // 5"
         },
         "tags": [
-          "utility",
           "function",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "1885078f5fddc5de00844a837ab3c427f770c5325a70d5362ecab26c1c904125",
+        "hash": "837bf47e8e264266d22fc1d8186b6b5561a94500a1b725ce897ffbd6e0df1b98",
         "firstSeen": "1516735657",
-        "lastUpdated": "1565681352",
-        "updateCount": 5,
+        "lastUpdated": "1587067653",
+        "updateCount": 6,
         "authorCount": 4
       }
     },
@@ -5861,17 +5829,16 @@
           "example": "objectToQueryString({ page: '1', size: '2kg', key: undefined }); // '?page=1&size=2kg'"
         },
         "tags": [
-          "utility",
           "object",
           "function",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "406723128cb71796de5503b04c137c89c9e9bd245164483c74b0229df50d2021",
+        "hash": "b031c3387ef66411ab5d295788eac4247ada5b4b068dda90603d3c973890bc26",
         "firstSeen": "1570824965",
-        "lastUpdated": "1587043509",
-        "updateCount": 62,
+        "lastUpdated": "1587067662",
+        "updateCount": 66,
         "authorCount": 4
       }
     },
@@ -6221,16 +6188,16 @@
           "example": "parseCookie('foo=bar; equation=E%3Dmc%5E2'); // { foo: 'bar', equation: 'E=mc^2' }"
         },
         "tags": [
-          "utility",
+          "browser",
           "string",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "c25aef075df93042a81bd98ebd7b77aefb91df3f08b9f1d2e7859ec0d95ad55b",
+        "hash": "5bcee736e351fb23173369a678122d12b4278a02ab3204cfee2b3b0d3c598544",
         "firstSeen": "1515845961",
-        "lastUpdated": "1565681352",
-        "updateCount": 5,
+        "lastUpdated": "1587067653",
+        "updateCount": 6,
         "authorCount": 4
       }
     },
@@ -6434,10 +6401,10 @@
         ]
       },
       "meta": {
-        "hash": "345bea897a67c1b851ef4110b3db692140064c418703a5d102e057b002808de3",
+        "hash": "0eb844801e767edcaa6a882a6dce4b5b1dadecb53a92d6ec259d36c57b6a3dd0",
         "firstSeen": "1517069864",
-        "lastUpdated": "1587043509",
-        "updateCount": 120,
+        "lastUpdated": "1587067469",
+        "updateCount": 122,
         "authorCount": 5
       }
     },
@@ -6530,15 +6497,14 @@
         },
         "tags": [
           "browser",
-          "utility",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "6668f37f9f1158b2bdd292ad64defea6e33a0b2908ea1e494b191dcaa9f039d6",
+        "hash": "942f8061fb78b9a96dc0da7e249bb8d5c1b2902f9101d6dbdae272c95a49ab92",
         "firstSeen": "1520515374",
-        "lastUpdated": "1565681352",
-        "updateCount": 8,
+        "lastUpdated": "1587067653",
+        "updateCount": 9,
         "authorCount": 5
       }
     },
@@ -6555,17 +6521,16 @@
           "example": "prettyBytes(1000); // \"1 KB\"\nprettyBytes(-27145424323.5821, 5); // \"-27.145 GB\"\nprettyBytes(123456789, 3, false); // \"123MB\""
         },
         "tags": [
-          "utility",
           "string",
           "math",
           "advanced"
         ]
       },
       "meta": {
-        "hash": "e752de4a4f2b339851e796a5289e7adde51cf7e672b8230fd97bf79cf7330758",
+        "hash": "7053095cc3085b11fde252bfec58b3888290d30936fe7cd7b570cd075d29225a",
         "firstSeen": "1514823609",
-        "lastUpdated": "1565681352",
-        "updateCount": 14,
+        "lastUpdated": "1587067653",
+        "updateCount": 15,
         "authorCount": 5
       }
     },
@@ -6753,23 +6718,23 @@
       "type": "snippet",
       "attributes": {
         "fileName": "randomHexColorCode.md",
-        "text": "Generates a random hexadecimal color code.\n\nUse `Math.random` to generate a random 24-bit(6x4bits) hexadecimal number. Use bit shifting and then convert it to an hexadecimal String using `toString(16)`.\n\n",
+        "text": "Generates a random hexadecimal color code.\n\nUse `Math.random` to generate a random 24-bit(6x4bits) hexadecimal number.\nUse bit shifting and then convert it to an hexadecimal String using `toString(16)`.\n\n",
         "codeBlocks": {
           "es6": "const randomHexColorCode = () => {\n  let n = (Math.random() * 0xfffff * 1000000).toString(16);\n  return '#' + n.slice(0, 6);\n};",
           "es5": "var randomHexColorCode = function randomHexColorCode() {\n  var n = (Math.random() * 0xfffff * 1000000).toString(16);\n  return '#' + n.slice(0, 6);\n};",
           "example": "randomHexColorCode(); // \"#e34155\""
         },
         "tags": [
-          "utility",
+          "math",
           "random",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "42788f8392f5511db3641dbe2ab92b2c043b3b5209e95c386c73e5d96eaa63af",
+        "hash": "4af37a3a8c080de92657476319fc3a6d4ff7febfe34f8391b81d97336bb147d6",
         "firstSeen": "1514383576",
-        "lastUpdated": "1565681352",
-        "updateCount": 22,
+        "lastUpdated": "1587067653",
+        "updateCount": 23,
         "authorCount": 10
       }
     },
@@ -6787,16 +6752,15 @@
         },
         "tags": [
           "math",
-          "utility",
           "random",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "7bff02cd849d994da1229f3153cca71b4c054d6774ab732101a5f60a0a04ba3a",
+        "hash": "6887efc77e1a29d40b7194fe16a2005b8f33f15bb92ee3f0329b55be27f21225",
         "firstSeen": "1516015518",
-        "lastUpdated": "1565681352",
-        "updateCount": 6,
+        "lastUpdated": "1587067653",
+        "updateCount": 7,
         "authorCount": 4
       }
     },
@@ -6814,16 +6778,15 @@
         },
         "tags": [
           "math",
-          "utility",
           "random",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "8d8cca3d593e677c8a4ffc17e9f97b3018f800e7c014daa3462edc152fbbeec7",
+        "hash": "939080b53f5ebf57e2fcb7b88cc827902a3d01c428eed9e989dd2545c3717b6f",
         "firstSeen": "1513526151",
-        "lastUpdated": "1565681352",
-        "updateCount": 6,
+        "lastUpdated": "1587067653",
+        "updateCount": 7,
         "authorCount": 4
       }
     },
@@ -6841,16 +6804,15 @@
         },
         "tags": [
           "math",
-          "utility",
           "random",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "c86e3227e32565afb301805798da3a46756e13bff0115b880fcc3175a58d95af",
+        "hash": "209c6f231e06e1840d46fd6f836961f9dfc8c954e6675a230863eb0824a35c7c",
         "firstSeen": "1513526151",
-        "lastUpdated": "1565681352",
-        "updateCount": 7,
+        "lastUpdated": "1587067653",
+        "updateCount": 8,
         "authorCount": 4
       }
     },
@@ -6912,7 +6874,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "recordAnimationFrames.md",
-        "text": "Invokes the provided callback on each animation frame.\n\nUse recursion. \nProvided that `running` is `true`, continue invoking `window.requestAnimationFrame()` which invokes the provided callback. \nReturn an object with two methods `start` and `stop` to allow manual control of the recording. \nOmit the second argument, `autoStart`, to implicitly call `start` when the function is invoked.\n\n",
+        "text": "Invokes the provided callback on each animation frame.\n\nUse recursion.\nProvided that `running` is `true`, continue invoking `window.requestAnimationFrame()` which invokes the provided callback.\nReturn an object with two methods `start` and `stop` to allow manual control of the recording.\nOmit the second argument, `autoStart`, to implicitly call `start` when the function is invoked.\n\n",
         "codeBlocks": {
           "es6": "const recordAnimationFrames = (callback, autoStart = true) => {\n  let running = true,\n    raf;\n  const stop = () => {\n    running = false;\n    cancelAnimationFrame(raf);\n  };\n  const start = () => {\n    running = true;\n    run();\n  };\n  const run = () => {\n    raf = requestAnimationFrame(() => {\n      callback();\n      if (running) run();\n    });\n  };\n  if (autoStart) start();\n  return { start, stop };\n};",
           "es5": "var recordAnimationFrames = function recordAnimationFrames(callback) {\n  var autoStart = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;\n  var running = true,\n      raf;\n\n  var stop = function stop() {\n    running = false;\n    cancelAnimationFrame(raf);\n  };\n\n  var start = function start() {\n    running = true;\n    run();\n  };\n\n  var run = function run() {\n    raf = requestAnimationFrame(function () {\n      callback();\n      if (running) run();\n    });\n  };\n\n  if (autoStart) start();\n  return {\n    start: start,\n    stop: stop\n  };\n};",
@@ -6920,15 +6882,14 @@
         },
         "tags": [
           "browser",
-          "utility",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "b780a5af9c22faa9601191aff53c24d55f5e88b62ac79fd2e02517f9a724b502",
+        "hash": "f734a70077b4723415eae15573378f1596b6b8810831d8784e730771fdba0bfa",
         "firstSeen": "1519798747",
-        "lastUpdated": "1565681352",
-        "updateCount": 5,
+        "lastUpdated": "1587067653",
+        "updateCount": 6,
         "authorCount": 4
       }
     },
@@ -7078,10 +7039,10 @@
         ]
       },
       "meta": {
-        "hash": "0b549930f468d934adcb898f371ef590beff15bf2816d7e5c65264a567d68486",
+        "hash": "be8ec39c092128ba679a3f0421b6abc34ad891dec85354caa419dc4104687a05",
         "firstSeen": "1513521691",
-        "lastUpdated": "1587043509",
-        "updateCount": 117,
+        "lastUpdated": "1587067469",
+        "updateCount": 119,
         "authorCount": 6
       }
     },
@@ -7175,15 +7136,16 @@
           "example": "RGBToHex(255, 165, 1); // 'ffa501'"
         },
         "tags": [
-          "utility",
+          "string",
+          "math",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "592446fabae44d631396de3441738710626c4d274eaabe3dfdb9b822ce3a5179",
+        "hash": "85235b8cc5276d21a4f2659a8e04c65dd1b3cab52d1ff700750253dc11b5b5be",
         "firstSeen": "1513526151",
-        "lastUpdated": "1565681352",
-        "updateCount": 9,
+        "lastUpdated": "1587067653",
+        "updateCount": 10,
         "authorCount": 5
       }
     },
@@ -7357,15 +7319,14 @@
         },
         "tags": [
           "math",
-          "utility",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "58d91b4760b4af29df95cf1b073166c02660f9af3d46c950fba64b922c999ba1",
+        "hash": "957622c5cf0b59acacea276978fcf66cef1bdc6f5cc16dde77eda3bc8c3686c8",
         "firstSeen": "1514387554",
-        "lastUpdated": "1565681352",
-        "updateCount": 10,
+        "lastUpdated": "1587067653",
+        "updateCount": 11,
         "authorCount": 6
       }
     },
@@ -7382,16 +7343,16 @@
           "example": "serializeCookie('foo', 'bar'); // 'foo=bar'"
         },
         "tags": [
-          "utility",
+          "browser",
           "string",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "defdaa306864196a4f561c37c4c7f74ffc159406c4538a0f7e1f3f153840eebe",
+        "hash": "740ef7d2635d22c19eca6fdce566d679ddfeb5f2a3c382665efe205c2cb1001b",
         "firstSeen": "1515845961",
-        "lastUpdated": "1565681352",
-        "updateCount": 3,
+        "lastUpdated": "1587067653",
+        "updateCount": 4,
         "authorCount": 2
       }
     },
@@ -7594,10 +7555,10 @@
         ]
       },
       "meta": {
-        "hash": "f77974f024d9c020fe8efe4ecc77686faf8ad690122f4c071fe5205df921e052",
+        "hash": "24b93b68a59b49f245590930fed6fb82e286ce09f90e292466cde63c1784c347",
         "firstSeen": "1514645161",
-        "lastUpdated": "1587043509",
-        "updateCount": 59,
+        "lastUpdated": "1587067469",
+        "updateCount": 61,
         "authorCount": 5
       }
     },
@@ -7927,16 +7888,15 @@
         },
         "tags": [
           "string",
-          "utility",
           "regexp",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "a33dbe87821f5017cf4238c69d9effcfe993698f055fec5e915f4fff68c01e34",
+        "hash": "5d500a11b098ee757fd6803e199a191c529e4070d47e0d576a6f290d0b6c3d14",
         "firstSeen": "1516969049",
-        "lastUpdated": "1565681352",
-        "updateCount": 3,
+        "lastUpdated": "1587067653",
+        "updateCount": 4,
         "authorCount": 2
       }
     },
@@ -8286,15 +8246,15 @@
           "example": "timeTaken(() => Math.pow(2, 10)); // 1024, (logged): timeTaken: 0.02099609375ms"
         },
         "tags": [
-          "utility",
+          "function",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "26246364ba1e8e3f52a51c8e1f329af721b05a5d307ed88bf31ccd2620c0deee",
+        "hash": "8017947366418af3f9991be27f5f622bee0b1cb97f54b46395455800fa015139",
         "firstSeen": "1513526151",
-        "lastUpdated": "1565681352",
-        "updateCount": 9,
+        "lastUpdated": "1587067653",
+        "updateCount": 10,
         "authorCount": 4
       }
     },
@@ -8337,15 +8297,16 @@
           "example": "toCurrency(123456.789, 'EUR'); // €123,456.79  | currency: Euro | currencyLangFormat: Local\ntoCurrency(123456.789, 'USD', 'en-us'); // $123,456.79  | currency: US Dollar | currencyLangFormat: English (United States)\ntoCurrency(123456.789, 'USD', 'fa'); // ۱۲۳٬۴۵۶٫۷۹ ؜$ | currency: US Dollar | currencyLangFormat: Farsi\ntoCurrency(322342436423.2435, 'JPY'); // ¥322,342,436,423 | currency: Japanese Yen | currencyLangFormat: Local\ntoCurrency(322342436423.2435, 'JPY', 'fi'); // 322 342 436 423 ¥ | currency: Japanese Yen | currencyLangFormat: Finnish"
         },
         "tags": [
-          "utility",
+          "math",
+          "string",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "2f817f7dc3ca24a50bfaa1a59dec3ec6d8ee3392ac2d7f3ecae3a93a9c96f09c",
+        "hash": "41156e65825b59559469feca57214c9f802cb42fba5a16f5fb5990033a2f7059",
         "firstSeen": "1517066148",
-        "lastUpdated": "1565681352",
-        "updateCount": 7,
+        "lastUpdated": "1587067653",
+        "updateCount": 8,
         "authorCount": 4
       }
     },
@@ -8362,7 +8323,6 @@
           "example": "toDecimalMark(12305030388.9087); // \"12,305,030,388.909\""
         },
         "tags": [
-          "utility",
           "math",
           "beginner"
         ]
@@ -8370,8 +8330,8 @@
       "meta": {
         "hash": "22c2a4835f37334d3b5fa5f83bbaaddc642feb71c1868f514928c656e250abe6",
         "firstSeen": "1513866591",
-        "lastUpdated": "1583481487",
-        "updateCount": 16,
+        "lastUpdated": "1587067653",
+        "updateCount": 17,
         "authorCount": 7
       }
     },
@@ -8489,16 +8449,15 @@
           "example": "toOrdinalSuffix('123'); // \"123rd\""
         },
         "tags": [
-          "utility",
           "math",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "0ebd3351685fd96bf678c2baa38fabc9aa18bd6a3fa6674ea0bae9663424ea5f",
+        "hash": "b9a61d3a7c80d3140aa3cbfea42f8af1ed15cc47bc8d224685c0d9127e74813c",
         "firstSeen": "1513526151",
-        "lastUpdated": "1565681352",
-        "updateCount": 6,
+        "lastUpdated": "1587067653",
+        "updateCount": 7,
         "authorCount": 4
       }
     },
@@ -9108,16 +9067,15 @@
         },
         "tags": [
           "string",
-          "utility",
           "regexp",
           "advanced"
         ]
       },
       "meta": {
-        "hash": "6050cfa3a2a39089151bacfce1f5cedaec12f5da253dbc20a56dfaf50cb8924b",
+        "hash": "1de784a29009c7bf3e08cc95110316c4362125f603e862c29c07be50f54186d9",
         "firstSeen": "1516110783",
-        "lastUpdated": "1565681352",
-        "updateCount": 5,
+        "lastUpdated": "1587067653",
+        "updateCount": 6,
         "authorCount": 4
       }
     },
@@ -9135,16 +9093,15 @@
         },
         "tags": [
           "browser",
-          "utility",
           "random",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "9f84a12da85558ebdb189097dbc581b338e07d52eedc5975f1001133b123aad2",
+        "hash": "24c28431e9eb84a8a0f8e38370c3635ea9b68482c7a894895fd8ef09c1eb02aa",
         "firstSeen": "1514533630",
-        "lastUpdated": "1565681352",
-        "updateCount": 4,
+        "lastUpdated": "1587067653",
+        "updateCount": 5,
         "authorCount": 3
       }
     },
@@ -9162,16 +9119,15 @@
         },
         "tags": [
           "node",
-          "utility",
           "random",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "79604b0f854a91af789fea8416c7099acfb3633259ef387f52a21337d2242478",
+        "hash": "2322d2d42be4e3037ec6d4e707358bd114f1378cd64dee48e9a0cb8c918efa3f",
         "firstSeen": "1514533630",
-        "lastUpdated": "1565681352",
-        "updateCount": 6,
+        "lastUpdated": "1587067653",
+        "updateCount": 7,
         "authorCount": 4
       }
     },
@@ -9188,16 +9144,15 @@
           "example": "validateNumber('10'); // true"
         },
         "tags": [
-          "utility",
           "math",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "73fc55564fa0b59a71553aa442bda666cbcddbcd618f9ca53c2b55e42a7c26ca",
+        "hash": "dffaec8a8f2b3c66e709b2e9ee0a57082be53305f000db3d75983ae103866607",
         "firstSeen": "1513526151",
-        "lastUpdated": "1565681352",
-        "updateCount": 7,
+        "lastUpdated": "1587067653",
+        "updateCount": 8,
         "authorCount": 4
       }
     },
@@ -9367,16 +9322,16 @@
           "example": "yesNo('Y'); // true\nyesNo('yes'); // true\nyesNo('No'); // false\nyesNo('Foo', true); // true"
         },
         "tags": [
-          "utility",
+          "string",
           "regexp",
           "intermediate"
         ]
       },
       "meta": {
-        "hash": "6365f144def8abb711b890f8689ff8c9f1f1aee092525583fa913057ba623472",
+        "hash": "8b858ab37c0cd7f7a09f54810b9f435037922cdbf7c4dd659899790476152479",
         "firstSeen": "1514651754",
-        "lastUpdated": "1565681352",
-        "updateCount": 4,
+        "lastUpdated": "1587067653",
+        "updateCount": 5,
         "authorCount": 3
       }
     },

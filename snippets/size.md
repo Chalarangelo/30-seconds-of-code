@@ -12,6 +12,7 @@ Use `size` of a [`Blob` object](https://developer.mozilla.org/en-US/docs/Web/API
 Split strings into array of characters with `split('')` and return its length.
 
 ```js
+
 const size = val =>
   Array.isArray(val)
     ? val.length
