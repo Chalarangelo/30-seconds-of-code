@@ -9,8 +9,8 @@ const fs = require('fs-extra');
 const cp = require('child_process');
 const path = require('path');
 const { green, red } = require('kleur');
-const util = require('./util');
-if (util.isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])) {
+const isTravisCI = () => 'TRAVIS' in process.env && 'CI' in process.env;
+if (isTravisCI() && /^Travis build: \d+/g.test(process.env['TRAVIS_COMMIT_MESSAGE'])) {
   console.log(`${green('NOBUILD')} Linting terminated, parent commit is a Travis build!`);
   process.exit(0);
 }
