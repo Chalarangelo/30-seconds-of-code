@@ -15,7 +15,7 @@ Omit the third argument, `link`, to use `'parent_id'` as the default property wh
 const nest = (items, id = null, link = 'parent_id') =>
   items
     .filter(item => item[link] === id)
-    .map(item => ({ ...item, children: nest(items, item.id) }));
+    .map(item => ({ ...item, children: nest(items, item.id, link) }));
 ```
 
 ```js
