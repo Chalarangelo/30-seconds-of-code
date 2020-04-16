@@ -14,4 +14,5 @@ const isNil = val => val === undefined || val === null;
 ```js
 isNil(null); // true
 isNil(undefined); // true
+isNil(''); // false
 ```
