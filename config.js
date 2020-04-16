@@ -7,8 +7,6 @@ module.exports = {
   siteUrl: `https://www.30secondsofcode.org`,
   // Path information
   snippetPath: `snippets`,
-  snippetArchivePath: `snippets_archive`,
-  glossaryPath: `glossary`,
   snippetDataPath: `snippet_data`,
   assetPath: `assets`,
   pagePath: `src/docs/pages`,
@@ -26,8 +24,7 @@ module.exports = {
   testModuleFile: `test/_30s.js`,
   // Requirable JSONs
   requirables: [
-    `snippets.json`,
-    `archivedSnippets.json`
+    `snippets.json`
   ],
   parser: '_30codeParser',
 };
