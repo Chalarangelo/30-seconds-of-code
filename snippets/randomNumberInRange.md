@@ -1,6 +1,6 @@
 ---
 title: randomNumberInRange
-tags: math,utility,random,beginner
+tags: math,random,beginner
 ---
 
 Returns a random number in the specified range.

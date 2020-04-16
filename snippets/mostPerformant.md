@@ -1,6 +1,6 @@
 ---
 title: mostPerformant
-tags: utility,function
+tags: function,intermediate
 ---
 
 Returns the index of the function in an array of functions which executed the fastest.

@@ -1,6 +1,6 @@
 ---
 title: isBeforeDate
-tags: date,utility,beginner
+tags: date,beginner
 ---
 
 Check if a date is before another date.

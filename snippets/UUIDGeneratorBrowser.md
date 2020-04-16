@@ -1,6 +1,6 @@
 ---
 title: UUIDGeneratorBrowser
-tags: browser,utility,random,intermediate
+tags: browser,random,intermediate
 ---
 
 Generates a UUID in a browser.

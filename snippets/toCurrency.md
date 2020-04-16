@@ -1,6 +1,6 @@
 ---
 title: toCurrency
-tags: utility,intermediate
+tags: math,string,intermediate
 ---
 
 Take a number and return specified currency formatting.

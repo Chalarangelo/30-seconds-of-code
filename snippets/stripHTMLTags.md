@@ -1,6 +1,6 @@
 ---
 title: stripHTMLTags
-tags: string,utility,regexp,beginner
+tags: string,regexp,beginner
 ---
 
 Removes HTML/XML tags from string.

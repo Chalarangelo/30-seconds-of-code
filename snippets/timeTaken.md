@@ -1,6 +1,6 @@
 ---
 title: timeTaken
-tags: utility,beginner
+tags: function,beginner
 ---
 
 Measures the time taken by a function to execute.
