@@ -1,6 +1,6 @@
 ---
 title: httpPut
-tags: browser,intermediate
+tags: utility,url,browser,intermediate
 ---
 
 Makes a `PUT` request to the passed URL.
@@ -24,8 +24,20 @@ const httpPut = (url, data, callback, err = console.error) => {
 
 ```js
 const password = "fooBaz";
-const data = JSON.stringify(password);
-httpPut('https://website.com/users/123', data, request => {
+const data = JSON.stringify({
+  id: 1,
+  title: 'foo',
+  body: 'bar',
+  userId: 1
+});
+httpPut('https://jsonplaceholder.typicode.com/posts/1', data, request => {
   console.log(request.responseText);
-}); // 'Updates a user's password in database'
+}); /*
+Logs: {
+  id: 1,
+  title: 'foo',
+  body: 'bar',
+  userId: 1
+}
+*/
 ```
