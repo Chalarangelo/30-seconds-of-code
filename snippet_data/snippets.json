@@ -366,6 +366,30 @@
       }
     },
     {
+      "id": "collect_dictionary",
+      "title": "collect_dictionary",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "collect_dictionary.md",
+        "text": "Inverts a dictionary with non-unique hashable values.\n\nUse `dictionary.items()` in combination with a loop to map the values of the dictionary to keys using `dictionary.setdefault()`, `list()` and `append()` to create a list for each one.\n\n",
+        "codeBlocks": {
+          "code": "def collect_dictionary(obj):\n  inv_obj = {}\n  for key, value in obj.items():\n    inv_obj.setdefault(value, list()).append(key)\n  return inv_obj",
+          "example": "ages = {\n  \"Peter\": 10,\n  \"Isabel\": 10,\n  \"Anna\": 9,\n}\ncollect_dictionary(ages) # { 10: [\"Peter\", \"Isabel\"], 9: [\"Anna\"] }"
+        },
+        "tags": [
+          "dictionary",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "ac594f6c709ef0b9724cf40925dbd5b55873c6192e9de710d081737767fb2993",
+        "firstSeen": "1586283306",
+        "lastUpdated": "1586283306",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "compact",
       "title": "compact",
       "type": "snippet",
@@ -948,6 +972,54 @@
       }
     },
     {
+      "id": "find_key",
+      "title": "find_key",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "find_key.md",
+        "text": "Returns the first key in the provided dictionary that has the given value.\n\nUse `dictionary.items()` and `next()` to return the first key that has a value equal to `val`.\n\n",
+        "codeBlocks": {
+          "code": "def find_key(dict, val):\n  return next(key for key, value in dict.items() if value == val)",
+          "example": "ages = {\n  \"Peter\": 10,\n  \"Isabel\": 11,\n  \"Anna\": 9,\n}\nfind_key(ages, 11) # \"Isabel\""
+        },
+        "tags": [
+          "dictionary",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "ef0d9d7e3f982d5c0e68af1793bc76b5dcf2bb2e440b04ad69332dee56f21969",
+        "firstSeen": "1587053600",
+        "lastUpdated": "1587053600",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
+      "id": "find_keys",
+      "title": "find_keys",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "find_keys.md",
+        "text": "Returns all keys in the provided dictionary that have the given value.\n\nUse `dictionary.items()`, a generator and `list()` to return all keys that have a value equal to `val`.\n\n",
+        "codeBlocks": {
+          "code": "def find_keys(dict, val):\n  return list(key for key, value in dict.items() if value == val)",
+          "example": "ages = {\n  \"Peter\": 10,\n  \"Isabel\": 11,\n  \"Anna\": 10,\n}\nfind_keys(ages, 10) # [ \"Peter\", \"Anna\" ]"
+        },
+        "tags": [
+          "dictionary",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "3b9f542cfe93debf62a9c9b04479d53c9c9c3f283b08c0d9626e34d53a1f68e4",
+        "firstSeen": "1587053833",
+        "lastUpdated": "1587053833",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "find_last",
       "title": "find_last",
       "type": "snippet",
@@ -1455,6 +1527,30 @@
       }
     },
     {
+      "id": "invert_dictionary",
+      "title": "invert_dictionary",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "invert_dictionary.md",
+        "text": "Inverts a dictionary with unique hashable values.\n\nUse `dictionary.items()` in combination with a list comprehension to create a new dictionary with the values and keys inverted.\n\n",
+        "codeBlocks": {
+          "code": "def invert_dictionary(obj):\n  return { value: key for key, value in obj.items() }",
+          "example": "ages = {\n  \"Peter\": 10,\n  \"Isabel\": 11,\n  \"Anna\": 9,\n}\ninvert_dictionary(ages) # { 10: \"Peter\", 11 \"Isabel\", 9: \"Anna\" }"
+        },
+        "tags": [
+          "dictionary",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "19bd2a5c791a8972e2220ae0a53761f028276373f2574545a9a7f9b39c16330a",
+        "firstSeen": "1586283212",
+        "lastUpdated": "1586283212",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "is_anagram",
       "title": "is_anagram",
       "type": "snippet",
@@ -1868,6 +1964,30 @@
         "hash": "90ea2870f15a25e60c046bc5855929a5cab3985583bfe9491ed1ee5496dd5c31",
         "firstSeen": "1586794152",
         "lastUpdated": "1586794152",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
+      "id": "merge_dictionaries",
+      "title": "merge_dictionaries",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "merge_dictionaries.md",
+        "text": "Merges two or more dictionaries.\n\nCreate a new `dict()` and loop over `dicts`, using `dictionary.update()` to add the key-value pairs from each one to the result.\n\n",
+        "codeBlocks": {
+          "code": "def merge_dictionaries(*dicts):\n  res = dict()\n  for d in dicts:\n    res.update(d)\n  return res",
+          "example": "ages_one = {\n  \"Peter\": 10,\n  \"Isabel\": 11,\n}\nages_two = {\n  \"Anna\": 9\n}\nmerge_dictionaries(ages_one, ages_two) # { \"Peter\": 10, \"Isabel\": 11, \"Anna\": 9 }"
+        },
+        "tags": [
+          "dictionary",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "22e50dcb24fddfa951cf163be6e19b4edad51e6c27dfd434836e204a01cb50bd",
+        "firstSeen": "1587054515",
+        "lastUpdated": "1587054515",
         "updateCount": 2,
         "authorCount": 2
       }
@@ -2407,6 +2527,31 @@
         "hash": "5221a664a891ded456017072033baeb1bc25ee10e9556f64f09f6ebf0b5bf07b",
         "firstSeen": "1584381164",
         "lastUpdated": "1584381164",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
+      "id": "to_dictionary",
+      "title": "to_dictionary",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "to_dictionary.md",
+        "text": "Combines two lists into a dictionary, where the elements of the first one serve as the keys and the elements of the second one serve as the values.\nThe values of the first list need to be unique and hashable.\n\nUse `zip()` in combination with a list comprehension to combine the values of the two lists, based on their positions.\n\n",
+        "codeBlocks": {
+          "code": "def to_dictionary(keys, values):\n  return {key:value for key, value in zip(keys, values)}",
+          "example": "to_dictionary(['a', 'b'], [1, 2]) # { a: 1, b: 2 }"
+        },
+        "tags": [
+          "list",
+          "dictionary",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "7bdd6d5ef8ea39620cae7a20c78417820842c051861bb572f2162406716fa1b2",
+        "firstSeen": "1586795429",
+        "lastUpdated": "1586795429",
         "updateCount": 2,
         "authorCount": 2
       }

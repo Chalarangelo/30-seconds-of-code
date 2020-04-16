@@ -231,6 +231,21 @@
       }
     },
     {
+      "id": "collect_dictionary",
+      "type": "snippetListing",
+      "title": "collect_dictionary",
+      "attributes": {
+        "text": "Inverts a dictionary with non-unique hashable values.\n\nUse `dictionary.items()` in combination with a loop to map the values of the dictionary to keys using `dictionary.setdefault()`, `list()` and `append()` to create a list for each one.\n\n",
+        "tags": [
+          "dictionary",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "ac594f6c709ef0b9724cf40925dbd5b55873c6192e9de710d081737767fb2993"
+      }
+    },
+    {
       "id": "compact",
       "type": "snippetListing",
       "title": "compact",
@@ -597,6 +612,36 @@
       }
     },
     {
+      "id": "find_key",
+      "type": "snippetListing",
+      "title": "find_key",
+      "attributes": {
+        "text": "Returns the first key in the provided dictionary that has the given value.\n\nUse `dictionary.items()` and `next()` to return the first key that has a value equal to `val`.\n\n",
+        "tags": [
+          "dictionary",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "ef0d9d7e3f982d5c0e68af1793bc76b5dcf2bb2e440b04ad69332dee56f21969"
+      }
+    },
+    {
+      "id": "find_keys",
+      "type": "snippetListing",
+      "title": "find_keys",
+      "attributes": {
+        "text": "Returns all keys in the provided dictionary that have the given value.\n\nUse `dictionary.items()`, a generator and `list()` to return all keys that have a value equal to `val`.\n\n",
+        "tags": [
+          "dictionary",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "3b9f542cfe93debf62a9c9b04479d53c9c9c3f283b08c0d9626e34d53a1f68e4"
+      }
+    },
+    {
       "id": "find_last",
       "type": "snippetListing",
       "title": "find_last",
@@ -915,6 +960,21 @@
       }
     },
     {
+      "id": "invert_dictionary",
+      "type": "snippetListing",
+      "title": "invert_dictionary",
+      "attributes": {
+        "text": "Inverts a dictionary with unique hashable values.\n\nUse `dictionary.items()` in combination with a list comprehension to create a new dictionary with the values and keys inverted.\n\n",
+        "tags": [
+          "dictionary",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "19bd2a5c791a8972e2220ae0a53761f028276373f2574545a9a7f9b39c16330a"
+      }
+    },
+    {
       "id": "is_anagram",
       "type": "snippetListing",
       "title": "is_anagram",
@@ -1177,6 +1237,21 @@
       },
       "meta": {
         "hash": "90ea2870f15a25e60c046bc5855929a5cab3985583bfe9491ed1ee5496dd5c31"
+      }
+    },
+    {
+      "id": "merge_dictionaries",
+      "type": "snippetListing",
+      "title": "merge_dictionaries",
+      "attributes": {
+        "text": "Merges two or more dictionaries.\n\nCreate a new `dict()` and loop over `dicts`, using `dictionary.update()` to add the key-value pairs from each one to the result.\n\n",
+        "tags": [
+          "dictionary",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "22e50dcb24fddfa951cf163be6e19b4edad51e6c27dfd434836e204a01cb50bd"
       }
     },
     {
@@ -1518,6 +1593,22 @@
       },
       "meta": {
         "hash": "5221a664a891ded456017072033baeb1bc25ee10e9556f64f09f6ebf0b5bf07b"
+      }
+    },
+    {
+      "id": "to_dictionary",
+      "type": "snippetListing",
+      "title": "to_dictionary",
+      "attributes": {
+        "text": "Combines two lists into a dictionary, where the elements of the first one serve as the keys and the elements of the second one serve as the values.\nThe values of the first list need to be unique and hashable.\n\nUse `zip()` in combination with a list comprehension to combine the values of the two lists, based on their positions.\n\n",
+        "tags": [
+          "list",
+          "dictionary",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "7bdd6d5ef8ea39620cae7a20c78417820842c051861bb572f2162406716fa1b2"
       }
     },
     {
