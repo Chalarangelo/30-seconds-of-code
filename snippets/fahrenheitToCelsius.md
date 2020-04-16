@@ -3,7 +3,7 @@ title: fahrenheitToCelsius
 tags: math,beginner
 ---
 
-Fahrenheit to Celsius temperature conversion.
+Converts Fahrenheit to Celsius.
 
 Follows the conversion formula `C = (F - 32) * 5/9`.
 
