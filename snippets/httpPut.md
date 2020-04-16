@@ -12,10 +12,11 @@ Handle the `onerror` event, by running the provided `err` function.
 Omit the last argument, `err` to log the request to the console's error stream by default.
 
 ```js
+
 const httpPut = (url, data, callback, err = console.error) => {
   const request = new XMLHttpRequest();
-  request.open("PUT", url, true);
-  request.setRequestHeader('Content-type','application/json; charset=utf-8');
+  request.open('PUT', url, true);
+  request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
   request.onload = () => callback(request);
   request.onerror = () => err(request);
   request.send(data);
@@ -23,7 +24,8 @@ const httpPut = (url, data, callback, err = console.error) => {
 ```
 
 ```js
-const password = "fooBaz";
+
+const password = 'fooBaz';
 const data = JSON.stringify({
   id: 1,
   title: 'foo',

@@ -12,5 +12,5 @@ const celsiusToFahrenheit = degrees => 1.8 * degrees + 32;
 ```
 
 ```js
-celsiusToFahrenheit(33) // 91.4
+celsiusToFahrenheit(33); // 91.4
 ```
