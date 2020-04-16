@@ -1221,7 +1221,7 @@
         ]
       },
       "meta": {
-        "hash": "7738cec1d3804a4542cd80899d7f6d2890d8950aae5751a76e733b0ed270d802"
+        "hash": "ff5ed6bd1f89525d1481499cd24fcb5f1f4d5f5e268d42caef3b23076fd5fd91"
       }
     },
     {
@@ -1759,14 +1759,14 @@
       "type": "snippetListing",
       "title": "getType",
       "attributes": {
-        "text": "Returns the native type of a value.\n\nReturn `\"undefined\"` or `\"null\"` if the value is `undefined` or `null`.\nOtherwise, use `Object.prototype.constructor.name` to get the name of the constructor, `String.prototype.toLowerCase()` to return it in lowercase.\n\n",
+        "text": "Returns the native type of a value.\n\nReturn `'undefined'` or `'null'` if the value is `undefined` or `null`.\nOtherwise, use `Object.prototype.constructor.name` to get the name of the constructor.\n\n",
         "tags": [
           "type",
           "beginner"
         ]
       },
       "meta": {
-        "hash": "87c0b3cc13caebf6bb46f0769fecc8b13140ea133bbf096136c740154c1d456f"
+        "hash": "0a1f42c4c267fe273f3452f80ed1fbdbe45bc47793f86077c5733146a7018e44"
       }
     },
     {
@@ -2405,7 +2405,7 @@
         ]
       },
       "meta": {
-        "hash": "0694b883486ca56109cb2c2ad8ed3477c0c4ee84d2fa81884409c40302a13fa7"
+        "hash": "e7668258c3cf902fa59107db45e7d73f7cf506a3a2074905b1eb79bb0f5c3d33"
       }
     },
     {
@@ -2624,7 +2624,7 @@
         ]
       },
       "meta": {
-        "hash": "c09e927ebf399af3fa3bd3873b407f26130f86e6abb7871f88e1892baed899bf"
+        "hash": "f8d09a514807d27b893a37f2efc76fb01336ee118241e7df5a3913ef460850db"
       }
     },
     {
@@ -2767,7 +2767,7 @@
         ]
       },
       "meta": {
-        "hash": "2df9322464af125f8a33dad1f15a7df5ccd7d8f9322efe871dc026974971ac85"
+        "hash": "dc7d429725fc03d1b33fc1702fd881dfffce74fe4b8291225a54ec2214667822"
       }
     },
     {
@@ -3001,7 +3001,7 @@
         ]
       },
       "meta": {
-        "hash": "682a6b7cfeb58efe9ed7b6daf467c45397df0acecfc21cab59e5ffedd03503ba"
+        "hash": "3db3faac666ee61ab86c70766d2ab5d1293ffd818da87edb971bfff7a366364a"
       }
     },
     {
@@ -3592,7 +3592,7 @@
         ]
       },
       "meta": {
-        "hash": "406723128cb71796de5503b04c137c89c9e9bd245164483c74b0229df50d2021"
+        "hash": "e8f820ce6da97eabde082ffb829c9fb700e85efc79bdebe883c67237269e3f52"
       }
     },
     {
@@ -3938,7 +3938,7 @@
         ]
       },
       "meta": {
-        "hash": "345bea897a67c1b851ef4110b3db692140064c418703a5d102e057b002808de3"
+        "hash": "a2b9ac4f1209c3791caa6f40f0d041acd75514e9ee8909f2e3833635f357c0bd"
       }
     },
     {
@@ -4332,7 +4332,7 @@
         ]
       },
       "meta": {
-        "hash": "0b549930f468d934adcb898f371ef590beff15bf2816d7e5c65264a567d68486"
+        "hash": "ffb9c0d1d09aeb989789286efb91cc237b89ce13f44ad9510a014f9ab150df71"
       }
     },
     {
@@ -4648,7 +4648,7 @@
         ]
       },
       "meta": {
-        "hash": "f77974f024d9c020fe8efe4ecc77686faf8ad690122f4c071fe5205df921e052"
+        "hash": "6dd4c6a51d2c80fa4768c95ae01c16a8359c4140bcad28c7fde0cecd72d7d3e2"
       }
     },
     {
