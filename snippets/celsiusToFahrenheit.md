@@ -3,7 +3,7 @@ title: celsiusToFahrenheit
 tags: math,beginner
 ---
 
-Celsius to Fahrenheit temperature conversion.
+Converts Celsius to Fahrenheit.
 
 Follows the conversion formula `F =  1.8C + 32`.
 
