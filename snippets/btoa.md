@@ -1,6 +1,6 @@
 ---
 title: btoa
-tags: node,string,utility,beginner
+tags: node,string,beginner
 ---
 
 Creates a base-64 encoded ASCII string from a String object in which each character in the string is treated as a byte of binary data.

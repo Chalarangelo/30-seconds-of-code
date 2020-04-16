@@ -1,6 +1,6 @@
 ---
 title: coalesceFactory
-tags: utility,intermediate
+tags: type,intermediate
 ---
 
 Returns a customized coalesce function that returns the first argument that returns `true` from the provided argument validation function.

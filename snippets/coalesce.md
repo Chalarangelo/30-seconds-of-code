@@ -1,6 +1,6 @@
 ---
 title: coalesce
-tags: utility,beginner
+tags: type,beginner
 ---
 
 Returns the first defined, non-null argument.

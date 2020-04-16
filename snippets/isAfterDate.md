@@ -1,6 +1,6 @@
 ---
 title: isAfterDate
-tags: date,utility,beginner
+tags: date,beginner
 ---
 
 Check if a date is after another date.

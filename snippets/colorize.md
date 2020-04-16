@@ -1,6 +1,6 @@
 ---
 title: colorize
-tags: node,utility,string,intermediate
+tags: node,string,intermediate
 ---
 
 Add special characters to text to print in color in the console (combined with `console.log()`).

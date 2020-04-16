@@ -1,6 +1,6 @@
 ---
 title: indentString
-tags: string,utility,beginner
+tags: string,beginner
 ---
 
 Indents each line in the provided string.

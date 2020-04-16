@@ -1,6 +1,6 @@
 ---
 title: atob
-tags: node,string,utility,beginner
+tags: node,string,beginner
 ---
 
 Decodes a string of data which has been encoded using base-64 encoding.

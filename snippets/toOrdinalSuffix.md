@@ -1,6 +1,6 @@
 ---
 title: toOrdinalSuffix
-tags: utility,math,intermediate
+tags: math,intermediate
 ---
 
 Adds an ordinal suffix to a number.

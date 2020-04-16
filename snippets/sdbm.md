@@ -1,6 +1,6 @@
 ---
 title: sdbm
-tags: math,utility,intermediate
+tags: math,intermediate
 ---
 
 Hashes the input string into a whole number.
