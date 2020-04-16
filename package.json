@@ -4,8 +4,7 @@
   "description": "A curated collection of useful CSS snippets.",
   "main": "index.js",
   "scripts": {
-    "extractor": "extract-snippet-data config.js",
-    "linter": "prettier --write \"**/*.{js,json,md,css,scss}\""
+    "extractor": "extract-snippet-data config.js"
   },
   "author": "atomiks",
   "license": "MIT",
