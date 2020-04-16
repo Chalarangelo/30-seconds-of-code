@@ -1,6 +1,6 @@
 ---
 title: httpDelete
-tags: browser,intermediate
+tags: utility,url,browser,intermediate
 ---
 
 Makes a `DELETE` request to the passed URL.
@@ -21,7 +21,9 @@ const httpDelete = (url, callback, err = console.error) => {
 ```
 
 ```js
-httpDelete('https://website.com/users/123', request => {
+httpDelete('https://jsonplaceholder.typicode.com/posts/1', request => {
   console.log(request.responseText);
-}); // 'Deletes a user from the database'
+}); /*
+Logs: {}
+*/
 ```
