@@ -382,6 +382,21 @@
       }
     },
     {
+      "id": "celsiusToFahrenheit",
+      "type": "snippetListing",
+      "title": "celsiusToFahrenheit",
+      "attributes": {
+        "text": "Converts Celsius to Fahrenheit.\n\nFollows the conversion formula `F =  1.8C + 32`.\n\n",
+        "tags": [
+          "math",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "861629d7838724feae6c4ff4d6ea56f8bced38701e3cae33f90d201e8f7f1488"
+      }
+    },
+    {
       "id": "chainAsync",
       "type": "snippetListing",
       "title": "chainAsync",
@@ -1290,6 +1305,21 @@
       }
     },
     {
+      "id": "fahrenheitToCelsius",
+      "type": "snippetListing",
+      "title": "fahrenheitToCelsius",
+      "attributes": {
+        "text": "Converts Fahrenheit to Celsius.\n\nFollows the conversion formula `C = (F - 32) * 5/9`.\n\n",
+        "tags": [
+          "math",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "d158f854d563f284e6d5e39251b77f81159f2750008e6b9682dcd02ade2a4b62"
+      }
+    },
+    {
       "id": "fibonacci",
       "type": "snippetListing",
       "title": "fibonacci",
@@ -1933,6 +1963,23 @@
       }
     },
     {
+      "id": "httpDelete",
+      "type": "snippetListing",
+      "title": "httpDelete",
+      "attributes": {
+        "text": "Makes a `DELETE` request to the passed URL.\n\nUse `XMLHttpRequest` web api to make a `delete` request to the given `url`.\nHandle the `onload` event, by running the provided `callback` function.\nHandle the `onerror` event, by running the provided `err` function.\nOmit the third argument, `err` to log the request to the console's error stream by default.\n\n",
+        "tags": [
+          "utility",
+          "url",
+          "browser",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "f41090864871a22e83896f869524d3037dc552f18f37f3a77128119698a3fa4e"
+      }
+    },
+    {
       "id": "httpGet",
       "type": "snippetListing",
       "title": "httpGet",
@@ -1964,6 +2011,23 @@
       },
       "meta": {
         "hash": "5b29941074f19769531b3320ec8d61e2b2bdc69735fb781bf7e880ff2080ec04"
+      }
+    },
+    {
+      "id": "httpPut",
+      "type": "snippetListing",
+      "title": "httpPut",
+      "attributes": {
+        "text": "Makes a `PUT` request to the passed URL.\n\nUse `XMLHttpRequest` web api to make a `put` request to the given `url`.\nSet the value of an `HTTP` request header with `setRequestHeader` method.\nHandle the `onload` event, by running the provided `callback` function.\nHandle the `onerror` event, by running the provided `err` function.\nOmit the last argument, `err` to log the request to the console's error stream by default.\n\n",
+        "tags": [
+          "utility",
+          "url",
+          "browser",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "7cbb5736b6751fe05353ab43bed3287e5922945373863326dc40b953b6073651"
       }
     },
     {
@@ -3480,6 +3544,22 @@
       },
       "meta": {
         "hash": "99537507288f1e101bfc0f80ba708b415832b27ce060033fbba8bdfc32cc3cea"
+      }
+    },
+    {
+      "id": "objectToEntries",
+      "type": "snippetListing",
+      "title": "objectToEntries",
+      "attributes": {
+        "text": "Creates an array of key-value pair arrays from an object.\n\nUse `Object.keys()` and `Array.prototype.map()` to iterate over the object's keys and produce an array with key-value pairs.\n\n",
+        "tags": [
+          "object",
+          "array",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "da5ab6a4f794f33d985d8a82794414b80913e63214a80d78c87bbda9638faa4f"
       }
     },
     {

@@ -622,6 +622,31 @@
       }
     },
     {
+      "id": "celsiusToFahrenheit",
+      "title": "celsiusToFahrenheit",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "celsiusToFahrenheit.md",
+        "text": "Converts Celsius to Fahrenheit.\n\nFollows the conversion formula `F =  1.8C + 32`.\n\n",
+        "codeBlocks": {
+          "es6": "const celsiusToFahrenheit = degrees => 1.8 * degrees + 32;",
+          "es5": "var celsiusToFahrenheit = function celsiusToFahrenheit(degrees) {\n  return 1.8 * degrees + 32;\n};",
+          "example": "celsiusToFahrenheit(33) // 91.4"
+        },
+        "tags": [
+          "math",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "861629d7838724feae6c4ff4d6ea56f8bced38701e3cae33f90d201e8f7f1488",
+        "firstSeen": "1587024006",
+        "lastUpdated": "1587024006",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "chainAsync",
       "title": "chainAsync",
       "type": "snippet",
@@ -1386,8 +1411,8 @@
       "meta": {
         "hash": "77a01af8797ecbe71b9c9412d21c144c03a46a49dd3d0e7d869c3df38b39b2b4",
         "firstSeen": "1516733326",
-        "lastUpdated": "1586971612",
-        "updateCount": 82,
+        "lastUpdated": "1586972838",
+        "updateCount": 83,
         "authorCount": 9
       }
     },
@@ -1489,8 +1514,8 @@
       "meta": {
         "hash": "6fa14364405f7b99aa49c2157bdc08c02b4ce2f288db29a4348a6983460933c7",
         "firstSeen": "1544374334",
-        "lastUpdated": "1586971612",
-        "updateCount": 94,
+        "lastUpdated": "1586972838",
+        "updateCount": 95,
         "authorCount": 4
       }
     },
@@ -1718,8 +1743,8 @@
       "meta": {
         "hash": "bdc202436bee09f06a353d31841c6cfff33e8efead34c6c56ae1a1413284976d",
         "firstSeen": "1531080384",
-        "lastUpdated": "1586971612",
-        "updateCount": 119,
+        "lastUpdated": "1586972838",
+        "updateCount": 120,
         "authorCount": 5
       }
     },
@@ -2104,9 +2129,34 @@
       "meta": {
         "hash": "6e9710c9117f500e74e65c0ee36b39fb80bd55537fa5ff9c4b1136b2667096f2",
         "firstSeen": "1512650493",
-        "lastUpdated": "1586971612",
-        "updateCount": 124,
+        "lastUpdated": "1586972838",
+        "updateCount": 125,
         "authorCount": 6
+      }
+    },
+    {
+      "id": "fahrenheitToCelsius",
+      "title": "fahrenheitToCelsius",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "fahrenheitToCelsius.md",
+        "text": "Converts Fahrenheit to Celsius.\n\nFollows the conversion formula `C = (F - 32) * 5/9`.\n\n",
+        "codeBlocks": {
+          "es6": "const fahrenheitToCelsius = degrees => (degrees - 32) * 5/9;",
+          "es5": "var fahrenheitToCelsius = function fahrenheitToCelsius(degrees) {\n  return (degrees - 32) * 5 / 9;\n};",
+          "example": "fahrenheitToCelsius(32); // 0"
+        },
+        "tags": [
+          "math",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "d158f854d563f284e6d5e39251b77f81159f2750008e6b9682dcd02ade2a4b62",
+        "firstSeen": "1587024006",
+        "lastUpdated": "1587024006",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -2768,8 +2818,8 @@
       "meta": {
         "hash": "9e39c6a3a8ec5b51c5e16f69107fc9e90b2697b2cf2689850872071bb968723e",
         "firstSeen": "1515856488",
-        "lastUpdated": "1586971612",
-        "updateCount": 83,
+        "lastUpdated": "1586972838",
+        "updateCount": 84,
         "authorCount": 4
       }
     },
@@ -3163,6 +3213,33 @@
       }
     },
     {
+      "id": "httpDelete",
+      "title": "httpDelete",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "httpDelete.md",
+        "text": "Makes a `DELETE` request to the passed URL.\n\nUse `XMLHttpRequest` web api to make a `delete` request to the given `url`.\nHandle the `onload` event, by running the provided `callback` function.\nHandle the `onerror` event, by running the provided `err` function.\nOmit the third argument, `err` to log the request to the console's error stream by default.\n\n",
+        "codeBlocks": {
+          "es6": "const httpDelete = (url, callback, err = console.error) => {\n  const request = new XMLHttpRequest();\n  request.open('DELETE', url, true);\n  request.onload = () => callback(request);\n  request.onerror = () => err(request);\n  request.send();\n};",
+          "es5": "var httpDelete = function httpDelete(url, callback) {\n  var err = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : console.error;\n  var request = new XMLHttpRequest();\n  request.open('DELETE', url, true);\n\n  request.onload = function () {\n    return callback(request);\n  };\n\n  request.onerror = function () {\n    return err(request);\n  };\n\n  request.send();\n};",
+          "example": "httpDelete('https://jsonplaceholder.typicode.com/posts/1', request => {\n  console.log(request.responseText);\n}); /*\nLogs: {}\n*/"
+        },
+        "tags": [
+          "utility",
+          "url",
+          "browser",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "f41090864871a22e83896f869524d3037dc552f18f37f3a77128119698a3fa4e",
+        "firstSeen": "1587025293",
+        "lastUpdated": "1587025293",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "httpGet",
       "title": "httpGet",
       "type": "snippet",
@@ -3214,6 +3291,33 @@
         "lastUpdated": "1565681352",
         "updateCount": 30,
         "authorCount": 5
+      }
+    },
+    {
+      "id": "httpPut",
+      "title": "httpPut",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "httpPut.md",
+        "text": "Makes a `PUT` request to the passed URL.\n\nUse `XMLHttpRequest` web api to make a `put` request to the given `url`.\nSet the value of an `HTTP` request header with `setRequestHeader` method.\nHandle the `onload` event, by running the provided `callback` function.\nHandle the `onerror` event, by running the provided `err` function.\nOmit the last argument, `err` to log the request to the console's error stream by default.\n\n",
+        "codeBlocks": {
+          "es6": "const httpPut = (url, data, callback, err = console.error) => {\n  const request = new XMLHttpRequest();\n  request.open(\"PUT\", url, true);\n  request.setRequestHeader('Content-type','application/json; charset=utf-8');\n  request.onload = () => callback(request);\n  request.onerror = () => err(request);\n  request.send(data);\n};",
+          "es5": "var httpPut = function httpPut(url, data, callback) {\n  var err = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : console.error;\n  var request = new XMLHttpRequest();\n  request.open(\"PUT\", url, true);\n  request.setRequestHeader('Content-type', 'application/json; charset=utf-8');\n\n  request.onload = function () {\n    return callback(request);\n  };\n\n  request.onerror = function () {\n    return err(request);\n  };\n\n  request.send(data);\n};",
+          "example": "const password = \"fooBaz\";\nconst data = JSON.stringify({\n  id: 1,\n  title: 'foo',\n  body: 'bar',\n  userId: 1\n});\nhttpPut('https://jsonplaceholder.typicode.com/posts/1', data, request => {\n  console.log(request.responseText);\n}); /*\nLogs: {\n  id: 1,\n  title: 'foo',\n  body: 'bar',\n  userId: 1\n}\n*/"
+        },
+        "tags": [
+          "utility",
+          "url",
+          "browser",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "7cbb5736b6751fe05353ab43bed3287e5922945373863326dc40b953b6073651",
+        "firstSeen": "1587025293",
+        "lastUpdated": "1587025293",
+        "updateCount": 2,
+        "authorCount": 2
       }
     },
     {
@@ -4111,9 +4215,9 @@
       "meta": {
         "hash": "28d0c6b5e677ef68487216388c848c86d44a11c6668fc6f214a7daf45552aa41",
         "firstSeen": "1580904003",
-        "lastUpdated": "1586972089",
-        "updateCount": 3,
-        "authorCount": 3
+        "lastUpdated": "1586972838",
+        "updateCount": 4,
+        "authorCount": 4
       }
     },
     {
@@ -4805,8 +4909,8 @@
       "meta": {
         "hash": "3db3faac666ee61ab86c70766d2ab5d1293ffd818da87edb971bfff7a366364a",
         "firstSeen": "1514801920",
-        "lastUpdated": "1586971612",
-        "updateCount": 90,
+        "lastUpdated": "1586972838",
+        "updateCount": 91,
         "authorCount": 7
       }
     },
@@ -5693,6 +5797,32 @@
       }
     },
     {
+      "id": "objectToEntries",
+      "title": "objectToEntries",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "objectToEntries.md",
+        "text": "Creates an array of key-value pair arrays from an object.\n\nUse `Object.keys()` and `Array.prototype.map()` to iterate over the object's keys and produce an array with key-value pairs.\n\n",
+        "codeBlocks": {
+          "es6": "const objectToEntries = obj => Object.keys(obj).map(k => [k, obj[k]]);",
+          "es5": "var objectToEntries = function objectToEntries(obj) {\n  return Object.keys(obj).map(function (k) {\n    return [k, obj[k]];\n  });\n};",
+          "example": "objectToEntries({ a: 1, b: 2 }); // [ ['a', 1], ['b', 2] ]"
+        },
+        "tags": [
+          "object",
+          "array",
+          "beginner"
+        ]
+      },
+      "meta": {
+        "hash": "da5ab6a4f794f33d985d8a82794414b80913e63214a80d78c87bbda9638faa4f",
+        "firstSeen": "1587024613",
+        "lastUpdated": "1587024613",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "objectToPairs",
       "title": "objectToPairs",
       "type": "snippet",
@@ -5740,8 +5870,8 @@
       "meta": {
         "hash": "e8f820ce6da97eabde082ffb829c9fb700e85efc79bdebe883c67237269e3f52",
         "firstSeen": "1570824965",
-        "lastUpdated": "1586971612",
-        "updateCount": 57,
+        "lastUpdated": "1586972838",
+        "updateCount": 58,
         "authorCount": 4
       }
     },
@@ -6306,8 +6436,8 @@
       "meta": {
         "hash": "a2b9ac4f1209c3791caa6f40f0d041acd75514e9ee8909f2e3833635f357c0bd",
         "firstSeen": "1517069864",
-        "lastUpdated": "1586971612",
-        "updateCount": 115,
+        "lastUpdated": "1586972838",
+        "updateCount": 116,
         "authorCount": 5
       }
     },
@@ -6950,8 +7080,8 @@
       "meta": {
         "hash": "be8ec39c092128ba679a3f0421b6abc34ad891dec85354caa419dc4104687a05",
         "firstSeen": "1513521691",
-        "lastUpdated": "1586971612",
-        "updateCount": 112,
+        "lastUpdated": "1586972838",
+        "updateCount": 113,
         "authorCount": 6
       }
     },
@@ -7466,8 +7596,8 @@
       "meta": {
         "hash": "6dd4c6a51d2c80fa4768c95ae01c16a8359c4140bcad28c7fde0cecd72d7d3e2",
         "firstSeen": "1514645161",
-        "lastUpdated": "1586971612",
-        "updateCount": 54,
+        "lastUpdated": "1586972838",
+        "updateCount": 55,
         "authorCount": 5
       }
     },
