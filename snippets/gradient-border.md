@@ -6,7 +6,9 @@ tags: visual,intermediate
 Creates a gradient border.
 
 ```html
-<div class="gradient-border"></div>
+<div class="gradient-border">
+  <p>Gradient border!</P>
+</div>
 ```
 
 ```css
