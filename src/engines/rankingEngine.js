@@ -28,7 +28,6 @@ const determineSnippetRanking = snippet => {
     snippet.language && snippet.language.long || '',
     (snippet.type || '.').split('.')[0],
     snippet.attributes.codeBlocks && snippet.attributes.codeBlocks.src || '',
-    snippet.attributes.codeBlocks && snippet.attributes.codeBlocks.es6 || '',
     snippet.attributes.codeBlocks && snippet.attributes.codeBlocks.css || '',
     snippet.attributes.codeBlocks && snippet.attributes.codeBlocks.html || '',
     snippet.attributes.codeBlocks && snippet.attributes.codeBlocks.js || '',
