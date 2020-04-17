@@ -10,7 +10,6 @@ before_install:
 - npm install -g prettier
 - npm install -g eslint
 script:
-- npm run linter
 - npm run extractor
 after_success:
 - chmod +x .travis/push.sh

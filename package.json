@@ -26,12 +26,6 @@
   "homepage": "https://30secondsofcode.org/",
   "dependencies": {},
   "devDependencies": {
-    "@30-seconds/integration-tools": "^1.3.4",
-    "@babel/core": "^7.5.4",
-    "@babel/preset-env": "^7.5.4",
-    "eslint": "^5.16.0",
-    "fs-extra": "^8.1.0",
-    "kleur": "^3.0.3",
-    "prettier": "^1.18.2"
+    "@30-seconds/integration-tools": "^2.0.0"
   }
 }
