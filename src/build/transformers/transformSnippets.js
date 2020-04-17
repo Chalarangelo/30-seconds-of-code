@@ -26,10 +26,12 @@ export const transformSnippetIndex = (edges, withSearchTokens = false) =>
  * @param {object} snippet - The snippet object whose description to transform.
  * @param {string} cardTemplate - A string that determines the card template.
  */
-export const transformSnippetDescription = (snippet, cardTemplate) =>
-  cardTemplate === 'blog'
-    ? stripMarkdownFormat(snippet.text.short)
+export const transformSnippetDescription = (snippet, cardTemplate) => {
+  const parsedDescription = stripMarkdownFormat(snippet.text.short);
+  return cardTemplate === 'blog' || parsedDescription.length <= 160
+    ? parsedDescription
     : literals.pageDescription(snippet.title, snippet.language.long);
+};
 
 /**
  * Given a snippet object with key-value pairs, removes all unnecessary

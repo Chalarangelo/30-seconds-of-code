@@ -162,7 +162,9 @@ describe('transformSnippetDescription', () => {
   it('returns the appropriate description for a blog snippet', () => {
     expect(
       transformSnippetDescription(
-        { title: 'test', language: { long: 'language' } }, 'notblog'
+        { title: 'test', language: { long: 'language' }, text: {
+          short: 'This is much much longer than the predefined 160 characters limit so the transformer should output the generic description instead. Makeing this string londer la la la la.',
+        } }, 'notblog'
       )
     ).toBe('Learn how to code a test snippet in language on 30 seconds of code.');
   });
