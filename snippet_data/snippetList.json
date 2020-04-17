@@ -346,6 +346,21 @@
       }
     },
     {
+      "id": "gradient-border",
+      "type": "snippetListing",
+      "title": "Gradient border",
+      "attributes": {
+        "text": "Creates a gradient border.\n\n",
+        "tags": [
+          "visual",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "0a79c723c57eb1266d973fc9eaffab2ee54a51e54cf64c876a8e31b4e587f57d"
+      }
+    },
+    {
       "id": "gradient-text",
       "type": "snippetListing",
       "title": "Gradient text",

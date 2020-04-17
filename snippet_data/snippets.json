@@ -714,6 +714,37 @@
       }
     },
     {
+      "id": "gradient-border",
+      "title": "Gradient border",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "gradient-border.md",
+        "text": "Creates a gradient border.\n\n",
+        "explanation": "\n\n- Create a block with a transparent border, relative position and a background.\n- Absolute position the `:before` pseudo-element with a gradient background and `z-index: -1`.\n- Use `top: 0`, `right: 0`, `bottom: 0`, `left: 0` to make the pseudo-element equal size to its parent element, `margin: -1px` to make it larger.\n- Use `background-clip: padding-box` to not draw the parent element's background below the border.\n\n",
+        "browserSupport": {
+          "text": "\n\n- https://caniuse.com/#feat=mdn-css_properties_background_background-clip\n",
+          "supportPercentage": 100
+        },
+        "codeBlocks": {
+          "html": "<div class=\"gradient-border\">\n  <p>Gradient border!</P>\n</div>",
+          "css": ".gradient-border {\n  position: relative;\n  border: solid 1px transparent;\n  border-radius: 10px;\n  background-color: #f7f7fe;\n  background-clip: padding-box;\n  margin: 8px;\n  padding: 8px 16px;\n}\n\n.gradient-border:before {\n  content: '';\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: -1;\n  margin: -1px;\n  border-radius: inherit;\n  background: linear-gradient(to bottom, #d3e7ec, #fff);\n}",
+          "js": "",
+          "scopedCss": "[data-scope=\"gradient-border\"] .gradient-border {\n  position: relative;\n  border: solid 1px transparent;\n  border-radius: 10px;\n  background-color: #f7f7fe;\n  background-clip: padding-box;\n  margin: 8px;\n  padding: 8px 16px; }\n\n[data-scope=\"gradient-border\"] .gradient-border:before {\n  content: '';\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: -1;\n  margin: -1px;\n  border-radius: inherit;\n  background: linear-gradient(to bottom, #d3e7ec, #fff); }\n"
+        },
+        "tags": [
+          "visual",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "0a79c723c57eb1266d973fc9eaffab2ee54a51e54cf64c876a8e31b4e587f57d",
+        "firstSeen": "1587127992",
+        "lastUpdated": "1587128027",
+        "updateCount": 3,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "gradient-text",
       "title": "Gradient text",
       "type": "snippet",
