@@ -8,23 +8,13 @@ module.exports = {
   // Path information
   snippetPath: `snippets`,
   snippetDataPath: `snippet_data`,
-  assetPath: `assets`,
-  pagePath: `src/docs/pages`,
-  staticPartsPath: `src/static-parts`,
-  distPath: `dist`,
-  testPath: `test`,
   // General information
   language: {
     short: `js`,
     long: `JavaScript`
   },
-  // Module information
-  moduleName: `_30s`,
-  rollupInputFile: `imports.temp.js`,
-  testModuleFile: `test/_30s.js`,
   // Requirable JSONs
   requirables: [
     `snippets.json`
-  ],
-  parser: '_30codeParser',
+  ]
 };
