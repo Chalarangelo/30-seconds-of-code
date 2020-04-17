@@ -7,7 +7,6 @@
     "snippet_data/snippets.json"
   ],
   "slug": "js",
-  "reducer": "es6Reducer",
   "featured": 2,
   "theme": {
     "backColor": "#f6d854",
