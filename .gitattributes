@@ -1,0 +1,7 @@
+src/docs/* linguist-documentation
+scripts/* linguist-documentation
+gatsby-browser.js linguist-documentation
+gatsby-config.js linguist-documentation
+gatsby-node.js linguist-documentation
+gatsby-ssr.js linguist-documentation
+.travis/* linguist-documentation
