@@ -3,7 +3,7 @@ title: ObjectMakerFromArrays
 tags: utility,beginner 
 ---
 
-This snippet will retturn an object which is composed of the two arrays. The first array will make up the keys and the second array will make up the values.
+This snippet will return an object which is composed of the two arrays. The first array will make up the keys and the second array will make up the values.
 
 ```js
 const ObjectMakerFromArrays = (arg1,arg2) =>
