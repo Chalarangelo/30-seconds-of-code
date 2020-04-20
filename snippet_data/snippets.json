@@ -871,6 +871,38 @@
       }
     },
     {
+      "id": "image-hover-rotate",
+      "title": "Image rotate on hover",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "image-hover-rotate.md",
+        "text": "Creates a rotate effect for the image on hover.\n\n",
+        "explanation": "\n\n- Use `scale` and `rotate` when hovering over the parent element (a `figure`) to animate the image, using the `transition` property.\n- Use `overflow: hidden` on the parent container to hide the excess from the image transformation.\n\n",
+        "browserSupport": {
+          "text": "\n",
+          "supportPercentage": 100
+        },
+        "codeBlocks": {
+          "html": "<figure class=\"hover-rotate\">\n  <img src=\"https://i.picsum.photos/id/669/600/800.jpg\"/>\n</figure>",
+          "css": ".hover-rotate {\n  overflow: hidden;\n  margin: 8px;\n  min-width: 240px;\n  max-width: 320px;\n  width: 100%;\n}\n\n.hover-rotate img {\n  transition: all 0.3s;\n  box-sizing: border-box;\n  max-width: 100%;\n}\n\n.hover-rotate:hover img {\n  transform: scale(1.3) rotate(5deg);\n}",
+          "js": "",
+          "scopedCss": "[data-scope=\"image-hover-rotate\"] .hover-rotate {\n  overflow: hidden;\n  margin: 8px;\n  min-width: 240px;\n  max-width: 320px;\n  width: 100%; }\n\n[data-scope=\"image-hover-rotate\"] .hover-rotate img {\n  transition: all 0.3s;\n  box-sizing: border-box;\n  max-width: 100%; }\n\n[data-scope=\"image-hover-rotate\"] .hover-rotate:hover img {\n  transform: scale(1.3) rotate(5deg); }\n"
+        },
+        "tags": [
+          "animation",
+          "visual",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "23caf38b0dda75c00c502e42dea58258d7dcabcf812c15a85b826efaacc58435",
+        "firstSeen": "1587396971",
+        "lastUpdated": "1587396971",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "image-overlay-hover",
       "title": "Image overlay on hover",
       "type": "snippet",
