@@ -871,6 +871,38 @@
       }
     },
     {
+      "id": "image-overlay-hover",
+      "title": "Image overlay on hover",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "image-overlay-hover.md",
+        "text": "Displays an image overlay effect on hover.\n\n",
+        "explanation": "\n\n- Use the `:before` and `:after` elements for the top and bottom bars of the overlay respectively, setting their `opacity`, `transform` and `transition` to produce the desired effect.\n- Use the `figcaption` for the text of the overlay, setting `display: flex`, `flex-direction: column` and `justify-content: center` to center the text into the image.\n- Use the `:hover` pseudo-selector to update the `opacity` and `transform`  of all the elements and produce the desired effect.\n\n",
+        "browserSupport": {
+          "text": "\n",
+          "supportPercentage": 100
+        },
+        "codeBlocks": {
+          "html": "<figure class=\"hover-img\">\n  <img src=\"https://i.picsum.photos/id/200/440/320.jpg\"/>\n  <figcaption>\n    <h3>Lorem <br/>Ipsum</h3>\n  </figcaption>\n</figure>",
+          "css": ".hover-img {\n  background-color: #000;\n  color: #fff;\n  display: inline-block;\n  margin: 8px;\n  max-width: 320px;\n  min-width: 240px;\n  overflow: hidden;\n  position: relative;\n  text-align: center;\n  width: 100%;\n}\n\n.hover-img * {\n  box-sizing: border-box;\n  transition: all 0.45s ease;\n}\n\n.hover-img:before,\n.hover-img:after {\n  background-color: rgba(0, 0, 0, 0.5);\n  border-top: 32px solid rgba(0, 0, 0, 0.5);\n  border-bottom: 32px solid rgba(0, 0, 0, 0.5);\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  content: '';\n  transition: all 0.3s ease;\n  z-index: 1;\n  opacity: 0;\n  transform: scaleY(2);\n}\n\n.hover-img img {\n  vertical-align: top;\n  max-width: 100%;\n  backface-visibility: hidden;\n}\n\n.hover-img figcaption {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  align-items: center;\n  z-index: 1;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  line-height: 1.1em;\n  opacity: 0;\n  z-index: 2;\n  transition-delay: 0.1s;\n  font-size: 24px;\n  font-family: sans-serif;\n  font-weight: 400;\n  letter-spacing: 1px;\n  text-transform: uppercase;\n}\n\n.hover-img:hover:before,\n.hover-img:hover:after {\n  transform: scale(1);\n  opacity: 1;\n}\n\n.hover-img:hover > img {\n  opacity: 0.7;\n}\n\n.hover-img:hover figcaption {\n  opacity: 1;\n}",
+          "js": "",
+          "scopedCss": "[data-scope=\"image-overlay-hover\"] .hover-img {\n  background-color: #000;\n  color: #fff;\n  display: inline-block;\n  margin: 8px;\n  max-width: 320px;\n  min-width: 240px;\n  overflow: hidden;\n  position: relative;\n  text-align: center;\n  width: 100%; }\n\n[data-scope=\"image-overlay-hover\"] .hover-img * {\n  box-sizing: border-box;\n  transition: all 0.45s ease; }\n\n[data-scope=\"image-overlay-hover\"] .hover-img:before,\n[data-scope=\"image-overlay-hover\"] .hover-img:after {\n  background-color: rgba(0, 0, 0, 0.5);\n  border-top: 32px solid rgba(0, 0, 0, 0.5);\n  border-bottom: 32px solid rgba(0, 0, 0, 0.5);\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  content: '';\n  transition: all 0.3s ease;\n  z-index: 1;\n  opacity: 0;\n  transform: scaleY(2); }\n\n[data-scope=\"image-overlay-hover\"] .hover-img img {\n  vertical-align: top;\n  max-width: 100%;\n  backface-visibility: hidden; }\n\n[data-scope=\"image-overlay-hover\"] .hover-img figcaption {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  align-items: center;\n  z-index: 1;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  line-height: 1.1em;\n  opacity: 0;\n  z-index: 2;\n  transition-delay: 0.1s;\n  font-size: 24px;\n  font-family: sans-serif;\n  font-weight: 400;\n  letter-spacing: 1px;\n  text-transform: uppercase; }\n\n[data-scope=\"image-overlay-hover\"] .hover-img:hover:before,\n[data-scope=\"image-overlay-hover\"] .hover-img:hover:after {\n  transform: scale(1);\n  opacity: 1; }\n\n[data-scope=\"image-overlay-hover\"] .hover-img:hover > img {\n  opacity: 0.7; }\n\n[data-scope=\"image-overlay-hover\"] .hover-img:hover figcaption {\n  opacity: 1; }\n"
+        },
+        "tags": [
+          "visual",
+          "animation",
+          "advanced"
+        ]
+      },
+      "meta": {
+        "hash": "0d24750fc0f0374cf4735b125084ddda38c0269f2baaa046c37cb58b69544dc2",
+        "firstSeen": "1587381153",
+        "lastUpdated": "1587381153",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "masonry-layout",
       "title": "Masonry Layout",
       "type": "snippet",
