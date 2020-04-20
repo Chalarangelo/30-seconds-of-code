@@ -14,7 +14,7 @@ Ensures that an element self-clears its children.
 ```
 
 ```css
-.clearfix::after {
+.clearfix:after {
   content: '';
   display: block;
   clear: both;
@@ -27,7 +27,7 @@ Ensures that an element self-clears its children.
 
 #### Explanation
 
-1. `.clearfix::after` defines a pseudo-element.
+1. `.clearfix:after` defines a pseudo-element.
 2. `content: ''` allows the pseudo-element to affect layout.
 3. `clear: both` indicates that the left, right or both sides of the element cannot be adjacent to earlier floated elements within the same block formatting context.
 

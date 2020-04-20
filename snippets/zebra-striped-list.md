@@ -27,5 +27,3 @@ li:nth-child(odd) {
 - Note that you can use it to apply different styles to other HTML elements like `div`, `tr`, `p`, `ol`, etc.
 
 #### Browser support
-
-https://caniuse.com/#feat=css-sel3

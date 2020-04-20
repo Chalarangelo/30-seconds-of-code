@@ -56,6 +56,3 @@ Displays a hamburger menu which transitions to a cross on hover.
 - Set `transition all 0.5s` so that both `transform` and `opacity` properties are animated for half a second.
 
 #### Browser support
-
-- https://caniuse.com/#feat=flexbox
-- https://caniuse.com/#feat=css-transitions
