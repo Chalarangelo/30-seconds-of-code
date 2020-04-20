@@ -871,6 +871,38 @@
       }
     },
     {
+      "id": "image-hover-menu",
+      "title": "Menu on image hover",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "image-hover-menu.md",
+        "text": "Displays a menu overlay when the image is hovered.\n\n",
+        "explanation": "\n\n- Use a `figure` to wrap the `img` element and a `div` element that will contain the menu links.\n- Use the `opacity` and `right` attributes to animate the image on hover, to create a sliding effect.\n- Set the `left` attribute of the `div` to the negative of the element's `width` and reset it to `0` when hovering over the parent element to slide in the menu.\n- Use `display: flex`, `flex-direction: column` and `justify-content: center` on the `div` to vertically center the menu items.\n\n",
+        "browserSupport": {
+          "text": "\n",
+          "supportPercentage": 100
+        },
+        "codeBlocks": {
+          "html": "<figure class=\"hover-menu\">\n\t<img src=\"https://i.picsum.photos/id/1060/800/480.jpg\"/>\n\t<div>\n\t\t<a href=\"#\">Home</a>\n\t\t<a href=\"#\">Pricing</a>\n\t\t<a href=\"#\">About</a>\n\t</div>\n</figure>",
+          "css": ".hover-menu {\n  position: relative;\n  overflow: hidden;\n  margin: 8px;\n  min-width: 340px;\n  max-width: 480px;\n  max-height: 290px;\n  width: 100%;\n  background: #000;\n  text-align: center;\n  box-sizing: border-box;\n}\n\n.hover-menu * {\n  box-sizing: border-box;\n}\n\n.hover-menu img {\n  position: relative;\n  max-width: 100%;\n  top: 0;\n  right: 0;\n  opacity: 1;\n  transition: 0.3s ease-in-out;\n}\n\n.hover-menu div {\n  position: absolute;\n  top: 0;\n  left: -120px;\n  width: 120px;\n  height: 100%;\n  padding: 8px 4px;\n  background: #000;\n  transition: 0.3s ease-in-out;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n\n.hover-menu div a {\n  display: block;\n  line-height: 2;\n  color: #fff;\n  text-decoration: none;\n  opacity: 0.8;\n  padding: 5px 15px;\n  position: relative;\n  transition: 0.3s ease-in-out;\n}\n\n.hover-menu div a:hover {\n  text-decoration: underline;\n}\n\n.hover-menu:hover img {\n  opacity: 0.5;\n  right: -120px;\n}\n\n.hover-menu:hover div {\n  left: 0;\n  opacity: 1;\n}",
+          "js": "",
+          "scopedCss": "[data-scope=\"image-hover-menu\"] .hover-menu {\n  position: relative;\n  overflow: hidden;\n  margin: 8px;\n  min-width: 340px;\n  max-width: 480px;\n  max-height: 290px;\n  width: 100%;\n  background: #000;\n  text-align: center;\n  box-sizing: border-box; }\n\n[data-scope=\"image-hover-menu\"] .hover-menu * {\n  box-sizing: border-box; }\n\n[data-scope=\"image-hover-menu\"] .hover-menu img {\n  position: relative;\n  max-width: 100%;\n  top: 0;\n  right: 0;\n  opacity: 1;\n  transition: 0.3s ease-in-out; }\n\n[data-scope=\"image-hover-menu\"] .hover-menu div {\n  position: absolute;\n  top: 0;\n  left: -120px;\n  width: 120px;\n  height: 100%;\n  padding: 8px 4px;\n  background: #000;\n  transition: 0.3s ease-in-out;\n  display: flex;\n  flex-direction: column;\n  justify-content: center; }\n\n[data-scope=\"image-hover-menu\"] .hover-menu div a {\n  display: block;\n  line-height: 2;\n  color: #fff;\n  text-decoration: none;\n  opacity: 0.8;\n  padding: 5px 15px;\n  position: relative;\n  transition: 0.3s ease-in-out; }\n\n[data-scope=\"image-hover-menu\"] .hover-menu div a:hover {\n  text-decoration: underline; }\n\n[data-scope=\"image-hover-menu\"] .hover-menu:hover img {\n  opacity: 0.5;\n  right: -120px; }\n\n[data-scope=\"image-hover-menu\"] .hover-menu:hover div {\n  left: 0;\n  opacity: 1; }\n"
+        },
+        "tags": [
+          "layout",
+          "animation",
+          "intermediate"
+        ]
+      },
+      "meta": {
+        "hash": "3be4b20522921b4b626206ddaa22abaa6dd5d1cd3d69507564d52eeb769cff6b",
+        "firstSeen": "1587399311",
+        "lastUpdated": "1587399311",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "image-hover-rotate",
       "title": "Image rotate on hover",
       "type": "snippet",
