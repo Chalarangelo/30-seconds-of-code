@@ -3,7 +3,7 @@ title: Offscreen
 tags: layout,visual,intermediate
 ---
 
-Completely hides an element visually and positionally in the DOM while still allowing it to be accessible. 
+Completely hides an element visually and positionally in the DOM while still allowing it to be accessible.
 Provides an alternative to `display: none` (not readable by screen readers) and `visibility: hidden` (takes up physical space in the DOM).
 
 ```html
@@ -27,13 +27,13 @@ Provides an alternative to `display: none` (not readable by screen readers) and 
 
 #### Explanation
 
-1. Remove all borders.
-2. Use `clip` to indicate that no part of the element should be shown.
-3. Make the height and width of the element 1px.
-4. Negate the elements height and width using `margin: -1px`.
-5. Hide the element's overflow.
-6. Remove all padding.
-7. Position the element absolutely so that it does not take up space in the DOM.
+- Remove all borders.
+- Use `clip` to indicate that no part of the element should be shown.
+- Make the height and width of the element 1px.
+- Negate the elements height and width using `margin: -1px`.
+- Hide the element's overflow.
+- Remove all padding.
+- Position the element absolutely so that it does not take up space in the DOM.
 
 #### Browser support
 

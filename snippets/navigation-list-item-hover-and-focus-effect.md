@@ -6,28 +6,28 @@ tags: visual,beginner
 Fancy hover and focus effect at navigation items using transform CSS property.
 
 ```html
-<nav>
+<nav class="hover-nav">
   <ul>
-    <li><a href="#/">Home</a></li>
-    <li><a href="#/">About</a></li>
-    <li><a href="#/">Contact</a></li>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
   </ul>
 </nav>
 ```
 
 ```css
-nav ul {
+.hover-nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
 
-nav li {
+.hover-nav li {
   float: left;
 }
 
-nav li a {
+.hover-nav li a {
   position: relative;
   display: block;
   color: #222;
@@ -36,7 +36,7 @@ nav li a {
   text-decoration: none;
 }
 
-li a::before {
+li a:before {
   position: absolute;
   content: "";
   width: 100%;
@@ -49,19 +49,16 @@ li a::before {
   transition: transform 0.5s ease-in-out;
 }
 
-li a:hover::before,
-li a:focus::before {
+li a:hover:before,
+li a:focus:before {
   transform: scale(1);
 }
 ```
 
 #### Explanation
 
-- Use the `::before` pseudo-element at the list item anchor to create a hover effect, hide it using `transform: scale(0)`.
+- Use the `:before` pseudo-element at the list item anchor to create a hover effect, hide it using `transform: scale(0)`.
 - Use the `:hover` and `:focus` pseudo-selectors to transition to `transform: scale(1)` and show the pseudo-element with its colored background.
 - Prevent the pseudo-element from covering the anchor element by using `z-index: -1`.
 
 #### Browser support
-
-- https://caniuse.com/#feat=transforms2d
-- https://caniuse.com/#feat=css-transitions

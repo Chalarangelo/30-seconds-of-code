@@ -21,7 +21,7 @@ Creates a pulse effect loader animation using the `animation-delay` property.
 
 .ripple-loader div {
   position: absolute;
-  border: 4px solid #76ff03;
+  border: 4px solid #454ADE;
   border-radius: 50%;
   animation: ripple-loader 1s ease-out infinite;
 }
