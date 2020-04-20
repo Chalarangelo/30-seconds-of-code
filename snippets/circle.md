@@ -24,5 +24,3 @@ Creates a circle shape with pure CSS.
 - Since a circle has the same radius at any given point, the `width` and `height` must be the same. Differing values will create an ellipse.
 
 #### Browser support
-
-- https://caniuse.com/#feat=border-radius
