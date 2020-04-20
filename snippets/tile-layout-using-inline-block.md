@@ -8,28 +8,29 @@ Align items horizontally using `display: inline-block` to create a 3-tile layout
 ```html
 <div class="tiles">
   <div class="tile">
-    <img class="tile_image" src="https://via.placeholder.com/250x150" alt="placeholder" >
-    <h2 class="tile_title">30 Seconds of CSS</h2>
+    <img src="https://via.placeholder.com/200x150">
+    <h2>30 Seconds of CSS</h2>
   </div>
   <div class="tile">
-    <img class="tile_image" src="https://via.placeholder.com/250x150" alt="placeholder" >
-    <h2 class="tile_title">30 Seconds of CSS</h2>
+    <img src="https://via.placeholder.com/200x150">
+    <h2>30 Seconds of CSS</h2>
   </div>
   <div class="tile">
-    <img class="tile_image" src="https://via.placeholder.com/250x150" alt="placeholder" >
-    <h2 class="tile_title">30 Seconds of CSS</h2>
+    <img src="https://via.placeholder.com/200x150">
+    <h2>30 Seconds of CSS</h2>
   </div>
 </div>
 ```
 
 ```css
 .tiles {
-  width: 900px;
+  width: 600px;
   font-size: 0;
+  margin: 0 auto;
 }
 
 .tile {
-  width: calc(900px / 3);
+  width: calc(600px / 3);
   display: inline-block;
 }
 
@@ -47,5 +48,3 @@ Align items horizontally using `display: inline-block` to create a 3-tile layout
 - Set `font-size: 20px` to `h2` in order to display the text.
 
 #### Browser support
-
-- https://www.caniuse.com/#search=inline-block
