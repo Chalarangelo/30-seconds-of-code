@@ -28,5 +28,3 @@ Evenly distributes child elements within a parent element.
 _Note: Alternatively, use `justify-content: space-around` to distribute the children with space around them, rather than between them._
 
 #### Browser support
-
-- https://caniuse.com/#feat=flexbox

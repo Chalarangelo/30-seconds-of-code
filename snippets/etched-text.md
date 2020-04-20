@@ -25,5 +25,3 @@ Creates an effect where text appears to be "etched" or engraved into the backgro
 - The text color should be slightly faded to make it look like it's engraved/carved out of the background.
 
 #### Browser support
-
-- https://caniuse.com/#feat=css-textshadow
