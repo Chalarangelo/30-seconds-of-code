@@ -25,7 +25,7 @@ ul {
   counter-reset: counter;
 }
 
-li::before {
+li:before {
   counter-increment: counter;
   content: counters(counter, '.') ' ';
 }
@@ -42,5 +42,3 @@ You can create a ordered list using any type of HTML.
 5. A CSS counter can be especially useful for making outlined lists, because a new instance of the counter is automatically created in child elements. Using the `counters()` function, separating text can be inserted between different levels of nested counters.
 
 #### Browser support
-
-- https://caniuse.com/#feat=css-counters
