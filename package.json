@@ -14,6 +14,6 @@
     "singleQuote": true
   },
   "devDependencies": {
-    "@30-seconds/integration-tools": "^1.3.2"
+    "@30-seconds/integration-tools": "^2.0.0"
   }
 }
