@@ -3,7 +3,7 @@ title: Box-sizing reset
 tags: layout,beginner
 ---
 
-Resets the box-model so that `width`s and `height`s are not affected by their `border`s or `padding`.
+Resets the box-model so that `width` and `height` are not affected by `border` or `padding`.
 
 ```html
 <div class="box">border-box</div>
@@ -11,24 +11,25 @@ Resets the box-model so that `width`s and `height`s are not affected by their `b
 ```
 
 ```css
-html {
+div {
   box-sizing: border-box;
 }
 
 *,
-*::before,
-*::after {
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
 .box {
   display: inline-block;
-  width: 150px;
-  height: 150px;
-  padding: 10px;
-  background: tomato;
+  width: 120px;
+  height: 120px;
+  padding: 8px;
+  background: #F24333;
   color: white;
-  border: 10px solid red;
+  border: 1px solid #BA1B1D;
+  border-radius: 4px;
 }
 
 .content-box {
@@ -42,5 +43,3 @@ html {
 2. `box-sizing: inherit` makes an element respect its parent's `box-sizing` rule.
 
 #### Browser support
-
-- https://caniuse.com/#feat=css3-boxsizing
