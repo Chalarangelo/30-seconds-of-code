@@ -6,11 +6,10 @@
     "url": "git+https://github.com/30-seconds/30-seconds-of-react.git"
   },
   "scripts": {
-    "extractor": "extract-snippet-data config.js",
-    "linter": "prettier **/*.{js,json,css,md} --write"
+    "extractor": "extract-snippet-data config.js"
   },
   "devDependencies": {
-    "@30-seconds/integration-tools": "^1.3.2"
+    "@30-seconds/integration-tools": "^2.0.0"
   },
   "prettier": {
     "singleQuote": true,

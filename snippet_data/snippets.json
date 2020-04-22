@@ -940,6 +940,34 @@
       }
     },
     {
+      "id": "useCopyToClipboard",
+      "title": "useCopyToClipboard",
+      "type": "snippet",
+      "attributes": {
+        "fileName": "useCopyToClipboard.md",
+        "text": "A hook that copies the given text to the clipboard.\n\n- Use the [copyToClipboard](/js/s/copy-to-clipboard/) snippet to copy the text to clipboard.\n- Use the `React.useState()` hook to initialize the `copied` variable.\n- Use the `React.useCallback()` hook to create a callback for the `copyToClipboard` method.\n- Use the `React.useEffect()` hook to reset the `copied` state variable if the `text` changes.\n- Return the `copied` state variable and the `copy` callback.\n\n",
+        "codeBlocks": {
+          "style": "",
+          "code": "const useCopyToClipboard = (text) => {\n  const copyToClipboard = (str) => {\n    const el = document.createElement('textarea');\n    el.value = str;\n    el.setAttribute('readonly', '');\n    el.style.position = 'absolute';\n    el.style.left = '-9999px';\n    document.body.appendChild(el);\n    const selected =\n      document.getSelection().rangeCount > 0\n        ? document.getSelection().getRangeAt(0)\n        : false;\n    el.select();\n    const success = document.execCommand('copy');\n    document.body.removeChild(el);\n    if (selected) {\n      document.getSelection().removeAllRanges();\n      document.getSelection().addRange(selected);\n    }\n    return success;\n  };\n\n  const [copied, setCopied] = React.useState(false);\n\n  const copy = React.useCallback(() => {\n    if (!copied) setCopied(copyToClipboard(text));\n  }, [text]);\n  React.useEffect(() => () => setCopied(false), [text]);\n\n  return [copied, copy];\n};",
+          "example": "const TextCopy = (props) => {\n  const [copied, copy] = useCopyToClipboard('Lorem ipsum');\n  return (\n    <div>\n      <button onClick={copy}>Click to copy</button>\n      <span>{copied && 'Copied!'}</span>\n    </div>\n  );\n};\n\nReactDOM.render(<TextCopy />, document.getElementById('root'));"
+        },
+        "tags": [
+          "hooks",
+          "effect",
+          "state",
+          "callback",
+          "advanced"
+        ]
+      },
+      "meta": {
+        "hash": "bb4dcf04e4cc446ba6c5d6528c8676deb0742ee5f72d6b548edc2d35d14b3967",
+        "firstSeen": "",
+        "lastUpdated": "",
+        "updateCount": 1,
+        "authorCount": 1
+      }
+    },
+    {
       "id": "useFetch",
       "title": "useFetch",
       "type": "snippet",
