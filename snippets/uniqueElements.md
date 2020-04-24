@@ -3,9 +3,9 @@ title: uniqueElements
 tags: array,beginner
 ---
 
-Returns all unique values of an array.
+Returns all unique values in an array.
 
-Use ES6 `Set` and the `...rest` operator to discard all duplicated values.
+Create a `Set` from the given array to discard duplicated values, then use the spread operator (`...`) to convert it back to an array.
 
 ```js
 const uniqueElements = arr => [...new Set(arr)];
