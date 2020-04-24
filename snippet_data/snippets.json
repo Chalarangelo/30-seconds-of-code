@@ -8533,7 +8533,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "uniqueElements.md",
-        "text": "Returns all unique values of an array.\n\nUse ES6 `Set` and the `...rest` operator to discard all duplicated values.\n\n",
+        "text": "Returns all unique values in an array.\n\nCreate a `Set` from the given array to discard duplicated values, then use the spread operator (`...`) to convert it back to an array.\n\n",
         "codeBlocks": {
           "code": "const uniqueElements = arr => [...new Set(arr)];",
           "example": "uniqueElements([1, 2, 2, 3, 4, 4, 5]); // [1, 2, 3, 4, 5]"
@@ -8544,10 +8544,10 @@
         ]
       },
       "meta": {
-        "hash": "474b3568e2a842246ff6ab2800aeec3f82353732080bb63911adb142d273e34c",
+        "hash": "6db145e1a53ec97151d896fd532f5b4ce296565a5b0f8bd2f7474d18beec6d9a",
         "firstSeen": "1516208569",
-        "lastUpdated": "1565681352",
-        "updateCount": 4,
+        "lastUpdated": "1587714425",
+        "updateCount": 5,
         "authorCount": 3
       }
     },
