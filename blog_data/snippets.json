@@ -413,6 +413,32 @@
       }
     },
     {
+      "id": "javascript-swap-two-variables",
+      "title": "How can I swap two variables in JavaScript?",
+      "type": "blog.question",
+      "attributes": {
+        "fileName": "javascript-swap-two-variables.md",
+        "cover": "blog_images/javascript-swap-two-variables.jpg",
+        "excerpt": "Learn how to swap the values of two variables in JavaScript using a single line of ES6 code.",
+        "authors": [
+          "chalarangelo"
+        ],
+        "text": "In the past, swapping the values of two variables in JavaScript required an intermediate variable to store one of the values while swapping, which would result in something similar to this:\n\n```js\nlet a = 10;\nlet b = 20;\n\nlet tmp;\ntmp = a;\na = b;\nb = tmp;\n```\n\nWhile this approach still works, there are more elegant and less verbose options available to us nowadays. For example, JavaScript ES6 introduced destructuring assignments, allowing individual array items to be assigned to variables in a single statement. Here's what that looks like:\n\n```js\nconst [x, y] = [1, 2];\n```\n\nDestructuring assignments are extremely useful in a handful of situations, including swapping two variables. To accomplish this, we can create an array from the two variables, then use a destructuring assignment to reassign them to each other:\n\n```js\nlet a = 10;\nlet b = 20;\n\n[a , b] = [b, a];\n```\n\n**Image credit:** [roman manukyan](https://unsplash.com/@romanukyan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)\n",
+        "tags": [
+          "javascript",
+          "array",
+          "variables"
+        ]
+      },
+      "meta": {
+        "hash": "a4c0efa45613af0c281f3e7f855b79de353f7668f88af0e5ddd20635deb03386",
+        "firstSeen": "1587985971",
+        "lastUpdated": "1587985971",
+        "updateCount": 2,
+        "authorCount": 2
+      }
+    },
+    {
       "id": "testing-stateful-ui-components",
       "title": "An approach to testing stateful React components",
       "type": "blog.story",
