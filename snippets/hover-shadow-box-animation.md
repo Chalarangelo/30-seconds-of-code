@@ -37,5 +37,3 @@ Creates a shadow box around the text when it is hovered.
 - `transition-property` to enable transitions for both `box-shadow` and `transform`.
 - `:hover` to activate whole css when hovering is done until `active`.
 - `transform: scale(1.2)` to change the scale, magnifying the text.
-
-#### Browser Support

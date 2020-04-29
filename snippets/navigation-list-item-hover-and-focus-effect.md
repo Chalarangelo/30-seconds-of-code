@@ -60,5 +60,3 @@ li a:focus:before {
 - Use the `:before` pseudo-element at the list item anchor to create a hover effect, hide it using `transform: scale(0)`.
 - Use the `:hover` and `:focus` pseudo-selectors to transition to `transform: scale(1)` and show the pseudo-element with its colored background.
 - Prevent the pseudo-element from covering the anchor element by using `z-index: -1`.
-
-#### Browser support

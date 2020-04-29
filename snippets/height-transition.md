@@ -38,11 +38,4 @@ el.style.setProperty('--max-height', height + 'px');
 - `.target:hover > .el` specifies that when the parent is hovered over, target a child `.el` within it and use the `--max-height` variable which was defined by JavaScript.
 - `el.scrollHeight` is the height of the element including overflow, which will change dynamically based on the content of the element.
 - `el.style.setProperty(...)` sets the `--max-height` CSS variable which is used to specify the `max-height` of the element the target is hovered over, allowing it to transition smoothly from 0 to auto.
-
-#### Browser Support
-
-<div class="snippet__requires-javascript">Requires JavaScript</div>
-<span class="snippet__support-note">⚠️ Causes reflow on each animation frame, which will be laggy if there are a large number of elements beneath the element that is transitioning in height.</span>
-
-- https://caniuse.com/#feat=css-variables
-- https://caniuse.com/#feat=css-transitions
+- Causes reflow on each animation frame, which will be laggy if there are a large number of elements beneath the element that is transitioning in height.

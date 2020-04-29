@@ -44,5 +44,3 @@ Reveals an interactive popout menu on hover and focus.
 - `.reference:hover > .popout-menu` means that when `.reference` is hovered over, select immediate children with a class of `.popout-menu` and change their `visibility` to `visible`, which shows the popout.
 - `.reference:focus > .popout-menu` means that when `.reference` is focused, the popout would be shown.
 - `.reference:focus-within > .popout-menu` ensures that the popout is shown when the focus is _within_ the reference.
-
-#### Browser support

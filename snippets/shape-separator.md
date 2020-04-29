@@ -35,7 +35,3 @@ Uses an SVG shape to separate two different blocks to create more a interesting 
 - `width: 100%` ensures the element stretches the entire width of its parent.
 - `height: 12px` is the same height as the shape.
 - `bottom: 0` positions the pseudo element at the bottom of the parent.
-
-#### Browser support
-
-- https://caniuse.com/#feat=svg

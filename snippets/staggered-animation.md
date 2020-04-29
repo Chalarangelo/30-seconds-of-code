@@ -64,8 +64,3 @@ Creates a staggered animation for the elements of a list.
 - Specify the appropriate `transition` properties for list elements, except `transition-delay` which is specified relative to the `--i` custom property.
 - Use inline styles to specify a value for `--i` for each list element, which will in turn be used for `transition-delay` to create the stagger effect.
 - Use the `:checked` selector for the checkbox to appropriately style list elements, setting `opacity` to `1` and `transform` to `translateX(0)` to make them appear and slide into view.
-
-#### Browser support
-
-- https://caniuse.com/#feat=css-variables
-- https://caniuse.com/#feat=css-transitions

@@ -28,7 +28,3 @@ console.log(
 - Explain briefly how the snippet works.
 - Use bullet points for your snippet's explanation.
 - Try to explain everything briefly but clearly.
-
-#### Browser support
-
-- https://www.caniuse.com/#feat=border-radius

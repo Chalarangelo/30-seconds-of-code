@@ -54,5 +54,3 @@ Displays a hamburger menu which transitions to a cross on hover.
 - The animation has 3 parts: top and bottom bars transforming to 45 degree angles (`rotate(45deg)`), and the middle bar fading away by setting `opacity: 0`.
 - The `transform-origin` is set to `left` so the bars rotate around the left point.
 - Set `transition all 0.5s` so that both `transform` and `opacity` properties are animated for half a second.
-
-#### Browser support

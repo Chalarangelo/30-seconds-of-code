@@ -55,5 +55,3 @@ Adds a fading gradient to an overflowing element to better indicate there is mor
 - `height: 25px` is the height of the fading gradient pseudo-element, which should be kept relatively small.
 - `bottom: 0` positions the pseudo-element at the bottom of the parent.
 - `pointer-events: none` specifies that the pseudo-element cannot be a target of mouse events, allowing text behind it to still be selectable/interactive.
-
-#### Browser support

@@ -24,5 +24,3 @@ p:first-child::first-letter {
 #### Explanation
 
 - Use the `::first-letter` pseudo-element to style the first element of the paragraph, use the `:first-child` selector to select only the first paragraph.
-
-#### Browser support

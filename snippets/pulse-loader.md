@@ -54,7 +54,3 @@ Creates a pulse effect loader animation using the `animation-delay` property.
 - Use `opacity` to transition from `1` to `0` when animating to give the `<div>` elements a disappearing effect as they expand.
 - `.ripple-loader`, which is the parent container, has a predefined `width` and `height`. It uses `position: relative` to position its children.
 - Use `animation-delay` on the second `<div>` element, so that each element starts its animation at a different time.
-
-#### Browser support
-
-- https://caniuse.com/#feat=css-animation

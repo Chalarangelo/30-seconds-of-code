@@ -62,7 +62,3 @@ btn.onmousemove = function(e) {
 - `--x` and `--y` are used to track the position of the mouse on the button.
 - `--size` is used to keep modify of the gradient's dimensions.
 - `background: radial-gradient(circle closest-side, pink, transparent);` creates the gradient at the correct postion.
-
-#### Browser support
-
-- https://caniuse.com/#feat=css-variables

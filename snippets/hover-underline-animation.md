@@ -47,5 +47,3 @@ Creates an animated underline effect when the text is hovered over.
 - `transition: transform 0.25s ease-out` means changes to `transform` will be transitioned over 0.25 seconds with an `ease-out` timing function.
 - `transform-origin: bottom right` means the transform anchor point is positioned at the bottom right of the block.
 - `:hover:after` then uses `scaleX(1)` to transition the width to 100%, then changes the `transform-origin` to `bottom left` so that the anchor point is reversed, allowing it transition out in the other direction when hovered off.
-
-#### Browser support

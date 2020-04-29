@@ -43,5 +43,3 @@ Creates a shadow similar to `box-shadow` but based on the colors of the element 
 - `filter: blur(0.4rem)` will blur the pseudo-element to create the appearance of a shadow underneath.
 - `opacity: 0.7` makes the pseudo-element partially transparent.
 - `z-index: -1` positions the pseudo-element behind the parent but in front of the background.
-
-#### Browser support

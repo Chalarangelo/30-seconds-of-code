@@ -15,7 +15,7 @@ This will allow you to use our customized tools for all of our content repositor
 ## How you can help
 
 - Submit pull requests with new snippets (see guidelines below) or snippet updates (tags, descriptions, explanations, typos, examples, code improvements).
-- Open issues for things you want to see added, modified, discuss ideas or help out with existing issues. 
+- Open issues for things you want to see added, modified, discuss ideas or help out with existing issues.
 
 ## Ground rules
 
@@ -35,7 +35,7 @@ After installing the integration tools, you can run the following command:
 create-new-snippet <my-snippet-name>
 ```
 
-Replace `<my-snippet-name>` with the name of the snippet you are adding. 
+Replace `<my-snippet-name>` with the name of the snippet you are adding.
 
 ## Snippet guidelines
 
@@ -50,4 +50,3 @@ Replace `<my-snippet-name>` with the name of the snippet you are adding.
 - Always use soft tabs (2 spaces), never hard tabs.
 - Leave a single space after a comma (`,`) character (both in the description and code).
 - Define multiple variables on the same line, if possible. Use meaningful names (e.g. `letter` instead of `lt`) and follow existing conventions as seen in other snippets. Do not use trailing or leading underscores in variable names.
-- Snippet browser support should be specified as a list of links to https://www.caniuse.com/ features. Use the `#` next to the feature that you want in the website to get a link to it.

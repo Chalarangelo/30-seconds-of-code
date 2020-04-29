@@ -34,7 +34,3 @@ Provides an alternative to `display: none` (not readable by screen readers) and 
 - Hide the element's overflow.
 - Remove all padding.
 - Position the element absolutely so that it does not take up space in the DOM.
-
-#### Browser support
-
-- https://caniuse.com/#search=clip
