@@ -28,23 +28,6 @@ const getTextualContent = (str, noExplain = false) => {
     return `${description}\n${getExplanation(str)}`;
 };
 
-/** Get the browser support for a snippet file */
-const getBrowserSupport = str => {
-  const regex = /<h4>\s*Browser [s|S]upport\s*<\/h4>([\s\S]*)/g;
-  const results = [];
-  let m = null;
-  while ((m = regex.exec(str)) !== null) {
-    if (m.index === regex.lastIndex) regex.lastIndex += 1;
-
-    m.forEach((match, groupIndex) => {
-      results.push(match);
-    });
-  }
-  return results[1]
-    .replace(/\r\n/g, '\n')
-    .replace(/(href="https?:\/\/)/g, 'target="_blank" rel="nofollow noopener noreferrer" $1');
-};
-
 /** Get the code blocks in a gatsby page */
 const getCodeBlocks = str => {
   const regex = /<pre[.\S\s]*?<\/pre>/g;
@@ -93,12 +76,10 @@ const getCodeBlocks = str => {
 export default str => {
   const description = getTextualContent(str, true);
   const fullDescription = getTextualContent(str, false);
-  const browserSupport = getBrowserSupport(str);
   const codeBlocks = getCodeBlocks(str);
   return {
     description,
     fullDescription,
-    browserSupport,
     htmlCode: `${optimizeAllNodes(codeBlocks.html)}`,
     cssCode: `${optimizeAllNodes(codeBlocks.css)}`,
     jsCode: codeBlocks.js ? `${optimizeAllNodes(codeBlocks.js)}` : '',
