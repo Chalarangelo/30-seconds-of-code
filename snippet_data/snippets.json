@@ -6139,7 +6139,7 @@
       "type": "snippet",
       "attributes": {
         "fileName": "pipeAsyncFunctions.md",
-        "text": "Performs left-to-right function composition for asynchronous functions.\n\nUse `Array.prototype.reduce()` with the spread operator (`...`) to perform left-to-right function composition using `Promise.then()`.\nThe functions can return a combination of: simple values, `Promise`'s, or they can be defined as `async` ones returning through `await`.\nAll functions must be unary.\n\n",
+        "text": "Performs left-to-right function composition for asynchronous functions.\n\nUse `Array.prototype.reduce()` and the spread operator (`...`) to perform function composition using `Promise.then()`.\nThe functions can return a combination of normal values, `Promise`s or be `async`, returning through `await`.\nAll functions must accept a single argument.\n\n",
         "codeBlocks": {
           "code": "const pipeAsyncFunctions = (...fns) => arg => fns.reduce((p, f) => p.then(f), Promise.resolve(arg));",
           "example": "const sum = pipeAsyncFunctions(\n  x => x + 1,\n  x => new Promise(resolve => setTimeout(() => resolve(x + 2), 1000)),\n  x => x + 3,\n  async x => (await x) + 4\n);\n(async() => {\n  console.log(await sum(5)); // 15 (after one second)\n})();"
@@ -6151,10 +6151,10 @@
         ]
       },
       "meta": {
-        "hash": "0eb844801e767edcaa6a882a6dce4b5b1dadecb53a92d6ec259d36c57b6a3dd0",
+        "hash": "d761cd2261ac30602f3f22969b672476c034384dc9bfd0c002b2c5be8636c4cf",
         "firstSeen": "1517069864",
-        "lastUpdated": "1587068503",
-        "updateCount": 125,
+        "lastUpdated": "1588140465",
+        "updateCount": 126,
         "authorCount": 5
       }
     },
