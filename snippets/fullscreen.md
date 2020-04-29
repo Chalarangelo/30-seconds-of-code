@@ -50,8 +50,3 @@ The `:fullscreen` CSS pseudo-element represents an element that's displayed when
 #### Explanation
 
 - `:fullscreen` CSS pseudo-element selector is used to select and style an element that is being displayed in fullscreen mode.
-
-#### Browser support
-
-- https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen
-- https://caniuse.com/#feat=fullscreen

@@ -39,5 +39,3 @@ Vertically and horizontally centers a child element within its parent element us
 - `text-align: center` on '.center > span' centers the child element horizontally.
 - `vertical-align: middle` on '.center > span' centers the child element vertically.
 - The outer parent ('.container' in this case) must have a fixed height and width.
-
-#### Browser support

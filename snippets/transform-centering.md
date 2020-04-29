@@ -33,7 +33,4 @@ Vertically and horizontally centers a child element within its parent element us
 - `position: absolute` on the child element allows it to be positioned based on its containing block.
 - `left: 50%` and `top: 50%` offsets the child 50% from the left and top edge of its containing block.
 - `transform: translate(-50%, -50%)` allows the height and width of the child element to be negated so that it is vertically and horizontally centered.
-
-- Note: that the fixed height and width on parent element is for the demo only.
-
-#### Browser support
+- Note that the fixed height and width on parent element is for the demo only.

@@ -55,7 +55,3 @@ Variables that can be reused for `transition-timing-function` properties, more p
 
 - The variables are defined globally within the `:root` CSS pseudo-class which matches the root element of a tree representing the document.
 - In HTML, `:root` represents the `<html>` element and is identical to the selector `html`, except that its specificity is higher.
-
-#### Browser support
-
-- https://caniuse.com/#feat=css-variables

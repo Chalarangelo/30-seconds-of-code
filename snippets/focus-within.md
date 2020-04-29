@@ -39,9 +39,3 @@ input {
 #### Explanation
 
 - The psuedo class `:focus-within` applies styles to a parent element if any child element gets focused. For example, an `input` element inside a `form` element.
-
-#### Browser support
-
-<span class="snippet__support-note">⚠️ Not supported in IE11 or the current version of Edge.</span>
-
-- https://caniuse.com/#feat=css-focus-within

@@ -68,5 +68,3 @@ Creates a vertical masonry layout using HTML and CSS.
 - `.masonry-container` is the container for the masonry layout. Within that container, there's a `div.masonry-columns`, which will automatically put each child element, `.masonry-brick`, into the layout.
 - `.masonry-brick` must be have `display: block` to allow the layout to flow properly, while the `:first-child` of this class should have a different `margin` to account for its positioning.
 - CSS variables are used to allow for greater flexibility for the layout, while media queries ensure that the layout flows responsively in different viewport sizes.
-
-#### Browser support

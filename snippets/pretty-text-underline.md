@@ -37,5 +37,3 @@ Natively implemented as `text-decoration-skip-ink: auto` but it has less control
 - `background-image: linear-gradient(...)` creates a 90deg gradient using the text color (`currentColor`).
 - The `background-*` properties size the gradient as 100% of the width of the block and 1px in height at the bottom and disables repetition, which creates a 1px underline beneath the text.
 - The `::selection` pseudo selector rule ensures the text shadow does not interfere with text selection.
-
-#### Browser support

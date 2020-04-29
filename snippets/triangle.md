@@ -23,5 +23,3 @@ Creates a triangle shape with pure CSS.
 
 - The color of the border is the color of the triangle. The side the triangle tip points corresponds to the opposite `border-*` property. For example, a color on `border-top` means the arrow points downward.
 - Experiment with the `px` values to change the proportion of the triangle.
-
-#### Browser support

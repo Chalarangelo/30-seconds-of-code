@@ -8,12 +8,7 @@
   },
   "author": "atomiks",
   "license": "MIT",
-  "prettier": {
-    "printWidth": 100,
-    "semi": false,
-    "singleQuote": true
-  },
   "devDependencies": {
-    "@30-seconds/integration-tools": "^2.0.0"
+    "@30-seconds/integration-tools": "^2.1.0"
   }
 }

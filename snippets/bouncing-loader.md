@@ -55,7 +55,3 @@ Note: `1rem` is usually `16px`.
 - `animation` is a shorthand property for the various animation properties: `animation-name`, `animation-duration`, `animation-iteration-count`, `animation-direction` are used.
 - `nth-child(n)` targets the element which is the nth child of its parent.
 - `animation-delay` is used on the second and third `div` respectively, so that each element does not start the animation at the same time.
-
-#### Browser support
-
-- https://caniuse.com/#feat=css-animation

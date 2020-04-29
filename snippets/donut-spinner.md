@@ -33,5 +33,3 @@ Creates a donut spinner that can be used to indicate the loading of content.
 #### Explanation
 
 - Use a semi-transparent `border` for the whole element, except one side that will serve as the loading indicator for the donut. Use `animation` to rotate the element.
-
-#### Browser support

@@ -23,9 +23,4 @@ Gives text a gradient color.
 - `background: -webkit-linear-gradient(...)` gives the text element a gradient background.
 - `webkit-text-fill-color: transparent` fills the text with a transparent color.
 - `webkit-background-clip: text` clips the background with the text, filling the text with the gradient background as the color.
-
-#### Browser support
-
-<span class="snippet__support-note">⚠️ Uses non-standard properties.</span>
-
-- https://caniuse.com/#feat=text-stroke
+- Uses non-standard properties.

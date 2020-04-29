@@ -22,9 +22,7 @@ Evenly distributes child elements within a parent element.
 
 #### Explanation
 
-1. `display: flex` enables flexbox.
-2. `justify-content: space-between` evenly distributes child elements horizontally. The first item is positioned at the left edge, while the last item is positioned at the right edge.
+- `display: flex` enables flexbox.
+- `justify-content: space-between` evenly distributes child elements horizontally. The first item is positioned at the left edge, while the last item is positioned at the right edge.
+- Alternatively, use `justify-content: space-around` to distribute the children with space around them, rather than between them.
 
-_Note: Alternatively, use `justify-content: space-around` to distribute the children with space around them, rather than between them._
-
-#### Browser support

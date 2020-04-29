@@ -25,5 +25,3 @@ Horizontally and vertically centers a child element within a parent element usin
 - `display: flex` creates a flexbox layout.
 - `justify-content: center` centers the child horizontally.
 - `align-items: center` centers the child vertically.
-
-#### Browser support

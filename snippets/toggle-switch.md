@@ -57,5 +57,3 @@ This effect is styling only the `<label>` element to look like a toggle switch, 
 - `background-color: #7983ff;` sets the background-color of the switch to a different color when the checkbox is `checked`.
 - `.offscreen` moves the `<input>` checkbox element, which does not comprise any part of the actual toggle switch, out of the flow of document and positions it far away from the view, but does not hide it so it is accessible via keyboard and screen readers.
 - `transition: all 0.3s` specifies all property changes will be transitioned over 0.3 seconds, therefore transitioning the `<label>`'s `background-color` and the pseudo-element's `transform` property when the checkbox is checked.
-
-#### Browser support

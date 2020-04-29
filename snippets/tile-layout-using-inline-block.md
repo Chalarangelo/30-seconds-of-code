@@ -46,5 +46,3 @@ Align items horizontally using `display: inline-block` to create a 3-tile layout
 - Use `width: calc((900px / 3))` to divide the width of the container evenly into 3 columns.
 - Set `font-size: 0;` on `.tiles` to avoid whitespace.
 - Set `font-size: 20px` to `h2` in order to display the text.
-
-#### Browser support

@@ -43,11 +43,4 @@ Customizes the scrollbar style for the document and elements with scrollable ove
 - `::-webkit-scrollbar-track` targets only the scrollbar track.
 - `::-webkit-scrollbar-thumb` targets the scrollbar thumb.
 - Apply the same selectors and styles without `.custom-scrollbar` to style the document scrollbar.
-
-There are many other pseudo-elements that you can use to style scrollbars. For more info, visit the [WebKit Blog](https://webkit.org/blog/363/styling-scrollbars/).
-
-#### Browser support
-
-<span class="snippet__support-note">⚠️ Scrollbar styling doesn't appear to be on any standards track.</span>
-
-- https://caniuse.com/#feat=css-scrollbar
+- Scrollbar styling doesn't appear to be on any standards track. There are many other pseudo-elements that you can use to style scrollbars. For more info, visit the [WebKit Blog](https://webkit.org/blog/363/styling-scrollbars/).

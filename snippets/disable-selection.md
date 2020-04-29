@@ -19,9 +19,4 @@ Makes the content unselectable.
 #### Explanation
 
 - `user-select: none` specifies that the text cannot be selected.
-
-_Note: This is not a secure method to prevent users from copying content._
-
-#### Browser support
-
-- https://caniuse.com/#feat=user-select-none
+- This is not a secure method to prevent users from copying content.

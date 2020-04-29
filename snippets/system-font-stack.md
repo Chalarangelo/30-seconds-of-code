@@ -30,5 +30,3 @@ The browser looks for each successive font, preferring the first one if possible
 - `"Helvetica Neue"` and `Helvetica` is used on macOS 10.10 and below (wrapped in quotes because it has a space)
 - `Arial` is a font widely supported by all operating systems
 - `sans-serif` is the fallback sans-serif font if none of the other fonts are supported
-
-#### Browser support

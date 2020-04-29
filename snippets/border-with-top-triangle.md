@@ -43,5 +43,3 @@ Creates a text container with a triangle at the top.
 - The color of the `:after` triangle should be the same as the container's background color.
 - The border width of the `:before` triangle should be `1px` wider than the `:after` triangle, in order to act as the border.
 - The `:after` triangle should be `1px` to the right of the `:before` triangle to allow for its left border to be shown.
-
-#### Browser support
