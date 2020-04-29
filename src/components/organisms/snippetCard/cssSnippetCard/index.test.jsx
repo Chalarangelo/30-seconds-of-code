@@ -11,9 +11,7 @@ configure({ adapter: new Adapter() });
 
 describe('<CssSnippetCard />', () => {
 
-  let wrapper, card, tagList,
-    browserSupport, snippetPreview, codepenButton,
-    codeBlocks;
+  let wrapper, card, tagList, snippetPreview, codepenButton, codeBlocks;
 
   beforeEach(() => {
     wrapper = mount(
@@ -21,7 +19,6 @@ describe('<CssSnippetCard />', () => {
     );
     card = wrapper.find('Card');
     tagList = wrapper.find('TagList');
-    browserSupport = wrapper.find('BrowserSupport');
     snippetPreview = wrapper.find('SnippetPreview');
     codepenButton = wrapper.find('CodepenButton');
     codeBlocks = wrapper.find('CodeBlock');
@@ -85,11 +82,6 @@ describe('<CssSnippetCard />', () => {
     expect(card.find('.card-description').html()).toContain(fullCssSnippet.html.fullDescription);
   });
 
-  it('should pass the browser support data to the BrowserSupport component', () => {
-    expect(browserSupport.prop('supportPercentage')).toBe(fullCssSnippet.browserSupport.supportPercentage);
-    expect(browserSupport.prop('browserSupportHtml')).toBe(fullCssSnippet.html.browserSupport);
-  });
-
   it('should pass the snippet code data to the SnippetPreview component', () => {
     expect(snippetPreview.prop('scopeId')).toBe(fullCssSnippet.id.slice(fullCssSnippet.id.lastIndexOf('/') + 1));
     expect(snippetPreview.prop('scopedCss')).toBe(fullCssSnippet.code.scopedCss);
@@ -119,7 +111,6 @@ describe('<CssSnippetCard />', () => {
       );
       card = wrapper.find('Card');
       tagList = wrapper.find('TagList');
-      browserSupport = wrapper.find('BrowserSupport');
       snippetPreview = wrapper.find('SnippetPreview');
       codepenButton = wrapper.find('CodepenButton');
       codeBlocks = wrapper.find('CodeBlock');
