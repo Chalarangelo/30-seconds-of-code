@@ -15,7 +15,6 @@ type Snippet implements Node {
   resolver: String
   searchTokens: String
   icon: String
-  browserSupport: BrowserSupportData
   blog: Boolean
   blogType: String
   authors: [AuthorData]
@@ -34,7 +33,6 @@ type HtmlData @infer {
   code: String
   style: String
   example: String
-  browserSupport: String
   htmlCode: String
   cssCode: String
   jsCode: String
@@ -64,11 +62,6 @@ type LanguageData @infer {
   long: String
   short: String
   otherLanguages: [SimpleLanguageData]
-}
-
-type BrowserSupportData @infer {
-  supportPercentage: String
-  text: String
 }
 
 type AuthorData @infer {

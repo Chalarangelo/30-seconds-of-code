@@ -42,9 +42,5 @@ export default (id, snippetNode, markdownNode) => {
         snippetNode.attributes.text.slice(0, snippetNode.attributes.text.indexOf('\n\n'))
       ),
     ].map(v => v.toLowerCase())).join(' '),
-    browserSupport: {
-      ...snippetNode.attributes.browserSupport,
-      supportPercentage: `${snippetNode.attributes.browserSupport.supportPercentage.toFixed(1)}%`,
-    },
   };
 };

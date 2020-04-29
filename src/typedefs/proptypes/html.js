@@ -13,7 +13,6 @@ export default oneOfType([
     full: string,
     description: string,
     fullDescription: string,
-    browserSupport: string,
     htmlCode: string,
     cssCode: string,
     jsCode: string,

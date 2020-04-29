@@ -7,7 +7,6 @@ import Expertise from 'components/atoms/expertise';
 import CodeBlock from 'components/atoms/codeBlock';
 import { CodepenButton } from 'components/atoms/button';
 import SnippetPreview from 'components/atoms/snippetPreview';
-import BrowserSupport from 'components/atoms/browserSupport';
 import { combineClassNames } from 'utils';
 import literals from 'lang/en/client/common';
 
@@ -56,10 +55,6 @@ const SnippetCard = ({
       <div
         className='card-description'
         dangerouslySetInnerHTML={ { __html: `${snippet.html.fullDescription}` } }
-      />
-      <BrowserSupport
-        supportPercentage={ snippet.browserSupport.supportPercentage }
-        browserSupportHtml={ snippet.html.browserSupport }
       />
       <div className='card-preview-content'>
         <SnippetPreview
