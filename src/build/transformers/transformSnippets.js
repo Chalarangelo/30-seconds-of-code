@@ -54,11 +54,6 @@ export const transformSnippetContext = (snippet, cardTemplate, imageContext) => 
           ).node.childImageSharp.fluid,
     };
     break;
-  case 'css':
-    templateProps = {
-      browserSupport: snippet.browserSupport,
-    };
-    break;
   default:
     templateProps = {
     };

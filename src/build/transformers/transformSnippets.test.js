@@ -142,13 +142,6 @@ describe('transformSnippetContext', () => {
     expect(result.type).toBe('blog.story');
     expect(result.cover).toBe('xxx');
   });
-
-  it('handles the css template appropriately', () => {
-    const result = transformSnippetContext({
-      ...snippet, browserSupport: 'support',
-    }, 'css');
-    expect(result.browserSupport).toBe('support');
-  });
 });
 
 describe('transformSnippetDescription', () => {
