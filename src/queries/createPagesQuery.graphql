@@ -69,7 +69,6 @@ query {
           htmlCode
           cssCode
           jsCode
-          browserSupport
           description
           fullDescription
         }
@@ -83,9 +82,6 @@ query {
         ranking
         firstSeen
         lastUpdated
-        browserSupport {
-          supportPercentage
-        }
         language {
           long
           short
