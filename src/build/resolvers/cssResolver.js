@@ -2,30 +2,15 @@ import {
   optimizeAllNodes
 } from 'utils';
 
-/** Get the explanation for the snippet in the page. */
-const getExplanation = str => {
-  const regex = /<h4>\s*Explanation\s*<\/h4>([\s\S]*)<h4>/g;
-  const results = [];
-  let m = null;
-  while ((m = regex.exec(str)) !== null) {
-    if (m.index === regex.lastIndex) regex.lastIndex += 1;
-
-    m.forEach((match, groupIndex) => {
-      results.push(match);
-    });
-  }
-  return results[1].replace(/\r\n/g, '\n');
-};
-
 /** Get the textual content in a gatsby page */
 const getTextualContent = (str, noExplain = false) => {
-  const description = str
+  const result = str
     .slice(0, str.indexOf('<div class="gatsby-highlight"'))
     .replace(/(href="https?:\/\/)/g, 'target="_blank" rel="nofollow noopener noreferrer" $1');
   if (noExplain)
-    return description;
-  else
-    return `${description}\n${getExplanation(str)}`;
+    return result.slice(0, result.indexOf('</p>\n') + 4);
+
+  return result;
 };
 
 /** Get the code blocks in a gatsby page */
