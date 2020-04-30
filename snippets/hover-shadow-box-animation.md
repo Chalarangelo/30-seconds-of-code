@@ -5,6 +5,14 @@ tags: animation,intermediate
 
 Creates a shadow box around the text when it is hovered.
 
+- `display: inline-block` to set width and length for `p` element thus making it an `inline-block`.
+- Set `transform: perspective(1px)` to give element a 3D space by affecting the distance between the Z plane and the user and `translate(0)` to reposition the `p` element along z-axis in 3D space.
+- `box-shadow:` to set up the box.
+- `transparent` to make box transparent.
+- `transition-property` to enable transitions for both `box-shadow` and `transform`.
+- `:hover` to activate whole css when hovering is done until `active`.
+- `transform: scale(1.2)` to change the scale, magnifying the text.
+
 ```html
 <p class="hover-shadow-box-animation">Box it!</p>
 ```
@@ -27,13 +35,3 @@ Creates a shadow box around the text when it is hovered.
   transform: scale(1.2);
 }
 ```
-
-#### Explanation
-
-- `display: inline-block` to set width and length for `p` element thus making it an `inline-block`.
-- Set `transform: perspective(1px)` to give element a 3D space by affecting the distance between the Z plane and the user and `translate(0)` to reposition the `p` element along z-axis in 3D space.
-- `box-shadow:` to set up the box.
-- `transparent` to make box transparent.
-- `transition-property` to enable transitions for both `box-shadow` and `transform`.
-- `:hover` to activate whole css when hovering is done until `active`.
-- `transform: scale(1.2)` to change the scale, magnifying the text.

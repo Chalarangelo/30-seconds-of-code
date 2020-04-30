@@ -5,6 +5,11 @@ tags: animation,beginner
 
 Creates a pulse effect loader animation using the `animation-delay` property.
 
+- Use `@keyframes` to define an animation at two points in the cycle, start (`0%`), where the two `<div>` elements have no `width` or `height` and are positioned at the center and end (`100%`), where both `<div>` elements have increased `width` and `height`, but their `position` is reset to `0`.
+- Use `opacity` to transition from `1` to `0` when animating to give the `<div>` elements a disappearing effect as they expand.
+- `.ripple-loader`, which is the parent container, has a predefined `width` and `height`. It uses `position: relative` to position its children.
+- Use `animation-delay` on the second `<div>` element, so that each element starts its animation at a different time.
+
 ```html
 <div class="ripple-loader">
   <div></div>
@@ -47,10 +52,3 @@ Creates a pulse effect loader animation using the `animation-delay` property.
   }
 }
 ```
-
-#### Explanation
-
-- Use `@keyframes` to define an animation at two points in the cycle, start (`0%`), where the two `<div>` elements have no `width` or `height` and are positioned at the center and end (`100%`), where both `<div>` elements have increased `width` and `height`, but their `position` is reset to `0`.
-- Use `opacity` to transition from `1` to `0` when animating to give the `<div>` elements a disappearing effect as they expand.
-- `.ripple-loader`, which is the parent container, has a predefined `width` and `height`. It uses `position: relative` to position its children.
-- Use `animation-delay` on the second `<div>` element, so that each element starts its animation at a different time.

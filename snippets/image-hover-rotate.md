@@ -5,6 +5,9 @@ tags: animation,visual,intermediate
 
 Creates a rotate effect for the image on hover.
 
+- Use `scale` and `rotate` when hovering over the parent element (a `figure`) to animate the image, using the `transition` property.
+- Use `overflow: hidden` on the parent container to hide the excess from the image transformation.
+
 ```html
 <figure class="hover-rotate">
   <img src="https://i.picsum.photos/id/669/600/800.jpg"/>
@@ -30,8 +33,3 @@ Creates a rotate effect for the image on hover.
   transform: scale(1.3) rotate(5deg);
 }
 ```
-
-#### Explanation
-
-- Use `scale` and `rotate` when hovering over the parent element (a `figure`) to animate the image, using the `transition` property.
-- Use `overflow: hidden` on the parent container to hide the excess from the image transformation.

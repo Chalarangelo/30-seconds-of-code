@@ -5,6 +5,10 @@ tags: visual,interactivity,advanced
 
 A hover effect where the gradient follows the mouse cursor.
 
+- `--x` and `--y` are used to track the position of the mouse on the button.
+- `--size` is used to keep modify of the gradient's dimensions.
+- `background: radial-gradient(circle closest-side, pink, transparent);` creates the gradient at the correct postion.
+
 ```html
 <button class="mouse-cursor-gradient-tracking">
   <span>Hover me</span>
@@ -56,9 +60,3 @@ btn.onmousemove = function(e) {
   btn.style.setProperty('--y', y + 'px');
 }
 ```
-
-#### Explanation
-
-- `--x` and `--y` are used to track the position of the mouse on the button.
-- `--size` is used to keep modify of the gradient's dimensions.
-- `background: radial-gradient(circle closest-side, pink, transparent);` creates the gradient at the correct postion.

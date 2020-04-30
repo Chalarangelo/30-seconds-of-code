@@ -5,6 +5,8 @@ tags: visual,beginner
 
 Resets all styles to default values with one property. This will not affect `direction` and `unicode-bidi` properties.
 
+- The `all` property allows you to reset all styles (inherited or not) to default values.
+
 ```html
 <div class="reset-all-styles">
   <h5>Title</h5>
@@ -21,7 +23,3 @@ Resets all styles to default values with one property. This will not affect `dir
   all: initial;
 }
 ```
-
-#### Explanation
-
-- The `all` property allows you to reset all styles (inherited or not) to default values.

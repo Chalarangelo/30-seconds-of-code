@@ -9,6 +9,6 @@
   "author": "atomiks",
   "license": "MIT",
   "devDependencies": {
-    "@30-seconds/integration-tools": "^2.1.0"
+    "@30-seconds/integration-tools": "^2.2.0"
   }
 }
