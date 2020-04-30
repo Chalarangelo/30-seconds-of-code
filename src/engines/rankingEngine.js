@@ -33,7 +33,6 @@ const determineSnippetRanking = snippet => {
     snippet.attributes.codeBlocks && snippet.attributes.codeBlocks.js || '',
     snippet.attributes.codeBlocks && snippet.attributes.codeBlocks.style || '',
     snippet.attributes.text || '',
-    snippet.attributes.explanation || '',
     snippet.attributes.excerpt || '',
   ].join(' ').toLowerCase();
 
