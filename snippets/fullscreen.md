@@ -5,6 +5,8 @@ tags: visual,advanced
 
 The `:fullscreen` CSS pseudo-element represents an element that's displayed when the browser is in fullscreen mode.
 
+- `:fullscreen` CSS pseudo-element selector is used to select and style an element that is being displayed in fullscreen mode.
+
 ```html
 <div class="container">
   <p><em>Click the button below to enter the element into fullscreen mode. </em></p>
@@ -46,7 +48,3 @@ The `:fullscreen` CSS pseudo-element represents an element that's displayed when
   height: 100vh;
 }
 ```
-
-#### Explanation
-
-- `:fullscreen` CSS pseudo-element selector is used to select and style an element that is being displayed in fullscreen mode.

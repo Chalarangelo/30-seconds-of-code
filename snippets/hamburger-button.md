@@ -5,6 +5,13 @@ tags: interactivity,beginner
 
 Displays a hamburger menu which transitions to a cross on hover.
 
+- Use a `.hamburger-menu` container `div` which contains the top, bottom, and middle bars.
+- The container is set to be a flex container (`display: flex`) with `flex-direction` to be `column` and `flex-wrap` to be `wrap` (alternatively, you can set both properties by a shorthand `flex-flow: column wrap`).
+- Add distance between the bars using `justify-content: space-between`.
+- The animation has 3 parts: top and bottom bars transforming to 45 degree angles (`rotate(45deg)`), and the middle bar fading away by setting `opacity: 0`.
+- The `transform-origin` is set to `left` so the bars rotate around the left point.
+- Set `transition all 0.5s` so that both `transform` and `opacity` properties are animated for half a second.
+
 ```html
 <div class="hamburger-menu">
   <div class="bar top"></div>
@@ -45,12 +52,3 @@ Displays a hamburger menu which transitions to a cross on hover.
   transform: rotate(-45deg);
 }
 ```
-
-#### Explanation
-
-- Use a `.hamburger-menu` container `div` which contains the top, bottom, and middle bars.
-- The container is set to be a flex container (`display: flex`) with `flex-direction` to be `column` and `flex-wrap` to be `wrap` (alternatively, you can set both properties by a shorthand `flex-flow: column wrap`).
-- Add distance between the bars using `justify-content: space-between`.
-- The animation has 3 parts: top and bottom bars transforming to 45 degree angles (`rotate(45deg)`), and the middle bar fading away by setting `opacity: 0`.
-- The `transform-origin` is set to `left` so the bars rotate around the left point.
-- Set `transition all 0.5s` so that both `transform` and `opacity` properties are animated for half a second.

@@ -5,6 +5,9 @@ tags: layout,beginner
 
 Resets the box-model so that `width` and `height` are not affected by `border` or `padding`.
 
+- `box-sizing: border-box` makes the addition of `padding` or `border`s not affect an element's `width` or `height`.
+- `box-sizing: inherit` makes an element respect its parent's `box-sizing` rule.
+
 ```html
 <div class="box">border-box</div>
 <div class="box content-box">content-box</div>
@@ -36,8 +39,3 @@ div {
   box-sizing: content-box;
 }
 ```
-
-#### Explanation
-
-- `box-sizing: border-box` makes the addition of `padding` or `border`s not affect an element's `width` or `height`.
-- `box-sizing: inherit` makes an element respect its parent's `box-sizing` rule.

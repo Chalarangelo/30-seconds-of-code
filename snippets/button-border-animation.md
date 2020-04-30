@@ -5,6 +5,8 @@ tags: animation,intermediate
 
 Creates a border animation on hover.
 
+- Use the `:before` and `:after` pseudo-elements as borders that animate on hover.
+
 ```html
 <button class="animated-border-button">Submit</button>
 ```
@@ -46,7 +48,3 @@ Creates a border animation on hover.
   width: 100%;
 }
 ```
-
-#### Explanation
-
-- Use the `:before` and `:after` pseudo-elements as borders that animate on hover.

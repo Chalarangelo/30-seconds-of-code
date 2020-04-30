@@ -5,6 +5,11 @@ tags: layout,advanced
 
 Creates a vertical masonry layout using HTML and CSS.
 
+- Create a masonry-style layout that consists of "bricks" that fall into each other with either a fixed `width` (vertical layout) or a fixed `height` (horizontal layout), forming a perfect fit. Especially useful when working with images.
+- `.masonry-container` is the container for the masonry layout. Within that container, there's a `div.masonry-columns`, which will automatically put each child element, `.masonry-brick`, into the layout.
+- `.masonry-brick` must be have `display: block` to allow the layout to flow properly, while the `:first-child` of this class should have a different `margin` to account for its positioning.
+- CSS variables are used to allow for greater flexibility for the layout, while media queries ensure that the layout flows responsively in different viewport sizes.
+
 ```html
 <div class="masonry-container">
   <div class="masonry-columns">
@@ -61,10 +66,3 @@ Creates a vertical masonry layout using HTML and CSS.
   margin: 0 0 var(--column-gap);
 }
 ```
-
-#### Explanation
-
-- Create a masonry-style layout that consists of "bricks" that fall into each other with either a fixed `width` (vertical layout) or a fixed `height` (horizontal layout), forming a perfect fit. Especially useful when working with images.
-- `.masonry-container` is the container for the masonry layout. Within that container, there's a `div.masonry-columns`, which will automatically put each child element, `.masonry-brick`, into the layout.
-- `.masonry-brick` must be have `display: block` to allow the layout to flow properly, while the `:first-child` of this class should have a different `margin` to account for its positioning.
-- CSS variables are used to allow for greater flexibility for the layout, while media queries ensure that the layout flows responsively in different viewport sizes.

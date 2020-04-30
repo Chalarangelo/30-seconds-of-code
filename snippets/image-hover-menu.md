@@ -5,6 +5,11 @@ tags: layout,animation,intermediate
 
 Displays a menu overlay when the image is hovered.
 
+- Use a `figure` to wrap the `img` element and a `div` element that will contain the menu links.
+- Use the `opacity` and `right` attributes to animate the image on hover, to create a sliding effect.
+- Set the `left` attribute of the `div` to the negative of the element's `width` and reset it to `0` when hovering over the parent element to slide in the menu.
+- Use `display: flex`, `flex-direction: column` and `justify-content: center` on the `div` to vertically center the menu items.
+
 ```html
 <figure class="hover-menu">
 	<img src="https://i.picsum.photos/id/1060/800/480.jpg"/>
@@ -82,10 +87,3 @@ Displays a menu overlay when the image is hovered.
   opacity: 1;
 }
 ```
-
-#### Explanation
-
-- Use a `figure` to wrap the `img` element and a `div` element that will contain the menu links.
-- Use the `opacity` and `right` attributes to animate the image on hover, to create a sliding effect.
-- Set the `left` attribute of the `div` to the negative of the element's `width` and reset it to `0` when hovering over the parent element to slide in the menu.
-- Use `display: flex`, `flex-direction: column` and `justify-content: center` on the `div` to vertically center the menu items.

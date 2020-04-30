@@ -5,6 +5,14 @@ tags: visual,intermediate
 
 Uses an SVG shape to separate two different blocks to create more a interesting visual appearance compared to standard horizontal separation.
 
+- `position: relative` on the element establishes a Cartesian positioning context for pseudo elements.
+- `:after` defines a pseudo element.
+- `background-image: url(...)` adds the SVG shape (a 24x12 triangle) as the background image of the pseudo element, which repeats by default. It must be the same color as the block that is being separated. For other shapes, we can use [the URL-encoder for SVG](http://yoksel.github.io/url-encoder/).
+- `position: absolute` takes the pseudo element out of the flow of the document and positions it in relation to the parent.
+- `width: 100%` ensures the element stretches the entire width of its parent.
+- `height: 12px` is the same height as the shape.
+- `bottom: 0` positions the pseudo element at the bottom of the parent.
+
 ```html
 <div class="shape-separator"></div>
 ```
@@ -25,13 +33,3 @@ Uses an SVG shape to separate two different blocks to create more a interesting 
   bottom: 0;
 }
 ```
-
-#### Explanation
-
-- `position: relative` on the element establishes a Cartesian positioning context for pseudo elements.
-- `:after` defines a pseudo element.
-- `background-image: url(...)` adds the SVG shape (a 24x12 triangle) as the background image of the pseudo element, which repeats by default. It must be the same color as the block that is being separated. For other shapes, we can use [the URL-encoder for SVG](http://yoksel.github.io/url-encoder/).
-- `position: absolute` takes the pseudo element out of the flow of the document and positions it in relation to the parent.
-- `width: 100%` ensures the element stretches the entire width of its parent.
-- `height: 12px` is the same height as the shape.
-- `bottom: 0` positions the pseudo element at the bottom of the parent.

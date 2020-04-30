@@ -5,6 +5,8 @@ tags: animation,intermediate
 
 Creates a donut spinner that can be used to indicate the loading of content.
 
+- Use a semi-transparent `border` for the whole element, except one side that will serve as the loading indicator for the donut. Use `animation` to rotate the element.
+
 ```html
 <div class="donut"></div>
 ```
@@ -29,7 +31,3 @@ Creates a donut spinner that can be used to indicate the loading of content.
   animation: donut-spin 1.2s linear infinite;
 }
 ```
-
-#### Explanation
-
-- Use a semi-transparent `border` for the whole element, except one side that will serve as the loading indicator for the donut. Use `animation` to rotate the element.

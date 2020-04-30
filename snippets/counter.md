@@ -5,6 +5,13 @@ tags: visual,advanced
 
 Counters are, in essence, variables maintained by CSS whose values may be incremented by CSS rules to track how many times they're used.
 
+- `counter-reset` is used to initialize a counter, the name of which is the value of the attribute. By default, the counter starts at `0`. This property can also be used to change its value to any specific number.
+- `counter-increment` is used for an element that will be countable. Once `counter-reset` is initialized, a counter's value can be increased or decreased.
+- `counter(name, style)` displays the value of a section counter. Generally used with the `content` property. This function can receive two parameters, the first being the name of the counter and the second one either `decimal` or `upper-roman` (`decimal` by default).
+- `counters(counter, string, style)` displays the value of a section counter. Generally used with the `content` property. This function can receive three parameters, the first as the name of the counter, the second one you can include a string which comes after the counter and the third one can be `decimal` or `upper-roman` (`decimal` by default).
+- A CSS counter can be especially useful for making outlined lists, because a new instance of the counter is automatically created in child elements. Using the `counters()` function, separating text can be inserted between different levels of nested counters.
+- Note that you can create an ordered list using any type of HTML.
+
 ```html
 <ul>
   <li>List item</li>
@@ -30,13 +37,3 @@ li:before {
   content: counters(counter, '.') ' ';
 }
 ```
-
-#### Explanation
-
-You can create a ordered list using any type of HTML.
-
-- `counter-reset` is used to initialize a counter, the name of which is the value of the attribute. By default, the counter starts at `0`. This property can also be used to change its value to any specific number.
-- `counter-increment` is used for an element that will be countable. Once `counter-reset` is initialized, a counter's value can be increased or decreased.
-- `counter(name, style)` displays the value of a section counter. Generally used with the `content` property. This function can receive two parameters, the first being the name of the counter and the second one either `decimal` or `upper-roman` (`decimal` by default).
-- `counters(counter, string, style)` displays the value of a section counter. Generally used with the `content` property. This function can receive three parameters, the first as the name of the counter, the second one you can include a string which comes after the counter and the third one can be `decimal` or `upper-roman` (`decimal` by default).
-- A CSS counter can be especially useful for making outlined lists, because a new instance of the counter is automatically created in child elements. Using the `counters()` function, separating text can be inserted between different levels of nested counters.

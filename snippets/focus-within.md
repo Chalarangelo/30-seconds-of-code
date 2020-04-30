@@ -5,6 +5,8 @@ tags: visual,interactivity,intermediate
 
 Changes the appearance of a form if any of its children are focused.
 
+- The psuedo class `:focus-within` applies styles to a parent element if any child element gets focused. For example, an `input` element inside a `form` element.
+
 ```html
 <form>
   <label for="username">Username:</label>
@@ -35,7 +37,3 @@ input {
   margin: 4px;
 }
 ```
-
-#### Explanation
-
-- The psuedo class `:focus-within` applies styles to a parent element if any child element gets focused. For example, an `input` element inside a `form` element.
