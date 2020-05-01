@@ -135,12 +135,14 @@ describe('transformSnippetContext', () => {
   it('handles the blog template appropriately', () => {
     const result = transformSnippetContext({
       ...snippet, authors: ['a', 'b'], blogType: 'blog.story', cover: 'img.png',
+      html: { fullDescription: '<p><img src="./img.png"></p>'},
     }, 'blog', [{
-      node: { absolutePath: 'img.png', childImageSharp: { fluid: 'xxx' }},
+      node: { absolutePath: 'img.png', childImageSharp: { fluid: { src: 'xxx'} }},
     }]);
     expect(result.authors).toEqual(['a', 'b']);
     expect(result.type).toBe('blog.story');
-    expect(result.cover).toBe('xxx');
+    expect(result.cover.src).toBe('xxx');
+    expect(result.html.fullDescription.indexOf('img class="card-image" src="xxx"')).not.toBe(-1);
   });
 });
 

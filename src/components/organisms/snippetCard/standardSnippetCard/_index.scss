@@ -59,6 +59,14 @@
       }
     }
   }
+
+  .card-image {
+    @include card-full-width-section;
+    margin-top: 0.875rem;
+    min-width: calc(100% + 2rem);
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+  }
 }
 
 a.github-link {
