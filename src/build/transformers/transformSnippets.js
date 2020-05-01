@@ -42,21 +42,27 @@ export const transformSnippetDescription = (snippet, cardTemplate) => {
  * @param {array} imageContext - An array of image URIs.
  */
 export const transformSnippetContext = (snippet, cardTemplate, imageContext) => {
+  const findImageByAbsolutePath = path =>
+    imageContext.find(
+      v => v.node.absolutePath.includes(path)
+    ).node.childImageSharp.fluid;
+
   let templateProps = {};
+  let html = snippet.html;
   switch (cardTemplate) {
   case 'blog':
     templateProps = {
       authors: snippet.authors,
       type: snippet.blogType,
-      cover:
-          imageContext.find(
-            v => v.node.absolutePath.includes(snippet.cover)
-          ).node.childImageSharp.fluid,
+      cover: findImageByAbsolutePath(snippet.cover),
     };
+    html.fullDescription = snippet.html.fullDescription.replace(
+      /(<p>)*<img src="\.\/([^"]+)"([^>]*)>(<\/p>)*/g,
+      (match, openTag, imgSrc, imgRest, closeTag) =>
+        `<img class="card-image" src="${findImageByAbsolutePath(imgSrc).src}"${imgRest}>`
+    );
     break;
   default:
-    templateProps = {
-    };
     break;
   }
   return {
@@ -74,7 +80,7 @@ export const transformSnippetContext = (snippet, cardTemplate, imageContext) => 
       primary: transformTagName(snippet.tags.primary),
       all: snippet.tags.all.map(transformTagName),
     },
-    html: snippet.html,
+    html,
     code: snippet.code,
     ...templateProps,
   };
