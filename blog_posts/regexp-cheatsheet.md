@@ -1,6 +1,6 @@
 ---
 title: Regular Expressions Cheat Sheet
-type: blog
+type: cheatsheet
 tags: javascript,string,regexp,cheatsheet
 authors: chalarangelo
 cover: blog_images/cheatsheet1.jpg
