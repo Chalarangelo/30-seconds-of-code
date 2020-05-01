@@ -268,6 +268,23 @@
       }
     },
     {
+      "id": "regexp-cheatsheet",
+      "type": "snippetListing",
+      "title": "Regular Expressions Cheat Sheet",
+      "attributes": {
+        "text": "**Anchors**\n\n- `^`: start of the string or the start of a line in a multiline pattern\n- `$`: end of the string or the end of a line in a multiline pattern\n- `\\b`: word boundary\n- `\\B`: not word boundary (opposite of `\\b`)\n\nNote: Anchors are non-quantifiable (i.e. cannot be followed by a quantifier).\n\n**Character sequences**\n\n- `.`: any character except line breaks\n- `\\w`: any word character\n- `\\W`: any non-word character (opposite of `\\w`)\n- `\\s`: any whitespace character\n- `\\S`: any non-whitespace character (opposite of `\\s`)\n- `\\d`: any digit character\n- `\\D`: any non-digit character (opposite of `\\d`)\n- `[abc]`: a single character in the given set (here `a`, `b` or `c`)\n- `[^abc]`: a single character not in the given set (opposite of `[abc]`)\n- `[a-z]`: a single character in the given range (here between `a` and `z` inclusive)\n- `[^a-z]`: a single character not in the given range (opposite of `[a-z]`)\n- `[a-zA-Z]`: a single character in either of the given ranges\n\nNote: Use `\\` to escape special characters (e.g. `\\`, `/`, `[`, `]`, `(`, `)`, `{`, `}` etc.).\n\n**Quantifiers**\n\n- `a?`: zero or one of `a` (equal to `a{0,1}`)\n- `a*`: zero or more of `a` (equal to `a{0,}`)\n- `a+`: one or more of `a` (equal to `a{1,}`)\n- `a{3}`: exactly 3 of `a`\n- `a{3,}`: 3 or more of `a`\n- `a{3,5}`: between 3 and 5 of `a` (inclusive)\n\nNote: `a` is any valid quantifiable expression.\n\n**Groups**\n\n- `(ab)`: match and capture everything enclosed (here exactly `ab`)\n- `(a|b)`: match and capture either one character (here `a` or `b`)\n- `(?:ab)`: match everything enclosed, without capturing\n\n**Flags**\n\n- `g`: Global\n- `m`: Multiline\n- `i`: Case insensitive\n- `u`: Unicode\n\nNote that this cheatsheet is meant only as a starting point and is by no means a complete guide to all the features and nuances of regular expressions. You can also read [6 JavaScript Regular Expression features you can use today](/blog/s/6-javascript-regexp-tricks) for a deeper dive into some more advanced features.\n\n**Image credit:** [Todd Quackenbush](https://unsplash.com/@toddquackenbush?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)\n",
+        "tags": [
+          "javascript",
+          "string",
+          "regexp",
+          "cheatsheet"
+        ]
+      },
+      "meta": {
+        "hash": "b101a1baa164ded445484e1d09414ba53ee16a399c20f9611b4b0c2bcdb43ee0"
+      }
+    },
+    {
       "id": "testing-stateful-ui-components",
       "type": "snippetListing",
       "title": "An approach to testing stateful React components",
