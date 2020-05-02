@@ -110,3 +110,6 @@ public
 
 # Build-time parameters
 .build
+
+# Generated content data
+content/data
