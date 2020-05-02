@@ -6,7 +6,20 @@
   "requirables": [
     "snippet_data/snippets.json"
   ],
+  "language": {
+    "short": "css",
+    "long": "CSS"
+  },
+  "secondLanguage": {
+    "short": "html",
+    "long": "HTML"
+  },
+  "optionalLanguage":{
+    "short": "js",
+    "long": "JavaScript"
+  },
   "slug": "css",
+  "parser": "cssParser",
   "reducer": "cssReducer",
   "resolver": "cssResolver",
   "featured": 3,
