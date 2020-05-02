@@ -6,6 +6,10 @@
   "requirables": [
     "snippet_data/snippets.json"
   ],
+  "language": {
+    "short": "js",
+    "long": "JavaScript"
+  },
   "slug": "js",
   "featured": 2,
   "theme": {

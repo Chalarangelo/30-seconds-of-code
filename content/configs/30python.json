@@ -6,6 +6,10 @@
   "requirables": [
     "snippet_data/snippets.json"
   ],
+  "language": {
+    "short": "py",
+    "long": "Python"
+  },
   "slug": "python",
   "featured": 4,
   "theme": {
