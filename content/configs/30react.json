@@ -6,6 +6,14 @@
   "requirables": [
     "snippet_data/snippets.json"
   ],
+  "language": {
+    "short": "jsx",
+    "long": "React"
+  },
+  "optionalLanguage": {
+    "short": "css",
+    "long": "CSS"
+  },
   "slug": "react",
   "featured": 5,
   "reducer": "jsxReducer",

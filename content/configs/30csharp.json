@@ -6,6 +6,10 @@
   "requirables": [
     "snippet_data/snippets.json"
   ],
+  "language": {
+    "short": "csharp",
+    "long": "C#"
+  },
   "slug": "c-sharp",
   "featured": 7,
   "theme": {

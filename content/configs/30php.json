@@ -6,6 +6,10 @@
   "requirables": [
     "snippet_data/snippets.json"
   ],
+  "language": {
+    "short": "php",
+    "long": "PHP"
+  },
   "slug": "php",
   "featured": 8,
   "theme": {
