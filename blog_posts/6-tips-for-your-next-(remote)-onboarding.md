@@ -1,7 +1,7 @@
 ---
 title: 6 tips for your next (remote) onboarding
 type: list
-tags: career
+tags: career,jobs,programming
 authors: fejes713
 cover: blog_images/golden-gate-bridge.jpg
 excerpt: Many developers find onboarding experience worrisome. Here are 6 helpful tips to make your onboarding experience a pleasant one.
@@ -13,7 +13,7 @@ Many developers find onboarding experience worrisome. Here are 6 helpful tips to
 
 2. Don't be embarrassed about asking for help. To get where they are now, your teammates had to go through the onboarding process and stuff you're facing now. Define with your team when you should ask for help. You'll run into obstacles every day. Some might take 30 minutes to solve, and others might take forever. Find a balance - You don't want to interrupt the whole team every 30 minutes, but don't let one problem turn your internship into an unpleasant experience.
 
-3. Most likely, you won't be micromanaged, but it's a good idea to keep everybody updated on your progress. Doing this, your team might offer some useful advice based on your progress or prepare you for upcoming obstacles in the task. If something isn't right, don't be silent. Your teammates aren't wizards, and they can't read your mind. If something is bothering you, you're stuck or not comfortable doing something. Just talk. Everybody is willing to help, but you need to let them know first.
+3. Most likely, you won't be micromanaged, but it's a good idea to keep everybody updated on your progress. Doing this, your team might offer some useful advice based on your progress or prepare you for upcoming obstacles in the task. If something isn't right, don't be silent. Your teammates aren't wizards, and they can't read your mind. If something is bothering you, you're stuck or not comfortable doing something - Just talk! Everybody is willing to help, but you need to let them know first.
 
 ![Duck icon](./blog_images/ducke.png)
 
