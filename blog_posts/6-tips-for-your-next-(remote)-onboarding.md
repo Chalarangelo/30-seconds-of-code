@@ -9,7 +9,7 @@ excerpt: Many developers find onboarding experience worrisome. Here are 6 helpfu
 
 Many developers find onboarding experience worrisome. Here are 6 helpful tips to make your onboarding experience a pleasant one:
 
-1. Ask for a project-specific tech stack and look for stuff that you might not be familiar with. One month is enough to cover the basics of anything you didn't learn at University and will save you lots of time (and stress) once the internship starts.
+1. Ask for a project-specific tech stack and look for stuff that you might not be familiar with. One month is enough to cover the basics of anything you didn't learn at University or have no prior experience on and will save you lots of time (and stress) once your job or internship starts.
 
 2. Don't be embarrassed about asking for help. To get where they are now, your teammates had to go through the onboarding process and stuff you're facing now. Define with your team when you should ask for help. You'll run into obstacles every day. Some might take 30 minutes to solve, and others might take forever. Find a balance - You don't want to interrupt the whole team every 30 minutes, but don't let one problem turn your internship into an unpleasant experience.
 
