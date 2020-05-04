@@ -16,7 +16,7 @@ const getTextualContent = (str, blogType) => {
     // Inject paragraphs and class into blog lists' <li> elements
     {
       blogType: 'blog.list',
-      matcher: /<li>(.+?)\n(.+?)<\/li>/g,
+      matcher: /<li>(.+?)\n((?!<li>).+?)<\/li>/g,
       replacer: '<li class="blog-list-item"><p>$1</p><p>$2</p></li>',
     },
     // Add 'rel' and 'target' to external links
