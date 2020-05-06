@@ -20,7 +20,6 @@
   },
   "slug": "css",
   "parser": "cssParser",
-  "reducer": "cssReducer",
   "resolver": "cssResolver",
   "featured": 3,
   "theme": {
