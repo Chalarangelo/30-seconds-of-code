@@ -72,19 +72,19 @@ export const getCodeBlocks = (str, config) => {
     if (results.length > 2) {
       return {
         style: results[0],
-        code: results[1],
+        src: results[1],
         example: results[2],
       };
     }
     return {
       style: '',
-      code: results[0],
+      src: results[0],
       example: results[1],
     };
   } else {
     results = results.map(v => v.replace(replacer, '$1').trim());
     return {
-      code: results[0],
+      src: results[0],
       example: results[1],
     };
   }
