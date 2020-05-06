@@ -12,10 +12,7 @@ export default (id, snippetNode, markdownNode) => {
     },
     expertise: determineExpertiseFromTags(snippetNode.attributes.tags),
     title: snippetNode.title,
-    code: {
-      src: snippetNode.attributes.codeBlocks.code,
-      example: snippetNode.attributes.codeBlocks.example,
-    },
+    code: snippetNode.attributes.codeBlocks,
     slug: `/${snippetNode.slugPrefix}${convertToSeoSlug(markdownNode.fields.slug)}`,
     url: `${snippetNode.repoUrlPrefix}${markdownNode.fields.slug.slice(0, -1)}.md`,
     path: markdownNode.fileAbsolutePath,
@@ -23,7 +20,10 @@ export default (id, snippetNode, markdownNode) => {
       full: snippetNode.attributes.text,
       short: snippetNode.attributes.text.slice(0, snippetNode.attributes.text.indexOf('\n\n')),
     },
-    language: snippetNode.language,
+    language: {
+      ...snippetNode.language,
+      otherLanguages: snippetNode.otherLanguages ? snippetNode.otherLanguages : undefined,
+    },
     icon: snippetNode.icon,
     ranking: rankSnippet(snippetNode),
     firstSeen: new Date(+`${snippetNode.meta.firstSeen}000`),
