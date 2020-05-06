@@ -16,7 +16,6 @@
   },
   "slug": "react",
   "featured": 5,
-  "reducer": "jsxReducer",
   "resolver": "jsxResolver",
   "theme": {
     "backColor": "#282c34",
