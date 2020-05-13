@@ -12,12 +12,7 @@ const propTypes = {
 const TagList = ({
   tags,
 }) => (
-  <p className="tag-list">
-    { [...new Set(tags)]    // Deduplicate tags
-      .filter(Boolean)      // Remove empty tags
-      .join(', ')           // Combine tags
-    }
-  </p>
+  <p className="tag-list">{ tags.join(', ') }</p>
 );
 
 TagList.propTypes = propTypes;
