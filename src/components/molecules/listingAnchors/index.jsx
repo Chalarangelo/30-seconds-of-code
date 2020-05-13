@@ -37,10 +37,7 @@ const ListingAnchors = ({
   }, []);
 
   return isCompact ?
-    <ul
-      className='listing-anchors compact'
-      { ...rest }
-    >
+    <ul className='listing-anchors compact' { ...rest } >
       { items.map(item =>
         <li key={ item.link.url }>
           <AnchorButton
@@ -53,9 +50,7 @@ const ListingAnchors = ({
       ) }
     </ul>
     :
-    <ul className='listing-anchors'
-      { ...rest }
-    >
+    <ul className='listing-anchors' { ...rest } >
       { items.map(item =>
         <li key={ item.link.url }>
           <AnchorButton
