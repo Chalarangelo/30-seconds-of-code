@@ -24,7 +24,7 @@ describe('<Footer />', () => {
   });
 
   it('renders the links section', () => {
-    expect(wrapper).toContainMatchingElements(5, 'footer > p:first-child a');
+    expect(wrapper).toContainMatchingElements(4, 'footer > p:first-child a');
   });
 });
 
