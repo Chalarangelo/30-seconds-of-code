@@ -33,16 +33,5 @@ describe('<Expertise />', () => {
       expect(wrapper).toContainMatchingElement('span.expertise.intermediate');
     });
   });
-
-  describe('with an explicitly empty level value', () => {
-    beforeEach(() => {
-      wrapper = mount(<Expertise level={ null } />);
-    });
-
-    it('should render the default expertise tag', () => {
-      expect(wrapper).not.toContainMatchingElement('span.expertise');
-    });
-  });
-
 });
 
