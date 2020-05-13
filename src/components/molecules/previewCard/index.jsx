@@ -23,42 +23,37 @@ const PreviewCard = ({
   snippet,
   className,
   ...rest
-}) => (
-  <Card className={ combineClassNames`preview-card ${className}` } { ...rest } >
-    <div className='card-meta'>
-      <div className={ `card-icon icon icon-${snippet.icon}` }>
-        <Expertise level={ snippet.expertise } />
+}) => {
+  const tags = [snippet.primaryTag, snippet.expertise];
+  if (snippet.language) tags.unshift(snippet.language);
+  return(
+    <Card className={ combineClassNames`preview-card ${className}` } { ...rest } >
+      <div className='card-meta'>
+        <div className={ `card-icon icon icon-${snippet.icon}` }>
+          <Expertise level={ snippet.expertise } />
+        </div>
+        <div className='card-data'>
+          <h4 className='card-title'>
+            <Anchor
+              link={ {
+                internal: true,
+                url: snippet.url,
+              } }
+              className='preview-card-wrapper'
+            >
+              { snippet.title }
+            </Anchor>
+          </h4>
+          <TagList tags={ tags } />
+        </div>
       </div>
-      <div className='card-data'>
-        <h4 className='card-title'>
-          <Anchor
-            link={ {
-              internal: true,
-              url: snippet.url,
-            } }
-            className='preview-card-wrapper'
-          >
-            { snippet.title }
-          </Anchor>
-        </h4>
-        <TagList
-          tags={
-            [
-              snippet.language ? snippet.language : null,
-              snippet.primaryTag,
-              snippet.icon === 'blog' ? literals.blog : null,
-              snippet.expertise,
-            ]
-          }
-        />
-      </div>
-    </div>
-    <div
-      className='card-description'
-      dangerouslySetInnerHTML={ { __html: `${snippet.description}` } }
-    />
-  </Card>
-);
+      <div
+        className='card-description'
+        dangerouslySetInnerHTML={ { __html: `${snippet.description}` } }
+      />
+    </Card>
+  );
+};
 
 PreviewCard.propTypes = propTypes;
 
