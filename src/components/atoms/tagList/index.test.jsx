@@ -4,7 +4,7 @@ import Adapter from 'enzyme-adapter-react-16';
 
 import TagList from './index';
 
-import { tags, dupedTags } from 'fixtures/tags';
+import { tags } from 'fixtures/tags';
 
 configure({ adapter: new Adapter() });
 
@@ -21,17 +21,6 @@ describe('<TagList />', () => {
 
   it('should render a child for each passed tag name', () => {
     expect(wrapper.text()).toBe('array, adapter, function');
-  });
-
-  describe('with duplicate tag names', () => {
-
-    beforeEach(() => {
-      wrapper = mount(<TagList tags={ dupedTags } />);
-    });
-
-    it('should render each tag name only once', () => {
-      expect(wrapper.text()).toBe('array, adapter, function');
-    });
   });
 });
 
