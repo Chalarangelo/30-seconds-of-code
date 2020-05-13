@@ -98,6 +98,6 @@
   },
   "dependencies": {},
   "browserslist": [
-    "defaults and last 4 versions and not dead and not ie>0 and not ie_mob>0 and not op_mini all and not baidu>0 and not kaios>0 and not and_uc>0 and not and_qq>0 and not <0.2%"
+    "> 0.5% and last 4 versions and not dead and not ie>0 and not op_mini all and not and_uc>0 and not edge<79"
   ]
 }

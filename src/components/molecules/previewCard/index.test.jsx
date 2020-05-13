@@ -53,7 +53,7 @@ describe('<PreviewCard />', () => {
   });
 
   it('should pass the appropriate tags to the TagList component', () => {
-    expect(tags.prop('tags')).toEqual([previewSnippet.language, previewSnippet.primaryTag, null, previewSnippet.expertise]);
+    expect(tags.prop('tags')).toEqual([previewSnippet.language, previewSnippet.primaryTag, previewSnippet.expertise]);
   });
 
   it('should render the correct description', () => {
@@ -77,7 +77,7 @@ describe('<PreviewCard />', () => {
     });
 
     it('should pass the appropriate tags to the TagList component', () => {
-      expect(tags.prop('tags')).toEqual([null, previewBlogSnippet.primaryTag, literals.blog, previewBlogSnippet.expertise]);
+      expect(tags.prop('tags')).toEqual([previewBlogSnippet.primaryTag, previewBlogSnippet.expertise]);
     });
   });
 });

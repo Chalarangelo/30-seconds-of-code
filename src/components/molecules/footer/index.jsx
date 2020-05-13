@@ -57,17 +57,6 @@ const Footer = ({
       >
         { literals.twitter }
       </Anchor>
-      <Anchor
-        link={ {
-          internal: false,
-          url: config.discordUrl,
-          rel: 'noopener nofollow',
-          target: '_blank',
-        } }
-        className='footer-link'
-      >
-        { literals.discord }
-      </Anchor>
     </p>
     <p>
       { literals.copyright }

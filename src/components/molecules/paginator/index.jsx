@@ -46,9 +46,7 @@ const Paginator = ({
     buttons = [1, '...', pageNumber, '...', totalPages];
 
   return (
-    <div
-      className={ combineClassNames`paginator ${className}` }
-    >
+    <div className={ combineClassNames`paginator ${className}` } >
       { pageNumber > 1 &&
       <AnchorButton
         className='previous-page icon icon-chevron-left'

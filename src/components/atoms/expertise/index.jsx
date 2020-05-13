@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import { combineClassNames } from 'utils';
 
 const propTypes = {
   level: PropTypes.string,
@@ -13,9 +12,9 @@ const propTypes = {
  */
 const Expertise = ({
   level = 'Intermediate',
-}) => level ? (
-  <span className={ combineClassNames`expertise ${level.toLowerCase()}` } />
-) : null;
+}) => (
+  <span className={ `expertise ${level.toLowerCase()}` } />
+);
 
 Expertise.propTypes = propTypes;
 
