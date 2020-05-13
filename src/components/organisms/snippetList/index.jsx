@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import Paginator from 'components/molecules/paginator';
 import Sorter from 'components/molecules/sorter';
@@ -44,15 +44,17 @@ const SnippetList = ({
         { listingName }
       </PageTitle>
       <Sorter sorter={ sorter } />
-      { snippetList.map((snippet, i) => (
-        <Fragment key={ `snippet_${snippet.url}` }>
+      { snippetList.reduce((l, snippet, i) => {
+        l.push(
           <PreviewCard
+            key={ `snippet_${snippet.url}` }
             snippet={ snippet }
             context={ listingType }
           />
-          { i === ctaIndex ? <CTA /> : null }
-        </Fragment>
-      )) }
+        );
+        if(i === ctaIndex) l.push(<CTA key="cta"/>);
+        return l;
+      }, []) }
       <Paginator paginator={ paginator } />
     </>
   ) : null;
