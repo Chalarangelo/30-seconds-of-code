@@ -26,8 +26,7 @@ for (let file of files) {
 
 - Any `for` loop can be used - [read more about the different JavaScript loops](/blog/s/javascript-for-in-for-of-foreach/).
 - Less common nowadays, due to functional programming being more popular.
-- More control over the iteration, such as skipping over elements.
-- Can break out of the loop at any time, allows for early `return`s.
+- Control over the iteration, such as skipping over elements or early `return`s.
 - Resulting array needs to be declared beforehand, outside the loop.
 - Uses `Array.prototype.push()` or the spread (`...`) operator to add elements.
 - `O(N)` complexity, each element will be iterated over only once.
