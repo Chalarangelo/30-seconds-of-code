@@ -25,11 +25,11 @@ const partitionBy = (arr, fn) =>
     .map((interval, i, a) =>
       i === 0 ? arr.slice(...[0, interval]) : arr.slice(...[a[i - 1], interval])
     );
-
-const numbers = [1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 4, 5, 5, 5, 5, 5];
 ```
 
 ```js
+const numbers = [1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 4, 5, 5, 5, 5, 5];
+
 partitionBy(numbers, n => n % 2 === 0); // = > [ [ 1, 1, 1, 1, 1, 3, 3, 3, 3, 3 ], [ 4 ], [ 5, 5, 5, 5, 5 ] ]
 partitionBy(numbers, n => n); // => [ [ 1, 1, 1, 1, 1 ], [ 3, 3, 3, 3, 3 ], [ 4 ], [ 5, 5, 5, 5, 5 ] ]
 ```
