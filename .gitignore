@@ -81,3 +81,7 @@ public
 
 # Mac files
 .DS_Store
+
+# Vim
+*.vim
+tags
