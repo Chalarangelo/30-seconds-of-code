@@ -3,7 +3,7 @@ title: partitionBy
 tags: array,object,function,intermediate
 ---
 
-Groups the elements into several arrays, depending on the provided function's truthiness for each element.
+Applies `fn` to each value in `arr`, splitting it each time `fn` returns a new value.
 
 Use `Array.prototype.reduce()` and `Array.prototype.push()` to create the start index of each partition.
 Use `Array.prototype.map()` to create the slice interval of each partition.
