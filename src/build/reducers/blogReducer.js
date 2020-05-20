@@ -6,8 +6,10 @@ import { determineExpertiseFromTags } from 'build/transformers';
 // The argument against is that it's a single case and might not extend to other repos in the future
 import authors from '../../../content/sources/30blog/blog_data/blog_authors';
 
-export default (id, snippetNode, markdownNode) => {
+export default (id, snippetNode, markdownNode, langData) => {
   const shortSliceIndex = snippetNode.attributes.text.indexOf('\n\n') <= 180 ? snippetNode.attributes.text.indexOf('\n\n') : snippetNode.attributes.text.indexOf(' ', 160);
+  const lowercaseTags = snippetNode.attributes.tags.map(t => t.toLowerCase());
+  const langIcon = langData.find(l => lowercaseTags.includes(l.language));
   return {
     id,
     tags: {
@@ -31,7 +33,7 @@ export default (id, snippetNode, markdownNode) => {
         : `${ snippetNode.attributes.text.slice(0, shortSliceIndex)}...`,
     },
     language: {},
-    icon: snippetNode.icon,
+    icon: langIcon ? langIcon.icon : snippetNode.icon,
     ranking: rankSnippet(snippetNode, { timeSensitive: true }),
     firstSeen: new Date(+`${snippetNode.meta.firstSeen}000`),
     lastUpdated: new Date(+`${snippetNode.meta.lastUpdated}000`),
