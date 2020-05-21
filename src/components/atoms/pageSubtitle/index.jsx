@@ -22,7 +22,7 @@ const PageSubtitle = ({
   isLight,
 }) => (
   <p
-    className={ combineClassNames`${isLight ? 'page-light-sub' : 'page-sub-title'}${className}` }
+    className={ combineClassNames`${isLight ? 'page-light-sub' : 'page-sub-title'} ${className}` }
   >
     { children }
   </p>
