@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import { connect } from 'react-redux';
-import { combineClassNames, getURLParameters, throttle, getBaseURL, getRootURL } from 'utils';
+import { getURLParameters, throttle, getBaseURL, getRootURL } from 'utils';
 import { pushNewQuery, searchByKeyphrase } from 'state/search';
 import { AnchorButton } from 'components/atoms/button';
 import literals from 'lang/en/client/search';
@@ -33,10 +33,6 @@ const handleHistoryUpdate = value => {
 };
 
 const propTypes = {
-  /** Additional classname(s) for the search bar */
-  className: PropTypes.string,
-  /** Element id */
-  id: PropTypes.string,
   /** Is this component the main search component? */
   isMainSearch: PropTypes.bool,
   /** Initial value for the search bar */
@@ -61,8 +57,6 @@ const propTypes = {
  * @param {string} searchTimestamp - Last search timestamp (Redux-connected)
  */
 const Search = ({
-  className = '',
-  id = '',
   searchIndex,
   searchQuery,
   isMainSearch = false,
@@ -94,9 +88,8 @@ const Search = ({
     <>
       <input
         defaultValue={ value }
-        className={ combineClassNames`search-box ${className}` }
+        className='search-box'
         type='search'
-        id={ id }
         placeholder={ literals.searchPlaceholder }
         aria-label={ literals.searchSnippets }
         onKeyUp={ e => {

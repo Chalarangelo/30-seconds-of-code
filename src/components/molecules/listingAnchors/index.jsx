@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import { AnchorButton } from 'components/atoms/button';
-import { combineClassNames } from 'utils';
 
 const propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({
@@ -42,7 +41,7 @@ const ListingAnchors = ({
         <li key={ item.link.url }>
           <AnchorButton
             link={ item.link }
-            className={ combineClassNames`${item.selected ? 'selected' : ''}` }
+            className={ item.selected ? 'selected' : undefined }
           >
             { item.name }
           </AnchorButton>

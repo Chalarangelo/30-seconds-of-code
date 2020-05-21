@@ -14,6 +14,7 @@ import {
 
 import {
   uniqueElements,
+  insertAt,
   chunk
 } from './array';
 
@@ -35,5 +36,6 @@ export {
   getRootURL,
   throttle,
   uniqueElements,
+  insertAt,
   chunk
 };

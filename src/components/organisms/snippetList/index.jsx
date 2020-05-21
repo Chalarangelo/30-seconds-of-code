@@ -6,6 +6,7 @@ import PageTitle from 'components/atoms/pageTitle';
 import PreviewCard from 'components/molecules/previewCard';
 import CTA from 'components/organisms/cta';
 import ListingAnchors from 'components/molecules/listingAnchors';
+import { insertAt } from 'utils';
 
 const propTypes = {
   snippetList: PropTypes.arrayOf(PropTypes.snippet),
@@ -44,17 +45,16 @@ const SnippetList = ({
         { listingName }
       </PageTitle>
       <Sorter sorter={ sorter } />
-      { snippetList.reduce((l, snippet, i) => {
-        l.push(
+      { insertAt(
+        ctaIndex,
+        <CTA key='cta' />,
+        snippetList.map(snippet =>
           <PreviewCard
             key={ `snippet_${snippet.url}` }
             snippet={ snippet }
-            context={ listingType }
           />
-        );
-        if(i === ctaIndex) l.push(<CTA key="cta"/>);
-        return l;
-      }, []) }
+        )
+      ) }
       <Paginator paginator={ paginator } />
     </>
   ) : null;
