@@ -3,14 +3,10 @@ import PropTypes from 'typedefs/proptypes';
 import Card from 'components/atoms/card';
 import Anchor from 'components/atoms/anchor';
 import Expertise from 'components/atoms/expertise';
-import { combineClassNames } from 'utils';
 import TagList from 'components/atoms/tagList';
-import literals from 'lang/en/client/common';
 
 const propTypes = {
   snippet: PropTypes.snippet,
-  className: PropTypes.string,
-  rest: PropTypes.any,
 };
 
 /**
@@ -21,13 +17,11 @@ const propTypes = {
  */
 const PreviewCard = ({
   snippet,
-  className,
-  ...rest
 }) => {
   const tags = [snippet.primaryTag, snippet.expertise];
   if (snippet.language) tags.unshift(snippet.language);
   return(
-    <Card className={ combineClassNames`preview-card ${className}` } { ...rest } >
+    <Card className='preview-card'>
       <div className='card-meta'>
         <div className={ `card-icon icon icon-${snippet.icon}` }>
           <Expertise level={ snippet.expertise } />
