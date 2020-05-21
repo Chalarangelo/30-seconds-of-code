@@ -19,7 +19,7 @@ const CTA = ({
   acceptsCookies,
 }) => (
   <PageBackdrop
-    graphicName={ `graphic-cta twitter-cta` }
+    graphicName='graphic-cta twitter-cta'
     mainText={ (
       <>
         { literals.intro }
