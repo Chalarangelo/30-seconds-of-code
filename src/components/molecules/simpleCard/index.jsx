@@ -12,7 +12,6 @@ const propTypes = {
   dangerouslySetInnerHTML: PropTypes.shape({
     __html: PropTypes.string,
   }),
-  rest: PropTypes.any,
 };
 
 /**
@@ -27,12 +26,8 @@ const SimpleCard = ({
   title,
   children,
   dangerouslySetInnerHTML,
-  ...rest
 }) => (
-  <Card
-    className={ className }
-    { ...rest }
-  >
+  <Card className={ className } >
     <h4 className='card-title'>
       { title }
     </h4>
