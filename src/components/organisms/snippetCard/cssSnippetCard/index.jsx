@@ -7,14 +7,11 @@ import Expertise from 'components/atoms/expertise';
 import CodeBlock from 'components/atoms/codeBlock';
 import { CodepenButton } from 'components/atoms/button';
 import SnippetPreview from 'components/atoms/snippetPreview';
-import { combineClassNames } from 'utils';
 import literals from 'lang/en/client/common';
 
 const propTypes = {
   snippet: PropTypes.snippet,
-  className: PropTypes.string,
   hasGithubLinksEnabled: PropTypes.bool,
-  rest: PropTypes.any,
 };
 
 /**
@@ -24,12 +21,10 @@ const propTypes = {
  */
 const SnippetCard = ({
   snippet,
-  className,
   hasGithubLinksEnabled = false,
-  ...rest
 }) => {
   return (
-    <Card className={ combineClassNames`snippet-card ${className}` } { ...rest } >
+    <Card className='snippet-card' >
       <div className='card-meta'>
         <div className={ `card-icon icon icon-${snippet.icon}` }>
           <Expertise level={ snippet.expertise } />

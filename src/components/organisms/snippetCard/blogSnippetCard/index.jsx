@@ -2,15 +2,12 @@ import React, {Fragment} from 'react';
 import PropTypes from 'typedefs/proptypes';
 import Card from 'components/atoms/card';
 import TagList from 'components/atoms/tagList';
-import { combineClassNames } from 'utils';
 import Anchor from 'components/atoms/anchor';
 import literals from 'lang/en/client/common';
 
 const propTypes = {
   snippet: PropTypes.snippet,
-  className: PropTypes.string,
   hasGithubLinksEnabled: PropTypes.bool,
-  rest: PropTypes.any,
 };
 
 /**
@@ -20,11 +17,9 @@ const propTypes = {
  */
 const SnippetCard = ({
   snippet,
-  className,
   hasGithubLinksEnabled = false,
-  ...rest
 }) => (
-  <Card className={ combineClassNames`snippet-card ${className}` } { ...rest } >
+  <Card className='snippet-card' >
     <h4 className='card-title'>{ snippet.title }</h4>
     <div className="card-meta-info">
       { snippet.authors.map((a, i, arr) => (
