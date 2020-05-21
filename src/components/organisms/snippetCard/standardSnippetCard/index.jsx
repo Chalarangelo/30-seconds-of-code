@@ -6,15 +6,12 @@ import TagList from 'components/atoms/tagList';
 import Expertise from 'components/atoms/expertise';
 import CodeBlock from 'components/atoms/codeBlock';
 import { CopyButton, CodepenButton } from 'components/atoms/button';
-import { combineClassNames } from 'utils';
 import JSX_SNIPPET_PRESETS from 'config/jsxSnippetPresets';
 import literals from 'lang/en/client/common';
 
 const propTypes = {
   snippet: PropTypes.snippet,
-  className: PropTypes.string,
   hasGithubLinksEnabled: PropTypes.bool,
-  rest: PropTypes.any,
 };
 
 /**
@@ -24,11 +21,9 @@ const propTypes = {
  */
 const SnippetCard = ({
   snippet,
-  className,
   hasGithubLinksEnabled = false,
-  ...rest
 }) => (
-  <Card className={ combineClassNames`snippet-card ${className}` } { ...rest } >
+  <Card className='snippet-card'>
     <div className='card-meta'>
       <div className={ `card-icon icon icon-${snippet.icon}` }>
         <Expertise level={ snippet.expertise } />
