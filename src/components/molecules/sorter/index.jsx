@@ -5,7 +5,6 @@ import { AnchorButton } from 'components/atoms/button';
 import { useClickOutside } from 'components/hooks';
 
 const propTypes = {
-  className: PropTypes.string,
   sorter: PropTypes.sorter,
 };
 
@@ -14,7 +13,6 @@ const propTypes = {
  * Dependent on the `Button` component.
  */
 const Sorter = ({
-  className,
   sorter: {
     orders,
     selectedOrder,
@@ -35,10 +33,7 @@ const Sorter = ({
 
   return (
     <div
-      className={ combineClassNames`sorter
-        ${className}
-        ${toggled ? 'open' : ''}
-      ` }
+      className={ combineClassNames`sorter ${toggled ? 'open' : ''}` }
       ref={ sorterRef }
     >
       <div className='sorter-inner'>
