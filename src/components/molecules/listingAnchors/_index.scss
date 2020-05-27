@@ -43,7 +43,7 @@
     text-align: center;
 
     &:hover, &:focus {
-      box-shadow: 0px 4px 8px var(--button-shadow-color);
+      box-shadow: 0px 2px 8px var(--button-shadow-color);
     }
 
     @media screen and (min-width: $layout-medium-breakpoint) {
