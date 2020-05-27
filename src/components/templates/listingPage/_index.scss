@@ -6,33 +6,20 @@
   color: var(--fore-color-dark);
   margin: 0.5rem 1rem 0.5rem;
 
-  @media screen and (min-width: 390px) {
-    margin: 0.5rem 1.25rem 0.5rem;
-  }
-
   // Homepage logo
   .home-logo {
     display: inline-block;
     vertical-align: middle;
     margin: 1rem 1.25rem 0.5rem 0;
-    max-width: 48px;
-
-    @media screen and (min-width: 390px) {
-      max-width: 64px;
-    }
+    max-width: 64px;
   }
 
   // Homepage title text
   .home-title-text {
     text-align: center;
     display: inline-block;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     height: 24px;
-
-    @media screen and (min-width: 360px) {
-      font-size: 1.625rem;
-      height: 24px;
-    }
 
     @media screen and (min-width: 390px) {
       font-size: 1.75rem;
@@ -47,15 +34,9 @@
 
 // Homepage subtitle
 .home-sub-title {
-  font-size: 0.875rem;
-  line-height: 1.5rem;
   margin: 0.75rem 1.25rem 1.5rem;
   color: var(--fore-color);
   text-align: center;
-
-  @media screen and (min-width: $layout-medium-breakpoint) {
-    font-size: 1rem;
-  }
 }
 
 // Fix for static pages
