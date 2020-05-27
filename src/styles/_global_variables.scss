@@ -1,17 +1,10 @@
-// Variables for the link-back icon
-$fore-color-dark-light: #1F253D;
-$fore-color-dark-dark: #c5cadd;
-
-// Variables for the paginator
-$fore-color-light: #404454;
-$fore-color-dark: #c8cad5;
-
+// Colors
 :root {
   // Interface color palette
   --back-color: #F5F6FA;
-  --fore-color: #{$fore-color-light};
+  --fore-color: #404454;
   --fore-color-light: #4c526b;
-  --fore-color-dark: #{$fore-color-dark-light};
+  --fore-color-dark: #1F253D;
   --fore-color-darker: #060709;
 
   // Scrollbar
@@ -22,9 +15,9 @@ $fore-color-dark: #c8cad5;
 // Dark mode colors
 .page-container.dark {
   --back-color: #1f2028;
-  --fore-color: #{$fore-color-dark};
+  --fore-color: #c8cad5;
   --fore-color-light: #acb1c3;
-  --fore-color-dark: #{$fore-color-dark-dark};
+  --fore-color-dark: #c5cadd;
   --fore-color-darker: #fcfcfd;
 
   // Scrollbar

@@ -1,15 +1,11 @@
-// Variables for the link-back icon
-$paginator-selected-color-light: #434ec7;
-$paginator-selected-color-dark: #5f91e7;
-
 // Colors
 :root {
-  --paginator-selected-color: #{$paginator-selected-color-light};
+  --paginator-selected-color: #434ec7;
 }
 
 // Dark mode colors
 .page-container.dark {
-  --paginator-selected-color: #{$paginator-selected-color-dark};
+  --paginator-selected-color: #5f91e7;
 }
 
 .paginator {
