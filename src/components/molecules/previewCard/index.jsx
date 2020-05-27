@@ -31,7 +31,6 @@ const PreviewCard = ({
               internal: true,
               url: snippet.url,
             } }
-            className='preview-card-wrapper'
           >
             { snippet.title }
           </Anchor>
