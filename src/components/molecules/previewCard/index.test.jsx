@@ -3,7 +3,6 @@ import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 import PreviewCard from './index';
-import literals from 'lang/en/client/common';
 import { previewSnippet, previewBlogSnippet } from 'fixtures/snippets';
 
 configure({ adapter: new Adapter() });

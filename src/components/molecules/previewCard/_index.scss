@@ -7,8 +7,17 @@
 .preview-card {
   margin-top: 1.5rem;
   overflow: hidden;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 64px calc(100% - 64px);
+
+  .card-icon {
+    margin: 0.875rem 0.5rem 0.125rem;
+  }
 
   .card-title {
+    margin: 0.625rem 0.5rem 0 0.75rem;
+
     a {
       &, &:link, &:visited {
         line-height: 1;
