@@ -14,7 +14,7 @@ const propTypes = {
 /**
  * Renders the set of buttons that link to other listing pages.
  * Used in Listing pages and Home page.
- * Dependent on `Button` and `PageSubtitle` components.
+ * Dependent on the `Button` component.
  */
 const ListingAnchors = ({
   items,

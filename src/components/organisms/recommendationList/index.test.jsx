@@ -22,8 +22,8 @@ describe('<RecommendationList />', () => {
     );
   });
 
-  it('should render a PageSubtitle component', () => {
-    expect(wrapper).toContainMatchingElement('PageSubtitle');
+  it('should render a title', () => {
+    expect(wrapper).toContainMatchingElement('.recommendation-list-title');
   });
 
   it('should render the appropriate number of PreviewCard components', () => {

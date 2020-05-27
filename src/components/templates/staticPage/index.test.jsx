@@ -40,8 +40,8 @@ describe('<StaticPage />', () => {
       expect(wrapper).toContainMatchingElement('PageTitle');
     });
 
-    it('a PageSubtitle component', () => {
-      expect(wrapper).toContainMatchingElement('PageSubtitle');
+    it('a subtitle element', () => {
+      expect(wrapper).toContainMatchingElement('.page-sub-title');
     });
 
     it('3 SimpleCard components', () => {

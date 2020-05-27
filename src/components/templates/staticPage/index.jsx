@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import Meta from 'components/organisms/meta';
 import PageTitle from 'components/atoms/pageTitle';
-import PageSubtitle from 'components/atoms/pageSubtitle';
 import SimpleCard from 'components/molecules/simpleCard';
 import Shell from 'components/organisms/shell';
 
@@ -50,7 +49,7 @@ const StaticPage = ({
     />
     <Shell logoSrc={ logoSrc } >
       <PageTitle>{ title }</PageTitle>
-      <PageSubtitle isLight>{ subtitle }</PageSubtitle>
+      <p className='page-sub-title'>{ subtitle }</p>
       {
         cards.map(({ title, html }, i) => (
           <SimpleCard
