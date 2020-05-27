@@ -57,11 +57,10 @@
         content: attr(title);
         position: absolute;
         top: calc(100% + 1rem);
-        color: var(--fore-color-lighter);
+        color: var(--fore-color);
         width: calc(100% + 1.5rem);
         line-height: 1;
         left: -0.75rem;
-        text-transform: uppercase;
         text-align: center;
       }
 
@@ -106,7 +105,7 @@
   .btn {
     background: transparent;
     border-radius: 0;
-    color: var(--fore-color-lighter);
+    color: var(--fore-color-light);
     line-height: 24px;
     height: 48px;
     border-bottom: 2px solid transparent;
