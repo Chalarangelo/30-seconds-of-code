@@ -20,12 +20,14 @@ const RecommendationList = ({
       <PageSubtitle isLight className='recommendation-list-title'>
         { literals.recommendedSnippets }
       </PageSubtitle>
-      { snippetList.map(snippet => (
-        <PreviewCard
-          key={ `snippet_${snippet.url}` }
-          snippet={ snippet }
-        />
-      )) }
+      <ul className='recommendation-list'>
+        { snippetList.map(snippet => (
+          <PreviewCard
+            key={ `snippet_${snippet.url}` }
+            snippet={ snippet }
+          />
+        )) }
+      </ul>
     </>
   ) : null;
 };

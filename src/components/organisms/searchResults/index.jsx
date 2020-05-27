@@ -29,12 +29,14 @@ const SearchResults = ({
       <PageTitle isLight>
         { literals.results }
       </PageTitle>
-      { searchResults.map(snippet => (
-        <PreviewCard
-          key={ `snippet_${snippet.url}` }
-          snippet={ snippet }
-        />
-      )) }
+      <ul className='search-results'>
+        { searchResults.map(snippet => (
+          <PreviewCard
+            key={ `snippet_${snippet.url}` }
+            snippet={ snippet }
+          />
+        )) }
+      </ul>
     </>
   ) : (
     <>
