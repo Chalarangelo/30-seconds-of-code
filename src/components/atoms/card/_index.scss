@@ -26,43 +26,47 @@
 
   .card-title {
     font-size: 1.25rem;
-    line-height: 1.75rem;
+    line-height: 1.5rem;
     margin: 0.625rem 0.5rem 0.125rem;
     transition: 0.3s ease all;
     color: var(--card-fore-color);
+    letter-spacing: -0.125px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .card-icon {
+    position: relative;
+    display: inline-block;
+    margin: 0.625rem 0.5rem 0.125rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+
+    &:before {
+      position: absolute;
+      top: 0.5rem;
+      left: 0.5rem;
+      font-size: 2rem;
+    }
+
+    // Custom styles for dart icon
+    &.icon-dart:before {
+      content: '';
+      background-image: generate-icon-background("dartlang", '', '', 0, 24);
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
   }
 
   .card-meta {
-    display: flex;
-    align-items: flex-start;
-
-    .card-icon {
-      position: relative;
-      display: inline-block;
-      margin: 0.625rem 0.5rem 0.125rem;
-      width: 3rem;
-      height: 3rem;
-      border-radius: 0.75rem;
-
-      &:before {
-        position: absolute;
-        top: 0.5rem;
-        left: 0.5rem;
-        font-size: 2rem;
-      }
-
-      // Custom styles for dart icon
-      &.icon-dart:before {
-        content: '';
-        background-image: generate-icon-background("dartlang", '', '', 0, 24);
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-    }
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 64px auto;
 
     .card-data {
       flex: 1 1;
@@ -71,13 +75,11 @@
 
     .card-title {
       margin: 0.625rem 0.5rem 0 0.75rem;
-      line-height: 1.5rem;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
   }
 
   .card-description {
+    grid-column: 1/3;
     margin: 0;
     font-size: 0.875rem;
     color: var(--card-fore-color-light);
