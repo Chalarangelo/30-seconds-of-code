@@ -1,14 +1,15 @@
-// SCSS variables - used to color the icon
-$button-fore-color: #FFFFFF;
-
 // Colors
 :root {
   --button-back-color: #3B3EFC;
-  --button-fore-color: #{$button-fore-color};
-  --button-shadow-color: rgba(0, 0, 0, 0.25);
-  --button-shadow-focus-color: rgba(0, 0, 0, 0.29);
+  --button-fore-color: #FFFFFF;
+  --button-shadow-color: rgba(0, 32, 128, 0.25);
   --button-back-color-tertiary: #131418;
   --button-back-color-active: #05A864;
+}
+
+// Dark mode colors
+.page-container.dark {
+  --button-shadow-color: rgba(0, 3, 10, 0.4);
 }
 
 .btn, a.btn {
@@ -23,10 +24,10 @@ $button-fore-color: #FFFFFF;
   font-size: 1.125rem;
   line-height: 1.4;
   transition: 0.3s ease all;
-  box-shadow:  0px 4px 8px var(--button-shadow-color);
+  box-shadow:  0px 2px 4px var(--button-shadow-color);
 
   &:hover, &:focus {
-    box-shadow: 0px 8px 16px var(--button-shadow-color);
+    box-shadow: 0px 3px 10px var(--button-shadow-color);
     text-decoration: none;
     outline: none;
   }
