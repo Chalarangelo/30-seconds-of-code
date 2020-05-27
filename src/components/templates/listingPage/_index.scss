@@ -15,7 +15,6 @@
     display: inline-block;
     vertical-align: middle;
     margin: 1rem 1.25rem 0.5rem 0;
-    transition: 0.3s ease all;
     max-width: 48px;
 
     @media screen and (min-width: 390px) {
@@ -26,7 +25,6 @@
   // Homepage title text
   .home-title-text {
     text-align: center;
-    transition: 0.3s ease all;
     display: inline-block;
     font-size: 1.25rem;
     height: 24px;
@@ -49,7 +47,6 @@
 
 // Homepage subtitle
 .home-sub-title {
-  transition: 0.3s ease all;
   font-size: 0.875rem;
   line-height: 1.5rem;
   margin: 0.75rem 1.25rem 1.5rem;
