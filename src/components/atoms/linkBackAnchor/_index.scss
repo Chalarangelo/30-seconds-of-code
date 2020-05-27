@@ -3,9 +3,10 @@ a.link-back {
   font-size: 1.125rem;
   line-height: 1.35;
   display: block;
-  margin: 0.875rem 1.25rem 1.5rem;
+  margin: 0.875rem 0.875rem 1.5rem;
   padding-left: 24px;
   position: relative;
+
   &, &:link, &:visited {
     color: var(--fore-color-dark);
   }
@@ -15,10 +16,5 @@ a.link-back {
     left: 0;
     font-size: 20px;
     line-height: 24px;
-  }
-
-  @media screen and (max-width: calc(#{$layout-medium-breakpoint} - 1px)) {
-    margin-left: 0.875rem;
-    margin-right: 0.875rem;
   }
 }

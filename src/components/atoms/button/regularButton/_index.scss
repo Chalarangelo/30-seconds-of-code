@@ -22,7 +22,7 @@
   border: none;
   border-radius: 1rem;
   font-size: 1.125rem;
-  line-height: 1.4;
+  line-height: 1.5rem;
   transition: 0.3s ease all;
   box-shadow:  0px 2px 4px var(--button-shadow-color);
 
@@ -34,11 +34,6 @@
 
   svg {
     vertical-align: sub;
-  }
-
-  @media screen and (min-width: $layout-large-breakpoint) {
-    font-size: 1.375rem;
-    line-height: 1.35;
   }
 
   &.active {

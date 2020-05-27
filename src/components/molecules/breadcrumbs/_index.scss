@@ -11,11 +11,8 @@ a.link-back-more {
   display: inline-block;
   margin: 0.875rem 1.25rem 0 0;
   position: relative;
+
   &, &:link, &:visited {
     color: var(--fore-color-dark);
-  }
-
-  @media screen and (max-width: calc(#{$layout-medium-breakpoint} - 1px)) {
-    margin-right: 0.875rem;
   }
 }

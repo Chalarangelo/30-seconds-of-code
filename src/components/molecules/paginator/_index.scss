@@ -15,14 +15,6 @@
   align-items: baseline;
   padding: 0.0625rem 0.25rem;
 
-  @media screen and (min-width: $layout-medium-breakpoint) {
-    padding: 0.0625rem 0.75rem;
-  }
-
-  @media screen and (min-width: $layout-medium-breakpoint) {
-    padding: 0.0625rem 1.5rem;
-  }
-
   .btn, a.btn {
     transition: 0.3s ease all;
     font-size: 1.125rem;
