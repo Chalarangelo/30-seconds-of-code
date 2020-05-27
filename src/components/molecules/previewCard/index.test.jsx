@@ -16,7 +16,7 @@ describe('<PreviewCard />', () => {
       <PreviewCard snippet={ previewSnippet } />
     );
     anchor = wrapper.find('Anchor');
-    card = wrapper.find('Card');
+    card = wrapper.find('.card');
     expertise = wrapper.find('Expertise');
     tags = wrapper.find('TagList');
   });
@@ -26,8 +26,8 @@ describe('<PreviewCard />', () => {
       expect(wrapper).toContainMatchingElement('Anchor');
     });
 
-    it('a Card component', () => {
-      expect(wrapper).toContainMatchingElement('Card');
+    it('a li element with the approprite classes', () => {
+      expect(wrapper).toContainMatchingElement('li.card.preview-card');
     });
 
     it('the card title', () => {

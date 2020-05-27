@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import Card from 'components/atoms/card';
 import Anchor from 'components/atoms/anchor';
 import Expertise from 'components/atoms/expertise';
 import TagList from 'components/atoms/tagList';
@@ -21,7 +20,7 @@ const PreviewCard = ({
   const tags = [snippet.primaryTag, snippet.expertise];
   if (snippet.language) tags.unshift(snippet.language);
   return(
-    <Card className='preview-card'>
+    <li className='card preview-card'>
       <div className={ `card-icon icon icon-${snippet.icon}` }>
         <Expertise level={ snippet.expertise } />
       </div>
@@ -43,7 +42,7 @@ const PreviewCard = ({
         className='card-description'
         dangerouslySetInnerHTML={ { __html: `${snippet.description}` } }
       />
-    </Card>
+    </li>
   );
 };
 
