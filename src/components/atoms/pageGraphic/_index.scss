@@ -23,3 +23,14 @@
     background-size: 45vmin, 44vmin;
   }
 }
+
+.page-container.dark {
+
+  .page-graphic {
+
+    &::before {
+      filter: brightness(0.7) invert(1) saturate(2) hue-rotate(180deg)
+    }
+  }
+}
+
