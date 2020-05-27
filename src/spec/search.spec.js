@@ -27,7 +27,7 @@ describe('Search', () => {
 
   describe('clicking a result', () => {
     before(() => {
-      cy.get('.preview-card-wrapper').first().click();
+      cy.get('.card-title a').first().click();
     });
 
     it('should display the correct breadcrumbs', () => {

@@ -57,7 +57,7 @@ describe('Listing', () => {
 
   describe('clicking a snippet', () => {
     before(() => {
-      cy.get('.preview-card-wrapper').first().click();
+      cy.get('.card-title a').first().click();
     });
 
     it('should display the correct breadcrumbs', () => {
@@ -89,7 +89,7 @@ describe('Listing', () => {
 
     describe('clicking a snippet', () => {
       before(() => {
-        cy.get('.preview-card-wrapper').first().click();
+        cy.get('.card-title a').first().click();
       });
 
       it('should display the correct breadcrumbs', () => {
@@ -121,7 +121,7 @@ describe('Listing', () => {
 
       describe('clicking a snippet', () => {
         before(() => {
-          cy.get('.preview-card-wrapper').first().click();
+          cy.get('.card-title a').first().click();
         });
 
         it('should display the correct breadcrumbs', () => {
