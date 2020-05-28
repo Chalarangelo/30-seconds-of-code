@@ -19,7 +19,7 @@ const parseConfigs = contentDirPath => {
     .map(cfg => cfg.theme)
     .filter(Boolean)
     .reduce((acc, cfg) => `${acc}
-    .card-icon.icon-${cfg.iconName} {
+    .card-icon.icon-${cfg.iconName}, .btn.icon-${cfg.iconName} {
       background: ${cfg.backColor};
       color: ${cfg.foreColor};
     }
