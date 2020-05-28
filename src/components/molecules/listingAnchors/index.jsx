@@ -54,7 +54,6 @@ const ListingAnchors = ({
         <li key={ item.link.url }>
           <AnchorButton
             className={ `listing-anchor icon ${`icon-${item.icon}`}` }
-            style={ item.style }
             link={ item.link }
             title={ item.name }
           />
