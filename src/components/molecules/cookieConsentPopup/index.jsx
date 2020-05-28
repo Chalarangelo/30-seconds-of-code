@@ -64,4 +64,3 @@ export default connect(
   () => ({}),
   null
 )(CookieConsentPopup);
-// export default CookieConsentPopup;

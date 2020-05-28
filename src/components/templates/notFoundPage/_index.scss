@@ -16,13 +16,4 @@
   background-position-x: 53.5%, center;
   background-position-y: 8.5%, top;
   background-size: 41vmin, 44vmin;
-
-  &::before {
-    background-size: 395px, 393px;
-    height: 400px;
-    width: 400px;
-    right: 1.125rem;
-    margin-top: -15vmin;
-    background-position-x: 95.5%, 93%;
-  }
 }
