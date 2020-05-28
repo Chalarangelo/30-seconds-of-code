@@ -41,20 +41,24 @@ const SnippetList = ({
           ? <ListingAnchors isCompact={ listingType !== 'main' } items={ listingSublinks } />
           : null
       }
-      <PageTitle isLight className='with-sorter'>
+      <PageTitle className='with-sorter'>
         { listingName }
       </PageTitle>
       <Sorter sorter={ sorter } />
-      { insertAt(
-        ctaIndex,
-        <CTA key='cta' />,
-        snippetList.map(snippet =>
-          <PreviewCard
-            key={ `snippet_${snippet.url}` }
-            snippet={ snippet }
-          />
-        )
-      ) }
+      <ul className='snippet-list'>
+        { insertAt(
+          ctaIndex,
+          <li key='cta' >
+            <CTA/>
+          </li>,
+          snippetList.map(snippet =>
+            <PreviewCard
+              key={ `snippet_${snippet.url}` }
+              snippet={ snippet }
+            />
+          )
+        ) }
+      </ul>
       <Paginator paginator={ paginator } />
     </>
   ) : null;

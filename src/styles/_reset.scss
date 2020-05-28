@@ -14,7 +14,7 @@ html, * {
   font-weight: 400;
 }
 // Apply fixes and defaults as necessary for modern browsers only
-a, b, del, em, i, ins, q, span, strong, u {
+a, b, em, i, q, span, strong, u {
   transition: 0.3s ease all;
   font-size: 1em; // Fix for elements inside headings not displaying properly.
 }
@@ -26,10 +26,6 @@ body {
 // Show overflow in Edge.
 input {
   overflow: visible;
-}
-// Correct the cursor style of increment and decrement buttons in Chrome.
-[type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button {
-  height: auto;
 }
 // Correct style in Chrome and Safari.
 [type="search"] {
@@ -78,16 +74,6 @@ ol, ul {
 }
 b, strong {
   font-weight: 600;
-}
-hr {
-  // Fixes and defaults for styling
-  box-sizing: content-box;
-  border: 0;
-  // Actual styling using variables
-  line-height: 1.25em;
-  margin: 0.5rem;
-  height: 1px;
-  background: linear-gradient(to right, transparent, var(--border-color) 20%, var(--border-color) 80%, transparent);
 }
 sup, sub, code, kbd {
   line-height: 0;

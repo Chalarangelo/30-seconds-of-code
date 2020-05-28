@@ -29,10 +29,6 @@ describe('parseListingMetas', () => {
     expect(resultMetas[0].name).toBe('JavaScript');
     expect(resultMetas[1].name).toBe('Blog');
   });
-  it('returns the correct style for each meta', () => {
-    expect(resultMetas[0].style.background).toBe(requirables[0].meta.theme.backColor);
-    expect(resultMetas[1].style.background).toBe(undefined);
-  });
   it('returns the correct icon for each meta', () => {
     expect(resultMetas[0].icon).toBe(requirables[0].meta.theme.iconName);
     expect(resultMetas[1].icon).toBe(undefined);

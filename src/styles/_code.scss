@@ -44,13 +44,7 @@ code[class*="language-"], pre[class*="language-"] {
   hyphens: none;
 }
 
-pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-  background: var(--pre-selected-color);
-}
-
-pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-code[class*="language-"]::selection, code[class*="language-"] ::selection {
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection {
   background: var(--pre-selected-color);
 }
 
@@ -61,12 +55,11 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 }
 
 p > code, a > code {
+
   &, &[class*="language-"] {
     color: var(--code-fore-color);
     background: var(--code-back-color);
-    &::-moz-selection, & ::-moz-selection {
-      background: var(--code-selected-color);
-    }
+
     &::selection, & ::selection {
       background: var(--code-selected-color);
     }

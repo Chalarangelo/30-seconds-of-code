@@ -22,7 +22,6 @@
 
   &::-webkit-scrollbar-thumb {
     background-color: var(--scrollbar-fore-color);
-    border: 1px solid var(--scrollbar-fore-color-lighter);
     border-radius: 0.125rem;
   }
 
@@ -44,7 +43,7 @@
     text-align: center;
 
     &:hover, &:focus {
-      box-shadow: 0px 4px 8px var(--button-shadow-color);
+      box-shadow: 0px 2px 8px var(--button-shadow-color);
     }
 
     @media screen and (min-width: $layout-medium-breakpoint) {
@@ -58,11 +57,10 @@
         content: attr(title);
         position: absolute;
         top: calc(100% + 1rem);
-        color: var(--fore-color-lighter);
+        color: var(--fore-color);
         width: calc(100% + 1.5rem);
         line-height: 1;
         left: -0.75rem;
-        text-transform: uppercase;
         text-align: center;
       }
 
@@ -107,7 +105,7 @@
   .btn {
     background: transparent;
     border-radius: 0;
-    color: var(--fore-color-lighter);
+    color: var(--fore-color-light);
     line-height: 24px;
     height: 48px;
     border-bottom: 2px solid transparent;

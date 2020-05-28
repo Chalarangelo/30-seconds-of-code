@@ -14,7 +14,7 @@ const propTypes = {
 /**
  * Renders the set of buttons that link to other listing pages.
  * Used in Listing pages and Home page.
- * Dependent on `Button` and `PageSubtitle` components.
+ * Dependent on the `Button` component.
  */
 const ListingAnchors = ({
   items,
@@ -54,7 +54,6 @@ const ListingAnchors = ({
         <li key={ item.link.url }>
           <AnchorButton
             className={ `listing-anchor icon ${`icon-${item.icon}`}` }
-            style={ item.style }
             link={ item.link }
             title={ item.name }
           />

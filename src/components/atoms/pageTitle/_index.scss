@@ -3,12 +3,8 @@
   font-size: 2rem;
   font-weight: 400;
   line-height: 3rem;
-  letter-spacing: 0.03em;
+  letter-spacing: -0.5px;
   color: var(--fore-color-darker);
   margin: 0 0.875rem;
   display: inline-block;
-
-  @media screen and (min-width: $layout-large-breakpoint) {
-    font-size: 2.25rem;
-  }
 }

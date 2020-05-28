@@ -26,15 +26,15 @@ const SearchResults = ({
   const hasResults = searchQuery.trim().length > 1 && searchResults.length !== 0;
   return hasResults ? (
     <>
-      <PageTitle isLight>
-        { literals.results }
-      </PageTitle>
-      { searchResults.map(snippet => (
-        <PreviewCard
-          key={ `snippet_${snippet.url}` }
-          snippet={ snippet }
-        />
-      )) }
+      <PageTitle>{ literals.results }</PageTitle>
+      <ul className='search-results'>
+        { searchResults.map(snippet => (
+          <PreviewCard
+            key={ `snippet_${snippet.url}` }
+            snippet={ snippet }
+          />
+        )) }
+      </ul>
     </>
   ) : (
     <>

@@ -60,9 +60,10 @@
   }
 
   &.open {
+
     .sorter-inner {
       background: var(--sorter-back-color);
-      box-shadow: 0px 4px 8px var(--sorter-shadow-color);
+      box-shadow: 0px 1px 5px var(--sorter-shadow-color);
     }
   }
 }

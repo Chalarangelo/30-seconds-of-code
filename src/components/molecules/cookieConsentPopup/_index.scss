@@ -17,14 +17,15 @@
   color: var(--consent-fore-color);
   max-height: 60vh;
   overflow-y: auto;
+  text-align: center;
+  font-size: 0.875rem;
 
   p {
-    text-align: justify;
     font-size: 0.875rem;
   }
 
   > p, .cookie-consent-buttons {
-    max-width: 768px;
+    max-width: 680px;
     margin: 0.375rem auto 0.5rem;
   }
 
