@@ -15,17 +15,17 @@ add_content_source() {
   \"repoUrl\": \"$1\",
   \"snippetPath\": \"snippets\",
   \"requirables\": [
-    \"snippet_data/snippets.json\",
+    \"snippet_data/snippets.json\"
   ],
   \"slug\": \"$4\",
   \"featured\": 500,
   \"theme\": {
     \"backColor\": \"#ffffff\",
     \"foreColor\": \"#000000\",
-    \"iconName\": \"$4\",
+    \"iconName\": \"$4\"
   },
   \"biasPenaltyMultiplier\": 1.00
-}" >> "./content/configs/$2.js"
+}" >> "./content/configs/$2.json"
 }
 
 add_content_source $1 $2 "$3" $4
