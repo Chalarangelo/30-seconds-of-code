@@ -1,0 +1,21 @@
+{
+  "name": "30 seconds of Go",
+  "dirName": "30golang",
+  "repoUrl": "https://github.com/30-seconds/30-seconds-of-golang",
+  "snippetPath": "snippets",
+  "requirables": [
+    "snippet_data/snippets.json"
+  ],
+  "language": {
+    "short": "go",
+    "long": "Go"
+  },
+  "slug": "go",
+  "featured": 9,
+  "theme": {
+    "backColor": "#5ac9e2",
+    "foreColor": "#000000",
+    "iconName": "golang"
+  },
+  "biasPenaltyMultiplier": 1.3
+}
