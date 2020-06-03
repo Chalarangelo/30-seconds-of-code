@@ -4,13 +4,14 @@ import {
   convertToSeoSlug,
   addTrailingSlashToSlug,
   stripMarkdownFormat,
-  combineClassNames,
   optimizeNodes,
   optimizeAllNodes,
   getURLParameters,
   getRootURL,
   getBaseURL
 } from './string';
+
+import combineClassNames from '@chalarangelo/combine-class-names';
 
 import {
   uniqueElements,
