@@ -42,11 +42,11 @@ const Shell = ({
   children,
 }) => (
   <div className={ combineClassNames`page-container ${isDarkMode ? 'dark' : ''}` }>
-    {
-      typeof acceptsCookies === 'undefined' && env === 'PRODUCTION' && !isBot ?
-        <CookieConsentPopup /> : null
-    }
-    <header className='nav-bar'>
+    <header
+      className='nav-bar'
+      role='navigation'
+      aria-label='Main'
+    >
       <Anchor className='nav-btn' link={ { internal: true, url: '/' } } >
         <img
           src={ logoSrc }
@@ -57,6 +57,7 @@ const Shell = ({
       <Search isMainSearch={ isSearch } />
       <Anchor
         className='nav-btn icon icon-settings'
+        title={ literals.settings }
         link={ {
           internal: true,
           url: isSettings ? lastPageUrl ? lastPageUrl : '/' : '/settings',
@@ -68,6 +69,10 @@ const Shell = ({
       { children }
       <Footer />
     </div>
+    {
+      typeof acceptsCookies === 'undefined' && env === 'PRODUCTION' && !isBot ?
+        <CookieConsentPopup /> : null
+    }
   </div>
 );
 

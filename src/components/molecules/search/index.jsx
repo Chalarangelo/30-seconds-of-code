@@ -114,6 +114,7 @@ const Search = ({
       />
       <AnchorButton
         className='icon icon-search search-btn'
+        title={ literals.search }
         link={ {
           url: `/search/${ value ? `?keyphrase=${encodeURIComponent(value)}` : '' }`,
           internal: true,

@@ -9,6 +9,7 @@ const literals = {
   home: 'Home',
   recommendedSnippets: 'Recommended snippets',
   blog: 'Blog',
+  settings: 'Settings',
   siteName: config.websiteName,
   siteAuthor: config.orgName,
   siteDescription: config.websiteDescription,
