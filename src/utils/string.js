@@ -1,22 +1,4 @@
 /**
- * Removes unnecessary whitespace from template literals parsed as classNames.
- * Use with a template literal only.
- */
-export const combineClassNames = (t, ...i) => {
-  const plainTexts = t
-    .join(' ')
-    .split(' ')
-    .map(v => v.trim());
-  const interpolations = i
-    .filter(Boolean)
-    .reduce((acc, v) => [...acc, ...v.split(' ')], [])
-    .map(v => v.trim());
-  return [...new Set([...plainTexts, ...interpolations])]
-    .filter(Boolean)
-    .join(' ') || undefined;
-};
-
-/**
  * Capitalizes the first letter of a string.
  * @param {string} str - The string to be capitalized.
  * @param {bool} lowerRest - Should the rest of the characters be lowercased?
