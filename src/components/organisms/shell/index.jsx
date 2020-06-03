@@ -42,10 +42,6 @@ const Shell = ({
   children,
 }) => (
   <div className={ combineClassNames`page-container ${isDarkMode ? 'dark' : ''}` }>
-    {
-      typeof acceptsCookies === 'undefined' && env === 'PRODUCTION' && !isBot ?
-        <CookieConsentPopup /> : null
-    }
     <header className='nav-bar'>
       <Anchor className='nav-btn' link={ { internal: true, url: '/' } } >
         <img
@@ -68,6 +64,10 @@ const Shell = ({
       { children }
       <Footer />
     </div>
+    {
+      typeof acceptsCookies === 'undefined' && env === 'PRODUCTION' && !isBot ?
+        <CookieConsentPopup /> : null
+    }
   </div>
 );
 
