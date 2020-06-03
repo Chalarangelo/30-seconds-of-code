@@ -37,7 +37,7 @@ describe('<Anchor />', () => {
     });
 
     it('should link the appropriate internal URL', () => {
-      expect(anchor.prop('href')).toBe(`/${internalLink.url}/`);
+      expect(anchor.prop('href').indexOf(`/${internalLink.url}`)).toBe(0);
     });
   });
 
