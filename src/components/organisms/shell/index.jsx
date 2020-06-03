@@ -42,7 +42,11 @@ const Shell = ({
   children,
 }) => (
   <div className={ combineClassNames`page-container ${isDarkMode ? 'dark' : ''}` }>
-    <header className='nav-bar'>
+    <header
+      className='nav-bar'
+      role='navigation'
+      aria-label='Main'
+    >
       <Anchor className='nav-btn' link={ { internal: true, url: '/' } } >
         <img
           src={ logoSrc }
@@ -53,6 +57,7 @@ const Shell = ({
       <Search isMainSearch={ isSearch } />
       <Anchor
         className='nav-btn icon icon-settings'
+        title={ literals.settings }
         link={ {
           internal: true,
           url: isSettings ? lastPageUrl ? lastPageUrl : '/' : '/settings',
