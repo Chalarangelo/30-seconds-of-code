@@ -1,18 +1,19 @@
 ---
 title: listenOnce
-tags: browser,event,intermediate
+tags: browser,event,closure,intermediate
 ---
 
 Adds an event listener to an element that will only run the callback the first time the event is triggered.
 
 Use `EventTarget.addEventListener()` to add an event listener to an element, storing the reference in a variable.
-Use `EventTarget.removeEventListenre()` to remove the listener after the first time the event is triggered.
+Use  a condition to call `fn` only the first time the listener is triggered. 
 
 ```js
 const listenOnce = (el, evt, fn) => {
-  const listener = el.addEventListener(evt, (e) => {
-    fn(e);
-    el.removeEventListener(evt, listener);
+  let fired = false;
+  el.addEventListener(evt, (e) => {
+    if (!fired) fn(e);
+    fired = true;
   });
 };
 ```
