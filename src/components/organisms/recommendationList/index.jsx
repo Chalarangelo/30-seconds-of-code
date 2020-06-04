@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import PreviewCard from 'components/molecules/previewCard';
+import PageTitle from 'components/atoms/pageTitle';
 import literals from 'lang/en/client/common';
 
 const propTypes = {
@@ -16,9 +17,9 @@ const RecommendationList = ({
 }) => {
   return snippetList.length ? (
     <>
-      <p className='recommendation-list-title'>
+      <PageTitle className='recommendation-list-title'>
         { literals.recommendedSnippets }
-      </p>
+      </PageTitle>
       <ul className='recommendation-list'>
         { snippetList.map(snippet => (
           <PreviewCard
