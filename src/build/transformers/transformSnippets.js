@@ -28,7 +28,7 @@ export const transformSnippetIndex = (edges, withSearchTokens = false) =>
  */
 export const transformSnippetDescription = (snippet, cardTemplate) => {
   const parsedDescription = stripMarkdownFormat(snippet.text.short);
-  return cardTemplate === 'blog' || parsedDescription.length <= 160
+  return cardTemplate === 'BlogSnippetCard' || parsedDescription.length <= 160
     ? parsedDescription
     : literals.pageDescription(snippet.title, snippet.language.long);
 };
@@ -50,7 +50,7 @@ export const transformSnippetContext = (snippet, cardTemplate, imageContext) => 
   let templateProps = {};
   let html = snippet.html;
   switch (cardTemplate) {
-  case 'blog':
+  case 'BlogSnippetCard':
     templateProps = {
       authors: snippet.authors,
       type: snippet.blogType,
