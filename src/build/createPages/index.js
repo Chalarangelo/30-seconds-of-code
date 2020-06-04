@@ -85,7 +85,7 @@ const createPages = (query, templates, requirables) => ({ graphql, actions }) =>
         createPage,
         {
           ...commonContext,
-          cardTemplate: 'standard',
+          cardTemplate: 'StandardSnippetCard',
         },
         allSnippets
       );
@@ -96,7 +96,7 @@ const createPages = (query, templates, requirables) => ({ graphql, actions }) =>
         createPage,
         {
           ...commonContext,
-          cardTemplate: 'css',
+          cardTemplate: 'CssSnippetCard',
         },
         allSnippets
       );
@@ -107,7 +107,7 @@ const createPages = (query, templates, requirables) => ({ graphql, actions }) =>
         createPage,
         {
           ...commonContext,
-          cardTemplate: 'blog',
+          cardTemplate: 'BlogSnippetCard',
         },
         allSnippets,
         result.data.images.edges
