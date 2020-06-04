@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import Anchor from 'components/atoms/anchor';
-import LinkBackAnchor from 'components/atoms/linkBackAnchor';
 
 const breadcrumbPropTypes = {
   breadcrumbs: PropTypes.arrayOf(
@@ -39,15 +38,15 @@ const Breadcrumbs = ({
       const firstPageName = lastPage.name.split(' ').slice(0, 1);
       return (
         <>
-          <LinkBackAnchor
-            className='has-more'
+          <Anchor
+            className='link-back icon icon-arrow-left has-more'
             link={ {
               ...lastPage.link,
               url: firstPageUrl.replace('/p/', orderingSegment),
             } }
           >
             { firstPageName }
-          </LinkBackAnchor>
+          </Anchor>
           { ' / ' }
           <Anchor
             className='link-back-more'
@@ -59,11 +58,12 @@ const Breadcrumbs = ({
       );
     } else {
       return (
-        <LinkBackAnchor
+        <Anchor
+          className='link-back icon icon-arrow-left'
           link={ lastPage.link }
         >
           { lastPage.name }
-        </LinkBackAnchor>
+        </Anchor>
       );
     }
   } else if(
@@ -72,11 +72,12 @@ const Breadcrumbs = ({
     lastPage.name.toLowerCase() === breadcrumbs[0].name.toLowerCase()
   ) {
     return (
-      <LinkBackAnchor
+      <Anchor
+        className='link-back icon icon-arrow-left'
         link={ lastPage.link }
       >
         { lastPage.name }
-      </LinkBackAnchor>
+      </Anchor>
     );
   } else if (breadcrumbs.length > 1 && lastPage.name.toLowerCase() === breadcrumbs[1].name.toLowerCase()) {
     const orderingSegment = lastPage.link.url.includes('/a/')
@@ -86,15 +87,15 @@ const Breadcrumbs = ({
       ? lastPage.name.slice(breadcrumbs[0].name.length + 1) : lastPage.name;
     return (
       <>
-        <LinkBackAnchor
-          className='has-more'
+        <Anchor
+          className='link-back icon icon-arrow-left has-more'
           link={ {
             ...breadcrumbs[0].link,
             url: breadcrumbs[0].link.url.replace('/p/', orderingSegment),
           } }
         >
           { breadcrumbs[0].name }
-        </LinkBackAnchor>
+        </Anchor>
         { ' / ' }
         <Anchor
           className='link-back-more'
@@ -107,12 +108,12 @@ const Breadcrumbs = ({
   } else {
     return (
       <>
-        <LinkBackAnchor
-          className={ breadcrumbs.length > 1 ? 'has-more' : '' }
+        <Anchor
+          className='link-back icon icon-arrow-left has-more'
           link={ breadcrumbs[0].link }
         >
           { breadcrumbs[0].name }
-        </LinkBackAnchor>
+        </Anchor>
         { breadcrumbs.length > 1 && ' / ' }
         { breadcrumbs.length > 1 &&
           <Anchor

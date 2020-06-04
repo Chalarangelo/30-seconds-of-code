@@ -15,15 +15,15 @@ describe('<Breadcrumbs />', () => {
   describe('from Search as last page', () => {
     beforeEach(() => {
       wrapper = mount(<Breadcrumbs breadcrumbs={ breadcrumbs } lastPage={ lastPages.search }/>);
-      linkBack = wrapper.find('LinkBackAnchor');
+      linkBack = wrapper.find('Anchor').first();
       anchor = wrapper.find('.link-back-more').first();
     });
 
-    it('renders a LinkBackAnchor with the correct link', () => {
+    it('renders a link-back anchor with the correct link', () => {
       expect(linkBack.prop('link')).toEqual(lastPages.search.link);
     });
 
-    it('renders a LinkBackAnchor with the correct text', () => {
+    it('renders a link-back anchor with the correct text', () => {
       expect(linkBack.text()).toBe(lastPages.search.name);
     });
 
@@ -35,15 +35,15 @@ describe('<Breadcrumbs />', () => {
   describe('from main listing as last page', () => {
     beforeEach(() => {
       wrapper = mount(<Breadcrumbs breadcrumbs={ breadcrumbs } lastPage={ lastPages.mainListing }/>);
-      linkBack = wrapper.find('LinkBackAnchor');
+      linkBack = wrapper.find('Anchor').first();
       anchor = wrapper.find('.link-back-more').first();
     });
 
-    it('renders a LinkBackAnchor with the correct link', () => {
+    it('renders a link-back anchor with the correct link', () => {
       expect(linkBack.prop('link')).toEqual(lastPages.mainListing.link);
     });
 
-    it('renders a LinkBackAnchor with the correct text', () => {
+    it('renders a link-back anchor with the correct text', () => {
       expect(linkBack.text()).toBe(lastPages.mainListing.name);
     });
 
@@ -55,15 +55,15 @@ describe('<Breadcrumbs />', () => {
   describe('from language listing as last page', () => {
     beforeEach(() => {
       wrapper = mount(<Breadcrumbs breadcrumbs={ breadcrumbs } lastPage={ lastPages.language }/>);
-      linkBack = wrapper.find('LinkBackAnchor');
+      linkBack = wrapper.find('Anchor').first();
       anchor = wrapper.find('.link-back-more').first();
     });
 
-    it('renders a LinkBackAnchor with the correct link', () => {
+    it('renders a link-back anchor with the correct link', () => {
       expect(linkBack.prop('link')).toEqual(lastPages.language.link);
     });
 
-    it('renders a LinkBackAnchor with the correct text', () => {
+    it('renders a link-back anchor with the correct text', () => {
       expect(linkBack.text()).toBe(lastPages.language.name);
     });
 
@@ -75,15 +75,15 @@ describe('<Breadcrumbs />', () => {
   describe('from tag listing as last page', () => {
     beforeEach(() => {
       wrapper = mount(<Breadcrumbs breadcrumbs={ breadcrumbs } lastPage={ lastPages.tag }/>);
-      linkBack = wrapper.find('LinkBackAnchor');
+      linkBack = wrapper.find('Anchor').first();
       anchor = wrapper.find('.link-back-more').first();
     });
 
-    it('renders a LinkBackAnchor with the correct link', () => {
+    it('renders a link-back anchor with the correct link', () => {
       expect(linkBack.prop('link')).toEqual({internal: true, url: '/javascript/a/1'});
     });
 
-    it('renders a LinkBackAnchor with the correct text', () => {
+    it('renders a link-back anchor with the correct text', () => {
       expect(linkBack.text()).toBe('JavaScript');
     });
 
@@ -99,15 +99,15 @@ describe('<Breadcrumbs />', () => {
   describe('blog from language listing', () => {
     beforeEach(() => {
       wrapper = mount(<Breadcrumbs breadcrumbs={ blogBreadcrumbs } lastPage={ lastPages.language } />);
-      linkBack = wrapper.find('LinkBackAnchor');
+      linkBack = wrapper.find('Anchor').first();
       anchor = wrapper.find('.link-back-more').first();
     });
 
-    it('renders a LinkBackAnchor with the correct link', () => {
+    it('renders a link-back anchor with the correct link', () => {
       expect(linkBack.prop('link')).toEqual({ internal: true, url: '/javascript/e/1' });
     });
 
-    it('renders a LinkBackAnchor with the correct text', () => {
+    it('renders a link-back anchor with the correct text', () => {
       expect(linkBack.text()).toBe('JavaScript');
     });
 
@@ -119,15 +119,15 @@ describe('<Breadcrumbs />', () => {
   describe('blog from tag listing', () => {
     beforeEach(() => {
       wrapper = mount(<Breadcrumbs breadcrumbs={ blogBreadcrumbs } lastPage={ lastPages.tag } />);
-      linkBack = wrapper.find('LinkBackAnchor');
+      linkBack = wrapper.find('Anchor').first();
       anchor = wrapper.find('.link-back-more').first();
     });
 
-    it('renders a LinkBackAnchor with the correct link', () => {
+    it('renders a link-back anchor with the correct link', () => {
       expect(linkBack.prop('link')).toEqual({ internal: true, url: '/javascript/a/1' });
     });
 
-    it('renders a LinkBackAnchor with the correct text', () => {
+    it('renders a link-back anchor with the correct text', () => {
       expect(linkBack.text()).toBe('JavaScript');
     });
 
