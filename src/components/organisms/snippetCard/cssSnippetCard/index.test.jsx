@@ -30,7 +30,7 @@ describe('<CssSnippetCard />', () => {
     });
 
     it('the card title', () => {
-      expect(card).toContainMatchingElement('h4.card-title');
+      expect(card).toContainMatchingElement('h1.card-title');
     });
 
     it('a TagList component', () => {
@@ -63,7 +63,7 @@ describe('<CssSnippetCard />', () => {
   });
 
   it('should have the correct card title', () => {
-    expect(card.find('h4.card-title').text()).toBe(fullCssSnippet.title);
+    expect(card.find('h1.card-title').text()).toBe(fullCssSnippet.title);
   });
 
   it('should pass the expertise data to the TagList component', () => {

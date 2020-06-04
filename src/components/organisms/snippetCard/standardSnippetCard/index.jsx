@@ -29,7 +29,7 @@ const SnippetCard = ({
         <Expertise level={ snippet.expertise } />
       </div>
       <div className='card-data'>
-        <h4 className='card-title'>{ snippet.title }</h4>
+        <h1 className='card-title'>{ snippet.title }</h1>
         <TagList tags={ [ snippet.language.long, ...snippet.tags.all] }/>
       </div>
     </div>
