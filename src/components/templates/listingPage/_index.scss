@@ -38,8 +38,3 @@
   color: var(--fore-color);
   text-align: center;
 }
-
-// Fix for static pages
-:not(.listing-anchors) + .page-title, .page-title:first-child {
-  margin-top: 1rem;
-}
