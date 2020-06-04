@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'typedefs/proptypes';
-import PageBackdrop from 'components/molecules/pageBackdrop';
+import PageBackdrop from 'components/atoms/pageBackdrop';
 import { AnchorButton } from 'components/atoms/button';
 import literals from 'lang/en/client/cta';
 import config from 'config/global';

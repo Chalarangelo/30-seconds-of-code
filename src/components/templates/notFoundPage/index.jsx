@@ -3,7 +3,7 @@ import PropTypes from 'typedefs/proptypes';
 import Meta from 'components/organisms/meta';
 import PageTitle from 'components/atoms/pageTitle';
 import { AnchorButton } from 'components/atoms/button';
-import PageBackdrop from 'components/molecules/pageBackdrop';
+import PageBackdrop from 'components/atoms/pageBackdrop';
 import Shell from 'components/organisms/shell';
 import literals from 'lang/en/client/notFound';
 
