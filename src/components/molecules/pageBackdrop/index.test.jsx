@@ -24,8 +24,8 @@ describe('<PageBackdrop />', () => {
     />);
   });
 
-  it('should render a PageGraphic component', () => {
-    expect(wrapper).toContainMatchingElement('PageGraphic');
+  it('should render a page graphic', () => {
+    expect(wrapper).toContainMatchingElement('.page-graphic');
   });
 
   it('should render page backdrop main text', () => {
@@ -37,7 +37,7 @@ describe('<PageBackdrop />', () => {
   });
 
   it('should pass graphic name to PageGraphic', () => {
-    expect(wrapper.find('PageGraphic').prop('className')).toBe(graphicName);
+    expect(wrapper).toContainMatchingElement(`.page-graphic.${graphicName}`);
   });
 
   it('should render mainText', () => {

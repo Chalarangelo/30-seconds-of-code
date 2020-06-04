@@ -1,3 +1,39 @@
+// Page background graphic
+.page-graphic {
+  position: relative;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  margin-top: 80px;
+  margin-bottom: 40vh;
+  width: 100%;
+  height: calc(50vmin);
+  padding-top: 46vmin;
+  text-align: center;
+
+  &::before {
+    top: 0;
+    left: calc(50% - 22.5vmin);
+    position: absolute;
+    content: '';
+    width: 45vmin;
+    height: 44vmin;
+    background-position-x: 52.5%, center;
+    background-position-y: 1%, top;
+    background-repeat: no-repeat;
+    background-size: 45vmin, 44vmin;
+  }
+}
+
+.page-container.dark {
+
+  .page-graphic {
+
+    &::before {
+      filter: brightness(0.7) invert(1) saturate(2) hue-rotate(180deg)
+    }
+  }
+}
+
 // Empty page text
 .page-backdrop-text {
   transition: color 0.3s ease, background 0.3s ease;
