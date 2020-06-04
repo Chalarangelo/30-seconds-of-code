@@ -16,7 +16,7 @@ const { store } = createStore();
 describe('<SnippetPage />', () => {
   const logoSrc = '/assets/logo.png';
   const splashLogoSrc = '/assets/splash.png';
-  const cardTemplate = 'standard';
+  const cardTemplate = 'StandardSnippetCard';
   let wrapper, shell, meta, crumbs, snippetCard;
 
   beforeEach(() => {
@@ -36,7 +36,7 @@ describe('<SnippetPage />', () => {
     shell = wrapper.find('Shell');
     meta = wrapper.find('Meta');
     crumbs = wrapper.find('Breadcrumbs');
-    snippetCard = wrapper.find('SnippetCardWrapper');
+    snippetCard = wrapper.find('SnippetCard');
   });
 
   describe('should render', () => {
@@ -70,10 +70,6 @@ describe('<SnippetPage />', () => {
     expect(crumbs.prop('breadcrumbs')).toBe(breadcrumbs);
   });
 
-  it('should pass the card template data to the SnippetCard component', () => {
-    expect(snippetCard.prop('cardTemplate')).toEqual(cardTemplate);
-  });
-
   it('should pass the snippet data to the SnippetCard component', () => {
     expect(snippetCard.prop('snippet')).toEqual(fullSnippet);
   });
@@ -86,7 +82,7 @@ describe('<SnippetPage />', () => {
             snippet: fullBlogSnippet,
             splashLogoSrc,
             logoSrc,
-            cardTemplate: 'blog',
+            cardTemplate: 'BlogSnippetCard',
             pageDescription: '',
             breadcrumbs,
           } }/>
