@@ -13,11 +13,11 @@ export const transformBreadcrumbs = (snippet, cardTemplate) => {
         internal: true,
         url: `/${slugParts[0]}/p/1`,
       },
-      name: cardTemplate === 'blog' ? transformTagName('blog') : snippet.language.long,
+      name: cardTemplate === 'BlogSnippetCard' ? transformTagName('blog') : snippet.language.long,
     },
   ];
 
-  if(cardTemplate !== 'blog') {
+  if(cardTemplate !== 'BlogSnippetCard') {
     breadcrumbs.push({
       link: {
         internal: true,
