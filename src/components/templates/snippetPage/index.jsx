@@ -6,7 +6,7 @@ import Breadcrumbs from 'components/molecules/breadcrumbs';
 import Shell from 'components/organisms/shell';
 import SnippetCard from 'components/organisms/snippetCard';
 import RecommendationList from 'components/organisms/recommendationList';
-import CTA from 'components/organisms/cta';
+import CTA from 'components/molecules/cta';
 
 const propTypes = {
   pageContext: PropTypes.shape({

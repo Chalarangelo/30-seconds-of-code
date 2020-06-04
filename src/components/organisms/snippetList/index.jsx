@@ -4,7 +4,7 @@ import Paginator from 'components/molecules/paginator';
 import Sorter from 'components/molecules/sorter';
 import PageTitle from 'components/atoms/pageTitle';
 import PreviewCard from 'components/molecules/previewCard';
-import CTA from 'components/organisms/cta';
+import CTA from 'components/molecules/cta';
 import ListingAnchors from 'components/molecules/listingAnchors';
 import { insertAt } from 'utils';
 
