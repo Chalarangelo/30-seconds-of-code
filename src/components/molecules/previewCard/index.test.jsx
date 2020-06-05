@@ -15,15 +15,15 @@ describe('<PreviewCard />', () => {
     wrapper = mount(
       <PreviewCard snippet={ previewSnippet } />
     );
-    anchor = wrapper.find('Anchor');
+    anchor = wrapper.find('a');
     card = wrapper.find('.card');
     expertise = wrapper.find('Expertise');
     tags = wrapper.find('TagList');
   });
 
   describe('should render', () => {
-    it('an Anchor component', () => {
-      expect(wrapper).toContainMatchingElement('Anchor');
+    it('an anchor element', () => {
+      expect(wrapper).toContainMatchingElement('a');
     });
 
     it('a li element with the approprite classes', () => {
@@ -60,7 +60,7 @@ describe('<PreviewCard />', () => {
   });
 
   it('should link to the correct url', () => {
-    expect(anchor.prop('link').url).toBe(previewSnippet.url);
+    expect(anchor.prop('href')).toBe(previewSnippet.url);
   });
 
   describe('with a blog snippet', () => {
@@ -69,8 +69,6 @@ describe('<PreviewCard />', () => {
       wrapper = mount(
         <PreviewCard snippet={ previewBlogSnippet } />
       );
-      anchor = wrapper.find('Anchor');
-      card = wrapper.find('Card');
       expertise = wrapper.find('Expertise');
       tags = wrapper.find('TagList');
     });
