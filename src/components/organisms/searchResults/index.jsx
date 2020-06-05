@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import { connect } from 'react-redux';
-import PageBackdrop from 'components/molecules/pageBackdrop';
+import PageBackdrop from 'components/atoms/pageBackdrop';
 import PageTitle from 'components/atoms/pageTitle';
 import PreviewCard from 'components/molecules/previewCard';
 import RecommendationList from 'components/organisms/recommendationList';

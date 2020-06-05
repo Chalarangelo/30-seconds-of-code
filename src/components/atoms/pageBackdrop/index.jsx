@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import PageGraphic from 'components/atoms/pageGraphic';
 import { combineClassNames } from 'utils';
 
 const propTypes = {
@@ -25,7 +24,6 @@ const propTypes = {
 /**
  * Renders the backdrop of a page.
  * Used in 404 and Search pages.
- * Dependent on `PageGraphic` component.
  * @param {*} graphicName - The name of the graphic for the backdrop
  * @param {*} mainText - Main text for the backdrop
  * @param {*} mainTextClassName - Additional classΝames to be passed to the main text
@@ -41,8 +39,8 @@ const PageBackdrop = ({
   children,
   ...rest
 }) => (
-  <PageGraphic
-    className={ graphicName }
+  <div
+    className={ combineClassNames`page-graphic ${graphicName}` }
     { ...rest }
   >
     <p className={ combineClassNames`page-backdrop-text ${mainTextClassName}` }>
@@ -55,7 +53,7 @@ const PageBackdrop = ({
       : null
     }
     { children }
-  </PageGraphic>
+  </div>
 );
 
 PageBackdrop.propTypes = propTypes;
