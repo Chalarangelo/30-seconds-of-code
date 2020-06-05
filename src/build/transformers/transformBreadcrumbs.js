@@ -9,20 +9,14 @@ export const transformBreadcrumbs = (snippet, cardTemplate) => {
   const slugParts = snippet.slug.split('/').filter(Boolean).slice(0, -2);
   let breadcrumbs = [
     {
-      link: {
-        internal: true,
-        url: `/${slugParts[0]}/p/1`,
-      },
+      url: `/${slugParts[0]}/p/1`,
       name: cardTemplate === 'BlogSnippetCard' ? transformTagName('blog') : snippet.language.long,
     },
   ];
 
   if(cardTemplate !== 'BlogSnippetCard') {
     breadcrumbs.push({
-      link: {
-        internal: true,
-        url: `/${slugParts[0]}/${snippet.tags.primary.toLowerCase()}/p/1`,
-      },
+      url: `/${slugParts[0]}/${snippet.tags.primary.toLowerCase()}/p/1`,
       name: `${snippet.language.long} ${transformTagName(snippet.tags.primary)}`,
     });
   }
