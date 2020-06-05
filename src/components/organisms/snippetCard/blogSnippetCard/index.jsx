@@ -25,7 +25,6 @@ const SnippetCard = ({
       { snippet.authors.map((a, i, arr) => (
         <Fragment key={ `author-fragment-${i}` } >
           <Anchor
-            key={ `author-anchor${i}` }
             link={ {
               internal: false,
               url: a.profile,
@@ -38,13 +37,11 @@ const SnippetCard = ({
         </Fragment>
       )) }
       { ' · ' }
-      {
-        new Date(snippet.firstSeen).toLocaleDateString('en-US', {
-          day: 'numeric', month: 'short', year: 'numeric',
-        })
-      }
+      { new Date(snippet.firstSeen).toLocaleDateString('en-US', {
+        day: 'numeric', month: 'short', year: 'numeric',
+      }) }
       { ' · ' }
-      <TagList tags={ [ ...snippet.tags.all ] } />
+      <TagList tags={ snippet.tags.all } />
       { hasGithubLinksEnabled && (
         <>
           { ' · ' }
@@ -62,9 +59,8 @@ const SnippetCard = ({
         </>
       ) }
     </div>
-    { snippet.cover && snippet.cover.src
-      ? <img className='card-cover-image' src={ snippet.cover.src } />
-      : null
+    { snippet.cover && snippet.cover.src &&
+      <img className='card-cover-image' src={ snippet.cover.src } />
     }
     <div
       className='card-description'
