@@ -64,14 +64,12 @@ const SnippetCard = ({
           )
           : ( <CopyButton text={ snippet.code.src } /> )
       }
-      {
-        snippet.code.style ? (
-          <CodeBlock
-            language={ snippet.language.otherLanguages[0] }
-            htmlContent={ snippet.html.style }
-            className='card-code'
-          />
-        ) : null
+      { snippet.code.style &&
+        <CodeBlock
+          language={ snippet.language.otherLanguages[0] }
+          htmlContent={ snippet.html.style }
+          className='card-code'
+        />
       }
       <CodeBlock
         language={ snippet.language }
