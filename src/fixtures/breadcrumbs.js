@@ -1,57 +1,36 @@
 export const breadcrumbs = [
   {
-    link: {
-      url: '/javascript/p/1',
-      internal: true,
-    },
+    url: '/javascript/p/1',
     name: 'JavaScript',
   },
   {
-    link: {
-      url: '/javascript/t/function/p/1',
-      internal: true,
-    },
+    url: '/javascript/t/function/p/1',
     name: 'JavaScript Function',
   },
 ];
 
 export const lastPages = {
   search: {
-    link: {
-      url: '/search',
-      internal: true,
-    },
+    url: '/search',
     name: 'Search',
   },
   mainListing: {
-    link: {
-      url: '/',
-      internal: true,
-    },
+    url: '/',
     name: 'Snippet List',
   },
   language: {
-    link: {
-      url: '/javascript/e/1',
-      internal: true,
-    },
+    url: '/javascript/e/1',
     name: 'JavaScript',
   },
   tag: {
-    link: {
-      url: '/javascript/t/function/a/1',
-      internal: true,
-    },
+    url: '/javascript/t/function/a/1',
     name: 'JavaScript Function',
   },
 };
 
 export const blogBreadcrumbs = [
   {
-    link: {
-      url: '/blog/p/1',
-      internal: true,
-    },
+    url: '/blog/p/1',
     name: 'Blog',
   },
 ];
