@@ -26,7 +26,7 @@ describe('<BlogSnippetCard />', () => {
     });
 
     it('the card title', () => {
-      expect(card).toContainMatchingElement('h4.card-title');
+      expect(card).toContainMatchingElement('h1.card-title');
     });
 
     it('a TagList component', () => {
@@ -43,7 +43,7 @@ describe('<BlogSnippetCard />', () => {
   });
 
   it('should have the correct card title', () => {
-    expect(card.find('h4.card-title').text()).toBe(fullBlogSnippet.title);
+    expect(card.find('h1.card-title').text()).toBe(fullBlogSnippet.title);
   });
 
   it('should pass the tags data to the TagList component', () => {

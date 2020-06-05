@@ -1,13 +1,12 @@
-.recommendation-list-title {
+.page-title.recommendation-list-title {
   font-size: 1.5rem;
   text-align: center;
-  line-height: 1.375;
-  font-weight: 400;
-  margin: 4rem 1.25rem .5rem;
+  margin: 3rem 1.25rem .5rem;
+  display: block;
+  color: var(--fore-color);
 }
 
 .recommendation-list {
-  color: var(--fore-color-light);
   margin: 0;
   padding: 0;
   list-style: none;

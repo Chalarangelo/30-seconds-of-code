@@ -48,7 +48,7 @@ const StaticPage = ({
       description={ pageDescription }
     />
     <Shell logoSrc={ logoSrc } >
-      <PageTitle>{ title }</PageTitle>
+      <PageTitle className='static-tite'>{ title }</PageTitle>
       <p className='page-sub-title'>{ subtitle }</p>
       {
         cards.map(({ title, html }, i) => (
