@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import { connect } from 'react-redux';
-import Anchor from 'components/atoms/anchor';
 import Search from 'components/molecules/search';
 import Footer from 'components/molecules/footer';
 import CookieConsentPopup from 'components/molecules/cookieConsentPopup';
@@ -47,22 +46,19 @@ const Shell = ({
       role='navigation'
       aria-label='Main'
     >
-      <Anchor className='nav-btn' link={ { internal: true, url: '/' } } >
+      <a className='nav-btn' href='/'>
         <img
           src={ logoSrc }
           alt={ literals.home }
           className='nav-website-logo'
         />
-      </Anchor>
+      </a>
       <Search isMainSearch={ isSearch } />
-      <Anchor
+      <a
         className='nav-btn icon icon-settings'
+        href={ isSettings ? lastPageUrl ? lastPageUrl : '/' : '/settings' }
+        rel='nofollow'
         title={ literals.settings }
-        link={ {
-          internal: true,
-          url: isSettings ? lastPageUrl ? lastPageUrl : '/' : '/settings',
-          rel: 'nofollow',
-        } }
       />
     </header>
     <div className='content'>
