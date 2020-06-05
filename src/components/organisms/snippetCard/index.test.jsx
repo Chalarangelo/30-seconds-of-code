@@ -4,7 +4,7 @@ import createStore from 'state';
 import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
-import SnippetCard from './index';
+import cards from './index';
 import { fullSnippet, fullCssSnippet, fullBlogSnippet } from 'fixtures/snippets';
 
 configure({ adapter: new Adapter() });
@@ -18,9 +18,10 @@ describe('<SnippetCardWrapper />', () => {
   describe('standard snippet card template', () => {
 
     beforeAll(() => {
+      const SnippetCard = cards['StandardSnippetCard'];
       wrapper = mount(
         <Provider store={ store }>
-          <SnippetCard cardTemplate='standard' snippet={ fullSnippet } />
+          <SnippetCard snippet={ fullSnippet } />
         </Provider>
       );
     });
@@ -33,9 +34,10 @@ describe('<SnippetCardWrapper />', () => {
   describe('css snippet card template', () => {
 
     beforeAll(() => {
+      const SnippetCard = cards['CssSnippetCard'];
       wrapper = mount(
         <Provider store={ store }>
-          <SnippetCard cardTemplate='css' snippet={ fullCssSnippet }/>
+          <SnippetCard snippet={ fullCssSnippet }/>
         </Provider>
       );
     });
@@ -48,9 +50,10 @@ describe('<SnippetCardWrapper />', () => {
   describe('blog snippet card template', () => {
 
     beforeAll(() => {
+      const SnippetCard = cards['BlogSnippetCard'];
       wrapper = mount(
         <Provider store={ store }>
-          <SnippetCard cardTemplate='blog' snippet={ fullBlogSnippet }/>
+          <SnippetCard snippet={ fullBlogSnippet }/>
         </Provider>
       );
     });
