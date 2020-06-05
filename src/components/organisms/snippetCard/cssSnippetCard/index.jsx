@@ -75,11 +75,13 @@ const SnippetCard = ({
           htmlContent={ snippet.html.cssCode }
           className='card-code'
         />
-        { snippet.html.jsCode ? <CodeBlock
-          language={ {short: 'js', long: 'JavaScript'} }
-          htmlContent={ snippet.html.jsCode }
-          className='card-code'
-        /> : null }
+        { snippet.html.jsCode &&
+          <CodeBlock
+            language={ {short: 'js', long: 'JavaScript'} }
+            htmlContent={ snippet.html.jsCode }
+            className='card-code'
+          />
+        }
       </div>
     </Card>
   );
