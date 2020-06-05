@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import { connect } from 'react-redux';
-import Anchor from 'components/atoms/anchor';
 import { Button } from 'components/atoms/button';
 import { decideCookies } from 'state/shell';
 import literals from 'lang/en/client/cookieConsent';
@@ -13,7 +12,7 @@ const propTypes = {
 
 /**
  * Renders the popup for cookie consent. (Redux-connected)
- * Dependent on the `Anchor` and `Button` components.
+ * Dependent on the `Button` component.
  */
 const CookieConsentPopup = ({
   dispatch,
@@ -23,15 +22,12 @@ const CookieConsentPopup = ({
     <p>
       { literals.cookieDisclaimer }
       { literals.learnMore }
-      <Anchor
-        link={ {
-          internal: true,
-          url: '/cookies',
-        } }
+      <a
         className='footer-link'
+        href='/cookies'
       >
         { literals.cookiePolicy }
-      </Anchor>
+      </a>
       { '.' }
       <br/>
       { literals.whatYouAccept }
