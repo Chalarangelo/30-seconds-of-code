@@ -64,7 +64,7 @@ const SnippetCard = ({
     }
     <div
       className='card-description'
-      dangerouslySetInnerHTML={ { __html: `${snippet.html.fullDescription}` } }
+      dangerouslySetInnerHTML={ { __html: snippet.html.fullDescription } }
     />
   </Card>
 );
