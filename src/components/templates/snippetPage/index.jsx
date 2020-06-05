@@ -18,7 +18,7 @@ const propTypes = {
     pageDescription: PropTypes.string.isRequired,
     breadcrumbs: PropTypes.arrayOf(
       PropTypes.shape({
-        link: PropTypes.link,
+        url: PropTypes.string,
         name: PropTypes.string,
       })
     ),
@@ -67,10 +67,7 @@ const SnippetPage = ({
       <Shell logoSrc={ logoSrc } >
         <Breadcrumbs
           lastPage={ {
-            link: {
-              url: lastPageUrl,
-              internal: true,
-            },
+            url: lastPageUrl,
             name: lastPageTitle,
           } }
           breadcrumbs={ breadcrumbs }

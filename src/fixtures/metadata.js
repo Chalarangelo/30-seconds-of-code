@@ -18,15 +18,11 @@ export default {
   },
   breadcrumbsData: [
     {
-      link: {
-        url: '/js/p/1',
-      },
+      url: '/js/p/1',
       name: 'JavaScript Snippets',
     },
     {
-      link: {
-        url: '/js/t/array/1',
-      },
+      url: '/js/t/array/1',
       name: 'JavaScript Array',
     },
   ],
