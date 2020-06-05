@@ -1,125 +1,93 @@
 import React from 'react';
-import Anchor from 'components/atoms/anchor';
 import literals from 'lang/en/client/footer';
 import config from 'config/global';
 
 /**
  * Static component that renders the page footer.
- * Dependent on the `Anchor` atom.
  */
 const Footer = () => (
   <footer>
     <p>
-      <Anchor
-        link={ {
-          internal: true,
-          url: '/about',
-        } }
+      <a
         className='footer-link'
+        href='/about'
       >
         { literals.about }
-      </Anchor>
-      <Anchor
-        link={ {
-          internal: true,
-          url: '/cookies',
-        } }
+      </a>
+      <a
         className='footer-link'
+        href='/cookies'
       >
         { literals.cookies }
-      </Anchor>
-      <Anchor
-        link={ {
-          internal: false,
-          url: config.githubOrgUrl,
-          rel: 'noopener nofollow',
-          target: '_blank',
-        } }
+      </a>
+      <a
         className='footer-link'
+        href={ config.githubOrgUrl }
+        rel='noopener noreferrer nofollow'
+        target='_blank'
       >
         { literals.github }
-      </Anchor>
-      <Anchor
-        link={ {
-          internal: false,
-          url: config.twitterUrl,
-          rel: 'noopener nofollow',
-          target: '_blank',
-        } }
+      </a>
+      <a
         className='footer-link'
+        href={ config.twitterUrl }
+        rel='noopener noreferrer nofollow'
+        target='_blank'
       >
         { literals.twitter }
-      </Anchor>
+      </a>
     </p>
     <p>
       { literals.copyright }
-      <Anchor
-        link={ {
-          internal: false,
-          url: config.githubOrgUrl,
-          rel: 'noopener',
-          target: '_blank',
-        } }
+      <a
+        url={ config.githubOrgUrl }
+        rel='noopener noreferrer nofollow'
+        target='_blank'
       >
         { config.orgName }
-      </Anchor>
+      </a>
       <br/>
       { literals.snippetLicense }
-      <Anchor
-        link={ {
-          internal: false,
-          url: config.licenseUrl,
-          rel: 'noopener nofollow',
-          target: '_blank',
-        } }
+      <a
+        url={ config.licenseUrl }
+        rel='noopener noreferrer nofollow'
+        target='_blank'
       >
         { literals.ccLicense }
-      </Anchor>
+      </a>
       <br/>
       { literals.poweredBy }
-      <Anchor
-        link={ {
-          internal: false,
-          url: 'https://www.netlify.com/',
-          rel: 'noopener nofollow',
-          target: '_blank',
-        } }
+      <a
+        url='https://www.netlify.com/'
+        rel='noopener noreferrer nofollow'
+        target='_blank'
       >
         { literals.netlify }
-      </Anchor>
+      </a>
       { ', ' }
-      <Anchor
-        link={ {
-          internal: false,
-          url: 'https://www.gatsbyjs.org/',
-          rel: 'noopener nofollow',
-          target: '_blank',
-        } }
+      <a
+        url='https://www.gatsbyjs.org/'
+        rel='noopener noreferrer nofollow'
+        target='_blank'
       >
         { literals.gatsby }
-      </Anchor>
+      </a>
       { ', ' }
-      <Anchor
-        link={ {
-          internal: false,
-          url: 'https://travis-ci.com/',
-          rel: 'noopener nofollow',
-          target: '_blank',
-        } }
+      <a
+        url='https://travis-ci.com/'
+        rel='noopener noreferrer nofollow'
+        target='_blank'
       >
         { literals.travis }
-      </Anchor>
+      </a>
       { ' & ' }
-      <Anchor
-        link={ {
-          internal: false,
-          url: 'https://github.com/',
-          rel: 'noopener nofollow',
-          target: '_blank',
-        } }
+      <a
+        url='https://github.com/'
+        rel='noopener noreferrer nofollow'
+        target='_blank'
       >
         { literals.github }
-      </Anchor>
+      </a>
     </p>
   </footer>
 );
