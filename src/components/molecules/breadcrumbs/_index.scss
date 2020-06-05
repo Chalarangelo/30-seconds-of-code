@@ -1,7 +1,28 @@
-a.link-back.has-more {
-  display: inline-block;
-  margin-right: 0;
-  margin-bottom: 0;
+// Return to previous page link
+a.link-back {
+  font-size: 1.125rem;
+  line-height: 1.35;
+  display: block;
+  margin: 0.875rem 0.875rem 1.5rem;
+  padding-left: 24px;
+  position: relative;
+
+  &, &:link, &:visited {
+    color: var(--fore-color-dark);
+  }
+
+  &:before {
+    position: absolute;
+    left: 0;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  &.has-more {
+    display: inline-block;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
 }
 
 // Second link in breadcrumbs
