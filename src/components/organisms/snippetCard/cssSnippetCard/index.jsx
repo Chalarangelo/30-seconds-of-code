@@ -49,7 +49,7 @@ const SnippetCard = ({
       ) }
       <div
         className='card-description'
-        dangerouslySetInnerHTML={ { __html: `${snippet.html.fullDescription}` } }
+        dangerouslySetInnerHTML={ { __html: snippet.html.fullDescription } }
       />
       <div className='card-preview-content'>
         <SnippetPreview
@@ -75,11 +75,13 @@ const SnippetCard = ({
           htmlContent={ snippet.html.cssCode }
           className='card-code'
         />
-        { snippet.html.jsCode ? <CodeBlock
-          language={ {short: 'js', long: 'JavaScript'} }
-          htmlContent={ snippet.html.jsCode }
-          className='card-code'
-        /> : null }
+        { snippet.html.jsCode &&
+          <CodeBlock
+            language={ {short: 'js', long: 'JavaScript'} }
+            htmlContent={ snippet.html.jsCode }
+            className='card-code'
+          />
+        }
       </div>
     </Card>
   );

@@ -48,7 +48,7 @@ const SnippetCard = ({
     ) }
     <div
       className='card-description'
-      dangerouslySetInnerHTML={ { __html: `${snippet.html.fullDescription}` } }
+      dangerouslySetInnerHTML={ { __html: snippet.html.fullDescription } }
     />
     <div className='card-source-content'>
       {
@@ -64,14 +64,12 @@ const SnippetCard = ({
           )
           : ( <CopyButton text={ snippet.code.src } /> )
       }
-      {
-        snippet.code.style ? (
-          <CodeBlock
-            language={ snippet.language.otherLanguages[0] }
-            htmlContent={ snippet.html.style }
-            className='card-code'
-          />
-        ) : null
+      { snippet.code.style &&
+        <CodeBlock
+          language={ snippet.language.otherLanguages[0] }
+          htmlContent={ snippet.html.style }
+          className='card-code'
+        />
       }
       <CodeBlock
         language={ snippet.language }
