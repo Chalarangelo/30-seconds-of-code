@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import Anchor from 'components/atoms/anchor';
 import Card from 'components/atoms/card';
 import TagList from 'components/atoms/tagList';
 import Expertise from 'components/atoms/expertise';
@@ -35,17 +34,14 @@ const SnippetCard = ({
         </div>
       </div>
       { hasGithubLinksEnabled && (
-        <Anchor
+        <a
           className='github-link'
-          link={ {
-            url: snippet.url,
-            internal: false,
-            target: '_blank',
-            rel: 'nofollow noopener noreferrer',
-          } }
+          href={ snippet.url }
+          rel='nofollow noopener noreferrer'
+          target='_blank'
         >
           { literals.viewOnGitHub }
-        </Anchor>
+        </a>
       ) }
       <div
         className='card-description'
