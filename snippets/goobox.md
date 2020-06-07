@@ -22,9 +22,7 @@ cconst goobox = (url)=>{
     if(url.match(drive_regex)){
         return `https://drive.google.com/uc?id=${url.replace(drive_regex, "").match(/[\w]*\//)[0].replace(/\//,"")}`;
     }
-    else {
-       return console.error('Wrong URL, not a vlid drobox or google drive url');
-    }
+    return console.error('Wrong URL, not a vlid drobox or google drive url');
 }
 ```
 
