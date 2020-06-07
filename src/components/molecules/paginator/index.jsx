@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import { combineClassNames } from 'utils';
-import { AnchorButton, Button } from 'components/atoms/button';
+import { Button } from 'components/atoms/button';
 
 const propTypes = {
   className: PropTypes.string,
@@ -10,7 +10,7 @@ const propTypes = {
 
 /**
  * Renders a pagination component.
- * Dependent on the `Button` and `AnchorButton` components.
+ * Dependent on the `Button` component.
  * @param {object} paginator - Pagination data fo the component.
  */
 const Paginator = ({
@@ -48,14 +48,12 @@ const Paginator = ({
   return (
     <div className={ combineClassNames`paginator ${className}` } >
       { pageNumber > 1 &&
-      <AnchorButton
-        className='previous-page icon icon-chevron-left'
-        link={ {
-          internal: true,
-          url: `${baseUrl}/${slugOrderingSegment}/${pageNumber - 1}`,
-        } }>
+      <a
+        className='btn previous-page icon icon-chevron-left'
+        href={ `${baseUrl}/${slugOrderingSegment}/${pageNumber - 1}` }
+      >
         { '\u200b' }
-      </AnchorButton> }
+      </a> }
       {
         buttons.map((buttonNumber, i) => (
           buttonNumber === '...' ?
@@ -72,26 +70,22 @@ const Paginator = ({
               >
                 { buttonNumber }
               </Button> :
-              <AnchorButton
+              <a
                 key={ buttonNumber }
-                link={ {
-                  internal: true,
-                  url: `${baseUrl}/${slugOrderingSegment}/${buttonNumber}`,
-                } }
+                className='btn'
+                href={ `${baseUrl}/${slugOrderingSegment}/${buttonNumber}` }
               >
                 { buttonNumber }
-              </AnchorButton>
+              </a>
         ))
       }
       { pageNumber < totalPages &&
-      <AnchorButton
-        className='next-page icon icon-chevron-right'
-        link={ {
-          internal: true,
-          url: `${baseUrl}/${slugOrderingSegment}/${pageNumber + 1}`,
-        } }>
+      <a
+        className='btn next-page icon icon-chevron-right'
+        href={ `${baseUrl}/${slugOrderingSegment}/${pageNumber + 1}` }
+      >
         { '\u200b' }
-      </AnchorButton> }
+      </a> }
     </div>
   );
 };
