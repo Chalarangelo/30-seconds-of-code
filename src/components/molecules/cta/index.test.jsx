@@ -36,8 +36,8 @@ describe('<CTA />', () => {
     expect(wrapper).toContainMatchingElement('PageBackdrop');
   });
 
-  it('should render an AnchorButton component', () => {
-    expect(wrapper).toContainMatchingElement('AnchorButton');
+  it('should render an anchor element component with the appropriate class', () => {
+    expect(wrapper).toContainMatchingElement('a.btn');
   });
 
   describe('with cookies enabled', () => {
@@ -53,7 +53,7 @@ describe('<CTA />', () => {
 
     it('should call the appropriate functions when the link is clicked', () => {
       act(() => {
-        wrapper.find('Anchor').prop('onClick')({ target: { href: 'test'}, preventDefault: () => null });
+        wrapper.find('a').prop('onClick')({ target: { href: 'test'}, preventDefault: () => null });
       });
       expect(window.gtag.mock.calls.length).toBeGreaterThan(0);
       expect(window.open.mock.calls.length).toBeGreaterThan(0);
