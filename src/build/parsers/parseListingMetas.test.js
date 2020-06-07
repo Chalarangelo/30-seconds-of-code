@@ -22,8 +22,8 @@ describe('parseListingMetas', () => {
     expect(resultMetas[1].blog).toBe(requirables[1].meta.blog);
   });
   it('returns the correct link for each meta', () => {
-    expect(resultMetas[0].link.url).toBe('/js/p/1');
-    expect(resultMetas[1].link.url).toBe('/c-sharp/p/1');
+    expect(resultMetas[0].url).toBe('/js/p/1');
+    expect(resultMetas[1].url).toBe('/c-sharp/p/1');
   });
   it('returns the correct name for each meta', () => {
     expect(resultMetas[0].name).toBe('JavaScript');

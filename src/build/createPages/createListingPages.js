@@ -152,10 +152,7 @@ const createAllListingPages = (
       listingSublinks: mainListingSublinks
         .map(l => ({
           ...l,
-          link: {
-            ...l.link,
-            url: l.link.url.replace('/p/1', `/${order}/1`),
-          },
+          url: l.url.replace('/p/1', `/${order}/1`),
         })),
     };
   };
@@ -206,19 +203,13 @@ const createAllListingPages = (
       return {
         listingSublinks: listingMeta.blog ? [] : [
           {
-            link: {
-              internal: true,
-              url: `${slugPrefix}/${order}/1`,
-            },
+            url: `${slugPrefix}/${order}/1`,
             name: literals.tag('all'),
             selected: true,
           },
           ...listingMeta.tags
             .map(tag => ({
-              link: {
-                internal: true,
-                url: `${slugPrefix}/t/${tag}/${order}/1`,
-              },
+              url: `${slugPrefix}/t/${tag}/${order}/1`,
               name: literals.tag(tag),
             })),
         ],
@@ -270,22 +261,16 @@ const createAllListingPages = (
         return {
           listingSublinks: listingMeta.blog ? [] : [
             {
-              link: {
-                internal: true,
-                url: `${slugPrefix}/${order}/1`,
-              },
+              url: `${slugPrefix}/${order}/1`,
               name: literals.tag('all'),
               selected: true,
             },
             ...listingMeta.tags
               .map(tag => ({
-                link: {
-                  internal: true,
-                  url: `${slugPrefix}/t/${tag}/${order}/1`,
-                },
+                url: `${slugPrefix}/t/${tag}/${order}/1`,
                 name: literals.tag(tag),
               })),
-          ].map(tag => ({ ...tag, selected: tag.link.url.indexOf(`/t/${tagPrefix}/`) !== -1 })),
+          ].map(tag => ({ ...tag, selected: tag.url.indexOf(`/t/${tagPrefix}/`) !== -1 })),
         };
       };
       // Create the listing pages with the order options provided
