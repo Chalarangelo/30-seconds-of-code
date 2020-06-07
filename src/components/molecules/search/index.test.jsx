@@ -42,7 +42,7 @@ describe('<Search />', () => {
 
   it('should render correctly', () => {
     expect(wrapper).toContainMatchingElement('input[type="search"]');
-    expect(wrapper).toContainMatchingElement('a.icon.icon-search.search-btn');
+    expect(wrapper).toContainMatchingElement('a.btn.icon.icon-search.search-btn');
   });
 
   describe('on keyUp event', () => {
