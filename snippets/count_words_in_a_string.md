@@ -11,7 +11,7 @@ Note: The Input Of Function Should be a String,You can use string formatting too
 
 ```js
 const CountWordsInAString = (str) =>
-  return 'The Sentence You Entered Has ' + ${str.split(" ")length} + ' Words';
+  return 'The Sentence You Entered Has ' + ${str.split(" ").length} + ' Words';
 ```
 
 ```js
