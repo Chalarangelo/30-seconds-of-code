@@ -17,8 +17,7 @@ cconst goobox = (url)=>{
     let drive_regex =/(http(s)*:\/\/)*(www\.)*(drive.google.com\/file\/d\/)/;
 
     if(url.match(dropbox_regex)){
-        let url2 = url.replace(/(http(s)*:\/\/)*(www\.)*/, "https://dl.");
-       return url2;
+       return url.replace(/(http(s)*:\/\/)*(www\.)*/, "https://dl.");
     }
     else if(url.match(drive_regex)){
         let url2 = url.replace(drive_regex, "");
