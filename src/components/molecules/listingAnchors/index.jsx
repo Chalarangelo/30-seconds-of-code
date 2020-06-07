@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import { AnchorButton } from 'components/atoms/button';
+import { combineClassNames } from 'utils/index';
 
 const propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({
-    link: PropTypes.link.isRequired,
-    name: PropTypes.string,
+    url: PropTypes.string,
+    name: PropTypes.string.isRequired,
   })).isRequired,
   isCompact: PropTypes.bool,
   rest: PropTypes.any,
@@ -14,7 +14,6 @@ const propTypes = {
 /**
  * Renders the set of buttons that link to other listing pages.
  * Used in Listing pages and Home page.
- * Dependent on the `Button` component.
  */
 const ListingAnchors = ({
   items,
@@ -38,23 +37,23 @@ const ListingAnchors = ({
   return isCompact ?
     <ul className='listing-anchors compact' { ...rest } >
       { items.map(item =>
-        <li key={ item.link.url }>
-          <AnchorButton
-            link={ item.link }
-            className={ item.selected ? 'selected' : undefined }
+        <li key={ item.url }>
+          <a
+            className={ combineClassNames`btn ${item.selected ? 'selected' : undefined}` }
+            href={ item.url }
           >
             { item.name }
-          </AnchorButton>
+          </a>
         </li>
       ) }
     </ul>
     :
     <ul className='listing-anchors' { ...rest } >
       { items.map(item =>
-        <li key={ item.link.url }>
-          <AnchorButton
-            className={ `listing-anchor icon ${`icon-${item.icon}`}` }
-            link={ item.link }
+        <li key={ item.url }>
+          <a
+            className={ combineClassNames`btn listing-anchor icon ${`icon-${item.icon}`}` }
+            href={ item.url }
             title={ item.name }
           />
         </li>

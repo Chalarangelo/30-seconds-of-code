@@ -22,8 +22,8 @@ describe('<ListingAnchors />', () => {
       expect(wrapper).toContainMatchingElement('.listing-anchors');
     });
 
-    it('two AnchorButton components', () => {
-      expect(wrapper).toContainMatchingElements(anchorItems.length, 'AnchorButton');
+    it('two anchor buttons', () => {
+      expect(wrapper).toContainMatchingElements(anchorItems.length, 'a');
     });
   });
 
@@ -38,8 +38,8 @@ describe('<ListingAnchors />', () => {
         expect(wrapper).toContainMatchingElement('.listing-anchors.compact');
       });
 
-      it('two AnchorButton components', () => {
-        expect(wrapper).toContainMatchingElements(anchorItems.length, 'AnchorButton');
+      it('two anchor buttons', () => {
+        expect(wrapper).toContainMatchingElements(anchorItems.length, 'a');
       });
 
       it('a selected anchor', () => {
