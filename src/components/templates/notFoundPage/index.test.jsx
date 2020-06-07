@@ -26,7 +26,7 @@ describe('<NotFoundPage />', () => {
     shell = wrapper.find('Shell');
     meta = wrapper.find('Meta');
     pageBackdrop = wrapper.find('PageBackdrop');
-    anchorButton = wrapper.find('AnchorButton').find({ className: 'btn-home icon icon-home'});
+    anchorButton = wrapper.find('a.btn.btn-home');
   });
 
   describe('should render', () => {
@@ -42,8 +42,8 @@ describe('<NotFoundPage />', () => {
       expect(wrapper).toContainMatchingElement('PageBackdrop');
     });
 
-    it('an AnchorButton component', () => {
-      expect(wrapper).toContainMatchingElement('AnchorButton');
+    it('an anchor element', () => {
+      expect(wrapper).toContainMatchingElement('a.btn.btn-home');
     });
   });
 
@@ -60,11 +60,11 @@ describe('<NotFoundPage />', () => {
     expect(pageBackdrop.prop('graphicName')).toBe('page-not-found');
   });
 
-  it('should pass a link to the AnchorButton component', () => {
-    expect(anchorButton.prop('link')).not.toBe(undefined);
+  it('should pass a link to the anchor button', () => {
+    expect(anchorButton.prop('href')).not.toBe(undefined);
   });
 
-  it('should pass the correct class to the AnchorButton component', () => {
+  it('should pass the correct class to the anchor button', () => {
     expect(anchorButton.prop('className').indexOf('btn-home')).not.toBe(-1);
   });
 });

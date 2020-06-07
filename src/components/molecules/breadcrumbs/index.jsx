@@ -1,24 +1,21 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import Anchor from 'components/atoms/anchor';
 
 const breadcrumbPropTypes = {
   breadcrumbs: PropTypes.arrayOf(
     PropTypes.shape({
-      link: PropTypes.link,
+      url: PropTypes.string,
       name: PropTypes.string,
     })
   ),
   lastPage: PropTypes.shape({
-    link: PropTypes.link,
+    url: PropTypes.string,
     name: PropTypes.string,
   }),
 };
 
 /**
  * Breadcrumbs component for linking back to the previous page.
- * Uses own `LinkBackAnchor` component to abstract some of its functionality.
- * Dependent on the `Anchor` component for implementing actual links to pages.
  */
 const Breadcrumbs = ({
   breadcrumbs,
@@ -29,102 +26,96 @@ const Breadcrumbs = ({
     breadcrumbs[0].name.toLowerCase() !== lastPage.name.toLowerCase() &&
     breadcrumbs[0].name.toLowerCase() === 'blog'
   ) {
-    if (lastPage.link.url.includes('/t/')) {
-      const orderingSegment = lastPage.link.url.includes('/a/')
-        ? '/a/' : lastPage.link.url.includes('/e/')
+    if (lastPage.url.includes('/t/')) {
+      const orderingSegment = lastPage.url.includes('/a/')
+        ? '/a/' : lastPage.url.includes('/e/')
           ? '/e/' : '/p/';
       const lastPageName = lastPage.name.split(' ').slice(1);
-      const firstPageUrl = `${lastPage.link.url.slice(0, lastPage.link.url.indexOf('/t/'))}/p/1`;
+      const firstPageUrl = `${lastPage.url.slice(0, lastPage.url.indexOf('/t/'))}/p/1`;
       const firstPageName = lastPage.name.split(' ').slice(0, 1);
       return (
         <>
-          <Anchor
+          <a
             className='link-back icon icon-arrow-left has-more'
-            link={ {
-              ...lastPage.link,
-              url: firstPageUrl.replace('/p/', orderingSegment),
-            } }
+            href={ firstPageUrl.replace('/p/', orderingSegment) }
           >
             { firstPageName }
-          </Anchor>
+          </a>
           { ' / ' }
-          <Anchor
+          <a
             className='link-back-more'
-            link={ lastPage.link }
+            href={ lastPage.url }
           >
             { lastPageName }
-          </Anchor>
+          </a>
         </>
       );
     } else {
       return (
-        <Anchor
+        <a
           className='link-back icon icon-arrow-left'
-          link={ lastPage.link }
+          href={ lastPage.url }
         >
           { lastPage.name }
-        </Anchor>
+        </a>
       );
     }
   } else if(
-    lastPage.link.url.includes('search') ||
+    lastPage.url.includes('search') ||
     lastPage.name.toLowerCase() === 'snippet list' ||
     lastPage.name.toLowerCase() === breadcrumbs[0].name.toLowerCase()
   ) {
     return (
-      <Anchor
+      <a
         className='link-back icon icon-arrow-left'
-        link={ lastPage.link }
+        href={ lastPage.url }
       >
         { lastPage.name }
-      </Anchor>
+      </a>
     );
   } else if (breadcrumbs.length > 1 && lastPage.name.toLowerCase() === breadcrumbs[1].name.toLowerCase()) {
-    const orderingSegment = lastPage.link.url.includes('/a/')
-      ? '/a/' : lastPage.link.url.includes('/e/')
+    const orderingSegment = lastPage.url.includes('/a/')
+      ? '/a/' : lastPage.url.includes('/e/')
         ? '/e/' : '/p/';
     const lastPageName = lastPage.name.includes(breadcrumbs[0].name)
       ? lastPage.name.slice(breadcrumbs[0].name.length + 1) : lastPage.name;
     return (
       <>
-        <Anchor
+        <a
           className='link-back icon icon-arrow-left has-more'
-          link={ {
-            ...breadcrumbs[0].link,
-            url: breadcrumbs[0].link.url.replace('/p/', orderingSegment),
-          } }
+          href={ breadcrumbs[0].url.replace('/p/', orderingSegment) }
         >
           { breadcrumbs[0].name }
-        </Anchor>
+        </a>
         { ' / ' }
-        <Anchor
+        <a
           className='link-back-more'
-          link={ lastPage.link }
+          href={ lastPage.url }
         >
           { lastPageName }
-        </Anchor>
+        </a>
       </>
     );
   } else {
     return (
       <>
-        <Anchor
+        <a
           className='link-back icon icon-arrow-left has-more'
-          link={ breadcrumbs[0].link }
+          href={ breadcrumbs[0].url }
         >
           { breadcrumbs[0].name }
-        </Anchor>
+        </a>
         { breadcrumbs.length > 1 && ' / ' }
         { breadcrumbs.length > 1 &&
-          <Anchor
+          <a
             className='link-back-more'
-            link={ breadcrumbs[1].link }
+            href={ breadcrumbs[1].url }
           >
             { breadcrumbs[1].name.includes(breadcrumbs[0].name)
               ? breadcrumbs[1].name.slice(breadcrumbs[0].name.length + 1)
               : breadcrumbs[1].name
             }
-          </Anchor>
+          </a>
         }
       </>
     );

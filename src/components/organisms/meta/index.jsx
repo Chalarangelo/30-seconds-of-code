@@ -23,9 +23,7 @@ const propTypes = {
   }),
   breadcrumbsData: PropTypes.arrayOf(
     PropTypes.shape({
-      link: PropTypes.shape({
-        url: PropTypes.string,
-      }),
+      url: PropTypes.string,
       name: PropTypes.string,
     })
   ),
@@ -105,7 +103,7 @@ const Meta = ({
           '@type': 'ListItem',
           'position': i + 1,
           'item': {
-            '@id': `${config.websiteUrl}${breadcrumb.link.url}`,
+            '@id': `${config.websiteUrl}${breadcrumb.url}`,
             'name': `${breadcrumb.name}`,
           },
         })),

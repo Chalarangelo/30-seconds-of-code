@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import Anchor from 'components/atoms/anchor';
 import Expertise from 'components/atoms/expertise';
 import TagList from 'components/atoms/tagList';
 
@@ -11,7 +10,7 @@ const propTypes = {
 /**
  * General-purpose snippet preview card.
  * Used in listing pages and search results.
- * Dependent on the `Anchor`, `Card` and `TagList` components.
+ * Dependent on the `Card` and `TagList` components.
  * @param {object} snippet - Snippet object for the card.
  */
 const PreviewCard = ({
@@ -26,14 +25,7 @@ const PreviewCard = ({
       </div>
       <div className='card-data'>
         <h4 className='card-title'>
-          <Anchor
-            link={ {
-              internal: true,
-              url: snippet.url,
-            } }
-          >
-            { snippet.title }
-          </Anchor>
+          <a href={ snippet.url }>{ snippet.title }</a>
         </h4>
         <TagList tags={ tags } />
       </div>

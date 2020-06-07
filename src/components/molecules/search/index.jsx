@@ -3,7 +3,6 @@ import PropTypes from 'typedefs/proptypes';
 import { connect } from 'react-redux';
 import { getURLParameters, throttle, getBaseURL, getRootURL } from 'utils';
 import { pushNewQuery, searchByKeyphrase } from 'state/search';
-import { AnchorButton } from 'components/atoms/button';
 import literals from 'lang/en/client/search';
 
 /**
@@ -47,7 +46,6 @@ const propTypes = {
 
 /**
  * Search bar component. (Redux-connected)
- * Dependent on the `Anchor` component.
  * @param {bool} isMainSearch - Is this the main search? Determines the input's
  *   behavior, as it will update history and handle searching if `true`, otherwise
  *   it will act as an idle input that expects interaction to provide an entry
@@ -112,14 +110,11 @@ const Search = ({
           }
         } }
       />
-      <AnchorButton
-        className='icon icon-search search-btn'
+      <a
+        className='btn icon icon-search search-btn'
         title={ literals.search }
-        link={ {
-          url: `/search/${ value ? `?keyphrase=${encodeURIComponent(value)}` : '' }`,
-          internal: true,
-          rel: 'nofollow',
-        } }
+        href={ `/search/${ value ? `?keyphrase=${encodeURIComponent(value)}` : '' }` }
+        rel='nofollow'
       />
     </>
   );

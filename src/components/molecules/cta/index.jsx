@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'typedefs/proptypes';
 import PageBackdrop from 'components/atoms/pageBackdrop';
-import { AnchorButton } from 'components/atoms/button';
 import literals from 'lang/en/client/cta';
 import config from 'config/global';
 
@@ -27,14 +26,11 @@ const CTA = ({
       </>
     ) }
   >
-    <AnchorButton
-      link={ {
-        url: config.twitterUrl,
-        internal: false,
-        rel: 'noopener',
-        target: '_blank',
-      } }
-      className='btn-cta btn-twitter icon icon-twitter'
+    <a
+      className='btn btn-cta btn-twitter icon icon-twitter'
+      href={ config.twitterUrl }
+      rel='nofollow noopener noreferrer'
+      target='_blank'
       onClick={ e => {
         /* istanbul ignore else */
         if (acceptsCookies && typeof window !== 'undefined' && typeof gtag === `function`) {
@@ -46,7 +42,7 @@ const CTA = ({
       } }
     >
       { literals.twitter }
-    </AnchorButton>
+    </a>
   </PageBackdrop>
 );
 

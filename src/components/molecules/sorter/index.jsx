@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import { combineClassNames } from 'utils';
-import { AnchorButton } from 'components/atoms/button';
 import { useClickOutside } from 'components/hooks';
 
 const propTypes = {
@@ -10,7 +9,6 @@ const propTypes = {
 
 /**
  * Renders a sorter component.
- * Dependent on the `Button` component.
  */
 const Sorter = ({
   sorter: {
@@ -41,18 +39,16 @@ const Sorter = ({
           orders
             .sort((a, b) => a.title === selectedOrder ? -1 : b.title === selectedOrder ? 1 : 0)
             .map(order => (
-              <AnchorButton
+              <a
                 key={ `${order.url}` }
-                className={ combineClassNames`order-btn
+                className={ combineClassNames`btn order-btn
                 ${order.title === selectedOrder ? `selected icon ${toggled ? 'icon-chevron-up' : 'icon-chevron-down'}` : ''}
               ` }
+                href={ order.url }
                 onClick={ e => handleSorterClick(e) }
-                link={ {
-                  internal: true,
-                  url: order.url,
-                } }>
+              >
                 { order.title }
-              </AnchorButton>
+              </a>
             ))
         }
       </div>
