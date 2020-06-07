@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import Meta from 'components/organisms/meta';
 import PageTitle from 'components/atoms/pageTitle';
-import { AnchorButton } from 'components/atoms/button';
 import PageBackdrop from 'components/atoms/pageBackdrop';
 import Shell from 'components/organisms/shell';
 import literals from 'lang/en/client/notFound';
@@ -41,15 +40,12 @@ const NotFoundPage = ({
         ) }
         subText={ literals.notFoundDescription }
       >
-        <AnchorButton
-          link={ {
-            url: '/',
-            internal: true,
-          } }
-          className='btn-home icon icon-home'
+        <a
+          className='btn btn-home icon icon-home'
+          href='/'
         >
           { literals.goHome }
-        </AnchorButton>
+        </a>
       </PageBackdrop>
     </Shell>
   </>
