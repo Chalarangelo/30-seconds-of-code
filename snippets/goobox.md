@@ -19,12 +19,8 @@ cconst goobox = (url)=>{
     if(url.match(dropbox_regex)){
        return url.replace(/(http(s)*:\/\/)*(www\.)*/, "https://dl.");
     }
-    else if(url.match(drive_regex)){
-        let url2 = url.replace(drive_regex, "");
-        let url3 = url2.match(/[\w]*\//);
-        let file_id = url3[0].replace(/\//,"")
-        let url4 = " https://drive.google.com/uc?id="+file_id
-       return url4;
+    if(url.match(drive_regex)){
+        return `https://drive.google.com/uc?id=${url.replace(drive_regex, "").match(/[\w]*\//)[0].replace(/\//,"")}`;
     }
     else {
        return console.error('Wrong URL, not a vlid drobox or google drive url');
