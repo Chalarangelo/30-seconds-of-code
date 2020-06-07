@@ -10,10 +10,7 @@ const parseListingMetas = requirables =>
     .map(rq => ({
       featured: rq.meta.featured,
       blog: rq.meta.blog,
-      link: {
-        internal: true,
-        url: `/${rq.meta.slugPrefix.slice(0, rq.meta.slugPrefix.indexOf('/'))}/p/1`,
-      },
+      url: `/${rq.meta.slugPrefix.slice(0, rq.meta.slugPrefix.indexOf('/'))}/p/1`,
       name: rq.meta.blog ? literals.blog : literals.codelang(rq.meta.language.long),
       icon: rq.meta.theme && rq.meta.theme.iconName,
       slugPrefix: `/${rq.meta.slugPrefix.slice(0, rq.meta.slugPrefix.indexOf('/'))}`,
