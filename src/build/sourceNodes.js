@@ -19,27 +19,12 @@ const sourceNodes = (requirables, reducers) => ({ actions, createNodeId, createC
   // snippet nodes as an object with each key representing the id of a snippet.
   let snippetNodes = requirables
     .reduce((acc, sArr) => {
-      const commonData = {
-        blog: sArr.meta.blog,
-        language: sArr.meta.language,
-        icon: sArr.meta.theme ? sArr.meta.theme.iconName : null,
-        otherLanguages: sArr.meta.otherLanguages,
-        sourceDir: sArr.meta.sourceDir,
-        slugPrefix: sArr.meta.slugPrefix,
-        repoUrlPrefix: sArr.meta.repoUrlPrefix,
-        reducer: sArr.meta.reducer,
-        resolver: sArr.meta.resolver,
-        biasPenaltyMultiplier: sArr.meta.biasPenaltyMultiplier,
-      };
       return ({
         ...acc,
         ...sArr.data.reduce((snippets, snippet) => {
           return ({
             ...snippets,
-            [`${commonData.sourceDir}/${snippet.id}`]: {
-              ...snippet,
-              ...commonData,
-            },
+            [`${sArr.meta.sourceDir}/${snippet.id}`]: snippet,
           });
         }, {}),
       });
