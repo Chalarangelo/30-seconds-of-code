@@ -39,10 +39,33 @@ const parseSnippets = contentDirPath => {
     const rdc = cfg.reducer ? cfg.reducer : 'stdReducer';
     const rsv = cfg.resolver ? cfg.resolver : 'stdResolver';
 
+    const commonData = {
+      blog: !!cfg.isBlog,
+      language: cfg.language,
+      icon: cfg.theme ? cfg.theme.iconName : null,
+      sourceDir: `${cfg.dirName}/${cfg.snippetPath}`,
+      slugPrefix: `${cfg.slug}/s`,
+      repoUrlPrefix: `${cfg.repoUrl}/blob/master/${cfg.snippetPath}`,
+      reducer: rdc,
+      resolver: rsv,
+      biasPenaltyMultiplier: cfg.biasPenaltyMultiplier ? cfg.biasPenaltyMultiplier : 1.0,
+    };
+
+    // Parse additional languages
+    let otherLanguages = [];
+    if(cfg.secondLanguage || cfg.optionalLanguage) {
+      if(cfg.secondLanguage) otherLanguages.push(cfg.secondLanguage);
+      if(cfg.optionalLanguage) otherLanguages.push(cfg.optionalLanguage);
+      commonData.otherLanguages = otherLanguages;
+    }
+
     parser.readSnippets(snippetsPath, cfg)
       .then(snippets => {
         let snippetsArray = Object.keys(snippets).reduce((acc, key) => {
-          acc.push(snippets[key]);
+          acc.push({
+            ...snippets[key],
+            ...commonData,
+          });
           return acc;
         }, []);
 
@@ -64,13 +87,7 @@ const parseSnippets = contentDirPath => {
           },
         };
 
-        // Parse additional languages
-        let otherLanguages = [];
-        if(cfg.secondLanguage || cfg.optionalLanguage) {
-          if(cfg.secondLanguage) otherLanguages.push(cfg.secondLanguage);
-          if(cfg.optionalLanguage) otherLanguages.push(cfg.optionalLanguage);
-          completeData.meta.otherLanguages = otherLanguages;
-        }
+        if (otherLanguages.length) completeData.meta.otherLanguages = otherLanguages;
 
         fs.writeFileSync(
           outputJson,
