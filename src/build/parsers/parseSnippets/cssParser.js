@@ -1,5 +1,6 @@
 import { red } from 'kleur';
 import sass from 'node-sass';
+import { determineExpertiseFromTags } from 'build/transformers';
 import {
   getFilesInDir,
   getData,
@@ -73,6 +74,7 @@ const readSnippets = async(snippetsPath, config) => {
           all: tags,
           primary: tags[0],
         },
+        expertise: determineExpertiseFromTags(tags),
         attributes: {
           fileName: snippet,
           text: getTextualContent(data.body),

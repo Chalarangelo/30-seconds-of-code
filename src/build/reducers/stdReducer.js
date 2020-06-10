@@ -1,12 +1,11 @@
 import tokenizeSnippet from 'engines/searchIndexingEngine';
 import { uniqueElements } from 'utils';
-import { determineExpertiseFromTags } from 'build/transformers';
 
 export default (id, snippetNode, markdownNode) => {
   return {
     id,
     tags: snippetNode.tags,
-    expertise: determineExpertiseFromTags(snippetNode.tags.all),
+    expertise: snippetNode.expertise,
     title: snippetNode.title,
     code: snippetNode.attributes.codeBlocks,
     slug: snippetNode.slug,
