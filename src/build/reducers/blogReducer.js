@@ -1,9 +1,7 @@
 import tokenizeSnippet from 'engines/searchIndexingEngine';
 import { uniqueElements } from 'utils';
 
-export default (id, snippetNode, markdownNode, langData) => {
-  const lowercaseTags = snippetNode.tags.all.map(t => t.toLowerCase());
-  const langIcon = langData.find(l => lowercaseTags.includes(l.language));
+export default (id, snippetNode, markdownNode) => {
   return {
     id,
     tags: snippetNode.tags,
@@ -19,7 +17,7 @@ export default (id, snippetNode, markdownNode, langData) => {
     path: markdownNode.fileAbsolutePath,
     text: snippetNode.text,
     language: {},
-    icon: langIcon ? langIcon.icon : snippetNode.icon,
+    icon: snippetNode.icon,
     ranking: snippetNode.ranking,
     firstSeen: snippetNode.firstSeen,
     lastUpdated: snippetNode.lastUpdated,
