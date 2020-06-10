@@ -2,6 +2,7 @@ import glob from 'glob';
 import path from 'path';
 import fs from 'fs-extra';
 import { blue, green, red } from 'kleur';
+import { convertToSeoSlug } from 'utils';
 import standardParser from './standardParser';
 import cssParser from './cssParser';
 import blogParser from './blogParser';
@@ -61,10 +62,12 @@ const parseSnippets = contentDirPath => {
 
     parser.readSnippets(snippetsPath, cfg)
       .then(snippets => {
-        let snippetsArray = Object.keys(snippets).reduce((acc, key) => {
+        let snippetsArray = Object.keys(snippets).reduce((acc, snippet) => {
           acc.push({
-            ...snippets[key],
+            ...snippets[snippet],
             ...commonData,
+            slug: `/${commonData.slugPrefix}${convertToSeoSlug(snippet.slice(0, -3))}`,
+            url: `${commonData.repoUrlPrefix}/${snippet}`,
           });
           return acc;
         }, []);
