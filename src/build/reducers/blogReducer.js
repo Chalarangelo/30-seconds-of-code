@@ -20,8 +20,8 @@ export default (id, snippetNode, markdownNode, langData) => {
     expertise: 'blog',
     title: snippetNode.title,
     code: { },
-    slug: `/${snippetNode.slugPrefix}${convertToSeoSlug(markdownNode.fields.slug)}`,
-    url: `${snippetNode.repoUrlPrefix}${markdownNode.fields.slug.slice(0, -1)}.md`,
+    slug: snippetNode.slug,
+    url: snippetNode.url,
     path: markdownNode.fileAbsolutePath,
     text: {
       full: snippetNode.attributes.text,

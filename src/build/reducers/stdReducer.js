@@ -1,6 +1,6 @@
 import rankSnippet from 'engines/rankingEngine';
 import tokenizeSnippet from 'engines/searchIndexingEngine';
-import { convertToSeoSlug, uniqueElements } from 'utils';
+import { uniqueElements } from 'utils';
 import { determineExpertiseFromTags } from 'build/transformers';
 
 export default (id, snippetNode, markdownNode) => {
@@ -10,8 +10,8 @@ export default (id, snippetNode, markdownNode) => {
     expertise: determineExpertiseFromTags(snippetNode.tags.all),
     title: snippetNode.title,
     code: snippetNode.attributes.codeBlocks,
-    slug: `/${snippetNode.slugPrefix}${convertToSeoSlug(markdownNode.fields.slug)}`,
-    url: `${snippetNode.repoUrlPrefix}${markdownNode.fields.slug.slice(0, -1)}.md`,
+    slug: snippetNode.slug,
+    url: snippetNode.url,
     path: markdownNode.fileAbsolutePath,
     text: {
       full: snippetNode.attributes.text,
