@@ -27,9 +27,9 @@ cconst goobox = (url)=>{
 ```
 
 ```js
-let url = 'https://drive.google.com/file/d/1PiCWHIwyQWrn4YxatPZDkB8EfegRIkIV/view' // can't be image src.
+let gDriveUrl = "https://drive.google.com/file/d/1VctOazcyDrm8nxoWFAWM_t5bxlpyLI9s/view?usp=sharing";
+let dropboxUrl = "https://www.dropbox.com/s/degru93hceo26m6/30sec.png?dl=0";
 
-goobox(url);
-
-//  https://drive.google.com/uc?id=1PiCWHIwyQWrn4YxatPZDkB8EfegRIkIV  // works as image src
+goobox(gDriveUrl);  // https://drive.google.com/uc?id=1VctOazcyDrm8nxoWFAWM_t5bxlpyLI9s
+goobox(dropboxUrl); // https://dl.dropbox.com/s/degru93hceo26m6/30sec.png?dl=0
 ```
