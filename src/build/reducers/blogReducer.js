@@ -1,6 +1,5 @@
 import tokenizeSnippet from 'engines/searchIndexingEngine';
 import { uniqueElements } from 'utils';
-import { determineExpertiseFromTags } from 'build/transformers';
 // TODO: Consider parsing this via a new parser or similar
 // The argument against is that it's a single case and might not extend to other repos in the future
 import authors from '../../../content/sources/30blog/blog_data/blog_authors';
@@ -16,7 +15,7 @@ export default (id, snippetNode, markdownNode, langData) => {
     cover: snippetNode.attributes.cover,
     authors: snippetNode.attributes.authors.map(a => authors[a]),
     blog: true,
-    expertise: 'blog',
+    expertise: snippetNode.expertise,
     title: snippetNode.title,
     code: { },
     slug: snippetNode.slug,

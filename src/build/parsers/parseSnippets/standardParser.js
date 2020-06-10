@@ -3,6 +3,7 @@ import path from 'path';
 import { red } from 'kleur';
 import frontmatter from 'front-matter';
 import { exec } from 'child_process';
+import { determineExpertiseFromTags } from 'build/transformers';
 
 /**
  * Reads all files in a directory and returns the resulting array.
@@ -170,6 +171,7 @@ export const readSnippets = async(snippetsPath, config) => {
           all: tags,
           primary: tags[0],
         },
+        expertise: determineExpertiseFromTags(tags),
         attributes: {
           fileName: snippet,
           text: getTextualContent(data.body),

@@ -30,6 +30,7 @@ const readSnippets = async snippetsPath => {
           all: tags,
           primary: tags[0],
         },
+        expertise: 'blog',
         attributes: {
           fileName: snippet,
           cover: data.attributes.cover,
