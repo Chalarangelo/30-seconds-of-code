@@ -54,7 +54,7 @@ const getTextualContent = (str, blogType) => {
 
 export default (str, source) => {
   const description = getShortDescription(source.text.short);
-  const fullDescription = getTextualContent(str, source.blogType);
+  const fullDescription = getTextualContent(str, source.type);
   return {
     description,
     fullDescription,
