@@ -8,7 +8,6 @@
   ],
   "slug": "blog",
   "parser": "blogParser",
-  "reducer": "blogReducer",
   "resolver": "blogResolver",
   "isBlog": true,
   "featured": 1,

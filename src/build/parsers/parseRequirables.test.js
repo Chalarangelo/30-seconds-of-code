@@ -10,7 +10,6 @@ const mockRequirables = {
   'stdRequirable': {
     meta: {
       requirables: [ 'stdRequirableData' ],
-      reducer: 'es6Reducer',
       resolver: 'jsxResolver',
       isBlog: false,
       slug: 'std',

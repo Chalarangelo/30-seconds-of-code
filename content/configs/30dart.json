@@ -11,7 +11,6 @@
     "long": "Dart"
   },
   "slug": "dart",
-  "reducer": "stdReducer",
   "featured": 6,
   "theme": {
     "backColor": "#1b2634",

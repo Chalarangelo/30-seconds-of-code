@@ -48,8 +48,6 @@ const parseSnippets = contentDirPath => {
     if(cfg.parser && cfg.parser !== 'standardParser')
       parser = parsers[cfg.parser];
     else parser = parsers.standardParser;
-
-    const rdc = cfg.reducer ? cfg.reducer : 'stdReducer';
     const rsv = cfg.resolver ? cfg.resolver : 'stdResolver';
 
     const commonData = {
@@ -59,7 +57,6 @@ const parseSnippets = contentDirPath => {
       sourceDir: `${cfg.dirName}/${cfg.snippetPath}`,
       slugPrefix: `${cfg.slug}/s`,
       repoUrlPrefix: `${cfg.repoUrl}/blob/master/${cfg.snippetPath}`,
-      reducer: rdc,
       resolver: rsv,
       biasPenaltyMultiplier: cfg.biasPenaltyMultiplier ? cfg.biasPenaltyMultiplier : 1.0,
     };
@@ -102,7 +99,6 @@ const parseSnippets = contentDirPath => {
             biasPenaltyMultiplier: cfg.biasPenaltyMultiplier ? cfg.biasPenaltyMultiplier : 1.0,
             featured: cfg.featured ? cfg.featured : 0,
             theme: cfg.theme,
-            reducer: rdc,
             resolver: rsv,
           },
         };

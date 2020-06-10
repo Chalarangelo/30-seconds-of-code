@@ -271,7 +271,6 @@ export const rawSnippet = {
   slugPrefix: 'js/s',
   repoUrlPrefix:
  'https://github.com/30-seconds/30-seconds-of-code/blob/master/snippets',
-  reducer: 'es6Reducer',
   resolver: 'stdResolver',
   biasPenaltyMultiplier: 1.05,
   tagScores: [],
@@ -314,7 +313,6 @@ export const rawBlogSnippet = {
   slugPrefix: 'blog/s',
   repoUrlPrefix:
  'https://github.com/30-seconds/30-seconds-blog/blob/master/blog_posts',
-  reducer: 'blogReducer',
   resolver: 'blogResolver',
   biasPenaltyMultiplier: 1,
   tagScores: [],
