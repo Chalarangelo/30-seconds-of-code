@@ -21,6 +21,11 @@ const readSnippets = async snippetsPath => {
     for (let snippet of snippetFilenames) {
       let data = getData(snippetsPath, snippet);
       const tags = getTags(data.attributes.tags);
+      const text = getTextualContent(data.body);
+      const excerpt = data.attributes.excerpt;
+      const shortSliceIndex = text.indexOf('\n\n') <= 180
+        ? text.indexOf('\n\n')
+        : text.indexOf(' ', 160);
 
       snippets[snippet] = {
         id: getId(snippet),
@@ -32,11 +37,15 @@ const readSnippets = async snippetsPath => {
         },
         code: {},
         expertise: 'blog',
+        text: {
+          full: data.body,
+          short: excerpt && excerpt.trim().length !== 0
+            ? excerpt
+            : `${text.slice(0, shortSliceIndex)}...`,
+        },
         attributes: {
           cover: data.attributes.cover,
-          excerpt: data.attributes.excerpt,
           authors: getTags(data.attributes.authors),
-          text: data.body,
         },
         ...await getGitMetadata(snippet, snippetsPath),
       };

@@ -65,6 +65,7 @@ const readSnippets = async(snippetsPath, config) => {
     for (let snippet of snippetFilenames) {
       let data = getData(snippetsPath, snippet);
       const tags = getTags(data.attributes.tags);
+      const text = getTextualContent(data.body);
 
       snippets[snippet] = {
         id: getId(snippet),
@@ -76,8 +77,9 @@ const readSnippets = async(snippetsPath, config) => {
         },
         code: getCodeBlocks(data.body, config),
         expertise: determineExpertiseFromTags(tags),
-        attributes: {
-          text: getTextualContent(data.body),
+        text: {
+          full: text,
+          short: text.slice(0, text.indexOf('\n\n')),
         },
         ...await getGitMetadata(snippet, snippetsPath),
       };
