@@ -80,7 +80,7 @@ const readSnippets = async(snippetsPath, config) => {
           text: getTextualContent(data.body),
           codeBlocks: getCodeBlocks(data.body, config),
         },
-        meta: await getGitMetadata(snippet, snippetsPath),
+        ...await getGitMetadata(snippet, snippetsPath),
       };
       snippets[snippet].attributes.codeBlocks.scopedCss = sass
         .renderSync({

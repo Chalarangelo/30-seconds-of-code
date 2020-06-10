@@ -38,7 +38,7 @@ const readSnippets = async snippetsPath => {
           authors: getTags(data.attributes.authors),
           text: data.body,
         },
-        meta: await getGitMetadata(snippet, snippetsPath),
+        ...await getGitMetadata(snippet, snippetsPath),
       };
     }
   } catch (err) {
