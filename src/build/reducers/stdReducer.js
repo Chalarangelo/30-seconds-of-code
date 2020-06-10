@@ -12,10 +12,7 @@ export default (id, snippetNode, markdownNode) => {
     url: snippetNode.url,
     path: markdownNode.fileAbsolutePath,
     text: snippetNode.text,
-    language: {
-      ...snippetNode.language,
-      otherLanguages: snippetNode.otherLanguages ? snippetNode.otherLanguages : undefined,
-    },
+    language: snippetNode.language,
     icon: snippetNode.icon,
     ranking: snippetNode.ranking,
     firstSeen: snippetNode.firstSeen,

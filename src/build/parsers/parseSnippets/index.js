@@ -54,7 +54,7 @@ const parseSnippets = contentDirPath => {
 
     const commonData = {
       blog: !!cfg.isBlog,
-      language: cfg.language,
+      language: cfg.language || {},
       icon: cfg.theme ? cfg.theme.iconName : null,
       sourceDir: `${cfg.dirName}/${cfg.snippetPath}`,
       slugPrefix: `${cfg.slug}/s`,
@@ -69,7 +69,7 @@ const parseSnippets = contentDirPath => {
     if(cfg.secondLanguage || cfg.optionalLanguage) {
       if(cfg.secondLanguage) otherLanguages.push(cfg.secondLanguage);
       if(cfg.optionalLanguage) otherLanguages.push(cfg.optionalLanguage);
-      commonData.otherLanguages = otherLanguages;
+      commonData.language.otherLanguages = otherLanguages;
     }
 
     parser.readSnippets(snippetsPath, cfg, langData)
@@ -106,8 +106,6 @@ const parseSnippets = contentDirPath => {
             resolver: rsv,
           },
         };
-
-        if (otherLanguages.length) completeData.meta.otherLanguages = otherLanguages;
 
         fs.writeFileSync(
           outputJson,
