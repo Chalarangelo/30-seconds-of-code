@@ -30,23 +30,13 @@ const sourceNodes = (requirables, reducers) => ({ actions, createNodeId, createC
       });
     }, {});
 
-  const langData = requirables
-    .filter(req =>
-      req.meta.language && req.meta.language.long &&
-      req.meta.theme && req.meta.theme.iconName
-    )
-    .map(req => ({
-      language: req.meta.language.long.toLowerCase(),
-      icon: req.meta.theme.iconName,
-    }));
-
   // Find the relevant information for each snippet node (markdown node, reducer,
   // resolver etc.) and create an actual GraphQL node from it, combining it as
   // necessary (call the reducer to parse the content, set up type and id etc.).
   Object.entries(snippetNodes).forEach(([id, sNode]) => {
     let mNode = markdownNodes.find(mN => mN.fileAbsolutePath.includes(`${id}.md`));
     let reducer = reducers[sNode.reducer];
-    let nodeContent = reducer(id, sNode, mNode, langData);
+    let nodeContent = reducer(id, sNode, mNode);
     nodeContent.resolver = sNode.resolver;
 
     createNode({

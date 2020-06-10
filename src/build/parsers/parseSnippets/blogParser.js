@@ -15,21 +15,26 @@ import authors from '../../../../content/sources/30blog/blog_data/blog_authors';
  * Synchronously read all snippets and sort them as necessary.
  * The sorting is case-insensitive.
  * @param snippetsPath The path of the snippets directory.
+ * @param config The project's configuration file.
+ * @param langData An array of `(language, icon)` tuples.
  */
-const readSnippets = async snippetsPath => {
+const readSnippets = async(snippetsPath, config, langData) => {
   const snippetFilenames = getFilesInDir(snippetsPath, false);
 
   let snippets = {};
+  let blogIcon = config.theme ? config.theme.iconName : null;
   try {
     for (let snippet of snippetFilenames) {
       let data = getData(snippetsPath, snippet);
       const tags = getTags(data.attributes.tags);
+      const lowercaseTags = tags.map(t => t.toLowerCase());
       const text = getTextualContent(data.body);
       const excerpt = data.attributes.excerpt;
       const shortSliceIndex = text.indexOf('\n\n') <= 180
         ? text.indexOf('\n\n')
         : text.indexOf(' ', 160);
       const authorsData = getTags(data.attributes.authors).map(a => authors[a]);
+      const langIcon = langData.find(l => lowercaseTags.includes(l.language));
 
       snippets[snippet] = {
         id: getId(snippet),
@@ -49,6 +54,7 @@ const readSnippets = async snippetsPath => {
         },
         cover: data.attributes.cover,
         authors: authorsData,
+        icon: langIcon ? langIcon.icon : blogIcon,
         ...await getGitMetadata(snippet, snippetsPath),
       };
     }

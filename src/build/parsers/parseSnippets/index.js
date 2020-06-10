@@ -27,6 +27,17 @@ const parseSnippets = contentDirPath => {
         require( path.resolve( file ) )
       );
     });
+
+  const langData = configs
+    .filter(cfg =>
+      cfg.language && cfg.language.long &&
+      cfg.theme && cfg.theme.iconName
+    )
+    .map(cfg => ({
+      language: cfg.language.long.toLowerCase(),
+      icon: cfg.theme.iconName,
+    }));
+
   // Extract snippet JSON files
   configs.forEach(cfg => {
     const snippetsPath = `${contentDirPath}/sources/${cfg.dirName}/${cfg.snippetPath}`;
@@ -61,12 +72,12 @@ const parseSnippets = contentDirPath => {
       commonData.otherLanguages = otherLanguages;
     }
 
-    parser.readSnippets(snippetsPath, cfg)
+    parser.readSnippets(snippetsPath, cfg, langData)
       .then(snippets => {
         let snippetsArray = Object.keys(snippets).reduce((acc, snippet) => {
           acc.push({
-            ...snippets[snippet],
             ...commonData,
+            ...snippets[snippet],
             slug: `/${commonData.slugPrefix}${convertToSeoSlug(snippet.slice(0, -3))}`,
             url: `${commonData.repoUrlPrefix}/${snippet}`,
             ranking: rankSnippet({
