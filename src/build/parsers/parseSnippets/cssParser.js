@@ -1,6 +1,8 @@
 import { red } from 'kleur';
 import sass from 'node-sass';
-import { determineExpertiseFromTags } from 'build/transformers';
+import tokenizeSnippet from 'engines/searchIndexingEngine';
+import { uniqueElements } from 'utils';
+import { determineExpertiseFromTags, stripExpertiseFromTags } from 'build/transformers';
 import {
   getFilesInDir,
   getData,
@@ -66,6 +68,7 @@ const readSnippets = async(snippetsPath, config) => {
       let data = getData(snippetsPath, snippet);
       const tags = getTags(data.attributes.tags);
       const text = getTextualContent(data.body);
+      const shortText = text.slice(0, text.indexOf('\n\n'));
 
       snippets[snippet] = {
         id: getId(snippet),
@@ -79,8 +82,15 @@ const readSnippets = async(snippetsPath, config) => {
         expertise: determineExpertiseFromTags(tags),
         text: {
           full: text,
-          short: text.slice(0, text.indexOf('\n\n')),
+          short: shortText,
         },
+        searchTokens: uniqueElements([
+          data.attributes.title,
+          config.language.short,
+          config.language.long,
+          ...stripExpertiseFromTags(tags),
+          ...tokenizeSnippet(shortText),
+        ].map(v => v.toLowerCase())).join(' '),
         ...await getGitMetadata(snippet, snippetsPath),
       };
       snippets[snippet].code.scopedCss = sass

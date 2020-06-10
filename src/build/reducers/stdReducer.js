@@ -1,6 +1,3 @@
-import tokenizeSnippet from 'engines/searchIndexingEngine';
-import { uniqueElements } from 'utils';
-
 export default (id, snippetNode, markdownNode) => {
   return {
     id,
@@ -17,14 +14,6 @@ export default (id, snippetNode, markdownNode) => {
     ranking: snippetNode.ranking,
     firstSeen: snippetNode.firstSeen,
     lastUpdated: snippetNode.lastUpdated,
-    searchTokens: uniqueElements([
-      snippetNode.title,
-      snippetNode.language.short,
-      snippetNode.language.long,
-      ...snippetNode.tags.all.filter(tag => tag !== 'beginner' && tag !== 'intermediate' && tag !== 'advanced'),
-      ...tokenizeSnippet(
-        snippetNode.text.short
-      ),
-    ].map(v => v.toLowerCase())).join(' '),
+    searchTokens: snippetNode.searchTokens,
   };
 };
