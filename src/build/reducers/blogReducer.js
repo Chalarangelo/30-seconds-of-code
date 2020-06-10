@@ -8,14 +8,11 @@ import authors from '../../../content/sources/30blog/blog_data/blog_authors';
 
 export default (id, snippetNode, markdownNode, langData) => {
   const shortSliceIndex = snippetNode.attributes.text.indexOf('\n\n') <= 180 ? snippetNode.attributes.text.indexOf('\n\n') : snippetNode.attributes.text.indexOf(' ', 160);
-  const lowercaseTags = snippetNode.attributes.tags.map(t => t.toLowerCase());
+  const lowercaseTags = snippetNode.tags.all.map(t => t.toLowerCase());
   const langIcon = langData.find(l => lowercaseTags.includes(l.language));
   return {
     id,
-    tags: {
-      all: snippetNode.attributes.tags,
-      primary: snippetNode.attributes.tags[0],
-    },
+    tags: snippetNode.tags,
     blogType: snippetNode.type,
     cover: snippetNode.attributes.cover,
     authors: snippetNode.attributes.authors.map(a => authors[a]),
@@ -38,7 +35,7 @@ export default (id, snippetNode, markdownNode, langData) => {
     firstSeen: new Date(+`${snippetNode.meta.firstSeen}000`),
     lastUpdated: new Date(+`${snippetNode.meta.lastUpdated}000`),
     searchTokens: uniqueElements([
-      ...snippetNode.attributes.tags.filter(tag => tag !== 'beginner' && tag !== 'intermediate' && tag !== 'advanced'),
+      ...snippetNode.tags.all.filter(tag => tag !== 'beginner' && tag !== 'intermediate' && tag !== 'advanced'),
       ...tokenizeSnippet(
         `${snippetNode.attributes.excerpt} ${snippetNode.title}`
       ),
