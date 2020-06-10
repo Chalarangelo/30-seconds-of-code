@@ -1,6 +1,6 @@
 export default (id, snippetNode, markdownNode) => {
   return {
-    id,
+    id: snippetNode.id,
     tags: snippetNode.tags,
     expertise: snippetNode.expertise,
     title: snippetNode.title,
