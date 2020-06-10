@@ -58,9 +58,11 @@ const getCodeBlocks = (str, config) => {
  * Synchronously read all snippets and sort them as necessary.
  * The sorting is case-insensitive.
  * @param snippetsPath The path of the snippets directory.
+ * @param config The project's configuration file.
  */
 const readSnippets = async(snippetsPath, config) => {
   const snippetFilenames = getFilesInDir(snippetsPath, false);
+  const sourceDir = `${config.dirName}/${config.snippetPath}`;
 
   let snippets = {};
   try {
@@ -71,7 +73,7 @@ const readSnippets = async(snippetsPath, config) => {
       const shortText = text.slice(0, text.indexOf('\n\n'));
 
       snippets[snippet] = {
-        id: getId(snippet),
+        id: getId(snippet, sourceDir),
         title: data.attributes.title,
         type: 'snippet',
         tags: {
@@ -95,7 +97,7 @@ const readSnippets = async(snippetsPath, config) => {
       };
       snippets[snippet].code.scopedCss = sass
         .renderSync({
-          data: `[data-scope="${snippets[snippet].id}"] { ${snippets[snippet].code.css} }`,
+          data: `[data-scope="${snippet.slice(0, -3)}"] { ${snippets[snippet].code.css} }`,
         })
         .css.toString();
     }

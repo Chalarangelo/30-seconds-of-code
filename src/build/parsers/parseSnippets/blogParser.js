@@ -23,6 +23,7 @@ import authors from '../../../../content/sources/30blog/blog_data/blog_authors';
  */
 const readSnippets = async(snippetsPath, config, langData) => {
   const snippetFilenames = getFilesInDir(snippetsPath, false);
+  const sourceDir = `${config.dirName}/${config.snippetPath}`;
 
   let snippets = {};
   let blogIcon = config.theme ? config.theme.iconName : null;
@@ -43,7 +44,7 @@ const readSnippets = async(snippetsPath, config, langData) => {
       const langIcon = langData.find(l => lowercaseTags.includes(l.language));
 
       snippets[snippet] = {
-        id: getId(snippet),
+        id: getId(snippet, sourceDir),
         title: data.attributes.title,
         type: `blog.${data.attributes.type}`,
         tags: {

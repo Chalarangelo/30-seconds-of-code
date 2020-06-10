@@ -148,16 +148,19 @@ export const getTags = tagStr =>
 /**
  * Gets the snippet id from the snippet's filename.
  * @param snippetFilename Filename of the snippet.
+ * @param config The project's configuration file.
  */
-export const getId = snippetFilename => snippetFilename.slice(0, -3);
+export const getId = (snippetFilename, sourceDir) => `${sourceDir}/${snippetFilename.slice(0, -3)}`;
 
 /**
  * Synchronously read all snippets and sort them as necessary.
  * The sorting is case-insensitive.
  * @param snippetsPath The path of the snippets directory.
+ * @param config The project's configuration file.
  */
 export const readSnippets = async(snippetsPath, config) => {
   const snippetFilenames = getFilesInDir(snippetsPath, false);
+  const sourceDir = `${config.dirName}/${config.snippetPath}`;
 
   let snippets = {};
   try {
@@ -168,7 +171,7 @@ export const readSnippets = async(snippetsPath, config) => {
       const shortText = text.slice(0, text.indexOf('\n\n'));
 
       snippets[snippet] = {
-        id: getId(snippet),
+        id: getId(snippet, sourceDir),
         title: data.attributes.title,
         type: 'snippet',
         tags: {
