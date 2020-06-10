@@ -77,7 +77,6 @@ const readSnippets = async(snippetsPath, config) => {
         code: getCodeBlocks(data.body, config),
         expertise: determineExpertiseFromTags(tags),
         attributes: {
-          fileName: snippet,
           text: getTextualContent(data.body),
         },
         ...await getGitMetadata(snippet, snippetsPath),
