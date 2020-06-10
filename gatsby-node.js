@@ -1,7 +1,6 @@
 const { green } = require('kleur');
 
 const {
-  onCreateNode,
   sourceNodes,
   createResolvers,
   createPages,
@@ -26,8 +25,6 @@ const pagesQuery = parseQueries(paths.queryPath);
 console.log(`${green('success')} parse queries`);
 
 exports.createPages = createPages(pagesQuery, templates, requirables);
-
-exports.onCreateNode = onCreateNode;
 
 exports.sourceNodes = sourceNodes(requirables);
 
