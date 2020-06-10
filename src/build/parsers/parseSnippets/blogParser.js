@@ -1,4 +1,7 @@
 import { red } from 'kleur';
+import tokenizeSnippet from 'engines/searchIndexingEngine';
+import { uniqueElements } from 'utils';
+import { stripExpertiseFromTags } from 'build/transformers';
 import {
   getFilesInDir,
   getData,
@@ -33,6 +36,9 @@ const readSnippets = async(snippetsPath, config, langData) => {
       const shortSliceIndex = text.indexOf('\n\n') <= 180
         ? text.indexOf('\n\n')
         : text.indexOf(' ', 160);
+      const shortText = excerpt && excerpt.trim().length !== 0
+        ? excerpt
+        : `${text.slice(0, shortSliceIndex)}...`;
       const authorsData = getTags(data.attributes.authors).map(a => authors[a]);
       const langIcon = langData.find(l => lowercaseTags.includes(l.language));
 
@@ -48,13 +54,15 @@ const readSnippets = async(snippetsPath, config, langData) => {
         expertise: 'blog',
         text: {
           full: data.body,
-          short: excerpt && excerpt.trim().length !== 0
-            ? excerpt
-            : `${text.slice(0, shortSliceIndex)}...`,
+          short: shortText,
         },
         cover: data.attributes.cover,
         authors: authorsData,
         icon: langIcon ? langIcon.icon : blogIcon,
+        searchTokens: uniqueElements([
+          ...stripExpertiseFromTags(tags),
+          ...tokenizeSnippet(`${shortText} ${data.attributes.title}`),
+        ].map(v => v.toLowerCase())).join(' '),
         ...await getGitMetadata(snippet, snippetsPath),
       };
     }
