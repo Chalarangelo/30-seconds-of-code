@@ -16,7 +16,7 @@ type Snippet implements Node {
   searchTokens: String
   icon: String
   blog: Boolean
-  blogType: String
+  type: String
   authors: [AuthorData]
   cover: String
 }

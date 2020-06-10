@@ -53,7 +53,7 @@ export const transformSnippetContext = (snippet, cardTemplate, imageContext) => 
   case 'BlogSnippetCard':
     templateProps = {
       authors: snippet.authors,
-      type: snippet.blogType,
+      type: snippet.type,
       cover: findImageByAbsolutePath(snippet.cover),
     };
     html.fullDescription = snippet.html.fullDescription.replace(
