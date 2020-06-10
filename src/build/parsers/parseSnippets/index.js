@@ -49,16 +49,14 @@ const parseSnippets = contentDirPath => {
       parser = parsers[cfg.parser];
     else parser = parsers.standardParser;
     const rsv = cfg.resolver ? cfg.resolver : 'stdResolver';
+    const slugPrefix = `${cfg.slug}/s`;
+    const repoUrlPrefix = `${cfg.repoUrl}/blob/master/${cfg.snippetPath}`;
 
     const commonData = {
       blog: !!cfg.isBlog,
       language: cfg.language || {},
       icon: cfg.theme ? cfg.theme.iconName : null,
-      sourceDir: `${cfg.dirName}/${cfg.snippetPath}`,
-      slugPrefix: `${cfg.slug}/s`,
-      repoUrlPrefix: `${cfg.repoUrl}/blob/master/${cfg.snippetPath}`,
       resolver: rsv,
-      biasPenaltyMultiplier: cfg.biasPenaltyMultiplier ? cfg.biasPenaltyMultiplier : 1.0,
     };
 
     // Parse additional languages
@@ -75,12 +73,14 @@ const parseSnippets = contentDirPath => {
           acc.push({
             ...commonData,
             ...snippets[snippet],
-            slug: `/${commonData.slugPrefix}${convertToSeoSlug(snippet.slice(0, -3))}`,
-            url: `${commonData.repoUrlPrefix}/${snippet}`,
+            slug: `/${slugPrefix}${convertToSeoSlug(snippet.slice(0, -3))}`,
+            url: `${repoUrlPrefix}/${snippet}`,
             ranking: rankSnippet({
               ...snippets[snippet],
               language: commonData.language,
-              biasPenaltyMultiplier: commonData.biasPenaltyMultiplier,
+              biasPenaltyMultiplier: cfg.biasPenaltyMultiplier
+                ? cfg.biasPenaltyMultiplier
+                : 1.0,
             }),
           });
           return acc;
@@ -89,17 +89,11 @@ const parseSnippets = contentDirPath => {
         const completeData = {
           data: [...snippetsArray],
           meta: {
-            specification: 'http://jsonapi.org/format/',
-            type: 'snippetArray',
             language: cfg.language,
             blog: !!cfg.isBlog,
-            slugPrefix: `${cfg.slug}/s`,
-            sourceDir: `${cfg.dirName}/${cfg.snippetPath}`,
-            repoUrlPrefix: `${cfg.repoUrl}/blob/master/${cfg.snippetPath}`,
-            biasPenaltyMultiplier: cfg.biasPenaltyMultiplier ? cfg.biasPenaltyMultiplier : 1.0,
+            slugPrefix,
             featured: cfg.featured ? cfg.featured : 0,
             theme: cfg.theme,
-            resolver: rsv,
           },
         };
 
