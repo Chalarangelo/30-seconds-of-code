@@ -11,7 +11,7 @@ tags: image hosting, regex, url, google drive, dropbox, advanced
 - live example: https://ybmex.csb.app/
 
 ```js
-cconst goobox = (url)=>{
+const goobox = (url)=>{
 
     let dropbox_regex = /(http(s)*:\/\/)*(www\.)*(dropbox.com)/;
     let drive_regex =/(http(s)*:\/\/)*(www\.)*(drive.google.com\/file\/d\/)/;
