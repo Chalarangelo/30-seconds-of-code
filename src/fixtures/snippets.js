@@ -267,10 +267,7 @@ export const rawSnippet = {
     otherLanguages: undefined,
   },
   icon: 'js',
-  sourceDir: '30code/snippets',
   slugPrefix: 'js/s',
-  repoUrlPrefix:
- 'https://github.com/30-seconds/30-seconds-of-code/blob/master/snippets',
   resolver: 'stdResolver',
   biasPenaltyMultiplier: 1.05,
   tagScores: [],
@@ -309,10 +306,7 @@ export const rawBlogSnippet = {
     otherLanguages: undefined,
   },
   icon: 'blog',
-  sourceDir: '30blog/blog_posts',
   slugPrefix: 'blog/s',
-  repoUrlPrefix:
- 'https://github.com/30-seconds/30-seconds-blog/blob/master/blog_posts',
   resolver: 'blogResolver',
   biasPenaltyMultiplier: 1,
   tagScores: [],
