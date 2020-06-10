@@ -14,7 +14,6 @@ const {
 } = require(`./src/build/parsers`);
 const paths = require(`./src/config/paths`);
 
-const reducers = require(`./src/build/reducers`).default;
 const resolvers = require(`./src/build/resolvers`).default;
 
 const requirables = parseRequirables(paths.contentPath);
@@ -30,7 +29,7 @@ exports.createPages = createPages(pagesQuery, templates, requirables);
 
 exports.onCreateNode = onCreateNode;
 
-exports.sourceNodes = sourceNodes(requirables, reducers);
+exports.sourceNodes = sourceNodes(requirables);
 
 exports.createResolvers = createResolvers(resolvers);
 

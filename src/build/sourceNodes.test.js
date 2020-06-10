@@ -1,14 +1,6 @@
 import sourceNodes from './sourceNodes';
 import { requirables } from 'fixtures/requirables';
 
-const stdReducerMock = jest.fn(() => ({}));
-const es6ReducerMock = jest.fn(() => ({}));
-
-const reducers = {
-  stdReducer: stdReducerMock,
-  es6Reducer: es6ReducerMock,
-};
-
 const createTypesMock = jest.fn();
 const createNodeMock = jest.fn();
 const actions = {
@@ -27,7 +19,7 @@ const getNodesByTypeMock = jest.fn().mockReturnValue([
 
 describe('sourceNodes', () => {
   beforeAll(() => {
-    sourceNodes(requirables, reducers)({
+    sourceNodes(requirables)({
       actions,
       createNodeId: createNodeIdMock,
       createContentDigest: createContentDigestMock,
@@ -37,10 +29,6 @@ describe('sourceNodes', () => {
 
   it('calls createTypes once', () => {
     expect(createTypesMock.mock.calls.length).toBe(1);
-  });
-
-  it('calls getNodesByType once', () => {
-    expect(getNodesByTypeMock.mock.calls.length).toBe(1);
   });
 
   it('calls createNode, createNodeId and createContentDigest once for each snippet', () => {
