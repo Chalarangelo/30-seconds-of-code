@@ -7,6 +7,9 @@ import {
   getId,
   getTags
 } from './standardParser';
+// TODO: Consider parsing this via a new parser or similar
+// The argument against is that it's a single case and might not extend to other repos in the future
+import authors from '../../../../content/sources/30blog/blog_data/blog_authors';
 
 /**
  * Synchronously read all snippets and sort them as necessary.
@@ -26,6 +29,7 @@ const readSnippets = async snippetsPath => {
       const shortSliceIndex = text.indexOf('\n\n') <= 180
         ? text.indexOf('\n\n')
         : text.indexOf(' ', 160);
+      const authorsData = getTags(data.attributes.authors).map(a => authors[a]);
 
       snippets[snippet] = {
         id: getId(snippet),
@@ -43,10 +47,8 @@ const readSnippets = async snippetsPath => {
             ? excerpt
             : `${text.slice(0, shortSliceIndex)}...`,
         },
-        attributes: {
-          cover: data.attributes.cover,
-          authors: getTags(data.attributes.authors),
-        },
+        cover: data.attributes.cover,
+        authors: authorsData,
         ...await getGitMetadata(snippet, snippetsPath),
       };
     }

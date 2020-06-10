@@ -1,8 +1,5 @@
 import tokenizeSnippet from 'engines/searchIndexingEngine';
 import { uniqueElements } from 'utils';
-// TODO: Consider parsing this via a new parser or similar
-// The argument against is that it's a single case and might not extend to other repos in the future
-import authors from '../../../content/sources/30blog/blog_data/blog_authors';
 
 export default (id, snippetNode, markdownNode, langData) => {
   const lowercaseTags = snippetNode.tags.all.map(t => t.toLowerCase());
@@ -11,8 +8,8 @@ export default (id, snippetNode, markdownNode, langData) => {
     id,
     tags: snippetNode.tags,
     blogType: snippetNode.type,
-    cover: snippetNode.attributes.cover,
-    authors: snippetNode.attributes.authors.map(a => authors[a]),
+    cover: snippetNode.cover,
+    authors: snippetNode.authors,
     blog: true,
     expertise: snippetNode.expertise,
     title: snippetNode.title,
