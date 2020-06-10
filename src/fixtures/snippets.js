@@ -244,17 +244,17 @@ export const rawSnippet = {
     all: [ 'array', 'function', 'beginner' ],
     primary: 'array',
   },
+  code: {
+    es6: 'const all = (arr, fn = Boolean) => arr.every(fn);',
+    es5:
+     'var all = function all(arr) {\n  var fn = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : Boolean;\n  return arr.every(fn);\n};',
+    example:
+     'all([4, 2, 3], x => x > 1); // true\nall([1, 2, 3]); // true',
+  },
   attributes: {
     fileName: 'all.md',
     text:
     'Returns `true` if the provided predicate function returns `true` for all elements in a collection, `false` otherwise.\n\nUse `Array.prototype.every()` to test if all elements in the collection return `true` based on `fn`.\nOmit the second argument, `fn`, to use `Boolean` as a default.\n\n',
-    codeBlocks: {
-      es6: 'const all = (arr, fn = Boolean) => arr.every(fn);',
-      es5:
-       'var all = function all(arr) {\n  var fn = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : Boolean;\n  return arr.every(fn);\n};',
-      example:
-       'all([4, 2, 3], x => x > 1); // true\nall([1, 2, 3]); // true',
-    },
   },
   hash: 'ba8e5f17500d1e5428f4ca7fcc8095934a7ad3aa496b35465e8f7799f1715aaa',
   firstSeen: new Date('2020-05-04T09:20:46.000Z'),

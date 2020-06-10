@@ -171,11 +171,11 @@ export const readSnippets = async(snippetsPath, config) => {
           all: tags,
           primary: tags[0],
         },
+        code: getCodeBlocks(data.body, config),
         expertise: determineExpertiseFromTags(tags),
         attributes: {
           fileName: snippet,
           text: getTextualContent(data.body),
-          codeBlocks: getCodeBlocks(data.body, config),
         },
         ...await getGitMetadata(snippet, snippetsPath),
       };
