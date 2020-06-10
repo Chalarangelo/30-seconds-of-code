@@ -1,4 +1,3 @@
-import rankSnippet from 'engines/rankingEngine';
 import tokenizeSnippet from 'engines/searchIndexingEngine';
 import { uniqueElements } from 'utils';
 import { determineExpertiseFromTags } from 'build/transformers';
@@ -22,7 +21,7 @@ export default (id, snippetNode, markdownNode) => {
       otherLanguages: snippetNode.otherLanguages ? snippetNode.otherLanguages : undefined,
     },
     icon: snippetNode.icon,
-    ranking: rankSnippet(snippetNode),
+    ranking: snippetNode.ranking,
     firstSeen: new Date(+`${snippetNode.meta.firstSeen}000`),
     lastUpdated: new Date(+`${snippetNode.meta.lastUpdated}000`),
     searchTokens: uniqueElements([

@@ -1,6 +1,5 @@
-import rankSnippet from 'engines/rankingEngine';
 import tokenizeSnippet from 'engines/searchIndexingEngine';
-import { convertToSeoSlug, uniqueElements } from 'utils';
+import { uniqueElements } from 'utils';
 import { determineExpertiseFromTags } from 'build/transformers';
 // TODO: Consider parsing this via a new parser or similar
 // The argument against is that it's a single case and might not extend to other repos in the future
@@ -31,7 +30,7 @@ export default (id, snippetNode, markdownNode, langData) => {
     },
     language: {},
     icon: langIcon ? langIcon.icon : snippetNode.icon,
-    ranking: rankSnippet(snippetNode, { timeSensitive: true }),
+    ranking: snippetNode.ranking,
     firstSeen: new Date(+`${snippetNode.meta.firstSeen}000`),
     lastUpdated: new Date(+`${snippetNode.meta.lastUpdated}000`),
     searchTokens: uniqueElements([

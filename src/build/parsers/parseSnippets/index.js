@@ -2,6 +2,7 @@ import glob from 'glob';
 import path from 'path';
 import fs from 'fs-extra';
 import { blue, green, red } from 'kleur';
+import rankSnippet from 'engines/rankingEngine';
 import { convertToSeoSlug } from 'utils';
 import standardParser from './standardParser';
 import cssParser from './cssParser';
@@ -68,6 +69,11 @@ const parseSnippets = contentDirPath => {
             ...commonData,
             slug: `/${commonData.slugPrefix}${convertToSeoSlug(snippet.slice(0, -3))}`,
             url: `${commonData.repoUrlPrefix}/${snippet}`,
+            ranking: rankSnippet({
+              ...snippets[snippet],
+              language: commonData.language,
+              biasPenaltyMultiplier: commonData.biasPenaltyMultiplier,
+            }),
           });
           return acc;
         }, []);
