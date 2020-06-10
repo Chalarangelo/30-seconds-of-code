@@ -7,7 +7,7 @@ export default (id, snippetNode, markdownNode) => {
     tags: snippetNode.tags,
     expertise: snippetNode.expertise,
     title: snippetNode.title,
-    code: snippetNode.attributes.codeBlocks,
+    code: snippetNode.code,
     slug: snippetNode.slug,
     url: snippetNode.url,
     path: markdownNode.fileAbsolutePath,

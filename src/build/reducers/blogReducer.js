@@ -17,7 +17,7 @@ export default (id, snippetNode, markdownNode, langData) => {
     blog: true,
     expertise: snippetNode.expertise,
     title: snippetNode.title,
-    code: { },
+    code: snippetNode.code,
     slug: snippetNode.slug,
     url: snippetNode.url,
     path: markdownNode.fileAbsolutePath,
