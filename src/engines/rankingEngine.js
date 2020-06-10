@@ -24,7 +24,7 @@ const determineSnippetRanking = snippet => {
   // Combine content for indexing
   const indexableContent = [
     snippet.title,
-    ...snippet.attributes.tags,
+    ...snippet.tags.all,
     snippet.language && snippet.language.long || '',
     (snippet.type || '.').split('.')[0],
     snippet.attributes.codeBlocks && snippet.attributes.codeBlocks.src || '',

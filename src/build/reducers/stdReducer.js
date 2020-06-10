@@ -6,11 +6,8 @@ import { determineExpertiseFromTags } from 'build/transformers';
 export default (id, snippetNode, markdownNode) => {
   return {
     id,
-    tags: {
-      all: snippetNode.attributes.tags,
-      primary: snippetNode.attributes.tags[0],
-    },
-    expertise: determineExpertiseFromTags(snippetNode.attributes.tags),
+    tags: snippetNode.tags,
+    expertise: determineExpertiseFromTags(snippetNode.tags.all),
     title: snippetNode.title,
     code: snippetNode.attributes.codeBlocks,
     slug: `/${snippetNode.slugPrefix}${convertToSeoSlug(markdownNode.fields.slug)}`,
@@ -32,7 +29,7 @@ export default (id, snippetNode, markdownNode) => {
       snippetNode.title,
       snippetNode.language.short,
       snippetNode.language.long,
-      ...snippetNode.attributes.tags.filter(tag => tag !== 'beginner' && tag !== 'intermediate' && tag !== 'advanced'),
+      ...snippetNode.tags.all.filter(tag => tag !== 'beginner' && tag !== 'intermediate' && tag !== 'advanced'),
       ...tokenizeSnippet(
         snippetNode.attributes.text.slice(0, snippetNode.attributes.text.indexOf('\n\n'))
       ),

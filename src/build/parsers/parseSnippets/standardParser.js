@@ -160,15 +160,20 @@ export const readSnippets = async(snippetsPath, config) => {
   try {
     for (let snippet of snippetFilenames) {
       let data = getData(snippetsPath, snippet);
+      const tags = getTags(data.attributes.tags);
+
       snippets[snippet] = {
         id: getId(snippet),
         title: data.attributes.title,
         type: 'snippet',
+        tags: {
+          all: tags,
+          primary: tags[0],
+        },
         attributes: {
           fileName: snippet,
           text: getTextualContent(data.body),
           codeBlocks: getCodeBlocks(data.body, config),
-          tags: getTags(data.attributes.tags),
         },
         meta: await getGitMetadata(snippet, snippetsPath),
       };

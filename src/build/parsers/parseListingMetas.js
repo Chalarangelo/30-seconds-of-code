@@ -15,7 +15,7 @@ const parseListingMetas = requirables =>
       icon: rq.meta.theme && rq.meta.theme.iconName,
       slugPrefix: `/${rq.meta.slugPrefix.slice(0, rq.meta.slugPrefix.indexOf('/'))}`,
       count: literals.snippetCount(rq.data.length),
-      tags: [...new Set(rq.data.map(snippet => snippet.attributes.tags[0]))].sort((a, b) => a.localeCompare(b)),
+      tags: [...new Set(rq.data.map(snippet => snippet.tags.primary))].sort((a, b) => a.localeCompare(b)),
     }));
 
 export default parseListingMetas;

@@ -20,17 +20,22 @@ const readSnippets = async snippetsPath => {
   try {
     for (let snippet of snippetFilenames) {
       let data = getData(snippetsPath, snippet);
+      const tags = getTags(data.attributes.tags);
+
       snippets[snippet] = {
         id: getId(snippet),
         title: data.attributes.title,
         type: `blog.${data.attributes.type}`,
+        tags: {
+          all: tags,
+          primary: tags[0],
+        },
         attributes: {
           fileName: snippet,
           cover: data.attributes.cover,
           excerpt: data.attributes.excerpt,
           authors: getTags(data.attributes.authors),
           text: data.body,
-          tags: getTags(data.attributes.tags),
         },
         meta: await getGitMetadata(snippet, snippetsPath),
       };
