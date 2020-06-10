@@ -32,8 +32,8 @@ const determineSnippetRanking = snippet => {
     snippet.code && snippet.code.html || '',
     snippet.code && snippet.code.js || '',
     snippet.code && snippet.code.style || '',
-    snippet.attributes.text || '',
-    snippet.attributes.excerpt || '',
+    snippet.text.full || '',
+    snippet.text.short || '',
   ].join(' ').toLowerCase();
 
   // Add points from keywords: If the snippet has too many keywords, there is a

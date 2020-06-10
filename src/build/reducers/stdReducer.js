@@ -11,10 +11,7 @@ export default (id, snippetNode, markdownNode) => {
     slug: snippetNode.slug,
     url: snippetNode.url,
     path: markdownNode.fileAbsolutePath,
-    text: {
-      full: snippetNode.attributes.text,
-      short: snippetNode.attributes.text.slice(0, snippetNode.attributes.text.indexOf('\n\n')),
-    },
+    text: snippetNode.text,
     language: {
       ...snippetNode.language,
       otherLanguages: snippetNode.otherLanguages ? snippetNode.otherLanguages : undefined,
@@ -29,7 +26,7 @@ export default (id, snippetNode, markdownNode) => {
       snippetNode.language.long,
       ...snippetNode.tags.all.filter(tag => tag !== 'beginner' && tag !== 'intermediate' && tag !== 'advanced'),
       ...tokenizeSnippet(
-        snippetNode.attributes.text.slice(0, snippetNode.attributes.text.indexOf('\n\n'))
+        snippetNode.text.short
       ),
     ].map(v => v.toLowerCase())).join(' '),
   };
