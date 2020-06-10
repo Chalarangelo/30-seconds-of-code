@@ -50,7 +50,7 @@ const sourceNodes = (requirables, reducers) => ({ actions, createNodeId, createC
     nodeContent.resolver = sNode.resolver;
 
     createNode({
-      id: createNodeId(`snippet-${sNode.meta.hash}`),
+      id: createNodeId(`snippet${sNode.slug}`),
       parent: null,
       children: [],
       internal: {

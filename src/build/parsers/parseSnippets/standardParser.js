@@ -122,8 +122,8 @@ export const getGitMetadata = async(snippet, snippetsPath) => {
     getUpdateCount,
   ]).then(values => {
     metaData = {
-      firstSeen: values[0],
-      lastUpdated: values[1],
+      firstSeen: new Date(+`${values[0]}000`),
+      lastUpdated: new Date(+`${values[1]}000`),
       updateCount: values[2],
     };
   });
@@ -177,7 +177,7 @@ export const readSnippets = async(snippetsPath, config) => {
           text: getTextualContent(data.body),
           codeBlocks: getCodeBlocks(data.body, config),
         },
-        meta: await getGitMetadata(snippet, snippetsPath),
+        ...await getGitMetadata(snippet, snippetsPath),
       };
     }
   } catch (err) {

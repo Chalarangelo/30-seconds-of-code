@@ -21,8 +21,8 @@ export default (id, snippetNode, markdownNode) => {
     },
     icon: snippetNode.icon,
     ranking: snippetNode.ranking,
-    firstSeen: new Date(+`${snippetNode.meta.firstSeen}000`),
-    lastUpdated: new Date(+`${snippetNode.meta.lastUpdated}000`),
+    firstSeen: snippetNode.firstSeen,
+    lastUpdated: snippetNode.lastUpdated,
     searchTokens: uniqueElements([
       snippetNode.title,
       snippetNode.language.short,
