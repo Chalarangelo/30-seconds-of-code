@@ -264,9 +264,9 @@ export const rawSnippet = {
   language: {
     short: 'js',
     long: 'JavaScript',
+    otherLanguages: undefined,
   },
   icon: 'js',
-  otherLanguages: undefined,
   sourceDir: '30code/snippets',
   slugPrefix: 'js/s',
   repoUrlPrefix:
@@ -307,9 +307,9 @@ export const rawBlogSnippet = {
   language: {
     short: '',
     long: '',
+    otherLanguages: undefined,
   },
   icon: 'blog',
-  otherLanguages: undefined,
   sourceDir: '30blog/blog_posts',
   slugPrefix: 'blog/s',
   repoUrlPrefix:
