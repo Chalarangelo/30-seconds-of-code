@@ -3,10 +3,11 @@ import path from 'path';
 import fs from 'fs-extra';
 import { blue, green, red } from 'kleur';
 import rankSnippet from 'engines/rankingEngine';
-import { convertToSeoSlug } from 'utils';
+import { convertToSeoSlug, uniqueElements } from 'utils';
 import standardParser from './standardParser';
 import cssParser from './cssParser';
 import blogParser from './blogParser';
+import literals from 'lang/en/listing';
 
 const parsers = {
   standardParser,
@@ -51,9 +52,10 @@ const parseSnippets = contentDirPath => {
     const rsv = cfg.resolver ? cfg.resolver : 'stdResolver';
     const slugPrefix = `${cfg.slug}/s`;
     const repoUrlPrefix = `${cfg.repoUrl}/blob/master/${cfg.snippetPath}`;
+    const isBlog = !!cfg.isBlog;
 
     const commonData = {
-      blog: !!cfg.isBlog,
+      blog: isBlog,
       language: cfg.language || {},
       icon: cfg.theme ? cfg.theme.iconName : null,
       resolver: rsv,
@@ -89,11 +91,16 @@ const parseSnippets = contentDirPath => {
         const completeData = {
           data: [...snippetsArray],
           meta: {
-            language: cfg.language,
-            blog: !!cfg.isBlog,
-            slugPrefix,
+            name: isBlog ? literals.blog : literals.codelang(cfg.language.long),
+            count: literals.snippetCount(snippetsArray.length),
+            tags: uniqueElements(
+              snippetsArray.map(snippet => snippet.tags.primary)
+            ).sort((a, b) => a.localeCompare(b)),
+            url: `/${slugPrefix.slice(0, slugPrefix.indexOf('/'))}/p/1`,
+            slugPrefix: `/${cfg.slug}`,
             featured: cfg.featured ? cfg.featured : 0,
-            theme: cfg.theme,
+            blog: isBlog,
+            icon: cfg.theme && cfg.theme.iconName,
           },
         };
 

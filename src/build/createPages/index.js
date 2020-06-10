@@ -2,7 +2,6 @@ import createStaticPage from './createStaticPage';
 import createListingPages from './createListingPages';
 import createSnippetPages from './createSnippetPages';
 import { transformSnippetIndex } from 'build/transformers';
-import { parseListingMetas } from 'build/parsers';
 import literals from 'lang/en';
 
 /**
@@ -25,7 +24,7 @@ const createPages = (query, templates, requirables) => ({ graphql, actions }) =>
         snippetCount: searchIndex.edges.length,
       };
 
-      const listingMetas = parseListingMetas(requirables);
+      const listingMetas = requirables.map(rq => rq.meta);
 
       createStaticPage(
         templates['NotFoundPage'],
