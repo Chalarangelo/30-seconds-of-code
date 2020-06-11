@@ -49,7 +49,6 @@ const parseSnippets = contentDirPath => {
     if(cfg.parser && cfg.parser !== 'standardParser')
       parser = parsers[cfg.parser];
     else parser = parsers.standardParser;
-    const rsv = cfg.resolver ? cfg.resolver : 'stdResolver';
     const slugPrefix = `${cfg.slug}/s`;
     const repoUrlPrefix = `${cfg.repoUrl}/blob/master/${cfg.snippetPath}`;
     const isBlog = !!cfg.isBlog;
@@ -58,7 +57,6 @@ const parseSnippets = contentDirPath => {
       blog: isBlog,
       language: cfg.language || {},
       icon: cfg.theme ? cfg.theme.iconName : null,
-      resolver: rsv,
     };
 
     // Parse additional languages

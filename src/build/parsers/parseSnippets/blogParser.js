@@ -2,6 +2,8 @@ import { red } from 'kleur';
 import tokenizeSnippet from 'engines/searchIndexingEngine';
 import { uniqueElements } from 'utils';
 import { stripExpertiseFromTags } from 'build/transformers';
+import { parseMarkdown } from 'build/parsers';
+import resolvers from 'build/resolvers';
 import {
   getFilesInDir,
   getData,
@@ -24,6 +26,7 @@ import authors from '../../../../content/sources/30blog/blog_data/blog_authors';
 const readSnippets = async(snippetsPath, config, langData) => {
   const snippetFilenames = getFilesInDir(snippetsPath, false);
   const sourceDir = `${config.dirName}/${config.snippetPath}`;
+  const resolver = config.resolver ? config.resolver : 'stdResolver';
 
   let snippets = {};
   let blogIcon = config.theme ? config.theme.iconName : null;
@@ -42,6 +45,7 @@ const readSnippets = async(snippetsPath, config, langData) => {
         : `${text.slice(0, shortSliceIndex)}...`;
       const authorsData = getTags(data.attributes.authors).map(a => authors[a]);
       const langIcon = langData.find(l => lowercaseTags.includes(l.language));
+      const html = parseMarkdown(data.body);
 
       snippets[snippet] = {
         id: getId(snippet, sourceDir),
@@ -64,6 +68,13 @@ const readSnippets = async(snippetsPath, config, langData) => {
           ...stripExpertiseFromTags(tags),
           ...tokenizeSnippet(`${shortText} ${data.attributes.title}`),
         ].map(v => v.toLowerCase())).join(' '),
+        html: {
+          full: html,
+          ...resolvers[resolver](html, {
+            shortDescription: shortText,
+            blogType: `blog.${data.attributes.type}`,
+          }),
+        },
         ...await getGitMetadata(snippet, snippetsPath),
       };
     }
