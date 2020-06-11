@@ -27,17 +27,7 @@ const parseConfigs = contentDirPath => {
         },
       });
     }
-    return [
-      ...acc,
-      {
-        resolve: 'gatsby-source-filesystem',
-        options: {
-          name: `${cfg.dirName}_snippets`,
-          path: `${contentDirPath}/sources/${cfg.dirName}/${cfg.snippetPath}`,
-        },
-      },
-    ]
-    ;
+    return acc;
   }, []);
 };
 
