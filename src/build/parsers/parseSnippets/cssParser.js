@@ -3,6 +3,8 @@ import sass from 'node-sass';
 import tokenizeSnippet from 'engines/searchIndexingEngine';
 import { uniqueElements } from 'utils';
 import { determineExpertiseFromTags, stripExpertiseFromTags } from 'build/transformers';
+import { parseMarkdown } from 'build/parsers';
+import resolvers from 'build/resolvers';
 import {
   getFilesInDir,
   getData,
@@ -11,6 +13,7 @@ import {
   getId,
   getTags
 } from './standardParser';
+
 
 /**
  * Gets the code blocks for a snippet.
@@ -63,6 +66,7 @@ const getCodeBlocks = (str, config) => {
 const readSnippets = async(snippetsPath, config) => {
   const snippetFilenames = getFilesInDir(snippetsPath, false);
   const sourceDir = `${config.dirName}/${config.snippetPath}`;
+  const resolver = config.resolver ? config.resolver : 'stdResolver';
 
   let snippets = {};
   try {
@@ -71,6 +75,7 @@ const readSnippets = async(snippetsPath, config) => {
       const tags = getTags(data.attributes.tags);
       const text = getTextualContent(data.body);
       const shortText = text.slice(0, text.indexOf('\n\n'));
+      const html = parseMarkdown(data.body);
 
       snippets[snippet] = {
         id: getId(snippet, sourceDir),
@@ -93,6 +98,10 @@ const readSnippets = async(snippetsPath, config) => {
           ...stripExpertiseFromTags(tags),
           ...tokenizeSnippet(shortText),
         ].map(v => v.toLowerCase())).join(' '),
+        html: {
+          full: html,
+          ...resolvers[resolver](html),
+        },
         ...await getGitMetadata(snippet, snippetsPath),
       };
       snippets[snippet].code.scopedCss = sass
