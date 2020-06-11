@@ -92,8 +92,8 @@ const parseMarkdown = markdown => {
     node.value = `<code>${escapeHTML(node.value)}</code>`;
   });
 
-  const htmlAst = toHAST(ast, { allowDangerousHTML: true });
-  return hastToHTML(htmlAst, { allowDangerousHTML: true });
+  const htmlAst = toHAST(ast, { allowDangerousHtml: true });
+  return hastToHTML(htmlAst, { allowDangerousHtml: true });
 };
 
 export default parseMarkdown;
