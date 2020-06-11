@@ -12,7 +12,7 @@ Use list comprehension to create a list containing only the unique values.
 from collections import Counter
 
 def filter_non_unique(lst):
-  return [item for item, count in counter = Counter(lst).items() if count == 1]
+  return [item for item, count in Counter(lst).items() if count == 1]
 ```
 
 ```py
