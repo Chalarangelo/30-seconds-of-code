@@ -1,4 +1,3 @@
-import recommendationEngine from 'engines/recommendationEngine';
 import {
   transformSnippetIndex,
   transformSnippetContext,
@@ -12,7 +11,6 @@ import {
  * @param {*} snippetPage - Snippet page template.
  * @param {*} createPage - Page creation method from gatsby.
  * @param {*} commonContext - Context to be passed to the page.
- * @param {array} allSnippets - List of all snippets.
  * @param {array} imageContext - Image context.
  */
 const createSnippetPages = (
@@ -20,18 +18,19 @@ const createSnippetPages = (
   snippetPage,
   createPage,
   commonContext,
-  allSnippets = snippets,
   imageContext = []
 ) => {
   snippets.forEach(snippet => {
-    const recommendedSnippets = recommendationEngine(allSnippets, snippet);
+    const recommendedSnippets = transformSnippetIndex(
+      snippet.node.recommendedSnippets.map(v => ( { node: v }))
+    );
     createPage({
       path: `${snippet.node.slug}`,
       component: snippetPage,
       context: {
         snippet: transformSnippetContext(snippet.node, commonContext.cardTemplate, imageContext),
         ...commonContext,
-        recommendedSnippets: transformSnippetIndex(recommendedSnippets),
+        recommendedSnippets,
         breadcrumbs: transformBreadcrumbs(snippet.node, commonContext.cardTemplate),
         pageDescription: transformSnippetDescription(snippet.node, commonContext.cardTemplate),
       },

@@ -19,6 +19,7 @@ type Snippet implements Node {
   type: String
   authors: [AuthorData]
   cover: String
+  recommendedSnippets: [SnippetRecommendationsData]
 }
 
 type TextData @infer {
@@ -67,4 +68,17 @@ type LanguageData @infer {
 type AuthorData @infer {
   name: String
   profile: String
+}
+
+type SnippetRecommendationsData @infer {
+  id: String
+  title: String
+  expertise: String
+  icon: String
+  slug: String
+  tags: TagData
+  expertise: String
+  language: LanguageData
+  searchTokens: String
+  html: HtmlData
 }
