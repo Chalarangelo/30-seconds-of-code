@@ -2,7 +2,6 @@ const { green } = require('kleur');
 
 const {
   sourceNodes,
-  createResolvers,
   createPages,
   onCreateWebpackConfig,
 } = require(`./src/build`);
@@ -12,8 +11,6 @@ const {
   parseTemplates,
 } = require(`./src/build/parsers`);
 const paths = require(`./src/config/paths`);
-
-const resolvers = require(`./src/build/resolvers`).default;
 
 const requirables = parseRequirables(paths.contentPath);
 console.log(`${green('success')} parse requirables`);
@@ -27,7 +24,5 @@ console.log(`${green('success')} parse queries`);
 exports.createPages = createPages(pagesQuery, templates, requirables);
 
 exports.sourceNodes = sourceNodes(requirables);
-
-exports.createResolvers = createResolvers(resolvers);
 
 exports.onCreateWebpackConfig = onCreateWebpackConfig;
