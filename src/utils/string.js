@@ -116,3 +116,15 @@ export const addTrailingSlashToSlug = str => {
     return str.includes('/?') ? str : str.replace('?', '/?');
   return str.endsWith('/') ? str : `${str}/`;
 };
+
+/**
+ * Replaces unsafe characters with HTML-safe ones.
+ * @param {string} str - The string to be escaped.
+ */
+export const escapeHTML = str =>
+  str
+    .replace(/&/g, '&amp;')
+    .replace(/>/g, '&gt;')
+    .replace(/</g, '&lt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
