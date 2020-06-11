@@ -33,13 +33,6 @@ describe('parseConfigs', () => {
           path: 'my-content-dir/sources/my-dir/my-images/',
         },
       },
-      {
-        resolve: 'gatsby-source-filesystem',
-        options: {
-          name: 'my-dir_snippets',
-          path: 'my-content-dir/sources/my-dir/my-snippets',
-        },
-      },
     ]);
   });
 });
