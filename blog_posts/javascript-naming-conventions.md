@@ -37,7 +37,7 @@ excerpt: Naming conventions, while not easy to enforce, make code easier to read
 
 **Private**
 
-- Prefix any variable or function with `_` to show itention for it to be private.
+- Prefix any variable or function with `_` to show intention for it to be private.
 - As a convention, this will not prevent other parts of the code from accessing it.
 
 **Image credit:** [Paul Hanaoka](https://unsplash.com/@plhnk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
