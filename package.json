@@ -34,7 +34,6 @@
     "gatsby-plugin-manifest": "^2.2.45",
     "gatsby-plugin-netlify": "^2.1.34",
     "gatsby-plugin-offline": "^2.2.4",
-    "gatsby-plugin-page-creator": "^2.1.43",
     "gatsby-plugin-react-helmet": "^3.1.23",
     "gatsby-plugin-resolve-src": "^2.0.0",
     "gatsby-plugin-sass": "^2.1.30",
