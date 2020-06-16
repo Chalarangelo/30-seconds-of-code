@@ -4,6 +4,7 @@ import {
   optimizeAllNodes,
   getURLParameters,
   getBaseURL,
+  escapeHTML,
   stripMarkdownFormat,
   toKebabCase,
   convertToSeoSlug,
@@ -59,6 +60,14 @@ describe('stripMarkdownFormat', () => {
     const md = 'I have `code` and [links](lala). \nI am also multiline.';
     const output = 'I have code and links. I am also multiline.';
     expect(stripMarkdownFormat(md)).toBe(output);
+  });
+});
+
+describe('escapeHTML', () => {
+  it('escapes HTML', () => {
+    const code = `<b>"Max & Min's"</b>`;
+    const output = '&lt;b&gt;&quot;Max &amp; Min&#39;s&quot;&lt;/b&gt;';
+    expect(escapeHTML(code)).toBe(output);
   });
 });
 

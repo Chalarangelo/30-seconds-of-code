@@ -3,6 +3,11 @@ import path from 'path';
 import { red } from 'kleur';
 import frontmatter from 'front-matter';
 import { exec } from 'child_process';
+import tokenizeSnippet from 'engines/searchIndexingEngine';
+import { uniqueElements } from 'utils';
+import { determineExpertiseFromTags, stripExpertiseFromTags } from 'build/transformers';
+import { parseMarkdown } from 'build/parsers';
+import resolvers from 'build/resolvers';
 
 /**
  * Reads all files in a directory and returns the resulting array.
@@ -121,8 +126,8 @@ export const getGitMetadata = async(snippet, snippetsPath) => {
     getUpdateCount,
   ]).then(values => {
     metaData = {
-      firstSeen: values[0],
-      lastUpdated: values[1],
+      firstSeen: new Date(+`${values[0]}000`),
+      lastUpdated: new Date(+`${values[1]}000`),
       updateCount: values[2],
     };
   });
@@ -145,32 +150,56 @@ export const getTags = tagStr =>
 /**
  * Gets the snippet id from the snippet's filename.
  * @param snippetFilename Filename of the snippet.
+ * @param config The project's configuration file.
  */
-export const getId = snippetFilename => snippetFilename.slice(0, -3);
+export const getId = (snippetFilename, sourceDir) => `${sourceDir}/${snippetFilename.slice(0, -3)}`;
 
 /**
  * Synchronously read all snippets and sort them as necessary.
  * The sorting is case-insensitive.
  * @param snippetsPath The path of the snippets directory.
+ * @param config The project's configuration file.
  */
 export const readSnippets = async(snippetsPath, config) => {
   const snippetFilenames = getFilesInDir(snippetsPath, false);
+  const sourceDir = `${config.dirName}/${config.snippetPath}`;
+  const resolver = config.resolver ? config.resolver : 'stdResolver';
 
   let snippets = {};
   try {
     for (let snippet of snippetFilenames) {
       let data = getData(snippetsPath, snippet);
+      const tags = getTags(data.attributes.tags);
+      const text = getTextualContent(data.body);
+      const shortText = text.slice(0, text.indexOf('\n\n'));
+      const html = parseMarkdown(data.body);
+
       snippets[snippet] = {
-        id: getId(snippet),
+        id: getId(snippet, sourceDir),
         title: data.attributes.title,
         type: 'snippet',
-        attributes: {
-          fileName: snippet,
-          text: getTextualContent(data.body),
-          codeBlocks: getCodeBlocks(data.body, config),
-          tags: getTags(data.attributes.tags),
+        tags: {
+          all: tags,
+          primary: tags[0],
         },
-        meta: await getGitMetadata(snippet, snippetsPath),
+        code: getCodeBlocks(data.body, config),
+        expertise: determineExpertiseFromTags(tags),
+        text: {
+          full: text,
+          short: shortText,
+        },
+        searchTokens: uniqueElements([
+          data.attributes.title,
+          config.language.short,
+          config.language.long,
+          ...stripExpertiseFromTags(tags),
+          ...tokenizeSnippet(shortText),
+        ].map(v => v.toLowerCase())).join(' '),
+        html: {
+          full: html,
+          ...resolvers[resolver](html),
+        },
+        ...await getGitMetadata(snippet, snippetsPath),
       };
     }
   } catch (err) {

@@ -24,16 +24,16 @@ const determineSnippetRanking = snippet => {
   // Combine content for indexing
   const indexableContent = [
     snippet.title,
-    ...snippet.attributes.tags,
+    ...snippet.tags.all,
     snippet.language && snippet.language.long || '',
     (snippet.type || '.').split('.')[0],
-    snippet.attributes.codeBlocks && snippet.attributes.codeBlocks.src || '',
-    snippet.attributes.codeBlocks && snippet.attributes.codeBlocks.css || '',
-    snippet.attributes.codeBlocks && snippet.attributes.codeBlocks.html || '',
-    snippet.attributes.codeBlocks && snippet.attributes.codeBlocks.js || '',
-    snippet.attributes.codeBlocks && snippet.attributes.codeBlocks.style || '',
-    snippet.attributes.text || '',
-    snippet.attributes.excerpt || '',
+    snippet.code && snippet.code.src || '',
+    snippet.code && snippet.code.css || '',
+    snippet.code && snippet.code.html || '',
+    snippet.code && snippet.code.js || '',
+    snippet.code && snippet.code.style || '',
+    snippet.text.full || '',
+    snippet.text.short || '',
   ].join(' ').toLowerCase();
 
   // Add points from keywords: If the snippet has too many keywords, there is a
@@ -46,9 +46,9 @@ const determineSnippetRanking = snippet => {
   score = Math.min(keywordScoreValues.reduce((acc, v) => acc + v, 0), keywordScoreLimit);
 
   // Calculate freshness, longevity and update values
-  const firstSeen = (nowMs - (+snippet.meta.firstSeen * 1000)) / oneDayMs;
-  const lastUpdated = (nowMs - (+snippet.meta.lastUpdated * 1000)) / oneDayMs;
-  const updateCount = snippet.meta.updateCount;
+  const firstSeen = (nowMs - (+snippet.firstSeen)) / oneDayMs;
+  const lastUpdated = (nowMs - (+snippet.lastUpdated)) / oneDayMs;
+  const updateCount = snippet.updateCount;
 
   // Add points for freshness: Should produce a curve that falls sharply around
   // the 30 day mark.

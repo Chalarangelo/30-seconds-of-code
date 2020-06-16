@@ -1,5 +1,10 @@
 import { red } from 'kleur';
 import sass from 'node-sass';
+import tokenizeSnippet from 'engines/searchIndexingEngine';
+import { uniqueElements } from 'utils';
+import { determineExpertiseFromTags, stripExpertiseFromTags } from 'build/transformers';
+import { parseMarkdown } from 'build/parsers';
+import resolvers from 'build/resolvers';
 import {
   getFilesInDir,
   getData,
@@ -8,6 +13,7 @@ import {
   getId,
   getTags
 } from './standardParser';
+
 
 /**
  * Gets the code blocks for a snippet.
@@ -55,29 +61,52 @@ const getCodeBlocks = (str, config) => {
  * Synchronously read all snippets and sort them as necessary.
  * The sorting is case-insensitive.
  * @param snippetsPath The path of the snippets directory.
+ * @param config The project's configuration file.
  */
 const readSnippets = async(snippetsPath, config) => {
   const snippetFilenames = getFilesInDir(snippetsPath, false);
+  const sourceDir = `${config.dirName}/${config.snippetPath}`;
+  const resolver = config.resolver ? config.resolver : 'stdResolver';
 
   let snippets = {};
   try {
     for (let snippet of snippetFilenames) {
       let data = getData(snippetsPath, snippet);
+      const tags = getTags(data.attributes.tags);
+      const text = getTextualContent(data.body);
+      const shortText = text.slice(0, text.indexOf('\n\n'));
+      const html = parseMarkdown(data.body);
+
       snippets[snippet] = {
-        id: getId(snippet),
+        id: getId(snippet, sourceDir),
         title: data.attributes.title,
         type: 'snippet',
-        attributes: {
-          fileName: snippet,
-          text: getTextualContent(data.body),
-          codeBlocks: getCodeBlocks(data.body, config),
-          tags: getTags(data.attributes.tags),
+        tags: {
+          all: tags,
+          primary: tags[0],
         },
-        meta: await getGitMetadata(snippet, snippetsPath),
+        code: getCodeBlocks(data.body, config),
+        expertise: determineExpertiseFromTags(tags),
+        text: {
+          full: text,
+          short: shortText,
+        },
+        searchTokens: uniqueElements([
+          data.attributes.title,
+          config.language.short,
+          config.language.long,
+          ...stripExpertiseFromTags(tags),
+          ...tokenizeSnippet(shortText),
+        ].map(v => v.toLowerCase())).join(' '),
+        html: {
+          full: html,
+          ...resolvers[resolver](html),
+        },
+        ...await getGitMetadata(snippet, snippetsPath),
       };
-      snippets[snippet].attributes.codeBlocks.scopedCss = sass
+      snippets[snippet].code.scopedCss = sass
         .renderSync({
-          data: `[data-scope="${snippets[snippet].id}"] { ${snippets[snippet].attributes.codeBlocks.css} }`,
+          data: `[data-scope="${snippet.slice(0, -3)}"] { ${snippets[snippet].code.css} }`,
         })
         .css.toString();
     }

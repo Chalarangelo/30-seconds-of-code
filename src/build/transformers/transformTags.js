@@ -1,7 +1,7 @@
 import EXPERTISE_LEVELS from 'config/expertise';
 import { capitalize } from 'utils';
 
-const lowerCaseExpertiseLevels = EXPERTISE_LEVELS.map(v => v.toLowerCase());
+const lowerCaseExpertiseLevels = EXPERTISE_LEVELS.filter(v => v !== 'Blog').map(v => v.toLowerCase());
 
 const specialTagsDictionary = {
   'css': 'CSS',

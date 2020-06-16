@@ -240,38 +240,34 @@ export const rawSnippet = {
   id: 'all',
   title: 'all',
   type: 'snippet',
-  attributes: {
-    fileName: 'all.md',
-    text:
-    'Returns `true` if the provided predicate function returns `true` for all elements in a collection, `false` otherwise.\n\nUse `Array.prototype.every()` to test if all elements in the collection return `true` based on `fn`.\nOmit the second argument, `fn`, to use `Boolean` as a default.\n\n',
-    codeBlocks: {
-      es6: 'const all = (arr, fn = Boolean) => arr.every(fn);',
-      es5:
-       'var all = function all(arr) {\n  var fn = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : Boolean;\n  return arr.every(fn);\n};',
-      example:
-       'all([4, 2, 3], x => x > 1); // true\nall([1, 2, 3]); // true',
-    },
-    tags: [ 'array', 'function', 'beginner' ],
+  tags: {
+    all: [ 'array', 'function', 'beginner' ],
+    primary: 'array',
   },
-  meta: {
-    hash: 'ba8e5f17500d1e5428f4ca7fcc8095934a7ad3aa496b35465e8f7799f1715aaa',
-    firstSeen: '1518601575',
-    lastUpdated: '1565681352',
-    updateCount: 26,
-    authorCount: 4,
+  code: {
+    es6: 'const all = (arr, fn = Boolean) => arr.every(fn);',
+    es5:
+     'var all = function all(arr) {\n  var fn = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : Boolean;\n  return arr.every(fn);\n};',
+    example:
+     'all([4, 2, 3], x => x > 1); // true\nall([1, 2, 3]); // true',
   },
+  text: {
+    full: 'Returns `true` if the provided predicate function returns `true` for all elements in a collection, `false` otherwise.\n\nUse `Array.prototype.every()` to test if all elements in the collection return `true` based on `fn`.\nOmit the second argument, `fn`, to use `Boolean` as a default.\n\n',
+    short: 'Returns `true` if the provided predicate function returns `true` for all elements in a collection, `false` otherwise.',
+  },
+  hash: 'ba8e5f17500d1e5428f4ca7fcc8095934a7ad3aa496b35465e8f7799f1715aaa',
+  firstSeen: new Date('2020-05-04T09:20:46.000Z'),
+  lastUpdated: new Date('2020-05-04T09:20:46.000Z'),
+  updateCount: 26,
+  authorCount: 4,
   blog: false,
   language: {
     short: 'js',
     long: 'JavaScript',
+    otherLanguages: undefined,
   },
   icon: 'js',
-  otherLanguages: undefined,
-  sourceDir: '30code/snippets',
   slugPrefix: 'js/s',
-  repoUrlPrefix:
- 'https://github.com/30-seconds/30-seconds-of-code/blob/master/snippets',
-  reducer: 'es6Reducer',
   resolver: 'stdResolver',
   biasPenaltyMultiplier: 1.05,
   tagScores: [],
@@ -283,34 +279,34 @@ export const rawBlogSnippet = {
   id: '10-vs-code-extensions-for-js-developers',
   title: '10 must-have VS Code extensions for JavaScript developers',
   type: 'blog.list',
-  attributes: {
-    fileName: '10-vs-code-extensions-for-js-developers.md',
-    cover: 'blog_images/10-vs-code-extensions-for-js-developers.jpg',
-    excerpt:
-    'VS Code is steadily gaining popularity among developers. Here are 10 essential extensions for JavaScript developers that aim to increase your productivity.',
-    authors: [ 'chalarangelo' ],
-    text:
-    'Developers will most likely argue for the rest of eternity about the most productive code editor and the best extensions. Here are my personal extension preferences for VS Code as a JavaScript developer:\n\n1. ESLint\n[ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) turns the popular JavaScrpt linter into an extension of VS Code. It automatically reads your linting configuration, identifies problems and even fixes them for you, if you want.\n\n2.  GitLens\n[GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) is a very powerful collaboration tool for VS Code. It provides many useful tools for git such as blame, code authorship, activity heatmaps, recent changes, file history and even commit search.\n \n3. Debugger for Chrome\n[Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) allows you to debug your JavaScript code in Chrome or Chromium. Breakpoints, call stack inspection and stepping inside a function are only some of its features.\n\n4. Bracket Pair Colorizer 2\n[Bracket Pair Colorizer 2](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2) makes reading code faster as it makes matching brackets the same color. This extension for VS Code improves upon its predecessor by providing improved performance.\n\n5. Bookmarks\n[Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks) is one of those extensions that will significantly reduce your time jumping between different files, as it allows you to save important positions and navigate back to them easily and quickly.\n\n6. TODO Highlight\n[TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight) simplifies tracking leftover tasks by allowing you to list all of your TODO annotations, as well as adding a handy background highlight to them to make them pop out immediately. \n\n7. Live Server\n[Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) gives you an easy way to serve web pages from VS Code, making previewing and debugging a lot easier. One of the core features is the live reload support that many developers are used to.\n\n8. REST Client\n[REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) allows you to send HTTP requests and view the responses directly in VS Code. This extension supports a wide range of formats and authorization and should work with most setups.\n\n9. One Dark Pro\n[One Dark Pro](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme) is one of the most popular VS Code themes and with very good reason. It provides a clean theme with a nice palette that has great contrast and is very comfortable to use on a daily basis.\n \n10. Fira Code\n[Fira Code](https://github.com/tonsky/FiraCode) is not a traditional VS Code extension and might take a couple more steps to set up, but it\'s a superb programming font with ligatures that will help you scan code faster once you get used to it.\n\n**Image credit:** [Fotis Fotopoulos](https://unsplash.com/@ffstop?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)\n',
-    tags: [ 'devtools', 'vscode' ] },
-  meta: {
-    hash: '2dd00656f3a19b08dd10877431101751009c00b0658dc5d3acab61e11fea21e3',
-    firstSeen: '1577090516',
-    lastUpdated: '1579272458',
-    updateCount: 6,
-    authorCount: 2,
+  tags: {
+    all: [ 'devtools', 'vscode' ],
+    primary: 'devtools',
   },
+  text: {
+    full: 'Developers will most likely argue for the rest of eternity about the most productive code editor and the best extensions. Here are my personal extension preferences for VS Code as a JavaScript developer:\n\n1. ESLint\n[ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) turns the popular JavaScrpt linter into an extension of VS Code. It automatically reads your linting configuration, identifies problems and even fixes them for you, if you want.\n\n2.  GitLens\n[GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) is a very powerful collaboration tool for VS Code. It provides many useful tools for git such as blame, code authorship, activity heatmaps, recent changes, file history and even commit search.\n \n3. Debugger for Chrome\n[Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) allows you to debug your JavaScript code in Chrome or Chromium. Breakpoints, call stack inspection and stepping inside a function are only some of its features.\n\n4. Bracket Pair Colorizer 2\n[Bracket Pair Colorizer 2](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2) makes reading code faster as it makes matching brackets the same color. This extension for VS Code improves upon its predecessor by providing improved performance.\n\n5. Bookmarks\n[Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks) is one of those extensions that will significantly reduce your time jumping between different files, as it allows you to save important positions and navigate back to them easily and quickly.\n\n6. TODO Highlight\n[TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight) simplifies tracking leftover tasks by allowing you to list all of your TODO annotations, as well as adding a handy background highlight to them to make them pop out immediately. \n\n7. Live Server\n[Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) gives you an easy way to serve web pages from VS Code, making previewing and debugging a lot easier. One of the core features is the live reload support that many developers are used to.\n\n8. REST Client\n[REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) allows you to send HTTP requests and view the responses directly in VS Code. This extension supports a wide range of formats and authorization and should work with most setups.\n\n9. One Dark Pro\n[One Dark Pro](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme) is one of the most popular VS Code themes and with very good reason. It provides a clean theme with a nice palette that has great contrast and is very comfortable to use on a daily basis.\n \n10. Fira Code\n[Fira Code](https://github.com/tonsky/FiraCode) is not a traditional VS Code extension and might take a couple more steps to set up, but it\'s a superb programming font with ligatures that will help you scan code faster once you get used to it.\n\n**Image credit:** [Fotis Fotopoulos](https://unsplash.com/@ffstop?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)\n',
+    short: 'VS Code is steadily gaining popularity among developers. Here are 10 essential extensions for JavaScript developers that aim to increase your productivity.',
+  },
+  cover: 'blog_images/10-vs-code-extensions-for-js-developers.jpg',
+  authors: [
+    {
+      name: 'Angelos Chalaris',
+      profile: 'https://twitter.com/chalarangelo',
+    },
+  ],
+  hash: '2dd00656f3a19b08dd10877431101751009c00b0658dc5d3acab61e11fea21e3',
+  firstSeen: new Date('2020-03-27T15:37:16.000Z'),
+  lastUpdated: new Date('2020-03-27T15:37:16.000Z'),
+  updateCount: 6,
+  authorCount: 2,
   blog: true,
   language: {
     short: '',
     long: '',
+    otherLanguages: undefined,
   },
   icon: 'blog',
-  otherLanguages: undefined,
-  sourceDir: '30blog/blog_posts',
   slugPrefix: 'blog/s',
-  repoUrlPrefix:
- 'https://github.com/30-seconds/30-seconds-blog/blob/master/blog_posts',
-  reducer: 'blogReducer',
   resolver: 'blogResolver',
   biasPenaltyMultiplier: 1,
   tagScores: [],

@@ -17,7 +17,7 @@ describe('recommendationEngine', () => {
 
   describe('with a normal snippet', () => {
     beforeEach(() => {
-      recommendedSnippets = recommendationEngine(snippetNodes, { node: fullSnippet });
+      recommendedSnippets = recommendationEngine(snippetNodes.map(n => n.node), fullSnippet);
     });
 
     it('should return an array of appropriate length', () => {
@@ -28,7 +28,7 @@ describe('recommendationEngine', () => {
 
   describe('with a blog snippet', () => {
     beforeEach(() => {
-      recommendedSnippets = recommendationEngine(snippetNodes, { node: fullBlogSnippet });
+      recommendedSnippets = recommendationEngine(snippetNodes.map(n => n.node), fullBlogSnippet);
     });
 
     it('should return an array of appropriate length', () => {
