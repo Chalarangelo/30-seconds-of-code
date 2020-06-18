@@ -5,12 +5,12 @@ tags: node,json,intermediate
 
 Writes a JSON object to a file.
 
-Use `fs.writeFile()`, template literals and `JSON.stringify()` to write a `json` object to a `.json` file.
+Use `fs.writeFileSync()`, template literals and `JSON.stringify()` to write a `json` object to a `.json` file.
 
 ```js
 const fs = require('fs');
 const JSONToFile = (obj, filename) =>
-  fs.writeFile(`${filename}.json`, JSON.stringify(obj, null, 2));
+  fs.writeFileSync(`${filename}.json`, JSON.stringify(obj, null, 2));
 ```
 
 ```js
