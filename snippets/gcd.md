@@ -9,10 +9,10 @@ Use `functools.reduce()` and `math.gcd()` over the given list.
 
 ```py
 from functools import reduce
-from math import gcd
+from math import gcd as gcd_from_math
 
 def gcd(numbers):
-  return reduce(gcd, numbers)
+  return reduce(gcd_from_math, numbers)
 ```
 
 ```py
