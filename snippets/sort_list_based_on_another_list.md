@@ -8,8 +8,8 @@ Sorts one list based on given indices in another list and returns the sorted lis
 Use list comprehension to get values after using `zip` and `sorted` function based on given `key` with lambda function that returns the index.
 
 ```py
-def sort_list_based_on_another_list(to_sort, index_list):
-    return [val for i, val in sorted(zip(index_list, to_sort), key = lambda x: x[0])]
+def sort_list_based_on_another_list(list_to_sort, index_list):
+  return [val for i, val in sorted(zip(index_list, list_to_sort), key = lambda x: x[0])]
 ```
 
 ```py
