@@ -61,10 +61,6 @@
         line-height: 1.5rem;
         text-align: right;
       }
-
-      p:not(:first-child) {
-        line-height: 2;
-      }
     }
 
     .blog-list-item {
@@ -76,6 +72,10 @@
 
       > p:first-child:not(:last-child) {
         font-weight: 600;
+      }
+
+      > p:not(:first-child), p:first-child:last-child {
+        line-height: 2;
       }
     }
   }
