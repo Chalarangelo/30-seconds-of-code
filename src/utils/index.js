@@ -24,6 +24,10 @@ import {
   throttle
 } from './function';
 
+import {
+  hasKeys
+} from './object';
+
 export {
   capitalize,
   toKebabCase,
@@ -38,6 +42,7 @@ export {
   getBaseURL,
   getRootURL,
   throttle,
+  hasKeys,
   uniqueElements,
   insertAt,
   chunk
