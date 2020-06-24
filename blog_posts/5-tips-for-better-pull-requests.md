@@ -1,5 +1,5 @@
 ---
-title: 5-tips-for-better-pull-requests
+title: 5 tips for better Pull Requests
 type: list
 tags: git,github,programming,webdev
 authors: chalarangelo
