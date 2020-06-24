@@ -101,4 +101,11 @@
     padding: 1rem 1rem 1rem 1.5rem;
     border-radius: 0 0 0.25rem 0.25rem;
   }
+
+  .card-description {
+    li:not(.blog-list-item) > p {
+      line-height: 2;
+      margin: 0;
+    }
+  }
 }
