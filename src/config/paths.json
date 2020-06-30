@@ -1,7 +1,8 @@
 {
   "assetPath": ".assets",
   "rawAssetPath": "assets",
-  "contentPath": "./content",
+  "contentPath": ".content",
+  "rawContentPath": "content",
   "queryPath": "./src/queries",
   "templatesPath": "./src/components/templates",
   "templates": [
