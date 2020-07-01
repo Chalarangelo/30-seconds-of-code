@@ -18,10 +18,8 @@ node_js:
 before_install:
 - chmod +x ./src/jobs/prepare_cache_key.sh
 - chmod +x ./src/jobs/prepare_env.sh
-- chmod +x ./src/jobs/fetch_content_sources.sh
 - ./src/jobs/prepare_cache_key.sh
 - ./src/jobs/prepare_env.sh
-- ./src/jobs/fetch_content_sources.sh
 install:
   - npm ci
 script:
