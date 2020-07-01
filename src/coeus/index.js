@@ -1,8 +1,10 @@
 import logger, {format} from './logOutput';
 import prepareAssets from './prepareAssets';
 import extractSnippets from './extractSnippets';
+import updateContent from './updateContent';
 
 const helpFlag = /^-{0,2}h(elp)?$/gi;
+const updateContentFlag = /^-{0,2}u(pdate)?$/gi;
 const actions = {
   'help': {
     description: 'display this text and exit',
@@ -15,6 +17,10 @@ const actions = {
   'extract': {
     description: 'extract snippets from the provided config paths',
     process: extractSnippets,
+  },
+  'update': {
+    description: 'fetch content sources from the respective repos',
+    process: () => {},
   },
 };
 
@@ -31,6 +37,7 @@ const coeus = async config => {
     logger.logOptionList(actions);
     return;
   }
+  if(config.args.some(arg => updateContentFlag.test(arg))) await updateContent();
 
   await Promise.all(Object.keys(actions).map(flagName => {
     const flag = new RegExp(`^-{0,2}${flagName.slice(0, 1)}(${flagName.slice(1)})?$`, 'gi');
