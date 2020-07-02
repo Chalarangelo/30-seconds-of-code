@@ -3,6 +3,7 @@ import prepareAssets from './prepareAssets';
 import extractSnippets from './extractSnippets';
 import updateContent from './updateContent';
 import makeIcons from './makeIcons';
+import makeLangBackgrounds from './makeLangBackgrounds';
 
 const helpFlag = /^-{0,2}h(elp)?$/gi;
 const actions = {
@@ -29,6 +30,11 @@ const actions = {
   'icons': {
     description: 'generate an icon font from the provided SVGs',
     process: makeIcons,
+    step: 0,
+  },
+  'backgrounds': {
+    description: 'generate SCSS styles from the provided icons',
+    process: makeLangBackgrounds,
     step: 0,
   },
 };
