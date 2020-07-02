@@ -2,6 +2,7 @@ import logger, {format} from './logOutput';
 import prepareAssets from './prepareAssets';
 import extractSnippets from './extractSnippets';
 import updateContent from './updateContent';
+import makeIcons from './makeIcons';
 
 const helpFlag = /^-{0,2}h(elp)?$/gi;
 const actions = {
@@ -23,6 +24,11 @@ const actions = {
   'update': {
     description: 'fetch content sources from the respective repos',
     process: updateContent,
+    step: 0,
+  },
+  'icons': {
+    description: 'generate an icon font from the provided SVGs',
+    process: makeIcons,
     step: 0,
   },
 };
