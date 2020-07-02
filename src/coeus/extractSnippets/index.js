@@ -9,13 +9,19 @@ import postProcess from './postProcess';
 const extractSnippetData = async(inPath, outPath, boundLog) => {
   boundLog(`Loading individual configuration files in ${path.resolve(inPath, 'configs')}`, 'info');
   let configs = [];
-  glob.sync(`${inPath}/configs/*.json`)
-    .forEach( file => {
-      configs.push(
-        require( path.resolve( file ) )
-      );
-    });
-  boundLog(`Loaded ${configs.length} configuration files`, 'success');
+  if(global._coeus_instance.contentConfigs) {
+    configs = global._coeus_instance.contentConfigs;
+    boundLog(`Using already loaded configuration files`, 'success');
+  } else {
+    glob.sync(`${inPath}/configs/*.json`)
+      .forEach( file => {
+        configs.push(
+          require( path.resolve( file ) )
+        );
+      });
+    global._coeus_instance.contentConfigs = configs;
+    boundLog(`Loaded ${configs.length} configuration files`, 'success');
+  }
 
   const langData = configs
     .filter(cfg =>
