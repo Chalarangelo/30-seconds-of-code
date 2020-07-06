@@ -108,10 +108,17 @@ function logger() {
     const _t = '    ';
     const actionsInformation = Object.keys(actions)
       .reduce((acc, action) => {
-        const short = `${format(`-${action.slice(0, 1)}`, 'magenta', 'bold')}`;
-        const long = `${format(`--${action}`, 'magenta', 'bold')}`;
-        acc.push(`${_t}${short}, ${long}`);
-        acc.push(`${_t}${_t}${actions[action].description}\n`);
+        const actionData = actions[action];
+        let short, long;
+        if(actionData.key) {
+          short = `${format(`-${actionData.key.short}`, 'magenta', 'bold')}`;
+          long = `${format(`--${actionData.key.long}`, 'magenta', 'bold')}`;
+        } else {
+          short = `${format(`-${action.slice(0, 1)}`, 'magenta', 'bold')}`;
+          long = `${format(`--${action}`, 'magenta', 'bold')}`;
+        }
+        acc.push(`${_t}${short}, ${long}${ actionData.param ? `=[${format(actionData.param, 'green', 'bold')}]` : ''}`);
+        acc.push(`${_t}${_t}${actionData.description.replace(/\n/gm, `\n${_t}${_t}`)}\n`);
         return acc;
       }, []);
 
