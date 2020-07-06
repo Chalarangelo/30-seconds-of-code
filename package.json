@@ -74,9 +74,9 @@
   "scripts": {
     "make-icons": "icon-font-generator src/icons/*.svg -o assets --html=false --json=false --types='woff2' --csspath src/styles/_icons.scss --cssfontsurl='../../assets/' --selector='.icon'",
     "coeus": "NODE_PATH=src npx --node-arg '-r esm' ./src/jobs/coeus.js",
-    "coeus-prepare": "NODE_PATH=src npx --node-arg '-r esm' ./src/jobs/coeus.js -- -u -a -e -i -b",
-    "prebuild": "./src/jobs/prepare_env.sh PRODUCTION; ./src/jobs/prepare_cache_key.sh; npm run coeus-prepare;",
-    "predevelop": "./src/jobs/prepare_env.sh DEVELOPMENT;./src/jobs/prepare_cache_key.sh",
+    "prebuild": "NODE_PATH=src npx --node-arg '-r esm' ./src/jobs/coeus.js -u -a -e -i -b -n=PRODUCTION -c",
+    "predevelop": "NODE_PATH=src npx --node-arg '-r esm' ./src/jobs/coeus.js -n=DEVELOPMENT -c",
+    "pretest": "NODE_PATH=src npx --node-arg '-r esm' ./src/jobs/coeus.js -n=DEVELOPMENT -c",
     "build": "NODE_PATH=src npx --node-arg '-r esm' gatsby build",
     "develop": "NODE_PATH=src npx --node-arg '-r esm' gatsby develop",
     "debug": "NODE_PATH=src npx --node-arg '-r esm --nolazy --inspect-brk' node_modules/.bin/gatsby develop",
