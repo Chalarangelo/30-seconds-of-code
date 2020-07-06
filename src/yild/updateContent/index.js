@@ -1,11 +1,12 @@
 import childProcess from 'child_process';
-import logger from '../logOutput';
+import { initAction } from '../core';
 
+/**
+ * Update content sources from their respective GitHub repositories.
+ * Returns a promise that resolves as soon as the spawned git command exits.
+ */
 const updateContent = () => {
-  const boundLog = logger.bindProcessLogger('updateContent');
-  if(typeof global._yild_instance === 'undefined' || typeof global._yild_instance.config === 'undefined')
-    return logger.log('Fatal error: yild instance or config not found. Exiting...', 'error');
-
+  const [boundLog] = initAction('updateContent');
   boundLog('Updating content sources started...', 'info');
 
   return new Promise((resolve, reject) => {

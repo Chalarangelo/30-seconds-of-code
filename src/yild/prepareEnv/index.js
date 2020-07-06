@@ -1,13 +1,32 @@
 import fs from 'fs-extra';
 import path from 'path';
-import { hasKeys } from 'utils';
-import logger, { format } from '../logOutput';
+import { initAction } from '../core';
+import { format } from '../logOutput';
 
 const VALID_PARAM_VALUES = ['PRODUCTION', 'DEVELOPMENT'];
 
-const generateEnvironmentConfig = async(envMode, outPath, boundLog) => {
-  boundLog(`Writing environment configuration file to ${path.resolve(outPath, 'env.js')}`, 'info');
+/**
+ * Generates the environment configuration file.
+ * @param {string} param - 'DEVELOPMENT' or 'PRODUCTION', used for environment configuration.
+ */
+const prepareEnv = async param => {
+  const [boundLog, , outPath] = initAction('prepareEnv', [['paths', 'buildPath']]);
+  boundLog('Generating environment configuration file...', 'info');
 
+  let envMode = VALID_PARAM_VALUES.includes(param) ? param : VALID_PARAM_VALUES[0];
+  if(!VALID_PARAM_VALUES.includes(param)) {
+    boundLog(
+      `Parameter value ${format(param, 'bold')} is invalid, defaulting to ${format(envMode, 'bold')}`,
+      'warning'
+    );
+  } else {
+    boundLog(
+      `Using parameter value ${format(param, 'bold')}`,
+      'info'
+    );
+  }
+
+  boundLog(`Writing environment configuration file to ${path.resolve(outPath, 'env.js')}`, 'info');
   const fileData = [
     `const env = '${envMode}';`,
     'export default env;',
@@ -15,26 +34,9 @@ const generateEnvironmentConfig = async(envMode, outPath, boundLog) => {
 
   fs.ensureDirSync(outPath);
   await fs.writeFile(path.resolve(outPath, 'env.js'), fileData);
-
   boundLog('Environment configuration file generated', 'success');
+
   return;
-};
-
-const prepareEnv = async param => {
-  const boundLog = logger.bindProcessLogger('prepareEnv');
-  if(typeof global._yild_instance === 'undefined' || typeof global._yild_instance.config === 'undefined')
-    return logger.log('Fatal error: yild instance or config not found. Exiting...', 'error');
-
-  const config = global._yild_instance.config;
-  boundLog('Generating environment configuration file...', 'info');
-
-  if (VALID_PARAM_VALUES.includes(param) && hasKeys(config.paths, ['buildPath']))
-    await generateEnvironmentConfig(param, config.paths.buildPath, boundLog);
-  else {
-    boundLog(`Parameter value ${format(param, 'bold')} is invalid, defaulting to ${format(VALID_PARAM_VALUES[0], 'bold')}`, 'warning');
-    await generateEnvironmentConfig(VALID_PARAM_VALUES[0], config.paths.buildPath, boundLog);
-  }
-
 };
 
 export default prepareEnv;
