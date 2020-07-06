@@ -3,6 +3,7 @@
   "rawAssetPath": "assets",
   "contentPath": ".content",
   "rawContentPath": "content",
+  "buildPath": ".build",
   "iconBgFilePath": "src/styles/_icon_colors.scss",
   "queryPath": "./src/queries",
   "templatesPath": "./src/components/templates",

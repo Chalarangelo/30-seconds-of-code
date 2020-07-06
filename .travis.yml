@@ -17,9 +17,7 @@ node_js:
 - lts/*
 before_install:
 - chmod +x ./src/jobs/prepare_cache_key.sh
-- chmod +x ./src/jobs/prepare_env.sh
 - ./src/jobs/prepare_cache_key.sh
-- ./src/jobs/prepare_env.sh
 install:
   - npm ci
 script:
