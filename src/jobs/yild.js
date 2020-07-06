@@ -1,12 +1,12 @@
 /* eslint-disable no-new */
 const paths = require('config/paths');
-import coeus from 'coeus';
+import yild from 'yild';
 const processArgs = process.argv.slice(2);
 
 /**
- * Run coeus with the supplied combined configuration.
+ * Run yild with the supplied combined configuration.
  */
-coeus({
+yild({
   args: processArgs,
   paths,
 });

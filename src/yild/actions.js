@@ -1,4 +1,4 @@
-import logger, {format} from './logOutput';
+import {format} from './logOutput';
 import prepareAssets from './prepareAssets';
 import extractSnippets from './extractSnippets';
 import updateContent from './updateContent';
@@ -7,7 +7,7 @@ import makeLangBackgrounds from './makeLangBackgrounds';
 import prepareEnv from './prepareEnv';
 import prepareCacheKey from './prepareCacheKey';
 
-const helpFlag = /^-{0,2}h(elp)?$/gi;
+export const helpFlag = /^-{0,2}h(elp)?$/gi;
 const actions = {
   'help': {
     description: 'display this text and exit',
@@ -61,51 +61,4 @@ const actions = {
   },
 };
 
-const coeus = async config => {
-  global._coeus_instance = {
-    config,
-  };
-
-  logger.log(`${format('coeus', 'bold')} is starting up...`, 'info');
-  logger.logProcessInfo();
-  logger.breakLine();
-
-  if(config.args.some(arg => helpFlag.test(arg))) {
-    logger.logOptionList(actions);
-    return;
-  }
-
-  await Promise.all(
-    Object.keys(actions)
-      .filter(flagName => actions[flagName].step === 0)
-      .map(flagName => {
-        const matchingArg = config.args.find(arg => actions[flagName].matcher.test(arg));
-        if(matchingArg) {
-          const param = actions[flagName].param && matchingArg.indexOf('=') !== -1
-            ? matchingArg.slice(matchingArg.indexOf('=') + 1)
-            : false;
-          return actions[flagName].process(param);
-        }
-      })
-  );
-  logger.breakLine();
-
-  await Promise.all(
-    Object.keys(actions)
-      .filter(flagName => actions[flagName].step === 1)
-      .map(flagName => {
-        const matchingArg = config.args.find(arg => actions[flagName].matcher.test(arg));
-        if(matchingArg) {
-          const param = actions[flagName].param && matchingArg.indexOf('=') !== -1
-            ? matchingArg.slice(matchingArg.indexOf('=') + 1)
-            : false;
-          return actions[flagName].process(param);
-        }
-      })
-  );
-  logger.breakLine();
-
-  logger.log(`${format('coeus', 'bold')} is terminating...`, 'info');
-};
-
-export default coeus;
+export default actions;

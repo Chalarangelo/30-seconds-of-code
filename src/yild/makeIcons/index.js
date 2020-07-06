@@ -3,8 +3,8 @@ import logger from '../logOutput';
 
 const makeIcons = () => {
   const boundLog = logger.bindProcessLogger('makeIcons');
-  if(typeof global._coeus_instance === 'undefined' || typeof global._coeus_instance.config === 'undefined')
-    return logger.log('Fatal error: coeus instance or config not found. Exiting...', 'error');
+  if(typeof global._yild_instance === 'undefined' || typeof global._yild_instance.config === 'undefined')
+    return logger.log('Fatal error: yild instance or config not found. Exiting...', 'error');
 
   boundLog('Icon font generation started...', 'info');
 

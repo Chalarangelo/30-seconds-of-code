@@ -15,10 +15,10 @@ const prepareStaticAssets = async(inPath, outPath, boundLog) => {
 
 const prepareAssets = async() => {
   const boundLog = logger.bindProcessLogger('prepareAssets');
-  if(typeof global._coeus_instance === 'undefined' || typeof global._coeus_instance.config === 'undefined')
-    return logger.log('Fatal error: coeus instance or config not found. Exiting...', 'error');
+  if(typeof global._yild_instance === 'undefined' || typeof global._yild_instance.config === 'undefined')
+    return logger.log('Fatal error: yild instance or config not found. Exiting...', 'error');
 
-  const config = global._coeus_instance.config;
+  const config = global._yild_instance.config;
   boundLog('Processing assets from config...', 'info');
 
   if (hasKeys(config.paths, ['assetPath', 'rawAssetPath']))
