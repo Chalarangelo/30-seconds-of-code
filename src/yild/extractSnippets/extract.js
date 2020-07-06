@@ -14,7 +14,7 @@ const extract = (configs, langData, parentLog) => configs.map(cfg => {
   const {
     rawContentPath: contentDir,
     contentPath: contentOutDir,
-  } = global._coeus_instance.config.paths;
+  } = global._yild_instance.config.paths;
   const boundLog = parentLog.rebind('extract');
 
   const snippetsPath = `${contentDir}/sources/${cfg.dirName}/${cfg.snippetPath}`;

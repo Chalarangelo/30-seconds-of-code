@@ -22,10 +22,10 @@ const generateEnvironmentConfig = async(envMode, outPath, boundLog) => {
 
 const prepareEnv = async param => {
   const boundLog = logger.bindProcessLogger('prepareEnv');
-  if(typeof global._coeus_instance === 'undefined' || typeof global._coeus_instance.config === 'undefined')
-    return logger.log('Fatal error: coeus instance or config not found. Exiting...', 'error');
+  if(typeof global._yild_instance === 'undefined' || typeof global._yild_instance.config === 'undefined')
+    return logger.log('Fatal error: yild instance or config not found. Exiting...', 'error');
 
-  const config = global._coeus_instance.config;
+  const config = global._yild_instance.config;
   boundLog('Generating environment configuration file...', 'info');
 
   if (VALID_PARAM_VALUES.includes(param) && hasKeys(config.paths, ['buildPath']))

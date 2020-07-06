@@ -20,10 +20,10 @@ const generateEnvironmentConfig = async(outPath, boundLog) => {
 
 const prepareCacheKey = async() => {
   const boundLog = logger.bindProcessLogger('prepareCacheKey');
-  if(typeof global._coeus_instance === 'undefined' || typeof global._coeus_instance.config === 'undefined')
-    return logger.log('Fatal error: coeus instance or config not found. Exiting...', 'error');
+  if(typeof global._yild_instance === 'undefined' || typeof global._yild_instance.config === 'undefined')
+    return logger.log('Fatal error: yild instance or config not found. Exiting...', 'error');
 
-  const config = global._coeus_instance.config;
+  const config = global._yild_instance.config;
   boundLog('Generating cache key file...', 'info');
 
   if (hasKeys(config.paths, ['buildPath']))

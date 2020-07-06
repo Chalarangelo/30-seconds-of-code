@@ -1,7 +1,7 @@
 import kleur, { bold, blue, green, red, yellow } from 'kleur';
 import process from 'process';
 
-global._coeus_logOutput_instance = undefined;
+global._yild_logOutput_instance = undefined;
 
 /**
  * Format a string with the given kleur formatter.
@@ -17,8 +17,8 @@ export const format = (msg, ...format) =>
  */
 function logger() {
   // Return singleton if exists, instantiate otherwise.
-  if (global._coeus_logOutput_instance) return global._coeus_logOutput_instance;
-  global._coeus_logOutput_instance = this;
+  if (global._yild_logOutput_instance) return global._yild_logOutput_instance;
+  global._yild_logOutput_instance = this;
   this.outputStream = process.stdout;
 
   const prefixes = {
@@ -125,9 +125,9 @@ function logger() {
     const information = [
       `\n`,
       `${format('Name', 'bold')}`,
-      `    coeus - content extraction and update system\n`,
+      `    yild - content extraction and update system\n`,
       `${format('Synopsis', 'bold')}`,
-      `    npm run coeus -- [${format('options', 'green')}]\n`,
+      `    npm run yild -- [${format('options', 'green')}]\n`,
       `${format('Description', 'bold')}`,
       `    Handle asset preprocessing and content extraction for 30-seconds-web.\n`,
       ...actionsInformation,
@@ -135,10 +135,10 @@ function logger() {
     information.forEach(i => this.log(i));
   };
 
-  return global._coeus_logOutput_instance;
+  return global._yild_logOutput_instance;
 }
 
 // IIFE here to instantiate the logger
 (() => new logger())();
 
-export default global._coeus_logOutput_instance;
+export default global._yild_logOutput_instance;

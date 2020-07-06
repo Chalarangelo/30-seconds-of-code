@@ -7,8 +7,8 @@ import logger from '../logOutput';
 const generateBgStyles = async(inPath, outPath, boundLog) => {
   boundLog(`Loading individual configuration files in ${path.resolve(inPath, 'configs')}`, 'info');
   let configs = [];
-  if(global._coeus_instance.contentConfigs) {
-    configs = global._coeus_instance.contentConfigs;
+  if(global._yild_instance.contentConfigs) {
+    configs = global._yild_instance.contentConfigs;
     boundLog(`Using already loaded configuration files`, 'success');
   } else {
     glob.sync(`${inPath}/configs/*.json`)
@@ -17,7 +17,7 @@ const generateBgStyles = async(inPath, outPath, boundLog) => {
           require( path.resolve( file ) )
         );
       });
-    global._coeus_instance.contentConfigs = configs;
+    global._yild_instance.contentConfigs = configs;
     boundLog(`Loaded ${configs.length} configuration files`, 'success');
   }
 
@@ -41,10 +41,10 @@ const generateBgStyles = async(inPath, outPath, boundLog) => {
 
 const makeLanguageBgs = async() => {
   const boundLog = logger.bindProcessLogger('makeLanguageBgs');
-  if(typeof global._coeus_instance === 'undefined' || typeof global._coeus_instance.config === 'undefined')
-    return logger.log('Fatal error: coeus instance or config not found. Exiting...', 'error');
+  if(typeof global._yild_instance === 'undefined' || typeof global._yild_instance.config === 'undefined')
+    return logger.log('Fatal error: yild instance or config not found. Exiting...', 'error');
 
-  const config = global._coeus_instance.config;
+  const config = global._yild_instance.config;
   boundLog('Generating language background styles from config...', 'info');
 
   if (hasKeys(config.paths, ['rawContentPath', 'iconBgFilePath']))
