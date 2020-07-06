@@ -5,6 +5,7 @@ import updateContent from './updateContent';
 import makeIcons from './makeIcons';
 import makeLangBackgrounds from './makeLangBackgrounds';
 import prepareEnv from './prepareEnv';
+import prepareCacheKey from './prepareCacheKey';
 
 const helpFlag = /^-{0,2}h(elp)?$/gi;
 const actions = {
@@ -51,6 +52,12 @@ const actions = {
     matcher: /^-(n)|(-environment)=.*$/gi,
     key: { short: 'n', long: 'environment' },
     param: 'ENV',
+  },
+  'cache': {
+    description: `generate cache key file`,
+    process: prepareCacheKey,
+    step: 0,
+    matcher: /^-{0,2}c(ache)?$/gi,
   },
 };
 

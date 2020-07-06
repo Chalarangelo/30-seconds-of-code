@@ -15,9 +15,6 @@ cache:
     - ~/.cache
 node_js:
 - lts/*
-before_install:
-- chmod +x ./src/jobs/prepare_cache_key.sh
-- ./src/jobs/prepare_cache_key.sh
 install:
   - npm ci
 script:
