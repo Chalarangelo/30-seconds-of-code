@@ -1,14 +1,20 @@
-import {format} from './logOutput';
-import prepareAssets from './prepareAssets';
-import extractSnippets from './extractSnippets';
-import updateContent from './updateContent';
-import makeIcons from './makeIcons';
-import makeLangBackgrounds from './makeLangBackgrounds';
-import prepareEnv from './prepareEnv';
-import prepareCacheKey from './prepareCacheKey';
+import { format } from '../logOutput';
+import prepareAssets from '../prepareAssets';
+import extractSnippets from '../extractSnippets';
+import updateContent from '../updateContent';
+import makeIcons from '../makeIcons';
+import makeLangBackgrounds from '../makeLangBackgrounds';
+import prepareEnv from '../prepareEnv';
+import prepareCacheKey from '../prepareCacheKey';
 
+// Keep this in a variable to allow for help to run the way it should.
 export const helpFlag = /^-{0,2}h(elp)?$/gi;
+
+/**
+ * Actions object for yild.
+ */
 const actions = {
+  // Do not remove to show up in the "man" page of the tool.
   'help': {
     description: 'display this text and exit',
     process: () => {},

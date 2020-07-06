@@ -1,11 +1,15 @@
 import fs from 'fs-extra';
 import path from 'path';
-import { hasKeys } from 'utils';
-import logger, { format } from '../logOutput';
+import { initAction } from '../core';
 
-const generateEnvironmentConfig = async(outPath, boundLog) => {
+/**
+ * Generates the cache key file.
+ */
+const prepareCacheKey = async() => {
+  const [boundLog, _, outPath] = initAction('prepareCacheKey', [['paths', 'buildPath']]);
+  boundLog('Generating cache key file...', 'info');
+
   boundLog(`Writing cache key file to ${path.resolve(outPath, 'cacheKey.js')}`, 'info');
-
   const fileData = [
     `const cacheKey = '${+new Date()}';`,
     'export default cacheKey;',
@@ -13,21 +17,9 @@ const generateEnvironmentConfig = async(outPath, boundLog) => {
 
   fs.ensureDirSync(outPath);
   await fs.writeFile(path.resolve(outPath, 'cacheKey.js'), fileData);
-
   boundLog('Cache key file generated', 'success');
+
   return;
-};
-
-const prepareCacheKey = async() => {
-  const boundLog = logger.bindProcessLogger('prepareCacheKey');
-  if(typeof global._yild_instance === 'undefined' || typeof global._yild_instance.config === 'undefined')
-    return logger.log('Fatal error: yild instance or config not found. Exiting...', 'error');
-
-  const config = global._yild_instance.config;
-  boundLog('Generating cache key file...', 'info');
-
-  if (hasKeys(config.paths, ['buildPath']))
-    await generateEnvironmentConfig(config.paths.buildPath, boundLog);
 
 };
 

@@ -25,7 +25,9 @@ import {
 } from './function';
 
 import {
-  hasKeys
+  hasKeys,
+  hasKey,
+  get
 } from './object';
 
 export {
@@ -43,6 +45,8 @@ export {
   getRootURL,
   throttle,
   hasKeys,
+  hasKey,
+  get,
   uniqueElements,
   insertAt,
   chunk

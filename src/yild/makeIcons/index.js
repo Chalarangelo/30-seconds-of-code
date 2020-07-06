@@ -1,11 +1,8 @@
 import childProcess from 'child_process';
-import logger from '../logOutput';
+import { initAction } from '../core';
 
 const makeIcons = () => {
-  const boundLog = logger.bindProcessLogger('makeIcons');
-  if(typeof global._yild_instance === 'undefined' || typeof global._yild_instance.config === 'undefined')
-    return logger.log('Fatal error: yild instance or config not found. Exiting...', 'error');
-
+  const [boundLog] = initAction('makeIcons');
   boundLog('Icon font generation started...', 'info');
 
   return new Promise((resolve, reject) => {

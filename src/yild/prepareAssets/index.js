@@ -1,29 +1,22 @@
 import fs from 'fs-extra';
 import path from 'path';
-import { hasKeys } from 'utils';
-import logger from '../logOutput';
+import { initAction } from '../core';
 
-const prepareStaticAssets = async(inPath, outPath, boundLog) => {
-  boundLog(`Copying static assets from ${path.resolve(inPath)} to ${path.resolve(outPath)}`, 'info');
-
-  fs.ensureDirSync(outPath);
-  await fs.copy(inPath, outPath);
-
-  boundLog('Static assets have been copied', 'success');
-  return;
-};
-
+/**
+ * Prepares the assets directory.
+ */
 const prepareAssets = async() => {
-  const boundLog = logger.bindProcessLogger('prepareAssets');
-  if(typeof global._yild_instance === 'undefined' || typeof global._yild_instance.config === 'undefined')
-    return logger.log('Fatal error: yild instance or config not found. Exiting...', 'error');
-
-  const config = global._yild_instance.config;
+  const [boundLog, , inPath, outPath] = initAction('prepareAssets', [
+    ['paths', 'rawAssetPath'], ['paths', 'assetPath'],
+  ]);
   boundLog('Processing assets from config...', 'info');
 
-  if (hasKeys(config.paths, ['assetPath', 'rawAssetPath']))
-    await prepareStaticAssets(config.paths.rawAssetPath, config.paths.assetPath, boundLog);
+  boundLog(`Copying static assets from ${path.resolve(inPath)} to ${path.resolve(outPath)}`, 'info');
+  fs.ensureDirSync(outPath);
+  await fs.copy(inPath, outPath);
+  boundLog('Static assets have been copied', 'success');
 
+  return;
 };
 
 export default prepareAssets;
