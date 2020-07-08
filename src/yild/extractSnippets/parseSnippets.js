@@ -1,6 +1,5 @@
 import fs from 'fs-extra';
 import path from 'path';
-import { red } from 'kleur';
 import sass from 'node-sass';
 import frontmatter from 'front-matter';
 import { exec } from 'child_process';
@@ -11,20 +10,24 @@ import { parseMarkdown } from 'build/parsers';
 import resolvers from 'build/resolvers';
 // TODO: Remove usage and package after update to Node.js v12.x
 import matchAll from 'string.prototype.matchall';
+// TODO: Consider parsing this via a new parser or similar
+// The argument against is that it's a single case and might not extend to other repos in the future
+import authors from '../../../content/sources/30blog/blog_data/blog_authors';
 
 const mdCodeFence = '```';
 
 /**
  * Synchronously reads all files in a directory and returns the resulting array.
  * @param {string} directoryPath - The path of the directory to read.
+ * @param {function} boundLog - A bound logger.log function.
  */
-export const getFilesInDir = directoryPath => {
+export const getFilesInDir = (directoryPath, boundLog) => {
   try {
     return fs.readdirSync(directoryPath)
       .sort((a, b) => a.toLowerCase() < b.toLowerCase() ? -1 : 1);
   } catch (err) {
     /* istanbul ignore next */
-    console.log(`${red('[ERROR]')} Error while getting directory files: ${err}`);
+    boundLog(`Fatal errorwhile getting directory files: ${err}', 'error`);
     /* istanbul ignore next */
     process.exit(1);
   }
@@ -160,20 +163,23 @@ export const getId = (snippetFilename, sourceDir) => `${sourceDir}/${snippetFile
  * The sorting is case-insensitive.
  * @param {string} snippetsPath - The path of the snippets directory.
  * @param {object} config - The project's configuration file.
+ * @param {array} langData - An array of `(language, icon)` tuples.
+ * @param {function} boundLog - A bound logger.log function.
  */
-export const readSnippets = async(snippetsPath, config) => {
-  const snippetFilenames = getFilesInDir(snippetsPath, false);
+export const readSnippets = async(snippetsPath, config, langData, boundLog) => {
+  const snippetFilenames = getFilesInDir(snippetsPath, boundLog);
   const sourceDir = `${config.dirName}/${config.snippetPath}`;
   const resolver = config.resolver ? config.resolver : 'stdResolver';
 
-  // Properties used in getCodeBlocks config
   const isCssSnippet = config.dirName === '30css';
-  const hasOptionalLanguage = !isCssSnippet && config.optionalLanguage && config.optionalLanguage.short;
-  const languages = [
+  const isBlogSnippet = config.isBlog;
+  const hasOptionalLanguage = !isCssSnippet && !isBlogSnippet && config.optionalLanguage && config.optionalLanguage.short;
+  const languages = isBlogSnippet ? [] : [
     config.language.short,
     isCssSnippet ? config.secondLanguage.short : null,
     hasOptionalLanguage ? config.optionalLanguage.short : null,
   ];
+  const blogIcon = isBlogSnippet && config.theme ? config.theme.iconName : null;
 
   let snippets = {};
   try {
@@ -181,58 +187,74 @@ export const readSnippets = async(snippetsPath, config) => {
       let data = getData(snippetsPath, snippet);
       const tags = getTags(data.attributes.tags);
       const text = getTextualContent(data.body);
-      const shortText = text.slice(0, text.indexOf('\n\n'));
       const html = parseMarkdown(data.body);
+
+      let excerpt, shortSliceIndex, authorsData, langIcon, shortText;
+
+      if (isBlogSnippet) {
+        excerpt = data.attributes.excerpt;
+        shortSliceIndex = text.indexOf('\n\n') <= 180
+          ? text.indexOf('\n\n')
+          : text.indexOf(' ', 160);
+        shortText = excerpt && excerpt.trim().length !== 0
+          ? excerpt
+          : `${text.slice(0, shortSliceIndex)}...`;
+        authorsData = getTags(data.attributes.authors).map(a => authors[a]);
+        langIcon = langData.find(l => tags.includes(l.language));
+      } else
+        shortText = text.slice(0, text.indexOf('\n\n'));
 
       snippets[snippet] = {
         id: getId(snippet, sourceDir),
         title: data.attributes.title,
-        type: 'snippet',
+        type: isBlogSnippet ? `blog.${data.attributes.type}` : 'snippet',
         tags: {
           all: tags,
           primary: tags[0],
         },
-        code: getCodeBlocks(data.body, {
+        code: isBlogSnippet ? {} : getCodeBlocks(data.body, {
           isCssSnippet,
           hasOptionalLanguage,
           languages,
           snippetName: snippet.slice(0, -3),
         }),
-        expertise: determineExpertiseFromTags(tags),
+        expertise: isBlogSnippet ? 'blog' : determineExpertiseFromTags(tags),
         text: {
-          full: text,
+          full: isBlogSnippet ? data.body : text,
           short: shortText,
         },
-        searchTokens: uniqueElements([
-          data.attributes.title,
-          config.language.short,
-          config.language.long,
-          ...stripExpertiseFromTags(tags),
-          ...tokenizeSnippet(shortText),
-        ].map(v => v.toLowerCase())).join(' '),
+        cover: isBlogSnippet ? data.attributes.cover : undefined,
+        authors: authorsData,
+        icon: isBlogSnippet ? langIcon ? langIcon.icon : blogIcon : undefined,
+        searchTokens: uniqueElements(
+          isBlogSnippet ? [
+            ...stripExpertiseFromTags(tags),
+            ...tokenizeSnippet(`${shortText} ${data.attributes.title}`),
+          ] : [
+            data.attributes.title,
+            config.language.short,
+            config.language.long,
+            ...stripExpertiseFromTags(tags),
+            ...tokenizeSnippet(shortText),
+          ].map(v => v.toLowerCase())
+        ).join(' '),
         html: {
           full: html,
-          ...resolvers[resolver](html),
+          ...resolvers[resolver](html, isBlogSnippet ? {
+            shortDescription: shortText,
+            blogType: `blog.${data.attributes.type}`,
+          } : null),
         },
         ...await getGitMetadata(snippet, snippetsPath),
       };
     }
   } catch (err) {
     /* istanbul ignore next */
-    console.log(`${red('[ERROR]')} Error while reading snippets: ${err}`);
+    boundLog(`Fatal error while reading snippets: ${err}', 'error`);
     /* istanbul ignore next */
     process.exit(1);
   }
   return snippets;
 };
 
-export default {
-  getFilesInDir,
-  getData,
-  getId,
-  getCodeBlocks,
-  getTextualContent,
-  getGitMetadata,
-  getTags,
-  readSnippets,
-};
+export default readSnippets;
