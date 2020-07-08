@@ -8,27 +8,19 @@ import { uniqueElements } from 'utils';
 import { determineExpertiseFromTags, stripExpertiseFromTags } from 'build/transformers';
 import { parseMarkdown } from 'build/parsers';
 import resolvers from 'build/resolvers';
+// TODO: Remove usage and package after update to Node.js v12.x
+import matchAll from 'string.prototype.matchall';
+
+const mdCodeFence = '```';
 
 /**
- * Reads all files in a directory and returns the resulting array.
- * @param directoryPath The path of the directory to read.
- * @param withPath Should the path be included into the final result.
- * @param exclude File names to be excluded.
+ * Synchronously reads all files in a directory and returns the resulting array.
+ * @param {string} directoryPath - The path of the directory to read.
  */
 export const getFilesInDir = directoryPath => {
   try {
-    let directoryFilenames = fs.readdirSync(directoryPath);
-    directoryFilenames.sort((a, b) => {
-      a = a.toLowerCase();
-      b = b.toLowerCase();
-      if (a < b) return -1;
-      if (a > b) return 1;
-      // Technically, this should never run as names in a directory are unique
-      /* istanbul ignore next */
-      return 0;
-    });
-
-    return directoryFilenames;
+    return fs.readdirSync(directoryPath)
+      .sort((a, b) => a.toLowerCase() < b.toLowerCase() ? -1 : 1);
   } catch (err) {
     /* istanbul ignore next */
     console.log(`${red('[ERROR]')} Error while getting directory files: ${err}`);
@@ -38,9 +30,9 @@ export const getFilesInDir = directoryPath => {
 };
 
 /**
- * Gets the data from a snippet file in a usable format, using frontmatter.
- * @param snippetsPath The path of the snippets directory.
- * @param snippet The name of the snippet file.
+ * Synchronously gets the data from a snippet file in a usable format, using frontmatter.
+ * @param {string} snippetsPath - The path of the snippets directory.
+ * @param {string} snippet - The name of the snippet file.
  */
 export const getData = (snippetsPath, snippet) => frontmatter(
   fs.readFileSync(path.join(snippetsPath, snippet), 'utf8')
@@ -48,63 +40,49 @@ export const getData = (snippetsPath, snippet) => frontmatter(
 
 /**
  * Gets the code blocks for a snippet.
- * @param str The snippet's raw content.
- * @param config The project's configuration file.
+ * @param {string} str - The snippet's raw content.
+ * @param {object} config - The content repository's configuration file.
  */
 export const getCodeBlocks = (str, config) => {
-  const regex = /```[.\S\s]*?```/g;
-  let results = [];
-  let m = null;
-  while ((m = regex.exec(str)) !== null) {
-    if (m.index === regex.lastIndex) regex.lastIndex += 1;
+  const hasOptionalLanguage = config.optionalLanguage && config.optionalLanguage.short;
+  const regex = new RegExp(`${mdCodeFence}[.\\S\\s]*?${mdCodeFence}`, 'g');
+  const languages = [
+    config.language.short,
+    hasOptionalLanguage ? config.optionalLanguage.short : null,
+  ].filter(Boolean).join('|');
+  const replacer = new RegExp(`^${mdCodeFence}(${languages})?`, 'gm');
 
-    // eslint-disable-next-line
-    m.forEach(match => {
-      results.push(match);
-    });
-  }
-  const replacer = new RegExp(
-    `\`\`\`${config.language.short}([\\s\\S]*?)\`\`\``,
-    'g'
-  );
-  if(config.optionalLanguage && config.optionalLanguage.short) {
-    const optionalReplacer = new RegExp(`\`\`\`${config.optionalLanguage.short}([\\s\\S]*?)\`\`\``, 'g');
-    results = results.map(v =>
-      v
-        .replace(replacer, '$1')
-        .replace(optionalReplacer, '$1')
-        .trim());
-    if (results.length > 2) {
-      return {
-        style: results[0],
-        src: results[1],
-        example: results[2],
-      };
-    }
+  // TODO: Replace matchAll(str, regex) with str.matchAll(regex) after update to Node.js v12.x
+  const results = Array.from(
+    matchAll(str, regex),
+    m => m[0]
+  ).map(v => v.replace(replacer, '').trim());
+
+  if(hasOptionalLanguage && results.length > 2) {
     return {
-      style: '',
-      src: results[0],
-      example: results[1],
-    };
-  } else {
-    results = results.map(v => v.replace(replacer, '$1').trim());
-    return {
-      src: results[0],
-      example: results[1],
+      style: results[0],
+      src: results[1],
+      example: results[2],
     };
   }
+
+  return {
+    style: hasOptionalLanguage ? '' : undefined,
+    src: results[0],
+    example: results[1],
+  };
 };
 
 /**
  * Gets the textual content for a snippet.
- * @param str The snippet's raw content.
+ * @param {string} str - The snippet's raw content.
  */
 export const getTextualContent = str =>
-  str.slice(0, str.indexOf('```')).replace(/\r\n/g, '\n');
+  str.slice(0, str.indexOf(mdCodeFence)).replace(/\r\n/g, '\n');
 
 /**
- * Gets the git metadata for a snippet.
- * @param snippet The name of the snippet file.
+ * Asynchronously gets the git metadata for a snippet.
+ * @param {string} snippet - The name of the snippet file.
  */
 export const getGitMetadata = async(snippet, snippetsPath) => {
   const getFirstSeen = new Promise(resolve => exec(
@@ -136,29 +114,29 @@ export const getGitMetadata = async(snippet, snippetsPath) => {
 
 /**
  * Gets the tag array for a snippet from the tags string.
- * @param tagStr The string of tags for the snippet.
+ * @param {string} tagStr - The string of comma-separated tags for the snippet.
  */
 export const getTags = tagStr =>
   tagStr
     .split(',')
     .reduce((acc, t) => {
-      const _t = t.trim();
+      const _t = t.trim().toLowerCase();
       if(!acc.includes(_t)) acc.push(_t);
       return acc;
     }, []);
 
 /**
  * Gets the snippet id from the snippet's filename.
- * @param snippetFilename Filename of the snippet.
- * @param config The project's configuration file.
+ * @param {string} snippetFilename - Filename of the snippet.
+ * @param {string} sourceDir - The name of the source directory.
  */
 export const getId = (snippetFilename, sourceDir) => `${sourceDir}/${snippetFilename.slice(0, -3)}`;
 
 /**
  * Synchronously read all snippets and sort them as necessary.
  * The sorting is case-insensitive.
- * @param snippetsPath The path of the snippets directory.
- * @param config The project's configuration file.
+ * @param {string} snippetsPath - The path of the snippets directory.
+ * @param {object} config - The project's configuration file.
  */
 export const readSnippets = async(snippetsPath, config) => {
   const snippetFilenames = getFilesInDir(snippetsPath, false);
