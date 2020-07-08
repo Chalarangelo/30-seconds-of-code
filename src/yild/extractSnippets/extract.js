@@ -1,9 +1,7 @@
 import standardParser from './parsers/standardParser';
-import cssParser from './parsers/cssParser';
 import blogParser from './parsers/blogParser';
 const parsers = {
   standardParser,
-  cssParser,
   blogParser,
 };
 import { convertToSeoSlug, uniqueElements } from 'utils';
