@@ -1,6 +1,7 @@
 import fs from 'fs-extra';
 import path from 'path';
 import { red } from 'kleur';
+import sass from 'node-sass';
 import frontmatter from 'front-matter';
 import { exec } from 'child_process';
 import tokenizeSnippet from 'engines/searchIndexingEngine';
@@ -43,20 +44,42 @@ export const getData = (snippetsPath, snippet) => frontmatter(
  * @param {string} str - The snippet's raw content.
  * @param {object} config - The content repository's configuration file.
  */
-export const getCodeBlocks = (str, config) => {
-  const hasOptionalLanguage = config.optionalLanguage && config.optionalLanguage.short;
-  const regex = new RegExp(`${mdCodeFence}[.\\S\\s]*?${mdCodeFence}`, 'g');
-  const languages = [
-    config.language.short,
-    hasOptionalLanguage ? config.optionalLanguage.short : null,
-  ].filter(Boolean).join('|');
-  const replacer = new RegExp(`^${mdCodeFence}(${languages})?`, 'gm');
+export const getCodeBlocks = (
+  str,
+  {
+    isCssSnippet = false,
+    hasOptionalLanguage = false,
+    languages = [],
+    snippetName = '',
+  }) => {
+  const regex = new RegExp(
+    `${mdCodeFence}[.\\S\\s]*?${mdCodeFence}`,
+    'g'
+  );
+  const replacer = new RegExp(
+    `^${mdCodeFence}(${languages.filter(Boolean).join('|')})?`,
+    'gm'
+  );
 
   // TODO: Replace matchAll(str, regex) with str.matchAll(regex) after update to Node.js v12.x
   const results = Array.from(
     matchAll(str, regex),
     m => m[0]
   ).map(v => v.replace(replacer, '').trim());
+
+  if(isCssSnippet) {
+    const scopedCss = sass
+      .renderSync({ data: `[data-scope="${snippetName}"] { ${results[1]} }`})
+      .css
+      .toString();
+
+    return {
+      html: results[0],
+      css: results[1],
+      js: results.length > 2 ? results[2] : '',
+      scopedCss,
+    };
+  }
 
   if(hasOptionalLanguage && results.length > 2) {
     return {
@@ -143,6 +166,15 @@ export const readSnippets = async(snippetsPath, config) => {
   const sourceDir = `${config.dirName}/${config.snippetPath}`;
   const resolver = config.resolver ? config.resolver : 'stdResolver';
 
+  // Properties used in getCodeBlocks config
+  const isCssSnippet = config.dirName === '30css';
+  const hasOptionalLanguage = !isCssSnippet && config.optionalLanguage && config.optionalLanguage.short;
+  const languages = [
+    config.language.short,
+    isCssSnippet ? config.secondLanguage.short : null,
+    hasOptionalLanguage ? config.optionalLanguage.short : null,
+  ];
+
   let snippets = {};
   try {
     for (let snippet of snippetFilenames) {
@@ -160,7 +192,12 @@ export const readSnippets = async(snippetsPath, config) => {
           all: tags,
           primary: tags[0],
         },
-        code: getCodeBlocks(data.body, config),
+        code: getCodeBlocks(data.body, {
+          isCssSnippet,
+          hasOptionalLanguage,
+          languages,
+          snippetName: snippet.slice(0, -3),
+        }),
         expertise: determineExpertiseFromTags(tags),
         text: {
           full: text,
