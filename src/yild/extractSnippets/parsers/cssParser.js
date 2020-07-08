@@ -13,47 +13,40 @@ import {
   getId,
   getTags
 } from './standardParser';
+// TODO: Remove usage and package after update to Node.js v12.x
+import matchAll from 'string.prototype.matchall';
 
-
+const mdCodeFence = '```';
 /**
  * Gets the code blocks for a snippet.
  * @param str The snippet's raw content.
  * @param config The project's configuration file.
  */
-const getCodeBlocks = (str, config) => {
-  const regex = /```[.\S\s]*?```/g;
-  let results = [];
-  let m = null;
-  while ((m = regex.exec(str)) !== null) {
-    if (m.index === regex.lastIndex) regex.lastIndex += 1;
+const getCodeBlocks = (str, config, snippetName) => {
+  const regex = new RegExp(`${mdCodeFence}[.\\S\\s]*?${mdCodeFence}`, 'g');
+  const languages = [
+    config.language.short,
+    config.secondLanguage.short,
+    config.optionalLanguage.short,
+  ].filter(Boolean).join('|');
+  const replacer = new RegExp(`^${mdCodeFence}(${languages})?`, 'gm');
 
-    // eslint-disable-next-line
-    m.forEach(match => {
-      results.push(match);
-    });
-  }
-  const replacer = new RegExp(`\`\`\`${config.language.short}([\\s\\S]*?)\`\`\``, 'g');
-  const secondReplacer = new RegExp(`\`\`\`${config.secondLanguage.short}([\\s\\S]*?)\`\`\``, 'g');
-  const optionalReplacer = new RegExp(`\`\`\`${config.optionalLanguage.short}([\\s\\S]*?)\`\`\``, 'g');
-  results = results.map(v =>
-    v
-      .replace(replacer, '$1')
-      .replace(secondReplacer, '$1')
-      .replace(optionalReplacer, '$1')
-      .trim()
-  );
-  if (results.length > 2) {
-    return {
-      html: results[0],
-      css: results[1],
-      js: results[2],
-    }
-    ;
-  }
+  // TODO: Replace matchAll(str, regex) with str.matchAll(regex) after update to Node.js v12.x
+  let results = Array.from(
+    matchAll(str, regex),
+    m => m[0]
+  ).map(v => v.replace(replacer, '').trim());
+
+  const scopedCss = sass
+    .renderSync({ data: `[data-scope="${snippetName}"] { ${results[1]} }`})
+    .css
+    .toString();
+
   return {
     html: results[0],
     css: results[1],
-    js: '',
+    js: results.length > 2 ? results[2] : '',
+    scopedCss,
   };
 };
 
@@ -85,7 +78,7 @@ const readSnippets = async(snippetsPath, config) => {
           all: tags,
           primary: tags[0],
         },
-        code: getCodeBlocks(data.body, config),
+        code: getCodeBlocks(data.body, config, snippet.slice(0, -3)),
         expertise: determineExpertiseFromTags(tags),
         text: {
           full: text,
@@ -104,11 +97,6 @@ const readSnippets = async(snippetsPath, config) => {
         },
         ...await getGitMetadata(snippet, snippetsPath),
       };
-      snippets[snippet].code.scopedCss = sass
-        .renderSync({
-          data: `[data-scope="${snippet.slice(0, -3)}"] { ${snippets[snippet].code.css} }`,
-        })
-        .css.toString();
     }
   } catch (err) {
     /* istanbul ignore next */
