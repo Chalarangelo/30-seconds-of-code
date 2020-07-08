@@ -1,9 +1,4 @@
-import standardParser from './parsers/standardParser';
-import blogParser from './parsers/blogParser';
-const parsers = {
-  standardParser,
-  blogParser,
-};
+import parseSnippets from './parseSnippets';
 import { convertToSeoSlug, uniqueElements } from 'utils';
 import rankSnippet from 'engines/rankingEngine';
 import literals from 'lang/en/listing';
@@ -17,7 +12,6 @@ const extract = (configs, langData, parentLog) => configs.map(cfg => {
 
   const snippetsPath = `${contentDir}/sources/${cfg.dirName}/${cfg.snippetPath}`;
   const outputJson = `${contentOutDir}/${cfg.dirName}.json`;
-  const parser = cfg.parser ? parsers[cfg.parser] : parsers.standardParser;
   const slugPrefix = `${cfg.slug}/s`;
   const repoUrlPrefix = `${cfg.repoUrl}/blob/master/${cfg.snippetPath}`;
   const isBlog = !!cfg.isBlog;
@@ -33,7 +27,7 @@ const extract = (configs, langData, parentLog) => configs.map(cfg => {
 
   boundLog(`Extracting snippets from ${snippetsPath}`, 'info');
   return new Promise((resolve, reject) =>
-    parser.readSnippets(snippetsPath, cfg, langData)
+    parseSnippets(snippetsPath, cfg, langData, boundLog)
       .then(snippets => {
         let snippetsArray = Object.keys(snippets).reduce((acc, snippet) => {
           acc.push({
