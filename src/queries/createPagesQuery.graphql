@@ -85,9 +85,9 @@ query {
         }
         title
         html {
-          htmlCode
-          cssCode
-          jsCode
+          html
+          css
+          js
           description
           fullDescription
         }
