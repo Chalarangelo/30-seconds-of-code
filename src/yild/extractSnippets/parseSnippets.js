@@ -6,8 +6,7 @@ import { exec } from 'child_process';
 import tokenizeSnippet from 'engines/searchIndexingEngine';
 import { uniqueElements } from 'utils';
 import { determineExpertiseFromTags, stripExpertiseFromTags } from 'build/transformers';
-import { parseMarkdown } from 'build/parsers';
-import resolvers from 'build/resolvers';
+import parseMarkdown from './parseMarkdown';
 // TODO: Remove usage and package after update to Node.js v12.x
 import matchAll from 'string.prototype.matchall';
 // TODO: Consider parsing this via a new parser or similar
@@ -66,10 +65,14 @@ export const getCodeBlocks = (
   );
 
   // TODO: Replace matchAll(str, regex) with str.matchAll(regex) after update to Node.js v12.x
-  const results = Array.from(
+  const { results, raw } = Array.from(
     matchAll(str, regex),
     m => m[0]
-  ).map(v => v.replace(replacer, '').trim());
+  ).reduce((acc, v) => {
+    acc.raw.push(v);
+    acc.results.push(v.replace(replacer, '').trim());
+    return acc;
+  }, { results: [], raw: [] });
 
   if(isCssSnippet) {
     const scopedCss = sass
@@ -77,27 +80,39 @@ export const getCodeBlocks = (
       .css
       .toString();
 
-    return {
+    return [{
       html: results[0],
       css: results[1],
       js: results.length > 2 ? results[2] : '',
       scopedCss,
-    };
+    }, {
+      html: raw[0],
+      css: raw[1],
+      js: raw.length > 2 ? raw[2] : '',
+    }];
   }
 
   if(hasOptionalLanguage && results.length > 2) {
-    return {
+    return [{
       style: results[0],
       src: results[1],
       example: results[2],
-    };
+    }, {
+      style: raw[0],
+      code: raw[1],
+      example: raw[2],
+    }];
   }
 
-  return {
+  return [{
     style: hasOptionalLanguage ? '' : undefined,
     src: results[0],
     example: results[1],
-  };
+  }, {
+    style: hasOptionalLanguage ? '' : undefined,
+    code: raw[0],
+    example: raw[1],
+  }];
 };
 
 /**
@@ -170,7 +185,6 @@ export const getId = (snippetFilename, sourceDir) => `${sourceDir}/${snippetFile
 export const readSnippets = async(snippetsPath, config, langData, boundLog) => {
   const snippetFilenames = getFilesInDir(snippetsPath, boundLog);
   const sourceDir = `${config.dirName}/${config.snippetPath}`;
-  const resolver = config.resolver ? config.resolver : 'stdResolver';
 
   const isCssSnippet = config.dirName === '30css';
   const isBlogSnippet = config.isBlog;
@@ -178,7 +192,7 @@ export const readSnippets = async(snippetsPath, config, langData, boundLog) => {
   const languages = isBlogSnippet ? [] : [
     config.language.short,
     isCssSnippet ? config.secondLanguage.short : null,
-    hasOptionalLanguage ? config.optionalLanguage.short : null,
+    hasOptionalLanguage || isCssSnippet ? config.optionalLanguage.short : null,
   ];
   const icon = config.theme ? config.theme.iconName : null;
 
@@ -188,7 +202,15 @@ export const readSnippets = async(snippetsPath, config, langData, boundLog) => {
       let data = getData(snippetsPath, snippet);
       const tags = getTags(data.attributes.tags);
       const text = getTextualContent(data.body);
-      const html = parseMarkdown(data.body);
+      const [ code, rawCode ] = isBlogSnippet
+        ? [ null, [ ] ]
+        : getCodeBlocks(data.body, {
+          isCssSnippet,
+          hasOptionalLanguage,
+          languages,
+          snippetName: snippet.slice(0, -3),
+        });
+      const type = isBlogSnippet ? `blog.${data.attributes.type}` : 'snippet';
 
       let excerpt, shortSliceIndex, authorsData, langIcon, shortText;
 
@@ -205,20 +227,28 @@ export const readSnippets = async(snippetsPath, config, langData, boundLog) => {
       } else
         shortText = text.slice(0, text.indexOf('\n\n'));
 
+      const html = parseMarkdown(
+        {
+          texts: {
+            fullDescription: isBlogSnippet ? data.body : text,
+            description: shortText,
+          },
+          codeBlocks: rawCode,
+        }, {
+          isBlog: isBlogSnippet,
+          type,
+        }
+      );
+
       snippets[snippet] = {
         id: getId(snippet, sourceDir),
         title: data.attributes.title,
-        type: isBlogSnippet ? `blog.${data.attributes.type}` : 'snippet',
+        type,
         tags: {
           all: tags,
           primary: tags[0],
         },
-        code: isBlogSnippet ? {} : getCodeBlocks(data.body, {
-          isCssSnippet,
-          hasOptionalLanguage,
-          languages,
-          snippetName: snippet.slice(0, -3),
-        }),
+        code,
         expertise: isBlogSnippet ? 'blog' : determineExpertiseFromTags(tags),
         text: {
           full: isBlogSnippet ? data.body : text,
@@ -239,13 +269,7 @@ export const readSnippets = async(snippetsPath, config, langData, boundLog) => {
             ...tokenizeSnippet(shortText),
           ].map(v => v.toLowerCase())
         ).join(' '),
-        html: {
-          full: html,
-          ...resolvers[resolver](html, isBlogSnippet ? {
-            shortDescription: shortText,
-            blogType: `blog.${data.attributes.type}`,
-          } : null),
-        },
+        html,
         ...await getGitMetadata(snippet, snippetsPath),
       };
     }
