@@ -14,6 +14,10 @@ import matchAll from 'string.prototype.matchall';
 import authors from '../../../content/sources/30blog/blog_data/blog_authors';
 
 const mdCodeFence = '```';
+const codeMatcher = new RegExp(
+  `${mdCodeFence}[.\\S\\s]*?${mdCodeFence}`,
+  'g'
+);
 
 /**
  * Synchronously reads all files in a directory and returns the resulting array.
@@ -55,24 +59,13 @@ export const getCodeBlocks = (
     languages = [],
     snippetName = '',
   }) => {
-  const regex = new RegExp(
-    `${mdCodeFence}[.\\S\\s]*?${mdCodeFence}`,
-    'g'
-  );
   const replacer = new RegExp(
-    `^${mdCodeFence}(${languages.filter(Boolean).join('|')})?`,
+    `^${mdCodeFence}(${languages})?`,
     'gm'
   );
-
   // TODO: Replace matchAll(str, regex) with str.matchAll(regex) after update to Node.js v12.x
-  const { results, raw } = Array.from(
-    matchAll(str, regex),
-    m => m[0]
-  ).reduce((acc, v) => {
-    acc.raw.push(v);
-    acc.results.push(v.replace(replacer, '').trim());
-    return acc;
-  }, { results: [], raw: [] });
+  const raw = Array.from(matchAll(str, codeMatcher), m => m[0]);
+  const results = raw.map(v => v.replace(replacer, '').trim());
 
   if(isCssSnippet) {
     const scopedCss = sass
@@ -158,14 +151,7 @@ export const getGitMetadata = async(snippet, snippetsPath) => {
  * Gets the tag array for a snippet from the tags string.
  * @param {string} tagStr - The string of comma-separated tags for the snippet.
  */
-export const getTags = tagStr =>
-  tagStr
-    .split(',')
-    .reduce((acc, t) => {
-      const _t = t.trim().toLowerCase();
-      if(!acc.includes(_t)) acc.push(_t);
-      return acc;
-    }, []);
+export const getTags = tagStr => [...new Set(tagStr.split(','))];
 
 /**
  * Gets the snippet id from the snippet's filename.
@@ -193,7 +179,7 @@ export const readSnippets = async(snippetsPath, config, langData, boundLog) => {
     config.language.short,
     isCssSnippet ? config.secondLanguage.short : null,
     hasOptionalLanguage || isCssSnippet ? config.optionalLanguage.short : null,
-  ];
+  ].filter(Boolean).join('|');
   const icon = config.theme ? config.theme.iconName : null;
 
   let snippets = {};
