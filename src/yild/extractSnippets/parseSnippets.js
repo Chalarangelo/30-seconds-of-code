@@ -27,7 +27,8 @@ export const getFilesInDir = (directoryPath, boundLog) => {
       .sort((a, b) => a.toLowerCase() < b.toLowerCase() ? -1 : 1);
   } catch (err) {
     /* istanbul ignore next */
-    boundLog(`Fatal errorwhile getting directory files: ${err}', 'error`);
+    boundLog(`Fatal error while getting directory files: ${err}', 'error`);
+    boundLog(`Stack trace: ${err.stack}`, 'error');
     /* istanbul ignore next */
     process.exit(1);
   }
@@ -179,7 +180,7 @@ export const readSnippets = async(snippetsPath, config, langData, boundLog) => {
     isCssSnippet ? config.secondLanguage.short : null,
     hasOptionalLanguage ? config.optionalLanguage.short : null,
   ];
-  const blogIcon = isBlogSnippet && config.theme ? config.theme.iconName : null;
+  const icon = config.theme ? config.theme.iconName : null;
 
   let snippets = {};
   try {
@@ -225,7 +226,7 @@ export const readSnippets = async(snippetsPath, config, langData, boundLog) => {
         },
         cover: isBlogSnippet ? data.attributes.cover : undefined,
         authors: authorsData,
-        icon: isBlogSnippet ? langIcon ? langIcon.icon : blogIcon : undefined,
+        icon: langIcon ? langIcon.icon : icon,
         searchTokens: uniqueElements(
           isBlogSnippet ? [
             ...stripExpertiseFromTags(tags),
@@ -250,7 +251,8 @@ export const readSnippets = async(snippetsPath, config, langData, boundLog) => {
     }
   } catch (err) {
     /* istanbul ignore next */
-    boundLog(`Fatal error while reading snippets: ${err}', 'error`);
+    boundLog(`Fatal error while reading snippets: ${err}`, 'error');
+    boundLog(`Stack trace: ${err.stack}`, 'error');
     /* istanbul ignore next */
     process.exit(1);
   }

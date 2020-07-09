@@ -77,10 +77,8 @@ const parseMarkdown = markdown => {
     );
     node.value = [
       `<div class="gatsby-highlight" data-language="${languageName}">`,
-      `<pre class="language-${languageName}">`,
-      `<code class="language-${languageName}">`,
+      `<pre class="code-wrapper">`,
       `${highlightedCode}`,
-      `</code>`,
       `</pre>`,
       `</div>`,
     ].join('');
