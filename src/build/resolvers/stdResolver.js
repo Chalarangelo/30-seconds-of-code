@@ -1,49 +1,25 @@
-import {
-  optimizeAllNodes
-} from 'utils';
+// TODO: Remove usage and package after update to Node.js v12.x
+import matchAll from 'string.prototype.matchall';
+import { optimizeAllNodes } from 'utils';
 
-/** Get the textual content in a gatsby page */
-const getTextualContent = (str, noExplain = false) => {
-  const result = str
-    .slice(0, str.indexOf('<div class="gatsby-highlight"'))
-    .replace(/(href="https?:\/\/)/g, 'target="_blank" rel="nofollow noopener noreferrer" $1');
-  if (noExplain)
-    return result.slice(0, result.indexOf('</p>\n') + 4);
-  return result;
-};
-
-/** Gets the code blocks in a gatsby page */
-const getCodeBlocks = str => {
-  const regex = /<pre[.\S\s]*?<\/pre>/g;
-  let results = [];
-  let m = null;
-  while ((m = regex.exec(str)) !== null) {
-    if (m.index === regex.lastIndex) regex.lastIndex += 1;
-    // eslint-disable-next-line
-    m.forEach((match, groupIndex) => {
-      results.push(match);
-    });
-  }
-  const replacer = new RegExp(
-    `<pre class="language-[^"]+"><code class="language-[^"]+">([\\s\\S]*?)</code></pre>`,
-    'g'
-  );
-  results = results.map(v => v.replace(replacer, '$1').trim());
-  return {
-    code: results[0],
-    example: results[1],
-  };
-};
+const codeBlockRegex = /<pre class="code-wrapper">([.\S\s]*?)<\/pre>/g;
 
 export default str => {
-  const description = getTextualContent(str, true);
-  const fullDescription = getTextualContent(str, false);
-  const codeBlocks = getCodeBlocks(str);
+  const textualContent = str
+    .slice(0, str.indexOf('<div class="gatsby-highlight"'))
+    .replace(/(href="https?:\/\/)/g, 'target="_blank" rel="nofollow noopener noreferrer" $1');
+  const description = textualContent.slice(0, textualContent.indexOf('</p>\n') + 4);
+  const fullDescription = textualContent;
+  // TODO: Replace matchAll(str, regex) with str.matchAll(regex) after update to Node.js v12.x
+  const codeBlocks = Array.from(
+    matchAll(str, codeBlockRegex),
+    m => optimizeAllNodes(m[1])
+  );
+
   return {
     description,
     fullDescription,
-    code: `${optimizeAllNodes(codeBlocks.code)}`,
-    example: `${optimizeAllNodes(codeBlocks.example)}`,
+    code: codeBlocks[0],
+    example: codeBlocks[1],
   };
-}
-;
+};
