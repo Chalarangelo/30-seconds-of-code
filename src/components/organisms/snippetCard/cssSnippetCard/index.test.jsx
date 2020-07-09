@@ -96,11 +96,11 @@ describe('<CssSnippetCard />', () => {
   });
 
   it('should pass the html data to the first CodeBlock component', () => {
-    expect(codeBlocks.at(0).prop('htmlContent')).toBe(fullCssSnippet.html.htmlCode);
+    expect(codeBlocks.at(0).prop('htmlContent')).toBe(fullCssSnippet.html.html);
   });
 
   it('should pass the css data to the first CodeBlock component', () => {
-    expect(codeBlocks.at(1).prop('htmlContent')).toBe(fullCssSnippet.html.cssCode);
+    expect(codeBlocks.at(1).prop('htmlContent')).toBe(fullCssSnippet.html.css);
   });
 
   describe('including JS code', () => {
@@ -121,7 +121,7 @@ describe('<CssSnippetCard />', () => {
     });
 
     it('should pass the js data to the first CodeBlock component', () => {
-      expect(codeBlocks.at(2).prop('htmlContent')).toBe(fullCssWithJsSnippet.html.jsCode);
+      expect(codeBlocks.at(2).prop('htmlContent')).toBe(fullCssWithJsSnippet.html.js);
     });
   });
 

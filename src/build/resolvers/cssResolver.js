@@ -19,8 +19,8 @@ export default str => {
   return {
     description,
     fullDescription,
-    htmlCode: codeBlocks[0],
-    cssCode: codeBlocks[1],
-    jsCode: codeBlocks.length > 2 ? codeBlocks[2] : '',
+    html: codeBlocks[0],
+    css: codeBlocks[1],
+    js: codeBlocks.length > 2 ? codeBlocks[2] : '',
   };
 };

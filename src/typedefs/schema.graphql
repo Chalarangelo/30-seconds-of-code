@@ -34,9 +34,9 @@ type HtmlData @infer {
   code: String
   style: String
   example: String
-  htmlCode: String
-  cssCode: String
-  jsCode: String
+  html: String
+  css: String
+  js: String
 }
 
 type CodeData @infer {
