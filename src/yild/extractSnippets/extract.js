@@ -18,7 +18,6 @@ const extract = (configs, langData, parentLog) => configs.map(cfg => {
   const commonData = {
     blog: isBlog,
     language: cfg.language || {},
-    icon: cfg.theme ? cfg.theme.iconName : null,
   };
   let otherLanguages = [];
   if (cfg.secondLanguage) otherLanguages.push(cfg.secondLanguage);
@@ -27,27 +26,10 @@ const extract = (configs, langData, parentLog) => configs.map(cfg => {
 
   boundLog(`Extracting snippets from ${snippetsPath}`, 'info');
   return new Promise((resolve, reject) =>
-    parseSnippets(snippetsPath, cfg, langData, boundLog)
-      .then(snippets => {
-        let snippetsArray = Object.keys(snippets).reduce((acc, snippet) => {
-          acc.push({
-            ...commonData,
-            ...snippets[snippet],
-            slug: `/${slugPrefix}${convertToSeoSlug(snippet.slice(0, -3))}`,
-            url: `${repoUrlPrefix}/${snippet}`,
-            ranking: rankSnippet({
-              ...snippets[snippet],
-              language: commonData.language,
-              biasPenaltyMultiplier: cfg.biasPenaltyMultiplier
-                ? cfg.biasPenaltyMultiplier
-                : 1.0,
-            }),
-          });
-          return acc;
-        }, []);
-
+    parseSnippets(snippetsPath, {...cfg, commonData, slugPrefix, repoUrlPrefix}, langData, boundLog)
+      .then(snippetsArray => {
         const completeData = {
-          data: [...snippetsArray],
+          data: snippetsArray,
           meta: {
             name: isBlog ? literals.blog : literals.codelang(cfg.language.long),
             count: literals.snippetCount(snippetsArray.length),
