@@ -42,9 +42,12 @@ export const getFilesInDir = (directoryPath, boundLog) => {
  * @param {string} snippetsPath - The path of the snippets directory.
  * @param {string} snippet - The name of the snippet file.
  */
-export const getData = (snippetsPath, snippet) => frontmatter(
-  fs.readFileSync(path.join(snippetsPath, snippet), 'utf8')
-);
+export const getData = (snippetsPath, snippet) => new Promise((resolve, reject) => {
+  fs.readFile(path.join(snippetsPath, snippet), 'utf8', (err, content) => {
+    if(err) reject(err);
+    resolve(frontmatter(content));
+  });
+});
 
 /**
  * Gets the code blocks for a snippet.
@@ -185,7 +188,14 @@ export const readSnippets = async(snippetsPath, config, langData, boundLog) => {
   let snippets = {};
   try {
     for (let snippet of snippetFilenames) {
-      let data = getData(snippetsPath, snippet);
+      let data, gitMetadata;
+      await Promise.all([
+        getData(snippetsPath, snippet),
+        getGitMetadata(snippet, snippetsPath),
+      ]).then(values => {
+        data = values[0];
+        gitMetadata = values[1];
+      });
       const tags = getTags(data.attributes.tags);
       const text = getTextualContent(data.body);
       const [ code, rawCode ] = isBlogSnippet
@@ -256,7 +266,7 @@ export const readSnippets = async(snippetsPath, config, langData, boundLog) => {
           ].map(v => v.toLowerCase())
         ).join(' '),
         html,
-        ...await getGitMetadata(snippet, snippetsPath),
+        ...gitMetadata,
       };
     }
   } catch (err) {
