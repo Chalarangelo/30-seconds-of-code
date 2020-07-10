@@ -4,8 +4,9 @@ import sass from 'node-sass';
 import frontmatter from 'front-matter';
 import { exec } from 'child_process';
 import tokenizeSnippet from 'engines/searchIndexingEngine';
-import { uniqueElements } from 'utils';
+import { convertToSeoSlug, uniqueElements } from 'utils';
 import { determineExpertiseFromTags, stripExpertiseFromTags } from 'build/transformers';
+import rankSnippet from 'engines/rankingEngine';
 import parseMarkdown from './parseMarkdown';
 // TODO: Remove usage and package after update to Node.js v12.x
 import matchAll from 'string.prototype.matchall';
@@ -167,13 +168,15 @@ export const getId = (snippetFilename, sourceDir) => `${sourceDir}/${snippetFile
  * Synchronously read all snippets and sort them as necessary.
  * The sorting is case-insensitive.
  * @param {string} snippetsPath - The path of the snippets directory.
- * @param {object} config - The project's configuration file.
+ * @param {object} config - The project's enriched configuration
+ *  (containing the spread config, commonData and prefixes).
  * @param {array} langData - An array of `(language, icon)` tuples.
  * @param {function} boundLog - A bound logger.log function.
  */
 export const readSnippets = async(snippetsPath, config, langData, boundLog) => {
   const snippetFilenames = getFilesInDir(snippetsPath, boundLog);
   const sourceDir = `${config.dirName}/${config.snippetPath}`;
+  const { commonData, slugPrefix, repoUrlPrefix } = config;
 
   const isCssSnippet = config.dirName === '30css';
   const isBlogSnippet = config.isBlog;
@@ -185,7 +188,7 @@ export const readSnippets = async(snippetsPath, config, langData, boundLog) => {
   ].filter(Boolean).join('|');
   const icon = config.theme ? config.theme.iconName : null;
 
-  let snippets = {};
+  let snippets = [];
   try {
     for (let snippet of snippetFilenames) {
       let data, gitMetadata;
@@ -236,7 +239,8 @@ export const readSnippets = async(snippetsPath, config, langData, boundLog) => {
         }
       );
 
-      snippets[snippet] = {
+      const snippetData = {
+        ...commonData,
         id: getId(snippet, sourceDir),
         title: data.attributes.title,
         type,
@@ -257,7 +261,7 @@ export const readSnippets = async(snippetsPath, config, langData, boundLog) => {
           isBlogSnippet ? [
             ...stripExpertiseFromTags(tags),
             ...tokenizeSnippet(`${shortText} ${data.attributes.title}`),
-          ] : [
+          ].map(v => v.toLowerCase()) : [
             data.attributes.title,
             config.language.short,
             config.language.long,
@@ -267,7 +271,19 @@ export const readSnippets = async(snippetsPath, config, langData, boundLog) => {
         ).join(' '),
         html,
         ...gitMetadata,
+        slug: `/${slugPrefix}${convertToSeoSlug(snippet.slice(0, -3))}`,
+        url: `${repoUrlPrefix}/${snippet}`,
       };
+
+      snippetData.ranking = rankSnippet({
+        ...snippetData,
+        language: commonData.language,
+        biasPenaltyMultiplier: config.biasPenaltyMultiplier
+          ? config.biasPenaltyMultiplier
+          : 1.0,
+      });
+
+      snippets.push(snippetData);
     }
   } catch (err) {
     /* istanbul ignore next */
