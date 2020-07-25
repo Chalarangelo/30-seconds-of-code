@@ -16,4 +16,5 @@ const intersectionBy = (a, b, fn) => {
 
 ```js
 intersectionBy([2.1, 1.2], [2.3, 3.4], Math.floor); // [2.1]
+intersectionBy([{ title: 'Apple' }, { title: 'Orange' }], [{ title: 'Orange' }, { title: 'Melon' }], item => item.title) // [{ title: 'Orange' }]
 ```
