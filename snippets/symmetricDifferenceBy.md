@@ -17,5 +17,5 @@ const symmetricDifferenceBy = (a, b, fn) => {
 
 ```js
 symmetricDifferenceBy([2.1, 1.2], [2.3, 3.4], Math.floor); // [ 1.2, 3.4 ]
-symmetricDifferenceBy([{ id: 1 }, { id: 2 }, { id: 3 }], [{ id: 1 }, { id: 2 }, { id: 4 }], item => item.id) // [{ id: 3 }, { id: 4 }]
+symmetricDifferenceBy([{ id: 1 }, { id: 2 }, { id: 3 }], [{ id: 1 }, { id: 2 }, { id: 4 }], i => i.id) // [{ id: 3 }, { id: 4 }]
 ```
