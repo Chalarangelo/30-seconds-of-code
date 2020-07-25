@@ -18,4 +18,5 @@ const unionBy = (a, b, fn) => {
 
 ```js
 unionBy([2.1], [1.2, 2.3], Math.floor); // [2.1, 1.2]
+unionBy([{ id: 1 }, { id: 2 }], [{ id: 2 }, { id: 3 }], item => item.id) // [{ id: 1 }, { id: 2 }, { id: 3 }],
 ```
