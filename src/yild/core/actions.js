@@ -1,6 +1,7 @@
 import { format } from '../logOutput';
 import prepareAssets from '../prepareAssets';
 import extractSnippets from '../extractSnippets';
+import serveSnippets from '../serveSnippets';
 import updateContent from '../updateContent';
 import makeIcons from '../makeIcons';
 import makeLangBackgrounds from '../makeLangBackgrounds';
@@ -64,6 +65,12 @@ const actions = {
     process: prepareCacheKey,
     step: 0,
     matcher: /^-{0,2}c(ache)?$/gi,
+  },
+  'serve': {
+    description: 'serve snippets from the generated JSON files',
+    process: serveSnippets,
+    step: 2,
+    matcher: /^-{0,2}s(erve)?$/gi,
   },
 };
 
