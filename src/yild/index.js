@@ -46,6 +46,9 @@ const yild = async config => {
   await Promise.all(performStep(1));
   logger.breakLine();
 
+  await Promise.all(performStep(2));
+  logger.breakLine();
+
   logger.log(`${format('yild', 'bold')} is terminating...`, 'info');
 };
 
