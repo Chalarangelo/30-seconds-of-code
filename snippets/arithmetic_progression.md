@@ -1,17 +1,17 @@
 ---
 title: arithmetic_progression
-tags: math, beginner
+tags: math,beginner
 ---
 
-Find all the multiples between a number and a limit.
+Returns a list of numbers in the arithmetic progression starting with the given positive integer and up to the specified limit.
 
-Use the `range` function and step up the same integer to find multiples. 
+Use `range` and `list` with the appropriate start, step and end values.
 
 ```py
-def find_multiples(integer, limit):
-  return list(range(integer,limit+1, integer))
+def find_multiples(n, lim):
+  return list(range(n, lim + 1, n))
 ```
 
 ```py
-find_multiples(5,25) 
+find_multiples(5, 25) # [5, 10, 15, 20, 25] 
 ```
