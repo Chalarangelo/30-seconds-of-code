@@ -76,13 +76,14 @@
   "scripts": {
     "extract-snippets": "NODE_PATH=src npx --node-arg '-r esm' ./src/jobs/yild.js -e",
     "watch-snippets": "npm-watch extract-snippets",
+    "serve-snippets": "NODE_PATH=src npx --node-arg '-r esm' ./src/jobs/yild.js -n=DEVELOPMENT -s",
     "make-icons": "icon-font-generator src/icons/*.svg -o assets --html=false --json=false --types='woff2' --csspath src/styles/_icons.scss --cssfontsurl='../../assets/' --selector='.icon'",
     "yild": "NODE_PATH=src npx --node-arg '-r esm' ./src/jobs/yild.js",
     "prebuild": "NODE_PATH=src npx --node-arg '-r esm' ./src/jobs/yild.js -u -a -e -i -b -n=PRODUCTION -c",
-    "predevelop": "NODE_PATH=src npx --node-arg '-r esm' ./src/jobs/yild.js -n=DEVELOPMENT -c -s",
+    "predevelop": "NODE_PATH=src npx --node-arg '-r esm' ./src/jobs/yild.js -n=DEVELOPMENT -c",
     "pretest": "NODE_PATH=src npx --node-arg '-r esm' ./src/jobs/yild.js -n=DEVELOPMENT -c",
     "build": "NODE_PATH=src npx --node-arg '-r esm' gatsby build",
-    "develop": "NODE_PATH=src npx --node-arg '-r esm' gatsby develop",
+    "develop": "NODE_PATH=src npx --node-arg '-r esm' gatsby develop -p 8000",
     "debug": "NODE_PATH=src npx --node-arg '-r esm --nolazy --inspect-brk' node_modules/.bin/gatsby develop",
     "serve": "NODE_PATH=src npx --node-arg '-r esm' gatsby serve",
     "lint": "eslint './src/**/*.js' './src/**/*.jsx'",
@@ -99,7 +100,8 @@
       "extensions": "md",
       "delay": "5000",
       "ignore": "README",
-      "quiet": true
+      "quiet": true,
+      "runOnChangeOnly": true
     }
   },
   "repository": {
