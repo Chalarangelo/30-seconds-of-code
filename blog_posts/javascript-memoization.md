@@ -3,8 +3,8 @@ title: Where and how can I use memoization in JavaScript?
 type: question
 tags: javascript,function,memoization
 authors: chalarangelo
-cover: blog_images/javascript-memoization.jpg
-excerpt: Learn different ways to memoize function calls in JavaScript as well as when to use memoization to get the best performance results. 
+cover: blog_images/javascript-concepts.jpg
+excerpt: Learn different ways to memoize function calls in JavaScript as well as when to use memoization to get the best performance results.
 ---
 
 Memoization is a commonly used technique that you can use to speed up your code significantly. It uses a cache to store results, so that subsequent calls of time-consuming functions do not perform the same work another time. Based on this definition, we can easily extract some criteria that can help us decide when to use memoization in our code:
@@ -41,7 +41,7 @@ for (let i = 0; i < 100; i ++)
   myObject.firstNonEmptyItemMemo();   // ~70ms
 ```
 
-The above example showcases a way to implement memoization inside a class, however it makes the assumptions that the `data` structure will not be altered over the lifecycle of the object and that this is the only expensive function call we will make, so it cannot be reused. It also doesn't account for arguments being passed to the function, which would alter the result. A functional approach that would work with any given function and also account for arguments can be found in the form of the [memoize snippet](/js/s/memoize/), which uses a `Map` to store different values. 
+The above example showcases a way to implement memoization inside a class, however it makes the assumptions that the `data` structure will not be altered over the lifecycle of the object and that this is the only expensive function call we will make, so it cannot be reused. It also doesn't account for arguments being passed to the function, which would alter the result. A functional approach that would work with any given function and also account for arguments can be found in the form of the [memoize snippet](/js/s/memoize/), which uses a `Map` to store different values.
 
 We still recommend using that snippet as the primary way to memoize a function, however JavaScript's [Proxy object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) provides an interesting alternative via the use of the `handler.apply()` trap, which can be used for this purpose as follows:
 
