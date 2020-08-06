@@ -1,5 +1,5 @@
 ---
-title: javascript-module-cheatsheet
+title: JavaScript modules Cheat Sheet
 type: cheatsheet
 tags: javascript,cheatsheet
 authors: chalarangelo
