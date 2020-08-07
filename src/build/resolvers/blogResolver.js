@@ -19,10 +19,16 @@ const getTextualContent = (str, blogType) => {
       matcher: /<li>\n*(.+?)\n((?!<li>).+?)\n*<\/li>/g,
       replacer: '<li class="blog-list-item">$1</p><p>$2</li>',
     },
+    // Add 'rel' and 'target' to Jooble link
+    {
+      blogType: 'any',
+      matcher: /(href="https:\/\/)(?=jooble)/g,
+      replacer: 'target="_blank" rel="noopener noreferrer" $1',
+    },
     // Add 'rel' and 'target' to external links
     {
       blogType: 'any',
-      matcher: /(href="https?:\/\/)/g,
+      matcher: /(href="https?:\/\/)(?!jooble)/g,
       replacer: 'target="_blank" rel="nofollow noopener noreferrer" $1',
     },
     // Convert blog post code to the appropriate elements
