@@ -135,7 +135,7 @@ const parseMarkdown = (markdown, isText = false) => {
   return hastToHTML(htmlAst, { allowDangerousHtml: true });
 };
 
-const parseMarkdownSegments = ({texts, codeBlocks}, {isBlog, type}) => {
+const parseMarkdownSegments = ({texts, codeBlocks}, {isBlog, type, assetPath}) => {
   const result = {};
   Object.entries(texts).forEach(([key, value]) => {
     if(!value) return;
@@ -149,6 +149,12 @@ const parseMarkdownSegments = ({texts, codeBlocks}, {isBlog, type}) => {
         return acc;
       },
       result.fullDescription
+    );
+    // Transform relative paths for images
+    result.fullDescription = result.fullDescription.replace(
+      /(<p>)*<img src="\.\/([^"]+)"([^>]*)>(<\/p>)*/g,
+      (match, openTag, imgSrc, imgRest, closeTag) =>
+        `<img class="card-image" src="${assetPath}${imgSrc}"${imgRest}>`
     );
   } else {
     Object.entries(codeBlocks).forEach(([key, value]) => {
