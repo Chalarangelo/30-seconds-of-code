@@ -3,6 +3,7 @@ import path from 'path';
 import sharp from 'sharp';
 import glob from 'glob';
 import { initAction, loadContentConfigs } from '../core';
+import { stat } from 'fs';
 
 const supportedExtensions = [
   'jpeg', 'jpg', 'png', 'webp', 'tif', 'tiff',
@@ -41,10 +42,12 @@ const processImageAsset = (asset, outDir) =>
  * Prepares the assets directory.
  */
 const prepareAssets = async() => {
-  const [boundLog, , inPath, outPath, contentPath] = initAction('prepareAssets', [
-    ['paths', 'rawAssetPath'], ['paths', 'assetPath'],
-    ['paths', 'rawContentPath'],
-  ]);
+  const [boundLog, , inPath, outPath, contentPath, staticAssetPath] = initAction(
+    'prepareAssets', [
+      ['paths', 'rawAssetPath'], ['paths', 'assetPath'],
+      ['paths', 'rawContentPath'], ['paths', 'staticAssetPath'],
+    ]
+  );
   const configs = loadContentConfigs(contentPath, boundLog);
   boundLog('Processing assets from config...', 'info');
 
@@ -65,6 +68,13 @@ const prepareAssets = async() => {
     }
   }
   boundLog(`Processing image assets to from configuration files complete`, 'success');
+
+  boundLog(`Copying assets from ${path.resolve(outPath)} to ${path.resolve('static', staticAssetPath)}`, 'info');
+  if(global._yild_instance.env === 'PRODUCTION') {
+    fs.ensureDirSync(path.join('static', staticAssetPath));
+    fs.copySync(outPath, path.join('static', staticAssetPath));
+  }
+  boundLog(`Copying assets complete`, 'success');
 
   return;
 };
