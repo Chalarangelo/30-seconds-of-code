@@ -99,8 +99,7 @@ const createPages = (query, templates, requirables) => ({ graphql, actions }) =>
         {
           ...commonContext,
           cardTemplate: 'BlogSnippetCard',
-        },
-        result.data.images.edges
+        }
       );
 
       createStaticPage(

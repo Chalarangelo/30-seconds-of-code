@@ -17,8 +17,7 @@ const createSnippetPages = (
   snippets,
   snippetPage,
   createPage,
-  commonContext,
-  imageContext = []
+  commonContext
 ) => {
   snippets.forEach(snippet => {
     const recommendedSnippets = transformSnippetIndex(
@@ -28,7 +27,7 @@ const createSnippetPages = (
       path: `${snippet.node.slug}`,
       component: snippetPage,
       context: {
-        snippet: transformSnippetContext(snippet.node, commonContext.cardTemplate, imageContext),
+        snippet: transformSnippetContext(snippet.node, commonContext.cardTemplate),
         ...commonContext,
         recommendedSnippets,
         breadcrumbs: transformBreadcrumbs(snippet.node, commonContext.cardTemplate),

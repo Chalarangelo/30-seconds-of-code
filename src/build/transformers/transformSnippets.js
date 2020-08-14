@@ -39,32 +39,13 @@ export const transformSnippetDescription = (snippet, cardTemplate) => {
  * Used in snippet pages to render individual snippets.
  * @param {object} snippet - The snippet object to be transformed.
  * @param {string} cardTemplate - A string that determines the card template.
- * @param {array} imageContext - An array of image URIs.
  */
-export const transformSnippetContext = (snippet, cardTemplate, imageContext) => {
-  const findImageByAbsolutePath = path =>
-    imageContext.find(
-      v => v.node.absolutePath.includes(path)
-    ).node.childImageSharp.fluid;
-
-  let templateProps = {};
-  let html = snippet.html;
-  switch (cardTemplate) {
-  case 'BlogSnippetCard':
-    templateProps = {
-      authors: snippet.authors,
-      type: snippet.type,
-      cover: findImageByAbsolutePath(snippet.cover),
-    };
-    html.fullDescription = snippet.html.fullDescription.replace(
-      /(<p>)*<img src="\.\/([^"]+)"([^>]*)>(<\/p>)*/g,
-      (match, openTag, imgSrc, imgRest, closeTag) =>
-        `<img class="card-image" src="${findImageByAbsolutePath(imgSrc).src}"${imgRest}>`
-    );
-    break;
-  default:
-    break;
-  }
+export const transformSnippetContext = (snippet, cardTemplate) => {
+  const templateProps = cardTemplate === 'BlogSnippetCard' ? {
+    authors: snippet.authors,
+    type: snippet.type,
+    cover: snippet.cover,
+  } : {};
   return {
     id: snippet.id,
     title: snippet.title,
@@ -80,7 +61,7 @@ export const transformSnippetContext = (snippet, cardTemplate, imageContext) => 
       primary: transformTagName(snippet.tags.primary),
       all: snippet.tags.all.map(transformTagName),
     },
-    html,
+    html: snippet.html,
     code: snippet.code,
     ...templateProps,
   };

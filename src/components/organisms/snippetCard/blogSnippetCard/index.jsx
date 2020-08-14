@@ -53,8 +53,8 @@ const SnippetCard = ({
         </>
       ) }
     </div>
-    { snippet.cover && snippet.cover.src &&
-      <img className='card-cover-image' src={ snippet.cover.src } />
+    { snippet.cover && snippet.cover &&
+      <img className='card-cover-image' src={ snippet.cover } />
     }
     <div
       className='card-description'
