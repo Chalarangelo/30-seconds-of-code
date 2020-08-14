@@ -7,10 +7,12 @@ const extract = (configs, langData, parentLog) => configs.map(cfg => {
   const {
     rawContentPath: contentDir,
     contentPath: contentOutDir,
+    staticAssetPath: assetDir,
   } = global._yild_instance.config.paths;
   const boundLog = parentLog.rebind('extract');
 
   const snippetsPath = `${contentDir}/sources/${cfg.dirName}/${cfg.snippetPath}`;
+  const assetPath = `/${assetDir}/`;
   const outputJson = `${contentOutDir}/${cfg.dirName}.json`;
   const slugPrefix = `${cfg.slug}/s`;
   const repoUrlPrefix = `${cfg.repoUrl}/blob/master/${cfg.snippetPath}`;
@@ -26,7 +28,7 @@ const extract = (configs, langData, parentLog) => configs.map(cfg => {
 
   boundLog(`Extracting snippets from ${snippetsPath}`, 'info');
   return new Promise((resolve, reject) =>
-    parseSnippets(snippetsPath, {...cfg, commonData, slugPrefix, repoUrlPrefix}, langData, boundLog)
+    parseSnippets(snippetsPath, assetPath, {...cfg, commonData, slugPrefix, repoUrlPrefix}, langData, boundLog)
       .then(snippetsArray => {
         const completeData = {
           data: snippetsArray,

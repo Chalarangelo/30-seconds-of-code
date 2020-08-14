@@ -168,12 +168,13 @@ export const getId = (snippetFilename, sourceDir) => `${sourceDir}/${snippetFile
  * Synchronously read all snippets and sort them as necessary.
  * The sorting is case-insensitive.
  * @param {string} snippetsPath - The path of the snippets directory.
+ * @param {string} assetPath - The public path of the assets directory.
  * @param {object} config - The project's enriched configuration
  *  (containing the spread config, commonData and prefixes).
  * @param {array} langData - An array of `(language, icon)` tuples.
  * @param {function} boundLog - A bound logger.log function.
  */
-export const readSnippets = async(snippetsPath, config, langData, boundLog) => {
+export const readSnippets = async(snippetsPath, assetPath, config, langData, boundLog) => {
   const snippetFilenames = getFilesInDir(snippetsPath, boundLog);
   const sourceDir = `${config.dirName}/${config.snippetPath}`;
   const { commonData, slugPrefix, repoUrlPrefix } = config;
@@ -211,10 +212,11 @@ export const readSnippets = async(snippetsPath, config, langData, boundLog) => {
         });
       const type = isBlogSnippet ? `blog.${data.attributes.type}` : 'snippet';
 
-      let excerpt, shortSliceIndex, authorsData, langIcon, shortText;
+      let excerpt, cover, shortSliceIndex, authorsData, langIcon, shortText;
 
       if (isBlogSnippet) {
         excerpt = data.attributes.excerpt;
+        cover = `${assetPath}${data.attributes.cover}`;
         shortSliceIndex = text.indexOf('\n\n') <= 180
           ? text.indexOf('\n\n')
           : text.indexOf(' ', 160);
@@ -236,6 +238,7 @@ export const readSnippets = async(snippetsPath, config, langData, boundLog) => {
         }, {
           isBlog: isBlogSnippet,
           type,
+          assetPath,
         }
       );
 
@@ -254,7 +257,7 @@ export const readSnippets = async(snippetsPath, config, langData, boundLog) => {
           full: isBlogSnippet ? data.body : text,
           short: shortText,
         },
-        cover: isBlogSnippet ? data.attributes.cover : undefined,
+        cover,
         authors: authorsData,
         icon: langIcon ? langIcon.icon : icon,
         searchTokens: uniqueElements(
