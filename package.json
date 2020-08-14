@@ -76,6 +76,8 @@
   "scripts": {
     "extract-snippets": "NODE_PATH=src npx --node-arg '-r esm' ./src/jobs/yild.js -e",
     "watch-snippets": "npm-watch extract-snippets",
+    "prepare-assets": "NODE_PATH=src npx --node-arg '-r esm' ./src/jobs/yild.js -e -n=DEVELOPMENT",
+    "watch-assets": "npm-watch prepare-assets",
     "serve-snippets": "NODE_PATH=src npx --node-arg '-r esm' ./src/jobs/yild.js -n=DEVELOPMENT -s",
     "make-icons": "icon-font-generator src/icons/*.svg -o assets --html=false --json=false --types='woff2' --csspath src/styles/_icons.scss --cssfontsurl='../../assets/' --selector='.icon'",
     "yild": "NODE_PATH=src npx --node-arg '-r esm' ./src/jobs/yild.js",
@@ -100,6 +102,13 @@
       "extensions": "md",
       "delay": "5000",
       "ignore": "README",
+      "quiet": true,
+      "runOnChangeOnly": true
+    },
+    "prepare-assets": {
+      "patterns": [ "content/sources" ],
+      "extensions": "jpeg,jpg,png,webp,tif,tiff",
+      "delay": "5000",
       "quiet": true,
       "runOnChangeOnly": true
     }
