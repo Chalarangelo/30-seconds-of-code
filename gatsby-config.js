@@ -1,6 +1,4 @@
 /* eslint-disable */
-const { parseConfigs } = require('build/parsers');
-
 const config = require('config/global');
 const paths = require('config/paths');
 
@@ -14,7 +12,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-resolve-src`,
     `gatsby-plugin-sitemap`,
-    ...parseConfigs(`${__dirname}/content`),
     {
       resolve: `gatsby-source-filesystem`,
       options: {

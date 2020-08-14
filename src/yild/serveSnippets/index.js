@@ -52,19 +52,12 @@ const serveSnippets = () => {
               );
               break;
             case 3: {
-              const snippetData = data.find(s => s.slug === (hasSuffix ? reqUrl.toLowerCase().slice(0, -5) : reqUrl.toLowerCase()));
+              const snippetData = data.find(
+                s => s.slug === (hasSuffix ? reqUrl.toLowerCase().slice(0, -5) : reqUrl.toLowerCase())
+              );
               if(!snippetData) throw 'Snippet does not exist';
               res.writeHead(200, { 'Content-Type': 'application/json' });
-              // TODO: Account for image context
-              res.end(
-                JSON.stringify(
-                  transformSnippetContext(
-                    snippetData,
-                    cardTemplate,
-                    []
-                  )
-                )
-              );
+              res.end(JSON.stringify(transformSnippetContext(snippetData, cardTemplate)));
               break;
             }
             default:
