@@ -27,6 +27,9 @@ const performStepActions = (actions, config) => stepNo =>
 const yild = async config => {
   global._yild_instance = {
     config,
+    env: config.args.indexOf('DEVELOPMENT') !== -1
+      ? 'DEVELOPMENT'
+      : 'PRODUCTION',
   };
 
   logger.log(`${format('yild', 'bold')} is starting up...`, 'info');
