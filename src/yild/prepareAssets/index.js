@@ -3,7 +3,6 @@ import path from 'path';
 import sharp from 'sharp';
 import glob from 'glob';
 import { initAction, loadContentConfigs } from '../core';
-import { stat } from 'fs';
 
 const supportedExtensions = [
   'jpeg', 'jpg', 'png', 'webp', 'tif', 'tiff',
