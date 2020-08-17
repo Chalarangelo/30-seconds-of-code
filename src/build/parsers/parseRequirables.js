@@ -9,7 +9,7 @@ import path from 'path';
 const parseRequirables = contentDirPath => {
   // Load configurations
   let requirables = [];
-  glob.sync(`${contentDirPath}/data/*.json`)
+  glob.sync(`${contentDirPath}/*.json`)
     .forEach( file => {
       requirables.push(
         require( path.resolve( file ) )

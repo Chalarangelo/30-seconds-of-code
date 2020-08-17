@@ -10,8 +10,6 @@ import { toggleDarkMode, toggleGithubLinks, decideCookies } from 'state/shell';
 
 const propTypes = {
   pageContext: PropTypes.shape({
-    logoSrc: PropTypes.string.isRequired,
-    splashLogoSrc: PropTypes.string.isRequired,
     stringLiterals: PropTypes.shape({
       title: PropTypes.string,
       pageDescription: PropTypes.string,
@@ -34,8 +32,6 @@ const propTypes = {
  */
 const SettingsPage = ({
   pageContext: {
-    logoSrc,
-    splashLogoSrc,
     stringLiterals: {
       title,
       pageDescription,
@@ -50,10 +46,9 @@ const SettingsPage = ({
   <>
     <Meta
       title={ title }
-      logoSrc={ splashLogoSrc }
       description={ pageDescription }
     />
-    <Shell logoSrc={ logoSrc } isSettings >
+    <Shell isSettings >
       <PageTitle>{ title }</PageTitle>
       <SimpleCard>
         <Toggle

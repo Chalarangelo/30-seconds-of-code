@@ -7,7 +7,6 @@
     "blog_data/snippets.json"
   ],
   "slug": "blog",
-  "parser": "blogParser",
   "resolver": "blogResolver",
   "isBlog": true,
   "featured": 1,

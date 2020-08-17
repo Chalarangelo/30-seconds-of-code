@@ -5,10 +5,49 @@ import hastToHTML from 'hast-util-to-html';
 import visit from 'unist-util-visit';
 import Prism from 'prismjs';
 import prismComponents from 'prismjs/components';
-import { escapeHTML } from 'utils';
+import { escapeHTML, optimizeAllNodes } from 'utils';
 
 // Setup Remark using the appropriate options.
 const remark = new Remark().data('settings', remarkOptions);
+
+const transformers = [
+  // Inject class into blog lists' <ol> elements
+  {
+    blogType: 'blog.list',
+    matcher: /<ol>/g,
+    replacer: '<ol class="blog-list">',
+  },
+  // Inject paragraphs and class into blog lists' <li> elements
+  {
+    blogType: 'blog.list',
+    matcher: /<li>\n*(.+?)\n((?!<li>).+?)\n*<\/li>/g,
+    replacer: '<li class="blog-list-item">$1</p><p>$2</li>',
+  },
+  // Add 'rel' and 'target' to external links
+  {
+    blogType: 'any',
+    matcher: /(href="https?:\/\/)/g,
+    replacer: 'target="_blank" rel="nofollow noopener noreferrer" $1',
+  },
+  // Convert blog post code to the appropriate elements
+  {
+    blogType: 'any',
+    matcher: /<pre class="language-([^"]+)">([\s\S]*?)<\/pre>/g,
+    replacer: '<pre class="blog-code language-$1">$2</pre>',
+  },
+  // Convert blog blockquotes to the appropriate elements
+  {
+    blogType: 'any',
+    matcher: /<blockquote>\s*\n*\s*<p>([\s\S]*?)<\/p>\s*\n*\s<\/blockquote>/g,
+    replacer: '<blockquote class="blog-quote">$1</blockquote>',
+  },
+  // Convert image credit to the appropriate element
+  {
+    blogType: 'any',
+    matcher: /<p>\s*\n*\s*<strong>Image credit:<\/strong>([\s\S]*?)<\/p>/g,
+    replacer: '<p class="blog-image-credit">Image credit: $1</p>',
+  },
+];
 
 /**
  * Get the real name of a language given it or an alias.
@@ -64,7 +103,7 @@ const highlightCode = (language, code) => {
  * Parses markdown into HTML from a given markdown string, using remark + prismjs.
  * @param {string} markdown - The markdown string to be parsed.
  */
-const parseMarkdown = markdown => {
+const parseMarkdown = (markdown, isText = false) => {
   const ast = remark.parse(markdown);
 
   // Highlight code blocks
@@ -75,15 +114,15 @@ const parseMarkdown = markdown => {
       languageName,
       node.value
     );
-    node.value = [
-      `<div class="gatsby-highlight" data-language="${languageName}">`,
-      `<pre class="language-${languageName}">`,
-      `<code class="language-${languageName}">`,
-      `${highlightedCode}`,
-      `</code>`,
-      `</pre>`,
-      `</div>`,
-    ].join('');
+    node.value = isText
+      ? [
+        `<div class="gatsby-highlight" data-language="${languageName}">`,
+        `<pre class="language-${languageName}">`,
+        `${highlightedCode.trim()}`,
+        `</pre>`,
+        `</div>`,
+      ].join('')
+      : `${highlightedCode}`;
   });
 
   // Highlight inline code blocks
@@ -96,4 +135,34 @@ const parseMarkdown = markdown => {
   return hastToHTML(htmlAst, { allowDangerousHtml: true });
 };
 
-export default parseMarkdown;
+const parseMarkdownSegments = ({texts, codeBlocks}, {isBlog, type, assetPath}) => {
+  const result = {};
+  Object.entries(texts).forEach(([key, value]) => {
+    if(!value) return;
+    result[key] = value.trim() ? parseMarkdown(value, true) : '';
+  });
+  if (isBlog) {
+    result.fullDescription = transformers.reduce(
+      (acc, { blogType, matcher, replacer }) => {
+        if (blogType === 'any' || blogType === type)
+          return acc.replace(matcher, replacer);
+        return acc;
+      },
+      result.fullDescription
+    );
+    // Transform relative paths for images
+    result.fullDescription = result.fullDescription.replace(
+      /(<p>)*<img src="\.\/([^"]+)"([^>]*)>(<\/p>)*/g,
+      (match, openTag, imgSrc, imgRest) =>
+        `<img class="card-image" src="${assetPath}${imgSrc}"${imgRest}>`
+    );
+  } else {
+    Object.entries(codeBlocks).forEach(([key, value]) => {
+      if(!value) return;
+      result[key] = value.trim() ? optimizeAllNodes(parseMarkdown(value)).trim() : '';
+    });
+  }
+  return result;
+};
+
+export default parseMarkdownSegments;

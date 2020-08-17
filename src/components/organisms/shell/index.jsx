@@ -18,7 +18,6 @@ const propTypes = {
   isBot: PropTypes.bool,
   isSearch: PropTypes.bool,
   isSettings: PropTypes.bool,
-  logoSrc: PropTypes.string,
   lastPageUrl: PropTypes.string.isRequired,
 };
 
@@ -36,7 +35,6 @@ const Shell = ({
   isBot,
   isSearch = false,
   isSettings = false,
-  logoSrc,
   lastPageUrl,
   children,
 }) => (
@@ -48,7 +46,7 @@ const Shell = ({
     >
       <a className='nav-btn' href='/'>
         <img
-          src={ logoSrc }
+          src='/assets/30s-icon.png'
           alt={ literals.home }
           className='nav-website-logo'
         />

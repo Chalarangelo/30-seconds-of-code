@@ -19,7 +19,6 @@
     "long": "JavaScript"
   },
   "slug": "css",
-  "parser": "cssParser",
   "resolver": "cssResolver",
   "featured": 3,
   "theme": {

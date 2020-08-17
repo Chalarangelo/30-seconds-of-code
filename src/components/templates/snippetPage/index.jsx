@@ -11,8 +11,6 @@ import CTA from 'components/molecules/cta';
 const propTypes = {
   pageContext: PropTypes.shape({
     snippet: PropTypes.snippet.isRequired,
-    logoSrc: PropTypes.string.isRequired,
-    splashLogoSrc: PropTypes.string.isRequired,
     cardTemplate: PropTypes.string,
     recommendedSnippets: PropTypes.arrayOf(PropTypes.snippet),
     pageDescription: PropTypes.string.isRequired,
@@ -35,8 +33,6 @@ const propTypes = {
 const SnippetPage = ({
   pageContext: {
     snippet,
-    logoSrc,
-    splashLogoSrc,
     cardTemplate,
     recommendedSnippets = [],
     breadcrumbs,
@@ -52,19 +48,19 @@ const SnippetPage = ({
       <Meta
         title={ snippet.title }
         description={ pageDescription }
-        logoSrc={ cardTemplate === 'BlogSnippetCard' ? snippet.cover.src : splashLogoSrc }
+        logoSrc={ cardTemplate === 'BlogSnippetCard' ? snippet.cover.src : undefined }
         structuredData={ {
           title: snippet.title,
           description: snippet.description,
           slug: snippet.slug,
-          orgLogoSrc: logoSrc,
+          orgLogoSrc: '/assets/30s-icon.png',
           firstSeen: snippet.firstSeen,
           lastUpdated: snippet.lastUpdated,
         } }
         breadcrumbsData={ breadcrumbs }
         canonical={ snippet.slug }
       />
-      <Shell logoSrc={ logoSrc } >
+      <Shell>
         <Breadcrumbs
           lastPage={ {
             url: lastPageUrl,

@@ -13,17 +13,14 @@ console.warn = jest.fn();
 const { store } = createStore();
 
 describe('<NotFoundPage />', () => {
-  const logoSrc = '/assets/logo.png';
-  const splashLogoSrc = '/assets/splash.png';
-  let wrapper, shell, meta, pageBackdrop, anchorButton;
+  let wrapper, meta, pageBackdrop, anchorButton;
 
   beforeEach(() => {
     wrapper = mount(
       <Provider store={ store }>
-        <NotFoundPage pageContext={ { logoSrc, splashLogoSrc } } />
+        <NotFoundPage />
       </Provider>
     );
-    shell = wrapper.find('Shell');
     meta = wrapper.find('Meta');
     pageBackdrop = wrapper.find('PageBackdrop');
     anchorButton = wrapper.find('a.btn.btn-home');
@@ -47,12 +44,7 @@ describe('<NotFoundPage />', () => {
     });
   });
 
-  it('should pass the correct data to the Shell component', () => {
-    expect(shell.prop('logoSrc')).toBe(logoSrc);
-  });
-
   it('should pass the correct data to the Meta component', () => {
-    expect(meta.prop('logoSrc')).toBe(splashLogoSrc);
     expect(meta.prop('title')).toBe(literals.pageNotFound);
   });
 

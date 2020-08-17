@@ -108,8 +108,9 @@ public
 # Overmind files
 .overmind.sock
 
-# Build-time parameters
+# Generated files
 .build
-
-# Generated content data
+.assets
+.content
 content/data
+static/assets

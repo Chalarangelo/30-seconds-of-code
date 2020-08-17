@@ -1,4 +1,5 @@
 const { green } = require('kleur');
+const env = require('./.build/env').default;
 
 const {
   sourceNodes,
@@ -15,7 +16,7 @@ const paths = require(`./src/config/paths`);
 const requirables = parseRequirables(paths.contentPath);
 console.log(`${green('success')} parse requirables`);
 
-const templates = parseTemplates(paths.templates, paths.templatesPath);
+const templates = parseTemplates(env === 'DEVELOPMENT' ? paths.devTemplates : paths.templates, paths.templatesPath);
 console.log(`${green('success')} parse templates`);
 
 const pagesQuery = parseQueries(paths.queryPath);

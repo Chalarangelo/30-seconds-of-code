@@ -63,18 +63,18 @@ const SnippetCard = ({
       <div className='card-source-content'>
         <CodeBlock
           language={ { short: 'html', long: 'HTML' } }
-          htmlContent={ snippet.html.htmlCode }
+          htmlContent={ snippet.html.html }
           className='card-code'
         />
         <CodeBlock
           language={ {short: 'css', long: 'CSS'} }
-          htmlContent={ snippet.html.cssCode }
+          htmlContent={ snippet.html.css }
           className='card-code'
         />
-        { snippet.html.jsCode &&
+        { snippet.html.js &&
           <CodeBlock
             language={ {short: 'js', long: 'JavaScript'} }
-            htmlContent={ snippet.html.jsCode }
+            htmlContent={ snippet.html.js }
             className='card-code'
           />
         }

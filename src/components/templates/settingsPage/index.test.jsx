@@ -14,14 +14,12 @@ console.warn = jest.fn();
 const { store } = createStore();
 
 describe('<SettingsPage />', () => {
-  const logoSrc = '/assets/logo.png';
-  const splashLogoSrc = '/assets/splash.png';
   let wrapper, shell, meta;
 
   beforeEach(() => {
     wrapper = mount(
       <Provider store={ store }>
-        <SettingsPage pageContext={ { logoSrc, splashLogoSrc, stringLiterals: literals } } />
+        <SettingsPage pageContext={ { stringLiterals: literals } } />
       </Provider>
     );
     shell = wrapper.find('Shell');
@@ -47,12 +45,10 @@ describe('<SettingsPage />', () => {
   });
 
   it('should pass the correct data to the Shell component', () => {
-    expect(shell.prop('logoSrc')).toBe(logoSrc);
     expect(shell.prop('isSettings')).toBe(true);
   });
 
   it('should pass the correct data to the Meta component', () => {
-    expect(meta.prop('logoSrc')).toBe(splashLogoSrc);
     expect(meta.prop('title')).toBe(literals.title);
   });
 

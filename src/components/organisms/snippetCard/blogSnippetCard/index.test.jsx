@@ -55,7 +55,7 @@ describe('<BlogSnippetCard />', () => {
   });
 
   it('should render the correct cover', () => {
-    expect(card.find('img').prop('src')).toBe(fullBlogSnippet.cover.src);
+    expect(card.find('img').prop('src')).toBe(fullBlogSnippet.cover);
   });
 
   describe('when github links are enabled', () => {
@@ -86,7 +86,7 @@ describe('<BlogSnippetCard />', () => {
   describe('without a cover', () => {
     beforeEach(() => {
       wrapper = mount(
-        <BlogSnippetCard snippet={ { ...fullBlogSnippet, cover: {src: ''} } }/>
+        <BlogSnippetCard snippet={ { ...fullBlogSnippet, cover: '' } }/>
       );
       card = wrapper.find('Card');
     });
