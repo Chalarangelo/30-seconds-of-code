@@ -15,20 +15,16 @@ console.warn = jest.fn();
 const { store } = createStore();
 
 describe('<ListingPage />', () => {
-  const logoSrc = '/assets/logo.png';
-  const splashLogoSrc = '/assets/splash.png';
   const snippetList = [ previewSnippet, previewBlogSnippet ];
   const listingName = 'Snippet list';
   const listingTitle = 'Snippet list';
   const pageDescription = 'Browse 100 snippets on 30 seconds of code';
-  let wrapper, shell, meta, snippetListComponent;
+  let wrapper, meta, snippetListComponent;
 
   beforeEach(() => {
     wrapper = mount(
       <Provider store={ store }>
         <ListingPage pageContext={ {
-          logoSrc,
-          splashLogoSrc,
           snippetList,
           paginator,
           sorter: {
@@ -41,7 +37,6 @@ describe('<ListingPage />', () => {
         } } />
       </Provider>
     );
-    shell = wrapper.find('Shell');
     meta = wrapper.find('Meta');
     snippetListComponent = wrapper.find('SnippetList');
   });
@@ -60,12 +55,9 @@ describe('<ListingPage />', () => {
     });
   });
 
-  it('should pass the correct data to the Shell component', () => {
-    expect(shell.prop('logoSrc')).toBe(logoSrc);
-  });
-
   it('should pass the correct data to the Meta component', () => {
-    expect(meta.prop('logoSrc')).toBe(splashLogoSrc);
+    expect(meta.prop('title')).toBe(listingName);
+    expect(meta.prop('description')).toBe(pageDescription);
   });
 
   it('should pass the correct data to the SnippetList component', () => {
@@ -79,8 +71,6 @@ describe('<ListingPage />', () => {
       wrapper = mount(
         <Provider store={ store }>
           <ListingPage pageContext={ {
-            logoSrc,
-            splashLogoSrc,
             snippetList,
             paginator: firstPagePaginator,
             sorter: {
@@ -94,7 +84,6 @@ describe('<ListingPage />', () => {
           } } />
         </Provider>
       );
-      shell = wrapper.find('Shell');
       meta = wrapper.find('Meta');
       snippetListComponent = wrapper.find('SnippetList');
     });

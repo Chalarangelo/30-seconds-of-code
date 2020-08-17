@@ -13,17 +13,14 @@ console.warn = jest.fn();
 const { store } = createStore();
 
 describe('<StaticPage />', () => {
-  const logoSrc = '/assets/logo.png';
-  const splashLogoSrc = '/assets/splash.png';
-  let wrapper, shell, meta;
+  let wrapper, meta;
 
   beforeEach(() => {
     wrapper = mount(
       <Provider store={ store }>
-        <StaticPage pageContext={ { logoSrc, splashLogoSrc, stringLiterals: aboutLiterals } } />
+        <StaticPage pageContext={ { stringLiterals: aboutLiterals } } />
       </Provider>
     );
-    shell = wrapper.find('Shell');
     meta = wrapper.find('Meta');
   });
 
@@ -49,12 +46,7 @@ describe('<StaticPage />', () => {
     });
   });
 
-  it('should pass the correct data to the Shell component', () => {
-    expect(shell.prop('logoSrc')).toBe(logoSrc);
-  });
-
   it('should pass the correct data to the Meta component', () => {
-    expect(meta.prop('logoSrc')).toBe(splashLogoSrc);
     expect(meta.prop('title')).toBe(aboutLiterals.title);
   });
 });

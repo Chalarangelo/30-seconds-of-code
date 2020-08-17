@@ -14,14 +14,12 @@ console.warn = jest.fn();
 const { store } = createStore();
 
 describe('<SearchPage />', () => {
-  const logoSrc = '/assets/logo.png';
-  const splashLogoSrc = '/assets/splash.png';
   let wrapper, shell, meta, search;
 
   beforeEach(() => {
     wrapper = mount(
       <Provider store={ store }>
-        <SearchPage pageContext={ { logoSrc, splashLogoSrc, pageDescription: '' } } />
+        <SearchPage pageContext={ { pageDescription: '' } } />
       </Provider>
     );
     shell = wrapper.find('Shell');
@@ -48,12 +46,10 @@ describe('<SearchPage />', () => {
   });
 
   it('should pass the correct data to the Shell component', () => {
-    expect(shell.prop('logoSrc')).toBe(logoSrc);
     expect(shell.prop('isSearch')).toBe(true);
   });
 
   it('should pass the correct data to the Meta component', () => {
-    expect(meta.prop('logoSrc')).toBe(splashLogoSrc);
     expect(meta.prop('title').indexOf(literals.search)).not.toBe(-1);
   });
 
@@ -67,7 +63,7 @@ describe('<SearchPage />', () => {
       store.dispatch(pushNewQuery('test'));
       wrapper = mount(
         <Provider store={ store }>
-          <SearchPage pageContext={ { logoSrc, splashLogoSrc, pageDescription: '' } } />
+          <SearchPage pageContext={ { pageDescription: '' } } />
         </Provider>
       );
       meta = wrapper.find('Meta');
