@@ -66,7 +66,7 @@ const prepareAssets = async() => {
       await Promise.all(assets.map(asset => processImageAsset(asset, `${outPath}/${images.name}`)));
     }
   }
-  boundLog(`Processing image assets to from configuration files complete`, 'success');
+  boundLog(`Processing image assets from configuration files complete`, 'success');
 
   boundLog(`Copying assets from ${path.resolve(outPath)} to ${path.resolve('static', staticAssetPath)}`, 'info');
   if(global._yild_instance.env === 'PRODUCTION') {
