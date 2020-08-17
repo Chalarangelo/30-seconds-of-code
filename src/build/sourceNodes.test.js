@@ -9,7 +9,7 @@ const actions = {
 };
 
 const createNodeIdMock = jest.fn(s => s);
-const createContentDigestMock = jest.fn(o => null);
+const createContentDigestMock = jest.fn(() => null);
 const getNodesByTypeMock = jest.fn().mockReturnValue([
   {fileAbsolutePath: '30code/snippets/all.md'},
   {fileAbsolutePath: '30code/snippets/allEqual.md'},

@@ -153,7 +153,7 @@ const parseMarkdownSegments = ({texts, codeBlocks}, {isBlog, type, assetPath}) =
     // Transform relative paths for images
     result.fullDescription = result.fullDescription.replace(
       /(<p>)*<img src="\.\/([^"]+)"([^>]*)>(<\/p>)*/g,
-      (match, openTag, imgSrc, imgRest, closeTag) =>
+      (match, openTag, imgSrc, imgRest) =>
         `<img class="card-image" src="${assetPath}${imgSrc}"${imgRest}>`
     );
   } else {

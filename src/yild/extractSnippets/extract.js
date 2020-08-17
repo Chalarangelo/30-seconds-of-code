@@ -1,6 +1,5 @@
 import parseSnippets from './parseSnippets';
-import { convertToSeoSlug, uniqueElements } from 'utils';
-import rankSnippet from 'engines/rankingEngine';
+import { uniqueElements } from 'utils';
 import literals from 'lang/en/listing';
 
 const extract = (configs, langData, parentLog) => configs.map(cfg => {

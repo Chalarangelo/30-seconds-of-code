@@ -6,7 +6,7 @@ import { initAction } from '../core';
  * Generates the cache key file.
  */
 const prepareCacheKey = async() => {
-  const [boundLog, _, outPath] = initAction('prepareCacheKey', [['paths', 'buildPath']]);
+  const [boundLog, , outPath] = initAction('prepareCacheKey', [['paths', 'buildPath']]);
   boundLog('Generating cache key file...', 'info');
 
   boundLog(`Writing cache key file to ${path.resolve(outPath, 'cacheKey.js')}`, 'info');
