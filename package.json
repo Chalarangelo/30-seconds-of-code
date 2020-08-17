@@ -19,7 +19,7 @@
     "copy-to-clipboard": "^3.3.1",
     "cross-env": "^6.0.3",
     "css-loader": "^3.4.2",
-    "cypress": "^4.7.0",
+    "cypress": "^4.12.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^6.8.0",
@@ -121,8 +121,7 @@
   "bugs": {
     "url": "https://github.com/30-seconds/30-seconds-web/issues"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "browserslist": [
     "> 0.5% and last 4 versions and not dead and not ie>0 and not op_mini all and not and_uc>0 and not edge<79"
   ]
