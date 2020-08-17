@@ -9,8 +9,6 @@ import literals from 'lang/en/client/common';
 
 const propTypes = {
   pageContext: PropTypes.shape({
-    logoSrc: PropTypes.string.isRequired,
-    splashLogoSrc: PropTypes.string.isRequired,
     paginator: PropTypes.paginator,
     sorter: PropTypes.sorter,
     snippetList: PropTypes.arrayOf(PropTypes.snippet),
@@ -29,8 +27,6 @@ const propTypes = {
  */
 const ListingPage = ({
   pageContext: {
-    logoSrc,
-    splashLogoSrc,
     paginator,
     sorter,
     snippetList,
@@ -57,18 +53,17 @@ const ListingPage = ({
   return (
     <>
       <Meta
-        logoSrc={ splashLogoSrc }
         title={ isHomePage ? '' : listingName }
         description={ pageDescription }
         canonical={ isHomePage ? '/' : '' }
       />
-      <Shell logoSrc={ logoSrc } >
+      <Shell>
         {
           isFirstListingPage ? (
             <>
               <h1 className='home-title'>
                 <img
-                  src={ logoSrc }
+                  src='/assets/30s-icon.png'
                   alt={ literals.siteName }
                   className='home-logo'
                 />

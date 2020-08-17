@@ -14,10 +14,8 @@ console.warn = jest.fn();
 const { store } = createStore();
 
 describe('<SnippetPage />', () => {
-  const logoSrc = '/assets/logo.png';
-  const splashLogoSrc = '/assets/splash.png';
   const cardTemplate = 'StandardSnippetCard';
-  let wrapper, shell, meta, crumbs, snippetCard;
+  let wrapper, meta, crumbs, snippetCard;
 
   beforeEach(() => {
     wrapper = mount(
@@ -25,15 +23,12 @@ describe('<SnippetPage />', () => {
         <SnippetPage pageContext={ {
           snippet:
           fullSnippet,
-          splashLogoSrc,
-          logoSrc,
           cardTemplate,
           breadcrumbs,
           pageDescription: '',
         } }/>
       </Provider>
     );
-    shell = wrapper.find('Shell');
     meta = wrapper.find('Meta');
     crumbs = wrapper.find('Breadcrumbs');
     snippetCard = wrapper.find('SnippetCard');
@@ -57,12 +52,7 @@ describe('<SnippetPage />', () => {
     });
   });
 
-  it('should pass the correct data to the Shell component', () => {
-    expect(shell.prop('logoSrc')).toBe(logoSrc);
-  });
-
   it('should pass the correct data to the Meta component', () => {
-    expect(meta.prop('logoSrc')).toBe(splashLogoSrc);
     expect(meta.prop('title')).toBe(fullSnippet.title);
   });
 
@@ -80,15 +70,12 @@ describe('<SnippetPage />', () => {
         <Provider store={ store }>
           <SnippetPage pageContext={ {
             snippet: fullBlogSnippet,
-            splashLogoSrc,
-            logoSrc,
             cardTemplate: 'BlogSnippetCard',
             pageDescription: '',
             breadcrumbs,
           } }/>
         </Provider>
       );
-      shell = wrapper.find('Shell');
       meta = wrapper.find('Meta');
       crumbs = wrapper.find('Breadcrumbs');
       snippetCard = wrapper.find('SnippetCardWrapper');

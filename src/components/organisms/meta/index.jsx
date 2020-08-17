@@ -47,7 +47,7 @@ const Meta = ({
   description = '',
   acceptsCookies,
   meta = [],
-  logoSrc,
+  logoSrc = '/assets/logo.png',
   structuredData,
   breadcrumbsData,
   canonical = '',

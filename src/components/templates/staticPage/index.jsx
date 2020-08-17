@@ -7,9 +7,6 @@ import Shell from 'components/organisms/shell';
 
 const propTypes = {
   pageContext: PropTypes.shape({
-    /** URI for the logo image */
-    logoSrc: PropTypes.string.isRequired,
-    splashLogoSrc: PropTypes.string.isRequired,
     stringLiterals: PropTypes.shape({
       title: PropTypes.string,
       pageDescription: PropTypes.string,
@@ -31,8 +28,6 @@ const propTypes = {
  */
 const StaticPage = ({
   pageContext: {
-    logoSrc,
-    splashLogoSrc,
     stringLiterals: {
       title,
       subtitle,
@@ -44,10 +39,9 @@ const StaticPage = ({
   <>
     <Meta
       title={ title }
-      logoSrc={ splashLogoSrc }
       description={ pageDescription }
     />
-    <Shell logoSrc={ logoSrc } >
+    <Shell>
       <PageTitle className='static-tite'>{ title }</PageTitle>
       <p className='page-sub-title'>{ subtitle }</p>
       {

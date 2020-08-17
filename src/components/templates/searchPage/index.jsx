@@ -10,8 +10,6 @@ import literals from 'lang/en/client/search';
 
 const propTypes = {
   pageContext: PropTypes.shape({
-    logoSrc: PropTypes.string.isRequired,
-    splashLogoSrc: PropTypes.string.isRequired,
     pageDescription: PropTypes.string.isRequired,
     recommendedSnippets: PropTypes.arrayOf(PropTypes.shape({})),
     searchIndex: PropTypes.arrayOf(PropTypes.shape({})),
@@ -26,8 +24,6 @@ const propTypes = {
  */
 const SearchPage = ({
   pageContext: {
-    logoSrc,
-    splashLogoSrc,
     recommendedSnippets,
     pageDescription,
     searchIndex,
@@ -43,11 +39,10 @@ const SearchPage = ({
   return (
     <>
       <Meta
-        logoSrc={ splashLogoSrc }
         description={ pageDescription }
         title={ searchQuery.length === 0 ? literals.search : literals.resultsFor(searchQuery) }
       />
-      <Shell logoSrc={ logoSrc } isSearch >
+      <Shell isSearch >
         <SearchResults recommendedSnippets={ recommendedSnippets }/>
       </Shell>
     </>

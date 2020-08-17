@@ -19,8 +19,6 @@ const createPages = (query, templates, requirables) => ({ graphql, actions }) =>
 
       const searchIndex = result.data.searchIndex;
       const commonContext = {
-        logoSrc: result.data.logoSrc.childImageSharp.original.src,
-        splashLogoSrc: result.data.splashLogoSrc.childImageSharp.original.src,
         snippetCount: searchIndex.edges.length,
       };
 
