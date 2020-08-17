@@ -19,7 +19,7 @@ const CookieConsentPopup = ({
   ...rest
 }) => (
   <div className='cookie-consent-popup' { ...rest }>
-    <p>
+    <p data-nosnippet>
       { literals.cookieDisclaimer }
       { literals.learnMore }
       <a
@@ -35,6 +35,7 @@ const CookieConsentPopup = ({
     <div className='cookie-consent-buttons'>
       <Button
         className='cookie-accept'
+        data-nosnippet
         onClick={ e => {
           e.preventDefault();
           dispatch(decideCookies(true));
@@ -43,6 +44,7 @@ const CookieConsentPopup = ({
       </Button>
       <Button
         className='cookie-decline'
+        data-nosnippet
         onClick={ e => {
           e.preventDefault();
           dispatch(decideCookies(false));
