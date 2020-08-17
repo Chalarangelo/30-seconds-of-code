@@ -37,10 +37,8 @@
     "gatsby-plugin-react-helmet": "^3.1.23",
     "gatsby-plugin-resolve-src": "^2.0.0",
     "gatsby-plugin-sass": "^2.1.30",
-    "gatsby-plugin-sharp": "^2.4.8",
     "gatsby-plugin-sitemap": "^2.2.28",
     "gatsby-source-filesystem": "^2.1.51",
-    "gatsby-transformer-sharp": "^2.3.17",
     "glob": "^7.1.6",
     "hast-util-to-html": "^7.1.1",
     "icon-font-generator": "^2.1.10",
@@ -98,7 +96,9 @@
   },
   "watch": {
     "extract-snippets": {
-      "patterns": [ "content/sources" ],
+      "patterns": [
+        "content/sources"
+      ],
       "extensions": "md",
       "delay": "5000",
       "ignore": "README",
@@ -106,7 +106,9 @@
       "runOnChangeOnly": true
     },
     "prepare-assets": {
-      "patterns": [ "content/sources" ],
+      "patterns": [
+        "content/sources"
+      ],
       "extensions": "jpeg,jpg,png,webp,tif,tiff",
       "delay": "5000",
       "quiet": true,
@@ -120,7 +122,9 @@
   "bugs": {
     "url": "https://github.com/30-seconds/30-seconds-web/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "sharp": "^0.25.4"
+  },
   "browserslist": [
     "> 0.5% and last 4 versions and not dead and not ie>0 and not op_mini all and not and_uc>0 and not edge<79"
   ]
