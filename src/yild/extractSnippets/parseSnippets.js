@@ -8,8 +8,6 @@ import { convertToSeoSlug, uniqueElements } from 'utils';
 import { determineExpertiseFromTags, stripExpertiseFromTags } from 'build/transformers';
 import rankSnippet from 'engines/rankingEngine';
 import parseMarkdown from './parseMarkdown';
-// TODO: Remove usage and package after update to Node.js v12.x
-import matchAll from 'string.prototype.matchall';
 // TODO: Consider parsing this via a new parser or similar
 // The argument against is that it's a single case and might not extend to other repos in the future
 import authors from '../../../content/sources/30blog/blog_data/blog_authors';
@@ -67,8 +65,7 @@ export const getCodeBlocks = (
     `^${mdCodeFence}(${languages})?`,
     'gm'
   );
-  // TODO: Replace matchAll(str, regex) with str.matchAll(regex) after update to Node.js v12.x
-  const raw = Array.from(matchAll(str, codeMatcher), m => m[0]);
+  const raw = Array.from([...str.matchAll(codeMatcher)].map(m => m[0]));
   const results = raw.map(v => v.replace(replacer, '').trim());
 
   if(isCssSnippet) {
