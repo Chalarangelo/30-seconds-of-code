@@ -62,7 +62,10 @@ const obj = {
   }
 };
 
-console.log(f()); // { foo }
+const myObj = Object.create(obj);
+myObj.foo = 1;
+
+console.log(myObj.f()); // { foo: 1 }
 ```
 
 Similarly, when used inside a constructor, `this` refers to the object being constructed.
