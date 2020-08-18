@@ -48,7 +48,7 @@ Creates a list with sticky headings for each section.
 .container {
   display: grid;
   place-items: center;
-  min-height: 100vh;
+  min-height: 400px;
 }
 
 .sticky-stack {
