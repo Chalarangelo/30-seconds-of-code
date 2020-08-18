@@ -52,7 +52,7 @@ Creates a list with floating headings for each section.
 .container {
   display: grid;
   place-items: center;
-  min-height: 100vh;
+  min-height: 400px;
 }
 
 .floating-stack {
