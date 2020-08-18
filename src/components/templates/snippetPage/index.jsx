@@ -48,7 +48,7 @@ const SnippetPage = ({
       <Meta
         title={ snippet.title }
         description={ pageDescription }
-        logoSrc={ cardTemplate === 'BlogSnippetCard' ? snippet.cover.src : undefined }
+        logoSrc={ cardTemplate === 'BlogSnippetCard' ? snippet.cover : undefined }
         structuredData={ {
           title: snippet.title,
           description: snippet.description,
