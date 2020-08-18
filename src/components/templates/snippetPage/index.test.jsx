@@ -82,7 +82,7 @@ describe('<SnippetPage />', () => {
     });
 
     it('should pass the correct logoSrc to the Meta component', () => {
-      expect(meta.prop('logoSrc')).toBe(fullBlogSnippet.cover.src);
+      expect(meta.prop('logoSrc')).toBe(fullBlogSnippet.cover);
     });
   });
 });
