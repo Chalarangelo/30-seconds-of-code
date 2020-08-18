@@ -1,5 +1,5 @@
 ---
-title: How do I convert and iterable to an array in JavaScript?
+title: How do I convert an iterable to an array in JavaScript?
 type: question
 tags: javascript,object,array,string
 authors: chalarangelo
