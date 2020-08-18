@@ -1,5 +1,5 @@
 ---
-title: Responsive image mosaic.
+title: Responsive image mosaic
 tags: layout,intermediate
 ---
 
