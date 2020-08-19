@@ -1,0 +1,9 @@
+{
+  "types": ["woff2"],
+  "fontName": "icons",
+  "fontRelativePath": "../../assets/",
+  "cssTemplatePath": "src/yild/makeIcons/cssTemplate.hbs",
+  "cssSelector": ".icon",
+  "cssClassName": "icon",
+  "cssClassPrefix": "icon-"
+}
