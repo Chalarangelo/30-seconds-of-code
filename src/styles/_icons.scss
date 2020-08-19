@@ -1,82 +1,82 @@
 @font-face {
-    font-family: "icons";
-    src: url("../../assets/icons.woff2?c8e6ec08c3716d77c23630fe4b219f77") format("woff2");
+  font-family: "icons";
+  src: url("../../assets/icons.woff2?bc96d006b08d44606f3122178a9e0225") format("woff2");
 }
 
 .icon:before {
-    font-family: icons !important;
-    font-style: normal;
-    font-weight: normal !important;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font-family: icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .icon.icon-arrow-left:before {
-    content: "\f101";
+  content: "\f101";
 }
 .icon.icon-blog:before {
-    content: "\f102";
+  content: "\f102";
 }
 .icon.icon-check:before {
-    content: "\f103";
+  content: "\f103";
 }
 .icon.icon-chevron-down:before {
-    content: "\f104";
+  content: "\f104";
 }
 .icon.icon-chevron-left:before {
-    content: "\f105";
+  content: "\f105";
 }
 .icon.icon-chevron-right:before {
-    content: "\f106";
+  content: "\f106";
 }
 .icon.icon-chevron-up:before {
-    content: "\f107";
+  content: "\f107";
 }
 .icon.icon-clipboard:before {
-    content: "\f108";
+  content: "\f108";
 }
 .icon.icon-codepen:before {
-    content: "\f109";
+  content: "\f109";
 }
 .icon.icon-csharp:before {
-    content: "\f10a";
+  content: "\f10a";
 }
 .icon.icon-css:before {
-    content: "\f10b";
+  content: "\f10b";
 }
 .icon.icon-golang:before {
-    content: "\f10c";
+  content: "\f10c";
 }
 .icon.icon-home:before {
-    content: "\f10d";
+  content: "\f10d";
 }
 .icon.icon-js:before {
-    content: "\f10e";
+  content: "\f10e";
 }
 .icon.icon-list:before {
-    content: "\f10f";
+  content: "\f10f";
 }
 .icon.icon-php:before {
-    content: "\f110";
+  content: "\f110";
 }
 .icon.icon-python:before {
-    content: "\f111";
+  content: "\f111";
 }
 .icon.icon-react:before {
-    content: "\f112";
+  content: "\f112";
 }
 .icon.icon-search:before {
-    content: "\f113";
+  content: "\f113";
 }
 .icon.icon-settings:before {
-    content: "\f114";
+  content: "\f114";
 }
 .icon.icon-star:before {
-    content: "\f115";
+  content: "\f115";
 }
 .icon.icon-twitter:before {
-    content: "\f116";
+  content: "\f116";
 }
