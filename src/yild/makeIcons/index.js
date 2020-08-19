@@ -1,26 +1,59 @@
-import childProcess from 'child_process';
+import glob from 'glob';
+import fs from 'fs-extra';
+import path from 'path';
+import webfontsGenerator from 'webfonts-generator';
 import { initAction } from '../core';
+import iconConfig from 'config/icons';
 
+const {
+  types,
+  fontName,
+  fontRelativePath,
+  cssTemplatePath,
+  cssSelector,
+  cssClassName,
+  cssClassPrefix,
+} = iconConfig;
+
+/**
+ * Generate a woff2 fle with the icon font and CSS styles to go with it.
+ */
 const makeIcons = () => {
-  const [boundLog] = initAction('makeIcons');
-  boundLog('Icon font generation started...', 'info');
+  const [boundLog, , inPath, outPath, cssPath] = initAction('makeIcons', [
+    ['paths', 'rawIconPath'],
+    ['paths', 'rawAssetPath'],
+    ['paths', 'iconFontPath'],
+  ]);
+  const files = glob.sync(`${inPath}`);
+  boundLog(`Generating icon font and styles from ${files.length} files...`, 'info');
+
+  const config = {
+    files,
+    dest: outPath,
+    fontName,
+    types,
+    html: false,
+    css: true,
+    cssDest: cssPath,
+    cssFontsUrl: fontRelativePath,
+    cssTemplate: cssTemplatePath,
+    templateOptions: {
+      baseSelector: cssSelector,
+      baseClassNames: cssClassName,
+      classPrefix: cssClassPrefix,
+    },
+  };
 
   return new Promise((resolve, reject) => {
-    // TODO: This is a hack, probably write some code of our own for the generation
-    // and get rid of the package as it has a lot of trouble running as a proper CLI!
-    const iconGenerate = childProcess.spawn('npm', ['run', 'make-icons', '--silent']);
-    boundLog(`${iconGenerate.spawnargs.join(' ')} (pid: ${iconGenerate.pid})`, 'info');
-
-    iconGenerate.stdout.on('data', data => {
-      `${data}`.split('\n').filter(s => s.trim().length).forEach(s => boundLog(s, 'info'));
-    });
-    iconGenerate.on('error', err => {
-      boundLog(`${err}`, 'error');
-      reject();
-    });
-    iconGenerate.on('exit', code => {
-      boundLog(`Icon font generation completed with exit code ${code}`, 'success');
-      resolve();
+    webfontsGenerator(config, (error, result) => {
+      if (error) reject(error);
+      else {
+        const fileName = `${config.dest}/${config.fontName}`;
+        boundLog(`Writing font to ${path.resolve(`${fileName}.${types[0]}`)}...`, 'info');
+        ['svg', 'ttf', 'woff'].forEach(suffix => fs.removeSync(`${fileName}.${suffix}`));
+        boundLog('Generating icon font and styles complete', 'success');
+        resolve(result);
+      }
     });
   });
 };
