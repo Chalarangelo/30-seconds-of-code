@@ -1,76 +1,57 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import createStore from 'state';
-import { mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import Helmet from 'react-helmet';
+import { cleanup } from '@testing-library/react';
+import { renderConnected } from 'test/utils';
 import literals from 'lang/en/client/search';
-
 import SearchPage from './index';
 import { pushNewQuery } from 'state/search';
 
-configure({ adapter: new Adapter() });
 console.warn = jest.fn();
 
-const { store } = createStore();
-
 describe('<SearchPage />', () => {
-  let wrapper, shell, meta, search;
+  let wrapper, meta, store, rerender;
 
   beforeEach(() => {
-    wrapper = mount(
-      <Provider store={ store }>
-        <SearchPage pageContext={ { pageDescription: '' } } />
-      </Provider>
+    const utils = renderConnected(
+      <SearchPage pageContext={ { pageDescription: '' } } />
     );
-    shell = wrapper.find('Shell');
-    meta = wrapper.find('Meta');
-    search = wrapper.find('Search');
+    wrapper = utils.container;
+    meta = Helmet.peek();
+    store = utils.store;
+    rerender = utils.rerenderConnected;
   });
+
+  afterEach(cleanup);
 
   describe('should render', () => {
     it('a Shell component', () => {
-      expect(wrapper).toContainMatchingElement('Shell');
-    });
-
-    it('a Meta component', () => {
-      expect(wrapper).toContainMatchingElement('Meta');
+      expect(wrapper.querySelectorAll('.page-container')).toHaveLength(1);
     });
 
     it('a Search component', () => {
-      expect(wrapper).toContainMatchingElement('Search');
+      expect(wrapper.querySelectorAll('input[type="search"]')).toHaveLength(1);
     });
 
     it('a SearchResults component', () => {
-      expect(wrapper).toContainMatchingElement('SearchResults');
+      expect(wrapper.querySelectorAll('.search-empty')).toHaveLength(1);
     });
-  });
-
-  it('should pass the correct data to the Shell component', () => {
-    expect(shell.prop('isSearch')).toBe(true);
   });
 
   it('should pass the correct data to the Meta component', () => {
-    expect(meta.prop('title').indexOf(literals.search)).not.toBe(-1);
-  });
-
-  it('should pass the correct data to the Search component', () => {
-    expect(search.prop('isMainSearch')).toBe(true);
+    expect(meta.title).toContain(literals.search);
   });
 
   describe('with a given search query', () => {
-
     beforeEach(() => {
       store.dispatch(pushNewQuery('test'));
-      wrapper = mount(
-        <Provider store={ store }>
-          <SearchPage pageContext={ { pageDescription: '' } } />
-        </Provider>
+      wrapper = rerender(
+        <SearchPage pageContext={ { pageDescription: '' } } />
       );
-      meta = wrapper.find('Meta');
+      meta = Helmet.peek();
     });
 
     it('should pass the correct title to the Meta component', () => {
-      expect(meta.prop('title').indexOf(literals.resultsFor('test'))).not.toBe(-1);
+      expect(meta.title).toContain(literals.resultsFor('test'));
     });
   });
 });

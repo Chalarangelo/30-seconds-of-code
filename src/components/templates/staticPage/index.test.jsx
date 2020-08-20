@@ -1,53 +1,44 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import createStore from 'state';
-import { mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import Helmet from 'react-helmet';
+import { cleanup } from '@testing-library/react';
+import { renderConnected } from 'test/utils';
 import aboutLiterals from 'lang/en/about';
-
 import StaticPage from './index';
 
-configure({ adapter: new Adapter() });
 console.warn = jest.fn();
-
-const { store } = createStore();
 
 describe('<StaticPage />', () => {
   let wrapper, meta;
 
   beforeEach(() => {
-    wrapper = mount(
-      <Provider store={ store }>
-        <StaticPage pageContext={ { stringLiterals: aboutLiterals } } />
-      </Provider>
-    );
-    meta = wrapper.find('Meta');
+    wrapper = renderConnected(
+      <StaticPage pageContext={ { stringLiterals: aboutLiterals } } />
+    ).container;
+    meta = Helmet.peek();
   });
+
+  afterEach(cleanup);
 
   describe('should render', () => {
     it('a Shell component', () => {
-      expect(wrapper).toContainMatchingElement('Shell');
-    });
-
-    it('a Meta component', () => {
-      expect(wrapper).toContainMatchingElement('Meta');
+      expect(wrapper.querySelectorAll('.page-container')).toHaveLength(1);
     });
 
     it('a PageTitle component', () => {
-      expect(wrapper).toContainMatchingElement('PageTitle');
+      expect(wrapper.querySelectorAll('.page-title')).toHaveLength(1);
     });
 
     it('a subtitle element', () => {
-      expect(wrapper).toContainMatchingElement('.page-sub-title');
+      expect(wrapper.querySelectorAll('.page-sub-title')).toHaveLength(1);
     });
 
     it('3 SimpleCard components', () => {
-      expect(wrapper).toContainMatchingElements(3, 'SimpleCard');
+      expect(wrapper.querySelectorAll('.card')).toHaveLength(3);
     });
   });
 
   it('should pass the correct data to the Meta component', () => {
-    expect(meta.prop('title')).toBe(aboutLiterals.title);
+    expect(meta.title).toContain(aboutLiterals.title);
   });
 });
 
