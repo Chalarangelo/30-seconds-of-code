@@ -1,10 +1,7 @@
 import React from 'react';
-import { mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
+import { render, cleanup } from '@testing-library/react';
 import Paginator from './index';
 
-configure({ adapter: new Adapter() });
 console.warn = jest.fn();
 
 describe('<Paginator />', () => {
@@ -12,97 +9,109 @@ describe('<Paginator />', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = mount(
+    wrapper = render(
       <Paginator paginator={ {
         pageNumber,
         totalPages,
         baseUrl,
-      } } />);
+      } }
+      />
+    ).container;
   });
+
+  afterEach(cleanup);
 
   describe('should render', () => {
     it('a previous button', () => {
-      expect(wrapper).toContainMatchingElement('.btn.previous-page');
+      expect(wrapper.querySelectorAll('.btn.previous-page')).toHaveLength(1);
     });
 
     it('a next button', () => {
-      expect(wrapper).toContainMatchingElement('.btn.next-page');
+      expect(wrapper.querySelectorAll('.btn.next-page')).toHaveLength(1);
     });
 
     it('a button for current page', () => {
-      expect(wrapper).toContainMatchingElement('.btn.current-page');
+      expect(wrapper.querySelectorAll('.btn.current-page')).toHaveLength(1);
     });
   });
 
   describe('with first page as current', () => {
     beforeEach(() => {
-      wrapper = mount(
+      wrapper = render(
         <Paginator paginator={ {
           pageNumber: 1,
           totalPages,
           baseUrl,
-        } } />);
+        } }
+        />
+      ).container;
     });
 
     describe('should render', () => {
       it('not a previous button', () => {
-        expect(wrapper).not.toContainMatchingElement('.btn.previous-page');
+        expect(wrapper.querySelectorAll('.btn.previous-page')).toHaveLength(0);
       });
 
       it('appropriate buttons for next and other pages', () => {
-        expect(wrapper).toContainMatchingElements(3, 'a.btn');
+        expect(wrapper.querySelectorAll('a.btn')).toHaveLength(3);
       });
     });
   });
 
   describe('with last page as current', () => {
     beforeEach(() => {
-      wrapper = mount(
+      wrapper = render(
         <Paginator paginator={ {
           pageNumber: totalPages,
           totalPages,
           baseUrl,
-        } } />);
+        } }
+        />
+      ).container;
     });
 
     describe('should render', () => {
       it('not a next button', () => {
-        expect(wrapper).not.toContainMatchingElement('.btn.next-page');
+        expect(wrapper.querySelectorAll('.btn.next-page')).toHaveLength(0);
       });
 
       it('appropriate buttons for next and other pages', () => {
-        expect(wrapper).toContainMatchingElements(3, 'a.btn');
+        expect(wrapper.querySelectorAll('a.btn')).toHaveLength(3);
       });
     });
   });
 
   describe('with three or fewer buttons', () => {
     beforeEach(() => {
-      wrapper = mount(
+      wrapper = render(
         <Paginator paginator={ {
           pageNumber: 1,
           totalPages: 2,
           baseUrl,
-        } } />);
+        } }
+        />
+      ).container;
     });
 
     it('should render the correct buttons', () => {
-      expect(wrapper).toContainMatchingElements(2, 'a.btn');
+      expect(wrapper.querySelectorAll('a.btn')).toHaveLength(2);
     });
   });
 
   describe('with only one button', () => {
     beforeEach(() => {
-      wrapper = mount(
+      wrapper = render(
         <Paginator paginator={ {
           pageNumber: 1,
           totalPages: 1,
           baseUrl,
-        } } />);
+        } }
+        />
+      ).container;
     });
 
     it('should not render', () => {
-      expect(wrapper).not.toContainMatchingElement('a.btn');
+      expect(wrapper.querySelectorAll('a.btn')).toHaveLength(0);
     });
   });
 });

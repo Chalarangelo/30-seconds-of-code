@@ -1,30 +1,30 @@
 import React from 'react';
-import { mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
+import { render, cleanup } from '@testing-library/react';
 import Footer from './index';
 
-configure({ adapter: new Adapter() });
 console.warn = jest.fn();
 
 describe('<Footer />', () => {
   let wrapper;
 
-  beforeAll(() => {
-    wrapper = mount(
-      <Footer />);
+  beforeEach(() => {
+    wrapper = render(
+      <Footer />
+    ).container;
   });
 
+  afterEach(cleanup);
+
   it('renders the appropriate component', () => {
-    expect(wrapper).toContainMatchingElement('footer');
+    expect(wrapper.querySelectorAll('footer')).toHaveLength(1);
   });
 
   it('renders two sections', () => {
-    expect(wrapper).toContainMatchingElements(2, 'p');
+    expect(wrapper.querySelectorAll('p')).toHaveLength(2);
   });
 
   it('renders the links section', () => {
-    expect(wrapper).toContainMatchingElements(4, 'footer > p:first-child a');
+    expect(wrapper.querySelectorAll('footer > p:first-child a')).toHaveLength(4);
   });
 });
 
