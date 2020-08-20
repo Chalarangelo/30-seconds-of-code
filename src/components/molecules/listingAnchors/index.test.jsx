@@ -1,49 +1,49 @@
 import React from 'react';
-import { mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
+import { render, cleanup } from '@testing-library/react';
 import ListingAnchors from './index';
-
 import { anchorItems } from 'fixtures/listingAnchors';
 
-configure({ adapter: new Adapter() });
 console.warn = jest.fn();
 
 describe('<ListingAnchors />', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = mount(
-      <ListingAnchors items={ anchorItems } />);
+    wrapper = render(
+      <ListingAnchors items={ anchorItems } />
+    ).container;
   });
+
+  afterEach(cleanup);
 
   describe('should render', () => {
     it('a container component', () => {
-      expect(wrapper).toContainMatchingElement('.listing-anchors');
+      expect(wrapper.querySelectorAll('.listing-anchors')).toHaveLength(1);
     });
 
     it('two anchor buttons', () => {
-      expect(wrapper).toContainMatchingElements(anchorItems.length, 'a');
+      expect(wrapper.querySelectorAll('a')).toHaveLength(anchorItems.length);
     });
   });
 
   describe('compact variant', () => {
     beforeEach(() => {
-      wrapper = mount(
-        <ListingAnchors isCompact items={ anchorItems } />);
+      wrapper = render(
+        <ListingAnchors isCompact items={ anchorItems } />
+      ).container;
     });
 
     describe('should render', () => {
       it('a container component', () => {
-        expect(wrapper).toContainMatchingElement('.listing-anchors.compact');
+        expect(wrapper.querySelectorAll('.listing-anchors.compact')).toHaveLength(1);
       });
 
       it('two anchor buttons', () => {
-        expect(wrapper).toContainMatchingElements(anchorItems.length, 'a');
+        expect(wrapper.querySelectorAll('a')).toHaveLength(anchorItems.length);
       });
 
       it('a selected anchor', () => {
-        expect(wrapper).toContainMatchingElement('.selected');
+        expect(wrapper.querySelectorAll('.selected')).toHaveLength(1);
       });
     });
   });

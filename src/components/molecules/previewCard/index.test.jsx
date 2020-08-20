@@ -1,80 +1,83 @@
 import React from 'react';
-import { mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
+import { render, cleanup } from '@testing-library/react';
 import PreviewCard from './index';
 import { previewSnippet, previewBlogSnippet } from 'fixtures/snippets';
 
-configure({ adapter: new Adapter() });
 console.warn = jest.fn();
 
 describe('<PreviewCard />', () => {
   let wrapper, card, expertise, anchor, tags;
 
   beforeEach(() => {
-    wrapper = mount(
+    wrapper = render(
       <PreviewCard snippet={ previewSnippet } />
-    );
-    anchor = wrapper.find('a');
-    card = wrapper.find('.card');
-    expertise = wrapper.find('Expertise');
-    tags = wrapper.find('TagList');
+    ).container;
+    anchor = wrapper.querySelector('a');
+    card = wrapper.querySelector('.card');
+    expertise = wrapper.querySelector('.expertise');
+    tags = wrapper.querySelector('.tag-list');
   });
+
+  afterEach(cleanup);
 
   describe('should render', () => {
     it('an anchor element', () => {
-      expect(wrapper).toContainMatchingElement('a');
+      expect(wrapper.querySelectorAll('a')).toHaveLength(1);
     });
 
     it('a li element with the approprite classes', () => {
-      expect(wrapper).toContainMatchingElement('li.card.preview-card');
+      expect(wrapper.querySelectorAll('li.card.preview-card')).toHaveLength(1);
     });
 
     it('the card title', () => {
-      expect(card).toContainMatchingElement('h4.card-title');
+      expect(card.querySelectorAll('h4.card-title')).toHaveLength(1);
     });
 
     it('an Expertise component', () => {
-      expect(card).toContainMatchingElement('Expertise');
+      expect(card.querySelectorAll('.expertise')).toHaveLength(1);
     });
 
     it('the card description', () => {
-      expect(card).toContainMatchingElement('.card-description');
+      expect(card.querySelectorAll('.card-description')).toHaveLength(1);
     });
   });
 
   it('should have the correct card title', () => {
-    expect(card.find('h4.card-title').text()).toBe(previewSnippet.title);
+    expect(card.querySelector('h4.card-title').textContent).toBe(previewSnippet.title);
   });
 
   it('should pass the expertise data to the Expertise component', () => {
-    expect(expertise.prop('level')).toBe(previewSnippet.expertise);
+    expect(expertise.className).toContain(previewSnippet.expertise.toLowerCase());
   });
 
   it('should pass the appropriate tags to the TagList component', () => {
-    expect(tags.prop('tags')).toEqual([previewSnippet.language, previewSnippet.primaryTag, previewSnippet.expertise]);
+    const tagsText = tags.textContent.toLowerCase();
+    expect(tagsText).toContain(previewSnippet.language.toLowerCase());
+    expect(tagsText).toContain(previewSnippet.primaryTag.toLowerCase());
+    expect(tagsText).toContain(previewSnippet.expertise.toLowerCase());
   });
 
   it('should render the correct description', () => {
-    expect(card.find('.card-description').html()).toContain(previewSnippet.description);
+    expect(card.querySelector('.card-description').innerHTML).toContain(previewSnippet.description);
   });
 
   it('should link to the correct url', () => {
-    expect(anchor.prop('href')).toBe(previewSnippet.url);
+    expect(anchor.href).toContain(previewSnippet.url);
   });
 
   describe('with a blog snippet', () => {
 
     beforeEach(() => {
-      wrapper = mount(
+      wrapper = render(
         <PreviewCard snippet={ previewBlogSnippet } />
-      );
-      expertise = wrapper.find('Expertise');
-      tags = wrapper.find('TagList');
+      ).container;
+      tags = wrapper.querySelector('.tag-list');
     });
 
     it('should pass the appropriate tags to the TagList component', () => {
-      expect(tags.prop('tags')).toEqual([previewBlogSnippet.primaryTag, previewBlogSnippet.expertise]);
+      const tagsText = tags.textContent.toLowerCase();
+      expect(tagsText).toContain(previewBlogSnippet.primaryTag.toLowerCase());
+      expect(tagsText).toContain(previewBlogSnippet.expertise.toLowerCase());
     });
   });
 });
