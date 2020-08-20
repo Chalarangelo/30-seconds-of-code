@@ -4,10 +4,7 @@
     "^.+\\.jsx?$": "./.jest/jest-preprocess.js",
     "^.+\\.(css|less|scss)$": "./.jest/style-mock.js"
   },
-  "setupFilesAfterEnv": [
-    "jest-enzyme"
-  ],
-  "testEnvironment": "enzyme",
+  "testEnvironment": "jest-environment-jsdom-fourteen",
   "moduleDirectories": [
     "node_modules",
     "src"
