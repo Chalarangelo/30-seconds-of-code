@@ -1,19 +1,14 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import createStore from 'state';
-import { mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
+import { cleanup } from '@testing-library/react';
+import { renderConnected } from 'test/utils';
 import SnippetList from './index';
 import { paginator } from 'fixtures/paginator';
 import { orders } from 'fixtures/sorter';
 import { previewSnippet, previewBlogSnippet } from 'fixtures/snippets';
 import { anchorItems } from 'fixtures/listingAnchors';
 
-configure({ adapter: new Adapter() });
 console.warn = jest.fn();
-
-const { store } = createStore();
 
 describe('<SnippetList />', () => {
   const sorter = { orders, selected: 'Popularity' };
@@ -23,96 +18,93 @@ describe('<SnippetList />', () => {
   let wrapper, pageTitle, paginate, sort;
 
   beforeEach(() => {
-    wrapper = mount(
-      <Provider store={ store }>
+    wrapper = renderConnected(
+      <SnippetList
+        snippetList={ snippetList }
+        paginator={ paginator }
+        sorter={ sorter }
+        listingName={ listingName }
+        listingSublinks={ anchorItems }
+      />
+    ).container;
+    pageTitle = wrapper.querySelector('.page-title');
+    paginate = wrapper.querySelector('.paginator');
+    sort = wrapper.querySelector('.sorter');
+  });
+
+  afterEach(cleanup);
+
+  describe('should render', () => {
+    it('a PageTitle component', () => {
+      expect(wrapper.querySelectorAll('.page-title')).toHaveLength(1);
+    });
+
+    it('a Paginator component', () => {
+      expect(wrapper.querySelectorAll('.paginator')).toHaveLength(1);
+    });
+
+    it('a ListingAnchors component', () => {
+      expect(wrapper.querySelectorAll('.listing-anchors')).toHaveLength(1);
+    });
+
+    it('a Sorter component', () => {
+      expect(wrapper.querySelectorAll('.sorter')).toHaveLength(1);
+    });
+
+    it('the appropriate PreviewCard components', () => {
+      expect(wrapper.querySelectorAll('.preview-card')).toHaveLength(2);
+    });
+
+    it('a CTA component', () => {
+      expect(wrapper.querySelectorAll('.graphic-cta')).toHaveLength(1);
+    });
+  });
+
+  it('should pass the listinName to PageTitle', () => {
+    expect(pageTitle.textContent).toBe(listingName);
+  });
+
+  it('should pass the paginator to Paginator', () => {
+    expect(paginate.querySelector('.current-page').textContent)
+      .toEqual(`${paginator.pageNumber}`);
+  });
+
+  it('should pass the sorter to sorter', () => {
+    expect(sort.querySelectorAll('a')[0].textContent).toEqual('Popularity');
+  });
+
+  describe('with empty list', () => {
+    beforeEach(() => {
+      wrapper = renderConnected(
         <SnippetList
-          snippetList={ snippetList }
+          snippetList={ [] }
           paginator={ paginator }
           sorter={ sorter }
           listingName={ listingName }
           listingSublinks={ anchorItems }
         />
-      </Provider>
-    );
-    pageTitle = wrapper.find('PageTitle');
-    paginate = wrapper.find('Paginator');
-    sort = wrapper.find('Sorter');
-  });
-
-  describe('should render', () => {
-    it('a PageTitle component', () => {
-      expect(wrapper).toContainMatchingElement('PageTitle');
-    });
-
-    it('a Paginator component', () => {
-      expect(wrapper).toContainMatchingElement('Paginator');
-    });
-
-    it('a ListingAnchors component', () => {
-      expect(wrapper).toContainMatchingElement('ListingAnchors');
-    });
-
-    it('a Sorter component', () => {
-      expect(wrapper).toContainMatchingElement('Sorter');
-    });
-
-    it('the appropriate PreviewCard components', () => {
-      expect(wrapper).toContainMatchingElements(2, 'PreviewCard');
-    });
-
-    it('a CTA component', () => {
-      expect(wrapper).toContainMatchingElement('CTA');
-    });
-  });
-
-  it('should pass the listinName to PageTitle', () => {
-    expect(pageTitle.prop('children')).toBe(listingName);
-  });
-
-  it('should pass the paginator to Paginator', () => {
-    expect(paginate.prop('paginator')).toEqual(paginator);
-  });
-
-  it('should pass the sorter to sorter', () => {
-    expect(sort.prop('sorter')).toEqual(sorter);
-  });
-
-  describe('with empty list', () => {
-    beforeEach(() => {
-      wrapper = mount(
-        <Provider store={ store }>
-          <SnippetList
-            snippetList={ [] }
-            paginator={ paginator }
-            sorter={ sorter }
-            listingName={ listingName }
-            listingSublinks={ anchorItems }
-          />
-        </Provider>
-      );
+      ).container;
     });
 
     it('should not render', () => {
-      expect(wrapper).toEqual({});
+      expect(wrapper.children).toHaveLength(0);
     });
   });
 
   describe('with empty sublinks', () => {
     beforeEach(() => {
-      wrapper = mount(
-        <Provider store={ store }>
-          <SnippetList
-            snippetList={ snippetList }
-            paginator={ paginator }
-            sorter={ sorter }
-            listingName={ listingName }
-          />
-        </Provider>
-      );
+      wrapper = renderConnected(
+        <SnippetList
+          snippetList={ snippetList }
+          paginator={ paginator }
+          sorter={ sorter }
+          listingName={ listingName }
+        />
+      ).container;
     });
 
     it('should not render a ListingAnchors component', () => {
-      expect(wrapper).not.toContainMatchingElement('ListingAnchors');
+      expect(wrapper.querySelectorAll('.listing-anchors')).toHaveLength(0);
     });
   });
 

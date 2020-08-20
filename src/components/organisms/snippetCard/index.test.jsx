@@ -1,65 +1,55 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import createStore from 'state';
-import { mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
+import { cleanup } from '@testing-library/react';
+import { renderConnected } from 'test/utils';
 import cards from './index';
 import { fullSnippet, fullCssSnippet, fullBlogSnippet } from 'fixtures/snippets';
 
-configure({ adapter: new Adapter() });
 console.warn = jest.fn();
-
-const { store } = createStore();
 
 describe('<SnippetCardWrapper />', () => {
   let wrapper;
 
   describe('standard snippet card template', () => {
 
-    beforeAll(() => {
+    beforeEach(() => {
       const SnippetCard = cards['StandardSnippetCard'];
-      wrapper = mount(
-        <Provider store={ store }>
-          <SnippetCard snippet={ fullSnippet } />
-        </Provider>
-      );
+      wrapper = renderConnected(
+        <SnippetCard snippet={ fullSnippet } />
+      ).container;
     });
 
+    afterEach(cleanup);
+
     it('should render a StandardSnippetCard component', () => {
-      expect(wrapper).toContainMatchingElement('SnippetCard');
+      expect(wrapper.querySelectorAll('.snippet-card')).toHaveLength(1);
     });
   });
 
   describe('css snippet card template', () => {
 
-    beforeAll(() => {
+    beforeEach(() => {
       const SnippetCard = cards['CssSnippetCard'];
-      wrapper = mount(
-        <Provider store={ store }>
-          <SnippetCard snippet={ fullCssSnippet }/>
-        </Provider>
-      );
+      wrapper = renderConnected(
+        <SnippetCard snippet={ fullCssSnippet }/>
+      ).container;
     });
 
     it('should render a CssSnippetCard component', () => {
-      expect(wrapper).toContainMatchingElement('SnippetCard');
+      expect(wrapper.querySelectorAll('.snippet-card')).toHaveLength(1);
     });
   });
 
   describe('blog snippet card template', () => {
 
-    beforeAll(() => {
+    beforeEach(() => {
       const SnippetCard = cards['BlogSnippetCard'];
-      wrapper = mount(
-        <Provider store={ store }>
-          <SnippetCard snippet={ fullBlogSnippet }/>
-        </Provider>
-      );
+      wrapper = renderConnected(
+        <SnippetCard snippet={ fullBlogSnippet }/>
+      ).container;
     });
 
     it('should render a BlogSnippetCard component', () => {
-      expect(wrapper).toContainMatchingElement('SnippetCard');
+      expect(wrapper.querySelectorAll('.snippet-card')).toHaveLength(1);
     });
   });
 });

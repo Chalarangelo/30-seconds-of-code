@@ -1,120 +1,123 @@
 import React from 'react';
-import { mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { render, cleanup } from '@testing-library/react';
 import literals from 'lang/en/client/common';
-
 import SnippetCard from './index';
 import { fullSnippet, fullReactSnippet } from 'fixtures/snippets';
-
-configure({ adapter: new Adapter() });
 
 describe('<SnippetCard />', () => {
   let wrapper, card, tagList, codeBlocks;
 
   beforeEach(() => {
-    wrapper = mount(
+    wrapper = render(
       <SnippetCard snippet={ fullSnippet } />
-    );
-    card = wrapper.find('Card');
-    tagList = wrapper.find('TagList');
-    codeBlocks = wrapper.find('CodeBlock');
+    ).container;
+    card = wrapper.querySelector('.card');
+    tagList = wrapper.querySelector('.tag-list');
+    codeBlocks = wrapper.querySelectorAll('pre');
   });
+
+  afterEach(cleanup);
 
   describe('should render', () => {
     it('a Card component', () => {
-      expect(wrapper).toContainMatchingElement('Card');
+      expect(wrapper.querySelectorAll('.card')).toHaveLength(1);
     });
 
     it('the card title', () => {
-      expect(card).toContainMatchingElement('h1.card-title');
+      expect(card.querySelectorAll('h1.card-title')).toHaveLength(1);
     });
 
     it('a TagList component', () => {
-      expect(card).toContainMatchingElement('TagList');
+      expect(card.querySelectorAll('.tag-list')).toHaveLength(1);
     });
 
     it('the card description', () => {
-      expect(card).toContainMatchingElement('.card-description');
+      expect(card.querySelectorAll('.card-description')).toHaveLength(1);
     });
 
     it('the card source content', () => {
-      expect(card).toContainMatchingElement('.card-source-content');
+      expect(card.querySelectorAll('.card-source-content')).toHaveLength(1);
     });
 
     it('the card examples title', () => {
-      expect(card).toContainMatchingElement('h5.card-example-title');
+      expect(card.querySelectorAll('h5.card-example-title')).toHaveLength(1);
     });
 
     it('two CodeBlock components', () => {
-      expect(card).toContainMatchingElements(2, 'CodeBlock');
+      expect(card.querySelectorAll('pre')).toHaveLength(2);
     });
 
     it('the card code', () => {
-      expect(card).toContainMatchingElement('.card-code');
+      expect(card.querySelectorAll('.card-code')).toHaveLength(1);
     });
 
     it('the card examples', () => {
-      expect(card).toContainMatchingElement('.card-example');
+      expect(card.querySelectorAll('.card-example')).toHaveLength(1);
     });
 
     it('a CopyButton component', () => {
-      expect(card).toContainMatchingElement('CopyButton');
+      expect(card.querySelectorAll('.copy-btn')).toHaveLength(1);
     });
   });
 
   it('should have the correct card title', () => {
-    expect(card.find('h1.card-title').text()).toBe(fullSnippet.title);
+    expect(card.querySelector('h1.card-title').textContent).toBe(fullSnippet.title);
   });
 
   it('should pass the expertise data to the TagList component', () => {
-    expect(tagList.prop('tags')).toContain(fullSnippet.expertise);
+    expect(tagList.textContent.toLowerCase())
+      .toContain(fullSnippet.expertise.toLowerCase());
   });
 
   it('should pass the tags data to the TagList component', () => {
-    expect(tagList.prop('tags')).toContain(...fullSnippet.tags.all);
+    const tagsText = tagList.textContent.toLowerCase();
+    fullSnippet.tags.all.forEach(tag => {
+      expect(tagsText).toContain(tag.toLowerCase());
+    });
   });
 
   it('should pass the language data to the TagList component', () => {
-    expect(tagList.prop('tags')).toContain(fullSnippet.language.long);
+    expect(tagList.textContent.toLowerCase())
+      .toContain(fullSnippet.language.long.toLowerCase());
   });
 
   it('should render the correct explanation', () => {
-    expect(card.find('.card-description').html()).toContain(fullSnippet.html.fullDescription);
+    expect(card.querySelector('.card-description').innerHTML).toContain(fullSnippet.html.fullDescription);
   });
 
   it('should have the appropriate examples title', () => {
-    expect(card.find('.card-example-title').text()).toBe(literals.examples);
+    expect(card.querySelector('.card-example-title').textContent).toBe(literals.examples);
   });
 
   it('should pass the code data to the first CodeBlock component', () => {
-    expect(codeBlocks.at(0).prop('htmlContent')).toBe(fullSnippet.html.code);
+    expect(codeBlocks[0].innerHTML).toBe(fullSnippet.html.code);
   });
 
   it('should pass the example data to the seconds CodeBlock component', () => {
-    expect(codeBlocks.at(1).prop('htmlContent')).toBe(fullSnippet.html.example);
+    expect(codeBlocks[1].innerHTML).toBe(fullSnippet.html.example);
   });
 
   describe('when github links are enabled', () => {
     beforeEach(() => {
-      wrapper = mount(
+      wrapper = render(
         <SnippetCard snippet={ fullSnippet } hasGithubLinksEnabled/>
-      );
+      ).container;
     });
 
     it('should render a github link', () => {
-      expect(wrapper).toContainMatchingElement('a.github-link');
+      expect(wrapper.querySelectorAll('a.github-link')).toHaveLength(1);
     });
   });
 
   describe('with additional languages', () => {
     beforeEach(() => {
-      wrapper = mount(
+      wrapper = render(
         <SnippetCard snippet={ fullReactSnippet }/>
-      );
+      ).container;
     });
 
     it('should render a CodepenButton', () => {
-      expect(wrapper).toContainMatchingElement('CodepenButton');
+      expect(wrapper.querySelectorAll('.codepen-btn')).toHaveLength(1);
     });
   });
 });

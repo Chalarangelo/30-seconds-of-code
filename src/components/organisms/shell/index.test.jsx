@@ -1,75 +1,59 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import createStore from 'state';
-import { mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
+import { cleanup } from '@testing-library/react';
+import { renderConnected } from 'test/utils';
 import Shell from './index';
 import { toggleDarkMode } from 'state/shell';
 import * as env from '../../../../.build/env';
 
-configure({ adapter: new Adapter() });
-
-const { store } = createStore();
-
 describe('<Shell />', () => {
-  const logoSrc = '/assets/logo.png';
-  let wrapper, pageContainer;
+  let wrapper, pageContainer, store, rerender;
   const innerText = 'Hi there!';
 
   beforeEach(() => {
-    wrapper = mount(
-      <Provider store={ store }>
-        <Shell
-          logoSrc={ logoSrc }
-        >
-          { innerText }
-        </Shell>
-      </Provider>
+    const utils = renderConnected(
+      <Shell>
+        { innerText }
+      </Shell>
     );
-    pageContainer = wrapper.find('div.page-container');
+    wrapper = utils.container;
+    store = utils.store;
+    rerender = utils.rerenderConnected;
+    pageContainer = wrapper.querySelector('div.page-container');
   });
+
+  afterEach(cleanup);
 
   describe('should render', () => {
     it('the page container', () => {
-      expect(wrapper).toContainMatchingElement('div.page-container');
+      expect(wrapper.querySelectorAll('div.page-container')).toHaveLength(1);
     });
 
     it('a header component', () => {
-      expect(pageContainer).toContainMatchingElement('header');
+      expect(pageContainer.querySelectorAll('header')).toHaveLength(1);
     });
 
     it('the content container', () => {
-      expect(pageContainer).toContainMatchingElement('div.content');
+      expect(pageContainer.querySelectorAll('div.content')).toHaveLength(1);
     });
 
     it('a footer component', () => {
-      expect(pageContainer).toContainMatchingElement('footer');
+      expect(pageContainer.querySelectorAll('footer')).toHaveLength(1);
     });
   });
 
   it('should render passed children', () => {
-    expect(wrapper.text()).toContain(innerText);
+    expect(wrapper.textContent).toContain(innerText);
   });
 
   describe('when on a settings page', () => {
 
     beforeEach(() => {
-      wrapper = mount(
-        <Provider store={ store }>
-          <Shell
-            logoSrc={ logoSrc }
-            isSettings
-          >
-            { innerText }
-          </Shell>
-        </Provider>
-      );
-      pageContainer = wrapper.find('div.page-container');
+      wrapper = rerender(<Shell isSettings/>).container;
+      pageContainer = wrapper.querySelector('div.page-container');
     });
 
     it('should not link to the settings page', () => {
-      expect(wrapper).not.toContainMatchingElement('a.icon-settings[href="/settings"]');
+      expect(wrapper.querySelectorAll('a.icon-settings[href="/settings"]')).toHaveLength(0);
     });
   });
 
@@ -77,21 +61,16 @@ describe('<Shell />', () => {
 
     beforeEach(() => {
       store.dispatch(toggleDarkMode(true));
-      wrapper = mount(
-        <Provider store={ store }>
-          <Shell
-            logoSrc={ logoSrc }
-            isSettings
-          >
-            { innerText }
-          </Shell>
-        </Provider>
-      );
-      pageContainer = wrapper.find('div.page-container');
+      wrapper = rerender(
+        <Shell isSettings>
+          { innerText }
+        </Shell>
+      ).container;
+      pageContainer = wrapper.querySelector('div.page-container');
     });
 
     it('should pass the appropriate class to the container', () => {
-      expect(pageContainer.prop('className').indexOf('dark')).not.toBe(-1);
+      expect(pageContainer.className).toContain('dark');
     });
   });
 
@@ -99,20 +78,15 @@ describe('<Shell />', () => {
 
     beforeEach(() => {
       env.default = 'PRODUCTION';
-      wrapper = mount(
-        <Provider store={ store }>
-          <Shell
-            logoSrc={ logoSrc }
-            isSettings
-          >
-            { innerText }
-          </Shell>
-        </Provider>
-      );
+      wrapper = rerender(
+        <Shell isSettings>
+          { innerText }
+        </Shell>
+      ).container;
     });
 
     it('should render a CookieConsentPopup', () => {
-      expect(wrapper).toContainMatchingElement('CookieConsentPopup');
+      expect(wrapper.querySelectorAll('.cookie-consent-popup')).toHaveLength(1);
     });
   });
 });
