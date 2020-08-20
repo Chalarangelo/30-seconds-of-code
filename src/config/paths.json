@@ -5,6 +5,8 @@
   "contentPath": ".content",
   "rawContentPath": "content",
   "buildPath": ".build",
+  "rawIconPath": "src/icons/*.svg",
+  "iconFontPath": "src/styles/_icons.scss",
   "iconBgFilePath": "src/styles/_icon_colors.scss",
   "queryPath": "./src/queries",
   "templatesPath": "./src/components/templates",
