@@ -1,38 +1,40 @@
 import React from 'react';
-import { mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
+import { render, cleanup } from '@testing-library/react';
 import Button from './index';
-
-configure({ adapter: new Adapter() });
 
 describe('<Button />', () => {
   let wrapper;
   const innerText = 'Click me!';
 
   beforeEach(() => {
-    wrapper = mount(<Button className="secondary">{ innerText }</Button>);
+    wrapper = render(
+      <Button className="secondary">{ innerText }</Button>
+    ).container;
   });
 
+  afterEach(cleanup);
+
   it('should render correctly', () => {
-    expect(wrapper).toContainMatchingElement('button.btn');
+    expect(wrapper.querySelectorAll('button.btn')).toHaveLength(1);
   });
 
   it('should append passed classNames', () => {
-    expect(wrapper).toContainMatchingElement('.btn.secondary');
+    expect(wrapper.querySelectorAll('.btn.secondary')).toHaveLength(1);
   });
 
   it('should render passed children', () => {
-    expect(wrapper.text()).toBe(innerText);
+    expect(wrapper.textContent).toBe(innerText);
   });
 
   describe('without additional classNames', () => {
     beforeEach(() => {
-      wrapper = mount(<Button>{ innerText }</Button>);
+      wrapper = render(
+        <Button>{ innerText }</Button>
+      ).container;
     });
 
     it('should render with the default className', () => {
-      expect(wrapper.find('button').prop('className')).toBe('btn');
+      expect(wrapper.querySelector('button').className).toBe('btn');
     });
   });
 });

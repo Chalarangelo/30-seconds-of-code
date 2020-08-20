@@ -1,10 +1,6 @@
 import React from 'react';
-import { mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import Toggle from './index';
-
-configure({ adapter: new Adapter() });
 
 describe('<Toggle />', () => {
   let wrapper, toggle;
@@ -12,27 +8,29 @@ describe('<Toggle />', () => {
   let mockOnChangeCallback = jest.fn();
 
   beforeEach(() => {
-    wrapper = mount(<Toggle
-      onChange={ mockOnChangeCallback }>
-      { innerText }
-    </Toggle>
-    );
-    toggle = wrapper.find('input').at(0);
+    wrapper = render(
+      <Toggle onChange={ mockOnChangeCallback }>
+        { innerText }
+      </Toggle>
+    ).container;
+    toggle = wrapper.querySelector('input');
   });
 
+  afterEach(cleanup);
+
   it('should render correctly', () => {
-    expect(wrapper).toContainMatchingElement('.toggle');
-    expect(wrapper).toContainMatchingElement('label > input[type="checkbox"]');
-    expect(wrapper).toContainMatchingElement('.toggle-switch');
+    expect(wrapper.querySelectorAll('.toggle')).toHaveLength(1);
+    expect(wrapper.querySelectorAll('label > input[type="checkbox"]')).toHaveLength(1);
+    expect(wrapper.querySelectorAll('.toggle-switch')).toHaveLength(1);
   });
 
   it('should render passed children', () => {
-    expect(wrapper.text()).toBe(innerText);
+    expect(wrapper.textContent).toBe(innerText);
   });
 
   describe('when clicked', () => {
     beforeEach(() => {
-      toggle.simulate('change');
+      fireEvent.click(toggle);
     });
 
     it('should call passed callback on click event', () => {

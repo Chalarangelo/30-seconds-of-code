@@ -1,10 +1,6 @@
 import React from 'react';
-import { mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
+import { render, cleanup } from '@testing-library/react';
 import PageBackdrop from './index';
-
-configure({ adapter: new Adapter() });
 
 describe('<PageBackdrop />', () => {
   let wrapper;
@@ -15,62 +11,65 @@ describe('<PageBackdrop />', () => {
   const subTextClassName = 'search-sub';
 
   beforeEach(() => {
-    wrapper = mount(<PageBackdrop
-      graphicName={ graphicName }
-      mainText={ mainText }
-      mainTextClassName={ mainTextClassName }
-      subText={ subText }
-      subTextClassName={ subTextClassName }
-    />);
+    wrapper = render(
+      <PageBackdrop
+        graphicName={ graphicName }
+        mainText={ mainText }
+        mainTextClassName={ mainTextClassName }
+        subText={ subText }
+        subTextClassName={ subTextClassName }
+      />
+    ).container;
   });
 
+  afterEach(cleanup);
+
   it('should render a page graphic', () => {
-    expect(wrapper).toContainMatchingElement('.page-graphic');
+    expect(wrapper.querySelectorAll('.page-graphic')).toHaveLength(1);
   });
 
   it('should render page backdrop main text', () => {
-    expect(wrapper).toContainMatchingElement('.page-backdrop-text');
+    expect(wrapper.querySelectorAll('.page-backdrop-text')).toHaveLength(1);
   });
 
   it('should render page backdrop subtext', () => {
-    expect(wrapper).toContainMatchingElement('.page-backdrop-subtext');
+    expect(wrapper.querySelectorAll('.page-backdrop-subtext')).toHaveLength(1);
   });
 
   it('should pass graphic name to PageGraphic', () => {
-    expect(wrapper).toContainMatchingElement(`.page-graphic.${graphicName}`);
+    expect(wrapper.querySelectorAll(`.page-graphic.${graphicName}`)).toHaveLength(1);
   });
 
   it('should render mainText', () => {
-    expect(wrapper.text()).toContain(mainText);
+    expect(wrapper.textContent).toContain(mainText);
   });
 
   it('should pass mainTextClassName to main text', () => {
-    expect(wrapper.find('.page-backdrop-text').prop('className')).toContain(mainTextClassName);
+    expect(wrapper.querySelector('.page-backdrop-text').className).toContain(mainTextClassName);
   });
 
   it('should pass subTextClassName to subtext', () => {
-    expect(wrapper.find('.page-backdrop-subtext').prop('className')).toContain(subTextClassName);
+    expect(wrapper.querySelector('.page-backdrop-subtext').className).toContain(subTextClassName);
   });
 
   it('should render subtext', () => {
-    expect(wrapper.text()).toContain(subText);
+    expect(wrapper.textContent).toContain(subText);
   });
 
   describe('without subText', () => {
 
     beforeEach(() => {
-      wrapper = mount(<PageBackdrop
+      wrapper = render(<PageBackdrop
         graphicName={ graphicName }
         mainText={ mainText }
         mainTextClassName={ mainTextClassName }
-      />);
+      />
+      ).container;
     });
 
     it('should not render subText', () => {
-      expect(wrapper.text()).not.toContain(subText);
+      expect(wrapper.textContent).not.toContain(subText);
     });
-
   });
-
 });
 
