@@ -1,60 +1,49 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import createStore from 'state';
 import { act } from 'react-dom/test-utils';
-import { mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
+import { cleanup, fireEvent } from '@testing-library/react';
+import { renderConnected } from 'test/utils';
 import CookieConsentPopup from './index';
 
-configure({ adapter: new Adapter() });
-
-const { store } = createStore();
 console.warn = jest.fn();
 
 describe('<CookieConsentPopup />', () => {
-  let wrapper;
+  let wrapper, store;
 
   beforeEach(() => {
-    wrapper = mount(
-      <Provider store={ store }>
-        <CookieConsentPopup />
-      </Provider>
-    );
+    const utils = renderConnected(<CookieConsentPopup />);
+    wrapper = utils.container;
+    store = utils.store;
   });
+
+  afterEach(cleanup);
 
   describe('it renders', () => {
     it('the appropriate wrapper element', () => {
-      expect(wrapper).toContainMatchingElement('div.cookie-consent-popup');
+      expect(wrapper.querySelectorAll('div.cookie-consent-popup')).toHaveLength(1);
     });
 
     it('the cookie disclaimer', () => {
-      expect(wrapper).toContainMatchingElement('div > p');
-      expect(wrapper).toContainMatchingElement('p a');
+      expect(wrapper.querySelectorAll('div > p')).toHaveLength(1);
+      expect(wrapper.querySelectorAll('p a')).toHaveLength(1);
     });
 
     it('the buttons', () => {
-      expect(wrapper).toContainMatchingElements(2, 'Button');
+      expect(wrapper.querySelectorAll('.btn')).toHaveLength(2);
     });
   });
 
   describe('when accept button is clicked', () => {
     it('accepts cookies', () => {
-      act(() => {
-        wrapper.find('Button').at(0).prop('onClick')({ preventDefault: () => null });
-      });
+      fireEvent.click(wrapper.querySelectorAll('.btn')[0], { preventDefault: () => null });
       expect(store.getState().shell.acceptsCookies).toBe(true);
     });
   });
 
   describe('when decline button is clicked', () => {
     it('declines cookies', () => {
-      act(() => {
-        wrapper.find('Button').at(1).prop('onClick')({ preventDefault: () => null });
-      });
+      fireEvent.click(wrapper.querySelectorAll('.btn')[1], { preventDefault: () => null });
       expect(store.getState().shell.acceptsCookies).toBe(false);
     });
   });
-
 });
 

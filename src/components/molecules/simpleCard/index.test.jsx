@@ -1,10 +1,6 @@
 import React from 'react';
-import { mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
+import { render, cleanup } from '@testing-library/react';
 import SimpleCard from './index';
-
-configure({ adapter: new Adapter() });
 
 describe('<SimpleCard />', () => {
   let wrapper;
@@ -13,39 +9,53 @@ describe('<SimpleCard />', () => {
   const title = 'Simple card';
 
   beforeEach(() => {
-    wrapper = mount(<SimpleCard title={ title } className='special' />);
+    wrapper = render(
+      <SimpleCard title={ title } className='special' />
+    ).container;
   });
 
+  afterEach(cleanup);
+
   it('should render correctly', () => {
-    expect(wrapper).toContainMatchingElement('div.card');
+    expect(wrapper.querySelectorAll('div.card')).toHaveLength(1);
   });
 
   it('should append passed classes', () => {
-    expect(wrapper).toContainMatchingElement('.card.special');
+    expect(wrapper.querySelectorAll('.card.special')).toHaveLength(1);
   });
 
   it('should render passed title', () => {
-    expect(wrapper).toContainMatchingElement('.card-title');
-    expect(wrapper.text()).toContain(title);
+    expect(wrapper.querySelectorAll('.card-title')).toHaveLength(1);
+    expect(wrapper.textContent).toContain(title);
   });
 
   describe('with children', () => {
     beforeEach(() => {
-      wrapper = mount(<SimpleCard title={ title } className='special' >{ innerText }</SimpleCard>);
+      wrapper = render(
+        <SimpleCard title={ title } className='special' >
+          { innerText }
+        </SimpleCard>
+      ).container;
     });
 
     it('should render passed children', () => {
-      expect(wrapper.text()).toContain(innerText);
+      expect(wrapper.textContent).toContain(innerText);
     });
   });
 
   describe('with inner HTML', () => {
     beforeEach(() => {
-      wrapper = mount(<SimpleCard title={ title } className='special' dangerouslySetInnerHTML={ innerHTML }/>);
+      wrapper = render(
+        <SimpleCard
+          title={ title }
+          className='special'
+          dangerouslySetInnerHTML={ innerHTML }
+        />
+      ).container;
     });
 
     it('should render passed children', () => {
-      expect(wrapper.html()).toContain(innerHTML.__html);
+      expect(wrapper.innerHTML).toContain(innerHTML.__html);
     });
   });
 

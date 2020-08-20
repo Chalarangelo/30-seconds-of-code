@@ -1,17 +1,11 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import createStore from 'state';
-import { mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
+import { cleanup, fireEvent } from '@testing-library/react';
+import { renderConnected } from 'test/utils';
 import CTA from './index';
 import { decideCookies } from 'state/shell';
-import { act } from 'react-dom/test-utils';
 
-configure({ adapter: new Adapter() });
 console.warn = jest.fn();
 
-const { store } = createStore();
 global.window = Object.create(window);
 global.gtag = Object.create(() => null);
 Object.defineProperty(window, 'gtag', {
@@ -22,42 +16,34 @@ Object.defineProperty(window, 'open', {
 });
 
 describe('<CTA />', () => {
-  let wrapper;
+  let wrapper, store;
 
-  beforeAll(() => {
-    wrapper = mount(
-      <Provider store={ store }>
-        <CTA />
-      </Provider>
-    );
+  beforeEach(() => {
+    const utils = renderConnected(<CTA />);
+    wrapper = utils.container;
+    store = utils.store;
   });
 
+  afterEach(cleanup);
+
   it('should render a PageBackdrop component', () => {
-    expect(wrapper).toContainMatchingElement('PageBackdrop');
+    expect(wrapper.querySelectorAll('.page-graphic')).toHaveLength(1);
   });
 
   it('should render an anchor element component with the appropriate class', () => {
-    expect(wrapper).toContainMatchingElement('a.btn');
+    expect(wrapper.querySelectorAll('a.btn')).toHaveLength(1);
   });
 
   describe('with cookies enabled', () => {
 
-    beforeAll(() => {
+    beforeEach(() => {
       store.dispatch(decideCookies(true));
-      wrapper = mount(
-        <Provider store={ store }>
-          <CTA />
-        </Provider>
-      );
     });
 
     it('should call the appropriate functions when the link is clicked', () => {
-      act(() => {
-        wrapper.find('a').prop('onClick')({ target: { href: 'test'}, preventDefault: () => null });
-      });
+      fireEvent.click(wrapper.querySelector('a'), { target: { href: 'test'}, preventDefault: () => null });
       expect(window.gtag.mock.calls.length).toBeGreaterThan(0);
       expect(window.open.mock.calls.length).toBeGreaterThan(0);
     });
-
   });
 });

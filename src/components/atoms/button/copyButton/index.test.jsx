@@ -1,17 +1,13 @@
 import React from 'react';
-import { mount, configure } from 'enzyme';
-import { act } from 'react-dom/test-utils';
-import Adapter from 'enzyme-adapter-react-16';
+import { render, cleanup, fireEvent, waitFor } from '@testing-library/react';
 import literals from 'lang/en/client/common';
 import copyToClipboard from 'copy-to-clipboard';
-
 import CopyButton from './index';
 
 const copyToClipboardMock = jest.fn();
+console.error = jest.fn();
 jest.mock('copy-to-clipboard');
 jest.useFakeTimers();
-
-configure({ adapter: new Adapter() });
 
 describe('<CopyButton />', () => {
   let wrapper;
@@ -23,35 +19,37 @@ describe('<CopyButton />', () => {
   });
 
   beforeEach(() => {
-    wrapper = mount(<CopyButton text={ copyText } />);
-    button = wrapper.find('button');
+    wrapper = render(
+      <CopyButton text={ copyText } />
+    ).container;
+    button = wrapper.querySelector('button');
   });
 
+  afterEach(cleanup);
+
   it('should render correctly', () => {
-    expect(wrapper).toContainMatchingElement('button.btn.copy-btn');
+    expect(wrapper.querySelectorAll('button.btn.copy-btn')).toHaveLength(1);
   });
 
   it('should have an appropriate title attribute', () => {
-    expect(wrapper).toContainMatchingElement('button.btn.copy-btn[title]');
-    expect(button.prop('title')).toBe(literals.copyToClipboard);
+    expect(wrapper.querySelectorAll('button.btn.copy-btn[title]')).toHaveLength(1);
+    expect(button.title).toBe(literals.copyToClipboard);
   });
 
   describe('when clicked', () => {
-    it('should copy to clipboard and play the microinteraction animation', () => {
-      act(() => {
-        button.simulate('click');
-        jest.advanceTimersByTime(100);
-        wrapper.update();
-      });
+    it('should copy to clipboard and play the microinteraction animation', async() => {
+      fireEvent.click(button);
+      jest.advanceTimersByTime(100);
       expect(copyToClipboardMock.mock.calls.length).toBeGreaterThan(0);
       expect(setTimeout).toHaveBeenCalled();
-      expect(wrapper).toContainMatchingElement('button.btn.copy-btn.active');
-      act(() => {
-        button.simulate('click');
-        jest.advanceTimersByTime(750);
-        wrapper.update();
-      });
-      expect(wrapper).toContainMatchingElement('button.btn.copy-btn:not(.active)');
+      await waitFor(() =>
+        expect(wrapper.querySelectorAll('button.btn.copy-btn.active')).toHaveLength(1)
+      );
+      fireEvent.click(button);
+      jest.advanceTimersByTime(750);
+      await waitFor(() =>
+        expect(wrapper.querySelectorAll('button.btn.copy-btn:not(.active)')).toHaveLength(1)
+      );
     });
   });
 });

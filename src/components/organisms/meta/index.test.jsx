@@ -1,34 +1,25 @@
 import React from 'react';
-import { Provider } from 'react-redux';
 import Helmet from 'react-helmet';
-import createStore from 'state';
-import { mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
+import { cleanup } from '@testing-library/react';
+import { renderConnected } from 'test/utils';
 import Meta from './index';
-
 import literals from 'lang/en/client/common';
 import config from 'config/global';
 import { decideCookies } from 'state/shell';
 import metadata from 'fixtures/metadata';
 
-configure({ adapter: new Adapter() });
 console.warn = jest.fn();
-
-const { store } = createStore();
 
 describe('<Meta />', () => {
   // eslint-disable-next-line no-unused-vars
-  let wrapper, helmet;
+  let wrapper, helmet, store;
 
   beforeAll(() => {
-    wrapper = mount(
-      <Provider store={ store }>
-        <Meta />
-      </Provider>
-    );
+    wrapper = renderConnected(<Meta />);
     helmet = Helmet.peek();
   });
+
+  afterAll(cleanup);
 
   it('should use the correct locale', () => {
     expect(helmet.htmlAttributes.lang).toBe('en');
@@ -66,11 +57,7 @@ describe('<Meta />', () => {
   describe('with custom attributes', () => {
 
     beforeAll(() => {
-      wrapper = mount(
-        <Provider store={ store }>
-          <Meta { ...metadata }/>
-        </Provider>
-      );
+      store = renderConnected(<Meta { ...metadata }/>).store;
       helmet = Helmet.peek();
     });
 
@@ -114,11 +101,7 @@ describe('<Meta />', () => {
   describe('with cookies accepted', () => {
     beforeAll(() => {
       store.dispatch(decideCookies(true));
-      wrapper = mount(
-        <Provider store={ store }>
-          <Meta />
-        </Provider>
-      );
+      wrapper = renderConnected(<Meta />);
       helmet = Helmet.peek();
     });
 

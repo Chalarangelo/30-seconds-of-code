@@ -1,23 +1,8 @@
 import React from 'react';
-import { act } from 'react-dom/test-utils';
-import { mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import { useClickOutside } from './index';
 
-configure({ adapter: new Adapter() });
-
 describe('useClickOutside', () => {
-  const map = {};
-  document.addEventListener = (event, cb) => {
-    map[event] = cb;
-  };
-
-  const listenerRemover = jest.fn();
-  document.removeListener = (event, cb) => {
-    listenerRemover(event, cb);
-  };
-
   const handler = jest.fn();
   const Tester = () => {
     const testRef = React.useRef();
@@ -31,26 +16,24 @@ describe('useClickOutside', () => {
   };
   let wrapper;
 
-  beforeAll(() => {
-    wrapper = mount(
-      <Tester />
-    );
+  beforeEach(() => {
+    wrapper = render(
+      <>
+        <button id="out" />
+        <Tester />
+      </>
+    ).container;
   });
 
-  it('should not invoke the handler when clicking inside the element', () => {
-    act(() => {
-      wrapper.find('div').simulate('click');
-      wrapper.update();
-    });
-    expect(handler.mock.calls.length).toBe(0);
+  afterEach(cleanup);
+
+  it('should not invoke the handler when clicking inside the element', async() => {
+    fireEvent.click(wrapper.querySelector('div'));
+    expect(handler.mock.calls).toHaveLength(0);
   });
 
-  it('should invoke the handler when clicking outside the element', () => {
-    act(() => {
-      const el = document.createElement('button');
-      map.click({ target: el });
-      wrapper.update();
-    });
+  it('should invoke the handler when clicking outside the element', async() => {
+    fireEvent.click(wrapper.querySelector('#out'));
     expect(handler.mock.calls.length).toBeGreaterThan(0);
   });
 });

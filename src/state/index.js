@@ -15,7 +15,7 @@ const shellPersistConfig = createPersistConfig(shellConfig, storage);
 const searchPersistConfig = createPersistConfig(searchConfig, storage);
 const navigationPersistConfig = createPersistConfig(navigationConfig, storage);
 
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
   shell: persistReducer(shellPersistConfig, shell),
   search: persistReducer(searchPersistConfig, search),
   navigation: persistReducer(navigationPersistConfig, navigation),

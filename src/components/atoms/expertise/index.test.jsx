@@ -1,36 +1,37 @@
 import React from 'react';
-import { mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
+import { render, cleanup } from '@testing-library/react';
 import Expertise from './index';
-
 import { beginner } from 'fixtures/expertise';
-
-configure({ adapter: new Adapter() });
 
 describe('<Expertise />', () => {
   const level = beginner;
   let wrapper;
 
   beforeEach(() => {
-    wrapper = mount(<Expertise level={ level }/>);
+    wrapper = render(
+      <Expertise level={ level }/>
+    ).container;
   });
 
+  afterEach(cleanup);
+
   it('should render correctly', () => {
-    expect(wrapper).toContainMatchingElement('span.expertise');
+    expect(wrapper.querySelectorAll('span.expertise')).toHaveLength(1);
   });
 
   it('should get the appropriate class from expertise level', () => {
-    expect(wrapper).toContainMatchingElement(`.expertise.${level.toLowerCase()}`);
+    expect(wrapper.querySelectorAll(`.expertise.${level.toLowerCase()}`)).toHaveLength(1);
   });
 
   describe('without a level value', () => {
     beforeEach(() => {
-      wrapper = mount(<Expertise />);
+      wrapper = render(
+        <Expertise />
+      ).container;
     });
 
     it('should render the default expertise tag', () => {
-      expect(wrapper).toContainMatchingElement('span.expertise.intermediate');
+      expect(wrapper.querySelectorAll('span.expertise.intermediate')).toHaveLength(1);
     });
   });
 });

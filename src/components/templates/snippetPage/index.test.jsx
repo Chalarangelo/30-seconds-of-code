@@ -1,88 +1,78 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import createStore from 'state';
-import { mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
+import Helmet from 'react-helmet';
+import { cleanup } from '@testing-library/react';
+import { renderConnected } from 'test/utils';
 import SnippetPage from './index';
 import { fullSnippet, fullBlogSnippet } from 'fixtures/snippets';
 import { breadcrumbs } from 'fixtures/breadcrumbs';
 
-configure({ adapter: new Adapter() });
 console.warn = jest.fn();
-
-const { store } = createStore();
 
 describe('<SnippetPage />', () => {
   const cardTemplate = 'StandardSnippetCard';
-  let wrapper, meta, crumbs, snippetCard;
+  let wrapper, meta, snippetCard;
 
   beforeEach(() => {
-    wrapper = mount(
-      <Provider store={ store }>
-        <SnippetPage pageContext={ {
-          snippet:
-          fullSnippet,
-          cardTemplate,
-          breadcrumbs,
-          pageDescription: '',
-        } }/>
-      </Provider>
+    const utils = renderConnected(
+      <SnippetPage pageContext={ {
+        snippet:
+        fullSnippet,
+        cardTemplate,
+        breadcrumbs,
+        pageDescription: '',
+      } }/>
     );
-    meta = wrapper.find('Meta');
-    crumbs = wrapper.find('Breadcrumbs');
-    snippetCard = wrapper.find('SnippetCard');
+    wrapper = utils.container;
+    meta = Helmet.peek();
+    snippetCard = wrapper.querySelector('.snippet-card');
   });
+
+  afterEach(cleanup);
 
   describe('should render', () => {
     it('a Shell component', () => {
-      expect(wrapper).toContainMatchingElement('Shell');
-    });
-
-    it('a Meta component', () => {
-      expect(wrapper).toContainMatchingElement('Meta');
+      expect(wrapper.querySelectorAll('.page-container')).toHaveLength(1);
     });
 
     it('a Breadcrumbs component', () => {
-      expect(wrapper).toContainMatchingElement('Breadcrumbs');
+      expect(wrapper.querySelectorAll('.link-back')).toHaveLength(1);
     });
 
     it('a SnippetCard component', () => {
-      expect(wrapper).toContainMatchingElement('SnippetCard');
+      expect(wrapper.querySelectorAll('.snippet-card')).toHaveLength(1);
     });
   });
 
   it('should pass the correct data to the Meta component', () => {
-    expect(meta.prop('title')).toBe(fullSnippet.title);
+    expect(meta.title).toContain(fullSnippet.title);
   });
 
   it('should pass the breadcrumbs to the Breadcrumbs component', () => {
-    expect(crumbs.prop('breadcrumbs')).toBe(breadcrumbs);
+    expect(wrapper.querySelector('.link-back').textContent).toContain(breadcrumbs[0].name);
   });
 
   it('should pass the snippet data to the SnippetCard component', () => {
-    expect(snippetCard.prop('snippet')).toEqual(fullSnippet);
+    expect(snippetCard.querySelector('.card-title').textContent).toContain(fullSnippet.title);
   });
 
   describe('with a blog post', () => {
     beforeEach(() => {
-      wrapper = mount(
-        <Provider store={ store }>
-          <SnippetPage pageContext={ {
-            snippet: fullBlogSnippet,
-            cardTemplate: 'BlogSnippetCard',
-            pageDescription: '',
-            breadcrumbs,
-          } }/>
-        </Provider>
+      const utils = renderConnected(
+        <SnippetPage pageContext={ {
+          snippet: fullBlogSnippet,
+          cardTemplate: 'BlogSnippetCard',
+          pageDescription: '',
+          breadcrumbs,
+        } }/>
       );
-      meta = wrapper.find('Meta');
-      crumbs = wrapper.find('Breadcrumbs');
-      snippetCard = wrapper.find('SnippetCardWrapper');
+      wrapper = utils.container;
+      meta = Helmet.peek();
     });
 
     it('should pass the correct logoSrc to the Meta component', () => {
-      expect(meta.prop('logoSrc')).toBe(fullBlogSnippet.cover);
+      expect(meta.metaTags
+        .find(({property}) => property === 'og:image').content
+      ).toContain(fullBlogSnippet.cover);
     });
   });
 });

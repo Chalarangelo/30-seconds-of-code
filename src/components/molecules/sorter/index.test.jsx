@@ -1,12 +1,8 @@
 import React from 'react';
-import { mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import Sorter from './index';
-
 import { orders } from 'fixtures/sorter';
 
-configure({ adapter: new Adapter() });
 console.warn = jest.fn();
 
 describe('<Sorter />', () => {
@@ -15,48 +11,52 @@ describe('<Sorter />', () => {
   let clickableEl;
 
   beforeEach(() => {
-    wrapper = mount(
+    wrapper = render(
       <Sorter sorter={ {
         orders,
         selectedOrder,
-      } } />);
+      } }
+      />
+    ).container;
   });
+
+  afterEach(cleanup);
 
   describe('should render', () => {
     it('the outer wrapper', () => {
-      expect(wrapper).toContainMatchingElement('.sorter');
+      expect(wrapper.querySelectorAll('.sorter')).toHaveLength(1);
     });
 
     it('the inner wrapper', () => {
-      expect(wrapper).toContainMatchingElement('.sorter-inner');
+      expect(wrapper.querySelectorAll('.sorter-inner')).toHaveLength(1);
     });
 
     it('the correct amount of buttons', () => {
-      expect(wrapper).toContainMatchingElements(2, 'a.btn.order-btn');
+      expect(wrapper.querySelectorAll('a.btn.order-btn')).toHaveLength(2);
     });
   });
 
   it('should not be open by default', () => {
-    expect(wrapper).not.toContainMatchingElement('.sorter.open');
+    expect(wrapper.querySelectorAll('.sorter.open')).toHaveLength(0);
   });
 
   describe('when clicked', () => {
     beforeEach(() => {
-      clickableEl = wrapper.find('.order-btn.selected');
-      clickableEl.at(0).simulate('click');
+      clickableEl = wrapper.querySelector('.order-btn.selected');
+      fireEvent.click(clickableEl);
     });
 
     it('should open the sorter', () => {
-      expect(wrapper).toContainMatchingElement('.sorter.open');
+      expect(wrapper.querySelectorAll('.sorter.open')).toHaveLength(1);
     });
 
     describe('a second time', () => {
       beforeEach(() => {
-        clickableEl.at(0).simulate('click');
+        fireEvent.click(clickableEl);
       });
 
       it('should close the sorter', () => {
-        expect(wrapper).not.toContainMatchingElement('.sorter.open');
+        expect(wrapper.querySelectorAll('.sorter.open')).toHaveLength(0);
       });
     });
   });

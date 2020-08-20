@@ -1,63 +1,51 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import createStore from 'state';
-import { mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import Helmet from 'react-helmet';
+import { cleanup } from '@testing-library/react';
+import { renderConnected } from 'test/utils';
 import literals from 'lang/en/client/notFound';
-
 import NotFoundPage from './index';
 
-configure({ adapter: new Adapter() });
 console.warn = jest.fn();
 
-const { store } = createStore();
-
 describe('<NotFoundPage />', () => {
-  let wrapper, meta, pageBackdrop, anchorButton;
+  let wrapper, meta, anchorButton;
 
   beforeEach(() => {
-    wrapper = mount(
-      <Provider store={ store }>
-        <NotFoundPage />
-      </Provider>
-    );
-    meta = wrapper.find('Meta');
-    pageBackdrop = wrapper.find('PageBackdrop');
-    anchorButton = wrapper.find('a.btn.btn-home');
+    wrapper = renderConnected(<NotFoundPage />).container;
+    meta = Helmet.peek();
+    anchorButton = wrapper.querySelector('a.btn.btn-home');
   });
+
+  afterEach(cleanup);
 
   describe('should render', () => {
     it('a Shell component', () => {
-      expect(wrapper).toContainMatchingElement('Shell');
-    });
-
-    it('a Meta component', () => {
-      expect(wrapper).toContainMatchingElement('Meta');
+      expect(wrapper.querySelectorAll('.page-container')).toHaveLength(1);
     });
 
     it('a PageBackdrop component', () => {
-      expect(wrapper).toContainMatchingElement('PageBackdrop');
+      expect(wrapper.querySelectorAll('.page-graphic')).toHaveLength(1);
     });
 
     it('an anchor element', () => {
-      expect(wrapper).toContainMatchingElement('a.btn.btn-home');
+      expect(wrapper.querySelectorAll('a.btn.btn-home')).toHaveLength(1);
     });
   });
 
   it('should pass the correct data to the Meta component', () => {
-    expect(meta.prop('title')).toBe(literals.pageNotFound);
+    expect(meta.title).toContain(literals.pageNotFound);
   });
 
   it('should pass the correct graphic name to the PageBackdrop component', () => {
-    expect(pageBackdrop.prop('graphicName')).toBe('page-not-found');
+    expect(wrapper.querySelectorAll('.page-graphic.page-not-found')).toHaveLength(1);
   });
 
   it('should pass a link to the anchor button', () => {
-    expect(anchorButton.prop('href')).not.toBe(undefined);
+    expect(anchorButton.href).not.toBe(undefined);
   });
 
   it('should pass the correct class to the anchor button', () => {
-    expect(anchorButton.prop('className').indexOf('btn-home')).not.toBe(-1);
+    expect(anchorButton.className).toContain('btn-home');
   });
 });
 

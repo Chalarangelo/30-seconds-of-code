@@ -1,51 +1,43 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import createStore from 'state';
-import { mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
+import { cleanup } from '@testing-library/react';
+import { renderConnected } from 'test/utils';
 import SearchResults from './index';
 import { initializeIndex, searchByKeyphrase, pushNewQuery } from 'state/search';
 import { previewSnippet, previewBlogSnippet } from 'fixtures/snippets';
 
-configure({ adapter: new Adapter() });
-
-const { store } = createStore();
-
 describe('<SearchResults />', () => {
-  let wrapper;
+  let wrapper, store, rerender;
 
   beforeEach(() => {
+    let utils = renderConnected(<SearchResults />);
+    store = utils.store;
+    rerender = utils.rerenderConnected;
     store.dispatch(initializeIndex([previewBlogSnippet, previewSnippet]));
-    wrapper = mount(
-      <Provider store={ store }>
-        <SearchResults />
-      </Provider>
-    );
+    wrapper = rerender(<SearchResults />).container;
   });
 
+  afterEach(cleanup);
+
   it('should render properly', () => {
-    expect(wrapper).toContainMatchingElement('PageBackdrop');
+    expect(wrapper.querySelectorAll('.page-graphic')).toHaveLength(1);
   });
 
   describe('with recommended snippets', () => {
 
     beforeEach(() => {
-      wrapper = mount(
-        <Provider store={ store }>
-          <SearchResults recommendedSnippets={ [previewSnippet] }/>
-        </Provider>
-      );
+      wrapper = rerender(
+        <SearchResults recommendedSnippets={ [previewSnippet] }/>
+      ).container;
     });
 
     it('should render the recommended snippets', () => {
-      expect(wrapper).toContainMatchingElement('RecommendationList');
+      expect(wrapper.querySelectorAll('.recommendation-list')).toHaveLength(1);
     });
   });
 
   describe('with no search query', () => {
     it('should render the correct page graphic', () => {
-      expect(wrapper.find('PageBackdrop').prop('graphicName')).toBe('search-empty');
+      expect(wrapper.querySelectorAll('.page-graphic.search-empty')).toHaveLength(1);
     });
   });
 
@@ -54,15 +46,11 @@ describe('<SearchResults />', () => {
     beforeEach(() => {
       store.dispatch(pushNewQuery('impossiblestringtofindintheindex'));
       store.dispatch(searchByKeyphrase('impossiblestringtofindintheindex', [previewBlogSnippet, previewSnippet]));
-      wrapper = mount(
-        <Provider store={ store }>
-          <SearchResults />
-        </Provider>
-      );
+      wrapper = rerender(<SearchResults />).container;
     });
 
     it('should render the correct page graphic', () => {
-      expect(wrapper.find('PageBackdrop').prop('graphicName')).toBe('search-no-results');
+      expect(wrapper.querySelectorAll('.page-graphic.search-no-results')).toHaveLength(1);
     });
   });
 
@@ -71,19 +59,15 @@ describe('<SearchResults />', () => {
     beforeEach(() => {
       store.dispatch(pushNewQuery(previewSnippet.primaryTag));
       store.dispatch(searchByKeyphrase(previewSnippet.primaryTag, [previewBlogSnippet, previewSnippet]));
-      wrapper = mount(
-        <Provider store={ store }>
-          <SearchResults />
-        </Provider>
-      );
+      wrapper = rerender(<SearchResults />).container;
     });
 
     it('should render a PageTitle', () => {
-      expect(wrapper).toContainMatchingElement('PageTitle');
+      expect(wrapper.querySelectorAll('.page-title')).toHaveLength(1);
     });
 
     it('should render a PreviewCard', () => {
-      expect(wrapper).toContainMatchingElement('PreviewCard');
+      expect(wrapper.querySelectorAll('.preview-card').length).toBeGreaterThanOrEqual(1);
     });
   });
 });
