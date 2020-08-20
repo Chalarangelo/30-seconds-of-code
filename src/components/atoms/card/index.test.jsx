@@ -1,38 +1,40 @@
 import React from 'react';
-import { mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
+import { render, cleanup } from '@testing-library/react';
 import Card from './index';
-
-configure({ adapter: new Adapter() });
 
 describe('<Card />', () => {
   let wrapper;
   const innerText = 'This is a card';
 
   beforeEach(() => {
-    wrapper = mount(<Card className='special'>{ innerText }</Card>);
+    wrapper = render(
+      <Card className='special'>{ innerText }</Card>
+    ).container;
   });
 
+  afterEach(cleanup);
+
   it('should render correctly', () => {
-    expect(wrapper).toContainMatchingElement('div.card');
+    expect(wrapper.querySelectorAll('div.card')).toHaveLength(1);
   });
 
   it('should append passed classes', () => {
-    expect(wrapper).toContainMatchingElement('.card.special');
+    expect(wrapper.querySelectorAll('.card.special')).toHaveLength(1);
   });
 
   it('should render passed children', () => {
-    expect(wrapper.text()).toBe(innerText);
+    expect(wrapper.textContent).toBe(innerText);
   });
 
   describe('without additional classNames', () => {
     beforeEach(() => {
-      wrapper = mount(<Card>{ innerText }</Card>);
+      wrapper = render(
+        <Card>{ innerText }</Card>
+      ).container;
     });
 
     it('should render with the default className', () => {
-      expect(wrapper.find('div').prop('className')).toBe('card');
+      expect(wrapper.querySelector('div').className).toBe('card');
     });
   });
 
