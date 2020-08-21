@@ -1,6 +1,5 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { Provider } from 'react-redux';
 import { cleanup } from '@testing-library/react';
 import { renderConnected } from 'test/utils';
 import ListingPage from './index';

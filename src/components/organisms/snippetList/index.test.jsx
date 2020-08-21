@@ -1,5 +1,4 @@
 import React from 'react';
-import { Provider } from 'react-redux';
 import { cleanup } from '@testing-library/react';
 import { renderConnected } from 'test/utils';
 import SnippetList from './index';
