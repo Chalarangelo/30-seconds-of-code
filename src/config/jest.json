@@ -1,10 +1,11 @@
 {
   "rootDir": "../../",
   "transform": {
-    "^.+\\.jsx?$": "./.jest/jest-preprocess.js",
-    "^.+\\.(css|less|scss)$": "./.jest/style-mock.js"
+    "^.+\\.(js|jsx)?$": "babel-jest",
+    "^.+\\.(css|less|scss)$": "jest-transform-stub"
   },
   "testEnvironment": "jest-environment-jsdom-fourteen",
+  "moduleFileExtensions": ["js", "jsx", "json"],
   "moduleDirectories": [
     "node_modules",
     "src"
@@ -22,9 +23,6 @@
     "__BASE_PATH__": ""
   },
   "testURL": "https://localhost",
-  "setupFiles": [
-    "./.jest/loadershim.js"
-  ],
   "testMatch": [
     "**/?(*.)+(test).[jt]s?(x)"
   ]
