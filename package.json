@@ -7,12 +7,12 @@
   "author": "30-seconds",
   "devDependencies": {
     "@babel/core": "^7.8.7",
+    "@babel/eslint-parser": "^7.11.4",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.8.7",
     "@babel/preset-react": "^7.8.3",
     "@chalarangelo/combine-class-names": "^1.0.0",
     "@testing-library/react": "^10.4.8",
-    "babel-eslint": "^10.1.0",
     "babel-jest": "^26.3.0",
     "babel-loader": "^8.0.6",
     "copy-to-clipboard": "^3.3.1",

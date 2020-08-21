@@ -2,13 +2,12 @@ import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import CssSnippetCard from './index';
 import { fullCssSnippet, fullCssWithJsSnippet } from 'fixtures/snippets';
-import { escapeHTML } from 'utils';
 
 console.warn = jest.fn();
 // console.log = jest.fn();
 
 describe('<CssSnippetCard />', () => {
-  let wrapper, card, tagList, snippetPreview, codepenButton, codeBlocks;
+  let wrapper, card, tagList, snippetPreview, codeBlocks;
 
   beforeEach(() => {
     wrapper = render(
@@ -17,7 +16,6 @@ describe('<CssSnippetCard />', () => {
     card = wrapper.querySelector('.card');
     tagList = wrapper.querySelector('.tag-list');
     snippetPreview = wrapper.querySelector('.snippet-preview');
-    codepenButton = wrapper.querySelector('.codepen-btn');
     codeBlocks = wrapper.querySelectorAll('pre');
   });
 
@@ -115,7 +113,6 @@ describe('<CssSnippetCard />', () => {
       card = wrapper.querySelector('.card');
       tagList = wrapper.querySelector('.tag-list');
       snippetPreview = wrapper.querySelector('.snippet-preview');
-      codepenButton = wrapper.querySelector('.codepen-btn');
       codeBlocks = wrapper.querySelectorAll('pre');
     });
 
