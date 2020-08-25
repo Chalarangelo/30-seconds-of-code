@@ -27,7 +27,7 @@ const extract = (configs, langData, parentLog) => configs.map(cfg => {
 
   boundLog(`Extracting snippets from ${snippetsPath}`, 'info');
   return new Promise((resolve, reject) =>
-    parseSnippets(snippetsPath, assetPath, {...cfg, commonData, slugPrefix, repoUrlPrefix}, langData, boundLog)
+    parseSnippets(snippetsPath, assetPath, contentOutDir, {...cfg, commonData, slugPrefix, repoUrlPrefix}, langData, boundLog)
       .then(snippetsArray => {
         const completeData = {
           data: snippetsArray,
