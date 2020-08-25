@@ -2,7 +2,7 @@ import glob from 'glob';
 import fs from 'fs-extra';
 import path from 'path';
 import webfontsGenerator from 'webfonts-generator';
-import { initAction } from '../core';
+import { initAction, loadContentConfigs } from '../core';
 import iconConfig from 'config/icons';
 
 const {
@@ -13,18 +13,21 @@ const {
   cssSelector,
   cssClassName,
   cssClassPrefix,
+  cssLanguageSelectors,
 } = iconConfig;
 
 /**
  * Generate a woff2 fle with the icon font and CSS styles to go with it.
  */
 const makeIcons = () => {
-  const [boundLog, , inPath, outPath, cssPath] = initAction('makeIcons', [
+  const [boundLog, , inPath, contentPath, outPath, cssPath] = initAction('makeIcons', [
     ['paths', 'rawIconPath'],
+    ['paths', 'rawContentPath'],
     ['paths', 'rawAssetPath'],
     ['paths', 'iconFontPath'],
   ]);
   const files = glob.sync(`${inPath}`);
+  const configs = loadContentConfigs(contentPath, boundLog);
   boundLog(`Generating icon font and styles from ${files.length} files...`, 'info');
 
   const config = {
@@ -41,6 +44,10 @@ const makeIcons = () => {
       baseSelector: cssSelector,
       baseClassNames: cssClassName,
       classPrefix: cssClassPrefix,
+      langSelectors: cssLanguageSelectors,
+      langIcons: configs
+        .map(cfg => cfg.theme)
+        .filter(Boolean),
     },
   };
 
