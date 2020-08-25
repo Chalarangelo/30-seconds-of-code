@@ -161,6 +161,131 @@ export const getTags = tagStr => [...new Set(tagStr.split(','))];
  */
 export const getId = (snippetFilename, sourceDir) => `${sourceDir}/${snippetFilename.slice(0, -3)}`;
 
+export const parseSnippet = async(
+  snippetsPath, snippet, {
+    sourceDir, commonData, slugPrefix, repoUrlPrefix, assetPath, langData, language,
+    isCssSnippet, isBlogSnippet, hasOptionalLanguage, languages, icon, biasPenaltyMultiplier,
+  }
+) => {
+  let data, gitMetadata;
+  await Promise.all([
+    getData(snippetsPath, snippet),
+    getGitMetadata(snippet, snippetsPath),
+  ]).then(values => {
+    data = values[0];
+    gitMetadata = values[1];
+  });
+  const tags = getTags(data.attributes.tags);
+  const text = getTextualContent(data.body);
+  const [ code, rawCode ] = isBlogSnippet
+    ? [ null, [ ] ]
+    : getCodeBlocks(data.body, {
+      isCssSnippet,
+      hasOptionalLanguage,
+      languages,
+      snippetName: snippet.slice(0, -3),
+    });
+  const type = isBlogSnippet ? `blog.${data.attributes.type}` : 'snippet';
+
+  let excerpt, cover, shortSliceIndex, authorsData, langIcon, shortText;
+
+  if (isBlogSnippet) {
+    excerpt = data.attributes.excerpt;
+    cover = `${assetPath}${data.attributes.cover}`;
+    shortSliceIndex = text.indexOf('\n\n') <= 180
+      ? text.indexOf('\n\n')
+      : text.indexOf(' ', 160);
+    shortText = excerpt && excerpt.trim().length !== 0
+      ? excerpt
+      : `${text.slice(0, shortSliceIndex)}...`;
+    authorsData = getTags(data.attributes.authors).map(a => authors[a]);
+    langIcon = langData.find(l => tags.includes(l.language));
+  } else
+    shortText = text.slice(0, text.indexOf('\n\n'));
+
+  const html = parseMarkdown(
+    {
+      texts: {
+        fullDescription: isBlogSnippet ? data.body : text,
+        description: shortText,
+      },
+      codeBlocks: rawCode,
+    }, {
+      isBlog: isBlogSnippet,
+      type,
+      assetPath,
+    }
+  );
+
+  const snippetData = {
+    ...commonData,
+    id: getId(snippet, sourceDir),
+    title: data.attributes.title,
+    type,
+    tags: {
+      all: tags,
+      primary: tags[0],
+    },
+    code,
+    expertise: isBlogSnippet ? 'blog' : determineExpertiseFromTags(tags),
+    text: {
+      full: isBlogSnippet ? data.body : text,
+      short: shortText,
+    },
+    cover,
+    authors: authorsData,
+    icon: langIcon ? langIcon.icon : icon,
+    searchTokens: uniqueElements(
+      isBlogSnippet ? [
+        ...stripExpertiseFromTags(tags),
+        ...tokenizeSnippet(`${shortText} ${data.attributes.title}`),
+      ].map(v => v.toLowerCase()) : [
+        data.attributes.title,
+        language.short,
+        language.long,
+        ...stripExpertiseFromTags(tags),
+        ...tokenizeSnippet(shortText),
+      ].map(v => v.toLowerCase())
+    ).join(' '),
+    html,
+    ...gitMetadata,
+    slug: `/${slugPrefix}${convertToSeoSlug(snippet.slice(0, -3))}`,
+    url: `${repoUrlPrefix}/${snippet}`,
+  };
+
+  snippetData.ranking = rankSnippet({
+    ...snippetData,
+    language: commonData.language,
+    biasPenaltyMultiplier: biasPenaltyMultiplier
+      ? biasPenaltyMultiplier
+      : 1.0,
+  });
+
+  return snippetData;
+};
+
+export const getParams = (config, langData, assetPath) => {
+  const isCssSnippet = config.dirName === '30css';
+  const isBlogSnippet = config.isBlog;
+  const hasOptionalLanguage = !isCssSnippet && !isBlogSnippet && config.optionalLanguage && config.optionalLanguage.short;
+  const languages = isBlogSnippet ? [] : [
+    config.language.short,
+    isCssSnippet ? config.secondLanguage.short : null,
+    hasOptionalLanguage || isCssSnippet ? config.optionalLanguage.short : null,
+  ].filter(Boolean).join('|');
+  const icon = config.theme ? config.theme.iconName : null;
+  return {
+    sourceDir: `${config.dirName}/${config.snippetPath}`,
+    commonData: config.commonData,
+    slugPrefix: config.slugPrefix,
+    language: config.language,
+    biasPenaltyMultiplier: config.biasPenaltyMultiplier,
+    repoUrlPrefix: config.repoUrlPrefix,
+    isCssSnippet, isBlogSnippet, hasOptionalLanguage, languages, icon,
+    langData, assetPath,
+  };
+};
+
 /**
  * Synchronously read all snippets and sort them as necessary.
  * The sorting is case-insensitive.
@@ -173,116 +298,12 @@ export const getId = (snippetFilename, sourceDir) => `${sourceDir}/${snippetFile
  */
 export const readSnippets = async(snippetsPath, assetPath, config, langData, boundLog) => {
   const snippetFilenames = getFilesInDir(snippetsPath, boundLog);
-  const sourceDir = `${config.dirName}/${config.snippetPath}`;
-  const { commonData, slugPrefix, repoUrlPrefix } = config;
-
-  const isCssSnippet = config.dirName === '30css';
-  const isBlogSnippet = config.isBlog;
-  const hasOptionalLanguage = !isCssSnippet && !isBlogSnippet && config.optionalLanguage && config.optionalLanguage.short;
-  const languages = isBlogSnippet ? [] : [
-    config.language.short,
-    isCssSnippet ? config.secondLanguage.short : null,
-    hasOptionalLanguage || isCssSnippet ? config.optionalLanguage.short : null,
-  ].filter(Boolean).join('|');
-  const icon = config.theme ? config.theme.iconName : null;
+  const params = getParams(config, langData, assetPath);
 
   let snippets = [];
   try {
     for (let snippet of snippetFilenames) {
-      let data, gitMetadata;
-      await Promise.all([
-        getData(snippetsPath, snippet),
-        getGitMetadata(snippet, snippetsPath),
-      ]).then(values => {
-        data = values[0];
-        gitMetadata = values[1];
-      });
-      const tags = getTags(data.attributes.tags);
-      const text = getTextualContent(data.body);
-      const [ code, rawCode ] = isBlogSnippet
-        ? [ null, [ ] ]
-        : getCodeBlocks(data.body, {
-          isCssSnippet,
-          hasOptionalLanguage,
-          languages,
-          snippetName: snippet.slice(0, -3),
-        });
-      const type = isBlogSnippet ? `blog.${data.attributes.type}` : 'snippet';
-
-      let excerpt, cover, shortSliceIndex, authorsData, langIcon, shortText;
-
-      if (isBlogSnippet) {
-        excerpt = data.attributes.excerpt;
-        cover = `${assetPath}${data.attributes.cover}`;
-        shortSliceIndex = text.indexOf('\n\n') <= 180
-          ? text.indexOf('\n\n')
-          : text.indexOf(' ', 160);
-        shortText = excerpt && excerpt.trim().length !== 0
-          ? excerpt
-          : `${text.slice(0, shortSliceIndex)}...`;
-        authorsData = getTags(data.attributes.authors).map(a => authors[a]);
-        langIcon = langData.find(l => tags.includes(l.language));
-      } else
-        shortText = text.slice(0, text.indexOf('\n\n'));
-
-      const html = parseMarkdown(
-        {
-          texts: {
-            fullDescription: isBlogSnippet ? data.body : text,
-            description: shortText,
-          },
-          codeBlocks: rawCode,
-        }, {
-          isBlog: isBlogSnippet,
-          type,
-          assetPath,
-        }
-      );
-
-      const snippetData = {
-        ...commonData,
-        id: getId(snippet, sourceDir),
-        title: data.attributes.title,
-        type,
-        tags: {
-          all: tags,
-          primary: tags[0],
-        },
-        code,
-        expertise: isBlogSnippet ? 'blog' : determineExpertiseFromTags(tags),
-        text: {
-          full: isBlogSnippet ? data.body : text,
-          short: shortText,
-        },
-        cover,
-        authors: authorsData,
-        icon: langIcon ? langIcon.icon : icon,
-        searchTokens: uniqueElements(
-          isBlogSnippet ? [
-            ...stripExpertiseFromTags(tags),
-            ...tokenizeSnippet(`${shortText} ${data.attributes.title}`),
-          ].map(v => v.toLowerCase()) : [
-            data.attributes.title,
-            config.language.short,
-            config.language.long,
-            ...stripExpertiseFromTags(tags),
-            ...tokenizeSnippet(shortText),
-          ].map(v => v.toLowerCase())
-        ).join(' '),
-        html,
-        ...gitMetadata,
-        slug: `/${slugPrefix}${convertToSeoSlug(snippet.slice(0, -3))}`,
-        url: `${repoUrlPrefix}/${snippet}`,
-      };
-
-      snippetData.ranking = rankSnippet({
-        ...snippetData,
-        language: commonData.language,
-        biasPenaltyMultiplier: config.biasPenaltyMultiplier
-          ? config.biasPenaltyMultiplier
-          : 1.0,
-      });
-
+      const snippetData = await parseSnippet(snippetsPath, snippet, params);
       snippets.push(snippetData);
     }
   } catch (err) {
