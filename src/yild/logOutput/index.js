@@ -1,15 +1,16 @@
-import kleur, { bold, blue, green, red, yellow } from 'kleur';
+import chalk from 'chalk';
 import process from 'process';
+const { bold, blue, green, red, yellow } = chalk;
 
 global._yild_logOutput_instance = undefined;
 
 /**
- * Format a string with the given kleur formatter.
+ * Format a string with the given chalk formatter.
  * @param {string} msg - The message to be formatted.
- * @param {array} format - The name of the kleur function(s) to use.
+ * @param {array} format - The name of the chalk function(s) to use.
  */
 export const format = (msg, ...format) =>
-  format.reduce((m, f) => kleur[f] ? kleur[f](m) : m, msg);
+  format.reduce((m, f) => chalk[f] ? chalk[f](m) : m, msg);
 
 /**
  * Logger class-like, should be used to have a logger singleton.
@@ -57,7 +58,7 @@ function logger() {
 
     let message = breakLine ? `${msg}\n` : `${msg}`;
     if(procName) message = `[${bold(procName)}] ${message}`;
-    if(validTypes.includes(type)) message = `${prefixes[type]} | ${message}`;
+    if(validTypes.includes(type)) message = `${prefixes[type]}  ${message}`;
 
     this.outputStream.write(message);
   };

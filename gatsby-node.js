@@ -1,4 +1,4 @@
-const { green } = require('kleur');
+const { green } = require('chalk');
 const env = require('./.build/env').default;
 
 const {
