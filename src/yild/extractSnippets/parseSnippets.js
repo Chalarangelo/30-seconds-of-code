@@ -163,8 +163,9 @@ export const getId = (snippetFilename, sourceDir) => `${sourceDir}/${snippetFile
 
 export const parseSnippet = async(
   snippetsPath, snippet, {
-    sourceDir, commonData, slugPrefix, repoUrlPrefix, assetPath, langData, language,
-    isCssSnippet, isBlogSnippet, hasOptionalLanguage, languages, icon, biasPenaltyMultiplier,
+    sourceDir, commonData, slugPrefix, repoUrlPrefix, assetPath, outPath,
+    langData, language, isCssSnippet, isBlogSnippet, hasOptionalLanguage,
+    languages, icon, biasPenaltyMultiplier,
   }
 ) => {
   let data, gitMetadata;
@@ -261,10 +262,36 @@ export const parseSnippet = async(
       : 1.0,
   });
 
-  return snippetData;
+  const outDir = `${outPath}/${snippetData.slug.slice(1)}`;
+  fs.ensureDirSync(outDir);
+  fs.writeFileSync(
+    `${outDir}/snippet.json`,
+    JSON.stringify(snippetData, null, 2)
+  );
+
+  const trimmedData = {
+    id: snippetData.id,
+    tags: snippetData.tags,
+    language: {
+      long: snippetData.language.long,
+      short: snippetData.language.short,
+    },
+    searchTokens: snippetData.searchTokens,
+    ranking: snippetData.ranking,
+    blog: snippetData.blog,
+    title: snippetData.title,
+    expertise: snippetData.expertise,
+    icon: snippetData.icon,
+    slug: snippetData.slug,
+    html: {
+      description: snippetData.html.description,
+    },
+  };
+
+  return trimmedData;
 };
 
-export const getParams = (config, langData, assetPath) => {
+export const getParams = (config, langData, assetPath, outPath) => {
   const isCssSnippet = config.dirName === '30css';
   const isBlogSnippet = config.isBlog;
   const hasOptionalLanguage = !isCssSnippet && !isBlogSnippet && config.optionalLanguage && config.optionalLanguage.short;
@@ -282,7 +309,7 @@ export const getParams = (config, langData, assetPath) => {
     biasPenaltyMultiplier: config.biasPenaltyMultiplier,
     repoUrlPrefix: config.repoUrlPrefix,
     isCssSnippet, isBlogSnippet, hasOptionalLanguage, languages, icon,
-    langData, assetPath,
+    langData, assetPath, outPath,
   };
 };
 
@@ -291,14 +318,15 @@ export const getParams = (config, langData, assetPath) => {
  * The sorting is case-insensitive.
  * @param {string} snippetsPath - The path of the snippets directory.
  * @param {string} assetPath - The public path of the assets directory.
+ * @param {string} outPath - The output path of the snippets directory.
  * @param {object} config - The project's enriched configuration
  *  (containing the spread config, commonData and prefixes).
  * @param {array} langData - An array of `(language, icon)` tuples.
  * @param {function} boundLog - A bound logger.log function.
  */
-export const readSnippets = async(snippetsPath, assetPath, config, langData, boundLog) => {
+export const readSnippets = async(snippetsPath, assetPath, outPath, config, langData, boundLog) => {
   const snippetFilenames = getFilesInDir(snippetsPath, boundLog);
-  const params = getParams(config, langData, assetPath);
+  const params = getParams(config, langData, assetPath, outPath);
 
   let snippets = [];
   try {
