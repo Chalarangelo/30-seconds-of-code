@@ -1,5 +1,6 @@
 import fs from 'fs-extra';
 import recommendationEngine from 'engines/recommendationEngine';
+import { transformSnippetIndex } from 'build/transformers';
 
 const postProcess = (allData, allSnippetData, parentLog) => {
   const boundLog = parentLog.rebind('postProcess');
@@ -11,25 +12,9 @@ const postProcess = (allData, allSnippetData, parentLog) => {
     boundLog(`Post-processing snippets for ${snippetsPath}`, 'info');
 
     for (let snippet of data.data) {
-      const recommendedSnippets = recommendationEngine(allSnippetData, snippet)
-        .map(({
-          id, title, expertise, tags, language,
-          icon, html, slug, searchTokens,
-          recommendationRanking,
-        }) => ({
-          id, title, expertise, icon, slug, searchTokens,
-          recommendationRanking: +recommendationRanking,
-          html: {
-            description: html.description,
-          },
-          tags: {
-            primary: tags.primary,
-          },
-          language: {
-            short: language.short,
-            long: language.long,
-          },
-        }));
+      const recommendedSnippets = transformSnippetIndex(
+        recommendationEngine(allSnippetData, snippet).map(v => ( { node: v }))
+      );
 
       const outDir = `${contentOutDir}/${snippet.slug.slice(1)}`;
       fs.ensureDirSync(outDir);
