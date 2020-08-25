@@ -4,7 +4,6 @@ import extractSnippets from '../extractSnippets';
 import serveSnippets from '../serveSnippets';
 import updateContent from '../updateContent';
 import makeIcons from '../makeIcons';
-import makeLangBackgrounds from '../makeLangBackgrounds';
 import prepareEnv from '../prepareEnv';
 import prepareCacheKey from '../prepareCacheKey';
 
@@ -45,12 +44,6 @@ const actions = {
     process: makeIcons,
     step: 0,
     matcher: /^-{0,2}i(cons)?$/gi,
-  },
-  'backgrounds': {
-    description: 'generate SCSS styles from the provided icons',
-    process: makeLangBackgrounds,
-    step: 0,
-    matcher: /^-{0,2}b(ackgrounds)?$/gi,
   },
   'environment': {
     description: `generate environment configuration file\n${format('ENV', 'green', 'bold')} can be one of: (DEVELOPMENT, PRODUCTION)`,

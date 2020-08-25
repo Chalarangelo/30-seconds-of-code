@@ -5,5 +5,9 @@
   "cssTemplatePath": "src/yild/makeIcons/cssTemplate.hbs",
   "cssSelector": ".icon",
   "cssClassName": "icon",
-  "cssClassPrefix": "icon-"
+  "cssClassPrefix": "icon-",
+  "cssLanguageSelectors": [
+    ".card-icon",
+    ".btn"
+  ]
 }

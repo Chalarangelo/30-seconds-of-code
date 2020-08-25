@@ -1,6 +1,6 @@
 @font-face {
   font-family: "icons";
-  src: url("../../assets/icons.woff2?bc96d006b08d44606f3122178a9e0225") format("woff2");
+  src: url("../../assets/icons.woff2?ee05ab874cb7c5179be6f88e879bb65c") format("woff2");
 }
 
 .icon:before {
@@ -79,4 +79,44 @@
 }
 .icon.icon-twitter:before {
   content: "\f116";
+}
+
+.card-icon, 
+.btn { 
+  &.icon-blog {
+    background: #1f253d;
+    color: #edf0fc;
+  }
+  &.icon-js {
+    background: #f6d854;
+    color: #392f31;
+  }
+  &.icon-csharp {
+    background: #672179;
+    color: #ffffff;
+  }
+  &.icon-css {
+    background: #3f4de4;
+    color: #ffffff;
+  }
+  &.icon-dart {
+    background: #1b2634;
+    color: #ffffff;
+  }
+  &.icon-golang {
+    background: #5ac9e2;
+    color: #000000;
+  }
+  &.icon-php {
+    background: #8b9bd6;
+    color: #2a2843;
+  }
+  &.icon-python {
+    background: #3c77a9;
+    color: #ffffff;
+  }
+  &.icon-react {
+    background: #282c34;
+    color: #61dafb;
+  }
 }
