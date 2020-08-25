@@ -12,7 +12,6 @@ const extract = (configs, langData, parentLog) => configs.map(cfg => {
 
   const snippetsPath = `${contentDir}/sources/${cfg.dirName}/${cfg.snippetPath}`;
   const assetPath = `/${assetDir}/`;
-  const outputJson = `${contentOutDir}/${cfg.dirName}.json`;
   const slugPrefix = `${cfg.slug}/s`;
   const repoUrlPrefix = `${cfg.repoUrl}/blob/master/${cfg.snippetPath}`;
   const isBlog = !!cfg.isBlog;
@@ -46,7 +45,7 @@ const extract = (configs, langData, parentLog) => configs.map(cfg => {
         };
         boundLog(`Finished extracting ${snippetsPath}`, 'success');
         resolve({
-          outputFile: outputJson,
+          snippetsPath,
           data: completeData,
         });
       })
