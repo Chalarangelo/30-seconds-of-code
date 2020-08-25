@@ -27,10 +27,9 @@ const determineRecommendedSnippets = (snippetNodes, snippetContext) => {
 
   return snippetNodes
     .map(v => {
+      v.recommendationRanking = 0;
       // Filter out any nodes with the same id (this very snippet)
-      if(v.id === snippetContext.id)
-        v.recommendationRanking = 0;
-      else {
+      if(v.id !== snippetContext.id) {
         // Determine score for language:
         //  * Same language, as language = 100% of language score
         //  * Same language, but as a tag = 25% of language score
