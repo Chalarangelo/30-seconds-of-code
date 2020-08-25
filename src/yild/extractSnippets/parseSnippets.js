@@ -5,7 +5,7 @@ import frontmatter from 'front-matter';
 import { exec } from 'child_process';
 import tokenizeSnippet from 'engines/searchIndexingEngine';
 import { convertToSeoSlug, uniqueElements } from 'utils';
-import { determineExpertiseFromTags, stripExpertiseFromTags } from 'build/transformers';
+import { determineExpertiseFromTags, stripExpertiseFromTags, transformSnippetContext } from 'build/transformers';
 import rankSnippet from 'engines/rankingEngine';
 import parseMarkdown from './parseMarkdown';
 // TODO: Consider parsing this via a new parser or similar
@@ -266,7 +266,7 @@ export const parseSnippet = async(
   fs.ensureDirSync(outDir);
   fs.writeFileSync(
     `${outDir}/snippet.json`,
-    JSON.stringify(snippetData, null, 2)
+    JSON.stringify(transformSnippetContext(snippetData), null, 2)
   );
 
   const trimmedData = {
