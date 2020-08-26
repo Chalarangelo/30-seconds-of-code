@@ -1,5 +1,9 @@
 import glob from 'glob';
 import path from 'path';
+import paths from 'config/paths';
+
+/* istanbul ignore next */
+const isDevelopment = process.env.NODE_ENV.toLowerCase() === 'development';
 
 /**
  * Combines the given data JSONs, using the data files
@@ -27,15 +31,14 @@ export const parseTemplates = (templates, templatesDir) =>
 
 /* istanbul ignore next */
 /**
- * Returns an object containing templates and requirables created by
- * combining the given template and content parameters.
- * @param {array} templates - An array of templates.
- * @param {string} templatesDir - The path to the template directory.
- * @param {string} contentDir - The path to the content directory.
+ * Returns an object containing templates and requirables.
  */
-const parseRequirements = (templates, templatesDir, contentDir) => ({
-  templates: parseTemplates(templates, templatesDir),
-  requirables: parseRequirables(contentDir),
+const parseRequirements = () => ({
+  templates: parseTemplates(
+    isDevelopment ? paths.devTemplates : paths.templates,
+    paths.templatesPath
+  ),
+  requirables: parseRequirables(paths.contentPath),
 });
 
 export default parseRequirements;
