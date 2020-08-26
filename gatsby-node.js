@@ -2,12 +2,10 @@ const { green } = require('chalk');
 const env = require('./.build/env').default;
 
 const {
-  sourceNodes,
   createPages,
   onCreateWebpackConfig,
 } = require(`./src/build`);
 const {
-  parseQueries,
   parseRequirables,
   parseTemplates,
 } = require(`./src/build/parsers`);
@@ -19,11 +17,6 @@ console.log(`${green('success')} parse requirables`);
 const templates = parseTemplates(env === 'DEVELOPMENT' ? paths.devTemplates : paths.templates, paths.templatesPath);
 console.log(`${green('success')} parse templates`);
 
-const pagesQuery = parseQueries(paths.queryPath);
-console.log(`${green('success')} parse queries`);
-
-exports.createPages = createPages(pagesQuery, templates, requirables);
-
-exports.sourceNodes = sourceNodes(requirables);
+exports.createPages = createPages(templates, requirables);
 
 exports.onCreateWebpackConfig = onCreateWebpackConfig;

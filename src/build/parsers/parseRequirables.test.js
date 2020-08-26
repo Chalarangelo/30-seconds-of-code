@@ -44,7 +44,13 @@ const mockRequirables = {
   },
 };
 
-glob.sync.mockImplementation(jest.fn(() => ['stdRequirable.json', 'ltdRequirable.json']));
+glob.sync.mockImplementation(
+  jest
+    .fn()
+    .mockReturnValueOnce(['stdRequirable.json', 'ltdRequirable.json'])
+    .mockReturnValueOnce(['stdRequirable.json'])
+    .mockReturnValueOnce(['ltdRequirable.json'])
+);
 path.resolve.mockImplementation(jest.fn(f => f));
 
 // eslint-disable-next-line no-unused-vars
@@ -60,9 +66,10 @@ jest.mock('ltdRequirable.json',
 
 describe('parseRequirables', () => {
   it('returns the array of the resulting requirables', () => {
+    console.log();
     expect(parseRequirables('my-content-dir')).toEqual([
-      mockRequirables['stdRequirable'],
-      mockRequirables['ltdRequirable'],
+      {...mockRequirables['stdRequirable'], context: mockRequirables['stdRequirable'] },
+      {...mockRequirables['ltdRequirable'], context: mockRequirables['ltdRequirable']},
     ]);
   });
 });
