@@ -19,5 +19,6 @@
   "images": {
     "name": "blog_images",
     "path": "blog_images"
-  }
+  },
+  "cardTemplate": "BlogSnippetCard"
 }

@@ -26,5 +26,6 @@
     "foreColor": "#ffffff",
     "iconName": "css"
   },
-  "biasPenaltyMultiplier": 1.05
+  "biasPenaltyMultiplier": 1.05,
+  "cardTemplate": "CssSnippetCard"
 }
