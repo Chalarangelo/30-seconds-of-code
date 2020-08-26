@@ -1,5 +1,3 @@
-import cacheKey from '../../.build/cacheKey';
-
 /** Checks if the client is a bot */
 const isBot = () =>
   typeof navigator !== 'undefined' &&
@@ -10,8 +8,8 @@ const isBot = () =>
 const initialState = {
   isDarkMode: undefined,
   hasGithubLinksEnabled: undefined,
-  cacheKey,
-  newCacheKey: cacheKey,
+  cacheKey: process.env.CACHE_KEY,
+  newCacheKey: process.env.CACHE_KEY,
   isBot: isBot(),
   acceptsCookies: undefined,
 };

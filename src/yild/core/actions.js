@@ -3,7 +3,6 @@ import extractSnippets from '../extractSnippets';
 import serveSnippets from '../serveSnippets';
 import updateContent from '../updateContent';
 import makeIcons from '../makeIcons';
-import prepareCacheKey from '../prepareCacheKey';
 
 // Keep this in a variable to allow for help to run the way it should.
 export const helpFlag = /^-{0,2}h(elp)?$/gi;
@@ -42,12 +41,6 @@ const actions = {
     process: makeIcons,
     step: 0,
     matcher: /^-{0,2}i(cons)?$/gi,
-  },
-  'cache': {
-    description: `generate cache key file`,
-    process: prepareCacheKey,
-    step: 0,
-    matcher: /^-{0,2}c(ache)?$/gi,
   },
   'serve': {
     description: 'serve snippets from the generated JSON files',
