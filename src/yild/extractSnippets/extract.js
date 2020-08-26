@@ -23,6 +23,7 @@ const extract = (configs, langData, parentLog) => configs.map(cfg => {
   if (cfg.secondLanguage) otherLanguages.push(cfg.secondLanguage);
   if (cfg.optionalLanguage) otherLanguages.push(cfg.optionalLanguage);
   if (otherLanguages.length) commonData.language.otherLanguages = otherLanguages;
+  if (!cfg.cardTemplate) cfg.cardTemplate = 'StandardSnippetCard';
 
   boundLog(`Extracting snippets from ${snippetsPath}`, 'info');
   return new Promise((resolve, reject) =>
