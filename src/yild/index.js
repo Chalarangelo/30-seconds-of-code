@@ -25,11 +25,10 @@ const performStepActions = (actions, config) => stepNo =>
  * @param {object} config - A configuration object.
  */
 const yild = async config => {
+  console.log(process.env.NODE_ENV);
   global._yild_instance = {
     config,
-    env: config.args.indexOf('DEVELOPMENT') !== -1
-      ? 'DEVELOPMENT'
-      : 'PRODUCTION',
+    env: process.env.NODE_ENV.toUpperCase(),
   };
 
   logger.log(`${format('yild', 'bold')} is starting up...`, 'info');

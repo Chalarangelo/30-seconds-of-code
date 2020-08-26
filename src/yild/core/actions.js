@@ -1,10 +1,8 @@
-import { format } from '../logOutput';
 import prepareAssets from '../prepareAssets';
 import extractSnippets from '../extractSnippets';
 import serveSnippets from '../serveSnippets';
 import updateContent from '../updateContent';
 import makeIcons from '../makeIcons';
-import prepareEnv from '../prepareEnv';
 import prepareCacheKey from '../prepareCacheKey';
 
 // Keep this in a variable to allow for help to run the way it should.
@@ -44,14 +42,6 @@ const actions = {
     process: makeIcons,
     step: 0,
     matcher: /^-{0,2}i(cons)?$/gi,
-  },
-  'environment': {
-    description: `generate environment configuration file\n${format('ENV', 'green', 'bold')} can be one of: (DEVELOPMENT, PRODUCTION)`,
-    process: prepareEnv,
-    step: 0,
-    matcher: /^-(n)|(-environment)=.*$/gi,
-    key: { short: 'n', long: 'environment' },
-    param: 'ENV',
   },
   'cache': {
     description: `generate cache key file`,
