@@ -9,11 +9,25 @@ import path from 'path';
 const parseRequirables = contentDirPath => {
   // Load configurations
   let requirables = [];
-  glob.sync(`${contentDirPath}/*.json`)
+  glob
+    .sync(`${contentDirPath}/**/index.json`)
     .forEach( file => {
-      requirables.push(
-        require( path.resolve( file ) )
-      );
+      const dir = file.slice(0, file.lastIndexOf('/'));
+      const reqData = glob
+        .sync(`${dir}/!(index).json`)
+        .reduce((acc, dataFile) => {
+          const data = require(path.resolve(dataFile));
+          acc.context = {
+            ...acc.context,
+            ...data,
+          };
+          return acc;
+        },
+        {
+          ...require(path.resolve(file)),
+          context: {},
+        });
+      requirables.push(reqData);
     });
   return requirables;
 };
