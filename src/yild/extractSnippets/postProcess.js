@@ -25,20 +25,29 @@ const compileListingPages = (
   } = global._yild_instance.config.paths;
 
   indexedChunks.forEach((chunk, i, chunks) => {
+    const isMainListing = context.listingType === 'main' && slugOrderingSegment === 'p' && i === 0;
     const outDir = `${contentOutDir}${baseUrl}/${slugOrderingSegment}/${i + 1}`;
     fs.ensureDirSync(outDir);
 
     fs.writeFileSync(
+      `${outDir}/index.json`,
+      JSON.stringify({
+        template: 'ListingPage',
+        fullRoute: `https://30secondsofcode.org${baseUrl}/${slugOrderingSegment}/${i + 1}`,
+        relRoute: `${baseUrl}/${slugOrderingSegment}/${i + 1}`,
+        priority: isMainListing ? 1.0 : 0.7,
+      }, null, 2)
+    );
+    fs.writeFileSync(
       `${outDir}/snippetList.json`,
-      JSON.stringify(chunk, null, 2)
+      JSON.stringify({
+        snippetList: chunk,
+      }, null, 2)
     );
     fs.writeFileSync(
       `${outDir}/metadata.json`,
       JSON.stringify({
-        isMainListing:
-          context.listingType === 'main' &&
-          slugOrderingSegment === 'p' &&
-          i === 0,
+        isMainListing,
         paginator: {
           pageNumber: i + 1,
           totalPages: chunks.length,
@@ -264,7 +273,9 @@ const postProcess = (allData, allSnippetData, parentLog) => {
       fs.ensureDirSync(outDir);
       await fs.writeFile(
         `${outDir}/recommendations.json`,
-        JSON.stringify(recommendedSnippets, null, 2)
+        JSON.stringify({
+          recommendedSnippets,
+        }, null, 2)
       );
     }
   });

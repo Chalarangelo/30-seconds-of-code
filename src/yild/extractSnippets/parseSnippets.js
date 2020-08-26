@@ -271,8 +271,19 @@ export const parseSnippet = async(
   const outDir = `${outPath}/${snippetData.slug.slice(1)}`;
   fs.ensureDirSync(outDir);
   fs.writeFileSync(
+    `${outDir}/index.json`,
+    JSON.stringify({
+      template: 'SnippetPage',
+      fullRoute: `https://30secondsofcode.org${snippetData.slug}`,
+      relRoute: `${snippetData.slug}`,
+      priority: (snippetData.ranking * 0.85).toFixed(2),
+    }, null, 2)
+  );
+  fs.writeFileSync(
     `${outDir}/snippet.json`,
-    JSON.stringify(transformSnippetContext(snippetData, cardTemplate), null, 2)
+    JSON.stringify({
+      snippet: transformSnippetContext(snippetData, cardTemplate),
+    }, null, 2)
   );
   fs.writeFileSync(
     `${outDir}/metadata.json`,
