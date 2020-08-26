@@ -4,7 +4,7 @@ const env = require('./.build/env').default;
 const {
   createPages,
   onCreateWebpackConfig,
-} = require(`./src/build`);
+} = require(`./src/gatsby`);
 const {
   parseRequirables,
   parseTemplates,
