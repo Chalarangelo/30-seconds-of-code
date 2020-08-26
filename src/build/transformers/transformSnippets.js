@@ -5,19 +5,19 @@ import literals from 'lang/en/snippet';
 /**
  * Transform the indexed snippets to the appropriate format.
  * Used in listing pages to render snippet previews.
- * @param {array} edges - An array of snippet edges.
+ * @param {array} snippets - An array of snippets.
  * @param {bool} withSearchTokens - Should include search tokens in the result?
  */
-export const transformSnippetIndex = (edges, withSearchTokens = false) =>
-  edges.map(({ node }) => ({
-    title: node.title,
-    expertise: transformTagName(node.expertise),
-    primaryTag: transformTagName(node.tags.primary),
-    language: node.language && node.language.long ? node.language.long : undefined,
-    icon: node.icon,
-    description: node.html.description.trim(),
-    url: node.slug,
-    ...(withSearchTokens ? { searchTokens: node.searchTokens } : {}),
+export const transformSnippetIndex = (snippets, withSearchTokens = false) =>
+  snippets.map(snippet => ({
+    title: snippet.title,
+    expertise: transformTagName(snippet.expertise),
+    primaryTag: transformTagName(snippet.tags.primary),
+    language: snippet.language && snippet.language.long ? snippet.language.long : undefined,
+    icon: snippet.icon,
+    description: snippet.html.description.trim(),
+    url: snippet.slug,
+    ...(withSearchTokens ? { searchTokens: snippet.searchTokens } : {}),
   }));
 
 /**

@@ -72,7 +72,7 @@ const serveSnippets = () => {
               case 1:
                 res.writeHead(200, { 'Content-Type': 'application/json' });
                 res.end(
-                  JSON.stringify(transformSnippetIndex(data.map(s => ({ node: s }))))
+                  JSON.stringify(transformSnippetIndex(data))
                 );
                 break;
               case 3: {

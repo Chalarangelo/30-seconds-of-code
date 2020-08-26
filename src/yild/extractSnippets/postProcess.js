@@ -90,9 +90,7 @@ const compileListingPagesWithOrderOptions = (
 const compileListingData = (snippetIndex, listingMetas) => {
   // 1. Create listing pages for the main listing:
   // Tranform and chunk data for popularity, alphabetical and expertise ordering
-  const transformedIndex = transformSnippetIndex(
-    snippetIndex.map(v => ( { node: v }))
-  );
+  const transformedIndex = transformSnippetIndex(snippetIndex);
   const popularChunks = chunk(transformedIndex, CARDS_PER_PAGE);
   const alphabeticalChunks = chunk(transformedIndex.sort((a, b) =>
     a.title.localeCompare(b.title)
@@ -143,9 +141,7 @@ const compileListingData = (snippetIndex, listingMetas) => {
       s.slug.startsWith(`${slugPrefix}`) ||
         (s.blog && s.tags.all.find(t => t.toLowerCase() === snippetIndexName.toLowerCase()))
     );
-    const transformedSlugChunks = transformSnippetIndex(
-      snippetIndexSlugData.map(v => ( { node: v }))
-    );
+    const transformedSlugChunks = transformSnippetIndex(snippetIndexSlugData);
     const popularSlugChunks = chunk(transformedSlugChunks, CARDS_PER_PAGE);
     const alphabeticalSlugChunks = chunk(transformedSlugChunks.sort((a, b) =>
       a.title.localeCompare(b.title)
@@ -202,9 +198,7 @@ const compileListingData = (snippetIndex, listingMetas) => {
               s.tags.all.find(t => t.toLowerCase() === tagPrefix.toLowerCase())
             )
         );
-      const transformedTagChunks = transformSnippetIndex(
-        snippetIndexTagData.map(v => ( { node: v }))
-      );
+      const transformedTagChunks = transformSnippetIndex(snippetIndexTagData);
       const popularTagChunks = chunk(transformedTagChunks, CARDS_PER_PAGE);
       const alphabeticalTagChunks = chunk(transformedTagChunks.sort((a, b) =>
         a.title.localeCompare(b.title)
@@ -266,7 +260,7 @@ const postProcess = (allData, allSnippetData, parentLog) => {
 
     for (let snippet of data.data) {
       const recommendedSnippets = transformSnippetIndex(
-        recommendationEngine(allSnippetData, snippet).map(v => ( { node: v }))
+        recommendationEngine(allSnippetData, snippet)
       );
 
       const outDir = `${contentOutDir}/${snippet.slug.slice(1)}`;
