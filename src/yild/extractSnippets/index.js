@@ -3,6 +3,7 @@ import { initAction, loadContentConfigs } from '../core';
 import extract from './extract';
 import postProcess from './postProcess';
 import literals from 'lang/en';
+import { transformSnippetIndex } from 'build/transformers';
 
 const extractSnippets = async() => {
   const [boundLog, , inPath, outPath] = initAction('extractSnippets', [
@@ -28,7 +29,9 @@ const extractSnippets = async() => {
   await Promise
     .all(extract(configs, langData, boundLog))
     .then(res => { allData = res; });
-  const allSnippetData = allData.reduce((acc, r) => [...acc, ...r.data.data], []);
+  const allSnippetData = allData
+    .reduce((acc, r) => [...acc, ...r.data.data], [])
+    .sort((a, b) => b.ranking - a.ranking);
   boundLog(`Extracted data for ${allSnippetData.length} snippets`, 'success');
 
   boundLog('Post-processing snippet data', 'info');
@@ -61,6 +64,16 @@ const extractSnippets = async() => {
       context: {stringLiterals: literals.settings},
       template: 'SettingsPage',
       priority: 0.01,
+    },
+    {
+      slug: '/search',
+      context: {
+        searchIndex: transformSnippetIndex(allSnippetData, true),
+        recommendedSnippets: transformSnippetIndex(allSnippetData.slice(0, 3)),
+        pageDescription: literals.search.pageDescription(allSnippetData.length),
+      },
+      template: 'SearchPage',
+      priority: 0.25,
     },
   ].forEach(p => {
     const outDir = `${outPath}${p.slug}`;
