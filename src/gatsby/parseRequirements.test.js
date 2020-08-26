@@ -1,10 +1,22 @@
-import parseRequirables from './parseRequirables';
+import { parseRequirables, parseTemplates } from './parseRequirements';
 
 import glob from 'glob';
 import path from 'path';
 
 jest.mock('glob');
 jest.mock('path');
+
+
+const templates = [
+  {
+    'name': 'SnippetPage',
+    'path': 'snippetPage/index.jsx',
+  },
+  {
+    'name': 'SearchPage',
+    'path': 'searchPage/index.jsx',
+  },
+];
 
 const mockRequirables = {
   'stdRequirable': {
@@ -66,10 +78,18 @@ jest.mock('ltdRequirable.json',
 
 describe('parseRequirables', () => {
   it('returns the array of the resulting requirables', () => {
-    console.log();
     expect(parseRequirables('my-content-dir')).toEqual([
       {...mockRequirables['stdRequirable'], context: mockRequirables['stdRequirable'] },
       {...mockRequirables['ltdRequirable'], context: mockRequirables['ltdRequirable']},
     ]);
+  });
+});
+
+describe('parseTemplates', () => {
+  it('returns an object with the appropriate structure and data', () => {
+    expect(parseTemplates(templates, 'my-templates-dir')).toEqual({
+      'SnippetPage': 'my-templates-dir/snippetPage/index.jsx',
+      'SearchPage': 'my-templates-dir/searchPage/index.jsx',
+    });
   });
 });
