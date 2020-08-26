@@ -3,7 +3,6 @@ import { cleanup } from '@testing-library/react';
 import { renderConnected } from 'test/utils';
 import Shell from './index';
 import { toggleDarkMode } from 'state/shell';
-import * as env from '../../../../.build/env';
 
 describe('<Shell />', () => {
   let wrapper, pageContainer, store, rerender;
@@ -77,7 +76,6 @@ describe('<Shell />', () => {
   describe('when in production without cookies enabled', () => {
 
     beforeEach(() => {
-      env.default = 'PRODUCTION';
       wrapper = rerender(
         <Shell isSettings>
           { innerText }
