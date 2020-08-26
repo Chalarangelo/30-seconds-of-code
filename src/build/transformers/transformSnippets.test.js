@@ -6,82 +6,76 @@ import {
 
 describe('transformSnippetIndex', () => {
   it('transforms the snippet index', () => {
-    const edges = [
+    const snippets = [
       {
-        node: {
-          title: 'a',
-          expertise: 'Intermediate',
-          tags: {
-            primary: 'array',
-          },
-          language: {
-            long: 'lang',
-            short: 'l',
-          },
-          html: {
-            description: 'desc ',
-          },
-          slug: '/a',
-          searchTokens: '',
-          irrelevantStuff: 'data',
+        title: 'a',
+        expertise: 'Intermediate',
+        tags: {
+          primary: 'array',
         },
+        language: {
+          long: 'lang',
+          short: 'l',
+        },
+        html: {
+          description: 'desc ',
+        },
+        slug: '/a',
+        searchTokens: '',
+        irrelevantStuff: 'data',
       },
     ];
-    const result = transformSnippetIndex(edges);
-    expect(result[0].title).toBe(edges[0].node.title);
+    const result = transformSnippetIndex(snippets);
+    expect(result[0].title).toBe(snippets[0].title);
     expect(result[0].expertise).toBe('Intermediate');
     expect(result[0].primaryTag).toBe('Array');
-    expect(result[0].language).toBe(edges[0].node.language.long);
-    expect(result[0].description).toBe(edges[0].node.html.description.trim());
-    expect(result[0].url).toBe(edges[0].node.slug);
+    expect(result[0].language).toBe(snippets[0].language.long);
+    expect(result[0].description).toBe(snippets[0].html.description.trim());
+    expect(result[0].url).toBe(snippets[0].slug);
     expect(result[0].searchTokens).toBe(undefined);
     expect(result[0].irrelevantStuff).toBe(undefined);
   });
 
   it('handles an empty language appropriately', () => {
-    const edges = [
+    const snippets = [
       {
-        node: {
-          title: 'a',
-          expertise: 'Intermediate',
-          tags: {
-            primary: 'array',
-          },
-          language: {},
-          html: {
-            description: 'desc ',
-          },
-          slug: '/a',
-          searchTokens: '',
-          irrelevantStuff: 'data',
+        title: 'a',
+        expertise: 'Intermediate',
+        tags: {
+          primary: 'array',
         },
+        language: {},
+        html: {
+          description: 'desc ',
+        },
+        slug: '/a',
+        searchTokens: '',
+        irrelevantStuff: 'data',
       },
     ];
-    const result = transformSnippetIndex(edges);
+    const result = transformSnippetIndex(snippets);
     expect(result[0].language).toBe(undefined);
   });
 
   it('returns search tokens when explicitly told to do so', () => {
-    const edges = [
+    const snippets = [
       {
-        node: {
-          title: 'a',
-          expertise: 'Intermediate',
-          tags: {
-            primary: 'array',
-          },
-          language: {},
-          html: {
-            description: 'desc ',
-          },
-          slug: '/a',
-          searchTokens: 'my tokens',
-          irrelevantStuff: 'data',
+        title: 'a',
+        expertise: 'Intermediate',
+        tags: {
+          primary: 'array',
         },
+        language: {},
+        html: {
+          description: 'desc ',
+        },
+        slug: '/a',
+        searchTokens: 'my tokens',
+        irrelevantStuff: 'data',
       },
     ];
-    const result = transformSnippetIndex(edges, true);
-    expect(result[0].searchTokens).toBe(edges[0].node.searchTokens);
+    const result = transformSnippetIndex(snippets, true);
+    expect(result[0].searchTokens).toBe(snippets[0].searchTokens);
   });
 });
 
