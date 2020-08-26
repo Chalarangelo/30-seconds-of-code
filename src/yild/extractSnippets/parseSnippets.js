@@ -5,7 +5,13 @@ import frontmatter from 'front-matter';
 import { exec } from 'child_process';
 import tokenizeSnippet from 'engines/searchIndexingEngine';
 import { convertToSeoSlug, uniqueElements } from 'utils';
-import { determineExpertiseFromTags, stripExpertiseFromTags, transformSnippetContext } from 'build/transformers';
+import {
+  determineExpertiseFromTags,
+  stripExpertiseFromTags,
+  transformSnippetContext,
+  transformBreadcrumbs,
+  transformSnippetDescription
+} from 'build/transformers';
 import rankSnippet from 'engines/rankingEngine';
 import parseMarkdown from './parseMarkdown';
 // TODO: Consider parsing this via a new parser or similar
@@ -165,7 +171,7 @@ export const parseSnippet = async(
   snippetsPath, snippet, {
     sourceDir, commonData, slugPrefix, repoUrlPrefix, assetPath, outPath,
     langData, language, isCssSnippet, isBlogSnippet, hasOptionalLanguage,
-    languages, icon, biasPenaltyMultiplier,
+    languages, icon, biasPenaltyMultiplier, cardTemplate,
   }
 ) => {
   let data, gitMetadata;
@@ -266,7 +272,15 @@ export const parseSnippet = async(
   fs.ensureDirSync(outDir);
   fs.writeFileSync(
     `${outDir}/snippet.json`,
-    JSON.stringify(transformSnippetContext(snippetData), null, 2)
+    JSON.stringify(transformSnippetContext(snippetData, cardTemplate), null, 2)
+  );
+  fs.writeFileSync(
+    `${outDir}/metadata.json`,
+    JSON.stringify({
+      cardTemplate,
+      breadcrumbs: transformBreadcrumbs(snippetData, cardTemplate),
+      pageDescription: transformSnippetDescription(snippetData, cardTemplate),
+    }, null, 2)
   );
 
   const trimmedData = {
@@ -306,6 +320,7 @@ export const getParams = (config, langData, assetPath, outPath) => {
     commonData: config.commonData,
     slugPrefix: config.slugPrefix,
     language: config.language,
+    cardTemplate: config.cardTemplate,
     biasPenaltyMultiplier: config.biasPenaltyMultiplier,
     repoUrlPrefix: config.repoUrlPrefix,
     isCssSnippet, isBlogSnippet, hasOptionalLanguage, languages, icon,
