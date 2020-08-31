@@ -35,7 +35,7 @@ document.querySelector('.btn').addEventListener('click', e => {
 });
 // Bubble phase
 ancestors.forEach(a => {
-  a.addEventListener('click', event => {
+  a.addEventListener('click', e => {
     console.log(`Hello from ${e.currentTarget}`);
   });
 });
@@ -73,7 +73,7 @@ Having explained event bubbling and capturing, we can now explain the three phas
 Event delegation refers to the idea of delegating event listening to parent elements instead of adding event listeners directly to the event targets. Using this technique, the parent can catch and handle the bubbling events as necessary.
 
 ```js
-window.addEventListener(e => {
+window.addEventListener('click', e => {
   if (e.target.className === 'btn') console.log('Hello there!');
 });
 ```
