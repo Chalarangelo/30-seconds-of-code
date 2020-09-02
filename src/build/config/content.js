@@ -13,7 +13,7 @@ export const getRichConfigs = (configs, langData) => configs.map(cfg => {
   const {
     contentPath: contentOutDir,
     staticAssetPath: assetDir,
-  } = global._yild_instance.config.paths;
+  } = global.yild.paths;
 
   const assetPath = `/${assetDir}/`;
   cfg.assetPath = assetPath;
@@ -60,8 +60,8 @@ export const getRichConfigs = (configs, langData) => configs.map(cfg => {
 export const loadContentConfigs = (inPath, boundLog) => {
   boundLog(`Loading individual configuration files in ${path.resolve(inPath, 'configs')}`, 'info');
   let configs = [];
-  if(global._yild_instance.contentConfigs) {
-    configs = global._yild_instance.contentConfigs;
+  if(global.yild.configs) {
+    configs = global.yild.configs;
     boundLog(`Using already loaded configuration files`, 'success');
   } else {
     const rawConfigs = glob.sync(`${inPath}/configs/*.json`)
@@ -78,7 +78,7 @@ export const loadContentConfigs = (inPath, boundLog) => {
     boundLog(`Processed data for ${langData.length} languages`, 'success');
     configs = getRichConfigs(rawConfigs, langData);
 
-    global._yild_instance.contentConfigs = configs;
+    global.yild.configs = configs;
     boundLog(`Loaded ${configs.length} configuration files`, 'success');
   }
   return configs;
