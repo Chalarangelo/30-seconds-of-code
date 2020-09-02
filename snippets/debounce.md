@@ -6,7 +6,7 @@ tags: function,intermediate
 Creates a debounced function that delays invoking the provided function until at least `ms` milliseconds have elapsed since the last time it was invoked.
 
 Each time the debounced function is invoked, clear the current pending timeout with `clearTimeout()` and use `setTimeout()` to create a new timeout that delays invoking the function until at least `ms` milliseconds has elapsed. Use `Function.prototype.apply()` to apply the `this` context to the function and provide the necessary arguments.
-Omit the second argument, `ms`, to set the timeout at a default of 0 ms.
+Omit the second argument, `ms`, to set the timeout at a default of 0 ms, actually 4ms because of Browser's property.
 
 ```js
 const debounce = (fn, ms = 0) => {
