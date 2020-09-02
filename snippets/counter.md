@@ -19,12 +19,12 @@ const counter = ({selector, start, end, step, duration = 2000} = options) => {
   let _step = step > 0 ? step : 1;
   const needStepCount = Math.abs(end - start) / _step;
   const DOM_MIN_TIMEOUT_VALUE = 4;
-  const MAX_COUNT = duration / DOM_MIN_TIMEOUT_VALUE;
-  const ActuallyCount = Math.min(needStepCount, MAX_COUNT);
+  const maxCount = duration / DOM_MIN_TIMEOUT_VALUE;
+  const ActuallyCount = Math.min(needStepCount, maxCount);
   const timeLength = duration / ActuallyCount;
-  let flag = end - start > 0 ? 1 : -1;
-  const dom = document.querySelector(selector);
   _step = Math.abs(end - start) / ActuallyCount;
+  const flag = end - start > 0 ? 1 : -1;
+  const dom = document.querySelector(selector);
   const timer = setInterval(() => {
     current += flag * _step;
     dom.innerHTML = current;
