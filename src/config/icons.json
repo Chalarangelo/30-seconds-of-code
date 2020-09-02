@@ -2,7 +2,7 @@
   "types": ["woff2"],
   "fontName": "icons",
   "fontRelativePath": "../../assets/",
-  "cssTemplatePath": "src/yild/makeIcons/cssTemplate.hbs",
+  "cssTemplatePath": "src/build/assets/iconCssTemplate.hbs",
   "cssSelector": ".icon",
   "cssClassName": "icon",
   "cssClassPrefix": "icon-",
