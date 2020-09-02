@@ -12,5 +12,6 @@ const cloneRegExp = regExp => new RegExp(regExp.source, regExp.flags);
 ```
 
 ```js
-cloneRegExp(/lorem ipsum/gi); // /lorem ipsum/gi
+const regExp = /lorem ipsum/gi;
+const regExp2 = cloneRegExp(regExp); // regExp !== regExp2
 ```
