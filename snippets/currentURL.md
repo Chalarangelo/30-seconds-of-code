@@ -8,9 +8,9 @@ Returns the current URL.
 Use `window.location.href` to get the current URL.
 
 ```js
-const currentURL = window.location.href;
+const currentURL = () => window.location.href;
 ```
 
 ```js
-console.log(currentURL); // like 'https://www.google.com/'
+currentURL();  // url like 'https://www.google.com/'
 ```
