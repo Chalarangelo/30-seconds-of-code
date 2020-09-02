@@ -12,5 +12,5 @@ const currentURL = () => window.location.href;
 ```
 
 ```js
-currentURL(); // url like 'https://www.google.com/'
+currentURL(); // 'https://www.google.com/'
 ```
