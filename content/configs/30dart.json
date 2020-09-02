@@ -3,9 +3,6 @@
   "dirName": "30dart",
   "repoUrl": "https://github.com/30-seconds/30-seconds-of-dart",
   "snippetPath": "snippets",
-  "requirables": [
-    "snippet_data/snippets.json"
-  ],
   "language": {
     "short": "dart",
     "long": "Dart"

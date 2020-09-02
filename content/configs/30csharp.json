@@ -3,9 +3,6 @@
   "dirName": "30csharp",
   "repoUrl": "https://github.com/30-seconds/30-seconds-of-csharp",
   "snippetPath": "snippets",
-  "requirables": [
-    "snippet_data/snippets.json"
-  ],
   "language": {
     "short": "csharp",
     "long": "C#"
