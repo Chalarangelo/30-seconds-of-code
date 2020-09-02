@@ -2,7 +2,8 @@ import chalk from 'chalk';
 import process from 'process';
 const { bold, blue, green, red, yellow } = chalk;
 
-global._yild_logOutput_instance = undefined;
+global.yild = global.yild || {};
+global.yild.logger = undefined;
 
 /**
  * Format a string with the given chalk formatter.
@@ -18,8 +19,8 @@ export const format = (msg, ...format) =>
  */
 function logger() {
   // Return singleton if exists, instantiate otherwise.
-  if (global._yild_logOutput_instance) return global._yild_logOutput_instance;
-  global._yild_logOutput_instance = this;
+  if (global.yild.logger) return global.yild.logger;
+  global.yild.logger = this;
   this.outputStream = process.stdout;
 
   const prefixes = {
@@ -136,10 +137,10 @@ function logger() {
     information.forEach(i => this.log(i));
   };
 
-  return global._yild_logOutput_instance;
+  return global.yild.logger;
 }
 
 // IIFE here to instantiate the logger
 (() => new logger())();
 
-export default global._yild_logOutput_instance;
+export default global.yild.logger;

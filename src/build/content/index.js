@@ -1,12 +1,12 @@
 import childProcess from 'child_process';
-import { initAction } from '../core';
+import { bindLogger } from 'build/core';
 
 /**
  * Update content sources from their respective GitHub repositories.
  * Returns a promise that resolves as soon as the spawned git command exits.
  */
-const updateContent = () => {
-  const [boundLog] = initAction('updateContent');
+export const updateContent = () => {
+  const boundLog = bindLogger('updateContent');
   boundLog('Updating content sources started...', 'info');
 
   return new Promise((resolve, reject) => {
@@ -26,5 +26,3 @@ const updateContent = () => {
     });
   });
 };
-
-export default updateContent;

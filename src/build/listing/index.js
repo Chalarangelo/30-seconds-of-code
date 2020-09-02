@@ -21,7 +21,7 @@ export const compileListingPages = async(
 ) => {
   const {
     contentPath: contentOutDir,
-  } = global._yild_instance.config.paths;
+  } = global.yild.paths;
 
   for (let [i, chunk] of chunks.entries()) {
     const isPopularityOrdered = slugOrderingSegment === 'p';
