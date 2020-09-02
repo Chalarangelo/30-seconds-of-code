@@ -9,10 +9,10 @@ Use `fs.writeFileSync()`, template literals and `JSON.stringify()` to write a `j
 
 ```js
 const fs = require('fs');
-const JSONToFile = (obj, filename) =>
+const JSONToFile = (obj, filename = Date.now()) =>
   fs.writeFileSync(`${filename}.json`, JSON.stringify(obj, null, 2));
 ```
 
 ```js
-JSONToFile({ test: 'is passed' }, 'testJsonFile'); // writes the object to 'testJsonFile.json'
+JSONToFile({ test: 'is passed' }, 'testJsonFile'); // writes the object to 'testJsonFile.json in 2 spaces simply. Can't handle circular structure.'
 ```
