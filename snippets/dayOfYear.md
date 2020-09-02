@@ -10,9 +10,9 @@ Use `Math.floor()` to appropriately round the resulting day count to an integer.
 
 ```js
 const dayOfYear = date =>
-  Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
+  Math.floor((date - new Date(date.getFullYear(), 0, 1)) / 1000 / 60 / 60 / 24) + 1;
 ```
 
 ```js
-dayOfYear(new Date()); // 272
+dayOfYear(new Date()); // number in 1～366
 ```
