@@ -30,8 +30,8 @@ const counter = ({selector, start, end, step, duration = 2000} = options) => {
     dom.innerHTML = current;
     const ifEnd = (flag === 1 && current >= end) || (flag === -1 && current <= end);
     if (ifEnd){
-      dom.innerHTML = end
-      clearInterval(timer)
+      dom.innerHTML = end;
+      clearInterval(timer);
     };
   }, timeLength);
   return timer;
