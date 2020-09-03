@@ -1,0 +1,7 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+<ShortName>30 seconds of code</ShortName>
+<Description>30s Search></Description>
+<Contact>30secondsofcode@gmail.com</Contact>
+<InputEncoding>UTF-8</InputEncoding>
+<Url type="text/html" template="https://www.30secondsofcode.org/search?keyphrase={searchTerms}"/>
+</OpenSearchDescription>
