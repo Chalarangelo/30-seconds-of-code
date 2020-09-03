@@ -33,7 +33,7 @@ export const parseTemplates = (templates, templatesDir) =>
 /**
  * Returns an object containing templates and requirables.
  */
-const parseRequirements = () => ({
+export const parseRequirements = () => ({
   templates: parseTemplates(
     isDevelopment ? paths.devTemplates : paths.templates,
     paths.templatesPath

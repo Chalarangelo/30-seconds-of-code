@@ -1,4 +1,4 @@
-import parseRequirements from './parseRequirements';
+import { parseRequirements } from 'build/requirements';
 import createPages from './createPages';
 import onCreateWebpackConfig from './onCreateWebpackConfig';
 
