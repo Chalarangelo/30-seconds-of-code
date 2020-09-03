@@ -2,6 +2,7 @@ const { green } = require('chalk');
 const {
   createPages,
   onCreateWebpackConfig,
+  onPostBuild,
   parseRequirements,
 } = require(`./src/gatsby`);
 
@@ -10,3 +11,4 @@ console.log(`${green('success')} parse requirements`);
 
 exports.createPages = createPages(templates, requirables);
 exports.onCreateWebpackConfig = onCreateWebpackConfig;
+exports.onPostBuild = onPostBuild;

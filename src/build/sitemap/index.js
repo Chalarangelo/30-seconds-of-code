@@ -23,7 +23,7 @@ export const generateSitemap = async() => {
     ],
   });
 
-  await writeFile(`${xmlPath}sitemap.xml`, sitemap);
+  await writeFile(`${xmlPath}/sitemap.xml`, sitemap);
 
   boundLog('Generating sitemap complete', 'success');
 };
