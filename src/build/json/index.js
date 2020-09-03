@@ -1,8 +1,9 @@
 import util from 'util';
 import fs from 'fs-extra';
+import globalConfig from 'config/global';
 
 const writeFile = util.promisify(fs.writeFile);
-const routePrefix = 'https://30secondsofcode.org';
+const routePrefix = globalConfig.websiteUrl;
 
 /**
  * Writes the provided chunks to the specified directory.
