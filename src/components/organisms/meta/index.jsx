@@ -201,6 +201,11 @@ const Meta = ({
         href="https://www.google-analytics.com"
       />
       <link
+        rel="sitemap"
+        href="/sitemap.xml"
+        type="application/xml"
+      />
+      <link
         rel="search"
         href="/opensearch.xml"
         type="application/opensearchdescription+xml"
