@@ -8,6 +8,7 @@
   "rawIconPath": "src/icons/*.svg",
   "iconFontPath": "src/styles/_icons.scss",
   "queryPath": "./src/queries",
+  "xmlPath": "./src/xml",
   "templatesPath": "./src/components/templates",
   "templates": [
     {
