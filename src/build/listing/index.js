@@ -32,9 +32,9 @@ export const compileListingPages = async(
     const isTopLevelListingFirstPage = isTopLevelListing && isFirstPage;
     const isMainTagListing = context.listingType === 'tag' && isFirstPage;
     const priority = isMainListingFirstPage ? 1.0
-      : (isTopLevelListingFirstPage || isMainListing) ? 0.9
-        : (isMainTagListing || isTopLevelListing) ? 0.8
-          : 0.7;
+      : (isTopLevelListingFirstPage || isMainListing) ? 0.75
+        : (isMainTagListing || isTopLevelListing) ? 0.5
+          : 0.25;
     const outDir = `${contentOutDir}${baseUrl}/${slugOrderingSegment}/${i + 1}`;
 
     await writeChunks(
