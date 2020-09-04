@@ -27,5 +27,5 @@ var view = {
   }
 };
 bindAll(view, 'click');
-document.body.addEventListener('click', view.click); // Log 'clicked docs' when clicked. Logs 'click undefined' if there is not `bindAll(view, 'click')` before.
+document.body.addEventListener('click', view.click); // Log 'clicked docs' when clicked.
 ```
