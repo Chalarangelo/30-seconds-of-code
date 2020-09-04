@@ -7,10 +7,10 @@ Returns the target value in a nested JSON object, based on the `keys` array.
 
 Compare the keys you want in the nested JSON object as an `Array`.
 Use `Array.prototype.reduce()` to get value from nested JSON object one by one. 
-If the key exists in object, return target value, otherwise, return `null`.
+If the key exists in object, return target value, otherwise, return `undefined`.
 
 ```js
-const deepGet = (obj, keys) => keys.reduce((xs, x) => (xs && xs[x] ? xs[x] : null), obj);
+const deepGet = (obj, keys) => keys.reduce((xs, x) => xs ? xs[x] : undefined, obj);
 ```
 
 ```js
@@ -21,8 +21,12 @@ const data = {
     bar: {
       baz: ['a', 'b', 'c']
     }
-  }
+  },
+  name: null,
+  isDark: false
 };
 deepGet(data, ['foo', 'foz', index]); // get 3
-deepGet(data, ['foo', 'bar', 'baz', 8, 'foz']); // null
+deepGet(data, ['foo', 'bar', 'baz', 8, 'foz']); // undefined
+deepGet(data, ['name']); // null
+deepGet(data, ['isDark']); // false
 ```
