@@ -27,5 +27,5 @@ var view = {
   }
 };
 bindAll(view, 'click');
-jQuery(element).on('click', view.click); // Logs 'clicked docs' when clicked.
+document.body.addEventListener('click', view.click); // Log 'clicked docs' when clicked.
 ```
