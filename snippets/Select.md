@@ -11,7 +11,7 @@ Renders a `<select>` element that uses a callback function to pass its value to 
 - Use destructuring on the `values` array to pass an array of `value` and `text` elements.
 
 ```jsx
-function Select({ values, callback, disabled = false, readonly = false, selected }) {
+const Select = ({ values, callback, disabled = false, readonly = false, selected }) => {
   return (
     <select
       disabled={disabled}
@@ -26,22 +26,11 @@ function Select({ values, callback, disabled = false, readonly = false, selected
       ))}
     </select>
   );
-}
-
-let choices = [
-  ['grapefruit', 'Grapefruit'],
-  ['lime', 'Lime'],
-  ['coconut', 'Coconut'],
-  ['mango', 'Mango']
-];
-ReactDOM.render(
-  <Select values={choices} selected="lime" callback={val => console.log(val)} />,
-  document.getElementById('root')
-);
+};
 ```
 
 ```jsx
-let choices = [
+const choices = [
   ['grapefruit', 'Grapefruit'],
   ['lime', 'Lime'],
   ['coconut', 'Coconut'],

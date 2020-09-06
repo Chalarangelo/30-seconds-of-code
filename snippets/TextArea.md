@@ -9,14 +9,14 @@ Renders a `<textarea>` element that uses a callback function to pass its value t
 - Render a `<textarea>` element with the appropriate attributes and use the `callback` function in the `onChange` event to pass the value of the textarea to the parent.
 
 ```jsx
-function TextArea({
+const TextArea = ({
   callback,
   cols = 20,
   rows = 2,
   disabled = false,
   readOnly = false,
   placeholder = ''
-}) {
+}) => {
   return (
     <textarea
       cols={cols}
@@ -27,7 +27,7 @@ function TextArea({
       onChange={({ target: { value } }) => callback(value)}
     />
   );
-}
+};
 ```
 
 ```jsx

@@ -40,7 +40,7 @@ Creates a spinning loader component.
 ```
 
 ```jsx
-function Loader({ size }) {
+const Loader = ({ size }) => {
   return (
     <svg
       className="loader"
@@ -57,7 +57,7 @@ function Loader({ size }) {
       <circle cx="12" cy="12" r="10" />
     </svg>
   );
-}
+};
 ```
 
 ```jsx
