@@ -10,7 +10,7 @@ Renders a file drag and drop component for a single file.
   The variables `dragCounter` and `drag` are used to determine if a file is being dragged, while `filename` is used to store the dropped file's name.
 - Create the `handleDrag`, `handleDragIn`, `handleDragOut` and `handleDrop` methods to handle drag and drop functionality, bind them to the component's context.
 - Each of the methods will handle a specific event, the listeners for which are created and removed in the `React.useEffect()` hook and its attached `cleanup()` method.
-- `handleDrag` prevents the browser from opening the dragged file, `handleDragIn` and `handleDragOut` handle the dragged file entering and exiting the component, while `handleDrop` handles the file being dropped and passes it to `props.handleDrop`.
+- `handleDrag` prevents the browser from opening the dragged file, `handleDragIn` and `handleDragOut` handle the dragged file entering and exiting the component, while `handleDrop` handles the file being dropped and passes it to `onDrop`.
 - Return an appropriately styled `<div>` and use `drag` and `filename` to determine its contents and style.
 - Finally, bind the `ref` of the created `<div>` to `dropRef`.
 
@@ -34,7 +34,7 @@ Renders a file drag and drop component for a single file.
 ```
 
 ```jsx
-function FileDrop(props) {
+const FileDrop = ({ onDrop }) => {
   const [drag, setDrag] = React.useState(false);
   const [filename, setFilename] = React.useState('');
   let dropRef = React.createRef();
@@ -64,7 +64,7 @@ function FileDrop(props) {
     e.stopPropagation();
     setDrag(false);
     if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-      props.handleDrop(e.dataTransfer.files[0]);
+      onDrop(e.dataTransfer.files[0]);
       setFilename(e.dataTransfer.files[0].name);
       e.dataTransfer.clearData();
       dragCounter = 0;
@@ -93,9 +93,9 @@ function FileDrop(props) {
       {filename && !drag ? <div>{filename}</div> : <div>Drop files here!</div>}
     </div>
   );
-}
+};
 ```
 
 ```jsx
-ReactDOM.render(<FileDrop handleDrop={console.log} />, document.getElementById('root'));
+ReactDOM.render(<FileDrop onDrop={console.log} />, document.getElementById('root'));
 ```
