@@ -6,25 +6,25 @@ tags: components,state,beginner
 Renders a ticker component.
 
 - Use the `React.useState()` hook to initialize the `ticker` state variable to `0`.
-- Define two methods, `tick` and `reset`, that will periodically increment `timer` based on `interval` and reset `interval` respectively.
+- Define two methods, `tick` and `reset`, that will periodically increment `timer` based on `intervalId` and reset `intervalId` respectively.
 - Return a `<div>` with two `<button>` elements, each of which calls `tick` and `reset` respectively.
 
 ```jsx
-function Ticker(props) {
+const Ticker = ({ times, interval }) => {
   const [ticker, setTicker] = React.useState(0);
-  let interval = null;
+  let intervalId = null;
 
   const tick = () => {
     reset();
-    interval = setInterval(() => {
-      if (ticker < props.times) setTicker(ticker + 1);
-      else clearInterval(interval);
-    }, props.interval);
+    intervalId = setInterval(() => {
+      if (ticker < times) setTicker(ticker + 1);
+      else clearInterval(intervalId);
+    }, interval);
   };
 
   const reset = () => {
     setTicker(0);
-    clearInterval(interval);
+    clearInterval(intervalId);
   };
 
   return (
@@ -34,7 +34,7 @@ function Ticker(props) {
       <button onClick={reset}>Reset</button>
     </div>
   );
-}
+};
 ```
 
 ```jsx
