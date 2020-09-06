@@ -7,8 +7,8 @@
   "buildPath": ".build",
   "rawIconPath": "src/icons/*.svg",
   "iconFontPath": "src/styles/_icons.scss",
-  "iconBgFilePath": "src/styles/_icon_colors.scss",
   "queryPath": "./src/queries",
+  "xmlPath": "./src/xml",
   "templatesPath": "./src/components/templates",
   "templates": [
     {
@@ -22,32 +22,6 @@
     {
       "name": "ListingPage",
       "path": "listingPage/index.jsx"
-    },
-    {
-      "name": "NotFoundPage",
-      "path": "notFoundPage/index.jsx"
-    },
-    {
-      "name": "StaticPage",
-      "path": "staticPage/index.jsx"
-    },
-    {
-      "name": "SettingsPage",
-      "path": "settingsPage/index.jsx"
-    }
-  ],
-  "devTemplates": [
-    {
-      "name": "SnippetPage",
-      "path": "snippetPage/index.dev.jsx"
-    },
-    {
-      "name": "SearchPage",
-      "path": "searchPage/index.jsx"
-    },
-    {
-      "name": "ListingPage",
-      "path": "listingPage/index.dev.jsx"
     },
     {
       "name": "NotFoundPage",

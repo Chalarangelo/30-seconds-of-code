@@ -15,6 +15,7 @@
     "@testing-library/react": "^10.4.8",
     "babel-jest": "^26.3.0",
     "babel-loader": "^8.0.6",
+    "chalk": "^4.1.0",
     "copy-to-clipboard": "^3.3.1",
     "cross-env": "^6.0.3",
     "css-loader": "^3.4.2",
@@ -34,17 +35,14 @@
     "gatsby-plugin-react-helmet": "^3.1.23",
     "gatsby-plugin-resolve-src": "^2.0.0",
     "gatsby-plugin-sass": "^2.1.30",
-    "gatsby-plugin-sitemap": "^2.2.28",
     "gatsby-source-filesystem": "^2.1.51",
     "glob": "^7.1.6",
     "hast-util-to-html": "^7.1.1",
     "jest": "^24.9.0",
     "jest-environment-jsdom-fourteen": "^1.0.1",
     "jest-transform-stub": "^2.0.0",
-    "kleur": "^3.0.3",
     "mdast-util-to-hast": "^9.1.0",
     "node-sass": "^4.14.1",
-    "npm-watch": "^0.6.0",
     "prismjs": "^1.19.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
@@ -68,15 +66,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "extract-snippets": "NODE_PATH=src npx --node-arg '-r esm' ./src/jobs/yild.js -e",
-    "watch-snippets": "npm-watch extract-snippets",
-    "prepare-assets": "NODE_PATH=src npx --node-arg '-r esm' ./src/jobs/yild.js -e -n=DEVELOPMENT",
-    "watch-assets": "npm-watch prepare-assets",
-    "serve-snippets": "NODE_PATH=src npx --node-arg '-r esm' ./src/jobs/yild.js -n=DEVELOPMENT -s",
-    "yild": "NODE_PATH=src npx --node-arg '-r esm' ./src/jobs/yild.js",
-    "prebuild": "NODE_PATH=src npx --node-arg '-r esm' ./src/jobs/yild.js -u -a -e -i -b -n=PRODUCTION -c",
-    "predevelop": "NODE_PATH=src npx --node-arg '-r esm' ./src/jobs/yild.js -n=DEVELOPMENT -c",
-    "pretest": "NODE_PATH=src npx --node-arg '-r esm' ./src/jobs/yild.js -n=DEVELOPMENT -c",
+    "prebuild": "NODE_PATH=src NODE_ENV=production npx --node-arg '-r esm' ./src/scripts/build.js",
     "build": "NODE_PATH=src npx --node-arg '-r esm' gatsby build",
     "develop": "NODE_PATH=src npx --node-arg '-r esm' gatsby develop -p 8000",
     "debug": "NODE_PATH=src npx --node-arg '-r esm --nolazy --inspect-brk' node_modules/.bin/gatsby develop",
@@ -88,27 +78,6 @@
     "test:watch": "cross-env NODE_PATH=src NODE_ENV=test jest --config src/config/jest.json --watch",
     "test:e2e": "CYPRESS_SUPPORT=y npm run build && start-server-and-test serve http://localhost:9000 cy:open",
     "test:e2e-ci": "CYPRESS_SUPPORT=y npm run build && start-server-and-test serve http://localhost:9000 cy:run"
-  },
-  "watch": {
-    "extract-snippets": {
-      "patterns": [
-        "content/sources"
-      ],
-      "extensions": "md",
-      "delay": "5000",
-      "ignore": "README",
-      "quiet": true,
-      "runOnChangeOnly": true
-    },
-    "prepare-assets": {
-      "patterns": [
-        "content/sources"
-      ],
-      "extensions": "jpeg,jpg,png,webp,tif,tiff",
-      "delay": "5000",
-      "quiet": true,
-      "runOnChangeOnly": true
-    }
   },
   "repository": {
     "type": "git",

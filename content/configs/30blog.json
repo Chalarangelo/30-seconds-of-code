@@ -3,9 +3,6 @@
   "dirName": "30blog",
   "repoUrl": "https://github.com/30-seconds/30-seconds-blog",
   "snippetPath": "blog_posts",
-  "requirables": [
-    "blog_data/snippets.json"
-  ],
   "slug": "blog",
   "resolver": "blogResolver",
   "isBlog": true,
@@ -19,5 +16,6 @@
   "images": {
     "name": "blog_images",
     "path": "blog_images"
-  }
+  },
+  "cardTemplate": "BlogSnippetCard"
 }

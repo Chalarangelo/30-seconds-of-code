@@ -1,29 +1,14 @@
-const { green } = require('kleur');
-const env = require('./.build/env').default;
-
+const { green } = require('chalk');
 const {
-  sourceNodes,
   createPages,
   onCreateWebpackConfig,
-} = require(`./src/build`);
-const {
-  parseQueries,
-  parseRequirables,
-  parseTemplates,
-} = require(`./src/build/parsers`);
-const paths = require(`./src/config/paths`);
+  onPostBuild,
+  parseRequirements,
+} = require(`./src/gatsby`);
 
-const requirables = parseRequirables(paths.contentPath);
-console.log(`${green('success')} parse requirables`);
+const { requirables, templates} = parseRequirements();
+console.log(`${green('success')} parse requirements`);
 
-const templates = parseTemplates(env === 'DEVELOPMENT' ? paths.devTemplates : paths.templates, paths.templatesPath);
-console.log(`${green('success')} parse templates`);
-
-const pagesQuery = parseQueries(paths.queryPath);
-console.log(`${green('success')} parse queries`);
-
-exports.createPages = createPages(pagesQuery, templates, requirables);
-
-exports.sourceNodes = sourceNodes(requirables);
-
+exports.createPages = createPages(templates, requirables);
 exports.onCreateWebpackConfig = onCreateWebpackConfig;
+exports.onPostBuild = onPostBuild;

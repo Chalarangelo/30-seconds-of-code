@@ -6,7 +6,6 @@ import Footer from 'components/molecules/footer';
 import CookieConsentPopup from 'components/molecules/cookieConsentPopup';
 import literals from 'lang/en/client/common';
 import { combineClassNames } from 'utils';
-import env from '../../../../.build/env';
 
 const propTypes = {
   children: PropTypes.oneOfType([
@@ -64,7 +63,7 @@ const Shell = ({
       <Footer />
     </div>
     {
-      typeof acceptsCookies === 'undefined' && env === 'PRODUCTION' && !isBot ?
+      typeof acceptsCookies === 'undefined' && process.env.ENV !== 'development' && !isBot ?
         <CookieConsentPopup /> : null
     }
   </div>
