@@ -43,7 +43,6 @@
     "jest-transform-stub": "^2.0.0",
     "mdast-util-to-hast": "^9.1.0",
     "node-sass": "^4.14.1",
-    "npm-watch": "^0.6.0",
     "prismjs": "^1.19.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
@@ -79,27 +78,6 @@
     "test:watch": "cross-env NODE_PATH=src NODE_ENV=test jest --config src/config/jest.json --watch",
     "test:e2e": "CYPRESS_SUPPORT=y npm run build && start-server-and-test serve http://localhost:9000 cy:open",
     "test:e2e-ci": "CYPRESS_SUPPORT=y npm run build && start-server-and-test serve http://localhost:9000 cy:run"
-  },
-  "watch": {
-    "extract-snippets": {
-      "patterns": [
-        "content/sources"
-      ],
-      "extensions": "md",
-      "delay": "5000",
-      "ignore": "README",
-      "quiet": true,
-      "runOnChangeOnly": true
-    },
-    "prepare-assets": {
-      "patterns": [
-        "content/sources"
-      ],
-      "extensions": "jpeg,jpg,png,webp,tif,tiff",
-      "delay": "5000",
-      "quiet": true,
-      "runOnChangeOnly": true
-    }
   },
   "repository": {
     "type": "git",
