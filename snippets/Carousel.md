@@ -12,7 +12,7 @@ Renders a carousel component.
 - Render the carousel items using `React.cloneElement()` and pass down rest `props` along with the computed styles.
 
 ```jsx
-function Carousel(props) {
+const Carousel = ({ carouselItems, ...rest }) => {
   const [active, setActive] = React.useState(0);
   let scrollInterval = null;
   const style = {
@@ -29,12 +29,11 @@ function Carousel(props) {
   };
   React.useEffect(() => {
     scrollInterval = setTimeout(() => {
-      const { carouselItems } = props;
       setActive((active + 1) % carouselItems.length);
     }, 2000);
     return () => clearTimeout(scrollInterval);
   });
-  const { carouselItems, ...rest } = props;
+
   return (
     <div style={style.carousel}>
       {carouselItems.map((item, index) => {
@@ -49,7 +48,7 @@ function Carousel(props) {
       })}
     </div>
   );
-}
+};
 ```
 
 ```jsx
