@@ -40,7 +40,7 @@ const Footer = () => (
     <p>
       { literals.copyright }
       <a
-        url={ config.githubOrgUrl }
+        href={ config.githubOrgUrl }
         rel='noopener noreferrer nofollow'
         target='_blank'
       >
@@ -49,7 +49,7 @@ const Footer = () => (
       <br/>
       { literals.snippetLicense }
       <a
-        url={ config.licenseUrl }
+        href={ config.licenseUrl }
         rel='noopener noreferrer nofollow'
         target='_blank'
       >
@@ -58,7 +58,7 @@ const Footer = () => (
       <br/>
       { literals.poweredBy }
       <a
-        url='https://www.netlify.com/'
+        href='https://www.netlify.com/'
         rel='noopener noreferrer nofollow'
         target='_blank'
       >
@@ -66,7 +66,7 @@ const Footer = () => (
       </a>
       { ', ' }
       <a
-        url='https://www.gatsbyjs.org/'
+        href='https://www.gatsbyjs.org/'
         rel='noopener noreferrer nofollow'
         target='_blank'
       >
@@ -74,7 +74,7 @@ const Footer = () => (
       </a>
       { ', ' }
       <a
-        url='https://travis-ci.com/'
+        href='https://travis-ci.com/'
         rel='noopener noreferrer nofollow'
         target='_blank'
       >
@@ -82,7 +82,7 @@ const Footer = () => (
       </a>
       { ' & ' }
       <a
-        url='https://github.com/'
+        href='https://github.com/'
         rel='noopener noreferrer nofollow'
         target='_blank'
       >
