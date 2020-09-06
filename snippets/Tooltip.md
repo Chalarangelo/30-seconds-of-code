@@ -29,7 +29,7 @@ Renders a tooltip component.
 ```
 
 ```jsx
-function Tooltip({ children, text, ...rest }) {
+const Tooltip = ({ children, text, ...rest }) => {
   const [show, setShow] = React.useState(false);
 
   return (
@@ -38,12 +38,12 @@ function Tooltip({ children, text, ...rest }) {
         {text}
         <span className="tooltip-arrow" />
       </div>
-      <div {...rest} onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
+      <div onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)} {...rest}>
         {children}
       </div>
     </div>
   );
-}
+};
 ```
 
 ```jsx
