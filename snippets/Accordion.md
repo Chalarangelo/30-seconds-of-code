@@ -5,15 +5,15 @@ tags: components,children,state,advanced
 
 Renders an accordion menu with multiple collapsible content components.
 
-- Define an `AccordionItem` component, pass it to the `Accordion` and remove unnecessary nodes expect for `AccordionItem` by identifying the function's name in `props.children`.
-- Each `AccordionItem` component renders a `<button>` that is used to update the `Accordion` via the `props.handleClick` callback and the content of the component, passed down via `props.children`, while its appearance is determined by `props.isCollapsed` and based on `style`.
-- In the `Accordion` component, use the `React.useState()` hook to initialize the value of the `bindIndex` state variable to `props.defaultIndex`.
-- Use `Array.prototype.map` on the collected nodes to render the individual collapsiple elements.
+- Define an `AccordionItem` component, pass it to the `Accordion` and remove unnecessary nodes expect for `AccordionItem` by identifying the function's name in `children`.
+- Each `AccordionItem` component renders a `<button>` that is used to update the `Accordion` via the `handleClick` callback and the content of the component, passed down via `children`, while its appearance is determined by `isCollapsed` and based on `style`.
+- In the `Accordion` component, use the `React.useState()` hook to initialize the value of the `bindIndex` state variable to `defaultIndex`.
+- Use `Array.prototype.map()` on the collected nodes to render the individual collapsiple elements.
 - Define `changeItem`, which will be executed when clicking an `AccordionItem`'s `<button>`.
   `changeItem` executes the passed callback, `onItemClick` and updates `bindIndex` based on the clicked element.
 
 ```jsx
-function AccordionItem(props) {
+const AccordionItem = ({ label, isCollapsed, handleClick, children }) => {
   const style = {
     collapsed: {
       display: 'none'
@@ -29,28 +29,28 @@ function AccordionItem(props) {
 
   return (
     <div>
-      <button style={style.buttonStyle} onClick={() => props.handleClick()}>
-        {props.label}
+      <button style={style.buttonStyle} onClick={handleClick}>
+        {label}
       </button>
       <div
         className="collapse-content"
-        style={props.isCollapsed ? style.collapsed : style.expanded}
-        aria-expanded={props.isCollapsed}
+        style={isCollapsed ? style.collapsed : style.expanded}
+        aria-expanded={isCollapsed}
       >
-        {props.children}
+        {children}
       </div>
     </div>
   );
-}
+};
 
-function Accordion(props) {
-  const [bindIndex, setBindIndex] = React.useState(props.defaultIndex);
+const Accordion = ({ defaultIndex, onItemClick, children }) => {
+  const [bindIndex, setBindIndex] = React.useState(defaultIndex);
 
   const changeItem = itemIndex => {
-    if (typeof props.onItemClick === 'function') props.onItemClick(itemIndex);
+    if (typeof onItemClick === 'function') onItemClick(itemIndex);
     if (itemIndex !== bindIndex) setBindIndex(itemIndex);
   };
-  const items = props.children.filter(item => item.type.name === 'AccordionItem');
+  const items = children.filter(item => item.type.name === 'AccordionItem');
 
   return (
     <div className="wrapper">
@@ -64,7 +64,7 @@ function Accordion(props) {
       ))}
     </div>
   );
-}
+};
 ```
 
 ```jsx
