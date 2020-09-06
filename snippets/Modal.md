@@ -92,20 +92,20 @@ To use the component, import `Modal` only once and then display it by passing a 
 ```
 
 ```jsx
-function Modal({ isVisible = false, title, content, footer, onClose }) {
+const Modal = ({ isVisible = false, title, content, footer, onClose }) => {
   React.useEffect(() => {
     document.addEventListener('keydown', keydownHandler);
     return () => document.removeEventListener('keydown', keydownHandler);
   });
 
-  function keydownHandler({ key }) {
+  const keydownHandler = ({ key }) => {
     switch (key) {
-      case 'Escape':
-        onClose();
-        break;
-      default:
+    case 'Escape':
+      onClose();
+      break;
+    default:
     }
-  }
+  };
 
   return !isVisible ? null : (
     <div className="modal" onClick={onClose}>
@@ -123,12 +123,11 @@ function Modal({ isVisible = false, title, content, footer, onClose }) {
       </div>
     </div>
   );
-}
+};
 ```
 
 ```jsx
-//Add the component to the render function
-function App() {
+const App = () => {
   const [isModal, setModal] = React.useState(false);
 
   return (
@@ -143,7 +142,7 @@ function App() {
       />
     </React.Fragment>
   );
-}
+};
 
 ReactDOM.render(<App />, document.getElementById('root'));
 ```

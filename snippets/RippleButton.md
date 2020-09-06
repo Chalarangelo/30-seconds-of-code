@@ -61,7 +61,7 @@ Renders a button that animates a ripple effect when clicked.
 ```
 
 ```jsx
-function RippleButton({ children, onClick }) {
+const RippleButton = ({ children, onClick }) => {
   const [coords, setCoords] = React.useState({ x: -1, y: -1 });
   const [isRippling, setIsRippling] = React.useState(false);
 
@@ -102,12 +102,12 @@ function RippleButton({ children, onClick }) {
           }}
         />
       ) : (
-        ""
+        ''
       )}
       <span className="content">{children}</span>
     </button>
   );
-}
+};
 ```
 
 ```jsx
