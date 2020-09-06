@@ -5,12 +5,12 @@ tags: components,input,state,intermediate
 
 Renders a tag input field.
 
-- Define a `TagInput` component and use `React.useState()` hook to initialize an array with tags passed as `props`.
+- Define a `TagInput` component and use `React.useState()` hook to initialize an array from `tags`.
 - Use `Array.prototype.map()` on collected nodes to render the list of tags.
-- Define the `addTags` method, which will be executed on pressing the `Enter` key.
-- The `addTags` method uses the `setTags` method to add the new tag using the spread (`...`) operator to prepend the existing tags and adds the new tag at the end of the `tags` array.
-- Define the `removeTags` method, which will be executed on clicking the delete icon in the tag.
-- Use `Array.prototype.filter()` in `removeTags` method to remove the tag using the `index` of the tag to filter it out from `tags` array.
+- Define the `addTagData` method, which will be executed on pressing the `Enter` key.
+- The `addTagData` method uses the `setTagData` method to add the new tag using the spread (`...`) operator to prepend the existing tags and adds the new tag at the end of the `tagData` array.
+- Define the `removeTagData` method, which will be executed on clicking the delete icon in the tag.
+- Use `Array.prototype.filter()` in `removeTagData` method to remove the tag using the `index` of the tag to filter it out from `tagData` array.
 
 ```css
 .tag-input {
@@ -70,24 +70,24 @@ Renders a tag input field.
 ```
 
 ```jsx
-function TagInput(props) {
-  const [tags, setTags] = React.useState(props.tags);
-  const removeTags = indexToRemove => {
-    setTags([...tags.filter((_, index) => index !== indexToRemove)]);
+const TagInput = ({ tags }) => {
+  const [tagData, setTagData] = React.useState(tags);
+  const removeTagData = indexToRemove => {
+    setTagData([...tagData.filter((_, index) => index !== indexToRemove)]);
   };
-  const addTags = event => {
-    if (event.target.value !== "") {
-      setTags([...tags, event.target.value]);
-      event.target.value = "";
+  const addTagData = event => {
+    if (event.target.value !== '') {
+      setTagData([...tagData, event.target.value]);
+      event.target.value = '';
     }
   };
   return (
     <div className="tag-input">
       <ul id="tags">
-        {tags.map((tag, index) => (
+        {tagData.map((tag, index) => (
           <li key={index} className="tag">
             <span className="tag-title">{tag}</span>
-            <span className="tag-close-icon" onClick={() => removeTags(index)}>
+            <span className="tag-close-icon" onClick={() => removeTagData(index)}>
               x
             </span>
           </li>
@@ -95,12 +95,12 @@ function TagInput(props) {
       </ul>
       <input
         type="text"
-        onKeyUp={event => (event.key === "Enter" ? addTags(event) : null)}
+        onKeyUp={event => (event.key === 'Enter' ? addTagData(event) : null)}
         placeholder="Press enter to add tags"
       />
     </div>
   );
-}
+};
 ```
 
 ```jsx
