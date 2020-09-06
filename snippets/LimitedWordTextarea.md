@@ -12,7 +12,7 @@ Renders a textarea component with a word limit.
 - Use a`<div>` to wrap both the`<textarea>` and the `<p>` element that displays the character count and bind the `onChange` event of the `<textarea>` to call `setFormattedContent` with the value of `event.target.value`.
 
 ```jsx
-function LimitedWordTextarea({ rows, cols, value, limit }) {
+const LimitedWordTextarea = ({ rows, cols, value, limit }) => {
   const [content, setContent] = React.useState(value);
   const [wordCount, setWordCount] = React.useState(0);
 
@@ -49,7 +49,7 @@ function LimitedWordTextarea({ rows, cols, value, limit }) {
       </p>
     </div>
   );
-}
+};
 ```
 
 ```jsx

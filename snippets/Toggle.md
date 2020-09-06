@@ -5,14 +5,14 @@ tags: components,state,beginner
 
 Renders a toggle component.
 
-- Use the `React.useState()` to initialize the `isToggleOn` state variable to `false`.
+- Use the `React.useState()` to initialize the `isToggleOn` state variable to `defaultToggled`.
 - Use an object, `style`, to hold the styles for individual components and their states.
 - Return a `<button>` that alters the component's `isToggledOn` when its `onClick` event is fired and determine the appearance of the content based on `isToggleOn`, applying the appropriate CSS rules from the `style` object.
 
 ```jsx
-function Toggle(props) {
-  const [isToggleOn, setIsToggleOn] = React.useState(false);
-  style = {
+const Toggle = ({ defaultToggled = false }) => {
+  const [isToggleOn, setIsToggleOn] = React.useState(defaultToggled);
+  const style = {
     on: {
       backgroundColor: 'green'
     },
@@ -26,7 +26,7 @@ function Toggle(props) {
       {isToggleOn ? 'ON' : 'OFF'}
     </button>
   );
-}
+};
 ```
 
 ```jsx

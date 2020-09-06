@@ -5,7 +5,7 @@ tags: components,input,state,array,intermediate
 
 Renders a checkbox list that uses a callback function to pass its selected value/values to the parent component.
 
-- Use `React.setState()` to create a `data` state variable and set its initial value equal to the `options` prop.
+- Use `React.useState()` to create a `data` state variable and set its initial value equal to the `options` prop.
 - Create a function `toggle` that is used to toggle the `checked` to update the `data` state variable and call the `onChange` callback passed via the component's props.
 - Render a `<ul>` element and use `Array.prototype.map()` to map the `data` state variable to individual `<li>` elements with `<input>` elements as their children.
 - Each `<input>` element has the `type='checkbox'` attribute and is marked as `readOnly`, as its click events are handled by the parent `<li>` element's `onClick` handler.
@@ -22,7 +22,7 @@ const style = {
   }
 };
 
-function MultiselectCheckbox({ options, onChange }) {
+const MultiselectCheckbox = ({ options, onChange }) => {
   const [data, setData] = React.useState(options);
 
   const toggle = item => {
@@ -45,7 +45,7 @@ function MultiselectCheckbox({ options, onChange }) {
       })}
     </ul>
   );
-}
+};
 ```
 
 ```jsx

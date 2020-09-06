@@ -5,9 +5,9 @@ tags: components,state,children,intermediate
 
 Renders a tabbed menu and view component.
 
-- Define a `TabItem` component, pass it to the `Tab` and remove unnecessary nodes expect for `TabItem` by identifying the function's name in `props.children`.
-- Use the `React.useState()` hook to initialize the value of the `bindIndex` state variable to `props.defaultIndex`.
-- Use `Array.prototype.map` on the collected nodes to render the `tab-menu` and `tab-view`.
+- Define a `TabItem` component, pass it to the `Tab` and remove unnecessary nodes expect for `TabItem` by identifying the function's name in `children`.
+- Use the `React.useState()` hook to initialize the value of the `bindIndex` state variable to `defaultIndex`.
+- Use `Array.prototype.map()` on the collected nodes to render the `tab-menu` and `tab-view`.
 - Define `changeTab`, which will be executed when clicking a `<button>` from the `tab-menu`.
 - `changeTab` executes the passed callback, `onTabClick` and updates `bindIndex`, which in turn causes a re-render, evaluating the `style` and `className` of the `tab-view` items and `tab-menu` buttons according to their `index`.
 
@@ -28,17 +28,17 @@ Renders a tabbed menu and view component.
 ```
 
 ```jsx
-function TabItem(props) {
+const TabItem = props => {
   return <div {...props} />;
-}
+};
 
-function Tabs(props) {
-  const [bindIndex, setBindIndex] = React.useState(props.defaultIndex);
+const Tabs = ({ defaultIndex = 0, onTabClick, children }) => {
+  const [bindIndex, setBindIndex] = React.useState(defaultIndex);
   const changeTab = newIndex => {
-    if (typeof props.onTabClick === 'function') props.onTabClick(newIndex);
+    if (typeof onTabClick === 'function') onTabClick(newIndex);
     setBindIndex(newIndex);
   };
-  const items = props.children.filter(item => item.type.name === 'TabItem');
+  const items = children.filter(item => item.type.name === 'TabItem');
 
   return (
     <div className="wrapper">
@@ -61,7 +61,7 @@ function Tabs(props) {
       </div>
     </div>
   );
-}
+};
 ```
 
 ```jsx

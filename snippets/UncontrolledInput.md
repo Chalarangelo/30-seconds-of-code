@@ -9,13 +9,13 @@ Renders an `<input>` element that uses a callback function to pass its value to 
 - Render an `<input>` element with the appropriate attributes and use the `callback` function in the `onChange` event to pass the value of the input to the parent.
 
 ```jsx
-function UncontrolledInput({
+const UncontrolledInput = ({
   callback,
   type = 'text',
   disabled = false,
   readOnly = false,
   placeholder = ''
-}) {
+}) => {
   return (
     <input
       type={type}
@@ -25,7 +25,7 @@ function UncontrolledInput({
       onChange={({ target: { value } }) => callback(value)}
     />
   );
-}
+};
 ```
 
 ```jsx
