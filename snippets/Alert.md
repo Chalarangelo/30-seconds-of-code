@@ -1,15 +1,15 @@
 ---
 title: Alert
-tags: components,beginner,state,effect
+tags: components,state,effect,beginner
 ---
 
 Creates an alert component with `type` prop.
 
 - Define appropriate CSS styles and animations for the component's elements.
-- Use the `React.setState()` hook to create the `isShown` and `isLeaving` state variables and set their values to `false`.
+- Use the `React.useState()` hook to create the `isShown` and `isLeaving` state variables and set their values to `false`.
 - Define `timeoutId` to keep the timer instance for clearing on component unmount.
-- Use the `React.setEffect()` hook to update the value of `isShown` to `true` and clear interval by using `timeoutId` when component is unmounted.
-- Define `closeNotification` function to set the component is removed from DOM by displaying fading out animation and set `isShown` to `false` via `setTimeout()`.
+- Use the `React.useEffect()` hook to update the value of `isShown` to `true` and clear interval by using `timeoutId` when component is unmounted.
+- Define `closeAlert` function to set the component is removed from DOM by displaying fading out animation and set `isShown` to `false` via `setTimeout()`.
 - Define the component, which renders the alert component with user defined `message` and a close button to remove the component from DOM.
 
 ```css
@@ -64,36 +64,36 @@ Creates an alert component with `type` prop.
 ```
 
 ```jsx
-function Notification(props) {
-    const [isShown, setIsShown] = React.useState(false);
-    const [isLeaving, setIsLeaving] = React.useState(false);
+const Alert = ({ isDefaultShown = false, timeout = 250, type, message }) => {
+  const [isShown, setIsShown] = React.useState(isDefaultShown);
+  const [isLeaving, setIsLeaving] = React.useState(false);
 
-    let timeoutId = null;
+  let timeoutId = null;
 
-    React.useEffect(() => {
-      setIsShown(true);
-      return () => {
-        clearTimeout(timeoutId);
-      }
-    }, [props.isShown, props.timeout, timeoutId]);
+  React.useEffect(() => {
+    setIsShown(true);
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [isDefaultShown, timeout, timeoutId]);
 
-    const closeNotification = () => {
-      setIsLeaving(true);
-      timeoutId = setTimeout(() => {
-        setIsLeaving(false);
-        setIsShown(false);
-      }, 250)
-    }
+  const closeAlert = () => {
+    setIsLeaving(true);
+    timeoutId = setTimeout(() => {
+      setIsLeaving(false);
+      setIsShown(false);
+    }, timeout);
+  };
 
-    return isShown && (
-      <div className={`alert ${props.type}${isLeaving ? ' leaving' : ''}`} role="alert">
-        <button className="close" onClick={closeNotification} />
-        {props.message}
-      </div>
-    )
-}
+  return isShown && (
+    <div className={`alert ${type} ${isLeaving ? 'leaving' : ''}`} role="alert">
+      <button className="close" onClick={closeAlert} />
+      {message}
+    </div>
+  );
+};
 ```
 
 ```jsx
-ReactDOM.render(<Notification type="info" message="This is info" />, document.getElementById('root'));
+ReactDOM.render(<Alert type="info" message="This is info" />, document.getElementById('root'));
 ```
