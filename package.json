@@ -27,7 +27,7 @@
     "esm": "^3.2.25",
     "front-matter": "^3.1.0",
     "fs-extra": "^9.0.0",
-    "gatsby": "^2.21.12",
+    "gatsby": "^2.24.53",
     "gatsby-plugin-catch-links": "^2.1.27",
     "gatsby-plugin-manifest": "^2.2.45",
     "gatsby-plugin-netlify": "^2.1.34",
