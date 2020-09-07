@@ -1,14 +1,14 @@
 ---
 title: isAlphaNumeric
-tags: string,regexp,intermediate
+tags: string,regexp,beginner
 ---
 
 Checks if a string contains only alphanumeric characters.
 
-Use `String.prototype.match()` to check if input string matches against alphanumeric regex pattern.
+Use `RegExp.prototype.test()` to check if input string matches against alphanumeric regex pattern.
 
 ```js
-const isAlphaNumeric = (str) => !!str.match(/^[a-z0-9]+$/gi);
+const isAlphaNumeric = str => /^[a-z0-9]+$/gi.test(str);
 ```
 
 ```js
