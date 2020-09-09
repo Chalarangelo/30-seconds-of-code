@@ -10,6 +10,10 @@ import {
   getTags,
   getId
 } from './snippetData';
+import {
+  findConfigFromRawSnippetPath,
+  findSlugFromRawSnippetPath
+} from './matchData';
 
 export {
   getFilesInDir,
@@ -22,4 +26,6 @@ export {
   compileSnippet,
   parseMarkdown,
   readSnippets,
+  findConfigFromRawSnippetPath,
+  findSlugFromRawSnippetPath,
 };
