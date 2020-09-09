@@ -3,11 +3,13 @@ import onPreInit from './onPreInit';
 import createPagesStatefully from './createPagesStatefully';
 import onCreateWebpackConfig from './onCreateWebpackConfig';
 import onPostBuild from './onPostBuild';
+import onCreateDevServer from './onCreateDevServer';
 
 export {
   parseRequirements,
   onPreInit,
   createPagesStatefully,
   onCreateWebpackConfig,
-  onPostBuild
+  onPostBuild,
+  onCreateDevServer
 };

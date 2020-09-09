@@ -4,6 +4,7 @@ const {
   onCreateWebpackConfig,
   onPreInit,
   onPostBuild,
+  onCreateDevServer,
   parseRequirements,
 } = require(`./src/gatsby`);
 
@@ -14,3 +15,4 @@ exports.onPreInit = onPreInit;
 exports.createPagesStatefully = createPagesStatefully(templates, requirables);
 exports.onCreateWebpackConfig = onCreateWebpackConfig;
 exports.onPostBuild = onPostBuild;
+exports.onCreateDevServer = onCreateDevServer;
