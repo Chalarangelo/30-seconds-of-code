@@ -1,11 +1,13 @@
 import { parseRequirements } from 'build/requirements';
-import createPages from './createPages';
+import onPreInit from './onPreInit';
+import createPagesStatefully from './createPagesStatefully';
 import onCreateWebpackConfig from './onCreateWebpackConfig';
 import onPostBuild from './onPostBuild';
 
 export {
   parseRequirements,
-  createPages,
+  onPreInit,
+  createPagesStatefully,
   onCreateWebpackConfig,
   onPostBuild
 };
