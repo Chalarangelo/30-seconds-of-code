@@ -24,7 +24,7 @@ export const compileSnippet = async(
     sourceDir, commonData, slugPrefix, repoUrlPrefix, assetPath, outPath,
     langData, language, isCssSnippet, isBlogSnippet, hasOptionalLanguage,
     languages, icon, biasPenaltyMultiplier, cardTemplate, authors,
-  }
+  }, returnFullSnippet = false
 ) => {
   let data, gitMetadata, tags, text, code, rawCode, type,
     excerpt, cover, shortSliceIndex, authorsData, langIcon, shortText;
@@ -140,6 +140,18 @@ export const compileSnippet = async(
       pageDescription: transformSnippetDescription(snippetData, cardTemplate),
     }]
   );
+
+  if (returnFullSnippet) {
+    return {
+      ...createIndexChunk(snippetData.slug, 'SnippetPage', (snippetData.ranking * 0.85).toFixed(2)),
+      context: {
+        snippet: transformSnippetContext(snippetData, cardTemplate),
+        cardTemplate,
+        breadcrumbs: transformBreadcrumbs(snippetData, cardTemplate),
+        pageDescription: transformSnippetDescription(snippetData, cardTemplate),
+      },
+    };
+  }
 
   return {
     id: snippetData.id,
