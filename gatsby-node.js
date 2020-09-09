@@ -1,6 +1,6 @@
 const { green } = require('chalk');
 const {
-  createPages,
+  createPagesStatefully,
   onCreateWebpackConfig,
   onPreInit,
   onPostBuild,
@@ -11,5 +11,6 @@ const { requirables, templates} = parseRequirements();
 console.log(`${green('success')} parse requirements`);
 
 exports.onPreInit = onPreInit;
+exports.createPagesStatefully = createPagesStatefully(templates, requirables);
 exports.onCreateWebpackConfig = onCreateWebpackConfig;
 exports.onPostBuild = onPostBuild;
