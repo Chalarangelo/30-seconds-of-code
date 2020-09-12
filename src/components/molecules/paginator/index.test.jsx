@@ -35,6 +35,17 @@ describe('<Paginator />', () => {
     });
   });
 
+  describe('has a rel attribute', () => {
+    it('of "prev" for previous button', () => {
+      expect(wrapper.querySelector('.btn.previous-page').getAttribute('rel')).toBe('prev');
+
+    });
+
+    it('of "next" for next button', () => {
+      expect(wrapper.querySelector('.btn.next-page').getAttribute('rel')).toBe('next');
+    });
+  });
+
   describe('with first page as current', () => {
     beforeEach(() => {
       wrapper = render(
