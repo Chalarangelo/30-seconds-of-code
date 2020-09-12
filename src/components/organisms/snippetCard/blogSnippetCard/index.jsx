@@ -52,6 +52,19 @@ const SnippetCard = ({
           </a>
         </>
       ) }
+      { process.env.ENV === 'development' && (
+        <>
+          { ' · ' }
+          <a
+            className='github-link'
+            href={ snippet.vscodeUrl }
+            rel='nofollow noopener noreferrer'
+            target='_blank'
+          >
+            { literals.openInVscode }
+          </a>
+        </>
+      ) }
     </div>
     { snippet.cover && snippet.cover &&
       <img className='card-cover-image' src={ snippet.cover } />
