@@ -88,6 +88,17 @@ const createPagesStatefully = (templates, requirables) => ({ actions, store }) =
 
   if (process.env.NODE_ENV === 'development') {
     watchFiles(paths.rawContentPath, templates, { actions, store });
+    createPage({
+      path: '/developer',
+      component: templates['DeveloperPage'],
+      context: {
+        configs: process.configs.map(cfg => ({
+          name: cfg.name,
+          sourceDir: cfg.sourceDir,
+          slugPrefix: cfg.slugPrefix,
+        })),
+      },
+    });
   }
 
 };
