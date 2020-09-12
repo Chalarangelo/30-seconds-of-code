@@ -51,6 +51,7 @@ const Paginator = ({
       <a
         className='btn previous-page icon icon-chevron-left'
         href={ `${baseUrl}/${slugOrderingSegment}/${pageNumber - 1}` }
+        rel='prev'
       >
         { '\u200b' }
       </a> }
@@ -83,6 +84,7 @@ const Paginator = ({
       <a
         className='btn next-page icon icon-chevron-right'
         href={ `${baseUrl}/${slugOrderingSegment}/${pageNumber + 1}` }
+        rel='next'
       >
         { '\u200b' }
       </a> }
