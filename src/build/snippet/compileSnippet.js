@@ -1,3 +1,4 @@
+import path from 'path';
 import tokenizeSnippet from 'engines/searchIndexingEngine';
 import { convertToSeoSlug, uniqueElements } from 'utils';
 import {
@@ -131,7 +132,10 @@ export const compileSnippet = async(
   await writeChunks(
     `${outPath}/${snippetData.slug.slice(1)}`,
     ['index',
-      createIndexChunk(snippetData.slug, 'SnippetPage', (snippetData.ranking * 0.85).toFixed(2)),
+      createIndexChunk(
+        snippetData.slug, 'SnippetPage', (snippetData.ranking * 0.85).toFixed(2),
+        { vscodeUrl: `vscode://file/${path.resolve(`${snippetsPath}/${snippet}`)}`}
+      ),
     ],
     ['snippet', {snippet: transformSnippetContext(snippetData, cardTemplate)}],
     ['metadata', {
@@ -143,7 +147,10 @@ export const compileSnippet = async(
 
   if (returnFullSnippet) {
     return {
-      ...createIndexChunk(snippetData.slug, 'SnippetPage', (snippetData.ranking * 0.85).toFixed(2)),
+      ...createIndexChunk(
+        snippetData.slug, 'SnippetPage', (snippetData.ranking * 0.85).toFixed(2),
+        { vscodeUrl: `vscode://file/${path.resolve(`${snippetsPath}/${snippet}`)}`}
+      ),
       context: {
         snippet: transformSnippetContext(snippetData, cardTemplate),
         cardTemplate,
