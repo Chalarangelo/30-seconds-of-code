@@ -6,6 +6,7 @@ const literals = {
   examples: 'Examples',
   preview: 'Preview',
   viewOnGitHub: 'View on GitHub',
+  openInVscode: 'Open in VS Code',
   home: 'Home',
   recommendedSnippets: 'Recommended snippets',
   blog: 'Blog',

@@ -30,11 +30,12 @@ export const writeChunks = (path, ...dataChunkPairs) => {
  * @param {string} path - Relative path for the chunk (e.g. `/404`).
  * @param {string} template - Name of the template to be used.
  * @param {number} priority - A value between 0.0 and 1.0 (default 0.5)
+ * @param {object} rest - (Optional) Rest of the data to add
  */
-export const createIndexChunk = (path, template, priority = 0.5) => {
+export const createIndexChunk = (path, template, priority = 0.5, rest = {}) => {
   const relRoute = path.startsWith('/') ? path : `/${path}`;
   return {
-    template, relRoute, fullRoute: `${routePrefix}${relRoute}`, priority,
+    template, relRoute, fullRoute: `${routePrefix}${relRoute}`, priority, ...rest,
   };
 };
 

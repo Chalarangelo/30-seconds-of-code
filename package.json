@@ -6,6 +6,7 @@
   "main": "index.js",
   "author": "30-seconds",
   "devDependencies": {
+    "@30-seconds/integration-tools": "^3.0.0",
     "@babel/core": "^7.8.7",
     "@babel/eslint-parser": "^7.11.4",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
@@ -16,6 +17,7 @@
     "babel-jest": "^26.3.0",
     "babel-loader": "^8.0.6",
     "chalk": "^4.1.0",
+    "chokidar": "^3.4.2",
     "copy-to-clipboard": "^3.3.1",
     "cross-env": "^6.0.3",
     "css-loader": "^3.4.2",
