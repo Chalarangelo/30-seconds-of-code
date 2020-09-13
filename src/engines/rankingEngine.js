@@ -5,11 +5,9 @@ const {
   keywordScores,
   keywordScoreLimit,
   keywordCountLimit,
-  longevityLimit,
   freshnessLimit,
-  updateCountLimit,
 } = rankingEngine;
-const totalScoreLimit = keywordScoreLimit + longevityLimit + freshnessLimit + updateCountLimit;
+const totalScoreLimit = keywordScoreLimit + freshnessLimit;
 const oneDayMs = 86400000;
 const nowMs = +new Date();
 
@@ -47,23 +45,10 @@ const determineSnippetRanking = snippet => {
 
   // Calculate freshness, longevity and update values
   const firstSeen = (nowMs - (+snippet.firstSeen)) / oneDayMs;
-  const lastUpdated = (nowMs - (+snippet.lastUpdated)) / oneDayMs;
-  const updateCount = snippet.updateCount;
 
   // Add points for freshness: Should produce a curve that falls sharply around
-  // the 30 day mark.
-  score += Math.round((30 + lastUpdated) / (30 + lastUpdated * lastUpdated) * freshnessLimit);
-
-  // Add points for longevity: Should produce something like a bull curve with
-  // a peak at around the 360 day mark.
-  score +=
-    firstSeen < 360 ? Math.round(firstSeen / 360 * longevityLimit)
-      : firstSeen < 1080 ? Math.round((1080 - firstSeen) / 720 * longevityLimit)
-        : 0;
-
-  // Add points from updates: Should produce a curve that peaks with a value of
-  // about 1 near the 25 update mark.
-  score += updateCount > 25 ? updateCountLimit : Math.round(((2 * updateCount - 2) / (23 + updateCount)) * updateCountLimit);
+  // the 14 day mark.
+  score += Math.round((14 + firstSeen) / (14 + firstSeen * firstSeen) * freshnessLimit);
 
   // Divide by limit, applying the bias multiplier, and return ranking
   return +Math.max(0.0001, score / (totalScoreLimit * snippet.biasPenaltyMultiplier)).toFixed(4);
