@@ -22,7 +22,8 @@ describe('Listing', () => {
 
   describe('navigating to the next page', () => {
     before(() => {
-      cy.get('.next-page').first().click();
+      // eslint-disable-next-line cypress/no-force
+      cy.get('.next-page').first().click({ force: true});
     });
 
     it('should redirect to the next page', () => {
@@ -31,7 +32,8 @@ describe('Listing', () => {
 
     describe('when navigating to the previous page', () => {
       before(() => {
-        cy.get('.previous-page').first().click();
+        // eslint-disable-next-line cypress/no-force
+        cy.get('.previous-page').first().click({ force: true});
       });
 
       it('should redirect to the previous page', () => {
