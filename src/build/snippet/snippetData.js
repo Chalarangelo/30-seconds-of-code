@@ -118,15 +118,10 @@ export const getGitMetadata = (snippet, snippetsPath) => new Promise(resolve => 
     `cd ${snippetsPath}; git log -n 1 --pretty=format:%at -- ${snippet} | head -1`,
     (error, stdout) => rsl(stdout.toString().replace('\n', ''))
   )),
-  new Promise(rsl => exec(
-    `cd ${snippetsPath}; git log --pretty=%H -- ${snippet}`,
-    (error, stdout) => rsl(stdout.toString().split('\n').length)
-  )),
 ]).then(values =>
   resolve({
     firstSeen: new Date(+`${values[0]}000`),
     lastUpdated: new Date(+`${values[1]}000`),
-    updateCount: values[2],
   }))
 );
 
