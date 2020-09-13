@@ -13,7 +13,7 @@ describe('Search', () => {
 
   describe('search results', () => {
     it('should display the correct title', () => {
-      cy.get('.page-title').contains(literals.results);
+      cy.get('.page-title', {timeout: 5000}).contains(literals.results);
     });
 
     it('should display search results', () => {

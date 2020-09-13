@@ -14,20 +14,35 @@
   --nav-button-active-fore-color: #f3f5fb;
 }
 
+// Body scrollbar
+body {
+  &::-webkit-scrollbar-track {
+    margin-top: 56px;
+    background-color: var(--scrollbar-back-color);
+  }
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-fore-color);
+    border-radius: 0.25rem;
+  }
+}
+
 .page-container {
-  overflow: hidden;
   transition: 0.3s ease all;
   background: var(--back-color);
-  display: grid;
   width: 100vw;
-  height: 100vh;
-  grid-template-areas: "menu" "content";
-  grid-template-columns: 100%;
-  grid-template-rows: 56px calc(100vh - 56px);
+  min-height: 100vh;
 }
 
 // Navigation bar
 .nav-bar {
+  position: sticky;
+  top: 0;
   transition: 0.3s ease all;
   background: var(--nav-bar-back-color);
   line-height: 0;
@@ -36,7 +51,6 @@
   border-bottom: 1px solid var(--nav-bar-border-color);
   height: 100%;
   width: 100vw;
-  grid-area: menu;
 
   @media screen and (min-width: $layout-large-breakpoint) {
     padding-right: 0.75rem;
@@ -93,26 +107,12 @@ img.nav-website-logo {
 // Content container
 .content {
   transition: 0.3s ease all;
-  grid-area: content;
-  overflow: auto;
   background: var(--back-color);
-
-  &::-webkit-scrollbar-track {
-    background-color: var(--scrollbar-back-color);
-  }
-
-  &::-webkit-scrollbar {
-    width: 10px;
-    background: transparent;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--scrollbar-fore-color);
-    border-radius: 0.25rem;
-  }
+  padding-right: 10px;  // Pad to the right for the scrollbar (10px)
 
   @media screen and (min-width: 800px) {
+    // Difference in padding is due to the scrollbar (10px)
     padding-left: calc((100% - 800px) / 2);
-    padding-right: calc((100% - 800px) / 2);
+    padding-right: calc((100% - 780px) / 2);
   }
 }

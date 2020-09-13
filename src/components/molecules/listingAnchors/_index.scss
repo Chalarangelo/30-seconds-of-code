@@ -11,8 +11,12 @@
 
   &::-webkit-scrollbar-track {
     background-color: var(--scrollbar-back-color);
-    margin: 0 35%;
+    margin: 0 35vw;
     border-radius: 0.125rem;
+
+    @media screen and (min-width: 800px) {
+      margin: 0 16rem;
+    }
   }
 
   &::-webkit-scrollbar {
