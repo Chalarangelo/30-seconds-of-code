@@ -94,9 +94,7 @@
     "visual": 2,
     "webdev": 3
   },
-  "keywordScoreLimit": 52,
-  "keywordCountLimit": 12,
-  "longevityLimit": 14,
-  "freshnessLimit": 24,
-  "updateCountLimit": 10
+  "keywordScoreLimit": 60,
+  "keywordCountLimit": 14,
+  "freshnessLimit": 40
 }
