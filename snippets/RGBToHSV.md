@@ -1,6 +1,6 @@
 ---
 title: RGBToHSV
-tags: math, ternary operator, intermediate
+tags: math, intermediate
 ---
 
 Converts the values of RGB color components to HSV components.
