@@ -6,6 +6,7 @@ const literals = {
     popularity: 'Recommended',
     alphabetical: 'Alphabetical',
     expertise: 'Expertise',
+    newest: 'Newest',
   },
   snippetList: 'Snippet List',
   blog: 'Blog',
