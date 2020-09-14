@@ -12,7 +12,7 @@
 
 .sorter {
   position: relative;
-  width: 144px;
+  width: 172px;
   height: 48px;
   box-sizing: border-box;
 
@@ -20,7 +20,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 144px;
+    width: 172px;
     z-index: 100;
     box-sizing: border-box;
     background: transparent;
@@ -33,7 +33,7 @@
     position: relative;
     padding-right: 48px;
     height: 36px;
-    width: 144px;
+    width: 172px;
     margin-top: 0;
     box-sizing: border-box;
     background: transparent;
@@ -47,7 +47,7 @@
     &:before {
       position: absolute;
       top: 12px;
-      right: 14px;
+      right: 12px;
       font-size: 20px;
     }
   }

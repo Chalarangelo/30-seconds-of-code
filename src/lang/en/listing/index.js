@@ -3,7 +3,7 @@ import config from 'config/global';
 /* istanbul ignore next */
 const literals = {
   orders: {
-    popularity: 'Popularity',
+    popularity: 'Recommended',
     alphabetical: 'Alphabetical',
     expertise: 'Expertise',
   },
