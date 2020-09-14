@@ -16,12 +16,12 @@ describe('Listing', () => {
   });
 
   it('should display the appropriate controls', () => {
-    cy.get('.sorter').should('have.length', 1);
     cy.get('.paginator').should('have.length', 1);
   });
 
   describe('navigating to the next page', () => {
     before(() => {
+      cy.visit('http://localhost:9000/list/p/1');
       // eslint-disable-next-line cypress/no-force
       cy.get('.next-page').first().click({ force: true});
     });
@@ -42,23 +42,9 @@ describe('Listing', () => {
     });
   });
 
-  describe('sorting is changed', () => {
-    before(() => {
-      cy.get('.order-btn').first().click();
-      cy.get('.order-btn').contains(literals.orders.alphabetical).click();
-    });
-
-    it('should redirect to the sorted listing', () => {
-      cy.url().should('contain', '/list/a/1');
-    });
-
-    it('should update the sorter', () => {
-      cy.get('.order-btn.selected').contains(literals.orders.alphabetical);
-    });
-  });
-
   describe('clicking a snippet', () => {
     before(() => {
+      cy.visit('http://localhost:9000/list/p/1');
       cy.get('.card-title a').first().click();
     });
 
@@ -79,14 +65,11 @@ describe('Listing', () => {
 
   describe('navigating to a category listing', () => {
     before(() => {
-      cy.get('.order-btn').first().click();
-      cy.get('.order-btn').contains(literals.orders.expertise).click();
-      cy.wait(1500);
       cy.get('.listing-anchor.icon-php').first().click();
     });
 
     it('should redirect to the category listing page', () => {
-      cy.url().should('contain', 'php/e/1');
+      cy.url().should('contain', 'php/p/1');
     });
 
     describe('clicking a snippet', () => {
@@ -104,7 +87,7 @@ describe('Listing', () => {
         });
 
         it('should return to the category listing page', () => {
-          cy.url().should('contain', '/php/e/1');
+          cy.url().should('contain', '/php/p/1');
         });
       });
     });
@@ -112,13 +95,13 @@ describe('Listing', () => {
     describe('navigating to a tag listng', () => {
       before(() => {
         cy.get('.order-btn').first().click();
-        cy.get('.order-btn').contains(literals.orders.popularity).click();
+        cy.get('.order-btn').contains(literals.orders.expertise).click();
         cy.wait(1500);
         cy.get('.listing-anchors a').contains('Array').first().click();
       });
 
       it('should redirect to the tag listing page', () => {
-        cy.url().should('contain', 'php/t/array/p/1');
+        cy.url().should('contain', 'php/t/array/e/1');
       });
 
       describe('clicking a snippet', () => {
@@ -130,6 +113,31 @@ describe('Listing', () => {
           cy.get('.link-back.has-more').contains('PHP');
           cy.get('.link-back-more').contains('Array');
         });
+      });
+    });
+  });
+
+  describe('with sorting controls', () => {
+    before(() => {
+      cy.visit('http://localhost:9000/js/p/1');
+    });
+
+    it('should display the appropriate controls', () => {
+      cy.get('.sorter').should('have.length', 1);
+    });
+
+    describe('sorting is changed', () => {
+      before(() => {
+        cy.get('.order-btn').first().click();
+        cy.get('.order-btn').contains(literals.orders.alphabetical).click();
+      });
+
+      it('should redirect to the sorted listing', () => {
+        cy.url().should('contain', '/js/a/1');
+      });
+
+      it('should update the sorter', () => {
+        cy.get('.order-btn.selected').contains(literals.orders.alphabetical);
       });
     });
   });

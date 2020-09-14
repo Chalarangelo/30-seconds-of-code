@@ -94,14 +94,6 @@ export const compileListingData = async(snippetIndex, listingMetas) => {
   // Tranform and chunk data for popularity, alphabetical and expertise ordering
   const transformedIndex = transformSnippetIndex(snippetIndex);
   const popularChunks = chunk(transformedIndex, CARDS_PER_PAGE);
-  const alphabeticalChunks = chunk(transformedIndex.sort((a, b) =>
-    a.title.localeCompare(b.title)
-  ), CARDS_PER_PAGE);
-  const expertiseChunks = chunk(transformedIndex.sort((a, b) =>
-    a.expertise === b.expertise ? a.title.localeCompare(b.title) :
-      !a.expertise ? 1 : !b.expertise ? -1 :
-        EXPERTISE_LEVELS.indexOf(a.expertise) - EXPERTISE_LEVELS.indexOf(b.expertise)
-  ), CARDS_PER_PAGE);
   // Create main listing sublinks and customization method for context
   const mainListingSublinks = listingMetas
     .map(v => v.featured > 0 ? v : {...v, featured: 500 })
@@ -127,8 +119,8 @@ export const compileListingData = async(snippetIndex, listingMetas) => {
       }),
     },
     '/list',
-    ['p', 'a', 'e'],
-    [popularChunks, alphabeticalChunks, expertiseChunks],
+    ['p'],
+    [popularChunks],
     mainContextCustomizer
   );
 
