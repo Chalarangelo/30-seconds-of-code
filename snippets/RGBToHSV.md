@@ -7,9 +7,36 @@ Converts the values of RGB color components to HSV components.
 
 Convert given RGB parameters into HSV ones and returns it in array format. 
 ```js
-const RGBToHSV =  (r, g, b) => ([(Math.max(r/255.0 ,g/255.0, b/255.0) === Math.min(r/255.0 ,g/255.0, b/255.0))?0:((Math.max(r/255.0 ,g/255.0, b/255.0) === r/255.0)?((60*((g/255.0 - b/255.0)/(Math.max(r/255.0 ,g/255.0, b/255.0) - Math.min(r/255.0 ,g/255.0, b/255.0))) + 360)%360):((Math.max(r/255.0 ,g/255.0, b/255.0) === g/255.0)?((60*((b/255.0 - r/255.0)/(Math.max(r/255.0 ,g/255.0, b/255.0) - Math.min(r/255.0 ,g/255.0, b/255.0))) + 120)%360):((Math.max(r/255.0 ,g/255.0, b/255.0) === b/255.0)?((60*((r/255.0 - g/255.0)/(Math.max(r/255.0 ,g/255.0, b/255.0) - Math.min(r/255.0 ,g/255.0, b/255.0)))+240)%360):(-1)))),
-                  (Math.max(r/255.0 ,g/255.0, b/255.0) === 0)?0:(100*((Math.max(r/255.0 ,g/255.0, b/255.0) - Math.min(r/255.0 ,g/255.0, b/255.0))/Math.max(r/255.0 ,g/255.0, b/255.0))),
-                  100*Math.max(r/255.0 ,g/255.0, b/255.0)]);
+const RGBToHSV =  (r, g, b) => {
+                const hsv = [];
+                r/=255.0; g/=255.0; b/=255.0;
+                const max = Math.max(r,g,b);
+                const min = Math.min(r,g,b);
+                const diff = max - min;
+
+                //computing h  
+                if(max === min){
+                    hsv.push(0);
+                }else if (max === r){
+                    hsv.push((60 * ((g - b) / diff) + 360) % 360);
+                }else if(max === g){
+                    hsv.push((60 * ((b - r) / diff) + 120) % 360);
+                }else{
+                    hsv.push((60 * ((r - g) / diff) + 240) % 360);
+                }
+
+                //computing s
+                if(max === 0){
+                    hsv.push(0);
+                }else{
+                    hsv.push((diff / max) * 100);
+                }
+
+                //computing v
+                hsv.push(max*100);
+                
+                return hsv;
+            };
 ```
 
 ```js
