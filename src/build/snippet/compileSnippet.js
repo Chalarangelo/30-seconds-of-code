@@ -167,6 +167,7 @@ export const compileSnippet = async(
       long: snippetData.language.long,
       short: snippetData.language.short,
     },
+    firstSeen: snippetData.firstSeen,
     searchTokens: snippetData.searchTokens,
     ranking: snippetData.ranking,
     blog: snippetData.blog,

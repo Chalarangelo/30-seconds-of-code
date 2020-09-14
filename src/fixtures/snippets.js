@@ -291,7 +291,6 @@ export const rawSnippet = {
   hash: 'ba8e5f17500d1e5428f4ca7fcc8095934a7ad3aa496b35465e8f7799f1715aaa',
   firstSeen: new Date('2020-05-04T09:20:46.000Z'),
   lastUpdated: new Date('2020-05-04T09:20:46.000Z'),
-  updateCount: 26,
   authorCount: 4,
   blog: false,
   language: {
@@ -330,7 +329,6 @@ export const rawBlogSnippet = {
   hash: '2dd00656f3a19b08dd10877431101751009c00b0658dc5d3acab61e11fea21e3',
   firstSeen: new Date('2020-03-27T15:37:16.000Z'),
   lastUpdated: new Date('2020-03-27T15:37:16.000Z'),
-  updateCount: 6,
   authorCount: 2,
   blog: true,
   language: {

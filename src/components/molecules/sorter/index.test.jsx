@@ -60,5 +60,21 @@ describe('<Sorter />', () => {
       });
     });
   });
+
+  describe('with a single sorting order', () => {
+    beforeEach(() => {
+      wrapper = render(
+        <Sorter sorter={ {
+          orders: orders.slice(0, 1),
+          selectedOrder,
+        } }
+        />
+      ).container;
+    });
+
+    it('should not render', () => {
+      expect(wrapper.querySelectorAll('.sorter')).toHaveLength(0);
+    });
+  });
 });
 

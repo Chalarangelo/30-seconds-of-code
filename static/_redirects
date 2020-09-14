@@ -15,6 +15,67 @@
 /php                                   /php/p/1                                 301!
 
 # -----------------------------------------------------------------------------
+#   UPDATED LISTING REDIRECTS:
+#
+# * Redirect main listing with deprecated order to page 1 of the dedicated
+#   listing sorted by popularity.
+# * Redirect blog listing with deprecated order to page 1 of the blog listing
+#   sorted by freshness.
+# -----------------------------------------------------------------------------
+/list/e/1/                             /list/p/1                                301!
+/list/e/2/                             /list/p/1                                301!
+/list/e/3/                             /list/p/1                                301!
+/list/e/4/                             /list/p/1                                301!
+/list/e/5/                             /list/p/1                                301!
+/list/e/6/                             /list/p/1                                301!
+/list/e/7/                             /list/p/1                                301!
+/list/e/8/                             /list/p/1                                301!
+/list/e/9/                             /list/p/1                                301!
+/list/e/10/                            /list/p/1                                301!
+/list/e/11/                            /list/p/1                                301!
+/list/e/12/                            /list/p/1                                301!
+/list/e/13/                            /list/p/1                                301!
+/list/e/14/                            /list/p/1                                301!
+/list/e/15/                            /list/p/1                                301!
+/list/e/16/                            /list/p/1                                301!
+/list/e/17/                            /list/p/1                                301!
+/list/e/18/                            /list/p/1                                301!
+/list/e/19/                            /list/p/1                                301!
+/list/e/20/                            /list/p/1                                301!
+/list/e/21/                            /list/p/1                                301!
+/list/e/22/                            /list/p/1                                301!
+/list/e/23/                            /list/p/1                                301!
+/list/e/24/                            /list/p/1                                301!
+/list/a/1/                             /list/p/1                                301!
+/list/a/2/                             /list/p/1                                301!
+/list/a/3/                             /list/p/1                                301!
+/list/a/4/                             /list/p/1                                301!
+/list/a/5/                             /list/p/1                                301!
+/list/a/6/                             /list/p/1                                301!
+/list/a/7/                             /list/p/1                                301!
+/list/a/8/                             /list/p/1                                301!
+/list/a/9/                             /list/p/1                                301!
+/list/a/10/                            /list/p/1                                301!
+/list/a/11/                            /list/p/1                                301!
+/list/a/12/                            /list/p/1                                301!
+/list/a/13/                            /list/p/1                                301!
+/list/a/14/                            /list/p/1                                301!
+/list/a/15/                            /list/p/1                                301!
+/list/a/16/                            /list/p/1                                301!
+/list/a/17/                            /list/p/1                                301!
+/list/a/18/                            /list/p/1                                301!
+/list/a/19/                            /list/p/1                                301!
+/list/a/20/                            /list/p/1                                301!
+/list/a/21/                            /list/p/1                                301!
+/list/a/22/                            /list/p/1                                301!
+/list/a/23/                            /list/p/1                                301!
+/list/a/24/                            /list/p/1                                301!
+/blog/e/1/                             /blog/n/1                                301!
+/blog/e/2/                             /blog/n/1                                301!
+/blog/a/1/                             /blog/n/1                                301!
+/blog/a/2/                             /blog/n/1                                301!
+
+# -----------------------------------------------------------------------------
 #   UPDATED TAG REDIRECTS:
 #
 # * Redirect JS Adapter to Function after merging - 13/01/2020

@@ -34,6 +34,8 @@ const SnippetList = ({
   const ctaIndex = snippetList.length > 20
     ? Math.floor(snippetList.length * 0.55)
     : snippetList.length - 1;
+  const withSorter = sorter && sorter.orders && sorter.orders.length > 1;
+
   return snippetList.length ? (
     <>
       {
@@ -41,7 +43,7 @@ const SnippetList = ({
           ? <ListingAnchors isCompact={ listingType !== 'main' } items={ listingSublinks } />
           : null
       }
-      <PageTitle className='with-sorter'>
+      <PageTitle className={ withSorter ? 'with-sorter' : null }>
         { listingName }
       </PageTitle>
       <Sorter sorter={ sorter } />
