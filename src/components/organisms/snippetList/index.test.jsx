@@ -59,8 +59,12 @@ describe('<SnippetList />', () => {
     });
   });
 
-  it('should pass the listinName to PageTitle', () => {
+  it('should pass the listingName to PageTitle', () => {
     expect(pageTitle.textContent).toBe(listingName);
+  });
+
+  it('should add the sorter styles to PageTitle', () => {
+    expect(pageTitle.className).toContain('with-sorter');
   });
 
   it('should pass the paginator to Paginator', () => {
@@ -107,4 +111,21 @@ describe('<SnippetList />', () => {
     });
   });
 
+  describe('with a single sorting order', () => {
+    beforeEach(() => {
+      wrapper = renderConnected(
+        <SnippetList
+          snippetList={ snippetList }
+          paginator={ paginator }
+          sorter={ { orders: orders.slice(0, 1), selected: 'Popularity' } }
+          listingName={ listingName }
+        />
+      ).container;
+      pageTitle = wrapper.querySelector('.page-title');
+    });
+
+    it('should not add the sorter styles to PageTitle', () => {
+      expect(pageTitle.className).not.toContain('with-sorter');
+    });
+  });
 });

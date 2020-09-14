@@ -16,6 +16,8 @@ const Sorter = ({
     selectedOrder,
   },
 }) => {
+  if(!orders || !orders.length || orders.length === 1) return null;
+
   const [toggled, setToggled] = React.useState(false);
   const sorterRef = React.useRef();
 
