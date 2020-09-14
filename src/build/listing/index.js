@@ -8,6 +8,7 @@ const ORDERS_MAP = {
   'p': literals.orders.popularity,
   'a': literals.orders.alphabetical,
   'e': literals.orders.expertise,
+  'n': literals.orders.newest,
 };
 
 const CARDS_PER_PAGE = 40;
@@ -140,6 +141,12 @@ export const compileListingData = async(snippetIndex, listingMetas) => {
     const alphabeticalSlugChunks = chunk(transformedSlugChunks.sort((a, b) =>
       a.title.localeCompare(b.title)
     ), CARDS_PER_PAGE);
+    const freshnessSlugChunks = chunk(
+      transformSnippetIndex(snippetIndexSlugData.sort((a, b) =>
+        +new Date(b.firstSeen) - +new Date(a.firstSeen)
+      )),
+      CARDS_PER_PAGE
+    );
     const expertiseSlugChunks = chunk(transformedSlugChunks.sort((a, b) =>
       a.expertise === b.expertise ? a.title.localeCompare(b.title) :
         !a.expertise ? 1 : !b.expertise ? -1 :
@@ -175,8 +182,10 @@ export const compileListingData = async(snippetIndex, listingMetas) => {
         }),
       },
       `${slugPrefix}`,
-      ['p', 'a', 'e'],
-      [popularSlugChunks, alphabeticalSlugChunks, expertiseSlugChunks],
+      listingMeta.blog ? ['p', 'n'] : ['p', 'a', 'e'],
+      listingMeta.blog
+        ? [popularSlugChunks, freshnessSlugChunks]
+        : [popularSlugChunks, alphabeticalSlugChunks, expertiseSlugChunks],
       slugContextCustomizer
     );
 
