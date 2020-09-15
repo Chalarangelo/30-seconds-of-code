@@ -73,6 +73,8 @@ export const loadContentConfigs = (inPath, boundLog) => {
       )
       .map(cfg => ({
         language: cfg.language.long.toLowerCase(),
+        shortCode: cfg.language.short,
+        languageLiteral: cfg.language.long,
         icon: cfg.theme.iconName,
       }));
     boundLog(`Processed data for ${langData.length} languages`, 'success');
