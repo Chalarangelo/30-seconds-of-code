@@ -5,7 +5,7 @@ tags: math,beginner
 
 Calculates the greatest common divisor of a list of numbers.
 
-Use `functools.reduce()` and `math.gcd()` over the given list.
+- Use `functools.reduce()` and `math.gcd()` over the given list.
 
 ```py
 from functools import reduce

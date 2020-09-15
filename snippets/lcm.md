@@ -5,7 +5,7 @@ tags: math,list,recursion,advanced
 
 Returns the least common multiple of a list of numbers.
 
-Use `functools.reduce()`, `math.gcd()` and `lcm(x,y) = x * y / gcd(x,y)` over the given list.
+- Use `functools.reduce()`, `math.gcd()` and `lcm(x,y) = x * y / gcd(x,y)` over the given list.
 
 ```py
 from functools import reduce

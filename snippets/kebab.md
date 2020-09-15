@@ -5,7 +5,7 @@ tags: string,regexp,intermediate
 
 Converts a string to kebab case.
 
-Break the string into words and combine them adding `-` as a separator, using a regexp.
+- Break the string into words and combine them adding `-` as a separator, using a regexp.
 
 ```py
 from re import sub

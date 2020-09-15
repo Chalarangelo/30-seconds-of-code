@@ -5,9 +5,9 @@ tags: list,recursion,intermediate
 
 Deep flattens a list.
 
-Use recursion. 
-Use `isinstance()` with `collections.abc.Iterable` to check if an element is iterable.
-If it is, apply `deep_flatten()` recursively, otherwise return `[lst]`.
+- Use recursion.
+- Use `isinstance()` with `collections.abc.Iterable` to check if an element is iterable.
+- If it is, apply `deep_flatten()` recursively, otherwise return `[lst]`.
 
 ```py
 from collections.abc import Iterable

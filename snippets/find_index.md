@@ -5,7 +5,7 @@ tags: list,beginner
 
 Returns the index of the first element in the provided list that satisfies the provided testing function.
 
-Use list comprehension, `enumerate()` and `next()` to return the index of the first element in `lst` for which `fn` returns `True`.
+- Use list comprehension, `enumerate()` and `next()` to return the index of the first element in `lst` for which `fn` returns `True`.
 
 ```py
 def find_index(lst, fn):

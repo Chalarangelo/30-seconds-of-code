@@ -5,8 +5,8 @@ tags: string,intermediate
 
 Returns `True` if the given string is a palindrome, `False` otherwise.
 
-Use `s.lower()` and `re.sub()` to convert to lowercase and  remove non-alphanumeric characters from the given string. 
-Then, compare the new string with its reverse.
+- Use `s.lower()` and `re.sub()` to convert to lowercase and  remove non-alphanumeric characters from the given string.
+- Then, compare the new string with its reverse.
 
 ```py
 from re import sub

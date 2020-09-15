@@ -5,9 +5,8 @@ tags: math,beginner
 
 Finds the median of a list of numbers.
 
-Sort the numbers of the list using `list.sort()` and find the median, which is either the middle element of the list if the list length is odd or the average of the two middle elements if the list length is even.
-
-[`statistics.median()`](https://docs.python.org/3/library/statistics.html#statistics.median) provides similar functionality to this snippet.
+- Sort the numbers of the list using `list.sort()` and find the median, which is either the middle element of the list if the list length is odd or the average of the two middle elements if the list length is even.
+- [`statistics.median()`](https://docs.python.org/3/library/statistics.html#statistics.median) provides similar functionality to this snippet.
 
 ```py
 def median(list):

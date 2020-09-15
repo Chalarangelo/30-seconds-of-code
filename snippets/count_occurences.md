@@ -5,7 +5,7 @@ tags: list,beginner
 
 Counts the occurrences of a value in a list.
 
-Increment a counter for every item in the list that has the given value and is of the same type.
+- Increment a counter for every item in the list that has the given value and is of the same type.
 
 ```py
 def count_occurrences(lst, val):

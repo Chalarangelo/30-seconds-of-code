@@ -5,7 +5,7 @@ tags: list,beginner
 
 Casts the provided value as a list if it's not one.
 
-Use `isinstance()` to check if the given value is enumerable and return it by using `list()` or encapsulated in a list accordingly.
+- Use `isinstance()` to check if the given value is enumerable and return it by using `list()` or encapsulated in a list accordingly.
 
 ```py
 def cast_list(val):

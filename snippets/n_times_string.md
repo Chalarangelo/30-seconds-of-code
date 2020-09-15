@@ -5,7 +5,7 @@ tags: string,beginner
 
 Prints out the same string a defined number of times.
 
-Repeat the string `n` times, using the `*` operator.
+- Repeat the string `n` times, using the `*` operator.
 
 ```py
 def n_times_string(s, n):

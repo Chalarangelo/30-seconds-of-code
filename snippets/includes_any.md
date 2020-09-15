@@ -5,7 +5,7 @@ tags: list,intermediate
 
 Returns `True` if any element in `values` is included in `lst`, `False` otherwise.
 
-Check if any value in `values` is contained in `lst` using a `for` loop, returning `True` if any one value is found, `False` otherwise.
+- Check if any value in `values` is contained in `lst` using a `for` loop, returning `True` if any one value is found, `False` otherwise.
 
 ```py
 def includes_any(lst, values):

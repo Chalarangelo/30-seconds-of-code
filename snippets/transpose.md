@@ -5,8 +5,8 @@ tags: list,intermediate
 
 Returns the transpose of a two-dimensional list.
 
-Use `*lst` to get the passed list as tuples.
-Use `zip()` in combination with `list()` to create the transpose of the given two-dimensional list.
+- Use `*lst` to get the passed list as tuples.
+- Use `zip()` in combination with `list()` to create the transpose of the given two-dimensional list.
 
 ```py
 def transpose(lst):

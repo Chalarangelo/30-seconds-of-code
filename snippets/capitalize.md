@@ -5,8 +5,8 @@ tags: string,intermediate
 
 Capitalizes the first letter of a string.
 
-Capitalize the first letter of the string and then add it with rest of the string. 
-Omit the `lower_rest` parameter to keep the rest of the string intact, or set it to `True` to convert to lowercase.
+- Capitalize the first letter of the string and then add it with rest of the string.
+- Omit the `lower_rest` parameter to keep the rest of the string intact, or set it to `True` to convert to lowercase.
 
 ```py
 def capitalize(s, lower_rest=False):

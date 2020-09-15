@@ -5,8 +5,8 @@ tags: string,intermediate
 
 Checks if a string is an anagram of another string (case-insensitive, ignores spaces, punctuation and special characters).
 
-Use `isalnum()` to filter out non-alphanumeric characters, `lower()` to transform each character to lowercase.
-Use `collections.Counter` to count the resulting characters for each string and compare the results.
+- Use `isalnum()` to filter out non-alphanumeric characters, `lower()` to transform each character to lowercase.
+- Use `collections.Counter` to count the resulting characters for each string and compare the results.
 
 ```py
 from collections import Counter

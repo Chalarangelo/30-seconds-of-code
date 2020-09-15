@@ -5,7 +5,7 @@ tags: math,beginner
 
 Returns a list of numbers in the arithmetic progression starting with the given positive integer and up to the specified limit.
 
-Use `range` and `list` with the appropriate start, step and end values.
+- Use `range` and `list` with the appropriate start, step and end values.
 
 ```py
 def find_multiples(n, lim):

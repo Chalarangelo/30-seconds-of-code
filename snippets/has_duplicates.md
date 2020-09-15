@@ -5,7 +5,7 @@ tags: list,beginner
 
 Returns `True` if there are duplicate values in a flat list, `False` otherwise.
 
-Use `set()` on the given list to remove duplicates, compare its length with the length of the list.
+- Use `set()` on the given list to remove duplicates, compare its length with the length of the list.
 
 ```py
 def has_duplicates(lst):

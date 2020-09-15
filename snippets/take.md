@@ -5,7 +5,7 @@ tags: list,beginner
 
 Returns a list with `n` elements removed from the beginning.
 
-Use slice notation to create a slice of the list with `n` elements taken from the beginning.
+- Use slice notation to create a slice of the list with `n` elements taken from the beginning.
 
 ```py
 def take(itr, n = 1):

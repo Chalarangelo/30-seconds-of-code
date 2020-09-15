@@ -5,7 +5,7 @@ tags: math,beginner
 
 Converts Fahrenheit to Celsius.
 
-Use the formula `celsius = (fahrenheit - 32) / 1.8` to convert from Fahrenheit to Celsius.
+- Use the formula `celsius = (fahrenheit - 32) / 1.8` to convert from Fahrenheit to Celsius.
 
 ```py
 def fahrenheit_to_celsius(fahrenheit):
