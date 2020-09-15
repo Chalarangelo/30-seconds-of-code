@@ -56,6 +56,7 @@ const SnippetPage = ({
           orgLogoSrc: '/assets/30s-icon.png',
           firstSeen: snippet.firstSeen,
           lastUpdated: snippet.lastUpdated,
+          type: 'snippet',
         } }
         breadcrumbsData={ breadcrumbs }
         canonical={ snippet.slug }
