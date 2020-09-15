@@ -108,7 +108,9 @@ export const extractData = async() => {
     ),
     compileStaticData(outPath, '/search', 'SearchPage', 0.25,
       {
-        searchIndex: transformSnippetIndex(allSnippetData, true),
+        searchIndex: transformSnippetIndex(
+          allSnippetData.filter(s => s.isListed), true
+        ),
         recommendedSnippets: transformSnippetIndex(allSnippetData.slice(0, 3)),
         pageDescription: literals.search.pageDescription(allSnippetData.length),
       }
