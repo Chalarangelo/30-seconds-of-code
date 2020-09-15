@@ -12,7 +12,7 @@
     "long": "CSS"
   },
   "slug": "react",
-  "featured": 5,
+  "featured": 4,
   "resolver": "jsxResolver",
   "theme": {
     "backColor": "#282c34",
