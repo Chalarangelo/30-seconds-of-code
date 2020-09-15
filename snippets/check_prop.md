@@ -5,7 +5,7 @@ tags: function,intermediate
 
 Given a predicate function, `fn`, and a `prop` string, this curried function will then take an object to inspect by calling the property and passing it to the predicate.
 
-Return a `lambda` function that takes an object and applies the predicate function, `fn` to the specified property.
+- Return a `lambda` function that takes an object and applies the predicate function, `fn` to the specified property.
 
 ```py
 def check_prop(fn, prop):

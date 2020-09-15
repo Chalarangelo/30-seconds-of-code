@@ -5,9 +5,9 @@ tags: list,beginner
 
 Initializes a list containing the numbers in the specified range where `start` and `end` are inclusive with their common difference `step`.
 
-Use `list` and `range()` to generate a list of the appropriate length, filled with the desired values in the given range.
-Omit `start` to use the default value of `0`.
-Omit `step` to use the default value of `1`.
+- Use `list` and `range()` to generate a list of the appropriate length, filled with the desired values in the given range.
+- Omit `start` to use the default value of `0`.
+- Omit `step` to use the default value of `1`.
 
 ```py
 def initialize_list_with_range(end, start=0, step=1):

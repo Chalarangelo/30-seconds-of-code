@@ -5,7 +5,7 @@ tags: list,intermediate
 
 Flattens a list, by spreading its elements into a new list.
 
-Loop over elements, use `list.extend()` if the element is a list, `list.append()` otherwise.
+- Loop over elements, use `list.extend()` if the element is a list, `list.append()` otherwise.
 
 ```py
 def spread(arg):

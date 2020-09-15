@@ -5,7 +5,7 @@ tags: list,beginner
 
 Removes falsey values from a list.
 
-Use `filter()` to filter out falsey values (`False`, `None`, `0`, and `""`).
+- Use `filter()` to filter out falsey values (`False`, `None`, `0`, and `""`).
 
 ```py
 def compact(lst):

@@ -5,7 +5,7 @@ tags: list,beginner
 
 Returns a list with `n` elements removed from the left.
 
-Use slice notation to remove the specified number of elements from the left.
+- Use slice notation to remove the specified number of elements from the left.
 
 ```py
 def drop(a, n = 1):

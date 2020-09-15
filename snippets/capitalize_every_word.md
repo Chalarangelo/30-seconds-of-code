@@ -5,7 +5,7 @@ tags: string,beginner
 
 Capitalizes the first letter of every word in a string.
 
-Use `s.title()` to capitalize first letter of every word in the string.
+- Use `s.title()` to capitalize first letter of every word in the string.
 
 ```py
 def capitalize_every_word(s):

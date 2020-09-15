@@ -5,11 +5,10 @@ tags: list,math,advanced
 
 Merges two or more lists into a list of lists, combining elements from each of the input lists based on their positions.
 
-Use `max` combined with list comprehension to get the length of the longest list in the arguments. 
-Use `range()` in combination with the `max_length` variable to loop as many times as there are elements in the longest list.
-If a list is shorter than `max_length`, use `fill_value` for the remaining items (defaults to `None`).
-
-[`zip()`](https://docs.python.org/3/library/functions.html#zip) and [`itertools.zip_longest()`](https://docs.python.org/3/library/itertools.html#itertools.zip_longest) provide similar functionality to this snippet.
+- Use `max` combined with list comprehension to get the length of the longest list in the arguments.
+- Use `range()` in combination with the `max_length` variable to loop as many times as there are elements in the longest list.
+- If a list is shorter than `max_length`, use `fill_value` for the remaining items (defaults to `None`).
+- [`zip()`](https://docs.python.org/3/library/functions.html#zip) and [`itertools.zip_longest()`](https://docs.python.org/3/library/itertools.html#itertools.zip_longest) provide similar functionality to this snippet.
 
 ```py
 def merge(*args, fill_value=None):

@@ -5,7 +5,7 @@ tags: function,intermediate
 
 Invokes the provided function after `ms` milliseconds.
 
-Use `time.sleep()` to delay the execution of `fn` by `ms / 1000` seconds.
+- Use `time.sleep()` to delay the execution of `fn` by `ms / 1000` seconds.
 
 ```py
 from time import sleep

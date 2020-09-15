@@ -5,8 +5,8 @@ tags: string,math,intermediate
 
 Converts the values of RGB components to a hexadecimal color code.
 
-Create a placeholder for a zero-padded hexadecimal value using `"{:02X}"`, copy it three times.
-Use `str.format()` on the resulting string to replace the placeholders with the given values.
+- Create a placeholder for a zero-padded hexadecimal value using `"{:02X}"`, copy it three times.
+- Use `str.format()` on the resulting string to replace the placeholders with the given values.
 
 ```py
 def rgb_to_hex(r, g, b):

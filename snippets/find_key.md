@@ -5,7 +5,7 @@ tags: dictionary,intermediate
 
 Returns the first key in the provided dictionary that has the given value.
 
-Use `dictionary.items()` and `next()` to return the first key that has a value equal to `val`.
+- Use `dictionary.items()` and `next()` to return the first key that has a value equal to `val`.
 
 ```py
 def find_key(dict, val):
