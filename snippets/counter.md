@@ -5,11 +5,11 @@ tags: browser,advanced
 
 Creates a counter with the specified range, step and duration for the specified selector.
 
-Check if `step` has the proper sign and change it accordingly.
-Use `setInterval()` in combination with `Math.abs()` and `Math.floor()` to calculate the time between each new text draw.
-Use `document.querySelector().innerHTML` to update the value of the selected element.
-Omit the fourth parameter, `step`, to use a default step of `1`.
-Omit the fifth parameter, `duration`, to use a default duration of `2000`ms.
+- Check if `step` has the proper sign and change it accordingly.
+- Use `setInterval()` in combination with `Math.abs()` and `Math.floor()` to calculate the time between each new text draw.
+- Use `document.querySelector().innerHTML` to update the value of the selected element.
+- Omit the fourth parameter, `step`, to use a default step of `1`.
+- Omit the fifth parameter, `duration`, to use a default duration of `2000`ms.
 
 ```js
 const counter = (selector, start, end, step = 1, duration = 2000) => {

@@ -5,7 +5,7 @@ tags: array,beginner
 
 Returns a new array with `n` elements removed from the right.
 
-Use `Array.prototype.slice()` to remove the specified number of elements from the right.
+- Use `Array.prototype.slice()` to remove the specified number of elements from the right.
 
 ```js
 const dropRight = (arr, n = 1) => arr.slice(0, -n);

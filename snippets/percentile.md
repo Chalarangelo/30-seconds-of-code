@@ -5,7 +5,7 @@ tags: math,intermediate
 
 Uses the percentile formula to calculate how many numbers in the given array are less or equal to the given value.
 
-Use `Array.prototype.reduce()` to calculate how many numbers are below the value and how many are the same value and apply the percentile formula.
+- Use `Array.prototype.reduce()` to calculate how many numbers are below the value and how many are the same value and apply the percentile formula.
 
 ```js
 const percentile = (arr, val) =>

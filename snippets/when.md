@@ -3,9 +3,9 @@ title: when
 tags: function,intermediate
 ---
 
-Tests a value, `x`, against a predicate function. If `true`, return `fn(x)`. Else, return `x`. 
+Tests a value, `x`, against a predicate function. If `true`, return `fn(x)`. Else, return `x`.
 
-Return a function expecting a single value, `x`, that returns the appropriate value based on `pred`.
+- Return a function expecting a single value, `x`, that returns the appropriate value based on `pred`.
 
 ```js
 const when = (pred, whenTrue) => x => (pred(x) ? whenTrue(x) : x);

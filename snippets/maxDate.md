@@ -5,7 +5,7 @@ tags: date,math,beginner
 
 Returns the maximum of the given dates.
 
-Use the ES6 spread syntax with `Math.max` to find the maximum date value, `new Date()` to convert it to a `Date` object.
+- Use the ES6 spread syntax with `Math.max` to find the maximum date value, `new Date()` to convert it to a `Date` object.
 
 ```js
 const maxDate = dates => new Date(Math.max(...dates));

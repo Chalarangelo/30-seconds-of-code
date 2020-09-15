@@ -5,7 +5,7 @@ tags: node,random,intermediate
 
 Generates a UUID in Node.JS.
 
-Use `crypto` API to generate a UUID, compliant with [RFC4122](https://www.ietf.org/rfc/rfc4122.txt) version 4.
+- Use `crypto` API to generate a UUID, compliant with [RFC4122](https://www.ietf.org/rfc/rfc4122.txt) version 4.
 
 ```js
 const crypto = require('crypto');

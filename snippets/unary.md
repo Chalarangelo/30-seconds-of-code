@@ -5,7 +5,7 @@ tags: function,beginner
 
 Creates a function that accepts up to one argument, ignoring any additional arguments.
 
-Call the provided function, `fn`, with just the first argument given.
+- Call the provided function, `fn`, with just the first argument given.
 
 ```js
 const unary = fn => val => fn(val);

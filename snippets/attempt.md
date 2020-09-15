@@ -5,7 +5,7 @@ tags: function,intermediate
 
 Attempts to invoke a function with the provided arguments, returning either the result or the caught error object.
 
-Use a `try... catch` block to return either the result of the function or an appropriate error.
+- Use a `try... catch` block to return either the result of the function or an appropriate error.
 
 ```js
 const attempt = (fn, ...args) => {

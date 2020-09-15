@@ -7,10 +7,9 @@ Computes the new ratings between two or more opponents using the [Elo rating sys
 of pre-ratings and returns an array containing post-ratings.
 The array should be ordered from best performer to worst performer (winner -> loser).
 
-Use the exponent `**` operator and math operators to compute the expected score (chance of winning).
-of each opponent and compute the new rating for each.
-Loop through the ratings, using each permutation to compute the post-Elo rating for each player in a pairwise fashion. 
-Omit the second argument to use the default `kFactor` of 32.
+- Use the exponent `**` operator and math operators to compute the expected score (chance of winning) of each opponent and compute the new rating for each.
+- Loop through the ratings, using each permutation to compute the post-Elo rating for each player in a pairwise fashion.
+- Omit the second argument to use the default `kFactor` of 32.
 
 ```js
 const elo = ([...ratings], kFactor = 32, selfRating) => {

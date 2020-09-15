@@ -5,7 +5,7 @@ tags: browser,intermediate
 
 Returns `true` if touch events are supported, `false` otherwise.
 
-Check if `ontouchstart` exists in `window` or `window.DocumentTouch` is true and the current `document` is an instance of it.
+- Check if `ontouchstart` exists in `window` or `window.DocumentTouch` is true and the current `document` is an instance of it.
 
 ```js
 const supportsTouchEvents = () =>

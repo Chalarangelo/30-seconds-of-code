@@ -5,8 +5,8 @@ tags: array,function,intermediate
 
 Filters out the non-unique values in an array, based on a provided comparator function.
 
-Use `Array.prototype.filter()` and `Array.prototype.every()` for an array containing only the unique values, based on the comparator function, `fn`.
-The comparator function takes four arguments: the values of the two elements being compared and their indexes.
+- Use `Array.prototype.filter()` and `Array.prototype.every()` for an array containing only the unique values, based on the comparator function, `fn`.
+- The comparator function takes four arguments: the values of the two elements being compared and their indexes.
 
 ```js
 const filterNonUniqueBy = (arr, fn) =>

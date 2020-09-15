@@ -5,9 +5,9 @@ tags: math,intermediate
 
 Adds an ordinal suffix to a number.
 
-Use the modulo operator (`%`) to find values of single and tens digits.
-Find which ordinal pattern digits match.
-If digit is found in teens pattern, use teens ordinal.
+- Use the modulo operator (`%`) to find values of single and tens digits.
+- Find which ordinal pattern digits match.
+- If digit is found in teens pattern, use teens ordinal.
 
 ```js
 const toOrdinalSuffix = num => {

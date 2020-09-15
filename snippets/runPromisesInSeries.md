@@ -5,7 +5,7 @@ tags: function,promise,intermediate
 
 Runs an array of promises in series.
 
-Use `Array.prototype.reduce()` to create a promise chain, where each promise returns the next promise when resolved.
+- Use `Array.prototype.reduce()` to create a promise chain, where each promise returns the next promise when resolved.
 
 ```js
 const runPromisesInSeries = ps => ps.reduce((p, next) => p.then(next), Promise.resolve());

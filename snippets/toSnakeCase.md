@@ -5,7 +5,7 @@ tags: string,regexp,intermediate
 
 Converts a string to snake case.
 
-Break the string into words and combine them adding `_` as a separator, using a regexp.
+- Break the string into words and combine them adding `_` as a separator, using a regexp.
 
 ```js
 const toSnakeCase = str =>

@@ -5,8 +5,8 @@ tags: object,array,intermediate
 
 Creates an array of key-value pair arrays from an object or other iterable (object, array, string, set etc.).
 
-Check if `Symbol.iterator` is defined and, if so, use `Array.prototype.entries()` to get an iterator for the given iterable, `Array.from()` to convert the result to an array of key-value pair arrays.
-If `Symbol.iterator` is not defined for `obj`, use `Object.entries()` instead.
+- Check if `Symbol.iterator` is defined and, if so, use `Array.prototype.entries()` to get an iterator for the given iterable, `Array.from()` to convert the result to an array of key-value pair arrays.
+- If `Symbol.iterator` is not defined for `obj`, use `Object.entries()` instead.
 
 ```js
 const toPairs = obj =>

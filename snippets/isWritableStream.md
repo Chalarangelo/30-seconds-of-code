@@ -5,8 +5,8 @@ tags: node,type,intermediate
 
 Checks if the given argument is a writable stream.
 
-Check if the value is different from `null`, use `typeof` to check if the value is of type `object` and the `pipe` property is of type `function`.
-Additionally check if the `typeof` the `_write` and `_writableState` properties are `function` and `object` respectively.
+- Check if the value is different from `null`, use `typeof` to check if the value is of type `object` and the `pipe` property is of type `function`.
+- Additionally check if the `typeof` the `_write` and `_writableState` properties are `function` and `object` respectively.
 
 ```js
 const isWritableStream = val =>

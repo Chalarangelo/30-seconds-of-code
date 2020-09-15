@@ -5,7 +5,7 @@ tags: array,intermediate
 
 Reduces a given Array-like into a value hash (keyed data store).
 
-Given an Iterable or Array-like structure, call `Array.prototype.reduce.call()` on the provided object to step over it and return an Object, keyed by the reference value.
+- Given an Iterable or Array-like structure, call `Array.prototype.reduce.call()` on the provided object to step over it and return an Object, keyed by the reference value.
 
 ```js
 const toHash = (object, key) =>
