@@ -33,7 +33,7 @@ pre[class*="language-"] {
   white-space: pre-wrap;
 }
 
-pre[data-code-language] {
+pre[data-code-language]:not([data-code-language=""]) {
   padding-top: 2.375rem;
 
   &::before {

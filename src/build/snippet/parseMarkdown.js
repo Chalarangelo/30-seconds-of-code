@@ -32,7 +32,7 @@ const transformers = [
   // Convert blog post code to the appropriate elements
   {
     blogType: 'any',
-    matcher: /<pre class="language-([^"]+)" data-code-language="([^"]+)">([\s\S]*?)<\/pre>/g,
+    matcher: /<pre class="language-([^"]+)" data-code-language="([^"]*)">([\s\S]*?)<\/pre>/g,
     replacer: '<pre class="blog-code language-$1" data-code-language="$2">$3</pre>',
   },
   // Convert blog blockquotes to the appropriate elements
@@ -115,8 +115,8 @@ const parseMarkdown = (markdown, isText = false, langData = []) => {
       node.value
     );
     const languageStringLiteral = isText && langData && langData.length
-      ? (langData.find(l => l.shortCode === languageName) || {}).languageLiteral
-      : null;
+      ? (langData.find(l => l.shortCode === languageName) || { languageLiteral: ''}).languageLiteral
+      : '';
     node.value = isText
       ? [
         `<div class="gatsby-highlight" data-language="${languageName}">`,
