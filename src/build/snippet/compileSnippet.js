@@ -24,7 +24,7 @@ export const compileSnippet = async(
   snippetsPath, snippet, {
     sourceDir, commonData, slugPrefix, repoUrlPrefix, assetPath, outPath,
     langData, language, isCssSnippet, isBlogSnippet, hasOptionalLanguage,
-    languages, icon, biasPenaltyMultiplier, cardTemplate, authors,
+    languages, icon, biasPenaltyMultiplier, cardTemplate, authors, featured,
   }, returnFullSnippet = false
 ) => {
   let data, gitMetadata, tags, text, code, rawCode, type,
@@ -120,6 +120,7 @@ export const compileSnippet = async(
     ...gitMetadata,
     slug: `/${slugPrefix}${convertToSeoSlug(snippet.slice(0, -3))}`,
     url: `${repoUrlPrefix}/${snippet}`,
+    isListed: featured > 0,
   };
 
   snippetData.ranking = rankSnippet({
@@ -179,6 +180,7 @@ export const compileSnippet = async(
     html: {
       description: snippetData.html.description,
     },
+    isListed: snippetData.isListed,
   };
 };
 
