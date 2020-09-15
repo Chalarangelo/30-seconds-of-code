@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import config from 'config/global';
 import literals from 'lang/en/client/common';
+import { generateStructuredData } from 'utils';
 
 require('styles/index.scss'); // Do not change this to `import`, it's not going to work, no clue why
 
@@ -59,37 +60,9 @@ const Meta = ({
   if (structuredData) {
     scripts.push({
       type: 'application/ld+json',
-      innerHTML: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'TechArticle',
-        'mainEntityOfPage': {
-          '@type': 'WebPage',
-          '@id': `${config.websiteUrl}${structuredData.slug}`,
-        },
-        'headline': structuredData.title,
-        'image': [
-          `${config.websiteUrl}${logoSrc}`,
-        ],
-        'datePublished': structuredData.firstSeen,
-        'dateModified': structuredData.lastUpdated,
-        'author': {
-          '@type': 'Organization',
-          'name': config.orgName,
-          'logo': {
-            '@type': 'ImageObject',
-            'url': `${config.websiteUrl}${structuredData.orgLogoSrc}`,
-          },
-        },
-        'publisher': {
-          '@type': 'Organization',
-          'name': config.orgName,
-          'logo': {
-            '@type': 'ImageObject',
-            'url': `${config.websiteUrl}${structuredData.orgLogoSrc}`,
-          },
-        },
-        'description': structuredData.description,
-      }),
+      innerHTML: JSON.stringify(
+        generateStructuredData(structuredData, config, logoSrc)
+      ),
     });
   }
 
