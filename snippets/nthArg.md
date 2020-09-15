@@ -5,7 +5,7 @@ tags: function,beginner
 
 Creates a function that gets the argument at index `n`. If `n` is negative, the nth argument from the end is returned.
 
-Use `Array.prototype.slice()` to get the desired argument at index `n`.
+- Use `Array.prototype.slice()` to get the desired argument at index `n`.
 
 ```js
 const nthArg = n => (...args) => args.slice(n)[0];

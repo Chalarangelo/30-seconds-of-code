@@ -5,7 +5,7 @@ tags: array,math,beginner
 
 Returns the difference between two arrays.
 
-Create a `Set` from `b`, then use `Array.prototype.filter()` on `a` to only keep values not contained in `b`.
+- Create a `Set` from `b`, then use `Array.prototype.filter()` on `a` to only keep values not contained in `b`.
 
 ```js
 const difference = (a, b) => {

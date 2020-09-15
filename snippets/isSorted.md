@@ -5,9 +5,9 @@ tags: array,intermediate
 
 Returns `1` if the array is sorted in ascending order, `-1` if it is sorted in descending order or `0` if it is not sorted.
 
-Calculate the ordering `direction` for the first two elements.
-Use `Object.entries()` to loop over array objects and compare them in pairs.
-Return `0` if the `direction` changes or the `direction` if the last element is reached.
+- Calculate the ordering `direction` for the first two elements.
+- Use `Object.entries()` to loop over array objects and compare them in pairs.
+- Return `0` if the `direction` changes or the `direction` if the last element is reached.
 
 ```js
 const isSorted = arr => {

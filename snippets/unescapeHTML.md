@@ -5,7 +5,7 @@ tags: string,browser,beginner
 
 Unescapes escaped HTML characters.
 
-Use `String.prototype.replace()` with a regex that matches the characters that need to be unescaped, using a callback function to replace each escaped character instance with its associated unescaped character using a dictionary (object).
+- Use `String.prototype.replace()` with a regex that matches the characters that need to be unescaped, using a callback function to replace each escaped character instance with its associated unescaped character using a dictionary (object).
 
 ```js
 const unescapeHTML = str =>

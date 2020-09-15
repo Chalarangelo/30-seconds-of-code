@@ -5,8 +5,8 @@ tags: array,math,intermediate
 
 Returns the highest index at which value should be inserted into array in order to maintain its sort order.
 
-Check if the array is sorted in descending order (loosely).
-Use `Array.prototype.reverse()` and `Array.prototype.findIndex()` to find the appropriate last index where the element should be inserted.
+- Check if the array is sorted in descending order (loosely).
+- Use `Array.prototype.reverse()` and `Array.prototype.findIndex()` to find the appropriate last index where the element should be inserted.
 
 ```js
 const sortedLastIndex = (arr, n) => {

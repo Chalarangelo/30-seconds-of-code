@@ -5,7 +5,7 @@ tags: array,function,intermediate
 
 Executes a provided function once for each array element, starting from the array's last element.
 
-Use `Array.prototype.slice()` to clone the given array, `Array.prototype.reverse()` to reverse it and `Array.prototype.forEach()` to iterate over the reversed array.
+- Use `Array.prototype.slice()` to clone the given array, `Array.prototype.reverse()` to reverse it and `Array.prototype.forEach()` to iterate over the reversed array.
 
 ```js
 const forEachRight = (arr, callback) =>

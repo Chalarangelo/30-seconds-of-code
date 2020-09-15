@@ -5,11 +5,11 @@ tags: array,function,advanced
 
 Creates an array of elements, grouped based on the position in the original arrays and using function as the last value to specify how grouped values should be combined.
 
-Check if the last argument provided is a function.
-Use `Math.max()` to get the longest array in the arguments.
-Creates an array with that length as return value and use `Array.from()` with a map-function to create an array of grouped elements.
-If lengths of the argument-arrays vary, `undefined` is used where no value could be found.
-The function is invoked with the elements of each group `(...group)`.
+- Check if the last argument provided is a function.
+- Use `Math.max()` to get the longest array in the arguments.
+- Creates an array with that length as return value and use `Array.from()` with a map-function to create an array of grouped elements.
+- If lengths of the argument-arrays vary, `undefined` is used where no value could be found.
+- The function is invoked with the elements of each group `(...group)`.
 
 ```js
 const zipWith = (...array) => {

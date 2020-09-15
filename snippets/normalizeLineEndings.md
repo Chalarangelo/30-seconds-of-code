@@ -5,8 +5,8 @@ tags: array,intermediate
 
 Normalizes line endings in a string.
 
-Use `String.prototype.replace()` and a regular expression to match and replace line endings with the `normalized` version.
-Omit the seconds argument, `normalized`, to use the default value of `'\r\n'`.
+- Use `String.prototype.replace()` and a regular expression to match and replace line endings with the `normalized` version.
+- Omit the seconds argument, `normalized`, to use the default value of `'\r\n'`.
 
 ```js
 const normalizeLineEndings = (str, normalized = '\r\n') => str.replace(/\r?\n/g, normalized);

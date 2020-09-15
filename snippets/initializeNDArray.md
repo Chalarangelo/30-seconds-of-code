@@ -5,8 +5,8 @@ tags: array,recursion,intermediate
 
 Create a n-dimensional array with given value.
 
-Use recursion.
-Use `Array.prototype.map()` to generate rows where each is a new array initialized using `initializeNDArray`.
+- Use recursion.
+- Use `Array.prototype.map()` to generate rows where each is a new array initialized using `initializeNDArray`.
 
 ```js
 const initializeNDArray = (val, ...args) =>

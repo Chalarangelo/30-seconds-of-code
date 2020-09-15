@@ -5,7 +5,7 @@ tags: date,beginner
 
 Check if a date is after another date.
 
-Use the greater than operator (`>`) to check if the first date comes after the second one.
+- Use the greater than operator (`>`) to check if the first date comes after the second one.
 
 ```js
 const isAfterDate = (dateA, dateB) => dateA > dateB;

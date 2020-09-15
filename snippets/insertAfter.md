@@ -5,7 +5,7 @@ tags: browser,beginner
 
 Inserts an HTML string after the end of the specified element.
 
-Use `el.insertAdjacentHTML()` with a position of `'afterend'` to parse `htmlString` and insert it after the end of `el`.
+- Use `el.insertAdjacentHTML()` with a position of `'afterend'` to parse `htmlString` and insert it after the end of `el`.
 
 ```js
 const insertAfter = (el, htmlString) => el.insertAdjacentHTML('afterend', htmlString);
