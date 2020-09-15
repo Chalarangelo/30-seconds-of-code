@@ -82,6 +82,7 @@ export const compileSnippet = async(
       isBlog: isBlogSnippet,
       type,
       assetPath,
+      langData,
     }
   );
 

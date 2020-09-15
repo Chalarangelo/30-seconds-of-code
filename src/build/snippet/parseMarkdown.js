@@ -32,8 +32,8 @@ const transformers = [
   // Convert blog post code to the appropriate elements
   {
     blogType: 'any',
-    matcher: /<pre class="language-([^"]+)">([\s\S]*?)<\/pre>/g,
-    replacer: '<pre class="blog-code language-$1">$2</pre>',
+    matcher: /<pre class="language-([^"]+)" data-code-language="([^"]+)">([\s\S]*?)<\/pre>/g,
+    replacer: '<pre class="blog-code language-$1" data-code-language="$2">$3</pre>',
   },
   // Convert blog blockquotes to the appropriate elements
   {
@@ -103,7 +103,7 @@ const highlightCode = (language, code) => {
  * Parses markdown into HTML from a given markdown string, using remark + prismjs.
  * @param {string} markdown - The markdown string to be parsed.
  */
-const parseMarkdown = (markdown, isText = false) => {
+const parseMarkdown = (markdown, isText = false, langData = []) => {
   const ast = remark.parse(markdown);
 
   // Highlight code blocks
@@ -114,10 +114,13 @@ const parseMarkdown = (markdown, isText = false) => {
       languageName,
       node.value
     );
+    const languageStringLiteral = isText && langData && langData.length
+      ? (langData.find(l => l.shortCode === languageName) || {}).languageLiteral
+      : null;
     node.value = isText
       ? [
         `<div class="gatsby-highlight" data-language="${languageName}">`,
-        `<pre class="language-${languageName}">`,
+        `<pre class="language-${languageName}" data-code-language="${languageStringLiteral}">`,
         `${highlightedCode.trim()}`,
         `</pre>`,
         `</div>`,
@@ -135,11 +138,11 @@ const parseMarkdown = (markdown, isText = false) => {
   return hastToHTML(htmlAst, { allowDangerousHtml: true });
 };
 
-const parseMarkdownSegments = ({texts, codeBlocks}, {isBlog, type, assetPath}) => {
+const parseMarkdownSegments = ({texts, codeBlocks}, {isBlog, type, assetPath, langData}) => {
   const result = {};
   Object.entries(texts).forEach(([key, value]) => {
     if(!value) return;
-    result[key] = value.trim() ? parseMarkdown(value, true) : '';
+    result[key] = value.trim() ? parseMarkdown(value, true, langData) : '';
   });
   if (isBlog) {
     result.fullDescription = transformers.reduce(
