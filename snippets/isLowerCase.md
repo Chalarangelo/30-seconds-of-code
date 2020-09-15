@@ -5,7 +5,7 @@ tags: string,beginner
 
 Checks if a string is lower case.
 
-Convert the given string to lower case, using `String.toLowerCase()` and compare it to the original.
+- Convert the given string to lower case, using `String.toLowerCase()` and compare it to the original.
 
 ```js
 const isLowerCase = str => str === str.toLowerCase();

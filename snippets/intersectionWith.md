@@ -5,7 +5,7 @@ tags: array,function,intermediate
 
 Returns a list of elements that exist in both arrays, using a provided comparator function.
 
-Use `Array.prototype.filter()` and `Array.prototype.findIndex()` in combination with the provided comparator to determine intersecting values.
+- Use `Array.prototype.filter()` and `Array.prototype.findIndex()` in combination with the provided comparator to determine intersecting values.
 
 ```js
 const intersectionWith = (a, b, comp) => a.filter(x => b.findIndex(y => comp(x, y)) !== -1);

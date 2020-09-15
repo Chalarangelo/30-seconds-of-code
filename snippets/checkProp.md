@@ -5,7 +5,7 @@ tags: function,object,beginner
 
 Given a `predicate` function and a `prop` string, this curried function will then take an `object` to inspect by calling the property and passing it to the predicate.
 
-Summon `prop` on `obj`, pass it to a provided `predicate` function and return a masked boolean.
+- Summon `prop` on `obj`, pass it to a provided `predicate` function and return a masked boolean.
 
 ```js
 const checkProp = (predicate, prop) => obj => !!predicate(obj[prop]);

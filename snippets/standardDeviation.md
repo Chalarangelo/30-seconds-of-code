@@ -5,9 +5,9 @@ tags: math,array,intermediate
 
 Returns the standard deviation of an array of numbers.
 
-Use `Array.prototype.reduce()` to calculate the mean, variance and the sum of the variance of the values, the variance of the values, then
-determine the standard deviation.
-You can omit the second argument to get the sample standard deviation or set it to `true` to get the population standard deviation.
+- Use `Array.prototype.reduce()` to calculate the mean, variance and the sum of the variance of the values, the variance of the values, then
+- determine the standard deviation.
+- You can omit the second argument to get the sample standard deviation or set it to `true` to get the population standard deviation.
 
 ```js
 const standardDeviation = (arr, usePopulation = false) => {

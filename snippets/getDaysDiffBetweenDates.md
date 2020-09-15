@@ -5,7 +5,7 @@ tags: date,intermediate
 
 Returns the difference (in days) between two dates.
 
-Calculate the difference (in days) between two `Date` objects.
+- Calculate the difference (in days) between two `Date` objects.
 
 ```js
 const getDaysDiffBetweenDates = (dateInitial, dateFinal) =>

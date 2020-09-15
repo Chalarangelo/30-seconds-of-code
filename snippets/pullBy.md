@@ -5,10 +5,10 @@ tags: array,function,advanced
 
 Mutates the original array to filter out the values specified, based on a given iterator function.
 
-Check if the last argument provided in a function.
-Use `Array.prototype.map()` to apply the iterator function `fn` to all array elements.
-Use `Array.prototype.filter()` and `Array.prototype.includes()` to pull out the values that are not needed.
-Use `Array.prototype.length = 0` to mutate the passed in an array by resetting it's length to zero and `Array.prototype.push()` to re-populate it with only the pulled values.
+- Check if the last argument provided in a function.
+- Use `Array.prototype.map()` to apply the iterator function `fn` to all array elements.
+- Use `Array.prototype.filter()` and `Array.prototype.includes()` to pull out the values that are not needed.
+- Use `Array.prototype.length = 0` to mutate the passed in an array by resetting it's length to zero and `Array.prototype.push()` to re-populate it with only the pulled values.
 
 ```js
 const pullBy = (arr, ...args) => {

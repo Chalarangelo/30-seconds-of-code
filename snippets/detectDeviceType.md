@@ -5,7 +5,7 @@ tags: browser,intermediate
 
 Detects whether the website is being opened in a mobile device or a desktop/laptop.
 
-Use a regular expression to test the `navigator.userAgent` property to figure out if the device is a mobile device or a desktop/laptop.
+- Use a regular expression to test the `navigator.userAgent` property to figure out if the device is a mobile device or a desktop/laptop.
 
 ```js
 const detectDeviceType = () =>

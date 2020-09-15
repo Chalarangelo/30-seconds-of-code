@@ -3,12 +3,12 @@ title: hz
 tags: function,intermediate
 ---
 
-Returns the number of times a function executed per second. 
+Returns the number of times a function executed per second.
 `hz` is the unit for `hertz`, the unit of frequency defined as one cycle per second.
 
-Use `performance.now()` to get the difference in milliseconds before and after the iteration loop to calculate the time elapsed executing the function `iterations` times. 
-Return the number of cycles per second by converting milliseconds to seconds and dividing it by the time elapsed. 
-Omit the second argument, `iterations`, to use the default of 100 iterations.
+- Use `performance.now()` to get the difference in milliseconds before and after the iteration loop to calculate the time elapsed executing the function `iterations` times.
+- Return the number of cycles per second by converting milliseconds to seconds and dividing it by the time elapsed.
+- Omit the second argument, `iterations`, to use the default of 100 iterations.
 
 ```js
 const hz = (fn, iterations = 100) => {

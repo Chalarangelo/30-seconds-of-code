@@ -5,7 +5,7 @@ tags: browser,intermediate
 
 Returns `true` if the bottom of the page is visible, `false` otherwise.
 
-Use `scrollY`, `scrollHeight` and `clientHeight` to determine if the bottom of the page is visible.
+- Use `scrollY`, `scrollHeight` and `clientHeight` to determine if the bottom of the page is visible.
 
 ```js
 const bottomVisible = () =>

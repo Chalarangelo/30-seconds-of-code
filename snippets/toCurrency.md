@@ -5,7 +5,7 @@ tags: math,string,intermediate
 
 Take a number and return specified currency formatting.
 
-Use `Intl.NumberFormat` to enable country / currency sensitive formatting.
+- Use `Intl.NumberFormat` to enable country / currency sensitive formatting.
 
 ```js
 const toCurrency = (n, curr, LanguageFormat = undefined) =>

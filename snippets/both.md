@@ -5,7 +5,7 @@ tags: function,logic,beginner
 
 Returns `true` if both functions return `true` for a given set of arguments, `false` otherwise.
 
-Use the logical and (`&&`) operator on the result of calling the two functions with the supplied `args`.
+- Use the logical and (`&&`) operator on the result of calling the two functions with the supplied `args`.
 
 ```js
 const both = (f, g) => (...args) => f(...args) && g(...args);

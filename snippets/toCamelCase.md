@@ -5,7 +5,7 @@ tags: string,regexp,intermediate
 
 Converts a string to camelcase.
 
-Break the string into words and combine them capitalizing the first letter of each word, using a regexp.
+- Break the string into words and combine them capitalizing the first letter of each word, using a regexp.
 
 ```js
 const toCamelCase = str => {

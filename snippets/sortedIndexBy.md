@@ -5,8 +5,8 @@ tags: array,math,function,intermediate
 
 Returns the lowest index at which value should be inserted into array in order to maintain its sort order, based on a provided iterator function.
 
-Check if the array is sorted in descending order (loosely).
-Use `Array.prototype.findIndex()` to find the appropriate index where the element should be inserted, based on the iterator function `fn`.
+- Check if the array is sorted in descending order (loosely).
+- Use `Array.prototype.findIndex()` to find the appropriate index where the element should be inserted, based on the iterator function `fn`.
 
 ```js
 const sortedIndexBy = (arr, n, fn) => {
