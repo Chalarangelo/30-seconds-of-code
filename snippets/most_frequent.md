@@ -5,7 +5,7 @@ tags: list,beginner
 
 Returns the most frequent element in a list.
 
-Use `set(list)` to get the unique values in the `list` combined with `max()` to find the element that has the most appearances.
+- Use `set(list)` to get the unique values in the `list` combined with `max()` to find the element that has the most appearances.
 
 ```py
 def most_frequent(list):

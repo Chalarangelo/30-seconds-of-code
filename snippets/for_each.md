@@ -5,7 +5,7 @@ tags: list,beginner
 
 Executes the provided function once for each list element.
 
-Use a `for` loop to execute `fn` for each element in `itr`.
+- Use a `for` loop to execute `fn` for each element in `itr`.
 
 ```py
 def for_each(itr, fn):

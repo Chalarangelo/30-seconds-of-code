@@ -5,8 +5,8 @@ tags: list,sort,intermediate
 
 Sorts one list based on another list containing the desired indexes.
 
-Use `zip()` and `sorted()` to combine and sort the two lists, based on the values of `indexes`.
-Use a list comprehension to get the first element of each pair from the result.
+- Use `zip()` and `sorted()` to combine and sort the two lists, based on the values of `indexes`.
+- Use a list comprehension to get the first element of each pair from the result.
 
 ```py
 def sort_by_indexes(lst, indexes):

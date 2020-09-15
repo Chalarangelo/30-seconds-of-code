@@ -5,9 +5,9 @@ tags: function,list,advanced
 
 Builds a list, using an iterator function and an initial seed value.
 
-The iterator function accepts one argument (`seed`) and must always return a list with two elements ([`value`, `nextSeed`]) or `False` to terminate.
-Use a generator function, `fn_generator`, that uses a `while` loop to call the iterator function and `yield` the `value` until it returns `False`.
-Use list comprehension to return the list that is produced by the generator, using the iterator function.
+- The iterator function accepts one argument (`seed`) and must always return a list with two elements ([`value`, `nextSeed`]) or `False` to terminate.
+- Use a generator function, `fn_generator`, that uses a `while` loop to call the iterator function and `yield` the `value` until it returns `False`.
+- Use list comprehension to return the list that is produced by the generator, using the iterator function.
 
 ```py
 def unfold(fn, seed):

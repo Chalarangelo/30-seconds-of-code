@@ -5,7 +5,7 @@ tags: math,beginner
 
 Converts an angle from degrees to radians.
 
-Use `math.pi` and the degrees to radians formula to convert the angle from degrees to radians.
+- Use `math.pi` and the degrees to radians formula to convert the angle from degrees to radians.
 
 ```py
 from math import pi

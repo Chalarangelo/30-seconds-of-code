@@ -5,7 +5,7 @@ tags: math,list,beginner
 
 Returns the average of two or more numbers.
 
-Use `sum()` to sum all of the `args` provided, divide by `len(args)`.
+- Use `sum()` to sum all of the `args` provided, divide by `len(args)`.
 
 ```py
 def average(*args):

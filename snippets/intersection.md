@@ -5,7 +5,7 @@ tags: list,beginner
 
 Returns a list of elements that exist in both lists.
 
-Create a `set` from `a` and `b`, then use the built-in set operator `&` to only keep values contained in both sets, then transform the `set` back into a `list`.
+- Create a `set` from `a` and `b`, then use the built-in set operator `&` to only keep values contained in both sets, then transform the `set` back into a `list`.
 
 ```py
 def intersection(a, b):

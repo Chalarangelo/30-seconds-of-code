@@ -5,8 +5,8 @@ tags: list,intermediate
 
 Groups the elements of a list based on the given function and returns the count of elements in each group.
 
-Use `map()` to map the values of the given list using the given function.
-Iterate over the map and increase the element count each time it occurs.
+- Use `map()` to map the values of the given list using the given function.
+- Iterate over the map and increase the element count each time it occurs.
 
 ```py
 def count_by(arr, fn=lambda x: x):

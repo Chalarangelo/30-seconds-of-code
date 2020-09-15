@@ -5,7 +5,7 @@ tags: function,intermediate
 
 Curries a function.
 
-Use `functools.partial()` to return a new partial object which behaves like `fn` with the given arguments, `args`, partially applied.
+- Use `functools.partial()` to return a new partial object which behaves like `fn` with the given arguments, `args`, partially applied.
 
 ```py
 from functools import partial

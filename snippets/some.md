@@ -5,7 +5,7 @@ tags: list,function,intermediate
 
 Returns `True` if the provided function returns `True` for at least one element in the list, `False` otherwise.
 
-Use `any()` in combination with `map()` and `fn` to check if `fn` returns `True` for any element in the list.
+- Use `any()` in combination with `map()` and `fn` to check if `fn` returns `True` for any element in the list.
 
 ```py
 def some(lst, fn=lambda x: x):

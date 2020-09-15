@@ -5,7 +5,7 @@ tags: list,function,intermediate
 
 Returns the symmetric difference between two lists, after applying the provided function to each list element of both.
 
-Create a `set` by applying `fn` to each element in every list, then use list comprehension in combination with `fn` on each one to only keep values not contained in the previously created set of the other.
+- Create a `set` by applying `fn` to each element in every list, then use list comprehension in combination with `fn` on each one to only keep values not contained in the previously created set of the other.
 
 ```py
 def symmetric_difference_by(a, b, fn):

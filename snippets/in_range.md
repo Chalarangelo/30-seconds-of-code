@@ -5,8 +5,8 @@ tags: math,beginner
 
 Checks if the given number falls within the given range.
 
-Use arithmetic comparison to check if the given number is in the specified range.
-If the second parameter, `end`, is not specified, the range is considered to be from `0` to `start`.
+- Use arithmetic comparison to check if the given number is in the specified range.
+- If the second parameter, `end`, is not specified, the range is considered to be from `0` to `start`.
 
 ```py
 def in_range(n, start, end = 0):

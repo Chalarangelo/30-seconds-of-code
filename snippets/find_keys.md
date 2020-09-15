@@ -5,7 +5,7 @@ tags: dictionary,intermediate
 
 Returns all keys in the provided dictionary that have the given value.
 
-Use `dictionary.items()`, a generator and `list()` to return all keys that have a value equal to `val`.
+- Use `dictionary.items()`, a generator and `list()` to return all keys that have a value equal to `val`.
 
 ```py
 def find_keys(dict, val):
