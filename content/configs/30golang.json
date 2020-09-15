@@ -8,7 +8,7 @@
     "long": "Go"
   },
   "slug": "go",
-  "featured": 9,
+  "featured": -1,
   "theme": {
     "backColor": "#5ac9e2",
     "foreColor": "#000000",
