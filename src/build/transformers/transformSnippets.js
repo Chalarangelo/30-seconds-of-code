@@ -1,5 +1,5 @@
 import { stripMarkdownFormat } from 'utils';
-import { transformTagName } from './transformTags';
+import { stripExpertiseFromTags, transformTagName } from './transformTags';
 import literals from 'lang/en/snippet';
 
 /**
@@ -59,7 +59,7 @@ export const transformSnippetContext = (snippet, cardTemplate) => {
     icon: snippet.icon,
     tags: {
       primary: transformTagName(snippet.tags.primary),
-      all: snippet.tags.all.map(transformTagName),
+      all: stripExpertiseFromTags(snippet.tags.all).map(transformTagName),
     },
     html: snippet.html,
     code: snippet.code,

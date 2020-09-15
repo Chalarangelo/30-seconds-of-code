@@ -120,7 +120,7 @@ describe('transformSnippetContext', () => {
     expect(result.expertise).toBe('Intermediate');
     expect(result.language).toEqual(snippet.language);
     expect(result.tags.primary).toBe('Array');
-    expect(result.tags.all).toEqual(['Array', 'Function', 'Intermediate']);
+    expect(result.tags.all).toEqual(['Array', 'Function']);
     expect(result.html).toEqual(snippet.html);
     expect(result.code).toEqual(snippet.code);
     expect(result.irrelevantStuff).toBe(undefined);
