@@ -16,8 +16,9 @@ const propTypes = {
 const PreviewCard = ({
   snippet,
 }) => {
-  const tags = [snippet.primaryTag, snippet.expertise];
-  if (snippet.language) tags.unshift(snippet.language);
+  const tags = snippet.language
+    ? [snippet.language, snippet.primaryTag]
+    : [snippet.primaryTag, snippet.expertise];
   return(
     <li className='card preview-card'>
       <div className={ `card-icon icon icon-${snippet.icon}` }>
