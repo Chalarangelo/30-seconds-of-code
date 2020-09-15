@@ -18,6 +18,7 @@ const propTypes = {
     listingSublinks: PropTypes.arrayOf(PropTypes.shape({})),
     pageDescription: PropTypes.string.isRequired,
   }),
+  path: PropTypes.string.isRequired,
   dispatch: PropTypes.func,
 };
 
@@ -36,6 +37,7 @@ const ListingPage = ({
     listingSublinks = [],
     pageDescription,
   },
+  path,
   dispatch,
 }) => {
   React.useEffect(() => {
@@ -56,6 +58,12 @@ const ListingPage = ({
         title={ isHomePage ? '' : listingName }
         description={ pageDescription }
         canonical={ isHomePage ? '/' : '' }
+        structuredData={ {
+          title: listingName,
+          slug: path,
+          items: snippetList,
+          type: 'listing',
+        } }
       />
       <Shell>
         {
