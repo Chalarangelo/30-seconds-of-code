@@ -25,6 +25,7 @@ import {
 } from './function';
 
 import {
+  generateStructuredData,
   hasKeys,
   hasKey,
   get
@@ -44,6 +45,7 @@ export {
   getBaseURL,
   getRootURL,
   throttle,
+  generateStructuredData,
   hasKeys,
   hasKey,
   get,
