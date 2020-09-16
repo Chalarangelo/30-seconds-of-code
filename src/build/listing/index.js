@@ -93,11 +93,13 @@ export const compileListingPagesWithOrderOptions = async(
 export const compileListingData = async(snippetIndex, listingMetas) => {
   // 1. Create listing pages for the main listing:
   // Tranform and chunk data for popularity, alphabetical and expertise ordering
-  const transformedIndex = transformSnippetIndex(snippetIndex);
+  const transformedIndex = transformSnippetIndex(
+    snippetIndex.filter(s => s.isListed)
+  );
   const popularChunks = chunk(transformedIndex, CARDS_PER_PAGE);
   // Create main listing sublinks and customization method for context
   const mainListingSublinks = listingMetas
-    .map(v => v.featured > 0 ? v : {...v, featured: 500 })
+    .filter(v => v.featured > 0)
     .sort((a, b) => a.featured === b.featured ? a.name - b.name : a.featured - b.featured);
   const mainContextCustomizer = order => {
     return {
@@ -116,7 +118,7 @@ export const compileListingData = async(snippetIndex, listingMetas) => {
       listingType: 'main',
       listingSublinks: mainListingSublinks,
       pageDescription: literals.pageDescription('main', {
-        snippetCount: transformedIndex.length,
+        snippetCount: snippetIndex.length,
       }),
     },
     '/list',
