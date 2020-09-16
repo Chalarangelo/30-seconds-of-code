@@ -78,6 +78,11 @@ export const loadContentConfigs = (inPath, boundLog) => {
         icon: cfg.theme.iconName,
       }));
     boundLog(`Processed data for ${langData.length} languages`, 'success');
+    // TODO: Implement a better way to inject these
+    langData.push({
+      shortCode: 'html',
+      languageLiteral: 'HTML',
+    });
     configs = getRichConfigs(rawConfigs, langData);
 
     global.yild.configs = configs;
