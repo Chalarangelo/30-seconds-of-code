@@ -1,20 +1,17 @@
 ---
 title: reverseNumber
-tags: number,array,beginner
+tags: number,string,beginner
 ---
 
 Reverses a number.
-Use `Object.prototype.toString()` to convert number to a string.
-Use the split function `String.prototype.split()` to convert string to array and `Array.prototype.reverse()` to reverse the order of the characters in the string.
-Combine characters to get a string using `String.prototype.join('')`.
-Use the `parseFloat()` to convert string to a number and use `Math.sign()` to preserve the signum value of the number.
-_Note_: Here `parseFloat()` is used instead of `parseInt()` so floating point numbers are properly handled.
+
+- Use `Object.prototype.toString()` to convert `n` to a string.
+- Use `String.prototype.split('')`, `Array.prototype.reverse()` and `String.prototype.join('')` to get the reversed value of `n` as a string.
+- Use `parseFloat()` to convert the string to a number and `Math.sign()` to preserve its sign.
 
 ```js
-const reverseNumber = n => {
-  const reveresedNumber = n.toString().split('').reverse().join('');
-  return parseFloat(reveresedNumber) * Math.sign(n);
-}
+const reverseNumber = n => 
+  parseFloat(`${n}`.split('').reverse().join('')) * Math.sign(n);
 ```
 
 ```js
