@@ -6,7 +6,6 @@
   "main": "index.js",
   "author": "30-seconds",
   "devDependencies": {
-    "@30-seconds/integration-tools": "^3.0.0",
     "@babel/core": "^7.8.7",
     "@babel/eslint-parser": "^7.11.4",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
