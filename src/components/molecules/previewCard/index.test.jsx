@@ -54,7 +54,6 @@ describe('<PreviewCard />', () => {
     const tagsText = tags.textContent.toLowerCase();
     expect(tagsText).toContain(previewSnippet.language.toLowerCase());
     expect(tagsText).toContain(previewSnippet.primaryTag.toLowerCase());
-    expect(tagsText).toContain(previewSnippet.expertise.toLowerCase());
   });
 
   it('should render the correct description', () => {
