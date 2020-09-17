@@ -32,7 +32,7 @@
     "gatsby-plugin-catch-links": "^2.3.12",
     "gatsby-plugin-manifest": "^2.4.30",
     "gatsby-plugin-netlify": "^2.3.15",
-    "gatsby-plugin-offline": "^2.2.4",
+    "gatsby-plugin-offline": "^3.2.28",
     "gatsby-plugin-react-helmet": "^3.3.11",
     "gatsby-plugin-resolve-src": "^2.0.0",
     "gatsby-plugin-sass": "^2.3.13",
