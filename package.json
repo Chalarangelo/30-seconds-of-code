@@ -29,7 +29,7 @@
     "front-matter": "^3.1.0",
     "fs-extra": "^9.0.0",
     "gatsby": "^2.21.12",
-    "gatsby-plugin-catch-links": "^2.1.27",
+    "gatsby-plugin-catch-links": "^2.3.12",
     "gatsby-plugin-manifest": "^2.2.45",
     "gatsby-plugin-netlify": "^2.1.34",
     "gatsby-plugin-offline": "^2.2.4",
