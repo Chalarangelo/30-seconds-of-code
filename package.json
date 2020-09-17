@@ -34,7 +34,6 @@
     "gatsby-plugin-netlify": "^2.3.15",
     "gatsby-plugin-offline": "^3.2.28",
     "gatsby-plugin-react-helmet": "^3.3.11",
-    "gatsby-plugin-resolve-src": "^2.0.0",
     "gatsby-plugin-sass": "^2.3.13",
     "gatsby-source-filesystem": "^2.3.30",
     "glob": "^7.1.6",

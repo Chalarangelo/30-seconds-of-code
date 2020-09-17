@@ -12,7 +12,11 @@ describe('onCreateWebpackConfig', () => {
       onCreateWebpackConfig({
         actions, stage: 'develop',
       });
-      expect(setWebpackConfigMock).toHaveBeenCalledWith({ devtool: 'cheap-module-source-map'});
+      expect(setWebpackConfigMock).toHaveBeenCalledWith(
+        expect.objectContaining({
+          devtool: 'cheap-module-source-map',
+        })
+      );
     });
   });
 
@@ -21,7 +25,11 @@ describe('onCreateWebpackConfig', () => {
       onCreateWebpackConfig({
         actions, stage: 'build-javascript',
       });
-      expect(setWebpackConfigMock).toHaveBeenCalledWith({ devtool: false});
+      expect(setWebpackConfigMock).toHaveBeenCalledWith(
+        expect.objectContaining({
+          devtool: false,
+        })
+      );
     });
   });
 
@@ -30,7 +38,11 @@ describe('onCreateWebpackConfig', () => {
       onCreateWebpackConfig({
         actions, stage: 'something-else',
       });
-      expect(setWebpackConfigMock).toHaveBeenCalledWith({ devtool: 'source-map'});
+      expect(setWebpackConfigMock).toHaveBeenCalledWith(
+        expect.objectContaining({
+          devtool: 'source-map',
+        })
+      );
     });
   });
 });

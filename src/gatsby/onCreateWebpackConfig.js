@@ -1,3 +1,5 @@
+import path from 'path';
+
 /**
  * When called, allows modifying the default webpack config using webpack-merge.
  * API docs: https://www.gatsbyjs.org/docs/node-apis/#onCreateWebpackConfig
@@ -10,6 +12,9 @@ const onCreateWebpackConfig = ({ actions, stage }) => {
       ? false
       : 'source-map';
   actions.setWebpackConfig({
+    resolve: {
+      modules: [path.resolve(__dirname, '../../src'), 'node_modules'],
+    },
     devtool,
   });
 };
