@@ -36,7 +36,7 @@
     "gatsby-plugin-react-helmet": "^3.1.23",
     "gatsby-plugin-resolve-src": "^2.0.0",
     "gatsby-plugin-sass": "^2.1.30",
-    "gatsby-source-filesystem": "^2.1.51",
+    "gatsby-source-filesystem": "^2.3.30",
     "glob": "^7.1.6",
     "hast-util-to-html": "^7.1.1",
     "jest": "^24.9.0",
