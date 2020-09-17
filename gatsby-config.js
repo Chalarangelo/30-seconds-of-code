@@ -10,7 +10,6 @@ module.exports = {
     siteUrl: `${config.websiteUrl}`,
   },
   plugins: [
-    `gatsby-plugin-resolve-src`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
