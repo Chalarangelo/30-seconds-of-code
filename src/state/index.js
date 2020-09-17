@@ -23,8 +23,15 @@ export const rootReducer = combineReducers({
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
+const reduxDevToolsEnhancer = process.env.NODE_ENV === 'development' &&
+  typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION__
+  && window.__REDUX_DEVTOOLS_EXTENSION__();
+
 export default () => {
-  let store = createStore(persistedReducer);
+  let store = createStore(
+    persistedReducer,
+    reduxDevToolsEnhancer
+  );
   let persistor = persistStore(store);
   return { store, persistor };
 };
