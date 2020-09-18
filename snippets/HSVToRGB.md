@@ -3,7 +3,7 @@ title: HSVToRGB
 tags: math, intermediate
 ---
 
-Converts the values of HSV color components to RGB components.
+Converts the values of HSB color components to RGB components.
 
 Convert given HSV parameters into RGB ones and returns it in array format. 
 ```js
