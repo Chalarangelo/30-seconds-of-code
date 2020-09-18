@@ -1,5 +1,5 @@
 title: javascript syntax
-tags: video,intermediate
+tags: video, beginner
 ---
 
 Understand JavaScript syntax in 3 lines of JavaScript
