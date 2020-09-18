@@ -1,25 +1,24 @@
 ---
 title: RGBToHSB
-tags: math, intermediate
+tags: math,intermediate
 ---
 
-- Range of parameter values:
-  - r : [0,255]
-  - g : [0,255]
-  - b : [0,255]
+Converts a RGB color tuple to HSB format.
 
-- Converts given RGB parameters into HSB ones using [this](https://en.wikipedia.org/wiki/HSL_and_HSV#From_RGB) method and returns it in array format.
+- Use the [RGB to HSB conversion formula](https://en.wikipedia.org/wiki/HSL_and_HSV#From_RGB) to convert to the appropriate format.
+- The range of all input parameters is [0, 255].
+- The range of the resulting values is H: [0, 360], S: [0, 100], L: [0, 100].
 
 ```js
-const RGBToHSB =  (r, g, b) => {
-  r /= 255; g /= 255; b /= 255;
-  const v = Math.max(r,g,b), n = v - Math.min(r,g,b);
-  const h = n && v === r 
-    ? (g - b) / n 
-    : v === g 
-      ? 2 + (b - r) / n 
-      : 4 + (r - g) / n; 
-  return [60 * (h < 0 ? h + 6 : h), v && n / v * 100, v * 100];
+const RGBToHSB = (r, g, b) => {
+  r /= 255;
+  g /= 255;
+  b /= 255;
+  const v = Math.max(r, g, b),
+    n = v - Math.min(r, g, b);
+  const h =
+    n && v === r ? (g - b) / n : v === g ? 2 + (b - r) / n : 4 + (r - g) / n;
+  return [60 * (h < 0 ? h + 6 : h), v && (n / v) * 100, v * 100];
 };
 ```
 
