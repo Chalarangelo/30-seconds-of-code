@@ -11,11 +11,11 @@ Unflatten an object with the paths for keys.
 - Otherwise, add the appropriate key-value pair to the accumulator object and return value as the accumulator.
 ```js
 const unflattenObject = obj =>{
-    return Object.keys(obj).reduce((acc1 , k)=>{
+    return Object.keys(obj).reduce((res , k)=>{
       k.split('.').reduce(function(acc, e, i , keys) {
         return acc[e] || (acc[e] = isNaN(Number(keys[i + 1])) ? (keys.length - 1 === i ? obj[k] : {}) : []);
-      }, acc1)
-      return acc1;
+      }, res)
+      return res;
     },{});
 }
 ```
