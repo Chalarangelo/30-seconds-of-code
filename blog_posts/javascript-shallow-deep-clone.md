@@ -39,7 +39,7 @@ Both of these solutions showcase an example of shallow cloning, as they will wor
 
 ```js
 let obj = { a: 1, b: { c: 2 } };
-let clone = JSON.parseJSON.stringify(obj));
+let clone = JSON.parse(JSON.stringify(obj));
 clone.b.c = 4;
 // obj = { a: 1, b: { c: 2 }}, clone = { a: 1, b: { c: 4 } }
 ```
