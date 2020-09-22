@@ -5,8 +5,8 @@ tags: object,advanced
 
 Unflatten an object with the paths for keys.
 
-- Iterate over the object keys using `Object.keys(obj)` and `Array.prototype.forEach()`.
-- Split each key with a dot delimiter (`.`) using `Array.prototype.split('.')`and use `Array.prototype.reduce()` to convert flattened paths to leaf node.
+- Use nested `Array.prototype.reduce()` to convert the flat path to a leaf node.
+- Split each key with a dot delimiter (`.`) using `Array.prototype.split('.')`and use `Array.prototype.reduce()` to add or objects against the keys.
 - If the current accumulator already contains value against a particular key, return its value as the next accumulator.
 - Otherwise, add the appropriate key-value pair to the accumulator object and return value as the accumulator.
 ```js
