@@ -42,7 +42,7 @@ After the initial render has completed, there are a few different things that wi
 - `this.forceUpdate()` (class components)
 - `useState()` setters (function components)
 - `useReducer()` dispatches (function components)
-- `ReactDom.render()` again (on the root component)
+- `ReactDOM.render()` again (on the root component)
 
 **Rendering behavior**
 
