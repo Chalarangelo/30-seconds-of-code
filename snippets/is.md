@@ -12,6 +12,8 @@ const is = (type, val) => ![, null].includes(val) && val.constructor === type;
 ```
 
 ```js
+is(undefined, ); // false
+is(null, null); // false
 is(Array, [1]); // true
 is(ArrayBuffer, new ArrayBuffer()); // true
 is(Map, new Map()); // true
