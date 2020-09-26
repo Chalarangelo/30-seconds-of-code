@@ -38,7 +38,5 @@ const onRouteUpdate = ({ location, prevLocation }) => {
   }
 };
 
-const onServiceWorkerUpdateReady = () => window.location.reload(true);
-
 export { default as wrapRootElement } from 'state/ReduxWrapper';
-export { onPreRouteUpdate, onRouteUpdate, onServiceWorkerUpdateReady };
+export { onPreRouteUpdate, onRouteUpdate };
