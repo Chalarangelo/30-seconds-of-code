@@ -3,7 +3,7 @@ title: randomRgbColor
 tags: color, rgb, beginner
 ---
 
-Returns a object containing random values for red, green and blue
+Returns an object containing random values for red, green and blue
 
 - Chooses three random numbers and assign them to properties in an object.
 - Numbers are in range [0, 255].
