@@ -11,7 +11,7 @@ const ORDERS_MAP = {
   'n': literals.orders.newest,
 };
 
-const CARDS_PER_PAGE = 40;
+const CARDS_PER_PAGE = 15;
 
 export const compileListingPages = async(
   chunks,
