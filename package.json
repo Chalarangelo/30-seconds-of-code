@@ -32,7 +32,6 @@
     "gatsby-plugin-catch-links": "^2.3.12",
     "gatsby-plugin-manifest": "^2.4.30",
     "gatsby-plugin-netlify": "^2.3.15",
-    "gatsby-plugin-offline": "^3.2.28",
     "gatsby-plugin-react-helmet": "^3.3.11",
     "gatsby-plugin-sass": "^2.3.13",
     "gatsby-source-filesystem": "^2.3.30",
@@ -86,7 +85,9 @@
   "bugs": {
     "url": "https://github.com/30-seconds/30-seconds-web/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "gatsby-plugin-remove-serviceworker": "^1.0.0"
+  },
   "browserslist": [
     "> 0.5% and last 4 versions and not dead and not ie>0 and not op_mini all and not and_uc>0 and not edge<79"
   ]
