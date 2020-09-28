@@ -31,9 +31,7 @@ const SnippetList = ({
   listingSublinks = [],
 }) => {
   /* istanbul ignore next */
-  const ctaIndex = snippetList.length > 20
-    ? Math.floor(snippetList.length * 0.55)
-    : snippetList.length - 1;
+  const ctaIndex = 4;
   const withSorter = sorter && sorter.orders && sorter.orders.length > 1;
 
   return snippetList.length ? (
