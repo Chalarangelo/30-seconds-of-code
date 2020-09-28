@@ -22,13 +22,21 @@ body {
   }
 
   &::-webkit-scrollbar {
-    width: 10px;
+    width: 4px;
     background: transparent;
+
+    @media screen and (min-width: $layout-medium-breakpoint) {
+      width: 8px;
+    }
   }
 
   &::-webkit-scrollbar-thumb {
     background-color: var(--scrollbar-fore-color);
-    border-radius: 0.25rem;
+    border-radius: 0.125rem;
+
+    @media screen and (min-width: $layout-medium-breakpoint) {
+      border-radius: 0.25rem;
+    }
   }
 }
 
@@ -108,11 +116,15 @@ img.nav-website-logo {
 .content {
   transition: 0.3s ease all;
   background: var(--back-color);
-  padding-right: 10px;  // Pad to the right for the scrollbar (10px)
+  padding-right: 4px;  // Pad to the right for the scrollbar (4px)
+
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    padding-right: 8px;  // Pad to the right for the scrollbar (8px)
+  }
 
   @media screen and (min-width: 800px) {
-    // Difference in padding is due to the scrollbar (10px)
+    // Difference in padding is due to the scrollbar (8px)
     padding-left: calc((100% - 800px) / 2);
-    padding-right: calc((100% - 780px) / 2);
+    padding-right: calc((100% - 784px) / 2);
   }
 }
