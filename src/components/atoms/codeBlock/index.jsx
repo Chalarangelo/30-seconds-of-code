@@ -21,7 +21,7 @@ const CodeBlock = ({
 }) => (
   <pre
     data-code-language={ language.long }
-    className={ combineClassNames`${`language-${language.short}`} ${className}` }
+    className={ combineClassNames`notranslate ${`language-${language.short}`} ${className}` }
     dangerouslySetInnerHTML={ { __html: htmlContent } }
     { ...rest }
   />
