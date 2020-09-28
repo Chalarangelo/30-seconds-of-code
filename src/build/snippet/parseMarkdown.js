@@ -33,7 +33,7 @@ const transformers = [
   {
     blogType: 'any',
     matcher: /<pre class="language-([^"]+)" data-code-language="([^"]*)">([\s\S]*?)<\/pre>/g,
-    replacer: '<pre class="blog-code language-$1" data-code-language="$2">$3</pre>',
+    replacer: '<pre class="blog-code language-$1 notranslate" data-code-language="$2">$3</pre>',
   },
   // Convert blog blockquotes to the appropriate elements
   {
@@ -131,7 +131,7 @@ const parseMarkdown = (markdown, isText = false, langData = []) => {
   // Highlight inline code blocks
   visit(ast, `inlineCode`, node => {
     node.type = `html`;
-    node.value = `<code>${escapeHTML(node.value)}</code>`;
+    node.value = `<code class="notranslate">${escapeHTML(node.value)}</code>`;
   });
 
   const htmlAst = toHAST(ast, { allowDangerousHtml: true });
