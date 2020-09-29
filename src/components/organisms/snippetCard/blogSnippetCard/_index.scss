@@ -3,10 +3,12 @@
 // Colors
 :root {
   --blog-quote-border-color: #212631;
+  --table-border-color: hsl(0, 0%, 87%);
 }
 
 .page-container.dark {
   --blog-quote-border-color: #7486af;
+  --table-border-color: hsl(0, 0%, 16%);
 }
 
 .snippet-card {
@@ -93,6 +95,45 @@
     line-height: 2;
     font-size: 1.25rem;
     font-weight: 300;
+  }
+
+  h3.blog-body-title {
+    font-size: 1.125rem;
+    line-height: 2rem;
+    margin: 2rem 0.5rem 0rem;
+  }
+
+  h4.blog-body-title {
+    font-size: 1rem;
+    line-height: 2rem;
+    font-weight: 600;
+    margin: 2rem 0.5rem 0rem;
+  }
+
+  table.blog-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+
+    &.with-primary-column {
+
+      tr > td:first-child {
+        font-weight: 600;
+        text-align: right;
+        padding: 0.5rem 1rem 0.5rem 0.5rem;
+      }
+    }
+
+    th {
+      font-weight: 600;
+      font-size: 1.125rem;
+    }
+
+    td, th {
+      text-align: center;
+      border: 1px solid var(--table-border-color);
+      padding: 0.5rem;
+    }
   }
 
   p:last-child.blog-image-credit {

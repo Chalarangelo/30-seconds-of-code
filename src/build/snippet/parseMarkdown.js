@@ -41,6 +41,30 @@ const transformers = [
     matcher: /<blockquote>\s*\n*\s*<p>([\s\S]*?)<\/p>\s*\n*\s<\/blockquote>/g,
     replacer: '<blockquote class="blog-quote">$1</blockquote>',
   },
+  // Convert blog titles h3 and below to the appropriate elements
+  {
+    blogType: 'any',
+    matcher: /<h([123])>([\s\S]*?)<\/h\d>/g,
+    replacer: '<h3 class="blog-body-title">$2</h3>',
+  },
+  // Convert blog titles h4 and above to the appropriate elements
+  {
+    blogType: 'any',
+    matcher: /<h([456])>([\s\S]*?)<\/h\d>/g,
+    replacer: '<h4 class="blog-body-title">$2</h4>',
+  },
+  // Convert blog tables to the appropriate elements
+  {
+    blogType: 'any',
+    matcher: /<table>([\s\S]*?)<\/table>/g,
+    replacer: '<table class="blog-table">$1</table>',
+  },
+  // Convert blog cross tables to the appropriate elements
+  {
+    blogType: 'any',
+    matcher: /<table class="([^"]+)">\s*\n*\s*<thead>\s*\n*\s*<tr>\s*\n*\s*<th><\/th>/g,
+    replacer: '<table class="$1 with-primary-column"><thead><tr><th></th>',
+  },
   // Convert image credit to the appropriate element
   {
     blogType: 'any',
