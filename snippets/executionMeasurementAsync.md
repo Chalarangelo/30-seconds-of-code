@@ -9,13 +9,12 @@ Returns the execution time of an async function.
 - Use `await` to check how much time the async function executed. 
 
 ```js
-const executionMeasurementAsync = async (functionToMeasure, ...functionArgs) =>
-  {
-      let timeBeforeExecution = performance.now();
-      await functionToMeasure(...functionArgs);
-      let timeAfterExecution = performance.now();
-      return timeAfterExecution - timeBeforeExecution;
-  }
+const executionMeasurementAsync = async (functionToMeasure, ...functionArgs) => {
+  let timeBeforeExecution = performance.now();
+  await functionToMeasure(...functionArgs);
+  let timeAfterExecution = performance.now();
+  return timeAfterExecution - timeBeforeExecution;
+}
 ```
 
 ```js
