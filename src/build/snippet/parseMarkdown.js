@@ -53,6 +53,18 @@ const transformers = [
     matcher: /<h([456])>([\s\S]*?)<\/h\d>/g,
     replacer: '<h4 class="blog-body-title">$2</h4>',
   },
+  // Convert blog tables to the appropriate elements
+  {
+    blogType: 'any',
+    matcher: /<table>([\s\S]*?)<\/table>/g,
+    replacer: '<table class="blog-table">$1</table>',
+  },
+  // Convert blog cross tables to the appropriate elements
+  {
+    blogType: 'any',
+    matcher: /<table class="([^"]+)">\s*\n*\s*<thead>\s*\n*\s*<tr>\s*\n*\s*<th><\/th>/g,
+    replacer: '<table class="$1 with-primary-column"><thead><tr><th></th>',
+  },
   // Convert image credit to the appropriate element
   {
     blogType: 'any',
