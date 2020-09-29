@@ -43,6 +43,14 @@ Session storage stores a larger amount of data on the client's computer only for
 - Blockable by users: Yes
 - Editable by users: Yes
 
-![Cookies vs localStorage vs sessionStorage](./blog_images/cookie-local-storage-session.png)
+|    | Cookies | Local storage | Session storage |
+| -- | -- | -- | -- |
+| Capacity | 4KB | 10MB | 5MB |
+| Accessible from | Any window | Any window | Same tab |
+| Expiration | Manually set | Never | On tab close |
+| Storage location | Browser and server | Browser only | Browser only |
+| Sent with requests | Yes | No | No |
+| Blockable by users | Yes | Yes | Yes |
+| Editable by users | Yes | Yes | Yes |
 
 **Image credit:** [Jonathan Pielmayer](https://unsplash.com/@jonathanpielmayer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
