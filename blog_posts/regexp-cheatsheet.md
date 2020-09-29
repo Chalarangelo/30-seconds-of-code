@@ -7,7 +7,7 @@ cover: blog_images/cheatsheet1.jpg
 excerpt: Regular expressions are a very useful tool in a variety of situations. Save this cheatsheet for any time you need to look up their syntax and speed up your development.
 ---
 
-**Anchors**
+### Anchors
 
 - `^`: start of the string or the start of a line in a multiline pattern
 - `$`: end of the string or the end of a line in a multiline pattern
@@ -16,7 +16,7 @@ excerpt: Regular expressions are a very useful tool in a variety of situations. 
 
 Note: Anchors are non-quantifiable (i.e. cannot be followed by a quantifier).
 
-**Character sequences**
+### Character sequences
 
 - `.`: any character except line breaks
 - `\w`: any word character
@@ -33,7 +33,7 @@ Note: Anchors are non-quantifiable (i.e. cannot be followed by a quantifier).
 
 Note: Use `\` to escape special characters (e.g. `\`, `/`, `[`, `]`, `(`, `)`, `{`, `}` etc.).
 
-**Quantifiers**
+### Quantifiers
 
 - `a?`: zero or one of `a` (equal to `a{0,1}`)
 - `a*`: zero or more of `a` (equal to `a{0,}`)
@@ -44,13 +44,13 @@ Note: Use `\` to escape special characters (e.g. `\`, `/`, `[`, `]`, `(`, `)`, `
 
 Note: `a` is any valid quantifiable expression.
 
-**Groups**
+### Groups
 
 - `(ab)`: match and capture everything enclosed (here exactly `ab`)
 - `(a|b)`: match and capture either one character (here `a` or `b`)
 - `(?:ab)`: match everything enclosed, without capturing
 
-**Flags**
+### Flags
 
 - `g`: Global
 - `m`: Multiline

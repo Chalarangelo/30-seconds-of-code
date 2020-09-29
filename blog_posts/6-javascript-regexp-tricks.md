@@ -9,7 +9,7 @@ excerpt: Regular expressions, while very powerful, are notoriously hard to maste
 
 Regular expressions, while very powerful, are notoriously hard to master. Here are 6 useful features that can help you start using them in your JavaScript projects:
 
-**Capturing groups**
+### Capturing groups
 
 Capturing groups allow you to get specific parts of the matched string, simply by wrapping part of the regular expression in parentheses `(...)`:
 
@@ -25,7 +25,7 @@ const str = 'JavaScript is a programming language';
 */
 ```
 
-**Non-capturing groups**
+### Non-capturing groups
 
 Non-capturing groups are used for matching something without capturing it, like an either/or matching group that you do not really need. They are defined similarly to capturing groups, but prefixed with `?:`:
 
@@ -40,7 +40,7 @@ const str = 'JavaScript is a programming language';
 */
 ```
 
-**Named capturing groups**
+### Named capturing groups
 
 Named capturing groups allow you to name a capturing group, by prefixing it with `<name>`:
 
@@ -60,7 +60,7 @@ const str = 'JavaScript is a programming language';
 */
 ```
 
-**Capturing group backreferences**
+### Capturing group backreferences
 
 Backreferences help you write shorter regular expressions, by repeating an existing capturing group, using `\1`, `\2` etc. Similarly, you can also repeat named capturing groups using `\k<name>`:
 
@@ -80,7 +80,7 @@ const str = 'JavaScript is a programming language - an awesome programming langu
 */
 ```
 
-**Lookaheads**
+### Lookaheads
 
 Lookaheads allow you to check if something is followed by a certain pattern, without actually matching it. You can create positive lookaheads using `?=` and negative lookaheads using `?!`:
 
@@ -103,7 +103,7 @@ const str = 'JavaScript is not the same as Java and you should remember that';
 */
 ```
 
-**Unicode characters**
+### Unicode characters
 
 Finally, you can match unicode characters, using `/p{...}` and the `/u` flag. Examples include, but are not limited to `{Emoji}`, `{Math_Symbols}` and `{Script=Greek}`:
 

@@ -7,7 +7,7 @@ cover: blog_images/u-got-this.jpg
 excerpt: JavaScript's "this" keyword is a source of confusion for many beginners and veterans alike. Learn how it works in different scenarios and start using it correctly.
 ---
 
-**What is `this`?**
+### What is `this`?
 
 In JavaScript, the `this` keyword refers to the object that is currently executing the code. The short version of what `this` evaluates to is as follows:
 
@@ -19,7 +19,7 @@ In JavaScript, the `this` keyword refers to the object that is currently executi
 - In a constructor call, `this` is bound to the new object being constructed.
 - In an event handler, `this` is bound to the element on which the listener is placed.
 
-**Global context**
+### Global context
 
 In the global execution context, `this` refers to the global object.
 
@@ -27,7 +27,7 @@ In the global execution context, `this` refers to the global object.
 console.log(this === window); // true
 ```
 
-**Function context**
+### Function context
 
 When not in strict mode, a function's `this` refers to the global object.
 
@@ -51,7 +51,7 @@ function f() {
 console.log(f()); // undefined
 ```
 
-**Object context**
+### Object context
 
 When a function is called as a method of an object, `this` refers to the object the method is called on. This applies to methods defined anywhere in the object's prototype chain (i.e. own and inherited methods).
 
@@ -81,7 +81,7 @@ const obj = new C();
 console.log(obj.x); // 10
 ```
 
-**Arrow function context**
+### Arrow function context
 
 In arrow functions, `this` retains the value of the enclosing lexical context's `this`.
 
@@ -104,7 +104,7 @@ console.log(obj.bar() === window); // true
 
 Notice how in the second example, an arrow function's `this` refers to the global object unless wrapped inside a regular `function` call, whose `this` refers to the object it's called from and its lexical context is retained by the arrow function.
 
-**Event handler context**
+### Event handler context
 
 When used in an event handler, `this` refers to the element on which the listener is placed.
 
@@ -116,7 +116,7 @@ el.addEventListener('click', function() {
 });
 ```
 
-**Binding `this`**
+### Binding `this`
 
 Using `Function.prototype.bind()` returns a new function from an existing one, where `this` is permanently bound to the first argument of `bind()`.
 

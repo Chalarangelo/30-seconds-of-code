@@ -7,7 +7,7 @@ cover: blog_images/arrays.jpg
 excerpt: Arrays are one of the most used data types in any programming language. Learn how to merge two arrays in JavaScript with this short guide.
 ---
 
-**Spread operator**
+### Spread operator
 
 The [spread operator (`...`)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) was introduced in ES6 and can be used to merge two or more arrays, by spreading each one inside a new array:
 
@@ -18,7 +18,7 @@ const b = [4, 5, 6];
 const merged = [...a, ...b]; // [1, 2, 3, 4, 5, 6]
 ```
 
-**Array.prototype.concat()**
+### Array.prototype.concat()
 
 [`Array.prototype.concat()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat) is a method on the `Array` prototype and can be used to create a new array, either by concatenating both arrays to a new array or one array to the other. Both methods result in a new array, without mutating the original:
 
@@ -31,7 +31,7 @@ const merged = [].concat(a, b); // [1, 2, 3, 4, 5, 6]
 const alsoMerged = a.concat(b); // [1, 2, 3, 4, 5, 6]
 ```
 
-**Comparing the two**
+### Comparing the two
 
 The spread operator version is definitely shorter and as readable as the `Array.prototype.concat()` one. Apart from that, the spread operator seems to be slightly faster based on [some benchmarks I have performed](https://jsben.ch/9txyg) (as of **Aug, 2020 on Google Chrome 84** - this might or might not be the case in the future, as new optimizations land in different browsers).
 

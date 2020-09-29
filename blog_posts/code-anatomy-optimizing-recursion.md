@@ -7,7 +7,7 @@ cover: blog_images/code-anatomy-optimizing-recursion.jpg
 excerpt: Recursive code has a tendency of being inefficient and can leave a lot of space for optimization. Learn a couple of tricks we use to speed up our recursive functions.
 ---
 
-**Recursive functions**
+### Recursive functions
 
 Recursion is a programming technique where the final solution is computed by breaking down the problem into smaller instances of the same problem and computing the solution for each one. The most common implementation is a function that calls itself, reducing the problem every time until it reaches an instance of the problem whose solution is either trivial to compute or already known. Let's look at a very well-known example, calculating the `n`th term of the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number), implemented using recursion in JavaScript:
 
@@ -49,7 +49,7 @@ fibonacciNumber(4);
 
 As you can see, for each value of `n`, `fibonacciNumber` will be called twice, once with `n - 1` and once with `n - 2` and this will continue until it's called with either `1` or `0`. While this is straightforward to write and understand, it is inefficient as it will have to calculate the same value more than once.
 
-**Calculation memoization**
+### Calculation memoization
 
 The solution to this problem, and the first trick that you can use to speed up recursive functions, is to use memoization. We already published [a great blog post on memoization](https://www.30secondsofcode.org/blog/s/javascript-memoization/) a little while back, so be sure to check it out to learn more about the subject. Here's our `fibonacciNumber` function, using memoization:
 
@@ -91,7 +91,7 @@ fibonacciNumber(4);
 
 As you can see in the example above, the value for each `n` is only computed once. While the Fibonacci sequence doesn't require any costly calculations, this could make a huge difference for a more computationally expensive problem. It will also be a lot more noticable for higher values of `n` where the number of calculations will increase singificantly.
 
-**Using iteration**
+### Using iteration
 
 The second and final trick stems from the very definition of recursive programming turned on its head. If we can solve a smaller instance of the problem and use it for the solution of a larger instance of the problem, it should be possible to work iteratively from the smaller problem to the larger one, instead of recursively. Here's this idea in practice for our `fibonacciNumber` function:
 

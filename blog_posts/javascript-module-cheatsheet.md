@@ -7,7 +7,7 @@ cover: blog_images/javascript-swap-two-variables.jpg
 excerpt: Learn everything you need to know about JavaScript modules with this handy cheatsheet.
 ---
 
-**Named exports**
+### Named exports
 
 ```js
 /* environment.js */
@@ -22,7 +22,7 @@ import { key } from 'environment';
 - Import and export name should be the same.
 - Importing requires `{}`.
 
-**Default exports**
+### Default exports
 
 ```js
 /* environment.js */
@@ -43,7 +43,7 @@ const { key, port } = environment;
 - Import name can be anything.
 - Importing does not require `{}`.
 
-**Default + named**
+### Default + named
 
 ```js
 /* environment.js */
@@ -66,7 +66,7 @@ const { key, port } = environment;
 - Rules about number of exports and naming conventions apply as before.
 - Import rules apply as before, can be mixed if necessary.
 
-**Export list**
+### Export list
 
 ```js
 /* environment.js */
@@ -86,7 +86,7 @@ import { key, port } from 'environment';
 - Rules about number of exports, naming conventions and import rules are the same as those of named exports.
 - Export lists are not objects.
 
-**Rename export**
+### Rename export
 
 ```js
 /* environment.js */
@@ -101,7 +101,7 @@ import { authKey } from 'environment';
 - Named exports can make use of the `as` keyword to rename an export.
 - Import name should be the same as the renamed export.
 
-**Rename import**
+### Rename import
 
 ```js
 /* environment.js */
@@ -114,7 +114,7 @@ import { key as authKey } from 'environment';
 - Named imports can make use of the `as` keyword to rename an import.
 - Import name (before the `as` keyword) should be the same as the export.
 
-**Import all**
+### Import all
 
 ```js
 /* environment.js */

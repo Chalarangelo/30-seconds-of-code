@@ -13,7 +13,7 @@ ESLint is one of my tools of choice, but oftentimes it gets in the way of work, 
 
 And here are three refactoring options to deal with it:
 
-**Object.keys()**
+### Object.keys()
 
 `Object.keys()` has the exact same behavior as a `for..in` loop, so it can be used as a drop-in replacement:
 
@@ -24,7 +24,7 @@ Object.keys(data).forEach(k => console.log(k));
 // 0 1
 ```
 
-**Object.values()**
+### Object.values()
 
 `Object.values()` is very similar to `Object.keys()`, but returns the values instead of the keys, which might be what you are really using the keys for:
 
@@ -35,7 +35,7 @@ Object.keys(data).forEach(v => console.log(v));
 // 3 4
 ```
 
-**Object.entries()**
+### Object.entries()
 
 Finally, if you need both key and value, `Object.entries()` has you covered:
 

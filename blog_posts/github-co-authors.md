@@ -17,7 +17,7 @@ Co-authored-by: name <name@example.com>
 Co-authored-by: another-name <another-name@example.com>"
 ```
 
-**Notes:**
+### Notes:
 
 - To correctly attribute a commit to a co-author, you must use the email associated with their GitHub account.
 - If a person's email is private, you can use their GitHub-provided `no-reply` email.

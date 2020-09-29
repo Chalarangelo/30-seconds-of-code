@@ -7,7 +7,7 @@ cover: blog_images/javascript-range-generator.jpg
 excerpt: Learn how to use JavaScript ES6 generators and iterators to iterate over ranges of numbers.
 ---
 
-**Generator functions**
+### Generator functions
 
 [JavaScript ES6 generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*) allow you to define functions that can be exited and later re-entered, while retaining their context (variable bindings). They are defined using `function*` (`function` keyword followed by an asterisk) and use `yield` expressions to return their result. For example:
 
@@ -28,7 +28,7 @@ while (!x.done) {
 
 In the above example, we define a generator function, `generateRange`, which will return each value between `start` and `end`, incrementing by `step` each time. We use the [generator object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator) to call `Generator.prototype.next()` until it returns `{value: undefined, done: true}` to iterate over the values the generator produces.
 
-**Symbol.iterator**
+### Symbol.iterator
 
 [`Symbol.iterator`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/iterator) specifies the default iterator for an object. Oftentimes, `Symbol.iterator` is implemented using a generator function. For example:
 
@@ -45,7 +45,7 @@ console.log([...iterableX]); // [1, 2]
 
 As you can see in this example, the object is made iterable by assigning a generator function to its `Symbol.iterator` property. This can come especially handy, if you want to iterate over some arbitrary data or create an object that is iterable and uses a generator function under the hood.
 
-**Putting it all together**
+### Putting it all together
 
 Knowing how both concepts work, we can combine them to create a range generator, similar to Python or Ruby's ranges:
 

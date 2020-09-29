@@ -7,20 +7,20 @@ cover: blog_images/react-rendering.jpg
 excerpt: Take a deeper dive into React's rendering process and understand the basics behind the popular JavaScript framework.
 ---
 
-**React rendering**
+#### React rendering
 
 - React rendering basics (this blog post)
 - [React rendering optimization](/blog/s/react-rendering-optimization)
 - [React rendering state](/blog/s/react-rendering-state)
 
 
-**Rendering introduction**
+### Rendering introduction
 
 **Rendering** is the process during which React moves down the component tree starting at the root, looking for all the components flagged for update, asking them to describe their desired UI structure based on the current combination of `props` and `state`. For each flagged component, React will call its `render()` method (for class components) or `FunctionComponent()` (for function components), and save the output produced after converting the JSX result into a plain JS object, using `React.createElement()`.
 
 After collecting the render output from the entire component tree, React will diff the new tree (the **virtual DOM**) with the current DOM tree and collect the list of changes that need to be made to the DOM to produce the desired UI structure. After this process, known as **reconciliation**, React applies all the calculated changes to the DOM.
 
-**Render and commit phases**
+### Render and commit phases
 
 Conceptually, this work is divided into two phases:
 
@@ -34,7 +34,7 @@ Two key takeaways here are the following:
 - Rendering is not the same as updating the DOM
 - A component may be rendered without any visible changes
 
-**Rendering reasons**
+### Rendering reasons
 
 After the initial render has completed, there are a few different things that will cause a re-render:
 
@@ -44,7 +44,7 @@ After the initial render has completed, there are a few different things that wi
 - `useReducer()` dispatches (function components)
 - `ReactDOM.render()` again (on the root component)
 
-**Rendering behavior**
+### Rendering behavior
 
 React's default behavior is to **recursively render all child components inside of it when a parent component is rendered**. This means that it does not care if a component's `props` have changed - as long as the parent component rendered, its children will render unconditionally.
 

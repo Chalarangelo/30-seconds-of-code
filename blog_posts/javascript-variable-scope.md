@@ -9,7 +9,7 @@ excerpt: JavaScript developers often get confused by JavaScript's variables and 
 
 I have seen many developers - my younger self included - struggle with JavaScript's variables and scopes, even if they have some experience with coding and/or the language itself. While there are dozens of great articles on this subject, I found it somewhat difficult to memorize or understand the way these concepts work when I was starting out, so here's a short and simple breakdown that might help you as much as it helped me.
 
-**Variable definition**
+### Variable definition
 
 JavaScript provides two ways to define a variable (`var` and `let`) and one way to define a constant value (`const`).
 
@@ -19,7 +19,7 @@ It is generally preferred to use `let` and `const` to avoid confusion when it co
 
 ![Visualization of JavaScript variable scope](./blog_images/js-variable-scope.png)
 
-**Scope**
+### Scope
 
 When we talk about scope, we mean the visibility of one or more entities (e.g variables) to certain parts of our code. There are two types of scopes: global and local. Local scope can in turn be separated into block, function and other types of more specific scopes.
 

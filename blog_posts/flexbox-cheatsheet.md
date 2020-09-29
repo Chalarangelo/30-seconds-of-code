@@ -7,7 +7,7 @@ cover: blog_images/flexbox.jpg
 excerpt: Flexbox allows you to create fluid layouts easily. If you find yourself constantly looking up the syntax or how it work, this handy cheatsheet is all you need.
 ---
 
-**Container**
+### Container
 
 - `display: flex` or `display: inline-flex`: creates a flex context (or an inline flex context) for direct children of this element
 - `flex-direction` determines the main and cross axis for the container, valid values are:
@@ -54,7 +54,7 @@ excerpt: Flexbox allows you to create fluid layouts easily. If you find yourself
 
 ![Diagram of Flexbox properties](./blog_images/flexbox-diagram.png)
 
-**Items**
+### Items
 
 - `flex-grow` determines how much the item can grow if necessary
   - Accepts a single positive number (unitless), default value is `0`
