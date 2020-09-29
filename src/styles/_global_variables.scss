@@ -10,6 +10,7 @@
   // Scrollbar
   --scrollbar-back-color: #e0e4f6;
   --scrollbar-fore-color: #666E8F;
+  --scrollbar-fore-color-dark: #555c77;
 }
 
 // Dark mode colors
@@ -19,10 +20,14 @@
   --fore-color-light: #acb1c3;
   --fore-color-dark: #c5cadd;
   --fore-color-darker: #fcfcfd;
+}
 
+body.dark {
+  background: #12151c;  // Hack to remove white space
   // Scrollbar
   --scrollbar-back-color: hsl(227, 21%, 9%);
   --scrollbar-fore-color: hsl(228, 17%, 27%);
+  --scrollbar-fore-color-dark: hsl(228, 17%, 36%);
 }
 
 // Layout breakpoints

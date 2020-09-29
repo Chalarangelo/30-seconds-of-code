@@ -36,38 +36,45 @@ const Shell = ({
   isSettings = false,
   lastPageUrl,
   children,
-}) => (
-  <div className={ combineClassNames`page-container ${isDarkMode ? 'dark' : ''}` }>
-    <header
-      className='nav-bar'
-      role='navigation'
-      aria-label='Main'
-    >
-      <a className='nav-btn' href='/'>
-        <img
-          src='/assets/30s-icon.png'
-          alt={ literals.home }
-          className='nav-website-logo'
+}) => {
+  React.useEffect(() => {
+    if(isDarkMode) document.querySelector('body').classList.add('dark');
+    else document.querySelector('body').classList.remove('dark');
+  }, [isDarkMode]);
+
+  return (
+    <div className={ combineClassNames`page-container ${isDarkMode ? 'dark' : ''}` }>
+      <header
+        className='nav-bar'
+        role='navigation'
+        aria-label='Main'
+      >
+        <a className='nav-btn' href='/'>
+          <img
+            src='/assets/30s-icon.png'
+            alt={ literals.home }
+            className='nav-website-logo'
+          />
+        </a>
+        <Search isMainSearch={ isSearch } />
+        <a
+          className='nav-btn icon icon-settings'
+          href={ isSettings ? lastPageUrl ? lastPageUrl : '/' : '/settings' }
+          rel='nofollow'
+          title={ literals.settings }
         />
-      </a>
-      <Search isMainSearch={ isSearch } />
-      <a
-        className='nav-btn icon icon-settings'
-        href={ isSettings ? lastPageUrl ? lastPageUrl : '/' : '/settings' }
-        rel='nofollow'
-        title={ literals.settings }
-      />
-    </header>
-    <div className='content'>
-      { children }
-      <Footer />
+      </header>
+      <div className='content'>
+        { children }
+        <Footer />
+      </div>
+      {
+        typeof acceptsCookies === 'undefined' && process.env.ENV !== 'development' && !isBot ?
+          <CookieConsentPopup /> : null
+      }
     </div>
-    {
-      typeof acceptsCookies === 'undefined' && process.env.ENV !== 'development' && !isBot ?
-        <CookieConsentPopup /> : null
-    }
-  </div>
-);
+  );
+};
 
 Shell.propTypes = propTypes;
 
