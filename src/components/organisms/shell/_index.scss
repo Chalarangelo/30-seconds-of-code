@@ -32,10 +32,10 @@ body {
 
   &::-webkit-scrollbar-thumb {
     background-color: var(--scrollbar-fore-color);
-    border-radius: 0.125rem;
+    border-radius: 0.25rem;
 
-    @media screen and (min-width: $layout-medium-breakpoint) {
-      border-radius: 0.25rem;
+    &:hover {
+      background-color: var(--scrollbar-fore-color-dark);
     }
   }
 }
