@@ -40,7 +40,7 @@ const Paginator = ({
     buttons = Array.from({ length: totalPages }, (v, i) => i + 1);
   else if (pageNumber <= 2)
     buttons = [1, 2, '...', totalPages];
-  else if (totalPages - pageNumber <= 2)
+  else if (totalPages - pageNumber <= 1)
     buttons = [1, '...', totalPages - 1, totalPages];
   else
     buttons = [1, '...', pageNumber, '...', totalPages];
