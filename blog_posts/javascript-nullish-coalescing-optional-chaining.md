@@ -9,7 +9,7 @@ excerpt: JavaScript ES2020 introduced optional chaining and nullish coalescing a
 
 JavaScript ES2020 introduced some new features that help us write cleaner code. Let's take a quick look at two of them that aim to make working with objects and variables a lot easier.
 
-**Optional chaining**
+### Optional chaining
 
 The [optional chaining operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) (`?.`) allows us to access deeply nested object properties without having to validate each reference in the nesting chain. In case of a reference being nullish (`null` or `undefined`) the optional chaining operator will short-circuit, returning `undefined`. The optional chaining operator can also be used with function calls, returning `undefined` if the given function does not exist.
 
@@ -29,7 +29,7 @@ const userType = data?.user?.type;
 data.showNotifications?.();
 ```
 
-**Nullish coalescing**
+### Nullish coalescing
 
 In the same spirit, the [nullish coalescing operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator) (`??`) is a logical operator that allows us to check for nullish (`null` or `undefined`) values, returning the right-hand side operand when the value is non-nullish, otherwise returning the left-hand side operand.
 

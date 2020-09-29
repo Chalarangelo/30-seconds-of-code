@@ -7,9 +7,9 @@ cover: blog_images/testing-react-side-effects.jpg
 excerpt: Testing React components that update asynchronously with React Testing Library is a common scenario. Learn how to deal with common issues and speed up your testing.
 ---
 
-**Components that update asynchronously**
+### Components that update asynchronously
 
-Recently, while working on our latest side-project, [boardeaux](https://github.com/Trinityyi/boardeaux), we started using the [React DnD library](https://react-dnd.github.io/react-dnd), as we wanted to implement a multi-container drag and drop system with cards. 
+Recently, while working on our latest side-project, [boardeaux](https://github.com/Trinityyi/boardeaux), we started using the [React DnD library](https://react-dnd.github.io/react-dnd), as we wanted to implement a multi-container drag and drop system with cards.
 
 After spending the better part of a day implementing the functionality, we decided to add some tests to make sure everything will keep working as expected. In the afforementioned project, we use [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) to write tests for our components.
 
@@ -75,7 +75,7 @@ describe('<Card/>', () => {
 });
 ```
 
-**The dreaded act(...) warning**
+### The dreaded `act(...)` warning
 
 While the test was obviously not working, the console was constantly nagging about wrapping the test in `act()`:
 
@@ -94,9 +94,9 @@ This message, however, was not very helpful in identifying the underlying issue.
 
 As a side note, our `Card` component is connected to Redux, which might relate to the issue, but it would most likely happen even without Redux, probably due to the fact that `collect` takes some amount of time to run and send an update to the component.
 
-**Solving the issue**
+### Solving the issue
 
-Digging deeper, we found that apart from `act()`, there are also other options, such as `waitFor()` and `waitForDomChange()`, which seem more intuitive simply because of the name and way they're written (using either `async await` or promises). However, `waitForDomChange()` didn't work properly for our case and our version of `react-testing-library` (which shipped with `react-scripts`) was outdated and did not export `waitFor()`, which took us a good half an hour to figure out. 
+Digging deeper, we found that apart from `act()`, there are also other options, such as `waitFor()` and `waitForDomChange()`, which seem more intuitive simply because of the name and way they're written (using either `async await` or promises). However, `waitForDomChange()` didn't work properly for our case and our version of `react-testing-library` (which shipped with `react-scripts`) was outdated and did not export `waitFor()`, which took us a good half an hour to figure out.
 
 After updating `react-testing-library`, we were still not ready to go, as the console started displaying the following error:
 
@@ -104,7 +104,7 @@ After updating `react-testing-library`, we were still not ready to go, as the co
 TypeError: MutationObserver is not a constructor
 ```
 
-This required some searching, which eventually led us to [this issue](https://github.com/testing-library/react-testing-library/issues/662) which helped us figure out that a solution was to replace the `test` script in our `package.json` with this line: 
+This required some searching, which eventually led us to [this issue](https://github.com/testing-library/react-testing-library/issues/662) which helped us figure out that a solution was to replace the `test` script in our `package.json` with this line:
 
 ```json
 {
@@ -151,7 +151,7 @@ describe('<Card/>', () => {
 });
 ```
 
-**Summary**
+### Summary
 
 - A message about code that causes React state updates not being wrapped in `act(...)` might indicate that a component updated after the test ended.
 - Using `waitFor()` can solve the issue by making tests asynchronous, but you might need to bump your `react-testing-library` version if you are using older versions of `react-scripts`.

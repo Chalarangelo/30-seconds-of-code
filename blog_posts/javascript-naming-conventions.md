@@ -7,14 +7,14 @@ cover: blog_images/js-naming-conventions.jpg
 excerpt: Naming conventions, while not easy to enforce, make code easier to read and understand. Learn how to name your variables in JavaScript with this handy guide.
 ---
 
-**Variables**
+### Variables
 
 - Names are case-sensitive, lowercase and uppercase are different.
 - Start variable names with a letter, use `camelCase` for names.
 - Variable names should be self-descriptive, describing the stored value.
 - Boolean variables are usually prefixed with `is` or `has`.
 
-**Functions**
+### Functions
 
 - Names are case-sensitive, lowercase and uppercase are different.
 - Start function names with a letter, use `camelCase` for names.
@@ -22,20 +22,20 @@ excerpt: Naming conventions, while not easy to enforce, make code easier to read
 - Common prefixes are `get`, `make`, `apply` etc.
 - Class methods follow the same rules.
 
-**Constant**
+### Constant
 
 - Names are case-sensitive, lowercase and uppercase are different.
 - Define constants at the top of your file, function or class.
 - Sometimes `UPPER_SNAKE_CASE` is used, while other times plain `camelCase`.
 
-**Classes**
+### Classes
 
 - Names are case-sensitive, lowercase and uppercase are different.
 - Start class names with a capital letter, use `PascalCase` for names.
 - Use descriptive names, explaining the funcionality of the class.
 - Components, which are used in frontend frameworks follow the same rules.
 
-**Private**
+### Private
 
 - Prefix any variable or function with `_` to show intention for it to be private.
 - As a convention, this will not prevent other parts of the code from accessing it.

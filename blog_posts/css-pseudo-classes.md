@@ -11,7 +11,7 @@ CSS pseudo-classes provide a way to style elements, based on changes to their st
 
 Pseudo-classes let you apply styles to elements in relation to the content of the document tree (e.g. `:first-child`), external factors such as the history of the navigator (e.g. `:visited`), the status of their content (e.g. `:checked`) or the position of the mouse (e.g. `:hover`).
 
-**Commonly used pseudo-classes**
+### Commonly used pseudo-classes
 
 Below is a list of the top 5 most commonly used pseudo-classes and their usage. This list is by no means complete; you should always refer to relevant documentation from authoritative sources, such as [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes) for more information.
 

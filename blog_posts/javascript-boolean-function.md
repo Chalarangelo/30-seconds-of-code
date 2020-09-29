@@ -9,7 +9,7 @@ excerpt: JavaScript's built-in Boolean function can be very useful for truth-che
 
 JavaScript's built-in [`Boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) is one of those things I find myself suggesting in code reviews quite often as of late, so I thought I could share some tips about it with the world.
 
-**Using Boolean for truth-checking**
+### Using Boolean for truth-checking
 
 The `Boolean()` function is particularly useful when truth-checking data and probably significantly more readable than the double negation (`!!`) operation:
 
@@ -37,7 +37,7 @@ const hasValidValue = values.some(Boolean);
 const nonEmptyValues = values.filter(Boolean);
 ```
 
-**Handle Boolean objects with care**
+### Handle Boolean objects with care
 
 While the `Boolean()` function is pretty useful, you might run into some issues with the `Boolean` object and the `new Boolean()` constructor. The `Boolean` object is an object wrapper for a boolean value, but the tricky part is that, as an object, it's always truthy even if the contained value is `false`!
 

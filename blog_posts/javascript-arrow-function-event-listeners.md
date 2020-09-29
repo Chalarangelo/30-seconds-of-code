@@ -7,13 +7,13 @@ cover: blog_images/arrow-functions.jpg
 excerpt: Learn the differences between JavaScript ES6 arrow functions and regular functions and how they affect event listener callbacks.
 ---
 
-**Arrow functions**
+### Arrow functions
 
 JavaScript ES6 introduced the concept of arrow functions, a new way to define and write functions. While they might seem like a syntactic sugar on top of regular functions, they have a key difference which lies in the way the `this` context is bound. I will not go into a lot of detail in this article, however I strongly suggest you read [Understanding the "this" keyword in JavaScript](/blog/s/javascript-this) before continuing. To summarize what the afforementioned blog post explains in more detail:
 
 > Arrow functions do not have their own bindings for `this`, resulting in `this` retaining the value of the enclosing lexical context's `this`.
 
-**Event listener callbacks**
+### Event listener callbacks
 
 One task that we often perform when writing browser-side JavaScript is creating event listeners. For example:
 
@@ -28,7 +28,7 @@ toggleElements.forEach(el => {
 
 In the example above, we use `NodeList.prototype.forEach()` to iterate over the nodes matching a given selector and `EventTarget.addEventListener()` with a regular function as the callback for the `'click'` event to swap between an active and inactive state for the clicked element. As we are using a regular function, the `this` context inside the callback will be bound to the element on which the event was fired.
 
-**Arrow functions as callbacks**
+### Arrow functions as callbacks
 
 As we have already explained, arrow functions do not have their own bindings for `this`. So what happens if we convert the previous code snippet's callback to an arrow function? Its `this` context refers to the global one, which in this case is the `window` object.
 

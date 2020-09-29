@@ -7,7 +7,7 @@ cover: blog_images/js-event-capture.jpg
 excerpt: Understand how events work in JavaScript and learn when to use event bubbling, event capturing and event delegation with this short guide.
 ---
 
-**Event bubbling**
+### Event bubbling
 
 Bubbling means that the event propagates from the target element (i.e. the `button` the user clicked) up through its ancestor tree, starting from the nearest one. By default, all events bubble.
 
@@ -43,7 +43,7 @@ ancestors.forEach(a => {
 
 If we add an event listener to each element in the tree, as shown above, we would see a listener fired by the `button` first, then each one of the others firing from the nearest ancestor all the way up to `window`.
 
-**Event capturing**
+### Event capturing
 
 Capturing is the exact opposite of bubbling, meaning that the outer event handlers are fired before the most specific handler (i.e. the one on the `button`). Note that all capturing event handlers are run first, then all the bubbling event handlers.
 
@@ -60,7 +60,7 @@ ancestors.forEach(a => {
 
 Given this code, we would see a listener fired for each ancestor of the `button` first and then the listener of the `button` would fire.
 
-**Event propagation**
+### Event propagation
 
 Having explained event bubbling and capturing, we can now explain the three phases of event propagation:
 
@@ -68,7 +68,7 @@ Having explained event bubbling and capturing, we can now explain the three phas
 - During the **target phase**, the event gets triggered on the event target (e.g. the `button` the user clicked).
 - During the **bubble phase**, the event bubbles up through ancestors of the target element until the root element, `document` and, finally, `window`.
 
-**Event delegation**
+### Event delegation
 
 Event delegation refers to the idea of delegating event listening to parent elements instead of adding event listeners directly to the event targets. Using this technique, the parent can catch and handle the bubbling events as necessary.
 
