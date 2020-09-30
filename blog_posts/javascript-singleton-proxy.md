@@ -7,11 +7,11 @@ cover: blog_images/javascript-singleton-proxy.jpg
 excerpt: Learn how to implement a singleton, a commonly used software design pattern, in JavaScript using the Proxy object.
 ---
 
-A singleton is an object-oriented software design pattern which ensures a given class is only ever instantiated once and can be quite useful in many different situations, such as creating global objects and components shared across an application. While JavaScript supports object-oriented programming, it doesn't seem to provide many simple options to implement this pattern. 
+A singleton is an object-oriented software design pattern which ensures a given class is only ever instantiated once and can be quite useful in many different situations, such as creating global objects and components shared across an application. While JavaScript supports object-oriented programming, it doesn't seem to provide many simple options to implement this pattern.
 
-The most flexible, albeit somewhat advanced, approach involves using the [Proxy object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy). The Proxy object is used to define so-called traps, methods that allow the definition of custom behavior for certain operations such as property lookup, assignment etc. The singleton pattern dictates that the given class can only have one instance, which means that the most useful trap is `handler.construct()`, the trap for the `new` operator. 
+The most flexible, albeit somewhat advanced, approach involves using the [Proxy object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy). The Proxy object is used to define so-called traps, methods that allow the definition of custom behavior for certain operations such as property lookup, assignment etc. The singleton pattern dictates that the given class can only have one instance, which means that the most useful trap is `handler.construct()`, the trap for the `new` operator.
 
-As the `handler` is itself an object, we can use it to store the unique instance of the class we want, if it has been instantiated, while also providing a trap for the `new` operator via `handler.construct()`. In doing so, we can create an object that can be easily reused for any class we want to convert into a singleton, while also allowing us to provide additional traps for any other operations we might want to customize. 
+As the `handler` is itself an object, we can use it to store the unique instance of the class we want, if it has been instantiated, while also providing a trap for the `new` operator via `handler.construct()`. In doing so, we can create an object that can be easily reused for any class we want to convert into a singleton, while also allowing us to provide additional traps for any other operations we might want to customize.
 
 Here's the most basic version of a function that takes a `class` and converts it into a singleton, based on the above explanation:
 
@@ -52,4 +52,4 @@ myObj2.printMsg();           // 'first'
 In the above example, you can see that the second time `MySingletonClass` is instantiated, nothing happens, due to the fact that an instance already exists, so it is returned instead of a new object being created. While this is the minimum implementation of a `singletonify` function, it can easily be extended to modify the behavior even further or even use some of the data passed to the constructor in subsequent calls to update the `instance` it holds.
 
 
-**Image credit:** [David Watkis](https://unsplash.com/@david_watkis?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [David Watkis](https://unsplash.com/@david_watkis?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

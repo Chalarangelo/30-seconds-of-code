@@ -61,4 +61,4 @@ const printNums = async() => {
 printNums(); // Logs: 1, 2, 3 (2 and 3 log after 500ms)
 ```
 
-**Image credit:** [Kate Stone Matheson](https://unsplash.com/@kstonematheson?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Kate Stone Matheson](https://unsplash.com/@kstonematheson?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

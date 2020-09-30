@@ -59,4 +59,4 @@ Note: `a` is any valid quantifiable expression.
 
 Note that this cheatsheet is meant only as a starting point and is by no means a complete guide to all the features and nuances of regular expressions. You can also read [6 JavaScript Regular Expression features you can use today](/blog/s/6-javascript-regexp-tricks) for a deeper dive into some more advanced features.
 
-**Image credit:** [Todd Quackenbush](https://unsplash.com/@toddquackenbush?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Todd Quackenbush](https://unsplash.com/@toddquackenbush?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

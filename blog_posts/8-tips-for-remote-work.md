@@ -35,4 +35,4 @@ It's as easy to forget about breaks as it is to start working late. Try to set a
 
 **[Looking for a work from home role/job? Check out Jooble!](https://jooble.org/jobs-work-from-home)**
 
-**Image credit:** [Goran Ivos](https://unsplash.com/@goran_ivos?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Goran Ivos](https://unsplash.com/@goran_ivos?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

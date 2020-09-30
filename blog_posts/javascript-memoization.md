@@ -65,4 +65,4 @@ for (let i = 0; i < 100; i ++)
   memoizedFibonacci(30);              // ~50ms
 ```
 
-**Image credit:** [Mark Tegethoff](https://unsplash.com/@tegethoff?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Mark Tegethoff](https://unsplash.com/@tegethoff?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

@@ -54,4 +54,4 @@ const copyToClipboard = str => {
 
 The final consideration before wrapping this up is respecting the user's previous interaction with the website, like having already selected some content. Luckily, we can now use some modern Javascript methods and properties like `DocumentOrShadowRoot.getSelection()`, `Selection.rangeCount`, `Selection.getRangeAt()`, `Selection.removeAllRanges()` and `Selection.addRange()` to save and restore the original document selection. You can find the final code with these improvements implemented in the [copyToClipboard snippet](/js/s/copy-to-clipboard/).
 
-**Image credit:** [Kaitlyn Baker](https://unsplash.com/@kaitlynbaker?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Kaitlyn Baker](https://unsplash.com/@kaitlynbaker?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

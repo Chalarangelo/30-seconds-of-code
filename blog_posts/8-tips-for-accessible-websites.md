@@ -31,4 +31,4 @@ Responsiveness is often thought in terms of screen size or mobile vs desktop, bu
 8. Organize your content
 A website's layout should be easy to scan, understand and find the content that is relevant to the user. Good organization with clear sections and properly groupped content provides a better user experience for all users, regardless of device or accessibility needs.
 
-**Image credit:** [AbsolutVision](https://unsplash.com/@freegraphictoday?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [AbsolutVision](https://unsplash.com/@freegraphictoday?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

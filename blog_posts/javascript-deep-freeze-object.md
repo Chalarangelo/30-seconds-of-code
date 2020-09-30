@@ -77,4 +77,4 @@ myObj = {
 
 In the above example, we apply the techniques we described previously to ensure that the given object is deeply frozen. You can view the complete code, along with more examples in the [deepFreeze](/js/s/deep-freeze) snippet.
 
-**Image credit:** [Aaron Burden](https://unsplash.com/@aaronburden?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Aaron Burden](https://unsplash.com/@aaronburden?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

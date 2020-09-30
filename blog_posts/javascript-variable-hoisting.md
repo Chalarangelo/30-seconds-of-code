@@ -67,4 +67,4 @@ Generally, `const` and `let` provide more of a headache-free experience for a va
 - If your environment/team allows it, prefer `const` and `let`over `var` to minimize headaches.
 - If possible, use only arrow functions or `function` declarations. Consistency can help reduce confusion.
 
-**Image credit:** [Drew Dau](https://unsplash.com/@daunation?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Drew Dau](https://unsplash.com/@daunation?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

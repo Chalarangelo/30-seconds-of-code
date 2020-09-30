@@ -24,4 +24,4 @@ Before submitting your pull request for review, always take the time to review i
 5. Respond to reviews
 Set some time aside to respond to reviews after submitting your pull request. Handle anything you can as soon as possible and start discussion whenever necessary to arrive to a solution. Use `--fixup` for changes suggested in review comments or add new commits to help reviewers parse new changes more easily. Finally, assume good intentions, be polite and thank your peers.
 
-**Image credit:** [Alexandru Acea](https://unsplash.com/@alexacea?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Alexandru Acea](https://unsplash.com/@alexacea?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

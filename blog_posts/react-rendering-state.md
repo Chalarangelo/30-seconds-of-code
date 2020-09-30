@@ -44,4 +44,4 @@ React-Redux provides two ways of connecting to its store, performing the necessa
 
 On the other hand, `useSelector` has no way of stopping a component from rendering when its parent component renders. When exclusively using `useSelector`, larger parts of the component tree will re-render due to Redux store updates than they would with `connect`, since there aren't other components using `connect` to prevent them from doing so. You can use `React.memo()` as necessary, to optimize this behavior by preventing unnecessary re-rendering.
 
-**Image credit:** [Mahdiar Mahmoodi](https://unsplash.com/@mhdr_m?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Mahdiar Mahmoodi](https://unsplash.com/@mhdr_m?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

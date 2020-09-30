@@ -137,4 +137,4 @@ const { default: { key, port}, envType } = environment;
 - Named exports will be available by their names on the imported object.
 - Default export will be available as the `default` key on the imported object.
 
-**Image credit:** [roman manukyan](https://unsplash.com/@romanukyan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [roman manukyan](https://unsplash.com/@romanukyan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

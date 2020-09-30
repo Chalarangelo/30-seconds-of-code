@@ -55,4 +55,4 @@ const isOdd = x => x % 2 === 1;
 arr.find(isOdd); // 1
 ```
 
-**Image credit:** [Edgar Chaparro](https://unsplash.com/@echaparro) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Edgar Chaparro](https://unsplash.com/@echaparro) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

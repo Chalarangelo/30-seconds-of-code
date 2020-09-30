@@ -118,4 +118,4 @@ The iterative solution above makes the same calculations as the memoized one, ho
 
 However, you have to bear in mind what the actual use cases of your recursive code are and be very careful how you optimize them. Memoization can be a more powerful tool if a recursive function is called multiple times with different arguments, as its cache persists between calls, while iteration can be faster for recursive computations that are used less frequently. Always pay attention to your code and optimize for the cases you know or anticipate to be more common.
 
-**Image credit:** [Windows](https://unsplash.com/@windows?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Windows](https://unsplash.com/@windows?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

@@ -48,4 +48,4 @@ While the above example works, it has to serialize and deserialize the whole obj
 
 Alternatively, you can use a recursive function that deep clones an object and is a lot faster, such as the one in the [deepClone snippet](/js/s/deep-clone). Similarly, if you want a ready-to-use shallow cloning function, you can find one in the [shallowClone snippet](/js/s/shallow-clone).
 
-**Image credit:** [Joshua Ang](https://unsplash.com/@jangus231?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Joshua Ang](https://unsplash.com/@jangus231?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

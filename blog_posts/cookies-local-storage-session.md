@@ -53,4 +53,4 @@ Session storage stores a larger amount of data on the client's computer only for
 | Blockable by users | Yes | Yes | Yes |
 | Editable by users | Yes | Yes | Yes |
 
-**Image credit:** [Jonathan Pielmayer](https://unsplash.com/@jonathanpielmayer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Jonathan Pielmayer](https://unsplash.com/@jonathanpielmayer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
