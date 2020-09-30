@@ -85,4 +85,4 @@ Using the event delegation pattern is advantageous for two reasons:
 - By using event delegation, we can listen for events on a large amount of elements without having to attach event listeners individually, which can provide performance benefits.
 - By using event delegation, dynamic elements (i.e. added or removed from the DOM over the course of time) can have their events captured and handled without requiring listeners to be registered or removed.
 
-**Image credit:** [Mega Caesaria](https://unsplash.com/@megacaesaria?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Mega Caesaria](https://unsplash.com/@megacaesaria?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

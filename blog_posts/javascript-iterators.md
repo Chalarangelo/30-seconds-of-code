@@ -51,7 +51,7 @@ for(let item of myList) {
 }
 ```
 
-In the above example, we implement a `LinkedList` data structure, that internally uses a `data` array where each item has a `value`, alongside some implementation-specific properties used to determine its position in the sequence. Objects constructed from this class are not iterable by default, so we define an iterator via the use of `Symbol.iterator` and set it up so that the returned sequence is in order based on the internal implementation of the class, while the returned items only return their `value`. 
+In the above example, we implement a `LinkedList` data structure, that internally uses a `data` array where each item has a `value`, alongside some implementation-specific properties used to determine its position in the sequence. Objects constructed from this class are not iterable by default, so we define an iterator via the use of `Symbol.iterator` and set it up so that the returned sequence is in order based on the internal implementation of the class, while the returned items only return their `value`.
 
 On a related note, iterators are just functions, meaning they can be called like any other function (e.g. to delegate the iteration to an existing iterator), while also not being restricted to the `Symbol.iterator` name, allowing us to define multiple iterators for the same object. Here's an example of these concepts at play:
 
@@ -92,4 +92,4 @@ for(let item of myList.values()) {
 In this example, we use the native array iterator of the `data` object to make our `SpecialList` iterable, returning the exact values of the `data` array. Meanwhile, we also define a `values` method, which is an iterator itself, using `Array.prototype.filter()` and `Array.prototype.map()` on the `data` array, then finally returning the `Symbol.iterator` of the result, allowing iteration only over non-empty objects in the sequence and returning just the `value` for each one.
 
 
-**Image credit:** [Daniele Levis Pelusi](https://unsplash.com/@yogidan2012?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [ian dooley](https://unsplash.com/@sadswim?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

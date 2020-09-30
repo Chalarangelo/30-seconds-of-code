@@ -23,4 +23,4 @@ Many developers find onboarding experience worrisome. Here are 6 helpful tips to
 
 - Socialize with other team members on Slack channels like _#random_ and _#watercooler_. Just because you're new to the team doesn't mean you shouldn't participate in casual conversations with other employees. They are social beings too and are probably looking forward to getting to know better new colleagues.
 
-**Image credit:** [Umer Sayyam](https://unsplash.com/@sayyam197?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Umer Sayyam](https://unsplash.com/@sayyam197?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

@@ -27,4 +27,4 @@ const evenSum = data.filter(isEven).reduce(add); // 12
 
 In the above example, we define two simple functions that we then use as callbacks in `Array.prototype.reduce()` and `Array.prototype.filter()` to get the result we want. Both of these functions are higher-order functions, allowing us to create an abstraction layer for any action we might want to perform without having to rewrite how the filtering or reduction algorithm is to be applied every single time.
 
-**Image credit:** [Brent Payton](https://unsplash.com/@brentpayton?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Brent Payton](https://unsplash.com/@brentpayton?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

@@ -60,4 +60,4 @@ Using `timeit` to analyze the performance of the last two code examples, it's pr
 
 This pretty much applies to most mathematical list operation snippets, such as [difference](/python/s/difference), [symmetric_difference](/python/s/symmetric-difference) and [intersection](/python/s/intersection).
 
-**Image credit:** [Kalen Emsley](https://unsplash.com/@kalenemsley?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Kalen Emsley](https://unsplash.com/@kalenemsley?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

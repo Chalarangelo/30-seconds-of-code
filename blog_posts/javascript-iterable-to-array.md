@@ -43,4 +43,4 @@ const nodeArray = [...nodes]; // [ <!DOCTYPE html>, html ]
 
 Note that the above example is the basis for the [nodeListToArray snippet](js/s/node-list-to-array).
 
-**Image credit:** [Holger Link](https://unsplash.com/@photoholgic?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Holger Link](https://unsplash.com/@photoholgic?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

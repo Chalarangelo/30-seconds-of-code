@@ -59,4 +59,4 @@ Putting it all together, we should end up with a typographic scale that looks si
 
 The above example is a very simple starting point to build your own typographic scale, applying some simple principles to create a visual hierarchy that feels natural and works well. Feel free to tweak the starting values of the variables and experiment to get the best result for your designs.
 
-**Image credit:** [chuttersnap](https://unsplash.com/@chuttersnap?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [chuttersnap](https://unsplash.com/@chuttersnap?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

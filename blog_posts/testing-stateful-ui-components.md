@@ -47,8 +47,8 @@ context('the component is initialized in a collapsed state', function() {
 });
 ```
 
-Our test is still easy to read and understand, but it's a better test in general. 
+Our test is still easy to read and understand, but it's a better test in general.
 
 By directly checking the DOM instead of the component's state, we provide information about the component's output to future code authors, instead of asking them to keep the existing implementation intact. It seems like a better way to document the component and it's easier to track future changes should someone refactor the UI in such a way that the DOM representation of the component is altered.
 
-**Image credit:** [Evan Clark](https://unsplash.com/@evanrclark?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Evan Clark](https://unsplash.com/@evanrclark?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

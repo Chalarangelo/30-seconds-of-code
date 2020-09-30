@@ -25,4 +25,4 @@ excerpt: Learn how Python's lists and tuples are different and level up your cod
 
 Lists provide a more accessible API and should be used whenever similar types of objects need to be stored and are expected to change over the course of the application's execution. On the other hand, tuples should be used for immutable data, behaving more like constants than variables.
 
-**Image credit:** [Hasan Almasi](https://unsplash.com/@hasanalmasi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Hasan Almasi](https://unsplash.com/@hasanalmasi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

@@ -58,4 +58,4 @@ Note that the above implementation uses `defaultValue`, therefore it implies tha
 
 For a more detailed explanation of the component, as well as usage examples, you can check out the [Select component](/react/s/select).
 
-**Image credit:** [Robert Anasch](https://unsplash.com/@diesektion?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Robert Anasch](https://unsplash.com/@diesektion?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

@@ -54,4 +54,4 @@ As you can see in the above example, the spread operator either throws an error 
 
 So what's the verdict? Use the spread operator (`...`) whenever you know your inputs are arrays, as it performs better and is easy to read and understand. Favor `Array.prototype.concat()` when you are uncertain of one or more of the inputs and do not want to add additional checks, as it handles those cases more gracefully.
 
-**Image credit:** [Edgar Chaparro](https://unsplash.com/@echaparro) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Edgar Chaparro](https://unsplash.com/@echaparro) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

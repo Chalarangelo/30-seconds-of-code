@@ -77,4 +77,4 @@ excerpt: Flexbox allows you to create fluid layouts easily. If you find yourself
   - Items in a container are sorted by ascending `order` value and then by their source code order
   - Might cause accessibility issues if used incorrectly
 
-**Image credit:** [Markus Spiske](https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Markus Spiske](https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

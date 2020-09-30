@@ -73,4 +73,4 @@ const filePaths = files
 - Does not use `Array.prototype.push()` or the spread (`...`) operator.
 - `O(cN)` complexity, `c` iterations per element, (`c`: length of the chain).
 
-**Image credit:** [Windows](https://unsplash.com/@windows?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Windows](https://unsplash.com/@windows?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

@@ -51,4 +51,4 @@ console.dir([
 
 As you can see from the examples above, using the triple equals (`===`) operator is far more predictable and intuitive than the double equals (`==`) operator. Therefore, we recommend you use the triple equals (`===`) operator for most cases, unless you are entirely certain you want type coercion to be applied to the comparison's operands.
 
-**Image credit:** [Evi Radauscher](https://unsplash.com/@eviradauscher?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Evi Radauscher](https://unsplash.com/@eviradauscher?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

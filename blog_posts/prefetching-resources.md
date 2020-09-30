@@ -27,4 +27,4 @@ Similarly, you can preload assets using the `rel="preload"` attribute, which are
 
 The only downside to preloading resources compared to prefetching is that [browser support](https://caniuse.com/#search=preload) might be low depending on when you are reading this.
 
-**Image credit:** [Dominik Kempf](https://unsplash.com/@dominik_kempf?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Dominik Kempf](https://unsplash.com/@dominik_kempf?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

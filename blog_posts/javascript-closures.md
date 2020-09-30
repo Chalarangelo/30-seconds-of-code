@@ -51,4 +51,4 @@ In this example, we define a function, `initCounter`, that returns an object, wh
 
 Using closures, as shown in the example above, can help make your code more usable and maintainable, while allowing you to separate concerns and create abstractions as necessary.
 
-**Image credit:** [Mark Tegethoff](https://unsplash.com/@tegethoff?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Mark Tegethoff](https://unsplash.com/@tegethoff?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

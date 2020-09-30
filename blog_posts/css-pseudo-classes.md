@@ -21,4 +21,4 @@ Below is a list of the top 5 most commonly used pseudo-classes and their usage. 
 - `:not()` is used to match everything except the given selector and can be useful in styling hard to select elements
 - `:lang()` allows you to apply special styles based on the language of the document and is useful for multilingual websites
 
-**Image credit:** [Tj Holowaychuk](https://unsplash.com/@tjholowaychuk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Tj Holowaychuk](https://unsplash.com/@tjholowaychuk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

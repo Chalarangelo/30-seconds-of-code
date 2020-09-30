@@ -117,4 +117,4 @@ const str = 'Greek looks like this: γεια';
 */
 ```
 
-**Image credit:** [Kace Rodriguez](https://unsplash.com/@kace?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Kace Rodriguez](https://unsplash.com/@kace?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

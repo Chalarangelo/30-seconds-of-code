@@ -64,4 +64,4 @@ console.log([...range(7)]); // [0, 1, 2, 3, 4, 5, 6]
 for (let i of range(8, 2, 2)) console.log(i); // Logs: 2, 4, 6
 ```
 
-**Image credit:** [Jayphen Simpson](https://unsplash.com/@jayphen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Jayphen Simpson](https://unsplash.com/@jayphen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

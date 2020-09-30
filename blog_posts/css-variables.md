@@ -63,4 +63,4 @@ Finally, keep in mind the following useful tips for working with CSS variables:
 - CSS variables are case sensitive, so mind your capitalization. They can also be inlined in HTML like any other style (e.g. `<div style="--text-color: red">`).
 - You can nest `var()` calls, using another variable as fallback (e.g. `var(--main-color, var(--other-color))`), pass them to other functions such as `calc()` or even assign one variable to another (e.g. `--text-color: var(--main-color);`).
 
-**Image credit:** [Pankaj Patel](https://unsplash.com/@pankajpatel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Pankaj Patel](https://unsplash.com/@pankajpatel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

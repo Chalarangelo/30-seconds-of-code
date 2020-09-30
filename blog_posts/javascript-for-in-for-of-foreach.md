@@ -7,20 +7,20 @@ cover: blog_images/javascript-for-in-for-of-foreach.jpg
 excerpt: Learn the differences between the three most commonly used iteration methods offered by JavaScript, which often confuse beginners and veterans alike.
 ---
 
-`for...in` is used to iterate over all enumerable properties of an object, including inherited enumerable properties. 
+`for...in` is used to iterate over all enumerable properties of an object, including inherited enumerable properties.
 This iteration statement can be used with arrays strings or plain objects, but not with `Map` or `Set` objects.
 
 ```js
-for (let prop in ['a', 'b', 'c']) 
+for (let prop in ['a', 'b', 'c'])
   console.log(prop);            // 0, 1, 2 (array indexes)
 
-for (let prop in 'str') 
+for (let prop in 'str')
   console.log(prop);            // 0, 1, 2 (string indexes)
 
-for (let prop in {a: 1, b: 2, c: 3}) 
+for (let prop in {a: 1, b: 2, c: 3})
   console.log(prop);            // a, b, c (object property names)
 
-for (let prop in new Set(['a', 'b', 'a', 'd'])) 
+for (let prop in new Set(['a', 'b', 'a', 'd']))
   console.log(prop);            // undefined (no enumerable properties)
 ```
 
@@ -28,16 +28,16 @@ for (let prop in new Set(['a', 'b', 'a', 'd']))
 This iteration statement can be used with arrays, strings, `Map` or `Set` objects, but not with plain objects.
 
 ```js
-for (let val of ['a', 'b', 'c']) 
+for (let val of ['a', 'b', 'c'])
   console.log(val);            // a, b, c (array values)
 
-for (let val of 'str') 
+for (let val of 'str')
   console.log(val);            // s, t, r (string characters)
 
-for (let val of {a: 1, b: 2, c: 3}) 
+for (let val of {a: 1, b: 2, c: 3})
   console.log(prop);           // TypeError (not iterable)
 
-for (let val of new Set(['a', 'b', 'a', 'd'])) 
+for (let val of new Set(['a', 'b', 'a', 'd']))
   console.log(val);            // a, b, d (Set values)
 ```
 
@@ -54,4 +54,4 @@ While `forEach()` only iterates over arrays, it can access both the value and th
 );
 ```
 
-**Image credit:** [Tim Stief](https://unsplash.com/@timstief?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Tim Stief](https://unsplash.com/@timstief?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
