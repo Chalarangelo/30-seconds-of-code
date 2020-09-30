@@ -10,12 +10,12 @@ Returns the median of an array of numbers.
 
 ```js
 const median = arr => {
-  const mid = Math.floor(arr.length / 2),
-    nums = [...arr].sort((a, b) => a - b);
-  return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
+  const nums = [...arr].sort((a, b) => a - b);
+  return (nums[Math.floor((nums.length + 1) / 2) - 1] + nums[Math.ceil((nums.length + 1) / 2) - 1]) / 2
 };
 ```
 
 ```js
 median([5, 6, 50, 1, -5]); // 5
+median([1, 2, 3, 4, 5, 6, 8, 9]); // 4.5
 ```
