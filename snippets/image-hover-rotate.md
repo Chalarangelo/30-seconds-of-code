@@ -10,7 +10,7 @@ Creates a rotate effect for the image on hover.
 
 ```html
 <figure class="hover-rotate">
-  <img src="https://i.picsum.photos/id/669/600/800.jpg"/>
+  <img src="https://picsum.photos/id/669/600/800.jpg"/>
 </figure>
 ```
 
