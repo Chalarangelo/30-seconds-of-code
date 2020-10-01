@@ -12,7 +12,7 @@ Displays a menu overlay when the image is hovered.
 
 ```html
 <figure class="hover-menu">
-	<img src="https://i.picsum.photos/id/1060/800/480.jpg"/>
+	<img src="https://picsum.photos/id/1060/800/480.jpg"/>
 	<div>
 		<a href="#">Home</a>
 		<a href="#">Pricing</a>

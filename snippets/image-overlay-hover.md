@@ -11,7 +11,7 @@ Displays an image overlay effect on hover.
 
 ```html
 <figure class="hover-img">
-  <img src="https://i.picsum.photos/id/200/440/320.jpg"/>
+  <img src="https://picsum.photos/id/200/440/320.jpg"/>
   <figcaption>
     <h3>Lorem <br/>Ipsum</h3>
   </figcaption>
