@@ -181,6 +181,7 @@ export const compileSnippet = async(
       description: snippetData.html.description,
     },
     isListed: snippetData.isListed,
+    titleSlug: convertToSeoSlug(data.attributes.title),
   };
 };
 
