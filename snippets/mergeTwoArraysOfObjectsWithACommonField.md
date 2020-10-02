@@ -3,8 +3,6 @@ title: mergeTwoArraysOfObjectsWithACommonField
 tags: node,beginner
 ---
 
-Creates a directory, if it does not exist.
-
 - `mergeByCommonField()` takes two arrays with common field and returns the merged array.
 
 ```js
