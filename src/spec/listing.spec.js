@@ -65,11 +65,11 @@ describe('Listing', () => {
 
   describe('navigating to a category listing', () => {
     before(() => {
-      cy.get('.listing-anchor.icon-php').first().click();
+      cy.get('.listing-anchor.icon-css').first().click();
     });
 
     it('should redirect to the category listing page', () => {
-      cy.url().should('contain', 'php/p/1');
+      cy.url().should('contain', 'css/p/1');
     });
 
     describe('clicking a snippet', () => {
@@ -78,7 +78,7 @@ describe('Listing', () => {
       });
 
       it('should display the correct breadcrumbs', () => {
-        cy.get('.link-back').contains('PHP');
+        cy.get('.link-back').contains('CSS');
       });
 
       describe('returning to category listing', () => {
@@ -87,7 +87,7 @@ describe('Listing', () => {
         });
 
         it('should return to the category listing page', () => {
-          cy.url().should('contain', '/php/p/1');
+          cy.url().should('contain', '/css/p/1');
         });
       });
     });
@@ -97,11 +97,11 @@ describe('Listing', () => {
         cy.get('.order-btn').first().click();
         cy.get('.order-btn').contains(literals.orders.expertise).click();
         cy.wait(1500);
-        cy.get('.listing-anchors a').contains('Array').first().click();
+        cy.get('.listing-anchors a').contains('Animation').first().click();
       });
 
       it('should redirect to the tag listing page', () => {
-        cy.url().should('contain', 'php/t/array/e/1');
+        cy.url().should('contain', 'css/t/animation/e/1');
       });
 
       describe('clicking a snippet', () => {
@@ -110,8 +110,8 @@ describe('Listing', () => {
         });
 
         it('should display the correct breadcrumbs', () => {
-          cy.get('.link-back.has-more').contains('PHP');
-          cy.get('.link-back-more').contains('Array');
+          cy.get('.link-back.has-more').contains('CSS');
+          cy.get('.link-back-more').contains('Animation');
         });
       });
     });
