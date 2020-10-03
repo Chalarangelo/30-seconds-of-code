@@ -1,28 +1,16 @@
 ---
-title: average
+title: weighted average
 tags: math,array,beginner
 ---
 
 Returns the weighted average of two or more numbers.
 
+- Use `Array.prototype.reduce()` to add each value to an accumulator, initialized with a value of `0`, divide by the `length` of the array.
 
 ```js
-function weightedAverage(arrValue, arrWeight) {
-  const acc = arrValue.map(function (value, i) {
-    var weight = arrWeight[i];
-    var sum = value * weight;
-
-    return [sum, weight];
-  }).reduce(function (p, c) {
-    return [p[0] + c[0], p[1] + c[1]];
-  }, [0, 0]);
-  return result[0] / result[1];
-}
-
-
+const weightedAverage = (...nums,...weights) => nums.reduce((acc, w*val) => acc + w*val, 0) / nums.length;
 ```
 
 ```js
-weightedAverage([1, 2, 3], [0.6, 0.3, 0.2]);
-// => 0.2
+weightedAverage(...[1, 2, 3],..[0.6,0.2,0.3]); // 0.2
 ```
