@@ -9,7 +9,7 @@ Return number of words in given string
 
 ```js
 function countWords(input) {
-  const words = input.split(" ").map(word => {
+  const words = input.toLocaleLowerCase().split(" ").map(word => {
     return word.replace(/^([`'"!.,;])/g, "").replace(/([`'"!.,;])$/g, "");
   });
 
