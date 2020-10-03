@@ -13,5 +13,5 @@ def pad_number(n, l):
 ```
 
 ```py
-pad_number(1234, 6); # 001234
+pad_number(1234, 6); # '001234'
 ```
