@@ -5,12 +5,18 @@ tags: list,dictionary,intermediate
 
 Groups the elements of a list based on the given function.
 
-- Use `map()` and `fn` to map the values of the list to the keys of a dictionary.
-- Use list comprehension to map each element to the appropriate `key`.
+- Use `defaultdict()` to initialize a dictionary.
+- Use `fn` in combination with a `for` loop and `dict.append()` to populate the dictionary.
+- Use the `dict()` constructor to convert it to a regular dictionary.
 
 ```py
+from collections import defaultdict
+
 def group_by(lst, fn):
-  return {key : [el for el in lst if fn(el) == key] for key in map(fn, lst)}
+  d = defaultdict(list)
+  for el in lst:
+    d[fn(el)].append(el)
+  return dict(d)
 ```
 
 ```py
