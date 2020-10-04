@@ -3,7 +3,7 @@ title: isCoprime
 tags: math,beginner 
 --- 
 Checks whether the two numbers are coprime.
--  Uses already created  `gcd` to calculate. 
+-  Uses already created  `gcd` to calculate gcd. 
 
 ```js 
 const isCoprime(a,b) => { 
