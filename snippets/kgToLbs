@@ -1,0 +1,16 @@
+---
+title: kgToLbs
+tags: math,beginner
+---
+
+Converts kg to lbs.
+
+- Follows the conversion formula `lbs = kg * 2.20462`.
+
+```js
+const kgToLbs = lbs => kg * 2.20462;
+```
+
+```js
+kgToLbs(2) // 4.40925
+```
