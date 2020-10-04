@@ -8,7 +8,7 @@
     "long": "PHP"
   },
   "slug": "php",
-  "featured": 6,
+  "featured": -1,
   "theme": {
     "backColor": "#8b9bd6",
     "foreColor": "#2a2843",
