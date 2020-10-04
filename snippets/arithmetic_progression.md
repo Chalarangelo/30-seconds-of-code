@@ -8,10 +8,10 @@ Returns a list of numbers in the arithmetic progression starting with the given 
 - Use `range` and `list` with the appropriate start, step and end values.
 
 ```py
-def find_multiples(n, lim):
+def arithmetic_progression(n, lim):
   return list(range(n, lim + 1, n))
 ```
 
 ```py
-find_multiples(5, 25) # [5, 10, 15, 20, 25] 
+arithmetic_progression(5, 25) # [5, 10, 15, 20, 25] 
 ```
