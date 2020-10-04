@@ -1,25 +1,21 @@
 ---
 title: slugify
-tags: function,intermediate
+tags: string,regexp,intermediate
 ---
 
-Convert a string to a URL-friendly slug.
+Converts a string to a URL-friendly slug.
 
-- Make the string lowercase and remove leading or trailing whitespace.
-- Remove all characters that are not words, whitespace or hyphens.
-- Replace whitespace with a single hyphen (`-`).
-- Remove any leading or trailing hyphens.
+- Use `String.prototype.toLowerCase()` and `String.prototype.trim()` to normalize the string.
+- Use `String.prototype.replace()` to replace spaces, dashes and underscores with `-` and remove special characters.
 
 ```js
-const slugify = (string) => {
-  const slug = string
+const slugify = str =>
+  str
     .toLowerCase()
     .trim()
     .replace(/[^\w\s-]/g, '')
     .replace(/[\s_-]+/g, '-')
     .replace(/^-+|-+$/g, '');
-  return slug;
-};
 ```
 
 ```js
