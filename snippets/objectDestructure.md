@@ -6,7 +6,7 @@ tags: javascript,object,beginner
 Easily unpack an object into variables using **destructuring assignment syntax**. Using this syntax, we can:
 
 - Extract data from objects and assign it to variables, using less code.
-- Increase readability of your code.
+- Increase readability of our code.
 
 ```js
 const object = {
