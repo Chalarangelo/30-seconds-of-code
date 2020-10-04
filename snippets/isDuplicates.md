@@ -6,7 +6,7 @@ tags: array,intermediate
 Check if there's duplicate values in a flat array.
 
 - Convert original array into a Set.
-- The `.size()` returns the number of (unique) elements in a Set object.
+- The `Set.prototype.size` returns the number of (unique) elements in a Set object.
 - Compare the lengths of the array and the Set.
 
 
