@@ -9,6 +9,7 @@ Converts a comma-separated values (CSV) string to a 2D array.
 - Use `String.prototype.split('\n')` to create a string for each row, then `String.prototype.split(delimiter)` to separate the values in each row.
 - Omit the second argument, `delimiter`, to use a default delimiter of `,`.
 - Omit the third argument, `omitFirstRow`, to include the first row (title row) of the CSV string.
+- Works only for a limited set of CSV files. Does not support e.g. multiline fields and escaped field delimiters. Suitable for production only if source CSV is enough simple.
 
 ```js
 const CSVToArray = (data, delimiter = ',', omitFirstRow = false) =>
