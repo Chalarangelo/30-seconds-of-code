@@ -1,38 +1,41 @@
 ---
 title: mixTwoColors
-tags: hexcodes,beginner,math
+tags: math,string,beginner
 ---
 
-This snippet mixes two colors. For example red+blue=purple.
+Mixes two hexcodes and returns the resulting color. (eg. red + blue = purple)
 
 - First we split each color into its red/green/blue values.
 - We take the averages of the reds/greens/blues of the two colors.
-- We pad zeroes, so that "9" becomes "09"
+- We pad zeroes to every average, so that "9" becomes "09".
 - We make the resulting color by concatentaing the red/green/blue of the result.
 
 ```js
-const mixTwoColors = function(c1, c2) {
-            let r1 = parseInt(c1.substr(0,2),16);
-            let g1 = parseInt(c1.substr(2,2),16);
-            let b1 = parseInt(c1.substr(4,2),16);
-            let r2 = parseInt(c2.substr(0,2),16);
-            let g2 = parseInt(c2.substr(2,2),16);
-            let b2 = parseInt(c2.substr(4,2),16);
-            r1 = Math.floor((r1+r2)/2);
-            g1 = Math.floor((g1+g2)/2);
-            b1 = Math.floor((b1+b2)/2);
-            let s1= r1.toString(16);
-            while (s1.length < 2) { s1 = '0' + s1; } // Zero pad.
-            let s2= g1.toString(16);
-            while (s2.length < 2) { s2 = '0' + s2; } // Zero pad.
-            let s3= b1.toString(16);
-            while (s3.length < 2) { s3 = '0' + s3; } // Zero pad.
-            hexStr = s1 + s2 + s3;
-            console.log(hexStr);
-            return hexStr;  
-        }
+const mixTwoColors = ( firstColor, secondColor ) => {
+  let firstRed = parseInt(firstColor.substr(0, 2), 16);
+  let firstGreen = parseInt(firstColor.substr(2, 2), 16);
+  let firstBlue = parseInt(firstColor.substr(4, 2), 16);
+
+  let secondRed = parseInt(secondColor.substr(0, 2), 16);
+  let secondGreen = parseInt(secondColor.substr(2, 2), 16);
+  let secondBlue = parseInt(secondColor.substr(4, 2), 16);
+
+  averageRed = Math.floor((firstRed + secondRed) / 2);
+  averageGreen = Math.floor((firstGreen + secondGreen) / 2);
+  averageBlue = Math.floor((firstBlue + secondBlue) / 2);
+
+  let resultRed = averageRed.toString(16);
+  while (resultRed.length < 2) { resultRed = '0' + resultRed; }
+  let resultGreen = averageGreen.toString(16);
+  while (resultGreen.length < 2) { resultGreen = '0' + resultGreen; }
+  let resultBlue = averageBlue.toString(16);
+  while (resultBlue.length < 2) { resultBlue = '0' + resultBlue; }
+
+  resultHex = resultRed + resultGreen + resultBlue;
+  return resultHex;  
+}
 ```
 
 ```js
-mixTwoColors("FF0000","0000FF"); // 'f700f7'
+mixTwoColors("ff0000","0000ff"); // 'f700f7'
 ```
