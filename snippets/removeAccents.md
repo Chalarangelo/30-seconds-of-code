@@ -5,11 +5,11 @@ tags: string,beginner
 
 Removes accents from strings.
 
-- Converts the string to a normalized Unicode format.
-- The diacritical marks are represented by an Unicode range and are replaced by empty strings.
+- Use `String.prototype.normalize()` to convert the string to a normalized Unicode format.
+- Use `String.prototype.replace()` to replace diacritical marks in the given Unicode range by empty strings.
 
 ```js
-const removeAccents = string => string.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+const removeAccents = str => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 ```
 
 ```js
