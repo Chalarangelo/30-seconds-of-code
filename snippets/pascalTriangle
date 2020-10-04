@@ -1,5 +1,3 @@
-
-
 ---
 title: pascalTriangle
 tags: math,intermediate
@@ -11,17 +9,19 @@ Pascal's Triangle of n rows
 
 ```js
 const pascalTriangle = (numRows) => {
-if(numRows<0) return []; 
-if (numRows === 0) return [];
-if (numRows === 1) return [[1]];
-let result = [];
-for (let row = 1; row <= numRows; row++) {
-let arr = [];
-for (let col = 0; col < row; col++) {
-if (col === 0 || col === row - 1) {
-arr.push(1);}}
-result.push(arr);}
-return result;}
+  if(numRows<0) return []; 
+  if (numRows === 0) return [];
+  if (numRows === 1) return [[1]];
+  let result = [];
+  for (let row = 1; row <= numRows; row++) {
+  let arr = [];
+  for (let col = 0; col < row; col++) 
+  if (col === 0 || col === row - 1)
+  arr.push(1);
+  result.push(arr);
+
+
+  return result;}
 ```
 
 ```js
