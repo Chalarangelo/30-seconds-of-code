@@ -18,7 +18,7 @@ Let's look at some examples to better understand what's going on:
 
 ```js
 class SimpleClass {
-  constructor)() {
+  constructor() {
     this.val = 0;
   }
 }
