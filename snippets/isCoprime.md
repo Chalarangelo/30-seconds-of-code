@@ -1,4 +1,5 @@
---- title: isCoprime 
+--- 
+title: isCoprime 
 tags: math,beginner 
 --- 
 Checks whether the two numbers are coprime.
