@@ -1,24 +1,23 @@
 ---
 title: fullscreen
-tags: browser,beginner
+tags: browser,intermediate
 ---
 
-This snippet lets you start and stop the fullscreen mode
+Opens or closes an element in fullscreen mode.
 
-- Uses `document.documentElement.requestFullscreen()` and `document.exitFullscreen()` functions to change the browsers state.
-- If no parameter is given, it will default to enable the fullscreen mode.
-- Usage is limited to user interaction or a device orientation change; otherwise it will fail.
+- Use `document.querySelector()` and `Element.prototype.requestFullscreen()` to open the given element in fullscreen.
+- Use `document.exitFullscreen()` to exit fullscreen mode.
+- Omit the second argument, `el`, to use `body` as the default element.
+- Omit the first element, `mode`, to open the element in fullscreen mode by default.
 
 ```js
-const fullscreen = (mode=true) => {
-  if (mode) {
-    document.documentElement.requestFullscreen();
-  } else {
-    document.exitFullscreen();
-  }};
+const fullscreen = (mode = true, el = 'body') =>
+  mode
+    ? document.querySelector(el).requestFullscreen()
+    : document.exitFullscreen();
 ```
 
 ```js
-fullscreen(); // Browser in fullscreen mode
-fullscreen(false); // Browser no longer in fullscreen mode
+fullscreen(); // Opens `body` in fullscreen mode
+fullscreen(false); // Exits fullscreen mode
 ```
