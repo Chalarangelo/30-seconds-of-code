@@ -36,6 +36,7 @@ console.log(age); // 17
 
 console.log(phoneNumber); // '111-111-1111'
 
+// The rest of the data is captured in the `extra` variable
 console.log(extra); // {'username': 'jane-doe', 'about': 'About someone'}
 
 // Object 2
