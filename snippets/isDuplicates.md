@@ -1,22 +1,18 @@
 ---
-title: isDuplicates
-tags: array,intermediate
+title: hasDuplicates
+tags: array,beginner
 ---
 
-Check if there's duplicate values in a flat array.
+Checks if there are duplicate values in a flat array.
 
-- Convert original array into a Set.
-- The `Set.prototype.size` returns the number of (unique) elements in a Set object.
-- Compare the lengths of the array and the Set.
-
+- Use `Set()` to get the unique values in the array.
+- Use `Set.prototype.size` and `Array.prototype.length` to check if the count of the unique values is the same as elements in the original array.
 
 ```js
-function isDuplicates(array) {
-  return new Set(array).size !== array.length
-}
+const hasDuplicates = arr => new Set(arr).size !== arr.length;
 ```
 
 ```js
-isDuplicates([0,1,1,2]); // 'True'
-isDuplicates([0,1,2,3,]); // 'False'
+hasDuplicates([0,1,1,2]); // true
+hasDuplicates([0,1,2,3,]); // false
 ```
