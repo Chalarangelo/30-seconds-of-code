@@ -1,6 +1,6 @@
 ---
 title: removeExcessWhiteSpacesFromString
-tags: string,beginner
+tags: string,trim,beginner
 ---
 
 Removes excess white spaces that are appended to a string from both ends.
