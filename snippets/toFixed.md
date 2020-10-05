@@ -3,14 +3,14 @@ title: toFixed
 tags: number,string,beginner
 ---
 
-Returns a string that represents a number, rounded to the specified number of decimals
+Returns a string that represents a number, rounded to the specified number of decimals.
 
-- Use `number.toFixed(x)` to round a number to a given decimal point(x)
-- Here,x is optional.If x is not specified, number will be rounded to the nearest integer
+- Use `number.toFixed(x)` to round a number to a given decimal point(x).
+- Here,x is optional.If x is not specified, number will be rounded to the nearest integer.
 
 ```js
 const toFixed = (number,n = 0) =>
-  number.toFixed(n)
+  number.toFixed(n);
 ```
 
 ```js
