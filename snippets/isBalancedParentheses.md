@@ -3,7 +3,7 @@ title: isBalancedParentheses
 tags: string,function,beginner
 ---
 
-Define if each open paranthesis has its closed pair.
+Define if each open parenthesis has its closed pair.
 
 - `"()"` or `"(())"` or `"()()"` - balanced.
 - `"("` or `"(()"` or `")())"` - not balanced.
