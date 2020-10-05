@@ -7,9 +7,8 @@ Define if each open paranthesis has its closed pair.
 
 - `"()"` or `"(())"` or `"()()"` - balanced.
 - `"("` or `"(()"` or `")())"` - not balanced.
-
-
 ```js
+
 const isBalancedParentheses = (str) => {
   let counter = 0;
 
@@ -32,5 +31,4 @@ const isBalancedParentheses = (str) => {
 ```js
 isBalancedParentheses("(()))"); // false
 isBalancedParentheses("()()"); // true
-
 ```
