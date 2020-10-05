@@ -5,18 +5,18 @@ tags: string,regexp,beginnner
 
 Converts a given string into an array of words.
 
-- Use `re.split()` with a supplied pattern (defaults to non-alpha as a regexp) to convert to an array of strings.
-- Use `filter()` in combination with `None` to remove any empty strings.
-- Omit the second argument to use the default regexp.
+- Use `re.findall()` with the supplied `pattern` to find all matching substrings.
+- Omit the second argument to use the default regexp, which matches alphanumeric and hyphens.
 
 ```py
 import re
 
-def words(str, pattern = '[^a-zA-Z-]+'):
-  return list(filter(None, re.split(pattern, str)))
+def words(s, pattern = '[a-zA-Z-]+'):
+  return re.findall(pattern, s)
 ```
 
 ```py
 words('I love Python!!') # ['I', 'love', 'Python']
 words('python, javaScript & coffee') # ['python', 'javaScript', 'coffee']
+words('build -q --out one-item', r'\b[a-zA-Z-]+\b') # ['build', 'q', 'out', 'one-item']
 ```
