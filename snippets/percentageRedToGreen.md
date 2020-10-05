@@ -1,5 +1,5 @@
 ---
-title: percentToColor
+title: percentageRedToGreen
 tags: math,rgb,beginner
 ---
 
