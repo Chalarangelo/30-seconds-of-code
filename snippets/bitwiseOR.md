@@ -3,7 +3,7 @@ title: Bitwise OR
 tags: math,logic,beginner
 ---
 
-Returns `1` if both the corresponding bits of the operands is `1` and `0` otherwise.
+Returns `1` if one of the corresponding bits is `1`
 
 - Use the Bitwise OR (`|`) operator on the two given values.
 
