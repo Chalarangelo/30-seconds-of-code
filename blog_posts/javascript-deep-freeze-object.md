@@ -54,7 +54,7 @@ const myObj = {
 
 const deepFreeze = obj => {
   Object.keys(obj).forEach(prop => {
-    if (obj[prop] === 'object' && !Object.isFrozen(obj[prop])) deepFreeze(v[prop]);
+    if (typeof obj[prop] === 'object' && !Object.isFrozen(obj[prop])) deepFreeze(obj[prop]);
   });
   return Object.freeze(obj);
 };
