@@ -3,7 +3,7 @@ title: bind
 tags: function,object,intermediate
 ---
 
-Creates a function that invokes `fn` with a given context, optionally adding any additional supplied parameters to the beginning of the arguments.
+Creates a function that invokes the variable `fn` with a given context, optionally adding any additional supplied parameters to the beginning of any of the arguments.
 
 - Return a `function` that uses `Function.prototype.apply()` to apply the given `context` to `fn`.
 - Use `Array.prototype.concat()` to prepend any additional supplied parameters to the arguments.
