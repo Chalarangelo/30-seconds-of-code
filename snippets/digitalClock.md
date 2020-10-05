@@ -1,6 +1,6 @@
 ---
 title: digitalClock
-tags: Date objects, Timer, intermediate
+tags: Date objects, Timer, conditional statements, strings
 ---
 
 Returns Current Time(Digital Clock)
