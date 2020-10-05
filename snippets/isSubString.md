@@ -1,6 +1,6 @@
 ---
 title: isSubString
-tags: type,intermediate,recursion
+tags: intermediate,recursion
 ---
 
 Checks if the second string is a substring of the first string recursively  
