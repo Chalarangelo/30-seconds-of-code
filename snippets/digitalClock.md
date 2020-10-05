@@ -1,17 +1,19 @@
 ---
-title: currentDateAndTime
-tags: object,Timer
+title: digitalClock
+tags: Date objects, Timer, intermediate
 ---
 
 Returns Current Time(Digital Clock)
 
 - Create a function to calculate a time
 - Use `Date()` object to extract current hour, minute and second
-- check whether its `AM` or `PM`
+- check whether its `AM` or `PM`, we used If/else statements
 - Do required calculations and ammend the hour, minute and second
+- We used setTimeout to keep the clock ticking at every 1000ms i.e 1 second
 
 ```js
-function showTime(){
+const showTime = () =>
+  {
     var date = new Date();
     var h = date.getHours(); // 0 - 23
     var m = date.getMinutes(); // 0 - 59
@@ -34,10 +36,9 @@ function showTime(){
     var time = h + ":" + m + ":" + s + " " + session;
     
     setTimeout(showTime, 1000);
-    
-}
+  }
 ```
 
 ```js
-showTime()
+showTime(); // current time - 22:54:30
 ```
