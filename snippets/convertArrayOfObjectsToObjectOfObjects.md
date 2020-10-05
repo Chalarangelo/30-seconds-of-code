@@ -1,5 +1,5 @@
 ---
-title: Convert an array of objects to object of objects
+title: convertArrayOfObjectsToObjectOfObjects
 tags: array,object,intermediate
 ---
 
@@ -11,28 +11,28 @@ Convert an array of objects to object of objects.  See code example for source d
 
 ```js
 function convert (data, keyname) {
-    if (data == null || keyname == null) {
-        return {}
+  if (data == null || keyname == null) {
+    return {}
+  }
+
+  const result = {}
+  data.forEach(el => {
+    if (!isObject(el)) {
+      throw new Error(`Array member is not an object: ${JSON.stringify(el)}`)
     }
 
-    let result = {}
-    data.forEach(el => {
-        if (!isObject(el)) {
-            throw new Error(`Array member is not an object: ${JSON.stringify(el)}`)
-        }
+    const keyValue = el[keyname]
+    if (Object.keys(result).includes(keyValue)) {
+      throw new Error(`Duplicate key value usage: ${keyValue}`)
+    }
 
-        const keyValue = el[keyname]
-        if (Object.keys(result).includes(keyValue)) {
-            throw new Error(`Duplicate key value usage: ${keyValue}`)
-        }
+    if (keyValue == null) {
+      throw new Error(`Given key not from from: ${JSON.stringify(el)}`)
+    }
 
-        if (keyValue == null) {
-            throw new Error(`Given key not from from: ${JSON.stringify(el)}`)
-        }
-
-        result[keyValue] = el
-    })
-    return result
+    result[keyValue] = el
+  })
+  return result
 }
 ```
 
