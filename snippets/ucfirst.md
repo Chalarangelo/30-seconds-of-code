@@ -15,5 +15,5 @@ const ucfirst = str =>
 
 ```js
 ucfirst('england'); // 'England'
-ucfirst(`john ${ucfirst('doe')`); // 'John Doe'
+ucfirst(`john ${ucfirst('doe')}`); // 'John Doe'
 ```
