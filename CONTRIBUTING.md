@@ -56,3 +56,4 @@ Replace `<my-snippet-name>` with the name of the snippet you are adding.
 - When describing snippets, refer to methods, using their full name. For example, use `Array.prototype.reduce()`, instead of `reduce()`.
 - Use variables only when necessary. Prefer `const` when the values are not altered after assignment, otherwise, use `let`. Do not use `var`. 
 - Never use `eval()`. Your snippet will be disqualified immediately.
+-Create truly high-quality content, using proper names and proper symbols not use '$' symbol.
