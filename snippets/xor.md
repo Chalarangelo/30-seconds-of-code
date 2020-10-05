@@ -5,7 +5,7 @@ tags: math,logic,beginner
 
 Returns `true` if only one of the arguments is `true`, `false` otherwise.
 
-- Using basic or (`||`), and (`&&`), and not (`!`) operators Logical xor. 
+- Logical xor using basic or (`||`), and (`&&`), not (`!`) operators. 
 - You can use the Bitwise xor (`^`) operator also on the two given values.
 
 ```js
