@@ -14,5 +14,5 @@ const nTimesString = (str, n) => {
 ```
 
 ```js
-nTimesString('js'); // 'jsjsjs'
+nTimesString('js', 3); // 'jsjsjs'
 ```
