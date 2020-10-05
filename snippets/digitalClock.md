@@ -8,7 +8,7 @@ Returns Current Time(Digital Clock)
 - Create a function to calculate a time
 - Use `Date()` object to extract current hour, minute and second
 - check whether its `AM` or `PM`, we used If/else statements
-- Do required calculations and ammend the hour, minute and second
+- Do ammend 0 to hour, minute or second if its less than 10 to make it standard if calculations and ammend the hour, minute and second
 - We used setTimeout to keep the clock ticking at every 1000ms i.e 1 second
 
 ```js
