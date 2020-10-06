@@ -15,7 +15,7 @@ const isIdentityMatrix = (matrix) => {
      {
       for (let VALUE_NUMBER = 0; VALUE_NUMBER < matrix.length; VALUE_NUMBER++)
        {
-        if (matrix[ROW_NUMBER][VALUE_NUMBER] !== 1 && ROW_NUMBER == VALUE_NUMBER || matrix[ROW_NUMBER][VALUE_NUMBER] == 1 && ROW_NUMBER !== VALUE_NUMBER)
+        if (matrix[ROW_NUMBER][VALUE_NUMBER] !== 1 && ROW_NUMBER == VALUE_NUMBER || matrix[ROW_NUMBER][VALUE_NUMBER] === 1 && ROW_NUMBER !== VALUE_NUMBER)
         {
           return false;
         }
