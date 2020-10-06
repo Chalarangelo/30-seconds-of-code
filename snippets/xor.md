@@ -5,11 +5,10 @@ tags: math,logic,beginner
 
 Returns `true` if only one of the arguments is `true`, `false` otherwise.
 
-- Logical xor using basic or (`||`), and (`&&`), not (`!`) operators. 
-- You can use the Bitwise xor (`^`) operator also on the two given values.
+- Use the logical or (`||`), and (`&&`) and not (`!`) operators on the two given values to create the logical xor.
 
 ```js
-const xor = (a, b) => ( ( a || b ) && !( a && b ) );
+const xor = (a, b) => (( a || b ) && !( a && b ));
 ```
 
 ```js
