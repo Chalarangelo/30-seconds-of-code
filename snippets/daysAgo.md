@@ -3,9 +3,9 @@ title: daysAgo
 tags: date,intermediate
 ---
 
-Returns previous N days from today as date string representation.
+Returns the date of `n` days ago from today as a string representation.
 
-- Use `new Date()` to get the current date, decrement using `Date.getDate()` and set the value to the result using `Date.setDate()`.
+- Use `new Date()` to get the current date, `Math.abs()` and `Date.getDate()` to update the date accordingly and set to the result using `Date.setDate()`.
 - Use `Date.prototype.toISOString()` to return a string in `yyyy-mm-dd` format.
 
 ```js
