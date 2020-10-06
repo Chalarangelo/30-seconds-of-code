@@ -1,6 +1,6 @@
 ---
 title: toTitleCase
-tags: string,regepx,intermediate
+tags: string,regexp,intermediate
 ---
 
 Converts a string to title case.
