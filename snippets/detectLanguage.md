@@ -3,20 +3,18 @@ title: detectLanguage
 tags: browser,intermediate
 ---
 
-Detects what the language of the current user is.
+Detects the preferred language of the current user.
 
-- Retrieve the current language by looking in several places of the navigator object.
+- Use `NavigationLanguage.language` or the first `NavigationLanguage.languages` if available, otherwise return `defaultLang`.
+- Omit the second argument, `defaultLang`, to use `'en-US'` as the default language code.
 
 ```js
-const detectLanguage = () => {
-  if (navigator.languages && navigator.languages.length) {
-      return navigator.languages[0];
-    } else {
-      return navigator.userLanguage || navigator.language || navigator.browserLanguage || 'en-US';
-    }
-};
+const detectLanguage = (defaultLang = 'en-US') => 
+  navigator.language ||
+  (Array.isArray(navigator.languages) && navigator.languages[0] ) ||
+  defaultLang;
 ```
 
 ```js
-detectLanguage(); // "nl-NL"
+detectLanguage(); // 'nl-NL'
 ```
