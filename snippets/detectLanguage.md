@@ -11,7 +11,7 @@ Detects the preferred language of the current user.
 ```js
 const detectLanguage = (defaultLang = 'en-US') => 
   navigator.language ||
-  (Array.isArray(navigator.languages) && navigator.languages[0] ) ||
+  (Array.isArray(navigator.languages) && navigator.languages[0]) ||
   defaultLang;
 ```
 
