@@ -1,5 +1,5 @@
 ---
-title: elementBiggerThanViewport
+title: getElementsBiggerThanViewport
 tags: browser,intermediate
 ---
 
@@ -21,5 +21,3 @@ const getElementsBiggerThanViewport = () => {
 ```js
 getElementsBiggerThanViewport(); // <div id="ultra-wide-item" />
 ```
-
-
