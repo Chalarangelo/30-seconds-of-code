@@ -1,11 +1,11 @@
 ---
-title: arithmetic_progression
+title: convert_to_binary
 tags: math,beginner
 ---
 
 Returns the base 2 equivalent of a decimal number
 
-- Use `bin` to convert a given decimal number into binary equivalent
+- Use `bin()` to convert a given decimal number into binary equivalent
 
 ```py
 def convert_to_binary(n):
