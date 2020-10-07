@@ -5,7 +5,7 @@ tags: date,beginner
 
 Returns `true` if given value is proper to create a valid date object, otherwise it returns `false`
 
-- Use `Date.prototype.valueOf()` and `Number.isNaN()` combination to check if value is proper for creating a valid `Date` object
+- Use `Date.prototype.valueOf()` and `Number.isNaN()` combination to check if the given value is proper for creating a valid `Date` object
 - Input can be any type
 
 ```js
