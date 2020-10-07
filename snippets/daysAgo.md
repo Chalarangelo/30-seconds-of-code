@@ -10,12 +10,12 @@ Returns the date of `n` days ago from today as a string representation.
 
 ```js
 const daysAgo = n => {
-  let t = new Date();
-  t.setDate(t.getDate() - Math.abs(n));
-  return t.toISOString().split('T')[0];
+  let d = new Date();
+  d.setDate(d.getDate() - Math.abs(n));
+  return d.toISOString().split('T')[0];
 };
 ```
 
 ```js
-daysAgo(20); // 2020-09-16 (if current date is 2020-10-06)
+daysAgo(20); // 2020-09-17 (if current date is 2020-10-07)
 ```
