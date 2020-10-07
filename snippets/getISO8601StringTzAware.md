@@ -18,7 +18,6 @@ const getISO8601StringWithTz = (d) => {
   const dif = tzo >= 0 ? '+' : '-';
   const pad = (num) => {
     const norm = Math.floor(Math.abs(num));
-    // tslint:disable-next-line:no-magic-numbers
     return (norm < 10 ? '0' : '') + norm;
   };
   return (
