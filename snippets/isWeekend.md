@@ -9,8 +9,8 @@ Results in a boolean representation of a specific date.
 - Use `Date.getDay()` to check weekend based on the day being returned as 0 - 6 using a modulo operation then return a boolean.
 
 ```js
-const isWeekend = (t = new Date()) => {
-  return t.getDay() % 6 === 0;
+const isWeekend = (d = new Date()) => {
+  return d.getDay() % 6 === 0;
 };
 ```
 
