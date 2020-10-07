@@ -9,7 +9,7 @@ Returns the date of `n` days ago from today as a string representation.
 - Use `Date.prototype.toISOString()` to return a string in `yyyy-mm-dd` format.
 
 ```js
-const daysAgo = (n) => {
+const daysAgo = n => {
   let t = new Date();
   t.setDate(t.getDate() - Math.abs(n));
   return t.toISOString().split('T')[0];
