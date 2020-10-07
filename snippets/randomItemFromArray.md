@@ -10,7 +10,7 @@ Selects a random item from an array.
 
 ```js
 const randomItemFromArray = array =>
-  {array[Math.floor(Math.random()*array.length)];}
+  array[Math.floor(Math.random()*array.length)];
 ```
 
 ```js
