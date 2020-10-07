@@ -1,6 +1,6 @@
 ---
 title: fullscreen
-tags: browser,intermediate
+tags: browser, intermediate
 ---
 
 Opens or closes an element in fullscreen mode.
