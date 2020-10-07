@@ -9,11 +9,12 @@ Results in a boolean representation of a specific date.
 - Use `Date.getDay()` to check weekday by using a modulo operator and then returning a boolean.
 
 ```js
-const isWeekday = (t = new Date()) => {
-  return t.getDay() % 6 !== 0;
+const isWeekday = () => {
+  d = new Date()
+  return d.getDay() % 6 !== 0;
 };
 ```
 
 ```js
-isWeekday(); // true (if current date is 2019-07-19)
+isWeekday(); // true (if current date is 2020-10-07)
 ```
