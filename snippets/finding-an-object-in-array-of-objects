@@ -1,0 +1,19 @@
+---
+title: finding an object in an array of objects
+tags: object-oriented,array,beginner
+---
+
+Returns a particular object from an array of objects.
+
+- Use the `find` method and plugin the selection criteria using an anonymous function as an argument.
+
+```js
+let fruitss = [
+  { id: 0, name: 'apple' },
+  { id: 1, name: 'mango' },
+  { id: 2, name: 'banana' }
+];
+let fruit = fruits.find(frut => frut.name === 'mango');
+console.log(fruit);
+--> { id: 1, name: 'mango' }
+```
