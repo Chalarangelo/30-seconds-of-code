@@ -9,9 +9,10 @@ Converts a number to an array of digits.
 - Use `Array.prototype.map()` and `parseInt()` to transform each value to an integer.
 
 ```js
-const digitize = n => [...`${n}`].map(i => parseInt(i));
+const digitize = n => [...`${Math.abs(n)}`].map((v, i) => i === 0 ? parseInt(v) * Math.sign(n) : parseInt(v));
 ```
 
 ```js
 digitize(123); // [1, 2, 3]
+digitize(-123); // [-1, 2, 3]
 ```
