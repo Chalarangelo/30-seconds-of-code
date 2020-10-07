@@ -9,16 +9,15 @@ Returns `true` if given value is proper to create a valid date object, otherwise
 - Input can be any type
 
 ```js
-const isDateValid = (...val) => !isNaN(new Date(...val).valueOf());
-};
+const isDateValid = (...val) => !isNaN(new Date(...val).valueOf());
 ```
 
 ```js
-isDateValid('December 17, 1995 03:24:00') // true
-isDateValid('1995-12-17T03:24:00') // true
-isDateValid('1995-12-17 T03:24:00') // false
-isDateValid('Duck') // false
-isDateValid(1995, 11, 17 ) //true
-isDateValid(1995, 11, 17, 'Duck') //false
-isDateValid({}) // false
+isDateValid('December 17, 1995 03:24:00'); // true
+isDateValid('1995-12-17T03:24:00'); // true
+isDateValid('1995-12-17 T03:24:00'); // false
+isDateValid('Duck'); // false
+isDateValid(1995, 11, 17); // true
+isDateValid(1995, 11, 17, 'Duck'); // false
+isDateValid({}); // false
 ```
