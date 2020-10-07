@@ -1,6 +1,6 @@
 ---
 title: isUndefined
-tags: type,beginner
+tags: type,beginner,javascript
 ---
 
 Returns `true` if the specified value is `undefined`, `false` otherwise.
