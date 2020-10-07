@@ -10,9 +10,9 @@ Results in a string representation of yesterday's date.
 
 ```js
 const yesterday = () => {
-  let t = new Date();
-  t.setDate(t.getDate() - 1);
-  return t.toISOString().split('T')[0];
+  let d = new Date();
+  d.setDate(d.getDate() - 1);
+  return d.toISOString().split('T')[0];
 };
 ```
 
