@@ -1,6 +1,6 @@
 ---
 title: base64ToFile
-tags: array,intermediate
+tags: base64,file,beginner
 ---
 
 Converting base64 to file
