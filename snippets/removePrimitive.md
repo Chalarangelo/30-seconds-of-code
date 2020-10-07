@@ -37,16 +37,16 @@ const primitiveArray = ['shizzle', null, undefined, 0, 1, true, false]
 const numberArray = [5, 3, 1, 9, 1]
 const objectArray = [{ me: 1 }, { you: 'two' }, { us: true }]
 
-// Read the output as consecutive calls to the same primitive array
-primitiveArray.remove('shizzle') // [null, undefined, 0, 1, true, false]
-primitiveArray.remove(0) // [null, undefined, 1, true, false]
-primitiveArray.remove(false) // [null, undefined, 1, true]
-primitiveArray.remove() // [null, 1, true]
+// Read the output as consecutive calls to the same array
+primitiveArray.removePrimitive('shizzle') // [null, undefined, 0, 1, true, false]
+primitiveArray.removePrimitive(0) // [null, undefined, 1, true, false]
+primitiveArray.removePrimitive(false) // [null, undefined, 1, true]
+primitiveArray.removePrimitive() // [null, 1, true]
 
-numberArray.remove(1) // [5, 3, 9, 1]
-numberArray.remove(0) // [5, 3, 9, 1]
-numberArray.remove({ hello: 'world' }) // [5, 3, 9, 1]
+numberArray.removePrimitive(1) // [5, 3, 9, 1]
+numberArray.removePrimitive(1) // [5, 3, 9]
+numberArray.removePrimitive({ hello: 'world' }) // [5, 3, 9]
 
-objectArray.remove('hello') // [{ me: 1 }, { you: 'two' }, { us: true }]
-objectArray.remove({}) // [{ me: 1 }, { you: 'two' }, { us: true }]
+objectArray.removePrimitive('hello') // [{ me: 1 }, { you: 'two' }, { us: true }]
+objectArray.removePrimitive({}) // [{ me: 1 }, { you: 'two' }, { us: true }]
 ```
