@@ -8,11 +8,11 @@ Executes any arbitrary provided function (a task) as a macro task. This pushes a
 Please see [this](https://javascript.info/event-loop#macrotasks-and-microtasks) for in-depth information if needed.
 
 ```js
-const executeJSMacroTask = (taskFn) => {
+const executeMacroTask = (taskFn) => {
   setTimeout(taskFn);
 };
 ```
 
 ```js
-executeJSMacroTask(() => console.log('macroTask')); // Logs `macroTask` in the next order of execution on the event loop.
+executeMacroTask(() => console.log('macroTask')); // Logs `macroTask` in the next order of execution on the event loop.
 ```
