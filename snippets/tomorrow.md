@@ -10,9 +10,9 @@ Results in a string representation of tomorrow's date.
 
 ```js
 const tomorrow = () => {
-  let t = new Date();
-  t.setDate(t.getDate() + 1);
-  return t.toISOString().split('T')[0];
+  let d = new Date();
+  d.setDate(d.getDate() + 1);
+  return d.toISOString().split('T')[0];
 };
 ```
 
