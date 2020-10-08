@@ -1,12 +1,12 @@
 ---
 title: isDateValid
-tags: date,beginner
+tags: date,intermediate
 ---
 
-Returns `true` if given value is proper to create a valid date object, otherwise it returns `false`
+Returns `true` if a valid date object can be created from the given values, `false` otherwise.
 
-- Use `Date.prototype.valueOf()` and `Number.isNaN()` combination to check if the given value is proper for creating a valid `Date` object
-- Input can be any type
+- Use the spread operator (`...`) to pass the array of arguments to the `Date` constructor.
+- Use `Date.prototype.valueOf()` and `Number.isNaN()` to check if a valid `Date` object can be created from the given values.
 
 ```js
 const isDateValid = (...val) => !isNaN(new Date(...val).valueOf());
