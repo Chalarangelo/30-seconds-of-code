@@ -1,24 +1,22 @@
 ---
-title: addMultipleEvents
-tags: JavaScript, Browser, Events, beginner
+title: addMultipleListeners
+tags: browser,event,intermediate
 ---
 
-Add multiple event listener to an element.
+Add multiple event listeners with the same handler to an element.
 
-- Use <code>Array.prototype.forEach()</code> and <code>EventTarget.addEventListener()</code> to add multiples event listener with an assigned callback function to an element.
+- Use `Array.prototype.forEach()` and `EventTarget.addEventListener()` to add multiple event listeners with an assigned callback function to an element.
 
 ```js
-const addMultipleEvents = (el, evts) => {
-    evts.forEach(evt => el.addEventListener(evt.name, evt.fn, false));
+const addMultipleListeners = (el, types, listener, options, useCapture) => {
+  types.forEach(type => el.addEventListener(type, listener, options, useCapture));
 }
 ```
 
 ```js
-addMultipleEvents(document.querySelector('.textInput'),
-    [
-        {name: 'mousedown', fn: () => console.log('mousedown event')},
-        {name: 'touchstart', fn: () => console.log('touchstart event')},
-        {name: 'change', fn: () => console.log('change event')}
-    ]
+addMultipleListeners(
+  document.querySelector('.my-element'),
+  ['click', 'mousedown'],
+  () => { console.log('hello!') }
 );
 ```
