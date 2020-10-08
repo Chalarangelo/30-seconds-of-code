@@ -6,7 +6,7 @@ tags: maths,string,intermediate
 Converts hexadecimal numbers to decimal numbers
 
 - Creates an object that serves as a dictionary to the numbers in the hexadecimal number.
-- Uses `split` to transform the string in an array and then uses `shift`, `reverse` to treat the array.
+- Uses `String.prototype.split` to transform the string in an array and then uses `Array.prototype.shift`, `Array.prototype.reverse` to treat the array.
 - Use `for` to loop over the array and add the correct value to decNumber.
 
 ```js
