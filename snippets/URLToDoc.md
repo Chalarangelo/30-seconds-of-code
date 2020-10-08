@@ -1,6 +1,6 @@
 ---
 title: URLToDoc
-tags: url, web-scrapping, DOM, Advanced
+tags: web-scrapping, DOM, Advanced
 ---
 
 Convert any remote url to a HTMLDocument object.
@@ -13,34 +13,26 @@ Convert any remote url to a HTMLDocument object.
 
 ```js
 const URLToDoc = async (URL) => {
-    const CORS_PROXY = 'https://cors-anywhere.herokuapp.com'
-    let response = await fetch(`${CORS_PROXY}/${URL}`)
-    let htmlContent = await response.text()
+  const CORS_PROXY = 'https://cors-anywhere.herokuapp.com'
+  let response = await fetch(`${CORS_PROXY}/${URL}`)
+  let htmlContent = await response.text()
 
-    let domParser = new DOMParser()
-    let document = domParser.parseFromString(htmlContent, 'text/html')
-    return document
+  let domParser = new DOMParser()
+  let document = domParser.parseFromString(htmlContent, 'text/html')
+  return document
 }
 ```
 
 ```js
 URLToDoc('https://hacktoberfest.digitalocean.com')
-    .then(remoteDocument => {
-        console.log(remoteDocument)
-    }) // HTMLDocument
+  .then(remoteDocument => {
+    console.log(remoteDocument)
+  }) // HTMLDocument
 
 URLToDoc('https://hacktoberfest.digitalocean.com')
-    .then(remoteDocument => {
-        let rulesElement = remoteDocument.querySelector('#rules')
-        console.log(rulesElement)
-    }) // HTMLHeadingElement
-       // <h2 class="title is-2" id="rules"><a href="#rules">Rules</a></h2>
-
-// Example scrapper function
-const webScrapper = async (websiteUrl) => {
-    const remoteDocument = await URLToDoc(websiteUrl)
-    /*
-        Scrapping goes here
-    */
-}
+  .then(remoteDocument => {
+    let rulesElement = remoteDocument.querySelector('#rules')
+    console.log(rulesElement)
+  }) // HTMLHeadingElement
+     // <h2 class="title is-2" id="rules"><a href="#rules">Rules</a></h2>
 ```
