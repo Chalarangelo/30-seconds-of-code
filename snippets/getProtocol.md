@@ -5,7 +5,7 @@ tags: browser,beginner
 
 Returns the protocol being used on the current page.
 
-- Can be either `http:` or `https:`
+- Use `window.location.protocol` to get the protocol (`http:` or `https:`) of the current page.
 
 ```js
 const getProtocol = () => window.location.protocol;
