@@ -1,19 +1,26 @@
 ---
-title: functionName
-tags: array,intermediate
+title: purge
+tags: array,function,beginner
 ---
 
-Explain briefly what the snippet does.
+Given an array `arr`, returns a copy of `arr` with all the undefined and null values `filtered` out.
 
-- Explain briefly how the snippet works.
-- Use bullet points for your snippet's explanation.
-- Try to explain everything briefly but clearly.
+- It clones the original array using the spread operator, then it uses `Array.prototype.filter()` to check if the `type of` the element is `undefined` or if its string representations is `null`
+- The function also receives a second argument called `strictMode`, if it's true then it will also removes all falsy values from the array. It defaults to `false`.
 
 ```js
-const functionName = arguments =>
-  {functionBody}
+const purge = (arr, strictMode = false) => {
+  return [...arr].filter(element => {
+    if (strictMode) {
+      return element;
+    } else {
+      return typeof element !== "undefined" && String(element) !== "null";
+    }
+  });
+}
 ```
 
 ```js
-functionName('sampleInput'); // 'sampleOutput'
+purge([1, null, 3, '', undefined, false, 5]); // [1, 3, "", false, 5]
+purge([1, null, 3, '', undefined, false, 5], true); // [1, 3, 5]
 ```
