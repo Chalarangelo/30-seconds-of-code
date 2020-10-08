@@ -1,6 +1,6 @@
 ---
-title: isNumber
-tags: type,math,beginner
+Title: isNumber
+Tags: type,math,beginner
 ---
 
 Checks if the given argument is a number.

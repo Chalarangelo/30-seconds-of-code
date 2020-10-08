@@ -1,6 +1,6 @@
 ---
-title: daysAgo
-tags: date,intermediate
+Title: daysAgo
+Tags: date,intermediate
 ---
 
 Returns the date of `n` days ago from today as a string representation.

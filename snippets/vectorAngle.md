@@ -1,6 +1,6 @@
 ---
-title: vectorAngle
-tags: math,beginner
+Title: vectorAngle
+Tags: math,beginner
 ---
 
 Returns the angle (theta) between two vectors.

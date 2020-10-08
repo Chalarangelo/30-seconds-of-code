@@ -1,6 +1,6 @@
 ---
-title: reject
-tags: array,beginner
+Title: reject
+Tags: array,beginner
 ---
 
 Filters an array's values based on a predicate function, returning only values for which the predicate function returns `false`.

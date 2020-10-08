@@ -1,6 +1,6 @@
 ---
-title: initializeNDArray
-tags: array,recursion,intermediate
+Title: initializeNDArray
+Tags: array,recursion,intermediate
 ---
 
 Create a n-dimensional array with given value.

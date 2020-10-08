@@ -1,6 +1,6 @@
 ---
-title: renderElement
-tags: browser,recursion,advanced
+Title: renderElement
+Tags: browser,recursion,advanced
 ---
 
 Renders the given DOM tree in the specified DOM element.

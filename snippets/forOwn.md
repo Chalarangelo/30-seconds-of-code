@@ -1,6 +1,6 @@
 ---
-title: forOwn
-tags: object,intermediate
+Title: forOwn
+Tags: object,intermediate
 ---
 
 Iterates over all own properties of an object, running a callback for each one.

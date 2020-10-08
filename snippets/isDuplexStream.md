@@ -1,6 +1,6 @@
 ---
-title: isDuplexStream
-tags: node,type,intermediate
+Title: isDuplexStream
+Tags: node,type,intermediate
 ---
 
 Checks if the given argument is a duplex (readable and writable) stream.

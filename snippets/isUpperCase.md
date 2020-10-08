@@ -1,6 +1,6 @@
 ---
-title: isUpperCase
-tags: string,beginner
+Title: isUpperCase
+Tags: string,beginner
 ---
 
 Checks if a string is upper case.

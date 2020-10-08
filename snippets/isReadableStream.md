@@ -1,6 +1,6 @@
 ---
-title: isReadableStream
-tags: node,type,intermediate
+Title: isReadableStream
+Tags: node,type,intermediate
 ---
 
 Checks if the given argument is a readable stream.

@@ -1,6 +1,6 @@
 ---
-title: times
-tags: function,intermediate
+Title: times
+Tags: function,intermediate
 ---
 
 Iterates over a callback `n` times

@@ -1,6 +1,6 @@
 ---
-title: negate
-tags: function,beginner
+Title: negate
+Tags: function,beginner
 ---
 
 Negates a predicate function.

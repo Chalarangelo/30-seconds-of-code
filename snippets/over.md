@@ -1,6 +1,6 @@
 ---
-title: over
-tags: function,intermediate
+Title: over
+Tags: function,intermediate
 ---
 
 Creates a function that invokes each provided function with the arguments it receives and returns the results.

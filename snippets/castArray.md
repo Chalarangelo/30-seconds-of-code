@@ -1,6 +1,6 @@
 ---
-title: castArray
-tags: type,array,beginner
+Title: castArray
+Tags: type,array,beginner
 ---
 
 Casts the provided value as an array if it's not one.

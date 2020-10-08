@@ -1,6 +1,6 @@
 ---
-title: palindrome
-tags: string,intermediate
+Title: palindrome
+Tags: string,intermediate
 ---
 
 Returns `true` if the given string is a palindrome, `false` otherwise.

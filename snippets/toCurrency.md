@@ -1,6 +1,6 @@
 ---
-title: toCurrency
-tags: math,string,intermediate
+Title: toCurrency
+Tags: math,string,intermediate
 ---
 
 Take a number and return specified currency formatting.

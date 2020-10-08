@@ -1,6 +1,6 @@
 ---
-title: bindAll
-tags: object,function,intermediate
+Title: bindAll
+Tags: object,function,intermediate
 ---
 
 Binds methods of an object to the object itself, overwriting the existing method.

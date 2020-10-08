@@ -1,6 +1,6 @@
 ---
-title: nodeListToArray
-tags: browser,array,beginner
+Title: nodeListToArray
+Tags: browser,array,beginner
 ---
 
 Converts a `NodeList` to an array.

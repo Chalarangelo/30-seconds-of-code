@@ -1,6 +1,6 @@
 ---
-title: listenOnce
-tags: browser,event,beginner
+Title: listenOnce
+Tags: browser,event,beginner
 ---
 
 Adds an event listener to an element that will only run the callback the first time the event is triggered.

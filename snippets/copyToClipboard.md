@@ -1,6 +1,6 @@
 ---
-title: copyToClipboard
-tags: browser,string,advanced
+Title: copyToClipboard
+Tags: browser,string,advanced
 ---
 
 Copy a string to the clipboard.

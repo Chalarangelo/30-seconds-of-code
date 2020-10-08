@@ -1,6 +1,6 @@
 ---
-title: merge
-tags: object,array,intermediate
+Title: merge
+Tags: object,array,intermediate
 ---
 
 Creates a new object from the combination of two or more objects.

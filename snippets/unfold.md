@@ -1,6 +1,6 @@
 ---
-title: unfold
-tags: function,array,intermediate
+Title: unfold
+Tags: function,array,intermediate
 ---
 
 Builds an array, using an iterator function and an initial seed value.

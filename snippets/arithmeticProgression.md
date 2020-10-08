@@ -1,6 +1,6 @@
 ---
-title: arithmeticProgression
-tags: math,array,beginner
+Title: arithmeticProgression
+Tags: math,array,beginner
 ---
 
 Returns an array of numbers in the arithmetic progression starting with the given positive integer and up to the specified limit.

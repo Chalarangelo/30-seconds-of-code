@@ -1,6 +1,6 @@
 ---
-title: toCamelCase
-tags: string,regexp,intermediate
+Title: toCamelCase
+Tags: string,regexp,intermediate
 ---
 
 Converts a string to camelcase.

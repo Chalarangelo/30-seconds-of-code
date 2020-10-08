@@ -1,6 +1,6 @@
 ---
-title: compose
-tags: function,intermediate
+Title: compose
+Tags: function,intermediate
 ---
 
 Performs right-to-left function composition.

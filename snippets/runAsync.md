@@ -1,6 +1,6 @@
 ---
-title: runAsync
-tags: browser,function,advanced,promise,url
+Title: runAsync
+Tags: browser,function,advanced,promise,url
 ---
 
 Runs a function in a separate thread by using a [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), allowing long running functions to not block the UI.

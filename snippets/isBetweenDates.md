@@ -1,6 +1,6 @@
 ---
-title: isBetweenDates
-tags: date,beginner
+Title: isBetweenDates
+Tags: date,beginner
 ---
 
 Check if a date is between two other dates.

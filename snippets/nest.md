@@ -1,6 +1,6 @@
 ---
-title: nest
-tags: object,intermediate
+Title: nest
+Tags: object,intermediate
 ---
 
 Given a flat array of objects linked to one another, it will nest them recursively.

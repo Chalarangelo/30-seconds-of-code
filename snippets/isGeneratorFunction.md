@@ -1,6 +1,6 @@
 ---
-title: isGeneratorFunction
-tags: type,function,intermediate
+Title: isGeneratorFunction
+Tags: type,function,intermediate
 ---
 
 Checks if the given argument is a generator function.

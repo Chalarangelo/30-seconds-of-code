@@ -1,6 +1,6 @@
 ---
-title: isPlainObject
-tags: type,object,intermediate
+Title: isPlainObject
+Tags: type,object,intermediate
 ---
 
 Checks if the provided value is an object created by the Object constructor.

@@ -1,6 +1,6 @@
 ---
-title: dropRight
-tags: array,beginner
+Title: dropRight
+Tags: array,beginner
 ---
 
 Returns a new array with `n` elements removed from the right.

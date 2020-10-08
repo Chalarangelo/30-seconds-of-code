@@ -1,6 +1,6 @@
 ---
-title: currentURL
-tags: browser,url,beginner
+Title: currentURL
+Tags: browser,url,beginner
 ---
 
 Returns the current URL.

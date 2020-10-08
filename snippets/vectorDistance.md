@@ -1,6 +1,6 @@
 ---
-title: vectorDistance
-tags: math,beginner
+Title: vectorDistance
+Tags: math,beginner
 ---
 
 Returns the distance between two vectors.

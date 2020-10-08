@@ -1,6 +1,6 @@
 ---
-title: stringPermutations
-tags: string,recursion,advanced
+Title: stringPermutations
+Tags: string,recursion,advanced
 ---
 
 Generates all permutations of a string (contains duplicates).

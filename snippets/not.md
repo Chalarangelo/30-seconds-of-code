@@ -1,6 +1,6 @@
 ---
-title: not
-tags: math,logic,beginner
+Title: not
+Tags: math,logic,beginner
 ---
 
 Returns the logical inverse of the given value.

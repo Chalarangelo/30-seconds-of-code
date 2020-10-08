@@ -1,6 +1,6 @@
 ---
-title: hasDuplicates
-tags: array,beginner
+Title: hasDuplicates
+Tags: array,beginner
 ---
 
 Checks if there are duplicate values in a flat array.

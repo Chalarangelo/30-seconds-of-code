@@ -1,6 +1,6 @@
 ---
-title: takeRight
-tags: array,intermediate
+Title: takeRight
+Tags: array,intermediate
 ---
 
 Returns an array with n elements removed from the end.

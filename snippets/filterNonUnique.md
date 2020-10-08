@@ -1,6 +1,6 @@
 ---
-title: filterNonUnique
-tags: array,beginner
+Title: filterNonUnique
+Tags: array,beginner
 ---
 
 Filters out the non-unique values in an array.

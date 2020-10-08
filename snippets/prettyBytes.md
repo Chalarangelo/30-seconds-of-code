@@ -1,6 +1,6 @@
 ---
-title: prettyBytes
-tags: string,math,advanced
+Title: prettyBytes
+Tags: string,math,advanced
 ---
 
 Converts a number in bytes to a human-readable string.

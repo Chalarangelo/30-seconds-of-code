@@ -1,6 +1,6 @@
 ---
-title: isWritableStream
-tags: node,type,intermediate
+Title: isWritableStream
+Tags: node,type,intermediate
 ---
 
 Checks if the given argument is a writable stream.

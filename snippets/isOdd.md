@@ -1,6 +1,6 @@
 ---
-title: isOdd
-tags: math,beginner
+Title: isOdd
+Tags: math,beginner
 ---
 
 Returns `true` if the given number is odd, `false` otherwise.

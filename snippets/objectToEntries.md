@@ -1,6 +1,6 @@
 ---
-title: objectToEntries
-tags: object,array,beginner
+Title: objectToEntries
+Tags: object,array,beginner
 ---
 
 Creates an array of key-value pair arrays from an object.

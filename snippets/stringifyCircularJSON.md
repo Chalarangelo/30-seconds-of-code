@@ -1,6 +1,6 @@
 ---
-title: stringifyCircularJSON
-tags: object,advanced
+Title: stringifyCircularJSON
+Tags: object,advanced
 ---
 
 Serializes a JSON object containing circular references into a JSON format.

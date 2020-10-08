@@ -1,6 +1,6 @@
 ---
-title: removeNonASCII
-tags: string,regexp,intermediate
+Title: removeNonASCII
+Tags: string,regexp,intermediate
 ---
 
 Removes non-printable ASCII characters.

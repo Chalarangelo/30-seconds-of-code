@@ -1,6 +1,6 @@
 ---
-title: sumN
-tags: math,beginner
+Title: sumN
+Tags: math,beginner
 ---
 
 Sums all the numbers between 1 and `n`.

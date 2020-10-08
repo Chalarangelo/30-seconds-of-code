@@ -1,6 +1,6 @@
 ---
-title: tomorrow
-tags: date,intermediate
+Title: tomorrow
+Tags: date,intermediate
 ---
 
 Results in a string representation of tomorrow's date.

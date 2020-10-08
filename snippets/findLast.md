@@ -1,6 +1,6 @@
 ---
-title: findLast
-tags: array,beginner
+Title: findLast
+Tags: array,beginner
 ---
 
 Returns the last element for which the provided function returns a truthy value.

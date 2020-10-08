@@ -1,6 +1,6 @@
 ---
-title: includesAny
-tags: array,beginner
+Title: includesAny
+Tags: array,beginner
 ---
 
 Returns `true` if at least one element of values is included in arr , `false` otherwise.

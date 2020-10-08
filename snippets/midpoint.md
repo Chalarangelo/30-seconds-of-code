@@ -1,6 +1,6 @@
 ---
-title: midpoint
-tags: math,array,beginner
+Title: midpoint
+Tags: math,array,beginner
 ---
 
 Calculates the midpoint between two pairs of (x,y) points.

@@ -1,6 +1,6 @@
 ---
-title: divmod
-tags: math,beginner
+Title: divmod
+Tags: math,beginner
 ---
 
 Returns an array consisting of the quotient and remainder of the given numbers.

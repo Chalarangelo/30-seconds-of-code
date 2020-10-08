@@ -1,6 +1,6 @@
 ---
-title: prefersDarkColorScheme
-tags: browser,intermediate
+Title: prefersDarkColorScheme
+Tags: browser,intermediate
 ---
 
 Returns `true` if the user color scheme preference is `dark`, `false` otherwise.

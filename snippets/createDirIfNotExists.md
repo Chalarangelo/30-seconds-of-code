@@ -1,6 +1,6 @@
 ---
-title: createDirIfNotExists
-tags: node,beginner
+Title: createDirIfNotExists
+Tags: node,beginner
 ---
 
 Creates a directory, if it does not exist.

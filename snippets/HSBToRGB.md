@@ -1,6 +1,6 @@
 ---
-title: HSBToRGB
-tags: math,intermediate
+Title: HSBToRGB
+Tags: math,intermediate
 ---
 
 Converts a HSB color tuple to RGB format.

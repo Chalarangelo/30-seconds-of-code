@@ -1,6 +1,6 @@
 ---
-title: take
-tags: array,beginner
+Title: take
+Tags: array,beginner
 ---
 
 Returns an array with n elements removed from the beginning.

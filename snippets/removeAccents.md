@@ -1,6 +1,6 @@
 ---
-title: removeAccents
-tags: string,beginner
+Title: removeAccents
+Tags: string,beginner
 ---
 
 Removes accents from strings.

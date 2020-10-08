@@ -1,6 +1,6 @@
 ---
-title: hasKey
-tags: object,intermediate
+Title: hasKey
+Tags: object,intermediate
 ---
 
 Returns `true` if the target value exists in a JSON object, `false` otherwise.

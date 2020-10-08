@@ -1,6 +1,6 @@
 ---
-title: join
-tags: array,intermediate
+Title: join
+Tags: array,intermediate
 ---
 
 Joins all elements of an array into a string and returns this string.

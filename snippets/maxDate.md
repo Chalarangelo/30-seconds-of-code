@@ -1,6 +1,6 @@
 ---
-title: maxDate
-tags: date,math,beginner
+Title: maxDate
+Tags: date,math,beginner
 ---
 
 Returns the maximum of the given dates.

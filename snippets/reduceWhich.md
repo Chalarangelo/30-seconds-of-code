@@ -1,6 +1,6 @@
 ---
-title: reduceWhich
-tags: array,function,intermediate
+Title: reduceWhich
+Tags: array,function,intermediate
 ---
 
 Returns the minimum/maximum value of an array, after applying the provided function to set comparing rule.

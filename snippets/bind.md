@@ -1,6 +1,6 @@
 ---
-title: bind
-tags: function,object,intermediate
+Title: bind
+Tags: function,object,intermediate
 ---
 
 Creates a function that invokes `fn` with a given context, optionally adding any additional supplied parameters to the beginning of the arguments.

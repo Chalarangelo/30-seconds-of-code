@@ -1,6 +1,6 @@
 ---
-title: nthElement
-tags: array,beginner
+Title: nthElement
+Tags: array,beginner
 ---
 
 Returns the nth element of an array.

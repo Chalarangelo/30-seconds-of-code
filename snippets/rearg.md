@@ -1,6 +1,6 @@
 ---
-title: rearg
-tags: function,intermediate
+Title: rearg
+Tags: function,intermediate
 ---
 
 Creates a function that invokes the provided function with its arguments arranged according to the specified indexes.

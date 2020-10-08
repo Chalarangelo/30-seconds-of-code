@@ -1,6 +1,6 @@
 ---
-title: milesToKm
-tags: math,beginner
+Title: milesToKm
+Tags: math,beginner
 ---
 
 Converts miles to kilometers.

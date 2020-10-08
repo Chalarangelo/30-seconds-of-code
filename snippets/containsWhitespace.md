@@ -1,6 +1,6 @@
 ---
-title: containsWhitespace
-tags: string,regexp,beginner
+Title: containsWhitespace
+Tags: string,regexp,beginner
 ---
 
 Returns `true` if the given string contains any whitespace characters, `false` otherwise.

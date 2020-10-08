@@ -1,6 +1,6 @@
 ---
-title: uniqueElements
-tags: array,beginner
+Title: uniqueElements
+Tags: array,beginner
 ---
 
 Returns all unique values in an array.

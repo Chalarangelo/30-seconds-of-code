@@ -1,6 +1,6 @@
 ---
-title: isNil
-tags: type,beginner
+Title: isNil
+Tags: type,beginner
 ---
 
 Returns `true` if the specified value is `null` or `undefined`, `false` otherwise.

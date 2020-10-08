@@ -1,6 +1,6 @@
 ---
-title: httpDelete
-tags: browser,url,intermediate
+Title: httpDelete
+Tags: browser,url,intermediate
 ---
 
 Makes a `DELETE` request to the passed URL.

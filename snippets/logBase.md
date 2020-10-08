@@ -1,6 +1,6 @@
 ---
-title: logBase
-tags: math,beginner
+Title: logBase
+Tags: math,beginner
 ---
 
 Returns the logarithm of the given number in the given base.

@@ -1,6 +1,6 @@
 ---
-title: intersection
-tags: array,math,intermediate
+Title: intersection
+Tags: array,math,intermediate
 ---
 
 Returns a list of elements that exist in both arrays.

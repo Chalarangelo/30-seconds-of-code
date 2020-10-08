@@ -1,6 +1,6 @@
 ---
-title: xProd
-tags: array,math,intermediate
+Title: xProd
+Tags: array,math,intermediate
 ---
 
 Creates a new array out of the two supplied by creating each possible pair from the arrays.

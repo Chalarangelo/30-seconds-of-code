@@ -1,6 +1,6 @@
 ---
-title: xor
-tags: math,logic,beginner
+Title: xor
+Tags: math,logic,beginner
 ---
 
 Returns `true` if only one of the arguments is `true`, `false` otherwise.

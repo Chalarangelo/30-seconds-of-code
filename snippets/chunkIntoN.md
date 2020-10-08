@@ -1,6 +1,6 @@
 ---
-title: chunkIntoN
-tags: array,intermediate
+Title: chunkIntoN
+Tags: array,intermediate
 ---
 
 Chunks an array into `n` smaller arrays.

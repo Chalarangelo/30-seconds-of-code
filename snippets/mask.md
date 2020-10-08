@@ -1,6 +1,6 @@
 ---
-title: mask
-tags: string,intermediate
+Title: mask
+Tags: string,intermediate
 ---
 
 Replaces all but the last `num` of characters with the specified mask character.

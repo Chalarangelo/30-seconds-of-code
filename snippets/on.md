@@ -1,6 +1,6 @@
 ---
-title: on
-tags: browser,event,intermediate
+Title: on
+Tags: browser,event,intermediate
 ---
 
 Adds an event listener to an element with the ability to use event delegation.

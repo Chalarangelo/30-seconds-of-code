@@ -1,6 +1,6 @@
 ---
-title: initial
-tags: array,beginner
+Title: initial
+Tags: array,beginner
 ---
 
 Returns all the elements of an array except the last one.

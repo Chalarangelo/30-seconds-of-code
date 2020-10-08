@@ -1,6 +1,6 @@
 ---
-title: hammingDistance
-tags: math,regexp,intermediate
+Title: hammingDistance
+Tags: math,regexp,intermediate
 ---
 
 Calculates the Hamming distance between two values.

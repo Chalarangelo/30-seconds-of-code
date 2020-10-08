@@ -1,6 +1,6 @@
 ---
-title: unary
-tags: function,beginner
+Title: unary
+Tags: function,beginner
 ---
 
 Creates a function that accepts up to one argument, ignoring any additional arguments.

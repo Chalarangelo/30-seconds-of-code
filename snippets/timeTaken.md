@@ -1,6 +1,6 @@
 ---
-title: timeTaken
-tags: function,beginner
+Title: timeTaken
+Tags: function,beginner
 ---
 
 Measures the time taken by a function to execute.

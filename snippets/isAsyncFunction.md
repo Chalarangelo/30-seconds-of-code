@@ -1,6 +1,6 @@
 ---
-title: isAsyncFunction
-tags: type,function,intermediate
+Title: isAsyncFunction
+Tags: type,function,intermediate
 ---
 
 Checks if the given argument is an `async` function.

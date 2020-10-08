@@ -1,6 +1,6 @@
 ---
-title: symmetricDifference
-tags: array,math,intermediate
+Title: symmetricDifference
+Tags: array,math,intermediate
 ---
 
 Returns the symmetric difference between two arrays, without filtering out duplicate values.

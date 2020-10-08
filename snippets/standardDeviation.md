@@ -1,6 +1,6 @@
 ---
-title: standardDeviation
-tags: math,array,intermediate
+Title: standardDeviation
+Tags: math,array,intermediate
 ---
 
 Returns the standard deviation of an array of numbers.

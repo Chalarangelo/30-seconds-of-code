@@ -1,6 +1,6 @@
 ---
-title: similarity
-tags: array,math,beginner
+Title: similarity
+Tags: array,math,beginner
 ---
 
 Returns an array of elements that appear in both arrays.

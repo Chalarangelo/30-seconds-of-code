@@ -1,6 +1,6 @@
 ---
-title: compactWhitespace
-tags: string,regexp,beginner
+Title: compactWhitespace
+Tags: string,regexp,beginner
 ---
 
 Returns a string with whitespaces compacted.

@@ -1,6 +1,6 @@
 ---
-title: hz
-tags: function,intermediate
+Title: hz
+Tags: function,intermediate
 ---
 
 Returns the number of times a function executed per second.

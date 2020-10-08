@@ -1,6 +1,6 @@
 ---
-title: round
-tags: math,intermediate
+Title: round
+Tags: math,intermediate
 ---
 
 Rounds a number to a specified amount of digits.

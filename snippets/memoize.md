@@ -1,6 +1,6 @@
 ---
-title: memoize
-tags: function,advanced
+Title: memoize
+Tags: function,advanced
 ---
 
 Returns the memoized (cached) function.

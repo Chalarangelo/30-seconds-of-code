@@ -1,6 +1,6 @@
 ---
-title: median
-tags: math,array,intermediate
+Title: median
+Tags: math,array,intermediate
 ---
 
 Returns the median of an array of numbers.

@@ -1,6 +1,6 @@
 ---
-title: getMonthsDiffBetweenDates
-tags: date,intermediate
+Title: getMonthsDiffBetweenDates
+Tags: date,intermediate
 ---
 
 Returns the difference (in months) between two dates.

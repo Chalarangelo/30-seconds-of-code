@@ -1,6 +1,6 @@
 ---
-title: orderBy
-tags: object,array,intermediate
+Title: orderBy
+Tags: object,array,intermediate
 ---
 
 Returns a sorted array of objects ordered by properties and orders.

@@ -1,6 +1,6 @@
 ---
-title: randomIntArrayInRange
-tags: math,random,intermediate
+Title: randomIntArrayInRange
+Tags: math,random,intermediate
 ---
 
 Returns an array of n random integers in the specified range.

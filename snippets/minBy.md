@@ -1,6 +1,6 @@
 ---
-title: minBy
-tags: math,array,function,beginner
+Title: minBy
+Tags: math,array,function,beginner
 ---
 
 Returns the minimum value of an array, after mapping each element to a value using the provided function.

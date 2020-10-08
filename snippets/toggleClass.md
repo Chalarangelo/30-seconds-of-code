@@ -1,6 +1,6 @@
 ---
-title: toggleClass
-tags: browser,beginner
+Title: toggleClass
+Tags: browser,beginner
 ---
 
 Toggles a class for an HTML element.

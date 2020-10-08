@@ -1,6 +1,6 @@
 ---
-title: partialRight
-tags: function,intermediate
+Title: partialRight
+Tags: function,intermediate
 ---
 
 Creates a function that invokes `fn` with `partials` appended to the arguments it receives.

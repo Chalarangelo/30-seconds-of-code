@@ -1,6 +1,6 @@
 ---
-title: delay
-tags: function,intermediate
+Title: delay
+Tags: function,intermediate
 ---
 
 Invokes the provided function after `wait` milliseconds.

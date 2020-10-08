@@ -1,6 +1,6 @@
 ---
-title: byteSize
-tags: string,beginner
+Title: byteSize
+Tags: string,beginner
 ---
 
 Returns the length of a string in bytes.

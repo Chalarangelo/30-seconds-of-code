@@ -1,6 +1,6 @@
 ---
-title: mostFrequent
-tags: array,intermediate
+Title: mostFrequent
+Tags: array,intermediate
 ---
 
 Returns the most frequent element in an array.

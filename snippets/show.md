@@ -1,6 +1,6 @@
 ---
-title: show
-tags: browser,css,beginner
+Title: show
+Tags: browser,css,beginner
 ---
 
 Shows all the elements specified.

@@ -1,6 +1,6 @@
 ---
-title: uniqueSymmetricDifference
-tags: array,math,intermediate
+Title: uniqueSymmetricDifference
+Tags: array,math,intermediate
 ---
 
 Returns the unique symmetric difference between two arrays, not containing duplicate values from either array.

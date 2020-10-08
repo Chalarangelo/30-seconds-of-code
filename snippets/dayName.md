@@ -1,6 +1,6 @@
 ---
-title: dayName
-tags: date,beginner
+Title: dayName
+Tags: date,beginner
 ---
 
 Gets the name of the weekday from a `Date` object.

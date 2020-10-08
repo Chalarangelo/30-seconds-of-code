@@ -1,6 +1,6 @@
 ---
-title: RGBToHex
-tags: string,math,intermediate
+Title: RGBToHex
+Tags: string,math,intermediate
 ---
 
 Converts the values of RGB components to a hexadecimal color code.

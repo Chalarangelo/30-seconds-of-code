@@ -1,6 +1,6 @@
 ---
-title: toCharArray
-tags: string,beginner
+Title: toCharArray
+Tags: string,beginner
 ---
 
 Converts a string to an array of characters.

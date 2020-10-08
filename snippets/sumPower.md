@@ -1,6 +1,6 @@
 ---
-title: sumPower
-tags: math,intermediate
+Title: sumPower
+Tags: math,intermediate
 ---
 
 Returns the sum of the powers of all the numbers from `start` to `end` (both inclusive).

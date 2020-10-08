@@ -1,6 +1,6 @@
 ---
-title: kmToMiles
-tags: math,beginner
+Title: kmToMiles
+Tags: math,beginner
 ---
 
 Converts kilometers to miles.

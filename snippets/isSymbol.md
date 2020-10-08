@@ -1,6 +1,6 @@
 ---
-title: isSymbol
-tags: type,beginner
+Title: isSymbol
+Tags: type,beginner
 ---
 
 Checks if the given argument is a symbol.

@@ -1,6 +1,6 @@
 ---
-title: countOccurrences
-tags: array,intermediate
+Title: countOccurrences
+Tags: array,intermediate
 ---
 
 Counts the occurrences of a value in an array.

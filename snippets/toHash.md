@@ -1,6 +1,6 @@
 ---
-title: toHash
-tags: array,intermediate
+Title: toHash
+Tags: array,intermediate
 ---
 
 Reduces a given Array-like into a value hash (keyed data store).

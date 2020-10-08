@@ -1,6 +1,6 @@
 ---
-title: deepFlatten
-tags: array,recursion,intermediate
+Title: deepFlatten
+Tags: array,recursion,intermediate
 ---
 
 Deep flattens an array.

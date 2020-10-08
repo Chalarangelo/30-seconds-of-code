@@ -1,6 +1,6 @@
 ---
-title: sum
-tags: math,array,beginner
+Title: sum
+Tags: math,array,beginner
 ---
 
 Returns the sum of two or more numbers/arrays.

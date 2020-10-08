@@ -1,6 +1,6 @@
 ---
-title: padNumber
-tags: string,math,beginner
+Title: padNumber
+Tags: string,math,beginner
 ---
 
 Pads a given number to the specified length.

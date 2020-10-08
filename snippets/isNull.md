@@ -1,6 +1,6 @@
 ---
-title: isNull
-tags: type,beginner
+Title: isNull
+Tags: type,beginner
 ---
 
 Returns `true` if the specified value is `null`, `false` otherwise.

@@ -1,6 +1,6 @@
 ---
-title: toSnakeCase
-tags: string,regexp,intermediate
+Title: toSnakeCase
+Tags: string,regexp,intermediate
 ---
 
 Converts a string to snake case.

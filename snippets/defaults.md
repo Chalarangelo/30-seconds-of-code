@@ -1,6 +1,6 @@
 ---
-title: defaults
-tags: object,intermediate
+Title: defaults
+Tags: object,intermediate
 ---
 
 Assigns default values for all properties in an object that are `undefined`.

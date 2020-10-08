@@ -1,6 +1,6 @@
 ---
-title: functionName
-tags: array,intermediate
+Title: functionName
+Tags: array,intermediate
 ---
 
 Explain briefly what the snippet does.

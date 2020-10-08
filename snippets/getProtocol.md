@@ -1,6 +1,6 @@
 ---
-title: getProtocol
-tags: browser,beginner
+Title: getProtocol
+Tags: browser,beginner
 ---
 
 Returns the protocol being used on the current page.

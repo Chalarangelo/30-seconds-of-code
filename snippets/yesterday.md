@@ -1,6 +1,6 @@
 ---
-title: yesterday
-tags: date,intermediate
+Title: yesterday
+Tags: date,intermediate
 ---
 
 Results in a string representation of yesterday's date.

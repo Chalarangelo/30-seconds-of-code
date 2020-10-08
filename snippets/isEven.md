@@ -1,6 +1,6 @@
 ---
-title: isEven
-tags: math,beginner
+Title: isEven
+Tags: math,beginner
 ---
 
 Returns `true` if the given number is even, `false` otherwise.

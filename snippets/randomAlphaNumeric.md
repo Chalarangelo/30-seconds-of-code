@@ -1,6 +1,6 @@
 ---
-title: randomAlphaNumeric
-tags: string,random,advanced
+Title: randomAlphaNumeric
+Tags: string,random,advanced
 ---
 
 Returns a random string with the specified length.

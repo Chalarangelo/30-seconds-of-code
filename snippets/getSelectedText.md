@@ -1,6 +1,6 @@
 ---
-title: getSelectedText
-tags: browser,beginner
+Title: getSelectedText
+Tags: browser,beginner
 ---
 
 Get the currently selected text.

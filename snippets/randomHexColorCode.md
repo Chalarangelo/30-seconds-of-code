@@ -1,6 +1,6 @@
 ---
-title: randomHexColorCode
-tags: math,random,beginner
+Title: randomHexColorCode
+Tags: math,random,beginner
 ---
 
 Generates a random hexadecimal color code.

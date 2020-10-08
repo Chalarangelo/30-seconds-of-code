@@ -1,6 +1,6 @@
 ---
-title: minDate
-tags: date,math,beginner
+Title: minDate
+Tags: date,math,beginner
 ---
 
 Returns the minimum of the given dates.

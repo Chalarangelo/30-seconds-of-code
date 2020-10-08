@@ -1,6 +1,6 @@
 ---
-title: isDivisible
-tags: math,beginner
+Title: isDivisible
+Tags: math,beginner
 ---
 
 Checks if the first numeric argument is divisible by the second one.

@@ -1,6 +1,6 @@
 ---
-title: getMeridiemSuffixOfInteger
-tags: date,beginner
+Title: getMeridiemSuffixOfInteger
+Tags: date,beginner
 ---
 
 Converts an integer to a suffixed string, adding `am` or `pm` based on its value.

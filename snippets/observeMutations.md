@@ -1,6 +1,6 @@
 ---
-title: observeMutations
-tags: browser,event,advanced
+Title: observeMutations
+Tags: browser,event,advanced
 ---
 
 Returns a new MutationObserver and runs the provided callback for each mutation on the specified element.

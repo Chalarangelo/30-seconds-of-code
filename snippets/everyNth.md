@@ -1,6 +1,6 @@
 ---
-title: everyNth
-tags: array,beginner
+Title: everyNth
+Tags: array,beginner
 ---
 
 Returns every nth element in an array.

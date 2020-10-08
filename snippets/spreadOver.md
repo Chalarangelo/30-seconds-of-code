@@ -1,6 +1,6 @@
 ---
-title: spreadOver
-tags: function,intermediate
+Title: spreadOver
+Tags: function,intermediate
 ---
 
 Takes a variadic function and returns a closure that accepts an array of arguments to map to the inputs of the function.

@@ -1,6 +1,6 @@
 ---
-title: getType
-tags: type,beginner
+Title: getType
+Tags: type,beginner
 ---
 
 Returns the native type of a value.

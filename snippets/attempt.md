@@ -1,6 +1,6 @@
 ---
-title: attempt
-tags: function,intermediate
+Title: attempt
+Tags: function,intermediate
 ---
 
 Attempts to invoke a function with the provided arguments, returning either the result or the caught error object.

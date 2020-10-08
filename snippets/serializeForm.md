@@ -1,6 +1,6 @@
 ---
-title: serializeForm
-tags: browser,string,intermediate
+Title: serializeForm
+Tags: browser,string,intermediate
 ---
 
 Encode a set of form elements as a query string.

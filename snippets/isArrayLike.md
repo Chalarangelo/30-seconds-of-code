@@ -1,6 +1,6 @@
 ---
-title: isArrayLike
-tags: type,array,intermediate
+Title: isArrayLike
+Tags: type,array,intermediate
 ---
 
 Checks if the provided argument is array-like (i.e. is iterable).

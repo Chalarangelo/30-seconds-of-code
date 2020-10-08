@@ -1,6 +1,6 @@
 ---
-title: permutations
-tags: array,recursion,advanced
+Title: permutations
+Tags: array,recursion,advanced
 ---
 
 Generates all permutations of an array's elements (contains duplicates).

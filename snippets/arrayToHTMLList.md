@@ -1,6 +1,6 @@
 ---
-title: arrayToHTMLList
-tags: browser,array,intermediate
+Title: arrayToHTMLList
+Tags: browser,array,intermediate
 ---
 
 Converts the given array elements into `<li>` tags and appends them to the list of the given id.

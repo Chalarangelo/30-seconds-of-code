@@ -1,6 +1,6 @@
 ---
-title: sortCharactersInString
-tags: string,beginner
+Title: sortCharactersInString
+Tags: string,beginner
 ---
 
 Alphabetically sorts the characters in a string.

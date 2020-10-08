@@ -1,6 +1,6 @@
 ---
-title: isDateValid
-tags: date,intermediate
+Title: isDateValid
+Tags: date,intermediate
 ---
 
 Returns `true` if a valid date object can be created from the given values, `false` otherwise.

@@ -1,6 +1,6 @@
 ---
-title: splitLines
-tags: string,beginner
+Title: splitLines
+Tags: string,beginner
 ---
 
 Splits a multiline string into an array of lines.

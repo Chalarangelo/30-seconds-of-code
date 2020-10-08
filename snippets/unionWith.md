@@ -1,6 +1,6 @@
 ---
-title: unionWith
-tags: array,function,intermediate
+Title: unionWith
+Tags: array,function,intermediate
 ---
 
 Returns every element that exists in any of the two arrays once, using a provided comparator function.

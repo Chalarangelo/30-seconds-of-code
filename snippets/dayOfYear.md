@@ -1,6 +1,6 @@
 ---
-title: dayOfYear
-tags: date,beginner
+Title: dayOfYear
+Tags: date,beginner
 ---
 
 Gets the day of the year from a `Date` object.

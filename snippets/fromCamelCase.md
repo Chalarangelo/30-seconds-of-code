@@ -1,6 +1,6 @@
 ---
-title: fromCamelCase
-tags: string,intermediate
+Title: fromCamelCase
+Tags: string,intermediate
 ---
 
 Converts a string from camelcase.

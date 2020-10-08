@@ -1,6 +1,6 @@
 ---
-title: complement
-tags: function,logic,beginner
+Title: complement
+Tags: function,logic,beginner
 ---
 
 Returns a function that is the logical complement of the given function, `fn`.

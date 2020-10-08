@@ -1,6 +1,6 @@
 ---
-title: bottomVisible
-tags: browser,intermediate
+Title: bottomVisible
+Tags: browser,intermediate
 ---
 
 Returns `true` if the bottom of the page is visible, `false` otherwise.

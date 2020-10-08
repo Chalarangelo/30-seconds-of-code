@@ -1,6 +1,6 @@
 ---
-title: triggerEvent
-tags: browser,event,intermediate
+Title: triggerEvent
+Tags: browser,event,intermediate
 ---
 
 Triggers a specific event on a given element, optionally passing custom data.

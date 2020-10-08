@@ -1,6 +1,6 @@
 ---
-title: difference
-tags: array,math,beginner
+Title: difference
+Tags: array,math,beginner
 ---
 
 Returns the difference between two arrays.

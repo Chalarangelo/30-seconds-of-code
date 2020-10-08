@@ -1,6 +1,6 @@
 ---
-title: isContainedIn
-tags: array,intermediate
+Title: isContainedIn
+Tags: array,intermediate
 ---
 
 Returns `true` if the elements of the first array are contained in the second one regardless of order, `false` otherwise.

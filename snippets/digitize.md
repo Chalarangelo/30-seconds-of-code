@@ -1,6 +1,6 @@
 ---
-title: digitize
-tags: math,array,beginner
+Title: digitize
+Tags: math,array,beginner
 ---
 
 Converts a number to an array of digits, removing its sign if necessary.

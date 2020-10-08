@@ -1,6 +1,6 @@
 ---
-title: isTravisCI
-tags: node,intermediate
+Title: isTravisCI
+Tags: node,intermediate
 ---
 
 Checks if the current environment is [Travis CI](https://travis-ci.org/).

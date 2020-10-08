@@ -1,6 +1,6 @@
 ---
-title: both
-tags: function,logic,beginner
+Title: both
+Tags: function,logic,beginner
 ---
 
 Returns `true` if both functions return `true` for a given set of arguments, `false` otherwise.

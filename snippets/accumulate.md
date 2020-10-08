@@ -1,6 +1,6 @@
 ---
-title: accumulate
-tags: math,array,beginner
+Title: accumulate
+Tags: math,array,beginner
 ---
 
 Returns an array of partial sums.

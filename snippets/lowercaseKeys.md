@@ -1,6 +1,6 @@
 ---
-title: lowercaseKeys
-tags: object,intermediate
+Title: lowercaseKeys
+Tags: object,intermediate
 ---
 
 Creates a new object from the specified object, where all the keys are in lowercase.

@@ -1,6 +1,6 @@
 ---
-title: detectDeviceType
-tags: browser,intermediate
+Title: detectDeviceType
+Tags: browser,intermediate
 ---
 
 Detects whether the website is being opened in a mobile device or a desktop/laptop.

@@ -1,6 +1,6 @@
 ---
-title: getTimestamp
-tags: date,beginner
+Title: getTimestamp
+Tags: date,beginner
 ---
 
 Gets the Unix timestamp from a `Date` object.

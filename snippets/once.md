@@ -1,6 +1,6 @@
 ---
-title: once
-tags: function,intermediate
+Title: once
+Tags: function,intermediate
 ---
 
 Ensures a function is called only once.

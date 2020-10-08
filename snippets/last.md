@@ -1,6 +1,6 @@
 ---
-title: last
-tags: array,beginner
+Title: last
+Tags: array,beginner
 ---
 
 Returns the last element in an array.

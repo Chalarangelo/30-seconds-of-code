@@ -1,6 +1,6 @@
 ---
-title: isEmpty
-tags: type,array,object,string,beginner
+Title: isEmpty
+Tags: type,array,object,string,beginner
 ---
 
 Returns true if the a value is an empty object, collection, has no enumerable properties or is any type that is not considered a collection.

@@ -1,6 +1,6 @@
 ---
-title: prefersLightColorScheme
-tags: browser,intermediate
+Title: prefersLightColorScheme
+Tags: browser,intermediate
 ---
 
 Returns `true` if the user color scheme preference is `light`, `false` otherwise.

@@ -1,6 +1,6 @@
 ---
-title: powerset
-tags: math,beginner
+Title: powerset
+Tags: math,beginner
 ---
 
 Returns the powerset of a given array of numbers.

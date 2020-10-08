@@ -1,6 +1,6 @@
 ---
-title: toISOStringWithTimezone
-tags: date,math,intermediate
+Title: toISOStringWithTimezone
+Tags: date,math,intermediate
 ---
 
 Returns a string in simplified extended ISO format (ISO 8601), including timezone offset.

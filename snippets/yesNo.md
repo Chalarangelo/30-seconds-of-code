@@ -1,6 +1,6 @@
 ---
-title: yesNo
-tags: string,regexp,intermediate
+Title: yesNo
+Tags: string,regexp,intermediate
 ---
 
 Returns `true` if the string is `y`/`yes` or `false` if the string is `n`/`no`.

@@ -1,6 +1,6 @@
 ---
-title: hashNode
-tags: node,promise,intermediate
+Title: hashNode
+Tags: node,promise,intermediate
 ---
 
 Creates a hash for a value using the [SHA-256](https://en.wikipedia.org/wiki/SHA-2) algorithm. Returns a promise.

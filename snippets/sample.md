@@ -1,6 +1,6 @@
 ---
-title: sample
-tags: array,random,beginner
+Title: sample
+Tags: array,random,beginner
 ---
 
 Returns a random element from an array.

@@ -1,6 +1,6 @@
 ---
-title: head
-tags: array,beginner
+Title: head
+Tags: array,beginner
 ---
 
 Returns the head of a list.

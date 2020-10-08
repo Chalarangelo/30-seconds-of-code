@@ -1,6 +1,6 @@
 ---
-title: is
-tags: type,array,regexp,beginner
+Title: is
+Tags: type,array,regexp,beginner
 ---
 
 Checks if the provided value is of the specified type.

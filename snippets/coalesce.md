@@ -1,6 +1,6 @@
 ---
-title: coalesce
-tags: type,beginner
+Title: coalesce
+Tags: type,beginner
 ---
 
 Returns the first defined, non-null argument.

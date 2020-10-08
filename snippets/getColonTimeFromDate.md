@@ -1,6 +1,6 @@
 ---
-title: getColonTimeFromDate
-tags: date,intermediate
+Title: getColonTimeFromDate
+Tags: date,intermediate
 ---
 
 Returns a string of the form `HH:MM:SS` from a `Date` object.

@@ -1,6 +1,6 @@
 ---
-title: runPromisesInSeries
-tags: function,promise,intermediate
+Title: runPromisesInSeries
+Tags: function,promise,intermediate
 ---
 
 Runs an array of promises in series.

@@ -1,6 +1,6 @@
 ---
-title: expandTabs
-tags: string,regexp,beginner
+Title: expandTabs
+Tags: string,regexp,beginner
 ---
 
 Convert tabs to spaces, where each tab corresponds to `count` spaces.

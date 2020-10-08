@@ -1,6 +1,6 @@
 ---
-title: binary
-tags: function,beginner
+Title: binary
+Tags: function,beginner
 ---
 
 Creates a function that accepts up to two arguments, ignoring any additional arguments.

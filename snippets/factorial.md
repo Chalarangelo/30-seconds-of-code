@@ -1,6 +1,6 @@
 ---
-title: factorial
-tags: math,recursion,beginner
+Title: factorial
+Tags: math,recursion,beginner
 ---
 
 Calculates the factorial of a number.

@@ -1,6 +1,6 @@
 ---
-title: isSameDate
-tags: date,beginner
+Title: isSameDate
+Tags: date,beginner
 ---
 
 Check if a date is the same as another date.

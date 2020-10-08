@@ -1,6 +1,6 @@
 ---
-title: equals
-tags: object,array,type,advanced
+Title: equals
+Tags: object,array,type,advanced
 ---
 
 Performs a deep comparison between two values to determine if they are equivalent.

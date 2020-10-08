@@ -1,6 +1,6 @@
 ---
-title: fahrenheitToCelsius
-tags: math,beginner
+Title: fahrenheitToCelsius
+Tags: math,beginner
 ---
 
 Converts Fahrenheit to Celsius.

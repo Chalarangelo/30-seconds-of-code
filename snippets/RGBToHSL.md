@@ -1,6 +1,6 @@
 ---
-title: RGBToHSL
-tags: math,intermediate
+Title: RGBToHSL
+Tags: math,intermediate
 ---
 
 Converts a RGB color tuple to HSL format.

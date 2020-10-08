@@ -1,6 +1,6 @@
 ---
-title: approximatelyEqual
-tags: math,beginner
+Title: approximatelyEqual
+Tags: math,beginner
 ---
 
 Checks if two numbers are approximately equal to each other.

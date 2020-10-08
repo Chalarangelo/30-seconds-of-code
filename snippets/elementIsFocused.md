@@ -1,6 +1,6 @@
 ---
-title: elementIsFocused
-tags: browser,intermediate
+Title: elementIsFocused
+Tags: browser,intermediate
 ---
 
 Returns `true` if the given element is focused, `false` otherwise.

@@ -1,6 +1,6 @@
 ---
-title: wordWrap
-tags: string,regexp,intermediate
+Title: wordWrap
+Tags: string,regexp,intermediate
 ---
 
 Wraps a string to a given number of characters using a string break character.

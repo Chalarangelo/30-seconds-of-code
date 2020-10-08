@@ -1,6 +1,6 @@
 ---
-title: isFunction
-tags: type,function,beginner
+Title: isFunction
+Tags: type,function,beginner
 ---
 
 Checks if the given argument is a function.

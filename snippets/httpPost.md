@@ -1,6 +1,6 @@
 ---
-title: httpPost
-tags: browser,url,intermediate
+Title: httpPost
+Tags: browser,url,intermediate
 ---
 
 Makes a `POST` request to the passed URL.
@@ -27,7 +27,7 @@ const httpPost = (url, data, callback, err = console.error) => {
 const newPost = {
   userId: 1,
   id: 1337,
-  title: 'Foo',
+  Title: 'Foo',
   body: 'bar bar bar'
 };
 const data = JSON.stringify(newPost);

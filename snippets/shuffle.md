@@ -1,6 +1,6 @@
 ---
-title: shuffle
-tags: array,random,intermediate
+Title: shuffle
+Tags: array,random,intermediate
 ---
 
 Randomizes the order of the values of an array, returning a new array.

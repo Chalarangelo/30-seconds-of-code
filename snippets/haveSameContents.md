@@ -1,6 +1,6 @@
 ---
-title: haveSameContents
-tags: array,intermediate
+Title: haveSameContents
+Tags: array,intermediate
 ---
 
 Returns `true` if two arrays contain the same elements regardless of order, `false` otherwise.

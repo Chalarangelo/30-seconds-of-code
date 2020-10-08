@@ -1,6 +1,6 @@
 ---
-title: or
-tags: math,logic,beginner
+Title: or
+Tags: math,logic,beginner
 ---
 
 Returns `true` if at least one of the arguments is `true`, `false` otherwise.

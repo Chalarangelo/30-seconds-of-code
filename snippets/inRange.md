@@ -1,6 +1,6 @@
 ---
-title: inRange
-tags: math,beginner
+Title: inRange
+Tags: math,beginner
 ---
 
 Checks if the given number falls within the given range.

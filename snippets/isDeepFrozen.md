@@ -1,6 +1,6 @@
 ---
-title: isDeepFrozen
-tags: object,recursion,intermediate
+Title: isDeepFrozen
+Tags: object,recursion,intermediate
 ---
 
 Checks if an object is deeply frozen

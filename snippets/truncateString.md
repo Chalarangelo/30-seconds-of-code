@@ -1,6 +1,6 @@
 ---
-title: truncateString
-tags: string,beginner
+Title: truncateString
+Tags: string,beginner
 ---
 
 Truncates a string up to a specified length.

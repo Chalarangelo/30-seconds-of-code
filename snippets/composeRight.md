@@ -1,6 +1,6 @@
 ---
-title: composeRight
-tags: function,intermediate
+Title: composeRight
+Tags: function,intermediate
 ---
 
 Performs left-to-right function composition.

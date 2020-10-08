@@ -1,6 +1,6 @@
 ---
-title: insertAfter
-tags: browser,beginner
+Title: insertAfter
+Tags: browser,beginner
 ---
 
 Inserts an HTML string after the end of the specified element.

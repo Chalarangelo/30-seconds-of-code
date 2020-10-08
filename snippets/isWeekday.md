@@ -1,6 +1,6 @@
 ---
-title: isWeekday
-tags: date,beginner
+Title: isWeekday
+Tags: date,beginner
 ---
 
 Results in a boolean representation of a specific date.

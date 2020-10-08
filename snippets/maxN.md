@@ -1,6 +1,6 @@
 ---
-title: maxN
-tags: array,math,beginner
+Title: maxN
+Tags: array,math,beginner
 ---
 
 Returns the `n` maximum elements from the provided array.

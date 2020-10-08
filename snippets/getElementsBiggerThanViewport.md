@@ -1,6 +1,6 @@
 ---
-title: getElementsBiggerThanViewport
-tags: browser,intermediate
+Title: getElementsBiggerThanViewport
+Tags: browser,intermediate
 ---
 
 Returns an array of HTML elements whose width is larger than that of the viewport's.

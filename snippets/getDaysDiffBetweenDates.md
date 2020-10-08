@@ -1,6 +1,6 @@
 ---
-title: getDaysDiffBetweenDates
-tags: date,intermediate
+Title: getDaysDiffBetweenDates
+Tags: date,intermediate
 ---
 
 Returns the difference (in days) between two dates.

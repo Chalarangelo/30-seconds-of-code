@@ -1,6 +1,6 @@
 ---
-title: chainAsync
-tags: function,intermediate
+Title: chainAsync
+Tags: function,intermediate
 ---
 
 Chains asynchronous functions.

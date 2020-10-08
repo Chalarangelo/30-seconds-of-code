@@ -1,6 +1,6 @@
 ---
-title: pluralize
-tags: string,intermediate
+Title: pluralize
+Tags: string,intermediate
 ---
 
 Returns the singular or plural form of the word based on the input number. If the first argument is an `object`, it will use a closure by returning a function that can auto-pluralize words that don't simply end in `s` if the supplied dictionary contains the word.

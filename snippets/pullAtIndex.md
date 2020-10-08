@@ -1,6 +1,6 @@
 ---
-title: pullAtIndex
-tags: array,advanced
+Title: pullAtIndex
+Tags: array,advanced
 ---
 
 Mutates the original array to filter out the values at the specified indexes.

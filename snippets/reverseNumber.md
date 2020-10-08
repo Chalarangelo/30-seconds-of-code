@@ -1,6 +1,6 @@
 ---
-title: reverseNumber
-tags: math,string,beginner
+Title: reverseNumber
+Tags: math,string,beginner
 ---
 
 Reverses a number.

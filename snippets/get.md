@@ -1,6 +1,6 @@
 ---
-title: get
-tags: object,intermediate
+Title: get
+Tags: object,intermediate
 ---
 
 Retrieve a set of properties indicated by the given selectors from an object.

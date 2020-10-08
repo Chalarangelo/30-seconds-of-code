@@ -1,6 +1,6 @@
 ---
-title: initialize2DArray
-tags: array,intermediate
+Title: initialize2DArray
+Tags: array,intermediate
 ---
 
 Initializes a 2D array of given width and height and value.

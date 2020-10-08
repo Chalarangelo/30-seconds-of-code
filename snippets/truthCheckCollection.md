@@ -1,6 +1,6 @@
 ---
-title: truthCheckCollection
-tags: object,logic,array,intermediate
+Title: truthCheckCollection
+Tags: object,logic,array,intermediate
 ---
 
 Checks if the predicate (second argument) is truthy on all elements of a collection (first argument).

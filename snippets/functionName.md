@@ -1,6 +1,6 @@
 ---
-title: functionName
-tags: function,beginner
+Title: functionName
+Tags: function,beginner
 ---
 
 Logs the name of a function.

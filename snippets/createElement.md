@@ -1,6 +1,6 @@
 ---
-title: createElement
-tags: browser,beginner
+Title: createElement
+Tags: browser,beginner
 ---
 
 Creates an element from a string (without appending it to the document).

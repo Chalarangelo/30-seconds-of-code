@@ -1,6 +1,6 @@
 ---
-title: combine
-tags: array,object,intermediate
+Title: combine
+Tags: array,object,intermediate
 ---
 
 Combines two arrays of objects, using the specified key to match objects.

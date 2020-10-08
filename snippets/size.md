@@ -1,6 +1,6 @@
 ---
-title: size
-tags: object,array,string,intermediate
+Title: size
+Tags: object,array,string,intermediate
 ---
 
 Gets the size of an array, object or string.

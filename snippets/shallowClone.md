@@ -1,6 +1,6 @@
 ---
-title: shallowClone
-tags: object,beginner
+Title: shallowClone
+Tags: object,beginner
 ---
 
 Creates a shallow clone of an object.

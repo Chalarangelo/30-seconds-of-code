@@ -1,6 +1,6 @@
 ---
-title: compact
-tags: array,beginner
+Title: compact
+Tags: array,beginner
 ---
 
 Removes falsy values from an array.

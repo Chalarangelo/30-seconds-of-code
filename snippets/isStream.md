@@ -1,6 +1,6 @@
 ---
-title: isStream
-tags: node,type,intermediate
+Title: isStream
+Tags: node,type,intermediate
 ---
 
 Checks if the given argument is a stream.

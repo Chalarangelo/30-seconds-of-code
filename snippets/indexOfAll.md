@@ -1,6 +1,6 @@
 ---
-title: indexOfAll
-tags: array,intermediate
+Title: indexOfAll
+Tags: array,intermediate
 ---
 
 Returns all indices of `val` in an array.

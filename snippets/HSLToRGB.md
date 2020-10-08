@@ -1,6 +1,6 @@
 ---
-title: HSLToRGB
-tags: math,intermediate
+Title: HSLToRGB
+Tags: math,intermediate
 ---
 
 Converts a HSL color tuple to RGB format.

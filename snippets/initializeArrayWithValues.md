@@ -1,6 +1,6 @@
 ---
-title: initializeArrayWithValues
-tags: array,math,intermediate
+Title: initializeArrayWithValues
+Tags: array,math,intermediate
 ---
 
 Initializes and fills an array with the specified values.

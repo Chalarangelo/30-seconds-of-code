@@ -1,6 +1,6 @@
 ---
-title: toPairs
-tags: object,array,intermediate
+Title: toPairs
+Tags: object,array,intermediate
 ---
 
 Creates an array of key-value pair arrays from an object or other iterable (object, array, string, set etc.).

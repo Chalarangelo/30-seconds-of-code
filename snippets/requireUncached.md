@@ -1,6 +1,6 @@
 ---
-title: requireUncached
-tags: node,advanced
+Title: requireUncached
+Tags: node,advanced
 ---
 
 Loads a module after removing it from the cache (if exists).

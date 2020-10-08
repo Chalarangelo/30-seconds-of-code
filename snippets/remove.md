@@ -1,6 +1,6 @@
 ---
-title: remove
-tags: array,intermediate
+Title: remove
+Tags: array,intermediate
 ---
 
 Mutates an array by removing elements for which the given function returns `false`.

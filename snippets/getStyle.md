@@ -1,6 +1,6 @@
 ---
-title: getStyle
-tags: browser,css,beginner
+Title: getStyle
+Tags: browser,css,beginner
 ---
 
 Returns the value of a CSS rule for the specified element.

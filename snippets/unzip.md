@@ -1,6 +1,6 @@
 ---
-title: unzip
-tags: array,intermediate
+Title: unzip
+Tags: array,intermediate
 ---
 
 Creates an array of arrays, ungrouping the elements in an array produced by [zip](/js/s/zip).

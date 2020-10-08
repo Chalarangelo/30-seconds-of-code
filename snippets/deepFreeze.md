@@ -1,6 +1,6 @@
 ---
-title: deepFreeze
-tags: object,recursion,intermediate
+Title: deepFreeze
+Tags: object,recursion,intermediate
 ---
 
 Deep freezes an object.

@@ -1,6 +1,6 @@
 ---
-title: parseCookie
-tags: browser,string,intermediate
+Title: parseCookie
+Tags: browser,string,intermediate
 ---
 
 Parse an HTTP Cookie header string and return an object of all cookie name-value pairs.

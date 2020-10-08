@@ -1,6 +1,6 @@
 ---
-title: detectLanguage
-tags: browser,intermediate
+Title: detectLanguage
+Tags: browser,intermediate
 ---
 
 Detects the preferred language of the current user.

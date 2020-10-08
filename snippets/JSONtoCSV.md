@@ -1,6 +1,6 @@
 ---
-title: JSONtoCSV
-tags: array,string,object,advanced
+Title: JSONtoCSV
+Tags: array,string,object,advanced
 ---
 
 Converts an array of objects to a comma-separated values (CSV) string that contains only the `columns` specified.

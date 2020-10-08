@@ -1,6 +1,6 @@
 ---
-title: binomialCoefficient
-tags: math,intermediate
+Title: binomialCoefficient
+Tags: math,intermediate
 ---
 
 Evaluates the binomial coefficient of two integers `n` and `k`.

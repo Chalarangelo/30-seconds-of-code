@@ -1,6 +1,6 @@
 ---
-title: URLJoin
-tags: string,regexp,advanced
+Title: URLJoin
+Tags: string,regexp,advanced
 ---
 
 Joins all given URL segments together, then normalizes the resulting URL.

@@ -1,6 +1,6 @@
 ---
-title: either
-tags: function,logic,beginner
+Title: either
+Tags: function,logic,beginner
 ---
 
 Returns `true` if at least one function returns `true` for a given set of arguments, `false` otherwise.

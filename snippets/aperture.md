@@ -1,6 +1,6 @@
 ---
-title: aperture
-tags: array,intermediate
+Title: aperture
+Tags: array,intermediate
 ---
 
 Returns an array of `n`-tuples of consecutive elements.

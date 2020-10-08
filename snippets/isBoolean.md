@@ -1,6 +1,6 @@
 ---
-title: isBoolean
-tags: type,beginner
+Title: isBoolean
+Tags: type,beginner
 ---
 
 Checks if the given argument is a native boolean element.

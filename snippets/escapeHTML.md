@@ -1,6 +1,6 @@
 ---
-title: escapeHTML
-tags: string,browser,regexp,intermediate
+Title: escapeHTML
+Tags: string,browser,regexp,intermediate
 ---
 
 Escapes a string for use in HTML.

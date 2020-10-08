@@ -1,6 +1,6 @@
 ---
-title: insertAt
-tags: array,intermediate
+Title: insertAt
+Tags: array,intermediate
 ---
 
 Mutates the original array to insert the given values at the specified index.

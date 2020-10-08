@@ -1,6 +1,6 @@
 ---
-title: isLeapYear
-tags: date,beginner
+Title: isLeapYear
+Tags: date,beginner
 ---
 
 Returns `true` if the given `year` is a leap year, `false` otherwise.

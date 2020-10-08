@@ -1,6 +1,6 @@
 ---
-title: extendHex
-tags: string,intermediate
+Title: extendHex
+Tags: string,intermediate
 ---
 
 Extends a 3-digit color code to a 6-digit color code.

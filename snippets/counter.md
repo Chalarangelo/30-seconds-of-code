@@ -1,6 +1,6 @@
 ---
-title: counter
-tags: browser,advanced
+Title: counter
+Tags: browser,advanced
 ---
 
 Creates a counter with the specified range, step and duration for the specified selector.

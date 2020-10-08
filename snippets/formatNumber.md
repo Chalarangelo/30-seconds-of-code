@@ -1,6 +1,6 @@
 ---
-title: formatNumber
-tags: string,math,beginner
+Title: formatNumber
+Tags: string,math,beginner
 ---
 
 Returns a number using the local number format order.

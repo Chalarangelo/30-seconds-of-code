@@ -1,6 +1,6 @@
 ---
-title: addMultipleListeners
-tags: browser,event,intermediate
+Title: addMultipleListeners
+Tags: browser,event,intermediate
 ---
 
 Add multiple event listeners with the same handler to an element.

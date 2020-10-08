@@ -1,6 +1,6 @@
 ---
-title: degreesToRads
-tags: math,beginner
+Title: degreesToRads
+Tags: math,beginner
 ---
 
 Converts an angle from degrees to radians.

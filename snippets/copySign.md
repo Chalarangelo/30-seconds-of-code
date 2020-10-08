@@ -1,6 +1,6 @@
 ---
-title: copySign
-tags: math,beginner
+Title: copySign
+Tags: math,beginner
 ---
 
 Returns the absolute value of the first number, but the sign of the second.

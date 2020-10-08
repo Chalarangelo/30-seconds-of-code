@@ -1,6 +1,6 @@
 ---
-title: distance
-tags: math,beginner
+Title: distance
+Tags: math,beginner
 ---
 
 Returns the distance between two points.

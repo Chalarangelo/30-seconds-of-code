@@ -1,6 +1,6 @@
 ---
-title: isAlphaNumeric
-tags: string,regexp,beginner
+Title: isAlphaNumeric
+Tags: string,regexp,beginner
 ---
 
 Checks if a string contains only alphanumeric characters.

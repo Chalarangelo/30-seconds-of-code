@@ -1,6 +1,6 @@
 ---
-title: flatten
-tags: array,intermediate
+Title: flatten
+Tags: array,intermediate
 ---
 
 Flattens an array up to the specified depth.

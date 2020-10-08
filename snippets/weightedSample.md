@@ -1,6 +1,6 @@
 ---
-title: weightedSample
-tags: array,random,advanced
+Title: weightedSample
+Tags: array,random,advanced
 ---
 
 Returns a random element from an array, using the provided `weights` as the probabilities for each element.

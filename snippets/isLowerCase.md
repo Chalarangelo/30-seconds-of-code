@@ -1,6 +1,6 @@
 ---
-title: isLowerCase
-tags: string,beginner
+Title: isLowerCase
+Tags: string,beginner
 ---
 
 Checks if a string is lower case.

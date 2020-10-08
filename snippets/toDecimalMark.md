@@ -1,6 +1,6 @@
 ---
-title: toDecimalMark
-tags: math,beginner
+Title: toDecimalMark
+Tags: math,beginner
 ---
 
 Converts a number to a decimal mark formatted string.

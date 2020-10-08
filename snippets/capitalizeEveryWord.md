@@ -1,6 +1,6 @@
 ---
-title: capitalizeEveryWord
-tags: string,regexp,intermediate
+Title: capitalizeEveryWord
+Tags: string,regexp,intermediate
 ---
 
 Capitalizes the first letter of every word in a string.

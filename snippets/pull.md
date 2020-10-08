@@ -1,6 +1,6 @@
 ---
-title: pull
-tags: array,intermediate
+Title: pull
+Tags: array,intermediate
 ---
 
 Mutates the original array to filter out the values specified.

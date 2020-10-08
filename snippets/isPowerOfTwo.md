@@ -1,6 +1,6 @@
 ---
-title: isPowerOfTwo
-tags: math,beginner
+Title: isPowerOfTwo
+Tags: math,beginner
 ---
 
 Returns `true` if the given number is a power of `2`, `false` otherwise.

@@ -1,6 +1,6 @@
 ---
-title: supportsTouchEvents
-tags: browser,intermediate
+Title: supportsTouchEvents
+Tags: browser,intermediate
 ---
 
 Returns `true` if touch events are supported, `false` otherwise.

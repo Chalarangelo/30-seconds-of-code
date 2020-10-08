@@ -1,6 +1,6 @@
 ---
-title: isObjectLike
-tags: type,object,beginner
+Title: isObjectLike
+Tags: type,object,beginner
 ---
 
 Checks if a value is object-like.

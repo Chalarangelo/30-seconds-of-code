@@ -1,6 +1,6 @@
 ---
-title: hide
-tags: browser,css,beginner
+Title: hide
+Tags: browser,css,beginner
 ---
 
 Hides all the elements specified.

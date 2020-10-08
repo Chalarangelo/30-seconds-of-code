@@ -1,6 +1,6 @@
 ---
-title: weightedAverage
-tags: math,array,beginner
+Title: weightedAverage
+Tags: math,array,beginner
 ---
 
 Returns the weighted average of two or more numbers.

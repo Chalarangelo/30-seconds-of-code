@@ -1,6 +1,6 @@
 ---
-title: serializeCookie
-tags: browser,string,intermediate
+Title: serializeCookie
+Tags: browser,string,intermediate
 ---
 
 Serialize a cookie name-value pair into a Set-Cookie header string.

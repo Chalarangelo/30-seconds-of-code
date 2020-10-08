@@ -1,6 +1,6 @@
 ---
-title: findKey
-tags: object,function,intermediate
+Title: findKey
+Tags: object,function,intermediate
 ---
 
 Returns the first key that satisfies the provided testing function. Otherwise `undefined` is returned.

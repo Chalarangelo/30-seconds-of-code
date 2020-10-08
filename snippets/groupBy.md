@@ -1,6 +1,6 @@
 ---
-title: groupBy
-tags: array,object,intermediate
+Title: groupBy
+Tags: array,object,intermediate
 ---
 
 Groups the elements of an array based on the given function.

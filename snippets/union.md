@@ -1,6 +1,6 @@
 ---
-title: union
-tags: array,math,beginner
+Title: union
+Tags: array,math,beginner
 ---
 
 Returns every element that exists in any of the two arrays once.

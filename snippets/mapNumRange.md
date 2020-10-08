@@ -1,6 +1,6 @@
 ---
-title: mapNumRange
-tags: math,beginner
+Title: mapNumRange
+Tags: math,beginner
 ---
 
 Maps a number from one range to another range.

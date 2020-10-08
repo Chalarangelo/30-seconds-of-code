@@ -1,6 +1,6 @@
 ---
-title: symmetricDifferenceWith
-tags: array,function,intermediate
+Title: symmetricDifferenceWith
+Tags: array,function,intermediate
 ---
 
 Returns the symmetric difference between two arrays, using a provided function as a comparator.

@@ -1,6 +1,6 @@
 ---
-title: collectInto
-tags: function,array,intermediate
+Title: collectInto
+Tags: function,array,intermediate
 ---
 
 Changes a function that accepts an array into a variadic function.

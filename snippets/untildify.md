@@ -1,6 +1,6 @@
 ---
-title: untildify
-tags: node,string,beginner
+Title: untildify
+Tags: node,string,beginner
 ---
 
 Converts a tilde path to an absolute path.

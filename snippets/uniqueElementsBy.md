@@ -1,6 +1,6 @@
 ---
-title: uniqueElementsBy
-tags: array,function,intermediate
+Title: uniqueElementsBy
+Tags: array,function,intermediate
 ---
 
 Returns all unique values of an array, based on a provided comparator function.

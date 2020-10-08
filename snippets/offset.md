@@ -1,6 +1,6 @@
 ---
-title: offset
-tags: array,beginner
+Title: offset
+Tags: array,beginner
 ---
 
 Moves the specified amount of elements to the end of the array.

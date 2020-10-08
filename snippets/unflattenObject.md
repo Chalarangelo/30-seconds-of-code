@@ -1,6 +1,6 @@
 ---
-title: unflattenObject
-tags: object,advanced
+Title: unflattenObject
+Tags: object,advanced
 ---
 
 Unflatten an object with the paths for keys.

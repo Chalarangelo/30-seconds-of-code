@@ -1,6 +1,6 @@
 ---
-title: isBrowserTabFocused
-tags: browser,beginner
+Title: isBrowserTabFocused
+Tags: browser,beginner
 ---
 
 Returns `true` if the browser tab of the page is focused, `false` otherwise.

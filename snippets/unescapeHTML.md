@@ -1,6 +1,6 @@
 ---
-title: unescapeHTML
-tags: string,browser,beginner
+Title: unescapeHTML
+Tags: string,browser,beginner
 ---
 
 Unescapes escaped HTML characters.

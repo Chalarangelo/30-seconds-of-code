@@ -1,6 +1,6 @@
 ---
-title: minN
-tags: array,math,beginner
+Title: minN
+Tags: array,math,beginner
 ---
 
 Returns the `n` minimum elements from the provided array.

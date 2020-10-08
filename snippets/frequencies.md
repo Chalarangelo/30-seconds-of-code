@@ -1,6 +1,6 @@
 ---
-title: frequencies
-tags: array,intermediate
+Title: frequencies
+Tags: array,intermediate
 ---
 
 Returns an object with the unique values of an array as keys and their frequencies as the values.
