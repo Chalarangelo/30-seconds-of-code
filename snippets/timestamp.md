@@ -10,7 +10,7 @@ Gets the Unix timestamp from a `Date` object
 
 ```js
 const getTimestamp = date =>
-date.getTime()/1000
+  Math.floor(date.getTime()/1000);
 ```
 
 ```js
