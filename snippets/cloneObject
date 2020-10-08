@@ -1,0 +1,20 @@
+---
+title: cloneObject
+tags: object,function
+---
+
+Makes a real Copy of an Object that you can edit without destroing the the root Object.
+
+- Use `JSON.stringify(obj)` to get the String of the given Object, `JSON.parse(objectString)` to reverse it and get a new Object out of the String.
+
+```js
+const cloneObject = (obj) =>{
+  return JSON.parse(JSON.stringify(obj))
+}
+  
+```
+
+```js
+object = {bla: bla, blub: blub}
+clone = cloneObject(object); // {bla: bla, blub: blub}
+```
