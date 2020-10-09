@@ -3,16 +3,19 @@ title: lastDateOfMonth
 tags: date,intermediate
 ---
 
-Get last date in current month of given date. 
-- Generate new date of the next month and use day 0 to get one day before it.
+Returns the string representation of the last date in the given date's month.
+
+- Use `Date.prototype.getFullYear()`, `Date.prototype.getMonth()` to get the current year and month from the given date.
+- Use the `new Date()` constructor to create a new date with the given year and month incremented by `1`, and the day set to `0` (last day of previous month).
+- Omit the argument, `date`, to use the current date by default.
 
 ```js
-const lastDateOfMonth = date => {
-        return new Date(date.getFullYear(),date.getMonth()+1,0);
-}
+const lastDateOfMonth = (date = new Date()) => {
+  let d = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+  return d.toISOString().split('T')[0];
+};
 ```
 
 ```js
-//Current date is 10-10-2020
-lastDateOfMonth(new Date()); // 'Sat Oct 31 2020 00:00:00 GMT+0700'
+lastDateOfMonth(new Date('2015-08-11')); // '2015-08-30'
 ```
