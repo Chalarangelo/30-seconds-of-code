@@ -50,9 +50,3 @@ Replace `<my-snippet-name>` with the name of the snippet you are adding.
 - Always use soft tabs (2 spaces), never hard tabs.
 - Leave a single space after a comma (`,`) character (both in the description and code).
 - Define multiple variables on the same line, if possible. Use meaningful names (e.g. `letter` instead of `lt`) and follow existing conventions as seen in other snippets. Do not use trailing or leading underscores in variable names.
-- Use ES6 notation to define your snippet's function. For example `const myFunction = ( arg1, arg2 ) => { }`. Format your code based on [Semi-Standard Style](https://github.com/Flet/semistandard)'s format guidelines.
-- Always use single quotes for string literals. Use template literals, instead, if necessary.
-- Use strict equality checking (`===` and `!==` instead of `==` and `!=`).
-- When describing snippets, refer to methods, using their full name. For example, use `Array.prototype.reduce()`, instead of `reduce()`.
-- Use variables only when necessary. Prefer `const` when the values are not altered after assignment, otherwise, use `let`. Do not use `var`. 
-- Never use `eval()`. Your snippet will be disqualified immediately.

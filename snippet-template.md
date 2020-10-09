@@ -1,19 +1,16 @@
 ---
-title: functionName
-tags: array,intermediate
+title: mySnippet
+tags: utility,intermediate
 ---
 
 Explain briefly what the snippet does.
 
-- Explain briefly how the snippet works.
-- Use bullet points for your snippet's explanation.
-- Try to explain everything briefly but clearly.
+Explain briefly how the snippet works.
 
-```js
-const functionName = arguments =>
-  {functionBody}
+```javascript
+// Your snippet code here
 ```
 
-```js
-functionName('sampleInput'); // 'sampleOutput'
+```javascript
+// Your snippet examples here
 ```
