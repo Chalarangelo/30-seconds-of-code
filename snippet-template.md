@@ -3,12 +3,14 @@ title: functionName
 tags: array,intermediate
 ---
 
-Explain briefly what the snippet does.
+## Purpose
+Explain briefly what the purpose of the snippet.
 
-- Explain briefly how the snippet works.
+## Explanation
 - Use bullet points for your snippet's explanation.
 - Try to explain everything briefly but clearly.
 
+## Code Snippet
 ```js
 const functionName = arguments =>
   {functionBody}
