@@ -10,11 +10,10 @@ Converts US dollars to US cents
 - Multiplies and rounds
 
 ```js
-function dollarsToCents (amount) {
+const dollarsToCents = (amount) => {
   if (typeof amount !== 'number' && typeof amount !== 'string') {
     throw new Error('Amount must be string or number.')
   }
-
   return Math.round(100 * parseFloat(typeof amount === 'string' ? amount.replace(/[$,]/g, '') : amount))
 }
 ```
