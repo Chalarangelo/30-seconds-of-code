@@ -8,7 +8,7 @@ Flattens an array up to the specified depth.
 - Use `Array.prototype.flat`.
 
 ```js
-const flatten = (arr, depth = 1) => arr.flat;
+const flatten = (arr, depth = 1) => arr.flat(depth);
 ```
 
 ```js
