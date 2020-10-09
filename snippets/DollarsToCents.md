@@ -10,7 +10,7 @@ Converts US dollars to US cents
 - Multiplies and rounds
 
 ```js
-const function dollarsToCents (amount) {
+function dollarsToCents (amount) {
   if (typeof amount !== 'number' && typeof amount !== 'string') {
     throw new Error('Amount must be string or number.')
   }
