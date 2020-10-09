@@ -1,24 +1,25 @@
 ---
 title: factorial
-tags: math,recursion,beginner
+tags: math, iterative,  beginner
 ---
 
 Calculates the factorial of a number.
 
-- Use recursion.
+- Use iterative approach.
 - If `n` is less than or equal to `1`, return `1`.
-- Otherwise, return the product of `n` and the factorial of `n - 1`.
-- Throws an exception if `n` is a negative number.
-
+- Otherwise, return the factorial of `n` by using for loop.
 ```js
 const factorial = n =>
-  n < 0
-    ? (() => {
-        throw new TypeError('Negative numbers are not allowed!');
-      })()
-    : n <= 1
-    ? 1
-    : n * factorial(n - 1);
+  let answer = 1;
+  if (n == 0 || n == 1) {
+    return answer;
+  }
+  else {
+    for(var i = n; i >= 1; i--) {
+      answer = answer * i;
+    }
+    return answer;
+  }  
 ```
 
 ```js
