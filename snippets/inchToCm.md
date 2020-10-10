@@ -8,7 +8,7 @@ Converts cm to inches.
 - Follows the conversion formula inch = cm * 2.54 
 
 ```js
-const cmToInches = inch => cm * 2.54;
+const cmToInches = cm => cm * 2.54;
 ```
 
 ```js
