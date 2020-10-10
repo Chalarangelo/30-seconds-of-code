@@ -5,13 +5,15 @@ tags: dictionary,intermediate
 
 Inverts a dictionary with non-unique hashable values.
 
-- Use `dictionary.items()` in combination with a loop to map the values of the dictionary to keys using `dictionary.setdefault()`, `list()` and `append()` to create a list for each one.
+- Use `dictionary.items()` in combination with a loop to map the values of the dictionary to keys using `collections.defaultdict`, `list()` and `append()` to create a list for each one.
 
 ```py
+from collections import defaultdict
+
 def collect_dictionary(obj):
-  inv_obj = {}
+  inv_obj = defaultdict(list)
   for key, value in obj.items():
-    inv_obj.setdefault(value, list()).append(key)
+    inv_obj[value].append(key)
   return inv_obj
 ```
 
