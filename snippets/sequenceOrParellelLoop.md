@@ -21,7 +21,7 @@ Sequential Way
 
 ```js
 const sequentialFunc = async (arr) => {
-  for (const [value, index] of arr.entries()) {
+  for (const value of arr) {
     console.log(await timeout(value));
   }
 };
