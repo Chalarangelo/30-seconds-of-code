@@ -9,8 +9,8 @@ Returns `true` if the elements of the first array are contained in the second on
 - To ensure that first array has only distinct elements, compare the lengths of the unfiltered and filtered array. If they differ return `false`.
 - Use `Array.prototype.forEach()` to convert the second array into an object (hashMap).
 - Use `Array.prototype.every()` to check if every element in the first array exist as a key in the hashMap object.
-- Return `false` if any of the elements in the first array doesn't exist as a key in the hashMap object.
-- Return `true` only if all elements in the first array exist as keys in the hashMap object.
+- Return `false` if an element in the first array doesn't exist as a key in the hashMap object.
+- Return `true` if all elements in the first array exist as keys in the hashMap object.
 
 ```js
 const isContainedIn = (subArr, arr) => {
