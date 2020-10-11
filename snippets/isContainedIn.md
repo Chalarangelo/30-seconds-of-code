@@ -10,16 +10,11 @@ Returns `true` if the elements of the first array are contained in the second on
 - Return `false` if the count of any element is greater in the first array than the second one, `true` otherwise.
 
 ```js
-const isContainedIn = (a, b) => {
+const isContainedIn = (subArr, arr) => {
   const hashMap = {};
+  arr.forEach((item, index) => (hashMap[item] = index));
 
-  b.forEach((item, index) => {
-    hashMap[item] = index;
-  });
-
-  return a.every((item) => {
-    return hashMap[item] !== undefined;
-  });
+  return subArr.every((item) => hashMap[item] !== undefined);
 };
 ```
 
