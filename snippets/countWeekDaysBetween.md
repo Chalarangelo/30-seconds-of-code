@@ -1,27 +1,26 @@
 ---
 title: countWeekDaysBetween
-tags: date, intermediate
+tags: date,array,intermediate
 ---
 
-Returns the weekdays count between two dates.
+Returns the weekday count between two dates.
 
-- Takes startDate and endDate as inputs.
-- Executes a while loop if startDate is less than endDate and increments count if startDate does not fall on a weekend.
-- Adds one day to startDate in an iteration and the loop exits when startDate becomes equal to endDate.
+- Use `Array.from()` to construct an array with `length` equal to the number of days between `startDate` and `endDate`.
+- Use `Array.prototype.reduce()` to iterate over the array, checking if each date is a weekday and incrementing `count`.
+- Update `startDate` with the next day each loop using `Date.getDate()` and `Date.setDate()` to advance it by one day.
 
 ```js
-const countWeekDaysBetween = (startDate, endDate) => {
-  let count = 0;
-  while (startDate < endDate) {
-    if (startDate.getDay() !== 0 && startDate.getDay() !== 6) {
-      count++;
-    }
-    startDate = new Date(startDate.setDate(startDate.getDate() + 1));
-  }
-  return count;
-}
+const countWeekDaysBetween = (startDate, endDate) =>
+  Array
+    .from({ length: (endDate - startDate) / (1000 * 3600 * 24) })
+    .reduce(count => {
+      if (startDate.getDay() % 6 !== 0) count++;
+      startDate = new Date(startDate.setDate(startDate.getDate() + 1));
+      return count;
+    }, 0);
 ```
 
 ```js
-countWeekDaysBetween(new Date("Oct 09, 2020"), new Date("Oct 14, 2020")); // 3
+countWeekDaysBetween(new Date('Oct 05, 2020'), new Date('Oct 06, 2020')); // 1
+countWeekDaysBetween(new Date('Oct 05, 2020'), new Date('Oct 14, 2020')); // 7
 ```
