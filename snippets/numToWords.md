@@ -5,46 +5,16 @@ tags: number, words, intermediate
 
 When a number (in integer, float or string format) is passed to function it is converted into human readable word format
 
-- Explain briefly how the snippet works.
-- Use bullet points for your snippet's explanation.
-- Try to explain everything briefly but clearly.
+- Recursion is used once to call function on absolute value of negative numbers and to prefix "negative" to result
+- A for loop iterates oer each digit of number to check it's value
+- Program takes values from predefiened 4 arrays and adds them to str_val variable in each iteration of loop
 
 ```js
 const th_val = ["", "thousand", "million", "billion", "trillion"];
-const dg_val = [
-  "zero",
-  "one",
-  "two",
-  "three",
-  "four",
-  "five",
-  "six",
-  "seven",
-  "eight",
-  "nine",
-];
-const tn_val = [
-  "ten",
-  "eleven",
-  "twelve",
-  "thirteen",
-  "fourteen",
-  "fifteen",
-  "sixteen",
-  "seventeen",
-  "eighteen",
-  "nineteen",
-];
-const tw_val = [
-  "twenty",
-  "thirty",
-  "forty",
-  "fifty",
-  "sixty",
-  "seventy",
-  "eighty",
-  "ninety",
-];
+const dg_val = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+const tn_val = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+const tw_val = ["twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+
 const numToWords = (s) => {
   if (s < 0) {
     return "negative " + numToWords(-s);
