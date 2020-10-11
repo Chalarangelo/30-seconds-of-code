@@ -1,0 +1,20 @@
+---
+title: API call with fetch in JavaScript
+tags: fetch API, JavaScript, API
+---
+
+It calls an API from an endpoint then prints the data in JSON format.
+
+- it calls an API through and endpoint link
+- then represents it in JSON format
+- prints the data out on the screen
+
+```js
+fetch('http://example.com/movies.json')
+  .then(response => response.json())
+  .then(data => console.log(data));}
+```
+
+```js
+ // outputs movies in JSON format 
+```
