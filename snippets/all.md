@@ -13,6 +13,6 @@ const all = (arr, fn = Boolean) => arr.every(fn);
 ```
 
 ```js
-all([4, 2, 3], x => x > 1); // true
-all([1, 2, 3]); // true
+all([4, 2, 3,5,7], x => x >= 1); // true
+all([1, 2, 3,4,5]); // true
 ```
