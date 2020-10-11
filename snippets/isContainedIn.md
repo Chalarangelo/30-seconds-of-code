@@ -11,14 +11,21 @@ Returns `true` if the elements of the first array are contained in the second on
 
 ```js
 const isContainedIn = (a, b) => {
-  for (const v of new Set(a)) {
-    if (!b.some(e => e === v) || a.filter(e => e === v).length > b.filter(e => e === v).length)
-      return false;
-  }
-  return true;
+  const hashMap = {};
+
+  b.forEach((item, index) => {
+    hashMap[item] = index;
+  });
+
+  return a.every((item) => {
+    return hashMap[item] !== undefined;
+  });
 };
 ```
 
 ```js
+isContainedIn([1, 5], [2, 4, 1]); // false
+isContainedIn([], []); // true
+isContainedIn([], [3, 5]); // true
 isContainedIn([1, 4], [2, 4, 1]); // true
 ```
