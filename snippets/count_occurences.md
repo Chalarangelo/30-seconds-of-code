@@ -5,7 +5,7 @@ tags: list,beginner
 
 Counts the occurrences of a value in a list.
 
-- Use the `count` method of Python's list object to count the number of occurrences.
+- Use `list.count()` to count the number of occurrences of `val` in `lst`.
 
 ```py
 def count_occurrences(lst, val):
