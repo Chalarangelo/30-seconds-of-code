@@ -10,8 +10,8 @@ Reverses a number.
 - Use `parseFloat()` to convert the string to a number and `Math.sign()` to preserve its sign.
 
 ```js
-const reverseNumber = n => 
-  parseFloat(`${n}`.split('').reverse().join('')) * Math.sign(n);
+const reverseNumber = (n) =>
+  parseFloat(`${n}`.split("").reverse().join("")) * Math.sign(n);
 ```
 
 ```js

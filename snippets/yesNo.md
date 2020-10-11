@@ -14,8 +14,8 @@ const yesNo = (val, def = false) =>
 ```
 
 ```js
-yesNo('Y'); // true
-yesNo('yes'); // true
-yesNo('No'); // false
-yesNo('Foo', true); // true
+yesNo("Y"); // true
+yesNo("yes"); // true
+yesNo("No"); // false
+yesNo("Foo", true); // true
 ```

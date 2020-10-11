@@ -9,9 +9,9 @@ Reverses a string.
 - Combine characters to get a string using `String.prototype.join('')`.
 
 ```js
-const reverseString = str => [...str].reverse().join('');
+const reverseString = (str) => [...str].reverse().join("");
 ```
 
 ```js
-reverseString('foobar'); // 'raboof'
+reverseString("foobar"); // 'raboof'
 ```

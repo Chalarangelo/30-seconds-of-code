@@ -3,7 +3,7 @@ title: debouncePromise
 tags: function,promise,advanced
 ---
 
-Creates a debounced function that returns a promise, but delays invoking the provided function until at least `ms` milliseconds have elapsed since the last time it was invoked. 
+Creates a debounced function that returns a promise, but delays invoking the provided function until at least `ms` milliseconds have elapsed since the last time it was invoked.
 All promises returned during this time will return the same data.
 
 - Each time the debounced function is invoked, clear the current pending timeout with `clearTimeout()` and use `setTimeout()` to create a new timeout that delays invoking the function until at least `ms` milliseconds has elapsed.
@@ -24,10 +24,10 @@ const debouncePromise = (fn, ms = 0) => {
         const currentPending = [...pending];
         pending.length = 0;
         Promise.resolve(fn.apply(this, args)).then(
-          data => {
+          (data) => {
             currentPending.forEach(({ resolve }) => resolve(data));
           },
-          error => {
+          (error) => {
             currentPending.forEach(({ reject }) => reject(error));
           }
         );
@@ -38,11 +38,12 @@ const debouncePromise = (fn, ms = 0) => {
 ```
 
 ```js
-const fn = arg => new Promise(resolve => {
-  setTimeout(resolve, 1000, ['resolved', arg]);
-});
+const fn = (arg) =>
+  new Promise((resolve) => {
+    setTimeout(resolve, 1000, ["resolved", arg]);
+  });
 const debounced = debouncePromise(fn, 200);
-debounced('foo').then(console.log);
-debounced('bar').then(console.log);
+debounced("foo").then(console.log);
+debounced("bar").then(console.log);
 // Will log ['resolved', 'bar'] both times
 ```

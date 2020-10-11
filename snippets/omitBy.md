@@ -11,10 +11,10 @@ Creates an object composed of the properties the given function returns falsy fo
 ```js
 const omitBy = (obj, fn) =>
   Object.keys(obj)
-    .filter(k => !fn(obj[k], k))
+    .filter((k) => !fn(obj[k], k))
     .reduce((acc, key) => ((acc[key] = obj[key]), acc), {});
 ```
 
 ```js
-omitBy({ a: 1, b: '2', c: 3 }, x => typeof x === 'number'); // { b: '2' }
+omitBy({ a: 1, b: "2", c: 3 }, (x) => typeof x === "number"); // { b: '2' }
 ```

@@ -18,8 +18,8 @@ const attempt = (fn, ...args) => {
 ```
 
 ```js
-var elements = attempt(function(selector) {
+var elements = attempt(function (selector) {
   return document.querySelectorAll(selector);
-}, '>_>');
+}, ">_>");
 if (elements instanceof Error) elements = []; // elements = []
 ```

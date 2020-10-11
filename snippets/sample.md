@@ -9,7 +9,7 @@ Returns a random element from an array.
 - This method also works with strings.
 
 ```js
-const sample = arr => arr[Math.floor(Math.random() * arr.length)];
+const sample = (arr) => arr[Math.floor(Math.random() * arr.length)];
 ```
 
 ```js

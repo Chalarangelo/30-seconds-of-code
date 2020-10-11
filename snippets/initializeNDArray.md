@@ -12,7 +12,9 @@ Create a n-dimensional array with given value.
 const initializeNDArray = (val, ...args) =>
   args.length === 0
     ? val
-    : Array.from({ length: args[0] }).map(() => initializeNDArray(val, ...args.slice(1)));
+    : Array.from({ length: args[0] }).map(() =>
+        initializeNDArray(val, ...args.slice(1))
+      );
 ```
 
 ```js

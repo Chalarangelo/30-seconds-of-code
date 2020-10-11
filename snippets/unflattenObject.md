@@ -11,9 +11,9 @@ Unflatten an object with the paths for keys.
 - Otherwise, add the appropriate key-value pair to the accumulator object and return the value as the accumulator.
 
 ```js
-const unflattenObject = obj =>
+const unflattenObject = (obj) =>
   Object.keys(obj).reduce((res, k) => {
-    k.split('.').reduce(
+    k.split(".").reduce(
       (acc, e, i, keys) =>
         acc[e] ||
         (acc[e] = isNaN(Number(keys[i + 1]))
@@ -28,7 +28,7 @@ const unflattenObject = obj =>
 ```
 
 ```js
-unflattenObject({ 'a.b.c': 1, d: 1 }); // { a: { b: { c: 1 } }, d: 1 }
-unflattenObject({ 'a.b': 1, 'a.c': 2, d: 3 }); // { a: { b: 1, c: 2 }, d: 3 }
-unflattenObject({ 'a.b.0': 8, d: 3 }) //{ a: { b: [ 8 ] }, d: 3 }
+unflattenObject({ "a.b.c": 1, d: 1 }); // { a: { b: { c: 1 } }, d: 1 }
+unflattenObject({ "a.b": 1, "a.c": 2, d: 3 }); // { a: { b: 1, c: 2 }, d: 3 }
+unflattenObject({ "a.b.0": 8, d: 3 }); //{ a: { b: [ 8 ] }, d: 3 }
 ```

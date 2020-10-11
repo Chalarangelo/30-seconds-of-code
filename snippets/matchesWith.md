@@ -10,7 +10,7 @@ Compares two objects to determine if the first one contains equivalent property 
 
 ```js
 const matchesWith = (obj, source, fn) =>
-  Object.keys(source).every(key =>
+  Object.keys(source).every((key) =>
     obj.hasOwnProperty(key) && fn
       ? fn(obj[key], source[key], key, obj, source)
       : obj[key] == source[key]
@@ -18,10 +18,10 @@ const matchesWith = (obj, source, fn) =>
 ```
 
 ```js
-const isGreeting = val => /^h(?:i|ello)$/.test(val);
+const isGreeting = (val) => /^h(?:i|ello)$/.test(val);
 matchesWith(
-  { greeting: 'hello' },
-  { greeting: 'hi' },
+  { greeting: "hello" },
+  { greeting: "hi" },
   (oV, sV) => isGreeting(oV) && isGreeting(sV)
 ); // true
 ```

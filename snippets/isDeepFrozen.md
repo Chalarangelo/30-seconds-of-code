@@ -10,10 +10,10 @@ Checks if an object is deeply frozen
 - Use `Object.keys()`, `Array.prototype.every()` to check that all keys are either deeply frozen objects or non-object values.
 
 ```js
-const isDeepFrozen = obj =>
+const isDeepFrozen = (obj) =>
   Object.isFrozen(obj) &&
   Object.keys(obj).every(
-    prop => typeof obj[prop] !== 'object' || isDeepFrozen(obj[prop])
+    (prop) => typeof obj[prop] !== "object" || isDeepFrozen(obj[prop])
   );
 ```
 

@@ -15,11 +15,11 @@ const bindKey = (context, fn, ...boundArgs) => (...args) =>
 
 ```js
 const freddy = {
-  user: 'fred',
-  greet: function(greeting, punctuation) {
-    return greeting + ' ' + this.user + punctuation;
-  }
+  user: "fred",
+  greet: function (greeting, punctuation) {
+    return greeting + " " + this.user + punctuation;
+  },
 };
-const freddyBound = bindKey(freddy, 'greet');
-console.log(freddyBound('hi', '!')); // 'hi fred!'
+const freddyBound = bindKey(freddy, "greet");
+console.log(freddyBound("hi", "!")); // 'hi fred!'
 ```

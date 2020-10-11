@@ -5,10 +5,10 @@ tags: math,beginner
 
 Converts Celsius to Fahrenheit.
 
-- Follows the conversion formula `F =  1.8C + 32`.
+- Follows the conversion formula `F = 1.8C + 32`.
 
 ```js
-const celsiusToFahrenheit = degrees => 1.8 * degrees + 32;
+const celsiusToFahrenheit = (degrees) => 1.8 * degrees + 32;
 ```
 
 ```js

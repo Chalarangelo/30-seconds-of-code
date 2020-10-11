@@ -16,7 +16,7 @@ const times = (n, fn, context = undefined) => {
 ```
 
 ```js
-var output = '';
-times(5, i => (output += i));
+var output = "";
+times(5, (i) => (output += i));
 console.log(output); // 01234
 ```

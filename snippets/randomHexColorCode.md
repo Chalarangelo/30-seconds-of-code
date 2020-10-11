@@ -11,7 +11,7 @@ Generates a random hexadecimal color code.
 ```js
 const randomHexColorCode = () => {
   let n = (Math.random() * 0xfffff * 1000000).toString(16);
-  return '#' + n.slice(0, 6);
+  return "#" + n.slice(0, 6);
 };
 ```
 

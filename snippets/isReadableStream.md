@@ -9,15 +9,15 @@ Checks if the given argument is a readable stream.
 - Additionally check if the `typeof` the `_read` and `_readableState` properties are `function` and `object` respectively.
 
 ```js
-const isReadableStream = val =>
+const isReadableStream = (val) =>
   val !== null &&
-  typeof val === 'object' &&
-  typeof val.pipe === 'function' &&
-  typeof val._read === 'function' &&
-  typeof val._readableState === 'object';
+  typeof val === "object" &&
+  typeof val.pipe === "function" &&
+  typeof val._read === "function" &&
+  typeof val._readableState === "object";
 ```
 
 ```js
-const fs = require('fs');
-isReadableStream(fs.createReadStream('test.txt')); // true
+const fs = require("fs");
+isReadableStream(fs.createReadStream("test.txt")); // true
 ```

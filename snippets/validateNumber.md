@@ -10,9 +10,10 @@ Returns `true` if the given value is a number, `false` otherwise.
 - Use `Number()` to check if the coercion holds.
 
 ```js
-const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
+const validateNumber = (n) =>
+  !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
 ```
 
 ```js
-validateNumber('10'); // true
+validateNumber("10"); // true
 ```

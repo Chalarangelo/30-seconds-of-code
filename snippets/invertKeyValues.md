@@ -20,5 +20,5 @@ const invertKeyValues = (obj, fn) =>
 
 ```js
 invertKeyValues({ a: 1, b: 2, c: 1 }); // { 1: [ 'a', 'c' ], 2: [ 'b' ] }
-invertKeyValues({ a: 1, b: 2, c: 1 }, value => 'group' + value); // { group1: [ 'a', 'c' ], group2: [ 'b' ] }
+invertKeyValues({ a: 1, b: 2, c: 1 }, (value) => "group" + value); // { group1: [ 'a', 'c' ], group2: [ 'b' ] }
 ```

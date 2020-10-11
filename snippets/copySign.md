@@ -9,7 +9,7 @@ Returns the absolute value of the first number, but the sign of the second.
 - Return `x` if they do, `-x` otherwise.
 
 ```js
-const copySign = (x, y) => Math.sign(x) === Math.sign(y) ? x : -x;
+const copySign = (x, y) => (Math.sign(x) === Math.sign(y) ? x : -x);
 ```
 
 ```js

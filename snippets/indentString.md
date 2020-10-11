@@ -9,10 +9,11 @@ Indents each line in the provided string.
 - Omit the third parameter, `indent`, to use a default indentation character of `' '`.
 
 ```js
-const indentString = (str, count, indent = ' ') => str.replace(/^/gm, indent.repeat(count));
+const indentString = (str, count, indent = " ") =>
+  str.replace(/^/gm, indent.repeat(count));
 ```
 
 ```js
-indentString('Lorem\nIpsum', 2); // '  Lorem\n  Ipsum'
-indentString('Lorem\nIpsum', 2, '_'); // '__Lorem\n__Ipsum'
+indentString("Lorem\nIpsum", 2); // '  Lorem\n  Ipsum'
+indentString("Lorem\nIpsum", 2, "_"); // '__Lorem\n__Ipsum'
 ```

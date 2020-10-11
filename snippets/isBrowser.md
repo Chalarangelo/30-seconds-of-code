@@ -10,7 +10,7 @@ Determines if the current runtime environment is a browser so that front-end mod
 - If both of them are not `undefined`, then the current environment is assumed to be a browser.
 
 ```js
-const isBrowser = () => ![typeof window, typeof document].includes('undefined');
+const isBrowser = () => ![typeof window, typeof document].includes("undefined");
 ```
 
 ```js

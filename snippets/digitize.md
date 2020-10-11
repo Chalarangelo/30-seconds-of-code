@@ -10,7 +10,7 @@ Converts a number to an array of digits, removing its sign if necessary.
 - Use `Array.prototype.map()` and `parseInt()` to transform each value to an integer.
 
 ```js
-const digitize = n => [...`${Math.abs(n)}`].map(i => parseInt(i));
+const digitize = (n) => [...`${Math.abs(n)}`].map((i) => parseInt(i));
 ```
 
 ```js

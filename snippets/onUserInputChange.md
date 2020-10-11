@@ -11,24 +11,28 @@ Run the callback whenever the user input type changes (`mouse` or `touch`). Usef
 - Run the callback with the input type as an argument in either of these situations.
 
 ```js
-const onUserInputChange = callback => {
-  let type = 'mouse',
+const onUserInputChange = (callback) => {
+  let type = "mouse",
     lastTime = 0;
   const mousemoveHandler = () => {
     const now = performance.now();
     if (now - lastTime < 20)
-      (type = 'mouse'), callback(type), document.removeEventListener('mousemove', mousemoveHandler);
+      (type = "mouse"),
+        callback(type),
+        document.removeEventListener("mousemove", mousemoveHandler);
     lastTime = now;
   };
-  document.addEventListener('touchstart', () => {
-    if (type === 'touch') return;
-    (type = 'touch'), callback(type), document.addEventListener('mousemove', mousemoveHandler);
+  document.addEventListener("touchstart", () => {
+    if (type === "touch") return;
+    (type = "touch"),
+      callback(type),
+      document.addEventListener("mousemove", mousemoveHandler);
   });
 };
 ```
 
 ```js
-onUserInputChange(type => {
-  console.log('The user is now using', type, 'as an input method.');
+onUserInputChange((type) => {
+  console.log("The user is now using", type, "as an input method.");
 });
 ```

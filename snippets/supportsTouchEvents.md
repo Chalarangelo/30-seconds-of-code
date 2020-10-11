@@ -10,7 +10,8 @@ Returns `true` if touch events are supported, `false` otherwise.
 ```js
 const supportsTouchEvents = () =>
   window &&
-  ('ontouchstart' in window || window.DocumentTouch && document instanceof window.DocumentTouch);
+  ("ontouchstart" in window ||
+    (window.DocumentTouch && document instanceof window.DocumentTouch));
 ```
 
 ```js

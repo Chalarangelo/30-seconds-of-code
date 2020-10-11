@@ -11,10 +11,12 @@ Returns the memoized (cached) function.
 - Allow access to the `cache` by setting it as a property on the returned function.
 
 ```js
-const memoize = fn => {
+const memoize = (fn) => {
   const cache = new Map();
-  const cached = function(val) {
-    return cache.has(val) ? cache.get(val) : cache.set(val, fn.call(this, val)) && cache.get(val);
+  const cached = function (val) {
+    return cache.has(val)
+      ? cache.get(val)
+      : cache.set(val, fn.call(this, val)) && cache.get(val);
   };
   cached.cache = cache;
   return cached;
@@ -24,7 +26,7 @@ const memoize = fn => {
 ```js
 // See the `anagrams` snippet.
 const anagramsCached = memoize(anagrams);
-anagramsCached('javascript'); // takes a long time
-anagramsCached('javascript'); // returns virtually instantly since it's now cached
+anagramsCached("javascript"); // takes a long time
+anagramsCached("javascript"); // returns virtually instantly since it's now cached
 console.log(anagramsCached.cache); // The cached anagrams map
 ```

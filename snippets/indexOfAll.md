@@ -10,7 +10,8 @@ If `val` never occurs, returns `[]`.
 - Return the array of indices.
 
 ```js
-const indexOfAll = (arr, val) => arr.reduce((acc, el, i) => (el === val ? [...acc, i] : acc), []);
+const indexOfAll = (arr, val) =>
+  arr.reduce((acc, el, i) => (el === val ? [...acc, i] : acc), []);
 ```
 
 ```js

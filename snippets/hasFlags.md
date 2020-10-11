@@ -10,12 +10,14 @@ Check if the current process's arguments contain the specified flags.
 
 ```js
 const hasFlags = (...flags) =>
-  flags.every(flag => process.argv.includes(/^-{1,2}/.test(flag) ? flag : '--' + flag));
+  flags.every((flag) =>
+    process.argv.includes(/^-{1,2}/.test(flag) ? flag : "--" + flag)
+  );
 ```
 
 ```js
 // node myScript.js -s --test --cool=true
-hasFlags('-s'); // true
-hasFlags('--test', 'cool=true', '-s'); // true
-hasFlags('special'); // false
+hasFlags("-s"); // true
+hasFlags("--test", "cool=true", "-s"); // true
+hasFlags("special"); // false
 ```

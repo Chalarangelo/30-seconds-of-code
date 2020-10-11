@@ -12,19 +12,18 @@ Gets the size of an array, object or string.
 - Split strings into array of characters with `split('')` and return its length.
 
 ```js
-
-const size = val =>
+const size = (val) =>
   Array.isArray(val)
     ? val.length
-    : val && typeof val === 'object'
-      ? val.size || val.length || Object.keys(val).length
-      : typeof val === 'string'
-        ? new Blob([val]).size
-        : 0;
+    : val && typeof val === "object"
+    ? val.size || val.length || Object.keys(val).length
+    : typeof val === "string"
+    ? new Blob([val]).size
+    : 0;
 ```
 
 ```js
 size([1, 2, 3, 4, 5]); // 5
-size('size'); // 4
+size("size"); // 4
 size({ one: 1, two: 2, three: 3 }); // 3
 ```

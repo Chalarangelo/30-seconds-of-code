@@ -11,10 +11,10 @@ Creates an object composed of the properties the given function returns truthy f
 ```js
 const pickBy = (obj, fn) =>
   Object.keys(obj)
-    .filter(k => fn(obj[k], k))
+    .filter((k) => fn(obj[k], k))
     .reduce((acc, key) => ((acc[key] = obj[key]), acc), {});
 ```
 
 ```js
-pickBy({ a: 1, b: '2', c: 3 }, x => typeof x === 'number'); // { 'a': 1, 'c': 3 }
+pickBy({ a: 1, b: "2", c: 3 }, (x) => typeof x === "number"); // { 'a': 1, 'c': 3 }
 ```

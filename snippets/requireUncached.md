@@ -9,12 +9,12 @@ Loads a module after removing it from the cache (if exists).
 - Use `require()` to load the module again.
 
 ```js
-const requireUncached = module => {
+const requireUncached = (module) => {
   delete require.cache[require.resolve(module)];
   return require(module);
 };
 ```
 
 ```js
-const fs = requireUncached('fs'); // 'fs' will be loaded fresh every time
+const fs = requireUncached("fs"); // 'fs' will be loaded fresh every time
 ```

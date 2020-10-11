@@ -9,7 +9,7 @@ Detects the preferred language of the current user.
 - Omit the second argument, `defaultLang`, to use `'en-US'` as the default language code.
 
 ```js
-const detectLanguage = (defaultLang = 'en-US') => 
+const detectLanguage = (defaultLang = "en-US") =>
   navigator.language ||
   (Array.isArray(navigator.languages) && navigator.languages[0]) ||
   defaultLang;

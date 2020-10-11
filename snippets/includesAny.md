@@ -8,7 +8,7 @@ Returns `true` if at least one element of values is included in arr , `false` ot
 - Use `Array.prototype.some()` and `Array.prototype.includes()` to check if at least one element of `values` is included in `arr`.
 
 ```js
-const includesAny = (arr, values) => values.some(v => arr.includes(v));
+const includesAny = (arr, values) => values.some((v) => arr.includes(v));
 ```
 
 ```js

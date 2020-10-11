@@ -18,6 +18,6 @@ const unfold = (fn, seed) => {
 ```
 
 ```js
-var f = n => (n > 50 ? false : [-n, n + 10]);
+var f = (n) => (n > 50 ? false : [-n, n + 10]);
 unfold(f, 10); // [-10, -20, -30, -40, -50]
 ```

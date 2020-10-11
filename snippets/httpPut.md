@@ -14,8 +14,8 @@ Makes a `PUT` request to the passed URL.
 ```js
 const httpPut = (url, data, callback, err = console.error) => {
   const request = new XMLHttpRequest();
-  request.open('PUT', url, true);
-  request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+  request.open("PUT", url, true);
+  request.setRequestHeader("Content-type", "application/json; charset=utf-8");
   request.onload = () => callback(request);
   request.onerror = () => err(request);
   request.send(data);
@@ -23,14 +23,14 @@ const httpPut = (url, data, callback, err = console.error) => {
 ```
 
 ```js
-const password = 'fooBaz';
+const password = "fooBaz";
 const data = JSON.stringify({
   id: 1,
-  title: 'foo',
-  body: 'bar',
-  userId: 1
+  title: "foo",
+  body: "bar",
+  userId: 1,
 });
-httpPut('https://jsonplaceholder.typicode.com/posts/1', data, request => {
+httpPut("https://jsonplaceholder.typicode.com/posts/1", data, (request) => {
   console.log(request.responseText);
 }); /*
 Logs: {

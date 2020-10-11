@@ -10,10 +10,11 @@ Explain briefly what the snippet does.
 - Try to explain everything briefly but clearly.
 
 ```js
-const functionName = arguments =>
-  {functionBody}
+const functionName = (arguments) => {
+  functionBody;
+};
 ```
 
 ```js
-functionName('sampleInput'); // 'sampleOutput'
+functionName("sampleInput"); // 'sampleOutput'
 ```

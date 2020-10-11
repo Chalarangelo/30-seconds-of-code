@@ -8,7 +8,7 @@ Creates a function that gets the argument at index `n`. If `n` is negative, the 
 - Use `Array.prototype.slice()` to get the desired argument at index `n`.
 
 ```js
-const nthArg = n => (...args) => args.slice(n)[0];
+const nthArg = (n) => (...args) => args.slice(n)[0];
 ```
 
 ```js

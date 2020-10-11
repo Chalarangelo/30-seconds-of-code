@@ -10,10 +10,10 @@ Adds an ordinal suffix to a number.
 - If digit is found in teens pattern, use teens ordinal.
 
 ```js
-const toOrdinalSuffix = num => {
+const toOrdinalSuffix = (num) => {
   const int = parseInt(num),
     digits = [int % 10, int % 100],
-    ordinals = ['st', 'nd', 'rd', 'th'],
+    ordinals = ["st", "nd", "rd", "th"],
     oPattern = [1, 2, 3, 4],
     tPattern = [11, 12, 13, 14, 15, 16, 17, 18, 19];
   return oPattern.includes(digits[0]) && !tPattern.includes(digits[1])
@@ -23,5 +23,5 @@ const toOrdinalSuffix = num => {
 ```
 
 ```js
-toOrdinalSuffix('123'); // "123rd"
+toOrdinalSuffix("123"); // "123rd"
 ```

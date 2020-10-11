@@ -9,11 +9,11 @@ Returns the date of `n` days from today as a string representation.
 - Use `Date.prototype.toISOString()` to return a string in `yyyy-mm-dd` format.
 
 ```js
-const daysFromNow = n => {
+const daysFromNow = (n) => {
   let d = new Date();
   d.setDate(d.getDate() + Math.abs(n));
-  return d.toISOString().split('T')[0];
-}
+  return d.toISOString().split("T")[0];
+};
 ```
 
 ```js

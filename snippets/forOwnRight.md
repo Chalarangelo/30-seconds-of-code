@@ -12,9 +12,9 @@ Iterates over all own properties of an object in reverse, running a callback for
 const forOwnRight = (obj, fn) =>
   Object.keys(obj)
     .reverse()
-    .forEach(key => fn(obj[key], key, obj));
+    .forEach((key) => fn(obj[key], key, obj));
 ```
 
 ```js
-forOwnRight({ foo: 'bar', a: 1 }, v => console.log(v)); // 1, 'bar'
+forOwnRight({ foo: "bar", a: 1 }, (v) => console.log(v)); // 1, 'bar'
 ```

@@ -11,13 +11,13 @@ Mutates the original array to filter out the values specified.
 ```js
 const pull = (arr, ...args) => {
   let argState = Array.isArray(args[0]) ? args[0] : args;
-  let pulled = arr.filter(v => !argState.includes(v));
+  let pulled = arr.filter((v) => !argState.includes(v));
   arr.length = 0;
-  pulled.forEach(v => arr.push(v));
+  pulled.forEach((v) => arr.push(v));
 };
 ```
 
 ```js
-let myArray = ['a', 'b', 'c', 'a', 'b', 'c'];
-pull(myArray, 'a', 'c'); // myArray = [ 'b', 'b' ]
+let myArray = ["a", "b", "c", "a", "b", "c"];
+pull(myArray, "a", "c"); // myArray = [ 'b', 'b' ]
 ```

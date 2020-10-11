@@ -9,13 +9,15 @@ Returns a random element from an array, using the provided `weights` as the prob
 - Use `Math.random()` to generate a random number and `Array.prototype.findIndex()` to find the correct index based on the array previously produced.
 - Finally, return the element of `arr` with the produced index.
 
-
 ```js
 const weightedSample = (arr, weights) => {
   let roll = Math.random();
   return arr[
     weights
-      .reduce((acc, w, i) => (i === 0 ? [w] : [...acc, acc[acc.length - 1] + w]), [])
+      .reduce(
+        (acc, w, i) => (i === 0 ? [w] : [...acc, acc[acc.length - 1] + w]),
+        []
+      )
       .findIndex((v, i, s) => roll >= (i === 0 ? 0 : s[i - 1]) && roll < v)
   ];
 };

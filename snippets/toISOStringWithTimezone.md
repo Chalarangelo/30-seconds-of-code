@@ -10,18 +10,27 @@ Returns a string in simplified extended ISO format (ISO 8601), including timezon
 - Use `pad` and the built-in methods in the `Date` prototype to build the ISO 8601 string with timezone offset.
 
 ```js
-const toISOStringWithTimezone = date => {
+const toISOStringWithTimezone = (date) => {
   const tzOffset = -date.getTimezoneOffset();
-  const diff = tzOffset >= 0 ? '+' : '-';
-  const pad = n => `${Math.floor(Math.abs(n))}`.padStart(2, '0');
-  return date.getFullYear() +
-    '-' + pad(date.getMonth() + 1) +
-    '-' + pad(date.getDate()) +
-    'T' + pad(date.getHours()) +
-    ':' + pad(date.getMinutes()) +
-    ':' + pad(date.getSeconds()) +
-    diff + pad(tzOffset / 60) +
-    ':' + pad(tzOffset % 60);
+  const diff = tzOffset >= 0 ? "+" : "-";
+  const pad = (n) => `${Math.floor(Math.abs(n))}`.padStart(2, "0");
+  return (
+    date.getFullYear() +
+    "-" +
+    pad(date.getMonth() + 1) +
+    "-" +
+    pad(date.getDate()) +
+    "T" +
+    pad(date.getHours()) +
+    ":" +
+    pad(date.getMinutes()) +
+    ":" +
+    pad(date.getSeconds()) +
+    diff +
+    pad(tzOffset / 60) +
+    ":" +
+    pad(tzOffset % 60)
+  );
 };
 ```
 

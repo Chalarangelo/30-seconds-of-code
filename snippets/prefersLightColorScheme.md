@@ -9,7 +9,9 @@ Returns `true` if the user color scheme preference is `light`, `false` otherwise
 
 ```js
 const prefersLightColorScheme = () =>
-  window && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+  window &&
+  window.matchMedia &&
+  window.matchMedia("(prefers-color-scheme: light)").matches;
 ```
 
 ```js

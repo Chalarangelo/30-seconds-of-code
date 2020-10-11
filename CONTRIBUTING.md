@@ -15,7 +15,7 @@ This will allow you to use our customized tools for all of our content repositor
 ## How you can help
 
 - Submit pull requests with new snippets (see guidelines below) or snippet updates (tags, descriptions, explanations, typos, examples, code improvements).
-- Open issues for things you want to see added, modified, discuss ideas or help out with existing issues. 
+- Open issues for things you want to see added, modified, discuss ideas or help out with existing issues.
 
 ## Ground rules
 
@@ -35,14 +35,14 @@ After installing the integration tools, you can run the following command:
 create-new-snippet <my-snippet-name>
 ```
 
-Replace `<my-snippet-name>` with the name of the snippet you are adding. 
+Replace `<my-snippet-name>` with the name of the snippet you are adding.
 
 ## Snippet guidelines
 
 - Snippets must have all their frontmatter sections (title, tags etc.) filled.
 - Snippet titles must correspond to the filename and follow the language and repository's naming conventions.
 - Snippet tags must be comma-separated, contain a primary tag as seen on the website as their first tag and an expertise tag (`beginner`, `intermediate` or `advanced`) as their last tag.
-- Snippet descriptions must be short and to the point. Explain *what* the snippet does and detail *how* the snippet works and the language features used in it.
+- Snippet descriptions must be short and to the point. Explain _what_ the snippet does and detail _how_ the snippet works and the language features used in it.
 - Snippet code and examples must be enclosed in appropriate, language-tagged blocks as shown in the snippet template, be short and use modern techniques and features. Also make sure to test your code before submitting.
 - If your snippet contains arguments with default parameters, explain what happens if they are omitted when calling the function and what the default case is. Specify default parameters for arguments only if necessary.
 - If your snippet uses recursion, use the `recursion` tag and explain the base cases.
@@ -54,5 +54,5 @@ Replace `<my-snippet-name>` with the name of the snippet you are adding.
 - Always use single quotes for string literals. Use template literals, instead, if necessary.
 - Use strict equality checking (`===` and `!==` instead of `==` and `!=`).
 - When describing snippets, refer to methods, using their full name. For example, use `Array.prototype.reduce()`, instead of `reduce()`.
-- Use variables only when necessary. Prefer `const` when the values are not altered after assignment, otherwise, use `let`. Do not use `var`. 
+- Use variables only when necessary. Prefer `const` when the values are not altered after assignment, otherwise, use `let`. Do not use `var`.
 - Never use `eval()`. Your snippet will be disqualified immediately.

@@ -18,8 +18,8 @@ const mapValues = (obj, fn) =>
 
 ```js
 const users = {
-  fred: { user: 'fred', age: 40 },
-  pebbles: { user: 'pebbles', age: 1 }
+  fred: { user: "fred", age: 40 },
+  pebbles: { user: "pebbles", age: 1 },
 };
-mapValues(users, u => u.age); // { fred: 40, pebbles: 1 }
+mapValues(users, (u) => u.age); // { fred: 40, pebbles: 1 }
 ```

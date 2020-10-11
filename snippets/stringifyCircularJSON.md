@@ -10,10 +10,10 @@ Serializes a JSON object containing circular references into a JSON format.
 - ⚠️ **NOTICE:** This function finds and removes circular references, which causes circular data loss in the serialized JSON.
 
 ```js
-const stringifyCircularJSON = obj => {
+const stringifyCircularJSON = (obj) => {
   const seen = new WeakSet();
   return JSON.stringify(obj, (k, v) => {
-    if (v !== null && typeof v === 'object') {
+    if (v !== null && typeof v === "object") {
       if (seen.has(v)) return;
       seen.add(v);
     }

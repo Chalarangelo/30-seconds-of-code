@@ -8,7 +8,7 @@ Returns all unique values in an array.
 - Create a `Set` from the given array to discard duplicated values, then use the spread operator (`...`) to convert it back to an array.
 
 ```js
-const uniqueElements = arr => [...new Set(arr)];
+const uniqueElements = (arr) => [...new Set(arr)];
 ```
 
 ```js

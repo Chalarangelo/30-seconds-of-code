@@ -3,7 +3,7 @@ title: deepClone
 tags: object,recursion,intermediate
 ---
 
-Creates a deep clone of an object. 
+Creates a deep clone of an object.
 Clones primitives, arrays and objects, excluding class instances.
 
 - Use recursion.
@@ -13,11 +13,13 @@ Clones primitives, arrays and objects, excluding class instances.
 - If the object is an `Array`, set the `clone`'s `length` to that of the original and use `Array.from(clone)` to create a clone.
 
 ```js
-const deepClone = obj => {
+const deepClone = (obj) => {
   if (obj === null) return null;
   let clone = Object.assign({}, obj);
   Object.keys(clone).forEach(
-    key => (clone[key] = typeof obj[key] === 'object' ? deepClone(obj[key]) : obj[key])
+    (key) =>
+      (clone[key] =
+        typeof obj[key] === "object" ? deepClone(obj[key]) : obj[key])
   );
   if (Array.isArray(obj)) {
     clone.length = obj.length;
@@ -28,6 +30,6 @@ const deepClone = obj => {
 ```
 
 ```js
-const a = { foo: 'bar', obj: { a: 1, b: 2 } };
+const a = { foo: "bar", obj: { a: 1, b: 2 } };
 const b = deepClone(a); // a !== b, a.obj !== b.obj
 ```

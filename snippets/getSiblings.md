@@ -9,10 +9,10 @@ Returns an array containing all the siblings of the given element.
 - Use the spread operator (`...`) and `Array.prototype.filter()` to convert to an array and remove the given element from it.
 
 ```js
-const getSiblings = el =>
-  [...el.parentNode.childNodes].filter(node => node !== el);
+const getSiblings = (el) =>
+  [...el.parentNode.childNodes].filter((node) => node !== el);
 ```
 
 ```js
-getSiblings(document.querySelector('head')); // ['body']
+getSiblings(document.querySelector("head")); // ['body']
 ```

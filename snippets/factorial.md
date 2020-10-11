@@ -11,10 +11,10 @@ Calculates the factorial of a number.
 - Throws an exception if `n` is a negative number.
 
 ```js
-const factorial = n =>
+const factorial = (n) =>
   n < 0
     ? (() => {
-        throw new TypeError('Negative numbers are not allowed!');
+        throw new TypeError("Negative numbers are not allowed!");
       })()
     : n <= 1
     ? 1

@@ -12,7 +12,7 @@ Creates a debounced function that delays invoking the provided function until at
 ```js
 const debounce = (fn, ms = 0) => {
   let timeoutId;
-  return function(...args) {
+  return function (...args) {
     clearTimeout(timeoutId);
     timeoutId = setTimeout(() => fn.apply(this, args), ms);
   };
@@ -21,7 +21,7 @@ const debounce = (fn, ms = 0) => {
 
 ```js
 window.addEventListener(
-  'resize',
+  "resize",
   debounce(() => {
     console.log(window.innerWidth);
     console.log(window.innerHeight);

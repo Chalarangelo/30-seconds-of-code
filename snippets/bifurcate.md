@@ -9,9 +9,12 @@ Splits values into two groups. If an element in `filter` is truthy, the correspo
 
 ```js
 const bifurcate = (arr, filter) =>
-  arr.reduce((acc, val, i) => (acc[filter[i] ? 0 : 1].push(val), acc), [[], []]);
+  arr.reduce((acc, val, i) => (acc[filter[i] ? 0 : 1].push(val), acc), [
+    [],
+    [],
+  ]);
 ```
 
 ```js
-bifurcate(['beep', 'boop', 'foo', 'bar'], [true, true, false, true]); // [ ['beep', 'boop', 'bar'], ['foo'] ]
+bifurcate(["beep", "boop", "foo", "bar"], [true, true, false, true]); // [ ['beep', 'boop', 'bar'], ['foo'] ]
 ```

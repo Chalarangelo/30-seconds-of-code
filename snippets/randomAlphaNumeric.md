@@ -12,8 +12,8 @@ Returns a random string with the specified length.
 - Finally, use `String.prototype.slice()` to trim down the generated string if it's longer than the given `length`.
 
 ```js
-const randomAlphaNumeric = length => {
-  let s = '';
+const randomAlphaNumeric = (length) => {
+  let s = "";
   Array.from({ length }).some(() => {
     s += Math.random().toString(36).slice(2);
     return s.length >= length;

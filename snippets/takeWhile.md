@@ -16,5 +16,5 @@ const takeWhile = (arr, func) => {
 ```
 
 ```js
-takeWhile([1, 2, 3, 4], n => n >= 3); // [1, 2]
+takeWhile([1, 2, 3, 4], (n) => n >= 3); // [1, 2]
 ```

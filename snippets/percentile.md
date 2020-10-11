@@ -9,7 +9,12 @@ Uses the percentile formula to calculate how many numbers in the given array are
 
 ```js
 const percentile = (arr, val) =>
-  (100 * arr.reduce((acc, v) => acc + (v < val ? 1 : 0) + (v === val ? 0.5 : 0), 0)) / arr.length;
+  (100 *
+    arr.reduce(
+      (acc, v) => acc + (v < val ? 1 : 0) + (v === val ? 0.5 : 0),
+      0
+    )) /
+  arr.length;
 ```
 
 ```js

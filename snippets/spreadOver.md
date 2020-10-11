@@ -8,7 +8,7 @@ Takes a variadic function and returns a closure that accepts an array of argumen
 - Use closures and the spread operator (`...`) to map the array of arguments to the inputs of the function.
 
 ```js
-const spreadOver = fn => argsArr => fn(...argsArr);
+const spreadOver = (fn) => (argsArr) => fn(...argsArr);
 ```
 
 ```js

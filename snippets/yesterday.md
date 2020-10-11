@@ -12,7 +12,7 @@ Results in a string representation of yesterday's date.
 const yesterday = () => {
   let d = new Date();
   d.setDate(d.getDate() - 1);
-  return d.toISOString().split('T')[0];
+  return d.toISOString().split("T")[0];
 };
 ```
 

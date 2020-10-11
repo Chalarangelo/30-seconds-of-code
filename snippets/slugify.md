@@ -9,15 +9,15 @@ Converts a string to a URL-friendly slug.
 - Use `String.prototype.replace()` to replace spaces, dashes and underscores with `-` and remove special characters.
 
 ```js
-const slugify = str =>
+const slugify = (str) =>
   str
     .toLowerCase()
     .trim()
-    .replace(/[^\w\s-]/g, '')
-    .replace(/[\s_-]+/g, '-')
-    .replace(/^-+|-+$/g, '');
+    .replace(/[^\w\s-]/g, "")
+    .replace(/[\s_-]+/g, "-")
+    .replace(/^-+|-+$/g, "");
 ```
 
 ```js
-slugify('Hello World!'); // 'hello-world'
+slugify("Hello World!"); // 'hello-world'
 ```

@@ -12,7 +12,7 @@ const partial = (fn, ...partials) => (...args) => fn(...partials, ...args);
 ```
 
 ```js
-const greet = (greeting, name) => greeting + ' ' + name + '!';
-const greetHello = partial(greet, 'Hello');
-greetHello('John'); // 'Hello John!'
+const greet = (greeting, name) => greeting + " " + name + "!";
+const greetHello = partial(greet, "Hello");
+greetHello("John"); // 'Hello John!'
 ```

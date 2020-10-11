@@ -10,16 +10,16 @@ Deep freezes an object.
 - Finally, use `Object.freeze()` to freeze the given object.
 
 ```js
-const deepFreeze = obj => {
-  Object.keys(obj).forEach(prop => {
-    if (typeof obj[prop] === 'object') deepFreeze(obj[prop]);
+const deepFreeze = (obj) => {
+  Object.keys(obj).forEach((prop) => {
+    if (typeof obj[prop] === "object") deepFreeze(obj[prop]);
   });
   return Object.freeze(obj);
 };
 ```
 
 ```js
-'use strict';
+"use strict";
 
 const o = deepFreeze([1, [2, 3]]);
 

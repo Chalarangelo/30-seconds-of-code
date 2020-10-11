@@ -12,10 +12,10 @@ Useful for nesting comments, such as the ones on reddit.com.
 - Omit the third argument, `link`, to use `'parent_id'` as the default property which links the object to another one by its `id`.
 
 ```js
-const nest = (items, id = null, link = 'parent_id') =>
+const nest = (items, id = null, link = "parent_id") =>
   items
-    .filter(item => item[link] === id)
-    .map(item => ({ ...item, children: nest(items, item.id, link) }));
+    .filter((item) => item[link] === id)
+    .map((item) => ({ ...item, children: nest(items, item.id, link) }));
 ```
 
 ```js
@@ -25,7 +25,7 @@ const comments = [
   { id: 2, parent_id: 1 },
   { id: 3, parent_id: 1 },
   { id: 4, parent_id: 2 },
-  { id: 5, parent_id: 4 }
+  { id: 5, parent_id: 4 },
 ];
 const nestedComments = nest(comments); // [{ id: 1, parent_id: null, children: [...] }]
 ```

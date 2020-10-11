@@ -10,10 +10,11 @@ Decapitalizes the first letter of a string.
 
 ```js
 const decapitalize = ([first, ...rest], upperRest = false) =>
-  first.toLowerCase() + (upperRest ? rest.join('').toUpperCase() : rest.join(''));
+  first.toLowerCase() +
+  (upperRest ? rest.join("").toUpperCase() : rest.join(""));
 ```
 
 ```js
-decapitalize('FooBar'); // 'fooBar'
-decapitalize('FooBar', true); // 'fOOBAR'
+decapitalize("FooBar"); // 'fooBar'
+decapitalize("FooBar", true); // 'fOOBAR'
 ```

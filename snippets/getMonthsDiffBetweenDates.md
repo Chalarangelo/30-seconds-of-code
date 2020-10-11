@@ -18,5 +18,5 @@ const getMonthsDiffBetweenDates = (dateInitial, dateFinal) =>
 ```
 
 ```js
-getMonthsDiffBetweenDates(new Date('2017-12-13'), new Date('2018-04-29')); // 4
+getMonthsDiffBetweenDates(new Date("2017-12-13"), new Date("2018-04-29")); // 4
 ```

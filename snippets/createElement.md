@@ -11,8 +11,8 @@ If the given string contains multiple elements, only the first one will be retur
 - Use `ParentNode.firstElementChild` to return the element version of the string.
 
 ```js
-const createElement = str => {
-  const el = document.createElement('div');
+const createElement = (str) => {
+  const el = document.createElement("div");
   el.innerHTML = str;
   return el.firstElementChild;
 };

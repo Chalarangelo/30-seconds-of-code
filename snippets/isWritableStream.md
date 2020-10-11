@@ -9,15 +9,15 @@ Checks if the given argument is a writable stream.
 - Additionally check if the `typeof` the `_write` and `_writableState` properties are `function` and `object` respectively.
 
 ```js
-const isWritableStream = val =>
+const isWritableStream = (val) =>
   val !== null &&
-  typeof val === 'object' &&
-  typeof val.pipe === 'function' &&
-  typeof val._write === 'function' &&
-  typeof val._writableState === 'object';
+  typeof val === "object" &&
+  typeof val.pipe === "function" &&
+  typeof val._write === "function" &&
+  typeof val._writableState === "object";
 ```
 
 ```js
-const fs = require('fs');
-isWritableStream(fs.createWriteStream('test.txt')); // true
+const fs = require("fs");
+isWritableStream(fs.createWriteStream("test.txt")); // true
 ```

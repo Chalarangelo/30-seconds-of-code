@@ -12,7 +12,7 @@ Results in a string representation of tomorrow's date.
 const tomorrow = () => {
   let d = new Date();
   d.setDate(d.getDate() + 1);
-  return d.toISOString().split('T')[0];
+  return d.toISOString().split("T")[0];
 };
 ```
 

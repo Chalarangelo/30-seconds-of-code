@@ -8,10 +8,10 @@ Returns `true` if the given string contains any whitespace characters, `false` o
 - Use `RegExp.prototype.test()` with an appropriate regular expression to check if the given string contains any whitespace characters.
 
 ```js
-const containsWhitespace = str => /\s/.test(str);
+const containsWhitespace = (str) => /\s/.test(str);
 ```
 
 ```js
-containsWhitespace('lorem'); // false
-containsWhitespace('lorem ipsum'); // true
+containsWhitespace("lorem"); // false
+containsWhitespace("lorem ipsum"); // true
 ```

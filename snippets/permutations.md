@@ -12,12 +12,15 @@ Generates all permutations of an array's elements (contains duplicates).
 - ⚠️ **WARNING**: This function's execution time increases exponentially with each array element. Anything more than 8 to 10 entries will cause your browser to hang as it tries to solve all the different combinations.
 
 ```js
-const permutations = arr => {
+const permutations = (arr) => {
   if (arr.length <= 2) return arr.length === 2 ? [arr, [arr[1], arr[0]]] : arr;
   return arr.reduce(
     (acc, item, i) =>
       acc.concat(
-        permutations([...arr.slice(0, i), ...arr.slice(i + 1)]).map(val => [item, ...val])
+        permutations([...arr.slice(0, i), ...arr.slice(i + 1)]).map((val) => [
+          item,
+          ...val,
+        ])
       ),
     []
   );

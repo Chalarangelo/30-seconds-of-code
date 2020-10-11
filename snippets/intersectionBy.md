@@ -10,11 +10,15 @@ Returns a list of elements that exist in both arrays, after applying the provide
 ```js
 const intersectionBy = (a, b, fn) => {
   const s = new Set(b.map(fn));
-  return [...new Set(a)].filter(x => s.has(fn(x)));
+  return [...new Set(a)].filter((x) => s.has(fn(x)));
 };
 ```
 
 ```js
 intersectionBy([2.1, 1.2], [2.3, 3.4], Math.floor); // [2.1]
-intersectionBy([{ title: 'Apple' }, { title: 'Orange' }], [{ title: 'Orange' }, { title: 'Melon' }], x => x.title) // [{ title: 'Orange' }]
+intersectionBy(
+  [{ title: "Apple" }, { title: "Orange" }],
+  [{ title: "Orange" }, { title: "Melon" }],
+  (x) => x.title
+); // [{ title: 'Orange' }]
 ```

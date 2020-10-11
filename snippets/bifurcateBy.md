@@ -9,9 +9,12 @@ Splits values into two groups according to a predicate function, which specifies
 
 ```js
 const bifurcateBy = (arr, fn) =>
-  arr.reduce((acc, val, i) => (acc[fn(val, i) ? 0 : 1].push(val), acc), [[], []]);
+  arr.reduce((acc, val, i) => (acc[fn(val, i) ? 0 : 1].push(val), acc), [
+    [],
+    [],
+  ]);
 ```
 
 ```js
-bifurcateBy(['beep', 'boop', 'foo', 'bar'], x => x[0] === 'b'); // [ ['beep', 'boop', 'bar'], ['foo'] ]
+bifurcateBy(["beep", "boop", "foo", "bar"], (x) => x[0] === "b"); // [ ['beep', 'boop', 'bar'], ['foo'] ]
 ```

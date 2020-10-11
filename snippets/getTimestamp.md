@@ -10,8 +10,7 @@ Gets the Unix timestamp from a `Date` object.
 - Omit the argument, `date`, to use the current date.
 
 ```js
-const getTimestamp = (date = new Date()) =>
-  Math.floor(date.getTime() / 1000);
+const getTimestamp = (date = new Date()) => Math.floor(date.getTime() / 1000);
 ```
 
 ```js

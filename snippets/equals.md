@@ -12,16 +12,21 @@ Performs a deep comparison between two values to determine if they are equivalen
 ```js
 const equals = (a, b) => {
   if (a === b) return true;
-  if (a instanceof Date && b instanceof Date) return a.getTime() === b.getTime();
-  if (!a || !b || (typeof a !== 'object' && typeof b !== 'object')) return a === b;
+  if (a instanceof Date && b instanceof Date)
+    return a.getTime() === b.getTime();
+  if (!a || !b || (typeof a !== "object" && typeof b !== "object"))
+    return a === b;
   if (a.prototype !== b.prototype) return false;
   let keys = Object.keys(a);
   if (keys.length !== Object.keys(b).length) return false;
-  return keys.every(k => equals(a[k], b[k]));
+  return keys.every((k) => equals(a[k], b[k]));
 };
 ```
 
 ```js
-equals({ a: [2, { e: 3 }], b: [4], c: 'foo' }, { a: [2, { e: 3 }], b: [4], c: 'foo' }); // true
+equals(
+  { a: [2, { e: 3 }], b: [4], c: "foo" },
+  { a: [2, { e: 3 }], b: [4], c: "foo" }
+); // true
 equals([1, 2, 3], { 0: 1, 1: 2, 2: 3 }); // true
 ```

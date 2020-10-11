@@ -14,7 +14,7 @@ Creates a throttled function that only invokes the provided function at most onc
 ```js
 const throttle = (fn, wait) => {
   let inThrottle, lastFn, lastTime;
-  return function() {
+  return function () {
     const context = this,
       args = arguments;
     if (!inThrottle) {
@@ -23,7 +23,7 @@ const throttle = (fn, wait) => {
       inThrottle = true;
     } else {
       clearTimeout(lastFn);
-      lastFn = setTimeout(function() {
+      lastFn = setTimeout(function () {
         if (Date.now() - lastTime >= wait) {
           fn.apply(context, args);
           lastTime = Date.now();
@@ -36,8 +36,8 @@ const throttle = (fn, wait) => {
 
 ```js
 window.addEventListener(
-  'resize',
-  throttle(function(evt) {
+  "resize",
+  throttle(function (evt) {
     console.log(window.innerWidth);
     console.log(window.innerHeight);
   }, 250)

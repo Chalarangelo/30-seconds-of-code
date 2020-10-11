@@ -13,5 +13,5 @@ const takeRightWhile = (arr, func) =>
 ```
 
 ```js
-takeRightWhile([1, 2, 3, 4], n => n < 3); // [3, 4]
+takeRightWhile([1, 2, 3, 4], (n) => n < 3); // [3, 4]
 ```

@@ -9,17 +9,17 @@ Checks if a string is an anagram of another string (case-insensitive, ignores sp
 
 ```js
 const isAnagram = (str1, str2) => {
-  const normalize = str =>
+  const normalize = (str) =>
     str
       .toLowerCase()
-      .replace(/[^a-z0-9]/gi, '')
-      .split('')
+      .replace(/[^a-z0-9]/gi, "")
+      .split("")
       .sort()
-      .join('');
+      .join("");
   return normalize(str1) === normalize(str2);
 };
 ```
 
 ```js
-isAnagram('iceman', 'cinema'); // true
+isAnagram("iceman", "cinema"); // true
 ```

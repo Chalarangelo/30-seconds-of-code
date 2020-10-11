@@ -9,17 +9,17 @@ Checks if the given argument is a duplex (readable and writable) stream.
 - Additionally check if the `typeof` the `_read`, `_write` and `_readableState`, `_writableState` properties are `function` and `object` respectively.
 
 ```js
-const isDuplexStream = val =>
+const isDuplexStream = (val) =>
   val !== null &&
-  typeof val === 'object' &&
-  typeof val.pipe === 'function' &&
-  typeof val._read === 'function' &&
-  typeof val._readableState === 'object' &&
-  typeof val._write === 'function' &&
-  typeof val._writableState === 'object';
+  typeof val === "object" &&
+  typeof val.pipe === "function" &&
+  typeof val._read === "function" &&
+  typeof val._readableState === "object" &&
+  typeof val._write === "function" &&
+  typeof val._writableState === "object";
 ```
 
 ```js
-const Stream = require('stream');
+const Stream = require("stream");
 isDuplexStream(new Stream.Duplex()); // true
 ```

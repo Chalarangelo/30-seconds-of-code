@@ -11,7 +11,8 @@ Redirects the page to HTTPS if its currently in HTTP. Also, pressing the back bu
 
 ```js
 const httpsRedirect = () => {
-  if (location.protocol !== 'https:') location.replace('https://' + location.href.split('//')[1]);
+  if (location.protocol !== "https:")
+    location.replace("https://" + location.href.split("//")[1]);
 };
 ```
 

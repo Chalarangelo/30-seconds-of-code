@@ -24,14 +24,14 @@ const orderWith = (arr, prop, order) => {
 
 ```js
 const users = [
-  { name: 'fred', language: 'Javascript' },
-  { name: 'barney', language: 'TypeScript' },
-  { name: 'frannie', language: 'Javascript' },
-  { name: 'anna', language: 'Java' },
-  { name: 'jimmy' },
-  { name: 'nicky', language: 'Python' },
+  { name: "fred", language: "Javascript" },
+  { name: "barney", language: "TypeScript" },
+  { name: "frannie", language: "Javascript" },
+  { name: "anna", language: "Java" },
+  { name: "jimmy" },
+  { name: "nicky", language: "Python" },
 ];
-orderWith(users, 'language', ['Javascript', 'TypeScript', 'Java']);
+orderWith(users, "language", ["Javascript", "TypeScript", "Java"]);
 /* 
 [
   { name: 'fred', language: 'Javascript' },

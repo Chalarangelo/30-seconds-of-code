@@ -9,7 +9,7 @@ Returns the most frequent element in an array.
 - Use `Object.entries()` on the result in combination with `Array.prototype.reduce()` to get the most frequent value in the array.
 
 ```js
-const mostFrequent = arr =>
+const mostFrequent = (arr) =>
   Object.entries(
     arr.reduce((a, v) => {
       a[v] = a[v] ? a[v] + 1 : 1;
@@ -19,5 +19,5 @@ const mostFrequent = arr =>
 ```
 
 ```js
-mostFrequent(['a', 'b', 'a', 'c', 'a', 'a', 'b']); // 'a'
+mostFrequent(["a", "b", "a", "c", "a", "a", "b"]); // 'a'
 ```

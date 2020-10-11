@@ -9,14 +9,18 @@ Add multiple event listeners with the same handler to an element.
 
 ```js
 const addMultipleListeners = (el, types, listener, options, useCapture) => {
-  types.forEach(type => el.addEventListener(type, listener, options, useCapture));
-}
+  types.forEach((type) =>
+    el.addEventListener(type, listener, options, useCapture)
+  );
+};
 ```
 
 ```js
 addMultipleListeners(
-  document.querySelector('.my-element'),
-  ['click', 'mousedown'],
-  () => { console.log('hello!') }
+  document.querySelector(".my-element"),
+  ["click", "mousedown"],
+  () => {
+    console.log("hello!");
+  }
 );
 ```

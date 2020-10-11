@@ -8,8 +8,8 @@ Returns an array of numbers in the arithmetic progression starting with the give
 - Use `Array.from()` to create an array of the desired length, `lim/n`, and a map function to fill it with the desired values in the given range.
 
 ```js
-const arithmeticProgression  = (n, lim) => 
-  Array.from({ length: Math.ceil(lim / n) }, (v, i) => (i + 1) * n );
+const arithmeticProgression = (n, lim) =>
+  Array.from({ length: Math.ceil(lim / n) }, (v, i) => (i + 1) * n);
 ```
 
 ```js

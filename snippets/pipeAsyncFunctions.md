@@ -10,18 +10,18 @@ Performs left-to-right function composition for asynchronous functions.
 - All functions must accept a single argument.
 
 ```js
-const pipeAsyncFunctions = (...fns) => arg => fns.reduce((p, f) => p.then(f), Promise.resolve(arg));
+const pipeAsyncFunctions = (...fns) => (arg) =>
+  fns.reduce((p, f) => p.then(f), Promise.resolve(arg));
 ```
 
 ```js
-
 const sum = pipeAsyncFunctions(
-  x => x + 1,
-  x => new Promise(resolve => setTimeout(() => resolve(x + 2), 1000)),
-  x => x + 3,
-  async x => (await x) + 4
+  (x) => x + 1,
+  (x) => new Promise((resolve) => setTimeout(() => resolve(x + 2), 1000)),
+  (x) => x + 3,
+  async (x) => (await x) + 4
 );
-(async() => {
+(async () => {
   console.log(await sum(5)); // 15 (after one second)
 })();
 ```
