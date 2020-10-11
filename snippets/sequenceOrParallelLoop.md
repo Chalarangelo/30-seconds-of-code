@@ -1,5 +1,5 @@
 ---
-title: sequenceOrParellelLoop
+title: sequenceOrParallelLoop
 tags: function,promises,beginner
 ---
 
