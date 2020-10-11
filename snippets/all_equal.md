@@ -5,7 +5,7 @@ tags: list,beginner
 
 Checks if all elements in a list are equal.
 
-- Use `set()` to eliminate duplicate elements and then use `len()` to check if length is 1.
+- Use `set()` to eliminate duplicate elements and then use `len()` to check if length is `1`.
 
 ```py
 def all_equal(lst):
