@@ -11,7 +11,7 @@ Returns the sum of the powers of all the numbers from `start` to `end` (both inc
 
 ```py
 def sum_of_powers(end, power = 2, start = 1):
-  return sum([(start + i) ** power for i in range(0, end + 1 - start)])
+  return sum([(i) ** power for i in range(start, end + 1)])
 ```
 
 ```py
