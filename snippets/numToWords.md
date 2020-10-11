@@ -46,6 +46,9 @@ const tw_val = [
   "ninety",
 ];
 const numToWords = (s) => {
+  if (s < 0) {
+    return "negative " + numToWords(-s);
+  }
   s = s.toString();
   s = s.replace(/[\, ]/g, "");
   if (s != parseFloat(s)) return "not a number ";
@@ -87,6 +90,7 @@ const numToWords = (s) => {
 ```js
 numToWords(223); //"two hundred twenty three "
 numToWords(0); //""
-numToWords(10); //"ten "
 numToWords(1032351); //"one million thirty two thousand three hundred fifty one "
+numToWords("-55.454"); //"negative fifty five point four five four "
+numToWords(1000000000000000); //"too big"
 ```
