@@ -3,7 +3,7 @@ title: index_of_all
 tags: list,intermediate
 ---
 
-Returns a list of indices of all the occurrences of an element in a list.
+Returns a list of indexes of all the occurrences of an element in a list.
 
 - Use `enumerate()` and a list comprehension to check each element for equality with `value` and adding `i` to the result.
 

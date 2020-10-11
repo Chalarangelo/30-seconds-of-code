@@ -1,6 +1,6 @@
 ---
 title: find_index
-tags: list,beginner
+tags: list,intermediate
 ---
 
 Returns the index of the first element in the provided list that satisfies the provided testing function.
