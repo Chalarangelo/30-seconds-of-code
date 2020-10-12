@@ -12,7 +12,7 @@ Returns a date after adding given number of business days.
 ```js
 const addWeekDays = (startDate, count) => 
   Array
-    .from({ length: businessDayCount })
+    .from({ length: count })
     .reduce(date => {
       date = new Date(date.setDate(date.getDate() + 1));
       if (date.getDay() % 6 === 0)
