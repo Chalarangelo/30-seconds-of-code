@@ -3,10 +3,10 @@ title: isNode
 tags: node,intermediate
 ---
 
-Check if the current runtime environment is [Node.js](https://nodejs.org)
+Determines if the current runtime environment is Node.js.
 
-- The `process` object is a global that provides information about the current Node.js process.
-- Check if the current enviroment has the `process` object defined and the version of Node.js is available.
+- Use the `process` global object that provides information about the current Node.js process.
+- Check if `process` is defined and `process.versions`, `process.versions.node` are not `null`.
 
 ```js
 const isNode = () =>
@@ -16,5 +16,6 @@ const isNode = () =>
 ```
 
 ```js
-isNode(); // true
+isNode(); // true (Node)
+isNode(); // false (browser)
 ```
