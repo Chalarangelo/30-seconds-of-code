@@ -1,28 +1,23 @@
 ---
 title: addDaysToDate
-tags: date,beginner
+tags: date,intermediate
 ---
 
-Return the date of `n` days from any given date.
+Return the date of `n` days from the given date as a string representation.
 
-- Use `new Date()` to read the first parameter as a valid Date
-- Add `n` number of days to the given date
-- Return the output in `yyyy-MM-dd` format by using `Date.prototype.toISOString()` and removing timestamp
-- For example, adding `15` to `1 October 2020` results to `16 October 2020`
-- Also accepts negative numbers. For example, adding `-15` to `16 October 2020` results to `1 October 2020`
+- Use `new Date()` to create a date object from the first parameter.
+- Use `Date.getDate()` and `Date.setDate()` to add `n` days to the given date.
+- Use `Date.prototype.toISOString()` to return a string in `yyyy-mm-dd` format.
 
 ```js
-const addDaysToDate = (d,n) => {
-  d = new Date(d);
+const addDaysToDate = (date, n) => {
+  d = new Date(date);
   d.setDate(d.getDate() + n);
   return d.toISOString().split('T')[0];
-}
+};
 ```
 
 ```js
-addDaysToDate("2020-10-15", -10); // '2020-10-05'
-addDaysToDate("2020-10-15", 10); // '2020-10-25'
-addDaysToDate("10/15/2020", 10); // '2020-10-25'
-addDaysToDate("2020-10-31", 1); // '2020-11-01'
-addDaysToDate("12/31/2020", 31); // '2021-01-31'
+addDaysToDate('2020-10-15', 10); // '2020-10-25'
+addDaysToDate('2020-10-15', -10); // '2020-10-05'
 ```
