@@ -1,5 +1,5 @@
 ---
-title: celsiusToKelvin
+title: kelvinToCelsius
 tags: math,beginner
 ---
 
