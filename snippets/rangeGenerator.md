@@ -9,11 +9,11 @@ Creates a generator, that generates all values in the given range using the give
 - Omit the third argument, `step`, to use a default value of `1`.
 
 ```js
-const rangeGenerator = function* (start, end, step = 1) {
+const rangeGenerator = function* (start, end) {
   let i = start;
   while (i < end) {
     yield i;
-    i += step;
+    i += 1;
   }
 };
 ```
