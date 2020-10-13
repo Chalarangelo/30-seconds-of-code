@@ -1,6 +1,7 @@
 /* eslint-disable cypress/no-unnecessary-waiting */
 /* Waiting times necessary for some slow redirect sequences */
 import literals from 'lang/en/listing';
+import clientLiterals from 'lang/en/client/common';
 
 describe('Listing', () => {
   before(() => {
@@ -49,17 +50,11 @@ describe('Listing', () => {
     });
 
     it('should display the correct breadcrumbs', () => {
-      cy.get('.link-back').contains(literals.snippetList);
+      cy.get('.breadcrumbs').contains(clientLiterals.home);
     });
 
-    describe('returning to listing', () => {
-      before(() => {
-        cy.get('.link-back').first().click();
-      });
-
-      it('should return to the last listing page', () => {
-        cy.url().should('contain', '/list');
-      });
+    after(() => {
+      cy.get('.breadcrumb-item a').first().click();
     });
   });
 
@@ -78,12 +73,12 @@ describe('Listing', () => {
       });
 
       it('should display the correct breadcrumbs', () => {
-        cy.get('.link-back').contains('CSS');
+        cy.get('.breadcrumbs').contains('CSS');
       });
 
       describe('returning to category listing', () => {
         before(() => {
-          cy.get('.link-back').first().click();
+          cy.get('.breadcrumb-item').eq(1).click();
         });
 
         it('should return to the category listing page', () => {
@@ -110,8 +105,8 @@ describe('Listing', () => {
         });
 
         it('should display the correct breadcrumbs', () => {
-          cy.get('.link-back.has-more').contains('CSS');
-          cy.get('.link-back-more').contains('Animation');
+          cy.get('.breadcrumbs').contains('CSS');
+          cy.get('.breadcrumbs').contains('Animation');
         });
       });
     });
