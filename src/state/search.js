@@ -7,6 +7,7 @@ const initialState = {
   searchIndex: [],
   searchResults: [],
   searchTimestamp: `${new Date()}`,
+  includeArchive: false,
 };
 
 // Actions
@@ -14,6 +15,7 @@ const PUSH_NEW_QUERY = 'PUSH_NEW_QUERY';
 const INITIALIZE_INDEX = 'INITIALIZE_INDEX';
 const SEARCH_BY_KEYPHRASE = 'SEARCH_BY_KEYPHRASE';
 const KEYPHRASE_TOO_SHORT = 'KEYPHRASE_TOO_SHORT';
+const TOGGLE_ARCHIVE_SEARCH = 'TOGGLE_ARCHIVE_SEARCH';
 
 export const pushNewQuery = query => ({
   type: PUSH_NEW_QUERY,
@@ -24,6 +26,12 @@ export const initializeIndex = index => ({
   type: INITIALIZE_INDEX,
   index,
 });
+
+export const toggleArchiveSearch = searchArchive => ({
+  type: TOGGLE_ARCHIVE_SEARCH,
+  searchArchive,
+});
+
 export const searchByKeyphrase = (keyphrase, searchIndex) => {
   let q = keyphrase.toLowerCase().trim();
   if (q.length <= 1) {
@@ -55,6 +63,11 @@ export const searchByKeyphrase = (keyphrase, searchIndex) => {
 // Reducer
 export default (state = initialState, action) => {
   switch (action.type) {
+  case TOGGLE_ARCHIVE_SEARCH:
+    return {
+      ...state,
+      includeArchive: action.searchArchive,
+    };
   case PUSH_NEW_QUERY:
     return {
       ...state,
