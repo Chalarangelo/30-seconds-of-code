@@ -1,168 +1,40 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import Breadcrumbs from './index';
-import { breadcrumbs, lastPages, blogBreadcrumbs } from 'fixtures/breadcrumbs';
+import { breadcrumbs } from 'fixtures/breadcrumbs';
 
 console.warn = jest.fn();
 
 describe('<Breadcrumbs />', () => {
-  let wrapper, linkBack, anchor;
+  let wrapper;
 
-  describe('from Search as last page', () => {
-    beforeEach(() => {
-      wrapper = render(
-        <Breadcrumbs
-          breadcrumbs={ breadcrumbs }
-          lastPage={ lastPages.search }
-        />
-      ).container;
-      linkBack = wrapper.querySelector('a');
-      anchor = wrapper.querySelector('.link-back-more');
+  beforeEach(() => {
+    wrapper = render(<Breadcrumbs breadcrumbs={ breadcrumbs } />).container;
+  });
+
+  afterEach(cleanup);
+
+  describe('it renders', () => {
+    it('the appropriate wrapper element', () => {
+      expect(wrapper.querySelectorAll('.breadcrumbs')).toHaveLength(1);
     });
 
-    afterEach(cleanup);
-
-    it('renders a link-back anchor with the correct link', () => {
-      expect(linkBack.href).toContain(lastPages.search.url);
+    it('an appropriate element for each breadcrumb', () => {
+      expect(wrapper.querySelectorAll('.breadcrumb-item')).toHaveLength(breadcrumbs.length);
     });
 
-    it('renders a link-back anchor with the correct text', () => {
-      expect(linkBack.textContent).toBe(lastPages.search.name);
-    });
-
-    it('does not render a second anchor', () => {
-      expect(anchor).toBeFalsy;
+    it('the breadcrumb links', () => {
+      expect(wrapper.querySelectorAll('.breadcrumb-item > a')).toHaveLength(breadcrumbs.length);
     });
   });
 
-  describe('from main listing as last page', () => {
-    beforeEach(() => {
-      wrapper = render(
-        <Breadcrumbs
-          breadcrumbs={ breadcrumbs }
-          lastPage={ lastPages.mainListing }
-        />
-      ).container;
-      linkBack = wrapper.querySelector('a');
-      anchor = wrapper.querySelector('.link-back-more');
+  describe('accessibility', () => {
+    it('uses an appropriate aria-label', () => {
+      expect(wrapper.querySelectorAll('nav[aria-label="breadcrumbs"]')).toHaveLength(1);
     });
 
-    it('renders a link-back anchor with the correct link', () => {
-      expect(linkBack.href).toContain(lastPages.mainListing.url);
-    });
-
-    it('renders a link-back anchor with the correct text', () => {
-      expect(linkBack.textContent).toBe(lastPages.mainListing.name);
-    });
-
-    it('does not render a second anchor', () => {
-      expect(anchor).toBeFalsy;
-    });
-  });
-
-  describe('from language listing as last page', () => {
-    beforeEach(() => {
-      wrapper = render(
-        <Breadcrumbs
-          breadcrumbs={ breadcrumbs }
-          lastPage={ lastPages.language }/>
-      ).container;
-      linkBack = wrapper.querySelector('a');
-      anchor = wrapper.querySelector('.link-back-more');
-    });
-
-    it('renders a link-back anchor with the correct link', () => {
-      expect(linkBack.href).toContain(lastPages.language.url);
-    });
-
-    it('renders a link-back anchor with the correct text', () => {
-      expect(linkBack.textContent).toBe(lastPages.language.name);
-    });
-
-    it('does not render a second anchor', () => {
-      expect(anchor).toBeFalsy;
-    });
-  });
-
-  describe('from tag listing as last page', () => {
-    beforeEach(() => {
-      wrapper = render(
-        <Breadcrumbs
-          breadcrumbs={ breadcrumbs }
-          lastPage={ lastPages.tag }/>
-      ).container;
-      linkBack = wrapper.querySelector('a');
-      anchor = wrapper.querySelector('.link-back-more');
-    });
-
-    it('renders a link-back anchor with the correct link', () => {
-      expect(linkBack.href).toContain('/javascript/a/1');
-    });
-
-    it('renders a link-back anchor with the correct text', () => {
-      expect(linkBack.textContent).toBe('JavaScript');
-    });
-
-    it('renders a second anchor with the correct link', () => {
-      expect(anchor.href).toContain(lastPages.tag.url);
-    });
-
-    it('renders a second anchor with the correct text', () => {
-      expect(anchor.textContent).toBe('Function');
-    });
-  });
-
-  describe('blog from language listing', () => {
-    beforeEach(() => {
-      wrapper = render(
-        <Breadcrumbs
-          breadcrumbs={ blogBreadcrumbs }
-          lastPage={ lastPages.language }
-        />
-      ).container;
-      linkBack = wrapper.querySelector('a');
-      anchor = wrapper.querySelector('.link-back-more');
-    });
-
-    it('renders a link-back anchor with the correct link', () => {
-      expect(linkBack.href).toContain('/javascript/e/1');
-    });
-
-    it('renders a link-back anchor with the correct text', () => {
-      expect(linkBack.textContent).toBe('JavaScript');
-    });
-
-    it('does not render a second anchor', () => {
-      expect(anchor).toBeFalsy;
-    });
-  });
-
-  describe('blog from tag listing', () => {
-    beforeEach(() => {
-      wrapper = render(
-        <Breadcrumbs
-          breadcrumbs={ blogBreadcrumbs }
-          lastPage={ lastPages.tag }
-        />
-      ).container;
-      linkBack = wrapper.querySelector('a');
-      anchor = wrapper.querySelector('.link-back-more');
-    });
-
-    it('renders a link-back anchor with the correct link', () => {
-      expect(linkBack.href).toContain('/javascript/a/1');
-    });
-
-    it('renders a link-back anchor with the correct text', () => {
-      expect(linkBack.textContent).toBe('JavaScript');
-    });
-
-    it('renders a second anchor with the correct link', () => {
-      expect(anchor.href).toContain(lastPages.tag.url);
-    });
-
-    it('renders a second anchor with the correct text', () => {
-      expect(anchor.textContent).toBe('Function');
+    it('uses an appropriate aria-current', () => {
+      expect(wrapper.querySelectorAll('.breadcrumb-item:last-of-type > a[aria-current="page"]')).toHaveLength(1);
     });
   });
 });

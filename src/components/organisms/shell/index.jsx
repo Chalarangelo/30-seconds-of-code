@@ -5,6 +5,7 @@ import Search from 'components/molecules/search';
 import Footer from 'components/molecules/footer';
 import CookieConsentPopup from 'components/molecules/cookieConsentPopup';
 import literals from 'lang/en/client/common';
+import { pushNewPage } from 'state/navigation';
 import { combineClassNames } from 'utils';
 
 const propTypes = {
@@ -18,6 +19,7 @@ const propTypes = {
   isSearch: PropTypes.bool,
   isSettings: PropTypes.bool,
   lastPageUrl: PropTypes.string.isRequired,
+  dispatch: PropTypes.func,
 };
 
 /**
@@ -35,6 +37,7 @@ const Shell = ({
   isSearch = false,
   isSettings = false,
   lastPageUrl,
+  dispatch,
   children,
 }) => {
   React.useEffect(() => {
@@ -62,6 +65,10 @@ const Shell = ({
           href={ isSettings ? lastPageUrl ? lastPageUrl : '/' : '/settings' }
           rel='nofollow'
           title={ literals.settings }
+          onClick={ () => {
+            if (isSettings || !window || !window.location) return;
+            dispatch(pushNewPage(window.location.pathname));
+          } }
         />
       </header>
       <div className='content'>

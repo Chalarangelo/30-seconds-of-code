@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import Meta from 'components/organisms/meta';
 import Shell from 'components/organisms/shell';
 import SearchResults from 'components/organisms/searchResults';
-import { pushNewPage } from 'state/navigation';
 import { initializeIndex } from 'state/search';
 import literals from 'lang/en/client/search';
 
@@ -15,6 +14,7 @@ const propTypes = {
     searchIndex: PropTypes.arrayOf(PropTypes.shape({})),
   }),
   searchQuery: PropTypes.string,
+  includeArchive: PropTypes.bool,
   dispatch: PropTypes.func,
 };
 
@@ -29,11 +29,22 @@ const SearchPage = ({
     searchIndex,
   },
   searchQuery,
+  includeArchive,
   dispatch,
 }) => {
   React.useEffect(() => {
-    dispatch(pushNewPage(literals.search, '/search'));
-    dispatch(initializeIndex(searchIndex));
+    if (includeArchive) {
+      fetch('/page-data/archive/page-data.json')
+        .then(res => res.json())
+        .then(archiveIndex =>
+          dispatch(initializeIndex([
+            ...searchIndex,
+            ...archiveIndex.result.pageContext.searchIndex,
+          ]))
+        );
+    } else
+      dispatch(initializeIndex(searchIndex));
+
   }, []);
 
   return (
@@ -54,6 +65,7 @@ SearchPage.propTypes = propTypes;
 export default connect(
   state => ({
     searchQuery: state.search.searchQuery,
+    includeArchive: state.search.includeArchive,
   }),
   null
 )(SearchPage);

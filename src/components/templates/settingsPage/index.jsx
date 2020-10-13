@@ -7,6 +7,7 @@ import Toggle from 'components/atoms/toggle/index';
 import SimpleCard from 'components/molecules/simpleCard';
 import Shell from 'components/organisms/shell';
 import { toggleDarkMode, toggleGithubLinks, decideCookies } from 'state/shell';
+import { toggleArchiveSearch } from 'state/search';
 
 const propTypes = {
   pageContext: PropTypes.shape({
@@ -17,6 +18,7 @@ const propTypes = {
         darkMode: PropTypes.string,
         githubLinks: PropTypes.string,
         cookies: PropTypes.string,
+        archiveSearch: PropTypes.string,
       }),
     }),
   }),
@@ -24,6 +26,7 @@ const propTypes = {
   isDarkMode: PropTypes.bool,
   hasGithubLinksEnabled: PropTypes.bool,
   acceptsCookies: PropTypes.bool,
+  includeArchive: PropTypes.bool,
 };
 
 /**
@@ -42,6 +45,7 @@ const SettingsPage = ({
   isDarkMode,
   hasGithubLinksEnabled,
   acceptsCookies,
+  includeArchive,
 }) => (
   <>
     <Meta
@@ -69,6 +73,12 @@ const SettingsPage = ({
         >
           { settings.cookies }
         </Toggle>
+        <Toggle
+          checked={ !!includeArchive }
+          onChange={ () => dispatch(toggleArchiveSearch(!includeArchive)) }
+        >
+          { settings.archiveSearch }
+        </Toggle>
       </SimpleCard>
     </Shell>
   </>
@@ -81,6 +91,7 @@ export default connect(
     isDarkMode: state.shell.isDarkMode,
     hasGithubLinksEnabled: state.shell.hasGithubLinksEnabled,
     acceptsCookies: state.shell.acceptsCookies,
+    includeArchive: state.search.includeArchive,
   }),
   null
 )(SettingsPage);
