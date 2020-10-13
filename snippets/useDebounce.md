@@ -9,7 +9,7 @@ Return set value at a delay by preventing a value set function (`setState`, etc.
   - Uses `React.useState()` to maintain local state value. Required.
   - Uses `React.useEfect()` to watch for local state changes. Required.
 - To use set hook to variable. Demo below.
-- Pass a string `value` to the function. Required.
+- Pass a string `value` to the function. Required. If no value is provided the hook will return an empty string value.
 - Pass optional `delay` value to function. Set in miliseconds. Default is one second, or `1000`.
 - Returns a string `value` at a delay after final value change.
 
