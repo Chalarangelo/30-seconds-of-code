@@ -13,7 +13,7 @@ const propTypes = {
 const Expertise = ({
   level = 'Intermediate',
 }) => (
-  <span className={ `expertise ${level.toLowerCase()}` } />
+  <span className={ `expertise ${level.toLowerCase()}` } title={ level } />
 );
 
 Expertise.propTypes = propTypes;

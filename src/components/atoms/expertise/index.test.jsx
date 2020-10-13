@@ -23,6 +23,10 @@ describe('<Expertise />', () => {
     expect(wrapper.querySelectorAll(`.expertise.${level.toLowerCase()}`)).toHaveLength(1);
   });
 
+  it('should get the appropriate title from expertise level', () => {
+    expect(wrapper.querySelectorAll(`.expertise[title="${level}"`)).toHaveLength(1);
+  });
+
   describe('without a level value', () => {
     beforeEach(() => {
       wrapper = render(
