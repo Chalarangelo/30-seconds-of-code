@@ -77,6 +77,27 @@ describe('transformSnippetIndex', () => {
     const result = transformSnippetIndex(snippets, true);
     expect(result[0].searchTokens).toBe(snippets[0].searchTokens);
   });
+
+  it('correctly injects any additional primary tags', () => {
+    const snippets = [
+      {
+        title: 'a',
+        expertise: 'Intermediate',
+        tags: {
+          primary: 'array',
+        },
+        language: {},
+        html: {
+          description: 'desc ',
+        },
+        slug: '/a',
+        searchTokens: 'my tokens',
+        irrelevantStuff: 'data',
+      },
+    ];
+    const result = transformSnippetIndex(snippets, false, 'math');
+    expect(result[0].primaryTag).toBe('Array, Math');
+  });
 });
 
 describe('transformSnippetContext', () => {
