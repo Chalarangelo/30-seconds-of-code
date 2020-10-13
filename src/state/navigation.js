@@ -1,16 +1,12 @@
-import literals from 'lang/en/client/common';
-
 // Default state
 const initialState = {
-  lastPageTitle: literals.home,
   lastPageUrl: '/',
 };
 
 // Actions
 const PUSH_NEW_PAGE = 'PUSH_NEW_PAGE';
-export const pushNewPage = (pageTitle, pageUrl) => ({
+export const pushNewPage = pageUrl => ({
   type: PUSH_NEW_PAGE,
-  pageTitle,
   pageUrl,
 });
 
@@ -20,7 +16,6 @@ export default (state = initialState, action) => {
   case PUSH_NEW_PAGE:
     return {
       ...state,
-      lastPageTitle: action.pageTitle,
       lastPageUrl: action.pageUrl,
     };
   default:
