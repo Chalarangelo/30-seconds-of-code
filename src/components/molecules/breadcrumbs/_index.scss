@@ -1,39 +1,51 @@
-// Return to previous page link
-a.link-back {
-  font-size: 1.125rem;
-  line-height: 1.35;
-  display: block;
-  margin: 0.875rem 0.875rem 1.5rem;
-  padding-left: 24px;
-  position: relative;
+.breadcrumbs {
+  margin: 1rem 1rem 0;
 
-  &, &:link, &:visited {
-    color: var(--fore-color-dark);
-  }
-
-  &:before {
-    position: absolute;
-    left: 0;
-    font-size: 20px;
-    line-height: 24px;
-  }
-
-  &.has-more {
-    display: inline-block;
-    margin-right: 0;
-    margin-bottom: 0;
+  ol {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    overflow: hidden;
   }
 }
 
-// Second link in breadcrumbs
-a.link-back-more {
-  font-size: 1.125rem;
-  line-height: 1.35;
+.breadcrumb-item {
+  font-size: 1rem;
+  line-height: 1.5;
   display: inline-block;
-  margin: 0.875rem 1.25rem 0 0;
   position: relative;
+  margin: 0;
+  margin: 0 1rem 0 0;
 
-  &, &:link, &:visited {
-    color: var(--fore-color-dark);
+  // Breadcrumb link
+  a {
+    &, &:link, &:visited {
+      color: var(--fore-color-dark);
+    }
+  }
+
+  &:not(:last-of-type) {
+
+    &:before {
+      color: var(--fore-color-light);
+      position: absolute;
+      right: -0.75rem;
+      content: "/";
+    }
+  }
+
+  // Current page
+  &:last-of-type {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    a {
+      &, &:link, &:visited {
+        color: var(--fore-color);
+        pointer-events: none;
+      }
+    }
   }
 }

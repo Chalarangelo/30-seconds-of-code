@@ -35,7 +35,7 @@ describe('<SnippetPage />', () => {
     });
 
     it('a Breadcrumbs component', () => {
-      expect(wrapper.querySelectorAll('.link-back')).toHaveLength(1);
+      expect(wrapper.querySelectorAll('.breadcrumbs')).toHaveLength(1);
     });
 
     it('a SnippetCard component', () => {
@@ -48,7 +48,7 @@ describe('<SnippetPage />', () => {
   });
 
   it('should pass the breadcrumbs to the Breadcrumbs component', () => {
-    expect(wrapper.querySelector('.link-back').textContent).toContain(breadcrumbs[0].name);
+    expect(wrapper.querySelector('.breadcrumbs').textContent).toContain(breadcrumbs[0].name);
   });
 
   it('should pass the snippet data to the SnippetCard component', () => {
