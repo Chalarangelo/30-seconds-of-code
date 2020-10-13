@@ -14,6 +14,7 @@ const propTypes = {
     searchIndex: PropTypes.arrayOf(PropTypes.shape({})),
   }),
   searchQuery: PropTypes.string,
+  includeArchive: PropTypes.bool,
   dispatch: PropTypes.func,
 };
 
@@ -28,10 +29,22 @@ const SearchPage = ({
     searchIndex,
   },
   searchQuery,
+  includeArchive,
   dispatch,
 }) => {
   React.useEffect(() => {
-    dispatch(initializeIndex(searchIndex));
+    if (includeArchive) {
+      fetch('/page-data/archive/page-data.json')
+        .then(res => res.json())
+        .then(archiveIndex =>
+          dispatch(initializeIndex([
+            ...searchIndex,
+            ...archiveIndex.result.pageContext.searchIndex,
+          ]))
+        );
+    } else
+      dispatch(initializeIndex(searchIndex));
+
   }, []);
 
   return (
@@ -52,6 +65,7 @@ SearchPage.propTypes = propTypes;
 export default connect(
   state => ({
     searchQuery: state.search.searchQuery,
+    includeArchive: state.search.includeArchive,
   }),
   null
 )(SearchPage);
