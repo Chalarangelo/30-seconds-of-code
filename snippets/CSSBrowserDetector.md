@@ -1,5 +1,5 @@
 ---
-title: CSSOnlyBrowserDetector
+title: CSSBrowserDetector
 tags: css,browser detection,edge,chrome,firefox,ie,internet explorer,intermediate
 ---
 
