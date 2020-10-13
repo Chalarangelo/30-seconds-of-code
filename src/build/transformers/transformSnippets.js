@@ -7,12 +7,18 @@ import literals from 'lang/en/snippet';
  * Used in listing pages to render snippet previews.
  * @param {array} snippets - An array of snippets.
  * @param {bool} withSearchTokens - Should include search tokens in the result?
+ * @param {string} injectIntoPrimaryTag - An additional primary tag to be injected into the snippet, if any.
  */
-export const transformSnippetIndex = (snippets, withSearchTokens = false) =>
+export const transformSnippetIndex = (snippets, withSearchTokens = false, injectIntoPrimaryTag = '') =>
   snippets.map(snippet => ({
     title: snippet.title,
     expertise: transformTagName(snippet.expertise),
-    primaryTag: transformTagName(snippet.tags.primary),
+    primaryTag: injectIntoPrimaryTag.length && snippet.tags.primary !== injectIntoPrimaryTag
+      ? [
+        transformTagName(snippet.tags.primary),
+        transformTagName(injectIntoPrimaryTag),
+      ].join(', ')
+      : transformTagName(snippet.tags.primary),
     language: snippet.language && snippet.language.long ? snippet.language.long : undefined,
     icon: snippet.icon,
     description: snippet.html.description.trim(),
