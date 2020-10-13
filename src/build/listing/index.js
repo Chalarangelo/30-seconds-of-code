@@ -191,19 +191,23 @@ export const compileListingData = async(snippetIndex, listingMetas) => {
       slugContextCustomizer
     );
 
-
+    // 3. Create listing pages for the tag listings
     for(let tagPrefix of snippetIndexTagPrefixes) {
+      const currentTag = listingMeta.tags
+        .find(tag => tag === tagPrefix );
       // Determine slug prefix and relevant information, create chunks from data
       // for each of the ordering options
       const snippetIndexTagData = snippetIndex
         .filter(s =>
-          s.tags.primary === tagPrefix && s.slug.startsWith(`${slugPrefix}`) ||
-            ( s.blog &&
-              s.tags.all.find(t => t.toLowerCase() === snippetIndexName.toLowerCase()) &&
-              s.tags.all.find(t => t.toLowerCase() === tagPrefix.toLowerCase())
-            )
+          ( s.slug.startsWith(`${slugPrefix}`) &&
+            s.tags.all.find(t => t.toLowerCase() === tagPrefix.toLowerCase())
+          ) ||
+          ( s.blog &&
+            s.tags.all.find(t => t.toLowerCase() === snippetIndexName.toLowerCase()) &&
+            s.tags.all.find(t => t.toLowerCase() === tagPrefix.toLowerCase())
+          )
         );
-      const transformedTagChunks = transformSnippetIndex(snippetIndexTagData);
+      const transformedTagChunks = transformSnippetIndex(snippetIndexTagData, false, currentTag);
       const popularTagChunks = chunk(transformedTagChunks, CARDS_PER_PAGE);
       const alphabeticalTagChunks = chunk(transformedTagChunks.sort((a, b) =>
         a.title.localeCompare(b.title)
