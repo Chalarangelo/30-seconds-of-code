@@ -115,6 +115,15 @@ export const extractData = async() => {
         pageDescription: literals.search.pageDescription(allSnippetData.length),
       }
     ),
+    compileStaticData(outPath, '/archive', 'SearchPage', 0,
+      {
+        searchIndex: transformSnippetIndex(
+          allSnippetData.filter(s => !s.isListed), true
+        ),
+        recommendedSnippets: transformSnippetIndex(allSnippetData.slice(0, 3)),
+        pageDescription: literals.search.pageDescription(allSnippetData.length),
+      }
+    ),
   ]);
   boundLog('Static data creation complete', 'info');
 
