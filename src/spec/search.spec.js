@@ -2,7 +2,7 @@ import literals from 'lang/en/client/search';
 
 describe('Search', () => {
   before(() => {
-    cy.visit('http://localhost:9000');
+    cy.visit('http://localhost:9000/');
     cy.get('input[type="search"]').type('difference{enter}');
   });
 
@@ -25,29 +25,10 @@ describe('Search', () => {
     });
   });
 
-  describe('clicking a result', () => {
-    before(() => {
-      cy.get('.card-title a').first().click();
-    });
-
-    it('should display the correct breadcrumbs', () => {
-      cy.get('.link-back').contains(literals.search);
-    });
-
-    describe('returning to search', () => {
-      before(() => {
-        cy.get('.link-back').first().click();
-      });
-
-      it('should return to the last search page', () => {
-        cy.url().should('contain', '/search');
-        cy.url().should('contain', 'keyphrase=difference');
-      });
-    });
-  });
-
   describe('search refinement', () => {
     before(() => {
+      cy.visit('http://localhost:9000/search');
+      cy.get('input[type="search"]').type('difference');
       cy.get('input[type="search"]').type('By');
     });
 
