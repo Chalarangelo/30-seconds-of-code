@@ -22,8 +22,6 @@ const propTypes = {
     ),
   }),
   hasGithubLinksEnabled: PropTypes.bool,
-  lastPageTitle: PropTypes.string.isRequired,
-  lastPageUrl: PropTypes.string.isRequired,
 };
 
 /**
@@ -39,8 +37,6 @@ const SnippetPage = ({
     pageDescription,
   },
   hasGithubLinksEnabled,
-  lastPageTitle,
-  lastPageUrl,
 }) => {
   const SnippetCard = cardComponents[cardTemplate];
   return (
@@ -79,8 +75,6 @@ SnippetPage.propTypes = propTypes;
 export default connect(
   state => ({
     hasGithubLinksEnabled: state.shell.hasGithubLinksEnabled,
-    lastPageTitle: state.navigation.lastPageTitle,
-    lastPageUrl: state.navigation.lastPageUrl,
   }),
   null
 )(SnippetPage);

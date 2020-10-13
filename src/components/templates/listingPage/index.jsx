@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import Meta from 'components/organisms/meta';
 import Shell from 'components/organisms/shell';
 import SnippetList from 'components/organisms/snippetList';
-import { pushNewPage } from 'state/navigation';
 import literals from 'lang/en/client/common';
 
 const propTypes = {
@@ -19,7 +18,6 @@ const propTypes = {
     pageDescription: PropTypes.string.isRequired,
   }),
   path: PropTypes.string.isRequired,
-  dispatch: PropTypes.func,
 };
 
 /**
@@ -38,17 +36,7 @@ const ListingPage = ({
     pageDescription,
   },
   path,
-  dispatch,
 }) => {
-  React.useEffect(() => {
-    dispatch(
-      pushNewPage(
-        listingName,
-        `${paginator.baseUrl}/${paginator.slugOrderingSegment}/${paginator.pageNumber}`
-      )
-    );
-  }, []);
-
   const isFirstListingPage = listingType === 'main' && paginator.pageNumber === 1;
   const isHomePage = isFirstListingPage && paginator.slugOrderingSegment === 'p';
 
