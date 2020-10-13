@@ -62,13 +62,7 @@ const SnippetPage = ({
         canonical={ snippet.slug }
       />
       <Shell>
-        <Breadcrumbs
-          lastPage={ {
-            url: lastPageUrl,
-            name: lastPageTitle,
-          } }
-          breadcrumbs={ breadcrumbs }
-        />
+        <Breadcrumbs breadcrumbs={ breadcrumbs } />
         <SnippetCard
           snippet={ snippet }
           hasGithubLinksEnabled={ !!hasGithubLinksEnabled }
