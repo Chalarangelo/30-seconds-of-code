@@ -21,7 +21,7 @@ export const transformBreadcrumbs = (snippet, cardTemplate) => {
 
   if(cardTemplate !== 'BlogSnippetCard') {
     breadcrumbs.push({
-      url: `/${slugParts[0]}/${snippet.tags.primary.toLowerCase()}/p/1`,
+      url: `/${slugParts[0]}/t/${snippet.tags.primary.toLowerCase()}/p/1`,
       name: `${transformTagName(snippet.tags.primary)}`,
     });
   }
