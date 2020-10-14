@@ -7,7 +7,7 @@ Using the ES6 _spread operator_, we can merge two JavaScript objects and create 
 
 - This is the perfect way to merge two **simple** objects into one.
 - If both objects have a property with the same name, then the second object property overwrites the first one.
-- If you need a deeper merge with recursively merging object properties and arrays, the best solution probably will be the `merge()` method by Lodash.
+- If you need a deeper merge with recursively merging object properties and arrays, the best solution probably will be the `_.merge(object, [sources])` method by Lodash.
 
 ```js
 const obj1 = {
