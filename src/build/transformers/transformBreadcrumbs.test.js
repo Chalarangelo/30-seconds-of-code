@@ -7,7 +7,7 @@ describe('transformBreadcrumbs', () => {
     expect(breadcrumbs).toEqual([
       { url: '/', name: 'Home' },
       { url: '/js/p/1', name: 'JavaScript' },
-      { url: '/js/string/p/1', name: 'String'},
+      { url: '/js/t/string/p/1', name: 'String'},
       { url: '/js/s/map-string', name: 'mapString'},
     ]);
   });
