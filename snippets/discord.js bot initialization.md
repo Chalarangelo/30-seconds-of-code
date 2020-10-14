@@ -5,8 +5,8 @@
 
 ```Javascript
 const Discord = require("discord.js");
-#Extra dependancies go here
+//Extra dependancies go here
 const client = new Discord.Client();
-#Commands go here
+//Commands go here
 client.login("Token goes here")
 ```
