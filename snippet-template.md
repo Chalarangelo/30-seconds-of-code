@@ -1,16 +1,19 @@
 ---
-title: discord.js command
-tags: node.js,api
+title: functionName
+tags: array,intermediate
 ---
 
-A sample command for a discord.js bot
+Explain briefly what the snippet does.
 
-- Listens for a certain phrase
-- Finds where the phrase is sent
-- Responds to phrase
+Explain briefly how the snippet works.
+- Explain briefly how the snippet works.
+- Use bullet points for your snippet's explanation.
+- Try to explain everything briefly but clearly.
 
 ```js
-client.on ("message", message => {
-  if(message.content === "!ping")
-  message.channel.send("Pong!")
-});
+const functionName = arguments =>
+  {functionBody}
+```
+```js
+functionName('sampleInput'); // 'sampleOutput'
+```
