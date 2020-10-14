@@ -10,7 +10,7 @@ Check if `n` is a number in the Fibonacci sequence.
 
 ```js
 const isFibonacciNumber = n => {
-	return (Math.sqrt(5*n*n + 4) % 1 === 0) || (Math.sqrt(5*n*n - 4) % 1 === 0);
+  return (Math.sqrt(5*n*n + 4) % 1 === 0) || (Math.sqrt(5*n*n - 4) % 1 === 0);
 }
 ```
 
