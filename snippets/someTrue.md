@@ -1,6 +1,6 @@
 ---
 title: someTrue
-tags: array, every, javascript, beginner
+tags: array, some, javascript, beginner
 ---
 
 `Array.prototype.some()` returns `true` if provided callback returns `true` for at least one element in the array, `false` otherwise.
