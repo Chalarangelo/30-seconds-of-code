@@ -1,9 +1,9 @@
 ---
 title: Api-handling
-tags: Api,Promises,intermediate
+tags: Api,Browser,Beginner
 ---
 
-This snippet would handle an api using core javascript
+This snippet would handle an api using core javascript.Its basically used with React ,Angular or any client side Framework/library.
 
 - `fetch()` is used to send an GET request to an API. 
 - So in response the Api here then returns a promise which can be fulfilled or get rejected .
