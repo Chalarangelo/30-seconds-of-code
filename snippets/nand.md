@@ -15,5 +15,4 @@ const nand = (a, b) => !(a && b);
 nand(true, false); // true
 nand(false, true); // true
 nand(true, true); // false
-
 ```
