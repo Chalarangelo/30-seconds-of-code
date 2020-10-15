@@ -1,6 +1,6 @@
 ---
 title: binaryDataToBase64String
-tags: node,array,string,beginner
+tags: node,binary,base64,string,beginner
 ---
 
 Convert file / binary data to base64 string.
