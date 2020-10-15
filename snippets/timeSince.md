@@ -1,16 +1,17 @@
 ---
 title: timeSince
-tags: date,math,timesince,time
+tags: date,math,timesince,time, intermediate
 ---
 
 Returns a string in timesince format about when the event happened. Eg. (10s ago, 5h ago).
 
 - Takes time as argument and divides effectively by seconds to know when the event happened.
+- In case of no arguments, it will take `new Date()` as default.
 - When time difference is more than 24 hours, it returns the date when the event happened.
 
 ```js
-export const timeSince = (receivedDate) => {
-  const date = new Date(receivedDate);
+const timeSince = (receivedDate) => {
+  const date = new Date(receivedDate) || new Date();
   if (date) {
     const now = new Date();
     const secondsPast = (now.getTime() - date) / 1000;
@@ -38,7 +39,6 @@ export const timeSince = (receivedDate) => {
   }
   return 'NA';
 };
-
 ```
 
 ```js
