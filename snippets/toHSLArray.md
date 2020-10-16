@@ -13,5 +13,5 @@ const toHSLArray = hslStr => hslStr.match(/\d+/g).map(Number);
 ```
 
 ```js
-toHSLArray('hsl(50,1,1)'); // [50, 1, 1]
+toHSLArray('hsl(50,10%,10%)'); // [50, 10, 10]
 ```
