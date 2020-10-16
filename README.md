@@ -1,6 +1,6 @@
 [![Logo](/logo.png)](https://30secondsofcode.org/js/p/1)
 
-# 30 seconds of code
+# 30 seconds of code (Javascript)
 
 > Short JavaScript code snippets for all your development needs
 
