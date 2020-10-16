@@ -10,12 +10,12 @@ Converts an `hsl()` color string to an object with the values of each color.
 - Use array destructuring to store the values into named variables and create an appropriate object from them.
 
 ```js
-const toHSLObject = (hslStr) => {
-  const [hue, saturation, light] = hslStr.match(/\d+/g).map(Number);
-  return { hue, saturation, light };
+const toHSLObject = hslStr => {
+  const [hue, saturation, lightness] = hslStr.match(/\d+/g).map(Number);
+  return { hue, saturation, lightness };
 };
 ```
 
 ```js
-toHSLObject("hsl(50,1,1)"); // { hue: 50, saturation: 1, light: 1 }
+toHSLObject("hsl(50,1,1)"); // { hue: 50, saturation: 1, lightness: 1 }
 ```
