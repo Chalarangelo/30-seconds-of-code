@@ -4,12 +4,12 @@ tags: math,intermediate
 ---
 
 - The snippet is used to find the distance between given two coordinates
-- function takes two argument (latitude , longitude).
+- function takes four argument (latitude1 , longitude1 , latitude2 , longitude2).
 - If points are same return 0 else calculate the distace between them.
 - toRad() is a utility function to conver degree to radians
 
 ```js
-const arialDistance = (x1,y1,x2,y2) =>{
+const DistanceBetweenCoordinates = (x1,y1,x2,y2) =>{
   if ((x1===x2) && (y1===y2)){
     return 0
     }
@@ -38,5 +38,5 @@ toRad = (Value) => {
 ```
 
 ```js
-arialDistance(20.563 , 21.909 , 20.5937 , 78.9629); // '5902 in km '
+DistanceBetweenCoordinates(20.563 , 21.909 , 20.5937 , 78.9629); // '5902 in km '
 ```
