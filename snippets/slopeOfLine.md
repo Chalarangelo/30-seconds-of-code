@@ -9,10 +9,10 @@ Finds the slope/gradient of a line.
 - The function uses simple division method the find out slope/gradient.
 
 ```js
-const slopeOfLine = (x1, y1, x2, y2) => (y2 - y1)/(x2, x1);
+const slopeOfLine = (x1, y1, x2, y2) => (y2-y1)/(x2-x1);
 ```
 
 ```js
-slopeOfLine(1, 2, 4, 8); // 6
-slopeOfLine(1, 4, 6, 2); //-2
+slopeOfLine(1, 2, 4, 8); // 2
+slopeOfLine(1, 4, 6, 2); //-0.4
 ```
