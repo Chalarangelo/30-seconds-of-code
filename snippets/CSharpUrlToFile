@@ -1,0 +1,15 @@
+---
+title: C# UrlToFile
+tags: C#,CSharp
+---
+
+Writes a URL file link object to a file in C#.
+
+- Use `WebClient` to write download file.
+
+```js
+WebClient wb = new WebClient();
+wb.Headers.Add("User-Agent", "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.33 Safari/537.36");
+wb.DownloadFile("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fsearch%2Fnice%2Bpicture&psig=AOvVaw3NbNGGaxtlc_brn5KZbXi3&ust=1602917735304000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCICz94LEuOwCFQAAAAAdAAAAABAD"
+, "C:\\xxx\\xxx.png");
+```
