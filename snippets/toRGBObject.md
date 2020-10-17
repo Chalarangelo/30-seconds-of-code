@@ -11,11 +11,11 @@ Converts an `rgb()` color string to an object with the values of each color.
 
 ```js
 const toRGBObject = rgbStr => {
-  const [r, g, b] = rgbStr.match(/\d+/g).map(Number);
-  return { r, g, b };
+  const [red, green, blue] = rgbStr.match(/\d+/g).map(Number);
+  return { red, green, blue };
 };
 ```
 
 ```js
-toRGBObject('rgb(255,12,0)'); // {r: 255, g: 12, b: 0}
+toRGBObject("rgb(255,12,0)"); // {red: 255, green: 12, blue: 0}
 ```
