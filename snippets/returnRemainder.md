@@ -3,7 +3,7 @@ title: remainder
 tags: math, beginner, numbers
 ---
 
-Explain briefly what the snippet does.
+Returns the remainder.
 
 - When a number M is divided by another number N, and if M > N, then the remainder is calculated by subtracting the maximum possible multiple of N from M.
 - The remainder is always less than the divisor.
