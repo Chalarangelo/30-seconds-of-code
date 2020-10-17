@@ -1,0 +1,32 @@
+---
+title: Convert Object into Array
+tags: Object,array,JSON,Intermidiate
+---
+- There are three methods available to convert an object into array 
+`Object.keys()`
+```js
+const personObject = {
+    Name: 'Ritik',
+    email: 'rkumar.market@gmail.com'    
+};
+const personArray = Object.keys(personObject);
+console.log(personArray);
+```
+`Object.values()`
+```js
+const personObject = {
+    Name: 'Ritik',
+    email: 'rkumar.market@gmail.com'    
+};
+const personArray = Object.values(personObject);
+console.log(personArray);
+```
+`Object.entries()`
+```js
+const personObject = {
+    Name: 'Ritik',
+    email: 'rkumar.market@gmail.com'    
+};
+const personArray = Object.entries(personObject);
+console.log(personArray);
+```
