@@ -3,7 +3,7 @@ title: containsWhitespace
 tags: string,regexp,beginner
 ---
 
-Returns `true` if the given string contains any whitespace characters, `false` otherwise.
+Checks if the given string contains any whitespace characters.
 
 - Use `RegExp.prototype.test()` with an appropriate regular expression to check if the given string contains any whitespace characters.
 

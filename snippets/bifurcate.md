@@ -3,9 +3,10 @@ title: bifurcate
 tags: array,intermediate
 ---
 
-Splits values into two groups. If an element in `filter` is truthy, the corresponding element in the collection belongs to the first group; otherwise, it belongs to the second group.
+Splits values into two groups, based on the result of the given `filter` array. 
 
 - Use `Array.prototype.reduce()` and `Array.prototype.push()` to add elements to groups, based on `filter`.
+- If `filter` has a truthy value for any element, add it to the first group, otherwise add it to the second group.
 
 ```js
 const bifurcate = (arr, filter) =>
@@ -13,5 +14,6 @@ const bifurcate = (arr, filter) =>
 ```
 
 ```js
-bifurcate(['beep', 'boop', 'foo', 'bar'], [true, true, false, true]); // [ ['beep', 'boop', 'bar'], ['foo'] ]
+bifurcate(['beep', 'boop', 'foo', 'bar'], [true, true, false, true]); 
+// [ ['beep', 'boop', 'bar'], ['foo'] ]
 ```

@@ -3,7 +3,7 @@ title: countWeekDaysBetween
 tags: date,intermediate
 ---
 
-Returns the weekday count between two dates.
+Counts the weekdays between two dates.
 
 - Use `Array.from()` to construct an array with `length` equal to the number of days between `startDate` and `endDate`.
 - Use `Array.prototype.reduce()` to iterate over the array, checking if each date is a weekday and incrementing `count`.

@@ -9,7 +9,8 @@ Accepts a converging function and a list of branching functions and returns a fu
 - Use the spread operator (`...`) to call `coverger` with the results of all other functions.
 
 ```js
-const converge = (converger, fns) => (...args) => converger(...fns.map(fn => fn.apply(null, args)));
+const converge = (converger, fns) => (...args) =>
+  converger(...fns.map(fn => fn.apply(null, args)));
 ```
 
 ```js

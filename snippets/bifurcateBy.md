@@ -3,9 +3,10 @@ title: bifurcateBy
 tags: array,intermediate
 ---
 
-Splits values into two groups according to a predicate function, which specifies which group an element in the input collection belongs to. If the predicate function returns a truthy value, the collection element belongs to the first group; otherwise, it belongs to the second group.
+Splits values into two groups, based on the result of the given filtering function. 
 
 - Use `Array.prototype.reduce()` and `Array.prototype.push()` to add elements to groups, based on the value returned by `fn` for each element.
+- If `fn` returns a truthy value for any element, add it to the first group, otherwise add it to the second group.
 
 ```js
 const bifurcateBy = (arr, fn) =>

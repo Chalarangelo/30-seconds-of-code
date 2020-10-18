@@ -1,9 +1,9 @@
 ---
 title: copyToClipboard
-tags: browser,string,advanced
+tags: browser,string,event,advanced
 ---
 
-Copy a string to the clipboard.
+Copies a string to the clipboard.
 Only works as a result of user action (i.e. inside a `click` event listener).
 
 - Create a new `<textarea>` element, fill it with the supplied data and add it to the HTML document.
