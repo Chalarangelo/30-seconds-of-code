@@ -1,6 +1,6 @@
 ---
 title: getSiblings
-tags: browser,array,intermediate
+tags: browser,intermediate
 ---
 
 Returns an array containing all the siblings of the given element.

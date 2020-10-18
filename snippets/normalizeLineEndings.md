@@ -1,6 +1,6 @@
 ---
 title: normalizeLineEndings
-tags: array,intermediate
+tags: string,intermediate
 ---
 
 Normalizes line endings in a string.

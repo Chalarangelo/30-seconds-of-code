@@ -1,6 +1,6 @@
 ---
 title: averageBy
-tags: math,array,function,intermediate
+tags: math,array,intermediate
 ---
 
 Returns the average of an array, after mapping each element to a value using the provided function.

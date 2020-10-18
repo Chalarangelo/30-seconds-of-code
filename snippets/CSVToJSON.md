@@ -1,6 +1,6 @@
 ---
 title: CSVToJSON
-tags: string,array,object,advanced
+tags: string,object,advanced
 ---
 
 Converts a comma-separated values (CSV) string to a 2D array of objects.

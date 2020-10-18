@@ -1,6 +1,6 @@
 ---
 title: partitionBy
-tags: array,object,function,advanced
+tags: array,object,advanced
 ---
 
 Applies `fn` to each value in `arr`, splitting it each time `fn` returns a new value.

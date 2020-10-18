@@ -1,6 +1,6 @@
 ---
 title: decapitalize
-tags: string,array,intermediate
+tags: string,intermediate
 ---
 
 Decapitalizes the first letter of a string.

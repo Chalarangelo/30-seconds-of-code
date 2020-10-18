@@ -1,6 +1,6 @@
 ---
 title: mapString
-tags: string,array,function,beginner
+tags: string,intermediate
 ---
 
 Creates a new string with the results of calling a provided function on every character in the calling string.

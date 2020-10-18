@@ -1,6 +1,6 @@
 ---
 title: differenceBy
-tags: array,function,intermediate
+tags: array,intermediate
 ---
 
 Returns the difference between two arrays, after applying the provided function to each array element of both.

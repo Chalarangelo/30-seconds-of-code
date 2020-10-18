@@ -1,6 +1,6 @@
 ---
 title: countWeekDaysBetween
-tags: date,array,intermediate
+tags: date,intermediate
 ---
 
 Returns the weekday count between two dates.
