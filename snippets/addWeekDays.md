@@ -1,6 +1,6 @@
 ---
 title: addWeekDays
-tags: date,array,intermediate
+tags: date,intermediate
 ---
 
 Returns a date after adding given number of business days.

@@ -1,6 +1,6 @@
 ---
 title: omit
-tags: object,array,intermediate
+tags: object,intermediate
 ---
 
 Omits the key-value pairs corresponding to the given keys from an object.

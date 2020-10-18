@@ -1,6 +1,6 @@
 ---
 title: pickBy
-tags: object,array,function,intermediate
+tags: object,intermediate
 ---
 
 Creates an object composed of the properties the given function returns truthy for. The function is invoked with two arguments: (value, key).

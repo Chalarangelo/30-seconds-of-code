@@ -3,7 +3,7 @@ title: head
 tags: array,beginner
 ---
 
-Returns the head of a list.
+Returns the head of an array.
 
 - Check if `arr` is truthy and has a `length` property, use `arr[0]` if possible to return the first element, otherwise return `undefined`.
 

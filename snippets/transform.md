@@ -1,6 +1,6 @@
 ---
 title: transform
-tags: object,array,intermediate
+tags: object,intermediate
 ---
 
 Applies a function against an accumulator and each key in the object (from left to right).

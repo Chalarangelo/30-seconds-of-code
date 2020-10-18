@@ -1,6 +1,6 @@
 ---
 title: readFileLines
-tags: node,array,string,beginner
+tags: node,beginner
 ---
 
 Returns an array of lines from the specified file.

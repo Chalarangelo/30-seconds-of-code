@@ -1,6 +1,6 @@
 ---
 title: reverseString
-tags: string,array,beginner
+tags: string,beginner
 ---
 
 Reverses a string.
