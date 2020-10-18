@@ -1,6 +1,6 @@
 ---
 title: none
-tags: array,function,beginner
+tags: array,beginner
 ---
 
 Returns `true` if the provided predicate function returns `false` for all elements in a collection, `false` otherwise.

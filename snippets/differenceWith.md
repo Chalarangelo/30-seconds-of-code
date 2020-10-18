@@ -1,6 +1,6 @@
 ---
 title: differenceWith
-tags: array,function,intermediate
+tags: array,intermediate
 ---
 
 Filters out all values from an array for which the comparator function does not return `true`.

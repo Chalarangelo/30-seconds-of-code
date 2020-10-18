@@ -1,6 +1,6 @@
 ---
 title: any
-tags: array,function,beginner
+tags: array,beginner
 ---
 
 Returns `true` if the provided predicate function returns `true` for at least one element in a collection, `false` otherwise.

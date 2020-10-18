@@ -1,6 +1,6 @@
 ---
 title: allEqual
-tags: array,function,beginner
+tags: array,beginner
 ---
 
 Check if all elements in an array are equal.

@@ -1,6 +1,6 @@
 ---
 title: partition
-tags: array,object,function,intermediate
+tags: array,object,intermediate
 ---
 
 Groups the elements into two arrays, depending on the provided function's truthiness for each element.

@@ -1,6 +1,6 @@
 ---
 title: takeWhile
-tags: array,function,intermediate
+tags: array,intermediate
 ---
 
 Removes elements in an array until the passed function returns `true`. Returns the removed elements.
