@@ -1,6 +1,6 @@
 ---
 title: injectCSS
-tags: browser,intermediate
+tags: browser,css,intermediate
 ---
 
 Injects the given css code into the current document
