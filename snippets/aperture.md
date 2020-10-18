@@ -3,9 +3,10 @@ title: aperture
 tags: array,intermediate
 ---
 
-Returns an array of `n`-tuples of consecutive elements.
+Creates an array of `n`-tuples of consecutive elements.
 
-- Use `Array.prototype.slice()` and `Array.prototype.map()` to create an array of appropriate length and populate it with `n`-tuples of consecutive elements from `arr`.
+- Use `Array.prototype.slice()` and `Array.prototype.map()` to create an array of appropriate length.
+- Populate the array with `n`-tuples of consecutive elements from `arr`.
 - If `n` is greater than the length of `arr`, return an empty array.
 
 ```js

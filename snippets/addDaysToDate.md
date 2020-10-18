@@ -3,7 +3,7 @@ title: addDaysToDate
 tags: date,intermediate
 ---
 
-Return the date of `n` days from the given date as a string representation.
+Calculates the date of `n` days from the given date, returning its string representation.
 
 - Use `new Date()` to create a date object from the first parameter.
 - Use `Date.getDate()` and `Date.setDate()` to add `n` days to the given date.

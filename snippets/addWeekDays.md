@@ -3,11 +3,12 @@ title: addWeekDays
 tags: date,intermediate
 ---
 
-Returns a date after adding given number of business days.
+Calculates the date after adding the ginen number of business days.
 
 - Use `Array.from()` to construct an array with `length` equal to the `count` of business days to be added.
 - Use `Array.prototype.reduce()` to iterate over the array, starting from `startDate` and incrementing, using `Date.getDate()` and `Date.setDate()`.
 - If the current `date` is on a weekend, update it again by adding either one day or two days to make it a weekday.
+- **NOTE:** Does not take official holidays into account.
 
 ```js
 const addWeekDays = (startDate, count) => 
