@@ -1,6 +1,6 @@
 ---
 title: JSONToFile
-tags: node,json,intermediate
+tags: node,intermediate
 ---
 
 Writes a JSON object to a file.
