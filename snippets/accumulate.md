@@ -1,11 +1,12 @@
 ---
 title: accumulate
-tags: math,array,beginner
+tags: math,array,intermediate
 ---
 
-Returns an array of partial sums.
+Creates an array of partial sums.
 
-- Use `Array.prototype.reduce()`, `Array.prototype.slice(-1)` and the unary `+` operator to add each value to the unary array containing the previous sum.
+- Use `Array.prototype.reduce()`, initialized with an empty array accumulator to iterate over `nums`.
+- Use `Array.prototype.slice(-1)`, the spread operator (`...`) and the unary `+` operator to add each value to the accumulator array containing the previous sums.
 
 ```js
 const accumulate = (...nums) => nums.reduce((acc, n) => [...acc, n + +acc.slice(-1)],[]);
