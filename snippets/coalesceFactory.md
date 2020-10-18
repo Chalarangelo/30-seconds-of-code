@@ -1,17 +1,17 @@
 ---
 title: coalesceFactory
-tags: type,intermediate
+tags: function,type,intermediate
 ---
 
-Returns a customized coalesce function that returns the first argument that returns `true` from the provided argument validation function.
+Customizes a coalesce function that returns the first argument which is true based on the given validator.
 
-- Use `Array.prototype.find()` to return the first argument that returns `true` from the provided argument validation function.
+- Use `Array.prototype.find()` to return the first argument that returns `true` from the provided argument validation function, `valid`.
 
 ```js
 const coalesceFactory = valid => (...args) => args.find(valid);
 ```
 
 ```js
-const customCoalesce = coalesceFactory(_ => ![null, undefined, '', NaN].includes(_));
-customCoalesce(undefined, null, NaN, '', 'Waldo'); // "Waldo"
+const customCoalesce = coalesceFactory(v => ![null, undefined, '', NaN].includes(v));
+customCoalesce(undefined, null, NaN, '', 'Waldo'); // 'Waldo'
 ```
