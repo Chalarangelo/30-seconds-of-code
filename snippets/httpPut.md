@@ -1,6 +1,6 @@
 ---
 title: httpPut
-tags: browser,url,intermediate
+tags: browser,intermediate
 ---
 
 Makes a `PUT` request to the passed URL.

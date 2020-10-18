@@ -1,6 +1,6 @@
 ---
 title: redirect
-tags: browser,url,beginner
+tags: browser,beginner
 ---
 
 Redirects to a specified URL.

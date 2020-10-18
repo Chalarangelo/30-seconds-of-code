@@ -1,6 +1,6 @@
 ---
 title: httpPost
-tags: browser,url,intermediate
+tags: browser,intermediate
 ---
 
 Makes a `POST` request to the passed URL.
