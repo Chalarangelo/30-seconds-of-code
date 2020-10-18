@@ -1,6 +1,6 @@
 ---
 title: ary
-tags: function,intermediate
+tags: function,advanced
 ---
 
 Creates a function that accepts up to `n` arguments, ignoring any additional arguments.
