@@ -1,6 +1,6 @@
 ---
 title: httpGet
-tags: browser,url,intermediate
+tags: browser,intermediate
 ---
 
 Makes a `GET` request to the passed URL.

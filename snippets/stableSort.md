@@ -1,6 +1,6 @@
 ---
 title: stableSort
-tags: array,sort,advanced,intermediate
+tags: array,advanced
 ---
 
 Performs stable sorting of an array, preserving the initial indexes of items when their values are the same.

@@ -1,6 +1,6 @@
 ---
 title: getBaseURL
-tags: browser,string,url,beginner
+tags: browser,string,beginner
 ---
 
 Returns the current URL without any parameters.

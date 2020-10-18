@@ -1,6 +1,6 @@
 ---
 title: isAbsoluteURL
-tags: string,browser,url,intermediate
+tags: string,browser,intermediate
 ---
 
 Returns `true` if the given string is an absolute URL, `false` otherwise.

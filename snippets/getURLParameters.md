@@ -1,6 +1,6 @@
 ---
 title: getURLParameters
-tags: browser,string,url,intermediate
+tags: browser,string,intermediate
 ---
 
 Returns an object containing the parameters of the current URL.
