@@ -1,6 +1,6 @@
 ---
 title: cloneRegExp
-tags: type,string,regexp,intermediate
+tags: type,regexp,intermediate
 ---
 
 Clones a regular expression.

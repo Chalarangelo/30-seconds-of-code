@@ -1,6 +1,6 @@
 ---
 title: longestItem
-tags: array,string,intermediate
+tags: array,intermediate
 ---
 
 Takes any number of iterable objects or objects with a `length` property and returns the longest one.
