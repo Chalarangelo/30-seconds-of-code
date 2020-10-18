@@ -11,7 +11,7 @@ Returns the remainder.
 
 ```js
 const remainder = (dividend, divisor) => {
-    return (divident % divisor);
+    return (dividend % divisor);
   }
 ```
 
