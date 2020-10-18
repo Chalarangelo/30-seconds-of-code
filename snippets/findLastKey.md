@@ -1,6 +1,6 @@
 ---
 title: findLastKey
-tags: object,function,intermediate
+tags: object,intermediate
 ---
 
 Returns the last key that satisfies the provided testing function.

@@ -1,6 +1,6 @@
 ---
 title: intersectionWith
-tags: array,function,intermediate
+tags: array,intermediate
 ---
 
 Returns the elements that exist in both arrays, using a provided comparator function.
