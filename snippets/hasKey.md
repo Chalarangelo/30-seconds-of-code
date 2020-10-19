@@ -3,7 +3,7 @@ title: hasKey
 tags: object,intermediate
 ---
 
-Returns `true` if the target value exists in a JSON object, `false` otherwise.
+Checks if the target value exists in a JSON object.
 
 - Check if `keys` is non-empty and use `Array.prototype.every()` to sequentially check its keys to internal depth of the object, `obj`.
 - Use `Object.prototype.hasOwnProperty()` to check if `obj` does not have the current key or is not an object, stop propagation and return `false`.

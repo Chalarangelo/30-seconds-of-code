@@ -3,7 +3,7 @@ title: formatDuration
 tags: date,math,string,intermediate
 ---
 
-Returns the human readable format of the given number of milliseconds.
+Returns the human-readable format of the given number of milliseconds.
 
 - Divide `ms` with the appropriate values to obtain the appropriate values for `day`, `hour`, `minute`, `second` and `millisecond`.
 - Use `Object.entries()` with `Array.prototype.filter()` to keep only non-zero values.

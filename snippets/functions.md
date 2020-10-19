@@ -1,9 +1,9 @@
 ---
 title: functions
-tags: object,function,intermediate
+tags: object,function,advanced
 ---
 
-Returns an array of function property names from own (and optionally inherited) enumerable properties of an object.
+Gets an array of function property names from own (and optionally inherited) enumerable properties of an object.
 
 - Use `Object.keys(obj)` to iterate over the object's own properties.
 - If `inherited` is `true`, use `Object.get.PrototypeOf(obj)` to also get the object's inherited properties.

@@ -5,7 +5,7 @@ tags: browser,intermediate
 
 Makes a `DELETE` request to the passed URL.
 
-- Use `XMLHttpRequest` web api to make a `delete` request to the given `url`.
+- Use the `XMLHttpRequest` web API to make a `DELETE` request to the given `url`.
 - Handle the `onload` event, by running the provided `callback` function.
 - Handle the `onerror` event, by running the provided `err` function.
 - Omit the third argument, `err` to log the request to the console's error stream by default.
@@ -23,7 +23,5 @@ const httpDelete = (url, callback, err = console.error) => {
 ```js
 httpDelete('https://jsonplaceholder.typicode.com/posts/1', request => {
   console.log(request.responseText);
-}); /*
-Logs: {}
-*/
+}); // Logs: {}
 ```

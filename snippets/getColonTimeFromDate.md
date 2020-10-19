@@ -1,6 +1,6 @@
 ---
 title: getColonTimeFromDate
-tags: date,intermediate
+tags: date,string,beginner
 ---
 
 Returns a string of the form `HH:MM:SS` from a `Date` object.
@@ -12,5 +12,5 @@ const getColonTimeFromDate = date => date.toTimeString().slice(0, 8);
 ```
 
 ```js
-getColonTimeFromDate(new Date()); // "08:38:00"
+getColonTimeFromDate(new Date()); // '08:38:00'
 ```

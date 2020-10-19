@@ -1,9 +1,9 @@
 ---
 title: getBaseURL
-tags: browser,string,beginner
+tags: string,browser,beginner
 ---
 
-Returns the current URL without any parameters.
+Gets the current URL without any parameters.
 
 - Use `String.prototype.indexOf()` to check if the given `url` has parameters, `String.prototype.slice()` to remove them if necessary.
 

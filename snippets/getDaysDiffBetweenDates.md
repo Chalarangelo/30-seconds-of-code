@@ -3,9 +3,9 @@ title: getDaysDiffBetweenDates
 tags: date,intermediate
 ---
 
-Returns the difference (in days) between two dates.
+Calculates the difference (in days) between two dates.
 
-- Calculate the difference (in days) between two `Date` objects.
+- Subtract the two `Date` object and divide by the number of milliseconds in a day to get the difference (in days) between them.
 
 ```js
 const getDaysDiffBetweenDates = (dateInitial, dateFinal) =>
