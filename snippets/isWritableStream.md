@@ -19,5 +19,6 @@ const isWritableStream = val =>
 
 ```js
 const fs = require('fs');
+
 isWritableStream(fs.createWriteStream('test.txt')); // true
 ```

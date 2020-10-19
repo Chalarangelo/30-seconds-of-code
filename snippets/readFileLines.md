@@ -11,6 +11,7 @@ Returns an array of lines from the specified file.
 
 ```js
 const fs = require('fs');
+
 const readFileLines = filename =>
   fs
     .readFileSync(filename)

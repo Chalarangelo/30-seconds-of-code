@@ -9,6 +9,7 @@ Creates a hash for a value using the [SHA-256](https://en.wikipedia.org/wiki/SHA
 
 ```js
 const crypto = require('crypto');
+
 const hashNode = val =>
   new Promise(resolve =>
     setTimeout(

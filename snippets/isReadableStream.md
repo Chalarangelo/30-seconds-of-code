@@ -19,5 +19,6 @@ const isReadableStream = val =>
 
 ```js
 const fs = require('fs');
+
 isReadableStream(fs.createReadStream('test.txt')); // true
 ```
