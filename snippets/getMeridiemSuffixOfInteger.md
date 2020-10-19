@@ -19,8 +19,8 @@ const getMeridiemSuffixOfInteger = num =>
 ```
 
 ```js
-getMeridiemSuffixOfInteger(0); // "12am"
-getMeridiemSuffixOfInteger(11); // "11am"
-getMeridiemSuffixOfInteger(13); // "1pm"
-getMeridiemSuffixOfInteger(25); // "1pm"
+getMeridiemSuffixOfInteger(0); // '12am'
+getMeridiemSuffixOfInteger(11); // '11am'
+getMeridiemSuffixOfInteger(13); // '1pm'
+getMeridiemSuffixOfInteger(25); // '1pm'
 ```

@@ -3,10 +3,10 @@ title: formToObject
 tags: browser,object,intermediate
 ---
 
-Encode a set of form elements as an `object`.
+Encodes a set of form elements as an `object`.
 
-- Use the `FormData` constructor to convert the HTML `form` to `FormData`, `Array.from()` to convert to an array.
-- Collect the object from the array, using `Array.prototype.reduce()`.
+- Use the `FormData` constructor to convert the HTML `form` to `FormData` and `Array.from()` to convert to an array.
+- Collect the object from the array using `Array.prototype.reduce()`.
 
 ```js
 const formToObject = form =>
@@ -20,5 +20,6 @@ const formToObject = form =>
 ```
 
 ```js
-formToObject(document.querySelector('#form')); // { email: 'test@email.com', name: 'Test Name' }
+formToObject(document.querySelector('#form'));
+// { email: 'test@email.com', name: 'Test Name' }
 ```

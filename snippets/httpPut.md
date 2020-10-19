@@ -5,7 +5,7 @@ tags: browser,intermediate
 
 Makes a `PUT` request to the passed URL.
 
-- Use `XMLHttpRequest` web api to make a `put` request to the given `url`.
+- Use `XMLHttpRequest` web api to make a `PUT` request to the given `url`.
 - Set the value of an `HTTP` request header with `setRequestHeader` method.
 - Handle the `onload` event, by running the provided `callback` function.
 - Handle the `onerror` event, by running the provided `err` function.

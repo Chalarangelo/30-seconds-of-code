@@ -20,5 +20,6 @@ const getAncestors = el => {
 ```
 
 ```js
-getAncestors(document.querySelector('nav')); // [document, html, body, header, nav]
+getAncestors(document.querySelector('nav')); 
+// [document, html, body, header, nav]
 ```

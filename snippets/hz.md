@@ -3,8 +3,7 @@ title: hz
 tags: function,intermediate
 ---
 
-Returns the number of times a function executed per second.
-`hz` is the unit for `hertz`, the unit of frequency defined as one cycle per second.
+Measures the number of times a function is executed per second (`hz`/`hertz`).
 
 - Use `performance.now()` to get the difference in milliseconds before and after the iteration loop to calculate the time elapsed executing the function `iterations` times.
 - Return the number of cycles per second by converting milliseconds to seconds and dividing it by the time elapsed.
@@ -19,12 +18,8 @@ const hz = (fn, iterations = 100) => {
 ```
 
 ```js
-// 10,000 element array
-const numbers = Array(10000)
-  .fill()
-  .map((_, i) => i);
+const numbers = Array(10000).fill().map((_, i) => i);
 
-// Test functions with the same goal: sum up the elements in the array
 const sumReduce = () => numbers.reduce((acc, n) => acc + n, 0);
 const sumForLoop = () => {
   let sum = 0;
@@ -32,7 +27,6 @@ const sumForLoop = () => {
   return sum;
 };
 
-// `sumForLoop` is nearly 10 times faster
 Math.round(hz(sumReduce)); // 572
 Math.round(hz(sumForLoop)); // 4784
 ```
