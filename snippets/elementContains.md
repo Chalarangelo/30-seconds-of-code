@@ -3,9 +3,10 @@ title: elementContains
 tags: browser,intermediate
 ---
 
-Returns `true` if the `parent` element contains the `child` element, `false` otherwise.
+Checks if the `parent` element contains the `child` element.
 
-- Check that `parent` is not the same element as `child`, use `parent.contains(child)` to check if the `parent` element contains the `child` element.
+- Check that `parent` is not the same element as `child`.
+- Use `Node.contains()` to check if the `parent` element contains the `child` element.
 
 ```js
 const elementContains = (parent, child) => parent !== child && parent.contains(child);

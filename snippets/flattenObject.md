@@ -1,9 +1,9 @@
 ---
 title: flattenObject
-tags: object,recursion,intermediate
+tags: object,recursion,advanced
 ---
 
-Flatten an object with the paths for keys.
+Flattens an object with the paths for keys.
 
 - Use recursion.
 - Use `Object.keys(obj)` combined with `Array.prototype.reduce()` to convert every leaf node to a flattened path node.

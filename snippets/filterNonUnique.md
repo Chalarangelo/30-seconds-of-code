@@ -3,9 +3,9 @@ title: filterNonUnique
 tags: array,beginner
 ---
 
-Filters out the non-unique values in an array.
+Returns an array with the non-unique values filtered out.
 
-- Use `Array.prototype.filter()` for an array containing only the unique values.
+- Use `Array.prototype.filter()` to create an array containing only the unique values.
 
 ```js
 const filterNonUnique = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexOf(i));

@@ -21,8 +21,8 @@ const deepFreeze = obj => {
 ```js
 'use strict';
 
-const o = deepFreeze([1, [2, 3]]);
+const val = deepFreeze([1, [2, 3]]);
 
-o[0] = 3; // not allowed
-o[1][0] = 4; // not allowed as well
+val[0] = 3; // not allowed
+val[1][0] = 4; // not allowed as well
 ```

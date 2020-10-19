@@ -1,11 +1,12 @@
 ---
 title: difference
-tags: array,math,beginner
+tags: array,beginner
 ---
 
-Returns the difference between two arrays.
+Calculates the difference between two arrays, without filtering duplicate values.
 
-- Create a `Set` from `b`, then use `Array.prototype.filter()` on `a` to only keep values not contained in `b`.
+- Create a `Set` from `b` to get the unique values in `b`.
+- Use `Array.prototype.filter()` on `a` to only keep values not contained in `b`, using `Set.prototype.has()`.
 
 ```js
 const difference = (a, b) => {
@@ -15,5 +16,5 @@ const difference = (a, b) => {
 ```
 
 ```js
-difference([1, 2, 3], [1, 2, 4]); // [3]
+difference([1, 2, 3, 3], [1, 2, 4]); // [3, 3]
 ```

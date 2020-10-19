@@ -5,7 +5,8 @@ tags: string,browser,regexp,intermediate
 
 Escapes a string for use in HTML.
 
-- Use `String.prototype.replace()` with a regexp that matches the characters that need to be escaped, using a callback function to replace each character instance with its associated escaped character using a dictionary (object).
+- Use `String.prototype.replace()` with a regexp that matches the characters that need to be escaped.
+- Use the callback function to replace each character instance with its associated escaped character using a dictionary (object).
 
 ```js
 const escapeHTML = str =>
@@ -23,5 +24,6 @@ const escapeHTML = str =>
 ```
 
 ```js
-escapeHTML('<a href="#">Me & you</a>'); // '&lt;a href=&quot;#&quot;&gt;Me &amp; you&lt;/a&gt;'
+escapeHTML('<a href="#">Me & you</a>'); 
+// '&lt;a href=&quot;#&quot;&gt;Me &amp; you&lt;/a&gt;'
 ```
