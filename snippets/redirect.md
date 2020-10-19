@@ -14,5 +14,5 @@ const redirect = (url, asLink = true) =>
 ```
 
 ```js
-redirect('https://google.com');
+redirect(escape('https://google.com'));
 ```
