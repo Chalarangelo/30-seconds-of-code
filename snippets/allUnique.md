@@ -3,17 +3,16 @@ title: allUnique
 tags: array,beginner
 ---
 
-Checks if all elements in an array are equal and returns`true` else returns `false`.
+Checks if all elements in an array are unique.
 
-- Use `Array.prototype.length` property to return the number of elements in that array.
-- Use `Set()` object to collect unique elements from the given array and then the `Set.prototype.size` to get the number of elements in the set
-- Check the two values for equality
+- Create a new `Set` from the mapped values to keep only unique occurences.
+- Use `Array.prototype.length` and `Set.prototype.size` to compare the length of the unique values to the original array.
 
 ```js
-const allUnique = myArray => myArray.length === new Set(myArray).size;
+const allUnique = arr => arr.length === new Set(arr).size;
 ```
 
 ```js
-allUnique([1,2,3,4,5]); // true
-allUnique([1,1,2,3,4]); // false
+allUnique([1, 2, 3, 4]); // true
+allUnique([1, 1, 2, 3]); // false
 ```
