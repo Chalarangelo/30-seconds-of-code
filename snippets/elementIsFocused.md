@@ -1,11 +1,11 @@
 ---
 title: elementIsFocused
-tags: browser,intermediate
+tags: browser,beginner
 ---
 
-Returns `true` if the given element is focused, `false` otherwise.
+Checks if the given element is focused.
 
-- Use `document.activeElement` to determine if the given element is focused.
+- Use `Document.activeElement` to determine if the given element is focused.
 
 ```js
 const elementIsFocused = el => (el === document.activeElement);

@@ -1,9 +1,9 @@
 ---
 title: daysAgo
-tags: date,intermediate
+tags: date,beginner
 ---
 
-Returns the date of `n` days ago from today as a string representation.
+Calculates the date of `n` days ago from today as a string representation.
 
 - Use `new Date()` to get the current date, `Math.abs()` and `Date.getDate()` to update the date accordingly and set to the result using `Date.setDate()`.
 - Use `Date.prototype.toISOString()` to return a string in `yyyy-mm-dd` format.
