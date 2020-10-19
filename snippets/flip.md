@@ -3,9 +3,10 @@ title: flip
 tags: function,intermediate
 ---
 
-Flip takes a function as an argument, then makes the first argument the last.
+Takes a function as an argument, then makes the first argument the last.
 
-- Return a closure that takes variadic inputs, and splices the last argument to make it the first argument before applying the rest.
+- Use argument destructuring and a closure with variadic arguments.
+- Splice the first argument, using the spread operator (`...`), to make it the last before applying the rest.
 
 ```js
 const flip = fn => (first, ...rest) => fn(...rest, first);
