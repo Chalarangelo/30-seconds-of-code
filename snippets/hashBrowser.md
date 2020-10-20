@@ -9,7 +9,7 @@ Returns a promise.
 - Use the [SubtleCrypto](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto) API to create a hash for the given value.
 - Create a new `TextEncoder` and use it to encode `val`, passing its value to `SubtleCrypto.digest()` to generate a digest of the given data.
 - Use `DataView.prototype.getUint32()` to read data from the resolved `ArrayBuffer`.
-- Add the data to an array using `Array.prototype.push()` after converting it to its hexadecimal representation using `Number.toString(16)`.
+- Add the data to an array using `Array.prototype.push()` after converting it to its hexadecimal representation using `Number.prototype.toString(16)`.
 - Finally, use `Array.prototype.join()` to combine values in the array of `hexes` into a string.
 
 ```js

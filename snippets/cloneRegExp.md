@@ -5,7 +5,7 @@ tags: regexp,intermediate
 
 Clones a regular expression.
 
-- Use `new RegExp()`, `RegExp.source` and `RegExp.flags` to clone the given regular expression.
+- Use `new RegExp()`, `RegExp.prototype.source` and `RegExp.prototype.flags` to clone the given regular expression.
 
 ```js
 const cloneRegExp = regExp => new RegExp(regExp.source, regExp.flags);

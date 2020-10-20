@@ -5,7 +5,7 @@ tags: function,intermediate
 
 Iterates over a callback `n` times
 
-- Use `Function.call()` to call `fn` `n` times or until it returns `false`.
+- Use `Function.prototype.call()` to call `fn` `n` times or until it returns `false`.
 - Omit the last argument, `context`, to use an `undefined` object (or the global object in non-strict mode).
 
 ```js
