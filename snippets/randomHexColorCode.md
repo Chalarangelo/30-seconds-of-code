@@ -16,5 +16,5 @@ const randomHexColorCode = () => {
 ```
 
 ```js
-randomHexColorCode(); // "#e34155"
+randomHexColorCode(); // '#e34155'
 ```

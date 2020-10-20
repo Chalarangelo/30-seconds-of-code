@@ -15,5 +15,5 @@ const detectDeviceType = () =>
 ```
 
 ```js
-detectDeviceType(); // "Mobile" or "Desktop"
+detectDeviceType(); // 'Mobile' or 'Desktop'
 ```

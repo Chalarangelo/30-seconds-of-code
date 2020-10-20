@@ -20,6 +20,6 @@ const toKebabCase = str =>
 toKebabCase('camelCase'); // 'camel-case'
 toKebabCase('some text'); // 'some-text'
 toKebabCase('some-mixed_string With spaces_underscores-and-hyphens'); // 'some-mixed-string-with-spaces-underscores-and-hyphens'
-toKebabCase('AllThe-small Things'); // "all-the-small-things"
-toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML'); // "i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-xml-and-html"
+toKebabCase('AllThe-small Things'); // 'all-the-small-things'
+toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML'); // 'i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-xml-and-html'
 ```

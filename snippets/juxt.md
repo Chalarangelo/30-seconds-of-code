@@ -20,6 +20,6 @@ juxt(
 )(1, 2, 3); // [[2, 3, 4], [0, 1, 2], [10, 20, 30]]
 juxt(
   s => s.length,
-  s => s.split(" ").join("-")
-)("30 seconds of code"); // [[18], ['30-seconds-of-code']]
+  s => s.split(' ').join('-')
+)('30 seconds of code'); // [[18], ['30-seconds-of-code']]
 ```

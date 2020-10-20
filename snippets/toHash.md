@@ -29,5 +29,5 @@ managers.forEach(
       return this[id];
     }, toHash(users, 'id')))
 );
-managers; // [ { manager:1, employees: [ { id: 2, first: "Joe" }, { id: 3, first: "Moe" } ] } ]
+managers; // [ { manager:1, employees: [ { id: 2, first: 'Joe' }, { id: 3, first: 'Moe' } ] } ]
 ```
