@@ -5,7 +5,7 @@ tags: browser,intermediate
 
 Checks if the element specified is visible in the viewport.
 
-- Use `Element.getBoundingClientRect()` and the `window.inner(Width|Height)` values to determine if a given element is visible in the viewport.
+- Use `Element.getBoundingClientRect()` and the `Window.inner(Width|Height)` values to determine if a given element is visible in the viewport.
 - Omit the second argument to determine if the element is entirely visible, or specify `true` to determine if it is partially visible.
 
 ```js
