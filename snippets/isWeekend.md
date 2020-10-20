@@ -3,15 +3,13 @@ title: isWeekend
 tags: date,beginner
 ---
 
-Results in a boolean representation of a specific date.
+Checks if the given date is a weekend.
 
-- Pass the specific date object firstly.
-- Use `Date.prototype.getDay()` to check weekend based on the day being returned as 0 - 6 using a modulo operation then return a boolean.
+- Use `Date.prototype.getDay()` to check weekend by using a modulo operator (`%`).
+- Omit the argument, `d`, to use the current date as default.
 
 ```js
-const isWeekend = (d = new Date()) => {
-  return d.getDay() % 6 === 0;
-};
+const isWeekend = (d = new Date()) => d.getDay() % 6 === 0;
 ```
 
 ```js

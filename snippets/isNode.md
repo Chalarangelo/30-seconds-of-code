@@ -1,6 +1,6 @@
 ---
 title: isNode
-tags: node,intermediate
+tags: node,browser,intermediate
 ---
 
 Determines if the current runtime environment is Node.js.

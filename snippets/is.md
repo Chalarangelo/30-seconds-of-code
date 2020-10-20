@@ -1,11 +1,12 @@
 ---
 title: is
-tags: type,array,regexp,beginner
+tags: type,array,intermediate
 ---
 
 Checks if the provided value is of the specified type.
 
-- Ensure the value is not `undefined` or `null` using `Array.prototype.includes()`, and compare the `constructor` property on the value with `type` to check if the provided value is of the specified `type`.
+- Ensure the value is not `undefined` or `null` using `Array.prototype.includes()`.
+- Compare the `constructor` property on the value with `type` to check if the provided value is of the specified `type`.
 
 ```js
 const is = (type, val) => ![, null].includes(val) && val.constructor === type;

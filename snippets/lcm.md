@@ -1,6 +1,6 @@
 ---
 title: lcm
-tags: math,recursion,beginner
+tags: math,recursion,intermediate
 ---
 
 Returns the least common multiple of two or more numbers.

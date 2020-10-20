@@ -3,10 +3,10 @@ title: isOdd
 tags: math,beginner
 ---
 
-Returns `true` if the given number is odd, `false` otherwise.
+Checks if the given number is odd.
 
-- Checks whether a number is odd or even using the modulo (`%`) operator.
-- Returns `true` if the number is odd, `false` if the number is even.
+- Check whether a number is odd or even using the modulo (`%`) operator.
+- Return `true` if the number is odd, `false` if the number is even.
 
 ```js
 const isOdd = num => num % 2 === 1;
