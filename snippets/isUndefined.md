@@ -3,7 +3,7 @@ title: isUndefined
 tags: type,beginner
 ---
 
-Returns `true` if the specified value is `undefined`, `false` otherwise.
+Checks if the specified value is `undefined`.
 
 - Use the strict equality operator to check if `val` is equal to `undefined`.
 

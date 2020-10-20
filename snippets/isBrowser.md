@@ -1,6 +1,6 @@
 ---
 title: isBrowser
-tags: browser,intermediate
+tags: browser,node,intermediate
 ---
 
 Determines if the current runtime environment is a browser so that front-end modules can run on the server (Node) without throwing errors.

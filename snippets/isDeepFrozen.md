@@ -3,7 +3,7 @@ title: isDeepFrozen
 tags: object,recursion,intermediate
 ---
 
-Checks if an object is deeply frozen
+Checks if an object is deeply frozen.
 
 - Use recursion.
 - Use `Object.isFrozen()` on the given object.
