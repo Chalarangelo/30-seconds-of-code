@@ -23,5 +23,5 @@ const toOrdinalSuffix = num => {
 ```
 
 ```js
-toOrdinalSuffix('123'); // "123rd"
+toOrdinalSuffix('123'); // '123rd'
 ```

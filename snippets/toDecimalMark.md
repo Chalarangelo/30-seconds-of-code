@@ -12,5 +12,5 @@ const toDecimalMark = num => num.toLocaleString('en-US');
 ```
 
 ```js
-toDecimalMark(12305030388.9087); // "12,305,030,388.909"
+toDecimalMark(12305030388.9087); // '12,305,030,388.909'
 ```

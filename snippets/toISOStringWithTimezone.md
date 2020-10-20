@@ -26,5 +26,5 @@ const toISOStringWithTimezone = date => {
 ```
 
 ```js
-toISOStringWithTimezone(new Date()); // "2020-10-06T20:43:33-04:00"
+toISOStringWithTimezone(new Date()); // '2020-10-06T20:43:33-04:00'
 ```
