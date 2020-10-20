@@ -1,11 +1,11 @@
 ---
 title: call
-tags: function,intermediate
+tags: function,advanced
 ---
 
-Given a key and a set of arguments, call them when given a context. Primarily useful in composition.
+Given a key and a set of arguments, call them when given a context.
 
-- Use a closure to call a stored key with stored arguments.
+- Use a closure to call `key` with `args` for the given `context`.
 
 ```js
 const call = (key, ...args) => context => context[key](...args);

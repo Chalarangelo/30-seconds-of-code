@@ -11,7 +11,7 @@ All promises returned during this time will return the same data.
 - Create a new `Promise` and add its `resolve` and `reject` callbacks to the `pending` promises stack.
 - When `setTimeout` is called, copy the current stack (as it can change between the provided function call and its resolution), clear it and call the provided function.
 - When the provided function resolves/rejects, resolve/reject all promises in the stack (copied when the function was called) with the returned data.
-- Omit the second argument, `ms`, to set the timeout at a default of 0 ms.
+- Omit the second argument, `ms`, to set the timeout at a default of `0` ms.
 
 ```js
 const debouncePromise = (fn, ms = 0) => {

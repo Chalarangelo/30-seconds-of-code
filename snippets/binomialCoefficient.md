@@ -1,9 +1,9 @@
 ---
 title: binomialCoefficient
-tags: math,intermediate
+tags: math,beginner
 ---
 
-Evaluates the binomial coefficient of two integers `n` and `k`.
+Calculates the number of ways to choose `k` items from `n` items without repetition and without order.
 
 - Use `Number.isNaN()` to check if any of the two values is `NaN`.
 - Check if `k` is less than `0`, greater than or equal to `n`, equal to `1` or `n - 1` and return the appropriate result.

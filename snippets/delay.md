@@ -3,13 +3,13 @@ title: delay
 tags: function,intermediate
 ---
 
-Invokes the provided function after `wait` milliseconds.
+Invokes the provided function after `ms` milliseconds.
 
 - Use `setTimeout()` to delay execution of `fn`.
 - Use the spread (`...`) operator to supply the function with an arbitrary number of arguments.
 
 ```js
-const delay = (fn, wait, ...args) => setTimeout(fn, wait, ...args);
+const delay = (fn, ms, ...args) => setTimeout(fn, ms, ...args);
 ```
 
 ```js

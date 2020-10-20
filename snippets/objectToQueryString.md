@@ -1,6 +1,6 @@
 ---
 title: objectToQueryString
-tags: object,function,intermediate
+tags: object,intermediate
 ---
 
 Returns a query string generated from the key-value pairs of the given object.

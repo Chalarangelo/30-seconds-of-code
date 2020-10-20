@@ -9,7 +9,8 @@ Returns the native type of a value.
 - Otherwise, use `Object.prototype.constructor.name` to get the name of the constructor.
 
 ```js
-const getType = v => (v === undefined ? 'undefined' : v === null ? 'null' : v.constructor.name);
+const getType = v =>
+  (v === undefined ? 'undefined' : v === null ? 'null' : v.constructor.name);
 ```
 
 ```js

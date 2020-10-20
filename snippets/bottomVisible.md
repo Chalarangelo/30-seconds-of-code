@@ -1,9 +1,9 @@
 ---
 title: bottomVisible
-tags: browser,intermediate
+tags: browser,beginner
 ---
 
-Returns `true` if the bottom of the page is visible, `false` otherwise.
+Checks if the bottom of the page is visible.
 
 - Use `scrollY`, `scrollHeight` and `clientHeight` to determine if the bottom of the page is visible.
 

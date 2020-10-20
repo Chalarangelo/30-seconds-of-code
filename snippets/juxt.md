@@ -1,6 +1,6 @@
 ---
 title: juxt
-tags: array,function,advanced
+tags: function,advanced
 ---
 
 Takes several functions as argument and returns a function that is the juxtaposition of those functions.

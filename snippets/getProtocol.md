@@ -3,7 +3,7 @@ title: getProtocol
 tags: browser,beginner
 ---
 
-Returns the protocol being used on the current page.
+Gets the protocol being used on the current page.
 
 - Use `window.location.protocol` to get the protocol (`http:` or `https:`) of the current page.
 

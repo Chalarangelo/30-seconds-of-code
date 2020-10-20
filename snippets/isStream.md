@@ -13,5 +13,6 @@ const isStream = val => val !== null && typeof val === 'object' && typeof val.pi
 
 ```js
 const fs = require('fs');
+
 isStream(fs.createReadStream('test.txt')); // true
 ```

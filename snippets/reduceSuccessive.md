@@ -1,6 +1,6 @@
 ---
 title: reduceSuccessive
-tags: array,function,intermediate
+tags: array,intermediate
 ---
 
 Applies a function against an accumulator and each element in the array (from left to right), returning an array of successively reduced values.

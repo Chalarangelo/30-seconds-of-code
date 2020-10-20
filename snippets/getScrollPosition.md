@@ -5,8 +5,8 @@ tags: browser,intermediate
 
 Returns the scroll position of the current page.
 
-- Use `pageXOffset` and `pageYOffset` if they are defined, otherwise `scrollLeft` and `scrollTop`.
-- You can omit `el` to use a default value of `window`.
+- Use `Window.pageXOffset` and `Window.pageYOffset` if they are defined, otherwise `Element.scrollLeft` and `Element.scrollTop`.
+- Omit the single argument, `el`, to use a default value of `window`.
 
 ```js
 const getScrollPosition = (el = window) => ({

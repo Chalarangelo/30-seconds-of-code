@@ -1,6 +1,6 @@
 ---
 title: pick
-tags: object,array,intermediate
+tags: object,intermediate
 ---
 
 Picks the key-value pairs corresponding to the given keys from an object.

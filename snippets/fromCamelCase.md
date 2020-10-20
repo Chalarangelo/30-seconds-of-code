@@ -5,7 +5,7 @@ tags: string,intermediate
 
 Converts a string from camelcase.
 
-- Use `String.prototype.replace()` to remove underscores, hyphens, and spaces and convert words to camelcase.
+- Use `String.prototype.replace()` to break the string into words and add a `separator` between them.
 - Omit the second argument to use a default `separator` of `_`.
 
 ```js
@@ -18,6 +18,6 @@ const fromCamelCase = (str, separator = '_') =>
 
 ```js
 fromCamelCase('someDatabaseFieldName', ' '); // 'some database field name'
-fromCamelCase('someLabelThatNeedsToBeCamelized', '-'); // 'some-label-that-needs-to-be-camelized'
+fromCamelCase('someLabelThatNeedsToBeDecamelized', '-'); // 'some-label-that-needs-to-be-decamelized'
 fromCamelCase('someJavascriptProperty', '_'); // 'some_javascript_property'
 ```

@@ -21,5 +21,6 @@ const isDuplexStream = val =>
 
 ```js
 const Stream = require('stream');
+
 isDuplexStream(new Stream.Duplex()); // true
 ```
