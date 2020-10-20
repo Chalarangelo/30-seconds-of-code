@@ -5,8 +5,8 @@ tags: browser,css,intermediate
 
 Injects the given css code into the current document
 
-- Use `document.createElement()` to create a new `style` element and set its type to `text/css`.
-- Use `Element.innerText` to set the value to the given css string, `document.head` and `Element.appendChild()` to append the new element to the document head.
+- Use `Document.createElement()` to create a new `style` element and set its type to `text/css`.
+- Use `Element.innerText` to set the value to the given css string, `Document.head` and `Element.appendChild()` to append the new element to the document head.
 - Return the newly created `style` element.
 
 ```js

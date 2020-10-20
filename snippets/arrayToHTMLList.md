@@ -5,7 +5,7 @@ tags: browser,array,intermediate
 
 Converts the given array elements into `<li>` tags and appends them to the list of the given id.
 
-- Use `Array.prototype.map()` and `document.querySelector()` to create a list of html tags.
+- Use `Array.prototype.map()` and `Document.querySelector()` to create a list of html tags.
 
 ```js
 const arrayToHTMLList = (arr, listID) => 
