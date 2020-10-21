@@ -15,7 +15,7 @@ This algorithm implements Merge Sort in Java Script, It works as follows
 
 ```js
 function mergeSort(arr){
-    var len=arr.length;//3//2
+    var len=arr.length;
     var middle,unsortedLeftArray,unsortedRightArray,sortedLeftArray,sortedRightArray;
     if ( len > 1){
         middle = Math.floor(len/2);
