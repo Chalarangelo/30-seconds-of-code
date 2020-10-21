@@ -15,5 +15,5 @@ const dayOfYear = date =>
 ```
 
 ```js
-dayOfYear(new Date()); // 272
+dayOfYear(new Date("Oct 21, 2020")); // 295
 ```
