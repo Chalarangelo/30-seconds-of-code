@@ -1,6 +1,6 @@
 ---
 title: deepClone
-tags: object,recursion,intermediate
+tags: object,recursion,advanced
 ---
 
 Creates a deep clone of an object. 
