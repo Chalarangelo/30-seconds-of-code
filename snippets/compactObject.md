@@ -17,7 +17,7 @@ const compactObject = (val, toArray = false) => {
   return Object.entries(val).reduce(
     (compacted, [key, value]) => {
       if (Boolean(value))
-        compacted[key] = (typeof value === 'object') ? compact(value) : value;
+        compacted[key] = (typeof value === 'object') ? compactObject(value) : value;
       return compacted;
     },
     toArray ? [] : {}
