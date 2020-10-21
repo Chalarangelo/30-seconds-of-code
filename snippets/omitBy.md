@@ -3,10 +3,11 @@ title: omitBy
 tags: object,intermediate
 ---
 
-Creates an object composed of the properties the given function returns falsy for. The function is invoked with two arguments: (value, key).
+Omits the key-value pairs corresponding to the keys of the object for which the given function returns falsy.
 
-- Use `Object.keys(obj)` and `Array.prototype.filter()`to remove the keys for which `fn` returns a truthy value.
+- Use `Object.keys()` and `Array.prototype.filter()` to remove the keys for which `fn` returns a truthy value.
 - Use `Array.prototype.reduce()` to convert the filtered keys back to an object with the corresponding key-value pairs.
+- The callback function is invoked with two arguments: (value, key).
 
 ```js
 const omitBy = (obj, fn) =>

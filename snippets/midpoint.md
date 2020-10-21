@@ -5,7 +5,8 @@ tags: math,beginner
 
 Calculates the midpoint between two pairs of (x,y) points.
 
-- Destructure the array to get `x1`, `y1`, `x2` and `y2`, calculate the midpoint for each dimension by dividing the sum of the two endpoints by `2`.
+- Destructure the array to get `x1`, `y1`, `x2` and `y2`.
+- Calculate the midpoint for each dimension by dividing the sum of the two endpoints by `2`.
 
 ```js
 const midpoint = ([x1, y1], [x2, y2]) => [(x1 + x2) / 2, (y1 + y2) / 2];
