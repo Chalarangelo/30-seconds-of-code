@@ -24,5 +24,6 @@ const once = fn => {
 const startApp = function(event) {
   console.log(this, event); // document.body, MouseEvent
 };
-document.body.addEventListener('click', once(startApp)); // only runs `startApp` once upon click
+document.body.addEventListener('click', once(startApp));
+// only runs `startApp` once upon click
 ```

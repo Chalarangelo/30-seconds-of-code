@@ -5,7 +5,7 @@ tags: math,beginner
 
 Maps a number from one range to another range.
 
-- Returns `num` mapped between `outMin`-`outMax` from `inMin`-`inMax`.
+- Return `num` mapped between `outMin`-`outMax` from `inMin`-`inMax`.
 
 ```js
 const mapNumRange = (num, inMin, inMax, outMin, outMax) =>
