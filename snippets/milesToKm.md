@@ -8,7 +8,7 @@ Converts miles to kilometers.
 - Follows the conversion formula `km = mi * 1.609344`.
 
 ```js
-const milesToKm = miles => distance * 1.609344;
+const milesToKm = miles => miles * 1.609344;
 ```
 
 ```js
