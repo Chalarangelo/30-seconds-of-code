@@ -3,9 +3,9 @@ title: objectWithOptionalProperty
 tags: objects,intermediate
 ---
 
-## create a new object with an optional property?
+## Create a new object with an optional property?
 
--Use spread operator (...) with the logical and operator (&&).
+- Use spread operator `(...)` with the logical and operator `(&&)`.
 ```js
 let includeEmail = true;
 const user = { 
