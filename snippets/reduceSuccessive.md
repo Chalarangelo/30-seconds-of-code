@@ -9,9 +9,13 @@ Applies a function against an accumulator and each element in the array (from le
 
 ```js
 const reduceSuccessive = (arr, fn, acc) =>
-  arr.reduce((res, val, i, arr) => (res.push(fn(res.slice(-1)[0], val, i, arr)), res), [acc]);
+  arr.reduce(
+    (res, val, i, arr) => (res.push(fn(res.slice(-1)[0], val, i, arr)), res),
+    [acc]
+  );
 ```
 
 ```js
-reduceSuccessive([1, 2, 3, 4, 5, 6], (acc, val) => acc + val, 0); // [0, 1, 3, 6, 10, 15, 21]
+reduceSuccessive([1, 2, 3, 4, 5, 6], (acc, val) => acc + val, 0);
+// [0, 1, 3, 6, 10, 15, 21]
 ```
