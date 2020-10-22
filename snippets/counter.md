@@ -26,5 +26,6 @@ const counter = (selector, start, end, step = 1, duration = 2000) => {
 ```
 
 ```js
-counter('#my-id', 1, 1000, 5, 2000); // Creates a 2-second timer for the element with id="my-id"
+counter('#my-id', 1, 1000, 5, 2000);
+// Creates a 2-second timer for the element with id="my-id"
 ```

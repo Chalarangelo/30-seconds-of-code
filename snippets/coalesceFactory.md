@@ -12,6 +12,8 @@ const coalesceFactory = valid => (...args) => args.find(valid);
 ```
 
 ```js
-const customCoalesce = coalesceFactory(v => ![null, undefined, '', NaN].includes(v));
+const customCoalesce = coalesceFactory(
+  v => ![null, undefined, '', NaN].includes(v)
+);
 customCoalesce(undefined, null, NaN, '', 'Waldo'); // 'Waldo'
 ```

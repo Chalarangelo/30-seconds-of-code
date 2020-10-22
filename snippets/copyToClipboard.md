@@ -22,7 +22,9 @@ const copyToClipboard = str => {
   el.style.left = '-9999px';
   document.body.appendChild(el);
   const selected =
-    document.getSelection().rangeCount > 0 ? document.getSelection().getRangeAt(0) : false;
+    document.getSelection().rangeCount > 0
+      ? document.getSelection().getRangeAt(0)
+      : false;
   el.select();
   document.execCommand('copy');
   document.body.removeChild(el);

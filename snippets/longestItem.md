@@ -10,7 +10,8 @@ Takes any number of iterable objects or objects with a `length` property and ret
 - Returns `undefined` if no arguments are provided.
 
 ```js
-const longestItem = (...vals) => vals.reduce((a, x) => (x.length > a.length ? x : a));
+const longestItem = (...vals) =>
+  vals.reduce((a, x) => (x.length > a.length ? x : a));
 ```
 
 ```js

@@ -9,10 +9,13 @@ Checks if the `parent` element contains the `child` element.
 - Use `Node.contains()` to check if the `parent` element contains the `child` element.
 
 ```js
-const elementContains = (parent, child) => parent !== child && parent.contains(child);
+const elementContains = (parent, child) =>
+  parent !== child && parent.contains(child);
 ```
 
 ```js
-elementContains(document.querySelector('head'), document.querySelector('title')); // true
-elementContains(document.querySelector('body'), document.querySelector('body')); // false
+elementContains(document.querySelector('head'), document.querySelector('title'));
+// true
+elementContains(document.querySelector('body'), document.querySelector('body'));
+// false
 ```

@@ -9,7 +9,8 @@ Checks if two numbers are approximately equal to each other.
 - Omit the third parameter, `epsilon`, to use a default value of `0.001`.
 
 ```js
-const approximatelyEqual = (v1, v2, epsilon = 0.001) => Math.abs(v1 - v2) < epsilon;
+const approximatelyEqual = (v1, v2, epsilon = 0.001) =>
+  Math.abs(v1 - v2) < epsilon;
 ```
 
 ```js

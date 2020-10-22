@@ -9,7 +9,8 @@ Creates an array of partial sums.
 - Use `Array.prototype.slice(-1)`, the spread operator (`...`) and the unary `+` operator to add each value to the accumulator array containing the previous sums.
 
 ```js
-const accumulate = (...nums) => nums.reduce((acc, n) => [...acc, n + +acc.slice(-1)],[]);
+const accumulate = (...nums) =>
+  nums.reduce((acc, n) => [...acc, n + +acc.slice(-1)],[]);
 ```
 
 ```js

@@ -10,7 +10,9 @@ Checks if the current process's arguments contain the specified flags.
 
 ```js
 const hasFlags = (...flags) =>
-  flags.every(flag => process.argv.includes(/^-{1,2}/.test(flag) ? flag : '--' + flag));
+  flags.every(flag =>
+    process.argv.includes(/^-{1,2}/.test(flag) ? flag : '--' + flag)
+  );
 ```
 
 ```js

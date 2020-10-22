@@ -3,7 +3,7 @@ title: dropRight
 tags: array,beginner
 ---
 
-Returns a new array with `n` elements removed from the right.
+Creates a new array with `n` elements removed from the right.
 
 - Use `Array.prototype.slice()` to remove the specified number of elements from the right.
 

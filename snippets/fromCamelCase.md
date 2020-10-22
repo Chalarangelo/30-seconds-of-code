@@ -18,7 +18,8 @@ const fromCamelCase = (str, separator = '_') =>
 
 ```js
 fromCamelCase('someDatabaseFieldName', ' '); // 'some database field name'
-fromCamelCase('someLabelThatNeedsToBeDecamelized', '-'); // 'some-label-that-needs-to-be-decamelized'
+fromCamelCase('someLabelThatNeedsToBeDecamelized', '-'); 
+// 'some-label-that-needs-to-be-decamelized'
 fromCamelCase('someJavascriptProperty', '_'); // 'some_javascript_property'
 fromCamelCase('JSONToCSV', '.'); // 'json.to.csv'
 ```

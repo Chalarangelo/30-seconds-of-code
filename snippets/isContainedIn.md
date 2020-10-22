@@ -13,7 +13,10 @@ Checks if the elements of the first array are contained in the second one regard
 ```js
 const isContainedIn = (a, b) => {
   for (const v of new Set(a)) {
-    if (!b.some(e => e === v) || a.filter(e => e === v).length > b.filter(e => e === v).length)
+    if (
+      !b.some(e => e === v) ||
+      a.filter(e => e === v).length > b.filter(e => e === v).length
+    )
       return false;
   }
   return true;

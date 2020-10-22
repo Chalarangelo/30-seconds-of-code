@@ -10,7 +10,8 @@ Deep flattens an array.
 - Recursively flatten each element that is an array.
 
 ```js
-const deepFlatten = arr => [].concat(...arr.map(v => (Array.isArray(v) ? deepFlatten(v) : v)));
+const deepFlatten = arr =>
+  [].concat(...arr.map(v => (Array.isArray(v) ? deepFlatten(v) : v)));
 ```
 
 ```js

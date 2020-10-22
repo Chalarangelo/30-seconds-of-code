@@ -14,5 +14,6 @@ const createDirIfNotExists = dir => (!fs.existsSync(dir) ? fs.mkdirSync(dir) : u
 ```
 
 ```js
-createDirIfNotExists('test'); // creates the directory 'test', if it doesn't exist
+createDirIfNotExists('test');
+// creates the directory 'test', if it doesn't exist
 ```

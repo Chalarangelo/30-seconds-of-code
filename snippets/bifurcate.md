@@ -10,7 +10,10 @@ Splits values into two groups, based on the result of the given `filter` array.
 
 ```js
 const bifurcate = (arr, filter) =>
-  arr.reduce((acc, val, i) => (acc[filter[i] ? 0 : 1].push(val), acc), [[], []]);
+  arr.reduce((acc, val, i) => (acc[filter[i] ? 0 : 1].push(val), acc), [
+    [],
+    [],
+  ]);
 ```
 
 ```js

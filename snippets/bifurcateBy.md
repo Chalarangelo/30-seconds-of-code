@@ -10,7 +10,10 @@ Splits values into two groups, based on the result of the given filtering functi
 
 ```js
 const bifurcateBy = (arr, fn) =>
-  arr.reduce((acc, val, i) => (acc[fn(val, i) ? 0 : 1].push(val), acc), [[], []]);
+  arr.reduce((acc, val, i) => (acc[fn(val, i) ? 0 : 1].push(val), acc), [
+    [],
+    [],
+  ]);
 ```
 
 ```js

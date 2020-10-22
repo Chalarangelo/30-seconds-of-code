@@ -19,7 +19,10 @@ const CSVToJSON = (data, delimiter = ',') => {
     .split('\n')
     .map(v => {
       const values = v.split(delimiter);
-      return titles.reduce((obj, title, index) => ((obj[title] = values[index]), obj), {});
+      return titles.reduce(
+        (obj, title, index) => ((obj[title] = values[index]), obj),
+        {}
+      );
     });
 };
 ```

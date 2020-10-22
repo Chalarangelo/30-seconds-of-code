@@ -13,5 +13,6 @@ const getBaseURL = url =>
 ```
 
 ```js
-getBaseURL('http://url.com/page?name=Adam&surname=Smith'); // 'http://url.com/page'
+getBaseURL('http://url.com/page?name=Adam&surname=Smith');
+// 'http://url.com/page'
 ```
