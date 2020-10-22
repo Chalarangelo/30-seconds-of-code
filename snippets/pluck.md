@@ -1,25 +1,23 @@
 ---
 title: pluck
-tags: list,dictionary,intemediary
+tags: list,dictionary,beginner
 ---
 
-Extracts a list of values from a dict given a key
+Converts a list of dictionaries into a list of values corresponding to the specified `key`.
 
-- Given an `array` of `dict`s, returns the list of values of the `key` passed from each dict record.
-- When a dict does not have the `key` passed, returns `None`
+- Use a list comprehension and `dict.get()` to get the value of `key` for each dictionary in `lst`.
 
 ```py
-def pluck(array, key):
-  return list(map(lambda entry: dict.get(entry, key), array))
+def pluck(lst, key):
+  return [x.get(key) for x in lst]
 ```
 
 ```py
 simpsons = [
-  { "name": "lisa", "age": 8 },
-  { "name": "homer", "age": 36 },
-  { "name": "marge", "age": 34 },
-  { "name": "bart", "age": 10 },
+  { 'name': 'lisa', 'age': 8 },
+  { 'name': 'homer', 'age': 36 },
+  { 'name': 'marge', 'age': 34 },
+  { 'name': 'bart', 'age': 10 }
 ];
-
-pluck(simpsons, "age") # [8, 36, 34, 10]
+pluck(simpsons, 'age') # [8, 36, 34, 10]
 ```
