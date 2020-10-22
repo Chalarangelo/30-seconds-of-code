@@ -3,16 +3,21 @@ title: validateNumber
 tags: math,intermediate
 ---
 
-Returns `true` if the given value is a number, `false` otherwise.
+Checks if the given value is a number.
 
-- Use `!isNaN()` in combination with `parseFloat()` to check if the argument is a number.
-- Use `isFinite()` to check if the number is finite.
-- Use `Number()` to check if the coercion holds.
+- Use `parseFloat()` to try to convert `n` to a number.
+- Use `!Number.isNaN()` to check if `num` is a number.
+- Use `Number.isFinite()` to check if `num` is finite.
+- Use `Number()` and the loose equality operator (`==`) to check if the coercion holds.
 
 ```js
-const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
+const validateNumber = n => {
+  const num = parseFloat(n);
+  return !Number.isNaN(num) && Number.isFinite(num) && Number(n) == n;
+}
 ```
 
 ```js
 validateNumber('10'); // true
+validateNumber('a'); // false
 ```
