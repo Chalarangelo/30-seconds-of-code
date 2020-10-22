@@ -3,9 +3,11 @@ title: zipObject
 tags: array,object,intermediate
 ---
 
-Given an array of valid property identifiers and an array of values, return an object associating the properties to the values.
+Associates properties to values, given array of valid property identifiers and an array of values.
 
-- Since an object can have undefined values but not undefined property pointers, the array of properties is used to decide the structure of the resulting object using `Array.prototype.reduce()`.
+- Use `Array.prototype.reduce()` to build an object from the two arrays.
+- If the length of `props` is longer than `values`, remaining keys will be `undefined`.
+- If the length of `values` is longer than `props`, remaining values will be ignored.
 
 ```js
 const zipObject = (props, values) =>

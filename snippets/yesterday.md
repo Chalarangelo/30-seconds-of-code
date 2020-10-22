@@ -5,7 +5,8 @@ tags: date,intermediate
 
 Results in a string representation of yesterday's date.
 
-- Use `new Date()` to get the current date, decrement by one using `Date.prototype.getDate()` and set the value to the result using `Date.prototype.setDate()`.
+- Use `new Date()` to get the current date.
+- Decrement it by one using `Date.prototype.getDate()` and set the value to the result using `Date.prototype.setDate()`.
 - Use `Date.prototype.toISOString()` to return a string in `yyyy-mm-dd` format.
 
 ```js

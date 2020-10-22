@@ -1,6 +1,6 @@
 ---
 title: uncurry
-tags: function,intermediate
+tags: function,advanced
 ---
 
 Uncurries a function up to depth `n`.

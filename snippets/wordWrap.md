@@ -15,6 +15,15 @@ const wordWrap = (str, max, br = '\n') => str.replace(
 ```
 
 ```js
-wordWrap('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus.', 32); // 'Lorem ipsum dolor sit amet,\nconsectetur adipiscing elit.\nFusce tempus.'
-wordWrap('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus.', 32, '\r\n'); // 'Lorem ipsum dolor sit amet,\r\nconsectetur adipiscing elit.\r\nFusce tempus.'
+wordWrap(
+  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus.',
+  32
+);
+// 'Lorem ipsum dolor sit amet,\nconsectetur adipiscing elit.\nFusce tempus.'
+wordWrap(
+  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus.',
+  32,
+  '\r\n'
+);
+// 'Lorem ipsum dolor sit amet,\r\nconsectetur adipiscing elit.\r\nFusce tempus.'
 ```

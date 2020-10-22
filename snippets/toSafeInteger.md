@@ -10,7 +10,9 @@ Converts a value to a safe integer.
 
 ```js
 const toSafeInteger = num =>
-  Math.round(Math.max(Math.min(num, Number.MAX_SAFE_INTEGER), Number.MIN_SAFE_INTEGER));
+  Math.round(
+    Math.max(Math.min(num, Number.MAX_SAFE_INTEGER), Number.MIN_SAFE_INTEGER)
+  );
 ```
 
 ```js
