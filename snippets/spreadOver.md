@@ -3,9 +3,9 @@ title: spreadOver
 tags: function,intermediate
 ---
 
-Takes a variadic function and returns a closure that accepts an array of arguments to map to the inputs of the function.
+Takes a variadic function and returns a function that accepts an array of arguments.
 
-- Use closures and the spread operator (`...`) to map the array of arguments to the inputs of the function.
+- Use a closure and the spread operator (`...`) to map the array of arguments to the inputs of the function.
 
 ```js
 const spreadOver = fn => argsArr => fn(...argsArr);

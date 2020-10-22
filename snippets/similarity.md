@@ -5,7 +5,8 @@ tags: array,math,beginner
 
 Returns an array of elements that appear in both arrays.
 
-- Use `Array.prototype.filter()` to remove values that are not part of `values`, determined using `Array.prototype.includes()`.
+- Use `Array.prototype.includes()` to determine values that are not part of `values`.
+- Use `Array.prototype.filter()` to remove them.
 
 ```js
 const similarity = (arr, values) => arr.filter(v => values.includes(v));

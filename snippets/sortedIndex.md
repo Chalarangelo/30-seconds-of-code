@@ -3,9 +3,9 @@ title: sortedIndex
 tags: array,math,intermediate
 ---
 
-Returns the lowest index at which value should be inserted into array in order to maintain its sort order.
+Finds the lowest index at which a value should be inserted into an array in order to maintain its sorting order.
 
-- Check if the array is sorted in descending order (loosely).
+- Loosely check if the array is sorted in descending order.
 - Use `Array.prototype.findIndex()` to find the appropriate index where the element should be inserted.
 
 ```js

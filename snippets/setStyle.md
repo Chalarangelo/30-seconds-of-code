@@ -5,10 +5,10 @@ tags: browser,beginner
 
 Sets the value of a CSS rule for the specified HTML element.
 
-- Use `element.style` to set the value of the CSS rule for the specified element to `val`.
+- Use `ElementCSSInlineStyle.style` to set the value of the CSS `rule` for the specified element to `val`.
 
 ```js
-const setStyle = (el, ruleName, val) => (el.style[ruleName] = val);
+const setStyle = (el, rule, val) => (el.style[rule] = val);
 ```
 
 ```js

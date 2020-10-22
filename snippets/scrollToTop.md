@@ -20,5 +20,5 @@ const scrollToTop = () => {
 ```
 
 ```js
-scrollToTop();
+scrollToTop(); // Smooth-scrolls to the top of the page
 ```

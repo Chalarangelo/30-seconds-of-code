@@ -5,7 +5,8 @@ tags: string,regexp,intermediate
 
 Converts a string to kebab case.
 
-- Break the string into words and combine them adding `-` as a separator, using a regexp.
+- Use `String.prototype.match()` to break the string into words using an appropriate regexp.
+- Use `Array.prototype.map()`, `Array.prototype.slice()`, `Array.prototype.join()` and `String.prototype.toLowerCase()` to combine them, adding `-` as a separator.
 
 ```js
 const toKebabCase = str =>
@@ -19,7 +20,9 @@ const toKebabCase = str =>
 ```js
 toKebabCase('camelCase'); // 'camel-case'
 toKebabCase('some text'); // 'some-text'
-toKebabCase('some-mixed_string With spaces_underscores-and-hyphens'); // 'some-mixed-string-with-spaces-underscores-and-hyphens'
+toKebabCase('some-mixed_string With spaces_underscores-and-hyphens');
+// 'some-mixed-string-with-spaces-underscores-and-hyphens'
 toKebabCase('AllThe-small Things'); // 'all-the-small-things'
-toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML'); // 'i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-xml-and-html'
+toKebabCase('IAmEditingSomeXMLAndHTML');
+// 'i-am-editing-some-xml-and-html'
 ```
