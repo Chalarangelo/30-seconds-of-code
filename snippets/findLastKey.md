@@ -3,7 +3,7 @@ title: findLastKey
 tags: object,intermediate
 ---
 
-Returns the last key that satisfies the provided testing function.
+Finds the last key that satisfies the provided testing function.
 Otherwise `undefined` is returned.
 
 - Use `Object.keys(obj)` to get all the properties of the object.

@@ -3,7 +3,7 @@ title: isObject
 tags: type,object,beginner
 ---
 
-Returns a boolean determining if the passed value is an object or not.
+Checks if the passed value is an object or not.
 
 - Uses the `Object` constructor to create an object wrapper for the given value.
 - If the value is `null` or `undefined`, create and return an empty object.

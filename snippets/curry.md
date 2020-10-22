@@ -1,6 +1,6 @@
 ---
 title: curry
-tags: function,recursion,intermediate
+tags: function,recursion,advanced
 ---
 
 Curries a function.

@@ -9,7 +9,8 @@ Performs right-to-left function composition.
 - The last (rightmost) function can accept one or more arguments; the remaining functions must be unary.
 
 ```js
-const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));
+const compose = (...fns) =>
+  fns.reduce((f, g) => (...args) => f(g(...args)));
 ```
 
 ```js

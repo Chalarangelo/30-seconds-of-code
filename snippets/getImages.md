@@ -12,7 +12,9 @@ Fetches all images from within an element and puts them into an array.
 
 ```js
 const getImages = (el, includeDuplicates = false) => {
-  const images = [...el.getElementsByTagName('img')].map(img => img.getAttribute('src'));
+  const images = [...el.getElementsByTagName('img')].map(img =>
+    img.getAttribute('src')
+  );
   return includeDuplicates ? images : [...new Set(images)];
 };
 ```

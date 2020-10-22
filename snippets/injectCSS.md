@@ -17,7 +17,7 @@ const injectCSS = css => {
   el.innerText = css;
   document.head.appendChild(el);
   return el;
-}
+};
 ```
 
 ```js

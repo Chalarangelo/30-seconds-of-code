@@ -3,7 +3,7 @@ title: getURLParameters
 tags: browser,string,regexp,intermediate
 ---
 
-Returns an object containing the parameters of the current URL.
+Creates an object containing the parameters of the current URL.
 
 - Use `String.prototype.match()` with an appropriate regular expression to get all key-value pairs.
 - Use `Array.prototype.reduce()` to map and combine them into a single object.
@@ -12,7 +12,9 @@ Returns an object containing the parameters of the current URL.
 ```js
 const getURLParameters = url =>
   (url.match(/([^?=&]+)(=([^&]*))/g) || []).reduce(
-    (a, v) => ((a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a),
+    (a, v) => (
+      (a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a
+    ),
     {}
   );
 ```

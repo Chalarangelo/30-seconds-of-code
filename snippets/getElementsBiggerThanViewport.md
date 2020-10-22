@@ -11,7 +11,9 @@ Returns an array of HTML elements whose width is larger than that of the viewpor
 ```js
 const getElementsBiggerThanViewport = () => {
   const docWidth = document.documentElement.offsetWidth;
-  return [...document.querySelectorAll('*')].filter(el => el.offsetWidth > docWidth);
+  return [...document.querySelectorAll('*')].filter(
+    el => el.offsetWidth > docWidth
+  );
 };
 ```
 

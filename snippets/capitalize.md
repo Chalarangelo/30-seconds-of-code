@@ -11,7 +11,8 @@ Capitalizes the first letter of a string.
 
 ```js
 const capitalize = ([first, ...rest], lowerRest = false) =>
-  first.toUpperCase() + (lowerRest ? rest.join('').toLowerCase() : rest.join(''));
+  first.toUpperCase() +
+  (lowerRest ? rest.join('').toLowerCase() : rest.join(''));
 ```
 
 ```js

@@ -10,7 +10,8 @@ Assigns default values for all properties in an object that are `undefined`.
 - Finally, use `obj` again to overwrite properties that originally had a value.
 
 ```js
-const defaults = (obj, ...defs) => Object.assign({}, obj, ...defs.reverse(), obj);
+const defaults = (obj, ...defs) =>
+  Object.assign({}, obj, ...defs.reverse(), obj);
 ```
 
 ```js
