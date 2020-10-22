@@ -20,5 +20,6 @@ const renameKeys = (keysMap, obj) =>
 
 ```js
 const obj = { name: 'Bobo', job: 'Front-End Master', shoeSize: 100 };
-renameKeys({ name: 'firstName', job: 'passion' }, obj); // { firstName: 'Bobo', passion: 'Front-End Master', shoeSize: 100 }
+renameKeys({ name: 'firstName', job: 'passion' }, obj);
+// { firstName: 'Bobo', passion: 'Front-End Master', shoeSize: 100 }
 ```

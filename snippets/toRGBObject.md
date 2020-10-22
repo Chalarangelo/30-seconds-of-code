@@ -17,5 +17,5 @@ const toRGBObject = rgbStr => {
 ```
 
 ```js
-toRGBObject('rgb(255,12,0)'); // {red: 255, green: 12, blue: 0}
+toRGBObject('rgb(255, 12, 0)'); // {red: 255, green: 12, blue: 0}
 ```

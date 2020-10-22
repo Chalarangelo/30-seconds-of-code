@@ -1,6 +1,6 @@
 ---
 title: recordAnimationFrames
-tags: browser,intermediate
+tags: browser,recursion,intermediate
 ---
 
 Invokes the provided callback on each animation frame.
@@ -37,8 +37,10 @@ const recordAnimationFrames = (callback, autoStart = true) => {
 
 ```js
 const cb = () => console.log('Animation frame fired');
-const recorder = recordAnimationFrames(cb); // logs 'Animation frame fired' on each animation frame
+const recorder = recordAnimationFrames(cb);
+// logs 'Animation frame fired' on each animation frame
 recorder.stop(); // stops logging
 recorder.start(); // starts again
-const recorder2 = recordAnimationFrames(cb, false); // `start` needs to be explicitly called to begin recording frames
+const recorder2 = recordAnimationFrames(cb, false);
+// `start` needs to be explicitly called to begin recording frames
 ```

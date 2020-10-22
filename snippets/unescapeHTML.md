@@ -1,11 +1,12 @@
 ---
 title: unescapeHTML
-tags: string,browser,beginner
+tags: string,browser,regexp,beginner
 ---
 
 Unescapes escaped HTML characters.
 
-- Use `String.prototype.replace()` with a regex that matches the characters that need to be unescaped, using a callback function to replace each escaped character instance with its associated unescaped character using a dictionary (object).
+- Use `String.prototype.replace()` with a regexp that matches the characters that need to be unescaped.
+- Use the function's callback to replace each escaped character instance with its associated unescaped character using a dictionary (object).
 
 ```js
 const unescapeHTML = str =>
@@ -23,5 +24,6 @@ const unescapeHTML = str =>
 ```
 
 ```js
-unescapeHTML('&lt;a href=&quot;#&quot;&gt;Me &amp; you&lt;/a&gt;'); // '<a href="#">Me & you</a>'
+unescapeHTML('&lt;a href=&quot;#&quot;&gt;Me &amp; you&lt;/a&gt;');
+// '<a href="#">Me & you</a>'
 ```

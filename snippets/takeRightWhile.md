@@ -3,9 +3,10 @@ title: takeRightWhile
 tags: array,intermediate
 ---
 
-Removes elements from the end of an array until the passed function returns `true`. Returns the removed elements.
+Removes elements from the end of an array until the passed function returns `true`.
+Returns the removed elements.
 
-- Loop through the array, using a `Array.prototype.reduceRight()` and accumulating elements while the function returns falsy value.
+- Loop through the array, using `Array.prototype.reduceRight()` and accumulating elements while `func` returns falsy values.
 
 ```js
 const takeRightWhile = (arr, func) =>

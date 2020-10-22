@@ -3,10 +3,11 @@ title: pickBy
 tags: object,intermediate
 ---
 
-Creates an object composed of the properties the given function returns truthy for. The function is invoked with two arguments: (value, key).
+Creates an object composed of the properties the given function returns truthy for.
 
 - Use `Object.keys(obj)` and `Array.prototype.filter()`to remove the keys for which `fn` returns a falsy value.
 - Use `Array.prototype.reduce()` to convert the filtered keys back to an object with the corresponding key-value pairs.
+- The callback function is invoked with two arguments: (value, key).
 
 ```js
 const pickBy = (obj, fn) =>
@@ -16,5 +17,6 @@ const pickBy = (obj, fn) =>
 ```
 
 ```js
-pickBy({ a: 1, b: '2', c: 3 }, x => typeof x === 'number'); // { 'a': 1, 'c': 3 }
+pickBy({ a: 1, b: '2', c: 3 }, x => typeof x === 'number');
+// { 'a': 1, 'c': 3 }
 ```

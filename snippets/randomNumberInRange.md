@@ -3,7 +3,7 @@ title: randomNumberInRange
 tags: math,random,beginner
 ---
 
-Returns a random number in the specified range.
+Generates a random number in the specified range.
 
 - Use `Math.random()` to generate a random value, map it to the desired range using multiplication.
 

@@ -3,7 +3,7 @@ title: randomAlphaNumeric
 tags: string,random,advanced
 ---
 
-Returns a random string with the specified length.
+Generates a random string with the specified length.
 
 - Use `Array.from()` to create a new array with the specified `length`.
 - Use `Math.random()` generate a random floating-point number, `Number.prototype.toString(36)` to convert it to an alphanumeric string.

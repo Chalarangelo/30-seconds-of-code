@@ -3,9 +3,10 @@ title: toPairs
 tags: object,array,intermediate
 ---
 
-Creates an array of key-value pair arrays from an object or other iterable (object, array, string, set etc.).
+Creates an array of key-value pair arrays from an object or other iterable.
 
-- Check if `Symbol.iterator` is defined and, if so, use `Array.prototype.entries()` to get an iterator for the given iterable, `Array.from()` to convert the result to an array of key-value pair arrays.
+- Check if `Symbol.iterator` is defined and, if so, use `Array.prototype.entries()` to get an iterator for the given iterable.
+- Use `Array.from()` to convert the result to an array of key-value pair arrays.
 - If `Symbol.iterator` is not defined for `obj`, use `Object.entries()` instead.
 
 ```js
@@ -16,8 +17,8 @@ const toPairs = obj =>
 ```
 
 ```js
-toPairs({ a: 1, b: 2 }); // [ ['a', 1], ['b', 2] ]
-toPairs([2, 4, 8]); // [ [0, 2], [1, 4], [2, 8] ]
-toPairs('shy'); // [ ['0', 's'], ['1', 'h'], ['2', 'y'] ]
-toPairs(new Set(['a', 'b', 'c', 'a'])); // [ ['a', 'a'], ['b', 'b'], ['c', 'c'] ]
+toPairs({ a: 1, b: 2 }); // [['a', 1], ['b', 2]]
+toPairs([2, 4, 8]); // [[0, 2], [1, 4], [2, 8]]
+toPairs('shy'); // [['0', 's'], ['1', 'h'], ['2', 'y']]
+toPairs(new Set(['a', 'b', 'c', 'a'])); // [['a', 'a'], ['b', 'b'], ['c', 'c']]
 ```

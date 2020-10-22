@@ -5,9 +5,9 @@ tags: browser,function,promise,advanced
 
 Runs a function in a separate thread by using a [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), allowing long running functions to not block the UI.
 
-- Create a new `Worker` using a `Blob` object URL, the contents of which should be the stringified version of the supplied function.
+- Create a `new Worker()` using a `Blob` object URL, the contents of which should be the stringified version of the supplied function.
 - Immediately post the return value of calling the function back.
-- Return a promise, listening for `onmessage` and `onerror` events and resolving the data posted back from the worker, or throwing an error.
+- Return a `new Promise()`, listening for `onmessage` and `onerror` events and resolving the data posted back from the worker, or throwing an error.
 
 ```js
 const runAsync = fn => {
@@ -31,7 +31,8 @@ const runAsync = fn => {
 const longRunningFunction = () => {
   let result = 0;
   for (let i = 0; i < 1000; i++)
-    for (let j = 0; j < 700; j++) for (let k = 0; k < 300; k++) result = result + i + j + k;
+    for (let j = 0; j < 700; j++)
+      for (let k = 0; k < 300; k++) result = result + i + j + k;
 
   return result;
 };

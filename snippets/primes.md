@@ -19,5 +19,5 @@ const primes = num => {
 ```
 
 ```js
-primes(10); // [2,3,5,7]
+primes(10); // [2, 3, 5, 7]
 ```

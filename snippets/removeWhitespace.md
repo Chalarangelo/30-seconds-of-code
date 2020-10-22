@@ -12,5 +12,6 @@ const removeWhitespace = str => str.replace(/\s+/g,'');
 ```
 
 ```js
-removeWhitespace('Lorem ipsum.\n Dolor sit amet. '); // 'Loremipsum.Dolorsitamet.'
+removeWhitespace('Lorem ipsum.\n Dolor sit amet. ');
+// 'Loremipsum.Dolorsitamet.'
 ```

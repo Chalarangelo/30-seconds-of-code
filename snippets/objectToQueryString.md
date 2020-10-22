@@ -3,7 +3,7 @@ title: objectToQueryString
 tags: object,advanced
 ---
 
-Returns a query string generated from the key-value pairs of the given object.
+Generates a query string from the key-value pairs of the given object.
 
 - Use `Array.prototype.reduce()` on `Object.entries(queryParameters)` to create the query string.
 - Determine the `symbol` to be either `?` or `&` based on the length of `queryString`.

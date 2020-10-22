@@ -5,8 +5,8 @@ tags: math,random,beginner
 
 Generates a random hexadecimal color code.
 
-- Use `Math.random` to generate a random 24-bit(6x4bits) hexadecimal number.
-- Use bit shifting and then convert it to an hexadecimal String using `toString(16)`.
+- Use `Math.rando()m` to generate a random 24-bit (6 * 4bits) hexadecimal number.
+- Use bit shifting and then convert it to an hexadecimal string using `Number.prototype.toString(16)`.
 
 ```js
 const randomHexColorCode = () => {
