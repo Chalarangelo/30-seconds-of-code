@@ -17,10 +17,10 @@ def chunk_into_n(lst, n):
   size = ceil(len(lst) / n)
   return list(
     map(lambda x: lst[x * size:x * size + size],
-    list(range(0, n)))
+    list(range(n)))
   )
 ```
 
 ```py
-chunk_into_n([1, 2, 3, 4, 5, 6, 7], 4)) # [[1, 2], [3, 4], [5, 6], [7]]
+chunk_into_n([1, 2, 3, 4, 5, 6, 7], 4) # [[1, 2], [3, 4], [5, 6], [7]]
 ```

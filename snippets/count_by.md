@@ -5,15 +5,18 @@ tags: list,intermediate
 
 Groups the elements of a list based on the given function and returns the count of elements in each group.
 
+- Use `defaultdict()` to initialize a dictionary.
 - Use `map()` to map the values of the given list using the given function.
 - Iterate over the map and increase the element count each time it occurs.
 
 ```py
-def count_by(arr, fn=lambda x: x):
-  key = {}
-  for el in map(fn, arr):
-    key[el] = 1 if el not in key else key[el] + 1
-  return key
+from collections import defaultdict
+
+def count_by(lst, fn=lambda x: x):
+  count = defaultdict(int)
+  for val in map(fn, lst):
+    count[val] += 1
+  return dict(count)
 ```
 
 ```py
