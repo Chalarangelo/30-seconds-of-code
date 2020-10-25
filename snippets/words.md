@@ -1,6 +1,6 @@
 ---
 title: words
-tags: string,regexp,beginnner
+tags: string,regexp,beginner
 ---
 
 Converts a given string into an array of words.
