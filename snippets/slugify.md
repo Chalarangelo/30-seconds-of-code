@@ -1,6 +1,6 @@
 ---
 title: slugify
-tags: string,regex,intermediate
+tags: string,regexp,intermediate
 ---
 
 Converts a string to a URL-friendly slug.
