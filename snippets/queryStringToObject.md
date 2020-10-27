@@ -3,28 +3,20 @@ title: queryStringToObject
 tags: object,intermediate
 ---
 
-Returns a key-value pairs of object of query params of given url.
+Generates an object from the given query string or URL.
 
-- Use `String.prototype.split()` to split url .
-- Return the object of key value pair of query params of given url.
+- Use `String.prototype.split()` to get the params from the given `url`.
+- Use `new URLSearchParams()` to create an appropriate object and convert it to an array of key-value pairs using the spread operator (`...`).
+- Use `Array.prototype.reduce()` to convert the array of key-value pairs into an object.
 
 ```js
-
-function queryStringToObject(url){
-    var query = url.split('?');
-    if(query[1]){
-	    var queryParams = {};
-	    var val = '';
-	    query = query[1].split('&');
-	    query.forEach((e) => {
-	        val = e.split('=');
-	        queryParams[val[0]] = val[1];
-	    })
-	    return queryParams;
-    } else { return {}; }
-}
+const queryStringToObject = url =>
+  [...new URLSearchParams(url.split('?')[1])].reduce(
+    (a, [k, v]) => ((a[k] = v), a),
+    {}
+  );
 ```
 
 ```js
-queryStringToObject('https://google.com?page=1&count=10'); // {page: "1", count: "10"}
+queryStringToObject('https://google.com?page=1&count=10'); // {page: '1', count: '10'}
 ```
