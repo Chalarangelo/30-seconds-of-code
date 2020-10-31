@@ -1,14 +1,14 @@
 ---
 title: changeLightness
-tags: string,browser,regexp,beginner
+tags: string,browser,regexp,intermediate
 ---
 
-Returns the string value of the color with changed lightness in `hsl` format.
+Changes the lightness value of an `hsl()` color string.
 
-- Use `String.prototype.match()` to get an array of 3 string with the numeric values.
+- Use `String.prototype.match()` to get an array of 3 strings with the numeric values.
 - Use `Array.prototype.map()` in combination with `Number` to convert them into an array of numeric values.
-- Clamp new lightness within the hsl valid range between `0` and `100`.
-- Form a valid `hsl` color string.
+- Make sure the lightness is within the valid range (between `0` and `100`), using `Math.max()` and `Math.min()`.
+- Use a template literal to create a new `hsl()` string with the updated value.
 
 ```js
 const changeLightness = (delta, hslStr) => {
@@ -24,6 +24,6 @@ const changeLightness = (delta, hslStr) => {
 ```
 
 ```js
-changeLightness(10, "hsl(330, 50%, 50%)"); // 'hsl(330, 50%, 60%)' - lightens the color by 10%
-changeLightness(-10, "hsl(330, 50%, 50%)"); // 'hsl(330, 50%, 40%)' - darkens the color by 10%
+changeLightness(10, 'hsl(330, 50%, 50%)'); // 'hsl(330, 50%, 60%)'
+changeLightness(-10, 'hsl(330, 50%, 50%)'); // 'hsl(330, 50%, 40%)'
 ```
