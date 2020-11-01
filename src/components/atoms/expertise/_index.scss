@@ -14,8 +14,8 @@
   background: var(--expertise-color);
   border: 2px solid var(--card-back-color);
   box-sizing: border-box;
-  top: -4px;
-  right: -4px;
+  top: 0px;
+  right: 0px;
 
   &.beginner {
     --expertise-color: var(--expertise-beginner);

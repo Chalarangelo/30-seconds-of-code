@@ -38,16 +38,15 @@
   .card-icon {
     position: relative;
     display: inline-block;
-    margin: 0.625rem 0.5rem 0.125rem;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 0.75rem;
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 3.25rem;
 
     &:before {
       position: absolute;
       top: 0.5rem;
       left: 0.5rem;
-      font-size: 2rem;
+      font-size: 2.25rem;
     }
 
     // Custom styles for dart icon
