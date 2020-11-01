@@ -7,7 +7,7 @@
   overflow-x: auto;
   width: calc(100% - 1.75rem);
   scroll-snap-type: x mandatory;
-  justify-content: space-evenly;
+  justify-content: space-between;
 
   &::-webkit-scrollbar-track {
     background-color: var(--scrollbar-back-color);
