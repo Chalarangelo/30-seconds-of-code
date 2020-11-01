@@ -24,7 +24,6 @@ const propTypes = {
   }),
   dispatch: PropTypes.func,
   isDarkMode: PropTypes.bool,
-  hasGithubLinksEnabled: PropTypes.bool,
   acceptsCookies: PropTypes.bool,
   includeArchive: PropTypes.bool,
 };
@@ -43,7 +42,6 @@ const SettingsPage = ({
   },
   dispatch,
   isDarkMode,
-  hasGithubLinksEnabled,
   acceptsCookies,
   includeArchive,
 }) => (
@@ -60,12 +58,6 @@ const SettingsPage = ({
           onChange={ () => dispatch(toggleDarkMode(!isDarkMode)) }
         >
           { settings.darkMode }
-        </Toggle>
-        <Toggle
-          checked={ !!hasGithubLinksEnabled }
-          onChange={ () => dispatch(toggleGithubLinks(!hasGithubLinksEnabled)) }
-        >
-          { settings.githubLinks }
         </Toggle>
         <Toggle
           checked={ !!acceptsCookies }
@@ -89,7 +81,6 @@ SettingsPage.propTypes = propTypes;
 export default connect(
   state => ({
     isDarkMode: state.shell.isDarkMode,
-    hasGithubLinksEnabled: state.shell.hasGithubLinksEnabled,
     acceptsCookies: state.shell.acceptsCookies,
     includeArchive: state.search.includeArchive,
   }),

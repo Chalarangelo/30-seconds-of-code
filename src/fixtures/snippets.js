@@ -130,6 +130,10 @@ export const fullCssSnippet = {
   'language': {
     'long': 'CSS',
     'short': 'css',
+    'otherLanguages': {
+      'short': 'html',
+      'long': 'HTML',
+    },
   },
   'icon': 'css',
   'tags': {
@@ -202,6 +206,10 @@ export const fullCssWithJsSnippet = {
   'language': {
     'long': 'CSS',
     'short': 'css',
+    'otherLanguages': {
+      'short': 'html',
+      'long': 'HTML',
+    },
   },
   'icon': 'css',
   'tags': {
