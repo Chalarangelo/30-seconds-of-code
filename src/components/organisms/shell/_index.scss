@@ -67,10 +67,6 @@ body {
     > :first-child {
       margin-right: 0.75rem;
     }
-
-    > :last-child {
-      margin-right: 0.75rem;
-    }
   }
 }
 
@@ -122,9 +118,9 @@ img.nav-website-logo {
     padding-right: 8px;  // Pad to the right for the scrollbar (8px)
   }
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 882px) {
     // Difference in padding is due to the scrollbar (8px)
-    padding-left: calc((100% - 800px) / 2);
-    padding-right: calc((100% - 784px) / 2);
+    padding-left: calc((100% - 882px) / 2);
+    padding-right: calc((100% - 866px) / 2);
   }
 }
