@@ -7,7 +7,6 @@ const isBot = () =>
 // Default state
 const initialState = {
   isDarkMode: undefined,
-  hasGithubLinksEnabled: undefined,
   cacheKey: process.env.CACHE_KEY,
   newCacheKey: process.env.CACHE_KEY,
   isBot: isBot(),
@@ -25,11 +24,6 @@ export const toggleDarkMode = isDarkMode => ({
   isDarkMode,
 });
 
-export const toggleGithubLinks = hasGithubLinksEnabled => ({
-  type: TOGGLE_GITHUB_LINKS,
-  hasGithubLinksEnabled,
-});
-
 export const decideCookies = cookieConsent => ({
   type: cookieConsent ? ACCEPT_COOKIES : DECLINE_COOKIES,
 });
@@ -41,11 +35,6 @@ export default (state = initialState, action) => {
     return {
       ...state,
       isDarkMode: action.isDarkMode,
-    };
-  case TOGGLE_GITHUB_LINKS:
-    return {
-      ...state,
-      hasGithubLinksEnabled: action.hasGithubLinksEnabled,
     };
   case ACCEPT_COOKIES:
     return {

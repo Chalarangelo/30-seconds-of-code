@@ -52,13 +52,6 @@ describe('<SettingsPage />', () => {
     });
   });
 
-  describe('when the github links is clicked', () => {
-    it('changes the dark mode setting', () => {
-      fireEvent.click(getByLabelText(literals.settings.githubLinks));
-      expect(store.getState().shell.hasGithubLinksEnabled).toBe(true);
-    });
-  });
-
   describe('when the cookies is clicked', () => {
     it('changes the cookies setting', () => {
       fireEvent.click(getByLabelText(literals.settings.cookies));
