@@ -4,7 +4,6 @@
   --button-fore-color: #FFFFFF;
   --button-shadow-color: rgba(0, 32, 128, 0.25);
   --button-back-color-tertiary: #131418;
-  --button-back-color-active: #05A864;
 }
 
 // Dark mode colors
@@ -53,25 +52,21 @@
 
 @keyframes active {
   0%, 100% {
-    background: var(--button-back-color);
     transform: scale(1);
   }
   20% {
-    transform: scale(1.15) rotate(12deg);
-    background: var(--button-back-color-active);
+    transform: scale(1.15) rotate(3deg);
   }
   40% {
     transform: scale(.94);
   }
   60% {
-    transform: scale(.98) rotate(-12deg);
+    transform: scale(.98) rotate(-3deg);
   }
   80% {
-    background: var(--button-back-color-active);
     transform: scale(1.08);
   }
   99% {
-    background: var(--button-back-color-active);
   }
 }
 
