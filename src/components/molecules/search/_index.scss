@@ -24,7 +24,7 @@
 
 // Style for placeholder text
 @mixin placeholder-styles {
-  font-family: 'Noto Sans', Helvetica, sans-serif;
+  font-family: 'Inter', Helvetica, sans-serif;
 }
 .search-box::-webkit-input-placeholder {
   @include placeholder-styles;
@@ -52,7 +52,7 @@
   box-sizing: border-box;
   padding: 0.25rem 0.5rem;
   font-size: 1.125rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.9;
   height: 44px;
   color: var(--search-fore-color);
