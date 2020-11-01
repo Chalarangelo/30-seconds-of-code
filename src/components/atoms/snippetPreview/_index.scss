@@ -1,14 +1,14 @@
 .snippet-preview-title {
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 2.5;
-  margin: 0.5rem 0.5rem 0.75rem;
-  color: var(--card-fore-color-light);
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 2;
+  margin: 2rem 0 -3rem .875rem;
+  color: var(--card-title-color);
 }
 
 .snippet-preview {
   background:var(--back-color);
-  border-radius: .25rem;
-  padding: 1.375rem 1.25rem .75rem;
-  margin: -0.5rem 0 1.5rem;
+  border-radius: .5rem;
+  padding: 2.5rem .875rem .75rem;
+  margin: 0;
 }
