@@ -20,6 +20,7 @@ const CopyButton = ({
 }) => {
   const [active, setActive] = React.useState(false);
   const [copying, setCopying] = React.useState(false);
+  const [buttonText, setButtonText] = React.useState(literals.copyToClipboard);
 
   // If `copying` is `true`, then play the activation animation.
   React.useEffect(() => {
@@ -33,14 +34,20 @@ const CopyButton = ({
   React.useEffect(() => {
     if (active) return;
     setCopying(false);
+    setButtonText(literals.copyToClipboard);
   }, [active]);
 
   return (
     <Button
       className={ combineClassNames`copy-btn icon ${active ? 'icon-check active' : 'icon-clipboard'}` }
       title={ literals.copyToClipboard }
-      onClick={ () => setCopying(true) }
-    />
+      onClick={ () => {
+        setCopying(true);
+        setButtonText(literals.copiedToClipboard);
+      } }
+    >
+      { buttonText }
+    </Button>
   );
 };
 

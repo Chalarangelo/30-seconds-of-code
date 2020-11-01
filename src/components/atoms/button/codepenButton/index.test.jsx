@@ -35,22 +35,5 @@ describe('<CodepenButton />', () => {
   it('should pass data to the input field', () => {
     expect(input.value).not.toBe(undefined);
   });
-
-  describe('when clicked', () => {
-    it('should play the microinteraction animation', async() => {
-      fireEvent.click(button);
-      jest.advanceTimersByTime(100);
-      expect(setTimeout).toHaveBeenCalled();
-      await waitFor(() =>
-        expect(wrapper.querySelectorAll('button.btn.codepen-btn.active')).toHaveLength(1)
-      );
-
-      fireEvent.click(button);
-      jest.advanceTimersByTime(750);
-      await waitFor(() =>
-        expect(wrapper.querySelectorAll('button.btn.codepen-btn:not(.active)')).toHaveLength(1)
-      );
-    });
-  });
 });
 
