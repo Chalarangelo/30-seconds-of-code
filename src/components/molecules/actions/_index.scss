@@ -1,0 +1,46 @@
+:root {
+  --action-fore-color: #525252;
+  --action-active-fore-color: #2747C7
+}
+
+.page-container-dark {
+  --action-fore-color: #d9d9d9;
+}
+
+.card-actions {
+  .btn-form, .btn {
+    flex: 1 0 auto;
+    text-align: center;
+  }
+
+  .btn {
+    position: relative;
+    margin: 0;
+    background: transparent;
+    color: var(--action-fore-color);
+    text-transform: uppercase;
+    font-weight: 500;
+    box-shadow: none;
+    padding: 0.25rem;
+    font-size: 0;
+    border-radius: 0;
+
+    @media screen and (min-width: $layout-medium-breakpoint) {
+      font-size: 1rem;
+    }
+
+    &:hover, &:focus {
+      box-shadow: none;
+      color: var(--action-active-fore-color);
+    }
+
+    &:before {
+      font-size: 24px;
+      line-height: 24px;
+      vertical-align: bottom;
+      width: 100%;
+      transition: opacity 0.1s ease;
+      margin-right: 1rem;
+    }
+  }
+}
