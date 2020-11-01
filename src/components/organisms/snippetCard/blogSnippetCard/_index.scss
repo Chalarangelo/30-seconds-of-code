@@ -4,6 +4,9 @@
 :root {
   --blog-quote-border-color: #212631;
   --table-border-color: hsl(0, 0%, 87%);
+  --blog-image-credit-fore-color: #fff;
+  --blog-image-credit-back-color: rgba(0, 0, 0, .73);
+  --blog-image-credit-link-color:  #6DC7FD;
 }
 
 .page-container.dark {
@@ -19,7 +22,7 @@
 
   .card-meta-info {
     font-size: 0.875rem;
-    margin: 0 0.5rem 1.25rem;
+    margin: 0 0rem 1rem;
     color: var(--card-fore-color-light);
 
     a {
@@ -43,11 +46,11 @@
     --cover-aspect-ratio: 1.78;
     @include card-full-width-section;
     margin-top: 0.375rem;
-    min-width: calc(100% + 2rem);
+    min-width: calc(100% + 3rem);
     object-fit: cover;
-    margin-bottom: 1rem;
-    min-height: calc(240px / var(--cover-aspect-ratio));
-    max-height: calc(640px / var(--cover-aspect-ratio));
+    margin-bottom: 0;
+    min-height: calc(260px / var(--cover-aspect-ratio));
+    max-height: calc(680px / var(--cover-aspect-ratio));
   }
 
   ol.blog-list {
@@ -92,7 +95,7 @@
   }
 
   blockquote.blog-quote {
-    margin: 0.875rem 0.5rem 1.5rem -1rem;
+    margin: 1rem 0 0.5rem;
     padding-left: 1.5rem;
     box-shadow: inset 4px 0 0 0 var(--blog-quote-border-color);
     font-style: italic;
@@ -102,16 +105,16 @@
   }
 
   h3.blog-body-title {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     line-height: 2rem;
-    margin: 2rem 0.5rem 0rem;
+    margin: 1.5rem 0 0;
   }
 
   h4.blog-body-title {
-    font-size: 1rem;
+    font-size: 1.125rem;
     line-height: 2rem;
     font-weight: 600;
-    margin: 2rem 0.5rem 0rem;
+    margin: 1.5rem 0 0;
   }
 
   table.blog-table {
