@@ -58,6 +58,10 @@ describe('<SnippetCard />', () => {
     it('a CopyButton component', () => {
       expect(card.querySelectorAll('.copy-btn')).toHaveLength(1);
     });
+
+    it('the card actions', () => {
+      expect(card.querySelectorAll('.card-actions')).toHaveLength(1);
+    });
   });
 
   it('should have the correct card title', () => {
@@ -95,18 +99,6 @@ describe('<SnippetCard />', () => {
 
   it('should pass the example data to the seconds CodeBlock component', () => {
     expect(codeBlocks[1].innerHTML).toBe(fullSnippet.html.example);
-  });
-
-  describe('when github links are enabled', () => {
-    beforeEach(() => {
-      wrapper = render(
-        <SnippetCard snippet={ fullSnippet } hasGithubLinksEnabled/>
-      ).container;
-    });
-
-    it('should render a github link', () => {
-      expect(wrapper.querySelectorAll('a.github-link')).toHaveLength(1);
-    });
   });
 
   describe('with additional languages', () => {

@@ -57,6 +57,10 @@ describe('<CssSnippetCard />', () => {
     it('three CodeBlock components', () => {
       expect(card.querySelectorAll('pre')).toHaveLength(2);
     });
+
+    it('the card actions', () => {
+      expect(card.querySelectorAll('.card-actions')).toHaveLength(1);
+    });
   });
 
   it('should have the correct card title', () => {
@@ -122,18 +126,6 @@ describe('<CssSnippetCard />', () => {
 
     it('should pass the js data to the first CodeBlock component', () => {
       expect(codeBlocks[2].innerHTML).toBe(fullCssWithJsSnippet.html.js);
-    });
-  });
-
-  describe('when github links are enabled', () => {
-    beforeEach(() => {
-      wrapper = render(
-        <CssSnippetCard snippet={ fullCssSnippet } hasGithubLinksEnabled/>
-      ).container;
-    });
-
-    it('should render a github link', () => {
-      expect(wrapper.querySelectorAll('a.github-link')).toHaveLength(1);
     });
   });
 });
