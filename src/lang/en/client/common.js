@@ -1,11 +1,13 @@
 import config from 'config/global';
 
 const literals = {
-  copyToClipboard: 'Copy to clipboard',
-  codepen: 'Edit on CodePen',
+  copyToClipboard: 'Copy code',
+  copiedToClipboard: 'Copied',
+  codepen: 'View CodePen',
   examples: 'Examples',
   preview: 'Preview',
-  viewOnGitHub: 'View on GitHub',
+  viewOnGitHub: 'Edit',
+  share: 'Share',
   openInVscode: 'Open in VS Code',
   home: 'Home',
   recommendedSnippets: 'Recommended snippets',
