@@ -141,13 +141,25 @@
   }
 
   p:last-child.blog-image-credit {
-    font-size: 0.875rem;
-    margin: 0 -1rem -1rem;
-    padding: 1rem 1rem 1rem 1.5rem;
-    border-radius: 0 0 0.25rem 0.25rem;
+    @include card-full-width-section;
+    font-size: .875rem;
+    padding: 0 1.5rem;
+    margin-top: -2.375rem;
+    background-color: var(--blog-image-credit-back-color);
+    color: var(--blog-image-credit-fore-color);
+    order: -1;
+
+    > a {
+      &, &:link, &:visited {
+        color: var(--blog-image-credit-link-color);
+      }
+    }
   }
 
   .card-description {
+    display: flex;
+    flex-direction: column;
+
     li:not(.blog-list-item) > p {
       line-height: 2;
       margin: 0;
