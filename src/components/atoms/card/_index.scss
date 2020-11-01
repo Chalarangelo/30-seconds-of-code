@@ -22,9 +22,9 @@
   margin: 1.75rem 0.875rem 1rem;
   background: var(--card-back-color);
   color: var(--card-fore-color);
-  box-shadow: 0px 1px 2px var(--card-shadow-color);
-  border-radius: 0.25rem;
-  padding: 1rem;
+  box-shadow: 0px 3px 5px 1px var(--card-shadow-color);
+  border-radius: 0.5rem;
+  padding: 2rem 1.5rem;
 
   .card-title {
     font-size: 1.5rem;
