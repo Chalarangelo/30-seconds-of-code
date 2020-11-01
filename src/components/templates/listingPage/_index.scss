@@ -23,12 +23,12 @@
 
     @media screen and (min-width: 390px) {
       font-size: 1.75rem;
-      height: 28px;
+      height: 2rem;
     }
-  }
 
-  & ~ .listing-anchors-title {
-    margin: 3.5rem 1.25rem 0.875rem;
+    @media screen and (min-width: 768px) {
+      font-size: 2rem;
+    }
   }
 }
 
@@ -37,4 +37,5 @@
   margin: 0.75rem 1.25rem 1.5rem;
   color: var(--fore-color);
   text-align: center;
+  font-size: 1.125rem;
 }
