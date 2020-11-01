@@ -7,7 +7,7 @@
   overflow-x: auto;
   width: calc(100% - 1.75rem);
   scroll-snap-type: x mandatory;
-  justify-content: space-between;
+  justify-content: space-evenly;
 
   &::-webkit-scrollbar-track {
     background-color: var(--scrollbar-back-color);
@@ -38,7 +38,7 @@
 
   .btn {
     box-sizing: border-box;
-    font-size: 0.875rem;
+    font-size: 1rem;
     min-width: 100%;
     padding: 0.375rem 0.25rem;
     height: 64px;
@@ -110,7 +110,7 @@
     background: transparent;
     border-radius: 0;
     color: var(--fore-color-light);
-    line-height: 24px;
+    line-height: 1.5rem;
     height: 48px;
     border-bottom: 2px solid transparent;
 
@@ -124,12 +124,4 @@
       color: var(--fore-color-dark);
     }
   }
-}
-
-.listing-anchors-title {
-  font-size: 1.5rem;
-  text-align: center;
-  line-height: 1.375;
-  font-weight: 400;
-  margin: 1.5rem 1.25rem .5rem;
 }
