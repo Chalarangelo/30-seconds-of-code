@@ -18,7 +18,7 @@ const SnippetCard = ({
   snippet,
   hasGithubLinksEnabled = false,
 }) => (
-  <Card className='snippet-card' >
+  <Card className='snippet-card blog-card'>
     <h1 className='card-title'>{ snippet.title }</h1>
     <div className="card-meta-info">
       { snippet.authors.map((a, i, arr) => (

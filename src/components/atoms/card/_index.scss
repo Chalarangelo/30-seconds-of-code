@@ -1,17 +1,19 @@
 // Colors
 :root {
   --card-back-color: #FFFFFF;
-  --card-fore-color: #212121;
-  --card-fore-color-light: #424242;
-  --card-shadow-color: rgba(0, 32, 128, 0.09);
+  --card-title-color: #202124;
+  --card-fore-color: #000;
+  --card-fore-color-light: #5F6368;
+  --card-shadow-color: rgba(0, 32, 128, 0.07);
 }
 
 // Dark mode colors
 .page-container.dark {
   --card-back-color: #1A1A1A;
-  --card-fore-color: #F0F0F0;
+  --card-title-color: #F0F0F0;
+  --card-fore-color: #fff;
   --card-fore-color-light: #D6D6D6;
-  --card-shadow-color: rgba(0, 3, 10, 0.09);
+  --card-shadow-color: rgba(0, 3, 10, 0.07);
 }
 
 .card {
@@ -25,12 +27,12 @@
   padding: 1rem;
 
   .card-title {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    margin: 0.625rem 0.5rem 0.125rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 2rem;
+    margin: 0 0.5rem;
     transition: 0.3s ease all;
-    color: var(--card-fore-color);
-    letter-spacing: -0.125px;
+    color: var(--card-title-color);
     overflow: hidden;
     text-overflow: ellipsis;
   }
@@ -70,10 +72,6 @@
     .card-data {
       flex: 1 1;
       max-width: calc(100% - 5rem);
-    }
-
-    .card-title {
-      margin: 0.625rem 0.5rem 0 0.75rem;
     }
   }
 

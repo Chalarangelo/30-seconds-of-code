@@ -11,7 +11,11 @@
   --table-border-color: hsl(0, 0%, 16%);
 }
 
-.snippet-card {
+.snippet-card.blog-card {
+
+  .card-title {
+    margin: 0;
+  }
 
   .card-meta-info {
     font-size: 0.875rem;
