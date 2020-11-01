@@ -36,6 +36,10 @@ describe('<BlogSnippetCard />', () => {
       expect(card.querySelectorAll('.card-description')).toHaveLength(1);
     });
 
+    it('the card actions', () => {
+      expect(card.querySelectorAll('.card-actions')).toHaveLength(1);
+    });
+
     it('the card meta info', () => {
       expect(card.querySelectorAll('.card-meta-info')).toHaveLength(1);
     });
@@ -58,21 +62,6 @@ describe('<BlogSnippetCard />', () => {
 
   it('should render the correct cover', () => {
     expect(card.querySelector('img').src).toContain(fullBlogSnippet.cover);
-  });
-
-  describe('when github links are enabled', () => {
-    beforeEach(() => {
-      wrapper = render(
-        <BlogSnippetCard
-          snippet={ fullBlogSnippet }
-          hasGithubLinksEnabled
-        />
-      ).container;
-    });
-
-    it('should render a github link', () => {
-      expect(wrapper.querySelectorAll('a.github-link')).toHaveLength(1);
-    });
   });
 
   describe('with multiple auhors', () => {

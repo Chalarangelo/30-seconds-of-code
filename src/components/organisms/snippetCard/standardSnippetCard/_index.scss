@@ -56,6 +56,12 @@
     object-fit: cover;
     margin-bottom: 1.5rem;
   }
+
+  .card-actions {
+    margin: 2rem 0 -1rem;
+    display: flex;
+    justify-content: space-around;
+  }
 }
 
 a.github-link {
