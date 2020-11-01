@@ -6,7 +6,7 @@ const literals = {
   codepen: 'View CodePen',
   examples: 'Examples',
   preview: 'Preview',
-  viewOnGitHub: 'Edit',
+  viewOnGitHub: 'View on GitHub',
   share: 'Share',
   openInVscode: 'Open in VS Code',
   home: 'Home',
