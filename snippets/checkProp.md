@@ -1,6 +1,6 @@
 ---
 title: checkProp
-tags: function,object,beginner
+tags: function,object,intermediate
 ---
 
 Creates a function that will invoke a predicate function for the specified property on a given object.

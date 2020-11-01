@@ -17,5 +17,6 @@ const bifurcateBy = (arr, fn) =>
 ```
 
 ```js
-bifurcateBy(['beep', 'boop', 'foo', 'bar'], x => x[0] === 'b'); // [ ['beep', 'boop', 'bar'], ['foo'] ]
+bifurcateBy(['beep', 'boop', 'foo', 'bar'], x => x[0] === 'b');
+// [ ['beep', 'boop', 'bar'], ['foo'] ]
 ```
