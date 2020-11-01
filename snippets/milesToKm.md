@@ -5,7 +5,7 @@ tags: math,beginner
 
 Converts miles to kilometers.
 
-- Follows the conversion formula `km = mi * 1.609344`.
+- Follow the conversion formula `km = mi * 1.609344`.
 
 ```js
 const milesToKm = miles => miles * 1.609344;

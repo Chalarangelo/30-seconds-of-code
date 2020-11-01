@@ -17,6 +17,6 @@ const bifurcate = (arr, filter) =>
 ```
 
 ```js
-bifurcate(['beep', 'boop', 'foo', 'bar'], [true, true, false, true]); 
+bifurcate(['beep', 'boop', 'foo', 'bar'], [true, true, false, true]);
 // [ ['beep', 'boop', 'bar'], ['foo'] ]
 ```
