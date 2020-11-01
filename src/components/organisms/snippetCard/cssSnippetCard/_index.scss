@@ -1,12 +1,18 @@
 .snippet-card {
 
   .card-preview-content {
-    position: relative;
+    .snippet-preview {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
 
-    .codepen-btn {
-      position: absolute;
-      top: 0.5rem;
-      right: 1.5rem;
+    + .card-source-content {
+      margin-top: 0;
+
+      pre:first-of-type {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
     }
   }
 }
