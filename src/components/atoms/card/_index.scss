@@ -87,9 +87,13 @@
     line-height: 1.35;
 
     > p {
-      font-size: 1.125rem;
+      font-size: 1rem;
       margin: 1.5rem 0 0;
       line-height: 2rem;
+
+      @media screen and (min-width: $layout-medium-breakpoint) {
+        font-size: 1.125rem;
+      }
 
       &:not(:first-child) {
         margin-top: 1rem;
@@ -105,9 +109,13 @@
     }
 
     li {
-      font-size: 1.125rem;
+      font-size: 1rem;
       line-height: 2;
       margin: 0.375rem 0;
+
+      @media screen and (min-width: $layout-medium-breakpoint) {
+        font-size: 1.125rem;
+      }
     }
   }
 }
