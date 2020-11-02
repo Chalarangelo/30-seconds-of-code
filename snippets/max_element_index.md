@@ -1,6 +1,6 @@
 ---
 title: max_element_index
-tags: list,beginner
+tags: math,list,beginner
 ---
 
 Returns the index of the element with the maximum value in a list.

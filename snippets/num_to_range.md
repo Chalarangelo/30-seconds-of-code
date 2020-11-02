@@ -5,11 +5,12 @@ tags: math,beginner
 
 Maps a number from one range to another range.
 
-- Returns `num` mapped between `outMin`-`outMax` from `inMin`-`inMax`.
+- Return `num` mapped between `outMin`-`outMax` from `inMin`-`inMax`.
 
 ```py
 def num_to_range(num, inMin, inMax, outMin, outMax):
-  return outMin + ((float(num - inMin) / float((inMax - inMin))) * (outMax - outMin))
+  return outMin(float(num - inMin) / float(inMax - inMin) * (outMax
+                  - outMin))
 ```
 
 ```py

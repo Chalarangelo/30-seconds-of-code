@@ -1,11 +1,12 @@
 ---
 title: max_by
-tags: math,list,function,beginner
+tags: math,list,beginner
 ---
 
 Returns the maximum value of a list, after mapping each element to a value using the provided function.
 
-- Use `map()` with `fn` to map each element to a value using the provided function, use `max()` to return the maximum value.
+- Use `map()` with `fn` to map each element to a value using the provided function.
+- Use `max()` to return the maximum value.
 
 ```py
 def max_by(lst, fn):

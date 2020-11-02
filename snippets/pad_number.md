@@ -5,7 +5,7 @@ tags: string,math,beginner
 
 Pads a given number to the specified length.
 
-- Use `str.zfill()` to pad the number to specified length, after converting it to a string.
+- Use `str.zfill()` to pad the number to the specified length, after converting it to a string.
 
 ```py
 def pad_number(n, l):

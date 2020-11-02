@@ -1,6 +1,6 @@
 ---
 title: map_dictionary
-tags: list,intermediate
+tags: list,dictionary,intermediate
 ---
 
 Maps the values of a list to a dictionary using a function, where the key-value pairs consist of the original value as the key and the result of the function as the value.
@@ -15,5 +15,5 @@ def map_dictionary(itr, fn):
 ```
 
 ```py
-map_dictionary([1,2,3], lambda x: x * x) # { 1: 1, 2: 4, 3: 9 }
+map_dictionary([1, 2, 3], lambda x: x * x) # { 1: 1, 2: 4, 3: 9 }
 ```
