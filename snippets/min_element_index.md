@@ -1,6 +1,6 @@
 ---
 title: min_element_index
-tags: list,beginner
+tags: math,list,beginner
 ---
 
 Returns the index of the element with the minimum value in a list.

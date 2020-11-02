@@ -3,7 +3,7 @@ title: find_key
 tags: dictionary,intermediate
 ---
 
-Returns the first key in the provided dictionary that has the given value.
+Finds the first key in the provided dictionary that has the given value.
 
 - Use `dictionary.items()` and `next()` to return the first key that has a value equal to `val`.
 
@@ -14,9 +14,9 @@ def find_key(dict, val):
 
 ```py
 ages = {
-  "Peter": 10,
-  "Isabel": 11,
-  "Anna": 9,
+  'Peter': 10,
+  'Isabel': 11,
+  'Anna': 9,
 }
-find_key(ages, 11) # "Isabel"
+find_key(ages, 11) # 'Isabel'
 ```

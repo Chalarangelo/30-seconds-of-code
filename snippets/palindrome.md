@@ -3,10 +3,10 @@ title: palindrome
 tags: string,intermediate
 ---
 
-Returns `True` if the given string is a palindrome, `False` otherwise.
+Checks if the given string is a palindrome.
 
-- Use `s.lower()` and `re.sub()` to convert to lowercase and  remove non-alphanumeric characters from the given string.
-- Then, compare the new string with its reverse.
+- Use `str.lower()` and `re.sub()` to convert to lowercase and remove non-alphanumeric characters from the given string.
+- Then, compare the new string with its reverse, using slice notation.
 
 ```py
 from re import sub

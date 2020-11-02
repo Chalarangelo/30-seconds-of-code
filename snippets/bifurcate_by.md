@@ -1,12 +1,12 @@
 ---
 title: bifurcate_by
-tags: list,function,intermediate
+tags: list,intermediate
 ---
 
-Splits values into two groups according to a function, which specifies which group an element in the input list belongs to. 
-If the function returns `True`, the element belongs to the first group; otherwise, it belongs to the second group.
+Splits values into two groups, based on the result of the given filtering function.
 
-- Use list comprehension to add elements to groups, based on `fn`.
+- Use a list comprehension to add elements to groups, based on the value returned by `fn` for each element.
+- If `fn` returns a truthy value for any element, add it to the first group, otherwise add it to the second group.
 
 ```py
 def bifurcate_by(lst, fn):
@@ -17,8 +17,6 @@ def bifurcate_by(lst, fn):
 ```
 
 ```py
-bifurcate_by(
-  ['beep', 'boop', 'foo', 'bar'], 
-  lambda x: x[0] == 'b'
-) # [ ['beep', 'boop', 'bar'], ['foo'] ]
+bifurcate_by(['beep', 'boop', 'foo', 'bar'], lambda x: x[0] == 'b')
+# [ ['beep', 'boop', 'bar'], ['foo'] ]
 ```

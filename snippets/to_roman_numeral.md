@@ -7,7 +7,8 @@ Converts an integer to its roman numeral representation.
 Accepts value between `1` and `3999` (both inclusive).
 
 - Create a lookup list containing tuples in the form of (roman value, integer).
-- Use a `for` loop to iterate over the values in `lookup`, `divmod()` to update `num` with the remainder, adding the roman numeral representation to the result.
+- Use a `for` loop to iterate over the values in `lookup`.
+- Use `divmod()` to update `num` with the remainder, adding the roman numeral representation to the result.
 
 ```py
 def to_roman_numeral(num):

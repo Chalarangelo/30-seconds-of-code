@@ -3,7 +3,7 @@ title: frequencies
 tags: list,intermediate
 ---
 
-Returns a dictionary with the unique values of a list as keys and their frequencies as the values.
+Creates a dictionary with the unique values of a list as keys and their frequencies as the values.
 
 - Use `collections.defaultdict()` to store the frequencies of each unique element.
 - Use `dict()` to return a dictionary with the unique elements of the list as keys and their frequencies as the values.

@@ -1,14 +1,14 @@
 ---
 title: none
-tags: list,function,intermediate
+tags: list,intermediate
 ---
 
-Returns `False` if the provided function returns `True` for at least one element in the list, `True` otherwise.
+Checks if the provided function returns `True` for at least one element in the list.
 
 - Use `all()` and `fn` to check if `fn` returns `False` for all the elements in the list.
 
 ```py
-def none(lst, fn=lambda x: x):
+def none(lst, fn = lambda x: x):
   return all(not fn(x) for x in lst)
 ```
 

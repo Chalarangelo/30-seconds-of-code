@@ -5,7 +5,7 @@ tags: dictionary,intermediate
 
 Merges two or more dictionaries.
 
-- Create a new `dict()` and loop over `dicts`, using `dictionary.update()` to add the key-value pairs from each one to the result.
+- Create a new `dict` and loop over `dicts`, using `dictionary.update()` to add the key-value pairs from each one to the result.
 
 ```py
 def merge_dictionaries(*dicts):
@@ -17,11 +17,12 @@ def merge_dictionaries(*dicts):
 
 ```py
 ages_one = {
-  "Peter": 10,
-  "Isabel": 11,
+  'Peter': 10,
+  'Isabel': 11,
 }
 ages_two = {
-  "Anna": 9
+  'Anna': 9
 }
-merge_dictionaries(ages_one, ages_two) # { "Peter": 10, "Isabel": 11, "Anna": 9 }
+merge_dictionaries(ages_one, ages_two)
+# { 'Peter': 10, 'Isabel': 11, 'Anna': 9 }
 ```

@@ -3,7 +3,7 @@ title: find_index_of_all
 tags: list,intermediate
 ---
 
-Returns the indexes of all elements in the provided list that satisfy the provided testing function.
+Finds the indexes of all elements in the given list that satisfy the provided testing function.
 
 - Use `enumerate()` and a list comprehension to return the indexes of the all element in `lst` for which `fn` returns `True`.
 

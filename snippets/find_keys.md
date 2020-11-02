@@ -3,7 +3,7 @@ title: find_keys
 tags: dictionary,intermediate
 ---
 
-Returns all keys in the provided dictionary that have the given value.
+Finds all keys in the provided dictionary that have the given value.
 
 - Use `dictionary.items()`, a generator and `list()` to return all keys that have a value equal to `val`.
 
@@ -14,9 +14,9 @@ def find_keys(dict, val):
 
 ```py
 ages = {
-  "Peter": 10,
-  "Isabel": 11,
-  "Anna": 10,
+  'Peter': 10,
+  'Isabel': 11,
+  'Anna': 10,
 }
-find_keys(ages, 10) # [ "Peter", "Anna" ]
+find_keys(ages, 10) # [ 'Peter', 'Anna' ]
 ```

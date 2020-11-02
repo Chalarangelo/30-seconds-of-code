@@ -5,7 +5,9 @@ tags: string,regexp,intermediate
 
 Converts a string to kebab case.
 
-- Break the string into words and combine them adding `-` as a separator, using a regexp.
+- Use `re.sub()` to replace any `-` or `_` with a space, using the regexp `r"(_|-)+"`.
+- Use `re.sub()` to match all words in the string, `str.lower()` to lowercase them.
+- Finally, use `str.join()` to combine all word using `-` as the separator.
 
 ```py
 from re import sub
@@ -20,6 +22,7 @@ def kebab(s):
 ```py
 kebab('camelCase') # 'camel-case'
 kebab('some text') # 'some-text'
-kebab('some-mixed_string With spaces_underscores-and-hyphens') # 'some-mixed-string-with-spaces-underscores-and-hyphens'
-kebab('AllThe-small Things') # "all-the-small-things"
+kebab('some-mixed_string With spaces_underscores-and-hyphens')
+# 'some-mixed-string-with-spaces-underscores-and-hyphens'
+kebab('AllThe-small Things') # 'all-the-small-things'
 ```

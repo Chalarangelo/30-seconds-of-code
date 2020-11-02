@@ -15,5 +15,5 @@ def degrees_to_rads(deg):
 ```
 
 ```py
-degrees_to_rads(180) # 3.141592653589793
+degrees_to_rads(180) # ~3.1416
 ```

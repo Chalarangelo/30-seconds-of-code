@@ -1,18 +1,18 @@
 ---
 title: reverse_number
-tags: math,string,intermediate
+tags: math,intermediate
 ---
 
 Reverses a number.
 
-- Use `str()` to convert the number to a string, slice notation to reverse it and `string.replace()` to remove the sign.
-- Use `float()` to convert the result to a number and `copysign()` to copy the original sign.
+- Use `str()` to convert the number to a string, slice notation to reverse it and `str.replace()` to remove the sign.
+- Use `float()` to convert the result to a number and `math.copysign()` to copy the original sign.
 
 ```py
 from math import copysign
 
 def reverse_number(n):
-  return copysign(float(str(n)[::-1].replace('-','')), n)
+  return copysign(float(str(n)[::-1].replace('-', '')), n)
 ```
 
 ```py

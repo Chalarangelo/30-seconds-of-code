@@ -3,7 +3,7 @@ title: binomial_coefficient
 tags: math,beginner
 ---
 
-Returns the number of ways to choose `k` items from `n` items without repetition and without order.
+Calculates the number of ways to choose `k` items from `n` items without repetition and without order.
 
 - Use `math.comb()` to calculate the binomial coefficient.
 

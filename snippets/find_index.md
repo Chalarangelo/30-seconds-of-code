@@ -3,9 +3,9 @@ title: find_index
 tags: list,intermediate
 ---
 
-Returns the index of the first element in the provided list that satisfies the provided testing function.
+Finds the index of the first element in the given list that satisfies the provided testing function.
 
-- Use list comprehension, `enumerate()` and `next()` to return the index of the first element in `lst` for which `fn` returns `True`.
+- Use a list comprehension, `enumerate()` and `next()` to return the index of the first element in `lst` for which `fn` returns `True`.
 
 ```py
 def find_index(lst, fn):

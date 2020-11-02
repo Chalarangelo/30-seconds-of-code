@@ -1,14 +1,14 @@
 ---
 title: some
-tags: list,function,intermediate
+tags: list,intermediate
 ---
 
-Returns `True` if the provided function returns `True` for at least one element in the list, `False` otherwise.
+Checks if the provided function returns `True` for at least one element in the list.
 
-- Use `any()` in combination with `map()` and `fn` to check if `fn` returns `True` for any element in the list.
+- Use `any()` in combination with `map()` to check if `fn` returns `True` for any element in the list.
 
 ```py
-def some(lst, fn=lambda x: x):
+def some(lst, fn = lambda x: x):
   return any(map(fn, lst))
 ```
 

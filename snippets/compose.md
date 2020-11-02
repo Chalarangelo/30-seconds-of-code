@@ -1,6 +1,6 @@
 ---
 title: compose
-tags: function,intermediate
+tags: function,advanced
 ---
 
 Performs right-to-left function composition.
@@ -19,6 +19,5 @@ def compose(*fns):
 add5 = lambda x: x + 5
 multiply = lambda x, y: x * y
 multiply_and_add_5 = compose(add5, multiply)
-
 multiply_and_add_5(5, 2) # 15
 ```

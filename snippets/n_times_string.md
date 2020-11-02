@@ -3,7 +3,7 @@ title: n_times_string
 tags: string,beginner
 ---
 
-Prints out the same string a defined number of times.
+Generates a string with the given string value repeated `n` number of times.
 
 - Repeat the string `n` times, using the `*` operator.
 
