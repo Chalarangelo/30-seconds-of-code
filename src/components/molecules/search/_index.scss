@@ -2,9 +2,9 @@
 :root {
   --search-back-color: #FFFFFF;
   --search-button-back-color: #f4f4f5;
+  --search-button-fore-color: #53586A;
   --search-button-hover-back-color: #e9eaec;
   --search-fore-color: #0d0e17;
-  --search-bar-button-fore-color: #53586A;
   --search-placeholder-color: #9a9ca7;
   --search-bar-border-color: #e4e6ec;
   --search-focus-border-color: #91abf8;
@@ -14,9 +14,9 @@
 .page-container.dark {
   --search-back-color: #31343f;
   --search-button-back-color: #1f2129;
-  --search-button-hover-back-color: #292c38;
+  --search-button-fore-color: #c3c6d0;
+  --search-button-hover-back-color: #252732;
   --search-fore-color: #f2f3f7;
-  --search-bar-button-fore-color: #c3c6d0;
   --search-placeholder-color: #a0a5ca;
   --search-bar-border-color: #13151b;
   --search-focus-border-color: #344b8d;
