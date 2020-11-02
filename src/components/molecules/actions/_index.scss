@@ -1,10 +1,9 @@
 :root {
   --action-fore-color: #525252;
-  --action-active-fore-color: #2747C7
 }
 
-.page-container-dark {
-  --action-fore-color: #d9d9d9;
+.page-container.dark {
+  --action-fore-color: #adadad;
 }
 
 .card-actions {
@@ -31,7 +30,7 @@
 
     &:hover, &:focus {
       box-shadow: none;
-      color: var(--action-active-fore-color);
+      color: var(--a-link-color);
     }
 
     &:before {
