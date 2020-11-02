@@ -1,11 +1,12 @@
 ---
 title: sum_by
-tags: math,list,function,beginner
+tags: math,list,beginner
 ---
 
-Returns the sum of a list, after mapping each element to a value using the provided function.
+Calculates the sum of a list, after mapping each element to a value using the provided function.
 
-- Use `map()` with `fn` to map each element to a value using the provided function, use `sum()` to return the sum of the values.
+- Use `map()` with `fn` to map each element to a value using the provided function.
+- Use `sum()` to return the sum of the values.
 
 ```py
 def sum_by(lst, fn):

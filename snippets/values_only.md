@@ -15,9 +15,9 @@ def values_only(flat_dict):
 
 ```py
 ages = {
-  "Peter": 10,
-  "Isabel": 11,
-  "Anna": 9,
+  'Peter': 10,
+  'Isabel': 11,
+  'Anna': 9,
 }
 values_only(ages) # [10, 11, 9]
 ```

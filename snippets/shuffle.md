@@ -1,6 +1,6 @@
 ---
 title: shuffle
-tags: list,random,intermediate
+tags: list,random,advanced
 ---
 
 Randomizes the order of the values of an list, returning a new list.
@@ -23,6 +23,6 @@ def shuffle(lst):
 ```
 
 ```py
-foo = [1,2,3]
-shuffle(foo) # [2,3,1], foo = [1,2,3]
+foo = [1, 2, 3]
+shuffle(foo) # [2, 3, 1], foo = [1, 2, 3]
 ```

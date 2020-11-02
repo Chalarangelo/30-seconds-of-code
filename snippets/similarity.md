@@ -5,7 +5,7 @@ tags: list,beginner
 
 Returns a list of elements that exist in both lists.
 
-- Use list comprehension on `a` to only keep values contained in both lists.
+- Use a list comprehension on `a` to only keep values contained in both lists.
 
 ```py
 def similarity(a, b):

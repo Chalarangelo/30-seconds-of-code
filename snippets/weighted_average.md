@@ -14,5 +14,5 @@ def weighted_average(nums, weights):
 ```
 
 ```py
-weighted_average([1, 2, 3], [0.6,0.2,0.3]) # 1.72727
+weighted_average([1, 2, 3], [0.6, 0.2, 0.3]) # 1.72727
 ```
