@@ -1,24 +1,18 @@
 // Colors
 :root {
-  --a-link-color: #0277bd;
-  --a-visited-color: #01579b;
+  --a-link-color: #2747C7;
 }
 
 // Dark mode colors
 .page-container.dark {
   --a-link-color: #6DC7FD;
-  --a-visited-color: #5DB7FE;
 }
 
 a {
   text-decoration: none;
 
-  &:link{
+  &:link, &:visited {
     color: var(--a-link-color);
-  }
-
-  &:visited {
-    color: var(--a-visited-color);
   }
 
   &:hover, &:focus {
