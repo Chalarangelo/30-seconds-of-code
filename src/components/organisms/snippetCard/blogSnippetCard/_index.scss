@@ -105,16 +105,24 @@
   }
 
   h3.blog-body-title {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     line-height: 2rem;
     margin: 1.5rem 0 0;
+
+    @media screen and (min-width: $layout-medium-breakpoint) {
+      font-size: 1.25rem;
+    }
   }
 
   h4.blog-body-title {
-    font-size: 1.125rem;
+    font-size: 1rem;
     line-height: 2rem;
     font-weight: 600;
     margin: 1.5rem 0 0;
+
+    @media screen and (min-width: $layout-medium-breakpoint) {
+      font-size: 1.125rem;
+    }
   }
 
   table.blog-table {

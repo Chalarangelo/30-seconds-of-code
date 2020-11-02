@@ -37,13 +37,17 @@ pre[data-code-language]:not([data-code-language=""]) {
   padding-top: 2.625rem;
 
   &::before {
-    font-size: 1rem;
+    font-size: .875rem;
     color: var(--pre-decorator-color);
     position: absolute;
     top: .8725rem;
     left: .8725rem;
     display: block;
     content: attr(data-code-language);
+
+    @media screen and (min-width: $layout-medium-breakpoint) {
+      font-size: 1rem;
+    }
   }
 }
 

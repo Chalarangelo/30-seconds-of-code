@@ -7,7 +7,11 @@
 
     pre {
       margin: 0;
-      font-size: 1rem;
+      font-size: .875rem;
+
+      @media screen and (min-width: $layout-medium-breakpoint) {
+        font-size: 1rem;
+      }
 
       &:first-of-type {
         border-radius: 0.5rem 0.5rem 0 0;
@@ -30,11 +34,15 @@
 
     .card-example-title {
       padding: 0.25rem .875rem 0;
-      font-size: 1rem;
+      font-size: .875rem;
       text-transform: uppercase;
       background: var(--pre-back-color);
       margin: 0;
       color: var(--pre-decorator-color);
+
+      @media screen and (min-width: $layout-medium-breakpoint) {
+        font-size: 1rem;
+      }
 
       + pre {
         padding: 0.25rem .875rem 1.5rem;
