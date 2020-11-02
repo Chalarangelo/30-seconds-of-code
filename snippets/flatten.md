@@ -5,7 +5,7 @@ tags: list,intermediate
 
 Flattens a list of lists once.
 
-- Use nested list comprehension to extract each value from sub-lists in order.
+- Use a list comprehension to extract each value from sub-lists in order.
 
 ```py
 def flatten(lst):
@@ -13,5 +13,5 @@ def flatten(lst):
 ```
 
 ```py
-flatten([[1,2,3,4],[5,6,7,8]]) # [1, 2, 3, 4, 5, 6, 7, 8]
+flatten([[1, 2, 3, 4], [5, 6, 7, 8]]) # [1, 2, 3, 4, 5, 6, 7, 8]
 ```

@@ -3,9 +3,9 @@ title: every_nth
 tags: list,beginner
 ---
 
-Returns every nth element in a list.
+Returns every `nth` element in a list.
 
-- Use `[nth-1::nth]` to create a new list that contains every nth element of the given list.
+- Use slice notation to create a new list that contains every `nth` element of the given list.
 
 ```py
 def every_nth(lst, nth):

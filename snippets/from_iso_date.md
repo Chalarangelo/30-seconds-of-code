@@ -5,7 +5,7 @@ tags: date,intermediate
 
 Converts a date from its ISO-8601 represenation.
 
-- Use `datetime.datetime.fromisoformat()` to convert the given ISO-8601 date to a `datetime` object.
+- Use `datetime.datetime.fromisoformat()` to convert the given ISO-8601 date to a `datetime.datetime` object.
 
 ```py
 from datetime import datetime

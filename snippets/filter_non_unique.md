@@ -3,10 +3,10 @@ title: filter_non_unique
 tags: list,beginner
 ---
 
-Filters out the non-unique values in a list.
+Creates a list with the non-unique values filtered out.
 
-- Use a `collections.Counter` to get the count of each value in the list.
-- Use list comprehension to create a list containing only the unique values.
+- Use `collections.Counter` to get the count of each value in the list.
+- Use a list comprehension to create a list containing only the unique values.
 
 ```py
 from collections import Counter

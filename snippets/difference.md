@@ -3,9 +3,10 @@ title: difference
 tags: list,beginner
 ---
 
-Returns the difference between two iterables.
+Calculates the difference between two iterables, without filtering duplicate values.
 
-- Create a `set` from `b`, then use list comprehension on `a` to only keep values not contained in the previously created set, `_b`.
+- Create a `set` from `b`.
+- Use a list comprehension on `a` to only keep values not contained in the previously created set, `_b`.
 
 ```py
 def difference(a, b):

@@ -5,12 +5,13 @@ tags: string,intermediate
 
 Decapitalizes the first letter of a string.
 
-- Decapitalize the first letter of the string and then add it with rest of the string.
+- Use list slicing and `str.lower()` to decapitalize the first letter of the string.
+- Use `str.join()` to combine the lowercase first letter with the rest of the characters.
 - Omit the `upper_rest` parameter to keep the rest of the string intact, or set it to `True` to convert to uppercase.
 
 ```py
-def decapitalize(s, upper_rest=False):
-  return s[:1].lower() + (s[1:].upper() if upper_rest else s[1:])
+def decapitalize(s, upper_rest = False):
+  return ''.join([s[:1].lower(), (s[1:].upper() if upper_rest else s[1:])])
 ```
 
 ```py
