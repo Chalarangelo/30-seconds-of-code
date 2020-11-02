@@ -3,10 +3,10 @@ title: is_even
 tags: math,beginner
 ---
 
-Returns `True` if the given number is even, `False` otherwise.
+Checks if the given number is even.
 
-- Checks whether a number is odd or even using the modulo (`%`) operator.
-- Returns `True` if the number is even, `False` if the number is odd.
+- Check whether a number is odd or even using the modulo (`%`) operator.
+- Return `True` if the number is even, `False` if the number is odd.
 
 ```py
 def is_even(num):

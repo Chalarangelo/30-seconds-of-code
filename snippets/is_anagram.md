@@ -5,7 +5,7 @@ tags: string,intermediate
 
 Checks if a string is an anagram of another string (case-insensitive, ignores spaces, punctuation and special characters).
 
-- Use `isalnum()` to filter out non-alphanumeric characters, `lower()` to transform each character to lowercase.
+- Use `str.isalnum()` to filter out non-alphanumeric characters, `str.lower()` to transform each character to lowercase.
 - Use `collections.Counter` to count the resulting characters for each string and compare the results.
 
 ```py
@@ -20,5 +20,5 @@ def is_anagram(s1, s2):
 ```
 
 ```py
-is_anagram("#anagram", "Nag a ram!")  # True
+is_anagram('#anagram', 'Nag a ram!')  # True
 ```

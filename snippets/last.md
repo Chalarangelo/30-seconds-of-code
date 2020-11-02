@@ -5,7 +5,7 @@ tags: list,beginner
 
 Returns the last element in a list.
 
-- use `lst[-1]` to return the last element of the passed list.
+- Use `lst[-1]` to return the last element of the passed list.
 
 ```py
 def last(lst):

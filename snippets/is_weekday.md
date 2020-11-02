@@ -19,6 +19,6 @@ def is_weekday(d = datetime.today()):
 ```py
 from datetime import date
 
-is_weekday(date(2020,10,25)) # False
-is_weekday(date(2020,10,28)) # True
+is_weekday(date(2020, 10, 25)) # False
+is_weekday(date(2020, 10, 28)) # True
 ```
