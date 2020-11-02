@@ -1,6 +1,6 @@
 ---
 title: compose_right
-tags: function,intermediate
+tags: function,advanced
 ---
 
 Performs left-to-right function composition.
@@ -18,7 +18,6 @@ def compose_right(*fns):
 ```py
 add = lambda x, y: x + y
 square = lambda x: x * x
-add_and_square = compose_right(add,square)
-
+add_and_square = compose_right(add, square)
 add_and_square(1, 2) # 9
 ```

@@ -3,9 +3,10 @@ title: all_unique
 tags: list,beginner
 ---
 
-Returns `True` if all the values in a list are unique, `False` otherwise.
+Checks if all the values in a list are unique.
 
-- Use `set()` on the given list to remove duplicates, use `len()` to compare its length with the length of the list.
+- Use `set()` on the given list to keep only unique occurences.
+- Use `len()` to compare the length of the unique values to the original list.
 
 ```py
 def all_unique(lst):
