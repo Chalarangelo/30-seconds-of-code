@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import { combineClassNames } from 'utils';
 import { Button } from 'components/atoms/button';
+import literals from 'lang/en/client/paginator';
 
 const propTypes = {
   className: PropTypes.string,
@@ -53,7 +54,7 @@ const Paginator = ({
         href={ `${baseUrl}/${slugOrderingSegment}/${pageNumber - 1}` }
         rel='prev'
       >
-        { '\u200b' }
+        { literals.previous }
       </a> }
       {
         buttons.map((buttonNumber, i) => (
@@ -86,7 +87,7 @@ const Paginator = ({
         href={ `${baseUrl}/${slugOrderingSegment}/${pageNumber + 1}` }
         rel='next'
       >
-        { '\u200b' }
+        { literals.next }
       </a> }
     </div>
   );
