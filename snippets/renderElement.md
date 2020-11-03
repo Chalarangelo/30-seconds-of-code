@@ -22,16 +22,18 @@ const renderElement = ({ type, props = {} }, container) => {
   const isAttribute = p => !isListener(p) && p !== 'children';
 
   Object.keys(props).forEach(p => {
-    if(isAttribute(p)) element[p] = props[p];
-    if(!isTextElement && isListener(p))
+    if (isAttribute(p)) element[p] = props[p];
+    if (!isTextElement && isListener(p))
       element.addEventListener(p.toLowerCase().slice(2), props[p]);
   });
 
-  if(!isTextElement && props.children && props.children.length)
-    props.children.forEach(childElement => renderElement(childElement, element));
+  if (!isTextElement && props.children && props.children.length)
+    props.children.forEach(childElement =>
+      renderElement(childElement, element)
+    );
 
   container.appendChild(element);
-}
+};
 ```
 
 ```js
@@ -41,14 +43,9 @@ const myElement = {
     type: 'button',
     className: 'btn',
     onClick: () => alert('Clicked'),
-    children: [
-      { props: { nodeValue: 'Click me' } }
-    ]
+    children: [{ props: { nodeValue: 'Click me' } }]
   }
 };
 
-renderElement(
-  myElement,
-  document.body
-);
+renderElement(myElement, document.body);
 ```

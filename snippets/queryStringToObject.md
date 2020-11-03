@@ -18,5 +18,6 @@ const queryStringToObject = url =>
 ```
 
 ```js
-queryStringToObject('https://google.com?page=1&count=10'); // {page: '1', count: '10'}
+queryStringToObject('https://google.com?page=1&count=10');
+// {page: '1', count: '10'}
 ```

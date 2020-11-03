@@ -32,6 +32,6 @@ const colorize = (...args) => ({
 ```js
 console.log(colorize('foo').red); // 'foo' (red letters)
 console.log(colorize('foo', 'bar').bgBlue); // 'foo bar' (blue background)
-console.log(colorize(colorize('foo').yellow, colorize('foo').green).bgWhite); 
+console.log(colorize(colorize('foo').yellow, colorize('foo').green).bgWhite);
 // 'foo bar' (first word in yellow letters, second word in green letters, white background for both)
 ```
