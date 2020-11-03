@@ -50,8 +50,8 @@ Replace `<my-snippet-name>` with the name of the snippet you are adding.
 - Always use soft tabs (2 spaces), never hard tabs.
 - Leave a single space after a comma (`,`) character (both in the description and code).
 - Define multiple variables on the same line, if possible. Use meaningful names (e.g. `letter` instead of `lt`) and follow existing conventions as seen in other snippets. Do not use trailing or leading underscores in variable names.
-- When describing snippets, refer to methods, using their full name. For example, use `Array.prototype.reduce()`, instead of `reduce()`. When using React Hooks, refer to the specific hooks with their full names, such as `React.useState()` and `React.useEffect()`.
-- When using `React.useState()`, try matching the name of the state variable to the function that sets it. For example, use `[isShown, setIsShown]` instead of `[isShown, setShown]`. When using `React.useEffect()`, only return a function if you have to clean up. In that case, name that function `cleanup()`.
+- When describing snippets, refer to methods, using their full name. For example, use `Array.prototype.reduce()`, instead of `reduce()`. When using React Hooks, refer to the specific hooks with their full names, such as `useState()` and `useEffect()`.
+- When using `useState()`, try matching the name of the state variable to the function that sets it. For example, use `[isShown, setIsShown]` instead of `[isShown, setShown]`. When using `useEffect()`, only return a function if you have to clean up. In that case, name that function `cleanup()`.
 - Destructure your component's `props` whenever possible. If any of your props take default parameters, specify their default values in the destructured object.
 - Always use `function MyComponent(props)` or `function MyComponent({ ... })` for function definitions.
 - Always use single quotes for string literals. Use template literals, instead, if necessary.
