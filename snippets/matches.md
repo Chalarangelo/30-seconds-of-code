@@ -16,8 +16,8 @@ const matches = (obj, source) =>
 ```
 
 ```js
-matches({ age: 25, hair: 'long', beard: true }, { hair: 'long', beard: true }); 
+matches({ age: 25, hair: 'long', beard: true }, { hair: 'long', beard: true });
 // true
-matches({ hair: 'long', beard: true }, { age: 25, hair: 'long', beard: true }); 
+matches({ hair: 'long', beard: true }, { age: 25, hair: 'long', beard: true });
 // false
 ```

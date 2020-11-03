@@ -28,5 +28,6 @@ var view = {
   }
 };
 bindAll(view, 'click');
-document.body.addEventListener('click', view.click); // Log 'clicked docs' when clicked.
+document.body.addEventListener('click', view.click);
+// Log 'clicked docs' when clicked.
 ```
