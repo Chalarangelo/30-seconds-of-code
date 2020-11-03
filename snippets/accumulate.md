@@ -10,7 +10,7 @@ Creates an array of partial sums.
 
 ```js
 const accumulate = (...nums) =>
-  nums.reduce((acc, n) => [...acc, n + +acc.slice(-1)],[]);
+  nums.reduce((acc, n) => [...acc, n + +acc.slice(-1)], []);
 ```
 
 ```js
