@@ -25,5 +25,8 @@ const users = [
   { user: 'fred', age: 40, active: true },
 ];
 partition(users, o => o.active);
-// [[{ 'user': 'fred', 'age': 40, 'active': true }],[{ 'user': 'barney', 'age': 36, 'active': false }]]
+// [
+//   [{ user: 'fred', age: 40, active: true }],
+//   [{ user: 'barney', age: 36, active: false }]
+// ]
 ```
