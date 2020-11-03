@@ -1,50 +1,39 @@
 ---
 title: ControlledInput
-tags: components,state,effect,intermediate
+tags: components,input,intermediate
 ---
 
-Renders an `<input>` element with internal state, that uses a callback function to pass its value to the parent component.
+Renders a controlled `<input>` element that uses a callback function to inform its parent about value updates.
 
-- Use object destructuring to set defaults for certain attributes of the `<input>` element.
-- Use the `React.useState()` hook to create the `value` state variable and give it a value of equal to the `defaultValue` prop.
-- Use the `React.useEffect()` hook with a second parameter set to the `value` state variable to call the `callback` function every time `value` is updated.
-- Render an `<input>` element with the appropriate attributes and use the the `onChange` event to upda the `value` state variable.
+- Use the `value` passed down from the parent as the controlled input field's value.
+- Use the `onChange` event to fire the `onValueChange` callback and send the new value to the parent.
+- The parent must update the input field's `value` prop in order for its value to change on user input.
 
 ```jsx
-const ControlledInput = ({
-  callback,
-  type = 'text',
-  disabled = false,
-  readOnly = false,
-  defaultValue,
-  placeholder = ''
-}) => {
-  const [value, setValue] = React.useState(defaultValue);
-
-  React.useEffect(() => {
-    callback(value);
-  }, [value]);
-
+const ControlledInput = ({ value, onValueChange, ...rest }) => {
   return (
     <input
-      defaultValue={defaultValue}
-      type={type}
-      disabled={disabled}
-      readOnly={readOnly}
-      placeholder={placeholder}
-      onChange={({ target: { value } }) => setValue(value)}
+      value={value}
+      onChange={({ target: { value } }) => onValueChange(value)}
+      {...rest}
     />
   );
 };
 ```
 
 ```jsx
-ReactDOM.render(
-  <ControlledInput
-    type="text"
-    placeholder="Insert some text here..."
-    callback={val => console.log(val)}
-  />,
-  document.getElementById('root')
-);
+const Form = () => {
+  const [value, setValue] = React.useState('');
+
+  return (
+    <ControlledInput
+      type="text"
+      placeholder="Insert some text here..."
+      value={value}
+      onValueChange={setValue}
+    />
+  );
+};
+
+ReactDOM.render(<Form />, document.getElementById('root'));
 ```
