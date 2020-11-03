@@ -1,11 +1,11 @@
 // Colors
 :root {
-  --paginator-selected-color: #434ec7;
+  --paginator-selected-color: hsl(235, 54%, 52%);
 }
 
 // Dark mode colors
 .page-container.dark {
-  --paginator-selected-color: #5f91e7;
+  --paginator-selected-color: #678df4;
 }
 
 .paginator {

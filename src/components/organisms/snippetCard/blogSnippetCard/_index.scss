@@ -3,15 +3,15 @@
 // Colors
 :root {
   --blog-quote-border-color: #212631;
-  --table-border-color: hsl(0, 0%, 87%);
+  --table-border-color: #dedede;
   --blog-image-credit-fore-color: #fff;
   --blog-image-credit-back-color: rgba(0, 0, 0, .73);
   --blog-image-credit-link-color:  #6DC7FD;
 }
 
 .page-container.dark {
-  --blog-quote-border-color: #7486af;
-  --table-border-color: hsl(0, 0%, 16%);
+  --blog-quote-border-color: #8697c1;
+  --table-border-color: #454545;
 }
 
 .snippet-card.blog-card {
