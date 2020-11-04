@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
+import { useGtagEvent } from 'components/hooks';
 import { CopyButton, CodepenButton, ShareButton } from 'components/atoms/button';
 import JSX_SNIPPET_PRESETS from 'config/jsxSnippetPresets';
 import literals from 'lang/en/client/common';
@@ -8,12 +9,15 @@ const propTypes = {
   snippet: PropTypes.snippet,
 };
 
+
 /**
- * Generic button component.
+ * Renders a group of actions for a snippet card(share, copy/codepen, github).
+ * Depends on the `Button` component.
  */
 const Actions = ({
   snippet,
 }) => {
+  const gtagCallback = useGtagEvent('click');
   const showCopy = snippet.code && snippet.code.src && !snippet.language.otherLanguages;
   const showCodepen = snippet.code && snippet.code.src && snippet.language.otherLanguages;
   const showCssCodepen = snippet.code && snippet.code.css && snippet.language.otherLanguages;
@@ -45,6 +49,12 @@ const Actions = ({
         href={ snippet.url }
         rel='nofollow noopener noreferrer'
         target='_blank'
+        onClick={ e => {
+          e.preventDefault();
+          // eslint-disable-next-line camelcase
+          gtagCallback({ event_category: 'action-github', value: 1});
+          window.open(e.target.href, '_blank');
+        } }
       >
         { literals.viewOnGitHub }
       </a>
