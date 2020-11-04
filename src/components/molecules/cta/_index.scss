@@ -11,53 +11,30 @@
 }
 
 .page-graphic.graphic-cta {
-  height: 120px;
-  padding-top: 0;
-  padding-left: 120px;
-  margin-top: 2.5rem;
-  margin-bottom: 0.875rem;
+  height: 96px;
+  padding: 0;
+  margin: 2.5rem auto;
+  max-width: 360px;
 
   &::before {
-    background-size: 120px, 120px;
-    width: 120px;
-    left: 0.875rem;
-    height: 120px;
-    background-position-x: left;
-
-    @media screen and (min-width: $layout-medium-breakpoint) {
-      left: calc(6vw + 1.25rem);
-    }
-
-    @media screen and (min-width: $layout-large-breakpoint) {
-      left: calc(8vw + 1.25rem);
-    }
-  }
-
-  @media screen and (min-width: $layout-medium-breakpoint) {
-    padding-left: calc(10vw + 120px);
-    margin-top: 2.375rem;
-  }
-
-  @media screen and (min-width: $layout-large-breakpoint) {
-    padding-right: 10vw;
-    margin-top: 3.625rem;
-    margin-bottom: 4.25rem;
+    background-size: 0, 0;
   }
 
   .page-backdrop-text {
     font-size: 1rem;
-    padding-top: 1.5rem;
     margin-bottom: 1rem;
+    max-width: 240px;
+  }
 
-    @media screen and (min-width: $layout-medium-breakpoint) {
-      margin-bottom: 0.875rem;
-    }
+  @media screen and (min-width: 420px) {
+    padding-left: 120px;
 
-    @media screen and (min-width: $layout-large-breakpoint) {
-      padding-top: 0.375rem;
-      font-size: 1.125rem;
-      line-height: 2;
-      margin: 2rem auto 1rem;
+    &::before {
+      background-size: 96px, 96px;
+      width: 96px;
+      left: 0;
+      height: 96px;
+      background-position-x: left;
     }
   }
 }
