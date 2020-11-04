@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
+import { useGtagEvent } from 'components/hooks';
 import literals from 'lang/en/client/common';
 
 /* eslint-disable camelcase */
@@ -34,6 +35,7 @@ const CodepenButton = ({
   jsPreProcessor = 'none',
   jsExternal = [],
 }) => {
+  const gtagCallback = useGtagEvent('click');
   return (
     <form action='https://codepen.io/pen/define' method='POST' target='_blank' className='btn-form'>
       <input
@@ -52,6 +54,10 @@ const CodepenButton = ({
       <button
         className='btn codepen-btn icon icon-codepen'
         title={ literals.codepen }
+        onClick={ () => {
+          // eslint-disable-next-line camelcase
+          gtagCallback({ event_category: 'action-codepen', value: 1});
+        } }
       >
         { literals.codepen }
       </button>

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
+import { useGtagEvent } from 'components/hooks';
 import copyToClipboard from 'copy-to-clipboard';
 import { Button } from 'components/atoms/button';
 import { combineClassNames } from 'utils';
@@ -18,6 +19,7 @@ const propTypes = {
 const CopyButton = ({
   text,
 }) => {
+  const gtagCallback = useGtagEvent('click');
   const [active, setActive] = React.useState(false);
   const [copying, setCopying] = React.useState(false);
   const [buttonText, setButtonText] = React.useState(literals.copyToClipboard);
@@ -42,6 +44,8 @@ const CopyButton = ({
       className={ combineClassNames`copy-btn icon ${active ? 'icon-check active' : 'icon-clipboard'}` }
       title={ literals.copyToClipboard }
       onClick={ () => {
+        // eslint-disable-next-line camelcase
+        gtagCallback({ event_category: 'action-copy', value: 1});
         setCopying(true);
         setButtonText(literals.copiedToClipboard);
       } }

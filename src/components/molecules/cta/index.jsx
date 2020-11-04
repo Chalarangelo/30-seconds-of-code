@@ -30,7 +30,7 @@ const CTA = () => {
         onClick={ e => {
           e.preventDefault();
           // eslint-disable-next-line camelcase
-          gtagCallback({ event_category: 'cta-twitter', event_label: e.target.href, value: 1});
+          gtagCallback({ event_category: 'cta-twitter', value: 1});
           window.open(e.target.href, '_blank');
         } }
       >
