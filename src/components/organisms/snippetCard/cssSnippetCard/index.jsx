@@ -4,23 +4,19 @@ import Card from 'components/atoms/card';
 import TagList from 'components/atoms/tagList';
 import Expertise from 'components/atoms/expertise';
 import CodeBlock from 'components/atoms/codeBlock';
-import { CodepenButton } from 'components/atoms/button';
+import Actions from 'components/molecules/actions';
 import SnippetPreview from 'components/atoms/snippetPreview';
-import literals from 'lang/en/client/common';
 
 const propTypes = {
   snippet: PropTypes.snippet,
-  hasGithubLinksEnabled: PropTypes.bool,
 };
 
 /**
  * CSS snippet card.
  * Used for CSS snippets.
- * @param {bool} hasGithubLinksEnabled - Not mapped to state, has to be passed.
  */
 const SnippetCard = ({
   snippet,
-  hasGithubLinksEnabled = false,
 }) => {
   return (
     <Card className='snippet-card' >
@@ -33,26 +29,6 @@ const SnippetCard = ({
           <TagList tags={ [ snippet.language.long, ...snippet.tags.all ] } />
         </div>
       </div>
-      { hasGithubLinksEnabled && (
-        <a
-          className='github-link'
-          href={ snippet.url }
-          rel='nofollow noopener noreferrer'
-          target='_blank'
-        >
-          { literals.viewOnGitHub }
-        </a>
-      ) }
-      { process.env.ENV === 'development' && (
-        <a
-          className='github-link'
-          href={ snippet.vscodeUrl }
-          rel='nofollow noopener noreferrer'
-          target='_blank'
-        >
-          { literals.openInVscode }
-        </a>
-      ) }
       <div
         className='card-description'
         dangerouslySetInnerHTML={ { __html: snippet.html.fullDescription } }
@@ -61,11 +37,6 @@ const SnippetCard = ({
         <SnippetPreview
           scopeId={ snippet.id.slice(snippet.id.lastIndexOf('/') + 1) }
           scopedCss={ snippet.code.scopedCss }
-          htmlCode={ snippet.code.html }
-          jsCode={ snippet.code.js }
-        />
-        <CodepenButton
-          cssCode={ snippet.code.css }
           htmlCode={ snippet.code.html }
           jsCode={ snippet.code.js }
         />
@@ -88,6 +59,11 @@ const SnippetCard = ({
             className='card-code'
           />
         }
+      </div>
+      <div className='card-actions'>
+        <Actions
+          snippet={ snippet }
+        />
       </div>
     </Card>
   );

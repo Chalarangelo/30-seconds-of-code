@@ -1,11 +1,11 @@
 // Colors
 :root {
-  --paginator-selected-color: #434ec7;
+  --paginator-selected-color: hsl(235, 54%, 52%);
 }
 
 // Dark mode colors
 .page-container.dark {
-  --paginator-selected-color: #5f91e7;
+  --paginator-selected-color: #678df4;
 }
 
 .paginator {
@@ -27,7 +27,6 @@
     text-align: center;
     box-shadow: none;
     background: transparent;
-    font-size: 1.125rem;
     color: var(--fore-color);
 
     &:not(.current-page) {
@@ -45,17 +44,45 @@
     &.previous-page, &.next-page {
       color: var(--paginator-selected-color);
       position: relative;
-      width: 52px;
       box-sizing: border-box;
+      margin: 0.625rem 1rem;
+      font-size: 0;
+
+      @media screen and (min-width: $layout-medium-breakpoint) {
+        font-size: 1rem;
+      }
 
       &:before {
         position: absolute;
         font-size: 28px;
-        width: 100%;
-        text-align: center;
-        left: 0;
         top: 0;
-        line-height: 44px;
+        line-height: 32px;
+
+        @media screen and (min-width: $layout-medium-breakpoint) {
+          line-height: 44px;
+        }
+      }
+    }
+
+    &.previous-page {
+      &:before {
+        text-align: left;
+        right: 0;
+
+        @media screen and (min-width: $layout-medium-breakpoint) {
+          left: -2rem;
+        }
+      }
+    }
+
+    &.next-page {
+      &:before {
+        text-align: right;
+        left: 0;
+
+        @media screen and (min-width: $layout-medium-breakpoint) {
+          right: -2rem;
+        }
       }
     }
 

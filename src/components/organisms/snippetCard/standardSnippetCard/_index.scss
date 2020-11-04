@@ -1,31 +1,24 @@
 @import '../../../atoms/card/mixins';
 
-:root {
-  --example-title-color: #d3d3d3;
-}
-
 .snippet-card {
 
   .card-source-content {
-    @include card-full-width-section;
-    margin-top: 1.375rem;
-    margin-bottom: 0;
-
-    .copy-btn, .codepen-btn {
-      position: absolute;
-      top: -1.625rem;
-      right: 1.5rem;
-    }
+    margin: 1.125rem 0 0;
 
     pre {
       margin: 0;
+      font-size: .875rem;
+
+      @media screen and (min-width: $layout-medium-breakpoint) {
+        font-size: 1rem;
+      }
 
       &:first-of-type {
-        border-radius: 1.375rem 0 0 0;
+        border-radius: 0.5rem 0.5rem 0 0;
       }
 
       &:last-child {
-        border-radius: 0 0 0.25rem 0.25rem;
+        border-radius: 0 0 0.5rem 0.5rem;
         margin-bottom: -1rem;
       }
     }
@@ -40,15 +33,19 @@
     }
 
     .card-example-title {
-      padding: 0.25rem 1.5rem 0;
-      font-size: 0.875rem;
+      padding: 0.25rem .875rem 0;
+      font-size: .875rem;
       text-transform: uppercase;
       background: var(--pre-back-color);
       margin: 0;
-      color: var(--example-title-color);
+      color: var(--pre-decorator-color);
+
+      @media screen and (min-width: $layout-medium-breakpoint) {
+        font-size: 1rem;
+      }
 
       + pre {
-        padding: 0.25rem 1.5rem 1.125rem;
+        padding: 0.25rem .875rem 1.5rem;
       }
     }
 
@@ -66,6 +63,12 @@
     min-width: calc(100% + 2rem);
     object-fit: cover;
     margin-bottom: 1.5rem;
+  }
+
+  .card-actions {
+    margin: 2rem 0 -1rem;
+    display: flex;
+    justify-content: space-around;
   }
 }
 

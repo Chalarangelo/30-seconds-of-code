@@ -15,19 +15,19 @@
 
 // Dark mode colors
 .page-container.dark {
-  --back-color: #1f2028;
-  --fore-color: #c8cad5;
+  --back-color: #0e0e11;
+  --fore-color: #dadbe2;
   --fore-color-light: #acb1c3;
-  --fore-color-dark: #c5cadd;
+  --fore-color-dark: #dcdfea;
   --fore-color-darker: #fcfcfd;
 }
 
 body.dark {
-  background: #12151c;  // Hack to remove white space
+  background: #060709;  // Hack to remove white space
   // Scrollbar
-  --scrollbar-back-color: hsl(227, 21%, 9%);
-  --scrollbar-fore-color: hsl(228, 17%, 27%);
-  --scrollbar-fore-color-dark: hsl(228, 17%, 36%);
+  --scrollbar-back-color: hsl(227, 19%, 3%);
+  --scrollbar-fore-color: hsl(228, 19%, 33%);
+  --scrollbar-fore-color-dark: hsl(228, 19%, 42%);
 }
 
 // Layout breakpoints

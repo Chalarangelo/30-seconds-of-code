@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import { combineClassNames } from 'utils';
+import { useGtagEvent } from 'components/hooks';
 import literals from 'lang/en/client/common';
 
 /* eslint-disable camelcase */
@@ -35,11 +35,9 @@ const CodepenButton = ({
   jsPreProcessor = 'none',
   jsExternal = [],
 }) => {
-  const [active, setActive] = React.useState(false);
-  const [processing, setProcessing] = React.useState(false);
-  const btnRef = React.useRef();
+  const gtagCallback = useGtagEvent('click');
   return (
-    <form action='https://codepen.io/pen/define' method='POST' target='_blank'>
+    <form action='https://codepen.io/pen/define' method='POST' target='_blank' className='btn-form'>
       <input
         type='hidden'
         name='data'
@@ -54,21 +52,15 @@ const CodepenButton = ({
         }
       />
       <button
-        className={ combineClassNames`btn codepen-btn icon ${active ? 'icon-check active' : 'icon-codepen'}` }
-        ref={ btnRef }
+        className='btn codepen-btn icon icon-codepen'
         title={ literals.codepen }
-        onClick={ e => {
-          if(!processing) {
-            e.preventDefault();
-            setTimeout(() => setActive(true), 100);
-            setTimeout(() => {
-              setActive(false);
-              btnRef.current.click();
-            }, 750);
-          }
-          setProcessing(!processing);
+        onClick={ () => {
+          // eslint-disable-next-line camelcase
+          gtagCallback({ event_category: 'action-codepen', value: 1});
         } }
-      />
+      >
+        { literals.codepen }
+      </button>
     </form>
   );
 };

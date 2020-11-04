@@ -2,23 +2,20 @@ import React, {Fragment} from 'react';
 import PropTypes from 'typedefs/proptypes';
 import Card from 'components/atoms/card';
 import TagList from 'components/atoms/tagList';
-import literals from 'lang/en/client/common';
+import Actions from 'components/molecules/actions';
 
 const propTypes = {
   snippet: PropTypes.snippet,
-  hasGithubLinksEnabled: PropTypes.bool,
 };
 
 /**
  * Blog snippet card.
  * Used for blog posts.
- * @param {bool} hasGithubLinksEnabled - Not mapped to state, has to be passed.
  */
 const SnippetCard = ({
   snippet,
-  hasGithubLinksEnabled = false,
 }) => (
-  <Card className='snippet-card' >
+  <Card className='snippet-card blog-card'>
     <h1 className='card-title'>{ snippet.title }</h1>
     <div className="card-meta-info">
       { snippet.authors.map((a, i, arr) => (
@@ -39,32 +36,6 @@ const SnippetCard = ({
       }) }
       { ' · ' }
       <TagList tags={ snippet.tags.all } />
-      { hasGithubLinksEnabled && (
-        <>
-          { ' · ' }
-          <a
-            className='github-link'
-            href={ snippet.url }
-            rel='nofollow noopener noreferrer'
-            target='_blank'
-          >
-            { literals.viewOnGitHub }
-          </a>
-        </>
-      ) }
-      { process.env.ENV === 'development' && (
-        <>
-          { ' · ' }
-          <a
-            className='github-link'
-            href={ snippet.vscodeUrl }
-            rel='nofollow noopener noreferrer'
-            target='_blank'
-          >
-            { literals.openInVscode }
-          </a>
-        </>
-      ) }
     </div>
     { snippet.cover && snippet.cover &&
       <img className='card-cover-image' src={ snippet.cover } />
@@ -73,6 +44,11 @@ const SnippetCard = ({
       className='card-description'
       dangerouslySetInnerHTML={ { __html: snippet.html.fullDescription } }
     />
+    <div className='card-actions'>
+      <Actions
+        snippet={ snippet }
+      />
+    </div>
   </Card>
 );
 

@@ -6,14 +6,18 @@
 }
 
 .page-container.dark {
-  --code-fore-color: #d1dafe;
-  --code-back-color: #343b55;
+  --code-fore-color: #d7def9;
+  --code-back-color: #232839;
   --code-selected-color: #0dbcfb;
 }
 
 // Style code
 code, kbd, pre {
-  font-size: 0.875em;
+  font-size: .875rem;
+
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    font-size: 1rem;
+  }
 }
 code, kbd, pre, code *, pre *, kbd *, code[class*="language-"], pre[class*="language-"] {
   font-family: 'Roboto Mono', Menlo, Consolas, monospace;

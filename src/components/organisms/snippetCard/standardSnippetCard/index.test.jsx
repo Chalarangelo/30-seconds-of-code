@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { renderConnected } from 'test/utils';
+import { cleanup } from '@testing-library/react';
 import literals from 'lang/en/client/common';
 import SnippetCard from './index';
 import { fullSnippet, fullReactSnippet } from 'fixtures/snippets';
@@ -8,7 +9,7 @@ describe('<SnippetCard />', () => {
   let wrapper, card, tagList, codeBlocks;
 
   beforeEach(() => {
-    wrapper = render(
+    wrapper = renderConnected(
       <SnippetCard snippet={ fullSnippet } />
     ).container;
     card = wrapper.querySelector('.card');
@@ -58,6 +59,10 @@ describe('<SnippetCard />', () => {
     it('a CopyButton component', () => {
       expect(card.querySelectorAll('.copy-btn')).toHaveLength(1);
     });
+
+    it('the card actions', () => {
+      expect(card.querySelectorAll('.card-actions')).toHaveLength(1);
+    });
   });
 
   it('should have the correct card title', () => {
@@ -97,21 +102,9 @@ describe('<SnippetCard />', () => {
     expect(codeBlocks[1].innerHTML).toBe(fullSnippet.html.example);
   });
 
-  describe('when github links are enabled', () => {
-    beforeEach(() => {
-      wrapper = render(
-        <SnippetCard snippet={ fullSnippet } hasGithubLinksEnabled/>
-      ).container;
-    });
-
-    it('should render a github link', () => {
-      expect(wrapper.querySelectorAll('a.github-link')).toHaveLength(1);
-    });
-  });
-
   describe('with additional languages', () => {
     beforeEach(() => {
-      wrapper = render(
+      wrapper = renderConnected(
         <SnippetCard snippet={ fullReactSnippet }/>
       ).container;
     });

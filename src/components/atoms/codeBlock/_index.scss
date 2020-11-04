@@ -3,7 +3,7 @@
   --pre-fore-color: #e57373;
   --pre-back-color: #1e253d;
   --pre-selected-color: #041248;
-  --pre-decorator-color: #607d8b;
+  --pre-decorator-color: #92A9B4;
 
   --token-color-a: #7f99a5;   // Comments
   --token-color-b: #bdbdbd;   // Punctuation
@@ -27,23 +27,27 @@ pre {
 
 pre[class*="language-"] {
   color: var(--pre-fore-color);
-  padding: 1rem 1.5rem;
+  padding: 1rem .875rem;
   overflow: auto;
   margin: 0.5rem 0;
   white-space: pre-wrap;
 }
 
 pre[data-code-language]:not([data-code-language=""]) {
-  padding-top: 2.375rem;
+  padding-top: 2.625rem;
 
   &::before {
-    font-size: 0.875rem;
+    font-size: .875rem;
     color: var(--pre-decorator-color);
     position: absolute;
     top: .8725rem;
-    left: 1.5rem;
+    left: .8725rem;
     display: block;
     content: attr(data-code-language);
+
+    @media screen and (min-width: $layout-medium-breakpoint) {
+      font-size: 1rem;
+    }
   }
 }
 

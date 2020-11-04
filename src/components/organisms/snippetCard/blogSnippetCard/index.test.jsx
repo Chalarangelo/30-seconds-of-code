@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { renderConnected } from 'test/utils';
+import { cleanup } from '@testing-library/react';
 import BlogSnippetCard from './index';
 import { fullBlogSnippet } from 'fixtures/snippets';
 
@@ -10,7 +11,7 @@ describe('<BlogSnippetCard />', () => {
   let wrapper, card, tagList;
 
   beforeEach(() => {
-    wrapper = render(
+    wrapper = renderConnected(
       <BlogSnippetCard snippet={ fullBlogSnippet } />
     ).container;
     card = wrapper.querySelector('.card');
@@ -34,6 +35,10 @@ describe('<BlogSnippetCard />', () => {
 
     it('the card description', () => {
       expect(card.querySelectorAll('.card-description')).toHaveLength(1);
+    });
+
+    it('the card actions', () => {
+      expect(card.querySelectorAll('.card-actions')).toHaveLength(1);
     });
 
     it('the card meta info', () => {
@@ -60,24 +65,9 @@ describe('<BlogSnippetCard />', () => {
     expect(card.querySelector('img').src).toContain(fullBlogSnippet.cover);
   });
 
-  describe('when github links are enabled', () => {
-    beforeEach(() => {
-      wrapper = render(
-        <BlogSnippetCard
-          snippet={ fullBlogSnippet }
-          hasGithubLinksEnabled
-        />
-      ).container;
-    });
-
-    it('should render a github link', () => {
-      expect(wrapper.querySelectorAll('a.github-link')).toHaveLength(1);
-    });
-  });
-
   describe('with multiple auhors', () => {
     beforeEach(() => {
-      wrapper = render(
+      wrapper = renderConnected(
         <BlogSnippetCard
           snippet={ {
             ...fullBlogSnippet,
@@ -98,7 +88,7 @@ describe('<BlogSnippetCard />', () => {
 
   describe('without a cover', () => {
     beforeEach(() => {
-      wrapper = render(
+      wrapper = renderConnected(
         <BlogSnippetCard snippet={ { ...fullBlogSnippet, cover: '' } }/>
       ).container;
       card = wrapper.querySelector('.card');

@@ -21,7 +21,6 @@ const propTypes = {
       })
     ),
   }),
-  hasGithubLinksEnabled: PropTypes.bool,
 };
 
 /**
@@ -36,7 +35,6 @@ const SnippetPage = ({
     breadcrumbs,
     pageDescription,
   },
-  hasGithubLinksEnabled,
 }) => {
   const SnippetCard = cardComponents[cardTemplate];
   return (
@@ -59,10 +57,7 @@ const SnippetPage = ({
       />
       <Shell>
         <Breadcrumbs breadcrumbs={ breadcrumbs } />
-        <SnippetCard
-          snippet={ snippet }
-          hasGithubLinksEnabled={ !!hasGithubLinksEnabled }
-        />
+        <SnippetCard snippet={ snippet } />
         <CTA/>
         <RecommendationList snippetList={ recommendedSnippets } />
       </Shell>
@@ -72,9 +67,4 @@ const SnippetPage = ({
 
 SnippetPage.propTypes = propTypes;
 
-export default connect(
-  state => ({
-    hasGithubLinksEnabled: state.shell.hasGithubLinksEnabled,
-  }),
-  null
-)(SnippetPage);
+export default SnippetPage;

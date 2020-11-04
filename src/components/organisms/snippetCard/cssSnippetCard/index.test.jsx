@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { renderConnected } from 'test/utils';
+import { cleanup } from '@testing-library/react';
 import CssSnippetCard from './index';
 import { fullCssSnippet, fullCssWithJsSnippet } from 'fixtures/snippets';
 
@@ -10,7 +11,7 @@ describe('<CssSnippetCard />', () => {
   let wrapper, card, tagList, snippetPreview, codeBlocks;
 
   beforeEach(() => {
-    wrapper = render(
+    wrapper = renderConnected(
       <CssSnippetCard snippet={ fullCssSnippet } />
     ).container;
     card = wrapper.querySelector('.card');
@@ -56,6 +57,10 @@ describe('<CssSnippetCard />', () => {
 
     it('three CodeBlock components', () => {
       expect(card.querySelectorAll('pre')).toHaveLength(2);
+    });
+
+    it('the card actions', () => {
+      expect(card.querySelectorAll('.card-actions')).toHaveLength(1);
     });
   });
 
@@ -107,7 +112,7 @@ describe('<CssSnippetCard />', () => {
   describe('including JS code', () => {
 
     beforeEach(() => {
-      wrapper = render(
+      wrapper = renderConnected(
         <CssSnippetCard snippet={ fullCssWithJsSnippet } />
       ).container;
       card = wrapper.querySelector('.card');
@@ -122,18 +127,6 @@ describe('<CssSnippetCard />', () => {
 
     it('should pass the js data to the first CodeBlock component', () => {
       expect(codeBlocks[2].innerHTML).toBe(fullCssWithJsSnippet.html.js);
-    });
-  });
-
-  describe('when github links are enabled', () => {
-    beforeEach(() => {
-      wrapper = render(
-        <CssSnippetCard snippet={ fullCssSnippet } hasGithubLinksEnabled/>
-      ).container;
-    });
-
-    it('should render a github link', () => {
-      expect(wrapper.querySelectorAll('a.github-link')).toHaveLength(1);
     });
   });
 });

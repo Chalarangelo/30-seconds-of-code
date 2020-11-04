@@ -14,13 +14,17 @@
   line-height: 1.5;
   display: inline-block;
   position: relative;
-  margin: 0;
   margin: 0 1rem 0 0;
 
   // Breadcrumb link
   a {
+
     &, &:link, &:visited {
       color: var(--fore-color-dark);
+
+      &:hover, &:focus {
+        color: var(--a-link-color);
+      }
     }
   }
 
@@ -43,7 +47,7 @@
 
     a {
       &, &:link, &:visited {
-        color: var(--fore-color);
+        color: var(--fore-color-light);
         pointer-events: none;
       }
     }
