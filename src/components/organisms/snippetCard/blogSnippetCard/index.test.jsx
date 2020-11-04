@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { renderConnected } from 'test/utils';
+import { cleanup } from '@testing-library/react';
 import BlogSnippetCard from './index';
 import { fullBlogSnippet } from 'fixtures/snippets';
 
@@ -10,7 +11,7 @@ describe('<BlogSnippetCard />', () => {
   let wrapper, card, tagList;
 
   beforeEach(() => {
-    wrapper = render(
+    wrapper = renderConnected(
       <BlogSnippetCard snippet={ fullBlogSnippet } />
     ).container;
     card = wrapper.querySelector('.card');
@@ -66,7 +67,7 @@ describe('<BlogSnippetCard />', () => {
 
   describe('with multiple auhors', () => {
     beforeEach(() => {
-      wrapper = render(
+      wrapper = renderConnected(
         <BlogSnippetCard
           snippet={ {
             ...fullBlogSnippet,
@@ -87,7 +88,7 @@ describe('<BlogSnippetCard />', () => {
 
   describe('without a cover', () => {
     beforeEach(() => {
-      wrapper = render(
+      wrapper = renderConnected(
         <BlogSnippetCard snippet={ { ...fullBlogSnippet, cover: '' } }/>
       ).container;
       card = wrapper.querySelector('.card');

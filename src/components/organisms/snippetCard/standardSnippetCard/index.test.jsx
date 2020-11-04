@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { renderConnected } from 'test/utils';
+import { cleanup } from '@testing-library/react';
 import literals from 'lang/en/client/common';
 import SnippetCard from './index';
 import { fullSnippet, fullReactSnippet } from 'fixtures/snippets';
@@ -8,7 +9,7 @@ describe('<SnippetCard />', () => {
   let wrapper, card, tagList, codeBlocks;
 
   beforeEach(() => {
-    wrapper = render(
+    wrapper = renderConnected(
       <SnippetCard snippet={ fullSnippet } />
     ).container;
     card = wrapper.querySelector('.card');
@@ -103,7 +104,7 @@ describe('<SnippetCard />', () => {
 
   describe('with additional languages', () => {
     beforeEach(() => {
-      wrapper = render(
+      wrapper = renderConnected(
         <SnippetCard snippet={ fullReactSnippet }/>
       ).container;
     });

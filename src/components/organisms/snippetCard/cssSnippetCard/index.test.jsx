@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { renderConnected } from 'test/utils';
+import { cleanup } from '@testing-library/react';
 import CssSnippetCard from './index';
 import { fullCssSnippet, fullCssWithJsSnippet } from 'fixtures/snippets';
 
@@ -10,7 +11,7 @@ describe('<CssSnippetCard />', () => {
   let wrapper, card, tagList, snippetPreview, codeBlocks;
 
   beforeEach(() => {
-    wrapper = render(
+    wrapper = renderConnected(
       <CssSnippetCard snippet={ fullCssSnippet } />
     ).container;
     card = wrapper.querySelector('.card');
@@ -111,7 +112,7 @@ describe('<CssSnippetCard />', () => {
   describe('including JS code', () => {
 
     beforeEach(() => {
-      wrapper = render(
+      wrapper = renderConnected(
         <CssSnippetCard snippet={ fullCssWithJsSnippet } />
       ).container;
       card = wrapper.querySelector('.card');
