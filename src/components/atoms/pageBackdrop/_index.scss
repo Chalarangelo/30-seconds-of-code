@@ -29,7 +29,7 @@
   .page-graphic {
 
     &::before {
-      filter: brightness(0.7) invert(1) saturate(2) hue-rotate(180deg)
+      filter: brightness(0.85) invert(1) saturate(2.5) hue-rotate(170deg);
     }
   }
 }
