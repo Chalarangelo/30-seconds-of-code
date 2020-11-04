@@ -18,8 +18,13 @@
 
   // Breadcrumb link
   a {
+
     &, &:link, &:visited {
       color: var(--fore-color-dark);
+
+      &:hover, &:focus {
+        color: var(--a-link-color);
+      }
     }
   }
 
