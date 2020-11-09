@@ -3,7 +3,7 @@ title: when
 tags: function,intermediate
 ---
 
-Tests a value, `x`, against a `predicate` function, conditionally applying a function. 
+Tests a value, `x`, against a testing function, conditionally applying a function. 
 
 - Check if the value of `predicate(x)` is `True` and if so return `when_true(x)`, otherwise return `x`.
 
