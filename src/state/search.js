@@ -1,4 +1,4 @@
-import tokenize from 'engines/searchIndexingEngine';
+import { quickParseTokens as tokenize } from 'engines/searchIndexingEngine';
 
 // Default state
 const initialState = {
