@@ -179,7 +179,7 @@ const cleanStopWords = words =>
 /**
  * Deduplicates a list of tokens.
  */
-const deduplicateTokens = tokens => [...new Set(tokens)];
+const deduplicateTokens = tokens => [...new Set(tokens.map(t => t.replace(/['-]$/, '')))];
 
 /**
  * Given a string, produce a list of tokens.
