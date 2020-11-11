@@ -191,4 +191,14 @@ const parseTokens = str =>
     !!tkn && tkn.length > 1 && !/^-?\d+$/i.test(tkn) && !/^[()[\]$^.;:|\\/%&*#@!%,"'~`\-+=]+$/i.test(tkn)
   );
 
+/**
+ * Given a string, produce a list of tokens, without cleaning stopwords.
+ */
+export const quickParseTokens = str =>
+  deduplicateTokens(
+    tokenize(str).map(tkn => stem(tkn))
+  ).filter(tkn =>
+    !!tkn && tkn.length > 1 && !/^-?\d+$/i.test(tkn) && !/^[()[\]$^.;:|\\/%&*#@!%,"'~`\-+=]+$/i.test(tkn)
+  );
+
 export default parseTokens;
