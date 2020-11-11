@@ -4,7 +4,7 @@ type: story
 tags: javascript,function
 authors: chalarangelo
 cover: blog_images/js-functions.jpg
-excerpt: Learn everything you need to know about JavaScript's Function.prototype.call(), Function.prototype.apply() and Function.prototype.bind() with this short guide.
+excerpt: Learn everything you need to know about JavaScript's `Function.prototype.call()`, `Function.prototype.apply()` and `Function.prototype.bind()` with this short guide.
 ---
 
 ### Function.prototype.call()
