@@ -87,7 +87,7 @@ const Meta = ({
   if(typeof window !== 'undefined' && acceptsCookies) {
     scripts.push({
       async: '',
-      src: `https://www.googletagmanager.com/gtag/js?id=${config.googleAnalytics.id}`,
+      src: `https://www.googletagmanager.com/gtag/js?id=${config.googleAnalytics.v4Id}`,
     });
     // GTAG
     scripts.push({
