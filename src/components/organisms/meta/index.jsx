@@ -97,7 +97,7 @@ const Meta = ({
       gtag('js', new Date());
       gtag(
         'config',
-        '${config.googleAnalytics.id}',
+        '${config.googleAnalytics.v4Id}',
         ${JSON.stringify(config.googleAnalytics.config)}
       );
       `,
