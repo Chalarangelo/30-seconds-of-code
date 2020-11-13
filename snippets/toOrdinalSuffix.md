@@ -3,7 +3,7 @@ title: toOrdinalSuffix
 tags: math,intermediate
 ---
 
-Adds an ordinal suffix to a number.
+Takes a number and returns it as a string with the correct ordinal indicator suffix.
 
 - Use the modulo operator (`%`) to find values of single and tens digits.
 - Find which ordinal pattern digits match.
