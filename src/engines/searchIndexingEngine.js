@@ -1,5 +1,5 @@
 import searchEngineConfig from 'config/searchEngine';
-const { stopWords } = searchEngineConfig;
+const { serverStopWords, clientStopWords } = searchEngineConfig;
 
 // Standard suffix manipulations.
 const step2list = {
@@ -172,9 +172,12 @@ const stem = str => {
  * Removes stop words from an array of words:
  * - Use the list of stop words to remove stop words from the given array
  */
-const cleanStopWords = words =>
+const cleanStopWords = (stopWords, words) =>
   words
     .filter(tkn => !stopWords.includes(tkn));
+
+const cleanServerStopWords = words => cleanStopWords(serverStopWords, words);
+const cleanClientStopWords = words => cleanStopWords(clientStopWords, words);
 
 /**
  * Deduplicates a list of tokens.
@@ -182,21 +185,21 @@ const cleanStopWords = words =>
 const deduplicateTokens = tokens => [...new Set(tokens.map(t => t.replace(/['-]$/, '')))];
 
 /**
- * Given a string, produce a list of tokens.
+ * Given a string, produce a list of tokens (server-side variant).
  */
 const parseTokens = str =>
   deduplicateTokens(
-    cleanStopWords(tokenize(str)).map(tkn => stem(tkn))
+    cleanServerStopWords(tokenize(str)).map(tkn => stem(tkn))
   ).filter(tkn =>
     !!tkn && tkn.length > 1 && !/^-?\d+$/i.test(tkn) && !/^[()[\]$^.;:|\\/%&*#@!%,"'~`\-+=]+$/i.test(tkn)
   );
 
 /**
- * Given a string, produce a list of tokens, without cleaning stopwords.
+ * Given a string, produce a list of tokens (client-side variant).
  */
 export const quickParseTokens = str =>
   deduplicateTokens(
-    tokenize(str).map(tkn => stem(tkn))
+    cleanClientStopWords(tokenize(str)).map(tkn => stem(tkn))
   ).filter(tkn =>
     !!tkn && tkn.length > 1 && !/^-?\d+$/i.test(tkn) && !/^[()[\]$^.;:|\\/%&*#@!%,"'~`\-+=]+$/i.test(tkn)
   );
