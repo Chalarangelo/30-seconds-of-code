@@ -1,4 +1,4 @@
-import tokenize from 'engines/searchIndexingEngine';
+import { quickParseTokens as tokenize } from 'engines/searchIndexingEngine';
 
 // Default state
 const initialState = {
@@ -45,9 +45,15 @@ export const searchByKeyphrase = (keyphrase, searchIndex) => {
     if (t.length && searchIndex && searchIndex.length) {
       results = searchIndex
         .map(snippet => {
-          snippet.score = snippet.title.toLowerCase().trim() === q
+          const normalizedSnippetTitle = snippet.title.toLowerCase().trim();
+          snippet.score = normalizedSnippetTitle === q
             ? 1.01
-            : t.reduce((acc, tkn) => snippet.searchTokens.indexOf(tkn) !== -1 ? acc + 1 : acc, 0) / t.length;
+            : t.reduce((acc, tkn) =>
+              normalizedSnippetTitle.indexOf(tkn) !== -1 ||
+              snippet.searchTokens.indexOf(tkn) !== -1
+                ? acc + 1
+                : acc, 0
+            ) / t.length;
           return snippet;
         })
         .filter(snippet => snippet.score > 0.3)
