@@ -14,5 +14,5 @@
     "foreColor": "#ffffff",
     "iconName": "python"
   },
-  "biasPenaltyMultiplier": 1.1
+  "biasPenaltyMultiplier": 1.05
 }
