@@ -1,18 +1,18 @@
 ---
-title: Input with Prefix
-tags: visual,interactivity,intermediate
+title: Input with prefix
+tags: interactivity,visual,intermediate
 ---
 
 Creates an input with a visual, non-editable prefix.
 
-- Create a parent element, containing the prefix and the input 
-- Remove border and outline from the input, and apply it to the parent element, to give it the appearance of an input box
-- Use `:focus-within` selector to change the parent element style accordingly
+- Use `display: flex` to create a container element.
+- Remove the border and outline from the `input` field and apply them to the parent element instead to make it look like an input box.
+- Use the `:focus-within` selector to style the parent element accordingly, when the user interacts with the `input` field.
 
 ```html
 <div class="input-box">
-  <span class="prefix">R$</span>
-  <input />  
+  <span class="prefix">+30</span>
+  <input type="tel" placeholder="210 123 4567"/>  
 </div>
 ```
 
@@ -20,40 +20,29 @@ Creates an input with a visual, non-editable prefix.
 .input-box {
   display: flex;
   align-items: center;
-  
   max-width: 300px;  
-  border: 1px #A0AEC0 solid;
+  border: 1px solid #a0a0a0;
   border-radius: 4px;
   padding-left: 0.5rem;
   overflow: hidden;
-  
   font-family: sans-serif;
-  
-  transition: border-color 0.5s ease;
-}
-
-.input-box:focus-within, .input-box:hover {
-  border-color: #38B2AC;
 }
 
 .input-box .prefix {
   font-weight: 300;
   font-size: 14px;
-  color: #A0AEC0;
+  color: #999;
 }
-
-.input-box:focus-within .prefix, .input-box:hover .prefix { 
-  color: #38B2AC;
-}
-
 
 .input-box input {
   flex-grow: 1;
-  
+  font-size: 14px;
   border: none;
   outline: none;
   padding: 0.5rem;
-  
 } 
 
+.input-box:focus-within {
+  border-color: #777;
+}
 ```
