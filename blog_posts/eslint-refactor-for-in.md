@@ -1,6 +1,6 @@
 ---
-title: Refactoring your for...in loops to avoid ESLint warnings
-type: story
+title: "Tip: Refactoring your for...in loops to avoid ESLint warnings"
+type: tip
 tags: javascript,array,iterator,eslint
 authors: chalarangelo
 cover: blog_images/copy-text-to-clipboard-with-javascript.jpg

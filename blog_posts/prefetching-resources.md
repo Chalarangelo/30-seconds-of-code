@@ -1,6 +1,6 @@
 ---
-title: Prefetching resources in the browser
-type: story
+title: "Tip: Prefetching resources in the browser"
+type: tip
 tags: webdev,html,browser
 authors: chalarangelo
 cover: blog_images/prefetching-resources.jpg

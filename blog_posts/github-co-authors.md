@@ -1,6 +1,6 @@
 ---
-title: How can I add multiple authors to a commit?
-type: question
+title: "Tip: How to add multiple authors to a commit"
+type: tip
 tags: git,github,programming,webdev
 authors: chalarangelo
 cover: blog_images/book-chair.jpg
