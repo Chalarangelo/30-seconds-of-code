@@ -9,7 +9,7 @@ excerpt: Learn of the two different way to convert a string to lowercase in Pyth
 
 ### str.lower()
 
-Python's standard method for converting a string to lowercase is `str.lower()` and is compatible with both Python 2 and Python 3. While this is the standard way for most cases, there are certain cases where you this method might not be the most appropriate, especially if you are working with Unicode strings.
+Python's standard method for converting a string to lowercase is `str.lower()` and is compatible with both Python 2 and Python 3. While this is the standard way for most cases, there are certain cases where this method might not be the most appropriate, especially if you are working with Unicode strings.
 
 ```py
 'Hello'.lower()               # 'hello'
