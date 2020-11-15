@@ -1,6 +1,6 @@
 ---
-title: How can I swap two variables in JavaScript?
-type: question
+title: "Tip: How to swap two variables in JavaScript"
+type: tip
 tags: javascript,array,variables
 authors: chalarangelo
 cover: blog_images/javascript-swap-two-variables.jpg

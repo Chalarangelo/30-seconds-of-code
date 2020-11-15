@@ -1,6 +1,6 @@
 ---
-title: Debugging Node.js using Chrome Developer Tools
-type: story
+title: "Tip: Debugging Node.js using Chrome Developer Tools"
+type: tip
 tags: javascript,node,debugging
 authors: chalarangelo
 cover: blog_images/nodejs-chrome-debugging.jpg
