@@ -3,16 +3,19 @@ title: Mailto
 tags: components,beginner
 ---
 
-Renders a link formatted to send an email.
+Renders a link formatted to send an email (`mailto:` link).
 
-- Destructure the component's props, use `email`, `subject` and `body` to create a `<a>` element with an appropriate `href` attribute.
+- Use the `email`, `subject` and `body` props to create a `<a>` element with an appropriate `href` attribute.
+- Use `encodeURIcomponent` to safely encode the `subject` and `body` into the link URL.
 - Render the link with `children` as its content.
 
 ```jsx
-const Mailto = ({ email, subject, body, children }) => {
-  return (
-    <a href={`mailto:${email}?subject=${encodeURIComponent(subject) || ''}&body=${encodeURIComponent(body) || ''}`}>{children}</a>
-  );
+const Mailto = ({ email, subject = '', body = '', children }) => {
+  let params = subject || body ? '?' : '';
+  if (subject) params += `subject=${encodeURIComponent(subject)}`;
+  if (body) params += `${subject ? '&' : ''}body=${encodeURIComponent(body)}`;
+
+  return <a href={`mailto:${email}${params}`}>{children}</a>;
 };
 ```
 

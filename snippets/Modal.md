@@ -4,13 +4,12 @@ tags: components,effect,intermediate
 ---
 
 Renders a Modal component, controllable through events.
-To use the component, import `Modal` only once and then display it by passing a boolean value to the `isVisible` attribute.
 
-- Use object destructuring to set defaults for certain attributes of the modal component.
-- Define `keydownHandler`, a method which handles all keyboard events, which can be used according to your needs to dispatch actions (e.g. close the modal when <kbd>Esc</kbd> is pressed).
-- Use `React.useEffect()` hook to add or remove the `keydown` event listener, which calls `keydownHandler`.
-- Use the `isVisible` prop to determine if the modal should be shown or not.
-- Use CSS to style and position the modal component.
+- Define `keydownHandler`, a method which handles all keyboard events and is used to call `onClose` when the `Esc` key is pressed.
+- Use the `useEffect()` hook to add or remove the `keydown` event listener to the `document`, calling `keydownHandler` for every event.
+- Add a styled `<span>` element that acts as a close button, calling `onClose` when clicked.
+- Use the `isVisible` prop passed down from the parent to determine if the modal should be displayed or not.
+- To use the component, import `Modal` only once and then display it by passing a boolean value to the `isVisible` attribute.
 
 ```css
 .modal {
@@ -53,22 +52,27 @@ To use the component, import `Modal` only once and then display it by passing a 
   align-items: center;
   padding: 1rem;
 }
+
 .modal-header {
   border-bottom: 1px solid #dbdbdb;
   justify-content: space-between;
 }
+
 .modal-footer {
   border-top: 1px solid #dbdbdb;
   justify-content: flex-end;
 }
+
 .modal-close {
   cursor: pointer;
   padding: 1rem;
   margin: -1rem -1rem -1rem auto;
 }
+
 .modal-body {
   overflow: auto;
 }
+
 .modal-content {
   padding: 1rem;
 }
@@ -81,6 +85,7 @@ To use the component, import `Modal` only once and then display it by passing a 
     opacity: 1;
   }
 }
+
 @keyframes slide-in {
   from {
     transform: translateY(-150px);
@@ -93,19 +98,19 @@ To use the component, import `Modal` only once and then display it by passing a 
 
 ```jsx
 const Modal = ({ isVisible = false, title, content, footer, onClose }) => {
+  const keydownHandler = ({ key }) => {
+    switch (key) {
+      case 'Escape':
+        onClose();
+        break;
+      default:
+    }
+  };
+
   React.useEffect(() => {
     document.addEventListener('keydown', keydownHandler);
     return () => document.removeEventListener('keydown', keydownHandler);
   });
-
-  const keydownHandler = ({ key }) => {
-    switch (key) {
-    case 'Escape':
-      onClose();
-      break;
-    default:
-    }
-  };
 
   return !isVisible ? null : (
     <div className="modal" onClick={onClose}>
@@ -129,9 +134,8 @@ const Modal = ({ isVisible = false, title, content, footer, onClose }) => {
 ```jsx
 const App = () => {
   const [isModal, setModal] = React.useState(false);
-
   return (
-    <React.Fragment>
+    <>
       <button onClick={() => setModal(true)}>Click Here</button>
       <Modal
         isVisible={isModal}
@@ -140,7 +144,7 @@ const App = () => {
         footer={<button>Cancel</button>}
         onClose={() => setModal(false)}
       />
-    </React.Fragment>
+    </>
   );
 };
 

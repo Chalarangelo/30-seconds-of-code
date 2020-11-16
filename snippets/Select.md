@@ -3,24 +3,23 @@ title: Select
 tags: components,input,beginner
 ---
 
-Renders a `<select>` element that uses a callback function to pass its value to the parent component.
+Renders an uncontrolled `<select>` element that uses a callback function to pass its value to the parent component.
 
-- Use object destructuring to set defaults for certain attributes of the `<select>` element.
-- Render a `<select>` element with the appropriate attributes and use the `callback` function in the `onChange` event to pass the value of the textarea to the parent.
-- Use the `selected` attribute to define the `defaultValue` of the `<select>` element.
-- Use destructuring on the `values` array to pass an array of `value` and `text` elements.
+- Use the the `selectedValue` prop as the `defaultValue` of the `<select>` element to set its initial value..
+- Use the `onChange` event to fire the `onValueChange` callback and send the new value to the parent.
+- Use `Array.prototype.map()` on the `values` array to create an `<option>` element for each passed value. 
+- Each item in `values` must be a 2-element array, where the first element is the `value` of the item and the second one is the displayed text for it.
 
 ```jsx
-const Select = ({ values, callback, disabled = false, readonly = false, selected }) => {
+const Select = ({ values, onValueChange, selectedValue, ...rest }) => {
   return (
     <select
-      disabled={disabled}
-      readOnly={readonly}
-      defaultValue={selected}
-      onChange={({ target: { value } }) => callback(value)}
+      defaultValue={selectedValue}
+      onChange={({ target: { value } }) => onValueChange(value)}
+      {...rest}
     >
       {values.map(([value, text]) => (
-        <option value={value}>
+        <option key={value} value={value}>
           {text}
         </option>
       ))}
@@ -34,10 +33,14 @@ const choices = [
   ['grapefruit', 'Grapefruit'],
   ['lime', 'Lime'],
   ['coconut', 'Coconut'],
-  ['mango', 'Mango']
+  ['mango', 'Mango'],
 ];
 ReactDOM.render(
-  <Select values={choices} selected="lime" callback={val => console.log(val)} />,
+  <Select
+    values={choices}
+    selectedValue="lime"
+    onValueChange={val => console.log(val)}
+  />,
   document.getElementById('root')
 );
 ```
