@@ -3,10 +3,10 @@ title: Loader
 tags: components,beginner
 ---
 
-Creates a spinning loader component.
+Renders a spinning loader component.
 
-- Define appropriate CSS styles and animations for the component's elements.
-- Define the component, which returns a simple SVG, whose size is determined by the `size` prop.
+- Render an SVG, whose `height` and `width` are determined by the `size` prop.
+- Use CSS to animate the SVG, creating a spinning animation.
 
 ```css
 .loader {
