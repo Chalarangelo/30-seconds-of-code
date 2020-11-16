@@ -3,11 +3,11 @@ title: useFetch
 tags: hooks,effect,state,intermediate
 ---
 
-A hook that implements `fetch` in a declarative manner.
+Implements `fetch` in a declarative manner.
 
 - Create a custom hook that takes a `url` and `options`.
-- Use the `React.useState()` hook to initialize the `response` and `error` state variables.
-- Use the `React.useEffect()` hook to anychronously call `fetch()` and update the state varaibles accordingly.
+- Use the `useState()` hook to initialize the `response` and `error` state variables.
+- Use the `useEffect()` hook to anychronously call `fetch()` and update the state variables accordingly.
 - Return an object containting the `response` and `error` state variables.
 
 ```jsx
