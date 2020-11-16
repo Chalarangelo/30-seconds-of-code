@@ -3,11 +3,11 @@ title: useClickOutside
 tags: hooks,effect,event,intermediate
 ---
 
-A hook that handles the event of clicking outside of the wrapped component.
+Handles the event of clicking outside of the wrapped component.
 
 - Create a custom hook that takes a `ref` and a `callback` to handle the `click` event.
-- Use the `React.useEffect()` hook to append and clean up the `click` event.
-- Use the `React.useRef()` hook to create a `ref` for your click component and pass it to the `useClickOutside` hook.
+- Use the `useEffect()` hook to append and clean up the `click` event.
+- Use the `useRef()` hook to create a `ref` for your click component and pass it to the `useClickOutside` hook.
 
 ```jsx
 const useClickOutside = (ref, callback) => {

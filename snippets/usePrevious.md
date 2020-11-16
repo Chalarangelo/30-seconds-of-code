@@ -1,13 +1,13 @@
 ---
 title: usePrevious
-tags: hooks,state,effect,intermediate
+tags: hooks,state,effect,beginner
 ---
 
-A hook that stores the previous state or props.
+Stores the previous state or props.
 
 - Create a custom hook that takes a `value`.
-- Use the `React.useRef()` hook to create a `ref` for the `value`.
-- Use the `React.useEffect()` hook to remember the latest `value`.
+- Use the `useRef()` hook to create a `ref` for the `value`.
+- Use the `useEffect()` hook to remember the latest `value`.
 
 ```jsx
 const usePrevious = value => {
@@ -16,17 +16,19 @@ const usePrevious = value => {
     ref.current = value;
   });
   return ref.current;
-}
+};
 ```
 
 ```jsx
 const Counter = () => {
   const [value, setValue] = React.useState(0);
   const lastValue = usePrevious(value);
-  
+
   return (
     <div>
-      <p>Current: {value} - Previous: {lastValue}</p>
+      <p>
+        Current: {value} - Previous: {lastValue}
+      </p>
       <button onClick={() => setValue(value + 1)}>Increment</button>
     </div>
   );

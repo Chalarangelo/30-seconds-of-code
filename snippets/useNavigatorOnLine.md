@@ -3,16 +3,16 @@ title: useNavigatorOnLine
 tags: hooks,state,effect,intermediate
 ---
 
-A hook that returns if the client is online or offline.
+Checks if the client is online or offline.
 
 - Create a function, `getOnLineStatus`, that uses the `NavigatorOnLine` web API to get the online status of the client.
-- Use the `React.useState()` hook to create an appropriate state variable, `status`, and setter.
-- Use the `React.useEffect()` hook to add listeners for appropriate events, updating state, and cleanup those listeners when unmounting.
+- Use the `useState()` hook to create an appropriate state variable, `status`, and setter.
+- Use the `useEffect()` hook to add listeners for appropriate events, updating state, and cleanup those listeners when unmounting.
 - Finally return the `status` state variable.
 
 ```jsx
 const getOnLineStatus = () =>
-  typeof navigator !== "undefined" && typeof navigator.onLine === "boolean"
+  typeof navigator !== 'undefined' && typeof navigator.onLine === 'boolean'
     ? navigator.onLine
     : true;
 
@@ -23,12 +23,12 @@ const useNavigatorOnLine = () => {
   const setOffline = () => setStatus(false);
 
   React.useEffect(() => {
-    window.addEventListener("online", setOnline);
-    window.addEventListener("offline", setOffline);
+    window.addEventListener('online', setOnline);
+    window.addEventListener('offline', setOffline);
 
     return () => {
-      window.removeEventListener("online", setOnline);
-      window.removeEventListener("offline", setOffline);
+      window.removeEventListener('online', setOnline);
+      window.removeEventListener('offline', setOffline);
     };
   }, []);
 
@@ -40,8 +40,8 @@ const useNavigatorOnLine = () => {
 const StatusIndicator = () => {
   const isOnline = useNavigatorOnLine();
 
-  return <span>You are {isOnline ? "online" : "offline"}.</span>;
+  return <span>You are {isOnline ? 'online' : 'offline'}.</span>;
 };
 
-ReactDOM.render(<StatusIndicator />, document.getElementById("root"));
+ReactDOM.render(<StatusIndicator />, document.getElementById('root'));
 ```

@@ -3,17 +3,17 @@ title: useCopyToClipboard
 tags: hooks,effect,state,callback,advanced
 ---
 
-A hook that copies the given text to the clipboard.
+Copies the given text to the clipboard.
 
 - Use the [copyToClipboard](/js/s/copy-to-clipboard/) snippet to copy the text to clipboard.
-- Use the `React.useState()` hook to initialize the `copied` variable.
-- Use the `React.useCallback()` hook to create a callback for the `copyToClipboard` method.
-- Use the `React.useEffect()` hook to reset the `copied` state variable if the `text` changes.
+- Use the `useState()` hook to initialize the `copied` variable.
+- Use the `useCallback()` hook to create a callback for the `copyToClipboard` method.
+- Use the `useEffect()` hook to reset the `copied` state variable if the `text` changes.
 - Return the `copied` state variable and the `copy` callback.
 
 ```jsx
-const useCopyToClipboard = (text) => {
-  const copyToClipboard = (str) => {
+const useCopyToClipboard = text => {
+  const copyToClipboard = str => {
     const el = document.createElement('textarea');
     el.value = str;
     el.setAttribute('readonly', '');
@@ -46,7 +46,7 @@ const useCopyToClipboard = (text) => {
 ```
 
 ```jsx
-const TextCopy = (props) => {
+const TextCopy = props => {
   const [copied, copy] = useCopyToClipboard('Lorem ipsum');
   return (
     <div>

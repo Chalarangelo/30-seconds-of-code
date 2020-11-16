@@ -3,27 +3,27 @@ title: useAsync
 tags: hooks,state,reducer,advanced
 ---
 
-A hook that handles asynchronous calls.
+Handles asynchronous calls.
 
 - Create a custom hook that takes a handler function, `fn`.
 - Define a reducer function and an initial state for the custom hook's state.
-- Use the `React.useReducer()` hook to initialize the `state` variable and the `dispatch` function.
-- Define a `run` function that will run the provided callback, `fn`, while using `dispatch` to update `state` as necessary.
-- Return an object containting the the properties of `state` (`value`, `error` and `loading`) and the `run` function.
+- Use the `useReducer()` hook to initialize the `state` variable and the `dispatch` function.
+- Define an asynchronous `run` function that will run the provided callback, `fn`, while using `dispatch` to update `state` as necessary.
+- Return an object containting the properties of `state` (`value`, `error` and `loading`) and the `run` function.
 
 ```jsx
-const useAsync = (fn) => {
+const useAsync = fn => {
   const initialState = { loading: false, error: null, value: null };
   const stateReducer = (_, action) => {
     switch (action.type) {
       case 'start':
-        return { loading: true, error: null, value: null};
+        return { loading: true, error: null, value: null };
       case 'finish':
-        return { loading: false, error: null, value: action.value};
+        return { loading: false, error: null, value: action.value };
       case 'error':
-        return { loading: false, error: action.error, value: null};
+        return { loading: false, error: action.error, value: null };
     }
-  }
+  };
 
   const [state, dispatch] = React.useReducer(stateReducer, initialState);
 
@@ -36,27 +36,36 @@ const useAsync = (fn) => {
       dispatch({ type: 'error', error });
     }
   };
-  
+
   return { ...state, run };
 };
 ```
 
 ```jsx
 const RandomImage = props => {
-  const imgFetch = useAsync(url => fetch(url).then(response => response.json())); 
-  
+  const imgFetch = useAsync(url =>
+    fetch(url).then(response => response.json())
+  );
+
   return (
     <div>
       <button
         onClick={() => imgFetch.run('https://dog.ceo/api/breeds/image/random')}
-        disabled={ imgFetch.isLoading }
+        disabled={imgFetch.isLoading}
       >
         Load image
       </button>
-      <br/>
-      { imgFetch.loading && <div>Loading...</div> }    
-      { imgFetch.error && <div>Error { imgFetch.error }</div> }
-      { imgFetch.value && <img src={ imgFetch.value.message } alt="avatar" width={400} height="auto" />}
+      <br />
+      {imgFetch.loading && <div>Loading...</div>}
+      {imgFetch.error && <div>Error {imgFetch.error}</div>}
+      {imgFetch.value && (
+        <img
+          src={imgFetch.value.message}
+          alt="avatar"
+          width={400}
+          height="auto"
+        />
+      )}
     </div>
   );
 };
