@@ -106,8 +106,8 @@ describe('<Meta />', () => {
     });
 
     it('should render the appropriate scripts for analytics', () => {
-      expect(helmet.scriptTags.find(v => v.src && v.src.indexOf(config.googleAnalytics.v4Id) !== -1)).not.toBe(null);
-      expect(helmet.scriptTags.find(v => v.innerHTML && v.innerHTML.indexOf(config.googleAnalytics.v4Id) !== -1)).not.toBe(null);
+      expect(helmet.scriptTags.find(v => v.src && v.src.indexOf(config.googleAnalytics.id) !== -1)).not.toBe(null);
+      expect(helmet.scriptTags.find(v => v.innerHTML && v.innerHTML.indexOf(config.googleAnalytics.id) !== -1)).not.toBe(null);
       expect(helmet.scriptTags.find(v => v.innerHTML && v.innerHTML.indexOf(`window.gtag('event', 'page_view'`) !== -1)).not.toBe(null);
     });
   });
