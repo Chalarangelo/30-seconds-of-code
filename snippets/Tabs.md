@@ -5,11 +5,11 @@ tags: components,state,children,intermediate
 
 Renders a tabbed menu and view component.
 
-- Define a `TabItem` component, pass it to the `Tab` and remove unnecessary nodes expect for `TabItem` by identifying the function's name in `children`.
-- Use the `React.useState()` hook to initialize the value of the `bindIndex` state variable to `defaultIndex`.
-- Use `Array.prototype.map()` on the collected nodes to render the `tab-menu` and `tab-view`.
-- Define `changeTab`, which will be executed when clicking a `<button>` from the `tab-menu`.
-- `changeTab` executes the passed callback, `onTabClick` and updates `bindIndex`, which in turn causes a re-render, evaluating the `style` and `className` of the `tab-view` items and `tab-menu` buttons according to their `index`.
+- Define a `Tabs` component that uses the `useState()` hook to initialize the value of the `bindIndex` state variable to `defaultIndex`.
+- Define a `TabItem` component and filter `children` passed to the `Tabs` component to remove unnecessary nodes except for `TabItem` by identifying the function's name.
+- Define `changeTab`, which will be executed when clicking a `<button>` from the menu.
+- `changeTab` executes the passed callback, `onTabClick`, and updates `bindIndex` based on the clicked element.
+- Use `Array.prototype.map()` on the collected nodes to render the menu and view of the tabs, using the value of `binIndex` to determine the active tab and apply the correct `className`.
 
 ```css
 .tab-menu > button {
@@ -19,23 +19,31 @@ Renders a tabbed menu and view component.
   border-bottom: 2px solid transparent;
   background: none;
 }
+
 .tab-menu > button.focus {
   border-bottom: 2px solid #007bef;
 }
+
 .tab-menu > button:hover {
   border-bottom: 2px solid #007bef;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.selected {
+  display: block;
 }
 ```
 
 ```jsx
-const TabItem = props => {
-  return <div {...props} />;
-};
+const TabItem = props => <div {...props} />;
 
 const Tabs = ({ defaultIndex = 0, onTabClick, children }) => {
   const [bindIndex, setBindIndex] = React.useState(defaultIndex);
   const changeTab = newIndex => {
-    if (typeof onTabClick === 'function') onTabClick(newIndex);
+    if (typeof onItemClick === 'function') onItemClick(itemIndex);
     setBindIndex(newIndex);
   };
   const items = children.filter(item => item.type.name === 'TabItem');
@@ -44,7 +52,11 @@ const Tabs = ({ defaultIndex = 0, onTabClick, children }) => {
     <div className="wrapper">
       <div className="tab-menu">
         {items.map(({ props: { index, label } }) => (
-          <button onClick={() => changeTab(index)} className={bindIndex === index ? 'focus' : ''}>
+          <button
+            key={`tab-btn-${index}`}
+            onClick={() => changeTab(index)}
+            className={bindIndex === index ? 'focus' : ''}
+          >
             {label}
           </button>
         ))}
@@ -53,9 +65,10 @@ const Tabs = ({ defaultIndex = 0, onTabClick, children }) => {
         {items.map(({ props }) => (
           <div
             {...props}
-            className="tab-view_item"
-            key={props.index}
-            style={{ display: bindIndex === props.index ? 'block' : 'none' }}
+            className={`tab-content ${
+              bindIndex === props.index ? 'selected' : ''
+            }`}
+            key={`tab-content-${props.index}`}
           />
         ))}
       </div>
