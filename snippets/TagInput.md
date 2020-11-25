@@ -5,12 +5,12 @@ tags: components,input,state,intermediate
 
 Renders a tag input field.
 
-- Define a `TagInput` component and use `React.useState()` hook to initialize an array from `tags`.
-- Use `Array.prototype.map()` on collected nodes to render the list of tags.
-- Define the `addTagData` method, which will be executed on pressing the `Enter` key.
-- The `addTagData` method uses the `setTagData` method to add the new tag using the spread (`...`) operator to prepend the existing tags and adds the new tag at the end of the `tagData` array.
+- Define a `TagInput` component and use the `useState()` hook to initialize an array from `tags`.
+- Use `Array.prototype.map()` on the collected nodes to render the list of tags.
+- Define the `addTagData` method, which will be executed when pressing the `Enter` key.
+- The `addTagData` method calls `setTagData` to add the new tag using the spread (`...`) operator to prepend the existing tags and add the new tag at the end of the `tagData` array.
 - Define the `removeTagData` method, which will be executed on clicking the delete icon in the tag.
-- Use `Array.prototype.filter()` in `removeTagData` method to remove the tag using the `index` of the tag to filter it out from `tagData` array.
+- Use `Array.prototype.filter()` in the `removeTagData` method to remove the tag using its `index` to filter it out from the `tagData` array.
 
 ```css
 .tag-input {
@@ -21,22 +21,26 @@ Renders a tag input field.
   border: 1px solid #d6d8da;
   border-radius: 6px;
 }
+
 .tag-input input {
   flex: 1;
   border: none;
   height: 46px;
   font-size: 14px;
   padding: 4px 0 0;
-  &:focus {
-    outline: transparent;
-  }
 }
-#tags {
+
+.tag-input input:focus {
+  outline: transparent;
+}
+
+.tags {
   display: flex;
   flex-wrap: wrap;
   padding: 0;
   margin: 8px 0 0;
 }
+
 .tag {
   width: auto;
   height: 32px;
@@ -51,9 +55,11 @@ Renders a tag input field.
   margin: 0 8px 8px 0;
   background: #0052cc;
 }
+
 .tag-title {
   margin-top: 3px;
 }
+
 .tag-close-icon {
   display: block;
   width: 16px;
@@ -83,11 +89,14 @@ const TagInput = ({ tags }) => {
   };
   return (
     <div className="tag-input">
-      <ul id="tags">
+      <ul className="tags">
         {tagData.map((tag, index) => (
           <li key={index} className="tag">
             <span className="tag-title">{tag}</span>
-            <span className="tag-close-icon" onClick={() => removeTagData(index)}>
+            <span
+              className="tag-close-icon"
+              onClick={() => removeTagData(index)}
+            >
               x
             </span>
           </li>
@@ -96,7 +105,7 @@ const TagInput = ({ tags }) => {
       <input
         type="text"
         onKeyUp={event => (event.key === 'Enter' ? addTagData(event) : null)}
-        placeholder="Press enter to add tags"
+        placeholder="Press enter to add a tag"
       />
     </div>
   );
@@ -104,5 +113,8 @@ const TagInput = ({ tags }) => {
 ```
 
 ```jsx
-ReactDOM.render(<TagInput tags={['Nodejs', 'MongoDB']}/>, document.getElementById('root'));
+ReactDOM.render(
+  <TagInput tags={['Nodejs', 'MongoDB']} />,
+  document.getElementById('root')
+);
 ```
