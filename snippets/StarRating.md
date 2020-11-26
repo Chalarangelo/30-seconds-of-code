@@ -6,39 +6,47 @@ tags: components,children,input,state,intermediate
 Renders a star rating component.
 
 - Define a component, called `Star` that will render each individual star with the appropriate appearance, based on the parent component's state.
-- In the `StarRating` component, use the `React.useState()` hook to define the `rating` and `selection` state variables with the initial values of `value` (or `0` if invalid or not supplied) and `0`.
-- Create a method, `hoverOver`, that updates `selected` and `rating` according to the provided `event`.
-- Create a `<div>` to wrap the `<Star>` components, which are created using `Array.prototype.map()` on an array of 5 elements, created using `Array.from()`, and handle the `onMouseLeave` event to set `selection` to `0`, the `onClick` event to set the `rating` and the `onMouseOver` event to set `selection` to the `star-id` attribute of the `event.target` respectively.
-- Finally, pass the appropriate values to each `<Star>` component (`starId` and `marked`).
+- In the `StarRating` component, use the `useState()` hook to define the `rating` and `selection` state variables with the appropriate initial values.
+- Create a method, `hoverOver`, that updates `selected` according to the provided `event`, using the .`data-star-id` attribute of the event's target or resets it to `0` if called with a `null` argument.
+- Use `Array.from()` to create an array of `5` elements and `Array.prototype.map()` to create individual `<Star>` components.
+- Handle the `onMouseOver` and `onMouseLeave` events of the wrapping element using `hoverOver` and the `onClick` event using `setRating`.
+
+```css
+.star {
+  color: #ff9933;
+  cursor: pointer;
+}
+```
 
 ```jsx
 const Star = ({ marked, starId }) => {
   return (
-    <span star-id={starId} style={{ color: '#ff9933' }} role="button">
+    <span data-star-id={starId} className="star" role="button">
       {marked ? '\u2605' : '\u2606'}
     </span>
   );
 };
 
 const StarRating = ({ value }) => {
-  const [rating, setRating] = React.useState(typeof value == 'number' ? value : 0);
+  const [rating, setRating] = React.useState(parseInt(value) || 0);
   const [selection, setSelection] = React.useState(0);
+
   const hoverOver = event => {
     let val = 0;
-    if (event && event.target && event.target.getAttribute('star-id'))
-      val = event.target.getAttribute('star-id');
+    if (event && event.target && event.target.getAttribute('data-star-id'))
+      val = event.target.getAttribute('data-star-id');
     setSelection(val);
   };
   return (
     <div
       onMouseOut={() => hoverOver(null)}
-      onClick={event => setRating(event.target.getAttribute('star-id') || rating)}
+      onClick={e => setRating(e.target.getAttribute('data-star-id') || rating)}
       onMouseOver={hoverOver}
     >
       {Array.from({ length: 5 }, (v, i) => (
         <Star
           starId={i + 1}
-          key={`star_${i + 1} `}
+          key={`star_${i + 1}`}
           marked={selection ? selection >= i + 1 : rating >= i + 1}
         />
       ))}
@@ -48,6 +56,5 @@ const StarRating = ({ value }) => {
 ```
 
 ```jsx
-ReactDOM.render(<StarRating />, document.getElementById('root'));
 ReactDOM.render(<StarRating value={2} />, document.getElementById('root'));
 ```
