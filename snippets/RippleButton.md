@@ -5,13 +5,11 @@ tags: components,state,effect,intermediate
 
 Renders a button that animates a ripple effect when clicked.
 
-- Define some appropriate CSS styles and an animation for the ripple effect.
-- Use the `React.useState()` hook to create appropriate variables and setters for the pointer's coordinates and for the animation state of the button.
-- Use the `React.useEffect()` hook to change the state every time the `coords` state variable changes, starting the animation.
+- Use the `useState()` hook to create the `coords` and `isRippling` state variables for the pointer's coordinates and the animation state of the button respectively.
+- Use a `useEffect()` hook to change the value of `isRippling` every time the `coords` state variable changes, starting the animation.
 - Use `setTimeout()` in the previous hook to clear the animation after it's done playing.
-- Use the `React.useEffect()` hook a second time to reset `coords` whenever the `isRippling` state variable is `false.`
+- Use a `useEffect()` hook to reset `coords` whenever the `isRippling` state variable is `false.`
 - Handle the `onClick` event by updating the `coords` state variable and calling the passed callback.
-- Finally, render a `<button>` with one or two `<span>` elements, setting the position of the `.ripple` element based on the `coords` state variable.
 
 ```css
 .ripple-button {
@@ -35,7 +33,7 @@ Renders a button that animates a ripple effect when clicked.
   content: "";
   border-radius: 9999px;
   opacity: 1;
-  animation: 1.2s ease 1 forwards ripple-effect;
+  animation: 0.9s ease 1 forwards ripple-effect;
 }
 
 @keyframes ripple-effect {
@@ -57,7 +55,6 @@ Renders a button that animates a ripple effect when clicked.
   position: relative;
   z-index: 2;
 }
-
 ```
 
 ```jsx
@@ -65,31 +62,23 @@ const RippleButton = ({ children, onClick }) => {
   const [coords, setCoords] = React.useState({ x: -1, y: -1 });
   const [isRippling, setIsRippling] = React.useState(false);
 
-  React.useEffect(
-    () => {
-      if (coords.x !== -1 && coords.y !== -1) {
-        setIsRippling(true);
-        setTimeout(() => setIsRippling(false), 1200);
-      } else setIsRippling(false);
-    },
-    [coords]
-  );
+  React.useEffect(() => {
+    if (coords.x !== -1 && coords.y !== -1) {
+      setIsRippling(true);
+      setTimeout(() => setIsRippling(false), 300);
+    } else setIsRippling(false);
+  }, [coords]);
 
-  React.useEffect(
-    () => {
-      if (!isRippling) setCoords({ x: -1, y: -1 });
-    },
-    [isRippling]
-  );
+  React.useEffect(() => {
+    if (!isRippling) setCoords({ x: -1, y: -1 });
+  }, [isRippling]);
 
   return (
     <button
       className="ripple-button"
       onClick={e => {
-        var rect = e.target.getBoundingClientRect();
-        var x = e.clientX - rect.left;
-        var y = e.clientY - rect.top;
-        setCoords({ x, y });
+        const rect = e.target.getBoundingClientRect();
+        setCoords({ x: e.clientX - rect.left, y: e.clientY - rect.top });
         onClick && onClick(e);
       }}
     >
@@ -97,7 +86,7 @@ const RippleButton = ({ children, onClick }) => {
         <span
           className="ripple"
           style={{
-            left: coords.x + 10,
+            left: coords.x,
             top: coords.y
           }}
         />
