@@ -1,6 +1,6 @@
 ---
 title: ComponentName
-tags: visual,state,effect,intermediate
+tags: components,state,effect,intermediate
 ---
 
 Explain briefly what the snippet does.

@@ -15,7 +15,7 @@ This will allow you to use our customized tools for all of our content repositor
 ## How you can help
 
 - Submit pull requests with new snippets (see guidelines below) or snippet updates (tags, descriptions, explanations, typos, examples, code improvements).
-- Open issues for things you want to see added, modified, discuss ideas or help out with existing issues. 
+- Open issues for things you want to see added, modified, discuss ideas or help out with existing issues.
 
 ## Ground rules
 
@@ -35,7 +35,7 @@ After installing the integration tools, you can run the following command:
 create-new-snippet <my-snippet-name>
 ```
 
-Replace `<my-snippet-name>` with the name of the snippet you are adding. 
+Replace `<my-snippet-name>` with the name of the snippet you are adding.
 
 ## Snippet guidelines
 
@@ -53,7 +53,7 @@ Replace `<my-snippet-name>` with the name of the snippet you are adding.
 - When describing snippets, refer to methods, using their full name. For example, use `Array.prototype.reduce()`, instead of `reduce()`. When using React Hooks, refer to the specific hooks with their full names, such as `useState()` and `useEffect()`.
 - When using `useState()`, try matching the name of the state variable to the function that sets it. For example, use `[isShown, setIsShown]` instead of `[isShown, setShown]`. When using `useEffect()`, only return a function if you have to clean up. In that case, name that function `cleanup()`.
 - Destructure your component's `props` whenever possible. If any of your props take default parameters, specify their default values in the destructured object.
-- Always use `function MyComponent(props)` or `function MyComponent({ ... })` for function definitions.
+- Always use `const MyComponent = (props)` or `const MyComponent = ({ ... })` for function definitions.
 - Always use single quotes for string literals. Use template literals, instead, if necessary.
 - When rendering JSX, use double quotes, instead of single quotes.
 - Use strict equality checking (`===` and `!==` instead of `==` and `!=`).
