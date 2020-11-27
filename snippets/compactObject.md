@@ -1,85 +1,43 @@
 ---
 title: compactObject
-tags: object, array, recursion, intermediate
+tags: object,array,recursion,advanced
 ---
 
-Remove all falsy element from an Object/Array deeply
+Deeply removes all falsy values from an object or array.
 
-- Get array of key and value from object using `Object.entries()`
-- Then use `Array.prototype.reduce()` with `{}` as initial value to then create new compacted Object
-- Callback inside `Array.prototype.reduce()` check if current value is not falsy then assign to the new created Object
-- Using ternary operator during assignment, if current assigned value is object then it will recursively compact the object otherwise it will directly assigned
-- 🎉 **BONUS:** It work for array too, just pass true value on second parameter if you want in array forms
-- ⚠️ **NOTICE:** I'm sorry before, because I'm not sure if this function can handle all cases
+- Use recursion.
+- Initialize the iterable data, using `Array.isArray()`, `Array.prototype.filter()` and `Boolean` for arrays in order to avoid sparse arrays.
+- Use `Object.keys()` and `Array.prototype.reduce()` to iterate over each key with an appropriate initial value.
+- Use `Boolean` to determine the truthiness of each key's value and add it to the accumulator if it's truthy.
+- Use `typeof` to determine if a given value is an `object` and call the function again to deeply compact it.
 
 ```js
-const compactObject = (val, toArray = false) => {
-  return Object.entries(val).reduce(
-    (compacted, [key, value]) => {
+const compactObject = val => {
+  const data = Array.isArray(val) ? val.filter(Boolean) : val;
+  return Object.keys(data).reduce(
+    (acc, key) => {
+      const value = data[key];
       if (Boolean(value))
-        compacted[key] = (typeof value === 'object') ? compactObject(value) : value;
-      return compacted;
+        acc[key] = typeof value === 'object' ? compactObject(value) : value;
+      return acc;
     },
-    toArray ? [] : {}
+    Array.isArray(val) ? [] : {}
   );
-}
+};
 ```
 
 ```js
-const example = {
-  nullValue: null,
-  falseBool: false,
-  trueBool: true,
-  falsyNumber: 0,
-  acceptedNumber: 100,
-  negativeNumber: -100,
-  falsyString: '',
-  acceptedString: 'accepted string',
-  arrayValue: [null, false,true, 0, 100, -100, '', 'accepted string'],
-  objectValue: {
-    nullValue: null,
-    falseBool: false,
-    trueBool: true,
-    falsyNumber: 0,
-    acceptedNumber: 100,
-    negativeNumber: -100,
-    falsyString: '',
-    acceptedString: 'accepted string',
-    arrayValue: [null, false,true, 0, 100, -100, '', 'accepted string']
-  },
-  someFunction() {
-    console.log('this is function');
-  }
-}
-
-compact(user);
-/* Output
-{
-  trueBool: true,
-  acceptedNumber: 100,
-  negativeNumber: -100,
-  acceptedString: 'accepted string',
-  arrayValue: {
-    2: true,
-    4: 100,
-    5: -100,
-    7: 'accepted string'
-  },
-  objectValue: {
-    trueBool: true,
-    acceptedNumber: 100,
-    negativeNumber: -100,
-    acceptedString: 'accepted string',
-    arrayValue: {
-      2: true,
-      4: 100,
-      5: -100,
-      7: 'accepted string'
-    }
-  },
-  someFunction() {
-    console.log('this is function');
-  }
-}
-*/
+const obj = {
+  a: null,
+  b: false,
+  c: true,
+  d: 0,
+  e: 1,
+  f: '',
+  g: 'a',
+  h: [null, false, '', true, 1, 'a'],
+  i: { j: 0, k: false, l: 'a' }
+};
+compactObject(obj);
+// { c: true, e: 1, g: 'a', h: [ true, 1, 'a' ], i: { l: 'a' } }
 ```
