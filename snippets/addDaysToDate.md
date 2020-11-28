@@ -11,7 +11,7 @@ Calculates the date of `n` days from the given date, returning its string repres
 
 ```js
 const addDaysToDate = (date, n) => {
-  d = new Date(date);
+  const d = new Date(date);
   d.setDate(d.getDate() + n);
   return d.toISOString().split('T')[0];
 };
