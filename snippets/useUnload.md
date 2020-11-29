@@ -1,48 +1,36 @@
 ---
 title: useUnload
-tags: visual,ref,effect,beginner
+tags: hooks,effect,event,intermediate
 ---
 
-A hook that listens to `beforeunload` event and trigger the default prompt when the user is leaving or closing the browser's session
+A hook that handles for the `beforeunload` window event.
 
-- Create a custom hook that takes a function on what do you want to do when the event is triggered
-- Use the `React.useRef()` hook to create a `ref` for your function
-- Use the `React.useEffect()` hook to add the listener and clean up the `beforeunload` event.
+- Use the `useRef()` hook to create a ref for the callback function, `fn`. 
+- Use the `useEffect()` hook and `EventTarget.addEventListener()` to handle the `'beforeunload'` (when the user is about to close the window).
+- Use `EventTarget.removeEventListener()` to perform cleanup after the component is unmounted.
 
-```js
-// unload.js
-import { useRef, useEffect } from 'react'
+```jsx
+const useUnload = fn => {
+  const cb = React.useRef(fn);
 
-const useUnload = (fn) => {
-  const cb = useRef(fn)
-  useEffect(() => {
-    const onUnload = cb.current
-      window.addEventListener('beforeunload', onUnload)
-      return () => {
-        window.removeEventListener('beforeunload', onUnload)
-      }
-  }, [cb])
-}
-
-export default useUnload
-
+  React.useEffect(() => {
+    const onUnload = cb.current;
+    window.addEventListener('beforeunload', onUnload);
+    return () => {
+      window.removeEventListener('beforeunload', onUnload);
+    };
+  }, [cb]);
+};
 ```
-To use this in a global level, apply it in `App.js`
 
-```js
-// App.js
-import useUnload from './unload'
-
-function App {
-
-  useUnload((e) => {
-    e.preventDefault() // Required for Firefox
-    e.returnValue = ''
-    delete e.returnValue
-  })
-
-  return (
-    // Your app
-  )
-}
+```jsx
+const App = () => {
+  useUnload(e => {
+    e.preventDefault();
+    const exit = confirm('Are you sure you want to leave?');
+    if (exit) window.close();
+  });
+  return <div>Try closing the window.</div>;
+};
+ReactDOM.render(<App />, document.getElementById('root'));
 ```
