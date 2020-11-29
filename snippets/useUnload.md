@@ -3,9 +3,9 @@ title: useUnload
 tags: hooks,effect,event,intermediate
 ---
 
-A hook that handles for the `beforeunload` window event.
+Handles the `beforeunload` window event.
 
-- Use the `useRef()` hook to create a ref for the callback function, `fn`. 
+- Use the `useRef()` hook to create a ref for the callback function, `fn`.
 - Use the `useEffect()` hook and `EventTarget.addEventListener()` to handle the `'beforeunload'` (when the user is about to close the window).
 - Use `EventTarget.removeEventListener()` to perform cleanup after the component is unmounted.
 
