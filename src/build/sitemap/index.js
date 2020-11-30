@@ -2,12 +2,12 @@ import util from 'util';
 import fs from 'fs-extra';
 import handlebars from 'handlebars';
 import { parseRequirements } from 'build/requirements';
-import { bindLogger } from 'build/core';
+import { Logger } from 'build/utilities/logger';
 
 const writeFile = util.promisify(fs.writeFile);
 
 export const generateSitemap = async() => {
-  const boundLog = bindLogger('makeIcons');
+  const boundLog = Logger.bind('makeIcons');
   const { sitemapTemplatePath } = global.yild.sitemap;
   const { xmlPath } = global.yild.paths;
   const template = handlebars.compile(

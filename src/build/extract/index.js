@@ -1,5 +1,5 @@
 import fs from 'fs-extra';
-import { bindLogger } from 'build/core';
+import { Logger } from 'build/utilities/logger';
 import { transformSnippetIndex } from 'build/transformers';
 import { writeChunks } from 'build/json';
 import { readSnippets } from 'build/snippet';
@@ -72,7 +72,7 @@ const postProcess = (allData, allSnippetData, boundLog) => {
 };
 
 export const extractData = async() => {
-  const boundLog = bindLogger('extractData');
+  const boundLog = Logger.bind('extractData');
   const {
     contentPath: outPath,
   } = global.yild.paths;
