@@ -2,7 +2,7 @@ import fs from 'fs-extra';
 import path from 'path';
 import sharp from 'sharp';
 import glob from 'glob';
-import { bindLogger } from 'build/core';
+import { Logger } from 'build/utilities/logger';
 
 const supportedExtensions = [
   'jpeg', 'jpg', 'png', 'webp', 'tif', 'tiff',
@@ -41,7 +41,7 @@ export const processImageAsset = (asset, outDir) =>
  * Prepares the assets directory.
  */
 export const prepareAssets = async() => {
-  const boundLog = bindLogger('prepareAssets');
+  const boundLog = Logger.bind('prepareAssets');
   const {
     rawAssetPath: inPath,
     assetPath: outPath,

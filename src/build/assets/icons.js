@@ -2,13 +2,13 @@ import glob from 'glob';
 import fs from 'fs-extra';
 import path from 'path';
 import webfontsGenerator from 'webfonts-generator';
-import { bindLogger } from 'build/core';
+import { Logger } from 'build/utilities/logger';
 
 /**
  * Generate a woff2 fle with the icon font and CSS styles to go with it.
  */
 export const makeIcons = () => {
-  const boundLog = bindLogger('makeIcons');
+  const boundLog = Logger.bind('makeIcons');
   const {
     rawIconPath: inPath,
     rawAssetPath: outPath,
