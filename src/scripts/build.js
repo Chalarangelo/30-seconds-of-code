@@ -1,6 +1,6 @@
 import { logger, format } from 'build/core';
 import { loadContentConfigs } from 'build/config';
-import { updateContent } from 'build/content';
+import content from 'build/utilities/content';
 import { makeIcons, prepareAssets } from 'build/assets';
 import { generateSitemap } from 'build/sitemap';
 import { extractData } from 'build/extract';
@@ -23,7 +23,7 @@ export const build = async() => {
   loadContentConfigs(pathConfig.rawContentPath, logger.log);
 
   await Promise.all([
-    updateContent(),
+    content.update(),
     makeIcons(),
   ]);
 
