@@ -1,0 +1,12 @@
+.assets
+.build
+.cache
+.content
+.cypress
+.github
+.vscode
+content/sources
+coverage
+node_modules
+public
+static

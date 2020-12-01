@@ -8,7 +8,8 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "prettier"
   ],
   "parser": "@babel/eslint-parser",
   "parserOptions": {
@@ -30,15 +31,12 @@
     }
   },
   "rules": {
-    "indent": [
-      "error",
-      2
-    ],
+    "indent": "off",
     "comma-dangle": [
       "error", {
         "arrays": "always-multiline",
         "objects": "always-multiline",
-        "imports": "never",
+        "imports": "always-multiline",
         "exports": "only-multiline",
         "functions": "never"
       }
@@ -81,10 +79,7 @@
         "allowSingleLine": true
       }
     ],
-    "curly": [
-      "error",
-      "multi-or-nest"
-    ],
+    "curly": "off",
     "object-shorthand": [
       "warn",
       "always"
@@ -189,21 +184,10 @@
       "error",
       "never"
     ],
-    "space-before-function-paren": [
-      "error",
-      "never"
-    ],
+    "space-before-function-paren": "off",
     "spaced-comment": [
       "error",
       "always"
-    ],
-    "react/jsx-curly-spacing": [
-      "error",
-      {
-        "when": "always",
-        "attributes": true,
-        "children": true
-      }
     ],
     "react/jsx-equals-spacing": [
       "error",
