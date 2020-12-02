@@ -6,23 +6,21 @@ import path from 'path';
 jest.mock('glob');
 jest.mock('path');
 
-
 const templates = [
   {
-    'name': 'SnippetPage',
-    'path': 'snippetPage/index.jsx',
+    name: 'SnippetPage',
+    path: 'snippetPage/index.jsx',
   },
   {
-    'name': 'SearchPage',
-    'path': 'searchPage/index.jsx',
+    name: 'SearchPage',
+    path: 'searchPage/index.jsx',
   },
 ];
 
 const mockRequirables = {
-  'stdRequirable': {
+  stdRequirable: {
     meta: {
-      requirables: [ 'stdRequirableData' ],
-      resolver: 'jsxResolver',
+      requirables: ['stdRequirableData'],
       isBlog: false,
       slug: 'std',
       dirName: 'stddir',
@@ -37,9 +35,9 @@ const mockRequirables = {
       },
     },
   },
-  'ltdRequirable': {
+  ltdRequirable: {
     meta: {
-      requirables: [ 'ltdRequirableData' ],
+      requirables: ['ltdRequirableData'],
       isBlog: true,
       slug: 'ltd',
       dirName: 'ltddir',
@@ -67,20 +65,26 @@ path.resolve.mockImplementation(jest.fn(f => f));
 
 // eslint-disable-next-line no-unused-vars
 const stdRequirable = require('stdRequirable.json');
-jest.mock('stdRequirable.json',
-  () => mockRequirables['stdRequirable'], { virtual: true }
-);
+jest.mock('stdRequirable.json', () => mockRequirables['stdRequirable'], {
+  virtual: true,
+});
 // eslint-disable-next-line no-unused-vars
 const ltdRequirable = require('ltdRequirable.json');
-jest.mock('ltdRequirable.json',
-  () => mockRequirables['ltdRequirable'], { virtual: true }
-);
+jest.mock('ltdRequirable.json', () => mockRequirables['ltdRequirable'], {
+  virtual: true,
+});
 
 describe('parseRequirables', () => {
   it('returns the array of the resulting requirables', () => {
     expect(parseRequirables('my-content-dir')).toEqual([
-      {...mockRequirables['stdRequirable'], context: mockRequirables['stdRequirable'] },
-      {...mockRequirables['ltdRequirable'], context: mockRequirables['ltdRequirable']},
+      {
+        ...mockRequirables['stdRequirable'],
+        context: mockRequirables['stdRequirable'],
+      },
+      {
+        ...mockRequirables['ltdRequirable'],
+        context: mockRequirables['ltdRequirable'],
+      },
     ]);
   });
 });
@@ -88,8 +92,8 @@ describe('parseRequirables', () => {
 describe('parseTemplates', () => {
   it('returns an object with the appropriate structure and data', () => {
     expect(parseTemplates(templates, 'my-templates-dir')).toEqual({
-      'SnippetPage': 'my-templates-dir/snippetPage/index.jsx',
-      'SearchPage': 'my-templates-dir/searchPage/index.jsx',
+      SnippetPage: 'my-templates-dir/snippetPage/index.jsx',
+      SearchPage: 'my-templates-dir/searchPage/index.jsx',
     });
   });
 });
