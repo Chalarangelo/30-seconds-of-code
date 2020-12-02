@@ -1,4 +1,4 @@
-import { getFilesInDir } from 'build/snippet/snippetData';
+import { FileParser } from 'build/parsers/file';
 import { compileSnippet } from 'build/snippet/compileSnippet';
 
 /**
@@ -12,8 +12,8 @@ import { compileSnippet } from 'build/snippet/compileSnippet';
  * @param {array} langData - An array of `(language, icon)` tuples.
  * @param {function} boundLog - A bound logger.log function.
  */
-export const readSnippets = async(snippetsPath, config, boundLog) => {
-  const snippetFilenames = await getFilesInDir(snippetsPath);
+export const readSnippets = async (snippetsPath, config, boundLog) => {
+  const snippetFilenames = await FileParser.fromDir(snippetsPath);
 
   let snippets = [];
   try {
