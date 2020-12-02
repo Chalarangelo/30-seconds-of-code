@@ -1,6 +1,6 @@
-import glob from 'glob';
 import path from 'path';
 import paths from 'config/paths';
+import { JSONParser } from 'build/parsers/json';
 
 /* istanbul ignore next */
 const isDevelopment = process.env.NODE_ENV.toLowerCase() === 'development';
@@ -11,12 +11,23 @@ const isDevelopment = process.env.NODE_ENV.toLowerCase() === 'development';
  * @param {string} contentDir - The path to the content directory.
  */
 export const parseRequirables = contentDir =>
-  glob.sync(`${contentDir}/**/index.json`).map(file =>
-    glob.sync(`${file.slice(0, file.lastIndexOf('/'))}/!(index).json`)
-      .reduce((acc, dataFile) => {
-        acc.context = { ...acc.context, ...require(path.resolve(dataFile)) };
-        return acc;
-      }, { ...require(path.resolve(file)), context: {} }));
+  JSONParser.fromGlob(`${contentDir}/**/index.json`, { withNames: true }).map(
+    ([file, data]) =>
+      JSONParser.fromGlob(
+        `${file.slice(0, file.lastIndexOf('/'))}/!(index).json`,
+        {
+          reduced: true,
+          reducer: (acc, dataFile) => {
+            acc.context = {
+              ...acc.context,
+              ...require(path.resolve(dataFile)),
+            };
+            return acc;
+          },
+          initialValue: data,
+        }
+      )
+  );
 
 /**
  * Combines the given list of templates into an object.
@@ -34,10 +45,7 @@ export const parseTemplates = (templates, templatesDir) =>
  * Returns an object containing templates and requirables.
  */
 export const parseRequirements = () => ({
-  templates: parseTemplates(
-    paths.templates,
-    paths.templatesPath
-  ),
+  templates: parseTemplates(paths.templates, paths.templatesPath),
   requirables: parseRequirables(paths.contentPath),
 });
 
