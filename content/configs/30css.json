@@ -16,7 +16,6 @@
     "long": "JavaScript"
   },
   "slug": "css",
-  "resolver": "cssResolver",
   "featured": 3,
   "theme": {
     "backColor": "#3f4de4",

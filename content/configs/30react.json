@@ -13,7 +13,6 @@
   },
   "slug": "react",
   "featured": 4,
-  "resolver": "jsxResolver",
   "theme": {
     "backColor": "#282c34",
     "foreColor": "#61dafb",
