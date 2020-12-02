@@ -1,7 +1,7 @@
-import glob from 'glob';
 import fs from 'fs-extra';
 import path from 'path';
 import webfontsGenerator from 'webfonts-generator';
+import { FileParser } from 'build/parsers/file';
 import { Logger } from 'build/utilities/logger';
 
 /**
@@ -25,8 +25,11 @@ export const makeIcons = () => {
     cssClassPrefix,
     cssLanguageSelectors,
   } = global.yild.icons;
-  const files = glob.sync(`${inPath}`);
-  boundLog(`Generating icon font and styles from ${files.length} files...`, 'info');
+  const files = FileParser.matchGlob(`${inPath}`);
+  boundLog(
+    `Generating icon font and styles from ${files.length} files...`,
+    'info'
+  );
 
   const config = {
     files,
@@ -43,9 +46,7 @@ export const makeIcons = () => {
       baseClassNames: cssClassName,
       classPrefix: cssClassPrefix,
       langSelectors: cssLanguageSelectors,
-      langIcons: configs
-        .map(cfg => cfg.theme)
-        .filter(Boolean),
+      langIcons: configs.map(cfg => cfg.theme).filter(Boolean),
     },
   };
 
@@ -54,8 +55,13 @@ export const makeIcons = () => {
       if (error) reject(error);
       else {
         const fileName = `${config.dest}/${config.fontName}`;
-        boundLog(`Writing font to ${path.resolve(`${fileName}.${types[0]}`)}...`, 'info');
-        ['svg', 'ttf', 'woff'].forEach(suffix => fs.removeSync(`${fileName}.${suffix}`));
+        boundLog(
+          `Writing font to ${path.resolve(`${fileName}.${types[0]}`)}...`,
+          'info'
+        );
+        ['svg', 'ttf', 'woff'].forEach(suffix =>
+          fs.removeSync(`${fileName}.${suffix}`)
+        );
         boundLog('Generating icon font and styles complete', 'success');
         resolve(result);
       }
