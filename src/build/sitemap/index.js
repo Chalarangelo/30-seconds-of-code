@@ -6,10 +6,10 @@ import { Logger } from 'build/utilities/logger';
 
 const writeFile = util.promisify(fs.writeFile);
 
-export const generateSitemap = async() => {
-  const boundLog = Logger.bind('makeIcons');
-  const { sitemapTemplatePath } = global.yild.sitemap;
-  const { xmlPath } = global.yild.paths;
+export const generateSitemap = async () => {
+  const boundLog = Logger.bind('generateSitemap');
+  const { sitemapTemplatePath } = global.settings.sitemap;
+  const { xmlPath } = global.settings.paths;
   const template = handlebars.compile(
     fs.readFileSync(sitemapTemplatePath, 'utf-8')
   );
@@ -18,7 +18,7 @@ export const generateSitemap = async() => {
 
   const sitemap = template({
     nodes: [
-      { fullRoute: global.yild.mainConfig.websiteUrl, priority: 1.0},
+      { fullRoute: global.yild.mainConfig.websiteUrl, priority: 1.0 },
       ...requirables.filter(n => !n.relRoute.endsWith('404')),
     ],
   });
