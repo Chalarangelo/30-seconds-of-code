@@ -103,11 +103,7 @@
       "property"
     ],
     "generator-star-spacing": [
-      "error",
-      {
-        "before": true,
-        "after": false
-      }
+      "off"
     ],
     "block-spacing": [
       "error",
