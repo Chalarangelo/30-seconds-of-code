@@ -1,6 +1,8 @@
 import globalConfig from 'settings/global';
 import pathConfig from 'settings/paths';
 import { JSONParser } from 'build/parsers/json';
+import { ContentConfig } from 'build/entities/contentConfig';
+import { Logger } from 'build/utilities/logger';
 
 /**
  * Sets up the global environment variables, so that they are available everywhere.
@@ -8,6 +10,8 @@ import { JSONParser } from 'build/parsers/json';
  * global variables.
  */
 export const setupEnv = (env = 'PRODUCTION') => {
+  const boundLog = Logger.bind('utilities.env.setupEnv');
+  boundLog(`Setting up environment in "${env}" mode.`, 'info');
   // This is the only function in a sea of classes.
   // It needs to stand out as it's unique and has a special role.
   const settings = JSONParser.fromGlob(pathConfig.settingsPath, {
@@ -21,9 +25,14 @@ export const setupEnv = (env = 'PRODUCTION') => {
     {
       ...globalConfig,
       paths: { ...pathConfig },
+      configs: JSONParser.fromGlob(
+        `${pathConfig.rawContentPath}/configs/*.json`
+      ).map(cfg => new ContentConfig(cfg)),
       env,
     }
   );
+  boundLog('Finished loading settings and configuration files.', 'success');
+  boundLog(`Loaded ${settings.configs.length} config files.`, 'success');
 
   global.settings = settings;
   return settings;

@@ -1,4 +1,4 @@
-import { loadContentConfigs } from 'build/config';
+import { setupEnv } from 'build/utilities/env';
 const { green } = require('chalk');
 import paths from 'config/paths';
 
@@ -9,12 +9,8 @@ import paths from 'config/paths';
  * API docs: https://www.gatsbyjs.com/docs/node-apis/#onPreInit
  */
 const onPreInit = () => {
-  global.yild = global.yild || {};
-  global.yild.paths = paths;
-  process.configs =
-    loadContentConfigs(paths.rawContentPath, msg => {
-      console.log(`${green('success')} ${msg}`);
-    });
+  setupEnv('PRODUCTION');
+  process.configs = global.settings.configs;
 };
 
 export default onPreInit;
