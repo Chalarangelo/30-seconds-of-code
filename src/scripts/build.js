@@ -1,40 +1,30 @@
-import { loadContentConfigs } from 'build/config';
-import { Content } from 'build/utilities/content';
-import { makeIcons, prepareAssets } from 'build/assets';
+import { prepareAssets } from 'build/assets';
 import { generateSitemap } from 'build/sitemap';
 import { extractData } from 'build/extract';
-import globalConfig from 'config/global';
-import pathConfig from 'config/paths';
-import iconConfig from 'config/icons';
-import sitemapConfig from 'config/sitemap';
+import { setupEnv } from 'build/utilities/env';
 import { Logger } from 'build/utilities/logger';
+import { Content } from 'build/utilities/content';
+import { IconSerializer } from 'build/serializers/icon';
+import { FileParser } from 'build/parsers/file';
 
-export const build = async() => {
-  global.yild = global.yild || {};
-  global.yild.paths = pathConfig;
-  global.yild.icons = iconConfig;
-  global.yild.sitemap = sitemapConfig;
-  global.yild.mainConfig = globalConfig;
-  global.yild.env = 'PRODUCTION';
+export const build = async () => {
+  setupEnv('PRODUCTION');
 
-  Logger.log(`${Logger.format('yild', 'bold')} is starting up...`, 'info');
+  Logger.log('Build process is starting up...', 'info');
   Logger.logProcessInfo();
   Logger.breakLine();
-  loadContentConfigs(pathConfig.rawContentPath, Logger.log);
 
   await Promise.all([
     Content.update(),
-    makeIcons(),
+    IconSerializer.serialize(
+      FileParser.matchGlob(global.settings.paths.rawIconPath),
+      global.settings.configs
+    ),
   ]);
 
-  await Promise.all([
-    extractData(),
-    prepareAssets(),
-  ]);
+  await Promise.all([extractData(), prepareAssets()]);
 
-  await Promise.all([
-    generateSitemap(),
-  ]);
+  await Promise.all([generateSitemap()]);
 };
 
 build();
