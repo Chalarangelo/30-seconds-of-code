@@ -2,7 +2,7 @@ import React from 'react';
 import PageBackdrop from 'components/atoms/pageBackdrop';
 import { useGtagEvent } from 'components/hooks';
 import literals from 'lang/en/client/cta';
-import config from 'config/global';
+import settings from 'settings/global';
 
 const propTypes = {};
 
@@ -15,26 +15,26 @@ const CTA = () => {
   return (
     <PageBackdrop
       graphicName='graphic-cta twitter-cta'
-      mainText={ (
+      mainText={
         <>
-          { literals.intro }
+          {literals.intro}
           <br />
         </>
-      ) }
+      }
     >
       <a
         className='btn btn-cta btn-twitter icon icon-twitter'
-        href={ config.twitterUrl }
+        href={settings.twitterUrl}
         rel='nofollow noopener noreferrer'
         target='_blank'
-        onClick={ e => {
+        onClick={e => {
           e.preventDefault();
           // eslint-disable-next-line camelcase
-          gtagCallback({ event_category: 'cta-twitter', value: 1});
+          gtagCallback({ event_category: 'cta-twitter', value: 1 });
           window.open(e.target.href, '_blank');
-        } }
+        }}
       >
-        { literals.twitter }
+        {literals.twitter}
       </a>
     </PageBackdrop>
   );
