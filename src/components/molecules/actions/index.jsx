@@ -1,74 +1,77 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import { useGtagEvent } from 'components/hooks';
-import { CopyButton, CodepenButton, ShareButton } from 'components/atoms/button';
-import JSX_SNIPPET_PRESETS from 'config/jsxSnippetPresets';
+import {
+  CopyButton,
+  CodepenButton,
+  ShareButton,
+} from 'components/atoms/button';
+import JSX_SNIPPET_PRESETS from 'settings/jsxSnippetPresets';
 import literals from 'lang/en/client/common';
 
 const propTypes = {
   snippet: PropTypes.snippet,
 };
 
-
 /**
  * Renders a group of actions for a snippet card(share, copy/codepen, github).
  * Depends on the `Button` component.
  */
-const Actions = ({
-  snippet,
-}) => {
+const Actions = ({ snippet }) => {
   const gtagCallback = useGtagEvent('click');
-  const showCopy = snippet.code && snippet.code.src && !snippet.language.otherLanguages;
-  const showCodepen = snippet.code && snippet.code.src && snippet.language.otherLanguages;
-  const showCssCodepen = snippet.code && snippet.code.css && snippet.language.otherLanguages;
+  const showCopy =
+    snippet.code && snippet.code.src && !snippet.language.otherLanguages;
+  const showCodepen =
+    snippet.code && snippet.code.src && snippet.language.otherLanguages;
+  const showCssCodepen =
+    snippet.code && snippet.code.css && snippet.language.otherLanguages;
   return (
     <>
       <ShareButton
-        pageTitle={ snippet.title }
-        pageDescription={ snippet.description }
+        pageTitle={snippet.title}
+        pageDescription={snippet.description}
       />
-      { showCopy && <CopyButton text={ snippet.code.src } /> }
-      { showCodepen &&
+      {showCopy && <CopyButton text={snippet.code.src} />}
+      {showCodepen && (
         <CodepenButton
-          jsCode={ `${snippet.code.src}\n\n${snippet.code.example}` }
-          htmlCode={ JSX_SNIPPET_PRESETS.envHtml }
-          cssCode={ snippet.code.style }
-          jsPreProcessor={ JSX_SNIPPET_PRESETS.jsPreProcessor }
-          jsExternal={ JSX_SNIPPET_PRESETS.jsImports }
+          jsCode={`${snippet.code.src}\n\n${snippet.code.example}`}
+          htmlCode={JSX_SNIPPET_PRESETS.envHtml}
+          cssCode={snippet.code.style}
+          jsPreProcessor={JSX_SNIPPET_PRESETS.jsPreProcessor}
+          jsExternal={JSX_SNIPPET_PRESETS.jsImports}
         />
-      }
-      { showCssCodepen &&
+      )}
+      {showCssCodepen && (
         <CodepenButton
-          cssCode={ snippet.code.css }
-          htmlCode={ snippet.code.html }
-          jsCode={ snippet.code.js }
+          cssCode={snippet.code.css}
+          htmlCode={snippet.code.html}
+          jsCode={snippet.code.js}
         />
-      }
+      )}
       <a
         className='btn icon icon-github'
-        href={ snippet.url }
+        href={snippet.url}
         rel='nofollow noopener noreferrer'
         target='_blank'
-        onClick={ e => {
+        onClick={e => {
           e.preventDefault();
           // eslint-disable-next-line camelcase
-          gtagCallback({ event_category: 'action-github', value: 1});
+          gtagCallback({ event_category: 'action-github', value: 1 });
           window.open(e.target.href, '_blank');
-        } }
+        }}
       >
-        { literals.viewOnGitHub }
+        {literals.viewOnGitHub}
       </a>
-      {
-        process.env.ENV === 'development' &&
+      {process.env.ENV === 'development' && (
         <a
           className='btn icon icon-vscode'
-          href={ snippet.vscodeUrl }
+          href={snippet.vscodeUrl}
           rel='nofollow noopener noreferrer'
           target='_blank'
         >
-          { literals.openInVscode }
+          {literals.openInVscode}
         </a>
-      }
+      )}
     </>
   );
 };
