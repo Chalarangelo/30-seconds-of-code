@@ -2,7 +2,7 @@
   "types": ["woff2"],
   "fontName": "icons",
   "fontRelativePath": "../../assets/",
-  "cssTemplatePath": "src/build/assets/iconCssTemplate.hbs",
+  "cssTemplatePath": "src/templates/iconCssTemplate.hbs",
   "cssSelector": ".icon",
   "cssClassName": "icon",
   "cssClassPrefix": "icon-",
