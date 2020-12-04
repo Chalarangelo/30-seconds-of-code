@@ -1,6 +1,6 @@
 import util from 'util';
 import fs from 'fs-extra';
-import globalConfig from 'config/global';
+import globalConfig from 'settings/global';
 
 const writeFile = util.promisify(fs.writeFile);
 const routePrefix = globalConfig.websiteUrl;
@@ -35,7 +35,11 @@ export const writeChunks = (path, ...dataChunkPairs) => {
 export const createIndexChunk = (path, template, priority = 0.5, rest = {}) => {
   const relRoute = path.startsWith('/') ? path : `/${path}`;
   return {
-    template, relRoute, fullRoute: `${routePrefix}${relRoute}`, priority, ...rest,
+    template,
+    relRoute,
+    fullRoute: `${routePrefix}${relRoute}`,
+    priority,
+    ...rest,
   };
 };
 

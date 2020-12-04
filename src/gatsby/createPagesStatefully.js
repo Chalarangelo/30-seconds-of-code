@@ -1,10 +1,10 @@
 import chokidar from 'chokidar';
-import paths from 'config/paths';
+import paths from 'settings/paths';
 import fs from 'fs-extra';
 import {
   compileSnippet,
   findConfigFromRawSnippetPath,
-  findSlugFromRawSnippetPath
+  findSlugFromRawSnippetPath,
 } from 'build/snippet';
 
 const watchFiles = (contentDir, templates, { actions, store }) => {
@@ -13,30 +13,26 @@ const watchFiles = (contentDir, templates, { actions, store }) => {
     const page = store.getState().pages.get(slug);
     if (page) deletePage({ path: page.path, component: page.component });
   };
-  const watcher = chokidar.watch(
-    `${contentDir}/**/*.md`,
-    {
-      ignored: `${contentDir}/**/README.md`,
-      persistent: true,
-    }
-  );
+  const watcher = chokidar.watch(`${contentDir}/**/*.md`, {
+    ignored: `${contentDir}/**/README.md`,
+    persistent: true,
+  });
   let isReady = false;
 
   const updateSnippet = path => {
     const snippetsPath = path.slice(0, path.lastIndexOf('/'));
     const snippet = path.slice(path.lastIndexOf('/') + 1);
     const config = findConfigFromRawSnippetPath(process.configs, path);
-    compileSnippet(snippetsPath, snippet, config, true)
-      .then(req => {
-        deletePageIfExists(req.relRoute);
-        const context = {...req.context};
-        context.snippet.vscodeUrl = req.vscodeUrl;
-        createPage({
-          path: req.relRoute,
-          component: templates[req.template],
-          context,
-        });
+    compileSnippet(snippetsPath, snippet, config, true).then(req => {
+      deletePageIfExists(req.relRoute);
+      const context = { ...req.context };
+      context.snippet.vscodeUrl = req.vscodeUrl;
+      createPage({
+        path: req.relRoute,
+        component: templates[req.template],
+        context,
       });
+    });
   };
   const deleteSnippet = path => {
     const slug = findSlugFromRawSnippetPath(process.configs, path);
@@ -45,7 +41,9 @@ const watchFiles = (contentDir, templates, { actions, store }) => {
   };
 
   watcher
-    .on('ready', () => { isReady = true; })
+    .on('ready', () => {
+      isReady = true;
+    })
     .on('add', path => {
       if (isReady) updateSnippet(path);
     })
@@ -64,12 +62,15 @@ const watchFiles = (contentDir, templates, { actions, store }) => {
  * Takes a list of requirable objects and a templates object.
  * Creates pages by running createPage for each ne.
  */
-const createPagesStatefully = (templates, requirables) => ({ actions, store }) => {
+const createPagesStatefully = (templates, requirables) => ({
+  actions,
+  store,
+}) => {
   const { createPage } = actions;
 
   // First pass, create pages for files.
   requirables.forEach(req => {
-    let context = { ...req. context };
+    let context = { ...req.context };
     if (process.env.NODE_ENV === 'development' && req.context.snippet)
       context.snippet.vscodeUrl = req.vscodeUrl;
     createPage({
@@ -100,7 +101,6 @@ const createPagesStatefully = (templates, requirables) => ({ actions, store }) =
       },
     });
   }
-
 };
 
 export default createPagesStatefully;
