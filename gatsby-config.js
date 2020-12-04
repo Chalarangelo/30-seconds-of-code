@@ -1,6 +1,6 @@
 /* eslint-disable */
 const settings = require('settings/global');
-const paths = require('config/paths');
+const paths = require('settings/paths');
 
 module.exports = {
   siteMetadata: {

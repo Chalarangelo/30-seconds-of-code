@@ -1,5 +1,5 @@
 import path from 'path';
-import paths from 'config/paths';
+import paths from 'settings/paths';
 import { JSONParser } from 'build/parsers/json';
 
 /* istanbul ignore next */

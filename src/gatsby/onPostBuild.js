@@ -1,5 +1,5 @@
 import fs from 'fs-extra';
-import paths from 'config/paths';
+import paths from 'settings/paths';
 
 /**
  * Copies xml files to the public directory.
