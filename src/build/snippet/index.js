@@ -2,7 +2,6 @@ import compileSnippet from './compileSnippet';
 import parseMarkdown from './parseMarkdown';
 import readSnippets from './readSnippets';
 import {
-  getData,
   getCodeBlocks,
   getTextualContent,
   getGitMetadata,
@@ -15,7 +14,6 @@ import {
 } from './matchData';
 
 export {
-  getData,
   getCodeBlocks,
   getTextualContent,
   getGitMetadata,

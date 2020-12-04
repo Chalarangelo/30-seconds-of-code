@@ -1,26 +1,8 @@
-import fs from 'fs-extra';
-import path from 'path';
-import util from 'util';
 import sass from 'node-sass';
-import frontmatter from 'front-matter';
 import { exec } from 'child_process';
-
-const readFile = util.promisify(fs.readFile);
 
 const mdCodeFence = '```';
 const codeMatcher = new RegExp(`${mdCodeFence}[.\\S\\s]*?${mdCodeFence}`, 'g');
-
-/**
- * Synchronously gets the data from a snippet file in a usable format, using frontmatter.
- * @param {string} snippetsPath - The path of the snippets directory.
- * @param {string} snippet - The name of the snippet file.
- */
-export const getData = (snippetsPath, snippet) =>
-  new Promise((resolve, reject) =>
-    readFile(path.join(snippetsPath, snippet), 'utf8')
-      .then(content => resolve(frontmatter(content)))
-      .catch(err => reject(err))
-  );
 
 /**
  * Gets the code blocks for a snippet.
