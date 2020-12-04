@@ -1,6 +1,4 @@
 import { setupEnv } from 'build/utilities/env';
-const { green } = require('chalk');
-import paths from 'settings/paths';
 
 /**
  * The first API called during Gatsby execution, runs as soon as
