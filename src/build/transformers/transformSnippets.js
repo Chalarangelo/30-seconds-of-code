@@ -1,5 +1,5 @@
 import { stripMarkdownFormat } from 'utils';
-import { stripExpertiseFromTags, transformTagName } from './transformTags';
+import { Tag } from 'build/utilities/tag';
 import literals from 'lang/en/snippet';
 
 /**
@@ -9,17 +9,26 @@ import literals from 'lang/en/snippet';
  * @param {bool} withSearchTokens - Should include search tokens in the result?
  * @param {string} injectIntoPrimaryTag - An additional primary tag to be injected into the snippet, if any.
  */
-export const transformSnippetIndex = (snippets, withSearchTokens = false, injectIntoPrimaryTag = '') =>
+export const transformSnippetIndex = (
+  snippets,
+  withSearchTokens = false,
+  injectIntoPrimaryTag = ''
+) =>
   snippets.map(snippet => ({
     title: snippet.title,
-    expertise: transformTagName(snippet.expertise),
-    primaryTag: injectIntoPrimaryTag.length && snippet.tags.primary !== injectIntoPrimaryTag
-      ? [
-        transformTagName(snippet.tags.primary),
-        transformTagName(injectIntoPrimaryTag),
-      ].join(', ')
-      : transformTagName(snippet.tags.primary),
-    language: snippet.language && snippet.language.long ? snippet.language.long : undefined,
+    expertise: Tag.format(snippet.expertise),
+    primaryTag:
+      injectIntoPrimaryTag.length &&
+      snippet.tags.primary !== injectIntoPrimaryTag
+        ? [
+            Tag.format(snippet.tags.primary),
+            Tag.format(injectIntoPrimaryTag),
+          ].join(', ')
+        : Tag.format(snippet.tags.primary),
+    language:
+      snippet.language && snippet.language.long
+        ? snippet.language.long
+        : undefined,
     icon: snippet.icon,
     description: snippet.html.description.trim(),
     url: snippet.slug,
@@ -47,11 +56,14 @@ export const transformSnippetDescription = (snippet, cardTemplate) => {
  * @param {string} cardTemplate - A string that determines the card template.
  */
 export const transformSnippetContext = (snippet, cardTemplate) => {
-  const templateProps = cardTemplate === 'BlogSnippetCard' ? {
-    authors: snippet.authors,
-    type: snippet.type,
-    cover: snippet.cover,
-  } : {};
+  const templateProps =
+    cardTemplate === 'BlogSnippetCard'
+      ? {
+          authors: snippet.authors,
+          type: snippet.type,
+          cover: snippet.cover,
+        }
+      : {};
   return {
     id: snippet.id,
     title: snippet.title,
@@ -60,12 +72,12 @@ export const transformSnippetContext = (snippet, cardTemplate) => {
     slug: snippet.slug,
     firstSeen: snippet.firstSeen,
     lastUpdated: snippet.lastUpdated,
-    expertise: transformTagName(snippet.expertise),
+    expertise: Tag.format(snippet.expertise),
     language: snippet.language,
     icon: snippet.icon,
     tags: {
-      primary: transformTagName(snippet.tags.primary),
-      all: stripExpertiseFromTags(snippet.tags.all).map(transformTagName),
+      primary: Tag.format(snippet.tags.primary),
+      all: Tag.stripExpertise(snippet.tags.all).map(Tag.format),
     },
     html: snippet.html,
     code: snippet.code,

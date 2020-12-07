@@ -1,4 +1,4 @@
-import { transformTagName } from './transformTags';
+import { Tag } from 'build/utilities/tag';
 import literals from 'lang/en/client/common';
 /**
  * Given a snippet object with key-value pairs, create the necessary breadcrumb data.
@@ -15,14 +15,17 @@ export const transformBreadcrumbs = (snippet, cardTemplate) => {
     },
     {
       url: `/${slugParts[0]}/p/1`,
-      name: cardTemplate === 'BlogSnippetCard' ? transformTagName('blog') : snippet.language.long,
+      name:
+        cardTemplate === 'BlogSnippetCard'
+          ? Tag.format('blog')
+          : snippet.language.long,
     },
   ];
 
-  if(cardTemplate !== 'BlogSnippetCard') {
+  if (cardTemplate !== 'BlogSnippetCard') {
     breadcrumbs.push({
       url: `/${slugParts[0]}/t/${snippet.tags.primary.toLowerCase()}/p/1`,
-      name: `${transformTagName(snippet.tags.primary)}`,
+      name: `${Tag.format(snippet.tags.primary)}`,
     });
   }
 
