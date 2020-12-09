@@ -2,7 +2,8 @@ import { transformSnippetIndex } from 'build/transformers';
 import { chunk } from 'utils';
 import EXPERTISE_LEVELS from 'config/expertise';
 import literals from 'lang/en/listing';
-import { createIndexChunk, writeChunks } from 'build/json';
+import { JSONSerializer } from 'build/serializers/json';
+import { Chunk } from 'build/utilities/chunk';
 
 const ORDERS_MAP = {
   p: literals.orders.popularity,
@@ -41,11 +42,11 @@ export const compileListingPages = async (
       : 0.25;
     const outDir = `${contentOutDir}${baseUrl}/${slugOrderingSegment}/${i + 1}`;
 
-    await writeChunks(
+    await JSONSerializer.serializeToDir(
       outDir,
       [
         'index',
-        createIndexChunk(
+        Chunk.createIndex(
           `${baseUrl}/${slugOrderingSegment}/${i + 1}`,
           'ListingPage',
           priority
