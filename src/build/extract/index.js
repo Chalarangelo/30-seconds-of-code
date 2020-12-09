@@ -2,12 +2,11 @@ import fs from 'fs-extra';
 import { Logger } from 'build/utilities/logger';
 import { JSONSerializer } from 'build/serializers/json';
 import { Chunk } from 'build/utilities/chunk';
+import { SnippetCollection } from 'build/entities/snippetCollection';
 import { transformSnippetIndex } from 'build/transformers';
-import { writeChunks } from 'build/json';
 import { readSnippets } from 'build/tasks/readSnippets';
 import { compileListingData } from 'build/listing';
 import recommendationEngine from 'engines/recommendationEngine';
-import { uniqueElements } from 'utils';
 import literals from 'lang/en';
 
 const extract = (configs, boundLog) =>
@@ -19,30 +18,17 @@ const extract = (configs, boundLog) =>
     return new Promise((resolve, reject) =>
       readSnippets(snippetsPath, cfg)
         .then(snippetsArray => {
-          const completeData = {
-            data: snippetsArray,
-            meta: {
-              name: cfg.isBlog
-                ? literals.listing.blog
-                : literals.listing.codelang(cfg.language.long),
-              tags: uniqueElements(
-                snippetsArray.map(snippet => snippet.tags.primary)
-              ).sort((a, b) => a.localeCompare(b)),
-              url: `/${cfg.slugPrefix.slice(
-                0,
-                cfg.slugPrefix.indexOf('/')
-              )}/p/1`,
-              slugPrefix: `/${cfg.slug}`,
-              featured: cfg.featured ? cfg.featured : 0,
-              blog: cfg.isBlog,
-              icon: cfg.theme && cfg.theme.iconName,
-            },
-          };
           boundLog(`Finished extracting ${snippetsPath}`, 'success');
-          resolve({
-            snippetsPath,
-            data: completeData,
-          });
+          resolve(
+            new SnippetCollection(
+              {
+                type: cfg.isBlog ? 'blog' : 'language',
+                slugPrefix: `/${cfg.slug}`,
+                config: cfg,
+              },
+              snippetsArray
+            )
+          );
         })
         .catch(err => {
           boundLog(
@@ -60,21 +46,24 @@ const postProcess = (allData, allSnippetData, boundLog) => {
   return [
     compileListingData(
       allSnippetData,
-      allData.map(({ data }) => data.meta)
+      allData.map(({ meta }) => meta)
     ),
-    ...allData.map(async ({ snippetsPath, data }) => {
+    ...allData.map(async ({ snippets, meta }) => {
       const { contentPath: contentOutDir } = global.settings.paths;
-      boundLog(`Post-processing snippets for ${snippetsPath}`, 'info');
+      boundLog(`Post-processing snippets for ${meta.name}`, 'info');
 
-      for (let snippet of data.data) {
-        await writeChunks(`${contentOutDir}/${snippet.slug.slice(1)}`, [
-          'recommendations',
-          {
-            recommendedSnippets: transformSnippetIndex(
-              recommendationEngine(allSnippetData, snippet)
-            ),
-          },
-        ]);
+      for (let snippet of snippets) {
+        await JSONSerializer.serializeToDir(
+          `${contentOutDir}/${snippet.slug.slice(1)}`,
+          [
+            'recommendations',
+            {
+              recommendedSnippets: transformSnippetIndex(
+                recommendationEngine(allSnippetData, snippet)
+              ),
+            },
+          ]
+        );
       }
     }),
   ];
@@ -92,7 +81,7 @@ export const extractData = async () => {
     allData = res;
   });
   const allSnippetData = allData
-    .reduce((acc, r) => [...acc, ...r.data.data], [])
+    .reduce((acc, r) => [...acc, ...r.snippets], [])
     .sort((a, b) => b.ranking - a.ranking);
   boundLog(`Extracted data for ${allSnippetData.length} snippets`, 'success');
 
