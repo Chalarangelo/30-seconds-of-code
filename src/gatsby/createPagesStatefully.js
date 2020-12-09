@@ -7,7 +7,6 @@ import { TextParser } from 'build/parsers/text';
 import { JSONSerializer } from 'build/serializers/json';
 import { Chunk } from 'build/utilities/chunk';
 import { Path } from 'build/utilities/path';
-import { transformBreadcrumbs } from 'build/transformers';
 
 const watchFiles = (contentDir, templates, { actions, store }) => {
   const { createPage, deletePage } = actions;
@@ -47,8 +46,7 @@ const watchFiles = (contentDir, templates, { actions, store }) => {
           'metadata',
           {
             cardTemplate,
-            // TODO: Create something for breadcrumbs
-            breadcrumbs: transformBreadcrumbs(snippet, cardTemplate),
+            breadcrumbs: snippet.breadcrumbs,
             pageDescription: snippet.seoDescription,
           },
         ]
@@ -59,7 +57,7 @@ const watchFiles = (contentDir, templates, { actions, store }) => {
         context: {
           snippet: snippetContext,
           cardTemplate,
-          breadcrumbs: transformBreadcrumbs(snippet, cardTemplate),
+          breadcrumbs: snippet.breadcrumbs,
           pageDescription: snippet.seoDescription,
         },
       });

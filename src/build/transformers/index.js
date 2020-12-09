@@ -1,5 +1,3 @@
-import { transformBreadcrumbs } from './transformBreadcrumbs';
-
 import {
   transformSnippetIndex,
   transformSnippetDescription,
@@ -7,7 +5,6 @@ import {
 } from './transformSnippets';
 
 export {
-  transformBreadcrumbs,
   transformSnippetIndex,
   transformSnippetDescription,
   transformSnippetContext,

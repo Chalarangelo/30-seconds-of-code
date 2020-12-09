@@ -9,6 +9,7 @@ import rankSnippet from 'engines/rankingEngine';
 import tokenizeSnippet from 'engines/searchIndexingEngine';
 import sass from 'node-sass';
 import literals from 'lang/en/snippet';
+import clientLiterals from 'lang/en/client/common';
 
 const mdCodeFence = '```';
 const codeMatcher = new RegExp(
@@ -195,6 +196,37 @@ export class Snippet {
         langData: this.config.langData,
       }
     );
+  }
+
+  get breadcrumbs() {
+    if (!this._breadcrumbs) {
+      const slugParts = this.slug.split('/').filter(Boolean).slice(0, -2);
+      this._breadcrumbs = [
+        {
+          url: '/',
+          name: clientLiterals.home,
+        },
+        {
+          url: `/${slugParts[0]}/p/1`,
+          name:
+            this.config.cardTemplate === 'BlogSnippetCard'
+              ? Tag.format('blog')
+              : this.language.long,
+        },
+      ];
+
+      if (this.config.cardTemplate !== 'BlogSnippetCard')
+        this._breadcrumbs.push({
+          url: `/${slugParts[0]}/t/${this.tags.primary.toLowerCase()}/p/1`,
+          name: `${Tag.format(this.tags.primary)}`,
+        });
+
+      this._breadcrumbs.push({
+        url: this.slug,
+        name: this.title,
+      });
+    }
+    return this._breadcrumbs;
   }
 
   _initTextContent(body, excerpt) {

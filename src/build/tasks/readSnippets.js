@@ -3,7 +3,6 @@ import { SnippetContext } from 'build/adapters/snippetContext';
 import { TextParser } from 'build/parsers/text';
 import { JSONSerializer } from 'build/serializers/json';
 import { Chunk } from 'build/utilities/chunk';
-import { transformBreadcrumbs } from 'build/transformers';
 import { Logger } from 'build/utilities/logger';
 
 /**
@@ -44,8 +43,7 @@ export const readSnippets = async (snippetsPath, config) => {
             'metadata',
             {
               cardTemplate,
-              // TODO: Create something for breadcrumbs
-              breadcrumbs: transformBreadcrumbs(snippet, cardTemplate),
+              breadcrumbs: snippet.breadcrumbs,
               pageDescription: snippet.seoDescription,
             },
           ]
