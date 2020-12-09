@@ -4,7 +4,7 @@ import { JSONSerializer } from 'build/serializers/json';
 import { Chunk } from 'build/utilities/chunk';
 import { transformSnippetIndex } from 'build/transformers';
 import { writeChunks } from 'build/json';
-import { readSnippets } from 'build/snippet';
+import { readSnippets } from 'build/tasks/readSnippets';
 import { compileListingData } from 'build/listing';
 import recommendationEngine from 'engines/recommendationEngine';
 import { uniqueElements } from 'utils';
@@ -17,7 +17,7 @@ const extract = (configs, boundLog) =>
     boundLog(`Extracting snippets from ${snippetsPath}`, 'info');
 
     return new Promise((resolve, reject) =>
-      readSnippets(snippetsPath, cfg, boundLog)
+      readSnippets(snippetsPath, cfg)
         .then(snippetsArray => {
           const completeData = {
             data: snippetsArray,
