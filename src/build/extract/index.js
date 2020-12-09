@@ -3,7 +3,7 @@ import { Logger } from 'build/utilities/logger';
 import { JSONSerializer } from 'build/serializers/json';
 import { Chunk } from 'build/utilities/chunk';
 import { SnippetCollection } from 'build/entities/snippetCollection';
-import { transformSnippetIndex } from 'build/transformers';
+import { SnippetPreview } from 'build/adapters/snippetPreview';
 import { readSnippets } from 'build/tasks/readSnippets';
 import { compileListingData } from 'build/listing';
 import recommendationEngine from 'engines/recommendationEngine';
@@ -58,9 +58,10 @@ const postProcess = (allData, allSnippetData, boundLog) => {
           [
             'recommendations',
             {
-              recommendedSnippets: transformSnippetIndex(
-                recommendationEngine(allSnippetData, snippet)
-              ),
+              recommendedSnippets: recommendationEngine(
+                allSnippetData,
+                snippet
+              ).map(s => new SnippetPreview(s).toObject()),
             },
           ]
         );
@@ -117,21 +118,27 @@ export const extractData = async () => {
     ),
     JSONSerializer.serializeToDir(
       ...Chunk.createStaticPageChunks(outPath, '/search', 'SearchPage', 0.25, {
-        searchIndex: transformSnippetIndex(
-          allSnippetData.filter(s => s.isListed),
-          true
-        ),
-        recommendedSnippets: transformSnippetIndex(allSnippetData.slice(0, 3)),
+        searchIndex: allSnippetData
+          .filter(s => s.isListed)
+          .map(s =>
+            new SnippetPreview(s, { withSearchTokens: true }).toObject()
+          ),
+        recommendedSnippets: allSnippetData
+          .slice(0, 3)
+          .map(s => new SnippetPreview(s).toObject()),
         pageDescription: literals.search.pageDescription(allSnippetData.length),
       })
     ),
     JSONSerializer.serializeToDir(
       ...Chunk.createStaticPageChunks(outPath, '/archive', 'SearchPage', 0, {
-        searchIndex: transformSnippetIndex(
-          allSnippetData.filter(s => !s.isListed),
-          true
-        ),
-        recommendedSnippets: transformSnippetIndex(allSnippetData.slice(0, 3)),
+        searchIndex: allSnippetData
+          .filter(s => !s.isListed)
+          .map(s =>
+            new SnippetPreview(s, { withSearchTokens: true }).toObject()
+          ),
+        recommendedSnippets: allSnippetData
+          .slice(0, 3)
+          .map(s => new SnippetPreview(s).toObject()),
         pageDescription: literals.search.pageDescription(allSnippetData.length),
       })
     ),

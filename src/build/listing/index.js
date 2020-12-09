@@ -1,9 +1,9 @@
-import { transformSnippetIndex } from 'build/transformers';
 import { chunk } from 'utils';
 import EXPERTISE_LEVELS from 'config/expertise';
 import literals from 'lang/en/listing';
 import { JSONSerializer } from 'build/serializers/json';
 import { Chunk } from 'build/utilities/chunk';
+import { SnippetPreview } from 'build/adapters/snippetPreview';
 
 const ORDERS_MAP = {
   p: literals.orders.popularity,
@@ -103,9 +103,9 @@ export const compileListingPagesWithOrderOptions = async (
 export const compileListingData = async (snippetIndex, listingMetas) => {
   // 1. Create listing pages for the main listing:
   // Tranform and chunk data for popularity, alphabetical and expertise ordering
-  const transformedIndex = transformSnippetIndex(
-    snippetIndex.filter(s => s.isListed)
-  );
+  const transformedIndex = snippetIndex
+    .filter(s => s.isListed)
+    .map(s => new SnippetPreview(s).toObject());
   const popularChunks = chunk(transformedIndex, CARDS_PER_PAGE);
   // Create main listing sublinks and customization method for context
   const mainListingSublinks = listingMetas
@@ -154,18 +154,18 @@ export const compileListingData = async (snippetIndex, listingMetas) => {
             t => t.toLowerCase() === snippetIndexName.toLowerCase()
           ))
     );
-    const transformedSlugChunks = transformSnippetIndex(snippetIndexSlugData);
+    const transformedSlugChunks = snippetIndexSlugData.map(s =>
+      new SnippetPreview(s).toObject()
+    );
     const popularSlugChunks = chunk(transformedSlugChunks, CARDS_PER_PAGE);
     const alphabeticalSlugChunks = chunk(
       transformedSlugChunks.sort((a, b) => a.title.localeCompare(b.title)),
       CARDS_PER_PAGE
     );
     const freshnessSlugChunks = chunk(
-      transformSnippetIndex(
-        snippetIndexSlugData.sort(
-          (a, b) => +new Date(b.firstSeen) - +new Date(a.firstSeen)
-        )
-      ),
+      snippetIndexSlugData
+        .sort((a, b) => +new Date(b.firstSeen) - +new Date(a.firstSeen))
+        .map(s => new SnippetPreview(s).toObject()),
       CARDS_PER_PAGE
     );
     const expertiseSlugChunks = chunk(
@@ -243,10 +243,8 @@ export const compileListingData = async (snippetIndex, listingMetas) => {
             ) &&
             s.tags.all.find(t => t.toLowerCase() === tagPrefix.toLowerCase()))
       );
-      const transformedTagChunks = transformSnippetIndex(
-        snippetIndexTagData,
-        false,
-        currentTag
+      const transformedTagChunks = snippetIndexTagData.map(s =>
+        new SnippetPreview(s, { injectIntoPrimaryTag: currentTag }).toObject()
       );
       const popularTagChunks = chunk(transformedTagChunks, CARDS_PER_PAGE);
       const alphabeticalTagChunks = chunk(
