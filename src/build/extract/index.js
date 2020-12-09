@@ -1,10 +1,11 @@
 import fs from 'fs-extra';
 import { Logger } from 'build/utilities/logger';
+import { JSONSerializer } from 'build/serializers/json';
+import { Chunk } from 'build/utilities/chunk';
 import { transformSnippetIndex } from 'build/transformers';
 import { writeChunks } from 'build/json';
 import { readSnippets } from 'build/snippet';
 import { compileListingData } from 'build/listing';
-import { compileStaticData } from 'build/staticContent';
 import recommendationEngine from 'engines/recommendationEngine';
 import { uniqueElements } from 'utils';
 import literals from 'lang/en';
@@ -101,32 +102,50 @@ export const extractData = async () => {
 
   boundLog('Creating static data files', 'info');
   await Promise.all([
-    compileStaticData(outPath, '/404', 'NotFoundPage', 0),
-    compileStaticData(outPath, '/about', 'StaticPage', 0.25, {
-      stringLiterals: literals.about,
-    }),
-    compileStaticData(outPath, '/cookies', 'StaticPage', 0.25, {
-      stringLiterals: literals.cookies,
-    }),
-    compileStaticData(outPath, '/settings', 'SettingsPage', 0.05, {
-      stringLiterals: literals.settings,
-    }),
-    compileStaticData(outPath, '/search', 'SearchPage', 0.25, {
-      searchIndex: transformSnippetIndex(
-        allSnippetData.filter(s => s.isListed),
-        true
-      ),
-      recommendedSnippets: transformSnippetIndex(allSnippetData.slice(0, 3)),
-      pageDescription: literals.search.pageDescription(allSnippetData.length),
-    }),
-    compileStaticData(outPath, '/archive', 'SearchPage', 0, {
-      searchIndex: transformSnippetIndex(
-        allSnippetData.filter(s => !s.isListed),
-        true
-      ),
-      recommendedSnippets: transformSnippetIndex(allSnippetData.slice(0, 3)),
-      pageDescription: literals.search.pageDescription(allSnippetData.length),
-    }),
+    JSONSerializer.serializeToDir(
+      ...Chunk.createStaticPageChunks(outPath, '/404', 'NotFoundPage', 0)
+    ),
+    JSONSerializer.serializeToDir(
+      ...Chunk.createStaticPageChunks(outPath, '/about', 'StaticPage', 0.25, {
+        stringLiterals: literals.about,
+      })
+    ),
+    JSONSerializer.serializeToDir(
+      ...Chunk.createStaticPageChunks(outPath, '/cookies', 'StaticPage', 0.25, {
+        stringLiterals: literals.cookies,
+      })
+    ),
+    JSONSerializer.serializeToDir(
+      ...Chunk.createStaticPageChunks(
+        outPath,
+        '/settings',
+        'SettingsPage',
+        0.05,
+        {
+          stringLiterals: literals.settings,
+        }
+      )
+    ),
+    JSONSerializer.serializeToDir(
+      ...Chunk.createStaticPageChunks(outPath, '/search', 'SearchPage', 0.25, {
+        searchIndex: transformSnippetIndex(
+          allSnippetData.filter(s => s.isListed),
+          true
+        ),
+        recommendedSnippets: transformSnippetIndex(allSnippetData.slice(0, 3)),
+        pageDescription: literals.search.pageDescription(allSnippetData.length),
+      })
+    ),
+    JSONSerializer.serializeToDir(
+      ...Chunk.createStaticPageChunks(outPath, '/archive', 'SearchPage', 0, {
+        searchIndex: transformSnippetIndex(
+          allSnippetData.filter(s => !s.isListed),
+          true
+        ),
+        recommendedSnippets: transformSnippetIndex(allSnippetData.slice(0, 3)),
+        pageDescription: literals.search.pageDescription(allSnippetData.length),
+      })
+    ),
   ]);
   boundLog('Static data creation complete', 'info');
 
