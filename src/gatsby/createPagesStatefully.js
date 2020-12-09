@@ -1,11 +1,13 @@
 import chokidar from 'chokidar';
 import paths from 'settings/paths';
 import fs from 'fs-extra';
-import {
-  compileSnippet,
-  findConfigFromRawSnippetPath,
-  findSlugFromRawSnippetPath,
-} from 'build/snippet';
+import { Snippet } from 'build/entities/snippet';
+import { SnippetContext } from 'build/adapters/snippetContext';
+import { TextParser } from 'build/parsers/text';
+import { JSONSerializer } from 'build/serializers/json';
+import { Chunk } from 'build/utilities/chunk';
+import { Path } from 'build/utilities/path';
+import { transformBreadcrumbs } from 'build/transformers';
 
 const watchFiles = (contentDir, templates, { actions, store }) => {
   const { createPage, deletePage } = actions;
@@ -20,22 +22,51 @@ const watchFiles = (contentDir, templates, { actions, store }) => {
   let isReady = false;
 
   const updateSnippet = path => {
-    const snippetsPath = path.slice(0, path.lastIndexOf('/'));
-    const snippet = path.slice(path.lastIndexOf('/') + 1);
-    const config = findConfigFromRawSnippetPath(process.configs, path);
-    compileSnippet(snippetsPath, snippet, config, true).then(req => {
-      deletePageIfExists(req.relRoute);
-      const context = { ...req.context };
-      context.snippet.vscodeUrl = req.vscodeUrl;
+    const config = Path.findContentConfigFromRawSnippet(path);
+    TextParser.fromPath(path, {
+      withMetadata: true,
+    }).then(data => {
+      const snippet = new Snippet(data, config);
+      const snippetContext = new SnippetContext(snippet).toObject({
+        withVscodeUrl: true,
+      });
+      const cardTemplate = config.cardTemplate;
+      const indexChunk = Chunk.createIndex(
+        snippet.slug,
+        'SnippetPage',
+        (snippet.ranking * 0.85).toFixed(2),
+        {
+          vscodeUrl: snippet.vscodeUrl,
+        }
+      );
+      JSONSerializer.serializeToDir(
+        `${snippet.config.outPath}/${snippet.slug.slice(1)}`,
+        ['index', indexChunk],
+        ['snippet', { snippet: snippetContext }],
+        [
+          'metadata',
+          {
+            cardTemplate,
+            // TODO: Create something for breadcrumbs
+            breadcrumbs: transformBreadcrumbs(snippet, cardTemplate),
+            pageDescription: snippet.seoDescription,
+          },
+        ]
+      );
       createPage({
-        path: req.relRoute,
-        component: templates[req.template],
-        context,
+        path: indexChunk.relRoute,
+        component: templates[indexChunk.template],
+        context: {
+          snippet: snippetContext,
+          cardTemplate,
+          breadcrumbs: transformBreadcrumbs(snippet, cardTemplate),
+          pageDescription: snippet.seoDescription,
+        },
       });
     });
   };
   const deleteSnippet = path => {
-    const slug = findSlugFromRawSnippetPath(process.configs, path);
+    const slug = Path.findSlugFromRawSnippet(path);
     fs.removeSync(slug);
     deletePageIfExists(slug);
   };
