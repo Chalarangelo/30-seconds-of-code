@@ -1,3 +1,4 @@
+const { Requirements } = require('build/utilities/requirements');
 const { green } = require('chalk');
 const {
   createPagesStatefully,
@@ -5,10 +6,9 @@ const {
   onPreInit,
   onPostBuild,
   onCreateDevServer,
-  parseRequirements,
 } = require(`./src/gatsby`);
 
-const { requirables, templates} = parseRequirements();
+const { requirables, templates } = Requirements.load();
 console.log(`${green('success')} parse requirements`);
 
 exports.onPreInit = onPreInit;
