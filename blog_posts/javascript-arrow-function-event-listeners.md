@@ -9,7 +9,7 @@ excerpt: Learn the differences between JavaScript ES6 arrow functions and regula
 
 ### Arrow functions
 
-JavaScript ES6 introduced the concept of arrow functions, a new way to define and write functions. While they might seem like a syntactic sugar on top of regular functions, they have a key difference which lies in the way the `this` context is bound. I will not go into a lot of detail in this article, however I strongly suggest you read [Understanding the "this" keyword in JavaScript](/blog/s/javascript-this) before continuing. To summarize what the afforementioned blog post explains in more detail:
+JavaScript ES6 introduced the concept of arrow functions, a new way to define and write functions. While they might seem like a syntactic sugar on top of regular functions, they have a key difference which lies in the way the `this` context is bound. I will not go into a lot of detail in this article, however I strongly suggest you read [Understanding the "this" keyword in JavaScript](/blog/s/javascript-this) before continuing. To summarize what the aforementioned blog post explains in more detail:
 
 > Arrow functions do not have their own bindings for `this`, resulting in `this` retaining the value of the enclosing lexical context's `this`.
 

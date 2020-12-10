@@ -21,7 +21,7 @@ Cookies store small amounts of data that has to be sent back to the server with 
 
 ### Local storage
 
-Local storage stores a larger amount of data on the client's computer in a key-value pair format and has no expiration date. Data is never transferred to the server and is accesible via JavaScript and HTML5.
+Local storage stores a larger amount of data on the client's computer in a key-value pair format and has no expiration date. Data is never transferred to the server and is accessible via JavaScript and HTML5.
 
 - Capacity: 10MB
 - Accessible from: Any window

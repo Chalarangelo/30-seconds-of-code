@@ -9,7 +9,7 @@ excerpt: One of the most commonly asked JavaScript interview questions is about 
 
 Before your JavaScript code is executed, it is first parsed and compiled. During the _compile_ phase, variable and function declarations are put into memory, which is called **hoisting**.
 
-Note that only declarations are hoisted, not initializations, meaning that if a variable is declared and initialized after using it, its value will not be initialized. This is an oversimplificatin of the situation, so let's take a look at the different cases:
+Note that only declarations are hoisted, not initializations, meaning that if a variable is declared and initialized after using it, its value will not be initialized. This is an oversimplification of the situation, so let's take a look at the different cases:
 
 ### function
 

@@ -89,7 +89,7 @@ fibonacciNumber(4);
 // [CALC] Computed and stored value for 4: 3
 ```
 
-As you can see in the example above, the value for each `n` is only computed once. While the Fibonacci sequence doesn't require any costly calculations, this could make a huge difference for a more computationally expensive problem. It will also be a lot more noticable for higher values of `n` where the number of calculations will increase singificantly.
+As you can see in the example above, the value for each `n` is only computed once. While the Fibonacci sequence doesn't require any costly calculations, this could make a huge difference for a more computationally expensive problem. It will also be a lot more noticeable for higher values of `n` where the number of calculations will increase significantly.
 
 ### Using iteration
 
@@ -114,7 +114,7 @@ fibonacciNumber(4);
 // [CALC] i = 3: r = 1, l = 2, s = 3
 ```
 
-The iterative solution above makes the same calculations as the memoized one, however it performas better due to two key reasons. First of all, there is no cache, which would take up space in memory, making the latter implementation require fewer resources. Similarly, as there are no recursive calls or checks for cache hits, the code performs better and requires fewer resources to execute.
+The iterative solution above makes the same calculations as the memoized one, however it performs better due to two key reasons. First of all, there is no cache, which would take up space in memory, making the latter implementation require fewer resources. Similarly, as there are no recursive calls or checks for cache hits, the code performs better and requires fewer resources to execute.
 
 However, you have to bear in mind what the actual use cases of your recursive code are and be very careful how you optimize them. Memoization can be a more powerful tool if a recursive function is called multiple times with different arguments, as its cache persists between calls, while iteration can be faster for recursive computations that are used less frequently. Always pay attention to your code and optimize for the cases you know or anticipate to be more common.
 

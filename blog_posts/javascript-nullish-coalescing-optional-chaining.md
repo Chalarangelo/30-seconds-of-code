@@ -38,7 +38,7 @@ Apart from cleaner code, this operator might spare us some headaches related to 
 ```js
 const config = getServerConfig();
 
-// Without nullish coallescing
+// Without nullish coalescing
 const port = config.server.port || 8888;
 // Oops! This will be true even if we pass it false
 const wrongkeepAlive = config.server.keepAlive || true;
@@ -47,7 +47,7 @@ const keepAlive =
   (config.server.keepAlive !== null & config.server.keepAlive !== undefined)
   ? config.server.keepAlive : true;
 
-// With nullish coallescing
+// With nullish coalescing
 const port = config.server.port ?? 8888;
 // This works correctly
 const keepAlive = config.server.keepAlive ?? true;

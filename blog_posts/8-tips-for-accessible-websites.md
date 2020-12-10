@@ -29,6 +29,6 @@ Any kind of `<input>` element should be labelled appropriately, using either a `
 Responsiveness is often thought in terms of screen size or mobile vs desktop, but there are many different devices where a user could browse your website. Try catering to any and all of them by providing ways to navigate and use your application via mouse, keyboard, thumb or any combination of the three.
 
 8. Organize your content
-A website's layout should be easy to scan, understand and find the content that is relevant to the user. Good organization with clear sections and properly groupped content provides a better user experience for all users, regardless of device or accessibility needs.
+A website's layout should be easy to scan, understand and find the content that is relevant to the user. Good organization with clear sections and properly grouped content provides a better user experience for all users, regardless of device or accessibility needs.
 
 **Image credit:** [AbsolutVision](https://unsplash.com/@freegraphictoday?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
