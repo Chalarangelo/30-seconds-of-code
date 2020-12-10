@@ -7,7 +7,7 @@ cover: blog_images/testing-stateful-ui-components.jpg
 excerpt: Testing stateful React components is by no means a difficult task, but did you know there is an elegant solution that doesn't involve testing state directly?
 ---
 
-Some time ago, I was tasked with writing tests for a handful of React components, an otherwise mundane and uninspiring task, that somehow ended with a "Eureka!" moment for me. The specifics of the project and its components are of little importanc, however the key detail is that I was working with stateful React components that are used daily by a large team and, as such, are refactored and updated quite often.
+Some time ago, I was tasked with writing tests for a handful of React components, an otherwise mundane and uninspiring task, that somehow ended with a "Eureka!" moment for me. The specifics of the project and its components are of little importance, however the key detail is that I was working with stateful React components that are used daily by a large team and, as such, are refactored and updated quite often.
 
 My initial approach consisted of writing some simple tests, such as checking if the component is rendered properly and if certain events fire appropriately. In doing so, I was comparing state directly with the result I was expecting, having the component's code right next to my assertions. Of course, this isn't bad by anyone's standards, but for a codebase with many moving parts, it is not the greatest idea. Let me show you an example why:
 
