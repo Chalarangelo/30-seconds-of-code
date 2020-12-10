@@ -9,8 +9,8 @@ excerpt: Learn everything you need to know about promises and asynchronous JavaS
 
 ### Promise basics
 
-- **Promises** start in a **pending state**, neither fullfiled or rejected.
-- When the operation is completed, a promise will become **fullfiled with a value**.
+- **Promises** start in a **pending state**, neither fulfilled or rejected.
+- When the operation is completed, a promise will become **fulfilled with a value**.
 - If the operation fails, a promise will get **rejected with an error**.
 
 ### Creating promises
@@ -72,7 +72,7 @@ promisedOperation()
 
 - `Promise.all()` turns an array of promises into a promise of an array.
 - If any promise is rejected, the error will pass through.
-- `Promise.race()` passes throuh the first settled promise.
+- `Promise.race()` passes through the first settled promise.
 
 ```js
 Promise

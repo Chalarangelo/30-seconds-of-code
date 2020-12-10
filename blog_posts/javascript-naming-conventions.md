@@ -32,7 +32,7 @@ excerpt: Naming conventions, while not easy to enforce, make code easier to read
 
 - Names are case-sensitive, lowercase and uppercase are different.
 - Start class names with a capital letter, use `PascalCase` for names.
-- Use descriptive names, explaining the funcionality of the class.
+- Use descriptive names, explaining the functionality of the class.
 - Components, which are used in frontend frameworks follow the same rules.
 
 ### Private
