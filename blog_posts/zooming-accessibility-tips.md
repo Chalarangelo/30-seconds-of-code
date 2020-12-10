@@ -4,10 +4,10 @@ type: story
 tags: webdev
 authors: chalarangelo
 cover: blog_images/camera-zoom.jpg
-excerpt: Using the viewport meta tag incorrectly can harm your website's accesibility. Learn how to prevent problems with this handy guide.
+excerpt: Using the viewport meta tag incorrectly can harm your website's accessibility. Learn how to prevent problems with this handy guide.
 ---
 
-Using the `"viewport"` meta tag incorrectly can cause some serious accessibility issues for peole with low vision.
+Using the `"viewport"` meta tag incorrectly can cause some serious accessibility issues for people with low vision.
 
 The most common and, for the vast majority of cases, correct setup for said tag looks something like the first example below. However, there are websites that might do something like the second example, employing `maximum-scale=1.0` as part of their meta tag:
 

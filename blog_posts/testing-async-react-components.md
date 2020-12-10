@@ -11,7 +11,7 @@ excerpt: Testing React components that update asynchronously with React Testing 
 
 Recently, while working on our latest side-project, [boardeaux](https://github.com/Trinityyi/boardeaux), we started using the [React DnD library](https://react-dnd.github.io/react-dnd), as we wanted to implement a multi-container drag and drop system with cards.
 
-After spending the better part of a day implementing the functionality, we decided to add some tests to make sure everything will keep working as expected. In the afforementioned project, we use [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) to write tests for our components.
+After spending the better part of a day implementing the functionality, we decided to add some tests to make sure everything will keep working as expected. In the aforementioned project, we use [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) to write tests for our components.
 
 While testing the drag functionality, we came across a very stubborn test. Here's a simplified version of our `Card` component:
 
