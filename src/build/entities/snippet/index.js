@@ -5,7 +5,7 @@ import { Tag } from 'build/utilities/tag';
 import { ContentConfig } from 'build/entities/contentConfig';
 import { MarkdownParser } from 'build/parsers/markdown';
 import { convertToSeoSlug, uniqueElements, stripMarkdownFormat } from 'utils';
-import rankSnippet from 'engines/rankingEngine';
+import { Ranker } from 'build/utilities/ranker';
 import tokenizeSnippet from 'engines/searchIndexingEngine';
 import sass from 'node-sass';
 import literals from 'lang/en/snippet';
@@ -141,20 +141,8 @@ export class Snippet {
   }
 
   get ranking() {
-    // TODO: Update the ranker to be a util
     if (!this._ranking) {
-      this._ranking = rankSnippet({
-        title: this.title,
-        tags: this.tags,
-        type: this.type,
-        text: this.text,
-        code: this.code,
-        firstSeen: this.firstSeen,
-        language: this.config.language,
-        biasPenaltyMultiplier: this.config.biasPenaltyMultiplier
-          ? this.config.biasPenaltyMultiplier
-          : 1.0,
-      });
+      this._ranking = Ranker.rankSnippet(this);
     }
     return this._ranking;
   }
