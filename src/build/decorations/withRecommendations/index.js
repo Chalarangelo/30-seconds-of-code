@@ -1,5 +1,4 @@
-import recommendationEngine from 'engines/recommendationEngine';
-import { Snippet } from 'build/entities/snippet';
+import { Recommender } from 'build/utilities/recommender';
 
 export const withRecommendations = snippet => {
   Object.defineProperties(snippet, {
@@ -11,10 +10,7 @@ export const withRecommendations = snippet => {
     recommendedSnippets: {
       get() {
         if (!snippet._recommendedSnippets) {
-          snippet._recommendedSnippets = recommendationEngine(
-            [...Snippet.instances],
-            snippet
-          );
+          snippet._recommendedSnippets = Recommender.recommendSnippets(snippet);
         }
         return snippet._recommendedSnippets;
       },

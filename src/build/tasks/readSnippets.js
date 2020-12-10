@@ -4,6 +4,7 @@ import { TextParser } from 'build/parsers/text';
 import { JSONSerializer } from 'build/serializers/json';
 import { Chunk } from 'build/utilities/chunk';
 import { Logger } from 'build/utilities/logger';
+import { withRecommendations } from 'build/decorations/withRecommendations';
 
 /**
  * Synchronously read all snippets and sort them as necessary.
@@ -23,7 +24,7 @@ export const readSnippets = async (snippetsPath, config) => {
   }).then(data =>
     data.map(s => {
       try {
-        const snippet = new Snippet(s, config);
+        const snippet = withRecommendations(new Snippet(s, config));
         const cardTemplate = config.cardTemplate;
         JSONSerializer.serializeToDir(
           `${snippet.config.outPath}/${snippet.slug.slice(1)}`,
