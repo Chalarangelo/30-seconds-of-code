@@ -6,7 +6,6 @@ import { SnippetCollection } from 'build/entities/snippetCollection';
 import { SnippetPreview } from 'build/adapters/snippetPreview';
 import { readSnippets } from 'build/tasks/readSnippets';
 import { compileListingData } from 'build/listing';
-import recommendationEngine from 'engines/recommendationEngine';
 import literals from 'lang/en';
 
 const extract = (configs, boundLog) =>
@@ -58,10 +57,9 @@ const postProcess = (allData, allSnippetData, boundLog) => {
           [
             'recommendations',
             {
-              recommendedSnippets: recommendationEngine(
-                allSnippetData,
-                snippet
-              ).map(s => new SnippetPreview(s).toObject()),
+              recommendedSnippets: snippet.recommendedSnippets.map(s =>
+                new SnippetPreview(s).toObject()
+              ),
             },
           ]
         );
