@@ -44,10 +44,10 @@ Replace `<my-snippet-name>` with the name of the snippet you are adding.
 - Snippet types must be one of the following: `story`, `list` or `question`.
 - Snippet titles must be short enough and correspond to the type of the snippet. Titles for each type must follow the format of previous snippets (e.g. `The trickiest thing about X` for a story, `X things that are awesome` for a list, `How do I do X in Y?` for a question).
 - Snippet types must be one of the following: `story`, `list` or `question`. 
-- Snippet tags must be comma-separated. You are allowed to specify a single language tag (e.g. `react` or `javascript`), preferrably as the first tag.
+- Snippet tags must be comma-separated. You are allowed to specify a single language tag (e.g. `react` or `javascript`), preferably as the first tag.
 - Snippet authors must be comma-separated and should be added in JSON format as seen in `blog_data/blog_authors.json`.
 - Snippet covers must be added inside the `blog_images` directory and have the exact same name as the snippet filename. Snippet covers must be Unsplash images of appropriate theme and content and must be credited accordingly at the end of the snippet.
-- Snippet excerpts must be a very short description of the snippet's content, up to 180 characters in length. The excerpt must contain some of the main keywords and a general intro to the snippet, as it will be used for social sharing and previewing the snippet iteself.
+- Snippet excerpts must be a very short description of the snippet's content, up to 180 characters in length. The excerpt must contain some of the main keywords and a general intro to the snippet, as it will be used for social sharing and previewing the snippet itself.
 - Snippets that are of the `list` type must be written as such, check previously submitted snippets for more details.
 - Snippet code and examples must be enclosed in appropriate, language-tagged blocks, be short and use modern techniques and features. Also make sure to test your code before submitting. Always use soft tabs (2 spaces), never hard tabs.
 - Snippets with code examples should follow the related language repository's guidelines in regards to code formatting and conventions.
