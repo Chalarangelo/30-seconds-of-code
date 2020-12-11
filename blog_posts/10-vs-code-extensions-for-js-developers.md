@@ -10,7 +10,7 @@ excerpt: VS Code is steadily gaining popularity among developers. Here are 10 es
 Developers will most likely argue for the rest of eternity about the most productive code editor and the best extensions. Here are my personal extension preferences for VS Code as a JavaScript developer:
 
 1. ESLint
-[ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) turns the popular JavaScrpt linter into an extension of VS Code. It automatically reads your linting configuration, identifies problems and even fixes them for you, if you want.
+[ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) turns the popular JavaScript linter into an extension of VS Code. It automatically reads your linting configuration, identifies problems and even fixes them for you, if you want.
 
 2.  GitLens
 [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) is a very powerful collaboration tool for VS Code. It provides many useful tools for git such as blame, code authorship, activity heatmaps, recent changes, file history and even commit search.
