@@ -1,6 +1,6 @@
 import path from 'path';
 import { FileParser } from 'build/parsers/file';
-import { GlobError, ArgsError } from 'build/utilities/error';
+import { ArgsError } from 'build/utilities/error';
 
 export class JSONParser {
   /**
@@ -29,8 +29,8 @@ export class JSONParser {
     } = {}
   ) => {
     if (!globPattern.endsWith('.json')) {
-      throw new GlobError(
-        `The specified glob pattern "${globPattern}" is not a valid JSON matcher.`
+      throw new ArgsError(
+        `Invalid argument. The specified globPattern "${globPattern}" is not a valid JSON matcher.`
       );
     }
 
