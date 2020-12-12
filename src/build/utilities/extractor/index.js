@@ -136,7 +136,7 @@ export class Extractor {
 
   static writeStaticPages = allSnippetData => {
     const { contentPath: outPath } = global.settings.paths;
-    Promise.all([
+    return Promise.all([
       JSONSerializer.serializeToDir(
         ...Chunk.createStaticPageChunks(outPath, '/404', 'NotFoundPage', 0)
       ),

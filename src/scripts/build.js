@@ -1,11 +1,11 @@
-import { prepareAssets } from 'build/assets';
-import { generateSitemap } from 'build/sitemap';
-import { extractData } from 'build/extract';
 import { setupEnv } from 'build/utilities/env';
 import { Logger } from 'build/utilities/logger';
 import { Content } from 'build/utilities/content';
 import { IconSerializer } from 'build/serializers/icon';
+import { SitemapSerializer } from 'build/serializers/sitemap';
 import { FileParser } from 'build/parsers/file';
+import { AssetSerializer } from 'build/serializers/asset';
+import { Extractor } from 'build/utilities/extractor';
 
 export const build = async () => {
   setupEnv('PRODUCTION');
@@ -22,9 +22,9 @@ export const build = async () => {
     ),
   ]);
 
-  await Promise.all([extractData(), prepareAssets()]);
+  await Promise.all([Extractor.extract(), AssetSerializer.serialize()]);
 
-  await Promise.all([generateSitemap()]);
+  await Promise.all([SitemapSerializer.serialize()]);
 };
 
 build();
