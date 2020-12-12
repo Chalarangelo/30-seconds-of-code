@@ -1,5 +1,5 @@
 import { SnippetCollection } from 'build/entities/snippetCollection';
-import EXPERTISE_LEVELS from 'config/expertise';
+import EXPERTISE_LEVELS from 'settings/expertise';
 import literals from 'lang/en/listing';
 import { SnippetCollectionListing } from 'build/adapters/snippetCollectionListing';
 import { ArgsError } from 'build/utilities/error';

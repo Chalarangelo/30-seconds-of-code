@@ -1,5 +1,5 @@
 import Remark from 'remark';
-import remarkOptions from 'config/remark';
+import remarkOptions from 'settings/remark';
 import toHAST from 'mdast-util-to-hast';
 import hastToHTML from 'hast-util-to-html';
 import visit from 'unist-util-visit';

@@ -1,6 +1,6 @@
-import EXPERTISE_LEVELS from 'config/expertise';
+import EXPERTISE_LEVELS from 'settings/expertise';
+import specialTagsDictionary from 'settings/tags';
 import { capitalize } from 'utils';
-import specialTagsDictionary from 'config/tags';
 
 const lowerCaseExpertiseLevels = EXPERTISE_LEVELS.filter(
   v => v !== 'Blog'
