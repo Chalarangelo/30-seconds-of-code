@@ -10,12 +10,21 @@ import literals from 'lang/en/client/search';
  * @param {string} value - The keyphrase used to update the history.
  */
 const handleHistoryUpdate = value => {
-  if (typeof window !== 'undefined' && typeof window.location !== 'undefined' && typeof window.history !== 'undefined') {
+  if (
+    typeof window !== 'undefined' &&
+    typeof window.location !== 'undefined' &&
+    typeof window.history !== 'undefined'
+  ) {
     const encodedValue = encodeURIComponent(value);
     const params = getURLParameters(window.location.href);
     const baseURL = getBaseURL(window.location.href);
-    if (value && params && params.keyphrase &&
-      (encodedValue.includes(params.keyphrase) || params.keyphrase.includes(encodedValue))) {
+    if (
+      value &&
+      params &&
+      params.keyphrase &&
+      (encodedValue.includes(params.keyphrase) ||
+        params.keyphrase.includes(encodedValue))
+    ) {
       window.history.replaceState(
         { keyphrase: value },
         literals.resultsFor(value),
@@ -67,33 +76,43 @@ const Search = ({
     if (isMainSearch) {
       const params = getURLParameters(window.location.href);
       let initValue = searchQuery;
-      if (params && (params.keyphrase) && params.keyphrase !== encodeURIComponent(searchQuery))
+      if (
+        params &&
+        params.keyphrase &&
+        params.keyphrase !== encodeURIComponent(searchQuery)
+      )
         initValue = decodeURIComponent(params.keyphrase);
-      else if(searchTimestamp && new Date() - new Date(searchTimestamp || null) >= 1200000)
+      else if (
+        searchTimestamp &&
+        new Date() - new Date(searchTimestamp || null) >= 1200000
+      )
         initValue = '';
       setValue(initValue);
     }
   }, []);
 
-  React.useEffect(throttle(() => {
-    if (!isMainSearch && value === '') return;
-    dispatch(pushNewQuery(value));
-    dispatch(searchByKeyphrase(value, searchIndex));
-    if (isMainSearch) handleHistoryUpdate(value);
-  }, 500), [value, searchIndex]);
+  React.useEffect(
+    throttle(() => {
+      if (!isMainSearch && value === '') return;
+      dispatch(pushNewQuery(value));
+      dispatch(searchByKeyphrase(value, searchIndex));
+      if (isMainSearch) handleHistoryUpdate(value);
+    }, 500),
+    [value, searchIndex]
+  );
 
   return (
     <>
       <input
-        defaultValue={ value }
+        defaultValue={value}
         className='search-box'
         type='search'
-        placeholder={ literals.searchPlaceholder }
-        aria-label={ literals.searchSnippets }
-        onKeyUp={ e => {
+        placeholder={literals.searchPlaceholder}
+        aria-label={literals.searchSnippets}
+        onKeyUp={e => {
           setValue(e.target.value);
-        } }
-        onKeyPress={ e => {
+        }}
+        onKeyPress={e => {
           if (
             e.charCode === 13 &&
             typeof document !== 'undefined' &&
@@ -105,15 +124,19 @@ const Search = ({
             if (!isMainSearch) {
               const encodedValue = encodeURIComponent(value);
               const rootURL = getRootURL(window.location.href);
-              window.location.href = `${ rootURL }/search/${ value ? `?keyphrase=${encodedValue}` : '' }`;
+              window.location.href = `${rootURL}/search/${
+                value ? `?keyphrase=${encodedValue}` : ''
+              }`;
             }
           }
-        } }
+        }}
       />
       <a
         className='btn icon icon-search search-btn'
-        title={ literals.search }
-        href={ `/search/${ value ? `?keyphrase=${encodeURIComponent(value)}` : '' }` }
+        title={literals.search}
+        href={`/search/${
+          value ? `?keyphrase=${encodeURIComponent(value)}` : ''
+        }`}
         rel='nofollow'
       />
     </>

@@ -16,17 +16,17 @@ export const wrapRootElement = ReduxWrapper;
 export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
     <link
-      key="link-sitemap"
-      rel="sitemap"
-      href="/sitemap.xml"
-      type="application/xml"
+      key='link-sitemap'
+      rel='sitemap'
+      href='/sitemap.xml'
+      type='application/xml'
     />,
     <link
-      key="link-opensearch"
-      rel="search"
-      href="/opensearch.xml"
-      type="application/opensearchdescription+xml"
-      title="Snippet search"
+      key='link-opensearch'
+      rel='search'
+      href='/opensearch.xml'
+      type='application/opensearchdescription+xml'
+      title='Snippet search'
     />,
   ]);
 };

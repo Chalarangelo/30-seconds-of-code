@@ -40,10 +40,10 @@ const SnippetPage = ({
   return (
     <>
       <Meta
-        title={ snippet.title }
-        description={ pageDescription }
-        logoSrc={ cardTemplate === 'BlogSnippetCard' ? snippet.cover : undefined }
-        structuredData={ {
+        title={snippet.title}
+        description={pageDescription}
+        logoSrc={cardTemplate === 'BlogSnippetCard' ? snippet.cover : undefined}
+        structuredData={{
           title: snippet.title,
           description: snippet.description,
           slug: snippet.slug,
@@ -51,15 +51,15 @@ const SnippetPage = ({
           firstSeen: snippet.firstSeen,
           lastUpdated: snippet.lastUpdated,
           type: 'snippet',
-        } }
-        breadcrumbsData={ breadcrumbs }
-        canonical={ snippet.slug }
+        }}
+        breadcrumbsData={breadcrumbs}
+        canonical={snippet.slug}
       />
       <Shell>
-        <Breadcrumbs breadcrumbs={ breadcrumbs } />
-        <SnippetCard snippet={ snippet } />
-        <CTA/>
-        <RecommendationList snippetList={ recommendedSnippets } />
+        <Breadcrumbs breadcrumbs={breadcrumbs} />
+        <SnippetCard snippet={snippet} />
+        <CTA />
+        <RecommendationList snippetList={recommendedSnippets} />
       </Shell>
     </>
   );

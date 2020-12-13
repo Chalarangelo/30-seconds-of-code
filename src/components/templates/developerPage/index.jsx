@@ -27,33 +27,29 @@ const propTypes = {
  * Renders a developer page.
  * Responsible for rendering the /developer page in development mode.
  */
-const DeveloperPage = ({
-  pageContext: {
-    configs,
-  },
-}) => {
+const DeveloperPage = ({ pageContext: { configs } }) => {
   const [repo, setRepo] = useState(null);
   const [title, setTitle] = useState(null);
   return (
     <>
-      <Meta
-        title={ literals.devMode }
-      />
+      <Meta title={literals.devMode} />
       <Shell>
-        <PageTitle>{ literals.devMode }</PageTitle>
-        <SimpleCard title={ literals.createSnippet }>
+        <PageTitle>{literals.devMode}</PageTitle>
+        <SimpleCard title={literals.createSnippet}>
           <form
-            className="dev-form"
-            onSubmit={ e => {
+            className='dev-form'
+            onSubmit={e => {
               e.preventDefault();
-              if(!repo || !title) return;
+              if (!repo || !title) return;
               const config = configs.find(cfg => cfg.sourceDir === repo);
               fetch('/create', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(
-                  { dirName: repo, snippetName: title, slugPrefix: config.slugPrefix }
-                ),
+                body: JSON.stringify({
+                  dirName: repo,
+                  snippetName: title,
+                  slugPrefix: config.slugPrefix,
+                }),
               })
                 .then(res => res.json())
                 .then(({ url }) => {
@@ -61,17 +57,25 @@ const DeveloperPage = ({
                     window.location.href = url;
                   }, 500);
                 });
-            } }
+            }}
           >
-            <label htmlFor="repository">{ literals.repo }</label>
-            <select name="repository" onChange={ e => setRepo(e.target.value) }>
-              { configs.map(({ sourceDir, name, slugPrefix }) => (
-                <option key={ slugPrefix } value={ sourceDir }>{ name }</option>
-              )) }
+            <label htmlFor='repository'>{literals.repo}</label>
+            <select name='repository' onChange={e => setRepo(e.target.value)}>
+              {configs.map(({ sourceDir, name, slugPrefix }) => (
+                <option key={slugPrefix} value={sourceDir}>
+                  {name}
+                </option>
+              ))}
             </select>
-            <label htmlFor="snippetTitle">{ literals.snippetTitle }</label>
-            <input type="text" placeholder={ literals.snippetTitlePlaceholder } onChange={ e => setTitle(e.target.value) }/>
-            <button className="btn" type="submit">{ literals.createSnippet }</button>
+            <label htmlFor='snippetTitle'>{literals.snippetTitle}</label>
+            <input
+              type='text'
+              placeholder={literals.snippetTitlePlaceholder}
+              onChange={e => setTitle(e.target.value)}
+            />
+            <button className='btn' type='submit'>
+              {literals.createSnippet}
+            </button>
           </form>
         </SimpleCard>
       </Shell>

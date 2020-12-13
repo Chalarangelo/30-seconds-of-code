@@ -27,21 +27,16 @@ const SimpleCard = ({
   children,
   dangerouslySetInnerHTML,
 }) => (
-  <Card className={ className } >
-    <h4 className='card-title simple-card-title'>
-      { title }
-    </h4>
-    {
-      dangerouslySetInnerHTML ? (
-        <div
-          className='card-description'
-          dangerouslySetInnerHTML={ dangerouslySetInnerHTML } />
-      ) : (
-        <div className='card-description'>
-          { children }
-        </div>
-      )
-    }
+  <Card className={className}>
+    <h4 className='card-title simple-card-title'>{title}</h4>
+    {dangerouslySetInnerHTML ? (
+      <div
+        className='card-description'
+        dangerouslySetInnerHTML={dangerouslySetInnerHTML}
+      />
+    ) : (
+      <div className='card-description'>{children}</div>
+    )}
   </Card>
 );
 

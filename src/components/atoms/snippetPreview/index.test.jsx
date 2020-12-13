@@ -11,10 +11,10 @@ describe('<SnippetPreview />', () => {
   beforeEach(() => {
     wrapper = render(
       <SnippetPreview
-        scopeId={ scopeId }
-        scopedCss={ scopedCssCode }
-        htmlCode={ scopedHtmlCode }
-        jsCode={ '' }
+        scopeId={scopeId}
+        scopedCss={scopedCssCode}
+        htmlCode={scopedHtmlCode}
+        jsCode={''}
       />
     ).container;
   });
@@ -23,11 +23,15 @@ describe('<SnippetPreview />', () => {
 
   it('should render correctly', () => {
     expect(wrapper.querySelectorAll('.snippet-preview-title')).toHaveLength(1);
-    expect(wrapper.querySelectorAll(`div[data-scope="${scopeId}"]`)).toHaveLength(1);
+    expect(
+      wrapper.querySelectorAll(`div[data-scope="${scopeId}"]`)
+    ).toHaveLength(1);
   });
 
   it('should contain passed scopedCss', () => {
-    expect(wrapper.querySelector('style').innerHTML).toContain(`${scopedCssCode}`);
+    expect(wrapper.querySelector('style').innerHTML).toContain(
+      `${scopedCssCode}`
+    );
   });
 
   it('should render passed htmlCode', () => {
@@ -38,10 +42,10 @@ describe('<SnippetPreview />', () => {
     beforeEach(() => {
       wrapper = render(
         <SnippetPreview
-          scopeId={ scopeId }
-          scopedCss={ scopedCssCode }
-          htmlCode={ scopedHtmlCode }
-          jsCode={ jsCode }
+          scopeId={scopeId}
+          scopedCss={scopedCssCode}
+          htmlCode={scopedHtmlCode}
+          jsCode={jsCode}
         />
       ).container;
     });
@@ -51,4 +55,3 @@ describe('<SnippetPreview />', () => {
     });
   });
 });
-

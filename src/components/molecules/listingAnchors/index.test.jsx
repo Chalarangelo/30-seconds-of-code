@@ -9,9 +9,7 @@ describe('<ListingAnchors />', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = render(
-      <ListingAnchors items={ anchorItems } />
-    ).container;
+    wrapper = render(<ListingAnchors items={anchorItems} />).container;
   });
 
   afterEach(cleanup);
@@ -28,14 +26,15 @@ describe('<ListingAnchors />', () => {
 
   describe('compact variant', () => {
     beforeEach(() => {
-      wrapper = render(
-        <ListingAnchors isCompact items={ anchorItems } />
-      ).container;
+      wrapper = render(<ListingAnchors isCompact items={anchorItems} />)
+        .container;
     });
 
     describe('should render', () => {
       it('a container component', () => {
-        expect(wrapper.querySelectorAll('.listing-anchors.compact')).toHaveLength(1);
+        expect(
+          wrapper.querySelectorAll('.listing-anchors.compact')
+        ).toHaveLength(1);
       });
 
       it('two anchor buttons', () => {
@@ -48,4 +47,3 @@ describe('<ListingAnchors />', () => {
     });
   });
 });
-

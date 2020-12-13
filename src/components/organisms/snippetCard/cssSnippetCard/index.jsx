@@ -15,55 +15,51 @@ const propTypes = {
  * CSS snippet card.
  * Used for CSS snippets.
  */
-const SnippetCard = ({
-  snippet,
-}) => {
+const SnippetCard = ({ snippet }) => {
   return (
-    <Card className='snippet-card' >
+    <Card className='snippet-card'>
       <div className='card-meta'>
-        <div className={ `card-icon icon icon-${snippet.icon}` }>
-          <Expertise level={ snippet.expertise } />
+        <div className={`card-icon icon icon-${snippet.icon}`}>
+          <Expertise level={snippet.expertise} />
         </div>
         <div className='card-data'>
-          <h1 className='card-title'>{ snippet.title }</h1>
-          <TagList tags={ [ snippet.language.long, ...snippet.tags.all ] } />
+          <h1 className='card-title'>{snippet.title}</h1>
+          <TagList tags={[snippet.language.long, ...snippet.tags.all]} />
         </div>
       </div>
       <div
         className='card-description'
-        dangerouslySetInnerHTML={ { __html: snippet.html.fullDescription } }
+        dangerouslySetInnerHTML={{ __html: snippet.html.fullDescription }}
       />
       <div className='card-preview-content'>
         <SnippetPreview
-          scopeId={ snippet.id.slice(snippet.id.lastIndexOf('/') + 1) }
-          scopedCss={ snippet.code.scopedCss }
-          htmlCode={ snippet.code.html }
-          jsCode={ snippet.code.js }
+          scopeId={snippet.id.slice(snippet.id.lastIndexOf('/') + 1)}
+          scopedCss={snippet.code.scopedCss}
+          htmlCode={snippet.code.html}
+          jsCode={snippet.code.js}
         />
       </div>
       <div className='card-source-content'>
         <CodeBlock
-          language={ { short: 'html', long: 'HTML' } }
-          htmlContent={ snippet.html.html }
+          language={{ short: 'html', long: 'HTML' }}
+          htmlContent={snippet.html.html}
           className='card-code'
         />
         <CodeBlock
-          language={ {short: 'css', long: 'CSS'} }
-          htmlContent={ snippet.html.css }
+          language={{ short: 'css', long: 'CSS' }}
+          htmlContent={snippet.html.css}
           className='card-code'
         />
-        { snippet.html.js &&
+        {snippet.html.js && (
           <CodeBlock
-            language={ {short: 'js', long: 'JavaScript'} }
-            htmlContent={ snippet.html.js }
+            language={{ short: 'js', long: 'JavaScript' }}
+            htmlContent={snippet.html.js}
             className='card-code'
           />
-        }
+        )}
       </div>
       <div className='card-actions'>
-        <Actions
-          snippet={ snippet }
-        />
+        <Actions snippet={snippet} />
       </div>
     </Card>
   );

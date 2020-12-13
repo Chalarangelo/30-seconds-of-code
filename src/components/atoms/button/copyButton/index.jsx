@@ -16,9 +16,7 @@ const propTypes = {
  * Dependent on `copy-to-clipboard` external module.
  * @param {string} text - Text to be copied when the button is clicked.
  */
-const CopyButton = ({
-  text,
-}) => {
+const CopyButton = ({ text }) => {
   const gtagCallback = useGtagEvent('click');
   const [active, setActive] = React.useState(false);
   const [copying, setCopying] = React.useState(false);
@@ -41,16 +39,18 @@ const CopyButton = ({
 
   return (
     <Button
-      className={ combineClassNames`copy-btn icon ${active ? 'icon-check active' : 'icon-clipboard'}` }
-      title={ literals.copyToClipboard }
-      onClick={ () => {
+      className={combineClassNames`copy-btn icon ${
+        active ? 'icon-check active' : 'icon-clipboard'
+      }`}
+      title={literals.copyToClipboard}
+      onClick={() => {
         // eslint-disable-next-line camelcase
-        gtagCallback({ event_category: 'action-copy', value: 1});
+        gtagCallback({ event_category: 'action-copy', value: 1 });
         setCopying(true);
         setButtonText(literals.copiedToClipboard);
-      } }
+      }}
     >
-      { buttonText }
+      {buttonText}
     </Button>
   );
 };

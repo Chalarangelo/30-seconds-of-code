@@ -13,11 +13,11 @@ describe('<PageBackdrop />', () => {
   beforeEach(() => {
     wrapper = render(
       <PageBackdrop
-        graphicName={ graphicName }
-        mainText={ mainText }
-        mainTextClassName={ mainTextClassName }
-        subText={ subText }
-        subTextClassName={ subTextClassName }
+        graphicName={graphicName}
+        mainText={mainText}
+        mainTextClassName={mainTextClassName}
+        subText={subText}
+        subTextClassName={subTextClassName}
       />
     ).container;
   });
@@ -37,7 +37,9 @@ describe('<PageBackdrop />', () => {
   });
 
   it('should pass graphic name to PageGraphic', () => {
-    expect(wrapper.querySelectorAll(`.page-graphic.${graphicName}`)).toHaveLength(1);
+    expect(
+      wrapper.querySelectorAll(`.page-graphic.${graphicName}`)
+    ).toHaveLength(1);
   });
 
   it('should render mainText', () => {
@@ -45,11 +47,15 @@ describe('<PageBackdrop />', () => {
   });
 
   it('should pass mainTextClassName to main text', () => {
-    expect(wrapper.querySelector('.page-backdrop-text').className).toContain(mainTextClassName);
+    expect(wrapper.querySelector('.page-backdrop-text').className).toContain(
+      mainTextClassName
+    );
   });
 
   it('should pass subTextClassName to subtext', () => {
-    expect(wrapper.querySelector('.page-backdrop-subtext').className).toContain(subTextClassName);
+    expect(wrapper.querySelector('.page-backdrop-subtext').className).toContain(
+      subTextClassName
+    );
   });
 
   it('should render subtext', () => {
@@ -57,13 +63,13 @@ describe('<PageBackdrop />', () => {
   });
 
   describe('without subText', () => {
-
     beforeEach(() => {
-      wrapper = render(<PageBackdrop
-        graphicName={ graphicName }
-        mainText={ mainText }
-        mainTextClassName={ mainTextClassName }
-      />
+      wrapper = render(
+        <PageBackdrop
+          graphicName={graphicName}
+          mainText={mainText}
+          mainTextClassName={mainTextClassName}
+        />
       ).container;
     });
 
@@ -72,4 +78,3 @@ describe('<PageBackdrop />', () => {
     });
   });
 });
-

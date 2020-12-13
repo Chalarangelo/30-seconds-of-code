@@ -17,12 +17,7 @@ const propTypes = {
  * @param {string} htmlCode - HTML code for the snippet preview
  * @param {string} jsCode - JS code for the snippet preview
  */
-const SnippetPreview = ({
-  scopeId,
-  scopedCss,
-  htmlCode,
-  jsCode,
-}) => {
+const SnippetPreview = ({ scopeId, scopedCss, htmlCode, jsCode }) => {
   React.useEffect(() => {
     if (!jsCode) return;
     const s = document.createElement('script');
@@ -34,21 +29,18 @@ const SnippetPreview = ({
       window['snippet_preview_js']();
     } catch (e) {
       /* istanbul ignore next */
-      console.warn('There is an issue with JavaScript execution on the snippet preview of this page.');
+      console.warn(
+        'There is an issue with JavaScript execution on the snippet preview of this page.'
+      );
     }
   }, []);
 
   return (
     <>
-      <h5 className='snippet-preview-title'>{ literals.preview }</h5>
-      <div
-        className='snippet-preview'
-        data-scope={ scopeId }
-      >
-        <style>
-          { scopedCss }
-        </style>
-        <div dangerouslySetInnerHTML={ {__html: htmlCode} } />
+      <h5 className='snippet-preview-title'>{literals.preview}</h5>
+      <div className='snippet-preview' data-scope={scopeId}>
+        <style>{scopedCss}</style>
+        <div dangerouslySetInnerHTML={{ __html: htmlCode }} />
       </div>
     </>
   );

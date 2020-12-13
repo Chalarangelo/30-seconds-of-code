@@ -5,13 +5,12 @@ import SimpleCard from './index';
 describe('<SimpleCard />', () => {
   let wrapper;
   const innerText = 'This is a card';
-  const innerHTML = {__html: '<p>This is a card</p>'};
+  const innerHTML = { __html: '<p>This is a card</p>' };
   const title = 'Simple card';
 
   beforeEach(() => {
-    wrapper = render(
-      <SimpleCard title={ title } className='special' />
-    ).container;
+    wrapper = render(<SimpleCard title={title} className='special' />)
+      .container;
   });
 
   afterEach(cleanup);
@@ -32,8 +31,8 @@ describe('<SimpleCard />', () => {
   describe('with children', () => {
     beforeEach(() => {
       wrapper = render(
-        <SimpleCard title={ title } className='special' >
-          { innerText }
+        <SimpleCard title={title} className='special'>
+          {innerText}
         </SimpleCard>
       ).container;
     });
@@ -47,9 +46,9 @@ describe('<SimpleCard />', () => {
     beforeEach(() => {
       wrapper = render(
         <SimpleCard
-          title={ title }
+          title={title}
           className='special'
-          dangerouslySetInnerHTML={ innerHTML }
+          dangerouslySetInnerHTML={innerHTML}
         />
       ).container;
     });
@@ -58,6 +57,4 @@ describe('<SimpleCard />', () => {
       expect(wrapper.innerHTML).toContain(innerHTML.__html);
     });
   });
-
 });
-

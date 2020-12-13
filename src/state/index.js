@@ -4,12 +4,15 @@ import createPersistConfig from './createPersistConfig';
 import storage from 'redux-persist/lib/storage';
 import shell, { persistConfig as shellConfig } from './shell';
 import search, { persistConfig as searchConfig } from './search';
-import navigation, {persistConfig as navigationConfig} from './navigation';
+import navigation, { persistConfig as navigationConfig } from './navigation';
 
-const persistConfig = createPersistConfig({
-  key: 'root',
-  whitelist: [''],
-}, storage);
+const persistConfig = createPersistConfig(
+  {
+    key: 'root',
+    whitelist: [''],
+  },
+  storage
+);
 
 const shellPersistConfig = createPersistConfig(shellConfig, storage);
 const searchPersistConfig = createPersistConfig(searchConfig, storage);
@@ -23,15 +26,14 @@ export const rootReducer = combineReducers({
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-const reduxDevToolsEnhancer = process.env.NODE_ENV === 'development' &&
-  typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION__
-  && window.__REDUX_DEVTOOLS_EXTENSION__();
+const reduxDevToolsEnhancer =
+  process.env.NODE_ENV === 'development' &&
+  typeof window !== 'undefined' &&
+  window.__REDUX_DEVTOOLS_EXTENSION__ &&
+  window.__REDUX_DEVTOOLS_EXTENSION__();
 
 export default () => {
-  let store = createStore(
-    persistedReducer,
-    reduxDevToolsEnhancer
-  );
+  let store = createStore(persistedReducer, reduxDevToolsEnhancer);
   let persistor = persistStore(store);
   return { store, persistor };
 };

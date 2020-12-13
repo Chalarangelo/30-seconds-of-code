@@ -17,7 +17,13 @@ describe('Content', () => {
     it('should execute the appropriate git command', () => {
       const proc = childProcess.spawn.mock.calls[0];
       expect(proc[0]).toBe('git');
-      expect(proc[1]).toEqual(['submodule', 'update', '--recursive', '--remote', '--depth=10000']);
+      expect(proc[1]).toEqual([
+        'submodule',
+        'update',
+        '--recursive',
+        '--remote',
+        '--depth=10000',
+      ]);
     });
   });
 });

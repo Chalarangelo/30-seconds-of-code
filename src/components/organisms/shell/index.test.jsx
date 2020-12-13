@@ -9,11 +9,7 @@ describe('<Shell />', () => {
   const innerText = 'Hi there!';
 
   beforeEach(() => {
-    const utils = renderConnected(
-      <Shell>
-        { innerText }
-      </Shell>
-    );
+    const utils = renderConnected(<Shell>{innerText}</Shell>);
     wrapper = utils.container;
     store = utils.store;
     rerender = utils.rerenderConnected;
@@ -45,26 +41,22 @@ describe('<Shell />', () => {
   });
 
   describe('when on a settings page', () => {
-
     beforeEach(() => {
-      wrapper = rerender(<Shell isSettings/>).container;
+      wrapper = rerender(<Shell isSettings />).container;
       pageContainer = wrapper.querySelector('div.page-container');
     });
 
     it('should not link to the settings page', () => {
-      expect(wrapper.querySelectorAll('a.icon-settings[href="/settings"]')).toHaveLength(0);
+      expect(
+        wrapper.querySelectorAll('a.icon-settings[href="/settings"]')
+      ).toHaveLength(0);
     });
   });
 
   describe('when in dark mode', () => {
-
     beforeEach(() => {
       store.dispatch(toggleDarkMode(true));
-      wrapper = rerender(
-        <Shell isSettings>
-          { innerText }
-        </Shell>
-      ).container;
+      wrapper = rerender(<Shell isSettings>{innerText}</Shell>).container;
       pageContainer = wrapper.querySelector('div.page-container');
     });
 
@@ -74,13 +66,8 @@ describe('<Shell />', () => {
   });
 
   describe('when in production without cookies enabled', () => {
-
     beforeEach(() => {
-      wrapper = rerender(
-        <Shell isSettings>
-          { innerText }
-        </Shell>
-      ).container;
+      wrapper = rerender(<Shell isSettings>{innerText}</Shell>).container;
     });
 
     it('should render a CookieConsentPopup', () => {

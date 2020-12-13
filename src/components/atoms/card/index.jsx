@@ -11,14 +11,8 @@ const propTypes = {
  * Generic card component. Renders a simple `<div>` element with a base class
  * and passes everything else to the element.
  */
-const Card = ({
-  className,
-  ...rest
-}) => (
-  <div
-    className={ combineClassNames`card ${className}` }
-    { ...rest }
-  />
+const Card = ({ className, ...rest }) => (
+  <div className={combineClassNames`card ${className}`} {...rest} />
 );
 
 Card.propTypes = propTypes;

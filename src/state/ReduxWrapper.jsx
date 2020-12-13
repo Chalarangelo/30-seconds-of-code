@@ -10,9 +10,9 @@ const { persistor, store } = createStore();
  */
 /* eslint-disable-next-line */
 const ReduxWrapper = ({ element }) => (
-  <Provider store={ store }>
-    <PersistGate loading={ null } persistor={ persistor }>
-      { element }
+  <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
+      {element}
     </PersistGate>
   </Provider>
 );

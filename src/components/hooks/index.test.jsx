@@ -10,7 +10,7 @@ describe('useClickOutside', () => {
 
     return (
       <section>
-        <div ref={ testRef } />
+        <div ref={testRef} />
       </section>
     );
   };
@@ -19,7 +19,7 @@ describe('useClickOutside', () => {
   beforeEach(() => {
     wrapper = render(
       <>
-        <button id="out" />
+        <button id='out' />
         <Tester />
       </>
     ).container;
@@ -27,14 +27,13 @@ describe('useClickOutside', () => {
 
   afterEach(cleanup);
 
-  it('should not invoke the handler when clicking inside the element', async() => {
+  it('should not invoke the handler when clicking inside the element', async () => {
     fireEvent.click(wrapper.querySelector('div'));
     expect(handler.mock.calls).toHaveLength(0);
   });
 
-  it('should invoke the handler when clicking outside the element', async() => {
+  it('should invoke the handler when clicking outside the element', async () => {
     fireEvent.click(wrapper.querySelector('#out'));
     expect(handler.mock.calls.length).toBeGreaterThan(0);
   });
 });
-

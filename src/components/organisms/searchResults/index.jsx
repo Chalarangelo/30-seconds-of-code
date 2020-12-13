@@ -23,32 +23,39 @@ const SearchResults = ({
   searchResults,
   recommendedSnippets = [],
 }) => {
-  const hasResults = searchQuery.trim().length > 1 && searchResults.length !== 0;
+  const hasResults =
+    searchQuery.trim().length > 1 && searchResults.length !== 0;
   return hasResults ? (
     <>
-      <PageTitle>{ literals.results }</PageTitle>
+      <PageTitle>{literals.results}</PageTitle>
       <ul className='search-results'>
-        { searchResults.map(snippet => (
-          <PreviewCard
-            key={ `snippet_${snippet.url}` }
-            snippet={ snippet }
-          />
-        )) }
+        {searchResults.map(snippet => (
+          <PreviewCard key={`snippet_${snippet.url}`} snippet={snippet} />
+        ))}
       </ul>
     </>
   ) : (
     <>
       <PageBackdrop
-        graphicName={ searchQuery.trim().length <= 1 ? 'search-empty' : 'search-no-results' }
-        mainText={ searchQuery.trim().length <= 1
-          ? literals.searchPrompt
-          : ( <>{ literals.noResults }<strong>{ searchQuery }</strong>{ '.' }</> )
+        graphicName={
+          searchQuery.trim().length <= 1 ? 'search-empty' : 'search-no-results'
+        }
+        mainText={
+          searchQuery.trim().length <= 1 ? (
+            literals.searchPrompt
+          ) : (
+            <>
+              {literals.noResults}
+              <strong>{searchQuery}</strong>
+              {'.'}
+            </>
+          )
         }
         mainTextClassName='search-page-text'
       />
-      { recommendedSnippets.length ? (
-        <RecommendationList snippetList={ recommendedSnippets } />
-      ) : null }
+      {recommendedSnippets.length ? (
+        <RecommendationList snippetList={recommendedSnippets} />
+      ) : null}
     </>
   );
 };

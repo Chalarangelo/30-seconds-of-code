@@ -1,5 +1,4 @@
 describe('Snippet', () => {
-
   describe('Simple', () => {
     before(() => {
       cy.visit('http://localhost:9000/js/s/shuffle/');
@@ -77,5 +76,4 @@ describe('Snippet', () => {
       cy.get('.recommendation-list-title').should('have.length', 1);
     });
   });
-
 });

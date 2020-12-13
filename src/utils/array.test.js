@@ -1,8 +1,4 @@
-import {
-  uniqueElements,
-  insertAt,
-  chunk
-} from './array';
+import { uniqueElements, insertAt, chunk } from './array';
 
 describe('uniqueElements', () => {
   it('returns the unique elements in an array', () => {

@@ -14,43 +14,38 @@ const propTypes = {
  * Renders the popup for cookie consent. (Redux-connected)
  * Dependent on the `Button` component.
  */
-const CookieConsentPopup = ({
-  dispatch,
-  ...rest
-}) => (
-  <div className='cookie-consent-popup' { ...rest }>
+const CookieConsentPopup = ({ dispatch, ...rest }) => (
+  <div className='cookie-consent-popup' {...rest}>
     <p data-nosnippet>
-      { literals.cookieDisclaimer }
-      { literals.learnMore }
-      <a
-        className='footer-link'
-        href='/cookies'
-      >
-        { literals.cookiePolicy }
+      {literals.cookieDisclaimer}
+      {literals.learnMore}
+      <a className='footer-link' href='/cookies'>
+        {literals.cookiePolicy}
       </a>
-      { '.' }
-      <br/>
-      { literals.whatYouAccept }
+      {'.'}
+      <br />
+      {literals.whatYouAccept}
     </p>
     <div className='cookie-consent-buttons'>
       <Button
         className='cookie-accept'
         data-nosnippet
-        onClick={ e => {
+        onClick={e => {
           e.preventDefault();
           dispatch(decideCookies(true));
-        } }>
-        { literals.accept }
+        }}
+      >
+        {literals.accept}
       </Button>
       <Button
         className='cookie-decline'
         data-nosnippet
-        onClick={ e => {
+        onClick={e => {
           e.preventDefault();
           dispatch(decideCookies(false));
-        } }
+        }}
       >
-        { literals.decline }
+        {literals.decline}
       </Button>
     </div>
   </div>
@@ -58,7 +53,4 @@ const CookieConsentPopup = ({
 
 CookieConsentPopup.propTypes = propTypes;
 
-export default connect(
-  () => ({}),
-  null
-)(CookieConsentPopup);
+export default connect(() => ({}), null)(CookieConsentPopup);

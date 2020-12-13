@@ -11,9 +11,8 @@ describe('<CssSnippetCard />', () => {
   let wrapper, card, tagList, snippetPreview, codeBlocks;
 
   beforeEach(() => {
-    wrapper = renderConnected(
-      <CssSnippetCard snippet={ fullCssSnippet } />
-    ).container;
+    wrapper = renderConnected(<CssSnippetCard snippet={fullCssSnippet} />)
+      .container;
     card = wrapper.querySelector('.card');
     tagList = wrapper.querySelector('.tag-list');
     snippetPreview = wrapper.querySelector('.snippet-preview');
@@ -65,12 +64,15 @@ describe('<CssSnippetCard />', () => {
   });
 
   it('should have the correct card title', () => {
-    expect(card.querySelector('h1.card-title').textContent).toBe(fullCssSnippet.title);
+    expect(card.querySelector('h1.card-title').textContent).toBe(
+      fullCssSnippet.title
+    );
   });
 
   it('should pass the expertise data to the TagList component', () => {
-    expect(tagList.textContent.toLowerCase())
-      .toContain(fullCssSnippet.expertise.toLowerCase());
+    expect(tagList.textContent.toLowerCase()).toContain(
+      fullCssSnippet.expertise.toLowerCase()
+    );
   });
 
   it('should pass the tags data to the TagList component', () => {
@@ -81,22 +83,27 @@ describe('<CssSnippetCard />', () => {
   });
 
   it('should pass the language data to the TagList component', () => {
-    expect(tagList.textContent.toLowerCase())
-      .toContain(fullCssSnippet.language.long.toLowerCase());
+    expect(tagList.textContent.toLowerCase()).toContain(
+      fullCssSnippet.language.long.toLowerCase()
+    );
   });
 
   it('should render the correct explanation', () => {
-    expect(card.querySelector('.card-description').innerHTML).toContain(fullCssSnippet.html.fullDescription);
+    expect(card.querySelector('.card-description').innerHTML).toContain(
+      fullCssSnippet.html.fullDescription
+    );
   });
 
   it('should pass the snippet code data to the SnippetPreview component', () => {
-    expect(snippetPreview.dataset.scope).toBe(fullCssSnippet.id.slice(fullCssSnippet.id.lastIndexOf('/') + 1));
+    expect(snippetPreview.dataset.scope).toBe(
+      fullCssSnippet.id.slice(fullCssSnippet.id.lastIndexOf('/') + 1)
+    );
     expect(snippetPreview.innerHTML).toContain(fullCssSnippet.code.scopedCss);
     expect(snippetPreview.innerHTML).toContain(fullCssSnippet.code.html);
   });
 
   it('should pass the snippet code data to the CodepenButton component', () => {
-    const {css, html} = JSON.parse(wrapper.querySelector('input').value);
+    const { css, html } = JSON.parse(wrapper.querySelector('input').value);
     expect(html).toBe(fullCssSnippet.code.html);
     expect(css).toBe(fullCssSnippet.code.css);
   });
@@ -110,10 +117,9 @@ describe('<CssSnippetCard />', () => {
   });
 
   describe('including JS code', () => {
-
     beforeEach(() => {
       wrapper = renderConnected(
-        <CssSnippetCard snippet={ fullCssWithJsSnippet } />
+        <CssSnippetCard snippet={fullCssWithJsSnippet} />
       ).container;
       card = wrapper.querySelector('.card');
       tagList = wrapper.querySelector('.tag-list');
@@ -130,4 +136,3 @@ describe('<CssSnippetCard />', () => {
     });
   });
 });
-

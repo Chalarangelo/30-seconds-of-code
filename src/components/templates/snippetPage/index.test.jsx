@@ -14,13 +14,14 @@ describe('<SnippetPage />', () => {
 
   beforeEach(() => {
     const utils = renderConnected(
-      <SnippetPage pageContext={ {
-        snippet:
-        fullSnippet,
-        cardTemplate,
-        breadcrumbs,
-        pageDescription: '',
-      } }/>
+      <SnippetPage
+        pageContext={{
+          snippet: fullSnippet,
+          cardTemplate,
+          breadcrumbs,
+          pageDescription: '',
+        }}
+      />
     );
     wrapper = utils.container;
     meta = Helmet.peek();
@@ -48,32 +49,37 @@ describe('<SnippetPage />', () => {
   });
 
   it('should pass the breadcrumbs to the Breadcrumbs component', () => {
-    expect(wrapper.querySelector('.breadcrumbs').textContent).toContain(breadcrumbs[0].name);
+    expect(wrapper.querySelector('.breadcrumbs').textContent).toContain(
+      breadcrumbs[0].name
+    );
   });
 
   it('should pass the snippet data to the SnippetCard component', () => {
-    expect(snippetCard.querySelector('.card-title').textContent).toContain(fullSnippet.title);
+    expect(snippetCard.querySelector('.card-title').textContent).toContain(
+      fullSnippet.title
+    );
   });
 
   describe('with a blog post', () => {
     beforeEach(() => {
       const utils = renderConnected(
-        <SnippetPage pageContext={ {
-          snippet: fullBlogSnippet,
-          cardTemplate: 'BlogSnippetCard',
-          pageDescription: '',
-          breadcrumbs,
-        } }/>
+        <SnippetPage
+          pageContext={{
+            snippet: fullBlogSnippet,
+            cardTemplate: 'BlogSnippetCard',
+            pageDescription: '',
+            breadcrumbs,
+          }}
+        />
       );
       wrapper = utils.container;
       meta = Helmet.peek();
     });
 
     it('should pass the correct logoSrc to the Meta component', () => {
-      expect(meta.metaTags
-        .find(({property}) => property === 'og:image').content
+      expect(
+        meta.metaTags.find(({ property }) => property === 'og:image').content
       ).toContain(fullBlogSnippet.cover);
     });
   });
 });
-

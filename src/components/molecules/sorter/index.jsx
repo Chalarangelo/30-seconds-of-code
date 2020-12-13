@@ -10,13 +10,8 @@ const propTypes = {
 /**
  * Renders a sorter component.
  */
-const Sorter = ({
-  sorter: {
-    orders,
-    selectedOrder,
-  },
-}) => {
-  if(!orders || !orders.length || orders.length === 1) return null;
+const Sorter = ({ sorter: { orders, selectedOrder } }) => {
+  if (!orders || !orders.length || orders.length === 1) return null;
 
   const [toggled, setToggled] = React.useState(false);
   const sorterRef = React.useRef();
@@ -24,35 +19,43 @@ const Sorter = ({
   const handleSorterClick = e => {
     if (!toggled || e.target.className.includes('selected')) {
       e.preventDefault();
-      if(!toggled) setToggled(true);
+      if (!toggled) setToggled(true);
       else setToggled(false);
     }
   };
 
-  useClickOutside(sorterRef, () => { setToggled(false); });
+  useClickOutside(sorterRef, () => {
+    setToggled(false);
+  });
 
   return (
     <div
-      className={ combineClassNames`sorter ${toggled ? 'open' : ''}` }
-      ref={ sorterRef }
+      className={combineClassNames`sorter ${toggled ? 'open' : ''}`}
+      ref={sorterRef}
     >
       <div className='sorter-inner'>
-        {
-          orders
-            .sort((a, b) => a.title === selectedOrder ? -1 : b.title === selectedOrder ? 1 : 0)
-            .map(order => (
-              <a
-                key={ `${order.url}` }
-                className={ combineClassNames`btn order-btn
-                ${order.title === selectedOrder ? `selected icon ${toggled ? 'icon-chevron-up' : 'icon-chevron-down'}` : ''}
-              ` }
-                href={ order.url }
-                onClick={ e => handleSorterClick(e) }
-              >
-                { order.title }
-              </a>
-            ))
-        }
+        {orders
+          .sort((a, b) =>
+            a.title === selectedOrder ? -1 : b.title === selectedOrder ? 1 : 0
+          )
+          .map(order => (
+            <a
+              key={`${order.url}`}
+              className={combineClassNames`btn order-btn
+                ${
+                  order.title === selectedOrder
+                    ? `selected icon ${
+                        toggled ? 'icon-chevron-up' : 'icon-chevron-down'
+                      }`
+                    : ''
+                }
+              `}
+              href={order.url}
+              onClick={e => handleSorterClick(e)}
+            >
+              {order.title}
+            </a>
+          ))}
       </div>
     </div>
   );

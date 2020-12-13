@@ -9,9 +9,7 @@ describe('<SnippetCard />', () => {
   let wrapper, card, tagList, codeBlocks;
 
   beforeEach(() => {
-    wrapper = renderConnected(
-      <SnippetCard snippet={ fullSnippet } />
-    ).container;
+    wrapper = renderConnected(<SnippetCard snippet={fullSnippet} />).container;
     card = wrapper.querySelector('.card');
     tagList = wrapper.querySelector('.tag-list');
     codeBlocks = wrapper.querySelectorAll('pre');
@@ -66,12 +64,15 @@ describe('<SnippetCard />', () => {
   });
 
   it('should have the correct card title', () => {
-    expect(card.querySelector('h1.card-title').textContent).toBe(fullSnippet.title);
+    expect(card.querySelector('h1.card-title').textContent).toBe(
+      fullSnippet.title
+    );
   });
 
   it('should pass the expertise data to the TagList component', () => {
-    expect(tagList.textContent.toLowerCase())
-      .toContain(fullSnippet.expertise.toLowerCase());
+    expect(tagList.textContent.toLowerCase()).toContain(
+      fullSnippet.expertise.toLowerCase()
+    );
   });
 
   it('should pass the tags data to the TagList component', () => {
@@ -82,16 +83,21 @@ describe('<SnippetCard />', () => {
   });
 
   it('should pass the language data to the TagList component', () => {
-    expect(tagList.textContent.toLowerCase())
-      .toContain(fullSnippet.language.long.toLowerCase());
+    expect(tagList.textContent.toLowerCase()).toContain(
+      fullSnippet.language.long.toLowerCase()
+    );
   });
 
   it('should render the correct explanation', () => {
-    expect(card.querySelector('.card-description').innerHTML).toContain(fullSnippet.html.fullDescription);
+    expect(card.querySelector('.card-description').innerHTML).toContain(
+      fullSnippet.html.fullDescription
+    );
   });
 
   it('should have the appropriate examples title', () => {
-    expect(card.querySelector('.card-example-title').textContent).toBe(literals.examples);
+    expect(card.querySelector('.card-example-title').textContent).toBe(
+      literals.examples
+    );
   });
 
   it('should pass the code data to the first CodeBlock component', () => {
@@ -104,9 +110,8 @@ describe('<SnippetCard />', () => {
 
   describe('with additional languages', () => {
     beforeEach(() => {
-      wrapper = renderConnected(
-        <SnippetCard snippet={ fullReactSnippet }/>
-      ).container;
+      wrapper = renderConnected(<SnippetCard snippet={fullReactSnippet} />)
+        .container;
     });
 
     it('should render a CodepenButton', () => {
@@ -114,4 +119,3 @@ describe('<SnippetCard />', () => {
     });
   });
 });
-

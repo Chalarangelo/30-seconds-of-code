@@ -13,7 +13,7 @@ describe('<SearchPage />', () => {
 
   beforeEach(() => {
     const utils = renderConnected(
-      <SearchPage pageContext={ { pageDescription: '' } } />
+      <SearchPage pageContext={{ pageDescription: '' }} />
     );
     wrapper = utils.container;
     meta = Helmet.peek();
@@ -44,9 +44,7 @@ describe('<SearchPage />', () => {
   describe('with a given search query', () => {
     beforeEach(() => {
       store.dispatch(pushNewQuery('test'));
-      wrapper = rerender(
-        <SearchPage pageContext={ { pageDescription: '' } } />
-      );
+      wrapper = rerender(<SearchPage pageContext={{ pageDescription: '' }} />);
       meta = Helmet.peek();
     });
 
@@ -55,4 +53,3 @@ describe('<SearchPage />', () => {
     });
   });
 });
-

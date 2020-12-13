@@ -7,9 +7,7 @@ describe('<TagList />', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = render(
-      <TagList tags={ tags } />
-    ).container;
+    wrapper = render(<TagList tags={tags} />).container;
   });
 
   afterEach(cleanup);
@@ -22,4 +20,3 @@ describe('<TagList />', () => {
     expect(wrapper.textContent).toBe('array, adapter, function');
   });
 });
-

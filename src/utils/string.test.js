@@ -8,7 +8,7 @@ import {
   stripMarkdownFormat,
   toKebabCase,
   convertToSeoSlug,
-  addTrailingSlashToSlug
+  addTrailingSlashToSlug,
 } from './string';
 
 describe('capitalize', () => {
@@ -23,7 +23,8 @@ describe('capitalize', () => {
 
 describe('optimizeNodes', () => {
   it('optimizes nodes', () => {
-    const data = '<span class="token punctuation">foo</span><span class="token punctuation">bar</span>';
+    const data =
+      '<span class="token punctuation">foo</span><span class="token punctuation">bar</span>';
     const regexp = /<span class="token punctuation">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token punctuation">([^\0]*?)<\/span>/gm;
     const replacer = (match, p1, p2, p3) =>
       `<span class="token punctuation">${p1}${p2}${p3}</span>`;
@@ -34,15 +35,19 @@ describe('optimizeNodes', () => {
 
 describe('optimizeAllNodes', () => {
   it('optimizes all nodes', () => {
-    const data = '<span class="token punctuation">foo</span><span class="token punctuation">bar</span> <span class="token keyword">foo</span><span class="token keyword">bar</span> <span class="token operator">foo</span><span class="token operator">bar</span>';
-    const result = '<span class="token punctuation">foobar</span> <span class="token keyword">foobar</span> <span class="token operator">foobar</span>';
+    const data =
+      '<span class="token punctuation">foo</span><span class="token punctuation">bar</span> <span class="token keyword">foo</span><span class="token keyword">bar</span> <span class="token operator">foo</span><span class="token operator">bar</span>';
+    const result =
+      '<span class="token punctuation">foobar</span> <span class="token keyword">foobar</span> <span class="token operator">foobar</span>';
     expect(optimizeAllNodes(data)).toBe(result);
   });
 });
 
 describe('getURLParameters', () => {
   it('returns an object containing the parameters of the current URL', () => {
-    expect(getURLParameters('http://url.com/page?name=Adam&surname=Smith')).toEqual({
+    expect(
+      getURLParameters('http://url.com/page?name=Adam&surname=Smith')
+    ).toEqual({
       name: 'Adam',
       surname: 'Smith',
     });
@@ -51,7 +56,9 @@ describe('getURLParameters', () => {
 
 describe('getBaseURL', () => {
   it('returns the current URL without parameters', () => {
-    expect(getBaseURL('http://url.com/page?name=Adam&surname=Smith')).toBe('http://url.com/page');
+    expect(getBaseURL('http://url.com/page?name=Adam&surname=Smith')).toBe(
+      'http://url.com/page'
+    );
   });
 });
 
@@ -79,13 +86,15 @@ describe('toKebabCase', () => {
     expect(toKebabCase('some text')).toBe('some-text');
   });
   it('works with mixed strings', () => {
-    expect(toKebabCase('some-mixed-string With spaces-underscores-and-hyphens')).toBe(
-      'some-mixed-string-with-spaces-underscores-and-hyphens'
-    );
+    expect(
+      toKebabCase('some-mixed-string With spaces-underscores-and-hyphens')
+    ).toBe('some-mixed-string-with-spaces-underscores-and-hyphens');
   });
   it('works with capital words in camel case', () => {
     expect(
-      toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML')
+      toKebabCase(
+        'IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML'
+      )
     ).toBe(
       'i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-some-xml-and-html'
     );
@@ -117,6 +126,8 @@ describe('addTrailingSlashToSlug', () => {
   it('returns the slug with a "/" before the params', () => {
     const slug = 'https://mysite.com/a-slug';
     const params = '?keyphrase=something';
-    expect(addTrailingSlashToSlug(`${slug}${params}`)).toBe(`${slug}/${params}`);
+    expect(addTrailingSlashToSlug(`${slug}${params}`)).toBe(
+      `${slug}/${params}`
+    );
   });
 });

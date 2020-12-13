@@ -13,8 +13,8 @@ export const listingStructuredData = {
   title: 'my_listing',
   slug: '/list/p/1',
   items: [
-    {url: '/s/my_snippet1', title: 'my_snippet_1'},
-    {url: '/s/my_snippet2', title: 'my_snippet_2'},
+    { url: '/s/my_snippet1', title: 'my_snippet_1' },
+    { url: '/s/my_snippet2', title: 'my_snippet_2' },
   ],
 };
 

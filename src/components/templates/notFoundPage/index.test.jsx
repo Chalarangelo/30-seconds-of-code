@@ -37,7 +37,9 @@ describe('<NotFoundPage />', () => {
   });
 
   it('should pass the correct graphic name to the PageBackdrop component', () => {
-    expect(wrapper.querySelectorAll('.page-graphic.page-not-found')).toHaveLength(1);
+    expect(
+      wrapper.querySelectorAll('.page-graphic.page-not-found')
+    ).toHaveLength(1);
   });
 
   it('should pass a link to the anchor button', () => {
@@ -48,4 +50,3 @@ describe('<NotFoundPage />', () => {
     expect(anchorButton.className).toContain('btn-home');
   });
 });
-
