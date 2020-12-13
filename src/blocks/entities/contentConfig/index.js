@@ -81,7 +81,7 @@ export class ContentConfig {
   };
 
   get id() {
-    return `${this.name}`;
+    return `${this.dirName}`;
   }
 
   get slugPrefix() {

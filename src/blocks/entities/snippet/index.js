@@ -167,7 +167,6 @@ export class Snippet {
   }
 
   get searchTokens() {
-    // TODO: Update searchEngine accordingly
     if (!this._searchTokens) {
       this._searchTokens = uniqueElements(
         this.config.isBlog
