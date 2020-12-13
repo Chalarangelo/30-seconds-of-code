@@ -7,8 +7,7 @@ export class InstanceCache {
    */
   constructor() {
     const instanceCache = {
-      // TODO: This should be a {Set}
-      keys: [],
+      keys: new Set(),
     };
     this._cache = instanceCache;
   }
@@ -20,7 +19,7 @@ export class InstanceCache {
    */
   add(key, value) {
     this._cache[key] = value;
-    this._cache.keys.push(key);
+    this._cache.keys.add(key);
     Object.defineProperty(this, key, {
       get() {
         return this._cache[key];
@@ -35,7 +34,7 @@ export class InstanceCache {
    */
   remove(key) {
     this._cache[key] = undefined;
-    this._cache.keys.splice(this._cache.keys.indexOf(key), 1);
+    this._cache.keys.delete(key);
     Object.defineProperty(this, key, {
       get() {
         return undefined;
@@ -59,7 +58,7 @@ export class InstanceCache {
    * @returns {number} - The number of stored instances.
    */
   get length() {
-    return this._cache.keys.length;
+    return this._cache.keys.size;
   }
 
   /**
@@ -69,6 +68,35 @@ export class InstanceCache {
    *  `false` otherwise.
    */
   contains(key) {
-    return this._cache.keys.indexOf(key) !== 0;
+    return this._cache.keys.has(key);
+  }
+
+  /**
+   * Returns the first instance that satisfies the provided testing function.
+   * If no values satisfies the testing function, `undefined` is returned.
+   * @param {function} callback Function to execute on each value in the cache, taking 3 arguments:
+   *  - `element` The current element in the cache.
+   *  - `index` (optional) The index (position) of the current element in the cache.
+   */
+  find(callback) {
+    for (const key of this._cache.keys) {
+      if (callback(this[key])) return this[key];
+    }
+    return undefined;
+  }
+
+  /**
+   * Returns all instances that satisfy the provided testing function.
+   * If no values satisfies the testing function, an empty array is returned.
+   * @param {function} callback Function to execute on each value in the cache, taking 3 arguments:
+   *  - `element` The current element in the cache.
+   *  - `index` (optional) The index (position) of the current element in the cache.
+   */
+  findAll(callback) {
+    const instances = [];
+    for (const key of this._cache.keys) {
+      if (callback(this[key])) instances.push(this[key]);
+    }
+    return instances;
   }
 }
