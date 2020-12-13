@@ -1,4 +1,4 @@
-import searchEngineConfig from 'config/searchEngine';
+import searchEngineConfig from 'settings/searchEngine';
 const { serverStopWords, clientStopWords } = searchEngineConfig;
 
 // Standard suffix manipulations.
@@ -87,7 +87,7 @@ const tokenize = str =>
  */
 const stem = str => {
   // Exit early
-  if(str.length < 3) return str;
+  if (str.length < 3) return str;
 
   let firstCharacterWasLowerCaseY;
   let match;
@@ -144,11 +144,8 @@ const stem = str => {
 
   // Step 4.
   if ((match = step4.exec(str))) {
-    if (gt1.test(match[1]))
-      str = match[1];
-
-  } else if ((match = sfxIon.exec(str)) && gt1.test(match[1]))
-    str = match[1];
+    if (gt1.test(match[1])) str = match[1];
+  } else if ((match = sfxIon.exec(str)) && gt1.test(match[1])) str = match[1];
 
   // Step 5.
   if (
@@ -158,12 +155,10 @@ const stem = str => {
   )
     str = match[1];
 
-  if (sfxLl.test(str) && gt1.test(str))
-    str = str.slice(0, -1);
+  if (sfxLl.test(str) && gt1.test(str)) str = str.slice(0, -1);
 
   // Turn initial `Y` back to `y`.
-  if (firstCharacterWasLowerCaseY)
-    str = 'y' + str.slice(1);
+  if (firstCharacterWasLowerCaseY) str = 'y' + str.slice(1);
 
   return str;
 };
@@ -173,8 +168,7 @@ const stem = str => {
  * - Use the list of stop words to remove stop words from the given array
  */
 const cleanStopWords = (stopWords, words) =>
-  words
-    .filter(tkn => !stopWords.includes(tkn));
+  words.filter(tkn => !stopWords.includes(tkn));
 
 const cleanServerStopWords = words => cleanStopWords(serverStopWords, words);
 const cleanClientStopWords = words => cleanStopWords(clientStopWords, words);
@@ -182,7 +176,9 @@ const cleanClientStopWords = words => cleanStopWords(clientStopWords, words);
 /**
  * Deduplicates a list of tokens.
  */
-const deduplicateTokens = tokens => [...new Set(tokens.map(t => t.replace(/['-]$/, '')))];
+const deduplicateTokens = tokens => [
+  ...new Set(tokens.map(t => t.replace(/['-]$/, ''))),
+];
 
 /**
  * Given a string, produce a list of tokens (server-side variant).
@@ -190,8 +186,12 @@ const deduplicateTokens = tokens => [...new Set(tokens.map(t => t.replace(/['-]$
 const parseTokens = str =>
   deduplicateTokens(
     cleanServerStopWords(tokenize(str)).map(tkn => stem(tkn))
-  ).filter(tkn =>
-    !!tkn && tkn.length > 1 && !/^-?\d+$/i.test(tkn) && !/^[()[\]$^.;:|\\/%&*#@!%,"'~`\-+=]+$/i.test(tkn)
+  ).filter(
+    tkn =>
+      !!tkn &&
+      tkn.length > 1 &&
+      !/^-?\d+$/i.test(tkn) &&
+      !/^[()[\]$^.;:|\\/%&*#@!%,"'~`\-+=]+$/i.test(tkn)
   );
 
 /**
@@ -200,8 +200,12 @@ const parseTokens = str =>
 export const quickParseTokens = str =>
   deduplicateTokens(
     cleanClientStopWords(tokenize(str)).map(tkn => stem(tkn))
-  ).filter(tkn =>
-    !!tkn && tkn.length > 1 && !/^-?\d+$/i.test(tkn) && !/^[()[\]$^.;:|\\/%&*#@!%,"'~`\-+=]+$/i.test(tkn)
+  ).filter(
+    tkn =>
+      !!tkn &&
+      tkn.length > 1 &&
+      !/^-?\d+$/i.test(tkn) &&
+      !/^[()[\]$^.;:|\\/%&*#@!%,"'~`\-+=]+$/i.test(tkn)
   );
 
 export default parseTokens;
