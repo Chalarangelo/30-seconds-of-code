@@ -6,6 +6,9 @@ import { FileParser } from 'build/parsers/file';
 
 const readFile = util.promisify(fs.readFile);
 
+/**
+ * Parses text files, using frontmatter, returning text objects.
+ */
 export class TextParser {
   /**
    * Reads the data from a text file, using frontmatter.

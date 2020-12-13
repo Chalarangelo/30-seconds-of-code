@@ -4,6 +4,9 @@ import webfontsGenerator from 'webfonts-generator';
 import { ArgsError } from 'build/utilities/error';
 import { Logger } from 'build/utilities/logger';
 
+/**
+ * Serializes icons.
+ */
 export class IconSerializer {
   /**
    * Generates the icon font and CSS stylesheet from the provided icon files.

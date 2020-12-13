@@ -13,6 +13,9 @@ const {
 const totalScoreLimit =
   languageScoreLimit + primaryTagScoreLimit + searchTokenScoreLimit;
 
+/**
+ * Utility for creating snippet recommendations.
+ */
 export class Recommender {
   static recommendSnippets = (snippet, snippets = [...Snippet.instances]) => {
     if (!(snippet instanceof Snippet)) {

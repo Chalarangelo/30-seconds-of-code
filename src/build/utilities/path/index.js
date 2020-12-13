@@ -1,5 +1,8 @@
 import { convertToSeoSlug } from 'utils';
 
+/**
+ * Helper methods for working with paths.
+ */
 export class Path {
   /**
    * Given a raw snippet file path, returns the matching config.

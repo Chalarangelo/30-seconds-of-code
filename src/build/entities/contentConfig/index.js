@@ -1,7 +1,21 @@
 import { InstanceCache } from 'build/utilities/instanceCache';
 import { ArgsError } from 'build/utilities/error';
 
+/**
+ * A content configuration (i.e. the data and metadata from a content/configs JSON file).
+ */
 export class ContentConfig {
+  /**
+   * Cretea a content configuration from the JSON data given.
+   * @param {object} config - Content configuration data. Must contain:
+   *   - `name` - The name of the configuration.
+   *   - `dirName` - Directory for the content source.
+   *   - `snippetPath` - Directory for snippets inside the content source.
+   *   - `featured` - > 0 if the content is listed, -1 if it's not.
+   *   - `repoUrl` - Base url for the GitHub repository.
+   *   - `slug` - Base url for the content pages.
+   * @throws Will throw an error if any of the necessary keys is not present.
+   */
   constructor({
     name,
     dirName,
@@ -35,8 +49,8 @@ export class ContentConfig {
       this[key] = rest[key];
     });
 
-    this.loadLangData();
-    ContentConfig.instances.add(name, this);
+    this._loadLangData();
+    ContentConfig.instances.add(this.id, this);
 
     return this;
   }
@@ -50,7 +64,7 @@ export class ContentConfig {
     },
   ];
 
-  loadLangData = () => {
+  _loadLangData = () => {
     if (
       !this.language ||
       !this.language.long ||
@@ -65,6 +79,10 @@ export class ContentConfig {
       icon: this.theme.iconName,
     });
   };
+
+  get id() {
+    return `${this.name}`;
+  }
 
   get slugPrefix() {
     return `${this.slug}/s`;

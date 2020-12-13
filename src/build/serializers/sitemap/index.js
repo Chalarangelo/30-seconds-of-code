@@ -6,6 +6,9 @@ import { Logger } from 'build/utilities/logger';
 
 const writeFile = util.promisify(fs.writeFile);
 
+/**
+ * Serializes sitemap.xml files.
+ */
 export class SitemapSerializer {
   /**
    * Generates the website's sitemap from the JSON files of the pages.

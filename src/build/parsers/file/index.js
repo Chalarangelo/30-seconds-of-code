@@ -4,13 +4,16 @@ import util from 'util';
 
 const readDir = util.promisify(fs.readdir);
 
+/**
+ * Parses directories and globs, returning array of file names.
+ */
 export class FileParser {
   /**
    * Returns an array of files matching a glob pattern.
    * @param {string} globPattern - A glob pattern.
    * @returns {Array<String>} Names of the files matching the glob pattern.
    */
-  static matchGlob = globPattern => {
+  static fromGlob = globPattern => {
     return glob.sync(globPattern);
   };
 

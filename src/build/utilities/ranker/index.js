@@ -13,6 +13,9 @@ const totalScoreLimit = keywordScoreLimit + freshnessLimit;
 const oneDayMs = 86400000;
 const nowMs = +new Date();
 
+/**
+ * Utility for ranking snippets.
+ */
 export class Ranker {
   /**
    * Given a snippet object produce a ranking between 0 and 1.

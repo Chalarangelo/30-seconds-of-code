@@ -1,8 +1,27 @@
 import { Tag } from 'build/utilities/tag';
+import { ArgsError } from 'build/utilities/error';
+import { Snippet } from 'build/entities/snippet';
 import { stripMarkdownFormat } from 'utils';
 
+/**
+ * A context of a Snippet object.
+ * Used in snippet pages to render full snippet cards.
+ */
 export class SnippetContext {
+  /**
+   * Creates a context from the given Snippet object.
+   * @param {Snippet} snippet - A snippet to create a context from.
+   * @param {object} options - Options object, containing the following:
+   *  - `withVscodeUrl` - Should `vscodeUrl` be included? (default: `false`)
+   * @throws Will throw an error if snippet is not a Snippet.
+   */
   constructor(snippet, { withVscodeUrl = false } = {}) {
+    if (!(snippet instanceof Snippet)) {
+      throw new ArgsError(
+        "Invalid arguments. 'snippet' must be an instance of 'Snippet'."
+      );
+    }
+
     this.snippet = snippet;
     this._options = {
       withVscodeUrl,
@@ -108,6 +127,11 @@ export class SnippetContext {
     'vscodeUrl',
   ];
 
+  /**
+   * Creates a plain object for the given snippet context.
+   * @param {object} options - Options object, containing the following:
+   *  - `withVscodeUrl` - Should `vscodeUrl` be included? (default: `false`)
+   */
   toObject = (
     { withVscodeUrl = this._options.withVscodeUrl } = this._options
   ) => {

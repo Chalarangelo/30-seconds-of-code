@@ -25,6 +25,9 @@ const languageTags = {
 
 const languageTagNames = Object.keys(languageTags);
 
+/**
+ * Helper methods for tag formatting and metadata parsing.
+ */
 export class Tag {
   /**
    * Given a tag name, transform it to the appropriate format for JSX.

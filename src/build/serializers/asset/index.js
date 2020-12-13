@@ -8,11 +8,15 @@ const supportedExtensions = ['jpeg', 'jpg', 'png', 'webp', 'tif', 'tiff'];
 const maxWidth = 800;
 const outputQuality = 80;
 
+/**
+ * Serializes assets.
+ */
 export class AssetSerializer {
   /**
-   *
+   * Processes the given image asset, converting it to the correct size and quality.
    * @param {string} asset - The filename of the given asset.
    * @param {string} imageDirName - The output directory.
+   * @returns {Promise} A promise that resolves when the file has finished writing to disk.
    */
   static processImageAsset = (asset, outDir) =>
     new Promise((resolve, reject) => {

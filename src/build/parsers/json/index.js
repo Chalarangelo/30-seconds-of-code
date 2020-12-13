@@ -2,6 +2,9 @@ import path from 'path';
 import { FileParser } from 'build/parsers/file';
 import { ArgsError } from 'build/utilities/error';
 
+/**
+ * Parses JSON files, returning plain objects.
+ */
 export class JSONParser {
   /**
    * Returns an array of objects from the JSON files matching a glob pattern.
@@ -40,7 +43,7 @@ export class JSONParser {
       );
     }
 
-    const matchingFiles = FileParser.matchGlob(globPattern);
+    const matchingFiles = FileParser.fromGlob(globPattern);
 
     if (reduced) {
       return matchingFiles.reduce(reducer, initialValue);
