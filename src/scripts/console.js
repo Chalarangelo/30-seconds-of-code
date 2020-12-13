@@ -1,7 +1,7 @@
 import repl from 'repl';
 import path from 'path';
 import glob from 'glob';
-import { setupEnv } from 'build/utilities/env';
+import { setupEnv } from 'blocks/utilities/env';
 
 // Start repl
 let replServer = repl.start({
@@ -13,10 +13,10 @@ replServer.context.global.settings = setupEnv('DEVELOPMENT');
 
 replServer.setupHistory('console.log', () => {});
 
-// Dynamically import modules from the build directory
+// Dynamically import modules from the blocks directory
 const modules = glob
   .sync(
-    `src/build/@(adapters|decorations|entities|parsers|utilities|serializers)/**/index.js`
+    `src/blocks/@(adapters|decorations|entities|parsers|utilities|serializers)/**/index.js`
   )
   .map(file => require(path.resolve(file)))
   .reduce(

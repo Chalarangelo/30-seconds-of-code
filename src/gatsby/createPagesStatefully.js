@@ -1,12 +1,12 @@
 import chokidar from 'chokidar';
 import paths from 'settings/paths';
 import fs from 'fs-extra';
-import { Snippet } from 'build/entities/snippet';
-import { SnippetContext } from 'build/adapters/snippetContext';
-import { TextParser } from 'build/parsers/text';
-import { JSONSerializer } from 'build/serializers/json';
-import { Chunk } from 'build/utilities/chunk';
-import { Path } from 'build/utilities/path';
+import { Snippet } from 'blocks/entities/snippet';
+import { SnippetContext } from 'blocks/adapters/snippetContext';
+import { TextParser } from 'blocks/parsers/text';
+import { JSONSerializer } from 'blocks/serializers/json';
+import { Chunk } from 'blocks/utilities/chunk';
+import { Path } from 'blocks/utilities/path';
 
 const watchFiles = (contentDir, templates, { actions, store }) => {
   const { createPage, deletePage } = actions;

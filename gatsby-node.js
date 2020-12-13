@@ -1,4 +1,4 @@
-const { Requirements } = require('build/utilities/requirements');
+const { Requirements } = require('blocks/utilities/requirements');
 const { green } = require('chalk');
 const {
   createPagesStatefully,
