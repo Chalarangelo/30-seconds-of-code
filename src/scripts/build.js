@@ -1,11 +1,11 @@
-import { setupEnv } from 'build/utilities/env';
-import { Logger } from 'build/utilities/logger';
-import { Content } from 'build/utilities/content';
-import { IconSerializer } from 'build/serializers/icon';
-import { SitemapSerializer } from 'build/serializers/sitemap';
-import { FileParser } from 'build/parsers/file';
-import { AssetSerializer } from 'build/serializers/asset';
-import { Extractor } from 'build/utilities/extractor';
+import { setupEnv } from 'blocks/utilities/env';
+import { Logger } from 'blocks/utilities/logger';
+import { Content } from 'blocks/utilities/content';
+import { IconSerializer } from 'blocks/serializers/icon';
+import { SitemapSerializer } from 'blocks/serializers/sitemap';
+import { FileParser } from 'blocks/parsers/file';
+import { AssetSerializer } from 'blocks/serializers/asset';
+import { Extractor } from 'blocks/utilities/extractor';
 
 export const build = async () => {
   setupEnv('PRODUCTION');

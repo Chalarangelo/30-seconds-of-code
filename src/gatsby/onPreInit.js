@@ -1,4 +1,4 @@
-import { setupEnv } from 'build/utilities/env';
+import { setupEnv } from 'blocks/utilities/env';
 
 /**
  * The first API called during Gatsby execution, runs as soon as
