@@ -9,9 +9,7 @@ describe('<PreviewCard />', () => {
   let wrapper, card, expertise, anchor, tags;
 
   beforeEach(() => {
-    wrapper = render(
-      <PreviewCard snippet={ previewSnippet } />
-    ).container;
+    wrapper = render(<PreviewCard snippet={previewSnippet} />).container;
     anchor = wrapper.querySelector('a');
     card = wrapper.querySelector('.card');
     expertise = wrapper.querySelector('.expertise');
@@ -43,11 +41,15 @@ describe('<PreviewCard />', () => {
   });
 
   it('should have the correct card title', () => {
-    expect(card.querySelector('h4.card-title').textContent).toBe(previewSnippet.title);
+    expect(card.querySelector('h4.card-title').textContent).toBe(
+      previewSnippet.title
+    );
   });
 
   it('should pass the expertise data to the Expertise component', () => {
-    expect(expertise.className).toContain(previewSnippet.expertise.toLowerCase());
+    expect(expertise.className).toContain(
+      previewSnippet.expertise.toLowerCase()
+    );
   });
 
   it('should pass the appropriate tags to the TagList component', () => {
@@ -57,7 +59,9 @@ describe('<PreviewCard />', () => {
   });
 
   it('should render the correct description', () => {
-    expect(card.querySelector('.card-description').innerHTML).toContain(previewSnippet.description);
+    expect(card.querySelector('.card-description').innerHTML).toContain(
+      previewSnippet.description
+    );
   });
 
   it('should link to the correct url', () => {
@@ -65,11 +69,8 @@ describe('<PreviewCard />', () => {
   });
 
   describe('with a blog snippet', () => {
-
     beforeEach(() => {
-      wrapper = render(
-        <PreviewCard snippet={ previewBlogSnippet } />
-      ).container;
+      wrapper = render(<PreviewCard snippet={previewBlogSnippet} />).container;
       tags = wrapper.querySelector('.tag-list');
     });
 
@@ -80,4 +81,3 @@ describe('<PreviewCard />', () => {
     });
   });
 });
-

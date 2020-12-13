@@ -23,10 +23,9 @@ describe('<SearchResults />', () => {
   });
 
   describe('with recommended snippets', () => {
-
     beforeEach(() => {
       wrapper = rerender(
-        <SearchResults recommendedSnippets={ [previewSnippet] }/>
+        <SearchResults recommendedSnippets={[previewSnippet]} />
       ).container;
     });
 
@@ -37,28 +36,40 @@ describe('<SearchResults />', () => {
 
   describe('with no search query', () => {
     it('should render the correct page graphic', () => {
-      expect(wrapper.querySelectorAll('.page-graphic.search-empty')).toHaveLength(1);
+      expect(
+        wrapper.querySelectorAll('.page-graphic.search-empty')
+      ).toHaveLength(1);
     });
   });
 
   describe('with no results', () => {
-
     beforeEach(() => {
       store.dispatch(pushNewQuery('impossiblestringtofindintheindex'));
-      store.dispatch(searchByKeyphrase('impossiblestringtofindintheindex', [previewBlogSnippet, previewSnippet]));
+      store.dispatch(
+        searchByKeyphrase('impossiblestringtofindintheindex', [
+          previewBlogSnippet,
+          previewSnippet,
+        ])
+      );
       wrapper = rerender(<SearchResults />).container;
     });
 
     it('should render the correct page graphic', () => {
-      expect(wrapper.querySelectorAll('.page-graphic.search-no-results')).toHaveLength(1);
+      expect(
+        wrapper.querySelectorAll('.page-graphic.search-no-results')
+      ).toHaveLength(1);
     });
   });
 
   describe('with results', () => {
-
     beforeEach(() => {
       store.dispatch(pushNewQuery(previewSnippet.primaryTag));
-      store.dispatch(searchByKeyphrase(previewSnippet.primaryTag, [previewBlogSnippet, previewSnippet]));
+      store.dispatch(
+        searchByKeyphrase(previewSnippet.primaryTag, [
+          previewBlogSnippet,
+          previewSnippet,
+        ])
+      );
       wrapper = rerender(<SearchResults />).container;
     });
 
@@ -67,7 +78,9 @@ describe('<SearchResults />', () => {
     });
 
     it('should render a PreviewCard', () => {
-      expect(wrapper.querySelectorAll('.preview-card').length).toBeGreaterThanOrEqual(1);
+      expect(
+        wrapper.querySelectorAll('.preview-card').length
+      ).toBeGreaterThanOrEqual(1);
     });
   });
 });

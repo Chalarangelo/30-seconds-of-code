@@ -12,21 +12,16 @@ const propTypes = {
  * Renders a list of recommended snippets.
  * Dependent on the `PreviewCard` component.
  */
-const RecommendationList = ({
-  snippetList,
-}) => {
+const RecommendationList = ({ snippetList }) => {
   return snippetList.length ? (
     <>
       <PageTitle className='recommendation-list-title'>
-        { literals.recommendedSnippets }
+        {literals.recommendedSnippets}
       </PageTitle>
       <ul className='recommendation-list'>
-        { snippetList.map(snippet => (
-          <PreviewCard
-            key={ `snippet_${snippet.url}` }
-            snippet={ snippet }
-          />
-        )) }
+        {snippetList.map(snippet => (
+          <PreviewCard key={`snippet_${snippet.url}`} snippet={snippet} />
+        ))}
       </ul>
     </>
   ) : null;

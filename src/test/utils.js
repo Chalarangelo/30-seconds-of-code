@@ -6,7 +6,8 @@ import { Provider } from 'react-redux';
 import { rootReducer as reducer } from 'state';
 
 export const renderConnected = (
-  ui, {
+  ui,
+  {
     initialState = {},
     store = createStore(reducer, initialState),
     ...renderOptions
@@ -14,9 +15,9 @@ export const renderConnected = (
   renderer = render
 ) => {
   const Wrapper = ({ children }) => (
-    <Provider store={ store }>{ children }</Provider>
+    <Provider store={store}>{children}</Provider>
   );
-  const utils = renderer(ui, { wrapper: Wrapper, ...renderOptions});
+  const utils = renderer(ui, { wrapper: Wrapper, ...renderOptions });
   return {
     ...utils,
     store,

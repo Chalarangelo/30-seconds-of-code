@@ -8,9 +8,7 @@ describe('<Footer />', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = render(
-      <Footer />
-    ).container;
+    wrapper = render(<Footer />).container;
   });
 
   afterEach(cleanup);
@@ -24,7 +22,8 @@ describe('<Footer />', () => {
   });
 
   it('renders the links section', () => {
-    expect(wrapper.querySelectorAll('footer > p:first-child a')).toHaveLength(4);
+    expect(wrapper.querySelectorAll('footer > p:first-child a')).toHaveLength(
+      4
+    );
   });
 });
-

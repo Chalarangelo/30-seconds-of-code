@@ -11,7 +11,7 @@ console.warn = jest.fn();
 
 describe('<SnippetList />', () => {
   const sorter = { orders, selected: 'Popularity' };
-  const snippetList = [ previewSnippet, previewBlogSnippet];
+  const snippetList = [previewSnippet, previewBlogSnippet];
   const listingName = 'Snippet list';
 
   let wrapper, pageTitle, paginate, sort;
@@ -19,11 +19,11 @@ describe('<SnippetList />', () => {
   beforeEach(() => {
     wrapper = renderConnected(
       <SnippetList
-        snippetList={ snippetList }
-        paginator={ paginator }
-        sorter={ sorter }
-        listingName={ listingName }
-        listingSublinks={ anchorItems }
+        snippetList={snippetList}
+        paginator={paginator}
+        sorter={sorter}
+        listingName={listingName}
+        listingSublinks={anchorItems}
       />
     ).container;
     pageTitle = wrapper.querySelector('.page-title');
@@ -68,8 +68,9 @@ describe('<SnippetList />', () => {
   });
 
   it('should pass the paginator to Paginator', () => {
-    expect(paginate.querySelector('.current-page').textContent)
-      .toEqual(`${paginator.pageNumber}`);
+    expect(paginate.querySelector('.current-page').textContent).toEqual(
+      `${paginator.pageNumber}`
+    );
   });
 
   it('should pass the sorter to sorter', () => {
@@ -80,11 +81,11 @@ describe('<SnippetList />', () => {
     beforeEach(() => {
       wrapper = renderConnected(
         <SnippetList
-          snippetList={ [] }
-          paginator={ paginator }
-          sorter={ sorter }
-          listingName={ listingName }
-          listingSublinks={ anchorItems }
+          snippetList={[]}
+          paginator={paginator}
+          sorter={sorter}
+          listingName={listingName}
+          listingSublinks={anchorItems}
         />
       ).container;
     });
@@ -98,10 +99,10 @@ describe('<SnippetList />', () => {
     beforeEach(() => {
       wrapper = renderConnected(
         <SnippetList
-          snippetList={ snippetList }
-          paginator={ paginator }
-          sorter={ sorter }
-          listingName={ listingName }
+          snippetList={snippetList}
+          paginator={paginator}
+          sorter={sorter}
+          listingName={listingName}
         />
       ).container;
     });
@@ -115,10 +116,10 @@ describe('<SnippetList />', () => {
     beforeEach(() => {
       wrapper = renderConnected(
         <SnippetList
-          snippetList={ snippetList }
-          paginator={ paginator }
-          sorter={ { orders: orders.slice(0, 1), selected: 'Popularity' } }
-          listingName={ listingName }
+          snippetList={snippetList}
+          paginator={paginator}
+          sorter={{ orders: orders.slice(0, 1), selected: 'Popularity' }}
+          listingName={listingName}
         />
       ).container;
       pageTitle = wrapper.querySelector('.page-title');

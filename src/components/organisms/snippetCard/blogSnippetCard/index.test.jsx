@@ -11,9 +11,8 @@ describe('<BlogSnippetCard />', () => {
   let wrapper, card, tagList;
 
   beforeEach(() => {
-    wrapper = renderConnected(
-      <BlogSnippetCard snippet={ fullBlogSnippet } />
-    ).container;
+    wrapper = renderConnected(<BlogSnippetCard snippet={fullBlogSnippet} />)
+      .container;
     card = wrapper.querySelector('.card');
     tagList = wrapper.querySelector('.tag-list');
   });
@@ -47,7 +46,9 @@ describe('<BlogSnippetCard />', () => {
   });
 
   it('should have the correct card title', () => {
-    expect(card.querySelector('h1.card-title').textContent).toBe(fullBlogSnippet.title);
+    expect(card.querySelector('h1.card-title').textContent).toBe(
+      fullBlogSnippet.title
+    );
   });
 
   it('should pass the tags data to the TagList component', () => {
@@ -58,7 +59,9 @@ describe('<BlogSnippetCard />', () => {
   });
 
   it('should render the correct explanation', () => {
-    expect(card.querySelector('.card-description').innerHTML).toContain(fullBlogSnippet.html.fullDescription);
+    expect(card.querySelector('.card-description').innerHTML).toContain(
+      fullBlogSnippet.html.fullDescription
+    );
   });
 
   it('should render the correct cover', () => {
@@ -69,13 +72,10 @@ describe('<BlogSnippetCard />', () => {
     beforeEach(() => {
       wrapper = renderConnected(
         <BlogSnippetCard
-          snippet={ {
+          snippet={{
             ...fullBlogSnippet,
-            authors: [
-              fullBlogSnippet.authors[0],
-              fullBlogSnippet.authors[0],
-            ],
-          } }
+            authors: [fullBlogSnippet.authors[0], fullBlogSnippet.authors[0]],
+          }}
         />
       ).container;
       card = wrapper.querySelector('.card');
@@ -89,7 +89,7 @@ describe('<BlogSnippetCard />', () => {
   describe('without a cover', () => {
     beforeEach(() => {
       wrapper = renderConnected(
-        <BlogSnippetCard snippet={ { ...fullBlogSnippet, cover: '' } }/>
+        <BlogSnippetCard snippet={{ ...fullBlogSnippet, cover: '' }} />
       ).container;
       card = wrapper.querySelector('.card');
     });
@@ -99,4 +99,3 @@ describe('<BlogSnippetCard />', () => {
     });
   });
 });
-

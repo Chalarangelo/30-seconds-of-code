@@ -6,9 +6,10 @@ import path from 'path';
  */
 const onCreateWebpackConfig = ({ actions, stage }) => {
   // If production JavaScript build, turn off source maps, otherwise use defaults
-  const devtool = stage === 'develop'
-    ? 'cheap-module-source-map'
-    : stage === 'build-javascript'
+  const devtool =
+    stage === 'develop'
+      ? 'cheap-module-source-map'
+      : stage === 'build-javascript'
       ? false
       : 'source-map';
   actions.setWebpackConfig({

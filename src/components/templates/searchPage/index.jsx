@@ -23,11 +23,7 @@ const propTypes = {
  * Used to render the /search page.
  */
 const SearchPage = ({
-  pageContext: {
-    recommendedSnippets,
-    pageDescription,
-    searchIndex,
-  },
+  pageContext: { recommendedSnippets, pageDescription, searchIndex },
   searchQuery,
   includeArchive,
   dispatch,
@@ -37,24 +33,28 @@ const SearchPage = ({
       fetch('/page-data/archive/page-data.json')
         .then(res => res.json())
         .then(archiveIndex =>
-          dispatch(initializeIndex([
-            ...searchIndex,
-            ...archiveIndex.result.pageContext.searchIndex,
-          ]))
+          dispatch(
+            initializeIndex([
+              ...searchIndex,
+              ...archiveIndex.result.pageContext.searchIndex,
+            ])
+          )
         );
-    } else
-      dispatch(initializeIndex(searchIndex));
-
+    } else dispatch(initializeIndex(searchIndex));
   }, []);
 
   return (
     <>
       <Meta
-        description={ pageDescription }
-        title={ searchQuery.length === 0 ? literals.search : literals.resultsFor(searchQuery) }
+        description={pageDescription}
+        title={
+          searchQuery.length === 0
+            ? literals.search
+            : literals.resultsFor(searchQuery)
+        }
       />
-      <Shell isSearch >
-        <SearchResults recommendedSnippets={ recommendedSnippets }/>
+      <Shell isSearch>
+        <SearchResults recommendedSnippets={recommendedSnippets} />
       </Shell>
     </>
   );

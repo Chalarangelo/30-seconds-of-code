@@ -10,10 +10,8 @@ const propTypes = {
  * @param {string} level - One of the appropriate expertise levels:
  *   "Beginner", "Intermediate" (default), "Advanced", "Blog"
  */
-const Expertise = ({
-  level = 'Intermediate',
-}) => (
-  <span className={ `expertise ${level.toLowerCase()}` } title={ level } />
+const Expertise = ({ level = 'Intermediate' }) => (
+  <span className={`expertise ${level.toLowerCase()}`} title={level} />
 );
 
 Expertise.propTypes = propTypes;

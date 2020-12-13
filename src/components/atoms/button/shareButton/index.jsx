@@ -12,10 +12,7 @@ const propTypes = {
 /**
  * Generic button component.
  */
-const ShareButton = ({
-  pageTitle,
-  pageDescription,
-}) => {
+const ShareButton = ({ pageTitle, pageDescription }) => {
   const gtagCallback = useGtagEvent('click');
   const [canShare, setCanShare] = React.useState(false);
   React.useEffect(() => {
@@ -27,10 +24,10 @@ const ShareButton = ({
   return (
     <Button
       className='share-btn icon icon-share'
-      title={ literals.share }
-      onClick={ () => {
+      title={literals.share}
+      onClick={() => {
         // eslint-disable-next-line camelcase
-        gtagCallback({ event_category: 'action-share', value: 1});
+        gtagCallback({ event_category: 'action-share', value: 1 });
         try {
           navigator.share({
             title: pageTitle,
@@ -40,9 +37,9 @@ const ShareButton = ({
         } catch (err) {
           // display error message or feedback microinteraction
         }
-      } }
+      }}
     >
-      { literals.share }
+      {literals.share}
     </Button>
   );
 };

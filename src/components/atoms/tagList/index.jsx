@@ -9,11 +9,7 @@ const propTypes = {
  * List of tags.
  * Used in most pages that render snippet information.
  */
-const TagList = ({
-  tags,
-}) => (
-  <p className="tag-list">{ tags.join(', ') }</p>
-);
+const TagList = ({ tags }) => <p className='tag-list'>{tags.join(', ')}</p>;
 
 TagList.propTypes = propTypes;
 

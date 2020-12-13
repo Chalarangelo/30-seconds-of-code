@@ -9,9 +9,7 @@ describe('<Toggle />', () => {
 
   beforeEach(() => {
     wrapper = render(
-      <Toggle onChange={ mockOnChangeCallback }>
-        { innerText }
-      </Toggle>
+      <Toggle onChange={mockOnChangeCallback}>{innerText}</Toggle>
     ).container;
     toggle = wrapper.querySelector('input');
   });
@@ -20,7 +18,9 @@ describe('<Toggle />', () => {
 
   it('should render correctly', () => {
     expect(wrapper.querySelectorAll('.toggle')).toHaveLength(1);
-    expect(wrapper.querySelectorAll('label > input[type="checkbox"]')).toHaveLength(1);
+    expect(
+      wrapper.querySelectorAll('label > input[type="checkbox"]')
+    ).toHaveLength(1);
     expect(wrapper.querySelectorAll('.toggle-switch')).toHaveLength(1);
   });
 
@@ -38,4 +38,3 @@ describe('<Toggle />', () => {
     });
   });
 });
-

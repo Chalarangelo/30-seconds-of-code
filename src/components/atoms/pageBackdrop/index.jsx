@@ -39,20 +39,18 @@ const PageBackdrop = ({
   children,
   ...rest
 }) => (
-  <div
-    className={ combineClassNames`page-graphic ${graphicName}` }
-    { ...rest }
-  >
-    <p className={ combineClassNames`page-backdrop-text ${mainTextClassName}` }>
-      { mainText }
+  <div className={combineClassNames`page-graphic ${graphicName}`} {...rest}>
+    <p className={combineClassNames`page-backdrop-text ${mainTextClassName}`}>
+      {mainText}
     </p>
-    { subText ?
-      <p className={ combineClassNames`page-backdrop-subtext ${subTextClassName}` }>
-        { subText }
+    {subText ? (
+      <p
+        className={combineClassNames`page-backdrop-subtext ${subTextClassName}`}
+      >
+        {subText}
       </p>
-      : null
-    }
-    { children }
+    ) : null}
+    {children}
   </div>
 );
 

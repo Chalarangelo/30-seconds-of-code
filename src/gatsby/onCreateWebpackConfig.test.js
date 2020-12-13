@@ -6,11 +6,11 @@ const actions = {
 };
 
 describe('onCreateWebpackConfig', () => {
-
   describe('with stage equal to "develop"', () => {
     it('calls setWebpackConfig with "cheap-module-source-map"', () => {
       onCreateWebpackConfig({
-        actions, stage: 'develop',
+        actions,
+        stage: 'develop',
       });
       expect(setWebpackConfigMock).toHaveBeenCalledWith(
         expect.objectContaining({
@@ -23,7 +23,8 @@ describe('onCreateWebpackConfig', () => {
   describe('with stage equal to "build-javascript"', () => {
     it('calls setWebpackConfig with false', () => {
       onCreateWebpackConfig({
-        actions, stage: 'build-javascript',
+        actions,
+        stage: 'build-javascript',
       });
       expect(setWebpackConfigMock).toHaveBeenCalledWith(
         expect.objectContaining({
@@ -36,7 +37,8 @@ describe('onCreateWebpackConfig', () => {
   describe('with any other stage', () => {
     it('calls setWebpackConfig with "source-map"', () => {
       onCreateWebpackConfig({
-        actions, stage: 'something-else',
+        actions,
+        stage: 'something-else',
       });
       expect(setWebpackConfigMock).toHaveBeenCalledWith(
         expect.objectContaining({

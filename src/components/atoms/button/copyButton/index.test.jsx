@@ -20,9 +20,7 @@ describe('<CopyButton />', () => {
   });
 
   beforeEach(() => {
-    wrapper = renderConnected(
-      <CopyButton text={ copyText } />
-    ).container;
+    wrapper = renderConnected(<CopyButton text={copyText} />).container;
     button = wrapper.querySelector('button');
   });
 
@@ -33,25 +31,30 @@ describe('<CopyButton />', () => {
   });
 
   it('should have an appropriate title attribute', () => {
-    expect(wrapper.querySelectorAll('button.btn.copy-btn[title]')).toHaveLength(1);
+    expect(wrapper.querySelectorAll('button.btn.copy-btn[title]')).toHaveLength(
+      1
+    );
     expect(button.title).toBe(literals.copyToClipboard);
   });
 
   describe('when clicked', () => {
-    it('should copy to clipboard and play the microinteraction animation', async() => {
+    it('should copy to clipboard and play the microinteraction animation', async () => {
       fireEvent.click(button);
       jest.advanceTimersByTime(100);
       expect(copyToClipboardMock.mock.calls.length).toBeGreaterThan(0);
       expect(setTimeout).toHaveBeenCalled();
       await waitFor(() =>
-        expect(wrapper.querySelectorAll('button.btn.copy-btn.active')).toHaveLength(1)
+        expect(
+          wrapper.querySelectorAll('button.btn.copy-btn.active')
+        ).toHaveLength(1)
       );
       fireEvent.click(button);
       jest.advanceTimersByTime(750);
       await waitFor(() =>
-        expect(wrapper.querySelectorAll('button.btn.copy-btn:not(.active)')).toHaveLength(1)
+        expect(
+          wrapper.querySelectorAll('button.btn.copy-btn:not(.active)')
+        ).toHaveLength(1)
       );
     });
   });
 });
-

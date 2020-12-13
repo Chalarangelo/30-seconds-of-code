@@ -13,13 +13,13 @@ export const pushNewPage = pageUrl => ({
 // Reducer
 export default (state = initialState, action) => {
   switch (action.type) {
-  case PUSH_NEW_PAGE:
-    return {
-      ...state,
-      lastPageUrl: action.pageUrl,
-    };
-  default:
-    return state;
+    case PUSH_NEW_PAGE:
+      return {
+        ...state,
+        lastPageUrl: action.pageUrl,
+      };
+    default:
+      return state;
   }
 };
 

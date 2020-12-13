@@ -10,7 +10,7 @@ import { orders } from 'fixtures/sorter';
 console.warn = jest.fn();
 
 describe('<ListingPage />', () => {
-  const snippetList = [ previewSnippet, previewBlogSnippet ];
+  const snippetList = [previewSnippet, previewBlogSnippet];
   const listingName = 'Snippet list';
   const listingTitle = 'Snippet list';
   const pageDescription = 'Browse 100 snippets on 30 seconds of code';
@@ -18,17 +18,19 @@ describe('<ListingPage />', () => {
 
   beforeEach(() => {
     wrapper = renderConnected(
-      <ListingPage pageContext={ {
-        snippetList,
-        paginator,
-        sorter: {
-          orders,
-          selected: 'Popularity',
-        },
-        listingName,
-        listingTitle,
-        pageDescription,
-      } } />
+      <ListingPage
+        pageContext={{
+          snippetList,
+          paginator,
+          sorter: {
+            orders,
+            selected: 'Popularity',
+          },
+          listingName,
+          listingTitle,
+          pageDescription,
+        }}
+      />
     ).container;
     meta = Helmet.peek();
   });
@@ -50,25 +52,30 @@ describe('<ListingPage />', () => {
   });
 
   it('should pass the correct data to the SnippetList component', () => {
-    expect(wrapper.querySelectorAll('.snippet-list .preview-card')).toHaveLength(snippetList.length);
-    expect(wrapper.querySelector('.page-title').textContent).toContain(listingTitle);
+    expect(
+      wrapper.querySelectorAll('.snippet-list .preview-card')
+    ).toHaveLength(snippetList.length);
+    expect(wrapper.querySelector('.page-title').textContent).toContain(
+      listingTitle
+    );
   });
 
   describe('when is first page', () => {
     beforeEach(() => {
       wrapper = renderConnected(
-        <ListingPage pageContext={ {
-          snippetList,
-          paginator: firstPagePaginator,
-          sorter: {
-            orders,
-            selected: 'Popularity',
-          },
-          listingName,
-          listingTitle,
-          listingType: 'main',
-          pageDescription,
-        } }
+        <ListingPage
+          pageContext={{
+            snippetList,
+            paginator: firstPagePaginator,
+            sorter: {
+              orders,
+              selected: 'Popularity',
+            },
+            listingName,
+            listingTitle,
+            listingType: 'main',
+            pageDescription,
+          }}
         />
       ).container;
     });

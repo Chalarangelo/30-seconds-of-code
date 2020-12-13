@@ -31,7 +31,7 @@ export const hasKeys = (obj, keys) =>
  */
 export const get = (from, selectors) =>
   selectors
-    .map(s => Array.isArray(s) ? s.join('.') : s)
+    .map(s => (Array.isArray(s) ? s.join('.') : s))
     .map(s =>
       s
         .replace(/\[([^[\]]*)\]/g, '.$1.')
@@ -48,60 +48,58 @@ export const get = (from, selectors) =>
  */
 export const generateStructuredData = (structuredData, config, logoSrc) => {
   switch (structuredData.type) {
-  case 'snippet':
-    return {
-      '@context': 'https://schema.org',
-      '@type': 'TechArticle',
-      'name': structuredData.title,
-      'url': `${config.websiteUrl}${structuredData.slug}`,
-      'mainEntityOfPage': {
-        '@type': 'WebPage',
-        '@id': `${config.websiteUrl}${structuredData.slug}`,
-      },
-      'headline': structuredData.title,
-      'description': structuredData.description,
-      'image': [
-        `${config.websiteUrl}${logoSrc}`,
-      ],
-      'datePublished': structuredData.firstSeen,
-      'dateModified': structuredData.lastUpdated,
-      'author': {
-        '@type': 'Organization',
-        'name': config.orgName,
-        'logo': {
-          '@type': 'ImageObject',
-          'url': `${config.websiteUrl}${structuredData.orgLogoSrc}`,
+    case 'snippet':
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        name: structuredData.title,
+        url: `${config.websiteUrl}${structuredData.slug}`,
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': `${config.websiteUrl}${structuredData.slug}`,
         },
-      },
-      'publisher': {
-        '@type': 'Organization',
-        'name': config.orgName,
-        'logo': {
-          '@type': 'ImageObject',
-          'url': `${config.websiteUrl}${structuredData.orgLogoSrc}`,
+        headline: structuredData.title,
+        description: structuredData.description,
+        image: [`${config.websiteUrl}${logoSrc}`],
+        datePublished: structuredData.firstSeen,
+        dateModified: structuredData.lastUpdated,
+        author: {
+          '@type': 'Organization',
+          name: config.orgName,
+          logo: {
+            '@type': 'ImageObject',
+            url: `${config.websiteUrl}${structuredData.orgLogoSrc}`,
+          },
         },
-      },
-    };
-  case 'listing':
-    return {
-      '@context': 'https://schema.org',
-      '@type': 'ItemList',
-      'name': structuredData.title,
-      'url': `${config.websiteUrl}${structuredData.slug}`,
-      'mainEntityOfPage': {
-        '@type': 'WebPage',
-        '@id': `${config.websiteUrl}${structuredData.slug}`,
-      },
-      'numberOfItems': structuredData.items.length,
-      'itemListElement': structuredData.items.map((li, i) => ({
-        '@type': 'ListItem',
-        'position': i + 1,
-        'url': `${config.websiteUrl}${li.url}`,
-        'name': li.title,
-      })),
-    };
-  default:
-  /* istanbul ignore next */
-    return {};
+        publisher: {
+          '@type': 'Organization',
+          name: config.orgName,
+          logo: {
+            '@type': 'ImageObject',
+            url: `${config.websiteUrl}${structuredData.orgLogoSrc}`,
+          },
+        },
+      };
+    case 'listing':
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        name: structuredData.title,
+        url: `${config.websiteUrl}${structuredData.slug}`,
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': `${config.websiteUrl}${structuredData.slug}`,
+        },
+        numberOfItems: structuredData.items.length,
+        itemListElement: structuredData.items.map((li, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          url: `${config.websiteUrl}${li.url}`,
+          name: li.title,
+        })),
+      };
+    default:
+      /* istanbul ignore next */
+      return {};
   }
 };

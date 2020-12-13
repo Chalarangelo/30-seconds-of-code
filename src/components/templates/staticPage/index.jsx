@@ -11,10 +11,12 @@ const propTypes = {
       title: PropTypes.string,
       pageDescription: PropTypes.string,
       subtitle: PropTypes.string,
-      cards: PropTypes.arrayOf(PropTypes.shape({
-        title: PropTypes.string,
-        html: PropTypes.string,
-      })),
+      cards: PropTypes.arrayOf(
+        PropTypes.shape({
+          title: PropTypes.string,
+          html: PropTypes.string,
+        })
+      ),
     }).isRequired,
   }),
 };
@@ -28,31 +30,21 @@ const propTypes = {
  */
 const StaticPage = ({
   pageContext: {
-    stringLiterals: {
-      title,
-      subtitle,
-      pageDescription,
-      cards,
-    },
+    stringLiterals: { title, subtitle, pageDescription, cards },
   },
 }) => (
   <>
-    <Meta
-      title={ title }
-      description={ pageDescription }
-    />
+    <Meta title={title} description={pageDescription} />
     <Shell>
-      <PageTitle className='static-tite'>{ title }</PageTitle>
-      <p className='page-sub-title'>{ subtitle }</p>
-      {
-        cards.map(({ title, html }, i) => (
-          <SimpleCard
-            key={ i }
-            title={ title }
-            dangerouslySetInnerHTML={ {__html: html} }
-          />
-        ))
-      }
+      <PageTitle className='static-tite'>{title}</PageTitle>
+      <p className='page-sub-title'>{subtitle}</p>
+      {cards.map(({ title, html }, i) => (
+        <SimpleCard
+          key={i}
+          title={title}
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+      ))}
     </Shell>
   </>
 );

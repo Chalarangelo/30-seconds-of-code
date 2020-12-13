@@ -1,11 +1,9 @@
-import {
-  generateStructuredData,
-  hasKey,
-  hasKeys,
-  get
-} from './object';
+import { generateStructuredData, hasKey, hasKeys, get } from './object';
 
-import { listingStructuredData, snippetStructuredData } from 'fixtures/metadata';
+import {
+  listingStructuredData,
+  snippetStructuredData,
+} from 'fixtures/metadata';
 
 describe('hasKey', () => {
   it('returns the correct result for a regular key', () => {
@@ -16,7 +14,7 @@ describe('hasKey', () => {
   });
 
   it('returns the correct result for nested keys', () => {
-    expect(hasKey({ a: { b: { c: 'yes'} } }, ['a', 'b', 'c'])).toEqual(true);
+    expect(hasKey({ a: { b: { c: 'yes' } } }, ['a', 'b', 'c'])).toEqual(true);
   });
 
   it('returns the correct result for non-objects', () => {
@@ -26,19 +24,21 @@ describe('hasKey', () => {
 
 describe('hasKeys', () => {
   it('returns the correct result for the given keys', () => {
-    expect(hasKeys(
-      { a: { b: { c: 'yes'}, d: 1 }, e: true },
-      ['e', ['a', 'b'], 'a']
-    )).toEqual(true);
+    expect(
+      hasKeys({ a: { b: { c: 'yes' }, d: 1 }, e: true }, ['e', ['a', 'b'], 'a'])
+    ).toEqual(true);
   });
 });
 
 describe('get', () => {
   it('returns the correct result for the given keys', () => {
-    expect(get(
-      { a: { b: { c: 'yes'}, d: 1 }, e: true },
-      ['e', ['a', 'b', 'c'], ['a', 'd']]
-    )).toEqual([true, 'yes', 1]);
+    expect(
+      get({ a: { b: { c: 'yes' }, d: 1 }, e: true }, [
+        'e',
+        ['a', 'b', 'c'],
+        ['a', 'd'],
+      ])
+    ).toEqual([true, 'yes', 1]);
   });
 });
 

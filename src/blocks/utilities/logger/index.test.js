@@ -24,7 +24,9 @@ describe('Logger', () => {
 
   describe('format', () => {
     it('should return the formatted message', () => {
-      expect(Logger.format('Hello', 'magenta', 'bold')).toBe(bold(magenta('Hello')));
+      expect(Logger.format('Hello', 'magenta', 'bold')).toBe(
+        bold(magenta('Hello'))
+      );
     });
 
     it('should ignore unsupported formatters', () => {
@@ -55,7 +57,9 @@ describe('Logger', () => {
         process: 'my-proc',
       };
       Logger.log('Hello', opts);
-      expect(writeFn.mock.calls[0][0]).toBe(`${bold(red('errr'))}  [${bold(opts.process)}] Hello`);
+      expect(writeFn.mock.calls[0][0]).toBe(
+        `${bold(red('errr'))}  [${bold(opts.process)}] Hello`
+      );
     });
 
     it('falls back gracefully if passed incorrect options type', () => {
@@ -81,7 +85,9 @@ describe('Logger', () => {
     it('allows the bound instance to be rebound', () => {
       const reboundLog = boundLog.rebind(subprocName);
       reboundLog('Hello');
-      expect(writeFn.mock.calls[0][0]).toBe(`[${bold(`${procName}:${subprocName}`)}] Hello\n`);
+      expect(writeFn.mock.calls[0][0]).toBe(
+        `[${bold(`${procName}:${subprocName}`)}] Hello\n`
+      );
     });
   });
 

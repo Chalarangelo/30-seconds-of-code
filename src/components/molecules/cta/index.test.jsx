@@ -35,13 +35,15 @@ describe('<CTA />', () => {
   });
 
   describe('with cookies enabled', () => {
-
     beforeEach(() => {
       store.dispatch(decideCookies(true));
     });
 
     it('should call the appropriate functions when the link is clicked', () => {
-      fireEvent.click(wrapper.querySelector('a'), { target: { href: 'test'}, preventDefault: () => null });
+      fireEvent.click(wrapper.querySelector('a'), {
+        target: { href: 'test' },
+        preventDefault: () => null,
+      });
       expect(window.gtag.mock.calls.length).toBeGreaterThan(0);
       expect(window.open.mock.calls.length).toBeGreaterThan(0);
     });

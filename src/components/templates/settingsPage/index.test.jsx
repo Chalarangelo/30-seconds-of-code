@@ -12,7 +12,7 @@ describe('<SettingsPage />', () => {
 
   beforeEach(() => {
     const utils = renderConnected(
-      <SettingsPage pageContext={ { stringLiterals: literals } } />
+      <SettingsPage pageContext={{ stringLiterals: literals }} />
     );
     wrapper = utils.container;
     store = utils.store;
@@ -38,7 +38,9 @@ describe('<SettingsPage />', () => {
   });
 
   it('should pass the correct data to the Shell component', () => {
-    expect(shell.querySelector('.nav-btn.icon-settings').href.endsWith('/settings')).toBe(false);
+    expect(
+      shell.querySelector('.nav-btn.icon-settings').href.endsWith('/settings')
+    ).toBe(false);
   });
 
   it('should pass the correct data to the Meta component', () => {
@@ -59,4 +61,3 @@ describe('<SettingsPage />', () => {
     });
   });
 });
-

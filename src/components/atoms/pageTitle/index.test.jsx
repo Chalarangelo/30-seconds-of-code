@@ -7,9 +7,8 @@ describe('<PageTitle />', () => {
   const innerText = 'This is a title';
 
   beforeEach(() => {
-    wrapper = render(
-      <PageTitle className='light'>{ innerText }</PageTitle>
-    ).container;
+    wrapper = render(<PageTitle className='light'>{innerText}</PageTitle>)
+      .container;
   });
 
   afterEach(cleanup);
@@ -28,15 +27,11 @@ describe('<PageTitle />', () => {
 
   describe('without additional classNames', () => {
     beforeEach(() => {
-      wrapper = render(
-        <PageTitle>{ innerText }</PageTitle>
-      ).container;
+      wrapper = render(<PageTitle>{innerText}</PageTitle>).container;
     });
 
     it('should render with the default className', () => {
       expect(wrapper.querySelector('h2').className).toBe('page-title');
     });
   });
-
 });
-

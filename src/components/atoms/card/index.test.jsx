@@ -7,9 +7,7 @@ describe('<Card />', () => {
   const innerText = 'This is a card';
 
   beforeEach(() => {
-    wrapper = render(
-      <Card className='special'>{ innerText }</Card>
-    ).container;
+    wrapper = render(<Card className='special'>{innerText}</Card>).container;
   });
 
   afterEach(cleanup);
@@ -28,15 +26,11 @@ describe('<Card />', () => {
 
   describe('without additional classNames', () => {
     beforeEach(() => {
-      wrapper = render(
-        <Card>{ innerText }</Card>
-      ).container;
+      wrapper = render(<Card>{innerText}</Card>).container;
     });
 
     it('should render with the default className', () => {
       expect(wrapper.querySelector('div').className).toBe('card');
     });
   });
-
 });
-

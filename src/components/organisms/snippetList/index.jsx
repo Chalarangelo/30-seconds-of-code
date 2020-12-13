@@ -36,30 +36,28 @@ const SnippetList = ({
 
   return snippetList.length ? (
     <>
-      {
-        listingSublinks.length
-          ? <ListingAnchors isCompact={ listingType !== 'main' } items={ listingSublinks } />
-          : null
-      }
-      <PageTitle className={ withSorter ? 'with-sorter' : null }>
-        { listingName }
+      {listingSublinks.length ? (
+        <ListingAnchors
+          isCompact={listingType !== 'main'}
+          items={listingSublinks}
+        />
+      ) : null}
+      <PageTitle className={withSorter ? 'with-sorter' : null}>
+        {listingName}
       </PageTitle>
-      <Sorter sorter={ sorter } />
+      <Sorter sorter={sorter} />
       <ul className='snippet-list'>
-        { insertAt(
+        {insertAt(
           ctaIndex,
-          <li key='cta' >
-            <CTA/>
+          <li key='cta'>
+            <CTA />
           </li>,
-          snippetList.map(snippet =>
-            <PreviewCard
-              key={ `snippet_${snippet.url}` }
-              snippet={ snippet }
-            />
-          )
-        ) }
+          snippetList.map(snippet => (
+            <PreviewCard key={`snippet_${snippet.url}`} snippet={snippet} />
+          ))
+        )}
       </ul>
-      <Paginator paginator={ paginator } />
+      <Paginator paginator={paginator} />
     </>
   ) : null;
 };
