@@ -1,28 +1,13 @@
 import EXPERTISE_LEVELS from 'settings/expertise';
-import specialTagsDictionary from 'settings/tags';
+import tagSettings from 'settings/tags';
 import { capitalize } from 'utils';
 
+// As we are processing this data, using global.settings would be sub-optimal.
 const lowerCaseExpertiseLevels = EXPERTISE_LEVELS.filter(
   v => v !== 'Blog'
 ).map(v => v.toLowerCase());
-
+const { specialTagsDictionary, languageTags } = tagSettings;
 const specialTags = Object.keys(specialTagsDictionary);
-
-const languageTags = {
-  javascript: {
-    short: 'js',
-    long: 'javascript',
-  },
-  react: {
-    short: 'jsx',
-    long: 'react',
-  },
-  python: {
-    short: 'py',
-    long: 'python',
-  },
-};
-
 const languageTagNames = Object.keys(languageTags);
 
 /**
