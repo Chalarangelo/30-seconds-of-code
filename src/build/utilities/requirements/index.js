@@ -2,6 +2,9 @@ import path from 'path';
 import paths from 'settings/paths';
 import { JSONParser } from 'build/parsers/json';
 
+/**
+ * Helper methods for loading requirements.
+ */
 export class Requirements {
   /* istanbul ignore next */
   /**

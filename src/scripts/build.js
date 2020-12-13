@@ -17,7 +17,7 @@ export const build = async () => {
   await Promise.all([
     Content.update(),
     IconSerializer.serialize(
-      FileParser.matchGlob(global.settings.paths.rawIconPath),
+      FileParser.fromGlob(global.settings.paths.rawIconPath),
       global.settings.configs
     ),
   ]);

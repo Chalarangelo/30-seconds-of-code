@@ -17,7 +17,28 @@ const codeMatcher = new RegExp(
   'g'
 );
 
+/**
+ * An object representing a single snippet's data.
+ * Note: Do not use directly for page serialization.
+ */
 export class Snippet {
+  /**
+   * Creates a new snippet instance from the given data (i.e. a parsed MD file).
+   * @param {object} snippet - Snippet data. Keys:
+   *  - `fileName` - Name of the snippet (markdown) file.
+   *  - `title` - Snippet title.
+   *  - `tags` - Snippet tags as a comma-separated string.
+   *  - `type` (optional) - Snippet type. Required if the snippet is a blog.
+   *  - `firstSeen` - Snippet creation date as a string (from git).
+   *  - `lastUpdated` - Last update date as a string (from git).
+   *  - `body` - Snippet textual content as a markdown string.
+   *  - `excerpt` (optional) - Snippet excerpt. Required if the snippet is a blog.
+   *  - `cover` (optional) - Snippet cover image filename. Required if the snippet is a blog.
+   *  - `authors` (optional) - Snippet authors as a comma-separated string. Required if the snippet is a blog.
+   * @param {ContentConfig} config - The content configuration for the file's source repo.
+   * @throws Will throw an error if any of the necessary keys is not present or `config`
+   *   is not of the correct type.
+   */
   constructor(
     {
       fileName,
@@ -33,9 +54,9 @@ export class Snippet {
     },
     config
   ) {
-    if (!title || !tags || !firstSeen || !lastUpdated || !body) {
+    if (!fileName || !title || !tags || !firstSeen || !lastUpdated || !body) {
       throw new ArgsError(
-        "Missing required keys. One or more of the following keys were not specified: 'name', 'dirName', 'repoUrl', 'snippetPath', 'slug', 'featured'"
+        "Missing required keys. One or more of the following keys were not specified: 'filename', 'title', 'tags', 'firstSeen', 'lastUpdated', 'body'"
       );
     }
 
@@ -84,7 +105,6 @@ export class Snippet {
 
   get slug() {
     if (!this._slug) {
-      // TODO: verify if this util can be moved under `build/utilities`
       this._slug = `/${this.config.slugPrefix}${convertToSeoSlug(
         this.fileName.slice(0, -3)
       )}`;
@@ -94,7 +114,6 @@ export class Snippet {
 
   get titleSlug() {
     if (!this._titleSlug) {
-      // TODO: verify if this util can be moved under `build/utilities`
       this._titleSlug = convertToSeoSlug(this.title);
     }
     return this._titleSlug;

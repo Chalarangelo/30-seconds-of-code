@@ -1,8 +1,27 @@
+import { InstanceCache } from 'build/utilities/instanceCache';
 import { ArgsError } from 'build/utilities/error';
 import { uniqueElements } from 'utils';
 import literals from 'lang/en';
 
+const ALLOWED_TYPES = ['main', 'blog', 'language', 'tag', 'collection'];
+
+/**
+ * A collection of snippets (e.g. snippets of the same language, tag etc.).
+ * Note: Do not use directly for page serialization.
+ */
 export class SnippetCollection {
+  /**
+   * Creates a collection of snippets.
+   * @param {object} collectionInfo - Collection data. Required keys:
+   *  - `type`: One of ['main', 'blog', 'language', 'tag', 'collection']
+   *  - `slugPrefix`: The prefix for listed slugs in the collection.
+   *  - `config`: The ContentConfig of the collection. Required by 'language' and 'tag' types.
+   *  - `parentCollection`: The parent SnippetCollection. Required by the 'tag' type.
+   *  - `tag`: The tag name (string) of the collection. Required by the 'tag' type.
+   * @param {Array<Snippet>} snippets - An array of Snippet objects.
+   * @throws Will throw an error if any of the necessary keys is invalid or `snippets`
+   *   is not of the correct type.
+   */
   constructor({ type, slugPrefix, ...rest }, snippets) {
     if (!type || !slugPrefix) {
       throw new ArgsError(
@@ -15,9 +34,27 @@ export class SnippetCollection {
         "Missing required argument. 'snippets' must be a non-empty array."
       );
     }
-    // TODO: Check - 'language' and 'tag' need to have a 'config'
-    // TODO: Check - 'tag` needs to have a 'tag` and 'parentCollection' as well
-    // 'main', 'blog', 'language', 'tag', 'collection'
+
+    if (!ALLOWED_TYPES.includes(type)) {
+      throw new ArgsError(
+        `Invalid argument. 'type' must be one of: [${ALLOWED_TYPES.map(
+          v => `'${v}`
+        ).join(', ')}].`
+      );
+    }
+
+    if (['language', 'tag'].includes(type) && !rest.config) {
+      throw new ArgsError(
+        `Missing required argument. 'config' must be a non-empty object when the type is '${type}'.`
+      );
+    }
+
+    if (type === 'tag' && (!rest.parentCollection || !rest.tag)) {
+      throw new ArgsError(
+        "Missing required argument. 'tag' and 'parentCollection' must be a specified when the type is 'tag'."
+      );
+    }
+
     this.type = type;
     this.slugPrefix = slugPrefix;
     this.snippets = snippets.sort((a, b) => b.ranking - a.ranking);
@@ -26,22 +63,36 @@ export class SnippetCollection {
       else this[key] = rest[key];
     });
 
-    this.loadCollectionMeta();
+    this._loadCollectionMeta();
+
+    SnippetCollection.instances.add(this.id, this);
     return this;
   }
 
+  static instances = new InstanceCache();
+
   static collectionMetas = [];
 
-  loadCollectionMeta = () => {
+  _loadCollectionMeta = () => {
     if (['language', 'blog'].includes(this.type)) {
       SnippetCollection.collectionMetas.push(this.meta);
     }
   };
 
+  /**
+   * Injects additional snippets into an existing collection.
+   * @param {Array<Snippet>} snippets - An array of snippets to be injected into the collection.
+   * @returns The collection instance.
+   */
   addSnippets = snippets => {
     this.snippets.push(...snippets);
     this.snippets.sort((a, b) => b.ranking - a.ranking);
+    return this;
   };
+
+  get id() {
+    return `${this.type}/${this.slugPrefix}`;
+  }
 
   get orders() {
     if (!this._orders) {

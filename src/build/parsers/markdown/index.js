@@ -74,6 +74,9 @@ const transformers = [
   },
 ];
 
+/**
+ * Parses markdown strings, returning plain objects.
+ */
 export class MarkdownParser {
   /**
    * Get the real name of a language given it or an alias.

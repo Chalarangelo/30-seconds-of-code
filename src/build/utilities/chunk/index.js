@@ -2,6 +2,9 @@ import globalConfig from 'settings/global';
 
 const routePrefix = globalConfig.websiteUrl;
 
+/**
+ * Helper methods for working with chunked JSONs.
+ */
 export class Chunk {
   /**
    * Creates the bare minimum for an index chunk.

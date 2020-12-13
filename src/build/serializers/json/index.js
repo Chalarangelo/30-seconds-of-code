@@ -2,6 +2,9 @@ import util from 'util';
 import fs from 'fs-extra';
 const writeFile = util.promisify(fs.writeFile);
 
+/**
+ * Serializes objects to JSON files.
+ */
 export class JSONSerializer {
   static serializeToFile = (filePath, obj) =>
     writeFile(filePath, JSON.stringify(obj, null, 2));

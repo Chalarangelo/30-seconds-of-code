@@ -7,6 +7,7 @@ export class InstanceCache {
    */
   constructor() {
     const instanceCache = {
+      // TODO: This should be a {Set}
       keys: [],
     };
     this._cache = instanceCache;

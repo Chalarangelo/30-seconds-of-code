@@ -18,7 +18,15 @@ const ORDERS_MAP = {
 
 const CARDS_PER_PAGE = 15;
 
+/**
+ * Serializes a SnippetCollection object into appropriate JSON files.
+ */
 export class ListingSerializer {
+  /**
+   * Serializes a SnippetCollection object into JSON files.
+   * @param {SnippetCollection} snippetCollection - A collection of snippets.
+   * @throws Will throw an error if `snippeCollection` is not of the appropriate type.
+   */
   static serializeListings = async snippetCollection => {
     if (!(snippetCollection instanceof SnippetCollection)) {
       throw new ArgsError(
@@ -34,7 +42,7 @@ export class ListingSerializer {
     );
 
     for (let order of snippetCollection.orders) {
-      const paginatedSnippets = this.paginateOrderedSnippets(
+      const paginatedSnippets = this._paginateOrderedSnippets(
         snippetCollection.isListed
           ? snippetCollection.snippets.filter(s => s.isListed)
           : snippetCollection.snippets,
@@ -109,7 +117,7 @@ export class ListingSerializer {
     }
   };
 
-  static paginateOrderedSnippets = (snippets, order) => {
+  static _paginateOrderedSnippets = (snippets, order) => {
     const snippetPreviews = snippets.map(s => new SnippetPreview(s).toObject());
     switch (order) {
       case 'a':
@@ -138,8 +146,7 @@ export class ListingSerializer {
             .map(s => new SnippetPreview(s).toObject()),
           CARDS_PER_PAGE
         );
-      // It is assumed that snippets are always sorted by ranking
-      // in the SnippetCollection constructor
+      // It is assumed that snippets are always sorted by ranking in the SnippetCollection
       case 'p':
       default:
         return chunk(snippetPreviews, CARDS_PER_PAGE);
