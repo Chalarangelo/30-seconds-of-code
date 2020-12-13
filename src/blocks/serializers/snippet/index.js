@@ -10,6 +10,7 @@ import { Logger } from 'blocks/utilities/logger';
  * Serializes a Snippet object into appropriate JSON files.
  */
 export class SnippetSerializer {
+  static isDevelopment = process.env.NODE_ENV === `production`;
   /**
    * Serializes a Snippet object into JSON files.
    * @param {Snippet} snippet - A snippet object.
@@ -37,7 +38,14 @@ export class SnippetSerializer {
           }
         ),
       ],
-      ['snippet', { snippet: new SnippetContext(snippet).toObject() }],
+      [
+        'snippet',
+        {
+          snippet: new SnippetContext(snippet).toObject({
+            withVscodeUrl: Boolean(this.isDevelopment),
+          }),
+        },
+      ],
       [
         'metadata',
         {
