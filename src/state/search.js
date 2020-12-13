@@ -1,4 +1,4 @@
-import { quickParseTokens as tokenize } from 'engines/searchIndexingEngine';
+import { quickParseTokens as tokenize } from 'utils/search';
 
 // Default state
 const initialState = {
@@ -46,18 +46,22 @@ export const searchByKeyphrase = (keyphrase, searchIndex) => {
       results = searchIndex
         .map(snippet => {
           const normalizedSnippetTitle = snippet.title.toLowerCase().trim();
-          snippet.score = normalizedSnippetTitle === q
-            ? 1.01
-            : t.reduce((acc, tkn) =>
-              normalizedSnippetTitle.indexOf(tkn) !== -1 ||
-              snippet.searchTokens.indexOf(tkn) !== -1
-                ? acc + 1
-                : acc, 0
-            ) / t.length;
+          snippet.score =
+            normalizedSnippetTitle === q
+              ? 1.01
+              : t.reduce(
+                  (acc, tkn) =>
+                    normalizedSnippetTitle.indexOf(tkn) !== -1 ||
+                    snippet.searchTokens.indexOf(tkn) !== -1
+                      ? acc + 1
+                      : acc,
+                  0
+                ) / t.length;
           return snippet;
         })
         .filter(snippet => snippet.score > 0.3)
-        .sort((a, b) => b.score - a.score).slice(0, 50);
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 50);
     }
   }
   return {
@@ -69,32 +73,32 @@ export const searchByKeyphrase = (keyphrase, searchIndex) => {
 // Reducer
 export default (state = initialState, action) => {
   switch (action.type) {
-  case TOGGLE_ARCHIVE_SEARCH:
-    return {
-      ...state,
-      includeArchive: action.searchArchive,
-    };
-  case PUSH_NEW_QUERY:
-    return {
-      ...state,
-      searchTimestamp: `${new Date()}`,
-      searchQuery: action.query,
-    };
-  case INITIALIZE_INDEX:
-    return {
-      ...state,
-      searchIndex: action.index,
-      initialized: true,
-    };
-  case SEARCH_BY_KEYPHRASE:
-    return {
-      ...state,
-      searchResults: action.results,
-    };
-  case KEYPHRASE_TOO_SHORT:
-    return state;
-  default:
-    return state;
+    case TOGGLE_ARCHIVE_SEARCH:
+      return {
+        ...state,
+        includeArchive: action.searchArchive,
+      };
+    case PUSH_NEW_QUERY:
+      return {
+        ...state,
+        searchTimestamp: `${new Date()}`,
+        searchQuery: action.query,
+      };
+    case INITIALIZE_INDEX:
+      return {
+        ...state,
+        searchIndex: action.index,
+        initialized: true,
+      };
+    case SEARCH_BY_KEYPHRASE:
+      return {
+        ...state,
+        searchResults: action.results,
+      };
+    case KEYPHRASE_TOO_SHORT:
+      return state;
+    default:
+      return state;
   }
 };
 

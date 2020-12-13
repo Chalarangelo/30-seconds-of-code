@@ -6,7 +6,7 @@ import { ContentConfig } from 'build/entities/contentConfig';
 import { MarkdownParser } from 'build/parsers/markdown';
 import { convertToSeoSlug, uniqueElements, stripMarkdownFormat } from 'utils';
 import { Ranker } from 'build/utilities/ranker';
-import tokenizeSnippet from 'engines/searchIndexingEngine';
+import tokenizeSnippet from 'utils/search';
 import sass from 'node-sass';
 import literals from 'lang/en/snippet';
 import clientLiterals from 'lang/en/client/common';
