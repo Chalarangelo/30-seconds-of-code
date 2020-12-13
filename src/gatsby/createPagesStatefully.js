@@ -4,8 +4,7 @@ import fs from 'fs-extra';
 import { Snippet } from 'blocks/entities/snippet';
 import { SnippetContext } from 'blocks/adapters/snippetContext';
 import { TextParser } from 'blocks/parsers/text';
-import { JSONSerializer } from 'blocks/serializers/json';
-import { Chunk } from 'blocks/utilities/chunk';
+import { SnippetSerializer } from 'blocks/serializers/snippet';
 import { Path } from 'blocks/utilities/path';
 
 const watchFiles = (contentDir, templates, { actions, store }) => {
@@ -24,39 +23,17 @@ const watchFiles = (contentDir, templates, { actions, store }) => {
     const config = Path.findContentConfigFromRawSnippet(path);
     TextParser.fromPath(path, {
       withMetadata: true,
-    }).then(data => {
+    }).then(async data => {
       const snippet = new Snippet(data, config);
-      const snippetContext = new SnippetContext(snippet).toObject({
-        withVscodeUrl: true,
-      });
-      const cardTemplate = config.cardTemplate;
-      const indexChunk = Chunk.createIndex(
-        snippet.slug,
-        'SnippetPage',
-        (snippet.ranking * 0.85).toFixed(2),
-        {
-          vscodeUrl: snippet.vscodeUrl,
-        }
-      );
-      JSONSerializer.serializeToDir(
-        `${snippet.config.outPath}/${snippet.slug.slice(1)}`,
-        ['index', indexChunk],
-        ['snippet', { snippet: snippetContext }],
-        [
-          'metadata',
-          {
-            cardTemplate,
-            breadcrumbs: snippet.breadcrumbs,
-            pageDescription: snippet.seoDescription,
-          },
-        ]
-      );
+      await SnippetSerializer.serializeSnippet(snippet);
       createPage({
-        path: indexChunk.relRoute,
-        component: templates[indexChunk.template],
+        path: snippet.slug.startsWith('/') ? snippet.slug : `/${snippet.slug}`,
+        component: templates['SnippetPage'],
         context: {
-          snippet: snippetContext,
-          cardTemplate,
+          snippet: new SnippetContext(snippet).toObject({
+            withVscodeUrl: true,
+          }),
+          cardTemplate: config.cardTemplate,
           breadcrumbs: snippet.breadcrumbs,
           pageDescription: snippet.seoDescription,
         },
