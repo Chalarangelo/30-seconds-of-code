@@ -65,6 +65,10 @@ export class SnippetContext {
     return this.snippet.url;
   }
 
+  get slug() {
+    return this.snippet.slug;
+  }
+
   get firstSeen() {
     return this.snippet.firstSeen;
   }

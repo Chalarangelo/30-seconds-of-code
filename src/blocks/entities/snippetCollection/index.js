@@ -174,7 +174,7 @@ export class SnippetCollection {
 
   get featured() {
     if (!['language', 'blog'].includes(this.type)) return 0;
-    return this.config.featured;
+    return this.config ? this.config.featured : 0;
   }
 
   get blog() {

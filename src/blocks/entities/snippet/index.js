@@ -56,7 +56,7 @@ export class Snippet {
   ) {
     if (!fileName || !title || !tags || !firstSeen || !lastUpdated || !body) {
       throw new ArgsError(
-        "Missing required keys. One or more of the following keys were not specified: 'filename', 'title', 'tags', 'firstSeen', 'lastUpdated', 'body'"
+        "Missing required keys. One or more of the following keys were not specified: 'fileName', 'title', 'tags', 'firstSeen', 'lastUpdated', 'body'"
       );
     }
 

@@ -27,7 +27,7 @@ export class JSONParser {
     {
       withNames = false,
       reduced = false,
-      reducer = (a, v) => ({ ...a, ...v }),
+      reducer = (a, v) => ({ ...a, ...require(v) }),
       initialValue = {},
     } = {}
   ) => {
@@ -45,6 +45,8 @@ export class JSONParser {
 
     const matchingFiles = FileParser.fromGlob(globPattern);
 
+    // NOTE: The `reducer` should implement the `require` part in order for the
+    // resulting value to make some sort of sense if it reduces to an object.
     if (reduced) {
       return matchingFiles.reduce(reducer, initialValue);
     }

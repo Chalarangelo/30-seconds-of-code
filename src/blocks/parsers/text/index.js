@@ -69,7 +69,7 @@ export class TextParser {
     });
   };
 
-  static fromDir = async (dirPath, { withMetadata = false }) => {
+  static fromDir = async (dirPath, { withMetadata = false } = {}) => {
     const fileNames = await FileParser.fromDir(dirPath);
     return Promise.all(
       fileNames.map(f => this.fromPath(`${dirPath}/${f}`, { withMetadata }))
