@@ -69,7 +69,10 @@ export class ContentConfig {
       !this.language ||
       !this.language.long ||
       !this.theme ||
-      !this.theme.iconName
+      !this.theme.iconName ||
+      ContentConfig.langData.find(
+        l => l.language === this.language.long.toLowerCase()
+      )
     )
       return;
     ContentConfig.langData.push({
@@ -110,23 +113,6 @@ export class ContentConfig {
       );
     }
     return this._hasOptionalLanguage;
-  }
-
-  get languages() {
-    if (!this._languages) {
-      this._languages = this.isBlog
-        ? []
-        : [
-            this.language.short,
-            this.isCSS ? this.secondLanguage.short : null,
-            this.hasOptionalLanguage || this.isCSS
-              ? this.optionalLanguage.short
-              : null,
-          ]
-            .filter(Boolean)
-            .join('|');
-    }
-    return this._languages;
   }
 
   get authors() {

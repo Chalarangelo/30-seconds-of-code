@@ -6,6 +6,12 @@ const writeFile = util.promisify(fs.writeFile);
  * Serializes objects to JSON files.
  */
 export class JSONSerializer {
+  /**
+   * Writes the provided object to the specified file
+   * @param {string} filePath - Path to write the file.
+   * @param {object} obj - A serializable plain object.
+   * @returns {Promise} - A promise that resolves as soon as the file has been written
+   */
   static serializeToFile = (filePath, obj) =>
     writeFile(filePath, JSON.stringify(obj, null, 2));
 
@@ -19,6 +25,7 @@ export class JSONSerializer {
    */
   static serializeToDir = (path, ...dataChunkPairs) => {
     fs.ensureDirSync(path);
+    /* istanbul ignore next */
     if (!dataChunkPairs > 1 && !dataChunkPairs.some(dcp => dcp[0] === 'index'))
       console.warn(`Data for ${path} does not contain an index!`);
 
