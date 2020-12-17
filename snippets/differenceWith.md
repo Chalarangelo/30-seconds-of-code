@@ -20,5 +20,9 @@ differenceWith(
   (a, b) => Math.round(a) === Math.round(b)
 ); // [1, 1.2]
 differenceWith([1, 1.2, 1.3], [1, 1.3, 1.5]); // [1.2]
-differenceWith([{ id: 1 }, { id: 2 }, { id: 3 }], [{ id: 3 }, { id: 4 }], (a, b) => a.id === b.id) //  [{ id: 1 }, { id: 2 }]
+differenceWith(
+  [{ id: 1 }, { id: 2 }, { id: 3 }],
+  [{ id: 3 }, { id: 4 }],
+  (a, b) => a.id === b.id
+) //  [{ id: 1 }, { id: 2 }]
 ```
