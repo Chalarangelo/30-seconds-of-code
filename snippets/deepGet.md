@@ -27,6 +27,6 @@ const data = {
     }
   }
 };
-deepGet(data, ['foo', 'foz', index]); // get 3
-deepGet(data, ['foo', 'bar', 'baz', 8, 'foz']); // null
+deepGet(data, ['foo', 'foz', index]);  // get 3
+deepGet(data, ['foo', 'bar', 'baz', 8, 'foz']);  // null
 ```

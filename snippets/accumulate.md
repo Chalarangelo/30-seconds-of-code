@@ -14,6 +14,6 @@ const accumulate = (...nums) =>
 ```
 
 ```js
-accumulate(1, 2, 3, 4); // [1, 3, 6, 10]
-accumulate(...[1, 2, 3, 4]); // [1, 3, 6, 10]
+accumulate(1, 2, 3, 4);  // [1, 3, 6, 10]
+accumulate(...[1, 2, 3, 4]);  // [1, 3, 6, 10]
 ```

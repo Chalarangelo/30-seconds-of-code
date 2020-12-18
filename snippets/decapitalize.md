@@ -15,6 +15,6 @@ const decapitalize = ([first, ...rest], upperRest = false) =>
 ```
 
 ```js
-decapitalize('FooBar'); // 'fooBar'
-decapitalize('FooBar', true); // 'fOOBAR'
+decapitalize('FooBar');  // 'fooBar'
+decapitalize('FooBar', true);  // 'fOOBAR'
 ```
