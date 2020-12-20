@@ -1,4 +1,6 @@
 [![Logo](/logo.png)](https://30secondsofcode.org/js/p/1)
+# 3 weeks for Javascript
+# Be a perfect Javasript coder
 
 # 30 seconds of code
 
@@ -13,7 +15,7 @@
 
 ## Want to contribute?
 
-* If you want to help us improve, take a minute to read the [Contribution Guidelines](/CONTRIBUTING.md) first.
+* If you want to help us to improve, take a minute to read the [Contribution Guidelines](/CONTRIBUTING.md) first.
 * Use the [Snippet Template](/snippet-template.md) to add new snippets to the collection.
 * If you find a problem with a specific snippet, please [open an issue](https://github.com/30-seconds/30-seconds-of-code/issues/new).
 * If you find a problem with the website, please [report it in the web repository](https://github.com/30-seconds/30-seconds-web/issues/new).
