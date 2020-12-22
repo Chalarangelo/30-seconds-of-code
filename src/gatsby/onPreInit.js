@@ -1,6 +1,4 @@
-import { loadContentConfigs } from 'build/config';
-const { green } = require('chalk');
-import paths from 'config/paths';
+import { setupEnv } from 'blocks/utilities/env';
 
 /**
  * The first API called during Gatsby execution, runs as soon as
@@ -9,12 +7,8 @@ import paths from 'config/paths';
  * API docs: https://www.gatsbyjs.com/docs/node-apis/#onPreInit
  */
 const onPreInit = () => {
-  global.yild = global.yild || {};
-  global.yild.paths = paths;
-  process.configs =
-    loadContentConfigs(paths.rawContentPath, msg => {
-      console.log(`${green('success')} ${msg}`);
-    });
+  setupEnv('PRODUCTION');
+  process.configs = global.settings.configs;
 };
 
 export default onPreInit;

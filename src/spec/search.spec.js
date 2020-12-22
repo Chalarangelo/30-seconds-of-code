@@ -13,7 +13,7 @@ describe('Search', () => {
 
   describe('search results', () => {
     it('should display the correct title', () => {
-      cy.get('.page-title', {timeout: 5000}).contains(literals.results);
+      cy.get('.page-title', { timeout: 5000 }).contains(literals.results);
     });
 
     it('should display search results', () => {
@@ -44,7 +44,9 @@ describe('Search', () => {
 
   describe('dead end search', () => {
     before(() => {
-      cy.get('input[type="search"]').type('withoutresultsthisisnotlikelytofindanything');
+      cy.get('input[type="search"]').type(
+        'withoutresultsthisisnotlikelytofindanything'
+      );
     });
 
     it('should return no results', () => {

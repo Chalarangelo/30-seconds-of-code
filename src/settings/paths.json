@@ -1,0 +1,44 @@
+{
+  "settingsPath": "src/settings/!(global|paths).json",
+  "assetPath": ".assets",
+  "rawAssetPath": "assets",
+  "staticAssetPath": "assets",
+  "contentPath": ".content",
+  "rawContentPath": "content",
+  "buildPath": ".build",
+  "rawIconPath": "src/icons/*.svg",
+  "iconFontPath": "src/styles/_icons.scss",
+  "queryPath": "./src/queries",
+  "xmlPath": "./src/xml",
+  "templatesPath": "./src/components/templates",
+  "templates": [
+    {
+      "name": "SnippetPage",
+      "path": "snippetPage/index.jsx"
+    },
+    {
+      "name": "SearchPage",
+      "path": "searchPage/index.jsx"
+    },
+    {
+      "name": "ListingPage",
+      "path": "listingPage/index.jsx"
+    },
+    {
+      "name": "NotFoundPage",
+      "path": "notFoundPage/index.jsx"
+    },
+    {
+      "name": "StaticPage",
+      "path": "staticPage/index.jsx"
+    },
+    {
+      "name": "SettingsPage",
+      "path": "settingsPage/index.jsx"
+    },
+    {
+      "name": "DeveloperPage",
+      "path": "developerPage/index.jsx"
+    }
+  ]
+}

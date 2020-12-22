@@ -14,7 +14,7 @@ describe('<CodepenButton />', () => {
 
   beforeEach(() => {
     wrapper = renderConnected(
-      <CodepenButton htmlCode={ codepenHtmlCode } cssCode={ codepenCssCode } />
+      <CodepenButton htmlCode={codepenHtmlCode} cssCode={codepenCssCode} />
     ).container;
     button = wrapper.querySelector('button');
     input = wrapper.querySelector('input');
@@ -29,7 +29,9 @@ describe('<CodepenButton />', () => {
   });
 
   it('should have an appropriate title attribute', () => {
-    expect(wrapper.querySelectorAll('button.btn.codepen-btn[title]')).toHaveLength(1);
+    expect(
+      wrapper.querySelectorAll('button.btn.codepen-btn[title]')
+    ).toHaveLength(1);
     expect(button.title).toBe(literals.codepen);
   });
 
@@ -37,4 +39,3 @@ describe('<CodepenButton />', () => {
     expect(input.value).not.toBe(undefined);
   });
 });
-

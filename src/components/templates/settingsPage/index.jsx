@@ -34,11 +34,7 @@ const propTypes = {
  */
 const SettingsPage = ({
   pageContext: {
-    stringLiterals: {
-      title,
-      pageDescription,
-      settings,
-    },
+    stringLiterals: { title, pageDescription, settings },
   },
   dispatch,
   isDarkMode,
@@ -46,30 +42,27 @@ const SettingsPage = ({
   includeArchive,
 }) => (
   <>
-    <Meta
-      title={ title }
-      description={ pageDescription }
-    />
-    <Shell isSettings >
-      <PageTitle>{ title }</PageTitle>
+    <Meta title={title} description={pageDescription} />
+    <Shell isSettings>
+      <PageTitle>{title}</PageTitle>
       <SimpleCard>
         <Toggle
-          checked={ !!isDarkMode }
-          onChange={ () => dispatch(toggleDarkMode(!isDarkMode)) }
+          checked={!!isDarkMode}
+          onChange={() => dispatch(toggleDarkMode(!isDarkMode))}
         >
-          { settings.darkMode }
+          {settings.darkMode}
         </Toggle>
         <Toggle
-          checked={ !!acceptsCookies }
-          onChange={ () => dispatch(decideCookies(!acceptsCookies)) }
+          checked={!!acceptsCookies}
+          onChange={() => dispatch(decideCookies(!acceptsCookies))}
         >
-          { settings.cookies }
+          {settings.cookies}
         </Toggle>
         <Toggle
-          checked={ !!includeArchive }
-          onChange={ () => dispatch(toggleArchiveSearch(!includeArchive)) }
+          checked={!!includeArchive}
+          onChange={() => dispatch(toggleArchiveSearch(!includeArchive))}
         >
-          { settings.archiveSearch }
+          {settings.archiveSearch}
         </Toggle>
       </SimpleCard>
     </Shell>

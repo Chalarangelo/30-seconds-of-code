@@ -9,8 +9,6 @@ export default oneOfType([
   string,
   shape({
     ...langShape,
-    otherLanguages: arrayOf(
-      shape({...langShape})
-    ),
+    otherLanguages: arrayOf(shape({ ...langShape })),
   }),
 ]);

@@ -13,26 +13,24 @@ const propTypes = {
  * Dependent on the `Card` and `TagList` components.
  * @param {object} snippet - Snippet object for the card.
  */
-const PreviewCard = ({
-  snippet,
-}) => {
+const PreviewCard = ({ snippet }) => {
   const tags = snippet.language
     ? [snippet.language, snippet.primaryTag]
     : [snippet.primaryTag, snippet.expertise];
-  return(
+  return (
     <li className='card preview-card'>
-      <div className={ `card-icon icon icon-${snippet.icon}` }>
-        <Expertise level={ snippet.expertise } />
+      <div className={`card-icon icon icon-${snippet.icon}`}>
+        <Expertise level={snippet.expertise} />
       </div>
       <div className='card-data'>
         <h4 className='card-title'>
-          <a href={ snippet.url }>{ snippet.title }</a>
+          <a href={snippet.url}>{snippet.title}</a>
         </h4>
-        <TagList tags={ tags } />
+        <TagList tags={tags} />
       </div>
       <div
         className='card-description'
-        dangerouslySetInnerHTML={ { __html: `${snippet.description}` } }
+        dangerouslySetInnerHTML={{ __html: `${snippet.description}` }}
       />
     </li>
   );

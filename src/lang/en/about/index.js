@@ -1,11 +1,11 @@
 import fs from 'fs-extra';
 import path from 'path';
-import config from 'config/global';
+import settings from 'settings/global';
 
 const literals = {
   title: 'About',
   subtitle: 'A few word about us, our goals and our projects.',
-  pageDescription: `Learn more about the team behind ${config.websiteName}.`,
+  pageDescription: `Learn more about the team behind ${settings.websiteName}.`,
   cards: [
     {
       title: 'About us',
@@ -23,7 +23,10 @@ const literals = {
 };
 
 literals.cards.forEach(({ html }, i) => {
-  literals.cards[i].html = fs.readFileSync(path.resolve(__dirname, html), 'utf8');
+  literals.cards[i].html = fs.readFileSync(
+    path.resolve(__dirname, html),
+    'utf8'
+  );
 });
 
 export default literals;

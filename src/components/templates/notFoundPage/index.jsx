@@ -13,26 +13,21 @@ const propTypes = {};
  */
 const NotFoundPage = () => (
   <>
-    <Meta
-      title={ literals.pageNotFound }
-    />
+    <Meta title={literals.pageNotFound} />
     <Shell>
-      <PageTitle>{ literals.fourOhFour }</PageTitle>
+      <PageTitle>{literals.fourOhFour}</PageTitle>
       <PageBackdrop
         graphicName='page-not-found'
-        mainText={ (
+        mainText={
           <>
-            <strong>{ literals.pageNotFound }</strong>
+            <strong>{literals.pageNotFound}</strong>
             <br />
           </>
-        ) }
-        subText={ literals.notFoundDescription }
+        }
+        subText={literals.notFoundDescription}
       >
-        <a
-          className='btn btn-home icon icon-home'
-          href='/'
-        >
-          { literals.goHome }
+        <a className='btn btn-home icon icon-home' href='/'>
+          {literals.goHome}
         </a>
       </PageBackdrop>
     </Shell>

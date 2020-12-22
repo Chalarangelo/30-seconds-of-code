@@ -1,4 +1,4 @@
-import config from 'config/global';
+import settings from 'settings/global';
 
 const literals = {
   copyToClipboard: 'Copy code',
@@ -13,9 +13,9 @@ const literals = {
   recommendedSnippets: 'Recommended snippets',
   blog: 'Blog',
   settings: 'Settings',
-  siteName: config.websiteName,
-  siteAuthor: config.orgName,
-  siteDescription: config.websiteDescription,
+  siteName: settings.websiteName,
+  siteAuthor: settings.orgName,
+  siteDescription: settings.websiteDescription,
 };
 
 export default literals;

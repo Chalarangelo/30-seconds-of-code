@@ -9,27 +9,16 @@ import {
   optimizeAllNodes,
   getURLParameters,
   getRootURL,
-  getBaseURL
+  getBaseURL,
 } from './string';
 
 import combineClassNames from '@chalarangelo/combine-class-names';
 
-import {
-  uniqueElements,
-  insertAt,
-  chunk
-} from './array';
+import { uniqueElements, insertAt, chunk } from './array';
 
-import {
-  throttle
-} from './function';
+import { throttle } from './function';
 
-import {
-  generateStructuredData,
-  hasKeys,
-  hasKey,
-  get
-} from './object';
+import { generateStructuredData, hasKeys, hasKey, get } from './object';
 
 export {
   capitalize,
@@ -51,5 +40,5 @@ export {
   get,
   uniqueElements,
   insertAt,
-  chunk
+  chunk,
 };

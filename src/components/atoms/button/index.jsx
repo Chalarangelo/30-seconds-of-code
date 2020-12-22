@@ -3,9 +3,4 @@ import CopyButton from './copyButton';
 import CodepenButton from './codepenButton';
 import ShareButton from './shareButton';
 
-export {
-  Button,
-  CopyButton,
-  CodepenButton,
-  ShareButton,
-};
+export { Button, CopyButton, CodepenButton, ShareButton };

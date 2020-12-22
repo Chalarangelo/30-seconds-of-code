@@ -16,16 +16,16 @@ const breadcrumbPropTypes = {
 const Breadcrumbs = ({ breadcrumbs }) => (
   <nav aria-label='breadcrumbs' className='breadcrumbs'>
     <ol>
-      { breadcrumbs.map(({ name, url }, i) =>
-        <li key={ `breadcrumb-${i}` } className='breadcrumb-item'>
+      {breadcrumbs.map(({ name, url }, i) => (
+        <li key={`breadcrumb-${i}`} className='breadcrumb-item'>
           <a
-            href={ url }
-            aria-current={ i === breadcrumbs.length - 1 ? 'page' : null }>
-            { name }
+            href={url}
+            aria-current={i === breadcrumbs.length - 1 ? 'page' : null}
+          >
+            {name}
           </a>
         </li>
-
-      ) }
+      ))}
     </ol>
   </nav>
 );

@@ -4,10 +4,15 @@ import { convertToSeoSlug } from 'utils';
 
 const createNewSnippet = (dirName, snippetName) => {
   const template = fs.readFileSync(`${dirName}/snippet-template.md`, 'utf8');
-  const snippetDirectory = fs.existsSync(`${dirName}/blog_posts`) ? 'blog_posts' : 'snippets';
+  const snippetDirectory = fs.existsSync(`${dirName}/blog_posts`)
+    ? 'blog_posts'
+    : 'snippets';
   fs.ensureDirSync(`${dirName}/${snippetDirectory}`);
   const fileData = template.replace(/title:\s*.*\n/, `title: ${snippetName}\n`);
-  fs.writeFileSync(`${dirName}/${snippetDirectory}/${snippetName}.md`, fileData );
+  fs.writeFileSync(
+    `${dirName}/${snippetDirectory}/${snippetName}.md`,
+    fileData
+  );
 };
 
 /**
@@ -23,7 +28,9 @@ const onCreateDevServer = ({ app }) => {
       snippetName
     );
     res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify({ url: `${slugPrefix}${convertToSeoSlug(snippetName)}` }));
+    res.end(
+      JSON.stringify({ url: `${slugPrefix}${convertToSeoSlug(snippetName)}` })
+    );
   });
 };
 

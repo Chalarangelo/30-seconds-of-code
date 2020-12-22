@@ -4,7 +4,8 @@
  * @param {bool} lowerRest - Should the rest of the characters be lowercased?
  */
 export const capitalize = ([first, ...rest], lowerRest = false) =>
-  first.toUpperCase() + (lowerRest ? rest.join('').toLowerCase() : rest.join(''));
+  first.toUpperCase() +
+  (lowerRest ? rest.join('').toLowerCase() : rest.join(''));
 
 /**
  * Optimizes nodes in an HTML string.
@@ -18,7 +19,7 @@ export const optimizeNodes = (data, regexp, replacer) => {
   do {
     output = output.replace(regexp, replacer);
     count = 0;
-    while (regexp.exec(output) !== null)++count;
+    while (regexp.exec(output) !== null) ++count;
   } while (count > 0);
   return output;
 };
@@ -39,8 +40,7 @@ export const optimizeAllNodes = html => {
   output = optimizeNodes(
     output,
     /<span class="token operator">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token operator">([^\0]*?)<\/span>/gm,
-    (match, p1, p2, p3) =>
-      `<span class="token operator">${p1}${p2}${p3}</span>`
+    (match, p1, p2, p3) => `<span class="token operator">${p1}${p2}${p3}</span>`
   );
   // Optimize keyword nodes
   output = optimizeNodes(
@@ -57,7 +57,9 @@ export const optimizeAllNodes = html => {
  */
 export const getURLParameters = url =>
   (url.match(/([^?=&]+)(=([^&]*))/g) || []).reduce(
-    (a, v) => ((a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a),
+    (a, v) => (
+      (a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a
+    ),
     {}
   );
 
@@ -72,8 +74,7 @@ export const getBaseURL = url =>
  * Returns the root URL without any parameters..
  * @param {string} url - The URL to be parsed.
  */
-export const getRootURL = url =>
-  url.split('/').slice(0, 3).join('/');
+export const getRootURL = url => url.split('/').slice(0, 3).join('/');
 
 /**
  * Strips markdown format from a string.

@@ -12,10 +12,11 @@ describe('<Sorter />', () => {
 
   beforeEach(() => {
     wrapper = render(
-      <Sorter sorter={ {
-        orders,
-        selectedOrder,
-      } }
+      <Sorter
+        sorter={{
+          orders,
+          selectedOrder,
+        }}
       />
     ).container;
   });
@@ -64,10 +65,11 @@ describe('<Sorter />', () => {
   describe('with a single sorting order', () => {
     beforeEach(() => {
       wrapper = render(
-        <Sorter sorter={ {
-          orders: orders.slice(0, 1),
-          selectedOrder,
-        } }
+        <Sorter
+          sorter={{
+            orders: orders.slice(0, 1),
+            selectedOrder,
+          }}
         />
       ).container;
     });
@@ -77,4 +79,3 @@ describe('<Sorter />', () => {
     });
   });
 });
-

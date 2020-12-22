@@ -16,12 +16,7 @@ const propTypes = {
  */
 const Paginator = ({
   className,
-  paginator: {
-    pageNumber,
-    totalPages,
-    baseUrl,
-    slugOrderingSegment,
-  },
+  paginator: { pageNumber, totalPages, baseUrl, slugOrderingSegment },
 }) => {
   if (totalPages <= 1) return null;
 
@@ -39,56 +34,50 @@ const Paginator = ({
   let buttons = [];
   if (totalPages <= 3)
     buttons = Array.from({ length: totalPages }, (v, i) => i + 1);
-  else if (pageNumber <= 2)
-    buttons = [1, 2, '...', totalPages];
+  else if (pageNumber <= 2) buttons = [1, 2, '...', totalPages];
   else if (totalPages - pageNumber <= 1)
     buttons = [1, '...', totalPages - 1, totalPages];
-  else
-    buttons = [1, '...', pageNumber, '...', totalPages];
+  else buttons = [1, '...', pageNumber, '...', totalPages];
 
   return (
-    <div className={ combineClassNames`paginator ${className}` } >
-      { pageNumber > 1 &&
-      <a
-        className='btn previous-page icon icon-chevron-left'
-        href={ `${baseUrl}/${slugOrderingSegment}/${pageNumber - 1}` }
-        rel='prev'
-      >
-        { literals.previous }
-      </a> }
-      {
-        buttons.map((buttonNumber, i) => (
-          buttonNumber === '...' ?
-            <span
-              className='paginator-separator'
-              key={ `sep-${i}` }
-            >
-              { buttonNumber }
-            </span> :
-            buttonNumber === pageNumber ?
-              <Button
-                className='current-page'
-                key={ buttonNumber }
-              >
-                { buttonNumber }
-              </Button> :
-              <a
-                key={ buttonNumber }
-                className='btn'
-                href={ `${baseUrl}/${slugOrderingSegment}/${buttonNumber}` }
-              >
-                { buttonNumber }
-              </a>
-        ))
-      }
-      { pageNumber < totalPages &&
-      <a
-        className='btn next-page icon icon-chevron-right'
-        href={ `${baseUrl}/${slugOrderingSegment}/${pageNumber + 1}` }
-        rel='next'
-      >
-        { literals.next }
-      </a> }
+    <div className={combineClassNames`paginator ${className}`}>
+      {pageNumber > 1 && (
+        <a
+          className='btn previous-page icon icon-chevron-left'
+          href={`${baseUrl}/${slugOrderingSegment}/${pageNumber - 1}`}
+          rel='prev'
+        >
+          {literals.previous}
+        </a>
+      )}
+      {buttons.map((buttonNumber, i) =>
+        buttonNumber === '...' ? (
+          <span className='paginator-separator' key={`sep-${i}`}>
+            {buttonNumber}
+          </span>
+        ) : buttonNumber === pageNumber ? (
+          <Button className='current-page' key={buttonNumber}>
+            {buttonNumber}
+          </Button>
+        ) : (
+          <a
+            key={buttonNumber}
+            className='btn'
+            href={`${baseUrl}/${slugOrderingSegment}/${buttonNumber}`}
+          >
+            {buttonNumber}
+          </a>
+        )
+      )}
+      {pageNumber < totalPages && (
+        <a
+          className='btn next-page icon icon-chevron-right'
+          href={`${baseUrl}/${slugOrderingSegment}/${pageNumber + 1}`}
+          rel='next'
+        >
+          {literals.next}
+        </a>
+      )}
     </div>
   );
 };

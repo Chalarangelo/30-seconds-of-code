@@ -2,7 +2,9 @@
 const isBot = () =>
   typeof navigator !== 'undefined' &&
   typeof navigator.userAgent !== 'undefined' &&
-  /bot|google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex/i.test(navigator.userAgent);
+  /bot|google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex/i.test(
+    navigator.userAgent
+  );
 
 // Default state
 const initialState = {
@@ -31,23 +33,23 @@ export const decideCookies = cookieConsent => ({
 // Reducer
 export default (state = initialState, action) => {
   switch (action.type) {
-  case TOGGLE_DARKMODE:
-    return {
-      ...state,
-      isDarkMode: action.isDarkMode,
-    };
-  case ACCEPT_COOKIES:
-    return {
-      ...state,
-      acceptsCookies: true,
-    };
-  case DECLINE_COOKIES:
-    return {
-      ...state,
-      acceptsCookies: false,
-    };
-  default:
-    return state;
+    case TOGGLE_DARKMODE:
+      return {
+        ...state,
+        isDarkMode: action.isDarkMode,
+      };
+    case ACCEPT_COOKIES:
+      return {
+        ...state,
+        acceptsCookies: true,
+      };
+    case DECLINE_COOKIES:
+      return {
+        ...state,
+        acceptsCookies: false,
+      };
+    default:
+      return state;
   }
 };
 

@@ -1,0 +1,23 @@
+{
+  "specialTagsDictionary" : {
+    "css": "CSS",
+    "javascript": "JavaScript",
+    "php": "PHP",
+    "seo": "SEO",
+    "vscode": "Visual Studio Code"
+  },
+  "languageTags" : {
+    "javascript": {
+      "short": "js",
+      "long": "javascript"
+    },
+    "react": {
+      "short": "jsx",
+      "long": "react"
+    },
+    "python": {
+      "short": "py",
+      "long": "python"
+    }
+  }
+}

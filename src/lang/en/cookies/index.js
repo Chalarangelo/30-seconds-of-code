@@ -1,11 +1,11 @@
 import fs from 'fs-extra';
 import path from 'path';
-import config from 'config/global';
+import settings from 'settings/global';
 
 const literals = {
   title: 'Cookie policy',
   subtitle: 'Understand how we use cookies.',
-  pageDescription: `Read about the cookie policy of ${config.websiteName}.`,
+  pageDescription: `Read about the cookie policy of ${settings.websiteName}.`,
   cards: [
     {
       title: 'What are cookies',
@@ -31,7 +31,10 @@ const literals = {
 };
 
 literals.cards.forEach(({ html }, i) => {
-  literals.cards[i].html = fs.readFileSync(path.resolve(__dirname, html), 'utf8');
+  literals.cards[i].html = fs.readFileSync(
+    path.resolve(__dirname, html),
+    'utf8'
+  );
 });
 
 export default literals;

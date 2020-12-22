@@ -18,7 +18,9 @@ describe('<CookieConsentPopup />', () => {
 
   describe('it renders', () => {
     it('the appropriate wrapper element', () => {
-      expect(wrapper.querySelectorAll('div.cookie-consent-popup')).toHaveLength(1);
+      expect(wrapper.querySelectorAll('div.cookie-consent-popup')).toHaveLength(
+        1
+      );
     });
 
     it('the cookie disclaimer', () => {
@@ -33,16 +35,19 @@ describe('<CookieConsentPopup />', () => {
 
   describe('when accept button is clicked', () => {
     it('accepts cookies', () => {
-      fireEvent.click(wrapper.querySelectorAll('.btn')[0], { preventDefault: () => null });
+      fireEvent.click(wrapper.querySelectorAll('.btn')[0], {
+        preventDefault: () => null,
+      });
       expect(store.getState().shell.acceptsCookies).toBe(true);
     });
   });
 
   describe('when decline button is clicked', () => {
     it('declines cookies', () => {
-      fireEvent.click(wrapper.querySelectorAll('.btn')[1], { preventDefault: () => null });
+      fireEvent.click(wrapper.querySelectorAll('.btn')[1], {
+        preventDefault: () => null,
+      });
       expect(store.getState().shell.acceptsCookies).toBe(false);
     });
   });
 });
-

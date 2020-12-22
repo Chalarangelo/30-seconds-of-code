@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
-import config from 'config/global';
+import settings from 'settings/global';
 import literals from 'lang/en/client/common';
 import { generateStructuredData } from 'utils';
 
@@ -61,7 +61,7 @@ const Meta = ({
     scripts.push({
       type: 'application/ld+json',
       innerHTML: JSON.stringify(
-        generateStructuredData(structuredData, config, logoSrc)
+        generateStructuredData(structuredData, settings, logoSrc)
       ),
     });
   }
@@ -72,22 +72,22 @@ const Meta = ({
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
-        'itemListElement': breadcrumbsData.map((breadcrumb, i) => ({
+        itemListElement: breadcrumbsData.map((breadcrumb, i) => ({
           '@type': 'ListItem',
-          'position': i + 1,
-          'item': {
-            '@id': `${config.websiteUrl}${breadcrumb.url}`,
-            'name': `${breadcrumb.name}`,
+          position: i + 1,
+          item: {
+            '@id': `${settings.websiteUrl}${breadcrumb.url}`,
+            name: `${breadcrumb.name}`,
           },
         })),
       }),
     });
   }
 
-  if(typeof window !== 'undefined' && acceptsCookies) {
+  if (typeof window !== 'undefined' && acceptsCookies) {
     scripts.push({
       async: '',
-      src: `https://www.googletagmanager.com/gtag/js?id=${config.googleAnalytics.id}`,
+      src: `https://www.googletagmanager.com/gtag/js?id=${settings.googleAnalytics.id}`,
     });
     // GTAG
     scripts.push({
@@ -97,13 +97,13 @@ const Meta = ({
       gtag('js', new Date());
       gtag(
         'config',
-        '${config.googleAnalytics.id}',
-        ${JSON.stringify(config.googleAnalytics.config)}
+        '${settings.googleAnalytics.id}',
+        ${JSON.stringify(settings.googleAnalytics.config)}
       );
       `,
     });
     // Send a pageview only the first time that gtag is added (is this safe?)
-    if(typeof gtag === 'undefined') {
+    if (typeof gtag === 'undefined') {
       scripts.push({
         innerHTML: `
         var hasFired = false;
@@ -131,10 +131,10 @@ const Meta = ({
 
   return (
     <Helmet
-      htmlAttributes={ { lang: 'en' } }
-      title={ title ? title : literals.siteName }
-      titleTemplate={ title ? `%s - ${literals.siteName}` : '%s' }
-      meta={ [
+      htmlAttributes={{ lang: 'en' }}
+      title={title ? title : literals.siteName}
+      titleTemplate={title ? `%s - ${literals.siteName}` : '%s'}
+      meta={[
         {
           name: `description`,
           content: metaDescription,
@@ -145,7 +145,9 @@ const Meta = ({
         },
         {
           property: `og:title`,
-          content: title ? `${title} - ${literals.siteName}` : literals.siteName,
+          content: title
+            ? `${title} - ${literals.siteName}`
+            : literals.siteName,
         },
         {
           property: `og:description`,
@@ -157,11 +159,11 @@ const Meta = ({
         },
         {
           property: `og:image`,
-          content: `${config.websiteUrl}${logoSrc}`,
+          content: `${settings.websiteUrl}${logoSrc}`,
         },
         {
           name: `twitter:site`,
-          content: config.twitterAccount,
+          content: settings.twitterAccount,
         },
         {
           name: `twitter:card`,
@@ -177,24 +179,19 @@ const Meta = ({
         },
         {
           name: `twitter:image`,
-          content: `${config.websiteUrl}${logoSrc}`,
+          content: `${settings.websiteUrl}${logoSrc}`,
         },
-      ].concat(meta) }
-      script={ scripts }
+      ].concat(meta)}
+      script={scripts}
     >
       <link
-        rel="preconnect dns-prefetch"
-        key="preconnect-google-analytics"
-        href="https://www.google-analytics.com"
+        rel='preconnect dns-prefetch'
+        key='preconnect-google-analytics'
+        href='https://www.google-analytics.com'
       />
-      {
-        canonical ?
-          <link
-            rel="canonical"
-            href={ `${config.websiteUrl}${canonical}` }
-          />
-          : null
-      }
+      {canonical ? (
+        <link rel='canonical' href={`${settings.websiteUrl}${canonical}`} />
+      ) : null}
     </Helmet>
   );
 };

@@ -24,7 +24,7 @@ describe('Listing', () => {
     before(() => {
       cy.visit('http://localhost:9000/list/p/1');
       // eslint-disable-next-line cypress/no-force
-      cy.get('.next-page').first().click({ force: true});
+      cy.get('.next-page').first().click({ force: true });
     });
 
     it('should redirect to the next page', () => {
@@ -34,7 +34,7 @@ describe('Listing', () => {
     describe('when navigating to the previous page', () => {
       before(() => {
         // eslint-disable-next-line cypress/no-force
-        cy.get('.previous-page').first().click({ force: true});
+        cy.get('.previous-page').first().click({ force: true });
       });
 
       it('should redirect to the previous page', () => {

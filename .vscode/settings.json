@@ -12,5 +12,14 @@
     "source.fixAll.eslint": true
   },
   "diffEditor.ignoreTrimWhitespace": false,
-  "files.trimTrailingWhitespace": true
+  "files.trimTrailingWhitespace": true,
+  "[javascript]": {
+    "editor.formatOnSaveMode": "file",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSaveMode": "file",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "workbench.editor.labelFormat": "short"
 }

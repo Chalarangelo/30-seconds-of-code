@@ -1,40 +1,30 @@
-import { logger, format } from 'build/core';
-import { loadContentConfigs } from 'build/config';
-import { updateContent } from 'build/content';
-import { makeIcons, prepareAssets } from 'build/assets';
-import { generateSitemap } from 'build/sitemap';
-import { extractData } from 'build/extract';
-import globalConfig from 'config/global';
-import pathConfig from 'config/paths';
-import iconConfig from 'config/icons';
-import sitemapConfig from 'config/sitemap';
+import { setupEnv } from 'blocks/utilities/env';
+import { Logger } from 'blocks/utilities/logger';
+import { Content } from 'blocks/utilities/content';
+import { IconSerializer } from 'blocks/serializers/icon';
+import { SitemapSerializer } from 'blocks/serializers/sitemap';
+import { FileParser } from 'blocks/parsers/file';
+import { AssetSerializer } from 'blocks/serializers/asset';
+import { Extractor } from 'blocks/utilities/extractor';
 
-export const build = async() => {
-  global.yild = global.yild || {};
-  global.yild.paths = pathConfig;
-  global.yild.icons = iconConfig;
-  global.yild.sitemap = sitemapConfig;
-  global.yild.mainConfig = globalConfig;
-  global.yild.env = 'PRODUCTION';
+export const build = async () => {
+  setupEnv('PRODUCTION');
 
-  logger.log(`${format('yild', 'bold')} is starting up...`, 'info');
-  logger.logProcessInfo();
-  logger.breakLine();
-  loadContentConfigs(pathConfig.rawContentPath, logger.log);
+  Logger.log('Build process is starting up...', 'info');
+  Logger.logProcessInfo();
+  Logger.breakLine();
 
   await Promise.all([
-    updateContent(),
-    makeIcons(),
+    Content.update(),
+    IconSerializer.serialize(
+      FileParser.fromGlob(global.settings.paths.rawIconPath),
+      global.settings.configs
+    ),
   ]);
 
-  await Promise.all([
-    extractData(),
-    prepareAssets(),
-  ]);
+  await Promise.all([Extractor.extract(), AssetSerializer.serialize()]);
 
-  await Promise.all([
-    generateSitemap(),
-  ]);
+  await Promise.all([SitemapSerializer.serialize()]);
 };
 
 build();

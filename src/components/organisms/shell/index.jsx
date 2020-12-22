@@ -41,44 +41,43 @@ const Shell = ({
   children,
 }) => {
   React.useEffect(() => {
-    if(isDarkMode) document.querySelector('body').classList.add('dark');
+    if (isDarkMode) document.querySelector('body').classList.add('dark');
     else document.querySelector('body').classList.remove('dark');
   }, [isDarkMode]);
 
   return (
-    <div className={ combineClassNames`page-container ${isDarkMode ? 'dark' : ''}` }>
-      <header
-        className='nav-bar'
-        role='navigation'
-        aria-label='Main'
-      >
+    <div
+      className={combineClassNames`page-container ${isDarkMode ? 'dark' : ''}`}
+    >
+      <header className='nav-bar' role='navigation' aria-label='Main'>
         <a className='nav-btn' href='/'>
           <img
             src='/assets/30s-icon.png'
-            alt={ literals.home }
+            alt={literals.home}
             className='nav-website-logo'
           />
         </a>
-        <Search isMainSearch={ isSearch } />
+        <Search isMainSearch={isSearch} />
         <a
           className='nav-btn icon icon-settings'
-          href={ isSettings ? lastPageUrl ? lastPageUrl : '/' : '/settings' }
+          href={isSettings ? (lastPageUrl ? lastPageUrl : '/') : '/settings'}
           rel='nofollow'
-          title={ literals.settings }
-          onClick={ () => {
+          title={literals.settings}
+          onClick={() => {
             if (isSettings || !window || !window.location) return;
             dispatch(pushNewPage(window.location.pathname));
-          } }
+          }}
         />
       </header>
       <div className='content'>
-        { children }
+        {children}
         <Footer />
       </div>
-      {
-        typeof acceptsCookies === 'undefined' && process.env.ENV !== 'development' && !isBot ?
-          <CookieConsentPopup /> : null
-      }
+      {typeof acceptsCookies === 'undefined' &&
+      process.env.ENV !== 'development' &&
+      !isBot ? (
+        <CookieConsentPopup />
+      ) : null}
     </div>
   );
 };

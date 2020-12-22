@@ -7,9 +7,8 @@ describe('<Button />', () => {
   const innerText = 'Click me!';
 
   beforeEach(() => {
-    wrapper = render(
-      <Button className="secondary">{ innerText }</Button>
-    ).container;
+    wrapper = render(<Button className='secondary'>{innerText}</Button>)
+      .container;
   });
 
   afterEach(cleanup);
@@ -28,9 +27,7 @@ describe('<Button />', () => {
 
   describe('without additional classNames', () => {
     beforeEach(() => {
-      wrapper = render(
-        <Button>{ innerText }</Button>
-      ).container;
+      wrapper = render(<Button>{innerText}</Button>).container;
     });
 
     it('should render with the default className', () => {
@@ -38,4 +35,3 @@ describe('<Button />', () => {
     });
   });
 });
-

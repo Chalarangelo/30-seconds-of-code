@@ -12,7 +12,7 @@ describe('<StaticPage />', () => {
 
   beforeEach(() => {
     wrapper = renderConnected(
-      <StaticPage pageContext={ { stringLiterals: aboutLiterals } } />
+      <StaticPage pageContext={{ stringLiterals: aboutLiterals }} />
     ).container;
     meta = Helmet.peek();
   });
@@ -41,4 +41,3 @@ describe('<StaticPage />', () => {
     expect(meta.title).toContain(aboutLiterals.title);
   });
 });
-

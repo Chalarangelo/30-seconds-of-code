@@ -5,16 +5,19 @@ import Paginator from './index';
 console.warn = jest.fn();
 
 describe('<Paginator />', () => {
-  const pageNumber = 3, totalPages = 7, baseUrl = '/list';
+  const pageNumber = 3,
+    totalPages = 7,
+    baseUrl = '/list';
   let wrapper;
 
   beforeEach(() => {
     wrapper = render(
-      <Paginator paginator={ {
-        pageNumber,
-        totalPages,
-        baseUrl,
-      } }
+      <Paginator
+        paginator={{
+          pageNumber,
+          totalPages,
+          baseUrl,
+        }}
       />
     ).container;
   });
@@ -37,23 +40,27 @@ describe('<Paginator />', () => {
 
   describe('has a rel attribute', () => {
     it('of "prev" for previous button', () => {
-      expect(wrapper.querySelector('.btn.previous-page').getAttribute('rel')).toBe('prev');
-
+      expect(
+        wrapper.querySelector('.btn.previous-page').getAttribute('rel')
+      ).toBe('prev');
     });
 
     it('of "next" for next button', () => {
-      expect(wrapper.querySelector('.btn.next-page').getAttribute('rel')).toBe('next');
+      expect(wrapper.querySelector('.btn.next-page').getAttribute('rel')).toBe(
+        'next'
+      );
     });
   });
 
   describe('with first page as current', () => {
     beforeEach(() => {
       wrapper = render(
-        <Paginator paginator={ {
-          pageNumber: 1,
-          totalPages,
-          baseUrl,
-        } }
+        <Paginator
+          paginator={{
+            pageNumber: 1,
+            totalPages,
+            baseUrl,
+          }}
         />
       ).container;
     });
@@ -72,11 +79,12 @@ describe('<Paginator />', () => {
   describe('with last page as current', () => {
     beforeEach(() => {
       wrapper = render(
-        <Paginator paginator={ {
-          pageNumber: totalPages,
-          totalPages,
-          baseUrl,
-        } }
+        <Paginator
+          paginator={{
+            pageNumber: totalPages,
+            totalPages,
+            baseUrl,
+          }}
         />
       ).container;
     });
@@ -95,11 +103,12 @@ describe('<Paginator />', () => {
   describe('with three or fewer buttons', () => {
     beforeEach(() => {
       wrapper = render(
-        <Paginator paginator={ {
-          pageNumber: 1,
-          totalPages: 2,
-          baseUrl,
-        } }
+        <Paginator
+          paginator={{
+            pageNumber: 1,
+            totalPages: 2,
+            baseUrl,
+          }}
         />
       ).container;
     });
@@ -112,11 +121,12 @@ describe('<Paginator />', () => {
   describe('with only one button', () => {
     beforeEach(() => {
       wrapper = render(
-        <Paginator paginator={ {
-          pageNumber: 1,
-          totalPages: 1,
-          baseUrl,
-        } }
+        <Paginator
+          paginator={{
+            pageNumber: 1,
+            totalPages: 1,
+            baseUrl,
+          }}
         />
       ).container;
     });
@@ -126,4 +136,3 @@ describe('<Paginator />', () => {
     });
   });
 });
-

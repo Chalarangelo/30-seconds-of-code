@@ -1,6 +1,6 @@
 import React from 'react';
 import literals from 'lang/en/client/footer';
-import config from 'config/global';
+import settings from 'settings/global';
 
 /**
  * Static component that renders the page footer.
@@ -8,85 +8,79 @@ import config from 'config/global';
 const Footer = () => (
   <footer>
     <p>
-      <a
-        className='footer-link'
-        href='/about'
-      >
-        { literals.about }
+      <a className='footer-link' href='/about'>
+        {literals.about}
+      </a>
+      <a className='footer-link' href='/cookies'>
+        {literals.cookies}
       </a>
       <a
         className='footer-link'
-        href='/cookies'
-      >
-        { literals.cookies }
-      </a>
-      <a
-        className='footer-link'
-        href={ config.githubOrgUrl }
+        href={settings.githubOrgUrl}
         rel='noopener noreferrer nofollow'
         target='_blank'
       >
-        { literals.github }
+        {literals.github}
       </a>
       <a
         className='footer-link'
-        href={ config.twitterUrl }
+        href={settings.twitterUrl}
         rel='noopener noreferrer nofollow'
         target='_blank'
       >
-        { literals.twitter }
+        {literals.twitter}
       </a>
     </p>
     <p>
-      { literals.copyright }
+      {literals.copyright}
       <a
-        href={ config.githubOrgUrl }
+        href={settings.githubOrgUrl}
         rel='noopener noreferrer nofollow'
         target='_blank'
       >
-        { config.orgName }
+        {settings.orgName}
       </a>
-      <br/>
-      { literals.snippetLicense }
+      <br />
+      {literals.snippetLicense}
       <a
-        href={ config.licenseUrl }
+        href={settings.licenseUrl}
         rel='noopener noreferrer nofollow'
         target='_blank'
       >
-        { literals.ccLicense }
+        {literals.ccLicense}
       </a>
-      <br/>
-      { literals.poweredBy }
+      <br />
+      {literals.poweredBy}
       <a
         href='https://www.netlify.com/'
         rel='noopener noreferrer nofollow'
         target='_blank'
       >
-        { literals.netlify }
+        {literals.netlify}
       </a>
-      { ', ' }
+      {', '}
       <a
         href='https://www.gatsbyjs.org/'
         rel='noopener noreferrer nofollow'
         target='_blank'
       >
-        { literals.gatsby }
+        {literals.gatsby}
       </a>
-      { ', ' }
+      {', '}
       <a
         href='https://travis-ci.com/'
         rel='noopener noreferrer nofollow'
         target='_blank'
       >
-        { literals.travis }
+        {literals.travis}
       </a>
-      { ' & ' }
+      {' & '}
       <a
         href='https://github.com/'
         rel='noopener noreferrer nofollow'
         target='_blank'
       >
-        { literals.github }
+        {literals.github}
       </a>
     </p>
   </footer>

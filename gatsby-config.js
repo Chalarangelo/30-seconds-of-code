@@ -1,13 +1,13 @@
 /* eslint-disable */
-const config = require('config/global');
-const paths = require('config/paths');
+const settings = require('settings/global');
+const paths = require('settings/paths');
 
 module.exports = {
   siteMetadata: {
-    title: `${config.websiteName}`,
-    description: `${config.websiteDescription}`,
+    title: `${settings.websiteName}`,
+    description: `${settings.websiteDescription}`,
     author: `@30-seconds`,
-    siteUrl: `${config.websiteUrl}`,
+    siteUrl: `${settings.websiteUrl}`,
   },
   plugins: [
     {
@@ -21,8 +21,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `${config.websiteName}`,
-        short_name: `${config.shortName}`,
+        name: `${settings.websiteName}`,
+        short_name: `${settings.shortName}`,
         start_url: `/`,
         background_color: `#1e253d`,
         theme_color: `#1e253d`,

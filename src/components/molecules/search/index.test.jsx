@@ -33,13 +33,14 @@ describe('<Search />', () => {
 
   it('should render correctly', () => {
     expect(wrapper.querySelectorAll('input[type="search"]')).toHaveLength(1);
-    expect(wrapper.querySelectorAll('a.btn.icon.icon-search.search-btn')).toHaveLength(1);
+    expect(
+      wrapper.querySelectorAll('a.btn.icon.icon-search.search-btn')
+    ).toHaveLength(1);
   });
 
   describe('on keyUp event', () => {
-
     it('should call dispatch', () => {
-      fireEvent.keyUp(input, { target: { value: 'p'} });
+      fireEvent.keyUp(input, { target: { value: 'p' } });
       waitFor(() =>
         expect(store.dispatch.mock.calls.length).toBeGreaterThan(0)
       );
@@ -47,7 +48,6 @@ describe('<Search />', () => {
   });
 
   describe('when entering a keyphrase from non-main search', () => {
-
     it('should redirect to search', () => {
       fireEvent.keyPress(input, { charCode: 13 });
       expect(window.location.href.indexOf('/search/')).not.toBe(-1);
@@ -60,7 +60,7 @@ describe('<Search />', () => {
       store.dispatch(pushNewQuery('tes'));
       wrapper = rerender(<Search isMainSearch />).container;
       input = wrapper.querySelector('input');
-      fireEvent.keyUp(input, { target: { value: 'test'} });
+      fireEvent.keyUp(input, { target: { value: 'test' } });
       expect(window.history.pushState.mock.calls.length).toBeGreaterThan(0);
     });
   });

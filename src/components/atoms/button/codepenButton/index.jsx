@@ -37,29 +37,32 @@ const CodepenButton = ({
 }) => {
   const gtagCallback = useGtagEvent('click');
   return (
-    <form action='https://codepen.io/pen/define' method='POST' target='_blank' className='btn-form'>
+    <form
+      action='https://codepen.io/pen/define'
+      method='POST'
+      target='_blank'
+      className='btn-form'
+    >
       <input
         type='hidden'
         name='data'
-        value={
-          JSON.stringify({
-            js: jsCode,
-            css: cssCode,
-            html: htmlCode,
-            js_pre_processor: jsPreProcessor,
-            js_external: jsExternal.join(';'),
-          })
-        }
+        value={JSON.stringify({
+          js: jsCode,
+          css: cssCode,
+          html: htmlCode,
+          js_pre_processor: jsPreProcessor,
+          js_external: jsExternal.join(';'),
+        })}
       />
       <button
         className='btn codepen-btn icon icon-codepen'
-        title={ literals.codepen }
-        onClick={ () => {
+        title={literals.codepen}
+        onClick={() => {
           // eslint-disable-next-line camelcase
-          gtagCallback({ event_category: 'action-codepen', value: 1});
-        } }
+          gtagCallback({ event_category: 'action-codepen', value: 1 });
+        }}
       >
-        { literals.codepen }
+        {literals.codepen}
       </button>
     </form>
   );

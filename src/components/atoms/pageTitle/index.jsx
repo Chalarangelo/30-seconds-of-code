@@ -14,13 +14,8 @@ const propTypes = {
  * Page title component. Renders a simple `<h2>` element with a base class
  * and passes children to the element.
  */
-const PageTitle = ({
-  className,
-  children,
-}) => (
-  <h2 className={ combineClassNames`page-title ${className}` }>
-    { children }
-  </h2>
+const PageTitle = ({ className, children }) => (
+  <h2 className={combineClassNames`page-title ${className}`}>{children}</h2>
 );
 
 PageTitle.propTypes = propTypes;
