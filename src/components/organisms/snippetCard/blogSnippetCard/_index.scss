@@ -77,10 +77,12 @@
 
       &:before {
         font-weight: 600;
+        -webkit-font-smoothing: antialiased;
       }
 
       > p:first-child:not(:last-child) {
         font-weight: 600;
+        -webkit-font-smoothing: antialiased;
       }
 
       > p:not(:first-child), p:first-child:last-child {
@@ -105,23 +107,28 @@
   }
 
   h3.blog-body-title {
-    font-size: 1.125rem;
+    font-family: 'Raleway', Helvetica, sans-serif;
+    letter-spacing: 0.25px;
+    font-size: 1.25rem;
     line-height: 2rem;
+    font-weight: 500;
     margin: 1.5rem 0 0;
 
     @media screen and (min-width: $layout-medium-breakpoint) {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
     }
   }
 
   h4.blog-body-title {
-    font-size: 1rem;
+    font-family: 'Raleway', Helvetica, sans-serif;
+    letter-spacing: 0.25px;
+    font-size: 1.125rem;
     line-height: 2rem;
-    font-weight: 600;
+    font-weight: 500;
     margin: 1.5rem 0 0;
 
     @media screen and (min-width: $layout-medium-breakpoint) {
-      font-size: 1.125rem;
+      font-size: 1.25rem;
     }
   }
 
@@ -134,6 +141,7 @@
 
       tr > td:first-child {
         font-weight: 600;
+        -webkit-font-smoothing: antialiased;
         text-align: right;
         padding: 0.5rem 1rem 0.5rem 0.5rem;
       }
@@ -141,6 +149,7 @@
 
     th {
       font-weight: 600;
+      -webkit-font-smoothing: antialiased;
       font-size: 1.125rem;
     }
 

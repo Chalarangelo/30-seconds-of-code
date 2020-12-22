@@ -74,6 +74,7 @@ ol, ul {
 }
 b, strong {
   font-weight: 600;
+  -webkit-font-smoothing: antialiased;
 }
 sup, sub, code, kbd {
   line-height: 0;
