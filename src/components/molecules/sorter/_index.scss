@@ -2,12 +2,14 @@
 :root {
   --sorter-back-color: #fbfcfe;
   --sorter-shadow-color: rgba(0, 32, 128, 0.26);
+  --sorter-selected-color: #434ec7;
 }
 
 // Dark mode colors
 .page-container.dark {
   --sorter-back-color: #1b1d22;
   --sorter-shadow-color: rgba(0, 3, 10, 0.561);
+  --sorter-selected-color: #678df4;
 }
 
 .sorter {
@@ -42,6 +44,10 @@
 
     &:hover, &:focus {
      box-shadow: none;
+    }
+
+    &:hover {
+      color: var(--sorter-selected-color);
     }
 
     &:before {

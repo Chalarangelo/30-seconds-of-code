@@ -4,10 +4,14 @@
   display: grid;
   grid-template-rows: auto auto;
   grid-template-columns: 64px calc(100% - 64px);
+  content-visibility: auto;
+  contain-intrinsic-size: 144px;
 
   .card-title {
     a {
       &, &:link, &:visited {
+        font-family: 'Raleway', Helvetica, sans-serif;
+        letter-spacing: 0.25px;
         font-weight: 500;
         line-height: 1;
         color: var(--card-title-color);

@@ -1,6 +1,7 @@
 .snippet-preview-title {
   font-size: 1.125rem;
   font-weight: 600;
+  -webkit-font-smoothing: antialiased;
   line-height: 2;
   margin: 2rem 0 -3rem .875rem;
   color: var(--card-title-color);
