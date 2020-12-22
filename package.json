@@ -90,9 +90,6 @@
   "bugs": {
     "url": "https://github.com/30-seconds/30-seconds-web/issues"
   },
-  "dependencies": {
-    "gatsby-plugin-remove-serviceworker": "^1.0.0"
-  },
   "browserslist": [
     "> 0.5% and last 4 versions and not dead and not ie>0 and not op_mini all and not and_uc>0 and not edge<79"
   ]
