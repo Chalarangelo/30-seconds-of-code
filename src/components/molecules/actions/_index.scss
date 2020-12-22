@@ -19,6 +19,7 @@
     color: var(--action-fore-color);
     text-transform: uppercase;
     font-weight: 500;
+    -webkit-font-smoothing: antialiased;
     box-shadow: none;
     padding: 0.25rem;
     font-size: 0;
