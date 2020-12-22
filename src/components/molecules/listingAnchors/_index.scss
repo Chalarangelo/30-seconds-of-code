@@ -1,3 +1,13 @@
+// Colors
+:root {
+  --listing-anchors-selected-color: #434ec7;
+}
+
+// Dark mode colors
+.page-container.dark {
+  --listing-anchors-selected-color: #678df4;
+}
+
 .listing-anchors {
   margin: 0.25rem 0.875rem 1.5rem;
   padding: 0;
@@ -121,7 +131,7 @@
 
     &:hover, &:focus {
       box-shadow: none;
-      color: var(--fore-color-dark);
+      color: var(--listing-anchors-selected-color);
     }
   }
 }
