@@ -3,7 +3,7 @@ title: weighted_average
 tags: math,list,intermediate
 ---
 
-Returns the weighted average of two or more noumbers.
+Returns the weighted average of two or more numbers.
 
 - Use `sum()` to sum the products of the numbers by their weight and to sum the weights.
 - Use `zip()` and a list comprehension to iterate over the pairs of values and weights.
