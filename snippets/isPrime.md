@@ -1,6 +1,6 @@
 ---
 title: isPrime
-tags: math,beginner
+tags: math,algorithm,beginner
 ---
 
 Checks if the provided integer is a prime number.

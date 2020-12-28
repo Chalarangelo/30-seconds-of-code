@@ -1,6 +1,6 @@
 ---
 title: fibonacci
-tags: math,intermediate
+tags: math,algorithm,intermediate
 ---
 
 Generates an array, containing the Fibonacci sequence, up until the nth term.

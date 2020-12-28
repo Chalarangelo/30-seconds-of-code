@@ -1,6 +1,6 @@
 ---
 title: geometricProgression
-tags: math,intermediate
+tags: math,algorithm,intermediate
 ---
 
 Initializes an array containing the numbers in the specified range where `start` and `end` are inclusive and the ratio between two terms is `step`.

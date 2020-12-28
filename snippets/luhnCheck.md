@@ -1,6 +1,6 @@
 ---
 title: luhnCheck
-tags: math,advanced
+tags: math,algorithm,advanced
 ---
 
 Implementation of the [Luhn Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) used to validate a variety of identification numbers, such as credit card numbers, IMEI numbers, National Provider Identifier numbers etc.

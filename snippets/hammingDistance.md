@@ -1,6 +1,6 @@
 ---
 title: hammingDistance
-tags: math,intermediate
+tags: math,algorithm,intermediate
 ---
 
 Calculates the Hamming distance between two values.

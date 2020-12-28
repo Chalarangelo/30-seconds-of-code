@@ -1,6 +1,6 @@
 ---
 title: binomialCoefficient
-tags: math,beginner
+tags: math,algorithm,beginner
 ---
 
 Calculates the number of ways to choose `k` items from `n` items without repetition and without order.

@@ -1,6 +1,6 @@
 ---
 title: lcm
-tags: math,recursion,intermediate
+tags: math,algorithm,recursion,intermediate
 ---
 
 Calculates the least common multiple of two or more numbers.

@@ -1,6 +1,6 @@
 ---
 title: primes
-tags: math,intermediate
+tags: math,algorithm,intermediate
 ---
 
 Generates primes up to a given number, using the Sieve of Eratosthenes.
