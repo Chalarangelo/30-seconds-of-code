@@ -5,7 +5,7 @@ tags: interactivity,intermediate
 
 Creates a scrollable container that will snap on elements when scrolling.
 
-- Use `display: gird` and `grid-auto-flow: column` to create a horizontal layout.
+- Use `display: grid` and `grid-auto-flow: column` to create a horizontal layout.
 - Use `scroll-snap-type: x mandatory` and `overscroll-behavior-x: contain` to create a snap effect on horizontal scroll.
 - You can use `scroll-snap-align` with either `start`, `stop` or `center` to change the snap alignment.
 
