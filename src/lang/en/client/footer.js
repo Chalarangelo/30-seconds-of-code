@@ -1,5 +1,6 @@
 const literals = {
   about: 'About',
+  feed: 'RSS',
   github: 'GitHub',
   twitter: 'Twitter',
   cookies: 'Cookies',
