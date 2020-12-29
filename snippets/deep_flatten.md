@@ -10,6 +10,8 @@ Deep flattens a list.
 - If it is iterable, apply `deep_flatten()` recursively, otherwise return `[lst]`.
 
 ```py
+from collections.abc import Iterable
+
 def deep_flatten(lst):
   return ([a for i in lst for a in
           deep_flatten(i)] if isinstance(lst, Iterable) else [lst])
