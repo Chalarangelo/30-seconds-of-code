@@ -1,6 +1,6 @@
 ---
 title: cartesianProduct
-tags: array,beginner
+tags: math,array,beginner
 ---
 
 Calculates the cartesian product of two arrays.
