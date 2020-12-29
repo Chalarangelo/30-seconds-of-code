@@ -1,6 +1,6 @@
 ---
 title: gcd
-tags: math,algorithm,recursion,beginner
+tags: math,algorithm,recursion,intermediate
 ---
 
 Calculates the greatest common divisor between two or more numbers/arrays.
