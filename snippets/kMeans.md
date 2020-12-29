@@ -18,8 +18,8 @@ const kMeans = (data, k = 1) => {
     Array.from({ length: k }, () => 0)
   );
   const classes = Array.from({ length: data.length }, () => -1);
-
   let itr = true;
+
   while (itr) {
     itr = false;
 
@@ -29,7 +29,6 @@ const kMeans = (data, k = 1) => {
           ...Object.keys(data[0]).map(key => data[d][key] - centroids[c][key])
         );
       }
-
       const m = distances[d].indexOf(Math.min(...distances[d]));
       if (classes[d] !== m) itr = true;
       classes[d] = m;
@@ -44,7 +43,6 @@ const kMeans = (data, k = 1) => {
         }
         return acc;
       }, 0);
-
       for (let i in data[0]) {
         centroids[c][i] = parseFloat(Number(centroids[c][i] / size).toFixed(2));
       }
