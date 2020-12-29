@@ -3,7 +3,7 @@ title: levenshteinDistance
 tags: string,algorithm,intermediate
 ---
 
-Calculates the difference between two strings.
+Calculates the difference between two strings, using the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) algorithm.
 
 - If either of the two strings has a `length` of zero, return the `length` of the other one.
 - Use a `for` loop to iterate over the letters of the target string and a nested `for` loop to iterate over the letters of the source string.
