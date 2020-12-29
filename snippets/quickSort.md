@@ -15,9 +15,7 @@ Sorts an array of numbers, using the quicksort algorithm.
 ```js
 const quickSort = arr => {
   const a = [...arr];
-
   if (a.length < 2) return a;
-
   const pivotIndex = Math.floor(arr.length / 2);
   const pivot = a[pivotIndex];
   const [lo, hi] = a.reduce(
@@ -31,7 +29,6 @@ const quickSort = arr => {
     },
     [[], []]
   );
-
   return [...quickSort(lo), pivot, ...quickSort(hi)];
 };
 ```
