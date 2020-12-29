@@ -7,7 +7,12 @@ import { setupEnv } from 'blocks/utilities/env';
 
 describe('Snippet', () => {
   let configs = {};
-  let snippet, blogSnippet, unfeaturedSnippet, cssSnippet, unlistedSnippet;
+  let snippet,
+    blogSnippet,
+    unfeaturedSnippet,
+    cssSnippet,
+    unlistedSnippet,
+    futureSnippet;
 
   beforeAll(() => {
     setupEnv();
@@ -32,6 +37,7 @@ describe('Snippet', () => {
       blogSnippet = new Snippet(rawSnippets.blog, configs.blog);
       unfeaturedSnippet = new Snippet(rawSnippets.normal, configs.dart);
       unlistedSnippet = new Snippet(rawSnippets.unlisted, configs.react);
+      futureSnippet = new Snippet(rawSnippets.future, configs.react);
       cssSnippet = new Snippet(rawSnippets.css, configs.css);
     });
 
@@ -114,6 +120,7 @@ describe('Snippet', () => {
       expect(snippet.isListed).toBe(true);
       expect(unfeaturedSnippet.isListed).toBe(false);
       expect(unlistedSnippet.isListed).toBe(false);
+      expect(futureSnippet.isListed).toBe(false);
     });
 
     it('has the correct icon', () => {

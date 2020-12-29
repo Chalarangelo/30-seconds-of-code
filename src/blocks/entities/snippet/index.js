@@ -151,7 +151,9 @@ export class Snippet {
         this._frontmatterMetadata && this._frontmatterMetadata.unlisted
           ? this._frontmatterMetadata.unlisted
           : false;
-      this._isListed = this.config.featured > 0 && !isUnlistedSnippet;
+      const isFutureSnippet = this.firstSeen > new Date();
+      this._isListed =
+        this.config.featured > 0 && !isUnlistedSnippet && !isFutureSnippet;
     }
     return this._isListed;
   }
