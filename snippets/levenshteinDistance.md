@@ -15,9 +15,7 @@ Calculates the difference between two strings.
 const levenshteinDistance = (s, t) => {
   if (!s.length) return t.length;
   if (!t.length) return s.length;
-
   const arr = [];
-
   for (let i = 0; i <= t.length; i++) {
     arr[i] = [i];
     for (let j = 1; j <= s.length; j++) {
@@ -31,7 +29,6 @@ const levenshteinDistance = (s, t) => {
             );
     }
   }
-
   return arr[t.length][s.length];
 };
 ```
