@@ -22,6 +22,13 @@ export const onRenderBody = ({ setHeadComponents }) => {
       type='application/xml'
     />,
     <link
+      key='link-rss-feed'
+      rel='alternate'
+      href='/feed'
+      type='application/rss+xml'
+      title='30secondsofcode.org'
+    />,
+    <link
       key='link-opensearch'
       rel='search'
       href='/opensearch.xml'
