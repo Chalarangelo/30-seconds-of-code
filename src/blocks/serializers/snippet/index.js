@@ -35,6 +35,7 @@ export class SnippetSerializer {
           (snippet.ranking * 0.85).toFixed(2),
           {
             vscodeUrl: snippet.vscodeUrl,
+            isUnlisted: !snippet.isListed,
           }
         ),
       ],

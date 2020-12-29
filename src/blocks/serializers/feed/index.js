@@ -35,7 +35,9 @@ export class FeedSerializer {
       fs.readFileSync(feedTemplatePath, 'utf-8')
     );
     const nodes = Requirements.load()
-      .requirables.filter(x => x.context.cardTemplate === 'BlogSnippetCard')
+      .requirables.filter(
+        x => x.context.cardTemplate === 'BlogSnippetCard' && !x.isUnlisted
+      )
       .sort(
         (a, b) =>
           new Date(b.context.snippet.firstSeen) -
