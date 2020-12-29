@@ -3,6 +3,7 @@ import { Logger } from 'blocks/utilities/logger';
 import { Content } from 'blocks/utilities/content';
 import { IconSerializer } from 'blocks/serializers/icon';
 import { SitemapSerializer } from 'blocks/serializers/sitemap';
+import { FeedSerializer } from 'blocks/serializers/feed';
 import { FileParser } from 'blocks/parsers/file';
 import { AssetSerializer } from 'blocks/serializers/asset';
 import { Extractor } from 'blocks/utilities/extractor';
@@ -24,7 +25,10 @@ export const build = async () => {
 
   await Promise.all([Extractor.extract(), AssetSerializer.serialize()]);
 
-  await Promise.all([SitemapSerializer.serialize()]);
+  await Promise.all([
+    SitemapSerializer.serialize(),
+    FeedSerializer.serialize(),
+  ]);
 };
 
 build();
