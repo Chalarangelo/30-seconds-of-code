@@ -1,0 +1,24 @@
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" version="2.0">
+  <channel>
+    <title>{{ websiteName }}</title>
+    <description>{{ websiteDescription }}</description>
+    <link>{{ websiteUrl }}</link>
+    <language>en-us</language>
+    <image>
+      <url>{{ websiteUrl }}/assets/logo.png</url>
+      <title>{{ websiteName }}</title>
+      <link>{{ websiteUrl }}</link>
+    </image>
+    <ttl>1440</ttl>
+  </channel>
+  {{# each nodes }}
+  <item>
+    <title>{{ this.title }}</title>
+    <link>{{ this.fullRoute }}</link>
+    <description>{{ this.description }}</description>
+    <pubDate>{{ this.pubDate }}</pubDate>
+  </item>
+  {{/ each }}
+</rss>
