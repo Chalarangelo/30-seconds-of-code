@@ -3,7 +3,7 @@ title: kMeans
 tags: algorithm,array,advanced
 ---
 
-Groups the given data into `k` clusters using the k-means clustering algorithm.
+Groups the given data into `k` clusters, using the [k-means clustering](https://en.wikipedia.org/wiki/K-means_clustering) algorithm.
 
 - Use `Array.from()` and `Array.prototype.slice()` to initialize appropriate variables for the cluster `centroids`, `distances` and `classes`.
 - Use a `while` loop to repeat the assignment and update steps as long as there are changes in the previous iteration, as indicated by `itr`.
