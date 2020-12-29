@@ -14,6 +14,9 @@ const Footer = () => (
       <a className='footer-link' href='/cookies'>
         {literals.cookies}
       </a>
+      <a className='footer-link' href='/feed'>
+        {literals.feed}
+      </a>
       <a
         className='footer-link'
         href={settings.githubOrgUrl}
