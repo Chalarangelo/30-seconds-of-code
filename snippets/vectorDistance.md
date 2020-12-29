@@ -1,6 +1,6 @@
 ---
 title: vectorDistance
-tags: math,beginner
+tags: math,algorithm,beginner
 ---
 
 Calculates the distance between two vectors.

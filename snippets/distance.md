@@ -1,6 +1,6 @@
 ---
 title: distance
-tags: math,beginner
+tags: math,algorithm,beginner
 ---
 
 Calculates the distance between two points.
