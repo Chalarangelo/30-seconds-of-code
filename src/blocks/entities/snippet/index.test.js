@@ -7,7 +7,7 @@ import { setupEnv } from 'blocks/utilities/env';
 
 describe('Snippet', () => {
   let configs = {};
-  let snippet, blogSnippet, unlistedSnippet, cssSnippet;
+  let snippet, blogSnippet, unfeaturedSnippet, cssSnippet, unlistedSnippet;
 
   beforeAll(() => {
     setupEnv();
@@ -30,7 +30,8 @@ describe('Snippet', () => {
     beforeAll(() => {
       snippet = new Snippet(rawSnippets.normal, configs.react);
       blogSnippet = new Snippet(rawSnippets.blog, configs.blog);
-      unlistedSnippet = new Snippet(rawSnippets.normal, configs.dart);
+      unfeaturedSnippet = new Snippet(rawSnippets.normal, configs.dart);
+      unlistedSnippet = new Snippet(rawSnippets.unlisted, configs.react);
       cssSnippet = new Snippet(rawSnippets.css, configs.css);
     });
 
@@ -111,6 +112,7 @@ describe('Snippet', () => {
 
     it('has the correct listed status', () => {
       expect(snippet.isListed).toBe(true);
+      expect(unfeaturedSnippet.isListed).toBe(false);
       expect(unlistedSnippet.isListed).toBe(false);
     });
 
@@ -124,8 +126,8 @@ describe('Snippet', () => {
       expect(snippet.ranking).toBeGreaterThanOrEqual(0.0);
       expect(blogSnippet.ranking).toBeLessThanOrEqual(1.0);
       expect(blogSnippet.ranking).toBeGreaterThanOrEqual(0.0);
-      expect(unlistedSnippet.ranking).toBeLessThanOrEqual(1.0);
-      expect(unlistedSnippet.ranking).toBeGreaterThanOrEqual(0.0);
+      expect(unfeaturedSnippet.ranking).toBeLessThanOrEqual(1.0);
+      expect(unfeaturedSnippet.ranking).toBeGreaterThanOrEqual(0.0);
     });
 
     it('calculates searchTokens', () => {

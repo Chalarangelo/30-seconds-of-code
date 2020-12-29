@@ -35,6 +35,7 @@ export class Snippet {
    *  - `excerpt` (optional) - Snippet excerpt. Required if the snippet is a blog.
    *  - `cover` (optional) - Snippet cover image filename. Required if the snippet is a blog.
    *  - `authors` (optional) - Snippet authors as a comma-separated string. Required if the snippet is a blog.
+   *  - `restMeta` (optional) - Remaining snippet metadata, if any.
    * @param {ContentConfig} config - The content configuration for the file's source repo.
    * @throws Will throw an error if any of the necessary keys is not present or `config`
    *   is not of the correct type.
@@ -51,6 +52,7 @@ export class Snippet {
       firstSeen,
       lastUpdated,
       body,
+      ...restMeta
     },
     config
   ) {
@@ -72,6 +74,7 @@ export class Snippet {
     this.type = config.isBlog ? `blog.${type}` : 'snippet';
     this.firstSeen = firstSeen;
     this.lastUpdated = lastUpdated;
+    this._frontmatterMetadata = restMeta;
 
     const allTags = [...new Set(tags.toLowerCase().split(','))];
     this.tags = {
@@ -143,7 +146,14 @@ export class Snippet {
   }
 
   get isListed() {
-    return this.config.featured > 0;
+    if (!this._isListed) {
+      const isUnlistedSnippet =
+        this._frontmatterMetadata && this._frontmatterMetadata.unlisted
+          ? this._frontmatterMetadata.unlisted
+          : false;
+      this._isListed = this.config.featured > 0 && !isUnlistedSnippet;
+    }
+    return this._isListed;
   }
 
   get icon() {

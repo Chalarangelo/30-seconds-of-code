@@ -8,6 +8,16 @@ export const rawSnippets = {
     firstSeen: '1569006619',
     lastUpdated: '1607946666',
   },
+  unlisted: {
+    body:
+      'Checks if the provided predicate function returns `true` for at least one element in a collection.\n\n- Use `Array.prototype.some()` to test if any elements in the collection return `true` based on `fn`.\n- Omit the second argument, `fn`, to use `Boolean` as a default.\n\n```js\nconst any = (arr, fn = Boolean) => arr.some(fn);\n```\n\n```js\nany([0, 1, 2, 0], x => x >= 2); // true\nany([0, 0, 1, 0]); // true\n```\n',
+    title: 'any',
+    tags: 'array,object,beginner',
+    fileName: 'none.md',
+    firstSeen: '1569006619',
+    lastUpdated: '1607946666',
+    unlisted: true,
+  },
   css: {
     body:
       'Creates a list with floating headings for each section.\n\n- Use `overflow-y: auto` to allow the list container to overflow vertically.\n- Use `display: grid` on the inner container (`dl`) to create a layout with two columns.\n- Set headings (`dt`) to `grid-column: 1` and content (`dd`) to `grid-column: 2`\n- Finally, apply `position: sticky` and `top: 0.5rem` to headings to create a floating effect.\n\n```html\n<div class="container">\n  <div class="floating-stack">\n    <dl>\n      <dt>A</dt>\n      <dd>Algeria</dd>\n      <dd>Angola</dd>\n\n      <dt>B</dt>\n      <dd>Benin</dd>\n      <dd>Botswana</dd>\n      <dd>Burkina Faso</dd>\n      <dd>Burundi</dd>\n\n      <dt>C</dt>\n      <dd>Cabo Verde</dd>\n      <dd>Cameroon</dd>\n      <dd>Central African Republic</dd>\n      <dd>Chad</dd>\n      <dd>Comoros</dd>\n      <dd>Congo, Democratic Republic of the</dd>\n      <dd>Congo, Republic of the</dd>\n      <dd>Cote d\'Ivoire</dd>\n\n      <dt>D</dt>\n      <dd>Djibouti</dd>\n\n      <dt>E</dt>\n      <dd>Egypt</dd>\n      <dd>Equatorial Guinea</dd>\n      <dd>Eritrea</dd>\n      <dd>Eswatini (formerly Swaziland)</dd>\n      <dd>Ethiopia</dd>\n    </dl>\n  </div>\n</div>\n```\n\n```css\n.container {\n  display: grid;\n  place-items: center;\n  min-height: 400px;\n}\n\n.floating-stack {\n  background: #455A64;\n  color: #fff;\n  height: 80vh;\n  height: 320px;\n  border-radius: 1rem;\n  overflow-y: auto;\n}\n\n.floating-stack > dl {\n  margin: 0 0 1rem;\n  display: grid;\n  grid-template-columns: 2.5rem 1fr;\n  align-items: center;\n}\n\n.floating-stack dt {\n  position: sticky;\n  top: 0.5rem;\n  left: 0.5rem;\n  font-weight: bold;\n  background: #263238;\n  color: #cfd8dc;\n  height: 2rem;\n  width: 2rem;\n  border-radius: 50%;\n  padding: 0.25rem 1rem;\n  grid-column: 1;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  box-sizing: border-box;\n}\n\n.floating-stack dd {\n  grid-column: 2;\n  margin: 0;\n  padding: 0.75rem;\n}\n\n.floating-stack > dl:first-of-type > dd:first-of-type {\n  margin-top: 0.25rem;\n}\n```\n',
