@@ -3,7 +3,7 @@ title: kNearestNeighbors
 tags: algorithm,array,advanced
 ---
 
-Classifies a data point relative to a labelled data set using the k-nearest neighbors algorithm.
+Classifies a data point relative to a labelled data set, using the [k-nearest neighbors](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm) algorithm.
 
 - Use `Array.prototype.map()` to map the `data` to objects containing the euclidean distance of each element from `point`, calculated using `Math.hypot()`, `Object.keys()` and its `label`.
 - Use `Array.prototype.sort()` and `Array.prototype.slice()` to get the `k` nearest neighbors of `point`.
