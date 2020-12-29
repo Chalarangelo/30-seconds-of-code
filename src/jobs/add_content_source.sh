@@ -8,7 +8,9 @@
 # Example:
 #  add_content_source https://github.com/30-seconds/30-seconds-of-yada 30yada "30 seconds of yada" yada
 add_content_source() {
-  git submodule add $1 "./content/sources/$2"
+  git submodule add -b master $1 "./content/sources/$2"
+  git config -f .gitmodules submodule.content/sources/$2.update rebase
+  git submodule update --remote
   echo "{
   \"name\": \"$3\",
   \"dirName\": \"$2\",
