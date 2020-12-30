@@ -3,22 +3,47 @@ title: Masonry Layout
 tags: layout,advanced
 ---
 
-Creates a vertical masonry layout using HTML and CSS.
+Creates a masonry-style layout that is especially useful when working with images.
 
 - Create a masonry-style layout that consists of "bricks" that fall into each other with either a fixed `width` (vertical layout) or a fixed `height` (horizontal layout), forming a perfect fit. Especially useful when working with images.
-- `.masonry-container` is the container for the masonry layout. Within that container, there's a `div.masonry-columns`, which will automatically put each child element, `.masonry-brick`, into the layout.
-- `.masonry-brick` must be have `display: block` to allow the layout to flow properly, while the `:first-child` of this class should have a different `margin` to account for its positioning.
-- CSS variables are used to allow for greater flexibility for the layout, while media queries ensure that the layout flows responsively in different viewport sizes.
+- Define `.masonry-container`, the container for the masonry layout and `.masonry-columns` an inner container in which `.masonry-brick` elements will be placed.
+- Apply `display: block` to `.masonry-brick` elements to allow the layout to flow properly.
+- Use the `:first-child` pseudo-element selector to apply a different `margin` for the first element to account for its positioning.
+- Use CSS variables to allow for greater flexibility within the layout in combination with media queries to ensure that the layout is responsive in different viewport sizes.
 
 ```html
 <div class="masonry-container">
   <div class="masonry-columns">
-    <img class="masonry-brick" src="https://picsum.photos/id/1016/384/256" alt="An image">
-    <img class="masonry-brick" src="https://picsum.photos/id/1025/495/330" alt="Another image">
-    <img class="masonry-brick" src="https://picsum.photos/id/1024/192/128" alt="Another image">
-    <img class="masonry-brick" src="https://picsum.photos/id/1028/518/345" alt="One more image">
-    <img class="masonry-brick" src="https://picsum.photos/id/1035/585/390" alt="And another one">
-    <img class="masonry-brick" src="https://picsum.photos/id/1074/384/216" alt="Last one">
+    <img
+      class="masonry-brick"
+      src="https://picsum.photos/id/1016/384/256"
+      alt="An image"
+    />
+    <img
+      class="masonry-brick"
+      src="https://picsum.photos/id/1025/495/330"
+      alt="Another image"
+    />
+    <img
+      class="masonry-brick"
+      src="https://picsum.photos/id/1024/192/128"
+      alt="Another image"
+    />
+    <img
+      class="masonry-brick"
+      src="https://picsum.photos/id/1028/518/345"
+      alt="One more image"
+    />
+    <img
+      class="masonry-brick"
+      src="https://picsum.photos/id/1035/585/390"
+      alt="And another one"
+    />
+    <img
+      class="masonry-brick"
+      src="https://picsum.photos/id/1074/384/216"
+      alt="Last one"
+    />
   </div>
 </div>
 ```

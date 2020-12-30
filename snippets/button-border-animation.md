@@ -5,7 +5,8 @@ tags: animation,intermediate
 
 Creates a border animation on hover.
 
-- Use the `:before` and `:after` pseudo-elements as borders that animate on hover.
+- Use the `:before` and `:after` pseudo-elements to create two boxes `24px` wide opposite each other above and below the box.
+- Use the `:hover` pseudo-class to extend the `width` of those elements to `100%` on hover and animate the change using `transition`.
 
 ```html
 <button class="animated-border-button">Submit</button>

@@ -5,16 +5,10 @@ tags: visual,intermediate
 
 Creates a shadow similar to `box-shadow` but based on the colors of the element itself.
 
-- `position: relative` on the element establishes a Cartesian positioning context for psuedo-elements.
-- `z-index: 1` establishes a new stacking context.
-- `:after` defines a pseudo-element.
-- `position: absolute` takes the pseudo element out of the flow of the document and positions it in relation to the parent.
-- `width: 100%` and `height: 100%` sizes the pseudo-element to fill its parent's dimensions, making it equal in size.
-- `background: inherit` causes the pseudo-element to inherit the linear gradient specified on the element.
-- `top: 0.5rem` offsets the pseudo-element down slightly from its parent.
-- `filter: blur(0.4rem)` will blur the pseudo-element to create the appearance of a shadow underneath.
-- `opacity: 0.7` makes the pseudo-element partially transparent.
-- `z-index: -1` positions the pseudo-element behind the parent but in front of the background.
+- Use the `:after` pseudo-element with `position: absolute` and `width` and `height` equal to `100%` to fill the available space in the parent element.
+- Use `background: inherit` to inherit the `background` of the parent element.
+- Use `top` to slightly offset the pseudo-element, `filter: blur()` to create a shadow and `opacity` to make it semi-transparent.
+- Use `z-index: 1` on the parent and `z-index: -1` on the pseudo-element to position it behind its parent.
 
 ```html
 <div class="dynamic-shadow"></div>

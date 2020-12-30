@@ -3,12 +3,12 @@ title: Truncate text
 tags: layout,beginner
 ---
 
-If the text is longer than one line, it will be truncated and end with an ellipsis `…`.
+Truncates text that is longer than one line, adding an ellipsis at the end (`…`).
 
-- `overflow: hidden` prevents the text from overflowing its dimensions (for a block, 100% width and auto height).
-- `white-space: nowrap` prevents the text from exceeding one line in height.
-- `text-overflow: ellipsis` makes it so that if the text exceeds its dimensions, it will end with an ellipsis.
-- `width: 200px;` ensures the element has a dimension, to know when to get ellipsis
+- Use `overflow: hidden` to prevent the text from overflowing its dimensions.
+- Use `white-space: nowrap` to prevent the text from exceeding one line in height.
+- Use `text-overflow: ellipsis` to make it so that if the text exceeds its dimensions, it will end with an ellipsis.
+- Specify a fixed `width` for the element to know when to display an ellipsis.
 - Only works for single line elements.
 
 ```html

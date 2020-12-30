@@ -1,16 +1,15 @@
 ---
 title: Hamburger Button
-tags: interactivity,beginner
+tags: interactivity,intermediate
 ---
 
-Displays a hamburger menu which transitions to a cross on hover.
+Displays a hamburger menu which transitions to a cross button on hover.
 
 - Use a `.hamburger-menu` container `div` which contains the top, bottom, and middle bars.
-- The container is set to be a flex container (`display: flex`) with `flex-direction` to be `column` and `flex-wrap` to be `wrap` (alternatively, you can set both properties by a shorthand `flex-flow: column wrap`).
+- Set the container to `display: flex` with `flex-flow: column wrap`.
 - Add distance between the bars using `justify-content: space-between`.
-- The animation has 3 parts: top and bottom bars transforming to 45 degree angles (`rotate(45deg)`), and the middle bar fading away by setting `opacity: 0`.
-- The `transform-origin` is set to `left` so the bars rotate around the left point.
-- Set `transition all 0.5s` so that both `transform` and `opacity` properties are animated for half a second.
+- Use `transform: rotate()` to rotate the top and bottom bars by 45 degrees and `opacity: 0` to fade the middle bar on hover.
+- Use `transform-origin: left` so that the bars rotate around the left point.
 
 ```html
 <div class="hamburger-menu">
@@ -23,8 +22,7 @@ Displays a hamburger menu which transitions to a cross on hover.
 ```css
 .hamburger-menu {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  flex-flow: column wrap;
   justify-content: space-between;
   height: 2.5rem;
   width: 2.5rem;

@@ -3,9 +3,13 @@ title: Fullscreen
 tags: visual,advanced
 ---
 
+Applies styles to an element when in fullscreen mode.
+
+
 The `:fullscreen` CSS pseudo-element represents an element that's displayed when the browser is in fullscreen mode.
 
-- `:fullscreen` CSS pseudo-element selector is used to select and style an element that is being displayed in fullscreen mode.
+- Use the `:fullscreen` CSS pseudo-element selector to select and style an element that is displayed in fullscreen mode.
+- Use a `<button>` and `Element.requestFullscreen()` to create a button that makes the element fullscreen for the purposes of previewing the style.
 
 ```html
 <div class="container">

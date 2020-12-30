@@ -3,10 +3,10 @@ title: Constant width to height ratio
 tags: layout,beginner
 ---
 
-Given an element of variable width, it will ensure its `height` remains proportionate in a responsive fashion (i.e. its `width` to `height` ratio remains constant).
+Ensures that an element with variable `width` will retain a proportionate `height` value.
 
-- `padding-top` on the `:before` pseudo-element causes the height of the element to equal a percentage of its width. `100%` therefore means the element's height will always be `100%` of the width, creating a responsive square.
-- This method also allows content to be placed inside the element normally.
+- Apply `padding-top` on the `:before` pseudo-element, making the `height` of the element equal to a percentage of its `width`.
+- The proportion of `height` to `width` can be altered as necessary. For example a `padding-top` of `100%` will create a responsive square (1:1 ratio).
 
 ```html
 <div class="constant-width-to-height-ratio"></div>
@@ -14,7 +14,7 @@ Given an element of variable width, it will ensure its `height` remains proporti
 
 ```css
 .constant-width-to-height-ratio {
-  background: #333;
+  background: #9C27B0;
   width: 50%;
 }
 

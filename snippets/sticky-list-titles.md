@@ -5,8 +5,8 @@ tags: visual,intermediate
 
 Creates a list with sticky headings for each section.
 
-- Use `overflow-y: auto` to allow the list container (`dl`) to overflow vertically.
-- Set headings (`dt`) `position` to `sticky` and apply `top: 0` to stick to the top of the container.
+- Use `overflow-y: auto` to allow the list container (`<dl>`) to overflow vertically.
+- Set headings (`<dt>`) `position` to `sticky` and apply `top: 0` to stick to the top of the container.
 
 ```html
 <div class="container">

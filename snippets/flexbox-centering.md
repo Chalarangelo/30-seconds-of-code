@@ -3,11 +3,11 @@ title: Flexbox centering
 tags: layout,beginner
 ---
 
-Horizontally and vertically centers a child element within a parent element using `flexbox`.
+Horizontally and vertically centers a child element within a parent element using flexbox.
 
-- `display: flex` creates a flexbox layout.
-- `justify-content: center` centers the child horizontally.
-- `align-items: center` centers the child vertically.
+- Use `display: flex` to create a flexbox layout.
+- Use `justify-content: center` to center the child horizontally.
+- Use `align-items: center` to center the child vertically.
 
 ```html
 <div class="flexbox-centering">

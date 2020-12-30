@@ -5,9 +5,11 @@ tags: visual,interactivity,advanced
 
 A hover effect where the gradient follows the mouse cursor.
 
-- `--x` and `--y` are used to track the position of the mouse on the button.
-- `--size` is used to keep modify of the gradient's dimensions.
-- `background: radial-gradient(circle closest-side, pink, transparent);` creates the gradient at the correct postion.
+- Declare two CSS variables, `--x` and `--y`, used to track the position of the mouse on the button.
+- Declare a CSS variable, `--size`, used to modify the gradient's dimensions.
+- Use `background: radial-gradient(circle closest-side, pink, transparent);` to create the gradient at the correct postion.
+- Use `Document.querySelector()` and `EventTarget.addEventListener()` to register a handler for the `'mousemove'` event.
+- Use `Element.getBoundingClientRect()` and `CSSStyleDeclaration.setProperty()` to update the values of the `--x` and `--y` CSS variables.
 
 ```html
 <button class="mouse-cursor-gradient-tracking">
@@ -52,11 +54,11 @@ A hover effect where the gradient follows the mouse cursor.
 
 ```js
 let btn = document.querySelector('.mouse-cursor-gradient-tracking');
-btn.onmousemove = function(e) {
+btn.addEventListener('mousemove', e => {
   let rect = e.target.getBoundingClientRect();
   let x = e.clientX - rect.left;
   let y = e.clientY - rect.top;
   btn.style.setProperty('--x', x + 'px');
   btn.style.setProperty('--y', y + 'px');
-}
+});
 ```

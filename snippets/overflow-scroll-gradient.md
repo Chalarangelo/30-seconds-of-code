@@ -5,14 +5,9 @@ tags: visual,intermediate
 
 Adds a fading gradient to an overflowing element to better indicate there is more content to be scrolled.
 
-- `position: relative` on the parent establishes a Cartesian positioning context for pseudo-elements.
-- `:after` defines a pseudo element.
-- `background-image: linear-gradient(...)` adds a linear gradient that fades from transparent to white (top to bottom).
-- `position: absolute` takes the pseudo element out of the flow of the document and positions it in relation to the parent.
-- `width: 240px` matches the size of the scrolling element (which is a child of the parent that has the pseudo element).
-- `height: 25px` is the height of the fading gradient pseudo-element, which should be kept relatively small.
-- `bottom: 0` positions the pseudo-element at the bottom of the parent.
-- `pointer-events: none` specifies that the pseudo-element cannot be a target of mouse events, allowing text behind it to still be selectable/interactive.
+- Use the `:after` pseudo-element to create a `linear-gradient` that fades from `transparent` to `white` (top to bottom).
+- Use `position: absolute`, `width` and `height` to appropriately place and size the pseudo-element in its parent.
+- Use `pointer-events: none` to exclude the pseudo-element from mouse events, allowing text behind it to still be selectable/interactive.
 
 ```html
 <div class="overflow-scroll-gradient">

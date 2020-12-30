@@ -5,9 +5,9 @@ tags: layout,beginner
 
 Horizontally and vertically centers a child element within a parent element using `grid`.
 
-- `display: grid` creates a grid layout
-- `justify-content: center` centers the child horizontally.
-- `align-items: center` centers the child vertically.
+- Use `display: grid` to create a grid layout.
+- Use `justify-content: center` to center the child horizontally.
+- Use `align-items: center` to center the child vertically.
 
 ```html
 <div class="grid-centering">
