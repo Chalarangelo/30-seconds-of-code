@@ -5,9 +5,9 @@ tags: visual,animation,advanced
 
 Displays an image overlay effect on hover.
 
-- Use the `:before` and `:after` elements for the top and bottom bars of the overlay respectively, setting their `opacity`, `transform` and `transition` to produce the desired effect.
-- Use the `figcaption` for the text of the overlay, setting `display: flex`, `flex-direction: column` and `justify-content: center` to center the text into the image.
-- Use the `:hover` pseudo-selector to update the `opacity` and `transform`  of all the elements and produce the desired effect.
+- Use the `:before` and `:after` pseudo-elements for the top and bottom bars of the overlay respectively, setting their `opacity`, `transform` and `transition` to produce the desired effect.
+- Use the `<figcaption>` for the text of the overlay, setting `display: flex`, `flex-direction: column` and `justify-content: center` to center the text into the image.
+- Use the `:hover` pseudo-selector to update the `opacity` and `transform` of all the elements and produce the desired effect.
 
 ```html
 <figure class="hover-img">

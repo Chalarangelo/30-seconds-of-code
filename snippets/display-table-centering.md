@@ -3,14 +3,13 @@ title: Display table centering
 tags: layout,intermediate
 ---
 
-Vertically and horizontally centers a child element within its parent element using `display: table` (as an alternative to `flexbox`).
+Vertically and horizontally centers a child element within its parent element, using `display: table`.
 
-- `display: table` on '.center' allows the element to behave like a `<table>` HTML element.
-- 100% height and width on '.center' allows the element to fill the available space within its parent element.
-- `display: table-cell` on '.center > span' allows the element to behave like an <td> HTML element.
-- `text-align: center` on '.center > span' centers the child element horizontally.
-- `vertical-align: middle` on '.center > span' centers the child element vertically.
-- The outer parent ('.container' in this case) must have a fixed height and width.
+- Use `display: table` to make the `.center` element behave like a `<table>` element.
+- Set `height` and `width` to `100%` to make the element fill the available space within its parent element.
+- Use `display: table-cell` on the child element to make it behave like a `<td>` elements.
+- Use `text-align: center` and `vertical-align: middle` on the child element to center it horizontally and vertically.
+- The outer parent (`.container`) must have a fixed `width` and `height`.
 
 ```html
 <div class="container">
@@ -20,7 +19,7 @@ Vertically and horizontally centers a child element within its parent element us
 
 ```css
 .container {
-  border: 1px solid #333;
+  border: 1px solid #9C27B0;
   height: 250px;
   width: 250px;
 }

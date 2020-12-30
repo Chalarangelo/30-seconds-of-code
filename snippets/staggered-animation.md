@@ -8,7 +8,7 @@ Creates a staggered animation for the elements of a list.
 - Set the `opacity` to `0` and `transform` to `translateX(100%)` to make list elements transparent and move them all the way to the right.
 - Specify the appropriate `transition` properties for list elements, except `transition-delay` which is specified relative to the `--i` custom property.
 - Use inline styles to specify a value for `--i` for each list element, which will in turn be used for `transition-delay` to create the stagger effect.
-- Use the `:checked` selector for the checkbox to appropriately style list elements, setting `opacity` to `1` and `transform` to `translateX(0)` to make them appear and slide into view.
+- Use the `:checked` pseudo-class selector for the checkbox to appropriately style list elements, setting `opacity` to `1` and `transform` to `translateX(0)` to make them appear and slide into view.
 
 ```html
 <div class="container">

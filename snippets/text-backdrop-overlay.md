@@ -3,7 +3,7 @@ title: Image text overlay
 tags: visual,beginner
 ---
 
-Display a text on top of an image using an overlay.
+Displays a text on top of an image using an overlay.
 
 - Use `backdrop-filter` to apply a `blur(14px)` and `brightness(80%)` effect to make text readable regardless of background image and color.
 

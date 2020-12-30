@@ -3,10 +3,10 @@ title: Easing variables
 tags: animation,beginner
 ---
 
-Variables that can be reused for `transition-timing-function` properties, more powerful than the built-in `ease`, `ease-in`, `ease-out` and `ease-in-out`.
+List of variables that can be reused for `transition-timing-function` properties.
 
-- The variables are defined globally within the `:root` CSS pseudo-class which matches the root element of a tree representing the document.
-- In HTML, `:root` represents the `<html>` element and is identical to the selector `html`, except that its specificity is higher.
+- Use the custom property syntax to define appropriate timing functions for transitions.
+- The variables can be defined globally within the `:root` CSS pseudo-class which matches the root element of a tree representing the document or inside any other selector.
 
 ```html
 <div class="easing-variables">Hover</div>
@@ -45,7 +45,7 @@ Variables that can be reused for `transition-timing-function` properties, more p
   color: white;
   line-height: 50px;
   text-align: center;
-  background: #333;
+  background: #9C27B0;
   transition: transform 1s var(--ease-out-quart);
 }
 

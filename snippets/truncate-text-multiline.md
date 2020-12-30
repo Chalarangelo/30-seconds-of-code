@@ -1,25 +1,26 @@
 ---
-title: Truncate text multiline
+title: Truncate multiline text
 tags: layout,intermediate
 ---
 
-If the text is longer than one line, it will be truncated for `n` lines and end with an gradient fade.
+Truncates text that is longer than one line.
 
-- `overflow: hidden` prevents the text from overflowing its dimensions (for a block, 100% width and auto height).
-- `width: 400px` ensures the element has a dimension.
-- `height: 109.2px` calculated value for height, it equals `font-size * line-height * numberOfLines` (in this case `26 * 1.4 * 3 = 109.2`).
-- `height: 36.4px` calculated value for gradient container, it equals `font-size * line-height` (in this case `26 * 1.4 = 36.4`).
-- `background: linear-gradient(to right, rgba(0, 0, 0, 0), #f5f6f9 50%)` gradient from `transparent` to `#f5f6f9`.
+- Use `overflow: hidden` to prevent the text from overflowing its dimensions.
+- Set a fixed `width` to ensure the element has at least one constant dimension.
+- Set `height: 109.2px` as calculated from the `font-size`, using the formule `font-size * line-height * numberOfLines` (in this case `26 * 1.4 * 3 = 109.2`).
+- Set `height: 36.4px` as calculated for the gradient container, based on the formula `font-size * line-height` (in this case `26 * 1.4 = 36.4`).
+- Use `background` with `linear-gradient()` to create a gradient from `transparent` to the `background-color`.
 
 ```html
 <p class="truncate-text-multiline">
-  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-  labore et.
+  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+  eirmod tempor invidunt ut labore et.
 </p>
 ```
 
 ```css
 .truncate-text-multiline {
+  position: relative;
   overflow: hidden;
   display: block;
   height: 109.2px;
@@ -27,7 +28,8 @@ If the text is longer than one line, it will be truncated for `n` lines and end 
   font-size: 26px;
   line-height: 1.4;
   width: 400px;
-  position: relative;
+  background: #f5f6f9;
+  color: #333;
 }
 
 .truncate-text-multiline:after {

@@ -3,13 +3,12 @@ title: Transform centering
 tags: layout,beginner
 ---
 
-Vertically and horizontally centers a child element within its parent element using `position: absolute` and `transform: translate()` (as an alternative to `flexbox` or `display: table`).
-Similar to `flexbox`, this method does not require you to know the height or width of your parent or child so it is ideal for responsive applications.
+Vertically and horizontally centers a child element within its parent element using CSS transforms.
 
-- `position: absolute` on the child element allows it to be positioned based on its containing block.
-- `left: 50%` and `top: 50%` offsets the child 50% from the left and top edge of its containing block.
-- `transform: translate(-50%, -50%)` allows the height and width of the child element to be negated so that it is vertically and horizontally centered.
-- Note that the fixed height and width on parent element is for the demo only.
+- Set the `position` of the parent to `relative` and that of the child to `absolute` to place it in relation to its parent.
+- Use `left: 50%` and `top: 50%` to offset the child 50% from the left and top edge of the containing block.
+- Use `transform: translate(-50%, -50%)` to negate its position, so that it is vertically and horizontally centered.
+- **Note:** The fixed `height` and `width` of the parent element is for demonstration purposes only.
 
 ```html
 <div class="parent">
@@ -19,7 +18,7 @@ Similar to `flexbox`, this method does not require you to know the height or wid
 
 ```css
 .parent {
-  border: 1px solid #333;
+  border: 1px solid #9C27B0;
   height: 250px;
   position: relative;
   width: 250px;

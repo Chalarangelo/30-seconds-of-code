@@ -3,18 +3,15 @@ title: Border with top triangle
 tags: visual,beginner
 ---
 
-Creates a text container with a triangle at the top.
+Creates a content container with a triangle at the top.
 
 - Use the `:before` and `:after` pseudo-elements to create two triangles.
-- The color of the `:before` triangle should be the same as the container's border color.
-- The color of the `:after` triangle should be the same as the container's background color.
-- The border width of the `:before` triangle should be `1px` wider than the `:after` triangle, in order to act as the border.
-- The `:after` triangle should be `1px` to the right of the `:before` triangle to allow for its left border to be shown.
+- The colors of the two triangles should be the same as the container's `border-color` and the container's `background-color` respectively.
+- The `border-width` of the one triangle (`:before`) should be `1px` wider than the other one (`:after`), in order to act as the border.
+- The smalle triangle (`:after`) should be `1px` to the right of the larger triangle (`:before`) to allow for its left border to be shown.
 
 ```html
-<div class="container">
-  Border with top triangle
-</div>
+<div class="container">Border with top triangle</div>
 ```
 
 ```css
@@ -26,7 +23,8 @@ Creates a text container with a triangle at the top.
   margin-top: 20px;
 }
 
-.container:before, .container:after {
+.container:before,
+.container:after {
   content: '';
   position: absolute;
   bottom: 100%;

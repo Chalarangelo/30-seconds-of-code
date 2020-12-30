@@ -5,10 +5,10 @@ tags: layout,beginner
 
 Ensures that an element self-clears its children.
 
-- `.clearfix:after` defines a pseudo-element.
-- `content: ''` allows the pseudo-element to affect layout.
-- `clear: both` indicates that the left, right or both sides of the element cannot be adjacent to earlier floated elements within the same block formatting context.
-- This is only useful if you are still using `float` to build layouts. Please consider using a modern approach with flexbox layout or grid layout. For this snippet to work properly you need to ensure that there are no non-floating children in the container and that there are no tall floats before the clearfixed container but in the same formatting context (e.g. floated columns).
+- Use the `:after` pseudo-element and apply `content: ''` to allow it to affect layout.
+- Use `clear: both` to make the element clear past both left and right floats.
+- For this technique to work properly, make sure there are no non-floating children in the container and that there are no tall floats before the clearfixed container but in the same formatting context (e.g. floated columns).
+- **Note:** This is only useful if you are using `float` to build layouts. Consider using a more modern approach, such as the flexbox or grid layout.
 
 ```html
 <div class="clearfix">
@@ -27,5 +27,6 @@ Ensures that an element self-clears its children.
 
 .floated {
   float: left;
+  padding: 4px;
 }
 ```

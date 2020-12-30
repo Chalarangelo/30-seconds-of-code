@@ -5,17 +5,14 @@ tags: visual,interactivity,beginner
 
 Creates a toggle switch with CSS only.
 
-- This effect is styling only the `<label>` element to look like a toggle switch, and hiding the actual `<input>` checkbox by positioning it offscreen. When clicking the label associated with the `<input>` element, it sets the `<input>` checkbox into the `:checked` state.
-- The `for` attribute associates the `<label>` with the appropriate `<input>` checkbox element by its `id`.
-- `.switch:after` defines a pseudo-element for the `<label>` to create the circular knob.
-- `input[type='checkbox']:checked + .switch:after` targets the `<label>`'s pseudo-element's style when the checkbox is `checked`.
-- `transform: translateX(20px)` moves the pseudo-element (knob) 20px to the right when the checkbox is `checked`.
-- `background-color: #7983ff;` sets the background-color of the switch to a different color when the checkbox is `checked`.
-- `.offscreen` moves the `<input>` checkbox element, which does not comprise any part of the actual toggle switch, out of the flow of document and positions it far away from the view, but does not hide it so it is accessible via keyboard and screen readers.
-- `transition: all 0.3s` specifies all property changes will be transitioned over 0.3 seconds, therefore transitioning the `<label>`'s `background-color` and the pseudo-element's `transform` property when the checkbox is checked.
+- Use the `for` attribute to associate the `<label>` with the checkbox `<input>` element.
+- Use the `:after` pseudo-element of the `<label>` to create a circular knob for the switch.
+- Use the `:checked` pseudo-class selector to change the position of the knob, using `transform: translateX(20px)` and the `background-color` of the switch.
+- Use `position: absolute` and `left: -9999px` to visually hide the `<input>` element.
 
 ```html
-<input type="checkbox" id="toggle" class="offscreen" /> <label for="toggle" class="switch"></label>
+<input type="checkbox" id="toggle" class="offscreen" />
+<label for="toggle" class="switch"></label>
 ```
 
 ```css

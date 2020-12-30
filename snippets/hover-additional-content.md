@@ -15,7 +15,7 @@ Creates a card that displays additional content on hover.
   <img src="https://picsum.photos/id/404/367/267"/>
   <h3>Lorem ipsum</h3>
   <div class="focus-content">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br/> <a href="#" class="btn">Link to source</a>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br/> <a href="#">Link to source</a>
     </p>
   </div>
 </div>
@@ -25,6 +25,7 @@ Creates a card that displays additional content on hover.
 .card {
   width: 300px;
   height: 280px;
+  padding: 0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
   border-radius: 8px;
   box-sizing: border-box;
