@@ -39,4 +39,4 @@ Using the `bezier-curve()` we can easily define custom easing variables that can
 }
 ```
 
-**Image credit:** [Someone](https://unsplash.com/...?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+**Image credit:** [Aaron Burson](https://unsplash.com/@aaronburson?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
