@@ -6,6 +6,13 @@
 /feed                                  /feed.xml                                200
 
 # -----------------------------------------------------------------------------
+#   SNIPPET PAGE REDIRECTS:
+#
+# * Redirect replaced/renamed snippets.
+# -----------------------------------------------------------------------------
+/css/s/easing-variables                /blog/s/css-easing-variables             301!
+
+# -----------------------------------------------------------------------------
 #   LISTING PAGE REDIRECTS:
 #
 # * Redirect lists to page 1 of the dedicated listing.
