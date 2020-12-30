@@ -69,7 +69,7 @@ describe('Listing', () => {
 
     describe('clicking a snippet', () => {
       before(() => {
-        cy.get('.card-title a').first().click();
+        cy.get('.card-title a').eq(3).click();
       });
 
       it('should display the correct breadcrumbs', () => {
