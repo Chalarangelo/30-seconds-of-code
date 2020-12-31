@@ -11,8 +11,10 @@ const literals = {
   snippetList: 'Snippet List',
   blog: 'Blog',
   tag: t => `${capitalize(t)}`,
-  codelang: l => l,
-  codelangTag: (l, t) => `${l} ${capitalize(t)}`,
+  shortCodelang: l => `${l}`,
+  shortCodelangTag: (l, t) => `${l} ${capitalize(t)}`,
+  codelang: l => `${l} Snippets`,
+  codelangTag: (l, t) => `${l} ${capitalize(t)} Snippets`,
   snippetCount: c => `${c} snippets`,
   pageDescription: (t, p) => {
     switch (t) {
