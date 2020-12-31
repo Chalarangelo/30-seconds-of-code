@@ -2,6 +2,7 @@
 :root {
   --nav-bar-back-color: #FFFFFF;
   --nav-bar-border-color: #E4E6EC;
+  --nav-bar-title-color: #000000;
   --nav-button-fore-color: #53586A;
   --nav-button-active-fore-color: #2747C7;
 }
@@ -10,6 +11,7 @@
 .page-container.dark {
   --nav-bar-back-color: #060709;
   --nav-bar-border-color: #12151C;
+  --nav-bar-title-color: #ffffff;
   --nav-button-fore-color: #cfd1d8;
   --nav-button-active-fore-color: #fbfcfe;
 }
@@ -17,8 +19,8 @@
 // Body scrollbar
 body {
   &::-webkit-scrollbar-track {
-    margin-top: 56px;
-    background-color: var(--scrollbar-back-color);
+    margin-top: 0;
+    background: linear-gradient(180deg, var(--nav-bar-back-color) 0%, var(--nav-bar-back-color) 111.5px, var(--nav-bar-border-color) 111.5px, var(--nav-bar-border-color) 112.5px, var(--back-color) 112.5px, var(--back-color) 100%);
   }
 
   &::-webkit-scrollbar {
@@ -51,22 +53,72 @@ body {
 .nav-bar {
   position: sticky;
   top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: 0.3s ease all;
   background: var(--nav-bar-back-color);
   line-height: 0;
   box-sizing: border-box;
   z-index: 1001;
   border-bottom: 1px solid var(--nav-bar-border-color);
-  height: 100%;
+  height: 112px;
   width: 100vw;
+  padding-right: 4px;  // Pad to the right for the scrollbar (4px)
+
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    padding-right: 8px;  // Pad to the right for the scrollbar (8px)
+  }
+
+  @media screen and (min-width: 882px) {
+    // Difference in padding is due to the scrollbar (8px)
+    padding-left: calc((100% - 882px) / 2);
+    padding-right: calc((100% - 866px) / 2);
+  }
+}
+
+.nav-title-wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 0.75rem 0.5rem;
+
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    width: calc(100% - 240px - 44px - 76px - 64px);
+  }
+
+  &:hover, &:focus, &:active {
+    outline: 0;
+    text-decoration: none;
+  }
+}
+
+.nav-title {
+  display: none;
+  color: var(--nav-bar-title-color);
+  font-family: 'Raleway', Helvetica, sans-serif;
+  letter-spacing: 0.25px;
+  font-variant-numeric: lining-nums;
+  margin: 0;
+
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    display: block;
+    font-size: 1rem;
+  }
+
+  @media screen and (min-width: 680px) {
+    font-size: 1.5rem;
+  }
+}
+
+.nav-subtitle {
+  display: none;
+  color: var(--fore-color);
+  font-size: 1rem;
+  margin: 0;
 
   @media screen and (min-width: $layout-large-breakpoint) {
-    padding-right: 0.75rem;
-    text-align: center;
-
-    > :first-child {
-      margin-right: 0.75rem;
-    }
+    display: block;
   }
 }
 
@@ -74,8 +126,8 @@ body {
 .nav-btn {
   position: relative;
   display: inline-block;
-  height: 56px;
-  width: 56px;
+  min-width: 64px;
+  min-height: 56px;
   margin: 0;
   border: none;
   cursor: pointer;
@@ -104,8 +156,8 @@ body {
 img.nav-website-logo {
   transition: 0.3s ease all;
   padding: 6px;
-  width: 44px;
-  height: 44px;
+  width: 64px;
+  height: 64px;
 }
 
 // Content container
