@@ -57,6 +57,10 @@ const Shell = ({
             className='nav-website-logo'
           />
         </a>
+        <a className='nav-title-wrapper' href='/'>
+          <h1 className='nav-title'>{literals.siteName}</h1>
+          <p className='nav-subtitle'>{literals.siteDescription}</p>
+        </a>
         <Search isMainSearch={isSearch} />
         <a
           className='nav-btn icon icon-settings'

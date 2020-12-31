@@ -41,8 +41,8 @@
 
 [type="search"].search-box {
   transition: 0.3s ease all;
-  margin-top: 6px;
-  width: calc(100% - 56px - 56px - 44px);
+  width: calc(100% - 76px - 64px - 44px);
+  margin: 0 0 0 8px;
   background: var(--search-back-color);
   vertical-align: top;
   border: 1px solid var(--search-bar-border-color);
@@ -69,8 +69,9 @@
     }
   }
 
-  @media screen and (min-width: $layout-large-breakpoint) {
-    width: calc(800px - 4rem - 52px);
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    width: 240px;
+    margin: 0;
   }
 }
 
@@ -83,7 +84,7 @@ a.search-btn {
   vertical-align: top;
   width: 44px;
   height: 44px;
-  margin: 6px 0 0;
+  margin: 0;
   border-radius: 0 0.25rem 0.25rem 0;
   box-sizing: border-box;
   box-shadow: none;
