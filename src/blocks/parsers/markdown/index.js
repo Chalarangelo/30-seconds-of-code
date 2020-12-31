@@ -193,7 +193,7 @@ export class MarkdownParser {
       result.fullDescription = result.fullDescription.replace(
         /(<p>)*<img src="\.\/([^"]+)"([^>]*)>(<\/p>)*/g,
         (match, openTag, imgSrc, imgRest) =>
-          `<img class="card-image" src="${assetPath}${imgSrc}"${imgRest}>`
+          `<img class="card-image" src="${assetPath}/${imgSrc}"${imgRest}>`
       );
     } else {
       Object.entries(codeBlocks).forEach(([key, value]) => {
