@@ -6,5 +6,9 @@
   "fixturesFolder": ".cypress/fixtures",
   "pluginsFile": ".cypress/plugins/index.js",
   "supportFile": false,
-  "video": false
+  "video": false,
+  "retries": {
+    "runMode": 5,
+    "openMode": 2
+  }
 }
