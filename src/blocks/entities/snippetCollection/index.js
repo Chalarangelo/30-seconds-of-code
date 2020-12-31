@@ -108,7 +108,7 @@ export class SnippetCollection {
 
   get meta() {
     return {
-      name: this.name,
+      name: this.shortName,
       tags: this.tags,
       url: this.url,
       slugPrefix: this.slugPrefix,
@@ -141,6 +141,33 @@ export class SnippetCollection {
       }
     }
     return this._name;
+  }
+
+  get shortName() {
+    if (!this._shortName) {
+      switch (this.type) {
+        case 'main':
+          this._shortName = literals.listing.snippetList;
+          break;
+        case 'blog':
+          this._shortName = literals.listing.blog;
+          break;
+        case 'language':
+          this._shortName = literals.listing.shortCodelang(
+            this.config.language.long
+          );
+          break;
+        case 'tag':
+          this._shortName = literals.listing.shortCodelangTag(
+            this.config.language.long,
+            this.tag
+          );
+          break;
+        default:
+          break;
+      }
+    }
+    return this._shortName;
   }
 
   get seoDescription() {
