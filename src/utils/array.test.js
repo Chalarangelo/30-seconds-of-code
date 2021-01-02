@@ -1,4 +1,4 @@
-import { uniqueElements, insertAt, chunk } from './array';
+import { uniqueElements, insertAt, chunk, sample } from './array';
 
 describe('uniqueElements', () => {
   it('returns the unique elements in an array', () => {
@@ -19,5 +19,12 @@ describe('insertAt', () => {
   it('inserts the element at the given index', () => {
     let arr = [1, 2, 3];
     expect(insertAt(1, 4, arr)).toEqual([1, 2, 4, 3]);
+  });
+});
+
+describe('sample', () => {
+  it('returns a random element from the given array', () => {
+    let arr = [1, 2, 3];
+    expect(arr.includes(sample(arr))).toBeTruthy();
   });
 });
