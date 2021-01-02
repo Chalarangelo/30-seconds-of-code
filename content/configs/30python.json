@@ -1,0 +1,18 @@
+{
+  "name": "30 seconds of Python",
+  "dirName": "30python",
+  "repoUrl": "https://github.com/30-seconds/30-seconds-of-python",
+  "snippetPath": "snippets",
+  "language": {
+    "short": "py",
+    "long": "Python"
+  },
+  "slug": "python",
+  "featured": 5,
+  "theme": {
+    "backColor": "#3c77a9",
+    "foreColor": "#ffffff",
+    "iconName": "python"
+  },
+  "biasPenaltyMultiplier": 1.05
+}

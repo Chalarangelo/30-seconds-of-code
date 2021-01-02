@@ -1,0 +1,18 @@
+{
+  "name": "30 seconds of Dart",
+  "dirName": "30dart",
+  "repoUrl": "https://github.com/30-seconds/30-seconds-of-dart",
+  "snippetPath": "snippets",
+  "language": {
+    "short": "dart",
+    "long": "Dart"
+  },
+  "slug": "dart",
+  "featured": -1,
+  "theme": {
+    "backColor": "#1b2634",
+    "foreColor": "#ffffff",
+    "iconName": "dart"
+  },
+  "biasPenaltyMultiplier": 1.3
+}
