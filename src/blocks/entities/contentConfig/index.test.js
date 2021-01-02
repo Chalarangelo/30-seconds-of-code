@@ -1,13 +1,13 @@
 import { ContentConfig } from '.';
 import { ArgsError } from 'blocks/utilities/error';
 import { rawConfigs } from 'fixtures/blocks/contentConfigs';
-import { setupEnv } from 'blocks/utilities/env';
+import { Env } from 'blocks/utilities/env';
 
 describe('ContentConfig', () => {
   let configs = {};
 
   beforeAll(() => {
-    setupEnv();
+    Env.setup();
   });
 
   describe('constructor', () => {

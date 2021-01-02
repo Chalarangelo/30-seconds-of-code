@@ -1,4 +1,4 @@
-import { setupEnv } from 'blocks/utilities/env';
+import { Env } from 'blocks/utilities/env';
 
 /**
  * The first API called during Gatsby execution, runs as soon as
@@ -7,7 +7,7 @@ import { setupEnv } from 'blocks/utilities/env';
  * API docs: https://www.gatsbyjs.com/docs/node-apis/#onPreInit
  */
 const onPreInit = () => {
-  setupEnv('PRODUCTION');
+  Env.setup('PRODUCTION');
   process.configs = global.settings.configs;
 };
 

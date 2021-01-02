@@ -4,13 +4,13 @@ import { ContentConfig } from 'blocks/entities/contentConfig';
 import { ArgsError } from 'blocks/utilities/error';
 import { rawConfigs } from 'fixtures/blocks/contentConfigs';
 import { rawSnippets } from 'fixtures/blocks/snippets';
-import { setupEnv } from 'blocks/utilities/env';
+import { Env } from 'blocks/utilities/env';
 
 describe('Recommender', () => {
   let configs = {};
   let snippets = [];
   beforeAll(() => {
-    setupEnv();
+    Env.setup();
     Object.keys(rawConfigs).forEach(name => {
       configs[name] = new ContentConfig(rawConfigs[name]);
     });
