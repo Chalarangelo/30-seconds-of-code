@@ -3,6 +3,7 @@ import { Logger } from 'blocks/utilities/logger';
 import { IconSerializer } from 'blocks/serializers/icon';
 import { SitemapSerializer } from 'blocks/serializers/sitemap';
 import { FeedSerializer } from 'blocks/serializers/feed';
+import { ChirpSerializer } from 'blocks/serializers/chirp';
 import { FileParser } from 'blocks/parsers/file';
 import { AssetSerializer } from 'blocks/serializers/asset';
 import { Extractor } from 'blocks/utilities/extractor';
@@ -26,6 +27,7 @@ export const build = async () => {
   await Promise.all([
     SitemapSerializer.serialize(),
     FeedSerializer.serialize(),
+    ChirpSerializer.serialize(),
   ]);
 };
 
