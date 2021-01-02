@@ -116,3 +116,4 @@ content/data
 static/assets
 src/xml/sitemap.xml
 src/xml/feed.xml
+src/json/chirp.json
