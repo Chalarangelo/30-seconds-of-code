@@ -1,11 +1,11 @@
 import { Requirements } from '.';
-import { setupEnv } from 'blocks/utilities/env';
+import { Env } from 'blocks/utilities/env';
 import { JSONParser } from 'blocks/parsers/json';
 
 describe('Requirements', () => {
   const fromChunksFn = jest.fn().mockReturnValueOnce([]);
   beforeAll(() => {
-    setupEnv();
+    Env.setup();
     JSONParser.fromChunks = fromChunksFn;
   });
 
