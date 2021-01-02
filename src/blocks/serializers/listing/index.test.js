@@ -4,7 +4,7 @@ import { Snippet } from 'blocks/entities/snippet';
 import { ContentConfig } from 'blocks/entities/contentConfig';
 import { rawConfigs } from 'fixtures/blocks/contentConfigs';
 import { rawSnippets } from 'fixtures/blocks/snippets';
-import { setupEnv } from 'blocks/utilities/env';
+import { Env } from 'blocks/utilities/env';
 import { JSONSerializer } from 'blocks/serializers/json';
 
 JSONSerializer.serializeToDir = jest.fn(() => new Promise(res => res()));
@@ -14,7 +14,7 @@ describe('ListingSerializer', () => {
   let snippets = [];
   let collections = {};
   beforeAll(() => {
-    setupEnv();
+    Env.setup();
     Object.keys(rawConfigs).forEach(name => {
       configs[name] = new ContentConfig(rawConfigs[name]);
     });

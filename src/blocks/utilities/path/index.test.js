@@ -1,9 +1,9 @@
 import { Path } from '.';
-import { setupEnv } from 'blocks/utilities/env';
+import { Env } from 'blocks/utilities/env';
 
 describe('Path', () => {
   beforeAll(() => {
-    setupEnv();
+    Env.setup();
   });
 
   describe('findContentConfigFromRawSnippet', () => {
