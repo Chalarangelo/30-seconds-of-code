@@ -3,6 +3,47 @@ import { Logger } from 'blocks/utilities/logger';
 
 export class Content {
   /**
+   * Initialize content sources from their respective GitHub repositories.
+   * Returns a promise that resolves as soon as the spawned git command exits.
+   */
+  static init() {
+    const boundLog = Logger.bind('utilities.content.update');
+    boundLog('Updating content sources started...', 'info');
+
+    return new Promise((resolve, reject) => {
+      const gitUpdate = childProcess.spawn('git', [
+        'submodule',
+        'update',
+        '--init',
+        '--recursive',
+        '--progress',
+      ]);
+      boundLog(
+        `${gitUpdate.spawnargs.join(' ')} (pid: ${gitUpdate.pid})`,
+        'info'
+      );
+
+      /* istanbul ignore next */
+      gitUpdate.stdout.on('data', data => {
+        boundLog(`${data}`.replace('\n', ''), 'info');
+      });
+      /* istanbul ignore next */
+      gitUpdate.on('error', err => {
+        boundLog(`${err}`, 'error');
+        reject();
+      });
+      /* istanbul ignore next */
+      gitUpdate.on('exit', code => {
+        boundLog(
+          `Initializing content sources completed with exit code ${code}`,
+          'success'
+        );
+        resolve();
+      });
+    });
+  }
+
+  /**
    * Update content sources from their respective GitHub repositories.
    * Returns a promise that resolves as soon as the spawned git command exits.
    */
