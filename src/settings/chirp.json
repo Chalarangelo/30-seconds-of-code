@@ -1,0 +1,14 @@
+{
+  "chirpFileName": "chirp.json",
+  "maxCaptionLength": 280,
+  "chirpRules": [
+    {
+      "matcher": "^/js/s/",
+      "hashtags": "#100DaysOfCode #CodeNewbie #JavaScript #coding"
+    },
+    {
+      "matcher": "^/python/s/",
+      "hashtags": "#100DaysOfCode #CodeNewbie #Python #coding"
+    }
+  ]
+}
