@@ -3,6 +3,30 @@ import { Content } from '.';
 jest.mock('child_process');
 
 describe('Content', () => {
+  describe('init', () => {
+    let res;
+
+    beforeAll(() => {
+      res = Content.init();
+    });
+
+    it('should return a Promise', () => {
+      expect(res instanceof Promise).toBe(true);
+    });
+
+    it('should execute the appropriate git command', () => {
+      const proc = childProcess.spawn.mock.calls[0];
+      expect(proc[0]).toBe('git');
+      expect(proc[1]).toEqual([
+        'submodule',
+        'update',
+        '--init',
+        '--recursive',
+        '--progress',
+      ]);
+    });
+  });
+
   describe('update', () => {
     let res;
 
@@ -15,7 +39,7 @@ describe('Content', () => {
     });
 
     it('should execute the appropriate git command', () => {
-      const proc = childProcess.spawn.mock.calls[0];
+      const proc = childProcess.spawn.mock.calls[1];
       expect(proc[0]).toBe('git');
       expect(proc[1]).toEqual([
         'submodule',
