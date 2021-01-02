@@ -1,9 +1,9 @@
-import { setupEnv } from '.';
+import { Env } from '.';
 import globalConfig from 'settings/global';
 
 describe('setupEnv', () => {
   beforeAll(() => {
-    setupEnv();
+    Env.setup();
   });
 
   it('populates settings', () => {
