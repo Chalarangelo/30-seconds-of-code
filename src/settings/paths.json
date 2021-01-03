@@ -10,6 +10,7 @@
   "iconFontPath": "src/styles/_icons.scss",
   "queryPath": "./src/queries",
   "xmlPath": "./src/xml",
+  "jsonPath": "./src/json",
   "templatesPath": "./src/components/templates",
   "templates": [
     {

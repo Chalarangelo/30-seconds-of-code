@@ -10,11 +10,12 @@ import {
   getURLParameters,
   getRootURL,
   getBaseURL,
+  truncateString,
 } from './string';
 
 import combineClassNames from '@chalarangelo/combine-class-names';
 
-import { uniqueElements, insertAt, chunk } from './array';
+import { uniqueElements, insertAt, chunk, sample } from './array';
 
 import { throttle } from './function';
 
@@ -41,4 +42,6 @@ export {
   uniqueElements,
   insertAt,
   chunk,
+  sample,
+  truncateString,
 };

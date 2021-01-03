@@ -1,0 +1,20 @@
+name: Post on Twitter
+on:
+  schedule:
+    - cron: "20 8,12,14,17 * * *"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install dependencies
+      run: npm install
+    - name: Take screenshot and tweet
+      env: 
+        ACCESS_TOKEN_KEY: ${{ secrets.ACCESS_TOKEN_KEY }}
+        ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
+        CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
+        CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }}
+        UNSPLASH_KEY: ${{ secrets.UNSPLASH_KEY }}
+      run: |
+        npm run tweet
