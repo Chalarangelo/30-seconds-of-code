@@ -1,6 +1,7 @@
 ---
 title: is_divisible
 tags: math,beginner
+unlisted: true
 ---
 
 Checks if the first numeric argument is divisible by the second one.
