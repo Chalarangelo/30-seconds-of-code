@@ -1,6 +1,7 @@
 ---
 title: celsius_to_fahrenheit
 tags: math,beginner
+unlisted: true
 ---
 
 Converts Celsius to Fahrenheit.

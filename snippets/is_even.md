@@ -1,6 +1,7 @@
 ---
 title: is_even
 tags: math,beginner
+unlisted: true
 ---
 
 Checks if the given number is even.
