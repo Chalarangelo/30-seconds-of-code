@@ -1,6 +1,7 @@
 ---
 title: Hover shadow box animation
 tags: animation,intermediate
+unlisted: true
 ---
 
 Creates a shadow box around the text when it is hovered.
