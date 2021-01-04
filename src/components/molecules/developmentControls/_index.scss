@@ -1,0 +1,64 @@
+:root {
+  --button-dev-back-color:  #B744B8;
+}
+
+.floating-controls-container {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  background: var(--card-back-color);
+  border-radius: 1rem;
+  box-shadow: 0 2px 4px var(--button-shadow-color);
+  padding: 0.5rem 0.75rem 0;
+  min-width: calc(48px - 1.5rem);
+
+  .btn-dev {
+    font-size: 1rem;
+    text-align: left;
+    line-height: 2;
+    background: transparent;
+    color: var(--fore-color);
+    box-shadow: none;
+    padding: 0;
+    margin-top: 0;
+
+    &:hover, &:focus {
+      box-shadow: none;
+      color: var(--fore-color-darker);
+    }
+  }
+
+  .btn-dev-controls {
+    background: var(--button-dev-back-color);
+    position: relative;
+    margin-top: 0;
+    box-shadow: none;
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+    height: 48px;
+
+    &:before {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 0;
+      line-height: 48px;
+      font-size: 36px;
+    }
+
+    &:first-child {
+      margin-top: -0.5rem;
+    }
+
+    &:not(:first-child) {
+      margin-top: 0.5rem;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      width: calc(100% + 1.5rem);
+    }
+  }
+
+
+}
