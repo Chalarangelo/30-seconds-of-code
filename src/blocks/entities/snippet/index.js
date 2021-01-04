@@ -151,11 +151,17 @@ export class Snippet {
         this._frontmatterMetadata && this._frontmatterMetadata.unlisted
           ? this._frontmatterMetadata.unlisted
           : false;
-      const isFutureSnippet = this.firstSeen > new Date();
       this._isListed =
-        this.config.featured > 0 && !isUnlistedSnippet && !isFutureSnippet;
+        this.config.featured > 0 && !isUnlistedSnippet && !this.isScheduled;
     }
     return this._isListed;
+  }
+
+  get isScheduled() {
+    if (!this._isScheduled) {
+      this._isScheduled = this.firstSeen > new Date();
+    }
+    return this._isScheduled;
   }
 
   get icon() {

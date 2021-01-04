@@ -123,6 +123,13 @@ describe('Snippet', () => {
       expect(futureSnippet.isListed).toBe(false);
     });
 
+    it('has the correct scheduled status', () => {
+      expect(snippet.isScheduled).toBe(false);
+      expect(unfeaturedSnippet.isScheduled).toBe(false);
+      expect(unlistedSnippet.isScheduled).toBe(false);
+      expect(futureSnippet.isScheduled).toBe(true);
+    });
+
     it('has the correct icon', () => {
       expect(snippet.icon).toBe(snippet.config.icon);
       expect(blogSnippet.icon).toBe('react');
