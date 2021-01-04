@@ -1,6 +1,7 @@
 ---
 title: Callto
 tags: components,beginner
+unlisted: true
 ---
 
 Renders a link formatted to call a phone number (`tel:` link).
