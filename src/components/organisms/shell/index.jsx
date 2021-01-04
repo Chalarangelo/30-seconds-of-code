@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Search from 'components/molecules/search';
 import Footer from 'components/molecules/footer';
 import CookieConsentPopup from 'components/molecules/cookieConsentPopup';
+import DevelopmentControls from 'components/molecules/developmentControls';
 import literals from 'lang/en/client/common';
 import { pushNewPage } from 'state/navigation';
 import { combineClassNames } from 'utils';
@@ -20,6 +21,7 @@ const propTypes = {
   isSettings: PropTypes.bool,
   lastPageUrl: PropTypes.string.isRequired,
   dispatch: PropTypes.func,
+  pageContext: PropTypes.shape({}),
 };
 
 /**
@@ -29,6 +31,7 @@ const propTypes = {
  * @param {bool} isBot - Is the client a bot? (Auto-detect)
  * @param {bool} isSearch - Is this a search page?
  * @param {bool} isSettings - Is this a search page?
+ * @param {bool} pageContext - Page context (only-passed down in development)
  */
 const Shell = ({
   isDarkMode,
@@ -39,6 +42,7 @@ const Shell = ({
   lastPageUrl,
   dispatch,
   children,
+  pageContext,
 }) => {
   React.useEffect(() => {
     if (isDarkMode) document.querySelector('body').classList.add('dark');
@@ -77,6 +81,9 @@ const Shell = ({
         {children}
         <Footer />
       </div>
+      {process.env.ENV === 'development' && (
+        <DevelopmentControls pageContext={pageContext} />
+      )}
       {typeof acceptsCookies === 'undefined' &&
       process.env.ENV !== 'development' &&
       !isBot ? (
