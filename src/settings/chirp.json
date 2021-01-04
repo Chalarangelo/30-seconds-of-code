@@ -9,6 +9,10 @@
     {
       "matcher": "^/python/s/",
       "hashtags": "#100DaysOfCode #CodeNewbie #Python #coding"
+    },
+    {
+      "matcher": "^/react/s/use",
+      "hashtags": "#100DaysOfCode #CodeNewbie #ReactJS #coding"
     }
   ]
 }
