@@ -1,6 +1,7 @@
 ---
 title: Shape separator
 tags: visual,intermediate
+unlisted: true
 ---
 
 Uses an SVG shape to create a separator between two different blocks.
