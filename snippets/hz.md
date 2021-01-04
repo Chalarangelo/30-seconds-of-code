@@ -1,6 +1,7 @@
 ---
 title: hz
 tags: function,intermediate
+unlisted: true
 ---
 
 Measures the number of times a function is executed per second (`hz`/`hertz`).

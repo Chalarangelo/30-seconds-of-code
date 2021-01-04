@@ -1,6 +1,7 @@
 ---
 title: xor
 tags: math,logic,beginner
+unlisted: true
 ---
 
 Checks if only one of the arguments is `true`.

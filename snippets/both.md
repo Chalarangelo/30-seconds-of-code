@@ -1,6 +1,7 @@
 ---
 title: both
 tags: function,logic,beginner
+unlisted: true
 ---
 
 Checks if both of the given functions return `true` for a given set of arguments.
