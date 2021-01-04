@@ -5,6 +5,7 @@ tags: programming,jobs,webdev
 authors: chalarangelo
 cover: blog_images/8-tips-for-remote-work.jpg
 excerpt: Working from home seems like a great alternative to going to the office, but there are challenges that come with it that you need to overcome...
+unlisted: true
 ---
 
 Working from home (also known as remote work) seems like a great alternative to going to the office every morning, but it comes with its own set of challenges that you need to overcome in order to stay healthy and productive. Here are my tips for achieving just that:

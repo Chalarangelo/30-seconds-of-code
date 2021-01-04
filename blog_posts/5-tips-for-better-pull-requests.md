@@ -5,6 +5,7 @@ tags: git,github,programming,webdev
 authors: chalarangelo
 cover: blog_images/5-tips-for-better-pull-requests.jpg
 excerpt: Writing good code is only part of the job. Here are 5 tips to improve your pull requests and help people review them.
+unlisted: true
 ---
 
 Writing good code is only part of the job. Here are 5 tips to improve your pull requests and help people review them:
