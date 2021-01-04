@@ -1,6 +1,7 @@
 ---
 title: and
 tags: math,logic,beginner
+unlisted: true
 ---
 
 Checks if both arguments are `true`.

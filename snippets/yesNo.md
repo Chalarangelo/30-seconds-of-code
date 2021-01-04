@@ -1,6 +1,7 @@
 ---
 title: yesNo
 tags: string,regexp,intermediate
+unlisted: true
 ---
 
 Returns `true` if the string is `y`/`yes` or `false` if the string is `n`/`no`.
