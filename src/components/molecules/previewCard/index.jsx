@@ -23,9 +23,9 @@ const PreviewCard = ({ snippet }) => {
         <Expertise level={snippet.expertise} />
       </div>
       <div className='card-data'>
-        <h4 className='card-title'>
+        <h3 className='card-title'>
           <a href={snippet.url}>{snippet.title}</a>
-        </h4>
+        </h3>
         <TagList tags={tags} />
       </div>
       <div
