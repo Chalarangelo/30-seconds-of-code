@@ -7,6 +7,7 @@ import { fullSnippet, fullBlogSnippet } from 'fixtures/snippets';
 import { breadcrumbs } from 'fixtures/breadcrumbs';
 
 console.warn = jest.fn();
+console.error = jest.fn();
 
 describe('<SnippetPage />', () => {
   const cardTemplate = 'StandardSnippetCard';

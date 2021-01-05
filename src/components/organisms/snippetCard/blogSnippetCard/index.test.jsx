@@ -5,6 +5,7 @@ import BlogSnippetCard from './index';
 import { fullBlogSnippet } from 'fixtures/snippets';
 
 console.warn = jest.fn();
+console.error = jest.fn();
 console.log = jest.fn();
 
 describe('<BlogSnippetCard />', () => {

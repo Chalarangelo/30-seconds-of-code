@@ -72,9 +72,11 @@
   "license": "MIT",
   "scripts": {
     "prebuild": "NODE_PATH=src NODE_ENV=production npx --node-arg '-r esm' ./src/scripts/build.js",
+    "predevelop": "NODE_PATH=src NODE_ENV=development npx --node-arg '-r esm' ./src/scripts/develop.js",
     "build": "NODE_PATH=src npx --node-arg '-r esm' gatsby build",
     "console": "NODE_PATH=src  NODE_ENV=development npx --node-arg '-r esm' ./src/scripts/console.js",
     "develop": "NODE_PATH=src npx --node-arg '-r esm' gatsby develop -p 8000",
+    "develop:no-pre": "NODE_PATH=src npx --node-arg '-r esm' gatsby develop -p 8000",
     "debug": "NODE_PATH=src npx --node-arg '-r esm --nolazy --inspect-brk' node_modules/.bin/gatsby develop",
     "serve": "NODE_PATH=src npx --node-arg '-r esm' gatsby serve",
     "tweet": "NODE_PATH=src NODE_ENV=production npx --node-arg '-r esm' ./src/scripts/tweet.js",

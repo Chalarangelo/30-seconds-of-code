@@ -121,9 +121,16 @@ export class Extractor {
   };
 
   static writeSnippets = snippets => {
-    return Promise.all(
-      snippets.map(snippet => SnippetSerializer.serializeSnippet(snippet))
-    );
+    if (global.settings.env === 'PRODUCTION')
+      return Promise.all(
+        snippets
+          .filter(s => !s.isScheduled)
+          .map(snippet => SnippetSerializer.serializeSnippet(snippet))
+      );
+    else
+      return Promise.all(
+        snippets.map(snippet => SnippetSerializer.serializeSnippet(snippet))
+      );
   };
 
   static writeListings = snippetCollections => {

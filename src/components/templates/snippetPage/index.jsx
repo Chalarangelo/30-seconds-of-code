@@ -35,6 +35,7 @@ const SnippetPage = ({
     breadcrumbs,
     pageDescription,
   },
+  pageContext,
 }) => {
   const SnippetCard = cardComponents[cardTemplate];
   return (
@@ -55,7 +56,9 @@ const SnippetPage = ({
         breadcrumbsData={breadcrumbs}
         canonical={snippet.slug}
       />
-      <Shell>
+      <Shell
+        pageContext={process.env.ENV === 'development' ? pageContext : null}
+      >
         <Breadcrumbs breadcrumbs={breadcrumbs} />
         <SnippetCard snippet={snippet} />
         <CTA />

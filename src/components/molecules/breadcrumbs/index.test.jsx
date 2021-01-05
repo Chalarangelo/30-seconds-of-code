@@ -4,6 +4,7 @@ import Breadcrumbs from './index';
 import { breadcrumbs } from 'fixtures/breadcrumbs';
 
 console.warn = jest.fn();
+console.error = jest.fn();
 
 describe('<Breadcrumbs />', () => {
   let wrapper;
