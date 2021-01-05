@@ -1,13 +1,19 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
+import loadable from '@loadable/component';
 import { connect } from 'react-redux';
 import Search from 'components/molecules/search';
 import Footer from 'components/molecules/footer';
 import CookieConsentPopup from 'components/molecules/cookieConsentPopup';
-import DevelopmentControls from 'components/molecules/developmentControls';
 import literals from 'lang/en/client/common';
 import { pushNewPage } from 'state/navigation';
 import { combineClassNames } from 'utils';
+
+const DevelopmentControls = loadable(() =>
+  process.env.ENV === 'development'
+    ? import('components/molecules/developmentControls')
+    : () => null
+);
 
 const propTypes = {
   children: PropTypes.oneOfType([
@@ -59,9 +65,11 @@ const Shell = ({
             src='/assets/30s-icon.png'
             alt={literals.home}
             className='nav-website-logo'
+            width='64'
+            height='64'
           />
         </a>
-        <a className='nav-title-wrapper' href='/'>
+        <a className='nav-title-wrapper' href='/' aria-label={literals.home}>
           <h1 className='nav-title'>{literals.siteName}</h1>
           <p className='nav-subtitle'>{literals.siteDescription}</p>
         </a>

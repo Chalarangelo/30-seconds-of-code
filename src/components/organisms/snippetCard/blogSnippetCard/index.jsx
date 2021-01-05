@@ -38,7 +38,13 @@ const SnippetCard = ({ snippet }) => (
       <TagList tags={snippet.tags.all} />
     </div>
     {snippet.cover && snippet.cover && (
-      <img className='card-cover-image' src={snippet.cover} alt='' />
+      <img
+        className='card-cover-image'
+        src={snippet.cover}
+        alt=''
+        height='232'
+        width='348'
+      />
     )}
     <div
       className='card-description'

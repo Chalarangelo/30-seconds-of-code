@@ -29,7 +29,7 @@ describe('<PreviewCard />', () => {
     });
 
     it('the card title', () => {
-      expect(card.querySelectorAll('h4.card-title')).toHaveLength(1);
+      expect(card.querySelectorAll('h3.card-title')).toHaveLength(1);
     });
 
     it('an Expertise component', () => {
@@ -42,7 +42,7 @@ describe('<PreviewCard />', () => {
   });
 
   it('should have the correct card title', () => {
-    expect(card.querySelector('h4.card-title').textContent).toBe(
+    expect(card.querySelector('h3.card-title').textContent).toBe(
       previewSnippet.title
     );
   });
