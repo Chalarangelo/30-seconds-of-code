@@ -7,6 +7,7 @@ import SearchPage from './index';
 import { pushNewQuery } from 'state/search';
 
 console.warn = jest.fn();
+console.error = jest.fn();
 
 describe('<SearchPage />', () => {
   let wrapper, meta, store, rerender;

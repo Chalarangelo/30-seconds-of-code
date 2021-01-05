@@ -5,6 +5,7 @@ import CTA from './index';
 import { decideCookies } from 'state/shell';
 
 console.warn = jest.fn();
+console.error = jest.fn();
 
 global.window = Object.create(window);
 global.gtag = Object.create(() => null);

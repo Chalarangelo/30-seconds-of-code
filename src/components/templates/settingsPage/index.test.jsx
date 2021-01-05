@@ -6,6 +6,7 @@ import literals from 'lang/en/settings';
 import SettingsPage from './index';
 
 console.warn = jest.fn();
+console.error = jest.fn();
 
 describe('<SettingsPage />', () => {
   let wrapper, shell, store, meta, getByLabelText;

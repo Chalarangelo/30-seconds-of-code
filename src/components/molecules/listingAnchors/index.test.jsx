@@ -4,6 +4,7 @@ import ListingAnchors from './index';
 import { anchorItems } from 'fixtures/listingAnchors';
 
 console.warn = jest.fn();
+console.error = jest.fn();
 
 describe('<ListingAnchors />', () => {
   let wrapper;

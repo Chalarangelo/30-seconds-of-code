@@ -4,6 +4,7 @@ import PreviewCard from './index';
 import { previewSnippet, previewBlogSnippet } from 'fixtures/snippets';
 
 console.warn = jest.fn();
+console.error = jest.fn();
 
 describe('<PreviewCard />', () => {
   let wrapper, card, expertise, anchor, tags;

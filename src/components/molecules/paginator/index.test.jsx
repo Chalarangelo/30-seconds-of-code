@@ -3,6 +3,7 @@ import { render, cleanup } from '@testing-library/react';
 import Paginator from './index';
 
 console.warn = jest.fn();
+console.error = jest.fn();
 
 describe('<Paginator />', () => {
   const pageNumber = 3,
