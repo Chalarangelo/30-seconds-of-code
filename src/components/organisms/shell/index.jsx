@@ -59,6 +59,8 @@ const Shell = ({
             src='/assets/30s-icon.png'
             alt={literals.home}
             className='nav-website-logo'
+            width='64'
+            height='64'
           />
         </a>
         <a className='nav-title-wrapper' href='/'>
