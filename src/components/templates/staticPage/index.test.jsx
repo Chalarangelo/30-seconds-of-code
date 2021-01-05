@@ -6,6 +6,7 @@ import aboutLiterals from 'lang/en/about';
 import StaticPage from './index';
 
 console.warn = jest.fn();
+console.error = jest.fn();
 
 describe('<StaticPage />', () => {
   let wrapper, meta;
