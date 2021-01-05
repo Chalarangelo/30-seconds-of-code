@@ -63,6 +63,8 @@ const ListingPage = ({
                 src='/assets/30s-icon.png'
                 alt={literals.siteName}
                 className='home-logo'
+                width='64'
+                height='64'
               />
               <span className='home-title-text'>{literals.siteName}</span>
             </h1>
