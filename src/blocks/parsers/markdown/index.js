@@ -10,7 +10,15 @@ import { escapeHTML, optimizeAllNodes } from 'utils';
 // Setup Remark using the appropriate options.
 const remark = new Remark().data('settings', remarkOptions);
 
-const transformers = [
+const commonTransformers = [
+  // Add 'rel' and 'target' to external links
+  {
+    matcher: /(href="https?:\/\/)/g,
+    replacer: 'target="_blank" rel="nofollow noopener noreferrer" $1',
+  },
+];
+
+const blogTransformers = [
   // Inject class into blog lists' <ol> elements
   {
     blogType: 'blog.list',
@@ -22,12 +30,6 @@ const transformers = [
     blogType: 'blog.list',
     matcher: /<li>\n*(.+?)\n((?!<li>).+?)\n*<\/li>/g,
     replacer: '<li class="blog-list-item">$1</p><p>$2</li>',
-  },
-  // Add 'rel' and 'target' to external links
-  {
-    blogType: 'any',
-    matcher: /(href="https?:\/\/)/g,
-    replacer: 'target="_blank" rel="nofollow noopener noreferrer" $1',
   },
   // Convert blog post code to the appropriate elements
   {
@@ -180,8 +182,21 @@ export class MarkdownParser {
         ? this.parseMarkdown(value, true, langData)
         : '';
     });
+    result.description = commonTransformers.reduce(
+      (acc, { matcher, replacer }) => {
+        return acc.replace(matcher, replacer);
+      },
+      result.description
+    );
+    result.fullDescription = commonTransformers.reduce(
+      (acc, { matcher, replacer }) => {
+        return acc.replace(matcher, replacer);
+      },
+      result.fullDescription
+    );
+
     if (isBlog) {
-      result.fullDescription = transformers.reduce(
+      result.fullDescription = blogTransformers.reduce(
         (acc, { blogType, matcher, replacer }) => {
           if (blogType === 'any' || blogType === type)
             return acc.replace(matcher, replacer);
