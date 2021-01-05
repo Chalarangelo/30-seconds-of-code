@@ -1,13 +1,19 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
+import loadable from '@loadable/component';
 import { connect } from 'react-redux';
 import Search from 'components/molecules/search';
 import Footer from 'components/molecules/footer';
 import CookieConsentPopup from 'components/molecules/cookieConsentPopup';
-import DevelopmentControls from 'components/molecules/developmentControls';
 import literals from 'lang/en/client/common';
 import { pushNewPage } from 'state/navigation';
 import { combineClassNames } from 'utils';
+
+const DevelopmentControls = loadable(() =>
+  process.env.ENV === 'development'
+    ? import('components/molecules/developmentControls')
+    : () => null
+);
 
 const propTypes = {
   children: PropTypes.oneOfType([
