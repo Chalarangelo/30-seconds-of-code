@@ -69,7 +69,7 @@ const Shell = ({
             height='64'
           />
         </a>
-        <a className='nav-title-wrapper' href='/'>
+        <a className='nav-title-wrapper' href='/' aria-label={literals.home}>
           <h1 className='nav-title'>{literals.siteName}</h1>
           <p className='nav-subtitle'>{literals.siteDescription}</p>
         </a>
