@@ -62,16 +62,6 @@ const Actions = ({ snippet }) => {
       >
         {literals.viewOnGitHub}
       </a>
-      {process.env.ENV === 'development' && (
-        <a
-          className='btn icon icon-vscode'
-          href={snippet.vscodeUrl}
-          rel='nofollow noopener noreferrer'
-          target='_blank'
-        >
-          {literals.openInVscode}
-        </a>
-      )}
     </>
   );
 };
