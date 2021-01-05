@@ -12,13 +12,13 @@
       <link>{{ websiteUrl }}</link>
     </image>
     <ttl>1440</ttl>
+    {{# each nodes }}
+      <item>
+        <title>{{ this.title }}</title>
+        <link>{{ this.fullRoute }}</link>
+        <description>{{ this.description }}</description>
+        <pubDate>{{ this.pubDate }}</pubDate>
+      </item>
+    {{/ each }}
   </channel>
-  {{# each nodes }}
-  <item>
-    <title>{{ this.title }}</title>
-    <link>{{ this.fullRoute }}</link>
-    <description>{{ this.description }}</description>
-    <pubDate>{{ this.pubDate }}</pubDate>
-  </item>
-  {{/ each }}
 </rss>
