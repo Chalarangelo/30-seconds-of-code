@@ -1,6 +1,6 @@
 ---
 title: getParentsUntil
-tags: browse,intermediate
+tags: browser,intermediate
 ---
 
 Finds all the ancestors of an element up until the element matched by the specified selector.
