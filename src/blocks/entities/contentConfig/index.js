@@ -1,12 +1,13 @@
 import { InstanceCache } from 'blocks/utilities/instanceCache';
 import { ArgsError } from 'blocks/utilities/error';
+import { convertToSeoSlug } from 'utils';
 
 /**
  * A content configuration (i.e. the data and metadata from a content/configs JSON file).
  */
 export class ContentConfig {
   /**
-   * Cretea a content configuration from the JSON data given.
+   * Create a content configuration from the JSON data given.
    * @param {object} config - Content configuration data. Must contain:
    *   - `name` - The name of the configuration.
    *   - `dirName` - Directory for the content source.
@@ -63,6 +64,25 @@ export class ContentConfig {
       languageLiteral: 'HTML',
     },
   ];
+
+  /**
+   * Given a raw snippet file path, returns the matching config.
+   * @param {string} snippetPath - The path of the raw snippet file.
+   */
+  static findContentConfigFromRawSnippet = snippetPath => {
+    const snippetDirName = snippetPath.split('/').slice(-3, -2)[0];
+    return this.instances.find(cfg => cfg.dirName === snippetDirName);
+  };
+
+  /**
+   * Given a raw snippet file path, returns the matching page slug.
+   * @param {string} snippetPath - The path of the raw snippet file.
+   */
+  static findSlugFromRawSnippet = snippetPath => {
+    const config = this.findContentConfigFromRawSnippet(snippetPath);
+    const snippetName = snippetPath.split('/').slice(-1)[0].split('.')[0];
+    return `/${config.slugPrefix}${convertToSeoSlug(snippetName)}`;
+  };
 
   _loadLangData = () => {
     if (

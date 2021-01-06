@@ -5,7 +5,7 @@ import { Snippet } from 'blocks/entities/snippet';
 import { SnippetContext } from 'blocks/adapters/snippetContext';
 import { TextParser } from 'blocks/parsers/text';
 import { SnippetSerializer } from 'blocks/serializers/snippet';
-import { Path } from 'blocks/utilities/path';
+import { ContentConfig } from 'blocks/entities/contentConfig';
 
 const watchFiles = (contentDir, templates, { actions, store }) => {
   const { createPage, deletePage } = actions;
@@ -20,7 +20,7 @@ const watchFiles = (contentDir, templates, { actions, store }) => {
   let isReady = false;
 
   const updateSnippet = path => {
-    const config = Path.findContentConfigFromRawSnippet(path);
+    const config = ContentConfig.findContentConfigFromRawSnippet(path);
     TextParser.fromPath(path, {
       withMetadata: true,
     }).then(async data => {
@@ -41,7 +41,7 @@ const watchFiles = (contentDir, templates, { actions, store }) => {
     });
   };
   const deleteSnippet = path => {
-    const slug = Path.findSlugFromRawSnippet(path);
+    const slug = ContentConfig.findSlugFromRawSnippet(path);
     fs.removeSync(slug);
     deletePageIfExists(slug);
   };
