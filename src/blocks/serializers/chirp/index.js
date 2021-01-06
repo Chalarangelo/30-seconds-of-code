@@ -15,6 +15,7 @@ export class ChirpSerializer {
   } = {}) => {
     const boundLog = Logger.bind('serializers.chirp.serialize');
     const nodes = Requirements.load().requirables.reduce((acc, s) => {
+      if (s.isUnlisted || s.template !== 'SnippetPage') return acc;
       const rule = rules.find(r => new RegExp(r.matcher).test(s.relRoute));
       if (rule) {
         const description = `${s.context.snippet.title}: ${s.context.snippet.description}`;
