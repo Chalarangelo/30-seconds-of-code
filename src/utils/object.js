@@ -60,7 +60,7 @@ export const generateStructuredData = (structuredData, config, logoSrc) => {
         },
         headline: structuredData.title,
         description: structuredData.description,
-        image: [`${config.websiteUrl}${logoSrc}`],
+        image: `${config.websiteUrl}${logoSrc}`,
         datePublished: structuredData.firstSeen,
         dateModified: structuredData.lastUpdated,
         author: {
