@@ -12,10 +12,12 @@
       <link>{{ websiteUrl }}</link>
     </image>
     <ttl>1440</ttl>
+    <atom:link href="{{ websiteUrl }}/feed.xml" rel="self" type="application/rss+xml" />
     {{# each nodes }}
       <item>
         <title>{{ this.title }}</title>
         <link>{{ this.fullRoute }}</link>
+        <guid>{{ this.fullRoute }}</guid>
         <description>{{ this.description }}</description>
         <pubDate>{{ this.pubDate }}</pubDate>
       </item>
