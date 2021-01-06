@@ -99,7 +99,7 @@ describe('ContentConfig', () => {
       ).toBe(true);
     });
 
-    it('should return the languge data from the class', () => {
+    it('should return the language data from the class', () => {
       expect(configs.react.langData).toBe(ContentConfig.langData);
     });
 
@@ -120,6 +120,24 @@ describe('ContentConfig', () => {
       expect(
         configs.blog.outPath.endsWith(global.settings.paths.contentPath)
       ).toBe(true);
+    });
+  });
+
+  describe('findContentConfigFromRawSnippet', () => {
+    it('returns the correct result', () => {
+      expect(
+        ContentConfig.findContentConfigFromRawSnippet(
+          'content/sources/30code/snippets/any.md'
+        ).name
+      ).toBe('30 seconds of code');
+    });
+  });
+
+  describe('findSlugFromRawSnippet', () => {
+    it('returns the correct result', () => {
+      expect(
+        ContentConfig.findSlugFromRawSnippet('content/sources/30code/snippets/any.md')
+      ).toBe('/js/s/any');
     });
   });
 });
