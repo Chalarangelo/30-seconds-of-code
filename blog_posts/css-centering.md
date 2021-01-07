@@ -15,7 +15,7 @@ Using flexbox to vertically and horizontally center content is usually the prefe
 
 Using the grid module is very much similar to flexbox and is also quite common, especially if you are already using grid in your layout. The only difference from the previous technique is the `display` which is set to `grid` instead. You can view the [Grid centering snippet](/css/s/grid-centering) for the code and examples.
 
-### Tranform
+### Transform
 
 Transform centering uses, as the name implies, CSS transforms to center an element. It depends on the container element having a `position: relative`, allowing the child element to utilize `position: absolute` to position itself. Then `left: 50%` and `top: 50%` are used to offset the child element and `transform: translate(-50%, -50%)` to negate its position. You can view the [Transform centering snippet](/css/s/transform-centering) for the code and examples.
 
