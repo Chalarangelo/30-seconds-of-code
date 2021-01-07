@@ -174,6 +174,13 @@ describe('SnippetCollection', () => {
       expect(collections.tag.name).not.toBe(null);
       expect(collections.tagWithMetadata.name).not.toBe(collections.tag.name);
     });
+
+    it('should produce the correct description', () => {
+      expect(collections.main.description).toBe(null);
+      expect(collections.blog.description).toBe(null);
+      expect(collections.language.description).not.toBe(null);
+      expect(collections.tag.description).not.toBe(null);
+      expect(collections.tagWithMetadata.description).not.toBe(null);
     });
 
     it('should produce the correct seoDescription', () => {

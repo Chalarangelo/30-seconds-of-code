@@ -44,6 +44,10 @@ export class SnippetCollectionListing {
     return this.snippetCollection.type;
   }
 
+  get listingDescription() {
+    return this.snippetCollection.description;
+  }
+
   get listingSublinks() {
     if (this.snippetCollection.type === 'main') {
       return SnippetCollection.collectionMetas
@@ -81,6 +85,7 @@ export class SnippetCollectionListing {
   static serializableAttributes = [
     'listingName',
     'listingTitle',
+    'listingDescription',
     'listingType',
     'listingSublinks',
     'pageDescription',
