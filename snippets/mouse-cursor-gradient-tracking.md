@@ -7,7 +7,7 @@ A hover effect where the gradient follows the mouse cursor.
 
 - Declare two CSS variables, `--x` and `--y`, used to track the position of the mouse on the button.
 - Declare a CSS variable, `--size`, used to modify the gradient's dimensions.
-- Use `background: radial-gradient(circle closest-side, pink, transparent);` to create the gradient at the correct postion.
+- Use `background: radial-gradient(circle closest-side, pink, transparent);` to create the gradient at the correct position.
 - Use `Document.querySelector()` and `EventTarget.addEventListener()` to register a handler for the `'mousemove'` event.
 - Use `Element.getBoundingClientRect()` and `CSSStyleDeclaration.setProperty()` to update the values of the `--x` and `--y` CSS variables.
 

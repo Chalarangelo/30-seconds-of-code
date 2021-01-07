@@ -7,7 +7,7 @@ Truncates text that is longer than one line.
 
 - Use `overflow: hidden` to prevent the text from overflowing its dimensions.
 - Set a fixed `width` to ensure the element has at least one constant dimension.
-- Set `height: 109.2px` as calculated from the `font-size`, using the formule `font-size * line-height * numberOfLines` (in this case `26 * 1.4 * 3 = 109.2`).
+- Set `height: 109.2px` as calculated from the `font-size`, using the formula `font-size * line-height * numberOfLines` (in this case `26 * 1.4 * 3 = 109.2`).
 - Set `height: 36.4px` as calculated for the gradient container, based on the formula `font-size * line-height` (in this case `26 * 1.4 = 36.4`).
 - Use `background` with `linear-gradient()` to create a gradient from `transparent` to the `background-color`.
 

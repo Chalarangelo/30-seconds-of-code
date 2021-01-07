@@ -3,7 +3,7 @@ title: Triangle
 tags: visual,beginner
 ---
 
-Creates a trinagular shape with pure CSS.
+Creates a triangular shape with pure CSS.
 
 - Use three borders to create a triangle shape.
 - All borders should have the same `border-width` (`20px`).
