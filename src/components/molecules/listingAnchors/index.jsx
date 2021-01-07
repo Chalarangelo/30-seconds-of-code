@@ -23,9 +23,14 @@ const ListingAnchors = ({ items, isCompact = false, ...rest }) => {
     if (isCompact && typeof document !== 'undefined') {
       // Wrap in try-catch to be able to test in Jest/Enzyme
       try {
-        document
-          .querySelector('.listing-anchors .selected')
-          .scrollIntoView(false);
+        const listItem = document.querySelector('.listing-anchors .selected')
+          .parentNode;
+        const container = listItem.offsetParent;
+        if (
+          container.scrollLeft + container.clientWidth <
+          listItem.offsetLeft + listItem.offsetWidth
+        )
+          container.scrollTo(listItem.offsetLeft + listItem.offsetWidth, 0);
       } catch {
         return;
       }

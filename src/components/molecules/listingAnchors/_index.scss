@@ -9,7 +9,8 @@
 }
 
 .listing-anchors {
-  margin: 0.25rem 0.875rem 1.5rem;
+  position: relative;
+  margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
@@ -104,6 +105,8 @@
 }
 
 .listing-anchors.compact {
+  justify-content: flex-start;
+
   li {
     padding-bottom: 0;
   }
