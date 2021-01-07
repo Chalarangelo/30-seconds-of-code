@@ -3,7 +3,7 @@ title: from_iso_date
 tags: date,intermediate
 ---
 
-Converts a date from its ISO-8601 represenation.
+Converts a date from its ISO-8601 representation.
 
 - Use `datetime.datetime.fromisoformat()` to convert the given ISO-8601 date to a `datetime.datetime` object.
 
