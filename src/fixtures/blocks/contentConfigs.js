@@ -85,5 +85,10 @@ export const rawConfigs = {
       iconName: 'dart',
     },
     biasPenaltyMultiplier: 1.3,
+    tagMetadata: {
+      array: {
+        name: 'Test name',
+      },
+    },
   },
 };
