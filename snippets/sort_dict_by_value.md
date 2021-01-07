@@ -3,7 +3,7 @@ title: sort_dict_by_value
 tags: dictionary,intermediate
 ---
 
-Sorts the given dictionary by key.
+Sorts the given dictionary by value.
 
 - Use `dict.items()` to get a list of tuple pairs from `d` and sort it using a lambda function and `sorted()`.
 - Use `dict()` to convert the sorted list back to a dictionary.
