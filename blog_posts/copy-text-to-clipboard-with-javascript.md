@@ -9,7 +9,7 @@ excerpt: Learn how to programmatically copy text to clipboard with a few lines o
 
 ### Core functionality
 
-A very common need when building websites is the ability to copy text to clipboard with a single button click. Javascript can easily do this in five short steps:hout the user selecting it or hitting the appropriate key combination on their keyboard. Javascript can easily do this in five short steps:
+A very common need when building websites is the ability to copy text to clipboard with a single button click. Javascript can easily do this in five short steps:
 
 1. Create a` <textarea>` element to be appended to the document. Set its value to the string that we want to copy to the clipboard.
 2. Append said `<textarea>` element to the current HTML document.
