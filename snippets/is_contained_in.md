@@ -5,7 +5,7 @@ tags: list,intermediate
 
 Checks if the elements of the first list are contained in the second one regardless of order.
 
-- Use `count()` to check if any value in `a` has more occurences than it has in `b`.
+- Use `count()` to check if any value in `a` has more occurrences than it has in `b`.
 - Return `False` if any such value is found, `True` otherwise.
 
 ```py

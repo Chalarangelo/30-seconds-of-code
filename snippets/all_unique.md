@@ -5,7 +5,7 @@ tags: list,beginner
 
 Checks if all the values in a list are unique.
 
-- Use `set()` on the given list to keep only unique occurences.
+- Use `set()` on the given list to keep only unique occurrences.
 - Use `len()` to compare the length of the unique values to the original list.
 
 ```py
