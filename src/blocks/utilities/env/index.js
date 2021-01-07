@@ -41,7 +41,7 @@ export class Env {
         ...globalConfig,
         paths: { ...pathConfig },
         configs: JSONParser.fromGlob(
-          `${pathConfig.rawContentPath}/configs/*.json`
+          `${pathConfig.rawContentPath}/configs/repos/*.json`
         ).map(cfg => new ContentConfig(cfg)),
         env,
       }
