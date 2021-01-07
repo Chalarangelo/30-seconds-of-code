@@ -32,13 +32,20 @@ export class SnippetCollectionListing {
   }
 
   get listingTitle() {
-    if (this.snippetCollection.type === 'tag')
+    if (
+      this.snippetCollection.type === 'tag' &&
+      !this.snippetCollection.tagMetadata
+    )
       return this.snippetCollection.language;
     return this.snippetCollection.name;
   }
 
   get listingType() {
     return this.snippetCollection.type;
+  }
+
+  get listingDescription() {
+    return this.snippetCollection.description;
   }
 
   get listingSublinks() {
@@ -78,6 +85,7 @@ export class SnippetCollectionListing {
   static serializableAttributes = [
     'listingName',
     'listingTitle',
+    'listingDescription',
     'listingType',
     'listingSublinks',
     'pageDescription',

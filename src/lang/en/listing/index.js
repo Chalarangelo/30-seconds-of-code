@@ -9,7 +9,7 @@ const literals = {
     newest: 'Newest',
   },
   snippetList: 'Snippet List',
-  blog: 'Blog',
+  blog: 'Articles',
   tag: t => `${capitalize(t)}`,
   shortCodelang: l => `${l}`,
   shortCodelangTag: (l, t) => `${l} ${capitalize(t)}`,
@@ -27,7 +27,7 @@ const literals = {
           settings.websiteName
         }.`;
       case 'blog':
-        return `Browse ${p.snippetCount} code blogs for all your development needs on ${settings.websiteName}.`;
+        return `Browse ${p.snippetCount} code articles for all your development needs on ${settings.websiteName}.`;
       case 'main':
         return `Browse ${
           p.snippetCount

@@ -118,6 +118,16 @@ export class SnippetCollection {
     };
   }
 
+  get tagMetadata() {
+    if (!this._tagMetadata) {
+      this._tagMetadata =
+        this.tag &&
+        this.config.tagMetadata &&
+        this.config.tagMetadata[this.tag];
+    }
+    return this._tagMetadata;
+  }
+
   get name() {
     if (!this._name) {
       switch (this.type) {
@@ -131,10 +141,13 @@ export class SnippetCollection {
           this._name = literals.listing.codelang(this.config.language.long);
           break;
         case 'tag':
-          this._name = literals.listing.codelangTag(
-            this.config.language.long,
-            this.tag
-          );
+          this._name =
+            this.tagMetadata && this.tagMetadata.name
+              ? this.tagMetadata.name
+              : literals.listing.codelangTag(
+                  this.config.language.long,
+                  this.tag
+                );
           break;
         default:
           break;
@@ -143,6 +156,9 @@ export class SnippetCollection {
     return this._name;
   }
 
+  /**
+   * Short name. Used only in listing metas (e.g. sublink text).
+   */
   get shortName() {
     if (!this._shortName) {
       switch (this.type) {
@@ -168,6 +184,36 @@ export class SnippetCollection {
       }
     }
     return this._shortName;
+  }
+
+  get description() {
+    if (!this._description) {
+      switch (this.type) {
+        case 'main':
+          this._description = null;
+          break;
+        case 'blog':
+          this._description = null;
+          break;
+        case 'language':
+          this._description =
+            this.config.description && this.config.description.length
+              ? this.config.description
+              : null;
+          break;
+        case 'tag':
+          this._description =
+            this.tagMetadata && this.tagMetadata.description
+              ? this.tagMetadata.description
+              : this.config.description && this.config.description.length
+              ? this.config.description
+              : null;
+          break;
+        default:
+          break;
+      }
+    }
+    return this._description;
   }
 
   get seoDescription() {
