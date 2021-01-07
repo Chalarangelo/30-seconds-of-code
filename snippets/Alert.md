@@ -5,7 +5,7 @@ tags: components,state,effect,beginner
 
 Renders an alert component with `type` prop.
 
-- Use the `useState()` hook to create the `isShown` and `isLeaving` state variables and set both to `false` intially.
+- Use the `useState()` hook to create the `isShown` and `isLeaving` state variables and set both to `false` initially.
 - Define `timeoutId` to keep the timer instance for clearing on component unmount.
 - Use the `useEffect()` hook to update the value of `isShown` to `true` and clear the interval by using `timeoutId` when the component is unmounted.
 - Define a `closeAlert` function to set the component as removed from the DOM by displaying a fading out animation and set `isShown` to `false` via `setTimeout()`.

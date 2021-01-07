@@ -9,7 +9,7 @@ Renders an accordion menu with multiple collapsible content elements.
 - Use the `isCollapsed` prop in `AccordionItem` to determine its appearance and set an appropriate `className`.
 - Define an `Accordion` component that uses the `useState()` hook to initialize the value of the `bindIndex` state variable to `defaultIndex`.
 - Filter `children` to remove unnecessary nodes except for `AccordionItem` by identifying the function's name.
-- Use `Array.prototype.map()` on the collected nodes to render the individual collapsiple elements.
+- Use `Array.prototype.map()` on the collected nodes to render the individual collapsible elements.
 - Define `changeItem`, which will be executed when clicking an `AccordionItem`'s `<button>`.
 - `changeItem` executes the passed callback, `onItemClick`, and updates `bindIndex` based on the clicked element.
 
