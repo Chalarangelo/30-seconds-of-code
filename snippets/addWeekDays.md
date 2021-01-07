@@ -3,7 +3,7 @@ title: addWeekDays
 tags: date,intermediate
 ---
 
-Calculates the date after adding the ginen number of business days.
+Calculates the date after adding the given number of business days.
 
 - Use `Array.from()` to construct an array with `length` equal to the `count` of business days to be added.
 - Use `Array.prototype.reduce()` to iterate over the array, starting from `startDate` and incrementing, using `Date.prototype.getDate()` and `Date.prototype.setDate()`.
