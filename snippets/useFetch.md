@@ -7,8 +7,8 @@ Implements `fetch` in a declarative manner.
 
 - Create a custom hook that takes a `url` and `options`.
 - Use the `useState()` hook to initialize the `response` and `error` state variables.
-- Use the `useEffect()` hook to anychronously call `fetch()` and update the state variables accordingly.
-- Return an object containting the `response` and `error` state variables.
+- Use the `useEffect()` hook to asynchronously call `fetch()` and update the state variables accordingly.
+- Return an object containing the `response` and `error` state variables.
 
 ```jsx
 const useFetch = (url, options) => {
