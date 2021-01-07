@@ -13,6 +13,7 @@ const propTypes = {
   paginator: PropTypes.paginator,
   sorter: PropTypes.sorter,
   listingName: PropTypes.string,
+  listingDescription: PropTypes.string,
   listingType: PropTypes.string,
   listingSublinks: PropTypes.arrayOf(PropTypes.shape({})),
 };
@@ -27,25 +28,47 @@ const SnippetList = ({
   paginator,
   sorter,
   listingName,
+  listingDescription = '',
   listingType,
   listingSublinks = [],
 }) => {
   /* istanbul ignore next */
   const ctaIndex = 4;
+  const isMainOrBlogListing = listingType === 'main' || listingType === 'blog';
   const withSorter = sorter && sorter.orders && sorter.orders.length > 1;
 
   return snippetList.length ? (
     <>
-      {listingSublinks.length ? (
-        <ListingAnchors
-          isCompact={listingType !== 'main'}
-          items={listingSublinks}
-        />
-      ) : null}
-      <PageTitle className={withSorter ? 'with-sorter' : null}>
-        {listingName}
-      </PageTitle>
-      <Sorter sorter={sorter} />
+      {isMainOrBlogListing ? (
+        <>
+          {listingSublinks.length ? (
+            <ListingAnchors
+              isCompact={listingType !== 'main'}
+              items={listingSublinks}
+            />
+          ) : null}
+          <PageTitle className={withSorter ? 'with-sorter' : null}>
+            {listingName}
+          </PageTitle>
+          <Sorter sorter={sorter} />
+        </>
+      ) : (
+        <>
+          <PageTitle>{listingName}</PageTitle>
+          {listingDescription && listingDescription.length ? (
+            <p className='snippet-list-description'>{listingDescription}</p>
+          ) : null}
+          <div className='snippet-list-controls'>
+            {listingSublinks.length ? (
+              <ListingAnchors
+                isCompact={listingType !== 'main'}
+                items={listingSublinks}
+              />
+            ) : null}
+            <Sorter sorter={sorter} />
+          </div>
+        </>
+      )}
       <ul className='snippet-list'>
         {insertAt(
           ctaIndex,

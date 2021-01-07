@@ -64,10 +64,6 @@ describe('<SnippetList />', () => {
     expect(pageTitle.textContent).toBe(listingName);
   });
 
-  it('should add the sorter styles to PageTitle', () => {
-    expect(pageTitle.className).toContain('with-sorter');
-  });
-
   it('should pass the paginator to Paginator', () => {
     expect(paginate.querySelector('.current-page').textContent).toEqual(
       `${paginator.pageNumber}`
