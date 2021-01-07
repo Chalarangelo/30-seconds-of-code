@@ -139,7 +139,7 @@ export class Snippet {
   get expertise() {
     if (!this._expertise) {
       this._expertise = this.config.isBlog
-        ? 'blog'
+        ? 'article'
         : Tag.determineExpertise(this.tags.all);
     }
     return this._expertise;
@@ -234,7 +234,7 @@ export class Snippet {
           url: `/${slugParts[0]}/p/1`,
           name:
             this.config.cardTemplate === 'BlogSnippetCard'
-              ? Tag.format('blog')
+              ? Tag.format('article')
               : this.language.long,
         },
       ];
