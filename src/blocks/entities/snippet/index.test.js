@@ -113,7 +113,7 @@ describe('Snippet', () => {
 
     it('has the correct expertise', () => {
       expect(snippet.tags.all.includes(snippet.expertise)).toBe(true);
-      expect(blogSnippet.expertise).toBe('blog');
+      expect(blogSnippet.expertise).toBe('article');
     });
 
     it('has the correct listed status', () => {
