@@ -3,7 +3,7 @@ title: countSubstrings
 tags: string,algorithm,beginner
 ---
 
-Counts the occurences of a substring in a given string.
+Counts the occurrences of a substring in a given string.
 
 - Use `Array.prototype.indexOf()` to look for `searchValue` in `str`.
 - Increment a counter if the value is found and update the index, `i`.
