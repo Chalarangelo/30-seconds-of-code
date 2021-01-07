@@ -118,6 +118,16 @@ export class SnippetCollection {
     };
   }
 
+  get tagMetadata() {
+    if (!this._tagMetadata) {
+      this._tagMetadata =
+        this.tag &&
+        this.config.tagMetadata &&
+        this.config.tagMetadata[this.tag];
+    }
+    return this._tagMetadata;
+  }
+
   get name() {
     if (!this._name) {
       switch (this.type) {
@@ -131,10 +141,13 @@ export class SnippetCollection {
           this._name = literals.listing.codelang(this.config.language.long);
           break;
         case 'tag':
-          this._name = literals.listing.codelangTag(
-            this.config.language.long,
-            this.tag
-          );
+          this._name =
+            this.tagMetadata && this.tagMetadata.name
+              ? this.tagMetadata.name
+              : literals.listing.codelangTag(
+                  this.config.language.long,
+                  this.tag
+                );
           break;
         default:
           break;
@@ -143,6 +156,9 @@ export class SnippetCollection {
     return this._name;
   }
 
+  /**
+   * Short name. Used only in listing metas (e.g. sublink text).
+   */
   get shortName() {
     if (!this._shortName) {
       switch (this.type) {

@@ -110,6 +110,16 @@ describe('SnippetCollection', () => {
         },
         [snippets[2]]
       );
+      collections.tagWithMetadata = new SnippetCollection(
+        {
+          type: 'tag',
+          slugPrefix: 'dart/t/array',
+          config: configs.dart,
+          parentCollection: collections.language,
+          tag: 'array',
+        },
+        [snippets[2]]
+      );
     });
 
     it('should store collection metadata', () => {
@@ -151,11 +161,19 @@ describe('SnippetCollection', () => {
       ]);
     });
 
+    it('should produce the correct tag metadata', () => {
+      expect(collections.main.tagMetadata).toBeFalsy();
+      expect(collections.tag.tagMetadata).toBeFalsy();
+      expect(collections.tagWithMetadata.tagMetadata).toBeTruthy();
+    });
+
     it('should produce the correct name', () => {
       expect(collections.main.name).not.toBe(null);
       expect(collections.blog.name).not.toBe(null);
       expect(collections.language.name).not.toBe(null);
       expect(collections.tag.name).not.toBe(null);
+      expect(collections.tagWithMetadata.name).not.toBe(collections.tag.name);
+    });
     });
 
     it('should produce the correct seoDescription', () => {

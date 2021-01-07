@@ -32,7 +32,10 @@ export class SnippetCollectionListing {
   }
 
   get listingTitle() {
-    if (this.snippetCollection.type === 'tag')
+    if (
+      this.snippetCollection.type === 'tag' &&
+      !this.snippetCollection.tagMetadata
+    )
       return this.snippetCollection.language;
     return this.snippetCollection.name;
   }
