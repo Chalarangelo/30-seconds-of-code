@@ -11,7 +11,7 @@ Python's named tuples are a very simple yet interesting feature that can make a 
 
 For example, a point in the two-dimensional plane can be represented using two coordinates. In a regular tuple, these values would be accessed by index (`[0]` and `[1]`), but if we define a named tuple, `Point`, we can access them using `x` and `y` instead (although we can still use indexes, too, if we want):
 
-```python
+```py
 from collections import namedtuple
 
 # Regular tuple
@@ -24,7 +24,7 @@ q = Point(3, 5) # q.x = 3, q.y = 5
 
 Apart from the increased readability of your code, named tuples provide a few other quality of life improvements. First and foremost, they allow for default values to be specified via the `defaults` iterable argument. Secondly, they have the ability to automatically rename duplicate or invalid fields via the `rename` boolean argument. And, finally, they even provide a convenient option to specify field names as a list or comma/space-separated string.
 
-```python
+```py
 from collections import namedtuple
 
 Point = namedtuple('Point', ['x', 'y', 'z'], defaults = [1]);

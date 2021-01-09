@@ -11,7 +11,7 @@ excerpt: Learn 3 easy ways to swap the values of two variables in Python.
 
 The simplest way to swap the values of two variables is using a `temp` variable. The `temp` variables is used to store the value of the fist variable (`temp = a`), allowing you to swap the value of the two variables (`a = b`) and then assign the value of `temp` to the second variable.
 
-```python
+```py
 a = 11
 b = 7
 
@@ -29,7 +29,7 @@ Another way to swap the values of two variables, without using a temporary varia
 
 This method of variable swapping and permutation can be used for more than two variables as long as the same number of variables are on both sides of the statement.
 
-```python
+```py
 a = 11
 b = 7
 
@@ -43,7 +43,7 @@ print(b) # 11
 
 If the two variables are numbers, their values can be swapped using arithmetic operators such as addition and subtraction (`+`, `-`) or multiplication and division (`*`, `/`). This swapping method is based on calculating the sum of the two numbers and then swapping them using the sum and the difference from the sum.
 
-```python
+```py
 a = 11
 b = 7
 
