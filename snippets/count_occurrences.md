@@ -1,5 +1,5 @@
 ---
-title: count_occurences
+title: count_occurrences
 tags: list,beginner
 ---
 
