@@ -18,7 +18,7 @@ The main difference between the two is that the `is` keyword checks for referenc
 
 Here are some examples to clear up any confusion:
 
-```python
+```py
 a = [1, 2, 3]
 b = a
 c = [x for x in a]

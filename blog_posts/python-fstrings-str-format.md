@@ -11,7 +11,7 @@ excerpt: Learn two ways to format a string in Python with this quick tip.
 
 [Formatted string literals](https://docs.python.org/3/reference/lexical_analysis.html?highlight=lexical%20analysis#formatted-string-literals), commonly known as f-strings, are strings prefixed with `'f`' or `'F'`. These strings can contain replacement fields, enclosed in curly braces (`{}`).
 
-```python
+```py
 name = 'John'
 age = 32
 
@@ -22,7 +22,7 @@ print(f'{name} is {age} years old') # 'John is 32 years old'
 
 The [`str.format()`](https://docs.python.org/3/library/stdtypes.html?highlight=str%20format#str.format) method works very much alike f-strings, the main difference being that replacement fields are supplied as arguments instead of as part of the string.
 
-```python
+```py
 name = 'John'
 age = 32
 

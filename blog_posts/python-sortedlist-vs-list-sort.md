@@ -13,7 +13,7 @@ Python provides two ways to sort a list, the built-in list method `list.sort()` 
 
 The primary difference between the two is that `list.sort()` will sort the list in-place, mutating its indexes and returning `None`, whereas `sorted()` will return a new sorted list leaving the original list unchanged. Another difference is that `sorted()` accepts any iterable while `list.sort()` is a method of the `list` class and can only be used with lists.
 
-```python
+```py
 nums = [2, 3, 1, 5, 6, 4, 0]
 
 print(sorted(nums))   # [0, 1, 2, 3, 4, 5, 6]
