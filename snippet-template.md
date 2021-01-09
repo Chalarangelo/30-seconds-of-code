@@ -10,7 +10,7 @@ Explain briefly what the snippet does.
 - Try to explain everything briefly but clearly.
 
 ```jsx
-function ComponentName(props) {
+const ComponentName = props => {
   const [state, setState] = React.useState(null);
   React.useEffect(() => {
     setState(0);
