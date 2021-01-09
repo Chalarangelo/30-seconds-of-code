@@ -11,12 +11,13 @@
 # * Redirect replaced/renamed snippets.
 # -----------------------------------------------------------------------------
 /css/s/easing-variables                /blog/s/css-easing-variables             301!
+/python/s/count-occurences             /python/s/count-occurrences              301!
 
 # -----------------------------------------------------------------------------
 #   LISTING PAGE REDIRECTS:
 #
 # * Redirect lists to page 1 of the dedicated listing.
-# * This is not entirely necesary, but will help catch some outliers.
+# * This is not entirely necessary, but will help catch some outliers.
 # * Should help with old links, keep this here.
 # -----------------------------------------------------------------------------
 /list                                  /list/p/1                                301!
