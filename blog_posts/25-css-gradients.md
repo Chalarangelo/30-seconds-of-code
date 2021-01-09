@@ -1,5 +1,5 @@
 ---
-title: 25 CSS gradients for you next project
+title: 25 CSS gradients for your next project
 type: cheatsheet
 tags: css,visual
 authors: chalarangelo
