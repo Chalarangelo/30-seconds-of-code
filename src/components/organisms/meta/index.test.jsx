@@ -59,7 +59,7 @@ describe('<Meta />', () => {
       settings.twitterAccount
     );
     expect(helmet.metaTags.find(v => v.name === 'twitter:card').content).toBe(
-      'summary'
+      'summary_large_image'
     );
     expect(helmet.metaTags.find(v => v.name === 'twitter:title').content).toBe(
       literals.siteName
