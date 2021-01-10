@@ -3,7 +3,7 @@ export const rawCollections = {
     slug: 'c/js-collection',
     name: 'JavaScript Collection',
     featured: 2,
-    snippetIds: ['dart/s/any'],
+    snippetIds: ['dart/s/any', 'react/s/any'],
     theme: {
       iconName: 'js',
     },
