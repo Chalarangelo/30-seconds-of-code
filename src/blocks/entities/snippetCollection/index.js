@@ -15,7 +15,9 @@ export class SnippetCollection {
    * @param {object} collectionInfo - Collection data. Required keys:
    *  - `type`: One of ['main', 'blog', 'language', 'tag', 'collection']
    *  - `slugPrefix`: The prefix for listed slugs in the collection.
-   *  - `config`: The ContentConfig of the collection. Required by 'language' and 'tag' types.
+   *  - `config`: One of the following:
+   *    - The ContentConfig of the collection. Required by 'language' and 'tag' types.
+   *    - The CollectionConfig of the collection. Required by the collection' type.
    *  - `parentCollection`: The parent SnippetCollection. Required by the 'tag' type.
    *  - `tag`: The tag name (string) of the collection. Required by the 'tag' type.
    * @param {Array<Snippet>} snippets - An array of Snippet objects.
@@ -43,7 +45,7 @@ export class SnippetCollection {
       );
     }
 
-    if (['language', 'tag'].includes(type) && !rest.config) {
+    if (['language', 'tag', 'collection'].includes(type) && !rest.config) {
       throw new ArgsError(
         `Missing required argument. 'config' must be a non-empty object when the type is '${type}'.`
       );
@@ -57,7 +59,10 @@ export class SnippetCollection {
 
     this.type = type;
     this.slugPrefix = slugPrefix;
-    this.snippets = snippets.sort((a, b) => b.ranking - a.ranking);
+    this.snippets =
+      type === 'collection'
+        ? snippets
+        : snippets.sort((a, b) => b.ranking - a.ranking);
     Object.keys(rest).forEach(key => {
       if (key === 'name') this._name = rest[key];
       else this[key] = rest[key];
@@ -86,7 +91,8 @@ export class SnippetCollection {
    */
   addSnippets = snippets => {
     this.snippets.push(...snippets);
-    this.snippets.sort((a, b) => b.ranking - a.ranking);
+    if (this.type !== 'collection')
+      this.snippets.sort((a, b) => b.ranking - a.ranking);
     return this;
   };
 
@@ -137,6 +143,9 @@ export class SnippetCollection {
         case 'blog':
           this._name = literals.listing.blog;
           break;
+        case 'collection':
+          this._name = this.config.name;
+          break;
         case 'language':
           this._name = literals.listing.codelang(this.config.language.long);
           break;
@@ -167,6 +176,9 @@ export class SnippetCollection {
           break;
         case 'blog':
           this._shortName = literals.listing.blog;
+          break;
+        case 'collection':
+          this._shortName = this.config.name;
           break;
         case 'language':
           this._shortName = literals.listing.shortCodelang(
@@ -199,6 +211,12 @@ export class SnippetCollection {
           break;
         case 'blog':
           this._description = null;
+          break;
+        case 'collection':
+          this._description =
+            this.config.description && this.config.description.length
+              ? this.config.description
+              : null;
           break;
         case 'language':
           this._description =
@@ -260,7 +278,8 @@ export class SnippetCollection {
   }
 
   get icon() {
-    if (!['language', 'blog', 'tag'].includes(this.type)) return undefined;
+    if (!['language', 'blog', 'tag', 'collection'].includes(this.type))
+      return undefined;
     return this.config.theme && this.config.theme.iconName;
   }
 
@@ -285,7 +304,7 @@ export class SnippetCollection {
 
   get isListed() {
     if (!this._isListed) {
-      if (['blog', 'main'].includes(this.type)) {
+      if (['blog', 'main', 'collection'].includes(this.type)) {
         this._isListed = true;
       } else if (['language', 'tag'].includes(this.type)) {
         this._isListed = this.config.featured > 0;
