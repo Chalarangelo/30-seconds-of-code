@@ -1,9 +1,9 @@
 ---
-title: Stripes background pattern
+title: Zig zag background pattern
 tags: visual,advanced
 ---
 
-Creates a stripes background pattern.
+Creates a zig zag background pattern.
 
 - Use `background-color` to set a white background.
 - Use `background-image` with four `linear-gradient()` values to create the parts of a zig zag pattern.
