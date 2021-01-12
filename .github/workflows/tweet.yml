@@ -1,7 +1,7 @@
 name: Post on Twitter
 on:
   schedule:
-    - cron: "20 8,12,14,17 * * *"
+    - cron: "20 8,12,17 * * *"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,7 +10,7 @@ jobs:
     - name: Install dependencies
       run: npm install
     - name: Take screenshot and tweet
-      env: 
+      env:
         ACCESS_TOKEN_KEY: ${{ secrets.ACCESS_TOKEN_KEY }}
         ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
         CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
