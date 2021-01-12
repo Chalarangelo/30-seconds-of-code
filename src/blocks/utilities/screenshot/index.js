@@ -51,15 +51,16 @@ export class Screenshot {
     await sleep(1000);
     await page.evaluate(
       (imageUrl, name) => {
-        // Remove card actions
-        const copyButton = document.querySelector('.card-actions');
-        copyButton.remove();
+        // Remove card actions and description
+        const cardActions = document.querySelector('.card-actions');
+        const cardDescription = document.querySelector('.card-description');
+        cardActions.remove();
+        cardDescription.remove();
 
         // Style card
         const card = document.querySelector('.snippet-card');
         card.style.maxWidth = '800px';
         card.style.zIndex = '8';
-
         // Add logo inside the card
         const logo = document.querySelector('.nav-website-logo');
         logo.style.position = 'absolute';
