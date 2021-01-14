@@ -1,0 +1,50 @@
+// Colors
+:root {
+  --chip-back-color: #FFFFFF;
+  --chip-fore-color: #202124;
+  --chip-shadow-color: rgba(0, 32, 128, 0.07);
+}
+
+// Dark mode colors
+.page-container.dark {
+  --chip-back-color: #1A1D21;
+  --chip-fore-color: #E1ECF4;
+  --chip-shadow-color: rgba(0, 3, 10, 0.16);
+}
+
+.collection-chip {
+  background: var(--chip-back-color);
+  border-radius: 1rem;
+  box-shadow: 0px 1px 3px 1px var(--chip-shadow-color);
+
+  > .icon {
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    padding: 0.5rem 0.25rem 0.5rem 4.25rem;
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Raleway', Helvetica, sans-serif;
+    letter-spacing: 0.25px;
+    font-variant-numeric: lining-nums;
+    text-align: center;
+
+    &, &:link, &:visited {
+      color: var(--chip-fore-color);
+    }
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 36px;
+      width: 64px;
+      height: 64px;
+      border-radius: 1rem;
+      line-height: 64px;
+      text-align: center;
+    }
+  }
+}
