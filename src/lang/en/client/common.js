@@ -12,6 +12,7 @@ const literals = {
   recommendedSnippets: 'Recommended snippets',
   blog: 'Blog',
   settings: 'Settings',
+  viewAll: 'View all',
   siteName: settings.websiteName,
   siteAuthor: settings.orgName,
   siteDescription: settings.websiteDescription,
