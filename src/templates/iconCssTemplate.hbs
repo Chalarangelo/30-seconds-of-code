@@ -30,3 +30,12 @@
   }
 {{/ each }}
 }
+
+{{ chipSelector }} {
+{{# each langIcons }}
+  > .{{ ../classPrefix }}{{ this.iconName }}:before {
+    background: {{ this.backColor }};
+    color: {{ this.foreColor }};
+  }
+{{/ each }}
+}
