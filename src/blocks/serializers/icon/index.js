@@ -42,6 +42,7 @@ export class IconSerializer {
       cssClassName = global.settings.icons.cssClassName,
       cssClassPrefix = global.settings.icons.cssClassPrefix,
       cssLanguageSelectors = global.settings.icons.cssLanguageSelectors,
+      cssLanguageChipSelector = global.settings.icons.cssLanguageChipSelector,
     } = {}
   ) => {
     if (!fileList || !fileList.length || !configs || !configs.length) {
@@ -71,6 +72,7 @@ export class IconSerializer {
         baseClassNames: cssClassName,
         classPrefix: cssClassPrefix,
         langSelectors: cssLanguageSelectors,
+        chipSelector: cssLanguageChipSelector,
         langIcons: configs.map(cfg => cfg.theme).filter(Boolean),
       },
     };
