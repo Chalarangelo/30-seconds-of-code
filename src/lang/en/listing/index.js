@@ -8,6 +8,10 @@ const literals = {
     expertise: 'Expertise',
     newest: 'Newest',
   },
+  featuredCollections: 'Featured Collections',
+  collections: 'Snippet Collections',
+  newBlogs: 'Latest Articles',
+  topSnippets: 'Top Snippets',
   snippetList: 'Snippet List',
   blog: 'Articles',
   tag: t => `${capitalize(t)}`,
@@ -34,6 +38,8 @@ const literals = {
         } ${settings.websiteDescription.toLowerCase()} on ${
           settings.websiteName
         }.`;
+      case 'collections':
+        return `Browse ${p.collectionCount} snippet collections on ${settings.websiteName}.`;
       default:
         return `Find ${settings.websiteDescription.toLowerCase()} on ${
           settings.websiteName
