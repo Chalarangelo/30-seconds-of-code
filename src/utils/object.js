@@ -98,6 +98,17 @@ export const generateStructuredData = (structuredData, config, logoSrc) => {
           name: li.title,
         })),
       };
+    case 'home':
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        url: `${config.websiteUrl}`,
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: `${config.websiteUrl}/search?keyphrase={keyphrase}`,
+          keyphrase: 'required',
+        },
+      };
     default:
       /* istanbul ignore next */
       return {};
