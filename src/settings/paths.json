@@ -38,6 +38,10 @@
       "path": "settingsPage/index.jsx"
     },
     {
+      "name": "HomePage",
+      "path": "homePage/index.jsx"
+    },
+    {
       "name": "DeveloperPage",
       "path": "developerPage/index.jsx"
     }
