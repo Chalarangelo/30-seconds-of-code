@@ -49,13 +49,7 @@ export class SnippetCollectionListing {
   }
 
   get listingSublinks() {
-    if (this.snippetCollection.type === 'main') {
-      return SnippetCollection.collectionMetas
-        .filter(m => m.featured > 0)
-        .sort((a, b) =>
-          a.featured === b.featured ? a.name - b.name : a.featured - b.featured
-        );
-    } else if (this.snippetCollection.type === 'blog') {
+    if (this.snippetCollection.type === 'blog') {
       return [];
     } else if (['language', 'tag'].includes(this.snippetCollection.type)) {
       const order = this._options.order;
