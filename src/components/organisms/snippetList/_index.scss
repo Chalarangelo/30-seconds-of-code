@@ -23,8 +23,18 @@
   margin: 0.25rem 0.875rem 1.5rem;
   display: grid;
   align-items: center;
-  grid-template-columns: calc(100% - 180px) 180px;
+  grid-template-columns: calc(100% - 172px) 172px;
   grid-column-gap: 0.5rem;
+
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    grid-template-columns: calc(100% - 188px) 188px;
+    grid-column-gap: 1rem;
+  }
+
+  @media screen and (min-width: $layout-large-breakpoint) {
+    grid-template-columns: calc(100% - 212px) 212px;
+    grid-column-gap: 2.5rem;
+  }
 
   .sorter {
     height: 38px;
