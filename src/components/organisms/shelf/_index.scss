@@ -1,0 +1,64 @@
+.snippets-shelf-title,
+.collections-shelf-title {
+  display: block;
+  width: 100%;
+  position: relative;
+  margin-top: 2rem;
+
+  &::before, &::after {
+    color: var(--fore-color-dark);
+    transition: 0.3s ease all;
+  }
+
+  &:hover, &:focus {
+    &::before, &::after {
+      color: var(--a-link-color);
+    }
+  }
+
+  &::before {
+    position: absolute;
+    right: 0.875rem;
+    bottom: 0.625rem;
+    font-size: 1.25rem;
+    pointer-events: all;
+  }
+
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    pointer-events: none;
+
+    &::after {
+      position: absolute;
+      content: attr(data-link-title);
+      right: 2.25rem;
+      bottom: 0;
+      line-height: 2.5rem;
+      pointer-events: all;
+    }
+
+  }
+}
+
+.snippets-shelf-list {
+  margin: 0 0 5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.collections-shelf-list {
+  margin: 1.75rem 0.25rem 5rem;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    margin: 1.75rem 0.875rem 5rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (min-width: $layout-large-breakpoint) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
