@@ -3,6 +3,7 @@ import { generateStructuredData, hasKey, hasKeys, get } from './object';
 import {
   listingStructuredData,
   snippetStructuredData,
+  homeStructuredData,
 } from 'fixtures/metadata';
 
 describe('hasKey', () => {
@@ -74,6 +75,22 @@ describe('generateStructuredData', () => {
     it('result has correct attributes', () => {
       expect(result['@context']).toBe('https://schema.org');
       expect(result['@type']).toBe('ItemList');
+    });
+  });
+
+  describe('with home', () => {
+    let result;
+
+    beforeAll(() => {
+      result = generateStructuredData(
+        { type: 'home' },
+        { websiteUrl: 'https://30secondsofcode.org', orgName: '30 seconds' }
+      );
+    });
+
+    it('result has correct attributes', () => {
+      expect(result['@context']).toBe('https://schema.org');
+      expect(result['@type']).toBe('WebSite');
     });
   });
 });
