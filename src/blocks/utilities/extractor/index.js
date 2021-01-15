@@ -2,12 +2,14 @@ import fs from 'fs-extra';
 import { Logger } from 'blocks/utilities/logger';
 import { Chunk } from 'blocks/utilities/chunk';
 import { TextParser } from 'blocks/parsers/text';
+import { JSONParser } from 'blocks/parsers/json';
 import { Snippet } from 'blocks/entities/snippet';
 import { SnippetPreview } from 'blocks/adapters/snippetPreview';
 import { SnippetCollection } from 'blocks/entities/snippetCollection';
 import { withRecommendations } from 'blocks/decorations/withRecommendations';
 import { SnippetSerializer } from 'blocks/serializers/snippet';
 import { ListingSerializer } from 'blocks/serializers/listing';
+import { HubSerializer } from 'blocks/serializers/hub';
 import { JSONSerializer } from 'blocks/serializers/json';
 import literals from 'lang/en';
 
@@ -106,6 +108,14 @@ export class Extractor {
       await this.writeListings(collections);
       boundLog(`Finished writing listings`, 'success');
 
+      boundLog(`Writing hub pages to directories`, 'info');
+      await this.writeHubPages(
+        collections,
+        JSONParser.fromFile(`${contentDir}/configs/featured.json`)
+          .featuredCollections
+      );
+      boundLog(`Finished writing hub pages`, 'success');
+
       boundLog(`Writing statics to directories`, 'info');
       await this.writeStaticPages(allSnippetData.snippets);
       boundLog(`Finished writing statics`, 'success');
@@ -139,6 +149,10 @@ export class Extractor {
         ListingSerializer.serializeListings(snippetCollection)
       )
     );
+  };
+
+  static writeHubPages = (snippetCollections, featuredCollectionIds) => {
+    return HubSerializer.serialize(snippetCollections, featuredCollectionIds);
   };
 
   static writeStaticPages = allSnippetData => {
