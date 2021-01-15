@@ -60,29 +60,4 @@ describe('<ListingPage />', () => {
       listingTitle
     );
   });
-
-  describe('when is first page', () => {
-    beforeEach(() => {
-      wrapper = renderConnected(
-        <ListingPage
-          pageContext={{
-            snippetList,
-            paginator: firstPagePaginator,
-            sorter: {
-              orders,
-              selected: 'Popularity',
-            },
-            listingName,
-            listingTitle,
-            listingType: 'main',
-            pageDescription,
-          }}
-        />
-      ).container;
-    });
-
-    it('should render the home title', () => {
-      expect(wrapper.querySelectorAll('h1.home-title')).toHaveLength(1);
-    });
-  });
 });
