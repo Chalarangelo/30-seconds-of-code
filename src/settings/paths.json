@@ -42,6 +42,10 @@
       "path": "homePage/index.jsx"
     },
     {
+      "name": "CollectionsPage",
+      "path": "collectionsPage/index.jsx"
+    },
+    {
       "name": "DeveloperPage",
       "path": "developerPage/index.jsx"
     }
