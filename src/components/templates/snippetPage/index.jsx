@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import { connect } from 'react-redux';
 import Meta from 'components/organisms/meta';
 import Breadcrumbs from 'components/molecules/breadcrumbs';
 import Shell from 'components/organisms/shell';
