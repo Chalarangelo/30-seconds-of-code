@@ -4,15 +4,15 @@
   "chirpRules": [
     {
       "matcher": "^/js/s/",
-      "hashtags": "#100DaysOfCode #CodeNewbie #JavaScript #coding"
+      "hashtags": "#JavaScript"
     },
     {
       "matcher": "^/python/s/",
-      "hashtags": "#100DaysOfCode #CodeNewbie #Python #coding"
+      "hashtags": "#Python"
     },
     {
       "matcher": "^/react/s/use",
-      "hashtags": "#100DaysOfCode #CodeNewbie #ReactJS #coding"
+      "hashtags": "#ReactJS"
     }
   ]
 }
