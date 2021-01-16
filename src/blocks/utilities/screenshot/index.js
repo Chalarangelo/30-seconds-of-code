@@ -51,11 +51,9 @@ export class Screenshot {
     await sleep(1000);
     await page.evaluate(
       (imageUrl, name) => {
-        // Remove card actions and description
+        // Remove card actions
         const cardActions = document.querySelector('.card-actions');
-        const cardDescription = document.querySelector('.card-description');
         cardActions.remove();
-        cardDescription.remove();
 
         // Style card
         const card = document.querySelector('.snippet-card');
