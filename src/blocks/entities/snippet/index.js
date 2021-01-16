@@ -103,7 +103,12 @@ export class Snippet {
   static instances = new InstanceCache();
 
   get id() {
-    return `${this.config.sourceDir}/${this.fileName.slice(0, -3)}`;
+    if (!this._id) {
+      this._id = `${this.config.slugPrefix}${convertToSeoSlug(
+        this.fileName.slice(0, -3)
+      )}`;
+    }
+    return this._id;
   }
 
   get slug() {
