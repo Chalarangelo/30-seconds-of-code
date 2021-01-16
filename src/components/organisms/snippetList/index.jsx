@@ -41,12 +41,6 @@ const SnippetList = ({
     <>
       {isMainOrBlogListing ? (
         <>
-          {listingSublinks.length ? (
-            <ListingAnchors
-              isCompact={listingType !== 'main'}
-              items={listingSublinks}
-            />
-          ) : null}
           <PageTitle className={withSorter ? 'with-sorter' : null}>
             {listingName}
           </PageTitle>
@@ -60,10 +54,7 @@ const SnippetList = ({
           ) : null}
           <div className='snippet-list-controls'>
             {listingSublinks.length ? (
-              <ListingAnchors
-                isCompact={listingType !== 'main'}
-                items={listingSublinks}
-              />
+              <ListingAnchors items={listingSublinks} />
             ) : null}
             <Sorter sorter={sorter} />
           </div>

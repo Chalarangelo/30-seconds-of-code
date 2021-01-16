@@ -91,7 +91,7 @@ export class SnippetCollection {
   };
 
   get id() {
-    return `${this.type}/${this.slugPrefix}`;
+    return `${this.type}${this.slugPrefix}`;
   }
 
   get orders() {
@@ -174,10 +174,15 @@ export class SnippetCollection {
           );
           break;
         case 'tag':
-          this._shortName = literals.listing.shortCodelangTag(
-            this.config.language.long,
-            this.tag
-          );
+          this._shortName =
+            this.tagMetadata && this.tagMetadata.shortName
+              ? this.tagMetadata.shortName
+              : this.tagMetadata && this.tagMetadata.name
+              ? this.tagMetadata.name
+              : literals.listing.shortCodelangTag(
+                  this.config.language.long,
+                  this.tag
+                );
           break;
         default:
           break;
@@ -255,7 +260,7 @@ export class SnippetCollection {
   }
 
   get icon() {
-    if (!['language', 'blog'].includes(this.type)) return undefined;
+    if (!['language', 'blog', 'tag'].includes(this.type)) return undefined;
     return this.config.theme && this.config.theme.iconName;
   }
 

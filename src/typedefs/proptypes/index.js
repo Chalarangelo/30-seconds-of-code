@@ -8,6 +8,7 @@ import paginator from './paginator';
 import sorter from './sorter';
 import snippet from './snippet';
 import tags from './tags';
+import chip from './chip';
 
 export default {
   ...PropTypes,
@@ -20,4 +21,5 @@ export default {
   sorter,
   snippet,
   tags,
+  chip,
 };

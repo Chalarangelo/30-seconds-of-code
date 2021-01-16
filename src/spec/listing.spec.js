@@ -60,11 +60,7 @@ describe('Listing', () => {
 
   describe('navigating to a category listing', () => {
     before(() => {
-      cy.get('.listing-anchor.icon-css').first().click();
-    });
-
-    it('should redirect to the category listing page', () => {
-      cy.url().should('contain', 'css/p/1');
+      cy.visit('http://localhost:9000/css/p/1');
     });
 
     describe('clicking a snippet', () => {

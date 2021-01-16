@@ -16,9 +16,8 @@
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  width: calc(100% - 1.75rem);
   scroll-snap-type: x mandatory;
-  justify-content: space-between;
+  justify-content: flex-start;
 
   &::-webkit-scrollbar-track {
     background-color: var(--scrollbar-back-color);
@@ -43,8 +42,15 @@
   li {
     flex: 0 0 64px;
     scroll-snap-align: start;
-    padding-bottom: 2rem;
     margin: 0.25rem 0.75rem;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   .btn {
@@ -52,79 +58,14 @@
     font-size: 1rem;
     min-width: 100%;
     padding: 0.375rem 0.25rem;
-    height: 64px;
+    line-height: 1.5rem;
+    height: 48px;
     border: none;
     box-shadow: none;
     text-align: center;
-
-    &:hover, &:focus {
-      box-shadow: 0px 2px 8px var(--button-shadow-color);
-    }
-
-    @media screen and (min-width: $layout-medium-breakpoint) {
-      padding: 0.625rem 0.875rem;
-    }
-
-    &[title] {
-      position: relative;
-
-      &:after {
-        content: attr(title);
-        position: absolute;
-        top: calc(100% + 1rem);
-        color: var(--fore-color);
-        width: calc(100% + 1.5rem);
-        line-height: 1;
-        left: -0.75rem;
-        text-align: center;
-      }
-
-      &:before {
-        position: absolute;
-        width: 100%;
-        left: 0;
-        top: 0;
-        line-height: 64px;
-        font-size: 36px;
-      }
-    }
-  }
-
-  // Custom styles for dart icon
-  .icon-dart:before {
-    content: '';
-    background-image: generate-icon-background("dartlang", '', '', 0, 26);
-    height: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-}
-
-.listing-anchors:not(.compact) {
-  margin: 1.25rem 0.875rem 2.5rem;
-}
-
-.listing-anchors.compact {
-  justify-content: flex-start;
-
-  li {
-    padding-bottom: 0;
-  }
-
-  li:first-child {
-    margin-left: 0;
-  }
-
-  li:last-child {
-    margin-right: 0;
-  }
-
-  .btn {
     background: transparent;
     border-radius: 0;
     color: var(--fore-color-light);
-    line-height: 1.5rem;
-    height: 48px;
     border-bottom: 2px solid transparent;
 
     &.selected {
@@ -135,6 +76,10 @@
     &:hover, &:focus {
       box-shadow: none;
       color: var(--listing-anchors-selected-color);
+    }
+
+    @media screen and (min-width: $layout-medium-breakpoint) {
+      padding: 0.625rem 0.875rem;
     }
   }
 }

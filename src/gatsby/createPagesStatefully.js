@@ -80,17 +80,10 @@ const createPagesStatefully = (templates, requirables) => ({
     if (process.env.NODE_ENV === 'development' && req.context.snippet)
       context.snippet.vscodeUrl = req.vscodeUrl;
     createPage({
-      path: req.relRoute,
+      path: req.context.isHomePage ? '/' : req.relRoute,
       component: templates[req.template],
       context,
     });
-  });
-
-  const mainListing = requirables.find(req => req.context.isMainListing);
-  createPage({
-    path: '/',
-    component: templates[mainListing.template],
-    context: mainListing.context,
   });
 
   if (process.env.NODE_ENV === 'development') {

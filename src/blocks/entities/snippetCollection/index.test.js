@@ -80,14 +80,14 @@ describe('SnippetCollection', () => {
       collections.main = new SnippetCollection(
         {
           type: 'main',
-          slugPrefix: 'main',
+          slugPrefix: '/main',
         },
         snippets
       );
       collections.blog = new SnippetCollection(
         {
           type: 'blog',
-          slugPrefix: 'blog',
+          slugPrefix: '/blog',
           config: configs.blog,
         },
         [snippets[1]]
@@ -95,7 +95,7 @@ describe('SnippetCollection', () => {
       collections.language = new SnippetCollection(
         {
           type: 'language',
-          slugPrefix: 'dart',
+          slugPrefix: '/dart',
           config: configs.dart,
         },
         [snippets[2]]
@@ -113,7 +113,7 @@ describe('SnippetCollection', () => {
       collections.tagWithMetadata = new SnippetCollection(
         {
           type: 'tag',
-          slugPrefix: 'dart/t/array',
+          slugPrefix: '/dart/t/array',
           config: configs.dart,
           parentCollection: collections.language,
           tag: 'array',
@@ -205,7 +205,7 @@ describe('SnippetCollection', () => {
 
     it('should produce the correct icon', () => {
       expect(collections.language.icon).toBe(configs.dart.theme.iconName);
-      expect(collections.tag.icon).toBe(undefined);
+      expect(collections.tag.icon).toBe(configs.dart.theme.iconName);
     });
 
     it('should produce the correct url', () => {

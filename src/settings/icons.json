@@ -9,5 +9,6 @@
   "cssLanguageSelectors": [
     ".card-icon",
     ".btn"
-  ]
+  ],
+  "cssLanguageChipSelector": ".collection-chip"
 }

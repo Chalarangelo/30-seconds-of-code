@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import PropTypes from 'typedefs/proptypes';
 import Meta from 'components/organisms/meta';
 import PageTitle from 'components/atoms/pageTitle';
-import PageBackdrop from 'components/atoms/pageBackdrop';
 import Shell from 'components/organisms/shell';
 import SimpleCard from 'components/molecules/simpleCard';
 import literals from 'lang/en/client/developer';

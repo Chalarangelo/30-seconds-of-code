@@ -7,7 +7,7 @@ import { rawConfigs } from 'fixtures/blocks/contentConfigs';
 import { rawSnippets } from 'fixtures/blocks/snippets';
 import { Env } from 'blocks/utilities/env';
 
-describe('SnippetContext', () => {
+describe('SnippetCollectionListing', () => {
   let configs = {};
   let snippets = [];
   let collections = {};
@@ -98,7 +98,6 @@ describe('SnippetContext', () => {
     });
 
     it('returns the correct listing sublinks', () => {
-      expect(results.main.listingSublinks.length).toBe(1);
       expect(results.blog.listingSublinks.length).toBe(0);
       expect(results.language.listingSublinks.length).toBe(2);
       expect(results.tag.listingSublinks.length).toBe(2);
