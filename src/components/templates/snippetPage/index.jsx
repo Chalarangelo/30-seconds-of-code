@@ -5,7 +5,6 @@ import Breadcrumbs from 'components/molecules/breadcrumbs';
 import Shell from 'components/organisms/shell';
 import cardComponents from 'components/organisms/snippetCard';
 import RecommendationList from 'components/organisms/recommendationList';
-import CTA from 'components/molecules/cta';
 
 const propTypes = {
   pageContext: PropTypes.shape({
@@ -60,7 +59,6 @@ const SnippetPage = ({
       >
         <Breadcrumbs breadcrumbs={breadcrumbs} />
         <SnippetCard snippet={snippet} />
-        <CTA />
         <RecommendationList snippetList={recommendedSnippets} />
       </Shell>
     </>
