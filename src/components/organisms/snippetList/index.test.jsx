@@ -54,10 +54,6 @@ describe('<SnippetList />', () => {
     it('the appropriate PreviewCard components', () => {
       expect(wrapper.querySelectorAll('.preview-card')).toHaveLength(2);
     });
-
-    it('a CTA component', () => {
-      expect(wrapper.querySelectorAll('.graphic-cta')).toHaveLength(1);
-    });
   });
 
   it('should pass the listingName to PageTitle', () => {

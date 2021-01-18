@@ -4,9 +4,7 @@ import Paginator from 'components/molecules/paginator';
 import Sorter from 'components/molecules/sorter';
 import PageTitle from 'components/atoms/pageTitle';
 import PreviewCard from 'components/molecules/previewCard';
-import CTA from 'components/molecules/cta';
 import ListingAnchors from 'components/molecules/listingAnchors';
-import { insertAt } from 'utils';
 
 const propTypes = {
   snippetList: PropTypes.arrayOf(PropTypes.snippet),
@@ -61,15 +59,9 @@ const SnippetList = ({
         </>
       )}
       <ul className='snippet-list'>
-        {insertAt(
-          ctaIndex,
-          <li key='cta'>
-            <CTA />
-          </li>,
-          snippetList.map(snippet => (
-            <PreviewCard key={`snippet_${snippet.url}`} snippet={snippet} />
-          ))
-        )}
+        {snippetList.map(snippet => (
+          <PreviewCard key={`snippet_${snippet.url}`} snippet={snippet} />
+          ))}
       </ul>
       <Paginator paginator={paginator} />
     </>
