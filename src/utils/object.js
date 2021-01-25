@@ -106,7 +106,7 @@ export const generateStructuredData = (structuredData, config, logoSrc) => {
         potentialAction: {
           '@type': 'SearchAction',
           target: `${config.websiteUrl}/search?keyphrase={keyphrase}`,
-          keyphrase: 'required',
+          'query-input': 'required name=keyphrase',
         },
       };
     default:

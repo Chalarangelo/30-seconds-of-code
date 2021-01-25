@@ -3,6 +3,7 @@ import { Logger } from 'blocks/utilities/logger';
 import { Chunk } from 'blocks/utilities/chunk';
 import { TextParser } from 'blocks/parsers/text';
 import { JSONParser } from 'blocks/parsers/json';
+import { CollectionConfig } from 'blocks/entities/collectionConfig';
 import { Snippet } from 'blocks/entities/snippet';
 import { SnippetPreview } from 'blocks/adapters/snippetPreview';
 import { SnippetCollection } from 'blocks/entities/snippetCollection';
@@ -100,6 +101,22 @@ export class Extractor {
         // Add to collections
         collections.push(c);
       });
+      collections.push(
+        ...JSONParser.fromGlob(`${contentDir}/configs/collections/*.json`).map(
+          cfg => {
+            const collectionConfig = new CollectionConfig(cfg);
+            return new SnippetCollection(
+              {
+                type: 'collection',
+                config: collectionConfig,
+                slugPrefix: `/${collectionConfig.slug}`,
+              },
+              collectionConfig.snippetIds.map(id => Snippet.instances[id])
+            );
+          }
+        )
+      );
+
       boundLog(`Writing snippets to directories`, 'info');
       await this.writeSnippets(allSnippetData.snippets);
       boundLog(`Finished writing snippets`, 'success');

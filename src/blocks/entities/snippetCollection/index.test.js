@@ -1,18 +1,24 @@
 import { SnippetCollection } from '.';
 import { Snippet } from 'blocks/entities/snippet';
 import { ContentConfig } from 'blocks/entities/contentConfig';
+import { CollectionConfig } from 'blocks/entities/collectionConfig';
 import { ArgsError } from 'blocks/utilities/error';
 import { rawConfigs } from 'fixtures/blocks/contentConfigs';
+import { rawCollections } from 'fixtures/blocks/collectionConfigs';
 import { rawSnippets } from 'fixtures/blocks/snippets';
 import { Env } from 'blocks/utilities/env';
 
 describe('SnippetCollection', () => {
   let configs = {};
+  let collectionConfigs = {};
   let snippets = [];
   beforeAll(() => {
     Env.setup();
     Object.keys(rawConfigs).forEach(name => {
       configs[name] = new ContentConfig(rawConfigs[name]);
+    });
+    Object.keys(rawCollections).forEach(name => {
+      collectionConfigs[name] = new CollectionConfig(rawCollections[name]);
     });
     snippets.push(new Snippet(rawSnippets.normal, configs.react));
     snippets.push(new Snippet(rawSnippets.blog, configs.blog));
@@ -120,6 +126,14 @@ describe('SnippetCollection', () => {
         },
         [snippets[2]]
       );
+      collections.collection = new SnippetCollection(
+        {
+          type: 'collection',
+          config: collectionConfigs.collection,
+          slugPrefix: `/${collectionConfigs.collection.slug}`,
+        },
+        collectionConfigs.collection.snippetIds.map(id => Snippet.instances[id])
+      );
     });
 
     it('should store collection metadata', () => {
@@ -132,9 +146,15 @@ describe('SnippetCollection', () => {
       expect(collections.tag.parentCollection).toBe(collections.language);
     });
 
-    it('sorts snippets in the collection', () => {
+    it('sorts snippets in non-collection-type collections', () => {
       expect(collections.main.snippets.map(s => s.name)).toEqual(
         snippets.sort((a, b) => b.ranking - a.ranking).map(s => s.name)
+      );
+    });
+
+    it('keeps snippets unsorted in collection-type collections', () => {
+      expect(collections.collection.snippets.map(s => s.id)).toEqual(
+        rawCollections.collection.snippetIds
       );
     });
 
@@ -172,6 +192,7 @@ describe('SnippetCollection', () => {
       expect(collections.blog.name).not.toBe(null);
       expect(collections.language.name).not.toBe(null);
       expect(collections.tag.name).not.toBe(null);
+      expect(collections.collection.name).not.toBe(null);
       expect(collections.tagWithMetadata.name).not.toBe(collections.tag.name);
     });
 
@@ -180,6 +201,7 @@ describe('SnippetCollection', () => {
       expect(collections.blog.description).toBe(null);
       expect(collections.language.description).not.toBe(null);
       expect(collections.tag.description).not.toBe(null);
+      expect(collections.collection.description).not.toBe(null);
       expect(collections.tagWithMetadata.description).not.toBe(null);
     });
 
@@ -206,6 +228,9 @@ describe('SnippetCollection', () => {
     it('should produce the correct icon', () => {
       expect(collections.language.icon).toBe(configs.dart.theme.iconName);
       expect(collections.tag.icon).toBe(configs.dart.theme.iconName);
+      expect(collections.collection.icon).toBe(
+        collectionConfigs.collection.theme.iconName
+      );
     });
 
     it('should produce the correct url', () => {
@@ -236,23 +261,33 @@ describe('SnippetCollection', () => {
       expect(collections.blog.isListed).toBe(true);
       expect(collections.language.isListed).toBe(false);
       expect(collections.tag.isListed).toBe(false);
+      expect(collections.collection.isListed).toBe(true);
     });
 
     describe('addSnippets', () => {
       beforeAll(() => {
         collections.language.addSnippets([snippets[1]]);
+        collections.collection.addSnippets([snippets[1]]);
       });
 
       it('should add snippets to the collection', () => {
         expect(collections.language.snippets.length).toBe(2);
+        expect(collections.collection.snippets.length).toBe(3);
       });
 
-      it('sorts snippets in the collection', () => {
+      it('sorts snippets in non-collection-type collections', () => {
         expect(collections.language.snippets.map(s => s.name)).toEqual(
           collections.language.snippets
             .sort((a, b) => b.ranking - a.ranking)
             .map(s => s.name)
         );
+      });
+
+      it('keeps snippets unsorted in non-collection-type collections', () => {
+        expect(collections.collection.snippets.map(s => s.id)).toEqual([
+          ...rawCollections.collection.snippetIds,
+          snippets[1].id,
+        ]);
       });
     });
   });

@@ -58,7 +58,7 @@ describe('Snippet', () => {
 
     it('produces a valid id', () => {
       expect(snippet.id).toBe(
-        `${snippet.config.sourceDir}/${snippet.fileName.slice(0, -3)}`
+        `${snippet.config.slugPrefix}/${snippet.fileName.slice(0, -3)}`
       );
     });
 
