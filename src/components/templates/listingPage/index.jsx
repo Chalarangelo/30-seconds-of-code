@@ -12,6 +12,7 @@ const propTypes = {
     listingName: PropTypes.string,
     listingTitle: PropTypes.string,
     listingDescription: PropTypes.string,
+    listingImage: PropTypes.string,
     listingType: PropTypes.string,
     listingSublinks: PropTypes.arrayOf(PropTypes.shape({})),
     pageDescription: PropTypes.string.isRequired,
@@ -31,6 +32,7 @@ const ListingPage = ({
     listingName,
     listingTitle,
     listingDescription,
+    listingImage,
     listingType,
     listingSublinks = [],
     pageDescription,
@@ -53,6 +55,7 @@ const ListingPage = ({
         <SnippetList
           listingName={listingTitle}
           listingDescription={listingDescription}
+          listingImage={listingImage}
           listingType={listingType}
           snippetList={snippetList}
           paginator={paginator}

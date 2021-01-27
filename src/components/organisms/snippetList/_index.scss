@@ -13,10 +13,47 @@
   }
 }
 
+.snippet-list-header {
+
+  &.with-image {
+
+    .page-title {
+      display: block;
+      text-align: center;
+    }
+
+    @media screen and (min-width: $layout-medium-breakpoint) {
+      display: grid;
+      grid-template-columns: auto 240px;
+      align-items: center;
+      min-height: 340px;
+
+      .page-title {
+        text-align: left;
+      }
+    }
+
+    @media screen and (min-width: $layout-large-breakpoint) {
+      min-height: 300px;
+      grid-template-columns: auto 360px;
+    }
+  }
+}
+
 .snippet-list-description {
   margin: 1rem 0.875rem 0.5rem;
   line-height: 2;
   color: var(--fore-color);
+}
+
+.snippet-list-splash-image {
+  margin: 0.5rem 0.875rem 0.5rem;
+  width: calc(100% - 1.75rem);
+  max-height: 25vh;
+
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    order: 2;
+  }
 }
 
 .snippet-list-controls {
