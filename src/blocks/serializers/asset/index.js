@@ -42,6 +42,7 @@ export class AssetSerializer {
     const boundLog = Logger.bind('serializers.asset.serialize');
     const {
       rawAssetPath: inPath,
+      rawContentAssetPath: inContentPath,
       assetPath: outPath,
       rawContentPath: contentPath,
       staticAssetPath: staticAssetPath,
@@ -57,6 +58,7 @@ export class AssetSerializer {
     );
     fs.ensureDirSync(outPath);
     await fs.copy(inPath, outPath);
+    await fs.copy(inContentPath, outPath);
     boundLog('Static assets have been copied', 'success');
 
     boundLog(`Processing image assets from configuration files`, 'info');
