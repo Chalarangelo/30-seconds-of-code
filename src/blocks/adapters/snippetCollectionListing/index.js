@@ -48,6 +48,10 @@ export class SnippetCollectionListing {
     return this.snippetCollection.description;
   }
 
+  get listingImage() {
+    return this.snippetCollection.splash;
+  }
+
   get listingSublinks() {
     if (this.snippetCollection.type === 'blog') {
       return [];
@@ -80,6 +84,7 @@ export class SnippetCollectionListing {
     'listingName',
     'listingTitle',
     'listingDescription',
+    'listingImage',
     'listingType',
     'listingSublinks',
     'pageDescription',
