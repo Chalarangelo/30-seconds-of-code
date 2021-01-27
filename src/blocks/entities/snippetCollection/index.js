@@ -239,6 +239,40 @@ export class SnippetCollection {
     return this._description;
   }
 
+  get splash() {
+    if (!this._splash) {
+      switch (this.type) {
+        case 'main':
+          this._splash = null;
+          break;
+        case 'blog':
+          this._splash = null;
+          break;
+        case 'language':
+          this._splash = this.config.splash
+            ? `${this.config.assetPath}/${this.config.splash}`
+            : null;
+          break;
+        case 'tag':
+          this._splash =
+            this.tagMetadata && this.tagMetadata.splash
+              ? `${this.config.assetPath}/${this.tagMetadata.splash}`
+              : this.config.splash
+              ? `${this.config.assetPath}/${this.config.splash}`
+              : null;
+          break;
+        case 'collection':
+          this._splash = this.config.splash
+            ? `${this.config.assetPath}/${this.config.splash}`
+            : null;
+          break;
+        default:
+          break;
+      }
+    }
+    return this._splash;
+  }
+
   get seoDescription() {
     if (!this._seoDescription) {
       this._seoDescription = literals.listing.pageDescription(this.type, {
