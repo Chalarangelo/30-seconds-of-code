@@ -5,6 +5,7 @@ import Sorter from 'components/molecules/sorter';
 import PageTitle from 'components/atoms/pageTitle';
 import PreviewCard from 'components/molecules/previewCard';
 import ListingAnchors from 'components/molecules/listingAnchors';
+import combineClassNames from '@chalarangelo/combine-class-names';
 
 const propTypes = {
   snippetList: PropTypes.arrayOf(PropTypes.snippet),
@@ -12,6 +13,7 @@ const propTypes = {
   sorter: PropTypes.sorter,
   listingName: PropTypes.string,
   listingDescription: PropTypes.string,
+  listingImage: PropTypes.string,
   listingType: PropTypes.string,
   listingSublinks: PropTypes.arrayOf(PropTypes.shape({})),
 };
@@ -27,11 +29,11 @@ const SnippetList = ({
   sorter,
   listingName,
   listingDescription = '',
+  listingImage = '',
   listingType,
   listingSublinks = [],
 }) => {
   /* istanbul ignore next */
-  const ctaIndex = 4;
   const isMainOrBlogListing = listingType === 'main' || listingType === 'blog';
   const withSorter = sorter && sorter.orders && sorter.orders.length > 1;
 
@@ -46,10 +48,27 @@ const SnippetList = ({
         </>
       ) : (
         <>
-          <PageTitle>{listingName}</PageTitle>
-          {listingDescription && listingDescription.length ? (
-            <p className='snippet-list-description'>{listingDescription}</p>
-          ) : null}
+          <div
+            className={combineClassNames`snippet-list-header ${
+              listingImage ? 'with-image' : ''
+            }`}
+          >
+            {listingImage ? (
+              <img
+                className='snippet-list-splash-image'
+                src={listingImage}
+                alt=''
+                height='360'
+                width='360'
+              />
+            ) : null}
+            <div>
+              <PageTitle>{listingName}</PageTitle>
+              {listingDescription && listingDescription.length ? (
+                <p className='snippet-list-description'>{listingDescription}</p>
+              ) : null}
+            </div>
+          </div>
           <div className='snippet-list-controls'>
             {listingSublinks.length ? (
               <ListingAnchors items={listingSublinks} />
@@ -61,7 +80,7 @@ const SnippetList = ({
       <ul className='snippet-list'>
         {snippetList.map(snippet => (
           <PreviewCard key={`snippet_${snippet.url}`} snippet={snippet} />
-          ))}
+        ))}
       </ul>
       <Paginator paginator={paginator} />
     </>
