@@ -2,6 +2,7 @@
   "settingsPath": "src/settings/!(global|paths).json",
   "assetPath": ".assets",
   "rawAssetPath": "assets",
+  "rawContentAssetPath": "content/configs/assets",
   "staticAssetPath": "assets",
   "contentPath": ".content",
   "rawContentPath": "content",
