@@ -4,9 +4,7 @@ export const rawCollections = {
     name: 'JavaScript Collection',
     featured: 2,
     snippetIds: ['dart/s/any', 'react/s/any'],
-    theme: {
-      iconName: 'js',
-    },
+    iconName: 'js',
     description: 'Lorem ipsum dolor sit amet',
   },
 };
