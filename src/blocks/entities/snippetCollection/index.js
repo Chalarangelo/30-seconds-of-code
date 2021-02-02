@@ -312,9 +312,25 @@ export class SnippetCollection {
   }
 
   get icon() {
-    if (!['language', 'blog', 'tag', 'collection'].includes(this.type))
-      return undefined;
-    return this.config.theme && this.config.theme.iconName;
+    if (!this._icon) {
+      switch (this.type) {
+        case 'language':
+        case 'blog':
+        case 'collection':
+          this._icon = this.config && this.config.iconName;
+          break;
+        case 'tag':
+          this._icon =
+            this.tagMetadata && this.tagMetadata.iconName
+              ? this.tagMetadata.iconName
+              : this.config && this.config.iconName;
+          break;
+        default:
+          this._icon = undefined;
+          break;
+      }
+    }
+    return this._icon;
   }
 
   get url() {
