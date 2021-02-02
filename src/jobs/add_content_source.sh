@@ -21,11 +21,7 @@ add_content_source() {
   ],
   \"slug\": \"$4\",
   \"featured\": 500,
-  \"theme\": {
-    \"backColor\": \"#ffffff\",
-    \"foreColor\": \"#000000\",
-    \"iconName\": \"$4\"
-  },
+  \"iconName\": \"$4\",
   \"biasPenaltyMultiplier\": 1.00
 }" >> "./content/configs/$2.json"
 }
