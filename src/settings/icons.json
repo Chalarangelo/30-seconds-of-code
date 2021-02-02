@@ -1,5 +1,6 @@
 {
   "types": ["woff2"],
+  "iconConfigPath": "content/configs/icons.json",
   "fontName": "icons",
   "fontRelativePath": "../../assets/",
   "cssTemplatePath": "src/templates/iconCssTemplate.hbs",

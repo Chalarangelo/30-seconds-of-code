@@ -11,7 +11,7 @@ export class IconSerializer {
   /**
    * Generates the icon font and CSS stylesheet from the provided icon files.
    * @param {Array<string>} fileList - An array of SVG file names.
-   * @param {Array<object>} configs - An array of ContentConfig objects.
+   * @param {Array<object>} icons - An array of icon objects.
    * @param {object} options - An options object, containing the following:
    *  - `fontName`: Name of font and base name of font files.
    *  - `types`: Font file types to generate.
@@ -30,7 +30,7 @@ export class IconSerializer {
    */
   static serialize = (
     fileList,
-    configs,
+    icons,
     {
       fontName = global.settings.icons.fontName,
       types = global.settings.icons.types,
@@ -45,7 +45,7 @@ export class IconSerializer {
       cssLanguageChipSelector = global.settings.icons.cssLanguageChipSelector,
     } = {}
   ) => {
-    if (!fileList || !fileList.length || !configs || !configs.length) {
+    if (!fileList || !fileList.length || !icons || !icons.length) {
       throw new ArgsError(
         "Missing required arguments. 'fileList' and 'configs' must be supplied and non-empty."
       );
@@ -73,7 +73,7 @@ export class IconSerializer {
         classPrefix: cssClassPrefix,
         langSelectors: cssLanguageSelectors,
         chipSelector: cssLanguageChipSelector,
-        langIcons: configs.map(cfg => cfg.theme).filter(Boolean),
+        langIcons: icons,
       },
     };
 

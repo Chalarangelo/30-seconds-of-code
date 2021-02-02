@@ -5,6 +5,7 @@ import { SitemapSerializer } from 'blocks/serializers/sitemap';
 import { FeedSerializer } from 'blocks/serializers/feed';
 import { ChirpSerializer } from 'blocks/serializers/chirp';
 import { FileParser } from 'blocks/parsers/file';
+import { JSONParser } from 'blocks/parsers/json';
 import { AssetSerializer } from 'blocks/serializers/asset';
 import { Extractor } from 'blocks/utilities/extractor';
 
@@ -20,7 +21,7 @@ export const build = async () => {
     AssetSerializer.serialize(),
     IconSerializer.serialize(
       FileParser.fromGlob(global.settings.paths.rawIconPath),
-      global.settings.configs
+      JSONParser.fromFile(global.settings.icons.iconConfigPath).icons
     ),
   ]);
 
