@@ -7,11 +7,7 @@ export const rawConfigs = {
     slug: 'blog',
     isBlog: true,
     featured: 1,
-    theme: {
-      backColor: '#1f253d',
-      foreColor: '#edf0fc',
-      iconName: 'blog',
-    },
+    iconName: 'blog',
     biasPenaltyMultiplier: 1,
     images: {
       name: 'blog_images',
@@ -38,11 +34,7 @@ export const rawConfigs = {
     },
     slug: 'css',
     featured: 3,
-    theme: {
-      backColor: '#3f4de4',
-      foreColor: '#ffffff',
-      iconName: 'css',
-    },
+    iconName: 'css',
     biasPenaltyMultiplier: 1.05,
     cardTemplate: 'CssSnippetCard',
   },
@@ -61,11 +53,7 @@ export const rawConfigs = {
     },
     slug: 'react',
     featured: 4,
-    theme: {
-      backColor: '#282c34',
-      foreColor: '#61dafb',
-      iconName: 'react',
-    },
+    iconName: 'react',
     biasPenaltyMultiplier: 1.25,
   },
   dart: {
@@ -79,11 +67,7 @@ export const rawConfigs = {
     },
     slug: 'dart',
     featured: -1,
-    theme: {
-      backColor: '#1b2634',
-      foreColor: '#ffffff',
-      iconName: 'dart',
-    },
+    iconName: 'dart',
     biasPenaltyMultiplier: 1.3,
     description: 'Lorem ipsum dolor sit amet.',
     tagMetadata: {
