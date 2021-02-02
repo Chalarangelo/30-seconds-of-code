@@ -171,13 +171,21 @@ export class Snippet {
 
   get icon() {
     if (!this._icon) {
-      let langIcon;
+      let mapped;
       if (this.config.isBlog) {
-        langIcon = this.config.langData.find(l =>
+        const lang = this.config.langData.find(l =>
           this.tags.all.includes(l.language)
         );
+        if (lang) {
+          const tag = this.tags.all.find(t => lang.tags[t]);
+          mapped = tag ? tag : lang.icon;
+        }
       }
-      this._icon = langIcon ? langIcon.icon : this.config.icon;
+      this._icon = mapped
+        ? mapped
+        : this.config.tagIcons[this.tags.primary]
+        ? this.config.tagIcons[this.tags.primary]
+        : this.config.icon;
     }
     return this._icon;
   }
