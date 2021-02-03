@@ -8,6 +8,7 @@ Parses an HTTP Cookie header string, returning an object of all cookie name-valu
 - Use `String.prototype.split(';')` to separate key-value pairs from each other.
 - Use `Array.prototype.map()` and `String.prototype.split('=')` to separate keys from values in each pair.
 - Use `Array.prototype.reduce()` and `decodeURIComponent()` to create an object with all key-value pairs.
+- Use `RegEX.prototype.test()` and `Array.prototype.slice()` to check and remove double quotes that wraps values.
 
 ```js
 const parseCookie = str =>
