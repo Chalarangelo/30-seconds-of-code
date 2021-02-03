@@ -15,7 +15,8 @@ const parseCookie = str =>
     .split(';')
     .map(v => v.split('='))
     .reduce((acc, v) => {
-      acc[decodeURIComponent(v[0].trim())] = decodeURIComponent(v[1].trim());
+      const v1 = v[1].trim();
+      acc[decodeURIComponent(v[0].trim())] = decodeURIComponent(/^\".*\"$/.test(v1) ? v1.slice(1, -1) : v1);
       return acc;
     }, {});
 ```
