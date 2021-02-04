@@ -30,7 +30,7 @@ describe('ContentConfig', () => {
       expect(configs.react.snippetPath).toBe(rawConfigs.react.snippetPath);
       expect(configs.react.slug).toBe(rawConfigs.react.slug);
       expect(configs.react.featured).toBe(rawConfigs.react.featured);
-      expect(configs.react.theme).toBe(rawConfigs.react.theme);
+      expect(configs.react.iconName).toBe(rawConfigs.react.iconName);
       expect(configs.react.biasPenaltyMultiplier).toBe(
         rawConfigs.react.biasPenaltyMultiplier
       );
@@ -87,7 +87,7 @@ describe('ContentConfig', () => {
     });
 
     it('should produce the correct icon', () => {
-      expect(configs.react.icon).toBe(rawConfigs.react.theme.iconName);
+      expect(configs.react.icon).toBe(rawConfigs.react.iconName);
     });
 
     it('should produce the correct source directory', () => {
@@ -136,7 +136,9 @@ describe('ContentConfig', () => {
   describe('findSlugFromRawSnippet', () => {
     it('returns the correct result', () => {
       expect(
-        ContentConfig.findSlugFromRawSnippet('content/sources/30code/snippets/any.md')
+        ContentConfig.findSlugFromRawSnippet(
+          'content/sources/30code/snippets/any.md'
+        )
       ).toBe('/js/s/any');
     });
   });

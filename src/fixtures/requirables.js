@@ -84,11 +84,7 @@ export const requirables = [
       slugPrefix: 'js/s',
       biasPenaltyMultiplier: 1.05,
       featured: 2,
-      theme: {
-        backColor: '#f6d854',
-        foreColor: '#392f31',
-        iconName: 'js',
-      },
+      iconName: 'js',
     },
   },
   {

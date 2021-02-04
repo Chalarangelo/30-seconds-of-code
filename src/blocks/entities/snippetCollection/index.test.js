@@ -226,10 +226,10 @@ describe('SnippetCollection', () => {
     });
 
     it('should produce the correct icon', () => {
-      expect(collections.language.icon).toBe(configs.dart.theme.iconName);
-      expect(collections.tag.icon).toBe(configs.dart.theme.iconName);
+      expect(collections.language.icon).toBe(configs.dart.iconName);
+      expect(collections.tag.icon).toBe(configs.dart.iconName);
       expect(collections.collection.icon).toBe(
-        collectionConfigs.collection.theme.iconName
+        collectionConfigs.collection.iconName
       );
     });
 

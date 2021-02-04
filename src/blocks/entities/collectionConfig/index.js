@@ -21,7 +21,7 @@ export class CollectionConfig {
     snippetIds,
     featured,
     description,
-    theme = null,
+    iconName = null,
     ...rest
   }) {
     if (!name || !slug || !featured || !snippetIds || !snippetIds.length) {
@@ -34,7 +34,7 @@ export class CollectionConfig {
     this.description = description;
     this.slug = slug;
     this.featured = featured;
-    this.theme = theme;
+    this.iconName = iconName;
     this.snippetIds = snippetIds;
     Object.keys(rest).forEach(key => {
       this[key] = rest[key];
@@ -52,7 +52,7 @@ export class CollectionConfig {
   }
 
   get icon() {
-    return this.theme ? this.theme.iconName : null;
+    return this.iconName ? this.iconName : null;
   }
 
   get assetPath() {

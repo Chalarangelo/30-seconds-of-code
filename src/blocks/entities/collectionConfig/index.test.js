@@ -38,8 +38,8 @@ describe('ColectionConfig', () => {
       expect(collectionConfigs.collection.snippetIds).toEqual(
         rawCollections.collection.snippetIds
       );
-      expect(collectionConfigs.collection.theme).toEqual(
-        rawCollections.collection.theme
+      expect(collectionConfigs.collection.iconName).toEqual(
+        rawCollections.collection.iconName
       );
     });
 
@@ -51,7 +51,7 @@ describe('ColectionConfig', () => {
 
     it('should produce the correct icon', () => {
       expect(collectionConfigs.collection.icon).toBe(
-        rawCollections.collection.theme.iconName
+        rawCollections.collection.iconName
       );
     });
 

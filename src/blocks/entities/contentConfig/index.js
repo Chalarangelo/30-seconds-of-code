@@ -24,7 +24,7 @@ export class ContentConfig {
     snippetPath,
     slug,
     featured,
-    theme = null,
+    iconName = null,
     biasPenaltyMultiplier = 1.0,
     cardTemplate = 'StandardSnippetCard',
     isBlog = false,
@@ -42,7 +42,7 @@ export class ContentConfig {
     this.snippetPath = snippetPath;
     this.slug = slug;
     this.featured = featured;
-    this.theme = theme;
+    this.iconName = iconName;
     this.biasPenaltyMultiplier = biasPenaltyMultiplier;
     this.cardTemplate = cardTemplate;
     this.isBlog = Boolean(isBlog);
@@ -85,11 +85,11 @@ export class ContentConfig {
   };
 
   _loadLangData = () => {
+    const tagIconKeys = Object.keys(this.tagIcons);
     if (
       !this.language ||
       !this.language.long ||
-      !this.theme ||
-      !this.theme.iconName ||
+      !this.iconName ||
       ContentConfig.langData.find(
         l => l.language === this.language.long.toLowerCase()
       )
@@ -99,7 +99,8 @@ export class ContentConfig {
       language: this.language.long.toLowerCase(),
       shortCode: this.language.short,
       languageLiteral: this.language.long,
-      icon: this.theme.iconName,
+      icon: this.iconName,
+      tags: tagIconKeys.length ? this.tagIcons : {},
     });
   };
 
@@ -149,7 +150,20 @@ export class ContentConfig {
   }
 
   get icon() {
-    return this.theme ? this.theme.iconName : null;
+    return this.iconName ? this.iconName : null;
+  }
+
+  get tagIcons() {
+    if (!this._tagIcons) {
+      this._tagIcons = this.tagMetadata
+        ? Object.keys(this.tagMetadata).reduce((acc, key) => {
+            if (this.tagMetadata[key].iconName)
+              acc[key] = this.tagMetadata[key].iconName;
+            return acc;
+          }, {})
+        : {};
+    }
+    return this._tagIcons;
   }
 
   get sourceDir() {
