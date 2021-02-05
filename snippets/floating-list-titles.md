@@ -59,7 +59,7 @@ Creates a list with floating headings for each section.
   background: #455A64;
   color: #fff;
   height: 80vh;
-  height: 320px;
+  width: 320px;
   border-radius: 1rem;
   overflow-y: auto;
 }
