@@ -14,7 +14,7 @@ const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
 const mainContent = $('.main-content');
-const externalLinks = $('a[target="_blank"]');
+const externalLinks = $$('a[target="_blank"]');
 ```
 
 **Image credit:** [engin akyurt](https://unsplash.com/@enginakyurt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
