@@ -37,7 +37,7 @@ export class HubSerializer {
     const listedCollections = featuredCollectionIds.map(id =>
       new SnippetCollectionChip(
         snippetCollections.find(c => c.id === id)
-      ).toObject()
+      ).toObject({ withDescription: true })
     );
 
     const newBlogs = blogCollection.snippets
@@ -62,7 +62,13 @@ export class HubSerializer {
               shelfType: 'collections',
               shelfName: literals.featuredCollections,
               shelfUrl: '/collections',
-              shelfData: listedCollections.slice(0, TOP_COLLECTION_CHIPS),
+              shelfData: featuredCollectionIds
+                .slice(0, TOP_COLLECTION_CHIPS)
+                .map(id =>
+                  new SnippetCollectionChip(
+                    snippetCollections.find(c => c.id === id)
+                  ).toObject()
+                ),
             },
             {
               shelfType: 'snippets',

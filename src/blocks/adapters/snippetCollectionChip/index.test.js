@@ -41,7 +41,7 @@ describe('SnippetCollectionChip', () => {
 
     beforeAll(() => {
       Object.keys(listings).forEach(name => {
-        results[name] = listings[name].toObject();
+        results[name] = listings[name].toObject({ withDescription: true });
       });
     });
 
@@ -61,6 +61,18 @@ describe('SnippetCollectionChip', () => {
 
     it('returns the correct icon', () => {
       expect(results.language.icon).toBe(collections.language.icon);
+    });
+
+    it('returns the correct description', () => {
+      expect(results.language.description).toBe(
+        collections.language.shortDescription
+      );
+    });
+
+    it('returns no description if not required', () => {
+      expect(
+        listings.language.toObject({ withDescription: false }).description
+      ).toBe(undefined);
     });
   });
 });
