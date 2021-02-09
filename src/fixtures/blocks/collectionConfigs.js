@@ -6,5 +6,6 @@ export const rawCollections = {
     snippetIds: ['dart/s/any', 'react/s/any'],
     iconName: 'js',
     description: 'Lorem ipsum dolor sit amet',
+    shortDescription: 'Lorem ipsum',
   },
 };

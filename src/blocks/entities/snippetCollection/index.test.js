@@ -196,6 +196,15 @@ describe('SnippetCollection', () => {
       expect(collections.tagWithMetadata.name).not.toBe(collections.tag.name);
     });
 
+    it('should produce the correct shortName', () => {
+      expect(collections.main.shortName).not.toBe(null);
+      expect(collections.blog.shortName).not.toBe(null);
+      expect(collections.language.shortName).not.toBe(null);
+      expect(collections.tag.shortName).not.toBe(null);
+      expect(collections.collection.shortName).not.toBe(null);
+      expect(collections.tagWithMetadata.shortName).not.toBe(null);
+    });
+
     it('should produce the correct description', () => {
       expect(collections.main.description).toBe(null);
       expect(collections.blog.description).toBe(null);
@@ -203,6 +212,15 @@ describe('SnippetCollection', () => {
       expect(collections.tag.description).not.toBe(null);
       expect(collections.collection.description).not.toBe(null);
       expect(collections.tagWithMetadata.description).not.toBe(null);
+    });
+
+    it('should produce the correct shortDescription', () => {
+      expect(collections.main.shortDescription).toBe(null);
+      expect(collections.blog.shortDescription).toBe(null);
+      expect(collections.language.shortDescription).not.toBe(null);
+      expect(collections.tag.shortDescription).not.toBe(null);
+      expect(collections.collection.shortDescription).not.toBe(null);
+      expect(collections.tagWithMetadata.shortDescription).not.toBe(null);
     });
 
     it('should produce the correct seoDescription', () => {
