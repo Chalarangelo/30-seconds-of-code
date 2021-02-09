@@ -10,6 +10,7 @@ const literals = {
   share: 'Share',
   home: 'Home',
   recommendedSnippets: 'Recommended snippets',
+  snippetCollection: 'Snippet collection',
   blog: 'Blog',
   settings: 'Settings',
   viewAll: 'View all',
