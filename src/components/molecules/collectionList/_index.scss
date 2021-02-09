@@ -1,17 +1,5 @@
 .collection-list {
-  margin: 1.75rem 0.25rem 5rem;
+  margin: 0;
   padding: 0;
   list-style: none;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-
-  @media screen and (min-width: $layout-medium-breakpoint) {
-    margin: 1.75rem 0.875rem 5rem;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  @media screen and (min-width: $layout-large-breakpoint) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
 }
