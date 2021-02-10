@@ -21,28 +21,28 @@ Sort an array of non-negative numbers, using the counting sort algorithm.
 ``` js
 const countingSort = inputArray => {
 
-  // find maximum element in input array
+  // find the largest number in inputArray
   const maximumValue = Math.max(...inputArray);
   const countArray = [];
   const outputArray = [];
 
-  // initialize the "counting" array with all elements 0
+  // initialize the countArray with all elements zero
   for(let i = 0; i < maximumValue + 1; i++) {
     countArray[i] = 0;
   }
 
-  // store the count of each element of input array at it's index
+  // store the count of each element in inputArray at it's index in countArray
   for (let i = 0; i < inputArray.length; i++) {
     countArray[inputArray[i]]++;
   }
 
-  // sets the cummulative count over input array
+  // set the cummulative count in countArray
   for(let i = 1; i < maximumValue + 1; i++ ) {
     countArray[i] += countArray[i - 1];
   }
 
-  // fills the holding array after ordering the indexes of 
-  // input array and counting array
+  // fill the outputArray after ordering the indexes of 
+  // inputArray and countArray
   for(let i = inputArray.length - 1; i >= 0; i--) {
     outputArray[countArray[inputArray[i]] - 1] = inputArray[i];
     countArray[inputArray[i]]--;
