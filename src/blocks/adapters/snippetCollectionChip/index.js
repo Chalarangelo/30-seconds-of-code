@@ -8,10 +8,12 @@ import { ArgsError } from 'blocks/utilities/error';
 export class SnippetCollectionChip {
   /**
    * Creates a chip from the given SnippetCollection object.
-   * @param {Snippet} snippetCollection - A snippet collection to create a chip from.
+   * @param {SnippetCollection} snippetCollection - A snippet collection to create a chip from.
+   * @param {object} options - Options object, containing the following:
+   *  - `withDescription` - Should `description` be included?
    * @throws Will throw an error if snippetCollection is not a SnippetCollection.
    */
-  constructor(snippetCollection) {
+  constructor(snippetCollection, { withDescription = false } = {}) {
     if (!(snippetCollection instanceof SnippetCollection)) {
       throw new ArgsError(
         "Invalid arguments. 'snippetCollection' must be an instance of 'SnippetCollection'."
@@ -19,6 +21,9 @@ export class SnippetCollectionChip {
     }
 
     this.snippetCollection = snippetCollection;
+    this._options = {
+      withDescription,
+    };
   }
 
   get url() {
@@ -33,12 +38,23 @@ export class SnippetCollectionChip {
     return this.snippetCollection.icon;
   }
 
-  static serializableAttributes = ['url', 'name', 'icon'];
+  get description() {
+    return this._options.withDescription
+      ? this.snippetCollection.shortDescription
+      : undefined;
+  }
+
+  static serializableAttributes = ['url', 'name', 'icon', 'description'];
 
   /**
    * Creates a plain object for the given snippet collection chip.
+   * @param {object} options - Options object, containing the following:
+   *  - `withDescription` - Should `description` be included?
    */
-  toObject = () => {
+  toObject = (
+    { withDescription = this._options.withDescription } = this._options
+  ) => {
+    this._options.withDescription = withDescription;
     return SnippetCollectionChip.serializableAttributes.reduce((obj, attr) => {
       const val = this[attr];
       if (val !== undefined) obj[attr] = val;

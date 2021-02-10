@@ -48,3 +48,46 @@
     }
   }
 }
+
+.collection-card {
+  margin-top: 1.5rem;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 64px calc(100% - 64px);
+  content-visibility: auto;
+  contain-intrinsic-size: 240px;
+
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    contain-intrinsic-size: 144px;
+  }
+
+  .card-title {
+    a {
+      &, &:link, &:visited {
+        font-family: 'Raleway', Helvetica, sans-serif;
+        letter-spacing: 0.25px;
+        font-variant-numeric: lining-nums;
+        font-weight: 500;
+        line-height: 1;
+        color: var(--card-title-color);
+      }
+
+      &:hover, &:focus {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .card-icon {
+    border-radius: 1rem;
+  }
+
+  .card-subtitle {
+    margin: 0 .5rem;
+    display: inline-block;
+    color: var(--card-fore-color-light);
+    font-size: .875rem;
+    line-height: 1rem;
+  }
+}

@@ -239,6 +239,36 @@ export class SnippetCollection {
     return this._description;
   }
 
+  get shortDescription() {
+    if (!this._shortDescription) {
+      switch (this.type) {
+        case 'main':
+          this._shortDescription = null;
+          break;
+        case 'blog':
+        case 'collection':
+        case 'language':
+          this._shortDescription =
+            this.config.shortDescription && this.config.shortDescription.length
+              ? this.config.shortDescription
+              : null;
+          break;
+        case 'tag':
+          this._shortDescription =
+            this.tagMetadata && this.tagMetadata.shortDescription
+              ? this.tagMetadata.shortDescription
+              : this.config.shortDescription &&
+                this.config.shortDescription.length
+              ? this.config.shortDescription
+              : null;
+          break;
+        default:
+          break;
+      }
+    }
+    return this._shortDescription;
+  }
+
   get splash() {
     if (!this._splash) {
       switch (this.type) {
