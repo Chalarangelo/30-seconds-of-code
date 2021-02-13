@@ -394,4 +394,12 @@ export class SnippetCollection {
     }
     return this._isListed;
   }
+
+  get isSearchable() {
+    if (!this._isSearchable) {
+      this._isSearchable = this.isListed && this.shortDescription;
+    }
+    return this._isSearchable;
+  }
+
 }
