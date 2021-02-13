@@ -69,21 +69,11 @@ export class SnippetCollection {
       else this[key] = rest[key];
     });
 
-    this._loadCollectionMeta();
-
     SnippetCollection.instances.add(this.id, this);
     return this;
   }
 
   static instances = new InstanceCache();
-
-  static collectionMetas = [];
-
-  _loadCollectionMeta = () => {
-    if (['language', 'blog'].includes(this.type)) {
-      SnippetCollection.collectionMetas.push(this.meta);
-    }
-  };
 
   /**
    * Injects additional snippets into an existing collection.
@@ -111,18 +101,6 @@ export class SnippetCollection {
       }
     }
     return this._orders;
-  }
-
-  get meta() {
-    return {
-      name: this.shortName,
-      tags: this.tags,
-      url: this.url,
-      slugPrefix: this.slugPrefix,
-      featured: this.featured,
-      blog: this.blog,
-      icon: this.icon,
-    };
   }
 
   get tagMetadata() {

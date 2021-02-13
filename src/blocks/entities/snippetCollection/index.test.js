@@ -136,10 +136,6 @@ describe('SnippetCollection', () => {
       );
     });
 
-    it('should store collection metadata', () => {
-      expect(SnippetCollection.collectionMetas.length).not.toBe(0);
-    });
-
     it('passes any given data to the collection', () => {
       expect(collections.tag.type).toBe('tag');
       expect(collections.tag.tag).toBe('list');
@@ -167,18 +163,6 @@ describe('SnippetCollection', () => {
       expect(collections.blog.orders).toEqual(['p', 'n']);
       expect(collections.language.orders).toEqual(['p', 'a', 'e']);
       expect(collections.tag.orders).toEqual(['p', 'a', 'e']);
-    });
-
-    it('should produce the correct meta', () => {
-      expect(Object.keys(collections.language.meta)).toEqual([
-        'name',
-        'tags',
-        'url',
-        'slugPrefix',
-        'featured',
-        'blog',
-        'icon',
-      ]);
     });
 
     it('should produce the correct tag metadata', () => {
