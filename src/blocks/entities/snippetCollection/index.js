@@ -1,6 +1,7 @@
 import { InstanceCache } from 'blocks/utilities/instanceCache';
 import { ArgsError } from 'blocks/utilities/error';
 import { uniqueElements } from 'utils';
+import tokenizeCollection from 'utils/search';
 import literals from 'lang/en';
 
 const ALLOWED_TYPES = ['main', 'blog', 'language', 'tag', 'collection'];
@@ -402,4 +403,24 @@ export class SnippetCollection {
     return this._isSearchable;
   }
 
+  get searchTokens() {
+    if (!this._searchTokens) {
+      const uniqueDescription =
+        ['blog', 'collection', 'language'].includes(this.type) &&
+        this.config.shortDescription &&
+        this.config.shortDescription.length
+          ? this.config.shortDescription
+          : this.type === 'tag' &&
+            this.tagMetadata &&
+            this.tagMetadata.shortDescription
+          ? this.tagMetadata.shortDescription
+          : '';
+      this._searchTokens = uniqueElements(
+        tokenizeCollection(`${uniqueDescription} ${this.name}`).map(v =>
+          v.toLowerCase()
+        )
+      ).join(' ');
+    }
+    return this._searchTokens;
+  }
 }
