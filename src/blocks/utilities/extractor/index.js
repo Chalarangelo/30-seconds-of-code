@@ -226,21 +226,6 @@ export class Extractor {
           }
         )
       ),
-      JSONSerializer.serializeToDir(
-        ...Chunk.createStaticPageChunks(outPath, '/archive', 'SearchPage', 0, {
-          searchIndex: allSnippetData
-            .filter(s => !s.isListed)
-            .map(s =>
-              new SnippetPreview(s, { withSearchTokens: true }).toObject()
-            ),
-          recommendedSnippets: allSnippetData
-            .slice(0, 3)
-            .map(s => new SnippetPreview(s).toObject()),
-          pageDescription: literals.search.pageDescription(
-            allSnippetData.length
-          ),
-        })
-      ),
     ]);
   };
 }
