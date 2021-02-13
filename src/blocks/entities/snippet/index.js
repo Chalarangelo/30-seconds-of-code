@@ -157,7 +157,7 @@ export class Snippet {
           ? this._frontmatterMetadata.unlisted
           : false;
       this._isListed =
-        this.config.featured > 0 && !isUnlistedSnippet && !this.isScheduled;
+        this.config.featured && !isUnlistedSnippet && !this.isScheduled;
     }
     return this._isListed;
   }

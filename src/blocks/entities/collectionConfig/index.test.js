@@ -33,7 +33,7 @@ describe('ColectionConfig', () => {
         rawCollections.collection.slug
       );
       expect(collectionConfigs.collection.featured).toBe(
-        rawCollections.collection.featured
+        Boolean(rawCollections.collection.featured)
       );
       expect(collectionConfigs.collection.snippetIds).toEqual(
         rawCollections.collection.snippetIds
