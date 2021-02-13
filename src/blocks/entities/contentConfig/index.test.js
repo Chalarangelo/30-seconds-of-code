@@ -115,12 +115,6 @@ describe('ContentConfig', () => {
         configs.blog.assetPath.endsWith(global.settings.paths.staticAssetPath)
       ).toBe(true);
     });
-
-    it('should return the correct output path', () => {
-      expect(
-        configs.blog.outPath.endsWith(global.settings.paths.contentPath)
-      ).toBe(true);
-    });
   });
 
   describe('findContentConfigFromRawSnippet', () => {

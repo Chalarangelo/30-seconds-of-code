@@ -194,8 +194,4 @@ export class ContentConfig {
   get assetPath() {
     return `/${global.settings.paths.staticAssetPath}`;
   }
-
-  get outPath() {
-    return global.settings.paths.contentPath;
-  }
 }
