@@ -6,8 +6,7 @@ import PageTitle from 'components/atoms/pageTitle';
 import Toggle from 'components/atoms/toggle/index';
 import SimpleCard from 'components/molecules/simpleCard';
 import Shell from 'components/organisms/shell';
-import { toggleDarkMode, toggleGithubLinks, decideCookies } from 'state/shell';
-import { toggleArchiveSearch } from 'state/search';
+import { toggleDarkMode, decideCookies } from 'state/shell';
 
 const propTypes = {
   pageContext: PropTypes.shape({
@@ -18,14 +17,12 @@ const propTypes = {
         darkMode: PropTypes.string,
         githubLinks: PropTypes.string,
         cookies: PropTypes.string,
-        archiveSearch: PropTypes.string,
       }),
     }),
   }),
   dispatch: PropTypes.func,
   isDarkMode: PropTypes.bool,
   acceptsCookies: PropTypes.bool,
-  includeArchive: PropTypes.bool,
 };
 
 /**
@@ -39,7 +36,6 @@ const SettingsPage = ({
   dispatch,
   isDarkMode,
   acceptsCookies,
-  includeArchive,
 }) => (
   <>
     <Meta title={title} description={pageDescription} />
@@ -58,12 +54,6 @@ const SettingsPage = ({
         >
           {settings.cookies}
         </Toggle>
-        <Toggle
-          checked={!!includeArchive}
-          onChange={() => dispatch(toggleArchiveSearch(!includeArchive))}
-        >
-          {settings.archiveSearch}
-        </Toggle>
       </SimpleCard>
     </Shell>
   </>
@@ -75,7 +65,6 @@ export default connect(
   state => ({
     isDarkMode: state.shell.isDarkMode,
     acceptsCookies: state.shell.acceptsCookies,
-    includeArchive: state.search.includeArchive,
   }),
   null
 )(SettingsPage);
