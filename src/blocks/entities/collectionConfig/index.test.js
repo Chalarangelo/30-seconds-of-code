@@ -62,13 +62,5 @@ describe('ColectionConfig', () => {
         )
       ).toBe(true);
     });
-
-    it('should return the correct output path', () => {
-      expect(
-        collectionConfigs.collection.outPath.endsWith(
-          global.settings.paths.contentPath
-        )
-      ).toBe(true);
-    });
   });
 });
