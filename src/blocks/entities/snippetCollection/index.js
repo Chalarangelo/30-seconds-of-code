@@ -272,6 +272,7 @@ export class SnippetCollection {
 
   get splash() {
     if (!this._splash) {
+      const assetPath = `/${global.settings.paths.staticAssetPath}`;
       switch (this.type) {
         case 'main':
           this._splash = null;
@@ -281,20 +282,20 @@ export class SnippetCollection {
           break;
         case 'language':
           this._splash = this.config.splash
-            ? `${this.config.assetPath}/${this.config.splash}`
+            ? `${assetPath}/${this.config.splash}`
             : null;
           break;
         case 'tag':
           this._splash =
             this.tagMetadata && this.tagMetadata.splash
-              ? `${this.config.assetPath}/${this.tagMetadata.splash}`
+              ? `${assetPath}/${this.tagMetadata.splash}`
               : this.config.splash
-              ? `${this.config.assetPath}/${this.config.splash}`
+              ? `${assetPath}/${this.config.splash}`
               : null;
           break;
         case 'collection':
           this._splash = this.config.splash
-            ? `${this.config.assetPath}/${this.config.splash}`
+            ? `${assetPath}/${this.config.splash}`
             : null;
           break;
         default:

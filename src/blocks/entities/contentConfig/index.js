@@ -190,8 +190,4 @@ export class ContentConfig {
 
     return this._commonData;
   }
-
-  get assetPath() {
-    return `/${global.settings.paths.staticAssetPath}`;
-  }
 }

@@ -54,13 +54,5 @@ describe('ColectionConfig', () => {
         rawCollections.collection.iconName
       );
     });
-
-    it('should return the correct asset path', () => {
-      expect(
-        collectionConfigs.collection.assetPath.endsWith(
-          global.settings.paths.staticAssetPath
-        )
-      ).toBe(true);
-    });
   });
 });
