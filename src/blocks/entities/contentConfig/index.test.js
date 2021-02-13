@@ -109,12 +109,6 @@ describe('ContentConfig', () => {
         'language',
       ]);
     });
-
-    it('should return the correct asset path', () => {
-      expect(
-        configs.blog.assetPath.endsWith(global.settings.paths.staticAssetPath)
-      ).toBe(true);
-    });
   });
 
   describe('findContentConfigFromRawSnippet', () => {

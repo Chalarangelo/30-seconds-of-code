@@ -54,8 +54,4 @@ export class CollectionConfig {
   get icon() {
     return this.iconName ? this.iconName : null;
   }
-
-  get assetPath() {
-    return `/${global.settings.paths.staticAssetPath}`;
-  }
 }
