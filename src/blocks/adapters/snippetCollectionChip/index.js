@@ -35,7 +35,7 @@ export class SnippetCollectionChip {
     return this.snippetCollection.url;
   }
 
-  get name() {
+  get title() {
     return this.snippetCollection.shortName;
   }
 
@@ -56,8 +56,8 @@ export class SnippetCollectionChip {
   }
 
   static serializableAttributes = [
+    'title',
     'url',
-    'name',
     'icon',
     'description',
     'searchTokens',

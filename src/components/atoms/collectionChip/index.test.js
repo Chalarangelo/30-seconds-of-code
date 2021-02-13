@@ -29,7 +29,7 @@ describe('<CollectionChip />', () => {
   });
 
   it('should have the correct text', () => {
-    expect(wrapper.textContent).toBe(collectionChip.name);
+    expect(wrapper.textContent).toBe(collectionChip.title);
   });
 
   describe('with description', () => {
