@@ -20,7 +20,7 @@ add_content_source() {
     \"snippet_data/snippets.json\"
   ],
   \"slug\": \"$4\",
-  \"featured\": 500,
+  \"featured\": true,
   \"iconName\": \"$4\",
   \"biasPenaltyMultiplier\": 1.00
 }" >> "./content/configs/$2.json"
