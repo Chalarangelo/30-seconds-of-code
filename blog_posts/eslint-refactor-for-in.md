@@ -31,7 +31,7 @@ Object.keys(data).forEach(k => console.log(k));
 ```js
 const data = [3, 4];
 // Iterate over the values
-Object.keys(data).forEach(v => console.log(v));
+Object.values(data).forEach(v => console.log(v));
 // 3 4
 ```
 
