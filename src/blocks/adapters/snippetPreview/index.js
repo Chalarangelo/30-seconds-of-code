@@ -89,13 +89,13 @@ export class SnippetPreview {
 
   static serializableAttributes = [
     'title',
+    'url',
+    'icon',
+    'description',
+    'searchTokens',
     'expertise',
     'primaryTag',
     'language',
-    'icon',
-    'description',
-    'url',
-    'searchTokens',
   ];
 
   /**

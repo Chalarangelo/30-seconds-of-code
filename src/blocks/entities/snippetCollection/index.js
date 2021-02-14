@@ -1,6 +1,7 @@
 import { InstanceCache } from 'blocks/utilities/instanceCache';
 import { ArgsError } from 'blocks/utilities/error';
 import { uniqueElements } from 'utils';
+import tokenizeCollection from 'utils/search';
 import literals from 'lang/en';
 
 const ALLOWED_TYPES = ['main', 'blog', 'language', 'tag', 'collection'];
@@ -68,21 +69,11 @@ export class SnippetCollection {
       else this[key] = rest[key];
     });
 
-    this._loadCollectionMeta();
-
     SnippetCollection.instances.add(this.id, this);
     return this;
   }
 
   static instances = new InstanceCache();
-
-  static collectionMetas = [];
-
-  _loadCollectionMeta = () => {
-    if (['language', 'blog'].includes(this.type)) {
-      SnippetCollection.collectionMetas.push(this.meta);
-    }
-  };
 
   /**
    * Injects additional snippets into an existing collection.
@@ -110,18 +101,6 @@ export class SnippetCollection {
       }
     }
     return this._orders;
-  }
-
-  get meta() {
-    return {
-      name: this.shortName,
-      tags: this.tags,
-      url: this.url,
-      slugPrefix: this.slugPrefix,
-      featured: this.featured,
-      blog: this.blog,
-      icon: this.icon,
-    };
   }
 
   get tagMetadata() {
@@ -271,6 +250,7 @@ export class SnippetCollection {
 
   get splash() {
     if (!this._splash) {
+      const assetPath = `/${global.settings.paths.staticAssetPath}`;
       switch (this.type) {
         case 'main':
           this._splash = null;
@@ -280,20 +260,20 @@ export class SnippetCollection {
           break;
         case 'language':
           this._splash = this.config.splash
-            ? `${this.config.assetPath}/${this.config.splash}`
+            ? `${assetPath}/${this.config.splash}`
             : null;
           break;
         case 'tag':
           this._splash =
             this.tagMetadata && this.tagMetadata.splash
-              ? `${this.config.assetPath}/${this.tagMetadata.splash}`
+              ? `${assetPath}/${this.tagMetadata.splash}`
               : this.config.splash
-              ? `${this.config.assetPath}/${this.config.splash}`
+              ? `${assetPath}/${this.config.splash}`
               : null;
           break;
         case 'collection':
           this._splash = this.config.splash
-            ? `${this.config.assetPath}/${this.config.splash}`
+            ? `${assetPath}/${this.config.splash}`
             : null;
           break;
         default:
@@ -393,5 +373,33 @@ export class SnippetCollection {
       }
     }
     return this._isListed;
+  }
+
+  get isSearchable() {
+    if (!this._isSearchable) {
+      this._isSearchable = this.isListed && this.shortDescription;
+    }
+    return this._isSearchable;
+  }
+
+  get searchTokens() {
+    if (!this._searchTokens) {
+      const uniqueDescription =
+        ['blog', 'collection', 'language'].includes(this.type) &&
+        this.config.shortDescription &&
+        this.config.shortDescription.length
+          ? this.config.shortDescription
+          : this.type === 'tag' &&
+            this.tagMetadata &&
+            this.tagMetadata.shortDescription
+          ? this.tagMetadata.shortDescription
+          : '';
+      this._searchTokens = uniqueElements(
+        tokenizeCollection(`${uniqueDescription} ${this.name}`).map(v =>
+          v.toLowerCase()
+        )
+      ).join(' ');
+    }
+    return this._searchTokens;
   }
 }

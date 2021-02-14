@@ -1,6 +1,5 @@
 import { InstanceCache } from 'blocks/utilities/instanceCache';
 import { ArgsError } from 'blocks/utilities/error';
-import { convertToSeoSlug } from 'utils';
 
 /**
  * A collection configuration (i.e. the data and metadata from a content/configs JSON file).
@@ -24,7 +23,7 @@ export class CollectionConfig {
     iconName = null,
     ...rest
   }) {
-    if (!name || !slug || !featured || !snippetIds || !snippetIds.length) {
+    if (!name || !slug || !snippetIds || !snippetIds.length) {
       throw new ArgsError(
         "Missing required keys. One or more of the following keys were not specified: 'name', 'slug', 'featured', 'snippetIds'"
       );
@@ -33,7 +32,7 @@ export class CollectionConfig {
     this.name = name;
     this.description = description;
     this.slug = slug;
-    this.featured = featured;
+    this.featured = Boolean(featured);
     this.iconName = iconName;
     this.snippetIds = snippetIds;
     Object.keys(rest).forEach(key => {
@@ -53,13 +52,5 @@ export class CollectionConfig {
 
   get icon() {
     return this.iconName ? this.iconName : null;
-  }
-
-  get assetPath() {
-    return `/${global.settings.paths.staticAssetPath}`;
-  }
-
-  get outPath() {
-    return global.settings.paths.contentPath;
   }
 }

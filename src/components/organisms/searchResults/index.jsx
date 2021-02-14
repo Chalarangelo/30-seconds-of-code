@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import PageBackdrop from 'components/atoms/pageBackdrop';
 import PageTitle from 'components/atoms/pageTitle';
 import PreviewCard from 'components/molecules/previewCard';
+import CollectionChip from 'components/atoms/collectionChip';
 import RecommendationList from 'components/organisms/recommendationList';
 import literals from 'lang/en/client/search';
 
@@ -29,9 +30,13 @@ const SearchResults = ({
     <>
       <PageTitle>{literals.results}</PageTitle>
       <ul className='search-results'>
-        {searchResults.map(snippet => (
-          <PreviewCard key={`snippet_${snippet.url}`} snippet={snippet} />
-        ))}
+        {searchResults.map(item =>
+          item.expertise ? (
+            <PreviewCard key={`snippet_${item.url}`} snippet={item} />
+          ) : (
+            <CollectionChip key={`collection_${item.url}`} chip={item} />
+          )
+        )}
       </ul>
     </>
   ) : (

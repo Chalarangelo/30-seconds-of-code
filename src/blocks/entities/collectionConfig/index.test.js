@@ -33,7 +33,7 @@ describe('ColectionConfig', () => {
         rawCollections.collection.slug
       );
       expect(collectionConfigs.collection.featured).toBe(
-        rawCollections.collection.featured
+        Boolean(rawCollections.collection.featured)
       );
       expect(collectionConfigs.collection.snippetIds).toEqual(
         rawCollections.collection.snippetIds
@@ -53,22 +53,6 @@ describe('ColectionConfig', () => {
       expect(collectionConfigs.collection.icon).toBe(
         rawCollections.collection.iconName
       );
-    });
-
-    it('should return the correct asset path', () => {
-      expect(
-        collectionConfigs.collection.assetPath.endsWith(
-          global.settings.paths.staticAssetPath
-        )
-      ).toBe(true);
-    });
-
-    it('should return the correct output path', () => {
-      expect(
-        collectionConfigs.collection.outPath.endsWith(
-          global.settings.paths.contentPath
-        )
-      ).toBe(true);
     });
   });
 });

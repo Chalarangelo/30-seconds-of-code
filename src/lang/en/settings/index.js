@@ -7,7 +7,6 @@ const literals = {
     darkMode: 'Dark mode',
     githubLinks: 'GitHub links',
     cookies: 'Cookies',
-    archiveSearch: 'Search archived snippets',
   },
 };
 

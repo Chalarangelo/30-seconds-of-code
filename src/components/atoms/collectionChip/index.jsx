@@ -18,7 +18,7 @@ const CollectionChip = ({ chip }) => {
       <div className={`card-icon icon icon-${chip.icon}`}></div>
       <div className='card-data'>
         <h3 className='card-title'>
-          <a href={chip.url}>{chip.name}</a>
+          <a href={chip.url}>{chip.title}</a>
         </h3>
         <span className='card-subtitle'>{literals.snippetCollection}</span>
       </div>
@@ -32,7 +32,7 @@ const CollectionChip = ({ chip }) => {
         className={`collection-chip-link icon icon-${chip.icon}`}
         href={chip.url}
       >
-        {chip.name}
+        {chip.title}
       </a>
     </li>
   );

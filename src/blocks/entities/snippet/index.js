@@ -89,7 +89,7 @@ export class Snippet {
       this.authors = [...new Set(authors.toLowerCase().split(','))].map(
         a => config.authors[a]
       );
-      this.cover = `${this.config.assetPath}/${cover}`;
+      this.cover = `/${global.settings.paths.staticAssetPath}/${cover}`;
     }
 
     Object.keys(config.commonData).forEach(key => {
@@ -157,7 +157,7 @@ export class Snippet {
           ? this._frontmatterMetadata.unlisted
           : false;
       this._isListed =
-        this.config.featured > 0 && !isUnlistedSnippet && !this.isScheduled;
+        this.config.featured && !isUnlistedSnippet && !this.isScheduled;
     }
     return this._isListed;
   }
@@ -229,7 +229,7 @@ export class Snippet {
       {
         isBlog: this.config.isBlog,
         type: this.type,
-        assetPath: this.config.assetPath,
+        assetPath: `/${global.settings.paths.staticAssetPath}`,
         langData: this.config.langData,
       }
     );

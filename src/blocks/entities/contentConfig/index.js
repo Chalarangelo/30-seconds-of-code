@@ -30,7 +30,7 @@ export class ContentConfig {
     isBlog = false,
     ...rest
   }) {
-    if (!name || !dirName || !repoUrl || !snippetPath || !slug || !featured) {
+    if (!name || !dirName || !repoUrl || !snippetPath || !slug) {
       throw new ArgsError(
         "Missing required keys. One or more of the following keys were not specified: 'name', 'dirName', 'repoUrl', 'snippetPath', 'slug', 'featured'"
       );
@@ -41,7 +41,7 @@ export class ContentConfig {
     this.repoUrl = repoUrl;
     this.snippetPath = snippetPath;
     this.slug = slug;
-    this.featured = featured;
+    this.featured = Boolean(featured);
     this.iconName = iconName;
     this.biasPenaltyMultiplier = biasPenaltyMultiplier;
     this.cardTemplate = cardTemplate;
@@ -189,13 +189,5 @@ export class ContentConfig {
     }
 
     return this._commonData;
-  }
-
-  get assetPath() {
-    return `/${global.settings.paths.staticAssetPath}`;
-  }
-
-  get outPath() {
-    return global.settings.paths.contentPath;
   }
 }

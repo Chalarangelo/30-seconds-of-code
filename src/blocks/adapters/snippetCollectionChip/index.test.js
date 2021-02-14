@@ -41,7 +41,10 @@ describe('SnippetCollectionChip', () => {
 
     beforeAll(() => {
       Object.keys(listings).forEach(name => {
-        results[name] = listings[name].toObject({ withDescription: true });
+        results[name] = listings[name].toObject({
+          withDescription: true,
+          withSearchTokens: true,
+        });
       });
     });
 
@@ -51,8 +54,8 @@ describe('SnippetCollectionChip', () => {
       );
     });
 
-    it('returns the correct name', () => {
-      expect(results.language.name).toBe(collections.language.shortName);
+    it('returns the correct title', () => {
+      expect(results.language.title).toBe(collections.language.shortName);
     });
 
     it('returns the correct url', () => {
@@ -72,6 +75,12 @@ describe('SnippetCollectionChip', () => {
     it('returns no description if not required', () => {
       expect(
         listings.language.toObject({ withDescription: false }).description
+      ).toBe(undefined);
+    });
+
+    it('returns no search tokens if not required', () => {
+      expect(
+        listings.language.toObject({ withSearchTokens: false }).searchTokens
       ).toBe(undefined);
     });
   });

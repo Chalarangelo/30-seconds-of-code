@@ -6,6 +6,7 @@ import { JSONParser } from 'blocks/parsers/json';
 import { CollectionConfig } from 'blocks/entities/collectionConfig';
 import { Snippet } from 'blocks/entities/snippet';
 import { SnippetPreview } from 'blocks/adapters/snippetPreview';
+import { SnippetCollectionChip } from 'blocks/adapters/snippetCollectionChip';
 import { SnippetCollection } from 'blocks/entities/snippetCollection';
 import { withRecommendations } from 'blocks/decorations/withRecommendations';
 import { SnippetSerializer } from 'blocks/serializers/snippet';
@@ -134,7 +135,7 @@ export class Extractor {
       boundLog(`Finished writing hub pages`, 'success');
 
       boundLog(`Writing statics to directories`, 'info');
-      await this.writeStaticPages(allSnippetData.snippets);
+      await this.writeStaticPages(allSnippetData.snippets, collections);
       boundLog(`Finished writing statics`, 'success');
 
       return collections;
@@ -172,7 +173,7 @@ export class Extractor {
     return HubSerializer.serialize(snippetCollections, featuredCollectionIds);
   };
 
-  static writeStaticPages = allSnippetData => {
+  static writeStaticPages = (allSnippetData, collections) => {
     const { contentPath: outPath } = global.settings.paths;
     return Promise.all([
       JSONSerializer.serializeToDir(
@@ -212,11 +213,21 @@ export class Extractor {
           'SearchPage',
           0.25,
           {
-            searchIndex: allSnippetData
-              .filter(s => s.isListed)
-              .map(s =>
-                new SnippetPreview(s, { withSearchTokens: true }).toObject()
-              ),
+            searchIndex: [
+              ...collections
+                .filter(s => s.isSearchable)
+                .map(s =>
+                  new SnippetCollectionChip(s, {
+                    withDescription: true,
+                    withSearchTokens: true,
+                  }).toObject()
+                ),
+              ...allSnippetData
+                .filter(s => s.isListed)
+                .map(s =>
+                  new SnippetPreview(s, { withSearchTokens: true }).toObject()
+                ),
+            ],
             recommendedSnippets: allSnippetData
               .slice(0, 3)
               .map(s => new SnippetPreview(s).toObject()),
@@ -225,21 +236,6 @@ export class Extractor {
             ),
           }
         )
-      ),
-      JSONSerializer.serializeToDir(
-        ...Chunk.createStaticPageChunks(outPath, '/archive', 'SearchPage', 0, {
-          searchIndex: allSnippetData
-            .filter(s => !s.isListed)
-            .map(s =>
-              new SnippetPreview(s, { withSearchTokens: true }).toObject()
-            ),
-          recommendedSnippets: allSnippetData
-            .slice(0, 3)
-            .map(s => new SnippetPreview(s).toObject()),
-          pageDescription: literals.search.pageDescription(
-            allSnippetData.length
-          ),
-        })
       ),
     ]);
   };

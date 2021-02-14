@@ -29,7 +29,7 @@ describe('ContentConfig', () => {
       expect(configs.react.repoUrl).toBe(rawConfigs.react.repoUrl);
       expect(configs.react.snippetPath).toBe(rawConfigs.react.snippetPath);
       expect(configs.react.slug).toBe(rawConfigs.react.slug);
-      expect(configs.react.featured).toBe(rawConfigs.react.featured);
+      expect(configs.react.featured).toBe(Boolean(rawConfigs.react.featured));
       expect(configs.react.iconName).toBe(rawConfigs.react.iconName);
       expect(configs.react.biasPenaltyMultiplier).toBe(
         rawConfigs.react.biasPenaltyMultiplier
@@ -108,18 +108,6 @@ describe('ContentConfig', () => {
         'blog',
         'language',
       ]);
-    });
-
-    it('should return the correct asset path', () => {
-      expect(
-        configs.blog.assetPath.endsWith(global.settings.paths.staticAssetPath)
-      ).toBe(true);
-    });
-
-    it('should return the correct output path', () => {
-      expect(
-        configs.blog.outPath.endsWith(global.settings.paths.contentPath)
-      ).toBe(true);
     });
   });
 

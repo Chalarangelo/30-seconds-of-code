@@ -66,7 +66,7 @@ export const rawConfigs = {
       long: 'Dart',
     },
     slug: 'dart',
-    featured: -1,
+    featured: 0,
     iconName: 'dart',
     biasPenaltyMultiplier: 1.3,
     description: 'Lorem ipsum dolor sit amet.',
