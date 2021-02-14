@@ -6,6 +6,7 @@ const literals = {
   results: 'Search results',
   searchPrompt: 'Start typing a keyphrase to see matching snippets.',
   noResults: `We couldn't find any results for the keyphrase `,
+  snippetCollectionShort: 'Collection',
 };
 
 export default literals;

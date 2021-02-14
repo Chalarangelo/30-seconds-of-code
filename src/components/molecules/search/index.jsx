@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import { connect } from 'react-redux';
 import { getURLParameters, throttle, getBaseURL, getRootURL } from 'utils';
-import { pushNewQuery, searchByKeyphrase } from 'state/search';
+import { pushNewQuery, searchByKeyphrase, initializeIndex } from 'state/search';
 import literals from 'lang/en/client/search';
 
 /**
@@ -49,6 +49,7 @@ const propTypes = {
   searchIndex: PropTypes.arrayOf(PropTypes.shape({})),
   /** Timestamp of the last search history update */
   searchTimestamp: PropTypes.string,
+  searchResults: PropTypes.arrayOf(PropTypes.shape({})),
   /** Dispatch function of the Redux stotre */
   dispatch: PropTypes.func,
 };
@@ -66,11 +67,18 @@ const propTypes = {
 const Search = ({
   searchIndex,
   searchQuery,
+  searchResults,
   isMainSearch = false,
   searchTimestamp,
   dispatch,
 }) => {
   const [value, setValue] = React.useState('');
+  const [searchIndexInitialized, setSearchIndexInitialized] = React.useState(
+    false
+  );
+  const [selectedResult, setSelectedResult] = React.useState(-1);
+
+  const hasResults = value.trim().length > 1 && searchResults.length !== 0;
 
   React.useEffect(() => {
     if (isMainSearch) {
@@ -93,22 +101,55 @@ const Search = ({
 
   React.useEffect(
     throttle(() => {
-      if (!isMainSearch && value === '') return;
+      if (!isMainSearch && !searchIndexInitialized) return;
       dispatch(pushNewQuery(value));
       dispatch(searchByKeyphrase(value, searchIndex));
       if (isMainSearch) handleHistoryUpdate(value);
+      else setSelectedResult(-1);
     }, 500),
     [value, searchIndex]
   );
 
   return (
-    <>
+    <div
+      className='search-wrapper'
+      onKeyUp={e => {
+        e.preventDefault();
+        if (isMainSearch || !hasResults) return;
+        if (e.key === 'ArrowDown') {
+          const nextResult = selectedResult + 1;
+          setSelectedResult(
+            nextResult >= 5 || nextResult > searchResults.length
+              ? 0
+              : nextResult
+          );
+        } else if (e.key === 'ArrowUp') {
+          const previousResult = selectedResult - 1;
+          setSelectedResult(
+            previousResult < 0
+              ? Math.min(searchResults.length, 4)
+              : previousResult
+          );
+        }
+      }}
+    >
       <input
         defaultValue={value}
         className='search-box'
         type='search'
         placeholder={literals.searchPlaceholder}
         aria-label={literals.searchSnippets}
+        onFocus={() => {
+          if (!isMainSearch && !searchIndexInitialized) {
+            fetch('/page-data/search/page-data.json')
+              .then(data => data.json())
+              .then(json => {
+                dispatch(initializeIndex(json.result.pageContext.searchIndex));
+                setSearchIndexInitialized(true);
+              });
+          }
+          if (!isMainSearch) setSelectedResult(-1);
+        }}
         onKeyUp={e => {
           setValue(e.target.value);
         }}
@@ -121,12 +162,16 @@ const Search = ({
             typeof document.activeElement.blur === 'function'
           ) {
             document.activeElement.blur();
+            const rootURL = getRootURL(window.location.href);
             if (!isMainSearch) {
-              const encodedValue = encodeURIComponent(value);
-              const rootURL = getRootURL(window.location.href);
-              window.location.href = `${rootURL}/search/${
-                value ? `?keyphrase=${encodedValue}` : ''
-              }`;
+              if (selectedResult !== -1 && selectedResult !== 4) {
+                window.location.href = `${rootURL}${searchResults[selectedResult].url}`;
+              } else {
+                const encodedValue = encodeURIComponent(value);
+                window.location.href = `${rootURL}/search/${
+                  value ? `?keyphrase=${encodedValue}` : ''
+                }`;
+              }
             }
           }
         }}
@@ -139,7 +184,40 @@ const Search = ({
         }`}
         rel='nofollow'
       />
-    </>
+      {!isMainSearch && value ? (
+        <ul className='search-autocomplete-list'>
+          {[
+            ...searchResults.slice(0, 4),
+            {
+              title: `Search for "${value.trim()}"`,
+              url: `${getRootURL(
+                window.location.href
+              )}/search/?keyphrase=${encodeURIComponent(value)}`,
+              search: true,
+            },
+          ].map((item, i) => (
+            <li key={`autocomplete-result-${item.url}`}>
+              <a
+                href={item.url}
+                title={item.title}
+                className={selectedResult === i ? 'selected' : null}
+              >
+                <span className='result-title'>{item.title}</span>
+                {!item.search ? (
+                  <span className='result-tag'>
+                    {item.expertise
+                      ? item.language
+                        ? item.language
+                        : item.expertise
+                      : literals.snippetCollectionShort}
+                  </span>
+                ) : null}
+              </a>
+            </li>
+          ))}
+        </ul>
+      ) : null}
+    </div>
   );
 };
 
@@ -149,6 +227,7 @@ export default connect(
   state => ({
     searchIndex: state.search.searchIndex,
     searchQuery: state.search.searchQuery,
+    searchResults: state.search.searchResults,
     searchTimestamp: state.search.searchTimestamp,
   }),
   null
