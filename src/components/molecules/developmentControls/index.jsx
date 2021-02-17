@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import { connect } from 'react-redux';
-import { toggleDarkMode } from 'state/shell';
+import { useShell } from 'state/shell';
 import { useClickOutside } from 'components/hooks';
 import settings from 'settings/global';
 import literals from 'lang/en/client/developer';
@@ -11,8 +10,6 @@ import literals from 'lang/en/client/developer';
 require('./index.scss');
 
 const propTypes = {
-  isDarkMode: PropTypes.bool,
-  dispatch: PropTypes.func,
   pageContext: PropTypes.shape({
     snippet: PropTypes.snippet,
   }),
@@ -22,11 +19,8 @@ const propTypes = {
  * Renders a floating button with development controls.
  * @param {bool} isDarkMode - Should dark mode be applied?
  */
-const DevelopmentControls = ({
-  isDarkMode,
-  dispatch,
-  pageContext: { snippet } = {},
-}) => {
+const DevelopmentControls = ({ pageContext: { snippet } = {} }) => {
+  const [{ isDarkMode }, dispatch] = useShell();
   const [opened, setOpened] = React.useState(false);
   const [coverImage, setCoverImage] = React.useState();
   const controlsRef = React.useRef();
@@ -51,7 +45,9 @@ const DevelopmentControls = ({
           </a>
           <button
             className='btn btn-dev'
-            onClick={() => dispatch(toggleDarkMode(!isDarkMode))}
+            onClick={() =>
+              dispatch({ type: 'toggleDarkMode', isDarkMode: !isDarkMode })
+            }
           >
             {literals.toggleDarkMode}
           </button>
@@ -107,11 +103,4 @@ const DevelopmentControls = ({
 
 DevelopmentControls.propTypes = propTypes;
 
-export default connect(
-  state => ({
-    isDarkMode: state.shell.isDarkMode,
-    acceptsCookies: state.shell.acceptsCookies,
-    includeArchive: state.search.includeArchive,
-  }),
-  null
-)(DevelopmentControls);
+export default DevelopmentControls;

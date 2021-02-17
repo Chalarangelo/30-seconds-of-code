@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import { connect } from 'react-redux';
 import Meta from 'components/organisms/meta';
 import Shell from 'components/organisms/shell';
 import SearchResults from 'components/organisms/searchResults';
-import { initializeIndex } from 'state/search';
+import { useSearch } from 'state/search';
 import literals from 'lang/en/client/search';
 
 const propTypes = {
@@ -13,8 +12,6 @@ const propTypes = {
     recommendedSnippets: PropTypes.arrayOf(PropTypes.shape({})),
     searchIndex: PropTypes.arrayOf(PropTypes.shape({})),
   }),
-  searchQuery: PropTypes.string,
-  dispatch: PropTypes.func,
 };
 
 /**
@@ -23,11 +20,10 @@ const propTypes = {
  */
 const SearchPage = ({
   pageContext: { recommendedSnippets, pageDescription, searchIndex },
-  searchQuery,
-  dispatch,
 }) => {
+  const [{ searchQuery }, dispatch] = useSearch();
   React.useEffect(() => {
-    dispatch(initializeIndex(searchIndex));
+    dispatch({ type: 'initializeIndex', index: searchIndex });
   }, []);
 
   return (
@@ -49,9 +45,4 @@ const SearchPage = ({
 
 SearchPage.propTypes = propTypes;
 
-export default connect(
-  state => ({
-    searchQuery: state.search.searchQuery,
-  }),
-  null
-)(SearchPage);
+export default SearchPage;
