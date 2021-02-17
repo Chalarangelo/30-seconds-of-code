@@ -1,3 +1,5 @@
+import createStateProvider from './utils';
+
 /** Checks if the client is a bot */
 const isBot = () =>
   typeof navigator !== 'undefined' &&
@@ -6,54 +8,48 @@ const isBot = () =>
     navigator.userAgent
   );
 
-// Default state
 const initialState = {
   isDarkMode: undefined,
   cacheKey: process.env.CACHE_KEY,
-  newCacheKey: process.env.CACHE_KEY,
   isBot: isBot(),
   acceptsCookies: undefined,
 };
 
-// Actions
-const TOGGLE_DARKMODE = 'TOGGLE_DARKMODE';
-const ACCEPT_COOKIES = 'ACCEPT_COOKIES';
-const DECLINE_COOKIES = 'DECLINE_COOKIES';
+const persistKey = 'persist:30-sec-app@shell';
 
-export const toggleDarkMode = isDarkMode => ({
-  type: TOGGLE_DARKMODE,
-  isDarkMode,
-});
+export const actionTypes = {
+  toggleDarkMode: 'toggleDarkMode',
+  decideCookies: 'decideCookies',
+};
 
-export const decideCookies = cookieConsent => ({
-  type: cookieConsent ? ACCEPT_COOKIES : DECLINE_COOKIES,
-});
-
-// Reducer
-export default (state = initialState, action) => {
+const reducer = (state, action) => {
   switch (action.type) {
-    case TOGGLE_DARKMODE:
+    case actionTypes.toggleDarkMode:
       return {
         ...state,
         isDarkMode: action.isDarkMode,
       };
-    case ACCEPT_COOKIES:
+    case actionTypes.decideCookies:
       return {
         ...state,
-        acceptsCookies: true,
-      };
-    case DECLINE_COOKIES:
-      return {
-        ...state,
-        acceptsCookies: false,
+        acceptsCookies: action.acceptsCookies,
       };
     default:
       return state;
   }
 };
 
-// Persistence configuration
-export const persistConfig = {
-  key: 'shell',
-  blacklist: ['newCacheKey', 'isBot'],
-};
+const {
+  StateProvider: ShellProvider,
+  useState: useShellState,
+  useDispatch: useShellDispatch,
+  useStateDispatch: useShell,
+} = createStateProvider({
+  initialState,
+  persistKey,
+  reducer,
+  stateContextName: 'ShellState',
+  dispatchContextName: 'ShellDispatch',
+});
+
+export { ShellProvider, useShellState, useShellDispatch, useShell };
