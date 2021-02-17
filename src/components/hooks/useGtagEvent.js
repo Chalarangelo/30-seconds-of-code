@@ -1,11 +1,11 @@
 import { useCallback } from 'react';
-import { useSelector } from 'react-redux';
+import { useShellState } from 'state/shell';
 
 /**
  * A hook that handles gtag-enabled event tracking gracefully.
  */
 const useGtagEvent = name => {
-  const acceptsCookies = useSelector(state => state.shell.acceptsCookies);
+  const { acceptsCookies } = useShellState();
   const canSendEvent =
     typeof window !== 'undefined' && typeof gtag === `function`;
 
