@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { cleanup } from '@testing-library/react';
-import { renderConnected } from 'test/utils';
+import { renderWithContext } from 'test/utils';
 import CollectionsPage from './index';
 import { collectionChip } from 'fixtures/collections';
 
@@ -16,7 +16,7 @@ describe('<CollectionsPage />', () => {
   let wrapper, meta;
 
   beforeEach(() => {
-    wrapper = renderConnected(
+    wrapper = renderWithContext(
       <CollectionsPage
         pageContext={{
           chipList,

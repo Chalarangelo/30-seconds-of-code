@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { cleanup } from '@testing-library/react';
-import { renderConnected } from 'test/utils';
+import { renderWithContext } from 'test/utils';
 import Meta from './index';
 import literals from 'lang/en/client/common';
 import settings from 'settings/global';
@@ -16,7 +16,7 @@ describe('<Meta />', () => {
   let wrapper, helmet, store;
 
   beforeAll(() => {
-    wrapper = renderConnected(<Meta />);
+    wrapper = renderWithContext(<Meta />);
     helmet = Helmet.peek();
   });
 
@@ -77,7 +77,7 @@ describe('<Meta />', () => {
 
   describe('with custom attributes', () => {
     beforeAll(() => {
-      store = renderConnected(<Meta {...metadata} />).store;
+      store = renderWithContext(<Meta {...metadata} />).store;
       helmet = Helmet.peek();
     });
 
@@ -145,8 +145,9 @@ describe('<Meta />', () => {
 
   describe('with cookies accepted', () => {
     beforeAll(() => {
-      store.dispatch(decideCookies(true));
-      wrapper = renderConnected(<Meta />);
+      wrapper = renderWithContext(<Meta />, {
+        initialState: { shell: { acceptsCookies: true } },
+      });
       helmet = Helmet.peek();
     });
 

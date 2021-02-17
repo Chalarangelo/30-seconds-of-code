@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import { connect } from 'react-redux';
 import Meta from 'components/organisms/meta';
 import Shell from 'components/organisms/shell';
 import CollectionList from 'components/molecules/collectionList';
@@ -33,4 +32,4 @@ const CollectionsPage = ({
 
 CollectionsPage.propTypes = propTypes;
 
-export default connect(() => ({}), null)(CollectionsPage);
+export default CollectionsPage;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { renderConnected } from 'test/utils';
+import { renderWithContext } from 'test/utils';
 import { cleanup, fireEvent, waitFor } from '@testing-library/react';
 import literals from 'lang/en/client/common';
 import copyToClipboard from 'copy-to-clipboard';
@@ -20,7 +20,7 @@ describe('<CopyButton />', () => {
   });
 
   beforeEach(() => {
-    wrapper = renderConnected(<CopyButton text={copyText} />).container;
+    wrapper = renderWithContext(<CopyButton text={copyText} />).container;
     button = wrapper.querySelector('button');
   });
 

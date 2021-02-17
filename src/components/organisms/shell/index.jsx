@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import loadable from '@loadable/component';
-import { connect } from 'react-redux';
 import Search from 'components/molecules/search';
 import Footer from 'components/molecules/footer';
 import CookieConsentPopup from 'components/molecules/cookieConsentPopup';
 import literals from 'lang/en/client/common';
-import { pushNewPage } from 'state/navigation';
+import { useNavigation } from 'state/navigation';
+import { useShellState } from 'state/shell';
 import { combineClassNames } from 'utils';
 
 const DevelopmentControls = loadable(() =>
@@ -20,18 +20,13 @@ const propTypes = {
     PropTypes.node,
     PropTypes.arrayOf(PropTypes.node),
   ]),
-  isDarkMode: PropTypes.bool,
-  acceptsCookies: PropTypes.bool,
-  isBot: PropTypes.bool,
   isSearch: PropTypes.bool,
   isSettings: PropTypes.bool,
-  lastPageUrl: PropTypes.string.isRequired,
-  dispatch: PropTypes.func,
   pageContext: PropTypes.shape({}),
 };
 
 /**
- * Renders the application shell (Redux-connected)
+ * Renders the application shell (Context-connected)
  * @param {bool} isDarkMode - Should dark mode be applied?
  * @param {bool} acceptsCookies - Does the user accept cookies?
  * @param {bool} isBot - Is the client a bot? (Auto-detect)
@@ -40,16 +35,14 @@ const propTypes = {
  * @param {bool} pageContext - Page context (only-passed down in development)
  */
 const Shell = ({
-  isDarkMode,
-  acceptsCookies,
-  isBot,
   isSearch = false,
   isSettings = false,
-  lastPageUrl,
-  dispatch,
   children,
   pageContext,
 }) => {
+  const { isDarkMode, acceptsCookies, isBot } = useShellState();
+  const [{ lastPageUrl }, dispatch] = useNavigation();
+
   React.useEffect(() => {
     if (isDarkMode) document.querySelector('body').classList.add('dark');
     else document.querySelector('body').classList.remove('dark');
@@ -81,7 +74,10 @@ const Shell = ({
           title={literals.settings}
           onClick={() => {
             if (isSettings || !window || !window.location) return;
-            dispatch(pushNewPage(window.location.pathname));
+            dispatch({
+              type: 'pushNewPage',
+              pageUrl: window.location.pathname,
+            });
           }}
         />
       </header>
@@ -103,12 +99,4 @@ const Shell = ({
 
 Shell.propTypes = propTypes;
 
-export default connect(
-  state => ({
-    isDarkMode: state.shell.isDarkMode,
-    lastPageUrl: state.navigation.lastPageUrl,
-    acceptsCookies: state.shell.acceptsCookies,
-    isBot: state.shell.isBot,
-  }),
-  null
-)(Shell);
+export default Shell;

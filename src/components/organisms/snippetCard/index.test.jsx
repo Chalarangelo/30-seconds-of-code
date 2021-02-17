@@ -1,6 +1,6 @@
 import React from 'react';
 import { cleanup } from '@testing-library/react';
-import { renderConnected } from 'test/utils';
+import { renderWithContext } from 'test/utils';
 import cards from './index';
 import {
   fullSnippet,
@@ -17,7 +17,7 @@ describe('<SnippetCardWrapper />', () => {
   describe('standard snippet card template', () => {
     beforeEach(() => {
       const SnippetCard = cards['StandardSnippetCard'];
-      wrapper = renderConnected(<SnippetCard snippet={fullSnippet} />)
+      wrapper = renderWithContext(<SnippetCard snippet={fullSnippet} />)
         .container;
     });
 
@@ -31,7 +31,7 @@ describe('<SnippetCardWrapper />', () => {
   describe('css snippet card template', () => {
     beforeEach(() => {
       const SnippetCard = cards['CssSnippetCard'];
-      wrapper = renderConnected(<SnippetCard snippet={fullCssSnippet} />)
+      wrapper = renderWithContext(<SnippetCard snippet={fullCssSnippet} />)
         .container;
     });
 
@@ -43,7 +43,7 @@ describe('<SnippetCardWrapper />', () => {
   describe('blog snippet card template', () => {
     beforeEach(() => {
       const SnippetCard = cards['BlogSnippetCard'];
-      wrapper = renderConnected(<SnippetCard snippet={fullBlogSnippet} />)
+      wrapper = renderWithContext(<SnippetCard snippet={fullBlogSnippet} />)
         .container;
     });
 

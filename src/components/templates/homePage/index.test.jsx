@@ -1,6 +1,6 @@
 import React from 'react';
 import { cleanup } from '@testing-library/react';
-import { renderConnected } from 'test/utils';
+import { renderWithContext } from 'test/utils';
 import HomePage from './index';
 import { collectionShelf, snippetShelf } from 'fixtures/shelves';
 
@@ -13,7 +13,7 @@ describe('<HomePage />', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = renderConnected(
+    wrapper = renderWithContext(
       <HomePage
         pageContext={{
           shelves,

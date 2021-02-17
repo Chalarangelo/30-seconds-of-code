@@ -1,7 +1,7 @@
 import React from 'react';
 import { cleanup, render } from '@testing-library/react';
 import { fullSnippet, fullReactSnippet } from 'fixtures/snippets';
-import { renderConnected } from 'test/utils';
+import { renderWithContext } from 'test/utils';
 import Actions from './index';
 
 console.warn = jest.fn();
@@ -20,7 +20,7 @@ describe('<Actions />', () => {
   let wrapper;
 
   beforeEach(() => {
-    const utils = renderConnected(<Actions snippet={fullSnippet} />);
+    const utils = renderWithContext(<Actions snippet={fullSnippet} />);
     wrapper = utils.container;
   });
 
@@ -38,7 +38,7 @@ describe('<Actions />', () => {
 
   describe('with codepen-enabled snippet', () => {
     beforeEach(() => {
-      const utils = renderConnected(<Actions snippet={fullReactSnippet} />);
+      const utils = renderWithContext(<Actions snippet={fullReactSnippet} />);
       wrapper = utils.container;
     });
 
