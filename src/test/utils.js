@@ -1,35 +1,33 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { render } from '@testing-library/react';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import { rootReducer as reducer } from 'state';
 
-export const renderConnected = (
+import { ShellProvider } from 'state/shell';
+import { NavigationProvider } from 'state/navigation';
+import { SearchProvider } from 'state/search';
+
+const ContextWrapper = ({ children, initialState = {} }) => (
+  <ShellProvider initialState={initialState.shell}>
+    <NavigationProvider initialState={initialState.navigation}>
+      <SearchProvider initialState={initialState.search}>
+        {children}
+      </SearchProvider>
+    </NavigationProvider>
+  </ShellProvider>
+);
+
+export const renderWithContext = (
   ui,
-  {
-    initialState = {},
-    store = createStore(reducer, initialState),
-    ...renderOptions
-  } = {},
+  { initialState = {}, ...renderOptions } = {},
   renderer = render
 ) => {
   const Wrapper = ({ children }) => (
-    <Provider store={store}>{children}</Provider>
+    <ContextWrapper initialState={initialState}>{children}</ContextWrapper>
   );
   const utils = renderer(ui, { wrapper: Wrapper, ...renderOptions });
   return {
     ...utils,
-    store,
-    rerenderConnected: (el, newState = initialState) =>
-      renderConnected(
-        el,
-        {
-          initialState: newState,
-          store,
-          ...renderOptions,
-        },
-        utils.renderer
-      ),
   };
 };
+
+export const renderConnected = renderWithContext;
