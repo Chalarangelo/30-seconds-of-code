@@ -1,37 +1,18 @@
+import createStateProvider from './utils';
 import { quickParseTokens as tokenize } from 'utils/search';
 
-// Default state
 const initialState = {
-  initialized: false,
   searchQuery: '',
   searchIndex: [],
   searchResults: [],
   searchTimestamp: `${new Date()}`,
 };
 
-// Actions
-const PUSH_NEW_QUERY = 'PUSH_NEW_QUERY';
-const INITIALIZE_INDEX = 'INITIALIZE_INDEX';
-const SEARCH_BY_KEYPHRASE = 'SEARCH_BY_KEYPHRASE';
-const KEYPHRASE_TOO_SHORT = 'KEYPHRASE_TOO_SHORT';
+const persistKey = 'persist:30-sec-app@search';
 
-export const pushNewQuery = query => ({
-  type: PUSH_NEW_QUERY,
-  query,
-});
-
-export const initializeIndex = index => ({
-  type: INITIALIZE_INDEX,
-  index,
-});
-
-export const searchByKeyphrase = (keyphrase, searchIndex) => {
+const searchByKeyphrase = (keyphrase, searchIndex) => {
   let q = keyphrase.toLowerCase().trim();
-  if (q.length <= 1) {
-    return {
-      type: KEYPHRASE_TOO_SHORT,
-    };
-  }
+  if (q.length <= 1) return [];
   let results = [];
   if (q.length) {
     let t = tokenize(q);
@@ -57,41 +38,49 @@ export const searchByKeyphrase = (keyphrase, searchIndex) => {
         .slice(0, 50);
     }
   }
-  return {
-    type: SEARCH_BY_KEYPHRASE,
-    results,
-  };
+  return results;
 };
 
-// Reducer
-export default (state = initialState, action) => {
+export const actionTypes = {
+  pushNewQuery: 'pushNewQuery',
+  initializeIndex: 'initializeIndex',
+  searchByKeyphrase: 'searchByKeyphrase',
+};
+
+const reducer = (state, action) => {
   switch (action.type) {
-    case PUSH_NEW_QUERY:
+    case actionTypes.pushNewQuery:
       return {
         ...state,
         searchTimestamp: `${new Date()}`,
         searchQuery: action.query,
       };
-    case INITIALIZE_INDEX:
+    case actionTypes.initializeIndex:
       return {
         ...state,
         searchIndex: action.index,
-        initialized: true,
       };
-    case SEARCH_BY_KEYPHRASE:
+    case actionTypes.searchByKeyphrase:
       return {
         ...state,
-        searchResults: action.results,
+        searchResults: searchByKeyphrase(action.keyphrase, state.searchIndex),
       };
-    case KEYPHRASE_TOO_SHORT:
-      return state;
     default:
       return state;
   }
 };
 
-// Persistence configuration
-export const persistConfig = {
-  key: 'search',
-  blacklist: ['initialized'],
-};
+const {
+  StateProvider: SearchProvider,
+  useState: useSearchState,
+  useDispatch: useSearchDispatch,
+  useStateDispatch: useSearch,
+} = createStateProvider({
+  initialState,
+  persistKey,
+  reducer,
+  stateContextName: 'SearchState',
+  dispatchContextName: 'SearchDispatch',
+});
+
+export { SearchProvider, useSearchState, useSearchDispatch, useSearch };

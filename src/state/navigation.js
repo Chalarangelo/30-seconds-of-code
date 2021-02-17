@@ -1,19 +1,18 @@
-// Default state
+import createStateProvider from './utils';
+
 const initialState = {
   lastPageUrl: '/',
 };
 
-// Actions
-const PUSH_NEW_PAGE = 'PUSH_NEW_PAGE';
-export const pushNewPage = pageUrl => ({
-  type: PUSH_NEW_PAGE,
-  pageUrl,
-});
+const persistKey = 'persist:30-sec-app@navigation';
 
-// Reducer
-export default (state = initialState, action) => {
+export const actionTypes = {
+  pushNewPage: 'pushNewPage',
+};
+
+const reducer = (state, action) => {
   switch (action.type) {
-    case PUSH_NEW_PAGE:
+    case actionTypes.pushNewPage:
       return {
         ...state,
         lastPageUrl: action.pageUrl,
@@ -23,8 +22,22 @@ export default (state = initialState, action) => {
   }
 };
 
-// Persistence configuration
-export const persistConfig = {
-  key: 'navigation',
-  blacklist: [''],
+const {
+  StateProvider: NavigationProvider,
+  useState: useNavigationState,
+  useDispatch: useNavigationDispatch,
+  useStateDispatch: useNavigation,
+} = createStateProvider({
+  initialState,
+  persistKey,
+  reducer,
+  stateContextName: 'NavigationState',
+  dispatchContextName: 'NavigationDispatch',
+});
+
+export {
+  NavigationProvider,
+  useNavigationState,
+  useNavigationDispatch,
+  useNavigation,
 };
