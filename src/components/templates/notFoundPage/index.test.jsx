@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { cleanup } from '@testing-library/react';
-import { renderConnected } from 'test/utils';
+import { renderWithContext } from 'test/utils';
 import literals from 'lang/en/client/notFound';
 import NotFoundPage from './index';
 
@@ -12,7 +12,7 @@ describe('<NotFoundPage />', () => {
   let wrapper, meta, anchorButton;
 
   beforeEach(() => {
-    wrapper = renderConnected(<NotFoundPage />).container;
+    wrapper = renderWithContext(<NotFoundPage />).container;
     meta = Helmet.peek();
     anchorButton = wrapper.querySelector('a.btn.btn-home');
   });

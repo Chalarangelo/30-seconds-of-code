@@ -1,6 +1,6 @@
 import React from 'react';
 import { cleanup } from '@testing-library/react';
-import { renderConnected } from 'test/utils';
+import { renderWithContext } from 'test/utils';
 import SnippetList from './index';
 import { paginator } from 'fixtures/paginator';
 import { orders } from 'fixtures/sorter';
@@ -18,7 +18,7 @@ describe('<SnippetList />', () => {
   let wrapper, pageTitle, paginate, sort;
 
   beforeEach(() => {
-    wrapper = renderConnected(
+    wrapper = renderWithContext(
       <SnippetList
         snippetList={snippetList}
         paginator={paginator}
@@ -72,7 +72,7 @@ describe('<SnippetList />', () => {
 
   describe('with empty list', () => {
     beforeEach(() => {
-      wrapper = renderConnected(
+      wrapper = renderWithContext(
         <SnippetList
           snippetList={[]}
           paginator={paginator}
@@ -90,7 +90,7 @@ describe('<SnippetList />', () => {
 
   describe('with empty sublinks', () => {
     beforeEach(() => {
-      wrapper = renderConnected(
+      wrapper = renderWithContext(
         <SnippetList
           snippetList={snippetList}
           paginator={paginator}
@@ -107,7 +107,7 @@ describe('<SnippetList />', () => {
 
   describe('with a single sorting order', () => {
     beforeEach(() => {
-      wrapper = renderConnected(
+      wrapper = renderWithContext(
         <SnippetList
           snippetList={snippetList}
           paginator={paginator}
