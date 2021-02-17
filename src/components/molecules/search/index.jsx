@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import { connect } from 'react-redux';
 import { getURLParameters, throttle, getBaseURL, getRootURL } from 'utils';
-import { pushNewQuery, searchByKeyphrase, initializeIndex } from 'state/search';
+import { useSearch } from 'state/search';
 import literals from 'lang/en/client/search';
 
 /**
@@ -43,35 +42,20 @@ const handleHistoryUpdate = value => {
 const propTypes = {
   /** Is this component the main search component? */
   isMainSearch: PropTypes.bool,
-  /** Initial value for the search bar */
-  searchQuery: PropTypes.string,
-  /** Index of the searchable data */
-  searchIndex: PropTypes.arrayOf(PropTypes.shape({})),
-  /** Timestamp of the last search history update */
-  searchTimestamp: PropTypes.string,
-  searchResults: PropTypes.arrayOf(PropTypes.shape({})),
-  /** Dispatch function of the Redux stotre */
-  dispatch: PropTypes.func,
 };
 
 /**
- * Search bar component. (Redux-connected)
+ * Search bar component. (Context-connected)
  * @param {bool} isMainSearch - Is this the main search? Determines the input's
  *   behavior, as it will update history and handle searching if `true`, otherwise
  *   it will act as an idle input that expects interaction to provide an entry
  *   point to the search page.
- * @param {string} searchQuery - Initial value for the input (Redux-connected)
- * @param {*} searchIndex - Search index data, fetched from state (Redux-connected)
- * @param {string} searchTimestamp - Last search timestamp (Redux-connected)
  */
-const Search = ({
-  searchIndex,
-  searchQuery,
-  searchResults,
-  isMainSearch = false,
-  searchTimestamp,
-  dispatch,
-}) => {
+const Search = ({ isMainSearch = false }) => {
+  const [
+    { searchIndex, searchQuery, searchResults, searchTimestamp },
+    dispatch,
+  ] = useSearch();
   const [value, setValue] = React.useState('');
   const [searchIndexInitialized, setSearchIndexInitialized] = React.useState(
     false
@@ -102,8 +86,8 @@ const Search = ({
   React.useEffect(
     throttle(() => {
       if (!isMainSearch && !searchIndexInitialized) return;
-      dispatch(pushNewQuery(value));
-      dispatch(searchByKeyphrase(value, searchIndex));
+      dispatch({ type: 'pushNewQuery', query: value });
+      dispatch({ type: 'searchByKeyphrase', keyphrase: value });
       if (isMainSearch) handleHistoryUpdate(value);
       else setSelectedResult(-1);
     }, 500),
@@ -144,7 +128,10 @@ const Search = ({
             fetch('/page-data/search/page-data.json')
               .then(data => data.json())
               .then(json => {
-                dispatch(initializeIndex(json.result.pageContext.searchIndex));
+                dispatch({
+                  type: 'initializeIndex',
+                  index: json.result.pageContext.searchIndex,
+                });
                 setSearchIndexInitialized(true);
               });
           }
@@ -223,12 +210,4 @@ const Search = ({
 
 Search.propTypes = propTypes;
 
-export default connect(
-  state => ({
-    searchIndex: state.search.searchIndex,
-    searchQuery: state.search.searchQuery,
-    searchResults: state.search.searchResults,
-    searchTimestamp: state.search.searchTimestamp,
-  }),
-  null
-)(Search);
+export default Search;

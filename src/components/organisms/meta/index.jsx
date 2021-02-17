@@ -1,17 +1,16 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import settings from 'settings/global';
 import literals from 'lang/en/client/common';
 import { generateStructuredData } from 'utils';
+import { useShellState } from 'state/shell';
 
 require('styles/index.scss'); // Do not change this to `import`, it's not going to work, no clue why
 
 const propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  acceptsCookies: PropTypes.bool,
   meta: PropTypes.arrayOf(PropTypes.meta),
   logoSrc: PropTypes.string,
   structuredData: PropTypes.shape({
@@ -36,7 +35,6 @@ const propTypes = {
  * Dependent on `react-helmet` external module.
  * @param {string} title - Page title (leave empty to use the website title)
  * @param {string} description - Page description (leave empty to use the website title)
- * @param {bool} acceptsCookies - Does the user accept cookies? (Redux-connected)
  * @param {*} meta - Array of metadata objects (if any)
  * @param {string} logoSrc - Page logo URI
  * @param {object} structuredData - Structured data for the page (if any)
@@ -46,13 +44,13 @@ const propTypes = {
 const Meta = ({
   title,
   description = '',
-  acceptsCookies,
   meta = [],
   logoSrc = '/assets/logo.png',
   structuredData,
   breadcrumbsData,
   canonical = '',
 }) => {
+  const { acceptsCookies } = useShellState();
   const metaDescription = description || literals.siteDescription;
 
   // Load scripts
@@ -198,9 +196,4 @@ const Meta = ({
 
 Meta.propTypes = propTypes;
 
-export default connect(
-  state => ({
-    acceptsCookies: state.shell.acceptsCookies,
-  }),
-  null
-)(Meta);
+export default Meta;

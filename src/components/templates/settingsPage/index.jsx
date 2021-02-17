@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import { connect } from 'react-redux';
 import Meta from 'components/organisms/meta';
 import PageTitle from 'components/atoms/pageTitle';
 import Toggle from 'components/atoms/toggle/index';
 import SimpleCard from 'components/molecules/simpleCard';
 import Shell from 'components/organisms/shell';
-import { toggleDarkMode, decideCookies } from 'state/shell';
+import { useShell } from 'state/shell';
 
 const propTypes = {
   pageContext: PropTypes.shape({
@@ -20,9 +19,6 @@ const propTypes = {
       }),
     }),
   }),
-  dispatch: PropTypes.func,
-  isDarkMode: PropTypes.bool,
-  acceptsCookies: PropTypes.bool,
 };
 
 /**
@@ -33,38 +29,39 @@ const SettingsPage = ({
   pageContext: {
     stringLiterals: { title, pageDescription, settings },
   },
-  dispatch,
-  isDarkMode,
-  acceptsCookies,
-}) => (
-  <>
-    <Meta title={title} description={pageDescription} />
-    <Shell isSettings>
-      <PageTitle>{title}</PageTitle>
-      <SimpleCard>
-        <Toggle
-          checked={!!isDarkMode}
-          onChange={() => dispatch(toggleDarkMode(!isDarkMode))}
-        >
-          {settings.darkMode}
-        </Toggle>
-        <Toggle
-          checked={!!acceptsCookies}
-          onChange={() => dispatch(decideCookies(!acceptsCookies))}
-        >
-          {settings.cookies}
-        </Toggle>
-      </SimpleCard>
-    </Shell>
-  </>
-);
+}) => {
+  const [{ isDarkMode, acceptsCookies }, dispatch] = useShell();
+  return (
+    <>
+      <Meta title={title} description={pageDescription} />
+      <Shell isSettings>
+        <PageTitle>{title}</PageTitle>
+        <SimpleCard>
+          <Toggle
+            checked={!!isDarkMode}
+            onChange={() =>
+              dispatch({ type: 'toggleDarkMode', isDarkMode: !isDarkMode })
+            }
+          >
+            {settings.darkMode}
+          </Toggle>
+          <Toggle
+            checked={!!acceptsCookies}
+            onChange={() =>
+              dispatch({
+                type: 'decideCookies',
+                acceptsCookies: !acceptsCookies,
+              })
+            }
+          >
+            {settings.cookies}
+          </Toggle>
+        </SimpleCard>
+      </Shell>
+    </>
+  );
+};
 
 SettingsPage.propTypes = propTypes;
 
-export default connect(
-  state => ({
-    isDarkMode: state.shell.isDarkMode,
-    acceptsCookies: state.shell.acceptsCookies,
-  }),
-  null
-)(SettingsPage);
+export default SettingsPage;
