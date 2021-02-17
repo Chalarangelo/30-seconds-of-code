@@ -1,13 +1,13 @@
 /*
   Gatsby SSR API
 */
-import ReduxWrapper from 'state/ReduxWrapper';
+import ContextWrapper from 'state/ContextWrapper';
 import React from 'react';
 
 /**
- * Wraps the whole application in a redux Provider.
+ * Wraps the whole application in a Context Provider.
  */
-export const wrapRootElement = ReduxWrapper;
+export const wrapRootElement = ContextWrapper;
 
 /**
  * Called after rendering a page. Injects sitemap and opensearch XMLs.
