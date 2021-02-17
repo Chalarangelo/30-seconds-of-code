@@ -1,5 +1,5 @@
 import React from 'react';
-import { renderConnected } from 'test/utils';
+import { renderWithContext } from 'test/utils';
 import { cleanup } from '@testing-library/react';
 import CssSnippetCard from './index';
 import { fullCssSnippet, fullCssWithJsSnippet } from 'fixtures/snippets';
@@ -12,7 +12,7 @@ describe('<CssSnippetCard />', () => {
   let wrapper, card, tagList, snippetPreview, codeBlocks;
 
   beforeEach(() => {
-    wrapper = renderConnected(<CssSnippetCard snippet={fullCssSnippet} />)
+    wrapper = renderWithContext(<CssSnippetCard snippet={fullCssSnippet} />)
       .container;
     card = wrapper.querySelector('.card');
     tagList = wrapper.querySelector('.tag-list');
@@ -119,7 +119,7 @@ describe('<CssSnippetCard />', () => {
 
   describe('including JS code', () => {
     beforeEach(() => {
-      wrapper = renderConnected(
+      wrapper = renderWithContext(
         <CssSnippetCard snippet={fullCssWithJsSnippet} />
       ).container;
       card = wrapper.querySelector('.card');

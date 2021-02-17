@@ -1,10 +1,10 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { cleanup } from '@testing-library/react';
-import { renderConnected } from 'test/utils';
+import { renderWithContext } from 'test/utils';
 import ListingPage from './index';
 import { previewSnippet, previewBlogSnippet } from 'fixtures/snippets';
-import { paginator, firstPagePaginator } from 'fixtures/paginator';
+import { paginator } from 'fixtures/paginator';
 import { orders } from 'fixtures/sorter';
 
 console.warn = jest.fn();
@@ -18,7 +18,7 @@ describe('<ListingPage />', () => {
   let wrapper, meta;
 
   beforeEach(() => {
-    wrapper = renderConnected(
+    wrapper = renderWithContext(
       <ListingPage
         pageContext={{
           snippetList,

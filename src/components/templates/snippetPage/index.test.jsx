@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { cleanup } from '@testing-library/react';
-import { renderConnected } from 'test/utils';
+import { renderWithContext } from 'test/utils';
 import SnippetPage from './index';
 import { fullSnippet, fullBlogSnippet } from 'fixtures/snippets';
 import { breadcrumbs } from 'fixtures/breadcrumbs';
@@ -14,7 +14,7 @@ describe('<SnippetPage />', () => {
   let wrapper, meta, snippetCard;
 
   beforeEach(() => {
-    const utils = renderConnected(
+    const utils = renderWithContext(
       <SnippetPage
         pageContext={{
           snippet: fullSnippet,
@@ -63,7 +63,7 @@ describe('<SnippetPage />', () => {
 
   describe('with a blog post', () => {
     beforeEach(() => {
-      const utils = renderConnected(
+      const utils = renderWithContext(
         <SnippetPage
           pageContext={{
             snippet: fullBlogSnippet,

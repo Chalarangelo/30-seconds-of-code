@@ -1,5 +1,5 @@
 import React from 'react';
-import { renderConnected } from 'test/utils';
+import { renderWithContext } from 'test/utils';
 import { cleanup } from '@testing-library/react';
 import literals from 'lang/en/client/common';
 import { codepenHtmlCode, codepenCssCode } from 'fixtures/strings';
@@ -13,7 +13,7 @@ describe('<CodepenButton />', () => {
   let button, input;
 
   beforeEach(() => {
-    wrapper = renderConnected(
+    wrapper = renderWithContext(
       <CodepenButton htmlCode={codepenHtmlCode} cssCode={codepenCssCode} />
     ).container;
     button = wrapper.querySelector('button');

@@ -1,18 +1,15 @@
 import React from 'react';
 import { cleanup } from '@testing-library/react';
-import { renderConnected } from 'test/utils';
+import { renderWithContext } from 'test/utils';
 import Shell from './index';
-import { toggleDarkMode } from 'state/shell';
 
 describe('<Shell />', () => {
-  let wrapper, pageContainer, store, rerender;
+  let wrapper, pageContainer;
   const innerText = 'Hi there!';
 
   beforeEach(() => {
-    const utils = renderConnected(<Shell>{innerText}</Shell>);
+    const utils = renderWithContext(<Shell>{innerText}</Shell>);
     wrapper = utils.container;
-    store = utils.store;
-    rerender = utils.rerenderConnected;
     pageContainer = wrapper.querySelector('div.page-container');
   });
 
@@ -42,7 +39,7 @@ describe('<Shell />', () => {
 
   describe('when on a settings page', () => {
     beforeEach(() => {
-      wrapper = rerender(<Shell isSettings />).container;
+      wrapper = renderWithContext(<Shell isSettings />).container;
       pageContainer = wrapper.querySelector('div.page-container');
     });
 
@@ -55,8 +52,9 @@ describe('<Shell />', () => {
 
   describe('when in dark mode', () => {
     beforeEach(() => {
-      store.dispatch(toggleDarkMode(true));
-      wrapper = rerender(<Shell isSettings>{innerText}</Shell>).container;
+      wrapper = renderWithContext(<Shell isSettings>{innerText}</Shell>, {
+        initialState: { shell: { isDarkMode: true } },
+      }).container;
       pageContainer = wrapper.querySelector('div.page-container');
     });
 
@@ -67,7 +65,8 @@ describe('<Shell />', () => {
 
   describe('when in production without cookies enabled', () => {
     beforeEach(() => {
-      wrapper = rerender(<Shell isSettings>{innerText}</Shell>).container;
+      wrapper = renderWithContext(<Shell isSettings>{innerText}</Shell>)
+        .container;
     });
 
     it('should render a CookieConsentPopup', () => {

@@ -1,18 +1,17 @@
 import React from 'react';
-import { cleanup, fireEvent } from '@testing-library/react';
-import { renderConnected } from 'test/utils';
+import { cleanup } from '@testing-library/react';
+import { renderWithContext } from 'test/utils';
 import CookieConsentPopup from './index';
 
 console.warn = jest.fn();
 console.error = jest.fn();
 
 describe('<CookieConsentPopup />', () => {
-  let wrapper, store;
+  let wrapper;
 
   beforeEach(() => {
-    const utils = renderConnected(<CookieConsentPopup />);
+    const utils = renderWithContext(<CookieConsentPopup />);
     wrapper = utils.container;
-    store = utils.store;
   });
 
   afterEach(cleanup);
@@ -34,21 +33,33 @@ describe('<CookieConsentPopup />', () => {
     });
   });
 
-  describe('when accept button is clicked', () => {
-    it('accepts cookies', () => {
-      fireEvent.click(wrapper.querySelectorAll('.btn')[0], {
-        preventDefault: () => null,
+  describe('with cookies accepted', () => {
+    beforeEach(() => {
+      const utils = renderWithContext(<CookieConsentPopup />, {
+        initialState: { shell: { acceptsCookies: true } },
       });
-      expect(store.getState().shell.acceptsCookies).toBe(true);
+      wrapper = utils.container;
+    });
+
+    it('does not render', () => {
+      expect(wrapper.querySelectorAll('div.cookie-consent-popup')).toHaveLength(
+        1
+      );
     });
   });
 
-  describe('when decline button is clicked', () => {
-    it('declines cookies', () => {
-      fireEvent.click(wrapper.querySelectorAll('.btn')[1], {
-        preventDefault: () => null,
+  describe('with cookies declined', () => {
+    beforeEach(() => {
+      const utils = renderWithContext(<CookieConsentPopup />, {
+        initialState: { shell: { acceptsCookies: false } },
       });
-      expect(store.getState().shell.acceptsCookies).toBe(false);
+      wrapper = utils.container;
+    });
+
+    it('does not render', () => {
+      expect(wrapper.querySelectorAll('div.cookie-consent-popup')).toHaveLength(
+        1
+      );
     });
   });
 });

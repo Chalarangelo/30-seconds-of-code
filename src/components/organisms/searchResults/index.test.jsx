@@ -1,19 +1,22 @@
 import React from 'react';
 import { cleanup } from '@testing-library/react';
-import { renderConnected } from 'test/utils';
+import { renderWithContext } from 'test/utils';
 import SearchResults from './index';
-import { initializeIndex, searchByKeyphrase, pushNewQuery } from 'state/search';
 import { previewSnippet, previewBlogSnippet } from 'fixtures/snippets';
 
 describe('<SearchResults />', () => {
-  let wrapper, store, rerender;
+  let wrapper;
 
   beforeEach(() => {
-    let utils = renderConnected(<SearchResults />);
-    store = utils.store;
-    rerender = utils.rerenderConnected;
-    store.dispatch(initializeIndex([previewBlogSnippet, previewSnippet]));
-    wrapper = rerender(<SearchResults />).container;
+    wrapper = renderWithContext(<SearchResults />, {
+      initialState: {
+        search: {
+          searchQuery: '',
+          searchIndex: [previewBlogSnippet, previewSnippet],
+          searchResults: [],
+        },
+      },
+    }).container;
   });
 
   afterEach(cleanup);
@@ -24,8 +27,17 @@ describe('<SearchResults />', () => {
 
   describe('with recommended snippets', () => {
     beforeEach(() => {
-      wrapper = rerender(
-        <SearchResults recommendedSnippets={[previewSnippet]} />
+      wrapper = renderWithContext(
+        <SearchResults recommendedSnippets={[previewSnippet]} />,
+        {
+          initialState: {
+            search: {
+              searchQuery: '',
+              searchIndex: [previewBlogSnippet, previewSnippet],
+              searchResults: [],
+            },
+          },
+        }
       ).container;
     });
 
@@ -44,14 +56,15 @@ describe('<SearchResults />', () => {
 
   describe('with no results', () => {
     beforeEach(() => {
-      store.dispatch(pushNewQuery('impossiblestringtofindintheindex'));
-      store.dispatch(
-        searchByKeyphrase('impossiblestringtofindintheindex', [
-          previewBlogSnippet,
-          previewSnippet,
-        ])
-      );
-      wrapper = rerender(<SearchResults />).container;
+      wrapper = renderWithContext(<SearchResults />, {
+        initialState: {
+          search: {
+            searchQuery: 'impossiblestringtofindintheindex',
+            searchIndex: [previewSnippet, previewBlogSnippet],
+            searchResults: [],
+          },
+        },
+      }).container;
     });
 
     it('should render the correct page graphic', () => {
@@ -63,14 +76,15 @@ describe('<SearchResults />', () => {
 
   describe('with results', () => {
     beforeEach(() => {
-      store.dispatch(pushNewQuery(previewSnippet.primaryTag));
-      store.dispatch(
-        searchByKeyphrase(previewSnippet.primaryTag, [
-          previewBlogSnippet,
-          previewSnippet,
-        ])
-      );
-      wrapper = rerender(<SearchResults />).container;
+      wrapper = renderWithContext(<SearchResults />, {
+        initialState: {
+          search: {
+            searchQuery: previewSnippet.primaryTag,
+            searchIndex: [previewSnippet, previewBlogSnippet],
+            searchResults: [previewSnippet],
+          },
+        },
+      }).container;
     });
 
     it('should render a PageTitle', () => {
