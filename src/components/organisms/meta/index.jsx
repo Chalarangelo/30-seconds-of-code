@@ -4,7 +4,6 @@ import Helmet from 'react-helmet';
 import settings from 'settings/global';
 import literals from 'lang/en/client/common';
 import { generateStructuredData } from 'utils';
-import { useShellState } from 'state/shell';
 
 require('styles/index.scss'); // Do not change this to `import`, it's not going to work, no clue why
 
@@ -50,7 +49,6 @@ const Meta = ({
   breadcrumbsData,
   canonical = '',
 }) => {
-  const { acceptsCookies } = useShellState();
   const metaDescription = description || literals.siteDescription;
 
   // Load scripts
@@ -79,51 +77,6 @@ const Meta = ({
           },
         })),
       }),
-    });
-  }
-
-  if (typeof window !== 'undefined' && acceptsCookies) {
-    scripts.push({
-      async: '',
-      src: `https://www.googletagmanager.com/gtag/js?id=${settings.googleAnalytics.id}`,
-    });
-    // GTAG
-    scripts.push({
-      innerHTML: `
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag(
-        'config',
-        '${settings.googleAnalytics.id}',
-        ${JSON.stringify(settings.googleAnalytics.config)}
-      );
-      `,
-    });
-    // Send a pageview only the first time that gtag is added (is this safe?)
-    if (typeof gtag === 'undefined') {
-      scripts.push({
-        innerHTML: `
-        var hasFired = false;
-        if(!hasFired){
-          window.gtag('event', 'page_view', { page_path: '${window.location.pathname}' });
-          hasFired = true;
-        }`,
-      });
-    }
-
-    // Hotjar
-    scripts.push({
-      innerHTML: `
-      (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:1988882,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-      `,
     });
   }
 

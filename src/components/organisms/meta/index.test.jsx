@@ -5,7 +5,6 @@ import { renderWithContext } from 'test/utils';
 import Meta from './index';
 import literals from 'lang/en/client/common';
 import settings from 'settings/global';
-import { decideCookies } from 'state/shell';
 import metadata from 'fixtures/metadata';
 
 console.warn = jest.fn();
@@ -140,37 +139,6 @@ describe('<Meta />', () => {
           v => v.innerHTML.indexOf('BreadcrumbList') !== -1
         ).type
       ).toBe('application/ld+json');
-    });
-  });
-
-  describe('with cookies accepted', () => {
-    beforeAll(() => {
-      wrapper = renderWithContext(<Meta />, {
-        initialState: { shell: { acceptsCookies: true } },
-      });
-      helmet = Helmet.peek();
-    });
-
-    it('should render the appropriate scripts for analytics', () => {
-      expect(
-        helmet.scriptTags.find(
-          v => v.src && v.src.indexOf(settings.googleAnalytics.id) !== -1
-        )
-      ).not.toBe(null);
-      expect(
-        helmet.scriptTags.find(
-          v =>
-            v.innerHTML &&
-            v.innerHTML.indexOf(settings.googleAnalytics.id) !== -1
-        )
-      ).not.toBe(null);
-      expect(
-        helmet.scriptTags.find(
-          v =>
-            v.innerHTML &&
-            v.innerHTML.indexOf(`window.gtag('event', 'page_view'`) !== -1
-        )
-      ).not.toBe(null);
     });
   });
 });
