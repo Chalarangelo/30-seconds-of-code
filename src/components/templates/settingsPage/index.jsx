@@ -15,7 +15,6 @@ const propTypes = {
       settings: PropTypes.shape({
         darkMode: PropTypes.string,
         githubLinks: PropTypes.string,
-        cookies: PropTypes.string,
       }),
     }),
   }),
@@ -30,7 +29,7 @@ const SettingsPage = ({
     stringLiterals: { title, pageDescription, settings },
   },
 }) => {
-  const [{ isDarkMode, acceptsCookies }, dispatch] = useShell();
+  const [{ isDarkMode }, dispatch] = useShell();
   return (
     <>
       <Meta title={title} description={pageDescription} />
@@ -44,17 +43,6 @@ const SettingsPage = ({
             }
           >
             {settings.darkMode}
-          </Toggle>
-          <Toggle
-            checked={!!acceptsCookies}
-            onChange={() =>
-              dispatch({
-                type: 'decideCookies',
-                acceptsCookies: !acceptsCookies,
-              })
-            }
-          >
-            {settings.cookies}
           </Toggle>
         </SimpleCard>
       </Shell>
