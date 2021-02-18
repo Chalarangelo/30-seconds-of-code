@@ -1,6 +1,8 @@
 footer {
   margin: 3.5rem 0.5rem 0rem;
   color: var(--fore-color);
+  // Make at least as tall as the cookie consent popup
+  // to ensure that the paginator is never hidden
   min-height: 9rem;
 
   > p {
