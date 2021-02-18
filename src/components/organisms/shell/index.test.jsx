@@ -62,15 +62,4 @@ describe('<Shell />', () => {
       expect(pageContainer.className).toContain('dark');
     });
   });
-
-  describe('when in production without cookies enabled', () => {
-    beforeEach(() => {
-      wrapper = renderWithContext(<Shell isSettings>{innerText}</Shell>)
-        .container;
-    });
-
-    it('should render a CookieConsentPopup', () => {
-      expect(wrapper.querySelectorAll('.cookie-consent-popup')).toHaveLength(1);
-    });
-  });
 });

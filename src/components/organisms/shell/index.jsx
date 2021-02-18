@@ -3,7 +3,6 @@ import PropTypes from 'typedefs/proptypes';
 import loadable from '@loadable/component';
 import Search from 'components/molecules/search';
 import Footer from 'components/molecules/footer';
-import CookieConsentPopup from 'components/molecules/cookieConsentPopup';
 import literals from 'lang/en/client/common';
 import { useNavigation } from 'state/navigation';
 import { useShellState } from 'state/shell';
@@ -28,8 +27,6 @@ const propTypes = {
 /**
  * Renders the application shell (Context-connected)
  * @param {bool} isDarkMode - Should dark mode be applied?
- * @param {bool} acceptsCookies - Does the user accept cookies?
- * @param {bool} isBot - Is the client a bot? (Auto-detect)
  * @param {bool} isSearch - Is this a search page?
  * @param {bool} isSettings - Is this a search page?
  * @param {bool} pageContext - Page context (only-passed down in development)
@@ -40,7 +37,7 @@ const Shell = ({
   children,
   pageContext,
 }) => {
-  const { isDarkMode, acceptsCookies, isBot } = useShellState();
+  const { isDarkMode } = useShellState();
   const [{ lastPageUrl }, dispatch] = useNavigation();
 
   React.useEffect(() => {
@@ -88,11 +85,6 @@ const Shell = ({
       {process.env.ENV === 'development' && (
         <DevelopmentControls pageContext={pageContext} />
       )}
-      {typeof acceptsCookies === 'undefined' &&
-      process.env.ENV !== 'development' &&
-      !isBot ? (
-        <CookieConsentPopup />
-      ) : null}
     </div>
   );
 };
