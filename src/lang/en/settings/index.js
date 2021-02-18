@@ -6,6 +6,7 @@ const literals = {
   settings: {
     darkMode: 'Dark mode',
     githubLinks: 'GitHub links',
+    cookies: 'Cookies',
   },
 };
 
