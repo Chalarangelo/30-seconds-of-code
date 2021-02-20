@@ -14,7 +14,7 @@
 }
 
 // Dark mode colors
-.page-container.dark {
+.dark {
   --back-color: #0e0e11;
   --fore-color: #dadbe2;
   --fore-color-light: #acb1c3;
@@ -22,7 +22,7 @@
   --fore-color-darker: #fcfcfd;
 }
 
-body.dark {
+.dark {
   background: #060709;  // Hack to remove white space
   // Scrollbar
   --scrollbar-back-color: hsl(227, 19%, 3%);
