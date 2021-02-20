@@ -13,6 +13,14 @@ const propTypes = {};
 const CookieConsentPopup = () => {
   const dispatch = useShellDispatch();
 
+  const [hasMounted, setHasMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  if (!hasMounted) return null;
+
   return (
     <div className='cookie-consent-popup'>
       <p data-nosnippet>
