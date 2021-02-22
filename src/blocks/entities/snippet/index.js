@@ -267,21 +267,17 @@ export class Snippet {
   }
 
   _initTextContent(body, excerpt) {
-    let shortSliceIndex, shortText;
     const text = body
       .slice(0, body.indexOf(mdCodeFence))
       .replace(/\r\n/g, '\n');
+    const isLongBlog = this.config.isBlog && text.indexOf('\n\n') > 180;
 
-    if (this.config.isBlog) {
-      shortSliceIndex =
-        text.indexOf('\n\n') <= 180
-          ? text.indexOf('\n\n')
-          : text.indexOf(' ', 160);
-      shortText =
-        excerpt && excerpt.trim().length !== 0
-          ? excerpt
-          : `${text.slice(0, shortSliceIndex)}...`;
-    } else shortText = text.slice(0, text.indexOf('\n\n'));
+    const shortSliceIndex = isLongBlog
+      ? text.indexOf(' ', 160)
+      : text.indexOf('\n\n');
+    const shortText = excerpt && excerpt.trim().length !== 0
+        ? excerpt
+        : `${text.slice(0, shortSliceIndex)}${isLongBlog ? '...' : ''}`;
     const parsedDescription = stripMarkdownFormat(shortText);
 
     this.text = {
