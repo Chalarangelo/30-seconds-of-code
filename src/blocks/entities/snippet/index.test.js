@@ -150,8 +150,22 @@ describe('Snippet', () => {
     });
 
     it('calculates the HTML content', () => {
-      expect(typeof snippet.html).not.toBe('undefined');
-      expect(typeof blogSnippet.html).not.toBe('undefined');
+      expect(Object.keys(snippet.html)).toEqual([
+        'fullDescription',
+        'description',
+        'code',
+        'example',
+      ]);
+      expect(Object.keys(blogSnippet.html)).toEqual([
+        'fullDescription',
+        'description',
+      ]);
+    });
+
+    it('calculates the correct description', () => {
+      expect(snippet.text.short).toBe(rawSnippets.normal.body.split('\n\n')[0]);
+      expect(blogSnippet.text.short).toBe(rawSnippets.blog.excerpt);
+      expect(cssSnippet.text.short).toBe(rawSnippets.css.excerpt);
     });
 
     it('calculates breadcrumbs correctly', () => {
