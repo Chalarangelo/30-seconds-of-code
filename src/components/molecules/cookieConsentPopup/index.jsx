@@ -39,7 +39,7 @@ const CookieConsentPopup = () => {
           data-nosnippet
           onClick={e => {
             e.preventDefault();
-            dispatch({ action: 'decideCookies', acceptsCookies: true });
+            dispatch({ type: 'decideCookies', acceptsCookies: true });
           }}
         >
           {literals.accept}
@@ -49,7 +49,7 @@ const CookieConsentPopup = () => {
           data-nosnippet
           onClick={e => {
             e.preventDefault();
-            dispatch({ action: 'decideCookies', acceptsCookies: false });
+            dispatch({ type: 'decideCookies', acceptsCookies: false });
           }}
         >
           {literals.decline}
