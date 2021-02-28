@@ -21,16 +21,7 @@
     background-position-y: 1%, top;
     background-repeat: no-repeat;
     background-size: 45vmin, 44vmin;
-  }
-}
-
-.dark {
-
-  .page-graphic {
-
-    &::before {
-      filter: brightness(0.85) invert(1) saturate(2.5) hue-rotate(170deg);
-    }
+    filter: brightness(.85) invert(1) saturate(2.5) hue-rotate(170deg);
   }
 }
 
@@ -42,8 +33,11 @@
   max-width: 200px;
   font-size: 1.5rem;
   line-height: 1.5rem;
-  color: var(--fore-color-darker);
   font-weight: 400;
+
+  strong {
+    color: var(--clr-txt-150);
+  }
 
   @media screen and (min-width: $layout-medium-breakpoint) {
     max-width: 400px;
@@ -61,7 +55,6 @@
   font-weight: 400;
   line-height: 1.5rem;
   max-width: 200px;
-  color: var(--fore-color-darker);
   margin: 0.5rem auto;
 
   @media screen and (min-width: $layout-medium-breakpoint) {

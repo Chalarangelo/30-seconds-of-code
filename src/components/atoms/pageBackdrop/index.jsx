@@ -39,7 +39,10 @@ const PageBackdrop = ({
   children,
   ...rest
 }) => (
-  <div className={combineClassNames`page-graphic ${graphicName}`} {...rest}>
+  <div
+    className={combineClassNames`page-graphic txt-050 ${graphicName}`}
+    {...rest}
+  >
     <p className={combineClassNames`page-backdrop-text ${mainTextClassName}`}>
       {mainText}
     </p>

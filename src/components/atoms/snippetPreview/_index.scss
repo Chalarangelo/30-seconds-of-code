@@ -4,11 +4,10 @@
   -webkit-font-smoothing: antialiased;
   line-height: 2;
   margin: 2rem 0 -3rem .875rem;
-  color: var(--card-title-color);
 }
 
 .snippet-preview {
-  background:var(--back-color);
+  background: var(--clr-snippet-preview-bg);
   border-radius: .5rem;
   padding: 3.25rem .875rem .75rem;
   margin: 0;
