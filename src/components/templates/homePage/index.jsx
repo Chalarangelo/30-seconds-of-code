@@ -42,7 +42,7 @@ const HomePage = ({ pageContext: { shelves, pageDescription } }) => {
         }}
       />
       <Shell>
-        <h1 className='home-title'>
+        <h1 className='home-title txt-200'>
           <img
             src='/assets/30s-icon.png'
             alt={literals.siteName}
@@ -52,7 +52,7 @@ const HomePage = ({ pageContext: { shelves, pageDescription } }) => {
           />
           <span className='home-title-text'>{literals.siteName}</span>
         </h1>
-        <p className='home-sub-title'>{literals.siteDescription}</p>
+        <p className='home-sub-title txt-150'>{literals.siteDescription}</p>
         {shelves.map(s => (
           <Shelf shelf={s} key={`shelf_${s.shelfType}.${s.shelfUrl}`} />
         ))}
