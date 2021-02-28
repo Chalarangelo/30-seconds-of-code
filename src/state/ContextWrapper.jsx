@@ -1,6 +1,5 @@
 import React from 'react';
 import { ShellProvider } from './shell';
-import { NavigationProvider } from './navigation';
 import { SearchProvider } from './search';
 
 /**
@@ -9,9 +8,7 @@ import { SearchProvider } from './search';
  */
 const ContextWrapper = ({ element }) => (
   <ShellProvider>
-    <NavigationProvider>
-      <SearchProvider>{element}</SearchProvider>
-    </NavigationProvider>
+    <SearchProvider>{element}</SearchProvider>
   </ShellProvider>
 );
 

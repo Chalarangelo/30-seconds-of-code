@@ -198,17 +198,6 @@ export class Extractor {
       JSONSerializer.serializeToDir(
         ...Chunk.createStaticPageChunks(
           outPath,
-          '/settings',
-          'SettingsPage',
-          0.05,
-          {
-            stringLiterals: literals.settings,
-          }
-        )
-      ),
-      JSONSerializer.serializeToDir(
-        ...Chunk.createStaticPageChunks(
-          outPath,
           '/search',
           'SearchPage',
           0.25,
