@@ -1,21 +1,5 @@
-// Colors
-:root {
-  --chip-back-color: #FFFFFF;
-  --chip-fore-color: #202124;
-  --chip-shadow-color: rgba(0, 32, 128, 0.07);
-}
-
-// Dark mode colors
-.dark {
-  --chip-back-color: #1A1D21;
-  --chip-fore-color: #E1ECF4;
-  --chip-shadow-color: rgba(0, 3, 10, 0.16);
-}
-
 .collection-chip {
-  background: var(--chip-back-color);
   border-radius: 1rem;
-  box-shadow: 0px 1px 3px 1px var(--chip-shadow-color);
 
   > .icon {
     display: block;
@@ -32,7 +16,7 @@
     text-align: center;
 
     &, &:link, &:visited {
-      color: var(--chip-fore-color);
+      color: var(--clr-txt-200);
     }
 
     &::before {
@@ -70,7 +54,7 @@
         font-variant-numeric: lining-nums;
         font-weight: 500;
         line-height: 1;
-        color: var(--card-title-color);
+        color: var(--clr-txt-200);
       }
 
       &:hover, &:focus {
@@ -86,7 +70,6 @@
   .card-subtitle {
     margin: 0 .5rem;
     display: inline-block;
-    color: var(--card-fore-color-light);
     font-size: .875rem;
     line-height: 1rem;
   }

@@ -1,35 +1,26 @@
-// Colors
-:root {
-  --expertise-beginner: #7CB342;
-  --expertise-intermediate: #FFB300;
-  --expertise-advanced: #D66361;
-  --expertise-blog: #448AFF;
-}
-
 .expertise {
   position: absolute;
   width: 1rem;
   height: 1rem;
   border-radius: 1rem;
   background: var(--expertise-color);
-  border: 2px solid var(--card-back-color);
   box-sizing: border-box;
   top: 0px;
   right: 0px;
 
   &.beginner {
-    --expertise-color: var(--expertise-beginner);
+    --expertise-color: var(--clr-exp-beginner);
   }
 
   &.intermediate {
-    --expertise-color: var(--expertise-intermediate);
+    --expertise-color: var(--clr-exp-intermediate);
   }
 
   &.advanced {
-    --expertise-color: var(--expertise-advanced);
+    --expertise-color: var(--clr-exp-advanced);
   }
 
   &.article {
-    --expertise-color: var(--expertise-blog);
+    --expertise-color: var(--clr-exp-blog);
   }
 }
