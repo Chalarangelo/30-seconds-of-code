@@ -24,7 +24,7 @@
     }
 
     .card-code + .card-code {
-      border-top: 1px solid var(--pre-decorator-color);
+      border-top: 1px solid var(--clr-txt-050);
       padding-top: 2.5rem;
 
       &:before {
@@ -36,9 +36,9 @@
       padding: 0.25rem .875rem 0;
       font-size: .875rem;
       text-transform: uppercase;
-      background: var(--pre-back-color);
+      background: var(--clr-code-bg);
       margin: 0;
-      color: var(--pre-decorator-color);
+      color: var(--clr-txt-100);
 
       @media screen and (min-width: $layout-medium-breakpoint) {
         font-size: 1rem;
@@ -69,14 +69,5 @@
     margin: 2rem 0 -1rem;
     display: flex;
     justify-content: space-around;
-  }
-}
-
-a.github-link {
-
-  &, &:link, &:visited {
-    font-size: 0.875rem;
-    margin: 0 0.5rem 0.25rem 4.75rem;
-    color: var(--card-fore-color-light);
   }
 }

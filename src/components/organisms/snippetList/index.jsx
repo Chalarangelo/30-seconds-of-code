@@ -65,7 +65,9 @@ const SnippetList = ({
             <div>
               <PageTitle>{listingName}</PageTitle>
               {listingDescription && listingDescription.length ? (
-                <p className='snippet-list-description'>{listingDescription}</p>
+                <p className='snippet-list-description txt-100'>
+                  {listingDescription}
+                </p>
               ) : null}
             </div>
           </div>
