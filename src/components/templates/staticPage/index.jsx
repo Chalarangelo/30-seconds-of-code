@@ -4,6 +4,8 @@ import Meta from 'components/organisms/meta';
 import PageTitle from 'components/atoms/pageTitle';
 import SimpleCard from 'components/molecules/simpleCard';
 import Shell from 'components/organisms/shell';
+import Toggle from 'components/atoms/toggle/index';
+import { useShell } from 'state/shell';
 
 const propTypes = {
   pageContext: PropTypes.shape({
@@ -17,6 +19,10 @@ const propTypes = {
           html: PropTypes.string,
         })
       ),
+      cookieSettingCard: PropTypes.shape({
+        title: PropTypes.string,
+        text: PropTypes.string,
+      }),
     }).isRequired,
   }),
 };
@@ -30,24 +36,52 @@ const propTypes = {
  */
 const StaticPage = ({
   pageContext: {
-    stringLiterals: { title, subtitle, pageDescription, cards },
+    stringLiterals: {
+      title,
+      subtitle,
+      pageDescription,
+      cards,
+      cookieSettingCard = null,
+    },
   },
-}) => (
-  <>
-    <Meta title={title} description={pageDescription} />
-    <Shell>
-      <PageTitle className='static-tite'>{title}</PageTitle>
-      <p className='page-sub-title'>{subtitle}</p>
-      {cards.map(({ title, html }, i) => (
-        <SimpleCard
-          key={i}
-          title={title}
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-      ))}
-    </Shell>
-  </>
-);
+}) => {
+  const [{ acceptsCookies }, dispatch] = useShell();
+  return (
+    <>
+      <Meta title={title} description={pageDescription} />
+      <Shell>
+        <PageTitle className='static-tite'>{title}</PageTitle>
+        <p className='page-sub-title txt-100'>{subtitle}</p>
+        {cards.map(({ title, html }, i) => (
+          <SimpleCard
+            key={i}
+            title={title}
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+        ))}
+        {cookieSettingCard ? (
+          <SimpleCard title={cookieSettingCard.title}>
+            <p>{cookieSettingCard.text}</p>
+            <Toggle
+              checked={!!acceptsCookies}
+              onChange={() => {
+                dispatch({
+                  type: 'decideCookies',
+                  acceptsCookies: !acceptsCookies,
+                });
+                // Force reload the page if cookies are now disabled
+                if (acceptsCookies)
+                  setTimeout(() => window.location.reload(), 300);
+              }}
+            >
+              {cookieSettingCard.toggleText}
+            </Toggle>
+          </SimpleCard>
+        ) : null}
+      </Shell>
+    </>
+  );
+};
 
 StaticPage.propTypes = propTypes;
 

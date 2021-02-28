@@ -28,6 +28,12 @@ const literals = {
       html: 'moreInformation.html',
     },
   ],
+  cookieSettingCard: {
+    title: 'Cookie preferences',
+    text:
+      'You can update your cookie preferences using the toggle button below.',
+    toggleText: 'Accept cookies',
+  },
 };
 
 literals.cards.forEach(({ html }, i) => {
