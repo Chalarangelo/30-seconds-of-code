@@ -1,10 +1,10 @@
 @import './fonts';
 @import './icons';
-@import './global_variables';
+@import './breakpoints';
+@import './colors';
 @import './surfaces';
 @import './reset';
-@import './code';
-@import './anchor';
+@import 'styles/type';
 @import './functions';
 @import 'components/atoms';
 @import 'components/molecules';
