@@ -22,7 +22,7 @@ const CookieConsentPopup = () => {
   if (!hasMounted) return null;
 
   return (
-    <div className='cookie-consent-popup'>
+    <div className='cookie-consent-popup srfc-04db txt-150'>
       <p data-nosnippet>
         {literals.cookieDisclaimer}
         {literals.learnMore}
