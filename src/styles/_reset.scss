@@ -20,7 +20,8 @@ a, b, em, i, q, span, strong, u {
 }
 body {
   margin: 0;
-  color: var(--fore-color);
+  background: var(--clr-bg);
+  color: var(--clr-txt-100);
   overflow-x: hidden;
 }
 // Show overflow in Edge.

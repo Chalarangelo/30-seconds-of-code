@@ -1,14 +1,21 @@
 // Colors
 :root {
-  --code-fore-color: #0324AB;
-  --code-back-color: #EDF0FC;
-  --code-selected-color: #BDEDFE;
-}
+  // Inline
+  --clr-code-bg: hsl(225, 31%, 18%);
+  --clr-code-txt: hsl(228, 74%, 91%);
 
-.dark {
-  --code-fore-color: #d7def9;
-  --code-back-color: #232839;
-  --code-selected-color: #0dbcfb;
+  // Block
+  --clr-code-block-txt: hsl(0, 69%, 67%);
+  --clr-code-selection: hsl(228, 89%, 15%);
+
+  --clr-tkn-a: hsl(199, 17%, 57%);   // Comments
+  --clr-tkn-b: hsl(0, 0%, 74%);   // Punctuation
+  --clr-tkn-c: hsl(207, 89%, 68%);   // Functions
+  --clr-tkn-d: hsl(34, 100%, 50%);   // Numbers
+  --clr-tkn-e: hsl(88, 50%, 76%);   // Strings
+  --clr-tkn-f: hsl(291, 47%, 71%);   // Keywords
+  --clr-tkn-g: hsl(187, 71%, 50%);   // Regular expressions
+  --clr-tkn-h: hsl(0, 69%, 67%);   // Variables
 }
 
 // Style code
@@ -24,8 +31,8 @@ code, kbd, pre, code *, pre *, kbd *, code[class*="language-"], pre[class*="lang
 }
 
 code {
-  background: var(--code-back-color);
-  color: var(--code-fore-color);
+  background: var(--clr-code-bg);
+  color: var(--clr-code-txt);
   padding: 0.125rem 0.375rem;
   border-radius: 0.125rem;
 }
@@ -49,7 +56,8 @@ code[class*="language-"], pre[class*="language-"] {
 }
 
 pre[class*="language-"]::selection, pre[class*="language-"] ::selection {
-  background: var(--pre-selected-color);
+  background: var(--clr-code-selection);
+  // color: var(--clr-txt-150);
 }
 
 :not(pre) > code[class*="language-"] {
@@ -61,11 +69,7 @@ pre[class*="language-"]::selection, pre[class*="language-"] ::selection {
 p > code, a > code {
 
   &, &[class*="language-"] {
-    color: var(--code-fore-color);
-    background: var(--code-back-color);
-
-    &::selection, & ::selection {
-      background: var(--code-selected-color);
-    }
+    color: var(--clr-code-txt);
+    background: var(--clr-code-bg);
   }
 }
