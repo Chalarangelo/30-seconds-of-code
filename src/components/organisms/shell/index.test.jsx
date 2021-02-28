@@ -37,32 +37,6 @@ describe('<Shell />', () => {
     expect(wrapper.textContent).toContain(innerText);
   });
 
-  describe('when on a settings page', () => {
-    beforeEach(() => {
-      wrapper = renderWithContext(<Shell isSettings />).container;
-      pageContainer = wrapper.querySelector('div.page-container');
-    });
-
-    it('should not link to the settings page', () => {
-      expect(
-        wrapper.querySelectorAll('a.icon-settings[href="/settings"]')
-      ).toHaveLength(0);
-    });
-  });
-
-  describe('when in dark mode', () => {
-    beforeEach(() => {
-      wrapper = renderWithContext(<Shell isSettings>{innerText}</Shell>, {
-        initialState: { shell: { isDarkMode: true } },
-      }).container;
-      pageContainer = wrapper.querySelector('div.page-container');
-    });
-
-    it('should pass the appropriate class to the container', () => {
-      expect(pageContainer.className).toContain('dark');
-    });
-  });
-
   describe('when in production without cookies enabled', () => {
     beforeEach(() => {
       wrapper = renderWithContext(<Shell isSettings>{innerText}</Shell>)

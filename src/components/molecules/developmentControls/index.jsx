@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import { useShell } from 'state/shell';
 import { useClickOutside } from 'components/hooks';
 import settings from 'settings/global';
 import literals from 'lang/en/client/developer';
@@ -17,10 +16,8 @@ const propTypes = {
 
 /**
  * Renders a floating button with development controls.
- * @param {bool} isDarkMode - Should dark mode be applied?
  */
 const DevelopmentControls = ({ pageContext: { snippet } = {} }) => {
-  const [{ isDarkMode }, dispatch] = useShell();
   const [opened, setOpened] = React.useState(false);
   const [coverImage, setCoverImage] = React.useState();
   const controlsRef = React.useRef();
@@ -43,14 +40,6 @@ const DevelopmentControls = ({ pageContext: { snippet } = {} }) => {
           <a href='/developer' className='btn btn-dev'>
             {literals.contentManager}
           </a>
-          <button
-            className='btn btn-dev'
-            onClick={() =>
-              dispatch({ type: 'toggleDarkMode', isDarkMode: !isDarkMode })
-            }
-          >
-            {literals.toggleDarkMode}
-          </button>
           {snippet ? (
             <a
               className='btn btn-dev'
