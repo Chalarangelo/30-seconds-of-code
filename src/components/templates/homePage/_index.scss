@@ -3,7 +3,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--fore-color-dark);
   margin: 0.5rem 1rem 0.5rem;
 
   // Homepage logo
@@ -39,7 +38,6 @@
 // Homepage subtitle
 .home-sub-title {
   margin: 0.75rem 1.25rem 1.5rem;
-  color: var(--fore-color);
   text-align: center;
   font-size: 1.125rem;
 }
