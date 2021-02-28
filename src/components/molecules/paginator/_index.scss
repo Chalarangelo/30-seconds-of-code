@@ -1,13 +1,3 @@
-// Colors
-:root {
-  --paginator-selected-color: #434ec7;
-}
-
-// Dark mode colors
-.dark {
-  --paginator-selected-color: #678df4;
-}
-
 .paginator {
   margin: 1.75rem 1.25rem 1.5rem;
   display: flex;
@@ -27,12 +17,12 @@
     text-align: center;
     box-shadow: none;
     background: transparent;
-    color: var(--fore-color);
+    color: var(--clr-txt-150);
 
     &:not(.current-page) {
 
       &:hover, &:focus {
-        color: var(--paginator-selected-color);
+        color: var(--clr-link);
       }
     }
 
@@ -42,7 +32,7 @@
     }
 
     &.previous-page, &.next-page {
-      color: var(--paginator-selected-color);
+      color: var(--clr-link);
       position: relative;
       box-sizing: border-box;
       margin: 0.625rem 1rem;
@@ -90,7 +80,7 @@
 
   .paginator-separator {
     display: block;
-    color: var(--fore-color-light);
+    color: var(--clr-txt-050);
     opacity: 0.45;
     letter-spacing: 2px;
     line-height: 24px;

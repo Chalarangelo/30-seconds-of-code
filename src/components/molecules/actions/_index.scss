@@ -1,11 +1,3 @@
-:root {
-  --action-fore-color: #525252;
-}
-
-.dark {
-  --action-fore-color: #bababa;
-}
-
 .card-actions {
   .btn-form, .btn {
     flex: 1 0 auto;
@@ -16,7 +8,8 @@
     position: relative;
     margin: 0;
     background: transparent;
-    color: var(--action-fore-color);
+    color: var(--clr-action);
+    opacity: .87;
     text-transform: uppercase;
     font-weight: 500;
     -webkit-font-smoothing: antialiased;
@@ -31,7 +24,7 @@
 
     &:hover, &:focus {
       box-shadow: none;
-      color: var(--a-link-color);
+      opacity: 1;
     }
 
     &:before {

@@ -1,13 +1,3 @@
-// Colors
-:root {
-  --listing-anchors-selected-color: #434ec7;
-}
-
-// Dark mode colors
-.dark {
-  --listing-anchors-selected-color: #678df4;
-}
-
 .listing-anchors {
   position: relative;
   margin: 0;
@@ -20,7 +10,7 @@
   justify-content: flex-start;
 
   &::-webkit-scrollbar-track {
-    background-color: var(--scrollbar-back-color);
+    background-color: var(--clr-scrollbar-bg);
     margin: 0 35vw;
     border-radius: 0.125rem;
 
@@ -35,7 +25,7 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: var(--scrollbar-fore-color);
+    background-color: var(--clr-scrollbar-knob);
     border-radius: 0.125rem;
   }
 
@@ -65,17 +55,17 @@
     text-align: center;
     background: transparent;
     border-radius: 0;
-    color: var(--fore-color-light);
+    color: var(--clr-txt-100);
     border-bottom: 2px solid transparent;
 
     &.selected {
-      color: var(--fore-color-dark);
-      border-bottom: 2px solid var(--fore-color-dark);
+      color: var(--clr-txt-200);
+      border-bottom: 2px solid currentColor;
     }
 
     &:hover, &:focus {
       box-shadow: none;
-      color: var(--listing-anchors-selected-color);
+      color: var(--clr-link);
     }
 
     @media screen and (min-width: $layout-medium-breakpoint) {
