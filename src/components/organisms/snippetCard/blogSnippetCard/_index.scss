@@ -1,19 +1,5 @@
 @import '../../../atoms/card/mixins';
 
-// Colors
-:root {
-  --blog-quote-border-color: #212631;
-  --table-border-color: #dedede;
-  --blog-image-credit-fore-color: #fff;
-  --blog-image-credit-back-color: rgba(0, 0, 0, .73);
-  --blog-image-credit-link-color:  #6DC7FD;
-}
-
-.dark {
-  --blog-quote-border-color: #8697c1;
-  --table-border-color: #454545;
-}
-
 .snippet-card.blog-card {
 
   .card-title {
@@ -23,21 +9,16 @@
   .card-meta-info {
     font-size: 0.875rem;
     margin: 0 0rem 1rem;
-    color: var(--card-fore-color-light);
 
     a {
 
       &, &:link, &:visited {
-        color: var(--card-fore-color-light);
+        color: var(--clr-txt-050);
       }
     }
 
     .github-link, .tag-list {
       margin: 0;
-    }
-
-    .tag-list {
-      color: var(--card-fore-color-light);
     }
 
   }
@@ -104,7 +85,7 @@
   blockquote.blog-quote {
     margin: 1rem 0 0.5rem;
     padding-left: 1.5rem;
-    box-shadow: inset 4px 0 0 0 var(--blog-quote-border-color);
+    box-shadow: inset 4px 0 0 0 var(--clr-quote-border);
     font-style: italic;
     line-height: 2;
     font-size: 1.25rem;
@@ -162,7 +143,7 @@
 
     td, th {
       text-align: center;
-      border: 1px solid var(--table-border-color);
+      border: 1px solid var(--clr-table-border);
       padding: 0.5rem;
     }
   }
@@ -172,15 +153,9 @@
     font-size: .875rem;
     padding: 0 1.5rem;
     margin-top: -2.375rem;
-    background-color: var(--blog-image-credit-back-color);
-    color: var(--blog-image-credit-fore-color);
+    background-color: var(--clr-img-credit-bg);
+    color: var(--clr-txt-150);
     order: -1;
-
-    > a {
-      &, &:link, &:visited {
-        color: var(--blog-image-credit-link-color);
-      }
-    }
 
     @media screen and (min-width: $layout-medium-breakpoint) {
       margin-top: -2.375rem;

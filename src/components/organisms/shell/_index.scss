@@ -1,26 +1,8 @@
-// Colors
-:root {
-  --nav-bar-back-color: #FFFFFF;
-  --nav-bar-border-color: #E4E6EC;
-  --nav-bar-title-color: #000000;
-  --nav-button-fore-color: #53586A;
-  --nav-button-active-fore-color: #2747C7;
-}
-
-// Dark mode colors
-.dark {
-  --nav-bar-back-color: #060709;
-  --nav-bar-border-color: #12151C;
-  --nav-bar-title-color: #ffffff;
-  --nav-button-fore-color: #cfd1d8;
-  --nav-button-active-fore-color: #fbfcfe;
-}
-
 // Body scrollbar
 body {
   &::-webkit-scrollbar-track {
     margin-top: 0;
-    background: linear-gradient(180deg, var(--nav-bar-back-color) 0%, var(--nav-bar-back-color) 111.5px, var(--nav-bar-border-color) 111.5px, var(--nav-bar-border-color) 112.5px, var(--back-color) 112.5px, var(--back-color) 100%);
+    background: var(--clr-scrollbar-bg)
   }
 
   &::-webkit-scrollbar {
@@ -33,18 +15,18 @@ body {
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: var(--scrollbar-fore-color);
+    background-color: var(--clr-scrollbar-knob);
     border-radius: 0.25rem;
 
     &:hover {
-      background-color: var(--scrollbar-fore-color-dark);
+      background-color: var(--clr-scrollbar-knob-active);
     }
   }
 }
 
 .page-container {
   transition: 0.3s ease all;
-  background: var(--back-color);
+  background: var(--clr-bg);
   width: 100vw;
   min-height: 100vh;
 }
@@ -57,11 +39,11 @@ body {
   justify-content: center;
   align-items: center;
   transition: 0.3s ease all;
-  background: var(--nav-bar-back-color);
+  background: var(--clr-navbar-bg);
+  box-shadow: var(--shd-el-01dp);
   line-height: 0;
   box-sizing: border-box;
   z-index: 1001;
-  border-bottom: 1px solid var(--nav-bar-border-color);
   height: 112px;
   width: 100vw;
   padding-right: 4px;  // Pad to the right for the scrollbar (4px)
@@ -95,7 +77,6 @@ body {
 
 .nav-title {
   display: none;
-  color: var(--nav-bar-title-color);
   font-family: 'Raleway', Helvetica, sans-serif;
   letter-spacing: 0.25px;
   font-variant-numeric: lining-nums;
@@ -113,42 +94,11 @@ body {
 
 .nav-subtitle {
   display: none;
-  color: var(--fore-color);
   font-size: 1rem;
   margin: 0;
 
   @media screen and (min-width: $layout-large-breakpoint) {
     display: block;
-  }
-}
-
-// Navigation buttons
-.nav-btn {
-  position: relative;
-  display: inline-block;
-  min-width: 64px;
-  min-height: 56px;
-  margin: 0;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s ease all;
-
-  &, &:link, &:visited {
-    color: var(--nav-button-fore-color);
-
-    &:hover, &:focus, &.active {
-      outline: 0;
-      text-decoration: none;
-      color: var(--nav-button-active-fore-color);
-    }
-  }
-
-  &:before {
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    font-size: 24px;
-    text-align: center;
   }
 }
 
@@ -163,7 +113,7 @@ img.nav-website-logo {
 // Content container
 .content {
   transition: 0.3s ease all;
-  background: var(--back-color);
+  background: var(--clr-bg);
   padding-right: 4px;  // Pad to the right for the scrollbar (4px)
 
   @media screen and (min-width: $layout-medium-breakpoint) {
