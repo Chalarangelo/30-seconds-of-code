@@ -2,6 +2,20 @@
 //  dp = elevation unit, larger means higher elevation (closer)
 //  db = the same dp value overlayed over bg (calculated)
 
+@mixin generate-surface-styles ($elevations) {
+  @each $elevation in $elevations {
+    .srfc-#{$elevation}dp, .srfc-#{$elevation}db {
+      box-shadow: var(--shd-el-#{$elevation}dp);
+    }
+    .srfc-#{$elevation}dp {
+      background: var(--clr-el-#{$elevation}dp);
+    }
+    .srfc-#{$elevation}db {
+      background: var(--clr-el-#{$elevation}db);
+    }
+  }
+}
+
 // Colors
 :root {
   --clr-el-01dp: hsla(0, 0%, 100%, .05);
@@ -29,22 +43,4 @@
   --shd-el-05dp: 0px 20px 40px hsla(0, 0%, 0%, 0.2);
 }
 
-.srfc-01dp, .srfc-01db  { box-shadow: var(--shd-el-01dp); }
-.srfc-01dp              { background: var(--clr-el-01dp); }
-.srfc-01db              { background: var(--clr-el-01db); }
-
-.srfc-02dp, .srfc-02db  { box-shadow: var(--shd-el-02dp); }
-.srfc-02dp              { background: var(--clr-el-02dp); }
-.srfc-02db              { background: var(--clr-el-02db); }
-
-.srfc-03dp, .srfc-03db  { box-shadow: var(--shd-el-03dp); }
-.srfc-03dp              { background: var(--clr-el-03dp); }
-.srfc-03db              { background: var(--clr-el-03db); }
-
-.srfc-04dp, .srfc-04db  { box-shadow: var(--shd-el-04dp); }
-.srfc-04dp              { background: var(--clr-el-04dp); }
-.srfc-04db              { background: var(--clr-el-04db); }
-
-.srfc-05dp, .srfc-05db  { box-shadow: var(--shd-el-05dp); }
-.srfc-05dp              { background: var(--clr-el-05dp); }
-.srfc-05db              { background: var(--clr-el-05db); }
+@include generate-surface-styles(('01', '02', '03', '04', '05'));
