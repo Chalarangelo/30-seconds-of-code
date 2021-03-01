@@ -6,7 +6,7 @@
   color: var(--clr-txt-200);
   cursor: pointer;
   border: none;
-  border-radius: 1rem;
+  border-radius: var(--br-xl);
   font-size: 1.125rem;
   line-height: 1.5rem;
   transition: 0.3s ease all;

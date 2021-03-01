@@ -12,7 +12,7 @@
     z-index: 100;
     box-sizing: border-box;
     transition: 0.3s ease box-shadow;
-    border-radius: 0.5rem;
+    border-radius: var(--br-md);
     padding-bottom: 10px;
   }
 

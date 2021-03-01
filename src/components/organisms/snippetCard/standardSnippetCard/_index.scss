@@ -14,11 +14,11 @@
       }
 
       &:first-of-type {
-        border-radius: 0.5rem 0.5rem 0 0;
+        border-radius: var(--br-lg) var(--br-lg) var(--br-none) var(--br-none);
       }
 
       &:last-child {
-        border-radius: 0 0 0.5rem 0.5rem;
+        border-radius: var(--br-none) var(--br-none) var(--br-lg) var(--br-lg);
         margin-bottom: -1rem;
       }
     }

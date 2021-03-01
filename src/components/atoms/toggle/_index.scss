@@ -22,7 +22,7 @@
   color: var(--clr-tgl-fg);
   height: 12px;
   width: 24px;
-  border-radius: 6px;
+  border-radius: var(--br-round);
   vertical-align: text-bottom;
   margin: 0.25rem;
   box-sizing: border-box;
@@ -38,7 +38,7 @@
     background: var(--clr-tgl-fg);
     top: -2px;
     left: -8px;
-    border-radius: 8px;
+    border-radius: var(--br-round);
     transition: all .3s ease;
     cursor: pointer;
   }

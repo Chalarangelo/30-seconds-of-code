@@ -1,7 +1,7 @@
 .card {
   position: relative;
   transition: all 0.3s ease;
-  border-radius: 0.5rem;
+  border-radius: var(--br-lg);
   margin: 1.75rem 0.25rem 1rem;
   padding: 1.5rem 1rem;
 
@@ -28,7 +28,6 @@
     display: inline-block;
     width: 3.25rem;
     height: 3.25rem;
-    border-radius: 3.25rem;
 
     &:before {
       position: absolute;

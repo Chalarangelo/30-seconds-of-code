@@ -20,7 +20,6 @@
   display: flex;
   width: calc(100% - 76px - 64px - 44px);
   background: var(--clr-search-bg);
-  border-radius: 0.5rem;
 
   @media screen and (min-width: $layout-medium-breakpoint) {
     width: 284px;
@@ -84,7 +83,7 @@ a.search-btn[aria-hidden="true"] {
   margin: 0 8px;
   top: 42px;
   list-style: none;
-  border-radius: 0 0 0.25rem 0.25rem;
+  border-radius: var(--br-none) var(--br-none) var(--br-md) var(--br-md);
   overflow: hidden;
   z-index: 100;
 
@@ -100,7 +99,7 @@ a.search-btn[aria-hidden="true"] {
     border-bottom: none;
 
     &:last-child {
-      border-radius: 0 0 0.25rem 0.25rem;
+      border-radius: var(--br-none) var(--br-none) var(--br-md) var(--br-md);
     }
 
     a {

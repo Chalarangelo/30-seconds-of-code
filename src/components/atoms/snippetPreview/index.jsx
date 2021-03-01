@@ -38,7 +38,7 @@ const SnippetPreview = ({ scopeId, scopedCss, htmlCode, jsCode }) => {
   return (
     <>
       <h5 className='snippet-preview-title txt-150'>{literals.preview}</h5>
-      <div className='snippet-preview' data-scope={scopeId}>
+      <div className='snippet-preview br-lg' data-scope={scopeId}>
         <style>{scopedCss}</style>
         <div dangerouslySetInnerHTML={{ __html: htmlCode }} />
       </div>
