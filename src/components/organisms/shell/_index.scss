@@ -16,7 +16,7 @@ body {
 
   &::-webkit-scrollbar-thumb {
     background-color: var(--clr-scrollbar-knob);
-    border-radius: 0.25rem;
+    border-radius: var(--br-md);
 
     &:hover {
       background-color: var(--clr-scrollbar-knob-active);

@@ -21,6 +21,7 @@
 // Style code
 code, kbd, pre {
   font-size: .875rem;
+  border-radius: var(--br-md);
 
   @media screen and (min-width: $layout-medium-breakpoint) {
     font-size: 1rem;
@@ -34,7 +35,6 @@ code {
   background: var(--clr-code-bg);
   color: var(--clr-code-txt);
   padding: 0.125rem 0.375rem;
-  border-radius: 0.125rem;
 }
 
 code[class*="language-"], pre[class*="language-"] {
@@ -57,12 +57,10 @@ code[class*="language-"], pre[class*="language-"] {
 
 pre[class*="language-"]::selection, pre[class*="language-"] ::selection {
   background: var(--clr-code-selection);
-  // color: var(--clr-txt-150);
 }
 
 :not(pre) > code[class*="language-"] {
   padding: 0.125rem 0.25rem;
-  border-radius: 0.25rem;
   white-space: normal;
 }
 

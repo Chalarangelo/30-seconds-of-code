@@ -19,7 +19,7 @@ const SnippetCard = ({ snippet }) => {
   return (
     <Card className='snippet-card'>
       <div className='card-meta'>
-        <div className={`card-icon icon icon-${snippet.icon}`}>
+        <div className={`card-icon br-round icon icon-${snippet.icon}`}>
           <Expertise level={snippet.expertise} />
         </div>
         <div className='card-data'>

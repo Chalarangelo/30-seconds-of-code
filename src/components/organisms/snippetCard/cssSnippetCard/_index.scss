@@ -2,16 +2,16 @@
 
   .card-preview-content {
     .snippet-preview {
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
+      border-bottom-left-radius: var(--br-none);
+      border-bottom-right-radius: var(--br-none);
     }
 
     + .card-source-content {
       margin-top: 0;
 
       pre:first-of-type {
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
+        border-top-left-radius: var(--br-none);
+        border-top-right-radius: var(--br-none);
       }
     }
   }

@@ -19,7 +19,7 @@ const PreviewCard = ({ snippet }) => {
     : [snippet.primaryTag, snippet.expertise];
   return (
     <li className='card srfc-02dp txt-100 preview-card'>
-      <div className={`card-icon icon icon-${snippet.icon}`}>
+      <div className={`card-icon br-round icon icon-${snippet.icon}`}>
         <Expertise level={snippet.expertise} />
       </div>
       <div className='card-data'>

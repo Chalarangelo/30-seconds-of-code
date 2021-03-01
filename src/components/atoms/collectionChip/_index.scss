@@ -1,5 +1,5 @@
 .collection-chip {
-  border-radius: 1rem;
+  border-radius: var(--br-xl);
 
   > .icon {
     display: block;
@@ -26,7 +26,7 @@
       font-size: 36px;
       width: 64px;
       height: 64px;
-      border-radius: 1rem;
+      border-radius: var(--br-xl);
       line-height: 64px;
       text-align: center;
     }
@@ -61,10 +61,6 @@
         text-decoration: underline;
       }
     }
-  }
-
-  .card-icon {
-    border-radius: 1rem;
   }
 
   .card-subtitle {

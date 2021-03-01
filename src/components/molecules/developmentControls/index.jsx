@@ -34,7 +34,10 @@ const DevelopmentControls = ({ pageContext: { snippet } = {} }) => {
   });
 
   return (
-    <div className='floating-controls-container srfc-05db' ref={controlsRef}>
+    <div
+      className='floating-controls-container srfc-05db br-xl'
+      ref={controlsRef}
+    >
       {opened ? (
         <>
           <a href='/developer' className='btn btn-dev'>

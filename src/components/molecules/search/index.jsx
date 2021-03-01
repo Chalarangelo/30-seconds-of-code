@@ -96,7 +96,7 @@ const Search = ({ isMainSearch = false }) => {
 
   return (
     <div
-      className='search-wrapper icon icon-search'
+      className='search-wrapper br-md icon icon-search'
       onKeyUp={e => {
         e.preventDefault();
         if (isMainSearch || !hasResults) return;
