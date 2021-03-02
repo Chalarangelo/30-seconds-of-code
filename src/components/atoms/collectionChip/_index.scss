@@ -10,9 +10,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Raleway', Helvetica, sans-serif;
-    letter-spacing: 0.25px;
-    font-variant-numeric: lining-nums;
     text-align: center;
 
     &, &:link, &:visited {
@@ -49,9 +46,6 @@
   .card-title {
     a {
       &, &:link, &:visited {
-        font-family: 'Raleway', Helvetica, sans-serif;
-        letter-spacing: 0.25px;
-        font-variant-numeric: lining-nums;
         font-weight: 500;
         line-height: 1;
         color: var(--clr-txt-200);
@@ -66,7 +60,6 @@
   .card-subtitle {
     margin: 0 .5rem;
     display: inline-block;
-    font-size: .875rem;
     line-height: 1rem;
   }
 }

@@ -43,7 +43,7 @@ const Paginator = ({
     <div className={combineClassNames`paginator ${className}`}>
       {pageNumber > 1 && (
         <a
-          className='btn previous-page icon icon-chevron-left'
+          className='btn previous-page fs-md icon icon-chevron-left'
           href={`${baseUrl}/${slugOrderingSegment}/${pageNumber - 1}`}
           rel='prev'
         >
@@ -52,17 +52,17 @@ const Paginator = ({
       )}
       {buttons.map((buttonNumber, i) =>
         buttonNumber === '...' ? (
-          <span className='paginator-separator' key={`sep-${i}`}>
+          <span className='paginator-separator txt-050 fs-xl' key={`sep-${i}`}>
             {buttonNumber}
           </span>
         ) : buttonNumber === pageNumber ? (
-          <Button className='current-page' key={buttonNumber}>
+          <Button className='current-page fs-xl' key={buttonNumber}>
             {buttonNumber}
           </Button>
         ) : (
           <a
             key={buttonNumber}
-            className='btn'
+            className='btn fs-md'
             href={`${baseUrl}/${slugOrderingSegment}/${buttonNumber}`}
           >
             {buttonNumber}
@@ -71,7 +71,7 @@ const Paginator = ({
       )}
       {pageNumber < totalPages && (
         <a
-          className='btn next-page icon icon-chevron-right'
+          className='btn next-page fs-md icon icon-chevron-right'
           href={`${baseUrl}/${slugOrderingSegment}/${pageNumber + 1}`}
           rel='next'
         >

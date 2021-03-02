@@ -7,7 +7,6 @@
   }
 
   .card-meta-info {
-    font-size: 0.875rem;
     margin: 0 0rem 1rem;
 
     a {
@@ -87,35 +86,28 @@
     box-shadow: inset 4px 0 0 0 var(--clr-quote-border);
     font-style: italic;
     line-height: 2;
-    font-size: 1.25rem;
     font-weight: 400;
   }
 
   h3.blog-body-title {
-    font-family: 'Raleway', Helvetica, sans-serif;
-    letter-spacing: 0.25px;
-    font-variant-numeric: lining-nums;
-    font-size: 1.25rem;
+    font-size: var(--font-lg);
     line-height: 2rem;
     font-weight: 500;
     margin: 1.5rem 0 0;
 
     @media screen and (min-width: $layout-medium-breakpoint) {
-      font-size: 1.5rem;
+      font-size: var(--font-xl);
     }
   }
 
   h4.blog-body-title {
-    font-family: 'Raleway', Helvetica, sans-serif;
-    letter-spacing: 0.25px;
-    font-variant-numeric: lining-nums;
-    font-size: 1.125rem;
+    font-size: var(--font-md);
     line-height: 2rem;
     font-weight: 500;
     margin: 1.5rem 0 0;
 
     @media screen and (min-width: $layout-medium-breakpoint) {
-      font-size: 1.25rem;
+      font-size: var(--font-lg);
     }
   }
 
@@ -137,7 +129,7 @@
     th {
       font-weight: 600;
       -webkit-font-smoothing: antialiased;
-      font-size: 1.125rem;
+      font-size: var(--font-md);
     }
 
     td, th {
@@ -149,7 +141,7 @@
 
   p:last-child.blog-image-credit {
     @include card-full-width-section;
-    font-size: .875rem;
+    font-size: var(--font-xs);
     padding: 0 1.5rem;
     margin-top: -2.375rem;
     background-color: var(--clr-img-credit-bg);

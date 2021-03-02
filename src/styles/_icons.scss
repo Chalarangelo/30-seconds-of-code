@@ -1,6 +1,6 @@
 @font-face {
   font-family: "icons";
-  src: url("../../assets/icons.woff2?d42382ca7fd97709b499f580f75dc837") format("woff2");
+  src: url("../../assets/icons.woff2?a85fc55248428131ad2c8ad223d6ea21") format("woff2");
 }
 
 .icon:before {
@@ -77,17 +77,14 @@
 .icon.icon-search:before {
   content: "\f115";
 }
-.icon.icon-settings:before {
+.icon.icon-share:before {
   content: "\f116";
 }
-.icon.icon-share:before {
+.icon.icon-star:before {
   content: "\f117";
 }
-.icon.icon-star:before {
-  content: "\f118";
-}
 .icon.icon-twitter:before {
-  content: "\f119";
+  content: "\f118";
 }
 
 .card-icon, 

@@ -17,10 +17,12 @@ const CollectionChip = ({ chip }) => {
     <li className='card srfc-02dp txt-100 collection-card'>
       <div className={`card-icon br-xl icon icon-${chip.icon}`}></div>
       <div className='card-data'>
-        <h3 className='card-title txt-200'>
+        <h3 className='card-title txt-200 fs-xl f-alt'>
           <a href={chip.url}>{chip.title}</a>
         </h3>
-        <span className='card-subtitle'>{literals.snippetCollection}</span>
+        <span className='card-subtitle fs-xs'>
+          {literals.snippetCollection}
+        </span>
       </div>
       <div className='card-description'>
         <p>{chip.description}</p>
@@ -29,7 +31,7 @@ const CollectionChip = ({ chip }) => {
   ) : (
     <li className='collection-chip srfc-01dp'>
       <a
-        className={`collection-chip-link icon icon-${chip.icon}`}
+        className={`collection-chip-link f-alt icon icon-${chip.icon}`}
         href={chip.url}
       >
         {chip.title}

@@ -22,7 +22,7 @@ const Button = ({
   ...rest // Needs props to be have accessible name if only icon etc.
 }) => (
   <button
-    className={combineClassNames`btn ${className}`}
+    className={combineClassNames`btn fs-md ${className}`}
     onClick={onClick}
     {...rest}
   >

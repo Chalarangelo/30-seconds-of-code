@@ -10,7 +10,7 @@ html, * {
   -webkit-text-size-adjust: 100%;
 }
 * {
-  font-size: 1rem;
+  font-size: var(--font-sm);
   font-weight: 400;
 }
 // Apply fixes and defaults as necessary for modern browsers only
@@ -42,28 +42,28 @@ img {
   max-width: 100%;
   height: auto;
 }
-// Style headings according to material design guidelines
+// Style headings according to design guidelines
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
   margin: 0.75rem 0.5rem;
 }
 h1 {
-  font-size: 6rem;
+  font-size: var(--font-x3);
 }
 h2 {
-  font-size: 3.75rem;
+  font-size: var(--font-x2);
 }
 h3 {
-  font-size: 3rem;
+  font-size: var(--font-xl);
 }
 h4 {
-  font-size: 2.125rem;
+  font-size: var(--font-xl);
 }
 h5 {
-  font-size: 1.5rem;
+  font-size: var(--font-lg);
 }
 h6 {
-  font-size: 1.25rem;
+  font-size: var(--font-md);
 }
 // Style textual elements
 p {

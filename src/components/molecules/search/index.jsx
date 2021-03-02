@@ -192,7 +192,7 @@ const Search = ({ isMainSearch = false }) => {
               >
                 <span className='result-title txt-150'>{item.title}</span>
                 {!item.search ? (
-                  <span className='result-tag txt-050'>
+                  <span className='result-tag txt-050 fs-mi'>
                     {item.expertise
                       ? item.language
                         ? item.language
