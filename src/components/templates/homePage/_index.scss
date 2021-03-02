@@ -15,22 +15,15 @@
 
   // Homepage title text
   .home-title-text {
-    font-family: 'Raleway', Helvetica, sans-serif;
-    font-variant-numeric: lining-nums;
     font-weight: 500;
-    letter-spacing: 0.25px;
     text-align: center;
     display: inline-block;
-    font-size: 1.5rem;
-    height: 24px;
+    font-size: var(--font-xl);
+    height: 1.5rem;
 
-    @media screen and (min-width: 390px) {
-      font-size: 1.75rem;
+    @media screen and (min-width: 440px) {
+      font-size: var(--font-x2);
       height: 2rem;
-    }
-
-    @media screen and (min-width: 768px) {
-      font-size: 2rem;
     }
   }
 }
@@ -39,5 +32,4 @@
 .home-sub-title {
   margin: 0.75rem 1.25rem 1.5rem;
   text-align: center;
-  font-size: 1.125rem;
 }

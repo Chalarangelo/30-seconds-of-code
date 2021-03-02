@@ -18,7 +18,7 @@
     font-size: 0;
 
     @media screen and (min-width: $layout-medium-breakpoint) {
-      font-size: 1rem;
+      font-size: var(--font-sm);
     }
 
     &:hover, &:focus {

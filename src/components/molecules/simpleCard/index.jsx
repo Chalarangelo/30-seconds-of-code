@@ -28,7 +28,9 @@ const SimpleCard = ({
   dangerouslySetInnerHTML,
 }) => (
   <Card className={className}>
-    <h3 className='card-title simple-card-title txt-200'>{title}</h3>
+    <h3 className='card-title simple-card-title txt-200 fs-xl f-alt'>
+      {title}
+    </h3>
     {dangerouslySetInnerHTML ? (
       <div
         className='card-description'

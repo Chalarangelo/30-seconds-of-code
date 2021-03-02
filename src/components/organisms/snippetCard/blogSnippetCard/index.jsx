@@ -14,8 +14,8 @@ const propTypes = {
  */
 const SnippetCard = ({ snippet }) => (
   <Card className='snippet-card blog-card'>
-    <h1 className='card-title txt-200'>{snippet.title}</h1>
-    <div className='card-meta-info txt-050'>
+    <h1 className='card-title txt-200 fs-xl f-alt'>{snippet.title}</h1>
+    <div className='card-meta-info txt-050 fs-xs'>
       {snippet.authors.map((a, i, arr) => (
         <Fragment key={`author-fragment-${i}`}>
           <a

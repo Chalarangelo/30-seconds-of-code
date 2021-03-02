@@ -51,7 +51,7 @@ const SearchResults = ({ recommendedSnippets = [] }) => {
             </>
           )
         }
-        mainTextClassName='search-page-text'
+        mainTextClassName='search-page-text fs-lg'
       />
       {recommendedSnippets.length ? (
         <RecommendationList snippetList={recommendedSnippets} />

@@ -46,7 +46,7 @@ const Shell = ({ isSearch = false, children, pageContext }) => {
           />
         </a>
         <a className='nav-title-wrapper' href='/' aria-label={literals.home}>
-          <h1 className='nav-title txt-200'>{literals.siteName}</h1>
+          <h1 className='nav-title txt-200 f-alt'>{literals.siteName}</h1>
           <p className='nav-subtitle txt-100'>{literals.siteDescription}</p>
         </a>
         <Search isMainSearch={isSearch} />

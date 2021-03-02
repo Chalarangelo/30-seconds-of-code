@@ -1,13 +1,12 @@
 .toggle {
   display: block;
   width: 100%;
-  font-size: 1rem;
   position: relative;
   cursor: pointer;
   margin: 0.875rem 0 1.5rem;
 
   @media screen and (min-width: $layout-medium-breakpoint) {
-    font-size: 1.125rem;
+    font-size: var(--font-md);
   }
 }
 

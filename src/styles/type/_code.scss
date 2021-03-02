@@ -20,11 +20,11 @@
 
 // Style code
 code, kbd, pre {
-  font-size: .875rem;
+  font-size: var(--font-xs);
   border-radius: var(--br-md);
 
   @media screen and (min-width: $layout-medium-breakpoint) {
-    font-size: 1rem;
+    font-size: var(--font-sm);
   }
 }
 code, kbd, pre, code *, pre *, kbd *, code[class*="language-"], pre[class*="language-"] {

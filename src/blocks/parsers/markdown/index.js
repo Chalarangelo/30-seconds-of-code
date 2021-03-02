@@ -42,19 +42,19 @@ const blogTransformers = [
   {
     blogType: 'any',
     matcher: /<blockquote>\s*\n*\s*<p>([\s\S]*?)<\/p>\s*\n*\s<\/blockquote>/g,
-    replacer: '<blockquote class="blog-quote">$1</blockquote>',
+    replacer: '<blockquote class="blog-quote fs-lg">$1</blockquote>',
   },
   // Convert blog titles h3 and below to the appropriate elements
   {
     blogType: 'any',
     matcher: /<h([123])>([\s\S]*?)<\/h\d>/g,
-    replacer: '<h3 class="blog-body-title">$2</h3>',
+    replacer: '<h3 class="blog-body-title txt-150 f-alt">$2</h3>',
   },
   // Convert blog titles h4 and above to the appropriate elements
   {
     blogType: 'any',
     matcher: /<h([456])>([\s\S]*?)<\/h\d>/g,
-    replacer: '<h4 class="blog-body-title">$2</h4>',
+    replacer: '<h4 class="blog-body-title txt-150 f-alt">$2</h4>',
   },
   // Convert blog tables to the appropriate elements
   {

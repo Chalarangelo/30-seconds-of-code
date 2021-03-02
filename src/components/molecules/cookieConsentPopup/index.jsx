@@ -23,7 +23,7 @@ const CookieConsentPopup = () => {
 
   return (
     <div className='cookie-consent-popup srfc-04db txt-150'>
-      <p data-nosnippet>
+      <p data-nosnippet className='fs-xs'>
         {literals.cookieDisclaimer}
         {literals.learnMore}
         <a className='footer-link' href='/cookies'>

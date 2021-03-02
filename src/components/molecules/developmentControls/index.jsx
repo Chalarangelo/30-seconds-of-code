@@ -45,7 +45,7 @@ const DevelopmentControls = ({ pageContext: { snippet } = {} }) => {
           </a>
           {snippet ? (
             <a
-              className='btn btn-dev'
+              className='btn btn-dev fs-sm'
               href={snippet.vscodeUrl}
               rel='nofollow noopener noreferrer'
               target='_blank'
@@ -55,7 +55,7 @@ const DevelopmentControls = ({ pageContext: { snippet } = {} }) => {
           ) : null}
           {coverImage ? (
             <button
-              className='btn btn-dev'
+              className='btn btn-dev fs-sm'
               onClick={() => {
                 const img = prompt('Cover image URL', coverImage.src);
                 coverImage.src = img;
@@ -65,7 +65,7 @@ const DevelopmentControls = ({ pageContext: { snippet } = {} }) => {
             </button>
           ) : null}
           <a
-            className='btn btn-dev'
+            className='btn btn-dev fs-sm'
             href={`${location.origin}/page-data${location.pathname}page-data.json`}
             target='_blank'
             rel='noopener noreferrer'
@@ -73,7 +73,7 @@ const DevelopmentControls = ({ pageContext: { snippet } = {} }) => {
             {literals.viewJSON}
           </a>
           <a
-            className='btn btn-dev'
+            className='btn btn-dev fs-sm'
             href={`${settings.websiteUrl}${location.pathname}`}
             target='_blank'
             rel='noopener noreferrer'

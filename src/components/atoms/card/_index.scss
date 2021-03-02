@@ -11,10 +11,6 @@
   }
 
   .card-title {
-    font-family: 'Raleway', Helvetica, sans-serif;
-    letter-spacing: 0.25px;
-    font-variant-numeric: lining-nums;
-    font-size: 1.5rem;
     font-weight: 500;
     line-height: 2rem;
     margin: 0 0.5rem;
@@ -33,7 +29,7 @@
       position: absolute;
       top: 0.5rem;
       left: 0.5rem;
-      font-size: 2.25rem;
+      font-size: 36px;
     }
 
     // Custom styles for dart icon
@@ -65,14 +61,17 @@
     margin: 0;
     line-height: 1.35;
 
-    > p {
-      font-size: 1rem;
-      margin: 1.5rem 0 0;
+    > p, li {
+      font-size: var(--font-sm);
       line-height: 2rem;
 
       @media screen and (min-width: $layout-medium-breakpoint) {
-        font-size: 1.125rem;
+        font-size: var(--font-md);
       }
+    }
+
+    > p {
+      margin: 1.5rem 0 0;
 
       &:not(:first-child) {
         margin-top: 1rem;
@@ -88,13 +87,7 @@
     }
 
     li {
-      font-size: 1rem;
-      line-height: 2;
       margin: 0.375rem 0;
-
-      @media screen and (min-width: $layout-medium-breakpoint) {
-        font-size: 1.125rem;
-      }
     }
   }
 }

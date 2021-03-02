@@ -14,9 +14,6 @@
   .card-title {
     a {
       &, &:link, &:visited {
-        font-family: 'Raleway', Helvetica, sans-serif;
-        letter-spacing: 0.25px;
-        font-variant-numeric: lining-nums;
         font-weight: 500;
         line-height: 1;
         color: var(--clr-txt-200);

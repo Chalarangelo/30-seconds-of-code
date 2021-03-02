@@ -77,24 +77,19 @@ body {
 
 .nav-title {
   display: none;
-  font-family: 'Raleway', Helvetica, sans-serif;
-  letter-spacing: 0.25px;
-  font-variant-numeric: lining-nums;
   margin: 0;
 
   @media screen and (min-width: $layout-medium-breakpoint) {
     display: block;
-    font-size: 1rem;
   }
 
   @media screen and (min-width: 680px) {
-    font-size: 1.5rem;
+    font-size: var(--font-xl);
   }
 }
 
 .nav-subtitle {
   display: none;
-  font-size: 1rem;
   margin: 0;
 
   @media screen and (min-width: $layout-large-breakpoint) {

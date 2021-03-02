@@ -31,7 +31,7 @@
 
   &::before {
     transition: 0.3s ease all;
-    font-size: 1.25rem;
+    font-size: 20px;
     line-height: 44px;
     margin-left: 8px;
     color: var(--clr-txt-100);
@@ -54,7 +54,7 @@
   outline: none;
   box-sizing: border-box;
   padding: 0.25rem 0.5rem;
-  font-size: 1.125rem;
+  font-size: var(--font-md);
   font-weight: 400;
   line-height: 1.9;
   height: 44px;
@@ -117,7 +117,6 @@ a.search-btn[aria-hidden="true"] {
 
       .result-tag {
         flex: 1 0 auto;
-        font-size: 0.75rem;
         line-height: 2.125;
       }
 

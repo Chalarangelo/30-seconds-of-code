@@ -7,7 +7,6 @@
 
   .btn, a.btn {
     transition: 0.3s ease all;
-    font-size: 1.125rem;
     margin: 0.25rem 0;
     padding: 0.625rem 0;
     box-sizing: border-box;
@@ -28,7 +27,6 @@
 
     &.current-page {
       cursor: default;
-      font-size: 1.5rem;
     }
 
     &.previous-page, &.next-page {
@@ -39,7 +37,7 @@
       font-size: 0;
 
       @media screen and (min-width: $layout-medium-breakpoint) {
-        font-size: 1rem;
+        font-size: var(--font-sm);
       }
 
       &:before {
@@ -75,15 +73,10 @@
         }
       }
     }
-
   }
 
   .paginator-separator {
-    display: block;
-    color: var(--clr-txt-050);
-    opacity: 0.45;
     letter-spacing: 2px;
     line-height: 24px;
-    font-size: 1.5rem;
   }
 }
