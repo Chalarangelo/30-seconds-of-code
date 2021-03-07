@@ -31,7 +31,7 @@ describe('<PageTitle />', () => {
     });
 
     it('should render with the default className', () => {
-      expect(wrapper.querySelector('h2').className).toBe('page-title');
+      expect(wrapper.querySelectorAll('h2.page-title')).toHaveLength(1);
     });
   });
 });
