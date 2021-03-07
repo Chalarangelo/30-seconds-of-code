@@ -3,16 +3,13 @@ import React from 'react';
 import { render } from '@testing-library/react';
 
 import { ShellProvider } from 'state/shell';
-import { NavigationProvider } from 'state/navigation';
 import { SearchProvider } from 'state/search';
 
 const ContextWrapper = ({ children, initialState = {} }) => (
   <ShellProvider initialState={initialState.shell}>
-    <NavigationProvider initialState={initialState.navigation}>
-      <SearchProvider initialState={initialState.search}>
-        {children}
-      </SearchProvider>
-    </NavigationProvider>
+    <SearchProvider initialState={initialState.search}>
+      {children}
+    </SearchProvider>
   </ShellProvider>
 );
 
