@@ -56,7 +56,6 @@
   padding: 0.25rem 0.5rem;
   font-size: var(--font-md);
   font-weight: 400;
-  line-height: 1.9;
   height: 44px;
   color: var(--clr-txt-100);
 
@@ -107,6 +106,7 @@ a.search-btn[aria-hidden="true"] {
       padding: 8px 12px;
       height: 42px;
       box-sizing: border-box;
+      align-items: baseline;
 
       .result-title {
         text-overflow: ellipsis;
@@ -117,7 +117,6 @@ a.search-btn[aria-hidden="true"] {
 
       .result-tag {
         flex: 1 0 auto;
-        line-height: 2.125;
       }
 
       &:hover, &:focus, &.selected {

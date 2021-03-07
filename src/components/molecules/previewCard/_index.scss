@@ -10,18 +10,4 @@
   @media screen and (min-width: $layout-medium-breakpoint) {
     contain-intrinsic-size: 144px;
   }
-
-  .card-title {
-    a {
-      &, &:link, &:visited {
-        font-weight: 500;
-        line-height: 1;
-        color: var(--clr-txt-200);
-      }
-
-      &:hover, &:focus {
-        text-decoration: underline;
-      }
-    }
-  }
 }
