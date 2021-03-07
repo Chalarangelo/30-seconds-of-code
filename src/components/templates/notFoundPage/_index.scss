@@ -1,13 +1,11 @@
 .btn.btn-home {
   position: relative;
   padding-left: 46px;
-  line-height: 30px;
 
   &:before {
     position: absolute;
     font-size: 24px;
     left: 14px;
-    line-height: 30px;
   }
 }
 

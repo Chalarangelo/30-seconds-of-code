@@ -52,7 +52,6 @@
         top: 0;
         left: -1.5rem;
         width: 1.5rem;
-        line-height: 1.5rem;
         text-align: right;
       }
     }
@@ -63,15 +62,22 @@
       &:before {
         font-weight: 600;
         -webkit-font-smoothing: antialiased;
+        line-height: 1.5;
       }
 
-      > p:first-child:not(:last-child) {
-        font-weight: 600;
-        -webkit-font-smoothing: antialiased;
-      }
+      > p {
+        font-size: var(--font-sm);
+        line-height: 2rem;
 
-      > p:not(:first-child), p:first-child:last-child {
-        line-height: 2;
+        @media screen and (min-width: $layout-medium-breakpoint) {
+          font-size: var(--font-md);
+        }
+
+        &:first-child:not(:last-child) {
+          line-height: 1.5;
+          font-weight: 600;
+          -webkit-font-smoothing: antialiased;
+        }
       }
     }
   }
@@ -86,14 +92,22 @@
     box-shadow: inset 4px 0 0 0 var(--clr-quote-border);
     font-style: italic;
     line-height: 2;
+    font-size: var(--font-md);
     font-weight: 400;
+
+    @media screen and (min-width: $layout-medium-breakpoint) {
+      font-size: var(--font-lg);
+    }
+  }
+
+  .blog-body-title {
+    line-height: 2rem;
+    font-weight: 500;
+    margin: 1.5rem 0 0;
   }
 
   h3.blog-body-title {
     font-size: var(--font-lg);
-    line-height: 2rem;
-    font-weight: 500;
-    margin: 1.5rem 0 0;
 
     @media screen and (min-width: $layout-medium-breakpoint) {
       font-size: var(--font-xl);
@@ -102,9 +116,6 @@
 
   h4.blog-body-title {
     font-size: var(--font-md);
-    line-height: 2rem;
-    font-weight: 500;
-    margin: 1.5rem 0 0;
 
     @media screen and (min-width: $layout-medium-breakpoint) {
       font-size: var(--font-lg);

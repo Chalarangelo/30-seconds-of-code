@@ -78,6 +78,7 @@ body {
 .nav-title {
   display: none;
   margin: 0;
+  font-size: var(--font-md);
 
   @media screen and (min-width: $layout-medium-breakpoint) {
     display: block;
