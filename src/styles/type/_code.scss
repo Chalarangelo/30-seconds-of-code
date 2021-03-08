@@ -71,3 +71,10 @@ p > code, a > code {
     background: var(--clr-code-bg);
   }
 }
+
+a > code {
+
+  &, &[class*="language-"] {
+    color: var(--clr-link);
+  }
+}
