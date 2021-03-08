@@ -1,5 +1,4 @@
 .dev-form {
-  margin: 0.625rem 0.5rem 0.125rem;
   display: flex;
   flex-direction: column;
   justify-content: stretch;
@@ -7,7 +6,7 @@
   label {
     display: block;
     line-height: 2;
-    margin: 0.5rem 0.25rem 0.25rem;
+    margin: 0.5rem 0 0.25rem;
   }
 
   select, input {

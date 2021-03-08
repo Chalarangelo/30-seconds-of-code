@@ -50,7 +50,7 @@ const StaticPage = ({
     <>
       <Meta title={title} description={pageDescription} />
       <Shell>
-        <PageTitle className='static-tite'>{title}</PageTitle>
+        <PageTitle>{title}</PageTitle>
         <p className='page-sub-title txt-100'>{subtitle}</p>
         {cards.map(({ title, html }, i) => (
           <SimpleCard
