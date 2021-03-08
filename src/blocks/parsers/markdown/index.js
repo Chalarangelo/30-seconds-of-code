@@ -72,7 +72,8 @@ const blogTransformers = [
   {
     blogType: 'any',
     matcher: /<p>\s*\n*\s*<strong>Image credit:<\/strong>([\s\S]*?)<\/p>/g,
-    replacer: '<p class="blog-image-credit">Image credit: $1</p>',
+    replacer:
+      '<p class="blog-image-credit card-fw-section">Image credit: $1</p>',
   },
 ];
 
@@ -214,7 +215,7 @@ export class MarkdownParser {
       result.fullDescription = result.fullDescription.replace(
         /(<p>)*<img src="\.\/([^"]+)"([^>]*)>(<\/p>)*/g,
         (match, openTag, imgSrc, imgRest) =>
-          `<img class="card-image" src="${assetPath}/${imgSrc}"${imgRest}>`
+          `<img class="card-fw-section" src="${assetPath}/${imgSrc}"${imgRest}>`
       );
     } else {
       Object.entries(codeBlocks).forEach(([key, value]) => {

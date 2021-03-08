@@ -1,9 +1,0 @@
-@mixin card-full-width-section {
-  position: relative;
-  margin: 1.375rem -1rem 0;
-
-  @media screen and (min-width: $layout-medium-breakpoint) {
-    margin: 1.75rem 0.875rem 1rem;
-    margin: 1.375rem -1.5rem 0;
-  }
-}
