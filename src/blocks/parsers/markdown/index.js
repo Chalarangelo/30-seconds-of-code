@@ -103,6 +103,12 @@ export class MarkdownParser {
     if (!language)
       throw new Error(`Prism doesn't support language '${language}'.`);
     const languageData = prismComponents.languages[language];
+    // Add extras for specific languages (better highlighting)
+    if (language === 'javascript' && !Prism.languages['js-extras'])
+      require(`prismjs/components/prism-js-extras.js`);
+    if (language === 'css' && !Prism.languages['js-extras'])
+      require(`prismjs/components/prism-css-extras.js`);
+
     if (Prism.languages[language] || languageData.option === `default`) return;
 
     if (languageData.require) {
