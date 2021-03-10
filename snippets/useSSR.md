@@ -18,7 +18,7 @@ const isDOMavailable = !!(
   window.document.createElement
 );
 
-const useSSR = (callback, delay) => {
+const useSSR = () => {
   const [inBrowser, setInBrowser] = React.useState(isDOMavailable);
 
   React.useEffect(() => {
