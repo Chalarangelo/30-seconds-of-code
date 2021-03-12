@@ -44,11 +44,12 @@ body {
   line-height: 0;
   box-sizing: border-box;
   z-index: 1001;
-  height: 112px;
+  height: 76px;
   width: 100vw;
   padding-right: 4px;  // Pad to the right for the scrollbar (4px)
 
   @media screen and (min-width: $layout-medium-breakpoint) {
+    height: 112px;
     padding-right: 8px;  // Pad to the right for the scrollbar (8px)
   }
 
@@ -66,7 +67,7 @@ body {
   margin: 0.75rem 0.5rem;
 
   @media screen and (min-width: $layout-medium-breakpoint) {
-    width: calc(100% - 240px - 44px - 76px - 64px);
+    width: calc(100% - 250px - 44px - 76px - 64px);
   }
 
   &:hover, &:focus, &:active {
@@ -102,8 +103,13 @@ body {
 img.nav-website-logo {
   transition: 0.3s ease all;
   padding: 6px;
-  width: 64px;
-  height: 64px;
+  width: 56px;
+  height: 56px;
+
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    width: 64px;
+    height: 64px;
+  }
 }
 
 // Content container
@@ -121,4 +127,11 @@ img.nav-website-logo {
     padding-left: calc((100% - 882px) / 2);
     padding-right: calc((100% - 866px) / 2);
   }
+}
+
+// List section utility
+.list-section {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }

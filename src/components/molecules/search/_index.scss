@@ -22,7 +22,7 @@
   background: var(--clr-search-bg);
 
   @media screen and (min-width: $layout-medium-breakpoint) {
-    width: 310px;
+    width: 320px;
   }
 
   &:not(:focus-within) .search-autocomplete-list{
