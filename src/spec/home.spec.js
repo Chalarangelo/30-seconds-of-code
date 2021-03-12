@@ -20,6 +20,6 @@ describe('Home', () => {
   });
 
   it('should display snippets', () => {
-    cy.get('.preview-card').its('length').should('gte', 1);
+    cy.get('.list-card').its('length').should('gte', 1);
   });
 });

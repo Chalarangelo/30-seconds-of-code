@@ -53,9 +53,9 @@ describe('<ListingPage />', () => {
   });
 
   it('should pass the correct data to the SnippetList component', () => {
-    expect(
-      wrapper.querySelectorAll('.list-section .preview-card')
-    ).toHaveLength(snippetList.length);
+    expect(wrapper.querySelectorAll('.list-section .list-card')).toHaveLength(
+      snippetList.length
+    );
     expect(wrapper.querySelector('.page-title').textContent).toContain(
       listingTitle
     );
