@@ -15,7 +15,7 @@ describe('<BlogSnippetCard />', () => {
     wrapper = renderWithContext(<BlogSnippetCard snippet={fullBlogSnippet} />)
       .container;
     card = wrapper.querySelector('.card');
-    tagList = wrapper.querySelector('.tag-list');
+    tagList = wrapper.querySelector('.card-subtitle');
   });
 
   afterEach(cleanup);
@@ -30,7 +30,7 @@ describe('<BlogSnippetCard />', () => {
     });
 
     it('a TagList component', () => {
-      expect(card.querySelectorAll('.tag-list')).toHaveLength(1);
+      expect(card.querySelectorAll('.card-subtitle')).toHaveLength(1);
     });
 
     it('the card description', () => {

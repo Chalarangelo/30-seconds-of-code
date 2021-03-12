@@ -44,7 +44,7 @@ describe('<ListingPage />', () => {
     });
 
     it('a SnippetList component', () => {
-      expect(wrapper.querySelectorAll('.snippet-list')).toHaveLength(1);
+      expect(wrapper.querySelectorAll('.list-section')).toHaveLength(1);
     });
   });
 
@@ -54,7 +54,7 @@ describe('<ListingPage />', () => {
 
   it('should pass the correct data to the SnippetList component', () => {
     expect(
-      wrapper.querySelectorAll('.snippet-list .preview-card')
+      wrapper.querySelectorAll('.list-section .preview-card')
     ).toHaveLength(snippetList.length);
     expect(wrapper.querySelector('.page-title').textContent).toContain(
       listingTitle

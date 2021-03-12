@@ -37,7 +37,7 @@ describe('<CollectionsPage />', () => {
     });
 
     it('a CollectionList component', () => {
-      expect(wrapper.querySelectorAll('.collection-list')).toHaveLength(1);
+      expect(wrapper.querySelectorAll('.list-section')).toHaveLength(1);
     });
   });
 
@@ -47,7 +47,7 @@ describe('<CollectionsPage />', () => {
 
   it('should pass the correct data to the CollectionList component', () => {
     expect(
-      wrapper.querySelectorAll('.collection-list .collection-chip')
+      wrapper.querySelectorAll('.list-section .collection-chip')
     ).toHaveLength(chipList.length);
     expect(wrapper.querySelector('.page-title').textContent).toContain(
       listingTitle

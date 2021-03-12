@@ -1,6 +1,5 @@
 .card {
   position: relative;
-  transition: all 0.3s ease;
   border-radius: var(--br-lg);
   margin: 1.75rem 0.25rem 1rem;
   padding: 1.5rem 1rem;
@@ -14,7 +13,6 @@
     font-weight: 500;
     line-height: 2rem;
     margin: 0 0.5rem;
-    transition: 0.3s ease all;
     overflow: hidden;
     text-overflow: ellipsis;
 
