@@ -24,10 +24,8 @@
 
   .btn-dev-controls {
     position: relative;
-    margin-top: 0;
     box-shadow: none;
-    margin-left: -0.75rem;
-    margin-right: -0.75rem;
+    margin: 0 -0.75rem;
     height: 48px;
 
     &:before {
