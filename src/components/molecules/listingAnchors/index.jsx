@@ -37,7 +37,7 @@ const ListingAnchors = ({ items = false, ...rest }) => {
   }, []);
 
   return (
-    <ul className='listing-anchors compact' {...rest}>
+    <ul className='list-section listing-anchors compact' {...rest}>
       {items.map(item => (
         <li key={item.url}>
           <a

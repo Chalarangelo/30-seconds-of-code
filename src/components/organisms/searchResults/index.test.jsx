@@ -42,7 +42,7 @@ describe('<SearchResults />', () => {
     });
 
     it('should render the recommended snippets', () => {
-      expect(wrapper.querySelectorAll('.recommendation-list')).toHaveLength(1);
+      expect(wrapper.querySelectorAll('.list-section')).toHaveLength(1);
     });
   });
 

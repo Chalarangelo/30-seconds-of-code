@@ -2,7 +2,6 @@
 .page-graphic {
   position: relative;
   box-sizing: border-box;
-  transition: all 0.3s ease;
   margin-top: 80px;
   margin-bottom: 40vh;
   width: 100%;
@@ -27,7 +26,6 @@
 
 // Empty page text
 .page-backdrop-text {
-  transition: color 0.3s ease, background 0.3s ease;
   text-align: center;
   margin: 2.25rem auto 0.75rem;
   max-width: 200px;
@@ -43,7 +41,6 @@
 }
 
 .page-backdrop-subtext {
-  transition: all 0.3s ease;
   text-align: center;
   font-weight: 400;
   max-width: 200px;

@@ -18,7 +18,7 @@ const RecommendationList = ({ snippetList }) => {
       <PageTitle className='recommendation-list-title'>
         {literals.recommendedSnippets}
       </PageTitle>
-      <ul className='recommendation-list'>
+      <ul className='list-section'>
         {snippetList.map(snippet => (
           <PreviewCard key={`snippet_${snippet.url}`} snippet={snippet} />
         ))}

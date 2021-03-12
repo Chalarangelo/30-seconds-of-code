@@ -79,7 +79,7 @@ const SnippetList = ({
           </div>
         </>
       )}
-      <ul className='snippet-list'>
+      <ul className='list-section'>
         {snippetList.map(snippet => (
           <PreviewCard key={`snippet_${snippet.url}`} snippet={snippet} />
         ))}
