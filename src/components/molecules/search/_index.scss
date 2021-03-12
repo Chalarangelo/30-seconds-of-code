@@ -33,7 +33,7 @@
     transition: 0.3s ease all;
     font-size: 20px;
     line-height: 44px;
-    margin-left: 8px;
+    margin-left: 0.5rem;
     color: var(--clr-txt-100);
   }
 
@@ -78,8 +78,8 @@ a.search-btn[aria-hidden="true"] {
 
 .search-autocomplete-list {
   position: absolute;
-  width: calc(100% - 28px);
-  margin: 0 8px;
+  width: calc(100% - 1.75rem);
+  margin: 0 0.5rem;
   top: 42px;
   list-style: none;
   border-radius: var(--br-none) var(--br-none) var(--br-md) var(--br-md);
@@ -88,12 +88,12 @@ a.search-btn[aria-hidden="true"] {
 
   @media screen and (min-width: $layout-medium-breakpoint) {
     margin: 0;
-    width: calc(100% - 20px);
+    width: calc(100% - 1.25rem);
   }
 
   > li {
     height: 42px;
-    margin-left: -20px;
+    margin-left: -1.25rem;
     border-top: 1px solid var(--clr-search-results-border);
     border-bottom: none;
 
@@ -103,7 +103,7 @@ a.search-btn[aria-hidden="true"] {
 
     a {
       display: flex;
-      padding: 8px 12px;
+      padding: 0.5rem 0.75rem;
       height: 42px;
       box-sizing: border-box;
       align-items: baseline;
@@ -112,7 +112,7 @@ a.search-btn[aria-hidden="true"] {
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
-        margin-right: 8px;
+        margin-right: 0.5rem;
       }
 
       .result-tag {

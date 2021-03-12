@@ -12,7 +12,6 @@
 
       &:last-child {
         border-radius: var(--br-none) var(--br-none) var(--br-lg) var(--br-lg);
-        margin-bottom: -1rem;
       }
     }
 
@@ -51,7 +50,7 @@
   }
 
   .card-actions {
-    margin: 2rem 0 -1rem;
+    margin: 1rem 0 -1rem;
     display: flex;
     justify-content: space-around;
   }

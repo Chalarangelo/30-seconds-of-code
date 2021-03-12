@@ -13,7 +13,7 @@ describe('<TagList />', () => {
   afterEach(cleanup);
 
   it('should render correctly', () => {
-    expect(wrapper.querySelectorAll('.tag-list')).toHaveLength(1);
+    expect(wrapper.querySelectorAll('.card-subtitle')).toHaveLength(1);
   });
 
   it('should render a child for each passed tag name', () => {
