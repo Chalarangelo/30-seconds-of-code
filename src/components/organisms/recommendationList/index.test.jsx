@@ -28,6 +28,6 @@ describe('<RecommendationList />', () => {
   });
 
   it('should render the appropriate number of PreviewCard components', () => {
-    expect(wrapper.querySelectorAll('.preview-card')).toHaveLength(3);
+    expect(wrapper.querySelectorAll('.list-card')).toHaveLength(3);
   });
 });

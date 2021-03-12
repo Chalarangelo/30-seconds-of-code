@@ -93,7 +93,7 @@ describe('<SearchResults />', () => {
 
     it('should render a PreviewCard', () => {
       expect(
-        wrapper.querySelectorAll('.preview-card').length
+        wrapper.querySelectorAll('.list-card').length
       ).toBeGreaterThanOrEqual(1);
     });
   });

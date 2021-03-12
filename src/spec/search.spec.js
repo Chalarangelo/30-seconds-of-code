@@ -17,7 +17,7 @@ describe('Search', () => {
     });
 
     it('should display search results', () => {
-      cy.get('.preview-card').its('length').should('gte', 1);
+      cy.get('.list-card').its('length').should('gte', 1);
     });
 
     it('should display at least one snippet with the given query in its name', () => {

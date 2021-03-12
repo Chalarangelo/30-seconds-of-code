@@ -25,7 +25,7 @@ describe('<PreviewCard />', () => {
     });
 
     it('a li element with the approprite classes', () => {
-      expect(wrapper.querySelectorAll('li.card.preview-card')).toHaveLength(1);
+      expect(wrapper.querySelectorAll('li.card.list-card')).toHaveLength(1);
     });
 
     it('the card title', () => {

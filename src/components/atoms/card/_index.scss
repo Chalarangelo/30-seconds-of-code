@@ -123,3 +123,17 @@
     }
   }
 }
+
+// List item card
+.list-card {
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 64px calc(100% - 64px);
+  content-visibility: auto;
+  contain-intrinsic-size: 240px;
+
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    contain-intrinsic-size: 144px;
+  }
+}

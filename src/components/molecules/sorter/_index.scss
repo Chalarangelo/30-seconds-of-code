@@ -27,11 +27,8 @@
     box-shadow: none;
 
     &:hover, &:focus {
-     box-shadow: none;
-    }
-
-    &:hover {
       color: var(--clr-link);
+      box-shadow: none;
     }
 
     &:before {

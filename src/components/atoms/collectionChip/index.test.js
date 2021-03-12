@@ -42,7 +42,7 @@ describe('<CollectionChip />', () => {
     });
 
     it('should render correctly', () => {
-      expect(wrapper.querySelectorAll('li.collection-card')).toHaveLength(1);
+      expect(wrapper.querySelectorAll('li.list-card')).toHaveLength(1);
     });
   });
 });
