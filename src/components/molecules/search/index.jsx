@@ -1,6 +1,12 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import { getURLParameters, throttle, getBaseURL, getRootURL } from 'utils';
+import {
+  getURLParameters,
+  throttle,
+  getBaseURL,
+  getRootURL,
+  combineClassNames,
+} from 'utils';
 import { useSearch } from 'state/search';
 import literals from 'lang/en/client/search';
 
@@ -96,7 +102,7 @@ const Search = ({ isMainSearch = false }) => {
 
   return (
     <div
-      className='search-wrapper br-md icon icon-search'
+      className='search-wrapper flex br-md icon icon-search'
       onKeyUp={e => {
         e.preventDefault();
         if (isMainSearch || !hasResults) return;
@@ -188,7 +194,9 @@ const Search = ({ isMainSearch = false }) => {
               <a
                 href={item.url}
                 title={item.title}
-                className={selectedResult === i ? 'selected' : null}
+                className={combineClassNames`flex ${
+                  selectedResult === i ? 'selected' : ''
+                }`}
               >
                 <span className='result-title txt-150'>{item.title}</span>
                 {!item.search ? (

@@ -35,7 +35,7 @@ const DevelopmentControls = ({ pageContext: { snippet } = {} }) => {
 
   return (
     <div
-      className='floating-controls-container srfc-05db br-xl'
+      className='floating-controls-container flex flex-col srfc-05db br-xl'
       ref={controlsRef}
     >
       {opened ? (

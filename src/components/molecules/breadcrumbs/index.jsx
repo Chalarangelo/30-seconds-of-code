@@ -15,7 +15,7 @@ const breadcrumbPropTypes = {
  */
 const Breadcrumbs = ({ breadcrumbs }) => (
   <nav aria-label='breadcrumbs' className='breadcrumbs'>
-    <ol>
+    <ol className='flex'>
       {breadcrumbs.map(({ name, url }, i) => (
         <li key={`breadcrumb-${i}`} className='breadcrumb-item'>
           <a

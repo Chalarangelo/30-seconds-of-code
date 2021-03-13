@@ -2,14 +2,10 @@
   border-radius: var(--br-xl);
 
   > .icon {
-    display: block;
     position: relative;
     box-sizing: border-box;
     padding: 0.5rem 0.25rem 0.5rem 4.25rem;
     min-height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     text-align: center;
 
     &, &:link, &:visited {

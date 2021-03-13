@@ -158,8 +158,6 @@
   }
 
   .card-description {
-    display: flex;
-    flex-direction: column;
 
     li:not(.blog-list-item) > p {
       line-height: 2;

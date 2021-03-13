@@ -26,7 +26,7 @@ const Actions = ({ snippet }) => {
   const showCssCodepen =
     snippet.code && snippet.code.css && snippet.language.otherLanguages;
   return (
-    <>
+    <div className='card-actions flex'>
       <ShareButton
         pageTitle={snippet.title}
         pageDescription={snippet.description}
@@ -62,7 +62,7 @@ const Actions = ({ snippet }) => {
       >
         {literals.viewOnGitHub}
       </a>
-    </>
+    </div>
   );
 };
 
