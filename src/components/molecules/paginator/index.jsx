@@ -40,7 +40,7 @@ const Paginator = ({
   else buttons = [1, '...', pageNumber, '...', totalPages];
 
   return (
-    <div className={combineClassNames`paginator ${className}`}>
+    <div className={combineClassNames`paginator flex j-center ${className}`}>
       {pageNumber > 1 && (
         <a
           className='btn previous-page fs-md icon icon-chevron-left'

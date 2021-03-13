@@ -58,9 +58,7 @@ const SnippetCard = ({ snippet }) => {
           />
         )}
       </div>
-      <div className='card-actions'>
-        <Actions snippet={snippet} />
-      </div>
+      <Actions snippet={snippet} />
     </Card>
   );
 };

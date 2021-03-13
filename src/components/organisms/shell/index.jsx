@@ -35,7 +35,11 @@ const Shell = ({ isSearch = false, children, pageContext }) => {
 
   return (
     <div className='page-container'>
-      <header className='nav-bar' role='navigation' aria-label='Main'>
+      <header
+        className='nav-bar flex j-center a-center'
+        role='navigation'
+        aria-label='Main'
+      >
         <a className='nav-btn' href='/'>
           <img
             src='/assets/30s-icon.png'
@@ -45,7 +49,11 @@ const Shell = ({ isSearch = false, children, pageContext }) => {
             height='64'
           />
         </a>
-        <a className='nav-title-wrapper' href='/' aria-label={literals.home}>
+        <a
+          className='nav-title-wrapper flex flex-col'
+          href='/'
+          aria-label={literals.home}
+        >
           <h1 className='nav-title txt-200 f-alt'>{literals.siteName}</h1>
           <p className='nav-subtitle txt-100'>{literals.siteDescription}</p>
         </a>

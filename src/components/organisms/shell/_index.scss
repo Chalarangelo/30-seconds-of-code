@@ -35,9 +35,6 @@ body {
 .nav-bar {
   position: sticky;
   top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   transition: 0.3s ease all;
   background: var(--clr-navbar-bg);
   box-shadow: var(--shd-el-01dp);
@@ -61,8 +58,6 @@ body {
 }
 
 .nav-title-wrapper {
-  display: flex;
-  flex-direction: column;
   text-align: left;
   margin: 0.75rem 0.5rem;
 

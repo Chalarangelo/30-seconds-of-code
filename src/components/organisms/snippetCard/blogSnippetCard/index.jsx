@@ -47,12 +47,10 @@ const SnippetCard = ({ snippet }) => (
       />
     )}
     <div
-      className='card-description'
+      className='card-description flex flex-col'
       dangerouslySetInnerHTML={{ __html: snippet.html.fullDescription }}
     />
-    <div className='card-actions'>
-      <Actions snippet={snippet} />
-    </div>
+    <Actions snippet={snippet} />
   </Card>
 );
 

@@ -71,7 +71,7 @@ const SnippetList = ({
               ) : null}
             </div>
           </div>
-          <div className='snippet-list-controls'>
+          <div className='snippet-list-controls a-center'>
             {listingSublinks.length ? (
               <ListingAnchors items={listingSublinks} />
             ) : null}

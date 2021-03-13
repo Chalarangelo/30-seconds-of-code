@@ -33,7 +33,7 @@ const CookieConsentPopup = () => {
         <br />
         {literals.whatYouAccept}
       </p>
-      <div className='cookie-consent-buttons'>
+      <div className='cookie-consent-buttons flex j-center'>
         <Button
           className='cookie-accept'
           data-nosnippet
