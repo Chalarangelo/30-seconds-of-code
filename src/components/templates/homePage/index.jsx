@@ -42,15 +42,17 @@ const HomePage = ({ pageContext: { shelves, pageDescription } }) => {
         }}
       />
       <Shell>
-        <h1 className='home-title flex j-center a-center txt-200 f-alt'>
+        <h1 className='home-title flex j-center a-center txt-200'>
           <img
             src='/assets/30s-icon.png'
             alt={literals.siteName}
-            className='home-logo'
+            className='home-logo inline-block'
             width='64'
             height='64'
           />
-          <span className='home-title-text'>{literals.siteName}</span>
+          <span className='home-title-text f-alt inline-block'>
+            {literals.siteName}
+          </span>
         </h1>
         <p className='home-sub-title txt-150 fs-md'>
           {literals.siteDescription}

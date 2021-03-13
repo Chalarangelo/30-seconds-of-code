@@ -17,7 +17,7 @@ const Breadcrumbs = ({ breadcrumbs }) => (
   <nav aria-label='breadcrumbs' className='breadcrumbs'>
     <ol className='flex'>
       {breadcrumbs.map(({ name, url }, i) => (
-        <li key={`breadcrumb-${i}`} className='breadcrumb-item'>
+        <li key={`breadcrumb-${i}`} className='breadcrumb-item inline-block'>
           <a
             href={url}
             aria-current={i === breadcrumbs.length - 1 ? 'page' : null}

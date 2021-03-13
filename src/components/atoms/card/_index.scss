@@ -29,6 +29,7 @@
     }
   }
 
+  // Reusable utility for all card icons
   .card-icon {
     position: relative;
     display: inline-block;
@@ -66,6 +67,7 @@
     }
   }
 
+  // Reusable utility class (tag list, snippet collection subtitle)
   .card-subtitle {
     margin: 0 .5rem;
     display: inline-block;
