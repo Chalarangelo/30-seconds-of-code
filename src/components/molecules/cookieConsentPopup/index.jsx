@@ -35,7 +35,7 @@ const CookieConsentPopup = () => {
       </p>
       <div className='cookie-consent-buttons flex j-center'>
         <Button
-          className='cookie-accept'
+          className='no-shd action-btn cookie-accept'
           data-nosnippet
           onClick={e => {
             e.preventDefault();
@@ -45,7 +45,7 @@ const CookieConsentPopup = () => {
           {literals.accept}
         </Button>
         <Button
-          className='cookie-decline'
+          className='no-shd action-btn cookie-decline'
           data-nosnippet
           onClick={e => {
             e.preventDefault();

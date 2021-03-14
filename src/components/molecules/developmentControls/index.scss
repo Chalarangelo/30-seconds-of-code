@@ -9,19 +9,12 @@
     line-height: 2;
     background: transparent;
     color: var(--clr-txt-150);
-    box-shadow: none;
     padding: 0;
     margin-top: 0;
-
-    &:hover, &:focus {
-      box-shadow: none;
-      color: var(--clr-link);
-    }
   }
 
   .btn-dev-controls {
     position: relative;
-    box-shadow: none;
     margin: 0 -0.75rem;
     height: 48px;
 

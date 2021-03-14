@@ -10,19 +10,7 @@
   .btn {
     position: relative;
     margin: 0;
-    background: transparent;
-    color: var(--clr-action);
-    opacity: .87;
-    text-transform: uppercase;
-    font-weight: 500;
-    -webkit-font-smoothing: antialiased;
-    box-shadow: none;
     padding: 0.25rem;
-
-    &:hover, &:focus {
-      box-shadow: none;
-      opacity: 1;
-    }
 
     &:before {
       font-size: 24px;

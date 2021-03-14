@@ -34,6 +34,37 @@
       animation-timing-function: ease-in-out;
     }
   }
+
+  // Utility to remove box-shadow from btn elements
+  &.no-shd {
+    box-shadow: none;
+
+    &:hover, &:focus {
+      box-shadow: none;
+    }
+  }
+
+  // Utility for btn elements that display a link color on hover
+  &.link-btn {
+
+    &:hover, &:focus {
+      color: var(--clr-link);
+    }
+  }
+
+  // Utility for btn elements that look like actions
+  &.action-btn {
+    background: transparent;
+    color: var(--clr-action);
+    text-transform: uppercase;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    opacity: .87;
+
+    &:hover, &:focus {
+      opacity: 1;
+    }
+  }
 }
 
 @keyframes active {

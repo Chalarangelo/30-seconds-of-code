@@ -24,12 +24,6 @@
     margin-top: 0;
     box-sizing: border-box;
     background: transparent;
-    box-shadow: none;
-
-    &:hover, &:focus {
-      color: var(--clr-link);
-      box-shadow: none;
-    }
 
     &:before {
       position: absolute;
