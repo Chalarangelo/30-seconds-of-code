@@ -57,6 +57,8 @@ export class Screenshot {
 
         // Style card
         const card = document.querySelector('.snippet-card');
+        card.classList.remove('srfc-02dp');
+        card.classList.add('srfc-02db');
         card.style.maxWidth = '800px';
         card.style.zIndex = '8';
         // Add logo inside the card
