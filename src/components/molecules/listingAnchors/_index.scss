@@ -4,11 +4,24 @@
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   justify-content: flex-start;
+  padding-bottom: 0.25rem;
 
   &::-webkit-scrollbar-track {
     background-color: var(--clr-scrollbar-bg);
-    margin: 0 35vw;
+    margin: 0 2rem;
     border-radius: var(--br-sm);
+
+    @media screen and (min-width: 400px) {
+      margin: 0 4rem;
+    }
+
+    @media screen and (min-width: 520px) {
+      margin: 0 8rem;
+    }
+
+    @media screen and (min-width: 680px) {
+      margin: 0 12rem;
+    }
 
     @media screen and (min-width: 800px) {
       margin: 0 16rem;
@@ -23,6 +36,10 @@
   &::-webkit-scrollbar-thumb {
     background-color: var(--clr-scrollbar-knob);
     border-radius: var(--br-sm);
+
+    &:hover {
+      background-color: var(--clr-scrollbar-knob-active);
+    }
   }
 
   li {

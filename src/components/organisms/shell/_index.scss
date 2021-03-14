@@ -1,7 +1,6 @@
 // Body scrollbar
 body {
   &::-webkit-scrollbar-track {
-    margin-top: 0;
     background: var(--clr-scrollbar-bg)
   }
 
@@ -72,7 +71,6 @@ body {
 
 .nav-title {
   display: none;
-  margin: 0;
   font-size: var(--font-md);
 
   @media screen and (min-width: $layout-medium-breakpoint) {
@@ -86,7 +84,6 @@ body {
 
 .nav-subtitle {
   display: none;
-  margin: 0;
 
   @media screen and (min-width: $layout-large-breakpoint) {
     display: block;
@@ -121,11 +118,4 @@ img.nav-website-logo {
     padding-left: calc((100% - 882px) / 2);
     padding-right: calc((100% - 866px) / 2);
   }
-}
-
-// List section utility
-.list-section {
-  margin: 0;
-  padding: 0;
-  list-style: none;
 }

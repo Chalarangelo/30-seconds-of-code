@@ -43,7 +43,9 @@ const SnippetCard = ({ snippet }) => (
         htmlContent={snippet.html.code}
         className='card-code'
       />
-      <h5 className='card-example-title'>{literals.examples}</h5>
+      <h5 className='card-example-title m-0 txt-100 fs-xs md:fs-sm'>
+        {literals.examples}
+      </h5>
       <CodeBlock
         language={snippet.language}
         htmlContent={snippet.html.example}
