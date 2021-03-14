@@ -1,34 +1,12 @@
 .snippet-card.blog-card {
 
-  .card-title {
-    margin: 0;
-  }
-
   .card-meta-info {
-    margin: 0 0rem 1rem;
+    margin: 0 0 1rem;
 
     a {
-
       &, &:link, &:visited {
         color: var(--clr-txt-050);
       }
-    }
-
-    .github-link, .card-subtitle {
-      margin: 0;
-    }
-
-  }
-
-  .card-cover-image {
-    --cover-aspect-ratio: 1.78;
-    margin-top: 0.375rem;
-    margin-bottom: 0;
-    min-height: calc(260px / var(--cover-aspect-ratio));
-    max-height: calc(680px / var(--cover-aspect-ratio));
-
-    @media screen and (min-width: $layout-medium-breakpoint) {
-      margin-top: 0.375rem;
     }
   }
 
@@ -76,64 +54,8 @@
     }
   }
 
-  pre.blog-code {
+  pre {
     margin: 1rem 0 0;
-  }
-
-  blockquote.blog-quote {
-    margin: 1rem 0 0.5rem;
-    padding-left: 1.5rem;
-    box-shadow: inset 4px 0 0 0 var(--clr-quote-border);
-    font-style: italic;
-    line-height: 2;
-    font-weight: 400;
-  }
-
-  .blog-body-title {
-    line-height: 2rem;
-    font-weight: 500;
-    margin: 1.5rem 0 0;
-  }
-
-  table.blog-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1.5rem 0;
-
-    &.with-primary-column {
-
-      tr > td:first-child {
-        font-weight: 600;
-        -webkit-font-smoothing: antialiased;
-        text-align: right;
-        padding: 0.5rem 1rem 0.5rem 0.5rem;
-      }
-    }
-
-    th {
-      font-weight: 600;
-      -webkit-font-smoothing: antialiased;
-      font-size: var(--font-md);
-    }
-
-    td, th {
-      text-align: center;
-      border: 1px solid var(--clr-table-border);
-      padding: 0.5rem;
-    }
-  }
-
-  p:last-child.blog-image-credit {
-    font-size: var(--font-xs);
-    padding: 0 1.5rem;
-    margin-top: -2.375rem;
-    background-color: var(--clr-img-credit-bg);
-    color: var(--clr-txt-150);
-    order: -1;
-
-    @media screen and (min-width: $layout-medium-breakpoint) {
-      margin-top: -2.375rem;
-    }
   }
 
   .card-description {
