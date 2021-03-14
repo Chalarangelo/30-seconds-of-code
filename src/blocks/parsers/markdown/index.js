@@ -36,46 +36,40 @@ const blogTransformers = [
     blogType: 'any',
     matcher: /<pre class="language-([^"]+)" data-code-language="([^"]*)">([\s\S]*?)<\/pre>/g,
     replacer:
-      '<pre class="blog-code language-$1 notranslate" data-code-language="$2">$3</pre>',
+      '<pre class="language-$1 notranslate" data-code-language="$2">$3</pre>',
   },
   // Convert blog blockquotes to the appropriate elements
   {
     blogType: 'any',
     matcher: /<blockquote>\s*\n*\s*<p>([\s\S]*?)<\/p>\s*\n*\s<\/blockquote>/g,
-    replacer: '<blockquote class="blog-quote fs-md md:fs-lg">$1</blockquote>',
+    replacer: '<blockquote class="fs-md md:fs-lg">$1</blockquote>',
   },
   // Convert blog titles h3 and below to the appropriate elements
   {
     blogType: 'any',
     matcher: /<h([123])>([\s\S]*?)<\/h\d>/g,
     replacer:
-      '<h3 class="blog-body-title txt-150 fs-lg md:fs-xl f-alt">$2</h3>',
+      '<h3 class="card-body-title txt-150 fs-lg md:fs-xl f-alt">$2</h3>',
   },
   // Convert blog titles h4 and above to the appropriate elements
   {
     blogType: 'any',
     matcher: /<h([456])>([\s\S]*?)<\/h\d>/g,
     replacer:
-      '<h4 class="blog-body-title txt-150 fs-md md:fs-lg f-alt">$2</h4>',
-  },
-  // Convert blog tables to the appropriate elements
-  {
-    blogType: 'any',
-    matcher: /<table>([\s\S]*?)<\/table>/g,
-    replacer: '<table class="blog-table">$1</table>',
+      '<h4 class="card-body-title txt-150 fs-md md:fs-lg f-alt">$2</h4>',
   },
   // Convert blog cross tables to the appropriate elements
   {
     blogType: 'any',
-    matcher: /<table class="([^"]+)">\s*\n*\s*<thead>\s*\n*\s*<tr>\s*\n*\s*<th><\/th>/g,
-    replacer: '<table class="$1 with-primary-column"><thead><tr><th></th>',
+    matcher: /<table>\s*\n*\s*<thead>\s*\n*\s*<tr>\s*\n*\s*<th><\/th>/g,
+    replacer: '<table class="primary-col"><thead><tr><th></th>',
   },
   // Convert image credit to the appropriate element
   {
     blogType: 'any',
     matcher: /<p>\s*\n*\s*<strong>Image credit:<\/strong>([\s\S]*?)<\/p>/g,
     replacer:
-      '<p class="blog-image-credit card-fw-section">Image credit: $1</p>',
+      '<p class="card-image-credit card-fw-section">Image credit: $1</p>',
   },
 ];
 

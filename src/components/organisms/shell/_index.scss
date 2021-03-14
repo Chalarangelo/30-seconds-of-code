@@ -1,7 +1,7 @@
 // Body scrollbar
 body {
   &::-webkit-scrollbar-track {
-    background: var(--clr-scrollbar-bg)
+    background: var(--clr-scrollbar-bg);
   }
 
   &::-webkit-scrollbar {

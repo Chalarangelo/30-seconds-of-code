@@ -82,3 +82,39 @@ sup, sub, code, kbd {
   position: relative;
   vertical-align: baseline;
 }
+blockquote {
+  margin: 1rem 0 0.5rem;
+  padding-left: 1.5rem;
+  box-shadow: inset 4px 0 0 0 var(--clr-quote-border);
+  font-style: italic;
+  line-height: 2;
+  font-weight: 400;
+}
+// Style tabular content
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+
+  &.primary-col {
+
+    tr > td:first-child {
+      font-weight: 600;
+      -webkit-font-smoothing: antialiased;
+      text-align: right;
+      padding: 0.5rem 1rem 0.5rem 0.5rem;
+    }
+  }
+
+  th {
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+    font-size: var(--font-md);
+  }
+
+  td, th {
+    text-align: center;
+    border: 1px solid var(--clr-table-border);
+    padding: 0.5rem;
+  }
+}
