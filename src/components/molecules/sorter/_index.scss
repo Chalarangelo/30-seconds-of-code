@@ -1,22 +1,9 @@
-// Colors
-:root {
-  --sorter-back-color: #fbfcfe;
-  --sorter-shadow-color: rgba(0, 32, 128, 0.26);
-  --sorter-selected-color: #434ec7;
-}
-
-// Dark mode colors
-.dark {
-  --sorter-back-color: #1b1d22;
-  --sorter-shadow-color: rgba(0, 3, 10, 0.561);
-  --sorter-selected-color: #678df4;
-}
-
 .sorter {
   position: relative;
   width: 172px;
   height: 48px;
   box-sizing: border-box;
+  margin-bottom: 0.25rem;
 
   .sorter-inner {
     position: absolute;
@@ -25,10 +12,9 @@
     width: 172px;
     z-index: 100;
     box-sizing: border-box;
-    background: transparent;
-    box-shadow: none;
     transition: 0.3s ease box-shadow;
-    border-radius: 0.5rem;
+    border-radius: var(--br-md);
+    padding-bottom: 10px;
   }
 
   .order-btn {
@@ -39,16 +25,6 @@
     margin-top: 0;
     box-sizing: border-box;
     background: transparent;
-    color: var(--fore-color-dark);
-    box-shadow: none;
-
-    &:hover, &:focus {
-     box-shadow: none;
-    }
-
-    &:hover {
-      color: var(--sorter-selected-color);
-    }
 
     &:before {
       position: absolute;
@@ -63,18 +39,10 @@
     .order-btn:not(.selected) {
       display: none;
     }
-  }
-
-  &.open {
 
     .sorter-inner {
-      background: var(--sorter-back-color);
-      box-shadow: 0px 1px 5px var(--sorter-shadow-color);
+      background: transparent;
+      box-shadow: none;
     }
   }
-}
-
-.btn.order-btn {
-  font-size: 1rem;
-  line-height: 1.4;
 }

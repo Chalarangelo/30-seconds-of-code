@@ -29,9 +29,6 @@ describe('<Search />', () => {
 
   it('should render correctly', () => {
     expect(wrapper.querySelectorAll('input[type="search"]')).toHaveLength(1);
-    expect(
-      wrapper.querySelectorAll('a.btn.icon.icon-search.search-btn')
-    ).toHaveLength(1);
   });
 
   describe('when entering a keyphrase from non-main search', () => {

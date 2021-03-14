@@ -36,7 +36,7 @@ const DeveloperPage = ({ pageContext: { configs } }) => {
         <PageTitle>{literals.devMode}</PageTitle>
         <SimpleCard title={literals.createSnippet}>
           <form
-            className='dev-form'
+            className='dev-form flex flex-col'
             onSubmit={e => {
               e.preventDefault();
               if (!repo || !title) return;

@@ -30,7 +30,7 @@ describe('<Card />', () => {
     });
 
     it('should render with the default className', () => {
-      expect(wrapper.querySelector('div').className).toBe('card');
+      expect(wrapper.querySelectorAll('div.card')).toHaveLength(1);
     });
   });
 });

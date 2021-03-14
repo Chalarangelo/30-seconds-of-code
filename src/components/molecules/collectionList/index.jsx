@@ -16,7 +16,7 @@ const CollectionList = ({ chipList, listingName }) => {
   return chipList.length ? (
     <>
       <PageTitle>{listingName}</PageTitle>
-      <ul className='collection-list'>
+      <ul className='list-section'>
         {chipList.map(chip => (
           <CollectionChip key={`chip_${chip.url}`} chip={chip} />
         ))}

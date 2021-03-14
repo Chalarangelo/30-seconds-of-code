@@ -14,22 +14,24 @@ const propTypes = {
 const CollectionChip = ({ chip }) => {
   const hasDescription = chip.description && chip.description.length;
   return hasDescription ? (
-    <li className='card collection-card'>
-      <div className={`card-icon icon icon-${chip.icon}`}></div>
+    <li className='card srfc-02dp txt-100 list-card'>
+      <div className={`card-icon br-xl icon icon-${chip.icon}`}></div>
       <div className='card-data'>
-        <h3 className='card-title'>
+        <h3 className='card-title txt-200 fs-xl f-alt'>
           <a href={chip.url}>{chip.title}</a>
         </h3>
-        <span className='card-subtitle'>{literals.snippetCollection}</span>
+        <span className='card-subtitle fs-xs'>
+          {literals.snippetCollection}
+        </span>
       </div>
       <div className='card-description'>
         <p>{chip.description}</p>
       </div>
     </li>
   ) : (
-    <li className='collection-chip'>
+    <li className='collection-chip srfc-01dp'>
       <a
-        className={`collection-chip-link icon icon-${chip.icon}`}
+        className={`collection-chip-link flex j-center a-center f-alt icon icon-${chip.icon}`}
         href={chip.url}
       >
         {chip.title}

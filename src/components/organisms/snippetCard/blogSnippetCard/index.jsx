@@ -14,8 +14,8 @@ const propTypes = {
  */
 const SnippetCard = ({ snippet }) => (
   <Card className='snippet-card blog-card'>
-    <h1 className='card-title'>{snippet.title}</h1>
-    <div className='card-meta-info'>
+    <h1 className='card-title txt-200 fs-xl f-alt'>{snippet.title}</h1>
+    <div className='card-meta-info txt-050 fs-xs'>
       {snippet.authors.map((a, i, arr) => (
         <Fragment key={`author-fragment-${i}`}>
           <a
@@ -39,7 +39,7 @@ const SnippetCard = ({ snippet }) => (
     </div>
     {snippet.cover && snippet.cover && (
       <img
-        className='card-cover-image'
+        className='card-cover-image card-fw-section'
         src={snippet.cover}
         alt=''
         height='232'
@@ -47,12 +47,10 @@ const SnippetCard = ({ snippet }) => (
       />
     )}
     <div
-      className='card-description'
+      className='card-description flex flex-col'
       dangerouslySetInnerHTML={{ __html: snippet.html.fullDescription }}
     />
-    <div className='card-actions'>
-      <Actions snippet={snippet} />
-    </div>
+    <Actions snippet={snippet} />
   </Card>
 );
 

@@ -47,7 +47,7 @@
     "node-fetch": "^2.6.1",
     "node-sass": "^4.14.1",
     "prettier": "^2.2.1",
-    "prismjs": "^1.19.0",
+    "prismjs": "^1.23.0",
     "prop-types": "^15.7.2",
     "puppeteer": "^5.5.0",
     "react": "^16.13.0",

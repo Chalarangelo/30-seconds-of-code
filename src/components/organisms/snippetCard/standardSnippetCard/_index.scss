@@ -1,5 +1,3 @@
-@import '../../../atoms/card/mixins';
-
 .snippet-card {
 
   .card-source-content {
@@ -7,24 +5,18 @@
 
     pre {
       margin: 0;
-      font-size: .875rem;
-
-      @media screen and (min-width: $layout-medium-breakpoint) {
-        font-size: 1rem;
-      }
 
       &:first-of-type {
-        border-radius: 0.5rem 0.5rem 0 0;
+        border-radius: var(--br-lg) var(--br-lg) var(--br-none) var(--br-none);
       }
 
       &:last-child {
-        border-radius: 0 0 0.5rem 0.5rem;
-        margin-bottom: -1rem;
+        border-radius: var(--br-none) var(--br-none) var(--br-lg) var(--br-lg);
       }
     }
 
     .card-code + .card-code {
-      border-top: 1px solid var(--pre-decorator-color);
+      border-top: 1px solid var(--clr-txt-050);
       padding-top: 2.5rem;
 
       &:before {
@@ -34,15 +26,7 @@
 
     .card-example-title {
       padding: 0.25rem .875rem 0;
-      font-size: .875rem;
-      text-transform: uppercase;
-      background: var(--pre-back-color);
-      margin: 0;
-      color: var(--pre-decorator-color);
-
-      @media screen and (min-width: $layout-medium-breakpoint) {
-        font-size: 1rem;
-      }
+      background: var(--clr-code-bg);
 
       + pre {
         padding: 0.25rem .875rem 1.5rem;
@@ -55,28 +39,5 @@
         display: none;
       }
     }
-  }
-
-  .card-image {
-    @include card-full-width-section;
-    margin-top: 0.875rem;
-    min-width: calc(100% + 2rem);
-    object-fit: cover;
-    margin-bottom: 1.5rem;
-  }
-
-  .card-actions {
-    margin: 2rem 0 -1rem;
-    display: flex;
-    justify-content: space-around;
-  }
-}
-
-a.github-link {
-
-  &, &:link, &:visited {
-    font-size: 0.875rem;
-    margin: 0 0.5rem 0.25rem 4.75rem;
-    color: var(--card-fore-color-light);
   }
 }

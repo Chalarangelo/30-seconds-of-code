@@ -65,11 +65,13 @@ const SnippetList = ({
             <div>
               <PageTitle>{listingName}</PageTitle>
               {listingDescription && listingDescription.length ? (
-                <p className='snippet-list-description'>{listingDescription}</p>
+                <p className='snippet-list-description txt-100'>
+                  {listingDescription}
+                </p>
               ) : null}
             </div>
           </div>
-          <div className='snippet-list-controls'>
+          <div className='snippet-list-controls a-center'>
             {listingSublinks.length ? (
               <ListingAnchors items={listingSublinks} />
             ) : null}
@@ -77,7 +79,7 @@ const SnippetList = ({
           </div>
         </>
       )}
-      <ul className='snippet-list'>
+      <ul className='list-section'>
         {snippetList.map(snippet => (
           <PreviewCard key={`snippet_${snippet.url}`} snippet={snippet} />
         ))}

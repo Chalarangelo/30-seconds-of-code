@@ -7,7 +7,6 @@ const literals = {
   developerControls: 'Development mode controls',
   contentManager: 'Content manager',
   openInVscode: 'Open in VS Code',
-  toggleDarkMode: 'Toggle dark mode',
   editCoverImage: 'Edit cover image',
   viewLive: 'View live',
   viewJSON: 'View JSON data',

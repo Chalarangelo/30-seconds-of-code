@@ -18,12 +18,12 @@ const PreviewCard = ({ snippet }) => {
     ? [snippet.language, snippet.primaryTag]
     : [snippet.primaryTag, snippet.expertise];
   return (
-    <li className='card preview-card'>
-      <div className={`card-icon icon icon-${snippet.icon}`}>
+    <li className='card srfc-02dp txt-100 list-card'>
+      <div className={`card-icon br-round icon icon-${snippet.icon}`}>
         <Expertise level={snippet.expertise} />
       </div>
       <div className='card-data'>
-        <h3 className='card-title'>
+        <h3 className='card-title txt-200 fs-xl f-alt'>
           <a href={snippet.url}>{snippet.title}</a>
         </h3>
         <TagList tags={tags} />

@@ -19,11 +19,11 @@ const SnippetCard = ({ snippet }) => {
   return (
     <Card className='snippet-card'>
       <div className='card-meta'>
-        <div className={`card-icon icon icon-${snippet.icon}`}>
+        <div className={`card-icon br-round icon icon-${snippet.icon}`}>
           <Expertise level={snippet.expertise} />
         </div>
         <div className='card-data'>
-          <h1 className='card-title'>{snippet.title}</h1>
+          <h1 className='card-title txt-200 fs-xl f-alt'>{snippet.title}</h1>
           <TagList tags={[snippet.language.long, ...snippet.tags.all]} />
         </div>
       </div>
@@ -58,9 +58,7 @@ const SnippetCard = ({ snippet }) => {
           />
         )}
       </div>
-      <div className='card-actions'>
-        <Actions snippet={snippet} />
-      </div>
+      <Actions snippet={snippet} />
     </Card>
   );
 };

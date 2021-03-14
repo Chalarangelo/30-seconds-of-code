@@ -1,18 +1,13 @@
 // Colors
 :root {
-  --a-link-color: #2747C7;
-}
-
-// Dark mode colors
-.dark {
-  --a-link-color: #6DC7FD;
+  --clr-link: hsl(217, 82%, 77%);
 }
 
 a {
   text-decoration: none;
 
   &:link, &:visited {
-    color: var(--a-link-color);
+    color: var(--clr-link);
   }
 
   &:hover, &:focus {

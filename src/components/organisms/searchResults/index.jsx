@@ -24,7 +24,7 @@ const SearchResults = ({ recommendedSnippets = [] }) => {
   return hasResults ? (
     <>
       <PageTitle>{literals.results}</PageTitle>
-      <ul className='search-results'>
+      <ul className='list-section'>
         {searchResults.map(item =>
           item.expertise ? (
             <PreviewCard key={`snippet_${item.url}`} snippet={item} />
@@ -51,7 +51,7 @@ const SearchResults = ({ recommendedSnippets = [] }) => {
             </>
           )
         }
-        mainTextClassName='search-page-text'
+        mainTextClassName='search-page-text fs-lg'
       />
       {recommendedSnippets.length ? (
         <RecommendationList snippetList={recommendedSnippets} />

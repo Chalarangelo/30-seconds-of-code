@@ -7,7 +7,7 @@ import settings from 'settings/global';
  */
 const Footer = () => (
   <footer>
-    <p>
+    <p className='fs-xs'>
       <a className='footer-link' href='/about'>
         {literals.about}
       </a>
@@ -34,7 +34,7 @@ const Footer = () => (
         {literals.twitter}
       </a>
     </p>
-    <p>
+    <p className='fs-xs'>
       {literals.copyright}
       <a
         href={settings.githubOrgUrl}

@@ -1,0 +1,20 @@
+// Typography definitions
+//  Numeric values represent the strength/opacity of the font color
+
+@mixin generate-text-colors ($txts) {
+  @each $txt in $txts {
+    .txt-#{$txt} {
+      color: var(--clr-txt-#{$txt});
+    }
+  }
+}
+
+// Colors
+:root {
+  --clr-txt-200: hsla(0, 0%, 100%, .95);
+  --clr-txt-150: hsla(0, 0%, 100%, 0.87);
+  --clr-txt-100: hsla(0, 0%, 100%, .76);
+  --clr-txt-050: hsla(0, 0%, 100%, .64);
+}
+
+@include generate-text-colors(('200', '150', '100', '050'));

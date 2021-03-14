@@ -31,7 +31,7 @@ describe('<Button />', () => {
     });
 
     it('should render with the default className', () => {
-      expect(wrapper.querySelector('button').className).toBe('btn');
+      expect(wrapper.querySelectorAll('.btn')).toHaveLength(1);
     });
   });
 });

@@ -1,9 +1,6 @@
-// Colors
-:root {
-  --consent-back-color: rgba(19, 21, 27, 0.925);
-  --consent-fore-color: #FFFFFF;
-  --consent-btn-back-color: #e2e4ee;
-  --consent-btn-fore-color: #212121;
+@keyframes enter-from-below {
+  from { transform: translateY(100%);}
+  to { transform: translateY(0%); }
 }
 
 .cookie-consent-popup {
@@ -13,16 +10,9 @@
   left: 0;
   right: 0;
   z-index: 99999;
-  background: var(--consent-back-color);
-  color: var(--consent-fore-color);
   max-height: 60vh;
   overflow-y: auto;
-  text-align: center;
-  font-size: 0.875rem;
-
-  p {
-    font-size: 0.875rem;
-  }
+  animation: enter-from-below 0.3s ease 0s;
 
   > p, .cookie-consent-buttons {
     max-width: 680px;
@@ -30,13 +20,9 @@
   }
 
   .btn {
-    font-size: 0.875rem;
+    margin: 0;
+    font-size: var(--font-xs);
     padding: 0.625rem 1.375rem;
-    background: var(--consent-btn-back-color);
-    color: var(--consent-btn-fore-color);
-
-    &.cookie-decline {
-      margin-left: 1rem;
-    }
+    flex: 0 1 27.5%;
   }
 }

@@ -1,0 +1,22 @@
+// Border radius definitions
+//  Names represent sizes
+
+@mixin generate-border-radii ($radii) {
+  @each $radius in $radii {
+    .br-#{$radius} {
+      border-radius: var(--br-#{$radius});
+    }
+  }
+}
+
+// Colors
+:root {
+  --br-none: 0;
+  --br-sm: 0.125rem;
+  --br-md: 0.25rem;
+  --br-lg: 0.5rem;
+  --br-xl: 1rem;
+  --br-round: 1000rem;
+}
+
+@include generate-border-radii(('none', 'sm', 'md', 'lg', 'xl', 'round'));

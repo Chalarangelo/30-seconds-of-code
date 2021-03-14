@@ -18,11 +18,11 @@ const propTypes = {
 const SnippetCard = ({ snippet }) => (
   <Card className='snippet-card'>
     <div className='card-meta'>
-      <div className={`card-icon icon icon-${snippet.icon}`}>
+      <div className={`card-icon br-round icon icon-${snippet.icon}`}>
         <Expertise level={snippet.expertise} />
       </div>
       <div className='card-data'>
-        <h1 className='card-title'>{snippet.title}</h1>
+        <h1 className='card-title txt-200 fs-xl f-alt'>{snippet.title}</h1>
         <TagList tags={[snippet.language.long, ...snippet.tags.all]} />
       </div>
     </div>
@@ -43,16 +43,16 @@ const SnippetCard = ({ snippet }) => (
         htmlContent={snippet.html.code}
         className='card-code'
       />
-      <h5 className='card-example-title'>{literals.examples}</h5>
+      <h5 className='card-example-title m-0 txt-100 fs-xs md:fs-sm'>
+        {literals.examples}
+      </h5>
       <CodeBlock
         language={snippet.language}
         htmlContent={snippet.html.example}
         className='card-example'
       />
     </div>
-    <div className='card-actions'>
-      <Actions snippet={snippet} />
-    </div>
+    <Actions snippet={snippet} />
   </Card>
 );
 

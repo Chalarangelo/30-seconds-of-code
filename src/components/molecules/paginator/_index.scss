@@ -1,56 +1,26 @@
-// Colors
-:root {
-  --paginator-selected-color: #434ec7;
-}
-
-// Dark mode colors
-.dark {
-  --paginator-selected-color: #678df4;
-}
-
 .paginator {
   margin: 1.75rem 1.25rem 1.5rem;
-  display: flex;
-  justify-content: center;
   align-items: baseline;
-  padding: 0.0625rem 0.25rem;
 
   .btn, a.btn {
-    transition: 0.3s ease all;
-    font-size: 1.125rem;
     margin: 0.25rem 0;
     padding: 0.625rem 0;
     box-sizing: border-box;
-    line-height: 24px;
     height: 44px;
     min-width: 44px;
     text-align: center;
-    box-shadow: none;
     background: transparent;
-    color: var(--fore-color);
-
-    &:not(.current-page) {
-
-      &:hover, &:focus {
-        color: var(--paginator-selected-color);
-      }
-    }
+    color: var(--clr-txt-150);
 
     &.current-page {
       cursor: default;
-      font-size: 1.5rem;
     }
 
     &.previous-page, &.next-page {
-      color: var(--paginator-selected-color);
+      color: var(--clr-link);
       position: relative;
       box-sizing: border-box;
       margin: 0.625rem 1rem;
-      font-size: 0;
-
-      @media screen and (min-width: $layout-medium-breakpoint) {
-        font-size: 1rem;
-      }
 
       &:before {
         position: absolute;
@@ -85,15 +55,9 @@
         }
       }
     }
-
   }
 
   .paginator-separator {
-    display: block;
-    color: var(--fore-color-light);
-    opacity: 0.45;
     letter-spacing: 2px;
-    line-height: 24px;
-    font-size: 1.5rem;
   }
 }

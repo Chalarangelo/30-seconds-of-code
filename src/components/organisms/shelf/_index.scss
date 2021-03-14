@@ -6,13 +6,13 @@
   margin-top: 2rem;
 
   &::before, &::after {
-    color: var(--fore-color-dark);
+    color: var(--clr-txt-150);
     transition: 0.3s ease all;
   }
 
   &:hover, &:focus {
     &::before, &::after {
-      color: var(--a-link-color);
+      color: var(--clr-link);
     }
   }
 
@@ -20,7 +20,7 @@
     position: absolute;
     right: 0.875rem;
     bottom: 0.625rem;
-    font-size: 1.25rem;
+    font-size: 20px;
     pointer-events: all;
   }
 
@@ -39,16 +39,17 @@
   }
 }
 
-.snippets-shelf-list {
-  margin: 0 0 5rem;
+.shelf-list {
   padding: 0;
   list-style: none;
 }
 
+.snippets-shelf-list {
+  margin: 0 0 5rem;
+}
+
 .collections-shelf-list {
   margin: 1.75rem 0.25rem 5rem;
-  padding: 0;
-  list-style: none;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;

@@ -1,12 +1,7 @@
-:root {
-  --action-fore-color: #525252;
-}
-
-.dark {
-  --action-fore-color: #bababa;
-}
-
 .card-actions {
+  margin: 1rem 0 -1rem;
+  justify-content: space-around;
+
   .btn-form, .btn {
     flex: 1 0 auto;
     text-align: center;
@@ -15,31 +10,13 @@
   .btn {
     position: relative;
     margin: 0;
-    background: transparent;
-    color: var(--action-fore-color);
-    text-transform: uppercase;
-    font-weight: 500;
-    -webkit-font-smoothing: antialiased;
-    box-shadow: none;
     padding: 0.25rem;
-    font-size: 0;
-    border-radius: 0;
-
-    @media screen and (min-width: $layout-medium-breakpoint) {
-      font-size: 1rem;
-    }
-
-    &:hover, &:focus {
-      box-shadow: none;
-      color: var(--a-link-color);
-    }
 
     &:before {
       font-size: 24px;
-      line-height: 24px;
       vertical-align: bottom;
       width: 100%;
-      transition: opacity 0.1s ease;
+      transition: opacity 0.3s ease;
       margin-right: 1rem;
     }
   }

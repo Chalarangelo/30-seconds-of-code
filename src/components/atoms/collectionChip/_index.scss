@@ -1,38 +1,15 @@
-// Colors
-:root {
-  --chip-back-color: #FFFFFF;
-  --chip-fore-color: #202124;
-  --chip-shadow-color: rgba(0, 32, 128, 0.07);
-}
-
-// Dark mode colors
-.dark {
-  --chip-back-color: #1A1D21;
-  --chip-fore-color: #E1ECF4;
-  --chip-shadow-color: rgba(0, 3, 10, 0.16);
-}
-
 .collection-chip {
-  background: var(--chip-back-color);
-  border-radius: 1rem;
-  box-shadow: 0px 1px 3px 1px var(--chip-shadow-color);
+  border-radius: var(--br-xl);
 
   > .icon {
-    display: block;
     position: relative;
     box-sizing: border-box;
     padding: 0.5rem 0.25rem 0.5rem 4.25rem;
     min-height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Raleway', Helvetica, sans-serif;
-    letter-spacing: 0.25px;
-    font-variant-numeric: lining-nums;
     text-align: center;
 
     &, &:link, &:visited {
-      color: var(--chip-fore-color);
+      color: var(--clr-txt-200);
     }
 
     &::before {
@@ -42,52 +19,9 @@
       font-size: 36px;
       width: 64px;
       height: 64px;
-      border-radius: 1rem;
+      border-radius: var(--br-xl);
       line-height: 64px;
       text-align: center;
     }
-  }
-}
-
-.collection-card {
-  margin-top: 1.5rem;
-  overflow: hidden;
-  display: grid;
-  grid-template-rows: auto auto;
-  grid-template-columns: 64px calc(100% - 64px);
-  content-visibility: auto;
-  contain-intrinsic-size: 240px;
-
-  @media screen and (min-width: $layout-medium-breakpoint) {
-    contain-intrinsic-size: 144px;
-  }
-
-  .card-title {
-    a {
-      &, &:link, &:visited {
-        font-family: 'Raleway', Helvetica, sans-serif;
-        letter-spacing: 0.25px;
-        font-variant-numeric: lining-nums;
-        font-weight: 500;
-        line-height: 1;
-        color: var(--card-title-color);
-      }
-
-      &:hover, &:focus {
-        text-decoration: underline;
-      }
-    }
-  }
-
-  .card-icon {
-    border-radius: 1rem;
-  }
-
-  .card-subtitle {
-    margin: 0 .5rem;
-    display: inline-block;
-    color: var(--card-fore-color-light);
-    font-size: .875rem;
-    line-height: 1rem;
   }
 }

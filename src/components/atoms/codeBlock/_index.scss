@@ -1,53 +1,51 @@
-// Colors
-:root {
-  --pre-fore-color: #e57373;
-  --pre-back-color: #1e253d;
-  --pre-selected-color: #041248;
-  --pre-decorator-color: #92A9B4;
-
-  --token-color-a: #7f99a5;   // Comments
-  --token-color-b: #bdbdbd;   // Punctuation
-  --token-color-c: #64b5f6;   // Functions
-  --token-color-d: #ff8f00;   // Numbers
-  --token-color-e: #c5e1a5;   // Strings
-  --token-color-f: #ce93d8;   // Keywords
-  --token-color-g: #26c6da;   // Regular expressions
-  --token-color-h: #e57373;   // Variables
-}
-
 pre {
   position: relative;
   overflow: auto; // Responsiveness
-  background: var(--pre-back-color);
-  color: var(--pre-fore-color);
+  background: var(--clr-code-bg);
+  color: var(--clr-code-block-txt);
   padding: 0.375rem;
-  margin: 0.5rem;
+  margin: 0.5rem 0;
   border: 0;
+  white-space: pre-wrap;
+
+  &::-webkit-scrollbar-track {
+    background: var(--clr-code-scrollbar-bg);
+  }
+
+  &::-webkit-scrollbar {
+    background: transparent;
+    height: 4px;
+
+    @media screen and (min-width: $layout-medium-breakpoint) {
+      height: 8px;
+    }
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--clr-code-scrollbar-knob);
+    border-radius: var(--br-md);
+
+    &:hover {
+      background-color: var(--clr-code-scrollbar-knob-active);
+    }
+  }
 }
 
 pre[class*="language-"] {
-  color: var(--pre-fore-color);
   padding: 1rem .875rem;
-  overflow: auto;
-  margin: 0.5rem 0;
-  white-space: pre-wrap;
 }
 
 pre[data-code-language]:not([data-code-language=""]) {
   padding-top: 2.625rem;
 
   &::before {
-    font-size: .875rem;
-    color: var(--pre-decorator-color);
+    font-size: inherit;
+    color: var(--clr-txt-100);
     position: absolute;
     top: .8725rem;
     left: .8725rem;
     display: block;
     content: attr(data-code-language);
-
-    @media screen and (min-width: $layout-medium-breakpoint) {
-      font-size: 1rem;
-    }
   }
 }
 
@@ -57,28 +55,28 @@ pre[data-code-language]:not([data-code-language=""]) {
 
 .token {
   &.comment, &.prolog, &.doctype, &.cdata {
-    color: var(--token-color-a);
+    color: var(--clr-tkn-a);
   }
   &.punctuation {
-    color: var(--token-color-b);
+    color: var(--clr-tkn-b);
   }
   &.property, &.tag, &.boolean, &.constant, &.symbol, &.deleted, &.function {
-    color: var(--token-color-c);
+    color: var(--clr-tkn-c);
   }
   &.number, &.class-name {
-    color: var(--token-color-d);
+    color: var(--clr-tkn-d);
   }
   &.selector, &.attr-name, &.string, &.char, &.builtin, &.inserted {
-    color: var(--token-color-e);
+    color: var(--clr-tkn-e);
   }
   &.operator, &.entity, &.url, &.atrule, &.attr-value, &.keyword, &.interpolation-punctuation {
-    color: var(--token-color-f);
+    color: var(--clr-tkn-f);
   }
   &.regex {
-    color: var(--token-color-g);
+    color: var(--clr-tkn-g);
   }
   &.important, &.variable {
-    color: var(--token-color-h);
+    color: var(--clr-tkn-h);
   }
   &.italic, &.comment {
     font-style: italic;
@@ -92,5 +90,5 @@ pre[data-code-language]:not([data-code-language=""]) {
 }
 
 .language-css .token.string, .style .token.string {
-  color: var(--token-color-f);
+  color: var(--clr-tkn-f);
 }

@@ -1,5 +1,4 @@
 .page-title.with-sorter {
-  display: inline-block;
   width: calc(100% - 172px - 1.75rem);
 
   + .sorter {
@@ -43,7 +42,6 @@
 .snippet-list-description {
   margin: 1rem 0.875rem 0.5rem;
   line-height: 2;
-  color: var(--fore-color);
 }
 
 .snippet-list-splash-image {
@@ -59,9 +57,12 @@
 .snippet-list-controls {
   margin: 0.25rem 0.875rem 1.5rem;
   display: grid;
-  align-items: center;
-  grid-template-columns: calc(100% - 172px) 172px;
-  grid-column-gap: 0.5rem;
+  grid-template-columns: 100%;
+
+  @media screen and (min-width: 480px) {
+    grid-template-columns: calc(100% - 172px) 172px;
+    grid-column-gap: 0.5rem;
+  }
 
   @media screen and (min-width: $layout-medium-breakpoint) {
     grid-template-columns: calc(100% - 188px) 188px;
@@ -75,11 +76,10 @@
 
   .sorter {
     height: 38px;
-  }
-}
+    justify-self: center;
 
-.snippet-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+    @media screen and (min-width: 480px) {
+      justify-self: flex-start;
+    }
+  }
 }

@@ -1,17 +1,12 @@
 .snippet-preview-title {
-  font-size: 1.125rem;
   font-weight: 600;
   -webkit-font-smoothing: antialiased;
-  line-height: 2;
-  margin: 2rem 0 -3rem .875rem;
-  color: var(--card-title-color);
+  margin: 2.5rem 0 -2.5rem .875rem;
 }
 
 .snippet-preview {
-  background:var(--back-color);
-  border-radius: .5rem;
+  background: var(--clr-snippet-preview-bg);
   padding: 3.25rem .875rem .75rem;
-  margin: 0;
 }
 
 // Overrides for some problematic snippets

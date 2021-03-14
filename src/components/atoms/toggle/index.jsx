@@ -16,7 +16,7 @@ const propTypes = {
  * Uses an `<input>` element wrapped in a `<label>`.
  */
 const Toggle = ({ onChange, checked = false, children, ...rest }) => (
-  <label className='toggle'>
+  <label className='toggle flex a-center md:fs-md'>
     {children}
     <input
       defaultChecked={checked}

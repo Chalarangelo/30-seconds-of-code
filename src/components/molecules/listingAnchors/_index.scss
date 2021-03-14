@@ -1,28 +1,27 @@
-// Colors
-:root {
-  --listing-anchors-selected-color: #434ec7;
-}
-
-// Dark mode colors
-.dark {
-  --listing-anchors-selected-color: #678df4;
-}
-
 .listing-anchors {
   position: relative;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   justify-content: flex-start;
+  padding-bottom: 0.25rem;
 
   &::-webkit-scrollbar-track {
-    background-color: var(--scrollbar-back-color);
-    margin: 0 35vw;
-    border-radius: 0.125rem;
+    background-color: var(--clr-scrollbar-bg);
+    margin: 0 2rem;
+    border-radius: var(--br-sm);
+
+    @media screen and (min-width: 400px) {
+      margin: 0 4rem;
+    }
+
+    @media screen and (min-width: 520px) {
+      margin: 0 8rem;
+    }
+
+    @media screen and (min-width: 680px) {
+      margin: 0 12rem;
+    }
 
     @media screen and (min-width: 800px) {
       margin: 0 16rem;
@@ -35,8 +34,12 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: var(--scrollbar-fore-color);
-    border-radius: 0.125rem;
+    background-color: var(--clr-scrollbar-knob);
+    border-radius: var(--br-sm);
+
+    &:hover {
+      background-color: var(--clr-scrollbar-knob-active);
+    }
   }
 
   li {
@@ -55,27 +58,19 @@
 
   .btn {
     box-sizing: border-box;
-    font-size: 1rem;
     min-width: 100%;
     padding: 0.375rem 0.25rem;
-    line-height: 1.5rem;
     height: 40px;
     border: none;
-    box-shadow: none;
     text-align: center;
     background: transparent;
-    border-radius: 0;
-    color: var(--fore-color-light);
+    border-radius: var(--br-none);
+    color: var(--clr-txt-100);
     border-bottom: 2px solid transparent;
 
     &.selected {
-      color: var(--fore-color-dark);
-      border-bottom: 2px solid var(--fore-color-dark);
-    }
-
-    &:hover, &:focus {
-      box-shadow: none;
-      color: var(--listing-anchors-selected-color);
+      color: var(--clr-txt-200);
+      border-bottom: 2px solid currentColor;
     }
 
     @media screen and (min-width: $layout-medium-breakpoint) {

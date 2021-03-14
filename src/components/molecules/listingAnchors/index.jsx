@@ -37,11 +37,11 @@ const ListingAnchors = ({ items = false, ...rest }) => {
   }, []);
 
   return (
-    <ul className='listing-anchors compact' {...rest}>
+    <ul className='list-section listing-anchors flex' {...rest}>
       {items.map(item => (
         <li key={item.url}>
           <a
-            className={combineClassNames`btn ${
+            className={combineClassNames`btn no-shd link-btn ${
               item.selected ? 'selected' : undefined
             }`}
             href={item.url}

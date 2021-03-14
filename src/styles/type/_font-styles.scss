@@ -1,0 +1,13 @@
+// Alternative font
+.f-alt {
+  &, > a, > a:link, > a:visited {
+    font-family: 'Raleway', Helvetica, sans-serif;
+    font-variant-numeric: lining-nums;
+    letter-spacing: 0.25px;
+  }
+}
+
+.f-left     { text-align: left;    }
+.f-right    { text-align: right;   }
+.f-center   { text-align: center;  }
+.f-justify  { text-align: justify; }

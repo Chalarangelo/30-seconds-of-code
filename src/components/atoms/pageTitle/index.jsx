@@ -15,7 +15,11 @@ const propTypes = {
  * and passes children to the element.
  */
 const PageTitle = ({ className, children }) => (
-  <h2 className={combineClassNames`page-title ${className}`}>{children}</h2>
+  <h2
+    className={combineClassNames`page-title inline-block txt-200 fs-x2 f-alt ${className}`}
+  >
+    {children}
+  </h2>
 );
 
 PageTitle.propTypes = propTypes;

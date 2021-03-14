@@ -32,7 +32,7 @@ const Shelf = ({ shelf: { shelfType, shelfData, shelfName, shelfUrl } }) => {
       >
         <PageTitle>{shelfName}</PageTitle>
       </a>
-      <ul className={`${classPrefix}-list`}>
+      <ul className={`shelf-list ${classPrefix}-list`}>
         {/* eslint-disable react/jsx-indent */}
         {shelfType === 'snippets'
           ? shelfData.map(snippet => (

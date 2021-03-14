@@ -34,7 +34,7 @@ describe('<Shelf />', () => {
       });
 
       it('the appropriate PreviewCard components', () => {
-        expect(wrapper.querySelectorAll('.preview-card')).toHaveLength(2);
+        expect(wrapper.querySelectorAll('.list-card')).toHaveLength(2);
       });
     });
 

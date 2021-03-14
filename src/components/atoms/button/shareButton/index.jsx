@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import { useGtagEvent } from 'components/hooks';
-import { Button } from 'components/atoms/button';
 import literals from 'lang/en/client/common';
 
 const propTypes = {
@@ -10,7 +9,7 @@ const propTypes = {
 };
 
 /**
- * Generic button component.
+ * Button that shares the given page to clipboard.
  */
 const ShareButton = ({ pageTitle, pageDescription }) => {
   const gtagCallback = useGtagEvent('click');
@@ -22,8 +21,8 @@ const ShareButton = ({ pageTitle, pageDescription }) => {
   if (!canShare) return null;
 
   return (
-    <Button
-      className='share-btn icon icon-share'
+    <button
+      className='btn no-shd action-btn fs-no md:fs-sm icon icon-share'
       title={literals.share}
       onClick={() => {
         // eslint-disable-next-line camelcase
@@ -40,7 +39,7 @@ const ShareButton = ({ pageTitle, pageDescription }) => {
       }}
     >
       {literals.share}
-    </Button>
+    </button>
   );
 };
 

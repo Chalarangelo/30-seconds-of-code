@@ -14,7 +14,7 @@ describe('<PreviewCard />', () => {
     anchor = wrapper.querySelector('a');
     card = wrapper.querySelector('.card');
     expertise = wrapper.querySelector('.expertise');
-    tags = wrapper.querySelector('.tag-list');
+    tags = wrapper.querySelector('.card-subtitle');
   });
 
   afterEach(cleanup);
@@ -25,7 +25,7 @@ describe('<PreviewCard />', () => {
     });
 
     it('a li element with the approprite classes', () => {
-      expect(wrapper.querySelectorAll('li.card.preview-card')).toHaveLength(1);
+      expect(wrapper.querySelectorAll('li.card.list-card')).toHaveLength(1);
     });
 
     it('the card title', () => {
@@ -72,7 +72,7 @@ describe('<PreviewCard />', () => {
   describe('with a blog snippet', () => {
     beforeEach(() => {
       wrapper = render(<PreviewCard snippet={previewBlogSnippet} />).container;
-      tags = wrapper.querySelector('.tag-list');
+      tags = wrapper.querySelector('.card-subtitle');
     });
 
     it('should pass the appropriate tags to the TagList component', () => {

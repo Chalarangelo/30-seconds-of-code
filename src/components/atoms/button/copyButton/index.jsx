@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import { useGtagEvent } from 'components/hooks';
 import copyToClipboard from 'copy-to-clipboard';
-import { Button } from 'components/atoms/button';
 import { combineClassNames } from 'utils';
 import literals from 'lang/en/client/common';
 
@@ -12,7 +11,6 @@ const propTypes = {
 
 /**
  * Button that copies the given text to clipboard.
- * Dependent on the sibling `Button` (`RegularButton`) component.
  * Dependent on `copy-to-clipboard` external module.
  * @param {string} text - Text to be copied when the button is clicked.
  */
@@ -38,8 +36,8 @@ const CopyButton = ({ text }) => {
   }, [active]);
 
   return (
-    <Button
-      className={combineClassNames`copy-btn icon ${
+    <button
+      className={combineClassNames`btn no-shd action-btn fs-no md:fs-sm icon ${
         active ? 'icon-check active' : 'icon-clipboard'
       }`}
       title={literals.copyToClipboard}
@@ -51,7 +49,7 @@ const CopyButton = ({ text }) => {
       }}
     >
       {buttonText}
-    </Button>
+    </button>
   );
 };
 

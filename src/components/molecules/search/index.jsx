@@ -1,6 +1,12 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import { getURLParameters, throttle, getBaseURL, getRootURL } from 'utils';
+import {
+  getURLParameters,
+  throttle,
+  getBaseURL,
+  getRootURL,
+  combineClassNames,
+} from 'utils';
 import { useSearch } from 'state/search';
 import literals from 'lang/en/client/search';
 
@@ -96,7 +102,7 @@ const Search = ({ isMainSearch = false }) => {
 
   return (
     <div
-      className='search-wrapper'
+      className='search-wrapper flex br-md icon icon-search'
       onKeyUp={e => {
         e.preventDefault();
         if (isMainSearch || !hasResults) return;
@@ -119,7 +125,7 @@ const Search = ({ isMainSearch = false }) => {
     >
       <input
         defaultValue={value}
-        className='search-box'
+        className='search-box srfc-inset'
         type='search'
         placeholder={literals.searchPlaceholder}
         aria-label={literals.searchSnippets}
@@ -164,7 +170,8 @@ const Search = ({ isMainSearch = false }) => {
         }}
       />
       <a
-        className='btn icon icon-search search-btn'
+        className='search-btn'
+        aria-hidden='true'
         title={literals.search}
         href={`/search/${
           value ? `?keyphrase=${encodeURIComponent(value)}` : ''
@@ -172,7 +179,7 @@ const Search = ({ isMainSearch = false }) => {
         rel='nofollow'
       />
       {!isMainSearch && value ? (
-        <ul className='search-autocomplete-list'>
+        <ul className='search-autocomplete-list srfc-05db'>
           {[
             ...searchResults.slice(0, 4),
             {
@@ -187,11 +194,13 @@ const Search = ({ isMainSearch = false }) => {
               <a
                 href={item.url}
                 title={item.title}
-                className={selectedResult === i ? 'selected' : null}
+                className={combineClassNames`flex ${
+                  selectedResult === i ? 'selected' : ''
+                }`}
               >
-                <span className='result-title'>{item.title}</span>
+                <span className='result-title txt-150'>{item.title}</span>
                 {!item.search ? (
-                  <span className='result-tag'>
+                  <span className='result-tag txt-050 fs-mi'>
                     {item.expertise
                       ? item.language
                         ? item.language

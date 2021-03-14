@@ -18,6 +18,7 @@ const NotFoundPage = () => (
       <PageTitle>{literals.fourOhFour}</PageTitle>
       <PageBackdrop
         graphicName='page-not-found'
+        mainTextClassName='fs-xl'
         mainText={
           <>
             <strong>{literals.pageNotFound}</strong>
@@ -26,7 +27,7 @@ const NotFoundPage = () => (
         }
         subText={literals.notFoundDescription}
       >
-        <a className='btn btn-home icon icon-home' href='/'>
+        <a className='btn btn-home fs-md icon icon-home' href='/'>
           {literals.goHome}
         </a>
       </PageBackdrop>

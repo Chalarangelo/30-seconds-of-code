@@ -1,30 +1,8 @@
-// Colors
-:root {
-  --toggle-fore-color: #FFFFFF;
-  --toggle-fore-color-active: #575aea;
-  --toggle-shadow-color: rgba(0, 0, 0, 0.25);
-  --toggle-back-color: #c2c4cb;
-  --toggle-back-color-active: #bebffe;
-}
-
-.dark {
-  --toggle-fore-color: #cfcfcf;
-  --toggle-fore-color-active: #bebffe;
-  --toggle-back-color: #45464f;
-  --toggle-back-color-active: #575aea;
-}
-
 .toggle {
-  display: block;
   width: 100%;
-  font-size: 1rem;
   position: relative;
   cursor: pointer;
-  margin: 0.875rem 0.5rem 1.5rem;
-
-  @media screen and (min-width: $layout-medium-breakpoint) {
-    font-size: 1.125rem;
-  }
+  margin: 0.875rem 0;
 }
 
 .toggle-switch {
@@ -33,14 +11,13 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-color: var(--toggle-back-color);
+  background-color: var(--clr-tgl-bg);
   border: none;
-  color: var(--toggle-fore-color);
+  color: var(--clr-tgl-fg);
   height: 12px;
   width: 24px;
-  border-radius: 6px;
+  border-radius: var(--br-round);
   vertical-align: text-bottom;
-  margin: 0.25rem;
   box-sizing: border-box;
   transition: all .3s ease;
   outline: transparent;
@@ -51,20 +28,19 @@
     height: 16px;
     content: '';
     position: absolute;
-    background: var(--toggle-fore-color);
+    background: var(--clr-tgl-fg);
     top: -2px;
     left: -8px;
-    border-radius: 8px;
+    border-radius: var(--br-round);
     transition: all .3s ease;
     cursor: pointer;
-    box-shadow:  0px 1px 3px var(--toggle-shadow-color);
   }
 
   &:checked {
-    background: var(--toggle-back-color-active);
+    background: var(--clr-tgl-bg-active);
 
     &:before {
-      background: var(--toggle-fore-color-active);
+      background: var(--clr-tgl-fg-active);
       left: calc(100% - 8px);
     }
   }

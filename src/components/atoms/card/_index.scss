@@ -1,28 +1,6 @@
-// Colors
-:root {
-  --card-back-color: #FFFFFF;
-  --card-title-color: #202124;
-  --card-fore-color: #000;
-  --card-fore-color-light: #5F6368;
-  --card-shadow-color: rgba(0, 32, 128, 0.07);
-}
-
-// Dark mode colors
-.dark {
-  --card-back-color: #1A1D21;
-  --card-title-color: #E1ECF4;
-  --card-fore-color: #FCFCFD;
-  --card-fore-color-light: #C8C9CB;
-  --card-shadow-color: rgba(0, 3, 10, 0.16);
-}
-
 .card {
   position: relative;
-  transition: all 0.3s ease;
-  background: var(--card-back-color);
-  color: var(--card-fore-color);
-  box-shadow: 0px 3px 5px 1px var(--card-shadow-color);
-  border-radius: 0.5rem;
+  border-radius: var(--br-lg);
   margin: 1.75rem 0.25rem 1rem;
   padding: 1.5rem 1rem;
 
@@ -31,32 +9,46 @@
     padding: 2rem 1.5rem;
   }
 
+  // Reusable utility for all card titles
   .card-title {
-    font-family: 'Raleway', Helvetica, sans-serif;
-    letter-spacing: 0.25px;
-    font-variant-numeric: lining-nums;
-    font-size: 1.5rem;
     font-weight: 500;
     line-height: 2rem;
-    margin: 0 0.5rem;
-    transition: 0.3s ease all;
-    color: var(--card-title-color);
+    margin: 0;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    a {
+      &, &:link, &:visited {
+        font-weight: 500;
+        line-height: 1;
+        color: var(--clr-txt-200);
+      }
+
+      &:hover, &:focus {
+        text-decoration: underline;
+      }
+    }
   }
 
+  // Reusable utility class (tag list, snippet collection subtitle)
+  .card-subtitle {
+    margin: 0;
+    display: inline-block;
+    line-height: 1rem;
+  }
+
+  // Reusable utility for all card icons
   .card-icon {
     position: relative;
     display: inline-block;
     width: 3.25rem;
     height: 3.25rem;
-    border-radius: 3.25rem;
 
     &:before {
       position: absolute;
       top: 0.5rem;
       left: 0.5rem;
-      font-size: 2.25rem;
+      font-size: 36px;
     }
 
     // Custom styles for dart icon
@@ -70,6 +62,17 @@
       background-repeat: no-repeat;
       background-position: center;
     }
+  }
+
+  // Reusable utility for titles in the body of cards (used in blogs)
+  .card-body-title {
+    line-height: 2rem;
+    font-weight: 500;
+    margin: 1.5rem 0 0;
+  }
+
+  .card-data {
+    margin: 0 0.5rem;
   }
 
   .card-meta {
@@ -86,23 +89,27 @@
   .card-description {
     grid-column: 1/3;
     margin: 0;
-    color: var(--card-fore-color);
-    line-height: 1.35;
 
-    > p {
-      font-size: 1rem;
-      margin: 1.5rem 0 0;
+    > p, li {
+      font-size: var(--font-sm);
       line-height: 2rem;
 
       @media screen and (min-width: $layout-medium-breakpoint) {
-        font-size: 1.125rem;
+        font-size: var(--font-md);
+      }
+    }
+
+    > p {
+
+      &:not(.card-fw-section) {
+        margin: 1.5rem 0 0;
       }
 
       &:not(:first-child) {
         margin-top: 1rem;
       }
 
-      &:last-child:not(:first-child) {
+      &:last-child:not(:first-child):not(.card-image-credit) {
         margin-bottom: 1.375rem;
       }
     }
@@ -112,13 +119,61 @@
     }
 
     li {
-      font-size: 1rem;
-      line-height: 2;
       margin: 0.375rem 0;
-
-      @media screen and (min-width: $layout-medium-breakpoint) {
-        font-size: 1.125rem;
-      }
     }
+  }
+
+  // Card full width section utility
+  .card-fw-section {
+    position: relative;
+    box-sizing: border-box;
+    margin: 1.375rem -1rem 0;
+    min-width: calc(100% + 2rem);
+    object-fit: cover;
+
+    @media screen and (min-width: $layout-medium-breakpoint) {
+      margin: 1.375rem -1.5rem 0;
+      min-width: calc(100% + 3rem);
+    }
+  }
+
+  // Keep this below the full width section utility for correct cascade
+  .card-cover-image {
+    --cover-aspect-ratio: 1.78;
+    margin-top: 0.375rem;
+    margin-bottom: 0;
+    min-height: calc(260px / var(--cover-aspect-ratio));
+    max-height: calc(680px / var(--cover-aspect-ratio));
+
+    @media screen and (min-width: $layout-medium-breakpoint) {
+      margin-top: 0.375rem;
+    }
+  }
+
+  p:last-child.card-image-credit {
+    font-size: var(--font-xs);
+    padding: 0 1.5rem;
+    margin-top: -2.375rem;
+    background-color: var(--clr-img-credit-bg);
+    color: var(--clr-txt-150);
+    order: -1;
+
+    @media screen and (min-width: $layout-medium-breakpoint) {
+      margin-top: -2.375rem;
+    }
+  }
+}
+
+// List item card
+.list-card {
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 64px calc(100% - 64px);
+  content-visibility: auto;
+  contain-intrinsic-size: 240px;
+
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    contain-intrinsic-size: 144px;
   }
 }

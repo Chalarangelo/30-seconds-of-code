@@ -22,8 +22,8 @@ const CookieConsentPopup = () => {
   if (!hasMounted) return null;
 
   return (
-    <div className='cookie-consent-popup'>
-      <p data-nosnippet>
+    <div className='cookie-consent-popup srfc-04db txt-150 f-center'>
+      <p data-nosnippet className='fs-xs'>
         {literals.cookieDisclaimer}
         {literals.learnMore}
         <a className='footer-link' href='/cookies'>
@@ -33,9 +33,9 @@ const CookieConsentPopup = () => {
         <br />
         {literals.whatYouAccept}
       </p>
-      <div className='cookie-consent-buttons'>
+      <div className='cookie-consent-buttons flex j-center'>
         <Button
-          className='cookie-accept'
+          className='no-shd action-btn cookie-accept'
           data-nosnippet
           onClick={e => {
             e.preventDefault();
@@ -45,7 +45,7 @@ const CookieConsentPopup = () => {
           {literals.accept}
         </Button>
         <Button
-          className='cookie-decline'
+          className='no-shd action-btn cookie-decline'
           data-nosnippet
           onClick={e => {
             e.preventDefault();

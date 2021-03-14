@@ -33,7 +33,7 @@ const Sorter = ({ sorter: { orders, selectedOrder } }) => {
       className={combineClassNames`sorter ${toggled ? 'open' : ''}`}
       ref={sorterRef}
     >
-      <div className='sorter-inner'>
+      <div className='sorter-inner srfc-04db'>
         {orders
           .sort((a, b) =>
             a.title === selectedOrder ? -1 : b.title === selectedOrder ? 1 : 0
@@ -41,7 +41,7 @@ const Sorter = ({ sorter: { orders, selectedOrder } }) => {
           .map(order => (
             <a
               key={`${order.url}`}
-              className={combineClassNames`btn order-btn
+              className={combineClassNames`btn no-shd link-btn order-btn txt-100
                 ${
                   order.title === selectedOrder
                     ? `selected icon ${

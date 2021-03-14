@@ -12,7 +12,10 @@ const propTypes = {
  * and passes everything else to the element.
  */
 const Card = ({ className, ...rest }) => (
-  <div className={combineClassNames`card ${className}`} {...rest} />
+  <div
+    className={combineClassNames`card srfc-02dp txt-100 ${className}`}
+    {...rest}
+  />
 );
 
 Card.propTypes = propTypes;

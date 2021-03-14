@@ -12,7 +12,7 @@ describe('<SnippetCard />', () => {
     wrapper = renderWithContext(<SnippetCard snippet={fullSnippet} />)
       .container;
     card = wrapper.querySelector('.card');
-    tagList = wrapper.querySelector('.tag-list');
+    tagList = wrapper.querySelector('.card-subtitle');
     codeBlocks = wrapper.querySelectorAll('pre');
   });
 
@@ -28,7 +28,7 @@ describe('<SnippetCard />', () => {
     });
 
     it('a TagList component', () => {
-      expect(card.querySelectorAll('.tag-list')).toHaveLength(1);
+      expect(card.querySelectorAll('.card-subtitle')).toHaveLength(1);
     });
 
     it('the card description', () => {
@@ -56,7 +56,7 @@ describe('<SnippetCard />', () => {
     });
 
     it('a CopyButton component', () => {
-      expect(card.querySelectorAll('.copy-btn')).toHaveLength(1);
+      expect(card.querySelectorAll('.btn.icon-clipboard')).toHaveLength(1);
     });
 
     it('the card actions', () => {
@@ -116,7 +116,7 @@ describe('<SnippetCard />', () => {
     });
 
     it('should render a CodepenButton', () => {
-      expect(wrapper.querySelectorAll('.codepen-btn')).toHaveLength(1);
+      expect(wrapper.querySelectorAll('.btn.icon-codepen')).toHaveLength(1);
     });
   });
 });

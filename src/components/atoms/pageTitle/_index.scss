@@ -1,14 +1,9 @@
 // Page title
 .page-title {
-  font-family: 'Raleway', Helvetica, sans-serif;
-  font-variant-numeric: lining-nums;
-  font-size: 2rem;
   font-weight: 500;
   -webkit-font-smoothing: antialiased;
   line-height: 3rem;
-  color: var(--fore-color-darker);
   margin: 0 0.875rem;
-  display: inline-block;
 
   // Add some spacing to static pages
   &:first-child {

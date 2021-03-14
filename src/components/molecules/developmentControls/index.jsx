@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import { useShell } from 'state/shell';
 import { useClickOutside } from 'components/hooks';
 import settings from 'settings/global';
 import literals from 'lang/en/client/developer';
@@ -17,10 +16,8 @@ const propTypes = {
 
 /**
  * Renders a floating button with development controls.
- * @param {bool} isDarkMode - Should dark mode be applied?
  */
 const DevelopmentControls = ({ pageContext: { snippet } = {} }) => {
-  const [{ isDarkMode }, dispatch] = useShell();
   const [opened, setOpened] = React.useState(false);
   const [coverImage, setCoverImage] = React.useState();
   const controlsRef = React.useRef();
@@ -37,23 +34,18 @@ const DevelopmentControls = ({ pageContext: { snippet } = {} }) => {
   });
 
   return (
-    <div className='floating-controls-container' ref={controlsRef}>
+    <div
+      className='floating-controls-container flex flex-col srfc-05db br-xl'
+      ref={controlsRef}
+    >
       {opened ? (
         <>
-          <a href='/developer' className='btn btn-dev'>
+          <a href='/developer' className='btn btn-dev no-shd link-btn'>
             {literals.contentManager}
           </a>
-          <button
-            className='btn btn-dev'
-            onClick={() =>
-              dispatch({ type: 'toggleDarkMode', isDarkMode: !isDarkMode })
-            }
-          >
-            {literals.toggleDarkMode}
-          </button>
           {snippet ? (
             <a
-              className='btn btn-dev'
+              className='btn btn-dev no-shd link-btn fs-sm'
               href={snippet.vscodeUrl}
               rel='nofollow noopener noreferrer'
               target='_blank'
@@ -63,7 +55,7 @@ const DevelopmentControls = ({ pageContext: { snippet } = {} }) => {
           ) : null}
           {coverImage ? (
             <button
-              className='btn btn-dev'
+              className='btn btn-dev no-shd link-btn fs-sm'
               onClick={() => {
                 const img = prompt('Cover image URL', coverImage.src);
                 coverImage.src = img;
@@ -73,7 +65,7 @@ const DevelopmentControls = ({ pageContext: { snippet } = {} }) => {
             </button>
           ) : null}
           <a
-            className='btn btn-dev'
+            className='btn btn-dev no-shd link-btn fs-sm'
             href={`${location.origin}/page-data${location.pathname}page-data.json`}
             target='_blank'
             rel='noopener noreferrer'
@@ -81,7 +73,7 @@ const DevelopmentControls = ({ pageContext: { snippet } = {} }) => {
             {literals.viewJSON}
           </a>
           <a
-            className='btn btn-dev'
+            className='btn btn-dev no-shd link-btn fs-sm'
             href={`${settings.websiteUrl}${location.pathname}`}
             target='_blank'
             rel='noopener noreferrer'
