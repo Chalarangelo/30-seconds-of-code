@@ -50,11 +50,11 @@ const HomePage = ({ pageContext: { shelves, pageDescription } }) => {
             width='64'
             height='64'
           />
-          <span className='home-title-text f-alt inline-block'>
+          <span className='home-title-text f-alt f-center inline-block'>
             {literals.siteName}
           </span>
         </h1>
-        <p className='home-sub-title txt-150 fs-md'>
+        <p className='home-sub-title txt-150 fs-md f-center'>
           {literals.siteDescription}
         </p>
         {shelves.map(s => (

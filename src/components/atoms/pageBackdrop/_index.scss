@@ -7,7 +7,6 @@
   width: 100%;
   height: 50vmin;
   padding-top: 46vmin;
-  text-align: center;
 
   &::before {
     top: 0;
@@ -24,12 +23,15 @@
   }
 }
 
+.page-backdrop-text,
+.page-backdrop-subtext {
+  font-weight: 400;
+  max-width: 200px;
+}
+
 // Empty page text
 .page-backdrop-text {
-  text-align: center;
   margin: 2.25rem auto 0.75rem;
-  max-width: 200px;
-  font-weight: 400;
 
   strong {
     color: var(--clr-txt-150);
@@ -41,9 +43,6 @@
 }
 
 .page-backdrop-subtext {
-  text-align: center;
-  font-weight: 400;
-  max-width: 200px;
   margin: 0.5rem auto;
 
   @media screen and (min-width: $layout-medium-breakpoint) {
