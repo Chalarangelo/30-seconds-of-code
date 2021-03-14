@@ -23,28 +23,9 @@ describe('<ListingAnchors />', () => {
     it('two anchor buttons', () => {
       expect(wrapper.querySelectorAll('a')).toHaveLength(anchorItems.length);
     });
-  });
 
-  describe('compact variant', () => {
-    beforeEach(() => {
-      wrapper = render(<ListingAnchors isCompact items={anchorItems} />)
-        .container;
-    });
-
-    describe('should render', () => {
-      it('a container component', () => {
-        expect(
-          wrapper.querySelectorAll('.listing-anchors.compact')
-        ).toHaveLength(1);
-      });
-
-      it('two anchor buttons', () => {
-        expect(wrapper.querySelectorAll('a')).toHaveLength(anchorItems.length);
-      });
-
-      it('a selected anchor', () => {
-        expect(wrapper.querySelectorAll('.selected')).toHaveLength(1);
-      });
+    it('a selected anchor', () => {
+      expect(wrapper.querySelectorAll('.selected')).toHaveLength(1);
     });
   });
 });

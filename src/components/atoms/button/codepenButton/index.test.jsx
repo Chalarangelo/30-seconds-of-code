@@ -25,13 +25,11 @@ describe('<CodepenButton />', () => {
   it('should render correctly', () => {
     expect(wrapper.querySelectorAll('form')).toHaveLength(1);
     expect(wrapper.querySelectorAll('form > input')).toHaveLength(1);
-    expect(wrapper.querySelectorAll('button.btn.codepen-btn')).toHaveLength(1);
+    expect(wrapper.querySelectorAll('button.btn')).toHaveLength(1);
   });
 
   it('should have an appropriate title attribute', () => {
-    expect(
-      wrapper.querySelectorAll('button.btn.codepen-btn[title]')
-    ).toHaveLength(1);
+    expect(wrapper.querySelectorAll('button.btn[title]')).toHaveLength(1);
     expect(button.title).toBe(literals.codepen);
   });
 

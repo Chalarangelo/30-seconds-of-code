@@ -6,12 +6,25 @@
     .fs-#{$size} {
       font-size: var(--font-#{$size});
     }
+
+    @media screen and (min-width: $layout-medium-breakpoint) {
+      .md\:fs-#{$size} {
+        font-size: var(--font-#{$size});
+      }
+    }
+
+    @media screen and (min-width: $layout-large-breakpoint) {
+      .lg\:fs-#{$size} {
+        font-size: var(--font-#{$size});
+      }
+    }
   }
 }
 
 // Font sizes
 //  Sizes are calculated with a base size of 16px
 :root {
+  --font-no: 0;             // hidden
   --font-mi: 0.75rem;       // 12px
   --font-xs: 0.875rem;      // 14px
   --font-sm: 1rem;          // 16px
@@ -22,4 +35,4 @@
   --font-x3: 2.5rem;        // 40px
 }
 
-@include generate-font-sizes(('mi', 'xs', 'sm', 'md', 'lg', 'xl', 'x2', 'x3'));
+@include generate-font-sizes(('no', 'mi', 'xs', 'sm', 'md', 'lg', 'xl', 'x2', 'x3'));

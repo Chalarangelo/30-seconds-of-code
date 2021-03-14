@@ -56,7 +56,7 @@ describe('<SnippetCard />', () => {
     });
 
     it('a CopyButton component', () => {
-      expect(card.querySelectorAll('.copy-btn')).toHaveLength(1);
+      expect(card.querySelectorAll('.btn.icon-clipboard')).toHaveLength(1);
     });
 
     it('the card actions', () => {
@@ -116,7 +116,7 @@ describe('<SnippetCard />', () => {
     });
 
     it('should render a CodepenButton', () => {
-      expect(wrapper.querySelectorAll('.codepen-btn')).toHaveLength(1);
+      expect(wrapper.querySelectorAll('.btn.icon-codepen')).toHaveLength(1);
     });
   });
 });

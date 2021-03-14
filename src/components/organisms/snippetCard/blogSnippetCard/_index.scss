@@ -86,34 +86,13 @@
     box-shadow: inset 4px 0 0 0 var(--clr-quote-border);
     font-style: italic;
     line-height: 2;
-    font-size: var(--font-md);
     font-weight: 400;
-
-    @media screen and (min-width: $layout-medium-breakpoint) {
-      font-size: var(--font-lg);
-    }
   }
 
   .blog-body-title {
     line-height: 2rem;
     font-weight: 500;
     margin: 1.5rem 0 0;
-  }
-
-  h3.blog-body-title {
-    font-size: var(--font-lg);
-
-    @media screen and (min-width: $layout-medium-breakpoint) {
-      font-size: var(--font-xl);
-    }
-  }
-
-  h4.blog-body-title {
-    font-size: var(--font-md);
-
-    @media screen and (min-width: $layout-medium-breakpoint) {
-      font-size: var(--font-lg);
-    }
   }
 
   table.blog-table {

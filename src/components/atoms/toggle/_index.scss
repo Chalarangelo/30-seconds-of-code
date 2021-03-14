@@ -3,10 +3,6 @@
   position: relative;
   cursor: pointer;
   margin: 0.875rem 0;
-
-  @media screen and (min-width: $layout-medium-breakpoint) {
-    font-size: var(--font-md);
-  }
 }
 
 .toggle-switch {

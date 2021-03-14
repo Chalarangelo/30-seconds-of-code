@@ -29,11 +29,6 @@
       position: relative;
       box-sizing: border-box;
       margin: 0.625rem 1rem;
-      font-size: 0;
-
-      @media screen and (min-width: $layout-medium-breakpoint) {
-        font-size: var(--font-sm);
-      }
 
       &:before {
         position: absolute;

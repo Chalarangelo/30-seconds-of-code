@@ -17,7 +17,7 @@ describe('Snippet', () => {
     });
 
     it('should display a copy button', () => {
-      cy.get('.copy-btn').should('have.length', 1);
+      cy.get('.btn.icon-clipboard').should('have.length', 1);
     });
 
     it('should display a recommendation list', () => {
@@ -43,7 +43,7 @@ describe('Snippet', () => {
     });
 
     it('should display a Codepen button', () => {
-      cy.get('.codepen-btn').should('have.length', 1);
+      cy.get('.btn.icon-codepen').should('have.length', 1);
     });
 
     it('should display a recommendation list', () => {
@@ -69,7 +69,7 @@ describe('Snippet', () => {
     });
 
     it('should display a Codepen button', () => {
-      cy.get('.codepen-btn').should('have.length', 1);
+      cy.get('.btn.icon-codepen').should('have.length', 1);
     });
 
     it('should display a recommendation list', () => {

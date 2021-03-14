@@ -48,7 +48,7 @@ describe('<CssSnippetCard />', () => {
     });
 
     it('a CodepenButton component', () => {
-      expect(card.querySelectorAll('.codepen-btn')).toHaveLength(1);
+      expect(card.querySelectorAll('.btn.icon-codepen')).toHaveLength(1);
     });
 
     it('the card source content', () => {

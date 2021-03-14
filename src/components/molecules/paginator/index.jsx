@@ -43,7 +43,7 @@ const Paginator = ({
     <div className={combineClassNames`paginator flex j-center ${className}`}>
       {pageNumber > 1 && (
         <a
-          className='btn previous-page fs-md icon icon-chevron-left'
+          className='btn previous-page fs-no md:fs-sm icon icon-chevron-left'
           href={`${baseUrl}/${slugOrderingSegment}/${pageNumber - 1}`}
           rel='prev'
         >
@@ -71,7 +71,7 @@ const Paginator = ({
       )}
       {pageNumber < totalPages && (
         <a
-          className='btn next-page fs-md icon icon-chevron-right'
+          className='btn next-page fs-no md:fs-sm icon icon-chevron-right'
           href={`${baseUrl}/${slugOrderingSegment}/${pageNumber + 1}`}
           rel='next'
         >
