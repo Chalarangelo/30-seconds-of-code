@@ -26,15 +26,7 @@
 
     .card-example-title {
       padding: 0.25rem .875rem 0;
-      font-size: var(--font-xs);
-      text-transform: uppercase;
       background: var(--clr-code-bg);
-      margin: 0;
-      color: var(--clr-txt-100);
-
-      @media screen and (min-width: $layout-medium-breakpoint) {
-        font-size: var(--font-sm);
-      }
 
       + pre {
         padding: 0.25rem .875rem 1.5rem;

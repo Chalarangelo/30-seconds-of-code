@@ -39,16 +39,17 @@
   }
 }
 
-.snippets-shelf-list {
-  margin: 0 0 5rem;
+.shelf-list {
   padding: 0;
   list-style: none;
 }
 
+.snippets-shelf-list {
+  margin: 0 0 5rem;
+}
+
 .collections-shelf-list {
   margin: 1.75rem 0.25rem 5rem;
-  padding: 0;
-  list-style: none;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;

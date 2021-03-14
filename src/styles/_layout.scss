@@ -1,7 +1,16 @@
-
+// Display and flex
 .inline-block { display: inline-block; }
 .flex         { display: flex; }
 .flex-col     { flex-direction: column; }
 .j-center     { justify-content: center; }
 .a-center     { align-items: center; }
 
+// Margin
+.m-0 { margin: 0; }
+
+// List section utility
+.list-section {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
