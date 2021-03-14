@@ -18,11 +18,6 @@
     -webkit-font-smoothing: antialiased;
     box-shadow: none;
     padding: 0.25rem;
-    font-size: 0;
-
-    @media screen and (min-width: $layout-medium-breakpoint) {
-      font-size: var(--font-sm);
-    }
 
     &:hover, &:focus {
       box-shadow: none;
