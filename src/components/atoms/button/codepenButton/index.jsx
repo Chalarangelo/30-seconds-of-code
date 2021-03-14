@@ -55,7 +55,7 @@ const CodepenButton = ({
         })}
       />
       <button
-        className='btn fs-no md:fs-sm icon icon-codepen'
+        className='btn no-shd action-btn fs-no md:fs-sm icon icon-codepen'
         title={literals.codepen}
         onClick={() => {
           // eslint-disable-next-line camelcase

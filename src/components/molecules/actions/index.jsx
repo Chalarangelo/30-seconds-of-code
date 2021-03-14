@@ -49,7 +49,7 @@ const Actions = ({ snippet }) => {
         />
       )}
       <a
-        className='btn fs-no md:fs-sm icon icon-github '
+        className='btn no-shd action-btn fs-no md:fs-sm icon icon-github '
         href={snippet.url}
         rel='nofollow noopener noreferrer'
         target='_blank'

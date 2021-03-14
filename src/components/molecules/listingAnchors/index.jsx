@@ -41,7 +41,7 @@ const ListingAnchors = ({ items = false, ...rest }) => {
       {items.map(item => (
         <li key={item.url}>
           <a
-            className={combineClassNames`btn ${
+            className={combineClassNames`btn no-shd link-btn ${
               item.selected ? 'selected' : undefined
             }`}
             href={item.url}

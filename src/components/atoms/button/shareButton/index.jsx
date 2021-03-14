@@ -22,7 +22,7 @@ const ShareButton = ({ pageTitle, pageDescription }) => {
 
   return (
     <button
-      className='btn fs-no md:fs-sm icon icon-share'
+      className='btn no-shd action-btn fs-no md:fs-sm icon icon-share'
       title={literals.share}
       onClick={() => {
         // eslint-disable-next-line camelcase

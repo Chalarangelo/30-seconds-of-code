@@ -23,17 +23,6 @@
     margin: 0;
     font-size: var(--font-xs);
     padding: 0.625rem 1.375rem;
-    background: transparent;
-    box-shadow: none;
-    color: var(--clr-action);
-    text-transform: uppercase;
-    opacity: .87;
-    font-weight: 500;
     flex: 0 1 27.5%;
-
-    &:hover, &:focus {
-      box-shadow: none;
-      opacity: 1;
-    }
   }
 }

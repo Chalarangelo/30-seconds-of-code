@@ -9,16 +9,8 @@
     height: 44px;
     min-width: 44px;
     text-align: center;
-    box-shadow: none;
     background: transparent;
     color: var(--clr-txt-150);
-
-    &:not(.current-page) {
-
-      &:hover, &:focus {
-        color: var(--clr-link);
-      }
-    }
 
     &.current-page {
       cursor: default;

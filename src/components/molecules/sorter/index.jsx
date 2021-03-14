@@ -41,7 +41,7 @@ const Sorter = ({ sorter: { orders, selectedOrder } }) => {
           .map(order => (
             <a
               key={`${order.url}`}
-              className={combineClassNames`btn order-btn txt-100
+              className={combineClassNames`btn no-shd link-btn order-btn txt-100
                 ${
                   order.title === selectedOrder
                     ? `selected icon ${

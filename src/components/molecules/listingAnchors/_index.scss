@@ -45,7 +45,6 @@
     padding: 0.375rem 0.25rem;
     height: 40px;
     border: none;
-    box-shadow: none;
     text-align: center;
     background: transparent;
     border-radius: var(--br-none);
@@ -55,11 +54,6 @@
     &.selected {
       color: var(--clr-txt-200);
       border-bottom: 2px solid currentColor;
-    }
-
-    &:hover, &:focus {
-      box-shadow: none;
-      color: var(--clr-link);
     }
 
     @media screen and (min-width: $layout-medium-breakpoint) {
