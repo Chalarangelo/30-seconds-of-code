@@ -15,7 +15,7 @@ const propTypes = {
 const RecommendationList = ({ snippetList }) => {
   return snippetList.length ? (
     <>
-      <PageTitle className='recommendation-list-title'>
+      <PageTitle className='recommendation-list-title f-center'>
         {literals.recommendedSnippets}
       </PageTitle>
       <ul className='list-section'>
