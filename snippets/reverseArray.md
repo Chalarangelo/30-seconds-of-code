@@ -5,10 +5,10 @@ tags: array,intermediate
 
 Reverse an Array
 
-- create a `start` and `end` variable to store the first and last index of the array `arr`.
+- Create a `start` and `end` variable to store the first and last index of the array `arr`.
 - Use a `while` loop until the `start` is greater than the `end`.
-- Store the value `arr[start]` in a `temp` variable so you could use it once it changes to `arr[end]`
-- Make sure to increment the `start` and decrement the `end`
+- Store the value `arr[start]` in a `temp` variable so you could use it once it changes to `arr[end]`.
+- Make sure to increment the `start` and decrement the `end`.
 
 ```js
 const reverse = (arr, start, end) => {
