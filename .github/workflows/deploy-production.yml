@@ -2,6 +2,8 @@ name: Deploy production
 on:
   schedule:
     - cron: "20 18 * * *"
+  push:
+    branches: [ master ]
 jobs:
   build:
     runs-on: ubuntu-latest
