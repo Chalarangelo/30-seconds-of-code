@@ -9,6 +9,9 @@ html, * {
   // Prevent adjustments of font size after orientation changes in mobile.
   -webkit-text-size-adjust: 100%;
 }
+:not(code):not(kbd):not(pre) {
+  font-feature-settings: "frac", "cv05", "cv11", "calt", "kern";
+}
 * {
   font-size: var(--font-sm);
   font-weight: 400;
