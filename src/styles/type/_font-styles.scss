@@ -2,8 +2,8 @@
 .f-alt {
   &, > a, > a:link, > a:visited {
     font-family: 'Raleway', Helvetica, sans-serif;
-    font-variant-numeric: lining-nums;
     letter-spacing: 0.25px;
+    font-feature-settings: "ss02", "lnum", "kern";
   }
 }
 
