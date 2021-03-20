@@ -69,14 +69,6 @@ const Footer = () => (
       >
         {literals.gatsby}
       </a>
-      {', '}
-      <a
-        href='https://travis-ci.com/'
-        rel='noopener noreferrer nofollow'
-        target='_blank'
-      >
-        {literals.travis}
-      </a>
       {' & '}
       <a
         href='https://github.com/'
