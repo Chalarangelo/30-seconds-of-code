@@ -37,9 +37,7 @@ const SearchResults = ({ recommendedSnippets = [] }) => {
   ) : (
     <>
       <PageBackdrop
-        graphicName={
-          searchQuery.trim().length <= 1 ? 'search-empty' : 'search-no-results'
-        }
+        backdropImage='/assets/search.svg'
         mainText={
           searchQuery.trim().length <= 1 ? (
             literals.searchPrompt
