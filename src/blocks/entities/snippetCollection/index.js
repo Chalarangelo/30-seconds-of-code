@@ -87,6 +87,14 @@ export class SnippetCollection {
     return this;
   };
 
+  /**
+   * Determines if the collection contains a snippet with the given id.
+   * @param {String} snippetId - A snippet id.
+   * @returns {Boolean} `true` if the collection includes the snippet, `false` otherwise.
+   */
+  hasSnippet = snippetId =>
+    Boolean(this.snippets.find(s => s.id === snippetId));
+
   get id() {
     return `${this.type}${this.slugPrefix}`;
   }
