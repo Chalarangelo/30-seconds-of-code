@@ -117,9 +117,12 @@ export class Extractor {
           }
         )
       );
+      const featuredCollections = JSONParser.fromFile(
+        `${contentDir}/configs/featured.json`
+      ).featuredCollections;
 
       boundLog(`Writing snippets to directories`, 'info');
-      await this.writeSnippets(allSnippetData.snippets);
+      await this.writeSnippets(allSnippetData.snippets, featuredCollections);
       boundLog(`Finished writing snippets`, 'success');
 
       boundLog(`Writing listings to directories`, 'info');
@@ -127,11 +130,7 @@ export class Extractor {
       boundLog(`Finished writing listings`, 'success');
 
       boundLog(`Writing hub pages to directories`, 'info');
-      await this.writeHubPages(
-        collections,
-        JSONParser.fromFile(`${contentDir}/configs/featured.json`)
-          .featuredCollections
-      );
+      await this.writeHubPages(collections, featuredCollections);
       boundLog(`Finished writing hub pages`, 'success');
 
       boundLog(`Writing statics to directories`, 'info');
@@ -148,17 +147,31 @@ export class Extractor {
     }).then(data => data.map(s => withRecommendations(new Snippet(s, config))));
   };
 
-  static writeSnippets = snippets => {
-    if (global.settings.env === 'PRODUCTION')
-      return Promise.all(
-        snippets
-          .filter(s => !s.isScheduled)
-          .map(snippet => SnippetSerializer.serializeSnippet(snippet))
-      );
-    else
-      return Promise.all(
-        snippets.map(snippet => SnippetSerializer.serializeSnippet(snippet))
-      );
+  static writeSnippets = (snippets, featuredCollections) => {
+    let serializableSnippets =
+      global.settings.env === 'PRODUCTION'
+        ? snippets.filter(s => !s.isScheduled)
+        : snippets;
+
+    return Promise.all(
+      serializableSnippets.map(snippet => {
+        const collectionIds = CollectionConfig.findCollectionIdsFromSnippetId(
+          snippet.id
+        ).map(c => `collection/${c.id}`);
+        if (collectionIds && collectionIds.length) {
+          const topCollectionId = featuredCollections
+            .filter(c => c.startsWith('collection'))
+            .find(c => collectionIds.includes(c));
+          if (topCollectionId) {
+            return SnippetSerializer.serializeSnippet(
+              snippet,
+              SnippetCollection.instances[topCollectionId]
+            );
+          }
+        }
+        return SnippetSerializer.serializeSnippet(snippet);
+      })
+    );
   };
 
   static writeListings = snippetCollections => {
