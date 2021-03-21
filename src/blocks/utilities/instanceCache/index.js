@@ -62,6 +62,13 @@ export class InstanceCache {
   }
 
   /**
+   * @returns {Array<string>} - The list of stored instance keys.
+   */
+  get keys() {
+    return this._cache.keys;
+  }
+
+  /**
    * Determines if the instance cache contains an instance with the given key.
    * @param {string} key - The unique key/id of the instance.
    * @returns {boolean} `true` if the given `key` exists in the instance cache,
