@@ -10,6 +10,8 @@ const literals = {
   share: 'Share',
   home: 'Home',
   recommendedSnippets: 'Recommended snippets',
+  // Note: This has to be rendered as raw HTML
+  andCollections: '&nbsp;&amp;&nbsp;collections',
   snippetCollection: 'Snippet collection',
   blog: 'Blog',
   settings: 'Settings',

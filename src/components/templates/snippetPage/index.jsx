@@ -11,6 +11,7 @@ const propTypes = {
     snippet: PropTypes.snippet.isRequired,
     cardTemplate: PropTypes.string,
     recommendedSnippets: PropTypes.arrayOf(PropTypes.snippet),
+    recommendedCollection: PropTypes.chip,
     pageDescription: PropTypes.string.isRequired,
     breadcrumbs: PropTypes.arrayOf(
       PropTypes.shape({
@@ -30,6 +31,7 @@ const SnippetPage = ({
     snippet,
     cardTemplate,
     recommendedSnippets = [],
+    recommendedCollection,
     breadcrumbs,
     pageDescription,
   },
@@ -59,7 +61,10 @@ const SnippetPage = ({
       >
         <Breadcrumbs breadcrumbs={breadcrumbs} />
         <SnippetCard snippet={snippet} />
-        <RecommendationList snippetList={recommendedSnippets} />
+        <RecommendationList
+          snippetList={recommendedSnippets}
+          collectionChip={recommendedCollection}
+        />
       </Shell>
     </>
   );
