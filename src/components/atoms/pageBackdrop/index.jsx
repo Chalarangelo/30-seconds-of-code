@@ -3,7 +3,7 @@ import PropTypes from 'typedefs/proptypes';
 import { combineClassNames } from 'utils';
 
 const propTypes = {
-  graphicName: PropTypes.string,
+  backdropImage: PropTypes.string,
   mainText: PropTypes.oneOfType([
     PropTypes.node,
     PropTypes.arrayOf(PropTypes.node),
@@ -24,14 +24,14 @@ const propTypes = {
 /**
  * Renders the backdrop of a page.
  * Used in 404 and Search pages.
- * @param {*} graphicName - The name of the graphic for the backdrop
+ * @param {*} backdropImage - The path of the backdrop image
  * @param {*} mainText - Main text for the backdrop
  * @param {*} mainTextClassName - Additional classΝames to be passed to the main text
  * @param {*} subText - Secondary text for the backdrop
  * @param {*} subTextClassName - Additional classΝames to be passed to the secondary text
  */
 const PageBackdrop = ({
-  graphicName,
+  backdropImage,
   mainText,
   mainTextClassName,
   subText,
@@ -39,10 +39,8 @@ const PageBackdrop = ({
   children,
   ...rest
 }) => (
-  <div
-    className={combineClassNames`page-graphic f-center txt-050 ${graphicName}`}
-    {...rest}
-  >
+  <div className={combineClassNames`page-graphic f-center txt-050`} {...rest}>
+    <img src={backdropImage} />
     <p
       className={combineClassNames`page-backdrop-text f-center ${mainTextClassName}`}
     >
