@@ -18,6 +18,8 @@ const ORDERS_MAP = {
 
 const CARDS_PER_PAGE = 15;
 
+const BLOG_DEMOTION_RANKING_MULTIPLIER = 0.85;
+
 /**
  * Serializes a SnippetCollection object into appropriate JSON files.
  */
@@ -41,12 +43,17 @@ export class ListingSerializer {
       snippetCollection
     );
 
+    const demoteBlogs = !['main', 'blog', 'collection'].includes(
+      snippetCollection.type
+    );
+
     for (let order of snippetCollection.orders) {
       const paginatedSnippets = this._paginateOrderedSnippets(
         snippetCollection.isListed
           ? snippetCollection.snippets.filter(s => s.isListed)
           : snippetCollection.snippets,
-        order
+        order,
+        demoteBlogs
       );
 
       const isPopularityOrdered = order === 'p';
@@ -117,7 +124,7 @@ export class ListingSerializer {
     }
   };
 
-  static _paginateOrderedSnippets = (snippets, order) => {
+  static _paginateOrderedSnippets = (snippets, order, demoteBlogs = false) => {
     const snippetPreviews = snippets.map(s => new SnippetPreview(s).toObject());
     switch (order) {
       case 'a':
@@ -149,7 +156,22 @@ export class ListingSerializer {
       // It is assumed that snippets are always sorted by ranking in the SnippetCollection
       case 'p':
       default:
-        return chunk(snippetPreviews, CARDS_PER_PAGE);
+        return demoteBlogs
+          ? chunk(
+              snippets
+                .sort((a, b) => {
+                  const nA = a.type.startsWith('blog')
+                    ? a.ranking * BLOG_DEMOTION_RANKING_MULTIPLIER
+                    : a.ranking;
+                  const nB = b.type.startsWith('blog')
+                    ? b.ranking * BLOG_DEMOTION_RANKING_MULTIPLIER
+                    : b.ranking;
+                  return nB - nA;
+                })
+                .map(s => new SnippetPreview(s).toObject()),
+              CARDS_PER_PAGE
+            )
+          : chunk(snippetPreviews, CARDS_PER_PAGE);
     }
   };
 }
