@@ -4,7 +4,7 @@ import PageBackdrop from './index';
 
 describe('<PageBackdrop />', () => {
   let wrapper;
-  const graphicName = 'search-empty';
+  const backdropImage = '/search-empty.svg';
   const mainText = 'Start typing a keyword to see some results.';
   const mainTextClassName = 'search-main';
   const subText = 'Search for something...';
@@ -13,7 +13,7 @@ describe('<PageBackdrop />', () => {
   beforeEach(() => {
     wrapper = render(
       <PageBackdrop
-        graphicName={graphicName}
+        backdropImage={backdropImage}
         mainText={mainText}
         mainTextClassName={mainTextClassName}
         subText={subText}
@@ -38,7 +38,7 @@ describe('<PageBackdrop />', () => {
 
   it('should pass graphic name to PageGraphic', () => {
     expect(
-      wrapper.querySelectorAll(`.page-graphic.${graphicName}`)
+      wrapper.querySelectorAll(`img[src="${backdropImage}"]`)
     ).toHaveLength(1);
   });
 
@@ -66,7 +66,7 @@ describe('<PageBackdrop />', () => {
     beforeEach(() => {
       wrapper = render(
         <PageBackdrop
-          graphicName={graphicName}
+          backdropImage={backdropImage}
           mainText={mainText}
           mainTextClassName={mainTextClassName}
         />

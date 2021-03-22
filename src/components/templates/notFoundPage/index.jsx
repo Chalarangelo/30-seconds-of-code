@@ -17,7 +17,7 @@ const NotFoundPage = () => (
     <Shell>
       <PageTitle>{literals.fourOhFour}</PageTitle>
       <PageBackdrop
-        graphicName='page-not-found'
+        backdropImage='/assets/404.svg'
         mainTextClassName='fs-xl'
         mainText={
           <>

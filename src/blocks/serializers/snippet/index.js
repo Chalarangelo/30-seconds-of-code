@@ -1,6 +1,8 @@
 import { Snippet } from 'blocks/entities/snippet';
 import { SnippetContext } from 'blocks/adapters/snippetContext';
 import { SnippetPreview } from 'blocks/adapters/snippetPreview';
+import { SnippetCollection } from 'blocks/entities/snippetCollection';
+import { SnippetCollectionChip } from 'blocks/adapters/snippetCollectionChip';
 import { ArgsError } from 'blocks/utilities/error';
 import { JSONSerializer } from 'blocks/serializers/json';
 import { Chunk } from 'blocks/utilities/chunk';
@@ -14,12 +16,22 @@ export class SnippetSerializer {
   /**
    * Serializes a Snippet object into JSON files.
    * @param {Snippet} snippet - A snippet object.
+   * @param {Snippet} snippetCollection - (Optional) A snippet collection object
+   *    of the 'collection' type.
    * @throws Will throw an error if `snippet` is not of the appropriate type.
    */
-  static serializeSnippet = snippet => {
+  static serializeSnippet = (snippet, snippetCollection = null) => {
     if (!(snippet instanceof Snippet)) {
       throw new ArgsError(
         "Invalid arguments. 'snippet' must be an instance of 'Snippet'."
+      );
+    }
+    if (
+      snippetCollection &&
+      !(snippetCollection instanceof SnippetCollection)
+    ) {
+      throw new ArgsError(
+        "Invalid arguments. 'snippetCollection' must be an instance of 'SnippetCollection'."
       );
     }
 
@@ -58,15 +70,21 @@ export class SnippetSerializer {
     ];
 
     // This check here is to make sure we don't serialize data we don't have.
-    if (Object.prototype.hasOwnProperty.call(snippet, 'recommendedSnippets'))
-      chunkPairs.push([
-        'recommendations',
-        {
-          recommendedSnippets: snippet.recommendedSnippets.map(s =>
-            new SnippetPreview(s).toObject()
-          ),
-        },
-      ]);
+    if (Object.prototype.hasOwnProperty.call(snippet, 'recommendedSnippets')) {
+      const recommendationsObject = {
+        recommendedSnippets: snippet.recommendedSnippets.map(s =>
+          new SnippetPreview(s).toObject()
+        ),
+      };
+      // Serialize a snipept collection chip only if it exists
+      if (snippetCollection)
+        recommendationsObject.recommendedCollection = new SnippetCollectionChip(
+          snippetCollection,
+          { withDescription: true }
+        ).toObject();
+
+      chunkPairs.push(['recommendations', recommendationsObject]);
+    }
 
     try {
       return JSONSerializer.serializeToDir(
