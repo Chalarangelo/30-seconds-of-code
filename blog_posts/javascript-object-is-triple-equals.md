@@ -17,8 +17,8 @@ Here are some examples for additional clarity:
 {} === {}; // false
 Object.is({}, {}); // false
 
-1 === 1; // false
-Object.is(1, 1); // false
+1 === 1; // true
+Object.is(1, 1); // true
 
 +0 === -0; // true
 Object.is(+0, -0); // false
