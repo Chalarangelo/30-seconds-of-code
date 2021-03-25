@@ -37,14 +37,23 @@ const SnippetCard = ({ snippet }) => (
       {' · '}
       <TagList tags={snippet.tags.all} />
     </div>
-    {snippet.cover && snippet.cover && (
-      <img
-        className='card-cover-image card-fw-section'
-        src={snippet.cover}
-        alt=''
-        height='232'
-        width='348'
-      />
+    {snippet.cover && (
+      <picture>
+        <source
+          type='image/webp'
+          srcSet={`${snippet.cover.slice(
+            0,
+            snippet.cover.lastIndexOf('.')
+          )}.webp`}
+        />
+        <img
+          className='card-cover-image card-fw-section'
+          src={snippet.cover}
+          alt=''
+          height='232'
+          width='348'
+        />
+      </picture>
     )}
     <div
       className='card-description flex flex-col'
