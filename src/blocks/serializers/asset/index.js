@@ -24,14 +24,19 @@ export class AssetSerializer {
       const img = sharp(asset);
       return img.metadata().then(metadata => {
         const resizeWidth = Math.min(maxWidth, metadata.width);
+        const name = fileName.slice(0, fileName.lastIndexOf('.'));
         const format = metadata.format;
-        return img
-          .resize({ width: resizeWidth })
-          .toFormat(format, { quality: outputQuality })
-          .toFile(`${outDir}/${fileName}`, (err, info) => {
-            if (err) reject(err);
-            else resolve(info);
-          });
+        const resized = img.resize({ width: resizeWidth });
+        return Promise.all([
+          resized
+            .toFormat(format, { quality: outputQuality })
+            .toFile(`${outDir}/${fileName}`),
+          resized
+            .webp({ quality: outputQuality })
+            .toFile(`${outDir}/${name}.webp`),
+        ])
+          .then(() => resolve())
+          .catch(() => reject());
       });
     });
 
