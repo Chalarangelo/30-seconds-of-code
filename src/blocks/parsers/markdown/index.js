@@ -210,8 +210,13 @@ export class MarkdownParser {
       // Transform relative paths for images
       result.fullDescription = result.fullDescription.replace(
         /(<p>)*<img src="\.\/([^"]+)"([^>]*)>(<\/p>)*/g,
-        (match, openTag, imgSrc, imgRest) =>
-          `<img class="card-fw-section" src="${assetPath}/${imgSrc}"${imgRest}>`
+        (match, openTag, imgSrc, imgRest) => {
+          const imgName = imgSrc.slice(0, imgSrc.lastIndexOf('.'));
+          return `<picture>
+            <source type="image/webp" srcset="${assetPath}/${imgName}.webp">
+            <img class="card-fw-section" src="${assetPath}/${imgSrc}"${imgRest}>
+          </picture>`;
+        }
       );
     } else {
       Object.entries(codeBlocks).forEach(([key, value]) => {
