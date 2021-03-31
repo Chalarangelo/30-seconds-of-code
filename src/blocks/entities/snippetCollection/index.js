@@ -102,9 +102,15 @@ export class SnippetCollection {
   get orders() {
     if (!this._orders) {
       this._orders = ['p'];
-      if (this.type === 'blog') {
+      if (
+        this.type === 'blog' ||
+        (this.type === 'tag' && !this.config.language)
+      ) {
         this._orders.push('n');
-      } else if (['tag', 'language'].includes(this.type)) {
+      } else if (
+        this.type === 'language' ||
+        (this.type === 'tag' && this.config.language)
+      ) {
         this._orders.push('a', 'e');
       }
     }
@@ -140,10 +146,12 @@ export class SnippetCollection {
           this._name =
             this.tagMetadata && this.tagMetadata.name
               ? this.tagMetadata.name
-              : literals.listing.codelangTag(
+              : this.config.language
+              ? literals.listing.codelangTag(
                   this.config.language.long,
                   this.tag
-                );
+                )
+              : literals.listing.blogTag(this.tag);
           break;
         default:
           break;
@@ -178,10 +186,12 @@ export class SnippetCollection {
               ? this.tagMetadata.shortName
               : this.tagMetadata && this.tagMetadata.name
               ? this.tagMetadata.name
-              : literals.listing.shortCodelangTag(
+              : this.config.language
+              ? literals.listing.shortCodelangTag(
                   this.config.language.long,
                   this.tag
-                );
+                )
+              : literals.listing.shortBlogTag(this.tag);
           break;
         default:
           break;
@@ -295,9 +305,10 @@ export class SnippetCollection {
     if (!this._seoDescription) {
       this._seoDescription = literals.listing.pageDescription(this.type, {
         snippetCount: this.snippets.length,
-        listingLanguage: ['language', 'tag'].includes(this.type)
-          ? this.config.language.long
-          : '',
+        listingLanguage:
+          ['language', 'tag'].includes(this.type) && this.config.language
+            ? this.config.language.long
+            : '',
         listingTag: this.type === 'tag' ? this.tag : '',
       });
     }
@@ -314,6 +325,13 @@ export class SnippetCollection {
       if (this.config && this.config.language && this.config.language.long) {
         this._tags = this._tags.filter(
           t => t.toLowerCase() !== this.config.language.long.toLowerCase()
+        );
+      } else if (this.config && !this.config.language) {
+        this._tags = this._tags.filter(
+          tag =>
+            this.snippets.filter(s =>
+              s.tags.all.find(t => t.toLowerCase() === tag.toLowerCase())
+            ).length >= 10
         );
       }
     }
@@ -363,6 +381,7 @@ export class SnippetCollection {
 
   get language() {
     if (!['language', 'tag'].includes(this.type)) return undefined;
+    if (!this.config.language) return undefined;
     return literals.listing.codelang(this.config.language.long);
   }
 
