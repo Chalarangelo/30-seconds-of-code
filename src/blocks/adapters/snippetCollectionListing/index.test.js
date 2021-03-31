@@ -98,7 +98,7 @@ describe('SnippetCollectionListing', () => {
     });
 
     it('returns the correct listing sublinks', () => {
-      expect(results.blog.listingSublinks.length).toBe(0);
+      expect(results.blog.listingSublinks.length).toBe(1);
       expect(results.language.listingSublinks.length).toBe(2);
       expect(results.tag.listingSublinks.length).toBe(2);
     });
