@@ -215,7 +215,7 @@ describe('SnippetCollection', () => {
       expect(collections.main.tags).toBe(undefined);
       expect(collections.language.tags).toEqual(['array']);
       expect(collections.tag.tags).toEqual(['array']);
-      expect(collections.blog.tags).toEqual(['visual']);
+      expect(collections.blog.tags).toEqual([]);
     });
 
     it('should produce the correct featured value', () => {
