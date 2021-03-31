@@ -53,9 +53,7 @@ export class SnippetCollectionListing {
   }
 
   get listingSublinks() {
-    if (this.snippetCollection.type === 'blog') {
-      return [];
-    } else if (['language', 'tag'].includes(this.snippetCollection.type)) {
+    if (['blog', 'language', 'tag'].includes(this.snippetCollection.type)) {
       const order = this._options.order;
       return [
         {
