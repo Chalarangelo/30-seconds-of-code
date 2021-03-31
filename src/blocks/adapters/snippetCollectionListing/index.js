@@ -36,7 +36,9 @@ export class SnippetCollectionListing {
       this.snippetCollection.type === 'tag' &&
       !this.snippetCollection.tagMetadata
     )
-      return this.snippetCollection.language;
+      return this.snippetCollection.language
+        ? this.snippetCollection.language
+        : literals.blogTag(this.snippetCollection.tag);
     return this.snippetCollection.name;
   }
 
