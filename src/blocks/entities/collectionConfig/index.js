@@ -53,8 +53,10 @@ export class CollectionConfig {
 
   static instances = new InstanceCache();
 
-  static findCollectionIdsFromSnippetId = snippetId =>
-    this.instances.findAll(cfg => cfg.snippetIds.includes(snippetId));
+  static findCollectionIdsFromSnippet = (id, type) =>
+    this.instances.findAll(cfg =>
+      cfg.snippetIds ? cfg.snippetIds.includes(id) : type === cfg.typeMatcher
+    );
 
   get id() {
     return `${this.slug}`;

@@ -156,8 +156,9 @@ export class Extractor {
 
     return Promise.all(
       serializableSnippets.map(snippet => {
-        const collectionIds = CollectionConfig.findCollectionIdsFromSnippetId(
-          snippet.id
+        const collectionIds = CollectionConfig.findCollectionIdsFromSnippet(
+          snippet.id,
+          snippet.type
         ).map(c => `collection/${c.id}`);
         if (collectionIds && collectionIds.length) {
           const topCollectionId = featuredCollections
