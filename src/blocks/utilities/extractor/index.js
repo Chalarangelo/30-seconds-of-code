@@ -113,7 +113,11 @@ export class Extractor {
                 config: collectionConfig,
                 slugPrefix: `/${collectionConfig.slug}`,
               },
-              collectionConfig.snippetIds.map(id => Snippet.instances[id])
+              collectionConfig.snippetIds
+                ? collectionConfig.snippetIds.map(id => Snippet.instances[id])
+                : Snippet.instances
+                    .findAll(s => s.type === collectionConfig.typeMatcher)
+                    .sort((a, b) => b.ranking - a.ranking)
             );
           }
         )
