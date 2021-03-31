@@ -207,14 +207,7 @@ export class SnippetCollection {
           this._description = null;
           break;
         case 'blog':
-          this._description = null;
-          break;
         case 'collection':
-          this._description =
-            this.config.description && this.config.description.length
-              ? this.config.description
-              : null;
-          break;
         case 'language':
           this._description =
             this.config.description && this.config.description.length
@@ -274,9 +267,8 @@ export class SnippetCollection {
           this._splash = null;
           break;
         case 'blog':
-          this._splash = null;
-          break;
         case 'language':
+        case 'collection':
           this._splash = this.config.splash
             ? `${assetPath}/${this.config.splash}`
             : null;
@@ -288,11 +280,6 @@ export class SnippetCollection {
               : this.config.splash
               ? `${assetPath}/${this.config.splash}`
               : null;
-          break;
-        case 'collection':
-          this._splash = this.config.splash
-            ? `${assetPath}/${this.config.splash}`
-            : null;
           break;
         default:
           break;
