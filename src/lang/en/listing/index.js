@@ -1,4 +1,4 @@
-import { capitalize } from 'utils';
+import { Tag } from 'blocks/utilities/tag';
 import settings from 'settings/global';
 /* istanbul ignore next */
 const literals = {
@@ -14,22 +14,30 @@ const literals = {
   topSnippets: 'Top Snippets',
   snippetList: 'Snippet List',
   blog: 'Articles',
-  tag: t => `${capitalize(t)}`,
+  tag: t => `${Tag.format(t)}`,
   shortCodelang: l => `${l}`,
-  shortCodelangTag: (l, t) => `${l} ${capitalize(t)}`,
+  shortCodelangTag: (l, t) => `${l} ${Tag.format(t)}`,
+  shortBlogTag: t => `${Tag.format(t)}`,
   codelang: l => `${l} Snippets`,
-  codelangTag: (l, t) => `${l} ${capitalize(t)} Snippets`,
+  codelangTag: (l, t) => `${l} ${Tag.format(t)} Snippets`,
+  blogTag: t => `${Tag.format(t)} Articles`,
   snippetCount: c => `${c} snippets`,
   pageDescription: (t, p) => {
     switch (t) {
       case 'language':
         return `Browse ${p.snippetCount} ${p.listingLanguage} code snippets for all your development needs on ${settings.websiteName}.`;
       case 'tag':
-        return `Browse ${p.snippetCount} ${p.listingLanguage} ${capitalize(
-          p.listingTag
-        )} code snippets for all your development needs on ${
-          settings.websiteName
-        }.`;
+        return p.listingLanguage
+          ? `Browse ${p.snippetCount} ${p.listingLanguage} ${Tag.format(
+              p.listingTag
+            )} code snippets for all your development needs on ${
+              settings.websiteName
+            }.`
+          : `Browse ${p.snippetCount} ${Tag.format(
+              p.listingTag
+            )} articles for all your development needs on ${
+              settings.websiteName
+            }.`;
       case 'blog':
         return `Browse ${p.snippetCount} code articles for all your development needs on ${settings.websiteName}.`;
       case 'main':
