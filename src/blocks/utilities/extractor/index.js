@@ -71,15 +71,16 @@ export class Extractor {
       );
       const collections = [allSnippetData];
       allData.forEach(c => {
-        if (c.type === 'language') {
+        if (['language', 'blog'].includes(c.type)) {
           // Inject blog snippets into languages
-          c.addSnippets(
-            blogCollection.snippets.filter(snippet =>
-              snippet.tags.all.find(
-                t => t.toLowerCase() === c.config.language.long.toLowerCase()
+          if (c.type === 'language')
+            c.addSnippets(
+              blogCollection.snippets.filter(snippet =>
+                snippet.tags.all.find(
+                  t => t.toLowerCase() === c.config.language.long.toLowerCase()
+                )
               )
-            )
-          );
+            );
           // Create tag collections
           collections.push(
             ...c.tags.map(
