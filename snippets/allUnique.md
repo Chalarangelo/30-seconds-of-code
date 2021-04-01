@@ -1,11 +1,11 @@
 ---
-title: allUnique
-tags: array,beginner
+Title: allUnique
+Tags: array, beginner
 ---
 
 Checks if all elements in an array are unique.
 
-- Create a new `Set` from the mapped values to keep only unique occurrences.
+- Create a new `Set` from the mapped values to keep unique occurrences.
 - Use `Array.prototype.length` and `Set.prototype.size` to compare the length of the unique values to the original array.
 
 ```js
