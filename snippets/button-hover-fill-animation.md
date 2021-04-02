@@ -1,36 +1,29 @@
 ---
-title: Button Hover Fill Animation
+title: Button fill animation
 tags: animation,beginner
 ---
 
-Creates a fill animation in a button on hover.
+Creates a fill animation on hover.
 
-- ` transition: 0.3s ease-in-out;` gives the ease into the hover/active state.
-- Change the background color to work with the font color in both states.
-- Elongate the transition by increasing the seconds.
-- Edit `padding: 20px;` to make the button feel larger or thinner.
+- Set a `color` and `background` and use an appropriate `transition` to animate changes to the element.
+- Use the `:hover` pseudo-class to change the `background` and `color` of the element when the user hovers over it.
 
 ```html
-<button class="animated-fill-button">Click</button>
+<button class="animated-fill-button">Submit</button>
 ```
 
 ```css
-button.animated-fill-button {
-  transition: 0.3s ease-in-out;
-  color: black;
-  border: black 2px solid;
-  background-color: white;
-  font-size: 14px;
-  text-transform: uppercase;
-  cursor: pointer;
+.animated-fill-button {
   padding: 20px;
-  font-weight: bold;
+  background: #fff;
+  color: #000;
+  border: 1px solid #000;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
 }
-button.animated-fill-button:hover,
-button.animated-fill-button:focus,
-button.animated-fill-button:active
-{
-  background-color: black;
-  color: white;
+
+.animated-fill-button:hover {
+  background: #000;
+  color: #fff;
 }
 ```
