@@ -1,38 +1,27 @@
 ---
-title: Zoom In Zoom Out Animation
+title: Zoom in zoom out animation
 tags: animation,beginner
 ---
 
-Performs a zoom in and zoom out animation on an element using CSS.
+Creates a zoom in zoom out animation.
 
-- Apply `animation` property to the element you want animate.
-- Set `animation-duration` property to `1s`. The `animation-duration` property sets the amount of time that an animation would complete in one cycle. Its value should be in seconds or milli seconds.
-- Set `animation-timing-function` to `ease`. The `animation-timing-function` property sets the animation progress through the duration of each cycle.
-- Set `animation-iteration-count` to`infinite`. The `animation-iteration-count` property sets the number of times an animation should be playing before it stops.
-- Create a keyframe named `zoomInZoomOut` which is responsible for applying intermediate styles throughout the animation sequence. Describe what needs to be done at steps, like in our example at `0%`, at `50%`, and at `100%`. Use `scale` and apply it to `transform` property inside the `@keyframes` which will gives us a smooth and ease zoom in and zoom out animation.
+- Use `@keyframes` to define a three-step animation: at the start (`0%`) and end (`100%`), the element is its original size (`scale(1 ,1)`) and halfway through (`50%`) it's scaled up to 1.5 times its original size (`scale(1.5, 1.5)`).
+- Use `width` and `height` to give the element a specific size and use `animation` to set the appropriate values for the element to make it animated.
 
 ```html
-<div class="container">
-  <div class="box"></div>
-</div>
+<div class="zoom-in-out-box"></div>
 ```
 
 ```css
-.container {
-  padding: 50px;
-}
-
-.box {
+.zoom-in-out-box {
+  margin: 24px;
   width: 50px;
   height: 50px;
-  background-color: green;
-  animation: zoomInZoomOut;
-  animation-duration: 1s;
-  animation-timing-function: ease;
-  animation-iteration-count: infinite;
+  background: #f50057;
+  animation: zoom-in-zoom-out 1s ease infinite;
 }
 
-@keyframes zoomInZoomOut {
+@keyframes zoom-in-zoom-out {
   0% {
     transform: scale(1, 1);
   }
