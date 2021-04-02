@@ -6,13 +6,13 @@ tags: node,browser,intermediate
 Determines if the current runtime environment is Node.js.
 
 - Use the `process` global object that provides information about the current Node.js process.
-- Check if `process` is defined and `process.versions`, `process.versions.node` are not `null`.
+- Check if `process`, `process.versions` and `process.versions.node` are defined.
 
 ```js
 const isNode = () =>
   typeof process !== 'undefined' &&
-  process.versions !== null &&
-  process.versions.node !== null;
+  !!process.versions &&
+  !!process.versions.node;
 ```
 
 ```js
