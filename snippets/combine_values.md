@@ -24,5 +24,5 @@ def combine_values(*dicts):
 d1 = {'a': 1, 'b': 'foo', 'c': 400}
 d2 = {'a': 3, 'b': 200, 'd': 400}
 
-combine_values(d1, d2) # {'a': [1, 3], 'b': ['foo', 200], 'c': 400, 'd': 400}
+combine_values(d1, d2) # {'a': [1, 3], 'b': ['foo', 200], 'c': [400], 'd': [400]}
 ```
