@@ -43,9 +43,9 @@ export class ListingSerializer {
       snippetCollection
     );
 
-    const demoteBlogs = !['main', 'blog', 'collection'].includes(
-      snippetCollection.type
-    );
+    const demoteBlogs =
+      !['main', 'blog', 'collection'].includes(snippetCollection.type) &&
+      !(snippetCollection.type === 'tag' && !snippetCollection.config.language);
 
     for (let order of snippetCollection.orders) {
       const paginatedSnippets = this._paginateOrderedSnippets(

@@ -34,12 +34,12 @@ const SnippetList = ({
   listingSublinks = [],
 }) => {
   /* istanbul ignore next */
-  const isMainOrBlogListing = listingType === 'main' || listingType === 'blog';
+  const isMainOrListing = listingType === 'main';
   const withSorter = sorter && sorter.orders && sorter.orders.length > 1;
 
   return snippetList.length ? (
     <>
-      {isMainOrBlogListing ? (
+      {isMainOrListing ? (
         <>
           <PageTitle className={withSorter ? 'with-sorter' : null}>
             {listingName}

@@ -36,7 +36,9 @@ export class SnippetCollectionListing {
       this.snippetCollection.type === 'tag' &&
       !this.snippetCollection.tagMetadata
     )
-      return this.snippetCollection.language;
+      return this.snippetCollection.language
+        ? this.snippetCollection.language
+        : literals.blogTag(this.snippetCollection.tag);
     return this.snippetCollection.name;
   }
 
@@ -53,9 +55,7 @@ export class SnippetCollectionListing {
   }
 
   get listingSublinks() {
-    if (this.snippetCollection.type === 'blog') {
-      return [];
-    } else if (['language', 'tag'].includes(this.snippetCollection.type)) {
+    if (['blog', 'language', 'tag'].includes(this.snippetCollection.type)) {
       const order = this._options.order;
       return [
         {

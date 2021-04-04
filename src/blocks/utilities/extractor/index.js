@@ -71,15 +71,16 @@ export class Extractor {
       );
       const collections = [allSnippetData];
       allData.forEach(c => {
-        if (c.type === 'language') {
+        if (['language', 'blog'].includes(c.type)) {
           // Inject blog snippets into languages
-          c.addSnippets(
-            blogCollection.snippets.filter(snippet =>
-              snippet.tags.all.find(
-                t => t.toLowerCase() === c.config.language.long.toLowerCase()
+          if (c.type === 'language')
+            c.addSnippets(
+              blogCollection.snippets.filter(snippet =>
+                snippet.tags.all.find(
+                  t => t.toLowerCase() === c.config.language.long.toLowerCase()
+                )
               )
-            )
-          );
+            );
           // Create tag collections
           collections.push(
             ...c.tags.map(
@@ -112,7 +113,11 @@ export class Extractor {
                 config: collectionConfig,
                 slugPrefix: `/${collectionConfig.slug}`,
               },
-              collectionConfig.snippetIds.map(id => Snippet.instances[id])
+              collectionConfig.snippetIds
+                ? collectionConfig.snippetIds.map(id => Snippet.instances[id])
+                : Snippet.instances
+                    .findAll(s => s.type === collectionConfig.typeMatcher)
+                    .sort((a, b) => b.ranking - a.ranking)
             );
           }
         )
@@ -155,8 +160,9 @@ export class Extractor {
 
     return Promise.all(
       serializableSnippets.map(snippet => {
-        const collectionIds = CollectionConfig.findCollectionIdsFromSnippetId(
-          snippet.id
+        const collectionIds = CollectionConfig.findCollectionIdsFromSnippet(
+          snippet.id,
+          snippet.type
         ).map(c => `collection/${c.id}`);
         if (collectionIds && collectionIds.length) {
           const topCollectionId = featuredCollections

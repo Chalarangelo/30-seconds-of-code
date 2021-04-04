@@ -10,6 +10,7 @@ export class CollectionConfig {
    * @param {object} config - Collection configuration data. Must contain:
    *   - `name` - The name of the configuration.
    *   - `snippetIds` - Ids of the snippets that make up the collection.
+   *   - `typeMatcher` - Type matcher for the snippets that make up the collection.
    *   - `featured` - > 0 if the content is listed, -1 if it's not.
    *   - `slug` - Base url for the content pages.
    * @throws Will throw an error if any of the necessary keys is not present.
@@ -18,14 +19,19 @@ export class CollectionConfig {
     name,
     slug,
     snippetIds,
+    typeMatcher,
     featured,
     description,
     iconName = null,
     ...rest
   }) {
-    if (!name || !slug || !snippetIds || !snippetIds.length) {
+    if (
+      !name ||
+      !slug ||
+      ((!snippetIds || !snippetIds.length) && !typeMatcher)
+    ) {
       throw new ArgsError(
-        "Missing required keys. One or more of the following keys were not specified: 'name', 'slug', 'featured', 'snippetIds'"
+        "Missing required keys. One or more of the following keys were not specified: 'name', 'slug', 'featured', 'snippetIds', 'typeMatcher'"
       );
     }
 
@@ -35,6 +41,7 @@ export class CollectionConfig {
     this.featured = Boolean(featured);
     this.iconName = iconName;
     this.snippetIds = snippetIds;
+    this.typeMatcher = typeMatcher;
     Object.keys(rest).forEach(key => {
       this[key] = rest[key];
     });
@@ -46,8 +53,10 @@ export class CollectionConfig {
 
   static instances = new InstanceCache();
 
-  static findCollectionIdsFromSnippetId = snippetId =>
-    this.instances.findAll(cfg => cfg.snippetIds.includes(snippetId));
+  static findCollectionIdsFromSnippet = (id, type) =>
+    this.instances.findAll(cfg =>
+      cfg.snippetIds ? cfg.snippetIds.includes(id) : type === cfg.typeMatcher
+    );
 
   get id() {
     return `${this.slug}`;
