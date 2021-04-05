@@ -9,7 +9,7 @@ Maps a number from one range to another range.
 
 ```py
 def num_to_range(num, inMin, inMax, outMin, outMax):
-  return outMin(float(num - inMin) / float(inMax - inMin) * (outMax
+  return outMin + (float(num - inMin) / float(inMax - inMin) * (outMax
                   - outMin))
 ```
 
