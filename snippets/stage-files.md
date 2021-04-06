@@ -6,7 +6,7 @@ tags: commit,beginner
 Adds files to the staging area.
 
 - Use `git add <pathspec>` to add files to the staging area.
-- `<patcspec>` can be a filename or a fileglob.
+- `<pathspec>` can be a filename or a fileglob.
 
 ```sh
 git add <pathspec>
