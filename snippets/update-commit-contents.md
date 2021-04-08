@@ -1,6 +1,6 @@
 ---
 title: Edit the last commit
-tags: commit,beginner
+tags: commit,intermediate
 ---
 
 Updates the last commit's contents without changing its message.

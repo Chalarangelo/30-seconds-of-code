@@ -1,6 +1,6 @@
 ---
 title: Rebase onto another branch
-tags: branch,intermediate
+tags: branch,advanced
 ---
 
 Rebases the current branch onto another branch.

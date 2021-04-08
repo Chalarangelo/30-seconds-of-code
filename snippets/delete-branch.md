@@ -1,6 +1,6 @@
 ---
 title: Delete a branch
-tags: repository,branch,beginner
+tags: repository,branch,intermediate
 ---
 
 Deletes a local branch.

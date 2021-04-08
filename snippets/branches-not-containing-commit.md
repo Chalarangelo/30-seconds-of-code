@@ -1,6 +1,6 @@
 ---
 title: Find branches not containing a commit
-tags: branch,commit,beginner
+tags: branch,commit,intermediate
 ---
 
 Prints all the branches not containing a specific commit.
