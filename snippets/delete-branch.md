@@ -5,7 +5,7 @@ tags: repository,branch,beginner
 
 Deletes a local branch.
 
-- Use `git branch -d <branch>` to delete the branch with the specified branch name.
+- Use `git branch -d <branch>` to delete the specified local `<branch>`.
 
 ```sh
 git branch -d <branch>
