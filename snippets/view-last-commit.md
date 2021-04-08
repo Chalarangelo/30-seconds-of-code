@@ -1,6 +1,6 @@
 ---
 title: View last commit
-tags: commit,beginner
+tags: commit,intermediate
 ---
 
 Prints the last commit.

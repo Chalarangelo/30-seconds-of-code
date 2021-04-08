@@ -1,6 +1,6 @@
 ---
 title: Rename a branch
-tags: branch,beginner
+tags: branch,intermediate
 ---
 
 Renames a local branch.

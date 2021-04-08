@@ -1,6 +1,6 @@
 ---
 title: Rename remote branch
-tags: branch,intermediate
+tags: branch,advanced
 ---
 
 Renames a branch both locally and on the remote.

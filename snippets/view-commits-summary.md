@@ -1,6 +1,6 @@
 ---
 title: View a short summary of commits
-tags: repository,commit,beginner
+tags: repository,commit,intermediate
 ---
 
 Prints a short summary of all commits.

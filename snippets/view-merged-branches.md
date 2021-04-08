@@ -1,6 +1,6 @@
 ---
 title: View merged branches
-tags: repository,branch,beginner
+tags: repository,branch,intermediate
 ---
 
 Prints a list of all merged local branches.

@@ -1,6 +1,6 @@
 ---
 title: View commits by author
-tags: repository,commit,beginner
+tags: repository,commit,intermediate
 ---
 
 Prints all commits by the specified author.

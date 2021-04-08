@@ -1,6 +1,6 @@
 ---
 title: Find branches containing a commit
-tags: branch,commit,beginner
+tags: branch,commit,intermediate
 ---
 
 Prints all the branches containing a specific commit.
