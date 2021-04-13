@@ -1,6 +1,6 @@
 ---
 title: Lists all stashes
-tags: stash,repository,intermediate
+tags: repository,stash,intermediate
 ---
 
 Displays a list of all stashes.

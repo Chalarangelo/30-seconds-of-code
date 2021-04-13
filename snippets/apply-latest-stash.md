@@ -1,6 +1,6 @@
 ---
 title: Apply the latest stash
-tags: stash,repository,intermediate
+tags: repository,stash,intermediate
 ---
 
 Applies the latest stash.

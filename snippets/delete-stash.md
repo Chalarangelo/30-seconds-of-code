@@ -1,6 +1,6 @@
 ---
 title: Delete a stash
-tags: stash,repository,intermediate
+tags: repository,stash,intermediate
 ---
 
 Deletes a specific stash.

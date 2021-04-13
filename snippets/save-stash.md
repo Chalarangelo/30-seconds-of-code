@@ -1,6 +1,6 @@
 ---
 title: Create a stash
-tags: stash,repository,intermediate
+tags: repository,stash,intermediate
 ---
 
 Saves the current state of the working directory and index into a new stash.
