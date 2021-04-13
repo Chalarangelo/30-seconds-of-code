@@ -1,6 +1,6 @@
 ---
 title: Delete all stashes
-tags: stash,repository,intermediate
+tags: repository,stash,intermediate
 ---
 
 Deletes all stashes.

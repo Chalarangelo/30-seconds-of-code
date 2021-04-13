@@ -1,6 +1,6 @@
 ---
 title: Apply a stash
-tags: stash,repository,intermediate
+tags: repository,stash,intermediate
 ---
 
 Applies a specific stash.
