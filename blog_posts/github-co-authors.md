@@ -9,7 +9,7 @@ excerpt: Learn how to add multiple authors to a git commit with this quick and e
 
 You can add multiple authors to a git commit, by adding one or more `Co-authored-by` trailers to the commit's message:
 
-```sh
+```shellsession
 $ git commit -m "Refactor usability tests.
 >
 >
