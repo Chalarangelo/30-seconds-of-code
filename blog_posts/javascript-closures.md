@@ -35,7 +35,7 @@ const initCounter = (start = 0) => {
     get: () => value,
     increment: () => ++value,
     decrement: () => --value,
-    reset: () => start
+    reset: () => value = start
   };
 }
 
