@@ -7,11 +7,11 @@ Deletes all stashes.
 
 - Use `git stash clear` to delete all stashes.
 
-```sh
+```shell
 git stash clear
 ```
 
-```sh
+```shell
 git stash clear
 # Deletes all stashes
 ```

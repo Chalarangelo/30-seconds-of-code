@@ -11,7 +11,7 @@ Uses a binary search algorithm to manually find which commit in history introduc
 - Use `git bisect (bad | good)` marking each subsequent commit as "good" or "bad" depending if it has the bug or not.
 - Use `git bisect reset` to reset to the original branch. You can optionally specify a `<commit>` to reset to.
 
-```sh
+```shell
 git bisect start
 git bisect good <commit>
 git bisect bad <commit>
@@ -19,7 +19,7 @@ git bisect (bad | good)
 git bisect reset [<commit>]
 ```
 
-```sh
+```shell
 git bisect start
 git bisect good 3050fc0de
 git bisect bad c191f90c7

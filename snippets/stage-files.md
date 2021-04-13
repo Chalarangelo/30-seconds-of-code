@@ -8,11 +8,11 @@ Adds files to the staging area.
 - Use `git add <pathspec>` to add files to the staging area.
 - `<pathspec>` can be a filename or a fileglob.
 
-```sh
+```shell
 git add <pathspec>
 ```
 
-```sh
+```shell
 git add "30seconds.txt"
 # Add the file `30seconds.txt` to the staging area
 

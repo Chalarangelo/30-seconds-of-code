@@ -11,7 +11,7 @@ Uses a binary search algorithm and a given script to find which commit in histor
 - Use `git bisect run <command>` to run the given `<command>` on each subsequent commit to find which commit introduce the bug.
 - Use `git bisect reset` to reset to the original branch. You can optionally specify a `<commit>` to reset to.
 
-```sh
+```shell
 git bisect start
 git bisect good <commit>
 git bisect bad <commit>
@@ -19,7 +19,7 @@ git bisect run <command>
 git bisect reset [<commit>]
 ```
 
-```sh
+```shell
 git bisect start
 git bisect good 3050fc0de
 git bisect bad c191f90c7

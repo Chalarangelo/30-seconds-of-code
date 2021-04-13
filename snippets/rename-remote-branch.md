@@ -10,14 +10,14 @@ Renames a branch both locally and on the remote.
 - Use `git checkout <new-name>` to switch to the renamed branch.
 - Use `git push origin -u <new-name>` to set `<new-name>` as the remote branch for the renamed branch.
 
-```sh
+```shell
 git branch -m <old-name> <new-name>
 git push origin --delete <old-name>
 git checkout <new-name>
 git push origin -u <new-name>
 ```
 
-```sh
+```shell
 git checkout master
 git branch -m patch-1 patch-2    # Renamed the local branch to `patch-2`
 git push origin --delete patch-1

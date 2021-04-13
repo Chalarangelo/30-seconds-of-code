@@ -9,11 +9,11 @@ Prints all commits in the specified date range.
 - You can use only `--since=<date-from>` to see all commits since a specific date or only `--until=<date-to>` to view all commits up to a specific date
 - Use arrow keys to navigate, press <kbd>Q</kbd> to exit.
 
-```sh
+```shell
 git log [--since=<date-from>] [--until=<date-to>]
 ```
 
-```sh
+```shell
 git log --since='Apr 1 2021' --until='Apr 4 2021'
 # commit c191f90c7766ee6d5f24e90b552a6d446f0d02e4
 # Author: 30 seconds of code

@@ -10,11 +10,11 @@ Performs an interactive rebase.
 - You can optionally use the `--autosquash` option to automatically squash fixup commits.
 - If you have merge conflicts or stop to make changes, you can continue the rebase when ready using `git rebase --continue` or abort it using `git rebase --abort`.
 
-```sh
+```shell
 git rebase -i [--autosquash] <commit>
 ```
 
-```sh
+```shell
 git rebase -i 3050fc0de
 # Performs an interactive rebase starting from `3050fc0de`
 

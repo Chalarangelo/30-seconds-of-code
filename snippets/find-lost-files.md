@@ -8,11 +8,11 @@ Prints a list of lost files and commits.
 - Use `git fsck --lost-found` to print a list of all dangling objects.
 - All appropriate files will be extracted into the `.git/lost-found` directory.
 
-```sh
+```shell
 git fsck --lost-found
 ```
 
-```sh
+```shell
 git fsck --lost-found
 # dangling commit 3050fc0de
 # dangling blob 807e3fa41

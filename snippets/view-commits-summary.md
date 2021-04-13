@@ -7,11 +7,11 @@ Prints a short summary of all commits.
 
 - Use `git log --oneline` to list a short summary of all commits.
 
-```sh
+```shell
 git log --oneline
 ```
 
-```sh
+```shell
 git log --oneline
 # d540ba1ab Merge network bug fix
 # 3050fc0de Fix network bug

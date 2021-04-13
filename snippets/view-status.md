@@ -8,11 +8,11 @@ Prints the current status of the working tree.
 - Use `git status` to view the current status of the working tree.
 - You can optionally add the `-sb` flag to view the short form of the same output
 
-```sh
+```shell
 git status [-sb]
 ```
 
-```sh
+```shell
 git status
 # On branch patch-1
 # Your branch is up to date with 'origin/patch-1'.

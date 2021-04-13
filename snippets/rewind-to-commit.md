@@ -9,11 +9,11 @@ Rewinds the current branch by a given number of commits.
 - This command will uncommit and unstage changes, but leave them in the working directory.
 - You can use the `--hard` flag to uncommit, unstage and delete changes instead.
 
-```sh
+```shell
 git reset [--hard] <commit>
 ```
 
-```sh
+```shell
 git reset --hard 3050fc0d3
 # Rewinds back to `3050fc0d3` but keeps changes in the working directory
 

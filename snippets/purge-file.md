@@ -10,14 +10,14 @@ Completely purges a file from history.
 - You can optionally use `git push <remote> --force -all` to force push the changes to the remote repository.
 - ⚠️ **WARNING**: This is a destructive action that rewrites the history of the entire repository. Make sure you know what you are doing.
 
-```sh
+```shell
 git filter-branch --force --index-filter \
   "git rm --cached --ignore-unmatch <path>" \
   --prune-empty --tag-name-filter cat -- --all
 git push <remote> --force --all
 ```
 
-```sh
+```shell
 git filter-branch --force --index-filter \
   "git rm --cached --ignore-unmatch config/apiKeys.json" \
   --prune-empty --tag-name-filter cat -- --all

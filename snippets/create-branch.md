@@ -9,11 +9,11 @@ Creates and switches to a new branch, optionally setting up a remote tracking br
 - You can optionally add `-t <remote>/<branch>` to set up a remote tracking branch for the newly created branch.
 - Note: You can alternatively use `git branch <branch> [-t <remote>/<branch>]` and then `git checkout <branch>` separately.
 
-```sh
+```shell
 git checkout -b <branch> [-t <remote>/<branch>]
 ```
 
-```sh
+```shell
 git checkout -b patch-1
 # Local branch, without a remote tracking branch
 

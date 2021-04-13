@@ -10,11 +10,11 @@ Initializes a new git repository, setting up all the configuration files needed 
 - Note: Running `git init` in an existing repository is safe.
 - Note: You only need to run `git init` once per repository.
 
-```sh
+```shell
 git init [<directory>]
 ```
 
-```sh
+```shell
 cd ~/my_project
 git init # Initializes a repo in ~/my_project
 

@@ -7,11 +7,11 @@ Creates a new commit containing the staged changes.
 
 - Use `git commit -m <message>` to create a new commit with the specified `<message>`.
 
-```sh
+```shell
 git commit -m <message>
 ```
 
-```sh
+```shell
 # Make some changes to files
 git add .
 git commit -m "Fix the network bug"

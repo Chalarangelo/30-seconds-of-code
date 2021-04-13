@@ -7,11 +7,11 @@ Deletes a local branch.
 
 - Use `git branch -d <branch>` to delete the specified local `<branch>`.
 
-```sh
+```shell
 git branch -d <branch>
 ```
 
-```sh
+```shell
 git checkout master
 git branch -d patch-1 # Deletes the `patch-1` local branch
 ```

@@ -8,12 +8,12 @@ Rebases the current branch onto another branch.
 - Use `git checkout <branch>` to switch to the `<branch>` to be rebased.
 - Use `git rebase <base-branch>` to rebase the current branch onto `<base-branch>`.
 
-```sh
+```shell
 git checkout <branch>
 git rebase <base-branch>
 ```
 
-```sh
+```shell
 git checkout patch-1
 git rebase master
 # `patch-1` is rebased onto `master`

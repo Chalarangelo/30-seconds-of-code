@@ -9,11 +9,11 @@ Prints a list of all git aliases.
 - Use the pipe operator (`|`) to pipe the output and `grep alias` to only keep aliases.
 - Use the pipe operator (`|`) to pipe the output and `sed 's/^alias\.//g'` to remove the `alias.` part from each alias.
 
-```sh
+```shell
 git config -l | grep alias | sed 's/^alias\.//g'
 ```
 
-```sh
+```shell
 git config -l | grep alias | sed 's/^alias\.//g'
 # st=status
 # co=checkout

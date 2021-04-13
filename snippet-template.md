@@ -9,11 +9,11 @@ Explain briefly what the snippet does.
 - Use bullet points for your snippet's explanation.
 - Try to explain everything briefly but clearly.
 
-```sh
+```shell
 git command <variable> [--option]
 ```
 
-```sh
+```shell
 git command some-branch --quiet
 # Output of running command on `some-branch`
 ```

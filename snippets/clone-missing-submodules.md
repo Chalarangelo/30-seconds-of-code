@@ -7,11 +7,11 @@ Clones missing submodules and checks out commits.
 
 - Use `git submodule update --init --recursive` to clone missing submodules and checkout commits.
 
-```sh
+```shell
 git submodule update --init --recursive
 ```
 
-```sh
+```shell
 git submodule update --init --recursive
 # Clones missing submodules and checks out commits
 ```
