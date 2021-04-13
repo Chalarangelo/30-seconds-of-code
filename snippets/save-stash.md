@@ -9,11 +9,11 @@ Saves the current state of the working directory and index into a new stash.
 - You can optionally use the `-u` option to include untracked files.
 - You can optionally provide a `<message>` for the stash.
 
-```sh
+```shell
 git stash save [-u] [<message>]
 ```
 
-```sh
+```shell
 git stash save
 # Creates a new stash
 

@@ -7,11 +7,11 @@ Discards all uncommitted changes to the current branch.
 
 - Use `git reset --hard HEAD` to reset the local directory to match the latest commit and discard all unstaged changes.
 
-```sh
+```shell
 git reset --hard HEAD
 ```
 
-```sh
+```shell
 git reset --hard HEAD
 # Discards all unstaged changes
 ```

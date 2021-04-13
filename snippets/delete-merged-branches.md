@@ -9,11 +9,11 @@ Deletes all local merged branches.
 - Use the pipe operator (`|`) to pipe the output and `grep -v "(^\*|<branch>)"` to exclude the current and the target `<branch>`.
 - Use the pipe operator (`|`) to pipe the output and `xargs git branch -d` to delete all of the found branches.
 
-```sh
+```shell
 git branch --merged <branch> | grep -v "(^\*|<branch>)" | xargs git branch -d
 ```
 
-```sh
+```shell
 git checkout master
 git branch
 # master

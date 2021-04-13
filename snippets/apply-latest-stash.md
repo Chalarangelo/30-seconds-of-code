@@ -7,10 +7,10 @@ Applies the latest stash.
 
 - Use `git stash apply` to apply the latest stash.
 
-```sh
+```shell
 git stash apply <stash>
 ```
 
-```sh
+```shell
 git stash apply # Applies the latest stash
 ```

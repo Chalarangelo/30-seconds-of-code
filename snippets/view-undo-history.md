@@ -12,11 +12,11 @@ Because sometimes git log doesn't cut it, especially for commands that don't sho
 
 reflog is basically your safety net after running "scary" commands like git rebase. You'll be able to see not only the commits you made, but each of the actions that led you there.
 
-```sh
+```shell
 git reflog
 ```
 
-```sh
+```shell
 git reflog
 # b6a4f9d6ff9 (HEAD -> patch-1, origin/patch-1) HEAD@{0}: Update docs
 # 3050fc0de HEAD@{1}: rebase -i (finish): returning to refs/heads/patch-1

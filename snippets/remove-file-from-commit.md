@@ -8,12 +8,12 @@ Removes a file from the last commit without changing its message.
 - Use `git rm —-cached <file>` to remove the specified `<file>` from the index.
 - Use `git commit —-amend` to update the contents of the last commit, without changing its message.
 
-```sh
+```shell
 git rm —-cached <file>
 git commit —-amend
 ```
 
-```sh
+```shell
 git rm —-cached "30-seconds.txt"
 git commit —-amend
 # Removes `30-seconds.txt` from the last commit

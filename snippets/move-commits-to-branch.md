@@ -10,13 +10,13 @@ Moves local commits from the `master` branch to a new branch.
 - Use `git checkout <branch>` to switch to the new branch.
 - Only works if the changes have only been committed locally and not pushed to the remote.
 
-```sh
+```shell
 git branch <branch>
 git reset HEAD~<n> --hard
 git checkout <branch>
 ```
 
-```sh
+```shell
 git checkout master
 git add .
 git commit -m "Fix network bug"

@@ -8,11 +8,11 @@ Displays differences between staged or unstaged changes and the last commit.
 - Use `git diff` to view differences between your unstaged changes and the last commit.
 - You can use the `--staged` option to view differences between your staged changes and the last commit instead.
 
-```sh
+```shell
 git diff [--staged]
 ```
 
-```sh
+```shell
 git diff
 # Displays the differences between unstaged changes and the last commit
 

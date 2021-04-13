@@ -9,12 +9,12 @@ Configures user information for git.
 - Use `git config user.name <name>` to set the user's name for the current repository.
 - You can use the `--global` flag to configure global user information.
 
-```sh
+```shell
 git config [--global] user.email <email>
 git config [--global] user.name <name>
 ```
 
-```sh
+```shell
 git config user.email "cool.duck@qua.ck"
 git config user.name "Duck Quackers"
 # Configures user for current repository

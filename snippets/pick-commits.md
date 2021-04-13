@@ -9,11 +9,11 @@ Applies the changes introduced by one or more commits.
 - Use `git cherry-pick <commit-1> <commit-2>...` to pick changes from all space-separated commits.
 - Use `git cherry-pick <first-commit>..<last-commit>` to pick changes from a range of commits.
 
-```sh
+```shell
 git cherry-pick (<commit>... | <first-commit>..<last-commit>)
 ```
 
-```sh
+```shell
 git cherry-pick 3050fc0de # Picks changes from the commit `3050fc0de`
 
 git cherry-pick 3050fc0de c191f90c7

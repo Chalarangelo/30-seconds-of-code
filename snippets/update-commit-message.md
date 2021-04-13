@@ -7,11 +7,11 @@ Updates the last commit's message without changing its contents.
 
 - Use `git commit --amend -m <message>` to replace the last commit's message with the new `<message>`.
 
-```sh
+```shell
 git commit --amend -m <message>
 ```
 
-```sh
+```shell
 git add .
 git commit -m "Fix the newtork bug"
 git commit --amend -m "Fix the network bug"

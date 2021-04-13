@@ -8,11 +8,11 @@ Deletes all detached branches.
 - Use `git fetch --all --prune` to garbage collect any detached branches.
 - This is especially useful if the remote repository is set to automatically delete merged branches.
 
-```sh
+```shell
 git fetch --all --prune
 ```
 
-```sh
+```shell
 git checkout master
 git branch
 # master

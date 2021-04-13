@@ -7,10 +7,10 @@ Fetches the latest changes from the remote.
 
 - Use `git fetch` to get the latest changes from the remote, without applying them.
 
-```sh
+```shell
 git fetch
 ```
 
-```sh
+```shell
 git fetch # Fetches the latest updates from the remote
 ```

@@ -7,11 +7,11 @@ Pulls all submodules from their respective remotes.
 
 - Use `git submodule update --recursive --remote` to pull all submodules from their respective remotes.
 
-```sh
+```shell
 git submodule update --recursive --remote
 ```
 
-```sh
+```shell
 git submodule update --recursive --remote
 # Pulls all submodules from their respective remotes
 ```

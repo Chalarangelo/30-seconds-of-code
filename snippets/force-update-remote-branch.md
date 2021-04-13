@@ -8,11 +8,11 @@ Forces an update of the remote branch adter rewriting the history locally.
 - Use `git push -f` to force update the remote branch, overwriting it using the local branch's changes.
 - This operation is necessary anytime your local and remote repository diverge.
 
-```sh
+```shell
 git push -f
 ```
 
-```sh
+```shell
 git checkout patch-1
 git pull
 git rebase master

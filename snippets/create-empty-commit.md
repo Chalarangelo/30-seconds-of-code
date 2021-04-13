@@ -7,11 +7,11 @@ Creates an empty commit.
 
 - Use `git commit --allow-empty -m <message>` to create an empty commit with the provided `<message>`.
 
-```sh
+```shell
 git commit --allow-empty -m <message>
 ```
 
-```sh
+```shell
 git commit --allow-empty -m "Empty commit"
 # Creates an empty commit with the message "Empty commit"
 ```

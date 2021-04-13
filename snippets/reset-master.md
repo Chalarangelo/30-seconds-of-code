@@ -9,13 +9,13 @@ Resets the local `master` branch to match the one on the remote.
 - Use `git checkout master` to switch to the `master` branch.
 - Use `git reset --hard origin/master` to reset the local `master` branch to match the one on the remote.
 
-```sh
+```shell
 git fetch origin
 git checkout master
 git reset --hard origin/master
 ```
 
-```sh
+```shell
 git fetch origin
 git checkout master
 git reset --hard origin/master
