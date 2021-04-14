@@ -4,6 +4,7 @@ import { Chunk } from 'blocks/utilities/chunk';
 import { Logger } from 'blocks/utilities/logger';
 import { SnippetPreview } from 'blocks/adapters/snippetPreview';
 import { SnippetCollectionChip } from 'blocks/adapters/snippetCollectionChip';
+import { shuffle } from 'utils';
 import literals from 'lang/en/listing';
 
 const NEW_BLOG_CARDS = 3;
@@ -46,11 +47,13 @@ export class HubSerializer {
       .slice(0, NEW_BLOG_CARDS);
     const newBlogIds = newBlogs.map(s => s.id);
 
-    const topSnippets = mainCollection.snippets
-      .filter(
-        s => !newBlogIds.includes(s.id) && s.type === 'snippet' && s.isListed
-      )
-      .slice(0, TOP_SNIPPET_CARDS);
+    const topSnippets = shuffle(
+      mainCollection.snippets
+        .filter(
+          s => !newBlogIds.includes(s.id) && s.type === 'snippet' && s.isListed
+        )
+        .slice(0, TOP_SNIPPET_CARDS * 5)
+    ).slice(0, TOP_SNIPPET_CARDS);
 
     const homeChunkPairs = [
       ['index', Chunk.createIndex(`/`, 'HomePage', 1.0)],
