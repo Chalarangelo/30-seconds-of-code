@@ -125,5 +125,5 @@
   },
   "keywordScoreLimit": 60,
   "keywordCountLimit": 14,
-  "freshnessLimit": 40
+  "freshnessLimit": 20
 }
