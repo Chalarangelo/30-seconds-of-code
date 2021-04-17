@@ -47,6 +47,12 @@ pre[data-code-language]:not([data-code-language=""]) {
     display: block;
     content: attr(data-code-language);
   }
+
+  &.language-shell {
+    &::before {
+      content: 'Shell';
+    }
+  }
 }
 
 .namespace {
