@@ -157,10 +157,6 @@
     background-color: var(--clr-img-credit-bg);
     color: var(--clr-txt-150);
     order: -1;
-
-    @media screen and (min-width: $layout-medium-breakpoint) {
-      margin-top: -2.375rem;
-    }
   }
 }
 
