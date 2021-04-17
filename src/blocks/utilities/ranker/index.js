@@ -65,14 +65,16 @@ export class Ranker {
       keywordScoreLimit
     );
 
-    // Calculate freshness, longevity and update values
+    // Calculate freshness in days
     const firstSeen = (nowMs - +snippet.firstSeen) / oneDayMs;
 
-    // Add points for freshness: Should produce a curve that falls sharply around
-    // the 14 day mark.
-    score += Math.round(
-      ((14 + firstSeen) / (14 + firstSeen * firstSeen)) * freshnessLimit
-    );
+    // Add points from freshness, using a kind of lookup table
+    if (firstSeen === 1) score += freshnessLimit;
+    else if (firstSeen === 2) score += 0.85 * freshnessLimit;
+    else if (firstSeen <= 4) score += 0.7 * freshnessLimit;
+    else if (firstSeen <= 6) score += 0.45 * freshnessLimit;
+    else if (firstSeen <= 10) score += 0.25 * freshnessLimit;
+    else if (firstSeen <= 14) score += 0.1 * freshnessLimit;
 
     const biasPenaltyMultiplier = snippet.config.biasPenaltyMultiplier
       ? snippet.config.biasPenaltyMultiplier

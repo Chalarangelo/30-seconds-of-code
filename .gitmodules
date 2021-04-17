@@ -48,3 +48,8 @@
 	url = https://github.com/30-seconds/30-seconds-content
 	branch = master
 	update = checkout
+[submodule "content/sources/30git"]
+	path = content/sources/30git
+	url = https://github.com/30-seconds/30-seconds-of-git
+	branch = master
+	update = checkout

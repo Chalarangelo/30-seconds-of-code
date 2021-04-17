@@ -31,16 +31,11 @@ export class TextParser {
       promises.push(
         new Promise(rsl =>
           exec(
-            `cd ${dirPath}; git log --diff-filter=A --pretty=format:%at -- ${fileName} | head -1`,
-            (error, stdout) => rsl(stdout.toString().replace('\n', ''))
-          )
-        )
-      );
-      promises.push(
-        new Promise(rsl =>
-          exec(
-            `cd ${dirPath}; git log -n 1 --pretty=format:%at -- ${fileName} | head -1`,
-            (error, stdout) => rsl(stdout.toString().replace('\n', ''))
+            `cd ${dirPath}; git log --pretty=format:%at -- ${fileName}`,
+            (error, stdout) => {
+              const dates = stdout.toString().split('\n');
+              rsl([dates.slice(-1), dates[0]]);
+            }
           )
         )
       );
@@ -58,8 +53,8 @@ export class TextParser {
           if (withMetadata) {
             resolve({
               ...data,
-              firstSeen: new Date(+`${values[1]}000`),
-              lastUpdated: new Date(+`${values[2]}000`),
+              firstSeen: new Date(+`${values[1][0]}000`),
+              lastUpdated: new Date(+`${values[1][1]}000`),
             });
           } else {
             resolve(data);
