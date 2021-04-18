@@ -63,14 +63,19 @@ export const generateStructuredData = (structuredData, config, logoSrc) => {
         image: `${config.websiteUrl}${logoSrc}`,
         datePublished: structuredData.firstSeen,
         dateModified: structuredData.lastUpdated,
-        author: {
-          '@type': 'Organization',
-          name: config.orgName,
-          logo: {
-            '@type': 'ImageObject',
-            url: `${config.websiteUrl}${structuredData.orgLogoSrc}`,
-          },
-        },
+        author: structuredData.author
+          ? {
+              '@type': 'Person',
+              ...structuredData.author,
+            }
+          : {
+              '@type': 'Organization',
+              name: config.orgName,
+              logo: {
+                '@type': 'ImageObject',
+                url: `${config.websiteUrl}${structuredData.orgLogoSrc}`,
+              },
+            },
         publisher: {
           '@type': 'Organization',
           name: config.orgName,
