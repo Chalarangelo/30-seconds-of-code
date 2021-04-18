@@ -1,4 +1,6 @@
 import childProcess from 'child_process';
+import path from 'path';
+import fs from 'fs';
 import { Logger } from 'blocks/utilities/logger';
 import { JSONSerializer } from 'blocks/serializers/json';
 
@@ -184,5 +186,48 @@ export class Content {
             });
           })
       );
+  };
+
+  /**
+   * Creates a new snippet from the template in the given content source
+   * @param {string} submoduleName - Name of the submodule (e.g. '30blog')
+   * @param {string} snippetName - Name of the new snippet (e.g. 'my-blog-post')
+   */
+  static createSnippet = (submoduleName, snippetName) => {
+    const boundLog = Logger.bind('utilities.content.createSnippet');
+    boundLog(
+      `Creating new snippet ${snippetName} in ${submoduleName}...`,
+      'info'
+    );
+
+    const { rawContentPath: contentPath } = global.settings.paths;
+    const submodulePath = path.join(
+      process.cwd(),
+      contentPath,
+      'sources',
+      submoduleName
+    );
+    const templatePath = path.join(submodulePath, 'snippet-template.md');
+    const snippetPath = path.join(
+      submodulePath,
+      submoduleName === '30blog' ? 'blog_posts' : 'snippets'
+    );
+    try {
+      if (!fs.existsSync(snippetPath)) {
+        boundLog('Snippet directory not found! Creating directory...', 'info');
+        fs.mkdirSync(snippetPath);
+      }
+      const template = fs.readFileSync(templatePath, 'utf8');
+      const fileData = template.replace(
+        /title:\s*.*\n/,
+        `title: ${snippetName}\n`
+      );
+      fs.writeFileSync(path.join(snippetPath, `${snippetName}.md`), fileData);
+
+      boundLog('Snippet creation complete!', 'success');
+    } catch (err) {
+      boundLog('Snippet creation encountered an error', 'error');
+      boundLog(err, 'error');
+    }
   };
 }
