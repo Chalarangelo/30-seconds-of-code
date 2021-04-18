@@ -3,6 +3,7 @@
   "assetPath": ".assets",
   "rawAssetPath": "assets",
   "rawContentAssetPath": "content/configs/assets",
+  "rawContentConfigsPath": "content/configs",
   "staticAssetPath": "assets",
   "contentPath": ".content",
   "rawContentPath": "content",

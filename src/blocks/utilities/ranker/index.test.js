@@ -11,6 +11,13 @@ describe('Ranker', () => {
   let snippets = [];
   beforeAll(() => {
     Env.setup();
+    Ranker._keywordScores = {
+      iterator: 1,
+      javascript: 2,
+      visual: 3,
+      blog: 4,
+      advanced: 5,
+    };
     Object.keys(rawConfigs).forEach(name => {
       configs[name] = new ContentConfig(rawConfigs[name]);
     });

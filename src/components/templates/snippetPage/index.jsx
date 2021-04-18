@@ -38,12 +38,13 @@ const SnippetPage = ({
   pageContext,
 }) => {
   const SnippetCard = cardComponents[cardTemplate];
+  const isBlogSnippet = cardTemplate === 'BlogSnippetCard';
   return (
     <>
       <Meta
         title={snippet.title}
         description={pageDescription}
-        logoSrc={cardTemplate === 'BlogSnippetCard' ? snippet.cover : undefined}
+        logoSrc={isBlogSnippet ? snippet.cover : undefined}
         structuredData={{
           title: snippet.title,
           description: snippet.description,
@@ -52,6 +53,14 @@ const SnippetPage = ({
           firstSeen: snippet.firstSeen,
           lastUpdated: snippet.lastUpdated,
           type: 'snippet',
+          ...(isBlogSnippet
+            ? {
+                author: {
+                  name: snippet.authors[0].name,
+                  url: snippet.authors[0].profile,
+                },
+              }
+            : {}),
         }}
         breadcrumbsData={breadcrumbs}
         canonical={snippet.slug}
