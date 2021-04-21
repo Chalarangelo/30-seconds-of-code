@@ -155,7 +155,7 @@ export class MarkdownParser {
           : '';
       node.value = isText
         ? [
-            `<div class="gatsby-highlight" data-language="${languageName}">`,
+            `<div class="code-highlight" data-language="${languageName}">`,
             `<pre class="language-${languageName}" data-code-language="${languageStringLiteral}">`,
             `${highlightedCode.trim()}`,
             `</pre>`,

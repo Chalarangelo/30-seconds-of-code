@@ -12,7 +12,7 @@ export class Requirements {
    */
   static load = () => {
     // Note that we cannot really use global.settings here as this might have to
-    // run before onPreInit of the gatsby server. So imports it is.
+    // run without an environment set up properly. So imports it is.
     return {
       templates: paths.templates.reduce((acc, tmpl) => {
         acc[tmpl.name] = path.resolve(`${paths.templatesPath}/${tmpl.path}`);
