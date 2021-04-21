@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import Helmet from 'react-helmet';
+import Head from 'next/head';
 import settings from 'settings/global';
 import literals from 'lang/en/client/common';
 import { generateStructuredData } from 'utils';
 import { useShellState } from 'state/shell';
-
-require('styles/index.scss'); // Do not change this to `import`, it's not going to work, no clue why
 
 const propTypes = {
   title: PropTypes.string,
@@ -52,12 +50,16 @@ const Meta = ({
 }) => {
   const { acceptsCookies } = useShellState();
   const metaDescription = description || literals.siteDescription;
+  const titleString = title
+    ? `${title} - ${literals.siteName}`
+    : literals.siteName;
 
   // Load scripts
   const scripts = [];
   if (structuredData) {
     scripts.push({
       type: 'application/ld+json',
+      key: 'structured-data',
       innerHTML: JSON.stringify(
         generateStructuredData(structuredData, settings, logoSrc)
       ),
@@ -67,6 +69,7 @@ const Meta = ({
   if (breadcrumbsData) {
     scripts.push({
       type: 'application/ld+json',
+      key: 'breadcrumb-data',
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
@@ -84,11 +87,13 @@ const Meta = ({
 
   if (typeof window !== 'undefined' && acceptsCookies) {
     scripts.push({
-      async: '',
+      async: true,
+      key: 'gtag-id',
       src: `https://www.googletagmanager.com/gtag/js?id=${settings.googleAnalytics.id}`,
     });
     // GTAG
     scripts.push({
+      key: 'gtag',
       innerHTML: `
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -103,6 +108,7 @@ const Meta = ({
     // Send a pageview only the first time that gtag is added (is this safe?)
     if (typeof gtag === 'undefined') {
       scripts.push({
+        key: 'gtag-pageview',
         innerHTML: `
         var hasFired = false;
         if(!hasFired){
@@ -114,6 +120,7 @@ const Meta = ({
 
     // Hotjar
     scripts.push({
+      key: 'hotjar',
       innerHTML: `
       (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -128,69 +135,58 @@ const Meta = ({
   }
 
   return (
-    <Helmet
-      htmlAttributes={{ lang: 'en' }}
-      title={title ? title : literals.siteName}
-      titleTemplate={title ? `%s - ${literals.siteName}` : '%s'}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          name: `viewport`,
-          content: `width=device-width, initial-scale=1`,
-        },
-        {
-          property: `og:title`,
-          content: title
-            ? `${title} - ${literals.siteName}`
-            : literals.siteName,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          property: `og:image`,
-          content: `${settings.websiteUrl}${logoSrc}`,
-        },
-        {
-          name: `twitter:site`,
-          content: settings.twitterAccount,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary_large_image`,
-        },
-        {
-          name: `twitter:title`,
-          content: title ? `${title}` : literals.siteName,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-        {
-          name: `twitter:image`,
-          content: `${settings.websiteUrl}${logoSrc}`,
-        },
-      ].concat(meta)}
-      script={scripts}
-    >
+    <Head>
+      <title>{titleString}</title>
+      <meta name='description' content={metaDescription} />
+      <meta name='viewport' content='width=device-width, initial-scale=1' />
+      <meta property='og:title' content={titleString} />
+      <meta property='og:description' content={metaDescription} />
+      <meta property='og:type' content='website' />
+      <meta property='og:image' content={`${settings.websiteUrl}${logoSrc}`} />
+      <meta name='twitter:site' content={settings.twitterAccount} />
+      <meta name='twitter:card' content='summary_large_image' />
+      <meta
+        name='twitter:title'
+        content={title ? `${title}` : literals.siteName}
+      />
+      <meta name='twitter:description' content={metaDescription} />
+      <meta name='twitter:image' content={`${settings.websiteUrl}${logoSrc}`} />
+      {scripts.map(({ key, innerHTML, ...rest }) => (
+        <script
+          key={key}
+          dangerouslySetInnerHTML={{ __html: innerHTML }}
+          {...rest}
+        />
+      ))}
       <link
         rel='preconnect dns-prefetch'
         key='preconnect-google-analytics'
         href='https://www.google-analytics.com'
       />
+      <link
+        key='link-sitemap'
+        rel='sitemap'
+        href='/sitemap.xml'
+        type='application/xml'
+      />
+      <link
+        key='link-rss-feed'
+        rel='alternate'
+        href='/feed'
+        type='application/rss+xml'
+        title='30secondsofcode.org'
+      />
+      <link
+        key='link-opensearch'
+        rel='search'
+        href='/opensearch.xml'
+        type='application/opensearchdescription+xml'
+        title='Snippet search'
+      />
       {canonical ? (
         <link rel='canonical' href={`${settings.websiteUrl}${canonical}`} />
       ) : null}
-    </Helmet>
+    </Head>
   );
 };
 
