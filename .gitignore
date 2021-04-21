@@ -96,6 +96,7 @@ yarn.lock
 
 # Next.js files
 .next
+out/
 
 # Mac files
 .DS_Store
