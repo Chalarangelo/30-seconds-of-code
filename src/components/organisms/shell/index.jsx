@@ -1,17 +1,11 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import loadable from '@loadable/component';
+import Link from 'next/link';
 import Search from 'components/molecules/search';
 import Footer from 'components/molecules/footer';
 import CookieConsentPopup from 'components/molecules/cookieConsentPopup';
 import literals from 'lang/en/client/common';
 import { useShellState } from 'state/shell';
-
-const DevelopmentControls = loadable(() =>
-  process.env.NODE_ENV === 'development'
-    ? import('components/molecules/developmentControls')
-    : () => null
-);
 
 const propTypes = {
   children: PropTypes.oneOfType([
@@ -19,7 +13,6 @@ const propTypes = {
     PropTypes.arrayOf(PropTypes.node),
   ]),
   isSearch: PropTypes.bool,
-  pageContext: PropTypes.shape({}),
 };
 
 /**
@@ -28,9 +21,8 @@ const propTypes = {
  * @param {bool} isBot - Is the client a bot? (Auto-detect)
  * @param {bool} isSearch - Is this a search page?
  * @param {bool} isSettings - Is this a search page?
- * @param {bool} pageContext - Page context (only-passed down in development)
  */
-const Shell = ({ isSearch = false, children, pageContext }) => {
+const Shell = ({ isSearch = false, children }) => {
   const { acceptsCookies, isBot } = useShellState();
 
   return (
@@ -40,32 +32,34 @@ const Shell = ({ isSearch = false, children, pageContext }) => {
         role='navigation'
         aria-label='Main'
       >
-        <a className='nav-btn' href='/'>
-          <img
-            src='/assets/30s-icon.png'
-            alt={literals.home}
-            className='nav-website-logo'
-            width='64'
-            height='64'
-          />
-        </a>
-        <a
-          className='nav-title-wrapper flex flex-col'
-          href='/'
-          aria-label={literals.home}
-        >
-          <h1 className='nav-title m-0 txt-200 f-alt'>{literals.siteName}</h1>
-          <p className='nav-subtitle m-0 txt-100'>{literals.siteDescription}</p>
-        </a>
+        <Link href='/'>
+          <a className='nav-btn'>
+            <img
+              src='/assets/30s-icon.png'
+              alt={literals.home}
+              className='nav-website-logo'
+              width='64'
+              height='64'
+            />
+          </a>
+        </Link>
+        <Link href='/'>
+          <a
+            className='nav-title-wrapper flex flex-col'
+            aria-label={literals.home}
+          >
+            <h1 className='nav-title m-0 txt-200 f-alt'>{literals.siteName}</h1>
+            <p className='nav-subtitle m-0 txt-100'>
+              {literals.siteDescription}
+            </p>
+          </a>
+        </Link>
         <Search isMainSearch={isSearch} />
       </header>
       <div className='content'>
         {children}
         <Footer />
       </div>
-      {process.env.NODE_ENV === 'development' && (
-        <DevelopmentControls pageContext={pageContext} />
-      )}
       {typeof acceptsCookies === 'undefined' &&
       process.env.NODE_ENV !== 'development' &&
       !isBot ? (

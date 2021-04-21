@@ -10,7 +10,6 @@ const literals = {
   ccLicense: 'CC0-1.0',
   poweredBy: 'Powered by ',
   netlify: 'Netlify',
-  gatsby: 'Gatsby',
   next: 'Next.js',
 };
 

@@ -12,7 +12,6 @@
     "@babel/preset-env": "^7.8.7",
     "@babel/preset-react": "^7.8.3",
     "@chalarangelo/combine-class-names": "^1.0.0",
-    "@loadable/component": "^5.14.1",
     "@testing-library/react": "^10.4.8",
     "@types/jest": "^26.0.19",
     "babel-jest": "^26.3.0",
@@ -29,13 +28,6 @@
     "esm": "^3.2.25",
     "front-matter": "^3.1.0",
     "fs-extra": "^9.0.0",
-    "gatsby": "^2.21.12",
-    "gatsby-plugin-catch-links": "^2.3.12",
-    "gatsby-plugin-manifest": "^2.4.30",
-    "gatsby-plugin-netlify": "^2.3.15",
-    "gatsby-plugin-react-helmet": "^3.3.11",
-    "gatsby-plugin-sass": "^2.3.13",
-    "gatsby-source-filesystem": "^2.3.30",
     "glob": "^7.1.6",
     "hast-util-to-html": "^7.1.1",
     "jest": "^24.9.0",
@@ -51,7 +43,6 @@
     "puppeteer": "^5.5.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-helmet": "^6.1.0",
     "remark": "^12.0.0",
     "sass-loader": "^8.0.2",
     "sharp": "^0.25.4",
@@ -61,7 +52,6 @@
     "webfonts-generator": "^0.4.0"
   },
   "keywords": [
-    "gatsby",
     "30-seconds",
     "snippets"
   ],
