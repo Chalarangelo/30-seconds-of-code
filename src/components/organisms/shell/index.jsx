@@ -8,7 +8,7 @@ import literals from 'lang/en/client/common';
 import { useShellState } from 'state/shell';
 
 const DevelopmentControls = loadable(() =>
-  process.env.ENV === 'development'
+  process.env.NODE_ENV === 'development'
     ? import('components/molecules/developmentControls')
     : () => null
 );
@@ -63,11 +63,11 @@ const Shell = ({ isSearch = false, children, pageContext }) => {
         {children}
         <Footer />
       </div>
-      {process.env.ENV === 'development' && (
+      {process.env.NODE_ENV === 'development' && (
         <DevelopmentControls pageContext={pageContext} />
       )}
       {typeof acceptsCookies === 'undefined' &&
-      process.env.ENV !== 'development' &&
+      process.env.NODE_ENV !== 'development' &&
       !isBot ? (
         <CookieConsentPopup />
       ) : null}

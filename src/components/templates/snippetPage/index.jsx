@@ -66,7 +66,9 @@ const SnippetPage = ({
         canonical={snippet.slug}
       />
       <Shell
-        pageContext={process.env.ENV === 'development' ? pageContext : null}
+        pageContext={
+          process.env.NODE_ENV === 'development' ? pageContext : null
+        }
       >
         <Breadcrumbs breadcrumbs={breadcrumbs} />
         <SnippetCard snippet={snippet} />
