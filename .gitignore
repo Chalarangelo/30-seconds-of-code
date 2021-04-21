@@ -115,5 +115,6 @@ content/data
 static/assets
 src/xml/sitemap.xml
 src/xml/feed.xml
+src/json/manifest.webmanifest
 src/json/chirp.json
 snippet.png
