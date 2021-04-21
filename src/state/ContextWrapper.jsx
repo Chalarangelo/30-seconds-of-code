@@ -4,11 +4,11 @@ import { SearchProvider } from './search';
 
 /**
  * Shell wrapper for React components.
- * @param {*} element - The element to be wrapped.
+ * @param {*} children - The children to be wrapped.
  */
-const ContextWrapper = ({ element }) => (
+const ContextWrapper = ({ children }) => (
   <ShellProvider>
-    <SearchProvider>{element}</SearchProvider>
+    <SearchProvider>{children}</SearchProvider>
   </ShellProvider>
 );
 
