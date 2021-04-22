@@ -3,9 +3,6 @@ import { cleanup } from '@testing-library/react';
 import { renderWithContext } from 'test/utils';
 import CookieConsentPopup from './index';
 
-console.warn = jest.fn();
-console.error = jest.fn();
-
 describe('<CookieConsentPopup />', () => {
   let wrapper;
 

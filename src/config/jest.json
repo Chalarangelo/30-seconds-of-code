@@ -25,5 +25,8 @@
   "testURL": "https://localhost",
   "testMatch": [
     "**/?(*.)+(test).[jt]s?(x)"
+  ],
+  "setupFiles": [
+    "./src/test/mocks.js"
   ]
 }

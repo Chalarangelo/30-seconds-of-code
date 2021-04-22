@@ -7,9 +7,6 @@ import {
   searchResultSnippet,
 } from 'fixtures/snippets';
 
-console.warn = jest.fn();
-console.error = jest.fn();
-
 describe('<RecommendationList />', () => {
   const snippetList = [previewSnippet, previewBlogSnippet, searchResultSnippet];
   let wrapper;

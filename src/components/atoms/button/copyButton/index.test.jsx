@@ -6,7 +6,6 @@ import copyToClipboard from 'copy-to-clipboard';
 import CopyButton from './index';
 
 const copyToClipboardMock = jest.fn();
-console.error = jest.fn();
 jest.mock('copy-to-clipboard');
 jest.useFakeTimers();
 
