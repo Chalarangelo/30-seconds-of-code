@@ -1,16 +1,14 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import { cleanup } from '@testing-library/react';
 import { renderWithContext } from 'test/utils';
 import literals from 'lang/en/client/notFound';
 import NotFoundPage from './index';
 
 describe('<NotFoundPage />', () => {
-  let wrapper, meta, anchorButton;
+  let wrapper, anchorButton;
 
   beforeEach(() => {
     wrapper = renderWithContext(<NotFoundPage />).container;
-    meta = Helmet.peek();
     anchorButton = wrapper.querySelector('a.btn.btn-home');
   });
 
@@ -31,7 +29,7 @@ describe('<NotFoundPage />', () => {
   });
 
   it('should pass the correct data to the Meta component', () => {
-    expect(meta.title).toContain(literals.pageNotFound);
+    expect(document.title).toContain(literals.pageNotFound);
   });
 
   it('should pass the correct graphic name to the PageBackdrop component', () => {
