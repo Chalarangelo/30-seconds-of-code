@@ -7,9 +7,6 @@ import { orders } from 'fixtures/sorter';
 import { previewSnippet, previewBlogSnippet } from 'fixtures/snippets';
 import { anchorItems } from 'fixtures/listingAnchors';
 
-console.warn = jest.fn();
-console.error = jest.fn();
-
 describe('<SnippetList />', () => {
   const sorter = { orders, selected: 'Popularity' };
   const snippetList = [previewSnippet, previewBlogSnippet];

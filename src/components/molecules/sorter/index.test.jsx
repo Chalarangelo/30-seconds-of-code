@@ -3,9 +3,6 @@ import { render, cleanup, fireEvent } from '@testing-library/react';
 import Sorter from './index';
 import { orders } from 'fixtures/sorter';
 
-console.warn = jest.fn();
-console.error = jest.fn();
-
 describe('<Sorter />', () => {
   const selectedOrder = 'Popularity';
   let wrapper;

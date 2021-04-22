@@ -5,9 +5,6 @@ import { renderWithContext } from 'test/utils';
 import literals from 'lang/en/client/notFound';
 import NotFoundPage from './index';
 
-console.warn = jest.fn();
-console.error = jest.fn();
-
 describe('<NotFoundPage />', () => {
   let wrapper, meta, anchorButton;
 

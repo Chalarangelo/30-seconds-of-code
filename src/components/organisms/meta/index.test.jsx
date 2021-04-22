@@ -8,9 +8,6 @@ import settings from 'settings/global';
 import { decideCookies } from 'state/shell';
 import metadata from 'fixtures/metadata';
 
-console.warn = jest.fn();
-console.error = jest.fn();
-
 describe('<Meta />', () => {
   // eslint-disable-next-line no-unused-vars
   let wrapper, helmet, store;

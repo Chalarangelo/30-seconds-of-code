@@ -7,9 +7,6 @@ import { previewSnippet, previewBlogSnippet } from 'fixtures/snippets';
 import { paginator } from 'fixtures/paginator';
 import { orders } from 'fixtures/sorter';
 
-console.warn = jest.fn();
-console.error = jest.fn();
-
 describe('<ListingPage />', () => {
   const snippetList = [previewSnippet, previewBlogSnippet];
   const listingName = 'Snippet list';

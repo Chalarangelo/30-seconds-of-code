@@ -4,9 +4,6 @@ import { renderWithContext } from 'test/utils';
 import HomePage from './index';
 import { collectionShelf, snippetShelf } from 'fixtures/shelves';
 
-console.warn = jest.fn();
-console.error = jest.fn();
-
 describe('<HomePage />', () => {
   const shelves = [collectionShelf, snippetShelf];
   const pageDescription = 'Browse 20 snippet collections on 30 seconds of code';

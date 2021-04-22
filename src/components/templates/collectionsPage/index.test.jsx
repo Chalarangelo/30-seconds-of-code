@@ -5,9 +5,6 @@ import { renderWithContext } from 'test/utils';
 import CollectionsPage from './index';
 import { collectionChip } from 'fixtures/collections';
 
-console.warn = jest.fn();
-console.error = jest.fn();
-
 describe('<CollectionsPage />', () => {
   const chipList = [collectionChip];
   const listingName = 'Collection list';

@@ -8,9 +8,6 @@ import {
   fullBlogSnippet,
 } from 'fixtures/snippets';
 
-console.warn = jest.fn();
-console.error = jest.fn();
-
 describe('<SnippetCardWrapper />', () => {
   let wrapper;
 

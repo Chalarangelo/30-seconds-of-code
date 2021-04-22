@@ -5,9 +5,6 @@ import { renderConnected } from 'test/utils';
 import literals from 'lang/en/client/search';
 import SearchPage from './index';
 
-console.warn = jest.fn();
-console.error = jest.fn();
-
 describe('<SearchPage />', () => {
   let wrapper, meta;
 
