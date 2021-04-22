@@ -30,7 +30,7 @@ const propTypes = {
 
 /**
  * Creates the `<head>` metadata content.
- * Dependent on `react-helmet` external module.
+ * Dependent on the `next/head` component.
  * @param {string} title - Page title (leave empty to use the website title)
  * @param {string} description - Page description (leave empty to use the website title)
  * @param {*} meta - Array of metadata objects (if any)
@@ -42,7 +42,6 @@ const propTypes = {
 const Meta = ({
   title,
   description = '',
-  meta = [],
   logoSrc = '/assets/logo.png',
   structuredData,
   breadcrumbsData,

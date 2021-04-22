@@ -1,5 +1,4 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import { cleanup } from '@testing-library/react';
 import { renderWithContext } from 'test/utils';
 import ListingPage from './index';
@@ -12,7 +11,7 @@ describe('<ListingPage />', () => {
   const listingName = 'Snippet list';
   const listingTitle = 'Snippet list';
   const pageDescription = 'Browse 100 snippets on 30 seconds of code';
-  let wrapper, meta;
+  let wrapper;
 
   beforeEach(() => {
     wrapper = renderWithContext(
@@ -30,7 +29,6 @@ describe('<ListingPage />', () => {
         }}
       />
     ).container;
-    meta = Helmet.peek();
   });
 
   afterEach(cleanup);
@@ -46,7 +44,7 @@ describe('<ListingPage />', () => {
   });
 
   it('should pass the correct data to the Meta component', () => {
-    expect(meta.title).toContain(listingName);
+    expect(document.title).toContain(listingName);
   });
 
   it('should pass the correct data to the SnippetList component', () => {

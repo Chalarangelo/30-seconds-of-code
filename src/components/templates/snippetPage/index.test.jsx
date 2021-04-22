@@ -1,5 +1,4 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import { cleanup } from '@testing-library/react';
 import { renderWithContext } from 'test/utils';
 import SnippetPage from './index';
@@ -8,7 +7,7 @@ import { breadcrumbs } from 'fixtures/breadcrumbs';
 
 describe('<SnippetPage />', () => {
   const cardTemplate = 'StandardSnippetCard';
-  let wrapper, meta, snippetCard;
+  let wrapper, snippetCard;
 
   beforeEach(() => {
     const utils = renderWithContext(
@@ -22,7 +21,6 @@ describe('<SnippetPage />', () => {
       />
     );
     wrapper = utils.container;
-    meta = Helmet.peek();
     snippetCard = wrapper.querySelector('.snippet-card');
   });
 
@@ -43,7 +41,7 @@ describe('<SnippetPage />', () => {
   });
 
   it('should pass the correct data to the Meta component', () => {
-    expect(meta.title).toContain(fullSnippet.title);
+    expect(document.title).toContain(fullSnippet.title);
   });
 
   it('should pass the breadcrumbs to the Breadcrumbs component', () => {
@@ -71,12 +69,11 @@ describe('<SnippetPage />', () => {
         />
       );
       wrapper = utils.container;
-      meta = Helmet.peek();
     });
 
     it('should pass the correct logoSrc to the Meta component', () => {
       expect(
-        meta.metaTags.find(({ property }) => property === 'og:image').content
+        document.head.querySelector('meta[property="og:image"]').content
       ).toContain(fullBlogSnippet.cover);
     });
   });
