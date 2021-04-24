@@ -13,7 +13,7 @@ export class ManifestSerializer {
     display = global.settings.manifest.display,
     dimensions = global.settings.manifest.iconDimensions,
     iconName = global.settings.manifest.iconPrefix,
-    outPath = global.settings.paths.jsonPath,
+    publicPath = global.settings.paths.publicPath,
   } = {}) => {
     const boundLog = Logger.bind('serializers.manifest.serialize');
     const cacheKey = manifestCacheKey;
@@ -36,7 +36,7 @@ export class ManifestSerializer {
     boundLog(`Generating ${manifestFileName}...`, 'info');
 
     await JSONSerializer.serializeToFile(
-      `${outPath}/${manifestFileName}`,
+      `${publicPath}/${manifestFileName}`,
       manifestObject
     );
 

@@ -14,7 +14,7 @@ export class FeedSerializer {
    * Generates the website's feed.xml from the JSON files of the pages.
    * @param {object} options - An options object, containing the following:
    *  - `feedFileName`: Name of the feed XML file.
-   *  - `xmlPath`: Path for the generated XML file.
+   *  - `publicPath`: Path for the generated XML file.
    *  - `websiteUrl`: Root URL of the website.
    *  - `websiteDescription`: Website description.
    *  - `websiteUrl`: Name of the website.
@@ -25,7 +25,7 @@ export class FeedSerializer {
   static serialize = async ({
     feedFileName = global.settings.feed.feedFileName,
     feedTemplatePath = global.settings.feed.feedTemplatePath,
-    xmlPath = global.settings.paths.xmlPath,
+    publicPath = global.settings.paths.publicPath,
     websiteUrl = global.settings.websiteUrl,
     websiteDescription = global.settings.websiteDescription,
     websiteName = global.settings.websiteName,
@@ -59,7 +59,7 @@ export class FeedSerializer {
       websiteUrl,
     });
 
-    await writeFile(`${xmlPath}/${feedFileName}`, feed);
+    await writeFile(`${publicPath}/${feedFileName}`, feed);
 
     boundLog('Generating feed complete', 'success');
   };

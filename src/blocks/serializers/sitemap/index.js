@@ -14,7 +14,7 @@ export class SitemapSerializer {
    * Generates the website's sitemap from the JSON files of the pages.
    * @param {object} options - An options object, containing the following:
    *  - `sitemapFileName`: Name of the sitemap XML file.
-   *  - `xmlPath`: Path for the generated XML file.
+   *  - `publicPath`: Path for the generated XML file.
    *  - `websiteUrl`: Root URL of the website.
    *
    * All `options` values default to values from `global.settings`.
@@ -23,7 +23,7 @@ export class SitemapSerializer {
   static serialize = async ({
     sitemapFileName = global.settings.sitemap.sitemapFileName,
     sitemapTemplatePath = global.settings.sitemap.sitemapTemplatePath,
-    xmlPath = global.settings.paths.xmlPath,
+    publicPath = global.settings.paths.publicPath,
     websiteUrl = global.settings.websiteUrl,
   } = {}) => {
     const boundLog = Logger.bind('serializers.sitemap.serialize');
@@ -40,7 +40,7 @@ export class SitemapSerializer {
       ],
     });
 
-    await writeFile(`${xmlPath}/${sitemapFileName}`, sitemap);
+    await writeFile(`${publicPath}/${sitemapFileName}`, sitemap);
 
     boundLog('Generating sitemap complete', 'success');
   };

@@ -11,7 +11,7 @@ export class ChirpSerializer {
     chirpFileName = global.settings.chirp.chirpFileName,
     rules = global.settings.chirp.chirpRules,
     maxCaptionLength = global.settings.chirp.maxCaptionLength,
-    jsonPath = global.settings.paths.jsonPath,
+    publicPath = global.settings.paths.publicPath,
   } = {}) => {
     const boundLog = Logger.bind('serializers.chirp.serialize');
     const nodes = Requirements.load().requirables.reduce((acc, s) => {
@@ -36,9 +36,9 @@ export class ChirpSerializer {
       return acc;
     }, []);
 
-    fs.ensureDirSync(`${jsonPath}`);
+    fs.ensureDirSync(`${publicPath}`);
     await writeFile(
-      `${jsonPath}/${chirpFileName}`,
+      `${publicPath}/${chirpFileName}`,
       JSON.stringify(nodes, null, 2)
     );
 

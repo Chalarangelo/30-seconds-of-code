@@ -55,6 +55,7 @@ export class AssetSerializer {
       assetPath: outPath,
       rawContentPath: contentPath,
       staticAssetPath: staticAssetPath,
+      publicPath,
     } = global.settings.paths;
     const configs = global.settings.configs;
     boundLog('Processing assets from config...', 'info');
@@ -100,13 +101,13 @@ export class AssetSerializer {
 
     boundLog(
       `Copying assets from ${path.resolve(outPath)} to ${path.resolve(
-        'public',
+        publicPath,
         staticAssetPath
       )}`,
       'info'
     );
-    fs.ensureDirSync(path.join('public', staticAssetPath));
-    fs.copySync(outPath, path.join('public', staticAssetPath));
+    fs.ensureDirSync(path.join(publicPath, staticAssetPath));
+    fs.copySync(outPath, path.join(publicPath, staticAssetPath));
     boundLog(`Copying assets complete`, 'success');
 
     return;
