@@ -6,6 +6,7 @@ import SnippetList from 'components/organisms/snippetList';
 
 const propTypes = {
   pageContext: PropTypes.shape({
+    slug: PropTypes.string.isRequired,
     paginator: PropTypes.paginator,
     sorter: PropTypes.sorter,
     snippetList: PropTypes.arrayOf(PropTypes.snippet),
@@ -17,7 +18,6 @@ const propTypes = {
     listingSublinks: PropTypes.arrayOf(PropTypes.shape({})),
     pageDescription: PropTypes.string.isRequired,
   }),
-  path: PropTypes.string.isRequired,
 };
 
 /**
@@ -26,6 +26,7 @@ const propTypes = {
  */
 const ListingPage = ({
   pageContext: {
+    slug,
     paginator,
     sorter,
     snippetList,
@@ -37,7 +38,6 @@ const ListingPage = ({
     listingSublinks = [],
     pageDescription,
   },
-  path,
 }) => {
   return (
     <>
@@ -46,7 +46,7 @@ const ListingPage = ({
         description={pageDescription}
         structuredData={{
           title: listingName,
-          slug: path,
+          slug,
           items: snippetList,
           type: 'listing',
         }}

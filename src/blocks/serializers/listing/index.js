@@ -70,6 +70,7 @@ export class ListingSerializer {
           snippetCollection.type === 'tag' && isFirstPage;
 
         const pageNum = i + 1;
+        const pageSlug = `${snippetCollection.slugPrefix}/${order}/${pageNum}`;
         const priority = isMainListingFirstPage
           ? 1.0
           : isTopLevelListingFirstPage || isMainListing
@@ -77,22 +78,16 @@ export class ListingSerializer {
           : isMainTagListing || isTopLevelListing
           ? 0.5
           : 0.25;
-        const outDir = `${outDirPath}${snippetCollection.slugPrefix}/${order}/${pageNum}`;
+        const outDir = `${outDirPath}${pageSlug}`;
 
         const chunkPairs = [
-          [
-            'index',
-            Chunk.createIndex(
-              `${snippetCollection.slugPrefix}/${order}/${pageNum}`,
-              'ListingPage',
-              priority
-            ),
-          ],
+          ['index', Chunk.createIndex(pageSlug, 'ListingPage', priority)],
           ['snippetList', { snippetList: pageSnippets }],
           [
             'metadata',
             {
               isMainListing,
+              slug: pageSlug,
               paginator: {
                 pageNumber: pageNum,
                 totalPages: paginatedSnippets.length,
