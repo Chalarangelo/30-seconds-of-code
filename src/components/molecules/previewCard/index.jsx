@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
+import Link from 'next/link';
 import Expertise from 'components/atoms/expertise';
 import TagList from 'components/atoms/tagList';
 
@@ -24,7 +25,9 @@ const PreviewCard = ({ snippet }) => {
       </div>
       <div className='card-data'>
         <h3 className='card-title txt-200 fs-xl f-alt'>
-          <a href={snippet.url}>{snippet.title}</a>
+          <Link href={snippet.url}>
+            <a>{snippet.title}</a>
+          </Link>
         </h3>
         <TagList tags={tags} />
       </div>

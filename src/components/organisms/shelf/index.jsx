@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
+import Link from 'next/link';
 import PreviewCard from 'components/molecules/previewCard';
 import CollectionChip from 'components/atoms/collectionChip';
 import PageTitle from 'components/atoms/pageTitle';
@@ -25,13 +26,14 @@ const Shelf = ({ shelf: { shelfType, shelfData, shelfName, shelfUrl } }) => {
   const classPrefix = `${shelfType}-shelf`;
   return shelfData.length ? (
     <>
-      <a
-        className={`${classPrefix}-title icon icon-chevron-right`}
-        href={shelfUrl}
-        data-link-title={literals.viewAll}
-      >
-        <PageTitle>{shelfName}</PageTitle>
-      </a>
+      <Link href={shelfUrl}>
+        <a
+          className={`${classPrefix}-title icon icon-chevron-right`}
+          data-link-title={literals.viewAll}
+        >
+          <PageTitle>{shelfName}</PageTitle>
+        </a>
+      </Link>
       <ul className={`shelf-list ${classPrefix}-list`}>
         {/* eslint-disable react/jsx-indent */}
         {shelfType === 'snippets'
