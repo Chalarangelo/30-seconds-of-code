@@ -11,6 +11,7 @@ const literals = {
   poweredBy: 'Powered by ',
   netlify: 'Netlify',
   gatsby: 'Gatsby',
+  next: 'Next.js',
 };
 
 export default literals;

@@ -36,6 +36,9 @@ const App = ({ Component, pageProps }) => {
     // No anchor found
     if (!destination) return;
 
+    // Forcefully excluded (custom)
+    if (destination.dataset.linkRel === 'no-route') return;
+
     // Download link
     if (destination.hasAttribute('download')) return;
 

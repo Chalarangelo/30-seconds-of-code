@@ -131,12 +131,12 @@ const Search = ({ isMainSearch = false }) => {
         aria-label={literals.searchSnippets}
         onFocus={() => {
           if (!isMainSearch && !searchIndexInitialized) {
-            fetch('/page-data/search/page-data.json')
+            fetch('/search-data.json')
               .then(data => data.json())
               .then(json => {
                 dispatch({
                   type: 'initializeIndex',
-                  index: json.result.pageContext.searchIndex,
+                  index: json.searchIndex,
                 });
                 setSearchIndexInitialized(true);
               });
@@ -169,6 +169,7 @@ const Search = ({ isMainSearch = false }) => {
           }
         }}
       />
+      {/* TODO: Linkify here and fix search in general */}
       <a
         className='search-btn'
         aria-hidden='true'
@@ -197,6 +198,7 @@ const Search = ({ isMainSearch = false }) => {
                 className={combineClassNames`flex ${
                   selectedResult === i ? 'selected' : ''
                 }`}
+                data-link-rel='no-route'
               >
                 <span className='result-title txt-150'>{item.title}</span>
                 {!item.search ? (
