@@ -140,6 +140,7 @@ export class Extractor {
 
       boundLog(`Writing statics to directories`, 'info');
       await this.writeStaticPages(allSnippetData.snippets, collections);
+      await this.writeSearchIndex(allSnippetData.snippets, collections);
       boundLog(`Finished writing statics`, 'success');
 
       return collections;
@@ -190,6 +191,27 @@ export class Extractor {
 
   static writeHubPages = (snippetCollections, featuredCollectionIds) => {
     return HubSerializer.serialize(snippetCollections, featuredCollectionIds);
+  };
+
+  static writeSearchIndex = (allSnippetData, collections) => {
+    const { publicPath } = global.settings.paths;
+    JSONSerializer.serializeToFile(`${publicPath}/search-data.json`, {
+      searchIndex: [
+        ...collections
+          .filter(s => s.isSearchable)
+          .map(s =>
+            new SnippetCollectionChip(s, {
+              withDescription: true,
+              withSearchTokens: true,
+            }).toObject()
+          ),
+        ...allSnippetData
+          .filter(s => s.isListed)
+          .map(s =>
+            new SnippetPreview(s, { withSearchTokens: true }).toObject()
+          ),
+      ],
+    });
   };
 
   static writeStaticPages = (allSnippetData, collections) => {
