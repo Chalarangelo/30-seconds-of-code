@@ -112,9 +112,9 @@ public
 .assets
 .content
 content/data
-static/assets
-src/xml/sitemap.xml
-src/xml/feed.xml
-src/json/manifest.webmanifest
-src/json/chirp.json
+public/assets
+public/sitemap.xml
+public/feed.xml
+public/manifest.webmanifest
+public/chirp.json
 snippet.png
