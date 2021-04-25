@@ -2,19 +2,19 @@ import React from 'react';
 import { cleanup, fireEvent } from '@testing-library/react';
 import { renderWithContext } from 'test/utils';
 import Search from './index';
+import { useRouter } from 'next/router';
 
-global.window = Object.create(window);
-Object.defineProperty(window, 'location', {
-  value: {
-    href: 'https://localhost/',
-  },
-});
-Object.defineProperty(window, 'history', {
-  value: {
-    replaceState: jest.fn(),
-    pushState: jest.fn(),
-  },
-});
+jest.mock('next/router', () => ({
+  useRouter: jest.fn(),
+}));
+const push = jest.fn();
+useRouter.mockImplementation(() => ({
+  push,
+  replace: jest.fn(),
+  pathname: '/',
+  query: {},
+  basePath: '/',
+}));
 
 describe('<Search />', () => {
   let wrapper, input;
@@ -34,12 +34,15 @@ describe('<Search />', () => {
   describe('when entering a keyphrase from non-main search', () => {
     it('should redirect to search', () => {
       fireEvent.keyPress(input, { charCode: 13 });
-      expect(window.location.href.indexOf('/search/')).not.toBe(-1);
+      expect(push.mock.calls.length).toBeGreaterThan(0);
     });
   });
 
   describe('when clicked and isMainSearch', () => {
     it('should push the state to history', () => {
+      const push = jest.fn();
+      useRouter.mockImplementation(() => ({ push }));
+
       wrapper = renderWithContext(<Search isMainSearch />, {
         initialState: {
           search: {
@@ -50,7 +53,7 @@ describe('<Search />', () => {
       }).container;
       input = wrapper.querySelector('input');
       fireEvent.keyUp(input, { target: { value: 'test' } });
-      expect(window.history.pushState.mock.calls.length).toBeGreaterThan(0);
+      expect(push.mock.calls.length).toBeGreaterThan(0);
     });
   });
 });
