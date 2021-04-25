@@ -8,9 +8,8 @@ describe('<StaticPage />', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = renderWithContext(
-      <StaticPage pageContext={{ stringLiterals: aboutLiterals }} />
-    ).container;
+    wrapper = renderWithContext(<StaticPage stringLiterals={aboutLiterals} />)
+      .container;
   });
 
   afterEach(cleanup);

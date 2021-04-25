@@ -7,19 +7,17 @@ import cardComponents from 'components/organisms/snippetCard';
 import RecommendationList from 'components/organisms/recommendationList';
 
 const propTypes = {
-  pageContext: PropTypes.shape({
-    snippet: PropTypes.snippet.isRequired,
-    cardTemplate: PropTypes.string,
-    recommendedSnippets: PropTypes.arrayOf(PropTypes.snippet),
-    recommendedCollection: PropTypes.chip,
-    pageDescription: PropTypes.string.isRequired,
-    breadcrumbs: PropTypes.arrayOf(
-      PropTypes.shape({
-        url: PropTypes.string,
-        name: PropTypes.string,
-      })
-    ),
-  }),
+  snippet: PropTypes.snippet.isRequired,
+  cardTemplate: PropTypes.string,
+  recommendedSnippets: PropTypes.arrayOf(PropTypes.snippet),
+  recommendedCollection: PropTypes.chip,
+  pageDescription: PropTypes.string.isRequired,
+  breadcrumbs: PropTypes.arrayOf(
+    PropTypes.shape({
+      url: PropTypes.string,
+      name: PropTypes.string,
+    })
+  ),
 };
 
 /**
@@ -27,15 +25,12 @@ const propTypes = {
  * Used to render all snippet pages on the website.
  */
 const SnippetPage = ({
-  pageContext: {
-    snippet,
-    cardTemplate,
-    recommendedSnippets = [],
-    recommendedCollection,
-    breadcrumbs,
-    pageDescription,
-  },
-  pageContext,
+  snippet,
+  cardTemplate,
+  recommendedSnippets = [],
+  recommendedCollection,
+  breadcrumbs,
+  pageDescription,
 }) => {
   const SnippetCard = cardComponents[cardTemplate];
   const isBlogSnippet = cardTemplate === 'BlogSnippetCard';
@@ -65,11 +60,7 @@ const SnippetPage = ({
         breadcrumbsData={breadcrumbs}
         canonical={snippet.slug}
       />
-      <Shell
-        pageContext={
-          process.env.NODE_ENV === 'development' ? pageContext : null
-        }
-      >
+      <Shell>
         <Breadcrumbs breadcrumbs={breadcrumbs} />
         <SnippetCard snippet={snippet} />
         <RecommendationList

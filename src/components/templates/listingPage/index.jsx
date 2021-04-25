@@ -5,19 +5,17 @@ import Shell from 'components/organisms/shell';
 import SnippetList from 'components/organisms/snippetList';
 
 const propTypes = {
-  pageContext: PropTypes.shape({
-    slug: PropTypes.string.isRequired,
-    paginator: PropTypes.paginator,
-    sorter: PropTypes.sorter,
-    snippetList: PropTypes.arrayOf(PropTypes.snippet),
-    listingName: PropTypes.string,
-    listingTitle: PropTypes.string,
-    listingDescription: PropTypes.string,
-    listingImage: PropTypes.string,
-    listingType: PropTypes.string,
-    listingSublinks: PropTypes.arrayOf(PropTypes.shape({})),
-    pageDescription: PropTypes.string.isRequired,
-  }),
+  slug: PropTypes.string.isRequired,
+  paginator: PropTypes.paginator,
+  sorter: PropTypes.sorter,
+  snippetList: PropTypes.arrayOf(PropTypes.snippet),
+  listingName: PropTypes.string,
+  listingTitle: PropTypes.string,
+  listingDescription: PropTypes.string,
+  listingImage: PropTypes.string,
+  listingType: PropTypes.string,
+  listingSublinks: PropTypes.arrayOf(PropTypes.shape({})),
+  pageDescription: PropTypes.string.isRequired,
 };
 
 /**
@@ -25,19 +23,17 @@ const propTypes = {
  * Used to render the /list/p/1 page and any other listing pages.
  */
 const ListingPage = ({
-  pageContext: {
-    slug,
-    paginator,
-    sorter,
-    snippetList,
-    listingName,
-    listingTitle,
-    listingDescription,
-    listingImage,
-    listingType,
-    listingSublinks = [],
-    pageDescription,
-  },
+  slug,
+  paginator,
+  sorter,
+  snippetList,
+  listingName,
+  listingTitle,
+  listingDescription,
+  listingImage,
+  listingType,
+  listingSublinks = [],
+  pageDescription,
 }) => {
   return (
     <>

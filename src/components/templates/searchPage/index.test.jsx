@@ -8,9 +8,7 @@ describe('<SearchPage />', () => {
   let wrapper;
 
   beforeEach(() => {
-    const utils = renderConnected(
-      <SearchPage pageContext={{ pageDescription: '' }} />
-    );
+    const utils = renderConnected(<SearchPage pageDescription='' />);
     wrapper = utils.container;
   });
 

@@ -6,31 +6,29 @@ import Shelf from 'components/organisms/shelf';
 import literals from 'lang/en/client/common';
 
 const propTypes = {
-  pageContext: PropTypes.shape({
-    pageDescription: PropTypes.string.isRequired,
-    shelves: PropTypes.arrayOf(
-      PropTypes.shape({
-        type: PropTypes.oneOf(['snippets', 'collections']),
-        shelfName: PropTypes.string,
-        shelfUrl: PropTypes.string,
-        snippetList: PropTypes.arrayOf(PropTypes.snippet),
-        chipList: PropTypes.arrayOf(
-          PropTypes.shape({
-            url: PropTypes.string,
-            name: PropTypes.string,
-            icon: PropTypes.string,
-          })
-        ),
-      })
-    ),
-  }),
+  pageDescription: PropTypes.string.isRequired,
+  shelves: PropTypes.arrayOf(
+    PropTypes.shape({
+      type: PropTypes.oneOf(['snippets', 'collections']),
+      shelfName: PropTypes.string,
+      shelfUrl: PropTypes.string,
+      snippetList: PropTypes.arrayOf(PropTypes.snippet),
+      chipList: PropTypes.arrayOf(
+        PropTypes.shape({
+          url: PropTypes.string,
+          name: PropTypes.string,
+          icon: PropTypes.string,
+        })
+      ),
+    })
+  ),
 };
 
 /**
  * Renders the home page.
  * Used to render the / page (home).
  */
-const HomePage = ({ pageContext: { shelves, pageDescription } }) => {
+const HomePage = ({ shelves, pageDescription }) => {
   return (
     <>
       <Meta

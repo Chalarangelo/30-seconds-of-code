@@ -16,17 +16,15 @@ describe('<ListingPage />', () => {
   beforeEach(() => {
     wrapper = renderWithContext(
       <ListingPage
-        pageContext={{
-          snippetList,
-          paginator,
-          sorter: {
-            orders,
-            selected: 'Popularity',
-          },
-          listingName,
-          listingTitle,
-          pageDescription,
+        snippetList={snippetList}
+        paginator={paginator}
+        sorter={{
+          orders,
+          selected: 'Popularity',
         }}
+        listingName={listingName}
+        listingTitle={listingTitle}
+        pageDescription={pageDescription}
       />
     ).container;
   });

@@ -12,12 +12,10 @@ describe('<SnippetPage />', () => {
   beforeEach(() => {
     const utils = renderWithContext(
       <SnippetPage
-        pageContext={{
-          snippet: fullSnippet,
-          cardTemplate,
-          breadcrumbs,
-          pageDescription: '',
-        }}
+        snippet={fullSnippet}
+        cardTemplate={cardTemplate}
+        breadcrumbs={breadcrumbs}
+        pageDescription=''
       />
     );
     wrapper = utils.container;
@@ -60,12 +58,10 @@ describe('<SnippetPage />', () => {
     beforeEach(() => {
       const utils = renderWithContext(
         <SnippetPage
-          pageContext={{
-            snippet: fullBlogSnippet,
-            cardTemplate: 'BlogSnippetCard',
-            pageDescription: '',
-            breadcrumbs,
-          }}
+          snippet={fullBlogSnippet}
+          cardTemplate='BlogSnippetCard'
+          pageDescription=''
+          breadcrumbs={breadcrumbs}
         />
       );
       wrapper = utils.container;
