@@ -1,49 +1,9 @@
 import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import {
-  getURLParameters,
-  throttle,
-  getBaseURL,
-  getRootURL,
-  combineClassNames,
-} from 'utils';
+import { useRouter } from 'next/router';
+import { getURLParameters, throttle, combineClassNames } from 'utils';
 import { useSearch } from 'state/search';
 import literals from 'lang/en/client/search';
-
-/**
- * Handles browser history updates as necessary, depending on the given value.
- * @param {string} value - The keyphrase used to update the history.
- */
-const handleHistoryUpdate = value => {
-  if (
-    typeof window !== 'undefined' &&
-    typeof window.location !== 'undefined' &&
-    typeof window.history !== 'undefined'
-  ) {
-    const encodedValue = encodeURIComponent(value);
-    const params = getURLParameters(window.location.href);
-    const baseURL = getBaseURL(window.location.href);
-    if (
-      value &&
-      params &&
-      params.keyphrase &&
-      (encodedValue.includes(params.keyphrase) ||
-        params.keyphrase.includes(encodedValue))
-    ) {
-      window.history.replaceState(
-        { keyphrase: value },
-        literals.resultsFor(value),
-        `${baseURL}${value ? `?keyphrase=${encodedValue}` : ''}`
-      );
-    } else {
-      window.history.pushState(
-        { keyphrase: value },
-        literals.resultsFor(value),
-        `${baseURL}${value ? `?keyphrase=${encodedValue}` : ''}`
-      );
-    }
-  }
-};
 
 const propTypes = {
   /** Is this component the main search component? */
@@ -58,6 +18,7 @@ const propTypes = {
  *   point to the search page.
  */
 const Search = ({ isMainSearch = false }) => {
+  const router = useRouter();
   const [
     { searchIndex, searchQuery, searchResults, searchTimestamp },
     dispatch,
@@ -69,6 +30,24 @@ const Search = ({ isMainSearch = false }) => {
   const [selectedResult, setSelectedResult] = React.useState(-1);
 
   const hasResults = value.trim().length > 1 && searchResults.length !== 0;
+
+  const handleHistoryUpdate = value => {
+    const encodedValue = encodeURIComponent(value);
+    const { pathname, query } = router;
+    const newURL = `${pathname}${value ? `?keyphrase=${encodedValue}` : ''}`;
+
+    if (
+      value &&
+      query &&
+      query.keyphrase &&
+      (encodedValue.includes(query.keyphrase) ||
+        query.keyphrase.includes(encodedValue))
+    ) {
+      router.replace(newURL, undefined, { shallow: true });
+    } else {
+      router.push(newURL, undefined, { shallow: true });
+    }
+  };
 
   React.useEffect(() => {
     if (isMainSearch) {
@@ -155,21 +134,22 @@ const Search = ({ isMainSearch = false }) => {
             typeof document.activeElement.blur === 'function'
           ) {
             document.activeElement.blur();
-            const rootURL = getRootURL(window.location.href);
+            const { basePath } = router;
             if (!isMainSearch) {
               if (selectedResult !== -1 && selectedResult !== 4) {
-                window.location.href = `${rootURL}${searchResults[selectedResult].url}`;
+                router.push(`${basePath}${searchResults[selectedResult].url}`);
               } else {
                 const encodedValue = encodeURIComponent(value);
-                window.location.href = `${rootURL}/search/${
-                  value ? `?keyphrase=${encodedValue}` : ''
-                }`;
+                router.push(
+                  `${basePath}/search/${
+                    value ? `?keyphrase=${encodedValue}` : ''
+                  }`
+                );
               }
             }
           }
         }}
       />
-      {/* TODO: Linkify here and fix search in general */}
       <a
         className='search-btn'
         aria-hidden='true'
@@ -185,9 +165,9 @@ const Search = ({ isMainSearch = false }) => {
             ...searchResults.slice(0, 4),
             {
               title: `Search for "${value.trim()}"`,
-              url: `${getRootURL(
-                window.location.href
-              )}/search/?keyphrase=${encodeURIComponent(value)}`,
+              url: `${router.basePath}/search?keyphrase=${encodeURIComponent(
+                value
+              )}`,
               search: true,
             },
           ].map((item, i) => (
