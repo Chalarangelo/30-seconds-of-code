@@ -5,12 +5,10 @@ import Shell from 'components/organisms/shell';
 import CollectionList from 'components/molecules/collectionList';
 
 const propTypes = {
-  pageContext: PropTypes.shape({
-    pageDescription: PropTypes.string.isRequired,
-    chipList: PropTypes.arrayOf(PropTypes.chip),
-    listingName: PropTypes.string,
-    listingTitle: PropTypes.string,
-  }),
+  pageDescription: PropTypes.string.isRequired,
+  chipList: PropTypes.arrayOf(PropTypes.chip),
+  listingName: PropTypes.string,
+  listingTitle: PropTypes.string,
 };
 
 /**
@@ -18,7 +16,10 @@ const propTypes = {
  * Used to render the /list/p/1 page and any other listing pages.
  */
 const CollectionsPage = ({
-  pageContext: { chipList, listingName, listingTitle, pageDescription },
+  chipList,
+  listingName,
+  listingTitle,
+  pageDescription,
 }) => {
   return (
     <>

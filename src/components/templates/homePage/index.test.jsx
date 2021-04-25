@@ -11,12 +11,7 @@ describe('<HomePage />', () => {
 
   beforeEach(() => {
     wrapper = renderWithContext(
-      <HomePage
-        pageContext={{
-          shelves,
-          pageDescription,
-        }}
-      />
+      <HomePage shelves={shelves} pageDescription={pageDescription} />
     ).container;
   });
 

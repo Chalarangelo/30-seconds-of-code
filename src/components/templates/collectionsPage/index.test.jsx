@@ -14,12 +14,10 @@ describe('<CollectionsPage />', () => {
   beforeEach(() => {
     wrapper = renderWithContext(
       <CollectionsPage
-        pageContext={{
-          chipList,
-          listingName,
-          listingTitle,
-          pageDescription,
-        }}
+        chipList={chipList}
+        listingName={listingName}
+        listingTitle={listingTitle}
+        pageDescription={pageDescription}
       />
     ).container;
   });
