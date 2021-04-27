@@ -1,4 +1,3 @@
-import React from 'react';
 import { cleanup, fireEvent } from '@testing-library/react';
 import { renderWithContext } from 'test/utils';
 import Search from './index';

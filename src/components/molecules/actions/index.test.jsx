@@ -1,4 +1,3 @@
-import React from 'react';
 import { cleanup } from '@testing-library/react';
 import { fullSnippet, fullReactSnippet } from 'fixtures/snippets';
 import { renderWithContext } from 'test/utils';

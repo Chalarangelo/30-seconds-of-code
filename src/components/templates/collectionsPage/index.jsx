@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import Meta from 'components/organisms/meta';
 import Shell from 'components/organisms/shell';

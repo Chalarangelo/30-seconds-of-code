@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'typedefs/proptypes';
 import { useGtagEvent } from 'components/hooks';
 import copyToClipboard from 'copy-to-clipboard';
@@ -16,12 +16,12 @@ const propTypes = {
  */
 const CopyButton = ({ text }) => {
   const gtagCallback = useGtagEvent('click');
-  const [active, setActive] = React.useState(false);
-  const [copying, setCopying] = React.useState(false);
-  const [buttonText, setButtonText] = React.useState(literals.copyToClipboard);
+  const [active, setActive] = useState(false);
+  const [copying, setCopying] = useState(false);
+  const [buttonText, setButtonText] = useState(literals.copyToClipboard);
 
   // If `copying` is `true`, then play the activation animation.
-  React.useEffect(() => {
+  useEffect(() => {
     if (!copying) return;
     copyToClipboard(text);
     setTimeout(() => setActive(true), 100);
@@ -29,7 +29,7 @@ const CopyButton = ({ text }) => {
   }, [copying]);
 
   // If `active` is `false`, set `copying` to false (finished activation animation).
-  React.useEffect(() => {
+  useEffect(() => {
     if (active) return;
     setCopying(false);
     setButtonText(literals.copyToClipboard);

@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import PropTypes from 'typedefs/proptypes';
 import literals from 'lang/en/client/common';
 
@@ -18,7 +18,7 @@ const propTypes = {
  * @param {string} jsCode - JS code for the snippet preview
  */
 const SnippetPreview = ({ scopeId, scopedCss, htmlCode, jsCode }) => {
-  React.useEffect(() => {
+  useEffect(() => {
     if (!jsCode) return;
     const s = document.createElement('script');
     s.type = 'text/javascript';

@@ -1,4 +1,3 @@
-import React from 'react';
 import Link from 'next/link';
 import Meta from 'components/organisms/meta';
 import PageTitle from 'components/atoms/pageTitle';

@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import { useGtagEvent } from 'components/hooks';
 import {

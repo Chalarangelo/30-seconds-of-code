@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import CodeBlock from './index';
 import { codeBlockHtml } from 'fixtures/html';

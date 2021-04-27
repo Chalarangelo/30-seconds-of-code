@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useRef } from 'react';
 import PropTypes from 'typedefs/proptypes';
 import Link from 'next/link';
 import { combineClassNames } from 'utils';
@@ -14,8 +14,8 @@ const propTypes = {
 const Sorter = ({ sorter: { orders, selectedOrder } }) => {
   if (!orders || !orders.length || orders.length === 1) return null;
 
-  const [toggled, setToggled] = React.useState(false);
-  const sorterRef = React.useRef();
+  const [toggled, setToggled] = useState(false);
+  const sorterRef = useRef();
 
   const handleSorterClick = e => {
     if (!toggled || e.target.className.includes('selected')) {

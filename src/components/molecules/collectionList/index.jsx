@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import PageTitle from 'components/atoms/pageTitle';
 import CollectionChip from 'components/atoms/collectionChip';

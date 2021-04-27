@@ -1,4 +1,3 @@
-import React from 'react';
 import { ShellProvider } from './shell';
 import { SearchProvider } from './search';
 

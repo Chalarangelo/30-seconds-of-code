@@ -1,4 +1,3 @@
-import React from 'react';
 import { renderWithContext } from 'test/utils';
 import { cleanup } from '@testing-library/react';
 import CssSnippetCard from './index';
