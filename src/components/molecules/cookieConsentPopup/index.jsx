@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'typedefs/proptypes';
 import Link from 'next/link';
 import { Button } from 'components/atoms/button';
@@ -14,9 +14,9 @@ const propTypes = {};
 const CookieConsentPopup = () => {
   const dispatch = useShellDispatch();
 
-  const [hasMounted, setHasMounted] = React.useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setHasMounted(true);
   }, []);
 

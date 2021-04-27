@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import PreviewCard from './index';
 import { previewSnippet, previewBlogSnippet } from 'fixtures/snippets';

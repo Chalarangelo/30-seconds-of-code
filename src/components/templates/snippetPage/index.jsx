@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import Meta from 'components/organisms/meta';
 import Breadcrumbs from 'components/molecules/breadcrumbs';

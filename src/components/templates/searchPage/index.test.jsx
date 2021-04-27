@@ -1,4 +1,3 @@
-import React from 'react';
 import { cleanup } from '@testing-library/react';
 import { renderConnected } from 'test/utils';
 import literals from 'lang/en/client/search';

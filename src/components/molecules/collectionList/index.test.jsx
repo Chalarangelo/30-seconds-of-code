@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import CollectionList from './index';
 import { collectionChip } from 'fixtures/collections';

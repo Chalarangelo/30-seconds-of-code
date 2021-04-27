@@ -7,7 +7,12 @@
         "targets": "> 0.5% and last 4 versions and not dead and not ie>0 and not op_mini all and not and_uc>0 and not edge<79"
       }
     ],
-    "@babel/preset-react"
+    [
+      "@babel/preset-react",
+      {
+        "runtime": "automatic"
+      }
+    ]
   ],
   "plugins": [
     "@babel/plugin-proposal-class-properties"

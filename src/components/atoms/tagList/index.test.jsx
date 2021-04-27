@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import TagList from './index';
 import { tags } from 'fixtures/tags';

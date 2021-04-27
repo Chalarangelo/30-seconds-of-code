@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import PreviewCard from 'components/molecules/previewCard';
 import CollectionChip from 'components/atoms/collectionChip';

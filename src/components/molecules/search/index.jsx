@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'typedefs/proptypes';
 import { useRouter } from 'next/router';
 import { getURLParameters, throttle, combineClassNames } from 'utils';
@@ -23,11 +23,11 @@ const Search = ({ isMainSearch = false }) => {
     { searchIndex, searchQuery, searchResults, searchTimestamp },
     dispatch,
   ] = useSearch();
-  const [value, setValue] = React.useState('');
-  const [searchIndexInitialized, setSearchIndexInitialized] = React.useState(
+  const [value, setValue] = useState('');
+  const [searchIndexInitialized, setSearchIndexInitialized] = useState(
     false
   );
-  const [selectedResult, setSelectedResult] = React.useState(-1);
+  const [selectedResult, setSelectedResult] = useState(-1);
 
   const hasResults = value.trim().length > 1 && searchResults.length !== 0;
 
@@ -49,7 +49,7 @@ const Search = ({ isMainSearch = false }) => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (isMainSearch) {
       const params = getURLParameters(window.location.href);
       let initValue = searchQuery;
@@ -68,7 +68,7 @@ const Search = ({ isMainSearch = false }) => {
     }
   }, []);
 
-  React.useEffect(
+  useEffect(
     throttle(() => {
       if (!isMainSearch && !searchIndexInitialized) return;
       dispatch({ type: 'pushNewQuery', query: value });

@@ -1,11 +1,11 @@
-import React from 'react';
+import { useRef } from 'react';
 import { render, cleanup, fireEvent } from '@testing-library/react';
 import { useClickOutside } from './index';
 
 describe('useClickOutside', () => {
   const handler = jest.fn();
   const Tester = () => {
-    const testRef = React.useRef();
+    const testRef = useRef();
     useClickOutside(testRef, handler);
 
     return (

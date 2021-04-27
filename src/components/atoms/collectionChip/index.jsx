@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import Link from 'next/link';
 import literals from 'lang/en/client/common';

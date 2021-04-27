@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import Paginator from 'components/molecules/paginator';
 import Sorter from 'components/molecules/sorter';

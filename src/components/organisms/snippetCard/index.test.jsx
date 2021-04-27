@@ -1,4 +1,3 @@
-import React from 'react';
 import { cleanup } from '@testing-library/react';
 import { renderWithContext } from 'test/utils';
 import cards from './index';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { renderWithContext } from 'test/utils';
 import { cleanup, fireEvent, waitFor } from '@testing-library/react';
 import literals from 'lang/en/client/common';

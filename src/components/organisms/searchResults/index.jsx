@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'typedefs/proptypes';
 import { useSearchState } from 'state/search';
 import PageBackdrop from 'components/atoms/pageBackdrop';
