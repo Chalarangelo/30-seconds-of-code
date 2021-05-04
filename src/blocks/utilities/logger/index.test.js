@@ -71,7 +71,6 @@ describe('Logger', () => {
   describe('bind', () => {
     let boundLog;
     const procName = 'my-proc';
-    const subprocName = 'sub';
 
     beforeAll(() => {
       boundLog = Logger.bind(procName);
@@ -80,14 +79,6 @@ describe('Logger', () => {
     it('returns a bound instance of the logger function', () => {
       boundLog('Hello');
       expect(writeFn.mock.calls[0][0]).toBe(`[${bold(procName)}] Hello\n`);
-    });
-
-    it('allows the bound instance to be rebound', () => {
-      const reboundLog = boundLog.rebind(subprocName);
-      reboundLog('Hello');
-      expect(writeFn.mock.calls[0][0]).toBe(
-        `[${bold(`${procName}:${subprocName}`)}] Hello\n`
-      );
     });
   });
 
