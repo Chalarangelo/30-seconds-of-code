@@ -13,7 +13,7 @@
 
   &:hover, &:focus {
     box-shadow: var(--shd-el-04dp);
-    text-decoration: none;
+    animation: none;
     outline: none;
   }
 
