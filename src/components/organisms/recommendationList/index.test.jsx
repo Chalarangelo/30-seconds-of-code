@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import RecommendationList from './index';
 import {
@@ -6,9 +5,6 @@ import {
   previewBlogSnippet,
   searchResultSnippet,
 } from 'fixtures/snippets';
-
-console.warn = jest.fn();
-console.error = jest.fn();
 
 describe('<RecommendationList />', () => {
   const snippetList = [previewSnippet, previewBlogSnippet, searchResultSnippet];

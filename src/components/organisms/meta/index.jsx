@@ -1,12 +1,9 @@
-import React from 'react';
 import PropTypes from 'typedefs/proptypes';
-import Helmet from 'react-helmet';
+import Head from 'next/head';
 import settings from 'settings/global';
 import literals from 'lang/en/client/common';
 import { generateStructuredData } from 'utils';
 import { useShellState } from 'state/shell';
-
-require('styles/index.scss'); // Do not change this to `import`, it's not going to work, no clue why
 
 const propTypes = {
   title: PropTypes.string,
@@ -32,7 +29,7 @@ const propTypes = {
 
 /**
  * Creates the `<head>` metadata content.
- * Dependent on `react-helmet` external module.
+ * Dependent on the `next/head` component.
  * @param {string} title - Page title (leave empty to use the website title)
  * @param {string} description - Page description (leave empty to use the website title)
  * @param {*} meta - Array of metadata objects (if any)
@@ -44,7 +41,6 @@ const propTypes = {
 const Meta = ({
   title,
   description = '',
-  meta = [],
   logoSrc = '/assets/logo.png',
   structuredData,
   breadcrumbsData,
@@ -52,12 +48,16 @@ const Meta = ({
 }) => {
   const { acceptsCookies } = useShellState();
   const metaDescription = description || literals.siteDescription;
+  const titleString = title
+    ? `${title} - ${literals.siteName}`
+    : literals.siteName;
 
   // Load scripts
   const scripts = [];
   if (structuredData) {
     scripts.push({
       type: 'application/ld+json',
+      key: 'structured-data',
       innerHTML: JSON.stringify(
         generateStructuredData(structuredData, settings, logoSrc)
       ),
@@ -67,6 +67,7 @@ const Meta = ({
   if (breadcrumbsData) {
     scripts.push({
       type: 'application/ld+json',
+      key: 'breadcrumb-data',
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
@@ -84,11 +85,13 @@ const Meta = ({
 
   if (typeof window !== 'undefined' && acceptsCookies) {
     scripts.push({
-      async: '',
+      async: true,
+      key: 'gtag-id',
       src: `https://www.googletagmanager.com/gtag/js?id=${settings.googleAnalytics.id}`,
     });
     // GTAG
     scripts.push({
+      key: 'gtag',
       innerHTML: `
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -103,6 +106,7 @@ const Meta = ({
     // Send a pageview only the first time that gtag is added (is this safe?)
     if (typeof gtag === 'undefined') {
       scripts.push({
+        key: 'gtag-pageview',
         innerHTML: `
         var hasFired = false;
         if(!hasFired){
@@ -114,6 +118,7 @@ const Meta = ({
 
     // Hotjar
     scripts.push({
+      key: 'hotjar',
       innerHTML: `
       (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -128,69 +133,119 @@ const Meta = ({
   }
 
   return (
-    <Helmet
-      htmlAttributes={{ lang: 'en' }}
-      title={title ? title : literals.siteName}
-      titleTemplate={title ? `%s - ${literals.siteName}` : '%s'}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          name: `viewport`,
-          content: `width=device-width, initial-scale=1`,
-        },
-        {
-          property: `og:title`,
-          content: title
-            ? `${title} - ${literals.siteName}`
-            : literals.siteName,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          property: `og:image`,
-          content: `${settings.websiteUrl}${logoSrc}`,
-        },
-        {
-          name: `twitter:site`,
-          content: settings.twitterAccount,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary_large_image`,
-        },
-        {
-          name: `twitter:title`,
-          content: title ? `${title}` : literals.siteName,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-        {
-          name: `twitter:image`,
-          content: `${settings.websiteUrl}${logoSrc}`,
-        },
-      ].concat(meta)}
-      script={scripts}
-    >
+    <Head>
+      <title>{titleString}</title>
+      <meta name='description' content={metaDescription} />
+      <meta name='viewport' content='width=device-width, initial-scale=1' />
+      <meta property='og:title' content={titleString} />
+      <meta property='og:description' content={metaDescription} />
+      <meta property='og:type' content='website' />
+      <meta property='og:image' content={`${settings.websiteUrl}${logoSrc}`} />
+      <meta name='twitter:site' content={settings.twitterAccount} />
+      <meta name='twitter:card' content='summary_large_image' />
+      <meta
+        name='twitter:title'
+        content={title ? `${title}` : literals.siteName}
+      />
+      <meta name='twitter:description' content={metaDescription} />
+      <meta name='twitter:image' content={`${settings.websiteUrl}${logoSrc}`} />
+      {scripts.map(({ key, innerHTML, ...rest }) => (
+        <script
+          key={key}
+          dangerouslySetInnerHTML={{ __html: innerHTML }}
+          {...rest}
+        />
+      ))}
       <link
         rel='preconnect dns-prefetch'
         key='preconnect-google-analytics'
         href='https://www.google-analytics.com'
       />
+      <link
+        key='link-sitemap'
+        rel='sitemap'
+        href='/sitemap.xml'
+        type='application/xml'
+      />
+      <link
+        key='link-rss-feed'
+        rel='alternate'
+        href='/feed'
+        type='application/rss+xml'
+        title='30secondsofcode.org'
+      />
+      <link
+        key='link-opensearch'
+        rel='search'
+        href='/opensearch.xml'
+        type='application/opensearchdescription+xml'
+        title='Snippet search'
+      />
+      <link
+        rel='icon'
+        href={`/assets/icons/favicon-32x32.png?v=${settings.manifestCacheKey}`}
+        type='image/png'
+      />
+      ,
+      <link
+        rel='manifest'
+        href='/manifest.webmanifest'
+        crossOrigin='anonymous'
+      />
+      ,
+      <meta name='theme-color' content='#1e253d' />,
+      <link
+        rel='apple-touch-icon'
+        sizes='48x48'
+        href={`/assets/icons/icon-48x48.png?v=${settings.manifestCacheKey}`}
+      />
+      ,
+      <link
+        rel='apple-touch-icon'
+        sizes='72x72'
+        href={`/assets/icons/icon-72x72.png?v=${settings.manifestCacheKey}`}
+      />
+      ,
+      <link
+        rel='apple-touch-icon'
+        sizes='96x96'
+        href={`/assets/icons/icon-96x96.png?v=${settings.manifestCacheKey}`}
+      />
+      ,
+      <link
+        rel='apple-touch-icon'
+        sizes='144x144'
+        href={`/assets/icons/icon-144x144.png?v=${settings.manifestCacheKey}`}
+      />
+      ,
+      <link
+        rel='apple-touch-icon'
+        sizes='192x192'
+        href={`/assets/icons/icon-192x192.png?v=${settings.manifestCacheKey}`}
+      />
+      ,
+      <link
+        rel='apple-touch-icon'
+        sizes='256x256'
+        href={`/assets/icons/icon-256x256.png?v=${settings.manifestCacheKey}`}
+      />
+      ,
+      <link
+        rel='apple-touch-icon'
+        sizes='384x384'
+        href={`/assets/icons/icon-384x384.png?v=${settings.manifestCacheKey}`}
+      />
+      ,
+      <link
+        rel='apple-touch-icon'
+        sizes='512x512'
+        href={`/assets/icons/icon-512x512.png?v=${settings.manifestCacheKey}`}
+      />
+      ,
       {canonical ? (
         <link rel='canonical' href={`${settings.websiteUrl}${canonical}`} />
       ) : null}
-    </Helmet>
+    </Head>
   );
 };
 

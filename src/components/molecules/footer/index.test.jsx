@@ -1,9 +1,5 @@
-import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import Footer from './index';
-
-console.warn = jest.fn();
-console.error = jest.fn();
 
 describe('<Footer />', () => {
   let wrapper;

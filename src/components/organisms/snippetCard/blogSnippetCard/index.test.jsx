@@ -1,12 +1,7 @@
-import React from 'react';
 import { renderWithContext } from 'test/utils';
 import { cleanup } from '@testing-library/react';
 import BlogSnippetCard from './index';
 import { fullBlogSnippet } from 'fixtures/snippets';
-
-console.warn = jest.fn();
-console.error = jest.fn();
-console.log = jest.fn();
 
 describe('<BlogSnippetCard />', () => {
   let wrapper, card, tagList;

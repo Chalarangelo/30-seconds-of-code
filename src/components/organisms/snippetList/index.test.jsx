@@ -1,4 +1,3 @@
-import React from 'react';
 import { cleanup } from '@testing-library/react';
 import { renderWithContext } from 'test/utils';
 import SnippetList from './index';
@@ -6,9 +5,6 @@ import { paginator } from 'fixtures/paginator';
 import { orders } from 'fixtures/sorter';
 import { previewSnippet, previewBlogSnippet } from 'fixtures/snippets';
 import { anchorItems } from 'fixtures/listingAnchors';
-
-console.warn = jest.fn();
-console.error = jest.fn();
 
 describe('<SnippetList />', () => {
   const sorter = { orders, selected: 'Popularity' };

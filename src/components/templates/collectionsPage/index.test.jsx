@@ -1,32 +1,24 @@
-import React from 'react';
-import Helmet from 'react-helmet';
 import { cleanup } from '@testing-library/react';
 import { renderWithContext } from 'test/utils';
 import CollectionsPage from './index';
 import { collectionChip } from 'fixtures/collections';
-
-console.warn = jest.fn();
-console.error = jest.fn();
 
 describe('<CollectionsPage />', () => {
   const chipList = [collectionChip];
   const listingName = 'Collection list';
   const listingTitle = 'Collection list';
   const pageDescription = 'Browse 20 snippet collections on 30 seconds of code';
-  let wrapper, meta;
+  let wrapper;
 
   beforeEach(() => {
     wrapper = renderWithContext(
       <CollectionsPage
-        pageContext={{
-          chipList,
-          listingName,
-          listingTitle,
-          pageDescription,
-        }}
+        chipList={chipList}
+        listingName={listingName}
+        listingTitle={listingTitle}
+        pageDescription={pageDescription}
       />
     ).container;
-    meta = Helmet.peek();
   });
 
   afterEach(cleanup);
@@ -42,7 +34,7 @@ describe('<CollectionsPage />', () => {
   });
 
   it('should pass the correct data to the Meta component', () => {
-    expect(meta.title).toContain(listingName);
+    expect(document.title).toContain(listingName);
   });
 
   it('should pass the correct data to the CollectionList component', () => {

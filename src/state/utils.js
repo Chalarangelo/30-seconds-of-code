@@ -1,4 +1,4 @@
-import React from 'react';
+import { createContext, useContext, useReducer, useEffect } from 'react';
 
 /**
  * Creates all the necessary components for a state context provider.
@@ -23,18 +23,18 @@ const createStateProvider = ({
   };
 
   // Contexts
-  const StateContext = React.createContext();
-  const DispatchContext = React.createContext();
+  const StateContext = createContext();
+  const DispatchContext = createContext();
   StateContext.displayName = stateContextName;
   DispatchContext.displayName = dispatchContextName;
 
   // Hooks
   const useState = () => {
-    const context = React.useContext(StateContext);
+    const context = useContext(StateContext);
     return context;
   };
   const useDispatch = () => {
-    const context = React.useContext(DispatchContext);
+    const context = useContext(DispatchContext);
     return context;
   };
   const useStateDispatch = () => {
@@ -42,12 +42,12 @@ const createStateProvider = ({
   };
 
   const StateProvider = ({ children, initialState }) => {
-    const [state, dispatch] = React.useReducer(
+    const [state, dispatch] = useReducer(
       reducer,
       initialState ? initialState : initializeState()
     );
 
-    React.useEffect(() => {
+    useEffect(() => {
       if (persistKey === null) return;
       try {
         window.localStorage.setItem(persistKey, JSON.stringify(state));

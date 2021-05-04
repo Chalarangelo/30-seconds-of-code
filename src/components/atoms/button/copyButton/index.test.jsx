@@ -1,4 +1,3 @@
-import React from 'react';
 import { renderWithContext } from 'test/utils';
 import { cleanup, fireEvent, waitFor } from '@testing-library/react';
 import literals from 'lang/en/client/common';
@@ -6,7 +5,6 @@ import copyToClipboard from 'copy-to-clipboard';
 import CopyButton from './index';
 
 const copyToClipboardMock = jest.fn();
-console.error = jest.fn();
 jest.mock('copy-to-clipboard');
 jest.useFakeTimers();
 

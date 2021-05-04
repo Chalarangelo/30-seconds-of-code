@@ -1,5 +1,6 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'typedefs/proptypes';
+import Link from 'next/link';
 import { Button } from 'components/atoms/button';
 import { useShellDispatch } from 'state/shell';
 import literals from 'lang/en/client/cookieConsent';
@@ -13,9 +14,9 @@ const propTypes = {};
 const CookieConsentPopup = () => {
   const dispatch = useShellDispatch();
 
-  const [hasMounted, setHasMounted] = React.useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setHasMounted(true);
   }, []);
 
@@ -26,9 +27,9 @@ const CookieConsentPopup = () => {
       <p data-nosnippet className='fs-xs'>
         {literals.cookieDisclaimer}
         {literals.learnMore}
-        <a className='footer-link' href='/cookies'>
-          {literals.cookiePolicy}
-        </a>
+        <Link href='/cookies'>
+          <a>{literals.cookiePolicy}</a>
+        </Link>
         {'.'}
         <br />
         {literals.whatYouAccept}

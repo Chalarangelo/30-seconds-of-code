@@ -1,142 +1,124 @@
-import React from 'react';
-import Helmet from 'react-helmet';
 import { cleanup } from '@testing-library/react';
 import { renderWithContext } from 'test/utils';
 import Meta from './index';
 import literals from 'lang/en/client/common';
 import settings from 'settings/global';
-import { decideCookies } from 'state/shell';
 import metadata from 'fixtures/metadata';
 
-console.warn = jest.fn();
-console.error = jest.fn();
-
 describe('<Meta />', () => {
-  // eslint-disable-next-line no-unused-vars
-  let wrapper, helmet, store;
-
   beforeAll(() => {
-    wrapper = renderWithContext(<Meta />);
-    helmet = Helmet.peek();
+    renderWithContext(<Meta />);
   });
 
   afterAll(cleanup);
 
-  it('should use the correct locale', () => {
-    expect(helmet.htmlAttributes.lang).toBe('en');
-  });
-
   it('should render the website title when not provided a title', () => {
-    expect(helmet.title).toBe(literals.siteName);
+    expect(document.title).toBe(literals.siteName);
   });
 
   it('should render the website description when not provided a description', () => {
-    expect(helmet.metaTags.find(v => v.name === 'description').content).toBe(
-      literals.siteDescription
-    );
+    expect(
+      document.head.querySelector('meta[name="description"]').content
+    ).toBe(literals.siteDescription);
   });
 
   it('should render the correct viewport meta tag', () => {
-    expect(helmet.metaTags.find(v => v.name === 'viewport').content).toBe(
+    expect(document.head.querySelector('meta[name="viewport"]').content).toBe(
       'width=device-width, initial-scale=1'
     );
   });
 
   it('should render the correct OpenGraph meta tags', () => {
-    expect(helmet.metaTags.find(v => v.property === 'og:title').content).toBe(
-      literals.siteName
-    );
     expect(
-      helmet.metaTags.find(v => v.property === 'og:description').content
+      document.head.querySelector('meta[property="og:title"]').content
+    ).toBe(literals.siteName);
+    expect(
+      document.head.querySelector('meta[property="og:description"]').content
     ).toBe(literals.siteDescription);
-    expect(helmet.metaTags.find(v => v.property === 'og:type').content).toBe(
-      'website'
-    );
+    expect(
+      document.head.querySelector('meta[property="og:type"]').content
+    ).toBe('website');
   });
 
   it('should render the correct Twitter meta tags', () => {
-    expect(helmet.metaTags.find(v => v.name === 'twitter:site').content).toBe(
-      settings.twitterAccount
-    );
-    expect(helmet.metaTags.find(v => v.name === 'twitter:card').content).toBe(
-      'summary_large_image'
-    );
-    expect(helmet.metaTags.find(v => v.name === 'twitter:title').content).toBe(
-      literals.siteName
-    );
     expect(
-      helmet.metaTags.find(v => v.name === 'twitter:description').content
+      document.head.querySelector('meta[name="twitter:site"]').content
+    ).toBe(settings.twitterAccount);
+    expect(
+      document.head.querySelector('meta[name="twitter:card"]').content
+    ).toBe('summary_large_image');
+    expect(
+      document.head.querySelector('meta[name="twitter:title"]').content
+    ).toBe(literals.siteName);
+    expect(
+      document.head.querySelector('meta[name="twitter:description"]').content
     ).toBe(literals.siteDescription);
   });
 
   it('should render a link tag to Google Analytics', () => {
     expect(
-      helmet.linkTags.find(v => v.href === 'https://www.google-analytics.com')
+      document.head.querySelector(
+        'link[href="https://www.google-analytics.com"]'
+      )
     ).not.toBe(null);
   });
 
   describe('with custom attributes', () => {
     beforeAll(() => {
-      store = renderWithContext(<Meta {...metadata} />).store;
-      helmet = Helmet.peek();
+      renderWithContext(<Meta {...metadata} />);
     });
 
     it('should render the correct title when provided a title', () => {
-      expect(helmet.title).toBe(`${metadata.title} - ${literals.siteName}`);
+      expect(document.title).toBe(`${metadata.title} - ${literals.siteName}`);
     });
 
     it('should render the correct description when provided a description', () => {
-      expect(helmet.metaTags.find(v => v.name === 'description').content).toBe(
-        metadata.description
-      );
+      expect(
+        document.head.querySelector('meta[name="description"]').content
+      ).toBe(metadata.description);
     });
 
     it('should render the correct OpenGraph meta tags', () => {
-      expect(helmet.metaTags.find(v => v.property === 'og:title').content).toBe(
-        `${metadata.title} - ${literals.siteName}`
-      );
       expect(
-        helmet.metaTags.find(v => v.property === 'og:description').content
+        document.head.querySelector('meta[property="og:title"]').content
+      ).toBe(`${metadata.title} - ${literals.siteName}`);
+      expect(
+        document.head.querySelector('meta[property="og:description"]').content
       ).toBe(metadata.description);
-      expect(helmet.metaTags.find(v => v.property === 'og:image').content).toBe(
-        `${settings.websiteUrl}${metadata.logoSrc}`
-      );
+      expect(
+        document.head.querySelector('meta[property="og:image"]').content
+      ).toBe(`${settings.websiteUrl}${metadata.logoSrc}`);
     });
 
     it('should render the correct Twitter meta tags', () => {
       expect(
-        helmet.metaTags.find(v => v.name === 'twitter:title').content
+        document.head.querySelector('meta[name="twitter:title"]').content
       ).toBe(metadata.title);
       expect(
-        helmet.metaTags.find(v => v.name === 'twitter:description').content
+        document.head.querySelector('meta[name="twitter:description"]').content
       ).toBe(metadata.description);
       expect(
-        helmet.metaTags.find(v => v.name === 'twitter:image').content
+        document.head.querySelector('meta[name="twitter:image"]').content
       ).toBe(`${settings.websiteUrl}${metadata.logoSrc}`);
     });
 
-    it('should render any additional meta tags passed to the component', () => {
-      expect(
-        helmet.metaTags.find(v => v.name === metadata.meta[0].name).content
-      ).toBe(metadata.meta[0].content);
-    });
-
     it('should render a link tag to the canonical url', () => {
-      expect(helmet.linkTags.find(v => v.rel === 'canonical').href).toBe(
+      expect(document.head.querySelector('link[rel="canonical"]').href).toBe(
         `${settings.websiteUrl}${metadata.canonical}`
       );
     });
 
     it('should render the passed structured data', () => {
       expect(
-        helmet.scriptTags.find(v => v.innerHTML.indexOf('TechArticle') !== -1)
-          .type
+        [...document.head.querySelectorAll('script')].find(
+          v => v.innerHTML.indexOf('TechArticle') !== -1
+        ).type
       ).toBe('application/ld+json');
     });
 
     it('should render the passed breadcrumbs structured data', () => {
       expect(
-        helmet.scriptTags.find(
+        [...document.head.querySelectorAll('script')].find(
           v => v.innerHTML.indexOf('BreadcrumbList') !== -1
         ).type
       ).toBe('application/ld+json');
@@ -145,27 +127,26 @@ describe('<Meta />', () => {
 
   describe('with cookies accepted', () => {
     beforeAll(() => {
-      wrapper = renderWithContext(<Meta />, {
+      renderWithContext(<Meta />, {
         initialState: { shell: { acceptsCookies: true } },
       });
-      helmet = Helmet.peek();
     });
 
     it('should render the appropriate scripts for analytics', () => {
       expect(
-        helmet.scriptTags.find(
+        [...document.head.querySelectorAll('script')].find(
           v => v.src && v.src.indexOf(settings.googleAnalytics.id) !== -1
         )
       ).not.toBe(null);
       expect(
-        helmet.scriptTags.find(
+        [...document.head.querySelectorAll('script')].find(
           v =>
             v.innerHTML &&
             v.innerHTML.indexOf(settings.googleAnalytics.id) !== -1
         )
       ).not.toBe(null);
       expect(
-        helmet.scriptTags.find(
+        [...document.head.querySelectorAll('script')].find(
           v =>
             v.innerHTML &&
             v.innerHTML.indexOf(`window.gtag('event', 'page_view'`) !== -1

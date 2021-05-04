@@ -1,11 +1,7 @@
-import React from 'react';
-import { cleanup, render } from '@testing-library/react';
+import { cleanup } from '@testing-library/react';
 import { fullSnippet, fullReactSnippet } from 'fixtures/snippets';
 import { renderWithContext } from 'test/utils';
 import Actions from './index';
-
-console.warn = jest.fn();
-console.error = jest.fn();
 
 global.window = Object.create(window);
 global.gtag = Object.create(() => null);

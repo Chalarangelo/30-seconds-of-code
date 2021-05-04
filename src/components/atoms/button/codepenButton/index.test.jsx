@@ -1,11 +1,9 @@
-import React from 'react';
 import { renderWithContext } from 'test/utils';
 import { cleanup } from '@testing-library/react';
 import literals from 'lang/en/client/common';
 import { codepenHtmlCode, codepenCssCode } from 'fixtures/strings';
 import CodepenButton from './index';
 
-console.error = jest.fn();
 jest.useFakeTimers();
 
 describe('<CodepenButton />', () => {

@@ -1,5 +1,6 @@
-import React from 'react';
+import { useState, useRef } from 'react';
 import PropTypes from 'typedefs/proptypes';
+import Link from 'next/link';
 import { combineClassNames } from 'utils';
 import { useClickOutside } from 'components/hooks';
 
@@ -13,14 +14,16 @@ const propTypes = {
 const Sorter = ({ sorter: { orders, selectedOrder } }) => {
   if (!orders || !orders.length || orders.length === 1) return null;
 
-  const [toggled, setToggled] = React.useState(false);
-  const sorterRef = React.useRef();
+  const [toggled, setToggled] = useState(false);
+  const sorterRef = useRef();
 
   const handleSorterClick = e => {
     if (!toggled || e.target.className.includes('selected')) {
       e.preventDefault();
       if (!toggled) setToggled(true);
       else setToggled(false);
+    } else if (toggled) {
+      setToggled(false);
     }
   };
 
@@ -39,22 +42,22 @@ const Sorter = ({ sorter: { orders, selectedOrder } }) => {
             a.title === selectedOrder ? -1 : b.title === selectedOrder ? 1 : 0
           )
           .map(order => (
-            <a
-              key={`${order.url}`}
-              className={combineClassNames`btn no-shd link-btn order-btn txt-100
-                ${
-                  order.title === selectedOrder
-                    ? `selected icon ${
-                        toggled ? 'icon-chevron-up' : 'icon-chevron-down'
-                      }`
-                    : ''
-                }
-              `}
-              href={order.url}
-              onClick={e => handleSorterClick(e)}
-            >
-              {order.title}
-            </a>
+            <Link key={`${order.url}`} href={order.url}>
+              <a
+                className={combineClassNames`btn no-shd link-btn order-btn txt-100
+                  ${
+                    order.title === selectedOrder
+                      ? `selected icon ${
+                          toggled ? 'icon-chevron-up' : 'icon-chevron-down'
+                        }`
+                      : ''
+                  }
+                `}
+                onClick={e => handleSorterClick(e)}
+              >
+                {order.title}
+              </a>
+            </Link>
           ))}
       </div>
     </div>

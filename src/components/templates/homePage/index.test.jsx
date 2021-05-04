@@ -1,11 +1,7 @@
-import React from 'react';
 import { cleanup } from '@testing-library/react';
 import { renderWithContext } from 'test/utils';
 import HomePage from './index';
 import { collectionShelf, snippetShelf } from 'fixtures/shelves';
-
-console.warn = jest.fn();
-console.error = jest.fn();
 
 describe('<HomePage />', () => {
   const shelves = [collectionShelf, snippetShelf];
@@ -14,12 +10,7 @@ describe('<HomePage />', () => {
 
   beforeEach(() => {
     wrapper = renderWithContext(
-      <HomePage
-        pageContext={{
-          shelves,
-          pageDescription,
-        }}
-      />
+      <HomePage shelves={shelves} pageDescription={pageDescription} />
     ).container;
   });
 

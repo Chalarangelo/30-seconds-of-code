@@ -94,9 +94,9 @@ yarn-error.log
 # Force NPM
 yarn.lock
 
-# gatsby files
-.cache/
-public
+# Next.js files
+.next
+out/
 
 # Mac files
 .DS_Store
@@ -112,8 +112,10 @@ public
 .assets
 .content
 content/data
-static/assets
-src/xml/sitemap.xml
-src/xml/feed.xml
-src/json/chirp.json
+public/assets
+public/sitemap.xml
+public/feed.xml
+public/manifest.webmanifest
+public/chirp.json
+public/search-data.json
 snippet.png

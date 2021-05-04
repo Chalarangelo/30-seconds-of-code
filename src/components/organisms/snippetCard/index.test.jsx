@@ -1,4 +1,3 @@
-import React from 'react';
 import { cleanup } from '@testing-library/react';
 import { renderWithContext } from 'test/utils';
 import cards from './index';
@@ -7,9 +6,6 @@ import {
   fullCssSnippet,
   fullBlogSnippet,
 } from 'fixtures/snippets';
-
-console.warn = jest.fn();
-console.error = jest.fn();
 
 describe('<SnippetCardWrapper />', () => {
   let wrapper;

@@ -1,5 +1,5 @@
-import React from 'react';
 import PropTypes from 'typedefs/proptypes';
+import Link from 'next/link';
 import { combineClassNames } from 'utils';
 import { Button } from 'components/atoms/button';
 import literals from 'lang/en/client/paginator';
@@ -42,13 +42,14 @@ const Paginator = ({
   return (
     <div className={combineClassNames`paginator flex j-center ${className}`}>
       {pageNumber > 1 && (
-        <a
-          className='btn no-shd link-btn previous-page fs-no md:fs-sm icon icon-chevron-left'
-          href={`${baseUrl}/${slugOrderingSegment}/${pageNumber - 1}`}
-          rel='prev'
-        >
-          {literals.previous}
-        </a>
+        <Link href={`${baseUrl}/${slugOrderingSegment}/${pageNumber - 1}`}>
+          <a
+            className='btn no-shd link-btn previous-page fs-no md:fs-sm icon icon-chevron-left'
+            rel='prev'
+          >
+            {literals.previous}
+          </a>
+        </Link>
       )}
       {buttons.map((buttonNumber, i) =>
         buttonNumber === '...' ? (
@@ -60,23 +61,23 @@ const Paginator = ({
             {buttonNumber}
           </Button>
         ) : (
-          <a
+          <Link
             key={buttonNumber}
-            className='btn no-shd link-btn fs-md'
             href={`${baseUrl}/${slugOrderingSegment}/${buttonNumber}`}
           >
-            {buttonNumber}
-          </a>
+            <a className='btn no-shd link-btn fs-md'>{buttonNumber}</a>
+          </Link>
         )
       )}
       {pageNumber < totalPages && (
-        <a
-          className='btn no-shd link-btn next-page fs-no md:fs-sm icon icon-chevron-right'
-          href={`${baseUrl}/${slugOrderingSegment}/${pageNumber + 1}`}
-          rel='next'
-        >
-          {literals.next}
-        </a>
+        <Link href={`${baseUrl}/${slugOrderingSegment}/${pageNumber + 1}`}>
+          <a
+            className='btn no-shd link-btn next-page fs-no md:fs-sm icon icon-chevron-right'
+            rel='next'
+          >
+            {literals.next}
+          </a>
+        </Link>
       )}
     </div>
   );

@@ -1,5 +1,6 @@
-import React from 'react';
+import { useEffect } from 'react';
 import PropTypes from 'typedefs/proptypes';
+import Link from 'next/link';
 import { combineClassNames } from 'utils/index';
 
 const propTypes = {
@@ -18,7 +19,7 @@ const propTypes = {
  */
 const ListingAnchors = ({ items = false, ...rest }) => {
   // Scroll the selected tag into view, so that users always know where they are
-  React.useEffect(() => {
+  useEffect(() => {
     if (typeof document !== 'undefined') {
       // Wrap in try-catch to be able to test in Jest/Enzyme
       try {
@@ -40,14 +41,15 @@ const ListingAnchors = ({ items = false, ...rest }) => {
     <ul className='list-section listing-anchors flex' {...rest}>
       {items.map(item => (
         <li key={item.url}>
-          <a
-            className={combineClassNames`btn no-shd link-btn ${
-              item.selected ? 'selected' : undefined
-            }`}
-            href={item.url}
-          >
-            {item.name}
-          </a>
+          <Link href={item.url}>
+            <a
+              className={combineClassNames`btn no-shd link-btn ${
+                item.selected ? 'selected' : undefined
+              }`}
+            >
+              {item.name}
+            </a>
+          </Link>
         </li>
       ))}
     </ul>

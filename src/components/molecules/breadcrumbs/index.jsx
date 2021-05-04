@@ -1,5 +1,5 @@
-import React from 'react';
 import PropTypes from 'typedefs/proptypes';
+import Link from 'next/link';
 
 const breadcrumbPropTypes = {
   breadcrumbs: PropTypes.arrayOf(
@@ -18,12 +18,11 @@ const Breadcrumbs = ({ breadcrumbs }) => (
     <ol className='flex m-0'>
       {breadcrumbs.map(({ name, url }, i) => (
         <li key={`breadcrumb-${i}`} className='breadcrumb-item inline-block'>
-          <a
-            href={url}
-            aria-current={i === breadcrumbs.length - 1 ? 'page' : null}
-          >
-            {name}
-          </a>
+          <Link href={url}>
+            <a aria-current={i === breadcrumbs.length - 1 ? 'page' : null}>
+              {name}
+            </a>
+          </Link>
         </li>
       ))}
     </ol>

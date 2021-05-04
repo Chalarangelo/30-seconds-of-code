@@ -1,10 +1,6 @@
-import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import PreviewCard from './index';
 import { previewSnippet, previewBlogSnippet } from 'fixtures/snippets';
-
-console.warn = jest.fn();
-console.error = jest.fn();
 
 describe('<PreviewCard />', () => {
   let wrapper, card, expertise, anchor, tags;

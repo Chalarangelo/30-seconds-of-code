@@ -1,4 +1,4 @@
-import React from 'react';
+import Link from 'next/link';
 import Meta from 'components/organisms/meta';
 import PageTitle from 'components/atoms/pageTitle';
 import PageBackdrop from 'components/atoms/pageBackdrop';
@@ -27,9 +27,9 @@ const NotFoundPage = () => (
         }
         subText={literals.notFoundDescription}
       >
-        <a className='btn btn-home fs-md icon icon-home' href='/'>
-          {literals.goHome}
-        </a>
+        <Link href='/'>
+          <a className='btn btn-home fs-md icon icon-home'>{literals.goHome}</a>
+        </Link>
       </PageBackdrop>
     </Shell>
   </>

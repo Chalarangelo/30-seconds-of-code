@@ -4,9 +4,13 @@ import sharp from 'sharp';
 import glob from 'glob';
 import { Logger } from 'blocks/utilities/logger';
 
+// Image asset constants
 const supportedExtensions = ['jpeg', 'jpg', 'png', 'webp', 'tif', 'tiff'];
 const maxWidth = 800;
 const outputQuality = 80;
+// Icon asset constants
+const dimensions = [48, 72, 96, 144, 192, 256, 384, 512];
+const iconOutName = 'icon';
 
 /**
  * Serializes assets.
@@ -51,6 +55,7 @@ export class AssetSerializer {
       assetPath: outPath,
       rawContentPath: contentPath,
       staticAssetPath: staticAssetPath,
+      publicPath,
     } = global.settings.paths;
     const configs = global.settings.configs;
     boundLog('Processing assets from config...', 'info');
@@ -90,19 +95,48 @@ export class AssetSerializer {
       'success'
     );
 
+    boundLog('Processing icons...', 'info');
+    await this.processIcons();
+    boundLog(`Processing icons complete`, 'success');
+
     boundLog(
       `Copying assets from ${path.resolve(outPath)} to ${path.resolve(
-        'static',
+        publicPath,
         staticAssetPath
       )}`,
       'info'
     );
-    if (global.settings.env === 'PRODUCTION') {
-      fs.ensureDirSync(path.join('static', staticAssetPath));
-      fs.copySync(outPath, path.join('static', staticAssetPath));
-    }
+    fs.ensureDirSync(path.join(publicPath, staticAssetPath));
+    fs.copySync(outPath, path.join(publicPath, staticAssetPath));
     boundLog(`Copying assets complete`, 'success');
 
     return;
+  };
+
+  /**
+   * Meant for manual use only via the console API.
+   * Takes a PNG image and produces all the icon assets necessary for the website.
+   */
+  static processIcons = (iconName = '30s-icon.png') => {
+    const { rawAssetPath: inPath, assetPath } = global.settings.paths;
+    const iconPath = path.join(inPath, iconName);
+    const outPath = path.join(assetPath, 'icons');
+
+    fs.ensureDirSync(outPath);
+
+    return new Promise((resolve, reject) => {
+      const img = sharp(iconPath);
+      return Promise.all([
+        img.resize({ width: 32 }).png().toFile(`${outPath}/favicon-32x32.png`),
+        ...dimensions.map(d =>
+          img
+            .resize({ width: d })
+            .png()
+            .toFile(`${outPath}/${iconOutName}-${d}x${d}.png`)
+        ),
+      ])
+        .then(() => resolve())
+        .catch(() => reject());
+    });
   };
 }

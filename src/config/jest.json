@@ -15,9 +15,6 @@
     ".cache",
     "public"
   ],
-  "transformIgnorePatterns": [
-    "node_modules/(?!(gatsby)/)"
-  ],
   "globals": {
     "__PATH_PREFIX__": "",
     "__BASE_PATH__": ""
@@ -25,5 +22,8 @@
   "testURL": "https://localhost",
   "testMatch": [
     "**/?(*.)+(test).[jt]s?(x)"
+  ],
+  "setupFiles": [
+    "./src/test/mocks.js"
   ]
 }

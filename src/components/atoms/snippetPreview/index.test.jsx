@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import SnippetPreview from './index';
 import { scopedCssCode, scopedHtmlCode } from 'fixtures/strings';

@@ -1,5 +1,3 @@
-import React from 'react';
-import Helmet from 'react-helmet';
 import { cleanup } from '@testing-library/react';
 import { renderWithContext } from 'test/utils';
 import ListingPage from './index';
@@ -7,33 +5,27 @@ import { previewSnippet, previewBlogSnippet } from 'fixtures/snippets';
 import { paginator } from 'fixtures/paginator';
 import { orders } from 'fixtures/sorter';
 
-console.warn = jest.fn();
-console.error = jest.fn();
-
 describe('<ListingPage />', () => {
   const snippetList = [previewSnippet, previewBlogSnippet];
   const listingName = 'Snippet list';
   const listingTitle = 'Snippet list';
   const pageDescription = 'Browse 100 snippets on 30 seconds of code';
-  let wrapper, meta;
+  let wrapper;
 
   beforeEach(() => {
     wrapper = renderWithContext(
       <ListingPage
-        pageContext={{
-          snippetList,
-          paginator,
-          sorter: {
-            orders,
-            selected: 'Popularity',
-          },
-          listingName,
-          listingTitle,
-          pageDescription,
+        snippetList={snippetList}
+        paginator={paginator}
+        sorter={{
+          orders,
+          selected: 'Popularity',
         }}
+        listingName={listingName}
+        listingTitle={listingTitle}
+        pageDescription={pageDescription}
       />
     ).container;
-    meta = Helmet.peek();
   });
 
   afterEach(cleanup);
@@ -49,7 +41,7 @@ describe('<ListingPage />', () => {
   });
 
   it('should pass the correct data to the Meta component', () => {
-    expect(meta.title).toContain(listingName);
+    expect(document.title).toContain(listingName);
   });
 
   it('should pass the correct data to the SnippetList component', () => {

@@ -1,4 +1,4 @@
-import React from 'react';
+import Link from 'next/link';
 import literals from 'lang/en/client/footer';
 import settings from 'settings/global';
 
@@ -8,13 +8,13 @@ import settings from 'settings/global';
 const Footer = () => (
   <footer>
     <p className='fs-xs'>
-      <a className='footer-link' href='/about'>
-        {literals.about}
-      </a>
-      <a className='footer-link' href='/cookies'>
-        {literals.cookies}
-      </a>
-      <a className='footer-link' href='/feed'>
+      <Link href='/about'>
+        <a className='footer-link'>{literals.about}</a>
+      </Link>
+      <Link href='/cookies'>
+        <a className='footer-link'>{literals.cookies}</a>
+      </Link>
+      <a className='footer-link' href='/feed' data-link-rel='no-route'>
         {literals.feed}
       </a>
       <a
@@ -63,11 +63,11 @@ const Footer = () => (
       </a>
       {', '}
       <a
-        href='https://www.gatsbyjs.org/'
+        href='https://nextjs.org/'
         rel='noopener noreferrer nofollow'
         target='_blank'
       >
-        {literals.gatsby}
+        {literals.next}
       </a>
       {' & '}
       <a

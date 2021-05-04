@@ -1,10 +1,6 @@
-import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import Breadcrumbs from './index';
 import { breadcrumbs } from 'fixtures/breadcrumbs';
-
-console.warn = jest.fn();
-console.error = jest.fn();
 
 describe('<Breadcrumbs />', () => {
   let wrapper;

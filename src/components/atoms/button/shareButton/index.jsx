@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'typedefs/proptypes';
 import { useGtagEvent } from 'components/hooks';
 import literals from 'lang/en/client/common';
@@ -13,8 +13,8 @@ const propTypes = {
  */
 const ShareButton = ({ pageTitle, pageDescription }) => {
   const gtagCallback = useGtagEvent('click');
-  const [canShare, setCanShare] = React.useState(false);
-  React.useEffect(() => {
+  const [canShare, setCanShare] = useState(false);
+  useEffect(() => {
     if (navigator && navigator.share) setCanShare(true);
   }, []);
 

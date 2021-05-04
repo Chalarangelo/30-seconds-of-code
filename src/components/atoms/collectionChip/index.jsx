@@ -1,5 +1,5 @@
-import React from 'react';
 import PropTypes from 'typedefs/proptypes';
+import Link from 'next/link';
 import literals from 'lang/en/client/common';
 
 const propTypes = {
@@ -18,7 +18,9 @@ const CollectionChip = ({ chip }) => {
       <div className={`card-icon br-xl icon icon-${chip.icon}`}></div>
       <div className='card-data'>
         <h3 className='card-title txt-200 fs-xl f-alt'>
-          <a href={chip.url}>{chip.title}</a>
+          <Link href={chip.url}>
+            <a>{chip.title}</a>
+          </Link>
         </h3>
         <span className='card-subtitle fs-xs'>
           {literals.snippetCollection}
@@ -30,12 +32,13 @@ const CollectionChip = ({ chip }) => {
     </li>
   ) : (
     <li className='collection-chip srfc-01dp'>
-      <a
-        className={`collection-chip-link flex j-center a-center f-alt icon icon-${chip.icon}`}
-        href={chip.url}
-      >
-        {chip.title}
-      </a>
+      <Link href={chip.url}>
+        <a
+          className={`collection-chip-link flex j-center a-center f-alt icon icon-${chip.icon}`}
+        >
+          {chip.title}
+        </a>
+      </Link>
     </li>
   );
 };
