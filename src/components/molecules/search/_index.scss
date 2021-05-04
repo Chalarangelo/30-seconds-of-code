@@ -106,7 +106,7 @@ a.search-btn[aria-hidden="true"] {
       }
 
       &:hover, &:focus, &.selected {
-        text-decoration: none;
+        animation: none;
 
         .result-title, .result-tag {
           color: var(--clr-link);
