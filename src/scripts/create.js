@@ -6,7 +6,7 @@ export const build = async () => {
   Logger.log('Creation process is starting up...', 'info');
   Logger.breakLine();
 
-  if (process.argv < 4) {
+  if (process.argv.length < 4) {
     Logger.log(
       'Not enough arguments, 2 expected (submodule name and snippet name). Terminating...',
       'error'
