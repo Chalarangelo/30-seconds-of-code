@@ -1,11 +1,9 @@
 import PropTypes from 'typedefs/proptypes';
 import Link from 'next/link';
-import { combineClassNames } from 'utils';
 import { Button } from 'components/atoms/button';
 import literals from 'lang/en/client/paginator';
 
 const propTypes = {
-  className: PropTypes.string,
   paginator: PropTypes.paginator,
 };
 
@@ -15,7 +13,6 @@ const propTypes = {
  * @param {object} paginator - Pagination data fo the component.
  */
 const Paginator = ({
-  className,
   paginator: { pageNumber, totalPages, baseUrl, slugOrderingSegment },
 }) => {
   if (totalPages <= 1) return null;
@@ -36,7 +33,7 @@ const Paginator = ({
   else buttons = [1, '·', pageNumber, '·', totalPages];
 
   return (
-    <div className={combineClassNames`paginator flex j-center ${className}`}>
+    <div className='paginator flex j-center'>
       {pageNumber > 1 && (
         <Link href={`${baseUrl}/${slugOrderingSegment}/${pageNumber - 1}`}>
           <a
