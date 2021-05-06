@@ -22,22 +22,18 @@ const Paginator = ({
 
   /*
     Up to 3 buttons (apart from next and previous):
-    - page 1: 1,2,...{totalPages}
-    - page 2: 1,2....{totalPages}
-    - page 3: 1...3....{totalPages}
-    - page X: 1,... X...{totalPages}
-    - page {totalPages-2}: 1,...{totalPages-2}...{totalPages}
-    - page {totalPages-1}: 1,...{totalPages-1},{totalPages}
-    - page {totalPages}: 1,...{totalPages-1},{totalPages}
-    - totalPages < 3: all
+    - page 1: 1·2·{totalPages}
+    - page X: 1·X·{totalPages}
+    - page {totalPages}: 1·{totalPages-1}·{totalPages}
+    - totalPages <= 3: all
   */
   let buttons = [];
   if (totalPages <= 3)
     buttons = Array.from({ length: totalPages }, (v, i) => i + 1);
-  else if (pageNumber <= 2) buttons = [1, 2, '...', totalPages];
-  else if (totalPages - pageNumber <= 1)
-    buttons = [1, '...', totalPages - 1, totalPages];
-  else buttons = [1, '...', pageNumber, '...', totalPages];
+  else if (pageNumber === 1) buttons = [1, '·', 2, '·', totalPages];
+  else if (totalPages - pageNumber === 0)
+    buttons = [1, '·', totalPages - 1, '·', totalPages];
+  else buttons = [1, '·', pageNumber, '·', totalPages];
 
   return (
     <div className={combineClassNames`paginator flex j-center ${className}`}>
@@ -52,7 +48,7 @@ const Paginator = ({
         </Link>
       )}
       {buttons.map((buttonNumber, i) =>
-        buttonNumber === '...' ? (
+        buttonNumber === '·' ? (
           <span className='paginator-separator txt-050 fs-xl' key={`sep-${i}`}>
             {buttonNumber}
           </span>
