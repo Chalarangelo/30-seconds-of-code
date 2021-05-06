@@ -6,6 +6,7 @@
     margin: 0.25rem 0;
     padding: 0.625rem 0;
     box-sizing: border-box;
+    border-radius: 0;
     height: 44px;
     min-width: 44px;
     text-align: center;
@@ -14,12 +15,12 @@
 
     &.current-page {
       cursor: default;
+      color: var(--clr-txt-200);
     }
 
     &.previous-page, &.next-page {
       color: var(--clr-link);
       position: relative;
-      box-sizing: border-box;
       margin: 0.625rem 1rem;
 
       &:before {
@@ -27,10 +28,16 @@
         font-size: 28px;
         top: 0;
         line-height: 32px;
+        transition: all 0.3s ease;
 
         @media screen and (min-width: $layout-medium-breakpoint) {
           line-height: 44px;
         }
+      }
+
+      &:hover, &:focus {
+        transform: scale(1.05);
+        transform-origin: center;
       }
     }
 
