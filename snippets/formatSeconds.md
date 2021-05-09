@@ -14,8 +14,8 @@ const formatSeconds = s => {
   if (s < 0) s = 0;
   
   return [s / 3600, s / 60 % 60, s % 60]
-  	.map(v => `${Math.floor(v).toString().padStart(2, '0')}`)
-  	.join(':');
+    .map(v => `${Math.floor(v).toString().padStart(2, '0')}`)
+    .join(':');
 };
 ```
 
