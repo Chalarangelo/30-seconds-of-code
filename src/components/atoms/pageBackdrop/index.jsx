@@ -17,7 +17,6 @@ const propTypes = {
     PropTypes.node,
     PropTypes.arrayOf(PropTypes.node),
   ]),
-  rest: PropTypes.any,
 };
 
 /**
@@ -36,9 +35,8 @@ const PageBackdrop = ({
   subText,
   subTextClassName,
   children,
-  ...rest
 }) => (
-  <div className={combineClassNames`page-graphic f-center txt-050`} {...rest}>
+  <div className='page-graphic f-center txt-050'>
     <img src={backdropImage} />
     <p
       className={combineClassNames`page-backdrop-text f-center ${mainTextClassName}`}
