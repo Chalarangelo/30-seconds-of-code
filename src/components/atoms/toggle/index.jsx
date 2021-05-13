@@ -7,14 +7,13 @@ const propTypes = {
     PropTypes.node,
     PropTypes.arrayOf(PropTypes.node),
   ]),
-  rest: PropTypes.any,
 };
 
 /**
  * Simple toggle input component.
  * Uses an `<input>` element wrapped in a `<label>`.
  */
-const Toggle = ({ onChange, checked = false, children, ...rest }) => (
+const Toggle = ({ onChange, checked = false, children }) => (
   <label className='toggle flex a-center md:fs-md'>
     {children}
     <input
@@ -22,7 +21,6 @@ const Toggle = ({ onChange, checked = false, children, ...rest }) => (
       type='checkbox'
       className='toggle-switch'
       onChange={onChange}
-      {...rest}
     />
   </label>
 );
