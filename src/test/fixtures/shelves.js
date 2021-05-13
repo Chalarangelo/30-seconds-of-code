@@ -1,5 +1,8 @@
-import { previewSnippet, previewBlogSnippet } from './snippets';
+import SnippetFactory from './factories/snippet';
 import { collectionChip } from './collections';
+
+const previewSnippet = SnippetFactory.create('PreviewSnippet');
+const previewBlogSnippet = SnippetFactory.create('PreviewBlogSnippet');
 
 export const snippetShelf = {
   shelfType: 'snippets',

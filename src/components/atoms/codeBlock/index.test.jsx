@@ -1,7 +1,13 @@
 import { render, cleanup } from '@testing-library/react';
 import CodeBlock from './index';
-import { codeBlockHtml } from 'fixtures/html';
-import { javascript } from 'fixtures/languages';
+
+const language = {
+  short: 'js',
+  long: 'JavaScript',
+};
+
+const htmlContent =
+  '<span class="token keyword">const</span> <span class="token function-variable function">compose</span>';
 
 describe('<CodeBlock />', () => {
   let wrapper;
@@ -9,8 +15,8 @@ describe('<CodeBlock />', () => {
   beforeEach(() => {
     wrapper = render(
       <CodeBlock
-        language={javascript}
-        htmlContent={codeBlockHtml}
+        language={language}
+        htmlContent={htmlContent}
         className='special'
       />
     ).container;
@@ -24,7 +30,7 @@ describe('<CodeBlock />', () => {
 
   it('should append language class', () => {
     expect(
-      wrapper.querySelectorAll(`pre.language-${javascript.short}`)
+      wrapper.querySelectorAll(`pre.language-${language.short}`)
     ).toHaveLength(1);
   });
 
@@ -34,19 +40,11 @@ describe('<CodeBlock />', () => {
 
   it('should correctly set the data-code-language', () => {
     expect(
-      wrapper.querySelectorAll(`pre[data-code-language="${javascript.long}"]`)
+      wrapper.querySelectorAll(`pre[data-code-language="${language.long}"]`)
     ).toHaveLength(1);
   });
 
   it('should render passed HTML', () => {
-    expect(wrapper.innerHTML).toContain(
-      `<span class="token function-variable function">compose</span>`
-    );
-    expect(wrapper.innerHTML).toContain(
-      `<span class="token parameter">f<span class="token punctuation">,</span>`
-    );
-    expect(wrapper.innerHTML).toContain(
-      `<span class="token operator">=&gt;</span> <span class="token function">f</span>`
-    );
+    expect(wrapper.innerHTML).toContain(htmlContent);
   });
 });

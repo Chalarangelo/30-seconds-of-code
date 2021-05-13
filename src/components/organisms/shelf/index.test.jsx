@@ -1,8 +1,6 @@
 import { render, cleanup } from '@testing-library/react';
 import Shelf from './index';
-import { snippetShelf, collectionShelf } from 'fixtures/shelves';
-
-const listingName = 'Collections';
+import { snippetShelf, collectionShelf } from 'test/fixtures/shelves';
 
 describe('<Shelf />', () => {
   let wrapper, pageTitle;

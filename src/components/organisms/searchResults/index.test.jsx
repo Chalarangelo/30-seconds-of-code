@@ -1,7 +1,7 @@
 import { cleanup } from '@testing-library/react';
 import { renderWithContext } from 'test/utils';
 import SearchResults from './index';
-import { previewSnippet, previewBlogSnippet } from 'fixtures/snippets';
+import SnippetFactory from 'test/fixtures/factories/snippet';
 
 describe('<SearchResults />', () => {
   let wrapper;
@@ -11,7 +11,7 @@ describe('<SearchResults />', () => {
       initialState: {
         search: {
           searchQuery: '',
-          searchIndex: [previewBlogSnippet, previewSnippet],
+          searchIndex: SnippetFactory.createMany('PreviewSnippet', 3),
           searchResults: [],
         },
       },
@@ -27,12 +27,14 @@ describe('<SearchResults />', () => {
   describe('with recommended snippets', () => {
     beforeEach(() => {
       wrapper = renderWithContext(
-        <SearchResults recommendedSnippets={[previewSnippet]} />,
+        <SearchResults
+          recommendedSnippets={SnippetFactory.createMany('PreviewSnippet', 3)}
+        />,
         {
           initialState: {
             search: {
               searchQuery: '',
-              searchIndex: [previewBlogSnippet, previewSnippet],
+              searchIndex: SnippetFactory.createMany('PreviewSnippet', 3),
               searchResults: [],
             },
           },
@@ -57,7 +59,7 @@ describe('<SearchResults />', () => {
         initialState: {
           search: {
             searchQuery: 'impossiblestringtofindintheindex',
-            searchIndex: [previewSnippet, previewBlogSnippet],
+            searchIndex: SnippetFactory.createMany('PreviewSnippet', 3),
             searchResults: [],
           },
         },
@@ -71,12 +73,13 @@ describe('<SearchResults />', () => {
 
   describe('with results', () => {
     beforeEach(() => {
+      const snippetList = SnippetFactory.createMany('PreviewSnippet', 3);
       wrapper = renderWithContext(<SearchResults />, {
         initialState: {
           search: {
-            searchQuery: previewSnippet.primaryTag,
-            searchIndex: [previewSnippet, previewBlogSnippet],
-            searchResults: [previewSnippet],
+            searchQuery: snippetList[0].primaryTag,
+            searchIndex: snippetList,
+            searchResults: [snippetList[0]],
           },
         },
       }).container;

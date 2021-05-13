@@ -1,12 +1,12 @@
 import { render, cleanup } from '@testing-library/react';
 import TagList from './index';
-import { tags } from 'fixtures/tags';
 
 describe('<TagList />', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = render(<TagList tags={tags} />).container;
+    wrapper = render(<TagList tags={['array', 'adapter', 'function']} />)
+      .container;
   });
 
   afterEach(cleanup);

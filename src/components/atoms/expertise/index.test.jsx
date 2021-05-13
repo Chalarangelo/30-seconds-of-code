@@ -1,9 +1,8 @@
 import { render, cleanup } from '@testing-library/react';
 import Expertise from './index';
-import { beginner } from 'fixtures/expertise';
 
 describe('<Expertise />', () => {
-  const level = beginner;
+  const level = 'Beginner';
   let wrapper;
 
   beforeEach(() => {

@@ -1,21 +1,15 @@
 import { render, cleanup, fireEvent } from '@testing-library/react';
 import Sorter from './index';
-import { orders } from 'fixtures/sorter';
+import SorterFactory from 'test/fixtures/factories/sorter';
+
+const sorter = SorterFactory.create('Sorter');
 
 describe('<Sorter />', () => {
-  const selectedOrder = 'Popularity';
   let wrapper;
   let clickableEl;
 
   beforeEach(() => {
-    wrapper = render(
-      <Sorter
-        sorter={{
-          orders,
-          selectedOrder,
-        }}
-      />
-    ).container;
+    wrapper = render(<Sorter sorter={sorter} />).container;
   });
 
   afterEach(cleanup);
@@ -62,12 +56,7 @@ describe('<Sorter />', () => {
   describe('with a single sorting order', () => {
     beforeEach(() => {
       wrapper = render(
-        <Sorter
-          sorter={{
-            orders: orders.slice(0, 1),
-            selectedOrder,
-          }}
-        />
+        <Sorter sorter={SorterFactory.create('Sorter', 'single order')} />
       ).container;
     });
 

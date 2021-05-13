@@ -1,14 +1,16 @@
 import { cleanup } from '@testing-library/react';
 import { renderWithContext } from 'test/utils';
 import SnippetList from './index';
-import { paginator } from 'fixtures/paginator';
-import { orders } from 'fixtures/sorter';
-import { previewSnippet, previewBlogSnippet } from 'fixtures/snippets';
-import { anchorItems } from 'fixtures/listingAnchors';
+import { anchorItems } from 'test/fixtures/listingAnchors';
+import SnippetFactory from 'test/fixtures/factories/snippet';
+import PaginatorFactory from 'test/fixtures/factories/paginator';
+import SorterFactory from 'test/fixtures/factories/sorter';
+
+const paginator = PaginatorFactory.create('Paginator');
+const sorter = SorterFactory.create('Sorter');
 
 describe('<SnippetList />', () => {
-  const sorter = { orders, selected: 'Popularity' };
-  const snippetList = [previewSnippet, previewBlogSnippet];
+  const snippetList = SnippetFactory.createMany('PreviewSnippet', 2);
   const listingName = 'Snippet list';
 
   let wrapper, pageTitle, paginate, sort;
@@ -107,7 +109,7 @@ describe('<SnippetList />', () => {
         <SnippetList
           snippetList={snippetList}
           paginator={paginator}
-          sorter={{ orders: orders.slice(0, 1), selected: 'Popularity' }}
+          sorter={SorterFactory.create('Sorter', 'single order')}
           listingName={listingName}
         />
       ).container;
