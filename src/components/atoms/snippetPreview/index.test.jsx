@@ -1,6 +1,13 @@
 import { render, cleanup } from '@testing-library/react';
 import SnippetPreview from './index';
-import { scopedCssCode, scopedHtmlCode } from 'fixtures/strings';
+
+const scopedHtmlCode =
+  '<p class="my-special-snippet">Hello, this is white on red.</p>';
+
+const scopedCssCode = `[data-scope="my-special-snippet] .my-special-snippet {
+  background: red;
+  color: white;
+}`;
 
 describe('<SnippetPreview />', () => {
   let wrapper;

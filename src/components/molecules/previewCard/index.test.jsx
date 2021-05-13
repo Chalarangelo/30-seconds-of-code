@@ -1,6 +1,9 @@
 import { render, cleanup } from '@testing-library/react';
 import PreviewCard from './index';
-import { previewSnippet, previewBlogSnippet } from 'fixtures/snippets';
+import SnippetFactory from 'test/fixtures/factories/snippet';
+
+const previewSnippet = SnippetFactory.create('PreviewSnippet');
+const previewBlogSnippet = SnippetFactory.create('PreviewBlogSnippet');
 
 describe('<PreviewCard />', () => {
   let wrapper, card, expertise, anchor, tags;

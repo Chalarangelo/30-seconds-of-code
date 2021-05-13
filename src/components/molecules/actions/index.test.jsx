@@ -1,10 +1,14 @@
 import { cleanup } from '@testing-library/react';
-import { fullSnippet, fullReactSnippet } from 'fixtures/snippets';
 import { renderWithContext } from 'test/utils';
+import SnippetFactory from 'test/fixtures/factories/snippet';
 import Actions from './index';
 
 global.window = Object.create(window);
 global.gtag = Object.create(() => null);
+
+const fullSnippet = SnippetFactory.create('FullSnippet');
+const fullReactSnippet = SnippetFactory.create('FullReactSnippet');
+
 Object.defineProperty(window, 'gtag', {
   value: jest.fn(),
 });

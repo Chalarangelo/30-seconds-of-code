@@ -1,13 +1,10 @@
 import { render, cleanup } from '@testing-library/react';
 import RecommendationList from './index';
-import {
-  previewSnippet,
-  previewBlogSnippet,
-  searchResultSnippet,
-} from 'fixtures/snippets';
+import SnippetFactory from 'test/fixtures/factories/snippet';
+
+const snippetList = SnippetFactory.createMany('PreviewSnippet', 3);
 
 describe('<RecommendationList />', () => {
-  const snippetList = [previewSnippet, previewBlogSnippet, searchResultSnippet];
   let wrapper;
 
   beforeEach(() => {
@@ -24,6 +21,8 @@ describe('<RecommendationList />', () => {
   });
 
   it('should render the appropriate number of PreviewCard components', () => {
-    expect(wrapper.querySelectorAll('.list-card')).toHaveLength(3);
+    expect(wrapper.querySelectorAll('.list-card')).toHaveLength(
+      snippetList.length
+    );
   });
 });

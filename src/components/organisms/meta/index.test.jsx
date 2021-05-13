@@ -3,7 +3,7 @@ import { renderWithContext } from 'test/utils';
 import Meta from './index';
 import literals from 'lang/en/client/common';
 import settings from 'settings/global';
-import metadata from 'fixtures/metadata';
+import { metadata } from 'test/fixtures/metadata';
 
 describe('<Meta />', () => {
   beforeAll(() => {

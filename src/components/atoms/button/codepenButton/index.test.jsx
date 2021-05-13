@@ -1,8 +1,15 @@
 import { renderWithContext } from 'test/utils';
 import { cleanup } from '@testing-library/react';
 import literals from 'lang/en/client/common';
-import { codepenHtmlCode, codepenCssCode } from 'fixtures/strings';
 import CodepenButton from './index';
+
+const codepenHtmlCode =
+  '<p class="my-special-snippet">Hello, this is white on red.</p>';
+
+const codepenCssCode = `.my-special-snippet {
+  background: red;
+  color: white;
+}`;
 
 jest.useFakeTimers();
 

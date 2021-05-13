@@ -1,12 +1,15 @@
 import { cleanup } from '@testing-library/react';
 import { renderWithContext } from 'test/utils';
 import ListingPage from './index';
-import { previewSnippet, previewBlogSnippet } from 'fixtures/snippets';
-import { paginator } from 'fixtures/paginator';
-import { orders } from 'fixtures/sorter';
+import SnippetFactory from 'test/fixtures/factories/snippet';
+import PaginatorFactory from 'test/fixtures/factories/paginator';
+import SorterFactory from 'test/fixtures/factories/sorter';
+
+const paginator = PaginatorFactory.create('Paginator');
+const sorter = SorterFactory.create('Sorter');
 
 describe('<ListingPage />', () => {
-  const snippetList = [previewSnippet, previewBlogSnippet];
+  const snippetList = SnippetFactory.createMany('PreviewSnippet', 2);
   const listingName = 'Snippet list';
   const listingTitle = 'Snippet list';
   const pageDescription = 'Browse 100 snippets on 30 seconds of code';
@@ -17,10 +20,7 @@ describe('<ListingPage />', () => {
       <ListingPage
         snippetList={snippetList}
         paginator={paginator}
-        sorter={{
-          orders,
-          selected: 'Popularity',
-        }}
+        sorter={sorter}
         listingName={listingName}
         listingTitle={listingTitle}
         pageDescription={pageDescription}

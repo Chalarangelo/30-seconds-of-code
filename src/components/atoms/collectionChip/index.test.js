@@ -1,6 +1,6 @@
 import { render, cleanup } from '@testing-library/react';
 import CollectionChip from './index';
-import { collectionChip } from 'fixtures/collections';
+import { collectionChip } from 'test/fixtures/collections';
 
 describe('<CollectionChip />', () => {
   let wrapper;

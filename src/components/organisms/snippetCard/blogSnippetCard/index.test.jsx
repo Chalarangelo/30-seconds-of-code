@@ -1,7 +1,9 @@
 import { renderWithContext } from 'test/utils';
 import { cleanup } from '@testing-library/react';
 import BlogSnippetCard from './index';
-import { fullBlogSnippet } from 'fixtures/snippets';
+import SnippetFactory from 'test/fixtures/factories/snippet';
+
+const fullBlogSnippet = SnippetFactory.create('FullBlogSnippet');
 
 describe('<BlogSnippetCard />', () => {
   let wrapper, card, tagList;
