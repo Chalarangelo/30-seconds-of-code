@@ -10,14 +10,13 @@ const propTypes = {
       name: PropTypes.string.isRequired,
     })
   ).isRequired,
-  rest: PropTypes.any,
 };
 
 /**
  * Renders the set of buttons that link to other listing pages.
  * Used in Listing pages and Home page.
  */
-const ListingAnchors = ({ items = false, ...rest }) => {
+const ListingAnchors = ({ items = [] }) => {
   // Scroll the selected tag into view, so that users always know where they are
   useEffect(() => {
     if (typeof document !== 'undefined') {
@@ -38,7 +37,7 @@ const ListingAnchors = ({ items = false, ...rest }) => {
   }, []);
 
   return (
-    <ul className='list-section listing-anchors flex' {...rest}>
+    <ul className='list-section listing-anchors flex'>
       {items.map(item => (
         <li key={item.url}>
           <Link href={item.url}>

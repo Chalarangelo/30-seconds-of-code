@@ -18,7 +18,7 @@ const Button = ({
   onClick,
   className = '',
   children,
-  ...rest // Needs props to be have accessible name if only icon etc.
+  ...rest // Needs props to have accessible name if only icon etc.
 }) => (
   <button
     className={combineClassNames`btn fs-md ${className}`}

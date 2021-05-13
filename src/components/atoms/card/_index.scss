@@ -23,10 +23,6 @@
         line-height: 1;
         color: var(--clr-txt-200);
       }
-
-      &:hover, &:focus {
-        text-decoration: underline;
-      }
     }
   }
 
@@ -144,10 +140,6 @@
     margin-bottom: 0;
     min-height: calc(260px / var(--cover-aspect-ratio));
     max-height: calc(680px / var(--cover-aspect-ratio));
-
-    @media screen and (min-width: $layout-medium-breakpoint) {
-      margin-top: 0.375rem;
-    }
   }
 
   p:last-child.card-image-credit {

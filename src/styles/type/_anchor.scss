@@ -11,6 +11,24 @@ a {
   }
 
   &:hover, &:focus {
-    text-decoration: underline;
+    animation-name: animated-underline;
+    animation-iteration-count: 1;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+}
+
+
+@keyframes animated-underline {
+  0% {
+    text-decoration-line: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 0px;
+  }
+  100% {
+    text-decoration-line: underline;
+    text-decoration-color: inherit;
+    text-underline-offset: 2px;
   }
 }

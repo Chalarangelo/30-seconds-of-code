@@ -67,7 +67,6 @@ export class Logger {
     };
 
     const _boundLog = boundLog(procName);
-    _boundLog.rebind = subprocName => this.bind(`${procName}:${subprocName}`);
     return _boundLog;
   };
 
