@@ -1,16 +1,10 @@
 import { Ranker } from '.';
-import { Snippet } from 'blocks/entities/snippet';
-import { ContentConfig } from 'blocks/entities/contentConfig';
 import { ArgsError } from 'blocks/utilities/error';
-import { rawConfigs } from 'fixtures/blocks/contentConfigs';
-import { rawSnippets } from 'fixtures/blocks/snippets';
-import { Env } from 'blocks/utilities/env';
+import SnippetFactory from 'test/fixtures/factories/blockSnippet';
 
 describe('Ranker', () => {
-  let configs = {};
   let snippets = [];
   beforeAll(() => {
-    Env.setup();
     Ranker._keywordScores = {
       iterator: 1,
       javascript: 2,
@@ -18,13 +12,7 @@ describe('Ranker', () => {
       blog: 4,
       advanced: 5,
     };
-    Object.keys(rawConfigs).forEach(name => {
-      configs[name] = new ContentConfig(rawConfigs[name]);
-    });
-    snippets.push(new Snippet(rawSnippets.normal, configs.react));
-    snippets.push(new Snippet(rawSnippets.blog, configs.blog));
-    snippets.push(new Snippet(rawSnippets.normal, configs.dart));
-    snippets.push(new Snippet(rawSnippets.css, configs.css));
+    snippets = Object.values(SnippetFactory.create('SnippetPresets'));
   });
 
   describe('rankSnippet', () => {

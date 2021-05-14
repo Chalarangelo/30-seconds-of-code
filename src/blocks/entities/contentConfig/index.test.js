@@ -1,9 +1,15 @@
 import { ContentConfig } from '.';
 import { ArgsError } from 'blocks/utilities/error';
-import { rawConfigs } from 'fixtures/blocks/contentConfigs';
 import { Env } from 'blocks/utilities/env';
+import ContentConfigFactory from 'test/fixtures/factories/contentConfig';
 
 describe('ContentConfig', () => {
+  const rawConfigs = {
+    blog: ContentConfigFactory.create('RawConfig', 'blog'),
+    css: ContentConfigFactory.create('RawConfig', 'css'),
+    react: ContentConfigFactory.create('RawConfig', 'react'),
+    dart: ContentConfigFactory.create('RawConfig', 'dart'),
+  };
   let configs = {};
 
   beforeAll(() => {

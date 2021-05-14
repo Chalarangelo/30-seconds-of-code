@@ -1,12 +1,11 @@
 import { Snippet } from '.';
-import { ContentConfig } from 'blocks/entities/contentConfig';
 import { ArgsError } from 'blocks/utilities/error';
-import { rawConfigs } from 'fixtures/blocks/contentConfigs';
-import { rawSnippets } from 'fixtures/blocks/snippets';
-import { Env } from 'blocks/utilities/env';
+import ContentConfigFactory from 'test/fixtures/factories/contentConfig';
+import SnippetFactory from 'test/fixtures/factories/blockSnippet';
 
 describe('Snippet', () => {
   let configs = {};
+  let rawSnippets = {};
   let snippet,
     blogSnippet,
     unfeaturedSnippet,
@@ -15,10 +14,14 @@ describe('Snippet', () => {
     futureSnippet;
 
   beforeAll(() => {
-    Env.setup();
-    Object.keys(rawConfigs).forEach(name => {
-      configs[name] = new ContentConfig(rawConfigs[name]);
-    });
+    configs = ContentConfigFactory.create('ContentConfigPresets');
+    rawSnippets = {
+      normal: SnippetFactory.create('RawSnippet'),
+      blog: SnippetFactory.create('RawSnippet', 'blog'),
+      unlisted: SnippetFactory.create('RawSnippet', 'unlisted'),
+      future: SnippetFactory.create('RawSnippet', 'future'),
+      css: SnippetFactory.create('RawSnippet', 'css'),
+    };
   });
 
   describe('constructor', () => {
@@ -85,7 +88,7 @@ describe('Snippet', () => {
     });
 
     it('stores the snippet in the instance cache', () => {
-      expect(Snippet.instances[snippet.id]).toBe(snippet);
+      expect(Snippet.instances[snippet.id]).toBeDefined();
     });
 
     it('has a valid slug', () => {
