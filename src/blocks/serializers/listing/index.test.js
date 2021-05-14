@@ -1,11 +1,8 @@
 import { ListingSerializer } from '.';
 import { SnippetCollection } from 'blocks/entities/snippetCollection';
-import { Snippet } from 'blocks/entities/snippet';
-import { ContentConfig } from 'blocks/entities/contentConfig';
-import { rawConfigs } from 'fixtures/blocks/contentConfigs';
-import { rawSnippets } from 'fixtures/blocks/snippets';
-import { Env } from 'blocks/utilities/env';
 import { JSONSerializer } from 'blocks/serializers/json';
+import ContentConfigFactory from 'test/fixtures/factories/contentConfig';
+import SnippetFactory from 'test/fixtures/factories/blockSnippet';
 
 JSONSerializer.serializeToDir = jest.fn(() => new Promise(res => res()));
 
@@ -14,14 +11,8 @@ describe('ListingSerializer', () => {
   let snippets = [];
   let collections = {};
   beforeAll(() => {
-    Env.setup();
-    Object.keys(rawConfigs).forEach(name => {
-      configs[name] = new ContentConfig(rawConfigs[name]);
-    });
-    snippets.push(new Snippet(rawSnippets.normal, configs.react));
-    snippets.push(new Snippet(rawSnippets.blog, configs.blog));
-    snippets.push(new Snippet(rawSnippets.normal, configs.dart));
-    snippets.push(new Snippet(rawSnippets.css, configs.css));
+    configs = ContentConfigFactory.create('ContentConfigPresets');
+    snippets = Object.values(SnippetFactory.create('SnippetPresets'));
     collections.main = new SnippetCollection(
       {
         type: 'main',

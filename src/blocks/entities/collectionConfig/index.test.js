@@ -1,7 +1,9 @@
 import { CollectionConfig } from '.';
 import { ArgsError } from 'blocks/utilities/error';
-import { rawCollections } from 'fixtures/blocks/collectionConfigs';
 import { Env } from 'blocks/utilities/env';
+import CollectionConfigFactory from 'test/fixtures/factories/collectionConfig';
+
+const rawConfig = CollectionConfigFactory.create('RawConfig');
 
 describe('ColectionConfig', () => {
   beforeAll(() => {
@@ -15,44 +17,26 @@ describe('ColectionConfig', () => {
   });
 
   describe('constructed with valid data', () => {
-    let collectionConfigs = {};
+    let collectionConfig;
     beforeAll(() => {
-      collectionConfigs.collection = new CollectionConfig(
-        rawCollections.collection
-      );
+      collectionConfig = new CollectionConfig(rawConfig);
     });
 
     it('should contain all passed data', () => {
-      expect(collectionConfigs.collection.name).toBe(
-        rawCollections.collection.name
-      );
-      expect(collectionConfigs.collection.description).toBe(
-        rawCollections.collection.description
-      );
-      expect(collectionConfigs.collection.slug).toBe(
-        rawCollections.collection.slug
-      );
-      expect(collectionConfigs.collection.featured).toBe(
-        Boolean(rawCollections.collection.featured)
-      );
-      expect(collectionConfigs.collection.snippetIds).toEqual(
-        rawCollections.collection.snippetIds
-      );
-      expect(collectionConfigs.collection.iconName).toEqual(
-        rawCollections.collection.iconName
-      );
+      expect(collectionConfig.name).toBe(rawConfig.name);
+      expect(collectionConfig.description).toBe(rawConfig.description);
+      expect(collectionConfig.slug).toBe(rawConfig.slug);
+      expect(collectionConfig.featured).toBe(Boolean(rawConfig.featured));
+      expect(collectionConfig.snippetIds).toEqual(rawConfig.snippetIds);
+      expect(collectionConfig.iconName).toEqual(rawConfig.iconName);
     });
 
     it('should produce the correct id', () => {
-      expect(collectionConfigs.collection.id).toBe(
-        rawCollections.collection.slug
-      );
+      expect(collectionConfig.id).toBe(rawConfig.slug);
     });
 
     it('should produce the correct icon', () => {
-      expect(collectionConfigs.collection.icon).toBe(
-        rawCollections.collection.iconName
-      );
+      expect(collectionConfig.icon).toBe(rawConfig.iconName);
     });
   });
 });

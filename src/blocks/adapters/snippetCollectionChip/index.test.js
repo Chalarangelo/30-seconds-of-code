@@ -1,11 +1,8 @@
 import { SnippetCollectionChip } from '.';
-import { Snippet } from 'blocks/entities/snippet';
 import { SnippetCollection } from 'blocks/entities/snippetCollection';
-import { ContentConfig } from 'blocks/entities/contentConfig';
 import { ArgsError } from 'blocks/utilities/error';
-import { rawConfigs } from 'fixtures/blocks/contentConfigs';
-import { rawSnippets } from 'fixtures/blocks/snippets';
-import { Env } from 'blocks/utilities/env';
+import ContentConfigFactory from 'test/fixtures/factories/contentConfig';
+import SnippetFactory from 'test/fixtures/factories/blockSnippet';
 
 describe('SnippetCollectionChip', () => {
   let configs = {};
@@ -13,17 +10,14 @@ describe('SnippetCollectionChip', () => {
   let listings = {};
 
   beforeAll(() => {
-    Env.setup();
-    Object.keys(rawConfigs).forEach(name => {
-      configs[name] = new ContentConfig(rawConfigs[name]);
-    });
+    configs = ContentConfigFactory.create('ContentConfigPresets');
     collections.language = new SnippetCollection(
       {
         type: 'language',
         slugPrefix: 'dart',
         config: configs.dart,
       },
-      [new Snippet(rawSnippets.normal, configs.dart)]
+      [SnippetFactory.create('Snippet')]
     );
     Object.keys(collections).forEach(name => {
       listings[name] = new SnippetCollectionChip(collections[name]);
