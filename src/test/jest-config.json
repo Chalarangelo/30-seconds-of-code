@@ -15,6 +15,13 @@
     ".cache",
     "public"
   ],
+  "coveragePathIgnorePatterns": [
+    "/node_modules/",
+    "/src/test/",
+    "/src/lang/",
+    "/src/scripts/",
+    "/src/settings/"
+  ],
   "globals": {
     "__PATH_PREFIX__": "",
     "__BASE_PATH__": ""

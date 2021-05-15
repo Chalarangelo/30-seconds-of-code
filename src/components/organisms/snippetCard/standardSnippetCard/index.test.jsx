@@ -2,7 +2,10 @@ import { renderWithContext } from 'test/utils';
 import { cleanup } from '@testing-library/react';
 import literals from 'lang/en/client/common';
 import SnippetCard from './index';
-import { fullSnippet, fullReactSnippet } from 'fixtures/snippets';
+import SnippetFactory from 'test/fixtures/factories/snippet';
+
+const fullSnippet = SnippetFactory.create('FullSnippet');
+const fullReactSnippet = SnippetFactory.create('FullReactSnippet');
 
 describe('<SnippetCard />', () => {
   let wrapper, card, tagList, codeBlocks;
@@ -66,12 +69,6 @@ describe('<SnippetCard />', () => {
   it('should have the correct card title', () => {
     expect(card.querySelector('h1.card-title').textContent).toBe(
       fullSnippet.title
-    );
-  });
-
-  it('should pass the expertise data to the TagList component', () => {
-    expect(tagList.textContent.toLowerCase()).toContain(
-      fullSnippet.expertise.toLowerCase()
     );
   });
 

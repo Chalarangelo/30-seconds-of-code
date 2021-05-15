@@ -1,7 +1,7 @@
 import { cleanup } from '@testing-library/react';
 import { renderWithContext } from 'test/utils';
 import CollectionsPage from './index';
-import { collectionChip } from 'fixtures/collections';
+import { collectionChip } from 'test/fixtures/collections';
 
 describe('<CollectionsPage />', () => {
   const chipList = [collectionChip];

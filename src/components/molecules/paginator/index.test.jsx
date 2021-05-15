@@ -1,21 +1,13 @@
 import { render, cleanup } from '@testing-library/react';
 import Paginator from './index';
+import PaginatorFactory from 'test/fixtures/factories/paginator';
 
 describe('<Paginator />', () => {
-  const pageNumber = 3,
-    totalPages = 7,
-    baseUrl = '/list';
   let wrapper;
 
   beforeEach(() => {
     wrapper = render(
-      <Paginator
-        paginator={{
-          pageNumber,
-          totalPages,
-          baseUrl,
-        }}
-      />
+      <Paginator paginator={PaginatorFactory.create('Paginator')} />
     ).container;
   });
 
@@ -53,11 +45,7 @@ describe('<Paginator />', () => {
     beforeEach(() => {
       wrapper = render(
         <Paginator
-          paginator={{
-            pageNumber: 1,
-            totalPages,
-            baseUrl,
-          }}
+          paginator={PaginatorFactory.create('Paginator', 'first page')}
         />
       ).container;
     });
@@ -77,11 +65,7 @@ describe('<Paginator />', () => {
     beforeEach(() => {
       wrapper = render(
         <Paginator
-          paginator={{
-            pageNumber: totalPages,
-            totalPages,
-            baseUrl,
-          }}
+          paginator={PaginatorFactory.create('Paginator', 'last page')}
         />
       ).container;
     });
@@ -101,11 +85,7 @@ describe('<Paginator />', () => {
     beforeEach(() => {
       wrapper = render(
         <Paginator
-          paginator={{
-            pageNumber: 1,
-            totalPages: 2,
-            baseUrl,
-          }}
+          paginator={PaginatorFactory.create('Paginator', 'few pages')}
         />
       ).container;
     });
@@ -119,11 +99,7 @@ describe('<Paginator />', () => {
     beforeEach(() => {
       wrapper = render(
         <Paginator
-          paginator={{
-            pageNumber: 1,
-            totalPages: 1,
-            baseUrl,
-          }}
+          paginator={PaginatorFactory.create('Paginator', 'single page')}
         />
       ).container;
     });

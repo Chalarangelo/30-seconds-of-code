@@ -1,6 +1,6 @@
 import { render, cleanup } from '@testing-library/react';
 import ListingAnchors from './index';
-import { anchorItems } from 'fixtures/listingAnchors';
+import { anchorItems } from 'test/fixtures/listingAnchors';
 
 describe('<ListingAnchors />', () => {
   let wrapper;

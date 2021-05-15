@@ -1,11 +1,8 @@
 import { SnippetCollectionListing } from '.';
-import { Snippet } from 'blocks/entities/snippet';
 import { SnippetCollection } from 'blocks/entities/snippetCollection';
-import { ContentConfig } from 'blocks/entities/contentConfig';
 import { ArgsError } from 'blocks/utilities/error';
-import { rawConfigs } from 'fixtures/blocks/contentConfigs';
-import { rawSnippets } from 'fixtures/blocks/snippets';
-import { Env } from 'blocks/utilities/env';
+import ContentConfigFactory from 'test/fixtures/factories/contentConfig';
+import SnippetFactory from 'test/fixtures/factories/blockSnippet';
 
 describe('SnippetCollectionListing', () => {
   let configs = {};
@@ -14,14 +11,13 @@ describe('SnippetCollectionListing', () => {
   let listings = {};
 
   beforeAll(() => {
-    Env.setup();
-    Object.keys(rawConfigs).forEach(name => {
-      configs[name] = new ContentConfig(rawConfigs[name]);
-    });
-    snippets.push(new Snippet(rawSnippets.normal, configs.react));
-    snippets.push(new Snippet(rawSnippets.blog, configs.blog));
-    snippets.push(new Snippet(rawSnippets.normal, configs.dart));
-    snippets.push(new Snippet(rawSnippets.css, configs.css));
+    snippets = [
+      SnippetFactory.create('Snippet'),
+      SnippetFactory.create('Snippet', 'react'),
+      SnippetFactory.create('Snippet', 'blog'),
+      SnippetFactory.create('Snippet', 'css'),
+    ];
+    configs = ContentConfigFactory.create('ContentConfigPresets');
     collections.main = new SnippetCollection(
       {
         type: 'main',

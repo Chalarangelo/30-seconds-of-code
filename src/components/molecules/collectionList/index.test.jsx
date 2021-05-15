@@ -1,6 +1,6 @@
 import { render, cleanup } from '@testing-library/react';
 import CollectionList from './index';
-import { collectionChip } from 'fixtures/collections';
+import { collectionChip } from 'test/fixtures/collections';
 
 const listingName = 'Collections';
 

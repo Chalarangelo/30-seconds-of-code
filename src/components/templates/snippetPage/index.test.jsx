@@ -1,8 +1,11 @@
 import { cleanup } from '@testing-library/react';
 import { renderWithContext } from 'test/utils';
 import SnippetPage from './index';
-import { fullSnippet, fullBlogSnippet } from 'fixtures/snippets';
-import { breadcrumbs } from 'fixtures/breadcrumbs';
+import { breadcrumbs } from 'test/fixtures/breadcrumbs';
+import SnippetFactory from 'test/fixtures/factories/snippet';
+
+const fullSnippet = SnippetFactory.create('FullSnippet');
+const fullBlogSnippet = SnippetFactory.create('FullBlogSnippet');
 
 describe('<SnippetPage />', () => {
   const cardTemplate = 'StandardSnippetCard';

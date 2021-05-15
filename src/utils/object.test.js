@@ -3,8 +3,7 @@ import { generateStructuredData, hasKey, hasKeys, get } from './object';
 import {
   listingStructuredData,
   snippetStructuredData,
-  homeStructuredData,
-} from 'fixtures/metadata';
+} from 'test/fixtures/metadata';
 
 describe('hasKey', () => {
   it('returns the correct result for a regular key', () => {

@@ -1,6 +1,6 @@
 import { render, cleanup } from '@testing-library/react';
 import Breadcrumbs from './index';
-import { breadcrumbs } from 'fixtures/breadcrumbs';
+import { breadcrumbs } from 'test/fixtures/breadcrumbs';
 
 describe('<Breadcrumbs />', () => {
   let wrapper;

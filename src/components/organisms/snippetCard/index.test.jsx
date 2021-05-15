@@ -1,11 +1,11 @@
 import { cleanup } from '@testing-library/react';
 import { renderWithContext } from 'test/utils';
 import cards from './index';
-import {
-  fullSnippet,
-  fullCssSnippet,
-  fullBlogSnippet,
-} from 'fixtures/snippets';
+import SnippetFactory from 'test/fixtures/factories/snippet';
+
+const fullSnippet = SnippetFactory.create('FullSnippet');
+const fullCssSnippet = SnippetFactory.create('FullCssSnippet');
+const fullBlogSnippet = SnippetFactory.create('FullBlogSnippet');
 
 describe('<SnippetCardWrapper />', () => {
   let wrapper;

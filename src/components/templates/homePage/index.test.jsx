@@ -1,7 +1,7 @@
 import { cleanup } from '@testing-library/react';
 import { renderWithContext } from 'test/utils';
 import HomePage from './index';
-import { collectionShelf, snippetShelf } from 'fixtures/shelves';
+import { snippetShelf, collectionShelf } from 'test/fixtures/shelves';
 
 describe('<HomePage />', () => {
   const shelves = [collectionShelf, snippetShelf];

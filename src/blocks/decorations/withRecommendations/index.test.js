@@ -1,24 +1,14 @@
 import { withRecommendations } from '.';
 import { Snippet } from 'blocks/entities/snippet';
-import { ContentConfig } from 'blocks/entities/contentConfig';
 import { ArgsError } from 'blocks/utilities/error';
-import { rawConfigs } from 'fixtures/blocks/contentConfigs';
-import { rawSnippets } from 'fixtures/blocks/snippets';
-import { Env } from 'blocks/utilities/env';
+import SnippetFactory from 'test/fixtures/factories/blockSnippet';
 
 describe('withRecommendations', () => {
-  let configs = {};
-  let snippet, blogSnippet, unlistedSnippet, cssSnippet;
+  let snippet;
 
   beforeAll(() => {
-    Env.setup();
-    Object.keys(rawConfigs).forEach(name => {
-      configs[name] = new ContentConfig(rawConfigs[name]);
-    });
-    snippet = new Snippet(rawSnippets.normal, configs.react);
-    blogSnippet = new Snippet(rawSnippets.blog, configs.blog);
-    unlistedSnippet = new Snippet(rawSnippets.normal, configs.dart);
-    cssSnippet = new Snippet(rawSnippets.css, configs.css);
+    const snippets = SnippetFactory.create('SnippetPresets');
+    snippet = snippets.snippet;
   });
 
   describe('constructor', () => {
@@ -47,9 +37,6 @@ describe('withRecommendations', () => {
 
     it('produces valid recommendations', () => {
       expect(snippet.recommendedSnippets.length).toBe(3);
-      expect(snippet.recommendedSnippets.includes(blogSnippet)).toBe(true);
-      expect(snippet.recommendedSnippets.includes(cssSnippet)).toBe(true);
-      expect(snippet.recommendedSnippets.includes(unlistedSnippet)).toBe(false);
     });
   });
 });

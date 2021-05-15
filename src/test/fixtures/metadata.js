@@ -18,7 +18,7 @@ export const listingStructuredData = {
   ],
 };
 
-export default {
+export const metadata = {
   title: 'my_snippet',
   description: 'A random snippet page',
   meta: [

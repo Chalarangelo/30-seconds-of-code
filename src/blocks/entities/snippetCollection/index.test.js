@@ -1,29 +1,22 @@
 import { SnippetCollection } from '.';
-import { Snippet } from 'blocks/entities/snippet';
-import { ContentConfig } from 'blocks/entities/contentConfig';
-import { CollectionConfig } from 'blocks/entities/collectionConfig';
 import { ArgsError } from 'blocks/utilities/error';
-import { rawConfigs } from 'fixtures/blocks/contentConfigs';
-import { rawCollections } from 'fixtures/blocks/collectionConfigs';
-import { rawSnippets } from 'fixtures/blocks/snippets';
-import { Env } from 'blocks/utilities/env';
+import ContentConfigFactory from 'test/fixtures/factories/contentConfig';
+import CollectionConfigFactory from 'test/fixtures/factories/collectionConfig';
+import SnippetFactory from 'test/fixtures/factories/blockSnippet';
 
 describe('SnippetCollection', () => {
   let configs = {};
   let collectionConfigs = {};
   let snippets = [];
+
   beforeAll(() => {
-    Env.setup();
-    Object.keys(rawConfigs).forEach(name => {
-      configs[name] = new ContentConfig(rawConfigs[name]);
-    });
-    Object.keys(rawCollections).forEach(name => {
-      collectionConfigs[name] = new CollectionConfig(rawCollections[name]);
-    });
-    snippets.push(new Snippet(rawSnippets.normal, configs.react));
-    snippets.push(new Snippet(rawSnippets.blog, configs.blog));
-    snippets.push(new Snippet(rawSnippets.normal, configs.dart));
-    snippets.push(new Snippet(rawSnippets.css, configs.css));
+    configs = ContentConfigFactory.create('ContentConfigPresets');
+    const collectionPreset = CollectionConfigFactory.create(
+      'CollectionConfigPresets'
+    );
+
+    collectionConfigs.collection = collectionPreset.collectionConfig;
+    snippets = Object.values(SnippetFactory.create('SnippetPresets'));
   });
 
   describe('constructor', () => {
@@ -132,7 +125,7 @@ describe('SnippetCollection', () => {
           config: collectionConfigs.collection,
           slugPrefix: `/${collectionConfigs.collection.slug}`,
         },
-        collectionConfigs.collection.snippetIds.map(id => Snippet.instances[id])
+        [snippets[0], snippets[2]]
       );
     });
 
@@ -149,8 +142,11 @@ describe('SnippetCollection', () => {
     });
 
     it('keeps snippets unsorted in collection-type collections', () => {
-      expect(collections.collection.snippets.map(s => s.id)).toEqual(
-        rawCollections.collection.snippetIds
+      expect(collections.collection.snippets[0].id).toBe(
+        collectionConfigs.collection.snippetIds[0]
+      );
+      expect(collections.collection.snippets[1].id).toBe(
+        collectionConfigs.collection.snippetIds[1]
       );
     });
 
@@ -213,8 +209,8 @@ describe('SnippetCollection', () => {
 
     it('should produce the correct tags', () => {
       expect(collections.main.tags).toBe(undefined);
-      expect(collections.language.tags).toEqual(['array']);
-      expect(collections.tag.tags).toEqual(['array']);
+      expect(collections.language.tags).toEqual([snippets[2].tags.primary]);
+      expect(collections.tag.tags).toEqual([snippets[2].tags.primary]);
       expect(collections.blog.tags).toEqual([]);
     });
 
@@ -287,7 +283,7 @@ describe('SnippetCollection', () => {
 
       it('keeps snippets unsorted in non-collection-type collections', () => {
         expect(collections.collection.snippets.map(s => s.id)).toEqual([
-          ...rawCollections.collection.snippetIds,
+          ...collectionConfigs.collection.snippetIds,
           snippets[1].id,
         ]);
       });
