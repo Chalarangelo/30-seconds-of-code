@@ -7,8 +7,8 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Run deployment script
-      env: 
+      env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
-        chmod +x ./src/jobs/deploy.sh
-        ./src/jobs/deploy.sh production
+        chmod +x ./src/scripts/deploy.sh
+        ./src/scripts/deploy.sh production
