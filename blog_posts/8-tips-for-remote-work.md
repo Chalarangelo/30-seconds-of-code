@@ -34,6 +34,4 @@ Working from home has its own challenges and issues, so try to find the right to
 8. Maintain regular hours
 It's as easy to forget about breaks as it is to start working late. Try to set a schedule that sits well with your team and stick to it. If you would work 9 to 5 in a regular office environment, do the same at home. Take regular breaks, do not forget to sign off when put in your daily hours and come back tomorrow. After all, it's business as usual.
 
-**[Looking for a work from home role/job? Check out Jooble!](https://jooble.org/jobs-work-from-home)**
-
 **Image credit:** [Goran Ivos](https://unsplash.com/@goran_ivos?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
