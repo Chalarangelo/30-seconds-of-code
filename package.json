@@ -72,8 +72,8 @@
     "create": "NODE_PATH=src NODE_ENV=production npx --node-arg '-r esm' ./src/scripts/create.js",
     "lint": "eslint './src/**/*.js' './src/**/*.jsx'",
     "format": "prettier --config .prettierrc --write './**/*.{js,jsx}'",
-    "test": "cross-env NODE_PATH=src NODE_ENV=test jest --config src/config/jest.json --coverage",
-    "test:watch": "cross-env NODE_PATH=src NODE_ENV=test jest --config src/config/jest.json --watch"
+    "test": "cross-env NODE_PATH=src NODE_ENV=test jest --config src/test/jest-config.json --coverage",
+    "test:watch": "cross-env NODE_PATH=src NODE_ENV=test jest --config src/test/jest-config.json --watch"
   },
   "repository": {
     "type": "git",
