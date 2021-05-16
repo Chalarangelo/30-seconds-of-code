@@ -3,7 +3,7 @@ title: Custom scrollbar
 tags: visual,advanced
 ---
 
-Customizes the scrollbar style for the an elements with scrollable overflow.
+Customizes the scrollbar style for elements with scrollable overflow.
 
 - Use `::-webkit-scrollbar` to style the scrollbar element.
 - Use `::-webkit-scrollbar-track` to style the scrollbar track (the background of the scrollbar).
