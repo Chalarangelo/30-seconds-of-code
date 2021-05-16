@@ -10,6 +10,7 @@ import tokenizeSnippet from 'utils/search';
 import sass from 'node-sass';
 import literals from 'lang/en/snippet';
 import clientLiterals from 'lang/en/client/common';
+import { Logger } from 'blocks/utilities/logger';
 
 const mdCodeFence = '```';
 const codeMatcher = new RegExp(
@@ -275,7 +276,8 @@ export class Snippet {
     const shortSliceIndex = isLongBlog
       ? text.indexOf(' ', 160)
       : text.indexOf('\n\n');
-    const shortText = excerpt && excerpt.trim().length !== 0
+    const shortText =
+      excerpt && excerpt.trim().length !== 0
         ? excerpt
         : `${text.slice(0, shortSliceIndex)}${isLongBlog ? '...' : ''}`;
     const parsedDescription = stripMarkdownFormat(shortText);
@@ -306,13 +308,22 @@ export class Snippet {
         this.rawCode.html = codeBlocks[0].raw;
         this.code.css = codeBlocks[1].code;
         this.rawCode.css = codeBlocks[1].raw;
-        this.code.scopedCss = sass
-          .renderSync({
-            data: `[data-scope="${this.fileName.slice(0, -3)}"] { ${
-              codeBlocks[1].code
-            } }`,
-          })
-          .css.toString();
+        try {
+          this.code.scopedCss = sass
+            .renderSync({
+              data: `[data-scope="${this.fileName.slice(0, -3)}"] { ${
+                codeBlocks[1].code
+              } }`,
+            })
+            .css.toString();
+        } catch (e) {
+          const boundLog = Logger.bind('entities.snippet._initCodeContent');
+          boundLog(
+            `Scoped CSS generation for snippet ${this.id} failed with error "${e.message}". Falling back to unsafe raw CSS injection!`,
+            'warning'
+          );
+          this.code.scopedCss = `${codeBlocks[1].code}`;
+        }
         if (codeBlocks.length > 2) {
           this.code.js = codeBlocks[2].code;
           this.rawCode.js = codeBlocks[2].raw;
