@@ -1,6 +1,6 @@
 ---
 title: Custom checkbox
-tags: visual,animation,advancd
+tags: visual,animation,advanced
 ---
 
 Creates a styled checkbox with animation on state change.
