@@ -1,6 +1,6 @@
 ---
 title: "Tip: Use JavaScript for loops if you need to break out early"
-type: story
+type: tip
 tags: javascript,array,loop
 authors: chalarangelo
 cover: blog_images/armchair.jpg
