@@ -30,3 +30,8 @@
     margin-right: calc((640px - 882px) / 2 + 2.125rem) !important;
   }
 }
+
+#scroll-progress {
+  position: relative !important;
+  z-index: 0 !important;
+}
