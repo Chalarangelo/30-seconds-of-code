@@ -32,7 +32,7 @@ const Shell = ({ isSearch = false, children }) => {
         aria-label='Main'
       >
         <Link href='/'>
-          <a className='nav-btn'>
+          <a className='nav-logo-wrapper'>
             <img
               src='/assets/30s-icon.png'
               alt={literals.home}
