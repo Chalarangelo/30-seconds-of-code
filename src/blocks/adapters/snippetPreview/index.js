@@ -38,7 +38,7 @@ export class SnippetPreview {
   }
 
   get expertise() {
-    return Tag.format(this.snippet.expertise);
+    return this.snippet.expertise;
   }
 
   get primaryTag() {
