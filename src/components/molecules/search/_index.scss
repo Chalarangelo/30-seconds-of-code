@@ -17,13 +17,15 @@
 
 .search-wrapper {
   position: relative;
-  width: calc(100% - 76px - 64px - 44px);
   background: var(--clr-search-bg);
   color: var(--clr-txt-100);
   transition: 0.3s ease all;
+  flex: 0 0 100%;
+  margin-bottom: 1rem;
 
   @media screen and (min-width: $layout-medium-breakpoint) {
-    width: 320px;
+    flex: 1 0 300px;
+    margin-bottom: 0;
   }
 
   &:not(:focus-within) .search-autocomplete-list {
