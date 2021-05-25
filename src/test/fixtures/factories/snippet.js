@@ -29,7 +29,7 @@ factory.sequence('words', function* () {
 
 factory.sequence('expertise', function* () {
   while (true)
-    yield ['Beginner', 'Intermediate', 'Advanced'][
+    yield ['beginner', 'intermediate', 'advanced'][
       Math.floor(Math.random() * 3)
     ];
 });
@@ -56,7 +56,7 @@ factory.sequence('url', function* () {
 factory
   .define('Snippet', () => ({
     title: '',
-    expertise: 'Intermediate',
+    expertise: 'intermediate',
     primaryTag: '',
     language: '',
     icon: '',
@@ -77,11 +77,11 @@ factory
   }))
   // Expertise
   .trait('expertise', () => ({ expertise: factory.nextFrom('expertise') }))
-  .trait('beginner', { expertise: 'Beginner' })
-  .trait('intermediate', { expertise: 'Intermediate' })
-  .trait('advanced', { expertise: 'Advanced' })
+  .trait('beginner', { expertise: 'beginner' })
+  .trait('intermediate', { expertise: 'intermediate' })
+  .trait('advanced', { expertise: 'advanced' })
   // Blog
-  .trait('blog', { expertise: 'Blog', icon: 'blog' })
+  .trait('blog', { expertise: 'blog', icon: 'blog' })
   // Search
   .trait('search result', () => ({ score: Math.random() }));
 

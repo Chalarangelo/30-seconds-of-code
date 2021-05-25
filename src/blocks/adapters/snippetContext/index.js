@@ -78,7 +78,7 @@ export class SnippetContext {
   }
 
   get expertise() {
-    return Tag.format(this.snippet.expertise);
+    return this.snippet.expertise;
   }
 
   get language() {

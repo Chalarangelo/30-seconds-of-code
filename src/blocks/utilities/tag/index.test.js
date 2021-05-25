@@ -18,7 +18,7 @@ describe('Tag', () => {
       expect(Tag.determineExpertise(['array', 'advanced'])).toBe('advanced');
     });
     it('returns default expertise if none is found', () => {
-      expect(Tag.determineExpertise(['array'])).toBe('Intermediate');
+      expect(Tag.determineExpertise(['array'])).toBe('intermediate');
     });
   });
 
