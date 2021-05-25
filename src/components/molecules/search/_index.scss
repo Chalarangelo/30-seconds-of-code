@@ -37,10 +37,15 @@
     line-height: 44px;
     margin-left: 0.5rem;
     color: inherit;
+    transition: 0.3s ease all;
   }
 
   &:focus-within {
     color: var(--clr-txt-200);
+
+    &::before {
+      transform: scale(1.1);
+    }
   }
 }
 
