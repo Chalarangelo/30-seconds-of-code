@@ -21,10 +21,6 @@ describe('<HomePage />', () => {
       expect(wrapper.querySelectorAll('.page-container')).toHaveLength(1);
     });
 
-    it('the home page title', () => {
-      expect(wrapper.querySelectorAll('.home-title')).toHaveLength(1);
-    });
-
     it('the correct number of shelves component', () => {
       expect(wrapper.querySelectorAll('.collections-shelf-title')).toHaveLength(
         1
