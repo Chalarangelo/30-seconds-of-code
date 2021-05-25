@@ -18,7 +18,7 @@ const nums = [ 3, 6, 9, 12, 15 ];
 const [
   k,              // k = 3
   l,              // l = 6
-  ,               // Skip a value (12)
+  ,               // Skip a value (9)
   ...n            // n = [12, 15]
 ] = nums;
 ```
