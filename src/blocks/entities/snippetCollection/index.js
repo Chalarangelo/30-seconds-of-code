@@ -99,24 +99,6 @@ export class SnippetCollection {
     return `${this.type}${this.slugPrefix}`;
   }
 
-  get orders() {
-    if (!this._orders) {
-      this._orders = ['p'];
-      if (
-        this.type === 'blog' ||
-        (this.type === 'tag' && !this.config.language)
-      ) {
-        this._orders.push('n');
-      } else if (
-        this.type === 'language' ||
-        (this.type === 'tag' && this.config.language)
-      ) {
-        this._orders.push('a', 'e');
-      }
-    }
-    return this._orders;
-  }
-
   get tagMetadata() {
     if (!this._tagMetadata) {
       this._tagMetadata =

@@ -76,7 +76,7 @@ export class HubSerializer {
             {
               shelfType: 'snippets',
               shelfName: literals.newBlogs,
-              shelfUrl: `${blogCollection.slugPrefix}/n/1`,
+              shelfUrl: `${blogCollection.slugPrefix}/p/1`,
               shelfData: newBlogs.map(s => new SnippetPreview(s).toObject()),
             },
             {
