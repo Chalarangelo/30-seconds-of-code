@@ -4,30 +4,26 @@ import SnippetList from './index';
 import { anchorItems } from 'test/fixtures/listingAnchors';
 import SnippetFactory from 'test/fixtures/factories/snippet';
 import PaginatorFactory from 'test/fixtures/factories/paginator';
-import SorterFactory from 'test/fixtures/factories/sorter';
 
 const paginator = PaginatorFactory.create('Paginator');
-const sorter = SorterFactory.create('Sorter');
 
 describe('<SnippetList />', () => {
   const snippetList = SnippetFactory.createMany('PreviewSnippet', 2);
   const listingName = 'Snippet list';
 
-  let wrapper, pageTitle, paginate, sort;
+  let wrapper, pageTitle, paginate;
 
   beforeEach(() => {
     wrapper = renderWithContext(
       <SnippetList
         snippetList={snippetList}
         paginator={paginator}
-        sorter={sorter}
         listingName={listingName}
         listingSublinks={anchorItems}
       />
     ).container;
     pageTitle = wrapper.querySelector('.page-title');
     paginate = wrapper.querySelector('.paginator');
-    sort = wrapper.querySelector('.sorter');
   });
 
   afterEach(cleanup);
@@ -45,10 +41,6 @@ describe('<SnippetList />', () => {
       expect(wrapper.querySelectorAll('.listing-anchors')).toHaveLength(1);
     });
 
-    it('a Sorter component', () => {
-      expect(wrapper.querySelectorAll('.sorter')).toHaveLength(1);
-    });
-
     it('the appropriate PreviewCard components', () => {
       expect(wrapper.querySelectorAll('.list-card')).toHaveLength(2);
     });
@@ -64,17 +56,12 @@ describe('<SnippetList />', () => {
     );
   });
 
-  it('should pass the sorter to sorter', () => {
-    expect(sort.querySelectorAll('a')[0].textContent).toEqual('Popularity');
-  });
-
   describe('with empty list', () => {
     beforeEach(() => {
       wrapper = renderWithContext(
         <SnippetList
           snippetList={[]}
           paginator={paginator}
-          sorter={sorter}
           listingName={listingName}
           listingSublinks={anchorItems}
         />
@@ -92,7 +79,6 @@ describe('<SnippetList />', () => {
         <SnippetList
           snippetList={snippetList}
           paginator={paginator}
-          sorter={sorter}
           listingName={listingName}
         />
       ).container;
@@ -100,24 +86,6 @@ describe('<SnippetList />', () => {
 
     it('should not render a ListingAnchors component', () => {
       expect(wrapper.querySelectorAll('.listing-anchors')).toHaveLength(0);
-    });
-  });
-
-  describe('with a single sorting order', () => {
-    beforeEach(() => {
-      wrapper = renderWithContext(
-        <SnippetList
-          snippetList={snippetList}
-          paginator={paginator}
-          sorter={SorterFactory.create('Sorter', 'single order')}
-          listingName={listingName}
-        />
-      ).container;
-      pageTitle = wrapper.querySelector('.page-title');
-    });
-
-    it('should not add the sorter styles to PageTitle', () => {
-      expect(pageTitle.className).not.toContain('with-sorter');
     });
   });
 });

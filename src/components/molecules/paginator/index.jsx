@@ -12,9 +12,7 @@ const propTypes = {
  * Dependent on the `Button` component.
  * @param {object} paginator - Pagination data fo the component.
  */
-const Paginator = ({
-  paginator: { pageNumber, totalPages, baseUrl, slugOrderingSegment },
-}) => {
+const Paginator = ({ paginator: { pageNumber, totalPages, baseUrl } }) => {
   if (totalPages <= 1) return null;
 
   /*
@@ -35,7 +33,7 @@ const Paginator = ({
   return (
     <div className='paginator flex j-center'>
       {pageNumber > 1 && (
-        <Link href={`${baseUrl}/${slugOrderingSegment}/${pageNumber - 1}`}>
+        <Link href={`${baseUrl}/p/${pageNumber - 1}`}>
           <a
             className='btn no-shd link-btn previous-page fs-no md:fs-sm icon icon-chevron-left'
             rel='prev'
@@ -54,16 +52,13 @@ const Paginator = ({
             {buttonNumber}
           </Button>
         ) : (
-          <Link
-            key={buttonNumber}
-            href={`${baseUrl}/${slugOrderingSegment}/${buttonNumber}`}
-          >
+          <Link key={buttonNumber} href={`${baseUrl}/p/${buttonNumber}`}>
             <a className='btn no-shd link-btn fs-md'>{buttonNumber}</a>
           </Link>
         )
       )}
       {pageNumber < totalPages && (
-        <Link href={`${baseUrl}/${slugOrderingSegment}/${pageNumber + 1}`}>
+        <Link href={`${baseUrl}/p/${pageNumber + 1}`}>
           <a
             className='btn no-shd link-btn next-page fs-no md:fs-sm icon icon-chevron-right'
             rel='next'

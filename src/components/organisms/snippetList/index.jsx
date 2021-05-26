@@ -1,6 +1,5 @@
 import PropTypes from 'typedefs/proptypes';
 import Paginator from 'components/molecules/paginator';
-import Sorter from 'components/molecules/sorter';
 import PageTitle from 'components/atoms/pageTitle';
 import PreviewCard from 'components/molecules/previewCard';
 import ListingAnchors from 'components/molecules/listingAnchors';
@@ -9,7 +8,6 @@ import combineClassNames from '@chalarangelo/combine-class-names';
 const propTypes = {
   snippetList: PropTypes.arrayOf(PropTypes.snippet),
   paginator: PropTypes.paginator,
-  sorter: PropTypes.sorter,
   listingName: PropTypes.string,
   listingDescription: PropTypes.string,
   listingImage: PropTypes.string,
@@ -25,7 +23,6 @@ const propTypes = {
 const SnippetList = ({
   snippetList,
   paginator,
-  sorter,
   listingName,
   listingDescription = '',
   listingImage = '',
@@ -34,16 +31,12 @@ const SnippetList = ({
 }) => {
   /* istanbul ignore next */
   const isMainOrListing = listingType === 'main';
-  const withSorter = sorter && sorter.orders && sorter.orders.length > 1;
 
   return snippetList.length ? (
     <>
       {isMainOrListing ? (
         <>
-          <PageTitle className={withSorter ? 'with-sorter' : null}>
-            {listingName}
-          </PageTitle>
-          <Sorter sorter={sorter} />
+          <PageTitle>{listingName}</PageTitle>
         </>
       ) : (
         <>
@@ -74,7 +67,6 @@ const SnippetList = ({
             {listingSublinks.length ? (
               <ListingAnchors items={listingSublinks} />
             ) : null}
-            <Sorter sorter={sorter} />
           </div>
         </>
       )}
