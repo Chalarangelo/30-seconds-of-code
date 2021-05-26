@@ -154,13 +154,6 @@ describe('SnippetCollection', () => {
       expect(collections.language.id).toBe('language/dart');
     });
 
-    it('should produce the correct orders', () => {
-      expect(collections.main.orders).toEqual(['p']);
-      expect(collections.blog.orders).toEqual(['p', 'n']);
-      expect(collections.language.orders).toEqual(['p', 'a', 'e']);
-      expect(collections.tag.orders).toEqual(['p', 'a', 'e']);
-    });
-
     it('should produce the correct tag metadata', () => {
       expect(collections.main.tagMetadata).toBeFalsy();
       expect(collections.tag.tagMetadata).toBeFalsy();
