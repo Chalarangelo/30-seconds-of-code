@@ -33,6 +33,7 @@
 
       &:before {
         font-weight: 600;
+        color: var(--clr-txt-150);
         -webkit-font-smoothing: antialiased;
         line-height: 1.5;
       }
@@ -48,6 +49,7 @@
         &:first-child:not(:last-child) {
           line-height: 1.5;
           font-weight: 600;
+          color: var(--clr-txt-150);
           -webkit-font-smoothing: antialiased;
         }
       }
