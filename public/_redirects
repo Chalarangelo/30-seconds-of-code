@@ -45,6 +45,16 @@
 /:lang/t/:tag/e/*                      /:lang/t/:tag/p/1                        301!
 
 # -----------------------------------------------------------------------------
+#   REMOVED CONTENT REDIRECTS:
+#
+# * Redirect removed language content to the homepage with a 410 (gone forever).
+# -----------------------------------------------------------------------------
+/dart/*                                /                                        410
+/go/*                                  /                                        410
+/php/*                                 /                                        410
+/c-sharp/*                             /                                        410
+
+# -----------------------------------------------------------------------------
 #   UPDATED TAG REDIRECTS:
 #
 # * Redirect JS Adapter to Function after merging - 13/01/2020
