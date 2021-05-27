@@ -5,6 +5,12 @@
   @each $txt in $txts {
     .txt-#{$txt} {
       color: var(--clr-txt-#{$txt});
+
+      @if $txt != '200' {
+        b, strong {
+          color: var(--clr-txt-#{$txt+50});
+        }
+      }
     }
   }
 }
@@ -17,4 +23,4 @@
   --clr-txt-050: hsla(0, 0%, 100%, .64);
 }
 
-@include generate-text-colors(('200', '150', '100', '050'));
+@include generate-text-colors((200, 150, 100, 050));
