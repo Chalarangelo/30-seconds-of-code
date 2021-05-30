@@ -3,14 +3,21 @@ import { ArgsError } from 'blocks/utilities/error';
 import SnippetFactory from 'test/fixtures/factories/blockSnippet';
 
 describe('SnippetContext', () => {
-  let snippet, snippetContext, blogSnippet, blogSnippetContext;
+  let snippet,
+    snippetContext,
+    blogSnippet,
+    blogSnippetContext,
+    cssSnippet,
+    cssSnippetContext;
 
   beforeAll(() => {
     const snippets = SnippetFactory.create('SnippetPresets');
     snippet = snippets.snippet;
     blogSnippet = snippets.blogSnippet;
+    cssSnippet = snippets.cssSnippet;
     snippetContext = new SnippetContext(snippet);
     blogSnippetContext = new SnippetContext(blogSnippet);
+    cssSnippetContext = new SnippetContext(cssSnippet);
   });
 
   describe('constructor', () => {
@@ -20,20 +27,26 @@ describe('SnippetContext', () => {
   });
 
   describe('toObject', () => {
-    let result, blogResult;
+    let result, blogResult, cssResult;
 
     beforeAll(() => {
       result = snippetContext.toObject({ withVscodeUrl: true });
       blogResult = blogSnippetContext.toObject({ withVscodeUrl: false });
+      cssResult = cssSnippetContext.toObject({ withVscodeUrl: true });
     });
 
     it('returns the appropriate attributes', () => {
       expect(Object.keys(blogResult)).toEqual(
         SnippetContext.serializableAttributes.filter(
-          a => !['code', 'vscodeUrl'].includes(a)
+          a => !['code', 'vscodeUrl', 'actionType'].includes(a)
         )
       );
       expect(Object.keys(result)).toEqual(
+        SnippetContext.serializableAttributes.filter(
+          a => !['authors', 'type', 'cover', 'code'].includes(a)
+        )
+      );
+      expect(Object.keys(cssResult)).toEqual(
         SnippetContext.serializableAttributes.filter(
           a => !['authors', 'type', 'cover'].includes(a)
         )
@@ -101,8 +114,14 @@ describe('SnippetContext', () => {
       expect(result.html).toStrictEqual(snippet.html);
     });
 
+    it('returns the correct actionType', () => {
+      expect(result.actionType).toBe('codepen');
+      expect(cssResult.actionType).toBe('cssCodepen');
+      expect(blogResult.actionType).toBe(undefined);
+    });
+
     it('returns the correct code', () => {
-      expect(result.code).toBe(snippet.code);
+      expect(cssResult.code).toBe(cssSnippet.code);
     });
 
     it('returns the correct vscodeUrl', () => {

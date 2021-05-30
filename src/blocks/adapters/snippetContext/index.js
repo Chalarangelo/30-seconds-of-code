@@ -103,8 +103,17 @@ export class SnippetContext {
     return this.snippet.html;
   }
 
+  get actionType() {
+    if (this.snippet.config.isBlog) return undefined;
+    return this.snippet.config.isCSS
+      ? 'cssCodepen'
+      : this.snippet.config.isReact
+      ? 'codepen'
+      : 'copy';
+  }
+
   get code() {
-    return this.snippet.code;
+    return this.snippet.config.isCSS ? this.snippet.code : undefined;
   }
 
   get vscodeUrl() {
@@ -124,6 +133,7 @@ export class SnippetContext {
     'icon',
     'tags',
     'html',
+    'actionType',
     'code',
     'authors',
     'type',
