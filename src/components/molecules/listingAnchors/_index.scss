@@ -1,29 +1,18 @@
 .listing-anchors {
-  position: relative;
   flex-wrap: nowrap;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  justify-content: flex-start;
   padding-bottom: 0.25rem;
 
   &::-webkit-scrollbar-track {
     background-color: var(--clr-scrollbar-bg);
-    margin: 0 2rem;
+    margin: 0 4rem;
     border-radius: var(--br-sm);
 
-    @media screen and (min-width: 400px) {
-      margin: 0 4rem;
-    }
-
-    @media screen and (min-width: 520px) {
-      margin: 0 8rem;
-    }
-
-    @media screen and (min-width: 680px) {
+    @media screen and (min-width: $layout-medium-breakpoint) {
       margin: 0 12rem;
     }
 
-    @media screen and (min-width: 800px) {
+    @media screen and (min-width: $layout-large-breakpoint) {
       margin: 0 16rem;
     }
   }
@@ -43,9 +32,8 @@
   }
 
   li {
-    flex: 0 0 64px;
-    scroll-snap-align: start;
-    margin: 0.25rem 0.75rem;
+    flex: 0 0 auto;
+    margin: 0.25rem 0.5rem;
 
     &:first-child {
       margin-left: 0;
@@ -58,28 +46,18 @@
 
   .btn {
     box-sizing: border-box;
-    min-width: 100%;
-    padding: 0.375rem 0.25rem;
-    height: 40px;
-    border: none;
+    padding: 0.5rem 1rem;
     text-align: center;
     background: transparent;
-    border-radius: var(--br-none);
     color: var(--clr-txt-100);
-    border-bottom: 2px solid transparent;
 
     &.selected {
       color: var(--clr-txt-200);
-      border-bottom: 2px solid currentColor;
+      background: var(--clr-el-02dp);
     }
 
-    @media screen and (min-width: $layout-medium-breakpoint) {
-      padding: 0.625rem 0.875rem;
-      height: 48px;
-    }
-
-    @media screen and (min-width: $layout-large-breakpoint) {
-      height: 52px;
+    &:hover {
+      background: var(--clr-el-01dp);
     }
   }
 }
