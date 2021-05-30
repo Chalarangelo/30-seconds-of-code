@@ -24,7 +24,13 @@ export class Extractor {
     return await this.extractSnippets();
   };
 
-  static extractSnippets = async (configs = global.settings.configs) => {
+  // TODO: Before the rebranding branch is merged, remove the filter from the configs
+  //  and actually update the content configs repo!
+  static extractSnippets = async (
+    configs = global.settings.configs.filter(
+      c => !['php', 'c-sharp', 'go', 'dart'].some(l => c.slug === l)
+    )
+  ) => {
     const boundLog = Logger.bind('utilities.extractor.extractSnippets');
     const { rawContentPath: contentDir } = global.settings.paths;
 
