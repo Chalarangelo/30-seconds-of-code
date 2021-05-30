@@ -139,6 +139,7 @@ factory
       description: '<p></p>',
       fullDescription: '<p></p>',
     },
+    actionType: 'copy',
     code: {
       src: '',
       example: '',
@@ -189,6 +190,8 @@ factory
               otherLanguages,
             },
       icon: lang.toLowerCase(),
+      actionType:
+        type === 'css' ? 'cssCodepen' : type === 'react' ? 'codepen' : 'copy',
       tags: {
         primary: tags[0],
         all: tags,
