@@ -46,18 +46,6 @@
       left: 0.5rem;
       font-size: 36px;
     }
-
-    // Custom styles for dart icon
-    &.icon-dart:before {
-      content: '';
-      background-image: generate-icon-background("dartlang", '', '', 0, 24);
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
   }
 
   // Reusable utility for titles in the body of cards (used in blogs)
