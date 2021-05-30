@@ -7,6 +7,7 @@ import {
 } from 'components/atoms/button';
 import JSX_SNIPPET_PRESETS from 'settings/jsxSnippetPresets';
 import literals from 'lang/en/client/common';
+import { useEffect, useState } from 'react';
 
 const propTypes = {
   snippet: PropTypes.snippet,
@@ -18,34 +19,64 @@ const propTypes = {
  */
 const Actions = ({ snippet }) => {
   const gtagCallback = useGtagEvent('click');
-  const showCopy =
-    snippet.code && snippet.code.src && !snippet.language.otherLanguages;
-  const showCodepen =
-    snippet.code && snippet.code.src && snippet.language.otherLanguages;
-  const showCssCodepen =
-    snippet.code && snippet.code.css && snippet.language.otherLanguages;
+  const [{ src, css, html, js, style }, setCode] = useState({
+    src: '',
+    css: '',
+    html: '',
+    js: '',
+    style: '',
+  });
+
+  useEffect(() => {
+    if (!document) return;
+    switch (snippet.actionType) {
+      case 'codepen': {
+        const codeBlock = document.querySelector('.card-code');
+        let code = codeBlock ? codeBlock.innerText : '';
+        const codeExample = document.querySelector('.card-example');
+        code += codeExample ? codeExample.innerText : '';
+        const styleBlock = document.querySelector(
+          '.card-code[data-code-language="CSS"]'
+        );
+        setCode({ src: code, style: styleBlock ? styleBlock.innerText : '' });
+        break;
+      }
+      case 'cssCodepen': {
+        setCode({
+          html: snippet.code.html,
+          css: snippet.code.css,
+          js: snippet.code.js,
+        });
+        break;
+      }
+      case 'copy': {
+        const codeBlock = document.querySelector('.card-code');
+        setCode({ src: codeBlock ? codeBlock.innerText : '' });
+        break;
+      }
+      default:
+        break;
+    }
+  }, [snippet]);
+
   return (
     <div className='card-actions flex'>
       <ShareButton
         pageTitle={snippet.title}
         pageDescription={snippet.description}
       />
-      {showCopy && <CopyButton text={snippet.code.src} />}
-      {showCodepen && (
+      {Boolean(snippet.actionType === 'copy') && <CopyButton text={src} />}
+      {Boolean(snippet.actionType === 'codepen') && (
         <CodepenButton
-          jsCode={`${snippet.code.src}\n\n${snippet.code.example}`}
+          jsCode={src}
           htmlCode={JSX_SNIPPET_PRESETS.envHtml}
-          cssCode={snippet.code.style}
+          cssCode={style}
           jsPreProcessor={JSX_SNIPPET_PRESETS.jsPreProcessor}
           jsExternal={JSX_SNIPPET_PRESETS.jsImports}
         />
       )}
-      {showCssCodepen && (
-        <CodepenButton
-          cssCode={snippet.code.css}
-          htmlCode={snippet.code.html}
-          jsCode={snippet.code.js}
-        />
+      {Boolean(snippet.actionType === 'cssCodepen') && (
+        <CodepenButton cssCode={css} htmlCode={html} jsCode={js} />
       )}
       <a
         className='btn no-shd action-btn fs-no md:fs-sm icon icon-github '

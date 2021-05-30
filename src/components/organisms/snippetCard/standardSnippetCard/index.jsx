@@ -30,7 +30,7 @@ const SnippetCard = ({ snippet }) => (
       dangerouslySetInnerHTML={{ __html: snippet.html.fullDescription }}
     />
     <div className='card-source-content'>
-      {snippet.code.style && (
+      {snippet.html.style && (
         <CodeBlock
           language={snippet.language.otherLanguages[0]}
           htmlContent={snippet.html.style}
