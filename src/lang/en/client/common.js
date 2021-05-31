@@ -13,7 +13,6 @@ const literals = {
   // Note: This has to be rendered as raw HTML
   andCollections: '&nbsp;&amp;&nbsp;collections',
   snippetCollection: 'Snippet collection',
-  blog: 'Blog',
   settings: 'Settings',
   viewAll: 'View all',
   siteName: settings.websiteName,

@@ -33,7 +33,7 @@ factory
     dirName: '30blog',
     repoUrl: 'https://github.com/30-seconds/30-seconds-blog',
     snippetPath: 'blog_posts',
-    slug: 'blog',
+    slug: 'articles',
     isBlog: true,
     iconName: 'blog',
     biasPenaltyMultiplier: 1,
