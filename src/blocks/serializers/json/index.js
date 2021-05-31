@@ -6,6 +6,7 @@ const writeFile = util.promisify(fs.writeFile);
  * Serializes objects to JSON files.
  */
 export class JSONSerializer {
+  static space = process.env.NODE_ENV === 'production' ? 0 : 2;
   /**
    * Writes the provided object to the specified file
    * @param {string} filePath - Path to write the file.
@@ -13,7 +14,7 @@ export class JSONSerializer {
    * @returns {Promise} - A promise that resolves as soon as the file has been written
    */
   static serializeToFile = (filePath, obj) =>
-    writeFile(filePath, JSON.stringify(obj, null, 2));
+    writeFile(filePath, JSON.stringify(obj, null, JSONSerializer.space));
 
   /**
    * Writes the provided chunks to the specified directory.
@@ -31,7 +32,10 @@ export class JSONSerializer {
 
     return Promise.all(
       dataChunkPairs.map(([key, value]) =>
-        writeFile(`${path}/${key}.json`, JSON.stringify(value, null, 2))
+        writeFile(
+          `${path}/${key}.json`,
+          JSON.stringify(value, null, JSONSerializer.space)
+        )
       )
     );
   };
