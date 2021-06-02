@@ -37,9 +37,7 @@ const ShareButton = ({ pageTitle, pageDescription }) => {
           // display error message or feedback microinteraction
         }
       }}
-    >
-      {literals.share}
-    </button>
+    />
   );
 };
 
