@@ -2,7 +2,7 @@
   display: inline-block;
   padding: 0.625rem 0.875rem;
   margin-top: 0.75rem;
-  background: var(--clr-btn-bg);
+  background: var(--clr-primary-200);
   color: var(--clr-txt-200);
   cursor: pointer;
   border: none;
@@ -48,7 +48,7 @@
   &.link-btn {
 
     &:hover, &:focus {
-      color: var(--clr-link);
+      color: var(--clr-primary-050);
     }
   }
 
@@ -64,7 +64,7 @@
 
     &:hover, &:focus {
       background: var(--clr-el-01dp);
-      color: var(--clr-primary);
+      color: var(--clr-primary-100);
     }
   }
 }
