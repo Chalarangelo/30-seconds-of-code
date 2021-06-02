@@ -4,7 +4,8 @@
     "javascript": "JavaScript",
     "php": "PHP",
     "seo": "SEO",
-    "vscode": "Visual Studio Code"
+    "vscode": "Visual Studio Code",
+    "html": "HTML"
   },
   "languageTags" : {
     "javascript": {
