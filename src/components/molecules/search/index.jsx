@@ -186,7 +186,9 @@ const Search = ({ isMainSearch = false }) => {
                     {item.expertise
                       ? item.language
                         ? item.language
-                        : item.expertise
+                        : `${item.expertise[0].toUpperCase()}${item.expertise.slice(
+                            1
+                          )}`
                       : literals.snippetCollectionShort}
                   </span>
                 ) : null}
