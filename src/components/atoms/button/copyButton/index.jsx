@@ -18,7 +18,6 @@ const CopyButton = ({ text }) => {
   const gtagCallback = useGtagEvent('click');
   const [active, setActive] = useState(false);
   const [copying, setCopying] = useState(false);
-  const [buttonText, setButtonText] = useState(literals.copyToClipboard);
 
   // If `copying` is `true`, then play the activation animation.
   useEffect(() => {
@@ -32,7 +31,6 @@ const CopyButton = ({ text }) => {
   useEffect(() => {
     if (active) return;
     setCopying(false);
-    setButtonText(literals.copyToClipboard);
   }, [active]);
 
   return (
@@ -45,11 +43,8 @@ const CopyButton = ({ text }) => {
         // eslint-disable-next-line camelcase
         gtagCallback({ event_category: 'action-copy', value: 1 });
         setCopying(true);
-        setButtonText(literals.copiedToClipboard);
       }}
-    >
-      {buttonText}
-    </button>
+    />
   );
 };
 

@@ -83,15 +83,14 @@ const Actions = ({ snippet }) => {
         href={snippet.url}
         rel='nofollow noopener noreferrer'
         target='_blank'
+        title={literals.viewOnGitHub}
         onClick={e => {
           e.preventDefault();
           // eslint-disable-next-line camelcase
           gtagCallback({ event_category: 'action-github', value: 1 });
           window.open(e.target.href, '_blank');
         }}
-      >
-        {literals.viewOnGitHub}
-      </a>
+      />
     </div>
   );
 };

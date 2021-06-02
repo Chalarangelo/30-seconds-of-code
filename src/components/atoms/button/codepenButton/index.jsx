@@ -60,9 +60,7 @@ const CodepenButton = ({
           // eslint-disable-next-line camelcase
           gtagCallback({ event_category: 'action-codepen', value: 1 });
         }}
-      >
-        {literals.codepen}
-      </button>
+      />
     </form>
   );
 };
