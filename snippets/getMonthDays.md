@@ -5,7 +5,7 @@ tags: date,intermediate
 
 Get the number of days in the month according to the specified month.
 
-- Use `new Date(year, monthIndex, day)`, set the parameter day to `0` to get last day of the month.
+- Use `new Date(year, monthIndex, day)`, set the parameter day to `0` to get last day of the previous month.
 - Use `Date.prototype.getDate` to get the day of month. 
 
 ```js
