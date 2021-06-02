@@ -16,7 +16,10 @@ const propTypes = {
 const PreviewCard = ({ snippet }) => {
   const tags = snippet.language
     ? [snippet.language, snippet.primaryTag]
-    : [snippet.primaryTag, snippet.expertise];
+    : [
+        snippet.primaryTag,
+        `${snippet.expertise[0].toUpperCase()}${snippet.expertise.slice(1)}`,
+      ];
   return (
     <li className='card srfc-02dp txt-100 list-card'>
       <div className={`card-icon br-round icon icon-${snippet.icon}`}>
