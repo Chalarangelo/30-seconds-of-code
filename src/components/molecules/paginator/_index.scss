@@ -1,70 +1,58 @@
 .paginator {
   margin: 1.75rem 1.25rem 1.5rem;
-  align-items: baseline;
+  align-items: center;
 
   .btn, a.btn {
-    margin: 0.25rem 0;
-    padding: 0.625rem 0;
     box-sizing: border-box;
-    border-radius: 0;
-    height: 44px;
     min-width: 44px;
     text-align: center;
-    background: transparent;
-    color: var(--clr-txt-150);
 
     &.current-page {
       cursor: default;
-      color: var(--clr-txt-200);
+      background: transparent;
+      margin-top: 0;
     }
 
     &.previous-page, &.next-page {
       color: var(--clr-primary-050);
       position: relative;
-      margin: 0.625rem 1rem;
+      display: flex;
+      justify-content: center;
 
       &:before {
-        position: absolute;
-        font-size: 28px;
-        top: 0;
-        line-height: 32px;
-        transition: all 0.3s ease;
-
-        @media screen and (min-width: $layout-medium-breakpoint) {
-          line-height: 44px;
-        }
+        position: relative;
+        font-size: 24px;
       }
 
       &:hover, &:focus {
-        transform: scale(1.05);
-        transform-origin: center;
+        color: var(--clr-primary-100);
       }
     }
 
     &.previous-page {
-      &:before {
-        text-align: left;
-        right: 0;
+      flex-direction: row;
 
-        @media screen and (min-width: $layout-medium-breakpoint) {
-          left: -2rem;
+      @media screen and (min-width: $layout-medium-breakpoint) {
+        padding-right: 1.125rem;
+
+        &:before {
+          padding-right: 0.25rem;
+          margin-left: -0.25rem;
         }
       }
     }
 
     &.next-page {
-      &:before {
-        text-align: right;
-        left: 0;
+      flex-direction: row-reverse;
 
-        @media screen and (min-width: $layout-medium-breakpoint) {
-          right: -2rem;
+      @media screen and (min-width: $layout-medium-breakpoint) {
+        padding-left: 1.125rem;
+
+        &:before {
+          padding-left: 0.25rem;
+          margin-right: -0.25rem;
         }
       }
     }
-  }
-
-  .paginator-separator {
-    letter-spacing: 2px;
   }
 }

@@ -25,42 +25,38 @@ const Paginator = ({ paginator: { pageNumber, totalPages, baseUrl } }) => {
   let buttons = [];
   if (totalPages <= 3)
     buttons = Array.from({ length: totalPages }, (v, i) => i + 1);
-  else if (pageNumber === 1) buttons = [1, '·', 2, '·', totalPages];
+  else if (pageNumber === 1) buttons = [1, 2, totalPages];
   else if (totalPages - pageNumber === 0)
-    buttons = [1, '·', totalPages - 1, '·', totalPages];
-  else buttons = [1, '·', pageNumber, '·', totalPages];
+    buttons = [1, totalPages - 1, totalPages];
+  else buttons = [1, pageNumber, totalPages];
 
   return (
     <div className='paginator flex j-center'>
       {pageNumber > 1 && (
         <Link href={`${baseUrl}/p/${pageNumber - 1}`}>
           <a
-            className='btn no-shd link-btn previous-page fs-no md:fs-sm icon icon-chevron-left'
+            className='btn no-shd action-btn previous-page fs-no md:fs-sm icon icon-chevron-left'
             rel='prev'
           >
             {literals.previous}
           </a>
         </Link>
       )}
-      {buttons.map((buttonNumber, i) =>
-        buttonNumber === '·' ? (
-          <span className='paginator-separator txt-050 fs-xl' key={`sep-${i}`}>
-            {buttonNumber}
-          </span>
-        ) : buttonNumber === pageNumber ? (
+      {buttons.map(buttonNumber =>
+        buttonNumber === pageNumber ? (
           <Button className='no-shd current-page fs-xl' key={buttonNumber}>
             {buttonNumber}
           </Button>
         ) : (
           <Link key={buttonNumber} href={`${baseUrl}/p/${buttonNumber}`}>
-            <a className='btn no-shd link-btn fs-md'>{buttonNumber}</a>
+            <a className='btn no-shd action-btn fs-md'>{buttonNumber}</a>
           </Link>
         )
       )}
       {pageNumber < totalPages && (
         <Link href={`${baseUrl}/p/${pageNumber + 1}`}>
           <a
-            className='btn no-shd link-btn next-page fs-no md:fs-sm icon icon-chevron-right'
+            className='btn no-shd action-btn next-page fs-no md:fs-sm icon icon-chevron-right'
             rel='next'
           >
             {literals.next}
