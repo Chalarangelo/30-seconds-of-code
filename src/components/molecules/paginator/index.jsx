@@ -1,6 +1,5 @@
 import PropTypes from 'typedefs/proptypes';
 import Link from 'next/link';
-import { Button } from 'components/atoms/button';
 import literals from 'lang/en/client/paginator';
 
 const propTypes = {
@@ -35,7 +34,7 @@ const Paginator = ({ paginator: { pageNumber, totalPages, baseUrl } }) => {
       {pageNumber > 1 && (
         <Link href={`${baseUrl}/p/${pageNumber - 1}`}>
           <a
-            className='btn no-shd action-btn previous-page fs-no md:fs-sm icon icon-chevron-left'
+            className='btn action-btn previous-page fs-no md:fs-sm icon icon-chevron-left'
             rel='prev'
           >
             {literals.previous}
@@ -44,19 +43,19 @@ const Paginator = ({ paginator: { pageNumber, totalPages, baseUrl } }) => {
       )}
       {buttons.map(buttonNumber =>
         buttonNumber === pageNumber ? (
-          <Button className='no-shd current-page fs-xl' key={buttonNumber}>
+          <span className='current-page fs-xl' key={buttonNumber}>
             {buttonNumber}
-          </Button>
+          </span>
         ) : (
           <Link key={buttonNumber} href={`${baseUrl}/p/${buttonNumber}`}>
-            <a className='btn no-shd action-btn fs-md'>{buttonNumber}</a>
+            <a className='btn action-btn fs-md'>{buttonNumber}</a>
           </Link>
         )
       )}
       {pageNumber < totalPages && (
         <Link href={`${baseUrl}/p/${pageNumber + 1}`}>
           <a
-            className='btn no-shd action-btn next-page fs-no md:fs-sm icon icon-chevron-right'
+            className='btn action-btn next-page fs-no md:fs-sm icon icon-chevron-right'
             rel='next'
           >
             {literals.next}

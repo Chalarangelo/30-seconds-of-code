@@ -79,7 +79,7 @@ const Actions = ({ snippet }) => {
         <CodepenButton cssCode={css} htmlCode={html} jsCode={js} />
       )}
       <a
-        className='btn no-shd action-btn fs-no md:fs-sm icon icon-github '
+        className='btn action-btn fs-no md:fs-sm icon icon-github '
         href={snippet.url}
         rel='nofollow noopener noreferrer'
         target='_blank'

@@ -22,8 +22,8 @@ describe('<Paginator />', () => {
       expect(wrapper.querySelectorAll('.btn.next-page')).toHaveLength(1);
     });
 
-    it('a button for current page', () => {
-      expect(wrapper.querySelectorAll('.btn.current-page')).toHaveLength(1);
+    it('an element for current page', () => {
+      expect(wrapper.querySelectorAll('.current-page')).toHaveLength(1);
     });
   });
 

@@ -2,6 +2,7 @@
   flex-wrap: nowrap;
   overflow-x: auto;
   padding-bottom: 0.25rem;
+  margin: 0.25rem 0.875rem 1.5rem;
 
   &::-webkit-scrollbar-track {
     background-color: var(--clr-scrollbar-bg);
@@ -33,31 +34,23 @@
 
   li {
     flex: 0 0 auto;
-    margin: 0.25rem 0.5rem;
+    margin: 0.25rem 0;
 
-    &:first-child {
+    &:first-child > .btn {
       margin-left: 0;
     }
 
-    &:last-child {
+    &:last-child > .btn {
       margin-right: 0;
     }
   }
 
   .btn {
-    box-sizing: border-box;
     padding: 0.5rem 1rem;
-    text-align: center;
-    background: transparent;
-    color: var(--clr-txt-100);
 
     &.selected {
       color: var(--clr-txt-200);
       background: var(--clr-el-02dp);
-    }
-
-    &:hover {
-      background: var(--clr-el-01dp);
     }
   }
 }
