@@ -42,7 +42,7 @@ const ListingAnchors = ({ items = [] }) => {
         <li key={item.url}>
           <Link href={item.url}>
             <a
-              className={combineClassNames`btn no-shd link-btn ${
+              className={combineClassNames`btn action-btn ${
                 item.selected ? 'selected' : undefined
               }`}
             >

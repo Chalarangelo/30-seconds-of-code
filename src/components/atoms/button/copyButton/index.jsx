@@ -35,7 +35,7 @@ const CopyButton = ({ text }) => {
 
   return (
     <button
-      className={combineClassNames`btn no-shd action-btn fs-no md:fs-sm icon ${
+      className={combineClassNames`btn action-btn fs-no md:fs-sm icon ${
         active ? 'icon-check active' : 'icon-clipboard'
       }`}
       title={literals.copyToClipboard}
