@@ -24,9 +24,7 @@ const Search = ({ isMainSearch = false }) => {
     dispatch,
   ] = useSearch();
   const [value, setValue] = useState('');
-  const [searchIndexInitialized, setSearchIndexInitialized] = useState(
-    false
-  );
+  const [searchIndexInitialized, setSearchIndexInitialized] = useState(false);
   const [selectedResult, setSelectedResult] = useState(-1);
 
   const hasResults = value.trim().length > 1 && searchResults.length !== 0;
@@ -182,7 +180,7 @@ const Search = ({ isMainSearch = false }) => {
               >
                 <span className='result-title txt-150'>{item.title}</span>
                 {!item.search ? (
-                  <span className='result-tag txt-050 fs-mi'>
+                  <span className='result-tag txt-100 fs-mi'>
                     {item.expertise
                       ? item.language
                         ? item.language
