@@ -92,7 +92,7 @@ const Actions = ({ snippet }) => {
     <div className='card-actions flex'>
       {Boolean(canShare) && (
         <Button
-          className='action-btn icon icon-share'
+          className='flex-none action-btn icon icon-share'
           title={literals.share}
           onClick={() => {
             gtagCallback({ event_category: 'action-share', value: 1 });
@@ -110,7 +110,7 @@ const Actions = ({ snippet }) => {
       )}
       {Boolean(snippet.actionType === 'copy') && (
         <Button
-          className={`action-btn icon ${
+          className={`flex-none action-btn icon ${
             active ? 'icon-check active' : 'icon-clipboard'
           }`}
           title={literals.copyToClipboard}
@@ -127,7 +127,7 @@ const Actions = ({ snippet }) => {
           action='https://codepen.io/pen/define'
           method='POST'
           target='_blank'
-          className='btn-form'
+          className='flex-none'
         >
           <input
             type='hidden'
@@ -145,7 +145,7 @@ const Actions = ({ snippet }) => {
             })}
           />
           <Button
-            className='action-btn icon icon-codepen'
+            className='flex-none action-btn icon icon-codepen'
             title={literals.codepen}
             onClick={() => {
               gtagCallback({ event_category: 'action-codepen', value: 1 });
@@ -154,7 +154,7 @@ const Actions = ({ snippet }) => {
         </form>
       )}
       <a
-        className='btn action-btn icon icon-github '
+        className='flex-none btn action-btn icon icon-github '
         href={snippet.url}
         rel='nofollow noopener noreferrer'
         target='_blank'

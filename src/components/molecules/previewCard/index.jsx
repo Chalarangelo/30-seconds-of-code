@@ -21,7 +21,7 @@ const PreviewCard = ({ snippet }) => {
         `${snippet.expertise[0].toUpperCase()}${snippet.expertise.slice(1)}`,
       ];
   return (
-    <li className='card srfc-02dp txt-100 list-card'>
+    <li className='card srfc-02dp txt-100 list-card grid'>
       <div className={`card-icon br-round icon icon-${snippet.icon}`}>
         <Expertise level={snippet.expertise} />
       </div>
