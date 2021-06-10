@@ -1,1 +1,40 @@
-@import './regularButton';
+.btn, a.btn {
+  display: inline-block;
+  padding: 0.625rem 0.875rem;
+  margin: 0 0.5rem;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5rem;
+  cursor: pointer;
+  border: none;
+  border-radius: var(--br-round);
+  transition: 0.3s ease all;
+
+  &:hover, &:focus {
+    animation: none;
+    outline: none;
+  }
+
+  // Utility for btn elements that look like actions
+  &.action-btn {
+    background: transparent;
+    color: var(--clr-txt-150);
+
+    &:hover, &:focus {
+      background: var(--clr-el-01dp);
+      color: var(--clr-primary-100);
+    }
+  }
+
+  &.outline-btn {
+    background: transparent;
+    border: 2px solid var(--clr-primary-100);
+    color: var(--clr-primary-050);
+
+    &:hover, &:focus {
+      background: var(--clr-primary-200);
+      border: 2px solid var(--clr-primary-200);
+      color: var(--clr-txt-200);
+    }
+  }
+}
