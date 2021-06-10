@@ -6,52 +6,48 @@
     box-sizing: border-box;
     min-width: 44px;
     text-align: center;
+  }
 
-    &.current-page {
-      cursor: default;
-      background: transparent;
-      margin-top: 0;
-    }
+  .current-page {
+    cursor: default;
+    background: transparent;
+    margin-top: 0;
+  }
 
-    &.previous-page, &.next-page {
-      color: var(--clr-primary-050);
+  .previous-page, .next-page {
+    color: var(--clr-primary-050);
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    &:before {
       position: relative;
-      display: flex;
-      justify-content: center;
+      font-size: 24px;
+    }
+  }
+
+  .previous-page {
+    flex-direction: row;
+
+    @media screen and (min-width: $layout-medium-breakpoint) {
+      padding-right: 1.125rem;
 
       &:before {
-        position: relative;
-        font-size: 24px;
-      }
-
-      &:hover, &:focus {
-        color: var(--clr-primary-100);
+        padding-right: 0.25rem;
+        margin-left: -0.25rem;
       }
     }
+  }
 
-    &.previous-page {
-      flex-direction: row;
+  .next-page {
+    flex-direction: row-reverse;
 
-      @media screen and (min-width: $layout-medium-breakpoint) {
-        padding-right: 1.125rem;
+    @media screen and (min-width: $layout-medium-breakpoint) {
+      padding-left: 1.125rem;
 
-        &:before {
-          padding-right: 0.25rem;
-          margin-left: -0.25rem;
-        }
-      }
-    }
-
-    &.next-page {
-      flex-direction: row-reverse;
-
-      @media screen and (min-width: $layout-medium-breakpoint) {
-        padding-left: 1.125rem;
-
-        &:before {
-          padding-left: 0.25rem;
-          margin-right: -0.25rem;
-        }
+      &:before {
+        padding-left: 0.25rem;
+        margin-right: -0.25rem;
       }
     }
   }
