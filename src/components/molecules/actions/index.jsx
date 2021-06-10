@@ -2,7 +2,6 @@
 import PropTypes from 'typedefs/proptypes';
 import { useGtagEvent } from 'components/hooks';
 import copyToClipboard from 'copy-to-clipboard';
-import { combineClassNames } from 'utils';
 import Button from 'components/atoms/button';
 import JSX_SNIPPET_PRESETS from 'settings/jsxSnippetPresets';
 import literals from 'lang/en/client/common';
@@ -111,7 +110,7 @@ const Actions = ({ snippet }) => {
       )}
       {Boolean(snippet.actionType === 'copy') && (
         <Button
-          className={combineClassNames`action-btn icon ${
+          className={`action-btn icon ${
             active ? 'icon-check active' : 'icon-clipboard'
           }`}
           title={literals.copyToClipboard}

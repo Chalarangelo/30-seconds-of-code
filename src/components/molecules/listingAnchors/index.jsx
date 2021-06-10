@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import PropTypes from 'typedefs/proptypes';
 import Link from 'next/link';
-import { combineClassNames } from 'utils/index';
 
 const propTypes = {
   items: PropTypes.arrayOf(
@@ -41,11 +40,7 @@ const ListingAnchors = ({ items = [] }) => {
       {items.map(item => (
         <li key={item.url}>
           <Link href={item.url}>
-            <a
-              className={combineClassNames`btn action-btn ${
-                item.selected ? 'selected' : undefined
-              }`}
-            >
+            <a className={`btn action-btn ${item.selected ? 'selected' : ''}`}>
               {item.name}
             </a>
           </Link>

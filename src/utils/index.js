@@ -13,8 +13,6 @@ import {
   truncateString,
 } from './string';
 
-import combineClassNames from '@chalarangelo/combine-class-names';
-
 import { uniqueElements, insertAt, chunk, sample, shuffle } from './array';
 
 import { throttle } from './function';
@@ -26,7 +24,6 @@ export {
   toKebabCase,
   convertToSeoSlug,
   addTrailingSlashToSlug,
-  combineClassNames,
   escapeHTML,
   stripMarkdownFormat,
   optimizeNodes,
