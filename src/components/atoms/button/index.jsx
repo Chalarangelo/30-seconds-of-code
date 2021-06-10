@@ -21,7 +21,7 @@ const Button = ({
   ...rest // Needs props to have accessible name if only icon etc.
 }) => (
   <button
-    className={combineClassNames`btn fs-md ${className}`}
+    className={combineClassNames`btn ${className}`}
     onClick={onClick}
     {...rest}
   >
