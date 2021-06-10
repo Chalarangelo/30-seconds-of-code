@@ -60,11 +60,9 @@ body {
 }
 
 .nav-title-wrapper {
-  flex: 0 0 auto;
   padding: 0 0.25rem;
 
   @media screen and (min-width: $layout-medium-breakpoint) {
-    flex: 0 0 auto;
     padding: 0 1rem 0 0.25rem;
   }
 

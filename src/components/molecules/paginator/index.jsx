@@ -34,7 +34,7 @@ const Paginator = ({ paginator: { pageNumber, totalPages, baseUrl } }) => {
       {pageNumber > 1 && (
         <Link href={`${baseUrl}/p/${pageNumber - 1}`}>
           <a
-            className='btn action-btn previous-page fs-no md:fs-sm icon icon-chevron-left'
+            className='btn action-btn previous-page j-center fs-no md:fs-sm icon icon-chevron-left'
             rel='prev'
           >
             {literals.previous}
@@ -55,7 +55,7 @@ const Paginator = ({ paginator: { pageNumber, totalPages, baseUrl } }) => {
       {pageNumber < totalPages && (
         <Link href={`${baseUrl}/p/${pageNumber + 1}`}>
           <a
-            className='btn action-btn next-page fs-no md:fs-sm icon icon-chevron-right'
+            className='btn action-btn next-page j-center fs-no md:fs-sm icon icon-chevron-right'
             rel='next'
           >
             {literals.next}

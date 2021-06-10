@@ -1,9 +1,11 @@
-// Display and flex
+// Display, flex, grid
 .inline-block { display: inline-block; }
 .flex         { display: flex; }
+.grid         { display: grid; }
 .flex-col     { flex-direction: column; }
 .j-center     { justify-content: center; }
 .a-center     { align-items: center; }
+.flex-none    { flex: none; }
 
 // Margin
 .m-0 { margin: 0; }

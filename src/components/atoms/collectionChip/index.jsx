@@ -15,7 +15,7 @@ const CollectionChip = ({ chip }) => {
   const hasDescription = chip.description && chip.description.length;
 
   return hasDescription ? (
-    <li className='card srfc-02dp txt-100 list-card'>
+    <li className='card srfc-02dp txt-100 list-card grid'>
       <div className={`card-icon br-xl icon icon-${chip.icon}`}></div>
       <div className='card-data'>
         <h3 className='card-title txt-200 fs-xl f-alt'>

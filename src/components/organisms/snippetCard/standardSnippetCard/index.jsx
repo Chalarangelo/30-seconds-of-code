@@ -16,7 +16,7 @@ const propTypes = {
  */
 const SnippetCard = ({ snippet }) => (
   <Card className='snippet-card'>
-    <div className='card-meta'>
+    <div className='card-meta grid'>
       <div className={`card-icon br-round icon icon-${snippet.icon}`}>
         <Expertise level={snippet.expertise} />
       </div>

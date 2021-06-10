@@ -38,7 +38,7 @@ const ListingAnchors = ({ items = [] }) => {
   return (
     <ul className='list-section listing-anchors flex'>
       {items.map(item => (
-        <li key={item.url}>
+        <li className='flex-none' key={item.url}>
           <Link href={item.url}>
             <a className={`btn action-btn ${item.selected ? 'selected' : ''}`}>
               {item.name}
