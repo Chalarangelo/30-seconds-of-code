@@ -18,11 +18,8 @@
     text-overflow: ellipsis;
 
     a {
-      &, &:link, &:visited {
-        font-weight: 500;
-        line-height: 1;
-        color: var(--clr-txt-200);
-      }
+      font-weight: 500;
+      line-height: 1;
     }
   }
 

@@ -10,14 +10,6 @@
 .breadcrumb-item {
   position: relative;
 
-  // Breadcrumb link
-  a {
-
-    &:link, &:visited {
-      color: inherit;
-    }
-  }
-
   &:not(:last-of-type) {
 
     &:after {

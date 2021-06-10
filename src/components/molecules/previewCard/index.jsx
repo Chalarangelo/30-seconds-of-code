@@ -28,7 +28,7 @@ const PreviewCard = ({ snippet }) => {
       <div className='card-data'>
         <h3 className='card-title txt-200 fs-xl f-alt'>
           <Link href={snippet.url}>
-            <a>{snippet.title}</a>
+            <a className='inherit'>{snippet.title}</a>
           </Link>
         </h3>
         <TagList tags={tags} />

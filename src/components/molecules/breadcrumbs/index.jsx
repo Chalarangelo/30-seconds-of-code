@@ -26,7 +26,12 @@ const Breadcrumbs = ({ breadcrumbs }) => (
             }`}
           >
             <Link href={url}>
-              <a aria-current={isCurrentPage ? 'page' : null}>{name}</a>
+              <a
+                className='inherit'
+                aria-current={isCurrentPage ? 'page' : null}
+              >
+                {name}
+              </a>
             </Link>
           </li>
         );

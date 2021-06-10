@@ -12,8 +12,14 @@ a {
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
   }
-}
 
+  &.inherit {
+
+    &:link, &:visited {
+      color: inherit;
+    }
+  }
+}
 
 @keyframes animated-underline {
   0% {
