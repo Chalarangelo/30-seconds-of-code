@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'typedefs/proptypes';
 import { useRouter } from 'next/router';
-import { getURLParameters, throttle, combineClassNames } from 'utils';
+import { getURLParameters, throttle } from 'utils';
 import { useSearch } from 'state/search';
 import literals from 'lang/en/client/search';
 
@@ -173,9 +173,7 @@ const Search = ({ isMainSearch = false }) => {
               <a
                 href={item.url}
                 title={item.title}
-                className={combineClassNames`flex ${
-                  selectedResult === i ? 'selected' : ''
-                }`}
+                className={`flex ${selectedResult === i ? 'selected' : ''}`}
                 data-link-rel='no-route'
               >
                 <span className='result-title txt-150'>{item.title}</span>

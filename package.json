@@ -11,7 +11,6 @@
     "@babel/plugin-proposal-class-properties": "^7.13.0",
     "@babel/preset-env": "^7.13.15",
     "@babel/preset-react": "^7.13.13",
-    "@chalarangelo/combine-class-names": "^1.0.0",
     "@fixture-factory/fixture-factory": "^1.0.1",
     "@testing-library/react": "^10.4.8",
     "@types/jest": "^26.0.19",

@@ -3,7 +3,6 @@ import Paginator from 'components/molecules/paginator';
 import PageTitle from 'components/atoms/pageTitle';
 import PreviewCard from 'components/molecules/previewCard';
 import ListingAnchors from 'components/molecules/listingAnchors';
-import combineClassNames from '@chalarangelo/combine-class-names';
 
 const propTypes = {
   snippetList: PropTypes.arrayOf(PropTypes.snippet),
@@ -35,13 +34,11 @@ const SnippetList = ({
   return snippetList.length ? (
     <>
       {isMainOrListing ? (
-        <>
-          <PageTitle>{listingName}</PageTitle>
-        </>
+        <PageTitle>{listingName}</PageTitle>
       ) : (
         <>
           <div
-            className={combineClassNames`snippet-list-header ${
+            className={`snippet-list-header ${
               listingImage ? 'with-image' : ''
             }`}
           >

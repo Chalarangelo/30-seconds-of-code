@@ -1,5 +1,4 @@
 import PropTypes from 'typedefs/proptypes';
-import { combineClassNames } from 'utils';
 
 const propTypes = {
   onClick: PropTypes.func,
@@ -20,11 +19,7 @@ const Button = ({
   children,
   ...rest // Needs props to have accessible name if only icon etc.
 }) => (
-  <button
-    className={combineClassNames`btn ${className}`}
-    onClick={onClick}
-    {...rest}
-  >
+  <button className={`btn ${className}`} onClick={onClick} {...rest}>
     {children}
   </button>
 );
