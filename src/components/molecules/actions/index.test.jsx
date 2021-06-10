@@ -8,6 +8,7 @@ global.gtag = Object.create(() => null);
 
 const fullSnippet = SnippetFactory.create('FullSnippet');
 const fullReactSnippet = SnippetFactory.create('FullReactSnippet');
+const fullCssSnippet = SnippetFactory.create('FullCssSnippet');
 
 Object.defineProperty(window, 'gtag', {
   value: jest.fn(),
@@ -31,7 +32,7 @@ describe('<Actions />', () => {
   });
 
   describe('with regular snippet', () => {
-    it('should render a CopyButton component', () => {
+    it('should render a copy button', () => {
       expect(wrapper.querySelectorAll('.icon-clipboard')).toHaveLength(1);
     });
   });
@@ -42,7 +43,18 @@ describe('<Actions />', () => {
       wrapper = utils.container;
     });
 
-    it('should render a CodepenButton component', () => {
+    it('should render a codepen button', () => {
+      expect(wrapper.querySelectorAll('.icon-codepen')).toHaveLength(1);
+    });
+  });
+
+  describe('with css snippet', () => {
+    beforeEach(() => {
+      const utils = renderWithContext(<Actions snippet={fullCssSnippet} />);
+      wrapper = utils.container;
+    });
+
+    it('should render a codepen button', () => {
       expect(wrapper.querySelectorAll('.icon-codepen')).toHaveLength(1);
     });
   });
