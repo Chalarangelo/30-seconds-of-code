@@ -89,7 +89,7 @@
         margin-top: 1rem;
       }
 
-      &:last-child:not(:first-child):not(.card-image-credit) {
+      &:last-child:not(:first-child) {
         margin-bottom: 1.375rem;
       }
     }
@@ -124,15 +124,6 @@
     margin-bottom: 0;
     min-height: calc(260px / var(--cover-aspect-ratio));
     max-height: calc(680px / var(--cover-aspect-ratio));
-  }
-
-  p:last-child.card-image-credit {
-    font-size: var(--font-xs);
-    padding: 0 1.5rem;
-    margin-top: -2.375rem;
-    background-color: var(--clr-img-credit-bg);
-    color: var(--clr-txt-150);
-    order: -1;
   }
 }
 

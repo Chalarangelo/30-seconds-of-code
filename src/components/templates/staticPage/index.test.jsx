@@ -26,8 +26,8 @@ describe('<StaticPage />', () => {
       expect(wrapper.querySelectorAll('.page-sub-title')).toHaveLength(1);
     });
 
-    it('3 SimpleCard components', () => {
-      expect(wrapper.querySelectorAll('.card')).toHaveLength(3);
+    it('4 SimpleCard components', () => {
+      expect(wrapper.querySelectorAll('.card')).toHaveLength(4);
     });
   });
 
