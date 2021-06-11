@@ -13,6 +13,8 @@ describe('<SearchResults />', () => {
           searchQuery: '',
           searchIndex: SnippetFactory.createMany('PreviewSnippet', 3),
           searchResults: [],
+          filteredResults: [],
+          availableFilters: [],
         },
       },
     }).container;
@@ -36,6 +38,8 @@ describe('<SearchResults />', () => {
               searchQuery: '',
               searchIndex: SnippetFactory.createMany('PreviewSnippet', 3),
               searchResults: [],
+              filteredResults: [],
+              availableFilters: [],
             },
           },
         }
@@ -61,6 +65,8 @@ describe('<SearchResults />', () => {
             searchQuery: 'impossiblestringtofindintheindex',
             searchIndex: SnippetFactory.createMany('PreviewSnippet', 3),
             searchResults: [],
+            filteredResults: [],
+            availableFilters: [],
           },
         },
       }).container;
@@ -80,6 +86,8 @@ describe('<SearchResults />', () => {
             searchQuery: snippetList[0].primaryTag,
             searchIndex: snippetList,
             searchResults: [snippetList[0]],
+            filteredResults: [snippetList[0]],
+            availableFilters: ['All', 'Snippets', 'Articles'],
           },
         },
       }).container;
@@ -87,6 +95,11 @@ describe('<SearchResults />', () => {
 
     it('should render a PageTitle', () => {
       expect(wrapper.querySelectorAll('.page-title')).toHaveLength(1);
+    });
+
+    it('should render filters', () => {
+      expect(wrapper.querySelectorAll('.search-filters')).toHaveLength(1);
+      expect(wrapper.querySelectorAll('li .btn')).toHaveLength(3);
     });
 
     it('should render a PreviewCard', () => {
