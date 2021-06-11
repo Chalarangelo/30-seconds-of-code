@@ -19,6 +19,10 @@ const literals = {
       title: 'License',
       html: 'license.html',
     },
+    {
+      title: 'Acknowledgments',
+      html: 'acknowledgements.html',
+    },
   ],
 };
 

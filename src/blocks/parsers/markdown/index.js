@@ -64,13 +64,6 @@ const blogTransformers = [
     matcher: /<table>\s*\n*\s*<thead>\s*\n*\s*<tr>\s*\n*\s*<th><\/th>/g,
     replacer: '<table class="primary-col"><thead><tr><th></th>',
   },
-  // Convert image credit to the appropriate element
-  {
-    blogType: 'any',
-    matcher: /<p>\s*\n*\s*<strong>Image credit:<\/strong>([\s\S]*?)<\/p>/g,
-    replacer:
-      '<p class="card-image-credit card-fw-section">Image credit: $1</p>',
-  },
 ];
 
 /**
