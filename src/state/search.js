@@ -8,8 +8,6 @@ const initialState = {
   searchTimestamp: `${new Date()}`,
 };
 
-const persistKey = 'persist:30-sec-app@search';
-
 const searchByKeyphrase = (keyphrase, searchIndex) => {
   let q = keyphrase.toLowerCase().trim();
   if (q.length <= 1) return [];
@@ -77,7 +75,6 @@ const {
   useStateDispatch: useSearch,
 } = createStateProvider({
   initialState,
-  persistKey,
   reducer,
   stateContextName: 'SearchState',
   dispatchContextName: 'SearchDispatch',
