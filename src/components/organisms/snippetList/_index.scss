@@ -33,7 +33,15 @@
 .snippet-list-splash-image {
   margin: 0.5rem 0.875rem 0.5rem;
   width: calc(100% - 1.75rem);
-  max-height: 25vh;
+  text-align: center;
+
+  &, img {
+    max-height: 25vh;
+  }
+
+  img {
+    width: auto;
+  }
 
   @media screen and (min-width: $layout-medium-breakpoint) {
     order: 2;
