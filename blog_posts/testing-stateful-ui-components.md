@@ -3,7 +3,7 @@ title: An approach to testing stateful React components
 type: story
 tags: react,testing
 authors: chalarangelo
-cover: blog_images/testing-stateful-ui-components.jpg
+cover: blog_images/lake-trees.jpg
 excerpt: Testing stateful React components is by no means a difficult task, but did you know there is an elegant solution that doesn't involve testing state directly?
 ---
 

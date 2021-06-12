@@ -3,7 +3,7 @@ title: What is the difference between JavaScript's for...in, for...of and forEac
 type: question
 tags: javascript,array,object,iterator
 authors: chalarangelo
-cover: blog_images/javascript-for-in-for-of-foreach.jpg
+cover: blog_images/lake-loop.jpg
 excerpt: Learn the differences between the three most commonly used iteration methods offered by JavaScript, which often confuse beginners and veterans alike.
 ---
 

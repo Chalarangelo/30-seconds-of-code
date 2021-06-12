@@ -3,7 +3,7 @@ title: Understanding event bubbling, capturing and delegation in JavaScript
 type: story
 tags: javascript,browser,event
 authors: chalarangelo
-cover: blog_images/js-event-capture.jpg
+cover: blog_images/fishermen.jpg
 excerpt: Understand how events work in JavaScript and learn when to use event bubbling, event capturing and event delegation with this short guide.
 ---
 

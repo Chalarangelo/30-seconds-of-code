@@ -3,7 +3,7 @@ title: How can I deep freeze an object in JavaScript?
 type: question
 tags: javascript,object
 authors: chalarangelo
-cover: blog_images/javascript-deep-freeze-object.jpg
+cover: blog_images/frozen-globe.jpg
 excerpt: Learn how mutability works in JavaScript, its applications to objects and how you can properly freeze them to make them constant.
 ---
 
