@@ -67,7 +67,7 @@ const SearchResults = ({ recommendedSnippets = [] }) => {
   ) : (
     <>
       <PageBackdrop
-        backdropImage='/assets/search.svg'
+        backdropImage='/assets/magnifying-glass.png'
         mainText={
           searchQuery.trim().length <= 1 ? (
             literals.searchPrompt

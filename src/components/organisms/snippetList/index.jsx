@@ -43,13 +43,18 @@ const SnippetList = ({
             }`}
           >
             {listingImage ? (
-              <img
-                className='snippet-list-splash-image'
-                src={listingImage}
-                alt=''
-                height='360'
-                width='360'
-              />
+              <div className='snippet-list-splash-image'>
+                <picture>
+                  <source
+                    type='image/webp'
+                    srcSet={`${listingImage.slice(
+                      0,
+                      listingImage.lastIndexOf('.')
+                    )}.webp`}
+                  />
+                  <img src={listingImage} alt='' height='360' width='360' />
+                </picture>
+              </div>
             ) : null}
             <div>
               <PageTitle>{listingName}</PageTitle>
