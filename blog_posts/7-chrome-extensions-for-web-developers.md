@@ -3,7 +3,7 @@ title: 7 essential Chrome extensions for web developers
 type: list
 tags: devtools,webdev
 authors: chalarangelo
-cover: blog_images/10-vs-code-extensions-for-js-developers.jpg
+cover: blog_images/computer-screens.jpg
 excerpt: Google Chrome's developer tools are nothing short of amazing. Here are 7 must-have extensions you can add to increase your productivity even further.
 ---
 

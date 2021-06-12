@@ -3,7 +3,7 @@ title: 4 SEO tips for developers
 type: list
 tags: seo,webdev
 authors: chalarangelo
-cover: blog_images/4-seo-tips-for-developers.jpg
+cover: blog_images/sunrise-over-city.jpg
 excerpt: As time goes by, SEO is becoming increasingly relevant, but most web developers seem to have little experience with it. Here are 4 actionable SEO tips you can implement today.
 ---
 

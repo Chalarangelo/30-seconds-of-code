@@ -3,7 +3,7 @@ title: Testing React components that update asynchronously with React Testing Li
 type: story
 tags: react,testing,event
 authors: maciv,chalarangelo
-cover: blog_images/testing-react-side-effects.jpg
+cover: blog_images/colorful-lounge.jpg
 excerpt: Testing React components that update asynchronously with React Testing Library is a common scenario. Learn how to deal with common issues and speed up your testing.
 ---
 

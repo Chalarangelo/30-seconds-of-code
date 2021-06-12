@@ -3,7 +3,7 @@ title: 8 tips for accessible websites
 type: list
 tags: javascript,accessibility,webdev
 authors: chalarangelo
-cover: blog_images/a11y-cover.jpg
+cover: blog_images/accessibility.jpg
 excerpt: Accessibility (a11y) can improve your website and attract new users. Learn how to get started with these 8 quick tips.
 ---
 

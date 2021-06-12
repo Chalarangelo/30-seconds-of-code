@@ -3,7 +3,7 @@ title: 8 tips for working from home
 type: list
 tags: career,programming,jobs,webdev
 authors: chalarangelo
-cover: blog_images/8-tips-for-remote-work.jpg
+cover: blog_images/kettle-laptop.jpg
 excerpt: Working from home seems like a great alternative to going to the office, but there are challenges that come with it that you need to overcome...
 unlisted: true
 ---

@@ -3,7 +3,7 @@ title: How can I execute an event handler at most once?
 type: question
 tags: javascript,browser,event
 authors: maciv
-cover: blog_images/javascript-listen-once.jpg
+cover: blog_images/dog-waiting.jpg
 excerpt: Learn how to attach an event handler to events that is executed at most once in this JavaScript blog post.
 ---
 
