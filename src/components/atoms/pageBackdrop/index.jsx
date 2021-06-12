@@ -36,7 +36,16 @@ const PageBackdrop = ({
   children,
 }) => (
   <div className='page-graphic f-center txt-050'>
-    <img src={backdropImage} />
+    <picture>
+      <source
+        type='image/webp'
+        srcSet={`${backdropImage.slice(
+          0,
+          backdropImage.lastIndexOf('.')
+        )}.webp`}
+      />
+      <img src={backdropImage} />
+    </picture>
     <p className={`page-backdrop-text f-center ${mainTextClassName}`}>
       {mainText}
     </p>
