@@ -18,5 +18,3 @@ The HTML `autocomplete` attribute provides a wide variety of options for `<input
 ```
 
 Additionally, if the form contains a second password field asking the user to retype the newly created password, `autocomplete="new-password"` should be used for both of the password fields.
-
-**Image credit:** [Alberto Barrera](https://unsplash.com/@abarro?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

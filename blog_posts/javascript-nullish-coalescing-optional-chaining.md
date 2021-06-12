@@ -54,5 +54,3 @@ const keepAlive = config.server.keepAlive ?? true;
 ```
 
 **Note:** Keep in mind that both features are quite new, so their support might not be great just yet (around 80% at the time of writing [[1]](https://caniuse.com/#feat=mdn-javascript_operators_optional_chaining)[[2]](https://caniuse.com/#feat=mdn-javascript_operators_nullish_coalescing)).
-
-**Image credit:** [Hybrid](https://unsplash.com/@artbyhybrid?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

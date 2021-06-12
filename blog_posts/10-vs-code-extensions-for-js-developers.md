@@ -38,5 +38,3 @@ Developers will most likely argue for the rest of eternity about the most produc
 
 10. Fira Code
 [Fira Code](https://github.com/tonsky/FiraCode) is not a traditional VS Code extension and might take a couple more steps to set up, but it's a superb programming font with ligatures that will help you scan code faster once you get used to it.
-
-**Image credit:** [Fotis Fotopoulos](https://unsplash.com/@ffstop?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

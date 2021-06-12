@@ -84,5 +84,3 @@ const equalsIgnoreOrder = (a, b) => {
 ```
 
 For a more detailed explanation, you should check out the [haveSameContents snippet](/js/s/have-same-contents).
-
-**Image credit:** [Irene Kredenets](https://unsplash.com/@ikredenets?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

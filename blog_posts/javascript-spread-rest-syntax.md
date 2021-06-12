@@ -50,5 +50,3 @@ const data = [4, 5, 6];
 // Spread operator, expanding the array
 fn('hey', ...data); // 'hey_456', `nums` will be [4, 5, 6]
 ```
-
-**Image credit:** [Nicolas Cool](https://unsplash.com/@shotz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

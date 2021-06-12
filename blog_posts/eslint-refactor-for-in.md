@@ -45,5 +45,3 @@ const data = [3, 4];
 Object.entries(data).forEach(e => console.log(e[0], e[1]));
 // [0, 3] [1, 4]
 ```
-
-**Image credit:** [Kaitlyn Baker](https://unsplash.com/@kaitlynbaker?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

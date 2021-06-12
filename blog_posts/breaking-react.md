@@ -45,5 +45,3 @@ This might still be cryptic, so let me explain what is going on. React uses its 
 However, in this case React's virtual DOM and the real DOM are different, because of `destroyElement()` removing the `#my-div` element. As a result, when React tries to update the real DOM with the changes from the virtual DOM, the `#my-div` element cannot be removed as it doesn't exist anymore. This results in the above exception being thrown and your application breaking.
 
 This example is short and easy to resolve, by refactoring `destroyElement()` to be part of the `App` component and interact with its state, yet it showcases how fragile React can be under circumstances. Having a shared codebase, with many developers working on different things, can lead to issues like this being introduced and tracking them down can be rather tricky, which is why you might want to be very careful when directly manipulating the DOM when you use React.
-
-**Image credit:** [Julia Joppien](https://unsplash.com/@vitreous_macula?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

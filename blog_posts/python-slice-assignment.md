@@ -66,5 +66,3 @@ nums[2:5:2] = [6, 7]  # [1, 2, 6, 4, 7] (replace every 2nd element, 2 through 5)
 nums[2:5:2] = [6, 7, 8] # Throws a ValueError (can't replace 2 elements with 3)
 nums[1::-1] = [9, 0]  # [0, 9, 6, 4, 7] (reverse replace, 1 through start)
 ```
-
-**Image credit:** [amoon ra](https://unsplash.com/@amoonra?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

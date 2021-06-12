@@ -298,5 +298,3 @@ excerpt: We hand picked 25 of our favorite CSS gradients from uiGradients for yo
   background: linear-gradient(to right, #ff6e7f, #bfe9ff);
 }
 ```
-
-**Image credit:** [Toa Heftiba](https://unsplash.com/@heftiba?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

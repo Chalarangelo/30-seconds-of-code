@@ -61,5 +61,3 @@ const printObjTwoAndData = printThisAndData.bind(obj, 2);
 printObjTwoAndData(data);               // logs: 0 2 [1, 2, 3]
 printObjTwoAndData(...data);            // logs: 0 2 1 2 3
 ```
-
-**Image credit:** [Devon Hawkins](https://unsplash.com/@thelifeofdev?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

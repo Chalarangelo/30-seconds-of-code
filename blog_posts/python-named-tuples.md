@@ -35,5 +35,3 @@ b = Point(2, 2); # b.x = 2, b.y = 2, b.z = 1 (default)
 ```
 
 _Where's the catch?_ you might ask. Well, it seems like there's none! The obvious parallel to dictionaries in terms of syntax doesn't seem to go any further, as named tuple instances do not have per-instance dictionaries, meaning they require as much memory as regular tuples.
-
-**Image credit:** [Kaci Kellman](https://unsplash.com/@kacikellman?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

@@ -28,5 +28,3 @@ age = 32
 
 print('{0} is {1} years old'.format(name, age)) # 'John is 32 years old'
 ```
-
-**Image credit:** [Maksim Shutov](https://unsplash.com/@maksimshutov?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

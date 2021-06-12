@@ -62,5 +62,3 @@ Finally, `Object.assign()` can be used in the exact same way as it's used to cre
 let x = [1, 2, 3, 4];
 let y = Object.assign([], x);
 ```
-
-**Image credit:** [Paweł Czerwiński](https://unsplash.com/@pawel_czerwinski?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

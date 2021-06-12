@@ -30,5 +30,3 @@ Python 3 introduced `str.casefold()`, which is very similar to `str.lower()`, bu
 # Returns the correct result when used for unicode case-insensitive matching
 'Straße'.upper().casefold() == 'Straße'.casefold() # True
 ```
-
-**Image credit:** [Natalia Y](https://unsplash.com/@foxfox?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

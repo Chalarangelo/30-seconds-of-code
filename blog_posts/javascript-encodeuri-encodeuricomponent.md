@@ -36,5 +36,3 @@ encodeURI(partOfURL); // Bad, does not escape all special characters
 encodeURI(fullURL);  // Good, encoded URL is valid
 // 'https://my-website.com/my-page?query=%22this%25thing%22&user=1'
 ```
-
-**Image credit:** [Austin Poon](https://unsplash.com/@austinpoon?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

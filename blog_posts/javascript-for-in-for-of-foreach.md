@@ -53,5 +53,3 @@ While `forEach()` only iterates over arrays, it can access both the value and th
   (val, i) => console.log(i)  // 0, 1, 2 (array indexes)
 );
 ```
-
-**Image credit:** [Tim Stief](https://unsplash.com/@timstief?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

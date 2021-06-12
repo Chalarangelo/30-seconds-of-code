@@ -120,5 +120,3 @@ x.keyOf('B');                                   // 'b'
 x.keyOf('a');                                   // null
 x.lastKeyOf('c');                               // 'c'
 ```
-
-**Image credit:** [Marek Piwnicki](https://unsplash.com/@marekpiwnicki?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

@@ -26,5 +26,3 @@ Object.is(+0, -0); // false
 NaN === NaN; // false
 Object.is(NaN, NaN); // true
 ```
-
-**Image credit:** [Jonathan Sanchez](https://unsplash.com/@jonathansancheziam?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

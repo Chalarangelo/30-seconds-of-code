@@ -42,5 +42,3 @@ const areEqual = (a, b) => {
 areEqual(largeArray, smallArray); // false
 // Will only loop until the first mismatch is encountered
 ```
-
-**Image credit:** [Amin Hasani](https://unsplash.com/@aminhasani?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

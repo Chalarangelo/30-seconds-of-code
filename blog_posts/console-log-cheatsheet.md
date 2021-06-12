@@ -115,5 +115,3 @@ console.log(
   ''                                                  // Clear any styles
 );
 ```
-
-**Image credit:** [Tracy Adams](https://unsplash.com/@tracycodes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

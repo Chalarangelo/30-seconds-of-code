@@ -66,5 +66,3 @@ const {
   ...restData     // restData = { '1': 'b', '3': 'd', '4': 'e', '5': 'f' }
 } = arr;
 ```
-
-**Image credit:** [Xavi Cabrera](https://unsplash.com/@xavi_cabrera?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

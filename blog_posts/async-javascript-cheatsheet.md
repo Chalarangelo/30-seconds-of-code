@@ -109,5 +109,3 @@ async () => {
   }
 }
 ```
-
-**Image credit:** [Katie Burkhart](https://unsplash.com/@katieanalyzes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

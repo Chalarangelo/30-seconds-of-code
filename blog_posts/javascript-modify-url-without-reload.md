@@ -45,5 +45,3 @@ window.location.replace(nextURL);
 ```
 
 As you can see, all three options will cause a page reload, which can be undesirable. Additionally, you can only set the URL, without any additional arguments, unlike using the History API. Finally, the Location API doesn't restrict you to same-origin URLs, which can be the cause of security issues if you are not careful.
-
-**Image credit:** [Alexander Andrews](https://unsplash.com/@alex_andrews?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

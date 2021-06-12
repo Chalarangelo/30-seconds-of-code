@@ -44,5 +44,3 @@ const ItemListTitle = (count) => (
 ```
 
 Finally, you might be wondering why it's called the "ternary" operator. The word "ternary" is based on the [n-ary word setup](https://en.wikipedia.org/wiki/Arity) and means an operator with three operands (condition, expression to execute if truthy, expression to execute if falsy).
-
-**Image credit:** [Scott Webb](https://unsplash.com/@scottwebb?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

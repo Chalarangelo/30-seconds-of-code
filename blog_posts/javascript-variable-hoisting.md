@@ -66,5 +66,3 @@ Generally, `const` and `let` provide more of a headache-free experience for a va
 - Always define variables, functions, objects and classes before using them. ESLint can probably help you with that.
 - If your environment/team allows it, prefer `const` and `let`over `var` to minimize headaches.
 - If possible, use only arrow functions or `function` declarations. Consistency can help reduce confusion.
-
-**Image credit:** [Drew Dau](https://unsplash.com/@daunation?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

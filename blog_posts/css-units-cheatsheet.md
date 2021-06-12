@@ -21,5 +21,3 @@ excerpt: Learn everything you need to know about CSS units with this handy cheat
 - `pt`: Points `1pt` = `1in` / `72` = `1.333px` (approximately)
 - `cm`: Centimeters `1cm` = `96px` / `2.54` = `37.8px` (approximately)
 - `mm`: Millimeters `1mm` = `1cm` / `10` = `3.78px` (approximately)
-
-**Image credit:** [Sharon Sivertsen](https://unsplash.com/@sharon223?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

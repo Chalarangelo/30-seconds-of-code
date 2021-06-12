@@ -91,5 +91,3 @@ for(let item of myList.values()) {
 
 In this example, we use the native array iterator of the `data` object to make our `SpecialList` iterable, returning the exact values of the `data` array. Meanwhile, we also define a `values` method, which is an iterator itself, using `Array.prototype.filter()` and `Array.prototype.map()` on the `data` array, then finally returning the `Symbol.iterator` of the result, allowing iteration only over non-empty objects in the sequence and returning just the `value` for each one.
 
-
-**Image credit:** [ian dooley](https://unsplash.com/@sadswim?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

@@ -44,5 +44,3 @@ Last but not least, using `Array.prototype.pop()` is another, more old-fashioned
 let a = [1, 2, 3, 4];
 while (a.length) a.pop();
 ```
-
-**Image credit:** [Irene Kredenets](https://unsplash.com/@ikredenets?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

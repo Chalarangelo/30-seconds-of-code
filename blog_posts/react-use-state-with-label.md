@@ -29,5 +29,3 @@ ReactDOM.render(<Counter />, document.getElementById('root'));
 ```
 
 This hook is obviously meant mainly for development, but it can also be useful when creating React component or hook libraries. Additionally, you can easily abstract it in a way that the label is ignored in production builds (i.e. by exporting a hook that defaults back to `useState` when building for a production environment).
-
-**Image credit:** [Bekky Bekks](https://unsplash.com/@bekkybekks?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

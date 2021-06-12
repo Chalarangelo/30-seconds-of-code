@@ -50,5 +50,3 @@ if (x) {
 ```
 
 For example, the above code will consider `x` truthy, even if it clearly contains `false` as its value. This might some confusing, but you can easily avoid it if you generally avoid using `Boolean` objects and the `new Boolean()` constructor, unless you are entirely certain that you need to use it for some reason. I cannot find any scenarios where I would need to use this, to be honest, so it might not be all that common to begin with.
-
-**Image credit:** [Louis Droege](https://unsplash.com/@lois184?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

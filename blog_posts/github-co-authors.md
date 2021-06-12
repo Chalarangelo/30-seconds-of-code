@@ -22,5 +22,3 @@ Co-authored-by: another-name <another-name@example.com>"
 - To correctly attribute a commit to a co-author, you must use the email associated with their GitHub account.
 - If a person's email is private, you can use their GitHub-provided `no-reply` email.
 - Leave one or preferably two empty lines before any `Co-authored-by` trailers.
-
-**Image credit:** [Taylor Simpson](https://unsplash.com/@taylorgsimpson?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

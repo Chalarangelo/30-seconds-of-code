@@ -29,5 +29,3 @@ class IterableNumber extends Number {
 const num = new IterableNumber(1337);
 [...num]; // [ 1, 3, 3, 7]
 ```
-
-**Image credit:** [Paweł Czerwiński](https://unsplash.com/@pawel_czerwinski?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

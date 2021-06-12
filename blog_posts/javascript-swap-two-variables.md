@@ -33,5 +33,3 @@ let b = 20;
 
 [a , b] = [b, a];
 ```
-
-**Image credit:** [roman manukyan](https://unsplash.com/@romanukyan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

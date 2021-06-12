@@ -22,5 +22,3 @@ Transform centering uses, as the name implies, CSS transforms to center an eleme
 ### Table
 
 Last but not least, table centering is an older technique which you might favor when working with older browsers. It depends on the container element having a `display: table`, allowing the child element to utilize `display: table-cell` in combination with `text-align: center` and `vertical-align: middle` in order to center itself horizontally and vertically. You can view the [Display table centering snippet](/css/s/display-table-centering) for the code and examples.
-
-**Image credit:** [garrett parker](https://unsplash.com/@garrettpsystems?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

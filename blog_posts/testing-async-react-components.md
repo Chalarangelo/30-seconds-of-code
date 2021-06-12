@@ -156,5 +156,3 @@ describe('<Card/>', () => {
 - A message about code that causes React state updates not being wrapped in `act(...)` might indicate that a component updated after the test ended.
 - Using `waitFor()` can solve the issue by making tests asynchronous, but you might need to bump your `react-testing-library` version if you are using older versions of `react-scripts`.
 - If you see errors related to `MutationObserver`, you might need to change your `test` script to include `--env=jsdom-fourteen` as a parameter.
-
-**Image credit:** [Louis Hansel @shotsoflouis](https://unsplash.com/@louishansel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

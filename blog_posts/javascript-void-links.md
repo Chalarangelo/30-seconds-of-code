@@ -14,5 +14,3 @@ Generally, you want to avoid `href="javascript:void(0)"`, as it will cause the b
 With that out of the way, it's clear that `href=""` or `href="#"` should be preferred in most cases. One key difference between the two is that `href="#"` points to the top of the page whereas `href=""` points to the current page. This can have unwanted side-effects, such as scrolling to the top of the page or issues with link styling respectively. To prevent either one of them from acting as links, you can use `Event.preventDefault()` and handle them appropriately using JavaScript.
 
 Finally, when creating an empty link, one should always consider more semantically appropriate alternatives, such as a `<button>`, `<div>` or `<span>` tag. After all, a link should always behave like a link and hijacking it with JavaScript or any other means is bound to run into some accessibility problems sooner or later.
-
-**Image credit:** [Malachi Brooks](https://unsplash.com/@mebrooks01?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

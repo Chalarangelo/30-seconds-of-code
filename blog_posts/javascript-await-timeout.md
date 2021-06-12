@@ -102,5 +102,3 @@ const myFunc = async () => {
 // The 6000ms timeout will be cleared before firing, so 'Hello' won't be logged
 // The 4000ms timeout will not be cleared, so 'Hi' will be logged
 ```
-
-**Image credit:** [Sandro Antonietti](https://unsplash.com/@s_antonietti?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

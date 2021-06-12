@@ -42,5 +42,3 @@ Note that you can also use arrow functions for IIFEs, if you like. Just make sur
 ```
 
 IIFEs are often used to run some code, while keeping it and its variables out of the global scope. They are often criticized for lack of readability and how they are confusing to beginners. Additionally, they started going out of fashion with the rise of JavaScript modules and transpilers, so they might be less and less common as time goes by.
-
-**Image credit:** [Muhammad Ruqi Yaddin](https://unsplash.com/@mruqi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

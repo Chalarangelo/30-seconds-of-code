@@ -28,5 +28,3 @@ Both `list.sort()` and `sorted()` have the same `key` and `reverse` optional arg
 ### When to use each one
 
 `list.sort()` should be used whenever mutating the list is intended and retrieving the original order of the elements is not desired. On the other hand, `sorted()` should be used when the object to be sorted is an iterable (e.g. list, tuple, dictionary, string) and the desired outcome is a sorted list containing all elements.
-
-**Image credit:** [炫铭](https://unsplash.com/@xuanming?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

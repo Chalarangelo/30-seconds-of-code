@@ -105,5 +105,3 @@ const fruitSwitch = switchFn(logFruit, 'default');
 fruitSwitch('apples'); // Logs: 'Known fruit'
 fruitSwitch('pineapples'); // Logs: 'Unknown fruit'
 ```
-
-**Image credit:** [Louis Droege](https://unsplash.com/@lois184?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

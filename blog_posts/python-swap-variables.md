@@ -54,5 +54,3 @@ a = a - b # a = 7,  b = 11
 print(a) # 7
 print(b) # 11
 ```
-
-**Image credit:** [Thought Catalog](https://unsplash.com/@thoughtcatalog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

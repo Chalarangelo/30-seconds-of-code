@@ -32,5 +32,3 @@ el.addEventListener('keyup', e => {
 ```
 
 As you can see from the above example, the `'keyup'` event is used on our element of choice to then call `KeyboardEvent.getModifierState()` and determine the state of the `'CapsLock'` key. `'keydown'` and `'keypress'` might also work. However, after testing on multiple devices, it seems that using `'keyup'` is the preferred method as it works better across different OSes and browsers.
-
-**Image credit:** [Markus Winkler](https://unsplash.com/@markuswinkler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

@@ -20,5 +20,3 @@ This is hardly a new tip, but I think it deserves a spot on the list, as both of
 
 4. Keep an eye on your markup, performance and accessibility
 Last but not least, something that is probably already on your list, is optimizing your code. This includes everything from writing semantic markup and keeping requests to a minimum to optimizing for all device types, making your website accessible and ensuring fast load times. Keep in mind that websites have many moving parts that evolve and change over time, so it's a good idea to audit your website often with a tool like Lighthouse.
-
-**Image credit:** [timJ](https://unsplash.com/@the_roaming_platypus?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
