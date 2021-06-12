@@ -38,5 +38,3 @@ Using the `bezier-curve()` we can easily define custom easing variables that can
   --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 ```
-
-**Image credit:** [Aaron Burson](https://unsplash.com/@aaronburson?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

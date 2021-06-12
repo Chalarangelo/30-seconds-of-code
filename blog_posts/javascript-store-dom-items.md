@@ -23,5 +23,3 @@ myElement.hidden = false;
 ```
 
 Note that, while this trick may come in handy, it comes with the caveat that if you later remove the DOM element and you still have it stored in a variable, the variable should be set to `null` to avoid potential memory leaks.
-
-**Image credit:** [Amin Hasani](https://unsplash.com/@aminhasani?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

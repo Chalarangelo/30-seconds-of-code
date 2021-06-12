@@ -57,5 +57,3 @@ const Select = ({ values, callback, selected }) => {
 Note that the above implementation uses `defaultValue`, therefore it implies that the component is uncontrolled. You can convert this `Select` component into a controlled component by using `value` instead of `defaultValue`.
 
 For a more detailed explanation of the component, as well as usage examples, you can check out the [Select component](/react/s/select).
-
-**Image credit:** [Robert Anasch](https://unsplash.com/@diesektion?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

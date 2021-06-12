@@ -50,5 +50,3 @@ counter.reset(); // 5
 In this example, we define a function, `initCounter`, that returns an object, whose properties are functions. All of the returned object's properties use closures to manipulate `initCounter`'s `value` variable in some way. The obvious benefit of this approach is that if you want to define multiple counters via `initCounter`, you do not need to create multiple `value` instances all over the place, but they are safely encapsulated by the returned object, using closures.
 
 Using closures, as shown in the example above, can help make your code more usable and maintainable, while allowing you to separate concerns and create abstractions as necessary.
-
-**Image credit:** [Mark Tegethoff](https://unsplash.com/@tegethoff?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

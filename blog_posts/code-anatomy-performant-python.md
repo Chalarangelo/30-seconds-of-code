@@ -59,5 +59,3 @@ def difference(a, b):
 Using `timeit` to analyze the performance of the last two code examples, it's pretty clear that using list comprehension can be up to ten times faster than the alternative, as it's a native language feature that works very similar to a simple `for` loop without the overhead of the extra function calls. This explains why we prefer it, apart from readability.
 
 This pretty much applies to most mathematical list operation snippets, such as [difference](/python/s/difference), [symmetric_difference](/python/s/symmetric-difference) and [intersection](/python/s/intersection).
-
-**Image credit:** [Kalen Emsley](https://unsplash.com/@kalenemsley?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

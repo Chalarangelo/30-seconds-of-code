@@ -44,5 +44,3 @@ This is less of an issue in class components, as they have instance methods whos
 Finally, remember that React's development builds are significantly slower than production builds, so take all the measurements you see with a grain of salt as absolute times in development are not a valuable metric. Identifying unnecessary renders, memoization and optimization opportunities, as well as potential bottlenecks is where you should focus.
 
 [Continue on React rendering state](/blog/s/react-rendering-state)
-
-**Image credit:** [Mahdiar Mahmoodi](https://unsplash.com/@mhdr_m?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

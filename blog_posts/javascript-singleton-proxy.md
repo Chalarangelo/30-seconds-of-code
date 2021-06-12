@@ -51,5 +51,3 @@ myObj2.printMsg();           // 'first'
 
 In the above example, you can see that the second time `MySingletonClass` is instantiated, nothing happens, due to the fact that an instance already exists, so it is returned instead of a new object being created. While this is the minimum implementation of a `singletonify` function, it can easily be extended to modify the behavior even further or even use some of the data passed to the constructor in subsequent calls to update the `instance` it holds.
 
-
-**Image credit:** [David Watkis](https://unsplash.com/@david_watkis?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

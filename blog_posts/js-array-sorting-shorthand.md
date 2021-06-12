@@ -38,5 +38,3 @@ arr.sort((a, b) => a.localeCompare(b)); // ['Hello', 'Hi', 'Hola']
 // Sort in descending order
 arr.sort((a, b) => b.localeCompare(a)); // ['Hola', 'Hi', 'Hello']
 ```
-
-**Image credit:** [Andra Ion](https://unsplash.com/@amiion?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

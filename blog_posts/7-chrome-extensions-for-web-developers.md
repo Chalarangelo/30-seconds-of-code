@@ -29,5 +29,3 @@ Google Chrome's developer tools are nothing short of amazing, but there are a fe
 
 7. EditThisCookie
 [EditThisCookie](https://chrome.google.com/webstore/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg?hl=en) is a powerful cookie manager extension, that allows you to add, delete, edit and even export and import cookies quickly and efficiently.
-
-**Image credit:** [Fotis Fotopoulos](https://unsplash.com/@ffstop?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

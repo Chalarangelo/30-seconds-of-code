@@ -47,5 +47,3 @@ class PrimitiveUndefined {
 }
 undefined instanceof PrimitiveUndefined; // true
 ```
-
-**Image credit:** [Max Letek](https://unsplash.com/@blackprojection?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

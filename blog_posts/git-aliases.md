@@ -48,5 +48,3 @@ Additionally, you can use [edit the configuration file](/git/s/edit-config) and 
   apply = stash apply
   rl = reflog
 ```
-
-**Image credit:** [Renáta-Adrienn](https://unsplash.com/@bajkorenata?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

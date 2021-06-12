@@ -58,5 +58,3 @@ listenOnce(
   () => console.log('Hello!')
 );  // 'Hello!' will only be logged on the first click
 ```
-
-**Image credit:** [Josh Frenette](https://unsplash.com/@joshfrenette?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

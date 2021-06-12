@@ -13,5 +13,3 @@ HTML5 introduced a variety of convenient features that many of us use every day.
 <!-- The downloaded file will be named 'June-2020.csv' -->
 <a href="/data/2020/06/report.csv" download="June-2020.csv">June 2020</a>
 ```
-
-**Image credit:** [Frank R](https://unsplash.com/@frank041985?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

@@ -36,5 +36,3 @@ excerpt: Familiarize yourself with the most common HTTP status codes with this h
 - **502**: Bad Gateway - Gateway server got an invalid response
 - **503**: Service Unavailable - Server temporarily unable to handle request
 - **504**: Gateway Timeout - Gateway server didn't get a response in time
-
-**Image credit:** [Robin GAILLOT-DREVON](https://unsplash.com/@robingaillotdrevon?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

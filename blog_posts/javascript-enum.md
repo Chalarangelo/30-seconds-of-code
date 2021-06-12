@@ -55,5 +55,3 @@ const daysEnum = new Enum(
 
 const days = [...daysEnum]; // Array of the enum values as strings
 ```
-
-**Image credit:** [Taylor Simpson](https://unsplash.com/@taylorgsimpson?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

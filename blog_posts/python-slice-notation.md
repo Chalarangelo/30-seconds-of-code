@@ -74,5 +74,3 @@ nums[:-10]    # []
 ```
 
 [Continue on Understanding Python's slice assignment](/blog/s/python-slice-assignment)
-
-**Image credit:** [amoon ra](https://unsplash.com/@amoonra?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

@@ -14,5 +14,3 @@ const path = `C:\web\index.html`; // 'C:web.html'
 
 const unescapedPath = String.raw`C:\web\index.html`; // 'C:\web\index.html'
 ```
-
-**Image credit:** [Kym MacKinnon](https://unsplash.com/@vixenly?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

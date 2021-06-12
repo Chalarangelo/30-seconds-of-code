@@ -19,5 +19,3 @@ c = { 'min': 50 }
 a['min'] + b['min'] + c['min'] # throws KeyError
 a.get('min', 0) + b.get('min', 0) + c.get('min', 0) # 150
 ```
-
-**Image credit:** [Danielle MacInnes](https://unsplash.com/@dsmacinnes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

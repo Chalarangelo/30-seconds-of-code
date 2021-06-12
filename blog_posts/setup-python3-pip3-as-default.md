@@ -27,5 +27,3 @@ echo "alias pip=/usr/local/bin/pip3" >> ~/.zshrc
 ```
 
 And you're all done! `python` and `pip` are both mapped to their 3.x versions,
-
-**Image credit:** [Olga Zhushman](https://unsplash.com/@ori_photostory?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

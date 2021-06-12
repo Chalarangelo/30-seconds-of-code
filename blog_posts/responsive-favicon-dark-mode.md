@@ -48,5 +48,3 @@ After creating the SVG asset, you need only include the custom SVG favicon in th
   <link rel="icon" type="image/svg" href="favicon.svg" >
 </head>
 ```
-
-**Image credit:** [Zan](https://unsplash.com/@zanilic?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

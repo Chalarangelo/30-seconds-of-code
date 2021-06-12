@@ -54,5 +54,3 @@ new PrimitiveClass();  // { val: 0 }
 ```
 
 The two examples above are not optimal, each for a different reason. The first one is too verbose, as the `this` object is returned implicitly by the constructor anyways, so there is no reason to explicitly write `return this`. On the other hand, the second example doesn't return the `return` statement's value, as it isn't an `object`, therefore resulting in the constructor returning the `this` object instead. This might lead to a lot of confusion, so you should definitely avoid it.
-
-**Image credit:** [Luca Bravo](https://unsplash.com/@lucabravo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

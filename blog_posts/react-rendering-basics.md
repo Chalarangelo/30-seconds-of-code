@@ -51,5 +51,3 @@ React's default behavior is to **recursively render all child components inside 
 To put this another way, calling `setState()` in the root component without any other changes, will cause React to re-render every single component in the component tree. Most likely, most of the components will return the exact same render output as the last render, meaning React will not have to make any changes to the DOM, but the rendering and diffing calculations will be performed regardless, taking time and effort.
 
 [Continue on React rendering optimization](/blog/s/react-rendering-optimization)
-
-**Image credit:** [Mahdiar Mahmoodi](https://unsplash.com/@mhdr_m?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

@@ -48,5 +48,3 @@ MyComponent.propTypes = {
   myProp: PropTypes.objectOf(PropTypes.number)
 };
 ```
-
-**Image credit:** [Martin Sanchez](https://unsplash.com/@martinsanchez?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

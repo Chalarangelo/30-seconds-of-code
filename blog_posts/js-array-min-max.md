@@ -17,5 +17,3 @@ Math.min(...nums); // 1
 ```
 
 For more complex cases (i.e. finding the min/max value in an array of objects), you might have to resort to `Array.prototype.map()` or `Array.prototype.reduce()`, but our [minBy](/js/s/min-by) or [maxBy](/js/s/max-by) snippets might be all you need.
-
-**Image credit:** [Luke Porter](https://unsplash.com/@lukeporter?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

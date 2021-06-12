@@ -28,5 +28,3 @@ This might be a problem if the external resource is not trustworthy, might have 
 ```
 
 In order to prevent a link that is opened in a new tab from causing any trouble, we should always add the `rel="noopener noreferrer"` attribute to all of our `target="_blank"` links.
-
-**Image credit:** [James Harrison](https://unsplash.com/@jstrippa?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

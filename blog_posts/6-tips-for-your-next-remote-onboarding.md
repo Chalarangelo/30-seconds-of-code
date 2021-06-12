@@ -23,5 +23,3 @@ Many developers find onboarding experience worrisome. Here are 6 helpful tips to
 - If time allows it, plan virtual pair-programming sessions with your teammates. Once a week, pick a short task and try to solve it together. Doing this, you will pick up domain-specific knowledge faster, learn how to navigate new codebase efficiently, and improve your problem-solving skills.
 
 - Socialize with other team members on Slack channels like _#random_ and _#watercooler_. Just because you're new to the team doesn't mean you shouldn't participate in casual conversations with other employees. They are social beings too and are probably looking forward to getting to know better new colleagues.
-
-**Image credit:** [Umer Sayyam](https://unsplash.com/@sayyam197?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

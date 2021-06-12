@@ -182,5 +182,3 @@ const reducer = (state = initialState, action) => {
   }
 };
 ```
-
-**Image credit:** [Hean Prinsloo](https://unsplash.com/@prins_the_filmer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

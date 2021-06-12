@@ -42,5 +42,3 @@ new Promise((resolve, reject) => reject(0))
 ```
 
 The takeaway here is that you shouldn't substitute `then()` and `finally()` unless there is a very specific reason to do so. As a rule of thumb, `finally()` should be used for cleaning up (clearing timeouts, nulling references, resetting UI state etc.).
-
-**Image credit:** [Raimond Klavins](https://unsplash.com/@raimondklavins?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

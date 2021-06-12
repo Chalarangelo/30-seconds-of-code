@@ -23,5 +23,3 @@ The most common and, for the vast majority of cases, correct setup for said tag 
 The reason this is a bad practice is that `maximum-scale=1.0` will disable the pinch zoom functionality on certain mobile devices, forcing people to view the website a certain way and taking away their ability to zoom in and out. This is the exact reason you should avoid it, allowing you to meet user's needs and provide a better user experience.
 
 On a side note, even if you have some extraordinary reason for applying this, you should know that some browser and device combos such as Chrome on Android might respect the meta tag's suggestion, while others such as iOS 10 ignore the suggestion entirely, so you should be aware that you might not be delivering a consistent user experience for all of your users.
-
-**Image credit:** [Ross Sneddon](https://unsplash.com/@rosssneddon?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

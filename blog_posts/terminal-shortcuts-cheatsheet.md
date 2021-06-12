@@ -21,5 +21,3 @@ excerpt: Maximize your productivity when working with a bash or other shell term
 - <kbd>Ctrl</kbd> + <kbd>T</kbd> Swap the character under the cursor with the previous one
 - <kbd>Ctrl</kbd> + <kbd>L</kbd> Clear the screen
 
-
-**Image credit:** [Tracy Adams](https://unsplash.com/@tracycodes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

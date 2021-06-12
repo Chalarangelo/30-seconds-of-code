@@ -36,5 +36,3 @@ console.log(x); // null
 ### Checking for empty states
 
 Undeclared variables will throw an error, which makes them easy to spot and are not very common anyways. `undefined` and `null` can be easily spotted with a conditional as they are both falsy values. Due to that, `null` and `undefined` are loosely equal (`==`), but not strictly equal (`===`).
-
-**Image credit:** [Theodor Lundqvist](https://unsplash.com/@umbriferous?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

@@ -34,5 +34,3 @@ In the code example above, we create two very similar components, both of which 
 Both will result in a very similar output, however, if you carefully inspect the HTML, you will notice that the first one will render `<div class>Hi</div>` whereas the second one will render `<div>Hi</div>`. This kind of markup (an attribute being present but without value) is rather uncommon and you'd rarely ever see something like that without React. This subtle difference is quite important and might be the root of a lot of problems, especially when trying to select elements with/without any classes using CSS selectors (e.g. `[class]`/`:not([class])`).
 
 Therefore, you should prefer `null` when you don't want to add a `className` to an element, instead of an empty string. It keeps the markup cleaner and might help prevent some potential issues.
-
-**Image credit:** [Yousef Espanioly](https://unsplash.com/@yespanioly?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

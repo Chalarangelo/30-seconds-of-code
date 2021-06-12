@@ -21,5 +21,3 @@ quantity = quantityInput.valueAsNumber;
 ```
 
 As usual, this comes with a caveat which is that it only works for `type="number"` inputs (although that's probably where you need it the most). On a side note, you can also use `HTMLInputElement.valueAsDate` to get a `Date` object from a `type="date"` input, which might also come in handy in some cases.
-
-**Image credit:** [Stefen Tan](https://unsplash.com/@stefentan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

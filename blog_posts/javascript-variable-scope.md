@@ -26,5 +26,3 @@ When we talk about scope, we mean the visibility of one or more entities (e.g va
 **Global scope**: Variables defined globally (i.e. not inside a block or function) are part of the global scope and can be accessed from anywhere in the code. When declared in the global scope, `var`, `let` and `const` behave the same in terms of scope.
 
 **Local scope**: Variables defined inside a block or function can only be accessed from the block or function where they were defined, as well as nested local scopes. When declared inside a block scope, `var` will be available but `undefined` in outer scopes, while `let` and `const` will not exist in outer scopes. When declared inside a function scope, `var`, `let` and `const` will all be non-existent in outer scopes.
-
-**Image credit:** [Jp Valery](https://unsplash.com/@jpvalery?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

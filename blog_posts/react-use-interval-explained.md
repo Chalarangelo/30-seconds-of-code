@@ -64,5 +64,3 @@ const useInterval = callback => {
 ```
 
 That's pretty much it. With a little bit of extra effort, we can add `delay` to the arguments of our custom hook and have a complete hook version of `setInterval()`. You can find an implementation of the hook with this final adjustment, as well as some usage examples in the [useInterval snippet](/react/s/use-interval).
-
-**Image credit:** [Alexander Schimmeck](https://unsplash.com/@alschim?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
