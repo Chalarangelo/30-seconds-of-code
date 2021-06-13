@@ -1,6 +1,8 @@
 ---
 title: toPairs
 tags: object,array,intermediate
+firstSeen: 2020-03-23T15:07:23+02:00
+lastUpdated: 2020-10-22T20:24:30+03:00
 ---
 
 Creates an array of key-value pair arrays from an object or other iterable.

@@ -1,6 +1,8 @@
 ---
 title: lowercaseKeys
 tags: object,intermediate
+firstSeen: 2017-12-29T13:28:18+02:00
+lastUpdated: 2020-10-20T11:21:07+03:00
 ---
 
 Creates a new object from the specified object, where all the keys are in lowercase.

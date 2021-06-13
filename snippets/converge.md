@@ -1,6 +1,8 @@
 ---
 title: converge
 tags: function,intermediate
+firstSeen: 2018-02-07T12:23:04+02:00
+lastUpdated: 2021-01-08T00:23:44+02:00
 ---
 
 Accepts a converging function and a list of branching functions and returns a function that applies each branching function to the arguments and the results of the branching functions are passed as arguments to the converging function.

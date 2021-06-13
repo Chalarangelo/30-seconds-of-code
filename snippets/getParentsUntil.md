@@ -1,6 +1,8 @@
 ---
 title: getParentsUntil
 tags: browser,intermediate
+firstSeen: 2021-01-05T22:47:21+02:00
+lastUpdated: 2021-01-06T13:04:18+02:00
 ---
 
 Finds all the ancestors of an element up until the element matched by the specified selector.

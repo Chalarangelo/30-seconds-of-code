@@ -1,6 +1,8 @@
 ---
 title: toISOStringWithTimezone
 tags: date,intermediate
+firstSeen: 2020-10-07T09:25:05+03:00
+lastUpdated: 2020-10-22T20:24:30+03:00
 ---
 
 Converts a date to extended ISO format (ISO 8601), including timezone offset.

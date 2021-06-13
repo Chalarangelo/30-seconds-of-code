@@ -1,6 +1,8 @@
 ---
 title: unescapeHTML
 tags: string,browser,regexp,beginner
+firstSeen: 2017-12-29T15:09:10+02:00
+lastUpdated: 2020-10-22T20:24:44+03:00
 ---
 
 Unescapes escaped HTML characters.

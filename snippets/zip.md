@@ -1,6 +1,8 @@
 ---
 title: zip
 tags: array,intermediate
+firstSeen: 2017-12-17T16:41:31+02:00
+lastUpdated: 2020-10-22T20:24:44+03:00
 ---
 
 Creates an array of elements, grouped based on their position in the original arrays.

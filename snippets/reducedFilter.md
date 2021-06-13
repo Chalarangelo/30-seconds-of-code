@@ -1,6 +1,8 @@
 ---
 title: reducedFilter
 tags: array,intermediate
+firstSeen: 2017-12-22T09:37:36+02:00
+lastUpdated: 2020-10-22T20:24:04+03:00
 ---
 
 Filters an array of objects based on a condition while also filtering out unspecified keys.

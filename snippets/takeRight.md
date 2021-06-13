@@ -1,6 +1,8 @@
 ---
 title: takeRight
 tags: array,intermediate
+firstSeen: 2017-12-15T02:00:10+02:00
+lastUpdated: 2020-10-22T20:24:30+03:00
 ---
 
 Creates an array with `n` elements removed from the end.

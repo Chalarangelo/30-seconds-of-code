@@ -1,6 +1,8 @@
 ---
 title: palindrome
 tags: string,intermediate
+firstSeen: 2017-12-17T16:41:31+02:00
+lastUpdated: 2020-10-22T20:24:04+03:00
 ---
 
 Checks if the given string is a palindrome.

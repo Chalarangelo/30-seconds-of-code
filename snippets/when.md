@@ -1,6 +1,8 @@
 ---
 title: when
 tags: function,logic,beginner
+firstSeen: 2018-04-19T03:45:32+03:00
+lastUpdated: 2020-10-22T20:24:44+03:00
 ---
 
 Returns a function that takes one argument and runs a callback if it's truthy or returns it if falsy.

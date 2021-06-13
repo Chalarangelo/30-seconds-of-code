@@ -1,6 +1,8 @@
 ---
 title: flattenObject
 tags: object,recursion,advanced
+firstSeen: 2018-02-07T11:30:18+02:00
+lastUpdated: 2020-10-19T18:51:03+03:00
 ---
 
 Flattens an object with the paths for keys.

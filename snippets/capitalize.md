@@ -1,6 +1,8 @@
 ---
 title: capitalize
 tags: string,intermediate
+firstSeen: 2017-12-17T16:41:31+02:00
+lastUpdated: 2020-11-01T20:50:57+02:00
 ---
 
 Capitalizes the first letter of a string.

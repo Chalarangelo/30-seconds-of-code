@@ -1,6 +1,8 @@
 ---
 title: deepFreeze
 tags: object,recursion,intermediate
+firstSeen: 2018-08-25T18:54:16+03:00
+lastUpdated: 2020-10-19T18:51:03+03:00
 ---
 
 Deep freezes an object.

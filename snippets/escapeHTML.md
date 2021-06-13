@@ -1,6 +1,8 @@
 ---
 title: escapeHTML
 tags: string,browser,regexp,intermediate
+firstSeen: 2017-12-29T15:09:21+02:00
+lastUpdated: 2020-10-19T18:51:03+03:00
 ---
 
 Escapes a string for use in HTML.

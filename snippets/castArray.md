@@ -1,6 +1,8 @@
 ---
 title: castArray
 tags: type,array,beginner
+firstSeen: 2018-01-23T20:54:12+02:00
+lastUpdated: 2020-09-15T16:28:04+03:00
 ---
 
 Casts the provided value as an array if it's not one.

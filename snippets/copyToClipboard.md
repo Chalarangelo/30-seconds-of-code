@@ -1,6 +1,8 @@
 ---
 title: copyToClipboard
 tags: browser,string,event,advanced
+firstSeen: 2017-12-31T11:40:33+02:00
+lastUpdated: 2020-10-22T20:23:47+03:00
 ---
 
 Copies a string to the clipboard.

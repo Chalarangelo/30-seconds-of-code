@@ -1,6 +1,8 @@
 ---
 title: collectInto
 tags: function,array,intermediate
+firstSeen: 2017-12-22T05:08:36+02:00
+lastUpdated: 2021-06-13T13:50:25+03:00
 ---
 
 Changes a function that accepts an array into a variadic function.

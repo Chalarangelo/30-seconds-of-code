@@ -1,6 +1,8 @@
 ---
 title: all
 tags: array,beginner
+firstSeen: 2018-02-14T11:46:15+02:00
+lastUpdated: 2020-10-18T20:24:28+03:00
 ---
 
 Checks if the provided predicate function returns `true` for all elements in a collection.

@@ -1,6 +1,8 @@
 ---
 title: getSecondsDiffBetweenDates
 tags: date,beginner
+firstSeen: 2021-04-24T12:39:48+03:00
+lastUpdated: 2021-04-24T12:39:48+03:00
 ---
 
 Calculates the difference (in seconds) between two dates.

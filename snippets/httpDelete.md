@@ -1,6 +1,8 @@
 ---
 title: httpDelete
 tags: browser,intermediate
+firstSeen: 2020-04-16T11:21:33+03:00
+lastUpdated: 2020-10-19T22:49:51+03:00
 ---
 
 Makes a `DELETE` request to the passed URL.

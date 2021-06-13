@@ -1,6 +1,8 @@
 ---
 title: permutations
 tags: array,algorithm,recursion,advanced
+firstSeen: 2018-02-19T15:47:47+02:00
+lastUpdated: 2020-12-28T13:49:24+02:00
 ---
 
 Generates all permutations of an array's elements (contains duplicates).

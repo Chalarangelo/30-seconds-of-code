@@ -1,6 +1,8 @@
 ---
 title: reduceWhich
 tags: array,intermediate
+firstSeen: 2018-01-24T12:41:03+02:00
+lastUpdated: 2020-11-03T22:11:18+02:00
 ---
 
 Returns the minimum/maximum value of an array, after applying the provided function to set the comparing rule.

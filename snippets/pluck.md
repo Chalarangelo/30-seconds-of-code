@@ -1,6 +1,8 @@
 ---
 title: pluck
 tags: array,object,beginner
+firstSeen: 2020-10-18T01:19:37+03:00
+lastUpdated: 2020-10-22T20:24:04+03:00
 ---
 
 Converts an array of objects into an array of values corresponding to the specified `key`.

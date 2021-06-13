@@ -1,6 +1,8 @@
 ---
 title: toHSLObject
 tags: string,browser,regexp,intermediate
+firstSeen: 2020-10-16T21:48:31+03:00
+lastUpdated: 2020-10-22T20:24:30+03:00
 ---
 
 Converts an `hsl()` color string to an object with the values of each color.

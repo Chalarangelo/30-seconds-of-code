@@ -1,6 +1,8 @@
 ---
 title: nest
 tags: object,recursion,intermediate
+firstSeen: 2018-02-24T13:49:56+02:00
+lastUpdated: 2020-10-21T21:54:53+03:00
 ---
 
 Nests recursively objects linked to one another in a flat array.

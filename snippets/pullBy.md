@@ -1,6 +1,8 @@
 ---
 title: pullBy
 tags: array,advanced
+firstSeen: 2018-01-26T13:48:50+02:00
+lastUpdated: 2020-10-22T20:24:04+03:00
 ---
 
 Mutates the original array to filter out the values specified, based on a given iterator function.

@@ -1,6 +1,8 @@
 ---
 title: isBrowserTabFocused
 tags: browser,beginner
+firstSeen: 2018-04-15T19:18:44+03:00
+lastUpdated: 2020-10-20T23:02:01+03:00
 ---
 
 Checks if the browser tab of the page is focused.

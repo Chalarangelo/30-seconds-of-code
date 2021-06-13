@@ -1,6 +1,8 @@
 ---
 title: without
 tags: array,beginner
+firstSeen: 2017-12-15T09:35:30+02:00
+lastUpdated: 2020-10-22T20:24:44+03:00
 ---
 
 Filters out the elements of an array that have one of the specified values.

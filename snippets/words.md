@@ -1,6 +1,8 @@
 ---
 title: words
 tags: string,regexp,intermediate
+firstSeen: 2017-12-21T14:50:57+02:00
+lastUpdated: 2020-10-22T20:24:44+03:00
 ---
 
 Converts a given string into an array of words.

@@ -1,6 +1,8 @@
 ---
 title: levenshteinDistance
 tags: string,algorithm,intermediate
+firstSeen: 2020-12-27T19:49:12+02:00
+lastUpdated: 2020-12-29T16:27:50+02:00
 ---
 
 Calculates the difference between two strings, using the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) algorithm.

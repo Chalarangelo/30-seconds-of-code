@@ -1,6 +1,8 @@
 ---
 title: truncateStringAtWhitespace
 tags: string,intermediate
+firstSeen: 2020-10-19T11:11:16+03:00
+lastUpdated: 2020-10-21T21:17:45+03:00
 ---
 
 Truncates a string up to specified length, respecting whitespace when possible.

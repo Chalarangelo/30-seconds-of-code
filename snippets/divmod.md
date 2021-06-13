@@ -1,6 +1,8 @@
 ---
 title: divmod
 tags: math,beginner
+firstSeen: 2020-10-07T23:59:13+03:00
+lastUpdated: 2020-10-07T23:59:13+03:00
 ---
 
 Returns an array consisting of the quotient and remainder of the given numbers.
