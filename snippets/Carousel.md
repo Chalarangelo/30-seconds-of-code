@@ -1,6 +1,8 @@
 ---
 title: Carousel
 tags: components,children,state,effect,advanced
+firstSeen: 2018-11-13T21:24:55+02:00
+lastUpdated: 2020-11-03T20:42:15+02:00
 ---
 
 Renders a carousel component.

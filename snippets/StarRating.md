@@ -1,6 +1,8 @@
 ---
 title: StarRating
 tags: components,children,input,state,intermediate
+firstSeen: 2018-10-18T14:33:45+03:00
+lastUpdated: 2020-11-26T23:57:34+02:00
 ---
 
 Renders a star rating component.

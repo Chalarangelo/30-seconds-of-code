@@ -1,6 +1,8 @@
 ---
 title: usePersistedState
 tags: hooks,state,effect,advanced
+firstSeen: 2020-11-29T14:16:36+02:00
+lastUpdated: 2020-11-29T14:16:36+02:00
 ---
 
 Returns a stateful value, persisted in `localStorage`, and a function to update it.

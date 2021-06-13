@@ -1,6 +1,8 @@
 ---
 title: LimitedTextarea
 tags: components,state,callback,event,beginner
+firstSeen: 2018-10-19T09:11:59+03:00
+lastUpdated: 2020-11-16T16:50:57+02:00
 ---
 
 Renders a textarea component with a character limit.

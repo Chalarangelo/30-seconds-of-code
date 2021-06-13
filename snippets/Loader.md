@@ -1,6 +1,8 @@
 ---
 title: Loader
 tags: components,beginner
+firstSeen: 2019-09-11T21:59:12+03:00
+lastUpdated: 2020-11-16T15:17:26+02:00
 ---
 
 Renders a spinning loader component.

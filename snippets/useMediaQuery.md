@@ -1,6 +1,8 @@
 ---
 title: useMediaQuery
 tags: hooks,state,effect,intermediate
+firstSeen: 2020-01-03T14:39:46+02:00
+lastUpdated: 2020-11-16T14:17:53+02:00
 ---
 
 Checks if the current environment matches a given media query and returns the appropriate value.
