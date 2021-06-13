@@ -1,6 +1,8 @@
 ---
 title: initialize_2d_list
 tags: list,intermediate
+firstSeen: 2019-10-25T10:11:51+03:00
+lastUpdated: 2020-11-02T19:28:05+02:00
 ---
 
 Initializes a 2D list of given width and height and value.

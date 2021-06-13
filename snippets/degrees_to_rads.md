@@ -1,6 +1,8 @@
 ---
 title: degrees_to_rads
 tags: math,beginner
+firstSeen: 2019-10-15T14:31:11+03:00
+lastUpdated: 2020-11-02T19:27:53+02:00
 ---
 
 Converts an angle from degrees to radians.

@@ -1,6 +1,8 @@
 ---
 title: powerset
 tags: math,list,advanced
+firstSeen: 2020-10-04T13:14:01+03:00
+lastUpdated: 2020-11-02T19:28:27+02:00
 ---
 
 Returns the powerset of a given iterable.

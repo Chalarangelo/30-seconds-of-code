@@ -1,6 +1,8 @@
 ---
 title: arithmetic_progression
 tags: math,beginner
+firstSeen: 2020-07-28T13:57:33+03:00
+lastUpdated: 2020-11-02T19:27:07+02:00
 ---
 
 Generates a list of numbers in the arithmetic progression starting with the given positive integer and up to the specified limit.

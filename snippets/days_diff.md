@@ -1,6 +1,8 @@
 ---
 title: days_diff
 tags: date,beginner
+firstSeen: 2020-10-28T16:19:39+02:00
+lastUpdated: 2020-10-28T16:19:39+02:00
 ---
 
 Calculates the day difference between two dates.

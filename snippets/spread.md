@@ -1,6 +1,8 @@
 ---
 title: spread
 tags: list,intermediate
+firstSeen: 2018-01-08T22:38:05+02:00
+lastUpdated: 2020-09-15T16:13:06+03:00
 ---
 
 Flattens a list, by spreading its elements into a new list.

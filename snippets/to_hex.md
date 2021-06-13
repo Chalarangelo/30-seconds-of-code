@@ -1,6 +1,8 @@
 ---
 title: to_hex
 tags: math,beginner
+firstSeen: 2020-10-09T09:45:47+03:00
+lastUpdated: 2020-10-09T09:45:47+03:00
 ---
 
 Returns the hexadecimal representation of the given number.

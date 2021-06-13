@@ -1,6 +1,8 @@
 ---
 title: intersection
 tags: list,beginner
+firstSeen: 2019-08-20T15:14:26+03:00
+lastUpdated: 2020-11-02T19:28:05+02:00
 ---
 
 Returns a list of elements that exist in both lists.

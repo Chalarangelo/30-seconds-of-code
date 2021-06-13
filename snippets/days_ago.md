@@ -1,6 +1,8 @@
 ---
 title: days_ago
 tags: date,intermediate
+firstSeen: 2020-10-28T16:19:30+02:00
+lastUpdated: 2020-10-28T16:19:30+02:00
 ---
 
 Calculates the date of `n` days ago from today.

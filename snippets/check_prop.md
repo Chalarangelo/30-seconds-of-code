@@ -1,6 +1,8 @@
 ---
 title: check_prop
 tags: function,intermediate
+firstSeen: 2020-01-02T16:49:25+02:00
+lastUpdated: 2020-11-02T19:27:07+02:00
 ---
 
 Creates a function that will invoke a predicate function for the specified property on a given object.
