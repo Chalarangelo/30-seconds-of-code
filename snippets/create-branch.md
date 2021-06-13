@@ -1,6 +1,8 @@
 ---
 title: Create a new branch
 tags: branch,remote,beginner
+firstSeen: 2021-04-04T14:09:09+03:00
+lastUpdated: 2021-04-13T21:10:59+03:00
 ---
 
 Creates and switches to a new branch, optionally setting up a remote tracking branch.

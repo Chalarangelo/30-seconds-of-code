@@ -1,6 +1,8 @@
 ---
 title: Update remote branch after rewriting history
 tags: branch,intermediate
+firstSeen: 2021-04-06T19:47:19+03:00
+lastUpdated: 2021-04-13T21:10:59+03:00
 ---
 
 Forces an update of the remote branch adter rewriting the history locally.

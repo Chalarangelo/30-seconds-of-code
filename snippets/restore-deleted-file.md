@@ -1,6 +1,8 @@
 ---
 title: Restore a deleted file
 tags: branch,intermediate
+firstSeen: 2021-04-06T20:58:25+03:00
+lastUpdated: 2021-04-13T21:10:59+03:00
 ---
 
 Restores a file deleted in a specific commit.

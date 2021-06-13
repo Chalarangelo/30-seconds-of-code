@@ -1,6 +1,8 @@
 ---
 title: Pull all submodules from remote
 tags: repository,submodule,advanced
+firstSeen: 2021-04-08T20:05:15+03:00
+lastUpdated: 2021-04-13T21:10:59+03:00
 ---
 
 Pulls all submodules from their respective remotes.

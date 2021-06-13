@@ -1,6 +1,8 @@
 ---
 title: Pull latest changes from remote
 tags: repository,branch,beginner
+firstSeen: 2021-04-08T19:42:23+03:00
+lastUpdated: 2021-04-13T21:10:59+03:00
 ---
 
 Pulls the latest changes from the remote tracking branch.

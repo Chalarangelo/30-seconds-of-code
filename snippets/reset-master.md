@@ -1,6 +1,8 @@
 ---
 title: Reset master to match remote
 tags: repository,branch,intermediate
+firstSeen: 2021-04-06T16:58:58+03:00
+lastUpdated: 2021-04-13T21:10:59+03:00
 ---
 
 Resets the local `master` branch to match the one on the remote.

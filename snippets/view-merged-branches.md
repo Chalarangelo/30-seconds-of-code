@@ -1,6 +1,8 @@
 ---
 title: View merged branches
 tags: repository,branch,intermediate
+firstSeen: 2021-04-08T19:43:13+03:00
+lastUpdated: 2021-04-13T21:10:59+03:00
 ---
 
 Prints a list of all merged local branches.

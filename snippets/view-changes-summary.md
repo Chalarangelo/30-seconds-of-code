@@ -1,6 +1,8 @@
 ---
 title: View a summary of changes between two commits
 tags: repository,branch,intermediate
+firstSeen: 2021-04-06T22:21:04+03:00
+lastUpdated: 2021-04-13T21:10:59+03:00
 ---
 
 Prints a summary of changes between two given commits.

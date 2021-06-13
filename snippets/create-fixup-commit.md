@@ -1,6 +1,8 @@
 ---
 title: Create a fixup commit
 tags: commit,advanced
+firstSeen: 2021-04-08T19:51:24+03:00
+lastUpdated: 2021-04-13T21:10:59+03:00
 ---
 
 Creates a fixup commit that can be autosquashed in the next rebase.

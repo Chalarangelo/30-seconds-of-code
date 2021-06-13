@@ -1,6 +1,8 @@
 ---
 title: View current status
 tags: branch,beginner
+firstSeen: 2021-04-06T20:58:33+03:00
+lastUpdated: 2021-04-13T21:10:59+03:00
 ---
 
 Prints the current status of the working tree.

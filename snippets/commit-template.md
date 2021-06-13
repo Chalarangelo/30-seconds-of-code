@@ -1,6 +1,8 @@
 ---
 title: Add a commit message template
 tags: repository,configuration,advanced
+firstSeen: 2021-04-06T21:35:01+03:00
+lastUpdated: 2021-04-13T21:10:59+03:00
 ---
 
 Sets up a commit message template for the current repository.

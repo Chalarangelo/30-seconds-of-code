@@ -1,6 +1,8 @@
 ---
 title: Create an empty commit
 tags: commit,beginner
+firstSeen: 2021-04-04T20:55:26+03:00
+lastUpdated: 2021-04-13T21:10:59+03:00
 ---
 
 Creates an empty commit.
