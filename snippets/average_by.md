@@ -1,6 +1,8 @@
 ---
 title: average_by
 tags: math,list,intermediate
+firstSeen: 2019-08-20T11:55:10+03:00
+lastUpdated: 2020-11-02T19:27:07+02:00
 ---
 
 Calculates the average of a list, after mapping each element to a value using the provided function.

@@ -1,6 +1,8 @@
 ---
 title: is_anagram
 tags: string,intermediate
+firstSeen: 2018-10-01T13:17:29+03:00
+lastUpdated: 2020-11-02T19:28:05+02:00
 ---
 
 Checks if a string is an anagram of another string (case-insensitive, ignores spaces, punctuation and special characters).

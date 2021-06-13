@@ -1,6 +1,8 @@
 ---
 title: gcd
 tags: math,beginner
+firstSeen: 2018-01-08T16:26:35+02:00
+lastUpdated: 2020-09-15T16:13:06+03:00
 ---
 
 Calculates the greatest common divisor of a list of numbers.

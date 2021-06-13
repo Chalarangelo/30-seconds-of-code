@@ -1,6 +1,8 @@
 ---
 title: keys_only
 tags: dictionary,list,beginner
+firstSeen: 2018-04-01T23:56:31+03:00
+lastUpdated: 2020-11-02T19:28:05+02:00
 ---
 
 Creates a flat list of all the keys in a flat dictionary.

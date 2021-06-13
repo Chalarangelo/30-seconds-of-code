@@ -1,6 +1,8 @@
 ---
 title: max_n
 tags: list,math,beginner
+firstSeen: 2018-01-19T11:25:28+02:00
+lastUpdated: 2020-11-02T19:28:27+02:00
 ---
 
 Returns the `n` maximum elements from the provided list. 

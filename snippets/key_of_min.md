@@ -1,6 +1,8 @@
 ---
 title: key_of_min
 tags: dictionary,beginner
+firstSeen: 2021-01-07T23:15:48+02:00
+lastUpdated: 2021-01-07T23:15:48+02:00
 ---
 
 Finds the key of the minimum value in a dictionary.

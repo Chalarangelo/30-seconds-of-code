@@ -1,6 +1,8 @@
 ---
 title: bifurcate
 tags: list,intermediate
+firstSeen: 2019-08-20T12:37:06+03:00
+lastUpdated: 2020-11-02T19:27:07+02:00
 ---
 
 Splits values into two groups, based on the result of the given `filter` list. 

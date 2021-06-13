@@ -1,6 +1,8 @@
 ---
 title: longest_item
 tags: list,string,intermediate
+firstSeen: 2019-08-20T15:27:49+03:00
+lastUpdated: 2020-11-02T19:28:05+02:00
 ---
 
 Takes any number of iterable objects or objects with a length property and returns the longest one. 

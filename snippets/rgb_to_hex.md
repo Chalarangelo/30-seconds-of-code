@@ -1,6 +1,8 @@
 ---
 title: rgb_to_hex
 tags: string,math,intermediate
+firstSeen: 2020-09-13T01:08:00+03:00
+lastUpdated: 2020-11-02T19:28:27+02:00
 ---
 
 Converts the values of RGB components to a hexadecimal color code.

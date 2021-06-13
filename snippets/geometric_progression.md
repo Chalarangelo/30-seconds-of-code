@@ -1,6 +1,8 @@
 ---
 title: geometric_progression
 tags: math,list,intermediate
+firstSeen: 2020-10-04T12:19:28+03:00
+lastUpdated: 2020-11-02T19:28:05+02:00
 ---
 
 Initializes a list containing the numbers in the specified range where `start` and `end` are inclusive and the ratio between two terms is `step`.

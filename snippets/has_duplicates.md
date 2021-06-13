@@ -1,6 +1,8 @@
 ---
 title: has_duplicates
 tags: list,beginner
+firstSeen: 2018-04-01T11:03:09+03:00
+lastUpdated: 2020-11-02T19:28:05+02:00
 ---
 
 Checks if there are duplicate values in a flat list.

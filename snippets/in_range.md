@@ -1,6 +1,8 @@
 ---
 title: in_range
 tags: math,beginner
+firstSeen: 2019-08-20T13:41:40+03:00
+lastUpdated: 2020-09-15T16:13:06+03:00
 ---
 
 Checks if the given number falls within the given range.

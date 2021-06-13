@@ -1,6 +1,8 @@
 ---
 title: sort_dict_by_key
 tags: dictionary,intermediate
+firstSeen: 2020-10-16T21:24:33+03:00
+lastUpdated: 2020-11-02T19:28:35+02:00
 ---
 
 Sorts the given dictionary by key.

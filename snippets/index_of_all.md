@@ -1,6 +1,8 @@
 ---
 title: index_of_all
 tags: list,intermediate
+firstSeen: 2020-10-11T13:40:42+03:00
+lastUpdated: 2020-10-11T13:45:19+03:00
 ---
 
 Returns a list of indexes of all the occurrences of an element in a list.

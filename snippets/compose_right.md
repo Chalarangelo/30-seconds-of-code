@@ -1,6 +1,8 @@
 ---
 title: compose_right
 tags: function,advanced
+firstSeen: 2020-01-02T15:51:26+02:00
+lastUpdated: 2020-11-02T19:27:07+02:00
 ---
 
 Performs left-to-right function composition.

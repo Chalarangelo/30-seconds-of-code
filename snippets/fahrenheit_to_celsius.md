@@ -2,6 +2,8 @@
 title: fahrenheit_to_celsius
 tags: math,beginner
 unlisted: true
+firstSeen: 2020-04-05T12:29:03+03:00
+lastUpdated: 2021-01-04T12:47:04+02:00
 ---
 
 Converts Fahrenheit to Celsius.

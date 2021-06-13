@@ -1,6 +1,8 @@
 ---
 title: merge
 tags: list,advanced
+firstSeen: 2020-04-13T19:09:12+03:00
+lastUpdated: 2020-11-02T19:28:27+02:00
 ---
 
 Merges two or more lists into a list of lists, combining elements from each of the input lists based on their positions.

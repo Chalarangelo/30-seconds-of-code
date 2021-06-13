@@ -1,6 +1,8 @@
 ---
 title: frequencies
 tags: list,intermediate
+firstSeen: 2020-03-15T12:54:08+02:00
+lastUpdated: 2020-11-02T19:27:53+02:00
 ---
 
 Creates a dictionary with the unique values of a list as keys and their frequencies as the values.
