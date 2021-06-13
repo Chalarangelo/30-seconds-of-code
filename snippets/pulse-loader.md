@@ -1,6 +1,8 @@
 ---
 title: Pulse loader
 tags: animation,beginner
+firstSeen: 2019-10-05T14:29:36+03:00
+lastUpdated: 2020-12-30T15:37:37+02:00
 ---
 
 Creates a pulse effect loader animation using the `animation-delay` property.

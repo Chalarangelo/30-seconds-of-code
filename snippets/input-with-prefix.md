@@ -1,6 +1,8 @@
 ---
 title: Input with prefix
 tags: interactivity,visual,intermediate
+firstSeen: 2020-10-14T14:16:57+03:00
+lastUpdated: 2020-12-30T15:37:37+02:00
 ---
 
 Creates an input with a visual, non-editable prefix.

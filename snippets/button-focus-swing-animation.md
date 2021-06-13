@@ -1,6 +1,8 @@
 ---
 title: Button swing animation
 tags: animation,intermediate
+firstSeen: 2021-05-24T15:28:52+03:00
+lastUpdated: 2021-05-24T15:28:52+03:00
 ---
 
 Creates a swing animation on focus.

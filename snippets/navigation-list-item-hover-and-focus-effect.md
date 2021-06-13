@@ -1,6 +1,8 @@
 ---
 title: Navigation list item hover and focus effect
 tags: visual,beginner
+firstSeen: 2019-09-19T22:48:57+03:00
+lastUpdated: 2020-12-30T15:37:37+02:00
 ---
 
 Creates a custom hover and focus effect for navigation items, using CSS transformations.

@@ -1,6 +1,8 @@
 ---
 title: Fluid typography
 tags: visual,intermediate
+firstSeen: 2021-05-16T11:23:05+03:00
+lastUpdated: 2021-05-16T11:23:05+03:00
 ---
 
 Creates text that scales according to the viewport width.

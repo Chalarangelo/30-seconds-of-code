@@ -1,6 +1,8 @@
 ---
 title: Circle
 tags: visual,beginner
+firstSeen: 2018-03-04T08:19:52+02:00
+lastUpdated: 2020-12-30T15:37:37+02:00
 ---
 
 Creates a circular shape with pure CSS.

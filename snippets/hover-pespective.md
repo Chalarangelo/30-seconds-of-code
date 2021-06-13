@@ -1,6 +1,8 @@
 ---
 title: Perspective transform on hover
 tags: animation,intermediate
+firstSeen: 2021-05-17T13:58:04+03:00
+lastUpdated: 2021-05-17T13:58:04+03:00
 ---
 
 Applies a perspective transform with a hover animation to an element.

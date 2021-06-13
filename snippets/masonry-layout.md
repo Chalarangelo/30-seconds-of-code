@@ -1,6 +1,8 @@
 ---
 title: Masonry Layout
 tags: layout,advanced
+firstSeen: 2019-12-11T02:19:05+02:00
+lastUpdated: 2020-12-30T15:37:37+02:00
 ---
 
 Creates a masonry-style layout that is especially useful when working with images.

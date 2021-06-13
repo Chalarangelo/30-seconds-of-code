@@ -1,6 +1,8 @@
 ---
 title: Responsive layout with sidebar
 tags: layout,intermediate
+firstSeen: 2020-09-16T18:54:56+03:00
+lastUpdated: 2020-09-16T18:54:56+03:00
 ---
 
 Creates a responsive layout with a content area and a sidebar.

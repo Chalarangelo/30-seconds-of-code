@@ -1,6 +1,8 @@
 ---
 title: Box-sizing reset
 tags: layout,beginner
+firstSeen: 2018-02-27T18:59:09+02:00
+lastUpdated: 2020-12-30T15:37:37+02:00
 ---
 
 Resets the box-model so that `width` and `height` are not affected by `border` or `padding`.

@@ -1,6 +1,8 @@
 ---
 title: Full-width image
 tags: layout,intermediate
+firstSeen: 2021-01-07T10:14:46+02:00
+lastUpdated: 2021-01-07T10:14:46+02:00
 ---
 
 Creates a full-width image.
