@@ -5,6 +5,8 @@ tags: python,type,comparison
 authors: maciv
 cover: blog_images/umbrellas.jpg
 excerpt: Python provides two distinct comparison operators for different task. Stop mixing them up using this quick guide.
+firstSeen: 2021-01-28T11:00:00+02:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 Python provides two very similar equality operators used for comparisons:

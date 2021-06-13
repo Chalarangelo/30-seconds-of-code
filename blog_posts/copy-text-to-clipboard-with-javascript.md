@@ -5,6 +5,8 @@ tags: javascript,browser
 authors: chalarangelo
 cover: blog_images/typing.jpg
 excerpt: Learn how to programmatically copy text to clipboard with a few lines of JavaScript and level up your web development skills.
+firstSeen: 2020-01-20T11:41:23+02:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 ### Core functionality

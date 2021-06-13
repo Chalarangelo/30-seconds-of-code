@@ -5,6 +5,8 @@ tags: javascript,array,function
 authors: chalarangelo
 cover: blog_images/antelope.jpg
 excerpt: JavaScript ES6 introduced us to several powerful features, such as the spread and rest syntax. Learn everything you need to know in this quick guide.
+firstSeen: 2021-02-15T11:00:00+02:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 ### Spread syntax

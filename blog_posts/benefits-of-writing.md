@@ -5,6 +5,8 @@ tags: career,webdev,programming,jobs
 authors: chalarangelo
 cover: blog_images/laptop-view.jpg
 excerpt: Writing about a topic can often sound boring or worthless. But there are significant benefits to doing it from time to time.
+firstSeen: 2021-04-12T12:00:00+03:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 I was recently tasked with writing a design document at work. What first seemed like a tiresome chore I had to endure turned out to be both enlightening and beneficial both to me and my team. This isn't just a case of making the best of a bad situation, but rather a case of rediscovering the reason behind why writing down your thoughts isn't an excerise in futility. Instead of boring you with a long-winded story about the task, I'll just present the takeaways and hopefully do some storytelling in the process. So why should you write then?

@@ -5,6 +5,8 @@ tags: javascript,array,loop
 authors: chalarangelo
 cover: blog_images/armchair.jpg
 excerpt: JavaScript provides a handful of ways to iterate over data. While array methods are usually preferred, there are cases where a `for` loop is actually the best option.
+firstSeen: 2021-05-27T12:00:00+03:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 The usefulness of the humble `for` loop in modern JavaScript is rarely talked about. Apart from it being particularly useful in [asynchronous operation scenarios](/blog/s/javascript-async-array-loops), it can also make your code a lot more performant shall you need to break out of a loop early. Consider the following example:

@@ -5,6 +5,8 @@ tags: javascript,array,variables
 authors: chalarangelo
 cover: blog_images/mountain-lake-2.jpg
 excerpt: Learn how to swap the values of two variables in JavaScript using a single line of ES6 code.
+firstSeen: 2020-04-27T14:12:51+03:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 In the past, swapping the values of two variables in JavaScript required an intermediate variable to store one of the values while swapping, which would result in something similar to this:

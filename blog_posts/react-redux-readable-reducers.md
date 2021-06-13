@@ -5,6 +5,8 @@ tags: react,logic
 authors: chalarangelo
 cover: blog_images/beach-from-above.jpg
 excerpt: When working with state in your code, you often run into issues with maintaining complexity and readability. Oftentimes, these issues are easily fixable.
+firstSeen: 2021-04-05T12:00:00+03:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 _This article's examples are based on Redux, where the issues described are more common. As these issues are not limited to Redux, you might still find some value in the tips and solutions presented if you are struggling with maintaining complexity and readability in your code._

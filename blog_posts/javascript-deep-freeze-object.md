@@ -5,6 +5,8 @@ tags: javascript,object
 authors: chalarangelo
 cover: blog_images/frozen-globe.jpg
 excerpt: Learn how mutability works in JavaScript, its applications to objects and how you can properly freeze them to make them constant.
+firstSeen: 2020-03-17T16:15:30+02:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 Objects in JavaScript are mutable, regardless if you define them as `const` variables or not. In fact, using `const` when defining an object only prevents the variable from being reassigned. However, you can reassign the properties of a `const` object or array, like this:

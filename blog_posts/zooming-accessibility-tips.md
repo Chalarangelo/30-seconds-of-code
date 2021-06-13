@@ -6,6 +6,8 @@ authors: chalarangelo
 cover: blog_images/camera-zoom.jpg
 excerpt: Using the viewport meta tag incorrectly can harm your website's accessibility. Learn how to prevent problems with this handy guide.
 unlisted: true
+firstSeen: 2020-09-16T23:12:17+03:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 Using the `"viewport"` meta tag incorrectly can cause some serious accessibility issues for people with low vision.

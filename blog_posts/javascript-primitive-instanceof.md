@@ -5,6 +5,8 @@ tags: javascript,type
 authors: chalarangelo
 cover: blog_images/wooden-bowl.jpg
 excerpt: JavaScript's `instanceof` operator can't be used with primitive values, but there are a couple of simple tricks that you can leverage to your advantage.
+firstSeen: 2021-03-25T11:00:00+02:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 JavaScript provides two operators for typechecking:

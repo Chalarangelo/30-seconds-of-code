@@ -5,6 +5,8 @@ tags: javascript,browser,cheatsheet
 authors: chalarangelo
 cover: blog_images/terminal.jpg
 excerpt: Level up your JavaScript logging with these `console.log()` tips and tricks.
+firstSeen: 2021-02-25T11:00:00+02:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 Everyone uses the JavaScript console for logging or debugging every once in a while. But there is a lot more to the [console](https://developer.mozilla.org/en-US/docs/Web/API/Console) object than `console.log()`.

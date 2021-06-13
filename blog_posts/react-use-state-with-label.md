@@ -5,6 +5,8 @@ tags: react,hooks
 authors: chalarangelo
 cover: blog_images/bunny-poster.jpg
 excerpt: When working with multiple `useState` hooks in React, things can get a bit complicated while debugging. Luckily, there's an easy way to label these values.
+firstSeen: 2021-05-06T12:00:00+03:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 When working with multiple `useState` hooks in React, things can get a bit complicated while debugging. Luckily, there's an easy way to label these values, using the [`useDebugValue`](https://reactjs.org/docs/hooks-reference.html#usedebugvalue) hook to create a custom `useStateWithLabel` hook:
