@@ -1,6 +1,8 @@
 ---
 title: useUnload
 tags: hooks,effect,event,intermediate
+firstSeen: 2020-10-05T17:53:24+03:00
+lastUpdated: 2020-11-29T14:16:36+02:00
 ---
 
 Handles the `beforeunload` window event.

@@ -1,6 +1,8 @@
 ---
 title: useToggler
 tags: hooks,state,callback,beginner
+firstSeen: 2020-11-27T09:41:31+02:00
+lastUpdated: 2020-11-27T09:41:31+02:00
 ---
 
 Provides a boolean state variable that can be toggled between its two states.

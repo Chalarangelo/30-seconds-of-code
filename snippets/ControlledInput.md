@@ -1,6 +1,8 @@
 ---
 title: ControlledInput
 tags: components,input,intermediate
+firstSeen: 2019-08-21T13:09:10+03:00
+lastUpdated: 2020-11-03T21:08:39+02:00
 ---
 
 Renders a controlled `<input>` element that uses a callback function to inform its parent about value updates.

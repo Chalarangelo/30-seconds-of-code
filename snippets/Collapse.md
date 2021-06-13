@@ -1,6 +1,8 @@
 ---
 title: Collapse
 tags: components,children,state,beginner
+firstSeen: 2018-10-17T20:42:23+03:00
+lastUpdated: 2020-11-03T20:42:15+02:00
 ---
 
 Renders a component with collapsible content.

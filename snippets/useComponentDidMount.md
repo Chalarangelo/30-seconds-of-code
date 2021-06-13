@@ -1,6 +1,8 @@
 ---
 title: useComponentDidMount
 tags: hooks,effect,beginner
+firstSeen: 2020-01-03T15:56:54+02:00
+lastUpdated: 2020-11-16T14:17:53+02:00
 ---
 
 Executes a callback immediately after a component is mounted.

@@ -1,6 +1,8 @@
 ---
 title: Slider
 tags: components,input,beginner
+firstSeen: 2019-03-02T10:20:55+02:00
+lastUpdated: 2020-11-25T20:46:35+02:00
 ---
 
 Renders an uncontrolled range input element that uses a callback function to pass its value to the parent component.

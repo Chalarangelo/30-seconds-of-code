@@ -1,6 +1,8 @@
 ---
 title: useComponentWillUnmount
 tags: hooks,effect,beginner
+firstSeen: 2020-01-03T16:00:56+02:00
+lastUpdated: 2020-11-16T14:17:53+02:00
 ---
 
 Executes a callback immediately before a component is unmounted and destroyed.

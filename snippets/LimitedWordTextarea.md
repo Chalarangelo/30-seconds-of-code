@@ -1,6 +1,8 @@
 ---
 title: LimitedWordTextarea
 tags: components,input,state,callback,effect,event,intermediate
+firstSeen: 2019-02-20T18:22:22+02:00
+lastUpdated: 2021-01-07T23:57:13+02:00
 ---
 
 Renders a textarea component with a word limit.

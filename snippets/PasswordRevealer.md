@@ -1,6 +1,8 @@
 ---
 title: PasswordRevealer
 tags: components,input,state,beginner
+firstSeen: 2018-10-18T20:04:22+03:00
+lastUpdated: 2020-11-25T20:46:35+02:00
 ---
 
 Renders a password input field with a reveal button.

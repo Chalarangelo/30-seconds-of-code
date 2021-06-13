@@ -1,6 +1,8 @@
 ---
 title: TreeView
 tags: components,object,state,recursion,advanced
+firstSeen: 2019-02-06T22:17:03+02:00
+lastUpdated: 2020-11-16T16:50:57+02:00
 ---
 
 Renders a tree view of a JSON object or array with collapsible content.
