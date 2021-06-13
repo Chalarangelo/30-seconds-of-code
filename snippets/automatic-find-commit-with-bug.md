@@ -1,6 +1,8 @@
 ---
 title: Automatically find the commit that introduced a bug
 tags: commit,branch,advanced
+firstSeen: 2021-04-13T20:00:22+03:00
+lastUpdated: 2021-04-13T21:10:59+03:00
 ---
 
 Uses a binary search algorithm and a given script to find which commit in history introduced a bug.

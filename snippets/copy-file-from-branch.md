@@ -1,6 +1,8 @@
 ---
 title: Copy a file from another branch
 tags: branch,intermediate
+firstSeen: 2021-04-06T20:58:25+03:00
+lastUpdated: 2021-04-13T21:10:59+03:00
 ---
 
 Copies a file from another branch to the current branch.

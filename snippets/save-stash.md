@@ -1,6 +1,8 @@
 ---
 title: Create a stash
 tags: repository,stash,intermediate
+firstSeen: 2021-04-13T19:36:57+03:00
+lastUpdated: 2021-04-13T21:10:59+03:00
 ---
 
 Saves the current state of the working directory and index into a new stash.
