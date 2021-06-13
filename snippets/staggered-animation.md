@@ -1,6 +1,8 @@
 ---
 title: Staggered animation
 tags: animation,advanced
+firstSeen: 2020-03-16T12:19:05+02:00
+lastUpdated: 2020-12-30T15:37:37+02:00
 ---
 
 Creates a staggered animation for the elements of a list.

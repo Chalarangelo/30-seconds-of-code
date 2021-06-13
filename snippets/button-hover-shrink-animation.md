@@ -1,6 +1,8 @@
 ---
 title: Button shrink animation
 tags: animation,beginner
+firstSeen: 2021-05-24T15:28:52+03:00
+lastUpdated: 2021-05-24T15:28:52+03:00
 ---
 
 Creates a shrink animation on hover.

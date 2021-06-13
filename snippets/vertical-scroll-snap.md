@@ -1,6 +1,8 @@
 ---
 title: Vertical scroll snap
 tags: interactivity,intermediate
+firstSeen: 2020-08-18T14:25:46+03:00
+lastUpdated: 2020-08-18T14:25:46+03:00
 ---
 
 Creates a scrollable container that will snap on elements when scrolling.

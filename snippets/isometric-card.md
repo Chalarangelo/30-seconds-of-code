@@ -1,6 +1,8 @@
 ---
 title: Isometric card
 tags: visual,intermediate
+firstSeen: 2021-05-17T14:04:52+03:00
+lastUpdated: 2021-05-17T14:04:52+03:00
 ---
 
 Creates an isometric card.

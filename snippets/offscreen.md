@@ -1,6 +1,8 @@
 ---
 title: Offscreen
 tags: layout,visual,intermediate
+firstSeen: 2018-03-30T18:50:31+03:00
+lastUpdated: 2020-12-30T15:37:37+02:00
 ---
 
 Completely hides an element visually and positionally in the DOM while still allowing it to be accessible.

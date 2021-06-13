@@ -1,6 +1,8 @@
 ---
 title: List with floating section headings
 tags: visual,advanced
+firstSeen: 2020-08-18T15:44:01+03:00
+lastUpdated: 2021-02-05T10:21:38+02:00
 ---
 
 Creates a list with floating headings for each section.

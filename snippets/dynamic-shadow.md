@@ -1,6 +1,8 @@
 ---
 title: Dynamic shadow
 tags: visual,intermediate
+firstSeen: 2018-03-05T13:51:36+02:00
+lastUpdated: 2020-12-30T15:37:37+02:00
 ---
 
 Creates a shadow similar to `box-shadow` but based on the colors of the element itself.

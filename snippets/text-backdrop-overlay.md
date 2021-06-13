@@ -1,6 +1,8 @@
 ---
 title: Image text overlay
 tags: visual,beginner
+firstSeen: 2020-08-18T15:07:32+03:00
+lastUpdated: 2020-12-30T15:37:37+02:00
 ---
 
 Displays a text on top of an image using an overlay.

@@ -1,6 +1,8 @@
 ---
 title: Show additional content on hover
 tags: visual,intermediate
+firstSeen: 2020-08-18T16:40:23+03:00
+lastUpdated: 2020-12-30T15:37:37+02:00
 ---
 
 Creates a card that displays additional content on hover.

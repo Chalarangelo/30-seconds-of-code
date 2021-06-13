@@ -1,6 +1,8 @@
 ---
 title: Scroll progress bar
 tags: animation,visual,intermediate
+firstSeen: 2021-05-24T09:42:03+03:00
+lastUpdated: 2021-05-24T09:42:03+03:00
 ---
 
 Creates a progress bar indicating the scroll percentage of the page.

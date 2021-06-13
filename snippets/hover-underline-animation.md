@@ -1,6 +1,8 @@
 ---
 title: Hover underline animation
 tags: animation,advanced
+firstSeen: 2018-02-28T13:19:22+02:00
+lastUpdated: 2020-12-30T15:37:37+02:00
 ---
 
 Creates an animated underline effect when the text is hovered over.

@@ -1,6 +1,8 @@
 ---
 title: Horizontal scroll snap
 tags: interactivity,intermediate
+firstSeen: 2020-08-18T14:25:46+03:00
+lastUpdated: 2020-12-30T15:37:37+02:00
 ---
 
 Creates a horizontally scrollable container that will snap on elements when scrolling.

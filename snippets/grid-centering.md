@@ -1,6 +1,8 @@
 ---
 title: Grid centering
 tags: layout,beginner
+firstSeen: 2018-03-03T12:13:59+02:00
+lastUpdated: 2020-12-30T15:37:37+02:00
 ---
 
 Horizontally and vertically centers a child element within a parent element using `grid`.
