@@ -1,6 +1,8 @@
 ---
 title: daysFromNow
 tags: date,beginner
+firstSeen: 2020-10-09T02:49:17+03:00
+lastUpdated: 2020-10-20T11:21:07+03:00
 ---
 
 Calculates the date of `n` days from today as a string representation.

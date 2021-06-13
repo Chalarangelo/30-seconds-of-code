@@ -1,6 +1,8 @@
 ---
 title: isValidJSON
 tags: type,intermediate
+firstSeen: 2017-12-31T14:53:01+02:00
+lastUpdated: 2020-10-18T13:49:49+03:00
 ---
 
 Checks if the provided string is a valid JSON.

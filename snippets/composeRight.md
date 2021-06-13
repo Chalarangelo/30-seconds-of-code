@@ -1,6 +1,8 @@
 ---
 title: composeRight
 tags: function,intermediate
+firstSeen: 2018-01-23T22:12:56+02:00
+lastUpdated: 2020-10-22T20:23:47+03:00
 ---
 
 Performs left-to-right function composition.

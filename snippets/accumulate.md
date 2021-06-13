@@ -1,6 +1,8 @@
 ---
 title: accumulate
 tags: math,array,intermediate
+firstSeen: 2020-05-04T12:20:46+03:00
+lastUpdated: 2020-11-03T21:46:13+02:00
 ---
 
 Creates an array of partial sums.

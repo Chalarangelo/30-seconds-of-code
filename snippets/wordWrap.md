@@ -1,6 +1,8 @@
 ---
 title: wordWrap
 tags: string,regexp,intermediate
+firstSeen: 2020-10-06T11:48:41+03:00
+lastUpdated: 2020-10-22T20:24:44+03:00
 ---
 
 Wraps a string to a given number of characters using a string break character.

@@ -1,6 +1,8 @@
 ---
 title: frozenSet
 tags: array,intermediate
+firstSeen: 2020-10-11T11:52:48+03:00
+lastUpdated: 2020-10-11T11:52:48+03:00
 ---
 
 Creates a frozen `Set` object.

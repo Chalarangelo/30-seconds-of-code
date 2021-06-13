@@ -1,6 +1,8 @@
 ---
 title: createEventHub
 tags: browser,event,advanced
+firstSeen: 2018-01-05T15:07:26+02:00
+lastUpdated: 2020-09-15T16:28:04+03:00
 ---
 
 Creates a pub/sub ([publish–subscribe](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern)) event hub with `emit`, `on`, and `off` methods.

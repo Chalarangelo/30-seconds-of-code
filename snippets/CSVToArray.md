@@ -1,6 +1,8 @@
 ---
 title: CSVToArray
 tags: string,array,intermediate
+firstSeen: 2018-06-27T20:57:54+03:00
+lastUpdated: 2020-11-03T21:46:13+02:00
 ---
 
 Converts a comma-separated values (CSV) string to a 2D array.

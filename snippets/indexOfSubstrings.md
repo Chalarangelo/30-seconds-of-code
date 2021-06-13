@@ -1,6 +1,8 @@
 ---
 title: indexOfSubstrings
 tags: string,algorithm,generator,intermediate
+firstSeen: 2020-12-31T13:58:51+02:00
+lastUpdated: 2020-12-31T13:58:51+02:00
 ---
 
 Finds all the indexes of a substring in a given string.

@@ -1,6 +1,8 @@
 ---
 title: chunk
 tags: array,intermediate
+firstSeen: 2017-12-17T16:41:31+02:00
+lastUpdated: 2020-11-03T21:35:12+02:00
 ---
 
 Chunks an array into smaller arrays of a specified size.

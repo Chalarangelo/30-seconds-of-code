@@ -1,6 +1,8 @@
 ---
 title: lastDateOfMonth
 tags: date,intermediate
+firstSeen: 2020-10-09T20:36:54+03:00
+lastUpdated: 2020-10-09T22:01:42+03:00
 ---
 
 Returns the string representation of the last date in the given date's month.

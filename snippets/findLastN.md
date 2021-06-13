@@ -1,6 +1,8 @@
 ---
 title: findLastN
 tags: array,intermediate
+firstSeen: 2021-05-09T13:31:36+03:00
+lastUpdated: 2021-05-09T13:31:36+03:00
 ---
 
 Finds the last `n` elements for which the provided function returns a truthy value.

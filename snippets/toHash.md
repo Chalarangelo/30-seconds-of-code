@@ -1,6 +1,8 @@
 ---
 title: toHash
 tags: array,intermediate
+firstSeen: 2018-05-31T02:14:04+03:00
+lastUpdated: 2020-10-22T20:24:30+03:00
 ---
 
 Reduces a given array-like into a value hash (keyed data store).

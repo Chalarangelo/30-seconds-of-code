@@ -1,6 +1,8 @@
 ---
 title: selectionSort
 tags: algorithm,array,intermediate
+firstSeen: 2020-12-27T22:22:44+02:00
+lastUpdated: 2020-12-29T13:04:24+02:00
 ---
 
 Sorts an array of numbers, using the selection sort algorithm.

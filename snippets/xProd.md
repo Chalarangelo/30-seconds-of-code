@@ -1,6 +1,8 @@
 ---
 title: xProd
 tags: array,math,intermediate
+firstSeen: 2018-01-24T15:55:03+02:00
+lastUpdated: 2020-10-22T20:24:44+03:00
 ---
 
 Creates a new array out of the two supplied by creating each possible pair from the arrays.

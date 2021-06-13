@@ -1,6 +1,8 @@
 ---
 title: normalizeLineEndings
 tags: string,regexp,intermediate
+firstSeen: 2020-05-04T12:33:13+03:00
+lastUpdated: 2020-10-21T21:54:53+03:00
 ---
 
 Normalizes line endings in a string.

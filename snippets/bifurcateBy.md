@@ -1,6 +1,8 @@
 ---
 title: bifurcateBy
 tags: array,intermediate
+firstSeen: 2018-02-14T12:13:07+02:00
+lastUpdated: 2020-11-01T20:50:57+02:00
 ---
 
 Splits values into two groups, based on the result of the given filtering function. 

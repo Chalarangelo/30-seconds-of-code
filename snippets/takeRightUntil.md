@@ -1,6 +1,8 @@
 ---
 title: takeRightUntil
 tags: array,intermediate
+firstSeen: 2020-11-29T12:04:53+02:00
+lastUpdated: 2020-11-29T12:04:53+02:00
 ---
 
 Removes elements from the end of an array until the passed function returns `true`.

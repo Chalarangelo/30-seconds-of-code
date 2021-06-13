@@ -1,6 +1,8 @@
 ---
 title: omitBy
 tags: object,intermediate
+firstSeen: 2018-01-19T13:23:45+02:00
+lastUpdated: 2020-10-21T21:54:53+03:00
 ---
 
 Omits the key-value pairs corresponding to the keys of the object for which the given function returns falsy.

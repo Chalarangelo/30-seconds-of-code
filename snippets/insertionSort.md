@@ -1,6 +1,8 @@
 ---
 title: insertionSort
 tags: algorithm,array,intermediate
+firstSeen: 2020-12-28T21:53:53+02:00
+lastUpdated: 2020-12-28T21:53:53+02:00
 ---
 
 Sorts an array of numbers, using the insertion sort algorithm.

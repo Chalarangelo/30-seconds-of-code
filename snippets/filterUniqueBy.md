@@ -1,6 +1,8 @@
 ---
 title: filterUniqueBy
 tags: array,intermediate
+firstSeen: 2020-11-02T19:41:07+02:00
+lastUpdated: 2020-11-02T19:41:07+02:00
 ---
 
 Creates an array with the unique values filtered out, based on a provided comparator function.

@@ -1,6 +1,8 @@
 ---
 title: on
 tags: browser,event,intermediate
+firstSeen: 2018-01-05T14:33:48+02:00
+lastUpdated: 2020-10-21T21:54:53+03:00
 ---
 
 Adds an event listener to an element with the ability to use event delegation.

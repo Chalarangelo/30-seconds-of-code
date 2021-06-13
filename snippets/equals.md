@@ -1,6 +1,8 @@
 ---
 title: equals
 tags: object,array,type,advanced
+firstSeen: 2018-01-15T18:34:11+02:00
+lastUpdated: 2020-10-22T20:23:47+03:00
 ---
 
 Performs a deep comparison between two values to determine if they are equivalent.

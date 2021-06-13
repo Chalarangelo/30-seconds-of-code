@@ -1,6 +1,8 @@
 ---
 title: toCharArray
 tags: string,beginner
+firstSeen: 2020-10-08T15:17:22+03:00
+lastUpdated: 2020-10-08T15:17:22+03:00
 ---
 
 Converts a string to an array of characters.

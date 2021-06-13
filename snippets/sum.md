@@ -1,6 +1,8 @@
 ---
 title: sum
 tags: math,array,beginner
+firstSeen: 2017-12-29T13:29:49+02:00
+lastUpdated: 2020-10-22T20:24:30+03:00
 ---
 
 Calculates the sum of two or more numbers/arrays.

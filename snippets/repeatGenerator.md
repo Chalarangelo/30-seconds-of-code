@@ -1,6 +1,8 @@
 ---
 title: repeatGenerator
 tags: function,generator,advanced
+firstSeen: 2020-10-11T17:05:48+03:00
+lastUpdated: 2020-10-11T17:05:48+03:00
 ---
 
 Creates a generator, repeating the given value indefinitely.

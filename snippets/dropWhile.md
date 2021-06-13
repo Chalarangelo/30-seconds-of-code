@@ -1,6 +1,8 @@
 ---
 title: dropWhile
 tags: array,intermediate
+firstSeen: 2018-01-26T12:23:18+02:00
+lastUpdated: 2020-10-19T18:51:03+03:00
 ---
 
 Removes elements in an array until the passed function returns `true`.

@@ -1,6 +1,8 @@
 ---
 title: randomIntArrayInRange
 tags: math,random,intermediate
+firstSeen: 2018-01-15T13:25:18+02:00
+lastUpdated: 2020-10-22T20:24:04+03:00
 ---
 
 Generates an array of `n` random integers in the specified range.

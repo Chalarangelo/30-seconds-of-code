@@ -1,6 +1,8 @@
 ---
 title: clampNumber
 tags: math,beginner
+firstSeen: 2017-12-20T19:19:18+02:00
+lastUpdated: 2020-10-22T20:23:47+03:00
 ---
 
 Clamps `num` within the inclusive range specified by the boundary values `a` and `b`.

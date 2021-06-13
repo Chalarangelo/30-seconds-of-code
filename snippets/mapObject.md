@@ -1,6 +1,8 @@
 ---
 title: mapObject
 tags: array,object,intermediate
+firstSeen: 2017-12-18T12:11:58+02:00
+lastUpdated: 2020-10-21T21:54:53+03:00
 ---
 
 Maps the values of an array to an object using a function.

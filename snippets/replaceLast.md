@@ -1,6 +1,8 @@
 ---
 title: replaceLast
 tags: string,regexp,advanced
+firstSeen: 2021-04-22T09:01:22+03:00
+lastUpdated: 2021-04-22T09:01:22+03:00
 ---
 
 Replaces the last occurence of a pattern in a string.

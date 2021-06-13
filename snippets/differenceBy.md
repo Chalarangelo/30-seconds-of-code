@@ -1,6 +1,8 @@
 ---
 title: differenceBy
 tags: array,intermediate
+firstSeen: 2018-01-24T11:49:03+02:00
+lastUpdated: 2020-10-19T18:52:00+03:00
 ---
 
 Returns the difference between two arrays, after applying the provided function to each array element of both.

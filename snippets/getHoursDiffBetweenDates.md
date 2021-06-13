@@ -1,6 +1,8 @@
 ---
 title: getHoursDiffBetweenDates
 tags: date,beginner
+firstSeen: 2021-04-24T12:56:21+03:00
+lastUpdated: 2021-04-24T12:56:21+03:00
 ---
 
 Calculates the difference (in hours) between two dates.

@@ -1,6 +1,8 @@
 ---
 title: isPowerOfTen
 tags: math,beginner
+firstSeen: 2021-01-06T22:53:58+02:00
+lastUpdated: 2021-01-06T22:53:58+02:00
 ---
 
 Checks if the given number is a power of `10`.

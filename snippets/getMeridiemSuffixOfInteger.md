@@ -1,6 +1,8 @@
 ---
 title: getMeridiemSuffixOfInteger
 tags: date,beginner
+firstSeen: 2018-01-13T17:14:48+02:00
+lastUpdated: 2020-10-19T22:49:51+03:00
 ---
 
 Converts an integer to a suffixed string, adding `am` or `pm` based on its value.

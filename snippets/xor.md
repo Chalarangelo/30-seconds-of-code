@@ -2,6 +2,8 @@
 title: xor
 tags: math,logic,beginner
 unlisted: true
+firstSeen: 2020-10-05T21:19:21+03:00
+lastUpdated: 2021-01-04T13:04:15+02:00
 ---
 
 Checks if only one of the arguments is `true`.

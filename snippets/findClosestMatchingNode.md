@@ -1,6 +1,8 @@
 ---
 title: findClosestMatchingNode
 tags: browser,intermediate
+firstSeen: 2021-04-22T08:45:39+03:00
+lastUpdated: 2021-04-22T08:45:39+03:00
 ---
 
 Finds the closest matching node starting at the given `node`.

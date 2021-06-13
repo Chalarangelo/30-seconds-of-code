@@ -1,6 +1,8 @@
 ---
 title: atob
 tags: node,string,beginner
+firstSeen: 2018-01-17T21:43:21+02:00
+lastUpdated: 2020-09-15T16:28:04+03:00
 ---
 
 Decodes a string of data which has been encoded using base-64 encoding.

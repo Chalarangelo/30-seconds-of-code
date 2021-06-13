@@ -1,6 +1,8 @@
 ---
 title: insertAt
 tags: array,intermediate
+firstSeen: 2020-05-22T09:07:35+03:00
+lastUpdated: 2020-10-20T23:02:01+03:00
 ---
 
 Mutates the original array to insert the given values after the specified index.

@@ -1,6 +1,8 @@
 ---
 title: combine
 tags: array,object,intermediate
+firstSeen: 2020-10-04T00:26:51+03:00
+lastUpdated: 2020-10-08T02:22:39+03:00
 ---
 
 Combines two arrays of objects, using the specified key to match objects.

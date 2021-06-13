@@ -1,6 +1,8 @@
 ---
 title: elementIsVisibleInViewport
 tags: browser,intermediate
+firstSeen: 2017-12-17T17:55:51+02:00
+lastUpdated: 2020-10-22T20:23:47+03:00
 ---
 
 Checks if the element specified is visible in the viewport.

@@ -1,6 +1,8 @@
 ---
 title: show
 tags: browser,css,beginner
+firstSeen: 2017-12-28T23:33:21+02:00
+lastUpdated: 2020-10-22T20:24:30+03:00
 ---
 
 Shows all the elements specified.

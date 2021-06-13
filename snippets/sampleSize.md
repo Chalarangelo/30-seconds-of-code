@@ -1,6 +1,8 @@
 ---
 title: sampleSize
 tags: array,random,intermediate
+firstSeen: 2017-12-31T13:56:28+02:00
+lastUpdated: 2020-10-22T20:24:30+03:00
 ---
 
 Gets `n` random elements at unique keys from an array up to the size of the array.

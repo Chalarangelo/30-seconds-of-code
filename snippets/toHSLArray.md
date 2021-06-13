@@ -1,6 +1,8 @@
 ---
 title: toHSLArray
 tags: string,browser,regexp,beginner
+firstSeen: 2020-10-16T21:46:29+03:00
+lastUpdated: 2020-10-22T20:24:30+03:00
 ---
 
 Converts an `hsl()` color string to an array of values.

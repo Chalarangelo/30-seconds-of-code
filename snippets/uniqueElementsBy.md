@@ -1,6 +1,8 @@
 ---
 title: uniqueElementsBy
 tags: array,intermediate
+firstSeen: 2018-07-18T20:49:07+03:00
+lastUpdated: 2020-10-22T20:24:44+03:00
 ---
 
 Finds all unique values of an array, based on a provided comparator function.

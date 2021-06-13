@@ -1,6 +1,8 @@
 ---
 title: arrayToCSV
 tags: array,string,intermediate
+firstSeen: 2018-06-27T20:26:43+03:00
+lastUpdated: 2020-11-03T21:55:08+02:00
 ---
 
 Converts a 2D array to a comma-separated values (CSV) string.

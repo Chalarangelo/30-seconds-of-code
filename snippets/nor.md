@@ -2,6 +2,8 @@
 title: nor
 tags: math,logic,beginner
 unlisted: true
+firstSeen: 2021-03-29T21:20:41+03:00
+lastUpdated: 2021-04-02T16:47:15+03:00
 ---
 
 Checks if none of the arguments are `true`.

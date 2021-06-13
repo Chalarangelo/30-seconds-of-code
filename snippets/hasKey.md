@@ -1,6 +1,8 @@
 ---
 title: hasKey
 tags: object,intermediate
+firstSeen: 2019-10-15T15:45:13+03:00
+lastUpdated: 2020-10-19T22:49:51+03:00
 ---
 
 Checks if the target value exists in a JSON object.

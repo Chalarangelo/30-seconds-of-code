@@ -1,6 +1,8 @@
 ---
 title: bubbleSort
 tags: algorithm,array,beginner
+firstSeen: 2020-12-27T21:20:31+02:00
+lastUpdated: 2020-12-29T12:18:58+02:00
 ---
 
 Sorts an array of numbers, using the bubble sort algorithm.

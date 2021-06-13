@@ -2,6 +2,8 @@
 title: hz
 tags: function,intermediate
 unlisted: true
+firstSeen: 2018-04-11T16:39:49+03:00
+lastUpdated: 2021-01-04T13:04:15+02:00
 ---
 
 Measures the number of times a function is executed per second (`hz`/`hertz`).

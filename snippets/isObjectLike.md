@@ -1,6 +1,8 @@
 ---
 title: isObjectLike
 tags: type,object,beginner
+firstSeen: 2018-01-23T19:30:03+02:00
+lastUpdated: 2020-09-15T16:28:04+03:00
 ---
 
 Checks if a value is object-like.

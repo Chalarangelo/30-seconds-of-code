@@ -1,6 +1,8 @@
 ---
 title: debounce
 tags: function,intermediate
+firstSeen: 2018-01-28T15:18:26+02:00
+lastUpdated: 2020-10-19T18:51:03+03:00
 ---
 
 Creates a debounced function that delays invoking the provided function until at least `ms` milliseconds have elapsed since the last time it was invoked.

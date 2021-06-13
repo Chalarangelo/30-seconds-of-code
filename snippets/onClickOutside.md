@@ -1,6 +1,8 @@
 ---
 title: onClickOutside
 tags: browser,event,intermediate
+firstSeen: 2021-01-06T13:57:56+02:00
+lastUpdated: 2021-01-06T13:57:56+02:00
 ---
 
 Runs the callback whenever the user clicks outside of the specified element.

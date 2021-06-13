@@ -1,6 +1,8 @@
 ---
 title: getMinutesDiffBetweenDates
 tags: date,beginner
+firstSeen: 2021-04-24T12:48:49+03:00
+lastUpdated: 2021-04-24T12:48:49+03:00
 ---
 
 Calculates the difference (in minutes) between two dates.

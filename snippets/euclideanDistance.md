@@ -1,6 +1,8 @@
 ---
 title: euclideanDistance
 tags: math,algorithm,intermediate
+firstSeen: 2020-12-28T13:41:19+02:00
+lastUpdated: 2020-12-28T13:41:19+02:00
 ---
 
 Calculates the distance between two points in any number of dimensions.

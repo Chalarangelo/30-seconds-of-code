@@ -1,6 +1,8 @@
 ---
 title: subSet
 tags: array,intermediate
+firstSeen: 2020-10-11T11:53:08+03:00
+lastUpdated: 2020-10-22T20:24:30+03:00
 ---
 
 Checks if the first iterable is a subset of the second one, excluding duplicate values.

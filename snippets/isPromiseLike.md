@@ -1,6 +1,8 @@
 ---
 title: isPromiseLike
 tags: type,function,promise,intermediate
+firstSeen: 2017-12-31T14:25:43+02:00
+lastUpdated: 2020-10-20T23:02:01+03:00
 ---
 
 Checks if an object looks like a [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).

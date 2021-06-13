@@ -1,6 +1,8 @@
 ---
 title: reject
 tags: array,beginner
+firstSeen: 2018-04-27T03:17:15+03:00
+lastUpdated: 2020-10-22T20:24:04+03:00
 ---
 
 Filters an array's values based on a predicate function, returning only values for which the predicate function returns `false`.

@@ -1,6 +1,8 @@
 ---
 title: throttle
 tags: function,advanced
+firstSeen: 2018-01-28T15:23:01+02:00
+lastUpdated: 2020-09-15T16:28:04+03:00
 ---
 
 Creates a throttled function that only invokes the provided function at most once per every `wait` milliseconds

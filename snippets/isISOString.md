@@ -1,6 +1,8 @@
 ---
 title: isISOString
 tags: date,intermediate
+firstSeen: 2020-11-29T12:16:43+02:00
+lastUpdated: 2020-11-29T12:16:43+02:00
 ---
 
 Checks if the given string is valid in the simplified extended ISO format (ISO 8601).

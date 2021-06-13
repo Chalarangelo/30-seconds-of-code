@@ -1,6 +1,8 @@
 ---
 title: delay
 tags: function,intermediate
+firstSeen: 2018-01-24T14:32:20+02:00
+lastUpdated: 2020-10-19T18:51:03+03:00
 ---
 
 Invokes the provided function after `ms` milliseconds.

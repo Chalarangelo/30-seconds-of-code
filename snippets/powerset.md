@@ -1,6 +1,8 @@
 ---
 title: powerset
 tags: math,algorithm,beginner
+firstSeen: 2017-12-07T14:41:33+02:00
+lastUpdated: 2020-12-28T13:49:24+02:00
 ---
 
 Returns the powerset of a given array of numbers.

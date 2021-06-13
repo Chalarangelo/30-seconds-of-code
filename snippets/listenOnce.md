@@ -1,6 +1,8 @@
 ---
 title: listenOnce
 tags: browser,event,beginner
+firstSeen: 2020-06-01T16:58:52+03:00
+lastUpdated: 2020-10-22T20:23:47+03:00
 ---
 
 Adds an event listener to an element that will only run the callback the first time the event is triggered.

@@ -1,6 +1,8 @@
 ---
 title: sumPower
 tags: math,intermediate
+firstSeen: 2018-01-01T15:49:25+02:00
+lastUpdated: 2020-10-22T20:24:30+03:00
 ---
 
 Calculates the sum of the powers of all the numbers from `start` to `end` (both inclusive).

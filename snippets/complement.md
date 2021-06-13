@@ -1,6 +1,8 @@
 ---
 title: complement
 tags: function,logic,beginner
+firstSeen: 2020-05-13T11:28:33+03:00
+lastUpdated: 2020-09-15T16:28:04+03:00
 ---
 
 Returns a function that is the logical complement of the given function, `fn`.

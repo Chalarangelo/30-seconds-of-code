@@ -1,6 +1,8 @@
 ---
 title: readFileLines
 tags: node,array,beginner
+firstSeen: 2017-12-17T17:55:51+02:00
+lastUpdated: 2020-10-22T20:24:04+03:00
 ---
 
 Returns an array of lines from the specified file.

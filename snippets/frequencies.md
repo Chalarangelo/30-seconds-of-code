@@ -1,6 +1,8 @@
 ---
 title: frequencies
 tags: array,object,intermediate
+firstSeen: 2020-01-03T15:32:35+02:00
+lastUpdated: 2020-10-19T22:49:51+03:00
 ---
 
 Creates an object with the unique values of an array as keys and their frequencies as the values.
