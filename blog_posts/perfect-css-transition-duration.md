@@ -5,6 +5,8 @@ tags: css,interactivity,visual,animation
 authors: chalarangelo
 cover: blog_images/perfect-timing.jpg
 excerpt: Learn how to make your CSS transitions feel perfect when users interact with elements on the page with this simple tip.
+firstSeen: 2020-12-30T11:00:00+02:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 We have all experienced a website interaction that feels sluggish or otherwise off on account of poor transition or animation duration and timing. However, there is a very simple "golden rule" to help you avoid this poor user experience, called **Doherty Threshold:**

@@ -5,6 +5,8 @@ tags: javascript,array,comparison
 authors: chalarangelo
 cover: blog_images/coconuts.jpg
 excerpt: Learn how you can compare two arrays in JavaScript using various different techniques.
+firstSeen: 2020-08-07T14:23:14+03:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 ### Equality comparison

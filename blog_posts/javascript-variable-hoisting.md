@@ -5,6 +5,8 @@ tags: javascript,type,variable
 authors: chalarangelo
 cover: blog_images/boat-port.jpg
 excerpt: One of the most commonly asked JavaScript interview questions is about hoisting. It's also a concept that might require some getting used to, so read our guide to learn more.
+firstSeen: 2020-09-22T23:28:14+03:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 Before your JavaScript code is executed, it is first parsed and compiled. During the _compile_ phase, variable and function declarations are put into memory, which is called **hoisting**.

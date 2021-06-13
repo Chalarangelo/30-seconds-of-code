@@ -5,6 +5,8 @@ tags: react,testing
 authors: chalarangelo
 cover: blog_images/sparkles.jpg
 excerpt: Testing Redux-connected components with React Testing Library is a very common scenario. Learn how to use this simple utility function to speed up your testing.
+firstSeen: 2020-07-15T13:54:26+03:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 Testing Redux-connected components with React Testing Library is a very common scenario. However, it might be a little complicated without the proper tools and you could end up repeating yourself, especially when writing the boilerplate to connect to your redux store.

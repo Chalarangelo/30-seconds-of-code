@@ -5,6 +5,8 @@ tags: css,animation
 authors: chalarangelo
 cover: blog_images/curve.jpg
 excerpt: Learn how to use the `cubic-bezier()` class of easing functions and create beautiful animations that stand out.
+firstSeen: 2020-12-30T16:13:58+02:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 Most web developers use the built-in `ease`, `ease-in`, `ease-out` or `ease-in-out` functions for most use-cases of `transition-timing-function` in their designs. While these are perfectly fine for everyday use, there's a far more powerful, yet intimidating option available, the [`bezier-curve()`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function) function.

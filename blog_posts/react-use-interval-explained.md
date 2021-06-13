@@ -5,6 +5,8 @@ tags: react,hooks,effect
 authors: chalarangelo
 cover: blog_images/clock.jpg
 excerpt: Wrapping your mind around React hooks and how they interact with `setInterval()` can be difficult. Here's a guide to get you started.
+firstSeen: 2021-04-15T12:00:00+03:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 Wrapping your mind around React hooks can be daunting at first, especially if you stumble into anything remotely related to timing, such as `setInterval()`. In order to solve such issues, you have to get used to the way hooks work, their limitations and potential workarounds.

@@ -5,6 +5,8 @@ tags: react,testing,event
 authors: maciv,chalarangelo
 cover: blog_images/colorful-lounge.jpg
 excerpt: Testing React components that update asynchronously with React Testing Library is a common scenario. Learn how to deal with common issues and speed up your testing.
+firstSeen: 2020-08-13T20:21:33+03:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 ### Components that update asynchronously

@@ -5,6 +5,8 @@ tags: python,setup
 authors: chalarangelo
 cover: blog_images/avocado-slices.jpg
 excerpt: A very common problem when working with Python is having to remember the correct version. Luckily, there's an easy fix for that.
+firstSeen: 2021-06-07T12:00:00+03:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 One of the most common headaches when working with Python is having to remember to use Python 3.x instead of Python 2.x. Luckily, it's really easy to setup Python 3 and pip 3 as the defaults. You first need to figure out where each one is installed using the `which` command:

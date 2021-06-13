@@ -5,6 +5,8 @@ tags: javascript,type,comparison
 authors: chalarangelo
 cover: blog_images/beach-pineapple.jpg
 excerpt: Learn all you need to know about the differences between JavaScript's double equals and triple equals operators.
+firstSeen: 2020-08-06T19:52:30+03:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 JavaScript provides two equality operators used for comparisons:

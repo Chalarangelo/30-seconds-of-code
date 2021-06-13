@@ -5,6 +5,8 @@ tags: css,layout
 authors: chalarangelo
 cover: blog_images/mountain-lake.jpg
 excerpt: Centering content with CSS might often feel tricky. Here are 4 easy tricks you can use in your code today.
+firstSeen: 2021-02-22T11:00:00+02:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 ### Flexbox

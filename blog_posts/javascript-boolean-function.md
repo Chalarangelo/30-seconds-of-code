@@ -5,6 +5,8 @@ tags: javascript,function,type
 authors: chalarangelo
 cover: blog_images/rocky-lake.jpg
 excerpt: JavaScript's built-in Boolean function can be very useful for truth-checking data among other things. Learn how to use it and level up your code today.
+firstSeen: 2020-09-18T16:28:30+03:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 JavaScript's built-in [`Boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) is one of those things I find myself suggesting in code reviews quite often as of late, so I thought I could share some tips about it with the world.

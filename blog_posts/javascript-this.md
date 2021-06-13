@@ -5,6 +5,8 @@ tags: javascript,function,object
 authors: chalarangelo
 cover: blog_images/u-got-this.jpg
 excerpt: JavaScript's `this` keyword is a source of confusion for many beginners and veterans alike. Learn how it works in different scenarios and start using it correctly.
+firstSeen: 2020-05-03T15:31:25+03:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 ### What is `this`?

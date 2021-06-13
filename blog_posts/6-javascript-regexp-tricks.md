@@ -5,6 +5,8 @@ tags: javascript,string,regexp
 authors: chalarangelo
 cover: blog_images/taking-photos.jpg
 excerpt: Regular expressions, while very powerful, are notoriously hard to master. Start using them in your JavaScript code by understanding these 6 features.
+firstSeen: 2020-04-15T14:24:50+03:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 Regular expressions, while very powerful, are notoriously hard to master. Here are 6 useful features that can help you start using them in your JavaScript projects:

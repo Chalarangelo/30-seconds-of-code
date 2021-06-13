@@ -5,6 +5,8 @@ tags: webdev,html,browser
 authors: chalarangelo
 cover: blog_images/playing-fetch.jpg
 excerpt: Resource prefetching is a great technique to improve perceived page speed on your website and one that requires little to no effort. Learn how to use it today.
+firstSeen: 2020-06-20T13:41:31+03:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 Resource prefetching is a great technique to improve perceived page speed on your website and provide a better user experience, without a lot of effort. Prefetching happens in the browser as soon as it is idle, meaning it will not slow down the initial load, but rather utilize idle time to fetch and cache resources that might be useful later on.

@@ -5,6 +5,8 @@ tags: python,variables
 authors: maciv
 cover: blog_images/leaves-read.jpg
 excerpt: Learn 3 easy ways to swap the values of two variables in Python.
+firstSeen: 2021-02-04T11:00:00+02:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 ### Using a temporary variable

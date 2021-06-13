@@ -5,6 +5,8 @@ tags: css,webdev
 authors: chalarangelo
 cover: blog_images/orange-flower.jpg
 excerpt: Learn how to use CSS pseudo-classes to style an element based on changes to its state.
+firstSeen: 2020-08-18T19:56:12+03:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 CSS pseudo-classes provide a way to style elements, based on changes to their state. For example, `:hover` can be used to apply additional styles to an element when the user's pointer hovers over it.

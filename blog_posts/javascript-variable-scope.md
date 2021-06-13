@@ -5,6 +5,8 @@ tags: javascript,type,variable
 authors: chalarangelo
 cover: blog_images/periscope.jpg
 excerpt: JavaScript developers often get confused by JavaScript's variables and scope. Here's a quick guide to understanding and remembering everything related to these concepts.
+firstSeen: 2020-05-18T22:28:17+03:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 I have seen many developers - my younger self included - struggle with JavaScript's variables and scopes, even if they have some experience with coding and/or the language itself. While there are dozens of great articles on this subject, I found it somewhat difficult to memorize or understand the way these concepts work when I was starting out, so here's a short and simple breakdown that might help you as much as it helped me.

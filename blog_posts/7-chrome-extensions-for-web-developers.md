@@ -5,6 +5,8 @@ tags: devtools,webdev
 authors: chalarangelo
 cover: blog_images/computer-screens.jpg
 excerpt: Google Chrome's developer tools are nothing short of amazing. Here are 7 must-have extensions you can add to increase your productivity even further.
+firstSeen: 2020-03-18T12:37:31+02:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 Google Chrome's developer tools are nothing short of amazing, but there are a few missing tools that can increase your productivity even further. Here are my personal favorite extensions that I use everyday:

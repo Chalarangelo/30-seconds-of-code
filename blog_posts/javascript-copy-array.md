@@ -5,6 +5,8 @@ tags: javascript,array
 authors: chalarangelo
 cover: blog_images/colorful-plastic.jpg
 excerpt: Pick up a few new tricks which you can use to clone arrays in JavaScript.
+firstSeen: 2021-03-15T11:00:00+02:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 JavaScript provides quite a few ways to clone an array, most of which are pretty similar in terms of performance and results. Here's a quick rundown of some of the available options.

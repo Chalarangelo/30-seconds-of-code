@@ -5,6 +5,8 @@ tags: javascript,browser,event
 authors: maciv
 cover: blog_images/dog-waiting.jpg
 excerpt: Learn how to attach an event handler to events that is executed at most once in this JavaScript blog post.
+firstSeen: 2020-08-12T11:21:48+03:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 ### jQuery

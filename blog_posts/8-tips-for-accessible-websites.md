@@ -5,6 +5,8 @@ tags: javascript,accessibility,webdev
 authors: chalarangelo
 cover: blog_images/accessibility.jpg
 excerpt: Accessibility (a11y) can improve your website and attract new users. Learn how to get started with these 8 quick tips.
+firstSeen: 2020-05-20T14:10:13+03:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 1. Use semantic HTML

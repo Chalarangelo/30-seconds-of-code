@@ -5,6 +5,8 @@ tags: javascript,object
 authors: chalarangelo
 cover: blog_images/rocky-lake.jpg
 excerpt: JavaScript's `switch` statement often feels hard to remember and a little bit out of place. Maybe it's time to use object literals, instead.
+firstSeen: 2021-04-01T12:00:00+03:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 JavaScript's `switch` statement is one of the few things I find hard to remember the syntax for (so glad VS Code has autocomplete). It also feels a little bit out of place syntactically, as it's the only thing that doesn't use curly braces and you need to remember to `break` for every `case`. Moreover, its performance is less than stellar as its control flow is procedural.

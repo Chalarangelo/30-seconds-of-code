@@ -5,6 +5,8 @@ tags: javascript,function
 authors: chalarangelo
 cover: blog_images/rock-climbing.jpg
 excerpt: Learn everything you need to know about higher-order functions with this short guide and level up your programming skills.
+firstSeen: 2020-09-24T12:54:08+03:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 Higher-order functions are functions that operate on other functions, either by taking them as arguments or by returning them as their results. This allows us to create an abstraction layer over actions, not just values.

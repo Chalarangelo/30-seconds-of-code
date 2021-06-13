@@ -5,6 +5,8 @@ tags: javascript,array
 authors: maciv,chalarangelo
 cover: blog_images/apples.jpg
 excerpt: Learn how to quickly write code to sort JavaScript arrays with this handy one-liner.
+firstSeen: 2021-01-04T11:00:00+02:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 When sorting an array of primitive values (e.g. strings or numbers), you'll often see a lot of code that looks like this:
