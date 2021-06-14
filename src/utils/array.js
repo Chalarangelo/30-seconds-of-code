@@ -15,17 +15,6 @@ export const chunk = (arr, size) =>
 export const uniqueElements = arr => [...new Set(arr)];
 
 /**
- * Inserts an element at the given index of the array (mutative).
- * @param {number} i - The index in which to insert the element.
- * @param {*} v - Element to be inserted.
- * @param {array} arr - The array to be mutated.
- */
-export const insertAt = (i, v, arr) => {
-  arr.splice(i + 1, 0, v);
-  return arr;
-};
-
-/**
  * Gets a random element from an array.
  * @param {array} arr - The array to be sampled.
  */
