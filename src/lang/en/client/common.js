@@ -2,7 +2,6 @@ import settings from 'settings/global';
 
 const literals = {
   copyToClipboard: 'Copy code',
-  copiedToClipboard: 'Copied',
   codepen: 'View CodePen',
   examples: 'Examples',
   preview: 'Preview',
