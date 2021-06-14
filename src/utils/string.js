@@ -64,19 +64,6 @@ export const getURLParameters = url =>
   );
 
 /**
- * Returns the URL without any parameters.
- * @param {string} url - The URL to be parsed.
- */
-export const getBaseURL = url =>
-  url.indexOf('?') > 0 ? url.slice(0, url.indexOf('?')) : url;
-
-/**
- * Returns the root URL without any parameters..
- * @param {string} url - The URL to be parsed.
- */
-export const getRootURL = url => url.split('/').slice(0, 3).join('/');
-
-/**
  * Strips markdown format from a string.
  * @param {string} str - The markdown string to be stripped.
  */
