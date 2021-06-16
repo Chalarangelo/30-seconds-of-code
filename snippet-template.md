@@ -2,7 +2,6 @@
 title: functionName
 tags: array,intermediate
 firstSeen: 2021-06-13T05:00:00-04:00
-lastUpdated: 2021-06-13T05:00:00-04:00
 ---
 
 Explain briefly what the snippet does.
