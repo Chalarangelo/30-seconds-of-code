@@ -1,6 +1,8 @@
 ---
 title: find
 tags: list,beginner
+firstSeen: 2020-03-10T22:38:48+02:00
+lastUpdated: 2020-11-02T19:27:53+02:00
 ---
 
 Finds the value of the first element in the given list that satisfies the provided testing function.

@@ -1,6 +1,8 @@
 ---
 title: max_element_index
 tags: math,list,beginner
+firstSeen: 2019-10-31T09:42:21+02:00
+lastUpdated: 2020-11-02T19:28:27+02:00
 ---
 
 Returns the index of the element with the maximum value in a list.

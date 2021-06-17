@@ -1,6 +1,8 @@
 ---
 title: chunk_into_n
 tags: list,intermediate
+firstSeen: 2020-10-12T22:11:30+03:00
+lastUpdated: 2020-10-23T05:35:06+03:00
 ---
 
 Chunks a list into `n` smaller lists.

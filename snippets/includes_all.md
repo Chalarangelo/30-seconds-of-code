@@ -1,6 +1,8 @@
 ---
 title: includes_all
 tags: list,intermediate
+firstSeen: 2020-03-15T12:54:08+02:00
+lastUpdated: 2020-11-02T19:28:05+02:00
 ---
 
 Checks if all the elements in `values` are included in `lst`.

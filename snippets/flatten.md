@@ -1,6 +1,8 @@
 ---
 title: flatten
 tags: list,intermediate
+firstSeen: 2019-09-19T15:46:10+03:00
+lastUpdated: 2020-11-02T19:27:53+02:00
 ---
 
 Flattens a list of lists once.

@@ -1,6 +1,8 @@
 ---
 title: get
 tags: dictionary,list,intermediate
+firstSeen: 2020-10-28T12:21:39+02:00
+lastUpdated: 2020-10-28T12:21:39+02:00
 ---
 
 Retrieves the value of the nested key indicated by the given selector list from a dictionary or list.

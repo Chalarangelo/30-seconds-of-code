@@ -1,6 +1,8 @@
 ---
 title: chunk
 tags: list,intermediate
+firstSeen: 2018-01-09T06:39:42+02:00
+lastUpdated: 2020-11-02T19:27:07+02:00
 ---
 
 Chunks a list into smaller lists of a specified size.

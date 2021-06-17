@@ -1,6 +1,8 @@
 ---
 title: count_occurrences
 tags: list,beginner
+firstSeen: 2021-01-10T00:00:36+02:00
+lastUpdated: 2021-01-10T00:00:36+02:00
 ---
 
 Counts the occurrences of a value in a list.
