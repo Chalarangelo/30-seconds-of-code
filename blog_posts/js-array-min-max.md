@@ -5,6 +5,8 @@ tags: javascript,array,math
 authors: chalarangelo
 cover: blog_images/little-tree.jpg
 excerpt: When working with numeric arrays in JavaScript, you might find yourself in need of finding the minimum or maximum value. Here's a quick and easy way to do it.
+firstSeen: 2021-03-01T11:00:00+02:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 When working with numeric arrays in JavaScript, you might find yourself in need of finding the minimum or maximum value. Luckily, JavaScript's `Math` built-in object has got you covered. You can simply use `Math.min()` or `Math.max()` combined with the spread operator (`...`), as both functions accept any number of arguments.

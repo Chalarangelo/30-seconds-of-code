@@ -5,6 +5,8 @@ tags: javascript,array,object
 authors: chalarangelo
 cover: blog_images/building-blocks.jpg
 excerpt: Learn the basics of the destructuring assignment syntax in JavaScript ES6 and improve your code with this easy guide.
+firstSeen: 2021-02-01T11:00:00+02:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 The destructuring assignment syntax, first introduced in JavaScript ES6, allows the unpacking of values from arrays and objects into distinct variables. While it might seem intimidating at first, it's actually quite easy to learn and use. Let's break it down into easier to understand cases.

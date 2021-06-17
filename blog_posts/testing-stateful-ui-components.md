@@ -5,6 +5,8 @@ tags: react,testing
 authors: chalarangelo
 cover: blog_images/lake-trees.jpg
 excerpt: Testing stateful React components is by no means a difficult task, but did you know there is an elegant solution that doesn't involve testing state directly?
+firstSeen: 2020-01-16T09:58:18+02:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 Some time ago, I was tasked with writing tests for a handful of React components, an otherwise mundane and uninspiring task, that somehow ended with a "Eureka!" moment for me. The specifics of the project and its components are of little importance, however the key detail is that I was working with stateful React components that are used daily by a large team and, as such, are refactored and updated quite often.

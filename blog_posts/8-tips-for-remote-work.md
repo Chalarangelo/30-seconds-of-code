@@ -6,6 +6,8 @@ authors: chalarangelo
 cover: blog_images/kettle-laptop.jpg
 excerpt: Working from home seems like a great alternative to going to the office, but there are challenges that come with it that you need to overcome...
 unlisted: true
+firstSeen: 2020-03-12T22:14:41+02:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 Working from home (also known as remote work) seems like a great alternative to going to the office every morning, but it comes with its own set of challenges that you need to overcome in order to stay healthy and productive. Here are my tips for achieving just that:

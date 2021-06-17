@@ -5,6 +5,8 @@ tags: javascript,array,iterator,eslint
 authors: chalarangelo
 cover: blog_images/typing.jpg
 excerpt: ESLint is a very powerful tool that can save you a lot of headaches, but sometimes it gets in the way. Learn how to refactor code to get rid of a common warning.
+firstSeen: 2020-05-19T02:32:10+03:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 ESLint is one of my tools of choice, but oftentimes it gets in the way of work, due to the way it prefers me to do things. One of the warnings I have seen more times than I care to admit is the following:

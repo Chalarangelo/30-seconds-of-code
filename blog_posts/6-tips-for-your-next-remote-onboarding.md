@@ -6,6 +6,8 @@ authors: fejes713
 cover: blog_images/golden-gate-bridge.jpg
 excerpt: Many developers find onboarding experience worrisome. Here are 6 helpful tips to make your onboarding experience a pleasant one.
 unlisted: true
+firstSeen: 2020-05-03T16:00:59+03:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 Many developers find onboarding experience worrisome. Here are 6 helpful tips to make your onboarding experience a pleasant one:

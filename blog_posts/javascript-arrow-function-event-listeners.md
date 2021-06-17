@@ -5,6 +5,8 @@ tags: javascript,browser,event,function
 authors: chalarangelo
 cover: blog_images/arrow-functions.jpg
 excerpt: Learn the differences between JavaScript ES6 arrow functions and regular functions and how they affect event listener callbacks.
+firstSeen: 2020-08-04T15:29:43+03:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 ### Arrow functions

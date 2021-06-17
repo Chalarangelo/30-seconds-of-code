@@ -5,6 +5,8 @@ tags: javascript,browser
 authors: chalarangelo
 cover: blog_images/laptop-view.jpg
 excerpt: JavaScript provides two methods for encoding characters to URL-safe strings. Do you know when to use each one?
+firstSeen: 2021-01-07T10:41:38+02:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 ### encodeURIComponent()

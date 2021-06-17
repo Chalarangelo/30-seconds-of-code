@@ -5,6 +5,8 @@ tags: javascript,array,object,iterator
 authors: chalarangelo
 cover: blog_images/case-study.jpg
 excerpt: There are many ways to iterate and transform array data in JavaScript. Learn how each one works and where you should use them.
+firstSeen: 2020-05-19T14:27:18+03:00
+lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
 ### For loops
