@@ -1,6 +1,8 @@
 ---
 title: Donut spinner
 tags: animation,intermediate
+firstSeen: 2018-02-27T17:32:35+02:00
+lastUpdated: 2020-12-30T15:37:37+02:00
 ---
 
 Creates a donut spinner that can be used to indicate the loading of content.

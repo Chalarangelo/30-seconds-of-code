@@ -1,6 +1,8 @@
 ---
 title: List with sticky section headings
 tags: visual,intermediate
+firstSeen: 2020-08-18T15:44:01+03:00
+lastUpdated: 2020-12-30T15:37:37+02:00
 ---
 
 Creates a list with sticky headings for each section.

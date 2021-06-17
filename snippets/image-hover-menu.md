@@ -1,6 +1,8 @@
 ---
 title: Menu on image hover
 tags: layout,animation,intermediate
+firstSeen: 2020-04-20T19:15:11+03:00
+lastUpdated: 2020-12-30T15:37:37+02:00
 ---
 
 Displays a menu overlay when the image is hovered.

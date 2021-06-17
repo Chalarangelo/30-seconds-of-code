@@ -1,6 +1,8 @@
 ---
 title: Zoom in zoom out animation
 tags: animation,beginner
+firstSeen: 2020-10-05T21:42:14+03:00
+lastUpdated: 2021-04-02T21:49:01+03:00
 ---
 
 Creates a zoom in zoom out animation.

@@ -1,6 +1,8 @@
 ---
 title: Image overlay on hover
 tags: visual,animation,advanced
+firstSeen: 2020-04-20T14:12:33+03:00
+lastUpdated: 2020-12-30T15:37:37+02:00
 ---
 
 Displays an image overlay effect on hover.

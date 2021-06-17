@@ -1,6 +1,8 @@
 ---
 title: Stylized quotation marks
 tags: visual,beginner
+firstSeen: 2021-05-16T19:53:02+03:00
+lastUpdated: 2021-05-16T19:53:02+03:00
 ---
 
 Customizes the style of inline quotation marks.

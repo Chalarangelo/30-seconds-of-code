@@ -1,6 +1,8 @@
 ---
 title: Fullscreen
 tags: visual,advanced
+firstSeen: 2019-01-12T13:08:40+02:00
+lastUpdated: 2020-12-30T15:37:37+02:00
 ---
 
 Applies styles to an element when in fullscreen mode.

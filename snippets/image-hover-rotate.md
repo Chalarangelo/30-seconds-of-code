@@ -1,6 +1,8 @@
 ---
 title: Image rotate on hover
 tags: animation,visual,intermediate
+firstSeen: 2020-04-20T18:36:11+03:00
+lastUpdated: 2020-12-30T15:37:37+02:00
 ---
 
 Creates a rotate effect for the image on hover.
