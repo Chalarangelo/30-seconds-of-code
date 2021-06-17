@@ -1,6 +1,8 @@
 ---
 title: useSSR
 tags: hooks,effect,state,memo,intermediate
+firstSeen: 2019-08-24T13:18:16+03:00
+lastUpdated: 2021-03-10T06:38:42+02:00
 ---
 
 Checks if the code is running on the browser or the server.

@@ -1,6 +1,8 @@
 ---
 title: Modal
 tags: components,effect,intermediate
+firstSeen: 2019-03-11T11:25:06+02:00
+lastUpdated: 2020-11-25T21:12:16+02:00
 ---
 
 Renders a Modal component, controllable through events.

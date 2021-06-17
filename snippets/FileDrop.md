@@ -1,6 +1,8 @@
 ---
 title: FileDrop
 tags: components,input,state,effect,event,advanced
+firstSeen: 2019-02-02T12:17:27+02:00
+lastUpdated: 2020-11-26T09:43:21+02:00
 ---
 
 Renders a file drag and drop component for a single file.

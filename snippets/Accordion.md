@@ -1,6 +1,8 @@
 ---
 title: Accordion
 tags: components,children,state,advanced
+firstSeen: 2019-03-02T10:46:34+02:00
+lastUpdated: 2021-01-07T23:57:13+02:00
 ---
 
 Renders an accordion menu with multiple collapsible content elements.
