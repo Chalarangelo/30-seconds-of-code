@@ -1,6 +1,8 @@
 ---
 title: Create a commit by a different author
 tags: commit,intermediate
+firstSeen: 2021-04-13T20:07:27+03:00
+lastUpdated: 2021-04-13T21:10:59+03:00
 ---
 
 Creates a new commit by the specified author.

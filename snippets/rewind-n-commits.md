@@ -1,6 +1,8 @@
 ---
 title: Rewind back n commits
 tags: branch,commit,intermediate
+firstSeen: 2021-04-05T11:19:21+03:00
+lastUpdated: 2021-04-13T21:10:59+03:00
 ---
 
 Rewinds the current branch by a given number of commits.

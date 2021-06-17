@@ -1,6 +1,8 @@
 ---
 title: View differences in changes
 tags: commit,branch,intermediate
+firstSeen: 2021-04-08T16:30:44+03:00
+lastUpdated: 2021-04-13T21:10:59+03:00
 ---
 
 Displays differences between staged or unstaged changes and the last commit.

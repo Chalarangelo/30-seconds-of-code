@@ -1,6 +1,8 @@
 ---
 title: View a visual graph of the repository
 tags: repository,intermediate
+firstSeen: 2021-04-06T16:28:49+03:00
+lastUpdated: 2021-04-13T21:10:59+03:00
 ---
 
 Prints a visual graph of all commits and branches in the repository.

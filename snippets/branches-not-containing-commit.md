@@ -1,6 +1,8 @@
 ---
 title: Find branches not containing a commit
 tags: branch,commit,intermediate
+firstSeen: 2021-04-05T09:47:59+03:00
+lastUpdated: 2021-04-13T21:10:59+03:00
 ---
 
 Prints all the branches not containing a specific commit.

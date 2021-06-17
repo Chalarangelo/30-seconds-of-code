@@ -1,6 +1,8 @@
 ---
 title: Commit without running git hooks
 tags: commit,intermediate
+firstSeen: 2021-04-04T20:55:26+03:00
+lastUpdated: 2021-04-13T21:10:59+03:00
 ---
 
 Creates a new commit skipping the pre-commit and commit-msg hooks.

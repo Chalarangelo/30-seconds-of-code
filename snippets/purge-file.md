@@ -1,6 +1,8 @@
 ---
 title: Purge a file from history
 tags: repository,remote,advanced
+firstSeen: 2021-04-13T20:20:57+03:00
+lastUpdated: 2021-04-13T21:10:59+03:00
 ---
 
 Completely purges a file from history.

@@ -1,6 +1,8 @@
 ---
 title: Apply the latest stash
 tags: repository,stash,intermediate
+firstSeen: 2021-04-13T19:36:57+03:00
+lastUpdated: 2021-04-13T21:10:59+03:00
 ---
 
 Applies the latest stash.
