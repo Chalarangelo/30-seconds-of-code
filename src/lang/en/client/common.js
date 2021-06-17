@@ -2,7 +2,6 @@ import settings from 'settings/global';
 
 const literals = {
   copyToClipboard: 'Copy code',
-  copiedToClipboard: 'Copied',
   codepen: 'View CodePen',
   examples: 'Examples',
   preview: 'Preview',
@@ -13,7 +12,6 @@ const literals = {
   // Note: This has to be rendered as raw HTML
   andCollections: '&nbsp;&amp;&nbsp;collections',
   snippetCollection: 'Snippet collection',
-  blog: 'Blog',
   settings: 'Settings',
   viewAll: 'View all',
   siteName: settings.websiteName,

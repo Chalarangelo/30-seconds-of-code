@@ -9,23 +9,14 @@
 
 .breadcrumb-item {
   position: relative;
-  margin: 0 1rem 0 0;
-
-  // Breadcrumb link
-  a {
-
-    &, &:link, &:visited {
-      color: var(--clr-txt-150);
-    }
-  }
 
   &:not(:last-of-type) {
 
-    &:before {
+    &:after {
       color: var(--clr-txt-050);
-      position: absolute;
-      right: -0.75rem;
       content: "/";
+      width: 0;
+      padding: 0 0.25rem;
     }
   }
 
@@ -37,10 +28,7 @@
     text-overflow: ellipsis;
 
     a {
-      &, &:link, &:visited {
-        color: var(--clr-txt-050);
-        pointer-events: none;
-      }
+      pointer-events: none;
     }
   }
 }

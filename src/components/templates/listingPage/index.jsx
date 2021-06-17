@@ -6,7 +6,6 @@ import SnippetList from 'components/organisms/snippetList';
 const propTypes = {
   slug: PropTypes.string.isRequired,
   paginator: PropTypes.paginator,
-  sorter: PropTypes.sorter,
   snippetList: PropTypes.arrayOf(PropTypes.snippet),
   listingName: PropTypes.string,
   listingTitle: PropTypes.string,
@@ -24,7 +23,6 @@ const propTypes = {
 const ListingPage = ({
   slug,
   paginator,
-  sorter,
   snippetList,
   listingName,
   listingTitle,
@@ -54,7 +52,6 @@ const ListingPage = ({
           listingType={listingType}
           snippetList={snippetList}
           paginator={paginator}
-          sorter={sorter}
           listingSublinks={listingSublinks}
         />
       </Shell>

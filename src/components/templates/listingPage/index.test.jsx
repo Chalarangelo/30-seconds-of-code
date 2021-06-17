@@ -3,10 +3,8 @@ import { renderWithContext } from 'test/utils';
 import ListingPage from './index';
 import SnippetFactory from 'test/fixtures/factories/snippet';
 import PaginatorFactory from 'test/fixtures/factories/paginator';
-import SorterFactory from 'test/fixtures/factories/sorter';
 
 const paginator = PaginatorFactory.create('Paginator');
-const sorter = SorterFactory.create('Sorter');
 
 describe('<ListingPage />', () => {
   const snippetList = SnippetFactory.createMany('PreviewSnippet', 2);
@@ -20,7 +18,6 @@ describe('<ListingPage />', () => {
       <ListingPage
         snippetList={snippetList}
         paginator={paginator}
-        sorter={sorter}
         listingName={listingName}
         listingTitle={listingTitle}
         pageDescription={pageDescription}

@@ -1,13 +1,8 @@
-// Colors
-:root {
-  --clr-link: hsl(217, 82%, 77%);
-}
-
 a {
   text-decoration: none;
 
   &:link, &:visited {
-    color: var(--clr-link);
+    color: var(--clr-primary-050);
   }
 
   &:hover, &:focus {
@@ -17,8 +12,14 @@ a {
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
   }
-}
 
+  &.inherit {
+
+    &:link, &:visited {
+      color: inherit;
+    }
+  }
+}
 
 @keyframes animated-underline {
   0% {

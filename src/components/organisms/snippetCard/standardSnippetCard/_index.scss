@@ -17,6 +17,8 @@
 
     .card-code + .card-code {
       border-top: 1px solid var(--clr-txt-050);
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
       padding-top: 2.5rem;
 
       &:before {

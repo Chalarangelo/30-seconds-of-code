@@ -18,11 +18,8 @@
     text-overflow: ellipsis;
 
     a {
-      &, &:link, &:visited {
-        font-weight: 500;
-        line-height: 1;
-        color: var(--clr-txt-200);
-      }
+      font-weight: 500;
+      line-height: 1;
     }
   }
 
@@ -46,21 +43,9 @@
       left: 0.5rem;
       font-size: 36px;
     }
-
-    // Custom styles for dart icon
-    &.icon-dart:before {
-      content: '';
-      background-image: generate-icon-background("dartlang", '', '', 0, 24);
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
   }
 
-  // Reusable utility for titles in the body of cards (used in blogs)
+  // Reusable utility for titles in the body of cards (used in articles)
   .card-body-title {
     line-height: 2rem;
     font-weight: 500;
@@ -72,7 +57,6 @@
   }
 
   .card-meta {
-    display: grid;
     grid-template-rows: auto auto;
     grid-template-columns: 64px auto;
 
@@ -105,7 +89,7 @@
         margin-top: 1rem;
       }
 
-      &:last-child:not(:first-child):not(.card-image-credit) {
+      &:last-child:not(:first-child) {
         margin-bottom: 1.375rem;
       }
     }
@@ -141,23 +125,13 @@
     min-height: calc(260px / var(--cover-aspect-ratio));
     max-height: calc(680px / var(--cover-aspect-ratio));
   }
-
-  p:last-child.card-image-credit {
-    font-size: var(--font-xs);
-    padding: 0 1.5rem;
-    margin-top: -2.375rem;
-    background-color: var(--clr-img-credit-bg);
-    color: var(--clr-txt-150);
-    order: -1;
-  }
 }
 
 // List item card
 .list-card {
   overflow: hidden;
-  display: grid;
   grid-template-rows: auto auto;
-  grid-template-columns: 64px calc(100% - 64px);
+  grid-template-columns: 64px auto;
   content-visibility: auto;
   contain-intrinsic-size: 240px;
 

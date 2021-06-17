@@ -1,70 +1,53 @@
 .paginator {
   margin: 1.75rem 1.25rem 1.5rem;
-  align-items: baseline;
+  align-items: center;
 
-  .btn, a.btn {
-    margin: 0.25rem 0;
-    padding: 0.625rem 0;
+  .btn, a.btn, span {
     box-sizing: border-box;
-    border-radius: 0;
-    height: 44px;
     min-width: 44px;
     text-align: center;
+  }
+
+  .current-page {
+    cursor: default;
     background: transparent;
-    color: var(--clr-txt-150);
+    margin-top: 0;
+  }
 
-    &.current-page {
-      cursor: default;
-      color: var(--clr-txt-200);
-    }
+  .previous-page, .next-page {
+    color: var(--clr-primary-050);
+    position: relative;
+    display: flex;
 
-    &.previous-page, &.next-page {
-      color: var(--clr-link);
+    &:before {
       position: relative;
-      margin: 0.625rem 1rem;
-
-      &:before {
-        position: absolute;
-        font-size: 28px;
-        top: 0;
-        line-height: 32px;
-        transition: all 0.3s ease;
-
-        @media screen and (min-width: $layout-medium-breakpoint) {
-          line-height: 44px;
-        }
-      }
-
-      &:hover, &:focus {
-        transform: scale(1.05);
-        transform-origin: center;
-      }
+      font-size: 24px;
     }
+  }
 
-    &.previous-page {
+  .previous-page {
+    flex-direction: row;
+
+    @media screen and (min-width: $layout-medium-breakpoint) {
+      padding-right: 1.125rem;
+
       &:before {
-        text-align: left;
-        right: 0;
-
-        @media screen and (min-width: $layout-medium-breakpoint) {
-          left: -2rem;
-        }
-      }
-    }
-
-    &.next-page {
-      &:before {
-        text-align: right;
-        left: 0;
-
-        @media screen and (min-width: $layout-medium-breakpoint) {
-          right: -2rem;
-        }
+        padding-right: 0.25rem;
+        margin-left: -0.25rem;
       }
     }
   }
 
-  .paginator-separator {
-    letter-spacing: 2px;
+  .next-page {
+    flex-direction: row-reverse;
+
+    @media screen and (min-width: $layout-medium-breakpoint) {
+      padding-left: 1.125rem;
+
+      &:before {
+        padding-left: 0.25rem;
+        margin-right: -0.25rem;
+      }
+    }
   }
 }

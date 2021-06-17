@@ -2,12 +2,6 @@ import { Tag } from 'blocks/utilities/tag';
 import settings from 'settings/global';
 /* istanbul ignore next */
 const literals = {
-  orders: {
-    popularity: 'Recommended',
-    alphabetical: 'Alphabetical',
-    expertise: 'Expertise',
-    newest: 'Newest',
-  },
   featuredCollections: 'Featured Collections',
   collections: 'Snippet Collections',
   newBlogs: 'Latest Articles',

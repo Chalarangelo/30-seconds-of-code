@@ -16,7 +16,7 @@ const propTypes = {
  */
 const SnippetCard = ({ snippet }) => (
   <Card className='snippet-card'>
-    <div className='card-meta'>
+    <div className='card-meta grid'>
       <div className={`card-icon br-round icon icon-${snippet.icon}`}>
         <Expertise level={snippet.expertise} />
       </div>
@@ -30,7 +30,7 @@ const SnippetCard = ({ snippet }) => (
       dangerouslySetInnerHTML={{ __html: snippet.html.fullDescription }}
     />
     <div className='card-source-content'>
-      {snippet.code.style && (
+      {snippet.html.style && (
         <CodeBlock
           language={snippet.language.otherLanguages[0]}
           htmlContent={snippet.html.style}

@@ -1,6 +1,6 @@
 @font-face {
   font-family: "icons";
-  src: url("../../assets/icons.woff2?24b22a509b7ef7b75bd38af25460adc9") format("woff2");
+  src: url("../../assets/icons.woff2?8e2188a8340c97e1472ef5ee189f6cf9") format("woff2");
 }
 
 .icon:before {
@@ -38,56 +38,47 @@
 .icon.icon-codepen:before {
   content: "\f108";
 }
-.icon.icon-csharp:before {
+.icon.icon-css:before {
   content: "\f109";
 }
-.icon.icon-css:before {
+.icon.icon-deduck:before {
   content: "\f10a";
 }
-.icon.icon-deduck:before {
+.icon.icon-git:before {
   content: "\f10b";
 }
-.icon.icon-git:before {
+.icon.icon-github:before {
   content: "\f10c";
 }
-.icon.icon-github:before {
+.icon.icon-home:before {
   content: "\f10d";
 }
-.icon.icon-golang:before {
+.icon.icon-js:before {
   content: "\f10e";
 }
-.icon.icon-home:before {
+.icon.icon-list:before {
   content: "\f10f";
 }
-.icon.icon-js:before {
+.icon.icon-node:before {
   content: "\f110";
 }
-.icon.icon-list:before {
+.icon.icon-python:before {
   content: "\f111";
 }
-.icon.icon-node:before {
+.icon.icon-react:before {
   content: "\f112";
 }
-.icon.icon-php:before {
+.icon.icon-search:before {
   content: "\f113";
 }
-.icon.icon-python:before {
+.icon.icon-share:before {
   content: "\f114";
 }
-.icon.icon-react:before {
+.icon.icon-star:before {
   content: "\f115";
 }
-.icon.icon-search:before {
-  content: "\f116";
-}
-.icon.icon-share:before {
-  content: "\f117";
-}
-.icon.icon-star:before {
-  content: "\f118";
-}
 .icon.icon-twitter:before {
-  content: "\f119";
+  content: "\f116";
 }
 
 .card-icon, 

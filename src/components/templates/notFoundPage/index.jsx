@@ -17,7 +17,7 @@ const NotFoundPage = () => (
     <Shell>
       <PageTitle>{literals.fourOhFour}</PageTitle>
       <PageBackdrop
-        backdropImage='/assets/404.svg'
+        backdropImage='/assets/plane.png'
         mainTextClassName='fs-xl'
         mainText={
           <>
@@ -28,7 +28,9 @@ const NotFoundPage = () => (
         subText={literals.notFoundDescription}
       >
         <Link href='/'>
-          <a className='btn btn-home fs-md icon icon-home'>{literals.goHome}</a>
+          <a className='btn outline-btn btn-home fs-md icon icon-home'>
+            {literals.goHome}
+          </a>
         </Link>
       </PageBackdrop>
     </Shell>

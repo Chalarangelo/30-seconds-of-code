@@ -10,11 +10,9 @@ export class SnippetCollectionListing {
   /**
    * Creates a listing from the given SnippetCollection object.
    * @param {Snippet} snippet - A snippet to create a context from.
-   * @param {object} options - Options object, containing the following:
-   *  - `order` - Order segment of the page slug. (default: `'p'`)
    * @throws Will throw an error if snippetCollection is not a SnippetCollection.
    */
-  constructor(snippetCollection, { order = 'p' } = {}) {
+  constructor(snippetCollection) {
     if (!(snippetCollection instanceof SnippetCollection)) {
       throw new ArgsError(
         "Invalid arguments. 'snippetCollection' must be an instance of 'SnippetCollection'."
@@ -22,9 +20,6 @@ export class SnippetCollectionListing {
     }
 
     this.snippetCollection = snippetCollection;
-    this._options = {
-      order,
-    };
   }
 
   get listingName() {
@@ -56,16 +51,15 @@ export class SnippetCollectionListing {
 
   get listingSublinks() {
     if (['blog', 'language', 'tag'].includes(this.snippetCollection.type)) {
-      const order = this._options.order;
       return [
         {
           name: literals.tag('all'),
-          url: `${this.snippetCollection.rootUrl}/${order}/1`,
+          url: `${this.snippetCollection.rootUrl}/p/1`,
           selected: this.snippetCollection.type === 'language',
         },
         ...this.snippetCollection.tags.map(tag => ({
           name: literals.tag(tag),
-          url: `${this.snippetCollection.rootUrl}/t/${tag}/${order}/1`,
+          url: `${this.snippetCollection.rootUrl}/t/${tag}/p/1`,
           selected:
             this.snippetCollection.type === 'tag'
               ? tag === this.snippetCollection.tag
@@ -92,11 +86,8 @@ export class SnippetCollectionListing {
 
   /**
    * Creates a plain object for the given snippet collection listing.
-   * @param {object} options - Options object, containing the following:
-   *  - `order` - Order segment of the page slug. (default: `'p'`)
    */
-  toObject = ({ order = this._options.order } = this._options) => {
-    this._options.order = order;
+  toObject = () => {
     return SnippetCollectionListing.serializableAttributes.reduce(
       (obj, attr) => {
         const val = this[attr];

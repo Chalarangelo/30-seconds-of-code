@@ -33,7 +33,7 @@ export class Recommender {
     ).toLowerCase();
     const primaryTag = (isBlog
       ? Tag.stripLanguage(snippet.tags.all)[0]
-      : snippet.tags.primary
+      : snippet.tags.primary || ''
     ).toLowerCase();
     const searchTokens = snippet.searchTokens.split(' ');
 

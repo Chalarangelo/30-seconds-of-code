@@ -2,7 +2,7 @@ import { render, cleanup } from '@testing-library/react';
 import Expertise from './index';
 
 describe('<Expertise />', () => {
-  const level = 'Beginner';
+  const level = 'beginner';
   let wrapper;
 
   beforeEach(() => {
@@ -16,15 +16,7 @@ describe('<Expertise />', () => {
   });
 
   it('should get the appropriate class from expertise level', () => {
-    expect(
-      wrapper.querySelectorAll(`.expertise.${level.toLowerCase()}`)
-    ).toHaveLength(1);
-  });
-
-  it('should get the appropriate title from expertise level', () => {
-    expect(
-      wrapper.querySelectorAll(`.expertise[title="${level}"`)
-    ).toHaveLength(1);
+    expect(wrapper.querySelectorAll(`.expertise.${level}`)).toHaveLength(1);
   });
 
   describe('without a level value', () => {

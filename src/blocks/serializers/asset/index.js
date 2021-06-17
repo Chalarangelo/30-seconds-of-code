@@ -61,7 +61,7 @@ export class AssetSerializer {
     boundLog('Processing assets from config...', 'info');
 
     boundLog(
-      `Copying static assets from ${path.resolve(inPath)} to ${path.resolve(
+      `Processing static assets from ${path.resolve(inPath)} to ${path.resolve(
         outPath
       )}`,
       'info'
@@ -69,7 +69,13 @@ export class AssetSerializer {
     fs.ensureDirSync(outPath);
     await fs.copy(inPath, outPath);
     await fs.copy(inContentPath, outPath);
-    boundLog('Static assets have been copied', 'success');
+    const staticAssets = glob
+      .sync(`${inContentPath}/*.@(${supportedExtensions.join('|')})`)
+      .map(file => path.resolve(file));
+    await Promise.all(
+      staticAssets.map(asset => this.processImageAsset(asset, outPath))
+    );
+    boundLog('Processing static assets complete', 'success');
 
     boundLog(`Processing image assets from configuration files`, 'info');
     for (const cfg of configs) {

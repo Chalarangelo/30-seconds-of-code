@@ -13,11 +13,30 @@ export class TextParser {
   /**
    * Reads the data from a text file, using frontmatter.
    * @param {string} filePath - Path of the given file
-   * @param {object} options - An options object, containing the following:
-   *  - `withMetadata`: Should include git metadata for the returned object?
    * @returns {Promise<object>} A promise that resolves to the object containing the file's data.
    */
-  static fromPath = (filePath, { withMetadata = false } = {}) => {
+  static fromPath = filePath => {
+    const fileName = filePath.match(/.*\/([^/]*)$/)[1];
+    return readFile(filePath, 'utf8')
+      .then(content => {
+        const { body, attributes } = frontmatter(content);
+        const {
+          firstSeen = '2021-06-13T05:00:00-04:00',
+          lastUpdated = firstSeen,
+          ...restAttributes
+        } = attributes;
+        return {
+          body,
+          ...restAttributes,
+          firstSeen: new Date(firstSeen),
+          lastUpdated: new Date(lastUpdated),
+          fileName,
+        };
+      })
+      .catch(err => err);
+  };
+
+  static fromPathOld = (filePath, { withMetadata = false } = {}) => {
     const [, dirPath, fileName] = filePath.match(/(.*)\/([^/]*)$/);
     const promises = [
       new Promise((res, rej) =>

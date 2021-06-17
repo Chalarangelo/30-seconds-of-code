@@ -8,10 +8,6 @@
     min-height: 64px;
     text-align: center;
 
-    &, &:link, &:visited {
-      color: var(--clr-txt-200);
-    }
-
     &::before {
       position: absolute;
       left: 0;

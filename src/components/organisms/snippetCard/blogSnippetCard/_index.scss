@@ -2,12 +2,6 @@
 
   .card-meta-info {
     margin: 0 0 1rem;
-
-    a {
-      &, &:link, &:visited {
-        color: var(--clr-txt-050);
-      }
-    }
   }
 
   ol.blog-list {
@@ -33,6 +27,7 @@
 
       &:before {
         font-weight: 600;
+        color: var(--clr-txt-150);
         -webkit-font-smoothing: antialiased;
         line-height: 1.5;
       }
@@ -48,6 +43,7 @@
         &:first-child:not(:last-child) {
           line-height: 1.5;
           font-weight: 600;
+          color: var(--clr-txt-150);
           -webkit-font-smoothing: antialiased;
         }
       }

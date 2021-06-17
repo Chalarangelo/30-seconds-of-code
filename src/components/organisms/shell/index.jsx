@@ -32,7 +32,7 @@ const Shell = ({ isSearch = false, children }) => {
         aria-label='Main'
       >
         <Link href='/'>
-          <a className='nav-btn'>
+          <a className='nav-logo-wrapper'>
             <img
               src='/assets/30s-icon.png'
               alt={literals.home}
@@ -44,7 +44,7 @@ const Shell = ({ isSearch = false, children }) => {
         </Link>
         <Link href='/'>
           <a
-            className='nav-title-wrapper flex flex-col'
+            className='nav-title-wrapper flex flex-col flex-none'
             aria-label={literals.home}
           >
             <h1 className='nav-title m-0 txt-200 f-alt'>{literals.siteName}</h1>

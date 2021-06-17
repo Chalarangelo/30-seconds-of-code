@@ -1,6 +1,29 @@
-import Button from './regularButton';
-import CopyButton from './copyButton';
-import CodepenButton from './codepenButton';
-import ShareButton from './shareButton';
+import PropTypes from 'typedefs/proptypes';
 
-export { Button, CopyButton, CodepenButton, ShareButton };
+const propTypes = {
+  onClick: PropTypes.func,
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node),
+  ]),
+  rest: PropTypes.any,
+};
+
+/**
+ * Generic button component.
+ */
+const Button = ({
+  onClick,
+  className = '',
+  children,
+  ...rest // Needs props to have accessible name if only icon etc.
+}) => (
+  <button className={`btn ${className}`} onClick={onClick} {...rest}>
+    {children}
+  </button>
+);
+
+Button.propTypes = propTypes;
+
+export default Button;

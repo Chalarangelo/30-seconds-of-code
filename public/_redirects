@@ -10,7 +10,7 @@
 #
 # * Redirect replaced/renamed snippets.
 # -----------------------------------------------------------------------------
-/css/s/easing-variables                /blog/s/css-easing-variables             301!
+/css/s/easing-variables                /articles/s/css-easing-variables         301!
 /python/s/count-occurences             /python/s/count-occurrences              301!
 
 # -----------------------------------------------------------------------------
@@ -30,65 +30,36 @@
 /php                                   /php/p/1                                 301!
 
 # -----------------------------------------------------------------------------
-#   UPDATED LISTING REDIRECTS:
+#   SORTED LISTING PAGE REDIRECTS:
 #
-# * Redirect main listing with deprecated order to page 1 of the dedicated
-#   listing sorted by popularity.
-# * Redirect blog listing with deprecated order to page 1 of the blog listing
-#   sorted by freshness.
+# * Redirect alternative sorting listings to page 1 of the dedicated listing.
 # -----------------------------------------------------------------------------
-/list/e/1/                             /list/p/1                                301!
-/list/e/2/                             /list/p/1                                301!
-/list/e/3/                             /list/p/1                                301!
-/list/e/4/                             /list/p/1                                301!
-/list/e/5/                             /list/p/1                                301!
-/list/e/6/                             /list/p/1                                301!
-/list/e/7/                             /list/p/1                                301!
-/list/e/8/                             /list/p/1                                301!
-/list/e/9/                             /list/p/1                                301!
-/list/e/10/                            /list/p/1                                301!
-/list/e/11/                            /list/p/1                                301!
-/list/e/12/                            /list/p/1                                301!
-/list/e/13/                            /list/p/1                                301!
-/list/e/14/                            /list/p/1                                301!
-/list/e/15/                            /list/p/1                                301!
-/list/e/16/                            /list/p/1                                301!
-/list/e/17/                            /list/p/1                                301!
-/list/e/18/                            /list/p/1                                301!
-/list/e/19/                            /list/p/1                                301!
-/list/e/20/                            /list/p/1                                301!
-/list/e/21/                            /list/p/1                                301!
-/list/e/22/                            /list/p/1                                301!
-/list/e/23/                            /list/p/1                                301!
-/list/e/24/                            /list/p/1                                301!
-/list/a/1/                             /list/p/1                                301!
-/list/a/2/                             /list/p/1                                301!
-/list/a/3/                             /list/p/1                                301!
-/list/a/4/                             /list/p/1                                301!
-/list/a/5/                             /list/p/1                                301!
-/list/a/6/                             /list/p/1                                301!
-/list/a/7/                             /list/p/1                                301!
-/list/a/8/                             /list/p/1                                301!
-/list/a/9/                             /list/p/1                                301!
-/list/a/10/                            /list/p/1                                301!
-/list/a/11/                            /list/p/1                                301!
-/list/a/12/                            /list/p/1                                301!
-/list/a/13/                            /list/p/1                                301!
-/list/a/14/                            /list/p/1                                301!
-/list/a/15/                            /list/p/1                                301!
-/list/a/16/                            /list/p/1                                301!
-/list/a/17/                            /list/p/1                                301!
-/list/a/18/                            /list/p/1                                301!
-/list/a/19/                            /list/p/1                                301!
-/list/a/20/                            /list/p/1                                301!
-/list/a/21/                            /list/p/1                                301!
-/list/a/22/                            /list/p/1                                301!
-/list/a/23/                            /list/p/1                                301!
-/list/a/24/                            /list/p/1                                301!
-/blog/e/1/                             /blog/n/1                                301!
-/blog/e/2/                             /blog/n/1                                301!
-/blog/a/1/                             /blog/n/1                                301!
-/blog/a/2/                             /blog/n/1                                301!
+/blog/n/*                              /articles/p/1                            301!
+/blog/e/*                              /articles/p/1                            301!
+/blog/a/*                              /articles/p/1                            301!
+/list/e/*                              /list/p/1                                301!
+/list/a/*                              /list/p/1                                301!
+/:lang/a/*                             /:lang/p/1                               301!
+/:lang/e/*                             /:lang/p/1                               301!
+/:lang/t/:tag/a/*                      /:lang/t/:tag/p/1                        301!
+/:lang/t/:tag/e/*                      /:lang/t/:tag/p/1                        301!
+
+# -----------------------------------------------------------------------------
+#   ARTICLE URL REDIRECTS:
+#
+# * Redirect all blog urls to new articles urls.
+# -----------------------------------------------------------------------------
+/blog/*                                /articles/:splat                         301!
+
+# -----------------------------------------------------------------------------
+#   REMOVED CONTENT REDIRECTS:
+#
+# * Redirect removed language content to the homepage with a 410 (gone forever).
+# -----------------------------------------------------------------------------
+/dart/*                                /                                        410
+/go/*                                  /                                        410
+/php/*                                 /                                        410
+/c-sharp/*                             /                                        410
 
 # -----------------------------------------------------------------------------
 #   UPDATED TAG REDIRECTS:
@@ -110,12 +81,12 @@ python/t/object/e/1/                   /python/t/dictionary/e/1                 
 # -----------------------------------------------------------------------------
 #   SNIPPET REDIRECTS:
 #
-# * Redirect an old CSS snippet to a new blog (CSS variables)
+# * Redirect an old CSS snippet to a new article (CSS variables)
 # * Redirect an old CSS snippet to the CSS listing (CSS calc)
 # * Redirect an old JS snippet to its duplicate
 # * Redirect a couple of Python snippets to their new URLs
 # -----------------------------------------------------------------------------
-css/s/custom-variables/                /blog/s/css-variables                    301!
+css/s/custom-variables/                /articles/s/css-variables                301!
 css/s/calc/                            /css/p/1                                 301!
 js/s/filter-falsy/                     /js/s/compact                            301!
 python/s/function-name/                /python/s/check-prop                     301!

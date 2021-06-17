@@ -17,20 +17,9 @@ deploy_production() {
   fi
 }
 
-deploy_development() {
-  echo "Deploying in 'development' branch..."
-  if deploy_branch "development" ; then
-    echo "Deployment successfull"
-  else
-    echo "Deployment failed"
-  fi
-}
-
 deploy() {
   if [ $1 == "production" ] ; then
     deploy_production
-  elif [ $1 == "development" ] ; then
-    deploy_development
   else
     echo "Unknown environment: "$1
     echo "Deployment aborted"

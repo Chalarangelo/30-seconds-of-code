@@ -1,23 +1,59 @@
 .card-actions {
   margin: 1rem 0 -1rem;
-  justify-content: space-around;
-
-  .btn-form, .btn {
-    flex: 1 0 auto;
-    text-align: center;
-  }
+  justify-content: space-evenly;
 
   .btn {
     position: relative;
     margin: 0;
-    padding: 0.25rem;
+    padding: 0.75rem;
 
     &:before {
       font-size: 24px;
       vertical-align: bottom;
       width: 100%;
-      transition: opacity 0.3s ease;
-      margin-right: 1rem;
     }
+
+    &.active {
+      animation-name: active;
+      animation-duration: 0.5s;
+      animation-timing-function: cubic-bezier(.4,0,.2,1);
+      transition: background 0.25s ease;
+
+      &:before {
+        opacity: 0;
+        animation-name: active-before;
+        animation-duration: 0.65s;
+        animation-timing-function: ease-in-out;
+      }
+    }
+  }
+}
+
+@keyframes active {
+  0%, 100% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.15) rotate(3deg);
+  }
+  40% {
+    transform: scale(.94);
+  }
+  60% {
+    transform: scale(.98) rotate(-3deg);
+  }
+  80% {
+    transform: scale(1.08);
+  }
+  99% {
+  }
+}
+
+@keyframes active-before {
+  0%, 100% {
+    opacity: 0;
+  }
+  30%, 75% {
+    opacity: 1.0;
   }
 }

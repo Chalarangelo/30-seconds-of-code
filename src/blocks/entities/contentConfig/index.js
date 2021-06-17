@@ -124,6 +124,10 @@ export class ContentConfig {
     return this.dirName === '30css';
   }
 
+  get isReact() {
+    return this.dirName === '30react';
+  }
+
   get hasOptionalLanguage() {
     if (!this._hasOptionalLanguage) {
       this._hasOptionalLanguage = Boolean(

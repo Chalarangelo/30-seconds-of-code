@@ -1,5 +1,4 @@
 import PropTypes from 'typedefs/proptypes';
-import { combineClassNames } from 'utils';
 
 const propTypes = {
   backdropImage: PropTypes.string,
@@ -31,22 +30,27 @@ const propTypes = {
 const PageBackdrop = ({
   backdropImage,
   mainText,
-  mainTextClassName,
+  mainTextClassName = '',
   subText,
-  subTextClassName,
+  subTextClassName = '',
   children,
 }) => (
   <div className='page-graphic f-center txt-050'>
-    <img src={backdropImage} />
-    <p
-      className={combineClassNames`page-backdrop-text f-center ${mainTextClassName}`}
-    >
+    <picture>
+      <source
+        type='image/webp'
+        srcSet={`${backdropImage.slice(
+          0,
+          backdropImage.lastIndexOf('.')
+        )}.webp`}
+      />
+      <img src={backdropImage} />
+    </picture>
+    <p className={`page-backdrop-text f-center ${mainTextClassName}`}>
       {mainText}
     </p>
     {subText ? (
-      <p
-        className={combineClassNames`page-backdrop-subtext f-center ${subTextClassName}`}
-      >
+      <p className={`page-backdrop-subtext f-center ${subTextClassName}`}>
         {subText}
       </p>
     ) : null}

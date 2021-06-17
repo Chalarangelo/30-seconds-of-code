@@ -147,6 +147,7 @@ export class Snippet {
       this._expertise = this.config.isBlog
         ? 'article'
         : Tag.determineExpertise(this.tags.all);
+      this._expertise = this._expertise.toLowerCase();
     }
     return this._expertise;
   }

@@ -15,12 +15,12 @@ const CollectionChip = ({ chip }) => {
   const hasDescription = chip.description && chip.description.length;
 
   return hasDescription ? (
-    <li className='card srfc-02dp txt-100 list-card'>
+    <li className='card srfc-02dp txt-100 list-card grid'>
       <div className={`card-icon br-xl icon icon-${chip.icon}`}></div>
       <div className='card-data'>
         <h3 className='card-title txt-200 fs-xl f-alt'>
           <Link href={chip.url}>
-            <a>{chip.title}</a>
+            <a className='inherit'>{chip.title}</a>
           </Link>
         </h3>
         <span className='card-subtitle fs-xs'>
@@ -32,10 +32,10 @@ const CollectionChip = ({ chip }) => {
       </div>
     </li>
   ) : (
-    <li className='collection-chip srfc-01dp'>
+    <li className='collection-chip srfc-01dp txt-200'>
       <Link href={chip.url}>
         <a
-          className={`collection-chip-link flex j-center a-center f-alt icon icon-${chip.icon}`}
+          className={`collection-chip-link inherit flex j-center a-center f-alt icon icon-${chip.icon}`}
         >
           {chip.title}
         </a>

@@ -34,33 +34,40 @@ body {
 .nav-bar {
   position: sticky;
   top: 0;
+  flex-flow: row wrap;
   transition: 0.3s ease all;
   background: var(--clr-navbar-bg);
   box-shadow: var(--shd-el-01dp);
   line-height: 0;
   box-sizing: border-box;
   z-index: 1001;
-  height: 76px;
+  height: 128px;
   width: 100vw;
-  padding-right: 4px;  // Pad to the right for the scrollbar (4px)
+  padding-left: 0.25rem;
+  padding-right: 0.5rem;  // Pad to the right for the scrollbar (4px)
 
   @media screen and (min-width: $layout-medium-breakpoint) {
     height: 112px;
-    padding-right: 8px;  // Pad to the right for the scrollbar (8px)
+    padding-left: 1rem;
+    padding-right: 1.25rem;
   }
 
-  @media screen and (min-width: 882px) {
+  @media screen and (min-width: 960px) {
     // Difference in padding is due to the scrollbar (8px)
-    padding-left: calc((100% - 882px) / 2);
-    padding-right: calc((100% - 866px) / 2);
+    padding-left: calc((100% - 946px) / 2);
+    padding-right: calc((100% - 914px) / 2);
   }
 }
 
 .nav-title-wrapper {
-  margin: 0.75rem 0.5rem;
+  padding: 0 0.25rem;
 
   @media screen and (min-width: $layout-medium-breakpoint) {
-    width: calc(100% - 250px - 44px - 76px - 64px);
+    padding: 0 1rem 0 0.25rem;
+  }
+
+  @media screen and (min-width: $layout-large-breakpoint) {
+    padding: 0 2rem 0 0.5rem;
   }
 
   &:hover, &:focus, &:active {
@@ -70,12 +77,7 @@ body {
 }
 
 .nav-title {
-  display: none;
   font-size: var(--font-md);
-
-  @media screen and (min-width: $layout-medium-breakpoint) {
-    display: block;
-  }
 
   @media screen and (min-width: 680px) {
     font-size: var(--font-xl);
@@ -91,13 +93,22 @@ body {
 }
 
 // Website logo
+.nav-logo-wrapper {
+  flex: 0 0 64px;
+
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    flex: 0 0 72px;
+  }
+}
+
 img.nav-website-logo {
   transition: 0.3s ease all;
-  padding: 6px;
+  padding: 4px;
   width: 56px;
   height: 56px;
 
   @media screen and (min-width: $layout-medium-breakpoint) {
+    padding: 4px;
     width: 64px;
     height: 64px;
   }

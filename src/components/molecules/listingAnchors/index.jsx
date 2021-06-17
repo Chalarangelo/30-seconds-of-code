@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import PropTypes from 'typedefs/proptypes';
 import Link from 'next/link';
-import { combineClassNames } from 'utils/index';
 
 const propTypes = {
   items: PropTypes.arrayOf(
@@ -39,13 +38,9 @@ const ListingAnchors = ({ items = [] }) => {
   return (
     <ul className='list-section listing-anchors flex'>
       {items.map(item => (
-        <li key={item.url}>
+        <li className='flex-none' key={item.url}>
           <Link href={item.url}>
-            <a
-              className={combineClassNames`btn no-shd link-btn ${
-                item.selected ? 'selected' : undefined
-              }`}
-            >
+            <a className={`btn action-btn ${item.selected ? 'selected' : ''}`}>
               {item.name}
             </a>
           </Link>

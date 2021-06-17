@@ -6,6 +6,11 @@
   // Page background
   --clr-bg: hsl(240, 49%, 7%);
 
+  // Brand primary
+  --clr-primary-050: hsl(217, 82%, 77%);
+  --clr-primary-100: hsl(217, 98%, 66%);
+  --clr-primary-200: hsl(224, 97%, 49%);
+
   // Navbar
   --clr-navbar-bg: hsl(252, 22%, 5%);
 
@@ -19,7 +24,6 @@
   --clr-search-results-border: hsla(0, 0%, 100%, 0.12);
 
   // Buttons & toggles
-  --clr-btn-bg: hsl(239, 97%, 61%);
   --clr-tgl-fg: hsl(240, 4%, 84%);
   --clr-tgl-bg: hsl(235, 7%, 39%);
   --clr-tgl-fg-active: hsl(240, 82%, 87%);
@@ -29,16 +33,12 @@
   --clr-exp-beginner: hsl(89, 64%, 46%);
   --clr-exp-intermediate: hsl(42, 100%, 50%);
   --clr-exp-advanced: hsl(1, 84%, 59%);
-  --clr-exp-blog: hsl(216, 100%, 63%);
-
-  // Card actions
-  --clr-action: hsl(278, 36%, 73%);
+  --clr-exp-article: hsl(216, 100%, 63%);
 
   // Snippet Preview (CSS snippet cards)
   --clr-snippet-preview-bg: hsl(240, 26%, 7%);
 
-  // Blog snippet cards
+  // Article snippet cards
   --clr-quote-border: hsl(223, 32%, 64%);
   --clr-table-border: hsl(235, 7%, 39%);
-  --clr-img-credit-bg :hsla(240, 27%, 7%, 0.84);
 }

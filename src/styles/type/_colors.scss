@@ -3,8 +3,19 @@
 
 @mixin generate-text-colors ($txts) {
   @each $txt in $txts {
-    .txt-#{$txt} {
-      color: var(--clr-txt-#{$txt});
+    $txt-name: $txt;
+    @if $txt-name == 050 {
+      $txt-name: '050';
+    }
+
+    .txt-#{$txt-name} {
+      color: var(--clr-txt-#{$txt-name});
+
+      @if $txt != '200' {
+        b, strong {
+          color: var(--clr-txt-#{$txt+50});
+        }
+      }
     }
   }
 }
@@ -17,4 +28,4 @@
   --clr-txt-050: hsla(0, 0%, 100%, .64);
 }
 
-@include generate-text-colors(('200', '150', '100', '050'));
+@include generate-text-colors((200, 150, 100, 050));

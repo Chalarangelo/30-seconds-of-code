@@ -4,50 +4,29 @@ jest.mock('fs-extra', () => ({
   readFile: jest.fn((path, format, callback) =>
     callback(
       null,
-      '---\ntitle: Snippet\ntags: array,object\n---\n\nThis is some text.\n'
+      '---\ntitle: Snippet\ntags: array,object\nfirstSeen: 2017-12-22T21:54:30+02:00\nlastUpdated: 2017-12-22T21:54:30+02:00\n---\n\nThis is some text.\n'
     )
   ),
   readdir: jest.fn((path, callback) => callback(null, ['any.md'])),
 }));
 
-jest.mock('child_process', () => ({
-  exec: jest.fn((command, callback) => callback(null, 'mocked return')),
-}));
-
 describe('TextParser', () => {
   describe('fromPath', () => {
-    it('returns a promise', () => {
-      expect(
-        TextParser.fromPath('content/sources/30code/snippets/any.md') instanceof
-          Promise
-      ).toBeTruthy();
-    });
-
-    it('the resolved object contains the correct keys', () => {
+    it('the resolved object contains the correct keys and metadata', () => {
       return TextParser.fromPath('content/sources/30code/snippets/any.md').then(
         data => {
           expect(Object.keys(data).sort()).toEqual(
-            ['body', 'fileName', 'tags', 'title'].sort()
+            [
+              'body',
+              'fileName',
+              'tags',
+              'title',
+              'firstSeen',
+              'lastUpdated',
+            ].sort()
           );
         }
       );
-    });
-
-    it('the resolved object contains the correct keys and metadata', () => {
-      return TextParser.fromPath('content/sources/30code/snippets/any.md', {
-        withMetadata: true,
-      }).then(data => {
-        expect(Object.keys(data).sort()).toEqual(
-          [
-            'body',
-            'fileName',
-            'tags',
-            'title',
-            'firstSeen',
-            'lastUpdated',
-          ].sort()
-        );
-      });
     });
   });
 

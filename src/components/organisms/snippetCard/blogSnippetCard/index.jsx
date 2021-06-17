@@ -19,6 +19,7 @@ const SnippetCard = ({ snippet }) => (
       {snippet.authors.map((a, i, arr) => (
         <Fragment key={`author-fragment-${i}`}>
           <a
+            className='inherit'
             href={a.profile}
             rel='nofollow noopener noreferrer'
             target='_blank'

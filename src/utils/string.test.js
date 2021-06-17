@@ -3,7 +3,6 @@ import {
   optimizeNodes,
   optimizeAllNodes,
   getURLParameters,
-  getBaseURL,
   escapeHTML,
   stripMarkdownFormat,
   toKebabCase,
@@ -52,14 +51,6 @@ describe('getURLParameters', () => {
       name: 'Adam',
       surname: 'Smith',
     });
-  });
-});
-
-describe('getBaseURL', () => {
-  it('returns the current URL without parameters', () => {
-    expect(getBaseURL('http://url.com/page?name=Adam&surname=Smith')).toBe(
-      'http://url.com/page'
-    );
   });
 });
 

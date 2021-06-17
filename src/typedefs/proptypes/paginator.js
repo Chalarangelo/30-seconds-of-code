@@ -4,5 +4,4 @@ export default shape({
   pageNumber: number,
   totalPages: number,
   baseUrl: string,
-  slugOrderingSegment: string,
 });

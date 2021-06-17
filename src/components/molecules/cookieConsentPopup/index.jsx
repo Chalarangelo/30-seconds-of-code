@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
-import PropTypes from 'typedefs/proptypes';
 import Link from 'next/link';
-import { Button } from 'components/atoms/button';
+import Button from 'components/atoms/button';
 import { useShellDispatch } from 'state/shell';
 import literals from 'lang/en/client/cookieConsent';
 
@@ -36,7 +35,7 @@ const CookieConsentPopup = () => {
       </p>
       <div className='cookie-consent-buttons flex j-center'>
         <Button
-          className='no-shd action-btn cookie-accept'
+          className='action-btn fs-xs'
           data-nosnippet
           onClick={e => {
             e.preventDefault();
@@ -46,7 +45,7 @@ const CookieConsentPopup = () => {
           {literals.accept}
         </Button>
         <Button
-          className='no-shd action-btn cookie-decline'
+          className='action-btn fs-xs'
           data-nosnippet
           onClick={e => {
             e.preventDefault();

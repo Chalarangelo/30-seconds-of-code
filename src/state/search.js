@@ -1,14 +1,14 @@
 import createStateProvider from './utils';
 import { quickParseTokens as tokenize } from 'utils/search';
 
+const SEARCH_RESULTS_COUNT = 60;
+
 const initialState = {
   searchQuery: '',
   searchIndex: [],
   searchResults: [],
   searchTimestamp: `${new Date()}`,
 };
-
-const persistKey = 'persist:30-sec-app@search';
 
 const searchByKeyphrase = (keyphrase, searchIndex) => {
   let q = keyphrase.toLowerCase().trim();
@@ -34,17 +34,34 @@ const searchByKeyphrase = (keyphrase, searchIndex) => {
           return snippet;
         })
         .filter(snippet => snippet.score > 0.3)
-        .sort((a, b) => b.score - a.score)
-        .slice(0, 50);
+        .sort((a, b) => b.score - a.score);
     }
   }
   return results;
+};
+
+const filterResultsByType = (type, searchResults) => {
+  switch (type) {
+    case 'collections':
+      return searchResults.filter(r => !r.expertise);
+    case 'snippets':
+      return searchResults.filter(
+        r => r.expertise && r.expertise.toLowerCase() !== 'article'
+      );
+    case 'articles':
+      return searchResults.filter(
+        r => r.expertise && r.expertise.toLowerCase() === 'article'
+      );
+    default:
+      return searchResults;
+  }
 };
 
 export const actionTypes = {
   pushNewQuery: 'pushNewQuery',
   initializeIndex: 'initializeIndex',
   searchByKeyphrase: 'searchByKeyphrase',
+  filterResultsByType: 'filterResultsByType',
 };
 
 const reducer = (state, action) => {
@@ -60,10 +77,39 @@ const reducer = (state, action) => {
         ...state,
         searchIndex: action.index,
       };
-    case actionTypes.searchByKeyphrase:
+    case actionTypes.searchByKeyphrase: {
+      const searchResults = searchByKeyphrase(
+        action.keyphrase,
+        state.searchIndex
+      );
+      const availableFilters = {
+        All: true,
+        Snippets: searchResults.some(
+          r => r.expertise && r.expertise.toLowerCase() !== 'article'
+        ),
+        Articles: searchResults.some(
+          r => r.expertise && r.expertise.toLowerCase() === 'article'
+        ),
+        Collections: searchResults.some(r => !r.expertise),
+      };
       return {
         ...state,
-        searchResults: searchByKeyphrase(action.keyphrase, state.searchIndex),
+        searchResults,
+        filteredResults: searchResults.slice(0, SEARCH_RESULTS_COUNT),
+        typeFilter: 'all',
+        availableFilters: Object.entries(availableFilters)
+          .filter(([key, value]) => value)
+          .map(([key]) => key),
+      };
+    }
+    case actionTypes.filterResultsByType:
+      return {
+        ...state,
+        filteredResults: filterResultsByType(
+          action.resultType,
+          state.searchResults
+        ).slice(0, SEARCH_RESULTS_COUNT),
+        typeFilter: action.resultType,
       };
     default:
       return state;
@@ -77,7 +123,6 @@ const {
   useStateDispatch: useSearch,
 } = createStateProvider({
   initialState,
-  persistKey,
   reducer,
   stateContextName: 'SearchState',
   dispatchContextName: 'SearchDispatch',

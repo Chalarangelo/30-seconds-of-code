@@ -12,11 +12,12 @@
 
   &:hover, &:focus {
     &::before, &::after {
-      color: var(--clr-link);
+      color: var(--clr-primary-050);
     }
   }
 
   &::before {
+    display: none;
     position: absolute;
     right: 0.875rem;
     bottom: 0.625rem;
@@ -26,6 +27,10 @@
 
   @media screen and (min-width: $layout-medium-breakpoint) {
     pointer-events: none;
+
+    &::before {
+      display: block;
+    }
 
     &::after {
       position: absolute;

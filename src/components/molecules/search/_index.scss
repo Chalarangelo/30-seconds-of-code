@@ -17,13 +17,15 @@
 
 .search-wrapper {
   position: relative;
-  width: calc(100% - 76px - 64px - 44px);
   background: var(--clr-search-bg);
   color: var(--clr-txt-100);
   transition: 0.3s ease all;
+  flex: 0 0 100%;
+  margin-bottom: 1rem;
 
   @media screen and (min-width: $layout-medium-breakpoint) {
-    width: 320px;
+    flex: 1 0 300px;
+    margin-bottom: 0;
   }
 
   &:not(:focus-within) .search-autocomplete-list {
@@ -35,10 +37,15 @@
     line-height: 44px;
     margin-left: 0.5rem;
     color: inherit;
+    transition: 0.3s ease all;
   }
 
   &:focus-within {
     color: var(--clr-txt-200);
+
+    &::before {
+      transform: scale(1.1);
+    }
   }
 }
 
@@ -51,7 +58,6 @@
   box-sizing: border-box;
   padding: 0.25rem 0.5rem;
   font-size: var(--font-md);
-  font-weight: 400;
   height: 44px;
 
   &, &::placeholder {
@@ -109,7 +115,7 @@ a.search-btn[aria-hidden="true"] {
         animation: none;
 
         .result-title, .result-tag {
-          color: var(--clr-link);
+          color: var(--clr-primary-050);
         }
       }
     }
