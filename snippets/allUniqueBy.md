@@ -1,6 +1,8 @@
 ---
 title: allUniqueBy
 tags: array,intermediate
+firstSeen: 2020-10-19T22:15:05+03:00
+lastUpdated: 2021-01-08T00:23:44+02:00
 ---
 
 Checks if all elements in an array are unique, based on the provided mapping function.

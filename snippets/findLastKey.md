@@ -1,6 +1,8 @@
 ---
 title: findLastKey
 tags: object,intermediate
+firstSeen: 2018-01-23T18:23:20+02:00
+lastUpdated: 2020-10-22T20:23:47+03:00
 ---
 
 Finds the last key that satisfies the provided testing function.

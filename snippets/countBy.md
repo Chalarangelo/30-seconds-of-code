@@ -1,6 +1,8 @@
 ---
 title: countBy
 tags: array,object,intermediate
+firstSeen: 2018-01-11T13:45:53+02:00
+lastUpdated: 2020-11-03T22:11:18+02:00
 ---
 
 Groups the elements of an array based on the given function and returns the count of elements in each group.

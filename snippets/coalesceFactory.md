@@ -1,6 +1,8 @@
 ---
 title: coalesceFactory
 tags: function,type,intermediate
+firstSeen: 2017-12-18T12:15:36+02:00
+lastUpdated: 2020-10-22T20:23:47+03:00
 ---
 
 Customizes a coalesce function that returns the first argument which is true based on the given validator.

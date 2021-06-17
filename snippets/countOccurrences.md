@@ -1,6 +1,8 @@
 ---
 title: countOccurrences
 tags: array,intermediate
+firstSeen: 2017-12-17T17:55:51+02:00
+lastUpdated: 2020-10-18T23:04:45+03:00
 ---
 
 Counts the occurrences of a value in an array.

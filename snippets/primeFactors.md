@@ -1,6 +1,8 @@
 ---
 title: primeFactors
 tags: math,algorithm,beginner
+firstSeen: 2020-12-28T13:11:01+02:00
+lastUpdated: 2020-12-28T13:11:01+02:00
 ---
 
 Finds the prime factors of a given number using the trial division algorithm.

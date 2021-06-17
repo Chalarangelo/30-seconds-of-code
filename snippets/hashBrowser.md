@@ -1,6 +1,8 @@
 ---
 title: hashBrowser
 tags: browser,promise,advanced
+firstSeen: 2018-01-17T14:09:01+02:00
+lastUpdated: 2020-10-22T20:23:47+03:00
 ---
 
 Creates a hash for a value using the [SHA-256](https://en.wikipedia.org/wiki/SHA-2) algorithm.

@@ -1,6 +1,8 @@
 ---
 title: getAncestors
 tags: browser,beginner
+firstSeen: 2020-10-15T09:28:34+03:00
+lastUpdated: 2021-01-05T22:45:34+02:00
 ---
 
 Returns all the ancestors of an element from the document root to the given element.

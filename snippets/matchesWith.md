@@ -1,6 +1,8 @@
 ---
 title: matchesWith
 tags: object,intermediate
+firstSeen: 2018-01-23T20:17:32+02:00
+lastUpdated: 2020-10-21T21:54:53+03:00
 ---
 
 Compares two objects to determine if the first one contains equivalent property values to the second one, based on a provided function.

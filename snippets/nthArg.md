@@ -1,6 +1,8 @@
 ---
 title: nthArg
 tags: function,beginner
+firstSeen: 2018-01-23T21:27:37+02:00
+lastUpdated: 2020-10-21T21:54:53+03:00
 ---
 
 Creates a function that gets the argument at index `n`.

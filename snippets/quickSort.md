@@ -1,6 +1,8 @@
 ---
 title: quickSort
 tags: algorithm,array,recursion,advanced
+firstSeen: 2017-12-28T13:42:41+02:00
+lastUpdated: 2020-12-29T13:03:18+02:00
 ---
 
 Sorts an array of numbers, using the quicksort algorithm.

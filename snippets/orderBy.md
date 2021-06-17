@@ -1,6 +1,8 @@
 ---
 title: orderBy
 tags: object,array,advanced
+firstSeen: 2017-12-20T11:33:20+02:00
+lastUpdated: 2020-10-21T21:54:53+03:00
 ---
 
 Sorts an array of objects, ordered by properties and orders.

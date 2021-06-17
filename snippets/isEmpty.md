@@ -1,6 +1,8 @@
 ---
 title: isEmpty
 tags: type,array,object,string,beginner
+firstSeen: 2018-01-23T19:25:17+02:00
+lastUpdated: 2020-10-20T23:02:01+03:00
 ---
 
 Checks if the a value is an empty object/collection, has no enumerable properties or is any type that is not considered a collection.

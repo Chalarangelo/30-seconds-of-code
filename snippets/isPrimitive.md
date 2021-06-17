@@ -1,6 +1,8 @@
 ---
 title: isPrimitive
 tags: type,intermediate
+firstSeen: 2017-12-31T12:48:13+02:00
+lastUpdated: 2020-10-22T20:23:47+03:00
 ---
 
 Checks if the passed value is primitive or not.

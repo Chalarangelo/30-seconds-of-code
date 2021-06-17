@@ -1,6 +1,8 @@
 ---
 title: kNearestNeighbors
 tags: algorithm,array,advanced
+firstSeen: 2020-12-28T16:31:43+02:00
+lastUpdated: 2020-12-29T16:31:16+02:00
 ---
 
 Classifies a data point relative to a labelled data set, using the [k-nearest neighbors](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm) algorithm.

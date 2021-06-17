@@ -1,6 +1,8 @@
 ---
 title: detectLanguage
 tags: browser,intermediate
+firstSeen: 2020-10-05T18:03:26+03:00
+lastUpdated: 2020-10-06T18:47:16+03:00
 ---
 
 Detects the preferred language of the current user.

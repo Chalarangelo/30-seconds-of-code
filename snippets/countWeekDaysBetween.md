@@ -1,6 +1,8 @@
 ---
 title: countWeekDaysBetween
 tags: date,intermediate
+firstSeen: 2020-10-11T11:44:44+03:00
+lastUpdated: 2020-10-20T11:21:07+03:00
 ---
 
 Counts the weekdays between two dates.

@@ -1,6 +1,8 @@
 ---
 title: orderWith
 tags: array,object,intermediate
+firstSeen: 2020-10-04T12:11:10+03:00
+lastUpdated: 2020-10-21T21:54:53+03:00
 ---
 
 Sorts an array of objects, ordered by a property, based on the array of orders provided.

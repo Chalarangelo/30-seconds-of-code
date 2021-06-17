@@ -1,6 +1,8 @@
 ---
 title: mergeSortedArrays
 tags: array,intermediate
+firstSeen: 2020-12-27T22:55:37+02:00
+lastUpdated: 2020-12-27T22:55:37+02:00
 ---
 
 Merges two sorted arrays into one.

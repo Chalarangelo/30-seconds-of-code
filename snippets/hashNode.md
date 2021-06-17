@@ -1,6 +1,8 @@
 ---
 title: hashNode
 tags: node,promise,advanced
+firstSeen: 2018-01-17T14:09:01+02:00
+lastUpdated: 2020-10-19T22:30:46+03:00
 ---
 
 Creates a hash for a value using the [SHA-256](https://en.wikipedia.org/wiki/SHA-2) algorithm.

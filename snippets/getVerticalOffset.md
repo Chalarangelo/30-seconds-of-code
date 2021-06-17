@@ -1,6 +1,8 @@
 ---
 title: getVerticalOffset
 tags: browser,beginner
+firstSeen: 2021-01-05T22:41:09+02:00
+lastUpdated: 2021-01-05T22:41:09+02:00
 ---
 
 Finds the distance from a given element to the top of the document.

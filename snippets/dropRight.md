@@ -1,6 +1,8 @@
 ---
 title: dropRight
 tags: array,beginner
+firstSeen: 2017-12-19T12:06:47+02:00
+lastUpdated: 2020-11-01T20:50:57+02:00
 ---
 
 Creates a new array with `n` elements removed from the right.

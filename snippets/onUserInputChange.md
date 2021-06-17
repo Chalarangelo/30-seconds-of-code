@@ -1,6 +1,8 @@
 ---
 title: onUserInputChange
 tags: browser,event,advanced
+firstSeen: 2017-12-29T17:41:53+02:00
+lastUpdated: 2020-10-21T21:54:53+03:00
 ---
 
 Runs the callback whenever the user input type changes (`mouse` or `touch`).

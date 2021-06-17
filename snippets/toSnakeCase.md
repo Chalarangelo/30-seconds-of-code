@@ -1,6 +1,8 @@
 ---
 title: toSnakeCase
 tags: string,regexp,intermediate
+firstSeen: 2017-12-22T18:13:22+02:00
+lastUpdated: 2020-10-22T20:24:44+03:00
 ---
 
 Converts a string to snake case.

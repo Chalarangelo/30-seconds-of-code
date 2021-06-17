@@ -1,6 +1,8 @@
 ---
 title: allEqualBy
 tags: array,intermediate
+firstSeen: 2020-10-19T22:14:49+03:00
+lastUpdated: 2020-10-19T22:14:49+03:00
 ---
 
 Checks if all elements in an array are equal, based on the provided mapping function.

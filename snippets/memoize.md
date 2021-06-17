@@ -1,6 +1,8 @@
 ---
 title: memoize
 tags: function,advanced
+firstSeen: 2017-12-31T13:55:55+02:00
+lastUpdated: 2020-10-21T21:54:53+03:00
 ---
 
 Returns the memoized (cached) function.

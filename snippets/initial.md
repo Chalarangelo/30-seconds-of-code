@@ -1,6 +1,8 @@
 ---
 title: initial
 tags: array,beginner
+firstSeen: 2017-12-17T16:41:31+02:00
+lastUpdated: 2020-11-03T21:46:13+02:00
 ---
 
 Returns all the elements of an array except the last one.

@@ -1,6 +1,8 @@
 ---
 title: renderElement
 tags: browser,recursion,advanced
+firstSeen: 2020-05-03T11:55:42+03:00
+lastUpdated: 2020-11-03T22:11:18+02:00
 ---
 
 Renders the given DOM tree in the specified DOM element.

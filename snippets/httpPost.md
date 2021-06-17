@@ -1,6 +1,8 @@
 ---
 title: httpPost
 tags: browser,intermediate
+firstSeen: 2018-01-08T22:07:02+02:00
+lastUpdated: 2020-10-19T22:49:51+03:00
 ---
 
 Makes a `POST` request to the passed URL.

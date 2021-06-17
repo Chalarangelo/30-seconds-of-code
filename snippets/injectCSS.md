@@ -1,6 +1,8 @@
 ---
 title: injectCSS
 tags: browser,css,intermediate
+firstSeen: 2020-10-15T22:18:00+03:00
+lastUpdated: 2020-10-22T20:23:47+03:00
 ---
 
 Injects the given CSS code into the current document

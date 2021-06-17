@@ -1,6 +1,8 @@
 ---
 title: formatSeconds
 tags: date,math,string,intermediate
+firstSeen: 2021-05-09T12:44:55+03:00
+lastUpdated: 2021-05-17T08:59:17+03:00
 ---
 
 Returns the ISO format of the given number of seconds.

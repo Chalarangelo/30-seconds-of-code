@@ -1,6 +1,8 @@
 ---
 title: stripHTMLTags
 tags: string,regexp,beginner
+firstSeen: 2018-01-26T14:17:29+02:00
+lastUpdated: 2020-09-15T16:28:04+03:00
 ---
 
 Removes HTML/XML tags from string.

@@ -1,6 +1,8 @@
 ---
 title: randomAlphaNumeric
 tags: string,random,advanced
+firstSeen: 2020-10-06T18:33:29+03:00
+lastUpdated: 2020-10-22T20:24:04+03:00
 ---
 
 Generates a random string with the specified length.

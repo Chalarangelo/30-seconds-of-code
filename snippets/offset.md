@@ -1,6 +1,8 @@
 ---
 title: offset
 tags: array,beginner
+firstSeen: 2018-04-10T19:07:50+03:00
+lastUpdated: 2020-10-21T21:54:53+03:00
 ---
 
 Moves the specified amount of elements to the end of the array.
