@@ -12,6 +12,7 @@ Creates an animated underline effect when the text is hovered over.
 - Use `transform: scaleX(0)` to initially hide the pseudo-element.
 - Use the `:hover` pseudo-class selector to apply `transform: scaleX(1)` and display the pseudo-element on hover.
 - Animate `transform` using `transform-origin: left` and an appropriate `transition`.
+- You can remove the `transform-origin` property to make the transform originate from the center of the element.
 
 ```html
 <p class="hover-underline-animation">Hover this text to see the effect!</p>
