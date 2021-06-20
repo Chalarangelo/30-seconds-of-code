@@ -12,7 +12,7 @@ Converts a string to camelcase.
 
 ```js
 const toCamelCase = str => {
-  let s =
+  const s =
     str &&
     str
       .match(
