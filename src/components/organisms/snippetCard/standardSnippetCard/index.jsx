@@ -1,7 +1,5 @@
 import PropTypes from 'typedefs/proptypes';
-import Card from 'components/atoms/card';
-import TagList from 'components/atoms/tagList';
-import Expertise from 'components/atoms/expertise';
+import Card, { CardIcon } from 'components/atoms/card';
 import CodeBlock from 'components/atoms/codeBlock';
 import Actions from 'components/molecules/actions';
 import literals from 'lang/en/client/common';
@@ -17,12 +15,12 @@ const propTypes = {
 const SnippetCard = ({ snippet }) => (
   <Card className='snippet-card'>
     <div className='card-meta grid'>
-      <div className={`card-icon br-round icon icon-${snippet.icon}`}>
-        <Expertise level={snippet.expertise} />
-      </div>
+      <CardIcon icon={snippet.icon} expertise={snippet.expertise} />
       <div className='card-data'>
         <h1 className='card-title txt-200 fs-xl f-alt'>{snippet.title}</h1>
-        <TagList tags={[snippet.language.long, ...snippet.tags.all]} />
+        <p className='card-subtitle txt-050 fs-xs'>
+          {[snippet.language.long, ...snippet.tags.all].join(', ')}
+        </p>
       </div>
     </div>
     <div

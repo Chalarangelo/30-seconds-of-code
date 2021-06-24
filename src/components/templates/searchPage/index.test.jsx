@@ -1,5 +1,5 @@
 import { cleanup } from '@testing-library/react';
-import { renderConnected } from 'test/utils';
+import { renderWithContext } from 'test/utils';
 import literals from 'lang/en/client/search';
 import SearchPage from './index';
 import { useRouter } from 'next/router';
@@ -19,7 +19,7 @@ describe('<SearchPage />', () => {
   let wrapper;
 
   beforeEach(() => {
-    const utils = renderConnected(<SearchPage pageDescription='' />);
+    const utils = renderWithContext(<SearchPage pageDescription='' />);
     wrapper = utils.container;
   });
 

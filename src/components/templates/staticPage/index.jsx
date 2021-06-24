@@ -1,9 +1,8 @@
 import PropTypes from 'typedefs/proptypes';
 import Meta from 'components/organisms/meta';
 import PageTitle from 'components/atoms/pageTitle';
-import SimpleCard from 'components/molecules/simpleCard';
+import Card from 'components/atoms/card';
 import Shell from 'components/organisms/shell';
-import Toggle from 'components/atoms/toggle/index';
 import { useShell } from 'state/shell';
 
 const propTypes = {
@@ -29,7 +28,7 @@ const propTypes = {
  * Responsible for rendering the /about and /cookies pages.
  * @param {object} stringLiterals - An object with all the necessary information
  *   for rendering this page. The `cards` array will hold title+html pairs for
- *   each `SimpleCard` rendered.
+ *   each `Card` rendered.
  */
 const StaticPage = ({
   stringLiterals: {
@@ -48,30 +47,39 @@ const StaticPage = ({
         <PageTitle>{title}</PageTitle>
         <p className='page-sub-title txt-100'>{subtitle}</p>
         {cards.map(({ title, html }, i) => (
-          <SimpleCard
-            key={i}
-            title={title}
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
+          <Card key={i}>
+            <h3 className='card-title txt-200 fs-xl f-alt'>{title}</h3>
+            <div
+              className='card-description'
+              dangerouslySetInnerHTML={{ __html: html }}
+            />
+          </Card>
         ))}
         {cookieSettingCard ? (
-          <SimpleCard title={cookieSettingCard.title}>
-            <p>{cookieSettingCard.text}</p>
-            <Toggle
-              checked={!!acceptsCookies}
-              onChange={() => {
-                dispatch({
-                  type: 'decideCookies',
-                  acceptsCookies: !acceptsCookies,
-                });
-                // Force reload the page if cookies are now disabled
-                if (acceptsCookies)
-                  setTimeout(() => window.location.reload(), 300);
-              }}
-            >
-              {cookieSettingCard.toggleText}
-            </Toggle>
-          </SimpleCard>
+          <Card>
+            <h3 className='card-title txt-200 fs-xl f-alt'>
+              {cookieSettingCard.title}
+            </h3>
+            <div className='card-description'>
+              <p>{cookieSettingCard.text}</p>
+              <label className='flex a-center md:fs-md checkbox-label'>
+                <input
+                  defaultChecked={!!acceptsCookies}
+                  type='checkbox'
+                  onChange={() => {
+                    dispatch({
+                      type: 'decideCookies',
+                      acceptsCookies: !acceptsCookies,
+                    });
+                    // Force reload the page if cookies are now disabled
+                    if (acceptsCookies)
+                      setTimeout(() => window.location.reload(), 300);
+                  }}
+                />
+                {cookieSettingCard.toggleText}
+              </label>
+            </div>
+          </Card>
         ) : null}
       </Shell>
     </>

@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import PropTypes from 'typedefs/proptypes';
+import Image from 'components/atoms/image';
 import Card from 'components/atoms/card';
-import TagList from 'components/atoms/tagList';
 import Actions from 'components/molecules/actions';
 
 const propTypes = {
@@ -36,25 +36,18 @@ const SnippetCard = ({ snippet }) => (
         year: 'numeric',
       })}
       {' · '}
-      <TagList tags={snippet.tags.all} />
+      <p className='card-subtitle txt-050 fs-xs'>
+        {snippet.tags.all.join(', ')}
+      </p>
     </div>
     {snippet.cover && (
-      <picture>
-        <source
-          type='image/webp'
-          srcSet={`${snippet.cover.slice(
-            0,
-            snippet.cover.lastIndexOf('.')
-          )}.webp`}
-        />
-        <img
-          className='card-cover-image card-fw-section'
-          src={snippet.cover}
-          alt=''
-          height='232'
-          width='348'
-        />
-      </picture>
+      <Image
+        className='card-cover-image card-fw-section'
+        src={snippet.cover}
+        alt=''
+        height='232'
+        width='348'
+      />
     )}
     <div
       className='card-description flex flex-col'

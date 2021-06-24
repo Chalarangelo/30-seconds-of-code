@@ -1,8 +1,7 @@
 /* eslint-disable camelcase */
 import PropTypes from 'typedefs/proptypes';
-import { useGtagEvent } from 'components/hooks';
+import useGtagEvent from 'components/hooks/useGtagEvent';
 import copyToClipboard from 'copy-to-clipboard';
-import Button from 'components/atoms/button';
 import JSX_SNIPPET_PRESETS from 'settings/jsxSnippetPresets';
 import literals from 'lang/en/client/common';
 import { useEffect, useState } from 'react';
@@ -13,7 +12,6 @@ const propTypes = {
 
 /**
  * Renders a group of actions for a snippet card(share, copy/codepen, github).
- * Depends on the `Button` component.
  */
 const Actions = ({ snippet }) => {
   const gtagCallback = useGtagEvent('click');
@@ -91,8 +89,8 @@ const Actions = ({ snippet }) => {
   return (
     <div className='card-actions flex'>
       {Boolean(canShare) && (
-        <Button
-          className='flex-none action-btn icon icon-share'
+        <button
+          className='flex-none btn action-btn icon icon-share'
           title={literals.share}
           onClick={() => {
             gtagCallback({ event_category: 'action-share', value: 1 });
@@ -109,8 +107,8 @@ const Actions = ({ snippet }) => {
         />
       )}
       {Boolean(snippet.actionType === 'copy') && (
-        <Button
-          className={`flex-none action-btn icon ${
+        <button
+          className={`flex-none btn action-btn icon ${
             active ? 'icon-check active' : 'icon-clipboard'
           }`}
           title={literals.copyToClipboard}
@@ -144,8 +142,8 @@ const Actions = ({ snippet }) => {
                 : '',
             })}
           />
-          <Button
-            className='flex-none action-btn icon icon-codepen'
+          <button
+            className='flex-none btn action-btn icon icon-codepen'
             title={literals.codepen}
             onClick={() => {
               gtagCallback({ event_category: 'action-codepen', value: 1 });

@@ -1,7 +1,6 @@
 import PropTypes from 'typedefs/proptypes';
 import Link from 'next/link';
-import Expertise from 'components/atoms/expertise';
-import TagList from 'components/atoms/tagList';
+import { CardIcon } from 'components/atoms/card';
 
 const propTypes = {
   snippet: PropTypes.snippet,
@@ -10,7 +9,7 @@ const propTypes = {
 /**
  * General-purpose snippet preview card.
  * Used in listing pages and search results.
- * Dependent on the `Card` and `TagList` components.
+ * Dependent on the `Card` component.
  * @param {object} snippet - Snippet object for the card.
  */
 const PreviewCard = ({ snippet }) => {
@@ -22,16 +21,14 @@ const PreviewCard = ({ snippet }) => {
       ];
   return (
     <li className='card srfc-02dp txt-100 list-card grid'>
-      <div className={`card-icon br-round icon icon-${snippet.icon}`}>
-        <Expertise level={snippet.expertise} />
-      </div>
+      <CardIcon icon={snippet.icon} expertise={snippet.expertise} />
       <div className='card-data'>
         <h3 className='card-title txt-200 fs-xl f-alt'>
           <Link href={snippet.url}>
             <a className='inherit'>{snippet.title}</a>
           </Link>
         </h3>
-        <TagList tags={tags} />
+        <p className='card-subtitle txt-050 fs-xs'>{tags.join(', ')}</p>
       </div>
       <div
         className='card-description'

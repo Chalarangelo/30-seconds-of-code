@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Meta from 'components/organisms/meta';
 import PageTitle from 'components/atoms/pageTitle';
-import PageBackdrop from 'components/atoms/pageBackdrop';
+import PageBackdrop from 'components/molecules/pageBackdrop';
 import Shell from 'components/organisms/shell';
 import literals from 'lang/en/client/notFound';
 

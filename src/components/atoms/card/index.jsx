@@ -1,5 +1,18 @@
 import PropTypes from 'typedefs/proptypes';
 
+const iconPropTypes = {
+  icon: PropTypes.string.isRequired,
+  expertise: PropTypes.string,
+};
+
+export const CardIcon = ({ icon, expertise = 'intermediate' }) => (
+  <div className={`card-icon br-round icon icon-${icon}`}>
+    <span className={`expertise br-round ${expertise}`} />
+  </div>
+);
+
+CardIcon.propTypes = iconPropTypes;
+
 const propTypes = {
   className: PropTypes.string,
   rest: PropTypes.any,

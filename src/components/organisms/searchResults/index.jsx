@@ -1,12 +1,11 @@
 import PropTypes from 'typedefs/proptypes';
 import { useSearch } from 'state/search';
-import PageBackdrop from 'components/atoms/pageBackdrop';
+import PageBackdrop from 'components/molecules/pageBackdrop';
 import PageTitle from 'components/atoms/pageTitle';
 import PreviewCard from 'components/molecules/previewCard';
 import CollectionChip from 'components/atoms/collectionChip';
 import RecommendationList from 'components/organisms/recommendationList';
 import literals from 'lang/en/client/search';
-import Button from 'components/atoms/button';
 
 const propTypes = {
   recommendedSnippets: PropTypes.arrayOf(PropTypes.snippet),
@@ -37,8 +36,8 @@ const SearchResults = ({ recommendedSnippets = [] }) => {
         <ul className='list-section listing-anchors search-filters flex'>
           {availableFilters.map(type => (
             <li className='flex-none' key={`filter-${type.toLowerCase()}`}>
-              <Button
-                className={`action-btn ${
+              <button
+                className={`btn action-btn ${
                   typeFilter === type.toLowerCase() ? 'selected' : ''
                 }`}
                 onClick={() => {
@@ -49,7 +48,7 @@ const SearchResults = ({ recommendedSnippets = [] }) => {
                 }}
               >
                 {type}
-              </Button>
+              </button>
             </li>
           ))}
         </ul>

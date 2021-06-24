@@ -18,20 +18,16 @@ const propTypes = {
 const ListingAnchors = ({ items = [] }) => {
   // Scroll the selected tag into view, so that users always know where they are
   useEffect(() => {
-    if (typeof document !== 'undefined') {
-      // Wrap in try-catch to be able to test in Jest/Enzyme
-      try {
-        const listItem = document.querySelector('.listing-anchors .selected')
-          .parentNode;
-        const container = listItem.offsetParent;
-        if (
-          container.scrollLeft + container.clientWidth <
-          listItem.offsetLeft + listItem.offsetWidth
-        )
-          container.scrollTo(listItem.offsetLeft + listItem.offsetWidth, 0);
-      } catch {
-        return;
-      }
+    // Wrap in try-catch to be able to test in Jest/Enzyme
+    try {
+      const listItem = document.querySelector('.listing-anchors .selected')
+        .parentNode;
+      const container = listItem.parentNode;
+      const listItemLeft = listItem.offsetLeft + listItem.offsetWidth;
+      if (container.scrollLeft + container.clientWidth < listItemLeft)
+        container.scrollTo(listItemLeft, 0);
+    } catch {
+      return;
     }
   }, []);
 

@@ -10,6 +10,6 @@
   "typeAcquisition": {
     "include": [
       "jest"
-  ]
+    ]
   }
 }
