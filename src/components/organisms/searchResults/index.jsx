@@ -1,6 +1,6 @@
 import PropTypes from 'typedefs/proptypes';
 import { useSearch } from 'state/search';
-import PageBackdrop from 'components/atoms/pageBackdrop';
+import PageBackdrop from 'components/molecules/pageBackdrop';
 import PageTitle from 'components/atoms/pageTitle';
 import PreviewCard from 'components/molecules/previewCard';
 import CollectionChip from 'components/atoms/collectionChip';
