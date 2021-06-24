@@ -1,7 +1,15 @@
 .snippet-card {
 
   .card-preview-content {
+    .snippet-preview-title {
+      font-weight: 600;
+      -webkit-font-smoothing: antialiased;
+      margin: 2.5rem 0 -2.5rem .875rem;
+    }
+
     .snippet-preview {
+      background: var(--clr-snippet-preview-bg);
+      padding: 3.25rem .875rem .75rem;
       border-bottom-left-radius: var(--br-none);
       border-bottom-right-radius: var(--br-none);
     }
@@ -15,4 +23,31 @@
       }
     }
   }
+}
+
+// Overrides for some problematic snippets
+[data-scope="full-width"] .full-width {
+  left: 0 !important;
+  right: 0 !important;
+  margin-left: -1.375rem !important;
+  margin-right: -1.375rem !important;
+  width: calc(100% + 2.75rem) !important;
+
+  @media screen and (min-width: 752px) {
+    width: calc(100vw - 3rem - 2.25rem) !important;
+    max-width: calc(100vw - 3rem - 2.25rem) !important;
+    margin-left: calc((640px - 100vw) / 2 + 2.125rem) !important;
+    margin-right: calc((640px - 100vw) / 2 + 2.125rem) !important;
+  }
+
+  @media screen and (min-width: 882px) {
+    width: calc(882px - 3rem - 2.25rem) !important;
+    margin-left: calc((640px - 882px) / 2 + 2.125rem) !important;
+    margin-right: calc((640px - 882px) / 2 + 2.125rem) !important;
+  }
+}
+
+#scroll-progress {
+  position: relative !important;
+  z-index: 0 !important;
 }
