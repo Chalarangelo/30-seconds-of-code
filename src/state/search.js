@@ -124,8 +124,7 @@ const {
 } = createStateProvider({
   initialState,
   reducer,
-  stateContextName: 'SearchState',
-  dispatchContextName: 'SearchDispatch',
+  stateContextName: 'SearchContext',
 });
 
 export { SearchProvider, useSearchState, useSearchDispatch, useSearch };

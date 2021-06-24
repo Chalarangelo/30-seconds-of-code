@@ -41,8 +41,7 @@ const {
   initialState,
   persistKey,
   reducer,
-  stateContextName: 'ShellState',
-  dispatchContextName: 'ShellDispatch',
+  stateContextName: 'ShellContext',
 });
 
 export { ShellProvider, useShellState, useShellDispatch, useShell };

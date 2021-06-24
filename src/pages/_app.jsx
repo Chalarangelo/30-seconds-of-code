@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import ContextWrapper from 'state/ContextWrapper';
+import { ShellProvider } from 'state/shell';
+import { SearchProvider } from 'state/search';
 import 'styles/index.scss';
 
 export const findClosestAnchor = node => {
@@ -100,9 +101,11 @@ const App = ({ Component, pageProps }) => {
   }, [pageProps]);
 
   return (
-    <ContextWrapper>
-      <Component {...pageProps} />
-    </ContextWrapper>
+    <ShellProvider>
+      <SearchProvider>
+        <Component {...pageProps} />
+      </SearchProvider>
+    </ShellProvider>
   );
 };
 

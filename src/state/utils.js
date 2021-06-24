@@ -8,7 +8,6 @@ const createStateProvider = ({
   persistKey = null,
   reducer = state => state,
   stateContextName = 'StateContext',
-  dispatchContextName = 'DispatchContext',
 }) => {
   // Persisted initializer
   const initializeState = () => {
@@ -24,21 +23,20 @@ const createStateProvider = ({
 
   // Contexts
   const StateContext = createContext();
-  const DispatchContext = createContext();
   StateContext.displayName = stateContextName;
-  DispatchContext.displayName = dispatchContextName;
 
   // Hooks
   const useState = () => {
     const context = useContext(StateContext);
-    return context;
+    return context.state;
   };
   const useDispatch = () => {
-    const context = useContext(DispatchContext);
-    return context;
+    const context = useContext(StateContext);
+    return context.dispatch;
   };
   const useStateDispatch = () => {
-    return [useState(), useDispatch()];
+    const context = useContext(StateContext);
+    return [context.state, context.dispatch];
   };
 
   const StateProvider = ({ children, initialState }) => {
@@ -57,10 +55,8 @@ const createStateProvider = ({
     }, [state]);
 
     return (
-      <StateContext.Provider value={state}>
-        <DispatchContext.Provider value={dispatch}>
-          {children}
-        </DispatchContext.Provider>
+      <StateContext.Provider value={{ state, dispatch }}>
+        {children}
       </StateContext.Provider>
     );
   };
