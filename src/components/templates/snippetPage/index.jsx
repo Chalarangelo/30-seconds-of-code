@@ -1,6 +1,6 @@
 import PropTypes from 'typedefs/proptypes';
 import Meta from 'components/organisms/meta';
-import Breadcrumbs from 'components/molecules/breadcrumbs';
+import Breadcrumbs from 'components/atoms/breadcrumbs';
 import Shell from 'components/organisms/shell';
 import cardComponents from 'components/organisms/snippetCard';
 import RecommendationList from 'components/organisms/recommendationList';
