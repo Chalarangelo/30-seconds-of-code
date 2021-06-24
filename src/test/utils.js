@@ -25,5 +25,3 @@ export const renderWithContext = (
     ...utils,
   };
 };
-
-export const renderConnected = renderWithContext;
