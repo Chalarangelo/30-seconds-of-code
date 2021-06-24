@@ -33,6 +33,12 @@
   content: "\f106";
 }
 .icon.icon-css:before {
+  content: "\f107";
+}
+.icon.icon-git:before {
+  content: "\f108";
+}
+.icon.icon-github:before {
   content: "\f109";
 }
 .icon.icon-home:before {
@@ -57,8 +63,8 @@
   content: "\f110";
 }
 
-.card-icon,
-.btn {
+.card-icon, 
+.btn { 
   &.icon-js {
     background: #f6d854;
     color: #392f31;
