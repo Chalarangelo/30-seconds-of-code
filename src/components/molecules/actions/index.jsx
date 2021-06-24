@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import PropTypes from 'typedefs/proptypes';
-import { useGtagEvent } from 'components/hooks';
+import useGtagEvent from 'components/hooks/useGtagEvent';
 import copyToClipboard from 'copy-to-clipboard';
 import JSX_SNIPPET_PRESETS from 'settings/jsxSnippetPresets';
 import literals from 'lang/en/client/common';
