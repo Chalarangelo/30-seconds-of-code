@@ -3,7 +3,6 @@ import Meta from 'components/organisms/meta';
 import PageTitle from 'components/atoms/pageTitle';
 import SimpleCard from 'components/molecules/simpleCard';
 import Shell from 'components/organisms/shell';
-import Toggle from 'components/atoms/toggle/index';
 import { useShell } from 'state/shell';
 
 const propTypes = {
@@ -57,20 +56,22 @@ const StaticPage = ({
         {cookieSettingCard ? (
           <SimpleCard title={cookieSettingCard.title}>
             <p>{cookieSettingCard.text}</p>
-            <Toggle
-              checked={!!acceptsCookies}
-              onChange={() => {
-                dispatch({
-                  type: 'decideCookies',
-                  acceptsCookies: !acceptsCookies,
-                });
-                // Force reload the page if cookies are now disabled
-                if (acceptsCookies)
-                  setTimeout(() => window.location.reload(), 300);
-              }}
-            >
+            <label className='flex a-center md:fs-md checkbox-label'>
+              <input
+                defaultChecked={!!acceptsCookies}
+                type='checkbox'
+                onChange={() => {
+                  dispatch({
+                    type: 'decideCookies',
+                    acceptsCookies: !acceptsCookies,
+                  });
+                  // Force reload the page if cookies are now disabled
+                  if (acceptsCookies)
+                    setTimeout(() => window.location.reload(), 300);
+                }}
+              />
               {cookieSettingCard.toggleText}
-            </Toggle>
+            </label>
           </SimpleCard>
         ) : null}
       </Shell>

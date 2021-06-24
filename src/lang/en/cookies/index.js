@@ -30,8 +30,7 @@ const literals = {
   ],
   cookieSettingCard: {
     title: 'Cookie preferences',
-    text:
-      'You can update your cookie preferences using the toggle button below.',
+    text: 'You can update your cookie preferences using the checkbox below.',
     toggleText: 'Accept cookies',
   },
 };
