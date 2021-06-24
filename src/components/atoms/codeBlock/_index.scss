@@ -39,6 +39,7 @@ pre[data-code-language]:not([data-code-language=""]) {
   padding-top: 2.625rem;
 
   &::before {
+    font-family: 'Inter', Helvetica, sans-serif;
     font-size: inherit;
     color: var(--clr-txt-100);
     position: absolute;
