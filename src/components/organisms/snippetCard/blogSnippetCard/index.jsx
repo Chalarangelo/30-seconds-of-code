@@ -1,7 +1,6 @@
 import { Fragment } from 'react';
 import PropTypes from 'typedefs/proptypes';
 import Card from 'components/atoms/card';
-import TagList from 'components/atoms/tagList';
 import Actions from 'components/molecules/actions';
 
 const propTypes = {
@@ -36,7 +35,9 @@ const SnippetCard = ({ snippet }) => (
         year: 'numeric',
       })}
       {' · '}
-      <TagList tags={snippet.tags.all} />
+      <p className='card-subtitle txt-050 fs-xs'>
+        {snippet.tags.all.join(', ')}
+      </p>
     </div>
     {snippet.cover && (
       <picture>

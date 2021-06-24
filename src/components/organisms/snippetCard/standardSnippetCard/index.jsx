@@ -1,6 +1,5 @@
 import PropTypes from 'typedefs/proptypes';
 import Card, { CardIcon } from 'components/atoms/card';
-import TagList from 'components/atoms/tagList';
 import CodeBlock from 'components/atoms/codeBlock';
 import Actions from 'components/molecules/actions';
 import literals from 'lang/en/client/common';
@@ -19,7 +18,9 @@ const SnippetCard = ({ snippet }) => (
       <CardIcon icon={snippet.icon} expertise={snippet.expertise} />
       <div className='card-data'>
         <h1 className='card-title txt-200 fs-xl f-alt'>{snippet.title}</h1>
-        <TagList tags={[snippet.language.long, ...snippet.tags.all]} />
+        <p className='card-subtitle txt-050 fs-xs'>
+          {[snippet.language.long, ...snippet.tags.all].join(', ')}
+        </p>
       </div>
     </div>
     <div
