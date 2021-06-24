@@ -2,7 +2,7 @@ import PropTypes from 'typedefs/proptypes';
 import Paginator from 'components/molecules/paginator';
 import PageTitle from 'components/atoms/pageTitle';
 import PreviewCard from 'components/molecules/previewCard';
-import ListingAnchors from 'components/molecules/listingAnchors';
+import ListingAnchors from 'components/atoms/listingAnchors';
 
 const propTypes = {
   snippetList: PropTypes.arrayOf(PropTypes.snippet),

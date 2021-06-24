@@ -1,7 +1,7 @@
 import PropTypes from 'typedefs/proptypes';
 import Link from 'next/link';
 import Search from 'components/molecules/search';
-import Footer from 'components/molecules/footer';
+import Footer from 'components/atoms/footer';
 import CookieConsentPopup from 'components/molecules/cookieConsentPopup';
 import literals from 'lang/en/client/common';
 import { useShellState } from 'state/shell';
