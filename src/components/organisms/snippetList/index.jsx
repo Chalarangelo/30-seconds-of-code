@@ -1,6 +1,7 @@
 import PropTypes from 'typedefs/proptypes';
 import Paginator from 'components/molecules/paginator';
 import PageTitle from 'components/atoms/pageTitle';
+import Image from 'components/atoms/image';
 import PreviewCard from 'components/molecules/previewCard';
 import ListingAnchors from 'components/atoms/listingAnchors';
 
@@ -44,16 +45,7 @@ const SnippetList = ({
           >
             {listingImage ? (
               <div className='snippet-list-splash-image'>
-                <picture>
-                  <source
-                    type='image/webp'
-                    srcSet={`${listingImage.slice(
-                      0,
-                      listingImage.lastIndexOf('.')
-                    )}.webp`}
-                  />
-                  <img src={listingImage} alt='' height='360' width='360' />
-                </picture>
+                <Image src={listingImage} alt='' height='360' width='360' />
               </div>
             ) : null}
             <div>

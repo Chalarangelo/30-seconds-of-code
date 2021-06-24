@@ -1,4 +1,5 @@
 import PropTypes from 'typedefs/proptypes';
+import Image from 'components/atoms/image';
 
 const propTypes = {
   backdropImage: PropTypes.string,
@@ -36,16 +37,7 @@ const PageBackdrop = ({
   children,
 }) => (
   <div className='page-graphic f-center txt-050'>
-    <picture>
-      <source
-        type='image/webp'
-        srcSet={`${backdropImage.slice(
-          0,
-          backdropImage.lastIndexOf('.')
-        )}.webp`}
-      />
-      <img src={backdropImage} />
-    </picture>
+    <Image src={backdropImage} />
     <p className={`page-backdrop-text f-center ${mainTextClassName}`}>
       {mainText}
     </p>
