@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Button from 'components/atoms/button';
 import { useShellDispatch } from 'state/shell';
 import literals from 'lang/en/client/cookieConsent';
 
@@ -8,7 +7,6 @@ const propTypes = {};
 
 /**
  * Renders the popup for cookie consent. (Context-connected)
- * Dependent on the `Button` component.
  */
 const CookieConsentPopup = () => {
   const dispatch = useShellDispatch();
@@ -34,8 +32,8 @@ const CookieConsentPopup = () => {
         {literals.whatYouAccept}
       </p>
       <div className='cookie-consent-buttons flex j-center'>
-        <Button
-          className='action-btn fs-xs'
+        <button
+          className='btn action-btn fs-xs'
           data-nosnippet
           onClick={e => {
             e.preventDefault();
@@ -43,9 +41,9 @@ const CookieConsentPopup = () => {
           }}
         >
           {literals.accept}
-        </Button>
-        <Button
-          className='action-btn fs-xs'
+        </button>
+        <button
+          className='btn action-btn fs-xs'
           data-nosnippet
           onClick={e => {
             e.preventDefault();
@@ -53,7 +51,7 @@ const CookieConsentPopup = () => {
           }}
         >
           {literals.decline}
-        </Button>
+        </button>
       </div>
     </div>
   );

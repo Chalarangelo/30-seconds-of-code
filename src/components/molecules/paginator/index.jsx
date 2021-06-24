@@ -8,7 +8,6 @@ const propTypes = {
 
 /**
  * Renders a pagination component.
- * Dependent on the `Button` component.
  * @param {object} paginator - Pagination data fo the component.
  */
 const Paginator = ({ paginator: { pageNumber, totalPages, baseUrl } }) => {
