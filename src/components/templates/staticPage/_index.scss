@@ -1,3 +1,11 @@
 .page-sub-title {
   margin: -0.125rem 0.875rem 0;
 }
+
+.checkbox-label {
+  cursor: pointer;
+
+  input {
+    margin-right: 0.5rem;
+  }
+}
