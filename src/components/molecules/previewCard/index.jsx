@@ -1,6 +1,6 @@
 import PropTypes from 'typedefs/proptypes';
 import Link from 'next/link';
-import Expertise from 'components/atoms/expertise';
+import { CardIcon } from 'components/atoms/card';
 import TagList from 'components/atoms/tagList';
 
 const propTypes = {
@@ -22,9 +22,7 @@ const PreviewCard = ({ snippet }) => {
       ];
   return (
     <li className='card srfc-02dp txt-100 list-card grid'>
-      <div className={`card-icon br-round icon icon-${snippet.icon}`}>
-        <Expertise level={snippet.expertise} />
-      </div>
+      <CardIcon icon={snippet.icon} expertise={snippet.expertise} />
       <div className='card-data'>
         <h3 className='card-title txt-200 fs-xl f-alt'>
           <Link href={snippet.url}>
