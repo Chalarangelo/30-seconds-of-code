@@ -1,0 +1,12 @@
+[config]
+sensitivity = 0.75
+smoothing = 0.1
+mode = 3
+
+[settings]
+aim color = PURPLE
+snapping area = CHEST
+toggle key = MB5
+hold or toggle = TOGGLE
+hFov = 100
+vFov = 100
