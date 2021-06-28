@@ -2,7 +2,7 @@
 title: toSnakeCase
 tags: string,regexp,intermediate
 firstSeen: 2017-12-22T18:13:22+02:00
-lastUpdated: 2020-10-22T20:24:44+03:00
+lastUpdated: 2021-06-28T15:27:44+03:00
 ---
 
 Converts a string to snake case.
@@ -25,6 +25,6 @@ toSnakeCase('some text'); // 'some_text'
 toSnakeCase('some-mixed_string With spaces_underscores-and-hyphens');
 // 'some_mixed_string_with_spaces_underscores_and_hyphens'
 toSnakeCase('AllThe-small Things'); // 'all_the_small_things'
-toKebabCase('IAmEditingSomeXMLAndHTML');
+toSnakeCase('IAmEditingSomeXMLAndHTML');
 // 'i_am_editing_some_xml_and_html'
 ```
