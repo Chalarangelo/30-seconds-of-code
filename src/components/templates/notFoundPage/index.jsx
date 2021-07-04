@@ -19,6 +19,7 @@ const NotFoundPage = () => (
       <PageBackdrop
         backdropImage='/assets/plane.png'
         mainTextClassName='fs-xl'
+        subTextClassName='mb-5'
         mainText={
           <>
             <strong>{literals.pageNotFound}</strong>

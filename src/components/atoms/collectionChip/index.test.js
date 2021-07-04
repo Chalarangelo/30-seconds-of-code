@@ -17,9 +17,7 @@ describe('<CollectionChip />', () => {
 
   it('should render the correct icon', () => {
     expect(
-      wrapper.querySelectorAll(
-        `.collection-chip-link.icon.icon-${collectionChip.icon}`
-      )
+      wrapper.querySelectorAll(`.icon.icon-${collectionChip.icon}`)
     ).toHaveLength(1);
   });
 

@@ -29,7 +29,7 @@ const Paginator = ({ paginator: { pageNumber, totalPages, baseUrl } }) => {
   else buttons = [1, pageNumber, totalPages];
 
   return (
-    <div className='paginator flex j-center'>
+    <div className='paginator mt-7 mx-5 mb-6 a-center flex j-center'>
       {pageNumber > 1 && (
         <Link href={`${baseUrl}/p/${pageNumber - 1}`}>
           <a

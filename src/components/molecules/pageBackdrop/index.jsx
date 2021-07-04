@@ -42,7 +42,9 @@ const PageBackdrop = ({
       {mainText}
     </p>
     {subText ? (
-      <p className={`page-backdrop-subtext f-center ${subTextClassName}`}>
+      <p
+        className={`page-backdrop-subtext my-2 mx-auto f-center ${subTextClassName}`}
+      >
         {subText}
       </p>
     ) : null}

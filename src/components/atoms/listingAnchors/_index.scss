@@ -1,8 +1,6 @@
 .listing-anchors {
   flex-wrap: nowrap;
   overflow-x: auto;
-  padding-bottom: 0.25rem;
-  margin: 0.25rem 0.875rem 1.5rem;
 
   &::-webkit-scrollbar-track {
     background-color: var(--clr-scrollbar-bg);
@@ -33,8 +31,6 @@
   }
 
   li {
-    margin: 0.25rem 0;
-
     &:first-child > .btn {
       margin-left: 0;
     }
@@ -45,6 +41,7 @@
   }
 
   .btn {
+    // TODO: Button issue with padding
     padding: 0.5rem 1rem;
 
     &.selected {

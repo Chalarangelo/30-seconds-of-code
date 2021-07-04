@@ -79,7 +79,7 @@ const Search = ({ isMainSearch = false }) => {
 
   return (
     <div
-      className='search-wrapper flex br-md icon icon-search'
+      className='search-wrapper mb-2 flex br-md icon icon-search'
       onKeyUp={e => {
         e.preventDefault();
         if (isMainSearch || !hasResults) return;
@@ -102,7 +102,7 @@ const Search = ({ isMainSearch = false }) => {
     >
       <input
         defaultValue={value}
-        className='search-box srfc-inset'
+        className='search-box srfc-inset py-1 px-2'
         type='search'
         placeholder={literals.searchPlaceholder}
         aria-label={literals.searchSnippets}
@@ -158,7 +158,7 @@ const Search = ({ isMainSearch = false }) => {
         rel='nofollow'
       />
       {!isMainSearch && value ? (
-        <ul className='search-autocomplete-list srfc-05db'>
+        <ul className='search-autocomplete-list pl-0 my-0 mx-2 srfc-05db'>
           {[
             ...searchResults.slice(0, 4),
             {
@@ -173,10 +173,12 @@ const Search = ({ isMainSearch = false }) => {
               <a
                 href={item.url}
                 title={item.title}
-                className={`flex ${selectedResult === i ? 'selected' : ''}`}
+                className={`flex py-2 px-3 ${
+                  selectedResult === i ? 'selected' : ''
+                }`}
                 data-link-rel='no-route'
               >
-                <span className='result-title txt-150'>{item.title}</span>
+                <span className='result-title mr-2 txt-150'>{item.title}</span>
                 {!item.search ? (
                   <span className='result-tag txt-100 fs-mi'>
                     {item.expertise

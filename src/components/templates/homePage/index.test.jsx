@@ -22,10 +22,7 @@ describe('<HomePage />', () => {
     });
 
     it('the correct number of shelves component', () => {
-      expect(wrapper.querySelectorAll('.collections-shelf-title')).toHaveLength(
-        1
-      );
-      expect(wrapper.querySelectorAll('.snippets-shelf-title')).toHaveLength(1);
+      expect(wrapper.querySelectorAll('.shelf-title')).toHaveLength(2);
     });
   });
 });

@@ -27,13 +27,13 @@ const Shelf = ({ shelf: { shelfType, shelfData, shelfName, shelfUrl } }) => {
     <>
       <Link href={shelfUrl}>
         <a
-          className={`${classPrefix}-title icon icon-chevron-right`}
+          className={`shelf-title mt-8 icon icon-chevron-right`}
           data-link-title={literals.viewAll}
         >
           <PageTitle>{shelfName}</PageTitle>
         </a>
       </Link>
-      <ul className={`shelf-list ${classPrefix}-list`}>
+      <ul className={`list-section ${classPrefix}-list`}>
         {/* eslint-disable react/jsx-indent */}
         {shelfType === 'snippets'
           ? shelfData.map(snippet => (

@@ -98,7 +98,7 @@ describe('<SearchResults />', () => {
     });
 
     it('should render filters', () => {
-      expect(wrapper.querySelectorAll('.search-filters')).toHaveLength(1);
+      expect(wrapper.querySelectorAll('.listing-anchors')).toHaveLength(1);
       expect(wrapper.querySelectorAll('li .btn')).toHaveLength(3);
     });
 

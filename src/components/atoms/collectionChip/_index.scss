@@ -4,9 +4,8 @@
   > .icon {
     position: relative;
     box-sizing: border-box;
-    padding: 0.5rem 0.25rem 0.5rem 4.25rem;
+    padding-left: 4.25rem;
     min-height: 64px;
-    text-align: center;
 
     &::before {
       position: absolute;
@@ -17,7 +16,6 @@
       height: 64px;
       border-radius: var(--br-xl);
       line-height: 64px;
-      text-align: center;
     }
   }
 }
