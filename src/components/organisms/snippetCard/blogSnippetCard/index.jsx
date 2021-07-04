@@ -36,7 +36,7 @@ const SnippetCard = ({ snippet }) => (
         year: 'numeric',
       })}
       {' · '}
-      <p className='card-subtitle txt-050 fs-xs'>
+      <p className='card-subtitle txt-050 fs-xs m-0'>
         {snippet.tags.all.join(', ')}
       </p>
     </div>

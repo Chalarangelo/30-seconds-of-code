@@ -33,7 +33,7 @@ const SearchResults = ({ recommendedSnippets = [] }) => {
     <>
       <PageTitle>{literals.results}</PageTitle>
       {Boolean(availableFilters.length > 2) && (
-        <ul className='list-section listing-anchors search-filters flex'>
+        <ul className='list-section listing-anchors mt-2 mx-3.5 flex'>
           {availableFilters.map(type => (
             <li className='flex-none' key={`filter-${type.toLowerCase()}`}>
               <button

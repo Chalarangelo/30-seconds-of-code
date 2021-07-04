@@ -23,7 +23,7 @@ const CollectionChip = ({ chip }) => {
             <a className='inherit'>{chip.title}</a>
           </Link>
         </h3>
-        <span className='card-subtitle fs-xs'>
+        <span className='card-subtitle txt-050 fs-xs m-0'>
           {literals.snippetCollection}
         </span>
       </div>
@@ -35,7 +35,7 @@ const CollectionChip = ({ chip }) => {
     <li className='collection-chip srfc-01dp txt-200'>
       <Link href={chip.url}>
         <a
-          className={`collection-chip-link inherit flex j-center a-center f-alt icon icon-${chip.icon}`}
+          className={`inherit py-2 px-1 f-center flex j-center a-center f-alt icon icon-${chip.icon}`}
         >
           {chip.title}
         </a>

@@ -28,7 +28,7 @@ const PreviewCard = ({ snippet }) => {
             <a className='inherit'>{snippet.title}</a>
           </Link>
         </h3>
-        <p className='card-subtitle txt-050 fs-xs'>{tags.join(', ')}</p>
+        <p className='card-subtitle txt-050 fs-xs m-0'>{tags.join(', ')}</p>
       </div>
       <div
         className='card-description'

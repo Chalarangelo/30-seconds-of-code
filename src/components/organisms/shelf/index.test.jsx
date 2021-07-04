@@ -15,9 +15,7 @@ describe('<Shelf />', () => {
 
     describe('should render', () => {
       it('the correct shelf link', () => {
-        expect(wrapper.querySelectorAll('a.snippets-shelf-title')).toHaveLength(
-          1
-        );
+        expect(wrapper.querySelectorAll('a.shelf-title')).toHaveLength(1);
       });
 
       it('a PageTitle component', () => {
@@ -48,9 +46,7 @@ describe('<Shelf />', () => {
 
     describe('should render', () => {
       it('the correct shelf link', () => {
-        expect(
-          wrapper.querySelectorAll('a.collections-shelf-title')
-        ).toHaveLength(1);
+        expect(wrapper.querySelectorAll('a.shelf-title')).toHaveLength(1);
       });
 
       it('a PageTitle component', () => {

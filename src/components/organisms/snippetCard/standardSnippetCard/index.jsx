@@ -18,7 +18,7 @@ const SnippetCard = ({ snippet }) => (
       <CardIcon icon={snippet.icon} expertise={snippet.expertise} />
       <div className='card-data'>
         <h1 className='card-title txt-200 fs-xl f-alt'>{snippet.title}</h1>
-        <p className='card-subtitle txt-050 fs-xs'>
+        <p className='card-subtitle txt-050 fs-xs m-0'>
           {[snippet.language.long, ...snippet.tags.all].join(', ')}
         </p>
       </div>
@@ -27,7 +27,7 @@ const SnippetCard = ({ snippet }) => (
       className='card-description'
       dangerouslySetInnerHTML={{ __html: snippet.html.fullDescription }}
     />
-    <div className='card-source-content'>
+    <div className='card-source-content mt-5 mx-0 mb-0'>
       {snippet.html.style && (
         <CodeBlock
           language={snippet.language.otherLanguages[0]}
@@ -40,13 +40,13 @@ const SnippetCard = ({ snippet }) => (
         htmlContent={snippet.html.code}
         className='card-code'
       />
-      <h5 className='card-example-title m-0 txt-100 fs-xs md:fs-sm'>
+      <h5 className='card-example-title m-0 pt-1 px-3.5 pb-0 txt-100 fs-xs md:fs-sm'>
         {literals.examples}
       </h5>
       <CodeBlock
         language={snippet.language}
         htmlContent={snippet.html.example}
-        className='card-example'
+        className='card-example pt-1 px-3.5 pb-6'
       />
     </div>
     <Actions snippet={snippet} />

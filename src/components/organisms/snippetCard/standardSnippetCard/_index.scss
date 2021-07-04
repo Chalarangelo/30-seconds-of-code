@@ -1,8 +1,6 @@
 .snippet-card {
 
   .card-source-content {
-    margin: 1.125rem 0 0;
-
     pre {
       margin: 0;
 
@@ -27,10 +25,10 @@
     }
 
     .card-example-title {
-      padding: 0.25rem .875rem 0;
       background: var(--clr-code-bg);
 
       + pre {
+        // TODO: Override rules from code block
         padding: 0.25rem .875rem 1.5rem;
       }
     }

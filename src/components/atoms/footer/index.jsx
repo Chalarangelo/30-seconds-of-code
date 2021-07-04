@@ -6,19 +6,19 @@ import settings from 'settings/global';
  * Static component that renders the page footer.
  */
 const Footer = () => (
-  <footer>
-    <p className='fs-xs'>
+  <footer className='mt-8 pt-6 mx-2 mb-0'>
+    <p className='fs-xs my-1.5'>
       <Link href='/about'>
-        <a className='footer-link'>{literals.about}</a>
+        <a>{literals.about}</a>
       </Link>
       <Link href='/cookies'>
-        <a className='footer-link'>{literals.cookies}</a>
+        <a className='ml-4'>{literals.cookies}</a>
       </Link>
-      <a className='footer-link' href='/feed' data-link-rel='no-route'>
+      <a className='ml-4' href='/feed' data-link-rel='no-route'>
         {literals.feed}
       </a>
       <a
-        className='footer-link'
+        className='ml-4'
         href={settings.githubOrgUrl}
         rel='noopener noreferrer nofollow'
         target='_blank'
@@ -26,7 +26,7 @@ const Footer = () => (
         {literals.github}
       </a>
       <a
-        className='footer-link'
+        className='ml-4'
         href={settings.twitterUrl}
         rel='noopener noreferrer nofollow'
         target='_blank'
@@ -34,7 +34,7 @@ const Footer = () => (
         {literals.twitter}
       </a>
     </p>
-    <p className='fs-xs'>
+    <p className='fs-xs mt-0.5'>
       {literals.copyright}
       <a
         href={settings.githubOrgUrl}
