@@ -17,7 +17,7 @@ const SnippetCard = ({ snippet }) => (
     <h1 className='card-title txt-200 fs-xl f-alt f-ellipsis'>
       {snippet.title}
     </h1>
-    <div className='card-meta-info txt-050 fs-xs'>
+    <div className='mt-0 mb-4 mx-0 txt-050 fs-xs'>
       {snippet.authors.map((a, i, arr) => (
         <Fragment key={`author-fragment-${i}`}>
           <a

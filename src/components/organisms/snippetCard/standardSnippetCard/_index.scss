@@ -1,5 +1,4 @@
 .snippet-card {
-
   .card-source-content {
     pre {
       margin: 0;
@@ -24,19 +23,12 @@
       }
     }
 
-    .card-example-title {
-      background: var(--clr-code-bg);
-
-      + pre {
-        // TODO: Override rules from code block
-        padding: 0.25rem .875rem 1.5rem;
-      }
-    }
-
     .card-example {
+      margin-top: -.875rem;
+      padding-bottom: 1.5rem;
 
       &::before {
-        display: none;
+        content: 'Examples';
       }
     }
   }

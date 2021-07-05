@@ -36,7 +36,7 @@ const blogTransformers = [
     blogType: 'any',
     matcher: /<pre class="language-([^"]+)" data-code-language="([^"]*)">([\s\S]*?)<\/pre>/g,
     replacer:
-      '<pre class="language-$1 notranslate" data-code-language="$2">$3</pre>',
+      '<pre class="language-$1 notranslate mt-4 mb-0 mx-0" data-code-language="$2">$3</pre>',
   },
   // Convert blog blockquotes to the appropriate elements
   {
