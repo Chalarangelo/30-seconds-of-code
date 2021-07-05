@@ -1,5 +1,4 @@
 .page-container {
-  transition: 0.3s ease all;
   background: var(--clr-bg);
   width: 100vw;
   min-height: 100vh;
@@ -10,7 +9,6 @@
   position: sticky;
   top: 0;
   flex-flow: row wrap;
-  transition: 0.3s ease all;
   background: var(--clr-navbar-bg);
   box-shadow: var(--shd-el-01dp);
   line-height: 0;
@@ -77,7 +75,6 @@
 }
 
 img.nav-website-logo {
-  transition: 0.3s ease all;
   padding: 4px;
   width: 56px;
   height: 56px;
@@ -91,7 +88,6 @@ img.nav-website-logo {
 
 // Content container
 .content {
-  transition: 0.3s ease all;
   background: var(--clr-bg);
   padding-right: 4px;  // Pad to the right for the scrollbar (4px)
 

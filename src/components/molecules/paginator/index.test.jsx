@@ -23,7 +23,7 @@ describe('<Paginator />', () => {
     });
 
     it('an element for current page', () => {
-      expect(wrapper.querySelectorAll('.current-page')).toHaveLength(1);
+      expect(wrapper.querySelectorAll('span')).toHaveLength(1);
     });
   });
 

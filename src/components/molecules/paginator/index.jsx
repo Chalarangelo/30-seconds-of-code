@@ -42,7 +42,7 @@ const Paginator = ({ paginator: { pageNumber, totalPages, baseUrl } }) => {
       )}
       {buttons.map(buttonNumber =>
         buttonNumber === pageNumber ? (
-          <span className='current-page fs-xl' key={buttonNumber}>
+          <span className='fs-xl' key={buttonNumber}>
             {buttonNumber}
           </span>
         ) : (

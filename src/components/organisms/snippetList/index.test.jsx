@@ -51,7 +51,7 @@ describe('<SnippetList />', () => {
   });
 
   it('should pass the paginator to Paginator', () => {
-    expect(paginate.querySelector('.current-page').textContent).toEqual(
+    expect(paginate.querySelector('span').textContent).toEqual(
       `${paginator.pageNumber}`
     );
   });
