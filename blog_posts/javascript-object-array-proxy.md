@@ -110,7 +110,7 @@ x.length;     // 3
 // Array methods
 x.forEach((v, i) => console.log(`${i}: ${v}`)); // LOGS: 'a: A', 'b: B', 'c: c'
 x.map((v, i) => i + v);                         // ['aA', 'bB, 'cc]
-x.filter((v, i) => v !== 'B');                  // { a: 'A', b: 'B' }
+x.filter((v, i) => v !== 'B');                  // { a: 'A', c: 'c' }
 x.reduce((a, v, i) => ({ ...a, [v]: i }), {}); 	// { A: 'a', B: 'b', c: 'c' }
 x.slice(0, 2);                                  // ['A', 'B']
 x.slice(-1);                                    // ['c']
