@@ -5,12 +5,6 @@
 .search-box::-webkit-input-placeholder {
   @include placeholder-styles;
 }
-.search-box:-ms-input-placeholder {
-  @include placeholder-styles;
-}
-.search-box:-moz-placeholder {
-  @include placeholder-styles;
-}
 .search-box::-moz-placeholder {
   @include placeholder-styles;
 }
@@ -18,7 +12,6 @@
 .search-wrapper {
   background: var(--clr-search-bg);
   color: var(--clr-txt-100);
-  transition: 0.3s ease all;
   flex: 0 0 100%;
 
   @media screen and (min-width: $layout-medium-breakpoint) {
