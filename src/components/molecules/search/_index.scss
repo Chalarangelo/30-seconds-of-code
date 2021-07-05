@@ -95,9 +95,7 @@ a.search-btn[aria-hidden="true"] {
       align-items: baseline;
 
       .result-title {
-        text-overflow: ellipsis;
         white-space: nowrap;
-        overflow: hidden;
       }
 
       .result-tag {

@@ -11,3 +11,8 @@
 .f-right    { text-align: right;   }
 .f-center   { text-align: center;  }
 .f-justify  { text-align: justify; }
+
+.f-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

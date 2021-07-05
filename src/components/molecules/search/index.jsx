@@ -178,7 +178,9 @@ const Search = ({ isMainSearch = false }) => {
                 }`}
                 data-link-rel='no-route'
               >
-                <span className='result-title mr-2 txt-150'>{item.title}</span>
+                <span className='result-title f-ellipsis mr-2 txt-150'>
+                  {item.title}
+                </span>
                 {!item.search ? (
                   <span className='result-tag txt-100 fs-mi'>
                     {item.expertise
