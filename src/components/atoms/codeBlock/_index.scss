@@ -72,9 +72,6 @@ pre[data-code-language]:not([data-code-language=""]) {
   &.important, &.bold {
     font-weight: 500;
   }
-  &.entity {
-    cursor: help;
-  }
 }
 
 .language-css .token.string, .style .token.string {
