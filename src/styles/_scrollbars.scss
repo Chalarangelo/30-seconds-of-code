@@ -1,0 +1,53 @@
+
+// Shared scrollbar styles - Keep these here to minimize duplication
+body,                 // Shell
+pre,                  // Code block
+.listing-anchors {    // Listing anchors
+  --clr-el-scrollbar-bg: var(--clr-scrollbar-bg);
+  --clr-el-scrollbar-knob: var(--clr-scrollbar-knob);
+  --clr-el-scrollbar-knob-active: var(--clr-scrollbar-knob-active);
+
+  &::-webkit-scrollbar-track {
+    background: var(--clr-el-scrollbar-bg);
+  }
+
+  &::-webkit-scrollbar {
+    background: transparent;
+    width: 4px;
+    height: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--clr-el-scrollbar-knob);
+    border-radius: var(--br-md);
+
+    &:hover {
+      background-color: var(--clr-el-scrollbar-knob-active);
+    }
+  }
+}
+
+// Body scrollbar
+body {
+  &::-webkit-scrollbar {
+    @media screen and (min-width: $layout-medium-breakpoint) {
+      width: 8px;
+    }
+  }
+}
+
+// Listing anchors scrollbar
+.listing-anchors {
+  &::-webkit-scrollbar-track {
+    margin: 0 4rem;
+    border-radius: var(--br-md);
+
+    @media screen and (min-width: $layout-medium-breakpoint) {
+      margin: 0 12rem;
+    }
+
+    @media screen and (min-width: $layout-large-breakpoint) {
+      margin: 0 16rem;
+    }
+  }
+}
