@@ -36,7 +36,7 @@ const PageBackdrop = ({
   subTextClassName = '',
   children,
 }) => (
-  <div className='page-graphic f-center txt-050'>
+  <div className='page-graphic relative f-center txt-050'>
     <Image src={backdropImage} />
     <p className={`page-backdrop-text f-center ${mainTextClassName}`}>
       {mainText}

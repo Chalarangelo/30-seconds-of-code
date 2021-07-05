@@ -16,7 +16,9 @@ const CollectionChip = ({ chip }) => {
 
   return hasDescription ? (
     <li className='card srfc-02dp txt-100 list-card grid'>
-      <div className={`card-icon br-xl icon icon-${chip.icon}`}></div>
+      <div
+        className={`card-icon relative inline-block br-xl icon icon-${chip.icon}`}
+      ></div>
       <div className='card-data'>
         <h3 className='card-title txt-200 fs-xl f-alt'>
           <Link href={chip.url}>
@@ -35,7 +37,7 @@ const CollectionChip = ({ chip }) => {
     <li className='collection-chip srfc-01dp txt-200'>
       <Link href={chip.url}>
         <a
-          className={`inherit py-2 px-1 f-center flex j-center a-center f-alt icon icon-${chip.icon}`}
+          className={`inherit relative py-2 px-1 f-center flex j-center a-center f-alt icon icon-${chip.icon}`}
         >
           {chip.title}
         </a>

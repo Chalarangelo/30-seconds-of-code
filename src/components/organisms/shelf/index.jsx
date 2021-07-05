@@ -27,7 +27,7 @@ const Shelf = ({ shelf: { shelfType, shelfData, shelfName, shelfUrl } }) => {
     <>
       <Link href={shelfUrl}>
         <a
-          className={`shelf-title mt-8 icon icon-chevron-right`}
+          className={`shelf-title relative mt-8 icon icon-chevron-right`}
           data-link-title={literals.viewAll}
         >
           <PageTitle>{shelfName}</PageTitle>

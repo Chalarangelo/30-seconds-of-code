@@ -1,7 +1,6 @@
 .shelf-title {
   display: block;
   width: 100%;
-  position: relative;
   --clr-el-link: var(--clr-txt-150);
 
   &::before, &::after {
@@ -10,6 +9,7 @@
   }
 
   &:hover, &:focus {
+    animation: none;
     --clr-el-link: var(--clr-primary-050);
   }
 
