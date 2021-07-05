@@ -1,9 +1,4 @@
 .snippet-card.blog-card {
-
-  .card-meta-info {
-    margin: 0 0 1rem;
-  }
-
   ol.blog-list {
     list-style: none;
     counter-reset: list-item-counter;
@@ -48,10 +43,6 @@
         }
       }
     }
-  }
-
-  pre {
-    margin: 1rem 0 0;
   }
 
   .card-description {

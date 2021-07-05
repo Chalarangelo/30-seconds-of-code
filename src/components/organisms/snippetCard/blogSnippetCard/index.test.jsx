@@ -39,7 +39,7 @@ describe('<BlogSnippetCard />', () => {
     });
 
     it('the card meta info', () => {
-      expect(card.querySelectorAll('.card-meta-info')).toHaveLength(1);
+      expect(card.querySelectorAll('h1 + div')).toHaveLength(1);
     });
   });
 
@@ -80,7 +80,7 @@ describe('<BlogSnippetCard />', () => {
     });
 
     it('should render the appropriate meta info', () => {
-      expect(card.querySelectorAll('.card-meta-info')).toHaveLength(1);
+      expect(card.querySelectorAll('h1 + div')).toHaveLength(1);
     });
   });
 

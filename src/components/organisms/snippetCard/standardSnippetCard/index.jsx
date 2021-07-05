@@ -2,7 +2,6 @@ import PropTypes from 'typedefs/proptypes';
 import Card, { CardIcon } from 'components/atoms/card';
 import CodeBlock from 'components/atoms/codeBlock';
 import Actions from 'components/molecules/actions';
-import literals from 'lang/en/client/common';
 
 const propTypes = {
   snippet: PropTypes.snippet,
@@ -42,9 +41,6 @@ const SnippetCard = ({ snippet }) => (
         htmlContent={snippet.html.code}
         className='card-code'
       />
-      <h5 className='card-example-title m-0 pt-1 px-3.5 pb-0 txt-100 fs-xs md:fs-sm'>
-        {literals.examples}
-      </h5>
       <CodeBlock
         language={snippet.language}
         htmlContent={snippet.html.example}

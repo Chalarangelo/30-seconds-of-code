@@ -1,6 +1,5 @@
 import { renderWithContext } from 'test/utils';
 import { cleanup } from '@testing-library/react';
-import literals from 'lang/en/client/common';
 import SnippetCard from './index';
 import SnippetFactory from 'test/fixtures/factories/snippet';
 
@@ -39,10 +38,6 @@ describe('<SnippetCard />', () => {
 
     it('the card source content', () => {
       expect(card.querySelectorAll('.card-source-content')).toHaveLength(1);
-    });
-
-    it('the card examples title', () => {
-      expect(card.querySelectorAll('h5.card-example-title')).toHaveLength(1);
     });
 
     it('two CodeBlock components', () => {
@@ -88,12 +83,6 @@ describe('<SnippetCard />', () => {
   it('should render the correct explanation', () => {
     expect(card.querySelector('.card-description').innerHTML).toContain(
       fullSnippet.html.fullDescription
-    );
-  });
-
-  it('should have the appropriate examples title', () => {
-    expect(card.querySelector('.card-example-title').textContent).toBe(
-      literals.examples
     );
   });
 
