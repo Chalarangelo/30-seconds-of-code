@@ -1,4 +1,4 @@
-// Display, flex, grid
+// Display, flex, grid, position
 .inline-block { display: inline-block; }
 .flex         { display: flex; }
 .grid         { display: grid; }
@@ -6,3 +6,4 @@
 .j-center     { justify-content: center; }
 .a-center     { align-items: center; }
 .flex-none    { flex: none; }
+.relative     { position: relative; }

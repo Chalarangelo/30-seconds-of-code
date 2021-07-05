@@ -21,7 +21,7 @@ const Breadcrumbs = ({ breadcrumbs }) => (
         return (
           <li
             key={`breadcrumb-${i}`}
-            className={`breadcrumb-item inline-block ${
+            className={`breadcrumb-item relative inline-block ${
               isCurrentPage ? 'txt-050' : 'txt-150'
             }`}
           >
