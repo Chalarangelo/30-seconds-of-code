@@ -1,28 +1,3 @@
-// Body scrollbar
-body {
-  &::-webkit-scrollbar-track {
-    background: var(--clr-scrollbar-bg);
-  }
-
-  &::-webkit-scrollbar {
-    width: 4px;
-    background: transparent;
-
-    @media screen and (min-width: $layout-medium-breakpoint) {
-      width: 8px;
-    }
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--clr-scrollbar-knob);
-    border-radius: var(--br-md);
-
-    &:hover {
-      background-color: var(--clr-scrollbar-knob-active);
-    }
-  }
-}
-
 .page-container {
   transition: 0.3s ease all;
   background: var(--clr-bg);
