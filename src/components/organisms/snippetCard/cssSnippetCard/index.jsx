@@ -36,7 +36,9 @@ const SnippetCard = ({ snippet }) => {
       <div className='card-meta grid'>
         <CardIcon icon={snippet.icon} expertise={snippet.expertise} />
         <div className='card-data'>
-          <h1 className='card-title txt-200 fs-xl f-alt'>{snippet.title}</h1>
+          <h1 className='card-title txt-200 fs-xl f-alt f-ellipsis'>
+            {snippet.title}
+          </h1>
           <p className='card-subtitle txt-050 fs-xs m-0'>
             {[snippet.language.long, ...snippet.tags.all].join(', ')}
           </p>

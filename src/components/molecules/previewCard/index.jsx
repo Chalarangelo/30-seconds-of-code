@@ -23,7 +23,7 @@ const PreviewCard = ({ snippet }) => {
     <li className='card srfc-02dp txt-100 list-card grid'>
       <CardIcon icon={snippet.icon} expertise={snippet.expertise} />
       <div className='card-data'>
-        <h3 className='card-title txt-200 fs-xl f-alt'>
+        <h3 className='card-title txt-200 fs-xl f-alt f-ellipsis'>
           <Link href={snippet.url}>
             <a className='inherit'>{snippet.title}</a>
           </Link>
