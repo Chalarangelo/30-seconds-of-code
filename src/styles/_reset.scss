@@ -80,6 +80,9 @@ b, strong {
   font-weight: 600;
   -webkit-font-smoothing: antialiased;
 }
+em {
+  font-variation-settings: 'slnt' -6.0;
+}
 sup, sub, code, kbd {
   line-height: 0;
   position: relative;
