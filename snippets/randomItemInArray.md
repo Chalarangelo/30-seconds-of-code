@@ -1,5 +1,5 @@
 ---
-title: radomItemInArray
+title: randomItemInArray
 tags: math,random,beginner
 firstSeen: 2021-07-16T21:58:49+0000
 lastUpdated: 2021-07-16T21:58:49+0000
