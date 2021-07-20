@@ -27,5 +27,5 @@ var promise2 = function (data) {
 }
 
 runPromisesInSeries([promise1, promise2], -100).then(res => console.log(res)); // 400
-// Executes each promise sequentially, taking a total of 3 seconds to complete
+// Executes each promise sequentially
 ```
