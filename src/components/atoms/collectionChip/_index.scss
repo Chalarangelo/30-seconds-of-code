@@ -8,11 +8,12 @@
       position: absolute;
       left: 0;
       top: 0;
+      box-sizing: border-box;
+      padding: 0.875rem;
       font-size: 36px;
       width: 64px;
       height: 64px;
       border-radius: var(--br-xl);
-      line-height: 64px;
     }
   }
 }
