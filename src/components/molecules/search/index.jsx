@@ -79,7 +79,7 @@ const Search = ({ isMainSearch = false }) => {
 
   return (
     <div
-      className='search-wrapper relative mb-2 flex br-md icon icon-search'
+      className='search-wrapper relative mb-2 flex br-md icon icon-search before:fs-sm'
       onKeyUp={e => {
         e.preventDefault();
         if (isMainSearch || !hasResults) return;
@@ -102,7 +102,7 @@ const Search = ({ isMainSearch = false }) => {
     >
       <input
         defaultValue={value}
-        className='search-box srfc-inset py-1 px-2'
+        className='search-box srfc-inset py-1 px-2 box-border'
         type='search'
         placeholder={literals.searchPlaceholder}
         aria-label={literals.searchSnippets}

@@ -36,3 +36,10 @@
 }
 
 @include generate-font-sizes(('no', 'mi', 'xs', 'sm', 'md', 'lg', 'xl', 'x2', 'x3'));
+
+// :before pseudo element font sizes
+//   Sizes are used mainly for styling icons
+.before\:fs-sm:before { font-size: 20px; }
+.before\:fs-md:before { font-size: 24px; }
+.before\:fs-lg:before { font-size: 36px; }
+

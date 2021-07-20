@@ -38,4 +38,11 @@
       color: var(--clr-txt-200);
     }
   }
+
+  // Utility for btn elements that have an inline icon
+  &.icon-btn {
+    &:before {
+      vertical-align: bottom;
+    }
+  }
 }

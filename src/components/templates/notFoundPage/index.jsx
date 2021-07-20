@@ -29,7 +29,7 @@ const NotFoundPage = () => (
         subText={literals.notFoundDescription}
       >
         <Link href='/'>
-          <a className='btn outline-btn btn-home fs-md icon icon-home'>
+          <a className='btn outline-btn icon-btn btn-home fs-md icon icon-home before:fs-md'>
             {literals.goHome}
           </a>
         </Link>
