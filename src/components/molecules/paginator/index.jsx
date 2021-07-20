@@ -33,7 +33,7 @@ const Paginator = ({ paginator: { pageNumber, totalPages, baseUrl } }) => {
       {pageNumber > 1 && (
         <Link href={`${baseUrl}/p/${pageNumber - 1}`}>
           <a
-            className='btn action-btn previous-page j-center fs-no md:fs-sm icon icon-chevron-left'
+            className='btn action-btn previous-page j-center fs-no md:fs-sm icon icon-chevron-left box-border before:fs-md'
             rel='prev'
           >
             {literals.previous}
@@ -42,19 +42,19 @@ const Paginator = ({ paginator: { pageNumber, totalPages, baseUrl } }) => {
       )}
       {buttons.map(buttonNumber =>
         buttonNumber === pageNumber ? (
-          <span className='fs-xl' key={buttonNumber}>
+          <span className='fs-xl box-border' key={buttonNumber}>
             {buttonNumber}
           </span>
         ) : (
           <Link key={buttonNumber} href={`${baseUrl}/p/${buttonNumber}`}>
-            <a className='btn action-btn fs-md'>{buttonNumber}</a>
+            <a className='btn action-btn fs-md box-border'>{buttonNumber}</a>
           </Link>
         )
       )}
       {pageNumber < totalPages && (
         <Link href={`${baseUrl}/p/${pageNumber + 1}`}>
           <a
-            className='btn action-btn next-page j-center fs-no md:fs-sm icon icon-chevron-right'
+            className='btn action-btn next-page j-center fs-no md:fs-sm icon icon-chevron-right box-border before:fs-md'
             rel='next'
           >
             {literals.next}

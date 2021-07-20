@@ -25,7 +25,6 @@
 
   &::before {
     box-sizing: border-box;
-    font-size: 20px;
     padding: 0.75rem 0;
     margin-left: 0.5rem;
     color: inherit;
@@ -44,10 +43,8 @@
 [type="search"].search-box {
   width: calc(100% - 36px);
   background: transparent;
-  vertical-align: top;
   border: none;
   outline: none;
-  box-sizing: border-box;
   font-size: var(--font-md);
   height: 44px;
 

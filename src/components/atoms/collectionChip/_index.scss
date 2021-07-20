@@ -1,6 +1,5 @@
 .collection-chip {
   > .icon {
-    box-sizing: border-box;
     padding-left: 4.25rem;
     min-height: 64px;
 
@@ -10,7 +9,6 @@
       top: 0;
       box-sizing: border-box;
       padding: 0.875rem;
-      font-size: 36px;
       width: 64px;
       height: 64px;
       border-radius: var(--br-xl);

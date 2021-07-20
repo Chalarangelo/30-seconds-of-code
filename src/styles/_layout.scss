@@ -1,4 +1,4 @@
-// Display, flex, grid, position
+// Display, flex, grid, position, box-sizing
 .inline-block { display: inline-block; }
 .flex         { display: flex; }
 .grid         { display: grid; }
@@ -7,3 +7,4 @@
 .a-center     { align-items: center; }
 .flex-none    { flex: none; }
 .relative     { position: relative; }
+.box-border   { box-sizing: border-box; }

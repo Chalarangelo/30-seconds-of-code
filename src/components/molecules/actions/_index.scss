@@ -6,12 +6,6 @@
     // TODO: Button issue with padding
     padding: 0.75rem;
 
-    &:before {
-      font-size: 24px;
-      vertical-align: bottom;
-      width: 100%;
-    }
-
     &.active {
       animation-name: active;
       animation-duration: 0.5s;

@@ -6,8 +6,10 @@ const iconPropTypes = {
 };
 
 export const CardIcon = ({ icon, expertise = 'intermediate' }) => (
-  <div className={`card-icon relative inline-block br-round icon icon-${icon}`}>
-    <span className={`expertise br-round ${expertise}`} />
+  <div
+    className={`card-icon relative inline-block br-round icon icon-${icon} before:fs-lg`}
+  >
+    <span className={`expertise box-border br-round ${expertise}`} />
   </div>
 );
 

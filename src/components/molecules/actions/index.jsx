@@ -90,7 +90,7 @@ const Actions = ({ snippet }) => {
     <div className='card-actions flex'>
       {Boolean(canShare) && (
         <button
-          className='flex-none btn action-btn icon icon-share'
+          className='flex-none btn action-btn icon-btn icon icon-share before:fs-md'
           title={literals.share}
           onClick={() => {
             gtagCallback({ event_category: 'action-share', value: 1 });
@@ -108,9 +108,9 @@ const Actions = ({ snippet }) => {
       )}
       {Boolean(snippet.actionType === 'copy') && (
         <button
-          className={`flex-none btn action-btn icon ${
+          className={`flex-none btn action-btn icon-btn icon ${
             active ? 'icon-check active' : 'icon-clipboard'
-          }`}
+          } before:fs-md`}
           title={literals.copyToClipboard}
           onClick={() => {
             gtagCallback({ event_category: 'action-copy', value: 1 });
@@ -143,7 +143,7 @@ const Actions = ({ snippet }) => {
             })}
           />
           <button
-            className='flex-none btn action-btn icon icon-codepen'
+            className='flex-none btn action-btn icon-btn icon icon-codepen before:fs-md'
             title={literals.codepen}
             onClick={() => {
               gtagCallback({ event_category: 'action-codepen', value: 1 });
@@ -152,7 +152,7 @@ const Actions = ({ snippet }) => {
         </form>
       )}
       <a
-        className='flex-none btn action-btn icon icon-github '
+        className='flex-none btn action-btn icon-btn icon icon-github before:fs-md'
         href={snippet.url}
         rel='nofollow noopener noreferrer'
         target='_blank'

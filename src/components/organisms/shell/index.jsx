@@ -27,7 +27,7 @@ const Shell = ({ isSearch = false, children }) => {
   return (
     <div className='page-container'>
       <header
-        className='nav-bar flex j-center a-center'
+        className='nav-bar flex j-center a-center box-border'
         role='navigation'
         aria-label='Main'
       >

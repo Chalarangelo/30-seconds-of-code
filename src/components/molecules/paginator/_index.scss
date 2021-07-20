@@ -1,7 +1,6 @@
 .paginator {
 
   .btn, a.btn, span {
-    box-sizing: border-box;
     min-width: 44px;
     text-align: center;
   }
@@ -9,11 +8,6 @@
   .previous-page, .next-page {
     color: var(--clr-primary-050);
     display: flex;
-
-    &:before {
-      position: relative;
-      font-size: 24px;
-    }
   }
 
   .previous-page {
