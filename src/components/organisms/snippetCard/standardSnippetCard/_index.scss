@@ -2,20 +2,12 @@
   .card-source-content {
     pre {
       margin: 0;
-
-      &:first-of-type {
-        border-radius: var(--br-lg) var(--br-lg) var(--br-none) var(--br-none);
-      }
-
-      &:last-child {
-        border-radius: var(--br-none) var(--br-none) var(--br-lg) var(--br-lg);
-      }
     }
 
     .card-code + .card-code {
       border-top: 1px solid var(--clr-txt-050);
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
+      border-top-left-radius: var(--br-none);
+      border-top-right-radius: var(--br-none);
       padding-top: 2.5rem;
 
       &:before {
