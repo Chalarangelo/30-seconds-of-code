@@ -1,5 +1,4 @@
 .page-container {
-  background: var(--clr-bg);
   width: 100vw;
   min-height: 100vh;
 }
@@ -78,7 +77,6 @@ img.nav-website-logo {
   height: 56px;
 
   @media screen and (min-width: $layout-medium-breakpoint) {
-    padding: 4px;
     width: 64px;
     height: 64px;
   }
@@ -86,16 +84,5 @@ img.nav-website-logo {
 
 // Content container
 .content {
-  background: var(--clr-bg);
-  padding-right: 4px;  // Pad to the right for the scrollbar (4px)
-
-  @media screen and (min-width: $layout-medium-breakpoint) {
-    padding-right: 8px;  // Pad to the right for the scrollbar (8px)
-  }
-
-  @media screen and (min-width: 882px) {
-    // Difference in padding is due to the scrollbar (8px)
-    padding-left: calc((100% - 882px) / 2);
-    padding-right: calc((100% - 866px) / 2);
-  }
+  max-width: 874px;
 }

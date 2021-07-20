@@ -55,7 +55,7 @@ const Shell = ({ isSearch = false, children }) => {
         </Link>
         <Search isMainSearch={isSearch} />
       </header>
-      <div className='content'>
+      <div className='content my-0 mx-auto'>
         {children}
         <Footer />
       </div>

@@ -1,6 +1,6 @@
 // Alternative font
 .f-alt {
-  &, > a, > a:link, > a:visited {
+  &, > a:any-link {
     font-family: 'Raleway', Helvetica, sans-serif;
     letter-spacing: 0.25px;
     font-feature-settings: "ss02", "lnum", "kern";

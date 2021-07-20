@@ -30,17 +30,17 @@
 
   --clr-el-03dp: hsla(0, 0%, 100%, .09);
   --clr-el-03db: hsl(240, 21%, 15%);
-  --shd-el-03dp: 0px 3px 6px hsla(0, 0%, 0%, 0.1),
-                 0px 10px 20px hsla(0, 0%, 0%, 0.15);
+  --shd-el-03dp: 0 3px 6px hsla(0, 0%, 0%, 0.1),
+                 0 10px 20px hsla(0, 0%, 0%, 0.15);
 
   --clr-el-04dp: hsla(0, 0%, 100%, .11);
   --clr-el-04db: hsl(240, 17%, 17%);
-  --shd-el-04dp: 0px 5px 10px hsla(0, 0%, 0%, 0.1),
-                 0px 15px 25px hsla(0, 0%, 0%, 0.15);
+  --shd-el-04dp: 0 5px 10px hsla(0, 0%, 0%, 0.1),
+                 0 15px 25px hsla(0, 0%, 0%, 0.15);
 
   --clr-el-05dp: hsla(0, 0%, 100%, .14);
   --clr-el-05db: hsl(240, 15%, 20%);
-  --shd-el-05dp: 0px 20px 40px hsla(0, 0%, 0%, 0.2);
+  --shd-el-05dp: 0 20px 40px hsla(0, 0%, 0%, 0.2);
 }
 
 @include generate-surface-styles(('01', '02', '03', '04', '05'));
