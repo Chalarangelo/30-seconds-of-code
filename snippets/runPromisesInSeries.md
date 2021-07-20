@@ -10,12 +10,22 @@ Runs an array of promises in series.
 - Use `Array.prototype.reduce()` to create a promise chain, where each promise returns the next promise when resolved.
 
 ```js
-const runPromisesInSeries = ps =>
-  ps.reduce((p, next) => p.then(next), Promise.resolve());
+const runPromisesInSeries = (promiseCreators, initData) =>
+    promiseCreators.reduce((promise, next) => promise.then(data => next(data)), Promise.resolve(initData));
 ```
 
 ```js
-const delay = d => new Promise(r => setTimeout(r, d));
-runPromisesInSeries([() => delay(1000), () => delay(2000)]);
+var promise1 = function (data = 0) {
+    return new Promise(resolve => {
+        resolve(data + 1000);
+    });
+}
+var promise2 = function (data) {
+    return new Promise(resolve => {
+        resolve(data - 500);
+    });
+}
+
+runPromisesInSeries([promise1, promise2], -100).then(res => console.log(res)); // 400
 // Executes each promise sequentially, taking a total of 3 seconds to complete
 ```
