@@ -1,7 +1,7 @@
 a {
   text-decoration: none;
 
-  &:link, &:visited {
+  &:any-link {
     color: var(--clr-primary-050);
   }
 
@@ -15,7 +15,7 @@ a {
 
   &.inherit {
 
-    &:link, &:visited {
+    &:any-link {
       color: inherit;
     }
   }
@@ -25,7 +25,7 @@ a {
   0% {
     text-decoration-line: underline;
     text-decoration-color: transparent;
-    text-underline-offset: 0px;
+    text-underline-offset: 0;
   }
   100% {
     text-decoration-line: underline;

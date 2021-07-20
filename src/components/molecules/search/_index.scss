@@ -43,8 +43,8 @@
 [type="search"].search-box {
   width: calc(100% - 36px);
   background: transparent;
-  border: none;
-  outline: none;
+  border: 0;
+  outline: 0;
   font-size: var(--font-md);
   height: 44px;
 
