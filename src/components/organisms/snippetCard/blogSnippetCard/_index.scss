@@ -20,20 +20,12 @@
     .blog-list-item {
       margin-bottom: 1.5rem;
 
-      &:before {
+      &:before,
+      > p:first-child:not(:last-child) {
+        margin-bottom: -0.25rem;
         font-weight: 600;
         color: var(--clr-txt-150);
         -webkit-font-smoothing: antialiased;
-      }
-
-      > p {
-
-        &:first-child:not(:last-child) {
-          margin-bottom: -0.25rem;
-          font-weight: 600;
-          color: var(--clr-txt-150);
-          -webkit-font-smoothing: antialiased;
-        }
       }
     }
   }
