@@ -93,7 +93,7 @@ blockquote {
   padding-left: 1.5rem;
   box-shadow: inset 4px 0 0 0 var(--clr-quote-border);
   font-style: italic;
-  line-height: 2;
+  font-variation-settings: 'slnt' -6.0;
   font-weight: 350;
 }
 // Style tabular content

@@ -24,8 +24,9 @@
   }
 
   &::before {
+    box-sizing: border-box;
     font-size: 20px;
-    line-height: 44px;
+    padding: 0.75rem 0;
     margin-left: 0.5rem;
     color: inherit;
     transition: 0.3s ease all;

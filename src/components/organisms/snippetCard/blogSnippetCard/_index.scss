@@ -24,32 +24,17 @@
         font-weight: 600;
         color: var(--clr-txt-150);
         -webkit-font-smoothing: antialiased;
-        line-height: 1.5;
       }
 
       > p {
-        font-size: var(--font-sm);
-        line-height: 2rem;
-
-        @media screen and (min-width: $layout-medium-breakpoint) {
-          font-size: var(--font-md);
-        }
 
         &:first-child:not(:last-child) {
-          line-height: 1.5;
+          margin-bottom: -0.25rem;
           font-weight: 600;
           color: var(--clr-txt-150);
           -webkit-font-smoothing: antialiased;
         }
       }
-    }
-  }
-
-  .card-description {
-
-    li:not(.blog-list-item) > p {
-      line-height: 2;
-      margin: 0;
     }
   }
 }
