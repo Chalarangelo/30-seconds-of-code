@@ -23,7 +23,7 @@ describe('<StaticPage />', () => {
     });
 
     it('a subtitle element', () => {
-      expect(wrapper.querySelectorAll('.page-sub-title')).toHaveLength(1);
+      expect(wrapper.querySelectorAll('.page-title + p')).toHaveLength(1);
     });
 
     it('4 SimpleCard components', () => {

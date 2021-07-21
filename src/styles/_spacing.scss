@@ -1,0 +1,76 @@
+/// Replace `$search` with `$replace` in `$string`
+/// @param {String} $string - Initial string
+/// @param {String} $search - Substring to replace
+/// @param {String} $replace ('') - New value
+/// @return {String} - Updated string
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+
+@mixin generate-spacing ($spaces) {
+  @each $sp in $spaces {
+    $space: str-replace($sp, '.5', '\\.5');
+    $space-var: str-replace($sp, '.5', '-5');
+
+    // Padding
+    .p-#{$space}  { padding: var(--s-#{$space-var});          }
+    .py-#{$space} { padding-top: var(--s-#{$space-var});
+                    padding-bottom: var(--s-#{$space-var});   }
+    .px-#{$space} { padding-left: var(--s-#{$space-var});
+                    padding-right: var(--s-#{$space-var});    }
+    .pt-#{$space} { padding-top: var(--s-#{$space-var});      }
+    .pb-#{$space} { padding-bottom: var(--s-#{$space-var});   }
+    .pl-#{$space} { padding-left: var(--s-#{$space-var});     }
+    .pr-#{$space} { padding-right: var(--s-#{$space-var});    }
+
+    // Margin
+    .m-#{$space}  { margin: var(--s-#{$space-var});           }
+    .my-#{$space} { margin-top: var(--s-#{$space-var});
+                    margin-bottom: var(--s-#{$space-var});    }
+    .mx-#{$space} { margin-left: var(--s-#{$space-var});
+                    margin-right: var(--s-#{$space-var});     }
+    .mt-#{$space} { margin-top: var(--s-#{$space-var});       }
+    .mb-#{$space} { margin-bottom: var(--s-#{$space-var});    }
+    .ml-#{$space} { margin-left: var(--s-#{$space-var});      }
+    .mr-#{$space} { margin-right: var(--s-#{$space-var});     }
+  }
+}
+
+// Spacing
+:root {
+  --s-0: 0;
+  --s-0-5: 0.125rem;
+  --s-1: 0.25rem;
+  --s-1-5: 0.375rem;
+  --s-2: 0.5rem;
+  --s-2-5: 0.625rem;
+  --s-3: 0.75rem;
+  --s-3-5: 0.875rem;
+  --s-4: 1rem;
+  --s-5: 1.25rem;
+  --s-6: 1.5rem;
+  --s-7: 1.75rem;
+  --s-8: 2rem;
+}
+
+// List section utility - keep above margin/padding to be overridable
+.list-section {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@include generate-spacing(("0", "0.5", "1", "1.5", "2", "2.5", "3", "3.5", "4", "5", "6", "7", "8" ));
+
+// Additional spacing (auto)
+.my-auto { margin-top: auto;
+           margin-bottom: auto;   }
+.mx-auto { margin-left: auto;
+           margin-right: auto;    }

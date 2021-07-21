@@ -1,31 +1,4 @@
-// Body scrollbar
-body {
-  &::-webkit-scrollbar-track {
-    background: var(--clr-scrollbar-bg);
-  }
-
-  &::-webkit-scrollbar {
-    width: 4px;
-    background: transparent;
-
-    @media screen and (min-width: $layout-medium-breakpoint) {
-      width: 8px;
-    }
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--clr-scrollbar-knob);
-    border-radius: var(--br-md);
-
-    &:hover {
-      background-color: var(--clr-scrollbar-knob-active);
-    }
-  }
-}
-
 .page-container {
-  transition: 0.3s ease all;
-  background: var(--clr-bg);
   width: 100vw;
   min-height: 100vh;
 }
@@ -35,60 +8,30 @@ body {
   position: sticky;
   top: 0;
   flex-flow: row wrap;
-  transition: 0.3s ease all;
   background: var(--clr-navbar-bg);
   box-shadow: var(--shd-el-01dp);
-  line-height: 0;
-  box-sizing: border-box;
   z-index: 1001;
   height: 128px;
   width: 100vw;
   padding-left: 0.25rem;
-  padding-right: 0.5rem;  // Pad to the right for the scrollbar (4px)
+  padding-right: 0.25rem;
 
   @media screen and (min-width: $layout-medium-breakpoint) {
     height: 112px;
     padding-left: 1rem;
-    padding-right: 1.25rem;
+    padding-right: 1rem;
   }
 
   @media screen and (min-width: 960px) {
-    // Difference in padding is due to the scrollbar (8px)
-    padding-left: calc((100% - 946px) / 2);
-    padding-right: calc((100% - 914px) / 2);
+    padding-left: calc((100% - 928px) / 2);
+    padding-right: calc((100% - 928px) / 2);
   }
 }
 
 .nav-title-wrapper {
-  padding: 0 0.25rem;
-
-  @media screen and (min-width: $layout-medium-breakpoint) {
-    padding: 0 1rem 0 0.25rem;
-  }
-
-  @media screen and (min-width: $layout-large-breakpoint) {
-    padding: 0 2rem 0 0.5rem;
-  }
-
   &:hover, &:focus, &:active {
     outline: 0;
     animation: none;
-  }
-}
-
-.nav-title {
-  font-size: var(--font-md);
-
-  @media screen and (min-width: 680px) {
-    font-size: var(--font-xl);
-  }
-}
-
-.nav-subtitle {
-  display: none;
-
-  @media screen and (min-width: $layout-large-breakpoint) {
-    display: block;
   }
 }
 
@@ -102,13 +45,11 @@ body {
 }
 
 img.nav-website-logo {
-  transition: 0.3s ease all;
   padding: 4px;
   width: 56px;
   height: 56px;
 
   @media screen and (min-width: $layout-medium-breakpoint) {
-    padding: 4px;
     width: 64px;
     height: 64px;
   }
@@ -116,17 +57,5 @@ img.nav-website-logo {
 
 // Content container
 .content {
-  transition: 0.3s ease all;
-  background: var(--clr-bg);
-  padding-right: 4px;  // Pad to the right for the scrollbar (4px)
-
-  @media screen and (min-width: $layout-medium-breakpoint) {
-    padding-right: 8px;  // Pad to the right for the scrollbar (8px)
-  }
-
-  @media screen and (min-width: 882px) {
-    // Difference in padding is due to the scrollbar (8px)
-    padding-left: calc((100% - 882px) / 2);
-    padding-right: calc((100% - 866px) / 2);
-  }
+  max-width: 874px;
 }

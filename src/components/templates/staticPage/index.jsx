@@ -45,10 +45,12 @@ const StaticPage = ({
       <Meta title={title} description={pageDescription} />
       <Shell>
         <PageTitle>{title}</PageTitle>
-        <p className='page-sub-title txt-100'>{subtitle}</p>
+        <p className='my-0 mx-3.5 txt-100'>{subtitle}</p>
         {cards.map(({ title, html }, i) => (
           <Card key={i}>
-            <h3 className='card-title txt-200 fs-xl f-alt'>{title}</h3>
+            <h3 className='card-title txt-200 fs-xl f-alt f-ellipsis'>
+              {title}
+            </h3>
             <div
               className='card-description'
               dangerouslySetInnerHTML={{ __html: html }}
@@ -57,13 +59,14 @@ const StaticPage = ({
         ))}
         {cookieSettingCard ? (
           <Card>
-            <h3 className='card-title txt-200 fs-xl f-alt'>
+            <h3 className='card-title txt-200 fs-xl f-alt f-ellipsis'>
               {cookieSettingCard.title}
             </h3>
             <div className='card-description'>
               <p>{cookieSettingCard.text}</p>
-              <label className='flex a-center md:fs-md checkbox-label'>
+              <label className='flex a-center md:fs-md'>
                 <input
+                  className='mr-2'
                   defaultChecked={!!acceptsCookies}
                   type='checkbox'
                   onChange={() => {

@@ -5,23 +5,13 @@
 .search-box::-webkit-input-placeholder {
   @include placeholder-styles;
 }
-.search-box:-ms-input-placeholder {
-  @include placeholder-styles;
-}
-.search-box:-moz-placeholder {
-  @include placeholder-styles;
-}
 .search-box::-moz-placeholder {
   @include placeholder-styles;
 }
 
 .search-wrapper {
-  position: relative;
   background: var(--clr-search-bg);
-  color: var(--clr-txt-100);
-  transition: 0.3s ease all;
   flex: 0 0 100%;
-  margin-bottom: 1rem;
 
   @media screen and (min-width: $layout-medium-breakpoint) {
     flex: 1 0 300px;
@@ -33,8 +23,8 @@
   }
 
   &::before {
-    font-size: 20px;
-    line-height: 44px;
+    box-sizing: border-box;
+    padding: 0.75rem 0;
     margin-left: 0.5rem;
     color: inherit;
     transition: 0.3s ease all;
@@ -52,11 +42,8 @@
 [type="search"].search-box {
   width: calc(100% - 36px);
   background: transparent;
-  vertical-align: top;
-  border: none;
-  outline: none;
-  box-sizing: border-box;
-  padding: 0.25rem 0.5rem;
+  border: 0;
+  outline: 0;
   font-size: var(--font-md);
   height: 44px;
 
@@ -71,8 +58,7 @@ a.search-btn[aria-hidden="true"] {
 
 .search-autocomplete-list {
   position: absolute;
-  width: calc(100% - 1.75rem);
-  margin: 0 0.5rem;
+  width: calc(100% - 0.5rem);
   top: 42px;
   list-style: none;
   border-radius: var(--br-none) var(--br-none) var(--br-md) var(--br-md);
@@ -81,12 +67,11 @@ a.search-btn[aria-hidden="true"] {
 
   @media screen and (min-width: $layout-medium-breakpoint) {
     margin: 0;
-    width: calc(100% - 1.25rem);
+    width: 100%;
   }
 
   > li {
     height: 42px;
-    margin-left: -1.25rem;
     border-top: 1px solid var(--clr-search-results-border);
     border-bottom: none;
 
@@ -95,16 +80,12 @@ a.search-btn[aria-hidden="true"] {
     }
 
     a {
-      padding: 0.5rem 0.75rem;
       height: 42px;
       box-sizing: border-box;
       align-items: baseline;
 
       .result-title {
-        text-overflow: ellipsis;
         white-space: nowrap;
-        overflow: hidden;
-        margin-right: 0.5rem;
       }
 
       .result-tag {

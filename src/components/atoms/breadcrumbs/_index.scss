@@ -1,15 +1,4 @@
-.breadcrumbs {
-  margin: 1rem 1rem 0;
-
-  ol {
-    padding: 0;
-    overflow: hidden;
-  }
-}
-
 .breadcrumb-item {
-  position: relative;
-
   &:not(:last-of-type) {
 
     &:after {
@@ -24,8 +13,6 @@
   &:last-of-type {
     flex: 1;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 
     a {
       pointer-events: none;

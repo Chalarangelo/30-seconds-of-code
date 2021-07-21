@@ -80,6 +80,9 @@ b, strong {
   font-weight: 600;
   -webkit-font-smoothing: antialiased;
 }
+em {
+  font-variation-settings: 'slnt' -6.0;
+}
 sup, sub, code, kbd {
   line-height: 0;
   position: relative;
@@ -90,7 +93,7 @@ blockquote {
   padding-left: 1.5rem;
   box-shadow: inset 4px 0 0 0 var(--clr-quote-border);
   font-style: italic;
-  line-height: 2;
+  font-variation-settings: 'slnt' -6.0;
   font-weight: 350;
 }
 // Style tabular content
@@ -120,4 +123,8 @@ table {
     border: 1px solid var(--clr-table-border);
     padding: 0.5rem;
   }
+}
+// Use pointer cursor for label
+label {
+  cursor: pointer;
 }

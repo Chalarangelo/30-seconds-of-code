@@ -1,4 +1,5 @@
 .btn {
+  position: relative;
   display: inline-block;
   padding: 0.625rem 0.875rem;
   margin: 0 0.5rem;
@@ -6,13 +7,13 @@
   -webkit-font-smoothing: antialiased;
   line-height: 1.5rem;
   cursor: pointer;
-  border: none;
+  border: 0;
   border-radius: var(--br-round);
   transition: 0.3s ease all;
 
   &:hover, &:focus {
     animation: none;
-    outline: none;
+    outline: 0;
   }
 
   // Utility for btn elements that look like actions
@@ -35,6 +36,13 @@
       background: var(--clr-primary-200);
       border: 2px solid var(--clr-primary-200);
       color: var(--clr-txt-200);
+    }
+  }
+
+  // Utility for btn elements that have an inline icon
+  &.icon-btn {
+    &:before {
+      vertical-align: bottom;
     }
   }
 }

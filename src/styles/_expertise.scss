@@ -4,9 +4,8 @@
   height: 1rem;
   background: var(--expertise-color);
   border: 2px solid var(--clr-el-02db);
-  box-sizing: border-box;
-  top: 0px;
-  right: 0px;
+  top: 0;
+  right: 0;
 
   &.beginner {
     --expertise-color: var(--clr-exp-beginner);

@@ -1,19 +1,16 @@
-.snippets-shelf-title,
-.collections-shelf-title {
+.shelf-title {
   display: block;
   width: 100%;
-  position: relative;
-  margin-top: 2rem;
+  --clr-el-link: var(--clr-txt-150);
 
   &::before, &::after {
-    color: var(--clr-txt-150);
+    color: var(--clr-el-link);
     transition: 0.3s ease all;
   }
 
   &:hover, &:focus {
-    &::before, &::after {
-      color: var(--clr-primary-050);
-    }
+    animation: none;
+    --clr-el-link: var(--clr-primary-050);
   }
 
   &::before {
@@ -21,7 +18,6 @@
     position: absolute;
     right: 0.875rem;
     bottom: 0.625rem;
-    font-size: 20px;
     pointer-events: all;
   }
 
@@ -44,11 +40,7 @@
   }
 }
 
-.shelf-list {
-  padding: 0;
-  list-style: none;
-}
-
+// TODO: Figure out if this can be built with utils
 .snippets-shelf-list {
   margin: 0 0 5rem;
 }

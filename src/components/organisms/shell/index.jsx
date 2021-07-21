@@ -27,7 +27,7 @@ const Shell = ({ isSearch = false, children }) => {
   return (
     <div className='page-container'>
       <header
-        className='nav-bar flex j-center a-center'
+        className='nav-bar flex j-center a-center box-border'
         role='navigation'
         aria-label='Main'
       >
@@ -44,18 +44,20 @@ const Shell = ({ isSearch = false, children }) => {
         </Link>
         <Link href='/'>
           <a
-            className='nav-title-wrapper flex flex-col flex-none'
+            className='nav-title-wrapper py-0 pl-2 pr-8 flex flex-col flex-none'
             aria-label={literals.home}
           >
-            <h1 className='nav-title m-0 txt-200 f-alt'>{literals.siteName}</h1>
-            <p className='nav-subtitle m-0 txt-100'>
+            <h1 className='fs-md md:fs-lg lg:fs-xl m-0 txt-200 f-alt'>
+              {literals.siteName}
+            </h1>
+            <p className='fs-no lg:fs-sm m-0 txt-100'>
               {literals.siteDescription}
             </p>
           </a>
         </Link>
         <Search isMainSearch={isSearch} />
       </header>
-      <div className='content'>
+      <div className='content my-0 mx-auto'>
         {children}
         <Footer />
       </div>

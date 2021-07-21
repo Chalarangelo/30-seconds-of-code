@@ -7,28 +7,9 @@ pre {
   margin: 0.5rem 0;
   border: 0;
   white-space: pre-wrap;
-
-  &::-webkit-scrollbar-track {
-    background: var(--clr-code-scrollbar-bg);
-  }
-
-  &::-webkit-scrollbar {
-    background: transparent;
-    height: 4px;
-
-    @media screen and (min-width: $layout-medium-breakpoint) {
-      height: 8px;
-    }
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--clr-code-scrollbar-knob);
-    border-radius: var(--br-md);
-
-    &:hover {
-      background-color: var(--clr-code-scrollbar-knob-active);
-    }
-  }
+  --clr-el-scrollbar-bg: var(--clr-code-scrollbar-bg);
+  --clr-el-scrollbar-knob: var(--clr-code-scrollbar-knob);
+  --clr-el-scrollbar-knob-active: var(--clr-code-scrollbar-knob-active);
 }
 
 pre[class*="language-"] {
@@ -90,9 +71,6 @@ pre[data-code-language]:not([data-code-language=""]) {
   }
   &.important, &.bold {
     font-weight: 500;
-  }
-  &.entity {
-    cursor: help;
   }
 }
 

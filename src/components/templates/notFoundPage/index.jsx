@@ -19,16 +19,16 @@ const NotFoundPage = () => (
       <PageBackdrop
         backdropImage='/assets/plane.png'
         mainTextClassName='fs-xl'
+        subTextClassName='mb-5'
         mainText={
           <>
-            <strong>{literals.pageNotFound}</strong>
-            <br />
+            <span className='txt-150'>{literals.pageNotFound}</span>
           </>
         }
         subText={literals.notFoundDescription}
       >
         <Link href='/'>
-          <a className='btn outline-btn btn-home fs-md icon icon-home'>
+          <a className='btn outline-btn icon-btn btn-home fs-md icon icon-home before:fs-md'>
             {literals.goHome}
           </a>
         </Link>

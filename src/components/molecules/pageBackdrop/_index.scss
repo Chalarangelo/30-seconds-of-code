@@ -1,7 +1,5 @@
 // Page background graphic
-.page-graphic {
-  position: relative;
-  box-sizing: border-box;
+.page-backdrop {
   margin-top: 50px;
   margin-bottom: 40vh;
   width: 100%;
@@ -12,34 +10,11 @@
     top: 50%;
     left: 50%;
     position: absolute;
-    content: '';
     max-width: 60vmin;
     transform: translate(-50%, -50%);
   }
-}
 
-.page-backdrop-text,
-.page-backdrop-subtext {
-  max-width: 200px;
-}
-
-// Empty page text
-.page-backdrop-text {
-  margin: 2.25rem auto 0.75rem;
-
-  strong {
-    color: var(--clr-txt-150);
-  }
-
-  @media screen and (min-width: $layout-medium-breakpoint) {
-    max-width: 400px;
-  }
-}
-
-.page-backdrop-subtext {
-  margin: 0.5rem auto;
-
-  @media screen and (min-width: $layout-medium-breakpoint) {
-    max-width: 256px;
+  p {
+    max-width: 278px;
   }
 }

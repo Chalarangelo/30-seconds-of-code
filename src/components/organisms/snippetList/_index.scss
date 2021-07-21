@@ -3,7 +3,6 @@
   &.with-image {
 
     .page-title {
-      display: block;
       text-align: center;
     }
 
@@ -26,14 +25,11 @@
 }
 
 .snippet-list-description {
-  margin: 1rem 0.875rem 0.5rem;
-  line-height: 2;
+  line-height: 2rem;
 }
 
 .snippet-list-splash-image {
-  margin: 0.5rem 0.875rem 0.5rem;
   width: calc(100% - 1.75rem);
-  text-align: center;
 
   &, img {
     max-height: 25vh;
