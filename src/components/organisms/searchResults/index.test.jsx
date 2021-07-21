@@ -23,7 +23,7 @@ describe('<SearchResults />', () => {
   afterEach(cleanup);
 
   it('should render properly', () => {
-    expect(wrapper.querySelectorAll('.page-graphic')).toHaveLength(1);
+    expect(wrapper.querySelectorAll('.page-backdrop')).toHaveLength(1);
   });
 
   describe('with recommended snippets', () => {
@@ -52,8 +52,8 @@ describe('<SearchResults />', () => {
   });
 
   describe('with no search query', () => {
-    it('should render the correct page graphic', () => {
-      expect(wrapper.querySelectorAll('.page-graphic')).toHaveLength(1);
+    it('should render the correct page backdrop', () => {
+      expect(wrapper.querySelectorAll('.page-backdrop')).toHaveLength(1);
     });
   });
 
@@ -72,8 +72,8 @@ describe('<SearchResults />', () => {
       }).container;
     });
 
-    it('should render the correct page graphic', () => {
-      expect(wrapper.querySelectorAll('.page-graphic')).toHaveLength(1);
+    it('should render the correct page backdrop', () => {
+      expect(wrapper.querySelectorAll('.page-backdrop')).toHaveLength(1);
     });
   });
 
