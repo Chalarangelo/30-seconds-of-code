@@ -35,7 +35,7 @@ describe('<SearchPage />', () => {
     });
 
     it('a SearchResults component', () => {
-      expect(wrapper.querySelectorAll('.search-page-text')).toHaveLength(1);
+      expect(wrapper.querySelectorAll('.page-backdrop')).toHaveLength(1);
     });
   });
 

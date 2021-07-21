@@ -14,51 +14,24 @@
   height: 128px;
   width: 100vw;
   padding-left: 0.25rem;
-  padding-right: 0.5rem;  // Pad to the right for the scrollbar (4px)
+  padding-right: 0.25rem;
 
   @media screen and (min-width: $layout-medium-breakpoint) {
     height: 112px;
     padding-left: 1rem;
-    padding-right: 1.25rem;
+    padding-right: 1rem;
   }
 
   @media screen and (min-width: 960px) {
-    // Difference in padding is due to the scrollbar (8px)
-    padding-left: calc((100% - 946px) / 2);
-    padding-right: calc((100% - 914px) / 2);
+    padding-left: calc((100% - 928px) / 2);
+    padding-right: calc((100% - 928px) / 2);
   }
 }
 
 .nav-title-wrapper {
-  padding: 0 0.25rem;
-
-  @media screen and (min-width: $layout-medium-breakpoint) {
-    padding: 0 1rem 0 0.25rem;
-  }
-
-  @media screen and (min-width: $layout-large-breakpoint) {
-    padding: 0 2rem 0 0.5rem;
-  }
-
   &:hover, &:focus, &:active {
     outline: 0;
     animation: none;
-  }
-}
-
-.nav-title {
-  font-size: var(--font-md);
-
-  @media screen and (min-width: 680px) {
-    font-size: var(--font-xl);
-  }
-}
-
-.nav-subtitle {
-  display: none;
-
-  @media screen and (min-width: $layout-large-breakpoint) {
-    display: block;
   }
 }
 

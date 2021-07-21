@@ -79,7 +79,7 @@ const Search = ({ isMainSearch = false }) => {
 
   return (
     <div
-      className='search-wrapper relative mb-2 flex br-md icon icon-search before:fs-sm'
+      className='search-wrapper relative mb-2 flex br-md txt-100 icon icon-search before:fs-sm'
       onKeyUp={e => {
         e.preventDefault();
         if (isMainSearch || !hasResults) return;
