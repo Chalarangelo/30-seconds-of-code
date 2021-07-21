@@ -73,12 +73,12 @@ const SearchResults = ({ recommendedSnippets = [] }) => {
           ) : (
             <>
               {literals.noResults}
-              <strong>{searchQuery}</strong>
+              <span className='txt-150'>{searchQuery}</span>
               {'.'}
             </>
           )
         }
-        mainTextClassName='search-page-text fs-lg'
+        mainTextClassName='fs-lg'
       />
       {recommendedSnippets.length ? (
         <RecommendationList snippetList={recommendedSnippets} />

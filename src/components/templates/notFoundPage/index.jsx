@@ -22,8 +22,7 @@ const NotFoundPage = () => (
         subTextClassName='mb-5'
         mainText={
           <>
-            <strong>{literals.pageNotFound}</strong>
-            <br />
+            <span className='txt-150'>{literals.pageNotFound}</span>
           </>
         }
         subText={literals.notFoundDescription}

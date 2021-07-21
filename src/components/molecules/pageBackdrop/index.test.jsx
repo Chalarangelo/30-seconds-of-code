@@ -23,16 +23,12 @@ describe('<PageBackdrop />', () => {
 
   afterEach(cleanup);
 
-  it('should render a page graphic', () => {
-    expect(wrapper.querySelectorAll('.page-graphic')).toHaveLength(1);
+  it('should render a page backdrop', () => {
+    expect(wrapper.querySelectorAll('.page-backdrop')).toHaveLength(1);
   });
 
-  it('should render page backdrop main text', () => {
-    expect(wrapper.querySelectorAll('.page-backdrop-text')).toHaveLength(1);
-  });
-
-  it('should render page backdrop subtext', () => {
-    expect(wrapper.querySelectorAll('.page-backdrop-subtext')).toHaveLength(1);
+  it('should render page backdrop main text and subtext', () => {
+    expect(wrapper.querySelectorAll('.page-backdrop > p')).toHaveLength(2);
   });
 
   it('should pass graphic name to PageGraphic', () => {
@@ -46,15 +42,15 @@ describe('<PageBackdrop />', () => {
   });
 
   it('should pass mainTextClassName to main text', () => {
-    expect(wrapper.querySelector('.page-backdrop-text').className).toContain(
-      mainTextClassName
-    );
+    expect(
+      wrapper.querySelector('.page-backdrop p:first-of-type').className
+    ).toContain(mainTextClassName);
   });
 
   it('should pass subTextClassName to subtext', () => {
-    expect(wrapper.querySelector('.page-backdrop-subtext').className).toContain(
-      subTextClassName
-    );
+    expect(
+      wrapper.querySelector('.page-backdrop p:last-of-type').className
+    ).toContain(subTextClassName);
   });
 
   it('should render subtext', () => {
@@ -73,7 +69,7 @@ describe('<PageBackdrop />', () => {
     });
 
     it('should not render subText', () => {
-      expect(wrapper.textContent).not.toContain(subText);
+      expect(wrapper.querySelectorAll('.page-backdrop > p')).toHaveLength(1);
     });
   });
 });
