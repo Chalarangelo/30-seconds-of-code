@@ -21,7 +21,7 @@ Breaking any of these rules will result in your pull request being closed. Pleas
 
 In order to create a new snippet, you should follow the steps below:
 
-- Crate a copy of the [snippet template](snippet-template.md) in the `snippets` directory.
+- Create a copy of the [snippet template](snippet-template.md) in the `snippets` directory.
 - Change the name of the newly created file to the name of your snippet.
 - Edit the file, adding your snippet based on the guidelines.
 
