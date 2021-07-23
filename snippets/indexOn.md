@@ -22,6 +22,6 @@ const indexOn = (arr, key) =>
 indexOn([
   { id: 10, name: 'apple' },
   { id: 20, name: 'orange' }
-], x => x.id);
+], 'id');
 // { '10': { name: 'apple' }, '20': { name: 'orange' } }
 ```
