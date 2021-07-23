@@ -21,12 +21,13 @@ Breaking any of these rules will result in your pull request being closed. Pleas
 
 In order to create a new snippet, you should follow the steps below:
 
-- Crate a copy of the [snippet template](snippet-template.md) in the `snippets` directory.
+- Create a copy of the [snippet template](snippet-template.md) in the `snippets` directory.
 - Change the name of the newly created file to the name of your snippet.
 - Edit the file, adding your snippet based on the guidelines.
 
 ## Snippet guidelines
 
+- Snippet must follow [these general writing guidelines](https://github.com/30-seconds/brand-and-design/blob/master/writing-guidelines.md).
 - Snippets must have all their frontmatter sections (title, tags etc.) filled.
 - Snippet titles must correspond to the filename and follow the language and repository's naming conventions.
 - Snippet tags must be comma-separated, contain a primary tag as seen on the website as their first tag and an expertise tag (`beginner`, `intermediate` or `advanced`) as their last tag.
