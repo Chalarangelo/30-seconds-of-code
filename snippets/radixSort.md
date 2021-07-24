@@ -18,24 +18,25 @@ Sorts an array of numbers, using the radix sort algorithm.
 - Use the spread operator (`...`) to clone the original array, `nums`.
 
 ```js
-const getDigit = (value, pos) => {
-  return Math.floor(Math.abs(value) / Math.pow(10,pos)) % 10;
-}
-
-const digitCount = number => {
-  if(number == 0) return 1;
-  return Math.floor(Math.log10(Math.abs(number))) + 1;
-}
-
-const mostDigits = nums => {
-  let maxDigits = 0;
-  for(let i=0;i<nums.length;i++){
-      maxDigits = Math.max(maxDigits, digitCount(nums[i]));
-  }
-  return maxDigits;
-}
-
 const radixSort = nums => {
+  const getDigit = (value, pos) => {
+    return Math.floor(Math.abs(value) / Math.pow(10,pos)) % 10;
+  }
+
+  const digitCount = number => {
+    if(number == 0) return 1;
+    return Math.floor(Math.log10(Math.abs(number))) + 1;
+  }
+
+  const mostDigits = nums => {
+    let maxDigits = 0;
+    for(let i=0;i<nums.length;i++){
+        maxDigits = Math.max(maxDigits, digitCount(nums[i]));
+    }
+    return maxDigits;
+  }
+
+
   let largest_digit_length = mostDigits(nums);
   for (let i = 0; i < largest_digit_length; i++) {        
     let digitBuckets = Array.from({ length: 10 }, () => []);        
