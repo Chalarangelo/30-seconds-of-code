@@ -18,7 +18,7 @@ const addEventListenerAll = (targets, type, listener, options, useCapture) => {
 ```
 
 ```js
-addAllEventListeners(document.querySelectorAll('a'), 'click', () =>
+addEventListenerAll(document.querySelectorAll('a'), 'click', () =>
   console.log('Clicked a link')
 );
 // Logs 'Clicked a link' whenever any anchor element is clicked
