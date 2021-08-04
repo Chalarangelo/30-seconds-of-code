@@ -8,22 +8,34 @@ lastUpdated: 2020-12-27T22:44:32+02:00
 Sorts an array of numbers, using the merge sort algorithm.
 
 - Use recursion.
-- If the `length` of the array is less than `2`, return the array.
-- Use `Math.floor()` to calculate the middle point of the array.
-- Use `Array.prototype.slice()` to slice the array in two and recursively call `mergeSort()` on the created subarrays.
-- Finally, use `Array.from()` and `Array.prototype.shift()` to combine the two sorted subarrays into one.
+- Check arguments for negative values.
+- If the `length` of the array is less than `2`, return the copy of the array using `Array.prototype.slice()`.
+- Use bitwise operator to calculate the middle point of the array.
+- Use the recursive call of `mergeSort()` to get two sorted halves of the array.
+- Сombine the halves into one sorted array.
+- Copy the remaining elements of the first half if there are any.
+- Copy the remaining elements of the second half if there are any.
+- Omit the second argument `start` to sort the elements from the beginning of the array up to, but not including, the element at index `end`.
+- Omit the third argument `end` to sort the elements from index `start` to the end of the array.
+- Omit both arguments (`start`, `end`) to sort all the elements in the array.
 
 ```js
-const mergeSort = arr => {
-  if (arr.length < 2) return arr;
-  const mid = Math.floor(arr.length / 2);
-  const l = mergeSort(arr.slice(0, mid));
-  const r = mergeSort(arr.slice(mid, arr.length));
-  return Array.from({ length: l.length + r.length }, () => {
-    if (!l.length) return r.shift();
-    else if (!r.length) return l.shift();
-    else return l[0] > r[0] ? r.shift() : l.shift();
-  });
+const mergeSort = (arr, start = 0, end = arr.length) => {
+  if (start < 0) start = 0;
+  if (end < 0) end = 0;
+  if (end - start < 2) return arr.slice(start, end);
+  const mid = (start + end) >> 1;
+  const left = mergeSort(arr, start, mid);
+  const right = mergeSort(arr, mid, end);
+  const result = [];
+  let l = 0, r = 0;
+  while (l < left.length && r < right.length) {
+    if (left[l] > right[r]) result.push(right[r++]);
+    else result.push(left[l++]);
+  }
+  while (l < left.length) result.push(left[l++]);
+  while (r < right.length) result.push(right[r++]);
+  return result;
 };
 ```
 
