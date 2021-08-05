@@ -45,7 +45,7 @@ const TabItem = props => <div {...props} />;
 const Tabs = ({ defaultIndex = 0, onTabClick, children }) => {
   const [bindIndex, setBindIndex] = React.useState(defaultIndex);
   const changeTab = newIndex => {
-    if (typeof onItemClick === 'function') onItemClick(itemIndex);
+    if (typeof onTabClick === 'function') onTabClick(newIndex);
     setBindIndex(newIndex);
   };
   const items = children.filter(item => item.type.name === 'TabItem');
