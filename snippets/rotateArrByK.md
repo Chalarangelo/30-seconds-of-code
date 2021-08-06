@@ -2,7 +2,7 @@
 title: rotateArrByK
 tags: array,intermediate
 firstSeen: 2021-08-06T10:58:54+00:00
-lastUpdated: 2021-08-06T11:23:27+00:00
+lastUpdated: 2021-08-06T11:49:53+00:00
 ---
 
 Rotates the given array by k to either left or right direction.
@@ -24,7 +24,6 @@ const rotateArrByK = (arr, k) =>
     return arr; 
   };
 
-// Helper function
 const reversePortion = (arr, start, end) =>
   {
     while(start < end){
