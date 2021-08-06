@@ -5,9 +5,9 @@ firstSeen: 2021-08-06T10:58:54+00:00
 lastUpdated: 2021-08-06T11:23:27+00:00
 ---
 
-Rotates the given array by k to either clockwise or anti-clockwise direction.
+Rotates the given array by k to either left or right direction.
 
-- Use a helper function i.e. `reversePortion` to reverse the portion of the array.
+- Use a helper function i.e. `reversePortion` to reverse a portion of the given array.
 - If value `k` is not in the valid range of array `arr`, then take the modulus of `k` using `Array.prototype.length` to bring `k` into the range of array `arr`.
 - If `k` is negative, rotate the array `arr` by `k` units to the left otherwise by `k` units to the right.
 
