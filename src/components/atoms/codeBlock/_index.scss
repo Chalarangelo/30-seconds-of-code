@@ -30,7 +30,7 @@ pre[data-code-language]:not([data-code-language=""]) {
     content: attr(data-code-language);
   }
 
-  &.language-shell {
+  &:not(.card-example).language-shell {
     &::before {
       content: 'Shell';
     }
