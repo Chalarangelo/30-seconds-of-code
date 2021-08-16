@@ -10,7 +10,7 @@ Pushes the current branch's changes to the remote.
 - Use `git push` to push the latest changes from the local branch to the remote.
 
 ```shell
-git fetch
+git push
 ```
 
 ```shell
