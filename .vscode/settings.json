@@ -21,5 +21,9 @@
     "editor.formatOnSaveMode": "file",
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
+  "[scss]": {
+    "editor.formatOnSaveMode": "file",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
   "workbench.editor.labelFormat": "short"
 }
