@@ -1,7 +1,5 @@
 .snippet-list-header {
-
   &.with-image {
-
     .page-title {
       text-align: center;
     }
@@ -31,7 +29,8 @@
 .snippet-list-splash-image {
   width: calc(100% - 1.75rem);
 
-  &, img {
+  &,
+  img {
     max-height: 25vh;
   }
 

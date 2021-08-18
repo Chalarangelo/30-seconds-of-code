@@ -63,7 +63,9 @@
     grid-column: 1/3;
     margin: 0;
 
-    > p, li, li > p {
+    > p,
+    li,
+    li > p {
       font-size: var(--font-sm);
       line-height: 2rem;
 
@@ -73,7 +75,6 @@
     }
 
     > p {
-
       &:not(.card-fw-section) {
         margin: 1.5rem 0 0;
       }
@@ -87,7 +88,8 @@
       }
     }
 
-    ul, ol {
+    ul,
+    ol {
       margin: 1rem 0 0;
     }
 

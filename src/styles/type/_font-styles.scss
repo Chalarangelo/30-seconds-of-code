@@ -1,16 +1,25 @@
 // Alternative font
 .f-alt {
-  &, > a:any-link {
+  &,
+  > a:any-link {
     font-family: 'Raleway', Helvetica, sans-serif;
     letter-spacing: 0.25px;
-    font-feature-settings: "ss02", "lnum", "kern";
+    font-feature-settings: 'ss02', 'lnum', 'kern';
   }
 }
 
-.f-left     { text-align: left;    }
-.f-right    { text-align: right;   }
-.f-center   { text-align: center;  }
-.f-justify  { text-align: justify; }
+.f-left {
+  text-align: left;
+}
+.f-right {
+  text-align: right;
+}
+.f-center {
+  text-align: center;
+}
+.f-justify {
+  text-align: justify;
+}
 
 .f-ellipsis {
   overflow: hidden;

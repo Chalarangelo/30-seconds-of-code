@@ -12,11 +12,11 @@ pre {
   --clr-el-scrollbar-knob-active: var(--clr-code-scrollbar-knob-active);
 }
 
-pre[class*="language-"] {
-  padding: 1rem .875rem;
+pre[class*='language-'] {
+  padding: 1rem 0.875rem;
 }
 
-pre[data-code-language]:not([data-code-language=""]) {
+pre[data-code-language]:not([data-code-language='']) {
   padding-top: 2.625rem;
 
   &::before {
@@ -24,8 +24,8 @@ pre[data-code-language]:not([data-code-language=""]) {
     font-size: inherit;
     color: var(--clr-txt-100);
     position: absolute;
-    top: .8725rem;
-    left: .8725rem;
+    top: 0.8725rem;
+    left: 0.8725rem;
     display: block;
     content: attr(data-code-language);
   }
@@ -38,42 +38,67 @@ pre[data-code-language]:not([data-code-language=""]) {
 }
 
 .namespace {
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .token {
-  &.comment, &.prolog, &.doctype, &.cdata {
+  &.comment,
+  &.prolog,
+  &.doctype,
+  &.cdata {
     color: var(--clr-tkn-a);
   }
   &.punctuation {
     color: var(--clr-tkn-b);
   }
-  &.property, &.tag, &.boolean, &.constant, &.symbol, &.deleted, &.function {
+  &.property,
+  &.tag,
+  &.boolean,
+  &.constant,
+  &.symbol,
+  &.deleted,
+  &.function {
     color: var(--clr-tkn-c);
   }
-  &.number, &.class-name {
+  &.number,
+  &.class-name {
     color: var(--clr-tkn-d);
   }
-  &.selector, &.attr-name, &.string, &.char, &.builtin, &.inserted {
+  &.selector,
+  &.attr-name,
+  &.string,
+  &.char,
+  &.builtin,
+  &.inserted {
     color: var(--clr-tkn-e);
   }
-  &.operator, &.entity, &.url, &.atrule, &.attr-value, &.keyword, &.interpolation-punctuation {
+  &.operator,
+  &.entity,
+  &.url,
+  &.atrule,
+  &.attr-value,
+  &.keyword,
+  &.interpolation-punctuation {
     color: var(--clr-tkn-f);
   }
   &.regex {
     color: var(--clr-tkn-g);
   }
-  &.important, &.variable {
+  &.important,
+  &.variable {
     color: var(--clr-tkn-h);
   }
-  &.italic, &.comment {
+  &.italic,
+  &.comment {
     font-style: italic;
   }
-  &.important, &.bold {
+  &.important,
+  &.bold {
     font-weight: 500;
   }
 }
 
-.language-css .token.string, .style .token.string {
+.language-css .token.string,
+.style .token.string {
   color: var(--clr-tkn-f);
 }

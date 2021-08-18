@@ -29,7 +29,9 @@
 }
 
 .nav-title-wrapper {
-  &:hover, &:focus, &:active {
+  &:hover,
+  &:focus,
+  &:active {
     outline: 0;
     animation: none;
   }

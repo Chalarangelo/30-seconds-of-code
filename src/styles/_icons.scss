@@ -1,6 +1,7 @@
 @font-face {
-  font-family: "icons";
-  src: url("../../assets/icons.woff2?7b75bb74fae8ea702f596c5be05035f5") format("woff2");
+  font-family: 'icons';
+  src: url('../../assets/icons.woff2?7b75bb74fae8ea702f596c5be05035f5')
+    format('woff2');
 }
 
 .icon:before {
@@ -15,56 +16,56 @@
 }
 
 .icon.icon-blog:before {
-  content: "\f101";
+  content: '\f101';
 }
 .icon.icon-check:before {
-  content: "\f102";
+  content: '\f102';
 }
 .icon.icon-chevron-left:before {
-  content: "\f103";
+  content: '\f103';
 }
 .icon.icon-chevron-right:before {
-  content: "\f104";
+  content: '\f104';
 }
 .icon.icon-clipboard:before {
-  content: "\f105";
+  content: '\f105';
 }
 .icon.icon-codepen:before {
-  content: "\f106";
+  content: '\f106';
 }
 .icon.icon-css:before {
-  content: "\f107";
+  content: '\f107';
 }
 .icon.icon-git:before {
-  content: "\f108";
+  content: '\f108';
 }
 .icon.icon-github:before {
-  content: "\f109";
+  content: '\f109';
 }
 .icon.icon-home:before {
-  content: "\f10a";
+  content: '\f10a';
 }
 .icon.icon-js:before {
-  content: "\f10b";
+  content: '\f10b';
 }
 .icon.icon-node:before {
-  content: "\f10c";
+  content: '\f10c';
 }
 .icon.icon-python:before {
-  content: "\f10d";
+  content: '\f10d';
 }
 .icon.icon-react:before {
-  content: "\f10e";
+  content: '\f10e';
 }
 .icon.icon-search:before {
-  content: "\f10f";
+  content: '\f10f';
 }
 .icon.icon-share:before {
-  content: "\f110";
+  content: '\f110';
 }
 
-.card-icon, 
-.btn { 
+.card-icon,
+.btn {
   &.icon-js {
     background: #f6d854;
     color: #392f31;
