@@ -1,11 +1,13 @@
 .paginator {
-
-  .btn, a.btn, span {
+  .btn,
+  a.btn,
+  span {
     min-width: 44px;
     text-align: center;
   }
 
-  .previous-page, .next-page {
+  .previous-page,
+  .next-page {
     color: var(--clr-primary-050);
     display: flex;
   }

@@ -1,7 +1,7 @@
 // Typography definitions
 //  Numeric values represent the strength/opacity of the font color
 
-@mixin generate-text-colors ($txts) {
+@mixin generate-text-colors($txts) {
   @each $txt in $txts {
     $txt-name: $txt;
     @if $txt-name == 050 {
@@ -12,8 +12,9 @@
       color: var(--clr-txt-#{$txt-name});
 
       @if $txt != '200' {
-        b, strong {
-          color: var(--clr-txt-#{$txt+50});
+        b,
+        strong {
+          color: var(--clr-txt-#{$txt + 50});
         }
       }
     }
@@ -22,10 +23,10 @@
 
 // Colors
 :root {
-  --clr-txt-200: hsla(0, 0%, 100%, .95);
+  --clr-txt-200: hsla(0, 0%, 100%, 0.95);
   --clr-txt-150: hsla(0, 0%, 100%, 0.87);
-  --clr-txt-100: hsla(0, 0%, 100%, .76);
-  --clr-txt-050: hsla(0, 0%, 100%, .64);
+  --clr-txt-100: hsla(0, 0%, 100%, 0.76);
+  --clr-txt-050: hsla(0, 0%, 100%, 0.64);
 }
 
 @include generate-text-colors((200, 150, 100, 050));

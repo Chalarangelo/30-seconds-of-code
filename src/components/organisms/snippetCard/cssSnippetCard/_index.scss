@@ -1,15 +1,14 @@
 .snippet-card {
-
   .card-preview-content {
     .snippet-preview-title {
       font-weight: 600;
       -webkit-font-smoothing: antialiased;
-      margin: 2.5rem 0 -2.5rem .875rem;
+      margin: 2.5rem 0 -2.5rem 0.875rem;
     }
 
     .snippet-preview {
       background: var(--clr-snippet-preview-bg);
-      padding: 3.25rem .875rem .75rem;
+      padding: 3.25rem 0.875rem 0.75rem;
       border-bottom-left-radius: var(--br-none);
       border-bottom-right-radius: var(--br-none);
     }
@@ -26,7 +25,7 @@
 }
 
 // Overrides for some problematic snippets
-[data-scope="full-width"] .full-width {
+[data-scope='full-width'] .full-width {
   left: 0 !important;
   right: 0 !important;
   margin-left: -1.375rem !important;

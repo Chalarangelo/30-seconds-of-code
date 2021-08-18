@@ -1,7 +1,7 @@
 // Typography definitions
 //  Names represent the size of each font in the scale
 
-@mixin generate-font-sizes ($sizes) {
+@mixin generate-font-sizes($sizes) {
   @each $size in $sizes {
     .fs-#{$size} {
       font-size: var(--font-#{$size});
@@ -24,22 +24,29 @@
 // Font sizes
 //  Sizes are calculated with a base size of 16px
 :root {
-  --font-no: 0;             // hidden
-  --font-mi: 0.75rem;       // 12px
-  --font-xs: 0.875rem;      // 14px
-  --font-sm: 1rem;          // 16px
-  --font-md: 1.125rem;      // 18px
-  --font-lg: 1.25rem;       // 20px
-  --font-xl: 1.5rem;        // 24px
-  --font-x2: 2rem;          // 32px
-  --font-x3: 2.5rem;        // 40px
+  --font-no: 0; // hidden
+  --font-mi: 0.75rem; // 12px
+  --font-xs: 0.875rem; // 14px
+  --font-sm: 1rem; // 16px
+  --font-md: 1.125rem; // 18px
+  --font-lg: 1.25rem; // 20px
+  --font-xl: 1.5rem; // 24px
+  --font-x2: 2rem; // 32px
+  --font-x3: 2.5rem; // 40px
 }
 
-@include generate-font-sizes(('no', 'mi', 'xs', 'sm', 'md', 'lg', 'xl', 'x2', 'x3'));
+@include generate-font-sizes(
+  ('no', 'mi', 'xs', 'sm', 'md', 'lg', 'xl', 'x2', 'x3')
+);
 
 // :before pseudo element font sizes
 //   Sizes are used mainly for styling icons
-.before\:fs-sm:before { font-size: 20px; }
-.before\:fs-md:before { font-size: 24px; }
-.before\:fs-lg:before { font-size: 36px; }
-
+.before\:fs-sm:before {
+  font-size: 20px;
+}
+.before\:fs-md:before {
+  font-size: 24px;
+}
+.before\:fs-lg:before {
+  font-size: 36px;
+}
