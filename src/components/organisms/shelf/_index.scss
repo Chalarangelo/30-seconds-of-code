@@ -3,12 +3,14 @@
   width: 100%;
   --clr-el-link: var(--clr-txt-150);
 
-  &::before, &::after {
+  &::before,
+  &::after {
     color: var(--clr-el-link);
     transition: 0.3s ease all;
   }
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     animation: none;
     --clr-el-link: var(--clr-primary-050);
   }
@@ -36,7 +38,6 @@
       line-height: 2.5rem;
       pointer-events: all;
     }
-
   }
 }
 

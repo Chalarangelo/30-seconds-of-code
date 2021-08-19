@@ -1,10 +1,28 @@
 // Display, flex, grid, position, box-sizing
-.inline-block { display: inline-block; }
-.flex         { display: flex; }
-.grid         { display: grid; }
-.flex-col     { flex-direction: column; }
-.j-center     { justify-content: center; }
-.a-center     { align-items: center; }
-.flex-none    { flex: none; }
-.relative     { position: relative; }
-.box-border   { box-sizing: border-box; }
+.inline-block {
+  display: inline-block;
+}
+.flex {
+  display: flex;
+}
+.grid {
+  display: grid;
+}
+.flex-col {
+  flex-direction: column;
+}
+.j-center {
+  justify-content: center;
+}
+.a-center {
+  align-items: center;
+}
+.flex-none {
+  flex: none;
+}
+.relative {
+  position: relative;
+}
+.box-border {
+  box-sizing: border-box;
+}

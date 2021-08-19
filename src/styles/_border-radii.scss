@@ -1,7 +1,7 @@
 // Border radius definitions
 //  Names represent sizes
 
-@mixin generate-border-radii ($radii) {
+@mixin generate-border-radii($radii) {
   @each $radius in $radii {
     .br-#{$radius} {
       border-radius: var(--br-#{$radius});

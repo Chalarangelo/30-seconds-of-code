@@ -5,7 +5,8 @@ a {
     color: var(--clr-primary-050);
   }
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     animation-name: animated-underline;
     animation-iteration-count: 1;
     animation-duration: 0.3s;
@@ -14,7 +15,6 @@ a {
   }
 
   &.inherit {
-
     &:any-link {
       color: inherit;
     }

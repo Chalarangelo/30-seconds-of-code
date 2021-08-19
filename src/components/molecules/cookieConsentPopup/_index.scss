@@ -1,6 +1,10 @@
 @keyframes enter-from-below {
-  from { transform: translateY(100%);}
-  to { transform: translateY(0%); }
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
 }
 
 .cookie-consent-popup {
@@ -13,7 +17,8 @@
   overflow-y: auto;
   animation: enter-from-below 0.3s ease 0s;
 
-  > p, .cookie-consent-buttons {
+  > p,
+  .cookie-consent-buttons {
     max-width: 680px;
   }
 

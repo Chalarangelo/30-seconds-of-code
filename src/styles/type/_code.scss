@@ -16,18 +16,20 @@
   --clr-code-scrollbar-knob: hsl(225, 22%, 21%);
   --clr-code-scrollbar-knob-active: hsl(225, 20%, 25%);
 
-  --clr-tkn-a: hsl(199, 17%, 57%);   // Comments
-  --clr-tkn-b: hsl(0, 0%, 74%);   // Punctuation
-  --clr-tkn-c: hsl(207, 89%, 68%);   // Functions
-  --clr-tkn-d: hsl(34, 100%, 50%);   // Numbers
-  --clr-tkn-e: hsl(88, 50%, 76%);   // Strings
-  --clr-tkn-f: hsl(291, 47%, 71%);   // Keywords
-  --clr-tkn-g: hsl(187, 71%, 50%);   // Regular expressions
-  --clr-tkn-h: hsl(0, 69%, 67%);   // Variables
+  --clr-tkn-a: hsl(199, 17%, 57%); // Comments
+  --clr-tkn-b: hsl(0, 0%, 74%); // Punctuation
+  --clr-tkn-c: hsl(207, 89%, 68%); // Functions
+  --clr-tkn-d: hsl(34, 100%, 50%); // Numbers
+  --clr-tkn-e: hsl(88, 50%, 76%); // Strings
+  --clr-tkn-f: hsl(291, 47%, 71%); // Keywords
+  --clr-tkn-g: hsl(187, 71%, 50%); // Regular expressions
+  --clr-tkn-h: hsl(0, 69%, 67%); // Variables
 }
 
 // Style code
-code, kbd, pre {
+code,
+kbd,
+pre {
   font-size: var(--font-xs);
   border-radius: var(--br-md);
 
@@ -35,7 +37,14 @@ code, kbd, pre {
     font-size: var(--font-sm);
   }
 }
-code, kbd, pre, code *, pre *, kbd *, code[class*="language-"], pre[class*="language-"] {
+code,
+kbd,
+pre,
+code *,
+pre *,
+kbd *,
+code[class*='language-'],
+pre[class*='language-'] {
   font-family: 'Roboto Mono', Menlo, Consolas, monospace;
 }
 
@@ -45,7 +54,8 @@ code {
   padding: 0.125rem 0.375rem;
 }
 
-code[class*="language-"], pre[class*="language-"] {
+code[class*='language-'],
+pre[class*='language-'] {
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -63,26 +73,28 @@ code[class*="language-"], pre[class*="language-"] {
   hyphens: none;
 }
 
-pre[class*="language-"]::selection, pre[class*="language-"] ::selection {
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection {
   background: var(--clr-code-selection);
 }
 
-:not(pre) > code[class*="language-"] {
+:not(pre) > code[class*='language-'] {
   padding: 0.125rem 0.25rem;
   white-space: normal;
 }
 
-p > code, a > code {
-
-  &, &[class*="language-"] {
+p > code,
+a > code {
+  &,
+  &[class*='language-'] {
     color: var(--clr-code-txt);
     background: var(--clr-code-bg);
   }
 }
 
 a > code {
-
-  &, &[class*="language-"] {
+  &,
+  &[class*='language-'] {
     color: var(--clr-primary-050);
   }
 }

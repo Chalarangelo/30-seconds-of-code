@@ -2,9 +2,10 @@
 //  dp = elevation unit, larger means higher elevation (closer)
 //  db = the same dp value overlayed over bg (calculated)
 
-@mixin generate-surface-styles ($elevations) {
+@mixin generate-surface-styles($elevations) {
   @each $elevation in $elevations {
-    .srfc-#{$elevation}dp, .srfc-#{$elevation}db {
+    .srfc-#{$elevation}dp,
+    .srfc-#{$elevation}db {
       box-shadow: var(--shd-el-#{$elevation}dp);
     }
     .srfc-#{$elevation}dp {
@@ -18,27 +19,27 @@
 
 // Colors
 :root {
-  --clr-el-01dp: hsla(0, 0%, 100%, .05);
+  --clr-el-01dp: hsla(0, 0%, 100%, 0.05);
   --clr-el-01db: hsl(240, 28%, 11%);
-  --shd-el-01dp: 0 1px 2px hsla(0, 0%, 0%, .24),
-                 0 1px 3px hsla(0, 0%, 0%, .12);
+  --shd-el-01dp: 0 1px 2px hsla(0, 0%, 0%, 0.24),
+    0 1px 3px hsla(0, 0%, 0%, 0.12);
 
-  --clr-el-02dp: hsla(0, 0%, 100%, .07);
+  --clr-el-02dp: hsla(0, 0%, 100%, 0.07);
   --clr-el-02db: hsl(240, 24%, 13%);
-  --shd-el-02dp: 0 2px 4px hsla(0, 0%, 0%, .15),
-                 0 3px 6px hsla(0, 0%, 0%, .12);
+  --shd-el-02dp: 0 2px 4px hsla(0, 0%, 0%, 0.15),
+    0 3px 6px hsla(0, 0%, 0%, 0.12);
 
-  --clr-el-03dp: hsla(0, 0%, 100%, .09);
+  --clr-el-03dp: hsla(0, 0%, 100%, 0.09);
   --clr-el-03db: hsl(240, 21%, 15%);
   --shd-el-03dp: 0 3px 6px hsla(0, 0%, 0%, 0.1),
-                 0 10px 20px hsla(0, 0%, 0%, 0.15);
+    0 10px 20px hsla(0, 0%, 0%, 0.15);
 
-  --clr-el-04dp: hsla(0, 0%, 100%, .11);
+  --clr-el-04dp: hsla(0, 0%, 100%, 0.11);
   --clr-el-04db: hsl(240, 17%, 17%);
   --shd-el-04dp: 0 5px 10px hsla(0, 0%, 0%, 0.1),
-                 0 15px 25px hsla(0, 0%, 0%, 0.15);
+    0 15px 25px hsla(0, 0%, 0%, 0.15);
 
-  --clr-el-05dp: hsla(0, 0%, 100%, .14);
+  --clr-el-05dp: hsla(0, 0%, 100%, 0.14);
   --clr-el-05db: hsl(240, 15%, 20%);
   --shd-el-05dp: 0 20px 40px hsla(0, 0%, 0%, 0.2);
 }

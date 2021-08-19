@@ -8,7 +8,7 @@
       position: relative;
 
       &:before {
-        content: counter(list-item-counter) ". ";
+        content: counter(list-item-counter) '. ';
         position: absolute;
         top: 0;
         left: -1.5rem;

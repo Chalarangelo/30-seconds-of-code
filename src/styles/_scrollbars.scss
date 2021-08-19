@@ -1,8 +1,8 @@
-
 // Shared scrollbar styles - Keep these here to minimize duplication
 body,                 // Shell
 pre,                  // Code block
-.listing-anchors {    // Listing anchors
+.listing-anchors {
+  // Listing anchors
   --clr-el-scrollbar-bg: var(--clr-scrollbar-bg);
   --clr-el-scrollbar-knob: var(--clr-scrollbar-knob);
   --clr-el-scrollbar-knob-active: var(--clr-scrollbar-knob-active);
