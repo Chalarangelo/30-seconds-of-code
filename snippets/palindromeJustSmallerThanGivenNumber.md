@@ -1,6 +1,7 @@
 ---
 title: palindromeJustSmallerThanGivenNumber
 tags: number, intermediate
+firstSeen: 2021-08-19T21:48:00+05:30
 ---
 
 Returns the just smallest number that is a palindrome irrespective of the given number.

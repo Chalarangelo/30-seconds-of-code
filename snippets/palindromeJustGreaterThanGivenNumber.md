@@ -1,6 +1,7 @@
 ---
 title: palindromeJustGreaterThanGivenNumber
 tags: number, intermediate
+firstSeen: 2021-08-19T21:49:00+05:30
 ---
 
 Returns the just greater number that is a palindrome irrespective of the given number.
