@@ -1,15 +1,13 @@
-import { magenta, blue, red, bold } from 'chalk';
-import { Logger } from '.';
+import { blue, red, bold } from 'chalk';
 import { Writable } from 'stream';
+import { Logger } from '.';
 
 describe('Logger', () => {
   const writeFn = jest.fn();
   const originalStream = Logger.outputStream;
 
   beforeAll(() => {
-    Logger.outputStream = {
-      write: writeFn,
-    };
+    jest.spyOn(process.stdout, 'write').mockImplementation(writeFn);
   });
 
   afterEach(() => {
@@ -19,18 +17,6 @@ describe('Logger', () => {
   describe('outputStream', () => {
     it('should be a Stream.Writable', () => {
       expect(originalStream instanceof Writable).toBe(true);
-    });
-  });
-
-  describe('format', () => {
-    it('should return the formatted message', () => {
-      expect(Logger.format('Hello', 'magenta', 'bold')).toBe(
-        bold(magenta('Hello'))
-      );
-    });
-
-    it('should ignore unsupported formatters', () => {
-      expect(Logger.format('Hello', 'magenta', 'foo')).toBe(magenta('Hello'));
     });
   });
 
@@ -69,14 +55,9 @@ describe('Logger', () => {
   });
 
   describe('bind', () => {
-    let boundLog;
-    const procName = 'my-proc';
-
-    beforeAll(() => {
-      boundLog = Logger.bind(procName);
-    });
-
     it('returns a bound instance of the logger function', () => {
+      const procName = 'my-proc';
+      const boundLog = Logger.bind(procName);
       boundLog('Hello');
       expect(writeFn.mock.calls[0][0]).toBe(`[${bold(procName)}] Hello\n`);
     });
