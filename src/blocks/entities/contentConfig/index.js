@@ -1,4 +1,3 @@
-import { InstanceCache } from 'blocks/utilities/instanceCache';
 import { ArgsError } from 'blocks/utilities/error';
 import { convertToSeoSlug } from 'utils';
 
@@ -51,12 +50,12 @@ export class ContentConfig {
     });
 
     this._loadLangData();
-    ContentConfig.instances.add(this.id, this);
+    ContentConfig.instances.set(this.id, this);
 
     return this;
   }
 
-  static instances = new InstanceCache();
+  static instances = new Map();
 
   static langData = [
     {
@@ -71,7 +70,9 @@ export class ContentConfig {
    */
   static findContentConfigFromRawSnippet = snippetPath => {
     const snippetDirName = snippetPath.split('/').slice(-3, -2)[0];
-    return this.instances.find(cfg => cfg.dirName === snippetDirName);
+    return [...this.instances.values()].find(
+      cfg => cfg.dirName === snippetDirName
+    );
   };
 
   /**

@@ -1,5 +1,4 @@
 import path from 'path';
-import { InstanceCache } from 'blocks/utilities/instanceCache';
 import { ArgsError } from 'blocks/utilities/error';
 import { Tag } from 'blocks/utilities/tag';
 import { ContentConfig } from 'blocks/entities/contentConfig';
@@ -97,11 +96,11 @@ export class Snippet {
       this[key] = config.commonData[key];
     });
 
-    Snippet.instances.add(this.id, this);
+    Snippet.instances.set(this.id, this);
     return this;
   }
 
-  static instances = new InstanceCache();
+  static instances = new Map();
 
   get id() {
     if (!this._id) {

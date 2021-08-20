@@ -88,7 +88,7 @@ describe('Snippet', () => {
     });
 
     it('stores the snippet in the instance cache', () => {
-      expect(Snippet.instances[snippet.id]).toBeDefined();
+      expect(Snippet.instances.get(snippet.id)).toBeDefined();
     });
 
     it('has a valid slug', () => {
