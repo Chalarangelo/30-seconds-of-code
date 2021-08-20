@@ -1,4 +1,3 @@
-import { InstanceCache } from 'blocks/utilities/instanceCache';
 import { ArgsError } from 'blocks/utilities/error';
 
 /**
@@ -46,15 +45,15 @@ export class CollectionConfig {
       this[key] = rest[key];
     });
 
-    CollectionConfig.instances.add(this.id, this);
+    CollectionConfig.instances.set(this.id, this);
 
     return this;
   }
 
-  static instances = new InstanceCache();
+  static instances = new Map();
 
   static findCollectionIdsFromSnippet = (id, type) =>
-    this.instances.findAll(cfg =>
+    [...this.instances.values()].filter(cfg =>
       cfg.snippetIds ? cfg.snippetIds.includes(id) : type === cfg.typeMatcher
     );
 

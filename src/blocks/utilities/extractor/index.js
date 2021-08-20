@@ -114,7 +114,9 @@ export class Extractor {
                 slugPrefix: `/${collectionConfig.slug}`,
               },
               collectionConfig.snippetIds
-                ? collectionConfig.snippetIds.map(id => Snippet.instances[id])
+                ? collectionConfig.snippetIds.map(id =>
+                    Snippet.instances.get(id)
+                  )
                 : Snippet.instances
                     .findAll(s => s.type === collectionConfig.typeMatcher)
                     .sort((a, b) => b.ranking - a.ranking)
@@ -172,7 +174,7 @@ export class Extractor {
           if (topCollectionId) {
             return SnippetSerializer.serializeSnippet(
               snippet,
-              SnippetCollection.instances[topCollectionId]
+              SnippetCollection.instances.get(topCollectionId)
             );
           }
         }

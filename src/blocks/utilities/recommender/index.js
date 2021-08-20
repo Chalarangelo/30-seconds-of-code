@@ -17,7 +17,10 @@ const totalScoreLimit =
  * Utility for creating snippet recommendations.
  */
 export class Recommender {
-  static recommendSnippets = (snippet, snippets = [...Snippet.instances]) => {
+  static recommendSnippets = (
+    snippet,
+    snippets = [...Snippet.instances.values()]
+  ) => {
     if (!(snippet instanceof Snippet)) {
       throw new ArgsError(
         "Invalid arguments. 'snippet' must be an instance of 'Snippet'."

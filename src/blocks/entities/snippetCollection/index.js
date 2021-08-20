@@ -1,4 +1,3 @@
-import { InstanceCache } from 'blocks/utilities/instanceCache';
 import { ArgsError } from 'blocks/utilities/error';
 import { uniqueElements } from 'utils';
 import tokenizeCollection from 'utils/search';
@@ -69,11 +68,11 @@ export class SnippetCollection {
       else this[key] = rest[key];
     });
 
-    SnippetCollection.instances.add(this.id, this);
+    SnippetCollection.instances.set(this.id, this);
     return this;
   }
 
-  static instances = new InstanceCache();
+  static instances = new Map();
 
   /**
    * Injects additional snippets into an existing collection.
