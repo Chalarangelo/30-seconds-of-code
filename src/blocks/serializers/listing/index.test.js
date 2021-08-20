@@ -54,7 +54,7 @@ describe('ListingSerializer', () => {
       // it being an async, so we are using a different technique here.
       // The `then()` call should short-circuit into a failure, whereas
       // `catch()` will result in the test passing (i.e. error thrown).
-      return ListingSerializer.serializeListings({})
+      ListingSerializer.serializeListings({})
         .then(() => expect(true).toBe(false))
         .catch(() => done());
     });
