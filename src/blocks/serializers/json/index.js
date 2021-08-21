@@ -27,7 +27,7 @@ export class JSONSerializer {
   static serializeToDir = (path, ...dataChunkPairs) => {
     fs.ensureDirSync(path);
     /* istanbul ignore next */
-    if (!dataChunkPairs > 1 && !dataChunkPairs.some(dcp => dcp[0] === 'index'))
+    if (!dataChunkPairs.some(dcp => dcp[0] === 'index'))
       console.warn(`Data for ${path} does not contain an index!`);
 
     return Promise.all(
