@@ -16,29 +16,29 @@ export class TextParser {
    */
   static fromPath = filePath => {
     const fileName = filePath.match(/.*\/([^/]*)$/)[1];
-    return readFile(filePath, 'utf8')
-      .then(content => {
-        const { body, attributes } = frontmatter(content);
-        const {
-          firstSeen = '2021-06-13T05:00:00-04:00',
-          lastUpdated = firstSeen,
-          ...restAttributes
-        } = attributes;
-        return {
-          body,
-          ...restAttributes,
-          firstSeen: new Date(firstSeen),
-          lastUpdated: new Date(lastUpdated),
-          fileName,
-        };
-      })
-      .catch(err => err);
+    return readFile(filePath, 'utf8').then(content => {
+      const { body, attributes } = frontmatter(content);
+      const {
+        firstSeen = '2021-06-13T05:00:00-04:00',
+        lastUpdated = firstSeen,
+        ...restAttributes
+      } = attributes;
+      return {
+        body,
+        ...restAttributes,
+        firstSeen: new Date(firstSeen),
+        lastUpdated: new Date(lastUpdated),
+        fileName,
+      };
+    });
   };
 
   static fromDir = async (dirPath, { withMetadata = false } = {}) => {
     const fileNames = await FileParser.fromDir(dirPath);
     return Promise.all(
-      fileNames.map(f => this.fromPath(`${dirPath}/${f}`, { withMetadata }))
+      fileNames.map(f =>
+        TextParser.fromPath(`${dirPath}/${f}`, { withMetadata })
+      )
     );
   };
 }

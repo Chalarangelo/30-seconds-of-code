@@ -33,7 +33,7 @@ export class Chunk {
   ) => {
     return [
       `${outPath}${slug}`,
-      ['index', this.createIndex(slug, template, priority)],
+      ['index', Chunk.createIndex(slug, template, priority)],
       ['context', context],
     ];
   };

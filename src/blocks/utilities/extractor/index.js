@@ -21,7 +21,7 @@ export class Extractor {
     const { contentPath: outPath } = global.settings.paths;
     fs.ensureDirSync(outPath);
     boundLog('Extracting snippet data', 'info');
-    return await this.extractSnippets();
+    return await Extractor.extractSnippets();
   };
 
   static extractSnippets = async (configs = global.settings.configs) => {
@@ -34,7 +34,7 @@ export class Extractor {
         boundLog(`Reading snippets from ${snippetsPath}`, 'info');
 
         return new Promise((resolve, reject) => {
-          this.readSnippets(snippetsPath, cfg)
+          Extractor.readSnippets(snippetsPath, cfg)
             .then(snippets => {
               boundLog(`Finished reading ${snippetsPath}`, 'success');
               resolve(
@@ -129,20 +129,23 @@ export class Extractor {
       ).featuredCollections;
 
       boundLog(`Writing snippets to directories`, 'info');
-      await this.writeSnippets(allSnippetData.snippets, featuredCollections);
+      await Extractor.writeSnippets(
+        allSnippetData.snippets,
+        featuredCollections
+      );
       boundLog(`Finished writing snippets`, 'success');
 
       boundLog(`Writing listings to directories`, 'info');
-      await this.writeListings(collections);
+      await Extractor.writeListings(collections);
       boundLog(`Finished writing listings`, 'success');
 
       boundLog(`Writing hub pages to directories`, 'info');
-      await this.writeHubPages(collections, featuredCollections);
+      await Extractor.writeHubPages(collections, featuredCollections);
       boundLog(`Finished writing hub pages`, 'success');
 
       boundLog(`Writing statics to directories`, 'info');
-      await this.writeStaticPages(allSnippetData.snippets, collections);
-      await this.writeSearchIndex(allSnippetData.snippets, collections);
+      await Extractor.writeStaticPages(allSnippetData.snippets, collections);
+      await Extractor.writeSearchIndex(allSnippetData.snippets, collections);
       boundLog(`Finished writing statics`, 'success');
 
       return collections;

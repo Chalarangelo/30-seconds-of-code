@@ -73,7 +73,9 @@ export class AssetSerializer {
       .sync(`${inContentPath}/*.@(${supportedExtensions.join('|')})`)
       .map(file => path.resolve(file));
     await Promise.all(
-      staticAssets.map(asset => this.processImageAsset(asset, outPath))
+      staticAssets.map(asset =>
+        AssetSerializer.processImageAsset(asset, outPath)
+      )
     );
     boundLog('Processing static assets complete', 'success');
 
@@ -91,7 +93,10 @@ export class AssetSerializer {
           .map(file => path.resolve(file));
         await Promise.all(
           assets.map(asset =>
-            this.processImageAsset(asset, `${outPath}/${images.name}`)
+            AssetSerializer.processImageAsset(
+              asset,
+              `${outPath}/${images.name}`
+            )
           )
         );
       }
@@ -102,7 +107,7 @@ export class AssetSerializer {
     );
 
     boundLog('Processing icons...', 'info');
-    await this.processIcons();
+    await AssetSerializer.processIcons();
     boundLog(`Processing icons complete`, 'success');
 
     boundLog(
