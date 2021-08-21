@@ -76,18 +76,21 @@ export class JSONParser {
    * @returns {Array<object>} An array of objects from the chunk directories.
    */
   static fromChunks = dirPath =>
-    this.fromGlob(`${dirPath}/**/index.json`, { withNames: true }).map(
+    JSONParser.fromGlob(`${dirPath}/**/index.json`, { withNames: true }).map(
       ([file, data]) =>
-        this.fromGlob(`${file.slice(0, file.lastIndexOf('/'))}/!(index).json`, {
-          reduced: true,
-          reducer: (acc, dataFile) => {
-            acc.context = {
-              ...acc.context,
-              ...require(path.resolve(dataFile)),
-            };
-            return acc;
-          },
-          initialValue: data,
-        })
+        JSONParser.fromGlob(
+          `${file.slice(0, file.lastIndexOf('/'))}/!(index).json`,
+          {
+            reduced: true,
+            reducer: (acc, dataFile) => {
+              acc.context = {
+                ...acc.context,
+                ...require(path.resolve(dataFile)),
+              };
+              return acc;
+            },
+            initialValue: data,
+          }
+        )
     );
 }

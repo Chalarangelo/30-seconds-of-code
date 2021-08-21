@@ -42,7 +42,7 @@ export class ListingSerializer {
       snippetCollection.type === 'blog' ||
       (snippetCollection.type === 'tag' && !snippetCollection.config.language);
 
-    const paginatedSnippets = this._paginateSnippets(
+    const paginatedSnippets = ListingSerializer._paginateSnippets(
       snippetCollection.isListed
         ? snippetCollection.snippets.filter(s => s.isListed)
         : snippetCollection.snippets,

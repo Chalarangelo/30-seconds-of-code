@@ -31,7 +31,7 @@ export class Screenshot {
    */
   static capture = async (
     url,
-    { imageUrl, name } = this.getBackgroundImage(),
+    { imageUrl, name } = Screenshot.getBackgroundImage(),
     path = global.settings.tweet.screenshotFileName
   ) => {
     const boundLog = Logger.bind('utilities.screenshot.capture');

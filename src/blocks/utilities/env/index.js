@@ -17,7 +17,7 @@ export class Env {
    */
   static init = async (env = 'PRODUCTION') => {
     if (env === 'PRODUCTION') await Content.update();
-    return this.setup(env);
+    return Env.setup(env);
   };
 
   /**

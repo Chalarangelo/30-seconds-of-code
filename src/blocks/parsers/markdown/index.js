@@ -104,8 +104,8 @@ export class MarkdownParser {
     if (languageData.require) {
       // Load the required language first
       if (Array.isArray(languageData.require))
-        languageData.require.forEach(this._loadPrismLanguage);
-      else this._loadPrismLanguage(languageData.require);
+        languageData.require.forEach(MarkdownParser._loadPrismLanguage);
+      else MarkdownParser._loadPrismLanguage(languageData.require);
     }
 
     require(`prismjs/components/prism-${language}.js`);
@@ -119,9 +119,9 @@ export class MarkdownParser {
    */
   static _highlightCode = (language, code) => {
     if (!Prism.languages[language]) {
-      const baseLanguage = this._getBaseLanguageName(language);
+      const baseLanguage = MarkdownParser._getBaseLanguageName(language);
       if (!baseLanguage || baseLanguage === 'text') return escapeHTML(code);
-      this._loadPrismLanguage(baseLanguage);
+      MarkdownParser._loadPrismLanguage(baseLanguage);
     }
     return Prism.highlight(code, Prism.languages[language], language);
   };
@@ -137,7 +137,10 @@ export class MarkdownParser {
     visit(ast, `code`, node => {
       const languageName = node.lang ? node.lang : `text`;
       node.type = `html`;
-      const highlightedCode = this._highlightCode(languageName, node.value);
+      const highlightedCode = MarkdownParser._highlightCode(
+        languageName,
+        node.value
+      );
       const languageStringLiteral =
         isText && langData && langData.length
           ? (
@@ -175,7 +178,7 @@ export class MarkdownParser {
     Object.entries(texts).forEach(([key, value]) => {
       if (!value) return;
       result[key] = value.trim()
-        ? this.parseMarkdown(value, true, langData)
+        ? MarkdownParser.parseMarkdown(value, true, langData)
         : '';
     });
     result.description = commonTransformers.reduce(
@@ -215,7 +218,7 @@ export class MarkdownParser {
       Object.entries(codeBlocks).forEach(([key, value]) => {
         if (!value) return;
         result[key] = value.trim()
-          ? optimizeAllNodes(this.parseMarkdown(value)).trim()
+          ? optimizeAllNodes(MarkdownParser.parseMarkdown(value)).trim()
           : '';
       });
     }

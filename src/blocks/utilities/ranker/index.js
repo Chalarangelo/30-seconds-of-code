@@ -19,13 +19,13 @@ export class Ranker {
   static get keywordScores() {
     // Skip loading for test environment
     if (process.env.NODE_ENV === `test`) return {};
-    if (!this._keywordScores) {
+    if (!Ranker._keywordScores) {
       const { rawContentConfigsPath: configsPath } = global.settings.paths;
-      this._keywordScores = JSONParser.fromFile(
+      Ranker._keywordScores = JSONParser.fromFile(
         `${configsPath}/rankingEngine.json`
       );
     }
-    return this._keywordScores;
+    return Ranker._keywordScores;
   }
   /**
    * Given a snippet object produce a ranking between 0 and 1.
@@ -62,9 +62,9 @@ export class Ranker {
 
     // Add points from keywords: If the snippet has too many keywords, there is a
     // limit and the X most valuable will apply. Same for very high scores.
-    Object.keys(this.keywordScores).forEach(k => {
+    Object.keys(Ranker.keywordScores).forEach(k => {
       if (indexableContent.indexOf(k) !== -1)
-        keywordScoreValues.push(this.keywordScores[k]);
+        keywordScoreValues.push(Ranker.keywordScores[k]);
     });
     if (keywordScoreValues.length > keywordCountLimit)
       keywordScoreValues = keywordScoreValues

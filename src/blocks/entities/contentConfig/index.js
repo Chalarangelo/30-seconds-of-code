@@ -70,7 +70,7 @@ export class ContentConfig {
    */
   static findContentConfigFromRawSnippet = snippetPath => {
     const snippetDirName = snippetPath.split('/').slice(-3, -2)[0];
-    return [...this.instances.values()].find(
+    return [...ContentConfig.instances.values()].find(
       cfg => cfg.dirName === snippetDirName
     );
   };
@@ -80,7 +80,7 @@ export class ContentConfig {
    * @param {string} snippetPath - The path of the raw snippet file.
    */
   static findSlugFromRawSnippet = snippetPath => {
-    const config = this.findContentConfigFromRawSnippet(snippetPath);
+    const config = ContentConfig.findContentConfigFromRawSnippet(snippetPath);
     const snippetName = snippetPath.split('/').slice(-1)[0].split('.')[0];
     return `/${config.slugPrefix}${convertToSeoSlug(snippetName)}`;
   };
