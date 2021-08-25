@@ -4,7 +4,7 @@
     "^.+\\.(js|jsx)?$": "babel-jest",
     "^.+\\.(css|less|scss)$": "jest-transform-stub"
   },
-  "testEnvironment": "jest-environment-jsdom-fourteen",
+  "testEnvironment": "jest-environment-jsdom",
   "moduleFileExtensions": ["js", "jsx", "json"],
   "moduleDirectories": [
     "node_modules",
