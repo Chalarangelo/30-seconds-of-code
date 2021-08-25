@@ -130,7 +130,7 @@ export class MarkdownParser {
    * Parses markdown into HTML from a given markdown string, using remark + prismjs.
    * @param {string} markdown - The markdown string to be parsed.
    */
-  static parseMarkdown = (markdown, isText = false, langData = []) => {
+  static parseMarkdown = (markdown, isText = false, languageData = []) => {
     const ast = remark.parse(markdown);
 
     // Highlight code blocks
@@ -142,9 +142,9 @@ export class MarkdownParser {
         node.value
       );
       const languageStringLiteral =
-        isText && langData && langData.length
+        isText && languageData && languageData.length
           ? (
-              langData.find(l => l.shortCode === languageName) || {
+              languageData.find(l => l.shortCode === languageName) || {
                 languageLiteral: '',
               }
             ).languageLiteral
@@ -172,13 +172,13 @@ export class MarkdownParser {
 
   static parseSegments = (
     { texts, codeBlocks },
-    { isBlog, type, assetPath, langData }
+    { isBlog, type, assetPath, languageData }
   ) => {
     const result = {};
     Object.entries(texts).forEach(([key, value]) => {
       if (!value) return;
       result[key] = value.trim()
-        ? MarkdownParser.parseMarkdown(value, true, langData)
+        ? MarkdownParser.parseMarkdown(value, true, languageData)
         : '';
     });
     result.description = commonTransformers.reduce(
