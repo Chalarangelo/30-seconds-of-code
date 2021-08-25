@@ -175,7 +175,7 @@ export class Snippet {
     if (!this._icon) {
       let mapped;
       if (this.config.isBlog) {
-        const lang = this.config.langData.find(l =>
+        const lang = this.config.languageData.find(l =>
           this.tags.all.includes(l.language)
         );
         if (lang) {
@@ -232,7 +232,7 @@ export class Snippet {
         isBlog: this.config.isBlog,
         type: this.type,
         assetPath: `/${pathSettings.staticAssetPath}`,
-        langData: this.config.langData,
+        languageData: this.config.languageData,
       }
     );
   }

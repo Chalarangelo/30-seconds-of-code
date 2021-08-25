@@ -50,20 +50,36 @@ export class ContentConfig {
       this[key] = rest[key];
     });
 
-    this._loadLangData();
     ContentConfig.instances.set(this.id, this);
+    if (
+      this.language &&
+      this.language.long &&
+      this.iconName &&
+      !ContentConfig.languageData.has(this.language.long.toLowerCase())
+    ) {
+      ContentConfig.languageData.set(this.language.long.toLowerCase(), {
+        language: this.language.long.toLowerCase(),
+        shortCode: this.language.short,
+        languageLiteral: this.language.long,
+        icon: this.iconName,
+        tags: Object.keys(this.tagIcons).length ? this.tagIcons : {},
+      });
+    }
 
     return this;
   }
 
   static instances = new Map();
 
-  static langData = [
-    {
-      shortCode: 'html',
-      languageLiteral: 'HTML',
-    },
-  ];
+  static languageData = new Map([
+    [
+      'html',
+      {
+        shortCode: 'html',
+        languageLiteral: 'HTML',
+      },
+    ],
+  ]);
 
   /**
    * Given a raw snippet file path, returns the matching config.
@@ -84,26 +100,6 @@ export class ContentConfig {
     const config = ContentConfig.findContentConfigFromRawSnippet(snippetPath);
     const snippetName = snippetPath.split('/').slice(-1)[0].split('.')[0];
     return `/${config.slugPrefix}${convertToSeoSlug(snippetName)}`;
-  };
-
-  _loadLangData = () => {
-    const tagIconKeys = Object.keys(this.tagIcons);
-    if (
-      !this.language ||
-      !this.language.long ||
-      !this.iconName ||
-      ContentConfig.langData.find(
-        l => l.language === this.language.long.toLowerCase()
-      )
-    )
-      return;
-    ContentConfig.langData.push({
-      language: this.language.long.toLowerCase(),
-      shortCode: this.language.short,
-      languageLiteral: this.language.long,
-      icon: this.iconName,
-      tags: tagIconKeys.length ? this.tagIcons : {},
-    });
   };
 
   get id() {
@@ -176,8 +172,8 @@ export class ContentConfig {
     return `${this.dirName}/${this.snippetPath}`;
   }
 
-  get langData() {
-    return ContentConfig.langData;
+  get languageData() {
+    return [...ContentConfig.languageData.values()];
   }
 
   get commonData() {

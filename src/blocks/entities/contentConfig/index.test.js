@@ -44,8 +44,8 @@ describe('ContentConfig', () => {
       expect(configs.blog.cardTemplate).toBe(rawConfigs.blog.cardTemplate);
     });
 
-    it('should store langData', () => {
-      expect(ContentConfig.langData.length).not.toBe(0);
+    it('should store languageData', () => {
+      expect(ContentConfig.languageData.size).not.toBe(0);
     });
 
     it('should produce the correct id', () => {
@@ -106,7 +106,9 @@ describe('ContentConfig', () => {
     });
 
     it('should return the language data from the class', () => {
-      expect(configs.react.langData).toBe(ContentConfig.langData);
+      expect(configs.react.languageData).toEqual([
+        ...ContentConfig.languageData.values(),
+      ]);
     });
 
     it('should produce the correct common data', () => {
