@@ -1,6 +1,7 @@
 import { Snippet } from 'blocks/entities/snippet';
 import { ArgsError } from 'blocks/utilities/error';
 import { JSONParser } from 'blocks/parsers/json';
+import pathSettings from 'settings/paths';
 import rankerSettings from 'settings/rankingEngine';
 
 // Get data from configuration
@@ -20,7 +21,7 @@ export class Ranker {
     // Skip loading for test environment
     if (process.env.NODE_ENV === `test`) return {};
     if (!Ranker._keywordScores) {
-      const { rawContentConfigsPath: configsPath } = global.settings.paths;
+      const { rawContentConfigsPath: configsPath } = pathSettings;
       Ranker._keywordScores = JSONParser.fromFile(
         `${configsPath}/rankingEngine.json`
       );

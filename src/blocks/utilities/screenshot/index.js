@@ -1,5 +1,6 @@
 import fetch from 'node-fetch';
 import puppeteer from 'puppeteer';
+import tweetSettings from 'settings/tweet';
 import { Logger } from 'blocks/utilities/logger';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -13,7 +14,7 @@ export class Screenshot {
    * @param {string} url - The URL from which to fetch (Unsplash collection).
    */
   static getBackgroundImage = async (
-    url = `${global.settings.tweet.imageUrl}&client_id=${process.env['UNSPLASH_KEY']}`
+    url = `${tweetSettings.imageUrl}&client_id=${process.env['UNSPLASH_KEY']}`
   ) => {
     const boundLog = Logger.bind('utilities.screenshot.getBackgroundImage');
     boundLog('Fetching background image', 'info');
@@ -32,7 +33,7 @@ export class Screenshot {
   static capture = async (
     url,
     { imageUrl, name } = Screenshot.getBackgroundImage(),
-    path = global.settings.tweet.screenshotFileName
+    path = tweetSettings.screenshotFileName
   ) => {
     const boundLog = Logger.bind('utilities.screenshot.capture');
     boundLog(`Capturing screenshot for ${url}`, 'info');

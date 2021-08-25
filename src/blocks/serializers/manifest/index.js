@@ -1,3 +1,6 @@
+import globalSettings from 'settings/global';
+import pathSettings from 'settings/paths';
+import manifestSettings from 'settings/manifest';
 import { JSONSerializer } from 'blocks/serializers/json';
 import { Logger } from 'blocks/utilities/logger';
 
@@ -6,22 +9,22 @@ import { Logger } from 'blocks/utilities/logger';
  */
 export class ManifestSerializer {
   static serialize = async ({
-    manifestFileName = global.settings.manifest.manifestFileName,
-    manifestCacheKey = global.settings.manifestCacheKey,
-    backgroundColor = global.settings.manifest.backgroundColor,
-    themeColor = global.settings.manifest.themeColor,
-    display = global.settings.manifest.display,
-    dimensions = global.settings.manifest.iconDimensions,
-    iconName = global.settings.manifest.iconPrefix,
-    publicPath = global.settings.paths.publicPath,
+    manifestFileName = manifestSettings.manifestFileName,
+    manifestCacheKey = globalSettings.manifestCacheKey,
+    backgroundColor = manifestSettings.backgroundColor,
+    themeColor = manifestSettings.themeColor,
+    display = manifestSettings.display,
+    dimensions = manifestSettings.iconDimensions,
+    iconName = manifestSettings.iconPrefix,
+    publicPath = pathSettings.publicPath,
   } = {}) => {
     const boundLog = Logger.bind('serializers.manifest.serialize');
     const cacheKey = manifestCacheKey;
     // Do not convert these to camelCase, as the manifest requires them to be snake_cased.
     /* eslint-disable camelcase */
     const manifestObject = {
-      name: `${global.settings.websiteName}`,
-      short_name: `${global.settings.shortName}`,
+      name: `${globalSettings.websiteName}`,
+      short_name: `${globalSettings.shortName}`,
       start_url: `/`,
       background_color: backgroundColor,
       theme_color: themeColor,

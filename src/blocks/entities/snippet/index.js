@@ -1,4 +1,5 @@
 import path from 'path';
+import pathSettings from 'settings/paths';
 import { ArgsError } from 'blocks/utilities/error';
 import { Tag } from 'blocks/utilities/tag';
 import { ContentConfig } from 'blocks/entities/contentConfig';
@@ -89,7 +90,7 @@ export class Snippet {
       this.authors = [...new Set(authors.toLowerCase().split(','))].map(
         a => config.authors[a]
       );
-      this.cover = `/${global.settings.paths.staticAssetPath}/${cover}`;
+      this.cover = `/${pathSettings.staticAssetPath}/${cover}`;
     }
 
     Object.keys(config.commonData).forEach(key => {
@@ -230,7 +231,7 @@ export class Snippet {
       {
         isBlog: this.config.isBlog,
         type: this.type,
-        assetPath: `/${global.settings.paths.staticAssetPath}`,
+        assetPath: `/${pathSettings.staticAssetPath}`,
         langData: this.config.langData,
       }
     );

@@ -14,7 +14,7 @@ export const build = async () => {
     return;
   }
 
-  await Env.init('DEVELOPMENT');
+  await Env.init();
   Content.createSnippet(process.argv[2], process.argv[3]);
 };
 

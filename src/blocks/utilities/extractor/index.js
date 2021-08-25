@@ -1,8 +1,10 @@
 import fs from 'fs-extra';
+import pathSettings from 'settings/paths';
 import { Logger } from 'blocks/utilities/logger';
 import { Chunk } from 'blocks/utilities/chunk';
 import { TextParser } from 'blocks/parsers/text';
 import { JSONParser } from 'blocks/parsers/json';
+import { ContentConfig } from 'blocks/entities/contentConfig';
 import { CollectionConfig } from 'blocks/entities/collectionConfig';
 import { Snippet } from 'blocks/entities/snippet';
 import { SnippetPreview } from 'blocks/adapters/snippetPreview';
@@ -18,15 +20,16 @@ import literals from 'lang/en';
 export class Extractor {
   static extract = async () => {
     const boundLog = Logger.bind('utilities.extractor.extract');
-    const { contentPath: outPath } = global.settings.paths;
+    const { contentPath: outPath } = pathSettings;
     fs.ensureDirSync(outPath);
     boundLog('Extracting snippet data', 'info');
     return await Extractor.extractSnippets();
   };
 
-  static extractSnippets = async (configs = global.settings.configs) => {
+  static extractSnippets = async () => {
     const boundLog = Logger.bind('utilities.extractor.extractSnippets');
-    const { rawContentPath: contentDir } = global.settings.paths;
+    const { rawContentPath: contentDir } = pathSettings;
+    const configs = [...ContentConfig.instances.values()];
 
     return await Promise.all(
       configs.map(cfg => {
@@ -117,8 +120,8 @@ export class Extractor {
                 ? collectionConfig.snippetIds.map(id =>
                     Snippet.instances.get(id)
                   )
-                : Snippet.instances
-                    .findAll(s => s.type === collectionConfig.typeMatcher)
+                : [...Snippet.instances.values()]
+                    .filter(s => s.type === collectionConfig.typeMatcher)
                     .sort((a, b) => b.ranking - a.ranking)
             );
           }
@@ -160,7 +163,7 @@ export class Extractor {
 
   static writeSnippets = (snippets, featuredCollections) => {
     let serializableSnippets =
-      global.settings.env === 'PRODUCTION'
+      process.env.NODE_ENV === 'production'
         ? snippets.filter(s => !s.isScheduled)
         : snippets;
 
@@ -199,7 +202,7 @@ export class Extractor {
   };
 
   static writeSearchIndex = (allSnippetData, collections) => {
-    const { publicPath } = global.settings.paths;
+    const { publicPath } = pathSettings;
     JSONSerializer.serializeToFile(`${publicPath}/search-data.json`, {
       searchIndex: [
         ...collections
@@ -220,7 +223,7 @@ export class Extractor {
   };
 
   static writeStaticPages = (allSnippetData, collections) => {
-    const { contentPath: outPath } = global.settings.paths;
+    const { contentPath: outPath } = pathSettings;
     return Promise.all([
       JSONSerializer.serializeToDir(
         ...Chunk.createStaticPageChunks(outPath, '/404', 'NotFoundPage', 0)
