@@ -1,6 +1,7 @@
 import childProcess from 'child_process';
 import path from 'path';
 import fs from 'fs';
+import pathSettings from 'settings/paths';
 import { Logger } from 'blocks/utilities/logger';
 import { JSONSerializer } from 'blocks/serializers/json';
 
@@ -200,7 +201,7 @@ export class Content {
       'info'
     );
 
-    const { rawContentPath: contentPath } = global.settings.paths;
+    const { rawContentPath: contentPath } = pathSettings;
     const submodulePath = path.join(
       process.cwd(),
       contentPath,

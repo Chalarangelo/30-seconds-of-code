@@ -1,6 +1,9 @@
 import util from 'util';
 import fs from 'fs-extra';
 import handlebars from 'handlebars';
+import globalSettings from 'settings/global';
+import pathSettings from 'settings/paths';
+import feedSettings from 'settings/feed';
 import { Requirements } from 'blocks/utilities/requirements';
 import { Logger } from 'blocks/utilities/logger';
 
@@ -19,16 +22,16 @@ export class FeedSerializer {
    *  - `websiteDescription`: Website description.
    *  - `websiteUrl`: Name of the website.
    *
-   * All `options` values default to values from `global.settings`.
+   * All `options` values default to values from settings.
    * @returns {Promise} A promise that will resolve when the feed has been written to disk.
    */
   static serialize = async ({
-    feedFileName = global.settings.feed.feedFileName,
-    feedTemplatePath = global.settings.feed.feedTemplatePath,
-    publicPath = global.settings.paths.publicPath,
-    websiteUrl = global.settings.websiteUrl,
-    websiteDescription = global.settings.websiteDescription,
-    websiteName = global.settings.websiteName,
+    feedFileName = feedSettings.feedFileName,
+    feedTemplatePath = feedSettings.feedTemplatePath,
+    publicPath = pathSettings.publicPath,
+    websiteUrl = globalSettings.websiteUrl,
+    websiteDescription = globalSettings.websiteDescription,
+    websiteName = globalSettings.websiteName,
   } = {}) => {
     const boundLog = Logger.bind('serializers.feed.serialize');
     const template = handlebars.compile(

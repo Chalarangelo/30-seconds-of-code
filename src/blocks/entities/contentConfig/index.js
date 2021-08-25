@@ -1,3 +1,4 @@
+import pathSettings from 'settings/paths';
 import { ArgsError } from 'blocks/utilities/error';
 import { convertToSeoSlug } from 'utils';
 
@@ -118,7 +119,7 @@ export class ContentConfig {
   }
 
   get vscodeUrlPrefix() {
-    return `${global.settings.paths.rawContentPath}/sources/${this.sourceDir}`;
+    return `${pathSettings.rawContentPath}/sources/${this.sourceDir}`;
   }
 
   get isCSS() {

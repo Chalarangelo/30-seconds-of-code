@@ -5,7 +5,7 @@ import { TwitterBot } from 'blocks/utilities/twitterBot';
 
 export const tweet = async () => {
   Logger.log('Twitter bot is starting up...', 'info');
-  await Env.init('TWITTER_BOT');
+  await Env.init();
 
   let snippet, image;
   await Promise.all([

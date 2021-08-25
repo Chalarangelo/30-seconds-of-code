@@ -2,7 +2,6 @@ import EXPERTISE_LEVELS from 'settings/expertise';
 import tagSettings from 'settings/tags';
 import { capitalize } from 'utils';
 
-// As we are processing this data, using global.settings would be sub-optimal.
 const lowerCaseExpertiseLevels = EXPERTISE_LEVELS.filter(
   v => v !== 'Article'
 ).map(v => v.toLowerCase());

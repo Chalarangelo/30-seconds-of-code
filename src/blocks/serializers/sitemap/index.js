@@ -1,6 +1,9 @@
 import util from 'util';
 import fs from 'fs-extra';
 import handlebars from 'handlebars';
+import globalSettings from 'settings/global';
+import pathSettings from 'settings/paths';
+import sitemapSettings from 'settings/sitemap';
 import { Requirements } from 'blocks/utilities/requirements';
 import { Logger } from 'blocks/utilities/logger';
 
@@ -17,14 +20,14 @@ export class SitemapSerializer {
    *  - `publicPath`: Path for the generated XML file.
    *  - `websiteUrl`: Root URL of the website.
    *
-   * All `options` values default to values from `global.settings`.
+   * All `options` values default to values from settings.
    * @returns {Promise} A promise that will resolve when the sitemap has been written to disk.
    */
   static serialize = async ({
-    sitemapFileName = global.settings.sitemap.sitemapFileName,
-    sitemapTemplatePath = global.settings.sitemap.sitemapTemplatePath,
-    publicPath = global.settings.paths.publicPath,
-    websiteUrl = global.settings.websiteUrl,
+    sitemapFileName = sitemapSettings.sitemapFileName,
+    sitemapTemplatePath = sitemapSettings.sitemapTemplatePath,
+    publicPath = pathSettings.publicPath,
+    websiteUrl = globalSettings.websiteUrl,
   } = {}) => {
     const boundLog = Logger.bind('serializers.sitemap.serialize');
     const template = handlebars.compile(

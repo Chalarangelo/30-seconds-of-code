@@ -1,3 +1,4 @@
+import pathSettings from 'settings/paths';
 import { ArgsError } from 'blocks/utilities/error';
 import { JSONSerializer } from 'blocks/serializers/json';
 import { Chunk } from 'blocks/utilities/chunk';
@@ -29,7 +30,7 @@ export class HubSerializer {
 
     const boundLog = Logger.bind('serializers.hub.serialize');
 
-    const { contentPath: outDirPath } = global.settings.paths;
+    const { contentPath: outDirPath } = pathSettings;
     const homeDir = `${outDirPath}/home`;
     const collectionDir = `${outDirPath}/collections`;
 

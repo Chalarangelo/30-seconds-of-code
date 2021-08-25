@@ -2,6 +2,8 @@ import fs from 'fs-extra';
 import path from 'path';
 import sharp from 'sharp';
 import glob from 'glob';
+import pathSettings from 'settings/paths';
+import { ContentConfig } from 'blocks/entities/contentConfig';
 import { Logger } from 'blocks/utilities/logger';
 
 // Image asset constants
@@ -56,8 +58,8 @@ export class AssetSerializer {
       rawContentPath: contentPath,
       staticAssetPath: staticAssetPath,
       publicPath,
-    } = global.settings.paths;
-    const configs = global.settings.configs;
+    } = pathSettings;
+    const configs = [...ContentConfig.instances.values()];
     boundLog('Processing assets from config...', 'info');
 
     boundLog(
@@ -129,7 +131,7 @@ export class AssetSerializer {
    * Takes a PNG image and produces all the icon assets necessary for the website.
    */
   static processIcons = (iconName = '30s-icon.png') => {
-    const { rawAssetPath: inPath, assetPath } = global.settings.paths;
+    const { rawAssetPath: inPath, assetPath } = pathSettings;
     const iconPath = path.join(inPath, iconName);
     const outPath = path.join(assetPath, 'icons');
 

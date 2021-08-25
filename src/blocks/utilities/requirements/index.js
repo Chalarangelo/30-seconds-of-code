@@ -1,5 +1,5 @@
 import path from 'path';
-import paths from 'settings/paths';
+import pathSettings from 'settings/paths';
 import { JSONParser } from 'blocks/parsers/json';
 
 /**
@@ -11,14 +11,14 @@ export class Requirements {
    * Returns an object containing templates and requirables.
    */
   static load = () => {
-    // Note that we cannot really use global.settings here as this might have to
-    // run without an environment set up properly. So imports it is.
     return {
-      templates: paths.templates.reduce((acc, tmpl) => {
-        acc[tmpl.name] = path.resolve(`${paths.templatesPath}/${tmpl.path}`);
+      templates: pathSettings.templates.reduce((acc, tmpl) => {
+        acc[tmpl.name] = path.resolve(
+          `${pathSettings.templatesPath}/${tmpl.path}`
+        );
         return acc;
       }, {}),
-      requirables: JSONParser.fromChunks(paths.contentPath),
+      requirables: JSONParser.fromChunks(pathSettings.contentPath),
     };
   };
 }

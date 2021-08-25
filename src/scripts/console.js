@@ -9,9 +9,7 @@ let replServer = repl.start({
 });
 
 // Set globals
-Env.init('DEVELOPMENT').then(data => {
-  replServer.context.global.settings = data;
-
+Env.init().then(() => {
   replServer.setupHistory('console.log', () => {});
 
   // Dynamically import modules from the blocks directory

@@ -1,6 +1,8 @@
 import fs from 'fs-extra';
 import path from 'path';
 import webfontsGenerator from 'webfonts-generator';
+import pathSettings from 'settings/paths';
+import iconSettings from 'settings/icons';
 import { ArgsError } from 'blocks/utilities/error';
 import { Logger } from 'blocks/utilities/logger';
 
@@ -23,7 +25,7 @@ export class IconSerializer {
    *  - `cssClassPrefix`: CSS selector for icons.
    *  - `cssLanguageSelectors`: CSS language selectors.
    *
-   * All `options` values default to values from `global.settings`.
+   * All `options` values default to values from settings.
    * @throws Will throw an error if `fileList` or `configs` is not supplied or empty.
    * @returns {Promise} A promise that will resolve when the icon font and CSS files
    *  have been written to disk.
@@ -32,17 +34,17 @@ export class IconSerializer {
     fileList,
     icons,
     {
-      fontName = global.settings.icons.fontName,
-      types = global.settings.icons.types,
-      outPath = global.settings.paths.rawAssetPath,
-      cssPath = global.settings.paths.iconFontPath,
-      fontRelativePath = global.settings.icons.fontRelativePath,
-      cssTemplatePath = global.settings.icons.cssTemplatePath,
-      cssSelector = global.settings.icons.cssSelector,
-      cssClassName = global.settings.icons.cssClassName,
-      cssClassPrefix = global.settings.icons.cssClassPrefix,
-      cssLanguageSelectors = global.settings.icons.cssLanguageSelectors,
-      cssLanguageChipSelector = global.settings.icons.cssLanguageChipSelector,
+      fontName = iconSettings.fontName,
+      types = iconSettings.types,
+      outPath = pathSettings.rawAssetPath,
+      cssPath = pathSettings.iconFontPath,
+      fontRelativePath = iconSettings.fontRelativePath,
+      cssTemplatePath = iconSettings.cssTemplatePath,
+      cssSelector = iconSettings.cssSelector,
+      cssClassName = iconSettings.cssClassName,
+      cssClassPrefix = iconSettings.cssClassPrefix,
+      cssLanguageSelectors = iconSettings.cssLanguageSelectors,
+      cssLanguageChipSelector = iconSettings.cssLanguageChipSelector,
     } = {}
   ) => {
     if (!fileList || !fileList.length || !icons || !icons.length) {
