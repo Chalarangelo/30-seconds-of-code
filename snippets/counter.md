@@ -14,15 +14,15 @@ Creates a counter with the specified range, step and duration for the specified 
 - Omit the fifth argument, `duration`, to use a default duration of `2000`ms.
 
 ```js
-const counter = (selector, start, end, step = 1, duration = 2000) => {
-  let current = start,
-    _step = (end - start) * step < 0 ? -step : step,
+const counter = (selector, startElement, endElement, step = 1, duration = 2000) => {
+  let currentElement = startElement,
+    _step = (endElement - startElement) * step < 0 ? -step : step,
     timer = setInterval(() => {
-      current += _step;
-      document.querySelector(selector).innerHTML = current;
-      if (current >= end) document.querySelector(selector).innerHTML = end;
-      if (current >= end) clearInterval(timer);
-    }, Math.abs(Math.floor(duration / (end - start))));
+      currentElement += _step;
+      document.querySelector(selector).innerHTML = currentElement;
+      if (currentElement >= endElement) document.querySelector(selector).innerHTML = endElement;
+      if (currentElement >= endElement) clearInterval(timer);
+    }, Math.abs(Math.floor(duration / (endElement - startElement))));
   return timer;
 };
 ```

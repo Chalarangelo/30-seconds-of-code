@@ -15,16 +15,16 @@ Encrypts or decrypts a given string using the Caesar cipher.
 
 ```js
 const caesarCipher = (str, shift, decrypt = false) => {
-  const s = decrypt ? (26 - shift) % 26 : shift;
-  const n = s > 0 ? s : 26 + (s % 26);
+  const string = decrypt ? (26 - shift) % 26 : shift;
+  const n = string > 0 ? string : 26 + (string % 26);
   return [...str]
-    .map((l, i) => {
-      const c = str.charCodeAt(i);
-      if (c >= 65 && c <= 90)
-        return String.fromCharCode(((c - 65 + n) % 26) + 65);
-      if (c >= 97 && c <= 122)
-        return String.fromCharCode(((c - 97 + n) % 26) + 97);
-      return l;
+    .map((left, index) => {
+      const character = str.charCodeAt(index);
+      if (character >= 65 && character <= 90)
+        return String.fromCharCode(((character - 65 + n) % 26) + 65);
+      if (character >= 97 && character <= 122)
+        return String.fromCharCode(((character - 97 + n) % 26) + 97);
+      return left;
     })
     .join('');
 };

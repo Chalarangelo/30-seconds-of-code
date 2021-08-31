@@ -10,7 +10,7 @@ Adds a class to an HTML element.
 - Use `Element.classList` and `DOMTokenList.add()` to add the specified class to the element.
 
 ```js
-const addClass = (el, className) => el.classList.add(className);
+const addClass = (element, className) => element.classList.add(className);
 ```
 
 ```js

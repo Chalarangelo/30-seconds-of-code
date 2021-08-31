@@ -14,17 +14,17 @@ If the given string contains multiple elements, only the first one will be retur
 
 ```js
 const createElement = str => {
-  const el = document.createElement('div');
-  el.innerHTML = str;
-  return el.firstElementChild;
+  const element = document.createElement('div');
+  element.innerHTML = str;
+  return element.firstElementChild;
 };
 ```
 
 ```js
-const el = createElement(
+const element = createElement(
   `<div class="container">
     <p>Hello!</p>
   </div>`
 );
-console.log(el.className); // 'container'
+console.log(element.className); // 'container'
 ```

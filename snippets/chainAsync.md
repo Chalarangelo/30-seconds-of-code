@@ -2,7 +2,7 @@
 title: chainAsync
 tags: function,intermediate
 firstSeen: 2017-12-17T17:55:51+02:00
-lastUpdated: 2020-09-15T16:28:04+03:00
+lastElementUpdated: 2020-09-15T16:28:04+03:00
 ---
 
 Chains asynchronous functions.
@@ -11,11 +11,11 @@ Chains asynchronous functions.
 
 ```js
 const chainAsync = fns => {
-  let curr = 0;
-  const last = fns[fns.length - 1];
+  let currentElement = 0;
+  const lastElement = fns[fns.length - 1];
   const next = () => {
-    const fn = fns[curr++];
-    fn === last ? fn() : fn(next);
+    const fn = fns[currentElement++];
+    fn === lastElement ? fn() : fn(next);
   };
   next();
 };

@@ -16,18 +16,18 @@ Sorts an array of numbers, using the bubble sort algorithm.
 ```js
 const bubbleSort = arr => {
   let swapped = false;
-  const a = [...arr];
-  for (let i = 1; i < a.length; i++) {
+  const element = [...arr];
+  for (let outerIndex = 1; outerIndex < a.length; outerIndex++) {
     swapped = false;
-    for (let j = 0; j < a.length - i; j++) {
-      if (a[j + 1] < a[j]) {
-        [a[j], a[j + 1]] = [a[j + 1], a[j]];
+    for (let innerIndex = 0; innerIndex < a.length - outerIndex; innerIndex++) {
+      if (a[innerIndex + 1] < a[innerIndex]) {
+        [a[innerIndex], a[innerIndex + 1]] = [a[innerIndex + 1], a[innerIndex]];
         swapped = true;
       }
     }
-    if (!swapped) return a;
+    if (!swapped) return element;
   }
-  return a;
+  return element;
 };
 ```
 
