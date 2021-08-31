@@ -1,3 +1,4 @@
+import pathSettings from 'settings/paths';
 import { SnippetCollection } from 'blocks/entities/snippetCollection';
 import { SnippetCollectionListing } from 'blocks/adapters/snippetCollectionListing';
 import { ArgsError } from 'blocks/utilities/error';
@@ -28,7 +29,7 @@ export class ListingSerializer {
     }
 
     const boundLog = Logger.bind('serializers.listing.serializeListing');
-    const { contentPath: outDirPath } = global.settings.paths;
+    const { contentPath: outDirPath } = pathSettings;
 
     const snippetCollectionListing = new SnippetCollectionListing(
       snippetCollection
@@ -42,7 +43,7 @@ export class ListingSerializer {
       snippetCollection.type === 'blog' ||
       (snippetCollection.type === 'tag' && !snippetCollection.config.language);
 
-    const paginatedSnippets = this._paginateSnippets(
+    const paginatedSnippets = ListingSerializer._paginateSnippets(
       snippetCollection.isListed
         ? snippetCollection.snippets.filter(s => s.isListed)
         : snippetCollection.snippets,

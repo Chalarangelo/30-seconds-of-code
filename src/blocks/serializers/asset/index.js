@@ -2,6 +2,8 @@ import fs from 'fs-extra';
 import path from 'path';
 import sharp from 'sharp';
 import glob from 'glob';
+import pathSettings from 'settings/paths';
+import { ContentConfig } from 'blocks/entities/contentConfig';
 import { Logger } from 'blocks/utilities/logger';
 
 // Image asset constants
@@ -56,8 +58,8 @@ export class AssetSerializer {
       rawContentPath: contentPath,
       staticAssetPath: staticAssetPath,
       publicPath,
-    } = global.settings.paths;
-    const configs = global.settings.configs;
+    } = pathSettings;
+    const configs = [...ContentConfig.instances.values()];
     boundLog('Processing assets from config...', 'info');
 
     boundLog(
@@ -73,7 +75,9 @@ export class AssetSerializer {
       .sync(`${inContentPath}/*.@(${supportedExtensions.join('|')})`)
       .map(file => path.resolve(file));
     await Promise.all(
-      staticAssets.map(asset => this.processImageAsset(asset, outPath))
+      staticAssets.map(asset =>
+        AssetSerializer.processImageAsset(asset, outPath)
+      )
     );
     boundLog('Processing static assets complete', 'success');
 
@@ -91,7 +95,10 @@ export class AssetSerializer {
           .map(file => path.resolve(file));
         await Promise.all(
           assets.map(asset =>
-            this.processImageAsset(asset, `${outPath}/${images.name}`)
+            AssetSerializer.processImageAsset(
+              asset,
+              `${outPath}/${images.name}`
+            )
           )
         );
       }
@@ -102,7 +109,7 @@ export class AssetSerializer {
     );
 
     boundLog('Processing icons...', 'info');
-    await this.processIcons();
+    await AssetSerializer.processIcons();
     boundLog(`Processing icons complete`, 'success');
 
     boundLog(
@@ -124,7 +131,7 @@ export class AssetSerializer {
    * Takes a PNG image and produces all the icon assets necessary for the website.
    */
   static processIcons = (iconName = '30s-icon.png') => {
-    const { rawAssetPath: inPath, assetPath } = global.settings.paths;
+    const { rawAssetPath: inPath, assetPath } = pathSettings;
     const iconPath = path.join(inPath, iconName);
     const outPath = path.join(assetPath, 'icons');
 

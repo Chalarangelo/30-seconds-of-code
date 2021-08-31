@@ -1,4 +1,4 @@
-import { InstanceCache } from 'blocks/utilities/instanceCache';
+import pathSettings from 'settings/paths';
 import { ArgsError } from 'blocks/utilities/error';
 import { uniqueElements } from 'utils';
 import tokenizeCollection from 'utils/search';
@@ -69,11 +69,11 @@ export class SnippetCollection {
       else this[key] = rest[key];
     });
 
-    SnippetCollection.instances.add(this.id, this);
+    SnippetCollection.instances.set(this.id, this);
     return this;
   }
 
-  static instances = new InstanceCache();
+  static instances = new Map();
 
   /**
    * Injects additional snippets into an existing collection.
@@ -243,7 +243,7 @@ export class SnippetCollection {
 
   get splash() {
     if (!this._splash) {
-      const assetPath = `/${global.settings.paths.staticAssetPath}`;
+      const assetPath = `/${pathSettings.staticAssetPath}`;
       switch (this.type) {
         case 'main':
           this._splash = null;

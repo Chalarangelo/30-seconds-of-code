@@ -1,4 +1,4 @@
-import { InstanceCache } from 'blocks/utilities/instanceCache';
+import pathSettings from 'settings/paths';
 import { ArgsError } from 'blocks/utilities/error';
 import { convertToSeoSlug } from 'utils';
 
@@ -50,20 +50,36 @@ export class ContentConfig {
       this[key] = rest[key];
     });
 
-    this._loadLangData();
-    ContentConfig.instances.add(this.id, this);
+    ContentConfig.instances.set(this.id, this);
+    if (
+      this.language &&
+      this.language.long &&
+      this.iconName &&
+      !ContentConfig.languageData.has(this.language.long.toLowerCase())
+    ) {
+      ContentConfig.languageData.set(this.language.long.toLowerCase(), {
+        language: this.language.long.toLowerCase(),
+        shortCode: this.language.short,
+        languageLiteral: this.language.long,
+        icon: this.iconName,
+        tags: Object.keys(this.tagIcons).length ? this.tagIcons : {},
+      });
+    }
 
     return this;
   }
 
-  static instances = new InstanceCache();
+  static instances = new Map();
 
-  static langData = [
-    {
-      shortCode: 'html',
-      languageLiteral: 'HTML',
-    },
-  ];
+  static languageData = new Map([
+    [
+      'html',
+      {
+        shortCode: 'html',
+        languageLiteral: 'HTML',
+      },
+    ],
+  ]);
 
   /**
    * Given a raw snippet file path, returns the matching config.
@@ -71,7 +87,9 @@ export class ContentConfig {
    */
   static findContentConfigFromRawSnippet = snippetPath => {
     const snippetDirName = snippetPath.split('/').slice(-3, -2)[0];
-    return this.instances.find(cfg => cfg.dirName === snippetDirName);
+    return [...ContentConfig.instances.values()].find(
+      cfg => cfg.dirName === snippetDirName
+    );
   };
 
   /**
@@ -79,29 +97,9 @@ export class ContentConfig {
    * @param {string} snippetPath - The path of the raw snippet file.
    */
   static findSlugFromRawSnippet = snippetPath => {
-    const config = this.findContentConfigFromRawSnippet(snippetPath);
+    const config = ContentConfig.findContentConfigFromRawSnippet(snippetPath);
     const snippetName = snippetPath.split('/').slice(-1)[0].split('.')[0];
     return `/${config.slugPrefix}${convertToSeoSlug(snippetName)}`;
-  };
-
-  _loadLangData = () => {
-    const tagIconKeys = Object.keys(this.tagIcons);
-    if (
-      !this.language ||
-      !this.language.long ||
-      !this.iconName ||
-      ContentConfig.langData.find(
-        l => l.language === this.language.long.toLowerCase()
-      )
-    )
-      return;
-    ContentConfig.langData.push({
-      language: this.language.long.toLowerCase(),
-      shortCode: this.language.short,
-      languageLiteral: this.language.long,
-      icon: this.iconName,
-      tags: tagIconKeys.length ? this.tagIcons : {},
-    });
   };
 
   get id() {
@@ -117,7 +115,7 @@ export class ContentConfig {
   }
 
   get vscodeUrlPrefix() {
-    return `${global.settings.paths.rawContentPath}/sources/${this.sourceDir}`;
+    return `${pathSettings.rawContentPath}/sources/${this.sourceDir}`;
   }
 
   get isCSS() {
@@ -174,8 +172,8 @@ export class ContentConfig {
     return `${this.dirName}/${this.snippetPath}`;
   }
 
-  get langData() {
-    return ContentConfig.langData;
+  get languageData() {
+    return [...ContentConfig.languageData.values()];
   }
 
   get commonData() {

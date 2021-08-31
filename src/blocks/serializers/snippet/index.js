@@ -1,3 +1,4 @@
+import pathSettings from 'settings/paths';
 import { Snippet } from 'blocks/entities/snippet';
 import { SnippetContext } from 'blocks/adapters/snippetContext';
 import { SnippetPreview } from 'blocks/adapters/snippetPreview';
@@ -36,7 +37,7 @@ export class SnippetSerializer {
     }
 
     const boundLog = Logger.bind('serializers.snippet.serializeSnippet');
-    const { contentPath: outDirPath } = global.settings.paths;
+    const { contentPath: outDirPath } = pathSettings;
 
     let chunkPairs = [
       [

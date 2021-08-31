@@ -1,5 +1,5 @@
 import path from 'path';
-import { InstanceCache } from 'blocks/utilities/instanceCache';
+import pathSettings from 'settings/paths';
 import { ArgsError } from 'blocks/utilities/error';
 import { Tag } from 'blocks/utilities/tag';
 import { ContentConfig } from 'blocks/entities/contentConfig';
@@ -90,18 +90,18 @@ export class Snippet {
       this.authors = [...new Set(authors.toLowerCase().split(','))].map(
         a => config.authors[a]
       );
-      this.cover = `/${global.settings.paths.staticAssetPath}/${cover}`;
+      this.cover = `/${pathSettings.staticAssetPath}/${cover}`;
     }
 
     Object.keys(config.commonData).forEach(key => {
       this[key] = config.commonData[key];
     });
 
-    Snippet.instances.add(this.id, this);
+    Snippet.instances.set(this.id, this);
     return this;
   }
 
-  static instances = new InstanceCache();
+  static instances = new Map();
 
   get id() {
     if (!this._id) {
@@ -175,7 +175,7 @@ export class Snippet {
     if (!this._icon) {
       let mapped;
       if (this.config.isBlog) {
-        const lang = this.config.langData.find(l =>
+        const lang = this.config.languageData.find(l =>
           this.tags.all.includes(l.language)
         );
         if (lang) {
@@ -231,8 +231,8 @@ export class Snippet {
       {
         isBlog: this.config.isBlog,
         type: this.type,
-        assetPath: `/${global.settings.paths.staticAssetPath}`,
-        langData: this.config.langData,
+        assetPath: `/${pathSettings.staticAssetPath}`,
+        languageData: this.config.languageData,
       }
     );
   }

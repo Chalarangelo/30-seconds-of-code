@@ -13,9 +13,7 @@ export class FileParser {
    * @param {string} globPattern - A glob pattern.
    * @returns {Array<String>} Names of the files matching the glob pattern.
    */
-  static fromGlob = globPattern => {
-    return glob.sync(globPattern);
-  };
+  static fromGlob = globPattern => glob.sync(globPattern);
 
   /**
    * Returns an array of files in a directory.
@@ -23,13 +21,7 @@ export class FileParser {
    * @return {Promise<Array<String>>} A promise that resolves to the array of file names.
    */
   static fromDir = dirPath =>
-    new Promise((resolve, reject) =>
-      readDir(dirPath)
-        .then(files =>
-          resolve(
-            files.sort((a, b) => (a.toLowerCase() < b.toLowerCase() ? -1 : 1))
-          )
-        )
-        .catch(err => reject(err))
+    readDir(dirPath).then(files =>
+      files.sort((a, b) => (a.toLowerCase() < b.toLowerCase() ? -1 : 1))
     );
 }
