@@ -7,7 +7,7 @@ lastUpdated: 2020-08-18T14:25:46+03:00
 
 Creates a scrollable container that will snap on elements when scrolling.
 
-- Use `display: gird` and `grid-auto-flow: row` to create a vertical layout.
+- Use `display: grid` and `grid-auto-flow: row` to create a vertical layout.
 - Use `scroll-snap-type: y mandatory` and `overscroll-behavior-y: contain` to create a snap effect on vertical scroll.
 - You can use `scroll-snap-align` with either `start`, `stop` or `center` to change the snap alignment.
 
