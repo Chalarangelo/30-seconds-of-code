@@ -1,6 +1,6 @@
 ---
 title: useKeyPress
-tags: hooks,state,effect,intermediate
+tags: hooks,state,effect,event,intermediate
 firstSeen: 2021-09-07T05:00:00-04:00
 ---
 
