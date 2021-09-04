@@ -9,6 +9,19 @@ import { Logger } from 'blocks/utilities/logger';
 
 const writeFile = util.promisify(fs.writeFile);
 
+const isBlogSnippet = req => req.context.cardTemplate === 'BlogSnippetCard';
+// TODO: After the hooks feed experiment (#366) is complete,
+// we should either remove or formalize this.
+const isReactHookSnippet = req => {
+  return (
+    req.context.cardTemplate === 'StandardSnippetCard' &&
+    req.context.snippet.language &&
+    req.context.snippet.language.long === 'React' &&
+    req.context.snippet.tags &&
+    req.context.snippet.tags.primary === 'Hooks'
+  );
+};
+
 /**
  * Serializes feed.xml files.
  */
@@ -39,16 +52,19 @@ export class FeedSerializer {
     );
     const nodes = Requirements.load()
       .requirables.filter(
-        x => x.context.cardTemplate === 'BlogSnippetCard' && !x.isUnlisted
+        x => (isBlogSnippet(x) || isReactHookSnippet(x)) && !x.isUnlisted
       )
       .sort(
         (a, b) =>
           new Date(b.context.snippet.firstSeen) -
           new Date(a.context.snippet.firstSeen)
       )
-      .slice(0, 15)
+      .slice(0, 25) // TODO: Revert to 15 or figure out optimal length after experiment
       .map(s => ({
-        title: s.context.snippet.title,
+        // TODO: Create a proper literal after experiment or revert
+        title: isReactHookSnippet(s)
+          ? `React ${s.context.snippet.title} hook`
+          : s.context.snippet.title,
         fullRoute: s.fullRoute,
         description: s.context.pageDescription,
         pubDate: new Date(s.context.snippet.firstSeen).toUTCString(),
