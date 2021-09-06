@@ -30,7 +30,7 @@
     "jest-environment-jsdom": "^27.0.6",
     "jest-transform-stub": "^2.0.0",
     "mdast-util-to-hast": "^9.1.0",
-    "next": "^10.2.3",
+    "next": "^11.1.2",
     "node-fetch": "^2.6.1",
     "node-sass": "^4.14.1",
     "prettier": "^2.2.1",
