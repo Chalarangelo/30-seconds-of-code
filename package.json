@@ -33,6 +33,7 @@
     "next": "^11.1.2",
     "node-fetch": "^2.6.1",
     "node-sass": "^4.14.1",
+    "preact": "^10.5.14",
     "prettier": "^2.2.1",
     "prismjs": "^1.23.0",
     "prop-types": "^15.7.2",
