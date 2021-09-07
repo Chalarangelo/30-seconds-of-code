@@ -2,7 +2,7 @@
 title: CracklePop
 tags: string,divisibility,intermediate
 firstSeen: 2021-06-13T05:00:00-04:00
-lastUpdated: 2020-09-07T20:23:47+03:00
+lastUpdated: 2021-09-07T20:23:47+03:00
 ---
 
 Program that prints out the numbers 1 to 100 (inclusive). If the number is divisible by 3, print Crackle instead of the number. If it's divisible by 5, print Pop. If it's divisible by both 3 and 5, print CracklePop.
