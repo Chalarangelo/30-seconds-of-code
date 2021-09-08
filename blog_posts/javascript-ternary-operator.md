@@ -1,6 +1,6 @@
 ---
 title: What is the ternary operator and how do I use it?
-type: story
+type: question
 tags: javascript,condition
 authors: maciv
 cover: blog_images/red-succulent.jpg
