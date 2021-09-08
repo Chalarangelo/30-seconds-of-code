@@ -1,6 +1,6 @@
 ---
 title: "Tip: 2 ways to format a string in Python"
-type: story
+type: tip
 tags: python,string
 authors: maciv
 cover: blog_images/feathers.jpg

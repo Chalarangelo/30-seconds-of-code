@@ -1,6 +1,6 @@
 ---
 title: What are the differences between var, let and const in JavaScript?
-type: story
+type: question
 tags: javascript,type,variable
 authors: chalarangelo
 cover: blog_images/highlands.jpg

@@ -1,6 +1,6 @@
 ---
 title: What are truthy and falsy values in JavaScript?
-type: story
+type: question
 tags: javascript,type,comparison
 authors: chalarangelo
 cover: blog_images/little-bird.jpg
