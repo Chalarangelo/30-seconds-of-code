@@ -4,7 +4,7 @@ tags: hooks,state,effect,advanced
 firstSeen: 2021-10-02T05:00:00-04:00
 ---
 
-Tracks the browser's location hash value, and allows changin it.
+Tracks the browser's location hash value, and allows changing it.
 
 - Use the `useState()` hook to lazily get the `hash` property of the `Location` object.
 - Use the `useCallback()` hook to create a handler that updates the state.
