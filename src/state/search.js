@@ -98,7 +98,7 @@ const reducer = (state, action) => {
         filteredResults: searchResults.slice(0, SEARCH_RESULTS_COUNT),
         typeFilter: 'all',
         availableFilters: Object.entries(availableFilters)
-          .filter(([key, value]) => value)
+          .filter(([, value]) => value)
           .map(([key]) => key),
       };
     }
