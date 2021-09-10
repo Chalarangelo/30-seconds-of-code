@@ -1,12 +1,10 @@
-import util from 'util';
 import fs from 'fs-extra';
+import { writeFile } from 'fs/promises';
 import pathSettings from 'settings/paths';
 import chirpSettings from 'settings/chirp';
 import { truncateString } from 'utils';
 import { Requirements } from 'blocks/utilities/requirements';
 import { Logger } from 'blocks/utilities/logger';
-
-const writeFile = util.promisify(fs.writeFile);
 
 export class ChirpSerializer {
   static serialize = async () => {

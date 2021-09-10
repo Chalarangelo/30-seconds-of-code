@@ -1,7 +1,9 @@
 import { JSONSerializer } from '.';
 
+jest.mock('fs/promises', () => ({
+  writeFile: jest.fn((path, data) => Promise.resolve([path, data])),
+}));
 jest.mock('fs-extra', () => ({
-  writeFile: jest.fn((path, data, callback) => callback(null, [path, data])),
   ensureDirSync: jest.fn(),
 }));
 
