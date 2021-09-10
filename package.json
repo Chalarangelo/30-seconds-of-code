@@ -79,5 +79,8 @@
   "browserslist": [
     "> 0.5% and last 4 versions and not dead and not ie>0 and not op_mini all and not and_uc>0 and not edge<79"
   ],
-  "dependencies": {}
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.17.6"
+  }
 }
