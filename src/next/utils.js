@@ -1,9 +1,6 @@
 import glob from 'glob';
 import path from 'path';
-import fs from 'fs-extra';
-import util from 'util';
-
-const readFile = util.promisify(fs.readFile);
+import { readFile } from 'fs/promises';
 
 const readJSON = file =>
   new Promise(res => readFile(file).then(d => res(JSON.parse(d))));

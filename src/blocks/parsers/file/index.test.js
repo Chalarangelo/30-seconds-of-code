@@ -1,8 +1,8 @@
 import { FileParser } from '.';
 
-jest.mock('fs-extra', () => ({
-  readdir: jest.fn((path, callback) =>
-    callback(null, [`${path}/none.md`, `${path}/any.md`, `${path}/every.md`])
+jest.mock('fs/promises', () => ({
+  readdir: jest.fn(path =>
+    Promise.resolve([`${path}/none.md`, `${path}/any.md`, `${path}/every.md`])
   ),
 }));
 
