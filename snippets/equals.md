@@ -1,8 +1,8 @@
 ---
 title: equals
-tags: object,array,type,advanced
+tags: object,array,type,recursion,advanced
 firstSeen: 2018-01-15T18:34:11+02:00
-lastUpdated: 2020-10-22T20:23:47+03:00
+lastUpdated: 2021-09-08T09:37:36+03:00
 ---
 
 Performs a deep comparison between two values to determine if they are equivalent.
@@ -15,13 +15,18 @@ Performs a deep comparison between two values to determine if they are equivalen
 ```js
 const equals = (a, b) => {
   if (a === b) return true;
+
   if (a instanceof Date && b instanceof Date)
     return a.getTime() === b.getTime();
+
   if (!a || !b || (typeof a !== 'object' && typeof b !== 'object'))
     return a === b;
+
   if (a.prototype !== b.prototype) return false;
-  let keys = Object.keys(a);
+
+  const keys = Object.keys(a);
   if (keys.length !== Object.keys(b).length) return false;
+
   return keys.every(k => equals(a[k], b[k]));
 };
 ```
