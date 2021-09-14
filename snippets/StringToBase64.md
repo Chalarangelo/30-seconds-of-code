@@ -1,6 +1,6 @@
 ---
 title: StringToBase64
-tags: Base64,Buffer,Encoding,String
+tags: Base64,Buffer,Encoding,String,beginner
 firstSeen: 2021-9-14 10:10:00 +5:30
 ---
 
