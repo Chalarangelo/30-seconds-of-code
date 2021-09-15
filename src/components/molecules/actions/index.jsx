@@ -1,7 +1,6 @@
 /* eslint-disable camelcase */
 import PropTypes from 'typedefs/proptypes';
 import useGtagEvent from 'components/hooks/useGtagEvent';
-import copyToClipboard from 'copy-to-clipboard';
 import JSX_SNIPPET_PRESETS from 'settings/jsxSnippetPresets';
 import literals from 'lang/en/client/common';
 import { useEffect, useState } from 'react';
@@ -16,81 +15,27 @@ const propTypes = {
 const Actions = ({ snippet }) => {
   const gtagCallback = useGtagEvent('click');
 
-  // Code state
-  const [{ src, css, html, js, style }, setCode] = useState({
-    src: '',
-    css: '',
-    html: '',
-    js: '',
-    style: '',
+  const [{ share, clipboard }, setApis] = useState({
+    share: false,
+    clipboard: false,
   });
 
   useEffect(() => {
-    if (!document) return;
-    switch (snippet.actionType) {
-      case 'codepen': {
-        const codeBlock = document.querySelector(
-          '.card-code[data-code-language="React"]'
-        );
-        let code = codeBlock ? codeBlock.innerText : '';
-        const codeExample = document.querySelector('.card-example');
-        code += codeExample ? codeExample.innerText : '';
-        const styleBlock = document.querySelector(
-          '.card-code[data-code-language="CSS"]'
-        );
-        setCode({ src: code, style: styleBlock ? styleBlock.innerText : '' });
-        break;
-      }
-      case 'cssCodepen': {
-        setCode({
-          html: snippet.code.html,
-          css: snippet.code.css,
-          js: snippet.code.js,
-        });
-        break;
-      }
-      case 'copy': {
-        const codeBlock = document.querySelector('.card-code');
-        setCode({ src: codeBlock ? codeBlock.innerText : '' });
-        break;
-      }
-      default:
-        break;
-    }
-  }, [snippet]);
-
-  // Share state
-  const [canShare, setCanShare] = useState(false);
-
-  useEffect(() => {
-    if (navigator && navigator.share) setCanShare(true);
+    if (typeof window === 'undefined') return;
+    setApis({
+      share: Boolean(navigator && navigator.share),
+      clipboard: Boolean(navigator.clipboard && navigator.clipboard.writeText),
+    });
   }, []);
 
   // Copy button state
   const [active, setActive] = useState(false);
-  const [copying, setCopying] = useState(false);
-
-  // If `copying` is `true`, then play the activation animation.
-  useEffect(() => {
-    if (!copying) return;
-    copyToClipboard(src);
-    setTimeout(() => setActive(true), 100);
-    setTimeout(() => setActive(false), 750);
-  }, [copying]);
-
-  // If `active` is `false`, set `copying` to false (finished activation animation).
-  useEffect(() => {
-    if (active) return;
-    setCopying(false);
-  }, [active]);
-
-  const isJsxCodepen = snippet.actionType === 'codepen';
 
   return (
     <div className='card-actions flex'>
-      {Boolean(canShare) && (
+      {share && (
         <button
-          className='flex-none btn action-btn icon-btn icon icon-share before:fs-md'
+          className='flex-none before:fs-md btn action-btn icon-btn icon icon-share'
           title={literals.share}
           onClick={() => {
             gtagCallback({ event_category: 'action-share', value: 1 });
@@ -106,53 +51,89 @@ const Actions = ({ snippet }) => {
           }}
         />
       )}
-      {Boolean(snippet.actionType === 'copy') && (
+      {snippet.actionType === 'copy' && clipboard && (
         <button
-          className={`flex-none btn action-btn icon-btn icon ${
+          className={`flex-none before:fs-md btn action-btn icon-btn icon ${
             active ? 'icon-check active' : 'icon-clipboard'
-          } before:fs-md`}
+          }`}
           title={literals.copyToClipboard}
           onClick={() => {
             gtagCallback({ event_category: 'action-copy', value: 1 });
-            setCopying(true);
+            try {
+              const codeBlock = document.querySelector('.card-code');
+              navigator.clipboard.writeText(
+                codeBlock ? codeBlock.innerText : ''
+              );
+              setTimeout(() => setActive(true), 100);
+              setTimeout(() => setActive(false), 750);
+            } catch (err) {
+              // display error message or feedback microinteraction
+            }
           }}
         />
       )}
       {Boolean(
         snippet.actionType === 'codepen' || snippet.actionType === 'cssCodepen'
       ) && (
-        <form
-          action='https://codepen.io/pen/define'
-          method='POST'
-          target='_blank'
-          className='flex-none'
-        >
-          <input
-            type='hidden'
-            name='data'
-            value={JSON.stringify({
-              js: isJsxCodepen ? src : js,
-              css: isJsxCodepen ? style : css,
-              html: isJsxCodepen ? JSX_SNIPPET_PRESETS.envHtml : html,
-              js_pre_processor: isJsxCodepen
-                ? JSX_SNIPPET_PRESETS.jsPreProcessor
-                : 'none',
-              js_external: isJsxCodepen
-                ? JSX_SNIPPET_PRESETS.jsImports.join(';')
-                : '',
-            })}
-          />
-          <button
-            className='flex-none btn action-btn icon-btn icon icon-codepen before:fs-md'
-            title={literals.codepen}
-            onClick={() => {
-              gtagCallback({ event_category: 'action-codepen', value: 1 });
-            }}
-          />
-        </form>
+        <button
+          className='flex-none before:fs-md btn action-btn icon-btn icon icon-codepen'
+          title={literals.codepen}
+          onClick={() => {
+            gtagCallback({ event_category: 'action-codepen', value: 1 });
+            try {
+              const isJsxCodepen = snippet.actionType === 'codepen';
+
+              const codeBlock = document.querySelector(
+                '.card-code[data-code-language="React"]'
+              );
+              const codeExample = document.querySelector('.card-example');
+              const styleBlock = document.querySelector(
+                '.card-code[data-code-language="CSS"]'
+              );
+
+              let code = codeBlock ? codeBlock.innerText : '';
+              code += codeExample ? codeExample.innerText : '';
+
+              const snippetData = JSON.stringify(
+                isJsxCodepen
+                  ? {
+                      js: code,
+                      css: styleBlock ? styleBlock.innerText : '',
+                      html: JSX_SNIPPET_PRESETS.envHtml,
+                      js_pre_processor: JSX_SNIPPET_PRESETS.jsPreProcessor,
+                      js_external: JSX_SNIPPET_PRESETS.jsImports.join(';'),
+                    }
+                  : {
+                      html: snippet.code.html,
+                      css: snippet.code.css,
+                      js: snippet.code.js,
+                      js_pre_processor: 'none',
+                      js_external: '',
+                    }
+              );
+
+              const form = document.createElement('form');
+              form.setAttribute('action', 'https://codepen.io/pen/define');
+              form.setAttribute('method', 'POST');
+              form.setAttribute('target', '_blank');
+
+              const input = document.createElement('input');
+              input.setAttribute('type', 'hidden');
+              input.setAttribute('name', 'data');
+              input.setAttribute('value', snippetData);
+
+              form.appendChild(input);
+              document.body.appendChild(form);
+              form.submit();
+              document.body.removeChild(form);
+            } catch (err) {
+              // display error message or feedback microinteraction
+            }
+          }}
+        />
       )}
       <a
-        className='flex-none btn action-btn icon-btn icon icon-github before:fs-md'
+        className='flex-none before:fs-md btn action-btn icon-btn icon icon-github'
         href={snippet.url}
         rel='nofollow noopener noreferrer'
         target='_blank'
