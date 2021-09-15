@@ -13,7 +13,7 @@ Returns the string representation of the last date in the given date's month.
 
 ```js
 const lastDateOfMonth = (date = new Date()) => {
-  let d = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+  const d = new Date(date.getFullYear(), date.getMonth() + 1, 0);
   return d.toISOString().split('T')[0];
 };
 ```
