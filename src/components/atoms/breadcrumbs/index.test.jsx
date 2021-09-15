@@ -16,12 +16,6 @@ describe('<Breadcrumbs />', () => {
       expect(wrapper.querySelectorAll('.breadcrumbs')).toHaveLength(1);
     });
 
-    it('an appropriate element for each breadcrumb', () => {
-      expect(wrapper.querySelectorAll('.breadcrumb-item')).toHaveLength(
-        breadcrumbs.length
-      );
-    });
-
     it('the breadcrumb links', () => {
       expect(wrapper.querySelectorAll('.breadcrumb-item > a')).toHaveLength(
         breadcrumbs.length
