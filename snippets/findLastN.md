@@ -12,7 +12,7 @@ Finds the last `n` elements for which the provided function returns a truthy val
 
 ```js
 const findLastN = (arr, matcher, n = 1) => {
-  let res = [];
+  const res = [];
   for (let i = arr.length - 1; i >= 0; i--) {
     const el = arr[i];
     const match = matcher(el, i, arr);
@@ -24,6 +24,6 @@ const findLastN = (arr, matcher, n = 1) => {
 ```
 
 ```js
-findLastN([1, 2, 4, 6], n => n % 2 === 0, 2); // [4, 6]
-findLastN([1, 2, 4, 6], n => n % 2 === 0, 5); // [2, 4, 6]
+findLastN([1, 2, 4, 6], (n) => n % 2 === 0, 2); // [4, 6]
+findLastN([1, 2, 4, 6], (n) => n % 2 === 0, 5); // [2, 4, 6]
 ```
