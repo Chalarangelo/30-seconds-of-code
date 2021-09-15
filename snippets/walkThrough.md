@@ -17,7 +17,7 @@ Creates a generator, that walks through all the keys of a given object.
 ```js
 const walkThrough = function* (obj) {
   const walk = function* (x, previous = []) {
-    for (let key of Object.keys(x)) {
+    for (const key of Object.keys(x)) {
       if (typeof x[key] === 'object') yield* walk(x[key], [...previous, key]);
       else yield [[...previous, key], x[key]];
     }
@@ -33,18 +33,18 @@ const obj = {
   c: {
     d: 10,
     e: 20,
-    f: [30, 40]
+    f: [30, 40],
   },
   g: [
     {
       h: 10,
-      i: 20
+      i: 20,
     },
     {
-      j: 30
+      j: 30,
     },
-    40
-  ]
+    40,
+  ],
 };
 [...walkThrough(obj)];
 /*
