@@ -12,8 +12,8 @@ Finds the first `n` elements for which the provided function returns a truthy va
 
 ```js
 const findFirstN = (arr, matcher, n = 1) => {
-  let res = [];
-  for (let i in arr) {
+  const res = [];
+  for (const i in arr) {
     const el = arr[i];
     const match = matcher(el, i, arr);
     if (match) res.push(el);
@@ -24,6 +24,6 @@ const findFirstN = (arr, matcher, n = 1) => {
 ```
 
 ```js
-findFirstN([1, 2, 4, 6], n => n % 2 === 0, 2); // [2, 4]
-findFirstN([1, 2, 4, 6], n => n % 2 === 0, 5); // [2, 4, 6]
+findFirstN([1, 2, 4, 6], (n) => n % 2 === 0, 2); // [2, 4]
+findFirstN([1, 2, 4, 6], (n) => n % 2 === 0, 5); // [2, 4, 6]
 ```
