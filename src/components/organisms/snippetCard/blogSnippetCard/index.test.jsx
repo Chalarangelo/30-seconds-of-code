@@ -66,7 +66,7 @@ describe('<BlogSnippetCard />', () => {
     expect(card.querySelector('img').src).toContain(fullBlogSnippet.cover);
   });
 
-  describe('with multiple auhors', () => {
+  describe('with multiple authors', () => {
     beforeEach(() => {
       wrapper = renderWithContext(
         <BlogSnippetCard
