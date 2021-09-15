@@ -13,8 +13,8 @@ Injects the given CSS code into the current document
 - Return the newly created `style` element.
 
 ```js
-const injectCSS = css => {
-  let el = document.createElement('style');
+const injectCSS = (css) => {
+  const el = document.createElement('style');
   el.type = 'text/css';
   el.innerText = css;
   document.head.appendChild(el);
@@ -23,6 +23,6 @@ const injectCSS = css => {
 ```
 
 ```js
-injectCSS('body { background-color: #000 }'); 
+injectCSS('body { background-color: #000 }');
 // '<style type="text/css">body { background-color: #000 }</style>'
 ```
