@@ -17,6 +17,10 @@ Object.defineProperty(window, 'open', {
   value: jest.fn(),
 });
 
+global.navigator.clipboard = {
+  writeText: jest.fn(),
+};
+
 describe('<Actions />', () => {
   let wrapper;
 
