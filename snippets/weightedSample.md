@@ -13,7 +13,7 @@ Gets a random element from an array, using the provided `weights` as the probabi
 
 ```js
 const weightedSample = (arr, weights) => {
-  let roll = Math.random();
+  const roll = Math.random();
   return arr[
     weights
       .reduce(
