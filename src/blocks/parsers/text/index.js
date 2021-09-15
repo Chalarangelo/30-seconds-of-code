@@ -1,9 +1,6 @@
-import fs from 'fs-extra';
-import util from 'util';
+import { readFile } from 'fs/promises';
 import frontmatter from 'front-matter';
 import { FileParser } from 'blocks/parsers/file';
-
-const readFile = util.promisify(fs.readFile);
 
 /**
  * Parses text files, using frontmatter, returning text objects.

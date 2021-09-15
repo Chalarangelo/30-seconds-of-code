@@ -1,6 +1,5 @@
-import util from 'util';
 import fs from 'fs-extra';
-const writeFile = util.promisify(fs.writeFile);
+import { writeFile } from 'fs/promises';
 
 /**
  * Serializes objects to JSON files.

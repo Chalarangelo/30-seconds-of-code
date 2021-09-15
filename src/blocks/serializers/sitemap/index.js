@@ -1,13 +1,11 @@
-import util from 'util';
 import fs from 'fs-extra';
+import { writeFile } from 'fs/promises';
 import handlebars from 'handlebars';
 import globalSettings from 'settings/global';
 import pathSettings from 'settings/paths';
 import sitemapSettings from 'settings/sitemap';
 import { Requirements } from 'blocks/utilities/requirements';
 import { Logger } from 'blocks/utilities/logger';
-
-const writeFile = util.promisify(fs.writeFile);
 
 /**
  * Serializes sitemap.xml files.

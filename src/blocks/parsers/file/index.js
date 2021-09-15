@@ -1,8 +1,5 @@
 import glob from 'glob';
-import fs from 'fs-extra';
-import util from 'util';
-
-const readDir = util.promisify(fs.readdir);
+import { readdir } from 'fs/promises';
 
 /**
  * Parses directories and globs, returning array of file names.
@@ -21,7 +18,7 @@ export class FileParser {
    * @return {Promise<Array<String>>} A promise that resolves to the array of file names.
    */
   static fromDir = dirPath =>
-    readDir(dirPath).then(files =>
+    readdir(dirPath).then(files =>
       files.sort((a, b) => (a.toLowerCase() < b.toLowerCase() ? -1 : 1))
     );
 }

@@ -1,4 +1,5 @@
-import Remark from 'remark';
+import remark from 'remark';
+import remarkGfm from 'remark-gfm';
 import remarkOptions from 'settings/remark';
 import toHAST from 'mdast-util-to-hast';
 import hastToHTML from 'hast-util-to-html';
@@ -8,7 +9,9 @@ import prismComponents from 'prismjs/components';
 import { escapeHTML, optimizeAllNodes } from 'utils';
 
 // Setup Remark using the appropriate options.
-const remark = new Remark().data('settings', remarkOptions);
+const remarkParser = new remark()
+  .use(remarkGfm)
+  .data('settings', remarkOptions);
 
 const commonTransformers = [
   // Add 'rel' and 'target' to external links
@@ -131,7 +134,7 @@ export class MarkdownParser {
    * @param {string} markdown - The markdown string to be parsed.
    */
   static parseMarkdown = (markdown, isText = false, languageData = []) => {
-    const ast = remark.parse(markdown);
+    const ast = remarkParser.parse(markdown);
 
     // Highlight code blocks
     visit(ast, `code`, node => {
