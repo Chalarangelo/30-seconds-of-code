@@ -14,7 +14,7 @@ Creates a generator, repeating the given value indefinitely.
 const repeatGenerator = function* (val) {
   let v = val;
   while (true) {
-    let newV = yield v;
+    const newV = yield v;
     if (newV !== undefined) v = newV;
   }
 };
