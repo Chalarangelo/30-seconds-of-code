@@ -11,11 +11,11 @@ Logs the name of a function.
 - Return the given function `fn`.
 
 ```js
-const functionName = fn => (console.debug(fn.name), fn);
+const functionName = (fn) => (console.debug(fn.name), fn);
 ```
 
 ```js
-let m = functionName(Math.max)(5, 6);
+const m = functionName(Math.max)(5, 6);
 // max (logged in debug channel of console)
 // m = 6
 ```
