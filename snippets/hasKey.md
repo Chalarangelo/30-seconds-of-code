@@ -16,7 +16,7 @@ Checks if the target value exists in a JSON object.
 const hasKey = (obj, keys) => {
   return (
     keys.length > 0 &&
-    keys.every(key => {
+    keys.every((key) => {
       if (typeof obj !== 'object' || !obj.hasOwnProperty(key)) return false;
       obj = obj[key];
       return true;
@@ -26,10 +26,10 @@ const hasKey = (obj, keys) => {
 ```
 
 ```js
-let obj = {
+const obj = {
   a: 1,
   b: { c: 4 },
-  'b.d': 5
+  'b.d': 5,
 };
 hasKey(obj, ['a']); // true
 hasKey(obj, ['b']); // true
