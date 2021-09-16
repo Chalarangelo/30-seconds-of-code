@@ -28,9 +28,10 @@ const CollectionChip = ({ chip }) => {
           {literals.snippetCollection}
         </p>
       </div>
-      <div className='card-description'>
-        <p>{chip.description}</p>
-      </div>
+      <div
+        className='card-description'
+        dangerouslySetInnerHTML={{ __html: `${chip.description}` }}
+      />
     </li>
   ) : (
     <li className='collection-chip srfc-01dp txt-200 br-xl'>
