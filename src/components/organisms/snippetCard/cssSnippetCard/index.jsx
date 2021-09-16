@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import PropTypes from 'typedefs/proptypes';
-import Card, { CardIcon } from 'components/atoms/card';
+import Card, { CardIcon, CardTitle, CardSubtitle } from 'components/atoms/card';
 import CodeBlock from 'components/atoms/codeBlock';
 import Actions from 'components/molecules/actions';
 import literals from 'lang/en/client/common';
@@ -36,12 +36,10 @@ const SnippetCard = ({ snippet }) => {
       <div className='card-meta grid'>
         <CardIcon icon={snippet.icon} expertise={snippet.expertise} />
         <div className='card-data'>
-          <h1 className='card-title txt-200 fs-xl f-alt f-ellipsis'>
-            {snippet.title}
-          </h1>
-          <p className='card-subtitle txt-050 fs-xs m-0'>
+          <CardTitle>{snippet.title}</CardTitle>
+          <CardSubtitle>
             {[snippet.language.long, ...snippet.tags.all].join(', ')}
-          </p>
+          </CardSubtitle>
         </div>
       </div>
       <div

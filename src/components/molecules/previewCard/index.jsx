@@ -1,6 +1,6 @@
 import PropTypes from 'typedefs/proptypes';
 import Link from 'next/link';
-import { CardIcon } from 'components/atoms/card';
+import { CardIcon, CardTitle, CardSubtitle } from 'components/atoms/card';
 import literals from 'lang/en/client/common';
 
 const propTypes = {
@@ -34,12 +34,12 @@ const PreviewCard = ({ contentItem }) => {
         expertise={contentItem.expertise}
       />
       <div className='card-data'>
-        <h3 className='card-title txt-200 fs-xl f-alt f-ellipsis'>
+        <CardTitle isSecondary>
           <Link href={contentItem.url}>
             <a className='inherit'>{contentItem.title}</a>
           </Link>
-        </h3>
-        <p className='card-subtitle txt-050 fs-xs m-0'>{tags.join(', ')}</p>
+        </CardTitle>
+        <CardSubtitle>{tags.join(', ')}</CardSubtitle>
       </div>
       <div
         className='card-description'
