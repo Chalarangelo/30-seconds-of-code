@@ -43,6 +43,7 @@ const ListingPage = ({
           items: snippetList,
           type: 'listing',
         }}
+        canonical={slug}
       />
       <Shell>
         <SnippetList
