@@ -1,7 +1,7 @@
 import PropTypes from 'typedefs/proptypes';
 import Meta from 'components/organisms/meta';
 import PageTitle from 'components/atoms/pageTitle';
-import Card from 'components/atoms/card';
+import Card, { CardTitle } from 'components/atoms/card';
 import Shell from 'components/organisms/shell';
 import { useShell } from 'state/shell';
 
@@ -48,9 +48,7 @@ const StaticPage = ({
         <p className='my-0 mx-3.5 txt-100'>{subtitle}</p>
         {cards.map(({ title, html }, i) => (
           <Card key={i}>
-            <h3 className='card-title txt-200 fs-xl f-alt f-ellipsis'>
-              {title}
-            </h3>
+            <CardTitle isSecondary>{title}</CardTitle>
             <div
               className='card-description'
               dangerouslySetInnerHTML={{ __html: html }}
@@ -59,9 +57,7 @@ const StaticPage = ({
         ))}
         {cookieSettingCard ? (
           <Card>
-            <h3 className='card-title txt-200 fs-xl f-alt f-ellipsis'>
-              {cookieSettingCard.title}
-            </h3>
+            <CardTitle isSecondary>{cookieSettingCard.title}</CardTitle>
             <div className='card-description'>
               <p>{cookieSettingCard.text}</p>
               <label className='flex a-center md:fs-md'>
