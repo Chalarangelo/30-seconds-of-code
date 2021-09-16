@@ -3,13 +3,22 @@ import PropTypes from 'typedefs/proptypes';
 const iconPropTypes = {
   icon: PropTypes.string.isRequired,
   expertise: PropTypes.string,
+  displayExpertise: PropTypes.bool,
 };
 
-export const CardIcon = ({ icon, expertise = 'intermediate' }) => (
+export const CardIcon = ({
+  icon,
+  expertise = 'intermediate',
+  displayExpertise = true,
+}) => (
   <div
-    className={`card-icon relative inline-block br-round icon icon-${icon} before:fs-lg`}
+    className={`card-icon relative inline-block ${
+      displayExpertise ? 'br-round' : 'br-xl'
+    } icon icon-${icon} before:fs-lg`}
   >
-    <span className={`expertise box-border br-round ${expertise}`} />
+    {displayExpertise && (
+      <span className={`expertise box-border br-round ${expertise}`} />
+    )}
   </div>
 );
 
