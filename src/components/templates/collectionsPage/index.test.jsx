@@ -4,11 +4,11 @@ import CollectionsPage from './index';
 import { collectionChip } from 'test/fixtures/collections';
 
 describe('<CollectionsPage />', () => {
-  const chipList = [collectionChip];
+  const chipList = [collectionChip, collectionChip];
   const listingName = 'Collection list';
   const listingTitle = 'Collection list';
   const pageDescription = 'Browse 20 snippet collections on 30 seconds of code';
-  let wrapper;
+  let wrapper, pageTitle;
 
   beforeEach(() => {
     wrapper = renderWithContext(
@@ -19,6 +19,7 @@ describe('<CollectionsPage />', () => {
         pageDescription={pageDescription}
       />
     ).container;
+    pageTitle = wrapper.querySelector('.page-title');
   });
 
   afterEach(cleanup);
@@ -26,6 +27,14 @@ describe('<CollectionsPage />', () => {
   describe('should render', () => {
     it('a Shell component', () => {
       expect(wrapper.querySelectorAll('.page-container')).toHaveLength(1);
+    });
+
+    it('a PageTitle component', () => {
+      expect(wrapper.querySelectorAll('.page-title')).toHaveLength(1);
+    });
+
+    it('the appropriate CollectionChip components', () => {
+      expect(wrapper.querySelectorAll('.collection-chip')).toHaveLength(2);
     });
 
     it('a CollectionList component', () => {
@@ -37,12 +46,7 @@ describe('<CollectionsPage />', () => {
     expect(document.title).toContain(listingName);
   });
 
-  it('should pass the correct data to the CollectionList component', () => {
-    expect(
-      wrapper.querySelectorAll('.list-section .collection-chip')
-    ).toHaveLength(chipList.length);
-    expect(wrapper.querySelector('.page-title').textContent).toContain(
-      listingTitle
-    );
+  it('should pass the listingName to PageTitle', () => {
+    expect(pageTitle.textContent).toBe(listingName);
   });
 });

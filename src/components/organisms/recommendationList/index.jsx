@@ -1,6 +1,6 @@
 import PropTypes from 'typedefs/proptypes';
 import PreviewCard from 'components/molecules/previewCard';
-import CollectionChip from 'components/atoms/collectionChip';
+import CollectionChip from 'components/molecules/collectionChip';
 import PageTitle from 'components/atoms/pageTitle';
 import literals from 'lang/en/client/common';
 

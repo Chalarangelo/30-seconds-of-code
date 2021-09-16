@@ -3,7 +3,7 @@ import { useSearch } from 'state/search';
 import PageBackdrop from 'components/molecules/pageBackdrop';
 import PageTitle from 'components/atoms/pageTitle';
 import PreviewCard from 'components/molecules/previewCard';
-import CollectionChip from 'components/atoms/collectionChip';
+import CollectionChip from 'components/molecules/collectionChip';
 import RecommendationList from 'components/organisms/recommendationList';
 import literals from 'lang/en/client/search';
 
