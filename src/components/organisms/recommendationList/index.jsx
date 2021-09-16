@@ -1,6 +1,5 @@
 import PropTypes from 'typedefs/proptypes';
 import PreviewCard from 'components/molecules/previewCard';
-import CollectionChip from 'components/molecules/collectionChip';
 import PageTitle from 'components/atoms/pageTitle';
 import literals from 'lang/en/client/common';
 
@@ -15,7 +14,11 @@ const propTypes = {
  */
 const RecommendationList = ({ snippetList, collectionChip = null }) => {
   const hasCollection = Boolean(collectionChip);
-  return snippetList.length || hasCollection ? (
+  const recommendations = hasCollection
+    ? [collectionChip, ...snippetList]
+    : snippetList;
+
+  return recommendations.length ? (
     <>
       <PageTitle className='recommendation-list-title f-center'>
         {literals.recommendedSnippets}
@@ -24,14 +27,11 @@ const RecommendationList = ({ snippetList, collectionChip = null }) => {
         ) : null}
       </PageTitle>
       <ul className='list-section'>
-        {hasCollection ? (
-          <CollectionChip
-            key={`collection_${collectionChip.url}`}
-            chip={collectionChip}
+        {recommendations.map(contentItem => (
+          <PreviewCard
+            key={`recommendation_${contentItem.url}`}
+            contentItem={contentItem}
           />
-        ) : null}
-        {snippetList.map(snippet => (
-          <PreviewCard key={`snippet_${snippet.url}`} snippet={snippet} />
         ))}
       </ul>
     </>

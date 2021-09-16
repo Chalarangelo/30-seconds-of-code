@@ -1,6 +1,8 @@
 import { render, cleanup } from '@testing-library/react';
 import PreviewCard from './index';
 import SnippetFactory from 'test/fixtures/factories/snippet';
+import { collectionChip } from 'test/fixtures/collections';
+import literals from 'lang/en/client/common';
 
 const previewSnippet = SnippetFactory.create('PreviewSnippet');
 const previewBlogSnippet = SnippetFactory.create('PreviewBlogSnippet');
@@ -9,7 +11,7 @@ describe('<PreviewCard />', () => {
   let wrapper, card, expertise, anchor, tags;
 
   beforeEach(() => {
-    wrapper = render(<PreviewCard snippet={previewSnippet} />).container;
+    wrapper = render(<PreviewCard contentItem={previewSnippet} />).container;
     anchor = wrapper.querySelector('a');
     card = wrapper.querySelector('.card');
     expertise = wrapper.querySelector('.expertise');
@@ -70,7 +72,8 @@ describe('<PreviewCard />', () => {
 
   describe('with a blog snippet', () => {
     beforeEach(() => {
-      wrapper = render(<PreviewCard snippet={previewBlogSnippet} />).container;
+      wrapper = render(<PreviewCard contentItem={previewBlogSnippet} />)
+        .container;
       tags = wrapper.querySelector('.card-subtitle');
     });
 
@@ -78,6 +81,21 @@ describe('<PreviewCard />', () => {
       const tagsText = tags.textContent.toLowerCase();
       expect(tagsText).toContain(previewBlogSnippet.primaryTag.toLowerCase());
       expect(tagsText).toContain(previewBlogSnippet.expertise.toLowerCase());
+    });
+  });
+
+  describe('with a collection', () => {
+    beforeEach(() => {
+      wrapper = render(
+        <PreviewCard
+          contentItem={{ ...collectionChip, description: 'Lorem ipsum' }}
+        />
+      ).container;
+      tags = wrapper.querySelector('.card-subtitle');
+    });
+
+    it('should pass the appropriate tags to the TagList component', () => {
+      expect(tags.textContent).toContain(literals.snippetCollection);
     });
   });
 });

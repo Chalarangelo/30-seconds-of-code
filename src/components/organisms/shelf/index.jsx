@@ -1,7 +1,7 @@
 import PropTypes from 'typedefs/proptypes';
 import Link from 'next/link';
 import PreviewCard from 'components/molecules/previewCard';
-import CollectionChip from 'components/molecules/collectionChip';
+import CollectionChip from 'components/atoms/collectionChip';
 import PageTitle from 'components/atoms/pageTitle';
 import literals from 'lang/en/client/common';
 
@@ -37,7 +37,10 @@ const Shelf = ({ shelf: { shelfType, shelfData, shelfName, shelfUrl } }) => {
         {/* eslint-disable react/jsx-indent */}
         {shelfType === 'snippets'
           ? shelfData.map(snippet => (
-              <PreviewCard key={`snippet_${snippet.url}`} snippet={snippet} />
+              <PreviewCard
+                key={`snippet_${snippet.url}`}
+                contentItem={snippet}
+              />
             ))
           : shelfData.map(chip => (
               <CollectionChip key={`chip_${chip.url}`} chip={chip} />
