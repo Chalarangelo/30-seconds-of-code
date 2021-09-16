@@ -1,5 +1,6 @@
 import PropTypes from 'typedefs/proptypes';
 import Link from 'next/link';
+import { CardIcon } from 'components/atoms/card';
 import literals from 'lang/en/client/common';
 
 const propTypes = {
@@ -16,18 +17,16 @@ const CollectionChip = ({ chip }) => {
 
   return hasDescription ? (
     <li className='card srfc-02dp txt-100 list-card grid'>
-      <div
-        className={`card-icon relative inline-block br-xl icon icon-${chip.icon} before:fs-lg`}
-      ></div>
+      <CardIcon displayExpertise={false} icon={chip.icon} />
       <div className='card-data'>
         <h3 className='card-title txt-200 fs-xl f-alt f-ellipsis'>
           <Link href={chip.url}>
             <a className='inherit'>{chip.title}</a>
           </Link>
         </h3>
-        <span className='card-subtitle txt-050 fs-xs m-0'>
+        <p className='card-subtitle txt-050 fs-xs m-0'>
           {literals.snippetCollection}
-        </span>
+        </p>
       </div>
       <div className='card-description'>
         <p>{chip.description}</p>
