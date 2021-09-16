@@ -64,7 +64,7 @@ const SnippetList = ({
       )}
       <ul className='list-section'>
         {snippetList.map(snippet => (
-          <PreviewCard key={`snippet_${snippet.url}`} snippet={snippet} />
+          <PreviewCard key={`snippet_${snippet.url}`} contentItem={snippet} />
         ))}
       </ul>
       <Paginator paginator={paginator} />
