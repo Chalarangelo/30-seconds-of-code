@@ -6,16 +6,18 @@ export async function getStaticPaths() {
       return getPageTypePaths('ListingPage');
     })
     .then(pages => ({
-      paths: pages.map(p => {
-        const [lang, ...listing] = p.relRoute.split('/').filter(Boolean);
+      paths: pages
+        .filter(p => p.relRoute !== '/collections')
+        .map(p => {
+          const [lang, ...listing] = p.relRoute.split('/').filter(Boolean);
 
-        return {
-          params: {
-            lang,
-            listing,
-          },
-        };
-      }),
+          return {
+            params: {
+              lang,
+              listing,
+            },
+          };
+        }),
       fallback: false,
     }));
 }
