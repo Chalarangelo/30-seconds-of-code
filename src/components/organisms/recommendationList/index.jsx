@@ -1,7 +1,7 @@
 import PropTypes from 'typedefs/proptypes';
-import PreviewCard from 'components/molecules/previewCard';
 import PageTitle from 'components/atoms/pageTitle';
 import literals from 'lang/en/client/common';
+import PreviewCardList from 'components/organisms/previewCardList';
 
 const propTypes = {
   snippetList: PropTypes.arrayOf(PropTypes.snippet),
@@ -26,14 +26,7 @@ const RecommendationList = ({ snippetList, collectionChip = null }) => {
           <span dangerouslySetInnerHTML={{ __html: literals.andCollections }} />
         ) : null}
       </PageTitle>
-      <ul className='list-section'>
-        {recommendations.map(contentItem => (
-          <PreviewCard
-            key={`recommendation_${contentItem.url}`}
-            contentItem={contentItem}
-          />
-        ))}
-      </ul>
+      <PreviewCardList contentItems={recommendations} />
     </>
   ) : null;
 };

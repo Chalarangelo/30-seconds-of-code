@@ -33,8 +33,8 @@ describe('<CollectionsPage />', () => {
       expect(wrapper.querySelectorAll('.page-title')).toHaveLength(1);
     });
 
-    it('the appropriate PreviewCard components', () => {
-      expect(wrapper.querySelectorAll('.list-card')).toHaveLength(2);
+    it('a PreviewCardList component', () => {
+      expect(wrapper.querySelectorAll('.list-section')).toHaveLength(1);
     });
 
     it('a CollectionList component', () => {

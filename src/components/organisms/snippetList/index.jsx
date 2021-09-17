@@ -2,7 +2,7 @@ import PropTypes from 'typedefs/proptypes';
 import Paginator from 'components/molecules/paginator';
 import PageTitle from 'components/atoms/pageTitle';
 import Image from 'components/atoms/image';
-import PreviewCard from 'components/molecules/previewCard';
+import PreviewCardList from 'components/organisms/previewCardList';
 import ListingAnchors from 'components/atoms/listingAnchors';
 
 const propTypes = {
@@ -62,11 +62,7 @@ const SnippetList = ({
           ) : null}
         </>
       )}
-      <ul className='list-section'>
-        {snippetList.map(snippet => (
-          <PreviewCard key={`snippet_${snippet.url}`} contentItem={snippet} />
-        ))}
-      </ul>
+      <PreviewCardList contentItems={snippetList} />
       <Paginator paginator={paginator} />
     </>
   ) : null;
