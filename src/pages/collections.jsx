@@ -1,4 +1,4 @@
-import CollectionsPage from 'components/templates/collectionsPage';
+import ListingPage from 'components/templates/listingPage';
 
 export async function getStaticProps() {
   return await import('../next/utils').then(({ getStaticPageProps }) =>
@@ -6,4 +6,4 @@ export async function getStaticProps() {
   );
 }
 
-export default CollectionsPage;
+export default ListingPage;
