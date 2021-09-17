@@ -37,10 +37,6 @@ export class SnippetCollectionListing {
     return this.snippetCollection.name;
   }
 
-  get listingType() {
-    return this.snippetCollection.type;
-  }
-
   get listingDescription() {
     return this.snippetCollection.description;
   }
@@ -79,7 +75,6 @@ export class SnippetCollectionListing {
     'listingTitle',
     'listingDescription',
     'listingImage',
-    'listingType',
     'listingSublinks',
     'pageDescription',
   ];
