@@ -81,3 +81,5 @@ public
 
 # Mac files
 .DS_Store
+snippets/"haversineDistance.md".txt
+snippets/haversineDistance.md.txt
