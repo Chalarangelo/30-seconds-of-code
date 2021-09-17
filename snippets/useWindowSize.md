@@ -1,6 +1,6 @@
 ---
 title: useWindowSize
-tags: array,intermediate
+tags: react,hooks,intermediate
 firstSeen: 2021-09-17T11:14:13.447Z
 ---
 
