@@ -20,13 +20,10 @@ const Paginator = ({ paginator: { pageNumber, totalPages, baseUrl } }) => {
     - page {totalPages}: 1·{totalPages-1}·{totalPages}
     - totalPages <= 3: all
   */
-  let buttons = [];
-  if (totalPages <= 3)
-    buttons = Array.from({ length: totalPages }, (v, i) => i + 1);
-  else if (pageNumber === 1) buttons = [1, 2, totalPages];
-  else if (totalPages - pageNumber === 0)
-    buttons = [1, totalPages - 1, totalPages];
-  else buttons = [1, pageNumber, totalPages];
+  let buttons =
+    totalPages === 2
+      ? [1, 2]
+      : [1, Math.min(Math.max(pageNumber, 2), totalPages - 1), totalPages];
 
   return (
     <div className='paginator mt-7 mx-5 mb-6 a-center flex j-center'>
