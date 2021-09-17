@@ -11,7 +11,6 @@ const propTypes = {
   listingTitle: PropTypes.string,
   listingDescription: PropTypes.string,
   listingImage: PropTypes.string,
-  listingType: PropTypes.string,
   listingSublinks: PropTypes.arrayOf(PropTypes.shape({})),
   pageDescription: PropTypes.string.isRequired,
 };
@@ -19,16 +18,16 @@ const propTypes = {
 /**
  * Renders a listing page.
  * Used to render the /list/p/1 page and any other listing pages.
+ * Also used to render the /collections page.
  */
 const ListingPage = ({
   slug,
-  paginator,
+  paginator = null,
   snippetList,
   listingName,
   listingTitle,
   listingDescription,
   listingImage,
-  listingType,
   listingSublinks = [],
   pageDescription,
 }) => {
@@ -50,7 +49,6 @@ const ListingPage = ({
           listingName={listingTitle}
           listingDescription={listingDescription}
           listingImage={listingImage}
-          listingType={listingType}
           snippetList={snippetList}
           paginator={paginator}
           listingSublinks={listingSublinks}
