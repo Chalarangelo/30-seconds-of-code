@@ -23,11 +23,7 @@ describe('<PageBackdrop />', () => {
 
   afterEach(cleanup);
 
-  it('should render a page backdrop', () => {
-    expect(wrapper.querySelectorAll('.page-backdrop')).toHaveLength(1);
-  });
-
-  it('should render page backdrop main text and subtext', () => {
+  it('should render a page backdrop with main text and subtext', () => {
     expect(wrapper.querySelectorAll('.page-backdrop > p')).toHaveLength(2);
   });
 

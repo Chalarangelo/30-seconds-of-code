@@ -2,8 +2,7 @@ import PropTypes from 'typedefs/proptypes';
 import { useSearch } from 'state/search';
 import PageBackdrop from 'components/molecules/pageBackdrop';
 import PageTitle from 'components/atoms/pageTitle';
-import PreviewCard from 'components/molecules/previewCard';
-import CollectionChip from 'components/atoms/collectionChip';
+import PreviewCardList from 'components/organisms/previewCardList';
 import RecommendationList from 'components/organisms/recommendationList';
 import literals from 'lang/en/client/search';
 
@@ -53,15 +52,7 @@ const SearchResults = ({ recommendedSnippets = [] }) => {
           ))}
         </ul>
       )}
-      <ul className='list-section'>
-        {filteredResults.map(item =>
-          item.expertise ? (
-            <PreviewCard key={`snippet_${item.url}`} snippet={item} />
-          ) : (
-            <CollectionChip key={`collection_${item.url}`} chip={item} />
-          )
-        )}
-      </ul>
+      <PreviewCardList contentItems={filteredResults} />
     </>
   ) : (
     <>

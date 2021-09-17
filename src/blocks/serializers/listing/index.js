@@ -77,7 +77,6 @@ export class ListingSerializer {
         [
           'metadata',
           {
-            isMainListing,
             slug: pageSlug,
             paginator: {
               pageNumber: pageNum,

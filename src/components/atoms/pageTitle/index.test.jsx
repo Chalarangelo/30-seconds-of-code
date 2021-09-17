@@ -23,14 +23,4 @@ describe('<PageTitle />', () => {
   it('should render passed children', () => {
     expect(wrapper.textContent).toContain(innerText);
   });
-
-  describe('without additional classNames', () => {
-    beforeEach(() => {
-      wrapper = render(<PageTitle>{innerText}</PageTitle>).container;
-    });
-
-    it('should render with the default className', () => {
-      expect(wrapper.querySelectorAll('h2.page-title')).toHaveLength(1);
-    });
-  });
 });

@@ -28,18 +28,4 @@ describe('<CollectionChip />', () => {
   it('should have the correct text', () => {
     expect(wrapper.textContent).toBe(collectionChip.title);
   });
-
-  describe('with description', () => {
-    beforeEach(() => {
-      wrapper = render(
-        <CollectionChip
-          chip={{ ...collectionChip, description: 'Lorem ipsum' }}
-        />
-      ).container;
-    });
-
-    it('should render correctly', () => {
-      expect(wrapper.querySelectorAll('li.list-card')).toHaveLength(1);
-    });
-  });
 });

@@ -6,6 +6,10 @@ import SnippetFactory from 'test/fixtures/factories/snippet';
 const fullSnippet = SnippetFactory.create('FullSnippet');
 const fullReactSnippet = SnippetFactory.create('FullReactSnippet');
 
+global.navigator.clipboard = {
+  writeText: jest.fn(),
+};
+
 describe('<SnippetCard />', () => {
   let wrapper, card, tagList, codeBlocks;
 

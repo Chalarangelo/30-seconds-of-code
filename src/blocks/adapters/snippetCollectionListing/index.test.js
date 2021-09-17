@@ -86,13 +86,6 @@ describe('SnippetCollectionListing', () => {
       expect(results.tag.listingTitle).toBe(collections.tag.language);
     });
 
-    it('returns the correct listing type', () => {
-      expect(results.main.listingType).toBe(collections.main.type);
-      expect(results.blog.listingType).toBe(collections.blog.type);
-      expect(results.language.listingType).toBe(collections.language.type);
-      expect(results.tag.listingType).toBe(collections.tag.type);
-    });
-
     it('returns the correct listing sublinks', () => {
       expect(results.blog.listingSublinks.length).toBe(1);
       expect(results.language.listingSublinks.length).toBe(2);

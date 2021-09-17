@@ -27,7 +27,7 @@ const Shelf = ({ shelf: { shelfType, shelfData, shelfName, shelfUrl } }) => {
     <>
       <Link href={shelfUrl}>
         <a
-          className={`shelf-title relative mt-8 icon icon-chevron-right before:fs-sm`}
+          className='shelf-title relative mt-8 icon icon-chevron-right before:fs-sm'
           data-link-title={literals.viewAll}
         >
           <PageTitle>{shelfName}</PageTitle>
@@ -37,7 +37,10 @@ const Shelf = ({ shelf: { shelfType, shelfData, shelfName, shelfUrl } }) => {
         {/* eslint-disable react/jsx-indent */}
         {shelfType === 'snippets'
           ? shelfData.map(snippet => (
-              <PreviewCard key={`snippet_${snippet.url}`} snippet={snippet} />
+              <PreviewCard
+                key={`snippet_${snippet.url}`}
+                contentItem={snippet}
+              />
             ))
           : shelfData.map(chip => (
               <CollectionChip key={`chip_${chip.url}`} chip={chip} />

@@ -95,12 +95,6 @@ describe('<CssSnippetCard />', () => {
     expect(snippetPreview.innerHTML).toContain(fullCssSnippet.code.html);
   });
 
-  it('should pass the snippet code data to the CodepenButton component', () => {
-    const { css, html } = JSON.parse(wrapper.querySelector('input').value);
-    expect(html).toBe(fullCssSnippet.code.html);
-    expect(css).toBe(fullCssSnippet.code.css);
-  });
-
   it('should pass the html data to the first CodeBlock component', () => {
     expect(codeBlocks[0].innerHTML).toBe(fullCssSnippet.html.html);
   });

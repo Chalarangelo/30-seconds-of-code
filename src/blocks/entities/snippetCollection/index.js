@@ -238,7 +238,9 @@ export class SnippetCollection {
           break;
       }
     }
-    return this._shortDescription;
+    // TODO: This can be handled better by parsing markdown for the description.
+    // If we do that, we should parse both this and the regular description.
+    return this._shortDescription ? `<p>${this._shortDescription}</p>` : null;
   }
 
   get splash() {

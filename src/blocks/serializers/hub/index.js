@@ -92,14 +92,18 @@ export class HubSerializer {
       ],
     ];
 
+    // TODO: This is hardcoded to match the current structure of the listing
+    // pages. We need to eventually refactor a lot of code to merge it with
+    // the existing listing pages.
     const collectionChunkPairs = [
-      ['index', Chunk.createIndex('/collections', 'CollectionsPage', 0.75)],
+      ['index', Chunk.createIndex('/collections', 'ListingPage', 0.75)],
+      ['snippetList', { snippetList: listedCollections }],
       [
-        'context',
+        'metadata',
         {
+          slug: '/collections',
           listingName: literals.collections,
           listingTitle: literals.collections,
-          chipList: listedCollections,
           pageDescription: literals.pageDescription('collections', {
             collectionCount: listedCollections.length,
           }),
