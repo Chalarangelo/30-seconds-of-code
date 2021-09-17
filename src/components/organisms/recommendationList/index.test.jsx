@@ -20,9 +20,7 @@ describe('<RecommendationList />', () => {
     );
   });
 
-  it('should render the appropriate number of PreviewCard components', () => {
-    expect(wrapper.querySelectorAll('.list-card')).toHaveLength(
-      snippetList.length
-    );
+  it('should render a list', () => {
+    expect(wrapper.querySelectorAll('.list-section')).toHaveLength(1);
   });
 });

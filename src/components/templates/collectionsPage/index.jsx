@@ -2,7 +2,7 @@ import PropTypes from 'typedefs/proptypes';
 import Meta from 'components/organisms/meta';
 import Shell from 'components/organisms/shell';
 import PageTitle from 'components/atoms/pageTitle';
-import PreviewCard from 'components/molecules/previewCard';
+import PreviewCardList from 'components/organisms/previewCardList';
 
 const propTypes = {
   pageDescription: PropTypes.string.isRequired,
@@ -26,11 +26,7 @@ const CollectionsPage = ({
       <Meta title={listingName} description={pageDescription} />
       <Shell>
         <PageTitle>{listingTitle}</PageTitle>
-        <ul className='list-section'>
-          {chipList.map(chip => (
-            <PreviewCard key={`collection_${chip.url}`} contentItem={chip} />
-          ))}
-        </ul>
+        <PreviewCardList contentItems={chipList} />
       </Shell>
     </>
   );
