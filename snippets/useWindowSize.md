@@ -6,8 +6,15 @@ firstSeen: 2021-09-17T11:14:13.447Z
 
 Create Hooks to get the current size of the browser window.
 
+
+- Use the useWindowSize snippet to get the current size of the browser window.
+- Use the useState() hook to initialize the values.
+- Use the useEffect() hook to set the width and height when window size is changed.
+- Return the windowSize state variable.
+  
+  
 ```js
-// React Hook
+// React 
 
 const useWindowSize = () => {
   // Initialize state with undefined width/height so server and client renders match
@@ -37,7 +44,7 @@ const useWindowSize = () => {
 ```
 
 ```js
-// Usage
+// Example
 
 import { useState, useEffect } from "react";
 const App = () => {
@@ -48,4 +55,6 @@ const App = () => {
     </div>
   );
 };
+
+ReactDOM.render(<App />, document.getElementById('root'));
 ```
