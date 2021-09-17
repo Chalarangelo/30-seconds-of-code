@@ -1,7 +1,11 @@
 import PropTypes from 'typedefs/proptypes';
 import Meta from 'components/organisms/meta';
 import Shell from 'components/organisms/shell';
-import SnippetList from 'components/organisms/snippetList';
+import Paginator from 'components/molecules/paginator';
+import PageTitle from 'components/atoms/pageTitle';
+import Image from 'components/atoms/image';
+import PreviewCardList from 'components/organisms/previewCardList';
+import ListingAnchors from 'components/atoms/listingAnchors';
 
 const propTypes = {
   slug: PropTypes.string.isRequired,
@@ -31,6 +35,8 @@ const ListingPage = ({
   listingSublinks = [],
   pageDescription,
 }) => {
+  const hasImageOrDescription = Boolean(listingImage || listingDescription);
+
   return (
     <>
       <Meta
@@ -45,14 +51,34 @@ const ListingPage = ({
         canonical={slug}
       />
       <Shell>
-        <SnippetList
-          listingName={listingTitle}
-          listingDescription={listingDescription}
-          listingImage={listingImage}
-          snippetList={snippetList}
-          paginator={paginator}
-          listingSublinks={listingSublinks}
-        />
+        {!hasImageOrDescription ? (
+          <PageTitle>{listingTitle}</PageTitle>
+        ) : (
+          <div
+            className={`snippet-list-header ${
+              listingImage ? 'with-image' : ''
+            }`}
+          >
+            {listingImage ? (
+              <div className='snippet-list-splash-image my-2 mx-3.5 f-center'>
+                <Image src={listingImage} alt='' height='360' width='360' />
+              </div>
+            ) : null}
+            <div>
+              <PageTitle>{listingTitle}</PageTitle>
+              {listingDescription ? (
+                <p className='snippet-list-description mt-4 mx-3.5 mb-2 txt-100'>
+                  {listingDescription}
+                </p>
+              ) : null}
+            </div>
+          </div>
+        )}
+        {listingSublinks.length ? (
+          <ListingAnchors items={listingSublinks} />
+        ) : null}
+        <PreviewCardList contentItems={snippetList} />
+        {paginator ? <Paginator paginator={paginator} /> : null}
       </Shell>
     </>
   );
