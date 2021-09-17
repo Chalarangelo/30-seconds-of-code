@@ -32,26 +32,19 @@ const CookieConsentPopup = () => {
         {literals.whatYouAccept}
       </p>
       <div className='cookie-consent-buttons mx-auto mt-3.5 mb-2 flex j-center'>
-        <button
-          className='btn action-btn fs-xs'
-          data-nosnippet
-          onClick={e => {
-            e.preventDefault();
-            dispatch({ type: 'decideCookies', acceptsCookies: true });
-          }}
-        >
-          {literals.accept}
-        </button>
-        <button
-          className='btn action-btn fs-xs'
-          data-nosnippet
-          onClick={e => {
-            e.preventDefault();
-            dispatch({ type: 'decideCookies', acceptsCookies: false });
-          }}
-        >
-          {literals.decline}
-        </button>
+        {[true, false].map(acceptsCookies => (
+          <button
+            className='btn action-btn fs-xs'
+            data-nosnippet
+            key={acceptsCookies}
+            onClick={e => {
+              e.preventDefault();
+              dispatch({ type: 'decideCookies', acceptsCookies });
+            }}
+          >
+            {acceptsCookies ? literals.accept : literals.decline}
+          </button>
+        ))}
       </div>
     </div>
   );
