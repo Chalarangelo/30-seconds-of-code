@@ -219,10 +219,16 @@ export class Content {
         fs.mkdirSync(snippetPath);
       }
       const template = fs.readFileSync(templatePath, 'utf8');
-      const fileData = template.replace(
-        /title:\s*.*\n/,
-        `title: ${snippetName}\n`
-      );
+
+      const pad = n => `${Math.floor(Math.abs(n))}`.padStart(2, '0');
+      const date = new Date();
+      const dateString = `${date.getFullYear()}-${pad(
+        date.getMonth() + 1
+      )}-${pad(date.getDate())}T05:00:00-04:00`;
+
+      const fileData = template
+        .replace(/title:\s*.*\n/, `title: ${snippetName}\n`)
+        .replace(/firstSeen:\s*.*\n/, `firstSeen: ${dateString}\n`);
       fs.writeFileSync(path.join(snippetPath, `${snippetName}.md`), fileData);
 
       boundLog('Snippet creation complete!', 'success');
