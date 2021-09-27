@@ -1,4 +1,3 @@
-
 ---
 title: arrayNegativeIndex
 tags: array,index,negative
