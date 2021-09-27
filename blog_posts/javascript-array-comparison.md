@@ -6,7 +6,7 @@ authors: chalarangelo
 cover: blog_images/coconuts.jpg
 excerpt: Learn how you can compare two arrays in JavaScript using various different techniques.
 firstSeen: 2020-08-07T14:23:14+03:00
-lastUpdated: 2021-06-12T19:30:41+03:00
+lastUpdated: 2021-09-27T16:36:32+03:00
 ---
 
 ### Equality comparison
@@ -22,7 +22,7 @@ a === b; // false
 
 ### JSON.stringify
 
-A common solution that many people suggest is to use `JSON.stringify()`, which allows us to serialize each array and then compare the two serialized strings. A simple implementation of this might look something like this:
+A common solution that many people suggest is to use `JSON.stringify()`. This allows us to serialize each array and then compare the two serialized strings. A simple implementation of this might look something like this:
 
 ```js
 const equals = (a, b) => JSON.stringify(a) === JSON.stringify(b);
@@ -33,7 +33,7 @@ const b = [1, 2, 3];
 equals(a, b); // true
 ```
 
-While this seems like a great, short and easy to understand solution, it falls short on some edge cases where different values' serialized string is the same. For example:
+While this seems like a great, short and easily understandable solution, it falls short on some edge cases where different values' serialized string is the same. For example:
 
 ```js
 const str = 'a';
@@ -45,7 +45,7 @@ null === undefined; // false
 equals([null], [undefined]); // true, should be false
 ```
 
-While these cases seem rather uncommon, they might cause some very annoying issues that are hard to track down and fix, which is why this solution is not recommended for most use-cases.
+While these cases seem rather uncommon, they might cause some very annoying issues that are hard to track down and fix. This is the reason why this solution is not recommended for most use-cases.
 
 ### A better way
 
@@ -66,7 +66,7 @@ equals([str], [strObj]); // false
 equals([null], [undefined]); // false
 ```
 
-This approach safeguards against the serialization issue described above, however it does not take into account nested arrays or objects, which need to be checked recursively. For a robust solution that handles this and other issues, you should use the [equals snippet](/js/s/equals).
+This approach safeguards against the serialization issue described above. However it does not take into account nested arrays or objects, which need to be checked recursively. For a robust solution that handles this and other issues, you should use the [equals snippet](/js/s/equals).
 
 ### Comparing out of order
 
