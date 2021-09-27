@@ -6,10 +6,10 @@ authors: chalarangelo
 cover: blog_images/birds.jpg
 excerpt: Learn how you can leverage the Proxy object to use a JavaScript object the same way as you would use a regular array.
 firstSeen: 2021-05-03T12:00:00+03:00
-lastUpdated: 2021-06-12T19:30:41+03:00
+lastUpdated: 2021-09-27T16:42:11+03:00
 ---
 
-While messing around with some code the other day, I stumbled upon a case where I received an object, the values of which I needed to repeatedly handle as a regular array. This was, of course, achievable using `Object.keys()`, `Object.values()` or `Object.entries()`, but it started getting verbose real quick.
+The other day, I stumbled upon some code where I needed to handle an object as a regular array a few times. This was, of course, achievable using `Object.keys()`, `Object.values()` or `Object.entries()`, but it started getting verbose real quick.
 
 So I thought I could create some kind of wrapper that would take an object and define some array-like behavior for it. I was mainly in need of `Array.prototype.map()`, `Array.prototype.find()`, `Array.prototype.includes()` and `Array.prototype.length`. All of this functionality was pretty straightforward to create using  `Object` methods. The only tricky part, so to speak, was getting the object to behave as an iterable, which required using the `Symbol.iterator` and a generator function.
 
