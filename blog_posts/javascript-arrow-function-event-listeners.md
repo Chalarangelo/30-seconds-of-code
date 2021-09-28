@@ -11,13 +11,13 @@ lastUpdated: 2021-06-12T19:30:41+03:00
 
 ### Arrow functions
 
-JavaScript ES6 introduced the concept of arrow functions, a new way to define and write functions. While they might seem like a syntactic sugar on top of regular functions, they have a key difference which lies in the way the `this` context is bound. I will not go into a lot of detail in this article, however I strongly suggest you read [Understanding the "this" keyword in JavaScript](/blog/s/javascript-this) before continuing. To summarize what the aforementioned blog post explains in more detail:
+JavaScript ES6 introduced the concept of arrow functions, a new way to define and write functions. While they might seem like a syntactic sugar on top of regular functions, they have a key difference which lies in the way the `this` context is bound. I strongly suggest you read [Understanding the "this" keyword in JavaScript](/blog/s/javascript-this), as I will not go into detail about the topic in this article. To summarize:
 
 > Arrow functions do not have their own bindings for `this`, resulting in `this` retaining the value of the enclosing lexical context's `this`.
 
 ### Event listener callbacks
 
-One task that we often perform when writing browser-side JavaScript is creating event listeners. For example:
+A common task when writing browser-side JavaScript is creating event listeners. For example:
 
 ```js
 const toggleElements = document.querySelectorAll('.toggle');
@@ -28,7 +28,7 @@ toggleElements.forEach(el => {
 });
 ```
 
-In the example above, we use `NodeList.prototype.forEach()` to iterate over the nodes matching a given selector and `EventTarget.addEventListener()` with a regular function as the callback for the `'click'` event to swap between an active and inactive state for the clicked element. As we are using a regular function, the `this` context inside the callback will be bound to the element on which the event was fired.
+In the example above, we use `NodeList.prototype.forEach()` to iterate over matching nodes and `EventTarget.addEventListener()` with a regular function as the callback for the `'click'` event to swap between an active and inactive state for the clicked element. We are using a regular function, so the `this` context inside the callback will be bound to the event target.
 
 ### Arrow functions as callbacks
 
@@ -44,7 +44,7 @@ toggleElements.forEach(el => {
 });
 ```
 
-This code will throw an error anytime the matching element is clicked, firing the event listener and executing the callback, due to the `window` object not having a `classList` property. Oftentimes, however, the code could fail silently as it might for example check for a condition that always evaluates to `false` for `window` while it should evaluate to `true` for a given element, resulting in many headaches and wasted hours until the issue is discovered and fixed.
+This code will fire the event listener and execute the callback anytime the matching element is clicked. It will, however, throw an error, due to the `window` object not having a `classList` property. Oftentimes, the code could even fail silently. An example would be a condition that always evaluates to `false` for `window`, but could evaluate to `true` for a given element. Issues like that result in many headaches and wasted hours until you can uncover and fix them.
 
 To deal with this, one could simply use the first argument of the callback function and `Event.target` or `Event.currentTarget` depending on their needs:
 
