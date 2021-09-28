@@ -17,10 +17,21 @@ document.oncontextmenu = function(e) {
 } // 'disable' contextmenu
 ```
 
-- If you want it to enable to appear , then you can simply change `return true` instead of `return false`.
+- If you want it to enable to appear, then you can simply change `return true` instead of `return false`.
 
 ```js
 document.oncontextmenu = function(e) {
          return true;
 } // 'enable' contextmenu
+```
+
+- You can use `addEventListener` event to disable `contextmenu` in content.
+- Use `DOM` like `document.getElementById()` method to select `element` content.
+- In the event listener, use `event.preventDefault()` method to `disable` the default action that belongs to the event.
+
+```js
+const noContext = document.getElementById('noContextMenu');
+      noContext.addEventListener('contextmenu', e => {
+      e.preventDefault();
+}); // 'disable' contextmenu on selected element
 ```
