@@ -6,7 +6,7 @@ authors: chalarangelo
 cover: blog_images/mountain-lake.jpg
 excerpt: Centering content with CSS might often feel tricky. Here are 4 easy tricks you can use in your code today.
 firstSeen: 2021-02-22T11:00:00+02:00
-lastUpdated: 2021-06-12T19:30:41+03:00
+lastUpdated: 2021-09-28T19:35:49+03:00
 ---
 
 ### Flexbox
@@ -15,7 +15,7 @@ Using flexbox to vertically and horizontally center content is usually the prefe
 
 ### Grid
 
-Using the grid module is very much similar to flexbox and is also quite common, especially if you are already using grid in your layout. The only difference from the previous technique is the `display` which is set to `grid` instead. You can view the [Grid centering snippet](/css/s/grid-centering) for the code and examples.
+Using the grid module is very similar to flexbox and also a common technique, especially if you are already using grid in your layout. The only difference from the previous technique is the `display` which is set to `grid` instead. You can view the [Grid centering snippet](/css/s/grid-centering) for the code and examples.
 
 ### Transform
 
@@ -23,4 +23,4 @@ Transform centering uses, as the name implies, CSS transforms to center an eleme
 
 ### Table
 
-Last but not least, table centering is an older technique which you might favor when working with older browsers. It depends on the container element having a `display: table`, allowing the child element to utilize `display: table-cell` in combination with `text-align: center` and `vertical-align: middle` in order to center itself horizontally and vertically. You can view the [Display table centering snippet](/css/s/display-table-centering) for the code and examples.
+Last but not least, table centering is an older technique which you might favor when working with older browsers. It depends on the use of `display: table` in the container element. This allows the child element to use `display: table-cell` in combination with `text-align: center` and `vertical-align: middle` to center itself horizontally and vertically. You can view the [Display table centering snippet](/css/s/display-table-centering) for the code and examples.
