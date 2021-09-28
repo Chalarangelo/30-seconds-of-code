@@ -6,12 +6,12 @@ authors: chalarangelo
 cover: blog_images/clock.jpg
 excerpt: Wrapping your mind around React hooks and how they interact with `setInterval()` can be difficult. Here's a guide to get you started.
 firstSeen: 2021-04-15T12:00:00+03:00
-lastUpdated: 2021-06-12T19:30:41+03:00
+lastUpdated: 2021-09-28T19:59:51+03:00
 ---
 
 Wrapping your mind around React hooks can be daunting at first, especially if you stumble into anything remotely related to timing, such as `setInterval()`. In order to solve such issues, you have to get used to the way hooks work, their limitations and potential workarounds.
 
-First and foremost, it should be clear that `setInterval()` is a side effect. After all, it's not directly tied to a component's render method. Therefore we should call it inside a `useEffect()` hook and use the `return` of said hook to call `clearInterval()` when unmounting. In order to avoid creating multiple intervals, we can use the hook's second argument to pass an empty dependency array (`[]`), running the side effect only when the component is mounted.
+First, it should be clear that `setInterval()` is a side effect. After all, it's not directly tied to a component's render method. Therefore we should call it inside a `useEffect()` hook and use its `return` to call `clearInterval()` when unmounting. To avoid creating multiple intervals, we can use the hook's second argument to pass an empty dependency array (`[]`). This results in running the side effect only when the component mounts.
 
 ```jsx
 React.useEffect(() => {
@@ -20,7 +20,7 @@ React.useEffect(() => {
 }, []);
 ```
 
-The closure inside `setInterval()` will only ever have access to whatever variables and values were available when it got instantiated. This means we have to be extra careful about the first argument we pass it in order to make sure that fresh values will be available every time the interval runs. The easiest way to handle this issue is to use the `useRef()` hook to create a variable that's considered mutable by React. This will allow us to have access to new values when we need them.
+The closure inside `setInterval()` will only ever have access to whatever variables and values were available when it got instantiated. This means we have to be extra careful about its first argument to make sure that fresh values will be available every time the interval runs. The easiest solution to this issue is to create a variable that's considered mutable by React, using the `useRef()` hook. This will allow us to have access to new values when we need them.
 
 ```jsx
 const savedCallback = React.useRef(callback);
@@ -31,7 +31,7 @@ React.useEffect(() => {
 }, []);
 ```
 
-However, using the `useRef()` hook might have just shifted the problem, as the value of the created ref needs to be refreshed inside `setInterval()`. Luckily, this is an easy problem to solve as we could just create a wrapper function that pass that function to `setInterval()` instead. This way the function passed to `setInterval()` will never change, but the value of the enclosed ref will always be up to date when it's called.
+Using the `useRef()` hook might have just shifted the problem. The value of the created ref now needs to be refreshed inside `setInterval()`. Luckily, this is an easy problem to solve. We could create a wrapper function that passes the function to `setInterval()` instead. This way the function passed to `setInterval()` will never change, but the value of the enclosed ref will always be up to date when it's called.
 
 ```jsx
 const savedCallback = React.useRef(callback);
