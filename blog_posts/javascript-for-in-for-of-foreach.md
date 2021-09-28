@@ -9,8 +9,7 @@ firstSeen: 2020-01-20T10:12:31+02:00
 lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
-`for...in` is used to iterate over all enumerable properties of an object, including inherited enumerable properties.
-This iteration statement can be used with arrays strings or plain objects, but not with `Map` or `Set` objects.
+`for...in` is used to iterate over all enumerable properties of an object, including inherited enumerable properties. This iteration statement can be used with arrays strings or plain objects, but not with `Map` or `Set` objects.
 
 ```js
 for (let prop in ['a', 'b', 'c'])
@@ -26,8 +25,7 @@ for (let prop in new Set(['a', 'b', 'a', 'd']))
   console.log(prop);            // undefined (no enumerable properties)
 ```
 
-`for...of` is used to iterate over iterable objects, iterating over their values instead of their properties.
-This iteration statement can be used with arrays, strings, `Map` or `Set` objects, but not with plain objects.
+`for...of` is used to iterate over iterable objects, iterating over their values instead of their properties. This iteration statement can be used with arrays, strings, `Map` or `Set` objects, but not with plain objects.
 
 ```js
 for (let val of ['a', 'b', 'c'])
@@ -43,8 +41,7 @@ for (let val of new Set(['a', 'b', 'a', 'd']))
   console.log(val);            // a, b, d (Set values)
 ```
 
-Finally, `forEach()` is a method of the `Array` prototype, which allows you to iterate over the elements of an array.
-While `forEach()` only iterates over arrays, it can access both the value and the index of each element while iterating.
+Finally, `forEach()` is a method of the `Array` prototype, which allows you to iterate over the elements of an array. While `forEach()` only iterates over arrays, it can access both the value and the index of each element while iterating.
 
 ```js
 ['a', 'b', 'c'].forEach(
