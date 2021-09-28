@@ -6,12 +6,12 @@ authors: chalarangelo
 cover: blog_images/css-variables.jpg
 excerpt: Learn how CSS custom properties (CSS variables) work and what you can use them for in your code and designs.
 firstSeen: 2020-03-09T19:39:30+02:00
-lastUpdated: 2021-06-12T19:30:41+03:00
+lastUpdated: 2021-09-29T19:52:58+03:00
 ---
 
-CSS variables (officially called CSS custom properties) behave much like variables in other languages, allowing you to define named variables that contain specific values to be reused within the CSS document. They are defined using the custom property notation, which always start with two dashes (e.g. `--my-color: black;`) and are accessed using the `var()` function (e.g. `color: var(--my-color);`). Custom properties are exceptionally useful for sharing styles between different elements and components (e.g. vertical rhythm, typography variables, color palettes etc.).
+CSS variables (officially called CSS custom properties) behave much like variables in other programming languages. They allow you to define named variables that contain specific values that can be reused within the CSS document. As specified in the custom property notation, CSS variables are prefixed with two dashes (e.g. `--my-color: black`). To access them, you can use the `var()` function (e.g. `color: var(--my-color)`). CSS variables are exceptionally useful for sharing styles between different elements and components. Examples include but are not limited to vertical rhythm, typography variables and color palettes.
 
-One of the most common examples of CSS variable usage is theming and dark mode, where CSS variables are used to create a shared palette across the whole website, then easily swap it out for a different one by applying a class to a common ancestor (e.g. the `<body>` element or a top-level container). This example helps demonstrate global variables defined in the `:root` element and cascading, as the top-level ancestor inherits values from the `:root` element:
+One of their most common use-cases is theming and dark mode. CSS variables can be used to create a shared palette across the whole website and easily swap it for a different one. This is often accomplished by applying a class to a common ancestor (e.g. the `<body>` element). This example demonstrates global variables defined in the `:root` element and cascading, as elements inherit values from their parents:
 
 ```css
 /* Global variables are defined in the :root element. */
@@ -36,7 +36,7 @@ body.dark {
 }
 ```
 
-Another rather useful example is defining shared customized styles for certain variants of an element, allowing the customization of whole trees of components without having to repeat styles over and over. This example demonstrates cascading even better than the previous one and also introduces the idea of sharing styles between different elements:
+Another useful example is defining shared customized styles for certain variants of an element. This allows the customization of whole trees of components without having to repeat any styles. The following example demonstrates cascading even better than the previous one. It also introduces the idea of sharing styles between different elements:
 
 ```css
 .btn {
@@ -61,6 +61,6 @@ Another rather useful example is defining shared customized styles for certain v
 
 Finally, keep in mind the following useful tips for working with CSS variables:
 
-- You can define fallback values, by providing a second argument to the `var()` function (e.g. `var(--text-color, black);` will default to `black` if `--text-color` is not defined).
+- You can define fallback values, by providing a second argument to the `var()` function (e.g. `var(--text-color, black)` will default to `black` if `--text-color` is not defined).
 - CSS variables are case sensitive, so mind your capitalization. They can also be inlined in HTML like any other style (e.g. `<div style="--text-color: red">`).
-- You can nest `var()` calls, using another variable as fallback (e.g. `var(--main-color, var(--other-color))`), pass them to other functions such as `calc()` or even assign one variable to another (e.g. `--text-color: var(--main-color);`).
+- You can nest `var()` calls, using another variable as fallback (e.g. `var(--main-color, var(--other-color))`), pass them to other functions such as `calc()` or even assign one variable to another (e.g. `--text-color: var(--main-color)`).
