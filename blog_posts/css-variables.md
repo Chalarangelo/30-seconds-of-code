@@ -6,7 +6,7 @@ authors: chalarangelo
 cover: blog_images/css-variables.jpg
 excerpt: Learn how CSS custom properties (CSS variables) work and what you can use them for in your code and designs.
 firstSeen: 2020-03-09T19:39:30+02:00
-lastUpdated: 2021-09-29T19:52:58+03:00
+lastUpdated: 2021-09-28T19:52:58+03:00
 ---
 
 CSS variables (officially called CSS custom properties) behave much like variables in other programming languages. They allow you to define named variables that contain specific values that can be reused within the CSS document. As specified in the custom property notation, CSS variables are prefixed with two dashes (e.g. `--my-color: black`). To access them, you can use the `var()` function (e.g. `color: var(--my-color)`). CSS variables are exceptionally useful for sharing styles between different elements and components. Examples include but are not limited to vertical rhythm, typography variables and color palettes.
