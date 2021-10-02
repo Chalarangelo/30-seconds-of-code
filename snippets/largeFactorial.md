@@ -145,7 +145,8 @@ const largeFactorial = (val) => {
     return result.toList();
 
 }
-
+```
+```js
 // change val to see different result
 let val = 1000;
 let myRes = _1000Fact(val).toString().replace(/,/g, "");
