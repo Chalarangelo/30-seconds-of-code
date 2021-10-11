@@ -2,14 +2,14 @@
 title: List with floating section headings
 tags: visual,advanced
 firstSeen: 2020-08-18T15:44:01+03:00
-lastUpdated: 2021-02-05T10:21:38+02:00
+lastUpdated: 2021-10-11T18:44:51+03:00
 ---
 
 Creates a list with floating headings for each section.
 
 - Use `overflow-y: auto` to allow the list container to overflow vertically.
 - Use `display: grid` on the inner container (`<dl>`) to create a layout with two columns.
-- Set headings (`<dt>`) to `grid-column: 1` and content (`<dd>`) to `grid-column: 2`
+- Set headings (`<dt>`) to `grid-column: 1` and content (`<dd>`) to `grid-column: 2`.
 - Finally, apply `position: sticky` and `top: 0.5rem` to headings to create a floating effect.
 
 ```html

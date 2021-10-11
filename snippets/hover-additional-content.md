@@ -2,13 +2,13 @@
 title: Show additional content on hover
 tags: visual,intermediate
 firstSeen: 2020-08-18T16:40:23+03:00
-lastUpdated: 2020-12-30T15:37:37+02:00
+lastUpdated: 2021-10-11T18:44:51+03:00
 ---
 
 Creates a card that displays additional content on hover.
 
 - Use `overflow: hidden` on the card to hide elements that overflow vertically.
-- Use the `:hover` and `:focus-within` pseudo-class selectors to change the card's styling as necessary when it's hovered or it or its contents are focused.
+- Use the `:hover` and `:focus-within` pseudo-class selectors to change the card's styling if the element is hovered, focused or any of its descendants are focused.
 - Set `transition: 0.3s ease all` to create a transition effect on hover/focus.
 
 

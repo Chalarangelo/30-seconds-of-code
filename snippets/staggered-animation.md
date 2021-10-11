@@ -2,15 +2,15 @@
 title: Staggered animation
 tags: animation,advanced
 firstSeen: 2020-03-16T12:19:05+02:00
-lastUpdated: 2020-12-30T15:37:37+02:00
+lastUpdated: 2021-10-11T18:44:51+03:00
 ---
 
 Creates a staggered animation for the elements of a list.
 
-- Set the `opacity` to `0` and `transform` to `translateX(100%)` to make list elements transparent and move them all the way to the right.
-- Specify the appropriate `transition` properties for list elements, except `transition-delay` which is specified relative to the `--i` custom property.
-- Use inline styles to specify a value for `--i` for each list element, which will in turn be used for `transition-delay` to create the stagger effect.
-- Use the `:checked` pseudo-class selector for the checkbox to appropriately style list elements, setting `opacity` to `1` and `transform` to `translateX(0)` to make them appear and slide into view.
+- Set `opacity: 0` and `transform: translateX(100%)` to make list elements transparent and move them all the way to the right.
+- Specify the same `transition` properties for list elements, except `transition-delay`.
+- Use inline styles to specify a value for `--i` for each list element. This will in turn be used for `transition-delay` to create the stagger effect.
+- Use the `:checked` pseudo-class selector for the checkbox to style list elements. Set `opacity` to `1` and `transform` to `translateX(0)` to make them appear and slide into view.
 
 ```html
 <div class="container">
