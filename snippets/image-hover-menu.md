@@ -2,14 +2,14 @@
 title: Menu on image hover
 tags: layout,animation,intermediate
 firstSeen: 2020-04-20T19:15:11+03:00
-lastUpdated: 2020-12-30T15:37:37+02:00
+lastUpdated: 2021-10-11T18:44:51+03:00
 ---
 
-Displays a menu overlay when the image is hovered.
+Displays a menu overlay when the user hovers over the image.
 
 - Use a `<figure>` to wrap the `<img>` element and a `<div>` element that will contain the menu links.
 - Use the `opacity` and `right` attributes to animate the image on hover, creating a sliding effect.
-- Set the `left` attribute of the `<div>` to the negative of the element's `width` and reset it to `0` when hovering over the parent element to slide in the menu.
+- Set the `left` attribute of the `<div>` to the negative of the element's `width`. Reset it to `0` when hovering over the parent element to slide in the menu.
 - Use `display: flex`, `flex-direction: column` and `justify-content: center` on the `<div>` to vertically center the menu items.
 
 ```html

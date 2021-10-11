@@ -2,15 +2,16 @@
 title: Bouncing loader
 tags: animation,intermediate
 firstSeen: 2018-03-04T06:24:22+02:00
-lastUpdated: 2020-12-30T15:37:37+02:00
+lastUpdated: 2021-10-11T18:44:51+03:00
 ---
 
 Creates a bouncing loader animation.
 
-- Use `@keyframes` to define an animation with two states, where the element changes `opacity` and is translated up on the 2D plane using `transform: translate3d()`. Use a single axis translation on `transform: translate3d()` to achieve better animation performance.
-- Create a parent container, `.bouncing-loader`, for the bouncing circles and use `display: flex` and `justify-content: center` to position them in the center.
-- Give the three bouncing circle `<div>` elements a `width` and `height` of `16px` and use `border-radius: 50%` to make them circular.
-- Apply the `bouncing-loader` animation to each of the three bouncing circles, using a different `animation-delay` for each one and `animation-direction: alternate` to create the appropriate effect.
+- Use `@keyframes` to define a bouncing animation, using the `opacity` and `transform` properties. Use a single axis translation on `transform: translate3d()` to achieve better animation performance.
+- Create a parent container, `.bouncing-loader`, for the bouncing circles. Use `display: flex` and `justify-content: center` to position them in the center.
+- Give the three bouncing circle `<div>` elements the same `width` and `height` and `border-radius: 50%` to make them circular.
+- Apply the `bouncing-loader` animation to each of the three bouncing circles.
+- Use a different `animation-delay` for each circle and `animation-direction: alternate` to create the appropriate effect.
 
 ```html
 <div class="bouncing-loader">

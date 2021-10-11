@@ -2,13 +2,13 @@
 title: Image rotate on hover
 tags: animation,visual,intermediate
 firstSeen: 2020-04-20T18:36:11+03:00
-lastUpdated: 2020-12-30T15:37:37+02:00
+lastUpdated: 2021-10-11T18:44:51+03:00
 ---
 
 Creates a rotate effect for the image on hover.
 
-- Use `scale` and `rotate` when hovering over the parent element (a `<figure>`) to animate the image, using the `transition` property.
-- Use `overflow: hidden` on the parent container to hide the excess from the image transformation.
+- Use the `scale`, `rotate` and `transition` properties when hovering over the parent element (a `<figure>`) to animate the image.
+- Use `overflow: hidden` on the parent element to hide the excess from the image transformation.
 
 ```html
 <figure class="hover-rotate">

@@ -2,17 +2,17 @@
 title: Hover underline animation
 tags: animation,advanced
 firstSeen: 2018-02-28T13:19:22+02:00
-lastUpdated: 2020-12-30T15:37:37+02:00
+lastUpdated: 2021-10-11T18:44:51+03:00
 ---
 
-Creates an animated underline effect when the text is hovered over.
+Creates an animated underline effect when the user hovers over the text.
 
-- Use `display: inline-block` to prevent the underline from spanning the entire parent width rather than just the text content.
-- Use the `:after` pseudo-element with a `width` of `100%` and `position: absolute`, placing it below the content.
+- Use `display: inline-block` to make the underline span just the width of the text content.
+- Use the `:after` pseudo-element with `width: 100%` and `position: absolute` to place it below the content.
 - Use `transform: scaleX(0)` to initially hide the pseudo-element.
 - Use the `:hover` pseudo-class selector to apply `transform: scaleX(1)` and display the pseudo-element on hover.
 - Animate `transform` using `transform-origin: left` and an appropriate `transition`.
-- You can remove the `transform-origin` property to make the transform originate from the center of the element.
+- Remove the `transform-origin` property to make the transform originate from the center of the element.
 
 ```html
 <p class="hover-underline-animation">Hover this text to see the effect!</p>

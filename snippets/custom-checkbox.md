@@ -2,7 +2,7 @@
 title: Custom checkbox
 tags: visual,animation,advanced
 firstSeen: 2021-05-16T13:09:15+03:00
-lastUpdated: 2021-05-18T21:41:27+03:00
+lastUpdated: 2021-10-11T18:44:51+03:00
 ---
 
 Creates a styled checkbox with animation on state change.
@@ -10,7 +10,8 @@ Creates a styled checkbox with animation on state change.
 - Use an `<svg>` element to create the check `<symbol>` and insert it via the `<use>` element to create a reusable SVG icon.
 - Create a `.checkbox-container` and use flexbox to create the appropriate layout for the checkboxes.
 - Hide the `<input>` element and use the `label` associated with it to display a checkbox and the provided text.
-- Use `stroke-dashoffset` to animate the check symbol on state change and `transform: scale(0.9)` via a CSS animation to create a zoom animation effect.
+- Use `stroke-dashoffset` to animate the check symbol on state change.
+- Use `transform: scale(0.9)` via a CSS animation to create a zoom animation effect.
 
 ```html
 <svg class="checkbox-symbol">

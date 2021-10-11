@@ -2,14 +2,14 @@
 title: Horizontal scroll snap
 tags: interactivity,intermediate
 firstSeen: 2020-08-18T14:25:46+03:00
-lastUpdated: 2020-12-30T15:37:37+02:00
+lastUpdated: 2021-10-11T18:44:51+03:00
 ---
 
 Creates a horizontally scrollable container that will snap on elements when scrolling.
 
 - Use `display: grid` and `grid-auto-flow: column` to create a horizontal layout.
 - Use `scroll-snap-type: x mandatory` and `overscroll-behavior-x: contain` to create a snap effect on horizontal scroll.
-- You can use `scroll-snap-align` with either `start`, `stop` or `center` to change the snap alignment.
+- Change `scroll-snap-align` to either `start`, `stop` or `center` to change the snap alignment.
 
 ```html
 <div class="horizontal-snap">
