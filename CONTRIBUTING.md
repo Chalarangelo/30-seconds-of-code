@@ -27,6 +27,7 @@ In order to create a new snippet, you should follow the steps below:
 
 ## Snippet guidelines
 
+- Snippet must follow [these general writing guidelines](https://github.com/30-seconds/brand-and-design/blob/master/writing-guidelines.md).
 - Snippets must have all their frontmatter sections (title, tags etc.) filled.
 - Snippet titles must correspond to the filename and follow the language and repository's naming conventions.
 - Snippet tags must be comma-separated, contain a primary tag as seen on the website as their first tag and an expertise tag (`beginner`, `intermediate` or `advanced`) as their last tag.
