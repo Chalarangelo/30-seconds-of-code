@@ -27,6 +27,7 @@ In order to create a new snippet, you should follow the steps below:
 
 ## Snippet guidelines
 
+- Snippet must follow [these general writing guidelines](https://github.com/30-seconds/brand-and-design/blob/master/writing-guidelines.md).
 - Snippets must have all their frontmatter sections (title, tags etc.) filled.
 - Snippet filenames must roughly correspond to the snippet title and be in `kebab-case`.
 - Snippet titles must be short enough and correspond to the type of the snippet. Titles for each type must follow the format of previous snippets (e.g. `The trickiest thing about X` for a story, `X things that are awesome` for a list, `How do I do X in Y?` for a question).
