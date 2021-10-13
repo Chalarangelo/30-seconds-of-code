@@ -2,12 +2,12 @@
 title: useComponentDidMount
 tags: hooks,effect,beginner
 firstSeen: 2020-01-03T15:56:54+02:00
-lastUpdated: 2020-11-16T14:17:53+02:00
+lastUpdated: 2021-10-13T19:29:39+02:00
 ---
 
 Executes a callback immediately after a component is mounted.
 
-- Use `useEffect()` with an empty array as the second argument to execute the provided callback only once when the component is mounted.
+- Use `useEffect()` with an empty array as the second argument. This will execute the provided callback only once when the component is mounted.
 - Behaves like the `componentDidMount()` lifecycle method of class components.
 
 ```jsx

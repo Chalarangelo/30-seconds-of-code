@@ -2,12 +2,12 @@
 title: RippleButton
 tags: components,state,effect,intermediate
 firstSeen: 2019-09-10T09:07:29+03:00
-lastUpdated: 2020-11-26T09:43:21+02:00
+lastUpdated: 2021-10-13T19:29:39+02:00
 ---
 
 Renders a button that animates a ripple effect when clicked.
 
-- Use the `useState()` hook to create the `coords` and `isRippling` state variables for the pointer's coordinates and the animation state of the button respectively.
+- Use the `useState()` hook to create the `coords` and `isRippling` state variables. These are used for the pointer's coordinates and the animation state of the button respectively.
 - Use a `useEffect()` hook to change the value of `isRippling` every time the `coords` state variable changes, starting the animation.
 - Use `setTimeout()` in the previous hook to clear the animation after it's done playing.
 - Use a `useEffect()` hook to reset `coords` whenever the `isRippling` state variable is `false.`

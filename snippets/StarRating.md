@@ -2,16 +2,16 @@
 title: StarRating
 tags: components,children,input,state,intermediate
 firstSeen: 2018-10-18T14:33:45+03:00
-lastUpdated: 2020-11-26T23:57:34+02:00
+lastUpdated: 2021-10-13T19:29:39+02:00
 ---
 
 Renders a star rating component.
 
-- Define a component, called `Star` that will render each individual star with the appropriate appearance, based on the parent component's state.
-- In the `StarRating` component, use the `useState()` hook to define the `rating` and `selection` state variables with the appropriate initial values.
+- Define a `Star` component. It renders each individual star with the appropriate appearance, based on the parent component's state.
+- Define a `StarRating` component. Use the `useState()` hook to define the `rating` and `selection` state variables with the appropriate initial values.
 - Create a method, `hoverOver`, that updates `selected` according to the provided `event`, using the .`data-star-id` attribute of the event's target or resets it to `0` if called with a `null` argument.
 - Use `Array.from()` to create an array of `5` elements and `Array.prototype.map()` to create individual `<Star>` components.
-- Handle the `onMouseOver` and `onMouseLeave` events of the wrapping element using `hoverOver` and the `onClick` event using `setRating`.
+- Handle the `onMouseOver` and `onMouseLeave` events of the wrapping element using `hoverOver`. Handle the `onClick` event using `setRating`.
 
 ```css
 .star {
