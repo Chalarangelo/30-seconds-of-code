@@ -2,7 +2,7 @@
 title: quickSort
 tags: algorithm,array,recursion,advanced
 firstSeen: 2017-12-28T13:42:41+02:00
-lastUpdated: 2020-12-29T13:03:18+02:00
+lastUpdated: 2021-10-13T19:29:39+02:00
 ---
 
 Sorts an array of numbers, using the quicksort algorithm.
@@ -11,7 +11,7 @@ Sorts an array of numbers, using the quicksort algorithm.
 - Use the spread operator (`...`) to clone the original array, `arr`.
 - If the `length` of the array is less than `2`, return the cloned array.
 - Use `Math.floor()` to calculate the index of the pivot element.
-- Use `Array.prototype.reduce()` and `Array.prototype.push()` to split the array into two subarrays (elements smaller or equal to the `pivot` and elements greater than it), destructuring the result into two arrays.
+- Use `Array.prototype.reduce()` and `Array.prototype.push()` to split the array into two subarrays. The first one contains elements smaller than or equal to `pivot` and the second on elements greather than it. Destructure the result into two arrays.
 - Recursively call `quickSort()` on the created subarrays.
 
 ```js

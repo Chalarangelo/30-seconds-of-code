@@ -2,12 +2,12 @@
 title: debounce
 tags: function,intermediate
 firstSeen: 2018-01-28T15:18:26+02:00
-lastUpdated: 2020-10-19T18:51:03+03:00
+lastUpdated: 2021-10-13T19:29:39+02:00
 ---
 
-Creates a debounced function that delays invoking the provided function until at least `ms` milliseconds have elapsed since the last time it was invoked.
+Creates a debounced function that delays invoking the provided function until at least `ms` milliseconds have elapsed since its last invocation.
 
-- Each time the debounced function is invoked, clear the current pending timeout with `clearTimeout()` and use `setTimeout()` to create a new timeout that delays invoking the function until at least `ms` milliseconds has elapsed.
+- Each time the debounced function is invoked, clear the current pending timeout with `clearTimeout()`. Use `setTimeout()` to create a new timeout that delays invoking the function until at least `ms` milliseconds have elapsed.
 - Use `Function.prototype.apply()` to apply the `this` context to the function and provide the necessary arguments.
 - Omit the second argument, `ms`, to set the timeout at a default of `0` ms.
 
