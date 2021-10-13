@@ -2,16 +2,16 @@
 title: Masonry Layout
 tags: layout,advanced
 firstSeen: 2019-12-11T02:19:05+02:00
-lastUpdated: 2020-12-30T15:37:37+02:00
+lastUpdated: 2021-10-13T19:29:39+02:00
 ---
 
 Creates a masonry-style layout that is especially useful when working with images.
 
 - Create a masonry-style layout that consists of "bricks" that fall into each other with either a fixed `width` (vertical layout) or a fixed `height` (horizontal layout), forming a perfect fit. Especially useful when working with images.
-- Define `.masonry-container`, the container for the masonry layout and `.masonry-columns` an inner container in which `.masonry-brick` elements will be placed.
+- Define `.masonry-container` This is the container for the masonry layout and `.masonry-columns`, an inner container in which `.masonry-brick` elements will be placed.
 - Apply `display: block` to `.masonry-brick` elements to allow the layout to flow properly.
 - Use the `:first-child` pseudo-element selector to apply a different `margin` for the first element to account for its positioning.
-- Use CSS variables to allow for greater flexibility within the layout in combination with media queries to ensure that the layout is responsive in different viewport sizes.
+- Use CSS variables and media queries for greater flexibility and responsiveness.
 
 ```html
 <div class="masonry-container">

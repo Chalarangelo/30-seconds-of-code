@@ -2,14 +2,14 @@
 title: Triangle
 tags: visual,beginner
 firstSeen: 2018-02-25T15:14:39+02:00
-lastUpdated: 2021-01-07T23:52:15+02:00
+lastUpdated: 2021-10-13T19:29:39+02:00
 ---
 
 Creates a triangular shape with pure CSS.
 
 - Use three borders to create a triangle shape.
 - All borders should have the same `border-width` (`20px`).
-- The opposite side of where the triangle points towards (i.e. top if the triangle points downwards) should have the desired `border-color`, whereas the adjacent borders (i.e. left and right) should have a `border-color` of `transparent`.
+- The opposite side of where the triangle points towards (i.e. top if the triangle points downwards) should have the desired `border-color`. The adjacent borders (i.e. left and right) should have a `border-color` of `transparent`.
 - Altering the `border-width` values will change the proportions of the triangle.
 
 ```html

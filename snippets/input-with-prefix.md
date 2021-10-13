@@ -2,13 +2,13 @@
 title: Input with prefix
 tags: interactivity,visual,intermediate
 firstSeen: 2020-10-14T14:16:57+03:00
-lastUpdated: 2020-12-30T15:37:37+02:00
+lastUpdated: 2021-10-13T19:29:39+02:00
 ---
 
 Creates an input with a visual, non-editable prefix.
 
 - Use `display: flex` to create a container element.
-- Remove the border and outline from the `<input>` field and apply them to the parent element instead to make it look like an input box.
+- Remove the border and outline from the `<input>` field. Apply them to the parent element instead to make it look like an input box.
 - Use the `:focus-within` pseudo-class selector to style the parent element accordingly, when the user interacts with the `<input>` field.
 
 ```html

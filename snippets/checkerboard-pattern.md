@@ -2,13 +2,13 @@
 title: Checkerboard background pattern
 tags: visual,intermediate
 firstSeen: 2021-01-11T09:51:43+02:00
-lastUpdated: 2021-01-11T09:51:43+02:00
+lastUpdated: 2021-10-13T19:29:39+02:00
 ---
 
 Creates a checkerboard background pattern.
 
 - Use `background-color` to set a white background.
-- Use `background-image` with two `linear-gradient()` values, each one with a different angle to create the checkerboard pattern.
+- Use `background-image` with two `linear-gradient()` values. Give each one a different angle to create the checkerboard pattern.
 - Use `background-size` to specify the pattern's size.
 - **Note:** The fixed `height` and `width` of the element is for demonstration purposes only.
 

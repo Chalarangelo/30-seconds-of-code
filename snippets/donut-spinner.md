@@ -2,12 +2,12 @@
 title: Donut spinner
 tags: animation,intermediate
 firstSeen: 2018-02-27T17:32:35+02:00
-lastUpdated: 2020-12-30T15:37:37+02:00
+lastUpdated: 2021-10-13T19:29:39+02:00
 ---
 
 Creates a donut spinner that can be used to indicate the loading of content.
 
-- Use a semi-transparent `border` for the whole element, except one side that will serve as the loading indicator for the donut.
+- Use a semi-transparent `border` for the whole element. Exclude one side that will serve as the loading indicator for the donut.
 - Define and use an appropriate animation, using `transform: rotate()` to rotate the element.
 
 ```html

@@ -2,13 +2,13 @@
 title: Scroll progress bar
 tags: animation,visual,intermediate
 firstSeen: 2021-05-24T09:42:03+03:00
-lastUpdated: 2021-05-24T09:42:03+03:00
+lastUpdated: 2021-10-13T19:29:39+02:00
 ---
 
 Creates a progress bar indicating the scroll percentage of the page.
 
 - Use `position: fixed` and a large `z-index` value to place the element at the top of the page and above any content.
-- Use `EventTarget.addEventListener()` along with `Element.scrollTop` to determine the scroll percentage of the document and apply it to the `width` of the element.
+- Use `EventTarget.addEventListener()` and `Element.scrollTop` to determine the scroll percentage of the document and apply it to the `width` of the element.
 
 ```html
 <div id="scroll-progress"></div>
