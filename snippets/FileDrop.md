@@ -2,16 +2,16 @@
 title: FileDrop
 tags: components,input,state,effect,event,advanced
 firstSeen: 2019-02-02T12:17:27+02:00
-lastUpdated: 2020-11-26T09:43:21+02:00
+lastUpdated: 2021-10-13T19:29:39+02:00
 ---
 
 Renders a file drag and drop component for a single file.
 
 - Create a ref, called `dropRef` and bind it to the component's wrapper.
-- Use the `useState()` hook to create the `drag` and `filename` variables, initialized to `false` and `''` respectively.
+- Use the `useState()` hook to create the `drag` and `filename` variables. Initialize them to `false` and `''` respectively.
 - The variables `dragCounter` and `drag` are used to determine if a file is being dragged, while `filename` is used to store the dropped file's name.
 - Create the `handleDrag`, `handleDragIn`, `handleDragOut` and `handleDrop` methods to handle drag and drop functionality.
-- `handleDrag` prevents the browser from opening the dragged file, `handleDragIn` and `handleDragOut` handle the dragged file entering and exiting the component, while `handleDrop` handles the file being dropped and passes it to `onDrop`.
+- `handleDrag` prevents the browser from opening the dragged file. `handleDragIn` and `handleDragOut` handle the dragged file entering and exiting the component. `handleDrop` handles the file being dropped and passes it to `onDrop`.
 - Use the `useEffect()` hook to handle each of the drag and drop events using the previously created methods.
 
 ```css

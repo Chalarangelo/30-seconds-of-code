@@ -12,7 +12,7 @@ Renders a table with rows dynamically created from an array of objects and a lis
 - Use `Array.prototype.map()` to render each value in the `propertyNames` array as a `<th>` element.
 - Use `Array.prototype.map()` to render each object in the `filteredData` array as a `<tr>` element, containing a `<td>` for each key in the object.
 
-_This component does not work with nested objects and will break if there are nested objects inside any of the properties specified in `propertyNames`_
+_This component does not work with nested objects and will break if there are nested objects inside any of the properties specified in `propertyNames`._
 
 ```jsx
 const MappedTable = ({ data, propertyNames }) => {

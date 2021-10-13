@@ -2,14 +2,14 @@
 title: Collapse
 tags: components,children,state,beginner
 firstSeen: 2018-10-17T20:42:23+03:00
-lastUpdated: 2020-11-03T20:42:15+02:00
+lastUpdated: 2021-10-13T19:29:39+02:00
 ---
 
 Renders a component with collapsible content.
 
-- Use the `useState()` hook to create the `isCollapsed` state variable with an initial value of `collapsed`.
+- Use the `useState()` hook to create the `isCollapsed` state variable. Give it an initial value of `collapsed`.
 - Use the `<button>` to change the component's `isCollapsed` state and the content of the component, passed down via `children`.
-- Determine the appearance of the content, based on `isCollapsed` and apply the appropriate `className`.
+- Use `isCollapsed` to determine the appearance of the content and apply the appropriate `className`.
 - Update the value of the `aria-expanded` attribute based on `isCollapsed` to make the component accessible.
 
 ```css

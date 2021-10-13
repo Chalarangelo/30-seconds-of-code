@@ -2,12 +2,12 @@
 title: CountDown
 tags: components,state,advanced
 firstSeen: 2019-02-06T14:39:31+02:00
-lastUpdated: 2020-11-26T23:57:34+02:00
+lastUpdated: 2021-10-13T19:29:39+02:00
 ---
 
 Renders a countdown timer that prints a message when it reaches zero.
 
-- Use the `useState()` hook to create a state variable to hold the time value, initialize it from the props and destructure it into its components.
+- Use the `useState()` hook to create a state variable to hold the time value. Initialize it from the props and destructure it into its components.
 - Use the `useState()` hook to create the `paused` and `over` state variables, used to prevent the timer from ticking if it's paused or the time has run out.
 - Create a method `tick`, that updates the time values based on the current value (i.e. decreasing the time by one second).
 - Create a method `reset`, that resets all state variables to their initial states.

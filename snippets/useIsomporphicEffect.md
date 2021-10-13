@@ -2,11 +2,12 @@
 title: useIsomporphicEffect
 tags: hooks,effect,beginner
 firstSeen: 2021-09-29T05:00:00-04:00
+lastUpdated: 2021-10-13T19:29:39+02:00
 ---
 
 Eesolves to `useEffect()` on the server and `useLayoutEffect()` on the client.
 
-- Use `typeof` to check if the `window` object is defined and return the `useLayoutEffect()` if it is, or `useEffect()` otherwise.
+- Use `typeof` to check if the `window` object is defined. If it is, return the `useLayoutEffect()`. Otherwise return `useEffect()`.
 
 ```jsx
 const useIsomorphicEffect =

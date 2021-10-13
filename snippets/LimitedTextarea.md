@@ -2,12 +2,12 @@
 title: LimitedTextarea
 tags: components,state,callback,event,beginner
 firstSeen: 2018-10-19T09:11:59+03:00
-lastUpdated: 2020-11-16T16:50:57+02:00
+lastUpdated: 2021-10-13T19:29:39+02:00
 ---
 
 Renders a textarea component with a character limit.
 
-- Use the `useState()` hook to create the `content` state variable and set its value to that of `value` prop, trimmed down to `limit` characters.
+- Use the `useState()` hook to create the `content` state variable. Set its value to that of `value` prop, trimmed down to `limit` characters.
 - Create a method `setFormattedContent`, which trims the content down to `limit` characters and memoize it, using the `useCallback()` hook.
 - Bind the `onChange` event of the `<textarea>` to call `setFormattedContent` with the value of the fired event.
 

@@ -2,16 +2,17 @@
 title: Tabs
 tags: components,state,children,intermediate
 firstSeen: 2019-01-27T11:59:52+02:00
-lastUpdated: 2020-11-25T20:46:35+02:00
+lastUpdated: 2021-10-13T19:29:39+02:00
 ---
 
 Renders a tabbed menu and view component.
 
-- Define a `Tabs` component that uses the `useState()` hook to initialize the value of the `bindIndex` state variable to `defaultIndex`.
+- Define a `Tabs` component. Use the `useState()` hook to initialize the value of the `bindIndex` state variable to `defaultIndex`.
 - Define a `TabItem` component and filter `children` passed to the `Tabs` component to remove unnecessary nodes except for `TabItem` by identifying the function's name.
 - Define `changeTab`, which will be executed when clicking a `<button>` from the menu.
 - `changeTab` executes the passed callback, `onTabClick`, and updates `bindIndex` based on the clicked element.
-- Use `Array.prototype.map()` on the collected nodes to render the menu and view of the tabs, using the value of `binIndex` to determine the active tab and apply the correct `className`.
+- Use `Array.prototype.map()` on the collected nodes to render the menu and view of the tabs.
+- Use the value of `bindIndex` to determine the active tab and apply the correct `className`.
 
 ```css
 .tab-menu > button {

@@ -8,7 +8,7 @@ lastUpdated: 2020-11-25T20:46:35+02:00
 Renders a password input field with a reveal button.
 
 - Use the `useState()` hook to create the `shown` state variable and set its value to `false`.
-- When the `<button>` is clicked, execute `setShown`, toggling the `type` of the `<input>` between `"text"` and `"password"`.
+- When the `<button>` is clicked, execute `setShown`, toggling the `type` of the `<input>` between `'text'` and `'password'`.
 
 ```jsx
 const PasswordRevealer = ({ value }) => {
