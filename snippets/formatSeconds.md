@@ -2,14 +2,14 @@
 title: formatSeconds
 tags: date,math,string,intermediate
 firstSeen: 2021-05-09T12:44:55+03:00
-lastUpdated: 2021-05-17T08:59:17+03:00
+lastUpdated: 2021-10-13T19:29:39+02:00
 ---
 
 Returns the ISO format of the given number of seconds.
 
 - Divide `s` with the appropriate values to obtain the appropriate values for `hour`, `minute` and `second`.
 - Store the `sign` in a variable to prepend it to the result.
-- Use `Array.prototype.map()` in combination with `Array.prototype.floor()` and `String.prototype.padStart()` to stringify and format each segment.
+- Use `Array.prototype.map()` in combination with `Math.floor()` and `String.prototype.padStart()` to stringify and format each segment.
 - Use `String.prototype.join(':')` to combine the values into a string.
 
 ```js
