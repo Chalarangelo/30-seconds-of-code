@@ -2,12 +2,12 @@
 title: Pulse loader
 tags: animation,beginner
 firstSeen: 2019-10-05T14:29:36+03:00
-lastUpdated: 2020-12-30T15:37:37+02:00
+lastUpdated: 2021-10-13T19:29:39+02:00
 ---
 
 Creates a pulse effect loader animation using the `animation-delay` property.
 
-- Use `@keyframes` to define an animation at two points in the cycle: at the start (`0%`), the two `<div>` elements have no `width` or `height` and are positioned at the center and at the end (`100%`), both `<div>` elements have increased `width` and `height`, but their `position` is reset to `0`.
+- Use `@keyframes` to define an animation at two points in the cycle. At the start (`0%`), the two `<div>` elements have no `width` or `height` and are positioned at the center. At the end (`100%`), both `<div>` elements have increased `width` and `height`, but their `position` is reset to `0`.
 - Use `opacity` to transition from `1` to `0` when animating to give the `<div>` elements a disappearing effect as they expand.
 - Set a predefined `width` and `height` for the parent container, `.ripple-loader` and use `position: relative` to position its children.
 - Use `animation-delay` on the second `<div>` element, so that each element starts its animation at a different time.

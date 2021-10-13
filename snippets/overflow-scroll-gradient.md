@@ -2,13 +2,13 @@
 title: Overflow scroll gradient
 tags: visual,intermediate
 firstSeen: 2018-02-25T15:14:39+02:00
-lastUpdated: 2020-12-30T15:37:37+02:00
+lastUpdated: 2021-10-13T19:29:39+02:00
 ---
 
 Adds a fading gradient to an overflowing element to better indicate there is more content to be scrolled.
 
 - Use the `:after` pseudo-element to create a `linear-gradient` that fades from `transparent` to `white` (top to bottom).
-- Use `position: absolute`, `width` and `height` to appropriately place and size the pseudo-element in its parent.
+- Use `position: absolute`, `width` and `height` to place and size the pseudo-element in its parent.
 - Use `pointer-events: none` to exclude the pseudo-element from mouse events, allowing text behind it to still be selectable/interactive.
 
 ```html

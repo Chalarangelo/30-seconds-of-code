@@ -2,13 +2,13 @@
 title: Pretty text underline
 tags: visual,intermediate
 firstSeen: 2018-02-25T15:14:39+02:00
-lastUpdated: 2020-12-30T15:37:37+02:00
+lastUpdated: 2021-10-13T19:29:39+02:00
 ---
 
 Provides a nicer alternative to `text-decoration: underline` where descenders do not clip the underline.
 
-- Use `text-shadow` to apply 4 values with offsets covering a 4x4 px area, ensuring the underline has a thick shadow that covers the line where descenders clip it. For the best results, use a color that matches the `background` and adjust the `px` values for larger fonts.
-- Use `background-image` with `linear-gradient()` and `currentColor` to create an appropriate gradient that will act as the actual underline.
+- Use `text-shadow` to apply 4 values with offsets covering a 4x4 `px` area. This ensures the underline has a thick shadow that covers the line where descenders clip it. For best results, use a color that matches the `background` and adjust the `px` values for larger fonts.
+- Use `background-image` with `linear-gradient()` and `currentColor` to create a gradient that will act as the actual underline.
 - Set `background-position`, `background-repeat` and `background-size` to place the gradient in the correct position.
 - Use the `::selection` pseudo-class selector to ensure the text shadow does not interfere with text selection.
 - **Note:** This is natively implemented as `text-decoration-skip-ink: auto` but it has less control over the underline.

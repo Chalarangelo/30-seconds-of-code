@@ -2,13 +2,14 @@
 title: Zoom in zoom out animation
 tags: animation,beginner
 firstSeen: 2020-10-05T21:42:14+03:00
-lastUpdated: 2021-04-02T21:49:01+03:00
+lastUpdated: 2021-10-13T19:29:39+02:00
 ---
 
 Creates a zoom in zoom out animation.
 
-- Use `@keyframes` to define a three-step animation: at the start (`0%`) and end (`100%`), the element is its original size (`scale(1 ,1)`) and halfway through (`50%`) it's scaled up to 1.5 times its original size (`scale(1.5, 1.5)`).
-- Use `width` and `height` to give the element a specific size and use `animation` to set the appropriate values for the element to make it animated.
+- Use `@keyframes` to define a three-step animation. At the start (`0%`) and end (`100%`), the element is its original size (`scale(1 ,1)`). Halfway through (`50%`) it's scaled up to 1.5 times its original size (`scale(1.5, 1.5)`).
+- Use `width` and `height` to give the element a specific size.
+- Use `animation` to set the appropriate values for the element to make it animated.
 
 ```html
 <div class="zoom-in-out-box"></div>
