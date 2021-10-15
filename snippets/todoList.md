@@ -1,20 +1,16 @@
 ---
 title: todoList
-tags: map,beginner
+tags: map,intermediate
 firstSeen: 2021-06-13T05:00:00-04:00
-lastUpdated: 2020-10-22T20:24:30+03:00
 ---
 
-Add data to todo list.
+Add data to todo list
 
-<!-- - Use `(arrayname).map` exactly like a for loop. pull down a value from the array one by one -->
-
-<!-- - Use `document.getElementById` access a html div/tag -->
-
-
+- Use `(arrayname).map` exactly like a for loop. pull down a value from the array one by one.
+- Use `document.getElementById` access a html div/tag.
 
 ```js
-    const addData = (value) => {
+    const todoList = (value) => {
         var arrayForData = [...value];
 
         var funForAddData = arrayForData.map((dataList) => {
@@ -26,5 +22,5 @@ Add data to todo list.
 ```
 
 ```js
-    addData("tharun","kumar");
+todoList("tharun","kumar"); // 'tharun' 'kumar'
 ```
