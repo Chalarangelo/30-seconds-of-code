@@ -8,7 +8,6 @@ Finds the longest element in the provided array
 - Use `Array.prototype.map()` to  map an array length with its length
 - Use `Math.max()` to get biggest number maxLen
 - Use `Array.prototype.filter()` to find the item that it's length equals maxLen
-- Return `null` if there are no matching element
 
 ```js
 const findLongestr = array => array.find((item) => item.length === Math.max(...array.map((item) => item.length)))
