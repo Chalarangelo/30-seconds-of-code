@@ -1,8 +1,6 @@
 ---
 title: findLongestr
 tags: array,string,max
-firstSeen: 2021-10-16T05:18:29+02:00
-lastUpdated: 2021-10-16T21:18:29+02:00
 ---
 
 Finds the longest element in the provided array
