@@ -1,0 +1,24 @@
+---
+title: findLongestr
+tags: array,string,max
+firstSeen: 2021-10-16T05:18:29+02:00
+lastUpdated: 2021-10-16T21:18:29+02:00
+---
+
+Finds the longest element in the provided array
+
+- Use `Array.prototype.map()` to  map an array length with its length
+- Use `Math.max()` to get biggest number maxLen
+- Use `Array.prototype.filter()` to find the item that it's length equals maxLen
+- Return `null` if there are no matching element
+
+```js
+const findLongestr = array => array.find((item) => item.length === Math.max(...array.map((item) => item.length)))
+
+```
+
+```js
+let arrayString = ["abc", 'abcd', "abcde"]
+
+findLongestr(arrayString); // "abcde"
+```
