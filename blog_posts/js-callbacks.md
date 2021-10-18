@@ -18,7 +18,7 @@ A synchronous callback is a callback function that is executed immediately. The 
 const nums = [1, 2, 3];
 const printDoublePlusOne = n => console.log(2 * n + 1);
 
-nums.map(doublePlusOne); // LOGS: 3, 5, 7
+nums.map(printDoublePlusOne); // LOGS: 3, 5, 7
 ```
 
 ### Asynchronous callbacks
@@ -29,5 +29,5 @@ An asynchronous callback is a callback function that is used to execute code aft
 const nums = fetch('https://api.nums.org'); // Suppose the response is [1, 2, 3]
 const printDoublePlusOne = n => console.log(2 * n + 1);
 
-nums.then(printDouble); // LOGS: 3, 5, 7
+nums.then(printDoublePlusOne); // LOGS: 3, 5, 7
 ```
