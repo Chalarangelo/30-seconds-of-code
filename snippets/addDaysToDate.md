@@ -15,7 +15,9 @@ Calculates the date of `n` days from the given date, returning its string repres
 const addDaysToDate = (date, n) => {
   const d = new Date(date);
   d.setDate(d.getDate() + n);
-  return d.toISOString().split('T')[0];
+
+  const timezoneOffset = d.getTimezoneOffset() * 60000
+  return new Date(d.getTime() - timezoneOffset).toISOString().split('T')[0];
 };
 ```
 
