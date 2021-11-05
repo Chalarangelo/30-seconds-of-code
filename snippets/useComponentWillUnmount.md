@@ -7,7 +7,7 @@ lastUpdated: 2021-10-13T19:29:39+02:00
 
 Executes a callback immediately before a component is unmounted and destroyed.
 
-- Use `useEffect()` with an empty array as the second argument. Return the provided callback to be executed only once before cleanup.
+- Use the `useEffect()` hook with an empty array as the second argument. Return the provided callback to be executed only once before cleanup.
 - Behaves like the `componentWillUnmount()` lifecycle method of class components.
 
 ```jsx
