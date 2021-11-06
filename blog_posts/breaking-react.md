@@ -6,12 +6,12 @@ authors: chalarangelo
 cover: blog_images/broken-screen.jpg
 excerpt: As powerful as React is, it is also quite fragile at places. Did you know that just a few lines are more than enough to break your entire React application?
 firstSeen: 2020-01-30T12:35:19+02:00
-lastUpdated: 2021-06-12T19:30:41+03:00
+lastUpdated: 2021-11-06T20:51:47+03:00
 ---
 
-I am by no means an expert React engineer, but I have a couple years of experience under my belt. While React is an extremely powerful library for building user interfaces, it is also quite fragile at places. A very common bug I have encountered is caused by direct DOM manipulation in combination with React. This is not exactly an anti-pattern, but under the right circumstances it can break your entire React application and might be hard to debug.
+I am by no means an expert React engineer, but I have a couple years of experience under my belt. React is a powerful library for building user interfaces, but it's also quite fragile at places. A common bug I have encountered is caused by direct DOM manipulation in combination with React. This is sort of an anti-pattern, as it can break your entire React application under the right circumstances and it's hard to debug.
 
-Here's [a minimal example](https://codepen.io/chalarangelo/pen/jOEojVJ?editors=0010) of how one can reproduce this bug, before we dive into explaining the problem and how to fix it:
+Here's [a minimal example](https://codepen.io/chalarangelo/pen/jOEojVJ?editors=0010) of how to reproduce this bug, before we dive into explaining the problem and how to fix it:
 
 ```jsx
 const destroyElement = () =>
@@ -36,14 +36,14 @@ const App = () => {
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
-This looks like a pretty simple React application, with a container, two buttons and a state variable. However, it will crash if you click the button that calls `destroyElement()` and then click the other button. _Why?_ you might ask. The issue here might not be immediately obvious, but if you look at your browser console you will notice the following exception:
+This is a pretty simple React application, with a container, two buttons and a state variable. The problem is it will crash if you click the button that calls `destroyElement()` and then click the other one. _Why?_ you might ask. The issue here might not be immediately obvious, but if you look at your browser console you will notice the following exception:
 
 ```
 Uncaught DOMException: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.
 ```
 
-This might still be cryptic, so let me explain what is going on. React uses its own representation of the DOM, called a virtual DOM, in order to figure out what to render. Usually, the virtual DOM will match the current DOM structure and React will process changes in props and state, updating the virtual DOM and then sending the necessary changes to the real DOM.
+This might still be cryptic, so let me explain what's going on. React uses its own representation of the DOM, called a virtual DOM, in order to figure out what to render. Usually, the virtual DOM will match the current DOM structure and React will process changes in props and state. It will then update the virtual DOM and then batch and send the necessary changes to the real DOM.
 
-However, in this case React's virtual DOM and the real DOM are different, because of `destroyElement()` removing the `#my-div` element. As a result, when React tries to update the real DOM with the changes from the virtual DOM, the `#my-div` element cannot be removed as it doesn't exist anymore. This results in the above exception being thrown and your application breaking.
+However, in this case React's virtual DOM and the real DOM are different, because of `destroyElement()` removing the `#my-div` element. As a result, when React tries to update the real DOM with the changes from the virtual DOM, the element cannot be removed as it doesn't exist anymore. This results in the above exception being thrown and your application breaking.
 
-This example is short and easy to resolve, by refactoring `destroyElement()` to be part of the `App` component and interact with its state, yet it showcases how fragile React can be under circumstances. Having a shared codebase, with many developers working on different things, can lead to issues like this being introduced and tracking them down can be rather tricky, which is why you might want to be very careful when directly manipulating the DOM when you use React.
+You can refactor `destroyElement()` to be part of the `App` component and interact with its state to fix the issue in this example. Regardless of the simplicity of the problem or the fix, it showcases how fragile React can be under circumstances. This is only compounded in a large codebase where many developers contribute code daily in different areas. In such a setting, issues like this can be easily introduced and tracking them down can be rather tricky. This is why I would advice you to be very careful when directly manipulating the DOM in combination with React.
