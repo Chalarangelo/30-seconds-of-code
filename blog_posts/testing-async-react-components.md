@@ -6,14 +6,14 @@ authors: maciv,chalarangelo
 cover: blog_images/colorful-lounge.jpg
 excerpt: Testing React components that update asynchronously with React Testing Library is a common scenario. Learn how to deal with common issues and speed up your testing.
 firstSeen: 2020-08-13T20:21:33+03:00
-lastUpdated: 2021-06-12T19:30:41+03:00
+lastUpdated: 2021-11-07T16:34:37+03:00
 ---
 
 ### Components that update asynchronously
 
-Recently, while working on our latest side-project, [boardeaux](https://github.com/Trinityyi/boardeaux), we started using the [React DnD library](https://react-dnd.github.io/react-dnd), as we wanted to implement a multi-container drag and drop system with cards.
+Recently, while working on a side-project, we started using the [React DnD library](https://react-dnd.github.io/react-dnd), as we wanted to implement a multi-container drag and drop system with cards.
 
-After spending the better part of a day implementing the functionality, we decided to add some tests to make sure everything will keep working as expected. In the aforementioned project, we use [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) to write tests for our components.
+After spending the better part of a day implementing the functionality, we decided to add some tests to ensure everything will keep working as expected. In the aforementioned project, we use [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) to write tests for our components.
 
 While testing the drag functionality, we came across a very stubborn test. Here's a simplified version of our `Card` component:
 
@@ -92,13 +92,13 @@ act(() => {
 This ensures that you're testing the behavior the user would see in the browser.
 ```
 
-This message, however, was not very helpful in identifying the underlying issue. The only thing it highlighted was that our test didn't update the component style immediately, but there were pending updates after the test completed. To put it plainly, our test was failing because the `dragStart` event didn't immediately update the `Card` components' style (i.e. set the new `opacity`).
+This message wasn't very helpful in identifying the underlying issue. The only thing it highlighted was that the test didn't update the component style immediately. There were pending updates after the test completed. To put it plainly, the test was failing because the `dragStart` event didn't immediately update the `Card` components' style (i.e. set the new `opacity`).
 
-As a side note, our `Card` component is connected to Redux, which might relate to the issue, but it would most likely happen even without Redux, probably due to the fact that `collect` takes some amount of time to run and send an update to the component.
+As a side note, the `Card` component is connected to Redux, which might relate to the issue, but it would most likely happen even without Redux. That's probably due to the fact that `collect` takes some amount of time to run and send an update to the component.
 
 ### Solving the issue
 
-Digging deeper, we found that apart from `act()`, there are also other options, such as `waitFor()` and `waitForDomChange()`, which seem more intuitive simply because of the name and way they're written (using either `async await` or promises). However, `waitForDomChange()` didn't work properly for our case and our version of `react-testing-library` (which shipped with `react-scripts`) was outdated and did not export `waitFor()`, which took us a good half an hour to figure out.
+Digging deeper, we found that apart from `act()`, there are also other options, such as `waitFor()` and `waitForDomChange()`. These seem more intuitive simply because of the name and way they're written (using either `async await` or promises). However, `waitForDomChange()` didn't work properly for our case and our version of `react-testing-library` (which shipped with `react-scripts`) was outdated and did not export `waitFor()`, which took us a good half an hour to figure out.
 
 After updating `react-testing-library`, we were still not ready to go, as the console started displaying the following error:
 
@@ -118,7 +118,7 @@ This required some searching, which eventually led us to [this issue](https://gi
 }
 ```
 
-Now to finally write a test that works! As mentioned above, we opted to use `waitFor()` from `react-testing-library`, which was actually the only change to our original testing code, except for the dependency bump and the script change described above. Here's our test after making the necessary changes:
+Now to finally write a test that works! As mentioned above, we opted to use `waitFor()` from `react-testing-library`, which was actually the only change to the original testing code, except for the dependency bump and the script change described above. Here's the test after making the necessary changes:
 
 ```jsx
 import React from 'react';
