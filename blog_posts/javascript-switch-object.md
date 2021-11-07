@@ -6,12 +6,12 @@ authors: chalarangelo
 cover: blog_images/rocky-lake.jpg
 excerpt: JavaScript's `switch` statement often feels hard to remember and a little bit out of place. Maybe it's time to use object literals, instead.
 firstSeen: 2021-04-01T12:00:00+03:00
-lastUpdated: 2021-06-12T19:30:41+03:00
+lastUpdated: 2021-11-07T16:34:37+03:00
 ---
 
 JavaScript's `switch` statement is one of the few things I find hard to remember the syntax for (so glad VS Code has autocomplete). It also feels a little bit out of place syntactically, as it's the only thing that doesn't use curly braces and you need to remember to `break` for every `case`. Moreover, its performance is less than stellar as its control flow is procedural.
 
-Luckily, JavaScript provides another alternative for most use-cases I can think of for `switch` statements - object literals. The idea is to define an object with a key for each `case` you would have in a `switch` statement, then access its value directly using the expression you would pass to the `switch` statement.
+Luckily, JavaScript's object literals are a pretty good alternative for most `switch` statement use-cases I can think of. The idea is to define an object with a key for each `case` you would have in a `switch` statement. Then you can access its value directly using the expression you would pass to the `switch` statement.
 
 ```js
 let fruit = 'oranges';
@@ -87,7 +87,7 @@ const logFruit = {
 (logFruit[fruit] || logFruit['default'])(); // Logs: 'Known fruit'
 ```
 
-To wrap this all up, we can generalize and extract this logic into a simple reusable function, which we will supply with the lookup object and an optional name for the default case (we'll default to `_default` to avoid any conflicts). This function will in turn return a function with the appropriate lookup logic and we can use it to replace any `switch` statement.
+To wrap this all up, we can generalize and extract this logic into a simple reusable function. We will supply it with the lookup object and an optional name for the default case (we'll default to `_default` to avoid any conflicts). This function will in turn return a function with the appropriate lookup logic and we can use it to replace any `switch` statement.
 
 ```js
 const switchFn = (lookupObject, defaultCase = '_default') =>

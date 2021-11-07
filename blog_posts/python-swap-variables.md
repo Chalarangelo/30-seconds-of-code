@@ -6,12 +6,12 @@ authors: maciv
 cover: blog_images/leaves-read.jpg
 excerpt: Learn 3 easy ways to swap the values of two variables in Python.
 firstSeen: 2021-02-04T11:00:00+02:00
-lastUpdated: 2021-06-12T19:30:41+03:00
+lastUpdated: 2021-11-07T16:34:37+03:00
 ---
 
 ### Using a temporary variable
 
-The simplest way to swap the values of two variables is using a `temp` variable. The `temp` variables is used to store the value of the fist variable (`temp = a`), allowing you to swap the value of the two variables (`a = b`) and then assign the value of `temp` to the second variable.
+The simplest way to swap the values of two variables is using a `temp` variable. The `temp` variables is used to store the value of the fist variable (`temp = a`). This allows you to swap the value of the two variables (`a = b`) and then assign the value of `temp` to the second variable.
 
 ```py
 a = 11

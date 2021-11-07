@@ -6,10 +6,10 @@ authors: chalarangelo
 cover: blog_images/sparkles.jpg
 excerpt: Testing Redux-connected components with React Testing Library is a very common scenario. Learn how to use this simple utility function to speed up your testing.
 firstSeen: 2020-07-15T13:54:26+03:00
-lastUpdated: 2021-06-12T19:30:41+03:00
+lastUpdated: 2021-11-07T16:34:37+03:00
 ---
 
-Testing Redux-connected components with React Testing Library is a very common scenario. However, it might be a little complicated without the proper tools and you could end up repeating yourself, especially when writing the boilerplate to connect to your redux store.
+Testing Redux-connected components with React Testing Library is a very common scenario. However, it might be a little complicated without the proper tools and you could end up repeating yourself. This is especially true when writing the boilerplate to connect to your redux store.
 
 Here's a simple utility function adapted from [React Testing Library's docs on the subject](https://testing-library.com/docs/example-react-redux) to help you speed up your testing:
 
@@ -38,7 +38,7 @@ const renderConnected = (
 export default renderConnected;
 ```
 
-The utility above uses the `createStore` function and the `<Provider>` component to wrap a redux-connected component to the passed state, while using React Testing Library's `render` to finally render the result.
+This utility uses the `createStore` function and the `<Provider>` component to wrap a redux-connected component to the passed state. Then it uses React Testing Library's `render` to finally render the result.
 
 Remember to replace `import` statements with the appropriate files and exports to set up the utility as necessary. After creating the utility function and saving it in an appropriate file, you can use it like this:
 

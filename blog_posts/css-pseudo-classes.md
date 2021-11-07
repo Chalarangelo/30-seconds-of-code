@@ -6,7 +6,7 @@ authors: chalarangelo
 cover: blog_images/orange-flower.jpg
 excerpt: Learn how to use CSS pseudo-classes to style an element based on changes to its state.
 firstSeen: 2020-08-18T19:56:12+03:00
-lastUpdated: 2021-06-12T19:30:41+03:00
+lastUpdated: 2021-11-07T16:34:37+03:00
 ---
 
 CSS pseudo-classes provide a way to style elements, based on changes to their state. For example, `:hover` can be used to apply additional styles to an element when the user's pointer hovers over it.
@@ -15,7 +15,7 @@ Pseudo-classes let you apply styles to elements in relation to the content of th
 
 ### Commonly used pseudo-classes
 
-Below is a list of the top 5 most commonly used pseudo-classes and their usage. This list is by no means complete; you should always refer to relevant documentation from authoritative sources, such as [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes) for more information.
+Below is a list of the top 5 most commonly used pseudo-classes and their usage. This list is by no means complete. You should always refer to relevant documentation from authoritative sources, such as [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes) for more information.
 
 - `:hover`, `:focus` and `:active` are used to provide feedback for user interaction (e.g. changing a button's color on hover)
 - `:link` and `:visited` are useful for styling links based on navigation history (e.g. changing the color of visited links)
