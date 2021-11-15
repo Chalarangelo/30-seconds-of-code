@@ -57,5 +57,8 @@ const dog = Object.create(animal);
 const cat = Object.create(animal);
 
 const max = Object.create(dog);
+max.name = 'Max';
+
 const claire = Object.create(cat);
+claire.name = 'Claire';
 ```
