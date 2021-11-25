@@ -1,6 +1,6 @@
 ---
 title: useOnWindowScroll
-tags: hooks,effect,intermediate
+tags: hooks,effect,event,intermediate
 firstSeen: 2021-12-08T05:00:00-04:00
 ---
 
