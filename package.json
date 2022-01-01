@@ -12,6 +12,7 @@
     "@babel/preset-env": "^7.15.6",
     "@babel/preset-react": "^7.14.5",
     "@fixture-factory/fixture-factory": "^1.0.1",
+    "@jsiqle/core": "^1.3.5",
     "@testing-library/react": "^12.0.0",
     "@types/jest": "^27.0.1",
     "babel-jest": "^27.0.6",
