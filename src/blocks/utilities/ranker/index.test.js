@@ -1,5 +1,4 @@
 import { Ranker } from '.';
-import { ArgsError } from 'blocks/utilities/error';
 import SnippetFactory from 'test/fixtures/factories/blockSnippet';
 
 describe('Ranker', () => {
@@ -16,10 +15,6 @@ describe('Ranker', () => {
   });
 
   describe('rankSnippet', () => {
-    it('throws if snippet is not of the correct type', () => {
-      expect(() => Ranker.rankSnippet({})).toThrow(ArgsError);
-    });
-
     it('returns a value between 0.0 and 1.0', () => {
       snippets.forEach(snippet => {
         const ranking = Ranker.rankSnippet(snippet);
