@@ -5,8 +5,19 @@ import toHAST from 'mdast-util-to-hast';
 import hastToHTML from 'hast-util-to-html';
 import visit from 'unist-util-visit';
 import Prism from 'prismjs';
+import getLoader from 'prismjs/dependencies';
 import prismComponents from 'prismjs/components';
 import { escapeHTML, optimizeAllNodes } from 'utils';
+
+// TODO: Load LAST css-extras and see if it makes any difference
+const loader = getLoader(
+  prismComponents,
+  ['markup', 'javascript', 'js-extras', 'jsx', 'python', 'css'],
+  []
+);
+loader.load(id => {
+  require(`prismjs/components/prism-${id}.min.js`);
+});
 
 // Setup Remark using the appropriate options.
 const remarkParser = new remark()
@@ -97,6 +108,7 @@ export class MarkdownParser {
       throw new Error(`Prism doesn't support language '${language}'.`);
     const languageData = prismComponents.languages[language];
     // Add extras for specific languages (better highlighting)
+    // TODO: See if we can get rid of these and load them up front
     if (language === 'javascript' && !Prism.languages['js-extras'])
       require(`prismjs/components/prism-js-extras.js`);
     if (language === 'css' && !Prism.languages['js-extras'])
@@ -145,9 +157,11 @@ export class MarkdownParser {
         node.value
       );
       const languageStringLiteral =
-        isText && languageData && languageData.length
+        isText && languageData && languageData.size
           ? (
-              languageData.find(l => l.shortCode === languageName) || {
+              [...languageData.values()].find(
+                l => l.shortCode === languageName
+              ) || {
                 languageLiteral: '',
               }
             ).languageLiteral
