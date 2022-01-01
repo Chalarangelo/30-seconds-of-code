@@ -3,7 +3,7 @@ import path from 'path';
 import fs from 'fs';
 import pathSettings from 'settings/paths';
 import { Logger } from 'blocks/utilities/logger';
-import { JSONSerializer } from 'blocks/serializers/json';
+import { JSONHandler } from 'blocks/utilities/jsonHandler';
 
 export class Content {
   /**
@@ -171,7 +171,7 @@ export class Content {
                 `Creating content source completed with exit code ${code}`,
                 'success'
               );
-              return JSONSerializer.serializeToFile(
+              return JSONHandler.toFile(
                 `./content/configs/repos/${dirName}.json`,
                 {
                   name,
