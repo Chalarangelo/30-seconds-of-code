@@ -1,11 +1,21 @@
 import path from 'path';
-import { FileParser } from 'blocks/parsers/file';
-import { ArgsError } from 'blocks/utilities/error';
+import glob from 'glob';
+import { writeFile } from 'fs/promises';
 
 /**
- * Parses JSON files, returning plain objects.
+ * Handles reading/writing JSON objects from/to files.
  */
-export class JSONParser {
+export class JSONHandler {
+  static space = process.env.NODE_ENV === 'production' ? 0 : 2;
+  /**
+   * Writes the provided object to the specified file
+   * @param {string} filePath - Path to write the file.
+   * @param {object} obj - A serializable plain object.
+   * @returns {Promise} - A promise that resolves as soon as the file has been written
+   */
+  static toFile = (filePath, obj) =>
+    writeFile(filePath, JSON.stringify(obj, null, JSONHandler.space));
+
   /**
    * Returns an array of objects from the JSON files matching a glob pattern.
    * @param {string} globPattern - A JSON file glob pattern (i.e. ending in '.json').
@@ -32,18 +42,18 @@ export class JSONParser {
     } = {}
   ) => {
     if (!globPattern.endsWith('.json')) {
-      throw new ArgsError(
+      throw new Error(
         `Invalid argument. The specified globPattern "${globPattern}" is not a valid JSON matcher.`
       );
     }
 
     if (withNames && reduced) {
-      throw new ArgsError(
+      throw new Error(
         "Invalid options. 'withNames' and 'reduced' cannot be true at the same time."
       );
     }
 
-    const matchingFiles = FileParser.fromGlob(globPattern);
+    const matchingFiles = glob.sync(globPattern);
 
     // NOTE: The `reducer` should implement the `require` part in order for the
     // resulting value to make some sort of sense if it reduces to an object.
@@ -69,28 +79,4 @@ export class JSONParser {
   static fromFile = filePath => {
     return { ...require(path.resolve(filePath)) };
   };
-
-  /**
-   * Recursively loads all chunked JSON data in a directory.
-   * @param {string} contentDir - The path to the top-level data directory.
-   * @returns {Array<object>} An array of objects from the chunk directories.
-   */
-  static fromChunks = dirPath =>
-    JSONParser.fromGlob(`${dirPath}/**/index.json`, { withNames: true }).map(
-      ([file, data]) =>
-        JSONParser.fromGlob(
-          `${file.slice(0, file.lastIndexOf('/'))}/!(index).json`,
-          {
-            reduced: true,
-            reducer: (acc, dataFile) => {
-              acc.context = {
-                ...acc.context,
-                ...require(path.resolve(dataFile)),
-              };
-              return acc;
-            },
-            initialValue: data,
-          }
-        )
-    );
 }
