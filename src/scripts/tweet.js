@@ -1,11 +1,9 @@
-import { Env } from 'blocks/utilities/env';
 import { Logger } from 'blocks/utilities/logger';
 import { Screenshot } from 'blocks/utilities/screenshot';
 import { TwitterBot } from 'blocks/utilities/twitterBot';
 
 export const tweet = async () => {
   Logger.log('Twitter bot is starting up...', 'info');
-  await Env.init();
 
   let snippet, image;
   await Promise.all([
