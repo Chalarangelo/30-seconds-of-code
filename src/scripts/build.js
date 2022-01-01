@@ -1,38 +1,33 @@
 import { Env } from 'blocks/utilities/env';
-import { Logger } from 'blocks/utilities/logger';
-import { IconSerializer } from 'blocks/serializers/icon';
-import { SitemapSerializer } from 'blocks/serializers/sitemap';
-import { FeedSerializer } from 'blocks/serializers/feed';
-import { ChirpSerializer } from 'blocks/serializers/chirp';
-import { ManifestSerializer } from 'blocks/serializers/manifest';
-import { FileParser } from 'blocks/parsers/file';
-import { JSONParser } from 'blocks/parsers/json';
-import { AssetSerializer } from 'blocks/serializers/asset';
 import { Extractor } from 'blocks/utilities/extractor';
-import pathSettings from 'settings/paths';
-import iconSettings from 'settings/icons';
+import { Logger } from 'blocks/utilities/logger';
+import { SitemapWriter } from 'blocks/writers/sitemap';
+import { FeedWriter } from 'blocks/writers/feed';
+import { IconWriter } from 'blocks/writers/icon';
+import { ManifestWriter } from 'blocks/writers/manifest';
+import { ChirpWriter } from 'blocks/writers/chirp';
+import { AssetWriter } from 'blocks/writers/asset';
+import { PageWriter } from 'blocks/writers/page';
+import { SearchIndexWriter } from 'blocks/writers/searchIndex';
 
 export const build = async () => {
   Logger.log('Build process is starting up...', 'info');
   Logger.logProcessInfo();
   Logger.breakLine();
 
-  await Env.init();
-
   await Promise.all([
-    Extractor.extract(),
-    AssetSerializer.serialize(),
-    IconSerializer.serialize(
-      FileParser.fromGlob(pathSettings.rawIconPath),
-      JSONParser.fromFile(iconSettings.iconConfigPath).icons
-    ),
+    Extractor.extract().then(parsed => Env.init(parsed)),
+    IconWriter.write(),
+    ManifestWriter.write(),
   ]);
 
   await Promise.all([
-    SitemapSerializer.serialize(),
-    FeedSerializer.serialize(),
-    ChirpSerializer.serialize(),
-    ManifestSerializer.serialize(),
+    AssetWriter.write(),
+    SearchIndexWriter.write(),
+    PageWriter.write(),
+    SitemapWriter.write(),
+    FeedWriter.write(),
+    ChirpWriter.write(),
   ]);
 };
 
