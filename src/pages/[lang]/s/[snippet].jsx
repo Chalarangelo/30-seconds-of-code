@@ -1,30 +1,42 @@
+import { promises as fs } from 'fs';
+import path from 'path';
+
 import SnippetPage from 'components/templates/snippetPage';
 
 export async function getStaticPaths() {
-  return await import('../../../next/utils')
-    .then(({ getPageTypePaths }) => {
-      return getPageTypePaths('SnippetPage');
-    })
-    .then(pages => ({
-      paths: pages.map(p => {
-        const segments = p.relRoute.split('/').filter(Boolean);
-
-        return {
-          params: {
-            lang: segments[0],
-            snippet: segments.slice(-1)[0],
-          },
-        };
-      }),
-      fallback: false,
-    }));
+  const pagePath = path.join(
+    process.cwd(),
+    '.content',
+    'pages',
+    '[lang]',
+    's',
+    '[snippet].json'
+  );
+  const pageData = await fs.readFile(pagePath, 'utf8').then(JSON.parse);
+  const paths = Object.keys(pageData).map(key => {
+    const segments = key.split('/');
+    return {
+      params: {
+        lang: segments[0],
+        snippet: segments.slice(-1)[0],
+      },
+    };
+  });
+  return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
-  const filePath = `${params.lang}/s/${params.snippet}`;
-  return await import('../../../next/utils').then(({ getDynamicPageProps }) =>
-    getDynamicPageProps(filePath)
+  const pagePath = path.join(
+    process.cwd(),
+    '.content',
+    'pages',
+    '[lang]',
+    's',
+    '[snippet].json'
   );
+  const pageData = await fs.readFile(pagePath, 'utf8').then(JSON.parse);
+  const pageUrl = `${params.lang}/s/${params.snippet}`;
+  return { props: pageData[pageUrl].context };
 }
 
 export default SnippetPage;
