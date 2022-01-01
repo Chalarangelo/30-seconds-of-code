@@ -1,6 +1,5 @@
-import { readFile } from 'fs/promises';
+import { readFile, readdir } from 'fs/promises';
 import frontmatter from 'front-matter';
-import { FileParser } from 'blocks/parsers/file';
 
 /**
  * Parses text files, using frontmatter, returning text objects.
@@ -30,12 +29,13 @@ export class TextParser {
     });
   };
 
-  static fromDir = async (dirPath, { withMetadata = false } = {}) => {
-    const fileNames = await FileParser.fromDir(dirPath);
+  static fromDir = async dirPath => {
+    const fileNames = await readdir(dirPath).then(files =>
+      files.sort((a, b) => (a.toLowerCase() < b.toLowerCase() ? -1 : 1))
+    );
+
     return Promise.all(
-      fileNames.map(f =>
-        TextParser.fromPath(`${dirPath}/${f}`, { withMetadata })
-      )
+      fileNames.map(f => TextParser.fromPath(`${dirPath}/${f}`))
     );
   };
 }
