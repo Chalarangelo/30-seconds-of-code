@@ -1,6 +1,4 @@
-import { Snippet } from 'blocks/entities/snippet';
-import { ArgsError } from 'blocks/utilities/error';
-import { JSONParser } from 'blocks/parsers/json';
+import { JSONHandler } from 'blocks/utilities/jsonHandler';
 import pathSettings from 'settings/paths';
 import rankerSettings from 'settings/rankingEngine';
 
@@ -22,7 +20,7 @@ export class Ranker {
     if (process.env.NODE_ENV === `test`) return {};
     if (!Ranker._keywordScores) {
       const { rawContentConfigsPath: configsPath } = pathSettings;
-      Ranker._keywordScores = JSONParser.fromFile(
+      Ranker._keywordScores = JSONHandler.fromFile(
         `${configsPath}/rankingEngine.json`
       );
     }
@@ -35,11 +33,6 @@ export class Ranker {
    * @throws Will throw an error if `snippet` is not an instance of `Snippet`.
    */
   static rankSnippet = snippet => {
-    if (!(snippet instanceof Snippet)) {
-      throw new ArgsError(
-        "Invalid arguments. 'snippet' must be an instance of 'Snippet'."
-      );
-    }
     // Initialize scoring variables
     let score = 0,
       keywordScoreValues = [];
@@ -47,8 +40,8 @@ export class Ranker {
     // Combine content for indexing
     const indexableContent = [
       snippet.title,
-      ...snippet.tags.all,
-      (snippet.config.language && snippet.config.language.long) || '',
+      ...snippet.tags,
+      (snippet.repository.language && snippet.repository.language.long) || '',
       (snippet.type || '.').split('.')[0],
       (snippet.code && snippet.code.src) || '',
       (snippet.code && snippet.code.css) || '',
@@ -87,8 +80,8 @@ export class Ranker {
     else if (firstSeen <= 10) score += 0.25 * freshnessLimit;
     else if (firstSeen <= 14) score += 0.1 * freshnessLimit;
 
-    const biasPenaltyMultiplier = snippet.config.biasPenaltyMultiplier
-      ? snippet.config.biasPenaltyMultiplier
+    const biasPenaltyMultiplier = snippet.repository.biasPenaltyMultiplier
+      ? snippet.repository.biasPenaltyMultiplier
       : 1.0;
     // Divide by limit, applying the bias multiplier, and return ranking
     return +Math.max(
