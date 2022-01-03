@@ -3,15 +3,15 @@ import path from 'path';
 
 import ListingPage from 'components/templates/listingPage';
 
+const pagePath = path.join(
+  process.cwd(),
+  '.content',
+  'pages',
+  'collections.json'
+);
+
 export async function getStaticProps() {
-  const pagePath = path.join(
-    process.cwd(),
-    '.content',
-    'pages',
-    'collections.json'
-  );
-  const pageData = await fs.readFile(pagePath, 'utf8').then(JSON.parse);
-  return { props: pageData.context };
+  return await fs.readFile(pagePath, 'utf8').then(JSON.parse);
 }
 
 export default ListingPage;

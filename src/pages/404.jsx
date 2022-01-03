@@ -3,10 +3,10 @@ import path from 'path';
 
 import NotFoundPage from 'components/templates/notFoundPage';
 
+const pagePath = path.join(process.cwd(), '.content', 'pages', '404.json');
+
 export async function getStaticProps() {
-  const pagePath = path.join(process.cwd(), '.content', 'pages', '404.json');
-  const pageData = await fs.readFile(pagePath, 'utf8').then(JSON.parse);
-  return { props: pageData.context };
+  return await fs.readFile(pagePath, 'utf8').then(JSON.parse);
 }
 
 export default NotFoundPage;

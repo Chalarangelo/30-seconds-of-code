@@ -12,18 +12,21 @@ export class PageWriter {
     if (process.env.NODE_ENV === 'production') pages = pages.published;
     boundLog(`Generating JSON files for ${pages.length} pages`, 'info');
 
-    // TODO: Second pass here, decide on some things
-    const staticData = PageSerializer.serializeArray(pages.static.toArray());
+    const staticData = PageSerializer.serializeRecordSet(
+      pages.static,
+      {},
+      (key, value) => value.relRoute.slice(1)
+    );
+    // This also serializes the `/collections` page, which is also serialized
+    // individually. No harm, no foul, but stay vigilant.
     const listingData = PageSerializer.serializeRecordSet(
       pages.listing,
-      {},
-      // Maybe prefix with a `/`? We'll see
+      { withParams: true },
       (key, value) => value.relRoute.slice(1)
     );
     const snippetData = PageSerializer.serializeRecordSet(
       pages.snippets,
-      {},
-      // Maybe prefix with a `/`? We'll see
+      { withParams: true },
       key => `${key.split('_')[1]}`
     );
 
@@ -39,9 +42,7 @@ export class PageWriter {
         PageSerializer.serialize(pages.collections.first)
       ),
       // Static pages
-      ...staticData.map(page => {
-        // Remove leading slash, but we'll see
-        const fileName = page.relRoute.slice(1);
+      ...Object.entries(staticData).map(([fileName, page]) => {
         return JSONHandler.toFile(`${outPath}/${fileName}.json`, page);
       }),
       // Listing pages
