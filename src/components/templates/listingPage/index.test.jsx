@@ -10,7 +10,6 @@ const paginator = PaginatorFactory.create('Paginator');
 describe('<ListingPage />', () => {
   const snippetList = SnippetFactory.createMany('PreviewSnippet', 2);
   const listingName = 'Snippet list';
-  const listingTitle = 'Snippet list';
   const pageDescription = 'Browse 100 snippets on 30 seconds of code';
   let wrapper, pageTitle, paginate;
 
@@ -20,7 +19,6 @@ describe('<ListingPage />', () => {
         snippetList={snippetList}
         paginator={paginator}
         listingName={listingName}
-        listingTitle={listingTitle}
         pageDescription={pageDescription}
         listingSublinks={anchorItems}
       />
@@ -74,7 +72,6 @@ describe('<ListingPage />', () => {
           snippetList={snippetList}
           paginator={paginator}
           listingName={listingName}
-          listingTitle={listingTitle}
           pageDescription={pageDescription}
         />
       ).container;
@@ -91,7 +88,6 @@ describe('<ListingPage />', () => {
         <ListingPage
           snippetList={snippetList}
           listingName={listingName}
-          listingTitle={listingTitle}
           pageDescription={pageDescription}
           listingSublinks={anchorItems}
         />

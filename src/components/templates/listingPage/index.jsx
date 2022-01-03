@@ -12,7 +12,6 @@ const propTypes = {
   paginator: PropTypes.paginator,
   snippetList: PropTypes.arrayOf(PropTypes.snippet),
   listingName: PropTypes.string,
-  listingTitle: PropTypes.string,
   listingDescription: PropTypes.string,
   listingImage: PropTypes.string,
   listingSublinks: PropTypes.arrayOf(PropTypes.shape({})),
@@ -29,7 +28,6 @@ const ListingPage = ({
   paginator = null,
   snippetList,
   listingName,
-  listingTitle,
   listingDescription,
   listingImage,
   listingSublinks = [],
@@ -52,7 +50,7 @@ const ListingPage = ({
       />
       <Shell>
         {!hasImageOrDescription ? (
-          <PageTitle>{listingTitle}</PageTitle>
+          <PageTitle>{listingName}</PageTitle>
         ) : (
           <div
             className={`snippet-list-header ${
@@ -65,7 +63,7 @@ const ListingPage = ({
               </div>
             ) : null}
             <div>
-              <PageTitle>{listingTitle}</PageTitle>
+              <PageTitle>{listingName}</PageTitle>
               {listingDescription ? (
                 <p className='snippet-list-description mt-4 mx-3.5 mb-2 txt-100'>
                   {listingDescription}

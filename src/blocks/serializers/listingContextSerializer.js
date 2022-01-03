@@ -10,7 +10,6 @@ export const listingContextSerializer = {
   },
   attributes: [
     ['name', 'listingName'],
-    ['name', 'listingTitle'], // TODO: Deduplicate with the one above
     ['description', 'listingDescription'],
     ['splashUrl', 'listingImage'],
     ['sublinks', 'listingSublinks'],
