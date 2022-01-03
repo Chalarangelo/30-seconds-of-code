@@ -48,61 +48,48 @@ export const listing = {
         ...links.flatMap(link => ({
           name: literals.tag(link.data.shortId),
           url: `${link.data.slugPrefix}/p/1`,
-          selected:
-            listing.type === 'tag' &&
-            listing.data.shortId === link.data.shortId,
+          selected: listing.isTag && listing.data.shortId === link.data.shortId,
         })),
       ];
     },
     // Used to determine the order of listings in the search index.
     ranking: listing => Ranker.rankListing(listing),
     name: listing => {
-      const { type } = listing;
-      if (type === 'main') return literals.snippetList;
-      if (type === 'blog') return literals.blog;
-      if (type === 'language')
+      if (listing.isMain) return literals.snippetList;
+      if (listing.isBlog) return literals.blog;
+      if (listing.isLanguage)
         return literals.codelang(listing.data.language.name);
-      if (type === 'collection') return listing.data.name;
-      if (type === 'tag') return listing.data.name;
+      if (listing.isCollection) return listing.data.name;
+      if (listing.isTag) return listing.data.name;
     },
     // This is not used the way you think.
     // We use literals.tag to get the "short" name in sublinks.
     // So what is  this for? Listing preview cards and chips.
     shortName: listing => {
-      const { type } = listing;
-      if (type === 'main') return literals.snippetList;
-      if (type === 'blog') return literals.blog;
-      if (type === 'language')
+      if (listing.isMain) return literals.snippetList;
+      if (listing.isBlog) return literals.blog;
+      if (listing.isLanguage)
         return literals.shortCodelang(listing.data.language.name);
-      if (type === 'collection') return listing.data.name;
-      if (type === 'tag') return listing.data.shortName;
+      if (listing.isCollection) return listing.data.name;
+      if (listing.isTag) return listing.data.shortName;
     },
-    description: listing => {
-      const { type } = listing;
-      return type === 'main' ? null : listing.data.description;
-    },
+    description: listing => (listing.isMain ? null : listing.data.description),
     shortDescription: listing => {
-      const { type } = listing;
-      const shortDescription =
-        type === 'main' ? null : listing.data.shortDescription;
+      const shortDescription = listing.isMain
+        ? null
+        : listing.data.shortDescription;
       return shortDescription ? `<p>${shortDescription}</p>` : null;
     },
-    splash: listing => {
-      const { type } = listing;
-      return type === 'main' ? null : listing.data.splash;
-    },
-    seoDescription: listing => {
-      const { type } = listing;
-      return literals.pageDescription(type, {
+    splash: listing => (listing.isMain ? null : listing.data.splash),
+    seoDescription: listing =>
+      literals.pageDescription(listing.type, {
         snippetCount: listing.snippets.length,
         listingLanguage: listing.data.language
           ? listing.data.language.name
           : '',
-        listingTag: type === 'tag' ? listing.data.shortId : '',
-      });
-    },
-    featured: listing =>
-      listing.type === 'main' ? 0 : listing.data.featured || 0,
+        listingTag: listing.isTag ? listing.data.shortId : '',
+      }),
+    featured: listing => (listing.isMain ? 0 : listing.data.featured || 0),
     icon: listing => listing.data.icon,
     isListed: listing => {
       const { type } = listing;
@@ -156,21 +143,19 @@ export const listing = {
   },
   lazyProperties: {
     data: ({ models: { Repository, Tag, Collection } }) => listing => {
-      if (listing.type === 'main') return {};
-      if (listing.type === 'blog') return Repository.records.blog.first;
-      if (listing.type === 'language')
+      if (listing.isMain) return {};
+      if (listing.isBlog) return Repository.records.blog.first;
+      if (listing.isLanguage)
         return Repository.records.get(listing.relatedRecordId);
-      if (listing.type === 'tag') {
-        return Tag.records.get(listing.relatedRecordId);
-      }
-      if (listing.type === 'collection')
+      if (listing.isTag) return Tag.records.get(listing.relatedRecordId);
+      if (listing.isCollection)
         return Collection.records.get(listing.relatedRecordId);
       return {};
     },
     snippets: ({ models: { Snippet } }) => listing => {
-      if (listing.type === 'main') return Snippet.records;
-      if (listing.type === 'blog') return Snippet.records.blogs;
-      if (listing.type === 'language') {
+      if (listing.isMain) return Snippet.records;
+      if (listing.isBlog) return Snippet.records.blogs;
+      if (listing.isLanguage) {
         const { id: languageId } = listing.data.language;
         return Snippet.records.filter(snippet => {
           const snippetLanguageId = snippet.language
@@ -179,7 +164,7 @@ export const listing = {
           return snippetLanguageId === languageId;
         });
       }
-      if (listing.type === 'tag') {
+      if (listing.isTag) {
         const { shortId: tagId } = listing.data;
         if (listing.isBlogTag) {
           return Snippet.records.blogs.where(snippet =>
@@ -197,7 +182,7 @@ export const listing = {
           });
         }
       }
-      if (listing.type === 'collection')
+      if (listing.isCollection)
         return Snippet.records.only(...listing.data.snippets.flatPluck('id'));
       return [];
     },
