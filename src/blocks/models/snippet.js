@@ -8,13 +8,11 @@ import tagSettings from 'settings/tags';
 
 const expertiseLevels = ['beginner', 'intermediate', 'advanced', 'article'];
 const { specialTagsDictionary } = tagSettings;
-const specialTags = Object.keys(specialTagsDictionary);
 
 const formatTag = tag => {
   if (!tag.length) return '';
-  return !specialTags.includes(tag.toLowerCase())
-    ? capitalize(tag)
-    : specialTagsDictionary[tag.toLowerCase()];
+  if (specialTagsDictionary[tag]) return specialTagsDictionary[tag];
+  return capitalize(tag);
 };
 
 export const snippet = {

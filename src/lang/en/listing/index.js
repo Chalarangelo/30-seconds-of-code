@@ -3,14 +3,12 @@ import tagSettings from 'settings/tags';
 import { capitalize } from 'utils';
 
 const { specialTagsDictionary } = tagSettings;
-const specialTags = Object.keys(specialTagsDictionary);
 // TODO: Ideally, the tag values received here should be formatted already, so
 // we can remove this utility function.
 const formatTag = tag => {
   if (!tag.length) return '';
-  return !specialTags.includes(tag.toLowerCase())
-    ? capitalize(tag)
-    : specialTagsDictionary[tag.toLowerCase()];
+  if (specialTagsDictionary[tag]) return specialTagsDictionary[tag];
+  return capitalize(tag);
 };
 
 /* istanbul ignore next */
