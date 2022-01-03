@@ -1,6 +1,5 @@
 import fetch from 'node-fetch';
 import puppeteer from 'puppeteer';
-import tweetSettings from 'settings/tweet';
 import { Logger } from 'blocks/utilities/logger';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -11,11 +10,9 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 export class Screenshot {
   /**
    * Fetches a background image.
-   * @param {string} url - The URL from which to fetch (Unsplash collection).
    */
-  static getBackgroundImage = async (
-    url = `${tweetSettings.imageUrl}&client_id=${process.env['UNSPLASH_KEY']}`
-  ) => {
+  static getBackgroundImage = async () => {
+    const url = `https://api.unsplash.com/photos/random?collections=9038183&client_id=${process.env['UNSPLASH_KEY']}`;
     const boundLog = Logger.bind('utilities.screenshot.getBackgroundImage');
     boundLog('Fetching background image', 'info');
     const response = await fetch(url);
@@ -27,14 +24,10 @@ export class Screenshot {
   /**
    * Captures a screenshot of the specified snippet.
    * @param {string} url - Live URL of the snippet.
-   * @param {object} image - An image object (`imageUrl`, `name`).
-   * @param {string} path - Path to write the file to.
    */
-  static capture = async (
-    url,
-    { imageUrl, name } = Screenshot.getBackgroundImage(),
-    path = tweetSettings.screenshotFileName
-  ) => {
+  static capture = async url => {
+    const { imageUrl, name } = Screenshot.getBackgroundImage();
+    const path = 'snippet.png';
     const boundLog = Logger.bind('utilities.screenshot.capture');
     boundLog(`Capturing screenshot for ${url}`, 'info');
     // Open the browser

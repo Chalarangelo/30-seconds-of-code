@@ -1,7 +1,6 @@
 import fetch from 'node-fetch';
 import Twitter from 'twitter';
 import fs from 'fs-extra';
-import tweetSettings from 'settings/tweet';
 import { sample } from 'utils';
 import { Logger } from 'blocks/utilities/logger';
 
@@ -23,7 +22,8 @@ export class TwitterBot {
    * Fetches a random snippet chirp.
    * @param {string} url - chirp.json URL.
    */
-  static getRandomSnippet = async (url = tweetSettings.chirpUrl) => {
+  static getRandomSnippet = async () => {
+    const url = 'https://www.30secondsofcode.org/chirp.json';
     const boundLog = Logger.bind('utilities.screenshot.getRandomSnippet');
     boundLog('Fetching random snippet', 'info');
     const chirp = await fetch(url);
@@ -39,8 +39,7 @@ export class TwitterBot {
   static tweet = promisify(description => {
     const boundLog = Logger.bind('utilities.screenshot.tweet');
     boundLog('Preparing tweet', 'info');
-    // TODO: Figure out why this cannot be a parameter and fix it
-    const snippetImage = fs.readFileSync(tweetSettings.screenshotFileName);
+    const snippetImage = fs.readFileSync('snippet.png');
     TwitterBot.client.post(
       'media/upload',
       { media: snippetImage },

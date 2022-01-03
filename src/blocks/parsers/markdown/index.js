@@ -1,6 +1,5 @@
 import remark from 'remark';
 import remarkGfm from 'remark-gfm';
-import remarkOptions from 'settings/remark';
 import toHAST from 'mdast-util-to-hast';
 import hastToHTML from 'hast-util-to-html';
 import visit from 'unist-util-visit';
@@ -19,6 +18,12 @@ loader.load(id => {
 });
 
 // Setup Remark using the appropriate options.
+const remarkOptions = {
+  commonmark: true,
+  footnotes: true,
+  gfm: true,
+  pedantic: true,
+};
 const remarkParser = new remark()
   .use(remarkGfm)
   .data('settings', remarkOptions);

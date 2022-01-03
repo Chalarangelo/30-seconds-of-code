@@ -1,4 +1,0 @@
-{
-  "feedTemplatePath": "src/templates/rssTemplate.hbs",
-  "feedFileName": "feed.xml"
-}

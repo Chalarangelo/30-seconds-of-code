@@ -3,7 +3,6 @@ import { writeFile } from 'fs/promises';
 import handlebars from 'handlebars';
 import globalSettings from 'settings/global';
 import pathSettings from 'settings/paths';
-import feedSettings from 'settings/feed';
 import { Env } from 'blocks/utilities/env';
 import { Logger } from 'blocks/utilities/logger';
 
@@ -11,26 +10,19 @@ import { Logger } from 'blocks/utilities/logger';
  * Writes the feed.xml file.
  */
 export class FeedWriter {
+  static feedSettings = {
+    feedTemplatePath: 'src/templates/rssTemplate.hbs',
+    feedFileName: 'feed.xml',
+  };
+
   /**
    * Generates the website's feed.xml from the JSON files of the pages.
-   * @param {object} options - An options object, containing the following:
-   *  - `feedFileName`: Name of the feed XML file.
-   *  - `publicPath`: Path for the generated XML file.
-   *  - `websiteUrl`: Root URL of the website.
-   *  - `websiteDescription`: Website description.
-   *  - `websiteUrl`: Name of the website.
-   *
-   * All `options` values default to values from settings.
    * @returns {Promise} A promise that will resolve when the feed has been written to disk.
    */
-  static write = async ({
-    feedFileName = feedSettings.feedFileName,
-    feedTemplatePath = feedSettings.feedTemplatePath,
-    publicPath = pathSettings.publicPath,
-    websiteUrl = globalSettings.websiteUrl,
-    websiteDescription = globalSettings.websiteDescription,
-    websiteName = globalSettings.websiteName,
-  } = {}) => {
+  static write = async () => {
+    const { publicPath } = pathSettings;
+    const { feedTemplatePath, feedFileName } = FeedWriter.feedSettings;
+    const { websiteUrl, websiteDescription, websiteName } = globalSettings;
     const boundLog = Logger.bind('writers.feed.write');
     const template = handlebars.compile(
       fs.readFileSync(feedTemplatePath, 'utf-8')
