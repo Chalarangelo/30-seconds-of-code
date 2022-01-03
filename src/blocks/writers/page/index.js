@@ -10,7 +10,7 @@ export class PageWriter {
     let PageSerializer = Env.schema.getSerializer('PageSerializer');
     let pages = Env.schema.getModel('Page').records;
     if (process.env.NODE_ENV === 'production') pages = pages.published;
-    boundLog(`Generating JSON files for ${pages.count} pages`, 'info');
+    boundLog(`Generating JSON files for ${pages.length} pages`, 'info');
 
     // TODO: Second pass here, decide on some things
     const staticData = PageSerializer.serializeArray(pages.static.toArray());

@@ -157,7 +157,7 @@ export class MarkdownParser {
         node.value
       );
       const languageStringLiteral =
-        isText && languageData && languageData.size
+        isText && languageData && languageData.length
           ? (
               [...languageData.values()].find(
                 l => l.shortCode === languageName
