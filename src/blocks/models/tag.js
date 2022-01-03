@@ -19,4 +19,5 @@ export const tag = {
     listing: ({ models: { Listing } }) => tag =>
       Listing.records.get(`tag${tag.slugPrefix}`),
   },
+  cacheProperties: ['shortId', 'isBlogTag', 'language', 'featured', 'listing'],
 };
