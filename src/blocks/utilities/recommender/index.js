@@ -1,20 +1,29 @@
-import recommenderSettings from 'settings/recommendationEngine';
-
-// Get data from configuration
-const {
-  recommendationCount,
-  languageScoreLimit,
-  primaryTagScoreLimit,
-  searchTokenScoreLimit,
-} = recommenderSettings;
-const totalScoreLimit =
-  languageScoreLimit + primaryTagScoreLimit + searchTokenScoreLimit;
-
 /**
  * Utility for creating snippet recommendations.
  */
 export class Recommender {
+  static recommenderSettings = {
+    languageScoreLimit: 45,
+    primaryTagScoreLimit: 15,
+    searchTokenScoreLimit: 40,
+    recommendationCount: 3,
+    get totalScoreLimit() {
+      return (
+        this.languageScoreLimit +
+        this.primaryTagScoreLimit +
+        this.searchTokenScoreLimit
+      );
+    },
+  };
+
   static recommendSnippets = (snippet, snippets) => {
+    const {
+      languageScoreLimit,
+      primaryTagScoreLimit,
+      searchTokenScoreLimit,
+      recommendationCount,
+      totalScoreLimit,
+    } = Recommender.recommenderSettings;
     const language = snippet.language;
     const primaryTag = snippet.truePrimaryTag;
     const searchTokens = snippet.searchTokensArray;

@@ -4,9 +4,9 @@ import { Ranker } from 'blocks/utilities/ranker';
 import { Recommender } from 'blocks/utilities/recommender';
 import tokenizeSnippet from 'utils/search';
 import clientLiterals from 'lang/en/client/common';
-import expertiseLevels from 'settings/expertise';
 import tagSettings from 'settings/tags';
 
+const expertiseLevels = ['beginner', 'intermediate', 'advanced', 'article'];
 const { specialTagsDictionary } = tagSettings;
 const specialTags = Object.keys(specialTagsDictionary);
 

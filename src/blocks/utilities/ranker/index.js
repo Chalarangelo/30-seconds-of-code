@@ -1,28 +1,6 @@
 import { JSONHandler } from 'blocks/utilities/jsonHandler';
 import pathSettings from 'settings/paths';
-import rankerSettings from 'settings/rankingEngine';
 
-// Get data from configuration
-const {
-  snippet: {
-    keywordScoreLimit: snippetKeywordScoreLimit,
-    keywordCountLimit: snippetKeywordCountLimit,
-    freshnessLimit: snippetFreshnessLimit,
-  },
-  listing: {
-    mainListingBaseRanking,
-    blogTagListingBaseRanking,
-    languageListingBaseRanking,
-    blogListingBaseRanking,
-    tagListingBaseRanking,
-    collectionListingBaseRanking,
-    baseListingScoreLimit,
-    keywordScoreLimit: listingKeywordScoreLimit,
-    keywordCountLimit: listingKeywordCountLimit,
-  },
-} = rankerSettings;
-const totalSnippetScoreLimit = snippetKeywordScoreLimit + snippetFreshnessLimit;
-const totalListingScoreLimit = listingKeywordScoreLimit + baseListingScoreLimit;
 const oneDayMs = 86400000;
 const nowMs = +new Date();
 
@@ -30,6 +8,26 @@ const nowMs = +new Date();
  * Utility for ranking snippets.
  */
 export class Ranker {
+  static rankerSettings = {
+    snippetKeywordScoreLimit: 60,
+    snippetKeywordCountLimit: 14,
+    snippetFreshnessLimit: 20,
+    mainListingBaseRanking: 0.5,
+    blogTagListingBaseRanking: 1.0,
+    blogListingBaseRanking: 0.8,
+    languageListingBaseRanking: 0.6,
+    collectionListingBaseRanking: 0.4,
+    tagListingBaseRanking: 0.2,
+    baseListingScoreLimit: 50,
+    listingKeywordScoreLimit: 30,
+    listingKeywordCountLimit: 10,
+    get totalSnippetScoreLimit() {
+      return this.snippetKeywordScoreLimit + this.snippetFreshnessLimit;
+    },
+    get totalListingScoreLimit() {
+      return this.listingKeywordScoreLimit + this.baseListingScoreLimit;
+    },
+  };
   static keywordScoreData = {};
 
   /**
@@ -53,6 +51,12 @@ export class Ranker {
    * @returns {number} A value between 0.0 and 1.0.
    */
   static rankSnippet = snippet => {
+    const {
+      snippetKeywordScoreLimit,
+      snippetKeywordCountLimit,
+      snippetFreshnessLimit,
+      totalSnippetScoreLimit,
+    } = Ranker.rankerSettings;
     // Initialize scoring variables
     let score = 0,
       keywordScoreValues = [];
@@ -116,6 +120,18 @@ export class Ranker {
    * @returns {number} A value between 0.0 and 1.0.
    */
   static rankListing = listing => {
+    const {
+      mainListingBaseRanking,
+      blogTagListingBaseRanking,
+      languageListingBaseRanking,
+      blogListingBaseRanking,
+      tagListingBaseRanking,
+      collectionListingBaseRanking,
+      baseListingScoreLimit,
+      listingKeywordScoreLimit,
+      listingKeywordCountLimit,
+      totalListingScoreLimit,
+    } = Ranker.rankerSettings;
     // Initialize scoring variables
     let score = 0,
       keywordScoreValues = [];

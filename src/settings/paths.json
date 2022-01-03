@@ -7,7 +7,5 @@
   "rawContentConfigsPath": "content/configs",
   "staticAssetPath": "assets",
   "contentPath": ".content",
-  "rawContentPath": "content",
-  "rawIconPath": "src/icons/*.svg",
-  "iconFontPath": "src/styles/_icons.scss"
+  "rawContentPath": "content"
 }
