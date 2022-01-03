@@ -214,6 +214,8 @@ export class Extractor {
         );
 
       const tagData = snippetTags.map(tag => {
+        // TODO: Potentially configurable to resolve to an empty object instead
+        // of undefined to simplify checks using `||`
         const tagMetadata = config.tagMetadata
           ? config.tagMetadata[tag]
           : undefined;
