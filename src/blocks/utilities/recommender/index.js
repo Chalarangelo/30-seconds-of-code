@@ -91,13 +91,7 @@ export class Recommender {
               minRankings.shift();
             }
           }
-          recommendationRankings.set(s.id, [
-            recommendationRanking,
-            s.ranking,
-            languageScore,
-            primaryTagScore,
-            searchTokenScore,
-          ]);
+          recommendationRankings.set(s.id, [recommendationRanking, s.ranking]);
         }
       }
     });
