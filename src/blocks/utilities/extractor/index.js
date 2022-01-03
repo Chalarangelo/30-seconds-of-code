@@ -223,16 +223,16 @@ export class Extractor {
           tagMetadata && tagMetadata.name
             ? tagMetadata.name
             : isBlog
-            ? literals.listing.blogTag(tag)
-            : literals.listing.codelangTag(language.long, tag);
+            ? literals.blogTag(tag)
+            : literals.codelangTag(language.long, tag);
         const shortName =
           tagMetadata && tagMetadata.shortName
             ? tagMetadata.shortName
             : tagMetadata && tagMetadata.name
             ? tagMetadata.name
             : isBlog
-            ? literals.listing.shortBlogTag(tag)
-            : literals.listing.shortCodelangTag(language.long, tag);
+            ? literals.shortBlogTag(tag)
+            : literals.shortCodelangTag(language.long, tag);
         const description =
           tagMetadata && tagMetadata.description
             ? tagMetadata.description
@@ -321,7 +321,10 @@ export class Extractor {
             const seoDescription =
               config.isBlog || parsedDescription.length <= 160
                 ? parsedDescription
-                : literals.snippet.pageDescription(title, config.language.long);
+                : literals.pageDescription('snippet', {
+                    snippetName: title,
+                    language: config.language.long,
+                  });
 
             let code = {};
             let rawCode = {};
