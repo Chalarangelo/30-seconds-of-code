@@ -1,5 +1,6 @@
 import path from 'path';
 import glob from 'glob';
+import fs from 'fs-extra';
 import { writeFile } from 'fs/promises';
 
 /**
@@ -13,8 +14,10 @@ export class JSONHandler {
    * @param {object} obj - A serializable plain object.
    * @returns {Promise} - A promise that resolves as soon as the file has been written
    */
-  static toFile = (filePath, obj) =>
-    writeFile(filePath, JSON.stringify(obj, null, JSONHandler.space));
+  static toFile = (filePath, obj) => {
+    fs.ensureDirSync(path.dirname(filePath));
+    return writeFile(filePath, JSON.stringify(obj, null, JSONHandler.space));
+  };
 
   /**
    * Returns an array of objects from the JSON files matching a glob pattern.

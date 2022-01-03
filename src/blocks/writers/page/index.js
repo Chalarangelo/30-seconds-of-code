@@ -1,4 +1,3 @@
-import fs from 'fs-extra';
 import pathSettings from 'settings/paths';
 import { Env } from 'blocks/utilities/env';
 import { Logger } from 'blocks/utilities/logger';
@@ -12,9 +11,6 @@ export class PageWriter {
     let pages = Env.schema.getModel('Page').records;
     if (process.env.NODE_ENV === 'production') pages = pages.published;
     boundLog(`Generating JSON files for ${pages.count} pages`, 'info');
-
-    // This ensures that all necessary paths exist
-    fs.ensureDirSync(`${outPath}/[lang]/s`);
 
     // TODO: Second pass here, decide on some things
     const staticData = PageSerializer.serializeArray(pages.static.toArray());
