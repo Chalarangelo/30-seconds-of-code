@@ -1,5 +1,6 @@
 import { uniqueElements } from 'utils';
 import tokenizeCollection from 'utils/search';
+import { Ranker } from 'blocks/utilities/ranker';
 import literals from 'lang/en';
 
 const CARDS_PER_PAGE = 15;
@@ -53,15 +54,8 @@ export const listing = {
         })),
       ];
     },
-    // TODO: Use the Ranker to rank by keywords in the name/description etc.
     // Used to determine the order of listings in the search index.
-    ranking: listing => {
-      if (listing.isBlogTag) return 1;
-      if (listing.isLanguage) return 0.75;
-      if (listing.isBlog) return 0.5;
-      if (listing.isTag) return 0.25;
-      return 0; // Main is not searchable!
-    },
+    ranking: listing => Ranker.rankListing(listing),
     name: listing => {
       const { type } = listing;
       if (type === 'main') return literals.listing.snippetList;
@@ -206,6 +200,15 @@ export const listing = {
       if (listing.type === 'collection')
         return Snippet.records.only(...listing.data.snippets.flatPluck('id'));
       return [];
+    },
+  },
+  methods: {
+    pageRanking: (listing, pageNumber) => {
+      const listingRanking = listing.ranking * 0.666;
+      // Promote first page, demote pages after third
+      const pageRanking =
+        pageNumber === 1 ? 0.334 : pageNumber <= 3 ? 0 : -0.166;
+      return listingRanking + pageRanking;
     },
   },
   cacheProperties: [
