@@ -3,8 +3,7 @@ import tagSettings from 'settings/tags';
 import { capitalize } from 'utils';
 
 const { specialTagsDictionary } = tagSettings;
-// TODO: Ideally, the tag values received here should be formatted already, so
-// we can remove this utility function.
+
 const formatTag = tag => {
   if (!tag.length) return '';
   if (specialTagsDictionary[tag]) return specialTagsDictionary[tag];
@@ -53,6 +52,10 @@ const literals = {
         }.`;
       case 'collections':
         return `Browse ${p.collectionCount} snippet collections on ${settings.websiteName}.`;
+      case 'snippet':
+        return `Learn how to code a ${p.snippetName} snippet in ${p.language} on ${settings.websiteName}.`;
+      case 'search':
+        return `Search for answers to your development problems among ${p.snippetCount} code snippets on ${settings.websiteName}.`;
       default:
         return `Find ${settings.websiteDescription.toLowerCase()} on ${
           settings.websiteName

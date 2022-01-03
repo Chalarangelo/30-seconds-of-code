@@ -1,19 +1,12 @@
 import path from 'path';
-import { convertToSeoSlug, uniqueElements, capitalize } from 'utils';
+import { convertToSeoSlug, uniqueElements } from 'utils';
 import { Ranker } from 'blocks/utilities/ranker';
 import { Recommender } from 'blocks/utilities/recommender';
 import tokenizeSnippet from 'utils/search';
 import clientLiterals from 'lang/en/client/common';
-import tagSettings from 'settings/tags';
+import literals from 'lang/en';
 
 const expertiseLevels = ['beginner', 'intermediate', 'advanced', 'article'];
-const { specialTagsDictionary } = tagSettings;
-
-const formatTag = tag => {
-  if (!tag.length) return '';
-  if (specialTagsDictionary[tag]) return specialTagsDictionary[tag];
-  return capitalize(tag);
-};
 
 export const snippet = {
   name: 'Snippet',
@@ -79,13 +72,13 @@ export const snippet = {
       if (!language) return snippet.primaryTag;
       return snippet.tags.filter(t => t !== language.id)[0];
     },
-    formattedPrimaryTag: snippet => formatTag(snippet.primaryTag),
+    formattedPrimaryTag: snippet => literals.tag(snippet.primaryTag),
     formattedTags: snippet => {
       return {
-        primary: formatTag(snippet.primaryTag),
+        primary: literals.tag(snippet.primaryTag),
         all: snippet.tags
           .filter(tag => !expertiseLevels.includes(tag))
-          .map(formatTag),
+          .map(literals.tag),
       };
     },
     hasOtherLanguages: snippet =>
@@ -164,7 +157,7 @@ export const snippet = {
         {
           url: `/${slugParts[0]}/p/1`,
           name: snippet.isBlog
-            ? formatTag('article')
+            ? literals.tag('article')
             : snippet.repository.language.long,
         },
       ];
@@ -172,7 +165,7 @@ export const snippet = {
       if (snippet.isBlog)
         crumbs.push({
           url: `/${slugParts[0]}/t/${snippet.primaryTag.toLowerCase()}/p/1`,
-          name: formatTag(snippet.primaryTag),
+          name: literals.tag(snippet.primaryTag),
         });
 
       crumbs.push({

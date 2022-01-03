@@ -41,12 +41,12 @@ export const listing = {
       const links = listing.parent ? listing.siblings : listing.children;
       return [
         {
-          name: literals.listing.tag('all'),
+          name: literals.tag('all'),
           url: `${listing.rootUrl}/p/1`,
           selected: listing.isParent,
         },
         ...links.flatMap(link => ({
-          name: literals.listing.tag(link.data.shortId),
+          name: literals.tag(link.data.shortId),
           url: `${link.data.slugPrefix}/p/1`,
           selected:
             listing.type === 'tag' &&
@@ -58,10 +58,10 @@ export const listing = {
     ranking: listing => Ranker.rankListing(listing),
     name: listing => {
       const { type } = listing;
-      if (type === 'main') return literals.listing.snippetList;
-      if (type === 'blog') return literals.listing.blog;
+      if (type === 'main') return literals.snippetList;
+      if (type === 'blog') return literals.blog;
       if (type === 'language')
-        return literals.listing.codelang(listing.data.language.name);
+        return literals.codelang(listing.data.language.name);
       if (type === 'collection') return listing.data.name;
       if (type === 'tag') return listing.data.name;
     },
@@ -70,10 +70,10 @@ export const listing = {
     // So what is  this for? Listing preview cards and chips.
     shortName: listing => {
       const { type } = listing;
-      if (type === 'main') return literals.listing.snippetList;
-      if (type === 'blog') return literals.listing.blog;
+      if (type === 'main') return literals.snippetList;
+      if (type === 'blog') return literals.blog;
       if (type === 'language')
-        return literals.listing.shortCodelang(listing.data.language.name);
+        return literals.shortCodelang(listing.data.language.name);
       if (type === 'collection') return listing.data.name;
       if (type === 'tag') return listing.data.shortName;
     },
@@ -93,7 +93,7 @@ export const listing = {
     },
     seoDescription: listing => {
       const { type } = listing;
-      return literals.listing.pageDescription(type, {
+      return literals.pageDescription(type, {
         snippetCount: listing.snippets.length,
         listingLanguage: listing.data.language
           ? listing.data.language.name

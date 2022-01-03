@@ -71,13 +71,10 @@ export const page = {
           (a, b) => a.featuredIndex - b.featuredIndex
         );
         context.slug = page.relRoute;
-        context.listingName = literals.listing.collections;
-        context.pageDescription = literals.listing.pageDescription(
-          'collections',
-          {
-            collectionCount: listedCollections.length,
-          }
-        );
+        context.listingName = literals.collections;
+        context.pageDescription = literals.pageDescription('collections', {
+          collectionCount: listedCollections.length,
+        });
         context.snippetList = ListingPreviewSerializer.serializeArray(
           listedCollections.toArray(),
           {
@@ -105,7 +102,7 @@ export const page = {
         context.shelves = [
           {
             shelfType: 'collections',
-            shelfName: literals.listing.featuredCollections,
+            shelfName: literals.featuredCollections,
             shelfUrl: '/collections',
             shelfData: ListingPreviewSerializer.serializeArray(
               listedCollections
@@ -113,18 +110,18 @@ export const page = {
           },
           {
             shelfType: 'snippets',
-            shelfName: literals.listing.newBlogs,
+            shelfName: literals.newBlogs,
             shelfUrl: '/articles/p/1',
             shelfData: SnippetPreviewSerializer.serializeArray(newBlogs),
           },
           {
             shelfType: 'snippets',
-            shelfName: literals.listing.topSnippets,
+            shelfName: literals.topSnippets,
             shelfUrl: '/list/p/1',
             shelfData: SnippetPreviewSerializer.serializeArray(topSnippets),
           },
         ];
-        context.pageDescription = literals.listing.pageDescription('main', {
+        context.pageDescription = literals.pageDescription('main', {
           snippetCount: Snippet.records.published.length,
         });
       }
@@ -187,9 +184,9 @@ export const page = {
         context.recommendedSnippets = SnippetPreviewSerializer.serializeArray(
           sortedSnippets.slice(0, 3).toArray()
         );
-        context.pageDescription = literals.search.pageDescription(
-          Snippet.records.length
-        );
+        context.pageDescription = literals.pageDescription('search', {
+          snippetCount: Snippet.records.length,
+        });
       }
       return context;
     },
