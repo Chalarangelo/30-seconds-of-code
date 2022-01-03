@@ -18,70 +18,42 @@ export const page = {
     { name: 'staticPriority', type: 'number' },
     { name: 'staticContext', type: 'objectRequired', defaultValue: {} },
   ],
-  scopes: {
-    listed: page => !page.isUnlisted && page.template !== 'NotFoundPage',
-    indexable: page => page.isIndexable,
-    published: page => page.isPublished,
-    feedEligible: page => {
-      if (page.template !== 'SnippetPage') return false;
-      if (page.isUnlisted) return false;
-      if (page.data.isBlog) return true;
-      if (page.data.isReactHook) return true;
-      return false;
-    },
-    chirpEligible: page => {
-      if (page.template !== 'SnippetPage') return false;
-      if (page.isUnlisted) return false;
-      if (page.priority <= 0.06) return false;
-      return true;
-    },
-    snippets: page => page.template === 'SnippetPage',
-    listing: page => page.template === 'ListingPage',
-    static: page => page.isStatic,
-    home: page => page.template === 'HomePage',
-    search: page => page.template === 'SearchPage',
-    collections: page => page.isCollectionsListing,
-  },
   properties: {
+    isStatic: page =>
+      ['StaticPage', 'NotFoundPage', 'SearchPage'].includes(page.template),
+    isCollectionsListing: page => page.id === 'collections',
+    isSnippet: page => page.template === 'SnippetPage',
+    isListing: page => page.template === 'ListingPage',
+    isHome: page => page.template === 'HomePage',
+    isUnlisted: page => (page.isSnippet ? !page.data.isListed : false),
+    isPublished: page => (page.isSnippet ? page.data.isPublished : true),
+    isIndexable: page => {
+      if (page.template === 'NotFoundPage') return false;
+      if (!page.isSnippet) return true;
+      return page.data.isPublished;
+    },
     priority: page => {
-      if (page.isCollectionsListing) return 0.75;
-      if (page.template === 'HomePage') return 1.0;
-      if (page.template === 'SnippetPage')
-        return (page.data.ranking * 0.85).toFixed(2);
-      if (page.template === 'ListingPage')
-        return page.data.pageRanking(page.pageNumber);
+      if (page.isHome) return 1.0;
+      if (page.isCollectionsListing) return 0.65;
+      if (page.isSnippet) return (page.data.ranking * 0.85).toFixed(2);
+      if (page.isListing) return page.data.pageRanking(page.pageNumber);
       if (page.isStatic) return page.staticPriority;
-      return 0.5;
+      return 0.3;
     },
     relRoute: page => {
+      if (page.isHome) return '/';
       if (page.isCollectionsListing) return '/collections';
-      if (page.template === 'HomePage') return '/';
-      if (page.template === 'SnippetPage') return page.data.slug;
-      if (page.template === 'ListingPage')
-        return `${page.data.slugPrefix}/p/${page.pageNumber}`;
+      if (page.isSnippet) return page.data.slug;
+      if (page.isListing) return `${page.data.slugPrefix}/p/${page.pageNumber}`;
       if (page.isStatic) return page.slug;
       return '';
     },
     fullRoute: page => `${routePrefix}${page.relRoute}`,
-    isStatic: page =>
-      ['StaticPage', 'NotFoundPage', 'SearchPage'].includes(page.template),
-    isCollectionsListing: page => page.id === 'collections',
-    isUnlisted: page =>
-      page.template === 'SnippetPage' ? !page.data.isListed : false,
-    isPublished: page =>
-      page.template === 'SnippetPage' ? page.data.isPublished : true,
-    isIndexable: page => {
-      if (page.template === 'NotFoundPage') return false;
-      if (page.template !== 'SnippetPage') return true;
-      return page.data.isPublished;
-    },
   },
   lazyProperties: {
     data: ({ models: { Snippet, Listing } }) => page => {
-      if (page.template === 'SnippetPage')
-        return Snippet.records.get(page.relatedRecordId);
-      if (page.template === 'ListingPage')
-        return Listing.records.get(page.relatedRecordId);
+      if (page.isSnippet) return Snippet.records.get(page.relatedRecordId);
+      if (page.isListing) return Listing.records.get(page.relatedRecordId);
       return {};
     },
     context: ({
@@ -116,7 +88,7 @@ export const page = {
         // Mandatory early return to avoid running the 'ListingPage' matcher
         return context;
       }
-      if (page.template === 'HomePage') {
+      if (page.isHome) {
         const listedCollections = Listing.records.featured
           .sort((a, b) => a.featuredIndex - b.featuredIndex)
           .toArray()
@@ -157,7 +129,7 @@ export const page = {
           snippetCount: Snippet.records.published.length,
         });
       }
-      if (page.template === 'SnippetPage') {
+      if (page.isSnippet) {
         context.cardTemplate = page.data.cardTemplate;
         context.breadcrumbs = page.data.breadcrumbs;
         context.pageDescription = page.data.seoDescription;
@@ -171,7 +143,7 @@ export const page = {
           );
         context.snippet = SnippetContextSerializer.serialize(page.data);
       }
-      if (page.template === 'ListingPage') {
+      if (page.isListing) {
         context.slug = page.relRoute;
         context.paginator = {
           pageNumber: page.pageNumber,
@@ -230,19 +202,21 @@ export const page = {
     'fullRoute',
     'priority',
     'isUnlisted',
+    'isPublished',
     'isIndexable',
     'isCollectionsListing',
     'isStatic',
+    'isSnippet',
+    'isListing',
+    'isHome',
   ],
   validators: {
     listingHasSnippets: page => {
-      if (page.template !== 'ListingPage' || page.id === 'collections')
-        return true;
+      if (!page.isListing || page.id === 'collections') return true;
       return page.snippets && page.snippets.length > 0;
     },
     listingHasPageNumber: page => {
-      if (page.template !== 'ListingPage' || page.id === 'collections')
-        return true;
+      if (!page.isListing || page.id === 'collections') return true;
       return page.pageNumber > 0;
     },
     staticHasUniqueSlug: (page, pages) => {
@@ -260,5 +234,29 @@ export const page = {
         page.staticPriority <= 1
       );
     },
+  },
+  scopes: {
+    listed: page => !page.isUnlisted && page.template !== 'NotFoundPage',
+    indexable: page => page.isIndexable,
+    published: page => page.isPublished,
+    feedEligible: page => {
+      if (page.template !== 'SnippetPage') return false;
+      if (page.isUnlisted) return false;
+      if (page.data.isBlog) return true;
+      if (page.data.isReactHook) return true;
+      return false;
+    },
+    chirpEligible: page => {
+      if (page.template !== 'SnippetPage') return false;
+      if (page.isUnlisted) return false;
+      if (page.priority <= 0.06) return false;
+      return true;
+    },
+    snippets: page => page.isSnippet,
+    listing: page => page.isListing,
+    static: page => page.isStatic,
+    home: page => page.isHome,
+    search: page => page.template === 'SearchPage',
+    collections: page => page.isCollectionsListing,
   },
 };
