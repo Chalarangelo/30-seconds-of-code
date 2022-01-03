@@ -100,7 +100,7 @@ export const listing = {
     seoDescription: listing => {
       const { type } = listing;
       return literals.listing.pageDescription(type, {
-        snippetCount: listing.snippets.size,
+        snippetCount: listing.snippets.length,
         listingLanguage: listing.data.language
           ? listing.data.language.name
           : '',
@@ -131,7 +131,7 @@ export const listing = {
       ).join(' ');
     },
     pageCount: listing =>
-      Math.ceil(listing.listedSnippets.count / CARDS_PER_PAGE),
+      Math.ceil(listing.listedSnippets.length / CARDS_PER_PAGE),
     listedSnippets: listing => listing.snippets.listed,
     defaultOrdering: listing => {
       if (listing.isBlog || listing.isBlogTag) return 'new';
