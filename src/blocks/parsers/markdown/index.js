@@ -9,10 +9,9 @@ import getLoader from 'prismjs/dependencies';
 import prismComponents from 'prismjs/components';
 import { escapeHTML, optimizeAllNodes } from 'utils';
 
-// TODO: Load LAST css-extras and see if it makes any difference
 const loader = getLoader(
   prismComponents,
-  ['markup', 'javascript', 'js-extras', 'jsx', 'python', 'css'],
+  ['markup', 'javascript', 'js-extras', 'jsx', 'python', 'css', 'css-extras'],
   []
 );
 loader.load(id => {
@@ -107,12 +106,6 @@ export class MarkdownParser {
     if (!language)
       throw new Error(`Prism doesn't support language '${language}'.`);
     const languageData = prismComponents.languages[language];
-    // Add extras for specific languages (better highlighting)
-    // TODO: See if we can get rid of these and load them up front
-    if (language === 'javascript' && !Prism.languages['js-extras'])
-      require(`prismjs/components/prism-js-extras.js`);
-    if (language === 'css' && !Prism.languages['js-extras'])
-      require(`prismjs/components/prism-css-extras.js`);
 
     if (Prism.languages[language] || languageData.option === `default`) return;
 
