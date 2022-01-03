@@ -1,4 +1,3 @@
-import fs from 'fs-extra';
 import sass from 'node-sass';
 import pathSettings from 'settings/paths';
 import { Logger } from 'blocks/utilities/logger';
@@ -432,7 +431,6 @@ export class Extractor {
   static writeData = data => {
     const boundLog = Logger.bind('utilities.extractor.writeData');
     boundLog('Writing data to disk', 'info');
-    fs.ensureDirSync(pathSettings.contentPath);
     return JSONHandler.toFile(
       `${pathSettings.contentPath}/content.json`,
       data

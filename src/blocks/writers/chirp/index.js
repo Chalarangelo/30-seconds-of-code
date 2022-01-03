@@ -1,4 +1,3 @@
-import fs from 'fs-extra';
 import { writeFile } from 'fs/promises';
 import pathSettings from 'settings/paths';
 import chirpSettings from 'settings/chirp';
@@ -34,7 +33,6 @@ export class ChirpWriter {
       return acc;
     }, []);
 
-    fs.ensureDirSync(`${publicPath}`);
     await writeFile(
       `${publicPath}/${chirpFileName}`,
       JSON.stringify(nodes, null, 2)

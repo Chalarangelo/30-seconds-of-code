@@ -14,14 +14,13 @@ export class Importer {
   static loadSchema() {
     Importer.schemaObject = {
       ...Object.values(require(path.resolve('src/blocks/schema.js')))[0],
-      models: Importer.models,
-      serializers: Importer.serializers,
+      models: Importer.modelsArray,
+      serializers: Importer.serializersArray,
     };
   }
 
   static get schema() {
     if (!Object.keys(Importer.schemaObject).length) Importer.loadSchema();
-    console.log(Importer.schemaObject);
     return Importer.schemaObject;
   }
 
