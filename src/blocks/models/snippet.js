@@ -90,12 +90,9 @@ export const snippet = {
           .map(formatTag),
       };
     },
-    hasOtherLanguages: snippet => {
-      return (
-        snippet.repository.otherLanguages &&
-        snippet.repository.otherLanguages.size > 0
-      );
-    },
+    hasOtherLanguages: snippet =>
+      snippet.repository.otherLanguages &&
+      snippet.repository.otherLanguages.length > 0,
     formattedLanguages: snippet => {
       if (snippet.isBlog) return {};
       const lang = {
@@ -224,12 +221,21 @@ export const snippet = {
   },
   cacheProperties: [
     'ranking',
+    'isBlog',
+    'isCSS',
+    'isReact',
+    'isListed',
+    'isScheduled',
+    'isPublished',
+    'hasOtherLanguages',
     'searchTokensArray',
     'searchTokens',
     'language',
     'icon',
     'primaryTag',
     'truePrimaryTag',
+    'formattedPrimaryTag',
+    'expertise',
   ],
   scopes: {
     snippets: snippet => snippet.type === 'snippet',
