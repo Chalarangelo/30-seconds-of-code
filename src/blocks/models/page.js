@@ -48,25 +48,8 @@ export const page = {
       if (page.template === 'HomePage') return 1.0;
       if (page.template === 'SnippetPage')
         return (page.data.ranking * 0.85).toFixed(2);
-      // TODO: Check if listing ranking is of any use here
-      if (page.template === 'ListingPage') {
-        const isFirstPage = page.pageNumber === 1;
-        const isMainListing = page.data.isMain;
-        const isTopLevelListing = page.data.isTopLevel;
-        const isMainListingFirstPage = isMainListing && isFirstPage;
-        const isTopLevelListingFirstPage = isTopLevelListing && isFirstPage;
-        const isMainTagListing = page.data.isTag && isFirstPage;
-
-        // Main listing first page needs to be lower priority than home page
-        // for sitemap sorting to be correct
-        return isMainListingFirstPage
-          ? 0.999
-          : isTopLevelListingFirstPage || isMainListing
-          ? 0.75
-          : isMainTagListing || isTopLevelListing
-          ? 0.5
-          : 0.25;
-      }
+      if (page.template === 'ListingPage')
+        return page.data.pageRanking(page.pageNumber);
       if (page.isStatic) return page.staticPriority;
       return 0.5;
     },
