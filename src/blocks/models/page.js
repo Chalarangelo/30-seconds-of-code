@@ -72,7 +72,6 @@ export const page = {
         );
         context.slug = page.relRoute;
         context.listingName = literals.listing.collections;
-        context.listingTitle = literals.listing.collections;
         context.pageDescription = literals.listing.pageDescription(
           'collections',
           {
