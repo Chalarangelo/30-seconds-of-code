@@ -24,11 +24,11 @@ export class TwitterBot {
    */
   static getRandomSnippet = async () => {
     const url = 'https://www.30secondsofcode.org/chirp.json';
-    const boundLog = Logger.bind('utilities.screenshot.getRandomSnippet');
-    boundLog('Fetching random snippet', 'info');
+    const logger = new Logger('TwitterBot.getRandomSnippet');
+    logger.log('Fetching random snippet');
     const chirp = await fetch(url);
     let links = await chirp.json();
-    boundLog('Finished fetching random snippet', 'success');
+    logger.success('Finished fetching random snippet');
     return sample(links);
   };
 
@@ -37,8 +37,8 @@ export class TwitterBot {
    * @param {string} description - The caption of the tweet.
    */
   static tweet = promisify(description => {
-    const boundLog = Logger.bind('utilities.screenshot.tweet');
-    boundLog('Preparing tweet', 'info');
+    const logger = new Logger('TwitterBot.tweet');
+    logger.log('Preparing tweet');
     const snippetImage = fs.readFileSync('snippet.png');
     TwitterBot.client.post(
       'media/upload',
@@ -46,7 +46,7 @@ export class TwitterBot {
       function (error, media) {
         if (!error) {
           // If successful, a media object will be returned.
-          boundLog('Finished uploading media', 'success');
+          logger.success('Finished uploading media');
 
           // Let's tweet it
           var status = {
@@ -55,9 +55,9 @@ export class TwitterBot {
           };
 
           TwitterBot.client.post('statuses/update', status, function (error) {
-            if (!error) boundLog('Tweet successful', 'success');
+            if (!error) logger.success('Tweet successful');
           });
-        } else boundLog(`Error: ${error}`, 'error');
+        } else logger.error(`Error: ${error}`);
       }
     );
   });

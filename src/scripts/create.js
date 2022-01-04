@@ -1,10 +1,8 @@
-import { Env } from 'blocks/utilities/env';
 import { Logger } from 'blocks/utilities/logger';
 import { Content } from 'blocks/utilities/content';
 
 export const build = async () => {
-  Logger.log('Creation process is starting up...', 'info');
-  Logger.breakLine();
+  Logger.log('Creation process is starting up...\n');
 
   if (process.argv.length < 4) {
     Logger.log(

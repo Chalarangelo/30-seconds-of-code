@@ -42,6 +42,7 @@ let replServer = repl.start({
   writer,
 });
 replServer.setupHistory('console.log', () => {});
+console.log('\n');
 
 // If `npm run -- --extract` is called, extract the data first
 const forceExtractFlag =

@@ -27,7 +27,7 @@ export class ManifestWriter {
       iconDimensions,
       iconPrefix,
     } = ManifestWriter.manifestSettings;
-    const boundLog = Logger.bind('writers.manifest.write');
+    const logger = new Logger('ManifestWriter.write');
     // Do not convert these to camelCase, as the manifest requires them to be snake_cased.
     /* eslint-disable camelcase */
     const manifestObject = {
@@ -44,13 +44,13 @@ export class ManifestWriter {
       })),
     };
     /* eslint-enable camelcase */
-    boundLog(`Generating ${manifestFileName}...`, 'info');
+    logger.log(`Generating ${manifestFileName}...`);
 
     await JSONHandler.toFile(
       `${publicPath}/${manifestFileName}`,
       manifestObject
     );
 
-    boundLog('Generating manifest complete', 'success');
+    logger.success('Generating manifest complete');
   };
 }

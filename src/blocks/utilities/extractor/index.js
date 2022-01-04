@@ -86,9 +86,8 @@ export class Extractor {
   };
 
   static extractContentConfigs = contentDir => {
-    const boundLog = Logger.bind('utilities.extractor.extractContentConfigs');
-
-    boundLog('Extracting content configurations', 'info');
+    const logger = new Logger('Extractor.extractContentConfigs');
+    logger.log('Extracting content configurations');
     const configs = JSONHandler.fromGlob(
       `${contentDir}/configs/repos/*.json`
     ).map(config => {
@@ -115,16 +114,13 @@ export class Extractor {
         tagIcons,
       };
     });
-    boundLog('Finished extracting content configurations', 'success');
+    logger.success('Finished extracting content configurations');
     return configs;
   };
 
   static extractCollectionConfigs = contentDir => {
-    const boundLog = Logger.bind(
-      'utilities.extractor.extractCollectionConfigs'
-    );
-
-    boundLog('Extracting collection configurations', 'info');
+    const logger = new Logger('Extractor.extractCollectionConfigs');
+    logger.log('Extracting collection configurations');
     const configs = JSONHandler.fromGlob(
       `${contentDir}/configs/collections/*.json`,
       { withNames: true }
@@ -137,14 +133,13 @@ export class Extractor {
         id,
       };
     });
-    boundLog('Finished extracting collection configurations', 'success');
+    logger.success('Finished extracting collection configurations');
     return configs;
   };
 
   static extractAuthors = contentDir => {
-    const boundLog = Logger.bind('utilities.extractor.extractAuthors');
-
-    boundLog('Extracting authors', 'info');
+    const logger = new Logger('Extractor.extractAuthors');
+    logger.log('Extracting authors');
     const authors = Object.entries(
       JSONHandler.fromFile(
         `${contentDir}/sources/30blog/blog_data/blog_authors.json`
@@ -155,13 +150,13 @@ export class Extractor {
         id,
       };
     });
-    boundLog('Finished extracting authors', 'success');
+    logger.success('Finished extracting authors');
     return authors;
   };
 
   static processLanguageData = contentConfigs => {
-    const boundLog = Logger.bind('utilities.extractor.extractLanguageData');
-    boundLog('Processing language data', 'info');
+    const logger = new Logger('Extractor.extractLanguageData');
+    logger.log('Processing language data');
     const languageData = contentConfigs.reduce(
       (acc, config) => {
         if (
@@ -191,13 +186,13 @@ export class Extractor {
         ],
       ])
     );
-    boundLog('Finished processing language data', 'success');
+    logger.success('Finished processing language data');
     return languageData;
   };
 
   static processTagData = (contentConfigs, snippetData) => {
-    const boundLog = Logger.bind('utilities.extractor.processTagData');
-    boundLog('Processing tag data', 'info');
+    const logger = new Logger('Extractor.processTagData');
+    logger.log('Processing tag data');
     const tagData = contentConfigs.reduce((acc, config) => {
       const { isBlog, slug: configSlugPrefix, language } = config;
       const snippets = snippetData.filter(
@@ -264,13 +259,13 @@ export class Extractor {
       });
       return [...acc, ...tagData];
     }, []);
-    boundLog('Finished processing tag data', 'success');
+    logger.success('Finished processing tag data');
     return tagData;
   };
 
   static extractSnippets = async (contentDir, contentConfigs, languageData) => {
-    const boundLog = Logger.bind('utilities.extractor.extractSnippets');
-    boundLog('Extracting snippets', 'info');
+    const logger = new Logger('Extractor.extractSnippets');
+    logger.log('Extracting snippets');
     let snippets = [];
     await Promise.all(
       contentConfigs.map(config => {
@@ -424,21 +419,25 @@ export class Extractor {
         });
       })
     );
-    boundLog('Finished extracting snippets', 'success');
+    logger.success('Finished extracting snippets');
     return snippets;
   };
 
   static extractFeaturedListings = contentDir => {
-    return JSONHandler.fromFile(`${contentDir}/configs/featured.json`)
+    const logger = new Logger('Extractor.extractFeaturedListings');
+    logger.log('Extracting featured listings');
+    const featured = JSONHandler.fromFile(`${contentDir}/configs/featured.json`)
       .featuredCollections;
+    logger.log('Finished extracting featured listings');
+    return featured;
   };
 
   static writeData = data => {
-    const boundLog = Logger.bind('utilities.extractor.writeData');
-    boundLog('Writing data to disk', 'info');
+    const logger = new Logger('Extractor.writeData');
+    logger.log('Writing data to disk');
     return JSONHandler.toFile(
       `${pathSettings.contentPath}/content.json`,
       data
-    ).then(() => boundLog('Finished writing data', 'success'));
+    ).then(() => logger.success('Finished writing data'));
   };
 }

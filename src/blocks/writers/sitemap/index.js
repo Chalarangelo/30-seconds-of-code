@@ -30,12 +30,12 @@ export class SitemapWriter {
       sitemapFileName,
       sitemapTemplatePath,
     } = SitemapWriter.sitemapSettings;
-    const boundLog = Logger.bind('writers.sitemap.write');
+    const logger = new Logger('SitemapWriter.write');
     const template = handlebars.compile(
       fs.readFileSync(sitemapTemplatePath, 'utf-8')
     );
     const pages = Env.schema.getModel('Page').records.indexable;
-    boundLog(`Generating sitemap for ${pages.length} routes`, 'info');
+    logger.log(`Generating sitemap for ${pages.length} routes`);
 
     const sitemap = template({
       nodes: pages.flatSelect('fullRoute', 'priority'),
@@ -43,6 +43,6 @@ export class SitemapWriter {
 
     await writeFile(`${publicPath}/${sitemapFileName}`, sitemap);
 
-    boundLog('Generating sitemap complete', 'success');
+    logger.success('Generating sitemap complete');
   };
 }

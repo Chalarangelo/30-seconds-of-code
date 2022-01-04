@@ -23,13 +23,13 @@ export class FeedWriter {
     const { publicPath } = pathSettings;
     const { feedTemplatePath, feedFileName } = FeedWriter.feedSettings;
     const { websiteUrl, websiteDescription, websiteName } = globalSettings;
-    const boundLog = Logger.bind('writers.feed.write');
+    const logger = new Logger('FeedWriter.write');
     const template = handlebars.compile(
       fs.readFileSync(feedTemplatePath, 'utf-8')
     );
     // TODO: Revert to 15 or figure out optimal length after experiment
     const pages = Env.schema.getModel('Page').records.feedEligible.slice(0, 25);
-    boundLog(`Generating feed for top blog routes`, 'info');
+    logger.log(`Generating feed for top blog routes`);
 
     const feed = template({
       nodes: pages.flatMap(s => ({
@@ -45,6 +45,6 @@ export class FeedWriter {
 
     await writeFile(`${publicPath}/${feedFileName}`, feed);
 
-    boundLog('Generating feed complete', 'success');
+    logger.success('Generating feed complete');
   };
 }
