@@ -34,9 +34,7 @@ export class SitemapWriter {
     const template = handlebars.compile(
       fs.readFileSync(sitemapTemplatePath, 'utf-8')
     );
-    const pages = Env.schema
-      .getModel('Page')
-      .records.indexable.sort((a, b) => b.priority - a.priority);
+    const pages = Env.schema.getModel('Page').records.indexable;
     boundLog(`Generating sitemap for ${pages.length} routes`, 'info');
 
     const sitemap = template({

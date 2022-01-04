@@ -27,10 +27,8 @@ export class FeedWriter {
     const template = handlebars.compile(
       fs.readFileSync(feedTemplatePath, 'utf-8')
     );
-    const pages = Env.schema
-      .getModel('Page')
-      .records.feedEligible.sort((a, b) => b.data.firstSeen - a.data.firstSeen)
-      .slice(0, 25); // TODO: Revert to 15 or figure out optimal length after experiment
+    // TODO: Revert to 15 or figure out optimal length after experiment
+    const pages = Env.schema.getModel('Page').records.feedEligible.slice(0, 25);
     boundLog(`Generating feed for top blog routes`, 'info');
 
     const feed = template({
