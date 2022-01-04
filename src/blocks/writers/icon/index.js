@@ -50,10 +50,9 @@ export class IconWriter {
     const fileList = glob.sync(inPath);
     const icons = JSONHandler.fromFile(iconConfigPath).icons;
 
-    const boundLog = Logger.bind('writers.icon.write');
-    boundLog(
-      `Generating icon font and styles from ${fileList.length} files...`,
-      'info'
+    const logger = new Logger('IconWriter.write');
+    logger.log(
+      `Generating icon font and styles from ${fileList.length} files...`
     );
 
     const config = {
@@ -81,14 +80,13 @@ export class IconWriter {
         if (error) reject(error);
         else {
           const fileName = `${config.dest}/${config.fontName}`;
-          boundLog(
-            `Writing font to ${path.resolve(`${fileName}.${types[0]}`)}...`,
-            'info'
+          logger.log(
+            `Writing font to ${path.resolve(`${fileName}.${types[0]}`)}...`
           );
           ['svg', 'ttf', 'woff'].forEach(suffix =>
             fs.removeSync(`${fileName}.${suffix}`)
           );
-          boundLog('Generating icon font and styles complete', 'success');
+          logger.success('Generating icon font and styles complete');
           resolve(result);
         }
       });

@@ -3,7 +3,7 @@ import { Screenshot } from 'blocks/utilities/screenshot';
 import { TwitterBot } from 'blocks/utilities/twitterBot';
 
 export const tweet = async () => {
-  Logger.log('Twitter bot is starting up...', 'info');
+  Logger.log('Twitter bot is starting up...\n');
 
   let snippet, image;
   await Promise.all([

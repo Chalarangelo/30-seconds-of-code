@@ -19,39 +19,36 @@ export class Env {
    * If this is the first time you are setting up, use `init` instead.
    */
   static init = data => {
-    const boundLog = Logger.bind('utilities.env.init');
-    boundLog(
-      `Setting up environment in "${process.env.NODE_ENV}" mode.`,
-      'info'
-    );
+    const logger = new Logger('Env.init');
+    logger.log(`Setting up environment in "${process.env.NODE_ENV}" mode.`);
     Env.schema = Env.setupSchema();
     Env.webData = data ? data : Env.fetchData();
     Env.populateSchema();
-    boundLog('Finished setting up environment.', 'success');
+    logger.success('Finished setting up environment.');
     return Env.schema;
   };
 
   static setupSchema() {
-    const boundLog = Logger.bind('utilities.env.setupSchema');
-    boundLog('Setting up schema...', 'info');
+    const logger = new Logger('Env.setupSchema');
+    logger.log('Setting up schema...', 'info');
     const Schema = jsiqle.create(Importer.schema);
-    boundLog('Setting up schema complete.', 'success');
+    logger.success('Setting up schema complete.', 'success');
     return Schema;
   }
 
   static fetchData() {
-    const boundLog = Logger.bind('utilities.env.fetchData');
-    boundLog('Fetching data from the exported JSON file...', 'info');
+    const logger = new Logger('Env.fetchData');
+    logger.log('Fetching data from the exported JSON file...');
     const data = JSONHandler.fromFile(
       `${pathSettings.contentPath}/content.json`
     );
-    boundLog('Fetching data complete', 'success');
+    logger.success('Fetching data complete', 'success');
     return data;
   }
 
   static populateSchema() {
-    const boundLog = Logger.bind('utilities.env.populateSchema');
-    boundLog('Populating schema with data...', 'info');
+    const logger = new Logger('Env.populateSchema');
+    logger.log('Populating schema with data...');
     const data = Env.webData;
     const Schema = Env.schema;
     const {
@@ -209,6 +206,6 @@ export class Env {
     // Populate collections and home page
     Page.createRecord({ id: 'collections', template: 'ListingPage' });
     Page.createRecord({ id: 'home', template: 'HomePage' });
-    boundLog('Populating schema complete', 'success');
+    logger.success('Populating schema complete');
   }
 }

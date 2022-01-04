@@ -13,11 +13,11 @@ export class Screenshot {
    */
   static getBackgroundImage = async () => {
     const url = `https://api.unsplash.com/photos/random?collections=9038183&client_id=${process.env['UNSPLASH_KEY']}`;
-    const boundLog = Logger.bind('utilities.screenshot.getBackgroundImage');
-    boundLog('Fetching background image', 'info');
+    const logger = new Logger('Screenshot.getBackgroundImage');
+    logger.log('Fetching background image');
     const response = await fetch(url);
     const { user, urls } = await response.json();
-    boundLog('Finished fetching background image', 'success');
+    logger.success('Finished fetching background image');
     return { name: user.name, imageUrl: urls.regular };
   };
 
@@ -28,8 +28,8 @@ export class Screenshot {
   static capture = async url => {
     const { imageUrl, name } = Screenshot.getBackgroundImage();
     const path = 'snippet.png';
-    const boundLog = Logger.bind('utilities.screenshot.capture');
-    boundLog(`Capturing screenshot for ${url}`, 'info');
+    const logger = new Logger('Screenshot.capture');
+    logger.log(`Capturing screenshot for ${url}`);
     // Open the browser
     const browser = await puppeteer.launch({
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
@@ -133,7 +133,7 @@ export class Screenshot {
     const element = await page.$('#custom-card');
     await element.screenshot({ path });
     await sleep(3000);
-    boundLog(`Captured screenshot stored in ${path}`, 'success');
+    logger.success(`Captured screenshot stored in ${path}`);
 
     // Close the browser
     await browser.close();

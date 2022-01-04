@@ -5,12 +5,12 @@ import { JSONHandler } from 'blocks/utilities/jsonHandler';
 
 export class PageWriter {
   static write({ outPath = `${pathSettings.contentPath}/pages` } = {}) {
-    const boundLog = Logger.bind('writers.page.write');
+    const logger = new Logger('PageWriter.write');
 
     let PageSerializer = Env.schema.getSerializer('PageSerializer');
     let pages = Env.schema.getModel('Page').records;
     if (process.env.NODE_ENV === 'production') pages = pages.published;
-    boundLog(`Generating JSON files for ${pages.length} pages`, 'info');
+    logger.log(`Generating JSON files for ${pages.length} pages`);
 
     const staticData = PageSerializer.serializeRecordSet(
       pages.static,
@@ -49,6 +49,8 @@ export class PageWriter {
       JSONHandler.toFile(`${outPath}/[lang]/[...listing].json`, listingData),
       // Snippet pages
       JSONHandler.toFile(`${outPath}/[lang]/s/[snippet].json`, snippetData),
-    ]);
+    ]).then(() => {
+      logger.success('Finished generating page JSON files');
+    });
   }
 }

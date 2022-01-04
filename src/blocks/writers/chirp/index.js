@@ -31,7 +31,7 @@ export class ChirpWriter {
       chirpRules,
       maxCaptionLength,
     } = ChirpWriter.settings;
-    const boundLog = Logger.bind('writers.chirp.write');
+    const logger = new Logger('ChirpWriter.write');
     const pages = Env.schema.getModel('Page').records.chirpEligible;
     const nodes = pages.reduce((acc, page) => {
       const rule = chirpRules.find(r =>
@@ -60,6 +60,6 @@ export class ChirpWriter {
       JSON.stringify(nodes, null, 2)
     );
 
-    boundLog(`Generating chirps for ${nodes.length} pages complete`, 'success');
+    logger.success(`Generating chirps for ${nodes.length} pages complete`);
   };
 }

@@ -8,11 +8,12 @@ import { JSONHandler } from 'blocks/utilities/jsonHandler';
 export class Content {
   /**
    * Initialize content sources from their respective GitHub repositories.
-   * Returns a promise that resolves as soon as the spawned git command exits.
+   * @returns {Promise} A promise that resolves as soon as the spawned git
+   * command exits.
    */
   static init() {
-    const boundLog = Logger.bind('utilities.content.update');
-    boundLog('Updating content sources started...', 'info');
+    const logger = new Logger('Content.init');
+    logger.log('Updating content sources started...');
 
     return new Promise((resolve, reject) => {
       const gitUpdate = childProcess.spawn('git', [
@@ -22,25 +23,21 @@ export class Content {
         '--recursive',
         '--progress',
       ]);
-      boundLog(
-        `${gitUpdate.spawnargs.join(' ')} (pid: ${gitUpdate.pid})`,
-        'info'
-      );
+      logger.log(`${gitUpdate.spawnargs.join(' ')} (pid: ${gitUpdate.pid})`);
 
       /* istanbul ignore next */
       gitUpdate.stdout.on('data', data => {
-        boundLog(`${data}`.replace('\n', ''), 'info');
+        logger.log(`${data}`.replace('\n', ''));
       });
       /* istanbul ignore next */
       gitUpdate.on('error', err => {
-        boundLog(`${err}`, 'error');
+        logger.error(`${err}`);
         reject();
       });
       /* istanbul ignore next */
       gitUpdate.on('exit', code => {
-        boundLog(
-          `Initializing content sources completed with exit code ${code}`,
-          'success'
+        logger.success(
+          `Initializing content sources completed with exit code ${code}`
         );
         resolve();
       });
@@ -52,8 +49,8 @@ export class Content {
    * Returns a promise that resolves as soon as the spawned git command exits.
    */
   static update = () => {
-    const boundLog = Logger.bind('utilities.content.update');
-    boundLog('Updating content sources started...', 'info');
+    const logger = new Logger('Content.update');
+    logger.log('Updating content sources started...');
 
     return new Promise((resolve, reject) => {
       const gitUpdate = childProcess.spawn('git', [
@@ -63,25 +60,21 @@ export class Content {
         '--remote',
         '--depth=10000',
       ]);
-      boundLog(
-        `${gitUpdate.spawnargs.join(' ')} (pid: ${gitUpdate.pid})`,
-        'info'
-      );
+      logger.log(`${gitUpdate.spawnargs.join(' ')} (pid: ${gitUpdate.pid})`);
 
       /* istanbul ignore next */
       gitUpdate.stdout.on('data', data => {
-        boundLog(`${data}`.replace('\n', ''), 'info');
+        logger.log(`${data}`.replace('\n', ''));
       });
       /* istanbul ignore next */
       gitUpdate.on('error', err => {
-        boundLog(`${err}`, 'error');
+        logger.error(`${err}`);
         reject();
       });
       /* istanbul ignore next */
       gitUpdate.on('exit', code => {
-        boundLog(
-          `Updating content sources completed with exit code ${code}`,
-          'success'
+        logger.success(
+          `Updating content sources completed with exit code ${code}`
         );
         resolve();
       });
@@ -97,8 +90,8 @@ export class Content {
    * Returns a promise that resolves as soon as the spawned git command exits.
    */
   static create = (repoUrl, dirName, name, slug) => {
-    const boundLog = Logger.bind('utilities.content.create');
-    boundLog('Creating new content source...', 'info');
+    const logger = new Logger('Content.create');
+    logger.log('Creating new content source...');
 
     /* istanbul ignore next */
     return new Promise((resolve, reject) => {
@@ -110,13 +103,13 @@ export class Content {
         repoUrl,
         `./content/sources/${dirName}`,
       ]);
-      boundLog(`${gitAdd.spawnargs.join(' ')} (pid: ${gitAdd.pid})`, 'info');
+      logger.log(`${gitAdd.spawnargs.join(' ')} (pid: ${gitAdd.pid})`);
 
       gitAdd.stdout.on('data', data => {
-        boundLog(`${data}`.replace('\n', ''), 'info');
+        logger.log(`${data}`.replace('\n', ''));
       });
       gitAdd.on('error', err => {
-        boundLog(`${err}`, 'error');
+        logger.error(`${err}`);
         reject();
       });
       gitAdd.on('exit', () => resolve());
@@ -131,16 +124,15 @@ export class Content {
               `submodule.content/sources/${dirName}.update`,
               'checkout',
             ]);
-            boundLog(
-              `${gitConfig.spawnargs.join(' ')} (pid: ${gitConfig.pid})`,
-              'info'
+            logger.log(
+              `${gitConfig.spawnargs.join(' ')} (pid: ${gitConfig.pid})`
             );
 
             gitConfig.stdout.on('data', data => {
-              boundLog(`${data}`.replace('\n', ''), 'info');
+              logger.log(`${data}`.replace('\n', ''));
             });
             gitConfig.on('error', err => {
-              boundLog(`${err}`, 'error');
+              logger.error(`${err}`);
               reject();
             });
             gitConfig.on('exit', () => resolve());
@@ -154,22 +146,20 @@ export class Content {
               'update',
               '--remote',
             ]);
-            boundLog(
-              `${gitUpdate.spawnargs.join(' ')} (pid: ${gitUpdate.pid})`,
-              'info'
+            logger.log(
+              `${gitUpdate.spawnargs.join(' ')} (pid: ${gitUpdate.pid})`
             );
 
             gitUpdate.stdout.on('data', data => {
-              boundLog(`${data}`.replace('\n', ''), 'info');
+              logger.log(`${data}`.replace('\n', ''));
             });
             gitUpdate.on('error', err => {
-              boundLog(`${err}`, 'error');
+              logger.error(`${err}`);
               reject();
             });
             gitUpdate.on('exit', code => {
-              boundLog(
-                `Creating content source completed with exit code ${code}`,
-                'success'
+              logger.success(
+                `Creating content source completed with exit code ${code}`
               );
               return JSONHandler.toFile(
                 `./content/configs/repos/${dirName}.json`,
@@ -195,11 +185,8 @@ export class Content {
    * @param {string} snippetName - Name of the new snippet (e.g. 'my-blog-post')
    */
   static createSnippet = (submoduleName, snippetName) => {
-    const boundLog = Logger.bind('utilities.content.createSnippet');
-    boundLog(
-      `Creating new snippet ${snippetName} in ${submoduleName}...`,
-      'info'
-    );
+    const logger = new Logger('Content.createSnippet');
+    logger.log(`Creating new snippet ${snippetName} in ${submoduleName}...`);
 
     const { rawContentPath: contentPath } = pathSettings;
     const submodulePath = path.join(
@@ -215,7 +202,7 @@ export class Content {
     );
     try {
       if (!fs.existsSync(snippetPath)) {
-        boundLog('Snippet directory not found! Creating directory...', 'info');
+        logger.log('Snippet directory not found! Creating directory...');
         fs.mkdirSync(snippetPath);
       }
       const template = fs.readFileSync(templatePath, 'utf8');
@@ -231,10 +218,10 @@ export class Content {
         .replace(/firstSeen:\s*.*\n/, `firstSeen: ${dateString}\n`);
       fs.writeFileSync(path.join(snippetPath, `${snippetName}.md`), fileData);
 
-      boundLog('Snippet creation complete!', 'success');
+      logger.success('Snippet creation complete!');
     } catch (err) {
-      boundLog('Snippet creation encountered an error', 'error');
-      boundLog(err, 'error');
+      logger.error('Snippet creation encountered an error');
+      logger.error(err);
     }
   };
 }

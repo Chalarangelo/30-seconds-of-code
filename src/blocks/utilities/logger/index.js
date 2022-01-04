@@ -1,80 +1,74 @@
 import chalk from 'chalk';
 import process from 'process';
-const { bold, blue, green, red, yellow } = chalk;
-
-const prefixes = {
-  info: `${bold(blue('info'))}`,
-  success: `${bold(green('done'))}`,
-  error: `${bold(red('errr'))}`,
-  warning: `${bold(yellow('warn'))}`,
-};
-
-const validTypes = Object.keys(prefixes);
-
-const defaultLogOpts = {
-  breakLine: true,
-  type: null,
-  process: null,
-};
+const { bold, blue, green, red, yellow, gray } = chalk;
 
 export class Logger {
   static outputStream = process.stdout;
 
-  /**
-   * Logs a message to the output stream.
-   * @param {string} msg - The message to be logged.
-   * @param {*} options - Options for formatting the message.
-   *    If omitted the default values will be used.
-   *    If passed a string, it will only set the `type` key
-   *    If given an object, the following keys are valid:
-   *    - breakLine (boolean) - Insert a newline character.
-   *    - type (string) - Message type (defaults to null)
-   *      Valid types: 'info', 'success', 'error', 'warning'
-   */
-  static log = (msg, options = {}) => {
-    const opts =
-      typeof options === 'object'
-        ? { ...defaultLogOpts, ...options }
-        : typeof options === 'string'
-        ? { ...defaultLogOpts, type: options }
-        : { ...defaultLogOpts };
-    const { breakLine, type, process: procName } = opts;
+  static formatDate = new Intl.DateTimeFormat('en-GB', {
+    dateStyle: 'short',
+    timeStyle: 'medium',
+    hour12: false,
+  }).format;
 
-    let message = breakLine ? `${msg}\n` : `${msg}`;
-    if (procName) message = `[${bold(procName)}] ${message}`;
-    if (type && validTypes.includes(type))
-      message = `${prefixes[type]}  ${message}`;
-
-    Logger.outputStream.write(message);
+  static prefixes = {
+    info: `${blue('info')}`,
+    success: `${green('done')}`,
+    error: `${red('errr')}`,
+    warning: `${yellow('warn')}`,
   };
 
-  /**
-   * Returns this with the log's `process` option preset to the given procName.
-   * @param {string} procName - The name of the current process.
-   */
-  static bind = procName => (msg, options) => {
-    if (typeof options === 'string')
-      Logger.log(msg, { type: options, process: procName });
-    else Logger.log(msg, { ...options, process: procName });
-  };
+  constructor(procName) {
+    this.procName = procName;
+  }
 
-  /**
-   * Logs an empty line.
-   */
-  static breakLine = () => {
-    Logger.log('', 'info');
-  };
+  log(msg) {
+    return Logger._log(msg, 'info', this.procName);
+  }
 
-  /**
-   * Logs information about the current process.
-   */
+  info(msg) {
+    return Logger._log(msg, 'info', this.procName);
+  }
+
+  success(msg) {
+    return Logger._log(msg, 'success', this.procName);
+  }
+
+  error(msg) {
+    return Logger._log(msg, 'error', this.procName);
+  }
+
+  warning(msg) {
+    return Logger._log(msg, 'warning', this.procName);
+  }
+
+  static _log(msg, type, procName) {
+    const timestamp = Logger.formatDate(new Date());
+    const firstLine = `${gray(`* [${timestamp}]`)} ${
+      Logger.prefixes[type]
+    } - ${procName}`;
+    const secondLine = `  ${msg}`;
+    Logger.outputStream.write(`${firstLine}\n${secondLine}\n\n`);
+  }
+
+  static log(msg) {
+    Logger.outputStream.write(`${msg}\n`);
+  }
+
   static logProcessInfo = () => {
     [
-      `Operating system:  ${process.platform} (node: ${process.version})`,
-      `Process info:      ${process.title} (pid: ${process.pid})`,
-      `Working directory: ${process.cwd()}`,
-      `Executable info:   ${process.execPath} {${process.execArgv}}`,
-      `Command-line args: ${process.argv.slice(2)}`,
-    ].forEach(i => Logger.log(i, 'info'));
+      `${bold(blue('Operating system:'))}  ${process.platform} (node: ${
+        process.version
+      })`,
+      `${bold(blue('Process info:'))}      ${process.title} (pid: ${
+        process.pid
+      })`,
+      `${bold(blue('Working directory:'))} ${process.cwd()}`,
+      `${bold(blue('Executable info:'))}   ${process.execPath} {${
+        process.execArgv
+      }}`,
+      `${bold(blue('Command-line args:'))} ${process.argv.slice(2)}`,
+    ].forEach(m => Logger.outputStream.write(`${m}\n`));
+    Logger.outputStream.write('\n');
   };
 }

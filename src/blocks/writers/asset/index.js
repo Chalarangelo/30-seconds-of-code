@@ -50,7 +50,7 @@ export class AssetWriter {
    * Prepares the assets directory.
    */
   static write = async () => {
-    const boundLog = Logger.bind('writers.asset.write');
+    const logger = new Logger('AssetWriter.write');
     const {
       rawAssetPath: inPath,
       rawContentAssetPath: inContentPath,
@@ -60,13 +60,12 @@ export class AssetWriter {
       publicPath,
     } = pathSettings;
     const repos = Env.schema.getModel('Repository').records.withImages;
-    boundLog('Processing assets from config...', 'info');
+    logger.log('Processing assets from config...');
 
-    boundLog(
+    logger.log(
       `Processing static assets from ${path.resolve(inPath)} to ${path.resolve(
         outPath
-      )}`,
-      'info'
+      )}`
     );
     fs.ensureDirSync(outPath);
     await fs.copy(inPath, outPath);
@@ -77,9 +76,9 @@ export class AssetWriter {
     await Promise.all(
       staticAssets.map(asset => AssetWriter.processImageAsset(asset, outPath))
     );
-    boundLog('Processing static assets complete', 'success');
+    logger.success('Processing static assets complete');
 
-    boundLog(`Processing image assets from configuration files`, 'info');
+    logger.log(`Processing image assets from configuration files`);
     for (const [, repo] of repos) {
       fs.ensureDirSync(path.join(outPath, repo.images.name));
       const assets = glob
@@ -95,25 +94,21 @@ export class AssetWriter {
         )
       );
     }
-    boundLog(
-      `Processing image assets from configuration files complete`,
-      'success'
-    );
+    logger.success(`Processing image assets from configuration files complete`);
 
-    boundLog('Processing icons...', 'info');
+    logger.log('Processing icons...');
     await AssetWriter.processIcons();
-    boundLog(`Processing icons complete`, 'success');
+    logger.success(`Processing icons complete`);
 
-    boundLog(
+    logger.log(
       `Copying assets from ${path.resolve(outPath)} to ${path.resolve(
         publicPath,
         staticAssetPath
-      )}`,
-      'info'
+      )}`
     );
     fs.ensureDirSync(path.join(publicPath, staticAssetPath));
     fs.copySync(outPath, path.join(publicPath, staticAssetPath));
-    boundLog(`Copying assets complete`, 'success');
+    logger.success(`Copying assets complete`);
 
     return;
   };

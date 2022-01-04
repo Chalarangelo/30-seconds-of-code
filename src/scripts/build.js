@@ -11,9 +11,8 @@ import { PageWriter } from 'blocks/writers/page';
 import { SearchIndexWriter } from 'blocks/writers/searchIndex';
 
 export const build = async () => {
-  Logger.log('Build process is starting up...', 'info');
+  Logger.log('Build process is starting up...\n');
   Logger.logProcessInfo();
-  Logger.breakLine();
 
   await Promise.all([
     Extractor.extract().then(parsed => Env.init(parsed)),
