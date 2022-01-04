@@ -161,7 +161,7 @@ export class Env {
       // TODO: Move this to settings and update listing!
       const CARDS_PER_PAGE = 15;
       let pageCounter = 1;
-      const snippetIterator = listing.orderedSnippets.batchIterator(
+      const snippetIterator = listing.listedSnippets.batchIterator(
         CARDS_PER_PAGE
       );
       for (let pageSnippets of snippetIterator) {

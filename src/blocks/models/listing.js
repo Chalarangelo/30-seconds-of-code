@@ -113,28 +113,26 @@ export const listing = {
     },
     pageCount: listing =>
       Math.ceil(listing.listedSnippets.length / CARDS_PER_PAGE),
-    listedSnippets: listing => listing.snippets.listed,
     defaultOrdering: listing => {
       if (listing.isBlog || listing.isBlogTag) return 'new';
       if (listing.isCollection) return 'custom';
       return 'popularity';
     },
-    orderedSnippets: listing => {
+    listedSnippets: listing => {
       const order = listing.defaultOrdering;
+      if (order === 'new') return listing.snippets.listedByNew;
       if (order === 'popularity') {
-        const blogMultiplier =
-          !listing.isBlog && !listing.isMain && !listing.isCollection
-            ? BLOG_DEMOTION_RANKING_MULTIPLIER
-            : 1;
-        return listing.listedSnippets.sort((a, b) => {
-          const nA = a.isBlog ? a.ranking * blogMultiplier : a.ranking;
-          const nB = b.isBlog ? b.ranking * blogMultiplier : b.ranking;
+        if (listing.isBlog || listing.isMain || listing.isCollection)
+          return listing.snippets.listedByPopularity;
+
+        return listing.snippets.listed.sort((a, b) => {
+          const nA = a.isBlog
+            ? a.ranking * BLOG_DEMOTION_RANKING_MULTIPLIER
+            : a.ranking;
+          const nB = b.isBlog
+            ? b.ranking * BLOG_DEMOTION_RANKING_MULTIPLIER
+            : b.ranking;
           return nB - nA;
-        });
-      }
-      if (order === 'new') {
-        return listing.listedSnippets.sort((a, b) => {
-          return b.firstSeen - a.firstSeen;
         });
       }
       // Catch all, also catches 'custom' for collection types
@@ -222,6 +220,7 @@ export const listing = {
     'isListed',
     'isSearchable',
     'searchTokens',
+    'listedSnippets',
   ],
   scopes: {
     main: listing => listing.isMain,
@@ -230,7 +229,13 @@ export const listing = {
     tag: listing => listing.isTag,
     collection: listing => listing.isCollection,
     listed: listing => listing.isListed,
-    searchable: listing => listing.isSearchable,
-    featured: listing => listing.featuredIndex !== -1,
+    searchable: {
+      matcher: listing => listing.isSearchable,
+      sorter: (a, b) => b.ranking - a.ranking,
+    },
+    featured: {
+      matcher: listing => listing.featuredIndex !== -1,
+      sorter: (a, b) => a.featuredIndex - b.featuredIndex,
+    },
   },
 };

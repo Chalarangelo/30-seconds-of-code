@@ -232,6 +232,14 @@ export const snippet = {
     snippets: snippet => snippet.type === 'snippet',
     blogs: snippet => snippet.type.startsWith('blog'),
     listed: snippet => snippet.isListed,
+    listedByPopularity: {
+      matcher: snippet => snippet.isListed,
+      sorter: (a, b) => b.ranking - a.ranking,
+    },
+    listedByNew: {
+      matcher: snippet => snippet.isListed,
+      sorter: (a, b) => b.firstSeen - a.firstSeen,
+    },
     unlisted: snippet => !snippet.isListed,
     scheduled: snippet => snippet.isScheduled,
     published: snippet => snippet.isPublished,

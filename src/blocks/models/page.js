@@ -67,9 +67,7 @@ export const page = {
     }) => page => {
       let context = {};
       if (page.isCollectionsListing) {
-        const listedCollections = Listing.records.featured.sort(
-          (a, b) => a.featuredIndex - b.featuredIndex
-        );
+        const listedCollections = Listing.records.featured;
         context.slug = page.relRoute;
         context.listingName = literals.collections;
         context.pageDescription = literals.pageDescription('collections', {
@@ -86,16 +84,13 @@ export const page = {
       }
       if (page.isHome) {
         const listedCollections = Listing.records.featured
-          .sort((a, b) => a.featuredIndex - b.featuredIndex)
           .toArray()
           .slice(0, TOP_COLLECTION_CHIPS);
-        const newBlogs = Snippet.records.blogs.listed
-          .sort((a, b) => b.firstSeen - a.firstSeen)
+        const newBlogs = Snippet.records.blogs.listedByNew
           .toArray()
           .slice(0, NEW_BLOG_CARDS);
         const topSnippets = shuffle(
-          Snippet.records.snippets.listed
-            .sort((a, b) => b.ranking - a.ranking)
+          Snippet.records.snippets.listedByPopularity
             .toArray()
             .slice(0, TOP_SNIPPET_CARDS * 5)
         ).slice(0, TOP_SNIPPET_CARDS);
@@ -159,19 +154,10 @@ export const page = {
         context = { ...page.staticContext };
       }
       if (page.template === 'SearchPage') {
-        const sortedSnippets = Snippet.records.listed.sort((a, b) => {
-          if (b.ranking === a.ranking) return a.title.localeCompare(b.title);
-          return b.ranking - a.ranking;
-        });
+        const sortedSnippets = Snippet.records.listedByPopularity;
         context.searchIndex = [
           ...ListingPreviewSerializer.serializeArray(
-            Listing.records.searchable
-              .sort((a, b) => {
-                if (b.ranking === a.ranking)
-                  return a.name.localeCompare(b.name);
-                return b.ranking - a.ranking;
-              })
-              .toArray(),
+            Listing.records.searchable.toArray(),
             {
               withDescription: true,
               withSearchTokens: true,
@@ -233,14 +219,20 @@ export const page = {
   },
   scopes: {
     listed: page => !page.isUnlisted && page.template !== 'NotFoundPage',
-    indexable: page => page.isIndexable,
+    indexable: {
+      matcher: page => page.isIndexable,
+      sorter: (a, b) => b.priority - a.priority,
+    },
     published: page => page.isPublished,
-    feedEligible: page => {
-      if (page.template !== 'SnippetPage') return false;
-      if (page.isUnlisted) return false;
-      if (page.data.isBlog) return true;
-      if (page.data.isReactHook) return true;
-      return false;
+    feedEligible: {
+      matcher: page => {
+        if (page.template !== 'SnippetPage') return false;
+        if (page.isUnlisted) return false;
+        if (page.data.isBlog) return true;
+        if (page.data.isReactHook) return true;
+        return false;
+      },
+      sorter: (a, b) => b.data.firstSeen - a.data.firstSeen,
     },
     chirpEligible: page => {
       if (page.template !== 'SnippetPage') return false;
