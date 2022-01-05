@@ -1,9 +1,9 @@
 import { Application } from 'blocks/application';
 import { Logger } from 'blocks/utilities/logger';
-import { IconWriter } from 'blocks/writers/icon';
-import { AssetWriter } from 'blocks/writers/asset';
-import { PageWriter } from 'blocks/writers/page';
-import { SearchIndexWriter } from 'blocks/writers/searchIndex';
+import { IconWriter } from 'blocks/writers/iconWriter';
+import { AssetWriter } from 'blocks/writers/assetWriter';
+import { PageWriter } from 'blocks/writers/pageWriter';
+import { SearchIndexWriter } from 'blocks/writers/searchIndexWriter';
 
 export const build = async () => {
   Logger.log('Build process is starting up...\n');

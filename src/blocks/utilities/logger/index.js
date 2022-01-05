@@ -20,30 +20,36 @@ export class Logger {
     debug: `${yellow('debug')}`,
   };
 
-  constructor(procName) {
+  constructor(procName, { muted = false } = {}) {
     this.procName = procName;
     this.startTime = new Date();
+    if (muted) this.muted = muted;
   }
 
   log(msg) {
+    if (this.muted) return;
     return Logger._log(msg, 'info', this.procName);
   }
 
   info(msg) {
+    if (this.muted) return;
     return Logger._log(msg, 'info', this.procName);
   }
 
   success(msg) {
+    if (this.muted) return;
     const timer = new Date() - this.startTime;
     this.startTime = new Date();
     return Logger._log(msg, 'success', this.procName, timer);
   }
 
   error(msg) {
+    // Muted loggers still log errors and warnings
     return Logger._log(msg, 'error', this.procName);
   }
 
   warn(msg) {
+    // Muted loggers still log errors and warnings
     return Logger._log(msg, 'warning', this.procName);
   }
 
