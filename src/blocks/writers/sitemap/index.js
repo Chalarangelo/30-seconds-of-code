@@ -2,7 +2,7 @@ import fs from 'fs-extra';
 import { writeFile } from 'fs/promises';
 import handlebars from 'handlebars';
 import pathSettings from 'settings/paths';
-import { Env } from 'blocks/utilities/env';
+import { Application } from 'blocks/application';
 import { Logger } from 'blocks/utilities/logger';
 
 /**
@@ -34,7 +34,7 @@ export class SitemapWriter {
     const template = handlebars.compile(
       fs.readFileSync(sitemapTemplatePath, 'utf-8')
     );
-    const pages = Env.schema.getModel('Page').records.indexable;
+    const pages = Application.dataset.getModel('Page').records.indexable;
     logger.log(`Generating sitemap for ${pages.length} routes`);
 
     const sitemap = template({

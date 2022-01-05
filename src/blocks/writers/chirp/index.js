@@ -1,7 +1,7 @@
 import { writeFile } from 'fs/promises';
 import pathSettings from 'settings/paths';
 import { truncateString } from 'utils';
-import { Env } from 'blocks/utilities/env';
+import { Application } from 'blocks/application';
 import { Logger } from 'blocks/utilities/logger';
 
 export class ChirpWriter {
@@ -32,7 +32,7 @@ export class ChirpWriter {
       maxCaptionLength,
     } = ChirpWriter.settings;
     const logger = new Logger('ChirpWriter.write');
-    const pages = Env.schema.getModel('Page').records.chirpEligible;
+    const pages = Application.dataset.getModel('Page').records.chirpEligible;
     const nodes = pages.reduce((acc, page) => {
       const rule = chirpRules.find(r =>
         new RegExp(r.matcher).test(page.relRoute)

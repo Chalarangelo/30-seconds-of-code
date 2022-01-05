@@ -3,7 +3,7 @@ import { writeFile } from 'fs/promises';
 import handlebars from 'handlebars';
 import globalSettings from 'settings/global';
 import pathSettings from 'settings/paths';
-import { Env } from 'blocks/utilities/env';
+import { Application } from 'blocks/application';
 import { Logger } from 'blocks/utilities/logger';
 
 /**
@@ -28,7 +28,9 @@ export class FeedWriter {
       fs.readFileSync(feedTemplatePath, 'utf-8')
     );
     // TODO: Revert to 15 or figure out optimal length after experiment
-    const pages = Env.schema.getModel('Page').records.feedEligible.slice(0, 25);
+    const pages = Application.dataset
+      .getModel('Page')
+      .records.feedEligible.slice(0, 25);
     logger.log(`Generating feed for top blog routes`);
 
     const feed = template({

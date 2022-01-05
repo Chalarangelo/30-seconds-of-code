@@ -3,7 +3,7 @@ import path from 'path';
 import sharp from 'sharp';
 import glob from 'glob';
 import pathSettings from 'settings/paths';
-import { Env } from 'blocks/utilities/env';
+import { Application } from 'blocks/application';
 import { Logger } from 'blocks/utilities/logger';
 
 // Image asset constants
@@ -59,7 +59,7 @@ export class AssetWriter {
       staticAssetPath: staticAssetPath,
       publicPath,
     } = pathSettings;
-    const repos = Env.schema.getModel('Repository').records.withImages;
+    const repos = Application.dataset.getModel('Repository').records.withImages;
     logger.log('Processing assets from config...');
 
     logger.log(
