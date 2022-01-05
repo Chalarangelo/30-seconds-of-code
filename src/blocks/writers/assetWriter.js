@@ -9,10 +9,10 @@ const {
   publicPath,
   staticAssetPath,
   rawAssetPath: inPath,
-  rawContentAssetPath: inContentPath,
   rawContentPath: contentPath,
   assetPath: outPath,
 } = Application.settings.paths;
+const inContentPath = 'content/configs/assets';
 
 // Image asset constants
 const supportedExtensions = ['jpeg', 'jpg', 'png', 'webp', 'tif', 'tiff'];
