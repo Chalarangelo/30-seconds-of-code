@@ -1,5 +1,4 @@
 import { JSONHandler } from 'blocks/utilities/jsonHandler';
-import pathSettings from 'settings/paths';
 
 const oneDayMs = 86400000;
 const nowMs = +new Date();
@@ -37,9 +36,8 @@ export class Ranker {
     // Skip loading for test environment
     if (process.env.NODE_ENV === `test`) return {};
     if (!Object.keys(Ranker.keywordScoreData).length) {
-      const { rawContentConfigsPath: configsPath } = pathSettings;
       Ranker.keywordScoreData = JSONHandler.fromFile(
-        `${configsPath}/rankingEngine.json`
+        `content/configs/rankingEngine.json`
       );
     }
     return Ranker.keywordScoreData;
