@@ -49,6 +49,71 @@ export class Application {
     return Content;
   }
 
+  // Writers are also not expected to change during the lifetime of the
+  // application. However, they are easier to load in bulk dynamically.
+  static _writers = {};
+
+  /**
+   * Dynamically loads/reloads writers from the src/blocks/writers directory.
+   */
+  static loadWriters() {
+    // Muted logger by design to avoid spamming the console.
+    const logger = new Logger('Application.loadWriters', { muted: true });
+    logger.log('Loading writers from src/blocks/writers/*.js...');
+    const maxTries = 5;
+    Application._writers = glob
+      .sync(`src/blocks/writers/*.js`)
+      .map(file => {
+        // FIXME: There's an issue when loading the 'webfonts-generator'
+        // dependency that seems to stem from the 'ttf2woff2' dependency.
+        // Currently, we retry loading the writers that depend on it up to
+        // 5 times before giving up. This is not exactly ideal, but it seems
+        // to work for now. We should find a better solution, such as
+        // incorporating the 'webfonts-generator' dependency into the writer
+        // and giving it a facelift to work with a newer version of 'ttf2woff2'.
+        let module;
+        let tries = 0;
+        while (tries <= maxTries && !module) {
+          try {
+            module = require(path.resolve(file));
+          } catch (e) {
+            tries++;
+            if (tries < maxTries)
+              logger.warn(
+                `Error loading writer ${file}: ${e.message}. Retrying...`
+              );
+            if (tries === maxTries) {
+              logger.error(
+                `Error loading writer ${file}: ${e.message}. Max tries reached, terminating...`
+              );
+              process.exit(1);
+            }
+          }
+        }
+        return module;
+      })
+      .reduce((modules, module) => {
+        const [moduleName, moduleValue] = Object.entries(module)[0];
+        // Note this only supports one export and will cause trouble otherwise
+        // Supporting default exports could be an interesting option, too.
+        modules[moduleName] = moduleValue;
+        return modules;
+      }, {});
+    logger.success(
+      `Found and loaded ${
+        Object.keys(Application._writers).length
+      } writers in src/blocks/writers/*.js.`
+    );
+  }
+
+  /**
+   * Returns the names of the writers in the application.
+   */
+  static get writers() {
+    if (!Object.keys(Application._writers).length) Application.loadWriters();
+    return Application._writers;
+  }
+
   // -------------------------------------------------------------
   // Settings and literals dynamic loading methods and getters
   // -------------------------------------------------------------
@@ -721,3 +786,12 @@ export class Application {
     });
   }
 }
+
+// Hacky way to expose writers without the `.writers` part on
+// Application. We can revisit this eventually.
+Object.entries(Application.writers).forEach(([writerName, writerModule]) => {
+  Object.defineProperty(Application, writerName, {
+    configurable: true, // Allows for redefinition, if need be
+    get: () => writerModule,
+  });
+});

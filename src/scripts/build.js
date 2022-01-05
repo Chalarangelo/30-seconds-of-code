@@ -1,31 +1,22 @@
 import { Application } from 'blocks/application';
-import { Logger } from 'blocks/utilities/logger';
-import { SitemapWriter } from 'blocks/writers/sitemap';
-import { FeedWriter } from 'blocks/writers/feed';
-import { IconWriter } from 'blocks/writers/icon';
-import { ManifestWriter } from 'blocks/writers/manifest';
-import { ChirpWriter } from 'blocks/writers/chirp';
-import { AssetWriter } from 'blocks/writers/asset';
-import { PageWriter } from 'blocks/writers/page';
-import { SearchIndexWriter } from 'blocks/writers/searchIndex';
 
 export const build = async () => {
-  Logger.log('Build process is starting up...\n');
-  Logger.logProcessInfo();
+  Application.Logger.log('Build process is starting up...\n');
+  Application.Logger.logProcessInfo();
 
   await Promise.all([
     Application.extractAndInitialize(),
-    IconWriter.write(),
-    ManifestWriter.write(),
+    Application.IconWriter.write(),
+    Application.ManifestWriter.write(),
   ]);
 
   await Promise.all([
-    AssetWriter.write(),
-    SearchIndexWriter.write(),
-    PageWriter.write(),
-    SitemapWriter.write(),
-    FeedWriter.write(),
-    ChirpWriter.write(),
+    Application.AssetWriter.write(),
+    Application.SearchIndexWriter.write(),
+    Application.PageWriter.write(),
+    Application.SitemapWriter.write(),
+    Application.FeedWriter.write(),
+    Application.ChirpWriter.write(),
   ]);
 };
 

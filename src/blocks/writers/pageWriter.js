@@ -1,10 +1,19 @@
-import pathSettings from 'settings/paths';
 import { Application } from 'blocks/application';
-import { Logger } from 'blocks/utilities/logger';
-import { JSONHandler } from 'blocks/utilities/jsonHandler';
 
+const { Logger, JSONHandler } = Application;
+
+const outPath = `${Application.settings.paths.contentPath}/pages`;
+
+/**
+ * Writes the JSON files for the pages.
+ */
 export class PageWriter {
-  static write({ outPath = `${pathSettings.contentPath}/pages` } = {}) {
+  /**
+   * Generates the JSON files for the pages.
+   * @returns {Promise} A promise that will resolve when all JSON files have
+   * been written to disk.
+   */
+  static write() {
     const logger = new Logger('PageWriter.write');
 
     let PageSerializer = Application.dataset.getSerializer('PageSerializer');
