@@ -6,7 +6,7 @@ import util from 'util';
 import jsiqle from '@jsiqle/core';
 import { Logger } from 'blocks/utilities/logger';
 import { JSONHandler } from 'blocks/utilities/jsonHandler';
-import { Extractor } from 'blocks/utilities/extractor';
+import { Extractor } from 'blocks/extractor';
 import { Content } from 'blocks/utilities/content';
 
 /**
@@ -40,13 +40,6 @@ export class Application {
    */
   static get JSONHandler() {
     return JSONHandler;
-  }
-
-  /**
-   * Returns the Extractor class.
-   */
-  static get Extractor() {
-    return Extractor;
   }
 
   /**
@@ -531,6 +524,28 @@ export class Application {
     } else Application.fetchDataset();
     Application.populateDataset();
     logger.success('Application initialization complete.');
+  }
+
+  /**
+   * Extracts the dataset and initializes the application.
+   * @returns {Promise} A promise that resolves as soon as the extraction is
+   * complete and the application has been initialized.
+   */
+  static extractAndInitialize() {
+    // By design, we do not have a logger here. The extractor and the initalize
+    // methods should suffice for the time being.
+    return Extractor.extract().then(parsed => Application.initialize(parsed));
+  }
+
+  /**
+   * Alias method for calling Extractor's extract method.
+   * @returns {Promise} A promise that resolves as soon as the extraction is
+   * complete.
+   */
+  static extract() {
+    // NOTE: The Extractor is strictly only accessible via the Application
+    // module, so this is the only way to access its extraction method.
+    return Extractor.extract();
   }
 
   // -------------------------------------------------------------

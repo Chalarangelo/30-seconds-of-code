@@ -2,8 +2,8 @@ import sass from 'node-sass';
 import pathSettings from 'settings/paths';
 import { Logger } from 'blocks/utilities/logger';
 import { Content } from 'blocks/utilities/content';
-import { TextParser } from 'blocks/parsers/text';
-import { MarkdownParser } from 'blocks/parsers/markdown';
+import { TextParser } from 'blocks/extractor/textParser';
+import { MarkdownParser } from 'blocks/extractor/markdownParser';
 import { JSONHandler } from 'blocks/utilities/jsonHandler';
 import { convertToSeoSlug, uniqueElements, stripMarkdownFormat } from 'utils';
 import literals from 'lang/en';
@@ -13,6 +13,7 @@ const codeMatcher = new RegExp(
   `${mdCodeFence}.*\r?\n(?<code>[\\S\\s]*?)${mdCodeFence}`,
   'g'
 );
+
 export class Extractor {
   static extract = async () => {
     if (process.env.NODE_ENV === 'production') await Content.update();
