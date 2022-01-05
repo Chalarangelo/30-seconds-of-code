@@ -1,9 +1,10 @@
 import chalk from 'chalk';
 import process from 'process';
-const { bold, blue, green, red, yellow, gray } = chalk;
+const { bold, blue, green, red, yellow, gray, magenta } = chalk;
 
 export class Logger {
   static outputStream = process.stdout;
+  static timers = new Map();
 
   static formatDate = new Intl.DateTimeFormat('en-GB', {
     dateStyle: 'short',
@@ -16,10 +17,12 @@ export class Logger {
     success: `${green('done')}`,
     error: `${red('errr')}`,
     warning: `${yellow('warn')}`,
+    debug: `${yellow('debug')}`,
   };
 
   constructor(procName) {
     this.procName = procName;
+    this.startTime = new Date();
   }
 
   log(msg) {
@@ -31,23 +34,28 @@ export class Logger {
   }
 
   success(msg) {
-    return Logger._log(msg, 'success', this.procName);
+    const timer = new Date() - this.startTime;
+    this.startTime = new Date();
+    return Logger._log(msg, 'success', this.procName, timer);
   }
 
   error(msg) {
     return Logger._log(msg, 'error', this.procName);
   }
 
-  warning(msg) {
+  warn(msg) {
     return Logger._log(msg, 'warning', this.procName);
   }
 
-  static _log(msg, type, procName) {
+  static _headerLine(msg, type, procName) {
     const timestamp = Logger.formatDate(new Date());
-    const firstLine = `${gray(`* [${timestamp}]`)} ${
-      Logger.prefixes[type]
-    } - ${procName}`;
-    const secondLine = `  ${msg}`;
+    return `${gray(`* [${timestamp}]`)} ${Logger.prefixes[type]} - ${procName}`;
+  }
+
+  static _log(msg, type, procName, timer) {
+    const firstLine = Logger._headerLine(msg, type, procName);
+    let secondLine = `  ${msg}`;
+    if (timer) secondLine += ` ${gray(`(${timer}ms)`)}`;
     Logger.outputStream.write(`${firstLine}\n${secondLine}\n\n`);
   }
 
@@ -55,19 +63,46 @@ export class Logger {
     Logger.outputStream.write(`${msg}\n`);
   }
 
+  static timeStart(name) {
+    Logger.timers.set(name, new Date());
+  }
+
+  static timeEnd(name) {
+    const timer = new Date() - Logger.timers.get(name);
+    Logger.timers.delete(name);
+    Logger.debug(`${name} took ${timer}ms`);
+  }
+
+  static debug(msg, printTrace = false) {
+    const header = Logger._headerLine(msg, 'debug', 'Logger.debug');
+
+    let _msg;
+    if (typeof msg === 'string') _msg = msg;
+    if (typeof msg === 'number') _msg = green(msg);
+    if (typeof msg === 'boolean') _msg = magenta(msg);
+    if (typeof msg === 'function') _msg = blue(msg.toString());
+    if (typeof msg === 'object' || Array.isArray(msg))
+      _msg = yellow(JSON.stringify(msg, null, 2).replace(/\n/g, '\n  '));
+
+    const trace = printTrace
+      ? `\n${new Error().stack.split('\n').slice(2).join('\n')}`
+      : '';
+    Logger.outputStream.write(`${header}\n  ${_msg}${trace}\n\n`);
+  }
+
   static logProcessInfo = () => {
     [
-      `${bold(blue('Operating system:'))}  ${process.platform} (node: ${
+      `  ${bold(blue('Operating system:'))}  ${process.platform} (node: ${
         process.version
       })`,
-      `${bold(blue('Process info:'))}      ${process.title} (pid: ${
+      `  ${bold(blue('Process info:'))}      ${process.title} (pid: ${
         process.pid
       })`,
-      `${bold(blue('Working directory:'))} ${process.cwd()}`,
-      `${bold(blue('Executable info:'))}   ${process.execPath} {${
+      `  ${bold(blue('Working directory:'))} ${process.cwd()}`,
+      `  ${bold(blue('Executable info:'))}   ${process.execPath} {${
         process.execArgv
       }}`,
-      `${bold(blue('Command-line args:'))} ${process.argv.slice(2)}`,
+      `  ${bold(blue('Command-line args:'))} ${process.argv.slice(2)}`,
     ].forEach(m => Logger.outputStream.write(`${m}\n`));
     Logger.outputStream.write('\n');
   };

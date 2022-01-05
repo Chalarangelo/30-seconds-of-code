@@ -343,7 +343,7 @@ export class Extractor {
                     })
                     .css.toString();
                 } catch (e) {
-                  console.warn(
+                  logger.warn(
                     `Scoped CSS generation for snippet ${id} failed with error "${e.message}". Falling back to unsafe raw CSS injection!`,
                     'warning'
                   );

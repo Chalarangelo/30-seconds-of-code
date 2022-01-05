@@ -1,4 +1,4 @@
-import { Env } from 'blocks/utilities/env';
+import { Application } from 'blocks/application';
 import { Extractor } from 'blocks/utilities/extractor';
 import { Logger } from 'blocks/utilities/logger';
 import { IconWriter } from 'blocks/writers/icon';
@@ -11,7 +11,7 @@ export const build = async () => {
   Logger.logProcessInfo();
 
   await Promise.all([
-    Extractor.extract().then(parsed => Env.init(parsed)),
+    Extractor.extract().then(parsed => Application.initialize(parsed)),
     IconWriter.write(),
   ]);
 

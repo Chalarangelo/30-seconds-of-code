@@ -1,5 +1,5 @@
 import pathSettings from 'settings/paths';
-import { Env } from 'blocks/utilities/env';
+import { Application } from 'blocks/application';
 import { Logger } from 'blocks/utilities/logger';
 import { JSONHandler } from 'blocks/utilities/jsonHandler';
 
@@ -7,8 +7,8 @@ export class PageWriter {
   static write({ outPath = `${pathSettings.contentPath}/pages` } = {}) {
     const logger = new Logger('PageWriter.write');
 
-    let PageSerializer = Env.schema.getSerializer('PageSerializer');
-    let pages = Env.schema.getModel('Page').records;
+    let PageSerializer = Application.dataset.getSerializer('PageSerializer');
+    let pages = Application.dataset.getModel('Page').records;
     if (process.env.NODE_ENV === 'production') pages = pages.published;
     logger.log(`Generating JSON files for ${pages.length} pages`);
 
