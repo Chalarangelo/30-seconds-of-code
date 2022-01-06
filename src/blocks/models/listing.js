@@ -28,7 +28,7 @@ export const listing = {
     isTopLevel: listing => listing.isBlog || listing.isLanguage,
     isTag: listing => listing.type === 'tag',
     isCollection: listing => listing.type === 'collection',
-    isParent: listing => listing.children && listing.children.length,
+    isParent: listing => Boolean(listing.children && listing.children.length),
     isLeaf: listing => !listing.isParent,
     isRoot: listing => !listing.parent,
     rootUrl: listing =>
@@ -97,7 +97,11 @@ export const listing = {
       if (['language', 'tag'].includes(type)) return listing.featured > 0;
       return false;
     },
-    isSearchable: listing => listing.isListed && listing.shortDescription,
+    isSearchable: listing =>
+      Boolean(listing.isListed && listing.shortDescription),
+    // NOTE: This is a bit fiddly for listings without unique descriptions,
+    // such as tags that inherit descriptions from the language parent. Worth
+    // revisiting.
     searchTokens: listing => {
       const { type } = listing;
       const uniqueDescription =
