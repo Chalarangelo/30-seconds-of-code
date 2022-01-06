@@ -35,7 +35,7 @@ export const page = {
     priority: page => {
       if (page.isHome) return 1.0;
       if (page.isCollectionsListing) return 0.65;
-      if (page.isSnippet) return (page.data.ranking * 0.85).toFixed(2);
+      if (page.isSnippet) return +(page.data.ranking * 0.85).toFixed(2);
       if (page.isListing) return page.data.pageRanking(page.pageNumber);
       if (page.isStatic) return page.staticPriority;
       return 0.3;
