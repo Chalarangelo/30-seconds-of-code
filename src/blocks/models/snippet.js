@@ -158,11 +158,11 @@ export const snippet = {
           url: `/${slugParts[0]}/p/1`,
           name: snippet.isBlog
             ? literals.tag('article')
-            : snippet.repository.language.long,
+            : snippet.repository.language.name,
         },
       ];
 
-      if (snippet.isBlog)
+      if (!snippet.isBlog)
         crumbs.push({
           url: `/${slugParts[0]}/t/${snippet.primaryTag.toLowerCase()}/p/1`,
           name: literals.tag(snippet.primaryTag),
@@ -175,7 +175,8 @@ export const snippet = {
 
       return crumbs;
     },
-    hasCollection: snippet => snippet.collections && snippet.collections.length,
+    hasCollection: snippet =>
+      Boolean(snippet.collections && snippet.collections.length),
     recommendedCollection: snippet =>
       snippet.hasCollection ? snippet.collections.first : null,
   },
