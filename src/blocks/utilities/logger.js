@@ -5,6 +5,7 @@ const { bold, blue, green, red, yellow, gray, magenta } = chalk;
 export class Logger {
   static outputStream = process.stdout;
   static timers = new Map();
+  static muteGlbobal = false;
 
   static formatDate = new Intl.DateTimeFormat('en-GB', {
     dateStyle: 'short',
@@ -62,11 +63,16 @@ export class Logger {
     const firstLine = Logger._headerLine(msg, type, procName);
     let secondLine = `  ${msg}`;
     if (timer) secondLine += ` ${gray(`(${timer}ms)`)}`;
-    Logger.outputStream.write(`${firstLine}\n${secondLine}\n\n`);
+    Logger._write(`${firstLine}\n${secondLine}\n\n`);
+  }
+
+  static _write(msg) {
+    if (Logger.muteGlbobal) return;
+    Logger.outputStream.write(msg);
   }
 
   static log(msg) {
-    Logger.outputStream.write(`${msg}\n`);
+    Logger._write(`${msg}\n`);
   }
 
   static timeStart(name) {
@@ -93,7 +99,7 @@ export class Logger {
     const trace = printTrace
       ? `\n${new Error().stack.split('\n').slice(2).join('\n')}`
       : '';
-    Logger.outputStream.write(`${header}\n  ${_msg}${trace}\n\n`);
+    Logger._write(`${header}\n  ${_msg}${trace}\n\n`);
   }
 
   static logProcessInfo = () => {
@@ -109,7 +115,7 @@ export class Logger {
         process.execArgv
       }}`,
       `  ${bold(blue('Command-line args:'))} ${process.argv.slice(2)}`,
-    ].forEach(m => Logger.outputStream.write(`${m}\n`));
-    Logger.outputStream.write('\n');
+    ].forEach(m => Logger._write(`${m}\n`));
+    Logger._write('\n');
   };
 }
