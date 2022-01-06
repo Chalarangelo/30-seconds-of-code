@@ -10,7 +10,7 @@ export const tag = {
     { name: 'slugPrefix', type: 'stringRequired' },
   ],
   properties: {
-    isBlogTag: tag => tag.id.startsWith('blog_'),
+    isBlogTag: tag => tag.id.includes('blog_'),
     shortId: tag => tag.id.split('_')[1],
     language: tag => tag.repository.language,
     featured: tag => tag.repository.featured,
