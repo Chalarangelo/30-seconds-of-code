@@ -19,4 +19,4 @@ Array.isArray(arr);     // Static method of Array
 arr.push(4);            // Instance method of Array
 ```
 
-In the context of ES6 classes, the `static` keyword is used to define static methods for a class. Conversely, methods not defined as `static`  are instance methods.
+In the context of ES6 classes, the `static` keyword is used to define static methods for a class. Conversely, methods not defined as `static` are instance methods.
