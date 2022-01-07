@@ -140,7 +140,7 @@ export const listing = {
         });
       }
       // Catch all, also catches 'custom' for collection types
-      return listing.snippets;
+      return listing.snippets.published;
     },
   },
   lazyProperties: {
