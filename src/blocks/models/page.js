@@ -241,7 +241,8 @@ export const page = {
       return true;
     },
     snippets: page => page.isSnippet,
-    listing: page => page.isListing,
+    // Exclude collections listing to avoid path conflicts in Next.js
+    listing: page => page.isListing && !page.isCollectionsListing,
     static: page => page.isStatic,
     home: page => page.isHome,
     search: page => page.template === 'SearchPage',
