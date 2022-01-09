@@ -26,7 +26,10 @@ const RecommendationList = ({ snippetList, collectionChip = null }) => {
           <span dangerouslySetInnerHTML={{ __html: literals.andCollections }} />
         ) : null}
       </PageTitle>
-      <PreviewCardList contentItems={recommendations} />
+      <PreviewCardList
+        contentItems={recommendations}
+        fromParam='recommendations'
+      />
     </>
   ) : null;
 };

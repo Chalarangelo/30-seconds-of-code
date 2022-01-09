@@ -22,7 +22,7 @@ describe('<CollectionChip />', () => {
   });
 
   it('should have the correct link', () => {
-    expect(wrapper.querySelector('a').href).toBe(collectionChip.url);
+    expect(wrapper.querySelector('a').href).toContain(collectionChip.url);
   });
 
   it('should have the correct text', () => {
