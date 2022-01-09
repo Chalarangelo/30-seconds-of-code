@@ -25,7 +25,7 @@ const Shelf = ({ shelf: { shelfType, shelfData, shelfName, shelfUrl } }) => {
   const classPrefix = `${shelfType}-shelf`;
   return shelfData.length ? (
     <>
-      <Link href={shelfUrl}>
+      <Link href={`${shelfUrl}?from=shelves`}>
         <a
           className='shelf-title relative mt-8 icon icon-chevron-right before:fs-sm'
           data-link-title={literals.viewAll}
@@ -40,6 +40,7 @@ const Shelf = ({ shelf: { shelfType, shelfData, shelfName, shelfUrl } }) => {
               <PreviewCard
                 key={`snippet_${snippet.url}`}
                 contentItem={snippet}
+                fromParam='shelves'
               />
             ))
           : shelfData.map(chip => (

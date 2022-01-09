@@ -12,7 +12,7 @@ const propTypes = {
  */
 const CollectionChip = ({ chip }) => (
   <li className='collection-chip srfc-01dp txt-200 br-xl'>
-    <Link href={chip.url}>
+    <Link href={`${chip.url}?from=chips`}>
       <a
         className={`inherit relative py-2 px-1 f-center flex j-center a-center f-alt box-border icon icon-${chip.icon} before:fs-lg`}
       >

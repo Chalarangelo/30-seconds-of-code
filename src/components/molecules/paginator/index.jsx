@@ -28,7 +28,7 @@ const Paginator = ({ paginator: { pageNumber, totalPages, baseUrl } }) => {
   return (
     <div className='paginator mt-7 mx-5 mb-6 a-center flex j-center'>
       {pageNumber > 1 && (
-        <Link href={`${baseUrl}/p/${pageNumber - 1}`}>
+        <Link href={`${baseUrl}/p/${pageNumber - 1}?from=paginator`}>
           <a
             className='btn action-btn previous-page j-center fs-no md:fs-sm icon icon-chevron-left box-border before:fs-md'
             rel='prev'
@@ -43,13 +43,16 @@ const Paginator = ({ paginator: { pageNumber, totalPages, baseUrl } }) => {
             {buttonNumber}
           </span>
         ) : (
-          <Link key={buttonNumber} href={`${baseUrl}/p/${buttonNumber}`}>
+          <Link
+            key={buttonNumber}
+            href={`${baseUrl}/p/${buttonNumber}?from=paginator`}
+          >
             <a className='btn action-btn fs-md box-border'>{buttonNumber}</a>
           </Link>
         )
       )}
       {pageNumber < totalPages && (
-        <Link href={`${baseUrl}/p/${pageNumber + 1}`}>
+        <Link href={`${baseUrl}/p/${pageNumber + 1}?from=paginator`}>
           <a
             className='btn action-btn next-page j-center fs-no md:fs-sm icon icon-chevron-right box-border before:fs-md'
             rel='next'

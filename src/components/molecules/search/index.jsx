@@ -134,8 +134,13 @@ const Search = ({ isMainSearch = false }) => {
             document.activeElement.blur();
             const { basePath } = router;
             if (!isMainSearch) {
-              if (selectedResult !== -1 && selectedResult !== 4) {
-                router.push(`${basePath}${searchResults[selectedResult].url}`);
+              if (
+                selectedResult !== -1 &&
+                selectedResult < searchResults.length - 1
+              ) {
+                router.push(
+                  `${basePath}${searchResults[selectedResult].url}?from=autocomplete`
+                );
               } else {
                 const encodedValue = encodeURIComponent(value);
                 router.push(
@@ -168,10 +173,14 @@ const Search = ({ isMainSearch = false }) => {
               )}`,
               search: true,
             },
-          ].map((item, i) => (
+          ].map((item, i, arr) => (
             <li key={`autocomplete-result-${item.url}`}>
               <a
-                href={item.url}
+                href={
+                  i === arr.length - 1
+                    ? item.url
+                    : `${item.url}?from=autocomplete`
+                }
                 title={item.title}
                 className={`flex py-2 px-3 ${
                   selectedResult === i ? 'selected' : ''

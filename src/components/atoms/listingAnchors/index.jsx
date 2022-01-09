@@ -38,7 +38,7 @@ const ListingAnchors = ({ items = [] }) => {
     >
       {items.map(item => (
         <li className='flex-none my-1 mx-0' key={item.url}>
-          <Link href={item.url}>
+          <Link href={`${item.url}?from=anchors`}>
             <a
               className={`btn action-btn ${item.selected ? 'selected' : ''}`}
               ref={item.selected ? selectedRef : undefined}
