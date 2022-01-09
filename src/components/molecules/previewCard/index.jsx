@@ -5,6 +5,7 @@ import literals from 'lang/en/client/common';
 
 const propTypes = {
   contentItem: PropTypes.oneOfType([PropTypes.snippet, PropTypes.chip]),
+  fromParam: PropTypes.string,
 };
 
 /**
@@ -12,8 +13,9 @@ const propTypes = {
  * Used in listing pages and search results.
  * Dependent on the `Card` component.
  * @param {object} contentItem - Snippet or collection object for the card.
+ * @param {string} fromParam - A string to pass to the `from` param.
  */
-const PreviewCard = ({ contentItem }) => {
+const PreviewCard = ({ contentItem, fromParam }) => {
   const isSnippet = Boolean(contentItem.expertise);
   const tags = !isSnippet
     ? [literals.snippetCollection]
@@ -35,7 +37,13 @@ const PreviewCard = ({ contentItem }) => {
       />
       <div className='card-data'>
         <CardTitle isSecondary>
-          <Link href={contentItem.url}>
+          <Link
+            href={
+              fromParam
+                ? `${contentItem.url}?from=${fromParam}`
+                : contentItem.url
+            }
+          >
             <a className='inherit'>{contentItem.title}</a>
           </Link>
         </CardTitle>
