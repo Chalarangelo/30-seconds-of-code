@@ -26,8 +26,6 @@ export class PageWriter {
       {},
       (key, value) => value.relRoute.slice(1)
     );
-    // This also serializes the `/collections` page, which is also serialized
-    // individually. No harm, no foul, but stay vigilant.
     const listingData = PageSerializer.serializeRecordSet(
       pages.listing,
       { withParams: true },
