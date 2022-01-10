@@ -19,7 +19,7 @@ fetch('https://my.api.com/items/1')
 
 The tricky part about promises is understanding that the resulting value may not initially be available. Instead, the promise can be in one of three states:
 
-- **Pending:** initial state, neither fulfilled nor rejected
+- **Pending:** initial state, neither fulfilled nor rejected.
 - **Fulfilled:** meaning that the operation was completed successfully.
 - **Rejected:** meaning that the operation failed.
 
