@@ -1,27 +1,20 @@
-import { Env } from 'blocks/utilities/env';
+import { Application } from 'blocks/application';
 import { Logger } from 'blocks/utilities/logger';
-import { IconSerializer } from 'blocks/serializers/icon';
-import { FileParser } from 'blocks/parsers/file';
-import { JSONParser } from 'blocks/parsers/json';
-import { AssetSerializer } from 'blocks/serializers/asset';
-import { Extractor } from 'blocks/utilities/extractor';
-import pathSettings from 'settings/paths';
-import iconSettings from 'settings/icons';
+import { IconWriter } from 'blocks/writers/iconWriter';
+import { AssetWriter } from 'blocks/writers/assetWriter';
+import { PageWriter } from 'blocks/writers/pageWriter';
+import { SearchIndexWriter } from 'blocks/writers/searchIndexWriter';
 
 export const build = async () => {
-  Logger.log('Build process is starting up...', 'info');
+  Logger.log('Build process is starting up...\n');
   Logger.logProcessInfo();
-  Logger.breakLine();
 
-  await Env.init();
+  await Promise.all([Application.extractAndInitialize(), IconWriter.write()]);
 
   await Promise.all([
-    Extractor.extract(),
-    AssetSerializer.serialize(),
-    IconSerializer.serialize(
-      FileParser.fromGlob(pathSettings.rawIconPath),
-      JSONParser.fromFile(iconSettings.iconConfigPath).icons
-    ),
+    SearchIndexWriter.write(),
+    AssetWriter.write(),
+    PageWriter.write(),
   ]);
 };
 

@@ -6,19 +6,5 @@
     "seo": "SEO",
     "vscode": "Visual Studio Code",
     "html": "HTML"
-  },
-  "languageTags" : {
-    "javascript": {
-      "short": "js",
-      "long": "javascript"
-    },
-    "react": {
-      "short": "jsx",
-      "long": "react"
-    },
-    "python": {
-      "short": "py",
-      "long": "python"
-    }
   }
 }

@@ -1,32 +1,27 @@
+import { promises as fs } from 'fs';
+import path from 'path';
+
 import ListingPage from 'components/templates/listingPage';
 
-export async function getStaticPaths() {
-  return await import('../../next/utils')
-    .then(({ getPageTypePaths }) => {
-      return getPageTypePaths('ListingPage');
-    })
-    .then(pages => ({
-      paths: pages
-        .filter(p => p.relRoute !== '/collections')
-        .map(p => {
-          const [lang, ...listing] = p.relRoute.split('/').filter(Boolean);
+const pagePath = path.join(
+  process.cwd(),
+  '.content',
+  'pages',
+  '[lang]',
+  '[...listing].json'
+);
 
-          return {
-            params: {
-              lang,
-              listing,
-            },
-          };
-        }),
-      fallback: false,
-    }));
+export async function getStaticPaths() {
+  const pageData = await fs.readFile(pagePath, 'utf8').then(JSON.parse);
+  const paths = Object.values(pageData).map(({ params }) => ({ params }));
+  return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
-  const filePath = `${params.lang}/${params.listing.join('/')}`;
-  return await import('../../next/utils').then(({ getDynamicPageProps }) =>
-    getDynamicPageProps(filePath)
-  );
+  const pageData = await fs.readFile(pagePath, 'utf8').then(JSON.parse);
+  const pageUrl = `${params.lang}/${params.listing.join('/')}`;
+  const { props } = pageData[pageUrl];
+  return { props };
 }
 
 export default ListingPage;
