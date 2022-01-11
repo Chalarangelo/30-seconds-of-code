@@ -33,7 +33,6 @@ Creates a horizontally scrollable container that will snap on elements when scro
   gap: 1rem;
   height: calc(180px + 1rem);
   padding: 1rem;
-  width: 480px;
   overflow-y: auto;
   overscroll-behavior-x: contain;
   scroll-snap-type: x mandatory;
