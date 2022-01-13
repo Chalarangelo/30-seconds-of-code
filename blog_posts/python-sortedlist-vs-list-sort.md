@@ -4,7 +4,7 @@ type: question
 tags: python,list
 authors: maciv
 cover: blog_images/duck-plants.jpg
-excerpt: Learn the difference between Python’s built-in list sorting methods and when one is preferred over the other.
+excerpt: Learn the difference between Python's built-in list sorting methods and when one is preferred over the other.
 firstSeen: 2020-12-31T11:00:00+02:00
 lastUpdated: 2021-06-12T19:30:41+03:00
 ---
