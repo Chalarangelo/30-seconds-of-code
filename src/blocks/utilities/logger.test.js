@@ -88,12 +88,6 @@ describe('Logger', () => {
         expect(output).toContain('done');
         expect(output).toContain('test');
       });
-
-      it('prints the time taken', () => {
-        logger.success('Hello');
-        const output = writeFn.mock.calls[0][0];
-        expect(output).toMatch(/\(\d+ms\)/);
-      });
     });
 
     describe('error', () => {
