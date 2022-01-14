@@ -61,3 +61,31 @@ img.nav-website-logo {
 .content {
   max-width: 874px;
 }
+
+// Skip to content link
+.skip-link {
+  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  box-sizing: border-box;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  transition: none;
+
+  // The link must have the same height and background as the nav bar
+  &:focus {
+    clip-path: none;
+    text-align: center;
+    background: var(--clr-navbar-bg);
+    height: 128px;
+    line-height: 128px;
+    z-index: 1001;
+
+    @media screen and (min-width: $layout-medium-breakpoint) {
+      height: 112px;
+      line-height: 112px;
+    }
+  }
+}
