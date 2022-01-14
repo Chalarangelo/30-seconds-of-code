@@ -31,6 +31,9 @@ const Shell = ({ isSearch = false, children }) => {
         role='navigation'
         aria-label='Main'
       >
+        <a href='#skip-link-target' className='skip-link fs-lg'>
+          {literals.skipToContent}
+        </a>
         <Link href='/'>
           <a className='nav-logo-wrapper'>
             <img
@@ -58,6 +61,13 @@ const Shell = ({ isSearch = false, children }) => {
         <Search isMainSearch={isSearch} />
       </header>
       <div className='content my-0 mx-auto'>
+        <a
+          href='#skip-link-target'
+          className='skip-link fs-lg'
+          id='skip-link-target'
+        >
+          {literals.startOfContent}
+        </a>
         {children}
         <Footer />
       </div>
