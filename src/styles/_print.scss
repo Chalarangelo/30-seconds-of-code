@@ -1,0 +1,70 @@
+@media print {
+  // Use colors that are more visible on printed documents.
+  :root {
+    --clr-bg: none;
+
+    --clr-txt-200: hsla(0, 0%, 0%, 0.95);
+    --clr-txt-150: hsla(0, 0%, 0%, 0.87);
+    --clr-txt-100: hsla(0, 0%, 0%, 0.76);
+    --clr-txt-050: hsla(0, 0%, 0%, 0.64);
+
+    --shd-el-01dp: none;
+    --shd-el-02dp: none;
+    --shd-el-03dp: none;
+    --shd-el-04dp: none;
+    --clr-el-05db: none;
+
+    --clr-code-bg: hsla(0, 0%, 0%, 0.08);
+    --clr-code-txt: hsla(0, 0%, 0%, 0.95);
+
+    --clr-code-block-txt: hsl(0, 69%, 48%);
+    --clr-tkn-a: hsl(199, 17%, 42%);
+    --clr-tkn-b: hsl(0, 0%, 14%);
+    --clr-tkn-c: hsl(207, 89%, 45%);
+    --clr-tkn-d: hsl(34, 100%, 45%);
+    --clr-tkn-e: hsl(88, 50%, 28%);
+    --clr-tkn-f: hsl(291, 47%, 40%);
+    --clr-tkn-g: hsl(187, 71%, 28%);
+    --clr-tkn-h: hsl(0, 69%, 48%);
+  }
+
+  // Make code blocks wrap
+  code[class*='language-'],
+  pre[class*='language-'] {
+    white-space: break-spaces;
+  }
+
+  // Show link URLs
+  .card-description a {
+    &:any-link {
+      color: var(--clr-txt-200);
+      text-decoration: underline;
+    }
+
+    &:after {
+      content: ' [' attr(href) '] ';
+    }
+  }
+
+  // Hide UI
+  header,
+  .breadcrumbs,
+  .card-actions,
+  footer,
+  .recommendation-list-title,
+  .recommendation-list-title + ul,
+  .card-preview-content {
+    display: none !important;
+  }
+
+  // Hide snippet previews
+  .card-preview-content + .card-source-content pre:first-of-type {
+    border-top-left-radius: var(--br-md) !important;
+    border-top-right-radius: var(--br-md) !important;
+  }
+
+  // Align cover images
+  .card-cover-image {
+    transform: scale(0.96);
+  }
+}
