@@ -1,9 +1,11 @@
 import fetch from 'node-fetch';
+import puppeteer from 'puppeteer';
 import Twitter from 'twitter';
 import fs from 'fs-extra';
 import { sample } from 'utils';
 import { Logger } from 'blocks/utilities/logger';
 
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 const promisify = func => (...args) =>
   new Promise((resolve, reject) =>
     func(...args, (err, result) => (err ? reject(err) : resolve(result)))
@@ -30,6 +32,76 @@ export class TwitterBot {
     let links = await chirp.json();
     logger.success('Finished fetching random snippet');
     return sample(links);
+  };
+
+  /**
+   * Captures a screenshot of the specified snippet.
+   * @param {string} url - Live URL of the snippet.
+   */
+  static capture = async url => {
+    const path = 'snippet.png';
+    const logger = new Logger('TwitterBot.capture');
+    logger.log(`Capturing screenshot for ${url}`);
+    // Open the browser
+    const browser = await puppeteer.launch({
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    });
+    const page = await browser.newPage();
+    await page.setViewport({
+      width: 1920,
+      height: 3000,
+    });
+
+    // Go to the specified URL
+    await page.goto(url);
+    await sleep(1000);
+    await page.evaluate(() => {
+      // Remove card actions
+      const cardActions = document.querySelector('.card-actions');
+      cardActions.remove();
+
+      // Style card
+      const card = document.querySelector('.snippet-card');
+      card.classList.remove('srfc-02dp');
+      card.classList.add('srfc-02db');
+      card.style.maxWidth = '800px';
+      card.style.zIndex = '8';
+      // Add logo inside the card
+      const logo = document.querySelector('.nav-website-logo');
+      logo.style.position = 'absolute';
+      logo.style.top = '32px';
+      logo.style.right = '24px';
+      logo.style.width = '52px';
+      logo.style.height = '52px';
+      card.prepend(logo);
+
+      // Add wrapper around the card
+      const {
+        width: cardWidth,
+        height: cardHeight,
+      } = card.getBoundingClientRect();
+      const wrapperSize = Math.max(cardWidth, cardHeight, 900);
+      const wrapper = document.createElement('div');
+      card.parentNode.insertBefore(wrapper, card);
+      wrapper.appendChild(card);
+      wrapper.id = 'custom-card';
+      wrapper.style.display = 'flex';
+      wrapper.style.alignItems = 'center';
+      wrapper.style.justifyContent = 'center';
+      wrapper.style.width = `${wrapperSize}px`;
+      wrapper.style.height = `${wrapperSize}px`;
+      wrapper.style.padding = '40px 20px';
+      wrapper.style.position = 'relative';
+    });
+    // Capture screenshot
+    await sleep(5000);
+    const element = await page.$('#custom-card');
+    await element.screenshot({ path });
+    await sleep(3000);
+    logger.success(`Captured screenshot stored in ${path}`);
+
+    // Close the browser
+    await browser.close();
   };
 
   /**
@@ -61,4 +133,22 @@ export class TwitterBot {
       }
     );
   });
+
+  /**
+   * Prepares a tweet and sends it to the world.
+   */
+  static prepareAndTweet = async () => {
+    const logger = new Logger('TwitterBot.prepareAndTweet');
+    logger.log('Twitter bot is starting up...\n');
+
+    let snippet, image;
+    await Promise.all([TwitterBot.getRandomSnippet()]).then(data => {
+      snippet = data[0];
+      image = data[1];
+    });
+
+    await TwitterBot.capture(snippet.url, image);
+    await TwitterBot.tweet(snippet.caption);
+    logger.success('Twitter bot has finished tweeting...\n');
+  };
 }
