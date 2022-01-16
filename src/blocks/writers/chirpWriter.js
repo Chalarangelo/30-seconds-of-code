@@ -9,15 +9,15 @@ const maxCaptionLength = 280;
 const chirpRules = [
   {
     matcher: '^/js/s/',
-    hashtags: '#JavaScript',
+    hashtags: '#JavaScript #LearnToCode #100DaysOfCode #CodeNewbie #Coding',
   },
   {
     matcher: '^/python/s/',
-    hashtags: '#Python',
+    hashtags: '#Python #LearnToCode #100DaysOfCode #CodeNewbie #Coding',
   },
   {
     matcher: '^/react/s/use',
-    hashtags: '#ReactJS',
+    hashtags: '#ReactJS #LearnToCode #100DaysOfCode #CodeNewbie #Coding',
   },
 ];
 
