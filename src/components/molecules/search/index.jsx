@@ -163,7 +163,7 @@ const Search = ({ isMainSearch = false }) => {
         rel='nofollow'
       />
       {!isMainSearch && value ? (
-        <ul className='search-autocomplete-list pl-0 my-0 mx-2 srfc-05db'>
+        <ul className='search-autocomplete-list pl-0 my-0 mx-2 srfc-02db'>
           {[
             ...searchResults.slice(0, 4),
             {
@@ -191,7 +191,7 @@ const Search = ({ isMainSearch = false }) => {
                   {item.title}
                 </span>
                 {!item.search ? (
-                  <span className='result-tag txt-100 fs-mi'>
+                  <span className='result-tag txt-050 fs-mi'>
                     {item.expertise
                       ? item.language
                         ? item.language
