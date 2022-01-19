@@ -29,7 +29,7 @@ const PreviewCard = ({ contentItem, fromParam }) => {
       ];
 
   return (
-    <li className='card srfc-02dp txt-100 list-card grid'>
+    <li className='card srfc-01dp txt-100 list-card grid'>
       <CardIcon
         displayExpertise={isSnippet}
         icon={contentItem.icon}

@@ -20,7 +20,7 @@ const CookieConsentPopup = () => {
   if (!hasMounted) return null;
 
   return (
-    <div className='cookie-consent-popup srfc-04db px-6 py-2 txt-150 f-center'>
+    <div className='cookie-consent-popup srfc-03db px-6 py-2 txt-150 f-center'>
       <p data-nosnippet className='fs-xs mt-1.5 mb-2 mx-auto'>
         {literals.cookieDisclaimer}
         {literals.learnMore}
