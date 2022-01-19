@@ -23,10 +23,10 @@
 
 // Colors
 :root {
-  --clr-txt-200: hsla(0, 0%, 100%, 0.95);
-  --clr-txt-150: hsla(0, 0%, 100%, 0.87);
-  --clr-txt-100: hsla(0, 0%, 100%, 0.76);
-  --clr-txt-050: hsla(0, 0%, 100%, 0.64);
+  --clr-txt-200: hsla(0, 0%, 100%, 0.98);
+  --clr-txt-150: hsla(0, 0%, 100%, 0.89);
+  --clr-txt-100: hsla(0, 0%, 100%, 0.78);
+  --clr-txt-050: hsla(0, 0%, 100%, 0.61);
 }
 
 @include generate-text-colors((200, 150, 100, 050));
