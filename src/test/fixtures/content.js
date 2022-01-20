@@ -800,16 +800,40 @@ export const tags = [
   },
 ];
 
-export const featuredListings = [
-  'language/js',
-  'language/css',
-  'tag/react/t/hooks',
-  'tag/react/t/components',
-  'blog/articles',
-  'tag/js/t/node',
-  'collection/c/react-rendering',
-  'collection/c/tips',
-];
+export const collectionListingConfig = {
+  name: 'Snippet Collections',
+  splash: 'widescreen.png',
+  description:
+    '30 seconds of code provides a wide variety of snippet and article collections for all your development needs. Explore individual language collections or browse through collections about specific topics and programming concepts.',
+  featuredListings: [
+    'language/js',
+    'language/css',
+    'tag/react/t/hooks',
+    'language/python',
+    'tag/js/t/algorithm',
+    'language/git',
+    'tag/react/t/components',
+    'blog/articles',
+    'tag/js/t/node',
+    'collection/c/js-data-structures',
+    'collection/c/react-rendering',
+    'collection/c/tips',
+    'collection/c/css-centering',
+    'collection/c/js-colors',
+    'collection/c/js-array-tricks',
+    'collection/c/js-comparison',
+    'collection/c/react-testing',
+    'collection/c/js-generators',
+    'collection/c/cheatsheets',
+  ],
+};
+
+export const mainListingConfig = {
+  name: 'Snippets & Articles',
+  splash: 'laptop-plant.png',
+  description:
+    '30 seconds of code provides a curated collection of short code snippets for all your development needs. Our collection spans many topics, ranging from simple coding problems to theoretical concepts and development techniques.',
+};
 
 export const content = {
   repositories,
@@ -818,5 +842,6 @@ export const content = {
   authors,
   languages,
   tags,
-  featuredListings,
+  collectionListingConfig,
+  mainListingConfig,
 };
