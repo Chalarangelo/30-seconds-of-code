@@ -1051,7 +1051,7 @@ describe('Application/Schema', () => {
 
     describe('property: isCollectionsListing', () => {
       it('returns true for the collections listing pages', () => {
-        const page = Page.records.get('collections');
+        const page = Page.records.get('listing_collections_1');
         expect(page.isCollectionsListing).toEqual(true);
       });
 
@@ -1161,13 +1161,13 @@ describe('Application/Schema', () => {
       });
 
       it('returns the correct value for the collections page', () => {
-        const page = Page.records.get('collections');
+        const page = Page.records.get('listing_collections_1');
         const pageContext = page.context;
         expect(pageContext.listingName).toEqual('Snippet Collections');
         expect(pageContext.pageDescription).toEqual(
           'Browse 8 snippet collections on 30 seconds of code.'
         );
-        expect(pageContext.slug).toEqual('/collections');
+        expect(pageContext.slug).toEqual('/collections/p/1');
         expect(pageContext.snippetList.length).toEqual(8);
       });
 
