@@ -463,6 +463,15 @@ export class Application {
       type: 'main',
       slugPrefix: '/list',
       featuredIndex: -1,
+      dataObject: mainListingConfig,
+    });
+    // Populate the collection listing
+    Listing.createRecord({
+      id: 'collections',
+      type: 'collections',
+      slugPrefix: '/collections',
+      featuredIndex: -1,
+      dataObject: collectionListingConfig,
     });
     // Populate listings for custom collections
     Collection.records.forEach(collection => {
@@ -488,6 +497,7 @@ export class Application {
     // Populate listing pages
     Listing.records.forEach(listing => {
       const { id } = listing;
+      const itemsName = listing.isCollections ? 'listings' : 'snippets';
       // TODO: Move this to settings and update listing!
       const CARDS_PER_PAGE = 15;
       let pageCounter = 1;
@@ -499,7 +509,7 @@ export class Application {
           id: `listing_${id}_${pageCounter}`,
           template: 'ListingPage',
           relatedRecordId: id,
-          snippets: pageSnippets.flatPluck('id'),
+          [itemsName]: pageSnippets.flatPluck('id'),
           pageNumber: pageCounter,
         });
         pageCounter++;
@@ -536,8 +546,7 @@ export class Application {
       slug: '/search',
       staticPriority: 0.25,
     });
-    // Populate collections and home page
-    Page.createRecord({ id: 'collections', template: 'ListingPage' });
+    // Populate the home page
     Page.createRecord({ id: 'home', template: 'HomePage' });
     logger.success('Populating dataset complete.');
   }
