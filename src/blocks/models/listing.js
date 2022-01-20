@@ -13,14 +13,16 @@ export const listing = {
     {
       name: 'type',
       type: 'enumRequired',
-      values: ['main', 'blog', 'language', 'tag', 'collection'],
+      values: ['main', 'collections', 'blog', 'language', 'tag', 'collection'],
     },
     { name: 'slugPrefix', type: 'stringRequired' },
     { name: 'relatedRecordId', type: 'string' },
     { name: 'featuredIndex', type: 'number' },
+    { name: 'dataObject', type: 'object' },
   ],
   properties: {
     isMain: listing => listing.type === 'main',
+    isCollections: listing => listing.type === 'collections',
     isBlog: listing => listing.type === 'blog',
     isBlogTag: listing =>
       listing.type === 'tag' && listing.parent.type === 'blog',
@@ -36,26 +38,11 @@ export const listing = {
     siblings: listing => (listing.parent ? listing.parent.children : []),
     siblingsExceptSelf: listing =>
       listing.parent ? listing.siblings.except(listing.id) : [],
-    sublinks: listing => {
-      if (!listing.isBlog && !listing.isLanguage && !listing.isTag) return [];
-      const links = listing.parent ? listing.siblings : listing.children;
-      return [
-        {
-          name: literals.tag('all'),
-          url: `${listing.rootUrl}/p/1`,
-          selected: listing.isParent,
-        },
-        ...links.flatMap(link => ({
-          name: literals.tag(link.data.shortId),
-          url: `${link.data.slugPrefix}/p/1`,
-          selected: listing.isTag && listing.data.shortId === link.data.shortId,
-        })),
-      ];
-    },
     // Used to determine the order of listings in the search index.
     ranking: listing => Ranker.rankListing(listing),
     name: listing => {
-      if (listing.isMain) return literals.snippetList;
+      if (listing.isMain) return listing.data.name;
+      if (listing.isCollections) return listing.data.name;
       if (listing.isBlog) return literals.blog;
       if (listing.isLanguage)
         return literals.codelang(listing.data.language.name);
@@ -66,21 +53,23 @@ export const listing = {
     // We use literals.tag to get the "short" name in sublinks.
     // So what is  this for? Listing preview cards and chips.
     shortName: listing => {
-      if (listing.isMain) return literals.snippetList;
+      if (listing.isMain) return listing.data.name;
+      if (listing.isCollections) return listing.data.name;
       if (listing.isBlog) return literals.blog;
       if (listing.isLanguage)
         return literals.shortCodelang(listing.data.language.name);
       if (listing.isCollection) return listing.data.name;
       if (listing.isTag) return listing.data.shortName;
     },
-    description: listing => (listing.isMain ? null : listing.data.description),
+    description: listing => (listing.data ? listing.data.description : null),
     shortDescription: listing => {
-      const shortDescription = listing.isMain
-        ? null
-        : listing.data.shortDescription;
+      const shortDescription =
+        listing.isMain || listing.isCollections
+          ? null
+          : listing.data.shortDescription;
       return shortDescription ? `<p>${shortDescription}</p>` : null;
     },
-    splash: listing => (listing.isMain ? null : listing.data.splash),
+    splash: listing => (listing.data ? listing.data.splash : null),
     seoDescription: listing =>
       literals.pageDescription(listing.type, {
         snippetCount: listing.snippets.length,
@@ -119,7 +108,7 @@ export const listing = {
       Math.ceil(listing.listedSnippets.length / CARDS_PER_PAGE),
     defaultOrdering: listing => {
       if (listing.isBlog || listing.isBlogTag) return 'new';
-      if (listing.isCollection) return 'custom';
+      if (listing.isCollection || listing.isCollections) return 'custom';
       return 'popularity';
     },
     listedSnippets: listing => {
@@ -139,13 +128,15 @@ export const listing = {
           return nB - nA;
         });
       }
+      if (listing.isCollections) return listing.snippets;
       // Catch all, also catches 'custom' for collection types
       return listing.snippets.published;
     },
   },
   lazyProperties: {
     data: ({ models: { Repository, Tag, Collection } }) => listing => {
-      if (listing.isMain) return {};
+      if (listing.isMain) return listing.dataObject;
+      if (listing.isCollections) return listing.dataObject;
       if (listing.isBlog) return Repository.records.blog.first;
       if (listing.isLanguage)
         return Repository.records.get(listing.relatedRecordId);
@@ -154,9 +145,12 @@ export const listing = {
         return Collection.records.get(listing.relatedRecordId);
       return {};
     },
-    snippets: ({ models: { Snippet } }) => listing => {
+    snippets: ({ models: { Snippet, Listing } }) => listing => {
       if (listing.isMain) return Snippet.records;
       if (listing.isBlog) return Snippet.records.blogs;
+      // Abuse the snippets logic here a little bit to avoid having a new model
+      // just for the collections listing.
+      if (listing.isCollections) return Listing.records.featured;
       if (listing.isLanguage) {
         const { id: languageId } = listing.data.language;
         return Snippet.records.filter(snippet => {
@@ -187,6 +181,44 @@ export const listing = {
       if (listing.isCollection)
         return Snippet.records.only(...listing.data.snippets.flatPluck('id'));
       return [];
+    },
+    sublinks: ({ models: { Listing } }) => listing => {
+      if (listing.isCollection) return [];
+      if (listing.isCollections) return [];
+      if (listing.isMain) {
+        return [
+          {
+            name: literals.blog,
+            url: '/articles/p/1',
+            selected: false,
+          },
+          ...Listing.records.language
+            .sort((a, b) => b.ranking - a.ranking)
+            .flatMap(ls => ({
+              name: ls.shortName,
+              url: `${ls.rootUrl}/p/1`,
+              selected: false,
+            })),
+          {
+            name: literals.moreCollections,
+            url: '/collections/p/1',
+            selected: false,
+          },
+        ];
+      }
+      const links = listing.parent ? listing.siblings : listing.children;
+      return [
+        {
+          name: literals.tag('all'),
+          url: `${listing.rootUrl}/p/1`,
+          selected: listing.isParent,
+        },
+        ...links.flatMap(link => ({
+          name: literals.tag(link.data.shortId),
+          url: `${link.data.slugPrefix}/p/1`,
+          selected: listing.isTag && listing.data.shortId === link.data.shortId,
+        })),
+      ];
     },
   },
   methods: {

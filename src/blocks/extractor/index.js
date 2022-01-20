@@ -28,8 +28,9 @@ export class Extractor {
       languageData
     );
     const tagData = Extractor.processTagData(contentConfigs, snippets);
-    // TODO: Rename the configs file to actually name this key properly
-    const featuredListings = Extractor.extractFeaturedListings(contentDir);
+    const { mainListing, collectionListing } = Extractor.extractHubConfig(
+      contentDir
+    );
     // Language data not passed here by design, pass only if needed
     const data = {
       repositories: contentConfigs.map(config => {
@@ -80,7 +81,8 @@ export class Extractor {
         };
       }),
       tags: tagData,
-      featuredListings,
+      collectionListingConfig: collectionListing,
+      mainListingConfig: mainListing,
     };
     await Extractor.writeData(data);
     return data;
@@ -424,13 +426,12 @@ export class Extractor {
     return snippets;
   };
 
-  static extractFeaturedListings = contentDir => {
-    const logger = new Logger('Extractor.extractFeaturedListings');
-    logger.log('Extracting featured listings');
-    const featured = JSONHandler.fromFile(`${contentDir}/configs/featured.json`)
-      .featuredCollections;
-    logger.log('Finished extracting featured listings');
-    return featured;
+  static extractHubConfig = contentDir => {
+    const logger = new Logger('Extractor.extractHubConfig');
+    logger.log('Extracting hub pages configuration');
+    const hubConfig = JSONHandler.fromFile(`${contentDir}/configs/hub.json`);
+    logger.log('Finished extracting hub pages configuration');
+    return hubConfig;
   };
 
   static writeData = data => {

@@ -13,10 +13,8 @@ const formatTag = tag => {
 /* istanbul ignore next */
 const literals = {
   featuredCollections: 'Featured Collections',
-  collections: 'Snippet Collections',
-  newBlogs: 'Latest Articles',
-  topSnippets: 'Top Snippets',
-  snippetList: 'Snippet List',
+  featuredSnippets: 'Snippets & Articles',
+  moreCollections: 'More collections',
   blog: 'Articles',
   tag: t => `${formatTag(t)}`,
   shortCodelang: l => `${l}`,
@@ -51,7 +49,7 @@ const literals = {
           settings.websiteName
         }.`;
       case 'collections':
-        return `Browse ${p.collectionCount} snippet collections on ${settings.websiteName}.`;
+        return `Browse ${p.snippetCount} snippet collections on ${settings.websiteName}.`;
       case 'snippet':
         return `Learn how to code a ${p.snippetName} snippet in ${p.language} on ${settings.websiteName}.`;
       case 'search':

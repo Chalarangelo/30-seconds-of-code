@@ -4,7 +4,7 @@ import { shuffle } from 'utils';
 
 const routePrefix = globalConfig.websiteUrl;
 
-const NEW_BLOG_CARDS = 3;
+const NEW_BLOG_CARDS = 5;
 const TOP_SNIPPET_CARDS = 5;
 const TOP_COLLECTION_CHIPS = 6;
 
@@ -21,7 +21,7 @@ export const page = {
   properties: {
     isStatic: page =>
       ['StaticPage', 'NotFoundPage', 'SearchPage'].includes(page.template),
-    isCollectionsListing: page => page.id === 'collections',
+    isCollectionsListing: page => page.id.startsWith('listing_collections'),
     isSnippet: page => page.template === 'SnippetPage',
     isListing: page => page.template === 'ListingPage',
     isHome: page => page.template === 'HomePage',
@@ -42,7 +42,6 @@ export const page = {
     },
     relRoute: page => {
       if (page.isHome) return '/';
-      if (page.isCollectionsListing) return '/collections';
       if (page.isSnippet) return page.data.slug;
       if (page.isListing) return `${page.data.slugPrefix}/p/${page.pageNumber}`;
       if (page.isStatic) return page.slug;
@@ -66,22 +65,6 @@ export const page = {
       },
     }) => page => {
       let context = {};
-      if (page.isCollectionsListing) {
-        const listedCollections = Listing.records.featured;
-        context.slug = page.relRoute;
-        context.listingName = literals.collections;
-        context.pageDescription = literals.pageDescription('collections', {
-          collectionCount: listedCollections.length,
-        });
-        context.snippetList = ListingPreviewSerializer.serializeArray(
-          listedCollections.toArray(),
-          {
-            withDescription: true,
-          }
-        );
-        // Mandatory early return to avoid running the 'ListingPage' matcher
-        return context;
-      }
       if (page.isHome) {
         const listedCollections = Listing.records.featured
           .toArray()
@@ -98,22 +81,19 @@ export const page = {
           {
             shelfType: 'collections',
             shelfName: literals.featuredCollections,
-            shelfUrl: '/collections',
+            shelfUrl: '/collections/p/1',
             shelfData: ListingPreviewSerializer.serializeArray(
               listedCollections
             ),
           },
           {
             shelfType: 'snippets',
-            shelfName: literals.newBlogs,
-            shelfUrl: '/articles/p/1',
-            shelfData: SnippetPreviewSerializer.serializeArray(newBlogs),
-          },
-          {
-            shelfType: 'snippets',
-            shelfName: literals.topSnippets,
+            shelfName: literals.featuredSnippets,
             shelfUrl: '/list/p/1',
-            shelfData: SnippetPreviewSerializer.serializeArray(topSnippets),
+            shelfData: SnippetPreviewSerializer.serializeArray([
+              ...newBlogs,
+              ...topSnippets,
+            ]),
           },
         ];
         context.pageDescription = literals.pageDescription('main', {
@@ -146,9 +126,18 @@ export const page = {
             context[key] = value;
           }
         );
-        context.snippetList = SnippetPreviewSerializer.serializeArray(
-          page.snippets.toArray()
-        );
+        if (page.isCollectionsListing) {
+          context.snippetList = ListingPreviewSerializer.serializeArray(
+            page.listings.toArray(),
+            {
+              withDescription: true,
+            }
+          );
+        } else {
+          context.snippetList = SnippetPreviewSerializer.serializeArray(
+            page.snippets.toArray()
+          );
+        }
       }
       if (['StaticPage', 'NotFoundPage'].includes(page.template)) {
         context = { ...page.staticContext };
@@ -194,7 +183,8 @@ export const page = {
   ],
   validators: {
     listingHasSnippets: page => {
-      if (!page.isListing || page.id === 'collections') return true;
+      if (!page.isListing || page.id.startsWith('listing_collections'))
+        return true;
       return page.snippets && page.snippets.length > 0;
     },
     listingHasPageNumber: page => {
@@ -242,7 +232,7 @@ export const page = {
     },
     snippets: page => page.isSnippet,
     // Exclude collections listing to avoid path conflicts in Next.js
-    listing: page => page.isListing && !page.isCollectionsListing,
+    listing: page => page.isListing,
     static: page => page.isStatic,
     home: page => page.isHome,
     search: page => page.template === 'SearchPage',
