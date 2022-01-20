@@ -402,8 +402,10 @@ export class Application {
       tags,
       languages,
       authors,
-      featuredListings,
+      mainListingConfig,
+      collectionListingConfig,
     } = Application.datasetObject;
+    const { featuredListings } = collectionListingConfig;
 
     // Populate repos, languages, tags, authors, snippets
     repositories.forEach(repo => Repository.createRecord(repo));
