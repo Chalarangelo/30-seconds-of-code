@@ -43,11 +43,6 @@ export class PageWriter {
         `${outPath}/index.json`,
         PageSerializer.serialize(pages.home.first)
       ),
-      // Collections page
-      JSONHandler.toFile(
-        `${outPath}/collections.json`,
-        PageSerializer.serialize(pages.collections.first)
-      ),
       // Static pages
       ...Object.entries(staticData).map(([fileName, page]) => {
         return JSONHandler.toFile(`${outPath}/${fileName}.json`, page);
