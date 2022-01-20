@@ -6,6 +6,13 @@
 /feed                                  /feed.xml                                200
 
 # -----------------------------------------------------------------------------
+#   COLLECTIONS PAGE REDIRECT:
+#
+# * Redirect /collections to /collections/p/1.
+# -----------------------------------------------------------------------------
+/collections                           /collections/p/1                         301!
+
+# -----------------------------------------------------------------------------
 #   SNIPPET PAGE REDIRECTS:
 #
 # * Redirect replaced/renamed snippets.
