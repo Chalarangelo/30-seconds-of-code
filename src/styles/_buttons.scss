@@ -9,7 +9,7 @@
   cursor: pointer;
   border: 0;
   border-radius: var(--br-round);
-  transition: 0.3s ease all;
+  transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
 
   &:hover,
   &:focus {
