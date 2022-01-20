@@ -4,7 +4,7 @@ import { shuffle } from 'utils';
 
 const routePrefix = globalConfig.websiteUrl;
 
-const NEW_BLOG_CARDS = 3;
+const NEW_BLOG_CARDS = 5;
 const TOP_SNIPPET_CARDS = 5;
 const TOP_COLLECTION_CHIPS = 6;
 
@@ -98,22 +98,19 @@ export const page = {
           {
             shelfType: 'collections',
             shelfName: literals.featuredCollections,
-            shelfUrl: '/collections',
+            shelfUrl: '/collections/p/1',
             shelfData: ListingPreviewSerializer.serializeArray(
               listedCollections
             ),
           },
           {
             shelfType: 'snippets',
-            shelfName: literals.newBlogs,
-            shelfUrl: '/articles/p/1',
-            shelfData: SnippetPreviewSerializer.serializeArray(newBlogs),
-          },
-          {
-            shelfType: 'snippets',
-            shelfName: literals.topSnippets,
+            shelfName: literals.featuredSnippets,
             shelfUrl: '/list/p/1',
-            shelfData: SnippetPreviewSerializer.serializeArray(topSnippets),
+            shelfData: SnippetPreviewSerializer.serializeArray([
+              ...newBlogs,
+              ...topSnippets,
+            ]),
           },
         ];
         context.pageDescription = literals.pageDescription('main', {
