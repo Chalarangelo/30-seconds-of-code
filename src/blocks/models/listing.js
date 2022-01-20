@@ -38,22 +38,6 @@ export const listing = {
     siblings: listing => (listing.parent ? listing.parent.children : []),
     siblingsExceptSelf: listing =>
       listing.parent ? listing.siblings.except(listing.id) : [],
-    sublinks: listing => {
-      if (!listing.isBlog && !listing.isLanguage && !listing.isTag) return [];
-      const links = listing.parent ? listing.siblings : listing.children;
-      return [
-        {
-          name: literals.tag('all'),
-          url: `${listing.rootUrl}/p/1`,
-          selected: listing.isParent,
-        },
-        ...links.flatMap(link => ({
-          name: literals.tag(link.data.shortId),
-          url: `${link.data.slugPrefix}/p/1`,
-          selected: listing.isTag && listing.data.shortId === link.data.shortId,
-        })),
-      ];
-    },
     // Used to determine the order of listings in the search index.
     ranking: listing => Ranker.rankListing(listing),
     name: listing => {
@@ -193,6 +177,44 @@ export const listing = {
       if (listing.isCollection)
         return Snippet.records.only(...listing.data.snippets.flatPluck('id'));
       return [];
+    },
+    sublinks: ({ models: { Listing } }) => listing => {
+      if (listing.isCollection) return [];
+      if (listing.isCollections) return [];
+      if (listing.isMain) {
+        return [
+          {
+            name: literals.blog,
+            url: '/articles/p/1',
+            selected: false,
+          },
+          ...Listing.records.language
+            .sort((a, b) => b.ranking - a.ranking)
+            .flatMap(ls => ({
+              name: ls.shortName,
+              url: `${ls.rootUrl}/p/1`,
+              selected: false,
+            })),
+          {
+            name: literals.moreCollections,
+            url: '/collections/p/1',
+            selected: false,
+          },
+        ];
+      }
+      const links = listing.parent ? listing.siblings : listing.children;
+      return [
+        {
+          name: literals.tag('all'),
+          url: `${listing.rootUrl}/p/1`,
+          selected: listing.isParent,
+        },
+        ...links.flatMap(link => ({
+          name: literals.tag(link.data.shortId),
+          url: `${link.data.slugPrefix}/p/1`,
+          selected: listing.isTag && listing.data.shortId === link.data.shortId,
+        })),
+      ];
     },
   },
   methods: {
