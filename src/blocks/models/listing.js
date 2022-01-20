@@ -13,7 +13,7 @@ export const listing = {
     {
       name: 'type',
       type: 'enumRequired',
-      values: ['main', 'blog', 'language', 'tag', 'collection'],
+      values: ['main', 'collections', 'blog', 'language', 'tag', 'collection'],
     },
     { name: 'slugPrefix', type: 'stringRequired' },
     { name: 'relatedRecordId', type: 'string' },
@@ -21,6 +21,7 @@ export const listing = {
   ],
   properties: {
     isMain: listing => listing.type === 'main',
+    isCollections: listing => listing.type === 'collections',
     isBlog: listing => listing.type === 'blog',
     isBlogTag: listing =>
       listing.type === 'tag' && listing.parent.type === 'blog',
