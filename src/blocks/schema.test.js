@@ -1154,7 +1154,7 @@ describe('Application/Schema', () => {
       it('returns the correct value for the home page', () => {
         const page = Page.records.get('home');
         const pageContext = page.context;
-        expect(pageContext.shelves.length).toBe(3);
+        expect(pageContext.shelves.length).toBe(2);
         expect(pageContext.pageDescription).toEqual(
           'Browse 15 short code snippets for all your development needs on 30 seconds of code.'
         );
