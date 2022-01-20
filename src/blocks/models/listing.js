@@ -108,7 +108,7 @@ export const listing = {
       Math.ceil(listing.listedSnippets.length / CARDS_PER_PAGE),
     defaultOrdering: listing => {
       if (listing.isBlog || listing.isBlogTag) return 'new';
-      if (listing.isCollection) return 'custom';
+      if (listing.isCollection || listing.isCollections) return 'custom';
       return 'popularity';
     },
     listedSnippets: listing => {
@@ -128,6 +128,7 @@ export const listing = {
           return nB - nA;
         });
       }
+      if (listing.isCollections) return listing.snippets;
       // Catch all, also catches 'custom' for collection types
       return listing.snippets.published;
     },
@@ -144,9 +145,12 @@ export const listing = {
         return Collection.records.get(listing.relatedRecordId);
       return {};
     },
-    snippets: ({ models: { Snippet } }) => listing => {
+    snippets: ({ models: { Snippet, Listing } }) => listing => {
       if (listing.isMain) return Snippet.records;
       if (listing.isBlog) return Snippet.records.blogs;
+      // Abuse the snippets logic here a little bit to avoid having a new model
+      // just for the collections listing.
+      if (listing.isCollections) return Listing.records.featured;
       if (listing.isLanguage) {
         const { id: languageId } = listing.data.language;
         return Snippet.records.filter(snippet => {
