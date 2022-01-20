@@ -41,6 +41,11 @@ export const schema = {
       to: { model: 'Snippet', name: 'pages' },
       type: 'manyToMany',
     },
+    {
+      from: { model: 'Page', name: 'listings' },
+      to: { model: 'Listing', name: 'pages' },
+      type: 'manyToMany',
+    },
   ],
   config: {
     experimentalAPIMessages: 'off',
