@@ -171,28 +171,28 @@ const Meta = ({
         type='font/woff2'
         href='/assets/Inter.var.woff2'
         as='font'
-        crossOrigin
+        crossOrigin='anonymous'
       />
       <link
         rel='preload'
         type='font/woff2'
         href='/assets/Raleway-Medium.woff2'
         as='font'
-        crossOrigin
+        crossOrigin='anonymous'
       />
       <link
         rel='preload'
         type='font/woff2'
         href='/assets/RobotoMono-Regular.woff2'
         as='font'
-        crossOrigin
+        crossOrigin='anonymous'
       />
       <link
         rel='preload'
         type='font/woff2'
         href='/assets/icons.woff2'
         as='font'
-        crossOrigin
+        crossOrigin='anonymous'
       />
       <link
         rel='icon'
