@@ -1,6 +1,5 @@
 /* eslint-disable camelcase */
 import PropTypes from 'typedefs/proptypes';
-import useGtagEvent from 'components/hooks/useGtagEvent';
 import JSX_SNIPPET_PRESETS from 'settings/jsxSnippetPresets';
 import literals from 'lang/en/client/common';
 import { useEffect, useState } from 'react';
@@ -13,8 +12,6 @@ const propTypes = {
  * Renders a group of actions for a snippet card(share, copy/codepen, github).
  */
 const Actions = ({ snippet }) => {
-  const gtagCallback = useGtagEvent('click');
-
   const [{ share, clipboard }, setApis] = useState({
     share: false,
     clipboard: false,
@@ -38,7 +35,6 @@ const Actions = ({ snippet }) => {
           className='flex-none before:fs-md btn action-btn icon-btn icon icon-share'
           title={literals.share}
           onClick={() => {
-            gtagCallback({ event_category: 'action-share', value: 1 });
             try {
               navigator.share({
                 title: snippet.title,
@@ -58,7 +54,6 @@ const Actions = ({ snippet }) => {
           }`}
           title={literals.copyToClipboard}
           onClick={() => {
-            gtagCallback({ event_category: 'action-copy', value: 1 });
             try {
               const codeBlock = document.querySelector('.card-code');
               navigator.clipboard.writeText(
@@ -79,7 +74,6 @@ const Actions = ({ snippet }) => {
           className='flex-none before:fs-md btn action-btn icon-btn icon icon-codepen'
           title={literals.codepen}
           onClick={() => {
-            gtagCallback({ event_category: 'action-codepen', value: 1 });
             try {
               const isJsxCodepen = snippet.actionType === 'codepen';
 
@@ -140,7 +134,6 @@ const Actions = ({ snippet }) => {
         title={literals.viewOnGitHub}
         onClick={e => {
           e.preventDefault();
-          gtagCallback({ event_category: 'action-github', value: 1 });
           window.open(e.target.href, '_blank');
         }}
       />
