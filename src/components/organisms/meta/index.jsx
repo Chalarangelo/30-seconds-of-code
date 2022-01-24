@@ -167,66 +167,84 @@ const Meta = ({
         title='Snippet search'
       />
       <link
+        rel='preload'
+        type='font/woff2'
+        href='/assets/Inter.var.woff2'
+        as='font'
+        crossOrigin
+      />
+      <link
+        rel='preload'
+        type='font/woff2'
+        href='/assets/Raleway-Medium.woff2'
+        as='font'
+        crossOrigin
+      />
+      <link
+        rel='preload'
+        type='font/woff2'
+        href='/assets/RobotoMono-Regular.woff2'
+        as='font'
+        crossOrigin
+      />
+      <link
+        rel='preload'
+        type='font/woff2'
+        href='/assets/icons.woff2'
+        as='font'
+        crossOrigin
+      />
+      <link
         rel='icon'
         href={`/assets/icons/favicon-32x32.png?v=${settings.manifestCacheKey}`}
         type='image/png'
       />
-      ,
       <link
         rel='manifest'
         href='/manifest.webmanifest'
         crossOrigin='anonymous'
       />
-      ,
       <meta name='theme-color' content='#1e253d' />,
       <link
         rel='apple-touch-icon'
         sizes='48x48'
         href={`/assets/icons/icon-48x48.png?v=${settings.manifestCacheKey}`}
       />
-      ,
       <link
         rel='apple-touch-icon'
         sizes='72x72'
         href={`/assets/icons/icon-72x72.png?v=${settings.manifestCacheKey}`}
       />
-      ,
       <link
         rel='apple-touch-icon'
         sizes='96x96'
         href={`/assets/icons/icon-96x96.png?v=${settings.manifestCacheKey}`}
       />
-      ,
       <link
         rel='apple-touch-icon'
         sizes='144x144'
         href={`/assets/icons/icon-144x144.png?v=${settings.manifestCacheKey}`}
       />
-      ,
       <link
         rel='apple-touch-icon'
         sizes='192x192'
         href={`/assets/icons/icon-192x192.png?v=${settings.manifestCacheKey}`}
       />
-      ,
       <link
         rel='apple-touch-icon'
         sizes='256x256'
         href={`/assets/icons/icon-256x256.png?v=${settings.manifestCacheKey}`}
       />
-      ,
       <link
         rel='apple-touch-icon'
         sizes='384x384'
         href={`/assets/icons/icon-384x384.png?v=${settings.manifestCacheKey}`}
       />
-      ,
       <link
         rel='apple-touch-icon'
         sizes='512x512'
         href={`/assets/icons/icon-512x512.png?v=${settings.manifestCacheKey}`}
       />
-      ,
       {canonical ? (
         <link rel='canonical' href={`${settings.websiteUrl}${canonical}`} />
       ) : null}
