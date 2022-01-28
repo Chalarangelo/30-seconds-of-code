@@ -39,7 +39,6 @@ const createStateProvider = ({
     return [context.state, context.dispatch];
   };
 
-  // eslint-disable-next-line react/prop-types
   const StateProvider = ({ children, initialState }) => {
     const [state, dispatch] = useReducer(
       reducer,

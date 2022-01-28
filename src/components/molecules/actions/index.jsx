@@ -1,12 +1,7 @@
 /* eslint-disable camelcase */
-import PropTypes from 'typedefs/proptypes';
 import JSX_SNIPPET_PRESETS from 'settings/jsxSnippetPresets';
 import literals from 'lang/en/client/common';
 import { useEffect, useState } from 'react';
-
-const propTypes = {
-  snippet: PropTypes.snippet,
-};
 
 /**
  * Renders a group of actions for a snippet card(share, copy/codepen, github).
@@ -140,7 +135,5 @@ const Actions = ({ snippet }) => {
     </div>
   );
 };
-
-Actions.propTypes = propTypes;
 
 export default Actions;

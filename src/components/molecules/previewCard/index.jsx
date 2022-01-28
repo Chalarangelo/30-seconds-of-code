@@ -1,12 +1,6 @@
-import PropTypes from 'typedefs/proptypes';
 import Link from 'next/link';
 import { CardIcon, CardTitle, CardSubtitle } from 'components/atoms/card';
 import literals from 'lang/en/client/common';
-
-const propTypes = {
-  contentItem: PropTypes.oneOfType([PropTypes.snippet, PropTypes.chip]),
-  fromParam: PropTypes.string,
-};
 
 /**
  * General-purpose snippet/collection preview card.
@@ -56,7 +50,5 @@ const PreviewCard = ({ contentItem, fromParam }) => {
     </li>
   );
 };
-
-PreviewCard.propTypes = propTypes;
 
 export default PreviewCard;

@@ -1,23 +1,8 @@
-import PropTypes from 'typedefs/proptypes';
 import Meta from 'components/organisms/meta';
 import Breadcrumbs from 'components/atoms/breadcrumbs';
 import Shell from 'components/organisms/shell';
 import cardComponents from 'components/organisms/snippetCard';
 import RecommendationList from 'components/organisms/recommendationList';
-
-const propTypes = {
-  snippet: PropTypes.snippet.isRequired,
-  cardTemplate: PropTypes.string,
-  recommendedSnippets: PropTypes.arrayOf(PropTypes.snippet),
-  recommendedCollection: PropTypes.chip,
-  pageDescription: PropTypes.string.isRequired,
-  breadcrumbs: PropTypes.arrayOf(
-    PropTypes.shape({
-      url: PropTypes.string,
-      name: PropTypes.string,
-    })
-  ),
-};
 
 /**
  * Renders a snippet page.
@@ -70,7 +55,5 @@ const SnippetPage = ({
     </>
   );
 };
-
-SnippetPage.propTypes = propTypes;
 
 export default SnippetPage;

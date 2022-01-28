@@ -3,8 +3,6 @@ import Link from 'next/link';
 import { useShellDispatch } from 'state/shell';
 import literals from 'lang/en/client/cookieConsent';
 
-const propTypes = {};
-
 /**
  * Renders the popup for cookie consent. (Context-connected)
  */
@@ -49,7 +47,5 @@ const CookieConsentPopup = () => {
     </div>
   );
 };
-
-CookieConsentPopup.propTypes = propTypes;
 
 export default CookieConsentPopup;

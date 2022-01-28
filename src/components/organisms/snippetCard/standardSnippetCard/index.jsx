@@ -1,11 +1,6 @@
-import PropTypes from 'typedefs/proptypes';
 import Card, { CardIcon, CardTitle, CardSubtitle } from 'components/atoms/card';
 import CodeBlock from 'components/atoms/codeBlock';
 import Actions from 'components/molecules/actions';
-
-const propTypes = {
-  snippet: PropTypes.snippet,
-};
 
 /**
  * Standard snippet card.
@@ -48,7 +43,5 @@ const SnippetCard = ({ snippet }) => (
     <Actions snippet={snippet} />
   </Card>
 );
-
-SnippetCard.propTypes = propTypes;
 
 export default SnippetCard;

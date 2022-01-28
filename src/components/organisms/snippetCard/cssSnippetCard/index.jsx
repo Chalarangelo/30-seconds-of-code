@@ -1,13 +1,8 @@
 import { useEffect } from 'react';
-import PropTypes from 'typedefs/proptypes';
 import Card, { CardIcon, CardTitle, CardSubtitle } from 'components/atoms/card';
 import CodeBlock from 'components/atoms/codeBlock';
 import Actions from 'components/molecules/actions';
 import literals from 'lang/en/client/common';
-
-const propTypes = {
-  snippet: PropTypes.snippet,
-};
 
 /**
  * CSS snippet card.
@@ -81,7 +76,5 @@ const SnippetCard = ({ snippet }) => {
     </Card>
   );
 };
-
-SnippetCard.propTypes = propTypes;
 
 export default SnippetCard;

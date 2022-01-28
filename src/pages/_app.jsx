@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { ShellProvider } from 'state/shell';

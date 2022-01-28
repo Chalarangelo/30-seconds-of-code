@@ -1,31 +1,8 @@
-import PropTypes from 'typedefs/proptypes';
 import Head from 'next/head';
 import settings from 'settings/global';
 import literals from 'lang/en/client/common';
 import { generateStructuredData } from 'utils';
 import { useShellState } from 'state/shell';
-
-const propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.meta),
-  logoSrc: PropTypes.string,
-  structuredData: PropTypes.shape({
-    title: PropTypes.string,
-    description: PropTypes.string,
-    slug: PropTypes.string,
-    orgLogoSrc: PropTypes.string,
-    firstSeen: PropTypes.string,
-    lastUpdated: PropTypes.string,
-  }),
-  breadcrumbsData: PropTypes.arrayOf(
-    PropTypes.shape({
-      url: PropTypes.string,
-      name: PropTypes.string,
-    })
-  ),
-  canonical: PropTypes.string,
-};
 
 /**
  * Creates the `<head>` metadata content.
@@ -251,7 +228,5 @@ const Meta = ({
     </Head>
   );
 };
-
-Meta.propTypes = propTypes;
 
 export default Meta;

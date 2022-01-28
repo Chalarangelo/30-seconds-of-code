@@ -1,21 +1,8 @@
-import PropTypes from 'typedefs/proptypes';
 import Link from 'next/link';
 import PreviewCard from 'components/molecules/previewCard';
 import CollectionChip from 'components/atoms/collectionChip';
 import PageTitle from 'components/atoms/pageTitle';
 import literals from 'lang/en/client/common';
-
-const propTypes = {
-  shelf: PropTypes.shape({
-    shelfData: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.snippet),
-      PropTypes.arrayOf(PropTypes.chip),
-    ]),
-    shelfType: PropTypes.oneOf(['snippets', 'collections']),
-    shelfName: PropTypes.string,
-    shelfUrl: PropTypes.string,
-  }),
-};
 
 /**
  * Renders a shelf of snippets or chips.
@@ -51,7 +38,5 @@ const Shelf = ({ shelf: { shelfType, shelfData, shelfName, shelfUrl } }) => {
     </>
   ) : null;
 };
-
-Shelf.propTypes = propTypes;
 
 export default Shelf;

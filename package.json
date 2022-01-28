@@ -36,7 +36,6 @@
     "preact": "^10.5.14",
     "prettier": "^2.2.1",
     "prismjs": "^1.25.0",
-    "prop-types": "^15.7.2",
     "puppeteer": "^5.5.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
