@@ -25,11 +25,7 @@ const SnippetCard = ({ snippet }) => (
         </Fragment>
       ))}
       {' · '}
-      {new Date(snippet.firstSeen).toLocaleDateString('en-US', {
-        day: 'numeric',
-        month: 'short',
-        year: 'numeric',
-      })}
+      {snippet.firstSeen}
       {' · '}
       <CardSubtitle>{snippet.tags.all.join(', ')}</CardSubtitle>
     </div>
