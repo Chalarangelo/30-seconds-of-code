@@ -1,12 +1,4 @@
-import PropTypes from 'typedefs/proptypes';
 import PreviewCard from 'components/molecules/previewCard';
-
-const propTypes = {
-  contentItems: PropTypes.arrayOf(
-    PropTypes.oneOfType([PropTypes.snippet, PropTypes.chip])
-  ),
-  fromParam: PropTypes.string,
-};
 
 /**
  * Renders a list of preview cards.
@@ -23,7 +15,5 @@ const PreviewCardList = ({ contentItems, fromParam }) => (
     ))}
   </ul>
 );
-
-PreviewCardList.propTypes = propTypes;
 
 export default PreviewCardList;

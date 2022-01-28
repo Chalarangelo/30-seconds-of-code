@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { render } from '@testing-library/react';
 
 import { ShellProvider } from 'state/shell';

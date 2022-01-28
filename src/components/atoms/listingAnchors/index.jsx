@@ -1,15 +1,5 @@
 import { useEffect, useRef } from 'react';
-import PropTypes from 'typedefs/proptypes';
 import Link from 'next/link';
-
-const propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      url: PropTypes.string,
-      name: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-};
 
 /**
  * Renders the set of buttons that link to other listing pages.
@@ -51,7 +41,5 @@ const ListingAnchors = ({ items = [] }) => {
     </ul>
   );
 };
-
-ListingAnchors.propTypes = propTypes;
 
 export default ListingAnchors;

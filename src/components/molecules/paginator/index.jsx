@@ -1,10 +1,5 @@
-import PropTypes from 'typedefs/proptypes';
 import Link from 'next/link';
 import literals from 'lang/en/client/paginator';
-
-const propTypes = {
-  paginator: PropTypes.paginator,
-};
 
 /**
  * Renders a pagination component.
@@ -64,7 +59,5 @@ const Paginator = ({ paginator: { pageNumber, totalPages, baseUrl } }) => {
     </div>
   );
 };
-
-Paginator.propTypes = propTypes;
 
 export default Paginator;

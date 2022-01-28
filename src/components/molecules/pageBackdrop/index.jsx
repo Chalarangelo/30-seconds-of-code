@@ -1,23 +1,4 @@
-import PropTypes from 'typedefs/proptypes';
 import Image from 'components/atoms/image';
-
-const propTypes = {
-  backdropImage: PropTypes.string,
-  mainText: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node),
-  ]),
-  mainTextClassName: PropTypes.string,
-  subText: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node),
-  ]),
-  subTextClassName: PropTypes.string,
-  children: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node),
-  ]),
-};
 
 /**
  * Renders the backdrop of a page.
@@ -47,7 +28,5 @@ const PageBackdrop = ({
     {children}
   </div>
 );
-
-PageBackdrop.propTypes = propTypes;
 
 export default PageBackdrop;

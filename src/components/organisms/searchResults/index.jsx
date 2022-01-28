@@ -1,14 +1,9 @@
-import PropTypes from 'typedefs/proptypes';
 import { useSearch } from 'state/search';
 import PageBackdrop from 'components/molecules/pageBackdrop';
 import PageTitle from 'components/atoms/pageTitle';
 import PreviewCardList from 'components/organisms/previewCardList';
 import RecommendationList from 'components/organisms/recommendationList';
 import literals from 'lang/en/client/search';
-
-const propTypes = {
-  recommendedSnippets: PropTypes.arrayOf(PropTypes.snippet),
-};
 
 /**
  * Displays the search results area. (Context-connected)
@@ -77,7 +72,5 @@ const SearchResults = ({ recommendedSnippets = [] }) => {
     </>
   );
 };
-
-SearchResults.propTypes = propTypes;
 
 export default SearchResults;

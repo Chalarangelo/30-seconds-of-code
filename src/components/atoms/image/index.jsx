@@ -1,9 +1,3 @@
-import PropTypes from 'typedefs/proptypes';
-
-const propTypes = {
-  src: PropTypes.string.isRequired,
-};
-
 const Image = ({ src, ...rest }) => (
   <picture>
     <source
@@ -13,7 +7,5 @@ const Image = ({ src, ...rest }) => (
     <img src={src} {...rest} />
   </picture>
 );
-
-Image.propTypes = propTypes;
 
 export default Image;
