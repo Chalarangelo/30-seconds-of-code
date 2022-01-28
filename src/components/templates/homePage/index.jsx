@@ -6,16 +6,14 @@ import Shelf from 'components/organisms/shelf';
  * Renders the home page.
  * Used to render the / page (home).
  */
-const HomePage = ({ shelves, pageDescription }) => {
+const HomePage = ({ shelves, pageDescription, structuredData }) => {
   return (
     <>
       <Meta
         title={''}
         description={pageDescription}
         canonical={'/'}
-        structuredData={{
-          type: 'home',
-        }}
+        structuredData={structuredData}
       />
       <Shell>
         {shelves.map(s => (
