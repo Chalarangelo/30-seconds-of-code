@@ -15,6 +15,7 @@ const SnippetPage = ({
   recommendedCollection,
   breadcrumbs,
   pageDescription,
+  structuredData,
 }) => {
   const SnippetCard = cardComponents[cardTemplate];
   const isBlogSnippet = cardTemplate === 'BlogSnippetCard';
@@ -24,23 +25,7 @@ const SnippetPage = ({
         title={snippet.title}
         description={pageDescription}
         logoSrc={isBlogSnippet ? snippet.cover : undefined}
-        structuredData={{
-          title: snippet.title,
-          description: snippet.description,
-          slug: snippet.slug,
-          orgLogoSrc: '/assets/30s-icon.png',
-          firstSeen: snippet.firstSeen,
-          lastUpdated: snippet.lastUpdated,
-          type: 'snippet',
-          ...(isBlogSnippet
-            ? {
-                author: {
-                  name: snippet.authors[0].name,
-                  url: snippet.authors[0].profile,
-                },
-              }
-            : {}),
-        }}
+        structuredData={structuredData}
         breadcrumbsData={breadcrumbs}
         canonical={snippet.slug}
       />
