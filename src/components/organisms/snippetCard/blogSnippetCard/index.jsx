@@ -27,7 +27,7 @@ const SnippetCard = ({ snippet }) => (
       {' · '}
       {snippet.firstSeen}
       {' · '}
-      <CardSubtitle>{snippet.tags.all.join(', ')}</CardSubtitle>
+      <CardSubtitle>{snippet.tags.join(', ')}</CardSubtitle>
     </div>
     {snippet.cover && (
       <Image

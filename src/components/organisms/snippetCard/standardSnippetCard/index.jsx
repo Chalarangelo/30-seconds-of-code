@@ -13,7 +13,7 @@ const SnippetCard = ({ snippet }) => (
       <div className='card-data'>
         <CardTitle>{snippet.title}</CardTitle>
         <CardSubtitle>
-          {[snippet.language.long, ...snippet.tags.all].join(', ')}
+          {[snippet.language.long, ...snippet.tags].join(', ')}
         </CardSubtitle>
       </div>
     </div>

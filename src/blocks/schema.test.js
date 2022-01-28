@@ -235,8 +235,7 @@ describe('Application/Schema', () => {
     describe('property: formattedTags', () => {
       it('returns the formatted tags', () => {
         const snippet = Snippet.records.get('js/s/format-duration');
-        expect(snippet.formattedTags.primary).toEqual('Date');
-        expect(snippet.formattedTags.all).toEqual(['Date', 'Math', 'String']);
+        expect(snippet.formattedTags).toEqual(['Date', 'Math', 'String']);
       });
     });
 
