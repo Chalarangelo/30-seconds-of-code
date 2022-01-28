@@ -51,7 +51,7 @@ describe('<BlogSnippetCard />', () => {
 
   it('should pass the tags data to the TagList component', () => {
     const tagsText = tagList.textContent.toLowerCase();
-    fullBlogSnippet.tags.all.forEach(tag => {
+    fullBlogSnippet.tags.forEach(tag => {
       expect(tagsText).toContain(tag.toLowerCase());
     });
   });

@@ -129,7 +129,6 @@ factory
       otherLanguages: null,
     },
     tags: {
-      primary: '',
       all: [],
     },
     html: {
@@ -192,10 +191,7 @@ factory
       icon: lang.toLowerCase(),
       actionType:
         type === 'css' ? 'cssCodepen' : type === 'react' ? 'codepen' : 'copy',
-      tags: {
-        primary: tags[0],
-        all: tags,
-      },
+      tags,
     };
   })
   .trait('content', type => {

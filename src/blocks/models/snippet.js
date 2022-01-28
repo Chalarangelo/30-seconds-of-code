@@ -73,14 +73,10 @@ export const snippet = {
       return snippet.tags.filter(t => t !== language.id)[0];
     },
     formattedPrimaryTag: snippet => literals.tag(snippet.primaryTag),
-    formattedTags: snippet => {
-      return {
-        primary: literals.tag(snippet.primaryTag),
-        all: snippet.tags
-          .filter(tag => !expertiseLevels.includes(tag))
-          .map(literals.tag),
-      };
-    },
+    formattedTags: snippet =>
+      snippet.tags
+        .filter(tag => !expertiseLevels.includes(tag))
+        .map(literals.tag),
     hasOtherLanguages: snippet =>
       snippet.repository.otherLanguages &&
       snippet.repository.otherLanguages.length > 0,

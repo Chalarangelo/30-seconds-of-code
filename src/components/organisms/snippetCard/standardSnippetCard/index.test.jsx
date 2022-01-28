@@ -73,7 +73,7 @@ describe('<SnippetCard />', () => {
 
   it('should pass the tags data to the TagList component', () => {
     const tagsText = tagList.textContent.toLowerCase();
-    fullSnippet.tags.all.forEach(tag => {
+    fullSnippet.tags.forEach(tag => {
       expect(tagsText).toContain(tag.toLowerCase());
     });
   });
