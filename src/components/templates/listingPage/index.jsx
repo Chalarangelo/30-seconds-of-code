@@ -1,4 +1,3 @@
-import PropTypes from 'typedefs/proptypes';
 import Meta from 'components/organisms/meta';
 import Shell from 'components/organisms/shell';
 import Paginator from 'components/molecules/paginator';
@@ -6,17 +5,6 @@ import PageTitle from 'components/atoms/pageTitle';
 import Image from 'components/atoms/image';
 import PreviewCardList from 'components/organisms/previewCardList';
 import ListingAnchors from 'components/atoms/listingAnchors';
-
-const propTypes = {
-  slug: PropTypes.string.isRequired,
-  paginator: PropTypes.paginator,
-  snippetList: PropTypes.arrayOf(PropTypes.snippet),
-  listingName: PropTypes.string,
-  listingDescription: PropTypes.string,
-  listingImage: PropTypes.string,
-  listingSublinks: PropTypes.arrayOf(PropTypes.shape({})),
-  pageDescription: PropTypes.string.isRequired,
-};
 
 /**
  * Renders a listing page.
@@ -81,7 +69,5 @@ const ListingPage = ({
     </>
   );
 };
-
-ListingPage.propTypes = propTypes;
 
 export default ListingPage;

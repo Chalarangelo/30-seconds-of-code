@@ -1,27 +1,8 @@
-import PropTypes from 'typedefs/proptypes';
 import Meta from 'components/organisms/meta';
 import PageTitle from 'components/atoms/pageTitle';
 import Card, { CardTitle } from 'components/atoms/card';
 import Shell from 'components/organisms/shell';
 import { useShell } from 'state/shell';
-
-const propTypes = {
-  stringLiterals: PropTypes.shape({
-    title: PropTypes.string,
-    pageDescription: PropTypes.string,
-    subtitle: PropTypes.string,
-    cards: PropTypes.arrayOf(
-      PropTypes.shape({
-        title: PropTypes.string,
-        html: PropTypes.string,
-      })
-    ),
-    cookieSettingCard: PropTypes.shape({
-      title: PropTypes.string,
-      text: PropTypes.string,
-    }),
-  }).isRequired,
-};
 
 /**
  * Renders a static page from the given data.
@@ -84,7 +65,5 @@ const StaticPage = ({
     </>
   );
 };
-
-StaticPage.propTypes = propTypes;
 
 export default StaticPage;

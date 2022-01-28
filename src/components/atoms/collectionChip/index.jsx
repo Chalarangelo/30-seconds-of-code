@@ -1,9 +1,4 @@
-import PropTypes from 'typedefs/proptypes';
 import Link from 'next/link';
-
-const propTypes = {
-  chip: PropTypes.chip,
-};
 
 /**
  * General-purpose collection chip.
@@ -21,7 +16,5 @@ const CollectionChip = ({ chip }) => (
     </Link>
   </li>
 );
-
-CollectionChip.propTypes = propTypes;
 
 export default CollectionChip;

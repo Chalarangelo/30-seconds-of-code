@@ -1,12 +1,6 @@
-import PropTypes from 'typedefs/proptypes';
 import PageTitle from 'components/atoms/pageTitle';
 import literals from 'lang/en/client/common';
 import PreviewCardList from 'components/organisms/previewCardList';
-
-const propTypes = {
-  snippetList: PropTypes.arrayOf(PropTypes.snippet),
-  collectionChip: PropTypes.chip,
-};
 
 /**
  * Renders a list of recommended snippets.
@@ -33,7 +27,5 @@ const RecommendationList = ({ snippetList, collectionChip = null }) => {
     </>
   ) : null;
 };
-
-RecommendationList.propTypes = propTypes;
 
 export default RecommendationList;

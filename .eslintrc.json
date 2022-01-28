@@ -197,8 +197,8 @@
     ],
     "react/jsx-no-duplicate-props": "error",
     "react/no-deprecated": "error",
-    "react/prop-types": "warn",
-    "react/no-unused-prop-types": "error",
+    "react/prop-types": "off",
+    "react/no-unused-prop-types": "off",
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off"
   }

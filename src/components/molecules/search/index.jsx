@@ -1,14 +1,8 @@
 import { useState, useEffect } from 'react';
-import PropTypes from 'typedefs/proptypes';
 import { useRouter } from 'next/router';
 import { getURLParameters, throttle } from 'utils';
 import { useSearch } from 'state/search';
 import literals from 'lang/en/client/search';
-
-const propTypes = {
-  /** Is this component the main search component? */
-  isMainSearch: PropTypes.bool,
-};
 
 /**
  * Search bar component. (Context-connected)
@@ -209,7 +203,5 @@ const Search = ({ isMainSearch = false }) => {
     </div>
   );
 };
-
-Search.propTypes = propTypes;
 
 export default Search;

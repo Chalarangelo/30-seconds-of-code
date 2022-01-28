@@ -1,12 +1,7 @@
 import { Fragment } from 'react';
-import PropTypes from 'typedefs/proptypes';
 import Image from 'components/atoms/image';
 import Card, { CardTitle, CardSubtitle } from 'components/atoms/card';
 import Actions from 'components/molecules/actions';
-
-const propTypes = {
-  snippet: PropTypes.snippet,
-};
 
 /**
  * Blog snippet card.
@@ -54,7 +49,5 @@ const SnippetCard = ({ snippet }) => (
     <Actions snippet={snippet} />
   </Card>
 );
-
-SnippetCard.propTypes = propTypes;
 
 export default SnippetCard;

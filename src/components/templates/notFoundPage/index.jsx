@@ -5,8 +5,6 @@ import PageBackdrop from 'components/molecules/pageBackdrop';
 import Shell from 'components/organisms/shell';
 import literals from 'lang/en/client/notFound';
 
-const propTypes = {};
-
 /**
  * Renders a not found page.
  * Responsible for rendering the /404 page.
@@ -36,7 +34,5 @@ const NotFoundPage = () => (
     </Shell>
   </>
 );
-
-NotFoundPage.propTypes = propTypes;
 
 export default NotFoundPage;
