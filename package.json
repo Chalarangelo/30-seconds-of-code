@@ -31,7 +31,7 @@
     "jest-transform-stub": "^2.0.0",
     "mdast-util-to-hast": "^10.2.0",
     "next": "^11.1.3",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^2.6.7",
     "node-sass": "^5.0.0",
     "preact": "^10.5.14",
     "prettier": "^2.2.1",
