@@ -1,5 +1,6 @@
 import globalConfig from 'settings/global';
 import literals from 'lang/en';
+import { Schemer } from 'blocks/utilities/schemer';
 import { shuffle } from 'utils';
 
 const routePrefix = globalConfig.websiteUrl;
@@ -99,6 +100,7 @@ export const page = {
         context.pageDescription = literals.pageDescription('main', {
           snippetCount: Snippet.records.published.length,
         });
+        context.structuredData = Schemer.generateHomeData();
       }
       if (page.isSnippet) {
         context.cardTemplate = page.data.cardTemplate;
@@ -113,6 +115,15 @@ export const page = {
             { withDescription: true }
           );
         context.snippet = SnippetContextSerializer.serialize(page.data);
+        context.structuredData = Schemer.generateSnippetData({
+          title: page.data.title,
+          slug: page.relRoute,
+          description: context.snippet.description,
+          cover: context.snippet.cover,
+          firstSeen: page.data.firstSeen,
+          lastUpdated: page.data.lastUpdated,
+          author: page.data.authors.first,
+        });
       }
       if (page.isListing) {
         context.slug = page.relRoute;
@@ -138,6 +149,11 @@ export const page = {
             page.snippets.toArray()
           );
         }
+        context.structuredData = Schemer.generateListingData({
+          title: context.listingName,
+          slug: page.relRoute,
+          items: context.snippetList,
+        });
       }
       if (['StaticPage', 'NotFoundPage'].includes(page.template)) {
         context = { ...page.staticContext };
