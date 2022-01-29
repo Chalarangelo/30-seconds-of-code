@@ -7,7 +7,7 @@ lastUpdated: 2021-10-13T19:29:39+02:00
 
 Eesolves to `useEffect()` on the server and `useLayoutEffect()` on the client.
 
-- Use `typeof` to check if the `window` object is defined. If it is, return the `useLayoutEffect()`. Otherwise return `useEffect()`.
+- Use `typeof` to check if the `Window` object is defined. If it is, return the `useLayoutEffect()`. Otherwise return `useEffect()`.
 
 ```jsx
 const useIsomorphicEffect =

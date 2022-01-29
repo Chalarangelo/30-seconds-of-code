@@ -7,7 +7,7 @@ firstSeen: 2021-09-15T05:00:00-04:00
 Creates a stateful value that is persisted to `sessionStorage`, and a function to update it.
 
 - Use the `useState()` hook with a function to initialize its value lazily.
-- Use a `try...catch` block and `Storage.getItem()` to try and get the value from `sessionStorage`. If no value is found, use `Storage.setItem()` to store the `defaultValue` and use it as the initial state. If an error occurs, use `defaultValue` as the initial state.
+- Use a `try...catch` block and `Storage.getItem()` to try and get the value from `Window.sessionStorage`. If no value is found, use `Storage.setItem()` to store the `defaultValue` and use it as the initial state. If an error occurs, use `defaultValue` as the initial state.
 - Define a function that will update the state variable with the passed value and use `Storage.setItem()` to store it.
 
 ```jsx

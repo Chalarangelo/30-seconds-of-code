@@ -8,7 +8,7 @@ lastUpdated: 2021-10-13T19:29:39+02:00
 Renders a Modal component, controllable through events.
 
 - Define a `keydownHandler` that handles all keyboard events and calls `onClose` when the `Esc` key is pressed.
-- Use the `useEffect()` hook to add or remove the `keydown` event listener to the `document`, calling `keydownHandler` for every event.
+- Use the `useEffect()` hook to add or remove the `keydown` event listener to the `Document`, calling `keydownHandler` for every event.
 - Add a styled `<span>` element that acts as a close button, calling `onClose` when clicked.
 - Use the `isVisible` prop passed down from the parent to determine if the modal should be displayed or not.
 - To use the component, import `Modal` only once and then display it by passing a boolean value to the `isVisible` attribute.

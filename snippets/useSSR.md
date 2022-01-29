@@ -8,7 +8,7 @@ lastUpdated: 2021-03-10T06:38:42+02:00
 Checks if the code is running on the browser or the server.
 
 - Create a custom hook that returns an appropriate object.
-- Use `typeof window`, `window.document` and `Document.createElement()` to check if the code is running on the browser.
+- Use `typeof`, `Window`, `Window.document` and `Document.createElement()` to check if the code is running on the browser.
 - Use the `useState()` hook to define the `inBrowser` state variable.
 - Use the `useEffect()` hook to update the `inBrowser` state variable and clean up at the end.
 - Use the `useMemo()` hook to memoize the return values of the custom hook.
