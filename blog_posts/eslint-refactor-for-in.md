@@ -17,7 +17,7 @@ And here are three refactoring options to deal with it:
 
 ### Object.keys()
 
-`Object.keys()` has the exact same behavior as a `for..in` loop, so it can be used as a drop-in replacement:
+`Object.keys()` has the exact same behavior as a `for...in` loop, so it can be used as a drop-in replacement:
 
 ```js
 const data = [3, 4];
