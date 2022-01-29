@@ -9,7 +9,7 @@ firstSeen: 2021-03-18T11:00:00+02:00
 lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
-On the surface, `Promise.prototype.then()` and `Promise.prototype.finally` seem very similar. But there are a few important differences you need to keep in mind.
+On the surface, `Promise.prototype.then()` and `Promise.prototype.finally()` seem very similar. But there are a few important differences you need to keep in mind.
 
 The first and most obvious one is that `finally()` doesn't receive the resulting value of the promise chain. On the same note, as no value is received by `finally()`, the resolved value of the promise can't be changed as well.
 

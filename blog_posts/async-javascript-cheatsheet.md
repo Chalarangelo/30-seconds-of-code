@@ -17,7 +17,7 @@ lastUpdated: 2021-06-12T19:30:41+03:00
 
 ### Creating promises
 
-- The function passed to a `new Promise` will execute synchronously.
+- The function passed to the `Promise` constructor will execute synchronously.
 - Use `resolve()` or `reject()` to create promises from values.
 - `Promise.resolve(val)` will fulfill the promise with `val`.
 - `Promise.reject(err)` will reject the promise with `err`.

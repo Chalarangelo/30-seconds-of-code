@@ -29,7 +29,7 @@ Conceptually, this work is divided into two phases:
 - **Render phase**: rendering components, calculating changes
 - **Commit phase**: applying the changes to the DOM
 
-After the **commit phase** is complete, React will run `componentDidMount` and `componentDidUpdate` lifecycle methods, as well as `useLayoutEffect` and, after a short timeout, `useEffect` hooks.
+After the **commit phase** is complete, React will run `componentDidMount` and `componentDidUpdate` lifecycle methods, as well as `useLayoutEffect()` and, after a short timeout, `useEffect()` hooks.
 
 Two key takeaways here are the following:
 

@@ -43,7 +43,7 @@ ancestors.forEach(a => {
 });
 ```
 
-If we add an event listener to each element in the tree, as shown above, we would see a listener fired by the `button` first, then each one of the others firing from the nearest ancestor all the way up to `window`.
+If we add an event listener to each element in the tree, as shown above, we would see a listener fired by the `button` first, then each one of the others firing from the nearest ancestor all the way up to `Window`.
 
 ### Event capturing
 
@@ -66,9 +66,9 @@ Given this code, we would see a listener fired for each ancestor of the `button`
 
 Having explained event bubbling and capturing, we can now explain the three phases of event propagation:
 
-- During the **capture phase**, the event starts from `window` and moves down to `document`, the root element and through ancestors of the target element.
+- During the **capture phase**, the event starts from `Window` and moves down to `Document`, the root element and through ancestors of the target element.
 - During the **target phase**, the event gets triggered on the event target (e.g. the `button` the user clicked).
-- During the **bubble phase**, the event bubbles up through ancestors of the target element until the root element, `document` and, finally, `window`.
+- During the **bubble phase**, the event bubbles up through ancestors of the target element until the root element, `Document` and, finally, `Window`.
 
 ### Event delegation
 
@@ -80,7 +80,7 @@ window.addEventListener('click', e => {
 });
 ```
 
-In the above example, we delegate event handling from the `button` to `window` and use `event.target` to get the original event's target.
+In the above example, we delegate event handling from the `button` to `Window` and use `Event.target` to get the original event's target.
 
 Using the event delegation pattern is advantageous for two reasons:
 

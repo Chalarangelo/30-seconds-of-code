@@ -9,11 +9,11 @@ firstSeen: 2020-08-04T20:08:54+03:00
 lastUpdated: 2021-11-06T20:51:47+03:00
 ---
 
-JavaScript does not come with a `sleep()` function out of the box. That's probably a good idea considering the environments where it runs and the trouble it could cause if used incorrectly. The closest equivalent is the `setTimeout` function, but there are other, less common ways to implement a function that will pause execution for a specified amount of time.
+JavaScript does not come with a `sleep()` function out of the box. That's probably a good idea considering the environments where it runs and the trouble it could cause if used incorrectly. The closest equivalent is the `setTimeout()` function, but there are other, less common ways to implement a function that will pause execution for a specified amount of time.
 
 ### setTimeout
 
-JavaScript's `setTimeout` sets a timer which executes some code once the timer expires. Only the code inside the `setTimeout` callback will execute after the timer expires. This can lead to nesting issues, as well as code executing out of order if you are not careful.
+JavaScript's `setTimeout()` sets a timer which executes some code once the timer expires. Only the code inside the `setTimeout()` callback will execute after the timer expires. This can lead to nesting issues, as well as code executing out of order if you are not careful.
 
 ```js
 const printNums = () => {

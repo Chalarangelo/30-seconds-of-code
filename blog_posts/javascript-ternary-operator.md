@@ -12,7 +12,7 @@ lastUpdated: 2021-06-12T19:30:41+03:00
 JavaScript's ternary operator (`?:`), also called the conditional operator, is used to replace a conditional statement, most commonly an assignment. For example:
 
 ```js
-// Code using if..else
+// Code using if...else
 let x;
 if (someCondition) {
   x = 10;
@@ -24,10 +24,10 @@ if (someCondition) {
 const x = someCondition ? 10 : 20;
 ```
 
-As you can tell from the above example, the ternary operator is shorter than using an `if..else` statement and allows us to assign the resulting value to a variable, provided the condition is pretty much a one-liner. A useful result of this is that we can use the ternary operator for arrow functions with implicit returns:
+As you can tell from the above example, the ternary operator is shorter than using an `if...else` statement and allows us to assign the resulting value to a variable, provided the condition is pretty much a one-liner. A useful result of this is that we can use the ternary operator for arrow functions with implicit returns:
 
 ```js
-// Code using if..else
+// Code using if...else
 const conditionalX = (condition, x) => {
   if (condition) return x;
   else return x + 5;
