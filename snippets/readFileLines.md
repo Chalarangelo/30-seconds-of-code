@@ -8,8 +8,8 @@ lastUpdated: 2020-10-22T20:24:04+03:00
 Returns an array of lines from the specified file.
 
 - Use `fs.readFileSync()` to create a `Buffer` from a file.
-- Convert buffer to string using `buf.toString(encoding)` function.
-- Use `String.prototype.split(\n)` to create an array of lines from the contents of the file.
+- Convert buffer to string using `Buffer.toString(encoding)` function.
+- Use `String.prototype.split('\n')` to create an array of lines from the contents of the file.
 
 ```js
 const fs = require('fs');

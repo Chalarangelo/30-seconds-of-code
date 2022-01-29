@@ -6,7 +6,7 @@ firstSeen: 2018-04-11T16:39:49+03:00
 lastUpdated: 2021-01-04T13:04:15+02:00
 ---
 
-Measures the number of times a function is executed per second (`hz`/`hertz`).
+Measures the number of times a function is executed per second (hz/hertz).
 
 - Use `performance.now()` to get the difference in milliseconds before and after the iteration loop to calculate the time elapsed executing the function `iterations` times.
 - Return the number of cycles per second by converting milliseconds to seconds and dividing it by the time elapsed.
