@@ -5,13 +5,13 @@ firstSeen: 2020-10-10T21:09:04+03:00
 lastUpdated: 2020-10-19T18:51:03+03:00
 ---
 
-Creates a debounced function that returns a promise, but delays invoking the provided function until at least `ms` milliseconds have elapsed since the last time it was invoked. 
+Creates a debounced function that returns a promise, but delays invoking the provided function until at least `ms` milliseconds have elapsed since the last time it was invoked.
 All promises returned during this time will return the same data.
 
 - Each time the debounced function is invoked, clear the current pending timeout with `clearTimeout()` and use `setTimeout()` to create a new timeout that delays invoking the function until at least `ms` milliseconds has elapsed.
 - Use `Function.prototype.apply()` to apply the `this` context to the function and provide the necessary arguments.
 - Create a new `Promise` and add its `resolve` and `reject` callbacks to the `pending` promises stack.
-- When `setTimeout` is called, copy the current stack (as it can change between the provided function call and its resolution), clear it and call the provided function.
+- When `setTimeout()` is called, copy the current stack (as it can change between the provided function call and its resolution), clear it and call the provided function.
 - When the provided function resolves/rejects, resolve/reject all promises in the stack (copied when the function was called) with the returned data.
 - Omit the second argument, `ms`, to set the timeout at a default of `0` ms.
 
