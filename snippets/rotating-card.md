@@ -8,8 +8,8 @@ lastUpdated: 2021-03-30T15:24:01+03:00
 Creates a two sided card which rotates on hover.
 
 - Set the `backface-visibility` of the cards to none.
-- Initially, set `rotateY` for the back side of the card to `-180deg` and the front side to `0deg`.
-- Upon hover, set `rotateY` for the front side to `180deg` and backside to `0deg`.
+- Initially, set `rotateY()` for the back side of the card to `-180deg` and the front side to `0deg`.
+- Upon hover, set `rotateY()` for the front side to `180deg` and backside to `0deg`.
 - Set the appropriate `perspective` value to create the rotate effect.
 
 ```html

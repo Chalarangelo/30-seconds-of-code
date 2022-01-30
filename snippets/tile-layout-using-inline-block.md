@@ -10,7 +10,7 @@ Aligns items horizontally using `display: inline-block` to create a 3-tile layou
 - Use `display: inline-block` to create a tiled layout, without using `float`, `flex` or `grid`.
 - Use `width` in combination with `calc` to divide the width of the container evenly into 3 columns.
 - Set `font-size` for `.tiles` to `0` to avoid whitespace and to `20px` for `<h2>` elements to display the text.
-- **Note:** If you use relative units (e.g. `em`), using `font-size: 0;` to fight whitespace between blocks might cause side effects.
+- **Note:** If you use relative units (e.g. `em`), using `font-size: 0` to fight whitespace between blocks might cause side effects.
 
 ```html
 <div class="tiles">
