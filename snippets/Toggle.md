@@ -7,7 +7,7 @@ lastUpdated: 2020-11-16T16:50:57+02:00
 
 Renders a toggle component.
 
-- Use the `useState()` hook to initialize the `isToggleOn` state variable to `defaultToggled`.
+- Use the `useState()` hook to initialize the `isToggledOn` state variable to `defaultToggled`.
 - Render an `<input>` and bind its `onClick` event to update the `isToggledOn` state variable, applying the appropriate `className` to the wrapping `<label>`.
 
 ```css
