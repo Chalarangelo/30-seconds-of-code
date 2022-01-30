@@ -7,7 +7,7 @@ lastUpdated: 2020-10-22T20:24:44+03:00
 
 Finds all unique values in an array.
 
-- Create a `new Set()` from the given array to discard duplicated values.
+- Create a `Set` from the given array to discard duplicated values.
 - Use the spread operator (`...`) to convert it back to an array.
 
 ```js

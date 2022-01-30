@@ -7,7 +7,7 @@ lastUpdated: 2020-11-02T19:40:45+02:00
 
 Creates an array with the non-unique values filtered out.
 
-- Use `new Set()` and the spread operator (`...`) to create an array of the unique values in `arr`.
+- Use the `Set` constructor and the spread operator (`...`) to create an array of the unique values in `arr`.
 - Use `Array.prototype.filter()` to create an array containing only the unique values.
 
 ```js
