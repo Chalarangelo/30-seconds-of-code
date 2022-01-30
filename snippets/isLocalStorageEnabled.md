@@ -8,7 +8,7 @@ lastUpdated: 2020-12-31T13:13:47+02:00
 Checks if `localStorage` is enabled.
 
 - Use a `try...catch` block to return `true` if all operations complete successfully, `false` otherwise.
-- Use `Storage.setItem()` and `Storage.removeItem()` to test storing and deleting a value in `window.localStorage`.
+- Use `Storage.setItem()` and `Storage.removeItem()` to test storing and deleting a value in `Window.localStorage`.
 
 ```js
 const isLocalStorageEnabled = () => {

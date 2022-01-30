@@ -8,7 +8,7 @@ lastUpdated: 2020-10-19T18:51:03+03:00
 Deep freezes an object.
 
 - Use `Object.keys()` to get all the properties of the passed object, `Array.prototype.forEach()` to iterate over them.
-- Call `Object.freeze(obj)` recursively on all properties, applying `deepFreeze()` as necessary.
+- Call `Object.freeze()` recursively on all properties, applying `deepFreeze()` as necessary.
 - Finally, use `Object.freeze()` to freeze the given object.
 
 ```js

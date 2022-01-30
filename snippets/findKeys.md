@@ -7,12 +7,12 @@ lastUpdated: 2020-11-15T14:43:44+02:00
 
 Finds all the keys in the provided object that match the given value.
 
-- Use `Object.keys(obj)` to get all the properties of the object.
+- Use `Object.keys()` to get all the properties of the object.
 - Use `Array.prototype.filter()` to test each key-value pair and return all keys that are equal to the given value.
 
 
 ```js
-const findKeys = (obj, val) => 
+const findKeys = (obj, val) =>
   Object.keys(obj).filter(key => obj[key] === val);
 ```
 

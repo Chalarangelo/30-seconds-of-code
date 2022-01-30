@@ -8,7 +8,7 @@ lastUpdated: 2020-10-22T20:24:44+03:00
 Generates a UUID in a browser.
 
 - Use `Crypto.getRandomValues()` to generate a UUID, compliant with [RFC4122](https://www.ietf.org/rfc/rfc4122.txt) version 4.
-- Use `Number.prototype.toString(16)` to convert it to a proper UUID.
+- Use `Number.prototype.toString()` to convert it to a proper UUID (hexadecimal string).
 
 ```js
 const UUIDGeneratorBrowser = () =>
