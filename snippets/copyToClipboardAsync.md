@@ -10,7 +10,7 @@ Copies a string to the clipboard, returning a promise that resolves when the cli
 - Use `Clipboard.writeText()` to write the given value, `str`, to the clipboard.
 - Return the result of `Clipboard.writeText()`, which is a promise that resolves when the clipboard's contents have been updated.
 - In case that the Clipboard API is not available, use `Promise.reject()` to reject with an appropriate message.
-- **Note:** If you need to support older browsers, you might want to use `Document.execCommand('copy')` instead. You can find out more about it in the [copyToClipboard snippet](/js/s/copy-to-clipboard).
+- **Note:** If you need to support older browsers, you might want to use `Document.execCommand()` instead. You can find out more about it in the [copyToClipboard snippet](/js/s/copy-to-clipboard).
 
 ```js
 const copyToClipboardAsync = str => {
