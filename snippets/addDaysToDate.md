@@ -7,7 +7,7 @@ lastUpdated: 2020-11-28T19:18:29+02:00
 
 Calculates the date of `n` days from the given date, returning its string representation.
 
-- Use `new Date()` to create a date object from the first argument.
+- Use the `Date` constructor to create a `Date` object from the first argument.
 - Use `Date.prototype.getDate()` and `Date.prototype.setDate()` to add `n` days to the given date.
 - Use `Date.prototype.toISOString()` to return a string in `yyyy-mm-dd` format.
 
