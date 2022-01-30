@@ -41,7 +41,7 @@ const nonEmptyValues = values.filter(Boolean);
 
 ### Handle Boolean objects with care
 
-While the `Boolean()` function is pretty useful, you might run into some issues with the `Boolean` object and the `new Boolean()` constructor. The `Boolean` object is an object wrapper for a boolean value, but the tricky part is that, as an object, it's always truthy even if the contained value is `false`!
+While the `Boolean()` function is pretty useful, you might run into some issues with the `Boolean` object and the `Boolean` constructor. The `Boolean` object is an object wrapper for a boolean value, but the tricky part is that, as an object, it's always truthy even if the contained value is `false`!
 
 ```js
 let x = new Boolean(false);
@@ -51,4 +51,4 @@ if (x) {
 }
 ```
 
-For example, the above code will consider `x` truthy, even if it clearly contains `false` as its value. This might some confusing, but you can easily avoid it if you generally avoid using `Boolean` objects and the `new Boolean()` constructor, unless you are entirely certain that you need to use it for some reason. I cannot find any scenarios where I would need to use this, to be honest, so it might not be all that common to begin with.
+For example, the above code will consider `x` truthy, even if it clearly contains `false` as its value. This might some confusing, but you can easily avoid it if you generally avoid using `Boolean` objects and the `Boolean` constructor, unless you are entirely certain that you need to use it for some reason. I cannot find any scenarios where I would need to use this, to be honest, so it might not be all that common to begin with.

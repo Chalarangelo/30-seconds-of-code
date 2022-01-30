@@ -32,19 +32,19 @@ In the example above, we use `NodeList.prototype.forEach()` to iterate over matc
 
 ### Arrow functions as callbacks
 
-As we have already explained, arrow functions do not have their own bindings for `this`. So what happens if we convert the previous code snippet's callback to an arrow function? Its `this` context refers to the global one, which in this case is the `window` object.
+As we have already explained, arrow functions do not have their own bindings for `this`. So what happens if we convert the previous code snippet's callback to an arrow function? Its `this` context refers to the global one, which in this case is the `Window` object.
 
 ```js
 const toggleElements = document.querySelectorAll('.toggle');
 toggleElements.forEach(el => {
   el.addEventListener('click', () => {
-    this.classList.toggle('active'); // `this` refers to `window`
+    this.classList.toggle('active'); // `this` refers to `Window`
     // Error: Cannot read property 'toggle' of undefined
   });
 });
 ```
 
-This code will fire the event listener and execute the callback anytime the matching element is clicked. It will, however, throw an error, due to the `window` object not having a `classList` property. Oftentimes, the code could even fail silently. An example would be a condition that always evaluates to `false` for `window`, but could evaluate to `true` for a given element. Issues like that result in many headaches and wasted hours until you can uncover and fix them.
+This code will fire the event listener and execute the callback anytime the matching element is clicked. It will, however, throw an error, due to the `Window` object not having a `classList` property. Oftentimes, the code could even fail silently. An example would be a condition that always evaluates to `false` for `Window`, but could evaluate to `true` for a given element. Issues like that result in many headaches and wasted hours until you can uncover and fix them.
 
 To deal with this, one could simply use the first argument of the callback function and `Event.target` or `Event.currentTarget` depending on their needs:
 

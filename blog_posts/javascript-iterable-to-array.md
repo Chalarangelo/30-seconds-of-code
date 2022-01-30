@@ -36,7 +36,7 @@ Note that the above example is the basis for the [uniqueElements snippet](/js/s/
 
 ### NodeList
 
-A [NodeList](https://developer.mozilla.org/en-US/docs/Web/API/NodeList) is a collection of nodes, returned by methods such as `document.childNodes()` or `document.querySelectorAll()`. While it implements some methods that help manipulate it as an array (e.g. `NodeList.prototype.forEach()`), it's oftentimes desirable to convert it to an array. When the spread operator is applied to it, the result is an array of the contained nodes:
+A [NodeList](https://developer.mozilla.org/en-US/docs/Web/API/NodeList) is a collection of nodes, returned by methods such as `Document.childNodes()` or `Document.querySelectorAll()`. While it implements some methods that help manipulate it as an array (e.g. `NodeList.prototype.forEach()`), it's oftentimes desirable to convert it to an array. When the spread operator is applied to it, the result is an array of the contained nodes:
 
 ```js
 const nodes = document.childNodes;

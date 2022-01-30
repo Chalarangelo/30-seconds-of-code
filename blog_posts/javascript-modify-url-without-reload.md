@@ -30,7 +30,7 @@ The arguments for both methods are the same, allowing you to pass a customized s
 
 ### Using the Location API
 
-The older [Location API](https://developer.mozilla.org/en-US/docs/Web/API/Location) is not the best tool for the job. It reloads the page, but still allows you to modify the current URL and might be useful when working with legacy browsers. You can modify the URL, using either `window.location.href`, `location.assign()` or `location.replace()`:
+The older [Location API](https://developer.mozilla.org/en-US/docs/Web/API/Location) is not the best tool for the job. It reloads the page, but still allows you to modify the current URL and might be useful when working with legacy browsers. You can modify the URL, using either `Window.location.href`, `location.assign()` or `location.replace()`:
 
 ```js
 // Current URL: https://my-website.com/page_a
