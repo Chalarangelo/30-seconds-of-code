@@ -8,11 +8,11 @@ lastUpdated: 2020-10-22T20:23:47+03:00
 Finds the first key that satisfies the provided testing function.
 Otherwise `undefined` is returned.
 
-- Use `Object.keys(obj)` to get all the properties of the object, `Array.prototype.find()` to test each key-value pair using `fn`.
+- Use `Object.keys()` to get all the properties of the object, `Array.prototype.find()` to test each key-value pair using `fn`.
 - The callback receives three arguments - the value, the key and the object.
 
 ```js
-const findKey = (obj, fn) => 
+const findKey = (obj, fn) =>
   Object.keys(obj).find(key => fn(obj[key], key, obj));
 ```
 
