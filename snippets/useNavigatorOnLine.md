@@ -7,7 +7,7 @@ lastUpdated: 2020-11-16T14:17:53+02:00
 
 Checks if the client is online or offline.
 
-- Create a function, `getOnLineStatus`, that uses the `NavigatorOnLine` web API to get the online status of the client.
+- Create a function, `getOnLineStatus`, that uses the `Navigator.onLine` web API to get the online status of the client.
 - Use the `useState()` hook to create an appropriate state variable, `status`, and setter.
 - Use the `useEffect()` hook to add listeners for appropriate events, updating state, and cleanup those listeners when unmounting.
 - Finally return the `status` state variable.

@@ -7,7 +7,7 @@ firstSeen: 2021-12-01T05:00:00-04:00
 Executes a callback whenever the window is resized.
 
 - Use the `useRef()` hook to create a variable, `listener`, which will hold the listener reference.
-- Use the `useEffect()` hook and `EventTarget.addEventListener()` to listen to the `'resize'` event of the `window` global object.
+- Use the `useEffect()` hook and `EventTarget.addEventListener()` to listen to the `'resize'` event of the `Window` global object.
 - Use `EventTarget.removeEventListener()` to remove any existing listeners and clean up when the component unmounts.
 
 ```jsx
