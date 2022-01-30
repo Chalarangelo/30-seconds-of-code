@@ -40,7 +40,7 @@ While this most likely means that fewer components will have to re-render compar
 React-Redux provides two ways of connecting to its store, performing the necessary work and returning the combined `props`:
 
 - `connect` (any component): Higher-order component (HOC) that wraps any given component
-- `useSeletor` (function components): Hook called inside function components
+- `useSelector` (function components): Hook called inside function components
 
 `connect` acts a lot like memoizing a React component (i.e. using `React.PureComponent` or `React.memo()`), updating the wrapped component only when the combined `props` have changed. This means that passing new references from the parent or the passed functions will still cause a re-render. Components wrapped with `connect` usually read smaller pieces of data from the store state, are less likely to re-render due to that and usually affect fewer components down their tree.
 

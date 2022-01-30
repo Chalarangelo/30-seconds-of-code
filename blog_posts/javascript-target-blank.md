@@ -9,7 +9,7 @@ firstSeen: 2020-11-20T09:19:07+02:00
 lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
-Oftentimes, when linking to an external resource from our websites, we use `target="_blank"` to open the linked page in a new tab or window. But there is a security risk we should be aware of. The new tab gains limited access to the linking page (i.e. our website) via `window.opener`, which it can then use to alter the linking page's URL via `window.opener.location` (this is known as tabnabbing).
+Oftentimes, when linking to an external resource from our websites, we use `target="_blank"` to open the linked page in a new tab or window. But there is a security risk we should be aware of. The new tab gains limited access to the linking page (i.e. our website) via `Window.opener`, which it can then use to alter the linking page's URL via `Window.opener.location` (this is known as tabnabbing).
 
 This might be a problem if the external resource is not trustworthy, might have been hacked, the domain has changed owners over the years etc. There is no guarantee that a third-party resource, no matter how trustworthy, can be actually trusted with our users' security and we, as developers, should always be aware of this risk.
 

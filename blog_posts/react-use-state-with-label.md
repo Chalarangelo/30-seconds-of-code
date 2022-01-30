@@ -9,7 +9,7 @@ firstSeen: 2021-05-06T12:00:00+03:00
 lastUpdated: 2021-11-07T16:34:37+03:00
 ---
 
-When working with multiple `useState` hooks in React, things can get a bit complicated while debugging. Luckily, there's an easy way to label these values, using the [`useDebugValue`](https://reactjs.org/docs/hooks-reference.html#usedebugvalue) hook to create a custom `useStateWithLabel` hook:
+When working with multiple `useState()` hooks in React, things can get a bit complicated while debugging. Luckily, there's an easy way to label these values, using the [`useDebugValue`](https://reactjs.org/docs/hooks-reference.html#usedebugvalue) hook to create a custom `useStateWithLabel` hook:
 
 ```jsx
 const useStateWithLabel = (initialValue, label) => {
@@ -30,4 +30,4 @@ ReactDOM.render(<Counter />, document.getElementById('root'));
 //  StateWithLabel: "counter: 0"
 ```
 
-This hook is obviously meant mainly for development, but it can also be useful when creating React component or hook libraries. Additionally, you can easily abstract it in a way that the label is ignored in production builds. An example would be exporting a hook that defaults back to `useState` when building for a production environment.
+This hook is obviously meant mainly for development, but it can also be useful when creating React component or hook libraries. Additionally, you can easily abstract it in a way that the label is ignored in production builds. An example would be exporting a hook that defaults back to `useState()` when building for a production environment.
