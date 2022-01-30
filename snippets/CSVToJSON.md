@@ -2,14 +2,16 @@
 title: CSVToJSON
 tags: string,object,advanced
 firstSeen: 2018-06-27T21:14:24+03:00
-lastUpdated: 2020-11-03T22:11:18+02:00
+lastUpdated: 2022-01-30T12:14:39+02:00
 ---
 
 Converts a comma-separated values (CSV) string to a 2D array of objects.
 The first row of the string is used as the title row.
 
-- Use `Array.prototype.slice()` and `Array.prototype.indexOf('\n')` and `String.prototype.split(delimiter)` to separate the first row (title row) into values.
-- Use `String.prototype.split('\n')` to create a string for each row, then `Array.prototype.map()` and `String.prototype.split(delimiter)` to separate the values in each row.
+- Use `Array.prototype.indexOf()` to find the first newline character (`\n`).
+- Use `Array.prototype.slice()` to remove the first row (title row) and `String.prototype.split()` to separate it into values, using the provided `delimiter`.
+- Use `String.prototype.split()` to create a string for each row.
+- Use `String.prototype.split()` to separate the values in each row, using the provided `delimiter`.
 - Use `Array.prototype.reduce()` to create an object for each row's values, with the keys parsed from the title row.
 - Omit the second argument, `delimiter`, to use a default delimiter of `,`.
 
