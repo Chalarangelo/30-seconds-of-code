@@ -6,8 +6,8 @@ firstSeen: 2021-09-27T05:00:00-04:00
 
 Sets the title of the page
 
-- Use `typeof` to determine if the `document` is defined or not.
-- Use the `useRef()` hook to store the original title of the `document`, if defined.
+- Use `typeof` to determine if the `Document` is defined or not.
+- Use the `useRef()` hook to store the original title of the `Document`, if defined.
 - Use the `useEffect()` hook to set `Document.title` to the passed value when the component mounts and clean up when unmounting.
 
 ```jsx
