@@ -7,7 +7,7 @@ lastUpdated: 2020-11-02T19:27:53+02:00
 
 Creates a dictionary with the unique values of a list as keys and their frequencies as the values.
 
-- Use `collections.defaultdict()` to store the frequencies of each unique element.
+- Use `collections.defaultdict` to store the frequencies of each unique element.
 - Use `dict()` to return a dictionary with the unique elements of the list as keys and their frequencies as the values.
 
 ```py
