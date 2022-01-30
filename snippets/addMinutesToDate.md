@@ -7,7 +7,7 @@ lastUpdated: 2020-11-28T19:27:46+02:00
 
 Calculates the date of `n` minutes from the given date, returning its string representation.
 
-- Use `new Date()` to create a date object from the first argument.
+- Use the `Date` constructor to create a `Date` object from the first argument.
 - Use `Date.prototype.getTime()` and `Date.prototype.setTime()` to add `n` minutes to the given date.
 - Use `Date.prototype.toISOString()`, `String.prototype.split()` and `String.prototype.replace()` to return a string in `yyyy-mm-dd HH:MM:SS` format.
 

@@ -7,7 +7,7 @@ lastUpdated: 2020-10-22T20:24:30+03:00
 
 Returns the symmetric difference between two arrays, after applying the provided function to each array element of both.
 
-- Create a `new Set()` from each array to get the unique values of each one after applying `fn` to them.
+- Create a `Set` from each array to get the unique values of each one after applying `fn` to them.
 - Use `Array.prototype.filter()` on each of them to only keep values not contained in the other.
 
 ```js
