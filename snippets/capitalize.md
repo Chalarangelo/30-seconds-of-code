@@ -8,7 +8,7 @@ lastUpdated: 2020-11-01T20:50:57+02:00
 Capitalizes the first letter of a string.
 
 - Use array destructuring and `String.prototype.toUpperCase()` to capitalize the first letter of the string.
-- Use `Array.prototype.join('')` to combine the capitalized `first` with the `...rest` of the characters.
+- Use `Array.prototype.join()` to combine the capitalized `first` with the `...rest` of the characters.
 - Omit the `lowerRest` argument to keep the rest of the string intact, or set it to `true` to convert to lowercase.
 
 ```js
