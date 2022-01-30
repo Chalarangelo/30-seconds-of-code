@@ -5,7 +5,7 @@ firstSeen: 2019-08-21T13:18:52+03:00
 lastUpdated: 2020-11-16T14:17:53+02:00
 ---
 
-Implements `setInterval` in a declarative manner.
+Implements `setInterval()` in a declarative manner.
 
 - Create a custom hook that takes a `callback` and a `delay`.
 - Use the `useRef()` hook to create a `ref` for the callback function.

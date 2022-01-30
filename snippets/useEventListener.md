@@ -9,7 +9,7 @@ Adds an event listener for the specified event type on the given element.
 - Use the `useRef()` hook to create a ref that will hold the `handler`.
 - Use the `useEffect()` hook to update the value of the `savedHandler` ref any time the `handler` changes.
 - Use the `useEffect()` hook to add an event listener to the given element and clean up when unmounting.
-- Omit the last argument, `el`, to use the `window` by default.
+- Omit the last argument, `el`, to use the `Window` by default.
 
 ```jsx
 const useEventListener = (type, handler, el = window) => {

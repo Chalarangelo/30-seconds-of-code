@@ -5,7 +5,7 @@ firstSeen: 2019-08-21T14:23:57+03:00
 lastUpdated: 2021-01-07T23:57:13+02:00
 ---
 
-Implements `fetch` in a declarative manner.
+Implements `fetch()` in a declarative manner.
 
 - Create a custom hook that takes a `url` and `options`.
 - Use the `useState()` hook to initialize the `response` and `error` state variables.
