@@ -8,7 +8,7 @@ lastUpdated: 2020-10-20T23:02:01+03:00
 Checks if the provided value is of the specified type.
 
 - Ensure the value is not `undefined` or `null` using `Array.prototype.includes()`.
-- Compare the `constructor` property on the value with `type` to check if the provided value is of the specified `type`.
+- Use `Object.prototype.constructor` to compare the constructor property on the value with `type` to check if the provided value is of the specified `type`.
 
 ```js
 const is = (type, val) => ![, null].includes(val) && val.constructor === type;
