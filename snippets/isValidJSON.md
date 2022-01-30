@@ -7,7 +7,7 @@ lastUpdated: 2020-10-18T13:49:49+03:00
 
 Checks if the provided string is a valid JSON.
 
-- Use `JSON.parse()` and a `try... catch` block to check if the provided string is a valid JSON.
+- Use `JSON.parse()` and a `try...catch` block to check if the provided string is a valid JSON.
 
 ```js
 const isValidJSON = str => {
