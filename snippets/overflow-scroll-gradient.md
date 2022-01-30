@@ -7,7 +7,7 @@ lastUpdated: 2021-10-13T19:29:39+02:00
 
 Adds a fading gradient to an overflowing element to better indicate there is more content to be scrolled.
 
-- Use the `:after` pseudo-element to create a `linear-gradient` that fades from `transparent` to `white` (top to bottom).
+- Use the `:after` pseudo-element to create a `linear-gradient()` that fades from `transparent` to `white` (top to bottom).
 - Use `position: absolute`, `width` and `height` to place and size the pseudo-element in its parent.
 - Use `pointer-events: none` to exclude the pseudo-element from mouse events, allowing text behind it to still be selectable/interactive.
 
