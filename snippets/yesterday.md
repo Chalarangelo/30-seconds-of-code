@@ -7,7 +7,7 @@ lastUpdated: 2020-10-22T20:24:44+03:00
 
 Results in a string representation of yesterday's date.
 
-- Use `new Date()` to get the current date.
+- Use the `Date` constructor to get the current date.
 - Decrement it by one using `Date.prototype.getDate()` and set the value to the result using `Date.prototype.setDate()`.
 - Use `Date.prototype.toISOString()` to return a string in `yyyy-mm-dd` format.
 

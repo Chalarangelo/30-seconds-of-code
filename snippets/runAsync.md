@@ -7,9 +7,9 @@ lastUpdated: 2020-10-22T20:24:30+03:00
 
 Runs a function in a separate thread by using a [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), allowing long running functions to not block the UI.
 
-- Create a `new Worker()` using a `Blob` object URL, the contents of which should be the stringified version of the supplied function.
+- Create a `Worker` using a `Blob` object URL, the contents of which should be the stringified version of the supplied function.
 - Immediately post the return value of calling the function back.
-- Return a `new Promise()`, listening for `onmessage` and `onerror` events and resolving the data posted back from the worker, or throwing an error.
+- Return a `Promise`, listening for `onmessage` and `onerror` events and resolving the data posted back from the worker, or throwing an error.
 
 ```js
 const runAsync = fn => {

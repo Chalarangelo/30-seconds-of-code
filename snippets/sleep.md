@@ -7,7 +7,7 @@ lastUpdated: 2020-10-22T20:24:30+03:00
 
 Delays the execution of an asynchronous function.
 
-- Delay executing part of an `async` function, by putting it to sleep, returning a `new Promise()`.
+- Delay executing part of an `async` function, by putting it to sleep, returning a `Promise`.
 
 ```js
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
