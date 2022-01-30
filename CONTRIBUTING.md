@@ -44,5 +44,6 @@ In order to create a new snippet, you should follow the steps below:
 - Always use single quotes for string literals. Use template literals, instead, if necessary.
 - Use strict equality checking (`===` and `!==` instead of `==` and `!=`).
 - When describing snippets, refer to methods, using their full name. For example, use `Array.prototype.reduce()`, instead of `reduce()`.
+- When referring to constructors, use the prototype's name. For example, use `Array` instead of `new Array()`.
 - Use variables only when necessary. Prefer `const` when the values are not altered after assignment, otherwise, use `let`. Do not use `var`.
 - Never use `eval()`. Your snippet will be disqualified immediately.
