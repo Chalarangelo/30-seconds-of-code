@@ -20,22 +20,24 @@ export const snippetContextSerializer = {
       snippet.cover
         ? `/${pathSettings.staticAssetPath}/${snippet.cover}`
         : undefined,
-    firstSeenFormatted: snippet =>
-      snippet.firstSeen.toLocaleDateString('en-US', {
+    dateFormatted: snippet =>
+      snippet.lastUpdated.toLocaleDateString('en-US', {
         day: 'numeric',
         month: 'short',
         year: 'numeric',
       }),
+    fullDescription: snippet => snippet.html.fullDescription,
   },
   attributes: [
     'id',
     'title',
     'description',
+    'fullDescription',
+    'codeBlocks',
     'url',
     'slug',
-    ['firstSeenFormatted', 'firstSeen'],
+    ['dateFormatted', 'date'],
     'expertise',
-    ['formattedLanguages', 'language'],
     'icon',
     ['formattedTags', 'tags'],
     'html',
