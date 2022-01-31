@@ -108,14 +108,6 @@ describe('<Meta />', () => {
       );
     });
 
-    it('should render the passed structured data', () => {
-      expect(
-        [...document.head.querySelectorAll('script')].find(
-          v => v.innerHTML.indexOf('TechArticle') !== -1
-        ).type
-      ).toBe('application/ld+json');
-    });
-
     it('should render the passed breadcrumbs structured data', () => {
       expect(
         [...document.head.querySelectorAll('script')].find(

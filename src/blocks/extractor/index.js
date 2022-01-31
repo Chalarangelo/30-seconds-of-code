@@ -25,7 +25,7 @@ export class Extractor {
     const snippets = await Extractor.extractSnippets(
       contentDir,
       contentConfigs,
-      languageData
+      [...languageData.values()]
     );
     const tagData = Extractor.processTagData(contentConfigs, snippets);
     const { mainListing, collectionListing } = Extractor.extractHubConfig(

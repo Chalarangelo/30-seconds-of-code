@@ -235,8 +235,9 @@ describe('Application/Schema', () => {
     describe('property: formattedTags', () => {
       it('returns the formatted tags', () => {
         const snippet = Snippet.records.get('js/s/format-duration');
-        expect(snippet.formattedTags.primary).toEqual('Date');
-        expect(snippet.formattedTags.all).toEqual(['Date', 'Math', 'String']);
+        expect(snippet.formattedTags).toEqual(
+          ['JavaScript', 'Date', 'Math', 'String'].join(', ')
+        );
       });
     });
 
@@ -249,20 +250,6 @@ describe('Application/Schema', () => {
       it('returns false if the snippet has only one language', () => {
         const snippet = Snippet.records.get('js/s/format-duration');
         expect(snippet.hasOtherLanguages).toBe(false);
-      });
-    });
-
-    describe('property: formattedLanguages', () => {
-      it('returns the formatted languages', () => {
-        const snippet = Snippet.records.get('css/s/triangle');
-        expect(snippet.formattedLanguages.short).toEqual('css');
-        expect(snippet.formattedLanguages.long).toEqual('CSS');
-        expect(snippet.formattedLanguages.otherLanguages[0].short).toEqual(
-          'html'
-        );
-        expect(snippet.formattedLanguages.otherLanguages[0].long).toEqual(
-          'HTML'
-        );
       });
     });
 

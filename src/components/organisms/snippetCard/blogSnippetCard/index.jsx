@@ -25,13 +25,11 @@ const SnippetCard = ({ snippet }) => (
         </Fragment>
       ))}
       {' · '}
-      {new Date(snippet.firstSeen).toLocaleDateString('en-US', {
-        day: 'numeric',
-        month: 'short',
-        year: 'numeric',
-      })}
-      {' · '}
-      <CardSubtitle>{snippet.tags.all.join(', ')}</CardSubtitle>
+      <CardSubtitle>
+        {snippet.tags}
+        {' · '}
+        {snippet.date}
+      </CardSubtitle>
     </div>
     {snippet.cover && (
       <Image
@@ -44,7 +42,7 @@ const SnippetCard = ({ snippet }) => (
     )}
     <div
       className='card-description flex flex-col'
-      dangerouslySetInnerHTML={{ __html: snippet.html.fullDescription }}
+      dangerouslySetInnerHTML={{ __html: snippet.fullDescription }}
     />
     <Actions snippet={snippet} />
   </Card>

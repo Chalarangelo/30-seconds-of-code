@@ -74,32 +74,15 @@ export const snippet = {
     },
     formattedPrimaryTag: snippet => literals.tag(snippet.primaryTag),
     formattedTags: snippet => {
-      return {
-        primary: literals.tag(snippet.primaryTag),
-        all: snippet.tags
-          .filter(tag => !expertiseLevels.includes(tag))
-          .map(literals.tag),
-      };
+      let tags = snippet.tags
+        .filter(tag => !expertiseLevels.includes(tag))
+        .map(literals.tag);
+      if (!snippet.isBlog) tags.unshift(snippet.language.name);
+      return tags.join(', ');
     },
     hasOtherLanguages: snippet =>
       snippet.repository.otherLanguages &&
       snippet.repository.otherLanguages.length > 0,
-    formattedLanguages: snippet => {
-      if (snippet.isBlog) return {};
-      const lang = {
-        short: snippet.language.short,
-        long: snippet.language.name,
-      };
-      if (snippet.hasOtherLanguages) {
-        lang.otherLanguages = snippet.repository.otherLanguages.flatMap(
-          lang => ({
-            short: lang.short,
-            long: lang.name,
-          })
-        );
-      }
-      return lang;
-    },
     isBlog: snippet => snippet.type.startsWith('blog'),
     isCSS: snippet => snippet.repository.isCSS,
     isReact: snippet => snippet.repository.isReact,
@@ -174,6 +157,49 @@ export const snippet = {
       });
 
       return crumbs;
+    },
+    codeBlocks: snippet => {
+      if (snippet.isBlog) return [];
+      if (snippet.isCSS) {
+        let blocks = [
+          {
+            language: { short: 'html', long: 'HTML' },
+            htmlContent: snippet.html.html,
+          },
+          {
+            language: { short: 'css', long: 'CSS' },
+            htmlContent: snippet.html.css,
+          },
+        ];
+        if (snippet.html.js)
+          blocks.push({
+            language: { short: 'js', long: 'JavaScript' },
+            htmlContent: snippet.html.js,
+          });
+        return blocks;
+      }
+      let blocks = [
+        {
+          language: {
+            short: snippet.language.short,
+            long: snippet.language.name,
+          },
+          htmlContent: snippet.html.code,
+        },
+        {
+          language: {
+            short: snippet.language.short,
+            long: literals.examples,
+          },
+          htmlContent: snippet.html.example,
+        },
+      ];
+      if (snippet.html.style)
+        blocks.unshift({
+          language: { short: 'css', long: 'CSS' },
+          htmlContent: snippet.html.style,
+        });
+      return blocks;
     },
     hasCollection: snippet =>
       Boolean(snippet.collections && snippet.collections.length),

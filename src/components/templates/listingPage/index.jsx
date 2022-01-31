@@ -20,6 +20,7 @@ const ListingPage = ({
   listingImage,
   listingSublinks = [],
   pageDescription,
+  structuredData,
 }) => {
   const hasImageOrDescription = Boolean(listingImage || listingDescription);
 
@@ -28,12 +29,7 @@ const ListingPage = ({
       <Meta
         title={listingName}
         description={pageDescription}
-        structuredData={{
-          title: listingName,
-          slug,
-          items: snippetList,
-          type: 'listing',
-        }}
+        structuredData={structuredData}
         canonical={slug}
       />
       <Shell>

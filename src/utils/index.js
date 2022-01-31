@@ -15,8 +15,6 @@ import { uniqueElements, chunk, sample, shuffle } from './array';
 
 import { throttle } from './function';
 
-import { generateStructuredData } from './object';
-
 export {
   capitalize,
   toKebabCase,
@@ -28,7 +26,6 @@ export {
   optimizeAllNodes,
   getURLParameters,
   throttle,
-  generateStructuredData,
   uniqueElements,
   chunk,
   sample,

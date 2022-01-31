@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import settings from 'settings/global';
 import literals from 'lang/en/client/common';
-import { generateStructuredData } from 'utils';
 import { useShellState } from 'state/shell';
 
 /**
@@ -35,9 +34,7 @@ const Meta = ({
     scripts.push({
       type: 'application/ld+json',
       key: 'structured-data',
-      innerHTML: JSON.stringify(
-        generateStructuredData(structuredData, settings, logoSrc)
-      ),
+      innerHTML: JSON.stringify(structuredData),
     });
   }
 
