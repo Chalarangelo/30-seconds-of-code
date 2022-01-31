@@ -4,7 +4,6 @@ import cards from './index';
 import SnippetFactory from 'test/fixtures/factories/snippet';
 
 const fullSnippet = SnippetFactory.create('FullSnippet');
-const fullCssSnippet = SnippetFactory.create('FullCssSnippet');
 const fullBlogSnippet = SnippetFactory.create('FullBlogSnippet');
 
 describe('<SnippetCardWrapper />', () => {
@@ -20,18 +19,6 @@ describe('<SnippetCardWrapper />', () => {
     afterEach(cleanup);
 
     it('should render a StandardSnippetCard component', () => {
-      expect(wrapper.querySelectorAll('.snippet-card')).toHaveLength(1);
-    });
-  });
-
-  describe('css snippet card template', () => {
-    beforeEach(() => {
-      const SnippetCard = cards['CssSnippetCard'];
-      wrapper = renderWithContext(<SnippetCard snippet={fullCssSnippet} />)
-        .container;
-    });
-
-    it('should render a CssSnippetCard component', () => {
       expect(wrapper.querySelectorAll('.snippet-card')).toHaveLength(1);
     });
   });

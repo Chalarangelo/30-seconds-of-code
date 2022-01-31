@@ -123,21 +123,11 @@ factory
     slug: '',
     firstSeen: '2018-07-14T07:59:56.000Z',
     lastUpdated: '2019-08-13T07:29:12.000Z',
-    language: {
-      long: '',
-      short: '',
-      otherLanguages: null,
-    },
     tags: {
       all: [],
     },
-    html: {
-      code: '',
-      example: '',
-      style: null,
-      description: '<p></p>',
-      fullDescription: '<p></p>',
-    },
+    fullDescription: '<p></p>',
+    codeBlocks: [],
     actionType: 'copy',
     code: {
       src: '',
@@ -148,28 +138,7 @@ factory
   .trait('core attributes', type => {
     const title = factory.nextFrom('word');
     const lang = type === 'Blog' ? 'blog' : factory.nextFrom('language');
-    const tags = factory.nextFrom('words');
-
-    const otherLanguages =
-      type === 'react'
-        ? [
-            {
-              short: 'css',
-              long: 'CSS',
-            },
-          ]
-        : type === 'css'
-        ? [
-            {
-              short: 'html',
-              long: 'HTML',
-            },
-            {
-              short: 'js',
-              long: 'JavaScript',
-            },
-          ]
-        : null;
+    const tags = [lang, factory.nextFrom('words')].join(', ');
 
     return {
       id: `30${lang.toLowerCase()}/snippets/${title}`,
@@ -177,17 +146,6 @@ factory
       description: factory.nextFrom('shortText'),
       url: `https://github.com/30-seconds/30-seconds-of-${lang.toLowerCase()}/blob/master/snippets/${title}.md`,
       slug: `/${lang.toLowerCase()}/s/${title}`,
-      language:
-        type === 'blog'
-          ? {
-              long: '',
-              short: '',
-            }
-          : {
-              long: lang,
-              short: lang.toLowerCase(),
-              otherLanguages,
-            },
       icon: lang.toLowerCase(),
       actionType:
         type === 'css' ? 'cssCodepen' : type === 'react' ? 'codepen' : 'copy',
@@ -198,42 +156,50 @@ factory
     const types = ['keyword', 'function', 'variable'];
     const codeText = factory.nextFrom('shortText');
     const exampleText = factory.nextFrom('shortText');
-    const code = codeText
-      .split(' ')
-      .map(w => {
-        const tokenType = types[Math.floor(Math.random() * 3)];
-        return `<span class="token ${tokenType}">${w}</span>`;
-      })
-      .join(' ');
+    const code = {
+      language:
+        type === 'react'
+          ? { long: 'React', short: 'jsx' }
+          : { long: 'JavaScript', short: 'js' },
+      htmlContent: codeText
+        .split(' ')
+        .map(w => {
+          const tokenType = types[Math.floor(Math.random() * 3)];
+          return `<span class="token ${tokenType}">${w}</span>`;
+        })
+        .join(' '),
+    };
 
-    const example = exampleText
-      .split(' ')
-      .map(w => {
-        const tokenType = types[Math.floor(Math.random() * 3)];
-        return `<span class="token ${tokenType}">${w}</span>`;
-      })
-      .join(' ');
+    const example = {
+      language: { short: type === 'react' ? 'jsx' : 'js', long: 'Example' },
+      htmlContent: exampleText
+        .split(' ')
+        .map(w => {
+          const tokenType = types[Math.floor(Math.random() * 3)];
+          return `<span class="token ${tokenType}">${w}</span>`;
+        })
+        .join(' '),
+    };
 
     const styleText = type === 'react' ? factory.nextFrom('shortText') : null;
     const style =
       type === 'react'
-        ? styleText
-            .split(' ')
-            .map(w => {
-              const tokenType = types[Math.floor(Math.random() * 3)];
-              return `<span class="token ${tokenType}">${w}</span>`;
-            })
-            .join(' ')
+        ? {
+            language: { short: 'css', long: 'CSS' },
+            htmlContent: styleText
+              .split(' ')
+              .map(w => {
+                const tokenType = types[Math.floor(Math.random() * 3)];
+                return `<span class="token ${tokenType}">${w}</span>`;
+              })
+              .join(' '),
+          }
         : null;
 
     return {
-      html: {
-        code,
-        example,
-        style,
-        description: `<p>${factory.nextFrom('shortText')}</p>`,
-        fullDescription: `<p>${factory.nextFrom('longText')}</p>`,
-      },
+      description: `<p>${factory.nextFrom('shortText')}</p>`,
+      fullDescription: `<p>${factory.nextFrom('shortText')}</p>`,
+      codeBlocks: [style, code, example].filter(Boolean),
       code: {
         src: codeText,
         example: exampleText,
@@ -273,13 +239,22 @@ factory
       : '';
 
     return {
-      html: {
-        html,
-        css,
-        js,
-        description: `<p>${factory.nextFrom('shortText')}</p>`,
-        fullDescription: `<p>${factory.nextFrom('longText')}</p>`,
-      },
+      description: `<p>${factory.nextFrom('shortText')}</p>`,
+      fullDescription: `<p>${factory.nextFrom('longText')}</p>`,
+      codeBlocks: [
+        {
+          language: { short: 'html', long: 'HTML' },
+          htmlContent: html,
+        },
+        {
+          language: { short: 'css', long: 'CSS' },
+          htmlContent: css,
+        },
+        {
+          language: { short: 'js', long: 'JavaScript' },
+          htmlContent: js,
+        },
+      ].filter(Boolean),
       code: {
         html: htmlText,
         css: cssText,

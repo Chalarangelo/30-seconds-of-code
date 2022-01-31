@@ -50,15 +50,13 @@ describe('<BlogSnippetCard />', () => {
   });
 
   it('should pass the tags data to the TagList component', () => {
-    const tagsText = tagList.textContent.toLowerCase();
-    fullBlogSnippet.tags.forEach(tag => {
-      expect(tagsText).toContain(tag.toLowerCase());
-    });
+    const tagsText = tagList.textContent;
+    expect(expect(tagsText).toContain(fullBlogSnippet.tags));
   });
 
   it('should render the correct explanation', () => {
     expect(card.querySelector('.card-description').innerHTML).toContain(
-      fullBlogSnippet.html.fullDescription
+      fullBlogSnippet.fullDescription
     );
   });
 
