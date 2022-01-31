@@ -171,6 +171,49 @@ export const snippet = {
 
       return crumbs;
     },
+    codeBlocks: snippet => {
+      if (snippet.isBlog) return [];
+      if (snippet.isCSS) {
+        let blocks = [
+          {
+            language: { short: 'html', long: 'HTML' },
+            htmlContent: snippet.html.html,
+          },
+          {
+            language: { short: 'css', long: 'CSS' },
+            htmlContent: snippet.html.css,
+          },
+        ];
+        if (snippet.html.js)
+          blocks.push({
+            language: { short: 'js', long: 'JavaScript' },
+            htmlContent: snippet.html.js,
+          });
+        return blocks;
+      }
+      let blocks = [
+        {
+          language: {
+            short: snippet.language.short,
+            long: snippet.language.name,
+          },
+          htmlContent: snippet.html.code,
+        },
+        {
+          language: {
+            short: snippet.language.short,
+            long: literals.examples,
+          },
+          htmlContent: snippet.html.example,
+        },
+      ];
+      if (snippet.html.style)
+        blocks.unshift({
+          language: { short: 'css', long: 'CSS' },
+          htmlContent: snippet.html.style,
+        });
+      return blocks;
+    },
     hasCollection: snippet =>
       Boolean(snippet.collections && snippet.collections.length),
     recommendedCollection: snippet =>
