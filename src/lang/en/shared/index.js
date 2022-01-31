@@ -16,6 +16,7 @@ const literals = {
   featuredSnippets: 'Snippets & Articles',
   moreCollections: 'More collections',
   blog: 'Articles',
+  examples: 'Examples',
   tag: t => `${formatTag(t)}`,
   shortCodelang: l => `${l}`,
   shortCodelangTag: (l, t) => `${l} ${formatTag(t)}`,

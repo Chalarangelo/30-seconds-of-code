@@ -73,29 +73,16 @@ export const snippet = {
       return snippet.tags.filter(t => t !== language.id)[0];
     },
     formattedPrimaryTag: snippet => literals.tag(snippet.primaryTag),
-    formattedTags: snippet =>
-      snippet.tags
+    formattedTags: snippet => {
+      let tags = snippet.tags
         .filter(tag => !expertiseLevels.includes(tag))
-        .map(literals.tag),
+        .map(literals.tag);
+      if (!snippet.isBlog) tags.unshift(snippet.language.name);
+      return tags.join(', ');
+    },
     hasOtherLanguages: snippet =>
       snippet.repository.otherLanguages &&
       snippet.repository.otherLanguages.length > 0,
-    formattedLanguages: snippet => {
-      if (snippet.isBlog) return {};
-      const lang = {
-        short: snippet.language.short,
-        long: snippet.language.name,
-      };
-      if (snippet.hasOtherLanguages) {
-        lang.otherLanguages = snippet.repository.otherLanguages.flatMap(
-          lang => ({
-            short: lang.short,
-            long: lang.name,
-          })
-        );
-      }
-      return lang;
-    },
     isBlog: snippet => snippet.type.startsWith('blog'),
     isCSS: snippet => snippet.repository.isCSS,
     isReact: snippet => snippet.repository.isReact,
