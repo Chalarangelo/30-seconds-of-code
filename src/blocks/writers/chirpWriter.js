@@ -39,7 +39,7 @@ export class ChirpWriter {
         new RegExp(r.matcher).test(page.relRoute)
       );
       if (rule) {
-        const description = `${page.context.snippet.title}: ${page.context.snippet.description}`;
+        const description = `${page.data.title}: ${page.data.strippedDescription}`;
         const link = page.fullRoute;
         // 2 is the total spacing between segments
         const maxDescriptionLength =

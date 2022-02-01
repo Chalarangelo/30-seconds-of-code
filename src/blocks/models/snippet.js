@@ -1,5 +1,5 @@
 import path from 'path';
-import { convertToSeoSlug, uniqueElements } from 'utils';
+import { convertToSeoSlug, uniqueElements, stripMarkdownFormat } from 'utils';
 import { Ranker } from 'blocks/utilities/ranker';
 import { Recommender } from 'blocks/utilities/recommender';
 import tokenizeSnippet from 'utils/search';
@@ -72,6 +72,7 @@ export const snippet = {
       if (!language) return snippet.primaryTag;
       return snippet.tags.filter(t => t !== language.id)[0];
     },
+    strippedDescription: snippet => stripMarkdownFormat(snippet.text.short),
     formattedPrimaryTag: snippet => literals.tag(snippet.truePrimaryTag),
     // Used for snippet previews in search autocomplete
     formattedMiniPreviewTag: snippet =>
