@@ -15,7 +15,7 @@ const Breadcrumbs = ({ breadcrumbs }) => (
               isCurrentPage ? 'txt-050 f-ellipsis' : 'txt-150'
             }`}
           >
-            <Link href={`${url}?from=breadcrumbs`}>
+            <Link href={url}>
               <a
                 className='inherit'
                 aria-current={isCurrentPage ? 'page' : null}

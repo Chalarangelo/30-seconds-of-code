@@ -19,7 +19,9 @@ describe('<SearchPage />', () => {
   let wrapper;
 
   beforeEach(() => {
-    const utils = renderWithContext(<SearchPage pageDescription='' />);
+    const utils = renderWithContext(
+      <SearchPage pageDescription='' recommendations={{ items: [] }} />
+    );
     wrapper = utils.container;
   });
 

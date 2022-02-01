@@ -72,13 +72,23 @@ export const snippet = {
       if (!language) return snippet.primaryTag;
       return snippet.tags.filter(t => t !== language.id)[0];
     },
-    formattedPrimaryTag: snippet => literals.tag(snippet.primaryTag),
+    formattedPrimaryTag: snippet => literals.tag(snippet.truePrimaryTag),
+    // Used for snippet previews in search autocomplete
+    formattedMiniPreviewTag: snippet =>
+      snippet.isBlog && !snippet.language
+        ? literals.blogSingular
+        : snippet.language.name,
     formattedTags: snippet => {
       let tags = snippet.tags
         .filter(tag => !expertiseLevels.includes(tag))
         .map(literals.tag);
       if (!snippet.isBlog) tags.unshift(snippet.language.name);
       return tags.join(', ');
+    },
+    formattedPreviewTags: snippet => {
+      if (snippet.language)
+        return [snippet.language.name, snippet.formattedPrimaryTag].join(', ');
+      else return snippet.formattedPrimaryTag;
     },
     hasOtherLanguages: snippet =>
       snippet.repository.otherLanguages &&
@@ -98,8 +108,7 @@ export const snippet = {
       )}`,
     actionType: snippet => {
       if (snippet.isBlog) return undefined;
-      if (snippet.isCSS) return 'cssCodepen';
-      if (snippet.isReact) return 'codepen';
+      if (snippet.isCSS || snippet.isReact) return 'codepen';
       return 'copy';
     },
     expertise: snippet => {
@@ -140,7 +149,7 @@ export const snippet = {
         {
           url: `/${slugParts[0]}/p/1`,
           name: snippet.isBlog
-            ? literals.tag('article')
+            ? literals.blog
             : snippet.repository.language.name,
         },
       ];

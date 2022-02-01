@@ -2,7 +2,6 @@ import { useSearch } from 'state/search';
 import PageBackdrop from 'components/molecules/pageBackdrop';
 import PageTitle from 'components/atoms/pageTitle';
 import PreviewCardList from 'components/organisms/previewCardList';
-import RecommendationList from 'components/organisms/recommendationList';
 import literals from 'lang/en/client/search';
 
 /**
@@ -10,7 +9,7 @@ import literals from 'lang/en/client/search';
  * Used in the Search page.
  * Dependent on multiple components.
  */
-const SearchResults = ({ recommendedSnippets = [] }) => {
+const SearchResults = ({ recommendations }) => {
   const [
     {
       searchQuery,
@@ -66,9 +65,13 @@ const SearchResults = ({ recommendedSnippets = [] }) => {
         }
         mainTextClassName='fs-lg'
       />
-      {recommendedSnippets.length ? (
-        <RecommendationList snippetList={recommendedSnippets} />
-      ) : null}
+      <PageTitle className='recommendation-list-title f-center'>
+        {recommendations.title}
+      </PageTitle>
+      <PreviewCardList
+        contentItems={recommendations.items}
+        fromParam='recommendations'
+      />
     </>
   );
 };

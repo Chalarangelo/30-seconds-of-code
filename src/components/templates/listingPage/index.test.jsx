@@ -21,6 +21,7 @@ describe('<ListingPage />', () => {
         listingName={listingName}
         pageDescription={pageDescription}
         listingSublinks={anchorItems}
+        listingImage='/splash.png'
       />
     ).container;
     pageTitle = wrapper.querySelector('.page-title');
@@ -73,6 +74,7 @@ describe('<ListingPage />', () => {
           paginator={paginator}
           listingName={listingName}
           pageDescription={pageDescription}
+          listingImage='/splash.png'
         />
       ).container;
     });
@@ -90,6 +92,7 @@ describe('<ListingPage />', () => {
           listingName={listingName}
           pageDescription={pageDescription}
           listingSublinks={anchorItems}
+          listingImage='/splash.png'
         />
       ).container;
     });

@@ -7,17 +7,25 @@ describe('<SearchResults />', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = renderWithContext(<SearchResults />, {
-      initialState: {
-        search: {
-          searchQuery: '',
-          searchIndex: SnippetFactory.createMany('PreviewSnippet', 3),
-          searchResults: [],
-          filteredResults: [],
-          availableFilters: [],
+    wrapper = renderWithContext(
+      <SearchResults
+        recommendations={{
+          title: 'Recommended snippets',
+          items: SnippetFactory.createMany('PreviewSnippet', 3),
+        }}
+      />,
+      {
+        initialState: {
+          search: {
+            searchQuery: '',
+            searchIndex: SnippetFactory.createMany('PreviewSnippet', 3),
+            searchResults: [],
+            filteredResults: [],
+            availableFilters: [],
+          },
         },
-      },
-    }).container;
+      }
+    ).container;
   });
 
   afterEach(cleanup);
@@ -30,7 +38,10 @@ describe('<SearchResults />', () => {
     beforeEach(() => {
       wrapper = renderWithContext(
         <SearchResults
-          recommendedSnippets={SnippetFactory.createMany('PreviewSnippet', 3)}
+          recommendations={{
+            title: 'Recommended snippets',
+            items: SnippetFactory.createMany('PreviewSnippet', 3),
+          }}
         />,
         {
           initialState: {
@@ -59,17 +70,25 @@ describe('<SearchResults />', () => {
 
   describe('with no results', () => {
     beforeEach(() => {
-      wrapper = renderWithContext(<SearchResults />, {
-        initialState: {
-          search: {
-            searchQuery: 'impossiblestringtofindintheindex',
-            searchIndex: SnippetFactory.createMany('PreviewSnippet', 3),
-            searchResults: [],
-            filteredResults: [],
-            availableFilters: [],
+      wrapper = renderWithContext(
+        <SearchResults
+          recommendations={{
+            title: 'Recommended snippets',
+            items: SnippetFactory.createMany('PreviewSnippet', 3),
+          }}
+        />,
+        {
+          initialState: {
+            search: {
+              searchQuery: 'impossiblestringtofindintheindex',
+              searchIndex: SnippetFactory.createMany('PreviewSnippet', 3),
+              searchResults: [],
+              filteredResults: [],
+              availableFilters: [],
+            },
           },
-        },
-      }).container;
+        }
+      ).container;
     });
 
     it('should render the correct page backdrop', () => {
@@ -80,17 +99,25 @@ describe('<SearchResults />', () => {
   describe('with results', () => {
     beforeEach(() => {
       const snippetList = SnippetFactory.createMany('PreviewSnippet', 3);
-      wrapper = renderWithContext(<SearchResults />, {
-        initialState: {
-          search: {
-            searchQuery: snippetList[0].primaryTag,
-            searchIndex: snippetList,
-            searchResults: [snippetList[0]],
-            filteredResults: [snippetList[0]],
-            availableFilters: ['All', 'Snippets', 'Articles'],
+      wrapper = renderWithContext(
+        <SearchResults
+          recommendations={{
+            title: 'Recommended snippets',
+            items: SnippetFactory.createMany('PreviewSnippet', 3),
+          }}
+        />,
+        {
+          initialState: {
+            search: {
+              searchQuery: snippetList[0].tags.split(', ')[1],
+              searchIndex: snippetList,
+              searchResults: [snippetList[0]],
+              filteredResults: [snippetList[0]],
+              availableFilters: ['All', 'Snippets', 'Articles'],
+            },
           },
-        },
-      }).container;
+        }
+      ).container;
     });
 
     it('should render a PageTitle', () => {

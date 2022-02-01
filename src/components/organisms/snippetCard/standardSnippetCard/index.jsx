@@ -9,7 +9,9 @@ import literals from 'lang/en/client/common';
  */
 const SnippetCard = ({ snippet }) => {
   useEffect(() => {
-    if (!snippet.code || !snippet.code.js) return;
+    // The third condition is a hack to only apply this for CSS snippets and
+    // not React ones which have a `js` key, too.
+    if (!snippet.code || !snippet.code.js || !snippet.code.css) return;
     const s = document.createElement('script');
     s.type = 'text/javascript';
     s.async = true;
@@ -49,7 +51,7 @@ const SnippetCard = ({ snippet }) => {
           </h5>
           <div
             className='snippet-preview m-0 br-lg'
-            data-scope={snippet.id.slice(snippet.id.lastIndexOf('/') + 1)}
+            data-scope='snippet-preview'
           >
             <style>{snippet.code.scopedCss}</style>
             <div dangerouslySetInnerHTML={{ __html: snippet.code.html }} />

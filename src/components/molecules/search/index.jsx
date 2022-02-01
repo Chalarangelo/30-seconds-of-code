@@ -128,13 +128,8 @@ const Search = ({ isMainSearch = false }) => {
             document.activeElement.blur();
             const { basePath } = router;
             if (!isMainSearch) {
-              if (
-                selectedResult !== -1 &&
-                selectedResult < searchResults.length - 1
-              ) {
-                router.push(
-                  `${basePath}${searchResults[selectedResult].url}?from=autocomplete`
-                );
+              if (selectedResult !== -1 && selectedResult !== 4) {
+                router.push(`${basePath}${searchResults[selectedResult].url}`);
               } else {
                 const encodedValue = encodeURIComponent(value);
                 router.push(
@@ -167,14 +162,10 @@ const Search = ({ isMainSearch = false }) => {
               )}`,
               search: true,
             },
-          ].map((item, i, arr) => (
+          ].map((item, i) => (
             <li key={`autocomplete-result-${item.url}`}>
               <a
-                href={
-                  i === arr.length - 1
-                    ? item.url
-                    : `${item.url}?from=autocomplete`
-                }
+                href={item.url}
                 title={item.title}
                 className={`flex py-2 px-3 ${
                   selectedResult === i ? 'selected' : ''
@@ -186,13 +177,7 @@ const Search = ({ isMainSearch = false }) => {
                 </span>
                 {!item.search ? (
                   <span className='result-tag txt-050 fs-mi'>
-                    {item.expertise
-                      ? item.language
-                        ? item.language
-                        : `${item.expertise[0].toUpperCase()}${item.expertise.slice(
-                            1
-                          )}`
-                      : literals.snippetCollectionShort}
+                    {item.searchResultTag}
                   </span>
                 ) : null}
               </a>

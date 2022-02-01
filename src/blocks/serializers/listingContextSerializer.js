@@ -6,7 +6,7 @@ export const listingContextSerializer = {
     splashUrl: listing =>
       listing.splash
         ? `/${pathSettings.staticAssetPath}/${listing.splash}`
-        : undefined,
+        : `/${pathSettings.staticAssetPath}/laptop-view.jpg`,
   },
   attributes: [
     ['name', 'listingName'],

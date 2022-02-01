@@ -57,16 +57,16 @@ factory
   .define('Snippet', () => ({
     title: '',
     expertise: 'intermediate',
-    primaryTag: '',
-    language: '',
+    tags: '',
     icon: '',
     description: '<p></p>',
     url: '',
     searchTokens: '',
   }))
   .trait('title', () => ({ title: factory.nextFrom('word') }))
-  .trait('primaryTag', { primaryTag: factory.nextFrom('word') })
-  .trait('language', () => ({ language: factory.nextFrom('language') }))
+  .trait('tags', () => ({
+    tags: `${factory.nextFrom('language')}, ${factory.nextFrom('word')}`,
+  }))
   .trait('icon', () => ({ icon: factory.nextFrom('language').toLowerCase() }))
   .trait('description', () => ({
     description: `<p>${factory.nextFrom('shortText')}</p>`,
@@ -89,8 +89,7 @@ factory.alias(
   'PreviewSnippet',
   'Snippet',
   'title',
-  'primaryTag',
-  'language',
+  'tags',
   'icon',
   'description',
   'url',
@@ -104,7 +103,7 @@ factory.alias(
   'PreviewBlogSnippet',
   'Snippet',
   'title',
-  'primaryTag',
+  'tags',
   'description',
   'url',
   'searchTokens',
@@ -147,8 +146,7 @@ factory
       url: `https://github.com/30-seconds/30-seconds-of-${lang.toLowerCase()}/blob/master/snippets/${title}.md`,
       slug: `/${lang.toLowerCase()}/s/${title}`,
       icon: lang.toLowerCase(),
-      actionType:
-        type === 'css' ? 'cssCodepen' : type === 'react' ? 'codepen' : 'copy',
+      actionType: type === 'css' || type === 'react' ? 'codepen' : 'copy',
       tags,
     };
   })

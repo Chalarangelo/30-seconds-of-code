@@ -18,11 +18,7 @@ const NotFoundPage = () => (
         backdropImage='/assets/plane.png'
         mainTextClassName='fs-xl'
         subTextClassName='mb-5'
-        mainText={
-          <>
-            <span className='txt-150'>{literals.pageNotFound}</span>
-          </>
-        }
+        mainText={<span className='txt-150'>{literals.pageNotFound}</span>}
         subText={literals.notFoundDescription}
       >
         <Link href='/'>

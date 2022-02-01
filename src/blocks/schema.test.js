@@ -232,11 +232,34 @@ describe('Application/Schema', () => {
       });
     });
 
+    describe('property: formattedMiniPreviewTag', () => {
+      it('returns the formatted language for regular snippets', () => {
+        const snippet = Snippet.records.get('js/s/format-duration');
+        expect(snippet.formattedMiniPreviewTag).toEqual('JavaScript');
+      });
+
+      it('returns "Article" for blog snippets without language', () => {
+        const snippet = Snippet.records.get(
+          'articles/s/10-vs-code-extensions-for-js-developers'
+        );
+        expect(snippet.formattedMiniPreviewTag).toEqual('Article');
+      });
+    });
+
     describe('property: formattedTags', () => {
       it('returns the formatted tags', () => {
         const snippet = Snippet.records.get('js/s/format-duration');
         expect(snippet.formattedTags).toEqual(
           ['JavaScript', 'Date', 'Math', 'String'].join(', ')
+        );
+      });
+    });
+
+    describe('property: formattedPreviewTags', () => {
+      it('returns the formatted preview tags', () => {
+        const snippet = Snippet.records.get('js/s/format-duration');
+        expect(snippet.formattedPreviewTags).toEqual(
+          ['JavaScript', 'Date'].join(', ')
         );
       });
     });
@@ -341,7 +364,7 @@ describe('Application/Schema', () => {
         const blogSnippet = Snippet.records.get('articles/s/js-callbacks');
         const reactSnippet = Snippet.records.get('react/s/use-interval');
         expect(snippet.actionType).toEqual('copy');
-        expect(cssSnippet.actionType).toEqual('cssCodepen');
+        expect(cssSnippet.actionType).toEqual('codepen');
         expect(blogSnippet.actionType).toBeUndefined();
         expect(reactSnippet.actionType).toEqual('codepen');
       });
@@ -445,7 +468,7 @@ describe('Application/Schema', () => {
           },
           {
             url: '/articles/p/1',
-            name: 'Article',
+            name: 'Articles',
           },
           {
             url: '/articles/s/js-callbacks',
@@ -1162,7 +1185,7 @@ describe('Application/Schema', () => {
         const page = Page.records.get('static_search');
         const pageContext = page.context;
         expect(pageContext.searchIndex.length).toBe(30);
-        expect(pageContext.recommendedSnippets.length).toBe(3);
+        expect(pageContext.recommendations.items.length).toBe(3);
         expect(pageContext.pageDescription).toEqual(
           'Search for answers to your development problems among 15 code snippets on 30 seconds of code.'
         );
@@ -1197,7 +1220,7 @@ describe('Application/Schema', () => {
         expect(pageContext.pageDescription).toEqual(
           'Creates a triangular shape with pure CSS.'
         );
-        expect(pageContext.recommendedSnippets.length).toBe(3);
+        expect(pageContext.recommendations.items.length).toBe(3);
       });
     });
   });

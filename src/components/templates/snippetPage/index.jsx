@@ -2,7 +2,8 @@ import Meta from 'components/organisms/meta';
 import Breadcrumbs from 'components/atoms/breadcrumbs';
 import Shell from 'components/organisms/shell';
 import cardComponents from 'components/organisms/snippetCard';
-import RecommendationList from 'components/organisms/recommendationList';
+import PageTitle from 'components/atoms/pageTitle';
+import PreviewCardList from 'components/organisms/previewCardList';
 
 /**
  * Renders a snippet page.
@@ -11,8 +12,7 @@ import RecommendationList from 'components/organisms/recommendationList';
 const SnippetPage = ({
   snippet,
   cardTemplate,
-  recommendedSnippets = [],
-  recommendedCollection,
+  recommendations,
   breadcrumbs,
   pageDescription,
   structuredData,
@@ -32,9 +32,12 @@ const SnippetPage = ({
       <Shell>
         <Breadcrumbs breadcrumbs={breadcrumbs} />
         <SnippetCard snippet={snippet} />
-        <RecommendationList
-          snippetList={recommendedSnippets}
-          collectionChip={recommendedCollection}
+        <PageTitle className='recommendation-list-title f-center'>
+          {recommendations.title}
+        </PageTitle>
+        <PreviewCardList
+          contentItems={recommendations.items}
+          fromParam='recommendations'
         />
       </Shell>
     </>

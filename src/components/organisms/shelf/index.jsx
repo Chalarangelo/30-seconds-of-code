@@ -9,10 +9,9 @@ import literals from 'lang/en/client/common';
  * Dependent on the `PreviewCard` and `CollectionChip` components.
  */
 const Shelf = ({ shelf: { shelfType, shelfData, shelfName, shelfUrl } }) => {
-  const classPrefix = `${shelfType}-shelf`;
   return shelfData.length ? (
     <>
-      <Link href={`${shelfUrl}?from=shelves`}>
+      <Link href={shelfUrl}>
         <a
           className='shelf-title relative mt-8 icon icon-chevron-right before:fs-sm'
           data-link-title={literals.viewAll}
@@ -20,14 +19,13 @@ const Shelf = ({ shelf: { shelfType, shelfData, shelfName, shelfUrl } }) => {
           <PageTitle>{shelfName}</PageTitle>
         </a>
       </Link>
-      <ul className={`list-section ${classPrefix}-list`}>
+      <ul className={`list-section ${shelfType}-shelf-list`}>
         {/* eslint-disable react/jsx-indent */}
         {shelfType === 'snippets'
           ? shelfData.map(snippet => (
               <PreviewCard
                 key={`snippet_${snippet.url}`}
                 contentItem={snippet}
-                fromParam='shelves'
               />
             ))
           : shelfData.map(chip => (

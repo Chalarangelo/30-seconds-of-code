@@ -106,14 +106,6 @@ export const page = {
         context.cardTemplate = page.data.cardTemplate;
         context.breadcrumbs = page.data.breadcrumbs;
         context.pageDescription = page.data.seoDescription;
-        context.recommendedSnippets = SnippetPreviewSerializer.serializeArray(
-          page.data.recommendedSnippets.toArray()
-        );
-        if (page.data.recommendedCollection)
-          context.recommendedCollection = ListingPreviewSerializer.serialize(
-            page.data.recommendedCollection.listing,
-            { withDescription: true }
-          );
         context.snippet = SnippetContextSerializer.serialize(page.data);
         context.structuredData = Schemer.generateSnippetData({
           title: page.data.title,
@@ -124,6 +116,23 @@ export const page = {
           lastUpdated: page.data.lastUpdated,
           author: page.data.authors.first,
         });
+
+        let recommendedItems = SnippetPreviewSerializer.serializeArray(
+          page.data.recommendedSnippets.toArray()
+        );
+        if (page.data.recommendedCollection)
+          recommendedItems.unshift(
+            ListingPreviewSerializer.serialize(
+              page.data.recommendedCollection.listing,
+              { withDescription: true }
+            )
+          );
+        context.recommendations = {
+          title: page.data.recommendedCollection
+            ? literals.recommendedSnippetsAndCollections
+            : literals.recommendedSnippets,
+          items: recommendedItems,
+        };
       }
       if (page.isListing) {
         context.slug = page.relRoute;
@@ -165,16 +174,19 @@ export const page = {
             Listing.records.searchable.toArray(),
             {
               withDescription: true,
-              withSearchTokens: true,
+              withSearch: true,
             }
           ),
           ...SnippetPreviewSerializer.serializeArray(sortedSnippets.toArray(), {
-            withSearchTokens: true,
+            withSearch: true,
           }),
         ];
-        context.recommendedSnippets = SnippetPreviewSerializer.serializeArray(
-          sortedSnippets.slice(0, 3).toArray()
-        );
+        context.recommendations = {
+          title: literals.recommendedSnippets,
+          items: SnippetPreviewSerializer.serializeArray(
+            sortedSnippets.slice(0, 3).toArray()
+          ),
+        };
         context.pageDescription = literals.pageDescription('search', {
           snippetCount: Snippet.records.length,
         });

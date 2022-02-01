@@ -1,19 +1,17 @@
 import { memo } from 'react';
 
 // Icon
-export const CardIcon = memo(
-  ({ icon, expertise = 'intermediate', displayExpertise = true }) => (
-    <div
-      className={`card-icon relative inline-block ${
-        displayExpertise ? 'br-round' : 'br-xl'
-      } icon icon-${icon} before:fs-lg`}
-    >
-      {displayExpertise && (
-        <span className={`expertise box-border br-round ${expertise}`} />
-      )}
-    </div>
-  )
-);
+export const CardIcon = memo(({ icon, expertise }) => (
+  <div
+    className={`card-icon relative inline-block ${
+      expertise ? 'br-round' : 'br-xl'
+    } icon icon-${icon} before:fs-lg`}
+  >
+    {Boolean(expertise) && (
+      <span className={`expertise box-border br-round ${expertise}`} />
+    )}
+  </div>
+));
 
 CardIcon.displayName = 'CardIcon';
 
