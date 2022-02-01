@@ -51,7 +51,7 @@ const SnippetCard = ({ snippet }) => {
           </h5>
           <div
             className='snippet-preview m-0 br-lg'
-            data-scope={snippet.id.slice(snippet.id.lastIndexOf('/') + 1)}
+            data-scope='snippet-preview'
           >
             <style>{snippet.code.scopedCss}</style>
             <div dangerouslySetInnerHTML={{ __html: snippet.code.html }} />
