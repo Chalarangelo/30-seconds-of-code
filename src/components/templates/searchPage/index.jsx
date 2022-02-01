@@ -9,7 +9,7 @@ import literals from 'lang/en/client/search';
  * Renders the search page.
  * Used to render the /search page.
  */
-const SearchPage = ({ recommendedSnippets, pageDescription, searchIndex }) => {
+const SearchPage = ({ recommendations, pageDescription, searchIndex }) => {
   const [{ searchQuery }, dispatch] = useSearch();
   useEffect(() => {
     dispatch({ type: 'initializeIndex', index: searchIndex });
@@ -26,7 +26,7 @@ const SearchPage = ({ recommendedSnippets, pageDescription, searchIndex }) => {
         }
       />
       <Shell isSearch>
-        <SearchResults recommendedSnippets={recommendedSnippets} />
+        <SearchResults recommendations={recommendations} />
       </Shell>
     </>
   );

@@ -6,6 +6,12 @@
   margin: 0 0.875rem;
 }
 
+// Recommendation list titles
+.page-title.recommendation-list-title {
+  font-size: var(--font-xl);
+  margin: 3rem 1.25rem 0.5rem;
+}
+
 // Add some spacing to static pages
 #skip-link-target + .page-title {
   margin-top: 1rem;
