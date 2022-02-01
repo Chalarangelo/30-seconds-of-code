@@ -5,7 +5,6 @@ const literals = {
   codepen: 'View CodePen',
   preview: 'Preview',
   viewOnGitHub: 'View on GitHub',
-  share: 'Share',
   home: 'Home',
   skipToContent: 'Skip to main content',
   startOfContent: 'Start of main content',
