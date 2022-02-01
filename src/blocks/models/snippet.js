@@ -108,8 +108,7 @@ export const snippet = {
       )}`,
     actionType: snippet => {
       if (snippet.isBlog) return undefined;
-      if (snippet.isCSS) return 'cssCodepen';
-      if (snippet.isReact) return 'codepen';
+      if (snippet.isCSS || snippet.isReact) return 'codepen';
       return 'copy';
     },
     expertise: snippet => {
