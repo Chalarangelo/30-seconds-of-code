@@ -6,18 +6,13 @@ import { CardIcon, CardTitle, CardSubtitle } from 'components/atoms/card';
  * Used in listing pages and search results.
  * Dependent on the `Card` component.
  * @param {object} contentItem - Snippet or collection object for the card.
- * @param {string} fromParam - A string to pass to the `from` param.
  */
-const PreviewCard = ({ contentItem, fromParam }) => (
+const PreviewCard = ({ contentItem }) => (
   <li className='card srfc-01dp txt-100 list-card grid'>
     <CardIcon icon={contentItem.icon} expertise={contentItem.expertise} />
     <div className='card-data'>
       <CardTitle isSecondary>
-        <Link
-          href={
-            fromParam ? `${contentItem.url}?from=${fromParam}` : contentItem.url
-          }
-        >
+        <Link href={contentItem.url}>
           <a className='inherit'>{contentItem.title}</a>
         </Link>
       </CardTitle>
