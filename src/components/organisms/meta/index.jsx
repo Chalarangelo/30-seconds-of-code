@@ -8,7 +8,6 @@ import { useShellState } from 'state/shell';
  * Dependent on the `next/head` component.
  * @param {string} title - Page title (leave empty to use the website title)
  * @param {string} description - Page description (leave empty to use the website title)
- * @param {*} meta - Array of metadata objects (if any)
  * @param {string} logoSrc - Page logo URI
  * @param {object} structuredData - Structured data for the page (if any)
  * @param {object} breadcrumbsData - Structured data for breadcrumbs (if any)
