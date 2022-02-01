@@ -174,11 +174,11 @@ export const page = {
             Listing.records.searchable.toArray(),
             {
               withDescription: true,
-              withSearchTokens: true,
+              withSearch: true,
             }
           ),
           ...SnippetPreviewSerializer.serializeArray(sortedSnippets.toArray(), {
-            withSearchTokens: true,
+            withSearch: true,
           }),
         ];
         context.recommendations = {

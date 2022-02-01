@@ -2,21 +2,19 @@ export const snippetPreviewSerializer = {
   name: 'SnippetPreviewSerializer',
   methods: {
     description: snippet => snippet.html.description.trim(),
-    language: snippet =>
-      snippet.repository.language
-        ? snippet.repository.language.name
-        : undefined,
-    searchTokens: (snippet, { withSearchTokens } = {}) =>
-      withSearchTokens ? snippet.searchTokens : undefined,
+    searchTokens: (snippet, { withSearch } = {}) =>
+      withSearch ? snippet.searchTokens : undefined,
+    searchResultTag: (snippet, { withSearch } = {}) =>
+      withSearch ? snippet.formattedMiniPreviewTag : undefined,
   },
   attributes: [
     'title',
     ['slug', 'url'],
     'icon',
     'description',
+    ['formattedPreviewTags', 'tags'],
     'searchTokens',
+    'searchResultTag',
     'expertise',
-    ['formattedPrimaryTag', 'primaryTag'],
-    'language',
   ],
 };
