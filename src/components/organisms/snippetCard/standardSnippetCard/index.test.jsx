@@ -121,9 +121,7 @@ describe('<SnippetCard />', () => {
     });
 
     it('should pass the snippet code data to the snippet preview', () => {
-      expect(snippetPreview.dataset.scope).toBe(
-        fullCssSnippet.id.slice(fullCssSnippet.id.lastIndexOf('/') + 1)
-      );
+      expect(snippetPreview.dataset.scope).toBe('snippet-preview');
       expect(snippetPreview.innerHTML).toContain(fullCssSnippet.code.scopedCss);
       expect(snippetPreview.innerHTML).toContain(fullCssSnippet.code.html);
     });

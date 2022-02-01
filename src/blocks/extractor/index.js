@@ -340,9 +340,7 @@ export class Extractor {
                 try {
                   code.scopedCss = sass
                     .renderSync({
-                      data: `[data-scope="${fileName.slice(0, -3)}"] { ${
-                        codeBlocks[1].code
-                      } }`,
+                      data: `[data-scope="snippet-preview"] { ${codeBlocks[1].code} }`,
                     })
                     .css.toString();
                 } catch (e) {
