@@ -10,11 +10,7 @@ import { CardIcon, CardTitle, CardSubtitle } from 'components/atoms/card';
  */
 const PreviewCard = ({ contentItem, fromParam }) => (
   <li className='card srfc-01dp txt-100 list-card grid'>
-    <CardIcon
-      displayExpertise={Boolean(contentItem.expertise)}
-      icon={contentItem.icon}
-      expertise={contentItem.expertise}
-    />
+    <CardIcon icon={contentItem.icon} expertise={contentItem.expertise} />
     <div className='card-data'>
       <CardTitle isSecondary>
         <Link
