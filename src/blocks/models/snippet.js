@@ -72,13 +72,23 @@ export const snippet = {
       if (!language) return snippet.primaryTag;
       return snippet.tags.filter(t => t !== language.id)[0];
     },
-    formattedPrimaryTag: snippet => literals.tag(snippet.primaryTag),
+    formattedPrimaryTag: snippet => literals.tag(snippet.truePrimaryTag),
+    // Used for snippet previews in search autocomplete
+    formattedMiniPreviewTag: snippet =>
+      snippet.isBlog && !snippet.language
+        ? literals.blogSingular
+        : snippet.language.name,
     formattedTags: snippet => {
       let tags = snippet.tags
         .filter(tag => !expertiseLevels.includes(tag))
         .map(literals.tag);
       if (!snippet.isBlog) tags.unshift(snippet.language.name);
       return tags.join(', ');
+    },
+    formattedPreviewTags: snippet => {
+      if (snippet.language)
+        return [snippet.language.name, snippet.formattedPrimaryTag].join(', ');
+      else return snippet.formattedPrimaryTag;
     },
     hasOtherLanguages: snippet =>
       snippet.repository.otherLanguages &&
