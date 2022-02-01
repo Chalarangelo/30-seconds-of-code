@@ -1,11 +1,9 @@
-import { stripMarkdownFormat } from 'utils';
 import pathSettings from 'settings/paths';
 import JSX_SNIPPET_PRESETS from 'settings/jsxSnippetPresets';
 
 export const snippetContextSerializer = {
   name: 'SnippetContextSerializer',
   methods: {
-    description: snippet => stripMarkdownFormat(snippet.text.short),
     code: snippet => {
       if (snippet.isCSS) return snippet.code;
       if (snippet.isReact) {
