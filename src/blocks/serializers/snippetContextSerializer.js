@@ -1,11 +1,26 @@
 import { stripMarkdownFormat } from 'utils';
 import pathSettings from 'settings/paths';
+import JSX_SNIPPET_PRESETS from 'settings/jsxSnippetPresets';
 
 export const snippetContextSerializer = {
   name: 'SnippetContextSerializer',
   methods: {
     description: snippet => stripMarkdownFormat(snippet.text.short),
-    code: snippet => (snippet.isCSS ? snippet.code : undefined),
+    code: snippet => {
+      if (snippet.isCSS) return snippet.code;
+      if (snippet.isReact) {
+        /* eslint-disable camelcase */
+        return {
+          js: `${snippet.code.src}\n\n${snippet.code.example}`,
+          css: snippet.code.style ? snippet.code.style : '',
+          html: JSX_SNIPPET_PRESETS.envHtml,
+          js_pre_processor: JSX_SNIPPET_PRESETS.jsPreProcessor,
+          js_external: JSX_SNIPPET_PRESETS.jsImports.join(';'),
+        };
+        /* eslint-enable camelcase */
+      }
+      return undefined;
+    },
     authors: snippet =>
       snippet.isBlog
         ? snippet.authors.flatMap(({ name, profile }) => ({
