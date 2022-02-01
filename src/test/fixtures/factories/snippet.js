@@ -146,8 +146,7 @@ factory
       url: `https://github.com/30-seconds/30-seconds-of-${lang.toLowerCase()}/blob/master/snippets/${title}.md`,
       slug: `/${lang.toLowerCase()}/s/${title}`,
       icon: lang.toLowerCase(),
-      actionType:
-        type === 'css' ? 'cssCodepen' : type === 'react' ? 'codepen' : 'copy',
+      actionType: type === 'css' || type === 'react' ? 'codepen' : 'copy',
       tags,
     };
   })
