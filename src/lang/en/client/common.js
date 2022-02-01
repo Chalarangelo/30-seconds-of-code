@@ -7,11 +7,8 @@ const literals = {
   viewOnGitHub: 'View on GitHub',
   share: 'Share',
   home: 'Home',
-  recommendedSnippets: 'Recommended snippets',
   skipToContent: 'Skip to main content',
   startOfContent: 'Start of main content',
-  // Note: This has to be rendered as raw HTML
-  andCollections: '&nbsp;&amp;&nbsp;collections',
   snippetCollection: 'Snippet collection',
   settings: 'Settings',
   viewAll: 'View all',
