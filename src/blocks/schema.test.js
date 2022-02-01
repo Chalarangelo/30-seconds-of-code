@@ -232,11 +232,34 @@ describe('Application/Schema', () => {
       });
     });
 
+    describe('property: formattedMiniPreviewTag', () => {
+      it('returns the formatted language for regular snippets', () => {
+        const snippet = Snippet.records.get('js/s/format-duration');
+        expect(snippet.formattedMiniPreviewTag).toEqual('JavaScript');
+      });
+
+      it('returns "Article" for blog snippets without language', () => {
+        const snippet = Snippet.records.get(
+          'articles/s/10-vs-code-extensions-for-js-developers'
+        );
+        expect(snippet.formattedMiniPreviewTag).toEqual('Article');
+      });
+    });
+
     describe('property: formattedTags', () => {
       it('returns the formatted tags', () => {
         const snippet = Snippet.records.get('js/s/format-duration');
         expect(snippet.formattedTags).toEqual(
           ['JavaScript', 'Date', 'Math', 'String'].join(', ')
+        );
+      });
+    });
+
+    describe('property: formattedPreviewTags', () => {
+      it('returns the formatted preview tags', () => {
+        const snippet = Snippet.records.get('js/s/format-duration');
+        expect(snippet.formattedPreviewTags).toEqual(
+          ['JavaScript', 'Date'].join(', ')
         );
       });
     });
