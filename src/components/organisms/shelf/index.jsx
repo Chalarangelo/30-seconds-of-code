@@ -9,7 +9,6 @@ import literals from 'lang/en/client/common';
  * Dependent on the `PreviewCard` and `CollectionChip` components.
  */
 const Shelf = ({ shelf: { shelfType, shelfData, shelfName, shelfUrl } }) => {
-  const classPrefix = `${shelfType}-shelf`;
   return shelfData.length ? (
     <>
       <Link href={`${shelfUrl}?from=shelves`}>
@@ -20,7 +19,7 @@ const Shelf = ({ shelf: { shelfType, shelfData, shelfName, shelfUrl } }) => {
           <PageTitle>{shelfName}</PageTitle>
         </a>
       </Link>
-      <ul className={`list-section ${classPrefix}-list`}>
+      <ul className={`list-section ${shelfType}-shelf-list`}>
         {/* eslint-disable react/jsx-indent */}
         {shelfType === 'snippets'
           ? shelfData.map(snippet => (
