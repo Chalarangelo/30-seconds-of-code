@@ -29,8 +29,6 @@ export const snippetContextSerializer = {
           }))
         : undefined,
     type: snippet => (snippet.isBlog ? snippet.type : undefined),
-    vscodeUrl: (snippet, { withVscodeUrl } = {}) =>
-      withVscodeUrl ? snippet.vscodeUrl : undefined,
     coverUrl: snippet =>
       snippet.cover
         ? `/${pathSettings.staticAssetPath}/${snippet.cover}`
@@ -44,9 +42,7 @@ export const snippetContextSerializer = {
     fullDescription: snippet => snippet.html.fullDescription,
   },
   attributes: [
-    'id',
     'title',
-    'description',
     'fullDescription',
     'codeBlocks',
     'url',
@@ -55,12 +51,9 @@ export const snippetContextSerializer = {
     'expertise',
     'icon',
     ['formattedTags', 'tags'],
-    'html',
     'actionType',
     'code',
     'authors',
-    'type',
     ['coverUrl', 'cover'],
-    'vscodeUrl',
   ],
 };
