@@ -186,13 +186,7 @@ const Search = ({ isMainSearch = false }) => {
                 </span>
                 {!item.search ? (
                   <span className='result-tag txt-050 fs-mi'>
-                    {item.expertise
-                      ? item.language
-                        ? item.language
-                        : `${item.expertise[0].toUpperCase()}${item.expertise.slice(
-                            1
-                          )}`
-                      : literals.snippetCollectionShort}
+                    {item.searchResultTag}
                   </span>
                 ) : null}
               </a>
