@@ -109,7 +109,7 @@ describe('<SearchResults />', () => {
         {
           initialState: {
             search: {
-              searchQuery: snippetList[0].primaryTag,
+              searchQuery: snippetList[0].tags.split(', ')[1],
               searchIndex: snippetList,
               searchResults: [snippetList[0]],
               filteredResults: [snippetList[0]],
