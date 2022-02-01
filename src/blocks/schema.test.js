@@ -364,7 +364,7 @@ describe('Application/Schema', () => {
         const blogSnippet = Snippet.records.get('articles/s/js-callbacks');
         const reactSnippet = Snippet.records.get('react/s/use-interval');
         expect(snippet.actionType).toEqual('copy');
-        expect(cssSnippet.actionType).toEqual('cssCodepen');
+        expect(cssSnippet.actionType).toEqual('codepen');
         expect(blogSnippet.actionType).toBeUndefined();
         expect(reactSnippet.actionType).toEqual('codepen');
       });
