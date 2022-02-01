@@ -31,15 +31,13 @@ const SnippetCard = ({ snippet }) => (
         {snippet.date}
       </CardSubtitle>
     </div>
-    {snippet.cover && (
-      <Image
-        className='card-cover-image card-fw-section'
-        src={snippet.cover}
-        alt=''
-        height='232'
-        width='348'
-      />
-    )}
+    <Image
+      className='card-cover-image card-fw-section'
+      src={snippet.cover}
+      alt=''
+      height='232'
+      width='348'
+    />
     <div
       className='card-description flex flex-col'
       dangerouslySetInnerHTML={{ __html: snippet.fullDescription }}

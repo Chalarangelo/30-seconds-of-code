@@ -81,17 +81,4 @@ describe('<BlogSnippetCard />', () => {
       expect(card.querySelectorAll('h1 + div')).toHaveLength(1);
     });
   });
-
-  describe('without a cover', () => {
-    beforeEach(() => {
-      wrapper = renderWithContext(
-        <BlogSnippetCard snippet={{ ...fullBlogSnippet, cover: '' }} />
-      ).container;
-      card = wrapper.querySelector('.card');
-    });
-
-    it('should not render a cover', () => {
-      expect(card.querySelectorAll('img')).toHaveLength(0);
-    });
-  });
 });
