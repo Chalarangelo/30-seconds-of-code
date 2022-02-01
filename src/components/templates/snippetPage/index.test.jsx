@@ -18,6 +18,7 @@ describe('<SnippetPage />', () => {
         cardTemplate={cardTemplate}
         breadcrumbs={breadcrumbs}
         pageDescription=''
+        recommendations={{ items: [] }}
       />
     );
     wrapper = utils.container;
@@ -63,6 +64,7 @@ describe('<SnippetPage />', () => {
           snippet={fullBlogSnippet}
           cardTemplate='BlogSnippetCard'
           pageDescription=''
+          recommendations={{ items: [] }}
           breadcrumbs={breadcrumbs}
         />
       );
