@@ -150,7 +150,7 @@ export const snippet = {
         {
           url: `/${slugParts[0]}/p/1`,
           name: snippet.isBlog
-            ? literals.tag('article')
+            ? literals.blog
             : snippet.repository.language.name,
         },
       ];

@@ -468,7 +468,7 @@ describe('Application/Schema', () => {
           },
           {
             url: '/articles/p/1',
-            name: 'Article',
+            name: 'Articles',
           },
           {
             url: '/articles/s/js-callbacks',
