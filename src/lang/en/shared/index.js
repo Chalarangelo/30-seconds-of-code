@@ -17,6 +17,8 @@ const literals = {
   moreCollections: 'More collections',
   blog: 'Articles',
   examples: 'Examples',
+  recommendedSnippets: 'Recommended snippets',
+  recommendedSnippetsAndCollections: 'Recommended snippets & collections',
   tag: t => `${formatTag(t)}`,
   shortCodelang: l => `${l}`,
   shortCodelangTag: (l, t) => `${l} ${formatTag(t)}`,
