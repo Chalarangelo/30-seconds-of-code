@@ -1,24 +1,22 @@
 .snippet-list-header {
-  &.with-image {
+  .page-title {
+    text-align: center;
+  }
+
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    display: grid;
+    grid-template-columns: auto 240px;
+    align-items: center;
+    min-height: 340px;
+
     .page-title {
-      text-align: center;
+      text-align: left;
     }
+  }
 
-    @media screen and (min-width: $layout-medium-breakpoint) {
-      display: grid;
-      grid-template-columns: auto 240px;
-      align-items: center;
-      min-height: 340px;
-
-      .page-title {
-        text-align: left;
-      }
-    }
-
-    @media screen and (min-width: $layout-large-breakpoint) {
-      min-height: 300px;
-      grid-template-columns: auto 360px;
-    }
+  @media screen and (min-width: $layout-large-breakpoint) {
+    min-height: 300px;
+    grid-template-columns: auto 360px;
   }
 }
 
