@@ -10,7 +10,6 @@ const literals = {
   skipToContent: 'Skip to main content',
   startOfContent: 'Start of main content',
   snippetCollection: 'Snippet collection',
-  settings: 'Settings',
   viewAll: 'View all',
   siteName: settings.websiteName,
   siteAuthor: settings.orgName,
