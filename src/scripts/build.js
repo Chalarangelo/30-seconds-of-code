@@ -6,7 +6,6 @@ export const build = async () => {
 
   await Promise.all([
     Application.extractAndInitialize(),
-    Application.IconWriter.write(),
     Application.ManifestWriter.write(),
   ]);
 
