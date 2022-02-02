@@ -115,7 +115,6 @@ content/data
 public/assets
 public/sitemap.xml
 public/feed.xml
-public/manifest.webmanifest
 public/chirp.json
 public/search-data.json
 snippet.png
