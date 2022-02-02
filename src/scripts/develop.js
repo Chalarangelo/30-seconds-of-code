@@ -4,7 +4,7 @@ export const build = async () => {
   Application.Logger.log('Build process is starting up...\n');
   Application.Logger.logProcessInfo();
 
-  await Promise.all([Application.extractAndInitialize()]);
+  await Application.extractAndInitialize();
 
   await Promise.all([
     Application.SearchIndexWriter.write(),
