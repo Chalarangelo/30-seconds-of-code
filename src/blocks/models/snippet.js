@@ -27,32 +27,9 @@ export const snippet = {
     { name: 'firstSeen', type: 'dateRequired' },
     { name: 'lastUpdated', type: 'dateRequired' },
     { name: 'listed', type: 'booleanRequired' },
-    {
-      name: 'type',
-      type: 'stringRequired',
-      validators: {
-        isBlogTypeOrSnippet: value => {
-          return value.startsWith('blog') || value === 'snippet';
-        },
-      },
-    },
-    {
-      name: 'text',
-      type: 'object',
-      validators: {
-        containsAllTexts: value => {
-          return ['full', 'short'].every(key => value[key]);
-        },
-      },
-    },
-    {
-      name: 'html',
-      type: 'object',
-      validators: {
-        hasDescriptionKeys: value =>
-          ['fullDescription', 'description'].every(key => value[key]),
-      },
-    },
+    { name: 'type', type: 'stringRequired' },
+    { name: 'text', type: 'object' },
+    { name: 'html', type: 'object' },
     { name: 'code', type: 'object' },
     { name: 'cover', type: 'string' },
     { name: 'seoDescription', type: 'stringRequired' },
