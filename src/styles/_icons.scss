@@ -1,6 +1,6 @@
 @font-face {
   font-family: "icons";
-  src: url("../../assets/icons.woff2?495cf1ba4bbfb160638827f1a6e06511") format("woff2");
+  src: url("../../assets/icons.woff2?3cb2e0936daaa0ca993b2c637f71738c") format("woff2");
 }
 
 .icon:before {
@@ -78,6 +78,22 @@
     background: #3c77a9;
     color: #ffffff;
   }
+  &.icon-php {
+    background: #8b9bd6;
+    color: #2a2843;
+  }
+  &.icon-csharp {
+    background: #672179;
+    color: #ffffff;
+  }
+  &.icon-golang {
+    background: #5ac9e2;
+    color: #000000;
+  }
+  &.icon-dart {
+    background: #1b2634;
+    color: #ffffff;
+  }
   &.icon-blog {
     background: #1f253d;
     color: #edf0fc;
@@ -107,6 +123,22 @@
   }
   > .icon-python:before {
     background: #3c77a9;
+    color: #ffffff;
+  }
+  > .icon-php:before {
+    background: #8b9bd6;
+    color: #2a2843;
+  }
+  > .icon-csharp:before {
+    background: #672179;
+    color: #ffffff;
+  }
+  > .icon-golang:before {
+    background: #5ac9e2;
+    color: #000000;
+  }
+  > .icon-dart:before {
+    background: #1b2634;
     color: #ffffff;
   }
   > .icon-blog:before {
