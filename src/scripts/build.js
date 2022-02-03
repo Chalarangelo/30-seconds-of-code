@@ -4,11 +4,7 @@ export const build = async () => {
   Application.Logger.log('Build process is starting up...\n');
   Application.Logger.logProcessInfo();
 
-  await Promise.all([
-    Application.extractAndInitialize(),
-    Application.IconWriter.write(),
-    Application.ManifestWriter.write(),
-  ]);
+  await Application.extractAndInitialize();
 
   await Promise.all([
     Application.AssetWriter.write(),

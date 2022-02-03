@@ -216,7 +216,7 @@ export const page = {
       return page.snippets && page.snippets.length > 0;
     },
     listingHasPageNumber: page => {
-      if (!page.isListing || page.id === 'collections') return true;
+      if (!page.isListing) return true;
       return page.pageNumber > 0;
     },
     staticHasUniqueSlug: (page, pages) => {
