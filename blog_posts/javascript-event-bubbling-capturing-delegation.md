@@ -54,7 +54,7 @@ You can use event capturing by applying a third argument to [`EventTarget.addEve
 ```js
 // Capture phase
 ancestors.forEach(a => {
-  a.addEventListener('click', event => {
+  a.addEventListener('click', e => {
     console.log(`Hello from ${e.currentTarget}`);
   }, true);
 });
