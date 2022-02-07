@@ -27,7 +27,7 @@ const useError = err => {
 ```
 
 ```jsx
-Rconst ErrorButton = () => {
+const ErrorButton = () => {
   const dispatchError = useError();
 
   const clickHandler = () => {
