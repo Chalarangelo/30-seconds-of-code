@@ -16,7 +16,6 @@ describe('MarkdownParser', () => {
       },
       {
         isBlog: false,
-        type: 'snippet',
         assetPath: '/assets',
         languageData: [],
       }
@@ -31,7 +30,6 @@ describe('MarkdownParser', () => {
       },
       {
         isBlog: true,
-        type: 'list',
         assetPath: '/assets',
         languageData: [],
       }

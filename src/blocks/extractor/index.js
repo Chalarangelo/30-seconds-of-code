@@ -389,7 +389,6 @@ export class Extractor {
               },
               {
                 isBlog: config.isBlog,
-                type,
                 assetPath: `/${pathSettings.staticAssetPath}`,
                 languageData,
               }
