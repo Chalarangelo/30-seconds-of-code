@@ -5,7 +5,7 @@ export const CardIcon = memo(({ icon, expertise }) => (
   <div
     className={`card-icon relative inline-block ${
       expertise ? 'br-round' : 'br-xl'
-    } icon icon-${icon} before:fs-lg`}
+    } icon icon-${icon} before:fs-lg mt-1`}
   >
     {Boolean(expertise) && (
       <span className={`expertise box-border br-round ${expertise}`} />
