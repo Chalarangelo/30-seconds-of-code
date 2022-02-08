@@ -1,7 +1,7 @@
 import Meta from 'components/organisms/meta';
 import Breadcrumbs from 'components/atoms/breadcrumbs';
 import Shell from 'components/organisms/shell';
-import cardComponents from 'components/organisms/snippetCard';
+import SnippetCard from 'components/organisms/snippetCard';
 import PageTitle from 'components/atoms/pageTitle';
 import PreviewCardList from 'components/organisms/previewCardList';
 
@@ -11,20 +11,17 @@ import PreviewCardList from 'components/organisms/previewCardList';
  */
 const SnippetPage = ({
   snippet,
-  cardTemplate,
   recommendations,
   breadcrumbs,
   pageDescription,
   structuredData,
 }) => {
-  const SnippetCard = cardComponents[cardTemplate];
-  const isBlogSnippet = cardTemplate === 'BlogSnippetCard';
   return (
     <>
       <Meta
         title={snippet.title}
         description={pageDescription}
-        logoSrc={isBlogSnippet ? snippet.cover : undefined}
+        logoSrc={snippet.cover ? snippet.cover : undefined}
         structuredData={structuredData}
         breadcrumbsData={breadcrumbs}
         canonical={snippet.slug}

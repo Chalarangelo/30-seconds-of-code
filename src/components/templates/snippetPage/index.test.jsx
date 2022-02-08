@@ -8,14 +8,12 @@ const fullSnippet = SnippetFactory.create('FullSnippet');
 const fullBlogSnippet = SnippetFactory.create('FullBlogSnippet');
 
 describe('<SnippetPage />', () => {
-  const cardTemplate = 'StandardSnippetCard';
   let wrapper, snippetCard;
 
   beforeEach(() => {
     const utils = renderWithContext(
       <SnippetPage
         snippet={fullSnippet}
-        cardTemplate={cardTemplate}
         breadcrumbs={breadcrumbs}
         pageDescription=''
         recommendations={{ items: [] }}
@@ -62,7 +60,6 @@ describe('<SnippetPage />', () => {
       const utils = renderWithContext(
         <SnippetPage
           snippet={fullBlogSnippet}
-          cardTemplate='BlogSnippetCard'
           pageDescription=''
           recommendations={{ items: [] }}
           breadcrumbs={breadcrumbs}

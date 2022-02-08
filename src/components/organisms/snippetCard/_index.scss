@@ -1,1 +1,69 @@
-@import './standardSnippetCard';
+.snippet-card {
+  .card-source-content {
+    pre {
+      margin: 0;
+    }
+
+    .card-code + .card-code:not([data-code-language='Examples']) {
+      border-top: 2px solid var(--clr-code-border);
+      border-top-left-radius: var(--br-none);
+      border-top-right-radius: var(--br-none);
+      padding-top: 2.5rem;
+
+      &:before {
+        top: 0.9375rem;
+      }
+    }
+
+    .card-code + [data-code-language='Examples'] {
+      margin-top: -0.875rem;
+      padding-bottom: 1.5rem;
+    }
+  }
+
+  .card-preview-content {
+    .snippet-preview-title {
+      font-weight: 600;
+      -webkit-font-smoothing: antialiased;
+      margin: 2.5rem 0 -2.5rem 0.875rem;
+    }
+
+    .snippet-preview {
+      background: var(--clr-snippet-preview-bg);
+      padding: 3.25rem 0.875rem 0.75rem;
+      border-bottom-left-radius: var(--br-none);
+      border-bottom-right-radius: var(--br-none);
+    }
+
+    + .card-source-content {
+      margin-top: 0;
+
+      pre:first-of-type {
+        border-top-left-radius: var(--br-none);
+        border-top-right-radius: var(--br-none);
+      }
+    }
+  }
+}
+
+// Overrides for some problematic snippets
+[data-scope='full-width'] .full-width {
+  left: 0 !important;
+  right: 0 !important;
+  margin-left: -1.375rem !important;
+  margin-right: -1.375rem !important;
+  width: calc(100% + 2.75rem) !important;
+
+  @media screen and (min-width: 752px) {
+    width: calc(100vw - 3rem - 2.25rem) !important;
+    max-width: calc(100vw - 3rem - 2.25rem) !important;
+    margin-left: calc((640px - 100vw) / 2 + 2.125rem) !important;
+    margin-right: calc((640px - 100vw) / 2 + 2.125rem) !important;
+  }
+
+  @media screen and (min-width: 874px) {
+    width: calc(874px - 3rem - 2.25rem) !important;
+    margin-left: calc((640px - 874px) / 2 + 2.125rem) !important;
+    margin-right: calc((640px - 874px) / 2 + 2.125rem) !important;
+  }
+}
