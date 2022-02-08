@@ -103,7 +103,6 @@ export const page = {
         context.structuredData = Schemer.generateHomeData();
       }
       if (page.isSnippet) {
-        context.cardTemplate = page.data.cardTemplate;
         context.breadcrumbs = page.data.breadcrumbs;
         context.pageDescription = page.data.seoDescription;
         context.snippet = SnippetContextSerializer.serialize(page.data);

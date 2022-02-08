@@ -41,7 +41,6 @@ export const snippet = {
       snippet.isBlog ? snippet.authors && snippet.authors.length : true,
   },
   properties: {
-    cardTemplate: snippet => snippet.repository.cardTemplate,
     primaryTag: snippet => snippet.tags[0],
     truePrimaryTag: snippet => {
       if (!snippet.isBlog) return snippet.primaryTag;

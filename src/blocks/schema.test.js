@@ -192,19 +192,6 @@ describe('Application/Schema', () => {
   describe('Snippet', () => {
     const Snippet = Application.dataset.getModel('Snippet');
 
-    describe('property: cardTemplate', () => {
-      it('returns the card template from the repository', () => {
-        const snippet = Snippet.records.get('js/s/format-duration');
-        expect(snippet.cardTemplate).toEqual('StandardSnippetCard');
-
-        const cssSnippet = Snippet.records.get('css/s/triangle');
-        expect(cssSnippet.cardTemplate).toEqual('CssSnippetCard');
-
-        const blogSnippet = Snippet.records.get('articles/s/js-callbacks');
-        expect(blogSnippet.cardTemplate).toEqual('BlogSnippetCard');
-      });
-    });
-
     describe('property: primaryTag', () => {
       it('returns the primary tag', () => {
         const snippet = Snippet.records.get('js/s/format-duration');
@@ -1215,7 +1202,6 @@ describe('Application/Schema', () => {
       it('returns the correct value for a snippet page', () => {
         const page = Page.records.get('snippet_css/s/triangle');
         const pageContext = page.context;
-        expect(pageContext.cardTemplate).toBe('CssSnippetCard');
         expect(pageContext.breadcrumbs.length).toBe(4);
         expect(pageContext.pageDescription).toEqual(
           'Creates a triangular shape with pure CSS.'

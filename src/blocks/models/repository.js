@@ -15,12 +15,6 @@ export const repository = {
     { name: 'description', type: 'stringRequired' },
     { name: 'shortDescription', type: 'stringRequired' },
     {
-      name: 'cardTemplate',
-      type: 'enumRequired',
-      values: ['StandardSnippetCard', 'CssSnippetCard', 'BlogSnippetCard'],
-      defaultValue: 'StandardSnippetCard',
-    },
-    {
       name: 'biasPenaltyMultiplier',
       type: 'numberRequired',
       defaultValue: 1.0,
