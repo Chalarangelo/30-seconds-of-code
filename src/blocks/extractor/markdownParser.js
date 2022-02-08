@@ -37,18 +37,6 @@ const commonTransformers = [
 ];
 
 const blogTransformers = [
-  // Inject class into blog lists' <ol> elements
-  {
-    blogType: 'blog.list',
-    matcher: /<ol>/g,
-    replacer: '<ol class="blog-list">',
-  },
-  // Inject paragraphs and class into blog lists' <li> elements
-  {
-    blogType: 'blog.list',
-    matcher: /<li>\n*(.+?)\n((?!<li>).+?)\n*<\/li>/g,
-    replacer: '<li class="blog-list-item">$1</p><p>$2</li>',
-  },
   // Convert blog post code to the appropriate elements
   {
     blogType: 'any',
