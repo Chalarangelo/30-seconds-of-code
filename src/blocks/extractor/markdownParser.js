@@ -34,39 +34,31 @@ const commonTransformers = [
     matcher: /(href="https?:\/\/)/g,
     replacer: 'target="_blank" rel="nofollow noopener noreferrer" $1',
   },
-];
-
-const blogTransformers = [
-  // Convert blog post code to the appropriate elements
+  // Convert titles h3 and below to the appropriate elements
   {
-    blogType: 'any',
-    matcher: /<pre class="language-([^"]+)" data-code-language="([^"]*)">([\s\S]*?)<\/pre>/g,
-    replacer:
-      '<pre class="language-$1 notranslate mt-4 mb-0 mx-0" data-code-language="$2">$3</pre>',
-  },
-  // Convert blog blockquotes to the appropriate elements
-  {
-    blogType: 'any',
-    matcher: /<blockquote>\s*\n*\s*<p>([\s\S]*?)<\/p>\s*\n*\s<\/blockquote>/g,
-    replacer: '<blockquote class="fs-md md:fs-lg">$1</blockquote>',
-  },
-  // Convert blog titles h3 and below to the appropriate elements
-  {
-    blogType: 'any',
     matcher: /<h([123])>([\s\S]*?)<\/h\d>/g,
     replacer:
       '<h3 class="card-body-title txt-150 fs-lg md:fs-xl f-alt">$2</h3>',
   },
-  // Convert blog titles h4 and above to the appropriate elements
+  // Convert titles h4 and above to the appropriate elements
   {
-    blogType: 'any',
     matcher: /<h([456])>([\s\S]*?)<\/h\d>/g,
     replacer:
       '<h4 class="card-body-title txt-150 fs-md md:fs-lg f-alt">$2</h4>',
   },
+  // Convert description code to the appropriate elements (mainly blogs)
+  {
+    matcher: /<pre class="language-([^"]+)" data-code-language="([^"]*)">([\s\S]*?)<\/pre>/g,
+    replacer:
+      '<pre class="language-$1 notranslate mt-4 mb-0 mx-0" data-code-language="$2">$3</pre>',
+  },
+  // Convert blockquotes to the appropriate elements
+  {
+    matcher: /<blockquote>\s*\n*\s*<p>([\s\S]*?)<\/p>\s*\n*\s<\/blockquote>/g,
+    replacer: '<blockquote class="fs-md md:fs-lg">$1</blockquote>',
+  },
   // Convert blog cross tables to the appropriate elements
   {
-    blogType: 'any',
     matcher: /<table>\s*\n*\s*<thead>\s*\n*\s*<tr>\s*\n*\s*<th><\/th>/g,
     replacer: '<table class="primary-col"><thead><tr><th></th>',
   },
@@ -175,7 +167,7 @@ export class MarkdownParser {
 
   static parseSegments = (
     { texts, codeBlocks },
-    { isBlog, type, assetPath, languageData }
+    { isBlog, assetPath, languageData }
   ) => {
     const result = {};
     Object.entries(texts).forEach(([key, value]) => {
@@ -198,14 +190,6 @@ export class MarkdownParser {
     );
 
     if (isBlog) {
-      result.fullDescription = blogTransformers.reduce(
-        (acc, { blogType, matcher, replacer }) => {
-          if (blogType === 'any' || blogType === type)
-            return acc.replace(matcher, replacer);
-          return acc;
-        },
-        result.fullDescription
-      );
       // Transform relative paths for images
       result.fullDescription = result.fullDescription.replace(
         /(<p>)*<img src="\.\/([^"]+)"([^>]*)>(<\/p>)*/g,
