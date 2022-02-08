@@ -13,7 +13,6 @@ export const repo30blog = {
     name: 'blog_images',
     path: 'blog_images',
   },
-  cardTemplate: 'BlogSnippetCard',
   splash: 'laptop-view.png',
   description:
     'The coding articles collection contains curated stories, tips, questions and answers on a wide variety of topics. The main focus of these articles revolves around the languages and technologies presented in snippets, as well as career advice and lessons.',
@@ -53,7 +52,6 @@ export const repo30css = {
   featured: true,
   biasPenaltyMultiplier: 1.05,
   splash: 'camera.png',
-  cardTemplate: 'CssSnippetCard',
   description:
     'The CSS snippet collection contains utilities and interactive examples for CSS3. It includes modern techniques for creating commonly-used layouts, styling and animating elements, as well as snippets for handling user interactions.',
   shortDescription:
