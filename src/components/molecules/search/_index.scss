@@ -11,7 +11,7 @@
 
 .search-wrapper {
   background: var(--clr-search-bg);
-  flex: 0 0 100%;
+  flex: 0 0 calc(100% - 0.5rem);
 
   @media screen and (min-width: $layout-medium-breakpoint) {
     flex: 1 0 300px;
@@ -59,17 +59,12 @@ a.search-btn[aria-hidden='true'] {
 
 .search-autocomplete-list {
   position: absolute;
-  width: calc(100% - 0.5rem);
+  width: 100%;
   top: 42px;
   list-style: none;
   border-radius: var(--br-none) var(--br-none) var(--br-md) var(--br-md);
   overflow: hidden;
   z-index: 100;
-
-  @media screen and (min-width: $layout-medium-breakpoint) {
-    margin: 0;
-    width: 100%;
-  }
 
   > li {
     height: 42px;

@@ -43,7 +43,11 @@
 
 // TODO: Figure out if this can be built with utils
 .snippets-shelf-list {
-  margin: 0 0 5rem;
+  margin: 0 0 2rem;
+
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    margin-bottom: 4rem;
+  }
 }
 
 .collections-shelf-list {
