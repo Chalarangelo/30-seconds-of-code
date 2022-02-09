@@ -152,7 +152,7 @@ const Search = ({ isMainSearch = false }) => {
         rel='nofollow'
       />
       {!isMainSearch && value ? (
-        <ul className='search-autocomplete-list pl-0 my-0 mx-2 srfc-02db'>
+        <ul className='search-autocomplete-list pl-0 m-0 srfc-02db'>
           {[
             ...searchResults.slice(0, 4),
             {
