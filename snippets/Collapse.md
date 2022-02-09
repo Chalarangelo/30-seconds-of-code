@@ -1,5 +1,5 @@
 ---
-title: Collapse
+title: Collapsible content
 tags: components,children,state,beginner
 firstSeen: 2018-10-17T20:42:23+03:00
 lastUpdated: 2021-10-13T19:29:39+02:00

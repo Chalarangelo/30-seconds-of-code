@@ -1,5 +1,5 @@
 ---
-title: useMutationObserver
+title: React useMutationObserver hook
 tags: hooks,effect,intermediate
 firstSeen: 2021-11-23T05:00:00-04:00
 ---

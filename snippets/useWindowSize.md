@@ -1,5 +1,5 @@
 ---
-title: useWindowSize
+title: React useWindowSize hook
 tags: hooks,state,effect,intermediate
 firstSeen: 2021-10-18T05:00:00-04:00
 ---

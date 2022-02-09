@@ -1,5 +1,5 @@
 ---
-title: AutoLink
+title: Automatic text linking
 tags: components,fragment,regexp,intermediate
 firstSeen: 2018-12-05T15:04:49+02:00
 lastUpdated: 2020-11-03T20:42:15+02:00

@@ -1,5 +1,5 @@
 ---
-title: Slider
+title: Uncontrolled range input
 tags: components,input,beginner
 firstSeen: 2019-03-02T10:20:55+02:00
 lastUpdated: 2020-11-25T20:46:35+02:00
@@ -12,7 +12,7 @@ Renders an uncontrolled range input element that uses a callback function to pas
 - Use the `onChange` event to fire the `onValueChange` callback and send the new value to the parent.
 
 ```jsx
-const Slider = ({ 
+const Slider = ({
   min = 0,
   max = 100,
   defaultValue,
