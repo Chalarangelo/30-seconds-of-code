@@ -1,5 +1,5 @@
 ---
-title: usePersistedState
+title: React usePersistedState hook
 tags: hooks,state,effect,advanced
 firstSeen: 2020-11-29T14:16:36+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00

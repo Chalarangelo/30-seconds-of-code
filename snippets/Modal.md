@@ -1,5 +1,5 @@
 ---
-title: Modal
+title: Modal dialog
 tags: components,effect,intermediate
 firstSeen: 2019-03-11T11:25:06+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00

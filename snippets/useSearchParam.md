@@ -1,5 +1,5 @@
 ---
-title: useSearchParam
+title: React useSearchParam hook
 tags: hooks,state,effect,intermediate
 firstSeen: 2021-10-13T05:00:00-04:00
 ---

@@ -1,5 +1,5 @@
 ---
-title: useSessionStorage
+title: React useSessionStorage hook
 tags: hooks,state,intermediate
 firstSeen: 2021-09-15T05:00:00-04:00
 ---

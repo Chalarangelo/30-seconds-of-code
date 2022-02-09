@@ -1,5 +1,5 @@
 ---
-title: CountDown
+title: Countdown timer
 tags: components,state,advanced
 firstSeen: 2019-02-06T14:39:31+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00

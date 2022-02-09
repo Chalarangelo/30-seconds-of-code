@@ -1,5 +1,5 @@
 ---
-title: useFetch
+title: React useFetch hook
 tags: hooks,effect,state,intermediate
 firstSeen: 2019-08-21T14:23:57+03:00
 lastUpdated: 2021-01-07T23:57:13+02:00

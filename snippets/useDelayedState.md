@@ -1,5 +1,5 @@
 ---
-title: useDelayedState
+title: React useDelayedState hook
 tags: hooks,state,effect,intermediate
 firstSeen: 2021-12-15T05:00:00-04:00
 ---

@@ -1,5 +1,5 @@
 ---
-title: useMap
+title: React useMap hook
 tags: hooks,state,advanced
 firstSeen: 2021-11-06T05:00:00-04:00
 ---

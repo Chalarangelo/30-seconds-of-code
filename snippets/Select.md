@@ -1,5 +1,5 @@
 ---
-title: Select
+title: Uncontrolled select element
 tags: components,input,beginner
 firstSeen: 2018-12-10T10:48:03+02:00
 lastUpdated: 2020-11-25T20:46:35+02:00
@@ -9,7 +9,7 @@ Renders an uncontrolled `<select>` element that uses a callback function to pass
 
 - Use the the `selectedValue` prop as the `defaultValue` of the `<select>` element to set its initial value..
 - Use the `onChange` event to fire the `onValueChange` callback and send the new value to the parent.
-- Use `Array.prototype.map()` on the `values` array to create an `<option>` element for each passed value. 
+- Use `Array.prototype.map()` on the `values` array to create an `<option>` element for each passed value.
 - Each item in `values` must be a 2-element array, where the first element is the `value` of the item and the second one is the displayed text for it.
 
 ```jsx

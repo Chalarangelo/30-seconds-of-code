@@ -1,5 +1,5 @@
 ---
-title: useLocalStorage
+title: React useLocalStorage hook
 tags: hooks,state,intermediate
 firstSeen: 2021-09-13T05:00:00-04:00
 ---

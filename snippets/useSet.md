@@ -1,5 +1,5 @@
 ---
-title: useSet
+title: React useSet hook
 tags: hooks,state,advanced
 firstSeen: 2021-11-01T05:00:00-04:00
 ---

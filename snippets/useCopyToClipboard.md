@@ -1,5 +1,5 @@
 ---
-title: useCopyToClipboard
+title: React useCopyToClipboard hook
 tags: hooks,effect,state,callback,advanced
 firstSeen: 2020-04-22T18:51:30+03:00
 lastUpdated: 2020-11-16T14:17:53+02:00

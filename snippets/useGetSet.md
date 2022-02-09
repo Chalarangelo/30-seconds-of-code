@@ -1,5 +1,5 @@
 ---
-title: useGetSet
+title: React useGetSet hook
 tags: hooks,state,intermediate
 firstSeen: 2021-10-27T05:00:00-04:00
 ---
