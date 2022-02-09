@@ -6,7 +6,7 @@ import settings from 'settings/global';
  * Static component that renders the page footer.
  */
 const Footer = () => (
-  <footer className='mt-8 pt-6 mx-2 mb-0'>
+  <footer className='box-border mt-8 pt-6 mx-2 mb-0 pb-6'>
     <p className='fs-xs my-1.5'>
       <Link href='/about'>
         <a>{literals.about}</a>
@@ -37,6 +37,7 @@ const Footer = () => (
     <p className='fs-xs mt-0.5'>
       {literals.copyright}
       <a
+        className='inline-block'
         href={settings.githubOrgUrl}
         rel='noopener noreferrer nofollow'
         target='_blank'
