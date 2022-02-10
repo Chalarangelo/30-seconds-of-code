@@ -1,5 +1,5 @@
 ---
-title: index_of_all
+title: All indexes of value
 tags: list,intermediate
 firstSeen: 2020-10-11T13:40:42+03:00
 lastUpdated: 2020-10-11T13:45:19+03:00
@@ -16,5 +16,5 @@ def index_of_all(lst, value):
 
 ```py
 index_of_all([1, 2, 1, 4, 5, 1], 1) # [0, 2, 5]
-index_of_all([1, 2, 3, 4], 6) # [] 
+index_of_all([1, 2, 3, 4], 6) # []
 ```

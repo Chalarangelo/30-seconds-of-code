@@ -1,5 +1,5 @@
 ---
-title: map_dictionary
+title: Map list to dictionary
 tags: list,dictionary,intermediate
 firstSeen: 2020-04-07T19:53:48+03:00
 lastUpdated: 2020-11-02T19:28:27+02:00

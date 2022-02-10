@@ -1,5 +1,5 @@
 ---
-title: is_divisible
+title: Number is divisible
 tags: math,beginner
 unlisted: true
 firstSeen: 2019-08-20T14:19:55+03:00

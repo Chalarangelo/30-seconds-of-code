@@ -1,5 +1,5 @@
 ---
-title: kebab
+title: Kebabcase string
 tags: string,regexp,intermediate
 firstSeen: 2019-08-21T08:59:54+03:00
 lastUpdated: 2020-11-02T19:28:05+02:00

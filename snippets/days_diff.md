@@ -1,5 +1,5 @@
 ---
-title: days_diff
+title: Date difference in days
 tags: date,beginner
 firstSeen: 2020-10-28T16:19:39+02:00
 lastUpdated: 2020-10-28T16:19:39+02:00

@@ -1,11 +1,11 @@
 ---
-title: bifurcate
+title: Bifurcate list based on values
 tags: list,intermediate
 firstSeen: 2019-08-20T12:37:06+03:00
 lastUpdated: 2020-11-02T19:27:07+02:00
 ---
 
-Splits values into two groups, based on the result of the given `filter` list. 
+Splits values into two groups, based on the result of the given `filter` list.
 
 - Use a list comprehension and `zip()` to add elements to groups, based on `filter`.
 - If `filter` has a truthy value for any element, add it to the first group, otherwise add it to the second group.

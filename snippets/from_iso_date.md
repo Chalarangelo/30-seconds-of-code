@@ -1,5 +1,5 @@
 ---
-title: from_iso_date
+title: Date from ISO format
 tags: date,intermediate
 firstSeen: 2020-10-28T16:20:04+02:00
 lastUpdated: 2021-01-07T23:30:28+02:00

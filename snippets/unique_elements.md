@@ -1,5 +1,5 @@
 ---
-title: unique_elements
+title: Unique elements in list
 tags: list,beginner
 firstSeen: 2018-10-09T20:01:19+03:00
 lastUpdated: 2020-09-15T16:13:06+03:00

@@ -1,5 +1,5 @@
 ---
-title: some
+title: Test if some list elements are truthy
 tags: list,intermediate
 firstSeen: 2019-08-20T11:42:30+03:00
 lastUpdated: 2020-11-02T19:28:35+02:00

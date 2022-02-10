@@ -1,5 +1,5 @@
 ---
-title: symmetric_difference
+title: List symmetric difference
 tags: list,intermediate
 firstSeen: 2019-08-21T08:37:04+03:00
 lastUpdated: 2020-11-02T19:28:35+02:00

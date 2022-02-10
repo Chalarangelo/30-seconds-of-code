@@ -1,5 +1,5 @@
 ---
-title: fahrenheit_to_celsius
+title: Fahrenheit to Celsius
 tags: math,beginner
 unlisted: true
 firstSeen: 2020-04-05T12:29:03+03:00

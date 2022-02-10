@@ -1,5 +1,5 @@
 ---
-title: decapitalize
+title: Decapitalize string
 tags: string,intermediate
 firstSeen: 2018-02-01T10:19:59+02:00
 lastUpdated: 2020-11-02T19:27:53+02:00

@@ -1,5 +1,5 @@
 ---
-title: filter_unique
+title: Filter unique list values
 tags: list,beginner
 firstSeen: 2019-10-02T20:06:24+03:00
 lastUpdated: 2020-11-02T19:27:53+02:00

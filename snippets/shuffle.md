@@ -1,5 +1,5 @@
 ---
-title: shuffle
+title: Shuffle list
 tags: list,random,advanced
 firstSeen: 2018-01-19T11:59:33+02:00
 lastUpdated: 2020-11-02T19:28:35+02:00

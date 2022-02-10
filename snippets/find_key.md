@@ -1,5 +1,5 @@
 ---
-title: find_key
+title: Find key of value
 tags: dictionary,intermediate
 firstSeen: 2020-04-16T19:13:20+03:00
 lastUpdated: 2020-11-02T19:27:53+02:00
