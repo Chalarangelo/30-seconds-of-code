@@ -1,5 +1,5 @@
 ---
-title: Callto
+title: Callable telephone link
 tags: components,beginner
 unlisted: true
 firstSeen: 2020-10-04T00:07:37+03:00

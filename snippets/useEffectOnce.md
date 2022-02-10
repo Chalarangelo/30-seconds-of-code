@@ -1,5 +1,5 @@
 ---
-title: useEffectOnce
+title: React useEffectOnce hook
 tags: hooks,effect,beginner
 firstSeen: 2021-11-16T05:00:00-04:00
 ---

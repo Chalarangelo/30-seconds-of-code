@@ -1,5 +1,5 @@
 ---
-title: LimitedWordTextarea
+title: Textarea with word limit
 tags: components,input,state,callback,effect,event,intermediate
 firstSeen: 2019-02-20T18:22:22+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00

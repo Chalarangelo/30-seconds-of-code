@@ -1,5 +1,5 @@
 ---
-title: useDefault
+title: React useDefault hook
 tags: hooks,state,intermediate
 firstSeen: 2021-10-23T05:00:00-04:00
 ---

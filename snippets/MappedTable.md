@@ -1,5 +1,5 @@
 ---
-title: MappedTable
+title: Object table view
 tags: components,array,object,intermediate
 firstSeen: 2018-11-29T11:50:10+02:00
 lastUpdated: 2020-09-06T14:20:45+03:00
@@ -11,8 +11,7 @@ Renders a table with rows dynamically created from an array of objects and a lis
 - Render a `<table>` element with a set of columns equal to the amount of values in `propertyNames`.
 - Use `Array.prototype.map()` to render each value in the `propertyNames` array as a `<th>` element.
 - Use `Array.prototype.map()` to render each object in the `filteredData` array as a `<tr>` element, containing a `<td>` for each key in the object.
-
-_This component does not work with nested objects and will break if there are nested objects inside any of the properties specified in `propertyNames`._
+- **Note:** This component does not work with nested objects and will break if there are nested objects inside any of the properties specified in `propertyNames`.
 
 ```jsx
 const MappedTable = ({ data, propertyNames }) => {

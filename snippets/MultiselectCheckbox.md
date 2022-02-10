@@ -1,5 +1,5 @@
 ---
-title: MultiselectCheckbox
+title: Stateful checkbox with multiple selection
 tags: components,input,state,array,intermediate
 firstSeen: 2019-01-27T09:25:57+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00
