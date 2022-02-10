@@ -1,5 +1,5 @@
 ---
-title: collect_dictionary
+title: Invert dictionary
 tags: dictionary,intermediate
 firstSeen: 2020-04-07T21:15:06+03:00
 lastUpdated: 2020-11-02T19:27:07+02:00
@@ -7,7 +7,7 @@ lastUpdated: 2020-11-02T19:27:07+02:00
 
 Inverts a dictionary with non-unique hashable values.
 
-- Create a `collections.defaultdict` with `list` as the default value for each key. 
+- Create a `collections.defaultdict` with `list` as the default value for each key.
 - Use `dictionary.items()` in combination with a loop to map the values of the dictionary to keys using `dict.append()`.
 - Use `dict()` to convert the `collections.defaultdict` to a regular dictionary.
 

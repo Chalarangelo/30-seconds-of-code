@@ -1,5 +1,5 @@
 ---
-title: arithmetic_progression
+title: Arithmetic progression
 tags: math,beginner
 firstSeen: 2020-07-28T13:57:33+03:00
 lastUpdated: 2020-11-02T19:27:07+02:00
@@ -15,5 +15,5 @@ def arithmetic_progression(n, lim):
 ```
 
 ```py
-arithmetic_progression(5, 25) # [5, 10, 15, 20, 25] 
+arithmetic_progression(5, 25) # [5, 10, 15, 20, 25]
 ```
