@@ -1,5 +1,5 @@
 ---
-title: head
+title: List head
 tags: list,beginner
 firstSeen: 2019-08-20T14:08:52+03:00
 lastUpdated: 2020-09-15T16:13:06+03:00
