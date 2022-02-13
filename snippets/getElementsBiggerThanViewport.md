@@ -1,5 +1,5 @@
 ---
-title: getElementsBiggerThanViewport
+title: Get elements bigger than viewport
 tags: browser,intermediate
 firstSeen: 2020-10-06T17:41:22+03:00
 lastUpdated: 2020-10-22T20:23:47+03:00

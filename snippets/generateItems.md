@@ -1,5 +1,5 @@
 ---
-title: generateItems
+title: Generate items
 tags: array,function,intermediate
 firstSeen: 2020-10-09T20:41:21+03:00
 lastUpdated: 2020-10-22T20:23:47+03:00

@@ -1,5 +1,5 @@
 ---
-title: indexBy
+title: Index array based on function
 tags: array,object,intermediate
 firstSeen: 2021-06-20T05:00:00-04:00
 ---

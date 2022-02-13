@@ -1,5 +1,5 @@
 ---
-title: gcd
+title: Greatest common divisor
 tags: math,algorithm,recursion,intermediate
 firstSeen: 2017-12-17T17:55:51+02:00
 lastUpdated: 2020-12-29T12:36:50+02:00

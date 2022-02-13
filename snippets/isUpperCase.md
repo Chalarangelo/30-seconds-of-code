@@ -1,5 +1,5 @@
 ---
-title: isUpperCase
+title: String is uppercase
 tags: string,beginner
 firstSeen: 2018-01-06T11:16:05+02:00
 lastUpdated: 2020-09-15T16:28:04+03:00

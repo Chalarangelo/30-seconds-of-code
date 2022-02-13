@@ -1,5 +1,5 @@
 ---
-title: isTravisCI
+title: Environment is Travis CI
 tags: node,intermediate
 unlisted: true
 firstSeen: 2018-01-01T17:28:08+02:00
