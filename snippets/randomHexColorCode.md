@@ -1,5 +1,5 @@
 ---
-title: randomHexColorCode
+title: Random hex color code
 tags: math,random,beginner
 firstSeen: 2017-12-24T14:39:21+02:00
 lastUpdated: 2021-01-08T00:23:44+02:00

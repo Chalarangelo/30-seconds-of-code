@@ -1,5 +1,5 @@
 ---
-title: primeFactors
+title: Prime factors of number
 tags: math,algorithm,beginner
 firstSeen: 2020-12-28T13:11:01+02:00
 lastUpdated: 2020-12-28T13:11:01+02:00

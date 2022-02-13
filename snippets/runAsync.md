@@ -1,5 +1,5 @@
 ---
-title: runAsync
+title: Run function asynchronously
 tags: browser,function,promise,advanced
 firstSeen: 2018-01-02T02:17:52+02:00
 lastUpdated: 2020-10-22T20:24:30+03:00

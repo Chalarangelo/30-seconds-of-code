@@ -1,5 +1,5 @@
 ---
-title: round
+title: Round number to given precision
 tags: math,intermediate
 firstSeen: 2017-12-17T17:55:51+02:00
 lastUpdated: 2020-10-22T20:24:30+03:00
@@ -11,7 +11,7 @@ Rounds a number to a specified amount of digits.
 - Omit the second argument, `decimals`, to round to an integer.
 
 ```js
-const round = (n, decimals = 0) => 
+const round = (n, decimals = 0) =>
   Number(`${Math.round(`${n}e${decimals}`)}e-${decimals}`);
 ```
 
