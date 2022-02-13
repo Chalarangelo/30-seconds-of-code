@@ -1,5 +1,5 @@
 ---
-title: is_weekday
+title: Date is weekday
 tags: date,beginner
 firstSeen: 2020-10-28T16:20:18+02:00
 lastUpdated: 2020-11-02T19:28:05+02:00
@@ -15,7 +15,7 @@ Checks if the given date is a weekday.
 from datetime import datetime
 
 def is_weekday(d = datetime.today()):
-  return d.weekday() <= 4 
+  return d.weekday() <= 4
 ```
 
 ```py
