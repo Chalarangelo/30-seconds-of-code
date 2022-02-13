@@ -1,5 +1,5 @@
 ---
-title: functionName
+title: Function name
 tags: array,intermediate
 firstSeen: 2021-06-13T05:00:00-04:00
 ---
