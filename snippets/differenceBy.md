@@ -1,5 +1,5 @@
 ---
-title: differenceBy
+title: Mapped array difference
 tags: array,intermediate
 firstSeen: 2018-01-24T11:49:03+02:00
 lastUpdated: 2020-10-19T18:52:00+03:00

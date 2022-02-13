@@ -1,5 +1,5 @@
 ---
-title: filterUniqueBy
+title: Filter unique array values based on function
 tags: array,intermediate
 firstSeen: 2020-11-02T19:41:07+02:00
 lastUpdated: 2020-11-02T19:41:07+02:00

@@ -1,5 +1,5 @@
 ---
-title: defer
+title: Defer function invokation
 tags: function,intermediate
 firstSeen: 2018-01-01T23:40:31+02:00
 lastUpdated: 2020-10-22T20:23:47+03:00
