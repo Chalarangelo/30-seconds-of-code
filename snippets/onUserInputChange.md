@@ -1,5 +1,5 @@
 ---
-title: onUserInputChange
+title: Handle user input change
 tags: browser,event,advanced
 firstSeen: 2017-12-29T17:41:53+02:00
 lastUpdated: 2020-10-21T21:54:53+03:00

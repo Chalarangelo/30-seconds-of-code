@@ -1,5 +1,5 @@
 ---
-title: longestItem
+title: Longest item in array
 tags: array,intermediate
 firstSeen: 2018-01-08T21:33:47+02:00
 lastUpdated: 2020-10-22T20:23:47+03:00
