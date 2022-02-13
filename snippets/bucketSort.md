@@ -1,5 +1,5 @@
 ---
-title: bucketSort
+title: Bucket sort
 tags: algorithm,array,intermediate
 firstSeen: 2020-12-28T22:11:56+02:00
 lastUpdated: 2020-12-29T12:22:44+02:00

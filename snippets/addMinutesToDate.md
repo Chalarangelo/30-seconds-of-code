@@ -1,5 +1,5 @@
 ---
-title: addMinutesToDate
+title: Add minutes to date
 tags: date,intermediate
 firstSeen: 2020-11-28T19:27:46+02:00
 lastUpdated: 2020-11-28T19:27:46+02:00

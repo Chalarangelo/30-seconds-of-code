@@ -1,5 +1,5 @@
 ---
-title: isWritableStream
+title: Stream is writable
 tags: node,type,intermediate
 firstSeen: 2018-10-03T22:16:10+03:00
 lastUpdated: 2020-10-20T23:02:01+03:00

@@ -1,5 +1,5 @@
 ---
-title: removeEventListenerAll
+title: Remove event listeners from target
 tags: browser,event,intermediate
 firstSeen: 2021-04-22T08:53:29+03:00
 lastUpdated: 2021-04-22T08:53:29+03:00

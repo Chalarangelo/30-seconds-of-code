@@ -1,5 +1,5 @@
 ---
-title: getDaysDiffBetweenDates
+title: Date difference in days
 tags: date,intermediate
 firstSeen: 2017-12-17T17:55:51+02:00
 lastUpdated: 2021-04-24T12:42:47+03:00

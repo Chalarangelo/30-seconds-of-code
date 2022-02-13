@@ -1,5 +1,5 @@
 ---
-title: isPrime
+title: Number is prime
 tags: math,algorithm,beginner
 firstSeen: 2017-12-19T22:35:56+02:00
 lastUpdated: 2021-01-12T19:36:36+02:00

@@ -1,5 +1,5 @@
 ---
-title: omitBy
+title: Omit object properties based on function
 tags: object,intermediate
 firstSeen: 2018-01-19T13:23:45+02:00
 lastUpdated: 2020-10-21T21:54:53+03:00

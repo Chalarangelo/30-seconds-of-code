@@ -1,5 +1,5 @@
 ---
-title: objectToQueryString
+title: Object to query string
 tags: object,advanced
 firstSeen: 2019-10-11T23:16:05+03:00
 lastUpdated: 2020-10-22T20:24:04+03:00

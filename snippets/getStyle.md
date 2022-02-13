@@ -1,5 +1,5 @@
 ---
-title: getStyle
+title: Get style for element
 tags: browser,css,beginner
 firstSeen: 2017-12-29T00:08:17+02:00
 lastUpdated: 2020-10-19T22:49:51+03:00

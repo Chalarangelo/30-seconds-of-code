@@ -1,5 +1,5 @@
 ---
-title: getBaseURL
+title: Get base URL
 tags: string,browser,regexp,beginner
 firstSeen: 2020-05-03T12:20:54+03:00
 lastUpdated: 2021-01-03T20:32:13+02:00

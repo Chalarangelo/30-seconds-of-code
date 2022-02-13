@@ -1,5 +1,5 @@
 ---
-title: linearSearch
+title: Linear search
 tags: algorithm,array,beginner
 firstSeen: 2020-12-28T12:07:53+02:00
 lastUpdated: 2020-12-28T12:07:53+02:00

@@ -1,5 +1,5 @@
 ---
-title: isSameOrigin
+title: Same-origin URLs
 tags: object,beginner
 firstSeen: 2021-04-22T08:27:41+03:00
 lastUpdated: 2021-04-22T08:27:41+03:00

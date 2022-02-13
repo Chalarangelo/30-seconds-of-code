@@ -1,5 +1,5 @@
 ---
-title: not
+title: Logical not
 tags: math,logic,beginner
 unlisted: true
 firstSeen: 2020-05-13T11:28:26+03:00

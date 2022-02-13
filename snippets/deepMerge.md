@@ -1,5 +1,5 @@
 ---
-title: deepMerge
+title: Deep merge objects
 tags: object,function,advanced
 firstSeen: 2021-07-25T05:00:00-04:00
 ---

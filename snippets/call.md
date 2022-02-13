@@ -1,5 +1,5 @@
 ---
-title: call
+title: Call functions with context
 tags: function,advanced
 firstSeen: 2017-12-22T21:54:30+02:00
 lastUpdated: 2021-06-13T13:50:25+03:00

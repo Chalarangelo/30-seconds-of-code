@@ -1,5 +1,5 @@
 ---
-title: fullscreen
+title: Toggle fullscreen mode
 tags: browser,intermediate
 firstSeen: 2020-10-04T16:48:00+03:00
 lastUpdated: 2020-10-19T22:49:51+03:00

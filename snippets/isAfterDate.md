@@ -1,5 +1,5 @@
 ---
-title: isAfterDate
+title: Check if date is after another date
 tags: date,beginner
 firstSeen: 2018-09-29T13:58:38+03:00
 lastUpdated: 2020-10-20T23:02:01+03:00

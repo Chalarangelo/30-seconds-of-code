@@ -1,5 +1,5 @@
 ---
-title: bindKey
+title: Bind object method
 tags: function,object,advanced
 firstSeen: 2018-01-24T14:22:43+02:00
 lastUpdated: 2020-10-18T23:04:45+03:00

@@ -1,5 +1,5 @@
 ---
-title: unfold
+title: Unfold array
 tags: function,array,intermediate
 firstSeen: 2018-01-24T16:22:14+02:00
 lastUpdated: 2020-09-15T16:28:04+03:00

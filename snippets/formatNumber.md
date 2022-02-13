@@ -1,5 +1,5 @@
 ---
-title: formatNumber
+title: Format number
 tags: string,math,beginner
 firstSeen: 2020-07-30T11:38:51+03:00
 lastUpdated: 2020-10-22T20:23:47+03:00

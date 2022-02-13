@@ -1,5 +1,5 @@
 ---
-title: isStream
+title: Value is stream
 tags: node,type,intermediate
 firstSeen: 2018-10-01T20:12:19+03:00
 lastUpdated: 2020-10-20T23:02:01+03:00

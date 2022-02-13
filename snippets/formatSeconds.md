@@ -1,5 +1,5 @@
 ---
-title: formatSeconds
+title: Number of seconds to ISO format
 tags: date,math,string,intermediate
 firstSeen: 2021-05-09T12:44:55+03:00
 lastUpdated: 2021-10-13T19:29:39+02:00

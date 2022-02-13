@@ -1,5 +1,5 @@
 ---
-title: binomialCoefficient
+title: Binomial coefficient
 tags: math,algorithm,beginner
 firstSeen: 2018-02-14T12:34:02+02:00
 lastUpdated: 2020-12-28T13:49:24+02:00

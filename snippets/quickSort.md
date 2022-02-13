@@ -1,5 +1,5 @@
 ---
-title: quickSort
+title: Quick sort
 tags: algorithm,array,recursion,advanced
 firstSeen: 2017-12-28T13:42:41+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00

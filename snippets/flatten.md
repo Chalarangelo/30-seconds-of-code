@@ -1,5 +1,5 @@
 ---
-title: flatten
+title: Flatten array
 tags: array,recursion,intermediate
 firstSeen: 2017-12-17T16:41:31+02:00
 lastUpdated: 2020-10-22T20:23:47+03:00

@@ -1,5 +1,5 @@
 ---
-title: yesNo
+title: Check yes/no string
 tags: string,regexp,intermediate
 unlisted: true
 firstSeen: 2017-12-30T18:35:54+02:00

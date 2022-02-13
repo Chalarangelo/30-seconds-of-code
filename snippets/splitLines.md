@@ -1,5 +1,5 @@
 ---
-title: splitLines
+title: Split into lines
 tags: string,regexp,beginner
 firstSeen: 2017-12-29T12:58:58+02:00
 lastUpdated: 2020-10-22T20:24:30+03:00

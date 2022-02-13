@@ -1,5 +1,5 @@
 ---
-title: allEqualBy
+title: Check if array elements are equal based on function
 tags: array,intermediate
 firstSeen: 2020-10-19T22:14:49+03:00
 lastUpdated: 2020-10-19T22:14:49+03:00

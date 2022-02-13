@@ -1,5 +1,5 @@
 ---
-title: hz
+title: Hertz frequency of function
 tags: function,intermediate
 unlisted: true
 firstSeen: 2018-04-11T16:39:49+03:00

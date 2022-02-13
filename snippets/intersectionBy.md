@@ -1,5 +1,5 @@
 ---
-title: intersectionBy
+title: Array intersection based on function
 tags: array,intermediate
 firstSeen: 2018-01-24T12:53:18+02:00
 lastUpdated: 2020-10-20T23:02:01+03:00

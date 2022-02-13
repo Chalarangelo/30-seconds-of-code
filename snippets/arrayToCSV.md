@@ -1,5 +1,5 @@
 ---
-title: arrayToCSV
+title: Array to CSV
 tags: array,string,intermediate
 firstSeen: 2018-06-27T20:26:43+03:00
 lastUpdated: 2020-11-03T21:55:08+02:00

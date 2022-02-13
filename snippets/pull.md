@@ -1,5 +1,5 @@
 ---
-title: pull
+title: Pull values from array
 tags: array,intermediate
 firstSeen: 2017-12-17T16:41:31+02:00
 lastUpdated: 2020-10-22T20:24:04+03:00

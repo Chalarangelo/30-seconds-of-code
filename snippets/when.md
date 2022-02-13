@@ -1,5 +1,5 @@
 ---
-title: when
+title: Apply function when condition is met
 tags: function,logic,beginner
 firstSeen: 2018-04-19T03:45:32+03:00
 lastUpdated: 2020-10-22T20:24:44+03:00

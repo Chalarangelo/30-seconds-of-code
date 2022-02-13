@@ -1,5 +1,5 @@
 ---
-title: triggerEvent
+title: Trigger event on HTML element
 tags: browser,event,intermediate
 firstSeen: 2018-06-19T20:57:58+03:00
 lastUpdated: 2020-10-22T20:24:44+03:00

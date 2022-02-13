@@ -1,5 +1,5 @@
 ---
-title: kmToMiles
+title: Km to miles
 tags: math,beginner
 unlisted: true
 firstSeen: 2020-10-04T00:50:13+03:00

@@ -1,5 +1,5 @@
 ---
-title: indexOfSubstrings
+title: Index of substrings
 tags: string,algorithm,generator,intermediate
 firstSeen: 2020-12-31T13:58:51+02:00
 lastUpdated: 2020-12-31T13:58:51+02:00

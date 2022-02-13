@@ -1,5 +1,5 @@
 ---
-title: curry
+title: Curry function
 tags: function,recursion,advanced
 firstSeen: 2017-12-10T15:21:35+02:00
 lastUpdated: 2020-10-22T20:23:47+03:00

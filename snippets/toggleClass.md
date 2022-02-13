@@ -1,5 +1,5 @@
 ---
-title: toggleClass
+title: Toggle class of HTML element
 tags: browser,beginner
 firstSeen: 2017-12-28T23:46:33+02:00
 lastUpdated: 2020-10-22T20:24:30+03:00

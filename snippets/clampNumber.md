@@ -1,5 +1,5 @@
 ---
-title: clampNumber
+title: Clamp number
 tags: math,beginner
 firstSeen: 2017-12-20T19:19:18+02:00
 lastUpdated: 2020-10-22T20:23:47+03:00

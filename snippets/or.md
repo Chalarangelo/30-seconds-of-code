@@ -1,5 +1,5 @@
 ---
-title: or
+title: Logical or
 tags: math,logic,beginner
 unlisted: true
 firstSeen: 2020-05-13T11:35:41+03:00

@@ -1,5 +1,5 @@
 ---
-title: weightedSample
+title: Weighted sample
 tags: array,random,advanced
 firstSeen: 2019-12-31T11:34:26+02:00
 lastUpdated: 2020-10-22T20:24:44+03:00

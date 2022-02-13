@@ -1,5 +1,5 @@
 ---
-title: swapCase
+title: Swapcase string
 tags: string,beginner
 firstSeen: 2020-11-15T13:09:03+02:00
 lastUpdated: 2020-11-15T13:09:03+02:00

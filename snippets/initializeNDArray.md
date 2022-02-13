@@ -1,5 +1,5 @@
 ---
-title: initializeNDArray
+title: Initialize n-dimensional array
 tags: array,recursion,intermediate
 firstSeen: 2018-04-14T10:52:39+03:00
 lastUpdated: 2020-10-22T20:23:47+03:00

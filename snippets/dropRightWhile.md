@@ -1,5 +1,5 @@
 ---
-title: dropRightWhile
+title: Drop list elements from the right based on function
 tags: array,intermediate
 firstSeen: 2018-01-26T12:23:18+02:00
 lastUpdated: 2020-10-19T18:51:03+03:00

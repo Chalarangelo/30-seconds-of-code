@@ -1,5 +1,5 @@
 ---
-title: primes
+title: Primes up to given number
 tags: math,algorithm,intermediate
 firstSeen: 2017-12-21T12:20:22+02:00
 lastUpdated: 2020-12-28T13:49:24+02:00

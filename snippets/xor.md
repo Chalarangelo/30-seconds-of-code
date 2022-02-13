@@ -1,5 +1,5 @@
 ---
-title: xor
+title: Logical xor
 tags: math,logic,beginner
 unlisted: true
 firstSeen: 2020-10-05T21:19:21+03:00

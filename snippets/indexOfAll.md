@@ -1,5 +1,5 @@
 ---
-title: indexOfAll
+title: Index of all matches
 tags: array,intermediate
 firstSeen: 2018-01-06T12:07:56+02:00
 lastUpdated: 2020-10-22T20:23:47+03:00

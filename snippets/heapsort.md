@@ -1,5 +1,5 @@
 ---
-title: heapsort
+title: Heap sort
 tags: algorithm,array,recursion,advanced
 firstSeen: 2020-12-28T22:48:09+02:00
 lastUpdated: 2020-12-28T22:48:09+02:00

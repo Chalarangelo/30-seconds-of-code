@@ -1,5 +1,5 @@
 ---
-title: isLowerCase
+title: String is lowercase
 tags: string,beginner
 firstSeen: 2018-01-06T11:16:05+02:00
 lastUpdated: 2020-10-20T11:21:07+03:00

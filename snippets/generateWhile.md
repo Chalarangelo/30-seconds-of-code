@@ -1,5 +1,5 @@
 ---
-title: generateWhile
+title: Generate while condition is met
 tags: function,generator,advanced
 firstSeen: 2022-01-21T05:00:00-04:00
 ---

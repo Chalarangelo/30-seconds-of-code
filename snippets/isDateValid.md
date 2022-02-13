@@ -1,5 +1,5 @@
 ---
-title: isDateValid
+title: Check if date is valid
 tags: date,intermediate
 firstSeen: 2020-10-08T16:39:23+03:00
 lastUpdated: 2020-10-20T23:02:01+03:00

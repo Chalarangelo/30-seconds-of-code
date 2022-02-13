@@ -1,5 +1,5 @@
 ---
-title: getMonthsDiffBetweenDates
+title: Date difference in months
 tags: date,intermediate
 firstSeen: 2020-08-07T15:15:26+03:00
 lastUpdated: 2020-10-19T22:49:51+03:00

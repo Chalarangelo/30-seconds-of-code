@@ -1,5 +1,5 @@
 ---
-title: percentile
+title: Percentile of matches
 tags: math,intermediate
 firstSeen: 2017-12-13T12:50:16+02:00
 lastUpdated: 2020-10-22T20:24:04+03:00

@@ -1,5 +1,5 @@
 ---
-title: sumBy
+title: Mapped array sum
 tags: math,array,intermediate
 firstSeen: 2018-01-11T12:25:54+02:00
 lastUpdated: 2020-11-03T22:11:18+02:00

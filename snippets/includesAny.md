@@ -1,5 +1,5 @@
 ---
-title: includesAny
+title: Check if array includes any values
 tags: array,beginner
 firstSeen: 2019-11-03T23:49:17+02:00
 lastUpdated: 2020-10-20T23:02:01+03:00
