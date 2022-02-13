@@ -1,5 +1,5 @@
 ---
-title: none
+title: Test if every list element is falsy
 tags: list,intermediate
 firstSeen: 2019-08-20T15:54:50+03:00
 lastUpdated: 2020-11-02T19:28:27+02:00

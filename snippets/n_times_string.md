@@ -1,5 +1,5 @@
 ---
-title: n_times_string
+title: Repeat string
 tags: string,beginner
 firstSeen: 2019-09-27T10:07:25+03:00
 lastUpdated: 2020-11-02T19:28:27+02:00

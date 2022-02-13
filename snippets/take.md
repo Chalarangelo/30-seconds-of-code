@@ -1,5 +1,5 @@
 ---
-title: take
+title: Remove list elements
 tags: list,beginner
 firstSeen: 2020-03-16T19:52:44+02:00
 lastUpdated: 2020-09-15T16:13:06+03:00

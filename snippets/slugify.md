@@ -1,5 +1,5 @@
 ---
-title: slugify
+title: String to slug
 tags: string,regexp,intermediate
 firstSeen: 2020-10-05T21:57:34+03:00
 lastUpdated: 2020-10-25T12:43:20+02:00

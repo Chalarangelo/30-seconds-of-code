@@ -1,5 +1,5 @@
 ---
-title: sort_by_indexes
+title: Sort list by indexes
 tags: list,intermediate
 firstSeen: 2020-09-07T09:58:39+03:00
 lastUpdated: 2020-11-02T19:28:35+02:00

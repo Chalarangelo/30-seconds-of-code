@@ -1,5 +1,5 @@
 ---
-title: sample
+title: Random element in list
 tags: list,random,beginner
 firstSeen: 2019-08-20T16:02:37+03:00
 lastUpdated: 2020-10-28T11:45:34+02:00

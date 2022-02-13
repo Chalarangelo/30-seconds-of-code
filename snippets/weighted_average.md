@@ -1,5 +1,5 @@
 ---
-title: weighted_average
+title: Weighted average
 tags: math,list,intermediate
 firstSeen: 2020-10-09T07:00:33+03:00
 lastUpdated: 2020-12-24T15:00:53+02:00
