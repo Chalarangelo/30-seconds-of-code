@@ -1,5 +1,5 @@
 ---
-title: binarySearch
+title: Binary search
 tags: algorithm,array,beginner
 firstSeen: 2020-12-28T12:35:44+02:00
 lastUpdated: 2020-12-29T13:06:47+02:00

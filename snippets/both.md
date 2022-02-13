@@ -1,5 +1,5 @@
 ---
-title: both
+title: Logical and for functions
 tags: function,logic,beginner
 unlisted: true
 firstSeen: 2020-05-13T11:35:36+03:00

@@ -1,5 +1,5 @@
 ---
-title: copyToClipboardAsync
+title: Copy to clipboard async
 tags: browser,string,promise,advanced
 firstSeen: 2022-01-11T05:00:00-04:00
 ---

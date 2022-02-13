@@ -1,5 +1,5 @@
 ---
-title: createElement
+title: Create HTML element
 tags: browser,beginner
 firstSeen: 2018-01-05T18:21:44+02:00
 lastUpdated: 2020-10-19T18:51:03+03:00
