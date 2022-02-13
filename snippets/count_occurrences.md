@@ -1,5 +1,5 @@
 ---
-title: count_occurrences
+title: Count occurrences
 tags: list,beginner
 firstSeen: 2021-01-10T00:00:36+02:00
 lastUpdated: 2021-01-10T00:00:36+02:00

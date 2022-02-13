@@ -1,5 +1,5 @@
 ---
-title: deep_flatten
+title: Deep flatten list
 tags: list,recursion,intermediate
 firstSeen: 2018-01-16T16:54:14+02:00
 lastUpdated: 2020-12-29T19:53:45+02:00

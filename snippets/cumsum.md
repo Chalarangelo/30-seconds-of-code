@@ -1,5 +1,5 @@
 ---
-title: cumsum
+title: Partial sum list
 tags: list,intermediate
 firstSeen: 2021-01-13T23:30:41+02:00
 lastUpdated: 2021-01-13T23:30:41+02:00
