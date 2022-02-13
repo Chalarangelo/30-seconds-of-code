@@ -1,5 +1,5 @@
 ---
-title: truncateString
+title: Truncate string
 tags: string,beginner
 firstSeen: 2017-12-17T17:55:51+02:00
 lastUpdated: 2020-10-21T21:17:45+03:00

@@ -1,5 +1,5 @@
 ---
-title: shank
+title: Remove elements from array
 tags: array,intermediate
 firstSeen: 2018-09-27T01:55:30+03:00
 lastUpdated: 2020-10-22T20:24:30+03:00

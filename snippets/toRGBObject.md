@@ -1,5 +1,5 @@
 ---
-title: toRGBObject
+title: RGB to object
 tags: string,browser,regexp,intermediate
 firstSeen: 2020-10-14T21:58:14+03:00
 lastUpdated: 2020-10-22T20:24:44+03:00

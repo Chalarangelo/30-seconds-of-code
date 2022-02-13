@@ -1,5 +1,5 @@
 ---
-title: toHash
+title: Iterable to hash
 tags: array,intermediate
 firstSeen: 2018-05-31T02:14:04+03:00
 lastUpdated: 2022-01-30T12:45:30+03:00

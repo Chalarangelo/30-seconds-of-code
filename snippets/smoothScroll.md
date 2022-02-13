@@ -1,5 +1,5 @@
 ---
-title: smoothScroll
+title: Smooth scroll element into view
 tags: browser,css,intermediate
 firstSeen: 2018-03-02T18:22:51+02:00
 lastUpdated: 2020-10-22T20:24:30+03:00
