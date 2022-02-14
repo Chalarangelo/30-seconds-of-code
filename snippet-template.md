@@ -1,5 +1,5 @@
 ---
-title: function_name
+title: Function name
 tags: utility,intermediate
 firstSeen: 2021-06-13T05:00:00-04:00
 ---
