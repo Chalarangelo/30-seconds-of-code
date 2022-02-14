@@ -38,13 +38,13 @@ const commonTransformers = [
   {
     matcher: /<h([123])>([\s\S]*?)<\/h\d>/g,
     replacer:
-      '<h3 class="card-body-title mt-6 mx-0 mb-0 txt-150 fs-lg md:fs-xl f-alt">$2</h3>',
+      '<h3 class="card-title mt-6 mx-0 mb-0 txt-150 fs-lg md:fs-xl f-alt">$2</h3>',
   },
   // Convert titles h4 and above to the appropriate elements
   {
     matcher: /<h([456])>([\s\S]*?)<\/h\d>/g,
     replacer:
-      '<h4 class="card-body-title mt-6 mx-0 mb-0 txt-150 fs-md md:fs-lg f-alt">$2</h4>',
+      '<h4 class="card-title mt-6 mx-0 mb-0 txt-150 fs-md md:fs-lg f-alt">$2</h4>',
   },
   // Convert description code to the appropriate elements (mainly blogs)
   {
