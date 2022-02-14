@@ -38,7 +38,7 @@ const SnippetCard = ({ snippet }) => {
     <Card className='snippet-card'>
       <div className='card-meta grid'>
         <CardIcon icon={snippet.icon} expertise={snippet.expertise} />
-        <div className='card-data'>
+        <div className='card-data mx-2 my-0'>
           <CardTitle>{snippet.title}</CardTitle>
           <CardSubtitle>
             {hasAuthors &&
