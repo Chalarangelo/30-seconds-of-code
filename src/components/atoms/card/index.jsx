@@ -20,7 +20,7 @@ export const CardTitle = memo(({ isSecondary = false, children }) => {
   const H = isSecondary ? 'h3' : 'h1';
 
   return (
-    <H className='card-title txt-200 fs-lg md:fs-xl f-alt f-ellipsis'>
+    <H className='card-title m-0 txt-200 fs-lg md:fs-xl f-alt f-ellipsis'>
       {children}
     </H>
   );
