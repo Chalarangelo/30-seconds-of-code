@@ -35,13 +35,15 @@ export const CardSubtitle = memo(({ children }) => (
 
 CardSubtitle.displayName = 'CardSubtitle';
 
+export const cardClassName = 'card srfc-01dp txt-100 br-lg';
+
 // Card
 /**
  * Generic card component. Renders a simple `<div>` element with a base class
  * and passes everything else to the element.
  */
 const Card = ({ className = '', ...rest }) => (
-  <div className={`card srfc-01dp txt-100 ${className}`} {...rest} />
+  <div className={`${cardClassName} ${className}`} {...rest} />
 );
 
 export default Card;
