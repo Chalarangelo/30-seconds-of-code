@@ -20,7 +20,7 @@ export const CardTitle = memo(({ isSecondary = false, children }) => {
   const H = isSecondary ? 'h3' : 'h1';
 
   return (
-    <H className='card-title txt-200 fs-lg md:fs-xl f-alt f-ellipsis'>
+    <H className='card-title m-0 txt-200 fs-lg md:fs-xl f-alt f-ellipsis'>
       {children}
     </H>
   );
@@ -30,10 +30,12 @@ CardTitle.displayName = 'CardTitle';
 
 // Subtitle
 export const CardSubtitle = memo(({ children }) => (
-  <p className='card-subtitle txt-050 fs-xs m-0'>{children}</p>
+  <p className='inline-block txt-050 fs-xs m-0'>{children}</p>
 ));
 
 CardSubtitle.displayName = 'CardSubtitle';
+
+export const cardClassName = 'card srfc-01dp txt-100 br-lg';
 
 // Card
 /**
@@ -41,7 +43,7 @@ CardSubtitle.displayName = 'CardSubtitle';
  * and passes everything else to the element.
  */
 const Card = ({ className = '', ...rest }) => (
-  <div className={`card srfc-01dp txt-100 ${className}`} {...rest} />
+  <div className={`${cardClassName} ${className}`} {...rest} />
 );
 
 export default Card;

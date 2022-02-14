@@ -1,6 +1,4 @@
 .card {
-  position: relative;
-  border-radius: var(--br-lg);
   margin: 1.75rem 0.25rem 1rem;
   padding: 1.5rem 1rem;
 
@@ -9,21 +7,13 @@
     padding: 2rem 1.5rem;
   }
 
-  // Reusable utility for all card titles
+  // Reusable utility for all card titles, including in body (used in articles)
   .card-title {
-    font-weight: 500;
-    line-height: 2rem;
-    margin: 0;
-
-    a {
+    &,
+    & a {
       font-weight: 500;
-      line-height: 1;
+      line-height: 2rem;
     }
-  }
-
-  // Reusable utility class (tag list, snippet collection subtitle)
-  .card-subtitle {
-    display: inline-block;
   }
 
   // Reusable utility for all card icons
@@ -36,17 +26,6 @@
       top: 0.5rem;
       left: 0.5rem;
     }
-  }
-
-  // Reusable utility for titles in the body of cards (used in articles)
-  .card-body-title {
-    line-height: 2rem;
-    font-weight: 500;
-    margin: 1.5rem 0 0;
-  }
-
-  .card-data {
-    margin: 0 0.5rem;
   }
 
   .card-meta {
@@ -116,7 +95,6 @@
   .card-cover-image {
     --cover-aspect-ratio: 1.78;
     margin-top: 1.25rem;
-    margin-bottom: 0;
     min-height: calc(260px / var(--cover-aspect-ratio));
     max-height: calc(680px / var(--cover-aspect-ratio));
   }
