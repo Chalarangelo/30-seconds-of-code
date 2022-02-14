@@ -105,7 +105,6 @@
   .card-cover-image {
     --cover-aspect-ratio: 1.78;
     margin-top: 1.25rem;
-    margin-bottom: 0;
     min-height: calc(260px / var(--cover-aspect-ratio));
     max-height: calc(680px / var(--cover-aspect-ratio));
   }
