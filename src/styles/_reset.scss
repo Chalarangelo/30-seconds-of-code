@@ -116,6 +116,10 @@ blockquote {
   font-weight: 350;
 }
 // Style tabular content
+.table-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
 table {
   width: 100%;
   border-collapse: collapse;
