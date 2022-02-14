@@ -57,6 +57,16 @@ const commonTransformers = [
     matcher: /<blockquote>\s*\n*\s*<p>([\s\S]*?)<\/p>\s*\n*\s<\/blockquote>/g,
     replacer: '<blockquote class="fs-md md:fs-lg">$1</blockquote>',
   },
+  // Wrap blog tables in an appropriate wrapper
+  {
+    matcher: /<table>/g,
+    replacer: '<div class="table-wrapper"><table>',
+  },
+  // Wrap blog tables in an appropriate wrapper
+  {
+    matcher: /<\/table>/g,
+    replacer: '</table></div>',
+  },
   // Convert blog cross tables to the appropriate elements
   {
     matcher: /<table>\s*\n*\s*<thead>\s*\n*\s*<tr>\s*\n*\s*<th><\/th>/g,
