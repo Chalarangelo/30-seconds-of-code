@@ -1,5 +1,5 @@
 ---
-title: Check if a list has no duplicates
+title: Check if list has no duplicates
 tags: list,beginner
 firstSeen: 2018-04-01T11:03:09+03:00
 lastUpdated: 2021-01-07T23:30:28+02:00
