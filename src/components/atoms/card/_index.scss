@@ -9,14 +9,12 @@
     padding: 2rem 1.5rem;
   }
 
-  // Reusable utility for all card titles
+  // Reusable utility for all card titles, including in body (used in articles)
   .card-title {
-    font-weight: 500;
-    line-height: 2rem;
-
-    a {
+    &,
+    & a {
       font-weight: 500;
-      line-height: 1;
+      line-height: 2rem;
     }
   }
 
@@ -30,12 +28,6 @@
       top: 0.5rem;
       left: 0.5rem;
     }
-  }
-
-  // Reusable utility for titles in the body of cards (used in articles)
-  .card-body-title {
-    line-height: 2rem;
-    font-weight: 500;
   }
 
   .card-meta {
