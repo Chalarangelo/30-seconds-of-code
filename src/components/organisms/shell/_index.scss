@@ -5,15 +5,12 @@
 
 // Navigation bar
 .nav-bar {
-  top: 0;
   flex-flow: row wrap;
   background: var(--clr-navbar-bg);
   box-shadow: var(--shd-el-01dp);
   z-index: 1001;
   height: 128px;
   width: 100vw;
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
 
   @media screen and (min-width: $layout-medium-breakpoint) {
     height: 112px;
