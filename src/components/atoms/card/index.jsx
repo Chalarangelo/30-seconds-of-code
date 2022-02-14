@@ -30,7 +30,7 @@ CardTitle.displayName = 'CardTitle';
 
 // Subtitle
 export const CardSubtitle = memo(({ children }) => (
-  <p className='card-subtitle txt-050 fs-xs m-0'>{children}</p>
+  <p className='inline-block txt-050 fs-xs m-0'>{children}</p>
 ));
 
 CardSubtitle.displayName = 'CardSubtitle';

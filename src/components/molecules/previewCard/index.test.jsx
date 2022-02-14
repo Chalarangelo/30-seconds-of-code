@@ -7,14 +7,13 @@ const previewSnippet = SnippetFactory.create('PreviewSnippet');
 const previewBlogSnippet = SnippetFactory.create('PreviewBlogSnippet');
 
 describe('<PreviewCard />', () => {
-  let wrapper, card, expertise, anchor, tags;
+  let wrapper, card, expertise, anchor;
 
   beforeEach(() => {
     wrapper = render(<PreviewCard contentItem={previewSnippet} />).container;
     anchor = wrapper.querySelector('a');
     card = wrapper.querySelector('.card');
     expertise = wrapper.querySelector('.expertise');
-    tags = wrapper.querySelector('.card-subtitle');
   });
 
   afterEach(cleanup);
@@ -54,8 +53,7 @@ describe('<PreviewCard />', () => {
   });
 
   it('should pass the appropriate tags to the TagList component', () => {
-    const tagsText = tags.textContent;
-    expect(tagsText).toContain(previewSnippet.tags);
+    expect(card.textContent).toContain(previewSnippet.tags);
   });
 
   it('should render the correct description', () => {
@@ -72,12 +70,10 @@ describe('<PreviewCard />', () => {
     beforeEach(() => {
       wrapper = render(<PreviewCard contentItem={previewBlogSnippet} />)
         .container;
-      tags = wrapper.querySelector('.card-subtitle');
     });
 
     it('should pass the appropriate tags to the TagList component', () => {
-      const tagsText = tags.textContent;
-      expect(tagsText).toContain(previewBlogSnippet.tags);
+      expect(wrapper.textContent).toContain(previewBlogSnippet.tags);
     });
   });
 
@@ -92,11 +88,10 @@ describe('<PreviewCard />', () => {
           }}
         />
       ).container;
-      tags = wrapper.querySelector('.card-subtitle');
     });
 
     it('should pass the appropriate tags to the TagList component', () => {
-      expect(tags.textContent).toContain('Snippet collection');
+      expect(wrapper.textContent).toContain('Snippet collection');
     });
   });
 });
