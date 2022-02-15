@@ -77,6 +77,7 @@ export const snippet = {
       snippet.repository.isReact && snippet.primaryTag === 'hooks',
     slug: snippet => `/${snippet.id}`,
     titleSlug: snippet => convertToSeoSlug(snippet.title),
+    fileSlug: snippet => convertToSeoSlug(snippet.fileName.slice(0, -3)),
     url: snippet => `${snippet.repository.repoUrlPrefix}/${snippet.fileName}`,
     vscodeUrl: snippet =>
       `vscode://file/${path.resolve(
@@ -104,14 +105,18 @@ export const snippet = {
       const tokenizableElements = snippet.isBlog
         ? [
             ...snippet.tags.filter(tag => !expertiseLevels.includes(tag)),
-            ...tokenizeSnippet(`${snippet.text.short} ${snippet.title}`),
+            ...tokenizeSnippet(
+              stripMarkdownFormat(`${snippet.text.short} ${snippet.title}`)
+            ),
           ]
         : [
-            ...snippet.title.split(' '),
+            snippet.fileName.slice(0, -3),
             snippet.repository.language.short,
             snippet.repository.language.long,
             ...snippet.tags.filter(tag => !expertiseLevels.includes(tag)),
-            ...tokenizeSnippet(snippet.text.short),
+            ...tokenizeSnippet(
+              stripMarkdownFormat(`${snippet.text.short} ${snippet.title}`)
+            ),
           ];
       return uniqueElements(tokenizableElements.map(v => v.toLowerCase()));
     },
@@ -240,6 +245,8 @@ export const snippet = {
     'truePrimaryTag',
     'formattedPrimaryTag',
     'expertise',
+    'titleSlug',
+    'fileSlug',
   ],
   scopes: {
     snippets: snippet => snippet.type === 'snippet',
