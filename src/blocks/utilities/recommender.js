@@ -38,7 +38,7 @@ export class Recommender {
       // Filter out any nodes with the same id (this very snippet)
       if (
         s.id !== snippet.id &&
-        s.titleSlug !== snippet.titleSlug &&
+        s.fileSlug !== snippet.fileSlug &&
         (!snippet.isListed || s.isListed)
       ) {
         // Determine score for language:
