@@ -417,6 +417,7 @@ describe('Application/Schema', () => {
           'given',
           'number',
           'millisecond',
+          'formatdur',
         ]);
       });
     });
@@ -425,7 +426,7 @@ describe('Application/Schema', () => {
       it('returns a string of search tokens', () => {
         const snippet = Snippet.records.get('js/s/format-duration');
         expect(snippet.searchTokens).toEqual(
-          'formatduration js javascript date math string human-read format given number millisecond'
+          'formatduration js javascript date math string human-read format given number millisecond formatdur'
         );
       });
     });
