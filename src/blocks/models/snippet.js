@@ -241,6 +241,8 @@ export const snippet = {
     'truePrimaryTag',
     'formattedPrimaryTag',
     'expertise',
+    'titleSlug',
+    'fileSlug',
   ],
   scopes: {
     snippets: snippet => snippet.type === 'snippet',
