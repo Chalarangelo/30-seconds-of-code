@@ -105,14 +105,18 @@ export const snippet = {
       const tokenizableElements = snippet.isBlog
         ? [
             ...snippet.tags.filter(tag => !expertiseLevels.includes(tag)),
-            ...tokenizeSnippet(`${snippet.text.short} ${snippet.title}`),
+            ...tokenizeSnippet(
+              stripMarkdownFormat(`${snippet.text.short} ${snippet.title}`)
+            ),
           ]
         : [
             ...snippet.title.split(' '),
             snippet.repository.language.short,
             snippet.repository.language.long,
             ...snippet.tags.filter(tag => !expertiseLevels.includes(tag)),
-            ...tokenizeSnippet(snippet.text.short),
+            ...tokenizeSnippet(
+              stripMarkdownFormat(`${snippet.text.short} ${snippet.title}`)
+            ),
           ];
       return uniqueElements(tokenizableElements.map(v => v.toLowerCase()));
     },
