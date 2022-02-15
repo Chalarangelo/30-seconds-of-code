@@ -77,6 +77,7 @@ export const snippet = {
       snippet.repository.isReact && snippet.primaryTag === 'hooks',
     slug: snippet => `/${snippet.id}`,
     titleSlug: snippet => convertToSeoSlug(snippet.title),
+    fileSlug: snippet => convertToSeoSlug(snippet.fileName.slice(0, -3)),
     url: snippet => `${snippet.repository.repoUrlPrefix}/${snippet.fileName}`,
     vscodeUrl: snippet =>
       `vscode://file/${path.resolve(
