@@ -110,7 +110,7 @@ export const snippet = {
             ),
           ]
         : [
-            ...snippet.title.split(' '),
+            snippet.fileName.slice(0, -3),
             snippet.repository.language.short,
             snippet.repository.language.long,
             ...snippet.tags.filter(tag => !expertiseLevels.includes(tag)),
