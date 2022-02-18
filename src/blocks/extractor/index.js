@@ -314,6 +314,7 @@ export class Extractor {
                 : `${bodyText.slice(0, shortSliceIndex)}${
                     isLongBlog ? '...' : ''
                   }`;
+            const fullText = config.isBlog ? body : bodyText;
             const parsedDescription = stripMarkdownFormat(shortText);
             const seoDescription =
               config.isBlog || parsedDescription.length <= 160
@@ -373,16 +374,11 @@ export class Extractor {
               }
             }
 
-            const text = {
-              full: config.isBlog ? body : bodyText,
-              short: shortText,
-            };
-
             const html = MarkdownParser.parseSegments(
               {
                 texts: {
-                  fullDescription: text.full,
-                  description: text.short,
+                  fullDescription: fullText,
+                  description: shortText,
                 },
                 codeBlocks: rawCode,
               },
@@ -404,7 +400,8 @@ export class Extractor {
               lastUpdated,
               listed: unlisted === true ? false : true,
               type,
-              text,
+              shortText,
+              fullText,
               html,
               code,
               rawCode,

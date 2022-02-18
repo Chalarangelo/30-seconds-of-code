@@ -72,8 +72,8 @@ export class Ranker {
       (snippet.code && snippet.code.html) || '',
       (snippet.code && snippet.code.js) || '',
       (snippet.code && snippet.code.style) || '',
-      snippet.text.full || '',
-      snippet.text.short || '',
+      snippet.fullText || '',
+      snippet.shortText || '',
     ]
       .join(' ')
       .toLowerCase();
