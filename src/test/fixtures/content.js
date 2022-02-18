@@ -657,9 +657,6 @@ export const languages = [
     short: 'js',
     name: 'JavaScript',
     icon: 'js',
-    tagIcons: {
-      node: 'node',
-    },
   },
   {
     id: 'css',
@@ -667,7 +664,6 @@ export const languages = [
     short: 'css',
     name: 'CSS',
     icon: 'css',
-    tagIcons: {},
   },
   {
     id: 'react',
@@ -675,7 +671,6 @@ export const languages = [
     short: 'jsx',
     name: 'React',
     icon: 'react',
-    tagIcons: {},
   },
 ];
 
