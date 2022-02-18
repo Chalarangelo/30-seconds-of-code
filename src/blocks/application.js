@@ -405,7 +405,7 @@ export class Application {
       mainListingConfig,
       collectionListingConfig,
     } = Application.datasetObject;
-    const { featuredListings } = collectionListingConfig;
+    const { dataFeaturedListings: featuredListings } = collectionListingConfig;
 
     // Populate repos, languages, tags, authors, snippets
     repositories.forEach(repo => Repository.createRecord(repo));
@@ -463,7 +463,7 @@ export class Application {
       type: 'main',
       slugPrefix: '/list',
       featuredIndex: -1,
-      dataObject: mainListingConfig,
+      ...mainListingConfig,
     });
     // Populate the collection listing
     Listing.createRecord({
@@ -471,7 +471,7 @@ export class Application {
       type: 'collections',
       slugPrefix: '/collections',
       featuredIndex: -1,
-      dataObject: collectionListingConfig,
+      ...collectionListingConfig,
     });
     // Populate listings for custom collections
     Collection.records.forEach(collection => {

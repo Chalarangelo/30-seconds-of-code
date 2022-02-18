@@ -18,7 +18,10 @@ export const listing = {
     { name: 'slugPrefix', type: 'stringRequired' },
     { name: 'relatedRecordId', type: 'string' },
     { name: 'featuredIndex', type: 'number' },
-    { name: 'dataObject', type: 'object' },
+    { name: 'dataName', type: 'string' },
+    { name: 'dataSplash', type: 'string' },
+    { name: 'dataDescription', type: 'string' },
+    { name: 'dataFeaturedListings', type: 'stringArray' },
   ],
   properties: {
     isMain: listing => listing.type === 'main',
@@ -135,8 +138,19 @@ export const listing = {
   },
   lazyProperties: {
     data: ({ models: { Repository, Tag, Collection } }) => listing => {
-      if (listing.isMain) return listing.dataObject;
-      if (listing.isCollections) return listing.dataObject;
+      if (listing.isMain)
+        return {
+          name: listing.dataName,
+          splash: listing.dataSplash,
+          description: listing.dataDescription,
+        };
+      if (listing.isCollections)
+        return {
+          name: listing.dataName,
+          splash: listing.dataSplash,
+          description: listing.dataDescription,
+          featuredListings: listing.dataFeaturedListings,
+        };
       if (listing.isBlog) return Repository.records.blog.first;
       if (listing.isLanguage)
         return Repository.records.get(listing.relatedRecordId);

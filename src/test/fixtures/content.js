@@ -723,11 +723,11 @@ export const tags = [
 ];
 
 export const collectionListingConfig = {
-  name: 'Snippet Collections',
-  splash: 'widescreen.png',
-  description:
+  dataName: 'Snippet Collections',
+  dataSplash: 'widescreen.png',
+  dataDescription:
     '30 seconds of code provides a wide variety of snippet and article collections for all your development needs. Explore individual language collections or browse through collections about specific topics and programming concepts.',
-  featuredListings: [
+  dataFeaturedListings: [
     'language/js',
     'language/css',
     'tag/react/t/hooks',
@@ -751,9 +751,9 @@ export const collectionListingConfig = {
 };
 
 export const mainListingConfig = {
-  name: 'Snippets & Articles',
-  splash: 'laptop-plant.png',
-  description:
+  dataName: 'Snippets & Articles',
+  dataSplash: 'laptop-plant.png',
+  dataDescription:
     '30 seconds of code provides a curated collection of short code snippets for all your development needs. Our collection spans many topics, ranging from simple coding problems to theoretical concepts and development techniques.',
 };
 
