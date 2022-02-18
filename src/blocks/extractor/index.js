@@ -70,14 +70,13 @@ export class Extractor {
       }),
       authors,
       languages: [...languageData].map(([id, data]) => {
-        const { language, shortCode, languageLiteral, iconName, tags } = data;
+        const { language, shortCode, languageLiteral, iconName } = data;
         return {
           id,
           long: language,
           short: shortCode,
           name: languageLiteral,
           icon: iconName,
-          tagIcons: tags,
         };
       }),
       tags: tagData,

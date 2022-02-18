@@ -5,7 +5,6 @@ export const language = {
     { name: 'short', type: 'stringRequired' },
     { name: 'name', type: 'stringRequired' },
     { name: 'icon', type: 'string' },
-    { name: 'tagIcons', type: 'stringObjectRequired', defaultValue: {} },
   ],
   lazyMethods: {
     getTagIcon: ({ models: { Tag } }) => (language, tag) => {
