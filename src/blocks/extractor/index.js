@@ -5,7 +5,12 @@ import { Content } from 'blocks/utilities/content';
 import { TextParser } from 'blocks/extractor/textParser';
 import { MarkdownParser } from 'blocks/extractor/markdownParser';
 import { JSONHandler } from 'blocks/utilities/jsonHandler';
-import { convertToSeoSlug, uniqueElements, stripMarkdownFormat } from 'utils';
+import {
+  convertToSeoSlug,
+  uniqueElements,
+  stripMarkdownFormat,
+  capitalize,
+} from 'utils';
 import literals from 'lang/en';
 
 const mdCodeFence = '```';
@@ -86,8 +91,14 @@ export class Extractor {
         };
       }),
       tags: tagData,
-      collectionListingConfig: collectionListing,
-      mainListingConfig: mainListing,
+      collectionListingConfig: Object.entries(collectionListing).reduce(
+        (acc, [key, value]) => ({ ...acc, [`data${capitalize(key)}`]: value }),
+        {}
+      ),
+      mainListingConfig: Object.entries(mainListing).reduce(
+        (acc, [key, value]) => ({ ...acc, [`data${capitalize(key)}`]: value }),
+        {}
+      ),
     };
     await Extractor.writeData(data);
     return data;
