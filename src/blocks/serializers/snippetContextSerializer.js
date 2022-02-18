@@ -5,12 +5,18 @@ export const snippetContextSerializer = {
   name: 'SnippetContextSerializer',
   methods: {
     code: snippet => {
-      if (snippet.isCSS) return snippet.code;
+      if (snippet.isCSS)
+        return {
+          html: snippet.htmlCode,
+          css: snippet.cssCode,
+          scopedCss: snippet.scopedCssCode,
+          js: snippet.jsCode,
+        };
       if (snippet.isReact) {
         /* eslint-disable camelcase */
         return {
-          js: `${snippet.code.src}\n\n${snippet.code.example}`,
-          css: snippet.code.style ? snippet.code.style : '',
+          js: `${snippet.srcCode}\n\n${snippet.exampleCode}`,
+          css: snippet.styleCode || '',
           html: JSX_SNIPPET_PRESETS.envHtml,
           js_pre_processor: JSX_SNIPPET_PRESETS.jsPreProcessor,
           js_external: JSX_SNIPPET_PRESETS.jsImports.join(';'),

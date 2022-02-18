@@ -62,12 +62,7 @@ export class Extractor {
         const { iconName, ...rest } = config;
         return { ...rest, icon: iconName };
       }),
-      snippets: snippets.map(snippet => {
-        // Exclude specific keys
-        // eslint-disable-next-line no-unused-vars
-        const { rawCode, ...rest } = snippet;
-        return { ...rest };
-      }),
+      snippets,
       authors,
       languages: [...languageData].map(([id, data]) => {
         const { language, shortCode, languageLiteral, iconName } = data;
@@ -324,7 +319,15 @@ export class Extractor {
                     language: config.language.long,
                   });
 
-            let code = {};
+            let code = {
+              html: null,
+              css: null,
+              scopedCss: null,
+              js: null,
+              style: null,
+              src: null,
+              example: null,
+            };
             let rawCode = {};
             if (!config.isBlog) {
               const codeBlocks = [...body.matchAll(codeMatcher)].map(v => ({
@@ -403,8 +406,13 @@ export class Extractor {
               shortText,
               fullText,
               html,
-              code,
-              rawCode,
+              htmlCode: code.html,
+              cssCode: code.css,
+              scopedCssCode: code.scopedCss,
+              jsCode: code.js,
+              styleCode: code.style,
+              srcCode: code.src,
+              exampleCode: code.example,
               cover,
               authors,
               seoDescription,
