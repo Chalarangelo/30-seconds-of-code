@@ -9,6 +9,14 @@ const NEW_BLOG_CARDS = 5;
 const TOP_SNIPPET_CARDS = 5;
 const TOP_COLLECTION_CHIPS = 6;
 
+/* eslint-disable camelcase */
+// TODO: Maybe find these a better home
+const staticContexts = {
+  static_about: { stringLiterals: literals.about },
+  static_cookies: { stringLiterals: literals.cookies },
+};
+/* eslint-enable camelcase */
+
 export const page = {
   name: 'Page',
   fields: [
@@ -17,7 +25,6 @@ export const page = {
     { name: 'pageNumber', type: 'number' },
     { name: 'slug', type: 'string' },
     { name: 'staticPriority', type: 'number' },
-    { name: 'staticContext', type: 'objectRequired', defaultValue: {} },
   ],
   properties: {
     isStatic: page =>
@@ -49,6 +56,10 @@ export const page = {
       return '';
     },
     fullRoute: page => `${routePrefix}${page.relRoute}`,
+    staticContext: page => {
+      if (page.isStatic) return staticContexts[page.id] || {};
+      return null;
+    },
   },
   lazyProperties: {
     data: ({ models: { Snippet, Listing } }) => page => {

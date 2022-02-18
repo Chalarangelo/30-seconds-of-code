@@ -527,18 +527,12 @@ export class Application {
       template: 'StaticPage',
       slug: '/about',
       staticPriority: 0.25,
-      staticContext: {
-        stringLiterals: Application.literals.about,
-      },
     });
     Page.createRecord({
       id: 'static_cookies',
       template: 'StaticPage',
       slug: '/cookies',
       staticPriority: 0.25,
-      staticContext: {
-        stringLiterals: Application.literals.cookies,
-      },
     });
     Page.createRecord({
       id: 'static_search',
