@@ -43,7 +43,7 @@ export const snippetContextSerializer = {
         month: 'short',
         year: 'numeric',
       }),
-    fullDescription: snippet => snippet.html.fullDescription,
+    fullDescription: snippet => snippet.fullDescriptionHtml,
   },
   attributes: [
     'title',

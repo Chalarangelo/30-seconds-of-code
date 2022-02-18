@@ -1,7 +1,7 @@
 export const snippetPreviewSerializer = {
   name: 'SnippetPreviewSerializer',
   methods: {
-    description: snippet => snippet.html.description.trim(),
+    description: snippet => snippet.descriptionHtml.trim(),
     searchTokens: (snippet, { withSearch } = {}) =>
       withSearch ? snippet.searchTokens : undefined,
     searchResultTag: (snippet, { withSearch } = {}) =>

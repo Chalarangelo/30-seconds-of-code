@@ -30,7 +30,15 @@ export const snippet = {
     { name: 'type', type: 'stringRequired' },
     { name: 'shortText', type: 'stringRequired' },
     { name: 'fullText', type: 'stringRequired' },
-    { name: 'html', type: 'object' },
+    { name: 'descriptionHtml', type: 'string' },
+    { name: 'fullDescriptionHtml', type: 'string' },
+    { name: 'htmlCodeBlockHtml', type: 'string' },
+    { name: 'cssCodeBlockHtml', type: 'string' },
+    { name: 'scopedCssCodeBlockHtml', type: 'string' },
+    { name: 'jsCodeBlockHtml', type: 'string' },
+    { name: 'styleCodeBlockHtml', type: 'string' },
+    { name: 'srcCodeBlockHtml', type: 'string' },
+    { name: 'exampleCodeBlockHtml', type: 'string' },
     { name: 'htmlCode', type: 'string' },
     { name: 'cssCode', type: 'string' },
     { name: 'scopedCssCode', type: 'string' },
@@ -162,17 +170,17 @@ export const snippet = {
         let blocks = [
           {
             language: { short: 'html', long: 'HTML' },
-            htmlContent: snippet.html.html,
+            htmlContent: snippet.htmlCodeBlockHtml,
           },
           {
             language: { short: 'css', long: 'CSS' },
-            htmlContent: snippet.html.css,
+            htmlContent: snippet.cssCodeBlockHtml,
           },
         ];
-        if (snippet.html.js)
+        if (snippet.jsCodeBlockHtml)
           blocks.push({
             language: { short: 'js', long: 'JavaScript' },
-            htmlContent: snippet.html.js,
+            htmlContent: snippet.jsCodeBlockHtml,
           });
         return blocks;
       }
@@ -182,20 +190,20 @@ export const snippet = {
             short: snippet.language.short,
             long: snippet.language.name,
           },
-          htmlContent: snippet.html.code,
+          htmlContent: snippet.srcCodeBlockHtml,
         },
         {
           language: {
             short: snippet.language.short,
             long: literals.examples,
           },
-          htmlContent: snippet.html.example,
+          htmlContent: snippet.exampleCodeBlockHtml,
         },
       ];
-      if (snippet.html.style)
+      if (snippet.styleCodeBlockHtml)
         blocks.unshift({
           language: { short: 'css', long: 'CSS' },
-          htmlContent: snippet.html.style,
+          htmlContent: snippet.styleCodeBlockHtml,
         });
       return blocks;
     },

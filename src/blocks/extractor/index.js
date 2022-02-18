@@ -361,7 +361,7 @@ export class Extractor {
                 code.style = codeBlocks[0].code;
                 rawCode.style = codeBlocks[0].raw;
                 code.src = codeBlocks[1].code;
-                rawCode.code = codeBlocks[1].raw;
+                rawCode.src = codeBlocks[1].raw;
                 code.example = codeBlocks[2].code;
                 rawCode.example = codeBlocks[2].raw;
               } else {
@@ -371,7 +371,7 @@ export class Extractor {
                   rawCode.style = '';
                 }
                 code.src = codeBlocks[0].code;
-                rawCode.code = codeBlocks[0].raw;
+                rawCode.src = codeBlocks[0].raw;
                 code.example = codeBlocks[1].code;
                 rawCode.example = codeBlocks[1].raw;
               }
@@ -405,7 +405,7 @@ export class Extractor {
               type,
               shortText,
               fullText,
-              html,
+              ...html,
               htmlCode: code.html,
               cssCode: code.css,
               scopedCssCode: code.scopedCss,
