@@ -9,10 +9,8 @@ export const repo30blog = {
   isBlog: true,
   featured: true,
   biasPenaltyMultiplier: 1,
-  images: {
-    name: 'blog_images',
-    path: 'blog_images',
-  },
+  imagesName: 'blog_images',
+  imagesPath: 'blog_images',
   splash: 'laptop-view.png',
   description:
     'The coding articles collection contains curated stories, tips, questions and answers on a wide variety of topics. The main focus of these articles revolves around the languages and technologies presented in snippets, as well as career advice and lessons.',

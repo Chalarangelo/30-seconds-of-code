@@ -52,11 +52,11 @@ export class AssetWriter {
 
     logger.log(`Processing image assets from configuration files`);
     for (const [, repo] of repos) {
-      fs.ensureDirSync(path.join(outPath, repo.images.name));
+      fs.ensureDirSync(path.join(outPath, repo.imagesName));
       let assets = glob
         .sync(
           `${contentPath}/sources/${repo.dirName}/${
-            repo.images.path
+            repo.imagesPath
           }/*.@(${supportedExtensions.join('|')})`
         )
         .map(file => path.resolve(file));
@@ -65,7 +65,7 @@ export class AssetWriter {
         logger.log(`Found ${assets.length} images for ${repo.dirName}.`);
         const existingAssets = glob
           .sync(
-            `${outPath}/${repo.images.name}/*.@(${supportedExtensions.join(
+            `${outPath}/${repo.imagesName}/*.@(${supportedExtensions.join(
               '|'
             )})`
           )
@@ -85,7 +85,7 @@ export class AssetWriter {
       }
       await Promise.all(
         assets.map(asset =>
-          AssetWriter.processImageAsset(asset, `${outPath}/${repo.images.name}`)
+          AssetWriter.processImageAsset(asset, `${outPath}/${repo.imagesName}`)
         )
       );
     }
