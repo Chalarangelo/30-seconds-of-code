@@ -28,7 +28,8 @@ export const snippet = {
     { name: 'lastUpdated', type: 'dateRequired' },
     { name: 'listed', type: 'booleanRequired' },
     { name: 'type', type: 'stringRequired' },
-    { name: 'text', type: 'object' },
+    { name: 'shortText', type: 'stringRequired' },
+    { name: 'fullText', type: 'stringRequired' },
     { name: 'html', type: 'object' },
     { name: 'code', type: 'object' },
     { name: 'cover', type: 'string' },
@@ -48,7 +49,7 @@ export const snippet = {
       if (!language) return snippet.primaryTag;
       return snippet.tags.filter(t => t !== language.id)[0];
     },
-    strippedDescription: snippet => stripMarkdownFormat(snippet.text.short),
+    strippedDescription: snippet => stripMarkdownFormat(snippet.shortText),
     formattedPrimaryTag: snippet => literals.tag(snippet.truePrimaryTag),
     // Used for snippet previews in search autocomplete
     formattedMiniPreviewTag: snippet =>
@@ -106,7 +107,7 @@ export const snippet = {
         ? [
             ...snippet.tags.filter(tag => !expertiseLevels.includes(tag)),
             ...tokenizeSnippet(
-              stripMarkdownFormat(`${snippet.text.short} ${snippet.title}`)
+              stripMarkdownFormat(`${snippet.shortText} ${snippet.title}`)
             ),
           ]
         : [
@@ -115,7 +116,7 @@ export const snippet = {
             snippet.repository.language.long,
             ...snippet.tags.filter(tag => !expertiseLevels.includes(tag)),
             ...tokenizeSnippet(
-              stripMarkdownFormat(`${snippet.text.short} ${snippet.title}`)
+              stripMarkdownFormat(`${snippet.shortText} ${snippet.title}`)
             ),
           ];
       return uniqueElements(tokenizableElements.map(v => v.toLowerCase()));
