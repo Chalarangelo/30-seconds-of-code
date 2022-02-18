@@ -1,5 +1,5 @@
 ---
-title: orderWith
+title: Order array of objects based on property order
 tags: array,object,intermediate
 firstSeen: 2020-10-04T12:11:10+03:00
 lastUpdated: 2020-10-21T21:54:53+03:00
@@ -34,7 +34,7 @@ const users = [
   { name: 'nicky', language: 'Python' },
 ];
 orderWith(users, 'language', ['Javascript', 'TypeScript', 'Java']);
-/* 
+/*
 [
   { name: 'fred', language: 'Javascript' },
   { name: 'frannie', language: 'Javascript' },

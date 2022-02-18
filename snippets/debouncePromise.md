@@ -1,5 +1,5 @@
 ---
-title: debouncePromise
+title: Debounce promise
 tags: function,promise,advanced
 firstSeen: 2020-10-10T21:09:04+03:00
 lastUpdated: 2020-10-19T18:51:03+03:00

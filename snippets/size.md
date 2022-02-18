@@ -1,5 +1,5 @@
 ---
-title: size
+title: Size of array, object or string
 tags: object,array,string,intermediate
 firstSeen: 2017-12-30T16:46:01+02:00
 lastUpdated: 2020-10-21T21:17:45+03:00

@@ -1,5 +1,5 @@
 ---
-title: queryStringToObject
+title: Query string to object
 tags: object,intermediate
 firstSeen: 2020-10-20T20:25:32+03:00
 lastUpdated: 2020-11-03T22:11:18+02:00

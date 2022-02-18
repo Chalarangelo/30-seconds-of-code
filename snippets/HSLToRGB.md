@@ -1,5 +1,5 @@
 ---
-title: HSLToRGB
+title: HSL to RGB
 tags: math,intermediate
 firstSeen: 2020-10-01T23:15:49+03:00
 lastUpdated: 2020-10-04T11:24:27+03:00

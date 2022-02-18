@@ -1,5 +1,5 @@
 ---
-title: toPascalCase
+title: Pascalcase string
 tags: string,regexp,intermediate
 firstSeen: 2021-09-08T19:21:13+00:00
 ---

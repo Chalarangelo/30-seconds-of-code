@@ -1,5 +1,5 @@
 ---
-title: zipWith
+title: Group array elements based on function
 tags: array,advanced
 firstSeen: 2018-01-20T17:21:34+02:00
 lastUpdated: 2020-11-03T21:46:13+02:00

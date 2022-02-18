@@ -1,5 +1,5 @@
 ---
-title: hasOne
+title: Check if array has only one match
 tags: array,beginner
 firstSeen: 2021-07-04T05:00:00-04:00
 ---

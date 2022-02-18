@@ -1,5 +1,5 @@
 ---
-title: isLeapYear
+title: Check for leap year
 tags: date,beginner
 firstSeen: 2020-02-05T14:00:03+02:00
 lastUpdated: 2020-10-20T23:02:01+03:00

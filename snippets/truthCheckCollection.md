@@ -1,5 +1,5 @@
 ---
-title: truthCheckCollection
+title: Truth check collection
 tags: object,logic,array,intermediate
 firstSeen: 2017-12-18T13:05:21+02:00
 lastUpdated: 2020-10-22T20:24:44+03:00

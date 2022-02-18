@@ -1,5 +1,5 @@
 ---
-title: mapString
+title: Map string
 tags: string,intermediate
 firstSeen: 2018-07-14T10:59:56+03:00
 lastUpdated: 2020-10-21T21:54:53+03:00

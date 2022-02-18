@@ -1,5 +1,5 @@
 ---
-title: indexOn
+title: Array to object based on key
 tags: array,object,intermediate
 firstSeen: 2021-06-27T05:00:00-04:00
 ---

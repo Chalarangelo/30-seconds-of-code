@@ -1,5 +1,5 @@
 ---
-title: HSBToRGB
+title: HSB to RGB
 tags: math,intermediate
 firstSeen: 2020-09-18T14:25:07+03:00
 lastUpdated: 2020-09-18T14:25:07+03:00

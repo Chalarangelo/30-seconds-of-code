@@ -1,5 +1,5 @@
 ---
-title: nor
+title: Logical nor
 tags: math,logic,beginner
 unlisted: true
 firstSeen: 2021-03-29T21:20:41+03:00

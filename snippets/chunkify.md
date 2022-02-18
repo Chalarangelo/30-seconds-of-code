@@ -1,5 +1,5 @@
 ---
-title: chunkify
+title: Chunk interable
 tags: function,generator,array,advanced
 firstSeen: 2021-03-16T22:50:40+02:00
 lastUpdated: 2021-03-16T22:50:40+02:00

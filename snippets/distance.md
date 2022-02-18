@@ -1,5 +1,5 @@
 ---
-title: distance
+title: Distance between two points
 tags: math,algorithm,beginner
 firstSeen: 2017-12-17T16:41:31+02:00
 lastUpdated: 2020-12-28T13:49:24+02:00

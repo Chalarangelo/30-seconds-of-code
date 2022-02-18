@@ -1,5 +1,5 @@
 ---
-title: rangeGenerator
+title: Range generator
 tags: function,generator,advanced
 firstSeen: 2020-10-11T17:05:55+03:00
 lastUpdated: 2020-10-11T17:05:55+03:00

@@ -1,5 +1,5 @@
 ---
-title: findLastN
+title: Find last n matches
 tags: array,intermediate
 firstSeen: 2021-05-09T13:31:36+03:00
 lastUpdated: 2021-05-09T13:31:36+03:00

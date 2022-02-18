@@ -1,5 +1,5 @@
 ---
-title: isPowerOfTen
+title: Number is power of ten
 tags: math,beginner
 firstSeen: 2021-01-06T22:53:58+02:00
 lastUpdated: 2021-01-06T22:53:58+02:00

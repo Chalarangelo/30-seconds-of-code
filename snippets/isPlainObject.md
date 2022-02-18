@@ -1,5 +1,5 @@
 ---
-title: isPlainObject
+title: Value is plain object
 tags: type,object,intermediate
 firstSeen: 2018-01-19T13:59:12+02:00
 lastUpdated: 2020-10-20T23:02:01+03:00

@@ -1,5 +1,5 @@
 ---
-title: httpPost
+title: HTTP post
 tags: browser,intermediate
 firstSeen: 2018-01-08T22:07:02+02:00
 lastUpdated: 2020-10-19T22:49:51+03:00

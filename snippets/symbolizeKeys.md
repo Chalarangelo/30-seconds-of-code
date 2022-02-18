@@ -1,5 +1,5 @@
 ---
-title: symbolizeKeys
+title: Symbolize object keys
 tags: object,advanced
 firstSeen: 2021-08-01T05:00:00-04:00
 ---
