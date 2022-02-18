@@ -199,18 +199,15 @@ export const snippet = {
   },
   lazyProperties: {
     icon: ({ models: { Language } }) => snippet => {
-      let mapped;
       if (snippet.isBlog) {
-        const lang = Language.records.find(l => snippet.tags.includes(l.id));
-        if (lang) {
-          const tag = snippet.tags.find(t => lang.tagIcons[t]);
-          mapped = tag ? tag : lang.icon;
-        }
-        return mapped ? mapped : snippet.repository.icon;
+        const lang = Language.records.full.find(l =>
+          snippet.tags.includes(l.id)
+        );
+        return lang
+          ? lang.getTagIcon(snippet.truePrimaryTag)
+          : snippet.repository.icon;
       }
-      return snippet.language.tagIcons[snippet.primaryTag]
-        ? snippet.language.tagIcons[snippet.primaryTag]
-        : snippet.repository.icon;
+      return snippet.language.getTagIcon(snippet.primaryTag);
     },
     language: ({ models: { Language } }) => snippet => {
       if (!snippet.isBlog) return snippet.repository.language;
