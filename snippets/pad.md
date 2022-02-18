@@ -1,5 +1,5 @@
 ---
-title: pad
+title: Pad string
 tags: string,beginner
 firstSeen: 2020-10-04T01:53:05+03:00
 lastUpdated: 2020-10-04T01:53:05+03:00

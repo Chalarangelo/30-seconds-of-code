@@ -1,5 +1,5 @@
 ---
-title: num_to_range
+title: Map number to range
 tags: math,beginner
 firstSeen: 2020-10-04T12:43:57+03:00
 lastUpdated: 2021-04-05T18:25:46+03:00

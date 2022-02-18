@@ -1,5 +1,5 @@
 ---
-title: intersection
+title: List intersection
 tags: list,beginner
 firstSeen: 2019-08-20T15:14:26+03:00
 lastUpdated: 2020-11-02T19:28:05+02:00

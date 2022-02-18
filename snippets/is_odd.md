@@ -1,5 +1,5 @@
 ---
-title: is_odd
+title: Number is odd
 tags: math,beginner
 unlisted: true
 firstSeen: 2019-08-20T14:21:44+03:00

@@ -1,5 +1,5 @@
 ---
-title: rads_to_degrees
+title: Radians to degrees
 tags: math,beginner
 firstSeen: 2019-08-20T15:58:57+03:00
 lastUpdated: 2020-11-02T19:28:27+02:00

@@ -1,5 +1,5 @@
 ---
-title: compact
+title: Compact list
 tags: list,beginner
 firstSeen: 2018-01-19T12:17:06+02:00
 lastUpdated: 2020-11-02T19:27:07+02:00

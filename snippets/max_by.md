@@ -1,5 +1,5 @@
 ---
-title: max_by
+title: Max list value based on function
 tags: math,list,beginner
 firstSeen: 2019-08-20T15:42:41+03:00
 lastUpdated: 2020-11-02T19:28:27+02:00

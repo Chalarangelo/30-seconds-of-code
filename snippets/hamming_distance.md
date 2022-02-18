@@ -1,5 +1,5 @@
 ---
-title: hamming_distance
+title: Hamming distance
 tags: math,intermediate
 firstSeen: 2021-01-17T13:04:06+02:00
 lastUpdated: 2021-02-18T14:22:25+02:00
