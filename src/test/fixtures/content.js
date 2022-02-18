@@ -144,7 +144,6 @@ export const blogSnippets = [
       description:
         "<p>Take a deeper dive into React's rendering process and understand the basics behind the popular JavaScript framework.</p>",
     },
-    code: {},
     cover: 'blog_images/comic-glasses.jpg',
     authors: ['chalarangelo'],
     seoDescription:
@@ -170,7 +169,6 @@ export const blogSnippets = [
       description:
         "<p>Take a deeper dive into React's rendering process and understand how to make small yet powerful tweaks to optimize performance.</p>",
     },
-    code: {},
     cover: 'blog_images/comic-glasses.jpg',
     authors: ['chalarangelo'],
     seoDescription:
@@ -196,7 +194,6 @@ export const blogSnippets = [
       description:
         '<p>When working with multiple <code class="notranslate">useState</code> hooks in React, things can get a bit complicated while debugging. Luckily, there\'s an easy way to label these values.</p>',
     },
-    code: {},
     cover: 'blog_images/bunny-poster.jpg',
     authors: ['chalarangelo'],
     seoDescription:
@@ -222,7 +219,6 @@ export const blogSnippets = [
       description:
         '<p>Learn how to create a custom responsive favicon that can adapt its color palette for dark mode with this quick guide.</p>',
     },
-    code: {},
     cover: 'blog_images/dark-mode.jpg',
     authors: ['chalarangelo'],
     seoDescription:
@@ -248,7 +244,6 @@ export const blogSnippets = [
       description:
         '<p>JavaScript uses callback functions in various places for different purposes. From event listeners to asynchronous operations, they are an invaluable tool you need to master.</p>',
     },
-    code: {},
     cover: 'blog_images/rabbit-call.jpg',
     authors: ['chalarangelo'],
     seoDescription:
@@ -274,7 +269,6 @@ export const blogSnippets = [
       description:
         '<p>Did you know you can use Chrome Developer Tools to debug your Node.js code? Find out how in this short guide.</p>',
     },
-    code: {},
     cover: 'blog_images/bug.jpg',
     authors: ['chalarangelo'],
     seoDescription:
@@ -300,7 +294,6 @@ export const blogSnippets = [
       description:
         '<p>VS Code is steadily gaining popularity among developers. Here are 10 essential extensions for JavaScript developers that aim to increase your productivity.</p>',
     },
-    code: {},
     cover: 'blog_images/computer-screens.jpg',
     authors: ['chalarangelo'],
     seoDescription:
@@ -335,12 +328,10 @@ export const codeSnippets = [
       example:
         '<span class="token function">formatDuration</span><span class="token punctuation">(</span><span class="token number">1001</span><span class="token punctuation">);</span> <span class="token comment">// \'1 second, 1 millisecond\'</span>\n<span class="token function">formatDuration</span><span class="token punctuation">(</span><span class="token number">34325055574</span><span class="token punctuation">);</span>\n<span class="token comment">// \'397 days, 6 hours, 44 minutes, 15 seconds, 574 milliseconds\'</span>',
     },
-    code: {
-      src:
-        "const formatDuration = ms => {\n  if (ms < 0) ms = -ms;\n  const time = {\n    day: Math.floor(ms / 86400000),\n    hour: Math.floor(ms / 3600000) % 24,\n    minute: Math.floor(ms / 60000) % 60,\n    second: Math.floor(ms / 1000) % 60,\n    millisecond: Math.floor(ms) % 1000\n  };\n  return Object.entries(time)\n    .filter(val => val[1] !== 0)\n    .map(([key, val]) => `${val} ${key}${val !== 1 ? 's' : ''}`)\n    .join(', ');\n};",
-      example:
-        "formatDuration(1001); // '1 second, 1 millisecond'\nformatDuration(34325055574);\n// '397 days, 6 hours, 44 minutes, 15 seconds, 574 milliseconds'",
-    },
+    srcCode:
+      "const formatDuration = ms => {\n  if (ms < 0) ms = -ms;\n  const time = {\n    day: Math.floor(ms / 86400000),\n    hour: Math.floor(ms / 3600000) % 24,\n    minute: Math.floor(ms / 60000) % 60,\n    second: Math.floor(ms / 1000) % 60,\n    millisecond: Math.floor(ms) % 1000\n  };\n  return Object.entries(time)\n    .filter(val => val[1] !== 0)\n    .map(([key, val]) => `${val} ${key}${val !== 1 ? 's' : ''}`)\n    .join(', ');\n};",
+    exampleCode:
+      "formatDuration(1001); // '1 second, 1 millisecond'\nformatDuration(34325055574);\n// '397 days, 6 hours, 44 minutes, 15 seconds, 574 milliseconds'",
     authors: [],
     seoDescription:
       'Returns the human-readable format of the given number of milliseconds.',
@@ -368,11 +359,9 @@ export const codeSnippets = [
       example:
         '<span class="token function">formatNumber</span><span class="token punctuation">(</span><span class="token number">123456</span><span class="token punctuation">);</span> <span class="token comment">// \'123,456\' in `en-US`</span>\n<span class="token function">formatNumber</span><span class="token punctuation">(</span><span class="token number">15675436903</span><span class="token punctuation">);</span> <span class="token comment">// \'15.675.436.903\' in `de-DE`</span>',
     },
-    code: {
-      src: 'const formatNumber = num => num.toLocaleString();',
-      example:
-        "formatNumber(123456); // '123,456' in `en-US`\nformatNumber(15675436903); // '15.675.436.903' in `de-DE`",
-    },
+    srcCode: 'const formatNumber = num => num.toLocaleString();',
+    exampleCode:
+      "formatNumber(123456); // '123,456' in `en-US`\nformatNumber(15675436903); // '15.675.436.903' in `de-DE`",
     authors: [],
     seoDescription: 'Formats a number using the local number format order.',
     repository: '30code',
@@ -399,12 +388,10 @@ export const codeSnippets = [
       example:
         '<span class="token function">formatSeconds</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">);</span> <span class="token comment">// \'00:03:20\'</span>\n<span class="token function">formatSeconds</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">200</span><span class="token punctuation">);</span> <span class="token comment">// \'-00:03:20\'</span>\n<span class="token function">formatSeconds</span><span class="token punctuation">(</span><span class="token number">99999</span><span class="token punctuation">);</span> <span class="token comment">// \'27:46:39\'</span>',
     },
-    code: {
-      src:
-        "const formatSeconds = s => {\n  const [hour, minute, second, sign] =\n    s > 0\n      ? [s / 3600, (s / 60) % 60, s % 60, '']\n      : [-s / 3600, (-s / 60) % 60, -s % 60, '-'];\n\n  return (\n    sign +\n    [hour, minute, second]\n      .map(v => `${Math.floor(v)}`.padStart(2, '0'))\n      .join(':')\n  );\n};",
-      example:
-        "formatSeconds(200); // '00:03:20'\nformatSeconds(-200); // '-00:03:20'\nformatSeconds(99999); // '27:46:39'",
-    },
+    srcCode:
+      "const formatSeconds = s => {\n  const [hour, minute, second, sign] =\n    s > 0\n      ? [s / 3600, (s / 60) % 60, s % 60, '']\n      : [-s / 3600, (-s / 60) % 60, -s % 60, '-'];\n\n  return (\n    sign +\n    [hour, minute, second]\n      .map(v => `${Math.floor(v)}`.padStart(2, '0'))\n      .join(':')\n  );\n};",
+    exampleCode:
+      "formatSeconds(200); // '00:03:20'\nformatSeconds(-200); // '-00:03:20'\nformatSeconds(99999); // '27:46:39'",
     authors: [],
     seoDescription: 'Returns the ISO format of the given number of seconds.',
     repository: '30code',
@@ -432,12 +419,10 @@ export const codeSnippets = [
       example:
         '<span class="token function">hashNode</span><span class="token punctuation">(</span><span class="token known-class-name class-name">JSON</span><span class="token punctuation">.</span><span class="token method function property-access">stringify</span><span class="token punctuation">({</span> a<span class="token operator">:</span> <span class="token string">\'a\'</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">],</span> foo<span class="token operator">:</span> <span class="token punctuation">{</span> c<span class="token operator">:</span> <span class="token string">\'bar\'</span> <span class="token punctuation">} })).</span><span class="token method function property-access">then</span><span class="token punctuation">(</span>\n  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token property-access">log</span>\n<span class="token punctuation">);</span>\n<span class="token comment">// \'04aa106279f5977f59f9067fa9712afc4aedc6f5862a8defc34552d8c7206393\'</span>',
     },
-    code: {
-      src:
-        "const crypto = require('crypto');\n\nconst hashNode = val =>\n  new Promise(resolve =>\n    setTimeout(\n      () => resolve(crypto.createHash('sha256').update(val).digest('hex')),\n      0\n    )\n  );",
-      example:
-        "hashNode(JSON.stringify({ a: 'a', b: [1, 2, 3, 4], foo: { c: 'bar' } })).then(\n  console.log\n);\n// '04aa106279f5977f59f9067fa9712afc4aedc6f5862a8defc34552d8c7206393'",
-    },
+    srcCode:
+      "const crypto = require('crypto');\n\nconst hashNode = val =>\n  new Promise(resolve =>\n    setTimeout(\n      () => resolve(crypto.createHash('sha256').update(val).digest('hex')),\n      0\n    )\n  );",
+    exampleCode:
+      "hashNode(JSON.stringify({ a: 'a', b: [1, 2, 3, 4], foo: { c: 'bar' } })).then(\n  console.log\n);\n// '04aa106279f5977f59f9067fa9712afc4aedc6f5862a8defc34552d8c7206393'",
     authors: [],
     seoDescription:
       'Creates a hash for a value using the SHA-256 algorithm.Returns a promise.',
@@ -469,13 +454,11 @@ export const cssSnippets = [
       css:
         '<span class="token selector"><span class="token class">.triangle</span></span> <span class="token punctuation">{</span>\n  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>\n  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>\n  <span class="token property">border-top</span><span class="token punctuation">:</span> <span class="token number">20</span><span class="token unit">px</span> solid <span class="token hexcode color">#9C27B0</span><span class="token punctuation">;</span>\n  <span class="token property">border-left</span><span class="token punctuation">:</span> <span class="token number">20</span><span class="token unit">px</span> solid <span class="token color">transparent</span><span class="token punctuation">;</span>\n  <span class="token property">border-right</span><span class="token punctuation">:</span> <span class="token number">20</span><span class="token unit">px</span> solid <span class="token color">transparent</span><span class="token punctuation">;\n}</span>',
     },
-    code: {
-      html: '<div class="triangle"></div>',
-      css:
-        '.triangle {\n  width: 0;\n  height: 0;\n  border-top: 20px solid #9C27B0;\n  border-left: 20px solid transparent;\n  border-right: 20px solid transparent;\n}',
-      scopedCss:
-        '[data-scope="snippet-preview"] .triangle {\n  width: 0;\n  height: 0;\n  border-top: 20px solid #9C27B0;\n  border-left: 20px solid transparent;\n  border-right: 20px solid transparent; }\n',
-    },
+    htmlCode: '<div class="triangle"></div>',
+    cssCode:
+      '.triangle {\n  width: 0;\n  height: 0;\n  border-top: 20px solid #9C27B0;\n  border-left: 20px solid transparent;\n  border-right: 20px solid transparent;\n}',
+    scopedCssCode:
+      '[data-scope="snippet-preview"] .triangle {\n  width: 0;\n  height: 0;\n  border-top: 20px solid #9C27B0;\n  border-left: 20px solid transparent;\n  border-right: 20px solid transparent; }\n',
     authors: [],
     seoDescription: 'Creates a triangular shape with pure CSS.',
     repository: '30css',
@@ -504,16 +487,14 @@ export const cssSnippets = [
       js:
         '<span class="token keyword">let</span> btn <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">querySelector</span><span class="token punctuation">(</span><span class="token string">\'.mouse-cursor-gradient-tracking\'</span><span class="token punctuation">);</span>\nbtn<span class="token punctuation">.</span><span class="token method function property-access">addEventListener</span><span class="token punctuation">(</span><span class="token string">\'mousemove\'</span><span class="token punctuation">,</span> <span class="token parameter">e</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>\n  <span class="token keyword">let</span> rect <span class="token operator">=</span> e<span class="token punctuation">.</span><span class="token property-access">target</span><span class="token punctuation">.</span><span class="token method function property-access">getBoundingClientRect</span><span class="token punctuation">();</span>\n  <span class="token keyword">let</span> x <span class="token operator">=</span> e<span class="token punctuation">.</span><span class="token property-access">clientX</span> <span class="token operator">-</span> rect<span class="token punctuation">.</span><span class="token property-access">left</span><span class="token punctuation">;</span>\n  <span class="token keyword">let</span> y <span class="token operator">=</span> e<span class="token punctuation">.</span><span class="token property-access">clientY</span> <span class="token operator">-</span> rect<span class="token punctuation">.</span><span class="token property-access">top</span><span class="token punctuation">;</span>\n  btn<span class="token punctuation">.</span><span class="token property-access">style</span><span class="token punctuation">.</span><span class="token method function property-access">setProperty</span><span class="token punctuation">(</span><span class="token string">\'--x\'</span><span class="token punctuation">,</span> x <span class="token operator">+</span> <span class="token string">\'px\'</span><span class="token punctuation">);</span>\n  btn<span class="token punctuation">.</span><span class="token property-access">style</span><span class="token punctuation">.</span><span class="token method function property-access">setProperty</span><span class="token punctuation">(</span><span class="token string">\'--y\'</span><span class="token punctuation">,</span> y <span class="token operator">+</span> <span class="token string">\'px\'</span><span class="token punctuation">);\n});</span>',
     },
-    code: {
-      html:
-        '<button class="mouse-cursor-gradient-tracking">\n  <span>Hover me</span>\n</button>',
-      css:
-        ".mouse-cursor-gradient-tracking {\n  position: relative;\n  background: #7983ff;\n  padding: 0.5rem 1rem;\n  font-size: 1.2rem;\n  border: none;\n  color: white;\n  cursor: pointer;\n  outline: none;\n  overflow: hidden;\n}\n\n.mouse-cursor-gradient-tracking span {\n  position: relative;\n}\n\n.mouse-cursor-gradient-tracking:before {\n  --size: 0;\n  content: '';\n  position: absolute;\n  left: var(--x);\n  top: var(--y);\n  width: var(--size);\n  height: var(--size);\n  background: radial-gradient(circle closest-side, pink, transparent);\n  transform: translate(-50%, -50%);\n  transition: width 0.2s ease, height 0.2s ease;\n}\n\n.mouse-cursor-gradient-tracking:hover:before {\n  --size: 200px;\n}",
-      scopedCss:
-        '[data-scope="snippet-preview"] .mouse-cursor-gradient-tracking {\n  position: relative;\n  background: #7983ff;\n  padding: 0.5rem 1rem;\n  font-size: 1.2rem;\n  border: none;\n  color: white;\n  cursor: pointer;\n  outline: none;\n  overflow: hidden; }\n\n[data-scope="snippet-preview"] .mouse-cursor-gradient-tracking span {\n  position: relative; }\n\n[data-scope="snippet-preview"] .mouse-cursor-gradient-tracking:before {\n  --size: 0;\n  content: \'\';\n  position: absolute;\n  left: var(--x);\n  top: var(--y);\n  width: var(--size);\n  height: var(--size);\n  background: radial-gradient(circle closest-side, pink, transparent);\n  transform: translate(-50%, -50%);\n  transition: width 0.2s ease, height 0.2s ease; }\n\n[data-scope="snippet-preview"] .mouse-cursor-gradient-tracking:hover:before {\n  --size: 200px; }\n',
-      js:
-        "let btn = document.querySelector('.mouse-cursor-gradient-tracking');\nbtn.addEventListener('mousemove', e => {\n  let rect = e.target.getBoundingClientRect();\n  let x = e.clientX - rect.left;\n  let y = e.clientY - rect.top;\n  btn.style.setProperty('--x', x + 'px');\n  btn.style.setProperty('--y', y + 'px');\n});",
-    },
+    htmlCode:
+      '<button class="mouse-cursor-gradient-tracking">\n  <span>Hover me</span>\n</button>',
+    cssCode:
+      ".mouse-cursor-gradient-tracking {\n  position: relative;\n  background: #7983ff;\n  padding: 0.5rem 1rem;\n  font-size: 1.2rem;\n  border: none;\n  color: white;\n  cursor: pointer;\n  outline: none;\n  overflow: hidden;\n}\n\n.mouse-cursor-gradient-tracking span {\n  position: relative;\n}\n\n.mouse-cursor-gradient-tracking:before {\n  --size: 0;\n  content: '';\n  position: absolute;\n  left: var(--x);\n  top: var(--y);\n  width: var(--size);\n  height: var(--size);\n  background: radial-gradient(circle closest-side, pink, transparent);\n  transform: translate(-50%, -50%);\n  transition: width 0.2s ease, height 0.2s ease;\n}\n\n.mouse-cursor-gradient-tracking:hover:before {\n  --size: 200px;\n}",
+    scopedCssCode:
+      '[data-scope="snippet-preview"] .mouse-cursor-gradient-tracking {\n  position: relative;\n  background: #7983ff;\n  padding: 0.5rem 1rem;\n  font-size: 1.2rem;\n  border: none;\n  color: white;\n  cursor: pointer;\n  outline: none;\n  overflow: hidden; }\n\n[data-scope="snippet-preview"] .mouse-cursor-gradient-tracking span {\n  position: relative; }\n\n[data-scope="snippet-preview"] .mouse-cursor-gradient-tracking:before {\n  --size: 0;\n  content: \'\';\n  position: absolute;\n  left: var(--x);\n  top: var(--y);\n  width: var(--size);\n  height: var(--size);\n  background: radial-gradient(circle closest-side, pink, transparent);\n  transform: translate(-50%, -50%);\n  transition: width 0.2s ease, height 0.2s ease; }\n\n[data-scope="snippet-preview"] .mouse-cursor-gradient-tracking:hover:before {\n  --size: 200px; }\n',
+    jsCode:
+      "let btn = document.querySelector('.mouse-cursor-gradient-tracking');\nbtn.addEventListener('mousemove', e => {\n  let rect = e.target.getBoundingClientRect();\n  let x = e.clientX - rect.left;\n  let y = e.clientY - rect.top;\n  btn.style.setProperty('--x', x + 'px');\n  btn.style.setProperty('--y', y + 'px');\n});",
     authors: [],
     seoDescription:
       'A hover effect where the gradient follows the mouse cursor.',
@@ -546,13 +527,11 @@ export const reactSnippets = [
       example:
         '<span class="token keyword">const</span> <span class="token function-variable function"><span class="token maybe-class-name">Timer</span></span> <span class="token operator">=</span> <span class="token parameter">props</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>\n  <span class="token keyword">const</span> <span class="token punctuation">[</span>seconds<span class="token punctuation">,</span> setSeconds<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token maybe-class-name">React</span><span class="token punctuation">.</span><span class="token method function property-access">useState</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">);</span>\n  <span class="token function">useInterval</span><span class="token punctuation">(()</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>\n    <span class="token function">setSeconds</span><span class="token punctuation">(</span>seconds <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">);\n  },</span> <span class="token number">1000</span><span class="token punctuation">);</span>\n\n  <span class="token keyword control-flow">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token punctuation">{</span>seconds<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><span class="token punctuation">;\n};</span>\n\n<span class="token maybe-class-name">ReactDOM</span><span class="token punctuation">.</span><span class="token method function property-access">render</span><span class="token punctuation">(</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Timer</span></span> <span class="token punctuation">/></span></span><span class="token punctuation">,</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">getElementById</span><span class="token punctuation">(</span><span class="token string">\'root\'</span><span class="token punctuation">));</span>',
     },
-    code: {
-      style: '',
-      src:
-        'const useInterval = (callback, delay) => {\n  const savedCallback = React.useRef();\n\n  React.useEffect(() => {\n    savedCallback.current = callback;\n  }, [callback]);\n\n  React.useEffect(() => {\n    const tick = () => {\n      savedCallback.current();\n    }\n    if (delay !== null) {\n      let id = setInterval(tick, delay);\n      return () => clearInterval(id);\n    }\n  }, [delay]);\n};',
-      example:
-        "const Timer = props => {\n  const [seconds, setSeconds] = React.useState(0);\n  useInterval(() => {\n    setSeconds(seconds + 1);\n  }, 1000);\n\n  return <p>{seconds}</p>;\n};\n\nReactDOM.render(<Timer />, document.getElementById('root'));",
-    },
+    styleCode: '',
+    srcCode:
+      'const useInterval = (callback, delay) => {\n  const savedCallback = React.useRef();\n\n  React.useEffect(() => {\n    savedCallback.current = callback;\n  }, [callback]);\n\n  React.useEffect(() => {\n    const tick = () => {\n      savedCallback.current();\n    }\n    if (delay !== null) {\n      let id = setInterval(tick, delay);\n      return () => clearInterval(id);\n    }\n  }, [delay]);\n};',
+    exampleCode:
+      "const Timer = props => {\n  const [seconds, setSeconds] = React.useState(0);\n  useInterval(() => {\n    setSeconds(seconds + 1);\n  }, 1000);\n\n  return <p>{seconds}</p>;\n};\n\nReactDOM.render(<Timer />, document.getElementById('root'));",
     authors: [],
     seoDescription: 'Implements setInterval in a declarative manner.',
     repository: '30react',
@@ -580,14 +559,12 @@ export const reactSnippets = [
       example:
         '<span class="token maybe-class-name">ReactDOM</span><span class="token punctuation">.</span><span class="token method function property-access">render</span><span class="token punctuation">(</span>\n  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">TagInput</span></span> <span class="token attr-name">tags</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{[</span><span class="token string">\'Nodejs\'</span><span class="token punctuation">,</span> <span class="token string">\'MongoDB\'</span><span class="token punctuation">]}</span></span> <span class="token punctuation">/></span></span><span class="token punctuation">,</span>\n  <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">getElementById</span><span class="token punctuation">(</span><span class="token string">\'root\'</span><span class="token punctuation">)\n);</span>',
     },
-    code: {
-      style:
-        '.tag-input {\n  display: flex;\n  flex-wrap: wrap;\n  min-height: 48px;\n  padding: 0 8px;\n  border: 1px solid #d6d8da;\n  border-radius: 6px;\n}\n\n.tag-input input {\n  flex: 1;\n  border: none;\n  height: 46px;\n  font-size: 14px;\n  padding: 4px 0 0;\n}\n\n.tag-input input:focus {\n  outline: transparent;\n}\n\n.tags {\n  display: flex;\n  flex-wrap: wrap;\n  padding: 0;\n  margin: 8px 0 0;\n}\n\n.tag {\n  width: auto;\n  height: 32px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: #fff;\n  padding: 0 8px;\n  font-size: 14px;\n  list-style: none;\n  border-radius: 6px;\n  margin: 0 8px 8px 0;\n  background: #0052cc;\n}\n\n.tag-title {\n  margin-top: 3px;\n}\n\n.tag-close-icon {\n  display: block;\n  width: 16px;\n  height: 16px;\n  line-height: 16px;\n  text-align: center;\n  font-size: 14px;\n  margin-left: 8px;\n  color: #0052cc;\n  border-radius: 50%;\n  background: #fff;\n  cursor: pointer;\n}',
-      src:
-        'const TagInput = ({ tags }) => {\n  const [tagData, setTagData] = React.useState(tags);\n  const removeTagData = indexToRemove => {\n    setTagData([...tagData.filter((_, index) => index !== indexToRemove)]);\n  };\n  const addTagData = event => {\n    if (event.target.value !== \'\') {\n      setTagData([...tagData, event.target.value]);\n      event.target.value = \'\';\n    }\n  };\n  return (\n    <div className="tag-input">\n      <ul className="tags">\n        {tagData.map((tag, index) => (\n          <li key={index} className="tag">\n            <span className="tag-title">{tag}</span>\n            <span\n              className="tag-close-icon"\n              onClick={() => removeTagData(index)}\n            >\n              x\n            </span>\n          </li>\n        ))}\n      </ul>\n      <input\n        type="text"\n        onKeyUp={event => (event.key === \'Enter\' ? addTagData(event) : null)}\n        placeholder="Press enter to add a tag"\n      />\n    </div>\n  );\n};',
-      example:
-        "ReactDOM.render(\n  <TagInput tags={['Nodejs', 'MongoDB']} />,\n  document.getElementById('root')\n);",
-    },
+    styleCode:
+      '.tag-input {\n  display: flex;\n  flex-wrap: wrap;\n  min-height: 48px;\n  padding: 0 8px;\n  border: 1px solid #d6d8da;\n  border-radius: 6px;\n}\n\n.tag-input input {\n  flex: 1;\n  border: none;\n  height: 46px;\n  font-size: 14px;\n  padding: 4px 0 0;\n}\n\n.tag-input input:focus {\n  outline: transparent;\n}\n\n.tags {\n  display: flex;\n  flex-wrap: wrap;\n  padding: 0;\n  margin: 8px 0 0;\n}\n\n.tag {\n  width: auto;\n  height: 32px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: #fff;\n  padding: 0 8px;\n  font-size: 14px;\n  list-style: none;\n  border-radius: 6px;\n  margin: 0 8px 8px 0;\n  background: #0052cc;\n}\n\n.tag-title {\n  margin-top: 3px;\n}\n\n.tag-close-icon {\n  display: block;\n  width: 16px;\n  height: 16px;\n  line-height: 16px;\n  text-align: center;\n  font-size: 14px;\n  margin-left: 8px;\n  color: #0052cc;\n  border-radius: 50%;\n  background: #fff;\n  cursor: pointer;\n}',
+    srcCode:
+      'const TagInput = ({ tags }) => {\n  const [tagData, setTagData] = React.useState(tags);\n  const removeTagData = indexToRemove => {\n    setTagData([...tagData.filter((_, index) => index !== indexToRemove)]);\n  };\n  const addTagData = event => {\n    if (event.target.value !== \'\') {\n      setTagData([...tagData, event.target.value]);\n      event.target.value = \'\';\n    }\n  };\n  return (\n    <div className="tag-input">\n      <ul className="tags">\n        {tagData.map((tag, index) => (\n          <li key={index} className="tag">\n            <span className="tag-title">{tag}</span>\n            <span\n              className="tag-close-icon"\n              onClick={() => removeTagData(index)}\n            >\n              x\n            </span>\n          </li>\n        ))}\n      </ul>\n      <input\n        type="text"\n        onKeyUp={event => (event.key === \'Enter\' ? addTagData(event) : null)}\n        placeholder="Press enter to add a tag"\n      />\n    </div>\n  );\n};',
+    exampleCode:
+      "ReactDOM.render(\n  <TagInput tags={['Nodejs', 'MongoDB']} />,\n  document.getElementById('root')\n);",
     authors: [],
     seoDescription: 'Renders a tag input field.',
     repository: '30react',
