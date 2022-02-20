@@ -22,19 +22,8 @@ export const repository = {
         min: 1.0,
       },
     },
-    {
-      name: 'images',
-      type: 'object',
-      validators: {
-        containsCorrectKeys: value => {
-          if (!value) return true;
-          const keys = Object.keys(value);
-          if (keys.length === 0) return true;
-          const requiredKeys = ['name', 'path'];
-          return requiredKeys.every(key => keys.includes(key));
-        },
-      },
-    },
+    { name: 'imagesName', type: 'string' },
+    { name: 'imagesPath', type: 'string' },
   ],
   properties: {
     sourceDir: repo => `${repo.dirName}/${repo.snippetPath}`,
@@ -57,6 +46,6 @@ export const repository = {
     css: repo => repo.isCSS,
     react: repo => repo.isReact,
     blog: repo => repo.isBlog,
-    withImages: repo => repo.images && repo.images.name && repo.images.path,
+    withImages: repo => repo.imagesName && repo.imagesPath,
   },
 };

@@ -182,26 +182,26 @@ export class MarkdownParser {
     const result = {};
     Object.entries(texts).forEach(([key, value]) => {
       if (!value) return;
-      result[key] = value.trim()
+      result[`${key}Html`] = value.trim()
         ? MarkdownParser.parseMarkdown(value, true, languageData)
         : '';
     });
-    result.description = commonTransformers.reduce(
+    result.descriptionHtml = commonTransformers.reduce(
       (acc, { matcher, replacer }) => {
         return acc.replace(matcher, replacer);
       },
-      result.description
+      result.descriptionHtml
     );
-    result.fullDescription = commonTransformers.reduce(
+    result.fullDescriptionHtml = commonTransformers.reduce(
       (acc, { matcher, replacer }) => {
         return acc.replace(matcher, replacer);
       },
-      result.fullDescription
+      result.fullDescriptionHtml
     );
 
     if (isBlog) {
       // Transform relative paths for images
-      result.fullDescription = result.fullDescription.replace(
+      result.fullDescriptionHtml = result.fullDescriptionHtml.replace(
         /(<p>)*<img src="\.\/([^"]+)"([^>]*)>(<\/p>)*/g,
         (match, openTag, imgSrc, imgRest) => {
           const imgName = imgSrc.slice(0, imgSrc.lastIndexOf('.'));
@@ -214,7 +214,7 @@ export class MarkdownParser {
     } else {
       Object.entries(codeBlocks).forEach(([key, value]) => {
         if (!value) return;
-        result[key] = value.trim()
+        result[`${key}CodeBlockHtml`] = value.trim()
           ? optimizeAllNodes(MarkdownParser.parseMarkdown(value)).trim()
           : '';
       });

@@ -28,9 +28,24 @@ export const snippet = {
     { name: 'lastUpdated', type: 'dateRequired' },
     { name: 'listed', type: 'booleanRequired' },
     { name: 'type', type: 'stringRequired' },
-    { name: 'text', type: 'object' },
-    { name: 'html', type: 'object' },
-    { name: 'code', type: 'object' },
+    { name: 'shortText', type: 'stringRequired' },
+    { name: 'fullText', type: 'stringRequired' },
+    { name: 'descriptionHtml', type: 'string' },
+    { name: 'fullDescriptionHtml', type: 'string' },
+    { name: 'htmlCodeBlockHtml', type: 'string' },
+    { name: 'cssCodeBlockHtml', type: 'string' },
+    { name: 'scopedCssCodeBlockHtml', type: 'string' },
+    { name: 'jsCodeBlockHtml', type: 'string' },
+    { name: 'styleCodeBlockHtml', type: 'string' },
+    { name: 'srcCodeBlockHtml', type: 'string' },
+    { name: 'exampleCodeBlockHtml', type: 'string' },
+    { name: 'htmlCode', type: 'string' },
+    { name: 'cssCode', type: 'string' },
+    { name: 'scopedCssCode', type: 'string' },
+    { name: 'jsCode', type: 'string' },
+    { name: 'styleCode', type: 'string' },
+    { name: 'srcCode', type: 'string' },
+    { name: 'exampleCode', type: 'string' },
     { name: 'cover', type: 'string' },
     { name: 'seoDescription', type: 'stringRequired' },
   ],
@@ -48,7 +63,7 @@ export const snippet = {
       if (!language) return snippet.primaryTag;
       return snippet.tags.filter(t => t !== language.id)[0];
     },
-    strippedDescription: snippet => stripMarkdownFormat(snippet.text.short),
+    strippedDescription: snippet => stripMarkdownFormat(snippet.shortText),
     formattedPrimaryTag: snippet => literals.tag(snippet.truePrimaryTag),
     // Used for snippet previews in search autocomplete
     formattedMiniPreviewTag: snippet =>
@@ -106,7 +121,7 @@ export const snippet = {
         ? [
             ...snippet.tags.filter(tag => !expertiseLevels.includes(tag)),
             ...tokenizeSnippet(
-              stripMarkdownFormat(`${snippet.text.short} ${snippet.title}`)
+              stripMarkdownFormat(`${snippet.shortText} ${snippet.title}`)
             ),
           ]
         : [
@@ -115,7 +130,7 @@ export const snippet = {
             snippet.repository.language.long,
             ...snippet.tags.filter(tag => !expertiseLevels.includes(tag)),
             ...tokenizeSnippet(
-              stripMarkdownFormat(`${snippet.text.short} ${snippet.title}`)
+              stripMarkdownFormat(`${snippet.shortText} ${snippet.title}`)
             ),
           ];
       return uniqueElements(tokenizableElements.map(v => v.toLowerCase()));
@@ -155,17 +170,17 @@ export const snippet = {
         let blocks = [
           {
             language: { short: 'html', long: 'HTML' },
-            htmlContent: snippet.html.html,
+            htmlContent: snippet.htmlCodeBlockHtml,
           },
           {
             language: { short: 'css', long: 'CSS' },
-            htmlContent: snippet.html.css,
+            htmlContent: snippet.cssCodeBlockHtml,
           },
         ];
-        if (snippet.html.js)
+        if (snippet.jsCodeBlockHtml)
           blocks.push({
             language: { short: 'js', long: 'JavaScript' },
-            htmlContent: snippet.html.js,
+            htmlContent: snippet.jsCodeBlockHtml,
           });
         return blocks;
       }
@@ -175,20 +190,20 @@ export const snippet = {
             short: snippet.language.short,
             long: snippet.language.name,
           },
-          htmlContent: snippet.html.code,
+          htmlContent: snippet.srcCodeBlockHtml,
         },
         {
           language: {
             short: snippet.language.short,
             long: literals.examples,
           },
-          htmlContent: snippet.html.example,
+          htmlContent: snippet.exampleCodeBlockHtml,
         },
       ];
-      if (snippet.html.style)
+      if (snippet.styleCodeBlockHtml)
         blocks.unshift({
           language: { short: 'css', long: 'CSS' },
-          htmlContent: snippet.html.style,
+          htmlContent: snippet.styleCodeBlockHtml,
         });
       return blocks;
     },

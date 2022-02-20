@@ -39,13 +39,18 @@ describe('MarkdownParser', () => {
   describe('parseSegments', () => {
     it('returns the correct results for normal snippets', () => {
       expect(Object.keys(snippetResult).sort()).toEqual(
-        ['description', 'example', 'fullDescription', 'src'].sort()
+        [
+          'descriptionHtml',
+          'exampleCodeBlockHtml',
+          'fullDescriptionHtml',
+          'srcCodeBlockHtml',
+        ].sort()
       );
     });
 
     it('returns the correct results for blog snippets', () => {
       expect(Object.keys(blogResult).sort()).toEqual(
-        ['description', 'fullDescription'].sort()
+        ['descriptionHtml', 'fullDescriptionHtml'].sort()
       );
     });
   });

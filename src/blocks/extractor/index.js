@@ -5,7 +5,12 @@ import { Content } from 'blocks/utilities/content';
 import { TextParser } from 'blocks/extractor/textParser';
 import { MarkdownParser } from 'blocks/extractor/markdownParser';
 import { JSONHandler } from 'blocks/utilities/jsonHandler';
-import { convertToSeoSlug, uniqueElements, stripMarkdownFormat } from 'utils';
+import {
+  convertToSeoSlug,
+  uniqueElements,
+  stripMarkdownFormat,
+  capitalize,
+} from 'utils';
 import literals from 'lang/en';
 
 const mdCodeFence = '```';
@@ -43,6 +48,7 @@ export class Extractor {
           optionalLanguage,
           language: rawLanguage,
           otherLanguages: rawOtherLanguages,
+          images,
           iconName,
           tagMetadata,
           ...rest
@@ -55,19 +61,24 @@ export class Extractor {
         const otherLanguages = rawOtherLanguages.length
           ? rawOtherLanguages.map(lang => lang.long.toLowerCase())
           : null;
+        const hasImages = images && images.name && images.path;
+        const imagesName = hasImages ? images.name : null;
+        const imagesPath = hasImages ? images.path : null;
         const icon = iconName ? iconName : null;
-        return { ...rest, language, otherLanguages, icon };
+        return {
+          ...rest,
+          language,
+          otherLanguages,
+          icon,
+          imagesName,
+          imagesPath,
+        };
       }),
       collections: collectionConfigs.map(config => {
         const { iconName, ...rest } = config;
         return { ...rest, icon: iconName };
       }),
-      snippets: snippets.map(snippet => {
-        // Exclude specific keys
-        // eslint-disable-next-line no-unused-vars
-        const { rawCode, ...rest } = snippet;
-        return { ...rest };
-      }),
+      snippets,
       authors,
       languages: [...languageData].map(([id, data]) => {
         const { language, shortCode, languageLiteral, iconName } = data;
@@ -80,8 +91,14 @@ export class Extractor {
         };
       }),
       tags: tagData,
-      collectionListingConfig: collectionListing,
-      mainListingConfig: mainListing,
+      collectionListingConfig: Object.entries(collectionListing).reduce(
+        (acc, [key, value]) => ({ ...acc, [`data${capitalize(key)}`]: value }),
+        {}
+      ),
+      mainListingConfig: Object.entries(mainListing).reduce(
+        (acc, [key, value]) => ({ ...acc, [`data${capitalize(key)}`]: value }),
+        {}
+      ),
     };
     await Extractor.writeData(data);
     return data;
@@ -314,6 +331,7 @@ export class Extractor {
                 : `${bodyText.slice(0, shortSliceIndex)}${
                     isLongBlog ? '...' : ''
                   }`;
+            const fullText = config.isBlog ? body : bodyText;
             const parsedDescription = stripMarkdownFormat(shortText);
             const seoDescription =
               config.isBlog || parsedDescription.length <= 160
@@ -323,7 +341,15 @@ export class Extractor {
                     language: config.language.long,
                   });
 
-            let code = {};
+            let code = {
+              html: null,
+              css: null,
+              scopedCss: null,
+              js: null,
+              style: null,
+              src: null,
+              example: null,
+            };
             let rawCode = {};
             if (!config.isBlog) {
               const codeBlocks = [...body.matchAll(codeMatcher)].map(v => ({
@@ -357,7 +383,7 @@ export class Extractor {
                 code.style = codeBlocks[0].code;
                 rawCode.style = codeBlocks[0].raw;
                 code.src = codeBlocks[1].code;
-                rawCode.code = codeBlocks[1].raw;
+                rawCode.src = codeBlocks[1].raw;
                 code.example = codeBlocks[2].code;
                 rawCode.example = codeBlocks[2].raw;
               } else {
@@ -367,22 +393,17 @@ export class Extractor {
                   rawCode.style = '';
                 }
                 code.src = codeBlocks[0].code;
-                rawCode.code = codeBlocks[0].raw;
+                rawCode.src = codeBlocks[0].raw;
                 code.example = codeBlocks[1].code;
                 rawCode.example = codeBlocks[1].raw;
               }
             }
 
-            const text = {
-              full: config.isBlog ? body : bodyText,
-              short: shortText,
-            };
-
             const html = MarkdownParser.parseSegments(
               {
                 texts: {
-                  fullDescription: text.full,
-                  description: text.short,
+                  fullDescription: fullText,
+                  description: shortText,
                 },
                 codeBlocks: rawCode,
               },
@@ -404,10 +425,16 @@ export class Extractor {
               lastUpdated,
               listed: unlisted === true ? false : true,
               type,
-              text,
-              html,
-              code,
-              rawCode,
+              shortText,
+              fullText,
+              ...html,
+              htmlCode: code.html,
+              cssCode: code.css,
+              scopedCssCode: code.scopedCss,
+              jsCode: code.js,
+              styleCode: code.style,
+              srcCode: code.src,
+              exampleCode: code.example,
               cover,
               authors,
               seoDescription,
