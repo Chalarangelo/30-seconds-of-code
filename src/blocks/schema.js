@@ -27,9 +27,9 @@ export const schema = {
       type: 'manyToOne',
     },
     {
-      from: { model: 'Snippet', name: 'authors' },
+      from: { model: 'Snippet', name: 'author' },
       to: { model: 'Author', name: 'articles' },
-      type: 'manyToMany',
+      type: 'manyToOne',
     },
     {
       from: { model: 'Listing', name: 'children' },
