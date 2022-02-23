@@ -2,7 +2,7 @@
 title: Understanding Python's slice assignment
 type: story
 tags: python,list
-authors: maciv
+author: maciv
 cover: blog_images/sliced-fruits.jpg
 excerpt: Learn everything you need to know about Python's slice assignment with this handy guide.
 firstSeen: 2020-11-07T19:21:40+02:00

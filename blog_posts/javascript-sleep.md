@@ -2,7 +2,7 @@
 title: How can I implement a sleep function in JavaScript?
 type: question
 tags: javascript,date,promise
-authors: chalarangelo
+author: chalarangelo
 cover: blog_images/sleepy-cat.jpg
 excerpt: Learn all the different ways you can implement a `sleep()` function in JavaScript.
 firstSeen: 2020-08-04T20:08:54+03:00

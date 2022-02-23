@@ -2,7 +2,7 @@
 title: React PropTypes - objectOf vs shape
 type: story
 tags: react,components,proptypes
-authors: chalarangelo
+author: chalarangelo
 cover: blog_images/shapes.jpg
 excerpt: Learn the differences between `PropTypes.objectOf()` and `PropTypes.shape()` and where to use each one with this quick guide.
 firstSeen: 2021-01-18T11:00:00+02:00

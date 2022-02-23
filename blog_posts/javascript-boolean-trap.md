@@ -2,7 +2,7 @@
 title: Boolean traps and how to avoid them
 type: story
 tags: javascript,function,type,boolean
-authors: chalarangelo
+author: chalarangelo
 cover: blog_images/lighthouse.jpg
 excerpt: Boolean traps can cause readabiltiy and maintainability issues in your code. Learn what they are, how to spot and fix them in this article.
 firstSeen: 2021-07-11T05:00:00-04:00

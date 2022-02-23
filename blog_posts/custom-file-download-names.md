@@ -2,7 +2,7 @@
 title: "Tip: Customize the names of downloadable files"
 type: tip
 tags: webdev,html,browser
-authors: chalarangelo
+author: chalarangelo
 cover: blog_images/hard-disk.jpg
 excerpt: Learn what HTML5 attribute you can use to customize the names of your downloadable files with this quick tip.
 firstSeen: 2021-01-11T11:00:00+02:00

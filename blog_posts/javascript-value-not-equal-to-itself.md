@@ -2,7 +2,7 @@
 title: What is the only value not equal to itself in JavaScript?
 type: question
 tags: javascript,type,comparison
-authors: chalarangelo
+author: chalarangelo
 cover: blog_images/eagle.jpg
 excerpt: Did you know there's a JavaScript value that's not equal to itself?
 firstSeen: 2021-12-12T05:00:00-04:00

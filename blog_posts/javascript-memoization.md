@@ -2,7 +2,7 @@
 title: Where and how can I use memoization in JavaScript?
 type: question
 tags: javascript,function,memoization
-authors: chalarangelo
+author: chalarangelo
 cover: blog_images/cherry-trees.jpg
 excerpt: Learn different ways to memoize function calls in JavaScript as well as when to use memoization to get the best performance results.
 firstSeen: 2020-02-27T16:23:25+02:00

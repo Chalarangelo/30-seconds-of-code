@@ -2,7 +2,7 @@
 title: What are the differences between Maps and objects in JavaScript?
 type: question
 tags: javascript,object
-authors: chalarangelo
+author: chalarangelo
 cover: blog_images/tent-stars.jpg
 excerpt: Maps and objects are very similar, but they have some differences that can help you decide which one better fits your use-case.
 firstSeen: 2022-02-13T05:00:00-04:00
