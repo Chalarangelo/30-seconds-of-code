@@ -299,7 +299,7 @@ export class Extractor {
               type: rawType,
               excerpt,
               cover,
-              authors: rawAuthors,
+              author,
               firstSeen,
               lastUpdated,
               body,
@@ -414,8 +414,6 @@ export class Extractor {
               }
             );
 
-            const authors = rawAuthors ? rawAuthors.split(',') : [];
-
             return {
               id,
               fileName,
@@ -436,7 +434,7 @@ export class Extractor {
               srcCode: code.src,
               exampleCode: code.example,
               cover,
-              authors,
+              author,
               seoDescription,
               repository: config.id,
             };
