@@ -271,12 +271,10 @@ factory
   .trait('advanced', { expertise: 'Advanced' })
   // Blog
   .trait('blog', () => ({
-    authors: [
-      {
-        name: 'Angelos Chalaris',
-        profile: 'https://twitter.com/chalarangelo',
-      },
-    ],
+    author: {
+      name: 'Angelos Chalaris',
+      profile: 'https://twitter.com/chalarangelo',
+    },
     cover: 'static/assets/blog_images/an-image.jpg',
     expertise: 'Blog',
   }))

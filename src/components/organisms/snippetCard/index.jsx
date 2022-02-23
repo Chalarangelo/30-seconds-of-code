@@ -1,4 +1,4 @@
-import { useEffect, Fragment } from 'react';
+import { useEffect } from 'react';
 import Image from 'components/atoms/image';
 import Card, { CardIcon, CardTitle, CardSubtitle } from 'components/atoms/card';
 import Actions from 'components/molecules/actions';
@@ -28,7 +28,6 @@ const SnippetCard = ({ snippet }) => {
     }
   }, []);
 
-  const hasAuthors = Boolean(snippet.authors && snippet.authors.length);
   const hasCodeBlocks = Boolean(
     snippet.codeBlocks && snippet.codeBlocks.length
   );
@@ -41,21 +40,19 @@ const SnippetCard = ({ snippet }) => {
         <div className='card-data mx-2 my-0'>
           <CardTitle>{snippet.title}</CardTitle>
           <CardSubtitle>
-            {hasAuthors &&
-              snippet.authors.map((a, i, arr) => (
-                <Fragment key={`author-fragment-${i}`}>
-                  <a
-                    className='inherit'
-                    href={a.profile}
-                    rel='nofollow noopener noreferrer'
-                    target='_blank'
-                  >
-                    {a.name}
-                  </a>
-                  {i !== arr.length - 1 ? ', ' : ''}
-                </Fragment>
-              ))}
-            {hasAuthors && ' · '}
+            {Boolean(snippet.author) && (
+              <>
+                <a
+                  className='inherit'
+                  href={snippet.author.profile}
+                  rel='nofollow noopener noreferrer'
+                  target='_blank'
+                >
+                  {snippet.author.name}
+                </a>
+                {' · '}
+              </>
+            )}
             {snippet.tags}
             {' · '}
             <span className='inline-block'>{snippet.date}</span>
