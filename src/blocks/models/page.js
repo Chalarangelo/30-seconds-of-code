@@ -124,7 +124,7 @@ export const page = {
           cover: context.snippet.cover,
           firstSeen: page.data.firstSeen,
           lastUpdated: page.data.lastUpdated,
-          author: page.data.authors.first,
+          author: page.data.author,
         });
 
         let recommendedItems = SnippetPreviewSerializer.serializeArray(

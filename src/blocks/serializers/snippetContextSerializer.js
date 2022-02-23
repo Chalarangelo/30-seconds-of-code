@@ -25,12 +25,9 @@ export const snippetContextSerializer = {
       }
       return undefined;
     },
-    authors: snippet =>
+    author: snippet =>
       snippet.isBlog
-        ? snippet.authors.flatMap(({ name, profile }) => ({
-            name,
-            profile,
-          }))
+        ? { name: snippet.author.name, profile: snippet.author.profile }
         : undefined,
     type: snippet => (snippet.isBlog ? snippet.type : undefined),
     coverUrl: snippet =>
@@ -57,7 +54,7 @@ export const snippetContextSerializer = {
     ['formattedTags', 'tags'],
     'actionType',
     'code',
-    'authors',
+    'author',
     ['coverUrl', 'cover'],
   ],
 };

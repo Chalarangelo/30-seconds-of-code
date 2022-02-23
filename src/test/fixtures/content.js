@@ -141,7 +141,7 @@ export const blogSnippets = [
     descriptionHtml:
       "<p>Take a deeper dive into React's rendering process and understand the basics behind the popular JavaScript framework.</p>",
     cover: 'blog_images/comic-glasses.jpg',
-    authors: ['chalarangelo'],
+    author: 'chalarangelo',
     seoDescription:
       "Take a deeper dive into React's rendering process and understand the basics behind the popular JavaScript framework.",
     repository: '30blog',
@@ -164,7 +164,7 @@ export const blogSnippets = [
     descriptionHtml:
       "<p>Take a deeper dive into React's rendering process and understand how to make small yet powerful tweaks to optimize performance.</p>",
     cover: 'blog_images/comic-glasses.jpg',
-    authors: ['chalarangelo'],
+    author: 'chalarangelo',
     seoDescription:
       "Take a deeper dive into React's rendering process and understand how to make small yet powerful tweaks to optimize performance.",
     repository: '30blog',
@@ -187,7 +187,7 @@ export const blogSnippets = [
     descriptionHtml:
       '<p>When working with multiple <code class="notranslate">useState</code> hooks in React, things can get a bit complicated while debugging. Luckily, there\'s an easy way to label these values.</p>',
     cover: 'blog_images/bunny-poster.jpg',
-    authors: ['chalarangelo'],
+    author: 'chalarangelo',
     seoDescription:
       "When working with multiple useState hooks in React, things can get a bit complicated while debugging. Luckily, there's an easy way to label these values.",
     repository: '30blog',
@@ -210,7 +210,7 @@ export const blogSnippets = [
     descriptionHtml:
       '<p>Learn how to create a custom responsive favicon that can adapt its color palette for dark mode with this quick guide.</p>',
     cover: 'blog_images/dark-mode.jpg',
-    authors: ['chalarangelo'],
+    author: 'chalarangelo',
     seoDescription:
       'Learn how to create a custom responsive favicon that can adapt its color palette for dark mode with this quick guide.',
     repository: '30blog',
@@ -233,7 +233,7 @@ export const blogSnippets = [
     descriptionHtml:
       '<p>JavaScript uses callback functions in various places for different purposes. From event listeners to asynchronous operations, they are an invaluable tool you need to master.</p>',
     cover: 'blog_images/rabbit-call.jpg',
-    authors: ['chalarangelo'],
+    author: 'chalarangelo',
     seoDescription:
       'JavaScript uses callback functions in various places for different purposes. From event listeners to asynchronous operations, they are an invaluable tool you need to master.',
     repository: '30blog',
@@ -256,7 +256,7 @@ export const blogSnippets = [
     descriptionHtml:
       '<p>Did you know you can use Chrome Developer Tools to debug your Node.js code? Find out how in this short guide.</p>',
     cover: 'blog_images/bug.jpg',
-    authors: ['chalarangelo'],
+    author: 'chalarangelo',
     seoDescription:
       'Did you know you can use Chrome Developer Tools to debug your Node.js code? Find out how in this short guide.',
     repository: '30blog',
@@ -279,7 +279,7 @@ export const blogSnippets = [
     descriptionHtml:
       '<p>VS Code is steadily gaining popularity among developers. Here are 10 essential extensions for JavaScript developers that aim to increase your productivity.</p>',
     cover: 'blog_images/computer-screens.jpg',
-    authors: ['chalarangelo'],
+    author: 'chalarangelo',
     seoDescription:
       'VS Code is steadily gaining popularity among developers. Here are 10 essential extensions for JavaScript developers that aim to increase your productivity.',
     repository: '30blog',
@@ -316,7 +316,7 @@ export const codeSnippets = [
       "const formatDuration = ms => {\n  if (ms < 0) ms = -ms;\n  const time = {\n    day: Math.floor(ms / 86400000),\n    hour: Math.floor(ms / 3600000) % 24,\n    minute: Math.floor(ms / 60000) % 60,\n    second: Math.floor(ms / 1000) % 60,\n    millisecond: Math.floor(ms) % 1000\n  };\n  return Object.entries(time)\n    .filter(val => val[1] !== 0)\n    .map(([key, val]) => `${val} ${key}${val !== 1 ? 's' : ''}`)\n    .join(', ');\n};",
     exampleCode:
       "formatDuration(1001); // '1 second, 1 millisecond'\nformatDuration(34325055574);\n// '397 days, 6 hours, 44 minutes, 15 seconds, 574 milliseconds'",
-    authors: [],
+    author: null,
     seoDescription:
       'Returns the human-readable format of the given number of milliseconds.',
     repository: '30code',
@@ -346,7 +346,7 @@ export const codeSnippets = [
     srcCode: 'const formatNumber = num => num.toLocaleString();',
     exampleCode:
       "formatNumber(123456); // '123,456' in `en-US`\nformatNumber(15675436903); // '15.675.436.903' in `de-DE`",
-    authors: [],
+    author: null,
     seoDescription: 'Formats a number using the local number format order.',
     repository: '30code',
   },
@@ -376,7 +376,7 @@ export const codeSnippets = [
       "const formatSeconds = s => {\n  const [hour, minute, second, sign] =\n    s > 0\n      ? [s / 3600, (s / 60) % 60, s % 60, '']\n      : [-s / 3600, (-s / 60) % 60, -s % 60, '-'];\n\n  return (\n    sign +\n    [hour, minute, second]\n      .map(v => `${Math.floor(v)}`.padStart(2, '0'))\n      .join(':')\n  );\n};",
     exampleCode:
       "formatSeconds(200); // '00:03:20'\nformatSeconds(-200); // '-00:03:20'\nformatSeconds(99999); // '27:46:39'",
-    authors: [],
+    author: null,
     seoDescription: 'Returns the ISO format of the given number of seconds.',
     repository: '30code',
   },
@@ -407,7 +407,7 @@ export const codeSnippets = [
       "const crypto = require('crypto');\n\nconst hashNode = val =>\n  new Promise(resolve =>\n    setTimeout(\n      () => resolve(crypto.createHash('sha256').update(val).digest('hex')),\n      0\n    )\n  );",
     exampleCode:
       "hashNode(JSON.stringify({ a: 'a', b: [1, 2, 3, 4], foo: { c: 'bar' } })).then(\n  console.log\n);\n// '04aa106279f5977f59f9067fa9712afc4aedc6f5862a8defc34552d8c7206393'",
-    authors: [],
+    author: null,
     seoDescription:
       'Creates a hash for a value using the SHA-256 algorithm.Returns a promise.',
     repository: '30code',
@@ -443,7 +443,7 @@ export const cssSnippets = [
       '.triangle {\n  width: 0;\n  height: 0;\n  border-top: 20px solid #9C27B0;\n  border-left: 20px solid transparent;\n  border-right: 20px solid transparent;\n}',
     scopedCssCode:
       '[data-scope="snippet-preview"] .triangle {\n  width: 0;\n  height: 0;\n  border-top: 20px solid #9C27B0;\n  border-left: 20px solid transparent;\n  border-right: 20px solid transparent; }\n',
-    authors: [],
+    author: null,
     seoDescription: 'Creates a triangular shape with pure CSS.',
     repository: '30css',
   },
@@ -479,7 +479,7 @@ export const cssSnippets = [
       '[data-scope="snippet-preview"] .mouse-cursor-gradient-tracking {\n  position: relative;\n  background: #7983ff;\n  padding: 0.5rem 1rem;\n  font-size: 1.2rem;\n  border: none;\n  color: white;\n  cursor: pointer;\n  outline: none;\n  overflow: hidden; }\n\n[data-scope="snippet-preview"] .mouse-cursor-gradient-tracking span {\n  position: relative; }\n\n[data-scope="snippet-preview"] .mouse-cursor-gradient-tracking:before {\n  --size: 0;\n  content: \'\';\n  position: absolute;\n  left: var(--x);\n  top: var(--y);\n  width: var(--size);\n  height: var(--size);\n  background: radial-gradient(circle closest-side, pink, transparent);\n  transform: translate(-50%, -50%);\n  transition: width 0.2s ease, height 0.2s ease; }\n\n[data-scope="snippet-preview"] .mouse-cursor-gradient-tracking:hover:before {\n  --size: 200px; }\n',
     jsCode:
       "let btn = document.querySelector('.mouse-cursor-gradient-tracking');\nbtn.addEventListener('mousemove', e => {\n  let rect = e.target.getBoundingClientRect();\n  let x = e.clientX - rect.left;\n  let y = e.clientY - rect.top;\n  btn.style.setProperty('--x', x + 'px');\n  btn.style.setProperty('--y', y + 'px');\n});",
-    authors: [],
+    author: null,
     seoDescription:
       'A hover effect where the gradient follows the mouse cursor.',
     repository: '30css',
@@ -516,7 +516,7 @@ export const reactSnippets = [
       'const useInterval = (callback, delay) => {\n  const savedCallback = React.useRef();\n\n  React.useEffect(() => {\n    savedCallback.current = callback;\n  }, [callback]);\n\n  React.useEffect(() => {\n    const tick = () => {\n      savedCallback.current();\n    }\n    if (delay !== null) {\n      let id = setInterval(tick, delay);\n      return () => clearInterval(id);\n    }\n  }, [delay]);\n};',
     exampleCode:
       "const Timer = props => {\n  const [seconds, setSeconds] = React.useState(0);\n  useInterval(() => {\n    setSeconds(seconds + 1);\n  }, 1000);\n\n  return <p>{seconds}</p>;\n};\n\nReactDOM.render(<Timer />, document.getElementById('root'));",
-    authors: [],
+    author: null,
     seoDescription: 'Implements setInterval in a declarative manner.',
     repository: '30react',
   },
@@ -547,7 +547,7 @@ export const reactSnippets = [
       'const TagInput = ({ tags }) => {\n  const [tagData, setTagData] = React.useState(tags);\n  const removeTagData = indexToRemove => {\n    setTagData([...tagData.filter((_, index) => index !== indexToRemove)]);\n  };\n  const addTagData = event => {\n    if (event.target.value !== \'\') {\n      setTagData([...tagData, event.target.value]);\n      event.target.value = \'\';\n    }\n  };\n  return (\n    <div className="tag-input">\n      <ul className="tags">\n        {tagData.map((tag, index) => (\n          <li key={index} className="tag">\n            <span className="tag-title">{tag}</span>\n            <span\n              className="tag-close-icon"\n              onClick={() => removeTagData(index)}\n            >\n              x\n            </span>\n          </li>\n        ))}\n      </ul>\n      <input\n        type="text"\n        onKeyUp={event => (event.key === \'Enter\' ? addTagData(event) : null)}\n        placeholder="Press enter to add a tag"\n      />\n    </div>\n  );\n};',
     exampleCode:
       "ReactDOM.render(\n  <TagInput tags={['Nodejs', 'MongoDB']} />,\n  document.getElementById('root')\n);",
-    authors: [],
+    author: null,
     seoDescription: 'Renders a tag input field.',
     repository: '30react',
   },
