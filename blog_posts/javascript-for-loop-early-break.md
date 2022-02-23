@@ -2,7 +2,7 @@
 title: "Tip: Use JavaScript for loops if you need to break out early"
 type: tip
 tags: javascript,array,loop
-authors: chalarangelo
+author: chalarangelo
 cover: blog_images/armchair.jpg
 excerpt: JavaScript provides a handful of ways to iterate over data. While array methods are usually preferred, there are cases where a `for` loop is actually the best option.
 firstSeen: 2021-05-27T12:00:00+03:00

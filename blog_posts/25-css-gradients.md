@@ -2,7 +2,7 @@
 title: 25 CSS gradients for your next project
 type: cheatsheet
 tags: css,visual
-authors: chalarangelo
+author: chalarangelo
 cover: blog_images/colors-mural.jpg
 excerpt: We hand picked 25 of our favorite CSS gradients from uiGradients for your next design. Get them now!
 firstSeen: 2021-01-08T22:30:37+02:00

@@ -2,7 +2,7 @@
 title: What are the differences between var, let and const in JavaScript?
 type: question
 tags: javascript,type,variable
-authors: chalarangelo
+author: chalarangelo
 cover: blog_images/highlands.jpg
 excerpt: JavaScript variables can be declared a handful of ways. However, they're not all created equal and understanding their differences can drastically change the way you code.
 firstSeen: 2021-09-19T05:00:00-04:00

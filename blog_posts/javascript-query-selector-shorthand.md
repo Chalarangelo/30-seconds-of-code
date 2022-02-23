@@ -2,7 +2,7 @@
 title: "Tip: Create your own query selector shorthand"
 type: tip
 tags: javascript,browser
-authors: chalarangelo
+author: chalarangelo
 cover: blog_images/pineapple-at-work.jpg
 excerpt: Ever wanted to create your own jquery-like query selector shorthand? Here's how!
 firstSeen: 2021-02-08T11:00:00+02:00

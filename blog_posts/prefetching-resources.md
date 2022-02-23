@@ -2,7 +2,7 @@
 title: "Tip: Prefetching resources in the browser"
 type: tip
 tags: webdev,html,browser
-authors: chalarangelo
+author: chalarangelo
 cover: blog_images/playing-fetch.jpg
 excerpt: Resource prefetching is a great technique to improve perceived page speed on your website and one that requires little to no effort. Learn how to use it today.
 firstSeen: 2020-06-20T13:41:31+03:00

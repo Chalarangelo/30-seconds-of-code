@@ -2,7 +2,7 @@
 title: What is the difference between prefix and postfix operators?
 type: question
 tags: javascript,math
-authors: chalarangelo
+author: chalarangelo
 cover: blog_images/plant-candle.jpg
 excerpt: While both the prefix and postfix operators increment a value, the resulting value of the expression is very different.
 firstSeen: 2021-10-31T05:00:00-04:00

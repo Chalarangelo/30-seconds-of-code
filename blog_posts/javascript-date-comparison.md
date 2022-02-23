@@ -2,7 +2,7 @@
 title: How do I compare two dates in JavaScript?
 type: question
 tags: javascript,date,comparison
-authors: chalarangelo
+author: chalarangelo
 cover: blog_images/pineapple-at-work.jpg
 excerpt: Learn how you can compare two dates in JavaScript using various different techniques.
 firstSeen: 2022-01-16T05:00:00-04:00

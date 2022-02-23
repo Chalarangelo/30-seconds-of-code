@@ -2,7 +2,7 @@
 title: "Tip: Serialize specific properties from a JSON object"
 type: tip
 tags: javascript,object,json
-authors: chalarangelo
+author: chalarangelo
 cover: blog_images/coffee-drip.jpg
 excerpt: Have you ever wanted to serialize an object but only include certain keys? Turns out JavaScript provides an easy way to do this!
 firstSeen: 2021-07-06T05:00:00-04:00

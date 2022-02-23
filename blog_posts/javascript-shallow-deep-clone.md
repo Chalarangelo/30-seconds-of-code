@@ -2,7 +2,7 @@
 title: How do I clone an object in JavaScript?
 type: question
 tags: javascript,object
-authors: chalarangelo
+author: chalarangelo
 cover: blog_images/pagodas.jpg
 excerpt: Learn how JavaScript handles mutable data, such as objects and arrays, and understand how shallow cloning and deep cloning work.
 firstSeen: 2020-04-14T16:19:56+03:00

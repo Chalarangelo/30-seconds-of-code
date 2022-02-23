@@ -2,7 +2,7 @@
 title: What does 'use strict' do and what are some of the key benefits to using it?
 type: question
 tags: javascript,function,object
-authors: chalarangelo
+author: chalarangelo
 cover: blog_images/palm-tree-house.jpg
 excerpt: JavaScript's strict mode can make your code faster, cleaner and more secure.
 firstSeen: 2021-11-28T05:00:00-04:00

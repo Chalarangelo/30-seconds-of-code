@@ -2,7 +2,7 @@
 title: "Tip: Remove duplicates from a JavaScript array"
 type: tip
 tags: javascript,array
-authors: chalarangelo
+author: chalarangelo
 cover: blog_images/architectural.jpg
 excerpt: Easily remove duplicates from a JavaScript array using the built-in `Set` object.
 firstSeen: 2021-02-11T11:00:00+02:00

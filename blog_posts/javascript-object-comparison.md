@@ -2,7 +2,7 @@
 title: How do I compare two objects in JavaScript?
 type: question
 tags: javascript,object,comparison
-authors: chalarangelo
+author: chalarangelo
 cover: blog_images/blue-lake.jpg
 excerpt: Learn how you can compare two objects in JavaScript using various different techniques.
 firstSeen: 2021-09-26T05:00:00-04:00

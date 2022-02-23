@@ -2,7 +2,7 @@
 title: 'Tip: Protect your users from malicious websites when using target="_blank"'
 type: tip
 tags: javascript,browser,security
-authors: chalarangelo
+author: chalarangelo
 cover: blog_images/laptop-with-code.jpg
 excerpt: Opening a link in a new tab comes with a security vulnerability that you may not be aware of. Protect your users with this simple trick.
 firstSeen: 2020-11-20T09:19:07+02:00

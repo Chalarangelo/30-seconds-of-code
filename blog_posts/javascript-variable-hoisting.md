@@ -2,7 +2,7 @@
 title: What is hoisting in JavaScript?
 type: question
 tags: javascript,type,variable
-authors: chalarangelo
+author: chalarangelo
 cover: blog_images/boat-port.jpg
 excerpt: One of the most commonly asked JavaScript interview questions is about hoisting. It's also a concept that might require some getting used to, so read our guide to learn more.
 firstSeen: 2020-09-22T23:28:14+03:00

@@ -2,7 +2,7 @@
 title: JavaScript's numeric separators explained
 type: story
 tags: javascript,math,type
-authors: chalarangelo
+author: chalarangelo
 cover: blog_images/coffee-drip.jpg
 excerpt: Numeric separators are a somewhat lesser-known JavaScript syntactic sugar that can make working with large constants a lot easier.
 firstSeen: 2021-06-27T05:00:00-04:00

@@ -2,13 +2,13 @@
 title: How to correctly close files in Python
 type: story
 tags: python,file
-authors: maciv
+author: maciv
 cover: blog_images/flower-pond.jpg
 excerpt: When working with files in Python, it's important to ensure that the file is closed correctly. Here are a couple of ways to do that.
 firstSeen: 2022-02-03T05:00:00-04:00
 ---
 
-When working with files in Python, it's quite common to explicitly invoke the `close()` method after processing the file. This might work fine in a lot of cases, however it's a common pitfall for beginners and developers coming from other languages. 
+When working with files in Python, it's quite common to explicitly invoke the `close()` method after processing the file. This might work fine in a lot of cases, however it's a common pitfall for beginners and developers coming from other languages.
 
 Take for example the following code. If an exception is thrown before calling the `close()` method, the file would remain open. In such a scenario, the code would stop executing before `close()` is called, leaving the file open after the program crashes.
 

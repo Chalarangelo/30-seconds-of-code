@@ -2,7 +2,7 @@
 title: Understanding Python's slice notation
 type: story
 tags: python,list
-authors: maciv
+author: maciv
 cover: blog_images/sliced-fruits.jpg
 excerpt: Learn everything you need to know about Python's slice notation with this handy guide.
 firstSeen: 2020-11-07T19:21:16+02:00

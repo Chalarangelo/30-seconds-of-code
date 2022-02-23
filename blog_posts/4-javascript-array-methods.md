@@ -2,7 +2,7 @@
 title: 4 JavaScript Array methods you must know
 type: story
 tags: javascript,array,cheatsheet
-authors: chalarangelo
+author: chalarangelo
 cover: blog_images/arrays.jpg
 excerpt: JavaScript arrays have a very robust API offering a plethora of amazing tools. Learn the 4 must-know JavaScript array methods in this quick guide.
 firstSeen: 2020-08-03T21:37:03+03:00

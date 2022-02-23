@@ -2,7 +2,7 @@
 title: Is JavaScript pass-by-value or pass-by-reference?
 type: question
 tags: javascript,function,object
-authors: chalarangelo
+author: chalarangelo
 cover: blog_images/baloons-field.jpg
 excerpt: How JavaScript handles passing data is a source of confusion and bugs for many developers, especially when it comes to object types.
 firstSeen: 2021-12-05T05:00:00-04:00
