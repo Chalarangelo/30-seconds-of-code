@@ -60,7 +60,7 @@ a.search-btn[aria-hidden='true'] {
 .search-autocomplete-list {
   position: absolute;
   width: 100%;
-  top: 42px;
+  top: 41px;
   list-style: none;
   border-radius: var(--br-none) var(--br-none) var(--br-md) var(--br-md);
   overflow: hidden;
@@ -70,6 +70,10 @@ a.search-btn[aria-hidden='true'] {
     height: 42px;
     border-top: 1px solid var(--clr-search-results-border);
     border-bottom: none;
+
+    &:first-child {
+      border-top-color: var(--clr-search-bg);
+    }
 
     &:last-child {
       border-radius: var(--br-none) var(--br-none) var(--br-md) var(--br-md);
