@@ -1,6 +1,7 @@
 ---
 title: Pick changes from one or more commits
-tags: commit,branch,intermediate
+tags: commit,branch
+expertise: intermediate
 firstSeen: 2021-04-08T16:42:37+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

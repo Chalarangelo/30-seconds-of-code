@@ -1,6 +1,7 @@
 ---
 title: Return to previous branch
-tags: branch,beginner
+tags: branch
+expertise: beginner
 firstSeen: 2021-04-04T14:13:31+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

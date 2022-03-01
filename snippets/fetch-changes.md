@@ -1,6 +1,7 @@
 ---
 title: Fetch latest changes from remote
-tags: repository,beginner
+tags: repository
+expertise: beginner
 firstSeen: 2021-04-08T19:43:13+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

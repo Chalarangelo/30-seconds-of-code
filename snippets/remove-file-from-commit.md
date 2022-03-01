@@ -1,6 +1,7 @@
 ---
 title: Remove a file from the last commit
-tags: commit,intermediate
+tags: commit
+expertise: intermediate
 firstSeen: 2021-04-05T11:19:41+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

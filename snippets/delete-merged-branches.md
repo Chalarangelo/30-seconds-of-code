@@ -1,6 +1,7 @@
 ---
 title: Delete merged branches
-tags: repository,branch,advanced
+tags: repository,branch
+expertise: advanced
 firstSeen: 2021-04-08T19:42:01+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---
