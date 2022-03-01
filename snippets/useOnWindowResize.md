@@ -1,6 +1,7 @@
 ---
 title: React useOnWindowResize hook
-tags: hooks,effect,event,intermediate
+tags: hooks,effect,event
+expertise: intermediate
 firstSeen: 2021-12-01T05:00:00-04:00
 ---
 

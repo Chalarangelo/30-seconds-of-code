@@ -1,6 +1,7 @@
 ---
 title: React useIntersectionObserver hook
-tags: hooks,state,effect,advanced
+tags: hooks,state,effect
+expertise: advanced
 firstSeen: 2021-09-10T05:00:00-04:00
 ---
 

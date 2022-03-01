@@ -1,6 +1,7 @@
 ---
 title: React usePrevious hook
-tags: hooks,state,effect,beginner
+tags: hooks,state,effect
+expertise: beginner
 firstSeen: 2020-01-03T09:50:22+02:00
 lastUpdated: 2020-11-16T14:17:53+02:00
 ---

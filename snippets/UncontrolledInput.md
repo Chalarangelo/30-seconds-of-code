@@ -1,6 +1,7 @@
 ---
 title: Uncontrolled input field
-tags: components,input,intermediate
+tags: components,input
+expertise: intermediate
 firstSeen: 2019-08-21T12:28:50+03:00
 lastUpdated: 2020-11-03T21:08:39+02:00
 ---

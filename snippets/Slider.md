@@ -1,6 +1,7 @@
 ---
 title: Uncontrolled range input
-tags: components,input,beginner
+tags: components,input
+expertise: beginner
 firstSeen: 2019-03-02T10:20:55+02:00
 lastUpdated: 2020-11-25T20:46:35+02:00
 ---
