@@ -1,6 +1,7 @@
 ---
 title: React useMergeState hook
-tags: hooks,state,beginner
+tags: hooks,state
+expertise: beginner
 firstSeen: 2021-09-23T05:00:00-04:00
 ---
 

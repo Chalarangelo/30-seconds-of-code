@@ -1,6 +1,7 @@
 ---
 title: React useComponentWillUnmount hook
-tags: hooks,effect,beginner
+tags: hooks,effect
+expertise: beginner
 firstSeen: 2020-01-03T16:00:56+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

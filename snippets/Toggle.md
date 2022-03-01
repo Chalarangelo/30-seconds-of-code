@@ -1,6 +1,7 @@
 ---
 title: Toggle
-tags: components,state,beginner
+tags: components,state
+expertise: beginner
 firstSeen: 2018-10-27T20:35:37+03:00
 lastUpdated: 2020-11-16T16:50:57+02:00
 ---

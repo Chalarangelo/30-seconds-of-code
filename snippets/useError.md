@@ -1,6 +1,7 @@
 ---
 title: React useError hook
-tags: hooks,state,effect,intermediate
+tags: hooks,state,effect
+expertise: intermediate
 firstSeen: 2021-09-30T05:00:00-04:00
 ---
 

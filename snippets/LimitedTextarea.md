@@ -1,6 +1,7 @@
 ---
 title: Textarea with character limit
-tags: components,state,callback,event,beginner
+tags: components,state,callback,event
+expertise: beginner
 firstSeen: 2018-10-19T09:11:59+03:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

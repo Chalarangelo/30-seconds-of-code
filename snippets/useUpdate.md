@@ -1,6 +1,7 @@
 ---
 title: React useUpdate hook
-tags: components,reducer,beginner
+tags: components,reducer
+expertise: beginner
 firstSeen: 2021-09-24T05:00:00-04:00
 ---
 

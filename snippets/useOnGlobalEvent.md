@@ -1,6 +1,7 @@
 ---
 title: React useOnGlobalEvent hook
-tags: hooks,effect,event,intermediate
+tags: hooks,effect,event
+expertise: intermediate
 firstSeen: 2021-12-22T05:00:00-04:00
 ---
 

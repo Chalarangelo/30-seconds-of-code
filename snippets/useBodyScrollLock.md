@@ -1,6 +1,7 @@
 ---
 title: React useBodyScrollLock hook
-tags: hooks,effect,intermediate
+tags: hooks,effect
+expertise: intermediate
 firstSeen: 2021-09-02T05:00:00-04:00
 ---
 

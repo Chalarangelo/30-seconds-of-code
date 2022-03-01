@@ -1,6 +1,7 @@
 ---
 title: Object table view
-tags: components,array,object,intermediate
+tags: components,array,object
+expertise: intermediate
 firstSeen: 2018-11-29T11:50:10+02:00
 lastUpdated: 2020-09-06T14:20:45+03:00
 ---

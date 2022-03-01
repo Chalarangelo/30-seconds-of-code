@@ -1,6 +1,7 @@
 ---
 title: Spinning loader
-tags: components,beginner
+tags: components
+expertise: beginner
 firstSeen: 2019-09-11T21:59:12+03:00
 lastUpdated: 2020-11-16T15:17:26+02:00
 ---

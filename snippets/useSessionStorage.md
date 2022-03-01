@@ -1,6 +1,7 @@
 ---
 title: React useSessionStorage hook
-tags: hooks,state,intermediate
+tags: hooks,state
+expertise: intermediate
 firstSeen: 2021-09-15T05:00:00-04:00
 ---
 

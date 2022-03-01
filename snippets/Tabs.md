@@ -1,6 +1,7 @@
 ---
 title: Tabs
-tags: components,state,children,intermediate
+tags: components,state,children
+expertise: intermediate
 firstSeen: 2019-01-27T11:59:52+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

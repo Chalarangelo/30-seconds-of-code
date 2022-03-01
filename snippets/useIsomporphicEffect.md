@@ -1,6 +1,7 @@
 ---
 title: React useIsomporphicEffect hook
-tags: hooks,effect,beginner
+tags: hooks,effect
+expertise: beginner
 firstSeen: 2021-09-29T05:00:00-04:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

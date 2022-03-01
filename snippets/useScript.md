@@ -1,6 +1,7 @@
 ---
 title: React useScript hook
-tags: hooks,effect,state,event,advanced
+tags: hooks,effect,state,event
+expertise: advanced
 firstSeen: 2021-10-08T05:00:00-04:00
 ---
 

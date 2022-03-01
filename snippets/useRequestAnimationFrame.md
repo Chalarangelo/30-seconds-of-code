@@ -1,6 +1,7 @@
 ---
 title: React useRequestAnimationFrame hook
-tags: hooks,effect,intermediate
+tags: hooks,effect
+expertise: intermediate
 firstSeen: 2021-12-29T05:00:00-04:00
 ---
 
