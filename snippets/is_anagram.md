@@ -1,6 +1,7 @@
 ---
 title: String is anagram
-tags: string,intermediate
+tags: string
+expertise: intermediate
 firstSeen: 2018-10-01T13:17:29+03:00
 lastUpdated: 2020-11-02T19:28:05+02:00
 ---

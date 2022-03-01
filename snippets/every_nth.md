@@ -1,6 +1,7 @@
 ---
 title: Every nth element in list
-tags: list,beginner
+tags: list
+expertise: beginner
 firstSeen: 2019-08-20T13:10:12+03:00
 lastUpdated: 2020-11-02T19:27:53+02:00
 ---

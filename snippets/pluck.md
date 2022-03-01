@@ -1,6 +1,7 @@
 ---
 title: Pluck values from list of dictionaries
-tags: list,dictionary,beginner
+tags: list,dictionary
+expertise: beginner
 firstSeen: 2020-10-22T03:49:25+03:00
 lastUpdated: 2020-10-22T10:09:44+03:00
 ---

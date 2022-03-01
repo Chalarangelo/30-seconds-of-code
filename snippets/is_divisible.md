@@ -1,6 +1,7 @@
 ---
 title: Number is divisible
-tags: math,beginner
+tags: math
+expertise: beginner
 unlisted: true
 firstSeen: 2019-08-20T14:19:55+03:00
 lastUpdated: 2021-01-04T12:47:04+02:00

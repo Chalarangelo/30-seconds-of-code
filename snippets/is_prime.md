@@ -1,6 +1,7 @@
 ---
 title: Number is prime
-tags: math,intermediate
+tags: math
+expertise: intermediate
 firstSeen: 2020-10-03T18:03:32+03:00
 lastUpdated: 2020-11-02T19:28:05+02:00
 ---

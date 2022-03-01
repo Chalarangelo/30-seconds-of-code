@@ -1,6 +1,7 @@
 ---
 title: Clamp number
-tags: math,beginner
+tags: math
+expertise: beginner
 firstSeen: 2019-08-20T12:50:38+03:00
 lastUpdated: 2020-11-02T19:27:07+02:00
 ---

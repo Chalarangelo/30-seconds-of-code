@@ -1,6 +1,7 @@
 ---
 title: Apply function when true
-tags: function,intermediate
+tags: function
+expertise: intermediate
 firstSeen: 2020-01-02T20:25:45+02:00
 lastUpdated: 2020-11-09T23:56:11+02:00
 ---

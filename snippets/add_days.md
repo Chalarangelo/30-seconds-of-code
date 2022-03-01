@@ -1,6 +1,7 @@
 ---
 title: Add days to date
-tags: date,intermediate
+tags: date
+expertise: intermediate
 firstSeen: 2020-10-28T16:19:04+02:00
 lastUpdated: 2020-10-28T16:19:04+02:00
 ---

@@ -1,6 +1,7 @@
 ---
 title: Arithmetic progression
-tags: math,beginner
+tags: math
+expertise: beginner
 firstSeen: 2020-07-28T13:57:33+03:00
 lastUpdated: 2020-11-02T19:27:07+02:00
 ---

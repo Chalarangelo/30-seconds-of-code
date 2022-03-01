@@ -1,6 +1,7 @@
 ---
 title: Number to binary
-tags: math,beginner
+tags: math
+expertise: beginner
 firstSeen: 2020-10-07T19:46:01+03:00
 lastUpdated: 2020-10-07T19:46:01+03:00
 ---

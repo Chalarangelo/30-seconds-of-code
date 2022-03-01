@@ -1,6 +1,7 @@
 ---
 title: Binomial coefficient
-tags: math,beginner
+tags: math
+expertise: beginner
 firstSeen: 2020-10-04T11:56:31+03:00
 lastUpdated: 2020-11-02T19:27:07+02:00
 ---

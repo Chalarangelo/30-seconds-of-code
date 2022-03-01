@@ -1,6 +1,7 @@
 ---
 title: Key of min value
-tags: dictionary,beginner
+tags: dictionary
+expertise: beginner
 firstSeen: 2021-01-07T23:15:48+02:00
 lastUpdated: 2021-01-07T23:15:48+02:00
 ---
