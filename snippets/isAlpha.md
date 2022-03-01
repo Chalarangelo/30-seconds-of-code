@@ -1,6 +1,7 @@
 ---
 title: String is alpha
-tags: string,regexp,beginner
+tags: string,regexp
+expertise: beginner
 firstSeen: 2020-12-31T14:01:42+02:00
 lastUpdated: 2020-12-31T14:01:42+02:00
 ---

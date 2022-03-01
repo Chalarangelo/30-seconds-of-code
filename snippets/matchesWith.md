@@ -1,6 +1,7 @@
 ---
 title: Matches object properties based on function
-tags: object,intermediate
+tags: object
+expertise: intermediate
 firstSeen: 2018-01-23T20:17:32+02:00
 lastUpdated: 2020-10-21T21:54:53+03:00
 ---

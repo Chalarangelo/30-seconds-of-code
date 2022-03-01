@@ -1,6 +1,7 @@
 ---
 title: Chunk iterable
-tags: function,generator,array,advanced
+tags: function,generator,array
+expertise: advanced
 firstSeen: 2021-03-16T22:50:40+02:00
 lastUpdated: 2021-03-16T22:50:40+02:00
 ---

@@ -1,6 +1,7 @@
 ---
 title: Array to HTML list
-tags: browser,array,intermediate
+tags: browser,array
+expertise: intermediate
 firstSeen: 2020-10-08T00:02:45+03:00
 lastUpdated: 2020-10-20T11:46:23+03:00
 ---

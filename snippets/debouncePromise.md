@@ -1,6 +1,7 @@
 ---
 title: Debounce promise
-tags: function,promise,advanced
+tags: function,promise
+expertise: advanced
 firstSeen: 2020-10-10T21:09:04+03:00
 lastUpdated: 2020-10-19T18:51:03+03:00
 ---

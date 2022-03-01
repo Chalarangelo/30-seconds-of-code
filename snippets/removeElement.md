@@ -1,6 +1,7 @@
 ---
 title: Remove DOM element
-tags: browser,beginner
+tags: browser
+expertise: beginner
 firstSeen: 2021-01-07T00:20:34+02:00
 lastUpdated: 2021-01-07T00:20:34+02:00
 ---

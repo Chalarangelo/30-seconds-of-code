@@ -1,6 +1,7 @@
 ---
 title: Logical or for functions
-tags: function,logic,beginner
+tags: function,logic
+expertise: beginner
 firstSeen: 2020-05-13T11:35:46+03:00
 lastUpdated: 2020-10-19T18:51:03+03:00
 ---

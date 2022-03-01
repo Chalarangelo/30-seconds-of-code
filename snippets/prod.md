@@ -1,6 +1,7 @@
 ---
 title: Product of numeric values
-tags: math,array,intermediate
+tags: math,array
+expertise: intermediate
 firstSeen: 2020-10-15T21:56:51+03:00
 lastUpdated: 2020-10-22T20:24:04+03:00
 ---

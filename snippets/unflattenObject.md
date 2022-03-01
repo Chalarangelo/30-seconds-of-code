@@ -1,6 +1,7 @@
 ---
 title: Unflatten object
-tags: object,advanced
+tags: object
+expertise: advanced
 firstSeen: 2018-02-07T11:30:18+02:00
 lastUpdated: 2020-10-22T20:24:44+03:00
 ---

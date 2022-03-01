@@ -1,6 +1,7 @@
 ---
 title: Unary function arity
-tags: function,beginner
+tags: function
+expertise: beginner
 firstSeen: 2018-01-24T13:22:32+02:00
 lastUpdated: 2020-10-22T20:24:44+03:00
 ---

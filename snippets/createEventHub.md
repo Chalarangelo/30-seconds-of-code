@@ -1,6 +1,7 @@
 ---
 title: Create event hub
-tags: browser,event,advanced
+tags: browser,event
+expertise: advanced
 firstSeen: 2018-01-05T15:07:26+02:00
 lastUpdated: 2020-09-15T16:28:04+03:00
 ---

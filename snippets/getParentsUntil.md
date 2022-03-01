@@ -1,6 +1,7 @@
 ---
 title: Get parents until element matches selector
-tags: browser,intermediate
+tags: browser
+expertise: intermediate
 firstSeen: 2021-01-05T22:47:21+02:00
 lastUpdated: 2021-01-06T13:04:18+02:00
 ---

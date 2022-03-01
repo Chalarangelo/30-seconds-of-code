@@ -1,6 +1,7 @@
 ---
 title: Check if sessionStorage is enabled
-tags: browser,intermediate
+tags: browser
+expertise: intermediate
 firstSeen: 2020-12-31T13:13:47+02:00
 lastUpdated: 2020-12-31T13:13:47+02:00
 ---

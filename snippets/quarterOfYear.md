@@ -1,6 +1,7 @@
 ---
 title: Quarter of year
-tags: date,beginner
+tags: date
+expertise: beginner
 firstSeen: 2020-10-09T10:23:55+03:00
 lastUpdated: 2020-10-22T20:24:04+03:00
 ---

@@ -1,6 +1,7 @@
 ---
 title: Convert function from variadic
-tags: function,intermediate
+tags: function
+expertise: intermediate
 firstSeen: 2017-12-22T04:33:57+02:00
 lastUpdated: 2021-06-13T13:50:25+03:00
 ---

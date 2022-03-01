@@ -1,6 +1,7 @@
 ---
 title: Check if process arguments contain flags
-tags: node,intermediate
+tags: node
+expertise: intermediate
 firstSeen: 2018-01-01T18:24:43+02:00
 lastUpdated: 2020-10-22T20:23:47+03:00
 ---

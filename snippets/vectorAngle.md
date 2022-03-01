@@ -1,6 +1,7 @@
 ---
 title: Vector angle
-tags: math,beginner
+tags: math
+expertise: beginner
 firstSeen: 2019-12-16T16:43:13+02:00
 lastUpdated: 2021-01-08T00:23:44+02:00
 ---

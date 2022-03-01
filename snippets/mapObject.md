@@ -1,6 +1,7 @@
 ---
 title: Map array to object
-tags: array,object,intermediate
+tags: array,object
+expertise: intermediate
 firstSeen: 2017-12-18T12:11:58+02:00
 lastUpdated: 2020-10-21T21:54:53+03:00
 ---

@@ -1,6 +1,7 @@
 ---
 title: Add weekdays to date
-tags: date,intermediate
+tags: date
+expertise: intermediate
 firstSeen: 2020-10-11T16:51:39+03:00
 lastUpdated: 2021-01-08T00:23:44+02:00
 ---

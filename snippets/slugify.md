@@ -1,6 +1,7 @@
 ---
 title: String to slug
-tags: string,regexp,intermediate
+tags: string,regexp
+expertise: intermediate
 firstSeen: 2020-10-04T09:45:43+03:00
 lastUpdated: 2020-10-04T10:36:38+03:00
 ---

@@ -1,6 +1,7 @@
 ---
 title: Throttle function
-tags: function,advanced
+tags: function
+expertise: advanced
 firstSeen: 2018-01-28T15:23:01+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

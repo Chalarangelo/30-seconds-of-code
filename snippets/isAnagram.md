@@ -1,6 +1,7 @@
 ---
 title: String is anagram
-tags: string,regexp,intermediate
+tags: string,regexp
+expertise: intermediate
 firstSeen: 2018-02-19T15:47:47+02:00
 lastUpdated: 2020-10-20T23:02:01+03:00
 ---

@@ -1,6 +1,7 @@
 ---
 title: Weighted average
-tags: math,intermediate
+tags: math
+expertise: intermediate
 firstSeen: 2020-10-04T00:38:33+03:00
 lastUpdated: 2020-11-03T21:46:13+02:00
 ---

@@ -1,6 +1,7 @@
 ---
 title: Levenshtein distance
-tags: string,algorithm,intermediate
+tags: string,algorithm
+expertise: intermediate
 firstSeen: 2020-12-27T19:49:12+02:00
 lastUpdated: 2020-12-29T16:27:50+02:00
 ---

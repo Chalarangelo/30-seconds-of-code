@@ -1,6 +1,7 @@
 ---
 title: HSL to array
-tags: string,browser,regexp,beginner
+tags: string,browser,regexp
+expertise: beginner
 firstSeen: 2020-10-16T21:46:29+03:00
 lastUpdated: 2020-10-22T20:24:30+03:00
 ---

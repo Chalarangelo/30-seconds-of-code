@@ -1,6 +1,7 @@
 ---
 title: Format duration
-tags: date,math,string,intermediate
+tags: date,math,string
+expertise: intermediate
 firstSeen: 2018-01-04T09:26:42+02:00
 lastUpdated: 2020-10-22T20:23:47+03:00
 ---

@@ -1,6 +1,7 @@
 ---
 title: Reverse number
-tags: math,string,beginner
+tags: math,string
+expertise: beginner
 firstSeen: 2020-07-17T16:41:28+03:00
 lastUpdated: 2020-09-18T21:19:23+03:00
 ---

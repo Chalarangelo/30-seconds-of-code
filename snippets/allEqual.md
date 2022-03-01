@@ -1,6 +1,7 @@
 ---
 title: Check if array elements are equal
-tags: array,beginner
+tags: array
+expertise: beginner
 firstSeen: 2018-08-03T00:03:08+03:00
 lastUpdated: 2020-10-18T20:24:28+03:00
 ---

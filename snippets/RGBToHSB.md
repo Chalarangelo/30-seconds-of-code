@@ -1,6 +1,7 @@
 ---
 title: RGB to HSB
-tags: math,intermediate
+tags: math
+expertise: intermediate
 firstSeen: 2020-09-18T14:25:07+03:00
 lastUpdated: 2020-10-22T20:24:30+03:00
 ---

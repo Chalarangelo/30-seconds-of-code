@@ -1,6 +1,7 @@
 ---
 title: Find closest anchor
-tags: browser,intermediate
+tags: browser
+expertise: intermediate
 firstSeen: 2021-04-22T08:45:39+03:00
 lastUpdated: 2021-04-22T08:45:39+03:00
 ---

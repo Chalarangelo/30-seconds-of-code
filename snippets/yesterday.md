@@ -1,6 +1,7 @@
 ---
 title: Date of yesterday
-tags: date,intermediate
+tags: date
+expertise: intermediate
 firstSeen: 2019-07-19T10:57:21+03:00
 lastUpdated: 2020-10-22T20:24:44+03:00
 ---

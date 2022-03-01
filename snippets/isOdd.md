@@ -1,6 +1,7 @@
 ---
 title: Number is odd
-tags: math,beginner
+tags: math
+expertise: beginner
 firstSeen: 2019-09-25T20:35:06+03:00
 lastUpdated: 2020-10-20T23:02:01+03:00
 ---

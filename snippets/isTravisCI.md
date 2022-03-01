@@ -1,6 +1,7 @@
 ---
 title: Environment is Travis CI
-tags: node,intermediate
+tags: node
+expertise: intermediate
 unlisted: true
 firstSeen: 2018-01-01T17:28:08+02:00
 lastUpdated: 2020-10-20T23:02:01+03:00

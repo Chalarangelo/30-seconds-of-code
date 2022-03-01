@@ -1,6 +1,7 @@
 ---
 title: Linear search
-tags: algorithm,array,beginner
+tags: algorithm,array
+expertise: beginner
 firstSeen: 2020-12-28T12:07:53+02:00
 lastUpdated: 2020-12-28T12:07:53+02:00
 ---

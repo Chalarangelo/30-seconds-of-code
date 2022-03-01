@@ -1,6 +1,7 @@
 ---
 title: Bind function context
-tags: function,object,advanced
+tags: function,object
+expertise: advanced
 firstSeen: 2018-01-24T14:14:49+02:00
 lastUpdated: 2020-10-18T23:04:45+03:00
 ---

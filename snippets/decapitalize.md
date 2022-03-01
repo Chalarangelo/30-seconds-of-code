@@ -1,6 +1,7 @@
 ---
 title: Decapitalize string
-tags: string,intermediate
+tags: string
+expertise: intermediate
 firstSeen: 2018-01-11T11:58:40+02:00
 lastUpdated: 2020-11-01T20:50:57+02:00
 ---

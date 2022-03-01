@@ -1,6 +1,7 @@
 ---
 title: Date to ISO format with timezone
-tags: date,intermediate
+tags: date
+expertise: intermediate
 firstSeen: 2020-10-07T09:25:05+03:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

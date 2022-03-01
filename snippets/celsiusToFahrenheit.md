@@ -1,6 +1,7 @@
 ---
 title: Celsius to Fahrenheit
-tags: math,beginner
+tags: math
+expertise: beginner
 unlisted: true
 firstSeen: 2020-04-16T11:00:06+03:00
 lastUpdated: 2021-01-04T13:04:15+02:00

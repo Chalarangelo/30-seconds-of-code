@@ -1,6 +1,7 @@
 ---
 title: Clone RegExp
-tags: type,intermediate
+tags: type
+expertise: intermediate
 firstSeen: 2018-01-01T19:45:47+02:00
 lastUpdated: 2020-10-22T20:23:47+03:00
 ---

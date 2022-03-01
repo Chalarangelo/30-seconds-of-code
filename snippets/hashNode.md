@@ -1,6 +1,7 @@
 ---
 title: Calculate SHA-256 hash (Node.js)
-tags: node,promise,advanced
+tags: node,promise
+expertise: advanced
 firstSeen: 2018-01-17T14:09:01+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

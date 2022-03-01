@@ -1,6 +1,7 @@
 ---
 title: Partial sum array
-tags: math,array,intermediate
+tags: math,array
+expertise: intermediate
 firstSeen: 2020-05-04T12:20:46+03:00
 lastUpdated: 2022-01-30T13:10:13+02:00
 ---

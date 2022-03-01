@@ -1,6 +1,7 @@
 ---
 title: Initialize 2D array
-tags: array,intermediate
+tags: array
+expertise: intermediate
 firstSeen: 2017-12-19T23:38:18+02:00
 lastUpdated: 2020-10-20T23:02:01+03:00
 ---

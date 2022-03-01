@@ -1,6 +1,7 @@
 ---
 title: Array symmetric difference
-tags: array,intermediate
+tags: array
+expertise: intermediate
 firstSeen: 2018-01-24T11:59:02+02:00
 lastUpdated: 2020-10-18T14:58:09+03:00
 ---

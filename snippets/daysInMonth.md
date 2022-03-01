@@ -1,6 +1,7 @@
 ---
 title: Number of days in month
-tags: date,beginner
+tags: date
+expertise: beginner
 firstSeen: 2021-06-13T05:00:00-04:00
 ---
 

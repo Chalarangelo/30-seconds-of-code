@@ -1,6 +1,7 @@
 ---
 title: Partition array
-tags: array,object,advanced
+tags: array,object
+expertise: advanced
 firstSeen: 2020-05-20T17:48:13+03:00
 lastUpdated: 2020-10-22T20:24:04+03:00
 ---
