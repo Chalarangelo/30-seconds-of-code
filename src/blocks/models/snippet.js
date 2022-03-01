@@ -6,8 +6,6 @@ import tokenizeSnippet from 'utils/search';
 import clientLiterals from 'lang/en/client/common';
 import literals from 'lang/en';
 
-const expertiseLevels = ['beginner', 'intermediate', 'advanced', 'article'];
-
 export const snippet = {
   name: 'Snippet',
   fields: [
@@ -23,6 +21,11 @@ export const snippet = {
         minLength: 1,
         uniqueValues: true,
       },
+    },
+    {
+      name: 'expertise',
+      type: 'enum',
+      values: ['beginner', 'intermediate', 'advanced'],
     },
     { name: 'firstSeen', type: 'dateRequired' },
     { name: 'lastUpdated', type: 'dateRequired' },
@@ -70,9 +73,7 @@ export const snippet = {
         ? literals.blogSingular
         : snippet.language.name,
     formattedTags: snippet => {
-      let tags = snippet.tags
-        .filter(tag => !expertiseLevels.includes(tag))
-        .map(literals.tag);
+      let tags = snippet.tags.map(literals.tag);
       if (!snippet.isBlog) tags.unshift(snippet.language.name);
       return tags.join(', ');
     },
@@ -103,13 +104,6 @@ export const snippet = {
       if (snippet.isCSS || snippet.isReact) return 'codepen';
       return 'copy';
     },
-    expertise: snippet => {
-      if (snippet.isBlog) return 'article';
-      const expertiseTag = snippet.tags.find(tag =>
-        expertiseLevels.includes(tag)
-      );
-      return expertiseTag ? expertiseTag : expertiseLevels[1];
-    },
     isScheduled: snippet => snippet.firstSeen > new Date(),
     isPublished: snippet => !snippet.isScheduled,
     isListed: snippet =>
@@ -118,7 +112,7 @@ export const snippet = {
     searchTokensArray: snippet => {
       const tokenizableElements = snippet.isBlog
         ? [
-            ...snippet.tags.filter(tag => !expertiseLevels.includes(tag)),
+            ...snippet.tags,
             ...tokenizeSnippet(
               stripMarkdownFormat(`${snippet.shortText} ${snippet.title}`)
             ),
@@ -127,7 +121,7 @@ export const snippet = {
             snippet.fileName.slice(0, -3),
             snippet.repository.language.short,
             snippet.repository.language.long,
-            ...snippet.tags.filter(tag => !expertiseLevels.includes(tag)),
+            ...snippet.tags,
             ...tokenizeSnippet(
               stripMarkdownFormat(`${snippet.shortText} ${snippet.title}`)
             ),
@@ -255,7 +249,6 @@ export const snippet = {
     'primaryTag',
     'truePrimaryTag',
     'formattedPrimaryTag',
-    'expertise',
     'titleSlug',
     'fileSlug',
   ],

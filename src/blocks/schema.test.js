@@ -364,15 +364,6 @@ describe('Application/Schema', () => {
       });
     });
 
-    describe('property: expertise', () => {
-      it('returns the expertise', () => {
-        const snippet = Snippet.records.get('js/s/format-duration');
-        const blogSnippet = Snippet.records.get('articles/s/js-callbacks');
-        expect(snippet.expertise).toEqual('intermediate');
-        expect(blogSnippet.expertise).toEqual('article');
-      });
-    });
-
     describe('property: isScheduled', () => {
       it('returns true if the snippet is scheduled', () => {
         const snippet = Snippet.records.get('js/s/format-duration');
