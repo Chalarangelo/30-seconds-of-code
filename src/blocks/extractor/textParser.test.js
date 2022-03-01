@@ -1,13 +1,12 @@
 import { TextParser } from './textParser';
 
-jest.mock('fs-extra', () => ({
-  readFile: jest.fn((path, format, callback) =>
-    callback(
-      null,
+jest.mock('fs/promises', () => ({
+  readFile: jest.fn(() =>
+    Promise.resolve(
       '---\ntitle: Snippet\ntags: array,object\nfirstSeen: 2017-12-22T21:54:30+02:00\nlastUpdated: 2017-12-22T21:54:30+02:00\n---\n\nThis is some text.\n'
     )
   ),
-  readdir: jest.fn((path, callback) => callback(null, ['any.md'])),
+  readdir: jest.fn(() => Promise.resolve(['any.md'])),
 }));
 
 describe('TextParser', () => {
