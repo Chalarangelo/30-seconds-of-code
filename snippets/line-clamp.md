@@ -1,6 +1,7 @@
 ---
 title: Trim multiline text
-tags: layout,visual,intermediate
+tags: layout,visual
+expertise: intermediate
 firstSeen: 2021-05-16T20:19:13+03:00
 lastUpdated: 2021-05-16T20:19:13+03:00
 ---

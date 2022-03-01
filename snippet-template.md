@@ -1,6 +1,7 @@
 ---
 title: Snippet Name
-tags: other,intermediate
+tags: other
+expertise: intermediate
 firstSeen: 2021-06-13T05:00:00-04:00
 ---
 

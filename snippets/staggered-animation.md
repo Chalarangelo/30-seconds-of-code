@@ -1,6 +1,7 @@
 ---
 title: Staggered animation
-tags: animation,advanced
+tags: animation
+expertise: advanced
 firstSeen: 2020-03-16T12:19:05+02:00
 lastUpdated: 2021-10-11T18:44:51+03:00
 ---

@@ -1,6 +1,7 @@
 ---
 title: Shape separator
-tags: visual,intermediate
+tags: visual
+expertise: intermediate
 unlisted: true
 firstSeen: 2018-02-25T15:14:39+02:00
 lastUpdated: 2021-01-04T12:30:40+02:00

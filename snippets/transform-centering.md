@@ -1,6 +1,7 @@
 ---
 title: Transform centering
-tags: layout,beginner
+tags: layout
+expertise: beginner
 firstSeen: 2018-03-30T17:59:28+03:00
 lastUpdated: 2020-12-30T15:37:37+02:00
 ---

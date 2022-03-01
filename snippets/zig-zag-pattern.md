@@ -1,6 +1,7 @@
 ---
 title: Zig zag background pattern
-tags: visual,advanced
+tags: visual
+expertise: advanced
 firstSeen: 2021-01-11T09:51:43+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

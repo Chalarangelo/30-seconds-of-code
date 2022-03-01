@@ -1,6 +1,7 @@
 ---
 title: Scroll progress bar
-tags: animation,visual,intermediate
+tags: animation,visual
+expertise: intermediate
 firstSeen: 2021-05-24T09:42:03+03:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

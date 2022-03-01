@@ -1,6 +1,7 @@
 ---
 title: Fullscreen
-tags: visual,advanced
+tags: visual
+expertise: advanced
 firstSeen: 2019-01-12T13:08:40+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

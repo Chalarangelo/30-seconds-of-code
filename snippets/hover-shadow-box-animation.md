@@ -1,6 +1,7 @@
 ---
 title: Hover shadow box animation
-tags: animation,intermediate
+tags: animation
+expertise: intermediate
 unlisted: true
 firstSeen: 2018-03-06T23:41:55+02:00
 lastUpdated: 2021-01-04T12:30:40+02:00

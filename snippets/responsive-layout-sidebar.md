@@ -1,6 +1,7 @@
 ---
 title: Responsive layout with sidebar
-tags: layout,intermediate
+tags: layout
+expertise: intermediate
 firstSeen: 2020-09-16T18:54:56+03:00
 lastUpdated: 2020-09-16T18:54:56+03:00
 ---

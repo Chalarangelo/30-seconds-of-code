@@ -1,6 +1,7 @@
 ---
 title: Border with top triangle
-tags: visual,beginner
+tags: visual
+expertise: beginner
 firstSeen: 2019-01-18T12:18:43+02:00
 lastUpdated: 2021-01-07T23:52:15+02:00
 ---
