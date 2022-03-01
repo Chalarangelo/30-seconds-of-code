@@ -2,7 +2,7 @@
 title: "Tip: Avoid using bare except in Python"
 type: tip
 tags: python,error
-expertise: intermediate
+expertise: beginner
 author: maciv
 cover: blog_images/dark-cloud.jpg
 excerpt: It's generally not a good idea to use bare `except` clause in Python, but do you know why?

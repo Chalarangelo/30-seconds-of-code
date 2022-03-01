@@ -2,7 +2,7 @@
 title: "Tip: Select any link with CSS"
 type: tip
 tags: css,visual,interactivity
-expertise: intermediate
+expertise: beginner
 author: chalarangelo
 cover: blog_images/round-leaves.jpg
 excerpt: You can use a CSS pseudo-class selector to style all links in a page, without worrying if they have been visited or not.

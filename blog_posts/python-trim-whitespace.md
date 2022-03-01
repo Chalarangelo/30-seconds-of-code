@@ -2,7 +2,7 @@
 title: How do I trim whitespace from a string in Python?
 type: question
 tags: python,string
-expertise: intermediate
+expertise: beginner
 author: maciv
 cover: blog_images/organizer.jpg
 excerpt: Oftentimes you might need to trim whitespace from a string in Python. Learn of three different way to do this in this short guide.
