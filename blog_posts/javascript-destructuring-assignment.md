@@ -2,6 +2,7 @@
 title: Where and how can I use the destructuring assignment syntax in JavaScript?
 type: question
 tags: javascript,array,object
+expertise: intermediate
 author: chalarangelo
 cover: blog_images/building-blocks.jpg
 excerpt: Learn the basics of the destructuring assignment syntax in JavaScript ES6 and improve your code with this easy guide.

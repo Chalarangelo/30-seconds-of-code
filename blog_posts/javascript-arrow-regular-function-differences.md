@@ -2,6 +2,7 @@
 title: What are the differences between arrow functions and regular functions in JavaScript?
 type: question
 tags: javascript,function
+expertise: intermediate
 author: chalarangelo
 cover: blog_images/fallen-leaves.jpg
 excerpt: JavaScript's arrow functions are seemingly the same as regular functions, but there are some important differences you need to know.

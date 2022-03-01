@@ -2,6 +2,7 @@
 title: JavaScript Data Structures - Binary Search Tree
 type: story
 tags: javascript,object,class,array
+expertise: intermediate
 author: chalarangelo
 cover: blog_images/purple-flower-macro-4.jpg
 excerpt: A binary search tree is a data structure consisting of a set of ordered linked nodes representing a hierarchical tree structure, in which each node can have at most two children.

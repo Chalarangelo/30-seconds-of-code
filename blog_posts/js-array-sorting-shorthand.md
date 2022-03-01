@@ -2,6 +2,7 @@
 title: "Tip: JavaScript array sorting shorthand"
 type: tip
 tags: javascript,array
+expertise: intermediate
 author: maciv
 cover: blog_images/apples.jpg
 excerpt: Learn how to quickly write code to sort JavaScript arrays with this handy one-liner.

@@ -2,6 +2,7 @@
 title: Understanding the "this" keyword in JavaScript
 type: story
 tags: javascript,function,object
+expertise: intermediate
 author: chalarangelo
 cover: blog_images/u-got-this.jpg
 excerpt: JavaScript's `this` keyword is a source of confusion for many beginners and veterans alike. Learn how it works in different scenarios and start using it correctly.

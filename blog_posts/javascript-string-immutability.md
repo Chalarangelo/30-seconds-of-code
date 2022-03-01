@@ -2,6 +2,7 @@
 title: Are JavaScript strings immutable?
 type: question
 tags: javascript,string,type
+expertise: intermediate
 author: chalarangelo
 cover: blog_images/purple-sunset.jpg
 excerpt: When it comes to immutability, many developers have trouble wrapping their head around JavaScript strings. Yet they're not as complicated as you might expect.

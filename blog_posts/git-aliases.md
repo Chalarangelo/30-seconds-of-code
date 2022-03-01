@@ -2,6 +2,7 @@
 title: Git aliases
 type: cheatsheet
 tags: git,configuration,cheatsheet
+expertise: intermediate
 author: chalarangelo
 cover: blog_images/organizer.jpg
 excerpt: Increase your productivity by creating aliases for many common git operations.

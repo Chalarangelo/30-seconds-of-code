@@ -2,6 +2,7 @@
 title: "Tip: Get the index of an array item in a JavaScript for...of loop"
 type: tip
 tags: javascript,array,iterator
+expertise: intermediate
 author: chalarangelo
 cover: blog_images/cave-view.jpg
 excerpt: Did you know you can get the index of an array item in a JavaScript for...of loop? Learn how with this bite-sized tip.

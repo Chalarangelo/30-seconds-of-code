@@ -2,6 +2,7 @@
 title: How can I use optional chaining and nullish coalescing in my JavaScript project?
 type: question
 tags: javascript,type
+expertise: intermediate
 author: chalarangelo
 cover: blog_images/purple-leaves.jpg
 excerpt: JavaScript ES2020 introduced optional chaining and nullish coalescing among other features. Learn everything you need to know with this quick guide.

@@ -2,6 +2,7 @@
 title: Can I use an object as an array without modifying it in JavaScript?
 type: question
 tags: javascript,object,array,proxy,iterator,pattern
+expertise: intermediate
 author: chalarangelo
 cover: blog_images/birds.jpg
 excerpt: Learn how you can leverage the Proxy object to use a JavaScript object the same way as you would use a regular array.

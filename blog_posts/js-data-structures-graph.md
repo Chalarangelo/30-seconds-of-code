@@ -2,6 +2,7 @@
 title: JavaScript Data Structures - Graph
 type: story
 tags: javascript,object,class,array
+expertise: intermediate
 author: chalarangelo
 cover: blog_images/purple-flower-macro-1.jpg
 excerpt: A graph is a data structure consisting of a set of vertices connected by a set of edges.
