@@ -2,6 +2,7 @@
 title: Code Anatomy - Writing high performance Python code
 type: story
 tags: python,list,performance
+expertise: intermediate
 author: maciv
 cover: blog_images/walking-on-top.jpg
 excerpt: Writing short, efficient Python code is not always straightforward. Read how we optimize our list snippets to increase performance using a couple of simple tricks.

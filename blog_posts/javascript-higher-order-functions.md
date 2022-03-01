@@ -2,6 +2,7 @@
 title: Understanding higher-order functions in JavaScript
 type: story
 tags: javascript,function
+expertise: intermediate
 author: chalarangelo
 cover: blog_images/rock-climbing.jpg
 excerpt: Learn everything you need to know about higher-order functions with this short guide and level up your programming skills.

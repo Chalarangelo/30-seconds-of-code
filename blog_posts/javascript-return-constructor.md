@@ -2,6 +2,7 @@
 title: What does a JavaScript constructor return?
 type: question
 tags: javascript,function,class,object
+expertise: intermediate
 author: chalarangelo
 cover: blog_images/architectural.jpg
 excerpt: The constructor is arguably the most crucial part of any JavaScript class, which is why you might want to take a closer look at what they return.

@@ -2,6 +2,7 @@
 title: 6 JavaScript Regular Expression features you can use today
 type: story
 tags: javascript,string,regexp
+expertise: intermediate
 author: chalarangelo
 cover: blog_images/taking-photos.jpg
 excerpt: Regular expressions, while very powerful, are notoriously hard to master. Start using them in your JavaScript code by understanding these 6 features.
