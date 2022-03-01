@@ -1,6 +1,7 @@
 ---
 title: Dictionary to list
-tags: dictionary,list,intermediate
+tags: dictionary,list
+expertise: intermediate
 firstSeen: 2020-10-16T21:24:14+03:00
 lastUpdated: 2020-11-02T19:27:53+02:00
 ---

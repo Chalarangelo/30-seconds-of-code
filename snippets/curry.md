@@ -1,6 +1,7 @@
 ---
 title: Curry function
-tags: function,intermediate
+tags: function
+expertise: intermediate
 firstSeen: 2020-01-02T16:14:50+02:00
 lastUpdated: 2020-11-02T19:27:07+02:00
 ---

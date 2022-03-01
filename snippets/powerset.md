@@ -1,6 +1,7 @@
 ---
 title: Powerset
-tags: math,list,advanced
+tags: math,list
+expertise: advanced
 firstSeen: 2020-10-04T13:14:01+03:00
 lastUpdated: 2020-11-02T19:28:27+02:00
 ---

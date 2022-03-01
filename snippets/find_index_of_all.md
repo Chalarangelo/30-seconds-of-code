@@ -1,6 +1,7 @@
 ---
 title: Find all matching indexes
-tags: list,intermediate
+tags: list
+expertise: intermediate
 firstSeen: 2020-10-11T13:45:19+03:00
 lastUpdated: 2020-11-02T19:27:53+02:00
 ---

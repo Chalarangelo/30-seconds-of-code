@@ -1,6 +1,7 @@
 ---
 title: Mapped list average
-tags: math,list,intermediate
+tags: math,list
+expertise: intermediate
 firstSeen: 2019-08-20T11:55:10+03:00
 lastUpdated: 2020-11-02T19:27:07+02:00
 ---
