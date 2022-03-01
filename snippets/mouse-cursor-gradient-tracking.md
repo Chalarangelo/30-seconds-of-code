@@ -1,6 +1,7 @@
 ---
 title: Mouse cursor gradient tracking
-tags: visual,interactivity,advanced
+tags: visual,interactivity
+expertise: advanced
 firstSeen: 2018-02-25T15:14:39+02:00
 lastUpdated: 2021-01-07T23:52:15+02:00
 ---

@@ -1,6 +1,7 @@
 ---
 title: Bouncing loader
-tags: animation,intermediate
+tags: animation
+expertise: intermediate
 firstSeen: 2018-03-04T06:24:22+02:00
 lastUpdated: 2021-10-11T18:44:51+03:00
 ---

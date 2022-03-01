@@ -1,6 +1,7 @@
 ---
 title: Triangle
-tags: visual,beginner
+tags: visual
+expertise: beginner
 firstSeen: 2018-02-25T15:14:39+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

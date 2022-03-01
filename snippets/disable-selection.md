@@ -1,6 +1,7 @@
 ---
 title: Disable selection
-tags: interactivity,beginner
+tags: interactivity
+expertise: beginner
 firstSeen: 2018-02-26T19:09:58+02:00
 lastUpdated: 2020-12-30T15:37:37+02:00
 ---

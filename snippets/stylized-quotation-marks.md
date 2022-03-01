@@ -1,6 +1,7 @@
 ---
 title: Stylized quotation marks
-tags: visual,beginner
+tags: visual
+expertise: beginner
 firstSeen: 2021-05-16T19:53:02+03:00
 lastUpdated: 2021-05-16T19:53:02+03:00
 ---

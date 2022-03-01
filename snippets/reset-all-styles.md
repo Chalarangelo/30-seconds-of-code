@@ -1,6 +1,7 @@
 ---
 title: Reset all styles
-tags: visual,beginner
+tags: visual
+expertise: beginner
 firstSeen: 2018-02-28T21:51:36+02:00
 lastUpdated: 2020-12-30T15:37:37+02:00
 ---
