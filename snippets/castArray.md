@@ -1,6 +1,7 @@
 ---
 title: Cast to array
-tags: type,array,beginner
+tags: type,array
+expertise: beginner
 firstSeen: 2018-01-23T20:54:12+02:00
 lastUpdated: 2020-09-15T16:28:04+03:00
 ---

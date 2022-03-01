@@ -1,6 +1,7 @@
 ---
 title: Rearrange function arguments
-tags: function,intermediate
+tags: function
+expertise: intermediate
 firstSeen: 2018-01-28T15:04:21+02:00
 lastUpdated: 2020-10-22T20:24:04+03:00
 ---

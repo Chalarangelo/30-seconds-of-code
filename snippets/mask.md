@@ -1,6 +1,7 @@
 ---
 title: Mask a value
-tags: string,intermediate
+tags: string
+expertise: intermediate
 firstSeen: 2018-01-01T13:02:59+02:00
 lastUpdated: 2020-10-21T21:54:53+03:00
 ---

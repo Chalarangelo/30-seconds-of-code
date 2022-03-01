@@ -1,6 +1,7 @@
 ---
 title: Pad string
-tags: string,beginner
+tags: string
+expertise: beginner
 firstSeen: 2018-02-24T11:51:27+02:00
 lastUpdated: 2020-10-22T20:24:04+03:00
 ---

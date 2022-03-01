@@ -1,6 +1,7 @@
 ---
 title: Compact whitespaces
-tags: string,regexp,beginner
+tags: string,regexp
+expertise: beginner
 firstSeen: 2018-12-12T19:11:33+02:00
 lastUpdated: 2020-10-18T23:04:45+03:00
 ---

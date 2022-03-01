@@ -1,6 +1,7 @@
 ---
 title: Join array into string
-tags: array,intermediate
+tags: array
+expertise: intermediate
 firstSeen: 2018-01-01T12:18:40+02:00
 lastUpdated: 2020-10-22T20:23:47+03:00
 ---

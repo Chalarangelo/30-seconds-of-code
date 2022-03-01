@@ -1,6 +1,7 @@
 ---
 title: CSV to JSON
-tags: string,object,advanced
+tags: string,object
+expertise: advanced
 firstSeen: 2018-06-27T21:14:24+03:00
 lastUpdated: 2022-01-30T12:14:39+02:00
 ---

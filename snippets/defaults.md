@@ -1,6 +1,7 @@
 ---
 title: Assign default values for object properties
-tags: object,intermediate
+tags: object
+expertise: intermediate
 firstSeen: 2018-01-19T13:51:05+02:00
 lastUpdated: 2020-10-22T20:23:47+03:00
 ---

@@ -1,6 +1,7 @@
 ---
 title: Random integer array in range
-tags: math,random,intermediate
+tags: math,random
+expertise: intermediate
 firstSeen: 2018-01-15T13:25:18+02:00
 lastUpdated: 2020-10-22T20:24:04+03:00
 ---

@@ -1,6 +1,7 @@
 ---
 title: Offset array elements
-tags: array,beginner
+tags: array
+expertise: beginner
 firstSeen: 2018-04-10T19:07:50+03:00
 lastUpdated: 2020-10-21T21:54:53+03:00
 ---

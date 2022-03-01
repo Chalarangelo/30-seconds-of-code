@@ -1,6 +1,7 @@
 ---
 title: Nth root of number
-tags: math,beginner
+tags: math
+expertise: beginner
 firstSeen: 2021-01-06T22:47:48+02:00
 lastUpdated: 2021-01-06T22:47:48+02:00
 ---

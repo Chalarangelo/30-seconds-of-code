@@ -1,6 +1,7 @@
 ---
 title: Luhn check
-tags: math,algorithm,advanced
+tags: math,algorithm
+expertise: advanced
 firstSeen: 2018-01-03T11:02:35+02:00
 lastUpdated: 2022-01-30T13:37:39+02:00
 ---

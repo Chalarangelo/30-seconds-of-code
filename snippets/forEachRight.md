@@ -1,6 +1,7 @@
 ---
 title: Execute function for each array element in reverse
-tags: array,intermediate
+tags: array
+expertise: intermediate
 firstSeen: 2018-01-09T01:38:50+02:00
 lastUpdated: 2020-10-19T22:49:51+03:00
 ---

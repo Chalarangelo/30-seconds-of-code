@@ -1,6 +1,7 @@
 ---
 title: Disjointed iterables
-tags: array,intermediate
+tags: array
+expertise: intermediate
 firstSeen: 2020-10-11T11:53:01+03:00
 lastUpdated: 2020-10-11T11:53:01+03:00
 ---

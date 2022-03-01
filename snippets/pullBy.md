@@ -1,6 +1,7 @@
 ---
 title: Pull values from array based on function
-tags: array,advanced
+tags: array
+expertise: advanced
 firstSeen: 2018-01-26T13:48:50+02:00
 lastUpdated: 2020-10-22T20:24:04+03:00
 ---

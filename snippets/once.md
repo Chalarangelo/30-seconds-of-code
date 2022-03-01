@@ -1,6 +1,7 @@
 ---
 title: Call function once
-tags: function,intermediate
+tags: function
+expertise: intermediate
 firstSeen: 2018-01-02T00:40:46+02:00
 lastUpdated: 2020-10-21T21:54:53+03:00
 ---

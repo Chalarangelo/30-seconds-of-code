@@ -1,6 +1,7 @@
 ---
 title: Assert object keys are valid
-tags: object,intermediate
+tags: object
+expertise: intermediate
 firstSeen: 2021-07-18T05:00:00-04:00
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: Strip HTML tags
-tags: string,regexp,beginner
+tags: string,regexp
+expertise: beginner
 firstSeen: 2018-01-26T14:17:29+02:00
 lastUpdated: 2020-09-15T16:28:04+03:00
 ---

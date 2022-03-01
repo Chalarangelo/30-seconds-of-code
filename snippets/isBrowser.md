@@ -1,6 +1,7 @@
 ---
 title: Environment is browser
-tags: browser,node,intermediate
+tags: browser,node
+expertise: intermediate
 firstSeen: 2018-03-19T04:50:55+02:00
 lastUpdated: 2020-10-20T23:02:01+03:00
 ---
