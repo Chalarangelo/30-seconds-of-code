@@ -2,7 +2,7 @@
 title: What is the difference between Python's equality operators?
 type: question
 tags: python,type,comparison
-expertise: intermediate
+expertise: beginner
 author: maciv
 cover: blog_images/umbrellas.jpg
 excerpt: Python provides two distinct comparison operators for different task. Stop mixing them up using this quick guide.

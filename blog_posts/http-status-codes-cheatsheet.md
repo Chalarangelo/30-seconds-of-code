@@ -2,7 +2,7 @@
 title: Common HTTP status codes Cheat Sheet
 type: cheatsheet
 tags: webdev,http
-expertise: intermediate
+expertise: beginner
 author: chalarangelo
 cover: blog_images/lake-runner.jpg
 excerpt: Familiarize yourself with the most common HTTP status codes with this handy cheatsheet.
