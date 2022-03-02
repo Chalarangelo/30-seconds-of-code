@@ -1,6 +1,7 @@
 ---
 title: Geometric progression
-tags: math,list,intermediate
+tags: math,list
+expertise: intermediate
 firstSeen: 2020-10-04T12:19:28+03:00
 lastUpdated: 2020-11-02T19:28:05+02:00
 ---

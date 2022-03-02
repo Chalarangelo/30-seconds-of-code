@@ -1,6 +1,7 @@
 ---
 title: RGB to hex
-tags: string,math,intermediate
+tags: string,math
+expertise: intermediate
 firstSeen: 2020-09-13T01:08:00+03:00
 lastUpdated: 2020-11-02T19:28:27+02:00
 ---

@@ -1,6 +1,7 @@
 ---
 title: Capitalize string
-tags: string,intermediate
+tags: string
+expertise: intermediate
 firstSeen: 2018-02-01T10:19:59+02:00
 lastUpdated: 2020-11-02T19:27:07+02:00
 ---

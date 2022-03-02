@@ -1,6 +1,7 @@
 ---
 title: Value frequencies
-tags: list,intermediate
+tags: list
+expertise: intermediate
 firstSeen: 2020-03-15T12:54:08+02:00
 lastUpdated: 2020-11-02T19:27:53+02:00
 ---

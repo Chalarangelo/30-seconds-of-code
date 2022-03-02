@@ -1,6 +1,7 @@
 ---
 title: Fibonacci
-tags: math,list,intermediate
+tags: math,list
+expertise: intermediate
 firstSeen: 2018-10-06T06:06:33+03:00
 lastUpdated: 2020-11-02T19:27:53+02:00
 ---

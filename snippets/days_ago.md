@@ -1,6 +1,7 @@
 ---
 title: Days ago
-tags: date,intermediate
+tags: date
+expertise: intermediate
 firstSeen: 2020-10-28T16:19:30+02:00
 lastUpdated: 2020-10-28T16:19:30+02:00
 ---

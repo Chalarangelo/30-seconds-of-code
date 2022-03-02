@@ -1,6 +1,7 @@
 ---
 title: Key in dictionary
-tags: dictionary,beginner
+tags: dictionary
+expertise: beginner
 firstSeen: 2020-10-16T21:30:49+03:00
 lastUpdated: 2020-10-16T21:30:49+03:00
 ---

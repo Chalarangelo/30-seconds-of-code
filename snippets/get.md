@@ -1,6 +1,7 @@
 ---
 title: Get nested value
-tags: dictionary,list,intermediate
+tags: dictionary,list
+expertise: intermediate
 firstSeen: 2020-10-28T12:21:39+02:00
 lastUpdated: 2020-10-28T12:21:39+02:00
 ---
