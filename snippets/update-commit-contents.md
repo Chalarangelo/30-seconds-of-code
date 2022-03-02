@@ -1,6 +1,7 @@
 ---
 title: Edit the last commit
-tags: commit,intermediate
+tags: commit
+expertise: intermediate
 firstSeen: 2021-04-04T14:36:07+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---
