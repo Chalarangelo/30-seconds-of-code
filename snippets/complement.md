@@ -1,6 +1,7 @@
 ---
 title: Logical complement
-tags: function,logic,beginner
+tags: function,logic
+expertise: beginner
 firstSeen: 2020-05-13T11:28:33+03:00
 lastUpdated: 2020-09-15T16:28:04+03:00
 ---

@@ -1,6 +1,7 @@
 ---
 title: Vertical offset of element
-tags: browser,beginner
+tags: browser
+expertise: beginner
 firstSeen: 2021-01-05T22:41:09+02:00
 lastUpdated: 2021-01-05T22:41:09+02:00
 ---

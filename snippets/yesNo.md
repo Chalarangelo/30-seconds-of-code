@@ -1,6 +1,7 @@
 ---
 title: Check yes/no string
-tags: string,regexp,intermediate
+tags: string,regexp
+expertise: intermediate
 unlisted: true
 firstSeen: 2017-12-30T18:35:54+02:00
 lastUpdated: 2021-01-04T13:04:15+02:00

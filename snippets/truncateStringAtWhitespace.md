@@ -1,6 +1,7 @@
 ---
 title: Truncate string at whitespace
-tags: string,intermediate
+tags: string
+expertise: intermediate
 firstSeen: 2020-10-19T11:11:16+03:00
 lastUpdated: 2020-10-21T21:17:45+03:00
 ---

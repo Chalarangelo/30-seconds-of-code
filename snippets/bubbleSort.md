@@ -1,6 +1,7 @@
 ---
 title: Bubble sort
-tags: algorithm,array,beginner
+tags: algorithm,array
+expertise: beginner
 firstSeen: 2020-12-27T21:20:31+02:00
 lastUpdated: 2020-12-29T12:18:58+02:00
 ---

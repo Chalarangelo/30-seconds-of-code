@@ -1,6 +1,7 @@
 ---
 title: Array is sorted
-tags: array,intermediate
+tags: array
+expertise: intermediate
 firstSeen: 2018-01-01T19:30:14+02:00
 lastUpdated: 2020-10-20T23:02:01+03:00
 ---

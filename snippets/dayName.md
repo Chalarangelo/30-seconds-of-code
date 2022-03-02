@@ -1,6 +1,7 @@
 ---
 title: Day name
-tags: date,beginner
+tags: date
+expertise: beginner
 firstSeen: 2020-10-04T00:31:08+03:00
 lastUpdated: 2020-11-01T20:50:57+02:00
 ---

@@ -1,6 +1,7 @@
 ---
 title: Powerset
-tags: math,algorithm,beginner
+tags: math,algorithm
+expertise: beginner
 firstSeen: 2017-12-07T14:41:33+02:00
 lastUpdated: 2021-09-27T15:27:07+02:00
 ---

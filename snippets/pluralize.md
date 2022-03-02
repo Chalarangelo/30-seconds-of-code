@@ -1,6 +1,7 @@
 ---
 title: Pluralize string
-tags: string,advanced
+tags: string
+expertise: advanced
 firstSeen: 2018-01-03T13:17:19+02:00
 lastUpdated: 2020-10-22T20:24:04+03:00
 ---

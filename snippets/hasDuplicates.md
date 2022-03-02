@@ -1,6 +1,7 @@
 ---
 title: Check if array has duplicates
-tags: array,beginner
+tags: array
+expertise: beginner
 firstSeen: 2020-10-22T20:23:09+03:00
 lastUpdated: 2020-10-22T20:23:09+03:00
 ---

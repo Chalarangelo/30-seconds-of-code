@@ -1,6 +1,7 @@
 ---
 title: Array of successive values
-tags: array,intermediate
+tags: array
+expertise: intermediate
 firstSeen: 2018-01-24T16:38:08+02:00
 lastUpdated: 2020-10-22T20:24:04+03:00
 ---

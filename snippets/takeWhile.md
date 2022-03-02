@@ -1,6 +1,7 @@
 ---
 title: Remove list elements while condition is met
-tags: array,intermediate
+tags: array
+expertise: intermediate
 firstSeen: 2018-01-26T12:55:31+02:00
 lastUpdated: 2020-11-29T12:04:53+02:00
 ---

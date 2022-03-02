@@ -1,6 +1,7 @@
 ---
 title: Value is object-like
-tags: type,object,beginner
+tags: type,object
+expertise: beginner
 firstSeen: 2018-01-23T19:30:03+02:00
 lastUpdated: 2020-09-15T16:28:04+03:00
 ---

@@ -1,6 +1,7 @@
 ---
 title: Check object equality
-tags: object,array,type,recursion,advanced
+tags: object,array,type,recursion
+expertise: advanced
 firstSeen: 2018-01-15T18:34:11+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

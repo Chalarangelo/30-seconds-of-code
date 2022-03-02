@@ -1,6 +1,7 @@
 ---
 title: Lowercase object keys
-tags: object,intermediate
+tags: object
+expertise: intermediate
 firstSeen: 2017-12-29T13:28:18+02:00
 lastUpdated: 2020-10-20T11:21:07+03:00
 ---

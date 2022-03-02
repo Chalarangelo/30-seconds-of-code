@@ -1,6 +1,7 @@
 ---
 title: Week of year
-tags: date,advanced
+tags: date
+expertise: advanced
 firstSeen: 2021-08-15T05:00:00-04:00
 ---
 

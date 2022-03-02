@@ -1,6 +1,7 @@
 ---
 title: Function property names
-tags: object,function,advanced
+tags: object,function
+expertise: advanced
 firstSeen: 2018-01-11T21:18:58+02:00
 lastUpdated: 2020-10-20T11:21:07+03:00
 ---

@@ -1,6 +1,7 @@
 ---
 title: Logical xor
-tags: math,logic,beginner
+tags: math,logic
+expertise: beginner
 unlisted: true
 firstSeen: 2020-10-05T21:19:21+03:00
 lastUpdated: 2021-01-04T13:04:15+02:00

@@ -1,6 +1,7 @@
 ---
 title: Validate number
-tags: math,intermediate
+tags: math
+expertise: intermediate
 firstSeen: 2017-12-17T17:55:51+02:00
 lastUpdated: 2020-10-22T20:23:26+03:00
 ---

@@ -1,6 +1,7 @@
 ---
 title: Counter
-tags: browser,advanced
+tags: browser
+expertise: advanced
 firstSeen: 2018-05-06T17:55:46+03:00
 lastUpdated: 2020-11-01T20:50:57+02:00
 ---

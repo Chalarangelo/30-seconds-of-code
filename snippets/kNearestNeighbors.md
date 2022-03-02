@@ -1,6 +1,7 @@
 ---
 title: K-nearest neighbors
-tags: algorithm,array,advanced
+tags: algorithm,array
+expertise: advanced
 firstSeen: 2020-12-28T16:31:43+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

@@ -1,6 +1,7 @@
 ---
 title: Order array of objects
-tags: object,array,advanced
+tags: object,array
+expertise: advanced
 firstSeen: 2017-12-20T11:33:20+02:00
 lastUpdated: 2020-10-21T21:54:53+03:00
 ---

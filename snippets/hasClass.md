@@ -1,6 +1,7 @@
 ---
 title: Check if HTML element has class
-tags: browser,css,beginner
+tags: browser,css
+expertise: beginner
 firstSeen: 2017-12-28T23:46:33+02:00
 lastUpdated: 2020-10-19T22:49:51+03:00
 ---

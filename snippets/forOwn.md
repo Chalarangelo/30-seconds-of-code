@@ -1,6 +1,7 @@
 ---
 title: Iterate over object's own properties
-tags: object,intermediate
+tags: object
+expertise: intermediate
 firstSeen: 2018-01-18T16:45:56+02:00
 lastUpdated: 2020-10-22T20:23:47+03:00
 ---

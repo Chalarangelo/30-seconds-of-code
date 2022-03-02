@@ -1,6 +1,7 @@
 ---
 title: Iterate n times
-tags: function,intermediate
+tags: function
+expertise: intermediate
 firstSeen: 2018-01-24T13:50:49+02:00
 lastUpdated: 2020-10-20T11:21:07+03:00
 ---

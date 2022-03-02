@@ -1,6 +1,7 @@
 ---
 title: Date range generator
-tags: date,function,generator,advanced
+tags: date,function,generator
+expertise: advanced
 firstSeen: 2021-06-21T05:00:00-04:00
 ---
 

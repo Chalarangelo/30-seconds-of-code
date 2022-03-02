@@ -1,6 +1,7 @@
 ---
 title: Negate predicate
-tags: function,beginner
+tags: function
+expertise: beginner
 firstSeen: 2017-12-24T08:28:52+02:00
 lastUpdated: 2020-09-15T16:28:04+03:00
 ---

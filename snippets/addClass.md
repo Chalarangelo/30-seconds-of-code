@@ -1,6 +1,7 @@
 ---
 title: Add class to HTML element
-tags: browser,beginner
+tags: browser
+expertise: beginner
 firstSeen: 2020-12-30T19:21:15+02:00
 lastUpdated: 2020-12-30T19:21:15+02:00
 ---

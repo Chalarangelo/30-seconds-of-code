@@ -1,6 +1,7 @@
 ---
 title: Freeze Set object
-tags: array,intermediate
+tags: array
+expertise: intermediate
 firstSeen: 2020-10-11T11:52:48+03:00
 lastUpdated: 2020-10-11T11:52:48+03:00
 ---

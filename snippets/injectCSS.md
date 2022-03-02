@@ -1,6 +1,7 @@
 ---
 title: Inject CSS
-tags: browser,css,intermediate
+tags: browser,css
+expertise: intermediate
 firstSeen: 2020-10-15T22:18:00+03:00
 lastUpdated: 2020-10-22T20:23:47+03:00
 ---
