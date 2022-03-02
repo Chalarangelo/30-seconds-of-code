@@ -1,6 +1,7 @@
 ---
 title: Fluid typography
-tags: visual,intermediate
+tags: visual
+expertise: intermediate
 firstSeen: 2021-05-16T11:23:05+03:00
 lastUpdated: 2021-05-16T11:23:05+03:00
 ---

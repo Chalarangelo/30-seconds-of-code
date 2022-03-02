@@ -1,6 +1,7 @@
 ---
 title: Zoom in zoom out animation
-tags: animation,beginner
+tags: animation
+expertise: beginner
 firstSeen: 2020-10-05T21:42:14+03:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

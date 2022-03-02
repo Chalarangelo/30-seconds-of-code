@@ -1,6 +1,7 @@
 ---
 title: Typewriter effect
-tags: animation,advanced
+tags: animation
+expertise: advanced
 firstSeen: 2021-05-24T16:03:40+03:00
 lastUpdated: 2021-05-24T16:03:40+03:00
 ---

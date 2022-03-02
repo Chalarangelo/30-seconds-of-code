@@ -1,6 +1,7 @@
 ---
 title: Offscreen
-tags: layout,visual,intermediate
+tags: layout,visual
+expertise: intermediate
 firstSeen: 2018-03-30T18:50:31+03:00
 lastUpdated: 2021-10-11T18:44:51+03:00
 ---

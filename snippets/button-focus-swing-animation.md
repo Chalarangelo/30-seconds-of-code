@@ -1,6 +1,7 @@
 ---
 title: Button swing animation
-tags: animation,intermediate
+tags: animation
+expertise: intermediate
 firstSeen: 2021-05-24T15:28:52+03:00
 lastUpdated: 2021-05-24T15:28:52+03:00
 ---

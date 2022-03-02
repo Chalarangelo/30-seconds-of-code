@@ -1,6 +1,7 @@
 ---
 title: Truncate multiline text
-tags: layout,intermediate
+tags: layout
+expertise: intermediate
 firstSeen: 2019-01-17T07:42:44+02:00
 lastUpdated: 2021-01-07T23:52:15+02:00
 ---

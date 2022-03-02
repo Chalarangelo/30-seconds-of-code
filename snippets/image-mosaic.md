@@ -1,6 +1,7 @@
 ---
 title: Responsive image mosaic
-tags: layout,intermediate
+tags: layout
+expertise: intermediate
 firstSeen: 2020-08-18T17:18:03+03:00
 lastUpdated: 2020-12-30T15:37:37+02:00
 ---

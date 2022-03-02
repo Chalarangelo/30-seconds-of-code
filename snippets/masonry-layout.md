@@ -1,6 +1,7 @@
 ---
 title: Masonry Layout
-tags: layout,advanced
+tags: layout
+expertise: advanced
 firstSeen: 2019-12-11T02:19:05+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

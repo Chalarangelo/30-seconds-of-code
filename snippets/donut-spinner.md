@@ -1,6 +1,7 @@
 ---
 title: Donut spinner
-tags: animation,intermediate
+tags: animation
+expertise: intermediate
 firstSeen: 2018-02-27T17:32:35+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

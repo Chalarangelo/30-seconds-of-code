@@ -1,6 +1,7 @@
 ---
 title: Button fill animation
-tags: animation,beginner
+tags: animation
+expertise: beginner
 firstSeen: 2020-10-08T20:48:11+03:00
 lastUpdated: 2021-04-02T21:34:43+03:00
 ---

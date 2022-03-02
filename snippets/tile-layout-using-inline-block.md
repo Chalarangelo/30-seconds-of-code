@@ -1,6 +1,7 @@
 ---
 title: 3-tile layout
-tags: layout,beginner
+tags: layout
+expertise: beginner
 firstSeen: 2019-10-02T09:51:59+03:00
 lastUpdated: 2020-12-30T15:37:37+02:00
 ---
