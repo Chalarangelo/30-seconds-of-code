@@ -1,6 +1,7 @@
 ---
 title: Tag input field
-tags: components,input,state,intermediate
+tags: components,input,state
+expertise: intermediate
 firstSeen: 2019-10-02T10:06:11+03:00
 lastUpdated: 2020-11-25T21:12:16+02:00
 ---

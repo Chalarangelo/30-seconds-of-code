@@ -1,6 +1,7 @@
 ---
 title: Tooltip
-tags: components,state,children,beginner
+tags: components,state,children
+expertise: beginner
 firstSeen: 2018-11-13T20:21:24+02:00
 lastUpdated: 2020-11-16T15:17:26+02:00
 ---

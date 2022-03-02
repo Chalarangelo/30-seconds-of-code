@@ -1,6 +1,7 @@
 ---
 title: Component Name
-tags: components,state,effect,intermediate
+tags: components,state,effect
+expertise: intermediate
 firstSeen: 2021-06-13T05:00:00-04:00
 ---
 

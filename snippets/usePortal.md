@@ -1,6 +1,7 @@
 ---
 title: React usePortal hook
-tags: hooks,state,effect,advanced
+tags: hooks,state,effect
+expertise: advanced
 firstSeen: 2022-01-05T05:00:00-04:00
 ---
 

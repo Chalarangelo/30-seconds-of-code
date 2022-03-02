@@ -1,6 +1,7 @@
 ---
 title: Closable alert
-tags: components,state,effect,beginner
+tags: components,state,effect
+expertise: beginner
 firstSeen: 2019-09-17T13:19:30+03:00
 lastUpdated: 2021-01-07T23:57:13+02:00
 ---

@@ -1,6 +1,7 @@
 ---
 title: Collapsible accordion
-tags: components,children,state,advanced
+tags: components,children,state
+expertise: advanced
 firstSeen: 2019-03-02T10:46:34+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

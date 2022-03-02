@@ -1,6 +1,7 @@
 ---
 title: React useDebounce hook
-tags: hooks,state,effect,intermediate
+tags: hooks,state,effect
+expertise: intermediate
 firstSeen: 2021-01-04T16:48:43+02:00
 lastUpdated: 2021-01-04T16:48:43+02:00
 ---
