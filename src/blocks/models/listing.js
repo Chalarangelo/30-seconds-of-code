@@ -201,11 +201,6 @@ export const listing = {
       if (listing.isCollections) return [];
       if (listing.isMain) {
         return [
-          {
-            name: literals.blog,
-            url: '/articles/p/1',
-            selected: false,
-          },
           ...Listing.records.language
             .sort((a, b) => b.ranking - a.ranking)
             .flatMap(ls => ({

@@ -13,7 +13,7 @@ const formatTag = tag => {
 /* istanbul ignore next */
 const literals = {
   featuredCollections: 'Featured Collections',
-  featuredSnippets: 'Snippets & Articles',
+  featuredSnippets: 'Popular Snippets',
   moreCollections: 'More collections',
   blogSingular: 'Article',
   blog: 'Articles',
