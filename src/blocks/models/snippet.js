@@ -130,32 +130,50 @@ export const snippet = {
     },
     searchTokens: snippet => snippet.searchTokensArray.join(' '),
     breadcrumbs: snippet => {
-      const slugParts = snippet.slug.split('/').filter(Boolean).slice(0, -2);
-      const crumbs = [
-        {
-          url: '/',
-          name: clientLiterals.home,
-        },
-        {
-          url: `/${slugParts[0]}/p/1`,
-          name: snippet.isBlog
-            ? literals.blog
-            : snippet.repository.language.name,
-        },
-      ];
+      const homeCrumb = {
+        url: '/',
+        name: clientLiterals.home,
+      };
 
-      if (!snippet.isBlog)
-        crumbs.push({
-          url: `/${slugParts[0]}/t/${snippet.primaryTag.toLowerCase()}/p/1`,
+      const languageCrumb = snippet.language
+        ? {
+            url: `${snippet.language.slugPrefix}/p/1`,
+            name: snippet.language.name,
+          }
+        : {
+            url: `/articles/p/1`,
+            name: literals.blog,
+          };
+
+      let tagCrumb = null;
+      if (!snippet.isBlog) {
+        tagCrumb = {
+          url: `${
+            snippet.language.slugPrefix
+          }/t/${snippet.primaryTag.toLowerCase()}/p/1`,
           name: literals.tag(snippet.primaryTag),
-        });
+        };
+      } else if (
+        snippet.language &&
+        snippet.truePrimaryTag &&
+        snippet.language.tagShortIds.includes(
+          snippet.truePrimaryTag.toLowerCase()
+        )
+      ) {
+        tagCrumb = {
+          url: `${
+            snippet.language.slugPrefix
+          }/t/${snippet.truePrimaryTag.toLowerCase()}/p/1`,
+          name: literals.tag(snippet.truePrimaryTag),
+        };
+      }
 
-      crumbs.push({
+      const snippetCrumb = {
         url: snippet.slug,
         name: snippet.title,
-      });
+      };
 
-      return crumbs;
+      return [homeCrumb, languageCrumb, tagCrumb, snippetCrumb].filter(Boolean);
     },
     codeBlocks: snippet => {
       if (snippet.isBlog) return [];

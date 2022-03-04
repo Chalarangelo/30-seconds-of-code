@@ -453,8 +453,8 @@ describe('Application/Schema', () => {
             name: 'Home',
           },
           {
-            url: '/articles/p/1',
-            name: 'Articles',
+            url: '/js/p/1',
+            name: 'JavaScript',
           },
           {
             url: '/articles/s/js-callbacks',
