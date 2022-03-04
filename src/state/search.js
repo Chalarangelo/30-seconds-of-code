@@ -45,13 +45,7 @@ const filterResultsByType = (type, searchResults) => {
     case 'collections':
       return searchResults.filter(r => !r.expertise);
     case 'snippets':
-      return searchResults.filter(
-        r => r.expertise && r.expertise.toLowerCase() !== 'article'
-      );
-    case 'articles':
-      return searchResults.filter(
-        r => r.expertise && r.expertise.toLowerCase() === 'article'
-      );
+      return searchResults.filter(r => r.expertise);
     default:
       return searchResults;
   }
@@ -84,12 +78,7 @@ const reducer = (state, action) => {
       );
       const availableFilters = {
         All: true,
-        Snippets: searchResults.some(
-          r => r.expertise && r.expertise.toLowerCase() !== 'article'
-        ),
-        Articles: searchResults.some(
-          r => r.expertise && r.expertise.toLowerCase() === 'article'
-        ),
+        Snippets: searchResults.some(r => r.expertise),
         Collections: searchResults.some(r => !r.expertise),
       };
       return {
