@@ -6,7 +6,7 @@ expertise: advanced
 author: chalarangelo
 cover: blog_images/portal-timelapse.jpg
 excerpt: Testing React components that use portals can be difficult until you understand what you really need to be testing.
-firstSeen: 2022-03-09T05:00:00-04:00
+firstSeen: 2022-03-13T05:00:00-04:00
 ---
 
 Testing React components can get pretty complicated, especially when dealing with portals. While they seem intimidating, what they are in essence is a way to render a component in a different place in the DOM. Apart from that, when writing tests, one should avoid testing framework internals. This obviously applies to React internals as well.
