@@ -160,9 +160,7 @@ export class Extractor {
     const logger = new Logger('Extractor.extractAuthors');
     logger.log('Extracting authors');
     const authors = Object.entries(
-      JSONHandler.fromFile(
-        `${contentDir}/sources/30blog/blog_data/blog_authors.json`
-      )
+      JSONHandler.fromFile(`${contentDir}/configs/authors.json`)
     ).map(([id, author]) => {
       return {
         ...author,
