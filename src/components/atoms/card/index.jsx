@@ -16,11 +16,14 @@ export const CardIcon = memo(({ icon, expertise }) => (
 CardIcon.displayName = 'CardIcon';
 
 // Title
-export const CardTitle = memo(({ isSecondary = false, children }) => {
+export const CardTitle = memo(({ isSecondary = false, children, ...rest }) => {
   const H = isSecondary ? 'h3' : 'h1';
 
   return (
-    <H className='card-title m-0 txt-200 fs-lg md:fs-xl f-alt f-ellipsis'>
+    <H
+      className='card-title m-0 txt-200 fs-lg md:fs-xl f-alt f-ellipsis'
+      {...rest}
+    >
       {children}
     </H>
   );

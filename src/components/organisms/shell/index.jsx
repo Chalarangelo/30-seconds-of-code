@@ -12,7 +12,7 @@ import { useShellState } from 'state/shell';
  * @param {bool} isSearch - Is this a search page?
  * @param {bool} isSettings - Is this a search page?
  */
-const Shell = ({ isSearch = false, children }) => {
+const Shell = ({ isSearch = false, isFaq = false, children }) => {
   const { acceptsCookies, isBot } = useShellState();
 
   return (
@@ -51,7 +51,12 @@ const Shell = ({ isSearch = false, children }) => {
         </Link>
         <Search isMainSearch={isSearch} />
       </header>
-      <div className='content my-0 mx-auto'>
+      <div
+        className='content my-0 mx-auto'
+        {...(isFaq
+          ? { itemScope: true, itemType: 'https://schema.org/FAQPage' }
+          : {})}
+      >
         <a
           href='#skip-link-target'
           className='skip-link fs-lg'
