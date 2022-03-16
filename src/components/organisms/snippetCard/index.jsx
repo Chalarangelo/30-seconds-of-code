@@ -40,19 +40,15 @@ const SnippetCard = ({ snippet }) => {
         <div className='card-data mx-2 my-0'>
           <CardTitle>{snippet.title}</CardTitle>
           <CardSubtitle>
-            {Boolean(snippet.author) && (
-              <>
-                <a
-                  className='inherit'
-                  href={snippet.author.profile}
-                  rel='nofollow noopener noreferrer'
-                  target='_blank'
-                >
-                  {snippet.author.name}
-                </a>
-                {' · '}
-              </>
-            )}
+            <a
+              className='inherit'
+              href={snippet.author.profile}
+              rel='nofollow noopener noreferrer'
+              target='_blank'
+            >
+              {snippet.author.name}
+            </a>
+            {' · '}
             {snippet.tags}
             {' · '}
             <span className='inline-block'>{snippet.date}</span>

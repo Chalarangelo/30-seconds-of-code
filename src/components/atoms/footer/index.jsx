@@ -14,6 +14,9 @@ const Footer = () => (
       <Link href='/cookies'>
         <a className='ml-4'>{literals.cookies}</a>
       </Link>
+      <Link href='/faq'>
+        <a className='ml-4'>{literals.faq}</a>
+      </Link>
       <a className='ml-4' href='/feed' data-link-rel='no-route'>
         {literals.feed}
       </a>

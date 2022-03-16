@@ -21,16 +21,37 @@ const StaticPage = ({
   },
 }) => {
   const [{ acceptsCookies }, dispatch] = useShell();
+  // This is not particularly resilient, but should work for now
+  const isFaq = title === 'FAQ';
+
   return (
     <>
       <Meta title={title} description={pageDescription} />
-      <Shell>
+      <Shell isFaq={isFaq}>
         <PageTitle>{title}</PageTitle>
         <p className='my-0 mx-3.5 txt-100'>{subtitle}</p>
         {cards.map(({ title, html }, i) => (
-          <Card key={i}>
-            <CardTitle isSecondary>{title}</CardTitle>
+          <Card
+            key={i}
+            {...(isFaq
+              ? {
+                  itemScope: true,
+                  itemProp: 'mainEntity',
+                  itemType: 'https://schema.org/Question',
+                }
+              : {})}
+          >
+            <CardTitle isSecondary {...(isFaq ? { itemProp: 'name' } : {})}>
+              {title}
+            </CardTitle>
             <div
+              {...(isFaq
+                ? {
+                    itemScope: true,
+                    itemProp: 'acceptedAnswer',
+                    itemType: 'https://schema.org/Answer',
+                  }
+                : {})}
               className='card-description'
               dangerouslySetInnerHTML={{ __html: html }}
             />

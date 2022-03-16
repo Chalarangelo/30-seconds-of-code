@@ -14,6 +14,7 @@ const TOP_COLLECTION_CHIPS = 6;
 const staticContexts = {
   static_about: { stringLiterals: literals.about },
   static_cookies: { stringLiterals: literals.cookies },
+  static_faq: { stringLiterals: literals.faq },
 };
 /* eslint-enable camelcase */
 

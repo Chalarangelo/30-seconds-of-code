@@ -22,6 +22,7 @@ describe('TextParser', () => {
               'title',
               'firstSeen',
               'lastUpdated',
+              'author',
             ].sort()
           );
         }

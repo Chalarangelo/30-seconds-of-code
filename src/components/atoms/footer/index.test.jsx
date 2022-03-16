@@ -20,7 +20,7 @@ describe('<Footer />', () => {
 
   it('renders the links section', () => {
     expect(wrapper.querySelectorAll('footer > p:first-child a')).toHaveLength(
-      5
+      6
     );
   });
 });

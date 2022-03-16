@@ -535,6 +535,12 @@ export class Application {
       staticPriority: 0.25,
     });
     Page.createRecord({
+      id: 'static_faq',
+      template: 'StaticPage',
+      slug: '/faq',
+      staticPriority: 0.25,
+    });
+    Page.createRecord({
       id: 'static_search',
       template: 'SearchPage',
       slug: '/search',

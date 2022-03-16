@@ -138,6 +138,10 @@ factory
     const title = factory.nextFrom('word');
     const lang = type === 'Blog' ? 'blog' : factory.nextFrom('language');
     const tags = [lang, factory.nextFrom('words')].join(', ');
+    const author = {
+      name: 'OSCC',
+      profile: '/faq',
+    };
 
     return {
       id: `30${lang.toLowerCase()}/snippets/${title}`,
@@ -148,6 +152,7 @@ factory
       icon: lang.toLowerCase(),
       actionType: type === 'css' || type === 'react' ? 'codepen' : 'copy',
       tags,
+      author,
     };
   })
   .trait('content', type => {
