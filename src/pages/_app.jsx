@@ -72,6 +72,26 @@ const App = ({ Component, pageProps }) => {
     router.push(url);
   };
 
+  const copyCodeBlock = e => {
+    if (!e.target.matches('.action-button.icon-clipboard')) return;
+    const code = e.target.previousSibling.innerText;
+    try {
+      navigator.clipboard.writeText(code);
+      setTimeout(() => {
+        e.target.classList.remove('icon-clipboard');
+        e.target.classList.add('active');
+        e.target.classList.add('icon-check');
+      }, 100);
+      setTimeout(() => {
+        e.target.classList.remove('icon-check');
+        e.target.classList.remove('active');
+        e.target.classList.add('icon-clipboard');
+      }, 750);
+    } catch (err) {
+      // display error message or feedback microinteraction
+    }
+  };
+
   useEffect(() => {
     const handleRouteChange = () => {
       if (process.env.NODE_ENV === `production` && typeof gtag === `function`) {
@@ -96,7 +116,11 @@ const App = ({ Component, pageProps }) => {
 
   useEffect(() => {
     window.addEventListener('click', routeLinkClick);
-    return () => window.removeEventListener('click', routeLinkClick);
+    window.addEventListener('click', copyCodeBlock);
+    return () => {
+      window.removeEventListener('click', routeLinkClick);
+      window.removeEventListener('click', copyCodeBlock);
+    };
   }, [pageProps]);
 
   return (
