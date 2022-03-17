@@ -6,6 +6,7 @@ import visit from 'unist-util-visit';
 import Prism from 'prismjs';
 import getLoader from 'prismjs/dependencies';
 import prismComponents from 'prismjs/components';
+import clientLiterals from 'lang/en/client/common';
 import { escapeHTML, optimizeAllNodes } from 'utils';
 
 const loader = getLoader(
@@ -50,7 +51,12 @@ const commonTransformers = [
   {
     matcher: /<pre class="language-([^"]+)" data-code-language="([^"]*)">([\s\S]*?)<\/pre>/g,
     replacer:
-      '<pre class="language-$1 notranslate mt-4 mb-0 mx-0" data-code-language="$2">$3</pre>',
+      '<pre class="language-$1 notranslate my-0 mx-0" data-code-language="$2">$3</pre>',
+  },
+  // Add a copy to clipboard button after each code block
+  {
+    matcher: /<\/pre>/g,
+    replacer: `</pre><button class="flex-none before:fs-sm btn action-btn icon-btn icon icon-clipboard" title="${clientLiterals.copyToClipboard}" />`,
   },
   // Convert blockquotes to the appropriate elements
   {
@@ -156,7 +162,7 @@ export class MarkdownParser {
           : '';
       node.value = isText
         ? [
-            `<div class="code-highlight" data-language="${languageName}">`,
+            `<div class="code-highlight mt-4" data-language="${languageName}">`,
             `<pre class="language-${languageName}" data-code-language="${languageStringLiteral}">`,
             `${highlightedCode.trim()}`,
             `</pre>`,

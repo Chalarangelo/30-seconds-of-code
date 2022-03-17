@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import Image from 'components/atoms/image';
 import Card, { CardIcon, CardTitle, CardSubtitle } from 'components/atoms/card';
-import Actions from 'components/molecules/actions';
 import literals from 'lang/en/client/common';
 
 /**
@@ -85,16 +84,57 @@ const SnippetCard = ({ snippet }) => {
       {hasCodeBlocks && (
         <div className='card-source-content mt-5 mx-0 mb-0'>
           {snippet.codeBlocks.map(({ language, htmlContent }) => (
-            <pre
-              key={language.long}
-              data-code-language={language.long}
-              className={`notranslate ${`language-${language.short}`} card-code`}
-              dangerouslySetInnerHTML={{ __html: htmlContent }}
-            />
+            <div className='code-highlight' key={language.long}>
+              <pre
+                data-code-language={language.long}
+                className={`notranslate ${`language-${language.short}`} card-code`}
+                dangerouslySetInnerHTML={{ __html: htmlContent }}
+              />
+              {language.long !== 'Examples' && (
+                <button
+                  className='flex-none before:fs-sm btn action-btn icon-btn icon icon-clipboard'
+                  title={`${literals.copyToClipboard}`}
+                />
+              )}
+            </div>
           ))}
         </div>
       )}
-      <Actions snippet={snippet} />
+      <div className='card-actions flex'>
+        {snippet.actionType === 'codepen' && (
+          <button
+            className='flex-none before:fs-md btn action-btn icon-btn icon icon-codepen'
+            title={literals.codepen}
+            onClick={() => {
+              try {
+                const form = document.createElement('form');
+                form.setAttribute('action', 'https://codepen.io/pen/define');
+                form.setAttribute('method', 'POST');
+                form.setAttribute('target', '_blank');
+
+                const input = document.createElement('input');
+                input.setAttribute('type', 'hidden');
+                input.setAttribute('name', 'data');
+                input.setAttribute('value', JSON.stringify(snippet.code));
+
+                form.appendChild(input);
+                document.body.appendChild(form);
+                form.submit();
+                document.body.removeChild(form);
+              } catch (err) {
+                // display error message or feedback microinteraction
+              }
+            }}
+          />
+        )}
+        <a
+          className='flex-none before:fs-md btn action-btn icon-btn icon icon-github'
+          href={snippet.url}
+          rel='nofollow noopener noreferrer'
+          target='_blank'
+          title={literals.viewOnGitHub}
+        />
+      </div>
     </Card>
   );
 };
