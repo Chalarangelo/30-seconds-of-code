@@ -4,20 +4,57 @@
       margin: 0;
     }
 
-    .card-code + .card-code:not([data-code-language='Examples']) {
+    [data-code-language='Examples'] {
+      margin-top: -0.875rem;
+      padding-bottom: 1.5rem;
+    }
+  }
+
+  .code-highlight {
+    position: relative;
+
+    + .code-highlight > .card-code:not([data-code-language='Examples']) {
       border-top: 2px solid var(--clr-code-border);
       border-top-left-radius: var(--br-none);
       border-top-right-radius: var(--br-none);
       padding-top: 2.5rem;
+      margin-top: -2px;
 
       &:before {
         top: 0.9375rem;
       }
     }
 
-    .card-code + [data-code-language='Examples'] {
-      margin-top: -0.875rem;
-      padding-bottom: 1.5rem;
+    pre {
+      + .action-btn {
+        display: none;
+        position: absolute;
+        top: 0.5rem;
+        z-index: 1000;
+        right: 0;
+        padding: 0.625rem;
+        line-height: 1;
+
+        &.active {
+          animation-name: active;
+          animation-duration: 0.5s;
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition: background 0.25s ease;
+
+          &:before {
+            opacity: 0;
+            animation-name: active-before;
+            animation-duration: 0.65s;
+            animation-timing-function: ease-in-out;
+          }
+        }
+      }
+
+      &:hover + .action-btn,
+      + .action-btn:focus,
+      + .action-btn:hover {
+        display: block;
+      }
     }
   }
 
@@ -38,11 +75,53 @@
     + .card-source-content {
       margin-top: 0;
 
-      pre:first-of-type {
+      .code-highlight:first-of-type > pre {
         border-top-left-radius: var(--br-none);
         border-top-right-radius: var(--br-none);
       }
     }
+  }
+
+  .card-actions {
+    margin: 1rem 0 -1rem;
+    justify-content: space-evenly;
+
+    .btn {
+      // TODO: Button issue with padding
+      padding: 0.75rem;
+    }
+  }
+}
+
+@keyframes active {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.15) rotate(3deg);
+  }
+  40% {
+    transform: scale(0.94);
+  }
+  60% {
+    transform: scale(0.98) rotate(-3deg);
+  }
+  80% {
+    transform: scale(1.08);
+  }
+  99% {
+  }
+}
+
+@keyframes active-before {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  30%,
+  75% {
+    opacity: 1;
   }
 }
 

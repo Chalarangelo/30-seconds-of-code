@@ -64,6 +64,10 @@ describe('<SnippetCard />', () => {
       it('the card actions', () => {
         expect(card.querySelectorAll('.card-actions')).toHaveLength(1);
       });
+
+      it('should render a github link', () => {
+        expect(wrapper.querySelectorAll('.icon-github')).toHaveLength(1);
+      });
     });
 
     it('should have the correct card title', () => {
