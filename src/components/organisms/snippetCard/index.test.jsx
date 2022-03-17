@@ -56,7 +56,9 @@ describe('<SnippetCard />', () => {
       });
 
       it('a CopyButton component', () => {
-        expect(card.querySelectorAll('.btn.icon-clipboard')).toHaveLength(1);
+        expect(
+          card.querySelectorAll('.btn.icon-clipboard').length
+        ).toBeGreaterThanOrEqual(1);
       });
 
       it('the card actions', () => {
