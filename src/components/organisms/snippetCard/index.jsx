@@ -85,12 +85,19 @@ const SnippetCard = ({ snippet }) => {
       {hasCodeBlocks && (
         <div className='card-source-content mt-5 mx-0 mb-0'>
           {snippet.codeBlocks.map(({ language, htmlContent }) => (
-            <pre
-              key={language.long}
-              data-code-language={language.long}
-              className={`notranslate ${`language-${language.short}`} card-code`}
-              dangerouslySetInnerHTML={{ __html: htmlContent }}
-            />
+            <div className='code-highlight' key={language.long}>
+              <pre
+                data-code-language={language.long}
+                className={`notranslate ${`language-${language.short}`} card-code`}
+                dangerouslySetInnerHTML={{ __html: htmlContent }}
+              />
+              {language.long !== 'Examples' && (
+                <button
+                  className='flex-none before:fs-sm btn action-btn icon-btn icon icon-clipboard'
+                  title={`${literals.copyToClipboard}`}
+                />
+              )}
+            </div>
           ))}
         </div>
       )}
