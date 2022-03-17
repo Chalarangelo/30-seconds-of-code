@@ -73,7 +73,7 @@ const App = ({ Component, pageProps }) => {
   };
 
   const copyCodeBlock = e => {
-    if (!e.target.matches('.action-button.icon-clipboard')) return;
+    if (!e.target.matches('.action-btn.icon-clipboard')) return;
     const code = e.target.previousSibling.innerText;
     try {
       navigator.clipboard.writeText(code);
