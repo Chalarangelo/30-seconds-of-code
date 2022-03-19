@@ -69,9 +69,10 @@ export class TwitterBot {
       // Add logo inside the card
       const logo = document.querySelector('.nav-website-logo');
       logo.style.position = 'absolute';
-      logo.style.top = '32px';
-      logo.style.right = '24px';
-      logo.style.width = '52px';
+      logo.style.top = '-68px';
+      logo.style.left = '50%';
+      logo.style.transform = 'translateX(-50%)';
+      logo.style.width = 'auto';
       logo.style.height = '52px';
       card.prepend(logo);
 
