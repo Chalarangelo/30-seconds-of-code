@@ -8,7 +8,6 @@ const literals = {
   home: 'Home',
   skipToContent: 'Skip to main content',
   startOfContent: 'Start of main content',
-  viewAll: 'View all',
   siteName: settings.websiteName,
   siteAuthor: settings.orgName,
   siteDescription: settings.websiteDescription,
