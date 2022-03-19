@@ -11,6 +11,8 @@ const literals = {
   siteName: settings.websiteName,
   siteAuthor: settings.orgName,
   siteDescription: settings.websiteDescription,
+  snippets: 'Snippets',
+  collections: 'Collections',
 };
 
 export default literals;

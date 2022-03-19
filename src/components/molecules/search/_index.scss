@@ -11,11 +11,16 @@
 
 .search-wrapper {
   background: var(--clr-search-bg);
-  flex: 0 0 calc(100% - 0.5rem);
+  flex: 0 0 100%;
 
   @media screen and (min-width: $layout-medium-breakpoint) {
     flex: 1 0 300px;
     margin-bottom: 0;
+    max-width: 440px;
+  }
+
+  @media screen and (min-width: $layout-large-breakpoint) {
+    margin-left: 0.25rem;
   }
 
   &:not(:focus-within) .search-autocomplete-list {

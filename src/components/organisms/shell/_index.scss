@@ -9,47 +9,64 @@
   background: var(--clr-navbar-bg);
   box-shadow: var(--shd-el-01dp);
   z-index: 1001;
-  height: 128px;
+  height: 112px;
   width: 100vw;
+  justify-content: center;
+  padding-top: 0.5rem;
 
   @media screen and (min-width: $layout-medium-breakpoint) {
-    height: 112px;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 0 1rem;
+    justify-content: space-between;
   }
 
   @media screen and (min-width: 960px) {
-    padding-left: calc((100% - 928px) / 2);
-    padding-right: calc((100% - 928px) / 2);
+    padding: 0 calc((100% - 928px) / 2);
   }
 }
 
-.nav-title-wrapper {
-  &:hover,
-  &:focus,
-  &:active {
-    outline: 0;
-    animation: none;
-  }
-}
-
-// Website logo
-.nav-logo-wrapper {
-  flex: 0 0 64px;
+.nav-control-wrapper {
+  grid-template-columns: 1fr;
+  grid-gap: 0.5rem;
+  flex: 0 0 calc(100% - 0.5rem);
+  margin: 0.25rem 0 0;
 
   @media screen and (min-width: $layout-medium-breakpoint) {
-    flex: 0 0 72px;
+    flex: 0 0 344px;
+    margin: 0;
+  }
+
+  a {
+    &:hover,
+    &:focus {
+      animation: none;
+      outline: 0;
+
+      > span {
+        color: var(--clr-primary-050);
+      }
+    }
+  }
+
+  > :not(:last-child) {
+    display: none;
+  }
+
+  @media screen and (min-width: $layout-large-breakpoint) {
+    flex: 0 0 464px;
+    grid-template-columns: 1fr 1fr 432px;
+
+    > :not(:last-child) {
+      display: block;
+    }
   }
 }
 
 img.nav-website-logo {
-  padding: 4px;
-  width: 56px;
-  height: 56px;
+  width: auto;
+  height: 42px;
 
   @media screen and (min-width: $layout-medium-breakpoint) {
-    width: 64px;
-    height: 64px;
+    height: 52px;
   }
 }
 
@@ -75,13 +92,8 @@ img.nav-website-logo {
     clip-path: none;
     text-align: center;
     background: var(--clr-navbar-bg);
-    height: 128px;
-    line-height: 128px;
+    height: 112px;
+    line-height: 112px;
     z-index: 1001;
-
-    @media screen and (min-width: $layout-medium-breakpoint) {
-      height: 112px;
-      line-height: 112px;
-    }
   }
 }
