@@ -26,30 +26,29 @@ const Shell = ({ isSearch = false, isFaq = false, children }) => {
           {literals.skipToContent}
         </a>
         <Link href='/'>
-          <a className='nav-logo-wrapper'>
+          <a title={literals.siteName} aria-label={literals.siteName}>
             <img
-              src='/assets/30s-icon.png'
+              src='/assets/30s-logo.png'
               alt={literals.home}
               className='nav-website-logo'
-              width='64'
-              height='64'
+              width='124'
+              height='42'
             />
           </a>
         </Link>
-        <Link href='/'>
-          <a
-            className='nav-title-wrapper py-0 pl-2 pr-8 flex flex-col flex-none'
-            aria-label={literals.home}
-          >
-            <h1 className='fs-md md:fs-lg lg:fs-xl m-0 txt-200 f-alt'>
-              {literals.siteName}
-            </h1>
-            <p className='fs-no lg:fs-sm m-0 txt-100'>
-              {literals.siteDescription}
-            </p>
-          </a>
-        </Link>
-        <Search isMainSearch={isSearch} />
+        <div className='nav-control-wrapper grid txt-150 a-center'>
+          <Link href='/list/p/1'>
+            <a className='px-2'>
+              <span className='txt-150'>{literals.snippets}</span>
+            </a>
+          </Link>
+          <Link href='/collections/p/1'>
+            <a className='px-2'>
+              <span className='txt-150'>{literals.collections}</span>
+            </a>
+          </Link>
+          <Search isMainSearch={isSearch} />
+        </div>
       </header>
       <div
         className='content my-0 mx-auto'

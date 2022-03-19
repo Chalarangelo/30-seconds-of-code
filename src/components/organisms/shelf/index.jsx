@@ -2,7 +2,6 @@ import Link from 'next/link';
 import PreviewCard from 'components/molecules/previewCard';
 import CollectionChip from 'components/atoms/collectionChip';
 import PageTitle from 'components/atoms/pageTitle';
-import literals from 'lang/en/client/common';
 
 /**
  * Renders a shelf of snippets or chips.
@@ -12,10 +11,7 @@ const Shelf = ({ shelf: { shelfType, shelfData, shelfName, shelfUrl } }) => {
   return shelfData.length ? (
     <>
       <Link href={shelfUrl}>
-        <a
-          className='shelf-title relative mt-8 icon icon-chevron-right before:fs-sm'
-          data-link-title={literals.viewAll}
-        >
+        <a className='shelf-title relative mt-8'>
           <PageTitle>{shelfName}</PageTitle>
         </a>
       </Link>
