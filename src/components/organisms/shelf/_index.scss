@@ -1,6 +1,5 @@
 .shelf-title {
-  display: block;
-  width: 100%;
+  display: inline-block;
   --clr-el-link: var(--clr-txt-150);
 
   &::before,
@@ -14,31 +13,6 @@
     animation: none;
     --clr-el-link: var(--clr-primary-050);
   }
-
-  &::before {
-    display: none;
-    position: absolute;
-    right: 0.875rem;
-    bottom: 0.625rem;
-    pointer-events: all;
-  }
-
-  @media screen and (min-width: $layout-medium-breakpoint) {
-    pointer-events: none;
-
-    &::before {
-      display: block;
-    }
-
-    &::after {
-      position: absolute;
-      content: attr(data-link-title);
-      right: 2.25rem;
-      bottom: 0;
-      line-height: 2.5rem;
-      pointer-events: all;
-    }
-  }
 }
 
 // TODO: Figure out if this can be built with utils
@@ -51,17 +25,21 @@
 }
 
 .collections-shelf-list {
-  margin: 1.75rem 0.25rem 5rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+  margin: 1.75rem 0.25rem 2.5rem;
+  padding-bottom: 0.5rem;
+  display: flex;
+  overflow-x: auto;
+  gap: 0.5rem;
 
-  @media screen and (min-width: $layout-medium-breakpoint) {
-    margin: 1.75rem 0.875rem 5rem;
-    grid-template-columns: 1fr 1fr;
+  li {
+    display: inline-block;
+    min-width: 180px;
   }
 
   @media screen and (min-width: $layout-large-breakpoint) {
+    display: grid;
+    gap: 1rem;
+    margin: 1.75rem 0.875rem 2.5rem;
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
