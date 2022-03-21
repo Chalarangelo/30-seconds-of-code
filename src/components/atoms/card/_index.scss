@@ -15,6 +15,35 @@
       font-weight: 500;
       line-height: 2rem;
     }
+
+    &.linkable {
+      a {
+        position: absolute;
+        top: 0;
+        left: -14px;
+        width: 14px;
+        opacity: 0;
+        transition: opacity 0.1s ease-in-out;
+
+        &::before {
+          content: '#';
+        }
+
+        &:hover,
+        &:focus {
+          opacity: 1;
+          animation: none;
+          outline: 0;
+        }
+      }
+
+      &:hover,
+      &:focus {
+        a {
+          opacity: 1;
+        }
+      }
+    }
   }
 
   // Reusable utility for all card icons
