@@ -27,6 +27,7 @@ export const snippet = {
       type: 'enum',
       values: ['beginner', 'intermediate', 'advanced'],
     },
+    { name: 'shortTitle', type: 'string' },
     { name: 'firstSeen', type: 'dateRequired' },
     { name: 'lastUpdated', type: 'dateRequired' },
     { name: 'listed', type: 'booleanRequired' },

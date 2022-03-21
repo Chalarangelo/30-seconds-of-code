@@ -293,6 +293,7 @@ export class Extractor {
             const {
               fileName,
               title,
+              shortTitle = title,
               tags: rawTags,
               expertise,
               type: rawType,
@@ -417,6 +418,7 @@ export class Extractor {
               id,
               fileName,
               title,
+              shortTitle,
               tags,
               expertise,
               firstSeen,
