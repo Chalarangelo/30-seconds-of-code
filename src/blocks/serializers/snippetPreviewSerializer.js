@@ -6,9 +6,14 @@ export const snippetPreviewSerializer = {
       withSearch ? snippet.searchTokens : undefined,
     searchResultTag: (snippet, { withSearch } = {}) =>
       withSearch ? snippet.formattedMiniPreviewTag : undefined,
+    previewTitle: (snippet, { withSearch }) => {
+      if (!withSearch) return undefined;
+      return snippet.shortTitle;
+    },
   },
   attributes: [
     'title',
+    'shortTitle',
     ['slug', 'url'],
     'icon',
     'description',
