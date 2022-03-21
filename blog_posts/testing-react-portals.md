@@ -1,5 +1,6 @@
 ---
 title: Testing React portals
+shortTitle: Portal testing
 type: story
 tags: react,testing
 expertise: advanced

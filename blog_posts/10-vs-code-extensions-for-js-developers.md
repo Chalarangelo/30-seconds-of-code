@@ -1,5 +1,6 @@
 ---
 title: 10 must-have VS Code extensions for JavaScript developers
+shortTitle: Essential VS Code extensions
 type: story
 tags: devtools,vscode
 expertise: intermediate

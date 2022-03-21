@@ -1,5 +1,6 @@
 ---
 title: "Tip: The order of then and catch matters"
+shortTitle: The order of then and catch matters
 type: tip
 tags: javascript,function,promise
 expertise: intermediate

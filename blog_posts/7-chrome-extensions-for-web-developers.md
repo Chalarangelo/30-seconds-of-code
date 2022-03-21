@@ -1,5 +1,6 @@
 ---
 title: 7 essential Chrome extensions for web developers
+shortTitle: Essential Chrome extensions
 type: story
 tags: devtools,webdev
 expertise: intermediate

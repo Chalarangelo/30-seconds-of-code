@@ -1,5 +1,6 @@
 ---
 title: What is a callback function?
+shortTitle: Callback functions
 type: question
 tags: javascript,function
 expertise: intermediate

@@ -1,5 +1,6 @@
 ---
 title: Understanding Python's slice assignment
+shortTitle: Python slice assignment
 type: story
 tags: python,list
 expertise: intermediate

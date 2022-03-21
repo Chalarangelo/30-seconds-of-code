@@ -1,5 +1,6 @@
 ---
 title: Introduction to arrow functions in JavaScript
+shortTitle: Arrow functions introduction
 type: story
 tags: javascript,function
 expertise: beginner

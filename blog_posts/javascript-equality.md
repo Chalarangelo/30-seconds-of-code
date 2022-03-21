@@ -1,5 +1,6 @@
 ---
 title: What is the difference between JavaScript's equality operators?
+shortTitle: JavaScript equality operators
 type: question
 tags: javascript,type,comparison
 expertise: beginner

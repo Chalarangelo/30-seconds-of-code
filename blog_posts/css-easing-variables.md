@@ -1,5 +1,6 @@
 ---
 title: "Tip: CSS easing variables"
+shortTitle: CSS easing variables
 type: tip
 tags: css,animation
 expertise: intermediate

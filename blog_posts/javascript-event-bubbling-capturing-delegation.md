@@ -1,5 +1,6 @@
 ---
 title: Understanding event bubbling, capturing and delegation in JavaScript
+shortTitle: Event bubbling, capturing and delegation
 type: story
 tags: javascript,browser,event
 expertise: intermediate

@@ -1,5 +1,6 @@
 ---
 title: Common HTTP status codes Cheat Sheet
+shortTitle: HTTP status codes
 type: cheatsheet
 tags: webdev,http
 expertise: beginner

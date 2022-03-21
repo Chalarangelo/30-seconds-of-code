@@ -1,5 +1,6 @@
 ---
 title: Replacing JavaScript switch statement with object literals
+shortTitle: Switch with object literals
 type: story
 tags: javascript,object
 expertise: intermediate

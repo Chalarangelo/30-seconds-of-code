@@ -1,5 +1,6 @@
 ---
 title: How can I implement a sleep function in JavaScript?
+shortTitle: Sleep function
 type: question
 tags: javascript,date,promise
 expertise: intermediate

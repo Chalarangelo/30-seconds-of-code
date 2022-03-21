@@ -1,5 +1,6 @@
 ---
 title: How can I execute an event handler at most once?
+shortTitle: Execute event handler only once
 type: question
 tags: javascript,browser,event
 expertise: intermediate

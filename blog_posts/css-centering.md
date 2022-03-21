@@ -1,5 +1,6 @@
 ---
 title: 4 ways to center content with CSS
+shortTitle: Centering content with CSS
 type: story
 tags: css,layout
 expertise: beginner

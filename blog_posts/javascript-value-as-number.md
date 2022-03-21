@@ -1,5 +1,6 @@
 ---
 title: "Tip: You can get the value of an input element as a number"
+shortTitle: Input element value as number
 type: tip
 tags: javascript,browser,input
 expertise: beginner

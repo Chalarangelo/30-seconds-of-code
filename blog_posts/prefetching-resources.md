@@ -1,5 +1,6 @@
 ---
 title: "Tip: Prefetching resources in the browser"
+shortTitle: Resource prefetching
 type: tip
 tags: webdev,html,browser
 expertise: intermediate

@@ -1,5 +1,6 @@
 ---
 title: "Tip: Perfect nested border radius in CSS"
+shortTitle: Perfect nested border radius in CSS
 type: story
 tags: css,visual
 expertise: beginner

@@ -1,5 +1,6 @@
 ---
 title: "Tip: Avoid using bare except in Python"
+shortTitle: Bare except best practices
 type: tip
 tags: python,error
 expertise: beginner

@@ -1,5 +1,6 @@
 ---
 title: Code Anatomy - For loops, array reduce and method chaining
+shortTitle: For loops, array reduce and method chaining
 type: story
 tags: javascript,array,object,iterator
 expertise: intermediate

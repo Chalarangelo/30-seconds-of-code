@@ -1,5 +1,6 @@
 ---
 title: Are JavaScript strings immutable?
+shortTitle: String immutability
 type: question
 tags: javascript,string,type
 expertise: intermediate

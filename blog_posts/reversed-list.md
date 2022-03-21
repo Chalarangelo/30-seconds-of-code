@@ -1,5 +1,6 @@
 ---
 title: "Tip: Create a descending list of numbered items"
+shortTitle: Descending list
 type: tip
 tags: webdev,html
 expertise: beginner

@@ -1,5 +1,6 @@
 ---
 title: What is hoisting in JavaScript?
+shortTitle: Hoisting introduction
 type: question
 tags: javascript,type,variable
 expertise: intermediate

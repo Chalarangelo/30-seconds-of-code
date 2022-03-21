@@ -1,5 +1,6 @@
 ---
 title: "Tip: How to swap two variables in JavaScript"
+shortTitle: Swap two variables
 type: tip
 tags: javascript,array,variables
 expertise: beginner

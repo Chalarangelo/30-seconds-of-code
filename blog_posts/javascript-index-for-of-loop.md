@@ -1,5 +1,6 @@
 ---
 title: "Tip: Get the index of an array item in a JavaScript for...of loop"
+shortTitle: Array index in for...of loops
 type: tip
 tags: javascript,array,iterator
 expertise: intermediate

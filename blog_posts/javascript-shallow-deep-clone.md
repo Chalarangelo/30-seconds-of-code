@@ -1,5 +1,6 @@
 ---
 title: How do I clone an object in JavaScript?
+shortTitle: Object cloning
 type: question
 tags: javascript,object
 expertise: intermediate

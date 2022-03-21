@@ -1,5 +1,6 @@
 ---
 title: How do I compare two objects in JavaScript?
+shortTitle: Object comparison
 type: question
 tags: javascript,object,comparison
 expertise: intermediate

@@ -1,5 +1,6 @@
 ---
 title: Testing React components that update asynchronously with React Testing Library
+shortTitle: Asynchronous component update testing
 type: story
 tags: react,testing,event
 expertise: advanced

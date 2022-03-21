@@ -1,5 +1,6 @@
 ---
 title: Using JavaScript generator functions for ranges
+shortTitle: Generator functions for ranges
 type: story
 tags: javascript,function,array
 expertise: advanced

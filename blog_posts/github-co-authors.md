@@ -1,5 +1,6 @@
 ---
 title: "Tip: How to add multiple authors to a commit"
+shortTitle: Add multiple authors to a commit
 type: tip
 tags: git,github,programming,webdev
 expertise: intermediate

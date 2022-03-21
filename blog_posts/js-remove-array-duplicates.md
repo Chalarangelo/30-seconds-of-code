@@ -1,5 +1,6 @@
 ---
 title: "Tip: Remove duplicates from a JavaScript array"
+shortTitle: Remove duplicates from an array
 type: tip
 tags: javascript,array
 expertise: beginner

@@ -1,5 +1,6 @@
 ---
 title: JavaScript Data Structures - Linked List
+shortTitle: Linked List
 type: story
 tags: javascript,object,class,array
 expertise: intermediate

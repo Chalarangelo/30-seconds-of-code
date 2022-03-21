@@ -1,5 +1,6 @@
 ---
 title: JavaScript Data Structures - Binary Search Tree
+shortTitle: Binary Search Tree
 type: story
 tags: javascript,object,class,array
 expertise: advanced

@@ -1,5 +1,6 @@
 ---
 title: JavaScript's numeric separators explained
+shortTitle: Numeric separators explained
 type: story
 tags: javascript,math,type
 expertise: beginner

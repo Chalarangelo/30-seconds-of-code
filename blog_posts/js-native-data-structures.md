@@ -1,5 +1,6 @@
 ---
 title: Native JavaScript Data Structures
+shortTitle: Native Data Structures
 type: story
 tags: javascript,object,array
 expertise: intermediate

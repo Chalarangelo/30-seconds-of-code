@@ -1,5 +1,6 @@
 ---
 title: 8 tips for accessible websites
+shortTitle: Accessibility tips
 type: story
 tags: javascript,accessibility,webdev
 expertise: beginner

@@ -1,5 +1,6 @@
 ---
 title: "Tip: Watch out for mutable default arguments in Python"
+shortTitle: Mutable default arguments
 type: tip
 tags: python,function
 expertise: intermediate

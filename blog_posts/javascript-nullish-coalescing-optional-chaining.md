@@ -1,5 +1,6 @@
 ---
 title: How can I use optional chaining and nullish coalescing in my JavaScript project?
+shortTitle: Optional chaining and nullish coalescing
 type: question
 tags: javascript,type
 expertise: intermediate

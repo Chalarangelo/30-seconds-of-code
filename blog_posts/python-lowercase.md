@@ -1,5 +1,6 @@
 ---
 title: How do I convert a string to lowercase in Python?
+shortTitle: Lowercase string
 type: question
 tags: python,string
 expertise: beginner

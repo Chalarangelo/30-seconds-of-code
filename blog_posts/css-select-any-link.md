@@ -1,5 +1,6 @@
 ---
 title: "Tip: Select any link with CSS"
+shortTitle: "CSS :any-link selector"
 type: tip
 tags: css,visual,interactivity
 expertise: beginner

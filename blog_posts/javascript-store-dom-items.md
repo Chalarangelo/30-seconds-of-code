@@ -1,5 +1,6 @@
 ---
 title: "Tip: Minimize DOM access"
+shortTitle: Minimize DOM access
 type: tip
 tags: javascript,browser
 expertise: intermediate

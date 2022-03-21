@@ -1,5 +1,6 @@
 ---
 title: How to correctly close files in Python
+shortTitle: Closing files
 type: story
 tags: python,file
 expertise: beginner

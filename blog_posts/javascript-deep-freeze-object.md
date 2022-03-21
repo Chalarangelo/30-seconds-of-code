@@ -1,5 +1,6 @@
 ---
 title: How can I deep freeze an object in JavaScript?
+shortTitle: Deep freeze object
 type: question
 tags: javascript,object
 expertise: intermediate

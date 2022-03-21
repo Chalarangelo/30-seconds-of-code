@@ -1,5 +1,6 @@
 ---
 title: JavaScript function methods - call(), apply() and bind()
+shortTitle: Function methods - call(), apply() and bind()
 type: story
 tags: javascript,function
 expertise: intermediate

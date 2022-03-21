@@ -1,5 +1,6 @@
 ---
 title: "Tip: Customize the names of downloadable files"
+shortTitle: Customize the names of downloadable files
 type: tip
 tags: webdev,html,browser
 expertise: beginner

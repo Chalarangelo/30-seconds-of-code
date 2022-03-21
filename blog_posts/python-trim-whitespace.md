@@ -1,5 +1,6 @@
 ---
 title: How do I trim whitespace from a string in Python?
+shortTitle: Trim whitespace
 type: question
 tags: python,string
 expertise: beginner

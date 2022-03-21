@@ -1,5 +1,6 @@
 ---
 title: JavaScript Data Structures - Binary Tree
+shortTitle: Binary Tree
 type: story
 tags: javascript,object,class,array
 expertise: intermediate

@@ -1,5 +1,6 @@
 ---
 title: A cautionary tale about JavaScript callbacks
+shortTitle: Callback pitfalls
 type: story
 tags: javascript,function
 expertise: intermediate

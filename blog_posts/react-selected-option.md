@@ -1,5 +1,6 @@
 ---
 title: How can I set the value of a select input in React?
+shortTitle: Select input value
 type: question
 tags: react,components,input
 expertise: beginner
