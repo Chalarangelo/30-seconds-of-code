@@ -1,5 +1,6 @@
 ---
 title: How does Git's fast-forward mode work?
+shortTitle: Git fast-forward
 type: question
 tags: git,branch
 expertise: intermediate

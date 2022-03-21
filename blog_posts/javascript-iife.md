@@ -1,5 +1,6 @@
 ---
 title: What is an IIFE in JavaScript?
+shortTitle: IIFE introduction
 type: question
 tags: javascript,function
 expertise: intermediate

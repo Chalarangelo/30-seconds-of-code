@@ -1,5 +1,6 @@
 ---
 title: "Tip: Debugging Node.js using Chrome Developer Tools"
+shortTitle: Debug Node.js with Chrome Developer Tools
 type: tip
 tags: javascript,node,debugging
 expertise: intermediate

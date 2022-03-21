@@ -1,5 +1,6 @@
 ---
 title: What is the ternary operator and how do I use it?
+shortTitle: Ternary operation introduction
 type: question
 tags: javascript,condition
 expertise: beginner

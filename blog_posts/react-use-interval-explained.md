@@ -1,5 +1,6 @@
 ---
 title: Write a useInterval hook in React
+shortTitle: Step-by-step useInterval hook
 type: story
 tags: react,hooks,effect
 expertise: advanced

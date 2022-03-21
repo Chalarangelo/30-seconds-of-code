@@ -1,5 +1,6 @@
 ---
 title: React PropTypes - objectOf vs shape
+shortTitle: PropTypes - objectOf vs shape
 type: story
 tags: react,components,proptypes
 expertise: intermediate

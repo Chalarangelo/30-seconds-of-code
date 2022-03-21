@@ -1,5 +1,6 @@
 ---
 title: "Tip: JavaScript array sorting shorthand"
+shortTitle: Array sorting shorthand
 type: tip
 tags: javascript,array
 expertise: intermediate

@@ -1,5 +1,6 @@
 ---
 title: What is the difference between then and finally in a JavaScript promise?
+shortTitle: Promise then vs finally
 type: question
 tags: javascript,function,promise
 expertise: intermediate

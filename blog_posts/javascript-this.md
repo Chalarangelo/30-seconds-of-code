@@ -1,5 +1,6 @@
 ---
 title: Understanding the "this" keyword in JavaScript
+shortTitle: The "this" keyword in JavaScript
 type: story
 tags: javascript,function,object
 expertise: intermediate

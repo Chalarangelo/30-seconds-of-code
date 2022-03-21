@@ -1,5 +1,6 @@
 ---
 title: Understanding JavaScript variables and scopes
+shortTitle: Variables and scopes
 type: story
 tags: javascript,type,variable
 expertise: intermediate

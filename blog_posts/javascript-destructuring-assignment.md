@@ -1,5 +1,6 @@
 ---
 title: Where and how can I use the destructuring assignment syntax in JavaScript?
+shortTitle: Destructuring assignment introduction
 type: question
 tags: javascript,array,object
 expertise: intermediate

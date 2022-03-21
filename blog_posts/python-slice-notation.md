@@ -1,5 +1,6 @@
 ---
 title: Understanding Python's slice notation
+shortTitle: Python slice notation
 type: story
 tags: python,list
 expertise: intermediate

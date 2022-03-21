@@ -1,5 +1,6 @@
 ---
 title: What is recursion and when is it useful?
+shortTitle: Recursion introduction
 type: question
 tags: javascript,function,recursion
 expertise: intermediate

@@ -1,5 +1,6 @@
 ---
 title: JavaScript Data Structures - Doubly Linked List
+shortTitle: Doubly Linked List
 type: story
 tags: javascript,object,class,array
 expertise: advanced

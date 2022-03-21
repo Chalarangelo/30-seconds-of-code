@@ -1,5 +1,6 @@
 ---
 title: 'Tip: Protect your users from malicious websites when using target="_blank"'
+shortTitle: 'Safeguarding target="_blank"'
 type: tip
 tags: javascript,browser,security
 expertise: intermediate

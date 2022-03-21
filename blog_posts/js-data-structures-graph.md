@@ -1,5 +1,6 @@
 ---
 title: JavaScript Data Structures - Graph
+shortTitle: Graph
 type: story
 tags: javascript,object,class,array
 expertise: intermediate

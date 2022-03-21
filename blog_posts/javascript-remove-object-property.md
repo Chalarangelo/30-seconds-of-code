@@ -1,5 +1,6 @@
 ---
 title: How do I remove a property from a JavaScript object?
+shortTitle: Remove property from object
 type: question
 tags: javascript,object
 expertise: intermediate

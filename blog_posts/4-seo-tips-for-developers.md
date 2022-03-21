@@ -1,5 +1,6 @@
 ---
 title: 4 SEO tips for developers
+shortTitle: SEO tips
 type: story
 tags: seo,webdev
 expertise: intermediate

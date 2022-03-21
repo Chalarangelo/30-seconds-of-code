@@ -1,5 +1,6 @@
 ---
 title: How do I merge two arrays in JavaScript?
+shortTitle: Merge arrays
 type: question
 tags: javascript,array
 expertise: beginner

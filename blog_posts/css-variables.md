@@ -1,5 +1,6 @@
 ---
 title: What are CSS variables and where can I use them?
+shortTitle: CSS variables
 type: question
 tags: css,visual,layout
 expertise: intermediate

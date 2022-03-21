@@ -1,5 +1,6 @@
 ---
 title: What are the differences between var, let and const in JavaScript?
+shortTitle: Var, let and const
 type: question
 tags: javascript,type,variable
 expertise: beginner

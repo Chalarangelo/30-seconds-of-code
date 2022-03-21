@@ -1,5 +1,6 @@
 ---
 title: What are CSS pseudo-classes?
+shortTitle: CSS pseudo-classes
 type: question
 tags: css,webdev
 expertise: beginner

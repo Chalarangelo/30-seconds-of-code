@@ -1,5 +1,6 @@
 ---
 title: "Tip: Lazy load images in HTML"
+shortTitle: Image lazy loading
 type: tip
 tags: webdev,html,image
 expertise: intermediate

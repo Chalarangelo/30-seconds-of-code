@@ -1,5 +1,6 @@
 ---
 title: "Tip: Create your own query selector shorthand"
+shortTitle: Query selector shorthand
 type: tip
 tags: javascript,browser
 expertise: intermediate

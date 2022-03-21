@@ -1,5 +1,6 @@
 ---
 title: What's the difference between undeclared, undefined and null in JavaScript?
+shortTitle: Undeclared, undefined and null
 type: question
 tags: javascript,type
 expertise: beginner

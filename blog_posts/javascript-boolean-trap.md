@@ -1,5 +1,6 @@
 ---
 title: Boolean traps and how to avoid them
+shortTitle: Boolean traps
 type: story
 tags: javascript,function,type,boolean
 expertise: advanced

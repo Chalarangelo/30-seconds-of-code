@@ -1,5 +1,6 @@
 ---
 title: Code Anatomy - Writing high performance Python code
+shortTitle: Performant Python code
 type: story
 tags: python,list,performance
 expertise: beginner

@@ -1,5 +1,6 @@
 ---
 title: JavaScript naming conventions
+shortTitle: Naming conventions
 type: story
 tags: javascript,variable,cheatsheet
 expertise: beginner

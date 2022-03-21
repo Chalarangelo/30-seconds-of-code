@@ -1,5 +1,6 @@
 ---
 title: Understanding higher-order functions in JavaScript
+shortTitle: Higher-order functions
 type: story
 tags: javascript,function
 expertise: intermediate

@@ -1,5 +1,6 @@
 ---
 title: Faster element removal in unordered JavaScript arrays
+shortTitle: Faster element removal in unordered arrays
 type: story
 tags: javascript,array
 expertise: intermediate

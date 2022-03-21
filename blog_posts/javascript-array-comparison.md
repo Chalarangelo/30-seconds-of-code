@@ -1,5 +1,6 @@
 ---
 title: How do I compare two arrays in JavaScript?
+shortTitle: JavaScript array comparison
 type: question
 tags: javascript,array,comparison
 expertise: intermediate

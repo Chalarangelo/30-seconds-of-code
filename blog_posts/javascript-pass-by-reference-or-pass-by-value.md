@@ -1,5 +1,6 @@
 ---
 title: Is JavaScript pass-by-value or pass-by-reference?
+shortTitle: Pass-by-value or pass-by-reference
 type: question
 tags: javascript,function,object
 expertise: beginner

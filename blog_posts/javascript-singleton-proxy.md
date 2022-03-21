@@ -1,5 +1,6 @@
 ---
 title: How can I implement a singleton in JavaScript?
+shortTitle: Singleton implementation
 type: question
 tags: javascript,object,function,proxy,pattern
 expertise: advanced

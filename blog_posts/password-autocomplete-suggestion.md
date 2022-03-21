@@ -1,5 +1,6 @@
 ---
 title: "Tip: Adding autocomplete to a password field"
+shortTitle: Password field autocomplete
 type: tip
 tags: webdev
 expertise: intermediate

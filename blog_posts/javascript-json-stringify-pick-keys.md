@@ -1,5 +1,6 @@
 ---
 title: "Tip: Serialize specific properties from a JSON object"
+shortTitle: Selective property serialization
 type: tip
 tags: javascript,object,json
 expertise: intermediate

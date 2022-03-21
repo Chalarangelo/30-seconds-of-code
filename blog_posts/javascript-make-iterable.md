@@ -1,5 +1,6 @@
 ---
 title: "Tip: Make any JavaScript value iterable"
+shortTitle: Make any value iterable
 type: tip
 tags: javascript,array,iterator,generator
 expertise: advanced

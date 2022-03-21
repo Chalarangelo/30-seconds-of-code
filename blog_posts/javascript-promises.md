@@ -1,5 +1,6 @@
 ---
 title: What are promises in JavaScript? In which states can a promise be?
+shortTitle: Promises introduction
 type: question
 tags: javascript,function,promise
 expertise: beginner

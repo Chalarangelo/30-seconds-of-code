@@ -1,5 +1,6 @@
 ---
 title: Writing readable reducers in Redux
+shortTitle: Readable reducer tips
 type: story
 tags: react,logic
 expertise: advanced

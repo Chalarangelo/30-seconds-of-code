@@ -1,5 +1,6 @@
 ---
 title: 6 JavaScript Regular Expression features you can use today
+shortTitle: JavaScript Regular Expression tips
 type: story
 tags: javascript,string,regexp
 expertise: advanced

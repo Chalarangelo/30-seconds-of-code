@@ -1,5 +1,6 @@
 ---
 title: Where and how can I use memoization in JavaScript?
+shortTitle: Memoization introduction
 type: question
 tags: javascript,function,memoization
 expertise: intermediate

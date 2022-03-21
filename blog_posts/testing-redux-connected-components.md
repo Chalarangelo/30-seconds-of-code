@@ -1,5 +1,6 @@
 ---
 title: Testing Redux-connected components with React Testing Library
+shortTitle: Redux-connected components testing
 type: story
 tags: react,testing
 expertise: advanced

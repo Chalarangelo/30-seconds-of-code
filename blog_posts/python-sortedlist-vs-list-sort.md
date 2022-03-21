@@ -1,5 +1,6 @@
 ---
 title: What is the difference between list.sort() and sorted() in Python?
+shortTitle: List.sort vs sorted
 type: question
 tags: python,list
 expertise: intermediate

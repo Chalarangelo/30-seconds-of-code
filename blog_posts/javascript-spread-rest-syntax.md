@@ -1,5 +1,6 @@
 ---
 title: Understanding the spread and rest syntax in Javascript
+shortTitle: Spread and rest syntax
 type: story
 tags: javascript,array,function
 expertise: beginner

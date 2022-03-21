@@ -1,5 +1,6 @@
 ---
 title: Asynchronous array loops in JavaScript
+shortTitle: Asynchronous array loops
 type: story
 tags: javascript,array,function,promise
 expertise: advanced

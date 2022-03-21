@@ -1,5 +1,6 @@
 ---
 title: An approach to testing stateful React components
+shortTitle: Stateful component testing
 type: story
 tags: react,testing
 expertise: advanced

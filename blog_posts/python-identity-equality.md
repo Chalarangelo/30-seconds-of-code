@@ -1,5 +1,6 @@
 ---
 title: What is the difference between Python's equality operators?
+shortTitle: Python equality operators
 type: question
 tags: python,type,comparison
 expertise: beginner

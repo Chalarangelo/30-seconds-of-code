@@ -1,5 +1,6 @@
 ---
 title: "Tip: The perfect duration for CSS transitions"
+shortTitle: CSS transition duration
 type: tip
 tags: css,interactivity,visual,animation
 expertise: intermediate

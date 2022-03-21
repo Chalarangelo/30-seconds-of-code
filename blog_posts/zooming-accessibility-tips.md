@@ -1,5 +1,6 @@
 ---
 title: Why using maximum-scale can harm your page's accessibility
+shortTitle: Accessibility and maximum-scale
 type: story
 tags: webdev
 expertise: intermediate

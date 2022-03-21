@@ -1,5 +1,6 @@
 ---
 title: JavaScript Data Structures - Queue
+shortTitle: Queue
 type: story
 tags: javascript,object,class,array
 expertise: intermediate

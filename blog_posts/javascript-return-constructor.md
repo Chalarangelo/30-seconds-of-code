@@ -1,5 +1,6 @@
 ---
 title: What does a JavaScript constructor return?
+shortTitle: Constructor return value
 type: question
 tags: javascript,function,class,object
 expertise: intermediate

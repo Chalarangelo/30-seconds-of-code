@@ -1,5 +1,6 @@
 ---
 title: What is the difference between Object.freeze() and Object.seal() in JavaScript?
+shortTitle: Object.freeze() vs Object.seal()
 type: question
 tags: javascript,object
 expertise: intermediate

@@ -1,5 +1,6 @@
 ---
 title: What are the differences between arrow functions and regular functions in JavaScript?
+shortTitle: Arrow functions vs regular functions
 type: question
 tags: javascript,function
 expertise: intermediate

@@ -1,5 +1,6 @@
 ---
 title: "Tip: You should use dict.get(key) instead of dict[key]"
+shortTitle: dict.get(key) vs dict[key]
 type: tip
 tags: python,dictionary
 expertise: intermediate

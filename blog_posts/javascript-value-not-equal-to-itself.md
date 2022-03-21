@@ -1,5 +1,6 @@
 ---
 title: What is the only value not equal to itself in JavaScript?
+shortTitle: The only value not equal to itself
 type: question
 tags: javascript,type,comparison
 expertise: beginner

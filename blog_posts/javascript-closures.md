@@ -1,5 +1,6 @@
 ---
 title: What are JavaScript closures?
+shortTitle: Closures introduction
 type: question
 tags: javascript,function,closure
 expertise: intermediate

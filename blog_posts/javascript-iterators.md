@@ -1,5 +1,6 @@
 ---
 title: What are JavaScript Iterators and where can I use them?
+shortTitle: JavaScript iterators introduction
 type: question
 tags: javascript,array,object,iterator
 expertise: advanced
