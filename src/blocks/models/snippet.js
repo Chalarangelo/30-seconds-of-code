@@ -171,7 +171,7 @@ export const snippet = {
 
       const snippetCrumb = {
         url: snippet.slug,
-        name: snippet.title,
+        name: snippet.shortTitle,
       };
 
       return [homeCrumb, languageCrumb, tagCrumb, snippetCrumb].filter(Boolean);
