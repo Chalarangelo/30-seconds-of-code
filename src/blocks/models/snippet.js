@@ -27,6 +27,7 @@ export const snippet = {
       type: 'enum',
       values: ['beginner', 'intermediate', 'advanced'],
     },
+    { name: 'shortTitle', type: 'string' },
     { name: 'firstSeen', type: 'dateRequired' },
     { name: 'lastUpdated', type: 'dateRequired' },
     { name: 'listed', type: 'booleanRequired' },
@@ -170,7 +171,7 @@ export const snippet = {
 
       const snippetCrumb = {
         url: snippet.slug,
-        name: snippet.title,
+        name: snippet.shortTitle,
       };
 
       return [homeCrumb, languageCrumb, tagCrumb, snippetCrumb].filter(Boolean);
