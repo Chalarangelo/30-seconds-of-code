@@ -7,7 +7,7 @@ import Prism from 'prismjs';
 import getLoader from 'prismjs/dependencies';
 import prismComponents from 'prismjs/components';
 import clientLiterals from 'lang/en/client/common';
-import { escapeHTML, optimizeAllNodes } from 'utils';
+import { escapeHTML, optimizeAllNodes, convertToValidId } from 'utils';
 
 const loader = getLoader(
   prismComponents,
@@ -35,17 +35,18 @@ const commonTransformers = [
     matcher: /(href="https?:\/\/)/g,
     replacer: 'target="_blank" rel="nofollow noopener noreferrer" $1',
   },
-  // Convert titles h3 and below to the appropriate elements
+  // Convert titles to the appropriate elements (h1,2,3 -> h3, h4,5,6 -> h4)
   {
-    matcher: /<h([123])>([\s\S]*?)<\/h\d>/g,
-    replacer:
-      '<h3 class="card-title mt-6 mx-0 mb-0 txt-150 fs-lg md:fs-xl f-alt">$2</h3>',
-  },
-  // Convert titles h4 and above to the appropriate elements
-  {
-    matcher: /<h([456])>([\s\S]*?)<\/h\d>/g,
-    replacer:
-      '<h4 class="card-title mt-6 mx-0 mb-0 txt-150 fs-md md:fs-lg f-alt">$2</h4>',
+    matcher: /<h([123456])>([\s\S]*?)<\/h\d>/g,
+    replacer: (match, level, title) => {
+      const lvl = level <= 3 ? 3 : 4;
+      const fontClasses = lvl === 3 ? 'fs-lg md:fs-xl' : 'fs-md md:fs-lg';
+      const id = convertToValidId(title);
+      return `<h${lvl} class="card-title linkable relative mt-6 mx-0 mb-0 txt-150 f-alt ${fontClasses}">
+        <a href="#${id}" id="${id}" class="fs-sm"></a>
+        ${title}
+      </h${lvl}>`;
+    },
   },
   // Convert description code to the appropriate elements (mainly blogs)
   {
