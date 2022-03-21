@@ -5,8 +5,10 @@ import {
   getURLParameters,
   escapeHTML,
   stripMarkdownFormat,
+  stripHTMLTags,
   toKebabCase,
   convertToSeoSlug,
+  convertToValidId,
   addTrailingSlashToSlug,
   truncateString,
 } from './string';
@@ -54,6 +56,15 @@ describe('getURLParameters', () => {
   });
 });
 
+describe('stripHTMLTags', () => {
+  it('strips down HTML tags', () => {
+    const html =
+      'The dreaded <code class="notranslate">act(...)</code> warning';
+    const output = 'The dreaded act(...) warning';
+    expect(stripHTMLTags(html)).toBe(output);
+  });
+});
+
 describe('stripMarkdownFormat', () => {
   it('strips down markdown format', () => {
     const md = 'I have `code` and [links](lala). \nI am also multiline.';
@@ -96,6 +107,16 @@ describe('toKebabCase', () => {
 describe('convertToSeoSlug', () => {
   it('returns the SEO-friendly slug', () => {
     expect(convertToSeoSlug('mySnippet')).toBe('/my-snippet');
+  });
+});
+
+describe('convertToValidId', () => {
+  it('returns a valid id', () => {
+    expect(
+      convertToValidId(
+        'The dreaded <code class="notranslate">act(...)</code> warning'
+      )
+    ).toBe('the-dreaded-act-warning');
   });
 });
 

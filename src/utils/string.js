@@ -76,6 +76,12 @@ export const stripMarkdownFormat = str => {
 };
 
 /**
+ * Strips HTML format from a string.
+ * @param {string} str - The HTML string to be stripped.
+ */
+export const stripHTMLTags = str => str.replace(/<[^>]*>/g, '');
+
+/**
  * Converts a given string to kebab-case.
  * @param {string} str - The string to be converted.
  */
@@ -94,6 +100,15 @@ export const toKebabCase = str =>
  * @param {string} str - The string to be converted.
  */
 export const convertToSeoSlug = str => `/${toKebabCase(str)}`;
+
+/**
+ * Converts a piece of HTML text to a valid id name.
+ * Steps:
+ *  - Strip HTML tags
+ *  - Kebab-case
+ * @param {string} str - The string to be converted.
+ */
+export const convertToValidId = str => toKebabCase(stripHTMLTags(str));
 
 /**
  * Adds a trailing `/` to a slug, if necessary.
