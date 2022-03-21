@@ -173,7 +173,7 @@ const Search = ({ isMainSearch = false }) => {
                 data-link-rel='no-route'
               >
                 <span className='result-title f-ellipsis mr-2 txt-150'>
-                  {item.title}
+                  {item.shortTitle || item.title}
                 </span>
                 {!item.search ? (
                   <span className='result-tag txt-050 fs-mi'>
