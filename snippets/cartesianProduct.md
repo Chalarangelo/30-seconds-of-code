@@ -2,6 +2,7 @@
 title: Cartesian product
 tags: math,array
 expertise: beginner
+author: maciv
 firstSeen: 2020-12-28T20:23:47+02:00
 lastUpdated: 2020-12-29T12:31:43+02:00
 ---

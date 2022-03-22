@@ -2,6 +2,7 @@
 title: Check if array has only one match
 tags: array
 expertise: beginner
+author: chalarangelo
 firstSeen: 2021-07-04T05:00:00-04:00
 ---
 

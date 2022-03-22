@@ -2,6 +2,7 @@
 title: Value is async function
 tags: type,function
 expertise: intermediate
+author: chalarangelo
 firstSeen: 2020-08-07T15:41:55+03:00
 lastUpdated: 2020-10-20T11:21:07+03:00
 ---

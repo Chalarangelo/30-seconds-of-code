@@ -2,6 +2,7 @@
 title: Filter unique array values based on function
 tags: array
 expertise: intermediate
+author: maciv
 firstSeen: 2020-11-02T19:41:07+02:00
 lastUpdated: 2020-11-02T19:41:07+02:00
 ---

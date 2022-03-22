@@ -2,6 +2,7 @@
 title: Array of element's siblings
 tags: browser
 expertise: intermediate
+author: chalarangelo
 firstSeen: 2020-08-07T15:31:48+03:00
 lastUpdated: 2020-10-19T22:49:51+03:00
 ---

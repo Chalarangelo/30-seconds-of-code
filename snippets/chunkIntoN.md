@@ -2,6 +2,7 @@
 title: Split array into n chunks
 tags: array
 expertise: intermediate
+author: chalarangelo
 firstSeen: 2020-05-04T13:00:46+03:00
 lastUpdated: 2020-11-03T21:46:13+02:00
 ---

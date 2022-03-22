@@ -2,6 +2,7 @@
 title: Week of year
 tags: date
 expertise: advanced
+author: chalarangelo
 firstSeen: 2021-08-15T05:00:00-04:00
 ---
 

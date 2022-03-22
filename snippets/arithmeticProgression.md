@@ -2,6 +2,7 @@
 title: Arithmetic progression
 tags: math,algorithm
 expertise: beginner
+author: maciv
 firstSeen: 2020-10-04T11:37:07+03:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

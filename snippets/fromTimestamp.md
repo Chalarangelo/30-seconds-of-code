@@ -2,6 +2,7 @@
 title: Date from Unix timestamp
 tags: date
 expertise: beginner
+author: maciv
 firstSeen: 2020-10-15T21:57:17+03:00
 lastUpdated: 2020-10-15T21:57:17+03:00
 ---

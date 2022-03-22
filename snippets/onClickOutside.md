@@ -2,6 +2,7 @@
 title: Handle click outside
 tags: browser,event
 expertise: intermediate
+author: chalarangelo
 firstSeen: 2021-01-06T13:57:56+02:00
 lastUpdated: 2021-01-06T13:57:56+02:00
 ---

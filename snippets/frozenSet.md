@@ -2,6 +2,7 @@
 title: Freeze Set object
 tags: array
 expertise: intermediate
+author: maciv
 firstSeen: 2020-10-11T11:52:48+03:00
 lastUpdated: 2020-10-11T11:52:48+03:00
 ---

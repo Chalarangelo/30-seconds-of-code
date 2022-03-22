@@ -2,6 +2,7 @@
 title: Selection sort
 tags: algorithm,array
 expertise: intermediate
+author: chalarangelo
 firstSeen: 2020-12-27T22:22:44+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

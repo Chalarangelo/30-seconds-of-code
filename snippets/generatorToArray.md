@@ -2,6 +2,7 @@
 title: Generator to array
 tags: function,array,generator
 expertise: beginner
+author: chalarangelo
 firstSeen: 2020-12-31T13:22:18+02:00
 lastUpdated: 2020-12-31T13:22:18+02:00
 ---

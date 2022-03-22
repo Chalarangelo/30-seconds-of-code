@@ -2,6 +2,7 @@
 title: Uncached module require
 tags: node
 expertise: advanced
+author: chalarangelo
 firstSeen: 2020-08-07T15:49:39+03:00
 lastUpdated: 2020-09-15T16:28:04+03:00
 ---
