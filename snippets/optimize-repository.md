@@ -1,6 +1,8 @@
 ---
 title: Optimize the local repository
-tags: repository,advanced
+tags: repository
+expertise: advanced
+author: chalarangelo
 firstSeen: 2021-04-08T19:42:43+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

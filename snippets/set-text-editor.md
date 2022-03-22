@@ -1,6 +1,8 @@
 ---
 title: Configure the git text editor
-tags: configuration,intermediate
+tags: configuration
+expertise: intermediate
+author: maciv
 firstSeen: 2021-04-04T21:25:22+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

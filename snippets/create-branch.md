@@ -1,6 +1,8 @@
 ---
 title: Create a new branch
-tags: branch,remote,beginner
+tags: branch,remote
+expertise: beginner
+author: maciv
 firstSeen: 2021-04-04T14:09:09+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

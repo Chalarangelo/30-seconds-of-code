@@ -1,6 +1,8 @@
 ---
 title: Disable fast forward merging by default
-tags: configuration,repository,intermediate
+tags: configuration,repository
+expertise: intermediate
+author: chalarangelo
 firstSeen: 2021-07-03T05:00:00-04:00
 ---
 

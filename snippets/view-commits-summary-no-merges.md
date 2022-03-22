@@ -1,6 +1,8 @@
 ---
 title: View a short summary of commits without merge commits
-tags: repository,commit,intermediate
+tags: repository,commit
+expertise: intermediate
+author: maciv
 firstSeen: 2021-04-06T11:22:55+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

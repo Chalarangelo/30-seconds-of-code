@@ -1,6 +1,8 @@
 ---
 title: Manually find the commit that introduced a bug
-tags: commit,branch,advanced
+tags: commit,branch
+expertise: advanced
+author: chalarangelo
 firstSeen: 2021-04-13T20:00:22+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

@@ -1,6 +1,8 @@
 ---
 title: View difference between two branches
-tags: branch,intermediate
+tags: branch
+expertise: intermediate
+author: chalarangelo
 firstSeen: 2021-04-08T16:30:44+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---
