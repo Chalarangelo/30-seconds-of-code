@@ -2,6 +2,7 @@
 title: Combine dictionary values
 tags: dictionary
 expertise: intermediate
+author: maciv
 firstSeen: 2021-03-07T12:30:47+02:00
 lastUpdated: 2021-04-04T14:32:35+03:00
 ---

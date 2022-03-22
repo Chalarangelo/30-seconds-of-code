@@ -2,6 +2,7 @@
 title: Sort dictionary by value
 tags: dictionary
 expertise: intermediate
+author: maciv
 firstSeen: 2020-10-16T21:25:19+03:00
 lastUpdated: 2021-01-08T00:56:50+02:00
 ---

@@ -2,6 +2,7 @@
 title: Days from now
 tags: date
 expertise: intermediate
+author: maciv
 firstSeen: 2020-10-28T16:19:51+02:00
 lastUpdated: 2020-10-28T16:19:51+02:00
 ---
