@@ -2,6 +2,7 @@
 title: Date is weekend
 tags: date
 expertise: beginner
+author: maciv
 firstSeen: 2020-10-28T16:20:27+02:00
 lastUpdated: 2020-11-02T19:28:05+02:00
 ---

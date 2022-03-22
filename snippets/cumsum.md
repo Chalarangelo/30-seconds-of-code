@@ -2,6 +2,7 @@
 title: Partial sum list
 tags: list
 expertise: intermediate
+author: maciv
 firstSeen: 2021-01-13T23:30:41+02:00
 lastUpdated: 2021-01-13T23:30:41+02:00
 ---

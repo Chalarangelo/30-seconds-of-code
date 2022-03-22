@@ -2,6 +2,7 @@
 title: Invert dictionary
 tags: dictionary
 expertise: intermediate
+author: maciv
 firstSeen: 2020-04-07T21:15:06+03:00
 lastUpdated: 2020-11-02T19:27:07+02:00
 ---

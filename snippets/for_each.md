@@ -2,6 +2,7 @@
 title: Execute function for each list element
 tags: list
 expertise: beginner
+author: maciv
 firstSeen: 2020-03-15T12:54:08+02:00
 lastUpdated: 2020-09-15T16:13:06+03:00
 ---
