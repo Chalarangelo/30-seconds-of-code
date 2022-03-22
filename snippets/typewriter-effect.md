@@ -2,6 +2,7 @@
 title: Typewriter effect
 tags: animation
 expertise: advanced
+author: chalarangelo
 firstSeen: 2021-05-24T16:03:40+03:00
 lastUpdated: 2021-05-24T16:03:40+03:00
 ---

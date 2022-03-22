@@ -2,6 +2,7 @@
 title: List with floating section headings
 tags: visual
 expertise: advanced
+author: chalarangelo
 firstSeen: 2020-08-18T15:44:01+03:00
 lastUpdated: 2021-10-11T18:44:51+03:00
 ---

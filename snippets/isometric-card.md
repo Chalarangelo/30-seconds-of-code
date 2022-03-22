@@ -2,6 +2,7 @@
 title: Isometric card
 tags: visual
 expertise: intermediate
+author: chalarangelo
 firstSeen: 2021-05-17T14:04:52+03:00
 lastUpdated: 2021-05-17T14:04:52+03:00
 ---

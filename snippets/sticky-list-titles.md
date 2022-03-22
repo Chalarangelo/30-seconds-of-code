@@ -2,6 +2,7 @@
 title: List with sticky section headings
 tags: visual
 expertise: intermediate
+author: chalarangelo
 firstSeen: 2020-08-18T15:44:01+03:00
 lastUpdated: 2020-12-30T15:37:37+02:00
 ---
