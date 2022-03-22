@@ -2,6 +2,7 @@
 title: React useSet hook
 tags: hooks,state
 expertise: advanced
+author: chalarangelo
 firstSeen: 2021-11-01T05:00:00-04:00
 ---
 

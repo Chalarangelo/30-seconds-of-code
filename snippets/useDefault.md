@@ -2,6 +2,7 @@
 title: React useDefault hook
 tags: hooks,state
 expertise: intermediate
+author: chalarangelo
 firstSeen: 2021-10-23T05:00:00-04:00
 ---
 

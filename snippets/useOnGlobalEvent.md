@@ -2,6 +2,7 @@
 title: React useOnGlobalEvent hook
 tags: hooks,effect,event
 expertise: intermediate
+author: chalarangelo
 firstSeen: 2021-12-22T05:00:00-04:00
 ---
 

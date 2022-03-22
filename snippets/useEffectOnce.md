@@ -2,6 +2,7 @@
 title: React useEffectOnce hook
 tags: hooks,effect
 expertise: beginner
+author: chalarangelo
 firstSeen: 2021-11-16T05:00:00-04:00
 ---
 

@@ -2,6 +2,7 @@
 title: Email link
 tags: components
 expertise: beginner
+author: chalarangelo
 firstSeen: 2019-01-28T20:10:51+02:00
 lastUpdated: 2020-11-16T15:17:26+02:00
 ---

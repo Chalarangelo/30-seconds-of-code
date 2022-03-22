@@ -2,6 +2,7 @@
 title: React useMutationObserver hook
 tags: hooks,effect
 expertise: intermediate
+author: chalarangelo
 firstSeen: 2021-11-23T05:00:00-04:00
 ---
 

@@ -2,6 +2,7 @@
 title: React useLocalStorage hook
 tags: hooks,state
 expertise: intermediate
+author: chalarangelo
 firstSeen: 2021-09-13T05:00:00-04:00
 ---
 

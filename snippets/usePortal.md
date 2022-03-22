@@ -2,6 +2,7 @@
 title: React usePortal hook
 tags: hooks,state,effect
 expertise: advanced
+author: chalarangelo
 firstSeen: 2022-01-05T05:00:00-04:00
 ---
 
