@@ -2,6 +2,7 @@
 title: Set default push branch name
 tags: configuration,branch
 expertise: intermediate
+author: chalarangelo
 firstSeen: 2021-06-30T05:00:00-04:00
 ---
 

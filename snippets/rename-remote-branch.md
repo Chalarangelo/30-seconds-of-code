@@ -2,6 +2,7 @@
 title: Rename remote branch
 tags: branch
 expertise: advanced
+author: maciv
 firstSeen: 2021-04-05T09:48:16+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

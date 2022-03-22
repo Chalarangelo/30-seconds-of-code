@@ -2,6 +2,7 @@
 title: Create a commit by a different author
 tags: commit
 expertise: intermediate
+author: maciv
 firstSeen: 2021-04-13T20:07:27+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---
