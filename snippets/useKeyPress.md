@@ -2,6 +2,7 @@
 title: React useKeyPress hook
 tags: hooks,state,effect,event
 expertise: intermediate
+author: chalarangelo
 firstSeen: 2021-09-07T05:00:00-04:00
 ---
 

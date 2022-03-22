@@ -2,6 +2,7 @@
 title: React useWindowSize hook
 tags: hooks,state,effect
 expertise: intermediate
+author: chalarangelo
 firstSeen: 2021-10-18T05:00:00-04:00
 ---
 

@@ -2,6 +2,7 @@
 title: React useGetSet hook
 tags: hooks,state
 expertise: intermediate
+author: chalarangelo
 firstSeen: 2021-10-27T05:00:00-04:00
 ---
 

@@ -2,6 +2,7 @@
 title: React useHover hook
 tags: hooks,state,callback
 expertise: advanced
+author: chalarangelo
 firstSeen: 2021-10-05T05:00:00-04:00
 ---
 

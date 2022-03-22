@@ -2,6 +2,7 @@
 title: React useScript hook
 tags: hooks,effect,state,event
 expertise: advanced
+author: chalarangelo
 firstSeen: 2021-10-08T05:00:00-04:00
 ---
 

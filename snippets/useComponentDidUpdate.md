@@ -2,6 +2,7 @@
 title: React useComponentDidUpdate hook
 tags: hooks,effect
 expertise: beginner
+author: chalarangelo
 firstSeen: 2021-11-09T05:00:00-04:00
 ---
 
