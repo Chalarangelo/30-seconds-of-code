@@ -2,6 +2,7 @@
 title: Replace last occuerence in string
 tags: string,regexp
 expertise: advanced
+author: chalarangelo
 firstSeen: 2021-04-22T09:01:22+03:00
 lastUpdated: 2021-04-22T09:01:22+03:00
 ---

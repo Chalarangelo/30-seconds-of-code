@@ -2,6 +2,7 @@
 title: Insert value at array index
 tags: array
 expertise: intermediate
+author: chalarangelo
 firstSeen: 2020-05-22T09:07:35+03:00
 lastUpdated: 2020-10-20T23:02:01+03:00
 ---

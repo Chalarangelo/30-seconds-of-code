@@ -2,6 +2,7 @@
 title: Flat iterator
 tags: array,iterator,generator
 expertise: advanced
+author: chalarangelo
 firstSeen: 2022-03-09T05:00:00-04:00
 ---
 

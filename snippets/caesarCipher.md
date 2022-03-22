@@ -2,6 +2,7 @@
 title: Caesar cipher
 tags: algorithm,string
 expertise: beginner
+author: maciv
 firstSeen: 2020-12-28T20:10:18+02:00
 lastUpdated: 2020-12-29T12:29:21+02:00
 ---

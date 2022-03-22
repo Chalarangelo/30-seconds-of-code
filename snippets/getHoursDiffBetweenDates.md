@@ -2,6 +2,7 @@
 title: Date difference in hours
 tags: date
 expertise: beginner
+author: maciv
 firstSeen: 2021-04-24T12:56:21+03:00
 lastUpdated: 2021-04-24T12:56:21+03:00
 ---

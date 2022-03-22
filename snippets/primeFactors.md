@@ -2,6 +2,7 @@
 title: Prime factors of number
 tags: math,algorithm
 expertise: beginner
+author: maciv
 firstSeen: 2020-12-28T13:11:01+02:00
 lastUpdated: 2020-12-28T13:11:01+02:00
 ---

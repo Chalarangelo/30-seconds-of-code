@@ -2,6 +2,7 @@
 title: Random boolean value
 tags: math,random
 expertise: beginner
+author: chalarangelo
 firstSeen: 2021-01-20T16:20:08+02:00
 lastUpdated: 2021-01-20T16:20:08+02:00
 ---

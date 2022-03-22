@@ -2,6 +2,7 @@
 title: Copy sign to number
 tags: math
 expertise: beginner
+author: maciv
 firstSeen: 2020-10-07T23:52:57+03:00
 lastUpdated: 2020-10-07T23:52:57+03:00
 ---

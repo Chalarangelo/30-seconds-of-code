@@ -2,6 +2,7 @@
 title: Device supports touch events
 tags: browser
 expertise: beginner
+author: chalarangelo
 firstSeen: 2020-05-04T12:57:23+03:00
 lastUpdated: 2020-10-22T20:24:30+03:00
 ---
