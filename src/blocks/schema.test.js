@@ -904,7 +904,7 @@ describe('Application/Schema', () => {
         const languageListing = Listing.records.get('language/js');
         const tagListing = Listing.records.get('tag/js/t/string');
         expect(mainListing.isSearchable).toEqual(false);
-        expect(blogListing.isSearchable).toEqual(true);
+        expect(blogListing.isSearchable).toEqual(false);
         expect(languageListing.isSearchable).toEqual(true);
         expect(tagListing.isSearchable).toEqual(true);
       });
@@ -1018,7 +1018,7 @@ describe('Application/Schema', () => {
     describe('scope: searchable', () => {
       it('returns the searchable listings', () => {
         const searchableListings = Listing.records.searchable;
-        expect(searchableListings.length).toEqual(15);
+        expect(searchableListings.length).toEqual(11);
       });
     });
 
@@ -1170,7 +1170,7 @@ describe('Application/Schema', () => {
       it('returns the correct value for the search page', () => {
         const page = Page.records.get('static_search');
         const pageContext = page.context;
-        expect(pageContext.searchIndex.length).toBe(30);
+        expect(pageContext.searchIndex.length).toBe(26);
         expect(pageContext.recommendations.items.length).toBe(3);
         expect(pageContext.pageDescription).toEqual(
           'Search for answers to your development problems among 15 code snippets on 30 seconds of code.'
