@@ -90,7 +90,12 @@ export const listing = {
       return false;
     },
     isSearchable: listing =>
-      Boolean(listing.isListed && listing.shortDescription),
+      Boolean(
+        listing.isListed &&
+          !listing.isBlog &&
+          !listing.isBlogTag &&
+          listing.shortDescription
+      ),
     // NOTE: This is a bit fiddly for listings without unique descriptions,
     // such as tags that inherit descriptions from the language parent. Worth
     // revisiting.
