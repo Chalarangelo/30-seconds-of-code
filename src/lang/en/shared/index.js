@@ -56,8 +56,6 @@ const literals = {
         }.`;
       case 'collections':
         return `Browse ${p.snippetCount} snippet collections on ${settings.websiteName}.`;
-      case 'snippet':
-        return `Learn how to code a ${p.snippetName} snippet in ${p.language} on ${settings.websiteName}.`;
       case 'search':
         return `Search for answers to your development problems among ${p.snippetCount} code snippets on ${settings.websiteName}.`;
       default:

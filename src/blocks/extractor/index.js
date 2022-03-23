@@ -332,14 +332,7 @@ export class Extractor {
                     isLongBlog ? '...' : ''
                   }`;
             const fullText = config.isBlog ? body : bodyText;
-            const parsedDescription = stripMarkdownFormat(shortText);
-            const seoDescription =
-              config.isBlog || parsedDescription.length <= 160
-                ? parsedDescription
-                : literals.pageDescription('snippet', {
-                    snippetName: title,
-                    language: config.language.long,
-                  });
+            const seoDescription = stripMarkdownFormat(shortText);
 
             let code = {
               html: null,
