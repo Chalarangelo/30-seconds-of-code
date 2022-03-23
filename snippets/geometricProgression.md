@@ -2,6 +2,7 @@
 title: Geometric progression
 tags: math,algorithm
 expertise: intermediate
+excerpt: Initializes an array containing the numbers in the specified geometric progression range.
 firstSeen: 2018-01-03T09:36:23+02:00
 lastUpdated: 2020-12-28T13:49:24+02:00
 ---
