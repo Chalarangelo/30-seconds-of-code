@@ -5,8 +5,6 @@ import literals from 'lang/en';
 
 const CARDS_PER_PAGE = 15;
 
-const BLOG_DEMOTION_RANKING_MULTIPLIER = 0.85;
-
 export const listing = {
   name: 'Listing',
   fields: [
@@ -122,20 +120,7 @@ export const listing = {
     listedSnippets: listing => {
       const order = listing.defaultOrdering;
       if (order === 'new') return listing.snippets.listedByNew;
-      if (order === 'popularity') {
-        if (listing.isBlog || listing.isMain || listing.isCollection)
-          return listing.snippets.listedByPopularity;
-
-        return listing.snippets.listed.sort((a, b) => {
-          const nA = a.isBlog
-            ? a.ranking * BLOG_DEMOTION_RANKING_MULTIPLIER
-            : a.ranking;
-          const nB = b.isBlog
-            ? b.ranking * BLOG_DEMOTION_RANKING_MULTIPLIER
-            : b.ranking;
-          return nB - nA;
-        });
-      }
+      if (order === 'popularity') return listing.snippets.listedByPopularity;
       if (listing.isCollections) return listing.snippets;
       // Catch all, also catches 'custom' for collection types
       return listing.snippets.published;
