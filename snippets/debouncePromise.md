@@ -2,6 +2,7 @@
 title: Debounce promise
 tags: function,promise
 expertise: advanced
+excerpt: Creates a debounced function that returns a promise.
 firstSeen: 2020-10-10T21:09:04+03:00
 lastUpdated: 2020-10-19T18:51:03+03:00
 ---
