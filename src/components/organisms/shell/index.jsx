@@ -26,15 +26,17 @@ const Shell = ({ isSearch = false, isFaq = false, children }) => {
           {literals.skipToContent}
         </a>
         <Link href='/'>
-          <a title={literals.siteName} aria-label={literals.siteName}>
-            <img
-              src='/assets/30s-logo.png'
-              alt={literals.home}
-              className='nav-website-logo'
-              width='124'
-              height='42'
-            />
-          </a>
+          <h1 className='m-0 fs-sm'>
+            <a title={literals.siteName} aria-label={literals.siteName}>
+              <img
+                src='/assets/30s-logo.png'
+                alt={literals.home}
+                className='nav-website-logo'
+                width='124'
+                height='42'
+              />
+            </a>
+          </h1>
         </Link>
         <div className='nav-control-wrapper grid txt-150 a-center'>
           <Link href='/list/p/1'>
