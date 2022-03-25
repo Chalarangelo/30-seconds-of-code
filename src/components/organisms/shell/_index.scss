@@ -22,6 +22,10 @@
   @media screen and (min-width: 960px) {
     padding: 0 calc((100% - 928px) / 2);
   }
+
+  h1 {
+    cursor: pointer;
+  }
 }
 
 .nav-control-wrapper {
