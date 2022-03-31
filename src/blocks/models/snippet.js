@@ -89,8 +89,6 @@ export const snippet = {
     isBlog: snippet => snippet.type.startsWith('blog'),
     isCSS: snippet => snippet.repository.isCSS,
     isReact: snippet => snippet.repository.isReact,
-    isReactHook: snippet =>
-      snippet.repository.isReact && snippet.primaryTag === 'hooks',
     slug: snippet => `/${snippet.id}`,
     titleSlug: snippet => convertToSeoSlug(snippet.title),
     fileSlug: snippet => convertToSeoSlug(snippet.fileName.slice(0, -3)),
