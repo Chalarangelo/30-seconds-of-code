@@ -299,18 +299,6 @@ describe('Application/Schema', () => {
       });
     });
 
-    describe('property: isReactHook', () => {
-      it('returns true if the snippet is a React snippet', () => {
-        const snippet = Snippet.records.get('react/s/use-interval');
-        expect(snippet.isReactHook).toBe(true);
-      });
-
-      it('returns false if the snippet is not a React snippet', () => {
-        const snippet = Snippet.records.get('js/s/format-duration');
-        expect(snippet.isReactHook).toBe(false);
-      });
-    });
-
     describe('property: slug', () => {
       it('returns the slug', () => {
         const snippet = Snippet.records.get('js/s/format-duration');
