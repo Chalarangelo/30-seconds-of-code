@@ -254,13 +254,7 @@ export const page = {
     },
     published: page => page.isPublished,
     feedEligible: {
-      matcher: page => {
-        if (page.template !== 'SnippetPage') return false;
-        if (page.isUnlisted) return false;
-        if (page.data.isBlog) return true;
-        if (page.data.isReactHook) return true;
-        return false;
-      },
+      matcher: page => page.template === 'SnippetPage' && !page.isUnlisted,
       sorter: (a, b) => b.data.firstSeen - a.data.firstSeen,
     },
     chirpEligible: page => {
