@@ -23,15 +23,14 @@ export class FeedWriter {
   static write = async () => {
     const logger = new Logger('FeedWriter.write');
     const template = handlebars.compile(fs.readFileSync(templatePath, 'utf-8'));
-    // TODO: Revert to 15 or figure out optimal length after experiment
     const pages = Application.dataset
       .getModel('Page')
-      .records.feedEligible.slice(0, 25);
+      .records.feedEligible.slice(0, 50);
     logger.log(`Generating feed for top blog routes`);
 
     const feed = template({
       nodes: pages.flatMap(s => ({
-        title: s.data.isReactHook ? `React ${s.data.title} hook` : s.data.title,
+        title: s.data.title,
         fullRoute: s.fullRoute,
         description: s.context.pageDescription,
         pubDate: new Date(s.data.firstSeen).toUTCString(),
