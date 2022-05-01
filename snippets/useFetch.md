@@ -4,25 +4,30 @@ tags: hooks,effect,state
 expertise: intermediate
 author: chalarangelo
 firstSeen: 2019-08-21T14:23:57+03:00
-lastUpdated: 2021-01-07T23:57:13+02:00
+lastUpdated: 2022-05-01T12:50:38+02:00
 ---
 
 Implements `fetch()` in a declarative manner.
 
 - Create a custom hook that takes a `url` and `options`.
-- Use the `useState()` hook to initialize the `response` and `error` state variables.
+- Use the `useState()` hook to initialize the `response`, `error` and `abort` state variables.
 - Use the `useEffect()` hook to asynchronously call `fetch()` and update the state variables accordingly.
-- Return an object containing the `response` and `error` state variables.
+- Create and use an `AbortController` to allow aborting the request. Use it to cancel the request when the component unmounts.
+- Return an object containing the `response`, `error` and `abort` state variables.
 
 ```jsx
 const useFetch = (url, options) => {
   const [response, setResponse] = React.useState(null);
   const [error, setError] = React.useState(null);
+  const [abort, setAbort] = React.useState(() => {});
 
   React.useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(url, options);
+        const abortController = new AbortController();
+        const signal = abortController.signal;
+        setAbort(abortController.abort);
+        const res = await fetch(url, {...options, signal});
         const json = await res.json();
         setResponse(json);
       } catch (error) {
@@ -30,9 +35,12 @@ const useFetch = (url, options) => {
       }
     };
     fetchData();
+    return () => {
+      abort();
+    }
   }, []);
 
-  return { response, error };
+  return { response, error, abort };
 };
 ```
 
