@@ -2,6 +2,7 @@
 title: Array to flags object
 tags: array,object
 expertise: intermediate
+author: chalarangelo
 firstSeen: 2022-04-12T05:00:00-04:00
 ---
 

@@ -2,6 +2,7 @@
 title: Toggle element in array
 tags: array
 expertise: beginner
+author: chalarangelo
 firstSeen: 2022-04-15T05:00:00-04:00
 ---
 
