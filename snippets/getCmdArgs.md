@@ -2,6 +2,8 @@
 title: Command-line arguments
 tags: node
 expertise: beginner
+author: chalarangelo
+cover: blog_images/terminal.jpg
 firstSeen: 2022-04-26T05:00:00-04:00
 ---
 

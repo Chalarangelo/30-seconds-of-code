@@ -2,6 +2,7 @@
 title: Format duration
 tags: date,math,string
 expertise: intermediate
+cover: blog_images/clock.jpg
 firstSeen: 2018-01-04T09:26:42+02:00
 lastUpdated: 2020-10-22T20:23:47+03:00
 ---

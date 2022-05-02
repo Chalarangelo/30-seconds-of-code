@@ -2,6 +2,7 @@
 title: Calculate SHA-256 hash (browser)
 tags: browser,promise
 expertise: advanced
+cover: blog_images/padlocks.jpg
 firstSeen: 2018-01-17T14:09:01+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---
