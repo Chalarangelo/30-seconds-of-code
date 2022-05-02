@@ -2,6 +2,7 @@
 title: Memoize function
 tags: function
 expertise: advanced
+cover: blog_images/hard-disk.jpg
 firstSeen: 2017-12-31T13:55:55+02:00
 lastUpdated: 2020-10-21T21:54:53+03:00
 ---

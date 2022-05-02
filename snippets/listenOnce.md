@@ -3,6 +3,7 @@ title: Listen for an event only once
 tags: browser,event
 expertise: beginner
 author: chalarangelo
+cover: blog_images/dog-waiting.jpg
 firstSeen: 2020-06-01T16:58:52+03:00
 lastUpdated: 2020-10-22T20:23:47+03:00
 ---
