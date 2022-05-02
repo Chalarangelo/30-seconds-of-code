@@ -2,6 +2,7 @@
 title: Compact and join array
 tags: array
 expertise: intermediate
+author: chalarangelo
 firstSeen: 2022-04-08T05:00:00-04:00
 ---
 
