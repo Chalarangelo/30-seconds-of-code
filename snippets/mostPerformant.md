@@ -2,6 +2,7 @@
 title: Most performant function
 tags: function
 expertise: advanced
+cover: blog_images/lake-runner.jpg
 firstSeen: 2018-02-14T13:38:45+02:00
 lastUpdated: 2020-10-21T21:54:53+03:00
 ---

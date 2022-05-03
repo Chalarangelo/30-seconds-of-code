@@ -2,6 +2,7 @@
 title: Value is array-like
 tags: type,array
 expertise: intermediate
+cover: blog_images/colorful-plastic.jpg
 firstSeen: 2017-12-31T14:53:01+02:00
 lastUpdated: 2020-10-20T23:02:01+03:00
 ---

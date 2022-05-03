@@ -2,6 +2,7 @@
 title: Colorize text
 tags: node,string
 expertise: intermediate
+cover: blog_images/sea-view.jpg
 firstSeen: 2018-01-13T13:36:59+02:00
 lastUpdated: 2020-11-03T22:11:18+02:00
 ---
