@@ -3,6 +3,7 @@ title: Get parents until element matches selector
 tags: browser
 expertise: intermediate
 author: chalarangelo
+cover: blog_images/colorful-plastic.jpg
 firstSeen: 2021-01-05T22:47:21+02:00
 lastUpdated: 2021-01-06T13:04:18+02:00
 ---

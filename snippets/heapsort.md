@@ -3,6 +3,7 @@ title: Heap sort
 tags: algorithm,array,recursion
 expertise: advanced
 author: chalarangelo
+cover: blog_images/building-blocks.jpg
 firstSeen: 2020-12-28T22:48:09+02:00
 lastUpdated: 2020-12-28T22:48:09+02:00
 ---

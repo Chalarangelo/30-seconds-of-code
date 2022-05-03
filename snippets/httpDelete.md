@@ -2,6 +2,7 @@
 title: HTTP delete
 tags: browser
 expertise: intermediate
+cover: blog_images/beach-from-above.jpg
 firstSeen: 2020-04-16T11:21:33+03:00
 lastUpdated: 2020-10-19T22:49:51+03:00
 ---

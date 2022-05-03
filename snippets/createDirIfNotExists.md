@@ -2,6 +2,7 @@
 title: Create directory if not exists
 tags: node
 expertise: beginner
+cover: blog_images/sunrise-over-city.jpg
 firstSeen: 2018-12-12T19:25:16+02:00
 lastUpdated: 2020-10-22T20:23:47+03:00
 ---
@@ -13,7 +14,8 @@ Creates a directory, if it does not exist.
 ```js
 const fs = require('fs');
 
-const createDirIfNotExists = dir => (!fs.existsSync(dir) ? fs.mkdirSync(dir) : undefined);
+const createDirIfNotExists = dir =>
+  !fs.existsSync(dir) ? fs.mkdirSync(dir) : undefined;
 ```
 
 ```js
