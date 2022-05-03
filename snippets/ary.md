@@ -2,6 +2,7 @@
 title: Function arity
 tags: function
 expertise: advanced
+cover: blog_images/trippy-chemicals.jpg
 firstSeen: 2018-01-24T13:59:54+02:00
 lastUpdated: 2020-10-18T20:24:28+03:00
 ---
