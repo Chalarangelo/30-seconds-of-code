@@ -3,6 +3,7 @@ title: Clone missing submodules
 tags: repository,submodule
 expertise: advanced
 author: chalarangelo
+cover: blog_images/forest-balcony.jpg
 firstSeen: 2021-04-08T20:05:15+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

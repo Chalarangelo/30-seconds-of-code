@@ -3,6 +3,7 @@ title: Fetch latest changes from remote
 tags: repository
 expertise: beginner
 author: maciv
+cover: blog_images/playing-fetch.jpg
 firstSeen: 2021-04-08T19:43:13+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

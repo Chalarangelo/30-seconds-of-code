@@ -3,6 +3,7 @@ title: List all git aliases
 tags: configuration
 expertise: intermediate
 author: maciv
+cover: blog_images/book-chair.jpg
 firstSeen: 2021-04-04T21:25:22+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

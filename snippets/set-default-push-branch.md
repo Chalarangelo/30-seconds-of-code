@@ -3,6 +3,7 @@ title: Set default push branch name
 tags: configuration,branch
 expertise: intermediate
 author: chalarangelo
+cover: blog_images/pink-flower.jpg
 firstSeen: 2021-06-30T05:00:00-04:00
 ---
 

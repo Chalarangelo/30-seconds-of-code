@@ -3,6 +3,7 @@ title: Automatically find the commit that introduced a bug
 tags: commit,branch
 expertise: advanced
 author: chalarangelo
+cover: blog_images/pink-flower-tree.jpg
 firstSeen: 2021-04-13T20:00:22+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

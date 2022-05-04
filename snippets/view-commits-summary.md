@@ -3,6 +3,7 @@ title: View a short summary of commits
 tags: repository,commit
 expertise: intermediate
 author: maciv
+cover: blog_images/highlands.jpg
 firstSeen: 2021-04-06T11:22:55+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

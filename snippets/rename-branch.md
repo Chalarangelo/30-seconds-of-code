@@ -3,6 +3,7 @@ title: Rename a branch
 tags: branch
 expertise: intermediate
 author: maciv
+cover: blog_images/bug.jpg
 firstSeen: 2021-04-05T09:48:16+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---
