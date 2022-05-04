@@ -3,6 +3,7 @@ title: Disable fast forward merging by default
 tags: configuration,repository
 expertise: intermediate
 author: chalarangelo
+cover: blog_images/people-on-beach.jpg
 firstSeen: 2021-07-03T05:00:00-04:00
 ---
 

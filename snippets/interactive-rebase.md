@@ -3,6 +3,7 @@ title: Perform an interactive rebase
 tags: branch
 expertise: advanced
 author: chalarangelo
+cover: blog_images/tea-laptop-table.jpg
 firstSeen: 2021-04-08T20:10:35+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

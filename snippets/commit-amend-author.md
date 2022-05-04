@@ -3,6 +3,7 @@ title: Change the last commit's author
 tags: commit
 expertise: intermediate
 author: chalarangelo
+cover: blog_images/symmetry-cloudy-mountain.jpg
 firstSeen: 2022-05-03T05:00:00-04:00
 ---
 

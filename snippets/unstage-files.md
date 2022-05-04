@@ -3,6 +3,7 @@ title: Remove files from the staging area
 tags: commit
 expertise: beginner
 author: chalarangelo
+cover: blog_images/coconuts.jpg
 firstSeen: 2021-04-06T19:38:51+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---
