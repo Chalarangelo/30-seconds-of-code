@@ -19,6 +19,10 @@ const chirpRules = [
     matcher: '^/react/s/use',
     hashtags: '#ReactJS #LearnToCode #100DaysOfCode #CodeNewbie #Coding',
   },
+  {
+    matcher: '^/git/s/',
+    hashtags: '#Git #LearnToCode #100DaysOfCode #CodeNewbie #Coding',
+  },
 ];
 
 /**
