@@ -116,7 +116,7 @@ pre[data-code-language]:not([data-code-language='']) {
     content: attr(data-code-language);
   }
 
-  &:not(.card-example).language-shell {
+  &:not([data-code-language='Examples']).language-shell {
     &::before {
       content: 'Shell';
     }
