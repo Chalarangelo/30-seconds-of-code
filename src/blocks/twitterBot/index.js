@@ -69,7 +69,7 @@ export class TwitterBot {
       // Add logo inside the card
       const logo = document.querySelector('.nav-website-logo');
       logo.style.position = 'absolute';
-      logo.style.top = '-68px';
+      logo.style.top = '-72px';
       logo.style.left = '50%';
       logo.style.transform = 'translateX(-50%)';
       logo.style.width = 'auto';
@@ -91,7 +91,7 @@ export class TwitterBot {
       wrapper.style.justifyContent = 'center';
       wrapper.style.width = `${wrapperSize}px`;
       wrapper.style.height = `${wrapperSize}px`;
-      wrapper.style.padding = '40px 20px';
+      wrapper.style.padding = '96px 20px 40px';
       wrapper.style.position = 'relative';
     });
     // Capture screenshot
@@ -142,13 +142,12 @@ export class TwitterBot {
     const logger = new Logger('TwitterBot.prepareAndTweet');
     logger.log('Twitter bot is starting up...\n');
 
-    let snippet, image;
-    await Promise.all([TwitterBot.getRandomSnippet()]).then(data => {
-      snippet = data[0];
-      image = data[1];
+    let snippet;
+    await TwitterBot.getRandomSnippet().then(data => {
+      snippet = data;
     });
 
-    await TwitterBot.capture(snippet.url, image);
+    await TwitterBot.capture(snippet.url);
     await TwitterBot.tweet(snippet.caption);
     logger.success('Twitter bot has finished tweeting...\n');
   };
