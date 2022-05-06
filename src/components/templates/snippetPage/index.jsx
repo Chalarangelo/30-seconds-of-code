@@ -4,6 +4,7 @@ import Shell from 'components/organisms/shell';
 import SnippetCard from 'components/organisms/snippetCard';
 import PageTitle from 'components/atoms/pageTitle';
 import PreviewCardList from 'components/organisms/previewCardList';
+import { SurveyPropmpt } from 'components/atoms/surveyPrompt';
 
 /**
  * Renders a snippet page.
@@ -29,6 +30,7 @@ const SnippetPage = ({
       <Shell>
         <Breadcrumbs breadcrumbs={breadcrumbs} />
         <SnippetCard snippet={snippet} />
+        <SurveyPropmpt />
         <PageTitle className='recommendation-list-title f-center'>
           {recommendations.title}
         </PageTitle>
