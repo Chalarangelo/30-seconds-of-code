@@ -1,5 +1,6 @@
 ---
 title: What's the difference between :root and html in CSS?
+shortTitle: :root vs html
 type: story
 tags: css,layout,selector
 expertise: beginner

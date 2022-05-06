@@ -1,5 +1,6 @@
 ---
 title: How can I remove trailing zeros from a number in JavaScript?
+shortTitle: Remove trailing zeros from number
 type: story
 tags: javascript,math
 expertise: beginner

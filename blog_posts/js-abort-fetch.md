@@ -1,5 +1,6 @@
 ---
 title: "Tip: Abort a fetch request in JavaScript"
+shortTitle: Abort a fetch request
 type: story
 tags: javascript,function
 expertise: intermediate
