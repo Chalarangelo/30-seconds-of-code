@@ -16,7 +16,7 @@ I strongly recommend you read the [previous article on closures](/articles/s/jav
 
 ### Hidden state
 
-The main argument against closures is that of hidden state. Hidden state refers to obscuring the state of an object or, in this case, a function. The argument is that by having some internal mutable state, you can create unpredictable behavior and unexpected results. Due to this, it's often said that hidden state is the root of all evil when it comes to programming.
+The main argument against closures is that of hidden state. Hidden state refers to obscuring the state of an object or, in this case, a function. The argument is that internal mutable state can create unpredictable behavior and unexpected results. Due to this, it's often said that hidden state is the root of all evil when it comes to programming.
 
 While the argument in itself has some merit, I don't much like the generalization. There are perfectly valid cases where hidden state is expected, even practically a necessity. However, it's true that hidden state can create bugs and unmaintainable code.
 
@@ -43,7 +43,7 @@ counter.reset(); // 5
 
 In this scenario, the `initCounter` function returns an object that contains hidden mutable state in the form of the `value` variable. Obviously, this is a very simple example, but `counter.get()` or `counter.increment()` in isolation would be considered non-deterministic expressions. There is no way to know the result of a method call like that without analyzing the surrounding code.
 
-While this is not uncommon, it can get a lot more complicated when shared state comes into play or when multiple pieces of code are interacting with one another. The common remedy to this issue is to use functional programming and refactor the hidden mutable state into an argument or a shared global variable.
+While this is not uncommon, it can get more complicated when shared state comes into play or many pieces of code are interacting with one another. The common remedy to this issue is to use functional programming and refactor the hidden mutable state into an argument or a shared global variable.
 
 ### Access to context
 
@@ -64,4 +64,6 @@ Another benefit of these practices is that writing tests is a lot easier, as the
 
 ### Conclusion
 
-Closures in themself are just another language feature that you have to wrap your head around. When used correctly, they can be another tool in your arsenal. Yet, if you use them poorly, they can create some really nasty bugs or unmaintainable code. It takes time to get used to them and be able to spot anti-patterns before they become a problem.
+Closures in themself are just another language feature that you have to wrap your head around. As a rule of thumb, use them sparingly, clarify your code's intent and provide escape hatches to reduce potential error surface.
+
+When used correctly, they can be another tool in your arsenal. Yet, if you use them poorly, they can create some really nasty bugs or unmaintainable code. It takes time to get used to them and be able to spot anti-patterns before they become a problem.
