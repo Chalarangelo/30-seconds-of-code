@@ -1,5 +1,6 @@
 ---
 title: Creating HTML elements in JavaScript
+shortTitle: Creating HTML elements
 type: story
 tags: javascript,browser
 expertise: beginner
