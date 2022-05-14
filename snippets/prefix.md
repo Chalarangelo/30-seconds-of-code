@@ -2,6 +2,7 @@
 title: Prefix CSS property
 tags: browser
 expertise: intermediate
+cover: blog_images/cancel-typographer.jpg
 firstSeen: 2018-03-08T15:22:54+02:00
 lastUpdated: 2020-10-22T20:24:04+03:00
 ---

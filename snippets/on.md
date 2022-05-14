@@ -2,6 +2,7 @@
 title: Add event listener to element
 tags: browser,event
 expertise: intermediate
+cover: blog_images/wooden-bowl.jpg
 firstSeen: 2018-01-05T14:33:48+02:00
 lastUpdated: 2020-10-21T21:54:53+03:00
 ---

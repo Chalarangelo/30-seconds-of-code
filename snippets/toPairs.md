@@ -3,6 +3,7 @@ title: Object to pairs
 tags: object,array
 expertise: intermediate
 author: chalarangelo
+cover: blog_images/purple-leaves.jpg
 firstSeen: 2020-03-23T15:07:23+02:00
 lastUpdated: 2020-10-22T20:24:30+03:00
 ---

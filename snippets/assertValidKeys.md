@@ -3,6 +3,7 @@ title: Assert object keys are valid
 tags: object
 expertise: intermediate
 author: chalarangelo
+cover: blog_images/river-flow.jpg
 firstSeen: 2021-07-18T05:00:00-04:00
 ---
 

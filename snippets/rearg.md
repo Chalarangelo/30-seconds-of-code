@@ -2,6 +2,7 @@
 title: Rearrange function arguments
 tags: function
 expertise: intermediate
+cover: blog_images/island-corridor.jpg
 firstSeen: 2018-01-28T15:04:21+02:00
 lastUpdated: 2020-10-22T20:24:04+03:00
 ---

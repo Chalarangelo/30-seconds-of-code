@@ -2,6 +2,7 @@
 title: Mapped array average
 tags: math,array
 expertise: intermediate
+cover: blog_images/rock-climbing.jpg
 firstSeen: 2018-01-11T12:25:54+02:00
 lastUpdated: 2020-10-21T21:17:45+03:00
 ---

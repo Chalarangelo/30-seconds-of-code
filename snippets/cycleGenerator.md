@@ -3,6 +3,7 @@ title: Cycle generator
 tags: function,generator
 expertise: advanced
 author: chalarangelo
+cover: blog_images/secret-tree.jpg
 firstSeen: 2020-10-11T17:05:38+03:00
 lastUpdated: 2020-10-11T17:05:38+03:00
 ---

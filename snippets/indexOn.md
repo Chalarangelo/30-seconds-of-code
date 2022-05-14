@@ -3,6 +3,7 @@ title: Array to object based on key
 tags: array,object
 expertise: intermediate
 author: chalarangelo
+cover: blog_images/lavender-shelf.jpg
 firstSeen: 2021-06-27T05:00:00-04:00
 ---
 

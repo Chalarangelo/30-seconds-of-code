@@ -3,6 +3,7 @@ title: Compact and join array
 tags: array
 expertise: intermediate
 author: chalarangelo
+cover: blog_images/racoon.jpg
 firstSeen: 2022-04-08T05:00:00-04:00
 ---
 
