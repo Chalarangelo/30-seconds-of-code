@@ -2,6 +2,7 @@
 title: Iterate over object's own properties in reverse
 tags: object
 expertise: intermediate
+cover: blog_images/sea-view.jpg
 firstSeen: 2018-01-18T16:45:56+02:00
 lastUpdated: 2020-10-19T22:49:51+03:00
 ---

@@ -2,6 +2,7 @@
 title: Group array elements based on function
 tags: array
 expertise: advanced
+cover: blog_images/switzerland-night.jpg
 firstSeen: 2018-01-20T17:21:34+02:00
 lastUpdated: 2020-11-03T21:46:13+02:00
 ---

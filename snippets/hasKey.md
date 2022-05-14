@@ -3,6 +3,7 @@ title: Check if object has key
 tags: object
 expertise: intermediate
 author: chalarangelo
+cover: blog_images/cloudy-mountaintop.jpg
 firstSeen: 2019-10-15T15:45:13+03:00
 lastUpdated: 2020-10-19T22:49:51+03:00
 ---

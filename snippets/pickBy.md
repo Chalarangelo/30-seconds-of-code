@@ -2,6 +2,7 @@
 title: Pick matching object keys
 tags: object
 expertise: intermediate
+cover: blog_images/lake-bench.jpg
 firstSeen: 2018-01-19T13:23:45+02:00
 lastUpdated: 2020-10-22T20:24:04+03:00
 ---

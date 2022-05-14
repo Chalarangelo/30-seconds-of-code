@@ -2,6 +2,7 @@
 title: Get nested value in object based on array of keys
 tags: object
 expertise: intermediate
+cover: blog_images/mask-quiet.jpg
 firstSeen: 2019-05-09T13:30:52+03:00
 lastUpdated: 2020-10-19T18:51:03+03:00
 ---

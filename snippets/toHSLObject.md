@@ -2,6 +2,7 @@
 title: HSL to object
 tags: string,browser,regexp
 expertise: intermediate
+cover: blog_images/measuring.jpg
 firstSeen: 2020-10-16T21:48:31+03:00
 lastUpdated: 2020-10-22T20:24:30+03:00
 ---

@@ -2,6 +2,7 @@
 title: Remove list elements from the end while condition is met
 tags: array
 expertise: intermediate
+cover: blog_images/beach-pineapple.jpg
 firstSeen: 2018-01-26T12:55:31+02:00
 lastUpdated: 2020-11-29T12:04:53+02:00
 ---
