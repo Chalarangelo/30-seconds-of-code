@@ -2,6 +2,7 @@
 title: Find last matching value
 tags: array
 expertise: beginner
+cover: blog_images/misty-mountains.jpg
 firstSeen: 2018-01-11T13:51:58+02:00
 lastUpdated: 2020-10-22T20:23:47+03:00
 ---

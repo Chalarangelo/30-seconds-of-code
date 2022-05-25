@@ -2,6 +2,7 @@
 title: Size of array, object or string
 tags: object,array,string
 expertise: intermediate
+cover: blog_images/digital-nomad-13.jpg
 firstSeen: 2017-12-30T16:46:01+02:00
 lastUpdated: 2020-10-21T21:17:45+03:00
 ---
