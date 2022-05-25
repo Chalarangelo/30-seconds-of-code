@@ -211,7 +211,7 @@ export const snippet = {
         },
       ];
       if (snippet.styleCodeBlockHtml)
-        blocks.unshift({
+        blocks.splice(1, 0, {
           language: { short: 'css', long: 'CSS' },
           htmlContent: snippet.styleCodeBlockHtml,
         });
