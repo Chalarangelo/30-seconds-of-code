@@ -2,6 +2,7 @@
 title: Cross product of arrays
 tags: array,math
 expertise: intermediate
+cover: blog_images/cup-of-orange.jpg
 firstSeen: 2018-01-24T15:55:03+02:00
 lastUpdated: 2020-10-22T20:24:44+03:00
 ---

@@ -3,6 +3,7 @@ title: Merge sorted arrays
 tags: array
 expertise: intermediate
 author: maciv
+cover: blog_images/digital-nomad-6.jpg
 firstSeen: 2020-12-27T22:55:37+02:00
 lastUpdated: 2020-12-27T22:55:37+02:00
 ---

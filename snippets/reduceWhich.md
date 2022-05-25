@@ -2,6 +2,7 @@
 title: Min and max of array based on provided function
 tags: array
 expertise: intermediate
+cover: blog_images/orange-coffee.jpg
 firstSeen: 2018-01-24T12:41:03+02:00
 lastUpdated: 2020-11-03T22:11:18+02:00
 ---

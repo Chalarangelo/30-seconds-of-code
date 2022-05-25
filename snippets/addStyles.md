@@ -3,6 +3,7 @@ title: Add styles to HTML element
 tags: browser
 expertise: beginner
 author: chalarangelo
+cover: blog_images/digital-nomad-14.jpg
 firstSeen: 2021-01-07T00:37:43+02:00
 lastUpdated: 2021-01-07T00:37:43+02:00
 ---
