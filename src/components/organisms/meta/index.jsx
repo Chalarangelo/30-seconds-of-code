@@ -31,13 +31,15 @@ const Meta = ({
   const scripts = [];
 
   // Adsense
-  scripts.push({
-    key: 'adsense',
-    async: true,
-    src:
-      'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9823478685429367',
-    crossOrigin: 'anonymous',
-  });
+  if (process.env.NODE_ENV !== 'development') {
+    scripts.push({
+      key: 'adsense',
+      async: true,
+      src:
+        'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9823478685429367',
+      crossOrigin: 'anonymous',
+    });
+  }
 
   if (structuredData) {
     scripts.push({
