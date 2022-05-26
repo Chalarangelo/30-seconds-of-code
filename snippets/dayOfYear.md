@@ -2,6 +2,7 @@
 title: Day of year
 tags: date
 expertise: beginner
+cover: blog_images/interior-3.jpg
 firstSeen: 2018-09-29T13:22:20+03:00
 lastUpdated: 2020-10-19T18:51:03+03:00
 ---

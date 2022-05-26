@@ -3,6 +3,7 @@ title: Arrays of consecutive elements
 tags: array
 expertise: intermediate
 author: chalarangelo
+cover: blog_images/colorful-pots.jpg
 firstSeen: 2022-04-06T05:00:00-04:00
 ---
 

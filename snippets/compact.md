@@ -2,6 +2,7 @@
 title: Compact array
 tags: array
 expertise: beginner
+cover: blog_images/basket-paper.jpg
 firstSeen: 2017-12-14T08:19:15+02:00
 lastUpdated: 2020-10-22T20:23:47+03:00
 ---
