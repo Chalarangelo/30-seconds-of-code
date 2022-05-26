@@ -2,6 +2,7 @@
 title: Min date
 tags: date
 expertise: intermediate
+cover: blog_images/interior-2.jpg
 firstSeen: 2018-09-29T13:38:20+03:00
 lastUpdated: 2020-10-21T21:54:53+03:00
 ---

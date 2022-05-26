@@ -2,6 +2,7 @@
 title: Remove list elements from the end
 tags: array
 expertise: intermediate
+cover: blog_images/interior-7.jpg
 firstSeen: 2017-12-15T02:00:10+02:00
 lastUpdated: 2020-10-22T20:24:30+03:00
 ---

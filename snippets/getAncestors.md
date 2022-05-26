@@ -3,6 +3,7 @@ title: Get element ancestors
 tags: browser
 expertise: beginner
 author: chalarangelo
+cover: blog_images/interior-8.jpg
 firstSeen: 2020-10-15T09:28:34+03:00
 lastUpdated: 2021-01-05T22:45:34+02:00
 ---
