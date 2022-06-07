@@ -2,6 +2,7 @@
 title: Date of yesterday
 tags: date
 expertise: intermediate
+cover: blog_images/travel-mug-2.jpg
 firstSeen: 2019-07-19T10:57:21+03:00
 lastUpdated: 2020-10-22T20:24:44+03:00
 ---
