@@ -2,6 +2,7 @@
 title: Every nth element
 tags: array
 expertise: beginner
+cover: blog_images/dark-leaves-6.jpg
 firstSeen: 2017-12-17T17:55:51+02:00
 lastUpdated: 2020-10-19T18:51:03+03:00
 ---
