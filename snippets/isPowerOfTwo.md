@@ -3,6 +3,7 @@ title: Number is power of two
 tags: math
 expertise: beginner
 author: chalarangelo
+cover: blog_images/flower-portrait-10.jpg
 firstSeen: 2019-12-31T13:17:12+02:00
 lastUpdated: 2020-10-20T23:02:01+03:00
 ---

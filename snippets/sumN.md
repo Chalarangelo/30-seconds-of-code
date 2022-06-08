@@ -2,6 +2,7 @@
 title: Sum of numbers until n
 tags: math
 expertise: beginner
+cover: blog_images/blue-flower.jpg
 firstSeen: 2020-10-08T16:52:55+03:00
 lastUpdated: 2020-10-22T20:24:30+03:00
 ---

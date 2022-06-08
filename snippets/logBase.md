@@ -2,6 +2,7 @@
 title: Logarithm in specific base
 tags: math
 expertise: beginner
+cover: blog_images/yellow-white-mug-2.jpg
 firstSeen: 2020-10-07T19:14:30+03:00
 lastUpdated: 2020-10-22T20:23:47+03:00
 ---

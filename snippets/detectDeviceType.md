@@ -2,6 +2,7 @@
 title: Detect device type
 tags: browser,regexp
 expertise: intermediate
+cover: blog_images/clutter-2.jpg
 firstSeen: 2017-12-24T09:39:23+02:00
 lastUpdated: 2020-10-22T20:23:47+03:00
 ---
