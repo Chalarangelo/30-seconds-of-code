@@ -3,6 +3,7 @@ title: Quotient and module of division
 tags: math
 expertise: beginner
 author: maciv
+cover: blog_images/italian-horizon.jpg
 firstSeen: 2020-10-07T23:59:13+03:00
 lastUpdated: 2020-10-07T23:59:13+03:00
 ---

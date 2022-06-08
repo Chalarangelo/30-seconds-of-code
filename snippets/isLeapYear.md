@@ -2,6 +2,7 @@
 title: Check for leap year
 tags: date
 expertise: beginner
+cover: blog_images/flowering-hills.jpg
 firstSeen: 2020-02-05T14:00:03+02:00
 lastUpdated: 2020-10-20T23:02:01+03:00
 ---

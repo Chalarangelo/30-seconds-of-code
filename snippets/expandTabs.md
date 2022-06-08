@@ -3,6 +3,7 @@ title: Expand tabs into spaces
 tags: string,regexp
 expertise: beginner
 author: chalarangelo
+cover: blog_images/houses-rock-sea.jpg
 firstSeen: 2020-06-01T17:05:39+03:00
 lastUpdated: 2020-09-15T16:28:04+03:00
 ---
