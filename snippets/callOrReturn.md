@@ -3,6 +3,7 @@ title: Call or return
 tags: function
 expertise: beginner
 author: chalarangelo
+cover: blog_images/cows.jpg
 firstSeen: 2022-04-04T05:00:00-04:00
 ---
 

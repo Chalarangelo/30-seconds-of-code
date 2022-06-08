@@ -2,6 +2,7 @@
 title: Strip HTML tags
 tags: string,regexp
 expertise: beginner
+cover: blog_images/coffee-phone-tray-3.jpg
 firstSeen: 2018-01-26T14:17:29+02:00
 lastUpdated: 2020-09-15T16:28:04+03:00
 ---

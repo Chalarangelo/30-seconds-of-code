@@ -2,6 +2,7 @@
 title: Number to decimal mark
 tags: math
 expertise: beginner
+cover: blog_images/blue-bench.jpg
 firstSeen: 2017-12-21T16:29:51+02:00
 lastUpdated: 2020-10-22T20:24:30+03:00
 ---

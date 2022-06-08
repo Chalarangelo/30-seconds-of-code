@@ -2,6 +2,7 @@
 title: Curry function
 tags: function,recursion
 expertise: advanced
+cover: blog_images/rocky-beach-2.jpg
 firstSeen: 2017-12-10T15:21:35+02:00
 lastUpdated: 2020-10-22T20:23:47+03:00
 ---
