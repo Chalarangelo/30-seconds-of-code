@@ -2,6 +2,7 @@
 title: Collapsible content
 tags: components,children,state
 expertise: beginner
+cover: blog_images/washed-ashore.jpg
 firstSeen: 2018-10-17T20:42:23+03:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

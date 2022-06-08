@@ -2,6 +2,7 @@
 title: Countdown timer
 tags: components,state
 expertise: advanced
+cover: blog_images/sea-view-2.jpg
 firstSeen: 2019-02-06T14:39:31+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

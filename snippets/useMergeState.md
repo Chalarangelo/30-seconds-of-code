@@ -3,6 +3,7 @@ title: React useMergeState hook
 tags: hooks,state
 expertise: beginner
 author: chalarangelo
+cover: blog_images/digital-nomad-6.jpg
 firstSeen: 2021-09-23T05:00:00-04:00
 ---
 

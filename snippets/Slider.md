@@ -2,6 +2,7 @@
 title: Uncontrolled range input
 tags: components,input
 expertise: beginner
+cover: blog_images/solitude-beach.jpg
 firstSeen: 2019-03-02T10:20:55+02:00
 lastUpdated: 2020-11-25T20:46:35+02:00
 ---
