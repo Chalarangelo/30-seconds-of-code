@@ -2,6 +2,7 @@
 title: Check if browser tab is focused
 tags: browser
 expertise: beginner
+cover: blog_images/overgrown.jpg
 firstSeen: 2018-04-15T19:18:44+03:00
 lastUpdated: 2020-10-20T23:02:01+03:00
 ---

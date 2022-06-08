@@ -2,6 +2,7 @@
 title: Current page protocol
 tags: browser
 expertise: beginner
+cover: blog_images/bamboo-lamp.jpg
 firstSeen: 2020-10-07T01:40:53+03:00
 lastUpdated: 2020-10-20T11:46:23+03:00
 ---

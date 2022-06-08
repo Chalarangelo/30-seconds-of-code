@@ -2,6 +2,7 @@
 title: Degrees to radians
 tags: math
 expertise: beginner
+cover: blog_images/blue-flower.jpg
 firstSeen: 2018-02-14T12:24:50+02:00
 lastUpdated: 2020-09-15T16:28:04+03:00
 ---

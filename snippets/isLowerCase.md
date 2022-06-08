@@ -2,6 +2,7 @@
 title: String is lowercase
 tags: string
 expertise: beginner
+cover: blog_images/flower-portrait-7.jpg
 firstSeen: 2018-01-06T11:16:05+02:00
 lastUpdated: 2020-10-20T11:21:07+03:00
 ---
