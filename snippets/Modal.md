@@ -2,6 +2,7 @@
 title: Modal dialog
 tags: components,effect
 expertise: intermediate
+cover: blog_images/yellow-white-mug-2.jpg
 firstSeen: 2019-03-11T11:25:06+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

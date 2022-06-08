@@ -3,6 +3,7 @@ title: React useMediaQuery hook
 tags: hooks,state,effect
 expertise: intermediate
 author: chalarangelo
+cover: blog_images/clay-pot-horizon.jpg
 firstSeen: 2020-01-03T14:39:46+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

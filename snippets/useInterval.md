@@ -3,6 +3,7 @@ title: React useInterval hook
 tags: hooks,effect
 expertise: intermediate
 author: chalarangelo
+cover: blog_images/digital-nomad-13.jpg
 firstSeen: 2019-08-21T13:18:52+03:00
 lastUpdated: 2020-11-16T14:17:53+02:00
 ---

@@ -2,6 +2,7 @@
 title: Controlled input field
 tags: components,input
 expertise: intermediate
+cover: blog_images/digital-nomad-5.jpg
 firstSeen: 2019-08-21T13:09:10+03:00
 lastUpdated: 2020-11-03T21:08:39+02:00
 ---

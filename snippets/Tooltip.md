@@ -2,6 +2,7 @@
 title: Tooltip
 tags: components,state,children
 expertise: beginner
+cover: blog_images/dark-leaves-6.jpg
 firstSeen: 2018-11-13T20:21:24+02:00
 lastUpdated: 2020-11-16T15:17:26+02:00
 ---

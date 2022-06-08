@@ -3,6 +3,7 @@ title: React useUpdate hook
 tags: components,reducer
 expertise: beginner
 author: chalarangelo
+cover: blog_images/lavender-shelf.jpg
 firstSeen: 2021-09-24T05:00:00-04:00
 ---
 

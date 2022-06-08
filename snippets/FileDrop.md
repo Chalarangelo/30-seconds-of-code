@@ -3,6 +3,7 @@ title: File drag and drop area
 tags: components,input,state,effect,event
 expertise: advanced
 author: chalarangelo
+cover: blog_images/man-red-sunset.jpg
 firstSeen: 2019-02-02T12:17:27+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---
