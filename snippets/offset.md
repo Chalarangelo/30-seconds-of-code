@@ -2,6 +2,7 @@
 title: Offset list elements
 tags: list
 expertise: beginner
+cover: blog_images/digital-nomad-10.jpg
 firstSeen: 2019-08-20T15:53:15+03:00
 lastUpdated: 2020-11-02T19:28:27+02:00
 ---

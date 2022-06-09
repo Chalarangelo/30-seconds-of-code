@@ -2,6 +2,7 @@
 title: Digitize number
 tags: math,list
 expertise: beginner
+cover: blog_images/laptop-with-code.jpg
 firstSeen: 2019-08-20T13:00:27+03:00
 lastUpdated: 2020-09-15T16:13:06+03:00
 ---

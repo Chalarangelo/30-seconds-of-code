@@ -2,6 +2,7 @@
 title: Index of max element
 tags: math,list
 expertise: beginner
+cover: blog_images/dark-cloud.jpg
 firstSeen: 2019-10-31T09:42:21+02:00
 lastUpdated: 2020-11-02T19:28:27+02:00
 ---

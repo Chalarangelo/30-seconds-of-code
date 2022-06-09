@@ -2,6 +2,7 @@
 title: List union based on function
 tags: list
 expertise: intermediate
+cover: blog_images/sunrise-over-city.jpg
 firstSeen: 2019-08-21T09:10:39+03:00
 lastUpdated: 2020-11-02T19:28:35+02:00
 ---

@@ -3,6 +3,7 @@ title: Hex to RGB
 tags: string,math
 expertise: intermediate
 author: maciv
+cover: blog_images/sleepy-cat.jpg
 firstSeen: 2020-09-13T01:08:21+03:00
 lastUpdated: 2020-09-15T16:13:06+03:00
 ---

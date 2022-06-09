@@ -2,6 +2,7 @@
 title: Last list element
 tags: list
 expertise: beginner
+cover: blog_images/lake-runner.jpg
 firstSeen: 2019-08-20T15:11:47+03:00
 lastUpdated: 2020-11-02T19:28:05+02:00
 ---

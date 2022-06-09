@@ -2,6 +2,7 @@
 title: List intersection
 tags: list
 expertise: beginner
+cover: blog_images/wooden-bowl.jpg
 firstSeen: 2019-08-20T15:14:26+03:00
 lastUpdated: 2020-11-02T19:28:05+02:00
 ---

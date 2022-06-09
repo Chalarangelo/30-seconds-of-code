@@ -3,6 +3,7 @@ title: Invert dictionary
 tags: dictionary
 expertise: intermediate
 author: maciv
+cover: blog_images/rustic-cup.jpg
 firstSeen: 2020-04-07T21:13:32+03:00
 lastUpdated: 2020-11-02T19:28:05+02:00
 ---

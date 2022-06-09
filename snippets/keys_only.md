@@ -2,6 +2,7 @@
 title: Dictionary keys
 tags: dictionary,list
 expertise: beginner
+cover: blog_images/succulent-5.jpg
 firstSeen: 2018-04-01T23:56:31+03:00
 lastUpdated: 2020-11-02T19:28:05+02:00
 ---

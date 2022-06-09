@@ -3,6 +3,7 @@ title: Date is weekday
 tags: date
 expertise: beginner
 author: maciv
+cover: blog_images/succulent-4.jpg
 firstSeen: 2020-10-28T16:20:18+02:00
 lastUpdated: 2020-11-02T19:28:05+02:00
 ---

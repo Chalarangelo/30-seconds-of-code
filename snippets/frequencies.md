@@ -3,6 +3,7 @@ title: Value frequencies
 tags: list
 expertise: intermediate
 author: maciv
+cover: blog_images/succulent-6.jpg
 firstSeen: 2020-03-15T12:54:08+02:00
 lastUpdated: 2020-11-02T19:27:53+02:00
 ---

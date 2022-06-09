@@ -2,6 +2,7 @@
 title: List difference based on function
 tags: list,function
 expertise: intermediate
+cover: blog_images/coconuts.jpg
 firstSeen: 2018-02-08T15:59:27+02:00
 lastUpdated: 2020-11-02T19:27:53+02:00
 ---

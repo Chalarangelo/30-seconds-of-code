@@ -2,6 +2,7 @@
 title: Cast to list
 tags: list
 expertise: intermediate
+cover: blog_images/colorful-pots.jpg
 firstSeen: 2019-08-20T12:47:43+03:00
 lastUpdated: 2020-11-02T19:27:07+02:00
 ---
