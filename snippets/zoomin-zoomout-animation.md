@@ -2,6 +2,7 @@
 title: Zoom in zoom out animation
 tags: animation
 expertise: beginner
+cover: blog_images/travel-mug-2.jpg
 firstSeen: 2020-10-05T21:42:14+03:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

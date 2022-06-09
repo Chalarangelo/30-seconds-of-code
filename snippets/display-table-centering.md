@@ -2,6 +2,7 @@
 title: Display table centering
 tags: layout
 expertise: intermediate
+cover: blog_images/malibu.jpg
 firstSeen: 2018-03-30T01:15:54+03:00
 lastUpdated: 2020-12-30T15:37:37+02:00
 ---

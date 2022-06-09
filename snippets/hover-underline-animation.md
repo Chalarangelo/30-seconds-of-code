@@ -2,6 +2,7 @@
 title: Hover underline animation
 tags: animation
 expertise: advanced
+cover: blog_images/coffee-phone-tray-2.jpg
 firstSeen: 2018-02-28T13:19:22+02:00
 lastUpdated: 2021-10-11T18:44:51+03:00
 ---

@@ -2,6 +2,7 @@
 title: Image gallery with horizontal scroll
 tags: visual,interactivity
 expertise: advanced
+cover: blog_images/flower-portrait-5.jpg
 firstSeen: 2022-05-01T05:00:00-04:00
 ---
 
