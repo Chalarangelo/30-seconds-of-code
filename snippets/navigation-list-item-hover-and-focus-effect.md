@@ -2,6 +2,7 @@
 title: Navigation list item hover and focus effect
 tags: visual
 expertise: beginner
+cover: blog_images/cloudy-rock-formation.jpg
 firstSeen: 2019-09-19T22:48:57+03:00
 lastUpdated: 2021-10-11T18:44:51+03:00
 ---

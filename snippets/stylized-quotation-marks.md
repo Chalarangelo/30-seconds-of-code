@@ -3,6 +3,7 @@ title: Stylized quotation marks
 tags: visual
 expertise: beginner
 author: chalarangelo
+cover: blog_images/coffee-phone-tray.jpg
 firstSeen: 2021-05-16T19:53:02+03:00
 lastUpdated: 2021-05-16T19:53:02+03:00
 ---

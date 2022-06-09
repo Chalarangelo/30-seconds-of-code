@@ -2,6 +2,7 @@
 title: Image gallery with vertical scroll
 tags: visual,interactivity
 expertise: advanced
+cover: blog_images/lake-loop.jpg
 firstSeen: 2022-05-05T05:00:00-04:00
 ---
 

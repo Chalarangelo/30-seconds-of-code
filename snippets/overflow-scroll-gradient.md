@@ -2,6 +2,7 @@
 title: Overflow scroll gradient
 tags: visual
 expertise: intermediate
+cover: blog_images/memories-of-pineapple-1.jpg
 firstSeen: 2018-02-25T15:14:39+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

@@ -2,6 +2,7 @@
 title: Hamburger Button
 tags: interactivity
 expertise: intermediate
+cover: blog_images/volcano-sunset.jpg
 firstSeen: 2019-10-10T03:49:38+03:00
 lastUpdated: 2020-12-30T15:37:37+02:00
 ---

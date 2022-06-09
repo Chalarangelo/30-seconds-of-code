@@ -2,6 +2,7 @@
 title: Grid centering
 tags: layout
 expertise: beginner
+cover: blog_images/work-hard-computer.jpg
 firstSeen: 2018-03-03T12:13:59+02:00
 lastUpdated: 2020-12-30T15:37:37+02:00
 ---

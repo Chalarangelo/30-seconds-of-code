@@ -3,6 +3,7 @@ title: Trim multiline text
 tags: layout,visual
 expertise: intermediate
 author: chalarangelo
+cover: blog_images/pink-flower-tree.jpg
 firstSeen: 2021-05-16T20:19:13+03:00
 lastUpdated: 2021-05-16T20:19:13+03:00
 ---

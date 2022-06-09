@@ -2,6 +2,7 @@
 title: Dynamic shadow
 tags: visual
 expertise: intermediate
+cover: blog_images/couch-laptop.jpg
 firstSeen: 2018-03-05T13:51:36+02:00
 lastUpdated: 2020-12-30T15:37:37+02:00
 ---
