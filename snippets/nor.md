@@ -3,6 +3,7 @@ title: Logical nor
 tags: math,logic
 expertise: beginner
 unlisted: true
+cover: blog_images/succulent-8.jpg
 firstSeen: 2021-03-29T21:20:41+03:00
 lastUpdated: 2021-04-02T16:47:15+03:00
 ---

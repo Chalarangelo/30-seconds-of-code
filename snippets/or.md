@@ -3,6 +3,7 @@ title: Logical or
 tags: math,logic
 expertise: beginner
 unlisted: true
+cover: blog_images/succulent-4.jpg
 firstSeen: 2020-05-13T11:35:41+03:00
 lastUpdated: 2021-01-04T13:04:15+02:00
 ---
