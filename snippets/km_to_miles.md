@@ -4,6 +4,7 @@ tags: math
 expertise: beginner
 author: maciv
 unlisted: true
+cover: blog_images/interior-5.jpg
 firstSeen: 2020-10-04T00:23:49+03:00
 lastUpdated: 2021-01-04T12:47:04+02:00
 ---
