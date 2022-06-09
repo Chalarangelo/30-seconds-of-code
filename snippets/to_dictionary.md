@@ -4,6 +4,7 @@ tags: list,dictionary
 expertise: intermediate
 author: maciv
 excerpt: Combines two lists into a dictionary, using the first one as the keys and the second one as the values.
+cover: blog_images/purple-sunset.jpg
 firstSeen: 2020-04-13T19:30:29+03:00
 lastUpdated: 2020-11-02T19:28:35+02:00
 ---

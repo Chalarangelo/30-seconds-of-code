@@ -3,6 +3,7 @@ title: Find keys with value
 tags: dictionary
 expertise: intermediate
 author: maciv
+cover: blog_images/laptop-plants-2.jpg
 firstSeen: 2020-04-16T19:17:13+03:00
 lastUpdated: 2020-11-02T19:27:53+02:00
 ---

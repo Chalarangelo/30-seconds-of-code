@@ -3,6 +3,7 @@ title: Add days to date
 tags: date
 expertise: intermediate
 author: maciv
+cover: blog_images/orange-flower.jpg
 firstSeen: 2020-10-28T16:19:04+02:00
 lastUpdated: 2020-10-28T16:19:04+02:00
 ---

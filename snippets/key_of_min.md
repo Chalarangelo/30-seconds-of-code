@@ -3,6 +3,7 @@ title: Key of min value
 tags: dictionary
 expertise: beginner
 author: maciv
+cover: blog_images/goat-wooden-cottage.jpg
 firstSeen: 2021-01-07T23:15:48+02:00
 lastUpdated: 2021-01-07T23:15:48+02:00
 ---

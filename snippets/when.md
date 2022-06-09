@@ -2,6 +2,7 @@
 title: Apply function when true
 tags: function
 expertise: intermediate
+cover: blog_images/interior-10.jpg
 firstSeen: 2020-01-02T20:25:45+02:00
 lastUpdated: 2020-11-09T23:56:11+02:00
 ---

@@ -3,6 +3,7 @@ title: Find parity outliers
 tags: list,math
 expertise: intermediate
 author: maciv
+cover: blog_images/beach-pineapple.jpg
 firstSeen: 2020-01-08T18:54:35+02:00
 lastUpdated: 2020-11-02T19:27:53+02:00
 ---

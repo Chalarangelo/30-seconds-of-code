@@ -3,6 +3,7 @@ title: Check lists have same contents
 tags: list
 expertise: intermediate
 author: maciv
+cover: blog_images/racoon.jpg
 firstSeen: 2020-03-15T12:54:08+02:00
 lastUpdated: 2020-11-02T19:28:05+02:00
 ---

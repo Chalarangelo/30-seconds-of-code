@@ -3,6 +3,7 @@ title: Days ago
 tags: date
 expertise: intermediate
 author: maciv
+cover: blog_images/cup-of-orange.jpg
 firstSeen: 2020-10-28T16:19:30+02:00
 lastUpdated: 2020-10-28T16:19:30+02:00
 ---

@@ -2,6 +2,7 @@
 title: Count grouped elements
 tags: list
 expertise: intermediate
+cover: blog_images/rabbit-call.jpg
 firstSeen: 2018-02-07T10:33:47+02:00
 lastUpdated: 2020-11-02T19:27:07+02:00
 ---
