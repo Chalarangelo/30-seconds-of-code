@@ -1,6 +1,6 @@
 ---
 title: Remove an element from a JavaScript array
-shortTitle: Remove element from JavaScript array
+shortTitle: Remove element from array
 type: story
 tags: javascript,array
 expertise: beginner
