@@ -1,13 +1,13 @@
 ---
-title: Replace all occurences of a string in JavaScript
-shortTitle: Replace all occurences of a string
+title: Replace all occurrences of a string in JavaScript
+shortTitle: Replace all occurrences of a string
 shortTitle: Amazing story
 type: story
 tags: javascript,string,regexp
 expertise: intermediate
 author: chalarangelo
 cover: blog_images/blue-computer.jpg
-excerpt: If you need to replace all occurences of a string in JavaScript, you have a couple of options.
+excerpt: If you need to replace all occurrences of a string in JavaScript, you have a couple of options.
 firstSeen: 2022-07-03T05:00:00-04:00
 ---
 
