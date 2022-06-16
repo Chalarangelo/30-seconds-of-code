@@ -41,7 +41,7 @@
     "react-dom": "^17.0.2",
     "remark": "^13.0.0",
     "remark-gfm": "^1.0.0",
-    "sharp": "^0.29.1",
+    "sharp": "^0.30.5",
     "twitter": "^1.7.1",
     "unist-util-visit": "^2.0.3",
     "webfonts-generator": "^0.4.0"
