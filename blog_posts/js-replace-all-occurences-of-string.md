@@ -1,7 +1,6 @@
 ---
 title: Replace all occurrences of a string in JavaScript
 shortTitle: Replace all occurrences of a string
-shortTitle: Amazing story
 type: story
 tags: javascript,string,regexp
 expertise: intermediate
