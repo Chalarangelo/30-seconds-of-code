@@ -10,7 +10,7 @@ excerpt: Did you know there are multiple ways to remove an element from an array
 firstSeen: 2022-06-26T05:00:00-04:00
 ---
 
-Removing a specific value or values from an array in JavaScript is a pretty common task. While not hard to accompish, there are a few approaches available, each with their own pros and cons. Choosing the correct one ultimately depends on the use case.
+Removing a specific value or values from an array in JavaScript is a pretty common task. While not hard to accomplish, there are a few approaches available, each with their own pros and cons. Choosing the correct one ultimately depends on the use case.
 
 ### Array.prototype.splice()
 
