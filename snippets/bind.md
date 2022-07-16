@@ -2,7 +2,7 @@
 title: Bind function context
 tags: function,object
 expertise: advanced
-cover: blog_images/tranquilitiy.jpg
+cover: blog_images/tranquility.jpg
 firstSeen: 2018-01-24T14:14:49+02:00
 lastUpdated: 2020-10-18T23:04:45+03:00
 ---
