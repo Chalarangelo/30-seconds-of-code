@@ -34,7 +34,7 @@ The main operations of a doubly linked list data structure are:
 - `removeAt`: Removes the element at the specific index
 - `getAt`: Retrieves the element at the specific index
 - `clear`: Empties the doubly linked list
-- `reverse`: Reverses the order of elements in the doulby linked list
+- `reverse`: Reverses the order of elements in the doubly linked list
 
 ### Implementation
 

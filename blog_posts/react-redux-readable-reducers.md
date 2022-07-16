@@ -86,7 +86,7 @@ const ACTION_TYPES = {
 Our `action` objects aren't consistent in terms of structure with the exception of sharing a `type` key which we use to identify each action. If we hope to reduce mental strain and minimize headaches, we should make these more consistent. The easiest way to do so would be to put the whole action `payload` under a top-level key and nest any values passed to the action inside it:
 
 ```js
-// Strucure of any action passed to our reducer function
+// Structure of any action passed to our reducer function
 const action = {
   // Any of the previously defined action types
   type: ACTION_TYPES.CREATE_ID,

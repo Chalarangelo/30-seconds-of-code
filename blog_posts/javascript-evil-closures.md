@@ -64,6 +64,6 @@ Another benefit of these practices is that writing tests is a lot easier, as the
 
 ### Conclusion
 
-Closures in themself are just another language feature that you have to wrap your head around. As a rule of thumb, use them sparingly, clarify your code's intent and provide escape hatches to reduce potential error surface.
+Closures in themselves are just another language feature that you have to wrap your head around. As a rule of thumb, use them sparingly, clarify your code's intent and provide escape hatches to reduce potential error surface.
 
 When used correctly, they can be another tool in your arsenal. Yet, if you use them poorly, they can create some really nasty bugs or unmaintainable code. It takes time to get used to them and be able to spot anti-patterns before they become a problem.
