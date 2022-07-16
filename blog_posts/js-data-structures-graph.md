@@ -21,7 +21,7 @@ Each node in a graph data structure must have the following properties:
 - `key`: The key of the node
 - `value`: The value of the node
 
-Each edge in a grpah data structure must have the following properties:
+Each edge in a graph data structure must have the following properties:
 
 - `a`: The starting node of the edge
 - `b`: The target node of the edge

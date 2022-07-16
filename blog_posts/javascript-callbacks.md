@@ -42,7 +42,7 @@ const parseData = path => {
 };
 
 const importantFiles = ['id-card.txt', 'bank-number.txt'];
-importanFiles.map(parseData); // Works fine
+importantFiles.map(parseData); // Works fine
 
 // third-party-lib@v1.1.0 - No breaking changes!
 const parseData = (path, purge) => {
@@ -52,7 +52,7 @@ const parseData = (path, purge) => {
 };
 
 const importantFiles = ['id-card.txt', 'bank-number.txt'];
-importanFiles.map(parseData); // 'bank-number.txt'` has been deleted
+importantFiles.map(parseData); // 'bank-number.txt'` has been deleted
 ```
 
 The example above, while a bit unlikely, demonstrates a case where a simple index from `Array.prototype.map()` could wreak havoc on the entire filesystem due to a harmless version bump of an external dependency. This is the kind of bug that is hard to track down and causes a ton of headaches when debugging as you struggle to understand how a version bump without breaking changes could cause this.

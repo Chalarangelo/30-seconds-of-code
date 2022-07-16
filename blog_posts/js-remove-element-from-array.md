@@ -40,5 +40,5 @@ Most of the time, `Array.prototype.filter()` is the best option for removing ele
 
 ### Alternative options
 
-The previous two options should cover the vast majority of use cases. Yet, there are some other options available for removing elements from an array, which might be preferrable in certain cases. For example, if you like the interface of `Array.prototype.splice()` but need immutability, the [shank snippet](/js/s/shank) might be the solution for you. Similarly, when working with large unsorted arrays, there's a [fast removal trick](/articles/s/js-fast-remove-array-element) that might be of interest to you.
+The previous two options should cover the vast majority of use cases. Yet, there are some other options available for removing elements from an array, which might be preferable in certain cases. For example, if you like the interface of `Array.prototype.splice()` but need immutability, the [shank snippet](/js/s/shank) might be the solution for you. Similarly, when working with large unsorted arrays, there's a [fast removal trick](/articles/s/js-fast-remove-array-element) that might be of interest to you.
 

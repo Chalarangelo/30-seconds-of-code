@@ -37,7 +37,7 @@ data.showNotifications?.();
 
 In the same spirit, the [nullish coalescing operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator) (`??`) is a logical operator that allows us to check for nullish (`null` or `undefined`) values, returning the right-hand side operand when the value is non-nullish, otherwise returning the left-hand side operand.
 
-Apart from cleaner code, this operator might spare us some headaches related to falsey values:
+Apart from cleaner code, this operator might spare us some headaches related to falsy values:
 
 ```js
 const config = getServerConfig();
