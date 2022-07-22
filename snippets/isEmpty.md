@@ -1,5 +1,5 @@
 ---
-title: Array is empty
+title: Collection is empty
 tags: type,array,object,string
 expertise: beginner
 cover: blog_images/book-chair.jpg
