@@ -64,7 +64,7 @@ const reducer = (state = initialState, action) => {
 
 While the code in the example is not that complicated right now, complexity can increase very fast as more action types need to be handled by our application. This is due to the fact that each `action.type`'s logic is nested inside the `reducer` function, thus adding more code and complexity with each new action.
 
-Another issue we can identify is that each `action` has a different structure, which increases congitive load for future maintainers, as they have to remember what keys their `action` needs to have. There's also the added issue of running into a case where `action.type` might be needed to pass actual data to the state (i.e. `state.type` could exist).
+Another issue we can identify is that each `action` has a different structure, which increases cognitive load for future maintainers, as they have to remember what keys their `action` needs to have. There's also the added issue of running into a case where `action.type` might be needed to pass actual data to the state (i.e. `state.type` could exist).
 
 Finally, our `action.type` values are hardcoded inside the `reducer` function, making it hard to remember and sync across other files and components. This might seem like the least of our problems, but it's probably the easiest one to fix, so let's start there.
 
