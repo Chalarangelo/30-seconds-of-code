@@ -6,7 +6,7 @@ tags: javascript,function,type,boolean
 expertise: advanced
 author: chalarangelo
 cover: blog_images/lighthouse.jpg
-excerpt: Boolean traps can cause readabiltiy and maintainability issues in your code. Learn what they are, how to spot and fix them in this article.
+excerpt: Boolean traps can cause readability and maintainability issues in your code. Learn what they are, how to spot and fix them in this article.
 firstSeen: 2021-07-11T05:00:00-04:00
 ---
 
