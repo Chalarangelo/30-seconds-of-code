@@ -148,6 +148,10 @@
     }
   }
 
+  input[type='checkbox']:not(:checked) + .switch {
+    background-color: #ffffff40 !important;
+  }
+
   .slides img {
     max-width: unset;
   }
