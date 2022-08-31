@@ -67,7 +67,7 @@ const isWhitespaceString = value =>
   typeof value === 'string' && /^\s*$/.test(value);
 const isEmptyCollection = value =>
   (Array.isArray(value) || value === Object(value)) &&
-  !!Object.keys(value).length;
+  !Object.keys(value).length;
 const isInvalidDate = value =>
   value instanceof Date && Number.isNaN(value.getTime());
 const isEmptySet = value => value instanceof Set && value.size === 0;
