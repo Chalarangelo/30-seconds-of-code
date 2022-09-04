@@ -9,7 +9,7 @@ lastUpdated: 2020-10-22T20:24:30+03:00
 
 Sets the value of a CSS rule for the specified HTML element.
 
-- Use `ElementCSSInlineStyle.style` to set the value of the CSS `rule` for the specified element to `val`.
+- Use `HTMLElement.style` to set the value of the CSS `rule` for the specified element to `val`.
 
 ```js
 const setStyle = (el, rule, val) => (el.style[rule] = val);
