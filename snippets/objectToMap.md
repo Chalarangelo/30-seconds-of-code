@@ -10,7 +10,7 @@ firstSeen: 2022-06-16T05:00:00-04:00
 
 Converts an object to a `Map`.
 
-- Use `Object.entries` to convert the object to an array of key-value pairs.
+- Use `Object.entries()` to convert the object to an array of key-value pairs.
 - Use the `Map` constructor to convert the array to a `Map`.
 
 ```js

@@ -9,7 +9,7 @@ lastUpdated: 2020-09-15T16:28:04+03:00
 
 Casts the provided value as an array if it's not one.
 
-- Use `Array.prototype.isArray()` to determine if `val` is an array and return it as-is or encapsulated in an array accordingly.
+- Use `Array.isArray()` to determine if `val` is an array and return it as-is or encapsulated in an array accordingly.
 
 ```js
 const castArray = val => (Array.isArray(val) ? val : [val]);
