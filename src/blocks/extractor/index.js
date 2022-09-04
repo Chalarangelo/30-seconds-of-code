@@ -51,6 +51,7 @@ export class Extractor {
           images,
           iconName,
           tagMetadata,
+          references,
           ...rest
         } = config;
         /* eslint-enable no-unused-vars */
@@ -188,6 +189,7 @@ export class Extractor {
             languageLiteral: config.language.long,
             iconName: config.iconName,
             tags: Object.keys(config.tagIcons).length ? config.tagIcons : {},
+            references: new Map(Object.entries(config.references || {})),
           });
         }
         return acc;
@@ -199,6 +201,7 @@ export class Extractor {
             language: 'html',
             shortCode: 'html',
             languageLiteral: 'HTML',
+            references: new Map(),
           },
         ],
       ])
@@ -318,6 +321,15 @@ export class Extractor {
                 config.optionalLanguage.short
             );
 
+            const languageKeys =
+              config.id === '30blog'
+                ? []
+                : config.id === '30css'
+                ? ['js', 'html', 'css']
+                : config.id === '30react'
+                ? ['js', 'jsx']
+                : [config.language.short];
+
             const bodyText = body
               .slice(0, body.indexOf(mdCodeFence))
               .replace(/\r\n/g, '\n');
@@ -404,6 +416,7 @@ export class Extractor {
                 isBlog: config.isBlog,
                 assetPath: `/${pathSettings.staticAssetPath}`,
                 languageData,
+                languageKeys,
               }
             );
 

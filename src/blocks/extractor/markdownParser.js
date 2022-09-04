@@ -3,6 +3,7 @@ import remarkGfm from 'remark-gfm';
 import toHAST from 'mdast-util-to-hast';
 import hastToHTML from 'hast-util-to-html';
 import visit from 'unist-util-visit';
+import visitParents from 'unist-util-visit-parents';
 import Prism from 'prismjs';
 import getLoader from 'prismjs/dependencies';
 import prismComponents from 'prismjs/components';
@@ -140,27 +141,44 @@ export class MarkdownParser {
    * Parses markdown into HTML from a given markdown string, using remark + prismjs.
    * @param {string} markdown - The markdown string to be parsed.
    */
-  static parseMarkdown = (markdown, isText = false, languageData = []) => {
+  static parseMarkdown = (
+    markdown,
+    isText = false,
+    languageData = [],
+    referenceKeys = null
+  ) => {
     const ast = remarkParser.parse(markdown);
+
+    const languageObjects = {};
+
+    if (referenceKeys && referenceKeys.length > 0)
+      referenceKeys.forEach(key => {
+        const languageObject = [...languageData.values()].find(
+          l => l.shortCode === key
+        );
+        if (languageObject) languageObjects[key] = languageObject;
+      });
 
     // Highlight code blocks
     visit(ast, `code`, node => {
       const languageName = node.lang ? node.lang : `text`;
       node.type = `html`;
+
       const highlightedCode = MarkdownParser._highlightCode(
         languageName,
         node.value
       );
-      const languageStringLiteral =
+
+      const languageObject =
         isText && languageData && languageData.length
-          ? (
-              [...languageData.values()].find(
-                l => l.shortCode === languageName
-              ) || {
-                languageLiteral: '',
-              }
-            ).languageLiteral
-          : '';
+          ? [...languageData.values()].find(l => l.shortCode === languageName)
+          : null;
+      const languageStringLiteral = languageObject
+        ? languageObject.languageLiteral
+        : '';
+      if (languageObject && !languageObjects[languageName])
+        languageObjects[languageName] = languageObject;
+
       node.value = isText
         ? [
             `<div class="code-highlight mt-4" data-language="${languageName}">`,
@@ -172,10 +190,37 @@ export class MarkdownParser {
         : `${highlightedCode}`;
     });
 
+    const references = new Map(
+      Object.values(languageObjects)
+        .map(obj => obj.references)
+        .reduce((acc, val) => {
+          try {
+            return [...acc, ...val];
+          } catch (e) {
+            console.log(languageObjects);
+            console.log(val);
+            return acc;
+          }
+        }, [])
+    );
+
     // Highlight inline code blocks
-    visit(ast, `inlineCode`, node => {
+    visitParents(ast, `inlineCode`, (node, ancestors) => {
+      const text = node.value;
+      let newValue = `<code class="notranslate">${escapeHTML(text)}</code>`;
+
+      if (
+        references.size &&
+        !['link', 'heading'].includes(ancestors[ancestors.length - 1].type)
+      ) {
+        if (references.has(text)) {
+          newValue = `<a href="${references.get(
+            text
+          )}" target="_blank" rel="noopener noreferrer">${newValue}</a>`;
+        }
+      }
       node.type = `html`;
-      node.value = `<code class="notranslate">${escapeHTML(node.value)}</code>`;
+      node.value = newValue;
     });
 
     const htmlAst = toHAST(ast, { allowDangerousHtml: true });
@@ -184,13 +229,19 @@ export class MarkdownParser {
 
   static parseSegments = (
     { texts, codeBlocks },
-    { isBlog, assetPath, languageData }
+    { isBlog, assetPath, languageData, languageKeys }
   ) => {
     const result = {};
     Object.entries(texts).forEach(([key, value]) => {
       if (!value) return;
+
+      const referenceKeys = isBlog
+        ? null
+        : languageKeys.length
+        ? languageKeys
+        : [];
       result[`${key}Html`] = value.trim()
-        ? MarkdownParser.parseMarkdown(value, true, languageData)
+        ? MarkdownParser.parseMarkdown(value, true, languageData, referenceKeys)
         : '';
     });
     result.descriptionHtml = commonTransformers.reduce(
