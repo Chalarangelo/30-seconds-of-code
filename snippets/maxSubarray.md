@@ -1,6 +1,8 @@
 ---
 title: Maximum subarray
 tags: algorithm,math,array
+author: chalarangelo
+cover: blog_images/work-hard-computer.jpg
 expertise: intermediate
 firstSeen: 2022-09-07T05:00:00-04:00
 ---
