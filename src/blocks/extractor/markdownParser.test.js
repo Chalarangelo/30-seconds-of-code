@@ -18,6 +18,7 @@ describe('MarkdownParser', () => {
         isBlog: false,
         assetPath: '/assets',
         languageData: [],
+        languageKeys: [],
       }
     );
     blogResult = MarkdownParser.parseSegments(
@@ -32,6 +33,7 @@ describe('MarkdownParser', () => {
         isBlog: true,
         assetPath: '/assets',
         languageData: [],
+        languageKeys: [],
       }
     );
   });
