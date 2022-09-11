@@ -1,7 +1,7 @@
 ---
 title: "Tip: Convert a string to a boolean"
 shortTitle: String to boolean
-type: story
+type: tip
 tags: javascript,string,boolean,type
 expertise: beginner
 author: chalarangelo
