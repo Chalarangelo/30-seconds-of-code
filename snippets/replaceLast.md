@@ -1,5 +1,5 @@
 ---
-title: Replace last occuerence in string
+title: Replace last occurrence in string
 tags: string,regexp
 expertise: advanced
 author: chalarangelo
