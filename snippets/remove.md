@@ -14,7 +14,6 @@ Mutates an array by removing elements for which the given function returns `fals
 - The callback function is invoked with three arguments (value, index, array).
 
 ```js
-
 const remove = (arr, func) =>
   Array.isArray(arr)
     ? arr.filter(func).reduce((acc, val) => {

@@ -16,7 +16,6 @@ Gets the size of an array, object or string.
 - Split strings into array of characters with `String.prototype.split()` and return its length.
 
 ```js
-
 const size = val =>
   Array.isArray(val)
     ? val.length
