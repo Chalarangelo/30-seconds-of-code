@@ -129,7 +129,6 @@ class Graph {
 - Define an `outdegree()` method, which uses `Map.prototype.values()` and `Array.prototype.reduce()` to count the number of edges from the given node.
 
 ```js
-
 const g = new Graph();
 
 g.addNode('a');

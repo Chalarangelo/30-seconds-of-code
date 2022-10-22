@@ -167,7 +167,6 @@ class BinarySearchTree {
 - Define a `remove()` method, that removes the given `BinarySearchTreeNode` from the binary search tree, deleting any links to it and updating the binary search tree to retain its order.
 
 ```js
-
 const tree = new BinarySearchTree(30);
 
 tree.insert(10);
