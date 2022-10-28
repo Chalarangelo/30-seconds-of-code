@@ -68,7 +68,7 @@ const Meta = ({
     });
   }
 
-  if (typeof window !== 'undefined' && acceptsCookies) {
+  if (typeof window !== 'undefined') {
     scripts.push({
       async: true,
       key: 'gtag-id',
@@ -81,6 +81,11 @@ const Meta = ({
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+      gtag(
+        'consent',
+        'default',
+        ${JSON.stringify(settings.googleAnalytics.consent)}
+      );
       gtag(
         'config',
         '${settings.googleAnalytics.id}',
@@ -100,6 +105,19 @@ const Meta = ({
         }`,
       });
     }
+  }
+
+  if (acceptsCookies) {
+    scripts.push({
+      key: 'gtag-consent',
+      innerHTML: `
+      gtag(
+        'consent',
+        'update',
+        ${JSON.stringify(settings.googleAnalytics.consentGranted)}
+      );
+    `,
+    });
   }
 
   return (

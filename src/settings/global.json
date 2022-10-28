@@ -10,11 +10,19 @@
   "licenseUrl":"https://creativecommons.org/licenses/by/4.0/",
   "googleSiteVerification":"YX9mF-TxoHZGJ9SZ8XwvWgGR_KTcbH1uHul4iDklyr0",
   "googleAnalytics":{
-    "id":"UA-117141635-1",
+    "id":"G-75CH3J0T7L",
     "config":{
       "anonymize_ip":true,
       "cookie_expires":0,
       "send_page_view":false
+    },
+    "consent": {
+      "ad_storage":"denied",
+      "ads_data_redaction":"true",
+      "analytics_storage":"denied"
+    },
+    "consentGranted": {
+      "analytics_storage":"granted"
     }
   },
   "manifestCacheKey": "305c210420234555"
