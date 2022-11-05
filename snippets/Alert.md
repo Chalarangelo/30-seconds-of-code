@@ -60,7 +60,7 @@ Renders an alert component with `type` prop.
   font-size: 16px;
 }
 
-.alert .close:after {
+.alert .close::after {
   content: 'x';
 }
 ```

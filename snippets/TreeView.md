@@ -26,7 +26,7 @@ Renders a tree view of a JSON object or array with collapsible content.
   margin-left: 16px;
 }
 
-div.tree-element:before {
+div.tree-element::before {
   content: '';
   position: absolute;
   top: 24px;
