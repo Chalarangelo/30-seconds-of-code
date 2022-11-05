@@ -38,7 +38,7 @@ A hover effect where the gradient follows the mouse cursor.
   position: relative;
 }
 
-.mouse-cursor-gradient-tracking:before {
+.mouse-cursor-gradient-tracking::before {
   --size: 0;
   content: '';
   position: absolute;
@@ -51,7 +51,7 @@ A hover effect where the gradient follows the mouse cursor.
   transition: width 0.2s ease, height 0.2s ease;
 }
 
-.mouse-cursor-gradient-tracking:hover:before {
+.mouse-cursor-gradient-tracking:hover::before {
   --size: 200px;
 }
 ```

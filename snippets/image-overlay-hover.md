@@ -9,7 +9,7 @@ lastUpdated: 2021-10-11T18:44:51+03:00
 
 Displays an image overlay effect on hover.
 
-- Use the `:before` and `:after` pseudo-elements for the top and bottom bars of the overlay respectively. Set their `opacity`, `transform` and `transition` to produce the desired effect.
+- Use the `::before` and `::after` pseudo-elements for the top and bottom bars of the overlay respectively. Set their `opacity`, `transform` and `transition` to produce the desired effect.
 - Use the `<figcaption>` for the text of the overlay. Set `display: flex`, `flex-direction: column` and `justify-content: center` to center the text into the image.
 - Use the `:hover` pseudo-selector to update the `opacity` and `transform` of all the elements and display the overlay.
 
@@ -41,8 +41,8 @@ Displays an image overlay effect on hover.
   transition: all 0.45s ease;
 }
 
-.hover-img:before,
-.hover-img:after {
+.hover-img::before,
+.hover-img::after {
   background-color: rgba(0, 0, 0, 0.5);
   border-top: 32px solid rgba(0, 0, 0, 0.5);
   border-bottom: 32px solid rgba(0, 0, 0, 0.5);
@@ -86,8 +86,8 @@ Displays an image overlay effect on hover.
   text-transform: uppercase;
 }
 
-.hover-img:hover:before,
-.hover-img:hover:after {
+.hover-img:hover::before,
+.hover-img:hover::after {
   transform: scale(1);
   opacity: 1;
 }

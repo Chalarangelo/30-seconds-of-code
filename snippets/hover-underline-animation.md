@@ -10,7 +10,7 @@ lastUpdated: 2021-10-11T18:44:51+03:00
 Creates an animated underline effect when the user hovers over the text.
 
 - Use `display: inline-block` to make the underline span just the width of the text content.
-- Use the `:after` pseudo-element with `width: 100%` and `position: absolute` to place it below the content.
+- Use the `::after` pseudo-element with `width: 100%` and `position: absolute` to place it below the content.
 - Use `transform: scaleX(0)` to initially hide the pseudo-element.
 - Use the `:hover` pseudo-class selector to apply `transform: scaleX(1)` and display the pseudo-element on hover.
 - Animate `transform` using `transform-origin: left` and an appropriate `transition`.
@@ -27,7 +27,7 @@ Creates an animated underline effect when the user hovers over the text.
   color: #0087ca;
 }
 
-.hover-underline-animation:after {
+.hover-underline-animation::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -40,7 +40,7 @@ Creates an animated underline effect when the user hovers over the text.
   transition: transform 0.25s ease-out;
 }
 
-.hover-underline-animation:hover:after {
+.hover-underline-animation:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }

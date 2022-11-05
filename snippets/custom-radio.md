@@ -11,7 +11,7 @@ Creates a styled radio button with animation on state change.
 
 - Create a `.radio-container` and use flexbox to create the appropriate layout for the radio buttons.
 - Reset the styles on the `<input>` and use it to create the outline and background of the radio button.
-- Use the `:before` element to create the inner circle of the radio button.
+- Use the `::before` element to create the inner circle of the radio button.
 - Use `transform: scale(1)` and a CSS transition to create an animation effect on state change.
 
 ```html
@@ -53,7 +53,7 @@ Creates a styled radio button with animation on state change.
   transition: all 0.3s ease;
 }
 
-.radio-input:before {
+.radio-input::before {
   content: "";
   width: 6px;
   height: 6px;
@@ -68,7 +68,7 @@ Creates a styled radio button with animation on state change.
   border-color: #0077ff;
 }
 
-.radio-input:checked:before {
+.radio-input:checked::before {
   transform: scale(1);
 }
 

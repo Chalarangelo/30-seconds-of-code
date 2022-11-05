@@ -36,7 +36,7 @@ Truncates text that is longer than one line.
   color: #333;
 }
 
-.truncate-text-multiline:after {
+.truncate-text-multiline::after {
   content: '';
   position: absolute;
   bottom: 0;

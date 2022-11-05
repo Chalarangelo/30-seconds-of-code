@@ -11,7 +11,7 @@ lastUpdated: 2021-05-24T16:03:40+03:00
 Creates a typewriter effect animation.
 
 - Define two animations, `typing` to animate the characters and `blink` to animate the caret.
-- Use the `:after` pseudo-element to add the caret to the container element.
+- Use the `::after` pseudo-element to add the caret to the container element.
 - Use JavaScript to set the text for the inner element and set the `--characters` variable containing the character count. This variable is used to animate the text.
 - Use `white-space: nowrap` and `overflow: hidden` to make content invisible as necessary.
 
@@ -35,7 +35,7 @@ Creates a typewriter effect animation.
   overflow: hidden;
 }
 
-.typewriter-effect:after {
+.typewriter-effect::after {
   content: " |";
   animation: blink 1s infinite;
   animation-timing-function: step-end;
