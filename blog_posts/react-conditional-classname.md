@@ -13,7 +13,7 @@ lastUpdated: 2021-11-07T16:34:37+03:00
 
 When developing React components, you often need to conditionally apply a `className` attribute to one or more elements. Sometimes, you will have two or more possible values depending on a condition. But there are also times that you might apply a `className` based on a condition or leave it completely empty otherwise.
 
-There is a correct way to handle a conditional empty className and an incorrect one. Surprisingly, the incorrect way is pretty common and examples of it can be found all around the web. Consider the following code:
+There is a correct way to handle a conditional empty `className` and an incorrect one. Surprisingly, the incorrect way is pretty common and examples of it can be found all around the web. Consider the following code:
 
 ```jsx
 const MyComponent = ({ enabled }) => {

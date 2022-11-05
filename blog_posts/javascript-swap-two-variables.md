@@ -23,7 +23,7 @@ a = b;
 b = tmp;
 ```
 
-While this approach still works, there are more elegant and less verbose options available to us nowadays. For example, JavaScript ES6 introduced destructuring assignments, allowing individual array items to be assigned to variables in a single statement. Here's what that looks like:
+While this approach still works, there are more elegant and less verbose options available to us nowadays. For example, JavaScript ES6 introduced **destructuring assignments**, allowing individual array items to be assigned to variables in a single statement. Here's what that looks like:
 
 ```js
 const [x, y] = [1, 2];

@@ -12,7 +12,7 @@ firstSeen: 2021-11-21T05:00:00-04:00
 
 ### Object-oriented programming
 
-Both classical and prototypal inheritance are object-oriented programming paradigms. Objects in object-oriented programming are abstractions that encapsulate the properties of an entity. This is known as abstraction.
+Both classical and prototypal inheritance are **object-oriented programming paradigms**. Objects in object-oriented programming are abstractions that encapsulate the properties of an entity. This is known as abstraction.
 
 When dealing with multiple levels of abstraction, each level is more general or more specific. The more general abstraction of a more specific abstraction is called a generalization.
 

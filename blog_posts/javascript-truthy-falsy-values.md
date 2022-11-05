@@ -10,7 +10,7 @@ excerpt: JavaScript uses type coercion in Boolean contexts, resulting in truthy 
 firstSeen: 2021-09-12T05:00:00-04:00
 ---
 
-JavaScript uses type coercion (implicit conversion of values from one data type to another) in Boolean contexts, such as conditionals. This means that values are considered either truthy (evaluate to `true`) or falsy (evaluate to `false`) depending on how they are evaluated in a Boolean context.
+JavaScript uses **type coercion** (implicit conversion of values from one data type to another) in Boolean contexts, such as conditionals. This means that values are considered either truthy (evaluate to `true`) or falsy (evaluate to `false`) depending on how they are evaluated in a Boolean context.
 
 There are 6 values that are considered **falsy** in JavaScript:
 

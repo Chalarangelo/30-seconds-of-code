@@ -9,7 +9,7 @@ excerpt: A short, opinionated CSS reset to make your websites look great everywh
 firstSeen: 2022-10-16T05:00:00-04:00
 ---
 
-Browsers nowadays are much better at presenting HTML in a consistent manner, making CSS resets of the past largely unnecessary. However, default browser styles are not particularly great in most cases, which is why there are tons of CSS resets out there. Drawing inspiration from some of them, here's my opinionated CSS reset, along with an explanation of why I chose to include each rule.
+Browsers nowadays are much better at presenting HTML in a consistent manner, making CSS resets of the past largely unnecessary. However, **default browser styles are not particularly great** in most cases, which is why there are tons of CSS resets out there. Drawing inspiration from some of them, here's my opinionated CSS reset, along with an explanation of why I chose to include each rule.
 
 ```css
 html {

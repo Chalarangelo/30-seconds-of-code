@@ -12,7 +12,7 @@ firstSeen: 2022-08-05T05:00:00-04:00
 
 When working with Python strings, a pretty common question is how does one check if a string is empty. There's a straightforward answer to this that takes advantage of the truth value of strings.
 
-In Python, any object can be tested for truth value, including strings. In this context, strings are considered truthy if they are non-empty, meaning they contain at least one character. Thus, simply using the `not` operator, you can check if a string is empty.
+In Python, any object can be tested for truth value, including strings. In this context, **strings are considered truthy if they are non-empty**, meaning they contain at least one character. Thus, simply using the `not` operator, you can check if a string is empty.
 
 ```py
 empty_string = ''

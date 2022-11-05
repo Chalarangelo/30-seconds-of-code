@@ -13,11 +13,11 @@ lastUpdated: 2021-09-28T19:35:49+03:00
 
 ### Flexbox
 
-Using flexbox to vertically and horizontally center content is usually the preferred method. All it takes is three lines of code in the container element to set `display: flex` and then center the child element vertically and horizontally using `align-items: center` and `justify-content: center` respectively. You can view the [Flexbox centering snippet](/css/s/flexbox-centering) for the code and examples.
+Using flexbox to vertically and horizontally center content is usually the **preferred method**. All it takes is three lines of code in the container element to set `display: flex` and then center the child element vertically and horizontally using `align-items: center` and `justify-content: center` respectively. You can view the [Flexbox centering snippet](/css/s/flexbox-centering) for the code and examples.
 
 ### Grid
 
-Using the grid module is very similar to flexbox and also a common technique, especially if you are already using grid in your layout. The only difference from the previous technique is the `display` which is set to `grid` instead. You can view the [Grid centering snippet](/css/s/grid-centering) for the code and examples.
+Using the grid module is very similar to flexbox and also a common technique, especially if you are **already using grid in your layout**. The only difference from the previous technique is the `display` which is set to `grid` instead. You can view the [Grid centering snippet](/css/s/grid-centering) for the code and examples.
 
 ### Transform
 
@@ -25,4 +25,4 @@ Transform centering uses, as the name implies, CSS transforms to center an eleme
 
 ### Table
 
-Last but not least, table centering is an older technique which you might favor when working with older browsers. It depends on the use of `display: table` in the container element. This allows the child element to use `display: table-cell` in combination with `text-align: center` and `vertical-align: middle` to center itself horizontally and vertically. You can view the [Display table centering snippet](/css/s/display-table-centering) for the code and examples.
+Last but not least, table centering is an older technique which you might favor when working with **older browsers**. It depends on the use of `display: table` in the container element. This allows the child element to use `display: table-cell` in combination with `text-align: center` and `vertical-align: middle` to center itself horizontally and vertically. You can view the [Display table centering snippet](/css/s/display-table-centering) for the code and examples.

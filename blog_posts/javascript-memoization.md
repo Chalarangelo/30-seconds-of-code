@@ -11,7 +11,7 @@ firstSeen: 2020-02-27T16:23:25+02:00
 lastUpdated: 2021-11-07T16:34:37+03:00
 ---
 
-Memoization is a commonly used technique that can help speed up your code significantly. This technique relies on a cache to store results for previously completed units of work. The purpose of the cache is to avoid performing the same work more than once, speeding up subsequent calls of time-consuming functions. Based on this definition, we can easily extract some criteria that can help us decide when to use memoization in our code:
+Memoization is a commonly used technique that can help speed up your code significantly. This technique relies on a **cache** to store results for previously completed units of work. The purpose of the cache is to **avoid performing the same work more than once**, speeding up subsequent calls of time-consuming functions. Based on this definition, we can easily extract some criteria that can help us decide when to use memoization in our code:
 
 - Memoization is useful mainly in speeding up slow-performing, costly or time-consuming function calls
 - Memoization speeds up subsequent calls, so it's best used when you anticipate multiple calls of the same function under the same circumstances

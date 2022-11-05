@@ -1,7 +1,7 @@
 ---
 title: "Tip: Perfect nested border radius in CSS"
 shortTitle: Perfect nested border radius in CSS
-type: story
+type: tip
 tags: css,visual
 expertise: beginner
 author: chalarangelo
@@ -10,7 +10,7 @@ excerpt: Nesting elements with rounded borders can look very wrong if not done c
 firstSeen: 2022-04-03T05:00:00-04:00
 ---
 
-Nesting elements with rounded borders can look very wrong if not done correctly. Luckily, there's a simple math trick to make it look right. All you need to do is calculate the border radius of one of the elements and the distance between them. The border radius of the outer element should be equal to the sum of the border radius of the inner element and the distance between the two elements. This can be mathematically expressed as `innerRadius + distance = outerRadius` or more tersely `R1 + D = R2`.
+Nesting elements with rounded borders can look very wrong if not done correctly. Luckily, there's a simple math trick to make it look right. All you need to do is **calculate the border radius of one of the elements and the distance between them**. The border radius of the outer element should be equal to the sum of the border radius of the inner element and the distance between the two elements. This can be mathematically expressed as `innerRadius + distance = outerRadius` or more tersely `R1 + D = R2`.
 
 ![Nested border radius formula](./blog_images/border-radius.png)
 

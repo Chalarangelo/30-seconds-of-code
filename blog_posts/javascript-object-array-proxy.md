@@ -15,7 +15,7 @@ The other day, I stumbled upon some code where I needed to handle an object as a
 
 So I thought I could create some kind of wrapper that would take an object and define some array-like behavior for it. I was mainly in need of `Array.prototype.map()`, `Array.prototype.find()`, `Array.prototype.includes()` and `Array.prototype.length`. All of this functionality was pretty straightforward to create using  `Object` methods. The only tricky part, so to speak, was getting the object to behave as an iterable, which required using the `Symbol.iterator` and a generator function.
 
-Injecting the new functionality into an object could be as simple as adding the methods to it. The downside of this approach is that  they would be part of the actual object, which can be problematic. It also doesn't help that this is not very reusable if we want to apply this over a handful of objects.
+Injecting the new functionality into an object could be as simple as adding the methods to it. The downside of this approach is that they would be part of the actual object, which can be problematic. It also doesn't help that this is not very reusable if we want to apply this over a handful of objects.
 
 Enter the [Proxy object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy), one of the lesser known tools in a JavaScript developer's tool belt, yet a very powerful one. It's used to intercept certain operations for an object, such as property lookup, assignment etc. In this scenario, it can neatly wrap the required functionality into a function that creates a proxy around the object.
 

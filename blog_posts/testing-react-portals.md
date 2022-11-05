@@ -12,7 +12,7 @@ firstSeen: 2022-03-13T05:00:00-04:00
 
 Testing React components can get pretty complicated, especially when dealing with portals. While they seem intimidating, what they are in essence is a way to render a component in a different place in the DOM. Apart from that, when writing tests, one should avoid testing framework internals. This obviously applies to React internals as well.
 
-Putting these two points together, all we really care about when testing React portals is if the portalized output is correct. Based on that, mocking portals shouldn't be all that hard. We just need to mock `ReactDOM.createPortal()` to render the input element in place. Here's what that looks like in Jest:
+Putting these two points together, all we really care about when testing React portals is if the **portalized output** is correct. Based on that, mocking portals shouldn't be all that hard. We just need to mock `ReactDOM.createPortal()` to render the input element in place. Here's what that looks like in Jest:
 
 ```jsx
 describe('MyComponent', () => {
