@@ -11,7 +11,7 @@ firstSeen: 2022-11-04T05:00:00-04:00
 Displays an error message when an image fails to load.
 
 - Apply styles to the `img` element as if it was a text container.
-- Use the `:before` and `:after` pseudo-elements to display an error message and the image URL. These elements will only be displayed if the image fails to load.
+- Use the `::before` and `::after` pseudo-elements to display an error message and the image URL. These elements will only be displayed if the image fails to load.
 
 ```html
 <img src="https://nowhere.to.be/found.jpg" />
@@ -29,13 +29,13 @@ img {
   width: 100%;
 }
 
-img:before {
+img::before {
   content: "Sorry, this image is unavailable.";
   display: block;
   margin-bottom: 8px;
 }
 
-img:after {
+img::after {
   content: "(url: " attr(src) ")";
   display: block;
   font-size: 12px;

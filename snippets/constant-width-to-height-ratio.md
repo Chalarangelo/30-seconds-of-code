@@ -9,7 +9,7 @@ lastUpdated: 2020-12-30T15:37:37+02:00
 
 Ensures that an element with variable `width` will retain a proportionate `height` value.
 
-- Apply `padding-top` on the `:before` pseudo-element, making the `height` of the element equal to a percentage of its `width`.
+- Apply `padding-top` on the `::before` pseudo-element, making the `height` of the element equal to a percentage of its `width`.
 - The proportion of `height` to `width` can be altered as necessary. For example a `padding-top` of `100%` will create a responsive square (1:1 ratio).
 
 ```html
@@ -22,13 +22,13 @@ Ensures that an element with variable `width` will retain a proportionate `heigh
   width: 50%;
 }
 
-.constant-width-to-height-ratio:before {
+.constant-width-to-height-ratio::before {
   content: '';
   padding-top: 100%;
   float: left;
 }
 
-.constant-width-to-height-ratio:after {
+.constant-width-to-height-ratio::after {
   content: '';
   display: block;
   clear: both;

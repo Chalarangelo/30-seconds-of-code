@@ -10,7 +10,7 @@ lastUpdated: 2020-12-30T15:37:37+02:00
 Creates a toggle switch with CSS only.
 
 - Use the `for` attribute to associate the `<label>` with the checkbox `<input>` element.
-- Use the `:after` pseudo-element of the `<label>` to create a circular knob for the switch.
+- Use the `::after` pseudo-element of the `<label>` to create a circular knob for the switch.
 - Use the `:checked` pseudo-class selector to change the position of the knob, using `transform: translateX(20px)` and the `background-color` of the switch.
 - Use `position: absolute` and `left: -9999px` to visually hide the `<input>` element.
 
@@ -30,7 +30,7 @@ Creates a toggle switch with CSS only.
   transition: all 0.3s;
 }
 
-.switch:after {
+.switch::after {
   content: '';
   position: absolute;
   width: 18px;
@@ -42,7 +42,7 @@ Creates a toggle switch with CSS only.
   transition: all 0.3s;
 }
 
-input[type='checkbox']:checked + .switch:after {
+input[type='checkbox']:checked + .switch::after {
   transform: translateX(20px);
 }
 

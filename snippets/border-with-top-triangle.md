@@ -9,10 +9,10 @@ lastUpdated: 2021-01-07T23:52:15+02:00
 
 Creates a content container with a triangle at the top.
 
-- Use the `:before` and `:after` pseudo-elements to create two triangles.
+- Use the `::before` and `::after` pseudo-elements to create two triangles.
 - The colors of the two triangles should be the same as the container's `border-color` and the container's `background-color` respectively.
-- The `border-width` of the one triangle (`:before`) should be `1px` wider than the other one (`:after`), in order to act as the border.
-- The smaller triangle (`:after`) should be `1px` to the right of the larger triangle (`:before`) to allow for its left border to be shown.
+- The `border-width` of the one triangle (`::before`) should be `1px` wider than the other one (`::after`), in order to act as the border.
+- The smaller triangle (`::after`) should be `1px` to the right of the larger triangle (`::before`) to allow for its left border to be shown.
 
 ```html
 <div class="container">Border with top triangle</div>
@@ -27,8 +27,8 @@ Creates a content container with a triangle at the top.
   margin-top: 20px;
 }
 
-.container:before,
-.container:after {
+.container::before,
+.container::after {
   content: '';
   position: absolute;
   bottom: 100%;
@@ -37,7 +37,7 @@ Creates a content container with a triangle at the top.
   border-bottom-color: #dddddd;
 }
 
-.container:after {
+.container::after {
   left: 20px;
   border: 10px solid transparent;
   border-bottom-color: #ffffff;

@@ -9,7 +9,7 @@ lastUpdated: 2021-05-24T15:28:52+03:00
 
 Creates a border animation on hover.
 
-- Use the `:before` and `:after` pseudo-elements to create two boxes `24px` wide opposite each other above and below the box.
+- Use the `::before` and `::after` pseudo-elements to create two boxes `24px` wide opposite each other above and below the box.
 - Use the `:hover` pseudo-class to extend the `width` of those elements to `100%` on hover and animate the change using `transition`.
 
 ```html
@@ -26,8 +26,8 @@ Creates a border animation on hover.
   position: relative;
 }
 
-.animated-border-button:before,
-.animated-border-button:after {
+.animated-border-button::before,
+.animated-border-button::after {
   border: 0 solid transparent;
   transition: all 0.3s;
   content: '';
@@ -36,20 +36,20 @@ Creates a border animation on hover.
   width: 24px;
 }
 
-.animated-border-button:before {
+.animated-border-button::before {
   border-top: 2px solid #263059;
   right: 0;
   top: -4px;
 }
 
-.animated-border-button:after {
+.animated-border-button::after {
   border-bottom: 2px solid #263059;
   bottom: -4px;
   left: 0;
 }
 
-.animated-border-button:hover:before,
-.animated-border-button:hover:after {
+.animated-border-button:hover::before,
+.animated-border-button:hover::after {
   width: 100%;
 }
 ```

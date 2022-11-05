@@ -9,7 +9,7 @@ lastUpdated: 2021-10-11T18:44:51+03:00
 
 Creates a custom hover and focus effect for navigation items, using CSS transformations.
 
-- Use the `:before` pseudo-element at the list item anchor to create a hover effect. Hide it using `transform: scale(0)`.
+- Use the `::before` pseudo-element at the list item anchor to create a hover effect. Hide it using `transform: scale(0)`.
 - Use the `:hover` and `:focus` pseudo-class selectors to transition the pseudo-element to `transform: scale(1)` and show its colored background.
 - Prevent the pseudo-element from covering the anchor element by using `z-index`.
 
@@ -45,7 +45,7 @@ Creates a custom hover and focus effect for navigation items, using CSS transfor
   z-index: 0;
 }
 
-li a:before {
+li a::before {
   position: absolute;
   content: "";
   width: 100%;
@@ -58,8 +58,8 @@ li a:before {
   transition: transform 0.5s ease-in-out;
 }
 
-li a:hover:before,
-li a:focus:before {
+li a:hover::before,
+li a:focus::before {
   transform: scale(1);
 }
 ```
