@@ -10,9 +10,9 @@ excerpt: How JavaScript handles passing data is a source of confusion and bugs f
 firstSeen: 2021-12-05T05:00:00-04:00
 ---
 
-JavaScript is always pass-by-value. This means everything in JavaScript is a value type and function arguments are always passed by value. That being said, object types are a bit more confusing.
+JavaScript is always **pass-by-value**. This means everything in JavaScript is a value type and function arguments are always passed by value. That being said, object types are a bit more confusing.
 
-The confusion lies in the fact that object types are reference types which are passed by value. As weird as this sounds, a reference to an object is passed to a function by value. The subtle difference here lies in the fact that an object reference passed by value is not the same as passing an object by reference.
+The confusion lies in the fact that **object types are reference types** which are passed by value. As weird as this sounds, a reference to an object is passed to a function by value. The subtle difference here lies in the fact that an object reference passed by value is not the same as passing an object by reference.
 
 Simply put, changes to the object inside the function will affect the original object, as they both refer to the same object. However, reassigning the value of the variable holding the object originally will not affect the object referenced by the function. Let me demonstrate this with an example:
 

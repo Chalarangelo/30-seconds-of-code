@@ -11,7 +11,7 @@ firstSeen: 2020-04-14T16:19:56+03:00
 lastUpdated: 2021-06-12T19:30:41+03:00
 ---
 
-JavaScript's primitive data types, such as numbers, strings, null, undefined and booleans are immutable, meaning their value cannot change once created. However, objects and arrays are mutable, allowing their value to be altered after creation. What this means in practice is that primitives are passed by value, whereas objects and arrays are passed by reference. Consider the following example:
+JavaScript's primitive data types, such as numbers, strings, null, undefined and booleans are immutable, meaning their value cannot change once created. However, **objects and arrays are mutable**, allowing their value to be altered after creation. What this means in practice is that primitives are passed by value, whereas objects and arrays are **passed by reference**. Consider the following example:
 
 ```js
 let str = 'Hello';
@@ -39,7 +39,7 @@ clone.b = 4;
 // obj = { a: 1, b: 2}, otherClone = { a: 1, b: 6 }
 ```
 
-Both of these solutions showcase an example of shallow cloning, as they will work for the outer (shallow) object, but fail if we have nested (deep) objects which will ultimately be passed by reference. As usual, there are a few approaches to this problem, the simpler of which is using `JSON.stringify()` and `JSON.parse()` to deal with the situation:
+Both of these solutions showcase an example of **shallow cloning**, as they will work for the outer (shallow) object, but fail if we have nested (deep) objects which will ultimately be passed by reference. As usual, there are a few approaches to this problem, the simpler of which is using `JSON.stringify()` and `JSON.parse()` to deal with the situation:
 
 ```js
 let obj = { a: 1, b: { c: 2 } };

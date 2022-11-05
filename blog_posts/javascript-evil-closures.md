@@ -16,7 +16,7 @@ I strongly recommend you read the [previous article on closures](/articles/s/jav
 
 ### Hidden state
 
-The main argument against closures is that of hidden state. Hidden state refers to obscuring the state of an object or, in this case, a function. The argument is that internal mutable state can create unpredictable behavior and unexpected results. Due to this, it's often said that hidden state is the root of all evil when it comes to programming.
+The main argument against closures is that of hidden state. Hidden state refers to obscuring the state of an object or, in this case, a function. The argument is that **internal mutable state** can create unpredictable behavior and unexpected results. Due to this, it's often said that hidden state is the root of all evil when it comes to programming.
 
 While the argument in itself has some merit, I don't much like the generalization. There are perfectly valid cases where hidden state is expected, even practically a necessity. However, it's true that hidden state can create bugs and unmaintainable code.
 
@@ -43,13 +43,13 @@ counter.reset(); // 5
 
 In this scenario, the `initCounter` function returns an object that contains hidden mutable state in the form of the `value` variable. Obviously, this is a very simple example, but `counter.get()` or `counter.increment()` in isolation would be considered non-deterministic expressions. There is no way to know the result of a method call like that without analyzing the surrounding code.
 
-While this is not uncommon, it can get more complicated when shared state comes into play or many pieces of code are interacting with one another. The common remedy to this issue is to use functional programming and refactor the hidden mutable state into an argument or a shared global variable.
+While this is not uncommon, it can get more complicated when shared state comes into play or many pieces of code are interacting with one another. The common remedy to this issue is to use **functional programming** and refactor the hidden mutable state into an argument or a shared global variable.
 
 ### Access to context
 
-Not all closures are created equal. In fact, there are perfectly valid use-cases of closures that can make life a lot easier. For example, accessing shared constants should be considered pretty safe. After all, if you want truly pure functions you shouldn't even access globals and web APIs. This would be pretty impractical, as you would have to pass each global and API as an argument to the function.
+Not all closures are created equal. In fact, there are perfectly valid use-cases of closures that can make life a lot easier. For example, **accessing shared constants** should be considered pretty safe. After all, if you want truly pure functions you shouldn't even access globals and web APIs. This would be pretty impractical, as you would have to pass each global and API as an argument to the function.
 
-Although reasonably safe, it's important to ensure that constants are initialized before being used and explicitly throw an error, if not. Additionally, adequate documentation of such closures will minimize friction and make sure other developers understand what's going on. Finally, providing an escape hatch, usually in the form of default arguments that can be overridden, should be considered if possible.
+Although reasonably safe, it's important to ensure that constants are initialized before being used and explicitly throw an error, if not. Additionally, adequate documentation of such closures will minimize friction and make sure other developers understand what's going on. Finally, providing an escape hatch, usually in the form of **default arguments** that can be overridden, should be considered if possible.
 
 Here's an example of a simple random number generator, following these rules:
 

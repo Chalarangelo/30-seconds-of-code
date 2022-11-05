@@ -10,7 +10,7 @@ firstSeen: 2020-01-30T12:35:19+02:00
 lastUpdated: 2021-11-06T20:51:47+03:00
 ---
 
-I am by no means an expert React engineer, but I have a couple years of experience under my belt. React is a powerful library for building user interfaces, but it's also quite fragile at places. A common bug I have encountered is caused by direct DOM manipulation in combination with React. This is sort of an anti-pattern, as it can break your entire React application under the right circumstances and it's hard to debug.
+I am by no means an expert React engineer, but I have a couple years of experience under my belt. React is a powerful library for building user interfaces, but it's also quite fragile at places. A common bug I have encountered is caused by **direct DOM manipulation in combination with React**. This is sort of an anti-pattern, as it can break your entire React application under the right circumstances and it's hard to debug.
 
 Here's [a minimal example](https://codepen.io/chalarangelo/pen/jOEojVJ?editors=0010) of how to reproduce this bug, before we dive into explaining the problem and how to fix it:
 
@@ -43,7 +43,7 @@ This is a pretty simple React application, with a container, two buttons and a s
 Uncaught DOMException: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.
 ```
 
-This might still be cryptic, so let me explain what's going on. React uses its own representation of the DOM, called a virtual DOM, in order to figure out what to render. Usually, the virtual DOM will match the current DOM structure and React will process changes in props and state. It will then update the virtual DOM and then batch and send the necessary changes to the real DOM.
+This might still be cryptic, so let me explain what's going on. React uses its own representation of the DOM, called a **virtual DOM**, in order to figure out what to render. Usually, the virtual DOM will match the current DOM structure and React will process changes in props and state. It will then update the virtual DOM and then batch and send the necessary changes to the real DOM.
 
 However, in this case React's virtual DOM and the real DOM are different, because of `destroyElement()` removing the `#my-div` element. As a result, when React tries to update the real DOM with the changes from the virtual DOM, the element cannot be removed as it doesn't exist anymore. This results in the above exception being thrown and your application breaking.
 

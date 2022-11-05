@@ -12,7 +12,7 @@ firstSeen: 2022-11-13T05:00:00-04:00
 
 Counting the frequency of unique values in an array is reasonably easy, as demonstrated in the [frequencies snippet](/js/s/frequencies). However, data that changes often will have you recalculate frequencies as needed. This can become tedious and inefficient, especially if you only need to keep track of the frequencies and have no need for the original array.
 
-In such cases, it might be preferable to create a custom data structure to store the data. This data structure will be able to keep track of the frequencies of the values it contains and update them as needed. Here's how you can implement such a data structure:
+In such cases, it might be preferable to create a **custom data structure** to store the data. This data structure will be able to **keep track of the frequencies of the values** it contains and update them as needed. Here's how you can implement such a data structure:
 
 ```js
 class FrequencyMap extends Map {

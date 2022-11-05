@@ -11,7 +11,7 @@ firstSeen: 2020-02-25T16:02:03+02:00
 lastUpdated: 2021-09-28T20:11:55+03:00
 ---
 
-A singleton is an object-oriented software design pattern which ensures a given class is only ever instantiated once. It can be useful in many different situations, such as creating global objects shared across an application. While JavaScript supports object-oriented programming, it doesn't provide many simple options to implement this pattern.
+A singleton is an **object-oriented software design pattern** which ensures a given class is only ever instantiated once. It can be useful in many different situations, such as creating global objects shared across an application. While JavaScript supports object-oriented programming, it doesn't provide many simple options to implement this pattern.
 
 The most flexible, albeit somewhat advanced, approach involves using the [Proxy object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy). The Proxy object is used to define so-called traps. Traps are methods that allow the definition of custom behavior for certain operations such as property lookup, assignment etc. The singleton pattern dictates that the given class can only have one instance. This means that the most useful trap is `handler.construct()`, the trap for the `new` operator.
 

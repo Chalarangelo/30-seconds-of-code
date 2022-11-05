@@ -25,7 +25,7 @@ obj.c = 3;
 
 ### Square bracket notation
 
-Similar to dot notation, square bracket notation comes in handy when dealing with dynamic keys, but can also work with static keys. Apart from that, it's exactly the same as dot notation both in functionality and performance.
+Similar to dot notation, square bracket notation comes in handy when dealing with **dynamic keys**, but can also work with static keys. Apart from that, it's exactly the same as dot notation both in functionality and performance.
 
 ```js
 const obj = { a: 1 };
@@ -37,7 +37,7 @@ obj['c'] = 3;
 
 ### Object.assign()
 
-`Object.assign()` is slightly different than the previous two options. It can be used to add multiple properties to an object at once and it can also shallow merge two or more objects. It is not as performant, however, so it should only be used when necessary.
+`Object.assign()` is slightly different than the previous two options. It can be used to add multiple properties to an object at once and it can also **shallow merge** two or more objects. It is not as performant, however, so it should only be used when necessary.
 
 ```js
 const obj = { a: 1 };
@@ -47,7 +47,7 @@ Object.assign(obj, { b: 2 }, { c: 3 });
 
 ### Object.defineProperty()
 
-Another, less-common, way to add a key-value pair to an object is to use `Object.defineProperty()`. This is the lest performant way to add a key-value pair to an object, but it allows the new property to be precisely defined. This function accepts either a data or accessor descriptor as its second argument, allowing the behavior of the new property to be customized as desired. Bear in mind that you can add multiple properties at once, using `Object.defineProperties()`.
+Another, less-common, way to add a key-value pair to an object is to use `Object.defineProperty()`. This is the lest performant way to add a key-value pair to an object, but it allows the new property to be **precisely defined**. This function accepts either a data or accessor descriptor as its second argument, allowing the behavior of the new property to be customized as desired. Bear in mind that you can add multiple properties at once, using `Object.defineProperties()`.
 
 ```js
 const obj = { a: 1 };
@@ -68,7 +68,7 @@ Object.defineProperty(obj, 'c', {
 
 ### Object spread operator
 
-Last but not least, there's the object spread operator (`...`). Contrary to previous methods, this one doesn't mutate the original object, but instead returns a new object with the added properties. As expected, the performance of this approach is significantly worse than previous ones, due to the need to create a new object.
+Last but not least, there's the object spread operator (`...`). Contrary to previous methods, this one **doesn't mutate the original object**, but instead returns a new object with the added properties. As expected, the performance of this approach is significantly worse than previous ones, due to the need to create a new object.
 
 ```js
 const obj = { a: 1 };
