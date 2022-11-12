@@ -45,8 +45,8 @@ Creates a two sided card which rotates on hover.
   top: 0;
   left: 0;
   width: 80%;
-  padding:2rem;
-  color: white
+  padding: 2rem;
+  color: white;
 }
 
 .card-side.back {
