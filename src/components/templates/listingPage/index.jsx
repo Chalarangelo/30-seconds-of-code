@@ -32,7 +32,13 @@ const ListingPage = ({
     <Shell>
       <div className='snippet-list-header'>
         <div className='snippet-list-splash-image my-2 mx-3.5 f-center'>
-          <Image src={listingImage} alt='' height='360' width='360' />
+          <Image
+            src={listingImage}
+            alt=''
+            height='360'
+            width='360'
+            fetchpriority='high'
+          />
         </div>
         <div>
           <PageTitle>{listingName}</PageTitle>
