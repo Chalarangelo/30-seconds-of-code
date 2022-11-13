@@ -12,7 +12,6 @@ export const build = async () => {
     Application.PageWriter.write(),
     Application.SitemapWriter.write(),
     Application.FeedWriter.write(),
-    Application.ChirpWriter.write(),
   ]);
 };
 
