@@ -10,7 +10,6 @@ import {
   convertToSeoSlug,
   convertToValidId,
   addTrailingSlashToSlug,
-  truncateString,
 } from './string';
 
 describe('capitalize', () => {
@@ -142,15 +141,5 @@ describe('addTrailingSlashToSlug', () => {
     expect(addTrailingSlashToSlug(`${slug}${params}`)).toBe(
       `${slug}/${params}`
     );
-  });
-});
-
-describe('truncateString', () => {
-  it('returns the string intact if it is shorter than the specified length', () => {
-    expect(truncateString('short string', 20)).toBe('short string');
-  });
-
-  it('truncates the string if it is longer than the specified length', () => {
-    expect(truncateString('123456789', 5)).toBe('12...');
   });
 });

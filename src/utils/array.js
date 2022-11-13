@@ -15,12 +15,6 @@ export const chunk = (arr, size) =>
 export const uniqueElements = arr => [...new Set(arr)];
 
 /**
- * Gets a random element from an array.
- * @param {array} arr - The array to be sampled.
- */
-export const sample = arr => arr[Math.floor(Math.random() * arr.length)];
-
-/**
  * Randomizes the order of the values of an array, returning a new array.
  * @param {array} arr - The array to be shuffled.
  * @returns {array} - The shuffled array

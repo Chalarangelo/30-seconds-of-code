@@ -1,4 +1,4 @@
-import { uniqueElements, chunk, sample } from './array';
+import { uniqueElements, chunk } from './array';
 
 describe('uniqueElements', () => {
   it('returns the unique elements in an array', () => {
@@ -12,12 +12,5 @@ describe('chunk', () => {
   });
   it('chunks an empty array', () => {
     expect(chunk([])).toEqual([]);
-  });
-});
-
-describe('sample', () => {
-  it('returns a random element from the given array', () => {
-    let arr = [1, 2, 3];
-    expect(arr.includes(sample(arr))).toBeTruthy();
   });
 });
