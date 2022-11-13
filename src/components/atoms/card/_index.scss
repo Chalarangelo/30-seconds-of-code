@@ -124,6 +124,7 @@
   // Keep this below the full width section utility for correct cascade
   .card-cover-image {
     --cover-aspect-ratio: 1.78;
+    aspect-ratio: 1.78;
     margin-top: 1.25rem;
     min-height: calc(260px / var(--cover-aspect-ratio));
     max-height: calc(680px / var(--cover-aspect-ratio));
