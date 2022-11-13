@@ -61,6 +61,7 @@ const SnippetCard = ({ snippet }) => {
           alt=''
           height='232'
           width='348'
+          fetchpriority='high'
         />
       )}
       <div

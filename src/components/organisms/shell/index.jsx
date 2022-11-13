@@ -29,6 +29,7 @@ const Shell = ({ isSearch = false, isFaq = false, children }) => {
           <h1 className='m-0 fs-sm'>
             <a title={literals.siteName} aria-label={literals.siteName}>
               <img
+                fetchpriority='high'
                 src='/assets/30s-logo.png'
                 alt={literals.home}
                 className='nav-website-logo'
