@@ -131,11 +131,3 @@ export const escapeHTML = str =>
     .replace(/</g, '&lt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
-
-/**
- * Truncates a string down to the specified number of characters
- * @param {string} str - The string to be truncated.
- * @param {number} num - The maximum length of the string.
- */
-export const truncateString = (str, num) =>
-  str.length > num ? str.slice(0, num > 3 ? num - 3 : num) + '...' : str;

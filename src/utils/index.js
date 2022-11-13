@@ -9,10 +9,9 @@ import {
   optimizeNodes,
   optimizeAllNodes,
   getURLParameters,
-  truncateString,
 } from './string';
 
-import { uniqueElements, chunk, sample, shuffle } from './array';
+import { uniqueElements, chunk, shuffle } from './array';
 
 import { throttle } from './function';
 
@@ -30,7 +29,5 @@ export {
   throttle,
   uniqueElements,
   chunk,
-  sample,
-  truncateString,
   shuffle,
 };
