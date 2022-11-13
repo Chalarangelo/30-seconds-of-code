@@ -257,12 +257,6 @@ export const page = {
       matcher: page => page.template === 'SnippetPage' && !page.isUnlisted,
       sorter: (a, b) => b.data.firstSeen - a.data.firstSeen,
     },
-    chirpEligible: page => {
-      if (page.template !== 'SnippetPage') return false;
-      if (page.isUnlisted) return false;
-      if (page.priority <= 0.06) return false;
-      return true;
-    },
     snippets: page => page.isSnippet,
     // Exclude collections listing to avoid path conflicts in Next.js
     listing: page => page.isListing,
