@@ -16,7 +16,7 @@ Theoretically, email addresses can be validated using a regular expression. Afte
 
 Additionally, even if you could validate an email address, there’s **no way of knowing if this address is in fact currently in use**. The only way to do so, is to send an email and check the response. This is why most websites and apps nowadays send you a confirmation email in the first place.
 
-Finally, even if you used a regular expression that is compliant with RFC 2822, it wouldn’t be without issues. Understading how it works or figuring out if it works correctly for each and every case would be pretty difficult. More importantly, though, it could be prone to **regular expression denial of service (ReDoS) attacks**, if implemented incorrectly.
+Finally, even if you used a regular expression that is compliant with RFC 2822, it wouldn’t be without issues. Understanding how it works or figuring out if it works correctly for each and every case would be pretty difficult. More importantly, though, it could be prone to **regular expression denial of service (ReDoS) attacks**, if implemented incorrectly.
 
 By now, you should be starting to figure out why I’ve been hesitant to showcase a solution to the problem of email validation. While solutions do exist, the implications of each one must be considered carefully.
 
