@@ -16,7 +16,7 @@ Figuring out where an element is located on the page with JavaScript can be tric
 As I recently discovered, `Document.elementFromPoint()` provides a pretty interesting and straightforward solution. It allows you to get the element at a specific point on the page and it also works quite well with `iframe`s, too. Additionally, `Document.elementsFromPoint()` provides similar functionality, but returns an array of all the elements at a specific point on the page, in order of their z-index.
 
 ```js
-// Returns the topmost element at the speicifed coordinates
+// Returns the topmost element at the specified coordinates
 const element = document.elementFromPoint(x, y);
 
 // Returns an array of all the elements at the specified coordinates
