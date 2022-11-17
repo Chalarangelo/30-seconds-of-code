@@ -40,7 +40,7 @@ const regexp = /\s+/g;
 
 ### Match line breaks
 
-- Depending on the environnment, line breaks can be represented in different ways.
+- Depending on the environment, line breaks can be represented in different ways.
 - Use the `\r` character to match carriage returns, the `\n` character to match newlines, and the `\r\n` sequence to match carriage returns followed by newlines.
 - Add the global (`g`) and multiline (`m`) flags to match all occurrences of the pattern in the string.
 
