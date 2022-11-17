@@ -24,4 +24,4 @@ Apart from engine-related delays, there are a few other factors that play a role
 - Timeouts and intervals in **inactive/background tabs are throttled** to a minimum of 1000ms to increase battery life.
 - **Known tracking scripts in background tabs** can be throttled even further after a certain amount of time.
 
-On a side note, some browsers store delays as a 32-bit signed integer, meaning that delays over 24.8 days will cause an overflow an dexecute immediately.
+On a side note, some browsers store delays as a 32-bit signed integer, meaning that delays over 24.8 days will cause an overflow and execute immediately.
