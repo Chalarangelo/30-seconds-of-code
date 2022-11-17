@@ -5,7 +5,7 @@ tags: career,webdev,programming,management
 expertise: intermediate
 author: chalarangelo
 cover: blog_images/new-york.jpg
-excerpt: Leanr what technical debt is, its causes and symptoms, and how to deal with it.
+excerpt: Learn what technical debt is, its causes and symptoms, and how to deal with it.
 firstSeen: 2022-10-09T05:00:00-04:00
 ---
 
@@ -47,4 +47,4 @@ After getting to a manageable level, it's important to **keep technical debt in 
 
 ### Conclusion
 
-Technical debt is a natural, unavoidable part of software development. Miscommunication and lack of understanding can lead to it, resulting in lowered velocity and morale. Luckily, a bit of awereness, good communication and an actionable process can help reduce it and keep it in check.
+Technical debt is a natural, unavoidable part of software development. Miscommunication and lack of understanding can lead to it, resulting in lowered velocity and morale. Luckily, a bit of awareness, good communication and an actionable process can help reduce it and keep it in check.
