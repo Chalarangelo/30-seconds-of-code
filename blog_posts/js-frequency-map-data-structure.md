@@ -48,7 +48,7 @@ class FrequencyMap extends Map {
 - Define an `add()` method, which will take a value and increment its count in the data structure. Use `Map.prototype.has()` to check if the value already exists and act accordingly.
 - Extend `Map.prototype.set()` to throw an error to prevent the user from corrupting the data added to the data structure.
 - Extend `Map.prototype.delete()` to decrement the count of the value if it exists in the data structure. Use `Map.prototype.has()` to check if the value's frequency is `1` and delete it if necessary.
-- As the data structure operates more like a `Set`, ater the `constructor` to accept an array of values. Use `Array.prototype.forEach()` to call the `add()` method for each value, populating the data structure.
+- As the data structure operates more like a `Set`, after the `constructor` to accept an array of values. Use `Array.prototype.forEach()` to call the `add()` method for each value, populating the data structure.
 - Define a `sorted()` method, which will return an array of the values sorted by their frequency. Use `Array.prototype.sort()` to sort the values by their frequency and `Array.prototype.map()` to return only the values. The `ascending` argument determines the order of the returned array.
 
 ```js
