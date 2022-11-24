@@ -80,7 +80,7 @@ const Search = ({ isMainSearch = false }) => {
         if (e.key === 'ArrowDown') {
           const nextResult = selectedResult + 1;
           setSelectedResult(
-            nextResult >= 5 || nextResult > searchResults.length
+            nextResult >= 10 || nextResult > searchResults.length
               ? 0
               : nextResult
           );
@@ -88,7 +88,7 @@ const Search = ({ isMainSearch = false }) => {
           const previousResult = selectedResult - 1;
           setSelectedResult(
             previousResult < 0
-              ? Math.min(searchResults.length, 4)
+              ? Math.min(searchResults.length, 9)
               : previousResult
           );
         }
@@ -128,7 +128,7 @@ const Search = ({ isMainSearch = false }) => {
             document.activeElement.blur();
             const { basePath } = router;
             if (!isMainSearch) {
-              if (selectedResult !== -1 && selectedResult !== 4) {
+              if (selectedResult !== -1 && selectedResult !== 9) {
                 router.push(`${basePath}${searchResults[selectedResult].url}`);
               } else {
                 const encodedValue = encodeURIComponent(value);
@@ -154,7 +154,7 @@ const Search = ({ isMainSearch = false }) => {
       {!isMainSearch && value ? (
         <ul className='search-autocomplete-list pl-0 m-0 srfc-02db'>
           {[
-            ...searchResults.slice(0, 4),
+            ...searchResults.slice(0, 9),
             {
               title: `Search for "${value.trim()}"`,
               url: `${router.basePath}/search?keyphrase=${encodeURIComponent(
