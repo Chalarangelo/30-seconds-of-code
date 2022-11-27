@@ -12,7 +12,7 @@ const Breadcrumbs = ({ breadcrumbs }) => (
           <li
             key={`breadcrumb-${i}`}
             className={`breadcrumb-item relative inline-block ${
-              isCurrentPage ? 'txt-050 f-ellipsis' : 'txt-150'
+              isCurrentPage ? 'txt-050 fs-no md:fs-sm f-ellipsis' : 'txt-150'
             }`}
           >
             <Link href={url}>
