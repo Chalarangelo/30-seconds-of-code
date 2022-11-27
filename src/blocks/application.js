@@ -435,7 +435,7 @@ export class Application {
       const type = repo.isBlog ? 'blog' : 'language';
       const slugPrefix = `/${repo.slug}`;
       const repoListingId = `${type}${slugPrefix}`;
-      const repoListing = Listing.createRecord({
+      Listing.createRecord({
         id: repoListingId,
         relatedRecordId: repo.id,
         type,
@@ -443,7 +443,7 @@ export class Application {
         featuredIndex: featuredListings.indexOf(repoListingId),
       });
       // Populate tag listings from repositories
-      const tagListingIds = repo.tags.flatMap(tag => {
+      repo.tags.forEach(tag => {
         const tagSlugPrefix = tag.slugPrefix;
         const tagId = `tag${tagSlugPrefix}`;
         Listing.createRecord({
@@ -452,10 +452,10 @@ export class Application {
           type: 'tag',
           slugPrefix: tagSlugPrefix,
           featuredIndex: featuredListings.indexOf(tagId),
+          parent: repoListingId,
         });
         return tagId;
       });
-      repoListing.children = tagListingIds;
     });
     // Populate the main listing
     Listing.createRecord({
