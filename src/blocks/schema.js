@@ -32,9 +32,9 @@ export const schema = {
       type: 'manyToOne',
     },
     {
-      from: { model: 'Listing', name: 'children' },
-      to: { model: 'Listing', name: 'parent' },
-      type: 'oneToMany',
+      from: { model: 'Listing', name: 'parent' },
+      to: { model: 'Listing', name: 'children' },
+      type: 'manyToOne',
     },
     {
       from: { model: 'Page', name: 'snippets' },

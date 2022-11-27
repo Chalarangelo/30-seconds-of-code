@@ -153,6 +153,15 @@ export const snippet = {
           name: literals.tag(snippet.primaryTag),
         };
       } else if (
+        snippet.hasCollection &&
+        snippet.collections.first.listing.parent
+      ) {
+        // TODO: Make this smarter to account for multiple collections
+        tagCrumb = {
+          url: `/${snippet.collections.first.slug}/p/1`,
+          name: snippet.collections.first.shortName,
+        };
+      } else if (
         snippet.language &&
         snippet.truePrimaryTag &&
         snippet.language.tagShortIds.includes(
@@ -220,7 +229,9 @@ export const snippet = {
     hasCollection: snippet =>
       Boolean(snippet.collections && snippet.collections.length),
     recommendedCollection: snippet =>
-      snippet.hasCollection ? snippet.collections.first : null,
+      snippet.hasCollection && !snippet.collections.first.listing.parent
+        ? snippet.collections.first
+        : null,
   },
   lazyProperties: {
     icon: ({ models: { Language } }) => snippet => {
