@@ -187,7 +187,7 @@ export const listing = {
       return [];
     },
     sublinks: ({ models: { Listing } }) => listing => {
-      if (listing.isCollection) return [];
+      if (listing.isCollection && !listing.parent) return [];
       if (listing.isCollections) return [];
       if (listing.isMain) {
         return [
@@ -212,11 +212,22 @@ export const listing = {
           url: `${listing.rootUrl}/p/1`,
           selected: listing.isParent,
         },
-        ...links.flatMap(link => ({
-          name: literals.tag(link.data.shortId),
-          url: `${link.data.slugPrefix}/p/1`,
-          selected: listing.isTag && listing.data.shortId === link.data.shortId,
-        })),
+        ...links
+          .flatMap(link =>
+            link.isCollection
+              ? {
+                  name: link.data.shortName,
+                  url: `/${link.data.slug}/p/1`,
+                  selected: listing.isCollection && link.id === listing.id,
+                }
+              : {
+                  name: literals.tag(link.data.shortId),
+                  url: `${link.data.slugPrefix}/p/1`,
+                  selected:
+                    listing.isTag && listing.data.shortId === link.data.shortId,
+                }
+          )
+          .sort((a, b) => a.name.localeCompare(b.name)),
       ];
     },
   },
