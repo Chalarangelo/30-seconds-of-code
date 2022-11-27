@@ -420,16 +420,6 @@ export class Application {
         lastUpdated: new Date(lastUpdated),
       });
     });
-    // Populate collections and link to snippets
-    collections.forEach(collection => {
-      const { snippetIds, typeMatcher, ...rest } = collection;
-      const collectionRec = Collection.createRecord(rest);
-      if (snippetIds && snippetIds.length) collectionRec.snippets = snippetIds;
-      if (typeMatcher)
-        collectionRec.snippets = Snippet.records
-          .where(snippet => snippet.type === typeMatcher)
-          .flatPluck('id');
-    });
     // Populate listings and create relationships
     Repository.records.forEach(repo => {
       const type = repo.isBlog ? 'blog' : 'language';
@@ -454,7 +444,26 @@ export class Application {
           featuredIndex: featuredListings.indexOf(tagId),
           parent: repoListingId,
         });
-        return tagId;
+      });
+    });
+    // Populate collections, collection listings and link to snippets and parent listings
+    collections.forEach(collection => {
+      const { snippetIds, typeMatcher, parent, ...rest } = collection;
+      const collectionRec = Collection.createRecord(rest);
+      if (snippetIds && snippetIds.length) collectionRec.snippets = snippetIds;
+      if (typeMatcher)
+        collectionRec.snippets = Snippet.records
+          .where(snippet => snippet.type === typeMatcher)
+          .flatPluck('id');
+      const slugPrefix = `/${collection.slug}`;
+      const listingId = `collection${slugPrefix}`;
+      Listing.createRecord({
+        id: listingId,
+        relatedRecordId: collection.id,
+        type: 'collection',
+        slugPrefix,
+        featuredIndex: featuredListings.indexOf(listingId),
+        parent,
       });
     });
     // Populate the main listing
@@ -472,18 +481,6 @@ export class Application {
       slugPrefix: '/collections',
       featuredIndex: -1,
       ...collectionListingConfig,
-    });
-    // Populate listings for custom collections
-    Collection.records.forEach(collection => {
-      const slugPrefix = `/${collection.slug}`;
-      const listingId = `collection${slugPrefix}`;
-      Listing.createRecord({
-        id: listingId,
-        relatedRecordId: collection.id,
-        type: 'collection',
-        slugPrefix,
-        featuredIndex: featuredListings.indexOf(listingId),
-      });
     });
     // Populate snipet pages
     Snippet.records.forEach(snippet => {
