@@ -229,7 +229,9 @@ export const snippet = {
     hasCollection: snippet =>
       Boolean(snippet.collections && snippet.collections.length),
     recommendedCollection: snippet =>
-      snippet.hasCollection ? snippet.collections.first : null,
+      snippet.hasCollection && !snippet.collections.first.listing.parent
+        ? snippet.collections.first
+        : null,
   },
   lazyProperties: {
     icon: ({ models: { Language } }) => snippet => {
