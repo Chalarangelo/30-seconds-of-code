@@ -2,6 +2,7 @@ export const collection = {
   name: 'Collection',
   fields: [
     { name: 'name', type: 'stringRequired' },
+    { name: 'shortName', type: 'stringRequired' },
     { name: 'slug', type: 'stringRequired' },
     { name: 'featured', type: 'booleanRequired' },
     { name: 'icon', type: 'stringRequired' },
