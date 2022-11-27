@@ -1,6 +1,6 @@
 .breadcrumb-item {
-  &:not(:last-of-type) {
-    &:after {
+  &:not(:first-of-type) {
+    &:before {
       color: var(--clr-txt-050);
       content: '/';
       width: 0;
