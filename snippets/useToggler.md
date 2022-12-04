@@ -1,7 +1,6 @@
 ---
 title: React useToggler hook
 tags: hooks,state,callback
-expertise: beginner
 author: chalarangelo
 cover: blog_images/tram-car-2.jpg
 firstSeen: 2020-11-27T09:41:31+02:00

@@ -1,7 +1,6 @@
 ---
 title: React useComponentWillUnmount hook
 tags: hooks,effect
-expertise: beginner
 author: chalarangelo
 cover: blog_images/rocky-beach-3.jpg
 firstSeen: 2020-01-03T16:00:56+02:00

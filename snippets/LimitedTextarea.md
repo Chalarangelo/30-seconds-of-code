@@ -1,7 +1,6 @@
 ---
 title: Textarea with character limit
 tags: components,state,callback,event
-expertise: beginner
 cover: blog_images/flower-portrait-2.jpg
 firstSeen: 2018-10-19T09:11:59+03:00
 lastUpdated: 2021-10-13T19:29:39+02:00

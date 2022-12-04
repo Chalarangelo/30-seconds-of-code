@@ -1,7 +1,6 @@
 ---
 title: React useTimeout hook
 tags: hooks,effect
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/interior-10.jpg
 firstSeen: 2019-08-21T13:20:57+03:00

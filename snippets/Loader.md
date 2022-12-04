@@ -1,7 +1,6 @@
 ---
 title: Spinning loader
 tags: components
-expertise: beginner
 cover: blog_images/godray-computer-mug.jpg
 firstSeen: 2019-09-11T21:59:12+03:00
 lastUpdated: 2020-11-16T15:17:26+02:00

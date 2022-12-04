@@ -1,7 +1,6 @@
 ---
 title: React useEventListener hook
 tags: hooks,effect,event
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/beach-riders.jpg
 firstSeen: 2021-09-01T05:00:00-04:00

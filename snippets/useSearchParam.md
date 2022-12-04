@@ -1,7 +1,6 @@
 ---
 title: React useSearchParam hook
 tags: hooks,state,effect
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/coffee-phone-tray-3.jpg
 firstSeen: 2021-10-13T05:00:00-04:00

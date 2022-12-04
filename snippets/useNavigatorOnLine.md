@@ -1,7 +1,6 @@
 ---
 title: React useNavigatorOnLine hook
 tags: hooks,state,effect
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/digital-nomad-7.jpg
 firstSeen: 2019-09-11T09:17:26+03:00

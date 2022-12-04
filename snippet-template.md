@@ -1,7 +1,7 @@
 ---
 title: Component Name
 tags: components,state,effect
-expertise: intermediate
+cover: blog_images/image.jpg
 firstSeen: 2021-06-13T05:00:00-04:00
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: React useIsomporphicEffect hook
 tags: hooks,effect
-expertise: beginner
 author: chalarangelo
 cover: blog_images/jars-on-shelf-2.jpg
 firstSeen: 2021-09-29T05:00:00-04:00

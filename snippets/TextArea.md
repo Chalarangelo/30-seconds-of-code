@@ -1,7 +1,6 @@
 ---
 title: Uncontrolled textarea element
 tags: components,input
-expertise: beginner
 cover: blog_images/volcano-sunset.jpg
 firstSeen: 2018-12-10T10:45:51+02:00
 lastUpdated: 2020-11-25T20:46:35+02:00

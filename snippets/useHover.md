@@ -1,7 +1,6 @@
 ---
 title: React useHover hook
 tags: hooks,state,callback
-expertise: advanced
 author: chalarangelo
 cover: blog_images/pink-flower-tree.jpg
 firstSeen: 2021-10-05T05:00:00-04:00

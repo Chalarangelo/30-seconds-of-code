@@ -1,7 +1,6 @@
 ---
 title: React usePrevious hook
 tags: hooks,state,effect
-expertise: beginner
 author: chalarangelo
 cover: blog_images/couch-laptop.jpg
 firstSeen: 2020-01-03T09:50:22+02:00

@@ -1,7 +1,6 @@
 ---
 title: Expandable object tree view
 tags: components,object,state,recursion
-expertise: advanced
 author: chalarangelo
 cover: blog_images/digital-nomad-9.jpg
 firstSeen: 2019-02-06T22:17:03+02:00

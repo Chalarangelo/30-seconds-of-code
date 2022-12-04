@@ -1,7 +1,6 @@
 ---
 title: Callable telephone link
 tags: components
-expertise: beginner
 author: chalarangelo
 unlisted: true
 cover: blog_images/rabbit-call.jpg
