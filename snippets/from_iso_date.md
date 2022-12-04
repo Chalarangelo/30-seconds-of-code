@@ -1,7 +1,6 @@
 ---
 title: Date from ISO format
 tags: date
-expertise: intermediate
 author: maciv
 cover: blog_images/purple-leaves.jpg
 firstSeen: 2020-10-28T16:20:04+02:00

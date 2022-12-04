@@ -1,7 +1,6 @@
 ---
 title: Camelcase string
 tags: string,regexp
-expertise: intermediate
 cover: blog_images/digital-nomad-9.jpg
 firstSeen: 2019-08-21T08:59:54+03:00
 lastUpdated: 2020-11-02T19:27:07+02:00

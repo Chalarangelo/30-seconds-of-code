@@ -1,7 +1,6 @@
 ---
 title: Combine dictionary values
 tags: dictionary
-expertise: intermediate
 author: maciv
 cover: blog_images/fruit-feast.jpg
 firstSeen: 2021-03-07T12:30:47+02:00

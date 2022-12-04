@@ -1,7 +1,6 @@
 ---
 title: Date difference in days
 tags: date
-expertise: beginner
 author: maciv
 cover: blog_images/succulent-9.jpg
 firstSeen: 2020-10-28T16:19:39+02:00

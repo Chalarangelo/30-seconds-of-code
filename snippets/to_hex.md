@@ -1,7 +1,6 @@
 ---
 title: Number to hex
 tags: math
-expertise: beginner
 cover: blog_images/green-plant.jpg
 firstSeen: 2020-10-09T09:45:47+03:00
 lastUpdated: 2020-10-09T09:45:47+03:00

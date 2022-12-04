@@ -1,7 +1,6 @@
 ---
 title: Fahrenheit to Celsius
 tags: math
-expertise: beginner
 unlisted: true
 cover: blog_images/last-light.jpg
 firstSeen: 2020-04-05T12:29:03+03:00

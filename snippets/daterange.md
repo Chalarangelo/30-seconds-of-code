@@ -1,7 +1,6 @@
 ---
 title: Date range
 tags: date
-expertise: intermediate
 author: maciv
 cover: blog_images/maple-leaf-palette.jpg
 firstSeen: 2020-10-28T16:19:14+02:00

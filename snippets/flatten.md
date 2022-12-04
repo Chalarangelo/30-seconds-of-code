@@ -1,7 +1,6 @@
 ---
 title: Flatten list
 tags: list
-expertise: intermediate
 cover: blog_images/jars-on-shelf.jpg
 firstSeen: 2019-09-19T15:46:10+03:00
 lastUpdated: 2020-11-02T19:27:53+02:00

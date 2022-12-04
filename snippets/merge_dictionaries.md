@@ -1,7 +1,6 @@
 ---
 title: Merge dictionaries
 tags: dictionary
-expertise: intermediate
 author: maciv
 cover: blog_images/plant-candle.jpg
 firstSeen: 2020-04-16T19:28:35+03:00

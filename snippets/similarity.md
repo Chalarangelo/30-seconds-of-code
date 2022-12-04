@@ -1,7 +1,6 @@
 ---
 title: List similarity
 tags: list
-expertise: beginner
 cover: blog_images/sunflowers.jpg
 firstSeen: 2019-08-20T16:12:11+03:00
 lastUpdated: 2020-11-02T19:28:35+02:00

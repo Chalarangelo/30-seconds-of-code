@@ -1,7 +1,6 @@
 ---
 title: Check if list elements are identical
 tags: list
-expertise: beginner
 cover: blog_images/fallen-leaves.jpg
 firstSeen: 2019-08-20T11:39:18+03:00
 lastUpdated: 2020-10-11T13:40:42+03:00

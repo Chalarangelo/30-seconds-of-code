@@ -1,7 +1,6 @@
 ---
 title: Partial sum list
 tags: list
-expertise: intermediate
 author: maciv
 cover: blog_images/digital-nomad-16.jpg
 firstSeen: 2021-01-13T23:30:41+02:00

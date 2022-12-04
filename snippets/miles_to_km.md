@@ -1,7 +1,6 @@
 ---
 title: Miles to km
 tags: math
-expertise: beginner
 author: maciv
 unlisted: true
 cover: blog_images/interior-5.jpg

@@ -1,7 +1,6 @@
 ---
 title: Sort list by indexes
 tags: list
-expertise: intermediate
 cover: blog_images/little-white-flowers.jpg
 firstSeen: 2020-09-07T09:58:39+03:00
 lastUpdated: 2020-11-02T19:28:35+02:00

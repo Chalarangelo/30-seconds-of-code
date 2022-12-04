@@ -1,7 +1,6 @@
 ---
 title: Fibonacci
 tags: math,list
-expertise: intermediate
 cover: blog_images/san-francisco-skyline.jpg
 firstSeen: 2018-10-06T06:06:33+03:00
 lastUpdated: 2020-11-02T19:27:53+02:00

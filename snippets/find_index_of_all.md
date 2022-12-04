@@ -1,7 +1,6 @@
 ---
 title: Find all matching indexes
 tags: list
-expertise: intermediate
 author: maciv
 cover: blog_images/tree-roots.jpg
 firstSeen: 2020-10-11T13:45:19+03:00

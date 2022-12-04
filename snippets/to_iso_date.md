@@ -1,7 +1,6 @@
 ---
 title: Date to ISO format
 tags: date
-expertise: intermediate
 author: maciv
 cover: blog_images/succulent-red-light.jpg
 firstSeen: 2020-10-28T16:20:50+02:00

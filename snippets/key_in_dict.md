@@ -1,7 +1,6 @@
 ---
 title: Key in dictionary
 tags: dictionary
-expertise: beginner
 author: maciv
 cover: blog_images/rocky-mountains.jpg
 firstSeen: 2020-10-16T21:30:49+03:00

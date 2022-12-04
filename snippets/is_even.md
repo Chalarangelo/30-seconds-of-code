@@ -1,7 +1,6 @@
 ---
 title: Number is even
 tags: math
-expertise: beginner
 unlisted: true
 cover: blog_images/interior-3.jpg
 firstSeen: 2019-08-20T14:21:44+03:00

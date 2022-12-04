@@ -1,7 +1,6 @@
 ---
 title: All indexes of value
 tags: list
-expertise: intermediate
 cover: blog_images/purple-flower-bunch.jpg
 firstSeen: 2020-10-11T13:40:42+03:00
 lastUpdated: 2020-10-11T13:45:19+03:00

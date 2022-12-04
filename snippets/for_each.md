@@ -1,7 +1,6 @@
 ---
 title: Execute function for each list element
 tags: list
-expertise: beginner
 author: maciv
 cover: blog_images/green-plant.jpg
 firstSeen: 2020-03-15T12:54:08+02:00

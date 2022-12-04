@@ -1,7 +1,6 @@
 ---
 title: Reverse list
 tags: list,string
-expertise: beginner
 cover: blog_images/industrial-tokyo.jpg
 firstSeen: 2020-10-06T19:02:30+03:00
 lastUpdated: 2020-11-02T19:28:27+02:00

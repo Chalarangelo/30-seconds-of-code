@@ -1,7 +1,6 @@
 ---
 title: List without last element
 tags: list
-expertise: beginner
 cover: blog_images/pop-of-green.jpg
 firstSeen: 2019-08-20T14:08:52+03:00
 lastUpdated: 2020-11-02T19:28:05+02:00

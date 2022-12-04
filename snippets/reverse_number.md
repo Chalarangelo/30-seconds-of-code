@@ -1,7 +1,6 @@
 ---
 title: Reverse number
 tags: math
-expertise: intermediate
 author: maciv
 cover: blog_images/taking-photos.jpg
 firstSeen: 2020-10-04T14:21:41+03:00

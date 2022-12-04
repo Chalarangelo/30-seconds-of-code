@@ -1,7 +1,6 @@
 ---
 title: Lists to dictionary
 tags: list,dictionary
-expertise: intermediate
 author: maciv
 excerpt: Combines two lists into a dictionary, using the first one as the keys and the second one as the values.
 cover: blog_images/purple-sunset.jpg

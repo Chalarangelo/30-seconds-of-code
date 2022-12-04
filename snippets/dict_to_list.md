@@ -1,7 +1,6 @@
 ---
 title: Dictionary to list
 tags: dictionary,list
-expertise: intermediate
 author: maciv
 cover: blog_images/new-york.jpg
 firstSeen: 2020-10-16T21:24:14+03:00

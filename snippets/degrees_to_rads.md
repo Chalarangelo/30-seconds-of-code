@@ -1,7 +1,6 @@
 ---
 title: Degrees to radians
 tags: math
-expertise: beginner
 cover: blog_images/digital-nomad-6.jpg
 firstSeen: 2019-10-15T14:31:11+03:00
 lastUpdated: 2020-11-02T19:27:53+02:00

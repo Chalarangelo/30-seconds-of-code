@@ -1,7 +1,6 @@
 ---
 title: Powerset
 tags: math,list
-expertise: advanced
 author: chalarangelo
 cover: blog_images/rock-climbing.jpg
 firstSeen: 2020-10-04T13:14:01+03:00

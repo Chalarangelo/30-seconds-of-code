@@ -1,7 +1,6 @@
 ---
 title: Palindrome
 tags: string
-expertise: intermediate
 cover: blog_images/succulent-6.jpg
 firstSeen: 2018-02-01T10:19:59+02:00
 lastUpdated: 2020-11-02T19:28:27+02:00
