@@ -1,7 +1,6 @@
 ---
 title: Delete detached branches
 tags: repository,branch
-expertise: intermediate
 author: maciv
 cover: blog_images/brown-bird.jpg
 firstSeen: 2021-04-08T19:42:01+03:00

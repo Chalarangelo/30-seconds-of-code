@@ -1,7 +1,6 @@
 ---
 title: View difference between two branches
 tags: branch
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/two-doors.jpg
 firstSeen: 2021-04-08T16:30:44+03:00

@@ -1,7 +1,6 @@
 ---
 title: Find branches containing a commit
 tags: branch,commit
-expertise: intermediate
 author: maciv
 cover: blog_images/dark-leaves.jpg
 firstSeen: 2021-04-05T09:47:59+03:00

@@ -1,7 +1,6 @@
 ---
 title: Restore a deleted file
 tags: branch
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/succulent-red-light.jpg
 firstSeen: 2021-04-06T20:58:25+03:00

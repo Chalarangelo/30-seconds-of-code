@@ -1,7 +1,6 @@
 ---
 title: Copy a file from another branch
 tags: branch
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/sea-view-2.jpg
 firstSeen: 2021-04-06T20:58:25+03:00

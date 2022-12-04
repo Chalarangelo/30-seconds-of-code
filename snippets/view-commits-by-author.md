@@ -1,7 +1,6 @@
 ---
 title: View commits by author
 tags: repository,commit
-expertise: intermediate
 author: maciv
 cover: blog_images/comic-glasses.jpg
 firstSeen: 2021-04-06T11:22:55+03:00

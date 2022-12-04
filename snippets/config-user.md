@@ -1,7 +1,6 @@
 ---
 title: Configure git user information
 tags: configuration,repository
-expertise: beginner
 author: maciv
 cover: blog_images/pineapple-at-work.jpg
 firstSeen: 2021-04-04T21:25:22+03:00

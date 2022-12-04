@@ -1,7 +1,6 @@
 ---
 title: Remove a file from the last commit
 tags: commit
-expertise: intermediate
 author: maciv
 cover: blog_images/cancel-typographer.jpg
 firstSeen: 2021-04-05T11:19:41+03:00

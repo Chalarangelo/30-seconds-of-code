@@ -1,7 +1,6 @@
 ---
 title: Switch to a branch
 tags: branch
-expertise: beginner
 author: maciv
 cover: blog_images/bridge.jpg
 firstSeen: 2021-04-04T14:09:09+03:00

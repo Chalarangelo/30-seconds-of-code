@@ -1,7 +1,6 @@
 ---
 title: Delete merged branches
 tags: repository,branch
-expertise: advanced
 author: maciv
 cover: blog_images/duck-plants.jpg
 firstSeen: 2021-04-08T19:42:01+03:00

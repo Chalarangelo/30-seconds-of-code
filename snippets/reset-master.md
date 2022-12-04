@@ -1,7 +1,6 @@
 ---
 title: Reset master to match remote
 tags: repository,branch
-expertise: intermediate
 author: maciv
 cover: blog_images/old-consoles.jpg
 firstSeen: 2021-04-06T16:58:58+03:00

@@ -1,7 +1,6 @@
 ---
 title: Return to previous branch
 tags: branch
-expertise: beginner
 author: maciv
 cover: blog_images/beach-riders.jpg
 firstSeen: 2021-04-04T14:13:31+03:00

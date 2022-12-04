@@ -1,7 +1,6 @@
 ---
 title: Create a new branch
 tags: branch,remote
-expertise: beginner
 author: maciv
 cover: blog_images/flower-pond.jpg
 firstSeen: 2021-04-04T14:09:09+03:00

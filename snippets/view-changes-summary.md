@@ -1,7 +1,6 @@
 ---
 title: View a summary of changes between two commits
 tags: repository,branch
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/taking-photos.jpg
 firstSeen: 2021-04-06T22:21:04+03:00

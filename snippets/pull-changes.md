@@ -1,7 +1,6 @@
 ---
 title: Pull latest changes from remote
 tags: repository,branch
-expertise: beginner
 author: maciv
 cover: blog_images/last-light.jpg
 firstSeen: 2021-04-08T19:42:23+03:00

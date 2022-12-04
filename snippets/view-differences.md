@@ -1,7 +1,6 @@
 ---
 title: View differences in changes
 tags: commit,branch
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/plant-candle.jpg
 firstSeen: 2021-04-08T16:30:44+03:00

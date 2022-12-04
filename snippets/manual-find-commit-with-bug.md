@@ -1,7 +1,6 @@
 ---
 title: Manually find the commit that introduced a bug
 tags: commit,branch
-expertise: advanced
 author: chalarangelo
 cover: blog_images/blue-computer.jpg
 firstSeen: 2021-04-13T20:00:22+03:00

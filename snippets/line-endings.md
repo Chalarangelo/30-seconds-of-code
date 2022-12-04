@@ -1,7 +1,6 @@
 ---
 title: Configure line endings
 tags: repository,configuration
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/leaves-read.jpg
 firstSeen: 2021-04-06T21:35:01+03:00

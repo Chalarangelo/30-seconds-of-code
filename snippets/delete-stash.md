@@ -1,7 +1,6 @@
 ---
 title: Delete a stash
 tags: repository,stash
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/budapest-palace.jpg
 firstSeen: 2021-04-13T19:36:57+03:00
