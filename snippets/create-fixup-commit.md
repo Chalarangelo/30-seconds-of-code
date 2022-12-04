@@ -1,7 +1,6 @@
 ---
 title: Create a fixup commit
 tags: commit
-expertise: advanced
 author: chalarangelo
 cover: blog_images/tools.jpg
 firstSeen: 2021-04-08T19:51:24+03:00

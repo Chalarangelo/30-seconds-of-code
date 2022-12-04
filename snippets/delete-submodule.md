@@ -1,7 +1,6 @@
 ---
 title: Delete a submodule
 tags: repository,submodule
-expertise: advanced
 author: chalarangelo
 cover: blog_images/silver-flat-screen.jpg
 firstSeen: 2021-04-08T20:05:15+03:00

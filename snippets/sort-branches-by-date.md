@@ -1,7 +1,6 @@
 ---
 title: View branches sorted by date
 tags: repository,branch
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/sea-view.jpg
 firstSeen: 2021-04-06T21:35:01+03:00

@@ -1,7 +1,6 @@
 ---
 title: Create a stash
 tags: repository,stash
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/purple-leaves.jpg
 firstSeen: 2021-04-13T19:36:57+03:00

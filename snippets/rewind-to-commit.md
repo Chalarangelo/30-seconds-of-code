@@ -1,7 +1,6 @@
 ---
 title: Rewind back to a specific commit
 tags: branch,commit
-expertise: intermediate
 author: maciv
 cover: blog_images/walking.jpg
 firstSeen: 2021-04-05T11:19:21+03:00

@@ -1,7 +1,6 @@
 ---
 title: Apply the latest stash
 tags: repository,stash
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/palm-tree-house.jpg
 firstSeen: 2021-04-13T19:36:57+03:00

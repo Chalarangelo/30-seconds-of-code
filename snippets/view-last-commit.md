@@ -1,7 +1,6 @@
 ---
 title: View last commit
 tags: commit
-expertise: intermediate
 author: maciv
 cover: blog_images/green-plant.jpg
 firstSeen: 2021-04-06T11:22:55+03:00

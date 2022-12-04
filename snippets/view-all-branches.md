@@ -1,7 +1,6 @@
 ---
 title: View local branches
 tags: repository,branch
-expertise: beginner
 author: maciv
 cover: blog_images/aerial-view-port.jpg
 firstSeen: 2021-04-04T14:05:57+03:00

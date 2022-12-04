@@ -1,7 +1,6 @@
 ---
 title: Merge a branch
 tags: repository,branch
-expertise: beginner
 author: maciv
 cover: blog_images/sparkles.jpg
 firstSeen: 2021-04-04T21:50:11+03:00

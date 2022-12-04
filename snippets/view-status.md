@@ -1,7 +1,6 @@
 ---
 title: View current status
 tags: branch
-expertise: beginner
 author: chalarangelo
 cover: blog_images/periscope.jpg
 firstSeen: 2021-04-06T20:58:33+03:00

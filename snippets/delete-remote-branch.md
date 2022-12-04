@@ -1,7 +1,6 @@
 ---
 title: Delete a remote branch
 tags: repository,branch
-expertise: intermediate
 author: maciv
 cover: blog_images/waves-from-above.jpg
 firstSeen: 2021-04-08T19:42:01+03:00

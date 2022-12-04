@@ -1,7 +1,6 @@
 ---
 title: Delete a branch
 tags: repository,branch
-expertise: intermediate
 author: maciv
 cover: blog_images/volcano-sunset.jpg
 firstSeen: 2021-04-04T21:50:29+03:00

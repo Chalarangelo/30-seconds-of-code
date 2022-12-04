@@ -1,7 +1,6 @@
 ---
 title: Discard uncommitted changes
 tags: branch
-expertise: intermediate
 author: maciv
 cover: blog_images/arrays.jpg
 firstSeen: 2021-04-06T11:11:08+03:00

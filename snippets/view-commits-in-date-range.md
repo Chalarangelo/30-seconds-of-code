@@ -1,7 +1,6 @@
 ---
 title: View commits in a specific date range
 tags: repository,commit
-expertise: intermediate
 author: maciv
 cover: blog_images/organizer.jpg
 firstSeen: 2021-04-06T16:28:49+03:00

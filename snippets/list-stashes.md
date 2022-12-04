@@ -1,7 +1,6 @@
 ---
 title: Lists all stashes
 tags: repository,stash
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/golden-gate-bridge.jpg
 firstSeen: 2021-04-13T19:36:57+03:00

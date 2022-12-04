@@ -1,7 +1,6 @@
 ---
 title: Push local changes to remote
 tags: repository,branch
-expertise: beginner
 author: maciv
 cover: blog_images/dark-cloud.jpg
 firstSeen: 2021-04-08T19:42:23+03:00

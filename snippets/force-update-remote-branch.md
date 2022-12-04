@@ -1,7 +1,6 @@
 ---
 title: Update remote branch after rewriting history
 tags: branch
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/compass.jpg
 firstSeen: 2021-04-06T19:47:19+03:00

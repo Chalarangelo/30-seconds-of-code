@@ -1,7 +1,6 @@
 ---
 title: Find lost files
 tags: repository
-expertise: advanced
 author: chalarangelo
 cover: blog_images/hard-disk.jpg
 firstSeen: 2021-04-06T21:35:01+03:00
