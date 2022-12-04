@@ -1,7 +1,6 @@
 ---
 title: Right substring generator
 tags: string,generator
-expertise: intermediate
 cover: blog_images/boutique-home-office-2.jpg
 author: chalarangelo
 firstSeen: 2022-07-25T05:00:00-04:00

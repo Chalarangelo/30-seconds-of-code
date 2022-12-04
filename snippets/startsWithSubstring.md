@@ -2,7 +2,6 @@
 title: String starts with substring
 shortTitle: Starts with substring
 tags: string
-expertise: beginner
 cover: blog_images/boutique-home-office-3.jpg
 author: chalarangelo
 firstSeen: 2022-07-31T05:00:00-04:00

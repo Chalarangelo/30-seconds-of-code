@@ -1,7 +1,6 @@
 ---
 title: Deep map object keys
 tags: object,recursion
-expertise: advanced
 cover: blog_images/duck-plants.jpg
 firstSeen: 2018-11-29T15:22:53+02:00
 lastUpdated: 2020-09-15T16:28:04+03:00

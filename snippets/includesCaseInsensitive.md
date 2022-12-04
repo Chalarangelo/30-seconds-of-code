@@ -1,7 +1,6 @@
 ---
 title: Case-insensitive substring search
 tags: string
-expertise: beginner
 author: chalarangelo
 cover: blog_images/cup-of-orange.jpg
 firstSeen: 2022-07-28T05:00:00-04:00

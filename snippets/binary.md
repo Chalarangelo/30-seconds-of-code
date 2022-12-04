@@ -1,7 +1,6 @@
 ---
 title: Binary function arity
 tags: function
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/blue-bird.jpg
 firstSeen: 2020-05-13T13:36:36+03:00

@@ -1,7 +1,6 @@
 ---
 title: Check if array has duplicates
 tags: array
-expertise: beginner
 cover: blog_images/umbrellas.jpg
 firstSeen: 2020-10-22T20:23:09+03:00
 lastUpdated: 2020-10-22T20:23:09+03:00

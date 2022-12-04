@@ -1,7 +1,6 @@
 ---
 title: Walk through object
 tags: object,recursion,generator
-expertise: advanced
 author: chalarangelo
 cover: blog_images/bridge.jpg
 firstSeen: 2020-12-31T13:03:15+02:00

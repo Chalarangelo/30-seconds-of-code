@@ -1,7 +1,6 @@
 ---
 title: Flip function arguments
 tags: function
-expertise: intermediate
 cover: blog_images/interior-11.jpg
 firstSeen: 2017-12-22T02:42:15+02:00
 lastUpdated: 2021-06-13T13:50:25+03:00

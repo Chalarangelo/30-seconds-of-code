@@ -1,7 +1,6 @@
 ---
 title: Reject non-matching values
 tags: array
-expertise: beginner
 cover: blog_images/interior-7.jpg
 firstSeen: 2018-04-27T03:17:15+03:00
 lastUpdated: 2020-10-22T20:24:04+03:00

@@ -1,7 +1,6 @@
 ---
 title: Km to miles
 tags: math
-expertise: beginner
 unlisted: true
 cover: blog_images/succulent-3.jpg
 firstSeen: 2020-10-04T00:50:13+03:00

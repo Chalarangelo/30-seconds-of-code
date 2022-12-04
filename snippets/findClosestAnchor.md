@@ -1,7 +1,6 @@
 ---
 title: Find closest anchor
 tags: browser
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/colorful-lounge.jpg
 firstSeen: 2021-04-22T08:45:39+03:00

@@ -1,7 +1,6 @@
 ---
 title: Array is contained in other array
 tags: array
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/island-corridor.jpg
 firstSeen: 2020-01-05T21:40:51+02:00

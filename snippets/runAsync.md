@@ -1,7 +1,6 @@
 ---
 title: Run function asynchronously
 tags: browser,function,promise
-expertise: advanced
 excerpt: Runs a function in a separate thread by using a Web Worker.
 cover: blog_images/purple-sunset.jpg
 firstSeen: 2018-01-02T02:17:52+02:00

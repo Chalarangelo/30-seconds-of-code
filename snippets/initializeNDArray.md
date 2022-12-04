@@ -1,7 +1,6 @@
 ---
 title: Initialize n-dimensional array
 tags: array,recursion
-expertise: intermediate
 cover: blog_images/colorful-pots.jpg
 firstSeen: 2018-04-14T10:52:39+03:00
 lastUpdated: 2020-10-22T20:23:47+03:00

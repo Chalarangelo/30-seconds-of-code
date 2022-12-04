@@ -1,7 +1,6 @@
 ---
 title: Value frequencies
 tags: array,object
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/tropical-waterfall.jpg
 firstSeen: 2020-01-03T15:32:35+02:00

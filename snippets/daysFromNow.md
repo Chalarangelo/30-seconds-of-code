@@ -1,7 +1,6 @@
 ---
 title: Days from now
 tags: date
-expertise: beginner
 cover: blog_images/tent-stars.jpg
 firstSeen: 2020-10-09T02:49:17+03:00
 lastUpdated: 2022-01-30T11:48:07+03:00

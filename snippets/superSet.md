@@ -1,7 +1,6 @@
 ---
 title: Superset of iterable
 tags: array
-expertise: intermediate
 author: maciv
 cover: blog_images/waves-from-above-2.jpg
 firstSeen: 2020-10-11T11:53:19+03:00

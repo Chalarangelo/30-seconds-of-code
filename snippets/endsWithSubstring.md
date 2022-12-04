@@ -2,7 +2,6 @@
 title: String ends with substring
 shortTitle: Ends with substring
 tags: string
-expertise: beginner
 cover: blog_images/boutique-home-office-4.jpg
 author: chalarangelo
 firstSeen: 2022-08-01T05:00:00-04:00

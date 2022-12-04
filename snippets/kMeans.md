@@ -1,7 +1,6 @@
 ---
 title: K-means clustering
 tags: algorithm,array
-expertise: advanced
 author: chalarangelo
 cover: blog_images/antelope.jpg
 firstSeen: 2020-12-28T15:38:40+02:00

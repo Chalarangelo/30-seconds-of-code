@@ -1,7 +1,6 @@
 ---
 title: Check if object is deep frozen
 tags: object,recursion
-expertise: intermediate
 author: maciv
 cover: blog_images/godray-computer-mug.jpg
 firstSeen: 2020-09-04T20:20:11+03:00

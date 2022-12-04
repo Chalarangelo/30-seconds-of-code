@@ -1,7 +1,6 @@
 ---
 title: Date from Unix timestamp
 tags: date
-expertise: beginner
 author: maciv
 cover: blog_images/number-2.jpg
 firstSeen: 2020-10-15T21:57:17+03:00

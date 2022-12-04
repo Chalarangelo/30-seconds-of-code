@@ -1,7 +1,6 @@
 ---
 title: Check if array has only one match
 tags: array
-expertise: beginner
 author: chalarangelo
 cover: blog_images/interior-10.jpg
 firstSeen: 2021-07-04T05:00:00-04:00

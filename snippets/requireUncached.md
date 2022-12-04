@@ -1,7 +1,6 @@
 ---
 title: Uncached module require
 tags: node
-expertise: advanced
 author: chalarangelo
 cover: blog_images/curve.jpg
 firstSeen: 2020-08-07T15:49:39+03:00

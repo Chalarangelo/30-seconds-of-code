@@ -1,7 +1,6 @@
 ---
 title: Get nested value in object
 tags: object,recursion
-expertise: intermediate
 cover: blog_images/brown-bird.jpg
 firstSeen: 2018-07-08T23:06:24+03:00
 lastUpdated: 2020-10-19T18:51:03+03:00

@@ -1,7 +1,6 @@
 ---
 title: Array of element's siblings
 tags: browser
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/little-white-flowers.jpg
 firstSeen: 2020-08-07T15:31:48+03:00

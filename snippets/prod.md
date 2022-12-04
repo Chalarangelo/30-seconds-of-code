@@ -1,7 +1,6 @@
 ---
 title: Product of numeric values
 tags: math,array
-expertise: intermediate
 author: maciv
 cover: blog_images/travel-mug-1.jpg
 firstSeen: 2020-10-15T21:56:51+03:00

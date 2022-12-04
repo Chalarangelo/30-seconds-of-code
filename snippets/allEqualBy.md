@@ -1,7 +1,6 @@
 ---
 title: Check if array elements are equal based on function
 tags: array
-expertise: intermediate
 author: maciv
 cover: blog_images/orange-coffee-2.jpg
 firstSeen: 2020-10-19T22:14:49+03:00

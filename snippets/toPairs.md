@@ -1,7 +1,6 @@
 ---
 title: Object to pairs
 tags: object,array
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/purple-leaves.jpg
 firstSeen: 2020-03-23T15:07:23+02:00

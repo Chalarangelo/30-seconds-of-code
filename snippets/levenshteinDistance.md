@@ -1,7 +1,6 @@
 ---
 title: Levenshtein distance
 tags: string,algorithm
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/armchair.jpg
 firstSeen: 2020-12-27T19:49:12+02:00

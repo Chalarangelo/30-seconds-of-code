@@ -1,7 +1,6 @@
 ---
 title: Logical not
 tags: math,logic
-expertise: beginner
 unlisted: true
 cover: blog_images/succulent-7.jpg
 firstSeen: 2020-05-13T11:28:26+03:00

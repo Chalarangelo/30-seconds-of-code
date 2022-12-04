@@ -1,7 +1,6 @@
 ---
 title: Last insertion index in sorted array based on function
 tags: array
-expertise: intermediate
 cover: blog_images/hard-disk.jpg
 firstSeen: 2018-01-26T13:39:09+02:00
 lastUpdated: 2020-10-22T20:24:30+03:00

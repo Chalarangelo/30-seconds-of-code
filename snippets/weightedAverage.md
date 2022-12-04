@@ -1,7 +1,6 @@
 ---
 title: Weighted average
 tags: math
-expertise: intermediate
 cover: blog_images/interior-12.jpg
 firstSeen: 2020-10-04T00:38:33+03:00
 lastUpdated: 2020-11-03T21:46:13+02:00

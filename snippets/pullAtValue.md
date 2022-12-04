@@ -1,7 +1,6 @@
 ---
 title: Pull matching values from array
 tags: array
-expertise: advanced
 cover: blog_images/light-leaves.jpg
 firstSeen: 2017-12-19T08:06:29+02:00
 lastUpdated: 2020-10-22T20:24:04+03:00

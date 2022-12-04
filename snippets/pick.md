@@ -1,7 +1,6 @@
 ---
 title: Pick object keys
 tags: object
-expertise: intermediate
 cover: blog_images/fruit-feast.jpg
 firstSeen: 2017-12-13T23:51:34+02:00
 lastUpdated: 2020-10-18T14:58:09+03:00

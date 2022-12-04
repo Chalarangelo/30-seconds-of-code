@@ -1,7 +1,6 @@
 ---
 title: Decapitalize string
 tags: string
-expertise: intermediate
 cover: blog_images/forest-balcony.jpg
 firstSeen: 2018-01-11T11:58:40+02:00
 lastUpdated: 2020-11-01T20:50:57+02:00

@@ -1,7 +1,6 @@
 ---
 title: Swapcase string
 tags: string
-expertise: beginner
 author: maciv
 cover: blog_images/mountain-lake-2.jpg
 firstSeen: 2020-11-15T13:09:03+02:00

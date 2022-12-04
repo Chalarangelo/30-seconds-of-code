@@ -1,7 +1,6 @@
 ---
 title: Consecutive element subarrays
 tags: array
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/camera-zoom.jpg
 firstSeen: 2020-05-13T13:25:33+03:00

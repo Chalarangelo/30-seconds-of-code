@@ -1,7 +1,6 @@
 ---
 title: RGB to object
 tags: string,browser,regexp
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/organizer.jpg
 firstSeen: 2020-10-14T21:58:14+03:00

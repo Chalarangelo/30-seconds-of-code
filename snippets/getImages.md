@@ -1,7 +1,6 @@
 ---
 title: Get all images in element
 tags: browser
-expertise: intermediate
 cover: blog_images/portal-timelapse.jpg
 firstSeen: 2018-10-07T16:24:36+03:00
 lastUpdated: 2020-10-22T20:23:47+03:00

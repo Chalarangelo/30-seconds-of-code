@@ -1,7 +1,6 @@
 ---
 title: Date difference in months
 tags: date
-expertise: intermediate
 author: maciv
 cover: blog_images/two-flower-vases.jpg
 firstSeen: 2020-08-07T15:15:26+03:00

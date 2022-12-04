@@ -1,7 +1,6 @@
 ---
 title: Drop list elements from the right
 tags: array
-expertise: beginner
 cover: blog_images/messy-papers.jpg
 firstSeen: 2017-12-19T12:06:47+02:00
 lastUpdated: 2020-11-01T20:50:57+02:00

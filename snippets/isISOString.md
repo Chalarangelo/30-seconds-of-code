@@ -1,7 +1,6 @@
 ---
 title: String is ISO formatted date
 tags: date
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/perfect-timing.jpg
 firstSeen: 2020-11-29T12:16:43+02:00

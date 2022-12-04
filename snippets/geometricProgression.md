@@ -1,7 +1,6 @@
 ---
 title: Geometric progression
 tags: math,algorithm
-expertise: intermediate
 cover: blog_images/book-chair.jpg
 excerpt: Initializes an array containing the numbers in the specified geometric progression range.
 firstSeen: 2018-01-03T09:36:23+02:00

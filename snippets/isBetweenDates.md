@@ -1,7 +1,6 @@
 ---
 title: Check if date is between two dates
 tags: date
-expertise: beginner
 cover: blog_images/flower-portrait-6.jpg
 firstSeen: 2020-10-07T20:31:52+03:00
 lastUpdated: 2020-10-20T23:02:01+03:00

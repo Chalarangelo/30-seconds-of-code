@@ -1,7 +1,6 @@
 ---
 title: Ungroup array elements
 tags: array
-expertise: intermediate
 cover: blog_images/glass-blowing.jpg
 firstSeen: 2018-01-24T12:35:25+02:00
 lastUpdated: 2020-10-22T20:24:44+03:00

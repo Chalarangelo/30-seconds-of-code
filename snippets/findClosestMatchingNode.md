@@ -1,7 +1,6 @@
 ---
 title: Find closest matching node
 tags: browser
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/flowering-hills.jpg
 firstSeen: 2021-04-22T08:45:39+03:00

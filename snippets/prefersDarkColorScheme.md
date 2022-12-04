@@ -1,7 +1,6 @@
 ---
 title: User prefers dark color scheme
 tags: browser
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/blue-lake.jpg
 firstSeen: 2020-05-04T12:50:35+03:00

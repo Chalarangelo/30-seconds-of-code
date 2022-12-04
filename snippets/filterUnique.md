@@ -1,7 +1,6 @@
 ---
 title: Filter unique array values
 tags: array
-expertise: beginner
 author: maciv
 cover: blog_images/tulips-and-reeds.jpg
 firstSeen: 2020-11-02T19:41:00+02:00

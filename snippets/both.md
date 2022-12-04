@@ -1,7 +1,6 @@
 ---
 title: Logical and for functions
 tags: function,logic
-expertise: beginner
 unlisted: true
 cover: blog_images/succulent-2.jpg
 firstSeen: 2020-05-13T11:35:36+03:00

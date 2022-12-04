@@ -1,7 +1,6 @@
 ---
 title: HSL to RGB
 tags: math
-expertise: intermediate
 cover: blog_images/maple-leaf-palette.jpg
 firstSeen: 2020-10-01T23:15:49+03:00
 lastUpdated: 2020-10-04T11:24:27+03:00

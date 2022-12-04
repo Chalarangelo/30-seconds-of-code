@@ -1,7 +1,6 @@
 ---
 title: Check if string contains whitespace
 tags: string,regexp
-expertise: beginner
 author: chalarangelo
 cover: blog_images/bag-waiting.jpg
 firstSeen: 2020-03-25T12:37:13+02:00

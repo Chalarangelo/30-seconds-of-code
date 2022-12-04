@@ -1,7 +1,6 @@
 ---
 title: Luhn check
 tags: math,algorithm
-expertise: advanced
 cover: blog_images/blank-card.jpg
 excerpt: Implements the Luhn Algorithm, used to validate a variety of identification numbers.
 firstSeen: 2018-01-03T11:02:35+02:00

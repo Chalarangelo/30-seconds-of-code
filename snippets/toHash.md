@@ -1,7 +1,6 @@
 ---
 title: Iterable to hash
 tags: array
-expertise: intermediate
 cover: blog_images/sleepy-cat.jpg
 firstSeen: 2018-05-31T02:14:04+03:00
 lastUpdated: 2022-01-30T12:45:30+03:00

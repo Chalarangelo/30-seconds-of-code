@@ -1,7 +1,6 @@
 ---
 title: Object to entries
 tags: object,array
-expertise: beginner
 author: chalarangelo
 cover: blog_images/shapes.jpg
 firstSeen: 2020-04-16T11:10:13+03:00

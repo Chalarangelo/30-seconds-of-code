@@ -1,7 +1,6 @@
 ---
 title: Selection sort
 tags: algorithm,array
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/violin.jpg
 firstSeen: 2020-12-27T22:22:44+02:00

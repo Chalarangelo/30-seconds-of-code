@@ -1,7 +1,6 @@
 ---
 title: Check if all array elements are unique based on function
 tags: array
-expertise: intermediate
 author: maciv
 cover: blog_images/digital-nomad-10.jpg
 firstSeen: 2020-10-19T22:15:05+03:00

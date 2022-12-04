@@ -1,7 +1,6 @@
 ---
 title: Detect language
 tags: browser
-expertise: intermediate
 cover: blog_images/accessibility.jpg
 firstSeen: 2020-10-05T18:03:26+03:00
 lastUpdated: 2020-10-06T18:47:16+03:00

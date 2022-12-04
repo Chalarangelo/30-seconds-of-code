@@ -1,7 +1,6 @@
 ---
 title: Append function arguments
 tags: function
-expertise: intermediate
 cover: blog_images/jars-on-shelf-2.jpg
 firstSeen: 2018-01-24T14:40:16+02:00
 lastUpdated: 2020-09-15T16:28:04+03:00

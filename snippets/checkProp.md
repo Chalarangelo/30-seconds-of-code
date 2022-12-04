@@ -1,7 +1,6 @@
 ---
 title: Check property
 tags: function,object
-expertise: intermediate
 cover: blog_images/white-tablet-2.jpg
 firstSeen: 2019-03-17T03:53:00+02:00
 lastUpdated: 2020-11-01T20:50:57+02:00

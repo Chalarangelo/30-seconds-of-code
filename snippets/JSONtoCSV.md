@@ -1,7 +1,6 @@
 ---
 title: JSON to CSV
 tags: array,string,object
-expertise: advanced
 cover: blog_images/horse-sunset.jpg
 firstSeen: 2018-07-06T20:25:46+03:00
 lastUpdated: 2021-10-13T19:29:39+02:00

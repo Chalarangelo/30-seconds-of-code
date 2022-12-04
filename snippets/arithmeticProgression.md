@@ -1,7 +1,6 @@
 ---
 title: Arithmetic progression
 tags: math,algorithm
-expertise: beginner
 author: maciv
 cover: blog_images/u-got-this.jpg
 firstSeen: 2020-10-04T11:37:07+03:00

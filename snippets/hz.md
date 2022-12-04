@@ -1,7 +1,6 @@
 ---
 title: Hertz frequency of function
 tags: function
-expertise: intermediate
 unlisted: true
 cover: blog_images/lake-runner.jpg
 firstSeen: 2018-04-11T16:39:49+03:00
