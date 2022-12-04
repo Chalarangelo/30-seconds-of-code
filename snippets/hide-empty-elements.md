@@ -1,7 +1,6 @@
 ---
 title: Hide empty elements
 tags: visual
-expertise: beginner
 author: chalarangelo
 cover: blog_images/metro-arrival.jpg
 firstSeen: 2022-11-18T05:00:00-04:00

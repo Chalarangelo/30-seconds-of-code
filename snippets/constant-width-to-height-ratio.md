@@ -1,7 +1,6 @@
 ---
 title: Constant width to height ratio
 tags: layout
-expertise: beginner
 cover: blog_images/clutter.jpg
 firstSeen: 2018-02-27T10:45:26+02:00
 lastUpdated: 2020-12-30T15:37:37+02:00

@@ -1,7 +1,6 @@
 ---
 title: List with sticky section headings
 tags: visual
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/interior-7.jpg
 firstSeen: 2020-08-18T15:44:01+03:00

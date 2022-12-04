@@ -1,7 +1,6 @@
 ---
 title: Typewriter effect
 tags: animation
-expertise: advanced
 author: chalarangelo
 cover: blog_images/italian-horizon.jpg
 firstSeen: 2021-05-24T16:03:40+03:00

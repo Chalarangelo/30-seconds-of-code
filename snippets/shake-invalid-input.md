@@ -1,7 +1,6 @@
 ---
 title: Shake on invalid input
 tags: animation
-expertise: beginner
 cover: blog_images/perfect-timing.jpg
 firstSeen: 2022-07-31T18:30:11+03:00
 ---

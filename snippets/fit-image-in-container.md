@@ -1,7 +1,6 @@
 ---
 title: Fit image in container
 tags: layout,visual
-expertise: intermediate
 cover: blog_images/succulent-3.jpg
 firstSeen: 2018-10-31T08:34:49+02:00
 lastUpdated: 2020-12-30T15:37:37+02:00

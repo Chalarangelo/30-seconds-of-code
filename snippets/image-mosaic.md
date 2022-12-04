@@ -1,7 +1,6 @@
 ---
 title: Responsive image mosaic
 tags: layout
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/beach-riders.jpg
 firstSeen: 2020-08-18T17:18:03+03:00

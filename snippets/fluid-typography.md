@@ -1,7 +1,6 @@
 ---
 title: Fluid typography
 tags: visual
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/shell-focus.jpg
 firstSeen: 2021-05-16T11:23:05+03:00

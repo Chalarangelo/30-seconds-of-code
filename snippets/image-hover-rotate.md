@@ -1,7 +1,6 @@
 ---
 title: Image rotate on hover
 tags: animation,visual
-expertise: intermediate
 cover: blog_images/succulent-1.jpg
 firstSeen: 2020-04-20T18:36:11+03:00
 lastUpdated: 2021-10-11T18:44:51+03:00

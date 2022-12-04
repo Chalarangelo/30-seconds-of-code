@@ -1,7 +1,6 @@
 ---
 title: Scroll progress bar
 tags: animation,visual
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/coworking-space.jpg
 firstSeen: 2021-05-24T09:42:03+03:00

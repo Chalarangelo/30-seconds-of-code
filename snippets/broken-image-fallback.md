@@ -2,7 +2,6 @@
 title: Fallback for images that fail to load
 shortTitle: Broken image fallback
 tags: visual
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/building-facade.jpg
 firstSeen: 2022-11-04T05:00:00-04:00

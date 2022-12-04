@@ -1,7 +1,6 @@
 ---
 title: Polka dot background pattern
 tags: visual
-expertise: intermediate
 cover: blog_images/bag-waiting.jpg
 firstSeen: 2021-01-11T09:51:43+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00

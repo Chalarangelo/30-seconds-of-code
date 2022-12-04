@@ -1,7 +1,6 @@
 ---
 title: Shape separator
 tags: visual
-expertise: intermediate
 unlisted: true
 cover: blog_images/shapes.jpg
 firstSeen: 2018-02-25T15:14:39+02:00

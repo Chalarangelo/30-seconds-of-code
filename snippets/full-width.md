@@ -1,7 +1,6 @@
 ---
 title: Full-width image
 tags: layout
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/yellow-white-mug-2.jpg
 firstSeen: 2021-01-07T10:14:46+02:00
