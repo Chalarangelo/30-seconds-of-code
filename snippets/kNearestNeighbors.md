@@ -1,7 +1,6 @@
 ---
 title: K-nearest neighbors
 tags: algorithm,array
-expertise: advanced
 author: chalarangelo
 cover: blog_images/building-blocks.jpg
 firstSeen: 2020-12-28T16:31:43+02:00

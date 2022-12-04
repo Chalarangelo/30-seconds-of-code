@@ -1,7 +1,6 @@
 ---
 title: Value is generator function
 tags: type,function
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/interior-4.jpg
 firstSeen: 2020-08-07T15:40:38+03:00

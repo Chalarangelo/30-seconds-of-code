@@ -1,7 +1,6 @@
 ---
 title: Midpoint
 tags: math
-expertise: beginner
 cover: blog_images/curve.jpg
 firstSeen: 2018-11-15T17:49:04+02:00
 lastUpdated: 2020-10-21T21:54:53+03:00

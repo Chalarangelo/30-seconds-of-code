@@ -1,7 +1,6 @@
 ---
 title: String permutations
 tags: string,recursion
-expertise: advanced
 cover: blog_images/mac-and-coffee.jpg
 firstSeen: 2018-02-19T15:47:47+02:00
 lastUpdated: 2020-11-15T17:13:42+02:00

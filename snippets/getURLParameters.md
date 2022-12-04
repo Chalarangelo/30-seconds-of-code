@@ -1,7 +1,6 @@
 ---
 title: URL parameters as object
 tags: browser,string,regexp
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/compass.jpg
 firstSeen: 2017-12-17T17:55:51+02:00

@@ -1,7 +1,6 @@
 ---
 title: Map consecutive elements
 tags: array
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/cold-mountains.jpg
 firstSeen: 2021-08-08T05:00:00-04:00

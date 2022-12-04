@@ -1,7 +1,6 @@
 ---
 title: First n elements
 tags: array
-expertise: beginner
 author: chalarangelo
 cover: blog_images/digital-nomad-16.jpg
 firstSeen: 2022-07-22T05:00:00-04:00

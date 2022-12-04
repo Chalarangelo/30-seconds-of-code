@@ -1,7 +1,6 @@
 ---
 title: Nth root of number
 tags: math
-expertise: beginner
 author: chalarangelo
 cover: blog_images/tree-roots.jpg
 firstSeen: 2021-01-06T22:47:48+02:00

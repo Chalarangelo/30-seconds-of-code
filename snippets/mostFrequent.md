@@ -1,7 +1,6 @@
 ---
 title: Most frequent element in array
 tags: array
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/clock.jpg
 firstSeen: 2020-01-03T15:32:46+02:00

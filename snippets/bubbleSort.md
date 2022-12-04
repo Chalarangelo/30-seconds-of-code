@@ -1,7 +1,6 @@
 ---
 title: Bubble sort
 tags: algorithm,array
-expertise: beginner
 author: maciv
 cover: blog_images/budapest-palace.jpg
 firstSeen: 2020-12-27T21:20:31+02:00

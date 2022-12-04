@@ -1,7 +1,6 @@
 ---
 title: Logical xor
 tags: math,logic
-expertise: beginner
 unlisted: true
 cover: blog_images/succulent-11.jpg
 firstSeen: 2020-10-05T21:19:21+03:00

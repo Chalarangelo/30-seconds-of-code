@@ -1,7 +1,6 @@
 ---
 title: Head of array
 tags: array
-expertise: beginner
 cover: blog_images/clay-pot-horizon.jpg
 firstSeen: 2017-12-17T16:41:31+02:00
 lastUpdated: 2020-10-19T22:49:51+03:00

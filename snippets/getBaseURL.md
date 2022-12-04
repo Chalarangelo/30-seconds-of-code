@@ -1,7 +1,6 @@
 ---
 title: Get base URL
 tags: string,browser,regexp
-expertise: beginner
 author: chalarangelo
 cover: blog_images/compass.jpg
 firstSeen: 2020-05-03T12:20:54+03:00

@@ -1,7 +1,6 @@
 ---
 title: Left substring generator
 tags: string,generator
-expertise: intermediate
 cover: blog_images/boutique-home-office-1.jpg
 author: chalarangelo
 firstSeen: 2022-07-24T05:00:00-04:00

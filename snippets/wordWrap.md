@@ -1,7 +1,6 @@
 ---
 title: Word wrap string
 tags: string,regexp
-expertise: intermediate
 cover: blog_images/white-tablet.jpg
 firstSeen: 2020-10-06T11:48:41+03:00
 lastUpdated: 2020-10-22T20:24:44+03:00

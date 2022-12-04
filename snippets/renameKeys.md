@@ -1,7 +1,6 @@
 ---
 title: Rename object keys
 tags: object
-expertise: intermediate
 cover: blog_images/fallen-leaves.jpg
 firstSeen: 2018-04-10T20:22:39+03:00
 lastUpdated: 2020-10-22T20:24:30+03:00

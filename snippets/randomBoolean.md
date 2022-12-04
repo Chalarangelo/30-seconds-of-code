@@ -1,7 +1,6 @@
 ---
 title: Random boolean value
 tags: math,random
-expertise: beginner
 author: chalarangelo
 cover: blog_images/malibu.jpg
 firstSeen: 2021-01-20T16:20:08+02:00

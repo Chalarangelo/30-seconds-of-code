@@ -1,7 +1,6 @@
 ---
 title: Copy to clipboard async
 tags: browser,string,promise
-expertise: advanced
 cover: blog_images/typing.jpg
 firstSeen: 2022-01-11T05:00:00-04:00
 ---

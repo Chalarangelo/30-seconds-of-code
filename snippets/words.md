@@ -1,7 +1,6 @@
 ---
 title: String to words
 tags: string,regexp
-expertise: intermediate
 cover: blog_images/sea-view-2.jpg
 firstSeen: 2017-12-21T14:50:57+02:00
 lastUpdated: 2020-10-22T20:24:44+03:00

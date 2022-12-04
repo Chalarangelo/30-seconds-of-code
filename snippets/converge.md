@@ -1,7 +1,6 @@
 ---
 title: Converge branching functions
 tags: function
-expertise: intermediate
 excerpt: Converges a list of branching functions into a single function and returns the result.
 cover: blog_images/cherry-trees.jpg
 firstSeen: 2018-02-07T12:23:04+02:00

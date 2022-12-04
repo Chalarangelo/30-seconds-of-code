@@ -1,7 +1,6 @@
 ---
 title: Powerset
 tags: math,algorithm
-expertise: beginner
 cover: blog_images/new-plant.jpg
 firstSeen: 2017-12-07T14:41:33+02:00
 lastUpdated: 2021-09-27T15:27:07+02:00

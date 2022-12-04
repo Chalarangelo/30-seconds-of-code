@@ -1,7 +1,6 @@
 ---
 title: Number of seconds to ISO format
 tags: date,math,string
-expertise: intermediate
 cover: blog_images/rocky-mountains.jpg
 firstSeen: 2021-05-09T12:44:55+03:00
 lastUpdated: 2021-10-13T19:29:39+02:00

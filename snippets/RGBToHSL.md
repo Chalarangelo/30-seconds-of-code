@@ -1,7 +1,6 @@
 ---
 title: RGB to HSL
 tags: math
-expertise: intermediate
 cover: blog_images/planning.jpg
 firstSeen: 2020-10-01T23:16:30+03:00
 lastUpdated: 2020-10-04T11:25:12+03:00

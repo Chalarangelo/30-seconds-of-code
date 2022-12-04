@@ -1,7 +1,6 @@
 ---
 title: Caesar cipher
 tags: algorithm,string
-expertise: beginner
 author: maciv
 cover: blog_images/ancient-greek-building.jpg
 firstSeen: 2020-12-28T20:10:18+02:00

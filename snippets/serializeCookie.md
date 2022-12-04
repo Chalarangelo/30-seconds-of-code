@@ -1,7 +1,6 @@
 ---
 title: Serialize cookie
 tags: browser,string
-expertise: intermediate
 cover: blog_images/three-vases.jpg
 firstSeen: 2018-01-13T14:19:21+02:00
 lastUpdated: 2020-10-22T20:24:30+03:00

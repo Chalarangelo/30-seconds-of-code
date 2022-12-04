@@ -1,7 +1,6 @@
 ---
 title: Number has decimal digits
 tags: math
-expertise: beginner
 author: chalarangelo
 cover: blog_images/man-cup-laptop.jpg
 firstSeen: 2022-05-13T05:00:00-04:00

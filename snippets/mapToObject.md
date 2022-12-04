@@ -2,7 +2,6 @@
 title: Convert Map to object
 shortTitle: Map to object
 tags: object
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/succulent-1.jpg
 firstSeen: 2022-06-16T05:00:00-04:00

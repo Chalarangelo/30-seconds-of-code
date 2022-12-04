@@ -1,7 +1,6 @@
 ---
 title: Convert function to variadic
 tags: function,array
-expertise: intermediate
 cover: blog_images/polar-bear.jpg
 firstSeen: 2017-12-22T05:08:36+02:00
 lastUpdated: 2021-06-13T13:50:25+03:00

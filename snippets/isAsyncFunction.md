@@ -1,7 +1,6 @@
 ---
 title: Value is async function
 tags: type,function
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/interior-12.jpg
 firstSeen: 2020-08-07T15:41:55+03:00

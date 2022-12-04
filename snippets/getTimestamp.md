@@ -1,7 +1,6 @@
 ---
 title: Unix timestamp from date
 tags: date
-expertise: beginner
 cover: blog_images/interior-14.jpg
 firstSeen: 2020-10-08T17:15:56+03:00
 lastUpdated: 2020-10-19T22:49:51+03:00

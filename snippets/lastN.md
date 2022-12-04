@@ -1,7 +1,6 @@
 ---
 title: Last n elements
 tags: array
-expertise: beginner
 author: chalarangelo
 cover: blog_images/interior-5.jpg
 firstSeen: 2022-07-23T05:00:00-04:00

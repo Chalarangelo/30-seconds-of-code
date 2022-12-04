@@ -1,7 +1,6 @@
 ---
 title: Count substrings of string
 tags: string,algorithm
-expertise: beginner
 author: chalarangelo
 cover: blog_images/obelisk.jpg
 firstSeen: 2020-12-31T13:58:51+02:00

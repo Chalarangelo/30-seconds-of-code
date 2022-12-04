@@ -1,7 +1,6 @@
 ---
 title: Remove list elements until condition is met
 tags: array
-expertise: intermediate
 cover: blog_images/purple-sunset-beach.jpg
 firstSeen: 2020-11-29T12:04:53+02:00
 lastUpdated: 2020-11-29T12:04:53+02:00

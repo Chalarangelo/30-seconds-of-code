@@ -1,7 +1,6 @@
 ---
 title: Add class to HTML element
 tags: browser
-expertise: beginner
 author: chalarangelo
 cover: blog_images/budapest-palace.jpg
 firstSeen: 2020-12-30T19:21:15+02:00

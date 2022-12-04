@@ -1,7 +1,6 @@
 ---
 title: Remove event listeners from target
 tags: browser,event
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/snowy-mountains.jpg
 firstSeen: 2021-04-22T08:53:29+03:00

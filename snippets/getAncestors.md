@@ -1,7 +1,6 @@
 ---
 title: Get element ancestors
 tags: browser
-expertise: beginner
 author: chalarangelo
 cover: blog_images/interior-8.jpg
 firstSeen: 2020-10-15T09:28:34+03:00

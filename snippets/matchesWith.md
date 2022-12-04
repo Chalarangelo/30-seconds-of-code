@@ -1,7 +1,6 @@
 ---
 title: Matches object properties based on function
 tags: object
-expertise: intermediate
 cover: blog_images/watermelon-bike.jpg
 firstSeen: 2018-01-23T20:17:32+02:00
 lastUpdated: 2020-10-21T21:54:53+03:00

@@ -1,7 +1,6 @@
 ---
 title: Bucket sort
 tags: algorithm,array
-expertise: intermediate
 author: maciv
 cover: blog_images/canoe.jpg
 firstSeen: 2020-12-28T22:11:56+02:00

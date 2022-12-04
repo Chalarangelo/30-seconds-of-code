@@ -1,7 +1,6 @@
 ---
 title: Remove DOM element
 tags: browser
-expertise: beginner
 author: chalarangelo
 cover: blog_images/by-the-lighthouse.jpg
 firstSeen: 2021-01-07T00:20:34+02:00

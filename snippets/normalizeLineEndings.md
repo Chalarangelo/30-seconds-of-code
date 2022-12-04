@@ -1,7 +1,6 @@
 ---
 title: Normalize line endings
 tags: string,regexp
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/red-light.jpg
 firstSeen: 2020-05-04T12:33:13+03:00

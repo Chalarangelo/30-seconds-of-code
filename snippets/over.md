@@ -1,7 +1,6 @@
 ---
 title: Invoke functions on arguments
 tags: function
-expertise: intermediate
 cover: blog_images/jars-on-shelf.jpg
 firstSeen: 2018-01-23T21:02:17+02:00
 lastUpdated: 2020-10-21T21:54:53+03:00

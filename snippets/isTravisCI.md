@@ -1,7 +1,6 @@
 ---
 title: Environment is Travis CI
 tags: node
-expertise: intermediate
 unlisted: true
 cover: blog_images/succulent-5.jpg
 firstSeen: 2018-01-01T17:28:08+02:00

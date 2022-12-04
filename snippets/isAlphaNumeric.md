@@ -1,7 +1,6 @@
 ---
 title: String is alphanumeric
 tags: string,regexp
-expertise: beginner
 cover: blog_images/mountain-lake-cottage-2.jpg
 firstSeen: 2020-09-06T07:59:16+03:00
 lastUpdated: 2020-10-20T23:02:01+03:00

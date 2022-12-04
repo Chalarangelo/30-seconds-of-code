@@ -1,7 +1,6 @@
 ---
 title: Cartesian product
 tags: math,array
-expertise: beginner
 author: maciv
 cover: blog_images/sail-away.jpg
 firstSeen: 2020-12-28T20:23:47+02:00

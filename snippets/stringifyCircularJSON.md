@@ -1,7 +1,6 @@
 ---
 title: Stringify circular JSON
 tags: object
-expertise: advanced
 cover: blog_images/periscope.jpg
 firstSeen: 2020-10-06T12:32:28+03:00
 lastUpdated: 2020-10-22T20:24:30+03:00

@@ -1,7 +1,6 @@
 ---
 title: Array of successive values
 tags: array
-expertise: intermediate
 cover: blog_images/laptop-view.jpg
 firstSeen: 2018-01-24T16:38:08+02:00
 lastUpdated: 2020-10-22T20:24:04+03:00

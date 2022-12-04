@@ -1,7 +1,6 @@
 ---
 title: Week of year
 tags: date
-expertise: advanced
 author: chalarangelo
 cover: blog_images/godray-computer-mug.jpg
 firstSeen: 2021-08-15T05:00:00-04:00

@@ -1,7 +1,6 @@
 ---
 title: Array ranking
 tags: array,math
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/eagle.jpg
 firstSeen: 2022-04-13T05:00:00-04:00

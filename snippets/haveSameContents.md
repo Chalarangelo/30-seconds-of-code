@@ -1,7 +1,6 @@
 ---
 title: Check if arrays have same contents
 tags: array
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/interior-15.jpg
 firstSeen: 2020-01-05T21:40:39+02:00

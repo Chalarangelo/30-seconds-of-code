@@ -1,7 +1,6 @@
 ---
 title: Index of substrings
 tags: string,algorithm,generator
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/violin.jpg
 firstSeen: 2020-12-31T13:58:51+02:00

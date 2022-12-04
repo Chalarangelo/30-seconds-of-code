@@ -1,7 +1,6 @@
 ---
 title: Change color lightness
 tags: string,browser,regexp
-expertise: intermediate
 cover: blog_images/aerial-view-port.jpg
 firstSeen: 2020-10-30T17:38:31+02:00
 lastUpdated: 2020-10-31T16:37:54+02:00

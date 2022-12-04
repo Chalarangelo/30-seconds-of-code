@@ -1,7 +1,6 @@
 ---
 title: CSV to JSON
 tags: string,object
-expertise: advanced
 cover: blog_images/kettle-laptop.jpg
 firstSeen: 2018-06-27T21:14:24+03:00
 lastUpdated: 2022-01-30T12:14:39+02:00

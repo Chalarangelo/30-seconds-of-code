@@ -1,7 +1,6 @@
 ---
 title: Find first matching key
 tags: object
-expertise: intermediate
 cover: blog_images/succulent-crowd.jpg
 firstSeen: 2018-01-23T18:23:20+02:00
 lastUpdated: 2020-10-22T20:23:47+03:00

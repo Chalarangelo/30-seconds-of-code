@@ -1,7 +1,6 @@
 ---
 title: Value is promise-like
 tags: type,function,promise
-expertise: intermediate
 cover: blog_images/digital-nomad-13.jpg
 firstSeen: 2017-12-31T14:25:43+02:00
 lastUpdated: 2020-10-20T23:02:01+03:00

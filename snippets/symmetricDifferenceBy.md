@@ -1,7 +1,6 @@
 ---
 title: Mapped array symmetric difference
 tags: array
-expertise: intermediate
 cover: blog_images/river-houses.jpg
 firstSeen: 2018-01-24T11:59:02+02:00
 lastUpdated: 2020-10-22T20:24:30+03:00

@@ -1,7 +1,6 @@
 ---
 title: Random integer array in range
 tags: math,random
-expertise: intermediate
 cover: blog_images/digital-nomad-11.jpg
 firstSeen: 2018-01-15T13:25:18+02:00
 lastUpdated: 2020-10-22T20:24:04+03:00

@@ -1,7 +1,6 @@
 ---
 title: Count grouped elements
 tags: array,object
-expertise: intermediate
 cover: blog_images/tools.jpg
 firstSeen: 2018-01-11T13:45:53+02:00
 lastUpdated: 2020-11-03T22:11:18+02:00

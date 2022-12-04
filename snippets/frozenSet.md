@@ -1,7 +1,6 @@
 ---
 title: Freeze Set object
 tags: array
-expertise: intermediate
 author: maciv
 cover: blog_images/frozen-globe.jpg
 firstSeen: 2020-10-11T11:52:48+03:00

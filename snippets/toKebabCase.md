@@ -1,7 +1,6 @@
 ---
 title: Kebabcase string
 tags: string,regexp
-expertise: intermediate
 cover: blog_images/old-consoles.jpg
 firstSeen: 2017-12-22T19:14:51+02:00
 lastUpdated: 2020-12-16T13:42:27+02:00
