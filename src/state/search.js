@@ -43,9 +43,9 @@ const searchByKeyphrase = (keyphrase, searchIndex) => {
 const filterResultsByType = (type, searchResults) => {
   switch (type) {
     case 'collections':
-      return searchResults.filter(r => !r.expertise);
+      return searchResults.filter(r => r.type === 'collection');
     case 'snippets':
-      return searchResults.filter(r => r.expertise);
+      return searchResults.filter(r => r.type === 'snippet');
     default:
       return searchResults;
   }
@@ -78,8 +78,8 @@ const reducer = (state, action) => {
       );
       const availableFilters = {
         All: true,
-        Snippets: searchResults.some(r => r.expertise),
-        Collections: searchResults.some(r => !r.expertise),
+        Snippets: searchResults.some(r => r.type === 'snippet'),
+        Collections: searchResults.some(r => r.type === 'collection'),
       };
       return {
         ...state,

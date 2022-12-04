@@ -49,7 +49,6 @@ export const snippetContextSerializer = {
     'url',
     'slug',
     ['dateFormatted', 'date'],
-    'expertise',
     'icon',
     ['formattedTags', 'tags'],
     'actionType',

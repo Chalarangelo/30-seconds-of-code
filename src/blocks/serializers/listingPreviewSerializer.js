@@ -11,6 +11,7 @@ export const listingPreviewSerializer = {
     searchResultTag: (listing, { withSearch } = {}) =>
       withSearch ? literals.snippetCollectionShort : undefined,
     url: listing => `${listing.slugPrefix}/p/1`,
+    type: () => 'collection',
   },
   attributes: [
     ['shortName', 'title'],
@@ -20,5 +21,6 @@ export const listingPreviewSerializer = {
     'tags',
     'searchTokens',
     'searchResultTag',
+    'type',
   ],
 };

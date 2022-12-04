@@ -35,7 +35,7 @@ const SnippetCard = ({ snippet }) => {
   return (
     <Card className='snippet-card'>
       <div className='card-meta grid'>
-        <CardIcon icon={snippet.icon} expertise={snippet.expertise} />
+        <CardIcon icon={snippet.icon} type='snippet' />
         <div className='card-data mx-2 my-0'>
           <CardTitle>{snippet.title}</CardTitle>
           <CardSubtitle>
