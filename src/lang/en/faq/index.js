@@ -8,10 +8,6 @@ const literals = {
   pageDescription: `Frequently asked questions and answers about ${settings.websiteName}.`,
   cards: [
     {
-      title: 'What are the round indicators next to snippet icons?',
-      html: 'expertise.html',
-    },
-    {
       title: 'What does OSCC mean?',
       html: 'oscc.html',
     },
