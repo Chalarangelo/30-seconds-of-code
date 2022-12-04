@@ -3,7 +3,6 @@ title: Check if a string contains a substring in JavaScript
 shortTitle: String contains substring
 type: story
 tags: javascript,string
-expertise: beginner
 author: chalarangelo
 cover: blog_images/sea-view-2.jpg
 excerpt: Let's have a look at how to check if a string contains a substring in JavaScript.

@@ -3,7 +3,6 @@ title: "Tip: The order of then and catch matters"
 shortTitle: The order of then and catch matters
 type: tip
 tags: javascript,function,promise
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/blue-sunrise.jpg
 excerpt: Messing up the order of chained `then` and `catch` methods in JavaScript promises can result in all sorts of problems. Here's a short primer on the subject.

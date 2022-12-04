@@ -3,7 +3,6 @@ title: "Tip: Convert decimal number to hexadecimal"
 shortTitle: Decimal to hexadecimal
 type: tip
 tags: javascript,math
-expertise: beginner
 author: chalarangelo
 cover: blog_images/waves-from-above.jpg
 excerpt: Ever needed to convert a decimal number to hexadecimal? Here's a quick and easy way to do it.

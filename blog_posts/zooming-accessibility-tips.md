@@ -3,7 +3,6 @@ title: Why using maximum-scale can harm your page's accessibility
 shortTitle: Accessibility and maximum-scale
 type: story
 tags: webdev
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/camera-zoom.jpg
 excerpt: Using the viewport meta tag incorrectly can harm your website's accessibility. Learn how to prevent problems with this handy guide.

@@ -3,7 +3,6 @@ title: Can I use an arrow function as the callback for an event listener in Java
 shortTitle: Arrow function as callback for event listener
 type: question
 tags: javascript,browser,event,function
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/arrow-functions.jpg
 excerpt: Learn the differences between JavaScript ES6 arrow functions and regular functions and how they affect event listener callbacks.

@@ -2,7 +2,6 @@
 title: Escaping tutorial hell
 type: story
 tags: career,webdev,programming,jobs
-expertise: beginner
 author: chalarangelo
 cover: blog_images/campfire.jpg
 excerpt: Many beginners get stuck in tutorial hell without even realizing. Here are 4 simple ways to escape tutorial hell and get back to learning.

@@ -3,7 +3,6 @@ title: Why should line-height be unitless in CSS?
 shortTitle: Unitless line height
 type: tip
 tags: css,layout,visual
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/gold-typewriter.jpg
 excerpt: You might have heard that `line-height` should be unitless, but do you know why?

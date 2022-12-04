@@ -3,7 +3,6 @@ title: What is recursion and when is it useful?
 shortTitle: Recursion introduction
 type: question
 tags: javascript,function,recursion
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/curve.jpg
 excerpt: Recursion is a very important programming concept all developers should be familiar with.

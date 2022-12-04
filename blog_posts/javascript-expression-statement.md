@@ -3,7 +3,6 @@ title: What is the difference between an expression and a statement in JavaScrip
 shortTitle: Expressions and statements
 type: question
 tags: javascript,type
-expertise: beginner
 author: chalarangelo
 cover: blog_images/forest-balcony.jpg
 excerpt: JavaScript distinguishes expressions and statements. Learn their differences in this short article.

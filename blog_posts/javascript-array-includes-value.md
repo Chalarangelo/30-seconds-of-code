@@ -3,7 +3,6 @@ title: How can I check if a JavaScript array includes a specific value?
 shortTitle: JavaScript array includes value
 type: question
 tags: javascript,array
-expertise: beginner
 author: chalarangelo
 cover: blog_images/bridge-drop.jpg
 excerpt: Checking if an array includes a specific value is pretty straightforward, except when it comes to objects.

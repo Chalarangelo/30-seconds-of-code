@@ -3,7 +3,6 @@ title: "Tip: Compare strings regardless of case and accent"
 shortTitle: Case and accent-insensitive string comparison
 type: tip
 tags: javascript,string,comparison
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/memories-of-pineapple-1.jpg
 excerpt: Here's a quick tip on how to compare and sort arrays of strings, ignoring case and accents.

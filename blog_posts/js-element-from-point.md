@@ -3,7 +3,6 @@ title: "Tip: Element at a specific point on the page"
 shortTitle: Element at specific coordinates
 type: tip
 tags: javascript,browser
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/armchair-in-yellow.jpg
 excerpt: Using `Document.elementFromPoint()` to easily get the element at a specific point on the page.

@@ -3,7 +3,6 @@ title: "Tip: Typechecking arrays with Array.isArray()"
 shortTitle: Array typechecking
 type: tip
 tags: javascript,type,array
-expertise: beginner
 author: chalarangelo
 cover: blog_images/purple-flower-field.jpg
 excerpt: Make sure to use the correct method when checking if a JavaScript object is an array.

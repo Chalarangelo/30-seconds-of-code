@@ -3,7 +3,6 @@ title: What does the double negation operator do in JavaScript?
 shortTitle: Double negation operator
 type: question
 tags: javascript,function
-expertise: beginner
 author: chalarangelo
 cover: blog_images/memories-of-pineapple-2.jpg
 excerpt: You've probably come across the double negation operator (`!!`) before, but do you know what it does?

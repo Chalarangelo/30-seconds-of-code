@@ -3,7 +3,6 @@ title: Frequency Map Data Structure
 shortTitle: Frequency Map
 type: story
 tags: javascript,object,class,array
-expertise: advanced
 author: chalarangelo
 cover: blog_images/radio-monstera.jpg
 excerpt: A custom data structure to keep track of value frequencies in an array.

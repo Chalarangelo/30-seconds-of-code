@@ -3,7 +3,6 @@ title: "Tip: Pretty-print a JSON object with JavaScript"
 shortTitle: Pretty-print JSON
 type: tip
 tags: javascript,object,json
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/memories-of-pineapple-3.jpg
 excerpt: Pretty-printing JSON objects in pretty easy and customizable in JavaScript. Here's the gist of it.

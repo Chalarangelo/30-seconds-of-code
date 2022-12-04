@@ -3,7 +3,6 @@ title: How can I check if a string is empty in Python?
 shortTitle: String is empty
 type: question
 tags: python,string
-expertise: beginner
 author: chalarangelo
 cover: blog_images/tea-laptop-table.jpg
 excerpt: Here are two quick and elegant ways to check if a string is empty in Python.

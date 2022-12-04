@@ -3,7 +3,6 @@ title: "Tip: Convert a string to a boolean"
 shortTitle: String to boolean
 type: tip
 tags: javascript,string,boolean,type
-expertise: beginner
 author: chalarangelo
 cover: blog_images/two-cities.jpg
 excerpt: Have you ever tried to convert the string representation of a boolean to an actual boolean value? Here's a simple way to do it.

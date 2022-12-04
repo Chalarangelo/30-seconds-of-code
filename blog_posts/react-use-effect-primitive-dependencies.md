@@ -3,7 +3,6 @@ title: "Tip: Prefer primitives in useEffect dependencies"
 shortTitle: Primitive useEffect dependencies
 type: tip
 tags: react,hooks,effect,object,comparison
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/automaton.jpg
 excerpt: Avoid unnecessary re-runs by using primitive dependencies in your React effect.

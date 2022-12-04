@@ -3,7 +3,6 @@ title: CSS inherited properties cheatsheet
 shortTitle: Inherited properties
 type: cheatsheet
 tags: css,layout
-expertise: beginner
 author: chalarangelo
 cover: blog_images/half-trees.jpg
 excerpt: A quick reference for inherited CSS properties.

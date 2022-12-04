@@ -2,7 +2,6 @@
 title: 6 Python f-strings tips and tricks
 type: story
 tags: python,string
-expertise: beginner
 author: chalarangelo
 cover: blog_images/sea-view.jpg
 excerpt: Python's f-strings can do a lot more than you might expect. Learn a few useful tips and tricks in this quick guide.

@@ -3,7 +3,6 @@ title: How can I add a timeout to a promise in JavaScript?
 shortTitle: Promise timeout
 type: question
 tags: javascript,promise,timeout,class
-expertise: advanced
 author: chalarangelo
 cover: blog_images/walking.jpg
 excerpt: Oftentimes you might need to add a timeout to a promise in JavaScript. Learn how to do this and more in this short guide.

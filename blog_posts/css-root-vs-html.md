@@ -3,7 +3,6 @@ title: What's the difference between :root and html in CSS?
 shortTitle: :root vs html
 type: story
 tags: css,layout,selector
-expertise: beginner
 author: chalarangelo
 cover: blog_images/tree-roots.jpg
 excerpt: The CSS selectors used to target the root element of an HTML share some similarities, but they also have some differences.
