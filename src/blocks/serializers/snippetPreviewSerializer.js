@@ -10,6 +10,7 @@ export const snippetPreviewSerializer = {
       if (!withSearch) return undefined;
       return snippet.shortTitle;
     },
+    type: () => 'snippet',
   },
   attributes: [
     'title',
@@ -20,6 +21,6 @@ export const snippetPreviewSerializer = {
     ['formattedPreviewTags', 'tags'],
     'searchTokens',
     'searchResultTag',
-    'expertise',
+    'type',
   ],
 };
