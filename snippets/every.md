@@ -1,7 +1,6 @@
 ---
 title: Test if every list element is truthy
 tags: list
-expertise: intermediate
 cover: blog_images/walking.jpg
 firstSeen: 2019-08-20T11:34:24+03:00
 lastUpdated: 2020-11-02T19:27:53+02:00

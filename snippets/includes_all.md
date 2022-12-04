@@ -1,7 +1,6 @@
 ---
 title: List includes all values
 tags: list
-expertise: intermediate
 author: maciv
 cover: blog_images/switzerland-night.jpg
 firstSeen: 2020-03-15T12:54:08+02:00

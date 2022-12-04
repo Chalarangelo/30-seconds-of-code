@@ -1,7 +1,6 @@
 ---
 title: Key of max value
 tags: dictionary
-expertise: beginner
 author: maciv
 cover: blog_images/succulent-7.jpg
 firstSeen: 2021-01-07T23:15:48+02:00

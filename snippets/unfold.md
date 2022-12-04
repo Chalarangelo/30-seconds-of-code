@@ -1,7 +1,6 @@
 ---
 title: Unfold list
 tags: function,list
-expertise: advanced
 cover: blog_images/painters-desk.jpg
 firstSeen: 2020-01-02T20:17:51+02:00
 lastUpdated: 2020-11-02T19:28:35+02:00

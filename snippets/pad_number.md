@@ -1,7 +1,6 @@
 ---
 title: Pad number
 tags: string,math
-expertise: beginner
 cover: blog_images/umbrellas.jpg
 firstSeen: 2020-10-04T01:42:19+03:00
 lastUpdated: 2020-11-02T19:28:27+02:00

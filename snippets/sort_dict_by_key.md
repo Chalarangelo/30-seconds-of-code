@@ -1,7 +1,6 @@
 ---
 title: Sort dictionary by key
 tags: dictionary
-expertise: intermediate
 author: maciv
 cover: blog_images/laptop-plants.jpg
 firstSeen: 2020-10-16T21:24:33+03:00

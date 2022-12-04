@@ -1,7 +1,6 @@
 ---
 title: Drop list elements from the right
 tags: list
-expertise: beginner
 author: chalarangelo
 cover: blog_images/digital-nomad-7.jpg
 firstSeen: 2020-03-10T21:59:41+02:00

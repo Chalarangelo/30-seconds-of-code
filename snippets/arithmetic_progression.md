@@ -1,7 +1,6 @@
 ---
 title: Arithmetic progression
 tags: math
-expertise: beginner
 cover: blog_images/number-2.jpg
 firstSeen: 2020-07-28T13:57:33+03:00
 lastUpdated: 2020-11-02T19:27:07+02:00

@@ -1,7 +1,6 @@
 ---
 title: Mapped list average
 tags: math,list
-expertise: intermediate
 cover: blog_images/flower-vase.jpg
 firstSeen: 2019-08-20T11:55:10+03:00
 lastUpdated: 2020-11-02T19:27:07+02:00

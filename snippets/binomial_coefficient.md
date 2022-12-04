@@ -1,7 +1,6 @@
 ---
 title: Binomial coefficient
 tags: math
-expertise: beginner
 author: maciv
 cover: blog_images/digital-nomad-5.jpg
 firstSeen: 2020-10-04T11:56:31+03:00

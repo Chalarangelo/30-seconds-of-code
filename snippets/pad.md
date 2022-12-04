@@ -1,7 +1,6 @@
 ---
 title: Pad string
 tags: string
-expertise: beginner
 author: chalarangelo
 cover: blog_images/digital-nomad-11.jpg
 firstSeen: 2020-10-04T01:53:05+03:00

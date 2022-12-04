@@ -1,7 +1,6 @@
 ---
 title: Drop list elements from the left
 tags: list
-expertise: beginner
 author: chalarangelo
 cover: blog_images/pink-flower.jpg
 firstSeen: 2020-03-10T21:59:41+02:00

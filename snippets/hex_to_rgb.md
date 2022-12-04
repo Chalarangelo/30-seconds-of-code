@@ -1,7 +1,6 @@
 ---
 title: Hex to RGB
 tags: string,math
-expertise: intermediate
 author: maciv
 cover: blog_images/sleepy-cat.jpg
 firstSeen: 2020-09-13T01:08:21+03:00

@@ -1,7 +1,6 @@
 ---
 title: Most frequent element
 tags: list
-expertise: beginner
 cover: blog_images/secret-tree.jpg
 firstSeen: 2019-10-12T00:40:49+03:00
 lastUpdated: 2020-11-02T19:28:27+02:00

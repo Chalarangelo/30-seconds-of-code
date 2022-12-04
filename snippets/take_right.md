@@ -1,7 +1,6 @@
 ---
 title: Remove list elements from the end
 tags: list
-expertise: beginner
 author: chalarangelo
 cover: blog_images/three-vases.jpg
 firstSeen: 2020-03-16T19:52:44+02:00

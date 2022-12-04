@@ -1,7 +1,6 @@
 ---
 title: Execute function for each list element in reverse
 tags: list
-expertise: beginner
 author: maciv
 cover: blog_images/bridge-drop.jpg
 firstSeen: 2020-03-15T12:54:08+02:00

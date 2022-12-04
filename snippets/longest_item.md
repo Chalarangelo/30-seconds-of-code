@@ -1,7 +1,6 @@
 ---
 title: Longest item
 tags: list,string
-expertise: intermediate
 cover: blog_images/keyboard-tea.jpg
 firstSeen: 2019-08-20T15:27:49+03:00
 lastUpdated: 2021-10-17T18:24:43+02:00

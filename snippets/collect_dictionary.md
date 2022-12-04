@@ -1,7 +1,6 @@
 ---
 title: Invert dictionary
 tags: dictionary
-expertise: intermediate
 author: maciv
 cover: blog_images/working-bee.jpg
 firstSeen: 2020-04-07T21:15:06+03:00

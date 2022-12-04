@@ -1,7 +1,6 @@
 ---
 title: String to words
 tags: string,regexp
-expertise: beginner
 author: maciv
 cover: blog_images/rocky-lake.jpg
 firstSeen: 2020-10-04T00:35:00+03:00
