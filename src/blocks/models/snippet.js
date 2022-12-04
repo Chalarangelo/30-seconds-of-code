@@ -22,11 +22,6 @@ export const snippet = {
         uniqueValues: true,
       },
     },
-    {
-      name: 'expertise',
-      type: 'enum',
-      values: ['beginner', 'intermediate', 'advanced'],
-    },
     { name: 'shortTitle', type: 'string' },
     { name: 'firstSeen', type: 'dateRequired' },
     { name: 'lastUpdated', type: 'dateRequired' },
