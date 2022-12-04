@@ -1,7 +1,6 @@
 ---
 title: Rotating Card
 tags: animation
-expertise: advanced
 cover: blog_images/digital-nomad-11.jpg
 firstSeen: 2020-10-04T14:10:24+03:00
 lastUpdated: 2021-03-30T15:24:01+03:00

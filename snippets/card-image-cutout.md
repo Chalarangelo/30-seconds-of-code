@@ -1,7 +1,6 @@
 ---
 title: Card with image cutout
 tags: visual
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/radio-monstera.jpg
 firstSeen: 2022-12-11T05:00:00-04:00

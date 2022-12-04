@@ -1,7 +1,6 @@
 ---
 title: Border with top triangle
 tags: visual
-expertise: beginner
 cover: blog_images/greek-coffee.jpg
 firstSeen: 2019-01-18T12:18:43+02:00
 lastUpdated: 2021-01-07T23:52:15+02:00

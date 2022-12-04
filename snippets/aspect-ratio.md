@@ -1,7 +1,6 @@
 ---
 title: Aspect ratio
 tags: layout
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/digital-nomad-12.jpg
 firstSeen: 2022-08-14T05:00:00-04:00

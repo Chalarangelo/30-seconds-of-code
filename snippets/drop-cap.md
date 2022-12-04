@@ -1,7 +1,6 @@
 ---
 title: Drop cap
 tags: visual
-expertise: beginner
 cover: blog_images/bamboo-lamp.jpg
 firstSeen: 2018-10-13T07:47:30+03:00
 lastUpdated: 2020-12-30T15:37:37+02:00

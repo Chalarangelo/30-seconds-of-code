@@ -1,7 +1,6 @@
 ---
 title: Pulse loader
 tags: animation
-expertise: beginner
 cover: blog_images/digital-nomad-8.jpg
 firstSeen: 2019-10-05T14:29:36+03:00
 lastUpdated: 2021-10-13T19:29:39+02:00

@@ -1,7 +1,6 @@
 ---
 title: Custom checkbox
 tags: visual,animation
-expertise: advanced
 author: chalarangelo
 cover: blog_images/interior-8.jpg
 firstSeen: 2021-05-16T13:09:15+03:00

@@ -1,7 +1,6 @@
 ---
 title: Button swing animation
 tags: animation
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/painters-desk.jpg
 firstSeen: 2021-05-24T15:28:52+03:00

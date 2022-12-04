@@ -1,7 +1,6 @@
 ---
 title: Hide scroll bars
 tags: visual
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/by-the-lighthouse.jpg
 firstSeen: 2022-05-13T05:00:00-04:00

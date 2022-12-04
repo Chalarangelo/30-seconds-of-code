@@ -1,7 +1,6 @@
 ---
 title: Flexbox centering
 tags: layout
-expertise: beginner
 cover: blog_images/basket-paper.jpg
 firstSeen: 2018-03-03T11:57:27+02:00
 lastUpdated: 2020-12-30T15:37:37+02:00

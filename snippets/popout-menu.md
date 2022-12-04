@@ -1,7 +1,6 @@
 ---
 title: Popout menu
 tags: interactivity
-expertise: intermediate
 cover: blog_images/city-view.jpg
 firstSeen: 2018-02-25T15:14:39+02:00
 lastUpdated: 2020-12-30T15:37:37+02:00

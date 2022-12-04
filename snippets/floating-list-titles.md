@@ -1,7 +1,6 @@
 ---
 title: List with floating section headings
 tags: visual
-expertise: advanced
 author: chalarangelo
 cover: blog_images/pop-of-green.jpg
 firstSeen: 2020-08-18T15:44:01+03:00

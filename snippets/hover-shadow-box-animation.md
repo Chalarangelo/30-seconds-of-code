@@ -1,7 +1,6 @@
 ---
 title: Hover shadow box animation
 tags: animation
-expertise: intermediate
 unlisted: true
 cover: blog_images/dark-cloud.jpg
 firstSeen: 2018-03-06T23:41:55+02:00
