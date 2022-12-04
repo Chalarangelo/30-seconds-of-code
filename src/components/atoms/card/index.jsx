@@ -6,11 +6,7 @@ export const CardIcon = memo(({ icon, expertise }) => (
     className={`card-icon relative inline-block ${
       expertise ? 'br-round' : 'br-xl'
     } icon icon-${icon} before:fs-lg mt-1`}
-  >
-    {Boolean(expertise) && (
-      <span className={`expertise box-border br-round ${expertise}`} />
-    )}
-  </div>
+  />
 ));
 
 CardIcon.displayName = 'CardIcon';
