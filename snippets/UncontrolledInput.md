@@ -1,7 +1,6 @@
 ---
 title: Uncontrolled input field
 tags: components,input
-expertise: intermediate
 cover: blog_images/digital-nomad-15.jpg
 firstSeen: 2019-08-21T12:28:50+03:00
 lastUpdated: 2020-11-03T21:08:39+02:00

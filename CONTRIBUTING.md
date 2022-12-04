@@ -31,7 +31,6 @@ In order to create a new snippet, you should follow the steps below:
 - Snippets must have all their frontmatter sections (title, tags etc.) filled.
 - Snippet titles must correspond to the filename and follow the language and repository's naming conventions.
 - Snippet tags must be comma-separated, contain a primary tag as seen on the website as their first tag.
-- Snippet expertise must be specified (`beginner`, `intermediate` or `advanced`).
 - Snippets must have their `firstSeen` dates formatted using [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601).
 - Snippet descriptions must be short and to the point. Explain *what* the snippet does and detail *how* the snippet works and the language features used in it.
 - Snippet code and examples must be enclosed in appropriate, language-tagged blocks as shown in the snippet template, be short and use modern techniques and features. Also make sure to test your code before submitting.

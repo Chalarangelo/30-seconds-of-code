@@ -1,7 +1,6 @@
 ---
 title: React useForm hook
 tags: hooks,state
-expertise: beginner
 cover: blog_images/cave-view.jpg
 firstSeen: 2021-09-17T05:00:00-04:00
 ---

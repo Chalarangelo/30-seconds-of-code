@@ -1,7 +1,6 @@
 ---
 title: React useFetch hook
 tags: hooks,effect,state
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/coworking-space.jpg
 firstSeen: 2019-08-21T14:23:57+03:00

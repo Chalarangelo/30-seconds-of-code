@@ -1,7 +1,6 @@
 ---
 title: Automatic text linking
 tags: components,fragment,regexp
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/red-petals.jpg
 firstSeen: 2018-12-05T15:04:49+02:00

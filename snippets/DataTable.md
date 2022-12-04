@@ -1,7 +1,6 @@
 ---
 title: Data table
 tags: components
-expertise: beginner
 cover: blog_images/armchair.jpg
 firstSeen: 2018-11-29T11:13:59+02:00
 lastUpdated: 2020-11-03T21:26:34+02:00

@@ -1,7 +1,6 @@
 ---
 title: React useSessionStorage hook
 tags: hooks,state
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/white-laptop.jpg
 firstSeen: 2021-09-15T05:00:00-04:00

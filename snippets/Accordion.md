@@ -1,7 +1,6 @@
 ---
 title: Collapsible accordion
 tags: components,children,state
-expertise: advanced
 cover: blog_images/beach-pineapple.jpg
 firstSeen: 2019-03-02T10:46:34+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00

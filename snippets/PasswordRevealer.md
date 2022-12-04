@@ -1,7 +1,6 @@
 ---
 title: Show/hide password toggle
 tags: components,input,state
-expertise: beginner
 author: chalarangelo
 cover: blog_images/thread.jpg
 firstSeen: 2018-10-18T20:04:22+03:00

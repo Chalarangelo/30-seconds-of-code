@@ -1,7 +1,6 @@
 ---
 title: Email link
 tags: components
-expertise: beginner
 author: chalarangelo
 cover: blog_images/digital-nomad-4.jpg
 firstSeen: 2019-01-28T20:10:51+02:00

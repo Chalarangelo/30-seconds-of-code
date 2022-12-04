@@ -1,7 +1,6 @@
 ---
 title: React useCopyToClipboard hook
 tags: hooks,effect,state,callback
-expertise: advanced
 author: chalarangelo
 cover: blog_images/antelope.jpg
 firstSeen: 2020-04-22T18:51:30+03:00

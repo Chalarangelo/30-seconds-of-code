@@ -1,7 +1,6 @@
 ---
 title: React useScript hook
 tags: hooks,effect,state,event
-expertise: advanced
 author: chalarangelo
 cover: blog_images/travel-mug-3.jpg
 firstSeen: 2021-10-08T05:00:00-04:00
