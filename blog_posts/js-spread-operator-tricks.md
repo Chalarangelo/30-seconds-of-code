@@ -3,7 +3,6 @@ title: 3 ways to use the JavaScript spread operator with arrays
 shortTitle: Array tricks using the spread operator
 type: story
 tags: javascript,array
-expertise: beginner
 author: chalarangelo
 cover: blog_images/succulent-crowd.jpg
 excerpt: JavaScript’s spread operator is a very versatile tool. Here are some simple ways to use it.

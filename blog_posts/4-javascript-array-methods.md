@@ -3,7 +3,6 @@ title: 4 JavaScript Array methods you must know
 shortTitle: Useful array methods
 type: story
 tags: javascript,array,cheatsheet
-expertise: beginner
 author: chalarangelo
 cover: blog_images/arrays.jpg
 excerpt: JavaScript arrays have a very robust API offering a plethora of amazing tools. Learn the 4 must-know JavaScript array methods in this quick guide.

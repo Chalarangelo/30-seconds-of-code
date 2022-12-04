@@ -2,7 +2,6 @@
 title: React rendering optimization
 type: story
 tags: react,render
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/comic-glasses.jpg
 excerpt: Take a deeper dive into React's rendering process and understand how to make small yet powerful tweaks to optimize performance.

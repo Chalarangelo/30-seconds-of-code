@@ -3,7 +3,6 @@ title: Creating HTML elements in JavaScript
 shortTitle: Creating HTML elements
 type: story
 tags: javascript,browser
-expertise: beginner
 author: chalarangelo
 cover: blog_images/body-of-water.jpg
 excerpt: Learn how to create HTML elements in JavaScript, by abstracting the creation logic into a function.

@@ -2,7 +2,6 @@
 title: Common regular expressions
 type: cheatsheet
 tags: javascript,string,regexp
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/rocky-beach.jpg
 excerpt: A collection of regular expressions that can be used to solve common problems.

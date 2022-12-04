@@ -2,7 +2,6 @@
 title: Flexbox Cheat Sheet
 type: cheatsheet
 tags: css,layout,flexbox,cheatsheet
-expertise: beginner
 author: chalarangelo
 cover: blog_images/frames.jpg
 excerpt: Flexbox allows you to create fluid layouts easily. If you find yourself constantly looking up the syntax or how it work, this handy cheatsheet is all you need.

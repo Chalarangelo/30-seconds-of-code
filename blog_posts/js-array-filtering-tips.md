@@ -3,7 +3,6 @@ title: JavaScript array filtering tips
 shortTitle: Array filtering tips
 type: story
 tags: javascript,array
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/violin.jpg
 excerpt: A few tips and tricks to help you filter arrays in JavaScript more efficiently.

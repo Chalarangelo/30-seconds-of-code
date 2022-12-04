@@ -3,7 +3,6 @@ title: How do I remove a property from a JavaScript object?
 shortTitle: Remove property from object
 type: question
 tags: javascript,object
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/brown-bird.jpg
 excerpt: Ever wanted to delete a property from a JavaScript object? Here are a few way you can accomplish that.

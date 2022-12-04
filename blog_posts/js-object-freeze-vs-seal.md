@@ -3,7 +3,6 @@ title: What is the difference between Object.freeze() and Object.seal() in JavaS
 shortTitle: Object.freeze() vs Object.seal()
 type: question
 tags: javascript,object
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/frozen-globe.jpg
 excerpt: Both `Object.freeze()` and `Object.seal()` serve a similar purpose, but there's one key difference you need to remember.

@@ -3,7 +3,6 @@ title: How can I add a key-value pair to a JavaScript object?
 shortTitle: Add key-value pair to object
 type: question
 tags: javascript,object
-expertise: beginner
 author: chalarangelo
 cover: blog_images/pineapple-laptop.jpg
 excerpt: Adding a key-value pair to a JavaScript object is straightforward, yet there are multiple ways available to do so.

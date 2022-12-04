@@ -3,7 +3,6 @@ title: Can I validate an email address in JavaScript?
 shortTitle: Email address validation
 type: question
 tags: javascript,string,regexp
-expertise: advanced
 author: chalarangelo
 cover: blog_images/blank-card.jpg
 excerpt: Email address validation can be much trickier than it sounds. Here's why and my advice on how to approach this problem.

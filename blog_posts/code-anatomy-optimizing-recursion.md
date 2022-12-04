@@ -3,7 +3,6 @@ title: Code Anatomy - Optimizing recursive functions
 shortTitle: Optimizing recursive functions
 type: story
 tags: javascript,recursion,performance
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/case-study.jpg
 excerpt: Recursive code has a tendency of being inefficient and can leave a lot of space for optimization. Learn a couple of tricks we use to speed up our recursive functions.

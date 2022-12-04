@@ -3,7 +3,6 @@ title: Negative index in JavaScript array
 shortTitle: Negative index array proxy
 type: story
 tags: javascript,array,proxy
-expertise: advanced
 author: chalarangelo
 cover: blog_images/budapest-palace.jpg
 excerpt: Ever wanted to use negative indices in JavaScript arrays? Here's a simple way to do it using a Proxy.

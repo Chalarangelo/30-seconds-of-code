@@ -2,7 +2,6 @@
 title: The benefits of writing
 type: story
 tags: career,webdev,programming,jobs
-expertise: beginner
 author: chalarangelo
 cover: blog_images/laptop-view.jpg
 excerpt: Writing about a topic can often sound boring or worthless. But there are significant benefits to doing it from time to time.

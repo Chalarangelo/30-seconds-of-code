@@ -3,7 +3,6 @@ title: Introduction to arrow functions in JavaScript
 shortTitle: Arrow functions introduction
 type: story
 tags: javascript,function
-expertise: beginner
 author: chalarangelo
 cover: blog_images/arrow-functions.jpg
 excerpt: JavaScript arrow functions are a very useful tool to learn and master. Here's a complete introduction to everything you need to know.

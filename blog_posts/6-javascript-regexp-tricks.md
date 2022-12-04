@@ -3,7 +3,6 @@ title: 6 JavaScript Regular Expression features you can use today
 shortTitle: JavaScript Regular Expression tips
 type: story
 tags: javascript,string,regexp
-expertise: advanced
 author: chalarangelo
 cover: blog_images/taking-photos.jpg
 excerpt: Regular expressions, while very powerful, are notoriously hard to master. Start using them in your JavaScript code by understanding these 6 features.

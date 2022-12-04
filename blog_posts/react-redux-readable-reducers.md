@@ -3,7 +3,6 @@ title: Writing readable reducers in Redux
 shortTitle: Readable reducer tips
 type: story
 tags: react,logic
-expertise: advanced
 author: chalarangelo
 cover: blog_images/beach-from-above.jpg
 excerpt: When working with state in your code, you often run into issues with maintaining complexity and readability. Oftentimes, these issues are easily fixable.

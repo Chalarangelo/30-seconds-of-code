@@ -3,7 +3,6 @@ title: JavaScript property enumerability
 shortTitle: Property enumerability
 type: story
 tags: javascript,object
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/old-consoles.jpg
 excerpt: Property enumerability dictates how JavaScript object properties behave in different scenarios.

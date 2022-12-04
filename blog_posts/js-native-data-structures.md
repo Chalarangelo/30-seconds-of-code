@@ -3,7 +3,6 @@ title: Native JavaScript Data Structures
 shortTitle: Native Data Structures
 type: story
 tags: javascript,object,array
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/purple-flower-macro-2.jpg
 excerpt: JavaScript provides a handful of native data structures that you can start using in your code right now.

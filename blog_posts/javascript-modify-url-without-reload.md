@@ -3,7 +3,6 @@ title: How do I use JavaScript to modify the URL without reloading the page?
 shortTitle: Modify URL without reloading
 type: question
 tags: javascript,browser
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/compass.jpg
 excerpt: Learn all of the options JavaScript provides for modifying the URL of the current page in the browser without reloading the page.

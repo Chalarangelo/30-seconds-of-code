@@ -2,7 +2,6 @@
 title: 5 tips for better Pull Requests
 type: story
 tags: git,github,programming,webdev
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/keyboard-tea.jpg
 excerpt: Writing good code is only part of the job. Here are 5 tips to improve your pull requests and help people review them.

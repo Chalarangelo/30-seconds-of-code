@@ -3,7 +3,6 @@ title: "Tip: Style links without a class"
 shortTitle: Style default links
 type: tip
 tags: css,visual,interactivity
-expertise: beginner
 author: chalarangelo
 cover: blog_images/citrus-drink.jpg
 excerpt: A short summary of your story up to 180 characters long.

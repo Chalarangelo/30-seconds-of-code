@@ -2,7 +2,6 @@
 title: Typographic scale basics
 type: story
 tags: css,webdev,typography
-expertise: intermediate
 author: chalarangelo
 cover: blog_images/typography.jpg
 excerpt: Typography might seem intimidating, but you can quickly and easily create a simple typographic scale with this basic technique.
