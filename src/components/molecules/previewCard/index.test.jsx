@@ -7,13 +7,12 @@ const previewSnippet = SnippetFactory.create('PreviewSnippet');
 const previewBlogSnippet = SnippetFactory.create('PreviewBlogSnippet');
 
 describe('<PreviewCard />', () => {
-  let wrapper, card, expertise, anchor;
+  let wrapper, card, anchor;
 
   beforeEach(() => {
     wrapper = render(<PreviewCard contentItem={previewSnippet} />).container;
     anchor = wrapper.querySelector('a');
     card = wrapper.querySelector('.card');
-    expertise = wrapper.querySelector('.expertise');
   });
 
   afterEach(cleanup);
@@ -31,10 +30,6 @@ describe('<PreviewCard />', () => {
       expect(card.querySelectorAll('h3.card-title')).toHaveLength(1);
     });
 
-    it('an Expertise component', () => {
-      expect(card.querySelectorAll('.expertise')).toHaveLength(1);
-    });
-
     it('the card description', () => {
       expect(card.querySelectorAll('.card-description')).toHaveLength(1);
     });
@@ -43,12 +38,6 @@ describe('<PreviewCard />', () => {
   it('should have the correct card title', () => {
     expect(card.querySelector('h3.card-title').textContent).toBe(
       previewSnippet.title
-    );
-  });
-
-  it('should pass the expertise data to the Expertise component', () => {
-    expect(expertise.className).toContain(
-      previewSnippet.expertise.toLowerCase()
     );
   });
 

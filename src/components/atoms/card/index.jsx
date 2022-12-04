@@ -1,10 +1,10 @@
 import { memo } from 'react';
 
 // Icon
-export const CardIcon = memo(({ icon, expertise }) => (
+export const CardIcon = memo(({ icon, type }) => (
   <div
     className={`card-icon relative inline-block ${
-      expertise ? 'br-round' : 'br-xl'
+      type === 'snippet' ? 'br-round' : 'br-xl'
     } icon icon-${icon} before:fs-lg mt-1`}
   />
 ));
