@@ -14,7 +14,7 @@ import {
  */
 const PreviewCard = ({ contentItem }) => (
   <li className={`${cardClassName} list-card grid`}>
-    <CardIcon icon={contentItem.icon} expertise={contentItem.expertise} />
+    <CardIcon icon={contentItem.icon} type={contentItem.type} />
     <div className='card-data mx-2 my-0'>
       <CardTitle isSecondary>
         <Link href={contentItem.url}>

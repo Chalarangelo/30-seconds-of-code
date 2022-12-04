@@ -27,13 +27,6 @@ factory.sequence('words', function* () {
   }
 });
 
-factory.sequence('expertise', function* () {
-  while (true)
-    yield ['beginner', 'intermediate', 'advanced'][
-      Math.floor(Math.random() * 3)
-    ];
-});
-
 factory.sequence('language', function* () {
   while (true)
     yield ['React', 'CSS', 'JavaScript', 'Dart', 'PHP'][
@@ -56,7 +49,6 @@ factory.sequence('url', function* () {
 factory
   .define('Snippet', () => ({
     title: '',
-    expertise: 'intermediate',
     tags: '',
     icon: '',
     description: '<p></p>',
@@ -75,13 +67,6 @@ factory
   .trait('searchTokens', () => ({
     searchTokens: factory.nextFrom('words').join(' '),
   }))
-  // Expertise
-  .trait('expertise', () => ({ expertise: factory.nextFrom('expertise') }))
-  .trait('beginner', { expertise: 'beginner' })
-  .trait('intermediate', { expertise: 'intermediate' })
-  .trait('advanced', { expertise: 'advanced' })
-  // Blog
-  .trait('blog', { expertise: 'blog', icon: 'blog' })
   // Search
   .trait('search result', () => ({ score: Math.random() }));
 
@@ -93,8 +78,7 @@ factory.alias(
   'icon',
   'description',
   'url',
-  'searchTokens',
-  'expertise'
+  'searchTokens'
 );
 
 factory.alias('SearchResultSnippet', 'PreviewSnippet', 'search result');
@@ -106,15 +90,13 @@ factory.alias(
   'tags',
   'description',
   'url',
-  'searchTokens',
-  'blog'
+  'searchTokens'
 );
 
 factory
   .define('CompleteSnippet', () => ({
     id: '',
     title: '',
-    expertise: 'Intermediate',
     icon: '',
     description: '',
     url: '',
@@ -269,11 +251,6 @@ factory
   .trait('searchTokens', () => ({
     searchTokens: factory.nextFrom('words').join(' '),
   }))
-  // Expertise
-  .trait('expertise', () => ({ expertise: factory.nextFrom('expertise') }))
-  .trait('beginner', { expertise: 'Beginner' })
-  .trait('intermediate', { expertise: 'Intermediate' })
-  .trait('advanced', { expertise: 'Advanced' })
   // Blog
   .trait('blog', () => ({
     author: {
@@ -281,7 +258,6 @@ factory
       profile: 'https://twitter.com/chalarangelo',
     },
     cover: 'static/assets/blog_images/an-image.jpg',
-    expertise: 'Blog',
   }))
   // Search
   .trait('search result', () => ({ score: Math.random() }));
@@ -291,7 +267,6 @@ factory.alias(
   'CompleteSnippet',
   ['core attributes', 'regular'],
   ['content', 'regular'],
-  'expertise',
   'searchTokens'
 );
 
@@ -300,7 +275,6 @@ factory.alias(
   'CompleteSnippet',
   ['core attributes', 'react'],
   ['content', 'react'],
-  'expertise',
   'searchTokens'
 );
 
@@ -310,7 +284,6 @@ factory
     'CompleteSnippet',
     ['core attributes', 'css'],
     'css content',
-    'expertise',
     'searchTokens'
   )
   .trait('with js', [['css content', true]]);
