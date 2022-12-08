@@ -33,7 +33,7 @@ const SnippetCard = ({ snippet }) => {
   const hasScopeCSS = Boolean(snippet.code && snippet.code.scopedCss);
 
   return (
-    <Card className='snippet-card'>
+    <Card className='snippet-card g-c2'>
       <div className='card-meta grid'>
         <CardIcon icon={snippet.icon} type='snippet' />
         <div className='card-data mx-2 my-0'>

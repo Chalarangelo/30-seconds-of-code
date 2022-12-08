@@ -30,7 +30,7 @@ const ListingPage = ({
       canonical={slug}
     />
     <Shell>
-      <div className='snippet-list-header'>
+      <div className='snippet-list-header g-c1'>
         <div className='snippet-list-splash-image my-2 mx-3.5 f-center'>
           <Image
             src={listingImage}
@@ -50,8 +50,10 @@ const ListingPage = ({
       {listingSublinks.length ? (
         <ListingAnchors items={listingSublinks} />
       ) : null}
-      <PreviewCardList contentItems={snippetList} />
-      {paginator ? <Paginator paginator={paginator} /> : null}
+      <div className='g-c3'>
+        <PreviewCardList contentItems={snippetList} />
+        {paginator ? <Paginator paginator={paginator} /> : null}
+      </div>
     </Shell>
   </>
 );
