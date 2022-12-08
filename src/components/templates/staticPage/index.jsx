@@ -28,60 +28,62 @@ const StaticPage = ({
     <>
       <Meta title={title} description={pageDescription} />
       <Shell isFaq={isFaq}>
-        <PageTitle>{title}</PageTitle>
-        <p className='my-0 mx-3.5 txt-100'>{subtitle}</p>
-        {cards.map(({ title, html }, i) => (
-          <Card
-            key={i}
-            {...(isFaq
-              ? {
-                  itemScope: true,
-                  itemProp: 'mainEntity',
-                  itemType: 'https://schema.org/Question',
-                }
-              : {})}
-          >
-            <CardTitle isSecondary {...(isFaq ? { itemProp: 'name' } : {})}>
-              {title}
-            </CardTitle>
-            <div
+        <div className='g-c2'>
+          <PageTitle>{title}</PageTitle>
+          <p className='my-0 mx-3.5 txt-100'>{subtitle}</p>
+          {cards.map(({ title, html }, i) => (
+            <Card
+              key={i}
               {...(isFaq
                 ? {
                     itemScope: true,
-                    itemProp: 'acceptedAnswer',
-                    itemType: 'https://schema.org/Answer',
+                    itemProp: 'mainEntity',
+                    itemType: 'https://schema.org/Question',
                   }
                 : {})}
-              className='card-description'
-              dangerouslySetInnerHTML={{ __html: html }}
-            />
-          </Card>
-        ))}
-        {cookieSettingCard ? (
-          <Card>
-            <CardTitle isSecondary>{cookieSettingCard.title}</CardTitle>
-            <div className='card-description'>
-              <p>{cookieSettingCard.text}</p>
-              <label className='flex a-center md:fs-md'>
-                <input
-                  className='mr-2'
-                  defaultChecked={!!acceptsCookies}
-                  type='checkbox'
-                  onChange={() => {
-                    dispatch({
-                      type: 'decideCookies',
-                      acceptsCookies: !acceptsCookies,
-                    });
-                    // Force reload the page if cookies are now disabled
-                    if (acceptsCookies)
-                      setTimeout(() => window.location.reload(), 300);
-                  }}
-                />
-                {cookieSettingCard.toggleText}
-              </label>
-            </div>
-          </Card>
-        ) : null}
+            >
+              <CardTitle isSecondary {...(isFaq ? { itemProp: 'name' } : {})}>
+                {title}
+              </CardTitle>
+              <div
+                {...(isFaq
+                  ? {
+                      itemScope: true,
+                      itemProp: 'acceptedAnswer',
+                      itemType: 'https://schema.org/Answer',
+                    }
+                  : {})}
+                className='card-description'
+                dangerouslySetInnerHTML={{ __html: html }}
+              />
+            </Card>
+          ))}
+          {cookieSettingCard ? (
+            <Card>
+              <CardTitle isSecondary>{cookieSettingCard.title}</CardTitle>
+              <div className='card-description'>
+                <p>{cookieSettingCard.text}</p>
+                <label className='flex a-center md:fs-md'>
+                  <input
+                    className='mr-2'
+                    defaultChecked={!!acceptsCookies}
+                    type='checkbox'
+                    onChange={() => {
+                      dispatch({
+                        type: 'decideCookies',
+                        acceptsCookies: !acceptsCookies,
+                      });
+                      // Force reload the page if cookies are now disabled
+                      if (acceptsCookies)
+                        setTimeout(() => window.location.reload(), 300);
+                    }}
+                  />
+                  {cookieSettingCard.toggleText}
+                </label>
+              </div>
+            </Card>
+          ) : null}
+        </div>
       </Shell>
     </>
   );

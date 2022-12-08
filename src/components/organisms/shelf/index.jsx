@@ -9,7 +9,7 @@ import PageTitle from 'components/atoms/pageTitle';
  */
 const Shelf = ({ shelf: { shelfType, shelfData, shelfName, shelfUrl } }) => {
   return shelfData.length ? (
-    <>
+    <div className={shelfType === 'snippets' ? 'g-c2' : 'g-c1'}>
       <Link href={shelfUrl}>
         <a className='shelf-title relative mt-8'>
           <PageTitle>{shelfName}</PageTitle>
@@ -29,7 +29,7 @@ const Shelf = ({ shelf: { shelfType, shelfData, shelfName, shelfUrl } }) => {
             ))}
         {/* eslint-enable react/jsx-indent */}
       </ul>
-    </>
+    </div>
   ) : null;
 };
 

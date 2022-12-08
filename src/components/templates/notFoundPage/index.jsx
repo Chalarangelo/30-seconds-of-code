@@ -13,20 +13,22 @@ const NotFoundPage = () => (
   <>
     <Meta title={literals.pageNotFound} />
     <Shell>
-      <PageTitle>{literals.fourOhFour}</PageTitle>
-      <PageBackdrop
-        backdropImage='/assets/plane.png'
-        mainTextClassName='fs-xl'
-        subTextClassName='mb-5'
-        mainText={<span className='txt-150'>{literals.pageNotFound}</span>}
-        subText={literals.notFoundDescription}
-      >
-        <Link href='/'>
-          <a className='btn outline-btn icon-btn btn-home fs-md icon icon-home before:fs-md'>
-            {literals.goHome}
-          </a>
-        </Link>
-      </PageBackdrop>
+      <div className='g-c2'>
+        <PageTitle>{literals.fourOhFour}</PageTitle>
+        <PageBackdrop
+          backdropImage='/assets/plane.png'
+          mainTextClassName='fs-xl'
+          subTextClassName='mb-5'
+          mainText={<span className='txt-150'>{literals.pageNotFound}</span>}
+          subText={literals.notFoundDescription}
+        >
+          <Link href='/'>
+            <a className='btn outline-btn icon-btn btn-home fs-md icon icon-home before:fs-md'>
+              {literals.goHome}
+            </a>
+          </Link>
+        </PageBackdrop>
+      </div>
     </Shell>
   </>
 );
