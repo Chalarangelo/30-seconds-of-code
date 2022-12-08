@@ -23,7 +23,7 @@ const SearchResults = ({ recommendations }) => {
   const hasResults =
     searchQuery.trim().length > 1 && searchResults.length !== 0;
   return hasResults ? (
-    <>
+    <div className='g-c2'>
       <PageTitle>{literals.results}</PageTitle>
       {Boolean(availableFilters.length > 2) && (
         <ul className='list-section listing-anchors mt-2 mx-3.5 flex'>
@@ -47,9 +47,9 @@ const SearchResults = ({ recommendations }) => {
         </ul>
       )}
       <PreviewCardList contentItems={filteredResults} />
-    </>
+    </div>
   ) : (
-    <>
+    <div className='g-c2'>
       <PageBackdrop
         backdropImage='/assets/magnifying-glass.png'
         mainText={
@@ -72,7 +72,7 @@ const SearchResults = ({ recommendations }) => {
         contentItems={recommendations.items}
         fromParam='recommendations'
       />
-    </>
+    </div>
   );
 };
 

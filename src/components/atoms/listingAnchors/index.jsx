@@ -23,7 +23,7 @@ const ListingAnchors = ({ items = [] }) => {
 
   return (
     <ul
-      className='list-section listing-anchors flex pb-1 mt-1 mx-3.5 mb-6'
+      className='list-section listing-anchors flex pb-1 mt-1 mx-3.5 mb-0 g-c2'
       ref={containerRef}
     >
       {items.map(item => (

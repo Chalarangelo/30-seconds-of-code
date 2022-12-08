@@ -4,7 +4,7 @@ import Link from 'next/link';
  * Breadcrumbs component for linking to the hierarchy of pages.
  */
 const Breadcrumbs = ({ breadcrumbs }) => (
-  <nav aria-label='breadcrumbs' className='breadcrumbs mt-4 mx-4 mb-0'>
+  <nav aria-label='breadcrumbs' className='breadcrumbs mt-4 mx-4 mb-0 g-c1'>
     <ol className='flex m-0 p-0 f-ellipsis'>
       {breadcrumbs.map(({ name, url }, i) => {
         const isCurrentPage = i === breadcrumbs.length - 1;

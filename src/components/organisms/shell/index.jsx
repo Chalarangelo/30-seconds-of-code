@@ -54,7 +54,7 @@ const Shell = ({ isSearch = false, isFaq = false, children }) => {
         </div>
       </header>
       <div
-        className='content my-0 mx-auto'
+        className='content my-0 grid'
         {...(isFaq
           ? { itemScope: true, itemType: 'https://schema.org/FAQPage' }
           : {})}

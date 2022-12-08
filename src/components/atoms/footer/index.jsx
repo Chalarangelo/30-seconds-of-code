@@ -6,7 +6,7 @@ import settings from 'settings/global';
  * Static component that renders the page footer.
  */
 const Footer = () => (
-  <footer className='box-border mt-8 pt-6 mx-2 mb-0 pb-6'>
+  <footer className='box-border mt-0 pt-6 mx-2 mb-0 pb-6 g-c4'>
     <p className='fs-xs my-1.5'>
       <Link href='/about'>
         <a>{literals.about}</a>
