@@ -155,4 +155,8 @@
   .slides img {
     max-width: unset;
   }
+
+  a.squiggle:hover {
+    animation: none;
+  }
 }
