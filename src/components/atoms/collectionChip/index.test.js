@@ -17,8 +17,8 @@ describe('<CollectionChip />', () => {
 
   it('should render the correct icon', () => {
     expect(
-      wrapper.querySelectorAll(`.icon.icon-${collectionChip.icon}`)
-    ).toHaveLength(1);
+      wrapper.querySelector('a').style.getPropertyValue('--bg-img')
+    ).toContain(collectionChip.icon);
   });
 
   it('should have the correct link', () => {

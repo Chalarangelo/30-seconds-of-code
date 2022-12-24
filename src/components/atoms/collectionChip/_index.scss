@@ -1,9 +1,10 @@
 .collection-chip {
-  > .icon {
+  > a {
     padding-left: 4.25rem;
     min-height: 64px;
 
     &::before {
+      content: '';
       position: absolute;
       left: 0;
       top: 0;
@@ -12,6 +13,11 @@
       width: 64px;
       height: 64px;
       border-radius: var(--br-xl);
+      // Layer image on top of itself to extend the background
+      background-image: var(--bg-img), var(--bg-img);
+      background-size: 48px 48px, cover;
+      background-position: center, center;
+      background-repeat: no-repeat, no-repeat;
     }
   }
 }
