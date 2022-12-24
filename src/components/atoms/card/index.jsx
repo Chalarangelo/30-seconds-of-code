@@ -1,11 +1,12 @@
 import { memo } from 'react';
 
-// Icon
 export const CardIcon = memo(({ icon, type }) => (
-  <div
+  <img
+    src={`/assets/icons/${icon}.svg`}
     className={`card-icon relative inline-block ${
       type === 'snippet' ? 'br-round' : 'br-xl'
     } icon icon-${icon} before:fs-lg mt-1`}
+    alt=''
   />
 ));
 
