@@ -164,7 +164,9 @@ describe('<SnippetCard />', () => {
     });
 
     it('should render the correct cover', () => {
-      expect(card.querySelector('img').src).toContain(fullBlogSnippet.cover);
+      expect(card.querySelector('.card-cover-image').src).toContain(
+        fullBlogSnippet.cover
+      );
     });
 
     it('should render the blog author', () => {
