@@ -4,10 +4,9 @@ import glob from 'glob';
 import webfontsGenerator from 'webfonts-generator';
 import { Application } from 'blocks/application';
 
-const { Logger, JSONHandler } = Application;
+const { Logger } = Application;
 
 const inPath = 'src/icons/*.svg';
-const iconConfigPath = 'content/configs/icons.json';
 
 const defaultConfig = {
   dest: Application.settings.paths.rawAssetPath,
@@ -22,8 +21,6 @@ const defaultConfig = {
     baseSelector: '.icon',
     baseClassNames: 'icon',
     classPrefix: 'icon-',
-    langSelectors: ['.card-icon', '.btn'],
-    chipSelector: '.collection-chip',
   },
 };
 
@@ -38,7 +35,6 @@ export class IconWriter {
    */
   static write = () => {
     const fileList = glob.sync(inPath);
-    const icons = JSONHandler.fromFile(iconConfigPath).icons;
 
     const logger = new Logger('IconWriter.write');
     logger.log(
@@ -50,7 +46,6 @@ export class IconWriter {
       files: fileList,
       templateOptions: {
         ...defaultConfig.templateOptions,
-        langIcons: icons,
       },
     };
 
