@@ -11,7 +11,7 @@ export const listingContextSerializer = {
       listing.splash
         ? `/${
             pathSettings.staticAssetPath
-          }/splash_cover/${listing.splash.replace('.png', 'jpg')}`
+          }/splash_cover/${listing.splash.replace('.png', '.jpg')}`
         : `/${pathSettings.staticAssetPath}/splash_cover/laptop-view.jpg`,
   },
   attributes: [
