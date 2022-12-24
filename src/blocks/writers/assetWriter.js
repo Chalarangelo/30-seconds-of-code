@@ -43,10 +43,16 @@ export class AssetWriter {
     await fs.copy(inPath, outPath);
     await fs.copy(inContentPath, outPath);
     const staticAssets = glob
-      .sync(`${inContentPath}/*.@(${supportedExtensions.join('|')})`)
+      .sync(`${inContentPath}/**/*.@(${supportedExtensions.join('|')})`)
       .map(file => path.resolve(file));
+    // FIXME: Only images inside directories under the 30_content assets will work
+    // TODO: Make this more generic, temporary fix for listing splash and cover
+    fs.ensureDirSync(path.join(outPath, 'splash'));
+    fs.ensureDirSync(path.join(outPath, 'splash_cover'));
     await Promise.all(
-      staticAssets.map(asset => AssetWriter.processImageAsset(asset, outPath))
+      staticAssets.map(asset =>
+        AssetWriter.processImageAsset(asset, outPath, true)
+      )
     );
     logger.success('Processing static assets complete');
 
@@ -112,11 +118,15 @@ export class AssetWriter {
    * Processes the given image asset, converting it to the correct size and quality.
    * @param {string} asset - The filename of the given asset.
    * @param {string} imageDirName - The output directory.
+   * @param {boolean} includeSubdir - Whether or not to include the last subdirectory in the output path.
    * @returns {Promise} A promise that resolves when the file has finished writing to disk.
    */
-  static processImageAsset = (asset, outDir) =>
+  static processImageAsset = (asset, outDir, includeSubdir = false) =>
     new Promise((resolve, reject) => {
       const fileName = asset.slice(asset.lastIndexOf('/'));
+      const subDir = asset.split('/').slice(-2, -1)[0];
+      const outPath = includeSubdir && subDir ? `${outDir}/${subDir}` : outDir;
+      console.log({ outPath, fileName, subDir, includeSubdir });
       const img = sharp(asset);
       return img.metadata().then(metadata => {
         const resizeWidth = Math.min(maxWidth, metadata.width);
@@ -126,10 +136,10 @@ export class AssetWriter {
         return Promise.all([
           resized
             .toFormat(format, { quality: outputQuality })
-            .toFile(`${outDir}/${fileName}`),
+            .toFile(`${outPath}/${fileName}`),
           resized
             .webp({ quality: outputQuality })
-            .toFile(`${outDir}/${name}.webp`),
+            .toFile(`${outPath}/${name}.webp`),
         ])
           .then(() => resolve())
           .catch(() => reject());

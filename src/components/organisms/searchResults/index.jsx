@@ -51,7 +51,7 @@ const SearchResults = ({ recommendations }) => {
   ) : (
     <div className='g-c2'>
       <PageBackdrop
-        backdropImage='/assets/magnifying-glass.png'
+        backdropImage='/assets/splash/magnifying-glass.png'
         mainText={
           searchQuery.trim().length <= 1 ? (
             literals.searchPrompt
