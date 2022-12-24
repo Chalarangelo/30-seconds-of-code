@@ -19,23 +19,3 @@
   content: "\\{{ this }}";
 }
 {{/ each }}
-
-{{# each langSelectors }}
-{{this}}{{#if @last}} { {{else}}, {{/if}}
-{{/ each}}
-{{# each langIcons }}
-  &.{{ ../classPrefix }}{{ this.iconName }} {
-    background: {{ this.backColor }};
-    color: {{ this.foreColor }};
-  }
-{{/ each }}
-}
-
-{{ chipSelector }} {
-{{# each langIcons }}
-  > .{{ ../classPrefix }}{{ this.iconName }}:before {
-    background: {{ this.backColor }};
-    color: {{ this.foreColor }};
-  }
-{{/ each }}
-}
