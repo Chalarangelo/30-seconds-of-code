@@ -19,6 +19,7 @@ const ListingPage = ({
   listingDescription,
   listingImage,
   listingSublinks = [],
+  listingCover,
   pageDescription,
   structuredData,
 }) => (
@@ -26,6 +27,7 @@ const ListingPage = ({
     <Meta
       title={listingName}
       description={pageDescription}
+      logoSrc={listingCover ? listingCover : undefined}
       structuredData={structuredData}
       canonical={slug}
     />
