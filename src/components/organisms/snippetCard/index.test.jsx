@@ -169,8 +169,8 @@ describe('<SnippetCard />', () => {
       );
     });
 
-    it('should render the blog author', () => {
-      expect(card.querySelectorAll('.card-title + p > a')).toHaveLength(1);
+    it('should render the author', () => {
+      expect(card.querySelectorAll('.card-author')).toHaveLength(1);
     });
   });
 });

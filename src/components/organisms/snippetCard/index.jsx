@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import Image from 'components/atoms/image';
 import Card, { CardIcon, CardTitle, CardSubtitle } from 'components/atoms/card';
-import literals from 'lang/en/client/common';
+import literals from 'lang/en/client/snippet';
 
 /**
  * Standard snippet card.
@@ -39,15 +39,6 @@ const SnippetCard = ({ snippet }) => {
         <div className='card-data mx-2 my-0'>
           <CardTitle>{snippet.title}</CardTitle>
           <CardSubtitle>
-            <a
-              className='inherit'
-              href={snippet.author.profile}
-              rel='nofollow noopener noreferrer'
-              target='_blank'
-            >
-              {snippet.author.name}
-            </a>
-            {' · '}
             {snippet.tags}
             {' · '}
             <span className='inline-block'>{snippet.date}</span>
@@ -101,6 +92,33 @@ const SnippetCard = ({ snippet }) => {
           ))}
         </div>
       )}
+      {snippet.author ? (
+        <div className='card-author flex flex-col'>
+          <h3 className='mt-4 mb-0 mx-0 txt-150 f-alt fs-lg'>
+            {literals.writtenBy(snippet.author.name)}
+          </h3>
+          <p className='mx-0 my-2 txt-100'>{snippet.author.intro}</p>
+          <p className='m-0 txt-100'>
+            {'If you want to keep in touch, follow me on '}
+            <a
+              href={snippet.author.github}
+              target='_blank'
+              rel='nofollow noopener noreferrer'
+            >
+              {literals.github}
+            </a>
+            {' or '}
+            <a
+              href={snippet.author.twitter}
+              target='_blank'
+              rel='nofollow noopener noreferrer'
+            >
+              {literals.twitter}
+            </a>
+            {'.'}
+          </p>
+        </div>
+      ) : null}
       <div className='card-actions flex'>
         {snippet.actionType === 'codepen' && (
           <button
