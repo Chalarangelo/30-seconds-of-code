@@ -29,14 +29,13 @@ export class Schemer {
   }) => {
     const url = `${websiteUrl}${slug}`;
     const coverSrc = cover ? cover : orgLogoSrc;
-    const _author =
-      author && author.name !== 'OSCC'
-        ? {
-            '@type': 'Person',
-            name: author.name,
-            url: author.profile,
-          }
-        : Schemer.organization;
+    const _author = author
+      ? {
+          '@type': 'Person',
+          name: author.name,
+          url: author.profile,
+        }
+      : Schemer.organization;
 
     return {
       '@context': 'https://schema.org',
