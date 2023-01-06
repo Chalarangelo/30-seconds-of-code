@@ -93,13 +93,20 @@
       }
 
       &:last-child:not(:first-child) {
-        margin-bottom: 1.375rem;
+        margin-bottom: 1.5rem;
       }
     }
 
     ul,
     ol {
       margin: 1rem 0 0;
+    }
+
+    > ul,
+    > ol {
+      &:last-child:not(:first-child) {
+        margin-bottom: 1.5rem;
+      }
     }
 
     li {
