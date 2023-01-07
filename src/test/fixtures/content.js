@@ -582,11 +582,6 @@ export const authors = [
     id: 'chalarangelo',
   },
   {
-    name: 'Isabelle Viktoria Maciohsek',
-    profile: 'https://github.com/Trinityyi',
-    id: 'maciv',
-  },
-  {
     name: 'OSCC',
     profile: '/faq',
     id: 'oscc',

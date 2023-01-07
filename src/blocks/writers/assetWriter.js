@@ -126,7 +126,7 @@ export class AssetWriter {
       const fileName = asset.slice(asset.lastIndexOf('/'));
       const subDir = asset.split('/').slice(-2, -1)[0];
       const outPath = includeSubdir && subDir ? `${outDir}/${subDir}` : outDir;
-      console.log({ outPath, fileName, subDir, includeSubdir });
+
       const img = sharp(asset);
       return img.metadata().then(metadata => {
         const resizeWidth = Math.min(maxWidth, metadata.width);

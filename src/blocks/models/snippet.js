@@ -51,7 +51,6 @@ export const snippet = {
   validators: {
     updatedAfterSeen: snippet => snippet.lastUpdated >= snippet.firstSeen,
     blogHasCover: snippet => (snippet.isBlog ? Boolean(snippet.cover) : true),
-    hasAuthor: snippet => Boolean(snippet.author),
   },
   properties: {
     primaryTag: snippet => snippet.tags[0],

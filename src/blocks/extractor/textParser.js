@@ -17,7 +17,7 @@ export class TextParser {
       const {
         firstSeen = '2021-06-13T05:00:00-04:00',
         lastUpdated = firstSeen,
-        author = 'oscc',
+        author = null,
         ...restAttributes
       } = attributes;
       return {

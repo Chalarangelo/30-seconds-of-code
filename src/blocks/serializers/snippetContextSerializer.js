@@ -25,10 +25,15 @@ export const snippetContextSerializer = {
       }
       return undefined;
     },
-    author: snippet => ({
-      name: snippet.author.name,
-      profile: snippet.author.profile,
-    }),
+    author: snippet =>
+      snippet.author
+        ? {
+            name: snippet.author.name,
+            intro: snippet.author.intro,
+            twitter: snippet.author.twitter,
+            github: snippet.author.github,
+          }
+        : undefined,
     type: snippet => (snippet.isBlog ? snippet.type : undefined),
     coverUrl: snippet =>
       snippet.cover
