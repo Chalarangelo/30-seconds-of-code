@@ -65,7 +65,7 @@ const SnippetCard = ({ snippet }) => {
             {literals.preview}
           </h5>
           <div
-            className='snippet-preview m-0 br-lg'
+            className='snippet-preview m-0 br-md'
             data-scope='snippet-preview'
           >
             <style>{snippet.code.scopedCss}</style>
