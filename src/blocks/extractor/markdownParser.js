@@ -263,6 +263,9 @@ export class MarkdownParser {
         /(<p>)*<img src="\.\/([^"]+)"([^>]*)>(<\/p>)*/g,
         (match, openTag, imgSrc, imgRest) => {
           const imgName = imgSrc.slice(0, imgSrc.lastIndexOf('.'));
+          if (imgSrc.endsWith('.png') || imgSrc.endsWith('.svg')) {
+            return `<img class="card-fw-section" src="${assetPath}/${imgSrc}"${imgRest}>`;
+          }
           return `<picture>
             <source type="image/webp" srcset="${assetPath}/${imgName}.webp">
             <img class="card-fw-section" src="${assetPath}/${imgSrc}"${imgRest}>
