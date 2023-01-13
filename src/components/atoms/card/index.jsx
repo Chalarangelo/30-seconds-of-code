@@ -33,7 +33,7 @@ export const CardSubtitle = memo(({ children }) => (
 
 CardSubtitle.displayName = 'CardSubtitle';
 
-export const cardClassName = 'card srfc-01dp txt-100 br-lg';
+export const cardClassName = 'card srfc-01db txt-100 br-lg';
 
 // Card
 /**

@@ -6,7 +6,7 @@ import Link from 'next/link';
  * @param {object} chip - Collection chip object for the chip.
  */
 const CollectionChip = ({ chip }) => (
-  <li className='collection-chip srfc-01dp txt-200 br-xl'>
+  <li className='collection-chip srfc-01db txt-200 br-xl'>
     <Link href={chip.url}>
       <a
         className='inherit relative py-2 px-1 f-center flex j-center a-center f-alt box-border before:fs-lg'
