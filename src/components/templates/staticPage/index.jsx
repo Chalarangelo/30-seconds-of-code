@@ -63,7 +63,7 @@ const StaticPage = ({
               <CardTitle isSecondary>{cookieSettingCard.title}</CardTitle>
               <div className='card-description'>
                 <p>{cookieSettingCard.text}</p>
-                <label className='flex a-center md:fs-md'>
+                <label className='flex a-center md:fs-md mt-2'>
                   <input
                     className='mr-2'
                     defaultChecked={!!acceptsCookies}
