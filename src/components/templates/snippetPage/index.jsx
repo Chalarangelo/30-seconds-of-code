@@ -33,10 +33,7 @@ const SnippetPage = ({
           <PageTitle className='recommendation-list-title'>
             {recommendations.title}
           </PageTitle>
-          <PreviewCardList
-            contentItems={recommendations.items}
-            fromParam='recommendations'
-          />
+          <PreviewCardList contentItems={recommendations.items} />
         </div>
       </Shell>
     </>
