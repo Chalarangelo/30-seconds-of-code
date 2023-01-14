@@ -65,7 +65,7 @@ const SnippetCard = ({ snippet }) => {
             {literals.preview}
           </h5>
           <div
-            className='snippet-preview m-0 br-lg'
+            className='snippet-preview m-0 br-md'
             data-scope='snippet-preview'
           >
             <style>{snippet.code.scopedCss}</style>
@@ -94,10 +94,10 @@ const SnippetCard = ({ snippet }) => {
       )}
       {snippet.author ? (
         <div className='card-author flex flex-col'>
-          <h3 className='mt-4 mb-0 mx-0 txt-150 f-alt fs-lg'>
+          <h3 className='mt-4 mb-0 mx-0 txt-150 fs-md md:fs-lg'>
             {literals.writtenBy(snippet.author.name)}
           </h3>
-          <p className='mx-0 my-2 txt-100'>{snippet.author.intro}</p>
+          <p className='mx-0 mt-2 mb-0 txt-100'>{snippet.author.intro}</p>
           <p className='m-0 txt-100'>
             {'If you want to keep in touch, follow me on '}
             <a

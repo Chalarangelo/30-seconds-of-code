@@ -65,13 +65,10 @@ const SearchResults = ({ recommendations }) => {
         }
         mainTextClassName='fs-lg'
       />
-      <PageTitle className='recommendation-list-title f-center'>
+      <PageTitle className='recommendation-list-title'>
         {recommendations.title}
       </PageTitle>
-      <PreviewCardList
-        contentItems={recommendations.items}
-        fromParam='recommendations'
-      />
+      <PreviewCardList contentItems={recommendations.items} />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 const literals = {
   searchSnippets: 'Search snippets',
-  searchPlaceholder: 'Search...',
+  searchPlaceholder: 'Search',
   search: 'Search',
   resultsFor: q => `Search results for ${q}`,
   results: 'Search results',

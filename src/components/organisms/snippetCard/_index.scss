@@ -63,6 +63,9 @@
   }
 
   .card-preview-content {
+    // Counteract the extra bottom spacing from the snippet description
+    margin-top: -1.5rem;
+
     .snippet-preview-title {
       font-weight: 600;
       -webkit-font-smoothing: antialiased;

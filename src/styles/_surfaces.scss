@@ -1,16 +1,8 @@
 // Surface and elevation definitions
-//  dp = elevation unit, larger means higher elevation (closer)
-//  db = the same dp value overlayed over bg (calculated)
+//  db = elevation unit, larger means higher elevation (closer)
 
 @mixin generate-surface-styles($elevations) {
   @each $elevation in $elevations {
-    .srfc-#{$elevation}dp,
-    .srfc-#{$elevation}db {
-      box-shadow: var(--shd-el-#{$elevation}dp);
-    }
-    .srfc-#{$elevation}dp {
-      background: var(--clr-el-#{$elevation}dp);
-    }
     .srfc-#{$elevation}db {
       background: var(--clr-el-#{$elevation}db);
     }
@@ -19,20 +11,9 @@
 
 // Colors
 :root {
-  --clr-el-01dp: hsla(0, 0%, 100%, 0.05);
-  --clr-el-01db: hsl(240, 28%, 11%);
-  --shd-el-01dp: 0 1px 2px hsla(0, 0%, 0%, 0.24),
-    0 1px 3px hsla(0, 0%, 0%, 0.12);
-
-  --clr-el-02dp: hsla(0, 0%, 100%, 0.08);
-  --clr-el-02db: hsl(240, 23%, 14%);
-  --shd-el-02dp: 0 2px 4px hsla(0, 0%, 0%, 0.15),
-    0 3px 6px hsla(0, 0%, 0%, 0.12);
-
-  --clr-el-03dp: hsla(0, 0%, 100%, 0.11);
-  --clr-el-03db: hsl(240, 17%, 17%);
-  --shd-el-03dp: 0 3px 6px hsla(0, 0%, 0%, 0.1),
-    0 10px 20px hsla(0, 0%, 0%, 0.15);
+  --clr-el-01db: #151526;
+  --clr-el-02db: #1d1d2d;
+  --clr-el-03db: #242434;
 }
 
-@include generate-surface-styles(('01', '02', '03', '04', '05'));
+@include generate-surface-styles(('01', '02', '03'));

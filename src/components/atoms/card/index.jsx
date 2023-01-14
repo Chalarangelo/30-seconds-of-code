@@ -1,11 +1,9 @@
 import { memo } from 'react';
 
-export const CardIcon = memo(({ icon, type }) => (
+export const CardIcon = memo(({ icon }) => (
   <img
     src={`/assets/icons/${icon}.svg`}
-    className={`card-icon relative inline-block ${
-      type === 'snippet' ? 'br-round' : 'br-xl'
-    } icon icon-${icon} before:fs-lg mt-1`}
+    className={`card-icon relative inline-block br-xl icon icon-${icon} before:fs-lg mt-1`}
     alt=''
   />
 ));
@@ -35,7 +33,7 @@ export const CardSubtitle = memo(({ children }) => (
 
 CardSubtitle.displayName = 'CardSubtitle';
 
-export const cardClassName = 'card srfc-01dp txt-100 br-lg';
+export const cardClassName = 'card srfc-01db txt-100 br-lg';
 
 // Card
 /**

@@ -8,7 +8,7 @@
   line-height: 1.5rem;
   cursor: pointer;
   border: 0;
-  border-radius: var(--br-round);
+  border-radius: var(--br-lg);
   transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
 
   &:hover,
@@ -24,7 +24,7 @@
 
     &:hover,
     &:focus {
-      background: var(--clr-el-01dp);
+      background: var(--clr-el-01db);
       color: var(--clr-primary-100);
     }
   }

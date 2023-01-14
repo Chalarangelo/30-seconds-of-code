@@ -16,7 +16,7 @@ const inContentPath = 'content/configs/assets';
 
 // Image asset constants
 const supportedExtensions = ['jpeg', 'jpg', 'png', 'webp', 'tif', 'tiff'];
-const maxWidth = 800;
+const maxWidth = 846;
 const outputQuality = 80;
 // Icon asset constants
 const dimensions = [48, 72, 96, 144, 192, 256, 384, 512];
@@ -133,13 +133,12 @@ export class AssetWriter {
         const name = fileName.slice(0, fileName.lastIndexOf('.'));
         const format = metadata.format;
         const resized = img.resize({ width: resizeWidth });
+        const quality = metadata.format === 'png' ? 90 : outputQuality;
         return Promise.all([
           resized
-            .toFormat(format, { quality: outputQuality })
+            .toFormat(format, { quality })
             .toFile(`${outPath}/${fileName}`),
-          resized
-            .webp({ quality: outputQuality })
-            .toFile(`${outPath}/${name}.webp`),
+          resized.webp({ quality }).toFile(`${outPath}/${name}.webp`),
         ])
           .then(() => resolve())
           .catch(() => reject());

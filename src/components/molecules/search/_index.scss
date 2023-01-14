@@ -67,7 +67,7 @@ a.search-btn[aria-hidden='true'] {
   width: 100%;
   top: 41px;
   list-style: none;
-  border-radius: var(--br-none) var(--br-none) var(--br-md) var(--br-md);
+  border-radius: var(--br-none) var(--br-none) var(--br-sm) var(--br-sm);
   overflow: hidden;
   z-index: 100;
 
@@ -81,7 +81,7 @@ a.search-btn[aria-hidden='true'] {
     }
 
     &:last-child {
-      border-radius: var(--br-none) var(--br-none) var(--br-md) var(--br-md);
+      border-radius: var(--br-none) var(--br-none) var(--br-sm) var(--br-sm);
     }
 
     a {

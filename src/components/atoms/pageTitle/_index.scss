@@ -1,15 +1,13 @@
 // Page title
 .page-title {
   font-weight: 500;
-  -webkit-font-smoothing: antialiased;
   line-height: 3rem;
   margin: 0 0.875rem;
 }
 
 // Recommendation list titles
 .page-title.recommendation-list-title {
-  font-size: var(--font-xl);
-  margin: 2rem 1.25rem 0.5rem;
+  margin: 3.5rem 0.875rem -0.5rem;
 }
 
 // Add some spacing to static pages

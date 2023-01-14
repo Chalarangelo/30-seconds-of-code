@@ -30,13 +30,10 @@ const SnippetPage = ({
         <Breadcrumbs breadcrumbs={breadcrumbs} />
         <SnippetCard snippet={snippet} />
         <div className='g-c3'>
-          <PageTitle className='recommendation-list-title f-center'>
+          <PageTitle className='recommendation-list-title'>
             {recommendations.title}
           </PageTitle>
-          <PreviewCardList
-            contentItems={recommendations.items}
-            fromParam='recommendations'
-          />
+          <PreviewCardList contentItems={recommendations.items} />
         </div>
       </Shell>
     </>

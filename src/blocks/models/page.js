@@ -139,9 +139,7 @@ export const page = {
             )
           );
         context.recommendations = {
-          title: page.data.recommendedCollection
-            ? literals.recommendedSnippetsAndCollections
-            : literals.recommendedSnippets,
+          title: literals.recommendedContent,
           items: recommendedItems,
         };
       }
@@ -193,7 +191,7 @@ export const page = {
           }),
         ];
         context.recommendations = {
-          title: literals.recommendedSnippets,
+          title: literals.featuredSnippets,
           items: SnippetPreviewSerializer.serializeArray(
             sortedSnippets.slice(0, 3).toArray()
           ),
