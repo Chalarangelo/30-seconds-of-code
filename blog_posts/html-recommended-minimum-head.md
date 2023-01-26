@@ -22,7 +22,7 @@ More often than not, this sort of metadata can grow in complexity with time. How
 </head>
 ```
 
-- The `charset` meta tag tells the browser what character encoding to use when rendering the document.
-- The `viewport` meta tag tells the browser how to render the page on mobile devices.
-- The `title` element is used by search engines to display the page's title in search results.
-- The `description` meta tag is used by search engines to display a short description of the page in search results.
+- The `charset` meta tag tells the browser what **character encoding** to use when rendering the document.
+- The `viewport` meta tag tells the browser how to render the page on **mobile devices**.
+- The `title` element is used by search engines to display the page's **title** in search results.
+- The `description` meta tag is used by search engines to display a **short description** of the page in search results.

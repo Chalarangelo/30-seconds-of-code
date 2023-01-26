@@ -10,13 +10,13 @@ firstSeen: 2023-01-08T05:00:00-04:00
 
 ### Definition
 
-Big-O notation, represents an algorithm's worst-case complexity. It uses algebraic terms to describe the complexity of an algorithm, allowing you to measure its efficiency and performance. Below you can find a chart that illustrates Big-O complexity:
+Big-O notation, represents an algorithm's **worst-case complexity**. It uses algebraic terms to describe the complexity of an algorithm, allowing you to measure its efficiency and performance. Below you can find a chart that illustrates Big-O complexity:
 
 ![Big-O Complexity Chart](./blog_images/big-o-complexity.png)
 
-Simply put, `O(1)` stands for constant time complexity, which is the most efficient, while `O(n!)` stands for factorial time complexity, which is the least efficient. The `n` in the complexity represents the size of the input, so `O(n)` means that the algorithm's time complexity will grow linearly with the size of the input.
+Simply put, `O(1)` stands for **constant time complexity**, which is the most efficient, while `O(n!)` stands for **factorial time complexity**, which is the least efficient. The `n` in the complexity represents the size of the input, so `O(n)` means that the algorithm's time complexity will grow linearly with the size of the input.
 
-Apart from Big-O notation, there are other notations that are used to describe the complexity of an algorithm, such as `Ω` (Omega) and `Θ` (Theta). `Ω` describes the best-case complexity of an algorithm, while `Θ` describes the average-case complexity of an algorithm.
+Apart from Big-O notation, there are other notations that are used to describe the complexity of an algorithm, such as `Ω` (Omega) and `Θ` (Theta). `Ω` describes the **best-case complexity** of an algorithm, while `Θ` describes the **average-case complexity** of an algorithm.
 
 ### Common Data Structure operations
 

@@ -9,7 +9,7 @@ excerpt: Learn how to sort a Python dictionary list using a tuple key.
 firstSeen: 2023-01-04T05:00:00-04:00
 ---
 
-Sorting a list of dictionaries in Python can seem intimidating at first. This is especially true if you want to sort using multiple keys. Luckily, the `sorted()` function can be used to sort a list of dictionaries using a tuple `key`. Simply return a tuple with the order of keys you want to sort by and the `sorted()` function will do the rest.
+Sorting a list of dictionaries in Python can seem intimidating at first. This is especially true if you want to **sort using multiple keys**. Luckily, the `sorted()` function can be used to sort a list of dictionaries using a tuple `key`. Simply return a **tuple** with the order of keys you want to sort by and the `sorted()` function will do the rest.
 
 ```py
 friends =  [
