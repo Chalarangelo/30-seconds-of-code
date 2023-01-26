@@ -9,7 +9,7 @@ excerpt: A short guide on how to correctly construct a URL in JavaScript.
 firstSeen: 2023-02-26T05:00:00-04:00
 ---
 
-Oftentimes, we need to create a URL in JavaScript, to request a resource or redirect the user. A seemingly simple task, yet URLs can be quite nuanced and complex, requiring a lot of attention to get right. This rings especially true if you've ever worked with different encodings and multiple query parameters.
+Oftentimes, we need to **create a URL in JavaScript**, to request a resource or redirect the user. A seemingly simple task, yet URLs can be quite nuanced and complex, requiring a lot of attention to get right. This rings especially true if you've ever worked with different encodings and multiple **query parameters**.
 
 Naively, many developers reach for template literals to construct a URL. After all, URLs are simply strings and interpolation can be used to add parameters as needed. Except, this approach is error-prone and can lead to bugs. Let's take a look at an example:
 
@@ -22,7 +22,7 @@ const url = `https://examp.le?q=${query}&lang=${locale}&from=${campaign}`;
 // "https://examp.le?q=Where's Waldø?&lang=en-US&from=promo_email"
 ```
 
-As you can see, template literals aren't well-suited for URLs, as they won't encode special characters. If you've worked with JavaScript for any amount of time, you might reach for `encodeURIComponent()` to fix this:
+As you can see, template literals aren't well-suited for URLs, as they won't **encode special characters**. If you've worked with JavaScript for any amount of time, you might reach for `encodeURIComponent()` to fix this:
 
 ```js
 const query = "Where's Waldø?";
@@ -42,7 +42,7 @@ const url = `https://examp.le
 
 Surely, this dealt with encoding, but the multiline string has sneaked a newline character (`\n`) into the URL. This is because template literals preserve whitespace, leading to such issues. Breaking the string into multiple lines and concatenating them can help, but the code is starting to get ugly.
 
-Obviously, there are other issues that might come into play, making this a non-trivial problem to solve. Luckily, there's a better way to construct URLs in JavaScript, using the `URL` object. Let's see how we can use it to solve the problem above:
+Obviously, there are other issues that might come into play, making this a **non-trivial problem** to solve. Luckily, there's a better way to construct URLs in JavaScript, using the `URL` object. Let's see how we can use it to solve the problem above:
 
 ```js
 const query = "Where's Waldø?";

@@ -26,7 +26,7 @@ Social media play an important role to any content's success. To ensure your con
 </head>
 ```
 
-The above snippet contains OpenGraph and Twitter tags. OpenGraph tags are used by Facebook and other social media platforms to display a preview of the page when it's shared. Similarly, Twitter uses Twitter tags for the same information. Here's a breakdown of each one:
+The above snippet contains OpenGraph and Twitter tags. **OpenGraph tags** are used by Facebook and other social media platforms to display a preview of the page when it's shared. Similarly, Twitter uses **Twitter tags** for the same information. Here's a breakdown of each one:
 
 - The `og:title` and `twitter:title` meta tags are used to display the page's title in the preview.
 - The `og:description` and `twitter:description` meta tags are used to display a short description of the page in the preview.

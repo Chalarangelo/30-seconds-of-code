@@ -20,7 +20,7 @@ The `<head>` element of an HTML document is where you can include links to exter
 </head>
 ```
 
-- The `canonical` link element tells search engines which URL is the canonical version of the page. This helps prevent duplicate content issues and ensures that the correct page is indexed.
-- The `sitemap` link element tells search engines where to find the sitemap for the website. Sitemaps are XML files that contain a list of all the pages on the website and their metadata. They are used by search engines to index the website and display it in search results.
-- The `alternate` link element tells search engines where to find the RSS feed for the website. RSS feeds are XML files that contain a list of the most recent posts on the website. They are used by search engines to display the website's content in search results, as well as by RSS readers to display the website's content in a more convenient format.
-- The `search` link element is used by browsers to display a search box in the browser's address bar. This allows users to search the website directly from the address bar, instead of having to navigate to the search page.
+- The `canonical` link element tells search engines which URL is the **canonical version** of the page. This helps prevent duplicate content issues and ensures that the correct page is indexed.
+- The `sitemap` link element tells search engines where to find the **sitemap** for the website. Sitemaps are XML files that contain a list of all the pages on the website and their metadata. They are used by search engines to index the website and display it in search results.
+- The `alternate` link element tells search engines where to find the **RSS feed** for the website. RSS feeds are XML files that contain a list of the most recent posts on the website. They are used by search engines to display the website's content in search results, as well as by RSS readers to display the website's content in a more convenient format.
+- The `search` link element is used by browsers to display a **search box** in the browser's address bar. This allows users to search the website directly from the address bar, instead of having to navigate to the search page.
