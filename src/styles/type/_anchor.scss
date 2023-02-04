@@ -19,6 +19,13 @@ a {
       color: inherit;
     }
   }
+
+  &.no-animation {
+    &:hover,
+    &:focus {
+      animation: none;
+    }
+  }
 }
 
 @keyframes animated-underline {
