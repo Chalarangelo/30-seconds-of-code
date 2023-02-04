@@ -44,7 +44,7 @@ const ListingPage = ({
         </div>
         <div>
           <PageTitle>{listingName}</PageTitle>
-          <p className='snippet-list-description mt-4 mx-3.5 mb-2 txt-100'>
+          <p className='snippet-list-description mt-4 mx-3.5 mb-2 txt-100 fs-sm md:fs-md'>
             {listingDescription}
           </p>
         </div>
