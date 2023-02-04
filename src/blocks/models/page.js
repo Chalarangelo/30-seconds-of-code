@@ -7,7 +7,7 @@ const routePrefix = globalConfig.websiteUrl;
 
 const NEW_BLOG_CARDS = 5;
 const TOP_SNIPPET_CARDS = 5;
-const TOP_COLLECTION_CHIPS = 6;
+const TOP_COLLECTION_CHIPS = 8;
 
 /* eslint-disable camelcase */
 // TODO: Maybe find these a better home
@@ -90,25 +90,26 @@ export const page = {
             .toArray()
             .slice(0, TOP_SNIPPET_CARDS * 5)
         ).slice(0, TOP_SNIPPET_CARDS);
-        context.shelves = [
-          {
-            shelfType: 'collections',
-            shelfName: literals.featuredCollections,
-            shelfUrl: '/collections/p/1',
-            shelfData: ListingPreviewSerializer.serializeArray(
-              listedCollections
-            ),
-          },
-          {
-            shelfType: 'snippets',
-            shelfName: literals.featuredSnippets,
-            shelfUrl: '/list/p/1',
-            shelfData: SnippetPreviewSerializer.serializeArray([
-              ...newBlogs,
-              ...topSnippets,
-            ]),
-          },
-        ];
+        context.featuredCollections = ListingPreviewSerializer.serializeArray(
+          listedCollections
+        );
+        context.featuredCollections.push({
+          title: literals.moreCollections,
+          url: '/collections/p/1',
+          selected: false,
+        });
+        context.featuredSnippets = SnippetPreviewSerializer.serializeArray([
+          ...newBlogs,
+          ...topSnippets,
+        ]);
+        // TODO: Move this to a better place
+        context.splashImage = '/assets/splash/work-sunrise.png';
+        context.snippetListUrl = '/list/p/1';
+        context.stringLiterals = {
+          featuredSnippets: literals.featuredSnippets,
+          tagline: literals.tagline,
+          browseByCollection: literals.browseByCollection,
+        };
         context.pageDescription = literals.pageDescription('main', {
           snippetCount: Snippet.records.published.length,
         });
@@ -191,7 +192,7 @@ export const page = {
           }),
         ];
         context.recommendations = {
-          title: literals.featuredSnippets,
+          title: literals.popularSnippets,
           items: SnippetPreviewSerializer.serializeArray(
             sortedSnippets.slice(0, 3).toArray()
           ),
