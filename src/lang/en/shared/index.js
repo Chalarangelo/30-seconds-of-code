@@ -12,8 +12,11 @@ const formatTag = tag => {
 
 /* istanbul ignore next */
 const literals = {
-  featuredCollections: 'Featured Collections',
-  featuredSnippets: 'Popular Snippets',
+  featuredSnippets: 'New & Popular Snippets',
+  popularSnippets: 'Popular Snippets',
+  tagline: 'Discover short code snippets for all your development needs.',
+  browseByCollection:
+    'Browse snippets by collection or check out our top picks and latest articles below.',
   moreCollections: 'More collections',
   blogSingular: 'Article',
   blog: 'Articles',

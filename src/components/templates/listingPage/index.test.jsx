@@ -1,7 +1,7 @@
 import { cleanup } from '@testing-library/react';
 import { renderWithContext } from 'test/utils';
 import ListingPage from './index';
-import { anchorItems } from 'test/fixtures/listingAnchors';
+import { chipItems } from 'test/fixtures/listingChips';
 import SnippetFactory from 'test/fixtures/factories/snippet';
 import PaginatorFactory from 'test/fixtures/factories/paginator';
 
@@ -20,7 +20,7 @@ describe('<ListingPage />', () => {
         paginator={paginator}
         listingName={listingName}
         pageDescription={pageDescription}
-        listingSublinks={anchorItems}
+        listingSublinks={chipItems}
         listingImage='/splash.png'
       />
     ).container;
@@ -43,8 +43,8 @@ describe('<ListingPage />', () => {
       expect(wrapper.querySelectorAll('.paginator')).toHaveLength(1);
     });
 
-    it('a ListingAnchors component', () => {
-      expect(wrapper.querySelectorAll('.listing-anchors')).toHaveLength(1);
+    it('a ListingChips component', () => {
+      expect(wrapper.querySelectorAll('.listing-chips')).toHaveLength(1);
     });
 
     it('the appropriate PreviewCard components', () => {
@@ -79,8 +79,8 @@ describe('<ListingPage />', () => {
       ).container;
     });
 
-    it('should not render a ListingAnchors component', () => {
-      expect(wrapper.querySelectorAll('.listing-anchors')).toHaveLength(0);
+    it('should not render a ListingChips component', () => {
+      expect(wrapper.querySelectorAll('.listing-chips')).toHaveLength(0);
     });
   });
 
@@ -91,7 +91,7 @@ describe('<ListingPage />', () => {
           snippetList={snippetList}
           listingName={listingName}
           pageDescription={pageDescription}
-          listingSublinks={anchorItems}
+          listingSublinks={chipItems}
           listingImage='/splash.png'
         />
       ).container;

@@ -1,23 +1,23 @@
 import { render, cleanup } from '@testing-library/react';
-import ListingAnchors from './index';
-import { anchorItems } from 'test/fixtures/listingAnchors';
+import ListingChips from './index';
+import { chipItems } from 'test/fixtures/listingChips';
 
-describe('<ListingAnchors />', () => {
+describe('<ListingChips />', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = render(<ListingAnchors items={anchorItems} />).container;
+    wrapper = render(<ListingChips items={chipItems} />).container;
   });
 
   afterEach(cleanup);
 
   describe('should render', () => {
     it('a container component', () => {
-      expect(wrapper.querySelectorAll('.listing-anchors')).toHaveLength(1);
+      expect(wrapper.querySelectorAll('.listing-chips')).toHaveLength(1);
     });
 
     it('two anchor buttons', () => {
-      expect(wrapper.querySelectorAll('a')).toHaveLength(anchorItems.length);
+      expect(wrapper.querySelectorAll('a')).toHaveLength(chipItems.length);
     });
 
     it('a selected anchor', () => {

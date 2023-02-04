@@ -167,7 +167,7 @@ const Search = ({ isMainSearch = false }) => {
               <a
                 href={item.url}
                 title={item.title}
-                className={`flex py-2 px-3 ${
+                className={`flex no-animation py-2 px-3 ${
                   selectedResult === i ? 'selected' : ''
                 }`}
                 data-link-rel='no-route'

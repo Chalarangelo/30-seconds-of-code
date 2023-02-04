@@ -4,7 +4,7 @@ import Paginator from 'components/molecules/paginator';
 import PageTitle from 'components/atoms/pageTitle';
 import Image from 'components/atoms/image';
 import PreviewCardList from 'components/organisms/previewCardList';
-import ListingAnchors from 'components/atoms/listingAnchors';
+import ListingChips from 'components/atoms/listingChips';
 
 /**
  * Renders a listing page.
@@ -44,14 +44,12 @@ const ListingPage = ({
         </div>
         <div>
           <PageTitle>{listingName}</PageTitle>
-          <p className='snippet-list-description mt-4 mx-3.5 mb-2 txt-100'>
+          <p className='snippet-list-description mt-4 mx-3.5 mb-2 txt-100 fs-sm md:fs-md'>
             {listingDescription}
           </p>
         </div>
       </div>
-      {listingSublinks.length ? (
-        <ListingAnchors items={listingSublinks} />
-      ) : null}
+      {listingSublinks.length ? <ListingChips items={listingSublinks} /> : null}
       <div className='g-c3'>
         <PreviewCardList contentItems={snippetList} />
         {paginator ? <Paginator paginator={paginator} /> : null}

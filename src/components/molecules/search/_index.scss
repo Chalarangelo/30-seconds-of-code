@@ -100,8 +100,6 @@ a.search-btn[aria-hidden='true'] {
       &:hover,
       &:focus,
       &.selected {
-        animation: none;
-
         .result-title,
         .result-tag {
           color: var(--clr-primary-050);

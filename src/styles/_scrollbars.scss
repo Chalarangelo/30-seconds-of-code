@@ -1,9 +1,8 @@
 // Shared scrollbar styles - Keep these here to minimize duplication
 body,                 // Shell
 pre,                  // Code block
-.listing-anchors,
-.collections-shelf-list {
-  // Listing anchors
+.listing-chips {
+  // Listing chips
   --clr-el-scrollbar-bg: var(--clr-scrollbar-bg);
   --clr-el-scrollbar-knob: var(--clr-scrollbar-knob);
   --clr-el-scrollbar-knob-active: var(--clr-scrollbar-knob-active);
@@ -37,9 +36,8 @@ body {
   }
 }
 
-// Listing anchors and collections shelf scrollbars
-.listing-anchors,
-.collections-shelf-list {
+// Listing chips scrollbars
+.listing-chips {
   &::-webkit-scrollbar-track {
     margin: 0 4rem;
     border-radius: var(--br-sm);
