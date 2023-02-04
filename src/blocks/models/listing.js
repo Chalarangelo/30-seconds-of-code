@@ -194,12 +194,12 @@ export const listing = {
           ...Listing.records.language
             .sort((a, b) => b.ranking - a.ranking)
             .flatMap(ls => ({
-              name: ls.shortName,
+              title: ls.shortName,
               url: `${ls.rootUrl}/p/1`,
               selected: false,
             })),
           {
-            name: literals.moreCollections,
+            title: literals.moreCollections,
             url: '/collections/p/1',
             selected: false,
           },
@@ -208,7 +208,7 @@ export const listing = {
       const links = listing.parent ? listing.siblings : listing.children;
       return [
         {
-          name: literals.tag('all'),
+          title: literals.tag('all'),
           url: `${listing.rootUrl}/p/1`,
           selected: listing.isParent,
         },
@@ -216,18 +216,18 @@ export const listing = {
           .flatMap(link =>
             link.isCollection
               ? {
-                  name: link.data.shortName,
+                  title: link.data.shortName,
                   url: `/${link.data.slug}/p/1`,
                   selected: listing.isCollection && link.id === listing.id,
                 }
               : {
-                  name: literals.tag(link.data.shortId),
+                  title: literals.tag(link.data.shortId),
                   url: `${link.data.slugPrefix}/p/1`,
                   selected:
                     listing.isTag && listing.data.shortId === link.data.shortId,
                 }
           )
-          .sort((a, b) => a.name.localeCompare(b.name)),
+          .sort((a, b) => a.title.localeCompare(b.title)),
       ];
     },
   },

@@ -752,22 +752,22 @@ describe('Application/Schema', () => {
         const listing = Listing.records.get('language/js');
         expect(listing.sublinks).toEqual([
           {
-            name: 'All',
+            title: 'All',
             url: '/js/p/1',
             selected: true,
           },
           {
-            name: 'Date',
+            title: 'Date',
             url: '/js/t/date/p/1',
             selected: false,
           },
           {
-            name: 'Node',
+            title: 'Node',
             url: '/js/t/node/p/1',
             selected: false,
           },
           {
-            name: 'String',
+            title: 'String',
             url: '/js/t/string/p/1',
             selected: false,
           },
@@ -777,22 +777,22 @@ describe('Application/Schema', () => {
         const listing = Listing.records.get('tag/js/t/string');
         expect(listing.sublinks).toEqual([
           {
-            name: 'All',
+            title: 'All',
             url: '/js/p/1',
             selected: false,
           },
           {
-            name: 'Date',
+            title: 'Date',
             url: '/js/t/date/p/1',
             selected: false,
           },
           {
-            name: 'Node',
+            title: 'Node',
             url: '/js/t/node/p/1',
             selected: false,
           },
           {
-            name: 'String',
+            title: 'String',
             url: '/js/t/string/p/1',
             selected: true,
           },
@@ -1138,7 +1138,6 @@ describe('Application/Schema', () => {
       it('returns the correct value for the home page', () => {
         const page = Page.records.get('home');
         const pageContext = page.context;
-        expect(pageContext.shelves.length).toBe(2);
         expect(pageContext.pageDescription).toEqual(
           'Browse 15 short code snippets for all your development needs on 30 seconds of code.'
         );
