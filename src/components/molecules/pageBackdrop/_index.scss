@@ -1,17 +1,10 @@
 // Page background graphic
 .page-backdrop {
-  margin-top: 50px;
-  margin-bottom: 40vh;
-  width: 100%;
-  height: 50vmin;
-  padding-top: 52vmin;
+  margin: 64px 0;
 
   img {
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    max-width: 60vmin;
-    transform: translate(-50%, -50%);
+    max-height: 360px;
+    border-radius: var(--br-lg);
   }
 
   p {
