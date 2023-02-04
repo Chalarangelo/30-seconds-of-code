@@ -29,7 +29,9 @@
 
   &,
   img {
-    max-height: 25vh;
+    max-height: 240px;
+    border-radius: var(--br-md);
+    aspect-ratio: 1 / 1;
   }
 
   img {
@@ -38,5 +40,6 @@
 
   @media screen and (min-width: $layout-medium-breakpoint) {
     order: 2;
+    text-align: right;
   }
 }
