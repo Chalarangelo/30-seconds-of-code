@@ -1,10 +1,10 @@
-export const anchorItems = [
+export const chipItems = [
   {
-    name: 'My list',
+    title: 'My list',
     url: '/my-list',
   },
   {
-    name: 'My other list',
+    title: 'My other list',
     url: '/my-other-list',
     selected: true,
   },
