@@ -8,7 +8,7 @@ describe('<NotFoundPage />', () => {
 
   beforeEach(() => {
     wrapper = renderWithContext(<NotFoundPage />).container;
-    anchorButton = wrapper.querySelector('a.btn.btn-home');
+    anchorButton = wrapper.querySelector('a.btn.icon-home');
   });
 
   afterEach(cleanup);
@@ -18,12 +18,8 @@ describe('<NotFoundPage />', () => {
       expect(wrapper.querySelectorAll('.page-container')).toHaveLength(1);
     });
 
-    it('a PageBackdrop component', () => {
-      expect(wrapper.querySelectorAll('.page-backdrop')).toHaveLength(1);
-    });
-
     it('an anchor element', () => {
-      expect(wrapper.querySelectorAll('a.btn.btn-home')).toHaveLength(1);
+      expect(wrapper.querySelectorAll('a.btn.icon-home')).toHaveLength(1);
     });
   });
 
@@ -31,15 +27,11 @@ describe('<NotFoundPage />', () => {
     expect(document.title).toContain(literals.pageNotFound);
   });
 
-  it('should pass the correct backdrop name to the PageBackdrop component', () => {
-    expect(wrapper.querySelectorAll('.page-backdrop')).toHaveLength(1);
-  });
-
   it('should pass a link to the anchor button', () => {
     expect(anchorButton.href).not.toBe(undefined);
   });
 
   it('should pass the correct class to the anchor button', () => {
-    expect(anchorButton.className).toContain('btn-home');
+    expect(anchorButton.className).toContain('icon-home');
   });
 });
