@@ -33,9 +33,10 @@ const HomePage = ({
             <Image
               src={splashImage}
               alt=''
-              height='360'
-              width='360'
+              height='240'
+              width='240'
               fetchpriority='high'
+              className='br-md'
             />
           </div>
           <div>
