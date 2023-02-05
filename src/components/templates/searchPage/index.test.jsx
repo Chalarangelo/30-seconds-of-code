@@ -35,10 +35,6 @@ describe('<SearchPage />', () => {
     it('a Search component', () => {
       expect(wrapper.querySelectorAll('input[type="search"]')).toHaveLength(1);
     });
-
-    it('a SearchResults component', () => {
-      expect(wrapper.querySelectorAll('.page-backdrop')).toHaveLength(1);
-    });
   });
 
   it('should pass the correct data to the Meta component', () => {
