@@ -41,12 +41,12 @@ const Shell = ({ isSearch = false, isFaq = false, children }) => {
         </Link>
         <div className='nav-control-wrapper grid txt-150 a-center'>
           <Link href='/list/p/1'>
-            <a className='px-2'>
+            <a className='px-2 no-animation'>
               <span className='txt-150'>{literals.snippets}</span>
             </a>
           </Link>
           <Link href='/collections/p/1'>
-            <a className='px-2'>
+            <a className='px-2 no-animation'>
               <span className='txt-150'>{literals.collections}</span>
             </a>
           </Link>
@@ -61,7 +61,7 @@ const Shell = ({ isSearch = false, isFaq = false, children }) => {
       >
         <a
           href='#skip-link-target'
-          className='skip-link fs-lg'
+          className='skip-link fs-lg f-center no-animation'
           id='skip-link-target'
         >
           {literals.startOfContent}
