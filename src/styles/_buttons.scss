@@ -44,6 +44,9 @@
 
   // Utility for btn elements that have an inline icon
   &.icon-btn {
+    display: inline-flex;
+    gap: 0.5rem;
+
     &:before {
       vertical-align: bottom;
     }
