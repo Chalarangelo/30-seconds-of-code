@@ -37,9 +37,10 @@ const ListingPage = ({
           <Image
             src={listingImage}
             alt=''
-            height='360'
-            width='360'
+            height='240'
+            width='240'
             fetchpriority='high'
+            className='br-md'
           />
         </div>
         <div>

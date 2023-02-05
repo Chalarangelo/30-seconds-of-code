@@ -1,5 +1,5 @@
 import { useSearch } from 'state/search';
-import PageBackdrop from 'components/molecules/pageBackdrop';
+import Image from 'components/atoms/image';
 import PageTitle from 'components/atoms/pageTitle';
 import PreviewCardList from 'components/organisms/previewCardList';
 import literals from 'lang/en/client/search';
@@ -58,10 +58,15 @@ const SearchResults = ({ recommendations }) => {
   ) : (
     <>
       <div className='g-c2'>
-        <PageBackdrop
-          backdropImage='/assets/splash/magnifying-glass.png'
-          mainText={
-            searchQuery.trim().length <= 1 ? (
+        <div className='box-border f-center txt-050 my-8 py-8 px-3.5'>
+          <Image
+            src='/assets/splash/magnifying-glass.png'
+            className='br-lg'
+            height='360'
+            width='360'
+          />
+          <p className='f-center mx-auto mb-3 mt-8 fs-lg'>
+            {searchQuery.trim().length <= 1 ? (
               literals.searchPrompt
             ) : (
               <>
@@ -69,10 +74,9 @@ const SearchResults = ({ recommendations }) => {
                 <span className='txt-150'>{searchQuery}</span>
                 {'.'}
               </>
-            )
-          }
-          mainTextClassName='fs-lg'
-        />
+            )}
+          </p>
+        </div>
       </div>
       <div className='g-c3'>
         <PageTitle className='recommendation-list-title'>

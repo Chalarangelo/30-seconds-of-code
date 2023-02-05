@@ -41,7 +41,6 @@
   a {
     &:hover,
     &:focus {
-      animation: none;
       outline: 0;
 
       > span {
@@ -84,14 +83,13 @@ img.nav-website-logo {
   left: 0;
   width: 100vw;
   transition: none;
+  line-height: 112px;
 
   // The link must have the same height and background as the nav bar
   &:focus {
     clip-path: none;
-    text-align: center;
     background: var(--clr-navbar-bg);
     height: 112px;
-    line-height: 112px;
     z-index: 1001;
   }
 }
