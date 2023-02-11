@@ -56,16 +56,6 @@
     }
   }
 
-  .card-meta {
-    grid-template-rows: auto auto;
-    grid-template-columns: 64px auto;
-
-    .card-data {
-      flex: 1 1;
-      max-width: calc(100% - 5rem);
-    }
-  }
-
   .card-description {
     grid-column: 1/3;
     margin: 0;
