@@ -47,11 +47,11 @@ const SnippetCard = ({ snippet }) => {
       </div>
       {snippet.cover && (
         <Image
-          className='card-cover-image card-fw-section'
+          className='ar-wide mt-5 card-fw-section'
           src={snippet.cover}
           alt=''
-          height='232'
-          width='348'
+          height='180'
+          width='360'
           fetchpriority='high'
         />
       )}
