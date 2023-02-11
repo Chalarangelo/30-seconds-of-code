@@ -1,5 +1,4 @@
 .card {
-  position: relative; // Used by the twitter bot
   margin: 1.75rem 0.25rem 1rem;
   padding: 1.5rem 1rem;
 
@@ -117,23 +116,14 @@
   .card-fw-section {
     position: relative;
     box-sizing: border-box;
-    margin: 1.375rem -1rem 0;
+    margin-inline: -1rem;
     min-width: calc(100% + 2rem);
     object-fit: cover;
 
     @media screen and (min-width: $layout-medium-breakpoint) {
-      margin: 1.375rem -1.5rem 0;
+      margin-inline: -1.5rem;
       min-width: calc(100% + 3rem);
     }
-  }
-
-  // Keep this below the full width section utility for correct cascade
-  .card-cover-image {
-    --cover-aspect-ratio: 1.78;
-    aspect-ratio: 1.78;
-    margin-top: 1.25rem;
-    min-height: calc(260px / var(--cover-aspect-ratio));
-    max-height: calc(680px / var(--cover-aspect-ratio));
   }
 }
 
