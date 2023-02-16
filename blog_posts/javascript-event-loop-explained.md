@@ -4,7 +4,7 @@ shortTitle: Event loop explained
 type: question
 tags: javascript,browser,event
 author: chalarangelo
-cover: blog_images/tranquility.jpg
+cover: tranquility
 excerpt: The Event Loop is a source of confusion for many developers, but it's a fundamental piece of the JavaScript engine.
 firstSeen: 2022-08-21T05:00:00-04:00
 ---

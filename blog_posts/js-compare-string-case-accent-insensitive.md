@@ -4,7 +4,7 @@ shortTitle: Case and accent-insensitive string comparison
 type: tip
 tags: javascript,string,comparison
 author: chalarangelo
-cover: blog_images/memories-of-pineapple-1.jpg
+cover: memories-of-pineapple-1
 excerpt: Here's a quick tip on how to compare and sort arrays of strings, ignoring case and accents.
 firstSeen: 2022-07-17T05:00:00-04:00
 ---

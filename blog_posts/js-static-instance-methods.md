@@ -4,7 +4,7 @@ shortTitle: Static  Instance Methods
 type: question
 tags: javascript,object,function,class
 author: chalarangelo
-cover: blog_images/lake-runner.jpg
+cover: lake-runner
 excerpt: Static and instance methods are pretty easy to distinguish and serve different purposes. Learn all about them in this article.
 firstSeen: 2022-01-30T05:00:00-04:00
 ---

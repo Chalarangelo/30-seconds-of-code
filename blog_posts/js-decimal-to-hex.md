@@ -4,7 +4,7 @@ shortTitle: Decimal to hexadecimal
 type: tip
 tags: javascript,math
 author: chalarangelo
-cover: blog_images/waves-from-above.jpg
+cover: waves-from-above
 excerpt: Ever needed to convert a decimal number to hexadecimal? Here's a quick and easy way to do it.
 firstSeen: 2022-09-21T05:00:00-04:00
 ---

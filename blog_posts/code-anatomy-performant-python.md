@@ -3,8 +3,7 @@ title: Code Anatomy - Writing high performance Python code
 shortTitle: Performant Python code
 type: story
 tags: python,list,performance
-author: maciv
-cover: blog_images/walking-on-top.jpg
+cover: walking-on-top
 excerpt: Writing short, efficient Python code is not always straightforward. Read how we optimize our list snippets to increase performance using a couple of simple tricks.
 firstSeen: 2020-03-15T12:50:05+02:00
 lastUpdated: 2021-11-07T16:34:37+03:00

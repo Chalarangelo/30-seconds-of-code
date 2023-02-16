@@ -3,8 +3,7 @@ title: What is the ternary operator and how do I use it?
 shortTitle: Ternary operation introduction
 type: question
 tags: javascript,condition
-author: maciv
-cover: blog_images/red-succulent.jpg
+cover: red-succulent
 excerpt: Learn everything you need to know about the conditional (ternary) operator and how to use it in JavaScript.
 firstSeen: 2020-09-01T01:53:34+03:00
 lastUpdated: 2021-06-12T19:30:41+03:00

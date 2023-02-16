@@ -4,7 +4,7 @@ shortTitle: Bash alias for copying from the web
 type: tip
 tags: git,configuration
 author: chalarangelo
-cover: blog_images/capsule-coffee.jpg
+cover: capsule-coffee
 excerpt: Many online resources prefix their terminal commands with a dollar sign. Luckily, we've got a solution to this small annoyance.
 firstSeen: 2023-03-05T05:00:00-04:00
 ---

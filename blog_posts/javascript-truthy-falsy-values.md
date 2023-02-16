@@ -4,7 +4,7 @@ shortTitle: Truthy and falsy values
 type: question
 tags: javascript,type,comparison
 author: chalarangelo
-cover: blog_images/little-bird.jpg
+cover: little-bird
 excerpt: JavaScript uses type coercion in Boolean contexts, resulting in truthy or falsy values. Get a hang of how it all works in this quick guide.
 firstSeen: 2021-09-12T05:00:00-04:00
 ---

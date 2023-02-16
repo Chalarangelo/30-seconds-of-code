@@ -4,7 +4,7 @@ shortTitle: Essential VS Code extensions
 type: story
 tags: devtools,vscode
 author: chalarangelo
-cover: blog_images/computer-screens.jpg
+cover: computer-screens
 excerpt: VS Code is steadily gaining popularity among developers. Here are 10 essential extensions for JavaScript developers that aim to increase your productivity.
 unlisted: true
 firstSeen: 2019-12-23T10:41:56+02:00

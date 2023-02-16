@@ -4,7 +4,7 @@ shortTitle: Trailing commas in JavaScript
 type: story
 tags: javascript,webdev
 author: chalarangelo
-cover: blog_images/contemporary-desk.jpg
+cover: contemporary-desk
 excerpt: Trailing commas are not without controversy. Here's why I think you should use them.
 firstSeen: 2023-03-12T05:00:00-04:00
 ---

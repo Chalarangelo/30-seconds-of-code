@@ -4,7 +4,7 @@ shortTitle: Double negation operator
 type: question
 tags: javascript,function
 author: chalarangelo
-cover: blog_images/memories-of-pineapple-2.jpg
+cover: memories-of-pineapple-2
 excerpt: You've probably come across the double negation operator (`!!`) before, but do you know what it does?
 firstSeen: 2022-07-26T05:00:00-04:00
 ---

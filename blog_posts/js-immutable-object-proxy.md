@@ -4,7 +4,7 @@ shortTitle: Immutable objects using Proxy
 type: story
 tags: javascript,object,proxy
 author: chalarangelo
-cover: blog_images/frozen-globe.jpg
+cover: frozen-globe
 excerpt: Freezing objects is not the only way to prevent mutations. Learn how you can leverage the Proxy object to your advantage.
 firstSeen: 2022-04-10T05:00:00-04:00
 ---

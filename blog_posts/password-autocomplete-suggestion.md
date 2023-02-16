@@ -4,7 +4,7 @@ shortTitle: Password field autocomplete
 type: tip
 tags: webdev
 author: chalarangelo
-cover: blog_images/padlocks.jpg
+cover: padlocks
 excerpt: Use the HTML `autocomplete` attribute to create more secure and accessible password fields.
 firstSeen: 2021-05-10T12:00:00+03:00
 lastUpdated: 2021-06-12T19:30:41+03:00

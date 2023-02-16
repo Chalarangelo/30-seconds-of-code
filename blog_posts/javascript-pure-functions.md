@@ -4,7 +4,7 @@ shortTitle: Pure function introduction
 type: question
 tags: javascript,function
 author: chalarangelo
-cover: blog_images/dark-leaves.jpg
+cover: dark-leaves
 excerpt: Pure functions are a very important concept to know, especially if you're interested in functional programming.
 firstSeen: 2021-12-19T05:00:00-04:00
 ---

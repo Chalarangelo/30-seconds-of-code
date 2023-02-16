@@ -4,7 +4,7 @@ shortTitle: Clone an array
 type: question
 tags: javascript,array
 author: chalarangelo
-cover: blog_images/colorful-plastic.jpg
+cover: colorful-plastic
 excerpt: Pick up a few new tricks which you can use to clone arrays in JavaScript.
 firstSeen: 2021-03-15T11:00:00+02:00
 lastUpdated: 2021-06-12T19:30:41+03:00

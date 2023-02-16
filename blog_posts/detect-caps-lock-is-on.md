@@ -4,7 +4,7 @@ shortTitle: Detect Caps Lock
 type: question
 tags: javascript,browser,event
 author: chalarangelo
-cover: blog_images/keyboard.jpg
+cover: keyboard
 excerpt: If you need to check if Caps Lock is on when the user is typing in the browser, JavaScript's got you covered.
 firstSeen: 2021-02-18T11:00:00+02:00
 lastUpdated: 2021-06-12T19:30:41+03:00

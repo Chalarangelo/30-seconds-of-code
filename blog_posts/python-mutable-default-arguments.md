@@ -3,8 +3,7 @@ title: "Tip: Watch out for mutable default arguments in Python"
 shortTitle: Mutable default arguments
 type: tip
 tags: python,function
-author: maciv
-cover: blog_images/goat-wooden-cottage.jpg
+cover: goat-wooden-cottage
 excerpt: Mutable default arguments can trip up Python beginners and veterans alike. Here's a quick workaround to deal with them.
 firstSeen: 2022-02-27T05:00:00-04:00
 ---

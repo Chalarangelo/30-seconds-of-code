@@ -4,7 +4,7 @@ shortTitle: Minimize DOM access
 type: tip
 tags: javascript,browser
 author: chalarangelo
-cover: blog_images/armchair.jpg
+cover: armchair
 excerpt: Increase your JavaScript code's performance when working with the DOM by leveraging this simple trick.
 firstSeen: 2020-11-20T09:18:55+02:00
 lastUpdated: 2021-06-12T19:30:41+03:00

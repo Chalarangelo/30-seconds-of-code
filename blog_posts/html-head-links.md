@@ -4,7 +4,7 @@ shortTitle: HTML head links template
 type: story
 tags: webdev,html,browser
 author: chalarangelo
-cover: blog_images/boutique-home-office-4.jpg
+cover: boutique-home-office-4
 excerpt: Make your HTML documents more SEO-friendly by including these lines in your `<head>` element.
 firstSeen: 2023-01-26T05:00:00-04:00
 ---

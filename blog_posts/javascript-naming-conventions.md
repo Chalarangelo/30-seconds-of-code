@@ -4,7 +4,7 @@ shortTitle: Naming conventions
 type: story
 tags: javascript,variable,cheatsheet
 author: chalarangelo
-cover: blog_images/naming-conventions.jpg
+cover: naming-conventions
 excerpt: Naming conventions, while not easy to enforce, make code easier to read and understand. Learn how to name your variables in JavaScript with this handy guide.
 firstSeen: 2020-05-20T02:32:10+03:00
 lastUpdated: 2021-06-12T19:30:41+03:00

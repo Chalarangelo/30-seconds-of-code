@@ -4,7 +4,7 @@ shortTitle: Focused DOM element
 type: tip
 tags: javascript,browser
 author: chalarangelo
-cover: blog_images/horse-sunset.jpg
+cover: horse-sunset
 excerpt: Here's a quick and easy way to select the currently focused DOM element in JavaScript.
 firstSeen: 2022-10-23T05:00:00-04:00
 ---

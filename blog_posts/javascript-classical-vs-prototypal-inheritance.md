@@ -4,7 +4,7 @@ shortTitle: Prototypal vs classical inheritance
 type: question
 tags: javascript,object,class
 author: chalarangelo
-cover: blog_images/last-light.jpg
+cover: last-light
 excerpt: Understanding the difference between these two object-oriented programming paradigms is key to taking your skills to the next level.
 firstSeen: 2021-11-21T05:00:00-04:00
 ---

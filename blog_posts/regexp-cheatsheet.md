@@ -3,7 +3,7 @@ title: Regular Expressions Cheat Sheet
 type: cheatsheet
 tags: javascript,string,regexp,cheatsheet
 author: chalarangelo
-cover: blog_images/tools.jpg
+cover: tools
 excerpt: Regular expressions are a very useful tool in a variety of situations. Save this cheatsheet for any time you need to look up their syntax and speed up your development.
 firstSeen: 2020-05-01T15:39:07+03:00
 lastUpdated: 2021-06-12T19:30:41+03:00

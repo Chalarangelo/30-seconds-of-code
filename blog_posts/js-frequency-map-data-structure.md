@@ -4,7 +4,7 @@ shortTitle: Frequency Map
 type: story
 tags: javascript,object,class,array
 author: chalarangelo
-cover: blog_images/radio-monstera.jpg
+cover: radio-monstera
 excerpt: A custom data structure to keep track of value frequencies in an array.
 firstSeen: 2022-11-13T05:00:00-04:00
 ---

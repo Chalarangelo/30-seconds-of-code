@@ -3,7 +3,7 @@ title: CSS Reset
 type: story
 tags: css,visual
 author: chalarangelo
-cover: blog_images/pink-flower-tree.jpg
+cover: pink-flower-tree
 excerpt: A short, opinionated CSS reset to make your websites look great everywhere.
 firstSeen: 2022-10-16T05:00:00-04:00
 ---

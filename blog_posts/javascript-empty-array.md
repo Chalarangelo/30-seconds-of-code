@@ -4,7 +4,7 @@ shortTitle: Empty an array
 type: question
 tags: javascript,array
 author: chalarangelo
-cover: blog_images/coconuts.jpg
+cover: coconuts
 excerpt: You can use a lot of different techniques to empty an array in JavaScript. See which ones best suits your needs with this quick guide.
 firstSeen: 2021-03-08T11:00:00+02:00
 lastUpdated: 2021-06-12T19:30:41+03:00

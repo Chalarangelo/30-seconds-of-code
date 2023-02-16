@@ -4,7 +4,7 @@ shortTitle: Function methods - call(), apply() and bind()
 type: story
 tags: javascript,function
 author: chalarangelo
-cover: blog_images/canoe.jpg
+cover: canoe
 excerpt: Learn everything you need to know about JavaScript's `Function.prototype.call()`, `Function.prototype.apply()` and `Function.prototype.bind()` with this short guide.
 firstSeen: 2020-11-06T13:37:10+02:00
 lastUpdated: 2021-06-12T19:30:41+03:00

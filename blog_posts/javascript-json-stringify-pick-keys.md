@@ -4,7 +4,7 @@ shortTitle: Selective property serialization
 type: tip
 tags: javascript,object,json
 author: chalarangelo
-cover: blog_images/coffee-drip.jpg
+cover: coffee-drip
 excerpt: Have you ever wanted to serialize an object but only include certain keys? Turns out JavaScript provides an easy way to do this!
 firstSeen: 2021-07-06T05:00:00-04:00
 ---

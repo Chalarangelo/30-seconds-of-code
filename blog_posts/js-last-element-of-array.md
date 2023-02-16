@@ -4,7 +4,7 @@ shortTitle: Last element of array
 type: tip
 tags: javascript,array
 author: chalarangelo
-cover: blog_images/purple-laptop.jpg
+cover: purple-laptop
 excerpt: Array destructuring can be leveraged in many different ways. Here's one of them.
 firstSeen: 2022-08-28T05:00:00-04:00
 ---

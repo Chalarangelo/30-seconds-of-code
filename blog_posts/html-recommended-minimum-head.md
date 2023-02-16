@@ -4,7 +4,7 @@ shortTitle: HTML head template
 type: story
 tags: webdev,html,browser
 author: chalarangelo
-cover: blog_images/boutique-home-office-1.jpg
+cover: boutique-home-office-1
 excerpt: Ensure your HTML documents are properly structured by including these lines in your `<head>` element.
 firstSeen: 2023-01-18T05:00:00-04:00
 ---

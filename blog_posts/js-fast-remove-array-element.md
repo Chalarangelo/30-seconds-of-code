@@ -4,7 +4,7 @@ shortTitle: Faster element removal in unordered arrays
 type: story
 tags: javascript,array
 author: chalarangelo
-cover: blog_images/purple-flower-bunch.jpg
+cover: purple-flower-bunch
 excerpt: Are you performing a lot of array operations? Maybe element removal is a performance bottleneck you can avoid.
 firstSeen: 2022-03-20T05:00:00-04:00
 ---

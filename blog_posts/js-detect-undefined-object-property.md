@@ -4,7 +4,7 @@ shortTitle: Detect undefined object property
 type: story
 tags: javascript,object
 author: chalarangelo
-cover: blog_images/pink-flower.jpg
+cover: pink-flower
 excerpt: Learn how to detect `undefined` object properties in JavaScript the correct way.
 firstSeen: 2022-08-07T05:00:00-04:00
 ---

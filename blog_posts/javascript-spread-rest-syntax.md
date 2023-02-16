@@ -4,7 +4,7 @@ shortTitle: Spread and rest syntax
 type: story
 tags: javascript,array,function
 author: chalarangelo
-cover: blog_images/antelope.jpg
+cover: antelope
 excerpt: JavaScript ES6 introduced us to several powerful features, such as the spread and rest syntax. Learn everything you need to know in this quick guide.
 firstSeen: 2021-02-15T11:00:00+02:00
 lastUpdated: 2021-06-12T19:30:41+03:00

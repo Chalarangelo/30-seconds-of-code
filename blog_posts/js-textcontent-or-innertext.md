@@ -4,7 +4,7 @@ shortTitle: Differences between innerText and textContent
 type: question
 tags: javascript,browser
 author: chalarangelo
-cover: blog_images/dark-city.jpg
+cover: dark-city
 excerpt: While these two properties are very similar, there are some key differences that you should be aware of.
 firstSeen: 2023-03-19T05:00:00-04:00
 ---

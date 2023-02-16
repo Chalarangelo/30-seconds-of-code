@@ -3,7 +3,7 @@ title: Breaking React - a common pattern to avoid
 type: story
 tags: react,debugging
 author: chalarangelo
-cover: blog_images/broken-screen.jpg
+cover: broken-screen
 excerpt: As powerful as React is, it is also quite fragile at places. Did you know that just a few lines are more than enough to break your entire React application?
 firstSeen: 2020-01-30T12:35:19+02:00
 lastUpdated: 2021-11-06T20:51:47+03:00

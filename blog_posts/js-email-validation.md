@@ -4,7 +4,7 @@ shortTitle: Email address validation
 type: question
 tags: javascript,string,regexp
 author: chalarangelo
-cover: blog_images/blank-card.jpg
+cover: blank-card
 excerpt: Email address validation can be much trickier than it sounds. Here's why and my advice on how to approach this problem.
 firstSeen: 2022-10-05T05:00:00-04:00
 ---

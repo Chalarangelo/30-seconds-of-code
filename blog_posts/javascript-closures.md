@@ -4,7 +4,7 @@ shortTitle: Closures introduction
 type: question
 tags: javascript,function,closure
 author: chalarangelo
-cover: blog_images/cherry-trees.jpg
+cover: cherry-trees
 excerpt: Learn and understand closures, a core concept in JavaScript programming, and level up your code.
 firstSeen: 2020-08-04T12:40:08+03:00
 lastUpdated: 2021-06-12T19:30:41+03:00

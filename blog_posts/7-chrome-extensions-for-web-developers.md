@@ -4,7 +4,7 @@ shortTitle: Essential Chrome extensions
 type: story
 tags: devtools,webdev
 author: chalarangelo
-cover: blog_images/computer-screens.jpg
+cover: computer-screens
 excerpt: Google Chrome's developer tools are nothing short of amazing. Here are 7 must-have extensions you can add to increase your productivity even further.
 unlisted: true
 firstSeen: 2020-03-18T12:37:31+02:00

@@ -4,7 +4,7 @@ shortTitle: Append elements to array
 type: story
 tags: javascript,array
 author: chalarangelo
-cover: blog_images/switzerland-night.jpg
+cover: switzerland-night
 excerpt: Have you ever tried appending elements to an array in JavaScript? Here's a primer on all the available options.
 firstSeen: 2022-07-10T05:00:00-04:00
 ---

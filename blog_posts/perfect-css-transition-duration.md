@@ -4,7 +4,7 @@ shortTitle: CSS transition duration
 type: tip
 tags: css,interactivity,visual,animation
 author: chalarangelo
-cover: blog_images/perfect-timing.jpg
+cover: perfect-timing
 excerpt: Learn how to make your CSS transitions feel perfect when users interact with elements on the page with this simple tip.
 firstSeen: 2020-12-30T11:00:00+02:00
 lastUpdated: 2021-06-12T19:30:41+03:00

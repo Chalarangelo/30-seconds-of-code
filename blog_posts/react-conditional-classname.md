@@ -3,8 +3,7 @@ title: "Tip: React conditional className, empty strings and null"
 shortTitle: Conditional className
 type: tip
 tags: react,components
-author: maciv
-cover: blog_images/succulent-red-light.jpg
+cover: succulent-red-light
 excerpt: When developing React components, you might often need to conditionally apply a className. Learn how to handle empty classNames correctly using this handy tip.
 firstSeen: 2020-11-06T20:17:21+02:00
 lastUpdated: 2021-11-07T16:34:37+03:00

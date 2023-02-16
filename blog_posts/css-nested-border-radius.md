@@ -4,7 +4,7 @@ shortTitle: Perfect nested border radius in CSS
 type: tip
 tags: css,visual
 author: chalarangelo
-cover: blog_images/rocky-beach-waves.jpg
+cover: rocky-beach-waves
 excerpt: Nesting elements with rounded borders can look very wrong if not done correctly. Here's a quick tip on how to do it right.
 firstSeen: 2022-04-03T05:00:00-04:00
 ---

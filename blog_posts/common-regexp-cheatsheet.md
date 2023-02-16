@@ -3,7 +3,7 @@ title: Common regular expressions
 type: cheatsheet
 tags: javascript,string,regexp
 author: chalarangelo
-cover: blog_images/rocky-beach.jpg
+cover: rocky-beach
 excerpt: A collection of regular expressions that can be used to solve common problems.
 firstSeen: 2022-11-09T05:00:00-04:00
 ---

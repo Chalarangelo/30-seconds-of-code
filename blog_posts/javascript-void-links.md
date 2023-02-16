@@ -4,7 +4,7 @@ shortTitle: Avoid "javascript:void(0)" for empty links
 type: tip
 tags: javascript,browser,accessibility
 author: chalarangelo
-cover: blog_images/white-flower.jpg
+cover: white-flower
 excerpt: There are various ways to create an empty link, but some options are more appropriate than others. Learn the best way to handle empty links with this quick tip.
 firstSeen: 2020-11-15T11:46:42+02:00
 lastUpdated: 2021-06-12T19:30:41+03:00

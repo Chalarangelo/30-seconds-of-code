@@ -4,7 +4,7 @@ shortTitle: JavaScript iterators introduction
 type: question
 tags: javascript,array,object,iterator
 author: chalarangelo
-cover: blog_images/balloons.jpg
+cover: balloons
 excerpt: Learn how the new JavaScript ES6 Iterators work and how you can use them to level up your programming projects by understanding these short code examples.
 firstSeen: 2020-02-16T13:09:20+02:00
 lastUpdated: 2021-09-26T13:20:57+03:00
