@@ -1,7 +1,7 @@
 ---
 title: Delayed function execution
 tags: function
-cover: blog_images/succulent-10.jpg
+cover: succulent-10
 firstSeen: 2020-01-02T16:24:51+02:00
 lastUpdated: 2020-11-02T19:27:53+02:00
 ---

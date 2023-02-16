@@ -1,7 +1,7 @@
 ---
 title: String to slug
 tags: string,regexp
-cover: blog_images/sliced-fruits.jpg
+cover: sliced-fruits
 firstSeen: 2020-10-05T21:57:34+03:00
 lastUpdated: 2020-10-25T12:43:20+02:00
 ---

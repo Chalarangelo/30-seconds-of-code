@@ -1,7 +1,7 @@
 ---
 title: Sum list based on function
 tags: math,list
-cover: blog_images/horse-sunset.jpg
+cover: horse-sunset
 firstSeen: 2019-08-21T08:30:04+03:00
 lastUpdated: 2020-11-02T19:28:35+02:00
 ---

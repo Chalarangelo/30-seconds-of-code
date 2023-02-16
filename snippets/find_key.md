@@ -1,8 +1,7 @@
 ---
 title: Find key of value
 tags: dictionary
-author: maciv
-cover: blog_images/blue-red-mountain.jpg
+cover: blue-red-mountain
 firstSeen: 2020-04-16T19:13:20+03:00
 lastUpdated: 2020-11-02T19:27:53+02:00
 ---

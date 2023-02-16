@@ -1,8 +1,7 @@
 ---
 title: Date is weekend
 tags: date
-author: maciv
-cover: blog_images/two-lighthouses.jpg
+cover: two-lighthouses
 firstSeen: 2020-10-28T16:20:27+02:00
 lastUpdated: 2020-11-02T19:28:05+02:00
 ---

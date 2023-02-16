@@ -2,7 +2,7 @@
 title: Pad string
 tags: string
 author: chalarangelo
-cover: blog_images/digital-nomad-11.jpg
+cover: digital-nomad-11
 firstSeen: 2020-10-04T01:53:05+03:00
 lastUpdated: 2020-10-04T01:53:05+03:00
 ---

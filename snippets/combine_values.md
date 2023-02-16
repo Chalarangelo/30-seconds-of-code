@@ -1,8 +1,7 @@
 ---
 title: Combine dictionary values
 tags: dictionary
-author: maciv
-cover: blog_images/fruit-feast.jpg
+cover: fruit-feast
 firstSeen: 2021-03-07T12:30:47+02:00
 lastUpdated: 2021-04-04T14:32:35+03:00
 ---

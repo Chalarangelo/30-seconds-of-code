@@ -1,7 +1,7 @@
 ---
 title: Factorial
 tags: math,recursion
-cover: blog_images/succulent-11.jpg
+cover: succulent-11
 firstSeen: 2018-01-27T07:29:56+02:00
 lastUpdated: 2020-09-15T16:13:06+03:00
 ---

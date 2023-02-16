@@ -1,7 +1,7 @@
 ---
 title: Max list value based on function
 tags: math,list
-cover: blog_images/digital-nomad-3.jpg
+cover: digital-nomad-3
 firstSeen: 2019-08-20T15:42:41+03:00
 lastUpdated: 2020-11-02T19:28:27+02:00
 ---

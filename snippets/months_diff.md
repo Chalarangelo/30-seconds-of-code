@@ -1,8 +1,7 @@
 ---
 title: Date difference in months
 tags: date
-author: maciv
-cover: blog_images/succulent-11.jpg
+cover: succulent-11
 firstSeen: 2020-10-28T16:20:39+02:00
 lastUpdated: 2020-10-28T16:20:39+02:00
 ---

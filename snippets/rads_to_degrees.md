@@ -1,7 +1,7 @@
 ---
 title: Radians to degrees
 tags: math
-cover: blog_images/watermelon-bike.jpg
+cover: watermelon-bike
 firstSeen: 2019-08-20T15:58:57+03:00
 lastUpdated: 2020-11-02T19:28:27+02:00
 ---

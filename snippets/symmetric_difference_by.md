@@ -1,7 +1,7 @@
 ---
 title: List symmetric difference based on function
 tags: list
-cover: blog_images/succulent-1.jpg
+cover: succulent-1
 firstSeen: 2019-08-21T08:37:04+03:00
 lastUpdated: 2020-11-02T19:28:35+02:00
 ---

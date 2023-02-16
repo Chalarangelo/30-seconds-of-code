@@ -1,7 +1,7 @@
 ---
 title: Clamp number
 tags: math
-cover: blog_images/highlands.jpg
+cover: highlands
 firstSeen: 2019-08-20T12:50:38+03:00
 lastUpdated: 2020-11-02T19:27:07+02:00
 ---

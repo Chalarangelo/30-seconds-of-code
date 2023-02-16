@@ -1,7 +1,7 @@
 ---
 title: Greatest common divisor
 tags: math
-cover: blog_images/digital-nomad-12.jpg
+cover: digital-nomad-12
 firstSeen: 2018-01-08T16:26:35+02:00
 lastUpdated: 2020-09-15T16:13:06+03:00
 ---

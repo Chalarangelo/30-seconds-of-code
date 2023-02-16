@@ -1,7 +1,7 @@
 ---
 title: Split list into n chunks
 tags: list
-cover: blog_images/succulent-10.jpg
+cover: succulent-10
 firstSeen: 2020-10-12T22:11:30+03:00
 lastUpdated: 2020-10-23T05:35:06+03:00
 ---

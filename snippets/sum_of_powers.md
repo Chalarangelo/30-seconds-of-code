@@ -1,8 +1,7 @@
 ---
 title: Sum of powers
 tags: math
-author: maciv
-cover: blog_images/river-flow.jpg
+cover: river-flow
 firstSeen: 2020-10-04T14:21:41+03:00
 lastUpdated: 2020-11-02T19:28:35+02:00
 ---

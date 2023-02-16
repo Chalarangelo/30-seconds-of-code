@@ -1,8 +1,7 @@
 ---
 title: Geometric progression
 tags: math,list
-author: maciv
-cover: blog_images/kettle-laptop.jpg
+cover: kettle-laptop
 firstSeen: 2020-10-04T12:19:28+03:00
 lastUpdated: 2020-11-02T19:28:05+02:00
 ---

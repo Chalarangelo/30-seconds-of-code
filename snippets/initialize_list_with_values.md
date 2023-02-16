@@ -1,7 +1,7 @@
 ---
 title: Initialize list with values
 tags: list
-cover: blog_images/dog-waiting.jpg
+cover: dog-waiting
 firstSeen: 2019-08-20T14:12:06+03:00
 lastUpdated: 2020-11-02T19:28:05+02:00
 ---

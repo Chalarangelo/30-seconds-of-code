@@ -2,7 +2,7 @@
 title: Map list to dictionary
 tags: list,dictionary
 excerpt: Maps the values of a list to a dictionary using a function.
-cover: blog_images/colors-mural.jpg
+cover: colors-mural
 firstSeen: 2020-04-07T19:53:48+03:00
 lastUpdated: 2020-11-02T19:28:27+02:00
 ---

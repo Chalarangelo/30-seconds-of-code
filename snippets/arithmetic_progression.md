@@ -1,7 +1,7 @@
 ---
 title: Arithmetic progression
 tags: math
-cover: blog_images/number-2.jpg
+cover: number-2
 firstSeen: 2020-07-28T13:57:33+03:00
 lastUpdated: 2020-11-02T19:27:07+02:00
 ---

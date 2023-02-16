@@ -1,7 +1,7 @@
 ---
 title: Filter non-unique list values
 tags: list
-cover: blog_images/cobbled-street.jpg
+cover: cobbled-street
 firstSeen: 2019-08-20T13:13:51+03:00
 lastUpdated: 2020-11-02T19:27:53+02:00
 ---

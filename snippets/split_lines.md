@@ -1,7 +1,7 @@
 ---
 title: Split into lines
 tags: string
-cover: blog_images/succulent-4.jpg
+cover: succulent-4
 firstSeen: 2019-08-20T16:15:15+03:00
 lastUpdated: 2020-11-02T19:28:35+02:00
 ---
