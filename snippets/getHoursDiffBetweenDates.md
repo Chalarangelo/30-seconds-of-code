@@ -1,8 +1,7 @@
 ---
 title: Date difference in hours
 tags: date
-author: maciv
-cover: blog_images/tram-car-2.jpg
+cover: tram-car-2
 firstSeen: 2021-04-24T12:56:21+03:00
 lastUpdated: 2021-04-24T12:56:21+03:00
 ---

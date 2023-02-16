@@ -1,7 +1,7 @@
 ---
 title: Value is function
 tags: type,function
-cover: blog_images/boulder-beach.jpg
+cover: boulder-beach
 firstSeen: 2017-12-17T17:55:51+02:00
 lastUpdated: 2020-09-15T16:28:04+03:00
 ---

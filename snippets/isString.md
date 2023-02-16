@@ -1,7 +1,7 @@
 ---
 title: Value is string
 tags: type,string
-cover: blog_images/overgrown.jpg
+cover: overgrown
 firstSeen: 2017-12-17T17:55:51+02:00
 lastUpdated: 2020-10-20T23:02:01+03:00
 ---

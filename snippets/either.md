@@ -1,7 +1,7 @@
 ---
 title: Logical or for functions
 tags: function,logic
-cover: blog_images/man-red-sunset.jpg
+cover: man-red-sunset
 firstSeen: 2020-05-13T11:35:46+03:00
 lastUpdated: 2020-10-19T18:51:03+03:00
 ---

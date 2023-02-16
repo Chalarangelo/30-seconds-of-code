@@ -1,7 +1,7 @@
 ---
 title: RGB to array
 tags: string,browser,regexp
-cover: blog_images/greek-coffee.jpg
+cover: greek-coffee
 firstSeen: 2020-10-14T20:36:18+03:00
 lastUpdated: 2021-06-13T13:50:25+03:00
 ---

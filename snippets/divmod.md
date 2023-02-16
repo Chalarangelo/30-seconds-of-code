@@ -1,8 +1,7 @@
 ---
 title: Quotient and module of division
 tags: math
-author: maciv
-cover: blog_images/italian-horizon.jpg
+cover: italian-horizon
 firstSeen: 2020-10-07T23:59:13+03:00
 lastUpdated: 2020-10-07T23:59:13+03:00
 ---

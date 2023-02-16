@@ -2,7 +2,7 @@
 title: Check if localStorage is enabled
 tags: browser
 author: chalarangelo
-cover: blog_images/guitar-living-room.jpg
+cover: guitar-living-room
 firstSeen: 2020-12-31T13:13:47+02:00
 lastUpdated: 2020-12-31T13:13:47+02:00
 ---

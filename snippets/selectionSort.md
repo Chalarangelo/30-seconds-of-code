@@ -2,7 +2,7 @@
 title: Selection sort
 tags: algorithm,array
 author: chalarangelo
-cover: blog_images/violin.jpg
+cover: violin
 firstSeen: 2020-12-27T22:22:44+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

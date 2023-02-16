@@ -1,7 +1,7 @@
 ---
 title: Day of year
 tags: date
-cover: blog_images/interior-3.jpg
+cover: interior-3
 firstSeen: 2018-09-29T13:22:20+03:00
 lastUpdated: 2020-10-19T18:51:03+03:00
 ---

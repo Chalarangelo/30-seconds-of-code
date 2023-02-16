@@ -1,7 +1,7 @@
 ---
 title: Remove accents
 tags: string
-cover: blog_images/pink-flowers.jpg
+cover: pink-flowers
 firstSeen: 2020-10-04T02:23:40+03:00
 lastUpdated: 2020-10-22T20:24:04+03:00
 ---

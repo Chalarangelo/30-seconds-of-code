@@ -2,7 +2,7 @@
 title: Add event listener to all targets
 tags: browser,event
 author: chalarangelo
-cover: blog_images/red-mountain.jpg
+cover: red-mountain
 firstSeen: 2021-04-22T08:53:29+03:00
 lastUpdated: 2021-04-22T08:53:29+03:00
 ---

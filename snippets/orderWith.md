@@ -1,7 +1,7 @@
 ---
 title: Order array of objects based on property order
 tags: array,object
-cover: blog_images/san-francisco-skyline.jpg
+cover: san-francisco-skyline
 firstSeen: 2020-10-04T12:11:10+03:00
 lastUpdated: 2020-10-21T21:54:53+03:00
 ---

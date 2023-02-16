@@ -1,7 +1,7 @@
 ---
 title: Check if date is before another date
 tags: date
-cover: blog_images/flower-portrait-3.jpg
+cover: flower-portrait-3
 firstSeen: 2018-09-29T13:58:38+03:00
 lastUpdated: 2020-10-20T23:02:01+03:00
 ---

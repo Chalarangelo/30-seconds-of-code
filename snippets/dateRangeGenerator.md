@@ -1,8 +1,7 @@
 ---
 title: Date range generator
 tags: date,function,generator
-author: maciv
-cover: blog_images/portal-timelapse.jpg
+cover: portal-timelapse
 firstSeen: 2021-06-21T05:00:00-04:00
 ---
 

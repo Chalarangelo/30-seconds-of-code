@@ -2,7 +2,7 @@
 title: Unwind object
 tags: object
 author: chalarangelo
-cover: blog_images/waves-from-above.jpg
+cover: waves-from-above
 firstSeen: 2022-04-18T05:00:00-04:00
 ---
 

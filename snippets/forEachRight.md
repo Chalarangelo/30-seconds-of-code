@@ -1,7 +1,7 @@
 ---
 title: Execute function for each array element in reverse
 tags: array
-cover: blog_images/interior-6.jpg
+cover: interior-6
 firstSeen: 2018-01-09T01:38:50+02:00
 lastUpdated: 2020-10-19T22:49:51+03:00
 ---

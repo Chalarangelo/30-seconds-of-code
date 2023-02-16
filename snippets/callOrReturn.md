@@ -2,7 +2,7 @@
 title: Call or return
 tags: function
 author: chalarangelo
-cover: blog_images/cows.jpg
+cover: cows
 firstSeen: 2022-04-04T05:00:00-04:00
 ---
 

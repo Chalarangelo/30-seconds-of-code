@@ -1,8 +1,7 @@
 ---
 title: Disjointed iterables
 tags: array
-author: maciv
-cover: blog_images/interior-9.jpg
+cover: interior-9
 firstSeen: 2020-10-11T11:53:01+03:00
 lastUpdated: 2020-10-11T11:53:01+03:00
 ---

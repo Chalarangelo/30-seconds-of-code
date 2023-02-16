@@ -1,7 +1,7 @@
 ---
 title: Titlecase string
 tags: string,regexp
-cover: blog_images/plant-candle.jpg
+cover: plant-candle
 firstSeen: 2018-10-19T04:49:34+03:00
 lastUpdated: 2020-10-22T20:24:44+03:00
 ---

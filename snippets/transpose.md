@@ -2,7 +2,7 @@
 title: Transpose matrix
 tags: array
 author: chalarangelo
-cover: blog_images/painters-desk.jpg
+cover: painters-desk
 firstSeen: 2022-04-20T05:00:00-04:00
 ---
 

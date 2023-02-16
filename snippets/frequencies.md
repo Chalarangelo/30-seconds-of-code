@@ -2,7 +2,7 @@
 title: Value frequencies
 tags: array,object
 author: chalarangelo
-cover: blog_images/tropical-waterfall.jpg
+cover: tropical-waterfall
 firstSeen: 2020-01-03T15:32:35+02:00
 lastUpdated: 2020-10-19T22:49:51+03:00
 ---

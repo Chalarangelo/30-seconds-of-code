@@ -1,7 +1,7 @@
 ---
 title: Get nested object property from path string
 tags: object,regexp
-cover: blog_images/brown-bird.jpg
+cover: brown-bird
 firstSeen: 2018-01-18T17:40:42+02:00
 lastUpdated: 2020-10-19T22:49:51+03:00
 ---

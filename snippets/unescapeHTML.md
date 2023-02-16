@@ -1,7 +1,7 @@
 ---
 title: Unescape HTML
 tags: string,browser,regexp
-cover: blog_images/little-tree.jpg
+cover: little-tree
 firstSeen: 2017-12-29T15:09:10+02:00
 lastUpdated: 2020-10-22T20:24:44+03:00
 ---

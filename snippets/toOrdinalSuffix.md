@@ -1,7 +1,7 @@
 ---
 title: Number to ordinal suffix
 tags: math
-cover: blog_images/tram-car-2.jpg
+cover: tram-car-2
 firstSeen: 2017-12-17T17:55:51+02:00
 lastUpdated: 2020-11-13T19:49:57+02:00
 ---

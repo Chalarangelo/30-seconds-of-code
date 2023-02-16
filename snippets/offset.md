@@ -1,7 +1,7 @@
 ---
 title: Offset array elements
 tags: array
-cover: blog_images/interior-10.jpg
+cover: interior-10
 firstSeen: 2018-04-10T19:07:50+03:00
 lastUpdated: 2020-10-21T21:54:53+03:00
 ---

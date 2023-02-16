@@ -1,7 +1,7 @@
 ---
 title: Find first n matches
 tags: array
-cover: blog_images/digital-nomad-5.jpg
+cover: digital-nomad-5
 firstSeen: 2021-05-09T13:31:36+03:00
 lastUpdated: 2021-05-09T13:31:36+03:00
 ---

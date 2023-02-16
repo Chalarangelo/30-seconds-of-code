@@ -1,7 +1,7 @@
 ---
 title: Create HTML element
 tags: browser
-cover: blog_images/flower-portrait-4.jpg
+cover: flower-portrait-4
 firstSeen: 2018-01-05T18:21:44+02:00
 lastUpdated: 2020-10-19T18:51:03+03:00
 ---

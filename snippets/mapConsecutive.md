@@ -2,7 +2,7 @@
 title: Map consecutive elements
 tags: array
 author: chalarangelo
-cover: blog_images/cold-mountains.jpg
+cover: cold-mountains
 firstSeen: 2021-08-08T05:00:00-04:00
 ---
 

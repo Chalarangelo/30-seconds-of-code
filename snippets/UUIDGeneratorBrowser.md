@@ -1,7 +1,7 @@
 ---
 title: Generate UUID (browser)
 tags: browser,random
-cover: blog_images/mountain-lake-cottage.jpg
+cover: mountain-lake-cottage
 firstSeen: 2017-12-29T09:47:10+02:00
 lastUpdated: 2020-10-22T20:24:44+03:00
 ---

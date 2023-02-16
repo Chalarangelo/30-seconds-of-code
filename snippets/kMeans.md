@@ -2,7 +2,7 @@
 title: K-means clustering
 tags: algorithm,array
 author: chalarangelo
-cover: blog_images/antelope.jpg
+cover: antelope
 firstSeen: 2020-12-28T15:38:40+02:00
 lastUpdated: 2020-12-29T16:32:46+02:00
 ---

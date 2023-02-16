@@ -1,7 +1,7 @@
 ---
 title: Scrollbar width
 tags: browser
-cover: blog_images/violin.jpg
+cover: violin
 author: chalarangelo
 firstSeen: 2022-07-16T05:00:00-04:00
 ---

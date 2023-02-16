@@ -2,7 +2,7 @@
 title: Flat iterator
 tags: array,iterator,generator
 author: chalarangelo
-cover: blog_images/balloons.jpg
+cover: balloons
 firstSeen: 2022-03-09T05:00:00-04:00
 ---
 

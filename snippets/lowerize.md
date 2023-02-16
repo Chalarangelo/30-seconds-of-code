@@ -2,7 +2,7 @@
 title: Lowercase object keys
 tags: object
 author: chalarangelo
-cover: blog_images/building-facade.jpg
+cover: building-facade
 firstSeen: 2023-02-12T05:00:00-04:00
 ---
 

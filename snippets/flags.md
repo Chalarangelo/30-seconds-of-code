@@ -2,7 +2,7 @@
 title: Array to flags object
 tags: array,object
 author: chalarangelo
-cover: blog_images/glass-blowing.jpg
+cover: glass-blowing
 firstSeen: 2022-04-12T05:00:00-04:00
 ---
 

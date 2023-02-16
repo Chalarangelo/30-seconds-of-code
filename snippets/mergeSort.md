@@ -1,8 +1,7 @@
 ---
 title: Merge sort
 tags: algorithm,array,recursion
-author: maciv
-cover: blog_images/baloons-field.jpg
+cover: baloons-field
 firstSeen: 2020-12-27T22:44:32+02:00
 lastUpdated: 2020-12-27T22:44:32+02:00
 ---

@@ -2,7 +2,7 @@
 title: Normalize line endings
 tags: string,regexp
 author: chalarangelo
-cover: blog_images/red-light.jpg
+cover: red-light
 firstSeen: 2020-05-04T12:33:13+03:00
 lastUpdated: 2020-10-21T21:54:53+03:00
 ---

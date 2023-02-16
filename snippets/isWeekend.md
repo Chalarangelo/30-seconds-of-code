@@ -1,7 +1,7 @@
 ---
 title: Date is weekend
 tags: date
-cover: blog_images/tropical-bike.jpg
+cover: tropical-bike
 firstSeen: 2019-07-19T17:07:02+03:00
 lastUpdated: 2020-10-20T23:02:01+03:00
 ---

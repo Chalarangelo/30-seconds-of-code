@@ -1,7 +1,7 @@
 ---
 title: Escape HTML
 tags: string,browser,regexp
-cover: blog_images/periscope.jpg
+cover: periscope
 firstSeen: 2017-12-29T15:09:21+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

@@ -2,7 +2,7 @@
 title: Check if array has many matches
 tags: array
 author: chalarangelo
-cover: blog_images/interior-2.jpg
+cover: interior-2
 firstSeen: 2021-07-11T05:00:00-04:00
 ---
 

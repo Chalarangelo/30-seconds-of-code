@@ -1,7 +1,7 @@
 ---
 title: Generate items
 tags: array,function
-cover: blog_images/generator.jpg
+cover: generator
 firstSeen: 2020-10-09T20:41:21+03:00
 lastUpdated: 2020-10-22T20:23:47+03:00
 ---

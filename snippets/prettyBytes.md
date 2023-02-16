@@ -1,7 +1,7 @@
 ---
 title: Pretty-print number of bytes
 tags: string,math
-cover: blog_images/digital-nomad.jpg
+cover: digital-nomad
 firstSeen: 2018-01-01T18:20:09+02:00
 lastUpdated: 2020-10-22T20:24:04+03:00
 ---

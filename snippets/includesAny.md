@@ -1,7 +1,7 @@
 ---
 title: Check if array includes any values
 tags: array
-cover: blog_images/book-stopper.jpg
+cover: book-stopper
 firstSeen: 2019-11-03T23:49:17+02:00
 lastUpdated: 2020-10-20T23:02:01+03:00
 ---

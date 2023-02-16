@@ -2,7 +2,7 @@
 title: K-nearest neighbors
 tags: algorithm,array
 author: chalarangelo
-cover: blog_images/building-blocks.jpg
+cover: building-blocks
 firstSeen: 2020-12-28T16:31:43+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

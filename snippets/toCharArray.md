@@ -1,7 +1,7 @@
 ---
 title: String to character array
 tags: string
-cover: blog_images/waving-over-lake.jpg
+cover: waving-over-lake
 firstSeen: 2020-10-08T15:17:22+03:00
 lastUpdated: 2020-10-08T15:17:22+03:00
 ---

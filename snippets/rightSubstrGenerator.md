@@ -1,7 +1,7 @@
 ---
 title: Right substring generator
 tags: string,generator
-cover: blog_images/boutique-home-office-2.jpg
+cover: boutique-home-office-2
 author: chalarangelo
 firstSeen: 2022-07-25T05:00:00-04:00
 ---

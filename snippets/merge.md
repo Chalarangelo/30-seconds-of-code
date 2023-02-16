@@ -1,7 +1,7 @@
 ---
 title: Merge objects
 tags: object,array
-cover: blog_images/guitar-living-room.jpg
+cover: guitar-living-room
 firstSeen: 2018-01-12T14:44:20+02:00
 lastUpdated: 2020-10-21T21:54:53+03:00
 ---

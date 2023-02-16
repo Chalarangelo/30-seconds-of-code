@@ -1,7 +1,7 @@
 ---
 title: Filter out matching array elements
 tags: array
-cover: blog_images/dying-flowers.jpg
+cover: dying-flowers
 firstSeen: 2017-12-15T09:35:30+02:00
 lastUpdated: 2020-10-22T20:24:44+03:00
 ---

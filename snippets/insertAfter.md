@@ -1,7 +1,7 @@
 ---
 title: Insert HTML string after element
 tags: browser
-cover: blog_images/malibu.jpg
+cover: malibu
 firstSeen: 2018-06-19T20:57:58+03:00
 lastUpdated: 2020-10-20T23:02:01+03:00
 ---

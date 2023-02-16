@@ -1,7 +1,7 @@
 ---
 title: Degrees to radians
 tags: math
-cover: blog_images/blue-flower.jpg
+cover: blue-flower
 firstSeen: 2018-02-14T12:24:50+02:00
 lastUpdated: 2020-09-15T16:28:04+03:00
 ---

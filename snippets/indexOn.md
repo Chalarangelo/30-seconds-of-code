@@ -2,7 +2,7 @@
 title: Array to object based on key
 tags: array,object
 author: chalarangelo
-cover: blog_images/lavender-shelf.jpg
+cover: lavender-shelf
 firstSeen: 2021-06-27T05:00:00-04:00
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: HTTP delete
 tags: browser
-cover: blog_images/beach-from-above.jpg
+cover: beach-from-above
 firstSeen: 2020-04-16T11:21:33+03:00
 lastUpdated: 2020-10-19T22:49:51+03:00
 ---

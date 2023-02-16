@@ -1,7 +1,7 @@
 ---
 title: Value is nil
 tags: type
-cover: blog_images/river-houses.jpg
+cover: river-houses
 firstSeen: 2018-01-16T16:50:21+02:00
 lastUpdated: 2020-10-20T23:02:01+03:00
 ---

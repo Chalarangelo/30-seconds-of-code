@@ -1,7 +1,7 @@
 ---
 title: Redirect to HTTPS
 tags: browser
-cover: blog_images/blue-lake.jpg
+cover: blue-lake
 firstSeen: 2017-12-21T08:33:56+02:00
 lastUpdated: 2020-10-22T20:23:47+03:00
 ---

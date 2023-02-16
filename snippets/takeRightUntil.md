@@ -1,7 +1,7 @@
 ---
 title: Remove list elements from the end until condition is met
 tags: array
-cover: blog_images/fruit-feast.jpg
+cover: fruit-feast
 firstSeen: 2020-11-29T12:04:53+02:00
 lastUpdated: 2020-11-29T12:04:53+02:00
 ---

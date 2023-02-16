@@ -2,7 +2,7 @@
 title: Array ranking
 tags: array,math
 author: chalarangelo
-cover: blog_images/eagle.jpg
+cover: eagle
 firstSeen: 2022-04-13T05:00:00-04:00
 ---
 

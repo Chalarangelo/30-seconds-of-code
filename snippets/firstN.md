@@ -2,7 +2,7 @@
 title: First n elements
 tags: array
 author: chalarangelo
-cover: blog_images/digital-nomad-16.jpg
+cover: digital-nomad-16
 firstSeen: 2022-07-22T05:00:00-04:00
 ---
 

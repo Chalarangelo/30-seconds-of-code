@@ -1,7 +1,7 @@
 ---
 title: Promisify function
 tags: function,promise
-cover: blog_images/duck-plants.jpg
+cover: duck-plants
 firstSeen: 2017-12-13T12:27:43+02:00
 lastUpdated: 2020-10-22T20:24:04+03:00
 ---

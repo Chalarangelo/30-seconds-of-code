@@ -1,7 +1,7 @@
 ---
 title: Array intersection based on function
 tags: array
-cover: blog_images/cobbled-street.jpg
+cover: cobbled-street
 firstSeen: 2018-01-24T12:53:18+02:00
 lastUpdated: 2020-10-20T23:02:01+03:00
 ---

@@ -1,7 +1,7 @@
 ---
 title: Add multiple listeners
 tags: browser,event
-cover: blog_images/balloons.jpg
+cover: balloons
 firstSeen: 2020-10-08T00:40:30+03:00
 lastUpdated: 2020-10-22T20:23:47+03:00
 ---

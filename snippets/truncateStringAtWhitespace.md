@@ -1,7 +1,7 @@
 ---
 title: Truncate string at whitespace
 tags: string
-cover: blog_images/cloudy-mountaintop-2.jpg
+cover: cloudy-mountaintop-2
 firstSeen: 2020-10-19T11:11:16+03:00
 lastUpdated: 2020-10-21T21:17:45+03:00
 ---

@@ -1,7 +1,7 @@
 ---
 title: Attempt invoking a function
 tags: function
-cover: blog_images/spanish-resort.jpg
+cover: spanish-resort
 firstSeen: 2018-01-28T14:44:40+02:00
 lastUpdated: 2020-10-18T20:24:28+03:00
 ---

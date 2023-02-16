@@ -2,7 +2,7 @@
 title: Remove DOM element
 tags: browser
 author: chalarangelo
-cover: blog_images/by-the-lighthouse.jpg
+cover: by-the-lighthouse
 firstSeen: 2021-01-07T00:20:34+02:00
 lastUpdated: 2021-01-07T00:20:34+02:00
 ---

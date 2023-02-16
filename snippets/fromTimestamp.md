@@ -1,8 +1,7 @@
 ---
 title: Date from Unix timestamp
 tags: date
-author: maciv
-cover: blog_images/number-2.jpg
+cover: number-2
 firstSeen: 2020-10-15T21:57:17+03:00
 lastUpdated: 2020-10-15T21:57:17+03:00
 ---

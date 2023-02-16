@@ -2,7 +2,7 @@
 title: Find closest anchor
 tags: browser
 author: chalarangelo
-cover: blog_images/colorful-lounge.jpg
+cover: colorful-lounge
 firstSeen: 2021-04-22T08:45:39+03:00
 lastUpdated: 2021-04-22T08:45:39+03:00
 ---

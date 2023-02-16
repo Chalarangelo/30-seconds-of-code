@@ -1,7 +1,7 @@
 ---
 title: Compact object
 tags: object,array,recursion
-cover: blog_images/shapes.jpg
+cover: shapes
 firstSeen: 2020-11-27T13:57:41+02:00
 lastUpdated: 2020-11-27T13:57:41+02:00
 ---

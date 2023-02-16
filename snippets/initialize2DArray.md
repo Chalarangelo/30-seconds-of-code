@@ -1,7 +1,7 @@
 ---
 title: Initialize 2D array
 tags: array
-cover: blog_images/cloudy-rock-formation.jpg
+cover: cloudy-rock-formation
 firstSeen: 2017-12-19T23:38:18+02:00
 lastUpdated: 2020-10-20T23:02:01+03:00
 ---

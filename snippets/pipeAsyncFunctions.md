@@ -1,7 +1,7 @@
 ---
 title: Pipe async functions
 tags: function,promise
-cover: blog_images/new-york-skyline.jpg
+cover: new-york-skyline
 firstSeen: 2018-01-27T18:17:44+02:00
 lastUpdated: 2020-10-22T20:24:04+03:00
 ---

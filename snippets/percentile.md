@@ -1,7 +1,7 @@
 ---
 title: Percentile of matches
 tags: math
-cover: blog_images/red-berries.jpg
+cover: red-berries
 firstSeen: 2017-12-13T12:50:16+02:00
 lastUpdated: 2020-10-22T20:24:04+03:00
 ---

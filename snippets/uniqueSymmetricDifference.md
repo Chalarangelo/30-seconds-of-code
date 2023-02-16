@@ -1,7 +1,7 @@
 ---
 title: Array unique symmetric difference
 tags: array,math
-cover: blog_images/paper-card.jpg
+cover: paper-card
 firstSeen: 2018-08-17T08:37:08+03:00
 lastUpdated: 2020-10-22T20:24:44+03:00
 ---

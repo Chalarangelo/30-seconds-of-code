@@ -2,7 +2,7 @@
 title: Command-line arguments
 tags: node
 author: chalarangelo
-cover: blog_images/terminal.jpg
+cover: terminal
 firstSeen: 2022-04-26T05:00:00-04:00
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Object from pairs
 tags: object,array
-cover: blog_images/silver-flat-screen.jpg
+cover: silver-flat-screen
 firstSeen: 2017-12-17T17:55:51+02:00
 lastUpdated: 2020-10-21T21:54:53+03:00
 ---

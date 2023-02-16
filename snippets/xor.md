@@ -2,7 +2,7 @@
 title: Logical xor
 tags: math,logic
 unlisted: true
-cover: blog_images/succulent-11.jpg
+cover: succulent-11
 firstSeen: 2020-10-05T21:19:21+03:00
 lastUpdated: 2021-01-04T13:04:15+02:00
 ---

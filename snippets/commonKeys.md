@@ -2,7 +2,7 @@
 title: Common keys
 tags: object
 author: chalarangelo
-cover: blog_images/symmetry-cloudy-mountain.jpg
+cover: symmetry-cloudy-mountain
 firstSeen: 2022-04-23T05:00:00-04:00
 ---
 

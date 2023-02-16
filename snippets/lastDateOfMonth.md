@@ -1,7 +1,7 @@
 ---
 title: Last date of month
 tags: date
-cover: blog_images/polar-bear.jpg
+cover: polar-bear
 firstSeen: 2020-10-09T20:36:54+03:00
 lastUpdated: 2020-10-09T22:01:42+03:00
 ---

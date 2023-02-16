@@ -1,7 +1,7 @@
 ---
 title: Group array elements
 tags: array,object
-cover: blog_images/man-cup-laptop.jpg
+cover: man-cup-laptop
 firstSeen: 2017-12-17T17:55:51+02:00
 lastUpdated: 2020-10-22T20:23:47+03:00
 ---
