@@ -1,7 +1,7 @@
 ---
 title: Filter non-unique array values based on function
 tags: array
-cover: blog_images/digital-nomad-16.jpg
+cover: digital-nomad-16
 firstSeen: 2018-07-18T20:40:53+03:00
 lastUpdated: 2020-11-02T19:40:27+02:00
 ---

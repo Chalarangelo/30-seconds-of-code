@@ -1,7 +1,7 @@
 ---
 title: Prepend function arguments
 tags: function
-cover: blog_images/interior-6.jpg
+cover: interior-6
 firstSeen: 2018-01-24T14:40:16+02:00
 lastUpdated: 2020-09-15T16:28:04+03:00
 ---

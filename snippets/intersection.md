@@ -1,7 +1,7 @@
 ---
 title: Array intersection
 tags: array
-cover: blog_images/red-berries.jpg
+cover: red-berries
 firstSeen: 2017-12-17T16:41:31+02:00
 lastUpdated: 2020-10-20T23:02:01+03:00
 ---

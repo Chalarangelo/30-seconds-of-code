@@ -2,7 +2,7 @@
 title: Resolve promise after given amount of time
 tags: function,promise
 author: chalarangelo
-cover: blog_images/filter-coffee-pot.jpg
+cover: filter-coffee-pot
 firstSeen: 2022-01-08T05:00:00-04:00
 ---
 

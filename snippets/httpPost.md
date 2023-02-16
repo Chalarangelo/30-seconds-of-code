@@ -1,7 +1,7 @@
 ---
 title: HTTP post
 tags: browser
-cover: blog_images/boats.jpg
+cover: boats
 firstSeen: 2018-01-08T22:07:02+02:00
 lastUpdated: 2020-10-19T22:49:51+03:00
 ---

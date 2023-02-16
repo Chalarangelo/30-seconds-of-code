@@ -2,7 +2,7 @@
 title: Replace or append array value
 tags: array
 author: chalarangelo
-cover: blog_images/boutique-home-office-2.jpg
+cover: boutique-home-office-2
 firstSeen: 2023-02-19T05:00:00-04:00
 ---
 

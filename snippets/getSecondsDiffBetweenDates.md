@@ -1,7 +1,7 @@
 ---
 title: Date difference in seconds
 tags: date
-cover: blog_images/laptop-journey.jpg
+cover: laptop-journey
 firstSeen: 2021-04-24T12:39:48+03:00
 lastUpdated: 2021-04-24T12:39:48+03:00
 ---

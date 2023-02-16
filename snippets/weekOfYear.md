@@ -2,7 +2,7 @@
 title: Week of year
 tags: date
 author: chalarangelo
-cover: blog_images/godray-computer-mug.jpg
+cover: godray-computer-mug
 firstSeen: 2021-08-15T05:00:00-04:00
 ---
 

@@ -2,7 +2,7 @@
 title: Arrays of consecutive elements
 tags: array
 author: chalarangelo
-cover: blog_images/colorful-pots.jpg
+cover: colorful-pots
 firstSeen: 2022-04-06T05:00:00-04:00
 ---
 

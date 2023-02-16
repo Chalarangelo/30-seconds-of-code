@@ -1,7 +1,7 @@
 ---
 title: N min elements
 tags: array,math
-cover: blog_images/digital-nomad-8.jpg
+cover: digital-nomad-8
 firstSeen: 2018-01-03T05:18:29+02:00
 lastUpdated: 2020-10-21T21:54:53+03:00
 ---

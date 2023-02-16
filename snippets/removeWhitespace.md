@@ -1,7 +1,7 @@
 ---
 title: Remove whitespaces
 tags: string,regexp
-cover: blog_images/tropical-bike.jpg
+cover: tropical-bike
 firstSeen: 2020-10-13T09:37:17+03:00
 lastUpdated: 2020-11-03T21:46:13+02:00
 ---

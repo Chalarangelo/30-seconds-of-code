@@ -1,7 +1,7 @@
 ---
 title: Index of all matches
 tags: array
-cover: blog_images/jars-on-shelf-2.jpg
+cover: jars-on-shelf-2
 firstSeen: 2018-01-06T12:07:56+02:00
 lastUpdated: 2020-10-22T20:23:47+03:00
 ---

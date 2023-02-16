@@ -1,7 +1,7 @@
 ---
 title: Drop list elements from the left based on function
 tags: array
-cover: blog_images/colorful-lounge.jpg
+cover: colorful-lounge
 firstSeen: 2018-01-26T12:23:18+02:00
 lastUpdated: 2020-10-19T18:51:03+03:00
 ---

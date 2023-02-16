@@ -1,7 +1,7 @@
 ---
 title: Mapped array union
 tags: array
-cover: blog_images/lake-church.jpg
+cover: lake-church
 firstSeen: 2018-01-24T12:19:41+02:00
 lastUpdated: 2020-10-22T20:24:44+03:00
 ---

@@ -1,7 +1,7 @@
 ---
 title: Element contains another element
 tags: browser
-cover: blog_images/red-petals.jpg
+cover: red-petals
 firstSeen: 2018-06-19T20:57:58+03:00
 lastUpdated: 2020-11-03T22:11:18+02:00
 ---

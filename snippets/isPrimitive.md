@@ -1,7 +1,7 @@
 ---
 title: Number is primitive
 tags: type
-cover: blog_images/flower-camera.jpg
+cover: flower-camera
 firstSeen: 2017-12-31T12:48:13+02:00
 lastUpdated: 2020-10-22T20:23:47+03:00
 ---

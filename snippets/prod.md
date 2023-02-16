@@ -1,8 +1,7 @@
 ---
 title: Product of numeric values
 tags: math,array
-author: maciv
-cover: blog_images/travel-mug-1.jpg
+cover: travel-mug-1
 firstSeen: 2020-10-15T21:56:51+03:00
 lastUpdated: 2020-10-22T20:24:04+03:00
 ---

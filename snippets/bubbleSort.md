@@ -1,8 +1,7 @@
 ---
 title: Bubble sort
 tags: algorithm,array
-author: maciv
-cover: blog_images/budapest-palace.jpg
+cover: budapest-palace
 firstSeen: 2020-12-27T21:20:31+02:00
 lastUpdated: 2020-12-29T12:18:58+02:00
 ---

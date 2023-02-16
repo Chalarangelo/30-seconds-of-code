@@ -1,7 +1,7 @@
 ---
 title: Nth argument
 tags: function
-cover: blog_images/mug-flower-book.jpg
+cover: mug-flower-book
 firstSeen: 2018-01-23T21:27:37+02:00
 lastUpdated: 2020-10-21T21:54:53+03:00
 ---

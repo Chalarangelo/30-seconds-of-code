@@ -1,7 +1,7 @@
 ---
 title: Hex to RGB
 tags: string,math
-cover: blog_images/umbrellas.jpg
+cover: umbrellas
 firstSeen: 2017-12-17T17:55:51+02:00
 lastUpdated: 2020-10-19T22:49:51+03:00
 ---

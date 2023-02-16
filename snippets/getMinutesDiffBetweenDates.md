@@ -1,8 +1,7 @@
 ---
 title: Date difference in minutes
 tags: date
-author: maciv
-cover: blog_images/flower-vase.jpg
+cover: flower-vase
 firstSeen: 2021-04-24T12:48:49+03:00
 lastUpdated: 2021-04-24T12:48:49+03:00
 ---

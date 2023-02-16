@@ -2,7 +2,7 @@
 title: Combine object arrays
 tags: array,object
 author: chalarangelo
-cover: blog_images/digital-nomad-6.jpg
+cover: digital-nomad-6
 firstSeen: 2020-10-04T00:26:51+03:00
 lastUpdated: 2020-10-08T02:22:39+03:00
 ---

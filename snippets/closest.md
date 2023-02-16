@@ -2,7 +2,7 @@
 title: Closest numeric match
 tags: math,array
 author: chalarangelo
-cover: blog_images/sparkles.jpg
+cover: sparkles
 firstSeen: 2022-03-30T05:00:00-04:00
 ---
 

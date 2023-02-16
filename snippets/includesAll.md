@@ -1,7 +1,7 @@
 ---
 title: Check if array includes all values
 tags: array
-cover: blog_images/tomatoes.jpg
+cover: tomatoes
 firstSeen: 2019-11-04T21:37:16+02:00
 lastUpdated: 2020-10-20T23:02:01+03:00
 ---

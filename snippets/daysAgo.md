@@ -1,7 +1,7 @@
 ---
 title: Days ago
 tags: date
-cover: blog_images/sunrise-over-city.jpg
+cover: sunrise-over-city
 firstSeen: 2020-10-06T05:35:23+03:00
 lastUpdated: 2022-01-30T11:48:07+03:00
 ---

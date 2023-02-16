@@ -1,7 +1,7 @@
 ---
 title: CSV to array
 tags: string,array
-cover: blog_images/keyboard-tea.jpg
+cover: keyboard-tea
 firstSeen: 2018-06-27T20:57:54+03:00
 lastUpdated: 2022-01-30T12:14:39+02:00
 ---

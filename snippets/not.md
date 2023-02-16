@@ -2,7 +2,7 @@
 title: Logical not
 tags: math,logic
 unlisted: true
-cover: blog_images/succulent-7.jpg
+cover: succulent-7
 firstSeen: 2020-05-13T11:28:26+03:00
 lastUpdated: 2021-01-04T13:04:15+02:00
 ---

@@ -2,7 +2,7 @@
 title: Last n elements
 tags: array
 author: chalarangelo
-cover: blog_images/interior-5.jpg
+cover: interior-5
 firstSeen: 2022-07-23T05:00:00-04:00
 ---
 

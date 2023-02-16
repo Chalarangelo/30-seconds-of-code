@@ -2,7 +2,7 @@
 title: Map an object to an array
 tags: object,array
 author: chalarangelo
-cover: blog_images/metro-arrival.jpg
+cover: metro-arrival
 firstSeen: 2023-02-05T05:00:00-04:00
 ---
 

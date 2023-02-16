@@ -1,7 +1,7 @@
 ---
 title: Sum of powers in range
 tags: math
-cover: blog_images/boat-port.jpg
+cover: boat-port
 firstSeen: 2018-01-01T15:49:25+02:00
 lastUpdated: 2020-10-22T20:24:30+03:00
 ---

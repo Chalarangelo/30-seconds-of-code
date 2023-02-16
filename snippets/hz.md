@@ -2,7 +2,7 @@
 title: Hertz frequency of function
 tags: function
 unlisted: true
-cover: blog_images/lake-runner.jpg
+cover: lake-runner
 firstSeen: 2018-04-11T16:39:49+03:00
 lastUpdated: 2021-01-04T13:04:15+02:00
 ---

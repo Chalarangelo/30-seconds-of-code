@@ -1,7 +1,7 @@
 ---
 title: Argument coalescing
 tags: type
-cover: blog_images/flower-portrait-1.jpg
+cover: flower-portrait-1
 firstSeen: 2017-12-17T10:08:55+02:00
 lastUpdated: 2020-09-15T16:28:04+03:00
 ---

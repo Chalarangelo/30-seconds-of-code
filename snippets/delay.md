@@ -1,7 +1,7 @@
 ---
 title: Delay function execution
 tags: function
-cover: blog_images/interior-13.jpg
+cover: interior-13
 firstSeen: 2018-01-24T14:32:20+02:00
 lastUpdated: 2020-10-19T18:51:03+03:00
 ---

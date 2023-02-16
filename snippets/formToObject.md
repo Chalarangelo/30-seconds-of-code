@@ -1,7 +1,7 @@
 ---
 title: Form to object
 tags: browser,object
-cover: blog_images/sail-away-2.jpg
+cover: sail-away-2
 firstSeen: 2019-03-13T14:50:06+02:00
 lastUpdated: 2020-10-19T22:49:51+03:00
 ---

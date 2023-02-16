@@ -2,7 +2,7 @@
 title: Number has decimal digits
 tags: math
 author: chalarangelo
-cover: blog_images/man-cup-laptop.jpg
+cover: man-cup-laptop
 firstSeen: 2022-05-13T05:00:00-04:00
 ---
 

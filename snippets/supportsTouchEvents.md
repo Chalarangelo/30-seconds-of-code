@@ -2,7 +2,7 @@
 title: Device supports touch events
 tags: browser
 author: chalarangelo
-cover: blog_images/man-red-sunset.jpg
+cover: man-red-sunset
 firstSeen: 2020-05-04T12:57:23+03:00
 lastUpdated: 2020-10-22T20:24:30+03:00
 ---

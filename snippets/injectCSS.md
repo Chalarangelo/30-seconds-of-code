@@ -1,7 +1,7 @@
 ---
 title: Inject CSS
 tags: browser,css
-cover: blog_images/dark-leaves-5.jpg
+cover: dark-leaves-5
 firstSeen: 2020-10-15T22:18:00+03:00
 lastUpdated: 2020-10-22T20:23:47+03:00
 ---
