@@ -1,4 +1,5 @@
 import literals from 'lang/en';
+import pathSettings from 'settings/paths';
 
 export const listingPreviewSerializer = {
   name: 'ListingPreviewSerializer',
@@ -10,6 +11,10 @@ export const listingPreviewSerializer = {
       withSearch ? listing.searchTokens : undefined,
     searchResultTag: (listing, { withSearch } = {}) =>
       withSearch ? literals.snippetCollectionShort : undefined,
+    splashUrl: listing =>
+      listing.splash
+        ? `/${pathSettings.staticAssetPath}/splash/${listing.splash}`
+        : `/${pathSettings.staticAssetPath}/splash/laptop-view.png`,
     url: listing => `${listing.slugPrefix}/p/1`,
     type: () => 'collection',
   },
@@ -21,5 +26,6 @@ export const listingPreviewSerializer = {
     'searchTokens',
     'searchResultTag',
     'type',
+    ['splashUrl', 'cover'],
   ],
 };

@@ -1,3 +1,5 @@
+import pathSettings from 'settings/paths';
+
 export const snippetPreviewSerializer = {
   name: 'SnippetPreviewSerializer',
   methods: {
@@ -10,6 +12,10 @@ export const snippetPreviewSerializer = {
       if (!withSearch) return undefined;
       return snippet.shortTitle;
     },
+    previewUrl: snippet =>
+      snippet.cover
+        ? `/${pathSettings.staticAssetPath}/preview/${snippet.cover}.jpg`
+        : undefined,
     type: () => 'snippet',
   },
   attributes: [
@@ -21,5 +27,6 @@ export const snippetPreviewSerializer = {
     'searchTokens',
     'searchResultTag',
     'type',
+    ['previewUrl', 'cover'],
   ],
 };
