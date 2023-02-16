@@ -2,7 +2,7 @@
 title: Lists all stashes
 tags: repository,stash
 author: chalarangelo
-cover: blog_images/golden-gate-bridge.jpg
+cover: golden-gate-bridge
 firstSeen: 2021-04-13T19:36:57+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

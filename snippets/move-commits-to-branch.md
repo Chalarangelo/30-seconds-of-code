@@ -2,7 +2,7 @@
 title: Move commits from master to a new branch
 tags: branch,repository
 author: chalarangelo
-cover: blog_images/red-succulent.jpg
+cover: red-succulent
 firstSeen: 2021-04-06T21:35:01+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

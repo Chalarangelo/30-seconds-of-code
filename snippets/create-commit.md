@@ -1,8 +1,7 @@
 ---
 title: Create a commit
 tags: commit
-author: maciv
-cover: blog_images/baloons-field.jpg
+cover: baloons-field
 firstSeen: 2021-04-04T14:16:38+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

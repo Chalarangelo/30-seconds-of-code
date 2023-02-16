@@ -2,7 +2,7 @@
 title: View current status
 tags: branch
 author: chalarangelo
-cover: blog_images/periscope.jpg
+cover: periscope
 firstSeen: 2021-04-06T20:58:33+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

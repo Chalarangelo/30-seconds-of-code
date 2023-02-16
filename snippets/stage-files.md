@@ -1,8 +1,7 @@
 ---
 title: Add files to the staging area
 tags: commit
-author: maciv
-cover: blog_images/round-leaves.jpg
+cover: round-leaves
 firstSeen: 2021-04-06T16:39:37+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

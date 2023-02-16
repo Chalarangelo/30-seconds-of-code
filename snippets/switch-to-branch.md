@@ -1,8 +1,7 @@
 ---
 title: Switch to a branch
 tags: branch
-author: maciv
-cover: blog_images/bridge.jpg
+cover: bridge
 firstSeen: 2021-04-04T14:09:09+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

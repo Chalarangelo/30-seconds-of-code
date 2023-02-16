@@ -1,8 +1,7 @@
 ---
 title: View commits that manipulated a specific string
 tags: commit
-author: maciv
-cover: blog_images/bunny-poster.jpg
+cover: bunny-poster
 firstSeen: 2021-04-06T16:28:49+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

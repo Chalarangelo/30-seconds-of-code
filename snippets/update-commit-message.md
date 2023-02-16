@@ -1,8 +1,7 @@
 ---
 title: Change the last commit's message
 tags: commit
-author: maciv
-cover: blog_images/greek-coffee.jpg
+cover: greek-coffee
 firstSeen: 2021-04-04T14:36:07+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

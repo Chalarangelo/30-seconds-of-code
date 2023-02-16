@@ -1,8 +1,7 @@
 ---
 title: Rebase onto another branch
 tags: branch
-author: maciv
-cover: blog_images/sliced-fruits.jpg
+cover: sliced-fruits
 firstSeen: 2021-04-05T11:19:54+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

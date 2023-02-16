@@ -2,7 +2,7 @@
 title: Optimize the local repository
 tags: repository
 author: chalarangelo
-cover: blog_images/automaton.jpg
+cover: automaton
 firstSeen: 2021-04-08T19:42:43+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---
