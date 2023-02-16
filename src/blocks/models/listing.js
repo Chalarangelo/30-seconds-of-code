@@ -80,7 +80,6 @@ export const listing = {
         listingTag: listing.isTag ? listing.data.shortId : '',
       }),
     featured: listing => (listing.isMain ? 0 : listing.data.featured || 0),
-    icon: listing => listing.data.icon,
     isListed: listing => {
       const { type } = listing;
       if (['blog', 'main', 'collection'].includes(type)) return true;
@@ -262,7 +261,6 @@ export const listing = {
     'splash',
     'seoDescription',
     'featured',
-    'icon',
     'isListed',
     'isSearchable',
     'searchTokens',

@@ -16,7 +16,6 @@ export const snippetPreviewSerializer = {
     'title',
     'shortTitle',
     ['slug', 'url'],
-    'icon',
     'description',
     ['formattedPreviewTags', 'tags'],
     'searchTokens',
