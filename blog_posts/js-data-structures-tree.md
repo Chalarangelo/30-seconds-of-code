@@ -13,7 +13,7 @@ firstSeen: 2021-08-22T05:00:00-04:00
 
 A tree is a data structure consisting of a set of linked nodes that represent a hierarchical tree structure. Each node is linked to others via parent-children relationship. The first node in the tree is the root, whereas nodes without any children are the leaves.
 
-![JavaScript Tree visualization](./blog_images/ds-tree.png)
+![JavaScript Tree visualization](./illustrations/ds-tree.png)
 
 Each node in a tree data structure must have the following properties:
 

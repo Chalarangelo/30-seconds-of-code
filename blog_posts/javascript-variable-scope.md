@@ -20,7 +20,7 @@ JavaScript provides two ways to define a variable (`var` and `let`) and one way 
 
 It is generally preferred to use `let` and `const` to avoid confusion when it comes to scoping. However, it is important to note that `var` can be a useful JavaScript feature when used in the correct circumstances.
 
-![Visualization of JavaScript variable scope](./blog_images/js-variable-scope.png)
+![Visualization of JavaScript variable scope](./illustrations/js-variable-scope.png)
 
 ### Scope
 

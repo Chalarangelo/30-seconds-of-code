@@ -11,7 +11,7 @@ firstSeen: 2022-09-04T05:00:00-04:00
 
 When it comes to loading JavaScript files, there are a few different options available. Understanding exactly how scripts are loaded and executed is crucial for website performance, as well as for the overall quality of the user experience. Let's take a look at how the `<script>` tag works and how certain attributes affect its behavior.
 
-![Script loading visualization](./blog_images/async-defer.png)
+![Script loading visualization](./illustrations/async-defer.png)
 
 ### No attributes
 

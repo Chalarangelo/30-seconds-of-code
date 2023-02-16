@@ -13,7 +13,7 @@ firstSeen: 2021-08-17T05:00:00-04:00
 
 A graph is a data structure consisting of a set of nodes or vertices and a set of edges that represent connections between those nodes. Graphs can be directed or undirected, while their edges can be assigned numeric weights.
 
-![JavaScript Graph visualization](./blog_images/ds-graph.png)
+![JavaScript Graph visualization](./illustrations/ds-graph.png)
 
 Each node in a graph data structure must have the following properties:
 

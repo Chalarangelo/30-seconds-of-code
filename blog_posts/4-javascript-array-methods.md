@@ -32,7 +32,7 @@ const isOdd = x => x % 2 === 1;
 arr.filter(isOdd); // [1, 3]
 ```
 
-![JavaScript Array Methods](./blog_images/js-array-methods.png)
+![JavaScript Array Methods](./illustrations/js-array-methods.png)
 
 ### Array.prototype.reduce()
 
