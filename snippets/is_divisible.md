@@ -2,7 +2,7 @@
 title: Number is divisible
 tags: math
 unlisted: true
-cover: blog_images/interior-9.jpg
+cover: interior-9
 firstSeen: 2019-08-20T14:19:55+03:00
 lastUpdated: 2021-01-04T12:47:04+02:00
 ---

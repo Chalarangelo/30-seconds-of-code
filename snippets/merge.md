@@ -1,7 +1,7 @@
 ---
 title: Merge lists
 tags: list
-cover: blog_images/succulent-2.jpg
+cover: succulent-2
 firstSeen: 2020-04-13T19:09:12+03:00
 lastUpdated: 2020-11-02T19:28:27+02:00
 ---

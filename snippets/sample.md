@@ -1,7 +1,7 @@
 ---
 title: Random element in list
 tags: list,random
-cover: blog_images/walking-on-top.jpg
+cover: walking-on-top
 firstSeen: 2019-08-20T16:02:37+03:00
 lastUpdated: 2020-10-28T11:45:34+02:00
 ---

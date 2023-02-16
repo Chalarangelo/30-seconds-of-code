@@ -1,7 +1,7 @@
 ---
 title: Map dictionary values
 tags: dictionary
-cover: blog_images/pineapple-laptop.jpg
+cover: pineapple-laptop
 firstSeen: 2019-08-20T15:34:30+03:00
 lastUpdated: 2020-11-02T19:28:27+02:00
 ---

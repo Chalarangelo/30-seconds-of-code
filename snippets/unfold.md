@@ -1,7 +1,7 @@
 ---
 title: Unfold list
 tags: function,list
-cover: blog_images/painters-desk.jpg
+cover: painters-desk
 firstSeen: 2020-01-02T20:17:51+02:00
 lastUpdated: 2020-11-02T19:28:35+02:00
 ---

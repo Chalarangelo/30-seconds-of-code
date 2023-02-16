@@ -1,7 +1,7 @@
 ---
 title: Average
 tags: math,list
-cover: blog_images/digital-nomad-15.jpg
+cover: digital-nomad-15
 firstSeen: 2018-01-27T07:16:41+02:00
 lastUpdated: 2020-11-02T19:27:07+02:00
 ---

@@ -1,7 +1,7 @@
 ---
 title: N max elements
 tags: list,math
-cover: blog_images/red-succulent.jpg
+cover: red-succulent
 firstSeen: 2018-01-19T11:25:28+02:00
 lastUpdated: 2020-11-02T19:28:27+02:00
 ---

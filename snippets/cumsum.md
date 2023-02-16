@@ -1,8 +1,7 @@
 ---
 title: Partial sum list
 tags: list
-author: maciv
-cover: blog_images/digital-nomad-16.jpg
+cover: digital-nomad-16
 firstSeen: 2021-01-13T23:30:41+02:00
 lastUpdated: 2021-01-13T23:30:41+02:00
 ---

@@ -1,7 +1,7 @@
 ---
 title: List intersection based on function
 tags: list,function
-cover: blog_images/duck-plants.jpg
+cover: duck-plants
 firstSeen: 2019-08-20T15:16:27+03:00
 lastUpdated: 2020-11-02T19:28:05+02:00
 ---

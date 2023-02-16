@@ -1,9 +1,8 @@
 ---
 title: Km to miles
 tags: math
-author: maciv
 unlisted: true
-cover: blog_images/interior-5.jpg
+cover: interior-5
 firstSeen: 2020-10-04T00:23:49+03:00
 lastUpdated: 2021-01-04T12:47:04+02:00
 ---
