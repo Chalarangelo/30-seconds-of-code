@@ -2,7 +2,7 @@
 title: React useOnWindowResize hook
 tags: hooks,effect,event
 author: chalarangelo
-cover: blog_images/flower-camera.jpg
+cover: flower-camera
 firstSeen: 2021-12-01T05:00:00-04:00
 ---
 

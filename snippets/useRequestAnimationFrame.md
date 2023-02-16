@@ -2,7 +2,7 @@
 title: React useRequestAnimationFrame hook
 tags: hooks,effect
 author: chalarangelo
-cover: blog_images/aerial-view-port.jpg
+cover: aerial-view-port
 firstSeen: 2021-12-29T05:00:00-04:00
 ---
 

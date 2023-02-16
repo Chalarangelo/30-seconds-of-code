@@ -1,7 +1,7 @@
 ---
 title: Object table view
 tags: components,array,object
-cover: blog_images/waves-from-above-2.jpg
+cover: waves-from-above-2
 firstSeen: 2018-11-29T11:50:10+02:00
 lastUpdated: 2020-09-06T14:20:45+03:00
 ---

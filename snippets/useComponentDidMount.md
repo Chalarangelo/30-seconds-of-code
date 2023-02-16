@@ -2,7 +2,7 @@
 title: React useComponentDidMount hook
 tags: hooks,effect
 author: chalarangelo
-cover: blog_images/highlands.jpg
+cover: highlands
 firstSeen: 2020-01-03T15:56:54+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

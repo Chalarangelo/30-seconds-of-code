@@ -2,7 +2,7 @@
 title: React useBodyScrollLock hook
 tags: hooks,effect
 author: chalarangelo
-cover: blog_images/folded-map.jpg
+cover: folded-map
 firstSeen: 2021-09-02T05:00:00-04:00
 ---
 

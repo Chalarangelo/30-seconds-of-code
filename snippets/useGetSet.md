@@ -2,7 +2,7 @@
 title: React useGetSet hook
 tags: hooks,state
 author: chalarangelo
-cover: blog_images/interior-12.jpg
+cover: interior-12
 firstSeen: 2021-10-27T05:00:00-04:00
 ---
 

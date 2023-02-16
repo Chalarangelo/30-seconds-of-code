@@ -2,7 +2,7 @@
 title: React useKeyPress hook
 tags: hooks,state,effect,event
 author: chalarangelo
-cover: blog_images/yellow-white-mug-1.jpg
+cover: yellow-white-mug-1
 firstSeen: 2021-09-07T05:00:00-04:00
 ---
 
