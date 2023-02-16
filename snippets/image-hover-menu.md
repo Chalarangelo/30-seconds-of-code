@@ -1,7 +1,7 @@
 ---
 title: Menu on image hover
 tags: layout,animation
-cover: blog_images/compass.jpg
+cover: compass
 firstSeen: 2020-04-20T19:15:11+03:00
 lastUpdated: 2021-10-11T18:44:51+03:00
 ---

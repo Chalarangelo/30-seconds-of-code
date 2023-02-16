@@ -1,7 +1,7 @@
 ---
 title: Image gallery with horizontal scroll
 tags: visual,interactivity
-cover: blog_images/flower-portrait-5.jpg
+cover: flower-portrait-5
 firstSeen: 2022-05-01T05:00:00-04:00
 ---
 

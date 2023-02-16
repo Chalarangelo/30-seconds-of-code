@@ -2,7 +2,7 @@
 title: Custom radio button
 tags: visual,animation
 author: chalarangelo
-cover: blog_images/messy-computer.jpg
+cover: messy-computer
 firstSeen: 2022-11-16T05:00:00-04:00
 ---
 

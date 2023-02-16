@@ -2,7 +2,7 @@
 title: Style links with no text
 tags: visual
 author: chalarangelo
-cover: blog_images/metro-tunnel.jpg
+cover: metro-tunnel
 firstSeen: 2022-11-11T05:00:00-04:00
 ---
 

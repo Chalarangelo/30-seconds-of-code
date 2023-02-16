@@ -1,7 +1,7 @@
 ---
 title: Vertical scroll snap
 tags: interactivity
-cover: blog_images/baloons-field.jpg
+cover: baloons-field
 firstSeen: 2020-08-18T14:25:46+03:00
 lastUpdated: 2020-08-18T14:25:46+03:00
 ---

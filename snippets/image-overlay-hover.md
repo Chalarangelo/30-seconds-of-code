@@ -1,7 +1,7 @@
 ---
 title: Image overlay on hover
 tags: visual,animation
-cover: blog_images/architectural.jpg
+cover: architectural
 firstSeen: 2020-04-20T14:12:33+03:00
 lastUpdated: 2021-10-11T18:44:51+03:00
 ---

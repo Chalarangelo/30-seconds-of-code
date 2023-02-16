@@ -1,7 +1,7 @@
 ---
 title: Donut spinner
 tags: animation
-cover: blog_images/digital-nomad-3.jpg
+cover: digital-nomad-3
 firstSeen: 2018-02-27T17:32:35+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

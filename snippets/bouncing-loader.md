@@ -1,7 +1,7 @@
 ---
 title: Bouncing loader
 tags: animation
-cover: blog_images/digital-nomad-12.jpg
+cover: digital-nomad-12
 firstSeen: 2018-03-04T06:24:22+02:00
 lastUpdated: 2021-10-11T18:44:51+03:00
 ---

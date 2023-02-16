@@ -1,7 +1,7 @@
 ---
 title: Custom scrollbar
 tags: visual
-cover: blog_images/sea-view.jpg
+cover: sea-view
 firstSeen: 2018-03-01T10:34:55+02:00
 lastUpdated: 2021-05-16T13:09:15+03:00
 ---

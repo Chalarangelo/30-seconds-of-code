@@ -1,7 +1,7 @@
 ---
 title: Flexbox centering
 tags: layout
-cover: blog_images/basket-paper.jpg
+cover: basket-paper
 firstSeen: 2018-03-03T11:57:27+02:00
 lastUpdated: 2020-12-30T15:37:37+02:00
 ---

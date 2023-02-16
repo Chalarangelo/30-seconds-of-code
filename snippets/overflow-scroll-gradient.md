@@ -1,7 +1,7 @@
 ---
 title: Overflow scroll gradient
 tags: visual
-cover: blog_images/memories-of-pineapple-1.jpg
+cover: memories-of-pineapple-1
 firstSeen: 2018-02-25T15:14:39+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

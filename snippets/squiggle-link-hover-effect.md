@@ -2,7 +2,7 @@
 title: Squiggle link hover effect
 tags: animation,visual
 author: chalarangelo
-cover: blog_images/dreamy-flowers.jpg
+cover: dreamy-flowers
 firstSeen: 2023-01-10T05:00:00-04:00
 ---
 

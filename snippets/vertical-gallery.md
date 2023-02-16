@@ -1,7 +1,7 @@
 ---
 title: Image gallery with vertical scroll
 tags: visual,interactivity
-cover: blog_images/lake-loop.jpg
+cover: lake-loop
 firstSeen: 2022-05-05T05:00:00-04:00
 ---
 
