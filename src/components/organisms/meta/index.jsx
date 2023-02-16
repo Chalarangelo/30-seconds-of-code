@@ -17,6 +17,7 @@ const Meta = ({
   title,
   description = '',
   logoSrc = '/assets/logo.png',
+  pageType = 'website',
   structuredData,
   breadcrumbsData,
   canonical = '',
@@ -127,7 +128,7 @@ const Meta = ({
       <meta name='viewport' content='width=device-width, initial-scale=1' />
       <meta property='og:title' content={titleString} />
       <meta property='og:description' content={metaDescription} />
-      <meta property='og:type' content='website' />
+      <meta property='og:type' content={pageType} />
       <meta property='og:image' content={`${settings.websiteUrl}${logoSrc}`} />
       <meta name='twitter:site' content={settings.twitterAccount} />
       <meta name='twitter:card' content='summary_large_image' />
