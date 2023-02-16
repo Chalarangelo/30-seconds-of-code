@@ -16,7 +16,6 @@ export const listingPreviewSerializer = {
   attributes: [
     ['shortName', 'title'],
     'url',
-    'icon',
     'description',
     'tags',
     'searchTokens',

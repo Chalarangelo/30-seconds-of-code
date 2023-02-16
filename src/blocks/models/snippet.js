@@ -222,17 +222,6 @@ export const snippet = {
         : null,
   },
   lazyProperties: {
-    icon: ({ models: { Language } }) => snippet => {
-      if (snippet.isBlog) {
-        const lang = Language.records.full.find(l =>
-          snippet.tags.includes(l.id)
-        );
-        return lang
-          ? lang.getTagIcon(snippet.truePrimaryTag)
-          : snippet.repository.icon;
-      }
-      return snippet.language.getTagIcon(snippet.primaryTag);
-    },
     language: ({ models: { Language } }) => snippet => {
       if (!snippet.isBlog) return snippet.repository.language;
       for (let tag of snippet.tags) {
@@ -261,7 +250,6 @@ export const snippet = {
     'searchTokensArray',
     'searchTokens',
     'language',
-    'icon',
     'primaryTag',
     'truePrimaryTag',
     'formattedPrimaryTag',

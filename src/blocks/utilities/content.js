@@ -170,7 +170,6 @@ export class Content {
                   snippetPath: 'snippets',
                   slug,
                   featured: true,
-                  iconName: slug,
                   biasPenaltyMultiplier: 1,
                 }
               ).then(() => resolve());

@@ -463,39 +463,6 @@ describe('Application/Schema', () => {
       });
     });
 
-    describe('property: icon', () => {
-      it('returns the correct icon for a regular snippet', () => {
-        const snippet = Snippet.records.get('js/s/format-duration');
-        expect(snippet.icon).toEqual('js');
-      });
-
-      it('returns the correct icon for a snippet in a special tag', () => {
-        const snippet = Snippet.records.get('js/s/hash-node');
-        expect(snippet.icon).toEqual('node');
-      });
-
-      it('returns the correct icon for a regular blog', () => {
-        const snippet = Snippet.records.get(
-          'articles/s/10-vs-code-extensions-for-js-developers'
-        );
-        expect(snippet.icon).toEqual('blog');
-      });
-
-      it('returns the correct icon for a blog with a language', () => {
-        const snippet = Snippet.records.get(
-          'articles/s/react-rendering-basics'
-        );
-        expect(snippet.icon).toEqual('react');
-      });
-
-      it('returns the correct icon for a blog with a special tag', () => {
-        const snippet = Snippet.records.get(
-          'articles/s/nodejs-chrome-debugging'
-        );
-        expect(snippet.icon).toEqual('node');
-      });
-    });
-
     describe('property: language', () => {
       it('returns the correct language for a regular snippet', () => {
         const snippet = Snippet.records.get('js/s/format-duration');
@@ -845,13 +812,6 @@ describe('Application/Schema', () => {
       it('returns the featured for a listing', () => {
         const listing = Listing.records.get('tag/js/t/string');
         expect(listing.featured).not.toEqual(false);
-      });
-    });
-
-    describe('property: icon', () => {
-      it('returns the icon for a listing', () => {
-        const listing = Listing.records.get('tag/js/t/string');
-        expect(listing.icon).toEqual('js');
       });
     });
 

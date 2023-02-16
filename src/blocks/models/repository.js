@@ -8,7 +8,6 @@ export const repository = {
     { name: 'slug', type: 'stringRequired' },
     { name: 'isBlog', type: 'booleanRequired', defaultValue: false },
     { name: 'featured', type: 'booleanRequired' },
-    { name: 'icon', type: 'string' },
     { name: 'splash', type: 'stringRequired' },
     { name: 'description', type: 'stringRequired' },
     { name: 'shortDescription', type: 'stringRequired' },
