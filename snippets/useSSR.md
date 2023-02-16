@@ -2,7 +2,7 @@
 title: React useSSR hook
 tags: hooks,effect,state,memo
 author: chalarangelo
-cover: blog_images/interior-6.jpg
+cover: interior-6
 firstSeen: 2019-08-24T13:18:16+03:00
 lastUpdated: 2021-03-10T06:38:42+02:00
 ---

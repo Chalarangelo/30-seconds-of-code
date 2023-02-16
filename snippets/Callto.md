@@ -3,7 +3,7 @@ title: Callable telephone link
 tags: components
 author: chalarangelo
 unlisted: true
-cover: blog_images/rabbit-call.jpg
+cover: rabbit-call
 firstSeen: 2020-10-04T00:07:37+03:00
 lastUpdated: 2021-01-04T12:32:47+02:00
 ---

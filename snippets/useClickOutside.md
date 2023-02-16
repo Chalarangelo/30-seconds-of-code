@@ -2,7 +2,7 @@
 title: React useClickOutside hook
 tags: hooks,effect,event
 author: chalarangelo
-cover: blog_images/clutter.jpg
+cover: clutter
 firstSeen: 2019-08-21T13:09:10+03:00
 lastUpdated: 2020-11-16T14:17:53+02:00
 ---

@@ -1,7 +1,7 @@
 ---
 title: Uncontrolled select element
 tags: components,input
-cover: blog_images/down-the-stream.jpg
+cover: down-the-stream
 firstSeen: 2018-12-10T10:48:03+02:00
 lastUpdated: 2020-11-25T20:46:35+02:00
 ---

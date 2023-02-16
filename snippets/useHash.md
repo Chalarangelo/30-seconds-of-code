@@ -2,7 +2,7 @@
 title: React useHash hook
 tags: hooks,state,effect
 author: chalarangelo
-cover: blog_images/book-chair.jpg
+cover: book-chair
 firstSeen: 2021-10-02T05:00:00-04:00
 ---
 

@@ -2,7 +2,7 @@
 title: React useComponentDidUpdate hook
 tags: hooks,effect
 author: chalarangelo
-cover: blog_images/flower-portrait-10.jpg
+cover: flower-portrait-10
 firstSeen: 2021-11-09T05:00:00-04:00
 ---
 

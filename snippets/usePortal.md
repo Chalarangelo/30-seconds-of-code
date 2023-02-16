@@ -2,7 +2,7 @@
 title: React usePortal hook
 tags: hooks,state,effect
 author: chalarangelo
-cover: blog_images/interior-3.jpg
+cover: interior-3
 firstSeen: 2022-01-05T05:00:00-04:00
 ---
 

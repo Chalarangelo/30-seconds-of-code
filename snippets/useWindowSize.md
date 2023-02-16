@@ -2,7 +2,7 @@
 title: React useWindowSize hook
 tags: hooks,state,effect
 author: chalarangelo
-cover: blog_images/polar-bear.jpg
+cover: polar-bear
 firstSeen: 2021-10-18T05:00:00-04:00
 ---
 

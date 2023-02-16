@@ -2,7 +2,7 @@
 title: React useLocalStorage hook
 tags: hooks,state
 author: chalarangelo
-cover: blog_images/houses-rock-sea.jpg
+cover: houses-rock-sea
 firstSeen: 2021-09-13T05:00:00-04:00
 ---
 

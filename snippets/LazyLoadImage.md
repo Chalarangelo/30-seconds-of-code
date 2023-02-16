@@ -1,7 +1,7 @@
 ---
 title: Lazy-loading image
 tags: components,effect,state
-cover: blog_images/strawberries.jpg
+cover: strawberries
 author: chalarangelo
 firstSeen: 2022-07-29T05:00:00-04:00
 ---

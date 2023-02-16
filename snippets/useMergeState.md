@@ -2,7 +2,7 @@
 title: React useMergeState hook
 tags: hooks,state
 author: chalarangelo
-cover: blog_images/digital-nomad-6.jpg
+cover: digital-nomad-6
 firstSeen: 2021-09-23T05:00:00-04:00
 ---
 

@@ -2,7 +2,7 @@
 title: React useSet hook
 tags: hooks,state
 author: chalarangelo
-cover: blog_images/engine.jpg
+cover: engine
 firstSeen: 2021-11-01T05:00:00-04:00
 ---
 

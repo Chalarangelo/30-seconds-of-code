@@ -1,7 +1,7 @@
 ---
 title: Tag input field
 tags: components,input,state
-cover: blog_images/interior-4.jpg
+cover: interior-4
 firstSeen: 2019-10-02T10:06:11+03:00
 lastUpdated: 2020-11-25T21:12:16+02:00
 ---

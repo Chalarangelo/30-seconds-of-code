@@ -2,7 +2,7 @@
 title: React useIntersectionObserver hook
 tags: hooks,state,effect
 author: chalarangelo
-cover: blog_images/budapest-palace.jpg
+cover: budapest-palace
 firstSeen: 2021-09-10T05:00:00-04:00
 ---
 

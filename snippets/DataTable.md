@@ -1,7 +1,7 @@
 ---
 title: Data table
 tags: components
-cover: blog_images/armchair.jpg
+cover: armchair
 firstSeen: 2018-11-29T11:13:59+02:00
 lastUpdated: 2020-11-03T21:26:34+02:00
 ---

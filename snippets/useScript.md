@@ -2,7 +2,7 @@
 title: React useScript hook
 tags: hooks,effect,state,event
 author: chalarangelo
-cover: blog_images/travel-mug-3.jpg
+cover: travel-mug-3
 firstSeen: 2021-10-08T05:00:00-04:00
 ---
 

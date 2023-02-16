@@ -1,7 +1,7 @@
 ---
 title: Closable alert
 tags: components,state,effect
-cover: blog_images/flower-portrait-1.jpg
+cover: flower-portrait-1
 firstSeen: 2019-09-17T13:19:30+03:00
 lastUpdated: 2021-01-07T23:57:13+02:00
 ---

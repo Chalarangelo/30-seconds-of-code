@@ -2,7 +2,7 @@
 title: React useOnWindowScroll hook
 tags: hooks,effect,event
 author: chalarangelo
-cover: blog_images/planning.jpg
+cover: planning
 firstSeen: 2021-12-08T05:00:00-04:00
 ---
 

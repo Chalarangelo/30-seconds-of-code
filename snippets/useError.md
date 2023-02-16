@@ -2,7 +2,7 @@
 title: React useError hook
 tags: hooks,state,effect
 author: chalarangelo
-cover: blog_images/baloons-field.jpg
+cover: baloons-field
 firstSeen: 2021-09-30T05:00:00-04:00
 ---
 
