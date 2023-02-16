@@ -1,7 +1,7 @@
 ---
 title: Horizontal scroll snap
 tags: interactivity
-cover: blog_images/waves-from-above.jpg
+cover: waves-from-above
 firstSeen: 2020-08-18T14:25:46+03:00
 lastUpdated: 2021-10-11T18:44:51+03:00
 ---

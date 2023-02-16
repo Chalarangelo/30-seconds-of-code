@@ -2,7 +2,7 @@
 title: Fluid typography
 tags: visual
 author: chalarangelo
-cover: blog_images/shell-focus.jpg
+cover: shell-focus
 firstSeen: 2021-05-16T11:23:05+03:00
 lastUpdated: 2021-05-16T11:23:05+03:00
 ---

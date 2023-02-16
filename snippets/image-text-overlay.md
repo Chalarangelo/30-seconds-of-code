@@ -2,7 +2,7 @@
 title: Image with text overlay
 tags: visual
 author: chalarangelo
-cover: blog_images/icebreaker.jpg
+cover: icebreaker
 firstSeen: 2023-01-29T05:00:00-04:00
 ---
 

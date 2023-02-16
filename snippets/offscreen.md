@@ -1,7 +1,7 @@
 ---
 title: Offscreen
 tags: layout,visual
-cover: blog_images/succulent-2.jpg
+cover: succulent-2
 firstSeen: 2018-03-30T18:50:31+03:00
 lastUpdated: 2021-10-11T18:44:51+03:00
 ---

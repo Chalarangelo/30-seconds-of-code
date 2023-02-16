@@ -2,7 +2,7 @@
 title: Button swing animation
 tags: animation
 author: chalarangelo
-cover: blog_images/painters-desk.jpg
+cover: painters-desk
 firstSeen: 2021-05-24T15:28:52+03:00
 lastUpdated: 2021-05-24T15:28:52+03:00
 ---

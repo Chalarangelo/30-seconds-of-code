@@ -1,7 +1,7 @@
 ---
 title: Button border animation
 tags: animation
-cover: blog_images/highlands.jpg
+cover: highlands
 firstSeen: 2019-01-21T18:52:46+02:00
 lastUpdated: 2021-05-24T15:28:52+03:00
 ---

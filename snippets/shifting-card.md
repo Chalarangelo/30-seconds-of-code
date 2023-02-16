@@ -2,7 +2,7 @@
 title: Shifting Card
 tags: animation
 author: chalarangelo
-cover: blog_images/clouds-n-mountains.jpg
+cover: clouds-n-mountains
 firstSeen: 2022-12-14T05:00:00-04:00
 ---
 

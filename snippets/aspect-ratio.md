@@ -2,7 +2,7 @@
 title: Aspect ratio
 tags: layout
 author: chalarangelo
-cover: blog_images/digital-nomad-12.jpg
+cover: digital-nomad-12
 firstSeen: 2022-08-14T05:00:00-04:00
 ---
 

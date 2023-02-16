@@ -2,7 +2,7 @@
 title: Responsive layout with sidebar
 tags: layout
 author: chalarangelo
-cover: blog_images/red-petals.jpg
+cover: red-petals
 firstSeen: 2020-09-16T18:54:56+03:00
 lastUpdated: 2020-09-16T18:54:56+03:00
 ---

@@ -2,7 +2,7 @@
 title: Button shrink animation
 tags: animation
 author: chalarangelo
-cover: blog_images/clay-pot-horizon.jpg
+cover: clay-pot-horizon
 firstSeen: 2021-05-24T15:28:52+03:00
 lastUpdated: 2021-05-24T15:28:52+03:00
 ---

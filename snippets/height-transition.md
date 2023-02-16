@@ -1,7 +1,7 @@
 ---
 title: Height transition
 tags: animation
-cover: blog_images/washed-ashore.jpg
+cover: washed-ashore
 firstSeen: 2018-03-17T10:53:02+02:00
 lastUpdated: 2020-12-30T15:37:37+02:00
 ---

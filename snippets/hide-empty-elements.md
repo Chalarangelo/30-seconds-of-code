@@ -2,7 +2,7 @@
 title: Hide empty elements
 tags: visual
 author: chalarangelo
-cover: blog_images/metro-arrival.jpg
+cover: metro-arrival
 firstSeen: 2022-11-18T05:00:00-04:00
 ---
 

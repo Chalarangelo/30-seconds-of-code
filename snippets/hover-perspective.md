@@ -2,7 +2,7 @@
 title: Perspective transform on hover
 tags: animation
 author: chalarangelo
-cover: blog_images/tropical-bike.jpg
+cover: tropical-bike
 firstSeen: 2021-05-17T13:58:04+03:00
 lastUpdated: 2021-05-17T13:58:04+03:00
 ---

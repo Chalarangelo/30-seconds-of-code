@@ -1,7 +1,7 @@
 ---
 title: Input with prefix
 tags: interactivity,visual
-cover: blog_images/flower-portrait-4.jpg
+cover: flower-portrait-4
 firstSeen: 2020-10-14T14:16:57+03:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---
