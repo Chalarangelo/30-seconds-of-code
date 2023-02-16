@@ -19,7 +19,7 @@ const supportedExtensions = ['jpeg', 'jpg', 'png', 'webp', 'tif', 'tiff'];
 const maxWidth = 846;
 const outputQuality = 80;
 // Icon asset constants
-const dimensions = [48, 72, 96, 144, 192, 256, 384, 512];
+const dimensions = [32, 180, 192, 512];
 const iconOutName = 'icon';
 
 /**
@@ -146,8 +146,9 @@ export class AssetWriter {
     });
 
   /**
-   * Meant for manual use only via the console API.
    * Takes a PNG image and produces all the icon assets necessary for the website.
+   * @param {string} iconName The name of the icon to process.
+   * @returns {Promise} A promise that resolves when icon assets have been processed.
    */
   static processIcons = (iconName = '30s-icon.png') => {
     const iconPath = path.join(inPath, iconName);
