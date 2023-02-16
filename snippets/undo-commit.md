@@ -1,8 +1,7 @@
 ---
 title: Undo a commit
 tags: commit,branch
-author: maciv
-cover: blog_images/mask-quiet.jpg
+cover: mask-quiet
 firstSeen: 2021-04-06T16:54:22+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

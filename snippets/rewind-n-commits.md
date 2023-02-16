@@ -1,8 +1,7 @@
 ---
 title: Rewind back n commits
 tags: branch,commit
-author: maciv
-cover: blog_images/lake-trees.jpg
+cover: lake-trees
 firstSeen: 2021-04-05T11:19:21+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

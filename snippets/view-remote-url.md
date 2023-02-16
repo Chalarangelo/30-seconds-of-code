@@ -2,7 +2,7 @@
 title: View the remote URL
 tags: repository
 author: chalarangelo
-cover: blog_images/red-mountain.jpg
+cover: red-mountain
 firstSeen: 2021-04-08T19:42:57+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

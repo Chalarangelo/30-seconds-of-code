@@ -1,8 +1,7 @@
 ---
 title: Merge a branch and create a merge commit
 tags: repository,branch
-author: maciv
-cover: blog_images/meteora.jpg
+cover: meteora
 firstSeen: 2021-04-04T21:50:11+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

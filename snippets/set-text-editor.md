@@ -1,8 +1,7 @@
 ---
 title: Configure the git text editor
 tags: configuration
-author: maciv
-cover: blog_images/purple-sunset-beach.jpg
+cover: purple-sunset-beach
 firstSeen: 2021-04-04T21:25:22+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

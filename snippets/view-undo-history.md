@@ -1,8 +1,7 @@
 ---
 title: View "undo" history
 tags: repository,branch
-author: maciv
-cover: blog_images/rock-climbing.jpg
+cover: rock-climbing
 firstSeen: 2021-04-06T16:35:56+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---
