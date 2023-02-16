@@ -13,7 +13,7 @@ firstSeen: 2021-08-26T05:00:00-04:00
 
 A binary tree is a data structure consisting of a set of linked nodes that represent a hierarchical tree structure. Each node is linked to others via parent-children relationship. Any given node can have at most two children (left and right). The first node in the binary tree is the root, whereas nodes without any children are the leaves.
 
-![JavaScript Binary Tree visualization](./blog_images/ds-binary-tree.png)
+![JavaScript Binary Tree visualization](./illustrations/ds-binary-tree.png)
 
 Each node in a binary tree data structure must have the following properties:
 

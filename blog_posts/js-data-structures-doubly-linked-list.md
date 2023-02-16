@@ -13,7 +13,7 @@ firstSeen: 2021-08-12T05:00:00-04:00
 
 A doubly linked list is a linear data structure that represents a collection of elements, where each element points both to the next and the previous one. The first element in the doubly linked list is the head and the last element is the tail.
 
-![JavaScript Doubly Linked List visualization](./blog_images/ds-doubly-linked-list.png)
+![JavaScript Doubly Linked List visualization](./illustrations/ds-doubly-linked-list.png)
 
 Each element of a doubly linked list data structure must have the following properties:
 

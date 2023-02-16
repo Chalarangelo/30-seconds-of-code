@@ -13,7 +13,7 @@ firstSeen: 2021-08-03T05:00:00-04:00
 
 A stack is a linear data structure that behaves like a real-world stack of items. It follows a last in, first out (LIFO) order of operations, similar to its real-world counterpart. This means that new items are added to the top of the stack and items are removed from the top of the stack as well.
 
-![JavaScript Stack visualization](./blog_images/ds-stack.png)
+![JavaScript Stack visualization](./illustrations/ds-stack.png)
 
 The main operations of a stack data structure are:
 

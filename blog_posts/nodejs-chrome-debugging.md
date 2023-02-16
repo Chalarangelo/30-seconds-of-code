@@ -18,4 +18,4 @@ Node.js can be debugged using Chrome Developer Tools since `v6.3.0`. Here's a qu
 4. Click `Open dedicated DevTools for Node` to open a new window connected to your Node.js instance.
 5. Use the Developer Tools to debug your Node.js application!
 
-![about:inspect page](./blog_images/chrome-debug-node.png)
+![about:inspect page](./illustrations/chrome-debug-node.png)

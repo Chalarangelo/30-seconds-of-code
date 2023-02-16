@@ -13,7 +13,7 @@ firstSeen: 2021-07-29T05:00:00-04:00
 
 A queue is a linear data structure that behaves like a real-world queue. It follows a first in, first out (FIFO) order of operations, similar to its real-world counterpart. This means that new items are added to the end of the queue, whereas items are removed from the start of the queue.
 
-![JavaScript Queue visualization](./blog_images/ds-queue.png)
+![JavaScript Queue visualization](./illustrations/ds-queue.png)
 
 The main operations of a queue data structure are:
 
