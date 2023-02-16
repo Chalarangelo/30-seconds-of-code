@@ -4,7 +4,7 @@ shortTitle: Replace all occurrences of a string
 type: story
 tags: javascript,string,regexp
 author: chalarangelo
-cover: blog_images/blue-computer.jpg
+cover: blue-computer
 excerpt: If you need to replace all occurrences of a string in JavaScript, you have a couple of options.
 firstSeen: 2022-07-03T05:00:00-04:00
 ---

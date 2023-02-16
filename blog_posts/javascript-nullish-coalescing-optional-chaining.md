@@ -4,7 +4,7 @@ shortTitle: Optional chaining and nullish coalescing
 type: question
 tags: javascript,type
 author: chalarangelo
-cover: blog_images/purple-leaves.jpg
+cover: purple-leaves
 excerpt: JavaScript ES2020 introduced optional chaining and nullish coalescing among other features. Learn everything you need to know with this quick guide.
 firstSeen: 2020-08-19T15:37:22+03:00
 lastUpdated: 2021-06-12T19:30:41+03:00

@@ -4,7 +4,7 @@ shortTitle: Construct a URL in JavaScript
 type: story
 tags: javascript,string,browser
 author: chalarangelo
-cover: blog_images/alfama.jpg
+cover: alfama
 excerpt: A short guide on how to correctly construct a URL in JavaScript.
 firstSeen: 2023-02-26T05:00:00-04:00
 ---

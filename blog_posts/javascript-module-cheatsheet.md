@@ -3,7 +3,7 @@ title: JavaScript modules Cheat Sheet
 type: cheatsheet
 tags: javascript,cheatsheet
 author: chalarangelo
-cover: blog_images/mountain-lake-2.jpg
+cover: mountain-lake-2
 excerpt: Learn everything you need to know about JavaScript modules with this handy cheatsheet.
 firstSeen: 2020-08-04T19:41:35+03:00
 lastUpdated: 2021-06-12T19:30:41+03:00

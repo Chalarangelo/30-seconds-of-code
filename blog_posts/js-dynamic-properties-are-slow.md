@@ -4,7 +4,7 @@ shortTitle: Dynamically added property optimization
 type: tip
 tags: javascript,object,performance
 author: chalarangelo
-cover: blog_images/mountain-lake-cottage.jpg
+cover: mountain-lake-cottage
 excerpt: Dynamically adding object properties can be pretty slow in some cases. Here's how to optimize it.
 firstSeen: 2022-11-02T05:00:00-04:00
 ---

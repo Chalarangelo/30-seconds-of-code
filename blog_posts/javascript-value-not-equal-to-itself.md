@@ -4,7 +4,7 @@ shortTitle: The only value not equal to itself
 type: question
 tags: javascript,type,comparison
 author: chalarangelo
-cover: blog_images/eagle.jpg
+cover: eagle
 excerpt: Did you know there's a JavaScript value that's not equal to itself?
 firstSeen: 2021-12-12T05:00:00-04:00
 ---

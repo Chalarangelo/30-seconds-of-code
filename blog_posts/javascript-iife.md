@@ -4,7 +4,7 @@ shortTitle: IIFE introduction
 type: question
 tags: javascript,function
 author: chalarangelo
-cover: blog_images/tropical-waterfall.jpg
+cover: tropical-waterfall
 excerpt: An Immediately Invoked Function Expression (IIFE) is a JavaScript trick that trips up many developers. Here's what you need to know.
 firstSeen: 2021-06-12T19:30:41+03:00
 lastUpdated: 2021-06-14T12:00:00+03:00

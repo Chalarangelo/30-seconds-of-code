@@ -4,7 +4,7 @@ shortTitle: Closures and hidden state
 type: story
 tags: javascript,function,closure
 author: chalarangelo
-cover: blog_images/silver-flat-screen.jpg
+cover: silver-flat-screen
 excerpt: Closures are used frequently, yet often misunderstood. Understanding them in depth is crucial to be able to write clean, maintainable code.
 firstSeen: 2022-05-18T05:00:00-04:00
 ---

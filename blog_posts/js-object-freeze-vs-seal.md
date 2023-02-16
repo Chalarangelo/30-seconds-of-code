@@ -4,7 +4,7 @@ shortTitle: Object.freeze() vs Object.seal()
 type: question
 tags: javascript,object
 author: chalarangelo
-cover: blog_images/frozen-globe.jpg
+cover: frozen-globe
 excerpt: Both `Object.freeze()` and `Object.seal()` serve a similar purpose, but there's one key difference you need to remember.
 firstSeen: 2022-02-06T05:00:00-04:00
 ---

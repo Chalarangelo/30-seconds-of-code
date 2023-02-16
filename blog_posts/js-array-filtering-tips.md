@@ -4,7 +4,7 @@ shortTitle: Array filtering tips
 type: story
 tags: javascript,array
 author: chalarangelo
-cover: blog_images/violin.jpg
+cover: violin
 excerpt: A few tips and tricks to help you filter arrays in JavaScript more efficiently.
 firstSeen: 2022-09-28T05:00:00-04:00
 ---

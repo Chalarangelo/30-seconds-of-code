@@ -4,7 +4,7 @@ shortTitle: 'Safeguarding target="_blank"'
 type: tip
 tags: javascript,browser,security
 author: chalarangelo
-cover: blog_images/laptop-with-code.jpg
+cover: laptop-with-code
 excerpt: Opening a link in a new tab comes with a security vulnerability that you may not be aware of. Protect your users with this simple trick.
 firstSeen: 2020-11-20T09:19:07+02:00
 lastUpdated: 2021-06-12T19:30:41+03:00

@@ -4,7 +4,7 @@ shortTitle: Pretty-print JSON
 type: tip
 tags: javascript,object,json
 author: chalarangelo
-cover: blog_images/memories-of-pineapple-3.jpg
+cover: memories-of-pineapple-3
 excerpt: Pretty-printing JSON objects in pretty easy and customizable in JavaScript. Here's the gist of it.
 firstSeen: 2022-07-30T05:00:00-04:00
 ---

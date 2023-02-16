@@ -4,7 +4,7 @@ shortTitle: Labelling useState values
 type: tip
 tags: react,hooks
 author: chalarangelo
-cover: blog_images/bunny-poster.jpg
+cover: bunny-poster
 excerpt: When working with multiple `useState` hooks in React, things can get a bit complicated while debugging. Luckily, there's an easy way to label these values.
 firstSeen: 2021-05-06T12:00:00+03:00
 lastUpdated: 2021-11-07T16:34:37+03:00

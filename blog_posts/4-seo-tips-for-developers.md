@@ -4,7 +4,7 @@ shortTitle: SEO tips
 type: story
 tags: seo,webdev
 author: chalarangelo
-cover: blog_images/sunrise-over-city.jpg
+cover: sunrise-over-city
 excerpt: As time goes by, SEO is becoming increasingly relevant, but most web developers seem to have little experience with it. Here are 4 actionable SEO tips you can implement today.
 firstSeen: 2020-01-17T14:51:15+02:00
 lastUpdated: 2021-06-12T19:30:41+03:00

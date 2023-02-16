@@ -4,7 +4,7 @@ shortTitle: Linked List
 type: story
 tags: javascript,object,class,array
 author: chalarangelo
-cover: blog_images/purple-flower-macro-3.jpg
+cover: purple-flower-macro-3
 excerpt: A linked list is a linear data structure where each element points to the next.
 firstSeen: 2021-08-08T05:00:00-04:00
 ---

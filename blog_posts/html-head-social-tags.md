@@ -4,7 +4,7 @@ shortTitle: HTML social tags template
 type: story
 tags: webdev,html,browser
 author: chalarangelo
-cover: blog_images/boutique-home-office-2.jpg
+cover: boutique-home-office-2
 excerpt: Ensure your HTML documents can be shared on social media by including these lines in your `<head>` element.
 firstSeen: 2023-01-22T05:00:00-04:00
 ---

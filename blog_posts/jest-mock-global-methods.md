@@ -3,7 +3,7 @@ title: Mocking global object methods in Jest
 type: story
 tags: javascript,testing
 author: chalarangelo
-cover: blog_images/trippy-chemicals.jpg
+cover: trippy-chemicals
 excerpt: Testing your code is important, but mocking can be tricky at times. Here's a quick guide on how to mock global object methods in Jest.
 firstSeen: 2022-03-27T05:00:00-04:00
 ---

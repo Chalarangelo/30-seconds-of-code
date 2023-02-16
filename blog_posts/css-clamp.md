@@ -4,7 +4,7 @@ shortTitle: CSS clamp()
 type: tip
 tags: css,visual
 author: chalarangelo
-cover: blog_images/strawberries.jpg
+cover: strawberries
 excerpt: Implement responsive typography with the CSS clamp() function.
 firstSeen: 2022-12-28T05:00:00-04:00
 ---

@@ -4,7 +4,7 @@ shortTitle: Strict mode introduction
 type: question
 tags: javascript,function,object
 author: chalarangelo
-cover: blog_images/palm-tree-house.jpg
+cover: palm-tree-house
 excerpt: JavaScript's strict mode can make your code faster, cleaner and more secure.
 firstSeen: 2021-11-28T05:00:00-04:00
 ---

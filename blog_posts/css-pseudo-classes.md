@@ -4,7 +4,7 @@ shortTitle: CSS pseudo-classes
 type: question
 tags: css,webdev
 author: chalarangelo
-cover: blog_images/orange-flower.jpg
+cover: orange-flower
 excerpt: Learn how to use CSS pseudo-classes to style an element based on changes to its state.
 firstSeen: 2020-08-18T19:56:12+03:00
 lastUpdated: 2021-11-07T16:34:37+03:00

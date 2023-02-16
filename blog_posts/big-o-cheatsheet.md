@@ -3,7 +3,7 @@ title: Big-O Cheat Sheet
 type: cheatsheet
 tags: javascript,algorithm
 author: chalarangelo
-cover: blog_images/light-ring.jpg
+cover: light-ring
 excerpt: Learn everything you need to know about Big-O notation with this handy cheatsheet.
 firstSeen: 2023-01-08T05:00:00-04:00
 ---

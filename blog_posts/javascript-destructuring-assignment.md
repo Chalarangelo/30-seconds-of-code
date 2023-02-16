@@ -4,7 +4,7 @@ shortTitle: Destructuring assignment introduction
 type: question
 tags: javascript,array,object
 author: chalarangelo
-cover: blog_images/building-blocks.jpg
+cover: building-blocks
 excerpt: Learn the basics of the destructuring assignment syntax in JavaScript ES6 and improve your code with this easy guide.
 firstSeen: 2021-02-01T11:00:00+02:00
 lastUpdated: 2021-06-12T19:30:41+03:00

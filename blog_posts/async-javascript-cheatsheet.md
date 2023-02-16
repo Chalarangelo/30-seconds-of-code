@@ -3,7 +3,7 @@ title: Asynchronous JavaScript Cheat Sheet
 type: cheatsheet
 tags: javascript,function,promise
 author: chalarangelo
-cover: blog_images/green-plant.jpg
+cover: green-plant
 excerpt: Learn everything you need to know about promises and asynchronous JavaScript with this handy cheatsheet.
 firstSeen: 2020-08-18T23:05:52+03:00
 lastUpdated: 2021-06-12T19:30:41+03:00

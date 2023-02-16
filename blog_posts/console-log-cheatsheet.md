@@ -3,7 +3,7 @@ title: JavaScript console.log() tips & tricks
 type: story
 tags: javascript,browser,cheatsheet
 author: chalarangelo
-cover: blog_images/terminal.jpg
+cover: terminal
 excerpt: Level up your JavaScript logging with these `console.log()` tips and tricks.
 firstSeen: 2021-02-25T11:00:00+02:00
 lastUpdated: 2021-06-12T19:30:41+03:00

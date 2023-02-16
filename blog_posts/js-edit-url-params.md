@@ -4,7 +4,7 @@ shortTitle: Edit URL Parameters
 type: tip
 tags: javascript,string
 author: chalarangelo
-cover: blog_images/sofia-tram.jpg
+cover: sofia-tram
 excerpt: Avoid the naive approach and use a more robust method to edit URL parameters in JavaScript.
 firstSeen: 2022-12-07T05:00:00-04:00
 ---

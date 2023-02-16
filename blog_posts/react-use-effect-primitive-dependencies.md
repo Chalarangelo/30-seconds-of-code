@@ -4,7 +4,7 @@ shortTitle: Primitive useEffect dependencies
 type: tip
 tags: react,hooks,effect,object,comparison
 author: chalarangelo
-cover: blog_images/automaton.jpg
+cover: automaton
 excerpt: Avoid unnecessary re-runs by using primitive dependencies in your React effect.
 firstSeen: 2022-06-12T05:00:00-04:00
 ---

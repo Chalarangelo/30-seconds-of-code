@@ -4,7 +4,7 @@ shortTitle: Object comparison
 type: question
 tags: javascript,object,comparison
 author: chalarangelo
-cover: blog_images/blue-lake.jpg
+cover: blue-lake
 excerpt: Learn how you can compare two objects in JavaScript using various different techniques.
 firstSeen: 2021-09-26T05:00:00-04:00
 ---

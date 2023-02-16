@@ -4,7 +4,7 @@ shortTitle: Async and defer
 type: question
 tags: javascript,html
 author: chalarangelo
-cover: blog_images/coworking-space.jpg
+cover: coworking-space
 excerpt: Understanding how to correctly load your JavaScript files can significantly improve your web application's performance.
 firstSeen: 2022-09-04T05:00:00-04:00
 ---
