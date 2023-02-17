@@ -21,7 +21,7 @@ const Paginator = ({ paginator: { pageNumber, totalPages, baseUrl } }) => {
       : [1, Math.min(Math.max(pageNumber, 2), totalPages - 1), totalPages];
 
   return (
-    <div className='paginator mt-7 mx-5 mb-6 a-center flex j-center'>
+    <div className='paginator mt-7 mx-auto mb-6 a-center grid j-center'>
       {pageNumber > 1 && (
         <Link href={`${baseUrl}/p/${pageNumber - 1}`}>
           <a
@@ -32,17 +32,19 @@ const Paginator = ({ paginator: { pageNumber, totalPages, baseUrl } }) => {
           </a>
         </Link>
       )}
-      {buttons.map(buttonNumber =>
-        buttonNumber === pageNumber ? (
-          <span className='fs-xl box-border' key={buttonNumber}>
-            {buttonNumber}
-          </span>
-        ) : (
-          <Link key={buttonNumber} href={`${baseUrl}/p/${buttonNumber}`}>
-            <a className='btn action-btn fs-md box-border'>{buttonNumber}</a>
-          </Link>
-        )
-      )}
+      <div className='flex a-center'>
+        {buttons.map(buttonNumber =>
+          buttonNumber === pageNumber ? (
+            <span className='fs-xl box-border' key={buttonNumber}>
+              {buttonNumber}
+            </span>
+          ) : (
+            <Link key={buttonNumber} href={`${baseUrl}/p/${buttonNumber}`}>
+              <a className='btn action-btn fs-md box-border'>{buttonNumber}</a>
+            </Link>
+          )
+        )}
+      </div>
       {pageNumber < totalPages && (
         <Link href={`${baseUrl}/p/${pageNumber + 1}`}>
           <a
