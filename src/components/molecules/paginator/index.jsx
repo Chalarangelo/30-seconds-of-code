@@ -1,59 +1,52 @@
 import Link from 'next/link';
-import literals from 'lang/en/client/paginator';
 
 /**
  * Renders a pagination component.
- * @param {object} paginator - Pagination data fo the component.
+ * @param {object} paginator - Pagination data for the component.
  */
-const Paginator = ({ paginator: { pageNumber, totalPages, baseUrl } }) => {
-  if (totalPages <= 1) return null;
+const Paginator = ({ paginator }) => {
+  if (!paginator) return null;
 
-  /*
-    Up to 3 buttons (apart from next and previous):
-    - page 1: 1·2·{totalPages}
-    - page X: 1·X·{totalPages}
-    - page {totalPages}: 1·{totalPages-1}·{totalPages}
-    - totalPages <= 3: all
-  */
-  let buttons =
-    totalPages === 2
-      ? [1, 2]
-      : [1, Math.min(Math.max(pageNumber, 2), totalPages - 1), totalPages];
+  const { previous, pages, next } = paginator;
 
   return (
     <div className='paginator mt-7 mx-auto mb-6 a-center grid j-center'>
-      {pageNumber > 1 && (
-        <Link href={`${baseUrl}/p/${pageNumber - 1}`}>
+      {previous ? (
+        <Link href={previous.url}>
           <a
             className='btn action-btn previous-page j-center fs-no md:fs-sm icon icon-chevron-left box-border before:fs-md'
             rel='prev'
           >
-            {literals.previous}
+            {previous.label}
           </a>
         </Link>
+      ) : (
+        <div />
       )}
       <div className='flex a-center'>
-        {buttons.map(buttonNumber =>
-          buttonNumber === pageNumber ? (
-            <span className='fs-xl box-border' key={buttonNumber}>
-              {buttonNumber}
+        {pages.map(({ label, url, current }) =>
+          current ? (
+            <span className='fs-xl box-border' key={label}>
+              {label}
             </span>
           ) : (
-            <Link key={buttonNumber} href={`${baseUrl}/p/${buttonNumber}`}>
-              <a className='btn action-btn fs-md box-border'>{buttonNumber}</a>
+            <Link key={label} href={url}>
+              <a className='btn action-btn fs-md box-border'>{label}</a>
             </Link>
           )
         )}
       </div>
-      {pageNumber < totalPages && (
-        <Link href={`${baseUrl}/p/${pageNumber + 1}`}>
+      {next ? (
+        <Link href={next.url}>
           <a
             className='btn action-btn next-page j-center fs-no md:fs-sm icon icon-chevron-right box-border before:fs-md'
             rel='next'
           >
-            {literals.next}
+            {next.label}
           </a>
         </Link>
+      ) : (
+        <div />
       )}
     </div>
   );

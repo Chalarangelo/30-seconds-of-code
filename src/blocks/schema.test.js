@@ -1117,11 +1117,7 @@ describe('Application/Schema', () => {
         const page = Page.records.get('listing_blog/articles_1');
         const pageContext = page.context;
         expect(pageContext.listingName).toEqual('Articles');
-        expect(pageContext.paginator).toEqual({
-          pageNumber: 1,
-          totalPages: 1,
-          baseUrl: '/articles',
-        });
+        expect(pageContext.paginator).toBe(null);
         expect(pageContext.snippetList.length).toEqual(7);
         expect(pageContext.pageDescription).toEqual(
           'Browse 7 code articles for all your development needs on 30 seconds of code.'
