@@ -4,7 +4,11 @@ export const snippetPreviewSerializer = {
   name: 'SnippetPreviewSerializer',
   methods: {
     description: snippet =>
-      snippet.descriptionHtml.trim().replace('<p>', '').replace('</p>', ''),
+      snippet.descriptionHtml
+        .trim()
+        .replace('<p>', '')
+        .replace('</p>', '')
+        .replace(/<a.*?>(.*?)<\/a>/g, '$1'),
     searchTokens: (snippet, { withSearch } = {}) =>
       withSearch ? snippet.searchTokens : undefined,
     searchResultTag: (snippet, { withSearch } = {}) =>
