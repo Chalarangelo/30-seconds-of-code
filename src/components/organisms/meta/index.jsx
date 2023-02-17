@@ -130,14 +130,7 @@ const Meta = ({
       <meta property='og:description' content={metaDescription} />
       <meta property='og:type' content={pageType} />
       <meta property='og:image' content={`${settings.websiteUrl}${logoSrc}`} />
-      <meta name='twitter:site' content={settings.twitterAccount} />
       <meta name='twitter:card' content='summary_large_image' />
-      <meta
-        name='twitter:title'
-        content={title ? `${title}` : literals.siteName}
-      />
-      <meta name='twitter:description' content={metaDescription} />
-      <meta name='twitter:image' content={`${settings.websiteUrl}${logoSrc}`} />
       {scripts.map(({ key, innerHTML, ...rest }) => (
         <script
           key={key}
