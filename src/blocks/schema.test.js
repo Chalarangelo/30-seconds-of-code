@@ -52,13 +52,6 @@ describe('Application/Schema', () => {
       });
     });
 
-    describe('property: vscodeUrlPrefix', () => {
-      it('returns the correct value', () => {
-        const repo = Repository.records.get('30css');
-        expect(repo.vscodeUrlPrefix).toEqual('content/sources/30css/snippets');
-      });
-    });
-
     describe('property: isCSS', () => {
       it('returns true for css repositories', () => {
         const repo = Repository.records.get('30css');
@@ -325,16 +318,6 @@ describe('Application/Schema', () => {
         const snippet = Snippet.records.get('js/s/format-duration');
         expect(snippet.url).toEqual(
           'https://github.com/30-seconds/30-seconds-of-code/blob/master/snippets/formatDuration.md'
-        );
-      });
-    });
-
-    describe('property: vscodeUrl', () => {
-      it('returns the vscode url', () => {
-        const snippet = Snippet.records.get('js/s/format-duration');
-        expect(snippet.vscodeUrl).toContain('vscode://file/');
-        expect(snippet.vscodeUrl).toContain(
-          'content/sources/30code/snippets/formatDuration.md'
         );
       });
     });

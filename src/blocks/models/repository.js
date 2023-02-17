@@ -1,5 +1,3 @@
-import pathSettings from 'settings/paths';
-
 export const repository = {
   name: 'Repository',
   fields: [
@@ -29,8 +27,6 @@ export const repository = {
     sourceDir: repo => `${repo.dirName}/${repo.snippetPath}`,
     slugPrefix: repo => `${repo.slug}/s`,
     repoUrlPrefix: repo => `${repo.repoUrl}/blob/master/${repo.snippetPath}`,
-    vscodeUrlPrefix: repo =>
-      `${pathSettings.rawContentPath}/sources/${repo.sourceDir}`,
     isCSS: repo => repo.id === '30css',
     isReact: repo => repo.id === '30react',
   },
