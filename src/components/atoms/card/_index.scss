@@ -1,12 +1,4 @@
 .card {
-  margin: 1.75rem 0.25rem 1rem;
-  padding: 1.5rem 1rem;
-
-  @media screen and (min-width: $layout-medium-breakpoint) {
-    margin: 1.75rem 0.875rem 1rem;
-    padding: 2rem 1.5rem;
-  }
-
   // Reusable utility for all card titles, including in body (used in articles)
   .card-title {
     &,
@@ -86,24 +78,37 @@
       margin: 0.375rem 0;
     }
   }
-
-  .card-image {
-    object-fit: cover;
-    width: 100%;
-  }
 }
 
 // List item card
 .list-card {
   overflow: hidden;
   grid-template-rows: auto;
-  gap: 24px;
+  gap: 1rem;
   grid-template-columns: 144px auto;
   content-visibility: auto;
-  contain-intrinsic-size: 240px;
+  contain-intrinsic-size: 192px;
 
   @media screen and (min-width: $layout-medium-breakpoint) {
-    padding: 1.5rem;
-    contain-intrinsic-size: 144px;
+    contain-intrinsic-size: 224px;
+    gap: 1.5rem;
+  }
+
+  .card-data {
+    gap: 0.25rem;
+
+    @media screen and (min-width: $layout-medium-breakpoint) {
+      gap: 0.5rem;
+    }
+  }
+
+  // Make entire card clickable
+  h3 > a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
 }
