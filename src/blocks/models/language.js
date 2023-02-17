@@ -20,6 +20,6 @@ export const language = {
   cacheProperties: ['mainRepository', 'slugPrefix', 'tagShortIds'],
   scopes: {
     // Hacky way to exclude the HTML language from the list
-    full: language => language.icon,
+    full: language => language.id !== 'html',
   },
 };
