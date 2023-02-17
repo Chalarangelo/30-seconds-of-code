@@ -17,6 +17,8 @@ export const listingPreviewSerializer = {
       listing.splash
         ? `/${pathSettings.staticAssetPath}/splash/${listing.splash}`
         : `/${pathSettings.staticAssetPath}/splash/laptop-view.png`,
+    snippetCount: listing =>
+      literals.snippetCount(listing.listedSnippets.length),
     url: listing => `${listing.slugPrefix}/p/1`,
     type: () => 'collection',
   },
@@ -27,6 +29,7 @@ export const listingPreviewSerializer = {
     'tags',
     'searchTokens',
     'searchResultTag',
+    ['snippetCount', 'extraContext'],
     'type',
     ['splashUrl', 'cover'],
   ],
