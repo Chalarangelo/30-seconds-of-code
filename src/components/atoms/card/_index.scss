@@ -44,20 +44,7 @@
     }
   }
 
-  // Reusable utility for all card icons
-  .card-icon {
-    width: 3.25rem;
-    height: 3.25rem;
-
-    &:before {
-      position: absolute;
-      top: 0.5rem;
-      left: 0.5rem;
-    }
-  }
-
   .card-description {
-    grid-column: 1/3;
     margin: 0;
 
     > p,
@@ -72,9 +59,7 @@
     }
 
     > p {
-      &:not(.card-fw-section) {
-        margin: 1.5rem 0 0;
-      }
+      margin: 1.5rem 0 0;
 
       &:not(:first-child) {
         margin-top: 1rem;
@@ -102,30 +87,23 @@
     }
   }
 
-  // Card full width section utility
-  .card-fw-section {
-    position: relative;
-    box-sizing: border-box;
-    margin-inline: -1rem;
-    min-width: calc(100% + 2rem);
+  .card-image {
     object-fit: cover;
-
-    @media screen and (min-width: $layout-medium-breakpoint) {
-      margin-inline: -1.5rem;
-      min-width: calc(100% + 3rem);
-    }
+    width: 100%;
   }
 }
 
 // List item card
 .list-card {
   overflow: hidden;
-  grid-template-rows: auto auto;
-  grid-template-columns: 64px auto;
+  grid-template-rows: auto;
+  gap: 24px;
+  grid-template-columns: 144px auto;
   content-visibility: auto;
   contain-intrinsic-size: 240px;
 
   @media screen and (min-width: $layout-medium-breakpoint) {
+    padding: 1.5rem;
     contain-intrinsic-size: 144px;
   }
 }
