@@ -1,0 +1,31 @@
+.list-card {
+  overflow: hidden;
+  grid-template-rows: auto;
+  gap: 1rem;
+  grid-template-columns: 144px auto;
+  content-visibility: auto;
+  contain-intrinsic-size: 192px;
+
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    contain-intrinsic-size: 224px;
+    gap: 1.5rem;
+  }
+
+  .card-data {
+    gap: 0.25rem;
+
+    @media screen and (min-width: $layout-medium-breakpoint) {
+      gap: 0.5rem;
+    }
+  }
+
+  // Make entire card clickable
+  .card-title > a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
