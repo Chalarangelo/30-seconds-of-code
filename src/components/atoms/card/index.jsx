@@ -25,7 +25,8 @@ export const CardSubtitle = memo(({ children }) => (
 
 CardSubtitle.displayName = 'CardSubtitle';
 
-export const cardClassName = 'card srfc-01db txt-100 br-lg';
+export const cardClassName =
+  'card mt-7 mx-1 mb-4 md:mx-3.5 srfc-01db txt-100 br-lg';
 
 // Card
 /**

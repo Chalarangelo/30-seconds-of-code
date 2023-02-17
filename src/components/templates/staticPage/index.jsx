@@ -33,6 +33,7 @@ const StaticPage = ({
           <p className='my-0 mx-3.5 txt-100'>{subtitle}</p>
           {cards.map(({ title, html }, i) => (
             <Card
+              className='px-4 py-6 md:px-6 md:py-8'
               key={i}
               {...(isFaq
                 ? {
@@ -59,7 +60,7 @@ const StaticPage = ({
             </Card>
           ))}
           {cookieSettingCard ? (
-            <Card>
+            <Card className='px-4 py-6 md:px-6 md:py-8'>
               <CardTitle isSecondary>{cookieSettingCard.title}</CardTitle>
               <div className='card-description'>
                 <p>{cookieSettingCard.text}</p>

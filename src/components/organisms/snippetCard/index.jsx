@@ -33,7 +33,7 @@ const SnippetCard = ({ snippet }) => {
   const hasScopeCSS = Boolean(snippet.code && snippet.code.scopedCss);
 
   return (
-    <Card className='snippet-card g-c2'>
+    <Card className='snippet-card g-c2 px-4 py-6 md:px-6 md:py-8'>
       <CardTitle>{snippet.title}</CardTitle>
       <CardSubtitle>
         {snippet.tags}
