@@ -122,15 +122,16 @@ export const snippet = {
         name: clientLiterals.home,
       };
 
-      const languageCrumb = snippet.language
-        ? {
-            url: `${snippet.language.slugPrefix}/p/1`,
-            name: snippet.language.name,
-          }
-        : {
-            url: `/articles/p/1`,
-            name: literals.blog,
-          };
+      const languageCrumb =
+        snippet.language && snippet.language.id !== 'html'
+          ? {
+              url: `${snippet.language.slugPrefix}/p/1`,
+              name: snippet.language.name,
+            }
+          : {
+              url: `/articles/p/1`,
+              name: literals.blog,
+            };
 
       let tagCrumb = null;
       if (!snippet.isBlog) {
