@@ -264,11 +264,11 @@ export class MarkdownParser {
         (match, openTag, imgSrc, imgRest) => {
           const imgName = imgSrc.slice(0, imgSrc.lastIndexOf('.'));
           if (imgSrc.endsWith('.png') || imgSrc.endsWith('.svg')) {
-            return `<img class="card-fw-section" src="${assetPath}/${imgSrc}"${imgRest}>`;
+            return `<img src="${assetPath}/${imgSrc}"${imgRest}>`;
           }
           return `<picture>
             <source type="image/webp" srcset="${assetPath}/${imgName}.webp">
-            <img class="card-fw-section" src="${assetPath}/${imgSrc}"${imgRest}>
+            <img src="${assetPath}/${imgSrc}"${imgRest}>
           </picture>`;
         }
       );
