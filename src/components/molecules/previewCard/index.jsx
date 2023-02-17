@@ -1,10 +1,6 @@
+import Image from 'components/atoms/image';
 import Link from 'next/link';
-import {
-  CardIcon,
-  CardTitle,
-  CardSubtitle,
-  cardClassName,
-} from 'components/atoms/card';
+import { CardTitle, CardSubtitle, cardClassName } from 'components/atoms/card';
 
 /**
  * General-purpose snippet/collection preview card.
@@ -13,20 +9,27 @@ import {
  * @param {object} contentItem - Snippet or collection object for the card.
  */
 const PreviewCard = ({ contentItem }) => (
-  <li className={`${cardClassName} list-card grid`}>
-    <CardIcon icon={contentItem.icon} type={contentItem.type} />
-    <div className='card-data mx-2 my-0'>
+  <li className={`${cardClassName} list-card grid a-center`}>
+    <Image
+      className='br-md'
+      src={contentItem.cover}
+      alt=''
+      height='144'
+      width='144'
+      fetchpriority='high'
+    />
+    <div className='flex flex-col gap-2'>
       <CardTitle isSecondary>
         <Link href={contentItem.url}>
           <a className='inherit'>{contentItem.title}</a>
         </Link>
       </CardTitle>
+      <p
+        className='mx-0 my-2 f-clamp'
+        dangerouslySetInnerHTML={{ __html: `${contentItem.description}` }}
+      />
       <CardSubtitle>{contentItem.tags}</CardSubtitle>
     </div>
-    <div
-      className='card-description'
-      dangerouslySetInnerHTML={{ __html: `${contentItem.description}` }}
-    />
   </li>
 );
 
