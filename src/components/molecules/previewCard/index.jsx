@@ -28,7 +28,11 @@ const PreviewCard = ({ contentItem }) => (
         className='mx-0 my-2 f-clamp'
         dangerouslySetInnerHTML={{ __html: `${contentItem.description}` }}
       />
-      <CardSubtitle>{contentItem.tags}</CardSubtitle>
+      <CardSubtitle>
+        {contentItem.tags}
+        {' · '}
+        <span className='inline-block'>{contentItem.extraContext}</span>
+      </CardSubtitle>
     </div>
   </li>
 );

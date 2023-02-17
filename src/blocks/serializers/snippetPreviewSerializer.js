@@ -17,6 +17,12 @@ export const snippetPreviewSerializer = {
       snippet.cover
         ? `/${pathSettings.staticAssetPath}/preview/${snippet.cover}.jpg`
         : undefined,
+    dateFormatted: snippet =>
+      snippet.lastUpdated.toLocaleDateString('en-US', {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+      }),
     type: () => 'snippet',
   },
   attributes: [
@@ -25,6 +31,7 @@ export const snippetPreviewSerializer = {
     ['slug', 'url'],
     'description',
     ['formattedPreviewTags', 'tags'],
+    ['dateFormatted', 'extraContext'],
     'searchTokens',
     'searchResultTag',
     'type',
