@@ -1,4 +1,3 @@
-import path from 'path';
 import { convertToSeoSlug, uniqueElements, stripMarkdownFormat } from 'utils';
 import { Ranker } from 'blocks/utilities/ranker';
 import { Recommender } from 'blocks/utilities/recommender';
@@ -87,11 +86,6 @@ export const snippet = {
     titleSlug: snippet => convertToSeoSlug(snippet.title),
     fileSlug: snippet => convertToSeoSlug(snippet.fileName.slice(0, -3)),
     url: snippet => `${snippet.repository.repoUrlPrefix}/${snippet.fileName}`,
-    vscodeUrl: snippet =>
-      `vscode://file/${path.resolve(
-        snippet.repository.vscodeUrlPrefix,
-        snippet.fileName
-      )}`,
     actionType: snippet => {
       if (snippet.isBlog) return undefined;
       if (snippet.isCSS || snippet.isReact) return 'codepen';
