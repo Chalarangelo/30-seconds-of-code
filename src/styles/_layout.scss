@@ -27,7 +27,9 @@
   box-sizing: border-box;
 }
 .ar-wide {
+  width: 100%;
   aspect-ratio: 2;
+  object-fit: cover;
 }
 // 2 matches the spacing conventions
 .gap-2 {

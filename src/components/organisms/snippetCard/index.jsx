@@ -41,7 +41,7 @@ const SnippetCard = ({ snippet }) => {
         <span className='inline-block'>{snippet.date}</span>
       </CardSubtitle>
       <Image
-        className='ar-wide mt-5 card-image br-md'
+        className='ar-wide mt-5 br-md'
         src={snippet.cover}
         alt=''
         height='180'
