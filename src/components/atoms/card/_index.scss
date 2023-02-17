@@ -12,7 +12,6 @@
     &,
     & a {
       font-weight: 500;
-      line-height: 2rem;
     }
 
     &.linkable {
@@ -21,6 +20,7 @@
         top: 0;
         left: -14px;
         width: 14px;
+        height: 100%;
         opacity: 0;
         transition: opacity 0.1s ease-in-out;
 

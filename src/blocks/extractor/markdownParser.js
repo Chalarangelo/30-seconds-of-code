@@ -44,7 +44,7 @@ const commonTransformers = [
       const fontClasses = lvl === 3 ? 'fs-lg md:fs-xl' : 'fs-md md:fs-lg';
       const id = convertToValidId(title);
       return `<h${lvl} class="card-title linkable relative mt-6 mx-0 mb-0 txt-150 f-alt ${fontClasses}">
-        <a href="#${id}" id="${id}" class="fs-sm no-animation"></a>
+        <a href="#${id}" id="${id}" class="fs-sm no-animation flex flex-col j-center"></a>
         ${title}
       </h${lvl}>`;
     },
