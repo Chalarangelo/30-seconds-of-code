@@ -1,40 +1,37 @@
 .paginator {
+  grid-template-columns: 52px 1fr 52px;
+  width: fit-content;
+  gap: 0.5rem;
+
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    grid-template-columns: 128px 1fr 128px;
+  }
+
   .btn,
   a.btn,
   span {
+    margin: 0;
     min-width: 44px;
     text-align: center;
   }
 
+  div {
+    gap: 0.5rem;
+  }
+
   .previous-page,
   .next-page {
+    margin: 0;
     color: var(--clr-primary-050);
     display: flex;
+    gap: 0.25rem;
   }
 
   .previous-page {
     flex-direction: row;
-
-    @media screen and (min-width: $layout-medium-breakpoint) {
-      padding-right: 1.125rem;
-
-      &:before {
-        padding-right: 0.25rem;
-        margin-left: -0.25rem;
-      }
-    }
   }
 
   .next-page {
     flex-direction: row-reverse;
-
-    @media screen and (min-width: $layout-medium-breakpoint) {
-      padding-left: 1.125rem;
-
-      &:before {
-        padding-left: 0.25rem;
-        margin-right: -0.25rem;
-      }
-    }
   }
 }
