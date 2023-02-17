@@ -3,7 +3,8 @@ import pathSettings from 'settings/paths';
 export const snippetPreviewSerializer = {
   name: 'SnippetPreviewSerializer',
   methods: {
-    description: snippet => snippet.descriptionHtml.trim(),
+    description: snippet =>
+      snippet.descriptionHtml.trim().replace('<p>', '').replace('</p>', ''),
     searchTokens: (snippet, { withSearch } = {}) =>
       withSearch ? snippet.searchTokens : undefined,
     searchResultTag: (snippet, { withSearch } = {}) =>

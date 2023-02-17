@@ -5,7 +5,9 @@ export const listingPreviewSerializer = {
   name: 'ListingPreviewSerializer',
   methods: {
     description: (listing, { withDescription } = {}) =>
-      withDescription ? listing.shortDescription : undefined,
+      withDescription
+        ? listing.shortDescription.replace('<p>', '').replace('</p>', '')
+        : undefined,
     tags: () => literals.snippetCollection,
     searchTokens: (listing, { withSearch } = {}) =>
       withSearch ? listing.searchTokens : undefined,
