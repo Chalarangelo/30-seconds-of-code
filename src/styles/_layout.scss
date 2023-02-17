@@ -29,6 +29,10 @@
 .ar-wide {
   aspect-ratio: 2;
 }
+// 2 matches the spacing conventions
+.gap-2 {
+  gap: 0.5rem;
+}
 
 // Content container
 .content {
