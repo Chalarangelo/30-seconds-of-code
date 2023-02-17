@@ -112,3 +112,25 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+// Additional responsive spacing (only as needed)
+@media screen and (min-width: $layout-medium-breakpoint) {
+  .md\:mx-3\.5 {
+    margin-left: var(--s-3-5);
+    margin-right: var(--s-3-5);
+  }
+
+  .md\:p-6 {
+    padding: var(--s-6);
+  }
+
+  .md\:px-6 {
+    padding-left: var(--s-6);
+    padding-right: var(--s-6);
+  }
+
+  .md\:py-8 {
+    padding-top: var(--s-8);
+    padding-bottom: var(--s-8);
+  }
+}
