@@ -6,7 +6,10 @@ export const listingPreviewSerializer = {
   methods: {
     description: (listing, { withDescription } = {}) =>
       withDescription
-        ? listing.shortDescription.replace('<p>', '').replace('</p>', '')
+        ? listing.shortDescription
+            .replace('<p>', '')
+            .replace('</p>', '')
+            .replace(/<a.*?>(.*?)<\/a>/g, '$1')
         : undefined,
     tags: () => literals.snippetCollection,
     searchTokens: (listing, { withSearch } = {}) =>
