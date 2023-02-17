@@ -17,7 +17,6 @@ const ListingPage = ({
   snippetList,
   listingName,
   listingDescription,
-  listingImage,
   listingSublinks = [],
   listingCover,
   pageDescription,
@@ -35,7 +34,7 @@ const ListingPage = ({
       <div className='snippet-list-header g-c1'>
         <div className='snippet-list-splash-image my-2 mx-3.5 f-center'>
           <Image
-            src={listingImage}
+            src={listingCover}
             alt=''
             height='240'
             width='240'
