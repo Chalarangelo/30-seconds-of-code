@@ -25,6 +25,7 @@ const SnippetPage = ({
         structuredData={structuredData}
         breadcrumbsData={breadcrumbs}
         canonical={snippet.slug}
+        pageType='article'
       />
       <Shell>
         <Breadcrumbs breadcrumbs={breadcrumbs} />
