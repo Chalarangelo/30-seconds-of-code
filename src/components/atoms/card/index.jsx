@@ -6,8 +6,8 @@ export const CardTitle = memo(({ isSecondary = false, children, ...rest }) => {
 
   return (
     <H
-      className={`card-title m-0 txt-200 fs-lg md:fs-xl f-alt f-ellipsis ${
-        isSecondary ? 'f-clamp' : ''
+      className={`card-title txt-200 fs-lg md:fs-xl f-alt f-ellipsis ${
+        isSecondary ? 'f-clamp m-0' : 'mt-0 mx-0 mb-1'
       }`}
       {...rest}
     >
