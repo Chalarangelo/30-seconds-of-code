@@ -52,6 +52,7 @@ factory
     tags: '',
     icon: '',
     description: '<p></p>',
+    cover: 'static/assets/blog_images/an-image.jpg',
     url: '',
     searchTokens: '',
   }))
@@ -108,6 +109,7 @@ factory
       all: [],
     },
     fullDescription: '<p></p>',
+    cover: 'static/assets/blog_images/an-image.jpg',
     codeBlocks: [],
     actionType: 'copy',
     code: {
@@ -257,7 +259,6 @@ factory
       name: 'Angelos Chalaris',
       profile: 'https://twitter.com/chalarangelo',
     },
-    cover: 'static/assets/blog_images/an-image.jpg',
   }))
   // Search
   .trait('search result', () => ({ score: Math.random() }));

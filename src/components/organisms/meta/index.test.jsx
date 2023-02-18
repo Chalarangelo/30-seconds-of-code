@@ -42,17 +42,8 @@ describe('<Meta />', () => {
 
   it('should render the correct Twitter meta tags', () => {
     expect(
-      document.head.querySelector('meta[name="twitter:site"]').content
-    ).toBe(settings.twitterAccount);
-    expect(
       document.head.querySelector('meta[name="twitter:card"]').content
     ).toBe('summary_large_image');
-    expect(
-      document.head.querySelector('meta[name="twitter:title"]').content
-    ).toBe(literals.siteName);
-    expect(
-      document.head.querySelector('meta[name="twitter:description"]').content
-    ).toBe(literals.siteDescription);
   });
 
   it('should render a link tag to Google Analytics', () => {
@@ -87,18 +78,6 @@ describe('<Meta />', () => {
       ).toBe(metadata.description);
       expect(
         document.head.querySelector('meta[property="og:image"]').content
-      ).toBe(`${settings.websiteUrl}${metadata.logoSrc}`);
-    });
-
-    it('should render the correct Twitter meta tags', () => {
-      expect(
-        document.head.querySelector('meta[name="twitter:title"]').content
-      ).toBe(metadata.title);
-      expect(
-        document.head.querySelector('meta[name="twitter:description"]').content
-      ).toBe(metadata.description);
-      expect(
-        document.head.querySelector('meta[name="twitter:image"]').content
       ).toBe(`${settings.websiteUrl}${metadata.logoSrc}`);
     });
 
