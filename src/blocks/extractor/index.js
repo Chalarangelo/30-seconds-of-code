@@ -42,6 +42,7 @@ export class Extractor {
         // Exclude specific keys
         /* eslint-disable no-unused-vars */
         const {
+          dirName,
           tagIcons,
           slugPrefix,
           secondLanguage,

@@ -2,7 +2,6 @@
 
 export const repo30blog = {
   name: '30 seconds Blog',
-  dirName: '30blog',
   repoUrl: 'https://github.com/30-seconds/30-seconds-blog',
   snippetPath: 'blog_posts',
   slug: 'articles',
@@ -21,7 +20,6 @@ export const repo30blog = {
 
 export const repo30code = {
   name: '30 seconds of code',
-  dirName: '30code',
   repoUrl: 'https://github.com/30-seconds/30-seconds-of-code',
   snippetPath: 'snippets',
   slug: 'js',
@@ -39,7 +37,6 @@ export const repo30code = {
 
 export const repo30css = {
   name: '30 seconds of CSS',
-  dirName: '30css',
   repoUrl: 'https://github.com/30-seconds/30-seconds-of-css',
   snippetPath: 'snippets',
   slug: 'css',
@@ -57,7 +54,6 @@ export const repo30css = {
 
 export const repo30react = {
   name: '30 seconds of React',
-  dirName: '30react',
   repoUrl: 'https://github.com/30-seconds/30-seconds-of-react',
   snippetPath: 'snippets',
   slug: 'react',
