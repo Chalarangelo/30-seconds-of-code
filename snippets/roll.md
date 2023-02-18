@@ -1,7 +1,7 @@
 ---
 title: Rotate list elements
 tags: list
-cover: blog_images/colorful-pots.jpg
+cover: colorful-pots
 firstSeen: 2020-11-02T19:15:44+02:00
 lastUpdated: 2020-11-02T19:15:44+02:00
 ---

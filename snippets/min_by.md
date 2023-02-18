@@ -1,7 +1,7 @@
 ---
 title: Min list value based on function
 tags: math,list
-cover: blog_images/purple-flower-field.jpg
+cover: purple-flower-field
 firstSeen: 2019-08-20T15:42:41+03:00
 lastUpdated: 2020-11-02T19:28:27+02:00
 ---

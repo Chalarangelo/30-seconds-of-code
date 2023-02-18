@@ -1,8 +1,7 @@
 ---
 title: Find keys with value
 tags: dictionary
-author: maciv
-cover: blog_images/laptop-plants-2.jpg
+cover: laptop-plants-2
 firstSeen: 2020-04-16T19:17:13+03:00
 lastUpdated: 2020-11-02T19:27:53+02:00
 ---

@@ -2,7 +2,7 @@
 title: Collection is empty
 tags: list,dictionary,string
 author: chalarangelo
-cover: blog_images/salad-1.jpg
+cover: salad-1
 firstSeen: 2023-01-12T05:00:00-04:00
 ---
 

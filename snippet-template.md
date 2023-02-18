@@ -1,7 +1,7 @@
 ---
 title: Function name
 tags: utility
-cover: blog_images/image.jpg
+cover: image
 firstSeen: 2021-06-13T05:00:00-04:00
 ---
 

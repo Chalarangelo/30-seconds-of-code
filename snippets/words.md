@@ -1,8 +1,7 @@
 ---
 title: String to words
 tags: string,regexp
-author: maciv
-cover: blog_images/rocky-lake.jpg
+cover: rocky-lake
 firstSeen: 2020-10-04T00:35:00+03:00
 lastUpdated: 2020-11-02T19:28:35+02:00
 ---

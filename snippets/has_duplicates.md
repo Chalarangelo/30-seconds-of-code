@@ -1,7 +1,7 @@
 ---
 title: Check for duplicates in list
 tags: list
-cover: blog_images/jars-on-shelf-2.jpg
+cover: jars-on-shelf-2
 firstSeen: 2018-04-01T11:03:09+03:00
 lastUpdated: 2020-11-02T19:28:05+02:00
 ---

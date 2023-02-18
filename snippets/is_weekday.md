@@ -1,8 +1,7 @@
 ---
 title: Date is weekday
 tags: date
-author: maciv
-cover: blog_images/succulent-4.jpg
+cover: succulent-4
 firstSeen: 2020-10-28T16:20:18+02:00
 lastUpdated: 2020-11-02T19:28:05+02:00
 ---

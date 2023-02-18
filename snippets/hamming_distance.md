@@ -1,8 +1,7 @@
 ---
 title: Hamming distance
 tags: math
-author: maciv
-cover: blog_images/tulips-and-reeds.jpg
+cover: tulips-and-reeds
 firstSeen: 2021-01-17T13:04:06+02:00
 lastUpdated: 2021-02-18T14:22:25+02:00
 ---

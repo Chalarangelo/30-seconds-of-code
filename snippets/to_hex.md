@@ -1,7 +1,7 @@
 ---
 title: Number to hex
 tags: math
-cover: blog_images/green-plant.jpg
+cover: green-plant
 firstSeen: 2020-10-09T09:45:47+03:00
 lastUpdated: 2020-10-09T09:45:47+03:00
 ---

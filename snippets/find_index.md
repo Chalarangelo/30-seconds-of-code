@@ -1,7 +1,7 @@
 ---
 title: Find matching index
 tags: list
-cover: blog_images/book-chair.jpg
+cover: book-chair
 firstSeen: 2020-03-10T22:38:48+02:00
 lastUpdated: 2020-11-02T19:27:53+02:00
 ---
