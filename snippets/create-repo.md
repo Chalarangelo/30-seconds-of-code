@@ -1,8 +1,7 @@
 ---
 title: Create a new repository
 tags: repository
-author: maciv
-cover: blog_images/violin.jpg
+cover: violin
 firstSeen: 2021-04-04T14:04:05+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

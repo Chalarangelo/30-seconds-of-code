@@ -2,7 +2,7 @@
 title: Automate upstream branch creation
 tags: configuration,repository
 author: chalarangelo
-cover: blog_images/violin.jpg
+cover: violin
 firstSeen: 2022-10-19T05:00:00-04:00
 ---
 

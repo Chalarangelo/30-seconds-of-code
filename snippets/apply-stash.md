@@ -2,7 +2,7 @@
 title: Apply a stash
 tags: repository,stash
 author: chalarangelo
-cover: blog_images/obelisk.jpg
+cover: obelisk
 firstSeen: 2021-04-13T19:36:57+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

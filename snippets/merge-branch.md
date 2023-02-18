@@ -1,8 +1,7 @@
 ---
 title: Merge a branch
 tags: repository,branch
-author: maciv
-cover: blog_images/sparkles.jpg
+cover: sparkles
 firstSeen: 2021-04-04T21:50:11+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---

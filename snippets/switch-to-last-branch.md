@@ -1,8 +1,7 @@
 ---
 title: Return to previous branch
 tags: branch
-author: maciv
-cover: blog_images/beach-riders.jpg
+cover: beach-riders
 firstSeen: 2021-04-04T14:13:31+03:00
 lastUpdated: 2021-04-13T21:10:59+03:00
 ---
