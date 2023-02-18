@@ -3,7 +3,7 @@ title: Typographic scale basics
 type: story
 tags: css,webdev,typography
 author: chalarangelo
-cover: blog_images/typography.jpg
+cover: typography
 excerpt: Typography might seem intimidating, but you can quickly and easily create a simple typographic scale with this basic technique.
 firstSeen: 2020-08-18T19:27:17+03:00
 lastUpdated: 2021-11-07T16:34:37+03:00
@@ -21,7 +21,7 @@ While this gives us a pretty solid setup, some elements might not look properly 
 
 Putting it all together, we should end up with a typographic scale that looks similar to this:
 
-![Typographic scale example](./blog_images/typography-example.png)
+![Typographic scale example](./illustrations/typography-example.png)
 
 ```css
 :root {

@@ -4,7 +4,7 @@ shortTitle: Promises introduction
 type: question
 tags: javascript,function,promise
 author: chalarangelo
-cover: blog_images/sail-away.jpg
+cover: sail-away
 excerpt: JavaScript's promises represent the eventual completion (or failure) of asynchronous operations and their resulting value.
 firstSeen: 2021-10-24T05:00:00-04:00
 ---

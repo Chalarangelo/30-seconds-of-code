@@ -34,8 +34,7 @@ In order to create a new snippet, you should follow the steps below:
 - Snippet types must be one of the following: `story`, `list`, `tip`, `cheatsheet` or `question`.
 - Snippet tags must be comma-separated. You are allowed to specify a single language tag (e.g. `react` or `javascript`), preferably as the first tag.
 - Snippets must have their `firstSeen` dates formatted using [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601).
-- Snippet authors must be added in JSON format as seen in `blog_data/blog_authors.json`.
-- Snippet covers must be added inside the `blog_images` directory and have the exact same name as the snippet filename. Snippet covers must be Unsplash images of appropriate theme and content and their links must be provided as part of the PR, so that they can be added to the appropriate collection.
+- Snippet authors must be added in JSON format as seen in `blog_data/blog_authors.json`. Snippet covers must be Unsplash images of appropriate theme and content and their links must be provided as part of the PR, so that they can be added to the appropriate collection.
 - Snippet excerpts must be a very short description of the snippet's content, up to 180 characters in length. The excerpt must contain some of the main keywords and a general intro to the snippet, as it will be used for social sharing and previewing the snippet itself.
 - Snippets that are of the `list` type must be written as such, check previously submitted snippets for more details.
 - Snippet code and examples must be enclosed in appropriate, language-tagged blocks, be short and use modern techniques and features. Also make sure to test your code before submitting. Always use soft tabs (2 spaces), never hard tabs.

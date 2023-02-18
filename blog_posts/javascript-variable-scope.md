@@ -4,7 +4,7 @@ shortTitle: Variables and scopes
 type: story
 tags: javascript,type,variable
 author: chalarangelo
-cover: blog_images/periscope.jpg
+cover: periscope
 excerpt: JavaScript developers often get confused by JavaScript's variables and scope. Here's a quick guide to understanding and remembering everything related to these concepts.
 firstSeen: 2020-05-18T22:28:17+03:00
 lastUpdated: 2021-06-12T19:30:41+03:00
@@ -20,7 +20,7 @@ JavaScript provides two ways to define a variable (`var` and `let`) and one way 
 
 It is generally preferred to use `let` and `const` to avoid confusion when it comes to scoping. However, it is important to note that `var` can be a useful JavaScript feature when used in the correct circumstances.
 
-![Visualization of JavaScript variable scope](./blog_images/js-variable-scope.png)
+![Visualization of JavaScript variable scope](./illustrations/js-variable-scope.png)
 
 ### Scope
 

@@ -4,7 +4,7 @@ shortTitle: Boolean function use-cases
 type: question
 tags: javascript,function,type
 author: chalarangelo
-cover: blog_images/rocky-lake.jpg
+cover: rocky-lake
 excerpt: JavaScript's built-in Boolean function can be very useful for truth-checking data among other things. Learn how to use it and level up your code today.
 firstSeen: 2020-09-18T16:28:30+03:00
 lastUpdated: 2021-06-12T19:30:41+03:00

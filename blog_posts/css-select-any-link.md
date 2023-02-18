@@ -4,7 +4,7 @@ shortTitle: "CSS :any-link pseudo-class"
 type: tip
 tags: css,visual,interactivity
 author: chalarangelo
-cover: blog_images/round-leaves.jpg
+cover: round-leaves
 excerpt: You can use a CSS pseudo-class selector to style all links in a page, without worrying if they have been visited or not.
 firstSeen: 2022-03-06T05:00:00-04:00
 ---

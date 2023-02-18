@@ -4,7 +4,7 @@ shortTitle: Lists vs Tuples
 type: question
 tags: python,list
 author: chalarangelo
-cover: blog_images/red-mountain.jpg
+cover: red-mountain
 excerpt: Learn how Python's lists and tuples are different and level up your code today.
 firstSeen: 2020-08-08T14:54:56+03:00
 lastUpdated: 2021-06-12T19:30:41+03:00

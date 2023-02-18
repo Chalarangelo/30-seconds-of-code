@@ -4,7 +4,7 @@ shortTitle: Python 3 and pip 3 setup
 type: tip
 tags: python,setup
 author: chalarangelo
-cover: blog_images/avocado-slices.jpg
+cover: avocado-slices
 excerpt: A very common problem when working with Python is having to remember the correct version. Luckily, there's an easy fix for that.
 firstSeen: 2021-06-07T12:00:00+03:00
 lastUpdated: 2021-06-12T19:30:41+03:00

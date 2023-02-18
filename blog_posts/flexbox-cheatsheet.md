@@ -3,7 +3,7 @@ title: Flexbox Cheat Sheet
 type: cheatsheet
 tags: css,layout,flexbox,cheatsheet
 author: chalarangelo
-cover: blog_images/frames.jpg
+cover: frames
 excerpt: Flexbox allows you to create fluid layouts easily. If you find yourself constantly looking up the syntax or how it work, this handy cheatsheet is all you need.
 firstSeen: 2020-05-02T00:21:49+03:00
 lastUpdated: 2021-06-12T19:30:41+03:00
@@ -54,7 +54,7 @@ lastUpdated: 2021-06-12T19:30:41+03:00
   - `space-evenly`: distribute items evenly, ensuring equal space between any two items
   - `stretch`: distribute items evenly, stretching auto-sized items to fit the container
 
-![Diagram of Flexbox properties](./blog_images/flexbox-diagram.png)
+![Diagram of Flexbox properties](./illustrations/flexbox-diagram.png)
 
 ### Items
 

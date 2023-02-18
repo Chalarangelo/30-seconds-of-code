@@ -4,7 +4,7 @@ shortTitle: Expressions and statements
 type: question
 tags: javascript,type
 author: chalarangelo
-cover: blog_images/forest-balcony.jpg
+cover: forest-balcony
 excerpt: JavaScript distinguishes expressions and statements. Learn their differences in this short article.
 firstSeen: 2021-11-07T05:00:00-04:00
 ---

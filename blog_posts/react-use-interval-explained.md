@@ -4,7 +4,7 @@ shortTitle: Step-by-step useInterval hook
 type: story
 tags: react,hooks,effect
 author: chalarangelo
-cover: blog_images/clock.jpg
+cover: clock
 excerpt: Wrapping your mind around React hooks and how they interact with `setInterval()` can be difficult. Here's a guide to get you started.
 firstSeen: 2021-04-15T12:00:00+03:00
 lastUpdated: 2021-09-28T19:59:51+03:00

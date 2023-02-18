@@ -4,7 +4,7 @@ shortTitle: String is empty
 type: question
 tags: python,string
 author: chalarangelo
-cover: blog_images/tea-laptop-table.jpg
+cover: tea-laptop-table
 excerpt: Here are two quick and elegant ways to check if a string is empty in Python.
 firstSeen: 2022-08-05T05:00:00-04:00
 ---

@@ -4,7 +4,7 @@ shortTitle: Higher-order functions
 type: story
 tags: javascript,function
 author: chalarangelo
-cover: blog_images/rock-climbing.jpg
+cover: rock-climbing
 excerpt: Learn everything you need to know about higher-order functions with this short guide and level up your programming skills.
 firstSeen: 2020-09-24T12:54:08+03:00
 lastUpdated: 2021-11-07T16:34:37+03:00

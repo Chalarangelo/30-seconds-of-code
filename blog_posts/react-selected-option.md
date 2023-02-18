@@ -3,8 +3,7 @@ title: How can I set the value of a select input in React?
 shortTitle: Select input value
 type: question
 tags: react,components,input
-author: maciv
-cover: blog_images/two-doors.jpg
+cover: two-doors
 excerpt: Learn of all the different ways to set the value of a selected input in React with this quick guide.
 firstSeen: 2020-09-01T00:25:32+03:00
 lastUpdated: 2021-06-12T19:30:41+03:00

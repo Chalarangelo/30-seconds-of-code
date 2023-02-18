@@ -4,7 +4,7 @@ shortTitle: CSS easing variables
 type: tip
 tags: css,animation
 author: chalarangelo
-cover: blog_images/curve.jpg
+cover: curve
 excerpt: Learn how to use the `cubic-bezier()` class of easing functions and create beautiful animations that stand out.
 firstSeen: 2020-12-30T16:13:58+02:00
 lastUpdated: 2021-06-12T19:30:41+03:00

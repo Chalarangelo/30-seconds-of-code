@@ -4,7 +4,7 @@ shortTitle: Pure functions & randomness
 type: story
 tags: javascript,function,random,testing
 author: chalarangelo
-cover: blog_images/do-more-computer.jpg
+cover: do-more-computer
 excerpt: Randomness and pure functions don't seem to go hand in hand. But where there's a will, there's a way.
 firstSeen: 2022-06-19T05:00:00-04:00
 ---

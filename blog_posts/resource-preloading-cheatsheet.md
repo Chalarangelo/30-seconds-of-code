@@ -3,7 +3,7 @@ title: Resource Preloading Cheat Sheet
 type: cheatsheet
 tags: webdev,html,browser
 author: chalarangelo
-cover: blog_images/folded-map.jpg
+cover: folded-map
 excerpt: Preloading content is one of many ways to improve your website's performance.
 firstSeen: 2022-10-12T05:00:00-04:00
 ---

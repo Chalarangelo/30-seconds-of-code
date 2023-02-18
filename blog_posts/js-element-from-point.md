@@ -4,7 +4,7 @@ shortTitle: Element at specific coordinates
 type: tip
 tags: javascript,browser
 author: chalarangelo
-cover: blog_images/armchair-in-yellow.jpg
+cover: armchair-in-yellow
 excerpt: Using `Document.elementFromPoint()` to easily get the element at a specific point on the page.
 firstSeen: 2022-12-18T05:00:00-04:00
 ---

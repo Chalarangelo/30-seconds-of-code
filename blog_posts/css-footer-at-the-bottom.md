@@ -4,7 +4,7 @@ shortTitle: Footer at the bottom
 type: question
 tags: css,layout
 author: chalarangelo
-cover: blog_images/flower-shape-sunset.jpg
+cover: flower-shape-sunset
 excerpt: Make sure the footer stays at the bottom of the page, instead of floating up when the content is too short.
 firstSeen: 2022-10-30T05:00:00-04:00
 ---

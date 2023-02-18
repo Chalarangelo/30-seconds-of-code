@@ -4,7 +4,7 @@ shortTitle: String contains substring
 type: story
 tags: javascript,string
 author: chalarangelo
-cover: blog_images/sea-view-2.jpg
+cover: sea-view-2
 excerpt: Let's have a look at how to check if a string contains a substring in JavaScript.
 firstSeen: 2022-07-27T05:00:00-04:00
 ---

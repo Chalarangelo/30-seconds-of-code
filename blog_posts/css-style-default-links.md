@@ -4,7 +4,7 @@ shortTitle: Style default links
 type: tip
 tags: css,visual,interactivity
 author: chalarangelo
-cover: blog_images/citrus-drink.jpg
+cover: citrus-drink
 excerpt: A short summary of your story up to 180 characters long.
 firstSeen: 2022-11-23T05:00:00-04:00
 ---

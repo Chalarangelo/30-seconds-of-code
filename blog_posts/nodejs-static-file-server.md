@@ -4,7 +4,7 @@ shortTitle: Node.js static file server
 type: story
 tags: javascript,node,server
 author: chalarangelo
-cover: blog_images/man-cup-laptop.jpg
+cover: man-cup-laptop
 excerpt: Create your own static file server with Node.js in just 70 lines of code.
 firstSeen: 2022-06-05T05:00:00-04:00
 ---

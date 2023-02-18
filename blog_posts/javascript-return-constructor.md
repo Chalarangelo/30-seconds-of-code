@@ -4,7 +4,7 @@ shortTitle: Constructor return value
 type: question
 tags: javascript,function,class,object
 author: chalarangelo
-cover: blog_images/architectural.jpg
+cover: architectural
 excerpt: The constructor is arguably the most crucial part of any JavaScript class, which is why you might want to take a closer look at what they return.
 firstSeen: 2020-09-30T19:35:32+03:00
 lastUpdated: 2021-06-12T19:30:41+03:00

@@ -4,7 +4,7 @@ shortTitle: Responsive dark mode favicon
 type: question
 tags: css,visual
 author: chalarangelo
-cover: blog_images/dark-mode.jpg
+cover: dark-mode
 excerpt: Learn how to create a custom responsive favicon that can adapt its color palette for dark mode with this quick guide.
 firstSeen: 2020-11-27T13:25:30+02:00
 lastUpdated: 2021-09-28T19:40:01+03:00

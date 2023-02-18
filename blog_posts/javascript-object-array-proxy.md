@@ -4,7 +4,7 @@ shortTitle: Object as array
 type: question
 tags: javascript,object,array,proxy,iterator,pattern
 author: chalarangelo
-cover: blog_images/birds.jpg
+cover: birds
 excerpt: Learn how you can leverage the Proxy object to use a JavaScript object the same way as you would use a regular array.
 firstSeen: 2021-05-03T12:00:00+03:00
 lastUpdated: 2021-09-27T16:42:11+03:00

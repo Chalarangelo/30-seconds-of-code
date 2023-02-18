@@ -4,7 +4,7 @@ shortTitle: Locale-sensitive string truncation
 type: question
 tags: javascript,string
 author: chalarangelo
-cover: blog_images/reflection-on-lake.jpg
+cover: reflection-on-lake
 excerpt: Locale-sensitive string splitting and truncation are finally possible in JavaScript.
 firstSeen: 2022-12-04T05:00:00-04:00
 ---

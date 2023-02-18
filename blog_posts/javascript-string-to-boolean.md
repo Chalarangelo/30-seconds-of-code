@@ -4,7 +4,7 @@ shortTitle: String to boolean
 type: tip
 tags: javascript,string,boolean,type
 author: chalarangelo
-cover: blog_images/two-cities.jpg
+cover: two-cities
 excerpt: Have you ever tried to convert the string representation of a boolean to an actual boolean value? Here's a simple way to do it.
 firstSeen: 2022-09-14T05:00:00-04:00
 ---

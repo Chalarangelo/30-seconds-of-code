@@ -4,14 +4,14 @@ shortTitle: Git fast-forward
 type: question
 tags: git,branch
 author: chalarangelo
-cover: blog_images/boats.jpg
+cover: boats
 excerpt: Merging a branch is a pretty common Git operation. Learn how fast-forward mode works and its benefits, so you can decide if it's a good fit for you and your team.
 firstSeen: 2021-07-15T05:00:00-04:00
 ---
 
 Merging a branch is one of the most common operations when working with Git. Depending on your team and projects you've been a part of, you might have heard of or even used Git's **fast-forward** mode when merging. Fast-forward mode is the default in Git, however GitHub will essentially override this by default and create a merge commit instead.
 
-![Git fast forward explained](./blog_images/git-fast-forward.png)
+![Git fast forward explained](./illustrations/git-fast-forward.png)
 
 ### Fast-forward merge
 

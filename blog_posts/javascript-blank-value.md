@@ -4,7 +4,7 @@ shortTitle: Value is blank
 type: question
 tags: javascript,type
 author: chalarangelo
-cover: blog_images/workspace-with-speaker.jpg
+cover: workspace-with-speaker
 excerpt: JavaScript doesn't have a built-in way to check if a value is blank, but it's easy to create one.
 firstSeen: 2022-09-25T05:00:00-04:00
 ---
