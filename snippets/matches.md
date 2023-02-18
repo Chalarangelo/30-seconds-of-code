@@ -1,7 +1,7 @@
 ---
 title: Match object properties
 tags: object
-cover: blog_images/two-flower-vases.jpg
+cover: two-flower-vases
 firstSeen: 2018-01-23T20:17:32+02:00
 lastUpdated: 2020-11-03T22:11:18+02:00
 ---

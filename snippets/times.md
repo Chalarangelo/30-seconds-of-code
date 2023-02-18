@@ -1,7 +1,7 @@
 ---
 title: Iterate n times
 tags: function
-cover: blog_images/lake-loop.jpg
+cover: lake-loop
 firstSeen: 2018-01-24T13:50:49+02:00
 lastUpdated: 2020-10-20T11:21:07+03:00
 ---

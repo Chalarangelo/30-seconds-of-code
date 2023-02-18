@@ -2,7 +2,7 @@
 title: Render DOM element
 tags: browser,recursion
 author: chalarangelo
-cover: blog_images/maple-leaf-palette.jpg
+cover: maple-leaf-palette
 firstSeen: 2020-05-03T11:55:42+03:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

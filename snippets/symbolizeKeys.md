@@ -2,7 +2,7 @@
 title: Symbolize object keys
 tags: object
 author: chalarangelo
-cover: blog_images/rocky-lake.jpg
+cover: rocky-lake
 firstSeen: 2021-08-01T05:00:00-04:00
 ---
 

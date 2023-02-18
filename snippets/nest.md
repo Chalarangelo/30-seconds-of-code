@@ -1,7 +1,7 @@
 ---
 title: Nest objects
 tags: object,recursion
-cover: blog_images/birds.jpg
+cover: birds
 firstSeen: 2018-02-24T13:49:56+02:00
 lastUpdated: 2020-10-21T21:54:53+03:00
 ---

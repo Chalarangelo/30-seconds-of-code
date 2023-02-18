@@ -1,7 +1,7 @@
 ---
 title: Date is same as another date
 tags: date
-cover: blog_images/pineapple-at-work.jpg
+cover: pineapple-at-work
 firstSeen: 2018-09-29T13:58:38+03:00
 lastUpdated: 2020-11-03T22:11:18+02:00
 ---

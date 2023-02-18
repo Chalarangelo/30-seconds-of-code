@@ -1,7 +1,7 @@
 ---
 title: Sum of numbers until n
 tags: math
-cover: blog_images/blue-flower.jpg
+cover: blue-flower
 firstSeen: 2020-10-08T16:52:55+03:00
 lastUpdated: 2020-10-22T20:24:30+03:00
 ---

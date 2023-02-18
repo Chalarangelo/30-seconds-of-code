@@ -1,7 +1,7 @@
 ---
 title: Throttle function
 tags: function
-cover: blog_images/waves-from-above.jpg
+cover: waves-from-above
 firstSeen: 2018-01-28T15:23:01+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

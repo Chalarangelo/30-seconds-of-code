@@ -1,8 +1,7 @@
 ---
 title: Filter unique array values based on function
 tags: array
-author: maciv
-cover: blog_images/washed-ashore.jpg
+cover: washed-ashore
 firstSeen: 2020-11-02T19:41:07+02:00
 lastUpdated: 2020-11-02T19:41:07+02:00
 ---

@@ -1,7 +1,7 @@
 ---
 title: Collection is empty
 tags: type,array,object,string
-cover: blog_images/book-chair.jpg
+cover: book-chair
 firstSeen: 2018-01-23T19:25:17+02:00
 lastUpdated: 2020-10-20T23:02:01+03:00
 ---

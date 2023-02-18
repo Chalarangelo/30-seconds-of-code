@@ -2,7 +2,7 @@
 title: Range generator
 tags: function,generator
 author: chalarangelo
-cover: blog_images/dark-leaves-6.jpg
+cover: dark-leaves-6
 firstSeen: 2020-10-11T17:05:55+03:00
 lastUpdated: 2020-10-11T17:05:55+03:00
 ---

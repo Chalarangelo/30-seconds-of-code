@@ -1,7 +1,7 @@
 ---
 title: Stream is duplex
 tags: node,type
-cover: blog_images/digital-nomad-11.jpg
+cover: digital-nomad-11
 firstSeen: 2018-10-03T22:16:10+03:00
 lastUpdated: 2020-10-20T23:02:01+03:00
 ---

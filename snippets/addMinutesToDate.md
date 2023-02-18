@@ -1,7 +1,7 @@
 ---
 title: Add minutes to date
 tags: date
-cover: blog_images/lake-trees.jpg
+cover: lake-trees
 firstSeen: 2020-11-28T19:27:46+02:00
 lastUpdated: 2020-11-28T19:27:46+02:00
 ---

@@ -2,7 +2,7 @@
 title: Uppercase object keys
 tags: object
 author: chalarangelo
-cover: blog_images/sofia-tram.jpg
+cover: sofia-tram
 firstSeen: 2023-02-11T05:00:00-04:00
 ---
 

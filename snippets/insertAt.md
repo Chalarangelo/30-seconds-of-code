@@ -2,7 +2,7 @@
 title: Insert value at array index
 tags: array
 author: chalarangelo
-cover: blog_images/messy-papers.jpg
+cover: messy-papers
 firstSeen: 2020-05-22T09:07:35+03:00
 lastUpdated: 2020-10-20T23:02:01+03:00
 ---

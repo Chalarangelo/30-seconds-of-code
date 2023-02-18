@@ -2,7 +2,7 @@
 title: Compact and join array
 tags: array
 author: chalarangelo
-cover: blog_images/racoon.jpg
+cover: racoon
 firstSeen: 2022-04-08T05:00:00-04:00
 ---
 

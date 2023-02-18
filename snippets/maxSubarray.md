@@ -2,7 +2,7 @@
 title: Maximum subarray
 tags: algorithm,math,array
 author: chalarangelo
-cover: blog_images/work-hard-computer.jpg
+cover: work-hard-computer
 firstSeen: 2022-09-07T05:00:00-04:00
 ---
 

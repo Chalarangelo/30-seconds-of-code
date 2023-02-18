@@ -1,7 +1,7 @@
 ---
 title: Remove elements from array
 tags: array
-cover: blog_images/avocado-slices.jpg
+cover: avocado-slices
 excerpt: Removes an element from an array without mutating it.
 firstSeen: 2018-09-27T01:55:30+03:00
 lastUpdated: 2020-10-22T20:24:30+03:00

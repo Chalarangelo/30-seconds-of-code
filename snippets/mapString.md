@@ -1,7 +1,7 @@
 ---
 title: Map string
 tags: string
-cover: blog_images/budapest-palace.jpg
+cover: budapest-palace
 firstSeen: 2018-07-14T10:59:56+03:00
 lastUpdated: 2020-10-21T21:54:53+03:00
 ---

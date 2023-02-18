@@ -1,7 +1,7 @@
 ---
 title: Random alphanumeric string
 tags: string,random
-cover: blog_images/interior-5.jpg
+cover: interior-5
 firstSeen: 2020-10-06T18:33:29+03:00
 lastUpdated: 2020-10-22T20:24:04+03:00
 ---

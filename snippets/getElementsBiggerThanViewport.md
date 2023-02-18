@@ -1,7 +1,7 @@
 ---
 title: Get elements bigger than viewport
 tags: browser
-cover: blog_images/case-study.jpg
+cover: case-study
 firstSeen: 2020-10-06T17:41:22+03:00
 lastUpdated: 2020-10-22T20:23:47+03:00
 ---

@@ -1,7 +1,7 @@
 ---
 title: Standard deviation
 tags: math,array
-cover: blog_images/interior-16.jpg
+cover: interior-16
 firstSeen: 2017-12-17T17:55:51+02:00
 lastUpdated: 2020-10-22T20:24:30+03:00
 ---

@@ -1,7 +1,7 @@
 ---
 title: Read file lines
 tags: node,array
-cover: blog_images/solitude-beach.jpg
+cover: solitude-beach
 firstSeen: 2017-12-17T17:55:51+02:00
 lastUpdated: 2020-10-22T20:24:04+03:00
 ---

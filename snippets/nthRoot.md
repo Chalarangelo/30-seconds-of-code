@@ -2,7 +2,7 @@
 title: Nth root of number
 tags: math
 author: chalarangelo
-cover: blog_images/tree-roots.jpg
+cover: tree-roots
 firstSeen: 2021-01-06T22:47:48+02:00
 lastUpdated: 2021-01-06T22:47:48+02:00
 ---

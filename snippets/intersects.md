@@ -2,7 +2,7 @@
 title: Check if two arrays intersect
 tags: array
 author: chalarangelo
-cover: blog_images/interior-5.jpg
+cover: interior-5
 firstSeen: 2023-02-17T05:00:00-04:00
 ---
 

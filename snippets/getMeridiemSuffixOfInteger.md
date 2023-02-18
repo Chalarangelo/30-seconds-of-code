@@ -1,7 +1,7 @@
 ---
 title: Get meridiem suffix of integer
 tags: date
-cover: blog_images/dark-leaves-4.jpg
+cover: dark-leaves-4
 firstSeen: 2018-01-13T17:14:48+02:00
 lastUpdated: 2020-10-19T22:49:51+03:00
 ---

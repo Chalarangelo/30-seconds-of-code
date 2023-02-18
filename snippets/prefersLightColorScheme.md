@@ -2,7 +2,7 @@
 title: User prefers light color scheme
 tags: browser
 author: chalarangelo
-cover: blog_images/dark-mode.jpg
+cover: dark-mode
 firstSeen: 2020-05-04T12:50:35+03:00
 lastUpdated: 2020-10-22T20:24:04+03:00
 ---

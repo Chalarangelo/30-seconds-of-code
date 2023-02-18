@@ -1,7 +1,7 @@
 ---
 title: Approximately number equality
 tags: math
-cover: blog_images/engine.jpg
+cover: engine
 firstSeen: 2018-02-14T12:47:13+02:00
 lastUpdated: 2020-11-01T20:50:57+02:00
 ---

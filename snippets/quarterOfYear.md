@@ -1,7 +1,7 @@
 ---
 title: Quarter of year
 tags: date
-cover: blog_images/fallen-leaves.jpg
+cover: fallen-leaves
 firstSeen: 2020-10-09T10:23:55+03:00
 lastUpdated: 2020-10-22T20:24:04+03:00
 ---
