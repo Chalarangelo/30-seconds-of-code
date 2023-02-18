@@ -16,6 +16,7 @@ const PreviewCard = ({ contentItem }) => (
       alt=''
       height='144'
       width='144'
+      loading='lazy'
     />
     <div className='flex flex-col card-data'>
       <CardTitle isSecondary>
