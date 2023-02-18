@@ -120,7 +120,7 @@ export const page = {
         context.pageDescription = page.data.seoDescription;
         context.snippet = SnippetContextSerializer.serialize(page.data);
         context.structuredData = Schemer.generateSnippetData({
-          title: page.data.title,
+          title: page.data.seoTitle,
           slug: page.relRoute,
           description: context.snippet.description,
           cover: context.snippet.cover,
@@ -199,7 +199,10 @@ export const page = {
           );
         }
         context.structuredData = Schemer.generateListingData({
-          title: context.listingName,
+          title:
+            pageNumber === 1
+              ? context.listingName
+              : `${context.listingName} - Page ${pageNumber}`,
           slug: page.relRoute,
           items: context.snippetList,
         });
