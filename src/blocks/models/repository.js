@@ -41,6 +41,5 @@ export const repository = {
     css: repo => repo.isCSS,
     react: repo => repo.isReact,
     blog: repo => repo.isBlog,
-    withImages: repo => repo.imagesName && repo.imagesPath,
   },
 };

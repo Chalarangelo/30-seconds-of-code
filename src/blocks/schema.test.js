@@ -104,14 +104,6 @@ describe('Application/Schema', () => {
         expect(blogRepos.has('30blog')).toBe(true);
       });
     });
-
-    describe('scope: withImages', () => {
-      it('returns only repositories with images', () => {
-        const reposWithImages = Repository.records.withImages;
-        expect(reposWithImages.length).toEqual(1);
-        expect(reposWithImages.has('30blog')).toBe(true);
-      });
-    });
   });
 
   describe('Collection', () => {
