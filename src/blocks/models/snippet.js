@@ -52,6 +52,11 @@ export const snippet = {
     blogHasCover: snippet => (snippet.isBlog ? Boolean(snippet.cover) : true),
   },
   properties: {
+    seoTitle: snippet => {
+      if (!snippet.language) return snippet.title;
+      if (snippet.title.includes(snippet.language.name)) return snippet.title;
+      return `${snippet.language.name} - ${snippet.title}`;
+    },
     primaryTag: snippet => snippet.tags[0],
     truePrimaryTag: snippet => {
       if (!snippet.isBlog) return snippet.primaryTag;
@@ -272,6 +277,7 @@ export const snippet = {
     'formattedPrimaryTag',
     'titleSlug',
     'fileSlug',
+    'seoTitle',
   ],
   scopes: {
     snippets: snippet => snippet.type === 'snippet',
