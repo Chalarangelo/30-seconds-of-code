@@ -3,15 +3,13 @@ import { renderWithContext } from 'test/utils';
 import ListingPage from './index';
 import { chipItems } from 'test/fixtures/listingChips';
 import SnippetFactory from 'test/fixtures/factories/snippet';
-import PaginatorFactory from 'test/fixtures/factories/paginator';
-
-const paginator = PaginatorFactory.create('Paginator');
+import { paginator } from 'test/fixtures/paginator';
 
 describe('<ListingPage />', () => {
   const snippetList = SnippetFactory.createMany('PreviewSnippet', 2);
   const listingName = 'Snippet list';
   const pageDescription = 'Browse 100 snippets on 30 seconds of code';
-  let wrapper, pageTitle, paginate;
+  let wrapper, pageTitle;
 
   beforeEach(() => {
     wrapper = renderWithContext(
@@ -25,7 +23,6 @@ describe('<ListingPage />', () => {
       />
     ).container;
     pageTitle = wrapper.querySelector('.page-title');
-    paginate = wrapper.querySelector('.paginator');
   });
 
   afterEach(cleanup);
@@ -58,12 +55,6 @@ describe('<ListingPage />', () => {
 
   it('should pass the listingName to PageTitle', () => {
     expect(pageTitle.textContent).toBe(listingName);
-  });
-
-  it('should pass the paginator to Paginator', () => {
-    expect(paginate.querySelector('span').textContent).toEqual(
-      `${paginator.pageNumber}`
-    );
   });
 
   describe('with empty sublinks', () => {

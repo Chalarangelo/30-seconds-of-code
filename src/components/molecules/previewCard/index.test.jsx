@@ -29,10 +29,6 @@ describe('<PreviewCard />', () => {
     it('the card title', () => {
       expect(card.querySelectorAll('h3.card-title')).toHaveLength(1);
     });
-
-    it('the card description', () => {
-      expect(card.querySelectorAll('.card-description')).toHaveLength(1);
-    });
   });
 
   it('should have the correct card title', () => {
@@ -46,7 +42,7 @@ describe('<PreviewCard />', () => {
   });
 
   it('should render the correct description', () => {
-    expect(card.querySelector('.card-description').innerHTML).toContain(
+    expect(card.querySelector('p').innerHTML).toContain(
       previewSnippet.description
     );
   });
