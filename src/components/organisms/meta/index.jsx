@@ -157,13 +157,6 @@ const Meta = ({
         title='30secondsofcode.org'
       />
       <link
-        key='link-opensearch'
-        rel='search'
-        href='/opensearch.xml'
-        type='application/opensearchdescription+xml'
-        title='Snippet search'
-      />
-      <link
         rel='preload'
         type='font/woff2'
         href='/assets/Inter.var.woff2'
