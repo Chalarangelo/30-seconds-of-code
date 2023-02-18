@@ -6,6 +6,11 @@
   content-visibility: auto;
   contain-intrinsic-size: 192px;
 
+  // TODO: Evaluate this hotfix and figure out a better solution
+  picture {
+    height: 144px;
+  }
+
   @media screen and (min-width: $layout-medium-breakpoint) {
     contain-intrinsic-size: 224px;
     gap: 1.5rem;
