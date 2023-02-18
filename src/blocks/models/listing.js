@@ -40,7 +40,14 @@ export const listing = {
     siblingsExceptSelf: listing =>
       listing.parent ? listing.siblings.except(listing.id) : [],
     // Used to determine the order of listings in the search index.
-    ranking: listing => Ranker.rankListing(listing),
+    ranking: listing => {
+      const rankingValue = Ranker.rankIndexableContent(
+        listing.indexableContent
+      );
+      // Demote tag listings to promote language and curated content
+      if (listing.isTag) return rankingValue * 0.25;
+      return rankingValue;
+    },
     name: listing => {
       if (listing.isMain) return listing.data.name;
       if (listing.isCollections) return listing.data.name;
@@ -124,6 +131,8 @@ export const listing = {
       // Catch all, also catches 'custom' for collection types
       return listing.snippets.published;
     },
+    indexableContent: listing =>
+      [listing.name, listing.description].join(' ').toLowerCase(),
   },
   lazyProperties: {
     data: ({ models: { Repository, Tag, Collection } }) => listing => {
@@ -232,10 +241,9 @@ export const listing = {
   },
   methods: {
     pageRanking: (listing, pageNumber) => {
-      const listingRanking = listing.ranking * 0.666;
+      const listingRanking = listing.ranking * 0.5;
       // Promote first page, demote pages after third
-      const pageRanking =
-        pageNumber === 1 ? 0.334 : pageNumber <= 3 ? 0 : -0.166;
+      const pageRanking = pageNumber === 1 ? 0.25 : pageNumber <= 3 ? 0 : -0.25;
       return listingRanking + pageRanking;
     },
   },

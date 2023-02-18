@@ -95,7 +95,7 @@ export const snippet = {
     isPublished: snippet => !snippet.isScheduled,
     isListed: snippet =>
       snippet.repository.featured && snippet.listed && !snippet.isScheduled,
-    ranking: snippet => Ranker.rankSnippet(snippet),
+    ranking: snippet => Ranker.rankIndexableContent(snippet.indexableContent),
     searchTokensArray: snippet => {
       const tokenizableElements = snippet.isBlog
         ? [
@@ -221,6 +221,22 @@ export const snippet = {
       snippet.hasCollection && !snippet.collections.first.listing.parent
         ? snippet.collections.first
         : null,
+    indexableContent: snippet =>
+      [
+        snippet.title,
+        ...snippet.tags,
+        (snippet.language && snippet.language.long) || '',
+        snippet.type || '',
+        snippet.srcCode || '',
+        snippet.cssCode || '',
+        snippet.htmlCode || '',
+        snippet.jsCode || '',
+        snippet.styleCode || '',
+        snippet.fullText || '',
+        snippet.shortText || '',
+      ]
+        .join(' ')
+        .toLowerCase(),
   },
   lazyProperties: {
     language: ({ models: { Language } }) => snippet => {
