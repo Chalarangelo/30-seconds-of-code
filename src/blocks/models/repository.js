@@ -11,14 +11,6 @@ export const repository = {
     { name: 'splash', type: 'stringRequired' },
     { name: 'description', type: 'stringRequired' },
     { name: 'shortDescription', type: 'stringRequired' },
-    {
-      name: 'biasPenaltyMultiplier',
-      type: 'numberRequired',
-      defaultValue: 1.0,
-      validators: {
-        min: 1.0,
-      },
-    },
   ],
   properties: {
     slugPrefix: repo => `${repo.slug}/s`,

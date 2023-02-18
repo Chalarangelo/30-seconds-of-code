@@ -8,7 +8,6 @@ export const repo30blog = {
   slug: 'articles',
   isBlog: true,
   featured: true,
-  biasPenaltyMultiplier: 1,
   splash: 'laptop-view.png',
   description:
     'The coding articles collection contains curated stories, tips, questions and answers on a wide variety of topics. The main focus of these articles revolves around the languages and technologies presented in snippets, as well as career advice and lessons.',
@@ -27,7 +26,6 @@ export const repo30code = {
   snippetPath: 'snippets',
   slug: 'js',
   featured: true,
-  biasPenaltyMultiplier: 1.05,
   splash: 'laptop-plant.png',
   description:
     'The JavaScript snippet collection contains a wide variety of ES6 helper functions. It includes helpers for dealing with primitives, arrays and objects, as well as algorithms, DOM manipulation functions and Node.js utilities.',
@@ -46,7 +44,6 @@ export const repo30css = {
   snippetPath: 'snippets',
   slug: 'css',
   featured: true,
-  biasPenaltyMultiplier: 1.05,
   splash: 'camera.png',
   description:
     'The CSS snippet collection contains utilities and interactive examples for CSS3. It includes modern techniques for creating commonly-used layouts, styling and animating elements, as well as snippets for handling user interactions.',
@@ -65,7 +62,6 @@ export const repo30react = {
   snippetPath: 'snippets',
   slug: 'react',
   featured: true,
-  biasPenaltyMultiplier: 1.25,
   splash: 'succulent-cluster.png',
   description:
     'The React snippet collection contains function components and reusable hooks for React 16.',

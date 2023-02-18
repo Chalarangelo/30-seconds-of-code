@@ -170,7 +170,6 @@ export class Content {
                   snippetPath: 'snippets',
                   slug,
                   featured: true,
-                  biasPenaltyMultiplier: 1,
                 }
               ).then(() => resolve());
             });
