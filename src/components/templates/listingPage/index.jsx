@@ -24,7 +24,7 @@ const ListingPage = ({
 }) => (
   <>
     <Meta
-      title={listingName}
+      title={structuredData ? structuredData.name : listingName}
       description={pageDescription}
       logoSrc={listingCover ? listingCover : undefined}
       structuredData={structuredData}

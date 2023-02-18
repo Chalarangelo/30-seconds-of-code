@@ -19,7 +19,7 @@ const SnippetPage = ({
   return (
     <>
       <Meta
-        title={snippet.title}
+        title={structuredData ? structuredData.name : snippet.title}
         description={pageDescription}
         logoSrc={snippet.cover ? snippet.cover : undefined}
         structuredData={structuredData}
