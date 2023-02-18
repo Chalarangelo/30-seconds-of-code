@@ -19,11 +19,8 @@ export const repository = {
         min: 1.0,
       },
     },
-    { name: 'imagesName', type: 'string' },
-    { name: 'imagesPath', type: 'string' },
   ],
   properties: {
-    sourceDir: repo => `${repo.dirName}/${repo.snippetPath}`,
     slugPrefix: repo => `${repo.slug}/s`,
     repoUrlPrefix: repo => `${repo.repoUrl}/blob/master/${repo.snippetPath}`,
     isCSS: repo => repo.id === '30css',

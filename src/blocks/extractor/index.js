@@ -48,7 +48,6 @@ export class Extractor {
           optionalLanguage,
           language: rawLanguage,
           otherLanguages: rawOtherLanguages,
-          images,
           tagMetadata,
           references,
           ...rest
@@ -61,15 +60,10 @@ export class Extractor {
         const otherLanguages = rawOtherLanguages.length
           ? rawOtherLanguages.map(lang => lang.long.toLowerCase())
           : null;
-        const hasImages = images && images.name && images.path;
-        const imagesName = hasImages ? images.name : null;
-        const imagesPath = hasImages ? images.path : null;
         return {
           ...rest,
           language,
           otherLanguages,
-          imagesName,
-          imagesPath,
         };
       }),
       collections: collectionConfigs,

@@ -29,13 +29,6 @@ describe('Application/Schema', () => {
   describe('Repository', () => {
     const Repository = Application.dataset.getModel('Repository');
 
-    describe('property: sourceDir', () => {
-      it('returns the correct value', () => {
-        const repo = Repository.records.get('30css');
-        expect(repo.sourceDir).toEqual('30css/snippets');
-      });
-    });
-
     describe('property: slugPrefix', () => {
       it('returns the correct value', () => {
         const repo = Repository.records.get('30css');
