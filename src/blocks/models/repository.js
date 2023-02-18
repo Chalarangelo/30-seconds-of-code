@@ -2,7 +2,6 @@ export const repository = {
   name: 'Repository',
   fields: [
     { name: 'name', type: 'stringRequired' },
-    { name: 'dirName', type: 'stringRequired' },
     { name: 'repoUrl', type: 'stringRequired' },
     { name: 'snippetPath', type: 'stringRequired' },
     { name: 'slug', type: 'stringRequired' },
