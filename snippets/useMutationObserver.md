@@ -2,7 +2,7 @@
 title: React useMutationObserver hook
 tags: hooks,effect
 author: chalarangelo
-cover: blog_images/laptop-plants.jpg
+cover: laptop-plants
 firstSeen: 2021-11-23T05:00:00-04:00
 ---
 

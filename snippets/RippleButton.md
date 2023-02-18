@@ -2,7 +2,7 @@
 title: Button with ripple effect
 tags: components,state,effect
 author: chalarangelo
-cover: blog_images/mountain-lake-cottage.jpg
+cover: mountain-lake-cottage
 firstSeen: 2019-09-10T09:07:29+03:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

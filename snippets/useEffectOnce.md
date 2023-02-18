@@ -2,7 +2,7 @@
 title: React useEffectOnce hook
 tags: hooks,effect
 author: chalarangelo
-cover: blog_images/pop-of-green.jpg
+cover: pop-of-green
 firstSeen: 2021-11-16T05:00:00-04:00
 ---
 

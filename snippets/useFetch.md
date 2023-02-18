@@ -2,7 +2,7 @@
 title: React useFetch hook
 tags: hooks,effect,state
 author: chalarangelo
-cover: blog_images/coworking-space.jpg
+cover: coworking-space
 firstSeen: 2019-08-21T14:23:57+03:00
 lastUpdated: 2022-05-01T12:50:38+02:00
 ---

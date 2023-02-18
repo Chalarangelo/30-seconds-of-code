@@ -2,7 +2,7 @@
 title: React useDefault hook
 tags: hooks,state
 author: chalarangelo
-cover: blog_images/flower-portrait-8.jpg
+cover: flower-portrait-8
 firstSeen: 2021-10-23T05:00:00-04:00
 ---
 
