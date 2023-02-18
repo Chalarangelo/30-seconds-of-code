@@ -2,15 +2,11 @@
 
 export const repo30blog = {
   name: '30 seconds Blog',
-  dirName: '30blog',
   repoUrl: 'https://github.com/30-seconds/30-seconds-blog',
   snippetPath: 'blog_posts',
   slug: 'articles',
   isBlog: true,
   featured: true,
-  biasPenaltyMultiplier: 1,
-  imagesName: 'blog_images',
-  imagesPath: 'blog_images',
   splash: 'laptop-view.png',
   description:
     'The coding articles collection contains curated stories, tips, questions and answers on a wide variety of topics. The main focus of these articles revolves around the languages and technologies presented in snippets, as well as career advice and lessons.',
@@ -24,12 +20,10 @@ export const repo30blog = {
 
 export const repo30code = {
   name: '30 seconds of code',
-  dirName: '30code',
   repoUrl: 'https://github.com/30-seconds/30-seconds-of-code',
   snippetPath: 'snippets',
   slug: 'js',
   featured: true,
-  biasPenaltyMultiplier: 1.05,
   splash: 'laptop-plant.png',
   description:
     'The JavaScript snippet collection contains a wide variety of ES6 helper functions. It includes helpers for dealing with primitives, arrays and objects, as well as algorithms, DOM manipulation functions and Node.js utilities.',
@@ -43,12 +37,10 @@ export const repo30code = {
 
 export const repo30css = {
   name: '30 seconds of CSS',
-  dirName: '30css',
   repoUrl: 'https://github.com/30-seconds/30-seconds-of-css',
   snippetPath: 'snippets',
   slug: 'css',
   featured: true,
-  biasPenaltyMultiplier: 1.05,
   splash: 'camera.png',
   description:
     'The CSS snippet collection contains utilities and interactive examples for CSS3. It includes modern techniques for creating commonly-used layouts, styling and animating elements, as well as snippets for handling user interactions.',
@@ -62,12 +54,10 @@ export const repo30css = {
 
 export const repo30react = {
   name: '30 seconds of React',
-  dirName: '30react',
   repoUrl: 'https://github.com/30-seconds/30-seconds-of-react',
   snippetPath: 'snippets',
   slug: 'react',
   featured: true,
-  biasPenaltyMultiplier: 1.25,
   splash: 'succulent-cluster.png',
   description:
     'The React snippet collection contains function components and reusable hooks for React 16.',

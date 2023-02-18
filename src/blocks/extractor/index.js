@@ -42,14 +42,13 @@ export class Extractor {
         // Exclude specific keys
         /* eslint-disable no-unused-vars */
         const {
+          dirName,
           tagIcons,
           slugPrefix,
           secondLanguage,
           optionalLanguage,
           language: rawLanguage,
           otherLanguages: rawOtherLanguages,
-          images,
-          iconName,
           tagMetadata,
           references,
           ...rest
@@ -62,33 +61,22 @@ export class Extractor {
         const otherLanguages = rawOtherLanguages.length
           ? rawOtherLanguages.map(lang => lang.long.toLowerCase())
           : null;
-        const hasImages = images && images.name && images.path;
-        const imagesName = hasImages ? images.name : null;
-        const imagesPath = hasImages ? images.path : null;
-        const icon = iconName ? iconName : null;
         return {
           ...rest,
           language,
           otherLanguages,
-          icon,
-          imagesName,
-          imagesPath,
         };
       }),
-      collections: collectionConfigs.map(config => {
-        const { iconName, ...rest } = config;
-        return { ...rest, icon: iconName };
-      }),
+      collections: collectionConfigs,
       snippets,
       authors,
       languages: [...languageData].map(([id, data]) => {
-        const { language, shortCode, languageLiteral, iconName } = data;
+        const { language, shortCode, languageLiteral } = data;
         return {
           id,
           long: language,
           short: shortCode,
           name: languageLiteral,
-          icon: iconName,
         };
       }),
       tags: tagData,
@@ -111,14 +99,6 @@ export class Extractor {
     const configs = JSONHandler.fromGlob(
       `${contentDir}/configs/repos/*.json`
     ).map(config => {
-      const tagIcons = config.tagMetadata
-        ? Object.keys(config.tagMetadata || {}).reduce((acc, key) => {
-            if (config.tagMetadata[key].iconName)
-              acc[key] = config.tagMetadata[key].iconName;
-            return acc;
-          }, {})
-        : {};
-
       const language = config.language || {};
       let otherLanguages = [];
       if (config.secondLanguage) otherLanguages.push(config.secondLanguage);
@@ -131,7 +111,6 @@ export class Extractor {
         otherLanguages,
         id: `${config.dirName}`,
         slugPrefix: `${config.slug}/s`,
-        tagIcons,
       };
     });
     logger.success('Finished extracting content configurations');
@@ -180,15 +159,13 @@ export class Extractor {
         if (
           config.language &&
           config.language.long &&
-          config.iconName &&
           !acc.has(config.language.long)
         ) {
           acc.set(config.language.long.toLowerCase(), {
             language: config.language.long.toLowerCase(),
             shortCode: config.language.short,
             languageLiteral: config.language.long,
-            iconName: config.iconName,
-            tags: Object.keys(config.tagIcons).length ? config.tagIcons : {},
+            tags: {},
             references: new Map(Object.entries(config.references || {})),
           });
         }
@@ -260,10 +237,6 @@ export class Extractor {
           tagMetadata && tagMetadata.splash
             ? tagMetadata.splash
             : config.splash;
-        const icon =
-          tagMetadata && tagMetadata.iconName
-            ? tagMetadata.iconName
-            : config.iconName;
         const slugPrefix = `/${configSlugPrefix}/t/${tag}`;
         return {
           id: `${config.id}_${tag}`,
@@ -273,7 +246,6 @@ export class Extractor {
           description,
           shortDescription,
           splash,
-          icon,
           repository: config.id,
         };
       });

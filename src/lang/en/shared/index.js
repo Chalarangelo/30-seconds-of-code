@@ -66,6 +66,8 @@ const literals = {
         }.`;
     }
   },
+  nextPage: 'Next',
+  previousPage: 'Previous',
 };
 
 export default literals;

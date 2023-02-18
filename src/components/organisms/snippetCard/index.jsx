@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import Image from 'components/atoms/image';
-import Card, { CardIcon, CardTitle, CardSubtitle } from 'components/atoms/card';
+import Card, { CardTitle, CardSubtitle } from 'components/atoms/card';
 import literals from 'lang/en/client/snippet';
 
 /**
@@ -33,28 +33,21 @@ const SnippetCard = ({ snippet }) => {
   const hasScopeCSS = Boolean(snippet.code && snippet.code.scopedCss);
 
   return (
-    <Card className='snippet-card g-c2'>
-      <div className='card-meta grid'>
-        <CardIcon icon={snippet.icon} type='snippet' />
-        <div className='card-data mx-2 my-0'>
-          <CardTitle>{snippet.title}</CardTitle>
-          <CardSubtitle>
-            {snippet.tags}
-            {' · '}
-            <span className='inline-block'>{snippet.date}</span>
-          </CardSubtitle>
-        </div>
-      </div>
-      {snippet.cover && (
-        <Image
-          className='card-cover-image card-fw-section'
-          src={snippet.cover}
-          alt=''
-          height='232'
-          width='348'
-          fetchpriority='high'
-        />
-      )}
+    <Card className='snippet-card g-c2 px-4 py-6 md:px-6 md:py-8'>
+      <CardTitle>{snippet.title}</CardTitle>
+      <CardSubtitle>
+        {snippet.tags}
+        {' · '}
+        <span className='inline-block'>{snippet.date}</span>
+      </CardSubtitle>
+      <Image
+        className='ar-wide mt-5 br-md'
+        src={snippet.cover}
+        alt=''
+        height='180'
+        width='360'
+        fetchpriority='high'
+      />
       <div
         className='card-description flex flex-col'
         dangerouslySetInnerHTML={{ __html: snippet.fullDescription }}

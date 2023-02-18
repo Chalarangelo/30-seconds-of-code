@@ -26,6 +26,11 @@
 .box-border {
   box-sizing: border-box;
 }
+.ar-wide {
+  width: 100%;
+  aspect-ratio: 2;
+  object-fit: cover;
+}
 
 // Content container
 .content {

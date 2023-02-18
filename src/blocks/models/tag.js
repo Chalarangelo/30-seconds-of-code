@@ -6,7 +6,6 @@ export const tag = {
     { name: 'description', type: 'stringRequired' },
     { name: 'shortDescription', type: 'stringRequired' },
     { name: 'splash', type: 'stringRequired' },
-    { name: 'icon', type: 'string' },
     { name: 'slugPrefix', type: 'stringRequired' },
   ],
   properties: {

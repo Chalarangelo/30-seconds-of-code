@@ -17,6 +17,7 @@ const Meta = ({
   title,
   description = '',
   logoSrc = '/assets/logo.png',
+  pageType = 'website',
   structuredData,
   breadcrumbsData,
   canonical = '',
@@ -127,16 +128,9 @@ const Meta = ({
       <meta name='viewport' content='width=device-width, initial-scale=1' />
       <meta property='og:title' content={titleString} />
       <meta property='og:description' content={metaDescription} />
-      <meta property='og:type' content='website' />
+      <meta property='og:type' content={pageType} />
       <meta property='og:image' content={`${settings.websiteUrl}${logoSrc}`} />
-      <meta name='twitter:site' content={settings.twitterAccount} />
       <meta name='twitter:card' content='summary_large_image' />
-      <meta
-        name='twitter:title'
-        content={title ? `${title}` : literals.siteName}
-      />
-      <meta name='twitter:description' content={metaDescription} />
-      <meta name='twitter:image' content={`${settings.websiteUrl}${logoSrc}`} />
       {scripts.map(({ key, innerHTML, ...rest }) => (
         <script
           key={key}
@@ -161,13 +155,6 @@ const Meta = ({
         href='/feed'
         type='application/rss+xml'
         title='30secondsofcode.org'
-      />
-      <link
-        key='link-opensearch'
-        rel='search'
-        href='/opensearch.xml'
-        type='application/opensearchdescription+xml'
-        title='Snippet search'
       />
       <link
         rel='preload'
@@ -209,44 +196,13 @@ const Meta = ({
       />
       <meta name='theme-color' content='#1e253d' />,
       <link
-        rel='apple-touch-icon'
-        sizes='48x48'
-        href={`/assets/icons/icon-48x48.png?v=${settings.manifestCacheKey}`}
-      />
-      <link
-        rel='apple-touch-icon'
-        sizes='72x72'
-        href={`/assets/icons/icon-72x72.png?v=${settings.manifestCacheKey}`}
-      />
-      <link
-        rel='apple-touch-icon'
-        sizes='96x96'
-        href={`/assets/icons/icon-96x96.png?v=${settings.manifestCacheKey}`}
-      />
-      <link
-        rel='apple-touch-icon'
-        sizes='144x144'
-        href={`/assets/icons/icon-144x144.png?v=${settings.manifestCacheKey}`}
-      />
-      <link
-        rel='apple-touch-icon'
+        rel='icon'
         sizes='192x192'
         href={`/assets/icons/icon-192x192.png?v=${settings.manifestCacheKey}`}
       />
       <link
         rel='apple-touch-icon'
-        sizes='256x256'
-        href={`/assets/icons/icon-256x256.png?v=${settings.manifestCacheKey}`}
-      />
-      <link
-        rel='apple-touch-icon'
-        sizes='384x384'
-        href={`/assets/icons/icon-384x384.png?v=${settings.manifestCacheKey}`}
-      />
-      <link
-        rel='apple-touch-icon'
-        sizes='512x512'
-        href={`/assets/icons/icon-512x512.png?v=${settings.manifestCacheKey}`}
+        href={`/assets/icons/icon-180x180.png?v=${settings.manifestCacheKey}`}
       />
       {canonical ? (
         <link rel='canonical' href={`${settings.websiteUrl}${canonical}`} />

@@ -44,7 +44,7 @@ const commonTransformers = [
       const fontClasses = lvl === 3 ? 'fs-lg md:fs-xl' : 'fs-md md:fs-lg';
       const id = convertToValidId(title);
       return `<h${lvl} class="card-title linkable relative mt-6 mx-0 mb-0 txt-150 f-alt ${fontClasses}">
-        <a href="#${id}" id="${id}" class="fs-sm no-animation"></a>
+        <a href="#${id}" id="${id}" class="fs-sm no-animation flex flex-col j-center"></a>
         ${title}
       </h${lvl}>`;
     },
@@ -264,11 +264,11 @@ export class MarkdownParser {
         (match, openTag, imgSrc, imgRest) => {
           const imgName = imgSrc.slice(0, imgSrc.lastIndexOf('.'));
           if (imgSrc.endsWith('.png') || imgSrc.endsWith('.svg')) {
-            return `<img class="card-fw-section" src="${assetPath}/${imgSrc}"${imgRest}>`;
+            return `<img src="${assetPath}/${imgSrc}"${imgRest}>`;
           }
           return `<picture>
             <source type="image/webp" srcset="${assetPath}/${imgName}.webp">
-            <img class="card-fw-section" src="${assetPath}/${imgSrc}"${imgRest}>
+            <img src="${assetPath}/${imgSrc}"${imgRest}>
           </picture>`;
         }
       );

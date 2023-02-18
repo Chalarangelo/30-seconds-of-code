@@ -19,12 +19,13 @@ const SnippetPage = ({
   return (
     <>
       <Meta
-        title={snippet.title}
+        title={structuredData ? structuredData.name : snippet.title}
         description={pageDescription}
         logoSrc={snippet.cover ? snippet.cover : undefined}
         structuredData={structuredData}
         breadcrumbsData={breadcrumbs}
         canonical={snippet.slug}
+        pageType='article'
       />
       <Shell>
         <Breadcrumbs breadcrumbs={breadcrumbs} />

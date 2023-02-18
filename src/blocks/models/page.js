@@ -120,7 +120,7 @@ export const page = {
         context.pageDescription = page.data.seoDescription;
         context.snippet = SnippetContextSerializer.serialize(page.data);
         context.structuredData = Schemer.generateSnippetData({
-          title: page.data.title,
+          title: page.data.seoTitle,
           slug: page.relRoute,
           description: context.snippet.description,
           cover: context.snippet.cover,
@@ -146,11 +146,41 @@ export const page = {
       }
       if (page.isListing) {
         context.slug = page.relRoute;
-        context.paginator = {
-          pageNumber: page.pageNumber,
-          totalPages: page.data.pageCount,
-          baseUrl: page.data.slugPrefix,
-        };
+        const pageNumber = page.pageNumber;
+        const totalPages = page.data.pageCount;
+        const baseUrl = page.data.slugPrefix;
+        let buttons =
+          totalPages === 2
+            ? [1, 2]
+            : [
+                1,
+                Math.min(Math.max(pageNumber, 2), totalPages - 1),
+                totalPages,
+              ];
+        context.paginator =
+          totalPages > 1
+            ? {
+                previous:
+                  pageNumber > 1
+                    ? {
+                        url: `${baseUrl}/p/${pageNumber - 1}`,
+                        label: literals.previousPage,
+                      }
+                    : null,
+                pages: buttons.map(buttonNumber => ({
+                  label: buttonNumber,
+                  url: `${baseUrl}/p/${buttonNumber}`,
+                  current: buttonNumber === pageNumber,
+                })),
+                next:
+                  pageNumber < totalPages
+                    ? {
+                        url: `${baseUrl}/p/${pageNumber + 1}`,
+                        label: literals.nextPage,
+                      }
+                    : null,
+              }
+            : null;
         Object.entries(ListingContextSerializer.serialize(page.data)).forEach(
           ([key, value]) => {
             context[key] = value;
@@ -169,7 +199,10 @@ export const page = {
           );
         }
         context.structuredData = Schemer.generateListingData({
-          title: context.listingName,
+          title:
+            pageNumber === 1
+              ? context.listingName
+              : `${context.listingName} - Page ${pageNumber}`,
           slug: page.relRoute,
           items: context.snippetList,
         });

@@ -29,13 +29,6 @@ describe('Application/Schema', () => {
   describe('Repository', () => {
     const Repository = Application.dataset.getModel('Repository');
 
-    describe('property: sourceDir', () => {
-      it('returns the correct value', () => {
-        const repo = Repository.records.get('30css');
-        expect(repo.sourceDir).toEqual('30css/snippets');
-      });
-    });
-
     describe('property: slugPrefix', () => {
       it('returns the correct value', () => {
         const repo = Repository.records.get('30css');
@@ -49,13 +42,6 @@ describe('Application/Schema', () => {
         expect(repo.repoUrlPrefix).toEqual(
           'https://github.com/30-seconds/30-seconds-of-css/blob/master/snippets'
         );
-      });
-    });
-
-    describe('property: vscodeUrlPrefix', () => {
-      it('returns the correct value', () => {
-        const repo = Repository.records.get('30css');
-        expect(repo.vscodeUrlPrefix).toEqual('content/sources/30css/snippets');
       });
     });
 
@@ -109,14 +95,6 @@ describe('Application/Schema', () => {
         const blogRepos = Repository.records.blog;
         expect(blogRepos.length).toEqual(1);
         expect(blogRepos.has('30blog')).toBe(true);
-      });
-    });
-
-    describe('scope: withImages', () => {
-      it('returns only repositories with images', () => {
-        const reposWithImages = Repository.records.withImages;
-        expect(reposWithImages.length).toEqual(1);
-        expect(reposWithImages.has('30blog')).toBe(true);
       });
     });
   });
@@ -329,16 +307,6 @@ describe('Application/Schema', () => {
       });
     });
 
-    describe('property: vscodeUrl', () => {
-      it('returns the vscode url', () => {
-        const snippet = Snippet.records.get('js/s/format-duration');
-        expect(snippet.vscodeUrl).toContain('vscode://file/');
-        expect(snippet.vscodeUrl).toContain(
-          'content/sources/30code/snippets/formatDuration.md'
-        );
-      });
-    });
-
     describe('property: actionType', () => {
       it('returns the action type', () => {
         const snippet = Snippet.records.get('js/s/format-duration');
@@ -477,39 +445,6 @@ describe('Application/Schema', () => {
       it('returns null if there is no recommended collection', () => {
         const snippet = Snippet.records.get('css/s/triangle');
         expect(snippet.recommendedCollection).toBeNull();
-      });
-    });
-
-    describe('property: icon', () => {
-      it('returns the correct icon for a regular snippet', () => {
-        const snippet = Snippet.records.get('js/s/format-duration');
-        expect(snippet.icon).toEqual('js');
-      });
-
-      it('returns the correct icon for a snippet in a special tag', () => {
-        const snippet = Snippet.records.get('js/s/hash-node');
-        expect(snippet.icon).toEqual('node');
-      });
-
-      it('returns the correct icon for a regular blog', () => {
-        const snippet = Snippet.records.get(
-          'articles/s/10-vs-code-extensions-for-js-developers'
-        );
-        expect(snippet.icon).toEqual('blog');
-      });
-
-      it('returns the correct icon for a blog with a language', () => {
-        const snippet = Snippet.records.get(
-          'articles/s/react-rendering-basics'
-        );
-        expect(snippet.icon).toEqual('react');
-      });
-
-      it('returns the correct icon for a blog with a special tag', () => {
-        const snippet = Snippet.records.get(
-          'articles/s/nodejs-chrome-debugging'
-        );
-        expect(snippet.icon).toEqual('node');
       });
     });
 
@@ -865,13 +800,6 @@ describe('Application/Schema', () => {
       });
     });
 
-    describe('property: icon', () => {
-      it('returns the icon for a listing', () => {
-        const listing = Listing.records.get('tag/js/t/string');
-        expect(listing.icon).toEqual('js');
-      });
-    });
-
     describe('property: isListed', () => {
       it('returns true for listed listings', () => {
         const mainListing = Listing.records.get('main');
@@ -1174,11 +1102,7 @@ describe('Application/Schema', () => {
         const page = Page.records.get('listing_blog/articles_1');
         const pageContext = page.context;
         expect(pageContext.listingName).toEqual('Articles');
-        expect(pageContext.paginator).toEqual({
-          pageNumber: 1,
-          totalPages: 1,
-          baseUrl: '/articles',
-        });
+        expect(pageContext.paginator).toBe(null);
         expect(pageContext.snippetList.length).toEqual(7);
         expect(pageContext.pageDescription).toEqual(
           'Browse 7 code articles for all your development needs on 30 seconds of code.'

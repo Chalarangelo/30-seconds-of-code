@@ -37,7 +37,7 @@ export const snippetContextSerializer = {
     type: snippet => (snippet.isBlog ? snippet.type : undefined),
     coverUrl: snippet =>
       snippet.cover
-        ? `/${pathSettings.staticAssetPath}/${snippet.cover}`
+        ? `/${pathSettings.staticAssetPath}/cover/${snippet.cover}.jpg`
         : undefined,
     dateFormatted: snippet =>
       snippet.lastUpdated.toLocaleDateString('en-US', {
@@ -54,7 +54,6 @@ export const snippetContextSerializer = {
     'url',
     'slug',
     ['dateFormatted', 'date'],
-    'icon',
     ['formattedTags', 'tags'],
     'actionType',
     'code',

@@ -3,15 +3,13 @@ import { renderWithContext } from 'test/utils';
 import ListingPage from './index';
 import { chipItems } from 'test/fixtures/listingChips';
 import SnippetFactory from 'test/fixtures/factories/snippet';
-import PaginatorFactory from 'test/fixtures/factories/paginator';
-
-const paginator = PaginatorFactory.create('Paginator');
+import { paginator } from 'test/fixtures/paginator';
 
 describe('<ListingPage />', () => {
   const snippetList = SnippetFactory.createMany('PreviewSnippet', 2);
   const listingName = 'Snippet list';
   const pageDescription = 'Browse 100 snippets on 30 seconds of code';
-  let wrapper, pageTitle, paginate;
+  let wrapper, pageTitle;
 
   beforeEach(() => {
     wrapper = renderWithContext(
@@ -21,11 +19,10 @@ describe('<ListingPage />', () => {
         listingName={listingName}
         pageDescription={pageDescription}
         listingSublinks={chipItems}
-        listingImage='/splash.png'
+        listingCover='/splash.png'
       />
     ).container;
     pageTitle = wrapper.querySelector('.page-title');
-    paginate = wrapper.querySelector('.paginator');
   });
 
   afterEach(cleanup);
@@ -60,12 +57,6 @@ describe('<ListingPage />', () => {
     expect(pageTitle.textContent).toBe(listingName);
   });
 
-  it('should pass the paginator to Paginator', () => {
-    expect(paginate.querySelector('span').textContent).toEqual(
-      `${paginator.pageNumber}`
-    );
-  });
-
   describe('with empty sublinks', () => {
     beforeEach(() => {
       wrapper = renderWithContext(
@@ -74,7 +65,7 @@ describe('<ListingPage />', () => {
           paginator={paginator}
           listingName={listingName}
           pageDescription={pageDescription}
-          listingImage='/splash.png'
+          listingCover='/splash.png'
         />
       ).container;
     });
@@ -92,7 +83,7 @@ describe('<ListingPage />', () => {
           listingName={listingName}
           pageDescription={pageDescription}
           listingSublinks={chipItems}
-          listingImage='/splash.png'
+          listingCover='/splash.png'
         />
       ).container;
     });

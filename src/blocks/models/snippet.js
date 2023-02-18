@@ -1,4 +1,3 @@
-import path from 'path';
 import { convertToSeoSlug, uniqueElements, stripMarkdownFormat } from 'utils';
 import { Ranker } from 'blocks/utilities/ranker';
 import { Recommender } from 'blocks/utilities/recommender';
@@ -53,6 +52,11 @@ export const snippet = {
     blogHasCover: snippet => (snippet.isBlog ? Boolean(snippet.cover) : true),
   },
   properties: {
+    seoTitle: snippet => {
+      if (!snippet.language) return snippet.title;
+      if (snippet.title.includes(snippet.language.name)) return snippet.title;
+      return `${snippet.language.name} - ${snippet.title}`;
+    },
     primaryTag: snippet => snippet.tags[0],
     truePrimaryTag: snippet => {
       if (!snippet.isBlog) return snippet.primaryTag;
@@ -87,11 +91,6 @@ export const snippet = {
     titleSlug: snippet => convertToSeoSlug(snippet.title),
     fileSlug: snippet => convertToSeoSlug(snippet.fileName.slice(0, -3)),
     url: snippet => `${snippet.repository.repoUrlPrefix}/${snippet.fileName}`,
-    vscodeUrl: snippet =>
-      `vscode://file/${path.resolve(
-        snippet.repository.vscodeUrlPrefix,
-        snippet.fileName
-      )}`,
     actionType: snippet => {
       if (snippet.isBlog) return undefined;
       if (snippet.isCSS || snippet.isReact) return 'codepen';
@@ -101,7 +100,7 @@ export const snippet = {
     isPublished: snippet => !snippet.isScheduled,
     isListed: snippet =>
       snippet.repository.featured && snippet.listed && !snippet.isScheduled,
-    ranking: snippet => Ranker.rankSnippet(snippet),
+    ranking: snippet => Ranker.rankIndexableContent(snippet.indexableContent),
     searchTokensArray: snippet => {
       const tokenizableElements = snippet.isBlog
         ? [
@@ -128,15 +127,16 @@ export const snippet = {
         name: clientLiterals.home,
       };
 
-      const languageCrumb = snippet.language
-        ? {
-            url: `${snippet.language.slugPrefix}/p/1`,
-            name: snippet.language.name,
-          }
-        : {
-            url: `/articles/p/1`,
-            name: literals.blog,
-          };
+      const languageCrumb =
+        snippet.language && snippet.language.id !== 'html'
+          ? {
+              url: `${snippet.language.slugPrefix}/p/1`,
+              name: snippet.language.name,
+            }
+          : {
+              url: `/articles/p/1`,
+              name: literals.blog,
+            };
 
       let tagCrumb = null;
       if (!snippet.isBlog) {
@@ -226,19 +226,24 @@ export const snippet = {
       snippet.hasCollection && !snippet.collections.first.listing.parent
         ? snippet.collections.first
         : null,
+    indexableContent: snippet =>
+      [
+        snippet.title,
+        ...snippet.tags,
+        (snippet.language && snippet.language.long) || '',
+        snippet.type || '',
+        snippet.srcCode || '',
+        snippet.cssCode || '',
+        snippet.htmlCode || '',
+        snippet.jsCode || '',
+        snippet.styleCode || '',
+        snippet.fullText || '',
+        snippet.shortText || '',
+      ]
+        .join(' ')
+        .toLowerCase(),
   },
   lazyProperties: {
-    icon: ({ models: { Language } }) => snippet => {
-      if (snippet.isBlog) {
-        const lang = Language.records.full.find(l =>
-          snippet.tags.includes(l.id)
-        );
-        return lang
-          ? lang.getTagIcon(snippet.truePrimaryTag)
-          : snippet.repository.icon;
-      }
-      return snippet.language.getTagIcon(snippet.primaryTag);
-    },
     language: ({ models: { Language } }) => snippet => {
       if (!snippet.isBlog) return snippet.repository.language;
       for (let tag of snippet.tags) {
@@ -267,12 +272,12 @@ export const snippet = {
     'searchTokensArray',
     'searchTokens',
     'language',
-    'icon',
     'primaryTag',
     'truePrimaryTag',
     'formattedPrimaryTag',
     'titleSlug',
     'fileSlug',
+    'seoTitle',
   ],
   scopes: {
     snippets: snippet => snippet.type === 'snippet',

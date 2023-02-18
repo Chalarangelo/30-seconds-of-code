@@ -4,7 +4,6 @@ export const language = {
     { name: 'long', type: 'stringRequired' },
     { name: 'short', type: 'stringRequired' },
     { name: 'name', type: 'stringRequired' },
-    { name: 'icon', type: 'string' },
   ],
   properties: {
     mainRepository: language =>
@@ -18,20 +17,9 @@ export const language = {
         ? language.mainRepository.tags.flatPluck('shortId')
         : [],
   },
-  lazyMethods: {
-    getTagIcon: ({ models: { Tag } }) => (language, tag) => {
-      if (!language.repositories || !language.repositories.length)
-        return language.icon;
-      const tagRec = Tag.records.get(
-        `${language.repositories.first.id}_${tag}`
-      );
-      if (!tagRec || !tagRec.icon) return language.icon;
-      return tagRec.icon;
-    },
-  },
   cacheProperties: ['mainRepository', 'slugPrefix', 'tagShortIds'],
   scopes: {
     // Hacky way to exclude the HTML language from the list
-    full: language => language.icon,
+    full: language => language.id !== 'html',
   },
 };

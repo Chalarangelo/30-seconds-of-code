@@ -1,22 +1,14 @@
 import { memo } from 'react';
 
-export const CardIcon = memo(({ icon }) => (
-  <img
-    src={`/assets/icons/${icon}.svg`}
-    className={`card-icon relative inline-block br-xl icon icon-${icon} before:fs-lg mt-1`}
-    alt=''
-  />
-));
-
-CardIcon.displayName = 'CardIcon';
-
 // Title
 export const CardTitle = memo(({ isSecondary = false, children, ...rest }) => {
   const H = isSecondary ? 'h3' : 'h1';
 
   return (
     <H
-      className='card-title m-0 txt-200 fs-lg md:fs-xl f-alt f-ellipsis'
+      className={`card-title m-0 txt-200 fs-lg md:fs-xl f-alt f-ellipsis ${
+        isSecondary ? 'f-clamp' : ''
+      }`}
       {...rest}
     >
       {children}
@@ -33,7 +25,8 @@ export const CardSubtitle = memo(({ children }) => (
 
 CardSubtitle.displayName = 'CardSubtitle';
 
-export const cardClassName = 'card srfc-01db txt-100 br-lg';
+export const cardClassName =
+  'card mt-7 mx-1 mb-4 md:mx-3.5 srfc-01db txt-100 br-lg';
 
 // Card
 /**
