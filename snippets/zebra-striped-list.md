@@ -1,7 +1,7 @@
 ---
 title: Zebra striped list
 tags: visual
-cover: blog_images/forest-balcony.jpg
+cover: forest-balcony
 firstSeen: 2018-10-31T08:19:06+02:00
 lastUpdated: 2020-12-30T15:37:37+02:00
 ---

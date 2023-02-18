@@ -1,7 +1,7 @@
 ---
 title: Counter
 tags: visual
-cover: blog_images/laptop-plants.jpg
+cover: laptop-plants
 firstSeen: 2018-03-07T22:12:42+02:00
 lastUpdated: 2020-12-30T15:37:37+02:00
 ---

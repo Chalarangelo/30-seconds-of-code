@@ -1,7 +1,7 @@
 ---
 title: Zig zag background pattern
 tags: visual
-cover: blog_images/blue-lake.jpg
+cover: blue-lake
 firstSeen: 2021-01-11T09:51:43+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

@@ -2,7 +2,7 @@
 title: Image text overlay
 tags: visual
 author: chalarangelo
-cover: blog_images/mountain-lake-cottage.jpg
+cover: mountain-lake-cottage
 firstSeen: 2020-08-18T15:07:32+03:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

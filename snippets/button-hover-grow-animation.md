@@ -2,7 +2,7 @@
 title: Button grow animation
 tags: animation
 author: chalarangelo
-cover: blog_images/white-laptop.jpg
+cover: white-laptop
 firstSeen: 2021-05-24T15:28:52+03:00
 lastUpdated: 2021-05-24T15:28:52+03:00
 ---

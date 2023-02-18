@@ -1,7 +1,7 @@
 ---
 title: Circle
 tags: visual
-cover: blog_images/oven-paddle.jpg
+cover: oven-paddle
 firstSeen: 2018-03-04T08:19:52+02:00
 lastUpdated: 2020-12-30T15:37:37+02:00
 ---

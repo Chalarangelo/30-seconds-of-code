@@ -1,7 +1,7 @@
 ---
 title: Show additional content on hover
 tags: visual
-cover: blog_images/dark-leaves-5.jpg
+cover: dark-leaves-5
 firstSeen: 2020-08-18T16:40:23+03:00
 lastUpdated: 2021-10-11T18:44:51+03:00
 ---

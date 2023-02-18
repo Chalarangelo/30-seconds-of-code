@@ -1,7 +1,7 @@
 ---
 title: Toggle switch
 tags: visual,interactivity
-cover: blog_images/interior-5.jpg
+cover: interior-5
 firstSeen: 2018-10-03T08:55:20+03:00
 lastUpdated: 2020-12-30T15:37:37+02:00
 ---

@@ -1,7 +1,7 @@
 ---
 title: Reset all styles
 tags: visual
-cover: blog_images/rocky-beach-2.jpg
+cover: rocky-beach-2
 firstSeen: 2018-02-28T21:51:36+02:00
 lastUpdated: 2020-12-30T15:37:37+02:00
 ---

@@ -1,7 +1,7 @@
 ---
 title: Pretty text underline
 tags: visual
-cover: blog_images/flower-portrait-6.jpg
+cover: flower-portrait-6
 firstSeen: 2018-02-25T15:14:39+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

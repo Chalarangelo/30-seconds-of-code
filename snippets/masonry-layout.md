@@ -1,7 +1,7 @@
 ---
 title: Masonry Layout
 tags: layout
-cover: blog_images/interior-2.jpg
+cover: interior-2
 firstSeen: 2019-12-11T02:19:05+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---

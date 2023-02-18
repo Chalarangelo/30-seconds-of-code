@@ -1,7 +1,7 @@
 ---
 title: Fullscreen
 tags: visual
-cover: blog_images/flower-portrait-3.jpg
+cover: flower-portrait-3
 firstSeen: 2019-01-12T13:08:40+02:00
 lastUpdated: 2021-10-13T19:29:39+02:00
 ---
