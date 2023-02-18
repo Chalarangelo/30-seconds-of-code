@@ -25,7 +25,7 @@ const PreviewCard = ({ contentItem }) => (
         </Link>
       </CardTitle>
       <p
-        className='mx-0 mt-1 mb-3 f-clamp'
+        className='mx-0 mt-1 mb-3 f-clamp fs-sm md:fs-md'
         dangerouslySetInnerHTML={{ __html: `${contentItem.description}` }}
       />
       <CardSubtitle>
