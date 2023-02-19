@@ -31,6 +31,9 @@
   aspect-ratio: 2;
   object-fit: cover;
 }
+.no-overflow {
+  overflow: hidden;
+}
 
 // Content container
 .content {
@@ -50,6 +53,13 @@
         grid-area: #{$area}#{$row};
       }
     }
+  }
+}
+
+// Specific styles used in some components, that were overkill to have as component-specific classes
+@media screen and (min-width: $layout-medium-breakpoint) {
+  .md\:order-2 {
+    order: 2;
   }
 }
 
