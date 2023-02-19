@@ -93,3 +93,14 @@ img.nav-website-logo {
     z-index: 1001;
   }
 }
+
+// Footer styles
+footer {
+  // Make at least as tall as the cookie consent popup
+  // to ensure that the paginator is never hidden
+  min-height: 9rem;
+
+  p {
+    line-height: 1.5rem;
+  }
+}
