@@ -1,4 +1,4 @@
-import { JSONHandler } from './jsonHandler';
+import { JSONHandler } from 'blocks/utilities/jsonHandler';
 
 jest.mock('glob', () => ({
   sync: jest.fn(() => ['test/item/index.json']),
