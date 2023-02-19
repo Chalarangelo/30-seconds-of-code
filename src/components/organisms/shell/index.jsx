@@ -39,7 +39,7 @@ const Shell = ({ isSearch = false, isFaq = false, children }) => {
             </a>
           </h1>
         </Link>
-        <div className='nav-control-wrapper grid txt-150 a-center'>
+        <div className='nav-control-wrapper grid gap-2 txt-150 a-center'>
           <Link href='/list/p/1'>
             <a className='px-2 no-animation'>
               <span className='txt-150'>{literals.snippets}</span>
