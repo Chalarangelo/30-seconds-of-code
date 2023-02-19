@@ -113,6 +113,14 @@
   margin-right: auto;
 }
 
+// Gap utilities (only as needed)
+.gap-1 {
+  gap: var(--s-1);
+}
+.gap-2 {
+  gap: var(--s-2);
+}
+
 // Additional responsive spacing (only as needed)
 @media screen and (min-width: $layout-medium-breakpoint) {
   .md\:mx-3\.5 {
@@ -132,5 +140,9 @@
   .md\:py-8 {
     padding-top: var(--s-8);
     padding-bottom: var(--s-8);
+  }
+
+  .md\:gap-2 {
+    gap: var(--s-2);
   }
 }
