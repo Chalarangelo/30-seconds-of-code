@@ -153,7 +153,7 @@ const Search = ({ isMainSearch = false }) => {
         rel='nofollow'
       />
       {!isMainSearch && value ? (
-        <ul className='search-autocomplete-list pl-0 m-0 srfc-02db'>
+        <ul className='search-autocomplete-list pl-0 m-0 srfc-02db no-overflow'>
           {[
             ...searchResults.slice(0, 9),
             {
