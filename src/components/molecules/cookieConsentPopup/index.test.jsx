@@ -12,21 +12,11 @@ describe('<CookieConsentPopup />', () => {
 
   afterEach(cleanup);
 
-  describe('it renders', () => {
-    it('the appropriate wrapper element', () => {
-      expect(wrapper.querySelectorAll('div.cookie-consent-popup')).toHaveLength(
-        1
-      );
-    });
-
-    it('the cookie disclaimer', () => {
-      expect(wrapper.querySelectorAll('div > p')).toHaveLength(1);
-      expect(wrapper.querySelectorAll('p a')).toHaveLength(1);
-    });
-
-    it('the buttons', () => {
-      expect(wrapper.querySelectorAll('.btn')).toHaveLength(2);
-    });
+  it('renders correctly', () => {
+    expect(wrapper.querySelectorAll('.cookie-consent-popup')).toHaveLength(1);
+    expect(wrapper.querySelectorAll('div > p')).toHaveLength(1);
+    expect(wrapper.querySelectorAll('p a')).toHaveLength(1);
+    expect(wrapper.querySelectorAll('.btn')).toHaveLength(2);
   });
 
   describe('with cookies accepted', () => {
@@ -38,9 +28,7 @@ describe('<CookieConsentPopup />', () => {
     });
 
     it('does not render', () => {
-      expect(wrapper.querySelectorAll('div.cookie-consent-popup')).toHaveLength(
-        1
-      );
+      expect(wrapper.querySelectorAll('.cookie-consent-popup')).toHaveLength(1);
     });
   });
 
@@ -53,9 +41,7 @@ describe('<CookieConsentPopup />', () => {
     });
 
     it('does not render', () => {
-      expect(wrapper.querySelectorAll('div.cookie-consent-popup')).toHaveLength(
-        1
-      );
+      expect(wrapper.querySelectorAll('.cookie-consent-popup')).toHaveLength(1);
     });
   });
 });

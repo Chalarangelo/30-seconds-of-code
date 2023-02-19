@@ -2,13 +2,10 @@ import { cleanup } from '@testing-library/react';
 import { renderWithContext } from 'test/utils';
 import SnippetPage from './index';
 import { breadcrumbs } from 'test/fixtures/breadcrumbs';
-import SnippetFactory from 'test/fixtures/factories/snippet';
-
-const fullSnippet = SnippetFactory.create('FullSnippet');
-const fullBlogSnippet = SnippetFactory.create('FullBlogSnippet');
+import { fullSnippet } from 'test/fixtures/snippet';
 
 describe('<SnippetPage />', () => {
-  let wrapper, snippetCard;
+  let wrapper, snippetCard, codeBlocks;
 
   beforeEach(() => {
     const utils = renderWithContext(
@@ -21,57 +18,63 @@ describe('<SnippetPage />', () => {
     );
     wrapper = utils.container;
     snippetCard = wrapper.querySelector('.snippet-card');
+    codeBlocks = wrapper.querySelectorAll('pre');
   });
 
   afterEach(cleanup);
 
-  describe('should render', () => {
-    it('a Shell component', () => {
-      expect(wrapper.querySelectorAll('.page-container')).toHaveLength(1);
-    });
-
-    it('a Breadcrumbs component', () => {
-      expect(wrapper.querySelectorAll('.breadcrumbs')).toHaveLength(1);
-    });
-
-    it('a SnippetCard component', () => {
-      expect(wrapper.querySelectorAll('.snippet-card')).toHaveLength(1);
-    });
-  });
-
-  it('should pass the correct data to the Meta component', () => {
+  it('has the correct metadata', () => {
     expect(document.title).toContain(fullSnippet.title);
   });
 
-  it('should pass the breadcrumbs to the Breadcrumbs component', () => {
+  it('renders the correct breadcrumbs', () => {
+    expect(wrapper.querySelectorAll('.breadcrumbs')).toHaveLength(1);
+    expect(wrapper.querySelectorAll('.breadcrumb-item > a')).toHaveLength(
+      breadcrumbs.length
+    );
     expect(wrapper.querySelector('.breadcrumbs').textContent).toContain(
       breadcrumbs[0].name
     );
   });
 
-  it('should pass the snippet data to the SnippetCard component', () => {
-    expect(snippetCard.querySelector('.card-title').textContent).toContain(
-      fullSnippet.title
-    );
+  it('breadcrumbs links are accessible', () => {
+    expect(
+      wrapper.querySelectorAll('nav[aria-label="breadcrumbs"]')
+    ).toHaveLength(1);
+    expect(
+      wrapper.querySelectorAll(
+        '.breadcrumb-item:last-of-type > a[aria-current="page"]'
+      )
+    ).toHaveLength(1);
   });
 
-  describe('with a blog post', () => {
-    beforeEach(() => {
-      const utils = renderWithContext(
-        <SnippetPage
-          snippet={fullBlogSnippet}
-          pageDescription=''
-          recommendations={{ items: [] }}
-          breadcrumbs={breadcrumbs}
-        />
-      );
-      wrapper = utils.container;
-    });
+  it('renders the correct data in the snippet card', () => {
+    expect(wrapper.querySelectorAll('.card')).toHaveLength(1);
+    expect(snippetCard.querySelector('.ar-wide').src).toContain(
+      fullSnippet.cover
+    );
+    expect(snippetCard.querySelector('h1.card-title').textContent).toBe(
+      fullSnippet.title
+    );
+    expect(snippetCard.querySelectorAll('.card-title + p')).toHaveLength(1);
+    expect(expect(snippetCard.textContent).toContain(fullSnippet.tags));
+    expect(snippetCard.querySelector('.card-description').innerHTML).toContain(
+      fullSnippet.fullDescription
+    );
+    expect(snippetCard.querySelectorAll('.card-source-content')).toHaveLength(
+      1
+    );
+    expect(codeBlocks[0].innerHTML).toBe(fullSnippet.codeBlocks[0].htmlContent);
+    expect(snippetCard.querySelectorAll('.card-author')).toHaveLength(1);
+    expect(snippetCard.querySelectorAll('.card-actions')).toHaveLength(1);
+    expect(wrapper.querySelectorAll('.icon-github')).toHaveLength(1);
+  });
 
-    it('should pass the correct logoSrc to the Meta component', () => {
-      expect(
-        document.head.querySelector('meta[property="og:image"]').content
-      ).toContain(fullBlogSnippet.cover);
-    });
+  it('renders the cover image correctly, providing a WEBP alternative', () => {
+    expect(wrapper.querySelectorAll('picture')).toHaveLength(1);
+    expect(wrapper.querySelector('picture img').src).toBe(fullSnippet.cover);
+    expect(wrapper.querySelector('picture source').srcset).toBe(
+      fullSnippet.cover.replace('jpg', 'webp')
+    );
   });
 });

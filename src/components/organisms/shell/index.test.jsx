@@ -14,29 +14,15 @@ describe('<Shell />', () => {
 
   afterEach(cleanup);
 
-  describe('should render', () => {
-    it('the page container', () => {
-      expect(wrapper.querySelectorAll('div.page-container')).toHaveLength(1);
-    });
-
-    it('a header component', () => {
-      expect(pageContainer.querySelectorAll('header')).toHaveLength(1);
-    });
-
-    it('the content container', () => {
-      expect(pageContainer.querySelectorAll('div.content')).toHaveLength(1);
-    });
-
-    it('a footer component', () => {
-      expect(pageContainer.querySelectorAll('footer')).toHaveLength(1);
-    });
-  });
-
-  it('should render passed children', () => {
+  it('renders correctly', () => {
+    expect(wrapper.querySelectorAll('.page-container')).toHaveLength(1);
+    expect(pageContainer.querySelectorAll('header')).toHaveLength(1);
+    expect(pageContainer.querySelectorAll('.content')).toHaveLength(1);
+    expect(pageContainer.querySelectorAll('footer')).toHaveLength(1);
     expect(wrapper.textContent).toContain(innerText);
   });
 
-  describe('when in production without cookies enabled', () => {
+  describe('when in production without cookies applied', () => {
     beforeEach(() => {
       wrapper = renderWithContext(<Shell isSettings>{innerText}</Shell>)
         .container;

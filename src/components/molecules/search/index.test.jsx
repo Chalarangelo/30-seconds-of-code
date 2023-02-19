@@ -26,33 +26,29 @@ describe('<Search />', () => {
 
   afterEach(cleanup);
 
-  it('should render correctly', () => {
+  it('renders correctly', () => {
     expect(wrapper.querySelectorAll('input[type="search"]')).toHaveLength(1);
   });
 
-  describe('when entering a keyphrase from non-main search', () => {
-    it('should redirect to search', () => {
-      fireEvent.keyPress(input, { charCode: 13 });
-      expect(push.mock.calls.length).toBeGreaterThan(0);
-    });
+  it('when entering a keyphrase from non-main search should redirect to search', () => {
+    fireEvent.keyPress(input, { charCode: 13 });
+    expect(push.mock.calls.length).toBeGreaterThan(0);
   });
 
-  describe('when clicked and isMainSearch', () => {
-    it('should push the state to history', () => {
-      const push = jest.fn();
-      useRouter.mockImplementation(() => ({ push }));
+  it('when clicked and isMainSearch should push the state to history', () => {
+    const push = jest.fn();
+    useRouter.mockImplementation(() => ({ push }));
 
-      wrapper = renderWithContext(<Search isMainSearch />, {
-        initialState: {
-          search: {
-            searchQuery: 'tes',
-            searchIndex: [],
-          },
+    wrapper = renderWithContext(<Search isMainSearch />, {
+      initialState: {
+        search: {
+          searchQuery: 'tes',
+          searchIndex: [],
         },
-      }).container;
-      input = wrapper.querySelector('input');
-      fireEvent.keyUp(input, { target: { value: 'test' } });
-      expect(push.mock.calls.length).toBeGreaterThan(0);
-    });
+      },
+    }).container;
+    input = wrapper.querySelector('input');
+    fireEvent.keyUp(input, { target: { value: 'test' } });
+    expect(push.mock.calls.length).toBeGreaterThan(0);
   });
 });

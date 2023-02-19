@@ -13,25 +13,14 @@ describe('<StaticPage />', () => {
 
   afterEach(cleanup);
 
-  describe('should render', () => {
-    it('a Shell component', () => {
-      expect(wrapper.querySelectorAll('.page-container')).toHaveLength(1);
-    });
-
-    it('a PageTitle component', () => {
-      expect(wrapper.querySelectorAll('.page-title')).toHaveLength(1);
-    });
-
-    it('a subtitle element', () => {
-      expect(wrapper.querySelectorAll('.page-title + p')).toHaveLength(1);
-    });
-
-    it('4 SimpleCard components', () => {
-      expect(wrapper.querySelectorAll('.card')).toHaveLength(4);
-    });
+  it('renders correctly', () => {
+    expect(wrapper.querySelectorAll('.page-container')).toHaveLength(1);
+    expect(wrapper.querySelectorAll('.page-title')).toHaveLength(1);
+    expect(wrapper.querySelectorAll('.page-title + p')).toHaveLength(1);
+    expect(wrapper.querySelectorAll('.card')).toHaveLength(4);
   });
 
-  it('should pass the correct data to the Meta component', () => {
+  it('has the correct metadata', () => {
     expect(document.title).toContain(aboutLiterals.title);
   });
 });
