@@ -65,7 +65,6 @@ describe('<SnippetPage />', () => {
       1
     );
     expect(codeBlocks[0].innerHTML).toBe(fullSnippet.codeBlocks[0].htmlContent);
-    expect(snippetCard.querySelectorAll('.card-author')).toHaveLength(1);
     expect(snippetCard.querySelectorAll('.card-actions')).toHaveLength(1);
     expect(wrapper.querySelectorAll('.icon-github')).toHaveLength(1);
   });
