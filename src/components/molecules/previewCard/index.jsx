@@ -9,7 +9,9 @@ import { CardTitle, CardSubtitle, cardClassName } from 'components/atoms/card';
  * @param {object} contentItem - Snippet or collection object for the card.
  */
 const PreviewCard = ({ contentItem }) => (
-  <li className={`${cardClassName} list-card grid a-center py-5 px-4 md:p-6`}>
+  <li
+    className={`${cardClassName} list-card grid a-center py-5 px-4 md:p-6 no-overflow`}
+  >
     <Image
       className='br-md'
       src={contentItem.cover}
@@ -18,10 +20,10 @@ const PreviewCard = ({ contentItem }) => (
       width='144'
       loading='lazy'
     />
-    <div className='flex flex-col card-data'>
+    <div className='flex flex-col gap-1 md:gap-2'>
       <CardTitle isSecondary>
         <Link href={contentItem.url}>
-          <a className='inherit'>{contentItem.title}</a>
+          <a className='inherit fill-parent'>{contentItem.title}</a>
         </Link>
       </CardTitle>
       <p
