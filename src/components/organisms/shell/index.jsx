@@ -25,8 +25,8 @@ const Shell = ({ isSearch = false, isFaq = false, children }) => {
         <a href='#skip-link-target' className='skip-link fs-lg'>
           {literals.skipToContent}
         </a>
-        <Link href='/'>
-          <h1 className='m-0 fs-sm'>
+        <h1 className='m-0 fs-sm'>
+          <Link href='/'>
             <a title={literals.siteName} aria-label={literals.siteName}>
               <img
                 fetchpriority='high'
@@ -37,8 +37,8 @@ const Shell = ({ isSearch = false, isFaq = false, children }) => {
                 height='42'
               />
             </a>
-          </h1>
-        </Link>
+          </Link>
+        </h1>
         <div className='nav-control-wrapper grid gap-2 txt-150 a-center'>
           <Link href='/list/p/1'>
             <a className='px-2 no-animation'>
