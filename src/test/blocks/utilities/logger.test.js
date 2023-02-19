@@ -1,5 +1,5 @@
 import { Writable } from 'stream';
-import { Logger } from './logger';
+import { Logger } from 'blocks/utilities/logger';
 
 describe('Logger', () => {
   const writeFn = jest.fn();

@@ -1,5 +1,5 @@
 import childProcess from 'child_process';
-import { Content } from './content';
+import { Content } from 'blocks/utilities/content';
 jest.mock('child_process');
 
 describe('Content', () => {

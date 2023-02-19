@@ -1,6 +1,6 @@
 import { cleanup } from '@testing-library/react';
-import { renderWithContext } from 'test/utils';
-import Shell from './index';
+import { renderWithContext } from 'test/reactUtils';
+import Shell from 'components/organisms/shell';
 
 describe('<Shell />', () => {
   let wrapper, pageContainer;

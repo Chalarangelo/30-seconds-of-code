@@ -1,10 +1,10 @@
 // Slightly misleading name, this is a test for the schema and its models
 
 // Import and mute logger before doing anything else
-import { Logger } from './utilities/logger';
+import { Logger } from 'blocks/utilities/logger';
 Logger.muteGlbobal = true;
 
-import { Application } from './application';
+import { Application } from 'blocks/application';
 import { content } from 'test/fixtures/content';
 
 // Keep this outside of test scope, somehow it gets reset even in beforeAll

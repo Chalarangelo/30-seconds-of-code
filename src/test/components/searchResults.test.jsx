@@ -1,6 +1,6 @@
 import { cleanup } from '@testing-library/react';
-import { renderWithContext } from 'test/utils';
-import SearchResults from './index';
+import { renderWithContext } from 'test/reactUtils';
+import SearchResults from 'components/organisms/searchResults';
 import { snippetList } from 'test/fixtures/snippet';
 
 describe('<SearchResults />', () => {

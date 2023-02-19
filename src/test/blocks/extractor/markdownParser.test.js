@@ -1,4 +1,4 @@
-import { MarkdownParser } from './markdownParser';
+import { MarkdownParser } from 'blocks/extractor/markdownParser';
 
 describe('MarkdownParser', () => {
   let snippetResult, blogResult;

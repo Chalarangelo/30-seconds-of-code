@@ -1,6 +1,6 @@
 import { cleanup } from '@testing-library/react';
-import { renderWithContext } from 'test/utils';
-import ListingPage from './index';
+import { renderWithContext } from 'test/reactUtils';
+import ListingPage from 'components/templates/listingPage';
 import { chipItems } from 'test/fixtures/listingChips';
 import { snippetList, previewSnippet } from 'test/fixtures/snippet';
 import { paginator } from 'test/fixtures/paginator';

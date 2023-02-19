@@ -1,4 +1,4 @@
-import { Schemer } from './schemer';
+import { Schemer } from 'blocks/utilities/schemer';
 
 describe('Schemer', () => {
   describe('generateSnippetData', () => {

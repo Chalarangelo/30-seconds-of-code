@@ -11,9 +11,9 @@ import {
   toKebabCase,
   convertToSeoSlug,
   convertToValidId,
-} from './index';
+} from 'utils';
 
-import search, { quickParseTokens as clientSearchEngine } from './search';
+import search, { quickParseTokens as clientSearchEngine } from 'utils/search';
 
 describe('uniqueElements', () => {
   it('returns the unique elements in an array', () => {

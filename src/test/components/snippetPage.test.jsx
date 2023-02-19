@@ -1,6 +1,6 @@
 import { cleanup } from '@testing-library/react';
-import { renderWithContext } from 'test/utils';
-import SnippetPage from './index';
+import { renderWithContext } from 'test/reactUtils';
+import SnippetPage from 'components/templates/snippetPage';
 import { breadcrumbs } from 'test/fixtures/breadcrumbs';
 import { fullSnippet } from 'test/fixtures/snippet';
 
