@@ -1,7 +1,7 @@
 import { cleanup } from '@testing-library/react';
 import { renderWithContext } from 'test/utils';
 import SearchResults from './index';
-import SnippetFactory from 'test/fixtures/factories/snippet';
+import { snippetList } from 'test/fixtures/snippet';
 
 describe('<SearchResults />', () => {
   let wrapper;
@@ -11,14 +11,14 @@ describe('<SearchResults />', () => {
       <SearchResults
         recommendations={{
           title: 'Recommended snippets',
-          items: SnippetFactory.createMany('PreviewSnippet', 3),
+          items: snippetList,
         }}
       />,
       {
         initialState: {
           search: {
             searchQuery: '',
-            searchIndex: SnippetFactory.createMany('PreviewSnippet', 3),
+            searchIndex: snippetList,
             searchResults: [],
             filteredResults: [],
             availableFilters: [],
@@ -30,7 +30,7 @@ describe('<SearchResults />', () => {
 
   afterEach(cleanup);
 
-  it('should render an empty state', () => {
+  it('renders an empty state', () => {
     expect(wrapper.querySelectorAll('.recommendation-list-title')).toHaveLength(
       1
     );
@@ -42,14 +42,14 @@ describe('<SearchResults />', () => {
         <SearchResults
           recommendations={{
             title: 'Recommended snippets',
-            items: SnippetFactory.createMany('PreviewSnippet', 3),
+            items: snippetList,
           }}
         />,
         {
           initialState: {
             search: {
               searchQuery: '',
-              searchIndex: SnippetFactory.createMany('PreviewSnippet', 3),
+              searchIndex: snippetList,
               searchResults: [],
               filteredResults: [],
               availableFilters: [],
@@ -59,7 +59,7 @@ describe('<SearchResults />', () => {
       ).container;
     });
 
-    it('should render the recommended snippets', () => {
+    it('renders correctly', () => {
       expect(wrapper.querySelectorAll('.list-section')).toHaveLength(1);
     });
   });
@@ -78,14 +78,14 @@ describe('<SearchResults />', () => {
         <SearchResults
           recommendations={{
             title: 'Recommended snippets',
-            items: SnippetFactory.createMany('PreviewSnippet', 3),
+            items: snippetList,
           }}
         />,
         {
           initialState: {
             search: {
               searchQuery: 'impossiblestringtofindintheindex',
-              searchIndex: SnippetFactory.createMany('PreviewSnippet', 3),
+              searchIndex: snippetList,
               searchResults: [],
               filteredResults: [],
               availableFilters: [],
@@ -104,12 +104,11 @@ describe('<SearchResults />', () => {
 
   describe('with results', () => {
     beforeEach(() => {
-      const snippetList = SnippetFactory.createMany('PreviewSnippet', 3);
       wrapper = renderWithContext(
         <SearchResults
           recommendations={{
             title: 'Recommended snippets',
-            items: SnippetFactory.createMany('PreviewSnippet', 3),
+            items: snippetList,
           }}
         />,
         {
@@ -126,16 +125,10 @@ describe('<SearchResults />', () => {
       ).container;
     });
 
-    it('should render a PageTitle', () => {
+    it('renders correctly', () => {
       expect(wrapper.querySelectorAll('.page-title')).toHaveLength(1);
-    });
-
-    it('should render filters', () => {
       expect(wrapper.querySelectorAll('.listing-chips')).toHaveLength(1);
       expect(wrapper.querySelectorAll('li .btn')).toHaveLength(3);
-    });
-
-    it('should render a PreviewCard', () => {
       expect(
         wrapper.querySelectorAll('.list-card').length
       ).toBeGreaterThanOrEqual(1);
