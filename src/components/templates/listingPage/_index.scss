@@ -1,34 +1,12 @@
 .snippet-list-header {
-  .page-title {
-    text-align: center;
-  }
-
   @media screen and (min-width: $layout-medium-breakpoint) {
     display: grid;
     grid-template-columns: auto 240px;
-    align-items: center;
     min-height: 340px;
-
-    .page-title {
-      text-align: left;
-    }
   }
 
   @media screen and (min-width: $layout-large-breakpoint) {
-    min-height: 300px;
     grid-template-columns: auto 360px;
-  }
-}
-
-.snippet-list-description {
-  line-height: 2rem;
-}
-
-.snippet-list-splash-image {
-  width: calc(100% - 1.75rem);
-
-  @media screen and (min-width: $layout-medium-breakpoint) {
-    order: 2;
-    text-align: right;
+    min-height: 300px;
   }
 }
