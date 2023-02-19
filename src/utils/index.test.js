@@ -1,4 +1,6 @@
 import {
+  uniqueElements,
+  chunk,
   capitalize,
   optimizeNodes,
   optimizeAllNodes,
@@ -9,8 +11,24 @@ import {
   toKebabCase,
   convertToSeoSlug,
   convertToValidId,
-  addTrailingSlashToSlug,
-} from './string';
+} from './index';
+
+import search, { quickParseTokens as clientSearchEngine } from './search';
+
+describe('uniqueElements', () => {
+  it('returns the unique elements in an array', () => {
+    expect(uniqueElements([1, 2, 2, 3, 4, 4, 5])).toEqual([1, 2, 3, 4, 5]);
+  });
+});
+
+describe('chunk', () => {
+  it('chunks an array with a remainder', () => {
+    expect(chunk([1, 2, 3, 4, 5], 2)).toEqual([[1, 2], [3, 4], [5]]);
+  });
+  it('chunks an empty array', () => {
+    expect(chunk([])).toEqual([]);
+  });
+});
 
 describe('capitalize', () => {
   it('capitalizes the first letter of a string', () => {
@@ -119,27 +137,18 @@ describe('convertToValidId', () => {
   });
 });
 
-describe('addTrailingSlashToSlug', () => {
-  it('returns the slug as-is if it ends with a "/"', () => {
-    const slug = 'https://mysite.com/a-slug/';
-    expect(addTrailingSlashToSlug(slug)).toBe(slug);
+describe('search', () => {
+  it('parses the tokens from the given string', () => {
+    const str = 'Creates an object with the same values.';
+    const result = ['creat', 'object', 'same', 'valu'];
+    expect(search(str)).toEqual(result);
   });
+});
 
-  it('returns the slug with a trailing "/"', () => {
-    const slug = 'https://mysite.com/a-slug';
-    expect(addTrailingSlashToSlug(slug)).toBe(`${slug}/`);
-  });
-
-  it('returns the slug as-is if it has params preceded by "/"', () => {
-    const slug = 'https://mysite.com/a-slug/?keyphrase=something';
-    expect(addTrailingSlashToSlug(slug)).toBe(slug);
-  });
-
-  it('returns the slug with a "/" before the params', () => {
-    const slug = 'https://mysite.com/a-slug';
-    const params = '?keyphrase=something';
-    expect(addTrailingSlashToSlug(`${slug}${params}`)).toBe(
-      `${slug}/${params}`
-    );
+describe('clientSearchEngine', () => {
+  it('parses the tokens from the given string', () => {
+    const str = 'Creates an object with the same values.';
+    const result = ['creat', 'object', 'same', 'valu'];
+    expect(clientSearchEngine(str)).toEqual(result);
   });
 });
