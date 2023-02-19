@@ -21,6 +21,16 @@
 .f-justify {
   text-align: justify;
 }
+// Additional responsive spacing (only as needed)
+@media screen and (min-width: $layout-medium-breakpoint) {
+  .md\:f-left {
+    text-align: left;
+  }
+
+  .md\:f-right {
+    text-align: right;
+  }
+}
 
 .f-ellipsis {
   overflow: hidden;
@@ -32,4 +42,8 @@
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+
+.lh-2 {
+  line-height: 2rem;
 }
