@@ -1,7 +1,6 @@
 .paginator {
   grid-template-columns: 52px 1fr 52px;
   width: fit-content;
-  gap: 0.5rem;
 
   @media screen and (min-width: $layout-medium-breakpoint) {
     grid-template-columns: 128px 1fr 128px;
@@ -12,19 +11,12 @@
   span {
     margin: 0;
     min-width: 44px;
-    text-align: center;
-  }
-
-  div {
-    gap: 0.5rem;
   }
 
   .previous-page,
   .next-page {
-    margin: 0;
     color: var(--clr-primary-050);
     display: flex;
-    gap: 0.25rem;
   }
 
   .previous-page {
