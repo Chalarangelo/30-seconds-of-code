@@ -10,7 +10,6 @@
   z-index: 1001;
   height: 112px;
   width: 100vw;
-  justify-content: center;
   padding-top: 0.5rem;
 
   @media screen and (min-width: $layout-medium-breakpoint) {
@@ -29,7 +28,6 @@
 
 .nav-control-wrapper {
   grid-template-columns: 1fr;
-  grid-gap: 0.5rem;
   flex: 0 0 calc(100% - 0.5rem);
   margin: 0.25rem 0 0;
 
