@@ -10,11 +10,11 @@ const Paginator = ({ paginator }) => {
   const { previous, pages, next } = paginator;
 
   return (
-    <div className='paginator mt-7 mx-auto mb-6 a-center grid j-center'>
+    <div className='paginator gap-2 mt-7 mx-auto mb-6 a-center grid j-center'>
       {previous ? (
         <Link href={previous.url}>
           <a
-            className='btn action-btn previous-page j-center fs-no md:fs-sm icon icon-chevron-left box-border before:fs-md'
+            className='btn action-btn previous-page gap-1 j-center fs-no md:fs-sm icon icon-chevron-left box-border before:fs-md f-center'
             rel='prev'
           >
             {previous.label}
@@ -23,15 +23,17 @@ const Paginator = ({ paginator }) => {
       ) : (
         <div />
       )}
-      <div className='flex a-center'>
+      <div className='flex a-center gap-2'>
         {pages.map(({ label, url, current }) =>
           current ? (
-            <span className='fs-xl box-border' key={label}>
+            <span className='fs-xl box-border f-center' key={label}>
               {label}
             </span>
           ) : (
             <Link key={label} href={url}>
-              <a className='btn action-btn fs-md box-border'>{label}</a>
+              <a className='btn action-btn fs-md box-border f-center'>
+                {label}
+              </a>
             </Link>
           )
         )}
@@ -39,7 +41,7 @@ const Paginator = ({ paginator }) => {
       {next ? (
         <Link href={next.url}>
           <a
-            className='btn action-btn next-page j-center fs-no md:fs-sm icon icon-chevron-right box-border before:fs-md'
+            className='btn action-btn next-page gap-1 j-center fs-no md:fs-sm icon icon-chevron-right box-border before:fs-md f-center'
             rel='next'
           >
             {next.label}
