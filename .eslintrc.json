@@ -17,6 +17,9 @@
     "ecmaFeatures": {
       "jsx": true,
       "modules": true
+    },
+    "babelOptions": {
+      "presets": ["next/babel"]
     }
   },
   "plugins": [
