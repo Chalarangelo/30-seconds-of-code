@@ -64,7 +64,7 @@
     "icons": "NODE_PATH=src NODE_ENV=production npx --node-arg '-r esm' ./src/scripts/icons.js",
     "manifest": "NODE_PATH=src NODE_ENV=production npx --node-arg '-r esm' ./src/scripts/manifest.js",
     "format": "prettier --config .prettierrc --write './**/*.{js,jsx}'",
-    "test": "NODE_PATH=src NODE_ENV=test jest --config src/test/jest-config.json --coverage",
+    "test": "NODE_PATH=src NODE_ENV=test jest --config src/test/jest-config.json",
     "test:watch": "NODE_PATH=src NODE_ENV=test jest --config src/test/jest-config.json --watch"
   },
   "repository": {
