@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { getURLParameters, throttle } from 'utils';
+import { getURLParameters } from 'utils/string';
+import { throttle } from 'utils/function';
 import { useSearch } from 'state/search';
 import literals from 'lang/en/client/search';
 
