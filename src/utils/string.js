@@ -111,16 +111,6 @@ export const convertToSeoSlug = str => `/${toKebabCase(str)}`;
 export const convertToValidId = str => toKebabCase(stripHTMLTags(str));
 
 /**
- * Adds a trailing `/` to a slug, if necessary.
- * @param {string} str - The string to be converted.
- * */
-export const addTrailingSlashToSlug = str => {
-  if (str.includes('?'))
-    return str.includes('/?') ? str : str.replace('?', '/?');
-  return str.endsWith('/') ? str : `${str}/`;
-};
-
-/**
  * Replaces unsafe characters with HTML-safe ones.
  * @param {string} str - The string to be escaped.
  */
