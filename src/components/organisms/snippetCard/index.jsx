@@ -86,12 +86,14 @@ const SnippetCard = ({ snippet }) => {
         </div>
       )}
       {snippet.author ? (
-        <div className='card-author flex flex-col'>
+        <div className='flex flex-col m-0'>
           <h3 className='mt-4 mb-0 mx-0 txt-150 fs-md md:fs-lg'>
             {literals.writtenBy(snippet.author.name)}
           </h3>
-          <p className='mx-0 mt-2 mb-0 txt-100'>{snippet.author.intro}</p>
-          <p className='m-0 txt-100'>
+          <p className='lh-2 mx-0 mt-2 mb-0 txt-100 fs-sm md:fs-md'>
+            {snippet.author.intro}
+          </p>
+          <p className='lh-2 m-0 txt-100 fs-sm md:fs-md'>
             {'If you want to keep in touch, follow me on '}
             <a
               href={snippet.author.github}

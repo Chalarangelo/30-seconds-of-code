@@ -28,8 +28,8 @@ const HomePage = ({
         structuredData={structuredData}
       />
       <Shell>
-        <div className='snippet-list-header g-c1'>
-          <div className='snippet-list-splash-image my-2 mx-3.5 f-center'>
+        <div className='snippet-list-header g-c1 a-center'>
+          <div className='md:order-2 md:f-right my-2 mx-3.5 f-center'>
             <Image
               src={splashImage}
               alt=''
@@ -40,8 +40,10 @@ const HomePage = ({
             />
           </div>
           <div>
-            <PageTitle>{stringLiterals.tagline}</PageTitle>
-            <p className='snippet-list-description mt-4 mx-3.5 mb-2 txt-100 fs-sm md:fs-md'>
+            <PageTitle className='f-center md:f-left'>
+              {stringLiterals.tagline}
+            </PageTitle>
+            <p className='lh-2 mt-4 mx-3.5 mb-2 txt-100 fs-sm md:fs-md'>
               {stringLiterals.browseByCollection}
             </p>
           </div>

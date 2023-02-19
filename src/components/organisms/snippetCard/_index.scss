@@ -89,19 +89,6 @@
     }
   }
 
-  .card-author {
-    margin: 0;
-
-    > p {
-      font-size: var(--font-sm);
-      line-height: 2rem;
-
-      @media screen and (min-width: $layout-medium-breakpoint) {
-        font-size: var(--font-md);
-      }
-    }
-  }
-
   .card-actions {
     margin: 1rem 0 -1rem;
     justify-content: space-evenly;
