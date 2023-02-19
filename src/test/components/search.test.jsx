@@ -1,6 +1,6 @@
 import { cleanup, fireEvent } from '@testing-library/react';
-import { renderWithContext } from 'test/utils';
-import Search from './index';
+import { renderWithContext } from 'test/reactUtils';
+import Search from 'components/molecules/search';
 import { useRouter } from 'next/router';
 
 jest.mock('next/router', () => ({

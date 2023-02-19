@@ -1,4 +1,4 @@
-import { TextParser } from './textParser';
+import { TextParser } from 'blocks/extractor/textParser';
 
 jest.mock('fs/promises', () => ({
   readFile: jest.fn(() =>

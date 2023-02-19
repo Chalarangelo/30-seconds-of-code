@@ -1,7 +1,7 @@
 import { cleanup } from '@testing-library/react';
-import { renderWithContext } from 'test/utils';
+import { renderWithContext } from 'test/reactUtils';
 import aboutLiterals from 'lang/en/about';
-import StaticPage from './index';
+import StaticPage from 'components/templates/staticPage';
 
 describe('<StaticPage />', () => {
   let wrapper;

@@ -1,6 +1,6 @@
 import { cleanup } from '@testing-library/react';
-import { renderWithContext } from 'test/utils';
-import CookieConsentPopup from './index';
+import { renderWithContext } from 'test/reactUtils';
+import CookieConsentPopup from 'components/molecules/cookieConsentPopup';
 
 describe('<CookieConsentPopup />', () => {
   let wrapper;
