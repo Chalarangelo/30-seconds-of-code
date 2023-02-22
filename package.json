@@ -12,6 +12,7 @@
     "@babel/preset-env": "^7.15.6",
     "@jsiqle/core": "^1.4.1",
     "@types/jest": "^27.0.1",
+    "astro": "^2.0.14",
     "babel-jest": "^27.0.6",
     "chalk": "^4.1.0",
     "eslint": "^7.32.0",
@@ -69,7 +70,6 @@
   "browserslist": [
     "> 0.5% and last 4 versions and not dead and not ie>0 and not op_mini all and not and_uc>0 and not edge<79"
   ],
-  "dependencies": {},
   "engines": {
     "node": ">=18.14.2"
   }
