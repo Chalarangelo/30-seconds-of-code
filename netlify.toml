@@ -1,4 +1,4 @@
 [build]
   publish = "out"
   command = "npm run export"
-  environment = { NODE_VERSION = "14.17.6", CYPRESS_INSTALL_BINARY = "0",  PUPPETEER_SKIP_CHROMIUM_DOWNLOAD = "1" }
+  environment = { NODE_VERSION = "18.14.2", CYPRESS_INSTALL_BINARY = "0",  PUPPETEER_SKIP_CHROMIUM_DOWNLOAD = "1" }
