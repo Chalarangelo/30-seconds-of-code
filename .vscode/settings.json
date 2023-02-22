@@ -2,7 +2,6 @@
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
   "editor.detectIndentation": false,
-  "eslint.autoFixOnSave": true,
   "git.detectSubmodules": false,
   "editor.rulers": [
     80
@@ -17,13 +16,14 @@
     "editor.formatOnSaveMode": "file",
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
-  "[javascriptreact]": {
-    "editor.formatOnSaveMode": "file",
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-  },
   "[scss]": {
     "editor.formatOnSaveMode": "file",
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
-  "workbench.editor.labelFormat": "short"
+  "[astro]": {
+    "editor.formatOnSaveMode": "file",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.editor.labelFormat": "short",
+  "prettier.documentSelectors": ["**/*.astro"]
 }
