@@ -107,6 +107,11 @@ out/
 # Overmind files
 .overmind.sock
 
+# build output
+dist/
+# generated types
+.astro/
+
 # Generated files
 .build
 .assets
