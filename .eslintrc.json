@@ -7,7 +7,6 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended",
     "prettier"
   ],
   "parser": "@babel/eslint-parser",
@@ -20,15 +19,6 @@
     },
     "babelOptions": {
       "presets": ["next/babel"]
-    }
-  },
-  "plugins": [
-    "react",
-    "react-hooks"
-  ],
-  "settings": {
-    "react": {
-      "version": "detect"
     }
   },
   "rules": {
@@ -185,24 +175,6 @@
     "spaced-comment": [
       "error",
       "always"
-    ],
-    "react/jsx-equals-spacing": [
-      "error",
-      "never"
-    ],
-    "react/jsx-fragments": [
-      "error",
-      "syntax"
-    ],
-    "react/jsx-indent": [
-      "error",
-      2
-    ],
-    "react/jsx-no-duplicate-props": "error",
-    "react/no-deprecated": "error",
-    "react/prop-types": "off",
-    "react/no-unused-prop-types": "off",
-    "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off"
+    ]
   }
 }
