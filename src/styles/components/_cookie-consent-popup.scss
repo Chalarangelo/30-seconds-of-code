@@ -1,12 +1,3 @@
-@keyframes enter-from-below {
-  from {
-    transform: translateY(100%);
-  }
-  to {
-    transform: translateY(0%);
-  }
-}
-
 .cookie-consent-popup {
   position: fixed;
   bottom: 0;
@@ -15,7 +6,12 @@
   z-index: 99999;
   max-height: 60vh;
   overflow-y: auto;
-  animation: enter-from-below 0.3s ease 0s;
+  transform: translateY(0%);
+  transition: transform 0.3s ease 0s;
+
+  &.hidden {
+    transform: translateY(100%);
+  }
 
   > p,
   .cookie-consent-buttons {
