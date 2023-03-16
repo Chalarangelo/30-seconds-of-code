@@ -5,8 +5,7 @@ import Footer from 'components/Footer.astro';
 import CookieConsentPopup from 'components/CookieConsentPopup.astro';
 import Omnisearch from 'components/Omnisearch.astro';
 
-import literals from '../lang/en/client/common';
-import searchLiterals from '../lang/en/client/search';
+import literals from '../lang/en/index.js';
 
 // type Props = CollectionEntry<'blog'>['data'];
 
@@ -73,8 +72,8 @@ const isDevelopment = process.env.NODE_ENV === 'development';
             <input
               class='search-box srfc-inset py-1 px-2 box-border'
               type='search'
-              placeholder={searchLiterals.searchPlaceholder}
-              aria-label={searchLiterals.searchSnippets}
+              placeholder='Search'
+              aria-label='Search snippets and collections'
             />
           </div>
         </div>
