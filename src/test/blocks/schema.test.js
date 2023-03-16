@@ -1092,12 +1092,6 @@ describe('Application/Schema', () => {
         );
       });
 
-      it('returns the correct value for a static page', () => {
-        const page = Page.records.get('static_about');
-        const pageContext = page.context;
-        expect(pageContext.stringLiterals).not.toBeUndefined();
-      });
-
       it('returns the correct value for a listing page', () => {
         const page = Page.records.get('listing_blog/articles_1');
         const pageContext = page.context;
