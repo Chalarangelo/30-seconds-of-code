@@ -9,15 +9,6 @@ const NEW_BLOG_CARDS = 5;
 const TOP_SNIPPET_CARDS = 5;
 const TOP_COLLECTION_CHIPS = 8;
 
-/* eslint-disable camelcase */
-// TODO: Maybe find these a better home
-const staticContexts = {
-  static_about: { stringLiterals: literals.about },
-  static_cookies: { stringLiterals: literals.cookies },
-  static_faq: { stringLiterals: literals.faq },
-};
-/* eslint-enable camelcase */
-
 export const page = {
   name: 'Page',
   fields: [
@@ -37,7 +28,7 @@ export const page = {
     isUnlisted: page => (page.isSnippet ? !page.data.isListed : false),
     isPublished: page => (page.isSnippet ? page.data.isPublished : true),
     isIndexable: page => {
-      if (page.template === 'NotFoundPage') return false;
+      if (['NotFoundPage', 'SearchPage'].includes(page.template)) return false;
       if (!page.isSnippet) return true;
       return page.data.isPublished;
     },
@@ -57,185 +48,184 @@ export const page = {
       return '';
     },
     fullRoute: page => `${routePrefix}${page.relRoute}`,
-    staticContext: page => {
-      if (page.isStatic) return staticContexts[page.id] || {};
-      return null;
-    },
   },
   lazyProperties: {
-    data: ({ models: { Snippet, Listing } }) => page => {
-      if (page.isSnippet) return Snippet.records.get(page.relatedRecordId);
-      if (page.isListing) return Listing.records.get(page.relatedRecordId);
-      return {};
-    },
-    context: ({
-      models: { Snippet, Listing },
-      serializers: {
-        SnippetContextSerializer,
-        SnippetPreviewSerializer,
-        ListingContextSerializer,
-        ListingPreviewSerializer,
+    data:
+      ({ models: { Snippet, Listing } }) =>
+      page => {
+        if (page.isSnippet) return Snippet.records.get(page.relatedRecordId);
+        if (page.isListing) return Listing.records.get(page.relatedRecordId);
+        return {};
       },
-    }) => page => {
-      let context = {};
-      if (page.isHome) {
-        const listedCollections = Listing.records.featured
-          .toArray()
-          .slice(0, TOP_COLLECTION_CHIPS);
-        const newBlogs = Snippet.records.blogs.listedByNew
-          .toArray()
-          .slice(0, NEW_BLOG_CARDS);
-        const topSnippets = shuffle(
-          Snippet.records.snippets.listedByPopularity
+    context:
+      ({
+        models: { Snippet, Listing },
+        serializers: {
+          SnippetContextSerializer,
+          SnippetPreviewSerializer,
+          ListingContextSerializer,
+          ListingPreviewSerializer,
+        },
+      }) =>
+      page => {
+        let context = {};
+        if (page.isHome) {
+          const listedCollections = Listing.records.featured
             .toArray()
-            .slice(0, TOP_SNIPPET_CARDS * 5)
-        ).slice(0, TOP_SNIPPET_CARDS);
-        context.featuredCollections = ListingPreviewSerializer.serializeArray(
-          listedCollections
-        );
-        context.featuredCollections.push({
-          title: literals.moreCollections,
-          url: '/collections/p/1',
-          selected: false,
-        });
-        context.featuredSnippets = SnippetPreviewSerializer.serializeArray([
-          ...newBlogs,
-          ...topSnippets,
-        ]);
-        // TODO: Move this to a better place
-        context.splashImage = '/assets/splash/work-sunrise.png';
-        context.snippetListUrl = '/list/p/1';
-        context.stringLiterals = {
-          featuredSnippets: literals.featuredSnippets,
-          tagline: literals.tagline,
-          browseByCollection: literals.browseByCollection,
-        };
-        context.pageDescription = literals.pageDescription('main', {
-          snippetCount: Snippet.records.published.length,
-        });
-        context.structuredData = Schemer.generateHomeData();
-      }
-      if (page.isSnippet) {
-        context.breadcrumbs = page.data.breadcrumbs;
-        context.pageDescription = page.data.seoDescription;
-        context.snippet = SnippetContextSerializer.serialize(page.data);
-        context.structuredData = Schemer.generateSnippetData({
-          title: page.data.seoTitle,
-          slug: page.relRoute,
-          description: context.snippet.description,
-          cover: context.snippet.cover,
-          firstSeen: page.data.firstSeen,
-          lastUpdated: page.data.lastUpdated,
-          author: page.data.author,
-        });
-
-        let recommendedItems = SnippetPreviewSerializer.serializeArray(
-          page.data.recommendedSnippets.toArray()
-        );
-        if (page.data.recommendedCollection)
-          recommendedItems.unshift(
-            ListingPreviewSerializer.serialize(
-              page.data.recommendedCollection.listing,
-              { withDescription: true }
-            )
-          );
-        context.recommendations = {
-          title: literals.recommendedContent,
-          items: recommendedItems,
-        };
-      }
-      if (page.isListing) {
-        context.slug = page.relRoute;
-        const pageNumber = page.pageNumber;
-        const totalPages = page.data.pageCount;
-        const baseUrl = page.data.slugPrefix;
-        let buttons =
-          totalPages === 2
-            ? [1, 2]
-            : [
-                1,
-                Math.min(Math.max(pageNumber, 2), totalPages - 1),
-                totalPages,
-              ];
-        context.paginator =
-          totalPages > 1
-            ? {
-                previous:
-                  pageNumber > 1
-                    ? {
-                        url: `${baseUrl}/p/${pageNumber - 1}`,
-                        label: literals.previousPage,
-                      }
-                    : null,
-                pages: buttons.map(buttonNumber => ({
-                  label: buttonNumber,
-                  url: `${baseUrl}/p/${buttonNumber}`,
-                  current: buttonNumber === pageNumber,
-                })),
-                next:
-                  pageNumber < totalPages
-                    ? {
-                        url: `${baseUrl}/p/${pageNumber + 1}`,
-                        label: literals.nextPage,
-                      }
-                    : null,
-              }
-            : null;
-        Object.entries(ListingContextSerializer.serialize(page.data)).forEach(
-          ([key, value]) => {
-            context[key] = value;
-          }
-        );
-        if (page.isCollectionsListing) {
-          context.snippetList = ListingPreviewSerializer.serializeArray(
-            page.listings.toArray(),
-            {
-              withDescription: true,
-            }
-          );
-        } else {
-          context.snippetList = SnippetPreviewSerializer.serializeArray(
-            page.snippets.toArray()
-          );
+            .slice(0, TOP_COLLECTION_CHIPS);
+          const newBlogs = Snippet.records.blogs.listedByNew
+            .toArray()
+            .slice(0, NEW_BLOG_CARDS);
+          const topSnippets = shuffle(
+            Snippet.records.snippets.listedByPopularity
+              .toArray()
+              .slice(0, TOP_SNIPPET_CARDS * 5)
+          ).slice(0, TOP_SNIPPET_CARDS);
+          context.featuredCollections =
+            ListingPreviewSerializer.serializeArray(listedCollections);
+          context.featuredCollections.push({
+            title: literals.moreCollections,
+            url: '/collections/p/1',
+            selected: false,
+          });
+          context.featuredSnippets = SnippetPreviewSerializer.serializeArray([
+            ...newBlogs,
+            ...topSnippets,
+          ]);
+          // TODO: Move this to a better place
+          context.splashImage = '/assets/splash/work-sunrise.png';
+          context.snippetListUrl = '/list/p/1';
+          context.stringLiterals = {
+            featuredSnippets: literals.featuredSnippets,
+            tagline: literals.tagline,
+            browseByCollection: literals.browseByCollection,
+          };
+          context.pageDescription = literals.pageDescription('main', {
+            snippetCount: Snippet.records.published.length,
+          });
+          context.structuredData = Schemer.generateHomeData();
         }
-        context.structuredData = Schemer.generateListingData({
-          title:
-            pageNumber === 1
-              ? context.listingName
-              : `${context.listingName} - Page ${pageNumber}`,
-          slug: page.relRoute,
-          items: context.snippetList,
-        });
-      }
-      if (['StaticPage', 'NotFoundPage'].includes(page.template)) {
-        context = { ...page.staticContext };
-      }
-      if (page.template === 'SearchPage') {
-        const sortedSnippets = Snippet.records.listedByPopularity;
-        context.searchIndex = [
-          ...ListingPreviewSerializer.serializeArray(
-            Listing.records.searchable.toArray(),
-            {
-              withDescription: true,
-              withSearch: true,
+        if (page.isSnippet) {
+          context.breadcrumbs = page.data.breadcrumbs;
+          context.pageDescription = page.data.seoDescription;
+          context.snippet = SnippetContextSerializer.serialize(page.data);
+          context.structuredData = Schemer.generateSnippetData({
+            title: page.data.seoTitle,
+            slug: page.relRoute,
+            description: context.snippet.description,
+            cover: context.snippet.cover,
+            firstSeen: page.data.firstSeen,
+            lastUpdated: page.data.lastUpdated,
+            author: page.data.author,
+          });
+
+          let recommendedItems = SnippetPreviewSerializer.serializeArray(
+            page.data.recommendedSnippets.toArray()
+          );
+          if (page.data.recommendedCollection)
+            recommendedItems.unshift(
+              ListingPreviewSerializer.serialize(
+                page.data.recommendedCollection.listing,
+                { withDescription: true }
+              )
+            );
+          context.recommendations = {
+            title: literals.recommendedContent,
+            items: recommendedItems,
+          };
+        }
+        if (page.isListing) {
+          context.slug = page.relRoute;
+          const pageNumber = page.pageNumber;
+          const totalPages = page.data.pageCount;
+          const baseUrl = page.data.slugPrefix;
+          let buttons =
+            totalPages === 2
+              ? [1, 2]
+              : [
+                  1,
+                  Math.min(Math.max(pageNumber, 2), totalPages - 1),
+                  totalPages,
+                ];
+          context.paginator =
+            totalPages > 1
+              ? {
+                  previous:
+                    pageNumber > 1
+                      ? {
+                          url: `${baseUrl}/p/${pageNumber - 1}`,
+                          label: literals.previousPage,
+                        }
+                      : null,
+                  pages: buttons.map(buttonNumber => ({
+                    label: buttonNumber,
+                    url: `${baseUrl}/p/${buttonNumber}`,
+                    current: buttonNumber === pageNumber,
+                  })),
+                  next:
+                    pageNumber < totalPages
+                      ? {
+                          url: `${baseUrl}/p/${pageNumber + 1}`,
+                          label: literals.nextPage,
+                        }
+                      : null,
+                }
+              : null;
+          Object.entries(ListingContextSerializer.serialize(page.data)).forEach(
+            ([key, value]) => {
+              context[key] = value;
             }
-          ),
-          ...SnippetPreviewSerializer.serializeArray(sortedSnippets.toArray(), {
-            withSearch: true,
-          }),
-        ];
-        context.recommendations = {
-          title: literals.popularSnippets,
-          items: SnippetPreviewSerializer.serializeArray(
-            sortedSnippets.slice(0, 3).toArray()
-          ),
-        };
-        context.pageDescription = literals.pageDescription('search', {
-          snippetCount: Snippet.records.length,
-        });
-      }
-      return context;
-    },
+          );
+          if (page.isCollectionsListing) {
+            context.snippetList = ListingPreviewSerializer.serializeArray(
+              page.listings.toArray(),
+              {
+                withDescription: true,
+              }
+            );
+          } else {
+            context.snippetList = SnippetPreviewSerializer.serializeArray(
+              page.snippets.toArray()
+            );
+          }
+          context.structuredData = Schemer.generateListingData({
+            title:
+              pageNumber === 1
+                ? context.listingName
+                : `${context.listingName} - Page ${pageNumber}`,
+            slug: page.relRoute,
+            items: context.snippetList,
+          });
+        }
+        if (page.template === 'SearchPage') {
+          const sortedSnippets = Snippet.records.listedByPopularity;
+          context.searchIndex = [
+            ...ListingPreviewSerializer.serializeArray(
+              Listing.records.searchable.toArray(),
+              {
+                withDescription: true,
+                withSearch: true,
+              }
+            ),
+            ...SnippetPreviewSerializer.serializeArray(
+              sortedSnippets.toArray(),
+              {
+                withSearch: true,
+              }
+            ),
+          ];
+          context.recommendations = {
+            title: literals.popularSnippets,
+            items: SnippetPreviewSerializer.serializeArray(
+              sortedSnippets.slice(0, 3).toArray()
+            ),
+          };
+          context.pageDescription = literals.pageDescription('search', {
+            snippetCount: Snippet.records.length,
+          });
+        }
+        return context;
+      },
   },
   cacheProperties: [
     'data',
