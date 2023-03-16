@@ -1,0 +1,51 @@
+---
+const { paginator } = Astro.props;
+
+if (!paginator) return null; // TODO: Check
+
+const { previous, pages, next } = paginator;
+---
+
+<div class='paginator gap-2 mt-7 mx-auto mb-6 a-center grid j-center'>
+  {
+    previous ? (
+      <a
+        href={previous.url}
+        class='btn action-btn previous-page gap-1 j-center fs-no md:fs-sm icon icon-chevron-left box-border before:fs-md f-center'
+        rel='prev'
+      >
+        {previous.label}
+      </a>
+    ) : (
+      <div />
+    )
+  }
+  <div class='flex a-center gap-2'>
+    {
+      pages.map(({ label, url, current }) =>
+        current ? (
+          <span class='fs-xl box-border f-center' key={label}>
+            {label}
+          </span>
+        ) : (
+          <a href={url} class='btn action-btn fs-md box-border f-center'>
+            {label}
+          </a>
+        )
+      )
+    }
+  </div>
+  {
+    next ? (
+      <a
+        href={next.url}
+        class='btn action-btn next-page gap-1 j-center fs-no md:fs-sm icon icon-chevron-right box-border before:fs-md f-center'
+        rel='next'
+      >
+        {next.label}
+      </a>
+    ) : (
+      <div />
+    )
+  }
+</div>
