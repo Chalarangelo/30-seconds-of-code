@@ -1,0 +1,18 @@
+---
+const { items = [] } = Astro.props;
+---
+
+<ul class='list-section listing-chips flex pb-1 my-2 mx-3.5 g-c2'>
+  {
+    items.map(item => (
+      <li class='flex-none fs-sm md:fs-md'>
+        <a
+          href={item.url}
+          class={`btn action-btn ${item.selected ? 'selected' : ''}`}
+        >
+          {item.title}
+        </a>
+      </li>
+    ))
+  }
+</ul>
