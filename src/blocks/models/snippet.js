@@ -2,7 +2,6 @@ import { convertToSeoSlug, uniqueElements, stripMarkdownFormat } from 'utils';
 import { Ranker } from 'blocks/utilities/ranker';
 import { Recommender } from 'blocks/utilities/recommender';
 import tokenizeSnippet from 'utils/search';
-import clientLiterals from 'lang/en/client/common';
 import literals from 'lang/en';
 
 export const snippet = {
@@ -124,7 +123,7 @@ export const snippet = {
     breadcrumbs: snippet => {
       const homeCrumb = {
         url: '/',
-        name: clientLiterals.home,
+        name: literals.home,
       };
 
       const languageCrumb =
@@ -244,21 +243,25 @@ export const snippet = {
         .toLowerCase(),
   },
   lazyProperties: {
-    language: ({ models: { Language } }) => snippet => {
-      if (!snippet.isBlog) return snippet.repository.language;
-      for (let tag of snippet.tags) {
-        const lang = Language.records.get(tag);
-        if (lang) return lang;
-      }
-      return null;
-    },
-    recommendedSnippets: ({ models: { Snippet } }) => snippet => {
-      const recommendedSnippetIds = Recommender.recommendSnippets(
-        snippet,
-        Snippet.records
-      );
-      return Snippet.records.only(...recommendedSnippetIds);
-    },
+    language:
+      ({ models: { Language } }) =>
+      snippet => {
+        if (!snippet.isBlog) return snippet.repository.language;
+        for (let tag of snippet.tags) {
+          const lang = Language.records.get(tag);
+          if (lang) return lang;
+        }
+        return null;
+      },
+    recommendedSnippets:
+      ({ models: { Snippet } }) =>
+      snippet => {
+        const recommendedSnippetIds = Recommender.recommendSnippets(
+          snippet,
+          Snippet.records
+        );
+        return Snippet.records.only(...recommendedSnippetIds);
+      },
   },
   cacheProperties: [
     'ranking',

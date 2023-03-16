@@ -1,5 +1,3 @@
-import searchLiterals from '../lang/en/client/search';
-
 import { quickParseTokens as tokenize } from 'utils/search';
 
 class Omnisearch extends HTMLElement {
@@ -16,8 +14,8 @@ class Omnisearch extends HTMLElement {
             <input
               class='omnisearch-box srfc-inset py-1 px-2 box-border'
               type='search'
-              placeholder='${searchLiterals.searchPlaceholder}...'
-              aria-label='${searchLiterals.searchSnippets}'
+              placeholder='Search...'
+              aria-label='Search snippets and collections'
             />
             <button class='omnisearch-close btn icon-btn action-btn icon icon-close'></button>
           </div>
@@ -129,12 +127,12 @@ class Omnisearch extends HTMLElement {
   }
 
   createEmptyStateHTML() {
-    return `<p class='mx-0'>${searchLiterals.searchPrompt}</p>`;
+    return `<p class='mx-0'>Start typing a keyphrase to see matching snippets.</p>`;
   }
 
   createNotFoundStateHTML(query) {
     return `<p class='mx-0'>
-      ${searchLiterals.noResults}<span class='txt-200'>${query}</span class='omnisearch-query'>.
+      We couldn't find any results for the keyphrase <span class='txt-200'>${query}</span class='omnisearch-query'>.
     </p>`;
   }
 
