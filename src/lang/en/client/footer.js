@@ -10,7 +10,7 @@ const literals = {
   ccLicense: 'CC-BY-4.0',
   poweredBy: 'Powered by ',
   netlify: 'Netlify',
-  next: 'Next.js',
+  astro: 'Astro',
 };
 
 export default literals;
