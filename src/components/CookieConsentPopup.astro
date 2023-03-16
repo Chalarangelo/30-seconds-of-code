@@ -1,0 +1,25 @@
+---
+import literals from '../lang/en/client/cookieConsent';
+---
+
+<div class='cookie-consent-popup hidden srfc-03db px-6 py-2 txt-150 f-center'>
+  <p data-nosnippet class='fs-xs mt-1.5 mb-2 mx-auto'>
+    {literals.cookieDisclaimer}
+    {literals.learnMore}
+    <a href='/cookies'>{literals.cookiePolicy}</a> &middot; <br />
+    {literals.whatYouAccept}
+  </p>
+  <div class='cookie-consent-buttons mx-auto mt-3.5 mb-2 flex j-center'>
+    <button
+      id='cookie-consent-accept'
+      class='btn action-btn fs-xs'
+      data-nosnippet>{literals.accept}</button
+    >
+    <button
+      id='cookie-consent-decline'
+      class='btn action-btn fs-xs'
+      data-nosnippet>{literals.decline}</button
+    >
+  </div>
+</div>
+<script src='./CookieConsent.js'></script>
