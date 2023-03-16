@@ -1,0 +1,74 @@
+---
+const { snippet } = Astro.props;
+
+const snippetCodeData = JSON.stringify(snippet.code);
+// The third condition is a hack to only apply this for CSS snippets and
+// not React ones which have a `js` key, too.
+const hasExecutableJS =
+  snippet.code && snippet.code.js && snippet.code.scopedCss;
+const executableJS = hasExecutableJS
+  ? `function snippet_preview_js(){${snippet.code.js}};
+  try { window['snippet_preview_js'](); }
+  catch (e) {
+    console.warn(
+      'There is an issue with JavaScript execution on the snippet preview of this page.'
+    );
+   }`
+  : '';
+---
+
+<script>
+  const copyCodeBlock = e => {
+    if (!e.target.matches('.action-btn.icon-clipboard')) return;
+    const code = e.target.parentNode.querySelector('pre').innerText;
+    try {
+      navigator.clipboard.writeText(code);
+      setTimeout(() => {
+        e.target.classList.remove('icon-clipboard');
+        e.target.classList.add('active');
+        e.target.classList.add('icon-check');
+      }, 100);
+      setTimeout(() => {
+        e.target.classList.remove('icon-check');
+        e.target.classList.remove('active');
+        e.target.classList.add('icon-clipboard');
+      }, 750);
+    } catch (err) {
+      // display error message or feedback microinteraction
+    }
+  };
+
+  const openCodepen = e => {
+    if (!e.target.matches('.action-btn.icon-codepen')) return;
+    try {
+      const form = document.createElement('form');
+      form.setAttribute('action', 'https://codepen.io/pen/define');
+      form.setAttribute('method', 'POST');
+      form.setAttribute('target', '_blank');
+
+      const input = document.createElement('input');
+      input.setAttribute('type', 'hidden');
+      input.setAttribute('name', 'data');
+      input.setAttribute(
+        'value',
+        document.getElementById('snippet-events').dataset.code
+      );
+
+      form.appendChild(input);
+      document.body.appendChild(form);
+      form.submit();
+      document.body.removeChild(form);
+    } catch (err) {
+      // display error message or feedback microinteraction
+    }
+  };
+
+  document.addEventListener('click', copyCodeBlock);
+  document.addEventListener('click', openCodepen);
+</script>
+<script id='snippet-events' data-code={snippetCodeData}></script>
+{
+  hasExecutableJS ? (
+    <script type='text/javascript' async set:html={executableJS} />
+  ) : null
+}
