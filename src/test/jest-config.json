@@ -1,8 +1,7 @@
 {
   "rootDir": "../../",
   "transform": {
-    "^.+\\.(js)?$": "babel-jest",
-    "^.+\\.(css|less|scss)$": "jest-transform-stub"
+    "^.+\\.(js)?$": "babel-jest"
   },
   "moduleFileExtensions": ["js", "json"],
   "moduleDirectories": [

@@ -23,8 +23,6 @@
     "glob": "^7.1.7",
     "hast-util-to-html": "^7.1.3",
     "jest": "^27.0.6",
-    "jest-environment-jsdom": "^27.0.6",
-    "jest-transform-stub": "^2.0.0",
     "mdast-util-to-hast": "^10.2.0",
     "node-sass": "^8.0.0",
     "prettier": "^2.8.4",
