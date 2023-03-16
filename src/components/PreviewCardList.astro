@@ -1,0 +1,9 @@
+---
+import PreviewCard from 'components/PreviewCard.astro';
+
+const { contentItems } = Astro.props;
+---
+
+<ul class='list-section'>
+  {contentItems.map(contentItem => <PreviewCard contentItem={contentItem} />)}
+</ul>

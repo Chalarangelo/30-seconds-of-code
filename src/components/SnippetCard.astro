@@ -1,0 +1,110 @@
+---
+import Card from 'components/Card.astro';
+import CardTitle from 'components/CardTitle.astro';
+import CardSubtitle from 'components/CardSubtitle.astro';
+import Image from 'components/Image.astro';
+import literals from '../lang/en/client/snippet';
+
+const { snippet } = Astro.props;
+
+const hasCodeBlocks = Boolean(snippet.codeBlocks && snippet.codeBlocks.length);
+const hasScopeCSS = Boolean(snippet.code && snippet.code.scopedCss);
+---
+
+<Card class='snippet-card g-c2 px-4 py-6 md:px-6 md:py-8'>
+  <CardTitle>{snippet.title}</CardTitle>
+  <CardSubtitle>
+    {snippet.tags} &middot; <span class='inline-block'>{snippet.date}</span>
+  </CardSubtitle>
+  <Image
+    class='ar-wide mt-5 br-md'
+    src={snippet.cover}
+    alt=''
+    height='180'
+    width='360'
+    fetchpriority='high'
+  />
+  <div
+    class='card-description flex flex-col'
+    set:html={snippet.fullDescription}
+  />
+  {
+    hasScopeCSS && (
+      <div class='card-preview-content'>
+        <h5 class='snippet-preview-title txt-150 fs-md'>{literals.preview}</h5>
+        <div class='snippet-preview m-0 br-md' data-scope='snippet-preview'>
+          <style set:html={snippet.code.scopedCss} />
+          <div set:html={snippet.code.html} />
+        </div>
+      </div>
+    )
+  }
+  {
+    hasCodeBlocks && (
+      <div class='card-source-content mt-5 mx-0 mb-0'>
+        {snippet.codeBlocks.map(({ language, htmlContent }) => (
+          <div class='code-highlight'>
+            <pre
+              data-code-language={language.long}
+              class={`notranslate ${`language-${language.short}`} card-code`}
+              set:html={htmlContent}
+            />
+            {language.long !== 'Examples' && (
+              <button
+                class='flex-none before:fs-sm btn action-btn icon-btn icon icon-clipboard'
+                title={`${literals.copyToClipboard}`}
+              />
+            )}
+          </div>
+        ))}
+      </div>
+    )
+  }
+  {
+    snippet.author ? (
+      <div clas='flex flex-col m-0'>
+        <h3 clas='mt-4 mb-0 mx-0 txt-150 fs-md md:fs-lg'>
+          {literals.writtenBy(snippet.author.name)}
+        </h3>
+        <p clas='lh-2 mx-0 mt-2 mb-0 txt-100 fs-sm md:fs-md'>
+          {snippet.author.intro}
+        </p>
+        <p clas='lh-2 m-0 txt-100 fs-sm md:fs-md'>
+          {'If you want to keep in touch, follow me on '}
+          <a
+            href={snippet.author.github}
+            target='_blank'
+            rel='nofollow noopener noreferrer'
+          >
+            {literals.github}
+          </a>
+          {' or '}
+          <a
+            href={snippet.author.twitter}
+            target='_blank'
+            rel='nofollow noopener noreferrer'
+          >
+            {literals.twitter}
+          </a>
+          {'.'}
+        </p>
+      </div>
+    ) : null
+  }
+  <div class='card-actions flex'>
+    {
+      snippet.actionType === 'codepen' && (
+        <button
+          class='flex-none before:fs-md btn action-btn icon-btn icon icon-codepen'
+          title={literals.codepen}
+        />
+      )
+    }
+    <a
+      class='flex-none before:fs-md btn action-btn icon-btn icon icon-github'
+      href={snippet.url}
+      rel='nofollow noopener noreferrer'
+      target='_blank'
+      title={literals.viewOnGitHub}></a>
+  </div>
+</Card>
