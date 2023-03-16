@@ -1,7 +1,8 @@
 // Shared scrollbar styles - Keep these here to minimize duplication
 body,                 // Shell
 pre,                  // Code block
-.listing-chips {
+.listing-chips,
+.omnisearch-results {
   // Listing chips
   --clr-el-scrollbar-bg: var(--clr-scrollbar-bg);
   --clr-el-scrollbar-knob: var(--clr-scrollbar-knob);
@@ -50,4 +51,9 @@ body {
       margin: 0 16rem;
     }
   }
+}
+
+// Scroll lock class for body, allowing modals to lock page scroll while open
+.scroll-lock {
+  overflow: hidden;
 }
