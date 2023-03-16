@@ -13,7 +13,7 @@
     "config":{
       "anonymize_ip":true,
       "cookie_expires":0,
-      "send_page_view":false
+      "send_page_view":true
     },
     "consent": {
       "ad_storage":"denied",
