@@ -1,0 +1,101 @@
+---
+// import type { CollectionEntry } from 'astro:content';
+import Meta from 'components/Meta.astro';
+import Footer from 'components/Footer.astro';
+import CookieConsentPopup from 'components/CookieConsentPopup.astro';
+import Omnisearch from 'components/Omnisearch.astro';
+
+import literals from '../lang/en/client/common';
+import searchLiterals from '../lang/en/client/search';
+
+// type Props = CollectionEntry<'blog'>['data'];
+
+const {
+  title,
+  description,
+  logoSrc,
+  pageType,
+  structuredData,
+  breadcrumbsData,
+  canonical,
+  isSearch = false,
+  isFaq = false,
+} = Astro.props;
+
+const isDevelopment = process.env.NODE_ENV === 'development';
+---
+
+<html lang='en'>
+  <head>
+    <Meta
+      title={title}
+      description={description}
+      logoSrc={logoSrc}
+      pageType={pageType}
+      structuredData={structuredData}
+      breadcrumbsData={breadcrumbsData}
+      canonical={canonical}
+    />
+  </head>
+
+  <body>
+    <div class='page-container'>
+      <header
+        class='nav-bar px-1 flex j-center a-center box-border'
+        role='navigation'
+        aria-label='Main'
+      >
+        <a href='#skip-link-target' class='skip-link fs-lg'>
+          {literals.skipToContent}
+        </a>
+        <h1 class='m-0 fs-sm'>
+          <a title={literals.siteName} aria-label={literals.siteName} href='/'>
+            <img
+              fetchpriority='high'
+              src='/assets/30s-logo.png'
+              alt={literals.home}
+              class='nav-website-logo'
+              width='124'
+              height='42'
+            />
+          </a>
+        </h1>
+        <div class='nav-control-wrapper grid gap-2 txt-150 a-center'>
+          <a class='px-2 no-animation' href='/list/p/1'>
+            <span class='txt-150'>{literals.snippets}</span>
+          </a>
+          <a class='px-2 no-animation' href='/collections/p/1'>
+            <span class='txt-150'>{literals.collections}</span>
+          </a>
+          <div
+            class='search-wrapper relative mb-2 flex br-md txt-100 icon icon-search before:fs-sm'
+          >
+            <input
+              class='search-box srfc-inset py-1 px-2 box-border'
+              type='search'
+              placeholder={searchLiterals.searchPlaceholder}
+              aria-label={searchLiterals.searchSnippets}
+            />
+          </div>
+        </div>
+      </header>
+      <div
+        class='content my-0 grid'
+        itemscope={isFaq ? true : undefined}
+        itemtype={isFaq ? 'https://schema.org/FAQPage' : undefined}
+      >
+        <a
+          href='#skip-link-target'
+          class='skip-link fs-lg f-center no-animation'
+          id='skip-link-target'
+        >
+          {literals.startOfContent}
+        </a>
+        <slot />
+        <Footer />
+      </div>
+      {!isDevelopment ? <CookieConsentPopup /> : null}
+      <Omnisearch />
+    </div>
+  </body>
+</html>
