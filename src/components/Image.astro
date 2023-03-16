@@ -1,0 +1,11 @@
+---
+const { src, ...rest } = Astro.props;
+---
+
+<picture>
+  <source
+    type='image/webp'
+    srcset={`${src.slice(0, src.lastIndexOf('.'))}.webp`}
+  />
+  <img src={src} {...rest} />
+</picture>
