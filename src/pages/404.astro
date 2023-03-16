@@ -1,0 +1,31 @@
+---
+import Layout from 'layouts/Shell.astro';
+import PageTitle from 'components/PageTitle.astro';
+import Image from 'components/Image.astro';
+---
+
+<Layout title='Page not found'>
+  <div class='g-c2'>
+    <PageTitle>404</PageTitle>
+    <div class='box-border f-center txt-050 my-8 py-8 px-3.5'>
+      <Image
+        src='/assets/splash/plane.png'
+        class='br-lg'
+        height='360'
+        width='360'
+      />
+      <p class='f-center mx-auto mb-3 mt-8 fs-xl'>
+        <span class='txt-150'>Page not found</span>
+      </p>
+      <p class='my-2 mx-auto f-center px-8 mb-5'>
+        Seems like you have reached a page that does not exist.
+      </p>
+      <a
+        class='btn outline-btn icon-btn fs-md icon icon-home before:fs-md'
+        href='/'
+      >
+        Go home
+      </a>
+    </div>
+  </div>
+</Layout>

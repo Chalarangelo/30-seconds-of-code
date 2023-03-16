@@ -1,0 +1,58 @@
+---
+import fs from 'fs';
+import path from 'path';
+
+import Layout from 'layouts/Shell.astro';
+import PageTitle from 'components/PageTitle.astro';
+import PreviewCardList from 'components/PreviewCardList.astro';
+import ListingChips from 'components/ListingChips.astro';
+import Image from 'components/Image.astro';
+
+const pagePath = path.join(process.cwd(), '.content', 'pages', 'index.json');
+const pageData = JSON.parse(fs.readFileSync(pagePath, 'utf8'));
+
+const {
+  featuredCollections,
+  featuredSnippets,
+  snippetListUrl,
+  stringLiterals,
+  splashImage,
+  pageDescription,
+  structuredData,
+} = pageData.props;
+---
+
+<Layout
+  title=''
+  description={pageDescription}
+  canonical={'/'}
+  structuredData={structuredData}
+>
+  <div class='snippet-list-header g-c1 a-center'>
+    <div class='md:order-2 md:f-right my-2 mx-3.5 f-center'>
+      <Image
+        src={splashImage}
+        alt=''
+        height='240'
+        width='240'
+        fetchpriority='high'
+        class='br-md'
+      />
+    </div>
+    <div>
+      <PageTitle class='f-center md:f-left'>
+        {stringLiterals.tagline}
+      </PageTitle>
+      <p class='lh-2 mt-4 mx-3.5 mb-2 txt-100 fs-sm md:fs-md'>
+        {stringLiterals.browseByCollection}
+      </p>
+    </div>
+  </div>
+  <ListingChips items={featuredCollections} />
+  <div class='g-c3 mb-8'>
+    <a href={snippetListUrl} class='inline-block no-animation relative mt-8'>
+      <PageTitle>{stringLiterals.featuredSnippets}</PageTitle>
+    </a>
+    <PreviewCardList contentItems={featuredSnippets} />
+  </div>
+</Layout>

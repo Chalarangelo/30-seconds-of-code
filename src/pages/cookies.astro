@@ -1,0 +1,118 @@
+---
+import Layout from 'layouts/Shell.astro';
+import PageTitle from 'components/PageTitle.astro';
+import Card from 'components/Card.astro';
+import CardTitle from 'components/CardTitle.astro';
+
+const title = 'Cookie policy';
+const subtitle = 'Understand how we use cookies.';
+const pageDescription = 'Read about the cookie policy of 30 seconds of code.';
+---
+
+<Layout title='About Me' description='Lorem ipsum dolor sit amet'>
+  <div class='g-c2'>
+    <PageTitle>{title}</PageTitle>
+    <p class='my-0 mx-3.5 txt-100'>{subtitle}</p>
+    <Card class='px-4 py-6 md:px-6 md:py-8'>
+      <CardTitle isSecondary aria-label='a'>What are cookies</CardTitle>
+      <div class='card-description'>
+        <p class='f-justify'>
+          As is common practice with almost all professional websites this site
+          uses cookies, which are tiny files that are downloaded to your
+          computer, to improve your experience. This page describes what
+          information they gather, how we use it and why we sometimes need to
+          store these cookies. We will also share how you can prevent these
+          cookies from being stored however this may downgrade or "break"
+          certain elements of the sites functionality.
+        </p>
+      </div>
+    </Card>
+    <Card class='px-4 py-6 md:px-6 md:py-8'>
+      <CardTitle isSecondary>How we use cookies</CardTitle>
+      <div class='card-description'>
+        <p class='f-justify'>
+          We use cookies for a variety of reasons detailed below. Unfortunately
+          in most cases there are no industry standard options for disabling
+          cookies without completely disabling the functionality and features
+          they add to this site. It is recommended that you leave on all cookies
+          if you are not sure whether you need them or not in case they are used
+          to provide a service that you use.
+        </p>
+      </div>
+    </Card>
+    <Card class='px-4 py-6 md:px-6 md:py-8'>
+      <CardTitle isSecondary>Disabling cookies</CardTitle>
+      <div class='card-description'>
+        <p class='f-justify'>
+          You can prevent the setting of cookies by adjusting the settings on
+          your browser (see your browser Help for how to do this). Be aware that
+          disabling cookies will affect the functionality of this and many other
+          websites that you visit. Disabling cookies will usually result in also
+          disabling certain functionality and features of the this site.
+          Therefore it is recommended that you do not disable cookies.
+        </p>
+      </div>
+    </Card>
+    <Card class='px-4 py-6 md:px-6 md:py-8'>
+      <CardTitle isSecondary>The cookies we set</CardTitle>
+      <div class='card-description'>
+        <p><strong>Site preference cookies</strong></p>
+        <p class='f-justify'>
+          In order to provide you with a great experience on this site we
+          provide the functionality to set your preferences for how this site
+          runs when you use it. In order to remember your preferences we need to
+          set cookies so that this information can be called whenever you
+          interact with a page is affected by your preferences.
+        </p>
+        <p><strong>Third party cookies</strong></p>
+        <p class='f-justify'>
+          In some special cases we also use cookies provided by trusted third
+          parties. The following section details which third party cookies you
+          might encounter through this site.
+        </p>
+        <p><strong>Google Analytics cookies</strong></p>
+        <p class='f-justify'>
+          This site uses Google Analytics which is one of the most widespread
+          and trusted analytics solutions on the web in order to help us
+          understand how you use the site and ways that we can improve your
+          experience. These cookies may track things such as how long you spend
+          on the site and the pages that you visit so we can continue to produce
+          engaging content.
+        </p>
+        <p class='f-justify'>
+          For more information on Google Analytics cookies, see the official <a
+            href='https://developers.google.com/analytics/devguides/collection/gajs/cookie-usage'
+            target='_blank'
+            rel='noopener noreferrer'>Google Analytics page</a
+          >.
+        </p>
+      </div>
+    </Card>
+    <Card class='px-4 py-6 md:px-6 md:py-8'>
+      <CardTitle isSecondary>More information</CardTitle>
+      <div class='card-description'>
+        <p class='f-justify'>
+          Hopefully that has clarified things for you and as was previously
+          mentioned if there is something that you aren't sure whether you need
+          or not it's usually safer to leave cookies enabled in case it does
+          interact with one of the features you use on our site. However if you
+          are still looking for more information then you can contact us via
+          email at <a
+            href='mailto:30secondsofcode@gmail.org?subject=Cookie policy'
+            >30secondsofcode@gmail.org</a
+          >.
+        </p>
+      </div>
+    </Card>
+    <Card class='px-4 py-6 md:px-6 md:py-8'>
+      <CardTitle isSecondary>Cookie preferences</CardTitle>
+      <div class='card-description'>
+        <p>You can update your cookie preferences using the checkbox below.</p>
+        <label class='flex a-center md:fs-md mt-2'>
+          <input class='mr-2 cookie-consent-checkbox' type='checkbox' />
+          Accept cookies
+        </label>
+      </div>
+    </Card>
+  </div>
+</Layout>

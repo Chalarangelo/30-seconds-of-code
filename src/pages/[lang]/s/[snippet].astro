@@ -1,0 +1,52 @@
+---
+import { promises as fs } from 'fs';
+import path from 'path';
+
+import Layout from 'layouts/Shell.astro';
+import Breadcrumbs from 'components/Breadcrumbs.astro';
+import SnippetCard from 'components/SnippetCard.astro';
+import SnippetScripts from 'components/SnippetScripts.astro';
+import PreviewCardList from 'components/PreviewCardList.astro';
+import PageTitle from 'components/PageTitle.astro';
+
+export async function getStaticPaths() {
+  const pagePath = path.join(
+    process.cwd(),
+    '.content',
+    'pages',
+    '[lang]',
+    's',
+    '[snippet].json'
+  );
+  const pageData = await fs.readFile(pagePath, 'utf8').then(JSON.parse);
+  return Object.values(pageData);
+}
+
+const {
+  snippet,
+  recommendations,
+  breadcrumbs,
+  pageDescription,
+  structuredData,
+} = Astro.props;
+---
+
+<Layout
+  title={structuredData ? structuredData.name : snippet.title}
+  description={pageDescription}
+  logoSrc={snippet.cover ? snippet.cover : undefined}
+  structuredData={structuredData}
+  breadcrumbsData={breadcrumbs}
+  canonical={snippet.slug}
+  pageType='article'
+>
+  <Breadcrumbs breadcrumbs={breadcrumbs} />
+  <SnippetCard snippet={snippet} />
+  <div class='g-c3'>
+    <PageTitle class='recommendation-list-title'>
+      {recommendations.title}
+    </PageTitle>
+    <PreviewCardList contentItems={recommendations.items} />
+  </div>
+  <SnippetScripts snippet={snippet} />
+</Layout>

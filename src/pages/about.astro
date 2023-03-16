@@ -1,0 +1,96 @@
+---
+import Layout from 'layouts/Shell.astro';
+import PageTitle from 'components/PageTitle.astro';
+import Card from 'components/Card.astro';
+import CardTitle from 'components/CardTitle.astro';
+
+const title = 'About';
+const subtitle = 'A few word about us, our goals and our projects.';
+const pageDescription = 'Learn more about the team behind 30 seconds of code.';
+---
+
+<Layout title='About Me' description='Lorem ipsum dolor sit amet'>
+  <div class='g-c2'>
+    <PageTitle>{title}</PageTitle>
+    <p class='my-0 mx-3.5 txt-100'>{subtitle}</p>
+    <Card class='px-4 py-6 md:px-6 md:py-8'>
+      <CardTitle isSecondary aria-label='a'>About us</CardTitle>
+      <div class='card-description'>
+        <p class='f-justify'>
+          30 seconds of code is an accessible high-quality knowledge base for
+          developers of all skill levels, established in 2017. Since then,
+          hundreds of short code snippets and programming articles have been
+          created with the help of a large community of contributors. The goal
+          is to make software development more accessible and help the open
+          source community thrive by helping people learn to code.
+        </p>
+      </div>
+    </Card>
+    <Card class='px-4 py-6 md:px-6 md:py-8'>
+      <CardTitle isSecondary>Who we are</CardTitle>
+      <div class='card-description'>
+        <p class='f-justify'>
+          30 seconds of code is developed, maintained and curated by <a
+            href='https://github.com/Chalarangelo'
+            target='_blank'
+            rel='noopener noreferrer'>Angelos Chalaris</a
+          >. I'm a professional software engineer, based in Greece, and 30
+          seconds of code is a side project I work on in my free time. My love
+          for development and learning is what sparkled this idea and I've put a
+          lot of effort into making it the best resource I've never had when I
+          started out as a developer.
+        </p>
+      </div>
+    </Card>
+    <Card class='px-4 py-6 md:px-6 md:py-8'>
+      <CardTitle isSecondary>License</CardTitle>
+      <div class='card-description'>
+        <p class='f-justify'>
+          In order for the code provided via 30 seconds of code to be accessible
+          and useful to as many developers as possible, snippets and articles
+          are licensed under the CC-BY-4.0 License. This means they are free to
+          use in any project you like as long as you give appropriate credit to
+          this website.
+        </p>
+        <br />
+        <p class='f-justify'>
+          This is especially important for content shared on the internet or as
+          part of any educational material to ensure readers can always trace
+          the content back to its original source and find updated versions that
+          might have been published.
+        </p>
+        <br />
+        <p class='f-justify'>
+          Logos, names and trademarks are not to be used without the explicit
+          consent of the owner of the <a
+            href='https://github.com/30-seconds?type=source'
+            target='_blank'>30 seconds of code GitHub organization</a
+          >. The only partial exception is the usage of the <em
+            >30-seconds-of-</em
+          > prefix in open source projects on GitHub, licensed under an appropriate
+          license. In that case, however, additional clarification must be provided
+          in the project's README and any websites related to the project, stating
+          that the project is in no way affiliated with 30 seconds of code.
+        </p>
+      </div>
+    </Card>
+    <Card class='px-4 py-6 md:px-6 md:py-8'>
+      <CardTitle isSecondary>Acknowledgments</CardTitle>
+      <div class='card-description'>
+        <p class='f-justify'>
+          All of the photography on the 30 seconds of code website as well as
+          other media used is provided by <a
+            href='https://unsplash.com/'
+            target='_blank'
+            rel='noopener noreferrer'>Unsplash</a
+          >. Instead of adding credits to individual images, I have opted to
+          create an <a
+            href='https://unsplash.com/collections/9387655/30-seconds-of-code-images'
+            target='_blank'
+            rel='noopener noreferrer'>image collection</a
+          > to better showcase all of the images used and connect users with photographers.
+        </p>
+      </div>
+    </Card>
+  </div>
+</Layout>

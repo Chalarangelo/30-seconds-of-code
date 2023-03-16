@@ -1,0 +1,68 @@
+---
+import Layout from 'layouts/Shell.astro';
+import PageTitle from 'components/PageTitle.astro';
+import Card from 'components/Card.astro';
+import CardTitle from 'components/CardTitle.astro';
+
+const title = 'FAQ';
+const subtitle = 'Frequently asked questions and answers.';
+const pageDescription =
+  'Frequently asked questions and answers about 30 seconds of code.';
+---
+
+<Layout title='About Me' description='Lorem ipsum dolor sit amet'>
+  <div class='g-c2'>
+    <PageTitle>{title}</PageTitle>
+    <p class='my-0 mx-3.5 txt-100'>{subtitle}</p>
+    <Card class='px-4 py-6 md:px-6 md:py-8'>
+      <CardTitle isSecondary aria-label='a'>
+        I found a bug, typo or omission. Where can I report it?
+      </CardTitle>
+      <div class='card-description'>
+        <p class='f-justify'>
+          Any content issues should be reported using the GitHub Issue Tracker
+          for each individual content repository. Use the GitHub link on the
+          snippet page to find the appropriate repository and then open an issue
+          describing the problem.
+        </p>
+      </div>
+    </Card>
+    <Card class='px-4 py-6 md:px-6 md:py-8'>
+      <CardTitle isSecondary>
+        Who can contribute to 30 seconds of code?
+      </CardTitle>
+      <div class='card-description'>
+        <p class='f-justify' itemprop='text'>
+          There are no specific requirements for contributing to 30 seconds of
+          code, except for reading and understanding our contribution
+          guidelines. These can be found on each individual repository, while
+          some more general guidelines can be found <a
+            href='https://github.com/30-seconds/brand-and-design/blob/master/writing-guidelines.md'
+            target='_blank'
+            rel='noopener noreferrer'>here</a
+          >.<br /><br /> Note, however, that contributions to 30 seconds of code
+          might be locked temporarily due to scheduled maintenance or heavy load
+          of content curation. This ensures that all contributions are processed
+          in time and that no significant disruptions occur.
+        </p>
+      </div>
+    </Card>
+    <Card class='px-4 py-6 md:px-6 md:py-8'>
+      <CardTitle isSecondary>
+        I have a snippet idea. Where can I contribute?
+      </CardTitle>
+      <div class='card-description'>
+        <p class='f-justify' itemprop='text'>
+          You can go to the <a
+            href='https://github.com/30-seconds'
+            target='_blank'
+            rel='noopener noreferrer'
+            >30 seconds of code organization on GitHub</a
+          > and find the appropriate repository. After reading the contribution guidelines,
+          you can use the relevant template to create your snippet and submit a Pull
+          Request for review.
+        </p>
+      </div>
+    </Card>
+  </div>
+</Layout>
