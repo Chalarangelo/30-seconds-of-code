@@ -5,6 +5,7 @@ class Omnisearch extends HTMLElement {
   searchIndexInitialized = false;
   open = false;
 
+  // TODO: Shorten the omnisearch- prefixes
   constructor() {
     super();
     this.innerHTML = `
@@ -44,8 +45,8 @@ class Omnisearch extends HTMLElement {
       if (e.target === this.omnisearchOverlay) this.closeOmniSearch();
     });
     this.omnisearchBox.addEventListener('keyup', e => {
-      const query = e.target.value;
       if (!this.searchIndexInitialized || !this.open) return;
+      const query = e.target.value;
       const results = this.searchByKeyphrase(query);
       if (results.length > 0) this.displayResults(results);
       else if (query.length <= 1) this.displayEmptyState();
@@ -93,6 +94,7 @@ class Omnisearch extends HTMLElement {
         </ul>
       `;
     }
+
     if (snippets.length) {
       resultsHTML += `
         <h2 class='omnisearch-result-title fs-sm txt-100 m-0'>Snippets</h2>
@@ -131,8 +133,14 @@ class Omnisearch extends HTMLElement {
   }
 
   createNotFoundStateHTML(query) {
+    const escapedQuery = query
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
     return `<p class='mx-0'>
-      We couldn't find any results for the keyphrase <span class='txt-200'>${query}</span class='omnisearch-query'>.
+      We couldn't find any results for the keyphrase <span class='txt-200'>${escapedQuery}</span class='omnisearch-query'>.
     </p>`;
   }
 
@@ -145,17 +153,21 @@ class Omnisearch extends HTMLElement {
       if (t.length && this.searchIndex && this.searchIndex.length) {
         results = this.searchIndex
           .map(snippet => {
+            // TODO: Move this to the backend serialization logic and store it in the search index
+            const normalizedSnippetTitle = snippet.title.toLowerCase().trim();
             snippet.score =
               t.reduce(
                 (acc, tkn) =>
-                  snippet.searchTokens.indexOf(tkn) !== -1 ? acc + 1 : acc,
+                  normalizedSnippetTitle.indexOf(tkn) !== -1 ||
+                  snippet.searchTokens.indexOf(tkn) !== -1
+                    ? acc + 1
+                    : acc,
                 0
               ) / t.length;
             return snippet;
           })
           .filter(snippet => snippet.score > 0.3)
-          .sort((a, b) => b.score - a.score)
-          .slice(0, 100);
+          .sort((a, b) => b.score - a.score);
       }
     }
     results = results.reduce(
@@ -166,8 +178,9 @@ class Omnisearch extends HTMLElement {
       },
       { collections: [], snippets: [], length: results.length }
     );
-    // Limit to 5 results
+    // Limit to 5 collections and 100 snippets
     results.collections = results.collections.slice(0, 5);
+    results.snippets = results.snippets.slice(0, 100);
     return results;
   }
 }
