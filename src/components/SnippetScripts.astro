@@ -34,7 +34,7 @@ const executableJS = hasExecutableJS
         e.target.classList.add('icon-clipboard');
       }, 750);
     } catch (err) {
-      // display error message or feedback microinteraction
+      console.error('Failed to copy: ', err);
     }
   };
 
@@ -59,7 +59,7 @@ const executableJS = hasExecutableJS
       form.submit();
       document.body.removeChild(form);
     } catch (err) {
-      // display error message or feedback microinteraction
+      console.error('Failed to open Codepen: ', err);
     }
   };
 
