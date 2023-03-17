@@ -1,5 +1,5 @@
 ---
-import Layout from 'layouts/Shell.astro';
+import Layout from 'layouts/Layout.astro';
 import PageTitle from 'components/PageTitle.astro';
 import Card from 'components/Card.astro';
 import CardTitle from 'components/CardTitle.astro';
@@ -10,16 +10,26 @@ const pageDescription =
   'Frequently asked questions and answers about 30 seconds of code.';
 ---
 
-<Layout title='About Me' description='Lorem ipsum dolor sit amet'>
+<Layout title={title} description={pageDescription} isFaq>
   <div class='g-c2'>
     <PageTitle>{title}</PageTitle>
     <p class='my-0 mx-3.5 txt-100'>{subtitle}</p>
-    <Card class='px-4 py-6 md:px-6 md:py-8'>
-      <CardTitle isSecondary aria-label='a'>
+    <Card
+      class='px-4 py-6 md:px-6 md:py-8'
+      itemscope='true'
+      itemprop='mainEntity'
+      itemtype='https://schema.org/Question'
+    >
+      <CardTitle isSecondary itemprop='name'>
         I found a bug, typo or omission. Where can I report it?
       </CardTitle>
-      <div class='card-description'>
-        <p class='f-justify'>
+      <div
+        class='card-description'
+        itemscope='true'
+        itemprop='acceptedAnswer'
+        itemtype='https://schema.org/Answer'
+      >
+        <p class='f-justify' itemprop='text'>
           Any content issues should be reported using the GitHub Issue Tracker
           for each individual content repository. Use the GitHub link on the
           snippet page to find the appropriate repository and then open an issue
@@ -27,11 +37,21 @@ const pageDescription =
         </p>
       </div>
     </Card>
-    <Card class='px-4 py-6 md:px-6 md:py-8'>
-      <CardTitle isSecondary>
+    <Card
+      class='px-4 py-6 md:px-6 md:py-8'
+      itemscope='true'
+      itemprop='mainEntity'
+      itemtype='https://schema.org/Question'
+    >
+      <CardTitle isSecondary itemprop='name'>
         Who can contribute to 30 seconds of code?
       </CardTitle>
-      <div class='card-description'>
+      <div
+        class='card-description'
+        itemscope='true'
+        itemprop='acceptedAnswer'
+        itemtype='https://schema.org/Answer'
+      >
         <p class='f-justify' itemprop='text'>
           There are no specific requirements for contributing to 30 seconds of
           code, except for reading and understanding our contribution
@@ -47,11 +67,21 @@ const pageDescription =
         </p>
       </div>
     </Card>
-    <Card class='px-4 py-6 md:px-6 md:py-8'>
-      <CardTitle isSecondary>
+    <Card
+      class='px-4 py-6 md:px-6 md:py-8'
+      itemscope='true'
+      itemprop='mainEntity'
+      itemtype='https://schema.org/Question'
+    >
+      <CardTitle isSecondary itemprop='name'>
         I have a snippet idea. Where can I contribute?
       </CardTitle>
-      <div class='card-description'>
+      <div
+        class='card-description'
+        itemscope='true'
+        itemprop='acceptedAnswer'
+        itemtype='https://schema.org/Answer'
+      >
         <p class='f-justify' itemprop='text'>
           You can go to the <a
             href='https://github.com/30-seconds'
