@@ -1,24 +1,24 @@
 ---
-import literals from '../lang/en/index.js';
+import settings from '../settings/global.json';
 ---
 
 <div class='cookie-consent-popup hidden srfc-03db px-6 py-2 txt-150 f-center'>
   <p data-nosnippet class='fs-xs mt-1.5 mb-2 mx-auto'>
-    {literals.cookieDisclaimer}
-    {literals.cookieLearnMore}
-    <a href='/cookies'>{literals.cookiePolicy}</a> &middot; <br />
-    {literals.cookieWhatYouAccept}
+    {settings.websiteName} uses cookies to provide a high quality user experience
+    and gather anonymized data for statistical analysis of the website's traffic.
+    You can learn more by reading our <a href='/cookies'>cookie policy</a>. <br
+    /> By clicking <strong>Accept</strong> you accept their installation.
   </p>
   <div class='cookie-consent-buttons mx-auto mt-3.5 mb-2 flex j-center'>
     <button
       id='cookie-consent-accept'
       class='btn action-btn fs-xs'
-      data-nosnippet>{literals.accept}</button
+      data-nosnippet>Accept</button
     >
     <button
       id='cookie-consent-decline'
       class='btn action-btn fs-xs'
-      data-nosnippet>{literals.decline}</button
+      data-nosnippet>Decline</button
     >
   </div>
 </div>

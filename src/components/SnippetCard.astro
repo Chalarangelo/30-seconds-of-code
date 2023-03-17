@@ -3,7 +3,6 @@ import Card from 'components/Card.astro';
 import CardTitle from 'components/CardTitle.astro';
 import CardSubtitle from 'components/CardSubtitle.astro';
 import Image from 'components/Image.astro';
-import literals from '../lang/en/index.js';
 
 const { snippet } = Astro.props;
 
@@ -31,7 +30,7 @@ const hasScopeCSS = Boolean(snippet.code && snippet.code.scopedCss);
   {
     hasScopeCSS && (
       <div class='card-preview-content'>
-        <h5 class='snippet-preview-title txt-150 fs-md'>{literals.preview}</h5>
+        <h5 class='snippet-preview-title txt-150 fs-md'>Preview</h5>
         <div class='snippet-preview m-0 br-md' data-scope='snippet-preview'>
           <style set:html={snippet.code.scopedCss} />
           <div set:html={snippet.code.html} />
@@ -52,7 +51,7 @@ const hasScopeCSS = Boolean(snippet.code && snippet.code.scopedCss);
             {language.long !== 'Examples' && (
               <button
                 class='flex-none before:fs-sm btn action-btn icon-btn icon icon-clipboard'
-                title={`${literals.copyToClipboard}`}
+                title='Copy code'
               />
             )}
           </div>
@@ -62,21 +61,21 @@ const hasScopeCSS = Boolean(snippet.code && snippet.code.scopedCss);
   }
   {
     snippet.author ? (
-      <div clas='flex flex-col m-0'>
-        <h3 clas='mt-4 mb-0 mx-0 txt-150 fs-md md:fs-lg'>
-          {literals.writtenBy(snippet.author.name)}
+      <div class='flex flex-col m-0'>
+        <h3 class='mt-4 mb-0 mx-0 txt-150 fs-md md:fs-lg'>
+          Written by {snippet.author.name}
         </h3>
-        <p clas='lh-2 mx-0 mt-2 mb-0 txt-100 fs-sm md:fs-md'>
+        <p class='lh-2 mx-0 mt-2 mb-0 txt-100 fs-sm md:fs-md'>
           {snippet.author.intro}
         </p>
-        <p clas='lh-2 m-0 txt-100 fs-sm md:fs-md'>
+        <p class='lh-2 m-0 txt-100 fs-sm md:fs-md'>
           {'If you want to keep in touch, follow me on '}
           <a
             href={snippet.author.github}
             target='_blank'
             rel='nofollow noopener noreferrer'
           >
-            {literals.github}
+            GitHub
           </a>
           {' or '}
           <a
@@ -84,9 +83,7 @@ const hasScopeCSS = Boolean(snippet.code && snippet.code.scopedCss);
             target='_blank'
             rel='nofollow noopener noreferrer'
           >
-            {literals.twitter}
-          </a>
-          {'.'}
+            Twitter<!-- --></a><!-- -->.
         </p>
       </div>
     ) : null
@@ -96,7 +93,7 @@ const hasScopeCSS = Boolean(snippet.code && snippet.code.scopedCss);
       snippet.actionType === 'codepen' && (
         <button
           class='flex-none before:fs-md btn action-btn icon-btn icon icon-codepen'
-          title={literals.codepen}
+          title='View CodePen'
         />
       )
     }
@@ -105,6 +102,6 @@ const hasScopeCSS = Boolean(snippet.code && snippet.code.scopedCss);
       href={snippet.url}
       rel='nofollow noopener noreferrer'
       target='_blank'
-      title={literals.viewOnGitHub}></a>
+      title='View on GitHub'></a>
   </div>
 </Card>
