@@ -120,6 +120,9 @@
 .gap-2 {
   gap: var(--s-2);
 }
+.gap-4 {
+  gap: var(--s-4);
+}
 
 // Additional responsive spacing (only as needed)
 @media screen and (min-width: $layout-medium-breakpoint) {
