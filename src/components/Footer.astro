@@ -1,28 +1,28 @@
 ---
 import settings from '../settings/global.json';
+
+const currentYear = new Date().getFullYear();
 ---
 
 <footer class='box-border mt-0 pt-6 mx-2 mb-0 pb-6 g-c4'>
-  <p class='fs-xs my-1.5'>
+  <p class='fs-xs my-1.5 flex gap-4'>
     <a href='/about'>About</a>
-    <a href='/cookies' class='ml-4'>Cookies</a>
-    <a href='/faq' class='ml-4'>FAQ</a>
-    <a class='ml-4' href='/feed'>Feed</a>
+    <a href='/cookies'>Cookies</a>
+    <a href='/faq'>FAQ</a>
+    <a href='/feed'>RSS</a>
     <a
-      class='ml-4'
       href={settings.githubOrgUrl}
       rel='noopener noreferrer nofollow'
       target='_blank'>GitHub</a
     >
     <a
-      class='ml-4'
       href={settings.twitterUrl}
       rel='noopener noreferrer nofollow'
       target='_blank'>Twitter</a
     >
   </p>
   <p class='fs-xs mt-0.5'>
-    Website, name & logo &copy; 2017-2023
+    Website, name & logo &copy; 2017-{currentYear}
     <a
       class='inline-block'
       href={settings.githubOrgUrl}
