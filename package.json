@@ -11,7 +11,7 @@
     "@babel/preset-env": "^7.20.2",
     "@jsiqle/core": "^1.4.1",
     "@types/jest": "^27.0.1",
-    "astro": "^2.0.14",
+    "astro": "^2.1.0",
     "astro-compress": "^1.1.35",
     "chalk": "^4.1.0",
     "eslint": "^7.32.0",
