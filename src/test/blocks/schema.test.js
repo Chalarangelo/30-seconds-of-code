@@ -1086,10 +1086,6 @@ describe('Application/Schema', () => {
         const page = Page.records.get('static_search');
         const pageContext = page.context;
         expect(pageContext.searchIndex.length).toBe(26);
-        expect(pageContext.recommendations.items.length).toBe(3);
-        expect(pageContext.pageDescription).toEqual(
-          'Search for answers to your development problems among 15 code snippets on 30 seconds of code.'
-        );
       });
 
       it('returns the correct value for a listing page', () => {

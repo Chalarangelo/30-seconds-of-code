@@ -13,7 +13,6 @@ const formatTag = tag => {
 /* istanbul ignore next */
 const literals = {
   featuredSnippets: 'New & Popular Snippets',
-  popularSnippets: 'Popular Snippets',
   tagline: 'Discover short code snippets for all your development needs.',
   browseByCollection:
     'Browse snippets by collection or check out our top picks and latest articles below.',
@@ -58,8 +57,6 @@ const literals = {
         }.`;
       case 'collections':
         return `Browse ${p.snippetCount} snippet collections on ${settings.websiteName}.`;
-      case 'search':
-        return `Search for answers to your development problems among ${p.snippetCount} code snippets on ${settings.websiteName}.`;
       default:
         return `Find ${settings.websiteDescription.toLowerCase()} on ${
           settings.websiteName
