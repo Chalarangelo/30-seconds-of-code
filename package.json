@@ -13,6 +13,7 @@
     "@jsiqle/core": "^1.4.1",
     "@types/jest": "^27.0.1",
     "astro": "^2.0.14",
+    "astro-compress": "^1.1.35",
     "babel-jest": "^27.0.6",
     "chalk": "^4.1.0",
     "eslint": "^7.32.0",
