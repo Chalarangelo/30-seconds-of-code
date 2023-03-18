@@ -17,7 +17,7 @@ const executableJS = hasExecutableJS
   : '';
 ---
 
-<script>
+<script is:inline>
   const copyCodeBlock = e => {
     if (!e.target.matches('.action-btn.icon-clipboard')) return;
     const code = e.target.parentNode.querySelector('pre').innerText;
@@ -66,9 +66,13 @@ const executableJS = hasExecutableJS
   document.addEventListener('click', copyCodeBlock);
   document.addEventListener('click', openCodepen);
 </script>
-<script id='snippet-events' data-code={snippetCodeData}></script>
+{
+  snippetCodeData && snippetCodeData.length ? (
+    <script id='snippet-events' data-code={snippetCodeData} is:inline />
+  ) : null
+}
 {
   hasExecutableJS ? (
-    <script type='text/javascript' async set:html={executableJS} />
+    <script type='text/javascript' async set:html={executableJS} is:inline />
   ) : null
 }
