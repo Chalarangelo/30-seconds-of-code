@@ -214,15 +214,6 @@ export const page = {
               }
             ),
           ];
-          context.recommendations = {
-            title: literals.popularSnippets,
-            items: SnippetPreviewSerializer.serializeArray(
-              sortedSnippets.slice(0, 3).toArray()
-            ),
-          };
-          context.pageDescription = literals.pageDescription('search', {
-            snippetCount: Snippet.records.length,
-          });
         }
         return context;
       },
