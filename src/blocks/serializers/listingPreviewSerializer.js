@@ -1,4 +1,3 @@
-import literals from 'lang/en';
 import pathSettings from 'settings/paths';
 
 export const listingPreviewSerializer = {
@@ -13,13 +12,11 @@ export const listingPreviewSerializer = {
             .replace(/<a.*?>(.*?)<\/a>/g, '$1')
         : undefined;
     },
-    tags: () => literals.snippetCollection,
+    tags: () => 'Collection',
     searchTokens: (listing, { withSearch } = {}) =>
       withSearch ? listing.searchTokens : undefined,
     searchResultTag: (listing, { withSearch } = {}) =>
-      withSearch
-        ? literals.snippetCount(listing.listedSnippets.length)
-        : undefined,
+      withSearch ? `${listing.listedSnippets.length} snippets` : undefined,
     splashUrl: (listing, { withSearch } = {}) => {
       if (withSearch) return undefined;
       return listing.splash
@@ -28,7 +25,7 @@ export const listingPreviewSerializer = {
     },
     snippetCount: (listing, { withSearch } = {}) => {
       if (withSearch) return undefined;
-      literals.snippetCount(listing.listedSnippets.length);
+      return `${listing.listedSnippets.length} snippets`;
     },
     url: listing => `${listing.slugPrefix}/p/1`,
     type: () => 'collection',

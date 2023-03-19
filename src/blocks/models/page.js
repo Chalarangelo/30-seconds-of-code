@@ -84,7 +84,7 @@ export const page = {
           context.featuredCollections =
             ListingPreviewSerializer.serializeArray(listedCollections);
           context.featuredCollections.push({
-            title: literals.moreCollections,
+            title: 'More collections',
             url: '/collections/p/1',
             selected: false,
           });
@@ -95,11 +95,6 @@ export const page = {
           // TODO: Move this to a better place
           context.splashImage = '/assets/splash/work-sunrise.png';
           context.snippetListUrl = '/list/p/1';
-          context.stringLiterals = {
-            featuredSnippets: literals.featuredSnippets,
-            tagline: literals.tagline,
-            browseByCollection: literals.browseByCollection,
-          };
           context.pageDescription = literals.pageDescription('main', {
             snippetCount: Snippet.records.published.length,
           });
@@ -129,10 +124,7 @@ export const page = {
                 { withDescription: true }
               )
             );
-          context.recommendations = {
-            title: literals.recommendedContent,
-            items: recommendedItems,
-          };
+          context.recommendations = recommendedItems;
         }
         if (page.isListing) {
           context.slug = page.relRoute;
@@ -154,7 +146,7 @@ export const page = {
                     pageNumber > 1
                       ? {
                           url: `${baseUrl}/p/${pageNumber - 1}`,
-                          label: literals.previousPage,
+                          label: 'Previous',
                         }
                       : null,
                   pages: buttons.map(buttonNumber => ({
@@ -166,7 +158,7 @@ export const page = {
                     pageNumber < totalPages
                       ? {
                           url: `${baseUrl}/p/${pageNumber + 1}`,
-                          label: literals.nextPage,
+                          label: 'Next',
                         }
                       : null,
                 }

@@ -6,7 +6,7 @@ import Footer from 'components/Footer.astro';
 import CookieConsentPopup from 'components/CookieConsentPopup.astro';
 import Omnisearch from 'components/Omnisearch.astro';
 
-import literals from '../lang/en/index.js';
+import settings from '../settings/global.json';
 
 const {
   title,
@@ -46,7 +46,11 @@ const isDevelopment = process.env.NODE_ENV === 'development';
           Skip to main content
         </a>
         <h1 class='m-0 fs-sm'>
-          <a title={literals.siteName} aria-label={literals.siteName} href='/'>
+          <a
+            title={settings.websiteName}
+            aria-label={settings.websiteName}
+            href='/'
+          >
             <img
               fetchpriority='high'
               src='/assets/30s-logo.png'
