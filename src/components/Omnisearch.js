@@ -153,15 +153,10 @@ class Omnisearch extends HTMLElement {
       if (t.length && this.searchIndex && this.searchIndex.length) {
         results = this.searchIndex
           .map(snippet => {
-            // TODO: Move this to the backend serialization logic and store it in the search index
-            const normalizedSnippetTitle = snippet.title.toLowerCase().trim();
             snippet.score =
               t.reduce(
                 (acc, tkn) =>
-                  normalizedSnippetTitle.indexOf(tkn) !== -1 ||
-                  snippet.searchTokens.indexOf(tkn) !== -1
-                    ? acc + 1
-                    : acc,
+                  snippet.searchTokens.indexOf(tkn) !== -1 ? acc + 1 : acc,
                 0
               ) / t.length;
             return snippet;
