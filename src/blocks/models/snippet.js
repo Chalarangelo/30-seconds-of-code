@@ -115,6 +115,14 @@ export const snippet = {
               stripMarkdownFormat(`${snippet.shortText} ${snippet.title}`)
             ),
           ];
+      // Normalized title tokens, without stopword removal for special matches
+      // e.g. "this" in a relevant JS article needs to be matched when queried
+      tokenizableElements.push(
+        ...snippet.title
+          .toLowerCase()
+          .trim()
+          .split(/[^a-z0-9\-']+/i)
+      );
       return uniqueElements(tokenizableElements.map(v => v.toLowerCase()));
     },
     searchTokens: snippet => snippet.searchTokensArray.join(' '),
