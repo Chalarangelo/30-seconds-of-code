@@ -17,18 +17,18 @@
 
   @media screen and (min-width: $layout-medium-breakpoint) {
     flex: 1 0 300px;
-    margin-bottom: 0;
+    margin-block-end: 0;
     max-width: 440px;
   }
 
   @media screen and (min-width: $layout-large-breakpoint) {
-    margin-left: 0.25rem;
+    margin-inline-start: 0.25rem;
   }
 
   &::before {
     box-sizing: border-box;
     padding: 0.75rem 0;
-    margin-left: 0.5rem;
+    margin-inline-start: 0.5rem;
     color: inherit;
   }
 }
@@ -104,8 +104,8 @@
 }
 
 .btn.omnisearch-close {
-  margin-left: 0;
-  margin-right: -4px;
+  margin-inline-start: 0;
+  margin-inline-end: -4px;
   padding: 0;
 
   &::before {

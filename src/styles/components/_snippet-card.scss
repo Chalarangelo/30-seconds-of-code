@@ -5,8 +5,8 @@
     }
 
     [data-code-language='Examples'] {
-      margin-top: -0.875rem;
-      padding-bottom: 1.5rem;
+      margin-block-start: -0.875rem;
+      padding-block-end: 1.5rem;
     }
   }
 
@@ -17,8 +17,8 @@
       border-top: 2px solid var(--clr-code-border);
       border-top-left-radius: var(--br-none);
       border-top-right-radius: var(--br-none);
-      padding-top: 2.5rem;
-      margin-top: -2px;
+      padding-block-start: 2.5rem;
+      margin-block-start: -2px;
 
       &:before {
         top: 0.9375rem;
@@ -58,13 +58,13 @@
     }
 
     &:last-child {
-      margin-bottom: 1.5rem;
+      margin-block-end: 1.5rem;
     }
   }
 
   .card-preview-content {
     // Counteract the extra bottom spacing from the snippet description
-    margin-top: -1.5rem;
+    margin-block-start: -1.5rem;
 
     .snippet-preview-title {
       font-weight: 600;
@@ -80,7 +80,7 @@
     }
 
     + .card-source-content {
-      margin-top: 0;
+      margin-block-start: 0;
 
       .code-highlight:first-of-type > pre {
         border-top-left-radius: var(--br-none);

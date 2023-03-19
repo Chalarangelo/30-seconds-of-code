@@ -10,7 +10,7 @@
   z-index: 1001;
   height: 112px;
   width: 100vw;
-  padding-top: 0.5rem;
+  padding-block-start: 0.5rem;
 
   @media screen and (min-width: $layout-medium-breakpoint) {
     padding: 0 1rem;

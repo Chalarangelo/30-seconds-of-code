@@ -28,24 +28,22 @@
       padding: var(--s-#{$space-var});
     }
     .py-#{$space} {
-      padding-top: var(--s-#{$space-var});
-      padding-bottom: var(--s-#{$space-var});
+      padding-block: var(--s-#{$space-var});
     }
     .px-#{$space} {
-      padding-left: var(--s-#{$space-var});
-      padding-right: var(--s-#{$space-var});
+      padding-inline: var(--s-#{$space-var});
     }
     .pt-#{$space} {
-      padding-top: var(--s-#{$space-var});
+      padding-block-start: var(--s-#{$space-var});
     }
     .pb-#{$space} {
-      padding-bottom: var(--s-#{$space-var});
+      padding-block-end: var(--s-#{$space-var});
     }
     .pl-#{$space} {
-      padding-left: var(--s-#{$space-var});
+      padding-inline-start: var(--s-#{$space-var});
     }
     .pr-#{$space} {
-      padding-right: var(--s-#{$space-var});
+      padding-inline-end: var(--s-#{$space-var});
     }
 
     // Margin
@@ -53,24 +51,22 @@
       margin: var(--s-#{$space-var});
     }
     .my-#{$space} {
-      margin-top: var(--s-#{$space-var});
-      margin-bottom: var(--s-#{$space-var});
+      margin-block: var(--s-#{$space-var});
     }
     .mx-#{$space} {
-      margin-left: var(--s-#{$space-var});
-      margin-right: var(--s-#{$space-var});
+      margin-inline: var(--s-#{$space-var});
     }
     .mt-#{$space} {
-      margin-top: var(--s-#{$space-var});
+      margin-block-start: var(--s-#{$space-var});
     }
     .mb-#{$space} {
-      margin-bottom: var(--s-#{$space-var});
+      margin-block-end: var(--s-#{$space-var});
     }
     .ml-#{$space} {
-      margin-left: var(--s-#{$space-var});
+      margin-inline-start: var(--s-#{$space-var});
     }
     .mr-#{$space} {
-      margin-right: var(--s-#{$space-var});
+      margin-inline-end: var(--s-#{$space-var});
     }
   }
 }
@@ -105,12 +101,10 @@
 
 // Additional spacing (auto)
 .my-auto {
-  margin-top: auto;
-  margin-bottom: auto;
+  margin-block: auto;
 }
 .mx-auto {
-  margin-left: auto;
-  margin-right: auto;
+  margin-inline: auto;
 }
 
 // Gap utilities (only as needed)
@@ -127,8 +121,7 @@
 // Additional responsive spacing (only as needed)
 @media screen and (min-width: $layout-medium-breakpoint) {
   .md\:mx-3\.5 {
-    margin-left: var(--s-3-5);
-    margin-right: var(--s-3-5);
+    margin-inline: var(--s-3-5);
   }
 
   .md\:p-6 {
@@ -136,13 +129,11 @@
   }
 
   .md\:px-6 {
-    padding-left: var(--s-6);
-    padding-right: var(--s-6);
+    padding-inline: var(--s-6);
   }
 
   .md\:py-8 {
-    padding-top: var(--s-8);
-    padding-bottom: var(--s-8);
+    padding-block: var(--s-8);
   }
 
   .md\:gap-2 {
