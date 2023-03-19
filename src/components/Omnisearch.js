@@ -5,7 +5,6 @@ class Omnisearch extends HTMLElement {
   searchIndexInitialized = false;
   open = false;
 
-  // TODO: Shorten the omnisearch- prefixes
   constructor() {
     super();
     this.innerHTML = `
@@ -29,30 +28,29 @@ class Omnisearch extends HTMLElement {
   }
 
   connectedCallback() {
-    this.searchBox = document.querySelector('.search-box');
-    this.omnisearchOverlay = document.querySelector('.omnisearch-overlay');
-    this.omnisearchBox = document.querySelector('.omnisearch-box');
-    this.omnisearchResults = document.querySelector('.omnisearch-results');
-    this.omnisearchClose = document.querySelector('.omnisearch-close');
+    this.overlay = document.querySelector('.omnisearch-overlay');
+    this.searchBox = document.querySelector('.omnisearch-box');
+    this.results = document.querySelector('.omnisearch-results');
+    this.closeButton = document.querySelector('.omnisearch-close');
 
-    this.searchBox.addEventListener('click', () => {
+    document.querySelector('.search-box').addEventListener('click', () => {
       this.openOmnisearch();
     });
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && this.open) this.closeOmniSearch();
+      if (e.key === 'Escape' && this.isOpen) this.closeOmniSearch();
     });
-    this.omnisearchOverlay.addEventListener('click', e => {
-      if (e.target === this.omnisearchOverlay) this.closeOmniSearch();
+    this.overlay.addEventListener('click', e => {
+      if (e.target === this.overlay) this.closeOmniSearch();
     });
-    this.omnisearchBox.addEventListener('keyup', e => {
-      if (!this.searchIndexInitialized || !this.open) return;
+    this.searchBox.addEventListener('keyup', e => {
+      if (!this.searchIndexInitialized || !this.isOpen) return;
       const query = e.target.value;
       const results = this.searchByKeyphrase(query);
       if (results.length > 0) this.displayResults(results);
       else if (query.length <= 1) this.displayEmptyState();
       else this.displayNotFoundState(query);
     });
-    this.omnisearchClose.addEventListener('click', () => {
+    this.closeButton.addEventListener('click', () => {
       this.closeOmniSearch();
     });
   }
@@ -69,50 +67,46 @@ class Omnisearch extends HTMLElement {
 
   openOmnisearch() {
     this.prepareSearchIndex();
-    this.open = true;
-    this.omnisearchOverlay.classList.remove('hidden');
-    this.omnisearchBox.focus();
+    this.isOpen = true;
+    this.overlay.classList.remove('hidden');
+    this.searchBox.focus();
     document.body.classList.add('scroll-lock');
   }
 
   closeOmniSearch() {
-    this.open = false;
-    this.omnisearchOverlay.classList.add('hidden');
+    this.isOpen = false;
+    this.overlay.classList.add('hidden');
     document.body.classList.remove('scroll-lock');
   }
 
   displayResults(results) {
     const { snippets, collections } = results;
 
-    let resultsHTML = '';
-
-    if (collections.length) {
-      resultsHTML += `
-        <h2 class='omnisearch-result-title fs-sm txt-100 m-0'>Collections</h2>
-        <ul class='px-0 mx-0 gap-2 flex flex-col mb-6'>
-          ${collections.map(this.createResultHTML).join('')}
-        </ul>
-      `;
-    }
-
-    if (snippets.length) {
-      resultsHTML += `
-        <h2 class='omnisearch-result-title fs-sm txt-100 m-0'>Snippets</h2>
-        <ul class='px-0 mx-0 gap-2 flex flex-col'>
-          ${snippets.map(this.createResultHTML).join('')}
-        </ul>
-      `;
-    }
-
-    this.omnisearchResults.innerHTML = resultsHTML;
+    this.results.innerHTML = `
+      ${
+        collections.length
+          ? this.createResultsHTML('Collections', collections)
+          : ''
+      }
+      ${snippets.length ? this.createResultsHTML('Snippets', snippets) : ''}
+    `;
   }
 
   displayEmptyState() {
-    this.omnisearchResults.innerHTML = this.createEmptyStateHTML();
+    this.results.innerHTML = this.createEmptyStateHTML();
   }
 
   displayNotFoundState(query) {
-    this.omnisearchResults.innerHTML = this.createNotFoundStateHTML(query);
+    this.results.innerHTML = this.createNotFoundStateHTML(query);
+  }
+
+  createResultsHTML(title, results) {
+    return `
+      <h2 class='omnisearch-result-title fs-sm txt-100 m-0'>${title}</h2>
+      <ul class='px-0 mx-0 gap-2 flex flex-col mb-6'>
+        ${results.map(this.createResultHTML).join('')}
+      </ul>
+    `;
   }
 
   createResultHTML(result) {
