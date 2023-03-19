@@ -102,7 +102,7 @@ class Omnisearch extends HTMLElement {
 
   createResultsHTML(title, results) {
     return `
-      <h2 class='omnisearch-result-title fs-sm txt-100 m-0'>${title}</h2>
+      <h2 class='omnisearch-result-title fs-xs md:fs-sm txt-100 m-0'>${title}</h2>
       <ul class='px-0 mx-0 gap-2 flex flex-col mb-6'>
         ${results.map(this.createResultHTML).join('')}
       </ul>
@@ -112,7 +112,7 @@ class Omnisearch extends HTMLElement {
   createResultHTML(result) {
     return `
       <li class='omnisearch-result flex py-1.5 px-2 relative'>
-        <h3 class='txt-200 fs-md f-clamp m-0'><a class='inherit no-animation fill-parent' href=${
+        <h3 class='txt-200 fs-sm md:fs-md f-clamp m-0'><a class='inherit no-animation fill-parent' href=${
           result.url
         }>
           ${result.shortTitle || result.title}
@@ -123,7 +123,7 @@ class Omnisearch extends HTMLElement {
   }
 
   createEmptyStateHTML() {
-    return `<p class='mx-0'>Start typing a keyphrase to see matching snippets.</p>`;
+    return `<p class='mx-0 fs-sm md:fs-md'>Start typing a keyphrase to see matching snippets.</p>`;
   }
 
   createNotFoundStateHTML(query) {
@@ -133,7 +133,7 @@ class Omnisearch extends HTMLElement {
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#039;');
-    return `<p class='mx-0'>
+    return `<p class='mx-0 fs-sm md:fs-md'>
       We couldn't find any results for the keyphrase <span class='txt-200'>${escapedQuery}</span class='omnisearch-query'>.
     </p>`;
   }
