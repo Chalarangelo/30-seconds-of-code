@@ -7,7 +7,6 @@ import visitParents from 'unist-util-visit-parents';
 import Prism from 'prismjs';
 import getLoader from 'prismjs/dependencies';
 import prismComponents from 'prismjs/components';
-import clientLiterals from 'lang/en/client/common';
 import { escapeHTML, optimizeAllNodes, convertToValidId } from 'utils';
 
 const loader = getLoader(
@@ -51,14 +50,15 @@ const commonTransformers = [
   },
   // Convert description code to the appropriate elements (mainly blogs)
   {
-    matcher: /<pre class="language-([^"]+)" data-code-language="([^"]*)">([\s\S]*?)<\/pre>/g,
+    matcher:
+      /<pre class="language-([^"]+)" data-code-language="([^"]*)">([\s\S]*?)<\/pre>/g,
     replacer:
       '<pre class="language-$1 notranslate my-0 mx-0" data-code-language="$2">$3</pre>',
   },
   // Add a copy to clipboard button after each code block
   {
     matcher: /<\/pre>/g,
-    replacer: `</pre><button class="flex-none before:fs-sm btn action-btn icon-btn icon icon-clipboard" title="${clientLiterals.copyToClipboard}" />`,
+    replacer: `</pre><button class="flex-none before:fs-sm btn action-btn icon-btn icon icon-clipboard" title="Copy code" />`,
   },
   // Convert blockquotes to the appropriate elements
   {

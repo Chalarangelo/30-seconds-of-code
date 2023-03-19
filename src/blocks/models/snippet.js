@@ -2,7 +2,6 @@ import { convertToSeoSlug, uniqueElements, stripMarkdownFormat } from 'utils';
 import { Ranker } from 'blocks/utilities/ranker';
 import { Recommender } from 'blocks/utilities/recommender';
 import tokenizeSnippet from 'utils/search';
-import clientLiterals from 'lang/en/client/common';
 import literals from 'lang/en';
 
 export const snippet = {
@@ -68,9 +67,7 @@ export const snippet = {
     formattedPrimaryTag: snippet => literals.tag(snippet.truePrimaryTag),
     // Used for snippet previews in search autocomplete
     formattedMiniPreviewTag: snippet =>
-      snippet.isBlog && !snippet.language
-        ? literals.blogSingular
-        : snippet.language.name,
+      snippet.isBlog && !snippet.language ? 'Article' : snippet.language.name,
     formattedTags: snippet => {
       let tags = snippet.tags.map(literals.tag);
       if (!snippet.isBlog) tags.unshift(snippet.language.name);
@@ -118,13 +115,21 @@ export const snippet = {
               stripMarkdownFormat(`${snippet.shortText} ${snippet.title}`)
             ),
           ];
+      // Normalized title tokens, without stopword removal for special matches
+      // e.g. "this" in a relevant JS article needs to be matched when queried
+      tokenizableElements.push(
+        ...snippet.title
+          .toLowerCase()
+          .trim()
+          .split(/[^a-z0-9\-']+/i)
+      );
       return uniqueElements(tokenizableElements.map(v => v.toLowerCase()));
     },
     searchTokens: snippet => snippet.searchTokensArray.join(' '),
     breadcrumbs: snippet => {
       const homeCrumb = {
         url: '/',
-        name: clientLiterals.home,
+        name: 'Home',
       };
 
       const languageCrumb =
@@ -208,7 +213,7 @@ export const snippet = {
         {
           language: {
             short: snippet.language.short,
-            long: literals.examples,
+            long: 'Examples',
           },
           htmlContent: snippet.exampleCodeBlockHtml,
         },
@@ -244,21 +249,25 @@ export const snippet = {
         .toLowerCase(),
   },
   lazyProperties: {
-    language: ({ models: { Language } }) => snippet => {
-      if (!snippet.isBlog) return snippet.repository.language;
-      for (let tag of snippet.tags) {
-        const lang = Language.records.get(tag);
-        if (lang) return lang;
-      }
-      return null;
-    },
-    recommendedSnippets: ({ models: { Snippet } }) => snippet => {
-      const recommendedSnippetIds = Recommender.recommendSnippets(
-        snippet,
-        Snippet.records
-      );
-      return Snippet.records.only(...recommendedSnippetIds);
-    },
+    language:
+      ({ models: { Language } }) =>
+      snippet => {
+        if (!snippet.isBlog) return snippet.repository.language;
+        for (let tag of snippet.tags) {
+          const lang = Language.records.get(tag);
+          if (lang) return lang;
+        }
+        return null;
+      },
+    recommendedSnippets:
+      ({ models: { Snippet } }) =>
+      snippet => {
+        const recommendedSnippetIds = Recommender.recommendSnippets(
+          snippet,
+          Snippet.records
+        );
+        return Snippet.records.only(...recommendedSnippetIds);
+      },
   },
   cacheProperties: [
     'ranking',

@@ -1,0 +1,114 @@
+// Style for placeholder text
+@mixin placeholder-styles {
+  font-family: 'Inter', Helvetica, sans-serif;
+}
+.search-box::-webkit-input-placeholder,
+.omnisearch-box::-webkit-input-placeholder {
+  @include placeholder-styles;
+}
+.search-box::-moz-placeholder,
+.omnisearch-box::-moz-placeholder {
+  @include placeholder-styles;
+}
+
+.search-wrapper {
+  background: var(--clr-search-bg);
+  flex: 0 0 100%;
+
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    flex: 1 0 300px;
+    margin-bottom: 0;
+    max-width: 440px;
+  }
+
+  @media screen and (min-width: $layout-large-breakpoint) {
+    margin-left: 0.25rem;
+  }
+
+  &::before {
+    box-sizing: border-box;
+    padding: 0.75rem 0;
+    margin-left: 0.5rem;
+    color: inherit;
+  }
+}
+
+[type='search'].search-box,
+[type='search'].omnisearch-box {
+  width: calc(100% - 36px);
+  background: transparent;
+  border: 0;
+  outline: 0;
+  font-size: var(--font-md);
+  height: 44px;
+
+  &,
+  &::placeholder {
+    color: inherit;
+  }
+}
+
+[type='search'].omnisearch-box {
+  font-size: var(--font-lg);
+}
+
+.omnisearch-overlay {
+  &.hidden {
+    display: none;
+  }
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--clr-search-overlay-bg);
+  grid-template-columns: auto 100vw auto;
+  grid-template-rows: 64px calc(100vh - 64px) auto;
+
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    grid-template-columns: auto 600px auto;
+    grid-template-rows: 200px auto 200px;
+  }
+}
+
+.omnisearch-wrapper {
+  grid-row: 2;
+  grid-column: 2;
+  align-self: start;
+}
+
+.omnisearch-results {
+  border-top: 1px solid var(--clr-search-results-border);
+  overflow-y: auto;
+  max-height: calc(100vh - 156px);
+
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    max-height: calc(100vh - 460px);
+  }
+}
+
+.omnisearch-result {
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0 -0.5rem;
+
+  &:hover,
+  &:focus,
+  &:focus-within,
+  &:active {
+    * {
+      color: var(--clr-primary-050);
+    }
+  }
+}
+
+.btn.omnisearch-close {
+  margin-left: 0;
+  margin-right: -4px;
+  padding: 0;
+
+  &::before {
+    font-size: 32px;
+  }
+}
