@@ -54,11 +54,11 @@
       margin: 1.5rem 0 0;
 
       &:not(:first-child) {
-        margin-top: 1rem;
+        margin-block-start: 1rem;
       }
 
       &:last-child:not(:first-child) {
-        margin-bottom: 1.5rem;
+        margin-block-end: 1.5rem;
       }
     }
 
@@ -70,7 +70,7 @@
     > ul,
     > ol {
       &:last-child:not(:first-child) {
-        margin-bottom: 1.5rem;
+        margin-block-end: 1.5rem;
       }
     }
 
