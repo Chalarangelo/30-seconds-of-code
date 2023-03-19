@@ -51,7 +51,7 @@ export const listing = {
     name: listing => {
       if (listing.isMain) return listing.data.name;
       if (listing.isCollections) return listing.data.name;
-      if (listing.isBlog) return literals.blog;
+      if (listing.isBlog) return 'Articles';
       if (listing.isLanguage)
         return literals.codelang(listing.data.language.name);
       if (listing.isCollection) return listing.data.name;
@@ -63,7 +63,7 @@ export const listing = {
     shortName: listing => {
       if (listing.isMain) return listing.data.name;
       if (listing.isCollections) return listing.data.name;
-      if (listing.isBlog) return literals.blog;
+      if (listing.isBlog) return 'Articles';
       if (listing.isLanguage)
         return literals.shortCodelang(listing.data.language.name);
       if (listing.isCollection) return listing.data.name;
@@ -135,109 +135,116 @@ export const listing = {
       [listing.name, listing.description].join(' ').toLowerCase(),
   },
   lazyProperties: {
-    data: ({ models: { Repository, Tag, Collection } }) => listing => {
-      if (listing.isMain)
-        return {
-          name: listing.dataName,
-          splash: listing.dataSplash,
-          description: listing.dataDescription,
-        };
-      if (listing.isCollections)
-        return {
-          name: listing.dataName,
-          splash: listing.dataSplash,
-          description: listing.dataDescription,
-          featuredListings: listing.dataFeaturedListings,
-        };
-      if (listing.isBlog) return Repository.records.blog.first;
-      if (listing.isLanguage)
-        return Repository.records.get(listing.relatedRecordId);
-      if (listing.isTag) return Tag.records.get(listing.relatedRecordId);
-      if (listing.isCollection)
-        return Collection.records.get(listing.relatedRecordId);
-      return {};
-    },
-    snippets: ({ models: { Snippet, Listing } }) => listing => {
-      if (listing.isMain) return Snippet.records;
-      if (listing.isBlog) return Snippet.records.blogs;
-      // Abuse the snippets logic here a little bit to avoid having a new model
-      // just for the collections listing.
-      if (listing.isCollections) return Listing.records.featured;
-      if (listing.isLanguage) {
-        const { id: languageId } = listing.data.language;
-        return Snippet.records.filter(snippet => {
-          const snippetLanguageId = snippet.language
-            ? snippet.language.id
-            : null;
-          return snippetLanguageId === languageId;
-        });
-      }
-      if (listing.isTag) {
-        const { shortId: tagId } = listing.data;
-        if (listing.isBlogTag) {
-          return Snippet.records.blogs.where(snippet =>
-            snippet.tags.includes(tagId)
-          );
-        } else {
-          const { id: languageId } = listing.data.repository.language;
+    data:
+      ({ models: { Repository, Tag, Collection } }) =>
+      listing => {
+        if (listing.isMain)
+          return {
+            name: listing.dataName,
+            splash: listing.dataSplash,
+            description: listing.dataDescription,
+          };
+        if (listing.isCollections)
+          return {
+            name: listing.dataName,
+            splash: listing.dataSplash,
+            description: listing.dataDescription,
+            featuredListings: listing.dataFeaturedListings,
+          };
+        if (listing.isBlog) return Repository.records.blog.first;
+        if (listing.isLanguage)
+          return Repository.records.get(listing.relatedRecordId);
+        if (listing.isTag) return Tag.records.get(listing.relatedRecordId);
+        if (listing.isCollection)
+          return Collection.records.get(listing.relatedRecordId);
+        return {};
+      },
+    snippets:
+      ({ models: { Snippet, Listing } }) =>
+      listing => {
+        if (listing.isMain) return Snippet.records;
+        if (listing.isBlog) return Snippet.records.blogs;
+        // Abuse the snippets logic here a little bit to avoid having a new model
+        // just for the collections listing.
+        if (listing.isCollections) return Listing.records.featured;
+        if (listing.isLanguage) {
+          const { id: languageId } = listing.data.language;
           return Snippet.records.filter(snippet => {
             const snippetLanguageId = snippet.language
               ? snippet.language.id
               : null;
-            return (
-              snippetLanguageId === languageId && snippet.tags.includes(tagId)
-            );
+            return snippetLanguageId === languageId;
           });
         }
-      }
-      if (listing.isCollection)
-        return Snippet.records.only(...listing.data.snippets.flatPluck('id'));
-      return [];
-    },
-    sublinks: ({ models: { Listing } }) => listing => {
-      if (listing.isCollection && !listing.parent) return [];
-      if (listing.isCollections) return [];
-      if (listing.isMain) {
-        return [
-          ...Listing.records.language
-            .sort((a, b) => b.ranking - a.ranking)
-            .flatMap(ls => ({
-              title: ls.shortName,
-              url: `${ls.rootUrl}/p/1`,
+        if (listing.isTag) {
+          const { shortId: tagId } = listing.data;
+          if (listing.isBlogTag) {
+            return Snippet.records.blogs.where(snippet =>
+              snippet.tags.includes(tagId)
+            );
+          } else {
+            const { id: languageId } = listing.data.repository.language;
+            return Snippet.records.filter(snippet => {
+              const snippetLanguageId = snippet.language
+                ? snippet.language.id
+                : null;
+              return (
+                snippetLanguageId === languageId && snippet.tags.includes(tagId)
+              );
+            });
+          }
+        }
+        if (listing.isCollection)
+          return Snippet.records.only(...listing.data.snippets.flatPluck('id'));
+        return [];
+      },
+    sublinks:
+      ({ models: { Listing } }) =>
+      listing => {
+        if (listing.isCollection && !listing.parent) return [];
+        if (listing.isCollections) return [];
+        if (listing.isMain) {
+          return [
+            ...Listing.records.language
+              .sort((a, b) => b.ranking - a.ranking)
+              .flatMap(ls => ({
+                title: ls.shortName,
+                url: `${ls.rootUrl}/p/1`,
+                selected: false,
+              })),
+            {
+              title: 'More collections',
+              url: '/collections/p/1',
               selected: false,
-            })),
+            },
+          ];
+        }
+        const links = listing.parent ? listing.siblings : listing.children;
+        return [
           {
-            title: literals.moreCollections,
-            url: '/collections/p/1',
-            selected: false,
+            title: literals.tag('all'),
+            url: `${listing.rootUrl}/p/1`,
+            selected: listing.isParent,
           },
+          ...links
+            .flatMap(link =>
+              link.isCollection
+                ? {
+                    title: link.data.shortName,
+                    url: `/${link.data.slug}/p/1`,
+                    selected: listing.isCollection && link.id === listing.id,
+                  }
+                : {
+                    title: literals.tag(link.data.shortId),
+                    url: `${link.data.slugPrefix}/p/1`,
+                    selected:
+                      listing.isTag &&
+                      listing.data.shortId === link.data.shortId,
+                  }
+            )
+            .sort((a, b) => a.title.localeCompare(b.title)),
         ];
-      }
-      const links = listing.parent ? listing.siblings : listing.children;
-      return [
-        {
-          title: literals.tag('all'),
-          url: `${listing.rootUrl}/p/1`,
-          selected: listing.isParent,
-        },
-        ...links
-          .flatMap(link =>
-            link.isCollection
-              ? {
-                  title: link.data.shortName,
-                  url: `/${link.data.slug}/p/1`,
-                  selected: listing.isCollection && link.id === listing.id,
-                }
-              : {
-                  title: literals.tag(link.data.shortId),
-                  url: `${link.data.slugPrefix}/p/1`,
-                  selected:
-                    listing.isTag && listing.data.shortId === link.data.shortId,
-                }
-          )
-          .sort((a, b) => a.title.localeCompare(b.title)),
-      ];
-    },
+      },
   },
   methods: {
     pageRanking: (listing, pageNumber) => {

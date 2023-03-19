@@ -1,5 +1,4 @@
 ---
-import literals from '../lang/en/index.js';
 import settings from '../settings/global.json';
 
 const {
@@ -12,10 +11,10 @@ const {
   canonical = '',
 } = Astro.props;
 
-const metaDescription = description || literals.siteDescription;
+const metaDescription = description || settings.websiteDescription;
 const titleString = title
-  ? `${title} - ${literals.siteName}`
-  : literals.siteName;
+  ? `${title} - ${settings.websiteName}`
+  : settings.websiteName;
 
 // Load scripts
 const scripts = [];

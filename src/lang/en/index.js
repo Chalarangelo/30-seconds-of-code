@@ -12,17 +12,6 @@ const formatTag = tag => {
 
 /* istanbul ignore next */
 const literals = {
-  featuredSnippets: 'New & Popular Snippets',
-  tagline: 'Discover short code snippets for all your development needs.',
-  browseByCollection:
-    'Browse snippets by collection or check out our top picks and latest articles below.',
-  moreCollections: 'More collections',
-  blogSingular: 'Article',
-  blog: 'Articles',
-  examples: 'Examples',
-  recommendedContent: 'More like this',
-  snippetCollection: 'Snippet collection',
-  snippetCollectionShort: 'Collection',
   tag: t => `${formatTag(t)}`,
   shortCodelang: l => `${l}`,
   shortCodelangTag: (l, t) => `${l} ${formatTag(t)}`,
@@ -30,7 +19,6 @@ const literals = {
   codelang: l => `${l} Snippets`,
   codelangTag: (l, t) => `${l} ${formatTag(t)} Snippets`,
   blogTag: t => `${formatTag(t)} Articles`,
-  snippetCount: c => `${c} snippets`,
   pageDescription: (t, p) => {
     switch (t) {
       case 'language':
@@ -63,16 +51,6 @@ const literals = {
         }.`;
     }
   },
-  nextPage: 'Next',
-  previousPage: 'Previous',
-  accept: 'Accept',
-  decline: 'Decline',
-  home: 'Home',
-  siteName: settings.websiteName,
-  siteAuthor: settings.orgName,
-  siteDescription: settings.websiteDescription,
-  snippets: 'Snippets',
-  collections: 'Collections',
 };
 
 export default literals;

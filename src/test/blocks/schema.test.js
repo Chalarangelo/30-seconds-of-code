@@ -1106,7 +1106,7 @@ describe('Application/Schema', () => {
         expect(pageContext.pageDescription).toEqual(
           'Creates a triangular shape with pure CSS.'
         );
-        expect(pageContext.recommendations.items.length).toBe(3);
+        expect(pageContext.recommendations.length).toBe(3);
       });
     });
   });

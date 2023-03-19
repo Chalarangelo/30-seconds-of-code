@@ -43,10 +43,8 @@ const {
   <Breadcrumbs breadcrumbs={breadcrumbs} />
   <SnippetCard snippet={snippet} />
   <div class='g-c3'>
-    <PageTitle class='recommendation-list-title'>
-      {recommendations.title}
-    </PageTitle>
-    <PreviewCardList contentItems={recommendations.items} />
+    <PageTitle class='recommendation-list-title'>More like this</PageTitle>
+    <PreviewCardList contentItems={recommendations} />
   </div>
   <SnippetScripts snippet={snippet} />
 </Layout>

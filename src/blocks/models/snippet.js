@@ -67,9 +67,7 @@ export const snippet = {
     formattedPrimaryTag: snippet => literals.tag(snippet.truePrimaryTag),
     // Used for snippet previews in search autocomplete
     formattedMiniPreviewTag: snippet =>
-      snippet.isBlog && !snippet.language
-        ? literals.blogSingular
-        : snippet.language.name,
+      snippet.isBlog && !snippet.language ? 'Article' : snippet.language.name,
     formattedTags: snippet => {
       let tags = snippet.tags.map(literals.tag);
       if (!snippet.isBlog) tags.unshift(snippet.language.name);
@@ -123,7 +121,7 @@ export const snippet = {
     breadcrumbs: snippet => {
       const homeCrumb = {
         url: '/',
-        name: literals.home,
+        name: 'Home',
       };
 
       const languageCrumb =
@@ -207,7 +205,7 @@ export const snippet = {
         {
           language: {
             short: snippet.language.short,
-            long: literals.examples,
+            long: 'Examples',
           },
           htmlContent: snippet.exampleCodeBlockHtml,
         },
