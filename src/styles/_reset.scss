@@ -89,7 +89,7 @@ p {
 ol,
 ul {
   margin: 0.5rem;
-  padding-left: 1.25rem;
+  padding-inline-start: 1.25rem;
 }
 b,
 strong {
@@ -109,7 +109,7 @@ kbd {
 }
 blockquote {
   margin: 1rem 0 0.5rem;
-  padding-left: 1.5rem;
+  padding-inline-start: 1.5rem;
   box-shadow: inset 4px 0 0 0 var(--clr-quote-border);
   font-style: italic;
   font-variation-settings: 'slnt' -6;
