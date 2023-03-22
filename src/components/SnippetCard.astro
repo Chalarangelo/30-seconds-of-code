@@ -48,12 +48,10 @@ const hasScopeCSS = Boolean(snippet.code && snippet.code.scopedCss);
               class={`notranslate ${`language-${language.short}`} card-code`}
               set:html={htmlContent}
             />
-            {language.long !== 'Examples' && (
-              <button
-                class='flex-none before:fs-sm btn action-btn icon-btn icon icon-clipboard'
-                title='Copy code'
-              />
-            )}
+            <button
+              class='flex-none before:fs-sm btn action-btn icon-btn icon icon-clipboard'
+              title='Copy code'
+            />
           </div>
         ))}
       </div>
