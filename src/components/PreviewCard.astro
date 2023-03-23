@@ -8,7 +8,7 @@ const { contentItem } = Astro.props;
 const { title, description, url, cover, tags, extraContext } = contentItem;
 ---
 
-<Card element='li' class='list-card grid a-center py-5 px-4 md:p-6 no-overflow'>
+<Card element='li' class='list-card grid a-center py-5 px-4 md:p-6 relative no-overflow'>
   <Image
     class='br-md'
     src={cover}
