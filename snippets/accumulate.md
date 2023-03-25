@@ -1,6 +1,6 @@
 ---
 title: Partial sum array
-tags: math,array
+tags: math
 author: chalarangelo
 cover: river-house-lights
 firstSeen: 2020-05-04T12:20:46+03:00

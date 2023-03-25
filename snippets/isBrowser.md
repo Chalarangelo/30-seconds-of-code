@@ -1,6 +1,6 @@
 ---
 title: Environment is browser
-tags: browser,node
+tags: browser
 cover: travel-mug-3
 firstSeen: 2018-03-19T04:50:55+02:00
 lastUpdated: 2020-10-20T23:02:01+03:00

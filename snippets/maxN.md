@@ -1,6 +1,6 @@
 ---
 title: N max elements
-tags: array,math
+tags: math
 cover: digital-nomad-15
 firstSeen: 2018-01-03T05:18:29+02:00
 lastUpdated: 2020-10-21T21:54:53+03:00
