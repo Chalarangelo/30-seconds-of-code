@@ -2,7 +2,7 @@
 title: JavaScript Data Structures - Tree
 shortTitle: Tree
 type: story
-tags: javascript,object,class,array
+tags: javascript,class
 author: chalarangelo
 cover: purple-flower-macro-2
 excerpt: A tree is a data structure consisting of a set of linked nodes representing a hierarchical tree structure.

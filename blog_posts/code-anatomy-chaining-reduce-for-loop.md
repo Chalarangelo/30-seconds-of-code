@@ -2,7 +2,7 @@
 title: Code Anatomy - For loops, array reduce and method chaining
 shortTitle: For loops, array reduce and method chaining
 type: story
-tags: javascript,array,object,iterator
+tags: javascript,array,iterator
 author: chalarangelo
 cover: case-study
 excerpt: There are many ways to iterate and transform array data in JavaScript. Learn how each one works and where you should use them.

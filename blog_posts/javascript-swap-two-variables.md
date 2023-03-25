@@ -2,7 +2,7 @@
 title: "Tip: How to swap two variables in JavaScript"
 shortTitle: Swap two variables
 type: tip
-tags: javascript,array,variables
+tags: javascript,variables
 author: chalarangelo
 cover: mountain-lake-2
 excerpt: Learn how to swap the values of two variables in JavaScript using a single line of ES6 code.
