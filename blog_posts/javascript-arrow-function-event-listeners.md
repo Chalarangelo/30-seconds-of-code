@@ -4,7 +4,7 @@ shortTitle: Arrow function as callback for event listener
 type: question
 tags: javascript,browser,event,function
 author: chalarangelo
-cover: arrow-functions
+cover: coffee-float
 excerpt: Learn the differences between JavaScript ES6 arrow functions and regular functions and how they affect event listener callbacks.
 firstSeen: 2020-08-04T15:29:43+03:00
 lastUpdated: 2021-06-12T19:30:41+03:00
