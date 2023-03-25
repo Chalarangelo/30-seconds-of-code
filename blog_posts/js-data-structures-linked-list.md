@@ -2,7 +2,7 @@
 title: JavaScript Data Structures - Linked List
 shortTitle: Linked List
 type: story
-tags: javascript,object,class,array
+tags: javascript,class
 author: chalarangelo
 cover: purple-flower-macro-3
 excerpt: A linked list is a linear data structure where each element points to the next.
