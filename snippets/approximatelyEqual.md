@@ -1,5 +1,5 @@
 ---
-title: Approximately number equality
+title: Approximate number equality
 tags: math
 cover: engine
 firstSeen: 2018-02-14T12:47:13+02:00
