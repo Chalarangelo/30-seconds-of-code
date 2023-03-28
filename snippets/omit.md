@@ -1,5 +1,5 @@
 ---
-title: Omit object properties
+title: Omit object keys
 tags: object
 cover: broken-screen
 firstSeen: 2018-01-19T13:14:46+02:00

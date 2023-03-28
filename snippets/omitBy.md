@@ -1,12 +1,12 @@
 ---
-title: Omit object properties based on function
+title: Omit matching object keys
 tags: object
 cover: arrow-functions
 firstSeen: 2018-01-19T13:23:45+02:00
 lastUpdated: 2020-10-21T21:54:53+03:00
 ---
 
-Omits the key-value pairs corresponding to the keys of the object for which the given function returns falsy.
+Creates an object composed of the properties the given function returns falsy for.
 
 - Use `Object.keys()` and `Array.prototype.filter()` to remove the keys for which `fn` returns a truthy value.
 - Use `Array.prototype.reduce()` to convert the filtered keys back to an object with the corresponding key-value pairs.
