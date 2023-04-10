@@ -1,28 +1,27 @@
 ---
 const { breadcrumbs } = Astro.props;
+
+breadcrumbs[breadcrumbs.length - 1].isCurrentPage = true;
 ---
 
 <nav aria-label='breadcrumbs' class='breadcrumbs mt-4 mx-4 mb-0 g-c1'>
   <ol class='flex m-0 p-0 f-ellipsis'>
     {
-      breadcrumbs.map(({ name, url }, i) => {
-        const isCurrentPage = i === breadcrumbs.length - 1;
-        return (
-          <li
-            class={`breadcrumb-item relative inline-block ${
-              isCurrentPage ? 'txt-050 fs-no md:fs-sm f-ellipsis' : 'txt-150'
-            }`}
+      breadcrumbs.map(({ name, url, isCurrentPage = false }, i) => (
+        <li
+          class={`breadcrumb-item relative inline-block ${
+            isCurrentPage ? 'txt-050 fs-no md:fs-sm f-ellipsis' : 'txt-150'
+          }`}
+        >
+          <a
+            href={url}
+            class='inherit'
+            aria-current={isCurrentPage ? 'page' : null}
           >
-            <a
-              href={url}
-              class='inherit'
-              aria-current={isCurrentPage ? 'page' : null}
-            >
-              {name}
-            </a>
-          </li>
-        );
-      })
+            {name}
+          </a>
+        </li>
+      ))
     }
   </ol>
 </nav>
