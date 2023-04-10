@@ -3,7 +3,6 @@ import prefabs from 'prefabs/index.js';
 
 import Layout from 'layouts/Layout.astro';
 import Card from 'components/Card.astro';
-import CardTitle from 'components/CardTitle.astro';
 
 const title = 'Cookie policy';
 const subtitle = 'Understand how we use cookies.';
@@ -15,7 +14,7 @@ const pageDescription = 'Read about the cookie policy of 30 seconds of code.';
     <h2 class={prefabs.staticPageTitle}>{title}</h2>
     <p class='my-0 mx-3.5 txt-100'>{subtitle}</p>
     <Card class='px-4 py-6 md:px-6 md:py-8'>
-      <CardTitle isSecondary>What are cookies</CardTitle>
+      <h3 class={prefabs.secondaryCardTitle}>What are cookies</h3>
       <div class='card-description'>
         <p class='f-justify'>
           As is common practice with almost all professional websites this site
@@ -29,7 +28,7 @@ const pageDescription = 'Read about the cookie policy of 30 seconds of code.';
       </div>
     </Card>
     <Card class='px-4 py-6 md:px-6 md:py-8'>
-      <CardTitle isSecondary>How we use cookies</CardTitle>
+      <h3 class={prefabs.secondaryCardTitle}>How we use cookies</h3>
       <div class='card-description'>
         <p class='f-justify'>
           We use cookies for a variety of reasons detailed below. Unfortunately
@@ -42,7 +41,7 @@ const pageDescription = 'Read about the cookie policy of 30 seconds of code.';
       </div>
     </Card>
     <Card class='px-4 py-6 md:px-6 md:py-8'>
-      <CardTitle isSecondary>Disabling cookies</CardTitle>
+      <h3 class={prefabs.secondaryCardTitle}>Disabling cookies</h3>
       <div class='card-description'>
         <p class='f-justify'>
           You can prevent the setting of cookies by adjusting the settings on
@@ -55,7 +54,7 @@ const pageDescription = 'Read about the cookie policy of 30 seconds of code.';
       </div>
     </Card>
     <Card class='px-4 py-6 md:px-6 md:py-8'>
-      <CardTitle isSecondary>The cookies we set</CardTitle>
+      <h3 class={prefabs.secondaryCardTitle}>The cookies we set</h3>
       <div class='card-description'>
         <p><strong>Site preference cookies</strong></p>
         <p class='f-justify'>
@@ -90,7 +89,7 @@ const pageDescription = 'Read about the cookie policy of 30 seconds of code.';
       </div>
     </Card>
     <Card class='px-4 py-6 md:px-6 md:py-8'>
-      <CardTitle isSecondary>More information</CardTitle>
+      <h3 class={prefabs.secondaryCardTitle}>More information</h3>
       <div class='card-description'>
         <p class='f-justify'>
           Hopefully that has clarified things for you and as was previously
@@ -106,7 +105,7 @@ const pageDescription = 'Read about the cookie policy of 30 seconds of code.';
       </div>
     </Card>
     <Card class='px-4 py-6 md:px-6 md:py-8'>
-      <CardTitle isSecondary>Cookie preferences</CardTitle>
+      <h3 class={prefabs.secondaryCardTitle}>Cookie preferences</h3>
       <div class='card-description'>
         <p>You can update your cookie preferences using the checkbox below.</p>
         <label class='flex a-center md:fs-md mt-2'>
