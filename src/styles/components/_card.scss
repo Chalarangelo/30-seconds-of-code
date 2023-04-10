@@ -43,7 +43,7 @@
     li,
     li > p {
       font-size: var(--font-sm);
-      line-height: 2rem;
+      line-height: 1.778;
 
       @media screen and (min-width: $layout-medium-breakpoint) {
         font-size: var(--font-md);
