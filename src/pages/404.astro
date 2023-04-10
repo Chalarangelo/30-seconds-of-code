@@ -1,12 +1,13 @@
 ---
+import prefabs from 'prefabs/index.js';
+
 import Layout from 'layouts/Layout.astro';
-import PageTitle from 'components/PageTitle.astro';
 import Image from 'components/Image.astro';
 ---
 
 <Layout title='Page not found'>
   <div class='g-c2'>
-    <PageTitle>404</PageTitle>
+    <h2 class={prefabs.staticPageTitle}>404</h2>
     <div class='box-border f-center txt-050 my-8 py-8 px-3.5'>
       <Image
         src='/assets/splash/plane.png'
