@@ -2,8 +2,9 @@
 import fs from 'fs';
 import path from 'path';
 
+import prefabs from 'prefabs/index.js';
+
 import Layout from 'layouts/Layout.astro';
-import PageTitle from 'components/PageTitle.astro';
 import PreviewCardList from 'components/PreviewCardList.astro';
 import ListingChips from 'components/ListingChips.astro';
 import Image from 'components/Image.astro';
@@ -39,9 +40,9 @@ const {
       />
     </div>
     <div>
-      <PageTitle class='f-center md:f-left'>
+      <h2 class={prefabs.listingTitle}>
         Discover short code snippets for all your development needs.
-      </PageTitle>
+      </h2>
       <p class='lh-2 mt-4 mx-3.5 mb-2 txt-100 fs-sm md:fs-md'>
         Browse snippets by collection or check out our top picks and latest
         articles below.
@@ -51,7 +52,7 @@ const {
   <ListingChips items={featuredCollections} />
   <div class='g-c3 mb-8'>
     <a href={snippetListUrl} class='inline-block no-animation relative mt-8'>
-      <PageTitle>New & Popular Snippets</PageTitle>
+      <h2 class={prefabs.pageTitle}>New & Popular Snippets</h2>
     </a>
     <PreviewCardList contentItems={featuredSnippets} />
   </div>

@@ -2,12 +2,13 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 
+import prefabs from 'prefabs/index.js';
+
 import Layout from 'layouts/Layout.astro';
 import Breadcrumbs from 'components/Breadcrumbs.astro';
 import SnippetCard from 'components/SnippetCard.astro';
 import SnippetScripts from 'components/SnippetScripts.astro';
 import PreviewCardList from 'components/PreviewCardList.astro';
-import PageTitle from 'components/PageTitle.astro';
 
 export async function getStaticPaths() {
   const pagePath = path.join(
@@ -43,7 +44,7 @@ const {
   <Breadcrumbs breadcrumbs={breadcrumbs} />
   <SnippetCard snippet={snippet} />
   <div class='g-c3'>
-    <PageTitle class='recommendation-list-title'>More like this</PageTitle>
+    <h2 class={prefabs.recommendationsTitle}>More like this</h2>
     <PreviewCardList contentItems={recommendations} />
   </div>
   <SnippetScripts snippet={snippet} />
