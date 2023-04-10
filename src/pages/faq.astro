@@ -3,7 +3,6 @@ import prefabs from 'prefabs/index.js';
 
 import Layout from 'layouts/Layout.astro';
 import Card from 'components/Card.astro';
-import CardTitle from 'components/CardTitle.astro';
 
 const title = 'FAQ';
 const subtitle = 'Frequently asked questions and answers.';
@@ -21,9 +20,9 @@ const pageDescription =
       itemprop='mainEntity'
       itemtype='https://schema.org/Question'
     >
-      <CardTitle isSecondary itemprop='name'>
+      <h3 class={prefabs.secondaryCardTitle} itemprop='name'>
         I found a bug, typo or omission. Where can I report it?
-      </CardTitle>
+      </h3>
       <div
         class='card-description'
         itemscope='true'
@@ -44,9 +43,9 @@ const pageDescription =
       itemprop='mainEntity'
       itemtype='https://schema.org/Question'
     >
-      <CardTitle isSecondary itemprop='name'>
+      <h3 class={prefabs.secondaryCardTitle} itemprop='name'>
         Who can contribute to 30 seconds of code?
-      </CardTitle>
+      </h3>
       <div
         class='card-description'
         itemscope='true'
@@ -74,9 +73,9 @@ const pageDescription =
       itemprop='mainEntity'
       itemtype='https://schema.org/Question'
     >
-      <CardTitle isSecondary itemprop='name'>
+      <h3 class={prefabs.secondaryCardTitle} itemprop='name'>
         I have a snippet idea. Where can I contribute?
-      </CardTitle>
+      </h3>
       <div
         class='card-description'
         itemscope='true'

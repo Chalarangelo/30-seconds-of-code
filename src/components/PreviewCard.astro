@@ -2,7 +2,6 @@
 import prefabs from 'prefabs/index.js';
 
 import Card from 'components/Card.astro';
-import CardTitle from 'components/CardTitle.astro';
 import Image from 'components/Image.astro';
 
 const { contentItem } = Astro.props;
@@ -22,9 +21,9 @@ const { title, description, url, cover, tags, extraContext } = contentItem;
     loading='lazy'
   />
   <div class='flex flex-col gap-1 md:gap-2'>
-    <CardTitle isSecondary>
+    <h3 class={prefabs.secondaryCardTitle}>
       <a class='inherit fill-parent' href={url}>{title}</a>
-    </CardTitle>
+    </h3>
     <p
       class='mx-0 mt-1 mb-3 f-clamp fs-sm md:fs-md'
       set:html={`${description}`}

@@ -3,7 +3,6 @@ import prefabs from 'prefabs/index.js';
 
 import Layout from 'layouts/Layout.astro';
 import Card from 'components/Card.astro';
-import CardTitle from 'components/CardTitle.astro';
 
 const title = 'About';
 const subtitle = 'A few word about us, our goals and our projects.';
@@ -15,7 +14,7 @@ const pageDescription = 'Learn more about the team behind 30 seconds of code.';
     <h2 class={prefabs.staticPageTitle}>{title}</h2>
     <p class='my-0 mx-3.5 txt-100'>{subtitle}</p>
     <Card class='px-4 py-6 md:px-6 md:py-8'>
-      <CardTitle isSecondary>About us</CardTitle>
+      <h3 class={prefabs.secondaryCardTitle}>About us</h3>
       <div class='card-description'>
         <p class='f-justify'>
           30 seconds of code is an accessible high-quality knowledge base for
@@ -28,7 +27,7 @@ const pageDescription = 'Learn more about the team behind 30 seconds of code.';
       </div>
     </Card>
     <Card class='px-4 py-6 md:px-6 md:py-8'>
-      <CardTitle isSecondary>Who we are</CardTitle>
+      <h3 class={prefabs.secondaryCardTitle}>Who we are</h3>
       <div class='card-description'>
         <p class='f-justify'>
           30 seconds of code is developed, maintained and curated by <a
@@ -44,7 +43,7 @@ const pageDescription = 'Learn more about the team behind 30 seconds of code.';
       </div>
     </Card>
     <Card class='px-4 py-6 md:px-6 md:py-8'>
-      <CardTitle isSecondary>License</CardTitle>
+      <h3 class={prefabs.secondaryCardTitle}>License</h3>
       <div class='card-description'>
         <p class='f-justify'>
           In order for the code provided via 30 seconds of code to be accessible
@@ -76,7 +75,7 @@ const pageDescription = 'Learn more about the team behind 30 seconds of code.';
       </div>
     </Card>
     <Card class='px-4 py-6 md:px-6 md:py-8'>
-      <CardTitle isSecondary>Acknowledgments</CardTitle>
+      <h3 class={prefabs.secondaryCardTitle}>Acknowledgments</h3>
       <div class='card-description'>
         <p class='f-justify'>
           All of the photography on the 30 seconds of code website as well as
