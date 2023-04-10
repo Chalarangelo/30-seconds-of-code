@@ -9,6 +9,14 @@
   }
 }
 
+.f-strong {
+  font-weight: 600;
+
+  &.f-alt {
+    font-weight: 500;
+  }
+}
+
 .f-left {
   text-align: left;
 }
@@ -42,6 +50,10 @@
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+
+.lh-normal {
+  line-height: 1.5;
 }
 
 .lh-2 {
