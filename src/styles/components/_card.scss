@@ -1,36 +1,4 @@
 .card {
-  // Reusable utility for all card titles, including in body (used in articles)
-  .card-title {
-    &.linkable {
-      a {
-        position: absolute;
-        top: 0;
-        left: -14px;
-        width: 14px;
-        height: 100%;
-        opacity: 0;
-        transition: opacity 0.1s ease-in-out;
-
-        &::before {
-          content: '#';
-        }
-
-        &:hover,
-        &:focus {
-          opacity: 1;
-          outline: 0;
-        }
-      }
-
-      &:hover,
-      &:focus {
-        a {
-          opacity: 1;
-        }
-      }
-    }
-  }
-
   .card-description {
     margin: 0;
 
