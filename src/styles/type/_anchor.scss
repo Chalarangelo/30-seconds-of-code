@@ -36,6 +36,36 @@ a {
   }
 }
 
+// Utility class for linkable titles (used in card bodies)
+.hash-link {
+  a {
+    position: absolute;
+    top: 0;
+    left: -14px;
+    width: 14px;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+
+    &::before {
+      content: '#';
+    }
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+      outline: 0;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    a {
+      opacity: 1;
+    }
+  }
+}
+
 @keyframes animated-underline {
   0% {
     text-decoration-line: underline;
