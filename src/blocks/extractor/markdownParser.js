@@ -63,7 +63,8 @@ const commonTransformers = [
   // Convert blockquotes to the appropriate elements
   {
     matcher: /<blockquote>\s*\n*\s*<p>([\s\S]*?)<\/p>\s*\n*\s<\/blockquote>/g,
-    replacer: '<blockquote class="fs-md md:fs-lg">$1</blockquote>',
+    replacer:
+      '<blockquote class="fs-md md:fs-lg pl-6 mt-4 mb-2 mx-0 f-italic">$1</blockquote>',
   },
   // Wrap blog tables in an appropriate wrapper
   {

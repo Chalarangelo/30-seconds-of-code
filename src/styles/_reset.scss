@@ -81,12 +81,7 @@ kbd {
   vertical-align: baseline;
 }
 blockquote {
-  margin: 1rem 0 0.5rem;
-  padding-inline-start: 1.5rem;
   box-shadow: inset 4px 0 0 0 var(--clr-quote-border);
-  font-variation-settings: 'slnt' -10;
-  font-style: normal;
-  font-weight: 350;
 }
 // Style tabular content
 .table-wrapper {

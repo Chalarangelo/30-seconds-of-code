@@ -13,6 +13,10 @@
 .f-strong {
   font-weight: 600;
 }
+.f-italic {
+  font-variation-settings: 'slnt' -10;
+  font-style: normal;
+}
 
 .f-left {
   text-align: left;
