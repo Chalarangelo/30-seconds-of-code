@@ -1,14 +1,22 @@
 ---
+import prefabs from 'prefabs/index.js';
+
 const { items = [] } = Astro.props;
+
+const selectedChipClass = ``;
 ---
 
-<ul class='list-section listing-chips flex pb-1 my-2 mx-3.5 g-c2'>
+<ul
+  class='list-section scroll-x overflow-x md:flex-wrap flex pb-1 my-2 mx-3.5 g-c2 gap-4'
+>
   {
     items.map(item => (
-      <li class='flex-none fs-sm md:fs-md'>
+      <li class='flex-none fs-sm md:fs-md txt-150'>
         <a
           href={item.url}
-          class={`btn action-btn ${item.selected ? 'selected' : ''}`}
+          class={`${prefabs.chipButton} ${
+            item.selected ? 'srfc-02db lnk-strong' : 'srfc-01db lnk-inherit'
+          }`}
         >
           {item.title}
         </a>

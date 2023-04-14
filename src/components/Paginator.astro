@@ -1,19 +1,21 @@
 ---
+import prefabs from 'prefabs/index.js';
+
 const { paginator } = Astro.props;
 
 if (!paginator) return null;
 
 const { previous, pages, next } = paginator;
+
+const previousButtonClass = `${prefabs.button} ${prefabs.iconButton} ${prefabs.actionLinkButton} gap-1 j-center fs-no md:fs-sm icon icon-chevron-left box-border before:fs-md f-center m-0 py-2.5 px-3.5 br-lg`;
+const pageButtonClass = `${prefabs.button} ${prefabs.actionButton} m-0 py-2.5 px-3.5 br-lg fs-md box-border f-center`;
+const nextButtonClass = `${prefabs.button} ${prefabs.iconReverseButton} ${prefabs.actionLinkButton} gap-1 j-center fs-no md:fs-sm icon icon-chevron-right box-border before:fs-md f-center m-0 py-2.5 px-3.5 br-lg`;
 ---
 
 <div class='paginator gap-2 mt-7 mx-auto mb-6 a-center grid j-center'>
   {
     previous ? (
-      <a
-        href={previous.url}
-        class='btn action-btn previous-page gap-1 j-center fs-no md:fs-sm icon icon-chevron-left box-border before:fs-md f-center'
-        rel='prev'
-      >
+      <a href={previous.url} class={previousButtonClass} rel='prev'>
         {previous.label}
       </a>
     ) : (
@@ -24,11 +26,11 @@ const { previous, pages, next } = paginator;
     {
       pages.map(({ label, url, current }) =>
         current ? (
-          <span class='fs-xl box-border f-center' key={label}>
+          <span class='fs-xl box-border f-center m-0' key={label}>
             {label}
           </span>
         ) : (
-          <a href={url} class='btn action-btn fs-md box-border f-center'>
+          <a href={url} class={pageButtonClass}>
             {label}
           </a>
         )
@@ -37,11 +39,7 @@ const { previous, pages, next } = paginator;
   </div>
   {
     next ? (
-      <a
-        href={next.url}
-        class='btn action-btn next-page gap-1 j-center fs-no md:fs-sm icon icon-chevron-right box-border before:fs-md f-center'
-        rel='next'
-      >
+      <a href={next.url} class={nextButtonClass} rel='next'>
         {next.label}
       </a>
     ) : (

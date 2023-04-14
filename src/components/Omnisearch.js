@@ -17,7 +17,7 @@ class Omnisearch extends HTMLElement {
               placeholder='Search...'
               aria-label='Search snippets and collections'
             />
-            <button class='omnisearch-close btn icon-btn action-btn icon icon-close'></button>
+            <button class='omnisearch-close btn icon-btn action-btn icon icon-close m-0 p-0'></button>
           </div>
           <div class='omnisearch-results p-4'>
             ${this.createEmptyStateHTML()}

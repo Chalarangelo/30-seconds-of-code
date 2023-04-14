@@ -1,7 +1,7 @@
 // Shared scrollbar styles - Keep these here to minimize duplication
 body,                 // Shell
 pre,                  // Code block
-.listing-chips,
+.scroll-x,
 .omnisearch-results {
   // Listing chips
   --clr-el-scrollbar-bg: var(--clr-scrollbar-bg);
@@ -38,7 +38,7 @@ body {
 }
 
 // Listing chips scrollbars
-.listing-chips {
+.scroll-x {
   &::-webkit-scrollbar-track {
     margin: 0 4rem;
     border-radius: var(--br-sm);

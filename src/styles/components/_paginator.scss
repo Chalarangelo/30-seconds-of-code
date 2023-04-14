@@ -6,24 +6,8 @@
     grid-template-columns: 128px 1fr 128px;
   }
 
-  .btn,
-  a.btn,
+  a,
   span {
-    margin: 0;
     min-width: 44px;
-  }
-
-  .previous-page,
-  .next-page {
-    color: var(--clr-primary-050);
-    display: flex;
-  }
-
-  .previous-page {
-    flex-direction: row;
-  }
-
-  .next-page {
-    flex-direction: row-reverse;
   }
 }
