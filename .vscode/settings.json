@@ -25,5 +25,16 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "workbench.editor.labelFormat": "short",
-  "prettier.documentSelectors": ["**/*.astro"]
+  "prettier.documentSelectors": ["**/*.astro"],
+  "search.exclude": {
+    "src/styles/_fonts.scss": true,
+    "src/styles/_icons.scss": true,
+    "src/icons": true,
+    "assets": true,
+    "package-lock.json": true,
+    "**/CODE_OF_CONDUCT.md": true,
+    "**/CONTRIBUTING.md": true,
+    "**/LICENSE.md": true,
+    "**/README.md": true,
+  }
 }
