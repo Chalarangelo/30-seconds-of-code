@@ -53,7 +53,7 @@ const commonTransformers = [
     matcher:
       /<pre class="language-([^"]+)" data-code-language="([^"]*)">([\s\S]*?)<\/pre>/g,
     replacer:
-      '<pre class="language-$1 notranslate my-0 mx-0" data-code-language="$2" translate="no">$3</pre>',
+      '<pre class="language-$1 notranslate m-0" data-code-language="$2" translate="no">$3</pre>',
   },
   // Add a copy to clipboard button after each code block
   {
