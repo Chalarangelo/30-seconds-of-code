@@ -8,6 +8,7 @@ import Prism from 'prismjs';
 import getLoader from 'prismjs/dependencies';
 import prismComponents from 'prismjs/components';
 import { escapeHTML, optimizeAllNodes, convertToValidId } from 'utils';
+import prefabs from 'prefabs';
 
 const loader = getLoader(
   prismComponents,
@@ -42,8 +43,8 @@ const commonTransformers = [
       const lvl = level <= 3 ? 3 : 4;
       const fontClasses = lvl === 3 ? 'fs-lg md:fs-xl' : 'fs-md md:fs-lg';
       const id = convertToValidId(title);
-      return `<h${lvl} class="card-title linkable relative mt-6 mx-0 mb-0 txt-150 f-alt ${fontClasses}">
-        <a href="#${id}" id="${id}" class="fs-sm no-animation flex flex-col j-center"></a>
+      return `<h${lvl} class="hash-link relative mt-6 mx-0 mb-0 txt-150 f-alt lh-tight ${fontClasses}">
+        <a href="#${id}" id="${id}" class="fs-sm lnk-no-animation flex flex-col j-center"></a>
         ${title}
       </h${lvl}>`;
     },
@@ -53,17 +54,18 @@ const commonTransformers = [
     matcher:
       /<pre class="language-([^"]+)" data-code-language="([^"]*)">([\s\S]*?)<\/pre>/g,
     replacer:
-      '<pre class="language-$1 notranslate my-0 mx-0" data-code-language="$2">$3</pre>',
+      '<pre class="language-$1 notranslate m-0" data-code-language="$2" translate="no">$3</pre>',
   },
   // Add a copy to clipboard button after each code block
   {
     matcher: /<\/pre>/g,
-    replacer: `</pre><button class="flex-none before:fs-sm btn action-btn icon-btn icon icon-clipboard" title="Copy code" />`,
+    replacer: `</pre><button class="${prefabs.copyCodeButton}" title="Copy code" />`,
   },
   // Convert blockquotes to the appropriate elements
   {
     matcher: /<blockquote>\s*\n*\s*<p>([\s\S]*?)<\/p>\s*\n*\s<\/blockquote>/g,
-    replacer: '<blockquote class="fs-md md:fs-lg">$1</blockquote>',
+    replacer:
+      '<blockquote class="fs-md md:fs-lg pl-6 mt-4 mb-2 mx-0 f-italic">$1</blockquote>',
   },
   // Wrap blog tables in an appropriate wrapper
   {
@@ -181,7 +183,7 @@ export class MarkdownParser {
 
       node.value = isText
         ? [
-            `<div class="code-highlight mt-4" data-language="${languageName}">`,
+            `<div class="code-highlight relative mt-4" data-language="${languageName}">`,
             `<pre class="language-${languageName}" data-code-language="${languageStringLiteral}">`,
             `${highlightedCode.trim()}`,
             `</pre>`,
@@ -207,7 +209,9 @@ export class MarkdownParser {
     // Highlight inline code blocks
     visitParents(ast, `inlineCode`, (node, ancestors) => {
       const text = node.value;
-      let newValue = `<code class="notranslate">${escapeHTML(text)}</code>`;
+      let newValue = `<code class="notranslate" translate="no">${escapeHTML(
+        text
+      )}</code>`;
 
       if (
         references.size &&

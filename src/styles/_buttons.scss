@@ -1,14 +1,8 @@
 .btn {
-  position: relative;
-  display: inline-block;
-  padding: 0.625rem 0.875rem;
-  margin: 0 0.5rem;
   font-weight: 500;
   -webkit-font-smoothing: antialiased;
-  line-height: 1.5rem;
   cursor: pointer;
   border: 0;
-  border-radius: var(--br-lg);
   transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
 
   &:hover,
@@ -21,6 +15,10 @@
   &.action-btn {
     background: transparent;
     color: var(--clr-txt-150);
+
+    &.action-btn-link {
+      color: var(--clr-primary-050);
+    }
 
     &:hover,
     &:focus {
@@ -45,10 +43,14 @@
   // Utility for btn elements that have an inline icon
   &.icon-btn {
     display: inline-flex;
-    gap: 0.5rem;
+    align-items: center;
 
     &:before {
       vertical-align: bottom;
+    }
+
+    &.icon-btn-reverse {
+      flex-direction: row-reverse;
     }
   }
 }

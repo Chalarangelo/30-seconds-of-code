@@ -81,7 +81,6 @@ img.nav-website-logo {
   left: 0;
   width: 100vw;
   transition: none;
-  line-height: 112px;
 
   // The link must have the same height and background as the nav bar
   &:focus {
@@ -89,16 +88,5 @@ img.nav-website-logo {
     background: var(--clr-navbar-bg);
     height: 112px;
     z-index: 1001;
-  }
-}
-
-// Footer styles
-footer {
-  // Make at least as tall as the cookie consent popup
-  // to ensure that the paginator is never hidden
-  min-height: 9rem;
-
-  p {
-    line-height: 1.5rem;
   }
 }

@@ -35,10 +35,6 @@ body {
   color: var(--clr-txt-100);
   overflow-x: hidden;
 }
-// Show overflow in Edge.
-input {
-  overflow: visible;
-}
 // Correct style in Chrome and Safari.
 [type='search'] {
   -webkit-appearance: textfield;
@@ -54,37 +50,9 @@ img {
   max-width: 100%;
   height: auto;
 }
-// Style headings according to design guidelines
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: 1.2;
-  margin: 0.75rem 0.5rem;
-}
-h1 {
-  font-size: var(--font-x3);
-}
-h2 {
-  font-size: var(--font-x2);
-}
-h3 {
-  font-size: var(--font-xl);
-}
-h4 {
-  font-size: var(--font-xl);
-}
-h5 {
-  font-size: var(--font-lg);
-}
-h6 {
-  font-size: var(--font-lg);
-}
 // Style textual elements
 p {
-  margin: 0.5rem;
+  margin: 0.5rem 0;
 }
 ol,
 ul {
@@ -109,12 +77,7 @@ kbd {
   vertical-align: baseline;
 }
 blockquote {
-  margin: 1rem 0 0.5rem;
-  padding-inline-start: 1.5rem;
   box-shadow: inset 4px 0 0 0 var(--clr-quote-border);
-  font-variation-settings: 'slnt' -10;
-  font-style: normal;
-  font-weight: 350;
 }
 // Style tabular content
 .table-wrapper {

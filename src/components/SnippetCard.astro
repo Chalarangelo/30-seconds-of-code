@@ -1,7 +1,6 @@
 ---
-import Card from 'components/Card.astro';
-import CardTitle from 'components/CardTitle.astro';
-import CardSubtitle from 'components/CardSubtitle.astro';
+import prefabs from 'prefabs/index.js';
+
 import Image from 'components/Image.astro';
 
 const { snippet } = Astro.props;
@@ -10,11 +9,11 @@ const hasCodeBlocks = Boolean(snippet.codeBlocks && snippet.codeBlocks.length);
 const hasScopeCSS = Boolean(snippet.code && snippet.code.scopedCss);
 ---
 
-<Card class='snippet-card g-c2 px-4 py-6 md:px-6 md:py-8' element='article'>
-  <CardTitle>{snippet.title}</CardTitle>
-  <CardSubtitle>
+<article class={prefabs.snippetCard}>
+  <h1 class={prefabs.cardTitle}>{snippet.title}</h1>
+  <p class={prefabs.cardSubtitle}>
     {snippet.tags} &middot; <span class='inline-block'>{snippet.date}</span>
-  </CardSubtitle>
+  </p>
   <Image
     class='ar-wide mt-5 br-md'
     src={snippet.cover}
@@ -29,9 +28,9 @@ const hasScopeCSS = Boolean(snippet.code && snippet.code.scopedCss);
   />
   {
     hasScopeCSS && (
-      <div class='card-preview-content'>
-        <h5 class='snippet-preview-title txt-150 fs-md'>Preview</h5>
-        <div class='snippet-preview m-0 br-md' data-scope='snippet-preview'>
+      <div class='card-preview-content br-md pt-4'>
+        <h5 class='txt-150 fs-md f-strong lh-tight my-0 mr-0 ml-3.5'>Preview</h5>
+        <div class='py-3 px-3.5 m-0' data-scope='snippet-preview'>
           <style set:html={snippet.code.scopedCss} />
           <div set:html={snippet.code.html} />
         </div>
@@ -40,16 +39,17 @@ const hasScopeCSS = Boolean(snippet.code && snippet.code.scopedCss);
   }
   {
     hasCodeBlocks && (
-      <div class='card-source-content mt-5 mx-0 mb-0'>
+      <div class='card-source-content m-0'>
         {snippet.codeBlocks.map(({ language, htmlContent }) => (
-          <div class='code-highlight'>
+          <div class='code-highlight relative'>
             <pre
               data-code-language={language.long}
-              class={`notranslate ${`language-${language.short}`} card-code`}
+              class={`notranslate m-0 language-${language.short}`}
+              translate="no"
               set:html={htmlContent}
             />
             <button
-              class='flex-none before:fs-sm btn action-btn icon-btn icon icon-clipboard'
+              class={prefabs.copyCodeButton}
               title='Copy code'
             />
           </div>
@@ -60,13 +60,13 @@ const hasScopeCSS = Boolean(snippet.code && snippet.code.scopedCss);
   {
     snippet.author ? (
       <div class='flex flex-col m-0'>
-        <h3 class='mt-4 mb-0 mx-0 txt-150 fs-md md:fs-lg'>
+        <h3 class='mt-4 mb-0 mx-0 txt-150 fs-md md:fs-lg lh-tight'>
           Written by {snippet.author.name}
         </h3>
-        <p class='lh-2 mx-0 mt-2 mb-0 txt-100 fs-sm md:fs-md'>
+        <p class='lh-loose mx-0 mt-2 mb-0 txt-100 fs-sm md:fs-md'>
           {snippet.author.intro}
         </p>
-        <p class='lh-2 m-0 txt-100 fs-sm md:fs-md'>
+        <p class='lh-loose m-0 txt-100 fs-sm md:fs-md'>
           {'If you want to keep in touch, follow me on '}
           <a
             href={snippet.author.github}
@@ -86,20 +86,20 @@ const hasScopeCSS = Boolean(snippet.code && snippet.code.scopedCss);
       </div>
     ) : null
   }
-  <div class='card-actions flex'>
+  <div class='card-actions flex j-space-evenly mt-4 mx-0 mb-0'>
     {
       snippet.actionType === 'codepen' && (
         <button
-          class='flex-none before:fs-md btn action-btn icon-btn icon icon-codepen'
+          class={`${prefabs.button} ${prefabs.actionButton} ${prefabs.iconButton} flex-none before:fs-md icon-codepen my-0 mx-2 p-3`}
           title='View CodePen'
         />
       )
     }
     <a
-      class='flex-none before:fs-md btn action-btn icon-btn icon icon-github'
+      class={`${prefabs.button} ${prefabs.actionButton} ${prefabs.iconButton} flex-none before:fs-md icon-github my-0 mx-2 p-3`}
       href={snippet.url}
       rel='nofollow noopener noreferrer'
       target='_blank'
       title='View on GitHub'></a>
   </div>
-</Card>
+</article>

@@ -5,8 +5,18 @@
     font-family: 'Raleway', Helvetica, sans-serif;
     letter-spacing: 0.25px;
     font-feature-settings: 'ss02', 'lnum', 'kern';
+    font-weight: 500;
     -webkit-font-smoothing: antialiased;
   }
+}
+
+.f-strong {
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+}
+.f-italic {
+  font-variation-settings: 'slnt' -10;
+  font-style: normal;
 }
 
 .f-left {
@@ -17,9 +27,6 @@
 }
 .f-center {
   text-align: center;
-}
-.f-justify {
-  text-align: justify;
 }
 // Additional responsive spacing (only as needed)
 @media screen and (min-width: $layout-medium-breakpoint) {
@@ -43,7 +50,12 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
-
-.lh-2 {
-  line-height: 2rem;
+.lh-tight {
+  line-height: 1.25;
+}
+.lh-normal {
+  line-height: 1.5;
+}
+.lh-loose {
+  line-height: 1.75;
 }
