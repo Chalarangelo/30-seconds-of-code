@@ -45,6 +45,7 @@ const hasScopeCSS = Boolean(snippet.code && snippet.code.scopedCss);
             <pre
               data-code-language={language.long}
               class={`notranslate ${`language-${language.short}`} card-code`}
+              translate="no"
               set:html={htmlContent}
             />
             <button

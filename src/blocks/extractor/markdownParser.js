@@ -53,7 +53,7 @@ const commonTransformers = [
     matcher:
       /<pre class="language-([^"]+)" data-code-language="([^"]*)">([\s\S]*?)<\/pre>/g,
     replacer:
-      '<pre class="language-$1 notranslate my-0 mx-0" data-code-language="$2">$3</pre>',
+      '<pre class="language-$1 notranslate my-0 mx-0" data-code-language="$2" translate="no">$3</pre>',
   },
   // Add a copy to clipboard button after each code block
   {
@@ -207,7 +207,9 @@ export class MarkdownParser {
     // Highlight inline code blocks
     visitParents(ast, `inlineCode`, (node, ancestors) => {
       const text = node.value;
-      let newValue = `<code class="notranslate">${escapeHTML(text)}</code>`;
+      let newValue = `<code class="notranslate" translate="no">${escapeHTML(
+        text
+      )}</code>`;
 
       if (
         references.size &&
