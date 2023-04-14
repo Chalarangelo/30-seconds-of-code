@@ -52,7 +52,7 @@
   }
 
   // Hide snippet previews
-  .card-preview-content + .card-source-content pre:first-of-type {
+  .card-preview-content + .code-highlight:first-of-type > pre {
     border-top-left-radius: var(--br-md) !important;
     border-top-right-radius: var(--br-md) !important;
   }
