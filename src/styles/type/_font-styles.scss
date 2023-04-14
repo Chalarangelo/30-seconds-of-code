@@ -5,16 +5,13 @@
     font-family: 'Raleway', Helvetica, sans-serif;
     letter-spacing: 0.25px;
     font-feature-settings: 'ss02', 'lnum', 'kern';
+    font-weight: 500;
     -webkit-font-smoothing: antialiased;
   }
 }
 
 .f-strong {
   font-weight: 600;
-
-  &.f-alt {
-    font-weight: 500;
-  }
 }
 
 .f-left {
