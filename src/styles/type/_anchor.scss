@@ -14,20 +14,20 @@ a {
     animation-fill-mode: forwards;
   }
 
-  &.inherit {
+  &.lnk-inherit {
     &:any-link {
       color: inherit;
     }
   }
 
-  &.no-animation {
+  &.lnk-no-animation {
     &:hover,
     &:focus {
       animation: none;
     }
   }
 
-  &.fill-parent {
+  &.lnk-fill-parent {
     &:before {
       content: '';
       position: absolute;
