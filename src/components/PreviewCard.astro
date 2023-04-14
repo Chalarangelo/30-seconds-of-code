@@ -1,17 +1,13 @@
 ---
 import prefabs from 'prefabs/index.js';
 
-import Card from 'components/Card.astro';
 import Image from 'components/Image.astro';
 
 const { contentItem } = Astro.props;
 const { title, description, url, cover, tags, extraContext } = contentItem;
 ---
 
-<Card
-  element='li'
-  class='list-card grid a-center py-5 px-4 md:p-6 relative no-overflow'
->
+<li class={prefabs.previewCard}>
   <Image
     class='br-md'
     src={cover}
@@ -32,4 +28,4 @@ const { title, description, url, cover, tags, extraContext } = contentItem;
       {tags} &middot; <span class='inline-block'>{extraContext}</span>
     </p>
   </div>
-</Card>
+</li>

@@ -2,7 +2,6 @@
 import prefabs from 'prefabs/index.js';
 
 import Layout from 'layouts/Layout.astro';
-import Card from 'components/Card.astro';
 
 const title = 'About';
 const subtitle = 'A few word about us, our goals and our projects.';
@@ -13,7 +12,7 @@ const pageDescription = 'Learn more about the team behind 30 seconds of code.';
   <div class='g-c2'>
     <h2 class={prefabs.staticPageTitle}>{title}</h2>
     <p class='my-0 mx-3.5 txt-100'>{subtitle}</p>
-    <Card class='px-4 py-6 md:px-6 md:py-8'>
+    <div class={prefabs.simpleCard}>
       <h3 class={prefabs.secondaryCardTitle}>About us</h3>
       <div class='card-description'>
         <p class='f-justify'>
@@ -25,8 +24,8 @@ const pageDescription = 'Learn more about the team behind 30 seconds of code.';
           source community thrive by helping people learn to code.
         </p>
       </div>
-    </Card>
-    <Card class='px-4 py-6 md:px-6 md:py-8'>
+    </div>
+    <div class={prefabs.simpleCard}>
       <h3 class={prefabs.secondaryCardTitle}>Who we are</h3>
       <div class='card-description'>
         <p class='f-justify'>
@@ -41,8 +40,8 @@ const pageDescription = 'Learn more about the team behind 30 seconds of code.';
           started out as a developer.
         </p>
       </div>
-    </Card>
-    <Card class='px-4 py-6 md:px-6 md:py-8'>
+    </div>
+    <div class={prefabs.simpleCard}>
       <h3 class={prefabs.secondaryCardTitle}>License</h3>
       <div class='card-description'>
         <p class='f-justify'>
@@ -73,8 +72,8 @@ const pageDescription = 'Learn more about the team behind 30 seconds of code.';
           that the project is in no way affiliated with 30 seconds of code.
         </p>
       </div>
-    </Card>
-    <Card class='px-4 py-6 md:px-6 md:py-8'>
+    </div>
+    <div class={prefabs.simpleCard}>
       <h3 class={prefabs.secondaryCardTitle}>Acknowledgments</h3>
       <div class='card-description'>
         <p class='f-justify'>
@@ -91,6 +90,6 @@ const pageDescription = 'Learn more about the team behind 30 seconds of code.';
           > to better showcase all of the images used and connect users with photographers.
         </p>
       </div>
-    </Card>
+    </div>
   </div>
 </Layout>

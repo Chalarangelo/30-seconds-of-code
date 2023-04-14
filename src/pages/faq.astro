@@ -2,7 +2,6 @@
 import prefabs from 'prefabs/index.js';
 
 import Layout from 'layouts/Layout.astro';
-import Card from 'components/Card.astro';
 
 const title = 'FAQ';
 const subtitle = 'Frequently asked questions and answers.';
@@ -14,8 +13,8 @@ const pageDescription =
   <div class='g-c2'>
     <h2 class={prefabs.staticPageTitle}>{title}</h2>
     <p class='my-0 mx-3.5 txt-100'>{subtitle}</p>
-    <Card
-      class='px-4 py-6 md:px-6 md:py-8'
+    <div
+      class={prefabs.simpleCard}
       itemscope='true'
       itemprop='mainEntity'
       itemtype='https://schema.org/Question'
@@ -36,9 +35,9 @@ const pageDescription =
           describing the problem.
         </p>
       </div>
-    </Card>
-    <Card
-      class='px-4 py-6 md:px-6 md:py-8'
+    </div>
+    <div
+      class={prefabs.simpleCard}
       itemscope='true'
       itemprop='mainEntity'
       itemtype='https://schema.org/Question'
@@ -66,9 +65,9 @@ const pageDescription =
           in time and that no significant disruptions occur.
         </p>
       </div>
-    </Card>
-    <Card
-      class='px-4 py-6 md:px-6 md:py-8'
+    </div>
+    <div
+      class={prefabs.simpleCard}
       itemscope='true'
       itemprop='mainEntity'
       itemtype='https://schema.org/Question'
@@ -93,6 +92,6 @@ const pageDescription =
           Request for review.
         </p>
       </div>
-    </Card>
+    </div>
   </div>
 </Layout>
