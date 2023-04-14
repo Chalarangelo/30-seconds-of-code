@@ -2,7 +2,6 @@
 import prefabs from 'prefabs/index.js';
 
 import Layout from 'layouts/Layout.astro';
-import Card from 'components/Card.astro';
 
 const title = 'Cookie policy';
 const subtitle = 'Understand how we use cookies.';
@@ -13,7 +12,7 @@ const pageDescription = 'Read about the cookie policy of 30 seconds of code.';
   <div class='g-c2'>
     <h2 class={prefabs.staticPageTitle}>{title}</h2>
     <p class='my-0 mx-3.5 txt-100'>{subtitle}</p>
-    <Card class='px-4 py-6 md:px-6 md:py-8'>
+    <div class={prefabs.simpleCard}>
       <h3 class={prefabs.secondaryCardTitle}>What are cookies</h3>
       <div class='card-description'>
         <p class='f-justify'>
@@ -26,8 +25,8 @@ const pageDescription = 'Read about the cookie policy of 30 seconds of code.';
           certain elements of the sites functionality.
         </p>
       </div>
-    </Card>
-    <Card class='px-4 py-6 md:px-6 md:py-8'>
+    </div>
+    <div class={prefabs.simpleCard}>
       <h3 class={prefabs.secondaryCardTitle}>How we use cookies</h3>
       <div class='card-description'>
         <p class='f-justify'>
@@ -39,8 +38,8 @@ const pageDescription = 'Read about the cookie policy of 30 seconds of code.';
           to provide a service that you use.
         </p>
       </div>
-    </Card>
-    <Card class='px-4 py-6 md:px-6 md:py-8'>
+    </div>
+    <div class={prefabs.simpleCard}>
       <h3 class={prefabs.secondaryCardTitle}>Disabling cookies</h3>
       <div class='card-description'>
         <p class='f-justify'>
@@ -52,8 +51,8 @@ const pageDescription = 'Read about the cookie policy of 30 seconds of code.';
           Therefore it is recommended that you do not disable cookies.
         </p>
       </div>
-    </Card>
-    <Card class='px-4 py-6 md:px-6 md:py-8'>
+    </div>
+    <div class={prefabs.simpleCard}>
       <h3 class={prefabs.secondaryCardTitle}>The cookies we set</h3>
       <div class='card-description'>
         <p><strong>Site preference cookies</strong></p>
@@ -87,8 +86,8 @@ const pageDescription = 'Read about the cookie policy of 30 seconds of code.';
           >.
         </p>
       </div>
-    </Card>
-    <Card class='px-4 py-6 md:px-6 md:py-8'>
+    </div>
+    <div class={prefabs.simpleCard}>
       <h3 class={prefabs.secondaryCardTitle}>More information</h3>
       <div class='card-description'>
         <p class='f-justify'>
@@ -103,8 +102,8 @@ const pageDescription = 'Read about the cookie policy of 30 seconds of code.';
           >.
         </p>
       </div>
-    </Card>
-    <Card class='px-4 py-6 md:px-6 md:py-8'>
+    </div>
+    <div class={prefabs.simpleCard}>
       <h3 class={prefabs.secondaryCardTitle}>Cookie preferences</h3>
       <div class='card-description'>
         <p>You can update your cookie preferences using the checkbox below.</p>
@@ -113,6 +112,6 @@ const pageDescription = 'Read about the cookie policy of 30 seconds of code.';
           Accept cookies
         </label>
       </div>
-    </Card>
+    </div>
   </div>
 </Layout>
