@@ -22,12 +22,11 @@ const OtherComponent = ({ enabled }) => {
   return ( <div className={enabled ? 'enabled' : null}> Hi </div> );
 };
 
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <>
     <MyComponent enabled={false} />
     <OtherComponent enabled={false} />
-  </>,
-  document.getElementById('root')
+  </>
 );
 ```
 

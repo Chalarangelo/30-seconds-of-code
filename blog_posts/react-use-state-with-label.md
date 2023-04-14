@@ -26,7 +26,9 @@ const Counter = () => {
   );
 };
 
-ReactDOM.render(<Counter />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <Counter />
+);
 // Inspecting `Counter` in React developer tools will display:
 //  StateWithLabel: "counter: 0"
 ```
