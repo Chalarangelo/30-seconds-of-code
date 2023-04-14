@@ -35,9 +35,9 @@ All of these techniques use **shallow equality** for comparisons. Skipping rende
 
 Passing new references as `props` to a child component doesn't usually matter, as it will re-render regardless when the parent changes. However, if you are trying to optimize a child component's rendering by checking if its `props` have changed, passing new references will cause a render. This behavior is ok if the new references are updated data, but if it's a new reference to the same callback function passed down by the parent, it's rather problematic.
 
-This is less of an issue in class components, as they have instance methods whose references don't change, although any sort of generated callbacks passed down to a component's children can result in new references. As far as function components are concerned, React provides the `useMemo` hook for memoizing values, and the `useCallback` hook specifically for memoizing callbacks.
+This is less of an issue in class components, as they have instance methods whose references don't change, although any sort of generated callbacks passed down to a component's children can result in new references. As far as function components are concerned, React provides the `useMemo()` hook for memoizing values, and the `useCallback()` hook specifically for memoizing callbacks.
 
-`useMemo` and `useCallback` can provide performance benefits but, as with any other memoization usage, it's important to think about their necessity and the net benefit they provide in the long run. A good rule of thumb is to consider using them for pure functional components that re-render often with the same `props` and/or might do heavy calculations and avoid them elsewhere.
+`useMemo()` and `useCallback()` can provide performance benefits but, as with any other memoization usage, it's important to think about their necessity and the net benefit they provide in the long run. A good rule of thumb is to consider using them for pure functional components that re-render often with the same `props` and/or might do heavy calculations and avoid them elsewhere.
 
 ### Performance measurement
 

@@ -17,7 +17,7 @@ lastUpdated: 2021-06-12T19:30:41+03:00
 
 ### Context API
 
-React's **Context API** provides a way to pass data through the component tree without using `props`, but should not be used for state management as it requires manual updating. Any component inside a context's `Provider` can access the data in the context instance using a `Consumer` component or, for function components only, the `useContext` hook.
+React's **Context API** provides a way to pass data through the component tree without using `props`, but should not be used for state management as it requires manual updating. Any component inside a context's `Provider` can access the data in the context instance using a `Consumer` component or, for function components only, the `useContext()` hook.
 
 When a new reference is passed to a context `Provider` it will cause any connected components to update. React will look for any components consuming the context in the component tree and update them to reflect the change in the context's value. Passing a new object to a context `Provider` is essentially a new reference, as the context holds a single value (in this case an object).
 
