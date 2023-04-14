@@ -35,10 +35,6 @@ body {
   color: var(--clr-txt-100);
   overflow-x: hidden;
 }
-// Show overflow in Edge.
-input {
-  overflow: visible;
-}
 // Correct style in Chrome and Safari.
 [type='search'] {
   -webkit-appearance: textfield;
