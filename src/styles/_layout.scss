@@ -14,6 +14,9 @@
 .j-center {
   justify-content: center;
 }
+.j-space-evenly {
+  justify-content: space-evenly;
+}
 .a-center {
   align-items: center;
 }
@@ -33,6 +36,9 @@
 }
 .no-overflow {
   overflow: hidden;
+}
+.overflow-x {
+  overflow-x: auto;
 }
 
 // Content container
@@ -60,6 +66,10 @@
 @media screen and (min-width: $layout-medium-breakpoint) {
   .md\:order-2 {
     order: 2;
+  }
+
+  .md\:flex-wrap {
+    flex-wrap: wrap;
   }
 }
 

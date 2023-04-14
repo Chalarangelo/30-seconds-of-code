@@ -49,7 +49,7 @@ const hasScopeCSS = Boolean(snippet.code && snippet.code.scopedCss);
               set:html={htmlContent}
             />
             <button
-              class='flex-none before:fs-sm btn action-btn icon-btn icon icon-clipboard'
+              class={prefabs.copyCodeButton}
               title='Copy code'
             />
           </div>
@@ -86,17 +86,17 @@ const hasScopeCSS = Boolean(snippet.code && snippet.code.scopedCss);
       </div>
     ) : null
   }
-  <div class='card-actions flex'>
+  <div class='card-actions flex j-space-evenly mt-4 mx-0 mb-0'>
     {
       snippet.actionType === 'codepen' && (
         <button
-          class='flex-none before:fs-md btn action-btn icon-btn icon icon-codepen'
+          class={`${prefabs.button} ${prefabs.actionButton} ${prefabs.iconButton} flex-none before:fs-md icon-codepen my-0 mx-2 p-3`}
           title='View CodePen'
         />
       )
     }
     <a
-      class='flex-none before:fs-md btn action-btn icon-btn icon icon-github'
+      class={`${prefabs.button} ${prefabs.actionButton} ${prefabs.iconButton} flex-none before:fs-md icon-github my-0 mx-2 p-3`}
       href={snippet.url}
       rel='nofollow noopener noreferrer'
       target='_blank'

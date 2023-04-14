@@ -1,5 +1,7 @@
 ---
 import settings from '../settings/global.json';
+
+import prefabs from 'prefabs/index.js';
 ---
 
 <div class='cookie-consent-popup hidden srfc-03db px-6 py-2 txt-150 f-center'>
@@ -12,12 +14,12 @@ import settings from '../settings/global.json';
   <div class='cookie-consent-buttons mx-auto mt-3.5 mb-2 flex j-center'>
     <button
       id='cookie-consent-accept'
-      class='btn action-btn fs-xs'
+      class={`${prefabs.simpleButton} ${prefabs.actionButton} fs-xs`}
       data-nosnippet>Accept</button
     >
     <button
       id='cookie-consent-decline'
-      class='btn action-btn fs-xs'
+      class={`${prefabs.simpleButton} ${prefabs.actionButton} fs-xs`}
       data-nosnippet>Decline</button
     >
   </div>

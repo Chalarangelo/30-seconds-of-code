@@ -19,15 +19,20 @@
       }
     }
 
+    --action-display: none;
+
+    &:hover,
+    &:focus-within {
+      --action-display: block;
+    }
+
     pre {
       + .action-btn {
-        display: none;
+        display: var(--action-display);
         position: absolute;
         top: 0.5rem;
         z-index: 1000;
         right: 0;
-        padding: 0.625rem;
-        line-height: 1;
 
         &.active {
           animation-name: active;
@@ -42,12 +47,6 @@
             animation-timing-function: ease-in-out;
           }
         }
-      }
-
-      &:hover + .action-btn,
-      + .action-btn:focus,
-      + .action-btn:hover {
-        display: block;
       }
     }
 
@@ -66,16 +65,6 @@
         border-top-left-radius: var(--br-none);
         border-top-right-radius: var(--br-none);
       }
-    }
-  }
-
-  .card-actions {
-    margin: 1rem 0 -1rem;
-    justify-content: space-evenly;
-
-    .btn {
-      // TODO: Button issue with padding
-      padding: 0.75rem;
     }
   }
 }

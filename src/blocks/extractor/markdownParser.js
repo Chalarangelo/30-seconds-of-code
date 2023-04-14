@@ -8,6 +8,7 @@ import Prism from 'prismjs';
 import getLoader from 'prismjs/dependencies';
 import prismComponents from 'prismjs/components';
 import { escapeHTML, optimizeAllNodes, convertToValidId } from 'utils';
+import prefabs from 'prefabs';
 
 const loader = getLoader(
   prismComponents,
@@ -58,7 +59,7 @@ const commonTransformers = [
   // Add a copy to clipboard button after each code block
   {
     matcher: /<\/pre>/g,
-    replacer: `</pre><button class="flex-none before:fs-sm btn action-btn icon-btn icon icon-clipboard" title="Copy code" />`,
+    replacer: `</pre><button class="${prefabs.copyCodeButton}" title="Copy code" />`,
   },
   // Convert blockquotes to the appropriate elements
   {
