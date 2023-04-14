@@ -34,6 +34,19 @@ a {
       inset: 0;
     }
   }
+
+  &.lnk-strong {
+    &:any-link {
+      color: var(--clr-primary-100);
+    }
+  }
+
+  &.lnk-hover-strong {
+    &:hover,
+    &:focus {
+      color: var(--clr-primary-100);
+    }
+  }
 }
 
 // Utility class for linkable titles (used in card bodies)
