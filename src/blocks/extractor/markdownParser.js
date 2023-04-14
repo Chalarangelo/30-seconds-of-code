@@ -182,7 +182,7 @@ export class MarkdownParser {
 
       node.value = isText
         ? [
-            `<div class="code-highlight mt-4" data-language="${languageName}">`,
+            `<div class="code-highlight relative mt-4" data-language="${languageName}">`,
             `<pre class="language-${languageName}" data-code-language="${languageStringLiteral}">`,
             `${highlightedCode.trim()}`,
             `</pre>`,

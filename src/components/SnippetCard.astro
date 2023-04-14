@@ -28,9 +28,9 @@ const hasScopeCSS = Boolean(snippet.code && snippet.code.scopedCss);
   />
   {
     hasScopeCSS && (
-      <div class='card-preview-content'>
-        <h5 class='snippet-preview-title txt-150 fs-md lh-tight'>Preview</h5>
-        <div class='snippet-preview m-0 br-md' data-scope='snippet-preview'>
+      <div class='card-preview-content br-md pt-4'>
+        <h5 class='txt-150 fs-md f-strong lh-tight my-0 mr-0 ml-3.5'>Preview</h5>
+        <div class='py-3 px-3.5 m-0' data-scope='snippet-preview'>
           <style set:html={snippet.code.scopedCss} />
           <div set:html={snippet.code.html} />
         </div>
@@ -39,12 +39,12 @@ const hasScopeCSS = Boolean(snippet.code && snippet.code.scopedCss);
   }
   {
     hasCodeBlocks && (
-      <div class='card-source-content mt-5 mx-0 mb-0'>
+      <div class='card-source-content m-0'>
         {snippet.codeBlocks.map(({ language, htmlContent }) => (
-          <div class='code-highlight'>
+          <div class='code-highlight relative'>
             <pre
               data-code-language={language.long}
-              class={`notranslate ${`language-${language.short}`} card-code`}
+              class={`notranslate m-0 language-${language.short}`}
               translate="no"
               set:html={htmlContent}
             />
