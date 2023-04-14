@@ -9,7 +9,7 @@ excerpt: Avoid unnecessary re-runs by using primitive dependencies in your React
 firstSeen: 2022-06-12T05:00:00-04:00
 ---
 
-Conditionally firing an effect is a pretty common requirement when working with React. In most cases, this is as simple as passing a dependency array to `useEffect`. Turns out that, in some cases, this can cause unnecessary performance degradation.
+Conditionally firing an effect is a pretty common requirement when working with React. In most cases, this is as simple as passing a dependency array to `useEffect()`. Turns out that, in some cases, this can cause unnecessary performance degradation.
 
 Such issues arise when entire objects are passed as dependencies when you only need a primitive value. Due to the nature of objects, [being pass-by-reference](/articles/s/javascript-pass-by-reference-or-pass-by-value), comparing the dependencies will always trigger a re-run. This ends up causing effects to run unnecessarily.
 
