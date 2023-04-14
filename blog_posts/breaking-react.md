@@ -33,7 +33,9 @@ const App = () => {
   );
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <App />
+);
 ```
 
 This is a pretty simple React application, with a container, two buttons and a state variable. The problem is it will crash if you click the button that calls `destroyElement()` and then click the other one. _Why?_ you might ask. The issue here might not be immediately obvious, but if you look at your browser console you will notice the following exception:
