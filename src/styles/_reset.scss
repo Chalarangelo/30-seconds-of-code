@@ -54,34 +54,6 @@ img {
   max-width: 100%;
   height: auto;
 }
-// Style headings according to design guidelines
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: 1.2;
-  margin: 0.75rem 0.5rem;
-}
-h1 {
-  font-size: var(--font-x3);
-}
-h2 {
-  font-size: var(--font-x2);
-}
-h3 {
-  font-size: var(--font-xl);
-}
-h4 {
-  font-size: var(--font-xl);
-}
-h5 {
-  font-size: var(--font-lg);
-}
-h6 {
-  font-size: var(--font-lg);
-}
 // Style textual elements
 p {
   margin: 0.5rem;
