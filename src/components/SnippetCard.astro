@@ -29,7 +29,7 @@ const hasScopeCSS = Boolean(snippet.code && snippet.code.scopedCss);
   {
     hasScopeCSS && (
       <div class='card-preview-content'>
-        <h5 class='snippet-preview-title txt-150 fs-md'>Preview</h5>
+        <h5 class='snippet-preview-title txt-150 fs-md lh-tight'>Preview</h5>
         <div class='snippet-preview m-0 br-md' data-scope='snippet-preview'>
           <style set:html={snippet.code.scopedCss} />
           <div set:html={snippet.code.html} />
@@ -60,13 +60,13 @@ const hasScopeCSS = Boolean(snippet.code && snippet.code.scopedCss);
   {
     snippet.author ? (
       <div class='flex flex-col m-0'>
-        <h3 class='mt-4 mb-0 mx-0 txt-150 fs-md md:fs-lg'>
+        <h3 class='mt-4 mb-0 mx-0 txt-150 fs-md md:fs-lg lh-tight'>
           Written by {snippet.author.name}
         </h3>
-        <p class='lh-wide mx-0 mt-2 mb-0 txt-100 fs-sm md:fs-md'>
+        <p class='lh-loose mx-0 mt-2 mb-0 txt-100 fs-sm md:fs-md'>
           {snippet.author.intro}
         </p>
-        <p class='lh-wide m-0 txt-100 fs-sm md:fs-md'>
+        <p class='lh-loose m-0 txt-100 fs-sm md:fs-md'>
           {'If you want to keep in touch, follow me on '}
           <a
             href={snippet.author.github}

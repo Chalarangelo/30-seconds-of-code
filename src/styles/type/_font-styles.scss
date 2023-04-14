@@ -45,10 +45,12 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
-
+.lh-tight {
+  line-height: 1.25;
+}
 .lh-normal {
   line-height: 1.5;
 }
-.lh-wide {
-  line-height: 1.778;
+.lh-loose {
+  line-height: 1.75;
 }

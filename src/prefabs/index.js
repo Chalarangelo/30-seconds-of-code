@@ -10,7 +10,7 @@ const pageTitles = {
 
 // Cards
 const cardBase = 'card mt-7 mx-1 mb-4 md:mx-3.5 srfc-01db txt-100 br-lg';
-const cardTitleBase = 'txt-200 fs-lg md:fs-xl f-alt f-ellipsis';
+const cardTitleBase = 'txt-200 fs-lg md:fs-xl f-alt f-ellipsis lh-tight';
 
 const cards = {
   snippetCard: `${cardBase} snippet-card g-c2 px-4 py-6 md:px-6 md:py-8`,

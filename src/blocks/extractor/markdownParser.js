@@ -42,7 +42,7 @@ const commonTransformers = [
       const lvl = level <= 3 ? 3 : 4;
       const fontClasses = lvl === 3 ? 'fs-lg md:fs-xl' : 'fs-md md:fs-lg';
       const id = convertToValidId(title);
-      return `<h${lvl} class="hash-link relative mt-6 mx-0 mb-0 txt-150 f-alt ${fontClasses}">
+      return `<h${lvl} class="hash-link relative mt-6 mx-0 mb-0 txt-150 f-alt lh-tight ${fontClasses}">
         <a href="#${id}" id="${id}" class="fs-sm no-animation flex flex-col j-center"></a>
         ${title}
       </h${lvl}>`;
