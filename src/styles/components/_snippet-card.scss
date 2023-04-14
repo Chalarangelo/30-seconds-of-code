@@ -1,9 +1,5 @@
 .snippet-card {
   .card-source-content {
-    pre {
-      margin: 0;
-    }
-
     [data-code-language='Examples'] {
       margin-block-start: -0.875rem;
       padding-block-end: 1.5rem;
@@ -11,9 +7,7 @@
   }
 
   .code-highlight {
-    position: relative;
-
-    + .code-highlight > .card-code:not([data-code-language='Examples']) {
+    + .code-highlight > pre:not([data-code-language='Examples']) {
       border-top: 2px solid var(--clr-code-border);
       border-top-left-radius: var(--br-none);
       border-top-right-radius: var(--br-none);
@@ -63,25 +57,11 @@
   }
 
   .card-preview-content {
-    // Counteract the extra bottom spacing from the snippet description
-    margin-block-start: -1.5rem;
-
-    .snippet-preview-title {
-      font-weight: 600;
-      -webkit-font-smoothing: antialiased;
-      margin: 2.5rem 0 -2.5rem 0.875rem;
-    }
-
-    .snippet-preview {
-      background: var(--clr-snippet-preview-bg);
-      padding: 3.25rem 0.875rem 0.75rem;
-      border-bottom-left-radius: var(--br-none);
-      border-bottom-right-radius: var(--br-none);
-    }
+    background: var(--clr-snippet-preview-bg);
+    border-bottom-left-radius: var(--br-none);
+    border-bottom-right-radius: var(--br-none);
 
     + .card-source-content {
-      margin-block-start: 0;
-
       .code-highlight:first-of-type > pre {
         border-top-left-radius: var(--br-none);
         border-top-right-radius: var(--br-none);
