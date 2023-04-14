@@ -51,8 +51,7 @@ const ClickBox = ({ onClickInside }) => {
   );
 };
 
-ReactDOM.render(
-  <ClickBox onClickInside={() => alert('click inside')} />,
-  document.getElementById('root')
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <ClickBox onClickInside={() => alert('click inside')} />
 );
 ```

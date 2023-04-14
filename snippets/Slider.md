@@ -34,8 +34,7 @@ const Slider = ({
 ```
 
 ```jsx
-ReactDOM.render(
-  <Slider onValueChange={val => console.log(val)} />,
-  document.getElementById('root')
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <Slider onValueChange={val => console.log(val)} />
 );
 ```

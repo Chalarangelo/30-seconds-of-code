@@ -101,8 +101,7 @@ const Alert = ({ isDefaultShown = false, timeout = 250, type, message }) => {
 ```
 
 ```jsx
-ReactDOM.render(
-  <Alert type="info" message="This is info" />,
-  document.getElementById('root')
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <Alert type="info" message="This is info" />
 );
 ```

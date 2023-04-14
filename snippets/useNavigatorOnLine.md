@@ -47,5 +47,7 @@ const StatusIndicator = () => {
   return <span>You are {isOnline ? 'online' : 'offline'}.</span>;
 };
 
-ReactDOM.render(<StatusIndicator />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <StatusIndicator />
+);
 ```

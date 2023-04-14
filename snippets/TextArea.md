@@ -32,11 +32,10 @@ const TextArea = ({
 ```
 
 ```jsx
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <TextArea
     placeholder="Insert some text here..."
     onValueChange={val => console.log(val)}
-  />,
-  document.getElementById('root')
+  />
 );
 ```

@@ -20,9 +20,10 @@ const DataList = ({ isOrdered = false, data }) => {
 
 ```jsx
 const names = ['John', 'Paul', 'Mary'];
-ReactDOM.render(<DataList data={names} />, document.getElementById('root'));
-ReactDOM.render(
-  <DataList data={names} isOrdered />,
-  document.getElementById('root')
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <>
+    <DataList data={names} />
+    <DataList data={names} isOrdered />
+  </>
 );
 ```

@@ -41,5 +41,7 @@ const Counter = () => {
   return <p>{Math.round(count)}</p>;
 };
 
-ReactDOM.render(<Counter />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <Counter />
+);
 ```

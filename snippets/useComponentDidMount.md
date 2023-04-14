@@ -27,5 +27,7 @@ const Mounter = () => {
   return <div>Check the console!</div>;
 };
 
-ReactDOM.render(<Mounter />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <Mounter />
+);
 ```

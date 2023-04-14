@@ -35,8 +35,7 @@ const AutoLink = ({ text }) => {
 ```
 
 ```jsx
-ReactDOM.render(
-  <AutoLink text="foo bar baz http://example.org bar" />,
-  document.getElementById('root')
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <AutoLink text="foo bar baz http://example.org bar" />
 );
 ```

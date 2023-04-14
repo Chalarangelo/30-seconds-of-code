@@ -42,5 +42,7 @@ const Counter = () => {
   return <button onClick={onClick}>Count: {getCount()}</button>;
 };
 
-ReactDOM.render(<Counter />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <Counter />
+);
 ```

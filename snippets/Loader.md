@@ -64,5 +64,7 @@ const Loader = ({ size }) => {
 ```
 
 ```jsx
-ReactDOM.render(<Loader size={24} />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <Loader size={24} />
+);
 ```

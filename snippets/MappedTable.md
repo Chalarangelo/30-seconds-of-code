@@ -50,8 +50,7 @@ const people = [
   { name: 'Adam', surname: 'Smith', gender: 'male' }
 ];
 const propertyNames = ['name', 'surname', 'age'];
-ReactDOM.render(
-  <MappedTable data={people} propertyNames={propertyNames} />,
-  document.getElementById('root')
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <MappedTable data={people} propertyNames={propertyNames} />
 );
 ```

@@ -30,5 +30,7 @@ const Unmounter = () => {
   return <div>Check the console!</div>;
 };
 
-ReactDOM.render(<Unmounter />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <Unmounter />
+);
 ```

@@ -44,5 +44,7 @@ const OneSecondTimer = props => {
   return <p>{seconds}</p>;
 };
 
-ReactDOM.render(<OneSecondTimer />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <OneSecondTimer />
+);
 ```

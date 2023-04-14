@@ -60,5 +60,7 @@ const TextCopy = props => {
   );
 };
 
-ReactDOM.render(<TextCopy />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <TextCopy />
+);
 ```

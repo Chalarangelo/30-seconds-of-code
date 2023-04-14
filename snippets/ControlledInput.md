@@ -38,5 +38,7 @@ const Form = () => {
   );
 };
 
-ReactDOM.render(<Form />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <Form />
+);
 ```

@@ -51,8 +51,7 @@ const ClickBox = ({ onClickOutside }) => {
   );
 };
 
-ReactDOM.render(
-  <ClickBox onClickOutside={() => alert('click outside')} />,
-  document.getElementById('root')
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <ClickBox onClickOutside={() => alert('click outside')} />
 );
 ```

@@ -44,5 +44,7 @@ const Toggle = ({ defaultToggled = false }) => {
 ```
 
 ```jsx
-ReactDOM.render(<Toggle />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <Toggle />
+);
 ```

@@ -57,5 +57,7 @@ const SSRChecker = props => {
   return <p>{isBrowser ? 'Running on browser' : 'Running on server'}</p>;
 };
 
-ReactDOM.render(<SSRChecker />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <SSRChecker />
+);
 ```

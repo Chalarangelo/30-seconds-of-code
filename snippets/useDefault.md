@@ -33,5 +33,7 @@ const UserCard = () => {
   );
 };
 
-ReactDOM.render(<UserCard />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <UserCard />
+);
 ```

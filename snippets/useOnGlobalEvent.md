@@ -48,5 +48,7 @@ const App = () => {
   return <p>Move your mouse around</p>;
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <App />
+);
 ```

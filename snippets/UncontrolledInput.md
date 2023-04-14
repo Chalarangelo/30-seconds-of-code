@@ -24,12 +24,11 @@ const UncontrolledInput = ({ defaultValue, onValueChange, ...rest }) => {
 ```
 
 ```jsx
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <UncontrolledInput
     type="text"
     placeholder="Insert some text here..."
     onValueChange={console.log}
-  />,
-  document.getElementById('root')
+  />
 );
 ```

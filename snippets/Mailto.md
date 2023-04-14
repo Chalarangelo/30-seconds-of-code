@@ -24,10 +24,9 @@ const Mailto = ({ email, subject = '', body = '', children }) => {
 ```
 
 ```jsx
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <Mailto email="foo@bar.baz" subject="Hello & Welcome" body="Hello world!">
     Mail me!
-  </Mailto>,
-  document.getElementById('root')
+  </Mailto>
 );
 ```

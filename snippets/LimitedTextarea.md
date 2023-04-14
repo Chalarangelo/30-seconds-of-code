@@ -40,8 +40,7 @@ const LimitedTextarea = ({ rows, cols, value, limit }) => {
 ```
 
 ```jsx
-ReactDOM.render(
-  <LimitedTextarea limit={32} value="Hello!" />,
-  document.getElementById('root')
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <LimitedTextarea limit={32} value="Hello!" />
 );
 ```
