@@ -43,5 +43,7 @@ const ResponsiveText = () => {
   return <span>{text}</span>;
 };
 
-ReactDOM.render(<ResponsiveText />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <ResponsiveText />
+);
 ```

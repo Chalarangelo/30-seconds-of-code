@@ -58,5 +58,7 @@ const ImageFetch = props => {
   );
 };
 
-ReactDOM.render(<ImageFetch />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <ImageFetch />
+);
 ```

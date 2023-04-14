@@ -50,5 +50,7 @@ const MyApp = () => {
   return <div ref={hoverRef}>{isHovering ? 'Hovering' : 'Not hovering'}</div>;
 };
 
-ReactDOM.render(<MyApp />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <MyApp />
+);
 ```

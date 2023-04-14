@@ -135,8 +135,7 @@ const data = {
     ipsum: 'primis'
   }
 };
-ReactDOM.render(
-  <TreeView data={data} name="data" />,
-  document.getElementById('root')
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <TreeView data={data} name="data" />
 );
 ```

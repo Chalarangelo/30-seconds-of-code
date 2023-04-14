@@ -38,5 +38,7 @@ const Counter = () => {
   );
 };
 
-ReactDOM.render(<Counter />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <Counter />
+);
 ```

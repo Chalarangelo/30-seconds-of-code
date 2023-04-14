@@ -69,11 +69,10 @@ const LazyLoadImage = ({
 ```
 
 ```jsx
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <LazyLoadImage
     src="https://picsum.photos/id/1080/600/600"
     alt="Strawberries"
-  />,
-  document.getElementById('root')
+  />
 );
 ```

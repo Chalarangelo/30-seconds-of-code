@@ -44,5 +44,7 @@ const Timer = props => {
   return <p>{seconds}</p>;
 };
 
-ReactDOM.render(<Timer />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <Timer />
+);
 ```

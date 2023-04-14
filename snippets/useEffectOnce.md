@@ -33,5 +33,7 @@ const App = () => {
   return <button onClick={() => setClicked(true)}>Click me</button>;
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <App />
+);
 ```

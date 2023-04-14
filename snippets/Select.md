@@ -38,12 +38,11 @@ const choices = [
   ['coconut', 'Coconut'],
   ['mango', 'Mango'],
 ];
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <Select
     values={choices}
     selectedValue="lime"
     onValueChange={val => console.log(val)}
-  />,
-  document.getElementById('root')
+  />
 );
 ```

@@ -28,5 +28,7 @@ const Switch = () => {
   const [val, toggleVal] = useToggler(false);
   return <button onClick={toggleVal}>{val ? 'ON' : 'OFF'}</button>;
 };
-ReactDOM.render(<Switch />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <Switch />
+);
 ```

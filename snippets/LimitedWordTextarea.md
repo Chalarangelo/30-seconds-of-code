@@ -57,8 +57,7 @@ const LimitedWordTextarea = ({ rows, cols, value, limit }) => {
 ```
 
 ```jsx
-ReactDOM.render(
-  <LimitedWordTextarea limit={5} value="Hello there!" />,
-  document.getElementById('root')
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <LimitedWordTextarea limit={5} value="Hello there!" />
 );
 ```

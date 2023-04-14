@@ -25,5 +25,7 @@ const PasswordRevealer = ({ value }) => {
 ```
 
 ```jsx
-ReactDOM.render(<PasswordRevealer />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <PasswordRevealer />
+);
 ```

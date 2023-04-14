@@ -64,10 +64,9 @@ const Tooltip = ({ children, text, ...rest }) => {
 ```
 
 ```jsx
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <Tooltip text="Simple tooltip">
     <button>Hover me!</button>
-  </Tooltip>,
-  document.getElementById('root')
+  </Tooltip>
 );
 ```

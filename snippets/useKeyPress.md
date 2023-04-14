@@ -46,5 +46,7 @@ const MyApp = () => {
   return <p>The "w" key is {!wPressed ? 'not ' : ''}pressed!</p>;
 };
 
-ReactDOM.render(<MyApp />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <MyApp />
+);
 ```

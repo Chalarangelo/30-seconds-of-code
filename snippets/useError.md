@@ -39,5 +39,7 @@ const ErrorButton = () => {
   return <button onClick={clickHandler}>Throw error</button>;
 };
 
-ReactDOM.render(<ErrorButton />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <ErrorButton />
+);
 ```

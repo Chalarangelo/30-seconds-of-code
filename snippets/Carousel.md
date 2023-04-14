@@ -55,14 +55,13 @@ const Carousel = ({ carouselItems, ...rest }) => {
 ```
 
 ```jsx
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <Carousel
     carouselItems={[
       <div>carousel item 1</div>,
       <div>carousel item 2</div>,
       <div>carousel item 3</div>
     ]}
-  />,
-  document.getElementById('root')
+  />
 );
 ```

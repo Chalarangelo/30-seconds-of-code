@@ -82,7 +82,7 @@ const Tabs = ({ defaultIndex = 0, onTabClick, children }) => {
 ```
 
 ```jsx
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <Tabs defaultIndex="1" onTabClick={console.log}>
     <TabItem label="A" index="1">
       Lorem ipsum
@@ -90,7 +90,6 @@ ReactDOM.render(
     <TabItem label="B" index="2">
       Dolor sit amet
     </TabItem>
-  </Tabs>,
-  document.getElementById('root')
+  </Tabs>
 );
 ```

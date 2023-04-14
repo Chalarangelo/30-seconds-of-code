@@ -59,5 +59,7 @@ const StarRating = ({ value }) => {
 ```
 
 ```jsx
-ReactDOM.render(<StarRating value={2} />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <StarRating value={2} />
+);
 ```

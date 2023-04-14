@@ -22,5 +22,7 @@ const ComponentName = props => {
 ```
 
 ```jsx
-ReactDOM.render(<ComponentName />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <ComponentName />
+);
 ```

@@ -35,5 +35,7 @@ const App = () => {
   });
   return <div>Try closing the window.</div>;
 };
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <App />
+);
 ```

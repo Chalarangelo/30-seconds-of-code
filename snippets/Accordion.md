@@ -73,7 +73,7 @@ const Accordion = ({ defaultIndex, onItemClick, children }) => {
 ```
 
 ```jsx
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <Accordion defaultIndex="1" onItemClick={console.log}>
     <AccordionItem label="A" index="1">
       Lorem ipsum
@@ -81,7 +81,6 @@ ReactDOM.render(
     <AccordionItem label="B" index="2">
       Dolor sit amet
     </AccordionItem>
-  </Accordion>,
-  document.getElementById('root')
+  </Accordion>
 );
 ```

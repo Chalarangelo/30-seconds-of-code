@@ -35,5 +35,7 @@ const App = () => {
   return <p>Resize the window and check the console</p>;
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <App />
+);
 ```

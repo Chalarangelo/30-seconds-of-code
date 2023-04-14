@@ -73,5 +73,7 @@ const RandomImage = props => {
   );
 };
 
-ReactDOM.render(<RandomImage />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <RandomImage />
+);
 ```

@@ -33,5 +33,7 @@ const App = () => {
   return <p style={{ height: '300vh' }}>Scroll and check the console</p>;
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <App />
+);
 ```
