@@ -112,7 +112,7 @@ class Omnisearch extends HTMLElement {
   createResultHTML(result) {
     return `
       <li class='omnisearch-result flex py-1.5 px-2 relative'>
-        <h3 class='txt-200 lh-tight fs-sm md:fs-md f-clamp m-0'><a class='inherit no-animation fill-parent' href=${
+        <h3 class='txt-200 lh-tight fs-sm md:fs-md f-clamp m-0'><a class='lnk-inherit lnk-no-animation lnk-fill-parent' href=${
           result.url
         }>
           ${result.shortTitle || result.title}
