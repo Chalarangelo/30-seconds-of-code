@@ -42,7 +42,7 @@
   grid-template-areas: 'l1 c1 r1' 'l2 c2 r2' 'l3 c3 r3' 'l4 c4 r4';
 
   @media screen and (min-width: $layout-medium-breakpoint) {
-    grid-template-columns: minmax(0, 1fr) minmax(auto, 874px) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 874px) minmax(0, 1fr);
   }
 }
 // Grid areas
