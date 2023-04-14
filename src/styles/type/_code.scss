@@ -102,6 +102,10 @@ pre[class*='language-'] {
   padding: 1rem 0.875rem;
 }
 
+pre.language-text {
+  color: var(--clr-txt-100);
+}
+
 pre[data-code-language]:not([data-code-language='']) {
   padding-block-start: 2.625rem;
 
