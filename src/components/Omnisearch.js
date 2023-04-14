@@ -123,7 +123,7 @@ class Omnisearch extends HTMLElement {
   }
 
   createEmptyStateHTML() {
-    return `<p class='mx-0 fs-sm md:fs-md'>Start typing a keyphrase to see matching snippets.</p>`;
+    return `<p class='mx-0 my-2 fs-sm md:fs-md'>Start typing a keyphrase to see matching snippets.</p>`;
   }
 
   createNotFoundStateHTML(query) {
@@ -133,7 +133,7 @@ class Omnisearch extends HTMLElement {
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#039;');
-    return `<p class='mx-0 fs-sm md:fs-md'>
+    return `<p class='mx-0 my-2 fs-sm md:fs-md'>
       We couldn't find any results for the keyphrase <span class='txt-200'>${escapedQuery}</span class='omnisearch-query'>.
     </p>`;
   }
