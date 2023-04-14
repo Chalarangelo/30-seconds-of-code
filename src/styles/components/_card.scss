@@ -1,11 +1,6 @@
 .card {
   // Reusable utility for all card titles, including in body (used in articles)
   .card-title {
-    &,
-    & a {
-      font-weight: 500;
-    }
-
     &.linkable {
       a {
         position: absolute;

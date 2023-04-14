@@ -1,5 +1,5 @@
 // Titles
-const pageTitleBase = 'txt-200 fs-x2 f-alt f-strong mx-3.5 lh-normal';
+const pageTitleBase = 'txt-200 fs-x2 f-alt mx-3.5 lh-normal';
 
 const pageTitles = {
   pageTitle: `${pageTitleBase} my-0`,
