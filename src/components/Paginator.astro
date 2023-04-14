@@ -7,9 +7,12 @@ if (!paginator) return null;
 
 const { previous, pages, next } = paginator;
 
-const previousButtonClass = `${prefabs.button} ${prefabs.iconButton} ${prefabs.actionLinkButton} gap-1 j-center fs-no md:fs-sm icon icon-chevron-left box-border before:fs-md f-center m-0 py-2.5 px-3.5 br-lg`;
-const pageButtonClass = `${prefabs.button} ${prefabs.actionButton} m-0 py-2.5 px-3.5 br-lg fs-md box-border f-center`;
-const nextButtonClass = `${prefabs.button} ${prefabs.iconReverseButton} ${prefabs.actionLinkButton} gap-1 j-center fs-no md:fs-sm icon icon-chevron-right box-border before:fs-md f-center m-0 py-2.5 px-3.5 br-lg`;
+const pageButtonBase = `${prefabs.button} m-0 py-2.5 px-3.5 br-lg box-border f-center`;
+const prevNextButtonBase = `${pageButtonBase} ${prefabs.actionLinkButton} gap-1 j-center fs-no md:fs-sm before:fs-md`;
+
+const previousButtonClass = `${prevNextButtonBase} ${prefabs.iconButton} icon-chevron-left`;
+const pageButtonClass = `${pageButtonBase} ${prefabs.actionButton} fs-md`;
+const nextButtonClass = `${prevNextButtonBase} ${prefabs.iconReverseButton} icon-chevron-right`;
 ---
 
 <div class='paginator gap-2 mt-7 mx-auto mb-6 a-center grid j-center'>
