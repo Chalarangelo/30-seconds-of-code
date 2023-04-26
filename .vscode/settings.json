@@ -34,7 +34,7 @@
     "package-lock.json": true,
     "**/CODE_OF_CONDUCT.md": true,
     "**/CONTRIBUTING.md": true,
-    "**/LICENSE.md": true,
+    "**/LICENSE": true,
     "**/README.md": true,
   }
 }
