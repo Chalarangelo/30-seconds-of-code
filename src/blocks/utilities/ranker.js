@@ -1,4 +1,4 @@
-import { JSONHandler } from 'blocks/utilities/jsonHandler';
+import { YAMLHandler } from 'blocks/utilities/yamlHandler';
 // NOTE: Be very careful not to import Application in this file, as this is
 // used in raw model definitions and can end up creating major issues.
 
@@ -19,8 +19,8 @@ export class Ranker {
     // Skip loading for test environment
     if (process.env.NODE_ENV === `test`) return {};
     if (!Object.keys(Ranker.keywordScoreData).length) {
-      Ranker.keywordScoreData = JSONHandler.fromFile(
-        `content/configs/rankingEngine.json`
+      Ranker.keywordScoreData = YAMLHandler.fromFile(
+        `content/configs/rankingEngine.yaml`
       );
     }
     return Ranker.keywordScoreData;

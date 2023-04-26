@@ -5,6 +5,7 @@ import { Content } from 'blocks/utilities/content';
 import { TextParser } from 'blocks/extractor/textParser';
 import { MarkdownParser } from 'blocks/extractor/markdownParser';
 import { JSONHandler } from 'blocks/utilities/jsonHandler';
+import { YAMLHandler } from 'blocks/utilities/yamlHandler';
 import {
   convertToSeoSlug,
   uniqueElements,
@@ -33,9 +34,8 @@ export class Extractor {
       [...languageData.values()]
     );
     const tagData = Extractor.processTagData(contentConfigs, snippets);
-    const { mainListing, collectionListing } = Extractor.extractHubConfig(
-      contentDir
-    );
+    const { mainListing, collectionListing } =
+      Extractor.extractHubConfig(contentDir);
     // Language data not passed here by design, pass only if needed
     const data = {
       repositories: contentConfigs.map(config => {
@@ -96,8 +96,8 @@ export class Extractor {
   static extractContentConfigs = contentDir => {
     const logger = new Logger('Extractor.extractContentConfigs');
     logger.log('Extracting content configurations');
-    const configs = JSONHandler.fromGlob(
-      `${contentDir}/configs/repos/*.json`
+    const configs = YAMLHandler.fromGlob(
+      `${contentDir}/configs/repos/*.yaml`
     ).map(config => {
       const language = config.language || {};
       let otherLanguages = [];
@@ -120,8 +120,8 @@ export class Extractor {
   static extractCollectionConfigs = contentDir => {
     const logger = new Logger('Extractor.extractCollectionConfigs');
     logger.log('Extracting collection configurations');
-    const configs = JSONHandler.fromGlob(
-      `${contentDir}/configs/collections/*.json`,
+    const configs = YAMLHandler.fromGlob(
+      `${contentDir}/configs/collections/*.yaml`,
       { withNames: true }
     ).map(([path, config]) => {
       const { snippetIds = [], ...rest } = config;
@@ -140,7 +140,7 @@ export class Extractor {
     const logger = new Logger('Extractor.extractAuthors');
     logger.log('Extracting authors');
     const authors = Object.entries(
-      JSONHandler.fromFile(`${contentDir}/configs/authors.json`)
+      YAMLHandler.fromFile(`${contentDir}/configs/authors.yaml`)
     ).map(([id, author]) => {
       return {
         ...author,
@@ -428,7 +428,7 @@ export class Extractor {
   static extractHubConfig = contentDir => {
     const logger = new Logger('Extractor.extractHubConfig');
     logger.log('Extracting hub pages configuration');
-    const hubConfig = JSONHandler.fromFile(`${contentDir}/configs/hub.json`);
+    const hubConfig = YAMLHandler.fromFile(`${contentDir}/configs/hub.yaml`);
     logger.log('Finished extracting hub pages configuration');
     return hubConfig;
   };
