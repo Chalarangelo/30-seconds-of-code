@@ -6,6 +6,7 @@ import util from 'util';
 import jsiqle from '@jsiqle/core';
 import { Logger } from 'blocks/utilities/logger';
 import { JSONHandler } from 'blocks/utilities/jsonHandler';
+import { YAMLHandler } from 'blocks/utilities/yamlHandler';
 import { Extractor } from 'blocks/extractor';
 import { Content } from 'blocks/utilities/content';
 
@@ -40,6 +41,13 @@ export class Application {
    */
   static get JSONHandler() {
     return JSONHandler;
+  }
+
+  /**
+   * Returns the YAMLHandler class.
+   */
+  static get YAMLHandler() {
+    return YAMLHandler;
   }
 
   /**
@@ -498,9 +506,8 @@ export class Application {
       // TODO: Move this to settings and update listing!
       const CARDS_PER_PAGE = 15;
       let pageCounter = 1;
-      const snippetIterator = listing.listedSnippets.batchIterator(
-        CARDS_PER_PAGE
-      );
+      const snippetIterator =
+        listing.listedSnippets.batchIterator(CARDS_PER_PAGE);
       for (let pageSnippets of snippetIterator) {
         Page.createRecord({
           id: `listing_${id}_${pageCounter}`,
@@ -713,8 +720,7 @@ export class Application {
     });
 
     replServer.defineCommand('updateContent', {
-      help:
-        'Updates content sources. Does not trigger extraction or recreate the schema.',
+      help: 'Updates content sources. Does not trigger extraction or recreate the schema.',
       action: () => {
         Content.update().then(() => {
           replServer.displayPrompt();
