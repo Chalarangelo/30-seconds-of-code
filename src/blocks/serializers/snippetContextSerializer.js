@@ -30,7 +30,6 @@ export const snippetContextSerializer = {
         ? {
             name: snippet.author.name,
             intro: snippet.author.intro,
-            twitter: snippet.author.twitter,
             github: snippet.author.github,
           }
         : undefined,
