@@ -1,10 +1,10 @@
 ---
 title: Create a stash
-tags: repository,stash
+type: snippet
+tags: [repository,stash]
 author: chalarangelo
 cover: purple-leaves
-firstSeen: 2021-04-13T19:36:57+03:00
-lastUpdated: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13T21:10:59+03:00
 ---
 
 Saves the current state of the working directory and index into a new stash.

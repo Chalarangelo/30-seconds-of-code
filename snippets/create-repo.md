@@ -1,9 +1,9 @@
 ---
 title: Create a new repository
-tags: repository
+type: snippet
+tags: [repository]
 cover: violin
-firstSeen: 2021-04-04T14:04:05+03:00
-lastUpdated: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13T21:10:59+03:00
 ---
 
 Initializes a new git repository, setting up all the configuration files needed by git.

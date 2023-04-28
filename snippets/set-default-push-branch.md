@@ -1,9 +1,10 @@
 ---
 title: Set default push branch name
-tags: configuration,branch
+type: snippet
+tags: [configuration,branch]
 author: chalarangelo
 cover: pink-flower
-firstSeen: 2021-06-30T05:00:00-04:00
+dateModified: 2021-06-30T05:00:00-04:00
 ---
 
 Use the name of the current branch when pushing by default as the name of the remote branch.

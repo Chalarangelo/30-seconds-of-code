@@ -1,10 +1,10 @@
 ---
 title: View branches sorted by date
-tags: repository,branch
+type: snippet
+tags: [repository,branch]
 author: chalarangelo
 cover: sea-view
-firstSeen: 2021-04-06T21:35:01+03:00
-lastUpdated: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13T21:10:59+03:00
 ---
 
 Prints a list of all local branches sorted by date.

@@ -1,9 +1,9 @@
 ---
 title: Edit git configuration file
-tags: configuration
+type: snippet
+tags: [configuration]
 cover: terminal
-firstSeen: 2021-04-04T21:25:22+03:00
-lastUpdated: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13T21:10:59+03:00
 ---
 
 Opens the git configuration file in the git text editor.

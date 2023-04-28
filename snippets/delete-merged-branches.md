@@ -1,9 +1,9 @@
 ---
 title: Delete merged branches
-tags: repository,branch
+type: snippet
+tags: [repository,branch]
 cover: duck-plants
-firstSeen: 2021-04-08T19:42:01+03:00
-lastUpdated: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13T21:10:59+03:00
 ---
 
 Deletes all local merged branches.
