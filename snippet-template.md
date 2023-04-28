@@ -1,8 +1,9 @@
 ---
 title: Snippet name
-tags: branch
+type: snippet
+tags: [branch]
 cover: image
-firstSeen: 2021-06-13T05:00:00-04:00
+dateModified: 2021-06-13T05:00:00-04:00
 ---
 
 Explain briefly what the snippet does.
