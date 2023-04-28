@@ -1,9 +1,10 @@
 ---
 title: Image with text overlay
-tags: visual
+type: snippet
+tags: [visual]
 author: chalarangelo
 cover: icebreaker
-firstSeen: 2023-01-29T05:00:00-04:00
+dateModified: 2023-01-29T05:00:00-04:00
 ---
 
 Displays an image with a text overlay.

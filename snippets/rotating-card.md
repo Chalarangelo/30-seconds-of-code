@@ -1,9 +1,9 @@
 ---
 title: Rotating Card
-tags: animation
+type: snippet
+tags: [animation]
 cover: digital-nomad-11
-firstSeen: 2020-10-04T14:10:24+03:00
-lastUpdated: 2021-03-30T15:24:01+03:00
+dateModified: 2021-03-30T15:24:01+03:00
 ---
 
 Creates a two sided card which rotates on hover.

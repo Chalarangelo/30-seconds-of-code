@@ -1,8 +1,9 @@
 ---
 title: Shake on invalid input
-tags: animation
+type: snippet
+tags: [animation]
 cover: perfect-timing
-firstSeen: 2022-07-31T18:30:11+03:00
+dateModified: 2022-07-31T18:30:11+03:00
 ---
 
 Creates a shake animation on invalid input.

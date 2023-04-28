@@ -1,9 +1,10 @@
 ---
 title: Hide empty elements
-tags: visual
+type: snippet
+tags: [visual]
 author: chalarangelo
 cover: metro-arrival
-firstSeen: 2022-11-18T05:00:00-04:00
+dateModified: 2022-11-18T05:00:00-04:00
 ---
 
 Hides elements with no content.

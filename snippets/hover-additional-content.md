@@ -1,9 +1,9 @@
 ---
 title: Show additional content on hover
-tags: visual
+type: snippet
+tags: [visual]
 cover: dark-leaves-5
-firstSeen: 2020-08-18T16:40:23+03:00
-lastUpdated: 2021-10-11T18:44:51+03:00
+dateModified: 2021-10-11T18:44:51+03:00
 ---
 
 Creates a card that displays additional content on hover.

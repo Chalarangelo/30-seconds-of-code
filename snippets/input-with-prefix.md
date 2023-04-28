@@ -1,9 +1,9 @@
 ---
 title: Input with prefix
-tags: interactivity,visual
+type: snippet
+tags: [interactivity,visual]
 cover: flower-portrait-4
-firstSeen: 2020-10-14T14:16:57+03:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Creates an input with a visual, non-editable prefix.

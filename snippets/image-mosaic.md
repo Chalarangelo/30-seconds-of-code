@@ -1,10 +1,10 @@
 ---
 title: Responsive image mosaic
-tags: layout
+type: snippet
+tags: [layout]
 author: chalarangelo
 cover: beach-riders
-firstSeen: 2020-08-18T17:18:03+03:00
-lastUpdated: 2020-12-30T15:37:37+02:00
+dateModified: 2020-12-30T15:37:37+02:00
 ---
 
 Creates a responsive image mosaic.

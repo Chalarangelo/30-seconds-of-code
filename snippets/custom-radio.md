@@ -1,9 +1,10 @@
 ---
 title: Custom radio button
-tags: visual,animation
+type: snippet
+tags: [visual,animation]
 author: chalarangelo
 cover: messy-computer
-firstSeen: 2022-11-16T05:00:00-04:00
+dateModified: 2022-11-16T05:00:00-04:00
 ---
 
 Creates a styled radio button with animation on state change.

@@ -1,10 +1,10 @@
 ---
 title: Trim multiline text
-tags: layout,visual
+type: snippet
+tags: [layout,visual]
 author: chalarangelo
 cover: pink-flower-tree
-firstSeen: 2021-05-16T20:19:13+03:00
-lastUpdated: 2021-05-16T20:19:13+03:00
+dateModified: 2021-05-16T20:19:13+03:00
 ---
 
 Limit multiline text to a given number of lines.
