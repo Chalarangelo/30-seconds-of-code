@@ -1,10 +1,10 @@
 ---
 title: View difference between two branches
-tags: branch
+type: snippet
+tags: [branch]
 author: chalarangelo
 cover: two-doors
-firstSeen: 2021-04-08T16:30:44+03:00
-lastUpdated: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13T21:10:59+03:00
 ---
 
 Displays the difference between two branches.

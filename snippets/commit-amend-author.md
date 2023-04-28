@@ -1,9 +1,10 @@
 ---
 title: Change the last commit's author
-tags: commit
+type: snippet
+tags: [commit]
 author: chalarangelo
 cover: symmetry-cloudy-mountain
-firstSeen: 2022-05-03T05:00:00-04:00
+dateModified: 2022-05-03T05:00:00-04:00
 ---
 
 Updates the last commit's author without changing its contents.

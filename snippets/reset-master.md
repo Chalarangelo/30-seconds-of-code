@@ -1,9 +1,9 @@
 ---
 title: Reset master to match remote
-tags: repository,branch
+type: snippet
+tags: [repository,branch]
 cover: old-consoles
-firstSeen: 2021-04-06T16:58:58+03:00
-lastUpdated: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13T21:10:59+03:00
 ---
 
 Resets the local `master` branch to match the one on the remote.

@@ -1,10 +1,10 @@
 ---
 title: Restore a deleted file
-tags: branch
+type: snippet
+tags: [branch]
 author: chalarangelo
 cover: succulent-red-light
-firstSeen: 2021-04-06T20:58:25+03:00
-lastUpdated: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13T21:10:59+03:00
 ---
 
 Restores a file deleted in a specific commit.

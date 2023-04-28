@@ -1,9 +1,9 @@
 ---
 title: View commits in a specific date range
-tags: repository,commit
+type: snippet
+tags: [repository,commit]
 cover: organizer
-firstSeen: 2021-04-06T16:28:49+03:00
-lastUpdated: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13T21:10:59+03:00
 ---
 
 Prints all commits in the specified date range.

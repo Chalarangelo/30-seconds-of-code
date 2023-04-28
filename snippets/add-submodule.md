@@ -1,10 +1,10 @@
 ---
 title: Add a submodule
-tags: repository,submodule
+type: snippet
+tags: [repository,submodule]
 author: chalarangelo
 cover: rocky-mountains
-firstSeen: 2021-04-08T20:05:15+03:00
-lastUpdated: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13T21:10:59+03:00
 ---
 
 Adds a new submodule to the repository.
