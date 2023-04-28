@@ -70,9 +70,6 @@ export const snippet = {
         return [snippet.language.name, snippet.formattedPrimaryTag].join(', ');
       else return snippet.formattedPrimaryTag;
     },
-    hasOtherLanguages: snippet =>
-      snippet.repository.otherLanguages &&
-      snippet.repository.otherLanguages.length > 0,
     isBlog: snippet => snippet.type !== 'snippet',
     isCSS: snippet => snippet.repository.isCSS,
     isReact: snippet => snippet.repository.isReact,
