@@ -1,9 +1,9 @@
 ---
 title: Number to binary
-tags: math
+type: snippet
+tags: [math]
 cover: digital-nomad-13
-firstSeen: 2020-10-07T19:46:01+03:00
-lastUpdated: 2020-10-07T19:46:01+03:00
+dateModified: 2020-10-07T19:46:01+03:00
 ---
 
 Returns the binary representation of the given number.

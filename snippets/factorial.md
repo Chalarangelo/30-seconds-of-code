@@ -1,9 +1,9 @@
 ---
 title: Factorial
-tags: math,recursion
+type: snippet
+tags: [math,recursion]
 cover: succulent-11
-firstSeen: 2018-01-27T07:29:56+02:00
-lastUpdated: 2020-09-15T16:13:06+03:00
+dateModified: 2020-09-15T16:13:06+03:00
 ---
 
 Calculates the factorial of a number.

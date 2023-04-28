@@ -1,9 +1,9 @@
 ---
 title: Group list elements
-tags: list,dictionary
+type: snippet
+tags: [list,dictionary]
 cover: body-of-water
-firstSeen: 2019-08-20T13:29:00+03:00
-lastUpdated: 2020-11-02T19:28:05+02:00
+dateModified: 2020-11-02T19:28:05+02:00
 ---
 
 Groups the elements of a list based on the given function.

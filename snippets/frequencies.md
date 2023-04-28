@@ -1,9 +1,9 @@
 ---
 title: Value frequencies
-tags: list
+type: snippet
+tags: [list]
 cover: succulent-6
-firstSeen: 2020-03-15T12:54:08+02:00
-lastUpdated: 2020-11-02T19:27:53+02:00
+dateModified: 2020-11-02T19:27:53+02:00
 ---
 
 Creates a dictionary with the unique values of a list as keys and their frequencies as the values.

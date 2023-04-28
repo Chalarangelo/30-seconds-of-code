@@ -1,9 +1,9 @@
 ---
 title: Sort list by indexes
-tags: list
+type: snippet
+tags: [list]
 cover: little-white-flowers
-firstSeen: 2020-09-07T09:58:39+03:00
-lastUpdated: 2020-11-02T19:28:35+02:00
+dateModified: 2020-11-02T19:28:35+02:00
 ---
 
 Sorts one list based on another list containing the desired indexes.

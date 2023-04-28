@@ -1,9 +1,9 @@
 ---
 title: Byte size of string
-tags: string
+type: snippet
+tags: [string]
 cover: river-house-lights
-firstSeen: 2018-02-01T10:19:59+02:00
-lastUpdated: 2020-11-02T19:27:07+02:00
+dateModified: 2020-11-02T19:27:07+02:00
 ---
 
 Returns the length of a string in bytes.

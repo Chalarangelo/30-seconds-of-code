@@ -1,10 +1,10 @@
 ---
 title: Miles to km
-tags: math
+type: snippet
+tags: [math]
 unlisted: true
 cover: interior-5
-firstSeen: 2020-10-04T00:24:01+03:00
-lastUpdated: 2021-01-04T12:47:04+02:00
+dateModified: 2021-01-04T12:47:04+02:00
 ---
 
 Converts miles to kilometers.

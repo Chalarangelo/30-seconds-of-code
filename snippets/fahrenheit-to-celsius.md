@@ -1,10 +1,10 @@
 ---
 title: Fahrenheit to Celsius
-tags: math
+type: snippet
+tags: [math]
 unlisted: true
 cover: last-light
-firstSeen: 2020-04-05T12:29:03+03:00
-lastUpdated: 2021-01-04T12:47:04+02:00
+dateModified: 2021-01-04T12:47:04+02:00
 ---
 
 Converts Fahrenheit to Celsius.

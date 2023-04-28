@@ -1,9 +1,9 @@
 ---
 title: Number to hex
-tags: math
+type: snippet
+tags: [math]
 cover: green-plant
-firstSeen: 2020-10-09T09:45:47+03:00
-lastUpdated: 2020-10-09T09:45:47+03:00
+dateModified: 2020-10-09T09:45:47+03:00
 ---
 
 Returns the hexadecimal representation of the given number.

@@ -1,9 +1,9 @@
 ---
 title: List symmetric difference based on function
-tags: list
+type: snippet
+tags: [list]
 cover: succulent-1
-firstSeen: 2019-08-21T08:37:04+03:00
-lastUpdated: 2020-11-02T19:28:35+02:00
+dateModified: 2020-11-02T19:28:35+02:00
 ---
 
 Returns the symmetric difference between two lists, after applying the provided function to each list element of both.

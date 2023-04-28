@@ -1,9 +1,10 @@
 ---
 title: Collection is empty
-tags: list,dictionary,string
+type: snippet
+tags: [list,dictionary,string]
 author: chalarangelo
 cover: salad-1
-firstSeen: 2023-01-12T05:00:00-04:00
+dateModified: 2023-01-12T05:00:00-04:00
 ---
 
 Checks if the a value is an empty sequence or collection.

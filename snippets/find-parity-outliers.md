@@ -1,9 +1,9 @@
 ---
 title: Find parity outliers
-tags: list,math
+type: snippet
+tags: [list,math]
 cover: beach-pineapple
-firstSeen: 2020-01-08T18:54:35+02:00
-lastUpdated: 2020-11-02T19:27:53+02:00
+dateModified: 2020-11-02T19:27:53+02:00
 ---
 
 Finds the items that are parity outliers in a given list.

@@ -1,9 +1,9 @@
 ---
 title: Fibonacci
-tags: math,list
+type: snippet
+tags: [math,list]
 cover: san-francisco-skyline
-firstSeen: 2018-10-06T06:06:33+03:00
-lastUpdated: 2020-11-02T19:27:53+02:00
+dateModified: 2020-11-02T19:27:53+02:00
 ---
 
 Generates a list, containing the Fibonacci sequence, up until the nth term.
