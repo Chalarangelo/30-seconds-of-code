@@ -260,7 +260,7 @@ export class Extractor {
     let snippets = [];
     await Promise.all(
       contentConfigs.map(config => {
-        const snippetsPath = `${contentDir}/sources/${config.dirName}/${config.snippetPath}`;
+        const snippetsPath = `${contentDir}/sources/${config.dirName}/snippets`;
 
         return TextParser.fromDir(snippetsPath).then(snippetData => {
           const parsedData = snippetData.map(snippet => {
@@ -269,12 +269,11 @@ export class Extractor {
               title,
               shortTitle = title,
               tags: rawTags,
-              type: rawType,
+              type = 'snippet',
               excerpt,
               cover,
               author,
-              firstSeen,
-              lastUpdated,
+              dateModified,
               body,
               unlisted,
             } = snippet;
@@ -282,8 +281,7 @@ export class Extractor {
             const id = `${config.slugPrefix}${convertToSeoSlug(
               fileName.slice(0, -3)
             )}`;
-            const tags = [...new Set(rawTags.toLowerCase().split(','))];
-            const type = config.isBlog ? `blog.${rawType}` : 'snippet';
+            const tags = rawTags.map(tag => tag.toLowerCase());
             const hasOptionalLanguage = Boolean(
               config.id !== '30css' &&
                 !config.isBlog &&
@@ -382,8 +380,7 @@ export class Extractor {
               title,
               shortTitle,
               tags,
-              firstSeen,
-              lastUpdated,
+              dateModified,
               listed: unlisted === true ? false : true,
               type,
               shortText,

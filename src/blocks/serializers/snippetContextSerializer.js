@@ -38,7 +38,7 @@ export const snippetContextSerializer = {
         ? `/${pathSettings.staticAssetPath}/cover/${snippet.cover}.jpg`
         : undefined,
     dateFormatted: snippet =>
-      snippet.lastUpdated.toLocaleDateString('en-US', {
+      snippet.dateModified.toLocaleDateString('en-US', {
         day: 'numeric',
         month: 'short',
         year: 'numeric',

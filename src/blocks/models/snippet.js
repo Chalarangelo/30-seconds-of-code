@@ -21,8 +21,7 @@ export const snippet = {
       },
     },
     { name: 'shortTitle', type: 'string' },
-    { name: 'firstSeen', type: 'dateRequired' },
-    { name: 'lastUpdated', type: 'dateRequired' },
+    { name: 'dateModified', type: 'dateRequired' },
     { name: 'listed', type: 'booleanRequired' },
     { name: 'type', type: 'stringRequired' },
     { name: 'shortText', type: 'stringRequired' },
@@ -45,7 +44,6 @@ export const snippet = {
     { name: 'seoDescription', type: 'stringRequired' },
   ],
   validators: {
-    updatedAfterSeen: snippet => snippet.lastUpdated >= snippet.firstSeen,
     blogHasCover: snippet => (snippet.isBlog ? Boolean(snippet.cover) : true),
   },
   properties: {
@@ -79,7 +77,7 @@ export const snippet = {
     hasOtherLanguages: snippet =>
       snippet.repository.otherLanguages &&
       snippet.repository.otherLanguages.length > 0,
-    isBlog: snippet => snippet.type.startsWith('blog'),
+    isBlog: snippet => snippet.type !== 'snippet',
     isCSS: snippet => snippet.repository.isCSS,
     isReact: snippet => snippet.repository.isReact,
     slug: snippet => `/${snippet.id}`,
@@ -91,7 +89,7 @@ export const snippet = {
       if (snippet.isCSS || snippet.isReact) return 'codepen';
       return 'copy';
     },
-    isScheduled: snippet => snippet.firstSeen > new Date(),
+    isScheduled: snippet => snippet.dateModified > new Date(),
     isPublished: snippet => !snippet.isScheduled,
     isListed: snippet =>
       snippet.repository.featured && snippet.listed && !snippet.isScheduled,
@@ -288,7 +286,7 @@ export const snippet = {
   ],
   scopes: {
     snippets: snippet => snippet.type === 'snippet',
-    blogs: snippet => snippet.type.startsWith('blog'),
+    blogs: snippet => snippet.type !== 'snippet',
     listed: snippet => snippet.isListed,
     listedByPopularity: {
       matcher: snippet => snippet.isListed,
@@ -296,7 +294,7 @@ export const snippet = {
     },
     listedByNew: {
       matcher: snippet => snippet.isListed,
-      sorter: (a, b) => b.firstSeen - a.firstSeen,
+      sorter: (a, b) => b.dateModified - a.dateModified,
     },
     unlisted: snippet => !snippet.isListed,
     scheduled: snippet => snippet.isScheduled,

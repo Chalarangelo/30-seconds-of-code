@@ -109,8 +109,7 @@ export const page = {
             slug: page.relRoute,
             description: context.snippet.description,
             cover: context.snippet.cover,
-            firstSeen: page.data.firstSeen,
-            lastUpdated: page.data.lastUpdated,
+            dateModified: page.data.dateModified,
             author: page.data.author,
           });
 
@@ -260,7 +259,7 @@ export const page = {
     published: page => page.isPublished,
     feedEligible: {
       matcher: page => page.template === 'SnippetPage' && !page.isUnlisted,
-      sorter: (a, b) => b.data.firstSeen - a.data.firstSeen,
+      sorter: (a, b) => b.data.dateModified - a.data.dateModified,
     },
     snippets: page => page.isSnippet,
     // Exclude collections listing to avoid path conflicts in Next.js
