@@ -1,9 +1,10 @@
 ---
 title: React useHash hook
-tags: hooks,state,effect
+type: snippet
+tags: [hooks,state,effect]
 author: chalarangelo
 cover: book-chair
-firstSeen: 2021-10-02T05:00:00-04:00
+dateModified: 2021-10-02T05:00:00-04:00
 ---
 
 Tracks the browser's location hash value, and allows changing it.

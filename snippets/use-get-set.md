@@ -1,9 +1,10 @@
 ---
 title: React useGetSet hook
-tags: hooks,state
+type: snippet
+tags: [hooks,state]
 author: chalarangelo
 cover: interior-12
-firstSeen: 2021-10-27T05:00:00-04:00
+dateModified: 2021-10-27T05:00:00-04:00
 ---
 
 Creates a stateful value, returning a getter and a setter function.

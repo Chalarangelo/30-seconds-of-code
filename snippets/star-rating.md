@@ -1,9 +1,9 @@
 ---
 title: Star rating
-tags: components,children,input,state
+type: snippet
+tags: [components,children,input,state]
 cover: lake-church
-firstSeen: 2018-10-18T14:33:45+03:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Renders a star rating component.

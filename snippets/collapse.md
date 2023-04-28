@@ -1,9 +1,9 @@
 ---
 title: Collapsible content
-tags: components,children,state
+type: snippet
+tags: [components,children,state]
 cover: washed-ashore
-firstSeen: 2018-10-17T20:42:23+03:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Renders a component with collapsible content.

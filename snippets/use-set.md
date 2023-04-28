@@ -1,9 +1,10 @@
 ---
 title: React useSet hook
-tags: hooks,state
+type: snippet
+tags: [hooks,state]
 author: chalarangelo
 cover: engine
-firstSeen: 2021-11-01T05:00:00-04:00
+dateModified: 2021-11-01T05:00:00-04:00
 ---
 
 Creates a stateful `Set` object, and a set of functions to manipulate it.

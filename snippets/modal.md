@@ -1,9 +1,9 @@
 ---
 title: Modal dialog
-tags: components,effect
+type: snippet
+tags: [components,effect]
 cover: yellow-white-mug-2
-firstSeen: 2019-03-11T11:25:06+02:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Renders a Modal component, controllable through events.

@@ -1,10 +1,10 @@
 ---
 title: React useToggler hook
-tags: hooks,state,callback
+type: snippet
+tags: [hooks,state,callback]
 author: chalarangelo
 cover: tram-car-2
-firstSeen: 2020-11-27T09:41:31+02:00
-lastUpdated: 2020-11-27T09:41:31+02:00
+dateModified: 2020-11-27T09:41:31+02:00
 ---
 
 Provides a boolean state variable that can be toggled between its two states.

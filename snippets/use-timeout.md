@@ -1,10 +1,10 @@
 ---
 title: React useTimeout hook
-tags: hooks,effect
+type: snippet
+tags: [hooks,effect]
 author: chalarangelo
 cover: interior-10
-firstSeen: 2019-08-21T13:20:57+03:00
-lastUpdated: 2020-11-16T14:17:53+02:00
+dateModified: 2020-11-16T14:17:53+02:00
 ---
 
 Implements `setTimeout()` in a declarative manner.

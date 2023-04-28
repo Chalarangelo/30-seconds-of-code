@@ -1,9 +1,10 @@
 ---
 title: React useSessionStorage hook
-tags: hooks,state
+type: snippet
+tags: [hooks,state]
 author: chalarangelo
 cover: white-laptop
-firstSeen: 2021-09-15T05:00:00-04:00
+dateModified: 2021-09-15T05:00:00-04:00
 ---
 
 Creates a stateful value that is persisted to `sessionStorage`, and a function to update it.

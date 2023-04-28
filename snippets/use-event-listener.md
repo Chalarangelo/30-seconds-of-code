@@ -1,9 +1,10 @@
 ---
 title: React useEventListener hook
-tags: hooks,effect,event
+type: snippet
+tags: [hooks,effect,event]
 author: chalarangelo
 cover: beach-riders
-firstSeen: 2021-09-01T05:00:00-04:00
+dateModified: 2021-09-01T05:00:00-04:00
 ---
 
 Adds an event listener for the specified event type on the given element.

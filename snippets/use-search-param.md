@@ -1,9 +1,10 @@
 ---
 title: React useSearchParam hook
-tags: hooks,state,effect
+type: snippet
+tags: [hooks,state,effect]
 author: chalarangelo
 cover: coffee-phone-tray-3
-firstSeen: 2021-10-13T05:00:00-04:00
+dateModified: 2021-10-13T05:00:00-04:00
 ---
 
 Tracks the browser's location search param.

@@ -1,9 +1,10 @@
 ---
 title: React useEffectOnce hook
-tags: hooks,effect
+type: snippet
+tags: [hooks,effect]
 author: chalarangelo
 cover: pop-of-green
-firstSeen: 2021-11-16T05:00:00-04:00
+dateModified: 2021-11-16T05:00:00-04:00
 ---
 
 Runs a callback at most once when a condition becomes true.

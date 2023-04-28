@@ -1,8 +1,9 @@
 ---
 title: Component Name
-tags: components,state,effect
+type: snippet
+tags: [components,state,effect]
 cover: image
-firstSeen: 2021-06-13T05:00:00-04:00
+dateModified: 2021-06-13T05:00:00-04:00
 ---
 
 Explain briefly what the snippet does.
