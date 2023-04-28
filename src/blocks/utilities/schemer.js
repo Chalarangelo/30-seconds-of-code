@@ -23,8 +23,7 @@ export class Schemer {
     slug,
     description,
     cover,
-    firstSeen,
-    lastUpdated,
+    dateModified,
     author,
   }) => {
     const url = `${websiteUrl}${slug}`;
@@ -46,8 +45,8 @@ export class Schemer {
       headline: title,
       description,
       image: `${websiteUrl}${coverSrc}`,
-      datePublished: firstSeen,
-      dateModified: lastUpdated,
+      datePublished: dateModified,
+      dateModified,
       author: _author,
       publisher: Schemer.organization,
     };

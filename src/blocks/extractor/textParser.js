@@ -15,16 +15,14 @@ export class TextParser {
     return readFile(filePath, 'utf8').then(content => {
       const { body, attributes } = frontmatter(content);
       const {
-        firstSeen = '2021-06-13T05:00:00-04:00',
-        lastUpdated = firstSeen,
+        dateModified = '2021-06-13T05:00:00-04:00',
         author = null,
         ...restAttributes
       } = attributes;
       return {
         body,
         ...restAttributes,
-        firstSeen: new Date(firstSeen),
-        lastUpdated: new Date(lastUpdated),
+        dateModified: new Date(dateModified),
         author,
         fileName,
       };

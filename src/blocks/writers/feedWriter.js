@@ -33,7 +33,7 @@ export class FeedWriter {
         title: s.data.title,
         fullRoute: s.fullRoute,
         description: s.context.pageDescription,
-        pubDate: new Date(s.data.firstSeen).toUTCString(),
+        pubDate: new Date(s.data.dateModified).toUTCString(),
       })),
       websiteName,
       websiteDescription,

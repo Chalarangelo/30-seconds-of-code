@@ -421,11 +421,10 @@ export class Application {
     tags.forEach(tag => Tag.createRecord(tag));
     authors.forEach(author => Author.createRecord(author));
     snippets.forEach(snippet => {
-      const { firstSeen, lastUpdated, ...rest } = snippet;
+      const { dateModified, ...rest } = snippet;
       Snippet.createRecord({
         ...rest,
-        firstSeen: new Date(firstSeen),
-        lastUpdated: new Date(lastUpdated),
+        dateModified: new Date(dateModified),
       });
     });
     // Populate listings and create relationships

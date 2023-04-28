@@ -23,7 +23,7 @@ export const snippetPreviewSerializer = {
     },
     dateFormatted: (snippet, { withSearch } = {}) => {
       if (withSearch) return undefined;
-      return snippet.lastUpdated.toLocaleDateString('en-US', {
+      return snippet.dateModified.toLocaleDateString('en-US', {
         day: 'numeric',
         month: 'short',
         year: 'numeric',
