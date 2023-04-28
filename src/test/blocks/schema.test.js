@@ -272,13 +272,6 @@ describe('Application/Schema', () => {
       });
     });
 
-    describe('property: titleSlug', () => {
-      it('returns the title slug', () => {
-        const snippet = Snippet.records.get('js/s/format-duration');
-        expect(snippet.titleSlug).toEqual('/format-duration');
-      });
-    });
-
     describe('property: fileSlug', () => {
       it('returns the file slug', () => {
         const snippet = Snippet.records.get('js/s/format-duration');
