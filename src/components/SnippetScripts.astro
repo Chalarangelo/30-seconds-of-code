@@ -2,19 +2,6 @@
 const { snippet } = Astro.props;
 
 const snippetCodeData = JSON.stringify(snippet.code);
-// The third condition is a hack to only apply this for CSS snippets and
-// not React ones which have a `js` key, too.
-const hasExecutableJS =
-  snippet.code && snippet.code.js && snippet.code.scopedCss;
-const executableJS = hasExecutableJS
-  ? `function snippet_preview_js(){${snippet.code.js}};
-  try { window['snippet_preview_js'](); }
-  catch (e) {
-    console.warn(
-      'There is an issue with JavaScript execution on the snippet preview of this page.'
-    );
-   }`
-  : '';
 ---
 
 <script is:inline>
@@ -69,10 +56,5 @@ const executableJS = hasExecutableJS
 {
   snippetCodeData && snippetCodeData.length ? (
     <script id='snippet-events' data-code={snippetCodeData} is:inline />
-  ) : null
-}
-{
-  hasExecutableJS ? (
-    <script type='text/javascript' async set:html={executableJS} is:inline />
   ) : null
 }

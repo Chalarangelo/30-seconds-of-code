@@ -6,7 +6,6 @@ import Image from 'components/Image.astro';
 const { snippet } = Astro.props;
 
 const hasCodeBlocks = Boolean(snippet.codeBlocks && snippet.codeBlocks.length);
-const hasScopeCSS = Boolean(snippet.code && snippet.code.scopedCss);
 ---
 
 <article class={prefabs.snippetCard}>
@@ -26,17 +25,6 @@ const hasScopeCSS = Boolean(snippet.code && snippet.code.scopedCss);
     class='card-description flex flex-col'
     set:html={snippet.fullDescription}
   />
-  {
-    hasScopeCSS && (
-      <div class='card-preview-content br-md pt-4'>
-        <h5 class='txt-150 fs-md f-strong lh-tight my-0 mr-0 ml-3.5'>Preview</h5>
-        <div class='py-3 px-3.5 m-0' data-scope='snippet-preview'>
-          <style set:html={snippet.code.scopedCss} />
-          <div set:html={snippet.code.html} />
-        </div>
-      </div>
-    )
-  }
   {
     hasCodeBlocks && (
       <div class='card-source-content m-0'>
