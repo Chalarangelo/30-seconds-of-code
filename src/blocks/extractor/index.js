@@ -282,8 +282,7 @@ export class Extractor {
             const id = `${config.slugPrefix}${convertToSeoSlug(
               fileName.slice(0, -3)
             )}`;
-            const tags = [...new Set(rawTags.toLowerCase().split(','))];
-            const type = config.isBlog ? `blog.${rawType}` : 'snippet';
+            const tags = rawTags.map(tag => tag.toLowerCase());
             const hasOptionalLanguage = Boolean(
               config.id !== '30css' &&
                 !config.isBlog &&
