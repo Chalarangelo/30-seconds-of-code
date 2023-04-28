@@ -1,10 +1,10 @@
 ---
 title: Full-width image
-tags: layout
+type: snippet
+tags: [layout]
 author: chalarangelo
 cover: yellow-white-mug-2
-firstSeen: 2021-01-07T10:14:46+02:00
-lastUpdated: 2021-01-07T10:14:46+02:00
+dateModified: 2021-01-07T10:14:46+02:00
 ---
 
 Creates a full-width image.

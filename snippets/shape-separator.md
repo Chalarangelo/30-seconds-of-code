@@ -1,10 +1,10 @@
 ---
 title: Shape separator
-tags: visual
+type: snippet
+tags: [visual]
 unlisted: true
 cover: shapes
-firstSeen: 2018-02-25T15:14:39+02:00
-lastUpdated: 2021-01-04T12:30:40+02:00
+dateModified: 2021-01-04T12:30:40+02:00
 ---
 
 Uses an SVG shape to create a separator between two different blocks.

@@ -1,9 +1,9 @@
 ---
 title: Overflow scroll gradient
-tags: visual
+type: snippet
+tags: [visual]
 cover: memories-of-pineapple-1
-firstSeen: 2018-02-25T15:14:39+02:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Adds a fading gradient to an overflowing element to better indicate there is more content to be scrolled.

@@ -1,10 +1,10 @@
 ---
 title: Responsive layout with sidebar
-tags: layout
+type: snippet
+tags: [layout]
 author: chalarangelo
 cover: red-petals
-firstSeen: 2020-09-16T18:54:56+03:00
-lastUpdated: 2020-09-16T18:54:56+03:00
+dateModified: 2020-09-16T18:54:56+03:00
 ---
 
 Creates a responsive layout with a content area and a sidebar.

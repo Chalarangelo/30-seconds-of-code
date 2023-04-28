@@ -1,10 +1,10 @@
 ---
 title: Typewriter effect
-tags: animation
+type: snippet
+tags: [animation]
 author: chalarangelo
 cover: italian-horizon
-firstSeen: 2021-05-24T16:03:40+03:00
-lastUpdated: 2021-05-24T16:03:40+03:00
+dateModified: 2021-05-24T16:03:40+03:00
 ---
 
 Creates a typewriter effect animation.

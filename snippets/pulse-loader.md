@@ -1,9 +1,9 @@
 ---
 title: Pulse loader
-tags: animation
+type: snippet
+tags: [animation]
 cover: digital-nomad-8
-firstSeen: 2019-10-05T14:29:36+03:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Creates a pulse effect loader animation using the `animation-delay` property.

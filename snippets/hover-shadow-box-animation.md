@@ -1,10 +1,10 @@
 ---
 title: Hover shadow box animation
-tags: animation
+type: snippet
+tags: [animation]
 unlisted: true
 cover: dark-cloud
-firstSeen: 2018-03-06T23:41:55+02:00
-lastUpdated: 2021-01-04T12:30:40+02:00
+dateModified: 2021-01-04T12:30:40+02:00
 ---
 
 Creates a shadow box around the text when it is hovered.

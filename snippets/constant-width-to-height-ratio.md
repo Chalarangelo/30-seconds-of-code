@@ -1,9 +1,9 @@
 ---
 title: Constant width to height ratio
-tags: layout
+type: snippet
+tags: [layout]
 cover: clutter
-firstSeen: 2018-02-27T10:45:26+02:00
-lastUpdated: 2020-12-30T15:37:37+02:00
+dateModified: 2020-12-30T15:37:37+02:00
 ---
 
 Ensures that an element with variable `width` will retain a proportionate `height` value.

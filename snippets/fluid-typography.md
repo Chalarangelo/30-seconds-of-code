@@ -1,10 +1,10 @@
 ---
 title: Fluid typography
-tags: visual
+type: snippet
+tags: [visual]
 author: chalarangelo
 cover: shell-focus
-firstSeen: 2021-05-16T11:23:05+03:00
-lastUpdated: 2021-05-16T11:23:05+03:00
+dateModified: 2021-05-16T11:23:05+03:00
 ---
 
 Creates text that scales according to the viewport width.

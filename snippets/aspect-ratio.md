@@ -1,9 +1,10 @@
 ---
 title: Aspect ratio
-tags: layout
+type: snippet
+tags: [layout]
 author: chalarangelo
 cover: digital-nomad-12
-firstSeen: 2022-08-14T05:00:00-04:00
+dateModified: 2022-08-14T05:00:00-04:00
 ---
 
 Creates a responsive container with a specified aspect ratio.

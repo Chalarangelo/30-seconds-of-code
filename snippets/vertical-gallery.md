@@ -1,8 +1,9 @@
 ---
 title: Image gallery with vertical scroll
-tags: visual,interactivity
+type: snippet
+tags: [visual,interactivity]
 cover: lake-loop
-firstSeen: 2022-05-05T05:00:00-04:00
+dateModified: 2022-05-05T05:00:00-04:00
 ---
 
 Creates a horizontally scrollable image gallery.
