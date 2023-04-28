@@ -1,9 +1,10 @@
 ---
 title: Lowercase object keys
-tags: object
+type: snippet
+tags: [object]
 author: chalarangelo
 cover: building-facade
-firstSeen: 2023-02-12T05:00:00-04:00
+dateModified: 2023-02-12T05:00:00-04:00
 ---
 
 Converts all the keys of an object to lower case.

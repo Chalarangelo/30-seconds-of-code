@@ -1,9 +1,9 @@
 ---
 title: HSL to array
-tags: string,regexp
+type: snippet
+tags: [string,regexp]
 cover: kettle-laptop
-firstSeen: 2020-10-16T21:46:29+03:00
-lastUpdated: 2020-10-22T20:24:30+03:00
+dateModified: 2020-10-22T20:24:30+03:00
 ---
 
 Converts an `hsl()` color string to an array of values.

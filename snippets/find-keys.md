@@ -1,9 +1,9 @@
 ---
 title: Find matching keys
-tags: object
+type: snippet
+tags: [object]
 cover: beach-riders
-firstSeen: 2020-10-25T09:59:13+02:00
-lastUpdated: 2020-11-15T14:43:44+02:00
+dateModified: 2020-11-15T14:43:44+02:00
 ---
 
 Finds all the keys in the provided object that match the given value.

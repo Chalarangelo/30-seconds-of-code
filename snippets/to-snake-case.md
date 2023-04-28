@@ -1,9 +1,9 @@
 ---
 title: Snakecase string
-tags: string,regexp
+type: snippet
+tags: [string,regexp]
 cover: rustic-cup
-firstSeen: 2017-12-22T18:13:22+02:00
-lastUpdated: 2021-06-28T15:27:44+03:00
+dateModified: 2021-06-28T15:27:44+03:00
 ---
 
 Converts a string to snake case.

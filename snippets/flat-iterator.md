@@ -1,9 +1,10 @@
 ---
 title: Flat iterator
-tags: array,iterator,generator
+type: snippet
+tags: [array,iterator,generator]
 author: chalarangelo
 cover: balloons
-firstSeen: 2022-03-09T05:00:00-04:00
+dateModified: 2022-03-09T05:00:00-04:00
 ---
 
 Creates a generator that iterates over an iterable, flattening nested iterables.

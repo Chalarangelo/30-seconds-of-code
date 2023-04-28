@@ -1,9 +1,9 @@
 ---
 title: Get nested object property from path string
-tags: object,regexp
+type: snippet
+tags: [object,regexp]
 cover: brown-bird
-firstSeen: 2018-01-18T17:40:42+02:00
-lastUpdated: 2020-10-19T22:49:51+03:00
+dateModified: 2020-10-19T22:49:51+03:00
 ---
 
 Retrieves a set of properties indicated by the given selectors from an object.

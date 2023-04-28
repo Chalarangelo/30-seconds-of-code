@@ -1,9 +1,9 @@
 ---
 title: Get nested value in object based on array of keys
-tags: object
+type: snippet
+tags: [object]
 cover: mask-quiet
-firstSeen: 2019-05-09T13:30:52+03:00
-lastUpdated: 2020-10-19T18:51:03+03:00
+dateModified: 2020-10-19T18:51:03+03:00
 ---
 
 Gets the target value in a nested JSON object, based on the `keys` array.

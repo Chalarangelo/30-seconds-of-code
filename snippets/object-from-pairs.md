@@ -1,9 +1,9 @@
 ---
 title: Object from pairs
-tags: object,array
+type: snippet
+tags: [object,array]
 cover: silver-flat-screen
-firstSeen: 2017-12-17T17:55:51+02:00
-lastUpdated: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21T21:54:53+03:00
 ---
 
 Creates an object from the given key-value pairs.

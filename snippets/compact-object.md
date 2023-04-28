@@ -1,9 +1,9 @@
 ---
 title: Compact object
-tags: object,array,recursion
+type: snippet
+tags: [object,array,recursion]
 cover: shapes
-firstSeen: 2020-11-27T13:57:41+02:00
-lastUpdated: 2020-11-27T13:57:41+02:00
+dateModified: 2020-11-27T13:57:41+02:00
 ---
 
 Deeply removes all falsy values from an object or array.

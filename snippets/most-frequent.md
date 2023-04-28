@@ -1,10 +1,10 @@
 ---
 title: Most frequent element in array
-tags: array
+type: snippet
+tags: [array]
 author: chalarangelo
 cover: clock
-firstSeen: 2020-01-03T15:32:46+02:00
-lastUpdated: 2020-09-15T16:28:04+03:00
+dateModified: 2020-09-15T16:28:04+03:00
 ---
 
 Returns the most frequent element in an array.

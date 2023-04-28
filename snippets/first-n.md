@@ -1,9 +1,10 @@
 ---
 title: First n elements
-tags: array
+type: snippet
+tags: [array]
 author: chalarangelo
 cover: digital-nomad-16
-firstSeen: 2022-07-22T05:00:00-04:00
+dateModified: 2022-07-22T05:00:00-04:00
 ---
 
 Gets the first `n` elements of an array.

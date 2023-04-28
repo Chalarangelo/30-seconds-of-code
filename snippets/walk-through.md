@@ -1,10 +1,10 @@
 ---
 title: Walk through object
-tags: object,recursion,generator
+type: snippet
+tags: [object,recursion,generator]
 author: chalarangelo
 cover: bridge
-firstSeen: 2020-12-31T13:03:15+02:00
-lastUpdated: 2021-11-15T13:18:18+02:00
+dateModified: 2021-11-15T13:18:18+02:00
 ---
 
 Creates a generator, that walks through all the keys of a given object.

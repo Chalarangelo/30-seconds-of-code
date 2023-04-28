@@ -1,9 +1,9 @@
 ---
 title: Hide elements
-tags: browser,css
+type: snippet
+tags: [browser,css]
 cover: book-chair
-firstSeen: 2017-12-28T23:33:21+02:00
-lastUpdated: 2020-09-15T16:28:04+03:00
+dateModified: 2020-09-15T16:28:04+03:00
 ---
 
 Hides all the elements specified.

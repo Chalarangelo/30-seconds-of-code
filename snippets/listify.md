@@ -1,9 +1,10 @@
 ---
 title: Map an object to an array
-tags: object,array
+type: snippet
+tags: [object,array]
 author: chalarangelo
 cover: metro-arrival
-firstSeen: 2023-02-05T05:00:00-04:00
+dateModified: 2023-02-05T05:00:00-04:00
 ---
 
 Maps an object to an object array, using the provided mapping function.

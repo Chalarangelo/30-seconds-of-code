@@ -1,9 +1,9 @@
 ---
 title: Days ago
-tags: date
+type: snippet
+tags: [date]
 cover: sunrise-over-city
-firstSeen: 2020-10-06T05:35:23+03:00
-lastUpdated: 2022-01-30T11:48:07+03:00
+dateModified: 2022-01-30T11:48:07+03:00
 ---
 
 Calculates the date of `n` days ago from today as a string representation.

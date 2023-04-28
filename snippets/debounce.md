@@ -1,9 +1,9 @@
 ---
 title: Debounce function
-tags: function
+type: snippet
+tags: [function]
 cover: solitude-beach
-firstSeen: 2018-01-28T15:18:26+02:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Creates a debounced function that delays invoking the provided function until at least `ms` milliseconds have elapsed since its last invocation.

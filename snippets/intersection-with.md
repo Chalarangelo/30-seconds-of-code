@@ -1,9 +1,9 @@
 ---
 title: Array intersection based on function
-tags: array
+type: snippet
+tags: [array]
 cover: digital-nomad-2
-firstSeen: 2018-01-24T12:53:18+02:00
-lastUpdated: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20T23:02:01+03:00
 ---
 
 Returns the elements that exist in both arrays, using a provided comparator function.

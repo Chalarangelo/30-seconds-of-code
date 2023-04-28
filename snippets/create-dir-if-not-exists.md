@@ -1,9 +1,9 @@
 ---
 title: Create directory if not exists
-tags: node
+type: snippet
+tags: [node]
 cover: sunrise-over-city
-firstSeen: 2018-12-12T19:25:16+02:00
-lastUpdated: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22T20:23:47+03:00
 ---
 
 Creates a directory, if it does not exist.

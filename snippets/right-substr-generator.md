@@ -1,9 +1,10 @@
 ---
 title: Right substring generator
-tags: string,generator
+type: snippet
+tags: [string,generator]
 cover: boutique-home-office-2
 author: chalarangelo
-firstSeen: 2022-07-25T05:00:00-04:00
+dateModified: 2022-07-25T05:00:00-04:00
 ---
 
 Generates all right substrings of a given string.

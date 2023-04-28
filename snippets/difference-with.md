@@ -1,9 +1,9 @@
 ---
 title: Array difference based on function
-tags: array
+type: snippet
+tags: [array]
 cover: folded-map
-firstSeen: 2017-12-19T12:32:24+02:00
-lastUpdated: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22T20:23:47+03:00
 ---
 
 Filters out all values from an array for which the comparator function does not return `true`.

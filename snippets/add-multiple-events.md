@@ -1,9 +1,9 @@
 ---
 title: Add multiple listeners
-tags: browser,event
+type: snippet
+tags: [browser,event]
 cover: balloons
-firstSeen: 2020-10-08T00:40:30+03:00
-lastUpdated: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22T20:23:47+03:00
 ---
 
 Adds multiple event listeners with the same handler to an element.

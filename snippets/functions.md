@@ -1,9 +1,9 @@
 ---
 title: Function property names
-tags: object,function
+type: snippet
+tags: [object,function]
 cover: palm-tree-house
-firstSeen: 2018-01-11T21:18:58+02:00
-lastUpdated: 2020-10-20T11:21:07+03:00
+dateModified: 2020-10-20T11:21:07+03:00
 ---
 
 Gets an array of function property names from own (and optionally inherited) enumerable properties of an object.

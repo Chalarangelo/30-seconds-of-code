@@ -1,10 +1,10 @@
 ---
 title: Logical or
-tags: math,logic
+type: snippet
+tags: [math,logic]
 unlisted: true
 cover: succulent-4
-firstSeen: 2020-05-13T11:35:41+03:00
-lastUpdated: 2021-01-04T13:04:15+02:00
+dateModified: 2021-01-04T13:04:15+02:00
 ---
 
 Checks if at least one of the arguments is `true`.

@@ -1,9 +1,10 @@
 ---
 title: Check if array has only one match
-tags: array
+type: snippet
+tags: [array]
 author: chalarangelo
 cover: interior-10
-firstSeen: 2021-07-04T05:00:00-04:00
+dateModified: 2021-07-04T05:00:00-04:00
 ---
 
 Checks if an array has only one value matching the given function.

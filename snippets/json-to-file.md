@@ -1,9 +1,9 @@
 ---
 title: JSON to file
-tags: node
+type: snippet
+tags: [node]
 cover: travel-mug-3
-firstSeen: 2017-12-17T17:55:51+02:00
-lastUpdated: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20T23:02:01+03:00
 ---
 
 Writes a JSON object to a file.

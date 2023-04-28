@@ -1,9 +1,9 @@
 ---
 title: Last date of month
-tags: date
+type: snippet
+tags: [date]
 cover: polar-bear
-firstSeen: 2020-10-09T20:36:54+03:00
-lastUpdated: 2020-10-09T22:01:42+03:00
+dateModified: 2020-10-09T22:01:42+03:00
 ---
 
 Returns the string representation of the last date in the given date's month.

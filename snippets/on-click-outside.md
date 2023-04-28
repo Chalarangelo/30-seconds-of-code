@@ -1,10 +1,10 @@
 ---
 title: Handle click outside
-tags: browser,event
+type: snippet
+tags: [browser,event]
 author: chalarangelo
 cover: interior-13
-firstSeen: 2021-01-06T13:57:56+02:00
-lastUpdated: 2021-01-06T13:57:56+02:00
+dateModified: 2021-01-06T13:57:56+02:00
 ---
 
 Runs the callback whenever the user clicks outside of the specified element.

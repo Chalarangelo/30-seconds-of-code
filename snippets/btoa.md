@@ -1,9 +1,9 @@
 ---
 title: Encode string to Base64
-tags: node,string
+type: snippet
+tags: [node,string]
 cover: laptop-journey
-firstSeen: 2018-01-17T21:43:21+02:00
-lastUpdated: 2020-09-15T16:28:04+03:00
+dateModified: 2020-09-15T16:28:04+03:00
 ---
 
 Creates a base-64 encoded ASCII string from a String object in which each character in the string is treated as a byte of binary data.

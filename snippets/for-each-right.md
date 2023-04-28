@@ -1,9 +1,9 @@
 ---
 title: Execute function for each array element in reverse
-tags: array
+type: snippet
+tags: [array]
 cover: interior-6
-firstSeen: 2018-01-09T01:38:50+02:00
-lastUpdated: 2020-10-19T22:49:51+03:00
+dateModified: 2020-10-19T22:49:51+03:00
 ---
 
 Executes a provided function once for each array element, starting from the array's last element.

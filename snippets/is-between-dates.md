@@ -1,9 +1,9 @@
 ---
 title: Check if date is between two dates
-tags: date
+type: snippet
+tags: [date]
 cover: flower-portrait-6
-firstSeen: 2020-10-07T20:31:52+03:00
-lastUpdated: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20T23:02:01+03:00
 ---
 
 Checks if a date is between two other dates.

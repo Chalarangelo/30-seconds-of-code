@@ -1,9 +1,9 @@
 ---
 title: Nest objects
-tags: object,recursion
+type: snippet
+tags: [object,recursion]
 cover: birds
-firstSeen: 2018-02-24T13:49:56+02:00
-lastUpdated: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21T21:54:53+03:00
 ---
 
 Nests recursively objects linked to one another in a flat array.

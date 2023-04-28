@@ -1,9 +1,9 @@
 ---
 title: Days from now
-tags: date
+type: snippet
+tags: [date]
 cover: tent-stars
-firstSeen: 2020-10-09T02:49:17+03:00
-lastUpdated: 2022-01-30T11:48:07+03:00
+dateModified: 2022-01-30T11:48:07+03:00
 ---
 
 Calculates the date of `n` days from today as a string representation.

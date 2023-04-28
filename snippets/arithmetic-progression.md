@@ -1,9 +1,9 @@
 ---
 title: Arithmetic progression
-tags: math,algorithm
+type: snippet
+tags: [math,algorithm]
 cover: u-got-this
-firstSeen: 2020-10-04T11:37:07+03:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Creates an array of numbers in the arithmetic progression, starting with the given positive integer and up to the specified limit.

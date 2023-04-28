@@ -1,9 +1,9 @@
 ---
 title: Trigger event on HTML element
-tags: browser,event
+type: snippet
+tags: [browser,event]
 cover: cloudy-mountaintop-2
-firstSeen: 2018-06-19T20:57:58+03:00
-lastUpdated: 2020-10-22T20:24:44+03:00
+dateModified: 2020-10-22T20:24:44+03:00
 ---
 
 Triggers a specific event on a given element, optionally passing custom data.

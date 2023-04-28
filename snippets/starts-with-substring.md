@@ -1,10 +1,11 @@
 ---
 title: String starts with substring
+type: snippet
 shortTitle: Starts with substring
-tags: string
+tags: [string]
 cover: boutique-home-office-3
 author: chalarangelo
-firstSeen: 2022-07-31T05:00:00-04:00
+dateModified: 2022-07-31T05:00:00-04:00
 ---
 
 Checks if a given string starts with a substring of another string.

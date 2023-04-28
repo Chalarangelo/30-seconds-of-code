@@ -1,9 +1,9 @@
 ---
 title: Value is stream
-tags: node,type
+type: snippet
+tags: [node,type]
 cover: mountain-lake-cottage-2
-firstSeen: 2018-10-01T20:12:19+03:00
-lastUpdated: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20T23:02:01+03:00
 ---
 
 Checks if the given argument is a stream.

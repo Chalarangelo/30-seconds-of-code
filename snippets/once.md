@@ -1,9 +1,9 @@
 ---
 title: Call function once
-tags: function
+type: snippet
+tags: [function]
 cover: pink-flower-tree
-firstSeen: 2018-01-02T00:40:46+02:00
-lastUpdated: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21T21:54:53+03:00
 ---
 
 Ensures a function is called only once.

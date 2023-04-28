@@ -1,9 +1,9 @@
 ---
 title: Check if process arguments contain flags
-tags: node
+type: snippet
+tags: [node]
 cover: white-tablet
-firstSeen: 2018-01-01T18:24:43+02:00
-lastUpdated: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22T20:23:47+03:00
 ---
 
 Checks if the current process's arguments contain the specified flags.

@@ -1,10 +1,10 @@
 ---
 title: Object to entries
-tags: object,array
+type: snippet
+tags: [object,array]
 author: chalarangelo
 cover: shapes
-firstSeen: 2020-04-16T11:10:13+03:00
-lastUpdated: 2020-09-15T16:28:04+03:00
+dateModified: 2020-09-15T16:28:04+03:00
 ---
 
 Creates an array of key-value pair arrays from an object.

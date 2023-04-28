@@ -1,9 +1,9 @@
 ---
 title: Sum of numbers until n
-tags: math
+type: snippet
+tags: [math]
 cover: blue-flower
-firstSeen: 2020-10-08T16:52:55+03:00
-lastUpdated: 2020-10-22T20:24:30+03:00
+dateModified: 2020-10-22T20:24:30+03:00
 ---
 
 Sums all the numbers between `1` and `n`.

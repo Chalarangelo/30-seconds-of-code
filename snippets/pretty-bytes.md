@@ -1,9 +1,9 @@
 ---
 title: Pretty-print number of bytes
-tags: string,math
+type: snippet
+tags: [string,math]
 cover: digital-nomad
-firstSeen: 2018-01-01T18:20:09+02:00
-lastUpdated: 2020-10-22T20:24:04+03:00
+dateModified: 2020-10-22T20:24:04+03:00
 ---
 
 Converts a number in bytes to a human-readable string.

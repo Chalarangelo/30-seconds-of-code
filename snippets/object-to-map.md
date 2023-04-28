@@ -1,10 +1,11 @@
 ---
 title: Convert object to Map
+type: snippet
 shortTitle: Object to Map
-tags: object
+tags: [object]
 author: chalarangelo
 cover: succulent-2
-firstSeen: 2022-06-16T05:00:00-04:00
+dateModified: 2022-06-16T05:00:00-04:00
 ---
 
 Converts an object to a `Map`.

@@ -1,9 +1,9 @@
 ---
 title: Join URL segments
-tags: string,regexp
+type: snippet
+tags: [string,regexp]
 cover: digital-nomad-2
-firstSeen: 2018-01-16T15:53:03+02:00
-lastUpdated: 2020-10-22T20:24:44+03:00
+dateModified: 2020-10-22T20:24:44+03:00
 ---
 
 Joins all given URL segments together, then normalizes the resulting URL.

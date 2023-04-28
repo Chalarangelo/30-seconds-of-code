@@ -1,9 +1,9 @@
 ---
 title: Value is object
-tags: type,object
+type: snippet
+tags: [type,object]
 cover: flower-portrait-9
-firstSeen: 2018-01-11T12:24:06+02:00
-lastUpdated: 2021-01-08T00:23:44+02:00
+dateModified: 2021-01-08T00:23:44+02:00
 ---
 
 Checks if the passed value is an object or not.

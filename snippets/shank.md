@@ -1,10 +1,10 @@
 ---
 title: Remove elements from array
-tags: array
+type: snippet
+tags: [array]
 cover: avocado-slices
 excerpt: Removes an element from an array without mutating it.
-firstSeen: 2018-09-27T01:55:30+03:00
-lastUpdated: 2020-10-22T20:24:30+03:00
+dateModified: 2020-10-22T20:24:30+03:00
 ---
 
 Has the same functionality as [`Array.prototype.splice()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice), but returning a new array instead of mutating the original array.

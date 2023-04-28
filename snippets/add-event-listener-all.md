@@ -1,10 +1,10 @@
 ---
 title: Add event listener to all targets
-tags: browser,event
+type: snippet
+tags: [browser,event]
 author: chalarangelo
 cover: red-mountain
-firstSeen: 2021-04-22T08:53:29+03:00
-lastUpdated: 2021-04-22T08:53:29+03:00
+dateModified: 2021-04-22T08:53:29+03:00
 ---
 
 Attaches an event listener to all the provided targets.

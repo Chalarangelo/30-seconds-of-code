@@ -1,9 +1,9 @@
 ---
 title: Quotient and module of division
-tags: math
+type: snippet
+tags: [math]
 cover: italian-horizon
-firstSeen: 2020-10-07T23:59:13+03:00
-lastUpdated: 2020-10-07T23:59:13+03:00
+dateModified: 2020-10-07T23:59:13+03:00
 ---
 
 Returns an array consisting of the quotient and remainder of the given numbers.

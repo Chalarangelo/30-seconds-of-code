@@ -1,10 +1,10 @@
 ---
 title: Render DOM element
-tags: browser,recursion
+type: snippet
+tags: [browser,recursion]
 author: chalarangelo
 cover: maple-leaf-palette
-firstSeen: 2020-05-03T11:55:42+03:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Renders the given DOM tree in the specified DOM element.

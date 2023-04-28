@@ -1,10 +1,10 @@
 ---
 title: String is ISO formatted date
-tags: date
+type: snippet
+tags: [date]
 author: chalarangelo
 cover: perfect-timing
-firstSeen: 2020-11-29T12:16:43+02:00
-lastUpdated: 2020-11-29T12:16:43+02:00
+dateModified: 2020-11-29T12:16:43+02:00
 ---
 
 Checks if the given string is valid in the simplified extended ISO format (ISO 8601).

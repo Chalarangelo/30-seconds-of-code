@@ -1,9 +1,9 @@
 ---
 title: Date to ISO format with timezone
-tags: date
+type: snippet
+tags: [date]
 cover: pop-of-green
-firstSeen: 2020-10-07T09:25:05+03:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Converts a date to extended ISO format (ISO 8601), including timezone offset.

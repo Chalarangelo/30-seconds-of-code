@@ -1,9 +1,9 @@
 ---
 title: Iterate over object's own properties
-tags: object
+type: snippet
+tags: [object]
 cover: blank-card
-firstSeen: 2018-01-18T16:45:56+02:00
-lastUpdated: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22T20:23:47+03:00
 ---
 
 Iterates over all own properties of an object, running a callback for each one.

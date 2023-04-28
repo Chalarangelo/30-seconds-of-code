@@ -1,9 +1,10 @@
 ---
 title: Assert object keys are valid
-tags: object
+type: snippet
+tags: [object]
 author: chalarangelo
 cover: river-flow
-firstSeen: 2021-07-18T05:00:00-04:00
+dateModified: 2021-07-18T05:00:00-04:00
 ---
 
 Validates all keys in an object match the given `keys`.

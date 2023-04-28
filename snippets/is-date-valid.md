@@ -1,9 +1,9 @@
 ---
 title: Check if date is valid
-tags: date
+type: snippet
+tags: [date]
 cover: two-cities
-firstSeen: 2020-10-08T16:39:23+03:00
-lastUpdated: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20T23:02:01+03:00
 ---
 
 Checks if a valid date object can be created from the given values.
