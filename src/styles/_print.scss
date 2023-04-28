@@ -46,14 +46,7 @@
   .card-actions,
   footer,
   .recommendation-list-title,
-  .recommendation-list-title + ul,
-  .card-preview-content {
+  .recommendation-list-title + ul {
     display: none !important;
-  }
-
-  // Hide snippet previews
-  .card-preview-content + .code-highlight:first-of-type > pre {
-    border-top-left-radius: var(--br-md) !important;
-    border-top-right-radius: var(--br-md) !important;
   }
 }

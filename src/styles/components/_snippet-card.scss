@@ -54,19 +54,6 @@
       margin-block-end: 1.5rem;
     }
   }
-
-  .card-preview-content {
-    background: var(--clr-snippet-preview-bg);
-    border-bottom-left-radius: var(--br-none);
-    border-bottom-right-radius: var(--br-none);
-
-    + .card-source-content {
-      .code-highlight:first-of-type > pre {
-        border-top-left-radius: var(--br-none);
-        border-top-right-radius: var(--br-none);
-      }
-    }
-  }
 }
 
 @keyframes active {
@@ -98,41 +85,5 @@
   30%,
   75% {
     opacity: 1;
-  }
-}
-
-// Overrides for some problematic snippets
-[data-scope='snippet-preview'] {
-  .full-width {
-    left: 0 !important;
-    right: 0 !important;
-    margin-left: -1.375rem !important;
-    margin-right: -1.375rem !important;
-    width: calc(100% + 2.75rem) !important;
-
-    @media screen and (min-width: 752px) {
-      width: calc(100vw - 3rem - 2.25rem) !important;
-      max-width: calc(100vw - 3rem - 2.25rem) !important;
-      margin-left: calc((640px - 100vw) / 2 + 2.125rem) !important;
-      margin-right: calc((640px - 100vw) / 2 + 2.125rem) !important;
-    }
-
-    @media screen and (min-width: 874px) {
-      width: calc(874px - 3rem - 2.25rem) !important;
-      margin-left: calc((640px - 874px) / 2 + 2.125rem) !important;
-      margin-right: calc((640px - 874px) / 2 + 2.125rem) !important;
-    }
-  }
-
-  input[type='checkbox']:not(:checked) + .switch {
-    background-color: #ffffff40 !important;
-  }
-
-  .slides img {
-    max-width: unset;
-  }
-
-  a.squiggle:hover {
-    animation: none;
   }
 }
