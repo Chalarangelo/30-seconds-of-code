@@ -1,10 +1,10 @@
 ---
 title: React useMediaQuery hook
-tags: hooks,state,effect
+type: snippet
+tags: [hooks,state,effect]
 author: chalarangelo
 cover: clay-pot-horizon
-firstSeen: 2020-01-03T14:39:46+02:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Checks if the current environment matches a given media query and returns the appropriate value.

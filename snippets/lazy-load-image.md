@@ -1,9 +1,10 @@
 ---
 title: Lazy-loading image
-tags: components,effect,state
+type: snippet
+tags: [components,effect,state]
 cover: strawberries
 author: chalarangelo
-firstSeen: 2022-07-29T05:00:00-04:00
+dateModified: 2022-07-29T05:00:00-04:00
 ---
 
 Renders an image that supports lazy loading.

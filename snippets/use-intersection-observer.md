@@ -1,9 +1,10 @@
 ---
 title: React useIntersectionObserver hook
-tags: hooks,state,effect
+type: snippet
+tags: [hooks,state,effect]
 author: chalarangelo
 cover: budapest-palace
-firstSeen: 2021-09-10T05:00:00-04:00
+dateModified: 2021-09-10T05:00:00-04:00
 ---
 
 Observes visibility changes for a given element.

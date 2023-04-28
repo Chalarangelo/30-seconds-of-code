@@ -1,9 +1,10 @@
 ---
 title: React useComponentDidUpdate hook
-tags: hooks,effect
+type: snippet
+tags: [hooks,effect]
 author: chalarangelo
 cover: flower-portrait-10
-firstSeen: 2021-11-09T05:00:00-04:00
+dateModified: 2021-11-09T05:00:00-04:00
 ---
 
 Executes a callback immediately after a component is updated.

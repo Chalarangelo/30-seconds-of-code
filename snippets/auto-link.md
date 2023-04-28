@@ -1,10 +1,10 @@
 ---
 title: Automatic text linking
-tags: components,fragment,regexp
+type: snippet
+tags: [components,fragment,regexp]
 author: chalarangelo
 cover: red-petals
-firstSeen: 2018-12-05T15:04:49+02:00
-lastUpdated: 2020-11-03T20:42:15+02:00
+dateModified: 2020-11-03T20:42:15+02:00
 ---
 
 Renders a string as plaintext, with URLs converted to appropriate link elements.

@@ -1,10 +1,10 @@
 ---
 title: React useInterval hook
-tags: hooks,effect
+type: snippet
+tags: [hooks,effect]
 author: chalarangelo
 cover: digital-nomad-13
-firstSeen: 2019-08-21T13:18:52+03:00
-lastUpdated: 2020-11-16T14:17:53+02:00
+dateModified: 2020-11-16T14:17:53+02:00
 ---
 
 Implements `setInterval()` in a declarative manner.

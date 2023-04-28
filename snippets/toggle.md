@@ -1,9 +1,9 @@
 ---
 title: Toggle
-tags: components,state
+type: snippet
+tags: [components,state]
 cover: cows
-firstSeen: 2018-10-27T20:35:37+03:00
-lastUpdated: 2020-11-16T16:50:57+02:00
+dateModified: 2020-11-16T16:50:57+02:00
 ---
 
 Renders a toggle component.

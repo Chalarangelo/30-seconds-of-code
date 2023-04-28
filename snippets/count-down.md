@@ -1,9 +1,9 @@
 ---
 title: Countdown timer
-tags: components,state
+type: snippet
+tags: [components,state]
 cover: sea-view-2
-firstSeen: 2019-02-06T14:39:31+02:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Renders a countdown timer that prints a message when it reaches zero.

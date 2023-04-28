@@ -1,9 +1,9 @@
 ---
 title: Textarea with word limit
-tags: components,input,state,callback,effect,event
+type: snippet
+tags: [components,input,state,callback,effect,event]
 cover: painters-desk
-firstSeen: 2019-02-20T18:22:22+02:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Renders a textarea component with a word limit.

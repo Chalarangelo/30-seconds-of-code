@@ -1,9 +1,9 @@
 ---
 title: Data list
-tags: components
+type: snippet
+tags: [components]
 cover: interior-14
-firstSeen: 2018-11-29T12:12:24+02:00
-lastUpdated: 2020-11-03T21:26:34+02:00
+dateModified: 2020-11-03T21:26:34+02:00
 ---
 
 Renders a list of elements from an array of primitives.

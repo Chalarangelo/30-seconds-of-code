@@ -1,9 +1,10 @@
 ---
 title: React useUpdate hook
-tags: components,reducer
+type: snippet
+tags: [components,reducer]
 author: chalarangelo
 cover: lavender-shelf
-firstSeen: 2021-09-24T05:00:00-04:00
+dateModified: 2021-09-24T05:00:00-04:00
 ---
 
 Forces the component to re-render when called.

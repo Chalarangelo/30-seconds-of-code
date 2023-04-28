@@ -1,11 +1,11 @@
 ---
 title: Callable telephone link
-tags: components
+type: snippet
+tags: [components]
 author: chalarangelo
 unlisted: true
 cover: rabbit-call
-firstSeen: 2020-10-04T00:07:37+03:00
-lastUpdated: 2021-01-04T12:32:47+02:00
+dateModified: 2021-01-04T12:32:47+02:00
 ---
 
 Renders a link formatted to call a phone number (`tel:` link).

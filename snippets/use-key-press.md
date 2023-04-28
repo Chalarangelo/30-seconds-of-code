@@ -1,9 +1,10 @@
 ---
 title: React useKeyPress hook
-tags: hooks,state,effect,event
+type: snippet
+tags: [hooks,state,effect,event]
 author: chalarangelo
 cover: yellow-white-mug-1
-firstSeen: 2021-09-07T05:00:00-04:00
+dateModified: 2021-09-07T05:00:00-04:00
 ---
 
 Listens for changes in the pressed state of a given key.

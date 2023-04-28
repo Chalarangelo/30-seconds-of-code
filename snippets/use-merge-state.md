@@ -1,9 +1,10 @@
 ---
 title: React useMergeState hook
-tags: hooks,state
+type: snippet
+tags: [hooks,state]
 author: chalarangelo
 cover: digital-nomad-6
-firstSeen: 2021-09-23T05:00:00-04:00
+dateModified: 2021-09-23T05:00:00-04:00
 ---
 
 Creates a stateful value, and a function to update it by merging the new state provided.

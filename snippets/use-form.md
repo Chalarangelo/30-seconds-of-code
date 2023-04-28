@@ -1,8 +1,9 @@
 ---
 title: React useForm hook
-tags: hooks,state
+type: snippet
+tags: [hooks,state]
 cover: cave-view
-firstSeen: 2021-09-17T05:00:00-04:00
+dateModified: 2021-09-17T05:00:00-04:00
 ---
 
 Creates a stateful value from the fields in a form.

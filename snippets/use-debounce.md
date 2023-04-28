@@ -1,10 +1,10 @@
 ---
 title: React useDebounce hook
-tags: hooks,state,effect
+type: snippet
+tags: [hooks,state,effect]
 author: chalarangelo
 cover: blue-bird
-firstSeen: 2021-01-04T16:48:43+02:00
-lastUpdated: 2021-01-04T16:48:43+02:00
+dateModified: 2021-01-04T16:48:43+02:00
 ---
 
 Debounces the given value.

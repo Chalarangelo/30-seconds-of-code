@@ -1,10 +1,10 @@
 ---
 title: React useCopyToClipboard hook
-tags: hooks,effect,state,callback
+type: snippet
+tags: [hooks,effect,state,callback]
 author: chalarangelo
 cover: antelope
-firstSeen: 2020-04-22T18:51:30+03:00
-lastUpdated: 2020-11-16T14:17:53+02:00
+dateModified: 2020-11-16T14:17:53+02:00
 ---
 
 Copies the given text to the clipboard.
