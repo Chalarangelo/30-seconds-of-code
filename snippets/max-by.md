@@ -1,9 +1,9 @@
 ---
 title: Max list value based on function
-tags: math,list
+type: snippet
+tags: [math,list]
 cover: digital-nomad-3
-firstSeen: 2019-08-20T15:42:41+03:00
-lastUpdated: 2020-11-02T19:28:27+02:00
+dateModified: 2020-11-02T19:28:27+02:00
 ---
 
 Returns the maximum value of a list, after mapping each element to a value using the provided function.

@@ -1,9 +1,9 @@
 ---
 title: Filter non-unique list values
-tags: list
+type: snippet
+tags: [list]
 cover: cobbled-street
-firstSeen: 2019-08-20T13:13:51+03:00
-lastUpdated: 2020-11-02T19:27:53+02:00
+dateModified: 2020-11-02T19:27:53+02:00
 ---
 
 Creates a list with the non-unique values filtered out.

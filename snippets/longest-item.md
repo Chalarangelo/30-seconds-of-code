@@ -1,9 +1,9 @@
 ---
 title: Longest item
-tags: list,string
+type: snippet
+tags: [list,string]
 cover: keyboard-tea
-firstSeen: 2019-08-20T15:27:49+03:00
-lastUpdated: 2021-10-17T18:24:43+02:00
+dateModified: 2021-10-17T18:24:43+02:00
 ---
 
 Takes any number of iterable objects or objects with a length property and returns the longest one.

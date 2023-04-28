@@ -1,9 +1,9 @@
 ---
 title: Degrees to radians
-tags: math
+type: snippet
+tags: [math]
 cover: digital-nomad-6
-firstSeen: 2019-10-15T14:31:11+03:00
-lastUpdated: 2020-11-02T19:27:53+02:00
+dateModified: 2020-11-02T19:27:53+02:00
 ---
 
 Converts an angle from degrees to radians.

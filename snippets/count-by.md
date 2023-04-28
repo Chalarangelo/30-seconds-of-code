@@ -1,9 +1,9 @@
 ---
 title: Count grouped elements
-tags: list
+type: snippet
+tags: [list]
 cover: rabbit-call
-firstSeen: 2018-02-07T10:33:47+02:00
-lastUpdated: 2020-11-02T19:27:07+02:00
+dateModified: 2020-11-02T19:27:07+02:00
 ---
 
 Groups the elements of a list based on the given function and returns the count of elements in each group.

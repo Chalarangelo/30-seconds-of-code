@@ -1,9 +1,9 @@
 ---
 title: Initialize list with values
-tags: list
+type: snippet
+tags: [list]
 cover: dog-waiting
-firstSeen: 2019-08-20T14:12:06+03:00
-lastUpdated: 2020-11-02T19:28:05+02:00
+dateModified: 2020-11-02T19:28:05+02:00
 ---
 
 Initializes and fills a list with the specified value.

@@ -1,9 +1,9 @@
 ---
 title: Add days to date
-tags: date
+type: snippet
+tags: [date]
 cover: orange-flower
-firstSeen: 2020-10-28T16:19:04+02:00
-lastUpdated: 2020-10-28T16:19:04+02:00
+dateModified: 2020-10-28T16:19:04+02:00
 ---
 
 Calculates the date of `n` days from the given date.

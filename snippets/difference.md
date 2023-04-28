@@ -1,9 +1,9 @@
 ---
 title: List difference
-tags: list
+type: snippet
+tags: [list]
 cover: frog-blue-flower
-firstSeen: 2018-01-20T16:16:44+02:00
-lastUpdated: 2020-11-02T19:27:53+02:00
+dateModified: 2020-11-02T19:27:53+02:00
 ---
 
 Calculates the difference between two iterables, without filtering duplicate values.

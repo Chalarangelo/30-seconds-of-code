@@ -1,9 +1,9 @@
 ---
 title: Pad number
-tags: string,math
+type: snippet
+tags: [string,math]
 cover: umbrellas
-firstSeen: 2020-10-04T01:42:19+03:00
-lastUpdated: 2020-11-02T19:28:27+02:00
+dateModified: 2020-11-02T19:28:27+02:00
 ---
 
 Pads a given number to the specified length.

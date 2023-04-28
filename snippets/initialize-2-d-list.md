@@ -1,9 +1,9 @@
 ---
 title: Initialize 2D list
-tags: list
+type: snippet
+tags: [list]
 cover: succulent-7
-firstSeen: 2019-10-25T10:11:51+03:00
-lastUpdated: 2020-11-02T19:28:05+02:00
+dateModified: 2020-11-02T19:28:05+02:00
 ---
 
 Initializes a 2D list of given width and height and value.

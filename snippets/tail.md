@@ -1,9 +1,9 @@
 ---
 title: List tail
-tags: list
+type: snippet
+tags: [list]
 cover: meteora
-firstSeen: 2019-08-20T14:08:52+03:00
-lastUpdated: 2020-11-02T19:28:35+02:00
+dateModified: 2020-11-02T19:28:35+02:00
 ---
 
 Returns all elements in a list except for the first one.

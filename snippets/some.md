@@ -1,9 +1,9 @@
 ---
 title: Test if some list elements are truthy
-tags: list
+type: snippet
+tags: [list]
 cover: pink-flower-tree
-firstSeen: 2019-08-20T11:42:30+03:00
-lastUpdated: 2020-11-02T19:28:35+02:00
+dateModified: 2020-11-02T19:28:35+02:00
 ---
 
 Checks if the provided function returns `True` for at least one element in the list.

@@ -1,9 +1,9 @@
 ---
 title: Split list into n chunks
-tags: list
+type: snippet
+tags: [list]
 cover: succulent-10
-firstSeen: 2020-10-12T22:11:30+03:00
-lastUpdated: 2020-10-23T05:35:06+03:00
+dateModified: 2020-10-23T05:35:06+03:00
 ---
 
 Chunks a list into `n` smaller lists.

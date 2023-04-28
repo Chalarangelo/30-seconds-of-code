@@ -1,10 +1,10 @@
 ---
 title: Number is even
-tags: math
+type: snippet
+tags: [math]
 unlisted: true
 cover: interior-3
-firstSeen: 2019-08-20T14:21:44+03:00
-lastUpdated: 2021-01-04T12:47:04+02:00
+dateModified: 2021-01-04T12:47:04+02:00
 ---
 
 Checks if the given number is even.

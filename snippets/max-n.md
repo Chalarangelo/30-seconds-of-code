@@ -1,9 +1,9 @@
 ---
 title: N max elements
-tags: list,math
+type: snippet
+tags: [list,math]
 cover: red-succulent
-firstSeen: 2018-01-19T11:25:28+02:00
-lastUpdated: 2020-11-02T19:28:27+02:00
+dateModified: 2020-11-02T19:28:27+02:00
 ---
 
 Returns the `n` maximum elements from the provided list.

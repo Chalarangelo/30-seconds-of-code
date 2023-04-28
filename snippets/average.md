@@ -1,9 +1,9 @@
 ---
 title: Average
-tags: math,list
+type: snippet
+tags: [math,list]
 cover: digital-nomad-15
-firstSeen: 2018-01-27T07:16:41+02:00
-lastUpdated: 2020-11-02T19:27:07+02:00
+dateModified: 2020-11-02T19:27:07+02:00
 ---
 
 Calculates the average of two or more numbers.

@@ -1,9 +1,9 @@
 ---
 title: Sort dictionary by key
-tags: dictionary
+type: snippet
+tags: [dictionary]
 cover: laptop-plants
-firstSeen: 2020-10-16T21:24:33+03:00
-lastUpdated: 2020-11-02T19:28:35+02:00
+dateModified: 2020-11-02T19:28:35+02:00
 ---
 
 Sorts the given dictionary by key.

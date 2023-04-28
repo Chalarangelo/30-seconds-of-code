@@ -1,9 +1,9 @@
 ---
 title: Index of min element
-tags: math,list
+type: snippet
+tags: [math,list]
 cover: two-cities
-firstSeen: 2020-10-05T22:32:00+03:00
-lastUpdated: 2020-11-02T19:28:27+02:00
+dateModified: 2020-11-02T19:28:27+02:00
 ---
 
 Returns the index of the element with the minimum value in a list.

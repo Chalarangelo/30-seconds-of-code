@@ -1,9 +1,9 @@
 ---
 title: Repeat string
-tags: string
+type: snippet
+tags: [string]
 cover: playing-fetch
-firstSeen: 2019-09-27T10:07:25+03:00
-lastUpdated: 2020-11-02T19:28:27+02:00
+dateModified: 2020-11-02T19:28:27+02:00
 ---
 
 Generates a string with the given string value repeated `n` number of times.

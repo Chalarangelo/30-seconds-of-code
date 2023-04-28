@@ -1,9 +1,9 @@
 ---
 title: Date range
-tags: date
+type: snippet
+tags: [date]
 cover: maple-leaf-palette
-firstSeen: 2020-10-28T16:19:14+02:00
-lastUpdated: 2021-01-07T23:30:28+02:00
+dateModified: 2021-01-07T23:30:28+02:00
 ---
 
 Creates a list of dates between `start` (inclusive) and `end` (not inclusive).

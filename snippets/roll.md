@@ -1,9 +1,9 @@
 ---
 title: Rotate list elements
-tags: list
+type: snippet
+tags: [list]
 cover: colorful-pots
-firstSeen: 2020-11-02T19:15:44+02:00
-lastUpdated: 2020-11-02T19:15:44+02:00
+dateModified: 2020-11-02T19:15:44+02:00
 ---
 
 Moves the specified amount of elements to the start of the list.

@@ -1,9 +1,9 @@
 ---
 title: Sum of powers
-tags: math
+type: snippet
+tags: [math]
 cover: river-flow
-firstSeen: 2020-10-04T14:21:41+03:00
-lastUpdated: 2020-11-02T19:28:35+02:00
+dateModified: 2020-11-02T19:28:35+02:00
 ---
 
 Returns the sum of the powers of all the numbers from `start` to `end` (both inclusive).

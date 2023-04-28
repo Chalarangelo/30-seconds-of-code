@@ -1,9 +1,9 @@
 ---
 title: Partial sum list
-tags: list
+type: snippet
+tags: [list]
 cover: digital-nomad-16
-firstSeen: 2021-01-13T23:30:41+02:00
-lastUpdated: 2021-01-13T23:30:41+02:00
+dateModified: 2021-01-13T23:30:41+02:00
 ---
 
 Creates a list of partial sums.

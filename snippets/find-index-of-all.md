@@ -1,9 +1,9 @@
 ---
 title: Find all matching indexes
-tags: list
+type: snippet
+tags: [list]
 cover: tree-roots
-firstSeen: 2020-10-11T13:45:19+03:00
-lastUpdated: 2020-11-02T19:27:53+02:00
+dateModified: 2020-11-02T19:27:53+02:00
 ---
 
 Finds the indexes of all elements in the given list that satisfy the provided testing function.

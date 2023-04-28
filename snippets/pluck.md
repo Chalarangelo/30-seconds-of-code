@@ -1,9 +1,9 @@
 ---
 title: Pluck values from list of dictionaries
-tags: list,dictionary
+type: snippet
+tags: [list,dictionary]
 cover: succulent-9
-firstSeen: 2020-10-22T03:49:25+03:00
-lastUpdated: 2020-10-22T10:09:44+03:00
+dateModified: 2020-10-22T10:09:44+03:00
 ---
 
 Converts a list of dictionaries into a list of values corresponding to the specified `key`.

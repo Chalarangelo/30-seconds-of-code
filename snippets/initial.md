@@ -1,9 +1,9 @@
 ---
 title: List without last element
-tags: list
+type: snippet
+tags: [list]
 cover: pop-of-green
-firstSeen: 2019-08-20T14:08:52+03:00
-lastUpdated: 2020-11-02T19:28:05+02:00
+dateModified: 2020-11-02T19:28:05+02:00
 ---
 
 Returns all the elements of a list except the last one.
