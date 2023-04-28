@@ -1,9 +1,9 @@
 ---
 title: Day name
-tags: date
+type: snippet
+tags: [date]
 cover: interior
-firstSeen: 2020-10-04T00:31:08+03:00
-lastUpdated: 2020-11-01T20:50:57+02:00
+dateModified: 2020-11-01T20:50:57+02:00
 ---
 
 Gets the name of the weekday from a `Date` object.

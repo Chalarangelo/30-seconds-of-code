@@ -1,10 +1,10 @@
 ---
 title: Add class to HTML element
-tags: browser
+type: snippet
+tags: [browser]
 author: chalarangelo
 cover: budapest-palace
-firstSeen: 2020-12-30T19:21:15+02:00
-lastUpdated: 2020-12-30T19:21:15+02:00
+dateModified: 2020-12-30T19:21:15+02:00
 ---
 
 Adds a class to an HTML element.

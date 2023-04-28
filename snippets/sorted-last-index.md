@@ -1,9 +1,9 @@
 ---
 title: Last insertion index in sorted array
-tags: array
+type: snippet
+tags: [array]
 cover: rocky-beach-3
-firstSeen: 2018-01-24T13:16:47+02:00
-lastUpdated: 2020-10-22T20:24:30+03:00
+dateModified: 2020-10-22T20:24:30+03:00
 ---
 
 Finds the highest index at which a value should be inserted into an array in order to maintain its sort order.

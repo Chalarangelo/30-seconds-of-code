@@ -1,9 +1,9 @@
 ---
 title: Initialize 2D array
-tags: array
+type: snippet
+tags: [array]
 cover: cloudy-rock-formation
-firstSeen: 2017-12-19T23:38:18+02:00
-lastUpdated: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20T23:02:01+03:00
 ---
 
 Initializes a 2D array of given width and height and value.

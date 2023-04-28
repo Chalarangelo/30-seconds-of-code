@@ -1,8 +1,9 @@
 ---
 title: Copy to clipboard async
-tags: browser,string,promise
+type: snippet
+tags: [browser,string,promise]
 cover: typing
-firstSeen: 2022-01-11T05:00:00-04:00
+dateModified: 2022-01-11T05:00:00-04:00
 ---
 
 Copies a string to the clipboard, returning a promise that resolves when the clipboard's contents have been updated.

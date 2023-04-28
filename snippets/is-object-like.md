@@ -1,9 +1,9 @@
 ---
 title: Value is object-like
-tags: type,object
+type: snippet
+tags: [type,object]
 cover: orange-flower
-firstSeen: 2018-01-23T19:30:03+02:00
-lastUpdated: 2020-09-15T16:28:04+03:00
+dateModified: 2020-09-15T16:28:04+03:00
 ---
 
 Checks if a value is object-like.

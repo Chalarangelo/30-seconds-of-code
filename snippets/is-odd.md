@@ -1,9 +1,9 @@
 ---
 title: Number is odd
-tags: math
+type: snippet
+tags: [math]
 cover: flower-portrait-5
-firstSeen: 2019-09-25T20:35:06+03:00
-lastUpdated: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20T23:02:01+03:00
 ---
 
 Checks if the given number is odd.

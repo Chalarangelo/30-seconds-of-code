@@ -1,10 +1,10 @@
 ---
 title: Heap sort
-tags: algorithm,array,recursion
+type: snippet
+tags: [algorithm,array,recursion]
 author: chalarangelo
 cover: building-blocks
-firstSeen: 2020-12-28T22:48:09+02:00
-lastUpdated: 2020-12-28T22:48:09+02:00
+dateModified: 2020-12-28T22:48:09+02:00
 ---
 
 Sorts an array of numbers, using the heapsort algorithm.

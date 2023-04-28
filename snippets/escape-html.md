@@ -1,9 +1,9 @@
 ---
 title: Escape HTML
-tags: string,regexp
+type: snippet
+tags: [string,regexp]
 cover: periscope
-firstSeen: 2017-12-29T15:09:21+02:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Escapes a string for use in HTML.

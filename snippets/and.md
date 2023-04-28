@@ -1,10 +1,10 @@
 ---
 title: Logical and
-tags: math,logic
+type: snippet
+tags: [math,logic]
 unlisted: true
 cover: succulent-1
-firstSeen: 2020-05-13T11:35:31+03:00
-lastUpdated: 2021-01-04T13:04:15+02:00
+dateModified: 2021-01-04T13:04:15+02:00
 ---
 
 Checks if both arguments are `true`.

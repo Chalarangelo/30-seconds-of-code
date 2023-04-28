@@ -1,9 +1,9 @@
 ---
 title: Primes up to given number
-tags: math,algorithm
+type: snippet
+tags: [math,algorithm]
 cover: apples
-firstSeen: 2017-12-21T12:20:22+02:00
-lastUpdated: 2020-12-28T13:49:24+02:00
+dateModified: 2020-12-28T13:49:24+02:00
 ---
 
 Generates primes up to a given number, using the Sieve of Eratosthenes.

@@ -1,9 +1,9 @@
 ---
 title: Check if browser tab is focused
-tags: browser
+type: snippet
+tags: [browser]
 cover: overgrown
-firstSeen: 2018-04-15T19:18:44+03:00
-lastUpdated: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20T23:02:01+03:00
 ---
 
 Checks if the browser tab of the page is focused.

@@ -1,10 +1,10 @@
 ---
 title: Environment is Travis CI
-tags: node
+type: snippet
+tags: [node]
 unlisted: true
 cover: succulent-5
-firstSeen: 2018-01-01T17:28:08+02:00
-lastUpdated: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20T23:02:01+03:00
 ---
 
 Checks if the current environment is [Travis CI](https://travis-ci.org/).

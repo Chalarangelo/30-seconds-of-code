@@ -1,9 +1,9 @@
 ---
 title: Match object properties
-tags: object
+type: snippet
+tags: [object]
 cover: two-flower-vases
-firstSeen: 2018-01-23T20:17:32+02:00
-lastUpdated: 2020-11-03T22:11:18+02:00
+dateModified: 2020-11-03T22:11:18+02:00
 ---
 
 Compares two objects to determine if the first one contains equivalent property values to the second one.

@@ -1,9 +1,9 @@
 ---
 title: Copy to clipboard
-tags: browser,string,event
+type: snippet
+tags: [browser,string,event]
 cover: typing
-firstSeen: 2017-12-31T11:40:33+02:00
-lastUpdated: 2022-01-11T09:32:04+02:00
+dateModified: 2022-01-11T09:32:04+02:00
 ---
 
 Copies a string to the clipboard.

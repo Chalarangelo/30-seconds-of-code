@@ -1,9 +1,9 @@
 ---
 title: Get all images in element
-tags: browser
+type: snippet
+tags: [browser]
 cover: portal-timelapse
-firstSeen: 2018-10-07T16:24:36+03:00
-lastUpdated: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22T20:23:47+03:00
 ---
 
 Fetches all images from within an element and puts them into an array.

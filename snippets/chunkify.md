@@ -1,10 +1,10 @@
 ---
 title: Chunk iterable
-tags: function,generator,array
+type: snippet
+tags: [function,generator,array]
 author: chalarangelo
 cover: cave-view
-firstSeen: 2021-03-16T22:50:40+02:00
-lastUpdated: 2021-03-16T22:50:40+02:00
+dateModified: 2021-03-16T22:50:40+02:00
 ---
 
 Chunks an iterable into smaller arrays of a specified size.

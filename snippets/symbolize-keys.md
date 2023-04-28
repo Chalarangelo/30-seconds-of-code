@@ -1,9 +1,10 @@
 ---
 title: Symbolize object keys
-tags: object
+type: snippet
+tags: [object]
 author: chalarangelo
 cover: rocky-lake
-firstSeen: 2021-08-01T05:00:00-04:00
+dateModified: 2021-08-01T05:00:00-04:00
 ---
 
 Creates a new object, converting each key to a `Symbol`.

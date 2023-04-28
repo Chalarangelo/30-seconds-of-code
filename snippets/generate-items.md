@@ -1,9 +1,9 @@
 ---
 title: Generate items
-tags: array,function
+type: snippet
+tags: [array,function]
 cover: generator
-firstSeen: 2020-10-09T20:41:21+03:00
-lastUpdated: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22T20:23:47+03:00
 ---
 
 Generates an array with the given amount of items, using the given function.

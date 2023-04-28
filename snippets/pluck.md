@@ -1,9 +1,9 @@
 ---
 title: Pluck values from array of objects
-tags: array,object
+type: snippet
+tags: [array,object]
 cover: birds
-firstSeen: 2020-10-18T01:19:37+03:00
-lastUpdated: 2020-10-22T20:24:04+03:00
+dateModified: 2020-10-22T20:24:04+03:00
 ---
 
 Converts an array of objects into an array of values corresponding to the specified `key`.

@@ -1,10 +1,10 @@
 ---
 title: Logical and for functions
-tags: function,logic
+type: snippet
+tags: [function,logic]
 unlisted: true
 cover: succulent-2
-firstSeen: 2020-05-13T11:35:36+03:00
-lastUpdated: 2021-01-04T13:04:15+02:00
+dateModified: 2021-01-04T13:04:15+02:00
 ---
 
 Checks if both of the given functions return `true` for a given set of arguments.

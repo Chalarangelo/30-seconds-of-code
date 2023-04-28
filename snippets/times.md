@@ -1,9 +1,9 @@
 ---
 title: Iterate n times
-tags: function
+type: snippet
+tags: [function]
 cover: lake-loop
-firstSeen: 2018-01-24T13:50:49+02:00
-lastUpdated: 2020-10-20T11:21:07+03:00
+dateModified: 2020-10-20T11:21:07+03:00
 ---
 
 Iterates over a callback `n` times.

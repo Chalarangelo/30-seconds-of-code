@@ -1,9 +1,9 @@
 ---
 title: Find last matching key
-tags: object
+type: snippet
+tags: [object]
 cover: sparkles
-firstSeen: 2018-01-23T18:23:20+02:00
-lastUpdated: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22T20:23:47+03:00
 ---
 
 Finds the last key that satisfies the provided testing function.

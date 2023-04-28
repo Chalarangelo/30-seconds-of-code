@@ -1,9 +1,9 @@
 ---
 title: Check if all array elements are unique based on function
-tags: array
+type: snippet
+tags: [array]
 cover: digital-nomad-10
-firstSeen: 2020-10-19T22:15:05+03:00
-lastUpdated: 2021-01-08T00:23:44+02:00
+dateModified: 2021-01-08T00:23:44+02:00
 ---
 
 Checks if all elements in an array are unique, based on the provided mapping function.

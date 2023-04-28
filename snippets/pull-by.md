@@ -1,9 +1,9 @@
 ---
 title: Pull values from array based on function
-tags: array
+type: snippet
+tags: [array]
 cover: fishermen
-firstSeen: 2018-01-26T13:48:50+02:00
-lastUpdated: 2020-10-22T20:24:04+03:00
+dateModified: 2020-10-22T20:24:04+03:00
 ---
 
 Mutates the original array to filter out the values specified, based on a given iterator function.

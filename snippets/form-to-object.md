@@ -1,9 +1,9 @@
 ---
 title: Form to object
-tags: browser,object
+type: snippet
+tags: [browser,object]
 cover: sail-away-2
-firstSeen: 2019-03-13T14:50:06+02:00
-lastUpdated: 2020-10-19T22:49:51+03:00
+dateModified: 2020-10-19T22:49:51+03:00
 ---
 
 Encodes a set of form elements as an `object`.

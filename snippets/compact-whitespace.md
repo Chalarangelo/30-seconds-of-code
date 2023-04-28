@@ -1,9 +1,9 @@
 ---
 title: Compact whitespaces
-tags: string,regexp
+type: snippet
+tags: [string,regexp]
 cover: travel-mug-1
-firstSeen: 2018-12-12T19:11:33+02:00
-lastUpdated: 2020-10-18T23:04:45+03:00
+dateModified: 2020-10-18T23:04:45+03:00
 ---
 
 Compacts whitespaces in a string.

@@ -1,9 +1,9 @@
 ---
 title: Convert function to variadic
-tags: function,array
+type: snippet
+tags: [function,array]
 cover: polar-bear
-firstSeen: 2017-12-22T05:08:36+02:00
-lastUpdated: 2021-06-13T13:50:25+03:00
+dateModified: 2021-06-13T13:50:25+03:00
 ---
 
 Changes a function that accepts an array into a variadic function.

@@ -1,9 +1,9 @@
 ---
 title: RGB to hex
-tags: string,math
+type: snippet
+tags: [string,math]
 cover: colors-mural
-firstSeen: 2017-12-17T17:55:51+02:00
-lastUpdated: 2020-11-03T22:11:18+02:00
+dateModified: 2020-11-03T22:11:18+02:00
 ---
 
 Converts the values of RGB components to a hexadecimal color code.

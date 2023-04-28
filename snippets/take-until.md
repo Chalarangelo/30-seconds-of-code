@@ -1,9 +1,9 @@
 ---
 title: Remove list elements until condition is met
-tags: array
+type: snippet
+tags: [array]
 cover: purple-sunset-beach
-firstSeen: 2020-11-29T12:04:53+02:00
-lastUpdated: 2020-11-29T12:04:53+02:00
+dateModified: 2020-11-29T12:04:53+02:00
 ---
 
 Removes elements in an array until the passed function returns `true`.

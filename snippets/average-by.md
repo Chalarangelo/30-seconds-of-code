@@ -1,9 +1,9 @@
 ---
 title: Mapped array average
-tags: math
+type: snippet
+tags: [math]
 cover: rock-climbing
-firstSeen: 2018-01-11T12:25:54+02:00
-lastUpdated: 2020-10-21T21:17:45+03:00
+dateModified: 2020-10-21T21:17:45+03:00
 ---
 
 Calculates the average of an array, after mapping each element to a value using the provided function.

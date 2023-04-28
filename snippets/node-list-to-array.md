@@ -1,9 +1,9 @@
 ---
 title: NodeList to array
-tags: browser,array
+type: snippet
+tags: [browser,array]
 cover: colors-mural
-firstSeen: 2018-05-06T18:11:21+03:00
-lastUpdated: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21T21:54:53+03:00
 ---
 
 Converts a `NodeList` to an array.

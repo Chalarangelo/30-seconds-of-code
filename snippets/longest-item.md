@@ -1,9 +1,9 @@
 ---
 title: Longest item in array
-tags: array
+type: snippet
+tags: [array]
 cover: interior-14
-firstSeen: 2018-01-08T21:33:47+02:00
-lastUpdated: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22T20:23:47+03:00
 ---
 
 Takes any number of iterable objects or objects with a `length` property and returns the longest one.

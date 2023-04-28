@@ -1,9 +1,9 @@
 ---
 title: Invoke functions on arguments
-tags: function
+type: snippet
+tags: [function]
 cover: jars-on-shelf
-firstSeen: 2018-01-23T21:02:17+02:00
-lastUpdated: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21T21:54:53+03:00
 ---
 
 Creates a function that invokes each provided function with the arguments it receives and returns the results.

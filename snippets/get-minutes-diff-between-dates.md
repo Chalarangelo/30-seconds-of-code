@@ -1,9 +1,9 @@
 ---
 title: Date difference in minutes
-tags: date
+type: snippet
+tags: [date]
 cover: flower-vase
-firstSeen: 2021-04-24T12:48:49+03:00
-lastUpdated: 2021-04-24T12:48:49+03:00
+dateModified: 2021-04-24T12:48:49+03:00
 ---
 
 Calculates the difference (in minutes) between two dates.

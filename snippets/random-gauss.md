@@ -1,9 +1,10 @@
 ---
 title: Generate Gaussian random numbers
-tags: math,random
+type: snippet
+tags: [math,random]
 cover: chess-pawns
 author: chalarangelo
-firstSeen: 2023-04-03T05:00:00-04:00
+dateModified: 2023-04-03T05:00:00-04:00
 ---
 
 Generates Gaussian (normally distributed) random numbers.

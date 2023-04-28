@@ -1,9 +1,9 @@
 ---
 title: Check if array has duplicates
-tags: array
+type: snippet
+tags: [array]
 cover: umbrellas
-firstSeen: 2020-10-22T20:23:09+03:00
-lastUpdated: 2020-10-22T20:23:09+03:00
+dateModified: 2020-10-22T20:23:09+03:00
 ---
 
 Checks if there are duplicate values in a flat array.

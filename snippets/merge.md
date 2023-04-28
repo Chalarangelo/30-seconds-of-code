@@ -1,9 +1,9 @@
 ---
 title: Merge objects
-tags: object,array
+type: snippet
+tags: [object,array]
 cover: guitar-living-room
-firstSeen: 2018-01-12T14:44:20+02:00
-lastUpdated: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21T21:54:53+03:00
 ---
 
 Creates a new object from the combination of two or more objects.

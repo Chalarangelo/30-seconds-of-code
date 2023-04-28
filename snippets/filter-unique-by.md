@@ -1,9 +1,9 @@
 ---
 title: Filter unique array values based on function
-tags: array
+type: snippet
+tags: [array]
 cover: washed-ashore
-firstSeen: 2020-11-02T19:41:07+02:00
-lastUpdated: 2020-11-02T19:41:07+02:00
+dateModified: 2020-11-02T19:41:07+02:00
 ---
 
 Creates an array with the unique values filtered out, based on a provided comparator function.

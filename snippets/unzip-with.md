@@ -1,9 +1,9 @@
 ---
 title: Ungroup array elements based on function
-tags: array
+type: snippet
+tags: [array]
 cover: coconuts
-firstSeen: 2018-01-24T12:44:16+02:00
-lastUpdated: 2022-01-23T13:18:50+03:00
+dateModified: 2022-01-23T13:18:50+03:00
 ---
 
 Creates an array of elements, ungrouping the elements in an array produced by [zip](/js/s/zip) and applying the provided function.

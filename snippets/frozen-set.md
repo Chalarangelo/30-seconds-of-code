@@ -1,9 +1,9 @@
 ---
 title: Freeze Set object
-tags: array
+type: snippet
+tags: [array]
 cover: frozen-globe
-firstSeen: 2020-10-11T11:52:48+03:00
-lastUpdated: 2020-10-11T11:52:48+03:00
+dateModified: 2020-10-11T11:52:48+03:00
 ---
 
 Creates a frozen `Set` object.

@@ -1,9 +1,9 @@
 ---
 title: Handle user input change
-tags: browser,event
+type: snippet
+tags: [browser,event]
 cover: digital-nomad-12
-firstSeen: 2017-12-29T17:41:53+02:00
-lastUpdated: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21T21:54:53+03:00
 ---
 
 Runs the callback whenever the user input type changes (`mouse` or `touch`).

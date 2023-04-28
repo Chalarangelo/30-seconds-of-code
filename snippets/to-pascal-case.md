@@ -1,8 +1,9 @@
 ---
 title: Pascalcase string
-tags: string,regexp
+type: snippet
+tags: [string,regexp]
 cover: camera-zoom
-firstSeen: 2021-09-08T19:21:13+00:00
+dateModified: 2021-09-08T19:21:13+00:00
 ---
 
 Converts a string to pascal case.

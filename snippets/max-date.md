@@ -1,9 +1,9 @@
 ---
 title: Max date
-tags: date
+type: snippet
+tags: [date]
 cover: interior-15
-firstSeen: 2018-09-29T13:38:20+03:00
-lastUpdated: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21T21:54:53+03:00
 ---
 
 Returns the maximum of the given dates.

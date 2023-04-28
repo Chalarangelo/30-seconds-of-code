@@ -1,9 +1,9 @@
 ---
 title: Hash string into number
-tags: math
+type: snippet
+tags: [math]
 cover: dark-leaves
-firstSeen: 2017-12-27T17:12:34+02:00
-lastUpdated: 2020-10-22T20:24:30+03:00
+dateModified: 2020-10-22T20:24:30+03:00
 ---
 
 Hashes the input string into a whole number.

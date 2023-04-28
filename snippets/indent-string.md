@@ -1,9 +1,9 @@
 ---
 title: Indent string
-tags: string
+type: snippet
+tags: [string]
 cover: clutter
-firstSeen: 2018-09-24T22:14:27+03:00
-lastUpdated: 2020-11-01T20:50:57+02:00
+dateModified: 2020-11-01T20:50:57+02:00
 ---
 
 Indents each line in the provided string.

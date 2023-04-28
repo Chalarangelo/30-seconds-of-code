@@ -1,9 +1,10 @@
 ---
 title: Resolve promise after given amount of time
-tags: function,promise
+type: snippet
+tags: [function,promise]
 author: chalarangelo
 cover: filter-coffee-pot
-firstSeen: 2022-01-08T05:00:00-04:00
+dateModified: 2022-01-08T05:00:00-04:00
 ---
 
 Creates a promise that resolves after a given amount of time to the provided value.

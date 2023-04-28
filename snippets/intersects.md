@@ -1,9 +1,10 @@
 ---
 title: Check if two arrays intersect
-tags: array
+type: snippet
+tags: [array]
 author: chalarangelo
 cover: interior-5
-firstSeen: 2023-02-17T05:00:00-04:00
+dateModified: 2023-02-17T05:00:00-04:00
 ---
 
 Determines if two arrays have a common item.

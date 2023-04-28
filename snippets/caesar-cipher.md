@@ -1,9 +1,9 @@
 ---
 title: Caesar cipher
-tags: algorithm,string
+type: snippet
+tags: [algorithm,string]
 cover: ancient-greek-building
-firstSeen: 2020-12-28T20:10:18+02:00
-lastUpdated: 2020-12-29T12:29:21+02:00
+dateModified: 2020-12-29T12:29:21+02:00
 ---
 
 Encrypts or decrypts a given string using the Caesar cipher.

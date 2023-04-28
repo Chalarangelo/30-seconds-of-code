@@ -1,9 +1,9 @@
 ---
 title: Flatten object
-tags: object,recursion
+type: snippet
+tags: [object,recursion]
 cover: lighthouse
-firstSeen: 2018-02-07T11:30:18+02:00
-lastUpdated: 2020-10-19T18:51:03+03:00
+dateModified: 2020-10-19T18:51:03+03:00
 ---
 
 Flattens an object with the paths for keys.

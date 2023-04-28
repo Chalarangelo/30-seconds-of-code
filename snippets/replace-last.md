@@ -1,10 +1,10 @@
 ---
 title: Replace last occurrence in string
-tags: string,regexp
+type: snippet
+tags: [string,regexp]
 author: chalarangelo
 cover: waves
-firstSeen: 2021-04-22T09:01:22+03:00
-lastUpdated: 2021-04-22T09:01:22+03:00
+dateModified: 2021-04-22T09:01:22+03:00
 ---
 
 Replaces the last occurrence of a pattern in a string.

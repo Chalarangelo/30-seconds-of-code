@@ -1,9 +1,10 @@
 ---
 title: Maximum subarray
-tags: algorithm,math,array
+type: snippet
+tags: [algorithm,math,array]
 author: chalarangelo
 cover: work-hard-computer
-firstSeen: 2022-09-07T05:00:00-04:00
+dateModified: 2022-09-07T05:00:00-04:00
 ---
 
 Finds a contiguous subarray with the largest sum within an array of numbers.

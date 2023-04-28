@@ -1,9 +1,9 @@
 ---
 title: Unique values in array based on function
-tags: array
+type: snippet
+tags: [array]
 cover: sunrise-over-mountains
-firstSeen: 2018-07-18T20:49:07+03:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Finds all unique values of an array, based on a provided comparator function.

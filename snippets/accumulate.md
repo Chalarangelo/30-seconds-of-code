@@ -1,10 +1,10 @@
 ---
 title: Partial sum array
-tags: math
+type: snippet
+tags: [math]
 author: chalarangelo
 cover: river-house-lights
-firstSeen: 2020-05-04T12:20:46+03:00
-lastUpdated: 2022-01-30T13:10:13+02:00
+dateModified: 2022-01-30T13:10:13+02:00
 ---
 
 Creates an array of partial sums.

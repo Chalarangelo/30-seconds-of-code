@@ -1,9 +1,9 @@
 ---
 title: Transform function arguments
-tags: function
+type: snippet
+tags: [function]
 cover: flower-shape-sunset
-firstSeen: 2018-01-28T14:54:16+02:00
-lastUpdated: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21T21:54:53+03:00
 ---
 
 Creates a function that invokes the provided function with its arguments transformed.

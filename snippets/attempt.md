@@ -1,9 +1,9 @@
 ---
 title: Attempt invoking a function
-tags: function
+type: snippet
+tags: [function]
 cover: spanish-resort
-firstSeen: 2018-01-28T14:44:40+02:00
-lastUpdated: 2020-10-18T20:24:28+03:00
+dateModified: 2020-10-18T20:24:28+03:00
 ---
 
 Attempts to invoke a function with the provided arguments, returning either the result or the caught error object.

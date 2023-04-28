@@ -1,9 +1,9 @@
 ---
 title: Number of seconds to ISO format
-tags: date,math,string
+type: snippet
+tags: [date,math,string]
 cover: rocky-mountains
-firstSeen: 2021-05-09T12:44:55+03:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Returns the ISO format of the given number of seconds.

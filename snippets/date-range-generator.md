@@ -1,8 +1,9 @@
 ---
 title: Date range generator
-tags: date,function,generator
+type: snippet
+tags: [date,function,generator]
 cover: portal-timelapse
-firstSeen: 2021-06-21T05:00:00-04:00
+dateModified: 2021-06-21T05:00:00-04:00
 ---
 
 Creates a generator, that generates all dates in the given range using the given step.

@@ -1,10 +1,10 @@
 ---
 title: Find closest anchor
-tags: browser
+type: snippet
+tags: [browser]
 author: chalarangelo
 cover: colorful-lounge
-firstSeen: 2021-04-22T08:45:39+03:00
-lastUpdated: 2021-04-22T08:45:39+03:00
+dateModified: 2021-04-22T08:45:39+03:00
 ---
 
 Finds the anchor node closest to the given `node`, if any.

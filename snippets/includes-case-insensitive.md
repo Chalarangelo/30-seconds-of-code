@@ -1,9 +1,10 @@
 ---
 title: Case-insensitive substring search
-tags: string
+type: snippet
+tags: [string]
 author: chalarangelo
 cover: cup-of-orange
-firstSeen: 2022-07-28T05:00:00-04:00
+dateModified: 2022-07-28T05:00:00-04:00
 ---
 
 Checks if a string contains a substring, case-insensitive.

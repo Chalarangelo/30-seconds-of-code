@@ -1,9 +1,9 @@
 ---
 title: CSV to JSON
-tags: string,object
+type: snippet
+tags: [string,object]
 cover: kettle-laptop
-firstSeen: 2018-06-27T21:14:24+03:00
-lastUpdated: 2022-01-30T12:14:39+02:00
+dateModified: 2022-01-30T12:14:39+02:00
 ---
 
 Converts a comma-separated values (CSV) string to a 2D array of objects.

@@ -1,9 +1,9 @@
 ---
 title: Reverse number
-tags: math,string
+type: snippet
+tags: [math,string]
 cover: walking
-firstSeen: 2020-07-17T16:41:28+03:00
-lastUpdated: 2020-09-18T21:19:23+03:00
+dateModified: 2020-09-18T21:19:23+03:00
 ---
 
 Reverses a number.

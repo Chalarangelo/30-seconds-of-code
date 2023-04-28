@@ -1,9 +1,9 @@
 ---
 title: N min elements
-tags: math
+type: snippet
+tags: [math]
 cover: digital-nomad-8
-firstSeen: 2018-01-03T05:18:29+02:00
-lastUpdated: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21T21:54:53+03:00
 ---
 
 Returns the `n` minimum elements from the provided array.

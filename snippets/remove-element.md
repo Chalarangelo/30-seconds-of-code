@@ -1,10 +1,10 @@
 ---
 title: Remove DOM element
-tags: browser
+type: snippet
+tags: [browser]
 author: chalarangelo
 cover: by-the-lighthouse
-firstSeen: 2021-01-07T00:20:34+02:00
-lastUpdated: 2021-01-07T00:20:34+02:00
+dateModified: 2021-01-07T00:20:34+02:00
 ---
 
 Removes an element from the DOM.

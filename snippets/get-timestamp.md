@@ -1,9 +1,9 @@
 ---
 title: Unix timestamp from date
-tags: date
+type: snippet
+tags: [date]
 cover: interior-14
-firstSeen: 2020-10-08T17:15:56+03:00
-lastUpdated: 2020-10-19T22:49:51+03:00
+dateModified: 2020-10-19T22:49:51+03:00
 ---
 
 Gets the Unix timestamp from a `Date` object.

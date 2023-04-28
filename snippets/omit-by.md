@@ -1,9 +1,9 @@
 ---
 title: Omit matching object keys
-tags: object
+type: snippet
+tags: [object]
 cover: leafy-screens
-firstSeen: 2018-01-19T13:23:45+02:00
-lastUpdated: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21T21:54:53+03:00
 ---
 
 Creates an object composed of the properties the given function returns falsy for.

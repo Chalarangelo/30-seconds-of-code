@@ -1,9 +1,9 @@
 ---
 title: Parse cookie
-tags: browser,string
+type: snippet
+tags: [browser,string]
 cover: three-vases
-firstSeen: 2018-01-13T14:19:21+02:00
-lastUpdated: 2020-10-22T20:24:04+03:00
+dateModified: 2020-10-22T20:24:04+03:00
 ---
 
 Parses an HTTP Cookie header string, returning an object of all cookie name-value pairs.

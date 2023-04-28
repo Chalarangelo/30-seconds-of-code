@@ -1,9 +1,10 @@
 ---
 title: Number to fixed-point notation without trailing zeros
-tags: math,string
+type: snippet
+tags: [math,string]
 author: chalarangelo
 cover: red-succulent
-firstSeen: 2022-05-10T05:00:00-04:00
+dateModified: 2022-05-10T05:00:00-04:00
 ---
 
 Formats a number using fixed-point notation, if it has decimals.

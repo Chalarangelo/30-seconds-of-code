@@ -1,9 +1,9 @@
 ---
 title: Current page protocol
-tags: browser
+type: snippet
+tags: [browser]
 cover: bamboo-lamp
-firstSeen: 2020-10-07T01:40:53+03:00
-lastUpdated: 2020-10-20T11:46:23+03:00
+dateModified: 2020-10-20T11:46:23+03:00
 ---
 
 Gets the protocol being used on the current page.

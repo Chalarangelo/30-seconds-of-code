@@ -1,9 +1,9 @@
 ---
 title: Invert object
-tags: object
+type: snippet
+tags: [object]
 cover: pineapple-on-green
-firstSeen: 2018-01-01T17:33:46+02:00
-lastUpdated: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20T23:02:01+03:00
 ---
 
 Inverts the key-value pairs of an object, without mutating it.

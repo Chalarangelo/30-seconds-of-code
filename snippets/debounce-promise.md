@@ -1,10 +1,10 @@
 ---
 title: Debounce promise
-tags: function,promise
+type: snippet
+tags: [function,promise]
 excerpt: Creates a debounced function that returns a promise.
 cover: ice
-firstSeen: 2020-10-10T21:09:04+03:00
-lastUpdated: 2020-10-19T18:51:03+03:00
+dateModified: 2020-10-19T18:51:03+03:00
 ---
 
 Creates a debounced function that returns a promise, but delays invoking the provided function until at least `ms` milliseconds have elapsed since the last time it was invoked.

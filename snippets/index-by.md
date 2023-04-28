@@ -1,9 +1,10 @@
 ---
 title: Index array based on function
-tags: array,object
+type: snippet
+tags: [array,object]
 author: chalarangelo
 cover: guitar-living-room
-firstSeen: 2021-06-20T05:00:00-04:00
+dateModified: 2021-06-20T05:00:00-04:00
 ---
 
 Creates an object from an array, using a function to map each value to a key.

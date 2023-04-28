@@ -1,9 +1,9 @@
 ---
 title: Date is weekend
-tags: date
+type: snippet
+tags: [date]
 cover: tropical-bike
-firstSeen: 2019-07-19T17:07:02+03:00
-lastUpdated: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20T23:02:01+03:00
 ---
 
 Checks if the given date is a weekend.

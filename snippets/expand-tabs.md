@@ -1,10 +1,10 @@
 ---
 title: Expand tabs into spaces
-tags: string,regexp
+type: snippet
+tags: [string,regexp]
 author: chalarangelo
 cover: houses-rock-sea
-firstSeen: 2020-06-01T17:05:39+03:00
-lastUpdated: 2020-09-15T16:28:04+03:00
+dateModified: 2020-09-15T16:28:04+03:00
 ---
 
 Convert tabs to spaces, where each tab corresponds to `count` spaces.

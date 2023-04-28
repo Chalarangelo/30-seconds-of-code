@@ -1,10 +1,10 @@
 ---
 title: Handle scroll stop
-tags: browser,event
+type: snippet
+tags: [browser,event]
 author: chalarangelo
 cover: flower-pond
-firstSeen: 2021-01-07T00:31:14+02:00
-lastUpdated: 2021-01-07T00:31:14+02:00
+dateModified: 2021-01-07T00:31:14+02:00
 ---
 
 Runs the callback whenever the user has stopped scrolling.

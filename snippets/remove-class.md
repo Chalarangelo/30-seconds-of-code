@@ -1,10 +1,10 @@
 ---
 title: Remove class from HTML element
-tags: browser
+type: snippet
+tags: [browser]
 author: chalarangelo
 cover: bag-waiting
-firstSeen: 2020-12-30T19:21:15+02:00
-lastUpdated: 2020-12-30T19:21:15+02:00
+dateModified: 2020-12-30T19:21:15+02:00
 ---
 
 Removes a class from an HTML element.

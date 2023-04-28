@@ -1,9 +1,10 @@
 ---
 title: Last n elements
-tags: array
+type: snippet
+tags: [array]
 author: chalarangelo
 cover: interior-5
-firstSeen: 2022-07-23T05:00:00-04:00
+dateModified: 2022-07-23T05:00:00-04:00
 ---
 
 Gets the last `n` elements of an array.

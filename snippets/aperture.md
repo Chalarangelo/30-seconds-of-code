@@ -1,10 +1,10 @@
 ---
 title: Consecutive element subarrays
-tags: array
+type: snippet
+tags: [array]
 author: chalarangelo
 cover: camera-zoom
-firstSeen: 2020-05-13T13:25:33+03:00
-lastUpdated: 2020-10-18T20:24:28+03:00
+dateModified: 2020-10-18T20:24:28+03:00
 ---
 
 Creates an array of `n`-tuples of consecutive elements.

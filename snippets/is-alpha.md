@@ -1,9 +1,9 @@
 ---
 title: String is alpha
-tags: string,regexp
+type: snippet
+tags: [string,regexp]
 cover: coffee-phone-tray-3
-firstSeen: 2020-12-31T14:01:42+02:00
-lastUpdated: 2020-12-31T14:01:42+02:00
+dateModified: 2020-12-31T14:01:42+02:00
 ---
 
 Checks if a string contains only alpha characters.

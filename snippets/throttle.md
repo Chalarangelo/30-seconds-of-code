@@ -1,9 +1,9 @@
 ---
 title: Throttle function
-tags: function
+type: snippet
+tags: [function]
 cover: waves-from-above
-firstSeen: 2018-01-28T15:23:01+02:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Creates a throttled function that only invokes the provided function at most once per every `wait` milliseconds

@@ -1,9 +1,9 @@
 ---
 title: Bind all object methods
-tags: object,function
+type: snippet
+tags: [object,function]
 cover: laptop-with-code
-firstSeen: 2018-01-26T14:14:53+02:00
-lastUpdated: 2020-11-03T22:11:18+02:00
+dateModified: 2020-11-03T22:11:18+02:00
 ---
 
 Binds methods of an object to the object itself, overwriting the existing method.

@@ -1,9 +1,9 @@
 ---
 title: Mask a value
-tags: string
+type: snippet
+tags: [string]
 cover: rocky-beach-3
-firstSeen: 2018-01-01T13:02:59+02:00
-lastUpdated: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21T21:54:53+03:00
 ---
 
 Replaces all but the last `num` of characters with the specified mask character.

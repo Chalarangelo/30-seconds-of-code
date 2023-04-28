@@ -1,9 +1,9 @@
 ---
 title: Truncate string at whitespace
-tags: string
+type: snippet
+tags: [string]
 cover: cloudy-mountaintop-2
-firstSeen: 2020-10-19T11:11:16+03:00
-lastUpdated: 2020-10-21T21:17:45+03:00
+dateModified: 2020-10-21T21:17:45+03:00
 ---
 
 Truncates a string up to specified length, respecting whitespace when possible.

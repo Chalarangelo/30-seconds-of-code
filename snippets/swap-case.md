@@ -1,9 +1,9 @@
 ---
 title: Swapcase string
-tags: string
+type: snippet
+tags: [string]
 cover: mountain-lake-2
-firstSeen: 2020-11-15T13:09:03+02:00
-lastUpdated: 2020-11-15T13:09:03+02:00
+dateModified: 2020-11-15T13:09:03+02:00
 ---
 
 Creates a string with uppercase characters converted to lowercase and vice versa.

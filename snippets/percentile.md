@@ -1,9 +1,9 @@
 ---
 title: Percentile of matches
-tags: math
+type: snippet
+tags: [math]
 cover: red-berries
-firstSeen: 2017-12-13T12:50:16+02:00
-lastUpdated: 2020-10-22T20:24:04+03:00
+dateModified: 2020-10-22T20:24:04+03:00
 ---
 
 Calculates the percentage of numbers in the given array that are less or equal to the given value.

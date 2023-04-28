@@ -1,10 +1,10 @@
 ---
 title: Object to pairs
-tags: object,array
+type: snippet
+tags: [object,array]
 author: chalarangelo
 cover: interior-5
-firstSeen: 2017-12-17T17:55:51+02:00
-lastUpdated: 2020-09-15T16:28:04+03:00
+dateModified: 2020-09-15T16:28:04+03:00
 ---
 
 Creates an array of key-value pair arrays from an object.

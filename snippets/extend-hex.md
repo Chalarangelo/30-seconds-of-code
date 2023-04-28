@@ -1,9 +1,9 @@
 ---
 title: Extend hex value
-tags: string
+type: snippet
+tags: [string]
 cover: red-mountain
-firstSeen: 2017-12-17T17:55:51+02:00
-lastUpdated: 2020-09-15T16:28:04+03:00
+dateModified: 2020-09-15T16:28:04+03:00
 ---
 
 Extends a 3-digit color code to a 6-digit color code.

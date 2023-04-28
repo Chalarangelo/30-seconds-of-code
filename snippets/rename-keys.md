@@ -1,9 +1,9 @@
 ---
 title: Rename object keys
-tags: object
+type: snippet
+tags: [object]
 cover: fallen-leaves
-firstSeen: 2018-04-10T20:22:39+03:00
-lastUpdated: 2020-10-22T20:24:30+03:00
+dateModified: 2020-10-22T20:24:30+03:00
 ---
 
 Replaces the names of multiple object keys with the values provided.

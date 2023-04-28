@@ -1,9 +1,9 @@
 ---
 title: Find last matching value
-tags: array
+type: snippet
+tags: [array]
 cover: misty-mountains
-firstSeen: 2018-01-11T13:51:58+02:00
-lastUpdated: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22T20:23:47+03:00
 ---
 
 Finds the last element for which the provided function returns a truthy value.

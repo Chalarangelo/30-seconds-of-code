@@ -1,9 +1,9 @@
 ---
 title: Generate UUID (browser)
-tags: browser,random
+type: snippet
+tags: [browser,random]
 cover: mountain-lake-cottage
-firstSeen: 2017-12-29T09:47:10+02:00
-lastUpdated: 2020-10-22T20:24:44+03:00
+dateModified: 2020-10-22T20:24:44+03:00
 ---
 
 Generates a UUID in a browser.

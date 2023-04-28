@@ -1,9 +1,9 @@
 ---
 title: Remove list elements from the end while condition is met
-tags: array
+type: snippet
+tags: [array]
 cover: beach-pineapple
-firstSeen: 2018-01-26T12:55:31+02:00
-lastUpdated: 2020-11-29T12:04:53+02:00
+dateModified: 2020-11-29T12:04:53+02:00
 ---
 
 Removes elements from the end of an array until the passed function returns `false`.

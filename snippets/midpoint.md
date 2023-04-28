@@ -1,9 +1,9 @@
 ---
 title: Midpoint
-tags: math
+type: snippet
+tags: [math]
 cover: curve
-firstSeen: 2018-11-15T17:49:04+02:00
-lastUpdated: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21T21:54:53+03:00
 ---
 
 Calculates the midpoint between two pairs of (x,y) points.

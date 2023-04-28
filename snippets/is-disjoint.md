@@ -1,9 +1,9 @@
 ---
 title: Disjointed iterables
-tags: array
+type: snippet
+tags: [array]
 cover: interior-9
-firstSeen: 2020-10-11T11:53:01+03:00
-lastUpdated: 2020-10-11T11:53:01+03:00
+dateModified: 2020-10-11T11:53:01+03:00
 ---
 
 Checks if the two iterables are disjointed (have no common values).

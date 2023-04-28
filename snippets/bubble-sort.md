@@ -1,9 +1,9 @@
 ---
 title: Bubble sort
-tags: algorithm,array
+type: snippet
+tags: [algorithm,array]
 cover: budapest-palace
-firstSeen: 2020-12-27T21:20:31+02:00
-lastUpdated: 2020-12-29T12:18:58+02:00
+dateModified: 2020-12-29T12:18:58+02:00
 ---
 
 Sorts an array of numbers, using the bubble sort algorithm.

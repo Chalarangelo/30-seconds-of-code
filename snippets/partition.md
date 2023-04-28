@@ -1,9 +1,9 @@
 ---
 title: Partition array in two
-tags: array,object
+type: snippet
+tags: [array,object]
 cover: sunflowers
-firstSeen: 2018-01-08T16:58:23+02:00
-lastUpdated: 2020-11-03T21:46:13+02:00
+dateModified: 2020-11-03T21:46:13+02:00
 ---
 
 Groups the elements into two arrays, depending on the provided function's truthiness for each element.

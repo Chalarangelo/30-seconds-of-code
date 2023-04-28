@@ -1,9 +1,9 @@
 ---
 title: Date from Unix timestamp
-tags: date
+type: snippet
+tags: [date]
 cover: number-2
-firstSeen: 2020-10-15T21:57:17+03:00
-lastUpdated: 2020-10-15T21:57:17+03:00
+dateModified: 2020-10-15T21:57:17+03:00
 ---
 
 Creates a `Date` object from a Unix timestamp.

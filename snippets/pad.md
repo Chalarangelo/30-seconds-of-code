@@ -1,9 +1,9 @@
 ---
 title: Pad string
-tags: string
+type: snippet
+tags: [string]
 cover: blue-lake
-firstSeen: 2018-02-24T11:51:27+02:00
-lastUpdated: 2020-10-22T20:24:04+03:00
+dateModified: 2020-10-22T20:24:04+03:00
 ---
 
 Pads a string on both sides with the specified character, if it's shorter than the specified `length`.

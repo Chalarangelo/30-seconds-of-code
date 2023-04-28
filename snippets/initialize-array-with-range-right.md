@@ -1,9 +1,9 @@
 ---
 title: Initialize array with reversed range
-tags: array
+type: snippet
+tags: [array]
 cover: interior-4
-firstSeen: 2018-01-16T17:09:39+02:00
-lastUpdated: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20T23:02:01+03:00
 ---
 
 Initializes an array containing the numbers in the specified range (in reverse) where `start` and `end` are inclusive with their common difference `step`.

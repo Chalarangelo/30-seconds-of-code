@@ -1,10 +1,10 @@
 ---
 title: Check if arrays have same contents
-tags: array
+type: snippet
+tags: [array]
 author: chalarangelo
 cover: interior-15
-firstSeen: 2020-01-05T21:40:39+02:00
-lastUpdated: 2020-10-19T22:49:51+03:00
+dateModified: 2020-10-19T22:49:51+03:00
 ---
 
 Checks if two arrays contain the same elements regardless of order.

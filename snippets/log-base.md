@@ -1,9 +1,9 @@
 ---
 title: Logarithm in specific base
-tags: math
+type: snippet
+tags: [math]
 cover: yellow-white-mug-2
-firstSeen: 2020-10-07T19:14:30+03:00
-lastUpdated: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22T20:23:47+03:00
 ---
 
 Calculates the logarithm of the given number in the given base.

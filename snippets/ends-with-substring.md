@@ -1,10 +1,11 @@
 ---
 title: String ends with substring
+type: snippet
 shortTitle: Ends with substring
-tags: string
+tags: [string]
 cover: boutique-home-office-4
 author: chalarangelo
-firstSeen: 2022-08-01T05:00:00-04:00
+dateModified: 2022-08-01T05:00:00-04:00
 ---
 
 Checks if a given string ends with a substring of another string.

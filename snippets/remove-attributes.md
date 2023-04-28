@@ -1,9 +1,10 @@
 ---
 title: Remove attributes
-tags: browser
+type: snippet
+tags: [browser]
 cover: new-york
 author: chalarangelo
-firstSeen: 2022-07-20T05:00:00-04:00
+dateModified: 2022-07-20T05:00:00-04:00
 ---
 
 Removes all attributes from an HTML element.

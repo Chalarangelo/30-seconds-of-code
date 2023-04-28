@@ -1,9 +1,9 @@
 ---
 title: Day of year
-tags: date
+type: snippet
+tags: [date]
 cover: interior-3
-firstSeen: 2018-09-29T13:22:20+03:00
-lastUpdated: 2020-10-19T18:51:03+03:00
+dateModified: 2020-10-19T18:51:03+03:00
 ---
 
 Gets the day of the year (number in the range 1-366) from a `Date` object.

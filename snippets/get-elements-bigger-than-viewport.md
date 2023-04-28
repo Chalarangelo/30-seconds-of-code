@@ -1,9 +1,9 @@
 ---
 title: Get elements bigger than viewport
-tags: browser
+type: snippet
+tags: [browser]
 cover: case-study
-firstSeen: 2020-10-06T17:41:22+03:00
-lastUpdated: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22T20:23:47+03:00
 ---
 
 Returns an array of HTML elements whose width is larger than that of the viewport's.

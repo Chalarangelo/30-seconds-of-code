@@ -1,9 +1,10 @@
 ---
 title: Unwind object
-tags: object
+type: snippet
+tags: [object]
 author: chalarangelo
 cover: waves-from-above
-firstSeen: 2022-04-18T05:00:00-04:00
+dateModified: 2022-04-18T05:00:00-04:00
 ---
 
 Produces an array of objects from an object and one of its array-valued properties.

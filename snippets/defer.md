@@ -1,9 +1,9 @@
 ---
 title: Defer function invocation
-tags: function
+type: snippet
+tags: [function]
 cover: cave-view
-firstSeen: 2018-01-01T23:40:31+02:00
-lastUpdated: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22T20:23:47+03:00
 ---
 
 Defers invoking a function until the current call stack has cleared.

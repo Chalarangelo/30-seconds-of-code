@@ -1,9 +1,10 @@
 ---
 title: Number has decimal digits
-tags: math
+type: snippet
+tags: [math]
 author: chalarangelo
 cover: man-cup-laptop
-firstSeen: 2022-05-13T05:00:00-04:00
+dateModified: 2022-05-13T05:00:00-04:00
 ---
 
 Checks if a number has any decimals digits

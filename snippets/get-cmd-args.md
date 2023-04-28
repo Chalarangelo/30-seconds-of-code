@@ -1,9 +1,10 @@
 ---
 title: Command-line arguments
-tags: node
+type: snippet
+tags: [node]
 author: chalarangelo
 cover: terminal
-firstSeen: 2022-04-26T05:00:00-04:00
+dateModified: 2022-04-26T05:00:00-04:00
 ---
 
 Gets the command-line arguments passed to a Node.js script.

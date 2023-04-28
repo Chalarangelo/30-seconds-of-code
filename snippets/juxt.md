@@ -1,9 +1,9 @@
 ---
 title: Juxtapose functions
-tags: function
+type: snippet
+tags: [function]
 cover: colorful-plastic
-firstSeen: 2020-05-20T19:58:39+03:00
-lastUpdated: 2020-10-20T23:29:39+03:00
+dateModified: 2020-10-20T23:29:39+03:00
 ---
 
 Takes several functions as argument and returns a function that is the juxtaposition of those functions.

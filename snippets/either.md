@@ -1,9 +1,9 @@
 ---
 title: Logical or for functions
-tags: function,logic
+type: snippet
+tags: [function,logic]
 cover: man-red-sunset
-firstSeen: 2020-05-13T11:35:46+03:00
-lastUpdated: 2020-10-19T18:51:03+03:00
+dateModified: 2020-10-19T18:51:03+03:00
 ---
 
 Checks if at least one function returns `true` for a given set of arguments.

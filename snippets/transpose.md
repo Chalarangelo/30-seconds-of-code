@@ -1,9 +1,10 @@
 ---
 title: Transpose matrix
-tags: array
+type: snippet
+tags: [array]
 author: chalarangelo
 cover: painters-desk
-firstSeen: 2022-04-20T05:00:00-04:00
+dateModified: 2022-04-20T05:00:00-04:00
 ---
 
 Transposes a two-dimensional array.

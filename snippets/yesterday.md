@@ -1,9 +1,9 @@
 ---
 title: Date of yesterday
-tags: date
+type: snippet
+tags: [date]
 cover: travel-mug-2
-firstSeen: 2019-07-19T10:57:21+03:00
-lastUpdated: 2020-10-22T20:24:44+03:00
+dateModified: 2020-10-22T20:24:44+03:00
 ---
 
 Results in a string representation of yesterday's date.

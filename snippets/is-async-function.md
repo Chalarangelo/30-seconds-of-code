@@ -1,10 +1,10 @@
 ---
 title: Value is async function
-tags: type,function
+type: snippet
+tags: [type,function]
 author: chalarangelo
 cover: interior-12
-firstSeen: 2020-08-07T15:41:55+03:00
-lastUpdated: 2020-10-20T11:21:07+03:00
+dateModified: 2020-10-20T11:21:07+03:00
 ---
 
 Checks if the given argument is an `async` function.

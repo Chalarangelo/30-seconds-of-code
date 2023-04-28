@@ -1,9 +1,10 @@
 ---
 title: Sentencecase string
-tags: string,regexp
+type: snippet
+tags: [string,regexp]
 cover: sofia-tram
 author: chalarangelo
-firstSeen: 2023-03-27T05:00:00-04:00
+dateModified: 2023-03-27T05:00:00-04:00
 ---
 
 Converts a string to sentence case.

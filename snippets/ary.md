@@ -1,9 +1,9 @@
 ---
 title: Function arity
-tags: function
+type: snippet
+tags: [function]
 cover: trippy-chemicals
-firstSeen: 2018-01-24T13:59:54+02:00
-lastUpdated: 2020-10-18T20:24:28+03:00
+dateModified: 2020-10-18T20:24:28+03:00
 ---
 
 Creates a function that accepts up to `n` arguments, ignoring any additional arguments.

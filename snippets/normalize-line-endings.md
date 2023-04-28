@@ -1,10 +1,10 @@
 ---
 title: Normalize line endings
-tags: string,regexp
+type: snippet
+tags: [string,regexp]
 author: chalarangelo
 cover: red-light
-firstSeen: 2020-05-04T12:33:13+03:00
-lastUpdated: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21T21:54:53+03:00
 ---
 
 Normalizes line endings in a string.

@@ -1,9 +1,9 @@
 ---
 title: Partition array
-tags: array,object
+type: snippet
+tags: [array,object]
 cover: people-on-beach
-firstSeen: 2020-05-20T17:48:13+03:00
-lastUpdated: 2020-10-22T20:24:04+03:00
+dateModified: 2020-10-22T20:24:04+03:00
 ---
 
 Applies `fn` to each value in `arr`, splitting it each time the provided function returns a new value.

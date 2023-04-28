@@ -1,9 +1,9 @@
 ---
 title: Value is plain object
-tags: type,object
+type: snippet
+tags: [type,object]
 cover: yellow-white-mug-1
-firstSeen: 2018-01-19T13:59:12+02:00
-lastUpdated: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20T23:02:01+03:00
 ---
 
 Checks if the provided value is an object created by the Object constructor.

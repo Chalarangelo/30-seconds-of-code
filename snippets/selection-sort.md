@@ -1,10 +1,10 @@
 ---
 title: Selection sort
-tags: algorithm,array
+type: snippet
+tags: [algorithm,array]
 author: chalarangelo
 cover: violin
-firstSeen: 2020-12-27T22:22:44+02:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Sorts an array of numbers, using the selection sort algorithm.

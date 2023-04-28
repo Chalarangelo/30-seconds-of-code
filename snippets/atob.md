@@ -1,9 +1,9 @@
 ---
 title: Decode Base64 encoded string
-tags: node,string
+type: snippet
+tags: [node,string]
 cover: thread
-firstSeen: 2018-01-17T21:43:21+02:00
-lastUpdated: 2020-09-15T16:28:04+03:00
+dateModified: 2020-09-15T16:28:04+03:00
 ---
 
 Decodes a string of data which has been encoded using base-64 encoding.

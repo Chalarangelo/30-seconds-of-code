@@ -1,9 +1,9 @@
 ---
 title: Filter non-unique array values
-tags: array
+type: snippet
+tags: [array]
 cover: digital-nomad-10
-firstSeen: 2017-12-17T17:55:51+02:00
-lastUpdated: 2020-11-02T19:40:45+02:00
+dateModified: 2020-11-02T19:40:45+02:00
 ---
 
 Creates an array with the non-unique values filtered out.

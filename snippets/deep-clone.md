@@ -1,9 +1,9 @@
 ---
 title: Deep clone object
-tags: object,recursion
+type: snippet
+tags: [object,recursion]
 cover: neon-desk-2
-firstSeen: 2018-01-23T20:48:46+02:00
-lastUpdated: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22T20:23:47+03:00
 ---
 
 Creates a deep clone of an object.

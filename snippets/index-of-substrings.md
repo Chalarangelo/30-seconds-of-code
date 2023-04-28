@@ -1,10 +1,10 @@
 ---
 title: Index of substrings
-tags: string,algorithm,generator
+type: snippet
+tags: [string,algorithm,generator]
 author: chalarangelo
 cover: violin
-firstSeen: 2020-12-31T13:58:51+02:00
-lastUpdated: 2020-12-31T13:58:51+02:00
+dateModified: 2020-12-31T13:58:51+02:00
 ---
 
 Finds all the indexes of a substring in a given string.
