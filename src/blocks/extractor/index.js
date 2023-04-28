@@ -269,7 +269,7 @@ export class Extractor {
               title,
               shortTitle = title,
               tags: rawTags,
-              type: rawType,
+              type = 'snippet',
               excerpt,
               cover,
               author,
