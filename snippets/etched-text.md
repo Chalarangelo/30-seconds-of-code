@@ -1,9 +1,9 @@
 ---
 title: Etched text
-tags: visual
+type: snippet
+tags: [visual]
 cover: memories-of-pineapple-2
-firstSeen: 2018-02-25T15:14:39+02:00
-lastUpdated: 2020-12-30T15:37:37+02:00
+dateModified: 2020-12-30T15:37:37+02:00
 ---
 
 Creates an effect where text appears to be "etched" or engraved into the background.

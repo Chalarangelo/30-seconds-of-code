@@ -1,9 +1,9 @@
 ---
 title: Offscreen
-tags: layout,visual
+type: snippet
+tags: [layout,visual]
 cover: succulent-2
-firstSeen: 2018-03-30T18:50:31+03:00
-lastUpdated: 2021-10-11T18:44:51+03:00
+dateModified: 2021-10-11T18:44:51+03:00
 ---
 
 Hides an element completely (visually and positionally) in the DOM while still allowing it to be accessible.

@@ -1,9 +1,9 @@
 ---
 title: Border with top triangle
-tags: visual
+type: snippet
+tags: [visual]
 cover: greek-coffee
-firstSeen: 2019-01-18T12:18:43+02:00
-lastUpdated: 2021-01-07T23:52:15+02:00
+dateModified: 2021-01-07T23:52:15+02:00
 ---
 
 Creates a content container with a triangle at the top.

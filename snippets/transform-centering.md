@@ -1,9 +1,9 @@
 ---
 title: Transform centering
-tags: layout
+type: snippet
+tags: [layout]
 cover: flower-camera
-firstSeen: 2018-03-30T17:59:28+03:00
-lastUpdated: 2020-12-30T15:37:37+02:00
+dateModified: 2020-12-30T15:37:37+02:00
 ---
 
 Vertically and horizontally centers a child element within its parent element using CSS transforms.

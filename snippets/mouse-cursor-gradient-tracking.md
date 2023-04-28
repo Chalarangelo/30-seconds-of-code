@@ -1,9 +1,9 @@
 ---
 title: Mouse cursor gradient tracking
-tags: visual,interactivity
+type: snippet
+tags: [visual,interactivity]
 cover: tram-car
-firstSeen: 2018-02-25T15:14:39+02:00
-lastUpdated: 2021-01-07T23:52:15+02:00
+dateModified: 2021-01-07T23:52:15+02:00
 ---
 
 A hover effect where the gradient follows the mouse cursor.

@@ -1,9 +1,10 @@
 ---
 title: Shifting Card
-tags: animation
+type: snippet
+tags: [animation]
 author: chalarangelo
 cover: clouds-n-mountains
-firstSeen: 2022-12-14T05:00:00-04:00
+dateModified: 2022-12-14T05:00:00-04:00
 ---
 
 Creates a card that shifts on hover.

@@ -1,9 +1,9 @@
 ---
 title: Zoom in zoom out animation
-tags: animation
+type: snippet
+tags: [animation]
 cover: travel-mug-2
-firstSeen: 2020-10-05T21:42:14+03:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Creates a zoom in zoom out animation.

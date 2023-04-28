@@ -1,10 +1,11 @@
 ---
 title: Fallback for images that fail to load
+type: snippet
 shortTitle: Broken image fallback
-tags: visual
+tags: [visual]
 author: chalarangelo
 cover: building-facade
-firstSeen: 2022-11-04T05:00:00-04:00
+dateModified: 2022-11-04T05:00:00-04:00
 ---
 
 Displays an error message when an image fails to load.

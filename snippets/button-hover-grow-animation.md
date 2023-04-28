@@ -1,10 +1,10 @@
 ---
 title: Button grow animation
-tags: animation
+type: snippet
+tags: [animation]
 author: chalarangelo
 cover: white-laptop
-firstSeen: 2021-05-24T15:28:52+03:00
-lastUpdated: 2021-05-24T15:28:52+03:00
+dateModified: 2021-05-24T15:28:52+03:00
 ---
 
 Creates a grow animation on hover.

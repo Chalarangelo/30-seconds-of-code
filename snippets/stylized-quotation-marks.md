@@ -1,10 +1,10 @@
 ---
 title: Stylized quotation marks
-tags: visual
+type: snippet
+tags: [visual]
 author: chalarangelo
 cover: coffee-phone-tray
-firstSeen: 2021-05-16T19:53:02+03:00
-lastUpdated: 2021-05-16T19:53:02+03:00
+dateModified: 2021-05-16T19:53:02+03:00
 ---
 
 Customizes the style of inline quotation marks.

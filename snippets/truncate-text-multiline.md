@@ -1,9 +1,9 @@
 ---
 title: Truncate multiline text
-tags: layout
+type: snippet
+tags: [layout]
 cover: blue-computer
-firstSeen: 2019-01-17T07:42:44+02:00
-lastUpdated: 2021-01-07T23:52:15+02:00
+dateModified: 2021-01-07T23:52:15+02:00
 ---
 
 Truncates text that is longer than one line.

@@ -1,9 +1,10 @@
 ---
 title: Squiggle link hover effect
-tags: animation,visual
+type: snippet
+tags: [animation,visual]
 author: chalarangelo
 cover: dreamy-flowers
-firstSeen: 2023-01-10T05:00:00-04:00
+dateModified: 2023-01-10T05:00:00-04:00
 ---
 
 Creates a squiggle effect when hovering over a link.

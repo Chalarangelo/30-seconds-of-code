@@ -1,10 +1,10 @@
 ---
 title: Button shrink animation
-tags: animation
+type: snippet
+tags: [animation]
 author: chalarangelo
 cover: clay-pot-horizon
-firstSeen: 2021-05-24T15:28:52+03:00
-lastUpdated: 2021-05-24T15:28:52+03:00
+dateModified: 2021-05-24T15:28:52+03:00
 ---
 
 Creates a shrink animation on hover.

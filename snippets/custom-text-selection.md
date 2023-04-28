@@ -1,9 +1,9 @@
 ---
 title: Custom text selection
-tags: visual
+type: snippet
+tags: [visual]
 cover: digital-nomad
-firstSeen: 2018-02-25T15:14:39+02:00
-lastUpdated: 2020-12-30T15:37:37+02:00
+dateModified: 2020-12-30T15:37:37+02:00
 ---
 
 Changes the styling of text selection.

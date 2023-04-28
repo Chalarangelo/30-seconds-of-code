@@ -1,9 +1,9 @@
 ---
 title: Navigation list item hover and focus effect
-tags: visual
+type: snippet
+tags: [visual]
 cover: cloudy-rock-formation
-firstSeen: 2019-09-19T22:48:57+03:00
-lastUpdated: 2021-10-11T18:44:51+03:00
+dateModified: 2021-10-11T18:44:51+03:00
 ---
 
 Creates a custom hover and focus effect for navigation items, using CSS transformations.

@@ -1,9 +1,9 @@
 ---
 title: Image rotate on hover
-tags: animation,visual
+type: snippet
+tags: [animation,visual]
 cover: succulent-1
-firstSeen: 2020-04-20T18:36:11+03:00
-lastUpdated: 2021-10-11T18:44:51+03:00
+dateModified: 2021-10-11T18:44:51+03:00
 ---
 
 Creates a rotate effect for the image on hover.

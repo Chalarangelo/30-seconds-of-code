@@ -1,9 +1,9 @@
 ---
 title: Button fill animation
-tags: animation
+type: snippet
+tags: [animation]
 cover: beach-pineapple
-firstSeen: 2020-10-08T20:48:11+03:00
-lastUpdated: 2021-04-02T21:34:43+03:00
+dateModified: 2021-04-02T21:34:43+03:00
 ---
 
 Creates a fill animation on hover.

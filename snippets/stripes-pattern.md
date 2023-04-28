@@ -1,9 +1,9 @@
 ---
 title: Stripes background pattern
-tags: visual
+type: snippet
+tags: [visual]
 cover: jars-on-shelf
-firstSeen: 2021-01-11T09:51:43+02:00
-lastUpdated: 2021-01-11T09:51:43+02:00
+dateModified: 2021-01-11T09:51:43+02:00
 ---
 
 Creates a stripes background pattern.

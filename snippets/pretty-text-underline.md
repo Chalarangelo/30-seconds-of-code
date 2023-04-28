@@ -1,9 +1,9 @@
 ---
 title: Pretty text underline
-tags: visual
+type: snippet
+tags: [visual]
 cover: flower-portrait-6
-firstSeen: 2018-02-25T15:14:39+02:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Provides a nicer alternative to `text-decoration: underline` where descenders do not clip the underline.

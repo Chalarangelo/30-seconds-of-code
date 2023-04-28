@@ -1,9 +1,9 @@
 ---
 title: Fullscreen
-tags: visual
+type: snippet
+tags: [visual]
 cover: flower-portrait-3
-firstSeen: 2019-01-12T13:08:40+02:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Applies styles to an element when in fullscreen mode.

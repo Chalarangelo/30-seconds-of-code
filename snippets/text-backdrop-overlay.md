@@ -1,10 +1,10 @@
 ---
 title: Image text overlay
-tags: visual
+type: snippet
+tags: [visual]
 author: chalarangelo
 cover: mountain-lake-cottage
-firstSeen: 2020-08-18T15:07:32+03:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Displays a text on top of an image using an overlay.

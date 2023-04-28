@@ -1,9 +1,9 @@
 ---
 title: Display table centering
-tags: layout
+type: snippet
+tags: [layout]
 cover: malibu
-firstSeen: 2018-03-30T01:15:54+03:00
-lastUpdated: 2020-12-30T15:37:37+02:00
+dateModified: 2020-12-30T15:37:37+02:00
 ---
 
 Vertically and horizontally centers a child element within its parent element, using `display: table`.

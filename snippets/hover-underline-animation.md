@@ -1,9 +1,9 @@
 ---
 title: Hover underline animation
-tags: animation
+type: snippet
+tags: [animation]
 cover: coffee-phone-tray-2
-firstSeen: 2018-02-28T13:19:22+02:00
-lastUpdated: 2021-10-11T18:44:51+03:00
+dateModified: 2021-10-11T18:44:51+03:00
 ---
 
 Creates an animated underline effect when the user hovers over the text.

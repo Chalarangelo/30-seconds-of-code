@@ -1,9 +1,9 @@
 ---
 title: Drop cap
-tags: visual
+type: snippet
+tags: [visual]
 cover: bamboo-lamp
-firstSeen: 2018-10-13T07:47:30+03:00
-lastUpdated: 2020-12-30T15:37:37+02:00
+dateModified: 2020-12-30T15:37:37+02:00
 ---
 
 Makes the first letter of the first paragraph bigger than the rest of the text.

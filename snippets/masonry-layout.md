@@ -1,9 +1,9 @@
 ---
 title: Masonry Layout
-tags: layout
+type: snippet
+tags: [layout]
 cover: interior-2
-firstSeen: 2019-12-11T02:19:05+02:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Creates a masonry-style layout that is especially useful when working with images.

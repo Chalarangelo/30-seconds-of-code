@@ -1,9 +1,9 @@
 ---
 title: Evenly distributed children
-tags: layout
+type: snippet
+tags: [layout]
 cover: little-bird
-firstSeen: 2018-02-28T13:47:02+02:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Evenly distributes child elements within a parent element.

@@ -1,10 +1,10 @@
 ---
 title: Perspective transform on hover
-tags: animation
+type: snippet
+tags: [animation]
 author: chalarangelo
 cover: tropical-bike
-firstSeen: 2021-05-17T13:58:04+03:00
-lastUpdated: 2021-05-17T13:58:04+03:00
+dateModified: 2021-05-17T13:58:04+03:00
 ---
 
 Applies a perspective transform with a hover animation to an element.

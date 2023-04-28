@@ -1,9 +1,10 @@
 ---
 title: Hide scroll bars
-tags: visual
+type: snippet
+tags: [visual]
 author: chalarangelo
 cover: by-the-lighthouse
-firstSeen: 2022-05-13T05:00:00-04:00
+dateModified: 2022-05-13T05:00:00-04:00
 ---
 
 Hides scrollbars on an element, while still allowing it to be scrollable.

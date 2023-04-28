@@ -1,9 +1,9 @@
 ---
 title: Triangle
-tags: visual
+type: snippet
+tags: [visual]
 cover: yellow-white-mug-1
-firstSeen: 2018-02-25T15:14:39+02:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Creates a triangular shape with pure CSS.

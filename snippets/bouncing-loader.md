@@ -1,9 +1,9 @@
 ---
 title: Bouncing loader
-tags: animation
+type: snippet
+tags: [animation]
 cover: digital-nomad-12
-firstSeen: 2018-03-04T06:24:22+02:00
-lastUpdated: 2021-10-11T18:44:51+03:00
+dateModified: 2021-10-11T18:44:51+03:00
 ---
 
 Creates a bouncing loader animation.

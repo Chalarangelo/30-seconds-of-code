@@ -1,9 +1,9 @@
 ---
 title: Focus Within
-tags: visual,interactivity
+type: snippet
+tags: [visual,interactivity]
 cover: boats
-firstSeen: 2018-10-23T03:58:13+03:00
-lastUpdated: 2020-12-30T15:37:37+02:00
+dateModified: 2020-12-30T15:37:37+02:00
 ---
 
 Changes the appearance of a form if any of its children are focused.
