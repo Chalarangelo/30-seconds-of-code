@@ -3,7 +3,7 @@ import { TextParser } from 'blocks/extractor/textParser';
 jest.mock('fs/promises', () => ({
   readFile: jest.fn(() =>
     Promise.resolve(
-      '---\ntitle: Snippet\ntags: array,object\nfirstSeen: 2017-12-22T21:54:30+02:00\nlastUpdated: 2017-12-22T21:54:30+02:00\n---\n\nThis is some text.\n'
+      '---\ntitle: Snippet\ntags: [array,object]\ndateModified: 2017-12-22T21:54:30+02:00\n---\n\nThis is some text.\n'
     )
   ),
   readdir: jest.fn(() => Promise.resolve(['any.md'])),
@@ -20,8 +20,7 @@ describe('TextParser', () => {
               'fileName',
               'tags',
               'title',
-              'firstSeen',
-              'lastUpdated',
+              'dateModified',
               'author',
             ].sort()
           );

@@ -3,7 +3,6 @@
 export const repo30blog = {
   name: '30 seconds Blog',
   repoUrl: 'https://github.com/30-seconds/30-seconds-blog',
-  snippetPath: 'blog_posts',
   slug: 'articles',
   isBlog: true,
   featured: true,
@@ -21,7 +20,6 @@ export const repo30blog = {
 export const repo30code = {
   name: '30 seconds of code',
   repoUrl: 'https://github.com/30-seconds/30-seconds-of-code',
-  snippetPath: 'snippets',
   slug: 'js',
   featured: true,
   splash: 'laptop-plant.png',
@@ -38,7 +36,6 @@ export const repo30code = {
 export const repo30css = {
   name: '30 seconds of CSS',
   repoUrl: 'https://github.com/30-seconds/30-seconds-of-css',
-  snippetPath: 'snippets',
   slug: 'css',
   featured: true,
   splash: 'camera.png',
@@ -55,7 +52,6 @@ export const repo30css = {
 export const repo30react = {
   name: '30 seconds of React',
   repoUrl: 'https://github.com/30-seconds/30-seconds-of-react',
-  snippetPath: 'snippets',
   slug: 'react',
   featured: true,
   splash: 'succulent-cluster.png',
@@ -93,7 +89,7 @@ export const dynamicCollection = {
   slug: 'c/tips',
   name: 'Tips & Tricks',
   featured: true,
-  typeMatcher: 'blog.tip',
+  typeMatcher: 'tip',
   splash: 'laptop-plant.png',
   description:
     'Finding ways to improve and optimize your code takes a lot of time, research and energy. Level up your coding skills one step at a time with this collection of quick tips and tricks.',
@@ -119,10 +115,9 @@ export const blogSnippets = [
     title: 'React rendering basics',
     shortTitle: 'React rendering basics',
     tags: ['react', 'render'],
-    firstSeen: '2020-06-16T17:41:02.000Z',
-    lastUpdated: '2021-06-12T16:30:41.000Z',
+    dateModified: '2021-06-12T16:30:41.000Z',
     listed: true,
-    type: 'blog.story',
+    type: 'story',
     fullText:
       "#### React rendering\n\n- React rendering basics (this blog post)\n- [React rendering optimization](/blog/s/react-rendering-optimization)\n- [React rendering state](/blog/s/react-rendering-state)\n\n\n### Rendering introduction\n\n**Rendering** is the process during which React moves down the component tree starting at the root, looking for all the components flagged for update, asking them to describe their desired UI structure based on the current combination of `props` and `state`. For each flagged component, React will call its `render()` method (for class components) or `FunctionComponent()` (for function components), and save the output produced after converting the JSX result into a plain JS object, using `React.createElement()`.\n\nAfter collecting the render output from the entire component tree, React will diff the new tree (the **virtual DOM**) with the current DOM tree and collect the list of changes that need to be made to the DOM to produce the desired UI structure. After this process, known as **reconciliation**, React applies all the calculated changes to the DOM.\n\n### Render and commit phases\n\nConceptually, this work is divided into two phases:\n\n- **Render phase**: rendering components, calculating changes\n- **Commit phase**: applying the changes to the DOM\n\nAfter the **commit phase** is complete, React will run `componentDidMount` and `componentDidUpdate` lifecycle methods, as well as `useLayoutEffect` and, after a short timeout, `useEffect` hooks.\n\nTwo key takeaways here are the following:\n\n- Rendering is not the same as updating the DOM\n- A component may be rendered without any visible changes\n\n### Rendering reasons\n\nAfter the initial render has completed, there are a few different things that will cause a re-render:\n\n- `this.setState()` (class components)\n- `this.forceUpdate()` (class components)\n- `useState()` setters (function components)\n- `useReducer()` dispatches (function components)\n- `ReactDOM.render()` again (on the root component)\n\n### Rendering behavior\n\nReact's default behavior is to **recursively render all child components inside of it when a parent component is rendered**. This means that it does not care if a component's `props` have changed - as long as the parent component rendered, its children will render unconditionally.\n\nTo put this another way, calling `setState()` in the root component without any other changes, will cause React to re-render every single component in the component tree. Most likely, most of the components will return the exact same render output as the last render, meaning React will not have to make any changes to the DOM, but the rendering and diffing calculations will be performed regardless, taking time and effort.\n\n[Continue on React rendering optimization](/blog/s/react-rendering-optimization)\n",
     shortText:
@@ -143,10 +138,9 @@ export const blogSnippets = [
     title: 'React rendering optimization',
     shortTitle: 'React rendering optimization',
     tags: ['react', 'render'],
-    firstSeen: '2020-06-16T17:41:02.000Z',
-    lastUpdated: '2021-06-12T16:30:41.000Z',
+    dateModified: '2021-06-12T16:30:41.000Z',
     listed: true,
-    type: 'blog.story',
+    type: 'story',
     fullText:
       "#### React rendering\n\n- [React rendering basics](/blog/s/react-rendering-basics)\n- React rendering optimization (this blog post)\n- [React rendering state](/blog/s/react-rendering-state)\n\n### Optimization opportunities\n\nAs we've seen in the [previous blog post](/blog/s/react-rendering-basics), **rendering** is React's way of knowing if it needs to make changes in the DOM, but there are certain cases where work and calculations performed during the **render phase** can be a wasted effort. After all, if a component's render output is identical, there will be no DOM updates, thus the work wasn't necessary.\n\nRender output should always be based on the current combination of `props` and `state`, so it is possible to know ahead of time if a component's render output will be the same so long as its `props` and `state` remain unchanged. This is the key observation on top of which optimizing React rendering is based, as it hinges on our code doing less work and skipping component rendering when possible.\n\n### Optimization techniques\n\nReact offers a handful of APIs that allow us to optimize the rendering process:\n\n- `shouldComponentUpdate` (class components): Lifecycle method, called before rendering, returning a boolean (`false` to skip rendering, `true` to proceed as usual). Logic can vary as necessary, but the most common case is checking if the component's `props` and `state` have changed.\n- `React.PureComponent` (class components): Base class that implements the previously described `props` and `state` change check in its `shouldComponentUpdate` lifecycle method.\n- `React.memo()` (any component): Higher-order component (HOC) that wraps any given component. It implements the same kind of functionality as `React.PureComponent`, but can also wrap function components.\n\nAll of these techniques use **shallow equality** for comparisons. Skipping rendering a component means skipping the default recursive behavior of rendering children, effectively skipping the whole subtree of components.\n\n### Reference memoization\n\nPassing new references as `props` to a child component doesn't usually matter, as it will re-render regardless when the parent changes. However, if you are trying to optimize a child component's rendering by checking if its `props` have changed, passing new references will cause a render. This behavior is ok if the new references are updated data, but if it's a new reference to the same callback function passed down by the parent, it's rather problematic.\n\nThis is less of an issue in class components, as they have instance methods whose references don't change, although any sort of generated callbacks passed down to a component's children can result in new references. As far as function components are concerned, React provides the `useMemo` hook for memoizing values, and the `useCallback` hook specifically for memoizing callbacks.\n\n`useMemo` and `useCallback` can provide performance benefits but, as with any other memoization usage, it's important to think about their necessity and the net benefit they provide in the long run. A good rule of thumb is to consider using them for pure functional components that re-render often with the same `props` and/or might do heavy calculations and avoid them elsewhere.\n\n### Performance measurement\n\n**React Developer Tools** provide a handy **Profiler** tab that allows you to visualize and explore the rendering process of your React applications. Under this tab, you will find a settings icon which will allow you to _Highlight updates when components render_, as well as _Record why each component rendered while profiling_ - I highly suggest ticking both of them. Recording the initial render and re-renders of the website can provide invaluable insights about the application's bottlenecks and issues and also highlight optimization opportunities (often using one of the techniques described above).\n\nFinally, remember that React's development builds are significantly slower than production builds, so take all the measurements you see with a grain of salt as absolute times in development are not a valuable metric. Identifying unnecessary renders, memoization and optimization opportunities, as well as potential bottlenecks is where you should focus.\n\n[Continue on React rendering state](/blog/s/react-rendering-state)\n",
     shortText:
@@ -167,10 +161,9 @@ export const blogSnippets = [
     title: 'Tip: Label your useState values in React developer tools',
     shortTitle: 'Label useState values in development',
     tags: ['react', 'hooks'],
-    firstSeen: '2021-05-06T09:00:00.000Z',
-    lastUpdated: '2021-11-07T13:34:37.000Z',
+    dateModified: '2021-11-07T13:34:37.000Z',
     listed: true,
-    type: 'blog.tip',
+    type: 'tip',
     fullText:
       "When working with multiple `useState` hooks in React, things can get a bit complicated while debugging. Luckily, there's an easy way to label these values, using the [`useDebugValue`](https://reactjs.org/docs/hooks-reference.html#usedebugvalue) hook to create a custom `useStateWithLabel` hook:\n\n```jsx\nconst useStateWithLabel = (initialValue, label) => {\n  const [value, setValue] = useState(initialValue);\n  useDebugValue(`${label}: ${value}`);\n  return [value, setValue];\n};\n\nconst Counter = () => {\n  const [value, setValue] = useStateWithLabel(0, 'counter');\n  return (\n    <p>{value}</p>\n  );\n};\n\nReactDOM.render(<Counter />, document.getElementById('root'));\n// Inspecting `Counter` in React developer tools will display:\n//  StateWithLabel: \"counter: 0\"\n```\n\nThis hook is obviously meant mainly for development, but it can also be useful when creating React component or hook libraries. Additionally, you can easily abstract it in a way that the label is ignored in production builds. An example would be exporting a hook that defaults back to `useState` when building for a production environment.\n",
     shortText:
@@ -191,10 +184,9 @@ export const blogSnippets = [
     title: 'How can I create a custom responsive favicon for dark mode?',
     shortTitle: 'Custom responsive dark mode favicon',
     tags: ['css', 'visual'],
-    firstSeen: '2020-11-27T11:25:30.000Z',
-    lastUpdated: '2021-09-28T16:40:01.000Z',
+    dateModified: '2021-09-28T16:40:01.000Z',
     listed: true,
-    type: 'blog.question',
+    type: 'question',
     fullText:
       'The rise of dark mode in recent years has made many website favicons feel awkward or even impossible to see in some cases. Provided you have the appropriate assets, it\'s relatively easy to create a responsive favicon that can adapt to the user\'s color scheme preferences.\n\nIn order to create a responsive favicon, you need an SVG icon with as few colors as possible and two color palettes, one for light mode and one for dark mode. Usual rules about icon clarity and complexity apply, so make sure your icon meets all the necessary criteria to be visually distinguishable in any scenario. In our example, we will be using a monochrome icon from the fantastic [Feather icon set](https://feathericons.com/).\n\nLeveraging embedded styles in SVG images and the `prefers-color-scheme` media query, we can create an appropriate `<g>` element to group all the elements of the icon. Then, using the `id` of the group, we can apply the color palette for each design. Here\'s what our final SVG asset looks like:\n\n```html\n<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">\n  <style>\n    #icon {\n      stroke: #000;\n      stroke-width: 2px;\n      stroke-linecap: round;\n      stroke-linejoin: round;\n      fill: none;\n    }\n\n    @media (prefers-color-scheme: dark) {\n      #icon {\n        stroke: #fff;\n      }\n    }\n  </style>\n  <g id="icon">\n    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>\n    <line x1="3" y1="6" x2="21" y2="6"></line>\n    <path d="M16 10a4 4 0 0 1-8 0"></path>\n  </g>\n</svg>\n```\n\nAfter creating the SVG asset, you need only include the custom SVG favicon in the page\'s `<head>` element and you\'re ready to go. Be sure to include a PNG fallback, if possible, with a rendered version of the icon in either palette:\n\n```html\n<head>\n  <!-- Provided you have a rendered PNG fallback named favicon.png -->\n  <link rel="icon" type="image/png" href="favicon.png" >\n  <!-- Provided the SVG icon is named favicon.svg -->\n  <link rel="icon" type="image/svg" href="favicon.svg" >\n</head>\n```\n',
     shortText:
@@ -215,10 +207,9 @@ export const blogSnippets = [
     title: 'What is a callback function?',
     shortTitle: 'What is a callback function?',
     tags: ['javascript', 'function'],
-    firstSeen: '2021-10-03T09:00:00.000Z',
-    lastUpdated: '2021-10-03T09:00:00.000Z',
+    dateModified: '2021-10-03T09:00:00.000Z',
     listed: true,
-    type: 'blog.question',
+    type: 'question',
     fullText:
       "A callback function is a function passed as an argument to another function, which is then invoked inside the outer function. Callback functions are often executed once an event has occurred or a task has completed.\n\n### Synchronous callbacks\n\nA synchronous callback is a callback function that is executed immediately. The function passed as the first argument to `Array.prototype.map()` is a great example of a synchronous callback:\n\n```js\nconst nums = [1, 2, 3];\nconst printDoublePlusOne = n => console.log(2 * n + 1);\n\nnums.map(printDoublePlusOne); // LOGS: 3, 5, 7\n```\n\n### Asynchronous callbacks\n\nAn asynchronous callback is a callback function that is used to execute code after an asynchronous operation has completed. The function executed inside `Promise.prototype.then()` is a great example of an asynchronous callback:\n\n```js\nconst nums = fetch('https://api.nums.org'); // Suppose the response is [1, 2, 3]\nconst printDoublePlusOne = n => console.log(2 * n + 1);\n\nnums.then(printDoublePlusOne); // LOGS: 3, 5, 7\n```\n",
     shortText:
@@ -239,10 +230,9 @@ export const blogSnippets = [
     title: 'Tip: Debugging Node.js using Chrome Developer Tools',
     shortTitle: 'Debugging Node.js using Chrome Developer Tools',
     tags: ['javascript', 'node', 'debugging'],
-    firstSeen: '2020-07-15T13:10:13.000Z',
-    lastUpdated: '2021-06-12T16:30:41.000Z',
+    dateModified: '2021-06-12T16:30:41.000Z',
     listed: true,
-    type: 'blog.story',
+    type: 'story',
     fullText:
       "Node.js can be debugged using Chrome Developer Tools since `v6.3.0`. Here's a quick guide on how to do this:\n\n1. Download and install Node.js `v6.3.0` or newer, if you don't already have it installed on your machine.\n2. Run node with the `--inspect-brk` flag (e.g. `node --inspect-brk index.js`).\n3. Open `about:inspect` in a new tab in Chrome. You should see something like the screenshot below.\n4. Click `Open dedicated DevTools for Node` to open a new window connected to your Node.js instance.\n5. Use the Developer Tools to debug your Node.js application!\n\n![about:inspect page](./blog_images/chrome-debug-node.png)\n",
     shortText:
@@ -263,10 +253,9 @@ export const blogSnippets = [
     title: '10 must-have VS Code extensions for JavaScript developers',
     shortTitle: 'VS Code extensions for JavaScript developers',
     tags: ['devtools', 'vscode'],
-    firstSeen: '2019-12-23T08:41:56.000Z',
-    lastUpdated: '2021-06-12T16:30:41.000Z',
+    dateModified: '2021-06-12T16:30:41.000Z',
     listed: true,
-    type: 'blog.list',
+    type: 'list',
     fullText:
       "Developers will most likely argue for the rest of eternity about the most productive code editor and the best extensions. Here are my personal extension preferences for VS Code as a JavaScript developer:\n\n1. ESLint\n[ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) turns the popular JavaScript linter into an extension of VS Code. It automatically reads your linting configuration, identifies problems and even fixes them for you, if you want.\n\n2.  GitLens\n[GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) is a very powerful collaboration tool for VS Code. It provides many useful tools for git such as blame, code authorship, activity heatmaps, recent changes, file history and even commit search.\n\n3. Debugger for Chrome\n[Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) allows you to debug your JavaScript code in Chrome or Chromium. Breakpoints, call stack inspection and stepping inside a function are only some of its features.\n\n4. Bracket Pair Colorizer 2\n[Bracket Pair Colorizer 2](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2) makes reading code faster as it makes matching brackets the same color. This extension for VS Code improves upon its predecessor by providing improved performance.\n\n5. Bookmarks\n[Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks) is one of those extensions that will significantly reduce your time jumping between different files, as it allows you to save important positions and navigate back to them easily and quickly.\n\n6. TODO Highlight\n[TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight) simplifies tracking leftover tasks by allowing you to list all of your TODO annotations, as well as adding a handy background highlight to them to make them pop out immediately.\n\n7. Live Server\n[Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) gives you an easy way to serve web pages from VS Code, making previewing and debugging a lot easier. One of the core features is the live reload support that many developers are used to.\n\n8. REST Client\n[REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) allows you to send HTTP requests and view the responses directly in VS Code. This extension supports a wide range of formats and authorization and should work with most setups.\n\n9. One Dark Pro\n[One Dark Pro](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme) is one of the most popular VS Code themes and with very good reason. It provides a clean theme with a nice palette that has great contrast and is very comfortable to use on a daily basis.\n\n10. Fira Code\n[Fira Code](https://github.com/tonsky/FiraCode) is not a traditional VS Code extension and might take a couple more steps to set up, but it's a superb programming font with ligatures that will help you scan code faster once you get used to it.\n",
     shortText:
@@ -292,8 +281,7 @@ export const codeSnippets = [
     title: 'formatDuration',
     shortTitle: 'formatDuration',
     tags: ['date', 'math', 'string'],
-    firstSeen: '2018-01-04T07:26:42.000Z',
-    lastUpdated: '2020-10-22T17:23:47.000Z',
+    dateModified: '2020-10-22T17:23:47.000Z',
     listed: true,
     type: 'snippet',
     fullText:
@@ -325,8 +313,7 @@ export const codeSnippets = [
     title: 'formatNumber',
     shortTitle: 'formatNumber',
     tags: ['string', 'math'],
-    firstSeen: '2020-07-30T08:38:51.000Z',
-    lastUpdated: '2020-10-22T17:23:47.000Z',
+    dateModified: '2020-10-22T17:23:47.000Z',
     listed: true,
     type: 'snippet',
     fullText:
@@ -355,8 +342,7 @@ export const codeSnippets = [
     title: 'formatSeconds',
     shortTitle: 'formatSeconds',
     tags: ['date', 'math', 'string'],
-    firstSeen: '2021-05-09T09:44:55.000Z',
-    lastUpdated: '2021-10-13T17:29:39.000Z',
+    dateModified: '2021-10-13T17:29:39.000Z',
     listed: true,
     type: 'snippet',
     fullText:
@@ -386,8 +372,7 @@ export const codeSnippets = [
     title: 'hashNode',
     shortTitle: 'hashNode',
     tags: ['node', 'promise'],
-    firstSeen: '2018-01-17T12:09:01.000Z',
-    lastUpdated: '2021-10-13T17:29:39.000Z',
+    dateModified: '2021-10-13T17:29:39.000Z',
     listed: true,
     type: 'snippet',
     fullText:
@@ -424,8 +409,7 @@ export const cssSnippets = [
     title: 'Triangle',
     shortTitle: 'Triangle',
     tags: ['visual'],
-    firstSeen: '2018-02-25T13:14:39.000Z',
-    lastUpdated: '2021-10-13T17:29:39.000Z',
+    dateModified: '2021-10-13T17:29:39.000Z',
     listed: true,
     type: 'snippet',
     fullText:
@@ -452,8 +436,7 @@ export const cssSnippets = [
     title: 'Mouse cursor gradient tracking',
     shortTitle: 'Mouse cursor gradient tracking',
     tags: ['visual', 'interactivity'],
-    firstSeen: '2018-02-25T13:14:39.000Z',
-    lastUpdated: '2021-01-07T21:52:15.000Z',
+    dateModified: '2021-01-07T21:52:15.000Z',
     listed: true,
     type: 'snippet',
     fullText:
@@ -491,8 +474,7 @@ export const reactSnippets = [
     title: 'useInterval',
     shortTitle: 'useInterval',
     tags: ['hooks', 'effect'],
-    firstSeen: '2019-08-21T10:18:52.000Z',
-    lastUpdated: '2020-11-16T12:17:53.000Z',
+    dateModified: '2020-11-16T12:17:53.000Z',
     listed: true,
     type: 'snippet',
     fullText:
@@ -523,8 +505,7 @@ export const reactSnippets = [
     title: 'TagInput',
     shortTitle: 'TagInput',
     tags: ['components', 'input', 'state'],
-    firstSeen: '2019-10-02T07:06:11.000Z',
-    lastUpdated: '2020-11-25T19:12:16.000Z',
+    dateModified: '2020-11-25T19:12:16.000Z',
     listed: true,
     type: 'snippet',
     fullText:
