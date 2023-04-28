@@ -1,9 +1,10 @@
 ---
 title: React useError hook
-tags: hooks,state,effect
+type: snippet
+tags: [hooks,state,effect]
 author: chalarangelo
 cover: baloons-field
-firstSeen: 2021-09-30T05:00:00-04:00
+dateModified: 2021-09-30T05:00:00-04:00
 ---
 
 Creates an error dispatcher.

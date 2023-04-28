@@ -1,9 +1,10 @@
 ---
 title: React useScript hook
-tags: hooks,effect,state,event
+type: snippet
+tags: [hooks,effect,state,event]
 author: chalarangelo
 cover: travel-mug-3
-firstSeen: 2021-10-08T05:00:00-04:00
+dateModified: 2021-10-08T05:00:00-04:00
 ---
 
 Dynamically loads an external script.

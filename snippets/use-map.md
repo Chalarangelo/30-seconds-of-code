@@ -1,9 +1,10 @@
 ---
 title: React useMap hook
-tags: hooks,state
+type: snippet
+tags: [hooks,state]
 author: chalarangelo
 cover: work-hard-computer
-firstSeen: 2021-11-06T05:00:00-04:00
+dateModified: 2021-11-06T05:00:00-04:00
 ---
 
 Creates a stateful `Map` object, and a set of functions to manipulate it.

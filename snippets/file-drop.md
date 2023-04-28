@@ -1,10 +1,10 @@
 ---
 title: File drag and drop area
-tags: components,input,state,effect,event
+type: snippet
+tags: [components,input,state,effect,event]
 author: chalarangelo
 cover: man-red-sunset
-firstSeen: 2019-02-02T12:17:27+02:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Renders a file drag and drop component for a single file.

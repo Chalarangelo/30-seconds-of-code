@@ -1,10 +1,10 @@
 ---
 title: Show/hide password toggle
-tags: components,input,state
+type: snippet
+tags: [components,input,state]
 author: chalarangelo
 cover: thread
-firstSeen: 2018-10-18T20:04:22+03:00
-lastUpdated: 2020-11-25T20:46:35+02:00
+dateModified: 2020-11-25T20:46:35+02:00
 ---
 
 Renders a password input field with a reveal button.

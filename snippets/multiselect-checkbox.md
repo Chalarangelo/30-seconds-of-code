@@ -1,9 +1,9 @@
 ---
 title: Stateful checkbox with multiple selection
-tags: components,input,state,array
+type: snippet
+tags: [components,input,state,array]
 cover: violin
-firstSeen: 2019-01-27T09:25:57+02:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Renders a checkbox list that uses a callback function to pass its selected value/values to the parent component.

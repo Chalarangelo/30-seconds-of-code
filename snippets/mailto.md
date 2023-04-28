@@ -1,10 +1,10 @@
 ---
 title: Email link
-tags: components
+type: snippet
+tags: [components]
 author: chalarangelo
 cover: digital-nomad-4
-firstSeen: 2019-01-28T20:10:51+02:00
-lastUpdated: 2020-11-16T15:17:26+02:00
+dateModified: 2020-11-16T15:17:26+02:00
 ---
 
 Renders a link formatted to send an email (`mailto:` link).

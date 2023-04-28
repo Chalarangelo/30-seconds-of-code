@@ -1,10 +1,10 @@
 ---
 title: React useNavigatorOnLine hook
-tags: hooks,state,effect
+type: snippet
+tags: [hooks,state,effect]
 author: chalarangelo
 cover: digital-nomad-7
-firstSeen: 2019-09-11T09:17:26+03:00
-lastUpdated: 2020-11-16T14:17:53+02:00
+dateModified: 2020-11-16T14:17:53+02:00
 ---
 
 Checks if the client is online or offline.

@@ -1,9 +1,9 @@
 ---
 title: Data table
-tags: components
+type: snippet
+tags: [components]
 cover: armchair
-firstSeen: 2018-11-29T11:13:59+02:00
-lastUpdated: 2020-11-03T21:26:34+02:00
+dateModified: 2020-11-03T21:26:34+02:00
 ---
 
 Renders a table with rows dynamically created from an array of primitives.

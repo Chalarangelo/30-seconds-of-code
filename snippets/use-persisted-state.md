@@ -1,10 +1,10 @@
 ---
 title: React usePersistedState hook
-tags: hooks,state,effect
+type: snippet
+tags: [hooks,state,effect]
 author: chalarangelo
 cover: red-berries
-firstSeen: 2020-11-29T14:16:36+02:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Returns a stateful value, persisted in `localStorage`, and a function to update it.

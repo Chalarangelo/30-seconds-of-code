@@ -1,9 +1,10 @@
 ---
 title: React useRequestAnimationFrame hook
-tags: hooks,effect
+type: snippet
+tags: [hooks,effect]
 author: chalarangelo
 cover: aerial-view-port
-firstSeen: 2021-12-29T05:00:00-04:00
+dateModified: 2021-12-29T05:00:00-04:00
 ---
 
 Runs an animating function, calling it before every repaint.

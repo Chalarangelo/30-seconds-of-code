@@ -1,10 +1,10 @@
 ---
 title: React useIsomporphicEffect hook
-tags: hooks,effect
+type: snippet
+tags: [hooks,effect]
 author: chalarangelo
 cover: jars-on-shelf-2
-firstSeen: 2021-09-29T05:00:00-04:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Resolves to `useEffect()` on the server and `useLayoutEffect()` on the client.

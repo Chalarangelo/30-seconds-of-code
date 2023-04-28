@@ -1,9 +1,9 @@
 ---
 title: Collapsible accordion
-tags: components,children,state
+type: snippet
+tags: [components,children,state]
 cover: beach-pineapple
-firstSeen: 2019-03-02T10:46:34+02:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Renders an accordion menu with multiple collapsible content elements.

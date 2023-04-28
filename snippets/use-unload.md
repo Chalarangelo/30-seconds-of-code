@@ -1,9 +1,9 @@
 ---
 title: React useUnload hook
-tags: hooks,effect,event
+type: snippet
+tags: [hooks,effect,event]
 cover: digital-nomad-14
-firstSeen: 2020-10-05T17:53:24+03:00
-lastUpdated: 2020-11-29T14:16:36+02:00
+dateModified: 2020-11-29T14:16:36+02:00
 ---
 
 Handles the `beforeunload` window event.

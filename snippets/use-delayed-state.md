@@ -1,8 +1,9 @@
 ---
 title: React useDelayedState hook
-tags: hooks,state,effect
+type: snippet
+tags: [hooks,state,effect]
 cover: city-view
-firstSeen: 2021-12-15T05:00:00-04:00
+dateModified: 2021-12-15T05:00:00-04:00
 ---
 
 Delays creating a stateful value until some condition is met.

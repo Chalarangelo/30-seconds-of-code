@@ -1,9 +1,10 @@
 ---
 title: React useOnGlobalEvent hook
-tags: hooks,effect,event
+type: snippet
+tags: [hooks,effect,event]
 author: chalarangelo
 cover: tropical-bike
-firstSeen: 2021-12-22T05:00:00-04:00
+dateModified: 2021-12-22T05:00:00-04:00
 ---
 
 Executes a callback whenever an event occurs on the global object.

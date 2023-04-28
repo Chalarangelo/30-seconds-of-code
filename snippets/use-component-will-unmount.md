@@ -1,10 +1,10 @@
 ---
 title: React useComponentWillUnmount hook
-tags: hooks,effect
+type: snippet
+tags: [hooks,effect]
 author: chalarangelo
 cover: rocky-beach-3
-firstSeen: 2020-01-03T16:00:56+02:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Executes a callback immediately before a component is unmounted and destroyed.

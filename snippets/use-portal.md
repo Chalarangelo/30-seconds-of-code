@@ -1,9 +1,10 @@
 ---
 title: React usePortal hook
-tags: hooks,state,effect
+type: snippet
+tags: [hooks,state,effect]
 author: chalarangelo
 cover: interior-3
-firstSeen: 2022-01-05T05:00:00-04:00
+dateModified: 2022-01-05T05:00:00-04:00
 ---
 
 Creates a portal, allowing rendering of children outside the parent component.

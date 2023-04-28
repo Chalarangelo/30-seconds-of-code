@@ -1,9 +1,10 @@
 ---
 title: React useMutationObserver hook
-tags: hooks,effect
+type: snippet
+tags: [hooks,effect]
 author: chalarangelo
 cover: laptop-plants
-firstSeen: 2021-11-23T05:00:00-04:00
+dateModified: 2021-11-23T05:00:00-04:00
 ---
 
 Watches for changes made to the DOM tree, using a `MutationObserver`

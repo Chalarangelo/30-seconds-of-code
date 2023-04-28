@@ -1,9 +1,10 @@
 ---
 title: React useWindowSize hook
-tags: hooks,state,effect
+type: snippet
+tags: [hooks,state,effect]
 author: chalarangelo
 cover: polar-bear
-firstSeen: 2021-10-18T05:00:00-04:00
+dateModified: 2021-10-18T05:00:00-04:00
 ---
 
 Tracks the dimensions of the browser window.

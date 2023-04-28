@@ -1,9 +1,9 @@
 ---
 title: Tabs
-tags: components,state,children
+type: snippet
+tags: [components,state,children]
 cover: by-the-lighthouse
-firstSeen: 2019-01-27T11:59:52+02:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Renders a tabbed menu and view component.

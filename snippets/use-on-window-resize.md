@@ -1,9 +1,10 @@
 ---
 title: React useOnWindowResize hook
-tags: hooks,effect,event
+type: snippet
+tags: [hooks,effect,event]
 author: chalarangelo
 cover: flower-camera
-firstSeen: 2021-12-01T05:00:00-04:00
+dateModified: 2021-12-01T05:00:00-04:00
 ---
 
 Executes a callback whenever the window is resized.

@@ -1,9 +1,9 @@
 ---
 title: Uncontrolled input field
-tags: components,input
+type: snippet
+tags: [components,input]
 cover: digital-nomad-15
-firstSeen: 2019-08-21T12:28:50+03:00
-lastUpdated: 2020-11-03T21:08:39+02:00
+dateModified: 2020-11-03T21:08:39+02:00
 ---
 
 Renders an uncontrolled `<input>` element that uses a callback function to inform its parent about value updates.
