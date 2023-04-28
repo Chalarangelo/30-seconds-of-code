@@ -79,7 +79,7 @@ export const snippet = {
     hasOtherLanguages: snippet =>
       snippet.repository.otherLanguages &&
       snippet.repository.otherLanguages.length > 0,
-    isBlog: snippet => snippet.type.startsWith('blog'),
+    isBlog: snippet => snippet.type !== 'snippet',
     isCSS: snippet => snippet.repository.isCSS,
     isReact: snippet => snippet.repository.isReact,
     slug: snippet => `/${snippet.id}`,
@@ -288,7 +288,7 @@ export const snippet = {
   ],
   scopes: {
     snippets: snippet => snippet.type === 'snippet',
-    blogs: snippet => snippet.type.startsWith('blog'),
+    blogs: snippet => snippet.type !== 'snippet',
     listed: snippet => snippet.isListed,
     listedByPopularity: {
       matcher: snippet => snippet.isListed,
