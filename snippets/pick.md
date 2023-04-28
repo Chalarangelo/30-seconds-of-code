@@ -1,9 +1,9 @@
 ---
 title: Pick object keys
-tags: object
+type: snippet
+tags: [object]
 cover: fruit-feast
-firstSeen: 2017-12-13T23:51:34+02:00
-lastUpdated: 2020-10-18T14:58:09+03:00
+dateModified: 2020-10-18T14:58:09+03:00
 ---
 
 Picks the key-value pairs corresponding to the given keys from an object.

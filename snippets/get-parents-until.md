@@ -1,10 +1,10 @@
 ---
 title: Get parents until element matches selector
-tags: browser
+type: snippet
+tags: [browser]
 author: chalarangelo
 cover: colorful-plastic
-firstSeen: 2021-01-05T22:47:21+02:00
-lastUpdated: 2021-01-06T13:04:18+02:00
+dateModified: 2021-01-06T13:04:18+02:00
 ---
 
 Finds all the ancestors of an element up until the element matched by the specified selector.

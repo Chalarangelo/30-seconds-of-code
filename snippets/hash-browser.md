@@ -1,9 +1,9 @@
 ---
 title: Calculate SHA-256 hash (browser)
-tags: browser,promise
+type: snippet
+tags: [browser,promise]
 cover: padlocks
-firstSeen: 2018-01-17T14:09:01+02:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Creates a hash for a value using the [SHA-256](https://en.wikipedia.org/wiki/SHA-2) algorithm.

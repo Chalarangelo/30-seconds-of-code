@@ -1,9 +1,9 @@
 ---
 title: Check if date is before another date
-tags: date
+type: snippet
+tags: [date]
 cover: flower-portrait-3
-firstSeen: 2018-09-29T13:58:38+03:00
-lastUpdated: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20T23:02:01+03:00
 ---
 
 Checks if a date is before another date.

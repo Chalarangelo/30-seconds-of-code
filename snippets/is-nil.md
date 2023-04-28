@@ -1,9 +1,9 @@
 ---
 title: Value is nil
-tags: type
+type: snippet
+tags: [type]
 cover: river-houses
-firstSeen: 2018-01-16T16:50:21+02:00
-lastUpdated: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20T23:02:01+03:00
 ---
 
 Checks if the specified value is `null` or `undefined`.

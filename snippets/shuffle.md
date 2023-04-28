@@ -1,9 +1,9 @@
 ---
 title: Shuffle array
-tags: array,random,algorithm
+type: snippet
+tags: [array,random,algorithm]
 cover: interior-11
-firstSeen: 2017-12-17T17:55:51+02:00
-lastUpdated: 2021-02-20T21:17:38+02:00
+dateModified: 2021-02-20T21:17:38+02:00
 ---
 
 Randomizes the order of the values of an array, returning a new array.

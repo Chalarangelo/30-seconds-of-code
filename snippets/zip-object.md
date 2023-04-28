@@ -1,9 +1,9 @@
 ---
 title: Group array into object
-tags: array,object
+type: snippet
+tags: [array,object]
 cover: baloons-field
-firstSeen: 2017-12-21T00:55:18+02:00
-lastUpdated: 2020-10-22T20:24:44+03:00
+dateModified: 2020-10-22T20:24:44+03:00
 ---
 
 Associates properties to values, given array of valid property identifiers and an array of values.

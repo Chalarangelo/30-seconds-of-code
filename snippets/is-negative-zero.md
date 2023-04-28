@@ -1,9 +1,9 @@
 ---
 title: Number is negative zero
-tags: math
+type: snippet
+tags: [math]
 cover: flower-portrait-8
-firstSeen: 2018-11-12T15:45:36+02:00
-lastUpdated: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20T23:02:01+03:00
 ---
 
 Checks if the given value is equal to negative zero (`-0`).

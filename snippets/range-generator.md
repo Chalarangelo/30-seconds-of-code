@@ -1,10 +1,10 @@
 ---
 title: Range generator
-tags: function,generator
+type: snippet
+tags: [function,generator]
 author: chalarangelo
 cover: dark-leaves-6
-firstSeen: 2020-10-11T17:05:55+03:00
-lastUpdated: 2020-10-11T17:05:55+03:00
+dateModified: 2020-10-11T17:05:55+03:00
 ---
 
 Creates a generator, that generates all values in the given range using the given step.

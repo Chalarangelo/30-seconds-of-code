@@ -1,9 +1,10 @@
 ---
 title: Array ranking
-tags: array,math
+type: snippet
+tags: [array,math]
 author: chalarangelo
 cover: eagle
-firstSeen: 2022-04-13T05:00:00-04:00
+dateModified: 2022-04-13T05:00:00-04:00
 ---
 
 Calculates the ranking of an array based on a comparator function.

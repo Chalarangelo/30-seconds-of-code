@@ -1,9 +1,9 @@
 ---
 title: Convert function from variadic
-tags: function
+type: snippet
+tags: [function]
 cover: tent-stars
-firstSeen: 2017-12-22T04:33:57+02:00
-lastUpdated: 2021-06-13T13:50:25+03:00
+dateModified: 2021-06-13T13:50:25+03:00
 ---
 
 Takes a variadic function and returns a function that accepts an array of arguments.

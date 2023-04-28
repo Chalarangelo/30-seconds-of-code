@@ -1,10 +1,10 @@
 ---
 title: Logical not
-tags: math,logic
+type: snippet
+tags: [math,logic]
 unlisted: true
 cover: succulent-7
-firstSeen: 2020-05-13T11:28:26+03:00
-lastUpdated: 2021-01-04T13:04:15+02:00
+dateModified: 2021-01-04T13:04:15+02:00
 ---
 
 Returns the logical inverse of the given value.

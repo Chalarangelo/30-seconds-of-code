@@ -1,9 +1,10 @@
 ---
 title: Left substring generator
-tags: string,generator
+type: snippet
+tags: [string,generator]
 cover: boutique-home-office-1
 author: chalarangelo
-firstSeen: 2022-07-24T05:00:00-04:00
+dateModified: 2022-07-24T05:00:00-04:00
 ---
 
 Generates all left substrings of a given string.

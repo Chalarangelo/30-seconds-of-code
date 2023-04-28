@@ -1,9 +1,9 @@
 ---
 title: HSB to RGB
-tags: math
+type: snippet
+tags: [math]
 cover: houses-rock-sea
-firstSeen: 2020-09-18T14:25:07+03:00
-lastUpdated: 2020-09-18T14:25:07+03:00
+dateModified: 2020-09-18T14:25:07+03:00
 ---
 
 Converts a HSB color tuple to RGB format.

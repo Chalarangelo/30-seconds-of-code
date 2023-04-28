@@ -1,9 +1,9 @@
 ---
 title: Size of array, object or string
-tags: object,array,string
+type: snippet
+tags: [object,array,string]
 cover: digital-nomad-13
-firstSeen: 2017-12-30T16:46:01+02:00
-lastUpdated: 2023-01-20T13:25:47+03:00
+dateModified: 2023-01-20T13:25:47+03:00
 ---
 
 Gets the size of an array, object or string.

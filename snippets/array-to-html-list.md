@@ -1,9 +1,9 @@
 ---
 title: Array to HTML list
-tags: browser,array
+type: snippet
+tags: [browser,array]
 cover: red-succulent
-firstSeen: 2020-10-08T00:02:45+03:00
-lastUpdated: 2020-10-20T11:46:23+03:00
+dateModified: 2020-10-20T11:46:23+03:00
 ---
 
 Converts the given array elements into `<li>` tags and appends them to the list of the given id.

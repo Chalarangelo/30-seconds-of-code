@@ -1,10 +1,10 @@
 ---
 title: Check if sessionStorage is enabled
-tags: browser
+type: snippet
+tags: [browser]
 author: chalarangelo
 cover: flower-camera
-firstSeen: 2020-12-31T13:13:47+02:00
-lastUpdated: 2020-12-31T13:13:47+02:00
+dateModified: 2020-12-31T13:13:47+02:00
 ---
 
 Checks if `sessionStorage` is enabled.

@@ -1,9 +1,9 @@
 ---
 title: HTTP get
-tags: browser
+type: snippet
+tags: [browser]
 cover: boat-port
-firstSeen: 2018-01-08T18:21:52+02:00
-lastUpdated: 2020-10-19T22:49:51+03:00
+dateModified: 2020-10-19T22:49:51+03:00
 ---
 
 Makes a `GET` request to the passed URL.

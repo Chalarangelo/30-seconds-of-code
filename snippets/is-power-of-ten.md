@@ -1,10 +1,10 @@
 ---
 title: Number is power of ten
-tags: math
+type: snippet
+tags: [math]
 author: chalarangelo
 cover: boulder-beach
-firstSeen: 2021-01-06T22:53:58+02:00
-lastUpdated: 2021-01-06T22:53:58+02:00
+dateModified: 2021-01-06T22:53:58+02:00
 ---
 
 Checks if the given number is a power of `10`.

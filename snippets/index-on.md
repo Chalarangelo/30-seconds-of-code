@@ -1,9 +1,10 @@
 ---
 title: Array to object based on key
-tags: array,object
+type: snippet
+tags: [array,object]
 author: chalarangelo
 cover: lavender-shelf
-firstSeen: 2021-06-27T05:00:00-04:00
+dateModified: 2021-06-27T05:00:00-04:00
 ---
 
 Creates an object from an array, using the specified key and excluding it from each value.

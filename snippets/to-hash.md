@@ -1,9 +1,9 @@
 ---
 title: Iterable to hash
-tags: array
+type: snippet
+tags: [array]
 cover: sleepy-cat
-firstSeen: 2018-05-31T02:14:04+03:00
-lastUpdated: 2022-01-30T12:45:30+03:00
+dateModified: 2022-01-30T12:45:30+03:00
 ---
 
 Reduces a given iterable into a value hash (keyed data store).

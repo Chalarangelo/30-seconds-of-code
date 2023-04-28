@@ -1,10 +1,10 @@
 ---
 title: Euclidean distance
-tags: math,algorithm
+type: snippet
+tags: [math,algorithm]
 author: chalarangelo
 cover: ancient-greek-building
-firstSeen: 2020-12-28T13:41:19+02:00
-lastUpdated: 2020-12-28T13:41:19+02:00
+dateModified: 2020-12-28T13:41:19+02:00
 ---
 
 Calculates the distance between two points in any number of dimensions.

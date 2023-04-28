@@ -1,9 +1,10 @@
 ---
 title: Check if array has many matches
-tags: array
+type: snippet
+tags: [array]
 author: chalarangelo
 cover: interior-2
-firstSeen: 2021-07-11T05:00:00-04:00
+dateModified: 2021-07-11T05:00:00-04:00
 ---
 
 Checks if an array has more than one value matching the given function.

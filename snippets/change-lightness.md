@@ -1,9 +1,9 @@
 ---
 title: Change color lightness
-tags: string,browser,regexp
+type: snippet
+tags: [string,browser,regexp]
 cover: aerial-view-port
-firstSeen: 2020-10-30T17:38:31+02:00
-lastUpdated: 2020-10-31T16:37:54+02:00
+dateModified: 2020-10-31T16:37:54+02:00
 ---
 
 Changes the lightness value of an `hsl()` color string.

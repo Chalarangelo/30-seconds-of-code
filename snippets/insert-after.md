@@ -1,9 +1,9 @@
 ---
 title: Insert HTML string after element
-tags: browser
+type: snippet
+tags: [browser]
 cover: malibu
-firstSeen: 2018-06-19T20:57:58+03:00
-lastUpdated: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20T23:02:01+03:00
 ---
 
 Inserts an HTML string after the end of the specified element.

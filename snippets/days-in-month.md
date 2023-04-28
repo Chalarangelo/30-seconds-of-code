@@ -1,8 +1,9 @@
 ---
 title: Number of days in month
-tags: date
+type: snippet
+tags: [date]
 cover: laptop-plants-2
-firstSeen: 2021-06-13T05:00:00-04:00
+dateModified: 2021-06-13T05:00:00-04:00
 ---
 
 Gets the number of days in the given `month` of the specified `year`.

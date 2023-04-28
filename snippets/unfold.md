@@ -1,9 +1,9 @@
 ---
 title: Unfold array
-tags: function,array
+type: snippet
+tags: [function,array]
 cover: dog-waiting
-firstSeen: 2018-01-24T16:22:14+02:00
-lastUpdated: 2020-09-15T16:28:04+03:00
+dateModified: 2020-09-15T16:28:04+03:00
 ---
 
 Builds an array, using an iterator function and an initial seed value.

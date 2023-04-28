@@ -1,9 +1,9 @@
 ---
 title: Quick sort
-tags: algorithm,array,recursion
+type: snippet
+tags: [algorithm,array,recursion]
 cover: eagle
-firstSeen: 2017-12-28T13:42:41+02:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Sorts an array of numbers, using the quicksort algorithm.

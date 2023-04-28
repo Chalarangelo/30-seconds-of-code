@@ -1,9 +1,9 @@
 ---
 title: Delay async function execution
-tags: function,promise
+type: snippet
+tags: [function,promise]
 cover: sleepy-cat
-firstSeen: 2017-12-13T22:40:56+02:00
-lastUpdated: 2020-10-22T20:24:30+03:00
+dateModified: 2020-10-22T20:24:30+03:00
 ---
 
 Delays the execution of an asynchronous function.

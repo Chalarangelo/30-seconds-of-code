@@ -1,9 +1,9 @@
 ---
 title: Powerset
-tags: math,algorithm
+type: snippet
+tags: [math,algorithm]
 cover: new-plant
-firstSeen: 2017-12-07T14:41:33+02:00
-lastUpdated: 2021-09-27T15:27:07+02:00
+dateModified: 2021-09-27T15:27:07+02:00
 ---
 
 Returns the powerset of a given array of numbers.

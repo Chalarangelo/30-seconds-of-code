@@ -1,9 +1,9 @@
 ---
 title: Group array elements based on function
-tags: array
+type: snippet
+tags: [array]
 cover: switzerland-night
-firstSeen: 2018-01-20T17:21:34+02:00
-lastUpdated: 2020-11-03T21:46:13+02:00
+dateModified: 2020-11-03T21:46:13+02:00
 ---
 
 Creates an array of elements, grouped based on the position in the original arrays and using a function to specify how grouped values should be combined.

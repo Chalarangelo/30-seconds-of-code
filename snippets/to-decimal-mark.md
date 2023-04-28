@@ -1,9 +1,9 @@
 ---
 title: Number to decimal mark
-tags: math
+type: snippet
+tags: [math]
 cover: blue-bench
-firstSeen: 2017-12-21T16:29:51+02:00
-lastUpdated: 2020-10-22T20:24:30+03:00
+dateModified: 2020-10-22T20:24:30+03:00
 ---
 
 Converts a number to a decimal mark formatted string.

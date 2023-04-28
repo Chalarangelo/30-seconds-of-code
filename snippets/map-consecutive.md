@@ -1,9 +1,10 @@
 ---
 title: Map consecutive elements
-tags: array
+type: snippet
+tags: [array]
 author: chalarangelo
 cover: cold-mountains
-firstSeen: 2021-08-08T05:00:00-04:00
+dateModified: 2021-08-08T05:00:00-04:00
 ---
 
 Maps each block of `n` consecutive elements using the given function, `fn`.

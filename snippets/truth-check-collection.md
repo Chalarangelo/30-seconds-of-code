@@ -1,9 +1,9 @@
 ---
 title: Truth check collection
-tags: object,logic,array
+type: snippet
+tags: [object,logic,array]
 cover: digital-nomad-8
-firstSeen: 2017-12-18T13:05:21+02:00
-lastUpdated: 2020-10-22T20:24:44+03:00
+dateModified: 2020-10-22T20:24:44+03:00
 ---
 
 Checks if the predicate function is truthy for all elements of a collection.

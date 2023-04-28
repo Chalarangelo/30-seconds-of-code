@@ -1,9 +1,9 @@
 ---
 title: Array difference
-tags: array
+type: snippet
+tags: [array]
 cover: interior-3
-firstSeen: 2017-12-17T16:41:31+02:00
-lastUpdated: 2020-10-19T18:51:03+03:00
+dateModified: 2020-10-19T18:51:03+03:00
 ---
 
 Calculates the difference between two arrays, without filtering duplicate values.

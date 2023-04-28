@@ -1,9 +1,9 @@
 ---
 title: CSV to array
-tags: string,array
+type: snippet
+tags: [string,array]
 cover: keyboard-tea
-firstSeen: 2018-06-27T20:57:54+03:00
-lastUpdated: 2022-01-30T12:14:39+02:00
+dateModified: 2022-01-30T12:14:39+02:00
 ---
 
 Converts a comma-separated values (CSV) string to a 2D array.

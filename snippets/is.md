@@ -1,9 +1,9 @@
 ---
 title: Check if value is of type
-tags: type
+type: snippet
+tags: [type]
 cover: coffee-phone-tray
-firstSeen: 2018-01-17T21:23:46+02:00
-lastUpdated: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20T23:02:01+03:00
 ---
 
 Checks if the provided value is of the specified type.

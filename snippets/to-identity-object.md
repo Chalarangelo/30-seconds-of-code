@@ -1,9 +1,10 @@
 ---
 title: Convert array to identity object
-tags: array
+type: snippet
+tags: [array]
 author: chalarangelo
 cover: rain-shopping
-firstSeen: 2023-04-16T05:00:00-04:00
+dateModified: 2023-04-16T05:00:00-04:00
 ---
 
 Converts an array of values into an object with the same values as keys and values.

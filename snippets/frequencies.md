@@ -1,10 +1,10 @@
 ---
 title: Value frequencies
-tags: array,object
+type: snippet
+tags: [array,object]
 author: chalarangelo
 cover: tropical-waterfall
-firstSeen: 2020-01-03T15:32:35+02:00
-lastUpdated: 2020-10-19T22:49:51+03:00
+dateModified: 2020-10-19T22:49:51+03:00
 ---
 
 Creates an object with the unique values of an array as keys and their frequencies as the values.

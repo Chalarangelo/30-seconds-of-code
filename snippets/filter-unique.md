@@ -1,9 +1,9 @@
 ---
 title: Filter unique array values
-tags: array
+type: snippet
+tags: [array]
 cover: tulips-and-reeds
-firstSeen: 2020-11-02T19:41:00+02:00
-lastUpdated: 2020-11-02T19:41:00+02:00
+dateModified: 2020-11-02T19:41:00+02:00
 ---
 
 Creates an array with the unique values filtered out.

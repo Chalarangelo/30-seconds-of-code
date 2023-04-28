@@ -1,9 +1,9 @@
 ---
 title: Generate UUID (Node.js)
-tags: node,random
+type: snippet
+tags: [node,random]
 cover: digital-nomad-7
-firstSeen: 2017-12-29T09:47:10+02:00
-lastUpdated: 2022-03-14T17:41:43+03:00
+dateModified: 2022-03-14T17:41:43+03:00
 ---
 
 Generates a UUID in Node.JS.

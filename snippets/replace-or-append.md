@@ -1,9 +1,10 @@
 ---
 title: Replace or append array value
-tags: array
+type: snippet
+tags: [array]
 author: chalarangelo
 cover: boutique-home-office-2
-firstSeen: 2023-02-19T05:00:00-04:00
+dateModified: 2023-02-19T05:00:00-04:00
 ---
 
 Replaces an item in an array or appends it, if it doesn't exist.

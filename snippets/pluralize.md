@@ -1,9 +1,9 @@
 ---
 title: Pluralize string
-tags: string
+type: snippet
+tags: [string]
 cover: shell-focus
-firstSeen: 2018-01-03T13:17:19+02:00
-lastUpdated: 2020-10-22T20:24:04+03:00
+dateModified: 2020-10-22T20:24:04+03:00
 ---
 
 Returns the singular or plural form of the word based on the input number, using an optional dictionary if supplied.

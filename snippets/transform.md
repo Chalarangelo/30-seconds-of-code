@@ -1,9 +1,9 @@
 ---
 title: Transform object
-tags: object
+type: snippet
+tags: [object]
 cover: fishermen
-firstSeen: 2018-01-12T13:55:49+02:00
-lastUpdated: 2020-10-22T20:24:44+03:00
+dateModified: 2020-10-22T20:24:44+03:00
 ---
 
 Applies a function against an accumulator and each key in the object (from left to right).

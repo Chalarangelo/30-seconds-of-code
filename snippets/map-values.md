@@ -1,9 +1,9 @@
 ---
 title: Map object values
-tags: object
+type: snippet
+tags: [object]
 cover: feathers
-firstSeen: 2018-01-11T20:33:14+02:00
-lastUpdated: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21T21:54:53+03:00
 ---
 
 Maps the values of an object using the provided function, generating a new object with the same keys.

@@ -1,9 +1,9 @@
 ---
 title: Test if all array elements are falsy
-tags: array
+type: snippet
+tags: [array]
 cover: bug
-firstSeen: 2018-02-14T11:46:15+02:00
-lastUpdated: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21T21:54:53+03:00
 ---
 
 Checks if the provided predicate function returns `false` for all elements in a collection.

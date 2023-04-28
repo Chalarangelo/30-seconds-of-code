@@ -1,10 +1,10 @@
 ---
 title: K-means clustering
-tags: algorithm,array
+type: snippet
+tags: [algorithm,array]
 author: chalarangelo
 cover: antelope
-firstSeen: 2020-12-28T15:38:40+02:00
-lastUpdated: 2020-12-29T16:32:46+02:00
+dateModified: 2020-12-29T16:32:46+02:00
 ---
 
 Groups the given data into `k` clusters, using the [k-means clustering](https://en.wikipedia.org/wiki/K-means_clustering) algorithm.

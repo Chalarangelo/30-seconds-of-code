@@ -1,9 +1,9 @@
 ---
 title: Nth element
-tags: array
+type: snippet
+tags: [array]
 cover: laptop-plants
-firstSeen: 2017-12-17T17:55:51+02:00
-lastUpdated: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21T21:54:53+03:00
 ---
 
 Returns the nth element of an array.

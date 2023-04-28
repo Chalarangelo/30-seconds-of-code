@@ -1,9 +1,9 @@
 ---
 title: RGB to HSB
-tags: math
+type: snippet
+tags: [math]
 cover: dark-leaves
-firstSeen: 2020-09-18T14:25:07+03:00
-lastUpdated: 2020-10-22T20:24:30+03:00
+dateModified: 2020-10-22T20:24:30+03:00
 ---
 
 Converts a RGB color tuple to HSB format.

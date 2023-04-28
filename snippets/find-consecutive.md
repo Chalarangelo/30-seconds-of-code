@@ -1,9 +1,10 @@
 ---
 title: Arrays of consecutive elements
-tags: array
+type: snippet
+tags: [array]
 author: chalarangelo
 cover: colorful-pots
-firstSeen: 2022-04-06T05:00:00-04:00
+dateModified: 2022-04-06T05:00:00-04:00
 ---
 
 Finds all arrays of consecutive elements.

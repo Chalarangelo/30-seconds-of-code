@@ -1,10 +1,10 @@
 ---
 title: K-nearest neighbors
-tags: algorithm,array
+type: snippet
+tags: [algorithm,array]
 author: chalarangelo
 cover: building-blocks
-firstSeen: 2020-12-28T16:31:43+02:00
-lastUpdated: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13T19:29:39+02:00
 ---
 
 Classifies a data point relative to a labelled data set, using the [k-nearest neighbors](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm) algorithm.

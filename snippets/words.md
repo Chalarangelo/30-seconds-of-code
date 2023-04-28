@@ -1,9 +1,9 @@
 ---
 title: String to words
-tags: string,regexp
+type: snippet
+tags: [string,regexp]
 cover: sea-view-2
-firstSeen: 2017-12-21T14:50:57+02:00
-lastUpdated: 2020-10-22T20:24:44+03:00
+dateModified: 2020-10-22T20:24:44+03:00
 ---
 
 Converts a given string into an array of words.

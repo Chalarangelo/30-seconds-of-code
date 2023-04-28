@@ -1,9 +1,9 @@
 ---
 title: Find last matching index
-tags: array
+type: snippet
+tags: [array]
 cover: taking-photos
-firstSeen: 2018-01-24T13:01:51+02:00
-lastUpdated: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22T20:23:47+03:00
 ---
 
 Finds the index of the last element for which the provided function returns a truthy value.

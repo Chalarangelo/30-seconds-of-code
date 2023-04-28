@@ -1,9 +1,9 @@
 ---
 title: Strip HTML tags
-tags: string,regexp
+type: snippet
+tags: [string,regexp]
 cover: coffee-phone-tray-3
-firstSeen: 2018-01-26T14:17:29+02:00
-lastUpdated: 2020-09-15T16:28:04+03:00
+dateModified: 2020-09-15T16:28:04+03:00
 ---
 
 Removes HTML/XML tags from string.

@@ -1,9 +1,9 @@
 ---
 title: Flip function arguments
-tags: function
+type: snippet
+tags: [function]
 cover: interior-11
-firstSeen: 2017-12-22T02:42:15+02:00
-lastUpdated: 2021-06-13T13:50:25+03:00
+dateModified: 2021-06-13T13:50:25+03:00
 ---
 
 Takes a function as an argument, then makes the first argument the last.

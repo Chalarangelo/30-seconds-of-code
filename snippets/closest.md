@@ -1,9 +1,10 @@
 ---
 title: Closest numeric match
-tags: math
+type: snippet
+tags: [math]
 author: chalarangelo
 cover: sparkles
-firstSeen: 2022-03-30T05:00:00-04:00
+dateModified: 2022-03-30T05:00:00-04:00
 ---
 
 Finds the closest number from an array.

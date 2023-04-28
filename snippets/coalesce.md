@@ -1,9 +1,9 @@
 ---
 title: Argument coalescing
-tags: type
+type: snippet
+tags: [type]
 cover: flower-portrait-1
-firstSeen: 2017-12-17T10:08:55+02:00
-lastUpdated: 2020-09-15T16:28:04+03:00
+dateModified: 2020-09-15T16:28:04+03:00
 ---
 
 Returns the first defined, non-null argument.

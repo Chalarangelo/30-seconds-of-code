@@ -1,9 +1,9 @@
 ---
 title: Format duration
-tags: date,math,string
+type: snippet
+tags: [date,math,string]
 cover: clock
-firstSeen: 2018-01-04T09:26:42+02:00
-lastUpdated: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22T20:23:47+03:00
 ---
 
 Returns the human-readable format of the given number of milliseconds.

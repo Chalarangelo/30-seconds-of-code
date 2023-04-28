@@ -1,9 +1,10 @@
 ---
 title: Generate while condition is met
-tags: function,generator
+type: snippet
+tags: [function,generator]
 author: chalarangelo
 cover: lake-loop
-firstSeen: 2022-01-21T05:00:00-04:00
+dateModified: 2022-01-21T05:00:00-04:00
 ---
 
 Creates a generator, that keeps producing new values as long as the given condition is met.

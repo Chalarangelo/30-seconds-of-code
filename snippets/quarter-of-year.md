@@ -1,9 +1,9 @@
 ---
 title: Quarter of year
-tags: date
+type: snippet
+tags: [date]
 cover: fallen-leaves
-firstSeen: 2020-10-09T10:23:55+03:00
-lastUpdated: 2020-10-22T20:24:04+03:00
+dateModified: 2020-10-22T20:24:04+03:00
 ---
 
 Returns the quarter and year to which the supplied date belongs to.
