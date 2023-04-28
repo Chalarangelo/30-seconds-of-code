@@ -442,8 +442,6 @@ export const cssSnippets = [
     htmlCode: '<div class="triangle"></div>',
     cssCode:
       '.triangle {\n  width: 0;\n  height: 0;\n  border-top: 20px solid #9C27B0;\n  border-left: 20px solid transparent;\n  border-right: 20px solid transparent;\n}',
-    scopedCssCode:
-      '[data-scope="snippet-preview"] .triangle {\n  width: 0;\n  height: 0;\n  border-top: 20px solid #9C27B0;\n  border-left: 20px solid transparent;\n  border-right: 20px solid transparent; }\n',
     author: 'oscc',
     seoDescription: 'Creates a triangular shape with pure CSS.',
     repository: '30css',
@@ -475,8 +473,6 @@ export const cssSnippets = [
       '<button class="mouse-cursor-gradient-tracking">\n  <span>Hover me</span>\n</button>',
     cssCode:
       ".mouse-cursor-gradient-tracking {\n  position: relative;\n  background: #7983ff;\n  padding: 0.5rem 1rem;\n  font-size: 1.2rem;\n  border: none;\n  color: white;\n  cursor: pointer;\n  outline: none;\n  overflow: hidden;\n}\n\n.mouse-cursor-gradient-tracking span {\n  position: relative;\n}\n\n.mouse-cursor-gradient-tracking:before {\n  --size: 0;\n  content: '';\n  position: absolute;\n  left: var(--x);\n  top: var(--y);\n  width: var(--size);\n  height: var(--size);\n  background: radial-gradient(circle closest-side, pink, transparent);\n  transform: translate(-50%, -50%);\n  transition: width 0.2s ease, height 0.2s ease;\n}\n\n.mouse-cursor-gradient-tracking:hover:before {\n  --size: 200px;\n}",
-    scopedCssCode:
-      '[data-scope="snippet-preview"] .mouse-cursor-gradient-tracking {\n  position: relative;\n  background: #7983ff;\n  padding: 0.5rem 1rem;\n  font-size: 1.2rem;\n  border: none;\n  color: white;\n  cursor: pointer;\n  outline: none;\n  overflow: hidden; }\n\n[data-scope="snippet-preview"] .mouse-cursor-gradient-tracking span {\n  position: relative; }\n\n[data-scope="snippet-preview"] .mouse-cursor-gradient-tracking:before {\n  --size: 0;\n  content: \'\';\n  position: absolute;\n  left: var(--x);\n  top: var(--y);\n  width: var(--size);\n  height: var(--size);\n  background: radial-gradient(circle closest-side, pink, transparent);\n  transform: translate(-50%, -50%);\n  transition: width 0.2s ease, height 0.2s ease; }\n\n[data-scope="snippet-preview"] .mouse-cursor-gradient-tracking:hover:before {\n  --size: 200px; }\n',
     jsCode:
       "let btn = document.querySelector('.mouse-cursor-gradient-tracking');\nbtn.addEventListener('mousemove', e => {\n  let rect = e.target.getBoundingClientRect();\n  let x = e.clientX - rect.left;\n  let y = e.clientY - rect.top;\n  btn.style.setProperty('--x', x + 'px');\n  btn.style.setProperty('--y', y + 'px');\n});",
     author: 'oscc',

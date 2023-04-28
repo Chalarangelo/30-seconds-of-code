@@ -9,7 +9,6 @@ export const snippetContextSerializer = {
         return {
           html: snippet.htmlCode,
           css: snippet.cssCode,
-          scopedCss: snippet.scopedCssCode,
           js: snippet.jsCode,
         };
       if (snippet.isReact) {
