@@ -1,24 +1,19 @@
 .snippet-card {
   .card-source-content {
-    [data-code-language='Examples'] {
+    .code-highlight:not(:last-of-type) > pre {
+      padding-block-end: 2rem;
+    }
+
+    .code-highlight:not(:first-of-type) > pre {
       margin-block-start: -0.875rem;
+    }
+
+    .code-highlight:last-of-type > pre {
       padding-block-end: 1.5rem;
     }
   }
 
   .code-highlight {
-    + .code-highlight > pre:not([data-code-language='Examples']) {
-      border-top: 2px solid var(--clr-code-border);
-      border-top-left-radius: var(--br-none);
-      border-top-right-radius: var(--br-none);
-      padding-block-start: 2.5rem;
-      margin-block-start: -2px;
-
-      &:before {
-        top: 0.9375rem;
-      }
-    }
-
     --action-display: none;
 
     &:hover,
