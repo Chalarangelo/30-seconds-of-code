@@ -260,7 +260,7 @@ export class Extractor {
     let snippets = [];
     await Promise.all(
       contentConfigs.map(config => {
-        const snippetsPath = `${contentDir}/sources/${config.dirName}/${config.snippetPath}`;
+        const snippetsPath = `${contentDir}/sources/${config.dirName}/snippets`;
 
         return TextParser.fromDir(snippetsPath).then(snippetData => {
           const parsedData = snippetData.map(snippet => {

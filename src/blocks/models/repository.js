@@ -3,7 +3,6 @@ export const repository = {
   fields: [
     { name: 'name', type: 'stringRequired' },
     { name: 'repoUrl', type: 'stringRequired' },
-    { name: 'snippetPath', type: 'stringRequired' },
     { name: 'slug', type: 'stringRequired' },
     { name: 'isBlog', type: 'booleanRequired', defaultValue: false },
     { name: 'featured', type: 'booleanRequired' },
@@ -13,16 +12,18 @@ export const repository = {
   ],
   properties: {
     slugPrefix: repo => `${repo.slug}/s`,
-    repoUrlPrefix: repo => `${repo.repoUrl}/blob/master/${repo.snippetPath}`,
+    repoUrlPrefix: repo => `${repo.repoUrl}/blob/master/snippets`,
     isCSS: repo => repo.id === '30css',
     isReact: repo => repo.id === '30react',
   },
   lazyProperties: {
-    listing: ({ models: { Listing } }) => repo => {
-      const type = repo.isBlog ? 'blog' : 'language';
-      const listingId = `${type}/${repo.slug}`;
-      return Listing.records.get(listingId);
-    },
+    listing:
+      ({ models: { Listing } }) =>
+      repo => {
+        const type = repo.isBlog ? 'blog' : 'language';
+        const listingId = `${type}/${repo.slug}`;
+        return Listing.records.get(listingId);
+      },
   },
   cacheProperties: ['isCSS', 'isReact', 'listing'],
   scopes: {

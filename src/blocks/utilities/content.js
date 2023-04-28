@@ -167,7 +167,6 @@ export class Content {
                   name,
                   dirName,
                   repoUrl,
-                  snippetPath: 'snippets',
                   slug,
                   featured: true,
                 }
@@ -194,10 +193,7 @@ export class Content {
       submoduleName
     );
     const templatePath = path.join(submodulePath, 'snippet-template.md');
-    const snippetPath = path.join(
-      submodulePath,
-      submoduleName === '30blog' ? 'blog_posts' : 'snippets'
-    );
+    const snippetPath = path.join(submodulePath, 'snippets');
     try {
       if (!fs.existsSync(snippetPath)) {
         logger.log('Snippet directory not found! Creating directory...');
@@ -213,7 +209,7 @@ export class Content {
 
       const fileData = template
         .replace(/title:\s*.*\n/, `title: ${snippetName}\n`)
-        .replace(/firstSeen:\s*.*\n/, `firstSeen: ${dateString}\n`);
+        .replace(/dateModified:\s*.*\n/, `dateModified: ${dateString}\n`);
       fs.writeFileSync(path.join(snippetPath, `${snippetName}.md`), fileData);
 
       logger.success('Snippet creation complete!');
