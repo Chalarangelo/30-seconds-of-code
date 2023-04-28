@@ -6,8 +6,7 @@ describe('Schemer', () => {
       title: 'A snippet',
       slug: '/s/a-snippet',
       description: 'A snippet description.',
-      firstSeen: new Date(),
-      lastUpdated: new Date(),
+      dateModified: new Date(),
     });
 
     it('result has correct attributes', () => {
