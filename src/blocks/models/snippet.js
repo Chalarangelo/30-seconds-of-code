@@ -40,12 +40,9 @@ export const snippet = {
     { name: 'styleCode', type: 'string' },
     { name: 'srcCode', type: 'string' },
     { name: 'exampleCode', type: 'string' },
-    { name: 'cover', type: 'string' },
+    { name: 'cover', type: 'stringRequired' },
     { name: 'seoDescription', type: 'stringRequired' },
   ],
-  validators: {
-    blogHasCover: snippet => (snippet.isBlog ? Boolean(snippet.cover) : true),
-  },
   properties: {
     seoTitle: snippet => {
       if (!snippet.language) return snippet.title;
