@@ -1,4 +1,3 @@
-import sass from 'node-sass';
 import pathSettings from 'settings/paths';
 import { Logger } from 'blocks/utilities/logger';
 import { Content } from 'blocks/utilities/content';
@@ -320,7 +319,6 @@ export class Extractor {
             let code = {
               html: null,
               css: null,
-              scopedCss: null,
               js: null,
               style: null,
               src: null,
@@ -338,19 +336,6 @@ export class Extractor {
                 rawCode.html = codeBlocks[0].raw;
                 code.css = codeBlocks[1].code;
                 rawCode.css = codeBlocks[1].raw;
-                try {
-                  code.scopedCss = sass
-                    .renderSync({
-                      data: `[data-scope="snippet-preview"] { ${codeBlocks[1].code} }`,
-                    })
-                    .css.toString();
-                } catch (e) {
-                  logger.warn(
-                    `Scoped CSS generation for snippet ${id} failed with error "${e.message}". Falling back to unsafe raw CSS injection!`,
-                    'warning'
-                  );
-                  code.scopedCss = `${codeBlocks[1].code}`;
-                }
                 if (codeBlocks.length > 2) {
                   code.js = codeBlocks[2].code;
                   rawCode.js = codeBlocks[2].raw;
@@ -406,7 +391,6 @@ export class Extractor {
               ...html,
               htmlCode: code.html,
               cssCode: code.css,
-              scopedCssCode: code.scopedCss,
               jsCode: code.js,
               styleCode: code.style,
               srcCode: code.src,
