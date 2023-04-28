@@ -1,9 +1,9 @@
 ---
 title: Transpose matrix
-tags: list
+type: snippet
+tags: [list]
 cover: lake-bench
-firstSeen: 2019-10-02T07:03:20+03:00
-lastUpdated: 2020-11-02T19:28:35+02:00
+dateModified: 2020-11-02T19:28:35+02:00
 ---
 
 Transposes a two-dimensional list.

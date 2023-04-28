@@ -1,10 +1,10 @@
 ---
 title: Pad string
-tags: string
+type: snippet
+tags: [string]
 author: chalarangelo
 cover: digital-nomad-11
-firstSeen: 2020-10-04T01:53:05+03:00
-lastUpdated: 2020-10-04T01:53:05+03:00
+dateModified: 2020-10-04T01:53:05+03:00
 ---
 
 Pads a string on both sides with the specified character, if it's shorter than the specified length.

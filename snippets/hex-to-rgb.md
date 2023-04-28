@@ -1,9 +1,9 @@
 ---
 title: Hex to RGB
-tags: string,math
+type: snippet
+tags: [string,math]
 cover: sleepy-cat
-firstSeen: 2020-09-13T01:08:21+03:00
-lastUpdated: 2020-09-15T16:13:06+03:00
+dateModified: 2020-09-15T16:13:06+03:00
 ---
 
 Converts a hexadecimal color code to a tuple of integers corresponding to its RGB components.

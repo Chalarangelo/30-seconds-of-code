@@ -1,9 +1,9 @@
 ---
 title: Curry function
-tags: function
+type: snippet
+tags: [function]
 cover: leaves-read
-firstSeen: 2020-01-02T16:14:50+02:00
-lastUpdated: 2020-11-02T19:27:07+02:00
+dateModified: 2020-11-02T19:27:07+02:00
 ---
 
 Curries a function.

@@ -1,9 +1,9 @@
 ---
 title: Execute function for each list element
-tags: list
+type: snippet
+tags: [list]
 cover: green-plant
-firstSeen: 2020-03-15T12:54:08+02:00
-lastUpdated: 2020-09-15T16:13:06+03:00
+dateModified: 2020-09-15T16:13:06+03:00
 ---
 
 Executes the provided function once for each list element.

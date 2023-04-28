@@ -1,9 +1,9 @@
 ---
 title: Count occurrences
-tags: list
+type: snippet
+tags: [list]
 cover: pineapple-at-work
-firstSeen: 2021-01-10T00:00:36+02:00
-lastUpdated: 2021-01-10T00:00:36+02:00
+dateModified: 2021-01-10T00:00:36+02:00
 ---
 
 Counts the occurrences of a value in a list.

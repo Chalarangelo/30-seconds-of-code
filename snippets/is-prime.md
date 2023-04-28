@@ -1,9 +1,9 @@
 ---
 title: Number is prime
-tags: math
+type: snippet
+tags: [math]
 cover: carrots
-firstSeen: 2020-10-03T18:03:32+03:00
-lastUpdated: 2020-11-02T19:28:05+02:00
+dateModified: 2020-11-02T19:28:05+02:00
 ---
 
 Checks if the provided integer is a prime number.

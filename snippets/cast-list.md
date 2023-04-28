@@ -1,9 +1,9 @@
 ---
 title: Cast to list
-tags: list
+type: snippet
+tags: [list]
 cover: colorful-pots
-firstSeen: 2019-08-20T12:47:43+03:00
-lastUpdated: 2020-11-02T19:27:07+02:00
+dateModified: 2020-11-02T19:27:07+02:00
 ---
 
 Casts the provided value as a list if it's not one.
