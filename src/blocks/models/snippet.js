@@ -56,7 +56,6 @@ export const snippet = {
       if (!language) return snippet.primaryTag;
       return snippet.tags.filter(t => t !== language.id)[0];
     },
-    strippedDescription: snippet => stripMarkdownFormat(snippet.shortText),
     formattedPrimaryTag: snippet => literals.tag(snippet.truePrimaryTag),
     // Used for snippet previews in search autocomplete
     formattedMiniPreviewTag: snippet =>
