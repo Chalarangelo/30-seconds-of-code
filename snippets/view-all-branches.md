@@ -1,9 +1,9 @@
 ---
 title: View local branches
-tags: repository,branch
+type: snippet
+tags: [repository,branch]
 cover: aerial-view-port
-firstSeen: 2021-04-04T14:05:57+03:00
-lastUpdated: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13T21:10:59+03:00
 ---
 
 Prints a list of all local branches.

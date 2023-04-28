@@ -1,9 +1,9 @@
 ---
 title: Rename remote branch
-tags: branch
+type: snippet
+tags: [branch]
 cover: horse-sunset
-firstSeen: 2021-04-05T09:48:16+03:00
-lastUpdated: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13T21:10:59+03:00
 ---
 
 Renames a branch both locally and on the remote.

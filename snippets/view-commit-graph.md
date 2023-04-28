@@ -1,9 +1,9 @@
 ---
 title: View a visual graph of the repository
-tags: repository
+type: snippet
+tags: [repository]
 cover: city-view
-firstSeen: 2021-04-06T16:28:49+03:00
-lastUpdated: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13T21:10:59+03:00
 ---
 
 Prints a visual graph of all commits and branches in the repository.

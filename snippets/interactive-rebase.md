@@ -1,10 +1,10 @@
 ---
 title: Perform an interactive rebase
-tags: branch
+type: snippet
+tags: [branch]
 author: chalarangelo
 cover: tea-laptop-table
-firstSeen: 2021-04-08T20:10:35+03:00
-lastUpdated: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13T21:10:59+03:00
 ---
 
 Performs an interactive rebase.

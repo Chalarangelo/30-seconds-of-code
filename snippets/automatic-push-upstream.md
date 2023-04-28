@@ -1,9 +1,10 @@
 ---
 title: Automate upstream branch creation
-tags: configuration,repository
+type: snippet
+tags: [configuration,repository]
 author: chalarangelo
 cover: violin
-firstSeen: 2022-10-19T05:00:00-04:00
+dateModified: 2022-10-19T05:00:00-04:00
 ---
 
 Configures the repository to automatically create upstream branches on push.

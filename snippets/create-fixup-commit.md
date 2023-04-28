@@ -1,10 +1,10 @@
 ---
 title: Create a fixup commit
-tags: commit
+type: snippet
+tags: [commit]
 author: chalarangelo
 cover: tools
-firstSeen: 2021-04-08T19:51:24+03:00
-lastUpdated: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13T21:10:59+03:00
 ---
 
 Creates a fixup commit that can be autosquashed in the next rebase.

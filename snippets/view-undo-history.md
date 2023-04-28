@@ -1,9 +1,9 @@
 ---
 title: View "undo" history
-tags: repository,branch
+type: snippet
+tags: [repository,branch]
 cover: rock-climbing
-firstSeen: 2021-04-06T16:35:56+03:00
-lastUpdated: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13T21:10:59+03:00
 ---
 
 View git's reference logs. This is especially useful for finding references that don't show up in commit history.

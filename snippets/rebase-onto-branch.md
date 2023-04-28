@@ -1,9 +1,9 @@
 ---
 title: Rebase onto another branch
-tags: branch
+type: snippet
+tags: [branch]
 cover: sliced-fruits
-firstSeen: 2021-04-05T11:19:54+03:00
-lastUpdated: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13T21:10:59+03:00
 ---
 
 Rebases the current branch onto another branch.

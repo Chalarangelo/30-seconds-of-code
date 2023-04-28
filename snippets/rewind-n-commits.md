@@ -1,9 +1,9 @@
 ---
 title: Rewind back n commits
-tags: branch,commit
+type: snippet
+tags: [branch,commit]
 cover: lake-trees
-firstSeen: 2021-04-05T11:19:21+03:00
-lastUpdated: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13T21:10:59+03:00
 ---
 
 Rewinds the current branch by a given number of commits.

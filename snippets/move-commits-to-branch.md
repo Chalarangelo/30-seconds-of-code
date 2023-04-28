@@ -1,10 +1,10 @@
 ---
 title: Move commits from master to a new branch
-tags: branch,repository
+type: snippet
+tags: [branch,repository]
 author: chalarangelo
 cover: red-succulent
-firstSeen: 2021-04-06T21:35:01+03:00
-lastUpdated: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13T21:10:59+03:00
 ---
 
 Moves local commits from the `master` branch to a new branch.

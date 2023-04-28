@@ -1,10 +1,10 @@
 ---
 title: Configure line endings
-tags: repository,configuration
+type: snippet
+tags: [repository,configuration]
 author: chalarangelo
 cover: leaves-read
-firstSeen: 2021-04-06T21:35:01+03:00
-lastUpdated: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13T21:10:59+03:00
 ---
 
 Configures the line endings for a repository.

@@ -1,9 +1,9 @@
 ---
 title: Change the last commit's message
-tags: commit
+type: snippet
+tags: [commit]
 cover: greek-coffee
-firstSeen: 2021-04-04T14:36:07+03:00
-lastUpdated: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13T21:10:59+03:00
 ---
 
 Updates the last commit's message without changing its contents.

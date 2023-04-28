@@ -1,9 +1,9 @@
 ---
 title: Create a commit by a different author
-tags: commit
+type: snippet
+tags: [commit]
 cover: new-plant
-firstSeen: 2021-04-13T20:07:27+03:00
-lastUpdated: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13T21:10:59+03:00
 ---
 
 Creates a new commit by the specified author.

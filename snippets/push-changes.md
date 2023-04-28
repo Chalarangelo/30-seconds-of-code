@@ -1,9 +1,9 @@
 ---
 title: Push local changes to remote
-tags: repository,branch
+type: snippet
+tags: [repository,branch]
 cover: dark-cloud
-firstSeen: 2021-04-08T19:42:23+03:00
-lastUpdated: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13T21:10:59+03:00
 ---
 
 Pushes the current branch's changes to the remote.
