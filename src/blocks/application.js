@@ -494,7 +494,7 @@ export class Application {
       const { id } = snippet;
       Page.createRecord({
         id: `snippet_${id}`,
-        template: 'SnippetPage',
+        type: 'snippet',
         relatedRecordId: id,
       });
     });
@@ -510,7 +510,7 @@ export class Application {
       for (let pageSnippets of snippetIterator) {
         Page.createRecord({
           id: `listing_${id}_${pageCounter}`,
-          template: 'ListingPage',
+          type: 'listing',
           relatedRecordId: id,
           [itemsName]: pageSnippets.flatPluck('id'),
           pageNumber: pageCounter,
@@ -521,36 +521,36 @@ export class Application {
     // Populate static pages
     Page.createRecord({
       id: 'static_404',
-      template: 'NotFoundPage',
+      type: 'notfound',
       slug: '/404',
       staticPriority: 0,
     });
     Page.createRecord({
       id: 'static_about',
-      template: 'StaticPage',
+      type: 'static',
       slug: '/about',
       staticPriority: 0.25,
     });
     Page.createRecord({
       id: 'static_cookies',
-      template: 'StaticPage',
+      type: 'static',
       slug: '/cookies',
       staticPriority: 0.25,
     });
     Page.createRecord({
       id: 'static_faq',
-      template: 'StaticPage',
+      type: 'static',
       slug: '/faq',
       staticPriority: 0.25,
     });
     Page.createRecord({
       id: 'static_search',
-      template: 'SearchPage',
+      type: 'search',
       slug: '/search',
       staticPriority: 0.25,
     });
     // Populate the home page
-    Page.createRecord({ id: 'home', template: 'HomePage' });
+    Page.createRecord({ id: 'home', type: 'home' });
     logger.success('Populating dataset complete.');
   }
 
