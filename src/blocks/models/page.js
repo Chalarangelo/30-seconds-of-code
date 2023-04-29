@@ -12,23 +12,22 @@ const TOP_COLLECTION_CHIPS = 8;
 export const page = {
   name: 'Page',
   fields: [
-    { name: 'template', type: 'stringRequired' },
+    { name: 'type', type: 'stringRequired' },
     { name: 'relatedRecordId', type: 'string' },
     { name: 'pageNumber', type: 'number' },
     { name: 'slug', type: 'string' },
     { name: 'staticPriority', type: 'number' },
   ],
   properties: {
-    isStatic: page =>
-      ['StaticPage', 'NotFoundPage', 'SearchPage'].includes(page.template),
+    isStatic: page => ['static', 'notfound', 'search'].includes(page.type),
     isCollectionsListing: page => page.id.startsWith('listing_collections'),
-    isSnippet: page => page.template === 'SnippetPage',
-    isListing: page => page.template === 'ListingPage',
-    isHome: page => page.template === 'HomePage',
+    isSnippet: page => page.type === 'snippet',
+    isListing: page => page.type === 'listing',
+    isHome: page => page.type === 'home',
     isUnlisted: page => (page.isSnippet ? !page.data.isListed : false),
     isPublished: page => (page.isSnippet ? page.data.isPublished : true),
     isIndexable: page => {
-      if (['NotFoundPage', 'SearchPage'].includes(page.template)) return false;
+      if (['notfound', 'search'].includes(page.type)) return false;
       if (!page.isSnippet) return true;
       return page.data.isPublished;
     },
@@ -188,7 +187,7 @@ export const page = {
             items: context.snippetList,
           });
         }
-        if (page.template === 'SearchPage') {
+        if (page.type === 'search') {
           const sortedSnippets = Snippet.records.listedByPopularity;
           context.searchIndex = [
             ...ListingPreviewSerializer.serializeArray(
@@ -251,14 +250,14 @@ export const page = {
     },
   },
   scopes: {
-    listed: page => !page.isUnlisted && page.template !== 'NotFoundPage',
+    listed: page => !page.isUnlisted && page.type !== 'notfound',
     indexable: {
       matcher: page => page.isIndexable,
       sorter: (a, b) => b.priority - a.priority,
     },
     published: page => page.isPublished,
     feedEligible: {
-      matcher: page => page.template === 'SnippetPage' && !page.isUnlisted,
+      matcher: page => page.type === 'snippet' && !page.isUnlisted,
       sorter: (a, b) => b.data.dateModified - a.data.dateModified,
     },
     snippets: page => page.isSnippet,
@@ -266,7 +265,7 @@ export const page = {
     listing: page => page.isListing,
     static: page => page.isStatic,
     home: page => page.isHome,
-    search: page => page.template === 'SearchPage',
+    search: page => page.type === 'search',
     collections: page => page.isCollectionsListing,
   },
 };
