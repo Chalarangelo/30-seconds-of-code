@@ -41,6 +41,7 @@ export const listing = {
       listing.parent ? listing.siblings.except(listing.id) : [],
     // Used to determine the order of listings in the search index.
     ranking: listing => {
+      if (listing.isCollections) return 0.8;
       const rankingValue = Ranker.rankIndexableContent(
         listing.indexableContent
       );

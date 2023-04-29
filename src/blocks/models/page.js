@@ -19,28 +19,25 @@ export const page = {
     { name: 'staticPriority', type: 'number' },
   ],
   properties: {
-    isStatic: page => ['static', 'notfound', 'search'].includes(page.type),
+    isStatic: page => page.type === 'static',
     isCollectionsListing: page => page.id.startsWith('listing_collections'),
     isSnippet: page => page.type === 'snippet',
     isListing: page => page.type === 'listing',
-    isHome: page => page.type === 'home',
+    isHome: page => page.id === 'home',
     isUnlisted: page => (page.isSnippet ? !page.data.isListed : false),
     isPublished: page => (page.isSnippet ? page.data.isPublished : true),
     isIndexable: page => {
-      if (['notfound', 'search'].includes(page.type)) return false;
+      if (['404', 'search'].includes(page.id)) return false;
       if (!page.isSnippet) return true;
       return page.data.isPublished;
     },
     priority: page => {
-      if (page.isHome) return 1.0;
-      if (page.isCollectionsListing) return 0.65;
       if (page.isSnippet) return +(page.data.ranking * 0.85).toFixed(2);
       if (page.isListing) return page.data.pageRanking(page.pageNumber);
       if (page.isStatic) return page.staticPriority;
       return 0.3;
     },
     relRoute: page => {
-      if (page.isHome) return '/';
       if (page.isSnippet) return page.data.slug;
       if (page.isListing) return `${page.data.slugPrefix}/p/${page.pageNumber}`;
       if (page.isStatic) return page.slug;
@@ -250,7 +247,7 @@ export const page = {
     },
   },
   scopes: {
-    listed: page => !page.isUnlisted && page.type !== 'notfound',
+    listed: page => !page.isUnlisted && page.id !== '404',
     indexable: {
       matcher: page => page.isIndexable,
       sorter: (a, b) => b.priority - a.priority,
@@ -265,7 +262,7 @@ export const page = {
     listing: page => page.isListing,
     static: page => page.isStatic,
     home: page => page.isHome,
-    search: page => page.type === 'search',
+    search: page => page.id === 'search',
     collections: page => page.isCollectionsListing,
   },
 };
