@@ -8,18 +8,8 @@ export const snippet = {
   name: 'Snippet',
   fields: [
     { name: 'fileName', type: 'stringRequired' },
-    {
-      name: 'title',
-      type: 'stringRequired',
-    },
-    {
-      name: 'tags',
-      type: 'stringArray',
-      validators: {
-        minLength: 1,
-        uniqueValues: true,
-      },
-    },
+    { name: 'title', type: 'stringRequired' },
+    { name: 'tags', type: 'stringArray' },
     { name: 'shortTitle', type: 'string' },
     { name: 'dateModified', type: 'dateRequired' },
     { name: 'listed', type: 'booleanRequired' },
