@@ -13,7 +13,6 @@ export const repo30blog = {
     'Discover dozens of programming articles, covering a wide variety of topics and technologies.',
   id: '30blog',
   language: null,
-  otherLanguages: null,
   icon: 'blog',
 };
 
@@ -29,7 +28,6 @@ export const repo30code = {
     'Browse a wide variety of ES6 helper functions, including array operations, DOM manipulation, algorithms and Node.js utilities.',
   id: '30code',
   language: 'javascript',
-  otherLanguages: null,
   icon: 'js',
 };
 
@@ -45,7 +43,6 @@ export const repo30css = {
     'A snippet collection of interactive CSS3 examples, covering layouts, styling, animation and user interactions.',
   id: '30css',
   language: 'css',
-  otherLanguages: ['html', 'javascript'],
   icon: 'css',
 };
 
@@ -61,7 +58,6 @@ export const repo30react = {
     'Discover function components and reusable hooks for React 16.',
   id: '30react',
   language: 'react',
-  otherLanguages: ['css'],
   icon: 'react',
 };
 

@@ -24,10 +24,13 @@ export class Extractor {
   static extract = async () => {
     if (process.env.NODE_ENV === 'production') await Content.update();
     const { rawContentPath: contentDir } = pathSettings;
-    const contentConfigs = Extractor.extractContentConfigs(contentDir);
+    const languageData = Extractor.extractLanguageData(contentDir);
+    const contentConfigs = Extractor.extractContentConfigs(
+      contentDir,
+      languageData
+    );
     const collectionConfigs = Extractor.extractCollectionConfigs(contentDir);
     const authors = Extractor.extractAuthors(contentDir);
-    const languageData = Extractor.extractLanguageData(contentDir);
     const snippets = await Extractor.extractSnippets(
       contentDir,
       contentConfigs,
@@ -44,10 +47,7 @@ export class Extractor {
           dirName,
           tagIcons,
           slugPrefix,
-          secondLanguage,
-          optionalLanguage,
           language: rawLanguage,
-          otherLanguages: rawOtherLanguages,
           tagMetadata,
           references,
           ...rest
@@ -56,13 +56,9 @@ export class Extractor {
           rawLanguage && rawLanguage.long
             ? rawLanguage.long.toLowerCase()
             : null;
-        const otherLanguages = rawOtherLanguages.length
-          ? rawOtherLanguages.map(lang => lang.long.toLowerCase())
-          : null;
         return {
           ...rest,
           language,
-          otherLanguages,
         };
       }),
       collections: collectionConfigs,
@@ -86,22 +82,17 @@ export class Extractor {
     return data;
   };
 
-  static extractContentConfigs = contentDir => {
+  static extractContentConfigs = (contentDir, languageData) => {
     const logger = new Logger('Extractor.extractContentConfigs');
     logger.log('Extracting content configurations');
     const configs = YAMLHandler.fromGlob(
       `${contentDir}/configs/repos/*.yaml`
     ).map(config => {
-      const language = config.language || {};
-      let otherLanguages = [];
-      if (config.secondLanguage) otherLanguages.push(config.secondLanguage);
-      if (config.optionalLanguage) otherLanguages.push(config.optionalLanguage);
-      if (otherLanguages.length) language.otherLanguages = otherLanguages;
+      const language = languageData.get(config.language) || {};
 
       return {
         ...config,
         language,
-        otherLanguages,
         id: `${config.dirName}`,
         slugPrefix: `${config.slug}/s`,
       };
@@ -260,12 +251,8 @@ export class Extractor {
               fileName.slice(0, -3)
             )}`;
             const tags = rawTags.map(tag => tag.toLowerCase());
-            const hasOptionalLanguage = Boolean(
-              config.id !== '30css' &&
-                !config.isBlog &&
-                config.optionalLanguage &&
-                config.optionalLanguage.short
-            );
+            // TODO: Temporary fix to get rid of a previous workaround
+            const hasOptionalLanguage = config.id === '30react';
 
             const languageKeys =
               config.id === '30blog'
