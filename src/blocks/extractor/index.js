@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import pathSettings from 'settings/paths';
 import { Logger } from 'blocks/utilities/logger';
 import { Content } from 'blocks/utilities/content';
@@ -26,7 +27,7 @@ export class Extractor {
     const contentConfigs = Extractor.extractContentConfigs(contentDir);
     const collectionConfigs = Extractor.extractCollectionConfigs(contentDir);
     const authors = Extractor.extractAuthors(contentDir);
-    const languageData = Extractor.processLanguageData(contentConfigs);
+    const languageData = Extractor.extractLanguageData(contentDir);
     const snippets = await Extractor.extractSnippets(
       contentDir,
       contentConfigs,
@@ -39,7 +40,6 @@ export class Extractor {
     const data = {
       repositories: contentConfigs.map(config => {
         // Exclude specific keys
-        /* eslint-disable no-unused-vars */
         const {
           dirName,
           tagIcons,
@@ -52,7 +52,6 @@ export class Extractor {
           references,
           ...rest
         } = config;
-        /* eslint-enable no-unused-vars */
         const language =
           rawLanguage && rawLanguage.long
             ? rawLanguage.long.toLowerCase()
@@ -70,13 +69,8 @@ export class Extractor {
       snippets,
       authors,
       languages: [...languageData].map(([id, data]) => {
-        const { language, shortCode, languageLiteral } = data;
-        return {
-          id,
-          long: language,
-          short: shortCode,
-          name: languageLiteral,
-        };
+        const { references, ...restData } = data;
+        return { ...restData };
       }),
       tags: tagData,
       collectionListingConfig: Object.entries(collectionListing).reduce(
@@ -150,39 +144,23 @@ export class Extractor {
     return authors;
   };
 
-  static processLanguageData = contentConfigs => {
+  static extractLanguageData = contentDir => {
     const logger = new Logger('Extractor.extractLanguageData');
-    logger.log('Processing language data');
-    const languageData = contentConfigs.reduce(
-      (acc, config) => {
-        if (
-          config.language &&
-          config.language.long &&
-          !acc.has(config.language.long)
-        ) {
-          acc.set(config.language.long.toLowerCase(), {
-            language: config.language.long.toLowerCase(),
-            shortCode: config.language.short,
-            languageLiteral: config.language.long,
-            tags: {},
-            references: new Map(Object.entries(config.references || {})),
-          });
-        }
-        return acc;
-      },
-      new Map([
-        [
-          'html',
-          {
-            language: 'html',
-            shortCode: 'html',
-            languageLiteral: 'HTML',
-            references: new Map(),
-          },
-        ],
-      ])
-    );
-    logger.success('Finished processing language data');
+    logger.log('Extracting language data');
+    const languageData = YAMLHandler.fromGlob(
+      `${contentDir}/configs/languages/*.yaml`
+    ).reduce((acc, language) => {
+      const { short, long, name, references = {} } = language;
+      acc.set(long, {
+        id: long,
+        long,
+        short,
+        name,
+        references: new Map(Object.entries(references)),
+      });
+      return acc;
+    }, new Map());
+    logger.success('Finished extracting language data');
     return languageData;
   };
 
