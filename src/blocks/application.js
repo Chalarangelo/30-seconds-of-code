@@ -459,7 +459,7 @@ export class Application {
       const collectionRec = Collection.createRecord(rest);
       if (snippetIds && snippetIds.length) collectionRec.snippets = snippetIds;
       if (typeMatcher)
-        collectionRec.snippets = Snippet.records
+        collectionRec.snippets = Snippet.records.listedByPopularity
           .where(snippet => snippet.type === typeMatcher)
           .flatPluck('id');
       const slugPrefix = `/${collection.slug}`;
