@@ -17,11 +17,6 @@ export const schema = {
       type: 'manyToOne',
     },
     {
-      from: { model: 'Repository', name: 'otherLanguages' },
-      to: { model: 'Language', name: 'secondaryRepositories' },
-      type: 'manyToMany',
-    },
-    {
       from: { model: 'Tag', name: 'repository' },
       to: { model: 'Repository', name: 'tags' },
       type: 'manyToOne',
