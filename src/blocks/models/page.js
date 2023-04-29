@@ -220,32 +220,6 @@ export const page = {
     'isListing',
     'isHome',
   ],
-  validators: {
-    listingHasSnippets: page => {
-      if (!page.isListing || page.id.startsWith('listing_collections'))
-        return true;
-      return page.snippets && page.snippets.length > 0;
-    },
-    listingHasPageNumber: page => {
-      if (!page.isListing) return true;
-      return page.pageNumber > 0;
-    },
-    staticHasUniqueSlug: (page, pages) => {
-      if (!page.isStatic) return true;
-      if (!page.slug || page.slug.length === 0) return false;
-      if (pages.filter(page => page.isStatic).some(p => p.slug === page.slug))
-        return false;
-      return true;
-    },
-    staticHasStaticPriority: page => {
-      if (!page.isStatic) return true;
-      return (
-        !Number.isNaN(page.staticPriority) &&
-        page.staticPriority >= 0 &&
-        page.staticPriority <= 1
-      );
-    },
-  },
   scopes: {
     listed: page => !page.isUnlisted && page.id !== '404',
     indexable: {
