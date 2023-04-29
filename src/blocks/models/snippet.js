@@ -40,12 +40,9 @@ export const snippet = {
     { name: 'styleCode', type: 'string' },
     { name: 'srcCode', type: 'string' },
     { name: 'exampleCode', type: 'string' },
-    { name: 'cover', type: 'string' },
+    { name: 'cover', type: 'stringRequired' },
     { name: 'seoDescription', type: 'stringRequired' },
   ],
-  validators: {
-    blogHasCover: snippet => (snippet.isBlog ? Boolean(snippet.cover) : true),
-  },
   properties: {
     seoTitle: snippet => {
       if (!snippet.language) return snippet.title;
@@ -59,7 +56,6 @@ export const snippet = {
       if (!language) return snippet.primaryTag;
       return snippet.tags.filter(t => t !== language.id)[0];
     },
-    strippedDescription: snippet => stripMarkdownFormat(snippet.shortText),
     formattedPrimaryTag: snippet => literals.tag(snippet.truePrimaryTag),
     // Used for snippet previews in search autocomplete
     formattedMiniPreviewTag: snippet =>
@@ -74,14 +70,10 @@ export const snippet = {
         return [snippet.language.name, snippet.formattedPrimaryTag].join(', ');
       else return snippet.formattedPrimaryTag;
     },
-    hasOtherLanguages: snippet =>
-      snippet.repository.otherLanguages &&
-      snippet.repository.otherLanguages.length > 0,
     isBlog: snippet => snippet.type !== 'snippet',
     isCSS: snippet => snippet.repository.isCSS,
     isReact: snippet => snippet.repository.isReact,
     slug: snippet => `/${snippet.id}`,
-    titleSlug: snippet => convertToSeoSlug(snippet.title),
     fileSlug: snippet => convertToSeoSlug(snippet.fileName.slice(0, -3)),
     url: snippet => `${snippet.repository.repoUrlPrefix}/${snippet.fileName}`,
     actionType: snippet => {
@@ -273,14 +265,12 @@ export const snippet = {
     'isListed',
     'isScheduled',
     'isPublished',
-    'hasOtherLanguages',
     'searchTokensArray',
     'searchTokens',
     'language',
     'primaryTag',
     'truePrimaryTag',
     'formattedPrimaryTag',
-    'titleSlug',
     'fileSlug',
     'seoTitle',
   ],

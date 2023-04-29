@@ -229,18 +229,6 @@ describe('Application/Schema', () => {
       });
     });
 
-    describe('property: hasOtherLanguages', () => {
-      it('returns true if the snippet has other languages', () => {
-        const snippet = Snippet.records.get('css/s/triangle');
-        expect(snippet.hasOtherLanguages).toBe(true);
-      });
-
-      it('returns false if the snippet has only one language', () => {
-        const snippet = Snippet.records.get('js/s/format-duration');
-        expect(snippet.hasOtherLanguages).toBe(false);
-      });
-    });
-
     describe('property: isBlog', () => {
       it('returns true if the snippet is a blog snippet', () => {
         const snippet = Snippet.records.get('articles/s/js-callbacks');
@@ -281,13 +269,6 @@ describe('Application/Schema', () => {
       it('returns the slug', () => {
         const snippet = Snippet.records.get('js/s/format-duration');
         expect(snippet.slug).toEqual('/js/s/format-duration');
-      });
-    });
-
-    describe('property: titleSlug', () => {
-      it('returns the title slug', () => {
-        const snippet = Snippet.records.get('js/s/format-duration');
-        expect(snippet.titleSlug).toEqual('/format-duration');
       });
     });
 
