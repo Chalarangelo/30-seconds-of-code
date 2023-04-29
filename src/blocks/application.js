@@ -520,37 +520,42 @@ export class Application {
     });
     // Populate static pages
     Page.createRecord({
-      id: 'static_404',
+      id: '404',
       type: 'notfound',
       slug: '/404',
       staticPriority: 0,
     });
     Page.createRecord({
-      id: 'static_about',
+      id: 'about',
       type: 'static',
       slug: '/about',
       staticPriority: 0.25,
     });
     Page.createRecord({
-      id: 'static_cookies',
+      id: 'cookies',
       type: 'static',
       slug: '/cookies',
       staticPriority: 0.25,
     });
     Page.createRecord({
-      id: 'static_faq',
+      id: 'faq',
       type: 'static',
       slug: '/faq',
       staticPriority: 0.25,
     });
     Page.createRecord({
-      id: 'static_search',
+      id: 'search',
       type: 'search',
       slug: '/search',
       staticPriority: 0.25,
     });
     // Populate the home page
-    Page.createRecord({ id: 'home', type: 'home' });
+    Page.createRecord({
+      id: 'home',
+      type: 'static',
+      slug: '/',
+      staticPriority: 1.0,
+    });
     logger.success('Populating dataset complete.');
   }
 

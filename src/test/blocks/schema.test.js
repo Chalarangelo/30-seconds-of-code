@@ -932,13 +932,8 @@ describe('Application/Schema', () => {
 
     describe('property: isStatic', () => {
       it('returns true for static pages', () => {
-        const page = Page.records.get('static_about');
+        const page = Page.records.get('about');
         expect(page.isStatic).toEqual(true);
-      });
-
-      it('returns false for all other pages', () => {
-        const page = Page.records.get('home');
-        expect(page.isStatic).toEqual(false);
       });
     });
 
@@ -1011,7 +1006,7 @@ describe('Application/Schema', () => {
       });
 
       it('returns false for the 404 page', () => {
-        const page = Page.records.get('static_404');
+        const page = Page.records.get('404');
         expect(page.isIndexable).toEqual(false);
       });
     });
@@ -1064,7 +1059,7 @@ describe('Application/Schema', () => {
       });
 
       it('returns the correct value for the search page', () => {
-        const page = Page.records.get('static_search');
+        const page = Page.records.get('search');
         const pageContext = page.context;
         expect(pageContext.searchIndex.length).toBe(26);
       });
