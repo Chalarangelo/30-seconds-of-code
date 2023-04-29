@@ -156,7 +156,7 @@ export class MarkdownParser {
     if (referenceKeys && referenceKeys.length > 0)
       referenceKeys.forEach(key => {
         const languageObject = [...languageData.values()].find(
-          l => l.shortCode === key
+          l => l.short === key
         );
         if (languageObject) languageObjects[key] = languageObject;
       });
@@ -173,11 +173,9 @@ export class MarkdownParser {
 
       const languageObject =
         isText && languageData && languageData.length
-          ? [...languageData.values()].find(l => l.shortCode === languageName)
+          ? [...languageData.values()].find(l => l.short === languageName)
           : null;
-      const languageStringLiteral = languageObject
-        ? languageObject.languageLiteral
-        : '';
+      const languageStringLiteral = languageObject ? languageObject.name : '';
       if (languageObject && !languageObjects[languageName])
         languageObjects[languageName] = languageObject;
 
