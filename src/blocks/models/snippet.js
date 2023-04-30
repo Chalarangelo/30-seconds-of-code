@@ -65,6 +65,12 @@ export const snippet = {
     isListed: snippet =>
       snippet.repository.featured && snippet.listed && !snippet.isScheduled,
     ranking: snippet => Ranker.rankIndexableContent(snippet.indexableContent),
+    dateFormatted: snippet =>
+      snippet.dateModified.toLocaleDateString('en-US', {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+      }),
     searchTokensArray: snippet => {
       const tokenizableElements = snippet.isBlog
         ? [
@@ -196,6 +202,7 @@ export const snippet = {
     'isListed',
     'isScheduled',
     'isPublished',
+    'dateFormatted',
     'searchTokensArray',
     'searchTokens',
     'language',
