@@ -5,7 +5,7 @@ type: tip
 tags: [webdev,html,browser]
 author: chalarangelo
 cover: playing-fetch
-excerpt: Resource prefetching is a great technique to improve perceived page speed on your website and one that requires little to no effort. Learn how to use it today.
+excerpt: Resource prefetching is a great way to improve perceived page speed on your website and requires little effort. Learn how to use it today.
 dateModified: 2021-06-12T19:30:41+03:00
 ---
 

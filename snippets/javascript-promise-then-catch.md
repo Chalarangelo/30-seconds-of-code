@@ -5,7 +5,7 @@ type: tip
 tags: [javascript,function,promise]
 author: chalarangelo
 cover: blue-sunrise
-excerpt: Messing up the order of chained `then` and `catch` methods in JavaScript promises can result in all sorts of problems. Here's a short primer on the subject.
+excerpt: Messing up the order of chained `then` and `catch` methods in JavaScript promises can cause problems. Here's a short primer on the subject.
 dateModified: 2021-06-12T19:30:41+03:00
 ---
 

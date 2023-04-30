@@ -5,7 +5,7 @@ type: story
 tags: [javascript,array,function]
 author: chalarangelo
 cover: antelope
-excerpt: JavaScript ES6 introduced us to several powerful features, such as the spread and rest syntax. Learn everything you need to know in this quick guide.
+excerpt: JavaScript ES6 introduced us to powerful new features, such as the spread and rest syntax. Learn all you need to know in this quick guide.
 dateModified: 2021-06-12T19:30:41+03:00
 ---
 

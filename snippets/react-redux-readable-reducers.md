@@ -5,7 +5,7 @@ type: story
 tags: [react,logic]
 author: chalarangelo
 cover: beach-from-above
-excerpt: When working with state in your code, you often run into issues with maintaining complexity and readability. Oftentimes, these issues are easily fixable.
+excerpt: When working with stateful code, you can run into issues realted to complexity and readability. Oftentimes, they are easily fixable.
 dateModified: 2021-06-12T19:30:41+03:00
 ---
 

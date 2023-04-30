@@ -5,7 +5,7 @@ type: question
 tags: [javascript,type,variable]
 author: chalarangelo
 cover: boat-port
-excerpt: One of the most commonly asked JavaScript interview questions is about hoisting. It's also a concept that might require some getting used to, so read our guide to learn more.
+excerpt: Hoisting comes up a lot during JavaScript interviews. It's a concept that can require some getting used to, so read our guide to learn more.
 dateModified: 2021-06-12T19:30:41+03:00
 ---
 

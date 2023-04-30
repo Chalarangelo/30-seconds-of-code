@@ -5,7 +5,7 @@ type: question
 tags: [javascript,function]
 author: chalarangelo
 cover: rabbit-call
-excerpt: JavaScript uses callback functions in various places for different purposes. From event listeners to asynchronous operations, they are an invaluable tool you need to master.
+excerpt: JavaScript uses callback functions quite a lot. From event listeners to asynchronous code, they're an invaluable tool you need to master.
 dateModified: 2021-10-03T05:00:00-04:00
 ---
 

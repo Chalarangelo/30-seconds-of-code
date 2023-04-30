@@ -5,7 +5,7 @@ type: story
 tags: [javascript,function]
 author: chalarangelo
 cover: canoe
-excerpt: Learn everything you need to know about JavaScript's `Function.prototype.call()`, `Function.prototype.apply()` and `Function.prototype.bind()` with this short guide.
+excerpt: Learn everything you need to know about JavaScript's `call()`, `apply()` and `bind()` in this short guide.
 dateModified: 2021-06-12T19:30:41+03:00
 ---
 

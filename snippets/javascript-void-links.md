@@ -5,7 +5,7 @@ type: tip
 tags: [javascript,browser,accessibility]
 author: chalarangelo
 cover: white-flower
-excerpt: There are various ways to create an empty link, but some options are more appropriate than others. Learn the best way to handle empty links with this quick tip.
+excerpt: There are many ways to create empty links, some more appropriate than others. Learn how to best handle empty links with this quick tip.
 dateModified: 2021-06-12T19:30:41+03:00
 ---
 

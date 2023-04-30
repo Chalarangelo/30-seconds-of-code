@@ -4,7 +4,7 @@ shortTitle: Lowercase string
 type: question
 tags: [python,string]
 cover: type-stamps
-excerpt: Learn of the two different way to convert a string to lowercase in Python and understand when you should use each one with this quick guide.
+excerpt: Learn of the two different ways to convert strings to lowercase in Python and understand when you should use each one with this quick guide.
 dateModified: 2021-06-12T19:30:41+03:00
 ---
 

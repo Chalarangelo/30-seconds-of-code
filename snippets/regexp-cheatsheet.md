@@ -4,7 +4,7 @@ type: cheatsheet
 tags: [javascript,string,regexp,cheatsheet]
 author: chalarangelo
 cover: tools
-excerpt: Regular expressions are a very useful tool in a variety of situations. Save this cheatsheet for any time you need to look up their syntax and speed up your development.
+excerpt: Regular expressions are a very useful tool. Save this cheatsheet for when you need to look up their syntax and speed up your development.
 dateModified: 2021-06-12T19:30:41+03:00
 ---
 

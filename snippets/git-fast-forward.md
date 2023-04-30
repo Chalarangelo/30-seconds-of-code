@@ -5,7 +5,7 @@ type: question
 tags: [git,branch]
 author: chalarangelo
 cover: boats
-excerpt: Merging a branch is a pretty common Git operation. Learn how fast-forward mode works and its benefits, so you can decide if it's a good fit for you and your team.
+excerpt: Learn about Git's fast-forward mode works and its benefits when mergin branches, so you can decide if it's a good fit for you and your team.
 dateModified: 2021-07-15T05:00:00-04:00
 ---
 

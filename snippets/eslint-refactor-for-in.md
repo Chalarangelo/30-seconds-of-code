@@ -5,7 +5,7 @@ type: tip
 tags: [javascript,array,iterator,eslint]
 author: chalarangelo
 cover: typing
-excerpt: ESLint is a very powerful tool that can save you a lot of headaches, but sometimes it gets in the way. Learn how to refactor code to get rid of a common warning.
+excerpt: ESLint is a really useful tool, but sometimes it gets in the way. Learn how to refactor code to get rid of a common warning.
 dateModified: 2021-06-12T19:30:41+03:00
 ---
 

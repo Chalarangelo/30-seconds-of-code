@@ -4,7 +4,7 @@ shortTitle: Conditional className
 type: tip
 tags: [react,components]
 cover: succulent-red-light
-excerpt: When developing React components, you might often need to conditionally apply a className. Learn how to handle empty classNames correctly using this handy tip.
+excerpt: In React components, you might need to conditionally apply a `className`. Learn how to handle empty values correctly using this handy tip.
 dateModified: 2021-11-07T16:34:37+03:00
 ---
 

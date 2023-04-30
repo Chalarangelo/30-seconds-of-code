@@ -5,7 +5,7 @@ type: story
 tags: [react,testing]
 author: chalarangelo
 cover: lake-trees
-excerpt: Testing stateful React components is by no means a difficult task, but did you know there is an elegant solution that doesn't involve testing state directly?
+excerpt: Testing stateful React components is not difficult, but did you know there's a solution that doesn't involve testing state directly?
 dateModified: 2021-06-12T19:30:41+03:00
 ---
 

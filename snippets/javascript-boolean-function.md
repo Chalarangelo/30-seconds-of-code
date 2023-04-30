@@ -5,7 +5,7 @@ type: question
 tags: [javascript,function,type]
 author: chalarangelo
 cover: rocky-lake
-excerpt: JavaScript's built-in Boolean function can be very useful for truth-checking data among other things. Learn how to use it and level up your code today.
+excerpt: JavaScript's Boolean function can be used for truth-checking data among other things. Learn how to use it and level up your code today.
 dateModified: 2021-06-12T19:30:41+03:00
 ---
 

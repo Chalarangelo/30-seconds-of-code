@@ -5,7 +5,7 @@ type: question
 tags: [javascript,function,class,object]
 author: chalarangelo
 cover: architectural
-excerpt: The constructor is arguably the most crucial part of any JavaScript class, which is why you might want to take a closer look at what they return.
+excerpt: The constructor is a crucial part of any JavaScript class, which is why you might want to take a closer look at what they return.
 dateModified: 2021-06-12T19:30:41+03:00
 ---
 
