@@ -185,7 +185,7 @@ export class Extractor {
             ? tagMetadata.name
             : isBlog
             ? literals.blogTag(tag)
-            : literals.codelangTag(language.long, tag);
+            : literals.codelangTag(language.name, tag);
         const shortName =
           tagMetadata && tagMetadata.shortName
             ? tagMetadata.shortName
@@ -193,7 +193,7 @@ export class Extractor {
             ? tagMetadata.name
             : isBlog
             ? literals.shortBlogTag(tag)
-            : literals.shortCodelangTag(language.long, tag);
+            : literals.shortCodelangTag(language.name, tag);
         const description =
           tagMetadata && tagMetadata.description
             ? tagMetadata.description
