@@ -78,6 +78,7 @@ export const listing = {
           : listing.data.shortDescription;
       return shortDescription ? `<p>${shortDescription}</p>` : null;
     },
+    slug: listing => `${listing.slugPrefix}/p/1`,
     splash: listing => (listing.data ? listing.data.splash : null),
     seoDescription: listing =>
       literals.pageDescription(listing.type, {
@@ -132,6 +133,8 @@ export const listing = {
       // Catch all, also catches 'custom' for collection types
       return listing.snippets.published;
     },
+    formattedSnippetCount: listing =>
+      `${listing.listedSnippets.length} snippets`,
     indexableContent: listing =>
       [listing.name, listing.description].join(' ').toLowerCase(),
   },
@@ -274,6 +277,7 @@ export const listing = {
     'shortName',
     'description',
     'shortDescription',
+    'slug',
     'splash',
     'seoDescription',
     'featured',
@@ -281,6 +285,7 @@ export const listing = {
     'isSearchable',
     'searchTokens',
     'listedSnippets',
+    'formattedSnippetCount',
   ],
   scopes: {
     main: listing => listing.isMain,
