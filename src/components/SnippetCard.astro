@@ -4,8 +4,6 @@ import prefabs from 'prefabs/index.js';
 import Image from 'components/Image.astro';
 
 const { snippet } = Astro.props;
-
-const hasCodeBlocks = Boolean(snippet.codeBlocks && snippet.codeBlocks.length);
 ---
 
 <article class={prefabs.snippetCard}>
@@ -25,26 +23,6 @@ const hasCodeBlocks = Boolean(snippet.codeBlocks && snippet.codeBlocks.length);
     class='card-description flex flex-col'
     set:html={snippet.fullDescription}
   />
-  {
-    hasCodeBlocks && (
-      <div class='card-source-content m-0'>
-        {snippet.codeBlocks.map(({ language, htmlContent }) => (
-          <div class='code-highlight relative'>
-            <pre
-              data-code-language={language.long}
-              class={`notranslate m-0 language-${language.short}`}
-              translate="no"
-              set:html={htmlContent}
-            />
-            <button
-              class={prefabs.copyCodeButton}
-              title='Copy code'
-            />
-          </div>
-        ))}
-      </div>
-    )
-  }
   {
     snippet.author ? (
       <div class='flex flex-col m-0'>
