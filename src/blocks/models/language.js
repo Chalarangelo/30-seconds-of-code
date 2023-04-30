@@ -6,18 +6,12 @@ export const language = {
     { name: 'name', type: 'stringRequired' },
   ],
   properties: {
-    mainRepository: language =>
-      language.repositories && language.repositories.length
-        ? language.repositories.first
-        : null,
     slugPrefix: language =>
-      language.mainRepository ? `/${language.mainRepository.slug}` : null,
+      language.repository ? `/${language.repository.slug}` : null,
     tagShortIds: language =>
-      language.mainRepository
-        ? language.mainRepository.tags.flatPluck('shortId')
-        : [],
+      language.repository ? language.repository.tags.flatPluck('shortId') : [],
   },
-  cacheProperties: ['mainRepository', 'slugPrefix', 'tagShortIds'],
+  cacheProperties: ['slugPrefix', 'tagShortIds'],
   scopes: {
     // Hacky way to exclude the HTML language from the list
     full: language => language.id !== 'html',
