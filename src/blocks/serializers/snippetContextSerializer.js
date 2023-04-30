@@ -12,17 +12,8 @@ export const snippetContextSerializer = {
             github: snippet.author.github,
           }
         : undefined,
-    type: snippet => (snippet.isBlog ? snippet.type : undefined),
     coverUrl: snippet =>
-      snippet.cover
-        ? `/${pathSettings.staticAssetPath}/cover/${snippet.cover}.jpg`
-        : undefined,
-    dateFormatted: snippet =>
-      snippet.dateModified.toLocaleDateString('en-US', {
-        day: 'numeric',
-        month: 'short',
-        year: 'numeric',
-      }),
+      `/${pathSettings.staticAssetPath}/cover/${snippet.cover}.jpg`,
     fullDescription: snippet => snippet.fullDescriptionHtml,
   },
   attributes: [
