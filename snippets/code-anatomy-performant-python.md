@@ -4,7 +4,7 @@ shortTitle: Performant Python code
 type: story
 tags: [python,list,performance]
 cover: walking-on-top
-excerpt: Writing short, efficient Python code is not always straightforward. Read how we optimize our list snippets to increase performance using a couple of simple tricks.
+excerpt: Writing efficient Python code can be tricky. Read how we optimize our list snippets to increase performance using a couple of simple tricks.
 dateModified: 2021-11-07T16:34:37+03:00
 ---
 

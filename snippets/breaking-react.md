@@ -4,7 +4,7 @@ type: story
 tags: [react,debugging]
 author: chalarangelo
 cover: broken-screen
-excerpt: As powerful as React is, it is also quite fragile at places. Did you know that just a few lines are more than enough to break your entire React application?
+excerpt: As powerful as React is, it is also quite fragile at places. Did you know that a few lines can easily break your entire React application?
 dateModified: 2021-11-06T20:51:47+03:00
 ---
 

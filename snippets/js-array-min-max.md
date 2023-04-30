@@ -5,7 +5,7 @@ type: tip
 tags: [javascript,array,math]
 author: chalarangelo
 cover: little-tree
-excerpt: When working with numeric arrays in JavaScript, you might find yourself in need of finding the minimum or maximum value. Here's a quick and easy way to do it.
+excerpt: When working with numeric arrays in JavaScript, you might need to find the minimum or maximum value. Here's a quick and easy way to do it.
 dateModified: 2021-11-06T20:51:47+03:00
 ---
 

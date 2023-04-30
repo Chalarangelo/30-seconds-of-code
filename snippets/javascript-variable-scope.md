@@ -5,7 +5,7 @@ type: story
 tags: [javascript,type,variable]
 author: chalarangelo
 cover: periscope
-excerpt: JavaScript developers often get confused by JavaScript's variables and scope. Here's a quick guide to understanding and remembering everything related to these concepts.
+excerpt: JavaScript developers often get confused by JavaScript's variables and scope. Here's a quick guide to understanding these concepts.
 dateModified: 2021-06-12T19:30:41+03:00
 ---
 

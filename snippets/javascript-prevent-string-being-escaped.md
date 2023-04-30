@@ -5,7 +5,7 @@ type: tip
 tags: [javascript,string]
 author: chalarangelo
 cover: glass-blowing
-excerpt: Strings in JavaScript can be escaped in various ways. But what if you need to prevent a string from being escaped? Here's a handy trick for that.
+excerpt: Strings in JavaScript can be escaped in various ways. But how do you prevent a string from being escaped? Here's a handy trick for that.
 dateModified: 2021-06-17T12:00:00+03:00
 ---
 

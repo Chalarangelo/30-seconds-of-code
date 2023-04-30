@@ -5,7 +5,7 @@ type: story
 tags: [javascript,string,regexp]
 author: chalarangelo
 cover: taking-photos
-excerpt: Regular expressions, while very powerful, are notoriously hard to master. Start using them in your JavaScript code by understanding these 6 features.
+excerpt: Regular expressions are very powerful, but hard to master. Understand these features and start using them in your JavaScript code.
 dateModified: 2021-06-12T19:30:41+03:00
 ---
 

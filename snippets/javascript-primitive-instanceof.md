@@ -5,7 +5,7 @@ type: question
 tags: [javascript,type]
 author: chalarangelo
 cover: wooden-bowl
-excerpt: JavaScript's `instanceof` operator can't be used with primitive values, but there are a couple of simple tricks that you can leverage to your advantage.
+excerpt: JavaScript's `instanceof` operator can't be used with primitive values, but there are a some tricks that you can leverage to your advantage.
 dateModified: 2021-06-12T19:30:41+03:00
 ---
 

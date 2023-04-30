@@ -5,7 +5,7 @@ type: question
 tags: [javascript,string,type]
 author: chalarangelo
 cover: purple-sunset
-excerpt: When it comes to immutability, many developers have trouble wrapping their head around JavaScript strings. Yet they're not as complicated as you might expect.
+excerpt: When it comes to immutability, JavaScript strings are often a source of confusion. Yet they're not as complicated as you might expect.
 dateModified: 2021-10-10T05:00:00-04:00
 ---
 

@@ -5,7 +5,7 @@ type: tip
 tags: [javascript,array,loop]
 author: chalarangelo
 cover: armchair
-excerpt: JavaScript provides a handful of ways to iterate over data. While array methods are usually preferred, there are cases where a `for` loop is actually the best option.
+excerpt: Iteration in JavaScript can be done a handfuld of ways, most often using array methods, but sometimes a `for` loop is the best option.
 dateModified: 2021-06-12T19:30:41+03:00
 ---
 

@@ -5,7 +5,7 @@ type: question
 tags: [javascript,function,promise]
 author: chalarangelo
 cover: blue-sunrise
-excerpt: On the surface, a JavaScript promise's `then` and `finally` methods seem very similar. But there are a few important differences you need to keep in mind.
+excerpt: A JavaScript promise's `then` and `finally` methods seem very similar. But there are a few important differences you need to keep in mind.
 dateModified: 2021-06-12T19:30:41+03:00
 ---
 

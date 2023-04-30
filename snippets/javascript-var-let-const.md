@@ -5,7 +5,7 @@ type: question
 tags: [javascript,type,variable]
 author: chalarangelo
 cover: highlands
-excerpt: JavaScript variables can be declared a handful of ways. However, they're not all created equal and understanding their differences can drastically change the way you code.
+excerpt: JavaScript variables can be declared a handful of ways. However, understanding their differences can drastically change the way you code.
 dateModified: 2021-12-02T09:50:42-04:00
 ---
 
