@@ -3,6 +3,7 @@ title: Geometric progression
 type: snippet
 tags: [math,list]
 cover: kettle-laptop
+excerpt: Initializes a list containing the numbers in the specified geometric progression range.
 dateModified: 2020-11-02T19:28:05+02:00
 ---
 
