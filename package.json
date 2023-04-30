@@ -33,6 +33,7 @@
     "remark-gfm": "^1.0.0",
     "sass": "^1.58.3",
     "sharp": "^0.31.3",
+    "unist-util-select": "3.0.4",
     "unist-util-visit": "^2.0.3",
     "unist-util-visit-parents": "^3.1.1",
     "webfonts-generator": "^0.4.0"
