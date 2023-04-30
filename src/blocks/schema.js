@@ -13,8 +13,8 @@ export const schema = {
     },
     {
       from: { model: 'Repository', name: 'language' },
-      to: { model: 'Language', name: 'repositories' },
-      type: 'manyToOne',
+      to: { model: 'Language', name: 'repository' },
+      type: 'oneToOne',
     },
     {
       from: { model: 'Tag', name: 'repository' },
