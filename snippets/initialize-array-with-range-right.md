@@ -3,6 +3,7 @@ title: Initialize array with reversed range
 type: snippet
 tags: [array]
 cover: interior-4
+excerpt: Initializes an inclusive array with numbers in a range, reversed, using a common `step` difference.
 dateModified: 2020-10-20T23:02:01+03:00
 ---
 

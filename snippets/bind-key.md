@@ -3,6 +3,7 @@ title: Bind object method
 type: snippet
 tags: [function,object]
 cover: oven-paddle
+excerpt: Creates a function that invokes a method at a key in an object, with optional additional parameters.
 dateModified: 2020-10-18T23:04:45+03:00
 ---
 

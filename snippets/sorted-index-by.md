@@ -3,6 +3,7 @@ title: Insertion index in sorted array based on function
 type: snippet
 tags: [array,math]
 cover: digital-nomad-15
+excerpt: Finds the lowest insertion index to maintain array sorting order based on the provided iterator function.
 dateModified: 2020-10-22T20:24:30+03:00
 ---
 

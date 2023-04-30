@@ -3,6 +3,7 @@ title: Initialize array with range
 type: snippet
 tags: [array]
 cover: white-flower
+excerpt: Initializes an inclusive array with numbers in a range, using a common `step` difference.
 dateModified: 2020-10-22T20:23:47+03:00
 ---
 

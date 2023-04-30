@@ -3,6 +3,7 @@ title: Array of successive values
 type: snippet
 tags: [array]
 cover: laptop-view
+excerpt: Applies a function to each element from left to right, returning an array of successively reduced values.
 dateModified: 2020-10-22T20:24:04+03:00
 ---
 

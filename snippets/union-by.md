@@ -3,6 +3,7 @@ title: Mapped array union
 type: snippet
 tags: [array]
 cover: lake-church
+excerpt: Returns every element from both arrays that exists at least once after applying the provided function.
 dateModified: 2020-10-22T20:24:44+03:00
 ---
 

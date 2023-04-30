@@ -3,6 +3,7 @@ title: Group array elements based on function
 type: snippet
 tags: [array]
 cover: switzerland-night
+excerpt: Groups elements based on position in the original arrays and combines them using a function.
 dateModified: 2020-11-03T21:46:13+02:00
 ---
 
