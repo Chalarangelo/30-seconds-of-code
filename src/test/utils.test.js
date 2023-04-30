@@ -2,8 +2,6 @@ import {
   uniqueElements,
   chunk,
   capitalize,
-  optimizeNodes,
-  optimizeAllNodes,
   getURLParameters,
   escapeHTML,
   stripMarkdownFormat,
@@ -37,28 +35,6 @@ describe('capitalize', () => {
 
   it('capitalizes the first letter of a string, lowercases the rest', () => {
     expect(capitalize('fooBar', true)).toBe('Foobar');
-  });
-});
-
-describe('optimizeNodes', () => {
-  it('optimizes nodes', () => {
-    const data =
-      '<span class="token punctuation">foo</span><span class="token punctuation">bar</span>';
-    const regexp = /<span class="token punctuation">([^\0<]*?)<\/span>([\n\r\s]*)<span class="token punctuation">([^\0]*?)<\/span>/gm;
-    const replacer = (match, p1, p2, p3) =>
-      `<span class="token punctuation">${p1}${p2}${p3}</span>`;
-    const result = '<span class="token punctuation">foobar</span>';
-    expect(optimizeNodes(data, regexp, replacer)).toBe(result);
-  });
-});
-
-describe('optimizeAllNodes', () => {
-  it('optimizes all nodes', () => {
-    const data =
-      '<span class="token punctuation">foo</span><span class="token punctuation">bar</span> <span class="token keyword">foo</span><span class="token keyword">bar</span> <span class="token operator">foo</span><span class="token operator">bar</span>';
-    const result =
-      '<span class="token punctuation">foobar</span> <span class="token keyword">foobar</span> <span class="token operator">foobar</span>';
-    expect(optimizeAllNodes(data)).toBe(result);
   });
 });
 
