@@ -58,9 +58,9 @@ export const page = {
         models: { Snippet, Listing },
         serializers: {
           SnippetContextSerializer,
-          SnippetPreviewSerializer,
           ListingContextSerializer,
-          ListingPreviewSerializer,
+          SearchResultSerializer,
+          PreviewSerializer,
         },
       }) =>
       page => {
@@ -77,17 +77,19 @@ export const page = {
               .toArray()
               .slice(0, TOP_SNIPPET_CARDS * 5)
           ).slice(0, TOP_SNIPPET_CARDS);
-          context.featuredCollections =
-            ListingPreviewSerializer.serializeArray(listedCollections);
+          context.featuredCollections = PreviewSerializer.serializeArray(
+            listedCollections,
+            { type: 'collection' }
+          );
           context.featuredCollections.push({
             title: 'More collections',
             url: '/collections/p/1',
             selected: false,
           });
-          context.featuredSnippets = SnippetPreviewSerializer.serializeArray([
-            ...newBlogs,
-            ...topSnippets,
-          ]);
+          context.featuredSnippets = PreviewSerializer.serializeArray(
+            [...newBlogs, ...topSnippets],
+            { type: 'snippet' }
+          );
           // TODO: Move this to a better place
           context.splashImage = '/assets/splash/work-sunrise.png';
           context.snippetListUrl = '/list/p/1';
@@ -109,14 +111,15 @@ export const page = {
             author: page.data.author,
           });
 
-          let recommendedItems = SnippetPreviewSerializer.serializeArray(
-            page.data.recommendedSnippets.toArray()
+          let recommendedItems = PreviewSerializer.serializeArray(
+            page.data.recommendedSnippets.toArray(),
+            { type: 'snippet' }
           );
           if (page.data.recommendedCollection)
             recommendedItems.unshift(
-              ListingPreviewSerializer.serialize(
+              PreviewSerializer.serialize(
                 page.data.recommendedCollection.listing,
-                { withDescription: true }
+                { type: 'collection' }
               )
             );
           context.recommendations = recommendedItems;
@@ -164,15 +167,14 @@ export const page = {
             }
           );
           if (page.isCollectionsListing) {
-            context.snippetList = ListingPreviewSerializer.serializeArray(
+            context.snippetList = PreviewSerializer.serializeArray(
               page.listings.toArray(),
-              {
-                withDescription: true,
-              }
+              { type: 'collection' }
             );
           } else {
-            context.snippetList = SnippetPreviewSerializer.serializeArray(
-              page.snippets.toArray()
+            context.snippetList = PreviewSerializer.serializeArray(
+              page.snippets.toArray(),
+              { type: 'snippet' }
             );
           }
           context.structuredData = Schemer.generateListingData({
@@ -187,19 +189,13 @@ export const page = {
         if (page.type === 'search') {
           const sortedSnippets = Snippet.records.listedByPopularity;
           context.searchIndex = [
-            ...ListingPreviewSerializer.serializeArray(
+            ...SearchResultSerializer.serializeArray(
               Listing.records.searchable.toArray(),
-              {
-                withDescription: true,
-                withSearch: true,
-              }
+              { type: 'collection' }
             ),
-            ...SnippetPreviewSerializer.serializeArray(
-              sortedSnippets.toArray(),
-              {
-                withSearch: true,
-              }
-            ),
+            ...SearchResultSerializer.serializeArray(sortedSnippets.toArray(), {
+              type: 'snippet',
+            }),
           ];
         }
         return context;
