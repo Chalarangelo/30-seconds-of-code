@@ -17,17 +17,11 @@ export const snippetPreviewSerializer = {
       withSearch ? snippet.formattedMiniPreviewTag : undefined,
     previewUrl: (snippet, { withSearch } = {}) => {
       if (withSearch) return undefined;
-      return snippet.cover
-        ? `/${pathSettings.staticAssetPath}/preview/${snippet.cover}.jpg`
-        : undefined;
+      return `/${pathSettings.staticAssetPath}/preview/${snippet.cover}.jpg`;
     },
     dateFormatted: (snippet, { withSearch } = {}) => {
       if (withSearch) return undefined;
-      return snippet.dateModified.toLocaleDateString('en-US', {
-        day: 'numeric',
-        month: 'short',
-        year: 'numeric',
-      });
+      return snippet.dateFormatted;
     },
     type: () => 'snippet',
   },
