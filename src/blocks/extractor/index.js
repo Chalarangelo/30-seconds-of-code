@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import pathSettings from 'settings/paths';
+import JSX_SNIPPET_PRESETS from 'settings/jsxSnippetPresets';
 import { Logger } from 'blocks/utilities/logger';
 import { Content } from 'blocks/utilities/content';
 import { TextParser } from 'blocks/extractor/textParser';
@@ -226,10 +227,23 @@ export class Extractor {
   static extractSnippets = async (contentDir, contentConfigs, languageData) => {
     const logger = new Logger('Extractor.extractSnippets');
     logger.log('Extracting snippets');
+
+    MarkdownParser.loadLanguageData(languageData);
     let snippets = [];
+
     await Promise.all(
       contentConfigs.map(config => {
+        const isBlog = config.isBlog;
+        const isCSS = config.id === '30css';
+        const isReact = config.id === '30react';
         const snippetsPath = `${contentDir}/sources/${config.dirName}/snippets`;
+        const languageKeys = isBlog
+          ? []
+          : isCSS
+          ? ['js', 'html', 'css']
+          : isReact
+          ? ['js', 'jsx']
+          : [config.language.short];
 
         return TextParser.fromDir(snippetsPath).then(snippetData => {
           const parsedData = snippetData.map(snippet => {
@@ -251,22 +265,11 @@ export class Extractor {
               fileName.slice(0, -3)
             )}`;
             const tags = rawTags.map(tag => tag.toLowerCase());
-            // TODO: Temporary fix to get rid of a previous workaround
-            const hasOptionalLanguage = config.id === '30react';
-
-            const languageKeys =
-              config.id === '30blog'
-                ? []
-                : config.id === '30css'
-                ? ['js', 'html', 'css']
-                : config.id === '30react'
-                ? ['js', 'jsx']
-                : [config.language.short];
 
             const bodyText = body
               .slice(0, body.indexOf(mdCodeFence))
               .replace(/\r\n/g, '\n');
-            const isLongBlog = config.isBlog && bodyText.indexOf('\n\n') > 180;
+            const isLongBlog = isBlog && bodyText.indexOf('\n\n') > 180;
             const shortSliceIndex = isLongBlog
               ? bodyText.indexOf(' ', 160)
               : bodyText.indexOf('\n\n');
@@ -276,67 +279,57 @@ export class Extractor {
                 : `${bodyText.slice(0, shortSliceIndex)}${
                     isLongBlog ? '...' : ''
                   }`;
-            const fullText = config.isBlog ? body : bodyText;
+
+            const fullText = body;
             const seoDescription = stripMarkdownFormat(shortText);
 
-            let code = {
-              html: null,
-              css: null,
-              js: null,
-              style: null,
-              src: null,
-              example: null,
-            };
-            let rawCode = {};
-            if (!config.isBlog) {
-              const codeBlocks = [...body.matchAll(codeMatcher)].map(v => ({
-                raw: v[0].trim(),
-                code: v.groups.code.trim(),
-              }));
+            if (seoDescription.length > 140 && unlisted !== true) {
+              logger.warn(`Snippet ${id} has a long SEO description.`);
+            }
 
-              if (config.id === '30css') {
-                code.html = codeBlocks[0].code;
-                rawCode.html = codeBlocks[0].raw;
-                code.css = codeBlocks[1].code;
-                rawCode.css = codeBlocks[1].raw;
-                if (codeBlocks.length > 2) {
-                  code.js = codeBlocks[2].code;
-                  rawCode.js = codeBlocks[2].raw;
-                }
-              } else if (hasOptionalLanguage && codeBlocks.length > 2) {
-                code.style = codeBlocks[0].code;
-                rawCode.style = codeBlocks[0].raw;
-                code.src = codeBlocks[1].code;
-                rawCode.src = codeBlocks[1].raw;
-                code.example = codeBlocks[2].code;
-                rawCode.example = codeBlocks[2].raw;
-              } else {
-                if (codeBlocks.length === 0) console.log(id);
-                if (hasOptionalLanguage) {
-                  code.style = '';
-                  rawCode.style = '';
-                }
-                code.src = codeBlocks[0].code;
-                rawCode.src = codeBlocks[0].raw;
-                code.example = codeBlocks[1].code;
-                rawCode.example = codeBlocks[1].raw;
+            let code = null;
+
+            if (isCSS || isReact) {
+              const codeBlocks = [...body.matchAll(codeMatcher)].map(v =>
+                v.groups.code.trim()
+              );
+
+              if (isCSS) {
+                code = {
+                  html: codeBlocks[0],
+                  css: codeBlocks[1],
+                  js: codeBlocks[2] || '',
+                };
+              }
+
+              if (isReact) {
+                code =
+                  codeBlocks.length > 2
+                    ? {
+                        js: `${codeBlocks[1]}\n\n${codeBlocks[2]}`,
+                        css: codeBlocks[0],
+                      }
+                    : {
+                        js: `${codeBlocks[0]}\n\n${codeBlocks[1]}`,
+                        css: '',
+                      };
+                /* eslint-disable camelcase */
+                code = {
+                  ...code,
+                  html: JSX_SNIPPET_PRESETS.envHtml,
+                  js_pre_processor: JSX_SNIPPET_PRESETS.jsPreProcessor,
+                  js_external: JSX_SNIPPET_PRESETS.jsImports.join(';'),
+                };
+                /* eslint-enable camelcase */
               }
             }
 
             const html = MarkdownParser.parseSegments(
               {
-                texts: {
-                  fullDescription: fullText,
-                  description: shortText,
-                },
-                codeBlocks: rawCode,
+                fullDescription: fullText,
+                description: shortText,
               },
-              {
-                isBlog: config.isBlog,
-                assetPath: `/${pathSettings.staticAssetPath}`,
-                languageData,
-                languageKeys,
-              }
+              languageKeys
             );
 
             return {
@@ -351,12 +344,7 @@ export class Extractor {
               shortText,
               fullText,
               ...html,
-              htmlCode: code.html,
-              cssCode: code.css,
-              jsCode: code.js,
-              styleCode: code.style,
-              srcCode: code.src,
-              exampleCode: code.example,
+              code,
               cover,
               author,
               seoDescription,

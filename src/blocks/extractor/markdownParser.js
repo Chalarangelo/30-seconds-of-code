@@ -4,12 +4,15 @@ import toHAST from 'mdast-util-to-hast';
 import hastToHTML from 'hast-util-to-html';
 import visit from 'unist-util-visit';
 import visitParents from 'unist-util-visit-parents';
+import { selectAll } from 'unist-util-select';
 import Prism from 'prismjs';
 import getLoader from 'prismjs/dependencies';
 import prismComponents from 'prismjs/components';
-import { escapeHTML, optimizeAllNodes, convertToValidId } from 'utils';
+import { escapeHTML, convertToValidId } from 'utils';
 import prefabs from 'prefabs';
+import pathSettings from 'settings/paths';
 
+const assetPath = `/${pathSettings.staticAssetPath}`;
 const loader = getLoader(
   prismComponents,
   ['markup', 'javascript', 'js-extras', 'jsx', 'python', 'css', 'css-extras'],
@@ -30,7 +33,7 @@ const remarkParser = new remark()
   .use(remarkGfm)
   .data('settings', remarkOptions);
 
-const commonTransformers = [
+const textTransformers = [
   // Add 'rel' and 'target' to external links
   {
     matcher: /(href="https?:\/\/)/g,
@@ -82,12 +85,36 @@ const commonTransformers = [
     matcher: /<table>\s*\n*\s*<thead>\s*\n*\s*<tr>\s*\n*\s*<th><\/th>/g,
     replacer: '<table class="primary-col"><thead><tr><th></th>',
   },
+  // Tranform relative paths for images
+  {
+    matcher: /(<p>)*<img src="\.\/([^"]+)"([^>]*)>(<\/p>)*/g,
+    replacer: (match, openTag, imgSrc, imgRest) => {
+      const imgName = imgSrc.slice(0, imgSrc.lastIndexOf('.'));
+      if (imgSrc.endsWith('.png') || imgSrc.endsWith('.svg')) {
+        return `<img src="${assetPath}/${imgSrc}"${imgRest}>`;
+      }
+      return `<picture>
+          <source type="image/webp" srcset="${assetPath}/${imgName}.webp">
+          <img src="${assetPath}/${imgSrc}"${imgRest}>
+        </picture>`;
+    },
+  },
 ];
 
 /**
  * Parses markdown strings, returning plain objects.
  */
 export class MarkdownParser {
+  static _languageData = new Map();
+
+  /**
+   * Caches the language data for later use.
+   * @param {Map} languageData - A map of language names to language data.
+   */
+  static loadLanguageData = languageData => {
+    MarkdownParser._languageData = languageData;
+  };
+
   /**
    * Get the real name of a language given it or an alias.
    * @param {string} name - Name or alias of a language.
@@ -143,12 +170,8 @@ export class MarkdownParser {
    * Parses markdown into HTML from a given markdown string, using remark + prismjs.
    * @param {string} markdown - The markdown string to be parsed.
    */
-  static parseMarkdown = (
-    markdown,
-    isText = false,
-    languageData = [],
-    referenceKeys = null
-  ) => {
+  static parseMarkdown = (markdown, isText = false, referenceKeys = null) => {
+    const languageData = MarkdownParser._languageData;
     const ast = remarkParser.parse(markdown);
 
     const languageObjects = {};
@@ -162,7 +185,10 @@ export class MarkdownParser {
       });
 
     // Highlight code blocks
+    let codeNodeIndex = -1;
+    let languageStringLiteralList = [];
     visit(ast, `code`, node => {
+      codeNodeIndex++;
       const languageName = node.lang ? node.lang : `text`;
       node.type = `html`;
 
@@ -179,6 +205,7 @@ export class MarkdownParser {
       if (languageObject && !languageObjects[languageName])
         languageObjects[languageName] = languageObject;
 
+      // TODO: Add notranslate and translate=no to the inner pre
       node.value = isText
         ? [
             `<div class="code-highlight relative mt-4" data-language="${languageName}">`,
@@ -188,6 +215,25 @@ export class MarkdownParser {
             `</div>`,
           ].join('')
         : `${highlightedCode}`;
+
+      node.cni = codeNodeIndex;
+      node.lsl = languageStringLiteral;
+      languageStringLiteralList.push(languageStringLiteral);
+    });
+
+    // Revisit code blocks, find the last if necessary and change the language
+    // to 'Examples'. Should only match 2 consecutive code blocks of the same
+    // language and only once for the very last block on the page.
+    selectAll('html + html', ast).forEach(node => {
+      if (
+        node.cni === codeNodeIndex &&
+        languageStringLiteralList.slice(-2)[0] === node.lsl
+      ) {
+        node.value = node.value.replace(
+          `data-code-language="${node.lsl}"`,
+          'data-code-language="Examples"'
+        );
+      }
     });
 
     const references = new Map(
@@ -229,59 +275,19 @@ export class MarkdownParser {
     return hastToHTML(htmlAst, { allowDangerousHtml: true });
   };
 
-  static parseSegments = (
-    { texts, codeBlocks },
-    { isBlog, assetPath, languageData, languageKeys }
-  ) => {
-    const result = {};
-    Object.entries(texts).forEach(([key, value]) => {
-      if (!value) return;
+  static parseSegments = (texts, languageKeys) =>
+    Object.entries(texts).reduce((result, [key, value]) => {
+      if (!value.trim()) return result;
 
-      const referenceKeys = isBlog
-        ? null
-        : languageKeys.length
-        ? languageKeys
-        : [];
-      result[`${key}Html`] = value.trim()
-        ? MarkdownParser.parseMarkdown(value, true, languageData, referenceKeys)
-        : '';
-    });
-    result.descriptionHtml = commonTransformers.reduce(
-      (acc, { matcher, replacer }) => {
-        return acc.replace(matcher, replacer);
-      },
-      result.descriptionHtml
-    );
-    result.fullDescriptionHtml = commonTransformers.reduce(
-      (acc, { matcher, replacer }) => {
-        return acc.replace(matcher, replacer);
-      },
-      result.fullDescriptionHtml
-    );
-
-    if (isBlog) {
-      // Transform relative paths for images
-      result.fullDescriptionHtml = result.fullDescriptionHtml.replace(
-        /(<p>)*<img src="\.\/([^"]+)"([^>]*)>(<\/p>)*/g,
-        (match, openTag, imgSrc, imgRest) => {
-          const imgName = imgSrc.slice(0, imgSrc.lastIndexOf('.'));
-          if (imgSrc.endsWith('.png') || imgSrc.endsWith('.svg')) {
-            return `<img src="${assetPath}/${imgSrc}"${imgRest}>`;
-          }
-          return `<picture>
-            <source type="image/webp" srcset="${assetPath}/${imgName}.webp">
-            <img src="${assetPath}/${imgSrc}"${imgRest}>
-          </picture>`;
-        }
+      const htmlKey = `${key}Html`;
+      result[htmlKey] = MarkdownParser.parseMarkdown(value, true, languageKeys);
+      result[htmlKey] = textTransformers.reduce(
+        (acc, { matcher, replacer }) => {
+          return acc.replace(matcher, replacer);
+        },
+        result[htmlKey]
       );
-    } else {
-      Object.entries(codeBlocks).forEach(([key, value]) => {
-        if (!value) return;
-        result[`${key}CodeBlockHtml`] = value.trim()
-          ? optimizeAllNodes(MarkdownParser.parseMarkdown(value)).trim()
-          : '';
-      });
-    }
-    return result;
-  };
+
+      return result;
+    }, {});
 }
