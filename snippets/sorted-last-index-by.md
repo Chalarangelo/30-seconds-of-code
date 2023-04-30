@@ -3,6 +3,7 @@ title: Last insertion index in sorted array based on function
 type: snippet
 tags: [array]
 cover: hard-disk
+excerpt: Finds the highest insertion index to maintain array sorting order based on the provided iterator function.
 dateModified: 2020-10-22T20:24:30+03:00
 ---
 

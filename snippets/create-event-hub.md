@@ -3,6 +3,7 @@ title: Create event hub
 type: snippet
 tags: [browser,event]
 cover: city-view
+excerpt: Creates a pub/sub event hub with emit, on, and off methods.
 dateModified: 2020-09-15T16:28:04+03:00
 ---
 

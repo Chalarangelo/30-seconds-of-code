@@ -3,6 +3,7 @@ title: Create HTML element
 type: snippet
 tags: [browser]
 cover: flower-portrait-4
+excerpt: Creates an element from a string without appending it to the document.
 dateModified: 2020-10-19T18:51:03+03:00
 ---
 
