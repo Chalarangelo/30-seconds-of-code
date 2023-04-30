@@ -18,18 +18,7 @@ export const snippet = {
     { name: 'fullText', type: 'stringRequired' },
     { name: 'descriptionHtml', type: 'string' },
     { name: 'fullDescriptionHtml', type: 'string' },
-    { name: 'htmlCodeBlockHtml', type: 'string' },
-    { name: 'cssCodeBlockHtml', type: 'string' },
-    { name: 'jsCodeBlockHtml', type: 'string' },
-    { name: 'styleCodeBlockHtml', type: 'string' },
-    { name: 'srcCodeBlockHtml', type: 'string' },
-    { name: 'exampleCodeBlockHtml', type: 'string' },
-    { name: 'htmlCode', type: 'string' },
-    { name: 'cssCode', type: 'string' },
-    { name: 'jsCode', type: 'string' },
-    { name: 'styleCode', type: 'string' },
-    { name: 'srcCode', type: 'string' },
-    { name: 'exampleCode', type: 'string' },
+    { name: 'code', type: 'object' },
     { name: 'cover', type: 'stringRequired' },
     { name: 'seoDescription', type: 'stringRequired' },
   ],
@@ -160,49 +149,6 @@ export const snippet = {
 
       return [homeCrumb, languageCrumb, tagCrumb, snippetCrumb].filter(Boolean);
     },
-    codeBlocks: snippet => {
-      if (snippet.isBlog) return [];
-      if (snippet.isCSS) {
-        let blocks = [
-          {
-            language: { short: 'html', long: 'HTML' },
-            htmlContent: snippet.htmlCodeBlockHtml,
-          },
-          {
-            language: { short: 'css', long: 'CSS' },
-            htmlContent: snippet.cssCodeBlockHtml,
-          },
-        ];
-        if (snippet.jsCodeBlockHtml)
-          blocks.push({
-            language: { short: 'js', long: 'JavaScript' },
-            htmlContent: snippet.jsCodeBlockHtml,
-          });
-        return blocks;
-      }
-      let blocks = [
-        {
-          language: {
-            short: snippet.language.short,
-            long: snippet.language.name,
-          },
-          htmlContent: snippet.srcCodeBlockHtml,
-        },
-        {
-          language: {
-            short: snippet.language.short,
-            long: 'Examples',
-          },
-          htmlContent: snippet.exampleCodeBlockHtml,
-        },
-      ];
-      if (snippet.styleCodeBlockHtml)
-        blocks.splice(1, 0, {
-          language: { short: 'css', long: 'CSS' },
-          htmlContent: snippet.styleCodeBlockHtml,
-        });
-      return blocks;
-    },
     hasCollection: snippet =>
       Boolean(snippet.collections && snippet.collections.length),
     recommendedCollection: snippet =>
@@ -215,11 +161,6 @@ export const snippet = {
         ...snippet.tags,
         (snippet.language && snippet.language.long) || '',
         snippet.type || '',
-        snippet.srcCode || '',
-        snippet.cssCode || '',
-        snippet.htmlCode || '',
-        snippet.jsCode || '',
-        snippet.styleCode || '',
         snippet.fullText || '',
         snippet.shortText || '',
       ]
