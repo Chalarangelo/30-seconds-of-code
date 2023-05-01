@@ -8,10 +8,19 @@ export const collection = {
     { name: 'splash', type: 'stringRequired' },
     { name: 'description', type: 'stringRequired' },
     { name: 'shortDescription', type: 'stringRequired' },
+    { name: 'topLevel', type: 'booleanRequired' },
   ],
-  lazyProperties: {
-    listing: ({ models: { Listing } }) => collection =>
-      Listing.records.get(`collection/${collection.slug}`),
+  properties: {
+    hasParent: collection => Boolean(collection.listing.parent),
   },
-  cacheProperties: ['listing'],
+  lazyProperties: {
+    listing:
+      ({ models: { Listing } }) =>
+      collection =>
+        Listing.records.get(`collection/${collection.slug}`),
+  },
+  scopes: {
+    withParent: collection => collection.hasParent,
+  },
+  cacheProperties: ['listing', 'hasParent'],
 };

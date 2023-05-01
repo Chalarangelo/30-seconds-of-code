@@ -50,16 +50,10 @@ export const snippet = {
       else return snippet.formattedPrimaryTag;
     },
     isBlog: snippet => snippet.type !== 'snippet',
-    isCSS: snippet => snippet.repository.isCSS,
-    isReact: snippet => snippet.repository.isReact,
     slug: snippet => `/${snippet.id}`,
     fileSlug: snippet => convertToSeoSlug(snippet.fileName.slice(0, -3)),
     url: snippet => `${snippet.repository.repoUrlPrefix}/${snippet.fileName}`,
-    actionType: snippet => {
-      if (snippet.isBlog) return undefined;
-      if (snippet.isCSS || snippet.isReact) return 'codepen';
-      return 'copy';
-    },
+    actionType: snippet => (snippet.code ? 'codepen' : undefined),
     isScheduled: snippet => snippet.dateModified > new Date(),
     isPublished: snippet => !snippet.isScheduled,
     isListed: snippet =>
@@ -72,33 +66,40 @@ export const snippet = {
         year: 'numeric',
       }),
     searchTokensArray: snippet => {
-      const tokenizableElements = snippet.isBlog
-        ? [
-            ...snippet.tags,
-            ...tokenizeSnippet(
-              stripMarkdownFormat(`${snippet.shortText} ${snippet.title}`)
-            ),
-          ]
-        : [
-            snippet.fileName.slice(0, -3),
-            snippet.repository.language.short,
-            snippet.repository.language.long,
-            ...snippet.tags,
-            ...tokenizeSnippet(
-              stripMarkdownFormat(`${snippet.shortText} ${snippet.title}`)
-            ),
-          ];
-      // Normalized title tokens, without stopword removal for special matches
-      // e.g. "this" in a relevant JS article needs to be matched when queried
-      tokenizableElements.push(
+      const tokenizableElements = [
+        snippet.fileName.slice(0, -3),
+        ...snippet.tags,
+        ...tokenizeSnippet(
+          stripMarkdownFormat(`${snippet.shortText} ${snippet.title}`)
+        ),
+        // Normalized title tokens, without stopword removal for special matches
+        // e.g. "this" in a relevant JS article needs to be matched when queried
         ...snippet.title
           .toLowerCase()
           .trim()
-          .split(/[^a-z0-9\-']+/i)
-      );
+          .split(/[^a-z0-9\-']+/i),
+      ];
+      if (snippet.language)
+        tokenizableElements.push(snippet.language.short, snippet.language.long);
+
       return uniqueElements(tokenizableElements.map(v => v.toLowerCase()));
     },
     searchTokens: snippet => snippet.searchTokensArray.join(' '),
+    // TODO: This is still broken, check a DS snippet
+    primaryTagCollection: snippet => {
+      if (snippet.language) {
+        // Language slug prefix has a leading `/`
+        const primaryTagCollectionId =
+          `${snippet.language.slugPrefix}/${snippet.truePrimaryTag}`.slice(1);
+        const collection = snippet.collections.get(primaryTagCollectionId);
+        if (collection) return collection;
+      }
+
+      if (snippet.hasCollection) {
+        const parentedCollection = snippet.collections.withParent.first;
+        if (parentedCollection) return parentedCollection;
+      }
+    },
     breadcrumbs: snippet => {
       const homeCrumb = {
         url: '/',
@@ -117,36 +118,12 @@ export const snippet = {
             };
 
       let tagCrumb = null;
-      if (!snippet.isBlog) {
+
+      if (snippet.primaryTagCollection)
         tagCrumb = {
-          url: `${
-            snippet.language.slugPrefix
-          }/t/${snippet.primaryTag.toLowerCase()}/p/1`,
-          name: literals.tag(snippet.primaryTag),
+          url: `/${snippet.primaryTagCollection.slug}/p/1`,
+          name: snippet.primaryTagCollection.shortName,
         };
-      } else if (
-        snippet.hasCollection &&
-        snippet.collections.first.listing.parent
-      ) {
-        // TODO: Make this smarter to account for multiple collections
-        tagCrumb = {
-          url: `/${snippet.collections.first.slug}/p/1`,
-          name: snippet.collections.first.shortName,
-        };
-      } else if (
-        snippet.language &&
-        snippet.truePrimaryTag &&
-        snippet.language.tagShortIds.includes(
-          snippet.truePrimaryTag.toLowerCase()
-        )
-      ) {
-        tagCrumb = {
-          url: `${
-            snippet.language.slugPrefix
-          }/t/${snippet.truePrimaryTag.toLowerCase()}/p/1`,
-          name: literals.tag(snippet.truePrimaryTag),
-        };
-      }
 
       const snippetCrumb = {
         url: snippet.slug,
@@ -197,8 +174,6 @@ export const snippet = {
   cacheProperties: [
     'ranking',
     'isBlog',
-    'isCSS',
-    'isReact',
     'isListed',
     'isScheduled',
     'isPublished',
@@ -208,6 +183,7 @@ export const snippet = {
     'language',
     'primaryTag',
     'truePrimaryTag',
+    'primaryTagCollection',
     'formattedPrimaryTag',
     'fileSlug',
     'seoTitle',
