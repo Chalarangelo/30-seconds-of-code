@@ -437,10 +437,11 @@ export class Application {
         relatedRecordId: repo.id,
         type,
         slugPrefix,
-        featuredIndex: featuredListings.indexOf(repoListingId),
+        featuredIndex: featuredListings.indexOf(repo.slug),
       });
       // Populate tag listings from repositories
       repo.tags.forEach(tag => {
+        // This comes out of the extractor with a leading slash
         const tagSlugPrefix = tag.slugPrefix;
         const tagId = `tag${tagSlugPrefix}`;
         Listing.createRecord({
@@ -448,7 +449,7 @@ export class Application {
           relatedRecordId: `${tag.id}`,
           type: 'tag',
           slugPrefix: tagSlugPrefix,
-          featuredIndex: featuredListings.indexOf(tagId),
+          featuredIndex: featuredListings.indexOf(tagSlugPrefix.slice(1)),
           parent: repoListingId,
         });
       });
@@ -469,7 +470,7 @@ export class Application {
         relatedRecordId: collection.id,
         type: 'collection',
         slugPrefix,
-        featuredIndex: featuredListings.indexOf(listingId),
+        featuredIndex: featuredListings.indexOf(collection.slug),
         parent,
       });
     });

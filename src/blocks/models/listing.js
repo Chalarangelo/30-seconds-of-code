@@ -153,7 +153,6 @@ export const listing = {
             name: listing.dataName,
             splash: listing.dataSplash,
             description: listing.dataDescription,
-            featuredListings: listing.dataFeaturedListings,
           };
         if (listing.isBlog) return Repository.records.blog.first;
         if (listing.isLanguage)
