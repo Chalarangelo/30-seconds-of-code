@@ -77,6 +77,7 @@ export const page = {
               .toArray()
               .slice(0, TOP_SNIPPET_CARDS * 5)
           ).slice(0, TOP_SNIPPET_CARDS);
+          // TODO: These are damn chips, I need to make it simpler
           context.featuredCollections = PreviewSerializer.serializeArray(
             listedCollections,
             { type: 'collection' }

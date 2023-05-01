@@ -37,7 +37,6 @@ export class Extractor {
       contentConfigs,
       [...languageData.values()]
     );
-    const tagData = Extractor.processTagData(contentConfigs, snippets);
     const { mainListing, collectionListing } =
       Extractor.extractHubConfig(contentDir);
     // Language data not passed here by design, pass only if needed
@@ -69,7 +68,6 @@ export class Extractor {
         const { references, ...restData } = data;
         return { ...restData };
       }),
-      tags: tagData,
       collectionListingConfig: Object.entries(collectionListing).reduce(
         (acc, [key, value]) => ({ ...acc, [`data${capitalize(key)}`]: value }),
         {}
@@ -106,12 +104,23 @@ export class Extractor {
     const logger = new Logger('Extractor.extractCollectionConfigs');
     logger.log('Extracting collection configurations');
     const configs = YAMLHandler.fromGlob(
-      `${contentDir}/configs/collections/*.yaml`,
+      `${contentDir}/configs/collections/**/*.yaml`,
       { withNames: true }
     ).map(([path, config]) => {
-      const { snippetIds = [], ...rest } = config;
-      const id = path.split('/').slice(-1)[0].split('.')[0];
+      const {
+        snippetIds = [],
+        name,
+        shortName = name,
+        topLevel = false,
+        ...rest
+      } = config;
+      const id = path
+        .replace(`${contentDir}/configs/collections/`, '')
+        .split('.')[0];
       return {
+        name,
+        shortName,
+        topLevel,
         ...rest,
         snippetIds,
         id,
@@ -154,74 +163,6 @@ export class Extractor {
     }, new Map());
     logger.success('Finished extracting language data');
     return languageData;
-  };
-
-  static processTagData = (contentConfigs, snippetData) => {
-    const logger = new Logger('Extractor.processTagData');
-    logger.log('Processing tag data');
-    const tagData = contentConfigs.reduce((acc, config) => {
-      const { isBlog, slug: configSlugPrefix, language } = config;
-      const snippets = snippetData.filter(
-        snippet => snippet.repository === config.id
-      );
-      let snippetTags = uniqueElements(
-        snippets
-          .map(snippet => snippet.tags[0])
-          .sort((a, b) => a.localeCompare(b))
-      );
-      if (config.isBlog)
-        snippetTags = snippetTags.filter(
-          tag => snippets.filter(s => s.tags.includes(tag)).length >= 10
-        );
-
-      const tagData = snippetTags.map(tag => {
-        // TODO: Potentially configurable to resolve to an empty object instead
-        // of undefined to simplify checks using `||`
-        const tagMetadata = config.tagMetadata
-          ? config.tagMetadata[tag]
-          : undefined;
-        const name =
-          tagMetadata && tagMetadata.name
-            ? tagMetadata.name
-            : isBlog
-            ? literals.blogTag(tag)
-            : literals.codelangTag(language.name, tag);
-        const shortName =
-          tagMetadata && tagMetadata.shortName
-            ? tagMetadata.shortName
-            : tagMetadata && tagMetadata.name
-            ? tagMetadata.name
-            : isBlog
-            ? literals.shortBlogTag(tag)
-            : literals.shortCodelangTag(language.name, tag);
-        const description =
-          tagMetadata && tagMetadata.description
-            ? tagMetadata.description
-            : config.description;
-        const shortDescription =
-          tagMetadata && tagMetadata.shortDescription
-            ? tagMetadata.shortDescription
-            : config.shortDescription;
-        const splash =
-          tagMetadata && tagMetadata.splash
-            ? tagMetadata.splash
-            : config.splash;
-        const slugPrefix = `/${configSlugPrefix}/t/${tag}`;
-        return {
-          id: `${config.id}_${tag}`,
-          slugPrefix,
-          name,
-          shortName,
-          description,
-          shortDescription,
-          splash,
-          repository: config.id,
-        };
-      });
-      return [...acc, ...tagData];
-    }, []);
-    logger.success('Finished processing tag data');
-    return tagData;
   };
 
   static extractSnippets = async (contentDir, contentConfigs, languageData) => {

@@ -393,21 +393,12 @@ export class Application {
   static populateDataset() {
     const logger = new Logger('Application.populateDataset');
     logger.log('Populating dataset...');
-    const {
-      Snippet,
-      Repository,
-      Collection,
-      Listing,
-      Language,
-      Tag,
-      Author,
-      Page,
-    } = Application.models;
+    const { Snippet, Repository, Collection, Listing, Language, Author, Page } =
+      Application.models;
     const {
       snippets,
       repositories,
       collections,
-      tags,
       languages,
       authors,
       mainListingConfig,
@@ -415,10 +406,9 @@ export class Application {
     } = Application.datasetObject;
     const { dataFeaturedListings: featuredListings } = collectionListingConfig;
 
-    // Populate repos, languages, tags, authors, snippets
+    // Populate repos, languages, authors, snippets
     repositories.forEach(repo => Repository.createRecord(repo));
     languages.forEach(language => Language.createRecord(language));
-    tags.forEach(tag => Tag.createRecord(tag));
     authors.forEach(author => Author.createRecord(author));
     snippets.forEach(snippet => {
       const { dateModified, ...rest } = snippet;
@@ -427,48 +417,46 @@ export class Application {
         dateModified: new Date(dateModified),
       });
     });
-    // Populate listings and create relationships
-    Repository.records.forEach(repo => {
-      const type = repo.isBlog ? 'blog' : 'language';
-      const slugPrefix = `/${repo.slug}`;
-      const repoListingId = `${type}${slugPrefix}`;
-      Listing.createRecord({
-        id: repoListingId,
-        relatedRecordId: repo.id,
-        type,
-        slugPrefix,
-        featuredIndex: featuredListings.indexOf(repo.slug),
-      });
-      // Populate tag listings from repositories
-      repo.tags.forEach(tag => {
-        // This comes out of the extractor with a leading slash
-        const tagSlugPrefix = tag.slugPrefix;
-        const tagId = `tag${tagSlugPrefix}`;
-        Listing.createRecord({
-          id: tagId,
-          relatedRecordId: `${tag.id}`,
-          type: 'tag',
-          slugPrefix: tagSlugPrefix,
-          featuredIndex: featuredListings.indexOf(tagSlugPrefix.slice(1)),
-          parent: repoListingId,
-        });
-      });
-    });
+
     // Populate collections, collection listings and link to snippets and parent listings
     collections.forEach(collection => {
-      const { snippetIds, typeMatcher, parent, ...rest } = collection;
+      const {
+        snippetIds,
+        typeMatcher,
+        languageMatcher,
+        tagMatcher,
+        parent,
+        ...rest
+      } = collection;
       const collectionRec = Collection.createRecord(rest);
       if (snippetIds && snippetIds.length) collectionRec.snippets = snippetIds;
-      if (typeMatcher)
-        collectionRec.snippets = Snippet.records.listedByPopularity
-          .where(snippet => snippet.type === typeMatcher)
+      else {
+        const queryMatchers = [];
+        let queryScope = 'listedByPopularity';
+        if (typeMatcher)
+          if (typeMatcher === 'article') {
+            queryScope = 'listedByNew';
+            queryMatchers.push(snippet => snippet.type !== 'snippet');
+          } else queryMatchers.push(snippet => snippet.type === typeMatcher);
+        if (languageMatcher)
+          queryMatchers.push(
+            snippet =>
+              snippet.language && snippet.language.id === languageMatcher
+          );
+        if (tagMatcher)
+          queryMatchers.push(snippet => snippet.tags.includes(tagMatcher));
+
+        collectionRec.snippets = Snippet.records[queryScope]
+          .where(snippet => queryMatchers.every(matcher => matcher(snippet)))
           .flatPluck('id');
+      }
       const slugPrefix = `/${collection.slug}`;
       const listingId = `collection${slugPrefix}`;
       Listing.createRecord({
         id: listingId,
         relatedRecordId: collection.id,
         type: 'collection',
+        isTopLevel: collection.topLevel,
         slugPrefix,
         featuredIndex: featuredListings.indexOf(collection.slug),
         parent,

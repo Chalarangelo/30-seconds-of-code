@@ -17,11 +17,6 @@ export const schema = {
       type: 'oneToOne',
     },
     {
-      from: { model: 'Tag', name: 'repository' },
-      to: { model: 'Repository', name: 'tags' },
-      type: 'manyToOne',
-    },
-    {
       from: { model: 'Snippet', name: 'author' },
       to: { model: 'Author', name: 'articles' },
       type: 'manyToOne',
