@@ -2,7 +2,8 @@
 title: Understanding Python's slice assignment
 shortTitle: Python slice assignment
 type: story
-tags: [python,list]
+language: python
+tags: [list]
 cover: sliced-fruits
 excerpt: Learn everything you need to know about Python's slice assignment with this handy guide.
 dateModified: 2021-06-12T19:30:41+03:00

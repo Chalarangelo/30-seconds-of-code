@@ -2,7 +2,8 @@
 title: Recommended minimum HTML head
 shortTitle: HTML head template
 type: story
-tags: [webdev,html,browser]
+language: html
+tags: [webdev,browser]
 author: chalarangelo
 cover: boutique-home-office-1
 excerpt: Ensure your HTML documents are properly structured by including these lines in your `<head>` element.

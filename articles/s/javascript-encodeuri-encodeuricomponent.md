@@ -2,7 +2,8 @@
 title: What is the difference between encodeURI() and encodeURIComponent() in JavaScript?
 shortTitle: encodeURI() vs encodeURIComponent()
 type: question
-tags: [javascript,browser]
+language: javascript
+tags: [browser]
 author: chalarangelo
 cover: laptop-view
 excerpt: JavaScript provides two methods for encoding characters to URL-safe strings. Do you know when to use each one?

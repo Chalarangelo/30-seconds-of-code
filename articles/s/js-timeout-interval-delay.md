@@ -2,7 +2,8 @@
 title: How delays work in JavaScript timing functions
 shortTitle: Delays in JavaScript timing functions
 type: story
-tags: [javascript,browser,timeout]
+language: javascript
+tags: [browser,timeout]
 author: chalarangelo
 cover: river-house-lights
 excerpt: Did you know that the delay of `setTimeout()` and `setInterval()` is merely a suggestion?

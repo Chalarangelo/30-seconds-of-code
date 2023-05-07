@@ -2,7 +2,8 @@
 title: How can I remove trailing zeros from a number in JavaScript?
 shortTitle: Remove trailing zeros from number
 type: story
-tags: [javascript,math]
+language: javascript
+tags: [math]
 author: chalarangelo
 cover: island-corridor
 excerpt: When formatting decimal values in JavaScript, trailing zeros can be undesired. Here's how to deal with them.

@@ -1,7 +1,8 @@
 ---
 title: React rendering state
 type: story
-tags: [react,render]
+language: react
+tags: [render]
 author: chalarangelo
 cover: comic-glasses
 excerpt: Take a deeper dive into React's rendering process and understand the role of the Context API and Redux in it.

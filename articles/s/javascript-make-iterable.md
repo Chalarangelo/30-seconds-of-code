@@ -2,7 +2,8 @@
 title: "Tip: Make any JavaScript value iterable"
 shortTitle: Make any value iterable
 type: tip
-tags: [javascript,array,iterator,generator]
+language: javascript
+tags: [array,iterator,generator]
 author: chalarangelo
 cover: colorful-plastic
 excerpt: Did you know you can define an iterator for any JavaScript value? This quick tip will show you how.

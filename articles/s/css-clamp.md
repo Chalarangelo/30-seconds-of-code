@@ -2,7 +2,8 @@
 title: "Tip: Use clamp() in CSS for responsive typography"
 shortTitle: CSS clamp()
 type: tip
-tags: [css,visual]
+language: css
+tags: [visual]
 author: chalarangelo
 cover: strawberries
 excerpt: Implement responsive typography with the CSS clamp() function.

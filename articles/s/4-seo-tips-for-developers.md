@@ -2,7 +2,7 @@
 title: 4 SEO tips for developers
 shortTitle: SEO tips
 type: story
-tags: [seo,webdev]
+tags: [webdev,seo]
 author: chalarangelo
 cover: sunrise-over-city
 excerpt: SEO is a very relevant topics that most developers are inexperienced in. Here are 4 actionable SEO tips you can implement today.

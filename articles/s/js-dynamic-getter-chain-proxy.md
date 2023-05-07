@@ -2,7 +2,8 @@
 title: Chaining dynamic getters using the Proxy object
 shortTitle: Dynamic getter chaining
 type: story
-tags: [javascript,object,proxy]
+language: javascript
+tags: [object,proxy]
 author: chalarangelo
 cover: colorful-rocks
 excerpt: Using the Proxy object, we can create chainable dynamic getters for objects in JavaScript.

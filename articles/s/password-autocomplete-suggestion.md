@@ -2,6 +2,7 @@
 title: "Tip: Adding autocomplete to a password field"
 shortTitle: Password field autocomplete
 type: tip
+language: html
 tags: [webdev]
 author: chalarangelo
 cover: padlocks

@@ -2,7 +2,8 @@
 title: JavaScript Data Structures - Binary Tree
 shortTitle: Binary Tree
 type: story
-tags: [javascript,class]
+language: javascript
+tags: [class]
 author: chalarangelo
 cover: purple-flower-macro-3
 excerpt: A binary tree is a hierarchical data structure of linked nodes with at most two children each.

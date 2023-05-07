@@ -2,7 +2,8 @@
 title: Typechecking objects with Proxy in JavaScript
 shortTitle: Object typechecking with Proxy
 type: story
-tags: [javascript,object,type,proxy]
+language: javascript
+tags: [object,type,proxy]
 author: chalarangelo
 cover: customs
 excerpt: A simple way to typecheck objects at runtime using the Proxy object.

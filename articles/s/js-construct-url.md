@@ -2,7 +2,8 @@
 title: How to construct a URL in JavaScript
 shortTitle: Construct a URL in JavaScript
 type: story
-tags: [javascript,string,browser]
+language: javascript
+tags: [string,browser]
 author: chalarangelo
 cover: alfama
 excerpt: A short guide on how to correctly construct a URL in JavaScript.

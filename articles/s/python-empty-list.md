@@ -2,7 +2,8 @@
 title: How can I check if a Python list is empty?
 shortTitle: Empty list
 type: question
-tags: [python,list]
+language: python
+tags: [list]
 author: chalarangelo
 cover: salad-2
 excerpt: There's a good way to test the emptiness of a Python list and a better one. Which one are you using?

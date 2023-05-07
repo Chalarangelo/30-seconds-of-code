@@ -2,7 +2,8 @@
 title: Frequency Map Data Structure
 shortTitle: Frequency Map
 type: story
-tags: [javascript,class]
+language: javascript
+tags: [class]
 author: chalarangelo
 cover: radio-monstera
 excerpt: A custom data structure to keep track of value frequencies in an array.

@@ -2,7 +2,8 @@
 title: What is the difference between cookies, local storage, and session storage?
 shortTitle: Cookies, local storage, and session storage
 type: question
-tags: [javascript,browser,webdev]
+language: javascript
+tags: [browser,webdev]
 author: chalarangelo
 cover: three-vases
 excerpt: Learn the difference between cookies, local storage and session storage and start using the correct option for your needs.

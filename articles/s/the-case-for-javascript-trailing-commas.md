@@ -2,7 +2,8 @@
 title: The case for trailing commas in JavaScript
 shortTitle: Trailing commas in JavaScript
 type: story
-tags: [javascript,webdev]
+language: javascript
+tags: [webdev]
 author: chalarangelo
 cover: contemporary-desk
 excerpt: Trailing commas are not without controversy. Here's why I think you should use them.

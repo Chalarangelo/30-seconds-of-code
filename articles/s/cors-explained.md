@@ -2,7 +2,8 @@
 title: What is CORS?
 shortTitle: CORS explained
 type: question
-tags: [javascript,browser,webdev]
+language: javascript
+tags: [browser,webdev]
 author: chalarangelo
 cover: chill-surfing
 excerpt: CORS (Cross-Origin Resource Sharing) trips up many developers, but it's pretty easy to wrap your head around.

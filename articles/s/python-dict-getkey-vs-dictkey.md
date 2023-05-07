@@ -2,7 +2,8 @@
 title: "Tip: You should use dict.get(key) instead of dict[key]"
 shortTitle: dict.get(key) vs dict[key]
 type: tip
-tags: [python,dictionary]
+language: python
+tags: [dictionary]
 cover: fruit-feast
 excerpt: Learn the difference between two common ways to access values in Python dictionaries and level up your code today.
 dateModified: 2021-06-12T19:30:41+03:00

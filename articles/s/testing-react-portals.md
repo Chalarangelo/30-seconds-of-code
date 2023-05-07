@@ -2,7 +2,8 @@
 title: Testing React portals
 shortTitle: Portal testing
 type: story
-tags: [react,testing]
+language: react
+tags: [testing]
 author: chalarangelo
 cover: portal-timelapse
 excerpt: Testing React components that use portals can be difficult until you understand what you really need to be testing.

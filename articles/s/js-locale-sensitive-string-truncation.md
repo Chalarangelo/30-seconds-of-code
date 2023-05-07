@@ -2,7 +2,8 @@
 title: How can I truncate a string accounting for locale?
 shortTitle: Locale-sensitive string truncation
 type: question
-tags: [javascript,string]
+language: javascript
+tags: [string]
 author: chalarangelo
 cover: reflection-on-lake
 excerpt: Locale-sensitive string splitting and truncation are finally possible in JavaScript.

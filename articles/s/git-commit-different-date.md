@@ -2,7 +2,8 @@
 title: "Tip: Create a commit with a different date"
 shortTitle: Create a commit with a different date
 type: tip
-tags: [git,commit]
+language: git
+tags: [commit]
 author: chalarangelo
 cover: ice
 excerpt: Ever needed to create a git commit with a different date? Here's a quick and easy way to do it.

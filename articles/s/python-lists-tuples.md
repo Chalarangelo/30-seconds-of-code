@@ -2,7 +2,8 @@
 title: What is the difference between lists and tuples in Python?
 shortTitle: Lists vs Tuples
 type: question
-tags: [python,list]
+language: python
+tags: [list]
 author: chalarangelo
 cover: red-mountain
 excerpt: Learn how Python's lists and tuples are different and level up your code today.

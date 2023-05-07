@@ -2,7 +2,8 @@
 title: "Tip: Debugging Node.js using Chrome Developer Tools"
 shortTitle: Debug Node.js with Chrome Developer Tools
 type: tip
-tags: [javascript,node,debugging]
+language: javascript
+tags: [node,debugging]
 author: chalarangelo
 cover: bug
 excerpt: Did you know you can use Chrome Developer Tools to debug your Node.js code? Find out how in this short guide.

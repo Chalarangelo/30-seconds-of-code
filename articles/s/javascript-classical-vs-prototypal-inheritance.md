@@ -2,7 +2,8 @@
 title: How does JavaScript's prototypal inheritance differ from classical inheritance?
 shortTitle: Prototypal vs classical inheritance
 type: question
-tags: [javascript,object,class]
+language: javascript
+tags: [object,class]
 author: chalarangelo
 cover: last-light
 excerpt: Understanding the difference between these two object-oriented programming paradigms is key to taking your skills to the next level.

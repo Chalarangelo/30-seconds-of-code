@@ -2,7 +2,8 @@
 title: Remove an element from a JavaScript array
 shortTitle: Remove element from array
 type: story
-tags: [javascript,array]
+language: javascript
+tags: [array]
 author: chalarangelo
 cover: maple-leaf-palette
 excerpt: Did you know there are multiple ways to remove an element from an array? Let's take a look.

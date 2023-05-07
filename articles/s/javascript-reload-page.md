@@ -2,7 +2,8 @@
 title: How can I use JavaScript to reload the page?
 shortTitle: Reload page
 type: story
-tags: [javascript,browser]
+language: javascript
+tags: [browser]
 author: chalarangelo
 cover: night-tram
 excerpt: Need to reload the current page using JavaScript? Here's the best way to do it, as well as some alternatives.

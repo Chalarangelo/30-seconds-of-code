@@ -2,7 +2,8 @@
 title: Is there a way to use instanceof for primitive JavaScript values?
 shortTitle: Using instanceof for primitive values
 type: question
-tags: [javascript,type]
+language: javascript
+tags: [type]
 author: chalarangelo
 cover: wooden-bowl
 excerpt: JavaScript's `instanceof` operator can't be used with primitive values, but there are a some tricks that you can leverage to your advantage.

@@ -2,7 +2,8 @@
 title: 25 CSS gradients for your next project
 shortTitle: CSS gradients
 type: cheatsheet
-tags: [css,visual]
+language: css
+tags: [visual]
 author: chalarangelo
 cover: colors-mural
 excerpt: We hand picked 25 of our favorite CSS gradients from uiGradients for your next design. Get them now!

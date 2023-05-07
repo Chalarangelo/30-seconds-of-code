@@ -2,7 +2,8 @@
 title: "Tip: 2 ways to format a string in Python"
 shortTitle: String formatting
 type: tip
-tags: [python,string]
+language: python
+tags: [string]
 cover: feathers
 excerpt: Learn two ways to format a string in Python with this quick tip.
 dateModified: 2021-06-12T19:30:41+03:00

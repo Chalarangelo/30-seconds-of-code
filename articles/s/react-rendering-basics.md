@@ -1,7 +1,8 @@
 ---
 title: React rendering basics
 type: story
-tags: [react,render]
+language: react
+tags: [render]
 author: chalarangelo
 cover: comic-glasses
 excerpt: Take a deeper dive into React's rendering process and understand the basics behind the popular JavaScript framework.

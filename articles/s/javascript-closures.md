@@ -2,7 +2,8 @@
 title: What are JavaScript closures?
 shortTitle: Closures introduction
 type: question
-tags: [javascript,function,closure]
+language: javascript
+tags: [function,closure]
 author: chalarangelo
 cover: cherry-trees
 excerpt: Learn and understand closures, a core concept in JavaScript programming, and level up your code.

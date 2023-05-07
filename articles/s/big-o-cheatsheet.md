@@ -1,7 +1,8 @@
 ---
 title: Big-O Cheat Sheet
 type: cheatsheet
-tags: [javascript,algorithm]
+language: javascript
+tags: [algorithm]
 author: chalarangelo
 cover: light-ring
 excerpt: Learn everything you need to know about Big-O notation with this handy cheatsheet.

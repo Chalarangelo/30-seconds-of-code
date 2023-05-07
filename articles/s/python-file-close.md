@@ -2,7 +2,8 @@
 title: How to correctly close files in Python
 shortTitle: Closing files
 type: story
-tags: [python,file]
+language: python
+tags: [file]
 cover: flower-pond
 excerpt: When working with files in Python, it's important to ensure that the file is closed correctly. Here are a couple of ways to do that.
 dateModified: 2022-02-03T05:00:00-04:00

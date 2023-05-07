@@ -2,7 +2,8 @@
 title: Recommended social tags for HTML head
 shortTitle: HTML social tags template
 type: story
-tags: [webdev,html,browser]
+language: html
+tags: [webdev,browser]
 author: chalarangelo
 cover: boutique-home-office-2
 excerpt: Ensure your HTML documents can be shared on social media by including these lines in your `<head>` element.

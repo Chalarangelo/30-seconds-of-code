@@ -2,7 +2,8 @@
 title: Write a useInterval hook in React
 shortTitle: Step-by-step useInterval hook
 type: story
-tags: [react,hooks,effect]
+language: react
+tags: [hooks,effect]
 author: chalarangelo
 cover: clock
 excerpt: Wrapping your mind around React hooks and how they interact with `setInterval()` can be difficult. Here's a guide to get you started.
