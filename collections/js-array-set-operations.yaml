@@ -1,0 +1,22 @@
+slug: c/js-array-set-operations
+name: JavaScript Array Set Operations
+featured: true
+snippetIds:
+  - js/s/union
+  - js/s/intersection
+  - js/s/difference
+  - js/s/symmetric-difference
+  - js/s/union-by
+  - js/s/intersection-by
+  - js/s/difference-by
+  - js/s/symmetric-difference-by
+  - js/s/union-with
+  - js/s/intersection-with
+  - js/s/difference-with
+  - js/s/symmetric-difference-with
+splash: touch-flower.png
+description: >-
+  Mathematical set operations can be easily applied to JavaScript arrays. Learn
+  how to use the union, intersection, difference, and symmetric difference
+  operations with this snippet collection.
+shortDescription: Learn how to apply mathematical set operations to JavaScript arrays.

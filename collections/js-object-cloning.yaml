@@ -1,0 +1,14 @@
+slug: c/js-object-cloning
+name: JavaScript Object Cloning
+featured: true
+snippetIds:
+  - articles/s/javascript-shallow-deep-clone
+  - js/s/shallow-clone
+  - js/s/deep-clone
+  - articles/s/javascript-copy-array
+splash: coffee-phone-tray.png
+description: >-
+  JavaScript objects and arrays are a little tricky to clone. Luckily, this
+  collection teaches you all you need to know about different cloning types and
+  techniques.
+shortDescription: Easily clone JavaScript objects and arrays using various techniques.

@@ -1,0 +1,17 @@
+slug: js/t/browser
+name: JavaScript Browser Snippets
+shortName: JavaScript Browser
+miniName: Browser
+featured: true
+parent: js
+languageMatcher: javascript
+tagMatcher: browser
+description: >-
+  The JavaScript snippet collection contains a wide variety of ES6 helper
+  functions. Browser snippets include helper functions for selecting,
+  traversing, and manipulating DOM elements, while general-purpose helpers
+  can be found in the JavaScript snippet collection.
+shortDescription: >-
+  Select, traverse and manipulate DOM elements with this collection of
+  JavaScript ES6 snippets.
+splash: laptop-plant.png

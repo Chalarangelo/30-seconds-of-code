@@ -1,0 +1,15 @@
+slug: c/css-button-transitions
+name: CSS Button Transitions
+featured: true
+snippetIds:
+  - css/s/button-hover-grow-animation
+  - css/s/button-hover-shrink-animation
+  - css/s/button-hover-fill-animation
+  - css/s/button-focus-swing-animation
+  - css/s/button-border-animation
+splash: plant-window.png
+description: >-
+  CSS transitions are a great way to add some life to your buttons. This snippet
+  collection covers a handful of simple yet useful animations that you can use
+  to make your buttons more interactive.
+shortDescription: Add some life to your buttons with these simple CSS transitions.

@@ -1,0 +1,743 @@
+short: js
+long: javascript
+name: JavaScript
+references:
+  ...: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+  try...catch: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
+  typeof: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
+  yield: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/yield
+  yield*: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/yield*
+  this: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
+  for...of: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
+  for...in: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
+  delete: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete
+  in: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in
+  setInterval(): https://developer.mozilla.org/en-US/docs/Web/API/setInterval
+  setTimeout(): https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
+  clearInterval(): https://developer.mozilla.org/en-US/docs/Web/API/clearInterval
+  clearTimeout(): https://developer.mozilla.org/en-US/docs/Web/API/clearTimeout
+  parseFloat(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseFloat
+  parseInt(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt
+  Error: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error
+  TypeError: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError
+  ReferenceError: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError
+  Boolean: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+  Blob: https://developer.mozilla.org/en-US/docs/Web/API/Blob
+  console.assert(): https://developer.mozilla.org/en-US/docs/Web/API/console/assert
+  console.clear(): https://developer.mozilla.org/en-US/docs/Web/API/console/clear
+  console.count(): https://developer.mozilla.org/en-US/docs/Web/API/console/count
+  console.countReset(): https://developer.mozilla.org/en-US/docs/Web/API/console/countReset
+  console.debug(): https://developer.mozilla.org/en-US/docs/Web/API/console/debug
+  console.dir(): https://developer.mozilla.org/en-US/docs/Web/API/console/dir
+  console.dirxml(): https://developer.mozilla.org/en-US/docs/Web/API/console/dirxml
+  console.error(): https://developer.mozilla.org/en-US/docs/Web/API/console/error
+  console.group(): https://developer.mozilla.org/en-US/docs/Web/API/console/group
+  console.groupCollapsed(): https://developer.mozilla.org/en-US/docs/Web/API/console/groupCollapsed
+  console.groupEnd(): https://developer.mozilla.org/en-US/docs/Web/API/console/groupEnd
+  console.info(): https://developer.mozilla.org/en-US/docs/Web/API/console/info
+  console.log(): https://developer.mozilla.org/en-US/docs/Web/API/console/log
+  console.table(): https://developer.mozilla.org/en-US/docs/Web/API/console/table
+  console.time(): https://developer.mozilla.org/en-US/docs/Web/API/console/time
+  console.timeEnd(): https://developer.mozilla.org/en-US/docs/Web/API/console/timeEnd
+  console.timeLog(): https://developer.mozilla.org/en-US/docs/Web/API/console/timeLog
+  console.trace(): https://developer.mozilla.org/en-US/docs/Web/API/console/trace
+  console.warn(): https://developer.mozilla.org/en-US/docs/Web/API/console/warn
+  Array: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+  Array.prototype.length: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length
+  Array.prototype.at(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/at
+  Array.prototype.concat(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
+  Array.prototype.copyWithin(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin
+  Array.prototype.entries(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/entries
+  Array.prototype.every(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every
+  Array.prototype.fill(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill
+  Array.prototype.filter(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+  Array.prototype.find(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+  Array.prototype.findIndex(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
+  Array.prototype.findLast(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findLast
+  Array.prototype.findLastIndex(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findLastIndex
+  Array.prototype.flat(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat
+  Array.prototype.flatMap(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap
+  Array.prototype.forEach(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+  Array.from(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from
+  Array.prototype.includes(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
+  Array.prototype.indexOf(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+  Array.isArray(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray
+  Array.prototype.join(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
+  Array.prototype.keys(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/keys
+  Array.prototype.lastIndexOf(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf
+  Array.prototype.map(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+  Array.of(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/of
+  Array.prototype.pop(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop
+  Array.prototype.push(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push
+  Array.prototype.reduce(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+  Array.prototype.reduceRight(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight
+  Array.prototype.reverse(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse
+  Array.prototype.shift(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift
+  Array.prototype.slice(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
+  Array.prototype.some(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some
+  Array.prototype.sort(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+  Array.prototype.splice(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+  Array.prototype.toLocaleString(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toLocaleString
+  Array.prototype.toString(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toString
+  Array.prototype.unshift(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift
+  Array.prototype.values(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/values
+  String: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+  String.prototype.length: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length
+  String.prototype.at(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/at
+  String.prototype.charAt(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt
+  String.prototype.charCodeAt(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt
+  String.prototype.codePointAt(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/codePointAt
+  String.prototype.concat(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat
+  String.prototype.endsWith(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith
+  String.fromCharCode(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode
+  String.fromCodePoint(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCodePoint
+  String.prototype.includes(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
+  String.prototype.indexOf(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf
+  String.prototype.lastIndexOf(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf
+  String.prototype.localeCompare(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare
+  String.prototype.match(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match
+  String.prototype.matchAll(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll
+  String.prototype.normalize(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize
+  String.prototype.padEnd(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padEnd
+  String.prototype.padStart(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
+  String.raw(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/raw
+  String.prototype.repeat(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat
+  String.prototype.replace(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+  String.prototype.replaceAll(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll
+  String.prototype.search(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/search
+  String.prototype.slice(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice
+  String.prototype.split(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+  String.prototype.startsWith(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith
+  String.prototype.substring(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring
+  String.prototype.toLocaleLowerCase(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase
+  String.prototype.toLocaleUpperCase(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleUpperCase
+  String.prototype.toLowerCase(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
+  String.prototype.toString(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toString
+  String.prototype.toUpperCase(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
+  String.prototype.trim(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+  String.prototype.trimEnd(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimEnd
+  String.prototype.trimStart(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimStart
+  String.prototype.valueOf(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/valueOf
+  Object: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
+  Object.prototype: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
+  Object.prototype.constructor: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor
+  Object.assign(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+  Object.create(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create
+  Object.defineProperties(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperties
+  Object.defineProperty(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
+  Object.entries(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
+  Object.freeze(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze
+  Object.fromEntries(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries
+  Object.getOwnPropertyDescriptor(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor
+  Object.getOwnPropertyDescriptors(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptors
+  Object.getOwnPropertyNames(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames
+  Object.getOwnPropertySymbols(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertySymbols
+  Object.getPrototypeOf(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getPrototypeOf
+  Object.hasOwn(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwn
+  Object.prototype.hasOwnProperty(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty
+  Object.is(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+  Object.isExtensible(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isExtensible
+  Object.isFrozen(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isFrozen
+  Object.prototype.isPrototypeOf(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isPrototypeOf
+  Object.isSealed(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isSealed
+  Object.keys(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+  Object.preventExtensions(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/preventExtensions
+  Object.prototype.propertyIsEnumerable(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/propertyIsEnumerable
+  Object.seal(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/seal
+  Object.setPrototypeOf(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf
+  Object.prototype.toLocaleString(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toLocaleString
+  Object.prototype.toString(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString
+  Object.prototype.valueOf(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf
+  Object.values(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values
+  Math.E: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/E
+  Math.LN10: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/LN10
+  Math.LN2: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/LN2
+  Math.LOG10E: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/LOG10E
+  Math.LOG2E: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/LOG2E
+  Math.PI: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/PI
+  Math.SQRT1_2: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/SQRT1_2
+  Math.SQRT2: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/SQRT2
+  Math.abs(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs
+  Math.acos(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/acos
+  Math.acosh(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/acosh
+  Math.asin(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/asin
+  Math.asinh(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/asinh
+  Math.atan(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/atan
+  Math.atan2(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/atan2
+  Math.atanh(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/atanh
+  Math.cbrt(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/cbrt
+  Math.ceil(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil
+  Math.clz32(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/clz32
+  Math.cos(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/cos
+  Math.cosh(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/cosh
+  Math.exp(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/exp
+  Math.expm1(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/expm1
+  Math.floor(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor
+  Math.fround(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/fround
+  Math.hypot(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/hypot
+  Math.imul(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/imul
+  Math.log(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/log
+  Math.log10(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/log10
+  Math.log1p(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/log1p
+  Math.log2(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/log2
+  Math.max(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
+  Math.min(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min
+  Math.pow(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/pow
+  Math.random(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+  Math.round(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round
+  Math.sign(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sign
+  Math.sin(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sin
+  Math.sinh(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sinh
+  Math.sqrt(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sqrt
+  Math.tan(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/tan
+  Math.tanh(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/tanh
+  Math.trunc(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/trunc
+  Number: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+  Number.EPSILON: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/EPSILON
+  Number.MAX_SAFE_INTEGER: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER
+  Number.MAX_VALUE: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_VALUE
+  Number.MIN_SAFE_INTEGER: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MIN_SAFE_INTEGER
+  Number.MIN_VALUE: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MIN_VALUE
+  Number.NaN: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/NaN
+  Number.NEGATIVE_INFINITY: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/NEGATIVE_INFINITY
+  Number.POSITIVE_INFINITY: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/POSITIVE_INFINITY
+  Number.isFinite(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isFinite
+  Number.isInteger(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger
+  Number.isNaN(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN
+  Number.isSafeInteger(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isSafeInteger
+  Number.parseFloat(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/parseFloat
+  Number.parseInt(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/parseInt
+  Number.prototype.toExponential(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toExponential
+  Number.prototype.toFixed(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed
+  Number.prototype.toLocaleString(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString
+  Number.prototype.toPrecision(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toPrecision
+  Number.prototype.toString(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toString
+  Number.prototype.valueOf(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/valueOf
+  Date: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+  Date.prototype.getDate(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getDate
+  Date.prototype.getDay(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getDay
+  Date.prototype.getFullYear(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getFullYear
+  Date.prototype.getHours(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getHours
+  Date.prototype.getMilliseconds(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getMilliseconds
+  Date.prototype.getMinutes(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getMinutes
+  Date.prototype.getMonth(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getMonth
+  Date.prototype.getSeconds(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getSeconds
+  Date.prototype.getTime(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime
+  Date.prototype.getTimezoneOffset(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTimezoneOffset
+  Date.prototype.getUTCDate(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCDate
+  Date.prototype.getUTCDay(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCDay
+  Date.prototype.getUTCFullYear(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCFullYear
+  Date.prototype.getUTCHours(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCHours
+  Date.prototype.getUTCMilliseconds(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCMilliseconds
+  Date.prototype.getUTCMinutes(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCMinutes
+  Date.prototype.getUTCMonth(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCMonth
+  Date.prototype.getUTCSeconds(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCSeconds
+  Date.now(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/now
+  Date.parse(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse
+  Date.prototype.setDate(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setDate
+  Date.prototype.setFullYear(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setFullYear
+  Date.prototype.setHours(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setHours
+  Date.prototype.setMilliseconds(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setMilliseconds
+  Date.prototype.setMinutes(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setMinutes
+  Date.prototype.setMonth(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setMonth
+  Date.prototype.setSeconds(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setSeconds
+  Date.prototype.setTime(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setTime
+  Date.prototype.setUTCDate(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setUTCDate
+  Date.prototype.setUTCFullYear(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setUTCFullYear
+  Date.prototype.setUTCHours(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setUTCHours
+  Date.prototype.setUTCMilliseconds(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setUTCMilliseconds
+  Date.prototype.setUTCMinutes(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setUTCMinutes
+  Date.prototype.setUTCMonth(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setUTCMonth
+  Date.prototype.setUTCSeconds(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setUTCSeconds
+  Date.prototype.toDateString(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toDateString
+  Date.prototype.toISOString(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
+  Date.prototype.toJSON(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toJSON
+  Date.prototype.toLocaleDateString(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString
+  Date.prototype.toLocaleString(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString
+  Date.prototype.toLocaleTimeString(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString
+  Date.prototype.toString(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toString
+  Date.prototype.toTimeString(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toTimeString
+  Date.prototype.toUTCString(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toUTCString
+  Date.UTC(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/UTC
+  Date.prototype.valueOf(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/valueOf
+  Function.prototype.name: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/name
+  Function.prototype.length: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/length
+  Function.prototype.apply(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
+  Function.prototype.call(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call
+  Function.prototype.bind(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
+  Function.prototype.toString(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/toString
+  Promise: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+  Promise.prototype.then(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then
+  Promise.prototype.catch(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/catch
+  Promise.prototype.finally(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/finally
+  Promise.all(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
+  Promise.allSettled(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled
+  Promise.any(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/any
+  Promise.race(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/race
+  Promise.reject(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/reject
+  Promise.resolve(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve
+  JSON.parse(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
+  JSON.stringify(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
+  RegExp: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp
+  RegExp.prototype.dotAll: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/dotAll
+  RegExp.prototype.flags: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/flags
+  RegExp.prototype.global: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/global
+  RegExp.prototype.hasIndices: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/hasIndices
+  RegExp.prototype.ignoreCase: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/ignoreCase
+  'RegExp: lastIndex': >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/lastIndex
+  RegExp.prototype.multiline: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/multiline
+  RegExp.prototype.source: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/source
+  RegExp.prototype.sticky: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/sticky
+  RegExp.prototype.unicode: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/unicode
+  RegExp.prototype.exec(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec
+  RegExp.prototype.test(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test
+  RegExp.prototype.toString(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/toString
+  Set: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+  Set.prototype.size: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/size
+  Set.prototype.add(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/add
+  Set.prototype.clear(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/clear
+  Set.prototype.delete(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/delete
+  Set.prototype.entries(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/entries
+  Set.prototype.forEach(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/forEach
+  Set.prototype.has(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/has
+  Set.prototype.keys(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/keys
+  Set.prototype.values(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/values
+  Map: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
+  Map.prototype.size: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/size
+  Map.prototype.clear(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/clear
+  Map.prototype.delete(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/delete
+  Map.prototype.entries(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/entries
+  Map.prototype.forEach(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/forEach
+  Map.prototype.get(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/get
+  Map.prototype.has(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/has
+  Map.prototype.keys(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/keys
+  Map.prototype.set(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/set
+  Map.prototype.values(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/values
+  WeakMap: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap
+  WeakMap.prototype.size: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/size
+  WeakMap.prototype.clear(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/clear
+  WeakMap.prototype.delete(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/delete
+  WeakMap.prototype.get(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/get
+  WeakMap.prototype.has(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/has
+  WeakMap.prototype.set(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/set
+  WeakSet: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet
+  WeakSet.prototype.size: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet/size
+  WeakSet.prototype.add(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet/add
+  WeakSet.prototype.clear(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet/clear
+  WeakSet.prototype.delete(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet/delete
+  WeakSet.prototype.has(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet/has
+  Symbol: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol
+  Symbol.for(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/for
+  Symbol.iterator: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/iterator
+  Document: https://developer.mozilla.org/en-US/docs/Web/API/Document
+  Document.activeElement: https://developer.mozilla.org/en-US/docs/Web/API/Document/activeElement
+  Document.adoptedStyleSheets: https://developer.mozilla.org/en-US/docs/Web/API/Document/adoptedStyleSheets
+  Document.body: https://developer.mozilla.org/en-US/docs/Web/API/Document/body
+  Document.characterSet: https://developer.mozilla.org/en-US/docs/Web/API/Document/characterSet
+  Document.childElementCount: https://developer.mozilla.org/en-US/docs/Web/API/Document/childElementCount
+  Document.children: https://developer.mozilla.org/en-US/docs/Web/API/Document/children
+  Document.compatMode: https://developer.mozilla.org/en-US/docs/Web/API/Document/compatMode
+  Document.contentType: https://developer.mozilla.org/en-US/docs/Web/API/Document/contentType
+  Document.currentScript: https://developer.mozilla.org/en-US/docs/Web/API/Document/currentScript
+  Document.defaultView: https://developer.mozilla.org/en-US/docs/Web/API/Document/defaultView
+  Document.designMode: https://developer.mozilla.org/en-US/docs/Web/API/Document/designMode
+  Document.dir: https://developer.mozilla.org/en-US/docs/Web/API/Document/dir
+  Document.doctype: https://developer.mozilla.org/en-US/docs/Web/API/Document/doctype
+  Document.documentElement: https://developer.mozilla.org/en-US/docs/Web/API/Document/documentElement
+  Document.documentURI: https://developer.mozilla.org/en-US/docs/Web/API/Document/documentURI
+  Document.embeds: https://developer.mozilla.org/en-US/docs/Web/API/Document/embeds
+  Document.firstElementChild: https://developer.mozilla.org/en-US/docs/Web/API/Document/firstElementChild
+  Document.fonts: https://developer.mozilla.org/en-US/docs/Web/API/Document/fonts
+  Document.forms: https://developer.mozilla.org/en-US/docs/Web/API/Document/forms
+  Document.fullscreenElement: https://developer.mozilla.org/en-US/docs/Web/API/Document/fullscreenElement
+  Document.fullscreenEnabled: https://developer.mozilla.org/en-US/docs/Web/API/Document/fullscreenEnabled
+  Document.head: https://developer.mozilla.org/en-US/docs/Web/API/Document/head
+  Document.hidden: https://developer.mozilla.org/en-US/docs/Web/API/Document/hidden
+  Document.images: https://developer.mozilla.org/en-US/docs/Web/API/Document/images
+  Document.implementation: https://developer.mozilla.org/en-US/docs/Web/API/Document/implementation
+  Document.lastElementChild: https://developer.mozilla.org/en-US/docs/Web/API/Document/lastElementChild
+  Document.lastModified: https://developer.mozilla.org/en-US/docs/Web/API/Document/lastModified
+  Document.links: https://developer.mozilla.org/en-US/docs/Web/API/Document/links
+  Document.location: https://developer.mozilla.org/en-US/docs/Web/API/Document/location
+  Document.pictureInPictureElement: >-
+    https://developer.mozilla.org/en-US/docs/Web/API/Document/pictureInPictureElement
+  Document.pictureInPictureEnabled: >-
+    https://developer.mozilla.org/en-US/docs/Web/API/Document/pictureInPictureEnabled
+  Document.plugins: https://developer.mozilla.org/en-US/docs/Web/API/Document/plugins
+  Document.pointerLockElement: https://developer.mozilla.org/en-US/docs/Web/API/Document/pointerLockElement
+  Document.readyState: https://developer.mozilla.org/en-US/docs/Web/API/Document/readyState
+  Document.referrer: https://developer.mozilla.org/en-US/docs/Web/API/Document/referrer
+  Document.scripts: https://developer.mozilla.org/en-US/docs/Web/API/Document/scripts
+  Document.scrollingElement: https://developer.mozilla.org/en-US/docs/Web/API/Document/scrollingElement
+  Document.styleSheets: https://developer.mozilla.org/en-US/docs/Web/API/Document/styleSheets
+  Document.timeline: https://developer.mozilla.org/en-US/docs/Web/API/Document/timeline
+  Document.title: https://developer.mozilla.org/en-US/docs/Web/API/Document/title
+  Document.URL: https://developer.mozilla.org/en-US/docs/Web/API/Document/URL
+  Document.visibilityState: https://developer.mozilla.org/en-US/docs/Web/API/Document/visibilityState
+  Document.adoptNode(): https://developer.mozilla.org/en-US/docs/Web/API/Document/adoptNode
+  Document.append(): https://developer.mozilla.org/en-US/docs/Web/API/Document/append
+  Document.caretPositionFromPoint(): >-
+    https://developer.mozilla.org/en-US/docs/Web/API/Document/caretPositionFromPoint
+  Document.close(): https://developer.mozilla.org/en-US/docs/Web/API/Document/close
+  Document.createAttribute(): https://developer.mozilla.org/en-US/docs/Web/API/Document/createAttribute
+  Document.createAttributeNS(): https://developer.mozilla.org/en-US/docs/Web/API/Document/createAttributeNS
+  Document.createCDATASection(): https://developer.mozilla.org/en-US/docs/Web/API/Document/createCDATASection
+  Document.createComment(): https://developer.mozilla.org/en-US/docs/Web/API/Document/createComment
+  Document.createDocumentFragment(): >-
+    https://developer.mozilla.org/en-US/docs/Web/API/Document/createDocumentFragment
+  Document.createElement(): https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
+  Document.createElementNS(): https://developer.mozilla.org/en-US/docs/Web/API/Document/createElementNS
+  Document.createEvent(): https://developer.mozilla.org/en-US/docs/Web/API/Document/createEvent
+  Document.createExpression(): https://developer.mozilla.org/en-US/docs/Web/API/Document/createExpression
+  Document.createNodeIterator(): https://developer.mozilla.org/en-US/docs/Web/API/Document/createNodeIterator
+  Document.createNSResolver(): https://developer.mozilla.org/en-US/docs/Web/API/Document/createNSResolver
+  Document.createProcessingInstruction(): >-
+    https://developer.mozilla.org/en-US/docs/Web/API/Document/createProcessingInstruction
+  Document.createRange(): https://developer.mozilla.org/en-US/docs/Web/API/Document/createRange
+  Document.createTextNode(): https://developer.mozilla.org/en-US/docs/Web/API/Document/createTextNode
+  Document.createTreeWalker(): https://developer.mozilla.org/en-US/docs/Web/API/Document/createTreeWalker
+  Document.elementFromPoint(): https://developer.mozilla.org/en-US/docs/Web/API/Document/elementFromPoint
+  Document.elementsFromPoint(): https://developer.mozilla.org/en-US/docs/Web/API/Document/elementsFromPoint
+  Document.evaluate(): https://developer.mozilla.org/en-US/docs/Web/API/Document/evaluate
+  Document.execCommand(): https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand
+  Document.exitFullscreen(): https://developer.mozilla.org/en-US/docs/Web/API/Document/exitFullscreen
+  Document.exitPictureInPicture(): >-
+    https://developer.mozilla.org/en-US/docs/Web/API/Document/exitPictureInPicture
+  Document.exitPointerLock(): https://developer.mozilla.org/en-US/docs/Web/API/Document/exitPointerLock
+  Document.getAnimations(): https://developer.mozilla.org/en-US/docs/Web/API/Document/getAnimations
+  Document.getElementById(): https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
+  Document.getElementsByClassName(): >-
+    https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByClassName
+  Document.getElementsByName(): https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByName
+  Document.getElementsByTagName(): >-
+    https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByTagName
+  Document.getElementsByTagNameNS(): >-
+    https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByTagNameNS
+  Document.getSelection(): https://developer.mozilla.org/en-US/docs/Web/API/Document/getSelection
+  Document.hasFocus(): https://developer.mozilla.org/en-US/docs/Web/API/Document/hasFocus
+  Document.hasStorageAccess(): https://developer.mozilla.org/en-US/docs/Web/API/Document/hasStorageAccess
+  Document.importNode(): https://developer.mozilla.org/en-US/docs/Web/API/Document/importNode
+  Document.open(): https://developer.mozilla.org/en-US/docs/Web/API/Document/open
+  Document.prepend(): https://developer.mozilla.org/en-US/docs/Web/API/Document/prepend
+  Document.querySelector(): https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector
+  Document.querySelectorAll(): https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
+  Document.replaceChildren(): https://developer.mozilla.org/en-US/docs/Web/API/Document/replaceChildren
+  Document.requestStorageAccess(): >-
+    https://developer.mozilla.org/en-US/docs/Web/API/Document/requestStorageAccess
+  Document.write(): https://developer.mozilla.org/en-US/docs/Web/API/Document/write
+  Document.writeln(): https://developer.mozilla.org/en-US/docs/Web/API/Document/writeln
+  Storage: https://developer.mozilla.org/en-US/docs/Web/API/Storage
+  Storage.clear(): https://developer.mozilla.org/en-US/docs/Web/API/Storage/clear
+  Storage.getItem(): https://developer.mozilla.org/en-US/docs/Web/API/Storage/getItem
+  Storage.key(): https://developer.mozilla.org/en-US/docs/Web/API/Storage/key
+  Storage.removeItem(): https://developer.mozilla.org/en-US/docs/Web/API/Storage/removeItem
+  Storage.setItem(): https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem
+  URLSearchParams: https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
+  XMLHttpRequest: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+  encodeURIComponent(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
+  decodeURIComponent(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent

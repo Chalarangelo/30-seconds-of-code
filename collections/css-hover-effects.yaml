@@ -1,0 +1,20 @@
+slug: c/css-hover-effects
+name: CSS Hover Effects
+featured: true
+snippetIds:
+  - css/s/image-overlay-hover
+  - css/s/image-hover-menu
+  - css/s/hover-additional-content
+  - css/s/image-hover-rotate
+  - css/s/rotating-card
+  - css/s/hover-perspective
+  - css/s/hover-underline-animation
+  - css/s/popout-menu
+  - css/s/navigation-list-item-hover-and-focus-effect
+  - css/s/mouse-cursor-gradient-tracking
+splash: hand-screen.png
+description: >-
+  You can use CSS to create some pretty cool hover effects. In this collection,
+  we'll look at some popular techniques for creating hover effects to spice up
+  your next web project.
+shortDescription: A collection of cool CSS hover effects to spice up your next web project.

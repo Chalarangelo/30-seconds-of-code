@@ -1,0 +1,15 @@
+slug: python/t/dictionary
+name: Python Dictionary Snippets
+shortName: Python Dictionaries
+miniName: Dictionary
+featured: true
+parent: python
+languageMatcher: python
+tagMatcher: dictionary
+description: >-
+  The Python snippet collection contains helper functions for Python 3.6. It
+  includes utilities for most common data types, such as primitivies, lists,
+  dictionaries and date objects.
+shortDescription: >-
+  A snippet collection of dictionary helpers and tips for Python 3.6.
+splash: tea-pour.png

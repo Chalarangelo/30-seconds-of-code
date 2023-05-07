@@ -1,0 +1,16 @@
+slug: c/js-object-key-selection
+name: JavaScript Object Key Selection
+featured: true
+snippetIds:
+  - js/s/pick
+  - js/s/omit
+  - js/s/pick-by
+  - js/s/omit-by
+splash: succulent-cluster.png
+description: >-
+  Sometimes, JavaScript objects come with a lot of keys and you only need a few
+  of them. Other times, you might want to remove certain keys, instead. Whatever
+  the case, we've got you covered with this snippet collection.
+shortDescription: >-
+  Pick and omit keys from JavaScript objects easily, using the snippets in this
+  collection.

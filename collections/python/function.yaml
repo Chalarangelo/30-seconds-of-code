@@ -1,0 +1,15 @@
+slug: python/t/function
+name: Python Function Snippets
+shortName: Python Functions
+miniName: Function
+featured: true
+parent: python
+languageMatcher: python
+tagMatcher: function
+description: >-
+  The Python snippet collection contains helper functions for Python 3.6. It
+  includes utilities for most common data types, such as primitivies, lists,
+  dictionaries and date objects.
+shortDescription: >-
+  A snippet collection of function helpers and tips for Python 3.6.
+splash: terrarium.png

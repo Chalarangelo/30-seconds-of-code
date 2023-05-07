@@ -1,0 +1,16 @@
+slug: c/js-unit-conversions
+name: JavaScript Unit Conversions
+featured: true
+snippetIds:
+  - js/s/degrees-to-rads
+  - js/s/rads-to-degrees
+  - js/s/celsius-to-fahrenheit
+  - js/s/fahrenheit-to-celsius
+  - js/s/km-to-miles
+  - js/s/miles-to-km
+splash: basics.png
+description: >-
+  Simple unit conversions come up in a lot of JavaScript applications. This
+  snippet collection covers some of the most common conversions you might need
+  to perform in your JavaScript code.
+shortDescription: Learn how to convert between different units of measurement in JavaScript.
