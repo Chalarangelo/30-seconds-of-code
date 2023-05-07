@@ -1,8 +1,8 @@
 import { convertToSeoSlug, uniqueElements, stripMarkdownFormat } from 'utils';
 import { Ranker } from 'blocks/utilities/ranker';
 import { Recommender } from 'blocks/utilities/recommender';
+import { TagFormatter } from 'blocks/utilities/tagFormatter';
 import tokenizeSnippet from 'utils/search';
-import literals from 'lang/en';
 
 export const snippet = {
   name: 'Snippet',
@@ -29,19 +29,13 @@ export const snippet = {
       return `${snippet.language.name} - ${snippet.title}`;
     },
     primaryTag: snippet => snippet.tags[0],
-    truePrimaryTag: snippet => {
-      if (!snippet.isBlog) return snippet.primaryTag;
-      const language = snippet.language;
-      if (!language) return snippet.primaryTag;
-      return snippet.tags.filter(t => t !== language.id)[0];
-    },
-    formattedPrimaryTag: snippet => literals.tag(snippet.truePrimaryTag),
+    formattedPrimaryTag: snippet => TagFormatter.format(snippet.primaryTag),
     // Used for snippet previews in search autocomplete
     formattedMiniPreviewTag: snippet =>
-      snippet.isBlog && !snippet.language ? 'Article' : snippet.language.name,
+      snippet.language ? snippet.language.name : 'Article',
     formattedTags: snippet => {
-      let tags = snippet.tags.map(literals.tag);
-      if (!snippet.isBlog) tags.unshift(snippet.language.name);
+      let tags = snippet.tags.map(TagFormatter.format);
+      if (snippet.language) tags.unshift(snippet.language.name);
       return tags.join(', ');
     },
     formattedPreviewTags: snippet => {
@@ -49,15 +43,14 @@ export const snippet = {
         return [snippet.language.name, snippet.formattedPrimaryTag].join(', ');
       else return snippet.formattedPrimaryTag;
     },
-    isBlog: snippet => snippet.type !== 'snippet',
     slug: snippet => `/${snippet.id}`,
     fileSlug: snippet => convertToSeoSlug(snippet.fileName.slice(0, -3)),
-    url: snippet => `${snippet.repository.repoUrlPrefix}/${snippet.fileName}`,
+    url: snippet =>
+      `https://github.com/30-seconds/30-seconds-of-code/blob/master${snippet.slug}.md`,
     actionType: snippet => (snippet.code ? 'codepen' : undefined),
     isScheduled: snippet => snippet.dateModified > new Date(),
     isPublished: snippet => !snippet.isScheduled,
-    isListed: snippet =>
-      snippet.repository.featured && snippet.listed && !snippet.isScheduled,
+    isListed: snippet => snippet.listed && !snippet.isScheduled,
     ranking: snippet => Ranker.rankIndexableContent(snippet.indexableContent),
     dateFormatted: snippet =>
       snippet.dateModified.toLocaleDateString('en-US', {
@@ -85,20 +78,55 @@ export const snippet = {
       return uniqueElements(tokenizableElements.map(v => v.toLowerCase()));
     },
     searchTokens: snippet => snippet.searchTokensArray.join(' '),
-    // TODO: This is still broken, check a DS snippet
-    primaryTagCollection: snippet => {
-      if (snippet.language) {
-        // Language slug prefix has a leading `/`
-        const primaryTagCollectionId =
-          `${snippet.language.slugPrefix}/${snippet.truePrimaryTag}`.slice(1);
-        const collection = snippet.collections.get(primaryTagCollectionId);
-        if (collection) return collection;
-      }
+    orderedCollections: snippet => {
+      const orderedCollections = [];
 
-      if (snippet.hasCollection) {
-        const parentedCollection = snippet.collections.withParent.first;
-        if (parentedCollection) return parentedCollection;
+      const primaryCollections = snippet.collections.primary;
+      const allSecondaryCollections = snippet.collections.secondary;
+      const mainSecondaryCollection = allSecondaryCollections.length
+        ? allSecondaryCollections.find(collection =>
+            collection.matchesTag(snippet.primaryTag)
+          )
+        : undefined;
+      const secondaryCollections = mainSecondaryCollection
+        ? allSecondaryCollections.except(mainSecondaryCollection.id)
+        : allSecondaryCollections;
+      const otherCollections = snippet.collections.except(
+        'list', // Exclude main listing from breadcrumbs
+        ...primaryCollections.flatPluck('id'),
+        ...allSecondaryCollections.flatPluck('id')
+      );
+
+      // We don't expect to have multiple primary collections
+      if (primaryCollections.length)
+        orderedCollections.push(primaryCollections.first);
+
+      if (mainSecondaryCollection)
+        orderedCollections.push(mainSecondaryCollection);
+
+      if (secondaryCollections.length)
+        orderedCollections.push(...secondaryCollections.toArray());
+
+      if (otherCollections.length)
+        orderedCollections.push(...otherCollections.toArray());
+
+      return orderedCollections;
+    },
+    breadcrumbCollectionIds: snippet => {
+      if (!snippet.hasCollection) return [];
+
+      const ids = [];
+      if (snippet.orderedCollections[0]) {
+        // Has both primary and secondary
+        if (snippet.orderedCollections[0].isPrimary)
+          ids.push(snippet.orderedCollections[0].id);
+        if (snippet.orderedCollections[1])
+          ids.push(snippet.orderedCollections[1].id);
+      } else {
+        // Only has secondary, use one
+        ids.push(snippet.orderedCollections[0].id);
       }
+      return ids;
     },
     breadcrumbs: snippet => {
       const homeCrumb = {
@@ -106,38 +134,24 @@ export const snippet = {
         name: 'Home',
       };
 
-      const languageCrumb =
-        snippet.language && snippet.language.id !== 'html'
-          ? {
-              url: `${snippet.language.slugPrefix}/p/1`,
-              name: snippet.language.name,
-            }
-          : {
-              url: `/articles/p/1`,
-              name: literals.blog,
-            };
-
-      let tagCrumb = null;
-
-      if (snippet.primaryTagCollection)
-        tagCrumb = {
-          url: `/${snippet.primaryTagCollection.slug}/p/1`,
-          name: snippet.primaryTagCollection.shortName,
-        };
+      const collectionCrumbs = snippet.collections
+        .only(...snippet.breadcrumbCollectionIds)
+        .flatMap(collection => ({
+          url: collection.firstPageSlug,
+          name: collection.miniName,
+        }));
 
       const snippetCrumb = {
         url: snippet.slug,
         name: snippet.shortTitle,
       };
 
-      return [homeCrumb, languageCrumb, tagCrumb, snippetCrumb].filter(Boolean);
+      return [homeCrumb, ...collectionCrumbs, snippetCrumb].filter(Boolean);
     },
-    hasCollection: snippet =>
-      Boolean(snippet.collections && snippet.collections.length),
+    hasCollection: snippet => Boolean(snippet.collections.length),
     recommendedCollection: snippet =>
-      snippet.hasCollection && !snippet.collections.first.listing.parent
-        ? snippet.collections.first
-        : null,
+      snippet.collections.except(...snippet.breadcrumbCollectionIds).ranked
+        .first,
     indexableContent: snippet =>
       [
         snippet.title,
@@ -151,16 +165,6 @@ export const snippet = {
         .toLowerCase(),
   },
   lazyProperties: {
-    language:
-      ({ models: { Language } }) =>
-      snippet => {
-        if (!snippet.isBlog) return snippet.repository.language;
-        for (let tag of snippet.tags) {
-          const lang = Language.records.get(tag);
-          if (lang) return lang;
-        }
-        return null;
-      },
     recommendedSnippets:
       ({ models: { Snippet } }) =>
       snippet => {
@@ -172,25 +176,35 @@ export const snippet = {
       },
   },
   cacheProperties: [
-    'ranking',
-    'isBlog',
-    'isListed',
+    'seoTitle',
+    'primaryTag',
+    'formattedPrimaryTag',
+    'formattedMiniPreviewTag',
+    'formattedTags',
+    'formattedPreviewTags',
+    'slug',
+    'fileSlug',
     'isScheduled',
     'isPublished',
+    'isListed',
+    'ranking',
     'dateFormatted',
     'searchTokensArray',
     'searchTokens',
-    'language',
-    'primaryTag',
-    'truePrimaryTag',
-    'primaryTagCollection',
-    'formattedPrimaryTag',
-    'fileSlug',
-    'seoTitle',
+    'orderedCollections',
+    'breadcrumbCollectionIds',
+    'hasCollection',
   ],
   scopes: {
-    snippets: snippet => snippet.type === 'snippet',
-    blogs: snippet => snippet.type !== 'snippet',
+    allByPopularity: {
+      matcher: () => true,
+      sorter: (a, b) => b.ranking - a.ranking,
+    },
+    allByNew: {
+      matcher: () => true,
+      sorter: (a, b) => b.dateModified - a.dateModified,
+    },
+    unlisted: snippet => !snippet.isListed,
     listed: snippet => snippet.isListed,
     listedByPopularity: {
       matcher: snippet => snippet.isListed,
@@ -200,8 +214,15 @@ export const snippet = {
       matcher: snippet => snippet.isListed,
       sorter: (a, b) => b.dateModified - a.dateModified,
     },
-    unlisted: snippet => !snippet.isListed,
     scheduled: snippet => snippet.isScheduled,
     published: snippet => snippet.isPublished,
+    publishedByPopularity: {
+      matcher: snippet => snippet.isPublished,
+      sorter: (a, b) => b.ranking - a.ranking,
+    },
+    publishedByNew: {
+      matcher: snippet => snippet.isPublished,
+      sorter: (a, b) => b.dateModified - a.dateModified,
+    },
   },
 };

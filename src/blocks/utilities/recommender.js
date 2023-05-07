@@ -28,7 +28,7 @@ export class Recommender {
       totalScoreLimit,
     } = Recommender.recommenderSettings;
     const language = snippet.language;
-    const primaryTag = snippet.truePrimaryTag;
+    const primaryTag = snippet.primaryTag;
     const searchTokens = snippet.searchTokensArray;
 
     const recommendationRankings = new Map();
