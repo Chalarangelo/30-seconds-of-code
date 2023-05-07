@@ -1,0 +1,17 @@
+slug: js/t/node
+name: Node.js Snippets
+shortName: Node.js
+miniName: Node
+featured: true
+parent: js
+languageMatcher: javascript
+tagMatcher: node
+description: >-
+  The Node.js snippet collection contains JavaScript utilities for Node.js
+  18.x. It includes helper functions related to server-side code and
+  filesystem operations, while general-purpose helpers can be found in the
+  JavaScript snippet collection.
+shortDescription: >-
+  Discover a collection of server-side JavaScript utility functions for
+  Node.js 18.x.
+splash: coffee-drip.png

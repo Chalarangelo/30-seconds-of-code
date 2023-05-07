@@ -1,0 +1,17 @@
+slug: css/t/interactivity
+name: CSS Interactivity Snippets
+shortName: CSS Interactivity
+miniName: Interactivity
+featured: true
+parent: css
+languageMatcher: css
+tagMatcher: interactivity
+description: >-
+  The CSS snippet collection contains utilities and interactive examples for
+  CSS3. It includes modern techniques for creating commonly-used layouts,
+  styling and animating elements, as well as snippets for handling user
+  interactions.
+shortDescription: >-
+  A snippet collection of CSS3 code snippets and examples covering common user
+  interactions.
+splash: camera.png

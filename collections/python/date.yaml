@@ -1,0 +1,15 @@
+slug: python/t/date
+name: Python Date Snippets
+shortName: Python Dates
+miniName: Date
+featured: true
+parent: python
+languageMatcher: python
+tagMatcher: date
+description: >-
+  The Python snippet collection contains helper functions for Python 3.6. It
+  includes utilities for most common data types, such as primitivies, lists,
+  dictionaries and date objects.
+shortDescription: >-
+  Easily manipulate dates in Python 3.6 with this snippet collection.
+splash: terrarium.png

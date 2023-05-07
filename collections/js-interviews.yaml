@@ -1,0 +1,48 @@
+slug: c/js-interviews
+name: JavaScript Interview Questions
+miniName: Interview Questions
+featured: true
+parent: js
+snippetIds:
+  - articles/s/javascript-equality
+  - articles/s/javascript-truthy-falsy-values
+  - articles/s/javascript-expression-statement
+  - articles/s/javascript-undeclared-undefined-null
+  - articles/s/javascript-variable-hoisting
+  - articles/s/javascript-variable-scope
+  - articles/s/js-callbacks
+  - articles/s/javascript-pass-by-reference-or-pass-by-value
+  - articles/s/javascript-promises
+  - articles/s/javascript-sync-async
+  - articles/s/javascript-classical-vs-prototypal-inheritance
+  - articles/s/javascript-this
+  - articles/s/javascript-shallow-deep-clone
+  - articles/s/javascript-copy-array
+  - articles/s/javascript-object-comparison
+  - articles/s/javascript-array-comparison
+  - articles/s/javascript-array-includes-value
+  - articles/s/js-array-map-vs-foreach
+  - articles/s/javascript-event-bubbling-capturing-delegation
+  - articles/s/javascript-value-not-equal-to-itself
+  - articles/s/javascript-blank-value
+  - articles/s/javascript-string-immutability
+  - articles/s/js-static-instance-methods
+  - articles/s/javascript-arrow-functions
+  - articles/s/javascript-pure-functions
+  - articles/s/javascript-recursion
+  - articles/s/javascript-use-strict
+  - articles/s/js-async-defer
+  - articles/s/javascript-closures
+  - articles/s/javascript-iife
+  - articles/s/javascript-event-loop-explained
+  - articles/s/javascript-prefix-postfix-operators
+  - articles/s/cors-explained
+splash: interview.png
+description: >-
+  Preparing for a job interview requires studying to refresh your knowledge and
+  skills. This collection of JavaScript interview questions is designed to cover
+  some commonly-asked interview questions, using concise answers and simple
+  examples.
+shortDescription: >-
+  Prepare for your next JavaScript interview with this collection of interview
+  questions and answers.

@@ -1,0 +1,20 @@
+slug: c/js-string-casing
+name: JavaScript String Casing
+featured: true
+snippetIds:
+  - js/s/to-camel-case
+  - js/s/to-snake-case
+  - js/s/to-kebab-case
+  - js/s/to-title-case
+  - js/s/to-sentence-case
+  - js/s/to-pascal-case
+  - js/s/from-camel-case
+splash: tablet.png
+description: >-
+  Converting between string casing formats is common, yet tiresome to do by
+  hand. This collection of snippets will help you convert between the most
+  common string casing formats using JavaScript and a sprinkle of regular
+  expressions.
+shortDescription: >-
+  Convert between the most common string casing formats with pure JavaScript and
+  a sprinkle of regular expressions.

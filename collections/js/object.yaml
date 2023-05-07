@@ -1,0 +1,17 @@
+slug: js/t/object
+name: JavaScript Object Snippets
+shortName: JavaScript Objects
+miniName: Object
+featured: true
+parent: js
+languageMatcher: javascript
+tagMatcher: object
+description: >-
+  The JavaScript snippet collection contains a wide variety of ES6 helper
+  functions. It includes helpers for dealing with primitives, arrays and
+  objects, as well as algorithms, DOM manipulation functions and Node.js
+  utilities.
+shortDescription: >-
+  Handle JavaScript objects with ease, using the snippets and tips in this ES6
+  collection.
+splash: tablet.png

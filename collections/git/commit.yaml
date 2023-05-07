@@ -1,0 +1,17 @@
+slug: git/t/commit
+name: Git Commit Snippets
+shortName: Git Commits
+miniName: Commit
+featured: true
+parent: git
+languageMatcher: git
+tagMatcher: commit
+description: >-
+  The Git snippet collection contains a variety of short tips and tricks for all
+  currently maintained versions of git. It includes most commonly-used commands
+  and covers various use-cases in the form of simplified documentation, complete
+  with multiple examples.
+shortDescription: >-
+  A snippet collection of simplified git documentation and tips covering git
+  commit commands.
+splash: keyboard-coffee.png

@@ -1,0 +1,16 @@
+slug: python/t/string
+name: Python String Snippets
+shortName: Python Strings
+miniName: String
+featured: true
+parent: python
+languageMatcher: python
+tagMatcher: string
+description: >-
+  The Python snippet collection contains helper functions for Python 3.6. It
+  includes utilities for most common data types, such as primitivies, lists,
+  dictionaries and date objects.
+shortDescription: >-
+  Learn how to format and manipulate strings in Python 3.6 with this snippet
+  collection.
+splash: terrarium.png
