@@ -52,12 +52,14 @@ export class Schemer {
     };
   };
 
-  static generateListingData = ({ title, slug, items }) => {
+  static generateListingData = ({ title, slug, pageNumber, items }) => {
+    const name = pageNumber === 1 ? title : `${title} - Page ${pageNumber}`;
     const url = `${websiteUrl}${slug}`;
+
     return {
       '@context': 'https://schema.org',
       '@type': 'ItemList',
-      name: title,
+      name,
       url,
       mainEntityOfPage: { '@type': 'WebPage', '@id': url },
       numberOfItems: items.length,
@@ -75,11 +77,6 @@ export class Schemer {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       url: websiteUrl,
-      potentialAction: {
-        '@type': 'SearchAction',
-        target: `${websiteUrl}/search?keyphrase={keyphrase}`,
-        'query-input': 'required name=keyphrase',
-      },
     };
   };
 }

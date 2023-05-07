@@ -18,6 +18,8 @@ describe('TextParser', () => {
             [
               'body',
               'fileName',
+              'filePath',
+              'language',
               'tags',
               'title',
               'dateModified',

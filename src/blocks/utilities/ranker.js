@@ -20,7 +20,7 @@ export class Ranker {
     if (process.env.NODE_ENV === `test`) return {};
     if (!Object.keys(Ranker.keywordScoreData).length) {
       Ranker.keywordScoreData = YAMLHandler.fromFile(
-        `content/configs/rankingEngine.yaml`
+        'content/rankingEngine.yaml'
       );
     }
     return Ranker.keywordScoreData;

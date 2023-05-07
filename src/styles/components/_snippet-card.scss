@@ -1,18 +1,4 @@
 .snippet-card {
-  .card-source-content {
-    .code-highlight:not(:last-of-type) > pre {
-      padding-block-end: 2rem;
-    }
-
-    .code-highlight:not(:first-of-type) > pre {
-      margin-block-start: -0.875rem;
-    }
-
-    .code-highlight:last-of-type > pre {
-      padding-block-end: 1.5rem;
-    }
-  }
-
   .code-highlight {
     --action-display: none;
 
@@ -47,6 +33,26 @@
 
     &:last-child {
       margin-block-end: 1.5rem;
+    }
+
+    > pre {
+      padding-block-end: 1.5rem;
+    }
+
+    + .code-highlight {
+      margin-top: 0;
+
+      > pre {
+        margin-block-start: -0.5rem;
+
+        + .action-btn {
+          top: 0;
+        }
+      }
+    }
+
+    &:last-of-type > pre {
+      padding-block-end: 1.5rem;
     }
   }
 }

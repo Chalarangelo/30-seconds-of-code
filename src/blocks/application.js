@@ -9,6 +9,7 @@ import { JSONHandler } from 'blocks/utilities/jsonHandler';
 import { YAMLHandler } from 'blocks/utilities/yamlHandler';
 import { Extractor } from 'blocks/extractor';
 import { Content } from 'blocks/utilities/content';
+import { shuffle } from 'utils';
 
 /**
  * The application class acts much like a monolith for all the shared logic and
@@ -123,10 +124,9 @@ export class Application {
   }
 
   // -------------------------------------------------------------
-  // Settings and literals dynamic loading methods and getters
+  // Settings dynamic loading methods and getters
   // -------------------------------------------------------------
   static _settings = {};
-  static _literals = {};
 
   /**
    * Dynamically loads/reloads settings from the src/settings directory.
@@ -154,27 +154,6 @@ export class Application {
   static get settings() {
     if (!Object.keys(Application._settings).length) Application.loadSettings();
     return Application._settings;
-  }
-
-  /**
-   * Dynamically loads/reloads literals from the src/lang/en/index.js file.
-   */
-  static loadLiterals() {
-    const logger = new Logger('Application.loadLiterals');
-    logger.log('Loading literals from src/lang/en/index.js...');
-    Application._literals = {
-      ...require(path.resolve('src/lang/en/index.js')).default,
-    };
-    // TODO: Dynamically import and merge under client key all client literals
-    logger.success('Settings loading complete.');
-  }
-
-  /**
-   * Returns the literals object.
-   */
-  static get literals() {
-    if (!Object.keys(Application._literals).length) Application.loadLiterals();
-    return Application._literals;
   }
 
   // -------------------------------------------------------------
@@ -211,9 +190,9 @@ export class Application {
    */
   static loadModels() {
     const logger = new Logger('Application.loadModels');
-    logger.log('Loading models from src/blocks/models/*.js...');
+    logger.log('Loading models from src/blocks/models/**/*.js...');
     Application._rawModels = glob
-      .sync(`src/blocks/models/*.js`)
+      .sync(`src/blocks/models/**/*.js`)
       .map(file => require(path.resolve(file)))
       .reduce((modules, module) => {
         // Note this only supports one export and will cause trouble otherwise
@@ -222,7 +201,7 @@ export class Application {
         return modules;
       }, []);
     logger.success(
-      `Found and loaded ${Application._rawModels.length} models in src/blocks/models/*.js.`
+      `Found and loaded ${Application._rawModels.length} models in src/blocks/models/**/*.js.`
     );
   }
 
@@ -395,30 +374,26 @@ export class Application {
     logger.log('Populating dataset...');
     const {
       Snippet,
-      Repository,
       Collection,
-      Listing,
       Language,
-      Tag,
       Author,
-      Page,
+      SnippetPage,
+      CollectionPage,
+      CollectionsPage,
+      HomePage,
     } = Application.models;
+    const { snippets, collections, languages, authors, collectionsHub } =
+      Application.datasetObject;
+    const { featuredListings } = collectionsHub;
     const {
-      snippets,
-      repositories,
-      collections,
-      tags,
-      languages,
-      authors,
-      mainListingConfig,
-      collectionListingConfig,
-    } = Application.datasetObject;
-    const { dataFeaturedListings: featuredListings } = collectionListingConfig;
+      cardsPerPage,
+      newSnippetCards,
+      topSnippetCards,
+      topCollectionChips,
+    } = Application.settings.presentation;
 
-    // Populate repos, languages, tags, authors, snippets
-    repositories.forEach(repo => Repository.createRecord(repo));
+    // Populate languages, authors, snippets
     languages.forEach(language => Language.createRecord(language));
-    tags.forEach(tag => Tag.createRecord(tag));
     authors.forEach(author => Author.createRecord(author));
     snippets.forEach(snippet => {
       const { dateModified, ...rest } = snippet;
@@ -427,130 +402,124 @@ export class Application {
         dateModified: new Date(dateModified),
       });
     });
-    // Populate listings and create relationships
-    Repository.records.forEach(repo => {
-      const type = repo.isBlog ? 'blog' : 'language';
-      const slugPrefix = `/${repo.slug}`;
-      const repoListingId = `${type}${slugPrefix}`;
-      Listing.createRecord({
-        id: repoListingId,
-        relatedRecordId: repo.id,
-        type,
-        slugPrefix,
-        featuredIndex: featuredListings.indexOf(repoListingId),
-      });
-      // Populate tag listings from repositories
-      repo.tags.forEach(tag => {
-        const tagSlugPrefix = tag.slugPrefix;
-        const tagId = `tag${tagSlugPrefix}`;
-        Listing.createRecord({
-          id: tagId,
-          relatedRecordId: `${tag.id}`,
-          type: 'tag',
-          slugPrefix: tagSlugPrefix,
-          featuredIndex: featuredListings.indexOf(tagId),
-          parent: repoListingId,
-        });
-      });
-    });
-    // Populate collections, collection listings and link to snippets and parent listings
+
+    // Populate collections
     collections.forEach(collection => {
-      const { snippetIds, typeMatcher, parent, ...rest } = collection;
-      const collectionRec = Collection.createRecord(rest);
-      if (snippetIds && snippetIds.length) collectionRec.snippets = snippetIds;
-      if (typeMatcher)
-        collectionRec.snippets = Snippet.records
-          .where(snippet => snippet.type === typeMatcher)
-          .flatPluck('id');
-      const slugPrefix = `/${collection.slug}`;
-      const listingId = `collection${slugPrefix}`;
-      Listing.createRecord({
-        id: listingId,
-        relatedRecordId: collection.id,
-        type: 'collection',
-        slugPrefix,
-        featuredIndex: featuredListings.indexOf(listingId),
+      const {
+        snippetIds,
+        typeMatcher,
+        languageMatcher,
+        tagMatcher,
         parent,
+        ...rest
+      } = collection;
+      const collectionRec = Collection.createRecord({
+        parent,
+        featuredIndex: featuredListings.indexOf(collection.id),
+        ...rest,
       });
+      if (snippetIds && snippetIds.length) collectionRec.snippets = snippetIds;
+      else if (collection.id === 'list') {
+        // Use listedBy in main listing to exclude unlisted snippets
+        collectionRec.snippets =
+          Snippet.records.listedByPopularity.flatPluck('id');
+      } else {
+        const queryMatchers = [];
+        // Use publishedBy in other listings to include unlisted snippets in order
+        // to allow for proper breadcrumbs to form for them
+        let queryScope = 'publishedByPopularity';
+        if (typeMatcher)
+          if (typeMatcher === 'article') {
+            queryScope = 'publishedByNew';
+            queryMatchers.push(snippet => snippet.type !== 'snippet');
+          } else queryMatchers.push(snippet => snippet.type === typeMatcher);
+        if (languageMatcher)
+          queryMatchers.push(
+            snippet =>
+              snippet.language && snippet.language.id === languageMatcher
+          );
+        if (tagMatcher)
+          queryMatchers.push(snippet => snippet.tags.includes(tagMatcher));
+
+        collectionRec.snippets = Snippet.records[queryScope]
+          .where(snippet => queryMatchers.every(matcher => matcher(snippet)))
+          .flatPluck('id');
+      }
     });
-    // Populate the main listing
-    Listing.createRecord({
-      id: 'main',
-      type: 'main',
-      slugPrefix: '/list',
-      featuredIndex: -1,
-      ...mainListingConfig,
-    });
-    // Populate the collection listing
-    Listing.createRecord({
-      id: 'collections',
-      type: 'collections',
-      slugPrefix: '/collections',
-      featuredIndex: -1,
-      ...collectionListingConfig,
-    });
-    // Populate snipet pages
     Snippet.records.forEach(snippet => {
       const { id } = snippet;
-      Page.createRecord({
-        id: `snippet_${id}`,
-        template: 'SnippetPage',
-        relatedRecordId: id,
+      SnippetPage.createRecord({
+        id: `$${id}`,
+        slug: snippet.slug,
+        snippet: id,
       });
     });
-    // Populate listing pages
-    Listing.records.forEach(listing => {
-      const { id } = listing;
-      const itemsName = listing.isCollections ? 'listings' : 'snippets';
-      // TODO: Move this to settings and update listing!
-      const CARDS_PER_PAGE = 15;
+    // Populate collection pages
+    Collection.records.forEach(collection => {
+      const { id: collectionId } = collection;
       let pageCounter = 1;
       const snippetIterator =
-        listing.listedSnippets.batchIterator(CARDS_PER_PAGE);
+        collection.listedSnippets.batchIterator(cardsPerPage);
       for (let pageSnippets of snippetIterator) {
-        Page.createRecord({
-          id: `listing_${id}_${pageCounter}`,
-          template: 'ListingPage',
-          relatedRecordId: id,
-          [itemsName]: pageSnippets.flatPluck('id'),
+        const id = `${collectionId}/p/${pageCounter}`;
+        CollectionPage.createRecord({
+          id: `$${id}`,
+          collection: collectionId,
+          slug: `/${id}`,
+          snippets: pageSnippets.flatPluck('id'),
           pageNumber: pageCounter,
         });
         pageCounter++;
       }
     });
-    // Populate static pages
-    Page.createRecord({
-      id: 'static_404',
-      template: 'NotFoundPage',
-      slug: '/404',
-      staticPriority: 0,
-    });
-    Page.createRecord({
-      id: 'static_about',
-      template: 'StaticPage',
-      slug: '/about',
-      staticPriority: 0.25,
-    });
-    Page.createRecord({
-      id: 'static_cookies',
-      template: 'StaticPage',
-      slug: '/cookies',
-      staticPriority: 0.25,
-    });
-    Page.createRecord({
-      id: 'static_faq',
-      template: 'StaticPage',
-      slug: '/faq',
-      staticPriority: 0.25,
-    });
-    Page.createRecord({
-      id: 'static_search',
-      template: 'SearchPage',
-      slug: '/search',
-      staticPriority: 0.25,
-    });
-    // Populate the home page
-    Page.createRecord({ id: 'home', template: 'HomePage' });
+    // Populate collections list pages
+    {
+      const collectionId = 'collections';
+      let pageCounter = 1;
+      const collections = Collection.records.featured;
+      const totalPages = Math.ceil(collections.length / cardsPerPage);
+      const collectionIterator = collections.batchIterator(cardsPerPage);
+      for (let pageCollections of collectionIterator) {
+        const id = `${collectionId}/p/${pageCounter}`;
+        CollectionsPage.createRecord({
+          id: `$${id}`,
+          slug: `/${id}`,
+          name: collectionsHub.name,
+          description: collectionsHub.description,
+          shortDescription: collectionsHub.shortDescription,
+          splash: collectionsHub.splash,
+          collections: pageCollections.flatPluck('id'),
+          pageCount: totalPages,
+          pageNumber: pageCounter,
+        });
+        pageCounter++;
+      }
+    }
+    // Populate home page
+    {
+      const id = 'index';
+      const collections = Collection.records.featured
+        .slice(0, topCollectionChips)
+        .flatPluck('id');
+      const newSnippets = Snippet.records.listedByNew
+        .slice(0, newSnippetCards)
+        .flatPluck('id');
+      const topSnippets = shuffle(
+        Snippet.records.listedByPopularity
+          .slice(0, topSnippetCards * 5)
+          .flatPluck('id')
+      );
+      HomePage.createRecord({
+        id: `$${id}`,
+        slug: `/${id}`,
+        snippetCount: Snippet.records.published.length,
+        collections,
+        snippets: [...new Set([...newSnippets, ...topSnippets])].slice(
+          0,
+          newSnippetCards + topSnippetCards
+        ),
+      });
+    }
     logger.success('Populating dataset complete.');
   }
 
@@ -561,7 +530,6 @@ export class Application {
     const logger = new Logger('Application.clearDataset');
     logger.log('Clearing dataset...');
     const dataset = Application.dataset;
-    // TODO: After jsiqle is ready, remove serialziers, too!
     if (dataset && dataset.name) {
       Application.modelNames.forEach(model => {
         dataset.removeModel(model);
@@ -595,7 +563,6 @@ export class Application {
     const logger = new Logger('Application.initialize');
     logger.log(`Starting application in "${process.env.NODE_ENV}" mode.`);
     Application.loadSettings();
-    Application.loadLiterals();
     Application.setupSchema();
     if (data) {
       logger.log('Using provided dataset.');
@@ -638,7 +605,6 @@ export class Application {
    * Reference: https://nodejs.org/api/repl.html#replstartoptions
    */
   static _replWriter(object) {
-    // TODO: Improve highlighting of jsiqle objects
     const utilResult = util.inspect(object, { colors: true });
     return utilResult
       .replace(/^Record\s+\[(.*?)#(.*?)]\s\{.*?}$/gm, (m, p1, p2) => {
@@ -671,7 +637,6 @@ export class Application {
     const context = Application._replServer.context;
     context.Application = Application;
     context.settings = Application.settings;
-    context.literals = Application.literals;
     context.glob = glob;
     context.chalk = chalk;
     // NOTE: We are not exactly clearing existing context, so there
@@ -739,8 +704,6 @@ export class Application {
         replServer.displayPrompt();
       },
     });
-
-    // TODO: Content create content source
 
     logger.success('Setting up REPL commands complete.');
   }

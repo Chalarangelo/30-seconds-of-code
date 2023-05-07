@@ -6,8 +6,6 @@ import {
   escapeHTML,
   stripHTMLTags,
   stripMarkdownFormat,
-  optimizeNodes,
-  optimizeAllNodes,
   getURLParameters,
 } from './string';
 
@@ -23,8 +21,6 @@ export {
   escapeHTML,
   stripHTMLTags,
   stripMarkdownFormat,
-  optimizeNodes,
-  optimizeAllNodes,
   getURLParameters,
   throttle,
   uniqueElements,

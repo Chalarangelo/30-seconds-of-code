@@ -1,25 +1,15 @@
 import { convertToSeoSlug, uniqueElements, stripMarkdownFormat } from 'utils';
 import { Ranker } from 'blocks/utilities/ranker';
 import { Recommender } from 'blocks/utilities/recommender';
+import { TagFormatter } from 'blocks/utilities/tagFormatter';
 import tokenizeSnippet from 'utils/search';
-import literals from 'lang/en';
 
 export const snippet = {
   name: 'Snippet',
   fields: [
     { name: 'fileName', type: 'stringRequired' },
-    {
-      name: 'title',
-      type: 'stringRequired',
-    },
-    {
-      name: 'tags',
-      type: 'stringArray',
-      validators: {
-        minLength: 1,
-        uniqueValues: true,
-      },
-    },
+    { name: 'title', type: 'stringRequired' },
+    { name: 'tags', type: 'stringArray' },
     { name: 'shortTitle', type: 'string' },
     { name: 'dateModified', type: 'dateRequired' },
     { name: 'listed', type: 'booleanRequired' },
@@ -28,18 +18,7 @@ export const snippet = {
     { name: 'fullText', type: 'stringRequired' },
     { name: 'descriptionHtml', type: 'string' },
     { name: 'fullDescriptionHtml', type: 'string' },
-    { name: 'htmlCodeBlockHtml', type: 'string' },
-    { name: 'cssCodeBlockHtml', type: 'string' },
-    { name: 'jsCodeBlockHtml', type: 'string' },
-    { name: 'styleCodeBlockHtml', type: 'string' },
-    { name: 'srcCodeBlockHtml', type: 'string' },
-    { name: 'exampleCodeBlockHtml', type: 'string' },
-    { name: 'htmlCode', type: 'string' },
-    { name: 'cssCode', type: 'string' },
-    { name: 'jsCode', type: 'string' },
-    { name: 'styleCode', type: 'string' },
-    { name: 'srcCode', type: 'string' },
-    { name: 'exampleCode', type: 'string' },
+    { name: 'code', type: 'object' },
     { name: 'cover', type: 'stringRequired' },
     { name: 'seoDescription', type: 'stringRequired' },
   ],
@@ -50,19 +29,13 @@ export const snippet = {
       return `${snippet.language.name} - ${snippet.title}`;
     },
     primaryTag: snippet => snippet.tags[0],
-    truePrimaryTag: snippet => {
-      if (!snippet.isBlog) return snippet.primaryTag;
-      const language = snippet.language;
-      if (!language) return snippet.primaryTag;
-      return snippet.tags.filter(t => t !== language.id)[0];
-    },
-    formattedPrimaryTag: snippet => literals.tag(snippet.truePrimaryTag),
+    formattedPrimaryTag: snippet => TagFormatter.format(snippet.primaryTag),
     // Used for snippet previews in search autocomplete
     formattedMiniPreviewTag: snippet =>
-      snippet.isBlog && !snippet.language ? 'Article' : snippet.language.name,
+      snippet.language ? snippet.language.name : 'Article',
     formattedTags: snippet => {
-      let tags = snippet.tags.map(literals.tag);
-      if (!snippet.isBlog) tags.unshift(snippet.language.name);
+      let tags = snippet.tags.map(TagFormatter.format);
+      if (snippet.language) tags.unshift(snippet.language.name);
       return tags.join(', ');
     },
     formattedPreviewTags: snippet => {
@@ -70,166 +43,121 @@ export const snippet = {
         return [snippet.language.name, snippet.formattedPrimaryTag].join(', ');
       else return snippet.formattedPrimaryTag;
     },
-    isBlog: snippet => snippet.type !== 'snippet',
-    isCSS: snippet => snippet.repository.isCSS,
-    isReact: snippet => snippet.repository.isReact,
     slug: snippet => `/${snippet.id}`,
     fileSlug: snippet => convertToSeoSlug(snippet.fileName.slice(0, -3)),
-    url: snippet => `${snippet.repository.repoUrlPrefix}/${snippet.fileName}`,
-    actionType: snippet => {
-      if (snippet.isBlog) return undefined;
-      if (snippet.isCSS || snippet.isReact) return 'codepen';
-      return 'copy';
-    },
+    url: snippet =>
+      `https://github.com/30-seconds/30-seconds-of-code/blob/master/snippets${snippet.slug}.md`,
+    actionType: snippet => (snippet.code ? 'codepen' : undefined),
     isScheduled: snippet => snippet.dateModified > new Date(),
     isPublished: snippet => !snippet.isScheduled,
-    isListed: snippet =>
-      snippet.repository.featured && snippet.listed && !snippet.isScheduled,
+    isListed: snippet => snippet.listed && !snippet.isScheduled,
     ranking: snippet => Ranker.rankIndexableContent(snippet.indexableContent),
+    dateFormatted: snippet =>
+      snippet.dateModified.toLocaleDateString('en-US', {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+      }),
     searchTokensArray: snippet => {
-      const tokenizableElements = snippet.isBlog
-        ? [
-            ...snippet.tags,
-            ...tokenizeSnippet(
-              stripMarkdownFormat(`${snippet.shortText} ${snippet.title}`)
-            ),
-          ]
-        : [
-            snippet.fileName.slice(0, -3),
-            snippet.repository.language.short,
-            snippet.repository.language.long,
-            ...snippet.tags,
-            ...tokenizeSnippet(
-              stripMarkdownFormat(`${snippet.shortText} ${snippet.title}`)
-            ),
-          ];
-      // Normalized title tokens, without stopword removal for special matches
-      // e.g. "this" in a relevant JS article needs to be matched when queried
-      tokenizableElements.push(
+      const tokenizableElements = [
+        snippet.fileName.slice(0, -3),
+        ...snippet.tags,
+        ...tokenizeSnippet(
+          stripMarkdownFormat(`${snippet.shortText} ${snippet.title}`)
+        ),
+        // Normalized title tokens, without stopword removal for special matches
+        // e.g. "this" in a relevant JS article needs to be matched when queried
         ...snippet.title
           .toLowerCase()
           .trim()
-          .split(/[^a-z0-9\-']+/i)
-      );
+          .split(/[^a-z0-9\-']+/i),
+      ];
+      if (snippet.language)
+        tokenizableElements.push(snippet.language.short, snippet.language.long);
+
       return uniqueElements(tokenizableElements.map(v => v.toLowerCase()));
     },
     searchTokens: snippet => snippet.searchTokensArray.join(' '),
+    orderedCollections: snippet => {
+      const orderedCollections = [];
+
+      const primaryCollections = snippet.collections.primary;
+      const allSecondaryCollections = snippet.collections.secondary;
+      const mainSecondaryCollection = allSecondaryCollections.length
+        ? allSecondaryCollections.find(collection =>
+            collection.matchesTag(snippet.primaryTag)
+          )
+        : undefined;
+      const secondaryCollections = mainSecondaryCollection
+        ? allSecondaryCollections.except(mainSecondaryCollection.id)
+        : allSecondaryCollections;
+      const otherCollections = snippet.collections.except(
+        'list', // Exclude main listing from breadcrumbs
+        ...primaryCollections.flatPluck('id'),
+        ...allSecondaryCollections.flatPluck('id')
+      );
+
+      // We don't expect to have multiple primary collections
+      if (primaryCollections.length)
+        orderedCollections.push(primaryCollections.first);
+
+      if (mainSecondaryCollection)
+        orderedCollections.push(mainSecondaryCollection);
+
+      if (secondaryCollections.length)
+        orderedCollections.push(...secondaryCollections.toArray());
+
+      if (otherCollections.length)
+        orderedCollections.push(...otherCollections.toArray());
+
+      return orderedCollections;
+    },
+    breadcrumbCollectionIds: snippet => {
+      if (!snippet.hasCollection) return [];
+
+      const ids = [];
+      if (snippet.orderedCollections[0]) {
+        // Has both primary and secondary
+        if (snippet.orderedCollections[0].isPrimary)
+          ids.push(snippet.orderedCollections[0].id);
+        if (snippet.orderedCollections[1])
+          ids.push(snippet.orderedCollections[1].id);
+      } else {
+        // Only has secondary, use one
+        ids.push(snippet.orderedCollections[0].id);
+      }
+      return ids;
+    },
     breadcrumbs: snippet => {
       const homeCrumb = {
         url: '/',
         name: 'Home',
       };
 
-      const languageCrumb =
-        snippet.language && snippet.language.id !== 'html'
-          ? {
-              url: `${snippet.language.slugPrefix}/p/1`,
-              name: snippet.language.name,
-            }
-          : {
-              url: `/articles/p/1`,
-              name: literals.blog,
-            };
-
-      let tagCrumb = null;
-      if (!snippet.isBlog) {
-        tagCrumb = {
-          url: `${
-            snippet.language.slugPrefix
-          }/t/${snippet.primaryTag.toLowerCase()}/p/1`,
-          name: literals.tag(snippet.primaryTag),
-        };
-      } else if (
-        snippet.hasCollection &&
-        snippet.collections.first.listing.parent
-      ) {
-        // TODO: Make this smarter to account for multiple collections
-        tagCrumb = {
-          url: `/${snippet.collections.first.slug}/p/1`,
-          name: snippet.collections.first.shortName,
-        };
-      } else if (
-        snippet.language &&
-        snippet.truePrimaryTag &&
-        snippet.language.tagShortIds.includes(
-          snippet.truePrimaryTag.toLowerCase()
-        )
-      ) {
-        tagCrumb = {
-          url: `${
-            snippet.language.slugPrefix
-          }/t/${snippet.truePrimaryTag.toLowerCase()}/p/1`,
-          name: literals.tag(snippet.truePrimaryTag),
-        };
-      }
+      const collectionCrumbs = snippet.collections
+        .only(...snippet.breadcrumbCollectionIds)
+        .flatMap(collection => ({
+          url: collection.firstPageSlug,
+          name: collection.miniName,
+        }));
 
       const snippetCrumb = {
         url: snippet.slug,
         name: snippet.shortTitle,
       };
 
-      return [homeCrumb, languageCrumb, tagCrumb, snippetCrumb].filter(Boolean);
+      return [homeCrumb, ...collectionCrumbs, snippetCrumb].filter(Boolean);
     },
-    codeBlocks: snippet => {
-      if (snippet.isBlog) return [];
-      if (snippet.isCSS) {
-        let blocks = [
-          {
-            language: { short: 'html', long: 'HTML' },
-            htmlContent: snippet.htmlCodeBlockHtml,
-          },
-          {
-            language: { short: 'css', long: 'CSS' },
-            htmlContent: snippet.cssCodeBlockHtml,
-          },
-        ];
-        if (snippet.jsCodeBlockHtml)
-          blocks.push({
-            language: { short: 'js', long: 'JavaScript' },
-            htmlContent: snippet.jsCodeBlockHtml,
-          });
-        return blocks;
-      }
-      let blocks = [
-        {
-          language: {
-            short: snippet.language.short,
-            long: snippet.language.name,
-          },
-          htmlContent: snippet.srcCodeBlockHtml,
-        },
-        {
-          language: {
-            short: snippet.language.short,
-            long: 'Examples',
-          },
-          htmlContent: snippet.exampleCodeBlockHtml,
-        },
-      ];
-      if (snippet.styleCodeBlockHtml)
-        blocks.splice(1, 0, {
-          language: { short: 'css', long: 'CSS' },
-          htmlContent: snippet.styleCodeBlockHtml,
-        });
-      return blocks;
-    },
-    hasCollection: snippet =>
-      Boolean(snippet.collections && snippet.collections.length),
+    hasCollection: snippet => Boolean(snippet.collections.length),
     recommendedCollection: snippet =>
-      snippet.hasCollection && !snippet.collections.first.listing.parent
-        ? snippet.collections.first
-        : null,
+      snippet.collections.except(...snippet.breadcrumbCollectionIds).ranked
+        .first,
     indexableContent: snippet =>
       [
         snippet.title,
         ...snippet.tags,
         (snippet.language && snippet.language.long) || '',
         snippet.type || '',
-        snippet.srcCode || '',
-        snippet.cssCode || '',
-        snippet.htmlCode || '',
-        snippet.jsCode || '',
-        snippet.styleCode || '',
         snippet.fullText || '',
         snippet.shortText || '',
       ]
@@ -237,16 +165,6 @@ export const snippet = {
         .toLowerCase(),
   },
   lazyProperties: {
-    language:
-      ({ models: { Language } }) =>
-      snippet => {
-        if (!snippet.isBlog) return snippet.repository.language;
-        for (let tag of snippet.tags) {
-          const lang = Language.records.get(tag);
-          if (lang) return lang;
-        }
-        return null;
-      },
     recommendedSnippets:
       ({ models: { Snippet } }) =>
       snippet => {
@@ -258,25 +176,35 @@ export const snippet = {
       },
   },
   cacheProperties: [
-    'ranking',
-    'isBlog',
-    'isCSS',
-    'isReact',
-    'isListed',
+    'seoTitle',
+    'primaryTag',
+    'formattedPrimaryTag',
+    'formattedMiniPreviewTag',
+    'formattedTags',
+    'formattedPreviewTags',
+    'slug',
+    'fileSlug',
     'isScheduled',
     'isPublished',
+    'isListed',
+    'ranking',
+    'dateFormatted',
     'searchTokensArray',
     'searchTokens',
-    'language',
-    'primaryTag',
-    'truePrimaryTag',
-    'formattedPrimaryTag',
-    'fileSlug',
-    'seoTitle',
+    'orderedCollections',
+    'breadcrumbCollectionIds',
+    'hasCollection',
   ],
   scopes: {
-    snippets: snippet => snippet.type === 'snippet',
-    blogs: snippet => snippet.type !== 'snippet',
+    allByPopularity: {
+      matcher: () => true,
+      sorter: (a, b) => b.ranking - a.ranking,
+    },
+    allByNew: {
+      matcher: () => true,
+      sorter: (a, b) => b.dateModified - a.dateModified,
+    },
+    unlisted: snippet => !snippet.isListed,
     listed: snippet => snippet.isListed,
     listedByPopularity: {
       matcher: snippet => snippet.isListed,
@@ -286,8 +214,15 @@ export const snippet = {
       matcher: snippet => snippet.isListed,
       sorter: (a, b) => b.dateModified - a.dateModified,
     },
-    unlisted: snippet => !snippet.isListed,
     scheduled: snippet => snippet.isScheduled,
     published: snippet => snippet.isPublished,
+    publishedByPopularity: {
+      matcher: snippet => snippet.isPublished,
+      sorter: (a, b) => b.ranking - a.ranking,
+    },
+    publishedByNew: {
+      matcher: snippet => snippet.isPublished,
+      sorter: (a, b) => b.dateModified - a.dateModified,
+    },
   },
 };

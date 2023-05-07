@@ -1,9 +1,15 @@
 export const schema = {
   name: 'WebData',
   relationships: [
+    // Main models
     {
-      from: { model: 'Snippet', name: 'repository' },
-      to: { model: 'Repository', name: 'snippets' },
+      from: { model: 'Snippet', name: 'author' },
+      to: { model: 'Author', name: 'articles' },
+      type: 'manyToOne',
+    },
+    {
+      from: { model: 'Snippet', name: 'language' },
+      to: { model: 'Language', name: 'snippets' },
       type: 'manyToOne',
     },
     {
@@ -12,39 +18,40 @@ export const schema = {
       type: 'manyToMany',
     },
     {
-      from: { model: 'Repository', name: 'language' },
-      to: { model: 'Language', name: 'repositories' },
+      from: { model: 'Collection', name: 'parent' },
+      to: { model: 'Collection', name: 'children' },
       type: 'manyToOne',
     },
+    // Page models (always refer the main model from the page model, not the other way around)
     {
-      from: { model: 'Repository', name: 'otherLanguages' },
-      to: { model: 'Language', name: 'secondaryRepositories' },
+      from: { model: 'SnippetPage', name: 'snippet' },
+      to: { model: 'Snippet', name: 'page' },
+      type: 'oneToOne',
+    },
+    {
+      from: { model: 'CollectionPage', name: 'collection' },
+      to: { model: 'Collection', name: 'page' },
+      type: 'oneToOne',
+    },
+    {
+      from: { model: 'CollectionPage', name: 'snippets' },
+      to: { model: 'Snippet', name: 'collectionPages' },
       type: 'manyToMany',
     },
     {
-      from: { model: 'Tag', name: 'repository' },
-      to: { model: 'Repository', name: 'tags' },
-      type: 'manyToOne',
+      from: { model: 'CollectionsPage', name: 'collections' },
+      to: { model: 'Collection', name: 'collectionsPage' },
+      type: 'oneToMany',
     },
     {
-      from: { model: 'Snippet', name: 'author' },
-      to: { model: 'Author', name: 'articles' },
-      type: 'manyToOne',
+      from: { model: 'HomePage', name: 'snippets' },
+      to: { model: 'Snippet', name: 'homePage' },
+      type: 'oneToMany',
     },
     {
-      from: { model: 'Listing', name: 'parent' },
-      to: { model: 'Listing', name: 'children' },
-      type: 'manyToOne',
-    },
-    {
-      from: { model: 'Page', name: 'snippets' },
-      to: { model: 'Snippet', name: 'pages' },
-      type: 'manyToMany',
-    },
-    {
-      from: { model: 'Page', name: 'listings' },
-      to: { model: 'Listing', name: 'pages' },
-      type: 'manyToMany',
+      from: { model: 'HomePage', name: 'collections' },
+      to: { model: 'Collection', name: 'homePage' },
+      type: 'oneToMany',
     },
   ],
   config: {

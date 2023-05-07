@@ -40,10 +40,18 @@
 #   SORTED LISTING PAGE REDIRECTS:
 #
 # * Redirect alternative sorting listings to page 1 of the dedicated listing.
+# * Redirect articles listings to page 1 of the relevant snippet listing.
 # -----------------------------------------------------------------------------
-/blog/n/*                              /articles/p/1                            301!
-/blog/e/*                              /articles/p/1                            301!
-/blog/a/*                              /articles/p/1                            301!
+/blog/n/*                              /list/p/1                                301!
+/blog/e/*                              /list/p/1                                301!
+/blog/a/*                              /list/p/1                                301!
+/blog/p/*                              /list/p/1                                301!
+/artiles/p/*                           /list/p/1                                301!
+/articles/t/css/*                      /css/p/1                                 301!
+/articles/t/javascript/*               /js/p/1                                  301!
+/articles/t/python/*                   /python/p/1                              301!
+/articles/t/react/*                    /react/p/1                               301!
+/articles/t/webdev/*                   /c/web-development/:splat                301!
 /list/e/*                              /list/p/1                                301!
 /list/a/*                              /list/p/1                                301!
 /:lang/a/*                             /:lang/p/1                               301!
