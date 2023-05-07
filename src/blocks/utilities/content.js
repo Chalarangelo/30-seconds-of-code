@@ -3,7 +3,6 @@ import path from 'path';
 import fs from 'fs';
 import pathSettings from 'settings/paths';
 import { Logger } from 'blocks/utilities/logger';
-import { JSONHandler } from 'blocks/utilities/jsonHandler';
 
 export class Content {
   /**
@@ -82,118 +81,25 @@ export class Content {
   };
 
   /**
-   * Adds a new content source
-   * @param {string} repoUrl - GitHub repositoy URL (e.g. 'https://github.com/30-seconds/30-seconds-of-yada')
-   * @param {string} dirName - Directory name (e.g. '30yada')
-   * @param {string} name - Name (e.g. '30 seconds of yada')
-   * @param {string} slug - Slug (e.g. 'yada')
-   * Returns a promise that resolves as soon as the spawned git command exits.
-   */
-  static create = (repoUrl, dirName, name, slug) => {
-    const logger = new Logger('Content.create');
-    logger.log('Creating new content source...');
-
-    /* istanbul ignore next */
-    return new Promise((resolve, reject) => {
-      const gitAdd = childProcess.spawn('git', [
-        'submodule',
-        'add',
-        '-b',
-        'master',
-        repoUrl,
-        `./content/sources/${dirName}`,
-      ]);
-      logger.log(`${gitAdd.spawnargs.join(' ')} (pid: ${gitAdd.pid})`);
-
-      gitAdd.stdout.on('data', data => {
-        logger.log(`${data}`.replace('\n', ''));
-      });
-      gitAdd.on('error', err => {
-        logger.error(`${err}`);
-        reject();
-      });
-      gitAdd.on('exit', () => resolve());
-    })
-      .then(
-        () =>
-          new Promise((resolve, reject) => {
-            const gitConfig = childProcess.spawn('git', [
-              'config',
-              '-f',
-              '.gitmodules',
-              `submodule.content/sources/${dirName}.update`,
-              'checkout',
-            ]);
-            logger.log(
-              `${gitConfig.spawnargs.join(' ')} (pid: ${gitConfig.pid})`
-            );
-
-            gitConfig.stdout.on('data', data => {
-              logger.log(`${data}`.replace('\n', ''));
-            });
-            gitConfig.on('error', err => {
-              logger.error(`${err}`);
-              reject();
-            });
-            gitConfig.on('exit', () => resolve());
-          })
-      )
-      .then(
-        () =>
-          new Promise((resolve, reject) => {
-            const gitUpdate = childProcess.spawn('git', [
-              'submodule',
-              'update',
-              '--remote',
-            ]);
-            logger.log(
-              `${gitUpdate.spawnargs.join(' ')} (pid: ${gitUpdate.pid})`
-            );
-
-            gitUpdate.stdout.on('data', data => {
-              logger.log(`${data}`.replace('\n', ''));
-            });
-            gitUpdate.on('error', err => {
-              logger.error(`${err}`);
-              reject();
-            });
-            gitUpdate.on('exit', code => {
-              logger.success(
-                `Creating content source completed with exit code ${code}`
-              );
-              return JSONHandler.toFile(
-                `./content/configs/repos/${dirName}.json`,
-                {
-                  name,
-                  dirName,
-                  repoUrl,
-                  slug,
-                  featured: true,
-                }
-              ).then(() => resolve());
-            });
-          })
-      );
-  };
-
-  /**
-   * Creates a new snippet from the template in the given content source
-   * @param {string} submoduleName - Name of the submodule (e.g. '30blog')
+   * Creates a new snippet from the template in the given content directory
+   * @param {string} directoryName - Name of the directory (e.g. 'articles')
    * @param {string} snippetName - Name of the new snippet (e.g. 'my-blog-post')
    */
-  static createSnippet = (submoduleName, snippetName) => {
+  static createSnippet = (directoryName, snippetName) => {
     const logger = new Logger('Content.createSnippet');
-    logger.log(`Creating new snippet ${snippetName} in ${submoduleName}...`);
+    logger.log(`Creating new snippet ${snippetName} in ${directoryName}...`);
 
     const { rawContentPath: contentPath } = pathSettings;
-    const submodulePath = path.join(
+    // TODO: Temporary change, move the content directory as needed
+    const directoryPath = path.join(
       process.cwd(),
       contentPath,
       'sources',
-      submoduleName
+      '30code',
+      directoryName
     );
-    const templatePath = path.join(submodulePath, 'snippet-template.md');
-    const snippetPath = path.join(submodulePath, 'snippets');
+    const templatePath = path.join(directoryPath, 'template.md');
+    const snippetPath = path.join(directoryPath, 's');
     try {
       if (!fs.existsSync(snippetPath)) {
         logger.log('Snippet directory not found! Creating directory...');
@@ -214,7 +120,6 @@ export class Content {
 
       logger.success('Snippet creation complete!');
     } catch (err) {
-      logger.error('Snippet creation encountered an error');
       logger.error(err);
     }
   };
