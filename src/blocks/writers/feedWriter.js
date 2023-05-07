@@ -24,16 +24,16 @@ export class FeedWriter {
     const logger = new Logger('FeedWriter.write');
     const template = handlebars.compile(fs.readFileSync(templatePath, 'utf-8'));
     const pages = Application.dataset
-      .getModel('Page')
-      .records.feedEligible.slice(0, 50);
-    logger.log(`Generating feed for top blog routes`);
+      .getModel('Snippet')
+      .records.listedByNew.slice(0, 50);
+    logger.log(`Generating feed for new snippet routes`);
 
     const feed = template({
       nodes: pages.flatMap(s => ({
-        title: s.data.title,
-        fullRoute: s.fullRoute,
-        description: s.context.pageDescription,
-        pubDate: new Date(s.data.dateModified).toUTCString(),
+        title: s.title,
+        fullRoute: `${websiteUrl}${s.slug}`,
+        description: s.seoDescription,
+        pubDate: new Date(s.dateModified).toUTCString(),
       })),
       websiteName,
       websiteDescription,

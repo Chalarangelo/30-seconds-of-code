@@ -3,11 +3,6 @@ import tokenizeCollection from 'utils/search';
 import { Ranker } from 'blocks/utilities/ranker';
 import presentationSettings from 'settings/presentation';
 
-// TODO: Add redirects for previous articles collections
-// TODO: Only concern is the sitemap logic, but that can be extracted later or we can
-// try the Astro plugin, I guess.
-// As priority and changefreq are ignored by Google, the ranking of all pages
-// won't be a concern and we can simplify the generation by a whole lot.
 export const collection = {
   name: 'Collection',
   fields: [

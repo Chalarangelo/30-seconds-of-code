@@ -90,12 +90,9 @@ export class Content {
     logger.log(`Creating new snippet ${snippetName} in ${directoryName}...`);
 
     const { rawContentPath: contentPath } = pathSettings;
-    // TODO: Temporary change, move the content directory as needed
     const directoryPath = path.join(
       process.cwd(),
       contentPath,
-      'sources',
-      '30code',
       'snippets',
       directoryName
     );
