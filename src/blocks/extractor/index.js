@@ -44,7 +44,7 @@ export class Extractor {
     const logger = new Logger('Extractor.extractCollectionConfigs');
     logger.log('Extracting collection configurations');
     const configs = YAMLHandler.fromGlob(
-      `${contentDir}/configs/collections/**/*.yaml`,
+      `${contentDir}/collections/**/*.yaml`,
       { withNames: true }
     ).map(([path, config]) => {
       const {
@@ -85,7 +85,7 @@ export class Extractor {
     const logger = new Logger('Extractor.extractAuthors');
     logger.log('Extracting authors');
     const authors = Object.entries(
-      YAMLHandler.fromFile(`${contentDir}/configs/authors.yaml`)
+      YAMLHandler.fromFile(`${contentDir}/authors.yaml`)
     ).map(([id, author]) => {
       return {
         ...author,
@@ -100,7 +100,7 @@ export class Extractor {
     const logger = new Logger('Extractor.extractLanguageData');
     logger.log('Extracting language data');
     const languageData = YAMLHandler.fromGlob(
-      `${contentDir}/configs/languages/*.yaml`
+      `${contentDir}/languages/*.yaml`
     ).reduce((acc, language) => {
       const { short, long, name, references = {} } = language;
       acc.set(long, {
@@ -120,7 +120,7 @@ export class Extractor {
     const logger = new Logger('Extractor.extractSnippets');
     logger.log('Extracting snippets');
 
-    const snippetsGlob = `${contentDir}/sources/30code/**/s/*.md`;
+    const snippetsGlob = `${contentDir}/snippets/**/s/*.md`;
 
     MarkdownParser.loadLanguageData([...languageData.values()]);
     let snippets = [];
@@ -255,7 +255,7 @@ export class Extractor {
   static extractCollectionsHubConfig = contentDir => {
     const logger = new Logger('Extractor.extractCollectionsHubConfig');
     logger.log('Extracting hub pages configuration');
-    const hubConfig = YAMLHandler.fromFile(`${contentDir}/configs/hub.yaml`);
+    const hubConfig = YAMLHandler.fromFile(`${contentDir}/hub.yaml`);
     logger.log('Finished extracting hub pages configuration');
     return hubConfig;
   };
