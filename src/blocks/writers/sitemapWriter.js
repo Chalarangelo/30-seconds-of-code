@@ -5,6 +5,7 @@ import { Application } from 'blocks/application';
 
 const { Logger } = Application;
 
+const { websiteUrl } = Application.settings;
 const outPath = `${Application.settings.paths.publicPath}/sitemap.xml`;
 const templatePath = 'src/templates/sitemapTemplate.hbs';
 
@@ -20,11 +21,31 @@ export class SitemapWriter {
   static write = async () => {
     const logger = new Logger('SitemapWriter.write');
     const template = handlebars.compile(fs.readFileSync(templatePath, 'utf-8'));
-    const pages = Application.dataset.getModel('Page').records.indexable;
+    const snippetPages = Application.dataset
+      .getModel('SnippetPage')
+      .records.published.flatMap(page => `${websiteUrl}${page.slug}`);
+    const collectionPages = Application.dataset
+      .getModel('CollectionPage')
+      .records.flatMap(page => `${websiteUrl}${page.slug}`);
+    const collectionsPages = Application.dataset
+      .getModel('CollectionsPage')
+      .records.flatMap(page => `${websiteUrl}${page.slug}`);
+    const homePage = [`${websiteUrl}/`];
+    const staticPages = ['/about', '/faq', '/cookies'].map(
+      page => `${websiteUrl}${page}`
+    );
+
+    const pages = [
+      homePage,
+      ...collectionsPages,
+      ...snippetPages,
+      ...collectionPages,
+      ...staticPages,
+    ];
 
     logger.log(`Generating sitemap for ${pages.length} routes`);
     const sitemap = template({
-      nodes: pages.flatSelect('fullRoute', 'priority'),
+      nodes: pages,
     });
 
     await writeFile(outPath, sitemap);
