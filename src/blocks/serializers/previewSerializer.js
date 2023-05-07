@@ -20,17 +20,12 @@ export const previewSerializer = {
         ? `/${pathSettings.staticAssetPath}/splash/${item.splash}`
         : `/${pathSettings.staticAssetPath}/splash/laptop-view.png`;
     },
+    url: (item, { type }) =>
+      type === 'snippet' ? item.slug : item.firstPageSlug,
     tags: (item, { type }) =>
       type === 'snippet' ? item.formattedPreviewTags : 'Collection',
     extraContext: (item, { type }) =>
       type === 'snippet' ? item.dateFormatted : item.formattedSnippetCount,
   },
-  attributes: [
-    'title',
-    'description',
-    ['slug', 'url'],
-    'cover',
-    'tags',
-    'extraContext',
-  ],
+  attributes: ['title', 'description', 'url', 'cover', 'tags', 'extraContext'],
 };
