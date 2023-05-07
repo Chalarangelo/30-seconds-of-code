@@ -16,8 +16,26 @@ export class SearchIndexWriter {
   static async write() {
     const logger = new Logger('SearchIndexWriter.write');
 
-    let searchIndex = Application.dataset.getModel('Page').records.search.first
-      .context.searchIndex;
+    let SearchResultSerializer = Application.dataset.getSerializer(
+      'SearchResultSerializer'
+    );
+
+    let snippets = Application.dataset.getModel('Snippet').records.listed;
+    if (process.env.NODE_ENV === 'production') snippets = snippets.published;
+
+    const snippetsData = SearchResultSerializer.serializeArray(
+      snippets.toArray(),
+      { type: 'snippet' }
+    );
+
+    let collections = Application.dataset.getModel('Collection').records.listed;
+
+    const collectionsData = SearchResultSerializer.serializeArray(
+      collections.toArray(),
+      { type: 'collection' }
+    );
+
+    let searchIndex = [...snippetsData, ...collectionsData];
     logger.log(`Writing search index for ${searchIndex.length} items`);
 
     await JSONHandler.toFile(outPath, { searchIndex });
