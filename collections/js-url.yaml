@@ -1,0 +1,25 @@
+slug: c/js-url
+name: URLs in JavaScript
+featured: true
+snippetIds:
+  - articles/s/javascript-modify-url-without-reload
+  - articles/s/js-construct-url
+  - articles/s/js-edit-url-params
+  - articles/s/javascript-reload-page
+  - articles/s/js-window-location-cheatsheet
+  - js/s/current-url
+  - js/s/https-redirect
+  - js/s/get-url-parameters
+  - js/s/get-base-url
+  - js/s/redirect
+  - js/s/is-absolute-url
+  - js/s/is-same-origin
+  - js/s/url-join
+splash: pots-and-plants.png
+description: >-
+  URLs are an integral part of the web, which makes working with them an
+  essential skill to have. This snippet collection contains the necessary
+  resources to master URLs in JavaScript and level up your skills.
+shortDescription: >-
+  This snippet collection covers all the necessary resources to master working
+  with URLs in JavaScript.

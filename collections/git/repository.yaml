@@ -1,0 +1,17 @@
+slug: git/t/repository
+name: Git Repository Snippets
+shortName: Git Repositories
+miniName: Repository
+featured: true
+parent: git
+languageMatcher: git
+tagMatcher: repository
+description: >-
+  The Git snippet collection contains a variety of short tips and tricks for all
+  currently maintained versions of git. It includes most commonly-used commands
+  and covers various use-cases in the form of simplified documentation, complete
+  with multiple examples.
+shortDescription: >-
+  Organize your git repositories with this snippet collection of simplified git
+  documentation and tips.
+splash: keyboard-coffee.png

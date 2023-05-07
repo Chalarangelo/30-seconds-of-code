@@ -1,0 +1,17 @@
+slug: c/html-head-basics
+name: HTML Head Basics
+featured: true
+snippetIds:
+  - articles/s/html-recommended-minimum-head
+  - articles/s/html-head-social-tags
+  - articles/s/html-head-icons
+  - articles/s/html-head-links
+splash: basics.png
+description: >-
+  Learn how to use the HTML head element to improve your site's SEO, social
+  sharing, and user experience. This collection includes up to date
+  recommendations for a standard setup, including basic metadata, social tags,
+  icons, and links.
+shortDescription: >-
+  Learn how to use the HTML head element to improve your site's SEO, social
+  sharing, and user experience.

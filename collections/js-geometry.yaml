@@ -1,0 +1,17 @@
+slug: c/js-geometry
+name: JavaScript Geometric Operations
+featured: true
+snippetIds:
+  - js/s/euclidean-distance
+  - js/s/midpoint
+  - js/s/vector-distance
+  - js/s/vector-angle
+splash: tea-pour.png
+description: >-
+  JavaScript can be used for many different tasks, including geometric
+  operations. This collection explains some fundamentals, such as calculating
+  the distance between two points, the midpoint of a line, the distance between
+  two vectors, and the angle between them.
+shortDescription: >-
+  Learn how to perform some basic geometric operations in JavaScript with this
+  collection of snippets.

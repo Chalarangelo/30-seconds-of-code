@@ -1,0 +1,16 @@
+slug: js/t/array
+name: JavaScript Array Snippets
+shortName: JavaScript Arrays
+miniName: Array
+featured: true
+parent: js
+languageMatcher: javascript
+tagMatcher: array
+description: >-
+  The JavaScript snippet collection contains a wide variety of ES6 helper
+  functions. It includes helpers for dealing with primitives, arrays and
+  objects, as well as algorithms, DOM manipulation functions and Node.js
+  utilities.
+shortDescription: >-
+  Master array manipulation in JavaScript with this ES6 snippet collection.
+splash: plant-screen.png

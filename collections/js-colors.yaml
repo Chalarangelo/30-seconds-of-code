@@ -1,0 +1,27 @@
+slug: c/js-colors
+name: Colors in JavaScript
+featured: true
+snippetIds:
+  - js/s/random-hex-color-code
+  - js/s/rgb-to-hex
+  - js/s/extend-hex
+  - js/s/hex-to-rgb
+  - js/s/to-rgb-array
+  - js/s/to-rgb-object
+  - js/s/rgb-to-hsb
+  - js/s/hsb-to-rgb
+  - js/s/rgb-to-hsl
+  - js/s/hsl-to-rgb
+  - js/s/change-lightness
+  - js/s/to-hsl-array
+  - js/s/to-hsl-object
+splash: colorful-rocks.png
+description: >-
+  Working with color in JavaScript requires some understanding of color formats
+  and conversions. This snippet collection covers a lot of those needs from
+  generating random color hex codes to converting between hex and RGB values and
+  even some more advanced tricks like using the HSL format to alter the
+  lightness of a color.
+shortDescription: >-
+  Working with color requires understanding of color formats and conversions.
+  Luckily, this JavaScript snippet collection's got you covered.

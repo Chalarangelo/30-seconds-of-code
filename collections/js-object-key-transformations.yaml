@@ -1,0 +1,16 @@
+slug: c/js-object-key-transformations
+name: JavaScript Object Key Transformations
+featured: true
+snippetIds:
+  - js/s/lowerize
+  - js/s/upperize
+  - js/s/map-keys
+  - js/s/rename-keys
+  - js/s/deep-map-keys
+  - js/s/symbolize-keys
+splash: plant-window.png
+description: >-
+  Sometimes, object keys aren't exactly what you want them to be. Luckily, this
+  snippet collection has you covered with a variety of functions that can help
+  you transform them to your liking.
+shortDescription: Easily transform object keys to your liking with this snippet collection.

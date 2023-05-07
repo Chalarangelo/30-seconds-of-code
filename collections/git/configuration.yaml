@@ -1,0 +1,17 @@
+slug: git/t/configuration
+name: Git Configuration Snippets
+shortName: Git Configuration
+miniName: Configuration
+featured: true
+parent: git
+languageMatcher: git
+tagMatcher: configuration
+description: >-
+  The Git snippet collection contains a variety of short tips and tricks for all
+  currently maintained versions of git. It includes most commonly-used commands
+  and covers various use-cases in the form of simplified documentation, complete
+  with multiple examples.
+shortDescription: >-
+  Create and manage git configurations with this snippet collection of
+  simplified git documentation and tips.
+splash: keyboard-coffee.png

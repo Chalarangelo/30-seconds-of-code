@@ -1,0 +1,13 @@
+slug: react/t/components
+name: React Components
+miniName: Components
+featured: true
+parent: react
+languageMatcher: react
+tagMatcher: components
+description: >-
+  The React snippet collection contains function components and reusable hooks
+  for React 18.
+shortDescription: >-
+  Discover a collection of reusable function components for React 18.
+splash: succulent-cluster.png

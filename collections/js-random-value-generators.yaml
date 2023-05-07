@@ -1,0 +1,19 @@
+slug: c/js-random-value-generators
+name: JavaScript Random Value Generators
+featured: true
+snippetIds:
+  - js/s/random-number-in-range
+  - js/s/random-integer-in-range
+  - js/s/random-int-array-in-range
+  - js/s/random-alpha-numeric
+  - js/s/random-boolean
+  - js/s/random-hex-color-code
+  - js/s/random-gauss
+splash: matcha.png
+description: >-
+  Random value generators come up in a lot of different situations. This snippet
+  collection consists of a variety of JavaScript solutions, from generating
+  random numbers in a range to strings, booleans and hex color codes.
+shortDescription: >-
+  Quickly and easily generate random integers, strings, booleans, arrays and hex
+  color codes using JavaScript.

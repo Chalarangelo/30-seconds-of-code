@@ -1,0 +1,18 @@
+slug: c/react-rendering
+name: React Rendering
+shortName: Rendering
+parent: react
+featured: true
+snippetIds:
+  - articles/s/react-rendering-basics
+  - articles/s/react-rendering-optimization
+  - articles/s/react-rendering-state
+splash: glasses-comic.png
+description: >-
+  Understanding of the rendering process is a crucial piece of knowledge when
+  creating web applications with React. Take a deep dive into the fundamentals
+  and core concepts as well as more advanced techniques with this series of
+  articles.
+shortDescription: >-
+  Understand the fundamentals of React's rendering process as well as more
+  advanced techniques with this series of articles.

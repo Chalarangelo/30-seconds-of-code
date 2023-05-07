@@ -1,0 +1,19 @@
+slug: c/react-testing
+name: React Testing
+shortName: Testing
+parent: react
+featured: true
+snippetIds:
+  - articles/s/testing-stateful-ui-components
+  - articles/s/testing-async-react-components
+  - articles/s/testing-react-portals
+  - articles/s/testing-redux-connected-components
+splash: headphones.png
+description: >-
+  Testing React can be challenging, both in terms of figuring out the correct
+  mentality as well as understanding the mechanics of the tools you're working
+  with. This article collection aims to teach you the basics of testing React
+  components in various scenarios using React Testing Library.
+shortDescription: >-
+  Learn some of the basics of testing React components in various scenarios
+  using React Testing Library.

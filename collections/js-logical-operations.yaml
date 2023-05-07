@@ -1,0 +1,21 @@
+slug: c/js-logical-operations
+name: JavaScript Logical Operations
+featured: true
+snippetIds:
+  - js/s/and
+  - js/s/or
+  - js/s/not
+  - js/s/xor
+  - js/s/nor
+  - js/s/when
+  - js/s/both
+  - js/s/either
+  - js/s/complement
+splash: chess-pawns.png
+description: >-
+  Boolean logic and logical operations might not come up that often in
+  JavaScript development, but when they do, you'll be glad you know how to use
+  them. This small collection of snippets can help you get started.
+shortDescription: >-
+  Get started with logical operations in JavaScript with this small snippet
+  collection.

@@ -1,0 +1,24 @@
+slug: c/js-array-tricks
+name: JavaScript Array Tricks
+featured: true
+snippetIds:
+  - js/s/unique-elements
+  - js/s/compact
+  - js/s/any
+  - js/s/all
+  - js/s/none
+  - js/s/difference
+  - js/s/union
+  - js/s/intersection
+  - js/s/head
+  - js/s/tail
+  - js/s/last
+  - js/s/flatten
+splash: terrarium.png
+description: >-
+  Arrays are one of the most common data types in JavaScript. While there are
+  many libraries that deal with them, here are some awesome tips and tricks you
+  can leverage in your code without adding any external dependencies.
+shortDescription: >-
+  Learn a handful of awesome tips and tricks that you can leverage in your code
+  to make array manipulation a breeze.

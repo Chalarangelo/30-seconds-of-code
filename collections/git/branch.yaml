@@ -1,0 +1,17 @@
+slug: git/t/branch
+name: Git Branch Snippets
+shortName: Git Branches
+miniName: Branch
+featured: true
+parent: git
+languageMatcher: git
+tagMatcher: branch
+description: >-
+  The Git snippet collection contains a variety of short tips and tricks for all
+  currently maintained versions of git. It includes most commonly-used commands
+  and covers various use-cases in the form of simplified documentation, complete
+  with multiple examples.
+shortDescription: >-
+  Master git branch commands with this snippet collection of simplified git
+  documentation and tips.
+splash: keyboard-coffee.png

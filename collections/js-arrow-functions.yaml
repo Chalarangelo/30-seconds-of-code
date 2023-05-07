@@ -1,0 +1,16 @@
+slug: c/js-arrow-functions
+name: JavaScript Arrow Functions
+featured: true
+snippetIds:
+  - articles/s/javascript-arrow-functions
+  - articles/s/javascript-arrow-regular-function-differences
+  - articles/s/javascript-arrow-function-event-listeners
+  - articles/s/javascript-this
+splash: coffee-float.png
+description: >-
+  Arrow functions are one of the most useful tools in a JavaScript developer's
+  arsenal. This collection of introductory articles can help you get started,
+  but can also serve as a reference to refresh your knowledge.
+shortDescription: >-
+  JavaScript arrow functions are a very useful tool to learn and master. Get
+  started with this collection of articles.

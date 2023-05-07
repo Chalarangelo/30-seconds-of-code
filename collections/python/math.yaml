@@ -1,0 +1,16 @@
+slug: python/t/math
+name: Python Math Snippets
+shortName: Python Math
+miniName: Math
+featured: true
+parent: python
+languageMatcher: python
+tagMatcher: math
+description: >-
+  The Python snippet collection contains helper functions for Python 3.6. It
+  includes utilities for most common data types, such as primitivies, lists,
+  dictionaries and date objects.
+shortDescription: >-
+  Learn how to perform common mathematical operations in Python 3.6 with this
+  snippet collection.
+splash: plant-window.png

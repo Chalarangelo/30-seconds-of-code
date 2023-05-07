@@ -1,0 +1,15 @@
+slug: js/t/algorithm
+name: JavaScript Algorithms
+miniName: Algorithms
+featured: true
+parent: js
+languageMatcher: javascript
+tagMatcher: algorithm
+description: >-
+  The JavaScript algorithms collection includes implementations and examples
+  of popular algorithms in ES6. Algorithmic snippets are primarily a
+  learning resource, as they might already be implemented natively or
+  require optimizations to run in production.
+shortDescription: >-
+  Learn a handful of popular algorithms, implemented in JavaScript ES6.
+splash: widescreen.png

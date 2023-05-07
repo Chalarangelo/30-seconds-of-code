@@ -1,0 +1,21 @@
+slug: c/js-promises
+name: JavaScript Promises
+featured: true
+snippetIds:
+  - articles/s/javascript-promises
+  - articles/s/async-javascript-cheatsheet
+  - articles/s/javascript-sync-async
+  - articles/s/javascript-promise-then-catch
+  - articles/s/javascript-promise-then-finally
+  - articles/s/javascript-await-timeout
+  - js/s/debounce-promise
+  - js/s/run-promises-in-series
+splash: blue-computer.png
+description: >-
+  Working with promises in JavaScript is a great way to handle asynchronous
+  operations, yet it can be confusing for many developers. This snippet
+  collection covers the basics of promises and how to use them to handle
+  everyday operations, as well as some more advanced topics.
+shortDescription: >-
+  This snippet collection covers the basics of JavaScript promises and how to
+  use them to handle asynchronous operations in your code.

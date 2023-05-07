@@ -1,0 +1,24 @@
+slug: c/js-comparison
+name: JavaScript Comparison
+featured: true
+snippetIds:
+  - articles/s/javascript-equality
+  - articles/s/javascript-value-not-equal-to-itself
+  - articles/s/javascript-object-comparison
+  - articles/s/javascript-array-comparison
+  - articles/s/javascript-date-comparison
+  - articles/s/javascript-object-is-triple-equals
+  - js/s/equals
+  - js/s/matches
+  - js/s/matches-with
+  - js/s/have-same-contents
+  - js/s/is-same-date
+splash: succulent.png
+description: >-
+  Comparing values in JavaScript is one of the most common tasks. Yet, there are
+  a lot of different details to bear in mind when doing so. This collection
+  contains comprehensive explanations of the issues you may face and how to best
+  work around them in your code.
+shortDescription: >-
+  Comparing values in JavaScript is one of the most common tasks, yet it has a
+  lot of things you should bear in mind.
