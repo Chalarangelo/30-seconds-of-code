@@ -10,6 +10,7 @@ export const build = async () => {
     Application.AssetWriter.write(),
     Application.SearchIndexWriter.write(),
     Application.PageWriter.write(),
+    // TODO: Replace with Astro plugin
     Application.SitemapWriter.write(),
     Application.FeedWriter.write(),
   ]);
