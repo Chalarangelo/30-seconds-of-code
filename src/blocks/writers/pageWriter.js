@@ -17,38 +17,51 @@ export class PageWriter {
     const logger = new Logger('PageWriter.write');
 
     let PageSerializer = Application.dataset.getSerializer('PageSerializer');
-    let pages = Application.dataset.getModel('Page').records;
-    if (process.env.NODE_ENV === 'production') pages = pages.published;
-    logger.log(`Generating JSON files for ${pages.length} pages`);
 
-    const staticData = PageSerializer.serializeRecordSet(
-      pages.static,
-      {},
-      (key, value) => value.relRoute.slice(1)
-    );
-    const listingData = PageSerializer.serializeRecordSet(
-      pages.listing,
-      { withParams: true },
-      (key, value) => value.relRoute.slice(1)
-    );
+    let snippetPages = Application.dataset.getModel('SnippetPage').records;
+    if (process.env.NODE_ENV === 'production')
+      snippetPages = snippetPages.published;
     const snippetData = PageSerializer.serializeRecordSet(
-      pages.snippets,
+      snippetPages,
       { withParams: true },
-      key => `${key.split('_')[1]}`
+      key => `${key.split('$')[1]}`
     );
+
+    let collectionPages =
+      Application.dataset.getModel('CollectionPage').records;
+    const collectionData = PageSerializer.serializeRecordSet(
+      collectionPages,
+      { withParams: true },
+      key => `${key.split('$')[1]}`
+    );
+
+    let collectionsPages =
+      Application.dataset.getModel('CollectionsPage').records;
+
+    const collectionsData = PageSerializer.serializeRecordSet(
+      collectionsPages,
+      { withParams: true },
+      key => `${key.split('$')[1]}`
+    );
+
+    const homePage = Application.dataset.getModel('HomePage').records.first;
+    const homeData = PageSerializer.serialize(homePage);
+
+    const totalPages =
+      snippetPages.length +
+      collectionPages.length +
+      collectionsPages.length +
+      1;
+    logger.log(`Generating JSON files for ${totalPages} pages`);
 
     return Promise.all([
       // Home page
-      JSONHandler.toFile(
-        `${outPath}/index.json`,
-        PageSerializer.serialize(pages.home.first)
-      ),
-      // Static pages
-      ...Object.entries(staticData).map(([fileName, page]) => {
-        return JSONHandler.toFile(`${outPath}/${fileName}.json`, page);
+      JSONHandler.toFile(`${outPath}/index.json`, { ...homeData }),
+      // Collection pages
+      JSONHandler.toFile(`${outPath}/[lang]/[...listing].json`, {
+        ...collectionData,
+        ...collectionsData,
       }),
-      // Listing pages
-      JSONHandler.toFile(`${outPath}/[lang]/[...listing].json`, listingData),
       // Snippet pages
       JSONHandler.toFile(`${outPath}/[lang]/s/[snippet].json`, snippetData),
     ]).then(() => {
