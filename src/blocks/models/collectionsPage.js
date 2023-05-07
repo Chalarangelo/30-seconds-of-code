@@ -24,12 +24,16 @@ export const collectionPage = {
       ({ serializers: { PreviewSerializer } }) =>
       page => {
         const context = {};
-        // TODO: These can have simpler names, update Astro, too
+
         context.slug = page.slug;
-        context.listingName = page.name;
-        context.listingDescription = page.description;
-        context.listingCover = `/${pathSettings.staticAssetPath}/splash/${page.splash}`;
         context.pageDescription = page.shortDescription;
+
+        context.collection = {
+          name: page.name,
+          description: page.description,
+          cover: `/${pathSettings.staticAssetPath}/splash/${page.splash}`,
+          sublinks: [],
+        };
 
         const pageNumber = page.pageNumber;
         const totalPages = page.pageCount;
@@ -67,7 +71,7 @@ export const collectionPage = {
               }
             : null;
 
-        context.snippetList = PreviewSerializer.serializeArray(
+        context.collectionItems = PreviewSerializer.serializeArray(
           page.collections.toArray(),
           { type: 'collection' }
         );
@@ -75,7 +79,7 @@ export const collectionPage = {
         context.structuredData = Schemer.generateListingData({
           title: page.name,
           slug: page.slug,
-          items: context.snippetList,
+          items: context.collectionItems,
         });
 
         return context;
