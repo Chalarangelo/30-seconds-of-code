@@ -157,9 +157,7 @@ export class Extractor {
           ? ['js', 'jsx']
           : [language];
 
-        const id = filePath
-          .replace(`${contentDir}/sources/30code/`, '')
-          .slice(0, -3);
+        const id = filePath.replace(`${contentDir}/snippets/`, '').slice(0, -3);
         const tags = rawTags.map(tag => tag.toLowerCase());
 
         const bodyText = body

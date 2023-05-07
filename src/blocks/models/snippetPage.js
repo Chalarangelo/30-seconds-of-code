@@ -51,6 +51,6 @@ export const snippetPage = {
       },
   },
   scopes: {
-    published: page => page.snippet.published,
+    published: page => page.snippet.isPublished,
   },
 };
