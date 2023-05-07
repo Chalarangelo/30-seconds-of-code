@@ -3,7 +3,7 @@ title: Array tail
 type: snippet
 language: javascript
 tags: [array]
-cover: waves-from-above
+cover: chubby-squirrel
 dateModified: 2020-10-22T20:24:30+03:00
 ---
 

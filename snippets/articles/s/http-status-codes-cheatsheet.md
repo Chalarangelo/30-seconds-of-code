@@ -4,7 +4,7 @@ shortTitle: HTTP status codes
 type: cheatsheet
 tags: [webdev,http]
 author: chalarangelo
-cover: lake-runner
+cover: hiking-walking
 excerpt: Familiarize yourself with the most common HTTP status codes with this handy cheatsheet.
 dateModified: 2021-06-12T19:30:41+03:00
 ---

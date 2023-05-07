@@ -5,7 +5,7 @@ type: tip
 language: javascript
 tags: [object,performance]
 author: chalarangelo
-cover: mountain-lake-cottage
+cover: hiking-balance
 excerpt: Dynamically adding object properties can be pretty slow in some cases. Here's how to optimize it.
 dateModified: 2022-11-02T05:00:00-04:00
 ---

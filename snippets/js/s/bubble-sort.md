@@ -3,7 +3,7 @@ title: Bubble sort
 type: snippet
 language: javascript
 tags: [algorithm,array]
-cover: budapest-palace
+cover: sail-away-2
 dateModified: 2020-12-29T12:18:58+02:00
 ---
 

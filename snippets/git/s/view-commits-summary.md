@@ -3,7 +3,7 @@ title: View a short summary of commits
 type: snippet
 language: git
 tags: [repository,commit]
-cover: highlands
+cover: dark-city
 dateModified: 2021-04-13T21:10:59+03:00
 ---
 

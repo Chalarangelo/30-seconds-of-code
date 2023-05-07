@@ -3,7 +3,7 @@ title: Collection is empty
 type: snippet
 language: javascript
 tags: [type,array,object,string]
-cover: book-chair
+cover: mountain-lake
 dateModified: 2020-10-20T23:02:01+03:00
 ---
 

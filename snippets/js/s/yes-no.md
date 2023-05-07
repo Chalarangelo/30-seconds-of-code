@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string,regexp]
 unlisted: true
-cover: mask-quiet
+cover: fort-lamp
 dateModified: 2021-01-04T13:04:15+02:00
 ---
 

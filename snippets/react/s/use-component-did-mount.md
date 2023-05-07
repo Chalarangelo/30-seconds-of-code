@@ -4,7 +4,7 @@ type: snippet
 language: react
 tags: [hooks,effect]
 author: chalarangelo
-cover: highlands
+cover: green-cabin-cow
 dateModified: 2021-10-13T19:29:39+02:00
 ---
 

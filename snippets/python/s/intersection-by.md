@@ -3,7 +3,7 @@ title: List intersection based on function
 type: snippet
 language: python
 tags: [list,function]
-cover: duck-plants
+cover: camper-school-bus
 dateModified: 2020-11-02T19:28:05+02:00
 ---
 

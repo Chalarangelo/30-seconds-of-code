@@ -5,7 +5,7 @@ type: tip
 language: javascript
 tags: [array,iterator,generator]
 author: chalarangelo
-cover: colorful-plastic
+cover: rain-shopping
 excerpt: Did you know you can define an iterator for any JavaScript value? This quick tip will show you how.
 dateModified: 2021-06-12T19:30:41+03:00
 ---

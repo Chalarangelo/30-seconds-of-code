@@ -3,7 +3,7 @@ title: Find matching value
 type: snippet
 language: python
 tags: [list]
-cover: duck-plants
+cover: angry-waves
 dateModified: 2020-11-02T19:27:53+02:00
 ---
 

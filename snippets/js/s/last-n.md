@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 author: chalarangelo
-cover: interior-5
+cover: fort-lamp
 dateModified: 2022-07-23T05:00:00-04:00
 ---
 

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [algorithm,array]
 author: chalarangelo
-cover: violin
+cover: yellow-sofa
 dateModified: 2021-10-13T19:29:39+02:00
 ---
 

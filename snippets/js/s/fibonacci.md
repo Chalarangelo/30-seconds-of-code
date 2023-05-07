@@ -3,7 +3,7 @@ title: Fibonacci
 type: snippet
 language: javascript
 tags: [math,algorithm]
-cover: highlands
+cover: matrix-flow
 dateModified: 2020-12-28T13:49:24+02:00
 ---
 

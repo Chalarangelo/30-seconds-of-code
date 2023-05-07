@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [math]
 unlisted: true
-cover: last-light
+cover: customs
 dateModified: 2021-01-04T12:47:04+02:00
 ---
 

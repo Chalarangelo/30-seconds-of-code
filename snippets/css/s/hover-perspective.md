@@ -4,7 +4,7 @@ type: snippet
 language: css
 tags: [animation]
 author: chalarangelo
-cover: tropical-bike
+cover: shiny-mountains
 dateModified: 2021-05-17T13:58:04+03:00
 ---
 

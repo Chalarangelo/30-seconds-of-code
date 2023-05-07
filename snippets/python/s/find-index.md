@@ -3,7 +3,7 @@ title: Find matching index
 type: snippet
 language: python
 tags: [list]
-cover: book-chair
+cover: light-ring
 dateModified: 2020-11-02T19:27:53+02:00
 ---
 

@@ -3,7 +3,7 @@ title: Delete a remote branch
 type: snippet
 language: git
 tags: [repository,branch]
-cover: waves-from-above
+cover: tranquil-desktop
 dateModified: 2021-04-13T21:10:59+03:00
 ---
 

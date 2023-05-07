@@ -3,7 +3,7 @@ title: Nth element
 type: snippet
 language: javascript
 tags: [array]
-cover: laptop-plants
+cover: rocky-mountains-2
 dateModified: 2020-10-21T21:54:53+03:00
 ---
 

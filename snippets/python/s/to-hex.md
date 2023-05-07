@@ -3,7 +3,7 @@ title: Number to hex
 type: snippet
 language: python
 tags: [math]
-cover: green-plant
+cover: beach-overview
 dateModified: 2020-10-09T09:45:47+03:00
 ---
 

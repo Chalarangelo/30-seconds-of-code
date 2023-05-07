@@ -3,7 +3,7 @@ title: Hide elements
 type: snippet
 language: javascript
 tags: [browser,css]
-cover: book-chair
+cover: picking-berries
 dateModified: 2020-09-15T16:28:04+03:00
 ---
 

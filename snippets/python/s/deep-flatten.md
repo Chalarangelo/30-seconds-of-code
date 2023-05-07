@@ -3,7 +3,7 @@ title: Deep flatten list
 type: snippet
 language: python
 tags: [list,recursion]
-cover: mask-quiet
+cover: standing-stones
 dateModified: 2020-12-29T19:53:45+02:00
 ---
 

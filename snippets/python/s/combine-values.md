@@ -3,7 +3,7 @@ title: Combine dictionary values
 type: snippet
 language: python
 tags: [dictionary]
-cover: fruit-feast
+cover: dim-mountains
 dateModified: 2021-04-04T14:32:35+03:00
 ---
 

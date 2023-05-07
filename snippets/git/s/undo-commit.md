@@ -3,7 +3,7 @@ title: Undo a commit
 type: snippet
 language: git
 tags: [commit,branch]
-cover: mask-quiet
+cover: night-tram
 dateModified: 2021-04-13T21:10:59+03:00
 ---
 

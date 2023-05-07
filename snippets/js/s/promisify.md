@@ -3,7 +3,7 @@ title: Promisify function
 type: snippet
 language: javascript
 tags: [function,promise]
-cover: duck-plants
+cover: nature-screen
 dateModified: 2020-10-22T20:24:04+03:00
 ---
 

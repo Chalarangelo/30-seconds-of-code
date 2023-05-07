@@ -3,7 +3,7 @@ title: Pad string
 type: snippet
 language: javascript
 tags: [string]
-cover: blue-lake
+cover: bridge-over-road
 dateModified: 2020-10-22T20:24:04+03:00
 ---
 

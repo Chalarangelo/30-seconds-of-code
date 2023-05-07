@@ -5,7 +5,7 @@ type: story
 language: javascript
 tags: [array]
 author: chalarangelo
-cover: violin
+cover: rocky-beach-waves
 excerpt: A few tips and tricks to help you filter arrays in JavaScript more efficiently.
 dateModified: 2022-09-28T05:00:00-04:00
 ---

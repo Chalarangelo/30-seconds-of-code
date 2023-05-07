@@ -4,7 +4,7 @@ type: snippet
 language: react
 tags: [hooks,effect,event]
 author: chalarangelo
-cover: tropical-bike
+cover: plant-corner
 dateModified: 2021-12-22T05:00:00-04:00
 ---
 

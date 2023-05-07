@@ -3,7 +3,7 @@ title: Collapsible accordion
 type: snippet
 language: react
 tags: [components,children,state]
-cover: beach-pineapple
+cover: orange-wedges
 dateModified: 2021-10-13T19:29:39+02:00
 ---
 

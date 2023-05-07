@@ -3,7 +3,7 @@ title: Geometric progression
 type: snippet
 language: javascript
 tags: [math,algorithm]
-cover: book-chair
+cover: half-trees
 excerpt: Initializes an array containing the numbers in the specified geometric progression range.
 dateModified: 2020-12-28T13:49:24+02:00
 ---

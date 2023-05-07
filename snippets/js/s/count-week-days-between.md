@@ -3,7 +3,7 @@ title: Count weekdays between two dates
 type: snippet
 language: javascript
 tags: [date]
-cover: organizer
+cover: dim-mountains
 dateModified: 2020-10-20T11:21:07+03:00
 ---
 

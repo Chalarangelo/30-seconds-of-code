@@ -4,7 +4,7 @@ type: snippet
 language: react
 tags: [hooks,effect]
 author: chalarangelo
-cover: blue-lake
+cover: chubby-squirrel
 dateModified: 2021-09-27T05:00:00-04:00
 ---
 

@@ -4,7 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state,effect]
 author: chalarangelo
-cover: budapest-palace
+cover: light-leaves
 dateModified: 2021-09-10T05:00:00-04:00
 ---
 

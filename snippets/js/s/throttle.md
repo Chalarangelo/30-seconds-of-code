@@ -3,7 +3,7 @@ title: Throttle function
 type: snippet
 language: javascript
 tags: [function]
-cover: waves-from-above
+cover: beach-overview
 dateModified: 2021-10-13T19:29:39+02:00
 ---
 

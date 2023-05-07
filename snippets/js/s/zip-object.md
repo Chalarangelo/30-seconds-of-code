@@ -3,7 +3,7 @@ title: Group array into object
 type: snippet
 language: javascript
 tags: [array,object]
-cover: baloons-field
+cover: snowy-mountains
 dateModified: 2020-10-22T20:24:44+03:00
 ---
 

@@ -3,7 +3,7 @@ title: Flatten array
 type: snippet
 language: javascript
 tags: [array,recursion]
-cover: green-plant
+cover: angry-waves
 dateModified: 2020-10-22T20:23:47+03:00
 ---
 

@@ -3,7 +3,7 @@ title: Find parity outliers
 type: snippet
 language: python
 tags: [list,math]
-cover: beach-pineapple
+cover: nature-screen
 dateModified: 2020-11-02T19:27:53+02:00
 ---
 

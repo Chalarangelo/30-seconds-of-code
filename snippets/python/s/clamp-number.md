@@ -3,7 +3,7 @@ title: Clamp number
 type: snippet
 language: python
 tags: [math]
-cover: highlands
+cover: colorful-rocks
 dateModified: 2020-11-02T19:27:07+02:00
 ---
 

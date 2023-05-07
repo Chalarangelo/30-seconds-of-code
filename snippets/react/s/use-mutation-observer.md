@@ -4,7 +4,7 @@ type: snippet
 language: react
 tags: [hooks,effect]
 author: chalarangelo
-cover: laptop-plants
+cover: lemon-tea
 dateModified: 2021-11-23T05:00:00-04:00
 ---
 

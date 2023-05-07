@@ -3,7 +3,7 @@ title: Pull values from array
 type: snippet
 language: javascript
 tags: [array]
-cover: last-light
+cover: salad-2
 dateModified: 2020-10-22T20:24:04+03:00
 ---
 

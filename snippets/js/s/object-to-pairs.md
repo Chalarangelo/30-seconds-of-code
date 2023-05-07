@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [object,array]
 author: chalarangelo
-cover: interior-5
+cover: dreamy-flowers
 dateModified: 2020-09-15T16:28:04+03:00
 ---
 
