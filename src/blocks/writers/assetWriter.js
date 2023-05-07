@@ -11,7 +11,7 @@ const {
   rawAssetPath: inPath,
   assetPath: outPath,
 } = Application.settings.paths;
-const inContentPath = 'content/configs/assets';
+const inContentPath = 'content/assets';
 
 // Image asset constants
 const supportedExtensions = ['jpeg', 'jpg', 'png', 'webp', 'tif', 'tiff'];

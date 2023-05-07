@@ -46,7 +46,7 @@ export const snippet = {
     slug: snippet => `/${snippet.id}`,
     fileSlug: snippet => convertToSeoSlug(snippet.fileName.slice(0, -3)),
     url: snippet =>
-      `https://github.com/30-seconds/30-seconds-of-code/blob/master${snippet.slug}.md`,
+      `https://github.com/30-seconds/30-seconds-of-code/blob/master/snippets${snippet.slug}.md`,
     actionType: snippet => (snippet.code ? 'codepen' : undefined),
     isScheduled: snippet => snippet.dateModified > new Date(),
     isPublished: snippet => !snippet.isScheduled,

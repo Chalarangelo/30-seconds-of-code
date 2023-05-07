@@ -96,6 +96,7 @@ export class Content {
       contentPath,
       'sources',
       '30code',
+      'snippets',
       directoryName
     );
     const templatePath = path.join(directoryPath, 'template.md');
