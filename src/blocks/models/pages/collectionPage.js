@@ -1,7 +1,6 @@
 import { Schemer } from 'blocks/utilities/schemer';
 import pathSettings from 'settings/paths';
 
-// TODO: We can move all pages under a directory, let's try that
 export const collectionPage = {
   name: 'CollectionPage',
   fields: [
