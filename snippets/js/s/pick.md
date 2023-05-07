@@ -3,7 +3,7 @@ title: Pick object keys
 type: snippet
 language: javascript
 tags: [object]
-cover: fruit-feast
+cover: compass-1
 dateModified: 2020-10-18T14:58:09+03:00
 ---
 

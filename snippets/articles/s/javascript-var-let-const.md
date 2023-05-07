@@ -5,7 +5,7 @@ type: question
 language: javascript
 tags: [type,variable]
 author: chalarangelo
-cover: highlands
+cover: green-css
 excerpt: JavaScript variables can be declared a handful of ways. However, understanding their differences can drastically change the way you code.
 dateModified: 2021-12-02T09:50:42-04:00
 ---

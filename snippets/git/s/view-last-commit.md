@@ -3,7 +3,7 @@ title: View last commit
 type: snippet
 language: git
 tags: [commit]
-cover: green-plant
+cover: clouds-n-mountains
 dateModified: 2021-04-13T21:10:59+03:00
 ---
 

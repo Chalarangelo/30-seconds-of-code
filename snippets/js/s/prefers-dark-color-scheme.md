@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 author: chalarangelo
-cover: blue-lake
+cover: hiking-walking
 dateModified: 2020-10-22T20:24:04+03:00
 ---
 

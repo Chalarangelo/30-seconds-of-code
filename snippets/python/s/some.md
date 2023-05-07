@@ -3,7 +3,7 @@ title: Test if some list elements are truthy
 type: snippet
 language: python
 tags: [list]
-cover: pink-flower-tree
+cover: leafy-screens
 dateModified: 2020-11-02T19:28:35+02:00
 ---
 

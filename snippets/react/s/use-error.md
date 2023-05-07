@@ -4,7 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state,effect]
 author: chalarangelo
-cover: baloons-field
+cover: cloudy-mountaintop
 dateModified: 2021-09-30T05:00:00-04:00
 ---
 

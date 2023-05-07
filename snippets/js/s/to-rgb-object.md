@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string,regexp]
 author: chalarangelo
-cover: organizer
+cover: blue-bench
 dateModified: 2020-10-22T20:24:44+03:00
 ---
 

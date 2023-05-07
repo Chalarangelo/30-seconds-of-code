@@ -3,7 +3,7 @@ title: Juxtapose functions
 type: snippet
 language: javascript
 tags: [function]
-cover: colorful-plastic
+cover: dark-leaves-3
 dateModified: 2020-10-20T23:29:39+03:00
 ---
 

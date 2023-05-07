@@ -3,7 +3,7 @@ title: Kebabcase string
 type: snippet
 language: python
 tags: [string,regexp]
-cover: mask-quiet
+cover: peaches
 dateModified: 2020-11-02T19:28:05+02:00
 ---
 

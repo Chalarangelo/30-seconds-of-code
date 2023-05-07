@@ -3,7 +3,7 @@ title: Vertical scroll snap
 type: snippet
 language: css
 tags: [interactivity]
-cover: baloons-field
+cover: purple-sunset-waves
 dateModified: 2020-08-18T14:25:46+03:00
 ---
 

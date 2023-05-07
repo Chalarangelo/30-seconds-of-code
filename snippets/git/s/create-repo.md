@@ -3,7 +3,7 @@ title: Create a new repository
 type: snippet
 language: git
 tags: [repository]
-cover: violin
+cover: do-more-computer
 dateModified: 2021-04-13T21:10:59+03:00
 ---
 

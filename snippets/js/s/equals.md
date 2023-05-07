@@ -3,7 +3,7 @@ title: Check object equality
 type: snippet
 language: javascript
 tags: [object,array,type,recursion]
-cover: beach-pineapple
+cover: dying-flowers
 dateModified: 2021-10-13T19:29:39+02:00
 ---
 

@@ -3,7 +3,7 @@ title: Current URL
 type: snippet
 language: javascript
 tags: [browser]
-cover: tropical-bike
+cover: purple-sunset-waves
 dateModified: 2020-10-20T11:46:23+03:00
 ---
 

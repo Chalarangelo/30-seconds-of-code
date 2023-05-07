@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string,algorithm,generator]
 author: chalarangelo
-cover: violin
+cover: armchair-in-yellow
 dateModified: 2020-12-31T13:58:51+02:00
 ---
 

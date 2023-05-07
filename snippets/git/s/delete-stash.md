@@ -4,7 +4,7 @@ type: snippet
 language: git
 tags: [repository,stash]
 author: chalarangelo
-cover: budapest-palace
+cover: zen-indoors
 dateModified: 2021-04-13T21:10:59+03:00
 ---
 

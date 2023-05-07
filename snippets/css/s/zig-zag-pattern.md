@@ -3,7 +3,7 @@ title: Zig zag background pattern
 type: snippet
 language: css
 tags: [visual]
-cover: blue-lake
+cover: hiking-balance
 dateModified: 2021-10-13T19:29:39+02:00
 ---
 

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [object]
 author: chalarangelo
-cover: waves-from-above
+cover: orange-coffee
 dateModified: 2022-04-18T05:00:00-04:00
 ---
 

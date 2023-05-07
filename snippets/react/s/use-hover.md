@@ -4,7 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state,callback]
 author: chalarangelo
-cover: pink-flower-tree
+cover: camper-school-bus
 dateModified: 2021-10-05T05:00:00-04:00
 ---
 

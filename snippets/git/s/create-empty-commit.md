@@ -3,7 +3,7 @@ title: Create an empty commit
 type: snippet
 language: git
 tags: [commit]
-cover: colorful-plastic
+cover: compass-2
 dateModified: 2021-04-13T21:10:59+03:00
 ---
 

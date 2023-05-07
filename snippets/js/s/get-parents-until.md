@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 author: chalarangelo
-cover: colorful-plastic
+cover: orange-coffee-4
 dateModified: 2021-01-06T13:04:18+02:00
 ---
 

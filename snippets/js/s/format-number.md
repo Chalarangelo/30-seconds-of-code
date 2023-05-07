@@ -3,7 +3,7 @@ title: Format number
 type: snippet
 language: javascript
 tags: [string,math]
-cover: laptop-plants
+cover: orange-wedges
 dateModified: 2020-10-22T20:23:47+03:00
 ---
 

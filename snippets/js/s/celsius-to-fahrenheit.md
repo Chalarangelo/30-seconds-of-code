@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math]
 unlisted: true
-cover: last-light
+cover: golden-gate-bridge
 dateModified: 2021-01-04T13:04:15+02:00
 ---
 

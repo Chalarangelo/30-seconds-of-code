@@ -3,7 +3,7 @@ title: Remove list elements from the end while condition is met
 type: snippet
 language: javascript
 tags: [array]
-cover: beach-pineapple
+cover: tranquil-desktop
 dateModified: 2020-11-29T12:04:53+02:00
 ---
 

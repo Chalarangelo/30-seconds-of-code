@@ -3,7 +3,7 @@ title: Subset of iterable
 type: snippet
 language: javascript
 tags: [array]
-cover: last-light
+cover: citrus-drink
 dateModified: 2020-10-22T20:24:30+03:00
 ---
 

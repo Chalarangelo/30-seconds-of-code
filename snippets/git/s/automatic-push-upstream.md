@@ -4,7 +4,7 @@ type: snippet
 language: git
 tags: [configuration,repository]
 author: chalarangelo
-cover: violin
+cover: messy-computer
 dateModified: 2022-10-19T05:00:00-04:00
 ---
 

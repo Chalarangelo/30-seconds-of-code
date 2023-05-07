@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 author: chalarangelo
-cover: budapest-palace
+cover: shiny-mountains
 dateModified: 2020-12-30T19:21:15+02:00
 ---
 

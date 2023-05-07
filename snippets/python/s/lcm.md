@@ -3,7 +3,7 @@ title: Least common multiple
 type: snippet
 language: python
 tags: [math,list]
-cover: fruit-feast
+cover: chess-pawns
 dateModified: 2020-11-02T19:31:15+02:00
 ---
 
