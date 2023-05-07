@@ -555,7 +555,6 @@ export class Application {
     const logger = new Logger('Application.clearDataset');
     logger.log('Clearing dataset...');
     const dataset = Application.dataset;
-    // TODO: After jsiqle is ready, remove serialziers, too!
     if (dataset && dataset.name) {
       Application.modelNames.forEach(model => {
         dataset.removeModel(model);
@@ -632,7 +631,6 @@ export class Application {
    * Reference: https://nodejs.org/api/repl.html#replstartoptions
    */
   static _replWriter(object) {
-    // TODO: Improve highlighting of jsiqle objects
     const utilResult = util.inspect(object, { colors: true });
     return utilResult
       .replace(/^Record\s+\[(.*?)#(.*?)]\s\{.*?}$/gm, (m, p1, p2) => {
@@ -733,8 +731,6 @@ export class Application {
         replServer.displayPrompt();
       },
     });
-
-    // TODO: Content create content source
 
     logger.success('Setting up REPL commands complete.');
   }

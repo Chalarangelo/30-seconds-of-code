@@ -205,7 +205,6 @@ export class MarkdownParser {
       if (languageObject && !languageObjects[languageName])
         languageObjects[languageName] = languageObject;
 
-      // TODO: Add notranslate and translate=no to the inner pre
       node.value = isText
         ? [
             `<div class="code-highlight relative mt-4" data-language="${languageName}">`,
