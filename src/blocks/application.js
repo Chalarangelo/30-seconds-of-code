@@ -190,9 +190,9 @@ export class Application {
    */
   static loadModels() {
     const logger = new Logger('Application.loadModels');
-    logger.log('Loading models from src/blocks/models/*.js...');
+    logger.log('Loading models from src/blocks/models/**/*.js...');
     Application._rawModels = glob
-      .sync(`src/blocks/models/*.js`)
+      .sync(`src/blocks/models/**/*.js`)
       .map(file => require(path.resolve(file)))
       .reduce((modules, module) => {
         // Note this only supports one export and will cause trouble otherwise
@@ -201,7 +201,7 @@ export class Application {
         return modules;
       }, []);
     logger.success(
-      `Found and loaded ${Application._rawModels.length} models in src/blocks/models/*.js.`
+      `Found and loaded ${Application._rawModels.length} models in src/blocks/models/**/*.js.`
     );
   }
 
