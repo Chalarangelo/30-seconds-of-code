@@ -1,6 +1,7 @@
 import { Schemer } from 'blocks/utilities/schemer';
 import pathSettings from 'settings/paths';
 
+// TODO: We can move all pages under a directory, let's try that
 export const collectionPage = {
   name: 'CollectionPage',
   fields: [
@@ -20,13 +21,15 @@ export const collectionPage = {
         const collection = page.collection;
         const context = {};
 
-        // TODO: These can have simpler names, update Astro, too
         context.slug = page.slug;
-        context.listingName = collection.name;
-        context.listingDescription = collection.description;
-        context.listingCover = `/${pathSettings.staticAssetPath}/splash/${collection.splash}`;
-        context.listingSublinks = collection.sublinks;
         context.pageDescription = collection.seoDescription;
+
+        context.collection = {
+          name: collection.name,
+          description: collection.description,
+          cover: `/${pathSettings.staticAssetPath}/splash/${collection.splash}`,
+          sublinks: collection.sublinks,
+        };
 
         const pageNumber = page.pageNumber;
         const totalPages = collection.pageCount;
@@ -64,7 +67,7 @@ export const collectionPage = {
               }
             : null;
 
-        context.snippetList = PreviewSerializer.serializeArray(
+        context.collectionItems = PreviewSerializer.serializeArray(
           page.snippets.toArray(),
           { type: 'snippet' }
         );
@@ -72,7 +75,7 @@ export const collectionPage = {
         context.structuredData = Schemer.generateListingData({
           title: page.name,
           slug: page.slug,
-          items: context.snippetList,
+          items: context.collectionItems,
         });
 
         return context;
