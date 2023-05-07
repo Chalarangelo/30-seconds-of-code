@@ -9,6 +9,7 @@ import { JSONHandler } from 'blocks/utilities/jsonHandler';
 import { YAMLHandler } from 'blocks/utilities/yamlHandler';
 import { Extractor } from 'blocks/extractor';
 import { Content } from 'blocks/utilities/content';
+import { shuffle } from 'utils';
 
 /**
  * The application class acts much like a monolith for all the shared logic and
@@ -123,10 +124,9 @@ export class Application {
   }
 
   // -------------------------------------------------------------
-  // Settings and literals dynamic loading methods and getters
+  // Settings dynamic loading methods and getters
   // -------------------------------------------------------------
   static _settings = {};
-  static _literals = {};
 
   /**
    * Dynamically loads/reloads settings from the src/settings directory.
@@ -154,27 +154,6 @@ export class Application {
   static get settings() {
     if (!Object.keys(Application._settings).length) Application.loadSettings();
     return Application._settings;
-  }
-
-  /**
-   * Dynamically loads/reloads literals from the src/lang/en/index.js file.
-   */
-  static loadLiterals() {
-    const logger = new Logger('Application.loadLiterals');
-    logger.log('Loading literals from src/lang/en/index.js...');
-    Application._literals = {
-      ...require(path.resolve('src/lang/en/index.js')).default,
-    };
-    // TODO: Dynamically import and merge under client key all client literals
-    logger.success('Settings loading complete.');
-  }
-
-  /**
-   * Returns the literals object.
-   */
-  static get literals() {
-    if (!Object.keys(Application._literals).length) Application.loadLiterals();
-    return Application._literals;
   }
 
   // -------------------------------------------------------------
@@ -393,21 +372,27 @@ export class Application {
   static populateDataset() {
     const logger = new Logger('Application.populateDataset');
     logger.log('Populating dataset...');
-    const { Snippet, Repository, Collection, Listing, Language, Author, Page } =
-      Application.models;
     const {
-      snippets,
-      repositories,
-      collections,
-      languages,
-      authors,
-      mainListingConfig,
-      collectionListingConfig,
-    } = Application.datasetObject;
-    const { dataFeaturedListings: featuredListings } = collectionListingConfig;
+      Snippet,
+      Collection,
+      Language,
+      Author,
+      SnippetPage,
+      CollectionPage,
+      CollectionsPage,
+      HomePage,
+    } = Application.models;
+    const { snippets, collections, languages, authors, collectionsHub } =
+      Application.datasetObject;
+    const { featuredListings } = collectionsHub;
+    const {
+      cardsPerPage,
+      newSnippetCards,
+      topSnippetCards,
+      topCollectionChips,
+    } = Application.settings.presentation;
 
-    // Populate repos, languages, authors, snippets
-    repositories.forEach(repo => Repository.createRecord(repo));
+    // Populate languages, authors, snippets
     languages.forEach(language => Language.createRecord(language));
     authors.forEach(author => Author.createRecord(author));
     snippets.forEach(snippet => {
@@ -418,7 +403,7 @@ export class Application {
       });
     });
 
-    // Populate collections, collection listings and link to snippets and parent listings
+    // Populate collections
     collections.forEach(collection => {
       const {
         snippetIds,
@@ -428,14 +413,24 @@ export class Application {
         parent,
         ...rest
       } = collection;
-      const collectionRec = Collection.createRecord(rest);
+      const collectionRec = Collection.createRecord({
+        parent,
+        featuredIndex: featuredListings.indexOf(collection.id),
+        ...rest,
+      });
       if (snippetIds && snippetIds.length) collectionRec.snippets = snippetIds;
-      else {
+      else if (collection.id === 'list') {
+        // Use listedBy in main listing to exclude unlisted snippets
+        collectionRec.snippets =
+          Snippet.records.listedByPopularity.flatPluck('id');
+      } else {
         const queryMatchers = [];
-        let queryScope = 'listedByPopularity';
+        // Use publishedBy in other listings to include unlisted snippets in order
+        // to allow for proper breadcrumbs to form for them
+        let queryScope = 'publishedByPopularity';
         if (typeMatcher)
           if (typeMatcher === 'article') {
-            queryScope = 'listedByNew';
+            queryScope = 'publishedByNew';
             queryMatchers.push(snippet => snippet.type !== 'snippet');
           } else queryMatchers.push(snippet => snippet.type === typeMatcher);
         if (languageMatcher)
@@ -450,101 +445,81 @@ export class Application {
           .where(snippet => queryMatchers.every(matcher => matcher(snippet)))
           .flatPluck('id');
       }
-      const slugPrefix = `/${collection.slug}`;
-      const listingId = `collection${slugPrefix}`;
-      Listing.createRecord({
-        id: listingId,
-        relatedRecordId: collection.id,
-        type: 'collection',
-        isTopLevel: collection.topLevel,
-        slugPrefix,
-        featuredIndex: featuredListings.indexOf(collection.slug),
-        parent,
-      });
     });
-    // Populate the main listing
-    Listing.createRecord({
-      id: 'main',
-      type: 'main',
-      slugPrefix: '/list',
-      featuredIndex: -1,
-      ...mainListingConfig,
-    });
-    // Populate the collection listing
-    Listing.createRecord({
-      id: 'collections',
-      type: 'collections',
-      slugPrefix: '/collections',
-      featuredIndex: -1,
-      ...collectionListingConfig,
-    });
-    // Populate snipet pages
     Snippet.records.forEach(snippet => {
       const { id } = snippet;
-      Page.createRecord({
-        id: `snippet_${id}`,
-        type: 'snippet',
-        relatedRecordId: id,
+      SnippetPage.createRecord({
+        id: `$${id}`,
+        slug: snippet.slug,
+        snippet: id,
       });
     });
-    // Populate listing pages
-    Listing.records.forEach(listing => {
-      const { id } = listing;
-      const itemsName = listing.isCollections ? 'listings' : 'snippets';
-      // TODO: Move this to settings and update listing!
-      const CARDS_PER_PAGE = 15;
+    // Populate collection pages
+    Collection.records.forEach(collection => {
+      const { id: collectionId } = collection;
       let pageCounter = 1;
       const snippetIterator =
-        listing.listedSnippets.batchIterator(CARDS_PER_PAGE);
+        collection.listedSnippets.batchIterator(cardsPerPage);
       for (let pageSnippets of snippetIterator) {
-        Page.createRecord({
-          id: `listing_${id}_${pageCounter}`,
-          type: 'listing',
-          relatedRecordId: id,
-          [itemsName]: pageSnippets.flatPluck('id'),
+        const id = `${collectionId}/p/${pageCounter}`;
+        CollectionPage.createRecord({
+          id: `$${id}`,
+          collection: collectionId,
+          slug: `/${id}`,
+          snippets: pageSnippets.flatPluck('id'),
           pageNumber: pageCounter,
         });
         pageCounter++;
       }
     });
-    // Populate static pages
-    Page.createRecord({
-      id: '404',
-      type: 'notfound',
-      slug: '/404',
-      staticPriority: 0,
-    });
-    Page.createRecord({
-      id: 'about',
-      type: 'static',
-      slug: '/about',
-      staticPriority: 0.25,
-    });
-    Page.createRecord({
-      id: 'cookies',
-      type: 'static',
-      slug: '/cookies',
-      staticPriority: 0.25,
-    });
-    Page.createRecord({
-      id: 'faq',
-      type: 'static',
-      slug: '/faq',
-      staticPriority: 0.25,
-    });
-    Page.createRecord({
-      id: 'search',
-      type: 'search',
-      slug: '/search',
-      staticPriority: 0.25,
-    });
-    // Populate the home page
-    Page.createRecord({
-      id: 'home',
-      type: 'static',
-      slug: '/',
-      staticPriority: 1.0,
-    });
+    // Populate collections list pages
+    {
+      const collectionId = 'collections';
+      let pageCounter = 1;
+      const collections = Collection.records.featured;
+      const totalPages = Math.ceil(collections.length / cardsPerPage);
+      const collectionIterator = collections.batchIterator(cardsPerPage);
+      for (let pageCollections of collectionIterator) {
+        const id = `${collectionId}/p/${pageCounter}`;
+        CollectionsPage.createRecord({
+          id: `$${id}`,
+          slug: `/${id}`,
+          name: collectionsHub.name,
+          description: collectionsHub.description,
+          shortDescription: collectionsHub.shortDescription,
+          splash: collectionsHub.splash,
+          collections: pageCollections.flatPluck('id'),
+          pageCount: totalPages,
+          pageNumber: pageCounter,
+        });
+        pageCounter++;
+      }
+    }
+    // Populate home page
+    {
+      const id = 'index';
+      const collections = Collection.records.featured
+        .slice(0, topCollectionChips)
+        .flatPluck('id');
+      const newSnippets = Snippet.records.listedByNew
+        .slice(0, newSnippetCards)
+        .flatPluck('id');
+      const topSnippets = shuffle(
+        Snippet.records.listedByPopularity
+          .slice(0, topSnippetCards * 5)
+          .flatPluck('id')
+      );
+      HomePage.createRecord({
+        id: `$${id}`,
+        slug: `/${id}`,
+        snippetCount: Snippet.records.published.length,
+        collections,
+        snippets: [...new Set([...newSnippets, ...topSnippets])].slice(
+          0,
+          newSnippetCards + topSnippetCards
+        ),
+      });
+    }
     logger.success('Populating dataset complete.');
   }
 
@@ -588,7 +563,6 @@ export class Application {
     const logger = new Logger('Application.initialize');
     logger.log(`Starting application in "${process.env.NODE_ENV}" mode.`);
     Application.loadSettings();
-    Application.loadLiterals();
     Application.setupSchema();
     if (data) {
       logger.log('Using provided dataset.');
@@ -663,7 +637,6 @@ export class Application {
     const context = Application._replServer.context;
     context.Application = Application;
     context.settings = Application.settings;
-    context.literals = Application.literals;
     context.glob = glob;
     context.chalk = chalk;
     // NOTE: We are not exactly clearing existing context, so there
