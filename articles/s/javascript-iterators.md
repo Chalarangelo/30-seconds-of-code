@@ -2,7 +2,8 @@
 title: What are JavaScript Iterators and where can I use them?
 shortTitle: JavaScript iterators introduction
 type: question
-tags: [javascript,array,object,iterator]
+language: javascript
+tags: [array,object,iterator]
 author: chalarangelo
 cover: balloons
 excerpt: Learn how JavaScript's iterators work and how you can use them to level up your projects by understanding these short code examples.

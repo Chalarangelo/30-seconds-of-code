@@ -2,6 +2,7 @@
 title: Why using maximum-scale can harm your page's accessibility
 shortTitle: Accessibility and maximum-scale
 type: story
+language: html
 tags: [webdev]
 author: chalarangelo
 cover: camera-zoom

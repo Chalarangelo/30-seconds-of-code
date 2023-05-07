@@ -2,7 +2,8 @@
 title: What is the difference between static and instance methods?
 shortTitle: Static  Instance Methods
 type: question
-tags: [javascript,object,function,class]
+language: javascript
+tags: [object,function,class]
 author: chalarangelo
 cover: lake-runner
 excerpt: Static and instance methods are pretty easy to distinguish and serve different purposes. Learn all about them in this article.

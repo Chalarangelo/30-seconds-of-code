@@ -2,7 +2,8 @@
 title: "Tip: Refactoring your for...in loops to avoid ESLint warnings"
 shortTitle: Refactoring for...in loops to avoid ESLint warnings
 type: tip
-tags: [javascript,array,iterator,eslint]
+language: javascript
+tags: [array,iterator,eslint]
 author: chalarangelo
 cover: typing
 excerpt: ESLint is a really useful tool, but sometimes it gets in the way. Learn how to refactor code to get rid of a common warning.

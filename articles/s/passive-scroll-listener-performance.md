@@ -2,7 +2,8 @@
 title: "Tip: Improve scroll listener performance"
 shortTitle: Improve scroll listener performance
 type: tip
-tags: [javascript,browser,event]
+language: javascript
+tags: [browser,event]
 author: chalarangelo
 cover: chill-surfing
 excerpt: Scroll listeners can easily become a performance bottleneck for your web application. Here's how to fix that.

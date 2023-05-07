@@ -2,7 +2,8 @@
 title: What are truthy and falsy values in JavaScript?
 shortTitle: Truthy and falsy values
 type: question
-tags: [javascript,type,comparison]
+language: javascript
+tags: [type,comparison]
 author: chalarangelo
 cover: little-bird
 excerpt: JavaScript uses type coercion in Boolean contexts, resulting in truthy or falsy values. Get a hang of how it all works in this quick guide.

@@ -2,7 +2,8 @@
 title: Are JavaScript closures inherently evil?
 shortTitle: Closures and hidden state
 type: story
-tags: [javascript,function,closure]
+language: javascript
+tags: [function,closure]
 author: chalarangelo
 cover: silver-flat-screen
 excerpt: Closures are used frequently, yet often misunderstood. Understanding them in depth is crucial to be able to write clean, maintainable code.

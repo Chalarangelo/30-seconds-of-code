@@ -2,7 +2,8 @@
 title: "Tip: Use JavaScript for loops if you need to break out early"
 shortTitle: For loops for early breaking
 type: tip
-tags: [javascript,array,loop]
+language: javascript
+tags: [array,loop]
 author: chalarangelo
 cover: armchair
 excerpt: Iteration in JavaScript can be done a handfuld of ways, most often using array methods, but sometimes a `for` loop is the best option.

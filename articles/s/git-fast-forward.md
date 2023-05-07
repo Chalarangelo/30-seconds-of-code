@@ -2,7 +2,8 @@
 title: How does Git's fast-forward mode work?
 shortTitle: Git fast-forward
 type: question
-tags: [git,branch]
+language: git
+tags: [branch]
 author: chalarangelo
 cover: boats
 excerpt: Learn about Git's fast-forward mode works and its benefits when mergin branches, so you can decide if it's a good fit for you and your team.

@@ -1,10 +1,10 @@
 ---
 title: 8 tips for working from home
 type: story
-tags: [career,programming,jobs,webdev]
+tags: [webdev,career,programming,jobs]
 author: chalarangelo
 cover: kettle-laptop
-excerpt: Working from home seems like a great alternative to going to the office, but there are challenges that come with it that you need to overcome...
+excerpt: Working from home seems great compared to going to the office, but there are challenges that come with it that you need to overcome.
 unlisted: true
 dateModified: 2021-06-12T19:30:41+03:00
 ---

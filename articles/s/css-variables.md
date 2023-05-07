@@ -2,7 +2,8 @@
 title: What are CSS variables and where can I use them?
 shortTitle: CSS variables
 type: question
-tags: [css,visual,layout]
+language: css
+tags: [visual,layout]
 author: chalarangelo
 cover: css-variables
 excerpt: Learn how CSS custom properties (CSS variables) work and what you can use them for in your code and designs.

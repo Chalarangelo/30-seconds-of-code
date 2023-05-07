@@ -2,7 +2,8 @@
 title: How do I compare two arrays in JavaScript?
 shortTitle: JavaScript array comparison
 type: question
-tags: [javascript,array,comparison]
+language: javascript
+tags: [array,comparison]
 author: chalarangelo
 cover: coconuts
 excerpt: Learn how you can compare two arrays in JavaScript using various different techniques.

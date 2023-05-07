@@ -2,7 +2,8 @@
 title: What is the difference between an expression and a statement in JavaScript?
 shortTitle: Expressions and statements
 type: question
-tags: [javascript,type]
+language: javascript
+tags: [type]
 author: chalarangelo
 cover: forest-balcony
 excerpt: JavaScript distinguishes expressions and statements. Learn their differences in this short article.

@@ -2,7 +2,8 @@
 title: Writing readable reducers in Redux
 shortTitle: Readable reducer tips
 type: story
-tags: [react,logic]
+language: react
+tags: [logic]
 author: chalarangelo
 cover: beach-from-above
 excerpt: When working with stateful code, you can run into issues realted to complexity and readability. Oftentimes, they are easily fixable.

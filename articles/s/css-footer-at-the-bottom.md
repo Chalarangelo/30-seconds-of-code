@@ -2,7 +2,8 @@
 title: How can I ensure the footer is always at the bottom of the page?
 shortTitle: Footer at the bottom
 type: question
-tags: [css,layout]
+language: css
+tags: [layout]
 author: chalarangelo
 cover: flower-shape-sunset
 excerpt: Make sure the footer stays at the bottom of the page, instead of floating up when the content is too short.

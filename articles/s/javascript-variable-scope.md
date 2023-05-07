@@ -2,7 +2,8 @@
 title: Understanding JavaScript variables and scopes
 shortTitle: Variables and scopes
 type: story
-tags: [javascript,type,variable]
+language: javascript
+tags: [type,variable]
 author: chalarangelo
 cover: periscope
 excerpt: JavaScript developers often get confused by JavaScript's variables and scope. Here's a quick guide to understanding these concepts.

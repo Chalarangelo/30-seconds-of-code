@@ -2,7 +2,8 @@
 title: How can I copy text to clipboard with JavaScript?
 shortTitle: Copy text to clipboard
 type: question
-tags: [javascript,browser]
+language: javascript
+tags: [browser]
 author: chalarangelo
 cover: typing
 excerpt: Learn how to programmatically copy text to clipboard with a few lines of JavaScript and level up your web development skills.

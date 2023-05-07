@@ -2,7 +2,8 @@
 title: Recommended HTML head icon tags
 shortTitle: HTML favicons template
 type: story
-tags: [webdev,html,browser]
+language: html
+tags: [webdev,browser]
 author: chalarangelo
 cover: boutique-home-office-3
 excerpt: Ensure your HTML documents have a proper favicon by including these lines in your `<head>` element.

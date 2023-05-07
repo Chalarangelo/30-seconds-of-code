@@ -2,7 +2,8 @@
 title: What is a pure function?
 shortTitle: Pure function introduction
 type: question
-tags: [javascript,function]
+language: javascript
+tags: [function]
 author: chalarangelo
 cover: dark-leaves
 excerpt: Pure functions are a very important concept to know, especially if you're interested in functional programming.

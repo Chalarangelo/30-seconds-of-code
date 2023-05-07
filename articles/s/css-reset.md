@@ -1,7 +1,8 @@
 ---
 title: CSS Reset
 type: story
-tags: [css,visual]
+language: css
+tags: [visual]
 author: chalarangelo
 cover: pink-flower-tree
 excerpt: A short, opinionated CSS reset to make your websites look great everywhere.

@@ -2,7 +2,8 @@
 title: Append elements to a JavaScript array
 shortTitle: Append elements to array
 type: story
-tags: [javascript,array]
+language: javascript
+tags: [array]
 author: chalarangelo
 cover: switzerland-night
 excerpt: Have you ever tried appending elements to an array in JavaScript? Here's a primer on all the available options.

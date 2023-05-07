@@ -2,7 +2,8 @@
 title: "Tip: A bash alias for copying from the web"
 shortTitle: Bash alias for copying from the web
 type: tip
-tags: [git,configuration]
+language: git
+tags: [configuration]
 author: chalarangelo
 cover: capsule-coffee
 excerpt: Many online resources prefix their terminal commands with a dollar sign. Luckily, we've got a solution to this small annoyance.

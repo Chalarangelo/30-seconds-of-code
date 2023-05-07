@@ -2,7 +2,8 @@
 title: "Tip: Sort Python dictionary list using a tuple key"
 shortTitle: Sort dictionary list using a tuple key
 type: tip
-tags: [python,list,dictionary]
+language: python
+tags: [list,dictionary]
 author: chalarangelo
 cover: matrix-flow
 excerpt: Learn how to sort a Python dictionary list using a tuple key.

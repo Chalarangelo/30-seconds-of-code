@@ -2,7 +2,8 @@
 title: How can I define an enum in JavaScript?
 shortTitle: Enum implementation
 type: question
-tags: [javascript,object,class,symbol,generator]
+language: javascript
+tags: [object,class,symbol,generator]
 author: chalarangelo
 cover: book-chair
 excerpt: Enums are part of TypeScript, but what about defining enums in plain old JavaScript? Here are a few way you can do that.

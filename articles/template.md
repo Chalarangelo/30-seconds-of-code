@@ -2,7 +2,8 @@
 title: My amazing story
 shortTitle: Amazing story
 type: story
-tags: [javascript,webdev]
+language: javascript
+tags: [webdev]
 author: chalarangelo
 cover: image
 excerpt: A short summary of your story up to 180 characters long.

@@ -2,7 +2,8 @@
 title: "Tip: Minimize DOM access"
 shortTitle: Minimize DOM access
 type: tip
-tags: [javascript,browser]
+language: javascript
+tags: [browser]
 author: chalarangelo
 cover: armchair
 excerpt: Increase your JavaScript code's performance when working with the DOM by leveraging this simple trick.

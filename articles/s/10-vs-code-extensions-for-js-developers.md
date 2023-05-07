@@ -2,10 +2,11 @@
 title: 10 must-have VS Code extensions for JavaScript developers
 shortTitle: Essential VS Code extensions
 type: story
+language: javascript
 tags: [devtools,vscode]
 author: chalarangelo
 cover: computer-screens
-excerpt: VS Code is steadily gaining popularity among developers. Here are 10 essential extensions for JavaScript developers that aim to increase your productivity.
+excerpt: Boost your productivity with these 10 essential VS Code extensions for JavaScript developers.
 unlisted: true
 dateModified: 2021-06-12T19:30:41+03:00
 ---

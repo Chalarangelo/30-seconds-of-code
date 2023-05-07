@@ -2,7 +2,8 @@
 title: What does a JavaScript constructor return?
 shortTitle: Constructor return value
 type: question
-tags: [javascript,function,class,object]
+language: javascript
+tags: [function,class,object]
 author: chalarangelo
 cover: architectural
 excerpt: The constructor is a crucial part of any JavaScript class, which is why you might want to take a closer look at what they return.

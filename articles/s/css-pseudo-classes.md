@@ -2,7 +2,8 @@
 title: What are CSS pseudo-classes?
 shortTitle: CSS pseudo-classes
 type: question
-tags: [css,webdev]
+language: css
+tags: [webdev]
 author: chalarangelo
 cover: orange-flower
 excerpt: Learn how to use CSS pseudo-classes to style an element based on changes to its state.

@@ -2,7 +2,8 @@
 title: "Tip: Create a descending list of numbered items"
 shortTitle: Descending list
 type: tip
-tags: [webdev,html]
+language: html
+tags: [webdev]
 author: chalarangelo
 cover: ancient-greek-building
 excerpt: Did you know there's an easy way to create a descending list of numbered items with pure HTML? Learn how with this handy tip.

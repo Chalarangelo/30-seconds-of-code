@@ -1,6 +1,7 @@
 ---
 title: Snippet name
 type: snippet
+language: git
 tags: [branch]
 cover: image
 dateModified: 2021-06-13T05:00:00-04:00
