@@ -3,7 +3,7 @@ title: Convert function from variadic
 type: snippet
 language: javascript
 tags: [function]
-cover: tent-stars
+cover: palm-sun
 dateModified: 2021-06-13T13:50:25+03:00
 ---
 

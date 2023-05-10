@@ -3,7 +3,7 @@ title: HSL to array
 type: snippet
 language: javascript
 tags: [string,regexp]
-cover: kettle-laptop
+cover: number-2
 dateModified: 2020-10-22T20:24:30+03:00
 ---
 

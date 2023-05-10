@@ -3,7 +3,7 @@ title: Check if date is valid
 type: snippet
 language: javascript
 tags: [date]
-cover: two-cities
+cover: cave-explorer
 dateModified: 2020-10-20T23:02:01+03:00
 ---
 

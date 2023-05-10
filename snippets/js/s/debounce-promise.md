@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [function,promise]
 excerpt: Creates a debounced function that returns a promise.
-cover: ice
+cover: chess-pawns
 dateModified: 2020-10-19T18:51:03+03:00
 ---
 

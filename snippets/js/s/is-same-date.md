@@ -3,7 +3,7 @@ title: Date is same as another date
 type: snippet
 language: javascript
 tags: [date]
-cover: pineapple-at-work
+cover: boulder-beach
 dateModified: 2020-11-03T22:11:18+02:00
 ---
 

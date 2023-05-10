@@ -3,7 +3,7 @@ title: Check if bottom of page is visible
 type: snippet
 language: javascript
 tags: [browser]
-cover: red-mountain
+cover: hiking-walking
 dateModified: 2020-10-22T20:23:47+03:00
 ---
 

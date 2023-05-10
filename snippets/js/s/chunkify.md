@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [function,generator,array]
 author: chalarangelo
-cover: cave-view
+cover: two-doors
 dateModified: 2021-03-16T22:50:40+02:00
 ---
 

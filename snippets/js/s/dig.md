@@ -3,7 +3,7 @@ title: Get nested value in object
 type: snippet
 language: javascript
 tags: [object,recursion]
-cover: brown-bird
+cover: campfire
 dateModified: 2020-10-19T18:51:03+03:00
 ---
 

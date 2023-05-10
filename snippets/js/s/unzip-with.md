@@ -3,7 +3,7 @@ title: Ungroup array elements based on function
 type: snippet
 language: javascript
 tags: [array]
-cover: coconuts
+cover: rustic-cup
 dateModified: 2022-01-23T13:18:50+03:00
 ---
 

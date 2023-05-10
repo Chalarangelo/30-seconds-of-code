@@ -3,7 +3,7 @@ title: Random integer in range
 type: snippet
 language: javascript
 tags: [math,random]
-cover: painters-desk
+cover: collab-desk-1
 dateModified: 2020-10-22T20:24:04+03:00
 ---
 

@@ -3,7 +3,7 @@ title: HSB to RGB
 type: snippet
 language: javascript
 tags: [math]
-cover: houses-rock-sea
+cover: walking-on-top
 dateModified: 2020-09-18T14:25:07+03:00
 ---
 

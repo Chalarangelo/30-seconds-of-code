@@ -3,7 +3,7 @@ title: String to slug
 type: snippet
 language: javascript
 tags: [string,regexp]
-cover: houses-rock-sea
+cover: collab-desk-2
 dateModified: 2020-10-04T10:36:38+03:00
 ---
 

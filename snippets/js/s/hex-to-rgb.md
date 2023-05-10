@@ -3,7 +3,7 @@ title: Hex to RGB
 type: snippet
 language: javascript
 tags: [string,math]
-cover: umbrellas
+cover: orange-coffee-3
 dateModified: 2020-10-19T22:49:51+03:00
 ---
 

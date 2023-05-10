@@ -3,7 +3,7 @@ title: HSL to RGB
 type: snippet
 language: javascript
 tags: [math]
-cover: maple-leaf-palette
+cover: tranquility
 dateModified: 2020-10-04T11:24:27+03:00
 ---
 

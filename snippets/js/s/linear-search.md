@@ -3,7 +3,7 @@ title: Linear search
 type: snippet
 language: javascript
 tags: [algorithm,array]
-cover: coworking-space
+cover: tranquil-desktop
 dateModified: 2020-12-28T12:07:53+02:00
 ---
 

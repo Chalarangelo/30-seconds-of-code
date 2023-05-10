@@ -3,7 +3,7 @@ title: Stringify circular JSON
 type: snippet
 language: javascript
 tags: [object]
-cover: periscope
+cover: waving-over-lake
 dateModified: 2020-10-22T20:24:30+03:00
 ---
 

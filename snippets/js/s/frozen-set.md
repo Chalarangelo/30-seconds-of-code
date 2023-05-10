@@ -3,7 +3,7 @@ title: Freeze Set object
 type: snippet
 language: javascript
 tags: [array]
-cover: frozen-globe
+cover: reflection-on-lake
 dateModified: 2020-10-11T11:52:48+03:00
 ---
 

@@ -3,7 +3,7 @@ title: Median
 type: snippet
 language: javascript
 tags: [math]
-cover: old-consoles
+cover: last-light
 dateModified: 2020-10-22T20:23:47+03:00
 ---
 

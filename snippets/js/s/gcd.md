@@ -3,7 +3,7 @@ title: Greatest common divisor
 type: snippet
 language: javascript
 tags: [math,algorithm,recursion]
-cover: flower-pond
+cover: migrating-birds
 dateModified: 2020-12-29T12:36:50+02:00
 ---
 

@@ -3,7 +3,7 @@ title: Add days to date
 type: snippet
 language: javascript
 tags: [date]
-cover: digital-nomad-12
+cover: orange-coffee-4
 dateModified: 2020-11-28T19:18:29+02:00
 ---
 

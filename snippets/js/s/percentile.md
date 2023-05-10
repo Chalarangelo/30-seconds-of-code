@@ -3,7 +3,7 @@ title: Percentile of matches
 type: snippet
 language: javascript
 tags: [math]
-cover: red-berries
+cover: collab-desk-2
 dateModified: 2020-10-22T20:24:04+03:00
 ---
 

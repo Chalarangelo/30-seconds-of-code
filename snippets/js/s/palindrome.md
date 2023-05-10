@@ -3,7 +3,7 @@ title: Palindrome
 type: snippet
 language: javascript
 tags: [string]
-cover: bridge-drop
+cover: do-more-computer
 dateModified: 2020-10-22T20:24:04+03:00
 ---
 

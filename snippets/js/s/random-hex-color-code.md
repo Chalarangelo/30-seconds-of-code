@@ -3,7 +3,7 @@ title: Random hex color code
 type: snippet
 language: javascript
 tags: [math,random]
-cover: feathers
+cover: industrial-tokyo
 dateModified: 2021-01-08T00:23:44+02:00
 ---
 

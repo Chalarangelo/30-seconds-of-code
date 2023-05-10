@@ -3,7 +3,7 @@ title: Add minutes to date
 type: snippet
 language: javascript
 tags: [date]
-cover: lake-trees
+cover: dreamy-flowers
 dateModified: 2020-11-28T19:27:46+02:00
 ---
 

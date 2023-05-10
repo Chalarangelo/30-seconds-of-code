@@ -3,7 +3,7 @@ title: Split into lines
 type: snippet
 language: javascript
 tags: [string,regexp]
-cover: two-cities
+cover: lake-bench
 dateModified: 2020-10-22T20:24:30+03:00
 ---
 

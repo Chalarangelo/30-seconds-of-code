@@ -3,7 +3,7 @@ title: Get nested object property from path string
 type: snippet
 language: javascript
 tags: [object,regexp]
-cover: brown-bird
+cover: violin
 dateModified: 2020-10-19T22:49:51+03:00
 ---
 

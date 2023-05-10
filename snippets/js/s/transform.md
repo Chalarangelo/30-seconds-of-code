@@ -3,7 +3,7 @@ title: Transform object
 type: snippet
 language: javascript
 tags: [object]
-cover: fishermen
+cover: green-plant
 dateModified: 2020-10-22T20:24:44+03:00
 ---
 

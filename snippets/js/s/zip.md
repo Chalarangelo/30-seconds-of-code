@@ -3,7 +3,7 @@ title: Group array elements
 type: snippet
 language: javascript
 tags: [array]
-cover: orange-flower
+cover: new-york-skyline
 dateModified: 2020-10-22T20:24:44+03:00
 ---
 

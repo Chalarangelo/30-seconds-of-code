@@ -3,7 +3,7 @@ title: Iterable to hash
 type: snippet
 language: javascript
 tags: [array]
-cover: sleepy-cat
+cover: pink-flower-tree
 dateModified: 2022-01-30T12:45:30+03:00
 ---
 

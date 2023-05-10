@@ -3,7 +3,7 @@ title: Number of seconds to ISO format
 type: snippet
 language: javascript
 tags: [date,math,string]
-cover: rocky-mountains
+cover: two-lighthouses
 dateModified: 2021-10-13T19:29:39+02:00
 ---
 

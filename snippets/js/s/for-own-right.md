@@ -3,7 +3,7 @@ title: Iterate over object's own properties in reverse
 type: snippet
 language: javascript
 tags: [object]
-cover: sea-view
+cover: building-facade
 dateModified: 2020-10-19T22:49:51+03:00
 ---
 

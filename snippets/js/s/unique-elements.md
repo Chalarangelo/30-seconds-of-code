@@ -3,7 +3,7 @@ title: Unique values in array
 type: snippet
 language: javascript
 tags: [array]
-cover: architectural
+cover: shelf-plant
 dateModified: 2020-10-22T20:24:44+03:00
 ---
 

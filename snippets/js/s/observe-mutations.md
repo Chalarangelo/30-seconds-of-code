@@ -3,7 +3,7 @@ title: Observe element mutations
 type: snippet
 language: javascript
 tags: [browser,event]
-cover: blue-sunrise
+cover: invention-shack
 dateModified: 2020-10-22T20:24:04+03:00
 ---
 

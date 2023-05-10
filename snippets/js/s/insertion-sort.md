@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [algorithm,array]
 author: chalarangelo
-cover: goat-wooden-cottage
+cover: white-tablet-2
 dateModified: 2020-12-28T21:53:53+02:00
 ---
 

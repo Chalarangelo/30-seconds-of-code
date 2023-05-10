@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 author: chalarangelo
-cover: painters-desk
+cover: camera-zoom
 dateModified: 2022-04-20T05:00:00-04:00
 ---
 

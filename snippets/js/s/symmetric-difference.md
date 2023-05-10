@@ -3,7 +3,7 @@ title: Array symmetric difference
 type: snippet
 language: javascript
 tags: [array,math]
-cover: trippy-chemicals
+cover: rocky-mountains-2
 dateModified: 2020-10-22T20:24:30+03:00
 ---
 

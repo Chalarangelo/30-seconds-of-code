@@ -3,7 +3,7 @@ title: Check if array has duplicates
 type: snippet
 language: javascript
 tags: [array]
-cover: umbrellas
+cover: beach-pineapple
 dateModified: 2020-10-22T20:23:09+03:00
 ---
 

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 author: chalarangelo
-cover: ice
+cover: female-hiker
 dateModified: 2020-10-19T18:51:03+03:00
 ---
 

@@ -3,7 +3,7 @@ title: Find last matching key
 type: snippet
 language: javascript
 tags: [object]
-cover: sparkles
+cover: contemporary-desk
 dateModified: 2020-10-22T20:23:47+03:00
 ---
 

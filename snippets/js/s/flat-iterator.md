@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array,iterator,generator]
 author: chalarangelo
-cover: balloons
+cover: sail-away-2
 dateModified: 2022-03-09T05:00:00-04:00
 ---
 

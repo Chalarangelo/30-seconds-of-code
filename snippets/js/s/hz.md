@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [function]
 unlisted: true
-cover: lake-runner
+cover: stairs-from-below
 dateModified: 2021-01-04T13:04:15+02:00
 ---
 

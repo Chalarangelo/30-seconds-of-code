@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser,event]
 author: chalarangelo
-cover: red-mountain
+cover: duck-plants
 dateModified: 2021-04-22T08:53:29+03:00
 ---
 

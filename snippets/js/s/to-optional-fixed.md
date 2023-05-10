@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math,string]
 author: chalarangelo
-cover: red-succulent
+cover: white-chapel
 dateModified: 2022-05-10T05:00:00-04:00
 ---
 

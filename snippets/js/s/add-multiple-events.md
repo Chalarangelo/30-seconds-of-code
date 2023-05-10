@@ -3,7 +3,7 @@ title: Add multiple listeners
 type: snippet
 language: javascript
 tags: [browser,event]
-cover: balloons
+cover: compass-1
 dateModified: 2020-10-22T20:23:47+03:00
 ---
 

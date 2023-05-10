@@ -3,7 +3,7 @@ title: N random elements in array
 type: snippet
 language: javascript
 tags: [array,random]
-cover: tree-roots
+cover: peaches
 dateModified: 2020-10-22T20:24:30+03:00
 ---
 

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser,event]
 author: chalarangelo
-cover: flower-pond
+cover: half-trees
 dateModified: 2021-01-07T00:31:14+02:00
 ---
 

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [object]
 author: chalarangelo
-cover: rocky-lake
+cover: computer-screens
 dateModified: 2021-08-01T05:00:00-04:00
 ---
 

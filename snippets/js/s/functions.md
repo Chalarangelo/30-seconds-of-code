@@ -3,7 +3,7 @@ title: Function property names
 type: snippet
 language: javascript
 tags: [object,function]
-cover: palm-tree-house
+cover: metro-arrival
 dateModified: 2020-10-20T11:21:07+03:00
 ---
 

@@ -3,7 +3,7 @@ title: Days ago
 type: snippet
 language: javascript
 tags: [date]
-cover: sunrise-over-city
+cover: u-got-this
 dateModified: 2022-01-30T11:48:07+03:00
 ---
 

@@ -3,7 +3,7 @@ title: Memoize function
 type: snippet
 language: javascript
 tags: [function]
-cover: hard-disk
+cover: lake-church
 dateModified: 2020-10-21T21:54:53+03:00
 ---
 

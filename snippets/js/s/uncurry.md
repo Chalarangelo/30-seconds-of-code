@@ -3,7 +3,7 @@ title: Uncurry function
 type: snippet
 language: javascript
 tags: [function]
-cover: perfect-timing
+cover: tulips-and-reeds
 dateModified: 2020-10-22T20:24:44+03:00
 ---
 

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [function,logic]
 unlisted: true
-cover: succulent-2
+cover: blue-bench
 dateModified: 2021-01-04T13:04:15+02:00
 ---
 

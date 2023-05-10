@@ -3,7 +3,7 @@ title: Mapped array symmetric difference
 type: snippet
 language: javascript
 tags: [array]
-cover: river-houses
+cover: dim-mountains
 dateModified: 2020-10-22T20:24:30+03:00
 ---
 

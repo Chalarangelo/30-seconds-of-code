@@ -3,7 +3,7 @@ title: RGB to HSB
 type: snippet
 language: javascript
 tags: [math]
-cover: dark-leaves
+cover: down-the-stream
 dateModified: 2020-10-22T20:24:30+03:00
 ---
 

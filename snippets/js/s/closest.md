@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math]
 author: chalarangelo
-cover: sparkles
+cover: green-cabin-cow
 dateModified: 2022-03-30T05:00:00-04:00
 ---
 

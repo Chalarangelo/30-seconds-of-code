@@ -3,7 +3,7 @@ title: Remove elements from array
 type: snippet
 language: javascript
 tags: [array]
-cover: avocado-slices
+cover: chill-surfing
 excerpt: Removes an element from an array without mutating it.
 dateModified: 2020-10-22T20:24:30+03:00
 ---

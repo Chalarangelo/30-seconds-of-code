@@ -3,7 +3,7 @@ title: Midpoint
 type: snippet
 language: javascript
 tags: [math]
-cover: curve
+cover: blue-flower
 dateModified: 2020-10-21T21:54:53+03:00
 ---
 

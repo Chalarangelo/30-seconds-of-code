@@ -3,7 +3,7 @@ title: Unflatten object
 type: snippet
 language: javascript
 tags: [object]
-cover: purple-flower-bunch
+cover: budapest-palace
 dateModified: 2020-10-22T20:24:44+03:00
 ---
 

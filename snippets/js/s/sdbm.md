@@ -3,7 +3,7 @@ title: Hash string into number
 type: snippet
 language: javascript
 tags: [math]
-cover: dark-leaves
+cover: cloudy-lake-reflection
 dateModified: 2020-10-22T20:24:30+03:00
 ---
 

@@ -3,7 +3,7 @@ title: Quarter of year
 type: snippet
 language: javascript
 tags: [date]
-cover: fallen-leaves
+cover: flower-shape-sunset
 dateModified: 2020-10-22T20:24:04+03:00
 ---
 

@@ -3,7 +3,7 @@ title: Append function arguments
 type: snippet
 language: javascript
 tags: [function]
-cover: jars-on-shelf-2
+cover: rocky-beach
 dateModified: 2020-09-15T16:28:04+03:00
 ---
 

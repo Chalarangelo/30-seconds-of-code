@@ -5,7 +5,7 @@ shortTitle: Object to Map
 language: javascript
 tags: [object]
 author: chalarangelo
-cover: succulent-2
+cover: yellow-shoes
 dateModified: 2022-06-16T05:00:00-04:00
 ---
 

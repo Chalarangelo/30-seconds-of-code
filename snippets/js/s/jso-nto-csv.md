@@ -3,7 +3,7 @@ title: JSON to CSV
 type: snippet
 language: javascript
 tags: [array,string,object]
-cover: horse-sunset
+cover: pink-flowers
 dateModified: 2021-10-13T19:29:39+02:00
 ---
 

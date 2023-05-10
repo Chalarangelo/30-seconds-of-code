@@ -3,7 +3,7 @@ title: Value is object-like
 type: snippet
 language: javascript
 tags: [type,object]
-cover: orange-flower
+cover: messy-computer
 dateModified: 2020-09-15T16:28:04+03:00
 ---
 

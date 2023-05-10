@@ -3,7 +3,7 @@ title: Defer function invocation
 type: snippet
 language: javascript
 tags: [function]
-cover: cave-view
+cover: shiny-mountains
 dateModified: 2020-10-22T20:23:47+03:00
 ---
 

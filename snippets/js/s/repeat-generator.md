@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [function,generator]
 author: chalarangelo
-cover: white-flower
+cover: laptop-journey
 dateModified: 2020-10-11T17:05:48+03:00
 ---
 

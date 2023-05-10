@@ -3,7 +3,7 @@ title: RGB to hex
 type: snippet
 language: javascript
 tags: [string,math]
-cover: colors-mural
+cover: lemon-tea
 dateModified: 2020-11-03T22:11:18+02:00
 ---
 

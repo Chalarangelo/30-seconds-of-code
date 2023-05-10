@@ -3,7 +3,7 @@ title: Assign default values for object properties
 type: snippet
 language: javascript
 tags: [object]
-cover: boats
+cover: filter-coffee-pot
 dateModified: 2020-10-22T20:23:47+03:00
 ---
 

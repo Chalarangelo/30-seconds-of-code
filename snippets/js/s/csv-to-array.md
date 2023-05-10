@@ -3,7 +3,7 @@ title: CSV to array
 type: snippet
 language: javascript
 tags: [string,array]
-cover: keyboard-tea
+cover: watermelon-bike
 dateModified: 2022-01-30T12:14:39+02:00
 ---
 

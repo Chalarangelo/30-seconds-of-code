@@ -3,7 +3,7 @@ title: Bifurcate array based on values
 type: snippet
 language: javascript
 tags: [array]
-cover: two-cities
+cover: sunrise-over-mountains
 dateModified: 2020-11-01T20:50:57+02:00
 ---
 

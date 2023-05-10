@@ -3,7 +3,7 @@ title: Remove list elements while condition is met
 type: snippet
 language: javascript
 tags: [array]
-cover: colors-mural
+cover: sunset-textured-beach
 dateModified: 2020-11-29T12:04:53+02:00
 ---
 

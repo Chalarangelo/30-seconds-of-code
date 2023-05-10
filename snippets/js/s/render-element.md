@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser,recursion]
 author: chalarangelo
-cover: maple-leaf-palette
+cover: standing-stones
 dateModified: 2021-10-13T19:29:39+02:00
 ---
 
