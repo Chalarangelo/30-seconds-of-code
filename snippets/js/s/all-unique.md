@@ -3,7 +3,7 @@ title: Check if all array elements are unique
 type: snippet
 language: javascript
 tags: [array]
-cover: jars-on-shelf
+cover: strawberries
 dateModified: 2021-01-08T00:23:44+02:00
 ---
 

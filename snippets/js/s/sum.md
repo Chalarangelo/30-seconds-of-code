@@ -3,7 +3,7 @@ title: Array sum
 type: snippet
 language: javascript
 tags: [math]
-cover: lake-trees
+cover: secret-tree
 dateModified: 2020-10-22T20:24:30+03:00
 ---
 

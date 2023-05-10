@@ -3,7 +3,7 @@ title: HTTP put
 type: snippet
 language: javascript
 tags: [browser]
-cover: bridge
+cover: mountain-lake
 dateModified: 2020-10-19T22:49:51+03:00
 ---
 

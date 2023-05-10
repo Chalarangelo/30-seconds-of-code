@@ -3,7 +3,7 @@ title: Drop list elements from the left
 type: snippet
 language: javascript
 tags: [array]
-cover: bridge-drop
+cover: salad-2
 dateModified: 2020-11-01T20:50:57+02:00
 ---
 

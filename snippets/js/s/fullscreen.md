@@ -3,7 +3,7 @@ title: Toggle fullscreen mode
 type: snippet
 language: javascript
 tags: [browser]
-cover: antelope
+cover: cloudy-mountaintop-2
 dateModified: 2020-10-19T22:49:51+03:00
 ---
 

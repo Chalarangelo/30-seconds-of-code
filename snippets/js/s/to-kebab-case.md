@@ -3,7 +3,7 @@ title: Kebabcase string
 type: snippet
 language: javascript
 tags: [string,regexp]
-cover: old-consoles
+cover: chubby-squirrel
 dateModified: 2020-12-16T13:42:27+02:00
 ---
 

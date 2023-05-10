@@ -3,7 +3,7 @@ title: Rename object keys
 type: snippet
 language: javascript
 tags: [object]
-cover: fallen-leaves
+cover: symmetry-cloudy-mountain
 dateModified: 2020-10-22T20:24:30+03:00
 ---
 

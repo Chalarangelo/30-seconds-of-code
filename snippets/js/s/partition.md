@@ -3,7 +3,7 @@ title: Partition array in two
 type: snippet
 language: javascript
 tags: [array,object]
-cover: sunflowers
+cover: camping-trip
 dateModified: 2020-11-03T21:46:13+02:00
 ---
 

@@ -3,7 +3,7 @@ title: Map object values
 type: snippet
 language: javascript
 tags: [object]
-cover: feathers
+cover: travel-mug-1
 dateModified: 2020-10-21T21:54:53+03:00
 ---
 

@@ -3,7 +3,7 @@ title: Compact object
 type: snippet
 language: javascript
 tags: [object,array,recursion]
-cover: shapes
+cover: orange-coffee-2
 dateModified: 2020-11-27T13:57:41+02:00
 ---
 

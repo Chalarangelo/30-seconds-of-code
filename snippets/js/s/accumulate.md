@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math]
 author: chalarangelo
-cover: river-house-lights
+cover: people-on-beach
 dateModified: 2022-01-30T13:10:13+02:00
 ---
 

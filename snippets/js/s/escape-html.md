@@ -3,7 +3,7 @@ title: Escape HTML
 type: snippet
 language: javascript
 tags: [string,regexp]
-cover: periscope
+cover: above-the-rocks
 dateModified: 2021-10-13T19:29:39+02:00
 ---
 

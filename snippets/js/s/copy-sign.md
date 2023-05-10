@@ -3,7 +3,7 @@ title: Copy sign to number
 type: snippet
 language: javascript
 tags: [math]
-cover: keyboard-tea
+cover: cloudy-mountaintop
 dateModified: 2020-10-07T23:52:57+03:00
 ---
 

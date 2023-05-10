@@ -3,7 +3,7 @@ title: Copy to clipboard async
 type: snippet
 language: javascript
 tags: [browser,string,promise]
-cover: typing
+cover: armchair-design
 dateModified: 2022-01-11T05:00:00-04:00
 ---
 

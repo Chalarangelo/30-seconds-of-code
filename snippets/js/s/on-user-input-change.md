@@ -3,7 +3,7 @@ title: Handle user input change
 type: snippet
 language: javascript
 tags: [browser,event]
-cover: digital-nomad-12
+cover: red-light
 dateModified: 2020-10-21T21:54:53+03:00
 ---
 

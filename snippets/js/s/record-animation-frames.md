@@ -3,7 +3,7 @@ title: Record animation frames
 type: snippet
 language: javascript
 tags: [browser,recursion]
-cover: curve
+cover: mac-and-coffee
 dateModified: 2020-10-22T20:24:04+03:00
 ---
 

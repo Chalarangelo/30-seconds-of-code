@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string,browser,regexp]
 author: chalarangelo
-cover: compass
+cover: blue-lake
 dateModified: 2021-01-03T20:32:13+02:00
 ---
 

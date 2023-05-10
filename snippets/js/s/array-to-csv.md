@@ -3,7 +3,7 @@ title: Array to CSV
 type: snippet
 language: javascript
 tags: [array,string]
-cover: sunrise-over-city
+cover: tropical-bike
 dateModified: 2020-11-03T21:55:08+02:00
 ---
 

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser,string,regexp]
 author: chalarangelo
-cover: compass
+cover: metro-tunnel
 dateModified: 2020-10-22T20:23:47+03:00
 ---
 

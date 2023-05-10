@@ -3,7 +3,7 @@ title: Invoke functions on arguments
 type: snippet
 language: javascript
 tags: [function]
-cover: jars-on-shelf
+cover: armchair-in-yellow
 dateModified: 2020-10-21T21:54:53+03:00
 ---
 

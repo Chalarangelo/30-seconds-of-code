@@ -3,7 +3,7 @@ title: Unfold array
 type: snippet
 language: javascript
 tags: [function,array]
-cover: dog-waiting
+cover: clutter-2
 dateModified: 2020-09-15T16:28:04+03:00
 ---
 

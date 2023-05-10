@@ -3,7 +3,7 @@ title: Days from now
 type: snippet
 language: javascript
 tags: [date]
-cover: tent-stars
+cover: orange-wedges
 dateModified: 2022-01-30T11:48:07+03:00
 ---
 

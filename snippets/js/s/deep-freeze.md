@@ -3,7 +3,7 @@ title: Deep freeze object
 type: snippet
 language: javascript
 tags: [object,recursion]
-cover: frozen-globe
+cover: camper-school-bus
 dateModified: 2020-10-19T18:51:03+03:00
 ---
 

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string,algorithm]
 author: chalarangelo
-cover: armchair
+cover: purple-sunset-waves
 dateModified: 2020-12-29T16:27:50+02:00
 ---
 

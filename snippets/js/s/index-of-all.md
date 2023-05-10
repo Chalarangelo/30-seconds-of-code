@@ -3,7 +3,7 @@ title: Index of all matches
 type: snippet
 language: javascript
 tags: [array]
-cover: jars-on-shelf-2
+cover: highlands
 dateModified: 2020-10-22T20:23:47+03:00
 ---
 

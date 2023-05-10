@@ -3,7 +3,7 @@ title: Vector angle
 type: snippet
 language: javascript
 tags: [math]
-cover: avocado-slices
+cover: purple-pier
 dateModified: 2021-01-08T00:23:44+02:00
 ---
 

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 author: chalarangelo
-cover: colorful-lounge
+cover: clouds-n-mountains
 dateModified: 2021-04-22T08:45:39+03:00
 ---
 

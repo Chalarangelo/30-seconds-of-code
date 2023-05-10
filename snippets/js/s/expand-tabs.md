@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string,regexp]
 author: chalarangelo
-cover: houses-rock-sea
+cover: naming-conventions
 dateModified: 2020-09-15T16:28:04+03:00
 ---
 

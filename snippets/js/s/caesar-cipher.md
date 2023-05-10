@@ -3,7 +3,7 @@ title: Caesar cipher
 type: snippet
 language: javascript
 tags: [algorithm,string]
-cover: ancient-greek-building
+cover: waves-from-above
 dateModified: 2020-12-29T12:29:21+02:00
 ---
 

@@ -3,7 +3,7 @@ title: Array intersection
 type: snippet
 language: javascript
 tags: [array]
-cover: red-berries
+cover: orange-coffee
 dateModified: 2020-10-20T23:02:01+03:00
 ---
 

@@ -3,7 +3,7 @@ title: Colorize text
 type: snippet
 language: javascript
 tags: [node,string]
-cover: sea-view
+cover: plant-corner
 dateModified: 2020-11-03T22:11:18+02:00
 ---
 

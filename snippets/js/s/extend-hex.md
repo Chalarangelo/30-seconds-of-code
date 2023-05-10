@@ -3,7 +3,7 @@ title: Extend hex value
 type: snippet
 language: javascript
 tags: [string]
-cover: red-mountain
+cover: laptop-plants
 dateModified: 2020-09-15T16:28:04+03:00
 ---
 

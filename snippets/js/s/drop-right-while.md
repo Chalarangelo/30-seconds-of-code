@@ -3,7 +3,7 @@ title: Drop list elements from the right based on function
 type: snippet
 language: javascript
 tags: [array]
-cover: bridge-drop
+cover: paper-card
 dateModified: 2020-10-19T18:51:03+03:00
 ---
 

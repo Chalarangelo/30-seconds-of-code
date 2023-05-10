@@ -3,7 +3,7 @@ title: Function arity
 type: snippet
 language: javascript
 tags: [function]
-cover: trippy-chemicals
+cover: radio-monstera
 dateModified: 2020-10-18T20:24:28+03:00
 ---
 

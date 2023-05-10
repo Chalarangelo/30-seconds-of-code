@@ -3,7 +3,7 @@ title: Parse cookie
 type: snippet
 language: javascript
 tags: [browser,string]
-cover: three-vases
+cover: purple-sunset-beach
 dateModified: 2020-10-22T20:24:04+03:00
 ---
 

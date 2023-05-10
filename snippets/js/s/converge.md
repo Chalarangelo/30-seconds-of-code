@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [function]
 excerpt: Converges a list of branching functions into a single function and returns the result.
-cover: cherry-trees
+cover: golden-gate-bridge
 dateModified: 2021-01-08T00:23:44+02:00
 ---
 

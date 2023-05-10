@@ -3,7 +3,7 @@ title: Remove non ASCII characters
 type: snippet
 language: javascript
 tags: [string,regexp]
-cover: tram-car
+cover: blue-red-mountain
 dateModified: 2020-10-22T20:24:30+03:00
 ---
 

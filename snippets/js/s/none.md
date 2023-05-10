@@ -3,7 +3,7 @@ title: Test if all array elements are falsy
 type: snippet
 language: javascript
 tags: [array]
-cover: bug
+cover: little-white-flowers
 dateModified: 2020-10-21T21:54:53+03:00
 ---
 

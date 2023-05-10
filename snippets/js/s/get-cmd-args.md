@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [node]
 author: chalarangelo
-cover: terminal
+cover: hiking-balance
 dateModified: 2022-04-26T05:00:00-04:00
 ---
 

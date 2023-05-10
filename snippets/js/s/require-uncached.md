@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [node]
 author: chalarangelo
-cover: curve
+cover: tea-laptop-table
 dateModified: 2020-09-15T16:28:04+03:00
 ---
 

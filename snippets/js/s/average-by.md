@@ -3,7 +3,7 @@ title: Mapped array average
 type: snippet
 language: javascript
 tags: [math]
-cover: rock-climbing
+cover: red-lake
 dateModified: 2020-10-21T21:17:45+03:00
 ---
 

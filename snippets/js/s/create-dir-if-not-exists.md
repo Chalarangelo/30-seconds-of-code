@@ -3,7 +3,7 @@ title: Create directory if not exists
 type: snippet
 language: javascript
 tags: [node]
-cover: sunrise-over-city
+cover: misty-mountains
 dateModified: 2020-10-22T20:23:47+03:00
 ---
 

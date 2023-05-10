@@ -3,7 +3,7 @@ title: Most performant function
 type: snippet
 language: javascript
 tags: [function]
-cover: lake-runner
+cover: workspace-with-speaker
 dateModified: 2020-10-21T21:54:53+03:00
 ---
 

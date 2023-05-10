@@ -3,7 +3,7 @@ title: Copy to clipboard
 type: snippet
 language: javascript
 tags: [browser,string,event]
-cover: typing
+cover: overgrown
 dateModified: 2022-01-11T09:32:04+02:00
 ---
 

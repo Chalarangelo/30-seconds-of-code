@@ -3,7 +3,7 @@ title: Iterate n times
 type: snippet
 language: javascript
 tags: [function]
-cover: lake-loop
+cover: purple-laptop
 dateModified: 2020-10-20T11:21:07+03:00
 ---
 

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [date]
 author: chalarangelo
-cover: perfect-timing
+cover: icebreaker
 dateModified: 2020-11-29T12:16:43+02:00
 ---
 

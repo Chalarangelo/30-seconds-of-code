@@ -3,7 +3,7 @@ title: Find last matching index
 type: snippet
 language: javascript
 tags: [array]
-cover: taking-photos
+cover: organizer
 dateModified: 2020-10-22T20:23:47+03:00
 ---
 

@@ -3,7 +3,7 @@ title: CSV to JSON
 type: snippet
 language: javascript
 tags: [string,object]
-cover: kettle-laptop
+cover: coffee-float
 dateModified: 2022-01-30T12:14:39+02:00
 ---
 

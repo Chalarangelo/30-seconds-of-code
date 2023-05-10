@@ -3,7 +3,7 @@ title: NodeList to array
 type: snippet
 language: javascript
 tags: [browser,array]
-cover: colors-mural
+cover: compass-2
 dateModified: 2020-10-21T21:54:53+03:00
 ---
 

@@ -3,7 +3,7 @@ title: Decapitalize string
 type: snippet
 language: javascript
 tags: [string]
-cover: forest-balcony
+cover: nature-screen
 dateModified: 2020-11-01T20:50:57+02:00
 ---
 

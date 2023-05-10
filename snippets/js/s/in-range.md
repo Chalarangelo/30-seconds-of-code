@@ -3,7 +3,7 @@ title: Number in range
 type: snippet
 language: javascript
 tags: [math]
-cover: armchair
+cover: white-tablet
 dateModified: 2020-11-01T20:50:57+02:00
 ---
 

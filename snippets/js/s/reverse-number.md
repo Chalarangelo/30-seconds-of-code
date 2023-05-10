@@ -3,7 +3,7 @@ title: Reverse number
 type: snippet
 language: javascript
 tags: [math,string]
-cover: walking
+cover: book-stopper
 dateModified: 2020-09-18T21:19:23+03:00
 ---
 

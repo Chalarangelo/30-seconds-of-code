@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 author: chalarangelo
-cover: keyboard-tea
+cover: leafy-screens
 dateModified: 2021-04-22T08:27:41+03:00
 ---
 

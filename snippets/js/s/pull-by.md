@@ -3,7 +3,7 @@ title: Pull values from array based on function
 type: snippet
 language: javascript
 tags: [array]
-cover: fishermen
+cover: book-chair
 dateModified: 2020-10-22T20:24:04+03:00
 ---
 

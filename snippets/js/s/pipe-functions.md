@@ -3,7 +3,7 @@ title: Pipe functions
 type: snippet
 language: javascript
 tags: [function]
-cover: goat-wooden-cottage
+cover: colorful-rocks
 dateModified: 2020-10-22T20:24:04+03:00
 ---
 
