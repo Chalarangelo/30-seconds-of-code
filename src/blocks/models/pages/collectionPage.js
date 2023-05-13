@@ -72,9 +72,10 @@ export const collectionPage = {
         );
 
         context.structuredData = Schemer.generateListingData({
-          title: page.name,
+          title: collection.name,
           slug: page.slug,
           items: context.collectionItems,
+          pageNumber,
         });
 
         return context;
