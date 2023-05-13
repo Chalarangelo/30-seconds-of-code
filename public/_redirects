@@ -46,7 +46,7 @@
 /blog/e/*                              /list/p/1                                301!
 /blog/a/*                              /list/p/1                                301!
 /blog/p/*                              /list/p/1                                301!
-/artiles/p/*                           /list/p/1                                301!
+/articles/p/*                          /list/p/1                                301!
 /articles/t/css/*                      /css/p/1                                 301!
 /articles/t/javascript/*               /js/p/1                                  301!
 /articles/t/python/*                   /python/p/1                              301!
