@@ -11,12 +11,12 @@ shortDescription: >-
 featuredListings:
 - js
 - css
-- react/t/hooks
-- js/t/algorithm
+- react/hooks
+- js/algorithm
 - git
 - c/js-interviews
 - python
-- js/t/node
+- js/node
 - c/js-data-structures
 - c/js-promises
 - c/js-comparison
@@ -49,7 +49,7 @@ featuredListings:
 - c/js-array-initialization
 - c/css-background-patterns
 - c/js-object-cloning
-- react/t/components
+- react/components
 - c/js-http-requests
 - c/web-development
 - c/js-object-key-selection
