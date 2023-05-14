@@ -30,7 +30,7 @@ featuredListings:
 - c/js-event-handling
 - c/js-arrow-functions
 - c/js-performance
-- c/tips
+- tips
 - c/react-rendering
 - c/js-colors
 - c/js-browser-capabilities
@@ -51,6 +51,6 @@ featuredListings:
 - c/js-object-cloning
 - react/components
 - c/js-http-requests
-- c/web-development
+- web-development
 - c/js-object-key-selection
-- c/cheatsheets
+- cheatsheets
