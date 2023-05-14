@@ -26,12 +26,12 @@
 #
 # * Redirect previous article listings to current listings.
 # -----------------------------------------------------------------------------
-/articles/p/*                          /list/p/1                                301!
+/articles/p/*                        /list/p/1                                301!
 /articles/css/*                      /css/p/1                                 301!
 /articles/javascript/*               /js/p/1                                  301!
 /articles/python/*                   /python/p/1                              301!
 /articles/react/*                    /react/p/1                               301!
-/articles/webdev/*                   /c/web-development/p/1                   301!
+/articles/webdev/*                   /web-development/p/1                     301!
 
 # -----------------------------------------------------------------------------
 #   ARTICLE URL REDIRECTS:
@@ -80,6 +80,9 @@
 /python/string/*                     /python/string/:splat                    301!
 /react/components/*                  /react/components/:splat                 301!
 /react/hooks/*                       /react/hooks/:splat                      301!
+/c/cheatsheets/*                     /cheatsheets/:splat                      301!
+/c/tips/*                            /tips/:splat                             301!
+/c/web-development/*                 /web-development/:splat                  301!
 
 # -----------------------------------------------------------------------------
 #   SNIPPET REDIRECTS:
