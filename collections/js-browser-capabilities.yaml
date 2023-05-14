@@ -1,0 +1,19 @@
+slug: c/js-browser-capabilities
+name: Browser Capability Detection
+featured: true
+snippetIds:
+  - js/s/supports-touch-events
+  - js/s/detect-device-type
+  - js/s/detect-language
+  - js/s/prefers-dark-color-scheme
+  - js/s/prefers-light-color-scheme
+  - js/s/is-local-storage-enabled
+  - js/s/is-session-storage-enabled
+splash: compass-1.png
+description: >-
+  Using modern JavaScript APIs, you can detect a wide variety of browser
+  capabilities and adapt the user experience accordingly. Start creating
+  responsive web applications with this collection of tips and tricks.
+shortDescription: >-
+  Use modern JavaScript APIs to detect a variety of browser capabilities and
+  adapt the user experience accordingly.

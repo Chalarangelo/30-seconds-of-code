@@ -1,0 +1,17 @@
+slug: c/js-scroll
+name: Browser Scrolling with JavaScript
+featured: true
+snippetIds:
+  - js/s/scroll-to-top
+  - js/s/smooth-scroll
+  - js/s/bottom-visible
+  - js/s/get-scroll-position
+  - js/s/get-scrollbar-width
+splash: travel-mug-1.png
+description: >-
+  Getting the scroll position and manipulating with JavaScript can help you
+  drive your users' attention to specific parts of your website. Learn some
+  cool new tricks to make your website stand out.
+shortDescription: >-
+  Learn how to manipulate the scroll position of your website with JavaScript
+  and make your website stand out.
