@@ -72,4 +72,4 @@ initializeArrayWithValues(4, 2); // [2, 2, 2, 2]
 initializeMappedArray(4, (_, i) => i * 2); // [0, 2, 4, 6]
 ```
 
-You can learn more tips and tricks related to JavaScript array initialization in [this collection](/c/js-array-initialization/p/1).
+You can learn more tips and tricks related to JavaScript array initialization in [this collection](//js/array-initialization/p/1).
