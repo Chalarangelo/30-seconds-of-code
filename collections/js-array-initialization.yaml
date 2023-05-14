@@ -1,0 +1,21 @@
+slug: c/js-array-initialization
+name: JavaScript Array Initialization
+featured: true
+snippetIds:
+  - articles/s/js-array-initialization
+  - js/s/initialize-array-with-values
+  - js/s/initialize-array-with-range
+  - js/s/initialize-array-with-range-right
+  - js/s/initialize-mapped-array
+  - js/s/initialize-array-while
+  - js/s/initialize-array-until
+  - js/s/initialize2-d-array
+  - js/s/initialize-nd-array
+splash: laptop-lamp.png
+description: >-
+  When it comes to array initialization in JavaScript, there are as many options
+  available as there are use cases to consider. This collection will help you
+  find the right one for your needs.
+shortDescription: >-
+  Discover the inner workings of JavaScript arrays and learn about the different
+  ways to initialize them.
