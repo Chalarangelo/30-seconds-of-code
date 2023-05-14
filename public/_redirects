@@ -26,12 +26,12 @@
 #
 # * Redirect previous article listings to current listings.
 # -----------------------------------------------------------------------------
-/articles/p/*                        /list/p/1                                301!
-/articles/css/*                      /css/p/1                                 301!
-/articles/javascript/*               /js/p/1                                  301!
-/articles/python/*                   /python/p/1                              301!
-/articles/react/*                    /react/p/1                               301!
-/articles/webdev/*                   /web-development/p/1                     301!
+/articles/p/*                          /list/p/1                                301!
+/articles/css/*                        /css/p/1                                 301!
+/articles/javascript/*                 /js/p/1                                  301!
+/articles/python/*                     /python/p/1                              301!
+/articles/react/*                      /react/p/1                               301!
+/articles/webdev/*                     /web-development/p/1                     301!
 
 # -----------------------------------------------------------------------------
 #   ARTICLE URL REDIRECTS:
@@ -54,39 +54,69 @@
 #
 # * Redirect renamed/reslugged collections.
 # -----------------------------------------------------------------------------
-/css/animation/*                     /css/animation/:splat                    301!
-/css/interactivity/*                 /css/interactivity/:splat                301!
-/css/layout/*                        /css/layout/:splat                       301!
-/css/visual/*                        /css/visual/:splat                       301!
-/git/branch/*                        /git/branch/:splat                       301!
-/git/commit/*                        /git/commit/:splat                       301!
-/git/configuration/*                 /git/configuration/:splat                301!
-/git/repository/*                    /git/repository/:splat                   301!
-/js/algorithm/*                      /js/algorithm/:splat                     301!
-/js/array/*                          /js/array/:splat                         301!
-/js/browser/*                        /js/browser/:splat                       301!
-/js/date/*                           /js/date/:splat                          301!
-/js/function/*                       /js/function/:splat                      301!
-/js/math/*                           /js/math/:splat                          301!
-/js/node/*                           /js/node/:splat                          301!
-/js/object/*                         /js/object/:splat                        301!
-/js/string/*                         /js/string/:splat                        301!
-/js/type/*                           /js/type/:splat                          301!
-/python/date/*                       /python/date/:splat                      301!
-/python/dictionary/*                 /python/dictionary/:splat                301!
-/python/function/*                   /python/function/:splat                  301!
-/python/list/*                       /python/list/:splat                      301!
-/python/math/*                       /python/math/:splat                      301!
-/python/string/*                     /python/string/:splat                    301!
-/react/components/*                  /react/components/:splat                 301!
-/react/hooks/*                       /react/hooks/:splat                      301!
-/c/cheatsheets/*                     /cheatsheets/:splat                      301!
-/c/tips/*                            /tips/:splat                             301!
-/c/web-development/*                 /web-development/:splat                  301!
-/c/css-centering/*                   /css/centering/:splat                    301!
-/c/css-hover-effects/*               /css/hover-effects/:splat                301!
-/c/css-button-transitions/*          /css/button-transitions/:splat           301!
-/c/css-background-patterns/*         /css/background-patterns/:splat          301!
+/css/animation/*                     /css/animation/:splat                      301!
+/css/interactivity/*                 /css/interactivity/:splat                  301!
+/css/layout/*                        /css/layout/:splat                         301!
+/css/visual/*                        /css/visual/:splat                         301!
+/git/branch/*                        /git/branch/:splat                         301!
+/git/commit/*                        /git/commit/:splat                         301!
+/git/configuration/*                 /git/configuration/:splat                  301!
+/git/repository/*                    /git/repository/:splat                     301!
+/js/algorithm/*                      /js/algorithm/:splat                       301!
+/js/array/*                          /js/array/:splat                           301!
+/js/browser/*                        /js/browser/:splat                         301!
+/js/date/*                           /js/date/:splat                            301!
+/js/function/*                       /js/function/:splat                        301!
+/js/math/*                           /js/math/:splat                            301!
+/js/node/*                           /js/node/:splat                            301!
+/js/object/*                         /js/object/:splat                          301!
+/js/string/*                         /js/string/:splat                          301!
+/js/type/*                           /js/type/:splat                            301!
+/python/date/*                       /python/date/:splat                        301!
+/python/dictionary/*                 /python/dictionary/:splat                  301!
+/python/function/*                   /python/function/:splat                    301!
+/python/list/*                       /python/list/:splat                        301!
+/python/math/*                       /python/math/:splat                        301!
+/python/string/*                     /python/string/:splat                      301!
+/react/components/*                  /react/components/:splat                   301!
+/react/hooks/*                       /react/hooks/:splat                        301!
+/c/cheatsheets/*                     /cheatsheets/:splat                        301!
+/c/tips/*                            /tips/:splat                               301!
+/c/web-development/*                 /web-development/:splat                    301!
+/c/css-centering/*                   /css/centering/:splat                      301!
+/c/css-hover-effects/*               /css/hover-effects/:splat                  301!
+/c/css-button-transitions/*          /css/button-transitions/:splat             301!
+/c/css-background-patterns/*         /css/background-patterns/:splat            301!
+/c/js-array-initialization/*         /js/array-initialization/:splat            301!
+/c/js-array-methods/*                /js/array-methods/:splat                   301!
+/c/js-array-set-operations/*         /js/array-set-operations/:splat            301!
+/c/js-array-tricks/*                 /js/array-tricks/:splat                    301!
+/c/js-arrow-functions/*              /js/arrow-functions/:splat                 301!
+/c/js-browser-capabilities/*         /js/browser-capabilities/:splat            301!
+/c/js-colors/*                       /js/colors/:splat                          301!
+/c/js-comparison/*                   /js/comparison/:splat                      301!
+/c/js-css-manipulation/*             /js/css-manipulation/:splat                301!
+/c/js-data-structures/*              /js/data-structures/:splat                 301!
+/c/js-dom-manipulation/*             /js/dom-manipulation/:splat                301!
+/c/js-dom-querying/*                 /js/dom-querying/:splat                    301!
+/c/js-event-handling/*               /js/event-handling/:splat                  301!
+/c/js-generators/*                   /js/generators/:splat                      301!
+/c/js-geometry/*                     /js/geometry/:splat                        301!
+/c/js-http-requests/*                /js/http-requests/:splat                   301!
+/c/js-interviews/*                   /js/interviews/:splat                      301!
+/c/js-logical-operations/*           /js/logical-operations/:splat              301!
+/c/js-object-cloning/*               /js/object-cloning/:splat                  301!
+/c/js-object-key-selection/*         /js/object-key-selection/:splat            301!
+/c/js-object-key-transformations/*   /js/object-key-transformations/:splat      301!
+/c/js-performance/*                  /js/performance/:splat                     301!
+/c/js-promises/*                     /js/promises/:splat                        301!
+/c/js-proxy/*                        /js/proxy/:splat                           301!
+/c/js-random-value-generators/*      /js/random-value-generators/:splat         301!
+/c/js-scroll/*                       /js/scroll/:splat                          301!
+/c/js-string-casing/*                /js/string-casing/:splat                   301!
+/c/js-unit-conversions/*             /js/unit-conversions/:splat                301!
+/c/js-url/*                          /js/url/:splat                             301!
+/c/js-web-storage-essentials/*       /js/web-storage-essentials/:splat          301!
 
 # -----------------------------------------------------------------------------
 #   SNIPPET REDIRECTS:
