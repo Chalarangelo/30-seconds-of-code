@@ -117,6 +117,9 @@
 /c/js-unit-conversions/*             /js/unit-conversions/:splat                301!
 /c/js-url/*                          /js/url/:splat                             301!
 /c/js-web-storage-essentials/*       /js/web-storage-essentials/:splat          301!
+/c/react-rendering/*                 /react/rendering/:splat                    301!
+/c/react-testing/*                   /react/testing/:splat                      301!
+/c/html-head-basics/*                /html/head-basics/:splat                   301!
 
 # -----------------------------------------------------------------------------
 #   SNIPPET REDIRECTS:
