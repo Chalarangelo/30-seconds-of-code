@@ -20,7 +20,7 @@ featuredListings:
 - js/data-structures
 - js/promises
 - js/comparison
-- c/html-head-basics
+- html/head-basics
 - css/centering
 - js/css-manipulation
 - js/url
@@ -31,13 +31,13 @@ featuredListings:
 - js/arrow-functions
 - js/performance
 - tips
-- c/react-rendering
+- react/rendering
 - js/colors
 - js/browser-capabilities
 - js/array-methods
 - js/array-tricks
 - js/object-key-transformations
-- c/react-testing
+- react/testing
 - css/hover-effects
 - js/string-casing
 - js/generators
