@@ -83,6 +83,10 @@
 /c/cheatsheets/*                     /cheatsheets/:splat                      301!
 /c/tips/*                            /tips/:splat                             301!
 /c/web-development/*                 /web-development/:splat                  301!
+/c/css-centering/*                   /css/centering/:splat                    301!
+/c/css-hover-effects/*               /css/hover-effects/:splat                301!
+/c/css-button-transitions/*          /css/button-transitions/:splat           301!
+/c/css-background-patterns/*         /css/background-patterns/:splat          301!
 
 # -----------------------------------------------------------------------------
 #   SNIPPET REDIRECTS:
