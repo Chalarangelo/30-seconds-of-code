@@ -27,11 +27,11 @@
 # * Redirect previous article listings to current listings.
 # -----------------------------------------------------------------------------
 /articles/p/*                          /list/p/1                                301!
-/articles/t/css/*                      /css/p/1                                 301!
-/articles/t/javascript/*               /js/p/1                                  301!
-/articles/t/python/*                   /python/p/1                              301!
-/articles/t/react/*                    /react/p/1                               301!
-/articles/t/webdev/*                   /c/web-development/:splat                301!
+/articles/css/*                      /css/p/1                                 301!
+/articles/javascript/*               /js/p/1                                  301!
+/articles/python/*                   /python/p/1                              301!
+/articles/react/*                    /react/p/1                               301!
+/articles/webdev/*                   /c/web-development/p/1                   301!
 
 # -----------------------------------------------------------------------------
 #   ARTICLE URL REDIRECTS:
@@ -50,9 +50,41 @@
 /tag/*                                 /js/p/1                                  301!
 
 # -----------------------------------------------------------------------------
+#   COLLECTION REDIRECTS:
+#
+# * Redirect renamed/reslugged collections.
+# -----------------------------------------------------------------------------
+/css/animation/*                     /css/animation/:splat                    301!
+/css/interactivity/*                 /css/interactivity/:splat                301!
+/css/layout/*                        /css/layout/:splat                       301!
+/css/visual/*                        /css/visual/:splat                       301!
+/git/branch/*                        /git/branch/:splat                       301!
+/git/commit/*                        /git/commit/:splat                       301!
+/git/configuration/*                 /git/configuration/:splat                301!
+/git/repository/*                    /git/repository/:splat                   301!
+/js/algorithm/*                      /js/algorithm/:splat                     301!
+/js/array/*                          /js/array/:splat                         301!
+/js/browser/*                        /js/browser/:splat                       301!
+/js/date/*                           /js/date/:splat                          301!
+/js/function/*                       /js/function/:splat                      301!
+/js/math/*                           /js/math/:splat                          301!
+/js/node/*                           /js/node/:splat                          301!
+/js/object/*                         /js/object/:splat                        301!
+/js/string/*                         /js/string/:splat                        301!
+/js/type/*                           /js/type/:splat                          301!
+/python/date/*                       /python/date/:splat                      301!
+/python/dictionary/*                 /python/dictionary/:splat                301!
+/python/function/*                   /python/function/:splat                  301!
+/python/list/*                       /python/list/:splat                      301!
+/python/math/*                       /python/math/:splat                      301!
+/python/string/*                     /python/string/:splat                    301!
+/react/components/*                  /react/components/:splat                 301!
+/react/hooks/*                       /react/hooks/:splat                      301!
+
+# -----------------------------------------------------------------------------
 #   SNIPPET REDIRECTS:
 #
-# * Redirect renamed/reslugged snippets and articles
+# * Redirect renamed/reslugged snippets and articles.
 # -----------------------------------------------------------------------------
 /css/s/custom-variables/               /articles/s/css-variables                301!
 /css/s/calc/                           /css/p/1                                 301!
