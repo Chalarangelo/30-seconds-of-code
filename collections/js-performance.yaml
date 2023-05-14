@@ -1,0 +1,22 @@
+slug: c/js-performance
+name: JavaScript Performance Optimization
+featured: true
+snippetIds:
+  - articles/s/javascript-store-dom-items
+  - articles/s/passive-scroll-listener-performance
+  - articles/s/js-textcontent-or-innertext
+  - articles/s/javascript-memoization
+  - articles/s/js-array-filtering-tips
+  - articles/s/js-fast-remove-array-element
+  - articles/s/code-anatomy-optimizing-recursion
+  - articles/s/javascript-switch-object
+  - articles/s/js-dynamic-properties-are-slow
+  - articles/s/big-o-cheatsheet
+splash: do-more-computer.png
+description: >-
+  Enhance your website's performance with our collection of tips and tricks on
+  JavaScript optimization. Learn essential techniques for faster load times and
+  better user experience.
+shortDescription: >-
+  Optimize your JavaScript with this collections of tips and tricks and take
+  your website to the next level.

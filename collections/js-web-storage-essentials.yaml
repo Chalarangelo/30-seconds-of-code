@@ -1,0 +1,16 @@
+slug: c/js-web-storage-essentials
+name: Web Storage Essentials
+featured: true
+snippetIds:
+  - articles/s/cookies-local-storage-session
+  - js/s/parse-cookie
+  - js/s/serialize-cookie
+  - js/s/is-local-storage-enabled
+  - js/s/is-session-storage-enabled
+splash: basics.png
+description: >-
+  Modern browsers offer a handful of options when it comes to storing data on
+  the client-side. This collection contains the necessary resources to master
+  web storage in JavaScript and level up your skills.
+shortDescription: >-
+  Master web storage in JavaScript with this collection of tips and tricks.
