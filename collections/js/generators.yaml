@@ -2,7 +2,7 @@ slug: js/generators
 name: JavaScript Generator Functions
 featured: true
 snippetIds:
-  - articles/s/javascript-range-generator
+  - articles/s/javascript-generator-for-range
   - js/s/range-generator
   - js/s/repeat-generator
   - js/s/cycle-generator
