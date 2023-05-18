@@ -10,7 +10,7 @@ snippetIds:
   - js/s/add-event-listener-all
   - js/s/remove-event-listener-all
   - js/s/add-multiple-events
-  - articles/s/javascript-listen-once
+  - articles/s/javascript-execute-event-handler-once
   - articles/s/passive-scroll-listener-performance
   - js/s/on-scroll-stop
   - articles/s/javascript-arrow-function-event-listeners
