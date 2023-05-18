@@ -54,7 +54,7 @@ for (let item of myList) {
 }
 ```
 
-In the above example, we implement a [`LinkedList` data structure](/articles/s/js-data-structures-linked-list), that internally uses a `data` array. Each item in it has a `value` and some implementation-specific properties used to determine its position in the sequence. Objects constructed from this class are not iterable by default. To define an iterator we use `Symbol.iterator` and set it up so that the returned sequence is in order based on the internal implementation of the class, while the returned items only return their `value`.
+In the above example, we implement a [`LinkedList` data structure](/js/s/data-structures-linked-list), that internally uses a `data` array. Each item in it has a `value` and some implementation-specific properties used to determine its position in the sequence. Objects constructed from this class are not iterable by default. To define an iterator we use `Symbol.iterator` and set it up so that the returned sequence is in order based on the internal implementation of the class, while the returned items only return their `value`.
 
 On a related note, iterators are just functions, meaning they can be called like any other function (e.g. to delegate the iteration to an existing iterator), while also not being restricted to the `Symbol.iterator` name. This allows us to define multiple iterators for the same object. Here's an example of these concepts at play:
 

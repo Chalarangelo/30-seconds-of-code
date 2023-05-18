@@ -4,13 +4,13 @@ featured: true
 snippetIds:
   - js/s/store-dom-items
   - articles/s/passive-scroll-listener-performance
-  - articles/s/js-textcontent-or-innertext
+  - js/s/textcontent-or-innertext
   - js/s/memoization
-  - articles/s/js-array-filtering-tips
-  - articles/s/js-fast-remove-array-element
+  - js/s/array-filtering-tips
+  - js/s/fast-remove-array-element
   - articles/s/code-anatomy-optimizing-recursion
   - js/s/switch-object
-  - articles/s/js-dynamic-properties-are-slow
+  - js/s/dynamic-properties-are-slow
   - articles/s/big-o-cheatsheet
 splash: do-more-computer.png
 description: >-

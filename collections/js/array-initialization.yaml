@@ -2,7 +2,7 @@ slug: js/array-initialization
 name: JavaScript Array Initialization
 featured: true
 snippetIds:
-  - articles/s/js-array-initialization
+  - js/s/array-initialization
   - js/s/initialize-array-with-values
   - js/s/initialize-array-with-range
   - js/s/initialize-array-with-range-right

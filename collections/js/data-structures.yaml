@@ -4,16 +4,16 @@ miniName: Data Structures
 parent: js
 featured: true
 snippetIds:
-  - articles/s/js-native-data-structures
-  - articles/s/js-data-structures-queue
-  - articles/s/js-data-structures-stack
-  - articles/s/js-data-structures-linked-list
-  - articles/s/js-data-structures-doubly-linked-list
-  - articles/s/js-data-structures-graph
-  - articles/s/js-data-structures-tree
-  - articles/s/js-data-structures-binary-tree
-  - articles/s/js-data-structures-binary-search-tree
-  - articles/s/js-frequency-map-data-structure
+  - js/s/native-data-structures
+  - js/s/data-structures-queue
+  - js/s/data-structures-stack
+  - js/s/data-structures-linked-list
+  - js/s/data-structures-doubly-linked-list
+  - js/s/data-structures-graph
+  - js/s/data-structures-tree
+  - js/s/data-structures-binary-tree
+  - js/s/data-structures-binary-search-tree
+  - js/s/frequency-map-data-structure
   - articles/s/big-o-cheatsheet
 splash: purple-flower.png
 description: >-

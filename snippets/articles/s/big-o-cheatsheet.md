@@ -27,27 +27,27 @@ Different data structures have different time complexities for the same operatio
 
 | Data Structure | Access | Search | Insertion | Deletion |
 | --- | --- | --- | --- | --- |
-| [**Array**](/articles/s/js-native-data-structures) | Θ(1) | Θ(n) | Θ(n) | Θ(n) |
-| [**Queue**](/articles/s/js-data-structures-queue) | Θ(n) | Θ(n) | Θ(1) | Θ(1) |
-| [**Stack**](/articles/s/js-data-structures-stack) | Θ(n) | Θ(n) | Θ(1) | Θ(1) |
-| [**Linked List**](/articles/s/js-data-structures-linked-list) | Θ(n) | Θ(n) | Θ(1) | Θ(1) |
-| [**Doubly Linked List**](/articles/s/js-data-structures-doubly-linked-list) | Θ(n) | Θ(n) | Θ(1) | Θ(1) |
+| [**Array**](/js/s/native-data-structures) | Θ(1) | Θ(n) | Θ(n) | Θ(n) |
+| [**Queue**](/js/s/data-structures-queue) | Θ(n) | Θ(n) | Θ(1) | Θ(1) |
+| [**Stack**](/js/s/data-structures-stack) | Θ(n) | Θ(n) | Θ(1) | Θ(1) |
+| [**Linked List**](/js/s/data-structures-linked-list) | Θ(n) | Θ(n) | Θ(1) | Θ(1) |
+| [**Doubly Linked List**](/js/s/data-structures-doubly-linked-list) | Θ(n) | Θ(n) | Θ(1) | Θ(1) |
 | **Skip List** | Θ(log n) | Θ(log n) | Θ(log n) | Θ(log n) |
 | **Hash Table** | N/A | Θ(1) | Θ(1) | Θ(1) |
-| [**Binary Search Tree**](/articles/s/js-data-structures-binary-search-tree) | Θ(log n) | Θ(log n) | Θ(log n) | Θ(log n) |
+| [**Binary Search Tree**](/js/s/data-structures-binary-search-tree) | Θ(log n) | Θ(log n) | Θ(log n) | Θ(log n) |
 
 #### Worst time complexity
 
 | Data Structure | Access | Search | Insertion | Deletion |
 | --- | --- | --- | --- | --- |
-| [**Array**](/articles/s/js-native-data-structures) | O(1) | O(n) | O(n) | O(n) |
-| [**Queue**](/articles/s/js-data-structures-queue) | O(n) | O(n) | O(1) | O(1) |
-| [**Stack**](/articles/s/js-data-structures-stack) | O(n) | O(n) | O(1) | O(1) |
-| [**Linked List**](/articles/s/js-data-structures-linked-list) | O(n) | O(n) | O(1) | O(1) |
-| [**Doubly Linked List**](/articles/s/js-data-structures-doubly-linked-list) | O(n) | O(n) | O(1) | O(1) |
+| [**Array**](/js/s/native-data-structures) | O(1) | O(n) | O(n) | O(n) |
+| [**Queue**](/js/s/data-structures-queue) | O(n) | O(n) | O(1) | O(1) |
+| [**Stack**](/js/s/data-structures-stack) | O(n) | O(n) | O(1) | O(1) |
+| [**Linked List**](/js/s/data-structures-linked-list) | O(n) | O(n) | O(1) | O(1) |
+| [**Doubly Linked List**](/js/s/data-structures-doubly-linked-list) | O(n) | O(n) | O(1) | O(1) |
 | **Skip List** | O(n) | O(n) | O(n) | O(n) |
 | **Hash Table** | N/A | O(n) | O(n) | O(n) |
-| [**Binary Search Tree**](/articles/s/js-data-structures-binary-search-tree) | O(n) | O(n) | O(n) | O(n) |
+| [**Binary Search Tree**](/js/s/data-structures-binary-search-tree) | O(n) | O(n) | O(n) | O(n) |
 
 ### Array sorting algorithms
 

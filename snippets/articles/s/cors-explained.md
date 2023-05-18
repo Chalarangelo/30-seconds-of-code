@@ -10,7 +10,7 @@ excerpt: CORS (Cross-Origin Resource Sharing) trips up many developers, but it's
 dateModified: 2023-05-07T05:00:00-04:00
 ---
 
-When it comes to HTTP, an **origin** is defined by several different aspects of a URL. As mentioned in a [previous article](/articles/s/js-window-location-cheatsheet/), the origin is composed of the following:
+When it comes to HTTP, an **origin** is defined by several different aspects of a URL. As mentioned in a [previous article](/js/s/window-location-cheatsheet/), the origin is composed of the following:
 
 - The **protocol** (e.g. `http` or `https`)
 - The **hostname** (e.g. `30secondsofcode.org`)

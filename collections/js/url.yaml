@@ -3,10 +3,10 @@ name: URLs in JavaScript
 featured: true
 snippetIds:
   - js/s/modify-url-without-reload
-  - articles/s/js-construct-url
-  - articles/s/js-edit-url-params
+  - js/s/construct-url
+  - js/s/edit-url-params
   - js/s/reload-page
-  - articles/s/js-window-location-cheatsheet
+  - js/s/window-location-cheatsheet
   - js/s/current-url
   - js/s/https-redirect
   - js/s/get-url-parameters

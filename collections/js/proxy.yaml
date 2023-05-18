@@ -2,15 +2,15 @@ slug: js/proxy
 name: JavaScript Proxy
 featured: true
 snippetIds:
-  - articles/s/js-proxy-introduction
-  - articles/s/js-dynamic-getter-setter-proxy
-  - articles/s/js-immutable-object-proxy
+  - js/s/proxy-introduction
+  - js/s/dynamic-getter-setter-proxy
+  - js/s/immutable-object-proxy
   - js/s/singleton-proxy
-  - articles/s/js-dynamic-getter-chain-proxy
+  - js/s/dynamic-getter-chain-proxy
   - js/s/object-array-proxy
-  - articles/s/js-proxy-array-negative-index
-  - articles/s/js-cannot-extend-proxy-object
-  - articles/s/js-typecheck-proxy
+  - js/s/proxy-array-negative-index
+  - js/s/cannot-extend-proxy-object
+  - js/s/typecheck-proxy
 splash: laptop-coffee.png
 description: >-
   The JavaScript Proxy object can be a very powerful tool to extend the
