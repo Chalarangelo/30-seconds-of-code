@@ -4,10 +4,10 @@ shortName: Testing
 parent: react
 featured: true
 snippetIds:
-  - articles/s/testing-stateful-ui-components
-  - articles/s/testing-async-react-components
-  - articles/s/testing-react-portals
-  - articles/s/testing-redux-connected-components
+  - react/s/testing-stateful-ui-components
+  - react/s/testing-async-components
+  - react/s/testing-portals
+  - react/s/testing-redux-connected-components
 splash: headphones.png
 description: >-
   Testing React can be challenging, both in terms of figuring out the correct

@@ -14,7 +14,7 @@ snippetIds:
   - js/s/data-structures-binary-tree
   - js/s/data-structures-binary-search-tree
   - js/s/frequency-map-data-structure
-  - articles/s/big-o-cheatsheet
+  - js/s/big-o-cheatsheet
 splash: purple-flower.png
 description: >-
   The JavaScript data structures collection includes implementations and

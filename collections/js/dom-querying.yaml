@@ -11,7 +11,7 @@ snippetIds:
   - js/s/get-images
   - js/s/query-selector-shorthand
   - js/s/element-is-visible-in-viewport
-  - articles/s/select-focused-dom-element
+  - js/s/select-focused-dom-element
   - js/s/get-elements-bigger-than-viewport
   - js/s/element-from-point
   - js/s/element-is-focused

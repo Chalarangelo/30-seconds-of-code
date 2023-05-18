@@ -36,7 +36,7 @@ snippetIds:
   - js/s/iife
   - js/s/event-loop-explained
   - js/s/prefix-postfix-operators
-  - articles/s/cors-explained
+  - js/s/cors-explained
 splash: interview.png
 description: >-
   Preparing for a job interview requires studying to refresh your knowledge and

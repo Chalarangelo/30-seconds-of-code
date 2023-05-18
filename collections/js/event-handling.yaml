@@ -11,10 +11,10 @@ snippetIds:
   - js/s/remove-event-listener-all
   - js/s/add-multiple-events
   - js/s/execute-event-handler-once
-  - articles/s/passive-scroll-listener-performance
+  - js/s/passive-scroll-listener-performance
   - js/s/on-scroll-stop
   - js/s/arrow-function-event-listeners
-  - articles/s/detect-caps-lock-is-on
+  - js/s/detect-caps-lock-is-on
   - js/s/trigger-event
   - js/s/on-user-input-change
 splash: monsterra.png
