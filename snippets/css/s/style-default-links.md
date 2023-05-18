@@ -19,4 +19,4 @@ a[href]:not([class]) {
 }
 ```
 
-As a bonus tip, you can use [the previous tip about selecting any link](/articles/s/css-select-any-link) to further enhance this solution.
+As a bonus tip, you can use [the previous tip about selecting any link](/css/s/select-any-link) to further enhance this solution.
