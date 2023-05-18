@@ -2,7 +2,7 @@
 title: 8 tips for accessible websites
 shortTitle: Accessibility tips
 type: story
-language: javascript
+language: html
 tags: [accessibility,webdev]
 author: chalarangelo
 cover: accessibility
