@@ -33,4 +33,4 @@ If you want to prevent new properties from being added and existing properties f
 | `Object.freeze()` | No | Yes | No | No |
 | `Object.seal()` | No | Yes | Yes | No |
 
-As a closing note, remember that both methods perform a shallow freeze/seal on the object. This means that nested objects and arrays are not frozen or sealed and can be mutated. To prevent this, you can deep freeze objects, as described in [this related article](/articles/s/javascript-deep-freeze-object).
+As a closing note, remember that both methods perform a shallow freeze/seal on the object. This means that nested objects and arrays are not frozen or sealed and can be mutated. To prevent this, you can deep freeze objects, as described in [this related article](/js/s/deep-freeze-object).

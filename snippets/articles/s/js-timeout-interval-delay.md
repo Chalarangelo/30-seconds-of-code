@@ -14,7 +14,7 @@ JavaScript provides two widely used timing functions, `setTimeout()` and `setInt
 
 ### Delays are not exact
 
-I went into detail about how JavaScript engines execute code in [the Event Loop explanation](/articles/s/javascript-event-loop-explained), but let me recap here. As JavaScript is single-threaded, tasks are queued to be executed in a loop. Thus, `setTimeout()` and `setInterval()` are tasks that will be executed after at least the given amount of time has elapsed. There is no guarantee, however, that the task will be executed exactly after the given amount of time has elapsed. The delay is a suggestion, signifying the **minimum amount of time** that must pass before the task is executed. The actual delay can be longer, depending on the current state of the JavaScript engine.
+I went into detail about how JavaScript engines execute code in [the Event Loop explanation](/js/s/event-loop-explained), but let me recap here. As JavaScript is single-threaded, tasks are queued to be executed in a loop. Thus, `setTimeout()` and `setInterval()` are tasks that will be executed after at least the given amount of time has elapsed. There is no guarantee, however, that the task will be executed exactly after the given amount of time has elapsed. The delay is a suggestion, signifying the **minimum amount of time** that must pass before the task is executed. The actual delay can be longer, depending on the current state of the JavaScript engine.
 
 ### Browser factors
 

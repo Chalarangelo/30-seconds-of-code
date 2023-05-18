@@ -54,7 +54,7 @@ As you can see, for each value of `n`, `fibonacciNumber` will be called twice, o
 
 ### Calculation memoization
 
-The solution to this problem, and the first trick that you can use to speed up recursive functions, is to use memoization. We already published [a great blog post on memoization](/articles/s/javascript-memoization/) a little while back, so be sure to check it out to learn more about the subject. Here's our `fibonacciNumber` function, using memoization:
+The solution to this problem, and the first trick that you can use to speed up recursive functions, is to use memoization. We already published [a great blog post on memoization](/js/s/memoization/) a little while back, so be sure to check it out to learn more about the subject. Here's our `fibonacciNumber` function, using memoization:
 
 ```js
 const fibonacciCache = new Map();

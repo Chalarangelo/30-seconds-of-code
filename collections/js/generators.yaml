@@ -2,7 +2,7 @@ slug: js/generators
 name: JavaScript Generator Functions
 featured: true
 snippetIds:
-  - articles/s/javascript-generator-for-range
+  - js/s/generator-for-range
   - js/s/range-generator
   - js/s/repeat-generator
   - js/s/cycle-generator
@@ -16,9 +16,9 @@ snippetIds:
   - js/s/generate-until
   - js/s/left-substr-generator
   - js/s/right-substr-generator
-  - articles/s/javascript-make-iterable
-  - articles/s/javascript-enum
-  - articles/s/javascript-object-array-proxy
+  - js/s/make-iterable
+  - js/s/enum
+  - js/s/object-array-proxy
 splash: generator.png
 description: >-
   JavaScript generator functions introduce a way to define an iterative

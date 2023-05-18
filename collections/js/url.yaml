@@ -2,10 +2,10 @@ slug: js/url
 name: URLs in JavaScript
 featured: true
 snippetIds:
-  - articles/s/javascript-modify-url-without-reload
+  - js/s/modify-url-without-reload
   - articles/s/js-construct-url
   - articles/s/js-edit-url-params
-  - articles/s/javascript-reload-page
+  - js/s/reload-page
   - articles/s/js-window-location-cheatsheet
   - js/s/current-url
   - js/s/https-redirect

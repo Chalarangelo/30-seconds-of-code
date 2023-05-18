@@ -28,4 +28,4 @@ const doubledNumbers = numbers.map(num => num * 2);
 
 The way I like to distinguish them is by remembering that `Array.prototype.map()` represents a **transformation**, whereas `Array.prototype.forEach()` represents an **iteration**. Hopefully, one of these explanations will click for you and help you remember the difference between the two.
 
-As a closing note, I would like to remind you that the humble `for` loop can be more efficient in some cases, such as [breaking out of a loop early](/articles/s/javascript-for-loop-early-break). Always pick the right tool for the job, as ES6 has a method for almost every use case.
+As a closing note, I would like to remind you that the humble `for` loop can be more efficient in some cases, such as [breaking out of a loop early](/js/s/for-loop-early-break). Always pick the right tool for the job, as ES6 has a method for almost every use case.

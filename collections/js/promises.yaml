@@ -2,12 +2,12 @@ slug: js/promises
 name: JavaScript Promises
 featured: true
 snippetIds:
-  - articles/s/javascript-promises
+  - js/s/promises
   - articles/s/async-javascript-cheatsheet
-  - articles/s/javascript-sync-async
-  - articles/s/javascript-promise-then-catch
-  - articles/s/javascript-promise-then-finally
-  - articles/s/javascript-await-timeout
+  - js/s/sync-async
+  - js/s/promise-then-catch
+  - js/s/promise-then-finally
+  - js/s/await-timeout
   - js/s/debounce-promise
   - js/s/run-promises-in-series
 splash: blue-computer.png

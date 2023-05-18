@@ -4,38 +4,38 @@ miniName: Interview Questions
 featured: true
 parent: js
 snippetIds:
-  - articles/s/javascript-equality
-  - articles/s/javascript-truthy-falsy-values
-  - articles/s/javascript-expression-statement
-  - articles/s/javascript-undeclared-undefined-null
-  - articles/s/javascript-variable-hoisting
-  - articles/s/javascript-variable-scope
+  - js/s/equality
+  - js/s/truthy-falsy-values
+  - js/s/expression-statement
+  - js/s/undeclared-undefined-null
+  - js/s/variable-hoisting
+  - js/s/variable-scope
   - articles/s/js-callbacks
-  - articles/s/javascript-pass-by-reference-or-pass-by-value
-  - articles/s/javascript-promises
-  - articles/s/javascript-sync-async
-  - articles/s/javascript-classical-vs-prototypal-inheritance
-  - articles/s/javascript-this
-  - articles/s/javascript-shallow-deep-clone
-  - articles/s/javascript-copy-array
-  - articles/s/javascript-object-comparison
-  - articles/s/javascript-array-comparison
-  - articles/s/javascript-array-includes-value
+  - js/s/pass-by-reference-or-pass-by-value
+  - js/s/promises
+  - js/s/sync-async
+  - js/s/classical-vs-prototypal-inheritance
+  - js/s/this
+  - js/s/shallow-deep-clone
+  - js/s/copy-array
+  - js/s/object-comparison
+  - js/s/array-comparison
+  - js/s/array-includes-value
   - articles/s/js-array-map-vs-foreach
-  - articles/s/javascript-event-bubbling-capturing-delegation
-  - articles/s/javascript-value-not-equal-to-itself
-  - articles/s/javascript-blank-value
-  - articles/s/javascript-string-immutability
+  - js/s/event-bubbling-capturing-delegation
+  - js/s/value-not-equal-to-itself
+  - js/s/blank-value
+  - js/s/string-immutability
   - articles/s/js-static-instance-methods
-  - articles/s/javascript-arrow-functions
-  - articles/s/javascript-pure-functions
-  - articles/s/javascript-recursion
-  - articles/s/javascript-use-strict
+  - js/s/arrow-functions
+  - js/s/pure-functions
+  - js/s/recursion
+  - js/s/use-strict
   - articles/s/js-async-defer
-  - articles/s/javascript-closures
-  - articles/s/javascript-iife
-  - articles/s/javascript-event-loop-explained
-  - articles/s/javascript-prefix-postfix-operators
+  - js/s/closures
+  - js/s/iife
+  - js/s/event-loop-explained
+  - js/s/prefix-postfix-operators
   - articles/s/cors-explained
 splash: interview.png
 description: >-

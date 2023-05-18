@@ -20,7 +20,7 @@ const y = null;
 !!y; // false
 ```
 
-Using the double negation operator is functionally equivalent to using the `Boolean()` function, which we explored in depth in a [previous article](/articles/s/javascript-boolean-function). In terms of readability and usability, I would still suggest using the `Boolean()` function. It conveys the intent of the operation more clearly, and it's easier to understand at a glance.
+Using the double negation operator is functionally equivalent to using the `Boolean()` function, which we explored in depth in a [previous article](/js/s/boolean-function). In terms of readability and usability, I would still suggest using the `Boolean()` function. It conveys the intent of the operation more clearly, and it's easier to understand at a glance.
 
 ```js
 const x = 1;
