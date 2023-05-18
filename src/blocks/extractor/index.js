@@ -145,8 +145,8 @@ export class Extractor {
 
         // This check might be overkill, but better safe than sorry
         const isBlog = type !== 'snippet' && filePath.includes('/articles/');
-        const isCSS = filePath.includes('/css/');
-        const isReact = filePath.includes('/react/');
+        const isCSS = filePath.includes('/css/') && type === 'snippet';
+        const isReact = filePath.includes('/react/') && type === 'snippet';
 
         const language = languageData.get(languageKey) || undefined;
         const languageKeys = isBlog
