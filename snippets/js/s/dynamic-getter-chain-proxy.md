@@ -12,7 +12,7 @@ dateModified: 2023-05-28T05:00:00-04:00
 
 The dawn of ES6 brought about jQuery's fall from grace, as a lot of the conveniences it afforded developers were now available in the language itself. However, jQuery's API design was convenient in many ways that native JavaScript often isn't. One of the most practical things jQuery offered was its ability to chain methods together, minimizing duplication and making code more readable.
 
-Looking at the use case at hand, I thought that I could stitch together a general-purpose solution using JavaScript's `Proxy` object. In fact, I think that the concept of dynamic getters and setters that I described in [my previous post](/articles/s/js-dynamic-getter-setter-proxy) is a great place to start.
+Looking at the use case at hand, I thought that I could stitch together a general-purpose solution using JavaScript's `Proxy` object. In fact, I think that the concept of dynamic getters and setters that I described in [my previous post](/js/s/dynamic-getter-setter-proxy) is a great place to start.
 
 To recap, intercepting the behavior of the `get` and `set` traps of a `Proxy` object allows us to create dynamic accessors for objects. This is particularly useful when the shape of the data is not known in advance, or when the value of a property needs to be manipulated before it is returned.
 
