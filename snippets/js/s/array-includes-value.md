@@ -24,7 +24,7 @@ array.includes(3, 3); // false
 
 ### Objects
 
-Unlike primitive values, you can't use `Array.prototype.includes()` to check if an array includes an object. This comes down to how JavaScript compares values and the fact that [objects are reference types](/articles/s/javascript-pass-by-reference-or-pass-by-value). I highly recommend reading the previous article about [object comparison](/articles/s/javascript-object-comparison), as I won't be going into detail on how to compare objects here.
+Unlike primitive values, you can't use `Array.prototype.includes()` to check if an array includes an object. This comes down to how JavaScript compares values and the fact that [objects are reference types](/js/s/pass-by-reference-or-pass-by-value). I highly recommend reading the previous article about [object comparison](/js/s/object-comparison), as I won't be going into detail on how to compare objects here.
 
 Due to this difference between primitive values and objects, you can't use `Array.prototype.includes()` to check if an array includes an object. However, provided you implement a [deep equality function](/js/s/equals), you can use `Array.prototype.some()` to check if any object matches the shape of another object.
 

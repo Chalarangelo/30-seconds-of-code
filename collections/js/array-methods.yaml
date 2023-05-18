@@ -4,12 +4,12 @@ featured: true
 snippetIds:
   - articles/s/js-array-map-vs-foreach
   - articles/s/4-javascript-array-methods
-  - articles/s/javascript-array-comparison
-  - articles/s/javascript-index-for-of-loop
-  - articles/s/javascript-for-loop-early-break
+  - js/s/array-comparison
+  - js/s/index-for-of-loop
+  - js/s/for-loop-early-break
   - articles/s/js-array-initialization
   - articles/s/code-anatomy-chaining-reduce-for-loop
-  - articles/s/javascript-async-array-loops
+  - js/s/async-array-loops
   - articles/s/js-typecheck-array
 splash: laptop-lamp.png
 description: >-

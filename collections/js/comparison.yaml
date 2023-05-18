@@ -2,12 +2,12 @@ slug: js/comparison
 name: JavaScript Comparison
 featured: true
 snippetIds:
-  - articles/s/javascript-equality
-  - articles/s/javascript-value-not-equal-to-itself
-  - articles/s/javascript-object-comparison
-  - articles/s/javascript-array-comparison
-  - articles/s/javascript-date-comparison
-  - articles/s/javascript-object-is-triple-equals
+  - js/s/equality
+  - js/s/value-not-equal-to-itself
+  - js/s/object-comparison
+  - js/s/array-comparison
+  - js/s/date-comparison
+  - js/s/object-is-triple-equals
   - js/s/equals
   - js/s/matches
   - js/s/matches-with
