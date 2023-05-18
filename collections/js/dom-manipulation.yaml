@@ -2,7 +2,7 @@ slug: js/dom-manipulation
 name: JavaScript DOM Manipulation
 featured: true
 snippetIds:
-  - articles/s/js-create-element
+  - articles/s/js-create-html-elements
   - js/s/create-element
   - js/s/remove-element
   - js/s/insert-after
