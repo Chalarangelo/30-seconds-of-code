@@ -4,9 +4,9 @@ miniName: Rendering
 parent: react
 featured: true
 snippetIds:
-  - articles/s/react-rendering-basics
-  - articles/s/react-rendering-optimization
-  - articles/s/react-rendering-state
+  - react/s/rendering-basics
+  - react/s/rendering-optimization
+  - react/s/rendering-state
 splash: glasses-comic.png
 description: >-
   Understanding of the rendering process is a crucial piece of knowledge when
