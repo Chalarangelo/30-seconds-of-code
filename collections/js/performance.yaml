@@ -3,15 +3,15 @@ name: JavaScript Performance Optimization
 featured: true
 snippetIds:
   - js/s/store-dom-items
-  - articles/s/passive-scroll-listener-performance
+  - js/s/passive-scroll-listener-performance
   - js/s/textcontent-or-innertext
   - js/s/memoization
   - js/s/array-filtering-tips
   - js/s/fast-remove-array-element
-  - articles/s/code-anatomy-optimizing-recursion
+  - js/s/code-anatomy-optimizing-recursion
   - js/s/switch-object
   - js/s/dynamic-properties-are-slow
-  - articles/s/big-o-cheatsheet
+  - js/s/big-o-cheatsheet
 splash: do-more-computer.png
 description: >-
   Enhance your website's performance with our collection of tips and tricks on

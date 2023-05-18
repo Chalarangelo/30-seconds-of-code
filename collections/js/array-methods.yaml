@@ -3,12 +3,12 @@ name: JavaScript Array Methods
 featured: true
 snippetIds:
   - js/s/array-map-vs-foreach
-  - articles/s/4-javascript-array-methods
+  - js/s/4-array-methods
   - js/s/array-comparison
   - js/s/index-for-of-loop
   - js/s/for-loop-early-break
   - js/s/array-initialization
-  - articles/s/code-anatomy-chaining-reduce-for-loop
+  - js/s/code-anatomy-chaining-reduce-for-loop
   - js/s/async-array-loops
   - js/s/typecheck-array
 splash: laptop-lamp.png

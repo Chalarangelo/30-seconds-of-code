@@ -3,7 +3,7 @@ name: JavaScript Promises
 featured: true
 snippetIds:
   - js/s/promises
-  - articles/s/async-javascript-cheatsheet
+  - js/s/async-cheatsheet
   - js/s/sync-async
   - js/s/promise-then-catch
   - js/s/promise-then-finally
