@@ -2,7 +2,7 @@ slug: css/centering
 name: CSS Centering
 featured: true
 snippetIds:
-  - articles/s/css-centering
+  - css/s/centering
   - css/s/flexbox-centering
   - css/s/grid-centering
   - css/s/transform-centering
