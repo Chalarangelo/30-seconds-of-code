@@ -419,7 +419,7 @@ export class Application {
         ...rest,
       });
       if (snippetIds && snippetIds.length) collectionRec.snippets = snippetIds;
-      else if (collection.id === 'list') {
+      else if (collection.id === 'snippets') {
         // Use listedBy in main listing to exclude unlisted snippets
         collectionRec.snippets =
           Snippet.records.listedByPopularity.flatPluck('id');
