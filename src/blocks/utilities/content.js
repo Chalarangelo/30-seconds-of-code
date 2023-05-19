@@ -81,45 +81,78 @@ export class Content {
   };
 
   /**
-   * Creates a new snippet from the template in the given content directory
+   * Creates a new snippet or collection from the template in the given content directory
    * @param {string} directoryName - Name of the directory (e.g. 'articles')
-   * @param {string} snippetType - Type of the snippet ('snippet' or 'story')
-   * @param {string} snippetName - Name of the new snippet (e.g. 'my-blog-post')
+   * @param {string} type - Type of the snippet ('collection', 'snippet' or 'story')
+   * @param {string} name - Name of the new content item (e.g. 'my-blog-post')
    */
-  static createSnippet = (directoryName, snippetType, snippetName) => {
-    const logger = new Logger('Content.createSnippet');
-    logger.log(`Creating new snippet ${snippetName} in ${directoryName}...`);
+  static create = (directoryName, type, name) => {
+    const logger = new Logger('Content.create');
+    const isCollection = type === 'collection';
+    logger.log(
+      `Creating new ${
+        isCollection ? 'collection' : 'snippet'
+      } ${name} in ${directoryName}...`
+    );
 
     const { rawContentPath: contentPath } = pathSettings;
-    const directoryPath = path.join(
-      process.cwd(),
-      contentPath,
-      'snippets',
-      directoryName
-    );
-    const templatePath = path.join(directoryPath, `${snippetType}-template.md`);
-    const snippetPath = path.join(directoryPath, 's');
-    try {
-      if (!fs.existsSync(snippetPath)) {
-        logger.log('Snippet directory not found! Creating directory...');
-        fs.mkdirSync(snippetPath);
+
+    if (isCollection) {
+      const collectionPath = path.join(
+        process.cwd(),
+        contentPath,
+        'collections',
+        directoryName
+      );
+      const templatePath = path.join(contentPath, `collection-template.yaml`);
+      try {
+        if (!fs.existsSync(collectionPath)) {
+          logger.log('Collection directory not found! Creating directory...');
+          fs.mkdirSync(collectionPath);
+        }
+        const template = fs.readFileSync(templatePath, 'utf8');
+
+        const fileData = template
+          .replace(/name:\s*.*\n/, `name: ${name}\n`)
+          .replace(/slug:\s*.*\n/, `slug: ${name}\n`);
+
+        fs.writeFileSync(path.join(collectionPath, `${name}.yaml`), fileData);
+
+        logger.success('Collection creation complete!');
+      } catch (err) {
+        logger.error(err);
       }
-      const template = fs.readFileSync(templatePath, 'utf8');
+    } else {
+      const directoryPath = path.join(
+        process.cwd(),
+        contentPath,
+        'snippets',
+        directoryName
+      );
+      const templatePath = path.join(directoryPath, `${type}-template.md`);
+      const snippetPath = path.join(directoryPath, 's');
+      try {
+        if (!fs.existsSync(snippetPath)) {
+          logger.log('Snippet directory not found! Creating directory...');
+          fs.mkdirSync(snippetPath);
+        }
+        const template = fs.readFileSync(templatePath, 'utf8');
 
-      const pad = n => `${Math.floor(Math.abs(n))}`.padStart(2, '0');
-      const date = new Date();
-      const dateString = `${date.getFullYear()}-${pad(
-        date.getMonth() + 1
-      )}-${pad(date.getDate())}T05:00:00-04:00`;
+        const pad = n => `${Math.floor(Math.abs(n))}`.padStart(2, '0');
+        const date = new Date();
+        const dateString = `${date.getFullYear()}-${pad(
+          date.getMonth() + 1
+        )}-${pad(date.getDate())}T05:00:00-04:00`;
 
-      const fileData = template
-        .replace(/title:\s*.*\n/, `title: ${snippetName}\n`)
-        .replace(/dateModified:\s*.*\n/, `dateModified: ${dateString}\n`);
-      fs.writeFileSync(path.join(snippetPath, `${snippetName}.md`), fileData);
+        const fileData = template
+          .replace(/title:\s*.*\n/, `title: ${name}\n`)
+          .replace(/dateModified:\s*.*\n/, `dateModified: ${dateString}\n`);
+        fs.writeFileSync(path.join(snippetPath, `${name}.md`), fileData);
 
-      logger.success('Snippet creation complete!');
-    } catch (err) {
-      logger.error(err);
+        logger.success('Snippet creation complete!');
+      } catch (err) {
+        logger.error(err);
+      }
     }
   };
 }
