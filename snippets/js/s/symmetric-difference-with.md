@@ -1,5 +1,5 @@
 ---
-title: Array symmetric difference
+title: Array symmetric difference based on function
 type: snippet
 language: javascript
 tags: [array]

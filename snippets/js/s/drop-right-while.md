@@ -1,5 +1,5 @@
 ---
-title: Drop list elements from the right based on function
+title: Drop array elements from the right based on function
 type: snippet
 language: javascript
 tags: [array]

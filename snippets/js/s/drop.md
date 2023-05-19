@@ -1,5 +1,5 @@
 ---
-title: Drop list elements from the left
+title: Drop array elements from the left
 type: snippet
 language: javascript
 tags: [array]
