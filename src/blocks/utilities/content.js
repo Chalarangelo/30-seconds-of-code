@@ -83,9 +83,10 @@ export class Content {
   /**
    * Creates a new snippet from the template in the given content directory
    * @param {string} directoryName - Name of the directory (e.g. 'articles')
+   * @param {string} snippetType - Type of the snippet ('snippet' or 'story')
    * @param {string} snippetName - Name of the new snippet (e.g. 'my-blog-post')
    */
-  static createSnippet = (directoryName, snippetName) => {
+  static createSnippet = (directoryName, snippetType, snippetName) => {
     const logger = new Logger('Content.createSnippet');
     logger.log(`Creating new snippet ${snippetName} in ${directoryName}...`);
 
@@ -96,7 +97,7 @@ export class Content {
       'snippets',
       directoryName
     );
-    const templatePath = path.join(directoryPath, 'template.md');
+    const templatePath = path.join(directoryPath, `${snippetType}-template.md`);
     const snippetPath = path.join(directoryPath, 's');
     try {
       if (!fs.existsSync(snippetPath)) {

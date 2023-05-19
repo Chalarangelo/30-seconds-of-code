@@ -6,13 +6,13 @@ export const build = async () => {
 
   if (process.argv.length < 4) {
     Logger.log(
-      'Not enough arguments, 2 expected (submodule name and snippet name). Terminating...',
+      'Not enough arguments, 3 expected (directory name, snippet type and snippet name). Terminating...',
       'error'
     );
     return;
   }
 
-  Content.createSnippet(process.argv[2], process.argv[3]);
+  Content.createSnippet(process.argv[2], process.argv[3], process.argv[4]);
 };
 
 build();
