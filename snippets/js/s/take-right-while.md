@@ -1,5 +1,5 @@
 ---
-title: Remove list elements from the end while condition is met
+title: Remove array elements from the end while condition is met
 type: snippet
 language: javascript
 tags: [array]
