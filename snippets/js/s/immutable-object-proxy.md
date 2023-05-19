@@ -10,7 +10,7 @@ excerpt: Freezing objects is not the only way to prevent mutations. Learn how yo
 dateModified: 2022-04-10T05:00:00-04:00
 ---
 
-Object mutability and its relation to the `const` keyword is a very common headache for developers. More often than not, when looking for ways to make an object immutable, `Object.freeze()` will pop up as a solution. We’ve explored this approach previously, elaborating on deep freezing solutions. You can read more about it in [this article](/articles/s/javascript-deep-freeze-object).
+Object mutability and its relation to the `const` keyword is a very common headache for developers. More often than not, when looking for ways to make an object immutable, `Object.freeze()` will pop up as a solution. We’ve explored this approach previously, elaborating on deep freezing solutions. You can read more about it in [this article](/js/s/deep-freeze-object).
 
 While `Object.freeze()` is the more straightforward approach, it might not always be the best solution. This may be especially true when dealing with extensive object nesting or when objects have a very short life. For such cases, a different approach using the [Proxy object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) might make more sense. Here’s what that looks like:
 

@@ -33,7 +33,7 @@ const scopeExample = () => {
 };
 ```
 
-If you want to learn more, we have [an article covering JavaScript variables and scopes in more depth](/articles/s/javascript-variable-scope).
+If you want to learn more, we have [an article covering JavaScript variables and scopes in more depth](/js/s/variable-scope).
 
 ### Hoisting
 
@@ -51,7 +51,7 @@ const hoistingExample = () => {
 };
 ```
 
-If you want to learn more, we have [an article covering JavaScript hoisting in more depth](/articles/s/javascript-variable-hoisting).
+If you want to learn more, we have [an article covering JavaScript hoisting in more depth](/js/s/variable-hoisting).
 
 ### Global object property
 
@@ -78,4 +78,4 @@ let b = 'let1';
 let b = 'let2'; // SyntaxError
 ```
 
-If you want to learn more, we have [an article covering JavaScript's strict mode in more depth](/articles/s/javascript-use-strict).
+If you want to learn more, we have [an article covering JavaScript's strict mode in more depth](/js/s/use-strict).

@@ -2,10 +2,10 @@ slug: js/arrow-functions
 name: JavaScript Arrow Functions
 featured: true
 snippetIds:
-  - articles/s/javascript-arrow-functions
-  - articles/s/javascript-arrow-regular-function-differences
-  - articles/s/javascript-arrow-function-event-listeners
-  - articles/s/javascript-this
+  - js/s/arrow-functions
+  - js/s/arrow-regular-function-differences
+  - js/s/arrow-function-event-listeners
+  - js/s/this
 splash: coffee-float.png
 description: >-
   Arrow functions are one of the most useful tools in a JavaScript developer's

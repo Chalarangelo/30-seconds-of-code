@@ -4,8 +4,8 @@ featured: true
 snippetIds:
   - js/s/random-number-in-range
   - js/s/random-integer-in-range
-  - js/s/random-int-array-in-range
-  - js/s/random-alpha-numeric
+  - js/s/random-integer-array-in-range
+  - js/s/random-alphanumeric
   - js/s/random-boolean
   - js/s/random-hex-color-code
   - js/s/random-gauss

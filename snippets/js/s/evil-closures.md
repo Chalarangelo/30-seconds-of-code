@@ -12,7 +12,7 @@ dateModified: 2022-05-18T05:00:00-04:00
 
 JavaScript closures are used frequently, yet often misunderstood. Understanding them in depth is crucial to be able to write clean, maintainable and bug-free code. We previously discussed what they are and how they work.
 
-I strongly recommend you read the [previous article on closures](/articles/s/javascript-closures) if you haven't already. Instead of rehashing the same information, I would like to discuss the dangers of using closures and present my view on the topic.
+I strongly recommend you read the [previous article on closures](/js/s/closures) if you haven't already. Instead of rehashing the same information, I would like to discuss the dangers of using closures and present my view on the topic.
 
 ### Hidden state
 

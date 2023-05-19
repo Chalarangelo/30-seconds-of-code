@@ -2,17 +2,17 @@ slug: js/comparison
 name: JavaScript Comparison
 featured: true
 snippetIds:
-  - articles/s/javascript-equality
-  - articles/s/javascript-value-not-equal-to-itself
-  - articles/s/javascript-object-comparison
-  - articles/s/javascript-array-comparison
-  - articles/s/javascript-date-comparison
-  - articles/s/javascript-object-is-triple-equals
-  - js/s/equals
-  - js/s/matches
-  - js/s/matches-with
-  - js/s/have-same-contents
-  - js/s/is-same-date
+  - js/s/equality
+  - js/s/value-not-equal-to-itself
+  - js/s/object-comparison
+  - js/s/array-comparison
+  - js/s/date-comparison
+  - js/s/object-is-triple-equals
+  - js/s/deep-equality-comparison
+  - js/s/match-object-properties
+  - js/s/function-based-object-property-matches
+  - js/s/arrays-have-same-contents
+  - js/s/date-is-same-as-another-date
 splash: succulent.png
 description: >-
   Comparing values in JavaScript is one of the most common tasks. Yet, there are

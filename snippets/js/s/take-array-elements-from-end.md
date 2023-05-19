@@ -1,5 +1,5 @@
 ---
-title: Remove list elements from the end
+title: Remove array elements from the end
 type: snippet
 language: javascript
 tags: [array]

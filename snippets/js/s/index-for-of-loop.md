@@ -23,4 +23,4 @@ for (let [index, item] of items.entries()) {
 
 Moreover, you can use the spread operator (`...`) to convert a string into an array and then use `Array.prototype.entries()` the same way. Finally, both `Map` and `Set` prototypes provide a similar method (`Map.prototype.entries()` and `Set.prototype.entries()` respectively), which can be used the exact same way.
 
-_If you're not familiar with `for...of` and its syntax, I highly recommending you take a look at [this article about the various iteration methods in JavaScript](/articles/s/javascript-for-in-for-of-foreach)._
+_If you're not familiar with `for...of` and its syntax, I highly recommending you take a look at [this article about the various iteration methods in JavaScript](/js/s/for-in-for-of-foreach)._
