@@ -8,14 +8,14 @@ snippetIds:
   - js/s/cycle-generator
   - js/s/generator-to-array
   - js/s/is-generator-function
-  - js/s/chunkify
+  - js/s/chunk-iterable
   - js/s/date-range-generator
   - js/s/index-of-substrings
-  - js/s/walk-through
+  - js/s/walk-through-object
   - js/s/generate-while
   - js/s/generate-until
-  - js/s/left-substr-generator
-  - js/s/right-substr-generator
+  - js/s/left-substring-generator
+  - js/s/right-substring-generator
   - js/s/make-iterable
   - js/s/enum
   - js/s/object-array-proxy

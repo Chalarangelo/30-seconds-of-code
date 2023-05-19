@@ -3,8 +3,8 @@ name: JavaScript Object Cloning
 featured: true
 snippetIds:
   - js/s/shallow-deep-clone
-  - js/s/shallow-clone
-  - js/s/deep-clone
+  - js/s/shallow-clone-object
+  - js/s/deep-clone-object
   - js/s/copy-array
 splash: coffee-phone-tray.png
 description: >-

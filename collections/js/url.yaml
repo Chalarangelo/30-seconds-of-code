@@ -11,10 +11,10 @@ snippetIds:
   - js/s/https-redirect
   - js/s/get-url-parameters
   - js/s/get-base-url
-  - js/s/redirect
+  - js/s/redirect-to-url
   - js/s/is-absolute-url
   - js/s/is-same-origin
-  - js/s/url-join
+  - js/s/join-url-segments
 splash: pots-and-plants.png
 description: >-
   URLs are an integral part of the web, which makes working with them an

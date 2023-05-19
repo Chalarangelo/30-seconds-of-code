@@ -5,12 +5,12 @@ snippetIds:
   - js/s/array-initialization
   - js/s/initialize-array-with-values
   - js/s/initialize-array-with-range
-  - js/s/initialize-array-with-range-right
+  - js/s/initialize-array-with-reversed-range
   - js/s/initialize-mapped-array
   - js/s/initialize-array-while
   - js/s/initialize-array-until
-  - js/s/initialize2-d-array
-  - js/s/initialize-nd-array
+  - js/s/initialize-2d-array
+  - js/s/initialize-n-dimensional-array
 splash: laptop-lamp.png
 description: >-
   When it comes to array initialization in JavaScript, there are as many options
