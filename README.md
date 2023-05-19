@@ -4,5 +4,5 @@
 
 Website infrastructure for [30-seconds of code](https://github.com/30-seconds) projects.
 
-Please refer to individual projects for content issues.
+Please refer to [30-seconds-of-code](https://github.com/30-seconds/30-seconds-of-code) for content issues.
 This repository contains the source code for the website platform and nothing else.
