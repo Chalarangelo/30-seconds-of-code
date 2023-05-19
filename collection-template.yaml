@@ -1,0 +1,14 @@
+slug: my-collection
+name: My awesome collection
+shortName: My collection
+featured: true
+snippetIds:
+  - js/s/array-initialization
+  - js/s/initialize-array-with-values
+  - js/s/initialize-array-with-range
+  - js/s/initialize-2d-array
+splash: plant-screen.png
+description: >-
+  Explain the collection's topic in a few sentences.
+shortDescription: >-
+  A short description of your collection up to 140 characters long.
