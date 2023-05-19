@@ -2,7 +2,7 @@
 title: Component Name
 type: snippet
 language: react
-tags: [components,state,effect]
+tags: [hooks]
 cover: image
 dateModified: 2021-06-13T05:00:00-04:00
 ---
