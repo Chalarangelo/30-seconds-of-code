@@ -92,7 +92,7 @@ export const snippet = {
         ? allSecondaryCollections.except(mainSecondaryCollection.id)
         : allSecondaryCollections;
       const otherCollections = snippet.collections.except(
-        'list', // Exclude main listing from breadcrumbs
+        'snippets', // Exclude main listing from breadcrumbs
         ...primaryCollections.flatPluck('id'),
         ...allSecondaryCollections.flatPluck('id')
       );

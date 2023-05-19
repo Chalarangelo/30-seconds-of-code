@@ -20,7 +20,7 @@ export const collection = {
   ],
   properties: {
     hasParent: collection => Boolean(collection.parent),
-    isMain: collection => collection.id === 'list',
+    isMain: collection => collection.id === 'snippets',
     isPrimary: collection => collection.topLevel,
     isSecondary: collection => collection.hasParent,
     rootUrl: collection =>

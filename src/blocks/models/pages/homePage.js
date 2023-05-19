@@ -33,7 +33,7 @@ export const homePage = {
         );
 
         context.splashImage = presentationSettings.homePageSplashImage;
-        context.snippetListUrl = '/list/p/1';
+        context.snippetListUrl = '/snippets/p/1';
         context.pageDescription = `Browse ${page.snippetCount} short code snippets for all your development needs on ${settings.websiteName}.`;
         context.structuredData = Schemer.generateHomeData();
 
