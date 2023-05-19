@@ -2,14 +2,14 @@ slug: js/event-handling
 name: JavaScript Event Handling
 featured: true
 snippetIds:
-  - js/s/on
-  - js/s/off
+  - js/s/add-event-listener
+  - js/s/remove-event-listener
   - js/s/listen-once
   - js/s/on-click-outside
   - js/s/event-bubbling-capturing-delegation
   - js/s/add-event-listener-all
-  - js/s/remove-event-listener-all
-  - js/s/add-multiple-events
+  - js/s/remove-multiple-event-listeners
+  - js/s/add-multiple-event-listeners
   - js/s/execute-event-handler-once
   - js/s/passive-scroll-listener-performance
   - js/s/on-scroll-stop

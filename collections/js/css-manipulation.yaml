@@ -2,18 +2,18 @@ slug: js/css-manipulation
 name: CSS Manipulation with JavaScript
 featured: true
 snippetIds:
-  - js/s/toggle-class
-  - js/s/add-class
-  - js/s/remove-class
-  - js/s/has-class
+  - js/s/toggle-html-element-class
+  - js/s/add-class-to-html-element
+  - js/s/remove-class-from-html-element
+  - js/s/html-element-has-class
   - js/s/get-style
-  - js/s/set-style
-  - js/s/add-styles
+  - js/s/set-style-for-html-element
+  - js/s/add-styles-to-html-element
   - js/s/inject-css
-  - js/s/hide
-  - js/s/show
+  - js/s/hide-html-elements
+  - js/s/show-html-elements
   - js/s/remove-attributes
-  - js/s/prefix
+  - js/s/prefix-css-property
 splash: planning.png
 description: >-
   Unlock the power of manipulating CSS in the browser, using JavaScript. From

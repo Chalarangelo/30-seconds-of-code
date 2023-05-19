@@ -2,10 +2,10 @@ slug: js/object-key-selection
 name: JavaScript Object Key Selection
 featured: true
 snippetIds:
-  - js/s/pick
-  - js/s/omit
-  - js/s/pick-by
-  - js/s/omit-by
+  - js/s/pick-object-keys
+  - js/s/omit-object-keys
+  - js/s/pick-matching-object-keys
+  - js/s/omit-matching-object-keys
 splash: succulent-cluster.png
 description: >-
   Sometimes, JavaScript objects come with a lot of keys and you only need a few

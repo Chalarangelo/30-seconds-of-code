@@ -4,10 +4,10 @@ featured: true
 snippetIds:
   - js/s/lowerize
   - js/s/upperize
-  - js/s/map-keys
-  - js/s/rename-keys
-  - js/s/deep-map-keys
-  - js/s/symbolize-keys
+  - js/s/map-object-keys
+  - js/s/rename-object-keys
+  - js/s/deep-map-object-keys
+  - js/s/symbolize-object-keys
 splash: plant-window.png
 description: >-
   Sometimes, object keys aren't exactly what you want them to be. Luckily, this

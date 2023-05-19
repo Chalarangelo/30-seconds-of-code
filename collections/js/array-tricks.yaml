@@ -2,18 +2,18 @@ slug: js/array-tricks
 name: JavaScript Array Tricks
 featured: true
 snippetIds:
-  - js/s/unique-elements
-  - js/s/compact
-  - js/s/any
-  - js/s/all
-  - js/s/none
-  - js/s/difference
-  - js/s/union
-  - js/s/intersection
-  - js/s/head
-  - js/s/tail
-  - js/s/last
-  - js/s/flatten
+  - js/s/unique-elements-in-array
+  - js/s/compact-array
+  - js/s/any-array-element-is-truthy
+  - js/s/all-array-elements-are-truthy
+  - js/s/all-array-elements-are-falsy
+  - js/s/array-difference
+  - js/s/array-union
+  - js/s/array-intersection
+  - js/s/array-head
+  - js/s/array-tail
+  - js/s/last-array-element
+  - js/s/flatten-array
 splash: terrarium.png
 description: >-
   Arrays are one of the most common data types in JavaScript. While there are

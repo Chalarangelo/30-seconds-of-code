@@ -7,10 +7,10 @@ snippetIds:
   - js/s/not
   - js/s/xor
   - js/s/nor
-  - js/s/when
+  - js/s/conditionally-apply-function
   - js/s/both
-  - js/s/either
-  - js/s/complement
+  - js/s/function-logical-or
+  - js/s/logical-complement
 splash: chess-pawns.png
 description: >-
   Boolean logic and logical operations might not come up that often in
