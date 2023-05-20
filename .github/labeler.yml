@@ -1,0 +1,19 @@
+js:
+  - snippets/js/s/*.md
+  - collections/js/*.yaml
+css:
+  - snippets/css/s/*.md
+  - collections/css/*.yaml
+git:
+  - snippets/git/s/*.md
+  - collections/git/*.yaml
+python:
+  - snippets/python/s/*.md
+  - collections/python/*.yaml
+react:
+  - snippets/react/s/*.md
+  - collections/react/*.yaml
+snippet:
+  - snippets/**/*.md
+collection:
+  - collections/**/*.yaml
