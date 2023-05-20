@@ -10,7 +10,7 @@ excerpt: Did you know you can use a native HTML attribute to add lazy load to im
 dateModified: 2021-06-12T19:30:41+03:00
 ---
 
-Images are nowadays a crucial part of any webpage, but, as with most things, they come at a cost. Images are usually a major percentage of a page's load, which is why they make for a great candidate for optimization. The most common technique is that of lazy loading, usually in the form of delaying loading images outside the initial viewport until they are close to being scrolled into view.
+Images are nowadays a crucial part of any webpage, but, as with most things, they come at a cost. Images are usually a major percentage of a page's load, which is why they make for a great candidate for optimization. The most common technique is that of **lazy loading**, usually in the form of delaying loading images outside the initial viewport until they are close to being scrolled into view.
 
 This exact behavior is already part of the HTML standard in the form of the `loading` attribute. All you have to do to reap its benefits is add `loading="lazy"` to any images you want to add lazy loading to:
 
