@@ -213,7 +213,6 @@
 /articles/s/javascript-swap-two-variables                      /js/s/swap-two-variables                             301!
 /articles/s/javascript-switch-object                           /js/s/switch-object                                  301!
 /articles/s/javascript-sync-async                              /js/s/sync-async                                     301!
-/articles/s/javascript-target-blank                            /js/s/target-blank                                   301!
 /articles/s/javascript-ternary-operator                        /js/s/ternary-operator                               301!
 /articles/s/javascript-this                                    /js/s/this                                           301!
 /articles/s/javascript-truthy-falsy-values                     /js/s/truthy-falsy-values                            301!
@@ -232,7 +231,6 @@
 /articles/s/js-array-map-vs-foreach                            /js/s/array-map-vs-foreach                           301!
 /articles/s/js-array-min-max                                   /js/s/array-min-max                                  301!
 /articles/s/js-array-sorting-shorthand                         /js/s/array-sorting-shorthand                        301!
-/articles/s/js-async-defer                                     /js/s/async-defer                                    301!
 /articles/s/js-callbacks                                       /js/s/callbacks                                      301!
 /articles/s/js-cannot-extend-proxy-object                      /js/s/cannot-extend-proxy-object                     301!
 /articles/s/js-compare-string-case-accent-insensitive          /js/s/compare-string-case-accent-insensitive         301!
@@ -651,3 +649,17 @@
 /js/s/unfold                                                   /js/s/unfold-array                                   301!
 /js/s/unique-elements                                          /js/s/unique-elements-in-array                       301!
 /js/s/without                                                  /js/s/filter-out-matching-array-elements             301!
+/articles/s/8-tips-for-accessible-websites                     /html/s/8-tips-for-accessible-websites               301!
+/articles/s/custom-file-download-names                         /html/s/custom-file-download-names                   301!
+/articles/s/html-head-icons                                    /html/s/head-icons                                   301!
+/articles/s/html-head-links                                    /html/s/head-links                                   301!
+/articles/s/html-head-social-tags                              /html/s/head-social-tags                             301!
+/articles/s/html-recommended-minimum-head                      /html/s/recommended-minimum-head                     301!
+/articles/s/lazy-loading-images                                /html/s/lazy-loading-images                          301!
+/articles/s/password-autocomplete-suggestion                   /html/s/password-autocomplete-suggestion             301!
+/articles/s/prefetching-resources                              /html/s/prefetching-resources                        301!
+/articles/s/resource-preloading-cheatsheet                     /html/s/resource-preloading-cheatsheet               301!
+/articles/s/reversed-list                                      /html/s/reversed-list                                301!
+/articles/s/zooming-accessibility-tips                         /html/s/zooming-accessibility-tips                   301!
+/articles/s/javascript-target-blank                            /html/s/target-blank                                 301!
+/articles/s/js-async-defer                                     /html/s/async-defer                                  301!
