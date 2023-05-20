@@ -4,6 +4,7 @@ shortTitle: Difference between alt and title
 type: question
 language: html
 tags: [image]
+author: chalarangelo
 cover: stars-n-snow
 excerpt: Learn the difference between the `alt` and `title` attributes on images in HTML.
 dateModified: 2023-07-02T05:00:00-04:00
