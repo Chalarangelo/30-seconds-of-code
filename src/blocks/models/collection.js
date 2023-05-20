@@ -76,6 +76,7 @@ export const collection = {
         }
 
         if (!collection.isPrimary && !collection.hasParent) return [];
+        if (collection.isPrimary && collection.children.length === 0) return [];
         const links = collection.hasParent
           ? collection.siblings
           : collection.children;
