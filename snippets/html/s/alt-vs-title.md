@@ -9,9 +9,9 @@ excerpt: Learn the difference between the `alt` and `title` attributes on images
 dateModified: 2023-07-02T05:00:00-04:00
 ---
 
-As mention in the [previous article](/html/s/image-alt), the `alt` attribute provides alternative information for an image if a user cannot view it. When an image can't be loaded, the browser will display the `alt` text in its place so the user can get an idea of why the image was included.
+As mention in the [previous article](/html/s/image-alt), the `alt` attribute provides **alternative information** for an image if a user cannot view it. When an image can't be loaded, the browser will display the `alt` text in its place so the user can get an idea of why the image was included.
 
-The `title` attribute, on the other hand, provides additional information about an image. This information is displayed as a tooltip when a user hovers over the image.
+The `title` attribute, on the other hand, provides **additional information** about an image. This information is displayed as a tooltip when a user hovers over the image.
 
 ```html
 <img src="image.jpg" alt="Alternative text" title="Additional information">
