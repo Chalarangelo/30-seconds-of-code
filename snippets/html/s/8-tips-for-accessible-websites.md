@@ -3,7 +3,7 @@ title: 8 tips for accessible websites
 shortTitle: Accessibility tips
 type: story
 language: html
-tags: [accessibility,webdev]
+tags: [accessibility,form,link,metadata]
 author: chalarangelo
 cover: accessibility
 excerpt: Accessibility (a11y) can improve your website and attract new users. Learn how to get started with these 8 quick tips.

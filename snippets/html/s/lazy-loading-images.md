@@ -3,7 +3,7 @@ title: "Tip: Lazy load images in HTML"
 shortTitle: Image lazy loading
 type: tip
 language: html
-tags: [webdev,image]
+tags: [image]
 author: chalarangelo
 cover: bridge
 excerpt: Did you know you can use a native HTML attribute to add lazy load to images? Learn all you need to know with this quick tip.
