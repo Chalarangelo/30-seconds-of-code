@@ -4,6 +4,9 @@ js:
 css:
   - snippets/css/s/*.md
   - collections/css/*.yaml
+html:
+  - snippets/html/s/*.md
+  - collections/html/*.yaml
 git:
   - snippets/git/s/*.md
   - collections/git/*.yaml
