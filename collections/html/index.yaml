@@ -1,0 +1,14 @@
+slug: html
+name: HTML Snippets
+shortName: HTML
+topLevel: true
+languageMatcher: html
+featured: true
+splash: tram-car-2.png
+description: >-
+  The HTML snippet collection contains tips, tricks and practical code examples
+  to help you master web development. This collection covers elements, tags,
+  links, forms, tables and more.
+shortDescription: >-
+  Master HTML 5 with this collection of tips, tricks and code examples.
+

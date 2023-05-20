@@ -3,7 +3,7 @@ title: 'Tip: Protect your users from malicious websites when using target="_blan
 shortTitle: 'Safeguarding target="_blank"'
 type: tip
 language: html
-tags: [link,browser,security]
+tags: [link,security]
 author: chalarangelo
 cover: laptop-with-code
 excerpt: Opening a link in a new tab comes with a security vulnerability that you may not be aware of. Protect your users with this simple trick.

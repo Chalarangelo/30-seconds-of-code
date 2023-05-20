@@ -3,7 +3,7 @@ title: "Tip: Adding autocomplete to a password field"
 shortTitle: Password field autocomplete
 type: tip
 language: html
-tags: [webdev]
+tags: [form]
 author: chalarangelo
 cover: padlocks
 excerpt: Use the HTML `autocomplete` attribute to create more secure and accessible password fields.
