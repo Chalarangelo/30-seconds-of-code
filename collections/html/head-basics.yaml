@@ -2,10 +2,10 @@ slug: html/head-basics
 name: HTML Head Basics
 featured: true
 snippetIds:
-  - articles/s/html-recommended-minimum-head
-  - articles/s/html-head-social-tags
-  - articles/s/html-head-icons
-  - articles/s/html-head-links
+  - html/s/recommended-minimum-head
+  - html/s/head-social-tags
+  - html/s/head-icons
+  - html/s/head-links
 splash: basics.png
 description: >-
   Learn how to use the HTML head element to improve your site's SEO, social

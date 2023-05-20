@@ -2,8 +2,8 @@
 title: What is the difference between async and defer in script loading?
 shortTitle: Async and defer
 type: question
-language: javascript
-tags: [html]
+language: html
+tags: [script,javascript]
 author: chalarangelo
 cover: coworking-space
 excerpt: Understanding how to correctly load your JavaScript files can significantly improve your web application's performance.
