@@ -31,7 +31,7 @@ snippetIds:
   - js/s/pure-functions
   - js/s/recursion
   - js/s/use-strict
-  - js/s/async-defer
+  - html/s/async-defer
   - js/s/closures
   - js/s/iife
   - js/s/event-loop-explained
