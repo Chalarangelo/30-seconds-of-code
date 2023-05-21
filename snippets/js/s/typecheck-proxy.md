@@ -1,18 +1,18 @@
 ---
 title: Typechecking objects with Proxy in JavaScript
-shortTitle: Object typechecking with Proxy
+shortTitle: Object type checking with Proxy
 type: story
 language: javascript
 tags: [object,type,proxy]
 author: chalarangelo
 cover: customs
-excerpt: A simple way to typecheck objects at runtime using the Proxy object.
+excerpt: Learn how to type check objects at runtime using the powerful Proxy object in JavaScript.
 dateModified: 2023-04-23T05:00:00-04:00
 ---
 
 A while back, I was working on a project where some objects had **rigid structure requirements**. As I was really not in the mood to use TypeScript, I decided to create a typechecking mechanism for objects using the `Proxy` object.
 
-Drawing inspiration from React's `PropTypes`, I created a handful of **type checking functions** for the most common types.
+Drawing inspiration from React's `PropTypes`, I created a handful of **typechecking functions** for the most common types.
 
 ```js
 const bool = v => typeof v === 'boolean';
@@ -91,4 +91,4 @@ proxiedObj.birthday = null;
 proxiedObj.whatever = 'something';
 ```
 
-As you can see, `createShapeCheckerProxy` can be used with a plain object to create a reusable function that wraps an object with a typechecking `Proxy`. The defined `types` are used to typecheck individual properties and could be extended to support more complex types and special rules. Overall, this can be a pretty useful tool for **typechecking objects at runtime**, without having to use TypeScript or similar tools.
+As you can see, `createShapeCheckerProxy` can be used with a plain object to create a reusable function that wraps an object with a type checking `Proxy`. The defined `types` are used to typecheck individual properties and could be extended to support more complex types and special rules. Overall, this can be a pretty useful tool for **typechecking objects at runtime**, without having to use TypeScript or similar tools.

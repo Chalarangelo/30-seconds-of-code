@@ -6,13 +6,13 @@ language: javascript
 tags: [type,variable]
 author: chalarangelo
 cover: boat-port
-excerpt: Hoisting comes up a lot during JavaScript interviews. It's a concept that can require some getting used to, so read our guide to learn more.
+excerpt: Hoisting comes up a lot during JavaScript interviews. It's a concept that may require some getting used to, so read our guide to learn more.
 dateModified: 2021-06-12T19:30:41+03:00
 ---
 
 Before your JavaScript code is executed, it is first parsed and compiled. During the _compile_ phase, variable and function declarations are put into memory, which is called **hoisting**.
 
-Note that only declarations are hoisted, not initializations, meaning that if a variable is declared and initialized after using it, its value will not be initialized. This is an oversimplification of the situation, so let's take a look at the different cases:
+It's essential to note that only declarations are hoisted, while initializations are not. This means that if you declare and initialize a variable after using it, its value will not be initialized. However, this is a simplified explanation, so let's take a look at the various scenarios:
 
 ### function
 
