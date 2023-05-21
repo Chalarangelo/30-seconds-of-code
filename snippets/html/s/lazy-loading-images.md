@@ -6,16 +6,18 @@ language: html
 tags: [image]
 author: chalarangelo
 cover: bridge
-excerpt: Did you know you can use a native HTML attribute to add lazy load to images? Learn all you need to know with this quick tip.
+excerpt: Discover how to improve your website's performance by implementing lazy loading for images using a native HTML attribute.
 dateModified: 2021-06-12T19:30:41+03:00
 ---
 
-Images are nowadays a crucial part of any webpage, but, as with most things, they come at a cost. Images are usually a major percentage of a page's load, which is why they make for a great candidate for optimization. The most common technique is that of **lazy loading**, usually in the form of delaying loading images outside the initial viewport until they are close to being scrolled into view.
+In today's digital landscape, images play a pivotal role in capturing users' attention and conveying information. However, their impact on a webpage's **load time** can be significant, leading to suboptimal user experiences and lower search engine rankings. This makes **image optimization** a crucial part of any website's performance optimization strategy.
 
-This exact behavior is already part of the HTML standard in the form of the `loading` attribute. All you have to do to reap its benefits is add `loading="lazy"` to any images you want to add lazy loading to:
+The most common technique for optimizing images is that of **lazy loading**. This usually comes in the form of delaying loading images outside the initial viewport until they are close to being scrolled into view. By deferring the loading of images until they're about to be needed, lazy loading optimizes page performance and ensures a seamless browsing experience.
+
+Fortunately, the HTML standard already includes a built-in solution to effortlessly achieve lazy loading, the `loading` attribute. By simply adding `loading="lazy"` to the desired images, you unlock the power of lazy loading and allow browsers to optimize resource allocation and loading priorities.
 
 ```html
 <img src="/img/duck.png" alt="A rubber duck" loading="lazy" />
 ```
 
-**Caveat:** At the time of writing, the `loading` attribute is supported in most modern browsers, except for Safari, but not in legacy browsers, such as IE. On that note, lazy loading can be seen as a progressive enhancement for browsers that support it, so it's still worth adding for any users that can benefit from it.
+**Note on browser compatibility:** At the time of writing, the `loading` attribute is supported in most modern browsers, except for Safari, but not in legacy browsers, such as IE. On that note, lazy loading can be seen as a progressive enhancement for browsers that support it, so it's still worth adding for any users that can benefit from it.
