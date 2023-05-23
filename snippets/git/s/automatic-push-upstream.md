@@ -1,5 +1,5 @@
 ---
-title: "Tip: Automate upstream branch creation"
+title: "Tip: Automate Git upstream branch creation"
 shortTitle: Automate upstream branch creation
 type: tip
 language: git
