@@ -1,15 +1,17 @@
 ---
 title: Check if two iterables are permutations of each other
+shortTitle: Iterable permutations
 type: snippet
 language: python
-tags: [list]
+tags: [list,string]
 cover: apples
-dateModified: 2023-05-23 10:48:03 +0100
+dateModified: 2023-05-23T10:48:03+03:00
 ---
 
 Check if two iterables are permutations of each other.
 
-- Use `Counter` to verify that each element in both iterables appear an equal number of times.
+- Use `len` to check if both iterables have the same length.
+- Use `Counter` to verify that each element appears an equal number of times in both iterables.
 
 ```py
 from collections import Counter
