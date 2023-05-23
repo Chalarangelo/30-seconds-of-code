@@ -1,5 +1,6 @@
 ---
-title: View "undo" history
+title: View Git "undo" history
+shortTitle: Undo history
 type: story
 language: git
 tags: [repository,branch]
@@ -15,7 +16,6 @@ To view you "undo" history, you can use `git reflog`, which displays the git ref
 
 ```shell
 git reflog
-
 # b6a4f9d6ff9 (HEAD -> patch-1, origin/patch-1) HEAD@{0}: Update docs
 # 3050fc0de HEAD@{1}: rebase -i (finish): returning to refs/heads/patch-1
 # 3050fc0de HEAD@{2}: rebase -i (pick): Fix network bug
