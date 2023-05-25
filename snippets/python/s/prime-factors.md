@@ -3,14 +3,14 @@ title: Prime factors of number
 type: snippet
 language: python
 tags: [math,algorithm]
-cover: dark-leaves-3
-dateModified: 2023-05-24T00:00:00.000Z
+cover: river-flow
+dateModified: 2023-05-24T05:00:00+02:00
 ---
 
-Find and return the list containing prime factors of a number.
+Finds and returns the list of prime factors of a number.
 
 - Use a `while` loop to iterate over all possible prime factors, starting with `2`.
-- If the current `factor`, exactly divides `num`, add `factor` to the `factors` list and divide `num` by `factor`. Otherwise, increment `factor` by one.
+- If the current `factor` exactly divides `num`, add `factor` to the `factors` list and divide `num` by `factor`. Otherwise, increment `factor` by one.
 
 ```py
 def prime_factors(num):
