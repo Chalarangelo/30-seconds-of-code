@@ -666,3 +666,6 @@
 /git/s/view-commits-summary-no-merges                          /git/s/view-commits-summary                          301!
 /git/s/update-commit-message                                   /git/s/update-commit-message-or-content              301!
 /git/s/update-commit-contents                                  /git/s/update-commit-message-or-content              301!
+/git/s/branches-not-containing-commit                          /git/s/branches-containing-commit                    301!
+/git/s/commit-amend-author                                     /git/s/set-or-amend-commit-author                    301!
+/git/s/commit-set-author                                       /git/s/set-or-amend-commit-author                    301!
