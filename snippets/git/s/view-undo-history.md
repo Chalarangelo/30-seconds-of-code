@@ -10,7 +10,7 @@ excerpt: Learn how to view your "undo" history using git reflog and reset your r
 dateModified: 2023-05-21T21:10:59+03:00
 ---
 
-Sometimes, `git log` doesn't cut it, especially for commands that don't show up in your commit history. Fortunately, there's a way to view your "undo" history. `reflog` is basically your safety net after running "scary" commands like `git rebase`. It allows you to see not only the commits you made, but each of the actions that led you there.
+Sometimes, `git log` doesn't cut it, especially for commands that don't show up in your commit history. Fortunately, there's a way to view your **"undo" history**. `reflog` is basically your safety net after running "scary" commands like `git rebase`. It allows you to see not only the commits you made, but each of the actions that led you there.
 
 To view you "undo" history, you can use `git reflog`, which displays the git reference log:
 
