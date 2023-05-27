@@ -1,6 +1,6 @@
 ---
 title: How does Git's fast-forward mode work?
-shortTitle: Git fast-forward
+shortTitle: Fast-forward merge
 type: question
 language: git
 tags: [branch]
