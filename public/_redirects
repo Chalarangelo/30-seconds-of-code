@@ -339,7 +339,6 @@
 /articles/s/flexbox-cheatsheet                                 /css/s/flexbox-cheatsheet                            301!
 /articles/s/git-aliases                                        /git/s/aliases                                       301!
 /articles/s/git-commit-different-date                          /git/s/commit-different-date                         301!
-/articles/s/git-fast-forward                                   /git/s/fast-forward                                  301!
 /articles/s/github-co-authors                                  /git/s/github-co-authors                             301!
 /articles/s/jest-mock-global-methods                           /js/s/jest-mock-global-methods                       301!
 /articles/s/nodejs-chrome-debugging                            /js/s/nodejs-chrome-debugging                        301!
@@ -669,3 +668,9 @@
 /git/s/branches-not-containing-commit                          /git/s/branches-containing-commit                    301!
 /git/s/commit-amend-author                                     /git/s/set-or-amend-commit-author                    301!
 /git/s/commit-set-author                                       /git/s/set-or-amend-commit-author                    301!
+/articles/s/git-fast-forward                                   /git/s/fast-forward-merge                            301!
+/git/s/fast-forward                                            /git/s/fast-forward-merge                            301!
+/git/s/merge-branch                                            /git/s/merge-branch-merge-commit                     301!
+/git/s/rewind-n-commits                                        /git/s/rewind-to-commit                              301!
+/git/s/undo-commit                                             /git/s/undo-commit-without-rewriting-history         301!
+/git/s/undo-last-commit                                        /git/s/undo-commit-without-rewriting-history         301!
