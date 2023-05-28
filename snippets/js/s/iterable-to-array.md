@@ -44,4 +44,4 @@ const nodes = document.childNodes;
 const nodeArray = [...nodes]; // [ <!DOCTYPE html>, html ]
 ```
 
-Note that the above example is the basis for the [nodeListToArray snippet](js/s/node-list-to-array).
+Note that the above example is the basis for the [nodeListToArray snippet](/js/s/node-list-to-array).
