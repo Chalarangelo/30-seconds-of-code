@@ -1894,3 +1894,9 @@
 - from: /git/s/undo-last-commit
   to: /git/s/undo-commit-without-rewriting-history
   status: 301!
+- from: /git/s/pull-changes
+  to: /git/s/push-pull-changes
+  status: 301!
+- from: /git/s/push-changes
+  to: /git/s/push-pull-changes
+  status: 301!
