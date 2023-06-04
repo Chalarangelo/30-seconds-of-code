@@ -12,7 +12,6 @@
     "@jsiqle/core": "^1.4.1",
     "@types/jest": "^27.0.1",
     "astro": "^2.5.0",
-    "astro-compress": "^1.1.35",
     "chalk": "^4.1.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
