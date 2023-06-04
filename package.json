@@ -13,7 +13,6 @@
     "@types/jest": "^27.0.1",
     "astro": "^2.5.0",
     "astro-compress": "^1.1.35",
-    "astro-critters": "^1.1.31",
     "chalk": "^4.1.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
