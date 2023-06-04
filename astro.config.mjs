@@ -7,13 +7,10 @@ import critters from 'astro-critters';
 // https://astro.build/config
 export default defineConfig({
   site: settings.websiteUrl,
+  experimental: {
+    inlineStylesheets: 'always',
+  },
   integrations: [
-    critters({
-      pruneSource: false,
-      compress: true,
-      logger: 1,
-      keyframes: 'all',
-    }),
     compress({
       img: false,
       html: true,
