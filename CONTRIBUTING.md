@@ -56,7 +56,7 @@ In order to create a new collection, you should follow the steps below:
 
 ## Collection guidelines
 
-- Collections must habe all their metadata sections (title, splash, description etc.) filled.
+- Collections must have all their metadata sections (title, splash, description etc.) filled.
 - Collection filenames must be in `kebab-case` and end in `.yaml`. Use SEO-friendly names and avoid unnecessary words.
 - Collection titles must loosely correspond to the filename and follow the language and repository's naming conventions.
 - Collection descriptions must be short and to the point. Briefly explain the topic of the collection.
