@@ -4,7 +4,7 @@ import settings from './src/settings/global.json';
 // https://astro.build/config
 export default defineConfig({
   site: settings.websiteUrl,
-  experimental: {
+  build: {
     inlineStylesheets: 'always',
   },
   compressHTML: true,
