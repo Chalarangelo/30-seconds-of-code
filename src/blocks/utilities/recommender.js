@@ -6,73 +6,117 @@
  */
 export class Recommender {
   static recommenderSettings = {
+    // Language
     languageScoreLimit: 45,
+    fullLanguageScore: 45,
+    // Primary Tag
     primaryTagScoreLimit: 15,
+    fullPrimaryTagScore: 15,
+    halfPrimaryTagScore: 8, // Rounded up to 8 instead of 7.5
+    // Search tokens
     searchTokenScoreLimit: 40,
+    // Total
+    // languageScoreLimit + primaryTagScoreLimit + searchTokenScoreLimit
+    totalScoreLimit: 100,
+    // Total without language
+    // (primaryTagScoreLimit + searchTokenScoreLimit) / totalScoreLimit
+    scoreLimitWithoutLanguage: 0.55,
+    // Total without language and primary tag
+    // searchTokenScoreLimit / totalScoreLimit
+    scoreLimitWithoutLanguageAndPrimaryTag: 0.4,
     recommendationCount: 3,
-    get totalScoreLimit() {
-      return (
-        this.languageScoreLimit +
-        this.primaryTagScoreLimit +
-        this.searchTokenScoreLimit
-      );
-    },
   };
 
   static recommendSnippets = (snippet, snippets) => {
     const {
-      languageScoreLimit,
-      primaryTagScoreLimit,
+      fullLanguageScore,
+      fullPrimaryTagScore,
+      halfPrimaryTagScore,
       searchTokenScoreLimit,
       recommendationCount,
       totalScoreLimit,
+      scoreLimitWithoutLanguage,
+      scoreLimitWithoutLanguageAndPrimaryTag,
     } = Recommender.recommenderSettings;
-    const language = snippet.language;
-    const primaryTag = snippet.primaryTag;
-    const searchTokens = snippet.searchTokensArray;
+    // Performance optimization - destructure and cache these, it's just faster
+    const {
+      id,
+      fileSlug,
+      language,
+      primaryTag,
+      searchTokensArray: searchTokens,
+      isListed,
+    } = snippet;
+    const searchTokensLength = searchTokens.length;
 
     const recommendationRankings = new Map();
     let minRankings = [];
 
     snippets.forEach(s => {
+      // Performance optimization - destructure and cache these, it's just faster
+      const {
+        id: _id,
+        fileSlug: _fileSlug,
+        isListed: _isListed,
+        language: _language,
+        tags: _tags,
+        searchTokensArray: _searchTokens,
+      } = s;
+
+      // Cache the minimum ranking so far
+      const minRanking = minRankings[0] || 0;
+
       // Filter out any nodes with the same id (this very snippet)
-      if (
-        s.id !== snippet.id &&
-        s.fileSlug !== snippet.fileSlug &&
-        (!snippet.isListed || s.isListed)
-      ) {
+      if (_id !== id && _fileSlug !== fileSlug && (!isListed || _isListed)) {
+        // Performance optimization - if language score is 0 and the minimum
+        // recommendation score is greater than the score limit without language,
+        // then we can skip the rest of the calculations.
+        const isSameLanguage = _language === language;
+        if (!isSameLanguage && minRanking > scoreLimitWithoutLanguage) return;
+
         // Determine score for language:
         //  * Same language, as language = 100% of language score
-        //  * Same language, but as a tag = 25% of language score
         //  * Not same language = 0% of language score
-        const languageScore =
-          (s.language === language ? 1 : s.tags.includes(language) ? 0.25 : 0) *
-          languageScoreLimit;
+        const languageScore = isSameLanguage ? fullLanguageScore : 0;
+
+        // Performance optimization - if both language and primary tag scores are
+        // 0 and the minimum recommendation score is greater than the score limit
+        // without language and primary tag, then we can skip the rest of the
+        // calculations.
+        const primaryTagIndex = isSameLanguage ? _tags.indexOf(primaryTag) : -1;
+        if (
+          !isSameLanguage &&
+          primaryTagIndex === -1 &&
+          minRanking > scoreLimitWithoutLanguageAndPrimaryTag
+        )
+          return;
+
         // Determine primary tag score:
+        //  * Different language = 0% of tag score
         //  * Same primary tag = 100% of tag score
         //  * Contains primary tag, but not primary = 50% of tag score
         //  * Doesn't contain tag = 0% of language score
         const primaryTagScore =
-          (s.primaryTag === primaryTag
-            ? 1
-            : s.tags.includes(primaryTag)
-            ? 0.5
-            : 0) * primaryTagScoreLimit;
-        // Determine search token score
+          primaryTagIndex === -1
+            ? 0
+            : primaryTagIndex === 0
+            ? fullPrimaryTagScore
+            : halfPrimaryTagScore;
+
+        // Determine search token score:
+        //  * Count found tokens and divide by total number of tokens
         const searchTokenScore =
-          searchTokens.reduce(
-            (a, t) =>
-              (a = s.searchTokens.includes(t)
-                ? a + 1 / searchTokens.length
-                : a),
+          (searchTokens.reduce(
+            (a, t) => (_searchTokens.includes(t) ? a + 1 : a),
             0
-          ) * searchTokenScoreLimit;
+          ) /
+            searchTokensLength) *
+          searchTokenScoreLimit;
 
         // Divide by the limit to get a value between 0 and 1
-        const recommendationRanking = (
+        const recommendationRanking =
           (languageScore + primaryTagScore + searchTokenScore) /
-          totalScoreLimit
-        ).toFixed(2);
+          totalScoreLimit;
 
         // Performance optimization to minimize the number of times we have to
         // sort afterwards. As soon as the minimum amount of snippets has been
@@ -89,12 +133,11 @@ export class Recommender {
               return;
             } else {
               // Otherwise, replace the lowest ranking with the new ranking
-              minRankings.push(recommendationRanking);
+              minRankings[0] = recommendationRanking;
               minRankings.sort((a, b) => a - b);
-              minRankings.shift();
             }
           }
-          recommendationRankings.set(s.id, [recommendationRanking, s.ranking]);
+          recommendationRankings.set(_id, [recommendationRanking, s.ranking]);
         }
       }
     });
