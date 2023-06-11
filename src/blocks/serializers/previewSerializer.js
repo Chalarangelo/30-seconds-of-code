@@ -5,14 +5,7 @@ export const previewSerializer = {
   methods: {
     title: (item, { type }) =>
       type === 'snippet' ? item.title : item.shortName,
-    description: (item, { type }) => {
-      const description =
-        type === 'snippet' ? item.descriptionHtml : item.shortDescription;
-      return description
-        .replace('<p>', '')
-        .replace('</p>', '')
-        .replace(/<a.*?>(.*?)<\/a>/g, '$1');
-    },
+    description: item => item.formattedDescription,
     cover: (item, { type }) => {
       if (type === 'snippet')
         return `/${pathSettings.staticAssetPath}/preview/${item.cover}.jpg`;
