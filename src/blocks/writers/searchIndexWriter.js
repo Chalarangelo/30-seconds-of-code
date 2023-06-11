@@ -20,22 +20,22 @@ export class SearchIndexWriter {
       'SearchResultSerializer'
     );
 
-    let snippets = Application.dataset.getModel('Snippet').records.listed;
-    if (process.env.NODE_ENV === 'production') snippets = snippets.published;
+    const snippets = Application.dataset.getModel('Snippet').records.listed;
 
     const snippetsData = SearchResultSerializer.serializeArray(
       snippets.toArray(),
       { type: 'snippet' }
     );
 
-    let collections = Application.dataset.getModel('Collection').records.listed;
+    const collections =
+      Application.dataset.getModel('Collection').records.listed;
 
     const collectionsData = SearchResultSerializer.serializeArray(
       collections.toArray(),
       { type: 'collection' }
     );
 
-    let searchIndex = [...snippetsData, ...collectionsData];
+    const searchIndex = [...snippetsData, ...collectionsData];
     logger.log(`Writing search index for ${searchIndex.length} items`);
 
     await JSONHandler.toFile(outPath, { searchIndex });
