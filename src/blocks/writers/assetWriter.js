@@ -15,6 +15,7 @@ const inContentPath = 'content/assets';
 
 // Image asset constants
 const supportedExtensions = ['jpeg', 'jpg', 'png', 'webp', 'tif', 'tiff'];
+const supportedDirectories = ['splash', 'cover', 'illustrations'];
 const coverImageDimensions = { width: 798, height: 399 };
 const coverPreviewDimensions = { width: 144, height: 144 };
 // Icon asset constants
@@ -25,6 +26,11 @@ const iconOutName = 'icon';
  * Writes assets.
  */
 export class AssetWriter {
+  static getGeneratedAssets = () =>
+    glob
+      .sync(`${outPath}/@(${supportedDirectories.join('|')})/*.webp`)
+      .map(asset => asset.replace(`${outPath}/`, '').split('.')[0]);
+
   /**
    * Prepares the assets directory.
    */
@@ -38,29 +44,28 @@ export class AssetWriter {
     );
 
     // As all directories are known ahead of time, just ensure they exist right away
-    [
-      outPath,
-      path.join(outPath, 'splash'),
-      path.join(outPath, 'illustrations'),
-      path.join(outPath, 'cover'),
-      path.join(outPath, 'preview'),
-    ].forEach(dir => fs.ensureDirSync(dir));
+    fs.ensureDirSync(outPath);
+    await Promise.all(
+      [
+        path.join(outPath, 'splash'),
+        path.join(outPath, 'illustrations'),
+        path.join(outPath, 'cover'),
+        path.join(outPath, 'preview'),
+      ].map(dir => fs.ensureDir(dir))
+    );
 
-    // Copy completely static assets
-    await fs.copy(inPath, outPath);
+    // Get all generated assets
+    const generatedAssets =
+      process.env.NODE_ENV !== 'production'
+        ? AssetWriter.getGeneratedAssets()
+        : null;
 
-    // Process splash and illustrations
-    logger.log('Processing static assets...');
-    await AssetWriter.processStaticAssets();
-    logger.success('Processing static assets complete');
-
-    logger.log(`Processing cover images...`);
-    await AssetWriter.processCoverAssets();
-    logger.success(`Processing cover images complete`);
-
-    logger.log('Processing icons...');
-    await AssetWriter.processIcons();
-    logger.success(`Processing icons complete`);
+    await Promise.all([
+      fs.copy(inPath, outPath),
+      AssetWriter.processStaticAssets(generatedAssets),
+      AssetWriter.processCoverAssets(generatedAssets),
+      AssetWriter.processIcons(),
+    ]);
 
     logger.log(
       `Copying assets from ${path.resolve(outPath)} to ${path.resolve(
@@ -85,8 +90,9 @@ export class AssetWriter {
    * - Write the cover preview images as their original format and webp.
    * @returns {Promise} A promise that resolves when all cover images have been processed.
    */
-  static processCoverAssets = () => {
+  static processCoverAssets = (existingAssets = null) => {
     const logger = new Logger('AssetWriter.processCoverAssets');
+    logger.log(`Processing cover images...`);
 
     let coverAssets = glob
       .sync(`${inContentPath}/cover/*.@(${supportedExtensions.join('|')})`)
@@ -98,22 +104,13 @@ export class AssetWriter {
         ),
       }));
 
-    if (process.env.NODE_ENV !== 'production') {
+    if (existingAssets && existingAssets.length > 0) {
       const originalLength = coverAssets.length;
-      logger.log(`Found ${coverAssets.length} cover images.`);
+      logger.log(`Found ${originalLength} cover images.`);
 
-      const existingAssets = glob
-        .sync(`${outPath}/cover/*.@(${supportedExtensions.join('|')})`)
-        .map(file => file.split('/').pop());
-
-      logger.log(
-        `Found ${existingAssets.length} cover images already generated.`
+      coverAssets = coverAssets.filter(
+        ({ fileName }) => !existingAssets.includes(`cover${fileName}`)
       );
-
-      coverAssets = coverAssets.filter(({ filePath }) => {
-        const assetName = filePath.split('/').pop();
-        return !existingAssets.includes(assetName);
-      });
 
       logger.log(
         `Filtered out ${
@@ -146,11 +143,14 @@ export class AssetWriter {
               .catch(() => reject());
           })
       )
-    );
+    ).then(() => logger.success(`Processing cover images complete`));
   };
 
-  static processStaticAssets = () => {
-    const staticAssets = ['splash', 'illustrations'].reduce(
+  static processStaticAssets = (existingAssets = null) => {
+    const logger = new Logger('AssetWriter.processStaticAssets');
+    logger.log('Processing static assets...');
+
+    let staticAssets = ['splash', 'illustrations'].reduce(
       (allAssets, assetType) => {
         const assets = glob
           .sync(
@@ -172,6 +172,22 @@ export class AssetWriter {
       []
     );
 
+    if (existingAssets && existingAssets.length > 0) {
+      const originalLength = staticAssets.length;
+      logger.log(`Found ${originalLength} cover images.`);
+
+      staticAssets = staticAssets.filter(
+        ({ directory, fileName }) =>
+          !existingAssets.includes(`${directory}${fileName}`)
+      );
+
+      logger.log(
+        `Filtered out ${
+          originalLength - staticAssets.length
+        } cover images that were already generated.`
+      );
+    }
+
     return Promise.all(
       staticAssets.map(
         ({ filePath, fileName, fullFileName, directory }) =>
@@ -187,7 +203,7 @@ export class AssetWriter {
               .catch(() => reject());
           })
       )
-    );
+    ).then(() => logger.success(`Processing static assets complete`));
   };
 
   /**
@@ -196,6 +212,9 @@ export class AssetWriter {
    * @returns {Promise} A promise that resolves when icon assets have been processed.
    */
   static processIcons = (iconName = '30s-icon.png') => {
+    const logger = new Logger('AssetWriter.processIcons');
+    logger.log('Processing icons...');
+
     const iconPath = path.join(inPath, iconName);
     const iconOutPath = path.join(outPath, 'icons');
 
@@ -217,6 +236,6 @@ export class AssetWriter {
       ])
         .then(() => resolve())
         .catch(() => reject());
-    });
+    }).then(() => logger.success(`Processing icons complete`));
   };
 }

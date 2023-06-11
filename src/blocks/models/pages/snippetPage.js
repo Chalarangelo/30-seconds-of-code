@@ -14,7 +14,7 @@ export const snippetPage = {
   },
   lazyProperties: {
     props:
-      ({ serializers: { SnippetContextSerializer, PreviewSerializer } }) =>
+      ({ serializers: { SnippetContextSerializer } }) =>
       page => {
         const snippet = page.snippet;
         const context = {};
@@ -23,18 +23,12 @@ export const snippetPage = {
         context.pageDescription = snippet.seoDescription;
         context.snippet = SnippetContextSerializer.serialize(snippet);
 
-        let recommendedItems = PreviewSerializer.serializeArray(
-          snippet.recommendedSnippets.toArray(),
-          { type: 'snippet' }
+        let recommendedItems = snippet.recommendedSnippets.flatMap(
+          snippet => snippet.preview
         );
 
-        if (snippet.recommendedCollection) {
-          recommendedItems.unshift(
-            PreviewSerializer.serialize(snippet.recommendedCollection, {
-              type: 'collection',
-            })
-          );
-        }
+        if (snippet.recommendedCollection)
+          recommendedItems.unshift(snippet.recommendedCollection.preview);
 
         context.recommendations = recommendedItems;
 

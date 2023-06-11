@@ -35,9 +35,7 @@ export const collection = {
     searchTokens: collection => {
       const uniqueDescription = collection.shortDescription || '';
       return uniqueElements(
-        tokenizeCollection(`${uniqueDescription} ${collection.name}`).map(v =>
-          v.toLowerCase()
-        )
+        tokenizeCollection(`${uniqueDescription} ${collection.name}`)
       ).join(' ');
     },
     firstPageSlug: collection => `${collection.slug}/p/1`,
@@ -48,6 +46,11 @@ export const collection = {
     listedSnippets: collection => collection.snippets.listed.published,
     formattedSnippetCount: collection =>
       `${collection.listedSnippets.length} snippets`,
+    formattedDescription: collection =>
+      collection.shortDescription
+        .replace('<p>', '')
+        .replace('</p>', '')
+        .replace(/<a.*?>(.*?)<\/a>/g, '$1'),
     indexableContent: collection =>
       [collection.name, collection.description, collection.shortDescription]
         .filter(Boolean)
@@ -95,6 +98,10 @@ export const collection = {
             .sort((a, b) => a.title.localeCompare(b.title)),
         ];
       },
+    preview:
+      ({ serializers: { PreviewSerializer } }) =>
+      collection =>
+        PreviewSerializer.serialize(collection, { type: 'collection' }),
   },
   cacheProperties: [
     'hasParent',
@@ -111,7 +118,9 @@ export const collection = {
     'pageCount',
     'listedSnippets',
     'formattedSnippetCount',
+    'formattedDescription',
     'indexableContent',
+    'preview',
   ],
   methods: {
     // A little fiddly, but should work for the time being

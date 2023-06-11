@@ -38,11 +38,15 @@ export const snippet = {
       if (snippet.language) tags.unshift(snippet.language.name);
       return tags.join(', ');
     },
-    formattedPreviewTags: snippet => {
-      if (snippet.language)
-        return [snippet.language.name, snippet.formattedPrimaryTag].join(', ');
-      else return snippet.formattedPrimaryTag;
-    },
+    formattedPreviewTags: snippet =>
+      snippet.language
+        ? `${snippet.language.name}, ${snippet.formattedPrimaryTag}`
+        : snippet.formattedPrimaryTag,
+    formattedDescription: snippet =>
+      snippet.descriptionHtml
+        .replace('<p>', '')
+        .replace('</p>', '')
+        .replace(/<a.*?>(.*?)<\/a>/g, '$1'),
     slug: snippet => `/${snippet.id}`,
     fileSlug: snippet => convertToSeoSlug(snippet.fileName.slice(0, -3)),
     url: snippet =>
@@ -73,9 +77,12 @@ export const snippet = {
           .split(/[^a-z0-9\-']+/i),
       ];
       if (snippet.language)
-        tokenizableElements.push(snippet.language.short, snippet.language.long);
+        tokenizableElements.push(
+          snippet.language.short.toLowerCase(),
+          snippet.language.long.toLowerCase()
+        );
 
-      return uniqueElements(tokenizableElements.map(v => v.toLowerCase()));
+      return uniqueElements(tokenizableElements);
     },
     searchTokens: snippet => snippet.searchTokensArray.join(' '),
     orderedCollections: snippet => {
@@ -174,6 +181,10 @@ export const snippet = {
         );
         return Snippet.records.only(...recommendedSnippetIds);
       },
+    preview:
+      ({ serializers: { PreviewSerializer } }) =>
+      snippet =>
+        PreviewSerializer.serialize(snippet, { type: 'snippet' }),
   },
   cacheProperties: [
     'seoTitle',
@@ -182,6 +193,7 @@ export const snippet = {
     'formattedMiniPreviewTag',
     'formattedTags',
     'formattedPreviewTags',
+    'formattedDescription',
     'slug',
     'fileSlug',
     'isScheduled',
@@ -194,6 +206,7 @@ export const snippet = {
     'orderedCollections',
     'breadcrumbCollectionIds',
     'hasCollection',
+    'preview',
   ],
   scopes: {
     allByPopularity: {
