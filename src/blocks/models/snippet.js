@@ -73,9 +73,12 @@ export const snippet = {
           .split(/[^a-z0-9\-']+/i),
       ];
       if (snippet.language)
-        tokenizableElements.push(snippet.language.short, snippet.language.long);
+        tokenizableElements.push(
+          snippet.language.short.toLowerCase(),
+          snippet.language.long.toLowerCase()
+        );
 
-      return uniqueElements(tokenizableElements.map(v => v.toLowerCase()));
+      return uniqueElements(tokenizableElements);
     },
     searchTokens: snippet => snippet.searchTokensArray.join(' '),
     orderedCollections: snippet => {

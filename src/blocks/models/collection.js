@@ -35,9 +35,7 @@ export const collection = {
     searchTokens: collection => {
       const uniqueDescription = collection.shortDescription || '';
       return uniqueElements(
-        tokenizeCollection(`${uniqueDescription} ${collection.name}`).map(v =>
-          v.toLowerCase()
-        )
+        tokenizeCollection(`${uniqueDescription} ${collection.name}`)
       ).join(' ');
     },
     firstPageSlug: collection => `${collection.slug}/p/1`,
