@@ -163,14 +163,10 @@ export class Extractor {
         const bodyText = body
           .slice(0, body.indexOf(mdCodeFence))
           .replace(/\r\n/g, '\n');
-        const isLongBlog = isBlog && bodyText.indexOf('\n\n') > 180;
-        const shortSliceIndex = isLongBlog
-          ? bodyText.indexOf(' ', 160)
-          : bodyText.indexOf('\n\n');
         const shortText =
-          excerpt && excerpt.trim().length !== 0
+          excerpt && excerpt.trim()
             ? excerpt
-            : `${bodyText.slice(0, shortSliceIndex)}${isLongBlog ? '...' : ''}`;
+            : bodyText.slice(0, bodyText.indexOf('\n\n'));
 
         const fullText = body;
         const seoDescription = stripMarkdownFormat(shortText);
