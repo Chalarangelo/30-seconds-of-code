@@ -5,13 +5,7 @@ export const snippetContextSerializer = {
   methods: {
     code: snippet => snippet.code || undefined,
     author: snippet =>
-      snippet.author
-        ? {
-            name: snippet.author.name,
-            intro: snippet.author.intro,
-            github: snippet.author.github,
-          }
-        : undefined,
+      snippet.author ? snippet.author.contextObject : undefined,
     coverUrl: snippet =>
       `/${pathSettings.staticAssetPath}/cover/${snippet.cover}.jpg`,
     fullDescription: snippet => snippet.fullDescriptionHtml,
