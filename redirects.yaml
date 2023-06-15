@@ -1420,17 +1420,11 @@
 - from: /js/s/take-right-while
   to: /js/s/take-array-elements-from-end-while
   status: 301!
-- from: /js/s/take-right
-  to: /js/s/take-array-elements-from-end
-  status: 301!
 - from: /js/s/take-until
   to: /js/s/take-array-elements-until
   status: 301!
 - from: /js/s/take-while
   to: /js/s/take-array-elements-while
-  status: 301!
-- from: /js/s/take
-  to: /js/s/take-array-elements
   status: 301!
 - from: /js/s/pluck
   to: /js/s/pluck-values-from-object-array
@@ -1900,3 +1894,16 @@
 - from: /git/s/push-changes
   to: /git/s/push-pull-changes
   status: 301!
+- from: /js/s/take-right
+  to: /js/s/take-n-elements-from-array-start-or-end
+  status: 301!
+- from: /js/s/take
+  to: /js/s/take-n-elements-from-array-start-or-end
+  status: 301!
+- from: /js/s/take-array-elements-from-end
+  to: /js/s/take-n-elements-from-array-start-or-end
+  status: 301!
+- from: /js/s/take-array-elements
+  to: /js/s/take-n-elements-from-array-start-or-end
+  status: 301!
+
