@@ -16,6 +16,14 @@ Check if the given number is even.
 
 ```py
 def is_even_bitwise(number):
+'''
+  Code snippet to check if a number is an even number using bitwise AND operator.
+  Arguments:
+          number (int): The number to be checked.
+
+    Returns:
+        bool: True if the number is even, False if the number is odd.
+'''
 # Check for negative number
 if number < 0 :
   number = -number # To make sure the number is never negative.
