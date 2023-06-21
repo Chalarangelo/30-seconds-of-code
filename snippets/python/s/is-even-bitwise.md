@@ -16,6 +16,9 @@ Check if the given number is even.
 
 ```py
 def is_even_bitwise(number):
+# Check for negative number
+if number < 0 :
+  number = -number # To make sure the number is never negative.
   return (number & 1) == 0
 ```
 
