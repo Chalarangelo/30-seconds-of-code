@@ -5,7 +5,7 @@ language: javascript
 tags: [audio,html,javascript]
 author: Vivek Kumar
 cover: drums
-dateModified: 2023-06-26T15:06:45Z
+dateModified: 2023-07-01T08:39:26Z
 ---
 
 The simplest way to add audio to your HTML file is through the use of Javascript's Audio() constructor.To achieve this you can follow the steps below:
