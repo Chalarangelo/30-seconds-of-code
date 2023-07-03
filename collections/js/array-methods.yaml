@@ -1,0 +1,21 @@
+slug: js/array-methods
+name: JavaScript Array Methods
+featured: true
+snippetIds:
+  - js/s/array-map-vs-foreach
+  - js/s/4-array-methods
+  - js/s/array-comparison
+  - js/s/index-for-of-loop
+  - js/s/for-loop-early-break
+  - js/s/array-initialization
+  - js/s/code-anatomy-chaining-reduce-for-loop
+  - js/s/async-array-loops
+  - js/s/typecheck-array
+splash: laptop-lamp.png
+description: >-
+  JavaScript arrays offer a lot of data manipulation and transformation methods.
+  This collection will help you learn more about some of the most common ones,
+  as well as introduce you to some more advanced tricks.
+shortDescription: >-
+  Get acquainted with some common JavaScript array methods, as well as some more
+  advanced array tricks.
