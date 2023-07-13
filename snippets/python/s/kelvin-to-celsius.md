@@ -7,8 +7,8 @@ cover: boutique-home-office-4
 dateModified: 2023-07-13T08:30:00+05:00
 ---
 
-Converts kelvin into celsius degree centigrade 
-- Use `round()` with the perameter 
+Converts kelvin into celsius degrees. 
+- Use `round()` with the perameter `2` to return only 2 numbers after decimal point.
 
 ```py
 def kelvinToCelsius(kelvin):
