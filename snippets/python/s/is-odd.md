@@ -21,3 +21,16 @@ def is_odd(num):
 ```py
 is_odd(3) # True
 ```
+
+- Check whether a number is odd using the bitwise `&` operator. An even number has 0 as its leftmost bit, and an odd number has 1 as its leftmost bit.
+- Returns `True` if the number is odd, `False` if the number is even.
+
+```py
+def is_even(n):
+    return n & 1
+```
+
+```py
+is_even(2) # False
+is_even(3) # True
+```
