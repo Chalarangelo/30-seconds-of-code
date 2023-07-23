@@ -56,3 +56,19 @@ a = a - b # a = 7,  b = 11
 print(a) # 7
 print(b) # 11
 ```
+
+### Using the properties of XOR (for numbers only)
+
+If the two variables are numbers, their values can be swapped using the Xor operator(`^`). Xor of a number with itself leads to 0, ie, `a ^ a` = 0. This property can be used to swap to numbers.
+
+```py
+a = 11
+b = 7
+
+a = a ^ b
+b = a ^ b
+a = a ^ b
+
+print(a) # 7
+print(b) # 11
+```
