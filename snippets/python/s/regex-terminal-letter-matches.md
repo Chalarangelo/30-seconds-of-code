@@ -28,5 +28,5 @@ def terminal_letter_matches(string, char1, char2=None):
 ```
 
 ```py
-print(terminal_letter_matches("Elephants love to dance, but puffins prefer to eat waffles.", 'e', 's')) # ['Elephants']
+terminal_letter_matches("Elephants love to dance, but puffins prefer to eat waffles.", 'e', 's') # ['Elephants']
 ```
