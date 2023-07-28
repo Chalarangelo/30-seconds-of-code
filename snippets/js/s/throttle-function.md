@@ -28,10 +28,8 @@ const throttle = (fn, wait) => {
     } else {
       clearTimeout(lastFn);
       lastFn = setTimeout(function() {
-        if (Date.now() - lastTime >= wait) {
-          fn.apply(context, args);
-          lastTime = Date.now();
-        }
+        fn.apply(context, args);
+        lastTime = Date.now();
       }, Math.max(wait - (Date.now() - lastTime), 0));
     }
   };
