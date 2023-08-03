@@ -9,7 +9,7 @@
     "@babel/core": "^7.20.2",
     "@babel/eslint-parser": "^7.20.2",
     "@babel/preset-env": "^7.20.2",
-    "@jsiqle/core": "^1.4.1",
+    "@jsiqle/core": "^2.0.0",
     "@types/jest": "^27.0.1",
     "astro": "^2.6.0",
     "chalk": "^4.1.0",
