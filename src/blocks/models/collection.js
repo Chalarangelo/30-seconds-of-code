@@ -5,123 +5,151 @@ import presentationSettings from 'settings/presentation';
 
 export const collection = {
   name: 'Collection',
-  fields: [
-    { name: 'name', type: 'stringRequired' },
-    { name: 'shortName', type: 'stringRequired' },
-    { name: 'miniName', type: 'stringRequired' },
-    { name: 'slug', type: 'stringRequired' },
-    { name: 'featured', type: 'booleanRequired' },
-    { name: 'featuredIndex', type: 'number' },
-    { name: 'splash', type: 'stringRequired' },
-    { name: 'description', type: 'stringRequired' },
-    { name: 'shortDescription', type: 'stringRequired' },
-    { name: 'seoDescription', type: 'stringRequired' },
-    { name: 'topLevel', type: 'booleanRequired' },
-  ],
+  fields: {
+    name: 'string',
+    shortName: 'string',
+    miniName: 'string',
+    slug: 'string',
+    featured: 'boolean',
+    featuredIndex: 'number',
+    splash: 'string',
+    description: 'string',
+    shortDescription: 'string',
+    seoDescription: 'string',
+    topLevel: 'boolean',
+  },
   properties: {
-    hasParent: collection => Boolean(collection.parent),
-    isMain: collection => collection.id === 'snippets',
-    isPrimary: collection => collection.topLevel,
-    isSecondary: collection => collection.hasParent,
+    hasParent: {
+      body: collection => Boolean(collection.parent),
+      cache: true,
+    },
+    isMain: {
+      body: collection => collection.id === 'snippets',
+      cache: true,
+    },
+    isPrimary: {
+      body: collection => collection.topLevel,
+      cache: true,
+    },
+    isSecondary: {
+      body: collection => collection.hasParent,
+      cache: true,
+    },
     rootUrl: collection =>
       collection.hasParent ? collection.parent.slug : collection.slug,
-    siblings: collection =>
-      collection.hasParent ? collection.parent.children : [],
-    siblingsExceptSelf: collection =>
-      collection.hasParent ? collection.siblings.except(collection.id) : [],
-    ranking: collection =>
-      Ranker.rankIndexableContent(collection.indexableContent),
-    isSearchable: collection => Boolean(collection.featured),
-    searchTokens: collection => {
-      const uniqueDescription = collection.shortDescription || '';
-      return uniqueElements(
-        tokenizeCollection(`${uniqueDescription} ${collection.name}`)
-      ).join(' ');
+    siblings: {
+      body: collection =>
+        collection.hasParent ? collection.parent.children : [],
+      cache: true,
     },
-    firstPageSlug: collection => `${collection.slug}/p/1`,
-    pageCount: collection =>
-      Math.ceil(
-        collection.listedSnippets.length / presentationSettings.cardsPerPage
-      ),
-    listedSnippets: collection => collection.snippets.listed.published,
-    formattedSnippetCount: collection =>
-      `${collection.listedSnippets.length} snippets`,
-    formattedDescription: collection =>
-      collection.shortDescription
-        .replace('<p>', '')
-        .replace('</p>', '')
-        .replace(/<a.*?>(.*?)<\/a>/g, '$1'),
-    indexableContent: collection =>
-      [collection.name, collection.description, collection.shortDescription]
-        .filter(Boolean)
-        .join(' ')
-        .toLowerCase(),
-  },
-  lazyProperties: {
-    sublinks:
-      ({ models: { Collection } }) =>
-      collection => {
-        if (collection.isMain) {
-          return [
-            ...Collection.records.primary
-              .sort((a, b) => b.ranking - a.ranking)
-              .flatMap(c => ({
+    siblingsExceptSelf: {
+      body: collection =>
+        collection.hasParent ? collection.siblings.except(collection.id) : [],
+      cache: true,
+    },
+    ranking: {
+      body: collection =>
+        Ranker.rankIndexableContent(collection.indexableContent),
+      cache: true,
+    },
+    isSearchable: {
+      body: collection => Boolean(collection.featured),
+      cache: true,
+    },
+    searchTokens: {
+      body: collection => {
+        const uniqueDescription = collection.shortDescription || '';
+        return uniqueElements(
+          tokenizeCollection(`${uniqueDescription} ${collection.name}`)
+        ).join(' ');
+      },
+      cache: true,
+    },
+    firstPageSlug: {
+      body: collection => `${collection.slug}/p/1`,
+      cache: true,
+    },
+    pageCount: {
+      body: collection =>
+        Math.ceil(
+          collection.listedSnippets.length / presentationSettings.cardsPerPage
+        ),
+      cache: true,
+    },
+    listedSnippets: {
+      body: collection => collection.snippets.listed.published,
+      cache: true,
+    },
+    formattedSnippetCount: {
+      body: collection => `${collection.listedSnippets.length} snippets`,
+      cache: true,
+    },
+    formattedDescription: {
+      body: collection =>
+        collection.shortDescription
+          .replace('<p>', '')
+          .replace('</p>', '')
+          .replace(/<a.*?>(.*?)<\/a>/g, '$1'),
+      cache: true,
+    },
+    indexableContent: {
+      body: collection =>
+        [collection.name, collection.description, collection.shortDescription]
+          .filter(Boolean)
+          .join(' ')
+          .toLowerCase(),
+      cache: true,
+    },
+    sublinks: (collection, { models: { Collection } }) => {
+      if (collection.isMain) {
+        return [
+          ...Collection.records.primary
+            .sort((a, b) => b.ranking - a.ranking)
+            .map(
+              c => ({
                 title: c.miniName,
                 url: c.firstPageSlug,
                 selected: false,
-              })),
-            {
-              title: 'More collections',
-              url: '/collections/p/1',
-              selected: false,
-            },
-          ];
-        }
-
-        if (!collection.isPrimary && !collection.hasParent) return [];
-        if (collection.isPrimary && collection.children.length === 0) return [];
-        const links = collection.hasParent
-          ? collection.siblings
-          : collection.children;
-        return [
+              }),
+              { flat: true }
+            ),
           {
-            title: 'All',
-            url: `${collection.rootUrl}/p/1`,
-            selected: collection.isPrimary,
+            title: 'More collections',
+            url: '/collections/p/1',
+            selected: false,
           },
-          ...links
-            .flatMap(link => ({
+        ];
+      }
+
+      if (!collection.isPrimary && !collection.hasParent) return [];
+      if (collection.isPrimary && collection.children.length === 0) return [];
+      const links = collection.hasParent
+        ? collection.siblings
+        : collection.children;
+      return [
+        {
+          title: 'All',
+          url: `${collection.rootUrl}/p/1`,
+          selected: collection.isPrimary,
+        },
+        ...links
+          .map(
+            link => ({
               title: link.miniName,
               url: link.firstPageSlug,
               selected: link.id === collection.id,
-            }))
-            .sort((a, b) => a.title.localeCompare(b.title)),
-        ];
-      },
-    preview:
-      ({ serializers: { PreviewSerializer } }) =>
-      collection =>
+            }),
+            { flat: true }
+          )
+          .sort((a, b) => a.title.localeCompare(b.title)),
+      ];
+    },
+    preview: {
+      body: (collection, { serializers: { PreviewSerializer } }) =>
         PreviewSerializer.serialize(collection, { type: 'collection' }),
+      cache: true,
+    },
   },
-  cacheProperties: [
-    'hasParent',
-    'isMain',
-    'isPrimary',
-    'isSecondary',
-    'siblings',
-    'siblignsExceptSelf',
-    'ranking',
-    'seoDescription',
-    'isSearchable',
-    'searchTokens',
-    'firstPageSlug',
-    'pageCount',
-    'listedSnippets',
-    'formattedSnippetCount',
-    'formattedDescription',
-    'indexableContent',
-    'preview',
-  ],
   methods: {
     // A little fiddly, but should work for the time being
     matchesTag: (collection, tag) => collection.id.endsWith(`/${tag}`),

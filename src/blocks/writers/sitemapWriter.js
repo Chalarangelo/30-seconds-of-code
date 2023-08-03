@@ -23,13 +23,15 @@ export class SitemapWriter {
     const template = handlebars.compile(fs.readFileSync(templatePath, 'utf-8'));
     const snippetPages = Application.dataset
       .getModel('SnippetPage')
-      .records.published.flatMap(page => `${websiteUrl}${page.slug}`);
+      .records.published.map(page => `${websiteUrl}${page.slug}`, {
+        flat: true,
+      });
     const collectionPages = Application.dataset
       .getModel('CollectionPage')
-      .records.flatMap(page => `${websiteUrl}${page.slug}`);
+      .records.map(page => `${websiteUrl}${page.slug}`, { flat: true });
     const collectionsPages = Application.dataset
       .getModel('CollectionsPage')
-      .records.flatMap(page => `${websiteUrl}${page.slug}`);
+      .records.map(page => `${websiteUrl}${page.slug}`, { flat: true });
     const homePage = [`${websiteUrl}/`];
     const staticPages = ['/about', '/faq', '/cookies'].map(
       page => `${websiteUrl}${page}`
