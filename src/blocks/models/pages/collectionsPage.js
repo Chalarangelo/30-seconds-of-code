@@ -3,21 +3,24 @@ import pathSettings from 'settings/paths';
 
 export const collectionPage = {
   name: 'CollectionsPage',
-  fields: [
-    { name: 'slug', type: 'stringRequired' },
-    { name: 'name', type: 'stringRequired' },
-    { name: 'description', type: 'stringRequired' },
-    { name: 'shortDescription', type: 'stringRequired' },
-    { name: 'splash', type: 'stringRequired' },
-    { name: 'pageNumber', type: 'numberRequired' },
-    { name: 'pageCount', type: 'numberRequired' },
-  ],
+  fields: {
+    slug: 'string',
+    name: 'string',
+    description: 'string',
+    shortDescription: 'string',
+    splash: 'string',
+    pageNumber: 'number',
+    pageCount: 'number',
+  },
   properties: {
     params: page => {
       const [lang, ...listing] = page.slug.slice(1).split('/');
       return { lang, listing };
     },
-    baseSlug: page => page.slug.replace(/\/p\/\d+$/, ''),
+    baseSlug: {
+      body: page => page.slug.replace(/\/p\/\d+$/, ''),
+      cache: true,
+    },
     props: page => {
       const context = {};
 
@@ -63,8 +66,9 @@ export const collectionPage = {
             }
           : null;
 
-      context.collectionItems = page.collections.flatMap(
-        collection => collection.preview
+      context.collectionItems = page.collections.map(
+        collection => collection.preview,
+        { flat: true }
       );
 
       context.structuredData = Schemer.generateListingData({
@@ -76,5 +80,4 @@ export const collectionPage = {
       return context;
     },
   },
-  cacheProperties: ['baseSlug'],
 };

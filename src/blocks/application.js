@@ -395,13 +395,7 @@ export class Application {
     // Populate languages, authors, snippets
     languages.forEach(language => Language.createRecord(language));
     authors.forEach(author => Author.createRecord(author));
-    snippets.forEach(snippet => {
-      const { dateModified, ...rest } = snippet;
-      Snippet.createRecord({
-        ...rest,
-        dateModified: new Date(dateModified),
-      });
-    });
+    snippets.forEach(snippet => Snippet.createRecord(snippet));
 
     // Populate collections
     collections.forEach(collection => {
@@ -421,8 +415,7 @@ export class Application {
       if (snippetIds && snippetIds.length) collectionRec.snippets = snippetIds;
       else if (collection.id === 'snippets') {
         // Use listedBy in main listing to exclude unlisted snippets
-        collectionRec.snippets =
-          Snippet.records.listedByPopularity.flatPluck('id');
+        collectionRec.snippets = Snippet.records.listedByPopularity.pluck('id');
       } else {
         const queryMatchers = [];
         // Use publishedBy in other listings to include unlisted snippets in order
@@ -443,7 +436,7 @@ export class Application {
 
         collectionRec.snippets = Snippet.records[queryScope]
           .where(snippet => queryMatchers.every(matcher => matcher(snippet)))
-          .flatPluck('id');
+          .pluck('id');
       }
     });
     Snippet.records.forEach(snippet => {
@@ -466,7 +459,7 @@ export class Application {
           id: `$${id}`,
           collection: collectionId,
           slug: `/${id}`,
-          snippets: pageSnippets.flatPluck('id'),
+          snippets: pageSnippets.pluck('id'),
           pageNumber: pageCounter,
         });
         pageCounter++;
@@ -488,7 +481,7 @@ export class Application {
           description: collectionsHub.description,
           shortDescription: collectionsHub.shortDescription,
           splash: collectionsHub.splash,
-          collections: pageCollections.flatPluck('id'),
+          collections: pageCollections.pluck('id'),
           pageCount: totalPages,
           pageNumber: pageCounter,
         });
@@ -500,14 +493,14 @@ export class Application {
       const id = 'index';
       const collections = Collection.records.featured
         .slice(0, topCollectionChips)
-        .flatPluck('id');
+        .pluck('id');
       const newSnippets = Snippet.records.listedByNew
         .slice(0, newSnippetCards)
-        .flatPluck('id');
+        .pluck('id');
       const topSnippets = shuffle(
         Snippet.records.listedByPopularity
           .slice(0, topSnippetCards * 5)
-          .flatPluck('id')
+          .pluck('id')
       );
       HomePage.createRecord({
         id: `$${id}`,

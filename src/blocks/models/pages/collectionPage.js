@@ -3,10 +3,10 @@ import pathSettings from 'settings/paths';
 
 export const collectionPage = {
   name: 'CollectionPage',
-  fields: [
-    { name: 'slug', type: 'stringRequired' },
-    { name: 'pageNumber', type: 'numberRequired' },
-  ],
+  fields: {
+    slug: 'string',
+    pageNumber: 'number',
+  },
   properties: {
     params: page => {
       const [lang, ...listing] = page.slug.slice(1).split('/');
@@ -58,9 +58,9 @@ export const collectionPage = {
             }
           : null;
 
-      context.collectionItems = page.snippets.flatMap(
-        snippet => snippet.preview
-      );
+      context.collectionItems = page.snippets.map(snippet => snippet.preview, {
+        flat: true,
+      });
 
       context.structuredData = Schemer.generateListingData({
         title: collection.name,
