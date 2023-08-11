@@ -29,12 +29,15 @@ export class FeedWriter {
     logger.log(`Generating feed for new snippet routes`);
 
     const feed = template({
-      nodes: pages.flatMap(s => ({
-        title: s.title,
-        fullRoute: `${websiteUrl}${s.slug}`,
-        description: s.seoDescription,
-        pubDate: new Date(s.dateModified).toUTCString(),
-      })),
+      nodes: pages.map(
+        s => ({
+          title: s.title,
+          fullRoute: `${websiteUrl}${s.slug}`,
+          description: s.seoDescription,
+          pubDate: new Date(s.dateModified).toUTCString(),
+        }),
+        { flat: true }
+      ),
       websiteName,
       websiteDescription,
       websiteUrl,
