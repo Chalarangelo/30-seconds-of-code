@@ -16,8 +16,12 @@ Parses an HTTP Cookie header string, returning an object of all cookie name-valu
 ```js
 const parseCookie = str =>
   str
-    .split(';')
-    .map(v => v.split('='))
+    .split(/;\s?(?=[^=]*=)/)
+    .map((v) => {
+      const parts = v.split('=');
+      const name = parts.shift().trim();
+      const value = parts.join('=').trim();
+    })
     .reduce((acc, v) => {
       acc[decodeURIComponent(v[0].trim())] = decodeURIComponent(v[1].trim());
       return acc;
