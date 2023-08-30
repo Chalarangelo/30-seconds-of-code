@@ -13,7 +13,7 @@ Sends a notification to the client device using Javascript notification API.
 - permission can have 3 values:
     1. granted
     2. denied
-    3. defualt: system treats this as denied permission.
+    3. default: system treats this as denied permission.
 - Send notifcation using `Notification()`.
 
 
