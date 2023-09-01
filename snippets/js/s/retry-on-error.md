@@ -1,5 +1,5 @@
 ---
-title: Function name
+title: Catch errors and try again
 type: snippet
 language: javascript
 tags: [function, error]
