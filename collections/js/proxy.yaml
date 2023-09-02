@@ -1,0 +1,23 @@
+slug: js/proxy
+name: JavaScript Proxy
+featured: true
+snippetIds:
+  - js/s/proxy-introduction
+  - js/s/dynamic-getter-setter-proxy
+  - js/s/immutable-object-proxy
+  - js/s/singleton-proxy
+  - js/s/dynamic-getter-chain-proxy
+  - js/s/object-array-proxy
+  - js/s/proxy-array-negative-index
+  - js/s/cannot-extend-proxy-object
+  - js/s/typecheck-proxy
+splash: laptop-coffee.png
+description: >-
+  The JavaScript Proxy object can be a very powerful tool to extend the
+  functionality of objects. In this collection, we will explore the basics of
+  the Proxy object and how to use it in your code. We will also look at a
+  handful of practical examples that show how you can think about using proxies
+  in your code.
+shortDescription: >-
+  The JavaScript Proxy object is a powerful tool you can use to extend the
+  functionality of objects in a variety of interesting ways.
