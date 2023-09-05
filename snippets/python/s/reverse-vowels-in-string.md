@@ -3,7 +3,7 @@ title: Reverse vowels of a string
 type: snippet
 language: python
 tags: [string]
-cover: playing-fetch
+cover: dark-mode
 dateModified: 2023-09-05T20:48:17+05:00
 ---
 
