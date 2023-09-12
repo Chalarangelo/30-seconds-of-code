@@ -9,7 +9,7 @@ dateModified: 2023-09-12T21:33:00 +300
 
 Checks whether the given number is an Armstrong Number.
 
-A positive integer of n digits is called an Armstrong number of order n (order is number of digits) if, 
+A positive integer(abcd) of n digits is called an Armstrong number of order n (order is number of digits) if, 
 abcd... = a**n + b**n + c**n + d**n + .... 
 
 - Use a copy variable to make a copy of the given number.  
