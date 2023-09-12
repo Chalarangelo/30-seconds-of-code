@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [math]
 cover: balloons
-dateModified: 2023-09-12T21:33:00 +300
+dateModified: 2023-09-12 22:30:04 +300
 ---
 
 Checks whether the given number is an Armstrong Number.
