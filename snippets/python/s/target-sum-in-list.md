@@ -1,5 +1,5 @@
 ---
-title: Date to ISO format
+title: Indices of two numbers with target sum value
 type: snippet
 language: python
 tags: [list, dictionery]
