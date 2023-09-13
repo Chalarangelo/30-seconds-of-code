@@ -34,5 +34,5 @@ def is_armstrong(num):
 ```
 
 ```py
-is_armstrong(372) # returns True
+is_armstrong(153) # returns True
 ```
