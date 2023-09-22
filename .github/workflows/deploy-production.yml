@@ -2,29 +2,15 @@ name: Deploy production
 on:
   schedule:
     - cron: "20 18 * * *"
-  push:
-    branches: [ master ]
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: dorny/paths-filter@v2
-      id: filter
-      with:
-        filters: |
-          web:
-            - 'src/**'
-            - '.babelrc'
-            - 'astro.config.mjs'
-            - 'netlify.toml'
-            - 'package-lock.json'
-            - 'package.json'
-    # run only if 'web' files were changed
-    - name: Run deployment script
+    - uses: actions/checkout@v1
+    - name: Add deployable commit to 'production' branch
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      if: steps.filter.outputs.web == 'true'
       run: |
         chmod +x ./src/scripts/deploy.sh
-        ./src/scripts/deploy.sh production
+        ./src/scripts/deploy.sh production ${github.event_name}
