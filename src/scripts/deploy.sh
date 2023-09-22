@@ -5,7 +5,7 @@ deploy_branch() {
   git checkout -b $1
   git reset --hard origin/master
   git commit -m "Deployment - $(date +%Y.%m.%d_%H:%M)" --allow-empty
-  git push --force --quiet "https://${GH_TOKEN}@github.com/30-seconds/30-seconds-web.git" $1 > /dev/null 2>&1
+  git push --force --quiet "https://${GH_TOKEN}@github.com/30-seconds/30-seconds-of-code.git" $1 > /dev/null 2>&1
 }
 
 deploy_production() {
