@@ -1,0 +1,20 @@
+{
+  "rootDir": "../../",
+  "moduleFileExtensions": ["js", "json"],
+  "moduleDirectories": [
+    "node_modules",
+    "src"
+  ],
+  "testPathIgnorePatterns": [
+    "content/sources",
+    ".cache",
+    "public"
+  ],
+  "globals": {
+    "__PATH_PREFIX__": "",
+    "__BASE_PATH__": ""
+  },
+  "setupFiles": [
+    "./src/test/mocks.js"
+  ]
+}
