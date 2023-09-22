@@ -711,7 +711,7 @@ export class Application {
     logger.log('Starting REPL...');
 
     Application._replServer = repl.start({
-      prompt: '30web > ',
+      prompt: '30s > ',
       writer: Application._replWriter,
     });
     Application._replServer.setupHistory(
