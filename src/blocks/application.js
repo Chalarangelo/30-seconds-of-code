@@ -676,24 +676,15 @@ export class Application {
       },
     });
 
-    replServer.defineCommand('updateContent', {
-      help: 'Updates content sources. Does not trigger extraction or recreate the schema.',
-      action: () => {
-        Content.update().then(() => {
-          replServer.displayPrompt();
-        });
-      },
-    });
-
-    replServer.defineCommand('createSnippet', {
+    replServer.defineCommand('createContent', {
       help: [
-        'Creates a new snippet with the given arguments.',
-        'Usage: createSnippet <submoduleName> <snippetName>',
+        'Creates a new snippet or collection with the given arguments.',
+        'Usage: createContent <directoryName> <type> <name>',
         'Example: createSnippet 30css my-new-snippet',
       ].join('\n                   '),
       action(input) {
-        const [submoduleName, snippetName] = input.trim().split(' ');
-        Content.createSnippet(submoduleName, snippetName);
+        const [directoryName, type, snippetName] = input.trim().split(' ');
+        Content.createSnippet(directoryName, type, snippetName);
         replServer.displayPrompt();
       },
     });

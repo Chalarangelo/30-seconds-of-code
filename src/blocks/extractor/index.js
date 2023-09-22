@@ -2,7 +2,6 @@
 import pathSettings from 'settings/paths';
 import JSX_SNIPPET_PRESETS from 'settings/jsxSnippetPresets';
 import { Logger } from 'blocks/utilities/logger';
-import { Content } from 'blocks/utilities/content';
 import { TextParser } from 'blocks/extractor/textParser';
 import { MarkdownParser } from 'blocks/extractor/markdownParser';
 import { JSONHandler } from 'blocks/utilities/jsonHandler';
@@ -17,7 +16,6 @@ const codeMatcher = new RegExp(
 
 export class Extractor {
   static extract = async () => {
-    if (process.env.NODE_ENV === 'production') await Content.update();
     const { rawContentPath: contentDir } = pathSettings;
     const languageData = Extractor.extractLanguageData(contentDir);
     const collectionConfigs = Extractor.extractCollectionConfigs(contentDir);
