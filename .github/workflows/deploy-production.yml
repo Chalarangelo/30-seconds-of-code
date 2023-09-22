@@ -11,6 +11,7 @@ jobs:
     - name: Add deployable commit to 'production' branch
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        DEPLOY_TRIGGER: ${{ github.event_name }}
       run: |
         chmod +x ./src/scripts/deploy.sh
-        ./src/scripts/deploy.sh production ${github.event_name}
+        ./src/scripts/deploy.sh production

@@ -4,7 +4,7 @@ deploy_branch() {
   git config --global user.name "30secondsofcode"
   git checkout -b $1
   git reset --hard origin/master
-  git commit -m "[$(date +%Y.%m.%d_%H:%M)] Deployment/$2" --allow-empty
+  git commit -m "[$(date +%Y.%m.%d_%H:%M)] Deployment/${DEPLOY_TRIGGER}" --allow-empty
   git push --force --quiet "https://${GH_TOKEN}@github.com/30-seconds/30-seconds-of-code.git" $1 > /dev/null 2>&1
 }
 
