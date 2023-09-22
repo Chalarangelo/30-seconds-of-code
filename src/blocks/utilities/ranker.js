@@ -13,7 +13,7 @@ export class Ranker {
   static keywordScoreData = {};
 
   /**
-   * Dynamically load keyword scores from the content configuration submodule.
+   * Dynamically load keyword scores from the content configuration.
    */
   static get keywordScores() {
     // Skip loading for test environment

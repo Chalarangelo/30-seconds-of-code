@@ -1,4 +1,3 @@
-import childProcess from 'child_process';
 import path from 'path';
 import fs from 'fs';
 import pathSettings from 'settings/paths';
@@ -6,84 +5,9 @@ import { Logger } from 'blocks/utilities/logger';
 
 export class Content {
   /**
-   * Initialize content sources from their respective GitHub repositories.
-   * @returns {Promise} A promise that resolves as soon as the spawned git
-   * command exits.
-   */
-  static init() {
-    const logger = new Logger('Content.init');
-    logger.log('Updating content sources started...');
-
-    return new Promise((resolve, reject) => {
-      const gitUpdate = childProcess.spawn('git', [
-        'submodule',
-        'update',
-        '--init',
-        '--recursive',
-        '--progress',
-      ]);
-      logger.log(`${gitUpdate.spawnargs.join(' ')} (pid: ${gitUpdate.pid})`);
-
-      /* istanbul ignore next */
-      gitUpdate.stdout.on('data', data => {
-        logger.log(`${data}`.replace('\n', ''));
-      });
-      /* istanbul ignore next */
-      gitUpdate.on('error', err => {
-        logger.error(`${err}`);
-        reject();
-      });
-      /* istanbul ignore next */
-      gitUpdate.on('exit', code => {
-        logger.success(
-          `Initializing content sources completed with exit code ${code}`
-        );
-        resolve();
-      });
-    });
-  }
-
-  /**
-   * Update content sources from their respective GitHub repositories.
-   * Returns a promise that resolves as soon as the spawned git command exits.
-   */
-  static update = () => {
-    const logger = new Logger('Content.update');
-    logger.log('Updating content sources started...');
-
-    return new Promise((resolve, reject) => {
-      const gitUpdate = childProcess.spawn('git', [
-        'submodule',
-        'update',
-        '--recursive',
-        '--remote',
-        '--depth=10000',
-      ]);
-      logger.log(`${gitUpdate.spawnargs.join(' ')} (pid: ${gitUpdate.pid})`);
-
-      /* istanbul ignore next */
-      gitUpdate.stdout.on('data', data => {
-        logger.log(`${data}`.replace('\n', ''));
-      });
-      /* istanbul ignore next */
-      gitUpdate.on('error', err => {
-        logger.error(`${err}`);
-        reject();
-      });
-      /* istanbul ignore next */
-      gitUpdate.on('exit', code => {
-        logger.success(
-          `Updating content sources completed with exit code ${code}`
-        );
-        resolve();
-      });
-    });
-  };
-
-  /**
-   * Creates a new snippet or collection from the template in the given content directory
+   * Creates a new snippet or collection
    * @param {string} directoryName - Name of the directory (e.g. 'articles')
-   * @param {string} type - Type of the snippet ('collection', 'snippet' or 'story')
+   * @param {string} type - Type of the content item ('collection', 'snippet' or 'story')
    * @param {string} name - Name of the new content item (e.g. 'my-blog-post')
    */
   static create = (directoryName, type, name) => {
