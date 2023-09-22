@@ -1,0 +1,5 @@
+[submodule "content/sources/30code"]
+	path = content
+	url = https://github.com/30-seconds/30-seconds-of-code
+	branch = master
+	update = checkout

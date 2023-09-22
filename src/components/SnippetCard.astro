@@ -1,0 +1,63 @@
+---
+import prefabs from 'prefabs/index.js';
+
+import Image from 'components/Image.astro';
+
+const { snippet } = Astro.props;
+---
+
+<article class={prefabs.snippetCard}>
+  <h1 class={prefabs.cardTitle}>{snippet.title}</h1>
+  <p class={prefabs.cardSubtitle}>
+    {snippet.tags} &middot; <span class='inline-block'>{snippet.date}</span>
+  </p>
+  <Image
+    class='ar-wide mt-5 br-md'
+    src={snippet.cover}
+    alt=''
+    height='180'
+    width='360'
+    fetchpriority='high'
+  />
+  <div
+    class='card-description flex flex-col'
+    set:html={snippet.fullDescription}
+  />
+  {
+    snippet.author ? (
+      <div class='flex flex-col m-0'>
+        <h3 class='mt-4 mb-0 mx-0 txt-150 fs-md md:fs-lg lh-tight'>
+          Written by {snippet.author.name}
+        </h3>
+        <p class='lh-loose mx-0 mt-2 mb-0 txt-100 fs-sm md:fs-md'>
+          {snippet.author.intro}
+        </p>
+        <p class='lh-loose m-0 txt-100 fs-sm md:fs-md'>
+          {'If you want to keep in touch, follow me on '}
+          <a
+            href={snippet.author.github}
+            target='_blank'
+            rel='nofollow noopener noreferrer'
+          >
+            GitHub<!-- --></a><!-- -->.
+        </p>
+      </div>
+    ) : null
+  }
+  <div class='card-actions flex j-space-evenly mt-4 mx-0 mb-0'>
+    {
+      snippet.actionType === 'codepen' && (
+        <button
+          class={`${prefabs.button} ${prefabs.actionButton} ${prefabs.iconButton} flex-none before:fs-md icon-codepen my-0 mx-2 p-3`}
+          title='View CodePen'
+        />
+      )
+    }
+    <a
+      class={`${prefabs.button} ${prefabs.actionButton} ${prefabs.iconButton} flex-none before:fs-md icon-github my-0 mx-2 p-3`}
+      href={snippet.url}
+      rel='nofollow noopener noreferrer'
+      target='_blank'
+      title='View on GitHub'></a>
+  </div>
+</article>

@@ -1,0 +1,76 @@
+// Display, flex, grid, position, box-sizing
+.inline-block {
+  display: inline-block;
+}
+.flex {
+  display: flex;
+}
+.grid {
+  display: grid;
+}
+.flex-col {
+  flex-direction: column;
+}
+.j-center {
+  justify-content: center;
+}
+.j-space-evenly {
+  justify-content: space-evenly;
+}
+.a-center {
+  align-items: center;
+}
+.flex-none {
+  flex: none;
+}
+.relative {
+  position: relative;
+}
+.box-border {
+  box-sizing: border-box;
+}
+.ar-wide {
+  width: 100%;
+  aspect-ratio: 2;
+  object-fit: cover;
+}
+.no-overflow {
+  overflow: hidden;
+}
+.overflow-x {
+  overflow-x: auto;
+}
+
+// Content container
+.content {
+  grid-template-columns: 0 100% 0;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas: 'l1 c1 r1' 'l2 c2 r2' 'l3 c3 r3' 'l4 c4 r4';
+
+  @media screen and (min-width: $layout-medium-breakpoint) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 874px) minmax(0, 1fr);
+  }
+}
+// Grid areas
+@mixin generate-grid-areas($areas, $rows) {
+  @for $row from 1 through $rows {
+    @each $area in $areas {
+      .g-#{$area}#{$row} {
+        grid-area: #{$area}#{$row};
+      }
+    }
+  }
+}
+
+// Specific styles used in some components, that were overkill to have as component-specific classes
+@media screen and (min-width: $layout-medium-breakpoint) {
+  .md\:order-2 {
+    order: 2;
+  }
+
+  .md\:flex-wrap {
+    flex-wrap: wrap;
+  }
+}
+
+@include generate-grid-areas(('l', 'c', 'r'), 4);
