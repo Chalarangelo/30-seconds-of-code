@@ -4,6 +4,7 @@ on:
     - cron: "20 18 * * *"
   push:
     branches: [ master ]
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
