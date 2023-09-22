@@ -1,6 +1,6 @@
 [![Logo](/assets/logo.png)](https://www.30secondsofcode.org/)
 
-# 30 seconds of code
+# Brand & Design
 
 > Short code snippets for all your development needs
 
