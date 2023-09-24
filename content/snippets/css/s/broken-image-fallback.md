@@ -6,7 +6,7 @@ language: css
 tags: [visual]
 author: chalarangelo
 cover: building-facade
-dateModified: 2022-11-04T05:00:00-04:00
+dateModified: 2022-11-04
 ---
 
 Displays an error message when an image fails to load.

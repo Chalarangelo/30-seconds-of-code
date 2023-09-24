@@ -7,7 +7,7 @@ tags: [type]
 author: chalarangelo
 cover: forest-balcony
 excerpt: JavaScript distinguishes expressions and statements. Learn their differences in this short article.
-dateModified: 2021-11-07T05:00:00-04:00
+dateModified: 2021-11-07
 ---
 
 JavaScript distinguishes expressions and statements. An **expression** is any valid unit of code that resolves to a value. A **statement** is a unit of code that performs an action. Some examples:

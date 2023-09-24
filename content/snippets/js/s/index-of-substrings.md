@@ -5,7 +5,7 @@ language: javascript
 tags: [string,algorithm,generator]
 author: chalarangelo
 cover: armchair-in-yellow
-dateModified: 2020-12-31T13:58:51+02:00
+dateModified: 2020-12-31
 ---
 
 Finds all the indexes of a substring in a given string.

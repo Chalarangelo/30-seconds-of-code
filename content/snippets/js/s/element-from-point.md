@@ -7,7 +7,7 @@ tags: [browser]
 author: chalarangelo
 cover: armchair-in-yellow
 excerpt: Using `Document.elementFromPoint()` to easily get the element at a specific point on the page.
-dateModified: 2022-12-18T05:00:00-04:00
+dateModified: 2022-12-18
 ---
 
 Figuring out where an element is located on the page with JavaScript can be tricky. Such needs often arise when working with pointer events or other forms of user input. As expected, such a common problem has many different viable solutions using well-established web APIs.

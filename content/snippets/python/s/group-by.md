@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [list,dictionary]
 cover: body-of-water
-dateModified: 2020-11-02T19:28:05+02:00
+dateModified: 2020-11-02
 ---
 
 Groups the elements of a list based on the given function.

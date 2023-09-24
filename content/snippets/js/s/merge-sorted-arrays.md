@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: digital-nomad-6
-dateModified: 2020-12-27T22:55:37+02:00
+dateModified: 2020-12-27
 ---
 
 Merges two sorted arrays into one.

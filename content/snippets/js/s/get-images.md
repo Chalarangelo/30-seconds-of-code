@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: portal-timelapse
-dateModified: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22
 ---
 
 Fetches all images from within an element and puts them into an array.

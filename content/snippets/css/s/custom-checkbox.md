@@ -5,7 +5,7 @@ language: css
 tags: [visual,animation]
 author: chalarangelo
 cover: interior-8
-dateModified: 2021-10-11T18:44:51+03:00
+dateModified: 2021-10-11
 ---
 
 Creates a styled checkbox with animation on state change.

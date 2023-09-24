@@ -5,7 +5,7 @@ language: javascript
 tags: [browser,event]
 author: chalarangelo
 cover: fruit-feast
-dateModified: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22
 ---
 
 Adds an event listener to an element that will only run the callback the first time the event is triggered.

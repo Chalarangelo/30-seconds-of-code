@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [date]
 cover: interior-3
-dateModified: 2020-10-19T18:51:03+03:00
+dateModified: 2020-10-19
 ---
 
 Gets the day of the year (number in the range 1-366) from a `Date` object.

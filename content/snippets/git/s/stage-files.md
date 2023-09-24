@@ -4,7 +4,7 @@ type: snippet
 language: git
 tags: [commit]
 cover: round-leaves
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Adds files to the staging area.

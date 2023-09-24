@@ -5,7 +5,7 @@ language: javascript
 tags: [date]
 author: chalarangelo
 cover: icebreaker
-dateModified: 2020-11-29T12:16:43+02:00
+dateModified: 2020-11-29
 ---
 
 Checks if the given string is valid in the simplified extended ISO format (ISO 8601).

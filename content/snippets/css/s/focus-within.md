@@ -4,7 +4,7 @@ type: snippet
 language: css
 tags: [visual,interactivity]
 cover: boats
-dateModified: 2020-12-30T15:37:37+02:00
+dateModified: 2020-12-30
 ---
 
 Changes the appearance of a form if any of its children are focused.

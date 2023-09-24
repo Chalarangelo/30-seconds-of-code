@@ -5,7 +5,7 @@ language: python
 tags: [list]
 author: chalarangelo
 cover: pink-flower
-dateModified: 2020-11-02T19:27:53+02:00
+dateModified: 2020-11-02
 ---
 
 Returns a list with `n` elements removed from the left.

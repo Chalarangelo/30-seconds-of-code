@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: book-chair
-dateModified: 2020-10-22T20:24:04+03:00
+dateModified: 2020-10-22
 ---
 
 Mutates the original array to filter out the values specified, based on a given iterator function.

@@ -4,7 +4,7 @@ type: snippet
 language: git
 tags: [configuration]
 cover: purple-sunset-beach
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Configures the text editor used by git.

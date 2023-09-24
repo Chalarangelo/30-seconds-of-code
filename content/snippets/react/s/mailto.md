@@ -5,7 +5,7 @@ language: react
 tags: [components]
 author: chalarangelo
 cover: digital-nomad-4
-dateModified: 2020-11-16T15:17:26+02:00
+dateModified: 2020-11-16
 ---
 
 Renders a link formatted to send an email (`mailto:` link).

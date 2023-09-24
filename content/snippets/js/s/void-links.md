@@ -7,7 +7,7 @@ tags: [browser,accessibility]
 author: chalarangelo
 cover: white-flower
 excerpt: There are many ways to create empty links, some more appropriate than others. Learn how to best handle empty links with this quick tip.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 There are various ways to create an empty link, but some options are more appropriate than others. One of the most common debates about it is if one should use `href=""`, `href="#"` or `href="javascript:void(0)"`.

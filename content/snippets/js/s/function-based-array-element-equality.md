@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: orange-coffee-2
-dateModified: 2020-10-19T22:14:49+03:00
+dateModified: 2020-10-19
 ---
 
 Checks if all elements in an array are equal, based on the provided mapping function.

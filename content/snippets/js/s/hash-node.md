@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [node,promise]
 cover: padlocks
-dateModified: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13
 ---
 
 Creates a hash for a value using the [SHA-256](https://en.wikipedia.org/wiki/SHA-2) algorithm.

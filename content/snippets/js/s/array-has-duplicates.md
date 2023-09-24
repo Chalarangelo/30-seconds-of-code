@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: beach-pineapple
-dateModified: 2020-10-22T20:23:09+03:00
+dateModified: 2020-10-22
 ---
 
 Checks if there are duplicate values in a flat array.

@@ -7,7 +7,7 @@ tags: [object,function,class]
 author: chalarangelo
 cover: lake-runner
 excerpt: Static and instance methods are pretty easy to distinguish and serve different purposes. Learn all about them in this article.
-dateModified: 2022-01-30T05:00:00-04:00
+dateModified: 2022-01-30
 ---
 
 Static methods belong to a class and don’t act on its instances. This means that they can’t be called on instances of the class. Instead, they're called on the class itself. They are often utility functions, such as functions to create or clone objects.

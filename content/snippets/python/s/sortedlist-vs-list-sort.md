@@ -6,7 +6,7 @@ language: python
 tags: [list]
 cover: duck-plants
 excerpt: Learn the difference between Python's built-in list sorting methods and when one is preferred over the other.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 Python provides two ways to sort a list, the built-in list method `list.sort()` and the built-in function `sorted()`. Although both will sort the elements of a list, if used incorrectly they can produce unexpected or undesired results.

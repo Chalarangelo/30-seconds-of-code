@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [math,list]
 cover: digital-nomad-4
-dateModified: 2020-12-24T15:00:53+02:00
+dateModified: 2020-12-24
 ---
 
 Returns the weighted average of two or more numbers.

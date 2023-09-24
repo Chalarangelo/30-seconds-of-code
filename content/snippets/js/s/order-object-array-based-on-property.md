@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array,object]
 cover: san-francisco-skyline
-dateModified: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21
 ---
 
 Sorts an array of objects, ordered by a property, based on the array of orders provided.

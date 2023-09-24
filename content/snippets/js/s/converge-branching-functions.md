@@ -5,7 +5,7 @@ language: javascript
 tags: [function]
 excerpt: Converges a list of branching functions into a single function and returns the result.
 cover: golden-gate-bridge
-dateModified: 2021-01-08T00:23:44+02:00
+dateModified: 2021-01-08
 ---
 
 Accepts a converging function and a list of branching functions and returns a function that applies each branching function to the arguments and the results of the branching functions are passed as arguments to the converging function.

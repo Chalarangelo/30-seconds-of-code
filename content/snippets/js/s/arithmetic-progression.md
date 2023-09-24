@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math,algorithm]
 cover: u-got-this
-dateModified: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13
 ---
 
 Creates an array of numbers in the arithmetic progression, starting with the given positive integer and up to the specified limit.

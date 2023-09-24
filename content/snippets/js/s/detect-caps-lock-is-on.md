@@ -7,7 +7,7 @@ tags: [browser,event]
 author: chalarangelo
 cover: keyboard
 excerpt: If you need to check if Caps Lock is on when the user is typing in the browser, JavaScript's got you covered.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 Oftentimes, especially when creating password inputs, you need to check if the Caps Lock key is on and inform the user. You can do that using the [`KeyboardEvent.getModifierState()`](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/getModifierState) method with a value of `'CapsLock'`. This means that you have to listen for a keyboard event on an element in order to check the state of the Caps Lock key:

@@ -7,7 +7,7 @@ tags: [function]
 author: chalarangelo
 cover: arrow-functions
 excerpt: JavaScript arrow functions are a very useful tool to learn and master. Here's a complete introduction to everything you need to know.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 ### Syntax

@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [list,math]
 cover: nature-screen
-dateModified: 2020-11-02T19:27:53+02:00
+dateModified: 2020-11-02
 ---
 
 Finds the items that are parity outliers in a given list.

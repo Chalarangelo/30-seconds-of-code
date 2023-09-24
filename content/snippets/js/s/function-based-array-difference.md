@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: folded-map
-dateModified: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22
 ---
 
 Filters out all values from an array for which the comparator function does not return `true`.

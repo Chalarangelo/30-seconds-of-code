@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: rustic-cup
-dateModified: 2022-01-23T13:18:50+03:00
+dateModified: 2022-01-23
 ---
 
 Creates an array of elements, ungrouping the elements in an array produced by [zip](/js/s/zip) and applying the provided function.

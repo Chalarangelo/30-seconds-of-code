@@ -5,7 +5,7 @@ language: javascript
 tags: [object,array]
 author: chalarangelo
 cover: beach-overview
-dateModified: 2020-10-22T20:24:30+03:00
+dateModified: 2020-10-22
 ---
 
 Creates an array of key-value pair arrays from an object or other iterable.

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [object,array,recursion]
 cover: orange-coffee-2
-dateModified: 2020-11-27T13:57:41+02:00
+dateModified: 2020-11-27
 ---
 
 Deeply removes all falsy values from an object or array.

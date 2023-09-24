@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [date]
 cover: polar-bear
-dateModified: 2020-10-09T22:01:42+03:00
+dateModified: 2020-10-09
 ---
 
 Returns the string representation of the last date in the given date's month.

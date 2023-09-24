@@ -7,7 +7,7 @@ tags: [class]
 author: chalarangelo
 cover: purple-flower-macro-2
 excerpt: A queue is a linear data structure which follows a first in, first out (FIFO) order of operations.
-dateModified: 2021-07-29T05:00:00-04:00
+dateModified: 2021-07-29
 ---
 
 ### Definition

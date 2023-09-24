@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser,string,promise]
 cover: armchair-design
-dateModified: 2022-01-11T05:00:00-04:00
+dateModified: 2022-01-11
 ---
 
 Copies a string to the clipboard, returning a promise that resolves when the clipboard's contents have been updated.

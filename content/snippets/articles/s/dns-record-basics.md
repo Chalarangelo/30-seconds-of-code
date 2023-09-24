@@ -6,7 +6,7 @@ tags: [webdev,dns,server,cheatsheet]
 author: chalarangelo
 cover: sparkles
 excerpt: DNS records may not be something you work with frequently, but having a basic understanding can be highly beneficial.
-dateModified: 2022-01-09T05:00:00-04:00
+dateModified: 2022-01-09
 ---
 
 Most web developers go about their day-to-day without having to deal with DNS records most of the time. Regardless, knowing what DNS stands for and the types of DNS records are pretty useful.

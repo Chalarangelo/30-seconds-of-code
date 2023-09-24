@@ -5,7 +5,7 @@ language: react
 tags: [hooks,effect,state,memo]
 author: chalarangelo
 cover: interior-6
-dateModified: 2021-03-10T06:38:42+02:00
+dateModified: 2021-03-10
 ---
 
 Checks if the code is running on the browser or the server.

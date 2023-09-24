@@ -7,7 +7,7 @@ tags: [object,proxy]
 author: chalarangelo
 cover: green-cabin-cow
 excerpt: Using the Proxy object, we can create dynamic getters and setters for objects in JavaScript.
-dateModified: 2023-04-09T05:00:00-04:00
+dateModified: 2023-04-09
 ---
 
 Sometimes, when working with objects, the shape of the data is not always known. It might also be inefficient to add special getters for each property of an object, especially if the object is very large. Moreover, if keys are expected to follow a pattern, there are infinite potential key names, the value of which is impossible to validate via the use of setters.

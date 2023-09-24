@@ -5,7 +5,7 @@ language: javascript
 tags: [math,random]
 author: chalarangelo
 cover: malibu
-dateModified: 2021-01-20T16:20:08+02:00
+dateModified: 2021-01-20
 ---
 
 Generates a random boolean value.

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array,math]
 cover: paper-card
-dateModified: 2020-10-22T20:24:44+03:00
+dateModified: 2020-10-22
 ---
 
 Returns the unique symmetric difference between two arrays, not containing duplicate values from either array.

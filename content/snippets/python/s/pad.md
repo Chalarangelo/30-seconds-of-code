@@ -5,7 +5,7 @@ language: python
 tags: [string]
 author: chalarangelo
 cover: digital-nomad-11
-dateModified: 2020-10-04T01:53:05+03:00
+dateModified: 2020-10-04
 ---
 
 Pads a string on both sides with the specified character, if it's shorter than the specified length.

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [function]
 cover: flower-portrait-2
-dateModified: 2020-10-22T20:24:44+03:00
+dateModified: 2020-10-22
 ---
 
 Creates a function that accepts up to one argument, ignoring any additional arguments.

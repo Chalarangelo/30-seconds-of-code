@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: secret-tree
-dateModified: 2020-11-02T19:28:27+02:00
+dateModified: 2020-11-02
 ---
 
 Returns the most frequent element in a list.

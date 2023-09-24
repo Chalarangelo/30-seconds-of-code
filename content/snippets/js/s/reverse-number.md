@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math,string]
 cover: book-stopper
-dateModified: 2020-09-18T21:19:23+03:00
+dateModified: 2020-09-18
 ---
 
 Reverses a number.

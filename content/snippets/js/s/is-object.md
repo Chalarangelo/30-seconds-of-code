@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [type,object]
 cover: flower-portrait-9
-dateModified: 2021-01-08T00:23:44+02:00
+dateModified: 2021-01-08
 ---
 
 Checks if the passed value is an object or not.

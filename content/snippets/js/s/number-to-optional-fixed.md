@@ -5,7 +5,7 @@ language: javascript
 tags: [math,string]
 author: chalarangelo
 cover: white-chapel
-dateModified: 2022-05-10T05:00:00-04:00
+dateModified: 2022-05-10
 ---
 
 Formats a number using fixed-point notation, if it has decimals.

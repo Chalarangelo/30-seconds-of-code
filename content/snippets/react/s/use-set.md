@@ -5,7 +5,7 @@ language: react
 tags: [hooks,state]
 author: chalarangelo
 cover: engine
-dateModified: 2021-11-01T05:00:00-04:00
+dateModified: 2021-11-01
 ---
 
 Creates a stateful `Set` object, and a set of functions to manipulate it.

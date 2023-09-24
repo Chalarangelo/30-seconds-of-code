@@ -6,7 +6,7 @@ language: python
 tags: [function]
 cover: goat-wooden-cottage
 excerpt: Mutable default arguments can trip up Python beginners and veterans alike. Here's a quick workaround to deal with them.
-dateModified: 2022-02-27T05:00:00-04:00
+dateModified: 2022-02-27
 ---
 
 Default arguments in Python are evaluated only once. The evaluation happens when the function is defined, instead of every time the function is called. This can inadvertently create **hidden shared state**, if you use a mutable default argument and mutate it at some point. This means that the mutated argument is now the default for all future calls to the function as well.

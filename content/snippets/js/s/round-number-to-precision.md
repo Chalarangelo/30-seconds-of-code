@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math]
 cover: yellow-white-mug-1
-dateModified: 2020-10-22T20:24:30+03:00
+dateModified: 2020-10-22
 ---
 
 Rounds a number to a specified amount of digits.

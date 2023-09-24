@@ -7,7 +7,7 @@ tags: [type]
 author: chalarangelo
 cover: purple-leaves
 excerpt: JavaScript ES2020 introduced optional chaining and nullish coalescing. Learn everything you need to know with this quick guide.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 JavaScript ES2020 introduced some new features that help us write cleaner code. Let's take a quick look at two of them that aim to make working with objects and variables a lot easier.

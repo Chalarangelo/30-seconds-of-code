@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [math]
 cover: digital-nomad-5
-dateModified: 2020-11-02T19:27:07+02:00
+dateModified: 2020-11-02
 ---
 
 Calculates the number of ways to choose `k` items from `n` items without repetition and without order.

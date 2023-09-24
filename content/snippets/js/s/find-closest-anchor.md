@@ -5,7 +5,7 @@ language: javascript
 tags: [browser]
 author: chalarangelo
 cover: clouds-n-mountains
-dateModified: 2021-04-22T08:45:39+03:00
+dateModified: 2021-04-22
 ---
 
 Finds the anchor node closest to the given `node`, if any.

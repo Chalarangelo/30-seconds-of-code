@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math]
 cover: carrots
-dateModified: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21
 ---
 
 Maps a number from one range to another range.

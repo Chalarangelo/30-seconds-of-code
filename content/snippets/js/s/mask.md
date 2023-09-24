@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string]
 cover: rocky-beach-3
-dateModified: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21
 ---
 
 Replaces all but the last `num` of characters with the specified mask character.

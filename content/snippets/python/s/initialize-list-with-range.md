@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: succulent-3
-dateModified: 2020-11-02T19:28:05+02:00
+dateModified: 2020-11-02
 ---
 
 Initializes a list containing the numbers in the specified range where `start` and `end` are inclusive with their common difference `step`.

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [object,array]
 cover: volcano-sunset
-dateModified: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21
 ---
 
 Sorts an array of objects, ordered by properties and orders.

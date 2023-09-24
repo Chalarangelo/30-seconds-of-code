@@ -5,7 +5,7 @@ language: javascript
 tags: [string,regexp]
 author: chalarangelo
 cover: blue-bench
-dateModified: 2020-10-22T20:24:44+03:00
+dateModified: 2020-10-22
 ---
 
 Converts an `rgb()` color string to an object with the values of each color.

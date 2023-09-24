@@ -5,7 +5,7 @@ language: python
 tags: [math,list]
 author: chalarangelo
 cover: rock-climbing
-dateModified: 2020-11-02T19:28:27+02:00
+dateModified: 2020-11-02
 ---
 
 Returns the powerset of a given iterable.

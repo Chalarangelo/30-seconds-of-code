@@ -7,7 +7,7 @@ tags: [function,memoization]
 author: chalarangelo
 cover: cherry-trees
 excerpt: Learn different ways to memoize function calls in JavaScript as well as when to use memoization to get the best performance results.
-dateModified: 2021-11-07T16:34:37+03:00
+dateModified: 2021-11-07
 ---
 
 Memoization is a commonly used technique that can help speed up your code significantly. This technique relies on a **cache** to store results for previously completed units of work. The purpose of the cache is to **avoid performing the same work more than once**, speeding up subsequent calls of time-consuming functions. Based on this definition, we can easily extract some criteria that can help us decide when to use memoization in our code:

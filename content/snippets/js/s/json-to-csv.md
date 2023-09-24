@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array,string,object]
 cover: pink-flowers
-dateModified: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13
 ---
 
 Converts an array of objects to a comma-separated values (CSV) string that contains only the `columns` specified.

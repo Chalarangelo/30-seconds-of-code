@@ -5,7 +5,7 @@ language: css
 tags: [animation,visual]
 author: chalarangelo
 cover: coworking-space
-dateModified: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13
 ---
 
 Creates a progress bar indicating the scroll percentage of the page.

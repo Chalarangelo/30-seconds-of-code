@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [object]
 cover: leafy-screens
-dateModified: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21
 ---
 
 Creates an object composed of the properties the given function returns falsy for.

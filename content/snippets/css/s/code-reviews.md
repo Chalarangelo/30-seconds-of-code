@@ -7,7 +7,7 @@ tags: [webdev]
 author: chalarangelo
 cover: green-css
 excerpt: Reviewing CSS code is a skill that takes time to master. Here are some tips from my personal experience to help you get started.
-dateModified: 2023-05-21T05:00:00-04:00
+dateModified: 2023-05-21
 ---
 
 Reviewing CSS code is a bit different than reviewing JavaScript code. In fact, many developers pay little attention to CSS, which can lead to problems down the line. Yet, many developers don't know how to review CSS code properly. In this post, we'll go over some of the things you should look for when reviewing CSS code in Pull Requests.

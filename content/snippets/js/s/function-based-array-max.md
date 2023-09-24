@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math,array]
 cover: digital-nomad-4
-dateModified: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21
 ---
 
 Returns the maximum value of an array, after mapping each element to a value using the provided function.

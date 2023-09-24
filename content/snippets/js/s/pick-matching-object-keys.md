@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [object]
 cover: lake-bench
-dateModified: 2020-10-22T20:24:04+03:00
+dateModified: 2020-10-22
 ---
 
 Creates an object composed of the properties the given function returns truthy for.

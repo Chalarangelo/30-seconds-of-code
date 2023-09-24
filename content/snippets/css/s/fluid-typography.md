@@ -5,7 +5,7 @@ language: css
 tags: [visual]
 author: chalarangelo
 cover: shell-focus
-dateModified: 2021-05-16T11:23:05+03:00
+dateModified: 2021-05-16
 ---
 
 Creates text that scales according to the viewport width.

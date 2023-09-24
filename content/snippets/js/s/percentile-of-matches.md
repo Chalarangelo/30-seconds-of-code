@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math]
 cover: collab-desk-2
-dateModified: 2020-10-22T20:24:04+03:00
+dateModified: 2020-10-22
 ---
 
 Calculates the percentage of numbers in the given array that are less or equal to the given value.

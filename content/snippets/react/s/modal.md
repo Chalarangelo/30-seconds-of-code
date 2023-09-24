@@ -4,7 +4,7 @@ type: snippet
 language: react
 tags: [components,effect]
 cover: yellow-white-mug-2
-dateModified: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13
 ---
 
 Renders a Modal component, controllable through events.

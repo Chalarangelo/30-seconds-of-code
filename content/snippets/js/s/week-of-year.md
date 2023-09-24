@@ -5,7 +5,7 @@ language: javascript
 tags: [date]
 author: chalarangelo
 cover: godray-computer-mug
-dateModified: 2021-08-15T05:00:00-04:00
+dateModified: 2021-08-15
 ---
 
 Returns the zero-indexed week of the year that a date corresponds to.

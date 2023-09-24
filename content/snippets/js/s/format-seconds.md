@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [date,math,string]
 cover: two-lighthouses
-dateModified: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13
 ---
 
 Returns the ISO format of the given number of seconds.

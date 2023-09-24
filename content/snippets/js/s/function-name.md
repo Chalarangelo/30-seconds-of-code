@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [function]
 cover: flower-portrait-5
-dateModified: 2020-10-19T22:49:51+03:00
+dateModified: 2020-10-19
 ---
 
 Logs the name of a function.

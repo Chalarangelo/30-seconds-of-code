@@ -5,7 +5,7 @@ language: react
 tags: [hooks,effect,event]
 author: chalarangelo
 cover: digital-nomad-10
-dateModified: 2020-11-16T14:17:53+02:00
+dateModified: 2020-11-16
 ---
 
 Handles the event of clicking inside the wrapped component.

@@ -7,7 +7,7 @@ tags: [object,performance]
 author: chalarangelo
 cover: hiking-balance
 excerpt: Dynamically adding object properties can be pretty slow in some cases. Here's how to optimize it.
-dateModified: 2022-11-02T05:00:00-04:00
+dateModified: 2022-11-02
 ---
 
 JavaScript is one of the most flexible languages out there, but sometimes this comes with performance costs attached. One such example is the use of dynamically added properties to objects. Oddly enough, this performance impact comes from JavaScript engines optimizing for static typing.

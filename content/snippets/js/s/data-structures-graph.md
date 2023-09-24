@@ -7,7 +7,7 @@ tags: [class]
 author: chalarangelo
 cover: purple-flower-macro-1
 excerpt: A graph is a data structure consisting of a set of vertices connected by a set of edges.
-dateModified: 2021-08-17T05:00:00-04:00
+dateModified: 2021-08-17
 ---
 
 ### Definition

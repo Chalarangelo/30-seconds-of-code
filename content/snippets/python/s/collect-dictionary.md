@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [dictionary]
 cover: working-bee
-dateModified: 2020-11-02T19:27:07+02:00
+dateModified: 2020-11-02
 ---
 
 Inverts a dictionary with non-unique hashable values.

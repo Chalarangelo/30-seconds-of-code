@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math]
 cover: yellow-white-mug-2
-dateModified: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22
 ---
 
 Calculates the logarithm of the given number in the given base.

@@ -5,7 +5,7 @@ language: javascript
 tags: [array]
 author: chalarangelo
 cover: dark-leaves-2
-dateModified: 2020-11-03T21:46:13+02:00
+dateModified: 2020-11-03
 ---
 
 Chunks an array into `n` smaller arrays.

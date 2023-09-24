@@ -7,7 +7,7 @@ tags: [string]
 author: chalarangelo
 cover: cave-explorer
 excerpt: Let's have a look at how to check if a string contains a substring in JavaScript.
-dateModified: 2022-07-27T05:00:00-04:00
+dateModified: 2022-07-27
 ---
 
 ### String.prototype.includes()

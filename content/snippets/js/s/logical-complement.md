@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [function,logic]
 cover: flower-portrait-10
-dateModified: 2020-09-15T16:28:04+03:00
+dateModified: 2020-09-15
 ---
 
 Returns a function that is the logical complement of the given function, `fn`.

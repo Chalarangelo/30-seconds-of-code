@@ -5,7 +5,7 @@ language: react
 tags: [hooks,effect]
 author: chalarangelo
 cover: lemon-tea
-dateModified: 2021-11-23T05:00:00-04:00
+dateModified: 2021-11-23
 ---
 
 Watches for changes made to the DOM tree, using a `MutationObserver`

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [object]
 cover: dark-mode
-dateModified: 2020-11-03T22:11:18+02:00
+dateModified: 2020-11-03
 ---
 
 Generates an object from the given query string or URL.

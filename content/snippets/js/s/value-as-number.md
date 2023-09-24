@@ -7,7 +7,7 @@ tags: [browser,input]
 author: chalarangelo
 cover: mac-and-coffee
 excerpt: Ever wanted to get the value of an HTML input element as a number? Learn an easy way to do it with this handy trick.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 Most of the time, when accessing the value of an `HTMLInputElement` in an event listener, we use something along the lines of `e.target.value`. This is fine in most cases, but when we want the numeric value of an input field, we have to parse it and check if the value is actually valid etc. That can get very annoying, especially when working with larger forms that have many input fields.

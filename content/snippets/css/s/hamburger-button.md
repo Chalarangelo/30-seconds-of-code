@@ -4,7 +4,7 @@ type: snippet
 language: css
 tags: [interactivity]
 cover: volcano-sunset
-dateModified: 2020-12-30T15:37:37+02:00
+dateModified: 2020-12-30
 ---
 
 Displays a hamburger menu which transitions to a cross button on hover.

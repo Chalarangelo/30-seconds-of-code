@@ -5,7 +5,7 @@ language: react
 tags: [hooks,state,effect]
 author: chalarangelo
 cover: blue-bird
-dateModified: 2021-01-04T16:48:43+02:00
+dateModified: 2021-01-04
 ---
 
 Debounces the given value.

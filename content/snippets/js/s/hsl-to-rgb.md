@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math]
 cover: tranquility
-dateModified: 2020-10-04T11:24:27+03:00
+dateModified: 2020-10-04
 ---
 
 Converts a HSL color tuple to RGB format.

@@ -7,7 +7,7 @@ tags: [function]
 author: chalarangelo
 cover: fallen-leaves
 excerpt: JavaScript's arrow functions are seemingly the same as regular functions, but there are some important differences you need to know.
-dateModified: 2021-10-17T05:00:00-04:00
+dateModified: 2021-10-17
 ---
 
 JavaScript's arrow functions might seem the same as regular functions on the surface, but they have some very important differences:

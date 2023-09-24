@@ -5,7 +5,7 @@ language: git
 tags: [repository,branch]
 author: chalarangelo
 cover: sea-view
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Prints a list of all local branches sorted by date.

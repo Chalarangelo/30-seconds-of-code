@@ -4,7 +4,7 @@ type: snippet
 language: git
 tags: [configuration,repository]
 cover: pineapple-at-work
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Configures user information for git.

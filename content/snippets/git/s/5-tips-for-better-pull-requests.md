@@ -7,7 +7,7 @@ author: chalarangelo
 cover: keyboard-tea
 excerpt: Writing good code is only part of the job. Here are 5 tips to improve your pull requests and help people review them.
 unlisted: true
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 Writing good code is only part of the job. Here are 5 tips to improve your pull requests and help people review them:

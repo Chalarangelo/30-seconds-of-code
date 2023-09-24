@@ -5,7 +5,7 @@ language: javascript
 tags: [array,iterator,generator]
 author: chalarangelo
 cover: sail-away-2
-dateModified: 2022-03-09T05:00:00-04:00
+dateModified: 2022-03-09
 ---
 
 Creates a generator that iterates over an iterable, flattening nested iterables.

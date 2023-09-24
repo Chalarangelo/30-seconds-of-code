@@ -7,7 +7,7 @@ tags: [metadata,head]
 author: chalarangelo
 cover: boutique-home-office-3
 excerpt: Ensure your HTML documents have a proper favicon by including these lines in your `<head>` element.
-dateModified: 2023-01-24T05:00:00-04:00
+dateModified: 2023-01-24
 ---
 
 Over the years, I've seen many different and often conflicting guidelines about favicons and which tags are essential. Nowadays, I think you can get away with a very **minimal set of meta tags** and tailor them to your needs as you go. Here's my recommendation for the bare minimum you should include in your `<head>` element:

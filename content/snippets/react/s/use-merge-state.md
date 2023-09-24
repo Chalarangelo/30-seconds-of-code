@@ -5,7 +5,7 @@ language: react
 tags: [hooks,state]
 author: chalarangelo
 cover: digital-nomad-6
-dateModified: 2021-09-23T05:00:00-04:00
+dateModified: 2021-09-23
 ---
 
 Creates a stateful value, and a function to update it by merging the new state provided.

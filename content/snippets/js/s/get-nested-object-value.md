@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [object,regexp]
 cover: violin
-dateModified: 2020-10-19T22:49:51+03:00
+dateModified: 2020-10-19
 ---
 
 Retrieves a set of properties indicated by the given selectors from an object.

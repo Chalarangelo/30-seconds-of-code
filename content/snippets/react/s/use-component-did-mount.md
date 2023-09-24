@@ -5,7 +5,7 @@ language: react
 tags: [hooks,effect]
 author: chalarangelo
 cover: green-cabin-cow
-dateModified: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13
 ---
 
 Executes a callback immediately after a component is mounted.

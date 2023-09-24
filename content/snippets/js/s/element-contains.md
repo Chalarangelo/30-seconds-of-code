@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: red-petals
-dateModified: 2020-11-03T22:11:18+02:00
+dateModified: 2020-11-03
 ---
 
 Checks if the `parent` element contains the `child` element.

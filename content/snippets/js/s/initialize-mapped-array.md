@@ -5,7 +5,7 @@ language: javascript
 tags: [array]
 author: chalarangelo
 cover: yellow-shoes
-dateModified: 2023-06-13T05:00:00-04:00
+dateModified: 2023-06-13
 ---
 
 Initializes and fills an array with the specified values, using a mapping function.

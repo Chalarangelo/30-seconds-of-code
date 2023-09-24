@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string,browser,regexp]
 cover: coffee-phone-tray-2
-dateModified: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20
 ---
 
 Checks if the given string is an absolute URL.

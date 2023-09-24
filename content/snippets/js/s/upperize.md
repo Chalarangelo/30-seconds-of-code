@@ -5,7 +5,7 @@ language: javascript
 tags: [object]
 author: chalarangelo
 cover: sofia-tram
-dateModified: 2023-02-11T05:00:00-04:00
+dateModified: 2023-02-11
 ---
 
 Converts all the keys of an object to upper case.

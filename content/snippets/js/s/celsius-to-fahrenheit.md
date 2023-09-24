@@ -5,7 +5,7 @@ language: javascript
 tags: [math]
 unlisted: true
 cover: golden-gate-bridge
-dateModified: 2021-01-04T13:04:15+02:00
+dateModified: 2021-01-04
 ---
 
 Converts Celsius to Fahrenheit.

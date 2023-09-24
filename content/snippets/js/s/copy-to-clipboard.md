@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser,string,event]
 cover: overgrown
-dateModified: 2022-01-11T09:32:04+02:00
+dateModified: 2022-01-11
 ---
 
 Copies a string to the clipboard.

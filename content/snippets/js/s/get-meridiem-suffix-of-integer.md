@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [date]
 cover: dark-leaves-4
-dateModified: 2020-10-19T22:49:51+03:00
+dateModified: 2020-10-19
 ---
 
 Converts an integer to a suffixed string, adding `am` or `pm` based on its value.

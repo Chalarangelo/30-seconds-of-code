@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [object]
 cover: two-flower-vases
-dateModified: 2020-11-03T22:11:18+02:00
+dateModified: 2020-11-03
 ---
 
 Compares two objects to determine if the first one contains equivalent property values to the second one.

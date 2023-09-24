@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: misty-mountains
-dateModified: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22
 ---
 
 Finds the last element for which the provided function returns a truthy value.

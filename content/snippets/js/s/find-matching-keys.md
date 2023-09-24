@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [object]
 cover: beach-riders
-dateModified: 2020-11-15T14:43:44+02:00
+dateModified: 2020-11-15
 ---
 
 Finds all the keys in the provided object that match the given value.

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [function]
 cover: radio-monstera
-dateModified: 2020-10-18T20:24:28+03:00
+dateModified: 2020-10-18
 ---
 
 Creates a function that accepts up to `n` arguments, ignoring any additional arguments.

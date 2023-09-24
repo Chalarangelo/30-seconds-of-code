@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: purple-laptop
-dateModified: 2020-09-15T16:13:06+03:00
+dateModified: 2020-09-15
 ---
 
 Returns the head of a list.

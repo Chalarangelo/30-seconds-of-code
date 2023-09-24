@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string]
 cover: laptop-plants
-dateModified: 2020-09-15T16:28:04+03:00
+dateModified: 2020-09-15
 ---
 
 Extends a 3-digit color code to a 6-digit color code.

@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [math]
 cover: pineapple-on-green
-dateModified: 2020-09-15T16:13:06+03:00
+dateModified: 2020-09-15
 ---
 
 Checks if the given number falls within the given range.

@@ -5,7 +5,7 @@ language: javascript
 tags: [math]
 author: chalarangelo
 cover: flower-portrait-10
-dateModified: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20
 ---
 
 Checks if the given number is a power of `2`.

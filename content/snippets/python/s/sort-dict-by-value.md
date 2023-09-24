@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [dictionary]
 cover: jars-on-shelf
-dateModified: 2021-01-08T00:56:50+02:00
+dateModified: 2021-01-08
 ---
 
 Sorts the given dictionary by value.

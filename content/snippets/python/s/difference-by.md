@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [list,function]
 cover: coconuts
-dateModified: 2020-11-02T19:27:53+02:00
+dateModified: 2020-11-02
 ---
 
 Returns the difference between two lists, after applying the provided function to each list element of both.

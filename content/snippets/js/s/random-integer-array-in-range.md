@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math,random]
 cover: digital-nomad-11
-dateModified: 2020-10-22T20:24:04+03:00
+dateModified: 2020-10-22
 ---
 
 Generates an array of `n` random integers in the specified range.

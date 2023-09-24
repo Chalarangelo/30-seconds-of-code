@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [type]
 cover: tomatoes
-dateModified: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22
 ---
 
 Clones a regular expression.

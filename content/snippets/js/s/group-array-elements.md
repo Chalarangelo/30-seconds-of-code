@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: new-york-skyline
-dateModified: 2020-10-22T20:24:44+03:00
+dateModified: 2020-10-22
 ---
 
 Creates an array of elements, grouped based on their position in the original arrays.

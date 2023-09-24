@@ -5,7 +5,7 @@ language: css
 tags: [animation]
 author: chalarangelo
 cover: clouds-n-mountains
-dateModified: 2022-12-14T05:00:00-04:00
+dateModified: 2022-12-14
 ---
 
 Creates a card that shifts on hover.

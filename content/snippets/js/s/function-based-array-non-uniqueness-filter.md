@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: digital-nomad-16
-dateModified: 2020-11-02T19:40:27+02:00
+dateModified: 2020-11-02
 ---
 
 Creates an array with the non-unique values filtered out, based on a provided comparator function.

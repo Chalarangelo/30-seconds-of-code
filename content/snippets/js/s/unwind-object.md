@@ -5,7 +5,7 @@ language: javascript
 tags: [object]
 author: chalarangelo
 cover: orange-coffee
-dateModified: 2022-04-18T05:00:00-04:00
+dateModified: 2022-04-18
 ---
 
 Produces an array of objects from an object and one of its array-valued properties.

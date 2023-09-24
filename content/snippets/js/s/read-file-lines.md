@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [node]
 cover: solitude-beach
-dateModified: 2020-10-22T20:24:04+03:00
+dateModified: 2020-10-22
 ---
 
 Returns an array of lines from the specified file.

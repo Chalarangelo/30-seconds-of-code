@@ -5,7 +5,7 @@ language: git
 tags: [repository,branch]
 author: chalarangelo
 cover: taking-photos
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Prints a summary of changes between two given commits.

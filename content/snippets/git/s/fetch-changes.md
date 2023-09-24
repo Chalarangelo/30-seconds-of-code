@@ -4,7 +4,7 @@ type: snippet
 language: git
 tags: [repository]
 cover: playing-fetch
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Fetches the latest changes from the remote.

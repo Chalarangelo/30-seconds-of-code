@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: flower-portrait-1
-dateModified: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22
 ---
 
 Checks if the element specified is visible in the viewport.

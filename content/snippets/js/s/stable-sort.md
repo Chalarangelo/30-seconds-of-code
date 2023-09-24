@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: horse-sunset
-dateModified: 2020-10-22T20:24:30+03:00
+dateModified: 2020-10-22
 ---
 
 Performs stable sorting of an array, preserving the initial indexes of items when their values are the same.

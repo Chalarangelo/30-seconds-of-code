@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string]
 cover: digital-nomad-3
-dateModified: 2020-11-01T20:50:57+02:00
+dateModified: 2020-11-01
 ---
 
 Capitalizes the first letter of a string.

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [date]
 cover: laptop-journey
-dateModified: 2021-04-24T12:39:48+03:00
+dateModified: 2021-04-24
 ---
 
 Calculates the difference (in seconds) between two dates.

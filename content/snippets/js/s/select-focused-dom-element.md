@@ -7,7 +7,7 @@ tags: [browser]
 author: chalarangelo
 cover: horse-sunset
 excerpt: Here's a quick and easy way to select the currently focused DOM element in JavaScript.
-dateModified: 2022-10-23T05:00:00-04:00
+dateModified: 2022-10-23
 ---
 
 Finding the currently focused DOM element is trivial in modern CSS, using the `:focus` selector. You can also use it in JavaScript, in combination with `Document.querySelector()` to find the focused element. Yet, there's an even easier way to get the currently focused element in JavaScript, using the `Document.activeElement` property.

@@ -7,7 +7,7 @@ tags: [repository,branch]
 author: chalarangelo
 cover: orange-coffee-2
 excerpt: Learn how to push and pull changes between local and remote repositories.
-dateModified: 2023-06-01T21:10:59+03:00
+dateModified: 2023-06-01
 ---
 
 One of the main benefits of using Git is the ability to collaborate with others on the same project. This is done by setting up a remote repository that can be accessed by all collaborators. But, in order to collaborate, you'll have to synchronize your local repository with the remote one. This is where the push and pull operations come in.

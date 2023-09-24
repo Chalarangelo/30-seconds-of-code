@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [math]
 cover: watermelon-bike
-dateModified: 2020-11-02T19:28:27+02:00
+dateModified: 2020-11-02
 ---
 
 Converts an angle from radians to degrees.

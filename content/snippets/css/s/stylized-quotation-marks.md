@@ -5,7 +5,7 @@ language: css
 tags: [visual]
 author: chalarangelo
 cover: coffee-phone-tray
-dateModified: 2021-05-16T19:53:02+03:00
+dateModified: 2021-05-16
 ---
 
 Customizes the style of inline quotation marks.

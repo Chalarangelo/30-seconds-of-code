@@ -5,7 +5,7 @@ language: javascript
 tags: [array,object]
 author: chalarangelo
 cover: guitar-living-room
-dateModified: 2021-06-20T05:00:00-04:00
+dateModified: 2021-06-20
 ---
 
 Creates an object from an array, using a function to map each value to a key.

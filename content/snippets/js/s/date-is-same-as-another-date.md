@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [date]
 cover: boulder-beach
-dateModified: 2020-11-03T22:11:18+02:00
+dateModified: 2020-11-03
 ---
 
 Checks if a date is the same as another date.

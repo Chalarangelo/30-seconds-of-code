@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math,string]
 cover: planning
-dateModified: 2020-10-22T20:24:30+03:00
+dateModified: 2020-10-22
 ---
 
 Takes a number and returns it in the specified currency formatting.

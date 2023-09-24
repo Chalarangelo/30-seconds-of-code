@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [list,random]
 cover: tent-stars
-dateModified: 2020-11-02T19:28:35+02:00
+dateModified: 2020-11-02
 ---
 
 Randomizes the order of the values of an list, returning a new list.

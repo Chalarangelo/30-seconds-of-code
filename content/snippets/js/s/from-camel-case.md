@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string]
 cover: mountain-lake-cottage
-dateModified: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22
 ---
 
 Converts a string from camelcase.

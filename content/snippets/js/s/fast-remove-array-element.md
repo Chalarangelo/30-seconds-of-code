@@ -7,7 +7,7 @@ tags: [array]
 author: chalarangelo
 cover: purple-flower-bunch
 excerpt: Are you performing a lot of array operations? Maybe element removal is a performance bottleneck you can avoid.
-dateModified: 2022-03-20T05:00:00-04:00
+dateModified: 2022-03-20
 ---
 
 `Array.prototype.splice()` is the most commonly-used way to remove elements from an array. Turns out that it’s not the fastest, though. This can be an especially important factor contributing to your code’s performance, if you are performing many operations with large arrays.

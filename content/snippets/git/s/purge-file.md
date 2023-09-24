@@ -5,7 +5,7 @@ language: git
 tags: [repository,remote]
 author: chalarangelo
 cover: white-flower
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Completely purges a file from history.

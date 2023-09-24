@@ -7,7 +7,7 @@ tags: [layout,selector]
 author: chalarangelo
 cover: tree-roots
 excerpt: The CSS selectors used to target the root element of an HTML share some similarities, but they also have some differences.
-dateModified: 2022-05-22T05:00:00-04:00
+dateModified: 2022-05-22
 ---
 
 CSS has two ways to target the root element of an HTML document - the `:root` pseudo-class and the `html` selector. While these are very similar to each other, they have a couple of differences you should know.

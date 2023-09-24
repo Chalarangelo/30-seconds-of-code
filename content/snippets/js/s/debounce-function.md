@@ -5,7 +5,7 @@ language: javascript
 tags: [function]
 cover: solitude-beach
 excerpt: Creates a debounced function that waits `ms` milliseconds before invoking the provided function again.
-dateModified: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13
 ---
 
 Creates a debounced function that delays invoking the provided function until at least `ms` milliseconds have elapsed since its last invocation.

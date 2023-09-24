@@ -7,7 +7,7 @@ tags: [type]
 author: chalarangelo
 cover: memories-of-pineapple-2
 excerpt: You've probably come across the double negation operator (`!!`) before, but do you know what it does?
-dateModified: 2022-07-26T05:00:00-04:00
+dateModified: 2022-07-26
 ---
 
 JavaScript's negation operator (`!`) is a unary operator, used to invert the truth value of its operand. When used twice, known as the double negation operator (`!!`), it can be used to convert a value to a boolean.

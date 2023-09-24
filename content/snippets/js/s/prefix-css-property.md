@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: cancel-typographer
-dateModified: 2020-10-22T20:24:04+03:00
+dateModified: 2020-10-22
 ---
 
 Prefixes a CSS property based on the current browser.

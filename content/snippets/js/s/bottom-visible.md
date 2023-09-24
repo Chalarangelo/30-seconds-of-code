@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: hiking-walking
-dateModified: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22
 ---
 
 Checks if the bottom of the page is visible.

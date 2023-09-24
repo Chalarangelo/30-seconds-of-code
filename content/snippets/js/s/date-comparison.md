@@ -7,7 +7,7 @@ tags: [date,comparison]
 author: chalarangelo
 cover: pineapple-at-work
 excerpt: Learn how you can compare two dates in JavaScript using various different techniques.
-dateModified: 2022-01-16T05:00:00-04:00
+dateModified: 2022-01-16
 ---
 
 ### Equality comparison

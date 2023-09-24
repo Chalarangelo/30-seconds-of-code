@@ -7,7 +7,7 @@ tags: [object]
 author: chalarangelo
 cover: tent-stars
 excerpt: Maps and objects are very similar, but they have some differences that can help you decide which one better fits your use-case.
-dateModified: 2022-02-13T05:00:00-04:00
+dateModified: 2022-02-13
 ---
 
 Most JavaScript developers are familiar with objects and probably use them every day. Maps, on the other hand, are not as common but are still very useful. While very similar to objects on the surface, they have some very important differences. Let's take a look at them.

@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [function]
 cover: lavender-shelf
-dateModified: 2020-11-02T19:27:07+02:00
+dateModified: 2020-11-02
 ---
 
 Performs left-to-right function composition.

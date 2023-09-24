@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [date]
 cover: dreamy-flowers
-dateModified: 2020-11-28T19:27:46+02:00
+dateModified: 2020-11-28
 ---
 
 Calculates the date of `n` minutes from the given date, returning its string representation.

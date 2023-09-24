@@ -6,7 +6,7 @@ tags: [configuration,cheatsheet]
 author: chalarangelo
 cover: compass-1
 excerpt: Increase your productivity by creating aliases for many common git operations.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 ### Creating aliases

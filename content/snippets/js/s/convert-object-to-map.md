@@ -6,7 +6,7 @@ language: javascript
 tags: [object]
 author: chalarangelo
 cover: yellow-shoes
-dateModified: 2022-06-16T05:00:00-04:00
+dateModified: 2022-06-16
 ---
 
 Converts an object to a `Map`.

@@ -7,7 +7,7 @@ tags: [browser]
 author: chalarangelo
 cover: dark-city
 excerpt: While these two properties are very similar, there are some key differences that you should be aware of.
-dateModified: 2023-03-19T05:00:00-04:00
+dateModified: 2023-03-19
 ---
 
 JavaScript provides two properties you can use to **access the text content of an element**: `Node.textContent` and `HTMLElement.innerText`. For the most part, these two appear to be interchangeable. In fact, many developers use them interchangeably, not knowing that there are important differences between the two.

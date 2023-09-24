@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [math]
 cover: river-flow
-dateModified: 2020-11-02T19:28:35+02:00
+dateModified: 2020-11-02
 ---
 
 Returns the sum of the powers of all the numbers from `start` to `end` (both inclusive).

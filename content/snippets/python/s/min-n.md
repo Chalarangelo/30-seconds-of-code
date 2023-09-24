@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [list,math]
 cover: balloons
-dateModified: 2020-11-02T19:28:27+02:00
+dateModified: 2020-11-02
 ---
 
 Returns the `n` minimum elements from the provided list.

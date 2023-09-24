@@ -7,7 +7,7 @@ tags: [string,regexp]
 author: chalarangelo
 cover: blank-card
 excerpt: Email address validation can be much trickier than it sounds. Here's why and my advice on how to approach this problem.
-dateModified: 2022-10-05T05:00:00-04:00
+dateModified: 2022-10-05
 ---
 
 One of the most frequent code snippet requests I get is about a function that can validate email addresses. While it sounds easy, I’ve been putting off writing about this topic for a while. The reason is that there are **no great solutions to this sort of problem**.

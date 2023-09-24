@@ -6,7 +6,7 @@ tags: [function,promise]
 author: chalarangelo
 cover: green-plant
 excerpt: Learn everything you need to know about promises and asynchronous JavaScript with this handy cheatsheet.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 ### Promise basics

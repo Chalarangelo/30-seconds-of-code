@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [date,math,string]
 cover: clock
-dateModified: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22
 ---
 
 Returns the human-readable format of the given number of milliseconds.

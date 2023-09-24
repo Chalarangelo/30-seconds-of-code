@@ -5,7 +5,7 @@ language: javascript
 tags: [function]
 author: chalarangelo
 cover: cows
-dateModified: 2022-04-04T05:00:00-04:00
+dateModified: 2022-04-04
 ---
 
 Calls the argument if it's a function, otherwise returns it.

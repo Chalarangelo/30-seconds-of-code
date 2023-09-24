@@ -4,7 +4,7 @@ type: snippet
 language: git
 tags: [commit]
 cover: cancel-typographer
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Removes a file from the last commit without changing its message.

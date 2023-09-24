@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [type]
 cover: pink-flowers
-dateModified: 2020-10-19T22:49:51+03:00
+dateModified: 2020-10-19
 ---
 
 Returns the native type of a value.

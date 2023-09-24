@@ -5,7 +5,7 @@ language: javascript
 tags: [function,generator]
 author: chalarangelo
 cover: secret-tree
-dateModified: 2020-10-11T17:05:38+03:00
+dateModified: 2020-10-11
 ---
 
 Creates a generator, looping over the given array indefinitely.

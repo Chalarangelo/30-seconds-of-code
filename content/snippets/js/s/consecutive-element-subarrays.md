@@ -5,7 +5,7 @@ language: javascript
 tags: [array]
 author: chalarangelo
 cover: camera-zoom
-dateModified: 2020-10-18T20:24:28+03:00
+dateModified: 2020-10-18
 ---
 
 Creates an array of `n`-tuples of consecutive elements.

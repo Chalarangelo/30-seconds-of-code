@@ -5,7 +5,7 @@ language: css
 tags: [visual,animation]
 author: chalarangelo
 cover: messy-computer
-dateModified: 2022-11-16T05:00:00-04:00
+dateModified: 2022-11-16
 ---
 
 Creates a styled radio button with animation on state change.

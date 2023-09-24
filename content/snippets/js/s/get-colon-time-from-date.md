@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [date,string]
 cover: digital-nomad-5
-dateModified: 2020-10-19T22:49:51+03:00
+dateModified: 2020-10-19
 ---
 
 Returns a string of the form `HH:MM:SS` from a `Date` object.

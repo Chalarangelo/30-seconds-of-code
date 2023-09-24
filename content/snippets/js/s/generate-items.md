@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array,function]
 cover: generator
-dateModified: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22
 ---
 
 Generates an array with the given amount of items, using the given function.

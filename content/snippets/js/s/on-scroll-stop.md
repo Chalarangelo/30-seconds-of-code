@@ -5,7 +5,7 @@ language: javascript
 tags: [browser,event]
 author: chalarangelo
 cover: half-trees
-dateModified: 2021-01-07T00:31:14+02:00
+dateModified: 2021-01-07
 ---
 
 Runs the callback whenever the user has stopped scrolling.

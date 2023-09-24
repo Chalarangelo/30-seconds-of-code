@@ -7,7 +7,7 @@ tags: [object]
 author: chalarangelo
 cover: frozen-globe
 excerpt: Both `Object.freeze()` and `Object.seal()` serve a similar purpose, but there's one key difference you need to remember.
-dateModified: 2022-02-06T05:00:00-04:00
+dateModified: 2022-02-06
 ---
 
 Both `Object.freeze()` and `Object.seal()` serve as ways to prevent a JavaScript object from being altered. Although similar, they have a key difference that you need to remember.

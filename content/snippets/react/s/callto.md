@@ -6,7 +6,7 @@ tags: [components]
 author: chalarangelo
 unlisted: true
 cover: rabbit-call
-dateModified: 2021-01-04T12:32:47+02:00
+dateModified: 2021-01-04
 ---
 
 Renders a link formatted to call a phone number (`tel:` link).

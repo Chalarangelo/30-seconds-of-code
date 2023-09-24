@@ -4,7 +4,7 @@ type: snippet
 language: react
 tags: [components,input,state]
 cover: interior-4
-dateModified: 2020-11-25T21:12:16+02:00
+dateModified: 2020-11-25
 ---
 
 Renders a tag input field.

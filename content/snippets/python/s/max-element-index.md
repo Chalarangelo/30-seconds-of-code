@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [math,list]
 cover: dark-cloud
-dateModified: 2020-11-02T19:28:27+02:00
+dateModified: 2020-11-02
 ---
 
 Returns the index of the element with the maximum value in a list.

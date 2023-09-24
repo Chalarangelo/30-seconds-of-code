@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [date]
 cover: interior
-dateModified: 2020-11-01T20:50:57+02:00
+dateModified: 2020-11-01
 ---
 
 Gets the name of the weekday from a `Date` object.

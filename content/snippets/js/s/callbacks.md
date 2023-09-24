@@ -7,7 +7,7 @@ tags: [function]
 author: chalarangelo
 cover: rabbit-call
 excerpt: JavaScript uses callback functions quite a lot. From event listeners to asynchronous code, they're an invaluable tool you need to master.
-dateModified: 2021-10-03T05:00:00-04:00
+dateModified: 2021-10-03
 ---
 
 A callback function is a function passed as an argument to another function, which is then invoked inside the outer function. Callback functions are often executed once an event has occurred or a task has completed.

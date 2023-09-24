@@ -7,7 +7,7 @@ tags: [function,object]
 author: chalarangelo
 cover: palm-tree-house
 excerpt: JavaScript's strict mode can make your code faster, cleaner and more secure.
-dateModified: 2021-11-28T05:00:00-04:00
+dateModified: 2021-11-28
 ---
 
 Strict mode can be applied to entire scripts or individual functions by including `'use strict'` before any other statements.

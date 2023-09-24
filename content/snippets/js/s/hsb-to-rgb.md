@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math]
 cover: walking-on-top
-dateModified: 2020-09-18T14:25:07+03:00
+dateModified: 2020-09-18
 ---
 
 Converts a HSB color tuple to RGB format.

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [function,promise]
 cover: sleepy-cat
-dateModified: 2020-10-22T20:24:30+03:00
+dateModified: 2020-10-22
 ---
 
 Delays the execution of an asynchronous function.

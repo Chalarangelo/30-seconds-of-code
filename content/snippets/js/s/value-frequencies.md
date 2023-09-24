@@ -5,7 +5,7 @@ language: javascript
 tags: [array,object]
 author: chalarangelo
 cover: tropical-waterfall
-dateModified: 2020-10-19T22:49:51+03:00
+dateModified: 2020-10-19
 ---
 
 Creates an object with the unique values of an array as keys and their frequencies as the values.

@@ -4,7 +4,7 @@ type: snippet
 language: css
 tags: [layout,visual]
 cover: succulent-2
-dateModified: 2021-10-11T18:44:51+03:00
+dateModified: 2021-10-11
 ---
 
 Hides an element completely (visually and positionally) in the DOM while still allowing it to be accessible.

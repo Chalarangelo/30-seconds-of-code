@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser,event]
 cover: invention-shack
-dateModified: 2020-10-22T20:24:04+03:00
+dateModified: 2020-10-22
 ---
 
 Creates a new `MutationObserver` and runs the provided callback for each mutation on the specified element.

@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: lake-bench
-dateModified: 2020-11-02T19:28:35+02:00
+dateModified: 2020-11-02
 ---
 
 Transposes a two-dimensional list.

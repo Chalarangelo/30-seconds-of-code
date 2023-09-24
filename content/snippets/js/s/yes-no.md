@@ -5,7 +5,7 @@ language: javascript
 tags: [string,regexp]
 unlisted: true
 cover: fort-lamp
-dateModified: 2021-01-04T13:04:15+02:00
+dateModified: 2021-01-04
 ---
 
 Returns `true` if the string is `'y'`/`'yes'` or `false` if the string is `'n'`/`'no'`.

@@ -7,7 +7,7 @@ tags: [object,proxy]
 author: chalarangelo
 cover: colorful-rocks
 excerpt: Using the Proxy object, we can create chainable dynamic getters for objects in JavaScript.
-dateModified: 2023-05-28T05:00:00-04:00
+dateModified: 2023-05-28
 ---
 
 The dawn of ES6 brought about jQuery's fall from grace, as a lot of the conveniences it afforded developers were now available in the language itself. However, jQuery's API design was convenient in many ways that native JavaScript often isn't. One of the most practical things jQuery offered was its ability to chain methods together, minimizing duplication and making code more readable.

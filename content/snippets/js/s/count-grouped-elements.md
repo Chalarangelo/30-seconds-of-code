@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array,object]
 cover: tools
-dateModified: 2020-11-03T22:11:18+02:00
+dateModified: 2020-11-03
 ---
 
 Groups the elements of an array based on the given function and returns the count of elements in each group.

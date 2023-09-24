@@ -6,7 +6,7 @@ tags: [visual]
 author: chalarangelo
 cover: cozy-desk-setup
 excerpt: A short opinionated print stylesheet to make your websites look great on paper.
-dateModified: 2023-06-11T05:00:00-04:00
+dateModified: 2023-06-11
 ---
 
 While it's not that often we physically print content from the web, **print stylesheets shouldn't be overlooked**. They can be used to make sure that the content of your website is presented in a legible and print-friendly manner. Here's a simple, opinionated print stylesheet that you can use as a base for your own:

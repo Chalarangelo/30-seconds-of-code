@@ -5,7 +5,7 @@ language: javascript
 tags: [browser]
 cover: violin
 author: chalarangelo
-dateModified: 2022-07-16T05:00:00-04:00
+dateModified: 2022-07-16
 ---
 
 Calculates the width of the window's vertical scrollbar.

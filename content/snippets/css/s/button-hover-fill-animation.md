@@ -4,7 +4,7 @@ type: snippet
 language: css
 tags: [animation]
 cover: beach-pineapple
-dateModified: 2021-04-02T21:34:43+03:00
+dateModified: 2021-04-02
 ---
 
 Creates a fill animation on hover.

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: interior-6
-dateModified: 2020-10-19T22:49:51+03:00
+dateModified: 2020-10-19
 ---
 
 Executes a provided function once for each array element, starting from the array's last element.

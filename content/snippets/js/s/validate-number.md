@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math]
 cover: flower-portrait-9
-dateModified: 2020-10-22T20:23:26+03:00
+dateModified: 2020-10-22
 ---
 
 Checks if the given value is a number.

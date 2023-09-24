@@ -4,7 +4,7 @@ type: snippet
 language: git
 tags: [configuration]
 cover: coffee-float
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Prints a list of all git aliases.

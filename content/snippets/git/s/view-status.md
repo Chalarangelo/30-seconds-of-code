@@ -5,7 +5,7 @@ language: git
 tags: [branch]
 author: chalarangelo
 cover: periscope
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Prints the current status of the working tree.

@@ -5,7 +5,7 @@ language: javascript
 tags: [browser]
 author: chalarangelo
 cover: leafy-screens
-dateModified: 2021-04-22T08:27:41+03:00
+dateModified: 2021-04-22
 ---
 
 Checks if two URLs are on the same origin.

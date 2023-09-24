@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [string,math]
 cover: umbrellas
-dateModified: 2020-11-02T19:28:27+02:00
+dateModified: 2020-11-02
 ---
 
 Pads a given number to the specified length.

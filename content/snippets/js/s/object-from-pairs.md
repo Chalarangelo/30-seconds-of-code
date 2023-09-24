@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [object,array]
 cover: silver-flat-screen
-dateModified: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21
 ---
 
 Creates an object from the given key-value pairs.

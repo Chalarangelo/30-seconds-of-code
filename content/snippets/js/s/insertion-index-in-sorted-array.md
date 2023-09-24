@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array,math]
 cover: apples
-dateModified: 2020-10-22T20:24:30+03:00
+dateModified: 2020-10-22
 ---
 
 Finds the lowest index at which a value should be inserted into an array in order to maintain its sorting order.

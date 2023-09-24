@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array,object]
 cover: snowy-mountains
-dateModified: 2020-10-22T20:24:44+03:00
+dateModified: 2020-10-22
 ---
 
 Associates properties to values, given array of valid property identifiers and an array of values.

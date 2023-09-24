@@ -5,7 +5,7 @@ language: css
 tags: [animation]
 unlisted: true
 cover: dark-cloud
-dateModified: 2021-01-04T12:30:40+02:00
+dateModified: 2021-01-04
 ---
 
 Creates a shadow box around the text when it is hovered.

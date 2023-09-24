@@ -5,7 +5,7 @@ tags: [webdev,career,programming,jobs]
 author: chalarangelo
 cover: campfire
 excerpt: Many beginners get stuck in tutorial hell without even realizing. Here are 4 simple ways to escape tutorial hell and get back to learning.
-dateModified: 2022-05-26T05:00:00-04:00
+dateModified: 2022-05-26
 ---
 
 Tutorial hell refers to the stage in your learning journey, where you are following along with tutorials, not truly learning that much. Tutorials are by nature a curated experience. While that's not definitively bad, it's **not always the best way** to explore the landscape and familiarize with concepts and tools. Neither is it the best way to learn how to think for yourself. So how can you escape it?

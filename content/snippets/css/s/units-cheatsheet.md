@@ -6,7 +6,7 @@ tags: [layout,cheatsheet]
 author: chalarangelo
 cover: measuring
 excerpt: Learn everything you need to know about CSS units with this handy cheatsheet.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 - `px`: Absolute pixel value

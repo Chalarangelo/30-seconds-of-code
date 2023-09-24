@@ -7,7 +7,7 @@ tags: [hooks,effect,object,comparison]
 author: chalarangelo
 cover: automaton
 excerpt: Avoid unnecessary re-runs by using primitive dependencies in your React effect.
-dateModified: 2022-06-12T05:00:00-04:00
+dateModified: 2022-06-12
 ---
 
 Conditionally firing an effect is a pretty common requirement when working with React. In most cases, this is as simple as passing a dependency array to `useEffect()`. Turns out that, in some cases, this can cause unnecessary performance degradation.

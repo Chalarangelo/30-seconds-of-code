@@ -7,7 +7,7 @@ tags: [math]
 author: chalarangelo
 cover: waves-from-above
 excerpt: Ever needed to convert a decimal number to hexadecimal? Here's a quick and easy way to do it.
-dateModified: 2022-09-21T05:00:00-04:00
+dateModified: 2022-09-21
 ---
 
 Numeric values are represented in decimal format by default, when converted to strings. If you want to display them in hexadecimal format, you can use `Number.prototype.toString()` and pass the base you want to use (`16`) as an argument.

@@ -5,7 +5,7 @@ language: git
 tags: [repository,stash]
 author: chalarangelo
 cover: obelisk
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Applies a specific stash.

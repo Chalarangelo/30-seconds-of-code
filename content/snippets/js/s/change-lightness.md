@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string,browser,regexp]
 cover: aerial-view-port
-dateModified: 2020-10-31T16:37:54+02:00
+dateModified: 2020-10-31
 ---
 
 Changes the lightness value of an `hsl()` color string.

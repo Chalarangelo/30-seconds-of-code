@@ -5,7 +5,7 @@ language: css
 tags: [visual]
 unlisted: true
 cover: shapes
-dateModified: 2021-01-04T12:30:40+02:00
+dateModified: 2021-01-04
 ---
 
 Uses an SVG shape to create a separator between two different blocks.

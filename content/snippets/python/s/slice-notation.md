@@ -6,7 +6,7 @@ language: python
 tags: [list]
 cover: sliced-fruits
 excerpt: Learn everything you need to know about Python's slice notation with this handy guide.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 #### Python slice notation

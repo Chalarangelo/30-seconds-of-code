@@ -5,7 +5,7 @@ language: python
 tags: [math]
 unlisted: true
 cover: alfama
-dateModified: 2021-01-04T12:47:04+02:00
+dateModified: 2021-01-04
 ---
 
 Converts kilometers to miles.

@@ -7,7 +7,7 @@ tags: [repository,branch]
 author: chalarangelo
 cover: meteora
 excerpt: Learn how to merge a branch in Git with or without creating a merge commit, depending on your team's workflow.
-dateModified: 2023-05-26T21:10:59+03:00
+dateModified: 2023-05-26
 ---
 
 Branches are Git's way to organize separate lines of development, allowing a team to work multiple features in parallel. But at some point, you'll want to **merge a branch into another branch**, usually `master` or `main`. Depending on your team's workflow, merging a branch might create a merge commit or not.

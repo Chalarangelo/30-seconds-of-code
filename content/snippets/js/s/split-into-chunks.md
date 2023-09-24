@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: filter-coffee-pot
-dateModified: 2020-11-03T21:35:12+02:00
+dateModified: 2020-11-03
 ---
 
 Chunks an array into smaller arrays of a specified size.

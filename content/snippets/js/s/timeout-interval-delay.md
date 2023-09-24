@@ -7,7 +7,7 @@ tags: [browser,timeout]
 author: chalarangelo
 cover: river-house-lights
 excerpt: Did you know that the delay of `setTimeout()` and `setInterval()` is merely a suggestion?
-dateModified: 2022-10-26T05:00:00-04:00
+dateModified: 2022-10-26
 ---
 
 JavaScript provides two widely used timing functions, `setTimeout()` and `setInterval()`. Both of these functions execute a specified function after a given amount of time either once or repeatedly. While this is straightforward, many people don't realize that **the delay is merely a suggestion** and can be altered by a number of factors.

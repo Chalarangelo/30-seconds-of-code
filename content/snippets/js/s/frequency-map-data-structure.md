@@ -7,7 +7,7 @@ tags: [class]
 author: chalarangelo
 cover: radio-monstera
 excerpt: A custom data structure to keep track of value frequencies in an array.
-dateModified: 2022-11-13T05:00:00-04:00
+dateModified: 2022-11-13
 ---
 
 Counting the frequency of unique values in an array is reasonably easy, as demonstrated in the [frequencies snippet](/js/s/frequencies). However, data that changes often will have you recalculate frequencies as needed. This can become tedious and inefficient, especially if you only need to keep track of the frequencies and have no need for the original array.

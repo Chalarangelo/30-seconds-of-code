@@ -7,7 +7,7 @@ tags: [browser,webdev]
 author: chalarangelo
 cover: chill-surfing
 excerpt: CORS (Cross-Origin Resource Sharing) trips up many developers, but it's pretty easy to wrap your head around.
-dateModified: 2023-05-07T05:00:00-04:00
+dateModified: 2023-05-07
 ---
 
 When it comes to HTTP, an **origin** is defined by several different aspects of a URL. As mentioned in a [previous article](/js/s/window-location-cheatsheet/), the origin is composed of the following:

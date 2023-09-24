@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [object,function]
 cover: laptop-with-code
-dateModified: 2020-11-03T22:11:18+02:00
+dateModified: 2020-11-03
 ---
 
 Binds methods of an object to the object itself, overwriting the existing method.

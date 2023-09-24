@@ -7,7 +7,7 @@ tags: [object,class,symbol,generator]
 author: chalarangelo
 cover: book-chair
 excerpt: Enums are part of TypeScript, but what about defining enums in plain old JavaScript? Here are a few way you can do that.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 TypeScript's enums are a very convenient feature present in many other languages. JavaScript, however, does not have a similar concept at this time. But what JavaScript lacks in syntactic sugar it makes up for in terms of flexibility.

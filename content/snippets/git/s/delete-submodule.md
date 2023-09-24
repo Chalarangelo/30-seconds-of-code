@@ -5,7 +5,7 @@ language: git
 tags: [repository,submodule]
 author: chalarangelo
 cover: silver-flat-screen
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Deletes a submodule from the repository.

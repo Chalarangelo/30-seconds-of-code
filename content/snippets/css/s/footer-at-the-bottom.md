@@ -7,7 +7,7 @@ tags: [layout]
 author: chalarangelo
 cover: flower-shape-sunset
 excerpt: Make sure the footer stays at the bottom of the page, instead of floating up when the content is too short.
-dateModified: 2022-10-30T05:00:00-04:00
+dateModified: 2022-10-30
 ---
 
 Preventing the footer from floating up the page is important when trying to create a polished website. Pages with **short content** can run into this issue, but it's easy to fix with a few lines of CSS. Assuming your HTML looks something like the snippet below, here are two modern ways to ensure the footer is always at the bottom of the page:

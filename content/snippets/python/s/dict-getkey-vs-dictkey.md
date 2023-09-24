@@ -6,7 +6,7 @@ language: python
 tags: [dictionary]
 cover: compass-2
 excerpt: Learn the difference between two common ways to access values in Python dictionaries and level up your code today.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 A common debate among Python developers seems to stem from the retrieval of dictionary values, which can be accomplished using either `dict[key]` or `dict.get(key)`.

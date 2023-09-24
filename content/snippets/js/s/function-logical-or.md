@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [function,logic]
 cover: man-red-sunset
-dateModified: 2020-10-19T18:51:03+03:00
+dateModified: 2020-10-19
 ---
 
 Checks if at least one function returns `true` for a given set of arguments.

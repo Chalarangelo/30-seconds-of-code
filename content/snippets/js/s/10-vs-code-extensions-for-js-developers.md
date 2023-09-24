@@ -8,7 +8,7 @@ author: chalarangelo
 cover: computer-screens
 excerpt: Boost your productivity with these 10 essential VS Code extensions for JavaScript developers.
 unlisted: true
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 Developers will most likely argue for the rest of eternity about the most productive code editor and the best extensions. Here are my personal extension preferences for VS Code as a JavaScript developer:

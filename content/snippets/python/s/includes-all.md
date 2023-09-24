@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: switzerland-night
-dateModified: 2020-11-02T19:28:05+02:00
+dateModified: 2020-11-02
 ---
 
 Checks if all the elements in `values` are included in `lst`.

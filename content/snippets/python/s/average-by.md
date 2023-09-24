@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [math,list]
 cover: flower-vase
-dateModified: 2020-11-02T19:27:07+02:00
+dateModified: 2020-11-02
 ---
 
 Calculates the average of a list, after mapping each element to a value using the provided function.

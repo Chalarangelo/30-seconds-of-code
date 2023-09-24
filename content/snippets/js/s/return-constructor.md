@@ -7,7 +7,7 @@ tags: [function,class,object]
 author: chalarangelo
 cover: architectural
 excerpt: The constructor is a crucial part of any JavaScript class, which is why you might want to take a closer look at what they return.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 The `constructor` method is a special method of a class for creating and initializing an object of that class. However, there is a little bit of magic involved around it, especially when it comes to its return value. This magic is nothing really complicated, but it seems to often confuse developers.

@@ -5,7 +5,7 @@ language: react
 tags: [hooks,state,effect,event]
 author: chalarangelo
 cover: yellow-white-mug-1
-dateModified: 2021-09-07T05:00:00-04:00
+dateModified: 2021-09-07
 ---
 
 Listens for changes in the pressed state of a given key.

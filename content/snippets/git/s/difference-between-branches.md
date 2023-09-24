@@ -5,7 +5,7 @@ language: git
 tags: [branch]
 author: chalarangelo
 cover: two-doors
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Displays the difference between two branches.

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [date]
 cover: flower-portrait-6
-dateModified: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20
 ---
 
 Checks if a date is between two other dates.

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [type]
 cover: flower-portrait-1
-dateModified: 2020-09-15T16:28:04+03:00
+dateModified: 2020-09-15
 ---
 
 Returns the first defined, non-null argument.

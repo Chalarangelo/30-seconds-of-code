@@ -5,7 +5,7 @@ language: react
 tags: [components,object,state,recursion]
 author: chalarangelo
 cover: digital-nomad-9
-dateModified: 2020-11-16T16:50:57+02:00
+dateModified: 2020-11-16
 ---
 
 Renders a tree view of a JSON object or array with collapsible content.

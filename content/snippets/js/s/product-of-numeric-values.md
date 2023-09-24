@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math]
 cover: travel-mug-1
-dateModified: 2020-10-22T20:24:04+03:00
+dateModified: 2020-10-22
 ---
 
 Calculates the product of two or more numbers/arrays.

@@ -5,7 +5,7 @@ language: javascript
 tags: [array]
 cover: interior-4
 excerpt: Initializes an inclusive array with numbers in a range, reversed, using a common `step` difference.
-dateModified: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20
 ---
 
 Initializes an array containing the numbers in the specified range (in reverse) where `start` and `end` are inclusive with their common difference `step`.

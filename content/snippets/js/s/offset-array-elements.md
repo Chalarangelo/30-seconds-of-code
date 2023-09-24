@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: interior-10
-dateModified: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21
 ---
 
 Moves the specified amount of elements to the end of the array.

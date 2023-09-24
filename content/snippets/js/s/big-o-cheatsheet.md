@@ -6,7 +6,7 @@ tags: [algorithm]
 author: chalarangelo
 cover: light-ring
 excerpt: Learn everything you need to know about Big-O notation with this handy cheatsheet.
-dateModified: 2023-01-08T05:00:00-04:00
+dateModified: 2023-01-08
 ---
 
 ### Definition

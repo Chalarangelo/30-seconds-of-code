@@ -7,7 +7,7 @@ tags: [layout]
 author: chalarangelo
 cover: half-trees
 excerpt: A quick reference for inherited CSS properties.
-dateModified: 2022-11-20T05:00:00-04:00
+dateModified: 2022-11-20
 ---
 
 The [CSS specification](https://www.w3.org/TR/CSS21/propidx.html) clearly states which CSS properties are inherited but the related appendix is not the most user-friendly resource. Here's a quick reference of the inherited properties that you are most likely to run into:

@@ -5,7 +5,7 @@ language: javascript
 tags: [array]
 author: chalarangelo
 cover: racoon
-dateModified: 2022-04-08T05:00:00-04:00
+dateModified: 2022-04-08
 ---
 
 Removes falsy values from an array and combines the remaining values into a string.

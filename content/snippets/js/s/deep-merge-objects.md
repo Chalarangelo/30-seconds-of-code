@@ -5,7 +5,7 @@ language: javascript
 tags: [object,function]
 author: chalarangelo
 cover: coffee-drip
-dateModified: 2021-07-25T05:00:00-04:00
+dateModified: 2021-07-25
 ---
 
 Deeply merges two objects, using a function to handle keys present in both.

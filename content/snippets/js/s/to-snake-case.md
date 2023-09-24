@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string,regexp]
 cover: rustic-cup
-dateModified: 2021-06-28T15:27:44+03:00
+dateModified: 2021-06-28
 ---
 
 Converts a string to snake case.

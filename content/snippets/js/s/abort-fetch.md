@@ -7,7 +7,7 @@ tags: [function]
 author: chalarangelo
 cover: cancel-typographer
 excerpt: Aborting a fetch request in JavaScript is a common problem. Here's how to handle it correctly.
-dateModified: 2022-05-15T05:00:00-04:00
+dateModified: 2022-05-15
 ---
 
 The Fetch API is nowadays the de facto way to send asynchronous requests in JavaScript. This is in part due to the fact that the `fetch()` method accepts a multitude of useful options. One of these is the `signal` option, which can be used to abort a request. To create a valid value for this option, you can use `AbortController.signal` after creating a new instance of `AbortController`. Then, you can use `AbortController.abort()` to cancel the request at any time.

@@ -7,7 +7,7 @@ tags: [function,promise]
 author: chalarangelo
 cover: blue-sunrise
 excerpt: Messing up the order of chained `then` and `catch` methods in JavaScript promises can cause problems. Here's a short primer on the subject.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 Many if not most promise-related headaches come from incorrectly ordered `Promise.prototype.then()` and `Promise.prototype.catch()` methods. The order in which these methods are chained to a promise can lead to very different behaviors. Let's take a look at a very simple example:

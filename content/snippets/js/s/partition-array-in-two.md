@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array,object]
 cover: camping-trip
-dateModified: 2020-11-03T21:46:13+02:00
+dateModified: 2020-11-03
 ---
 
 Groups the elements into two arrays, depending on the provided function's truthiness for each element.

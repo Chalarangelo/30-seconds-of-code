@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [date]
 cover: flower-vase
-dateModified: 2021-04-24T12:48:49+03:00
+dateModified: 2021-04-24
 ---
 
 Calculates the difference (in minutes) between two dates.

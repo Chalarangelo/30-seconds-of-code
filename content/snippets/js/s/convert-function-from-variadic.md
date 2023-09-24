@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [function]
 cover: palm-sun
-dateModified: 2021-06-13T13:50:25+03:00
+dateModified: 2021-06-13
 ---
 
 Takes a variadic function and returns a function that accepts an array of arguments.

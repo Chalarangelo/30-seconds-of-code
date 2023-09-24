@@ -6,7 +6,7 @@ language: python
 tags: [list,dictionary]
 cover: mask-quiet
 excerpt: Understand Python's named tuples and start using them in your projects today.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 Python's named tuples are a very simple yet interesting feature that can make a developer's life easier. They are part of the `collections` module and act very similar to regular tuples, the main difference being that values stored in a named tuple can be accessed using field names instead of indexes.

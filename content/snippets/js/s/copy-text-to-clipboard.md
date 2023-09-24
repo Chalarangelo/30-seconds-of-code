@@ -7,7 +7,7 @@ tags: [browser]
 author: chalarangelo
 cover: typing
 excerpt: Learn how to programmatically copy text to clipboard with a few lines of JavaScript and level up your web development skills.
-dateModified: 2022-01-11T09:47:54+03:00
+dateModified: 2022-01-11
 ---
 
 ### Asynchronous Clipboard API
