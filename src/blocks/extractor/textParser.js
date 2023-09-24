@@ -16,7 +16,7 @@ export class TextParser {
     return readFile(filePath, 'utf8').then(content => {
       const { body, attributes } = frontmatter(content);
       const {
-        dateModified = '2021-06-13T05:00:00-04:00',
+        dateModified = '2021-06-13',
         author = null,
         language = null,
         ...restAttributes
