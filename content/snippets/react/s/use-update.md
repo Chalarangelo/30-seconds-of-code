@@ -5,7 +5,7 @@ language: react
 tags: [components,reducer]
 author: chalarangelo
 cover: lavender-shelf
-dateModified: 2021-09-24T05:00:00-04:00
+dateModified: 2021-09-24
 ---
 
 Forces the component to re-render when called.

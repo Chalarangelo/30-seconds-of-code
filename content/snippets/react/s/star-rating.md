@@ -4,7 +4,7 @@ type: snippet
 language: react
 tags: [components,children,input,state]
 cover: lake-church
-dateModified: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13
 ---
 
 Renders a star rating component.

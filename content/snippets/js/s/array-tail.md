@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: chubby-squirrel
-dateModified: 2020-10-22T20:24:30+03:00
+dateModified: 2020-10-22
 ---
 
 Returns all elements in an array except for the first one.

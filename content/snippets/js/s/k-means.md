@@ -5,7 +5,7 @@ language: javascript
 tags: [algorithm,array]
 author: chalarangelo
 cover: antelope
-dateModified: 2020-12-29T16:32:46+02:00
+dateModified: 2020-12-29
 ---
 
 Groups the given data into `k` clusters, using the [k-means clustering](https://en.wikipedia.org/wiki/K-means_clustering) algorithm.

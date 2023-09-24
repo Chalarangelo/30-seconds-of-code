@@ -5,7 +5,7 @@ language: python
 tags: [math]
 unlisted: true
 cover: interior-9
-dateModified: 2021-01-04T12:47:04+02:00
+dateModified: 2021-01-04
 ---
 
 Checks if the first numeric argument is divisible by the second one.

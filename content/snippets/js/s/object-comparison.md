@@ -7,7 +7,7 @@ tags: [object,comparison]
 author: chalarangelo
 cover: blue-lake
 excerpt: Learn how you can compare two objects in JavaScript using various different techniques.
-dateModified: 2021-09-26T05:00:00-04:00
+dateModified: 2021-09-26
 ---
 
 ### Equality comparison

@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [dictionary]
 cover: laptop-plants-2
-dateModified: 2020-11-02T19:27:53+02:00
+dateModified: 2020-11-02
 ---
 
 Finds all keys in the provided dictionary that have the given value.

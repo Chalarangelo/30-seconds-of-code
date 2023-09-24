@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [list,string]
 cover: keyboard-tea
-dateModified: 2021-10-17T18:24:43+02:00
+dateModified: 2021-10-17
 ---
 
 Takes any number of iterable objects or objects with a length property and returns the longest one.

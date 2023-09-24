@@ -7,7 +7,7 @@ tags: [branch,commit]
 author: chalarangelo
 cover: dark-leaves
 excerpt: Learn how to filter branches based on whether they contain a specific commit or not.
-dateModified: 2023-05-25T21:10:59+03:00
+dateModified: 2023-05-25
 ---
 
 Commits are the building blocks of Git, used to track changes to a repository. They can be used to identify specific points in a repository's history, and can be referenced by their commit hash. But apart from finding a commit, how can you find all the branches containing it? This sort of information can be useful when you want to find out which branches contain a specific bugfix or feature.

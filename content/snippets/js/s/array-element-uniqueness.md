@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: strawberries
-dateModified: 2021-01-08T00:23:44+02:00
+dateModified: 2021-01-08
 ---
 
 Checks if all elements in an array are unique.

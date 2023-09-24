@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: clay-pot-horizon
-dateModified: 2020-10-19T22:49:51+03:00
+dateModified: 2020-10-19
 ---
 
 Returns the head of an array.

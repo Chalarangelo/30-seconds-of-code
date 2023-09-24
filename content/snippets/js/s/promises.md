@@ -7,7 +7,7 @@ tags: [function,promise]
 author: chalarangelo
 cover: sail-away
 excerpt: JavaScript's promises represent the eventual completion (or failure) of asynchronous operations and their resulting value.
-dateModified: 2021-10-24T05:00:00-04:00
+dateModified: 2021-10-24
 ---
 
 The `Promise` object represents the eventual completion (or failure) of an asynchronous operation, and its resulting value. A common example of using promises would be fetching data from a URL. This would create a `Promise` object that represents the data we expect to receive. For example:

@@ -7,7 +7,7 @@ tags: [class]
 author: chalarangelo
 cover: purple-flower-macro-4
 excerpt: A doubly linked list is a linear data structure where each element points both to the next and the previous one.
-dateModified: 2021-08-12T05:00:00-04:00
+dateModified: 2021-08-12
 ---
 
 ### Definition

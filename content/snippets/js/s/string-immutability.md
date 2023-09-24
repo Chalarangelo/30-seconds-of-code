@@ -7,7 +7,7 @@ tags: [string,type]
 author: chalarangelo
 cover: purple-sunset
 excerpt: When it comes to immutability, JavaScript strings are often a source of confusion. Yet they're not as complicated as you might expect.
-dateModified: 2021-10-10T05:00:00-04:00
+dateModified: 2021-10-10
 ---
 
 String specifications among programming languages vary, however most languages treat them as reference types. But strings in JavaScript are different. They are **immutable primitives**. This means that the characters within them may not be changed and that any operations on strings actually create new strings.

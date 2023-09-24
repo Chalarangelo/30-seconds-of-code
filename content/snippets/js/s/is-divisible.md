@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math]
 cover: clutter-2
-dateModified: 2020-09-15T16:28:04+03:00
+dateModified: 2020-09-15
 ---
 
 Checks if the first numeric argument is divisible by the second one.

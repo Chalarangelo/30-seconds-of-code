@@ -7,7 +7,7 @@ tags: [visual]
 author: chalarangelo
 cover: colors-mural
 excerpt: We hand picked 25 of our favorite CSS gradients from uiGradients for your next design. Get them now!
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 [uiGradients](https://uigradients.com/) has an amazing collection of ready-to-use CSS gradients for pretty much anything. I highly recommend checking out the full collection. Meantime, here are our top picks in case you're looking for some color:

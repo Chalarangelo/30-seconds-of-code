@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array,string,random]
 cover: paper-card
-dateModified: 2020-10-22T20:24:30+03:00
+dateModified: 2020-10-22
 ---
 
 Gets a random element from an array.

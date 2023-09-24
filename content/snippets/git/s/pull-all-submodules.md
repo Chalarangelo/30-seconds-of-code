@@ -5,7 +5,7 @@ language: git
 tags: [repository,submodule]
 author: chalarangelo
 cover: workspace-with-speaker
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Pulls all submodules from their respective remotes.

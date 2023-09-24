@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math,algorithm]
 cover: apples
-dateModified: 2020-12-28T13:49:24+02:00
+dateModified: 2020-12-28
 ---
 
 Generates primes up to a given number, using the Sieve of Eratosthenes.

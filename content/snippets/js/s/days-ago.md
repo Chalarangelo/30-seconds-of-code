@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [date]
 cover: u-got-this
-dateModified: 2022-01-30T11:48:07+03:00
+dateModified: 2022-01-30
 ---
 
 Calculates the date of `n` days ago from today as a string representation.

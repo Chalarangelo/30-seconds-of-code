@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string,math]
 cover: lemon-tea
-dateModified: 2020-11-03T22:11:18+02:00
+dateModified: 2020-11-03
 ---
 
 Converts the values of RGB components to a hexadecimal color code.

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser,object]
 cover: sail-away-2
-dateModified: 2020-10-19T22:49:51+03:00
+dateModified: 2020-10-19
 ---
 
 Encodes a set of form elements as an `object`.

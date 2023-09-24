@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [date,function,generator]
 cover: portal-timelapse
-dateModified: 2021-06-21T05:00:00-04:00
+dateModified: 2021-06-21
 ---
 
 Creates a generator, that generates all dates in the given range using the given step.

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [object]
 cover: broken-screen
-dateModified: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21
 ---
 
 Omits the key-value pairs corresponding to the given keys from an object.

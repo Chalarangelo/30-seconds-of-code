@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [function,object]
 cover: white-tablet-2
-dateModified: 2020-11-01T20:50:57+02:00
+dateModified: 2020-11-01
 ---
 
 Creates a function that will invoke a predicate function for the specified property on a given object.

@@ -5,7 +5,7 @@ language: css
 tags: [visual]
 author: chalarangelo
 cover: radio-monstera
-dateModified: 2022-12-11T05:00:00-04:00
+dateModified: 2022-12-11
 ---
 
 Creates a card with an image cutout.

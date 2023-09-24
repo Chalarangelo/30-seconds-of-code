@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: reflection-on-lake
-dateModified: 2020-10-11T11:52:48+03:00
+dateModified: 2020-10-11
 ---
 
 Creates a frozen `Set` object.

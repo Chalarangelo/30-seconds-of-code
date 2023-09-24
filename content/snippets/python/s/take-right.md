@@ -5,7 +5,7 @@ language: python
 tags: [list]
 author: chalarangelo
 cover: three-vases
-dateModified: 2020-09-15T16:13:06+03:00
+dateModified: 2020-09-15
 ---
 
 Returns a list with `n` elements removed from the end.

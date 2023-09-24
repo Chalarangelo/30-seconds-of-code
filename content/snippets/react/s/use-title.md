@@ -5,7 +5,7 @@ language: react
 tags: [hooks,effect]
 author: chalarangelo
 cover: chubby-squirrel
-dateModified: 2021-09-27T05:00:00-04:00
+dateModified: 2021-09-27
 ---
 
 Sets the title of the page

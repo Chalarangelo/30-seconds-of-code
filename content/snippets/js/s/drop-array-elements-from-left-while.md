@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: metropolitan-window
-dateModified: 2020-10-19T18:51:03+03:00
+dateModified: 2020-10-19
 ---
 
 Removes elements in an array until the passed function returns `true`.

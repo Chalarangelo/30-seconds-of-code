@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser,event]
 cover: mug-flower-book
-dateModified: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21
 ---
 
 Removes an event listener from an element.

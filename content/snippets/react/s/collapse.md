@@ -4,7 +4,7 @@ type: snippet
 language: react
 tags: [components,children,state]
 cover: washed-ashore
-dateModified: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13
 ---
 
 Renders a component with collapsible content.

@@ -7,7 +7,7 @@ tags: [object,proxy,pattern]
 author: chalarangelo
 cover: red-mountain-range
 excerpt: A quick introduction to the JavaScript Proxy object and where it can be used.
-dateModified: 2023-04-02T05:00:00-04:00
+dateModified: 2023-04-02
 ---
 
 The JavaScript `Proxy` object is a relatively new addition to the language, having been introduced in ES6. It's based on the **software design pattern** of the same name, which creates a wrapper for another object, **intercepting** and **redefining** fundamental operations for that object.

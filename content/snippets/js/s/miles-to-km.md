@@ -5,7 +5,7 @@ language: javascript
 tags: [math]
 unlisted: true
 cover: rocky-beach-2
-dateModified: 2021-01-04T13:04:15+02:00
+dateModified: 2021-01-04
 ---
 
 Converts miles to kilometers.

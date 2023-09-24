@@ -7,7 +7,7 @@ tags: [object,json]
 author: chalarangelo
 cover: memories-of-pineapple-3
 excerpt: Pretty-printing JSON objects in pretty easy and customizable in JavaScript. Here's the gist of it.
-dateModified: 2022-07-30T05:00:00-04:00
+dateModified: 2022-07-30
 ---
 
 Pretty-printing refers to the process of making some data more human-readable. In regards to JSON, it's primarily the process of indenting the data so that it is easier to read. This is pretty easy to accomplish, using `JSON.stringify()` with the appropriate arguments.

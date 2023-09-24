@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [function]
 cover: dark-leaves-3
-dateModified: 2020-10-20T23:29:39+03:00
+dateModified: 2020-10-20
 ---
 
 Takes several functions as argument and returns a function that is the juxtaposition of those functions.

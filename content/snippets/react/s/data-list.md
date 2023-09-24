@@ -4,7 +4,7 @@ type: snippet
 language: react
 tags: [components]
 cover: interior-14
-dateModified: 2020-11-03T21:26:34+02:00
+dateModified: 2020-11-03
 ---
 
 Renders a list of elements from an array of primitives.

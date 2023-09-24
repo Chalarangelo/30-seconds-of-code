@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: interior-14
-dateModified: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22
 ---
 
 Takes any number of iterable objects or objects with a `length` property and returns the longest one.

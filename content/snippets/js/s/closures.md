@@ -7,7 +7,7 @@ tags: [function,closure]
 author: chalarangelo
 cover: cherry-trees
 excerpt: Learn and understand closures, a core concept in JavaScript programming, and level up your code.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 Closures are a JavaScript concept that comes up quite a lot, especially during interviews. While they sound confusing, they are not all that complicated and you have probably already used them in your code regardless of your expertise level. Let's start with what a closure is:

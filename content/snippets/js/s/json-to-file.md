@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [node]
 cover: travel-mug-3
-dateModified: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20
 ---
 
 Writes a JSON object to a file.

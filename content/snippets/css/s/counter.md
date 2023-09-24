@@ -4,7 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: dark-leaves-2
-dateModified: 2020-12-30T15:37:37+02:00
+dateModified: 2020-12-30
 ---
 
 Creates a custom list counter that accounts for nested list elements.

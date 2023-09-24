@@ -7,7 +7,7 @@ tags: [array,object,iterator]
 author: chalarangelo
 cover: lake-loop
 excerpt: Learn the differences between the three most commonly used iteration methods in JavaScript, that often confuse beginners and veterans alike.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 `for...in` is used to iterate over all enumerable properties of an object, including inherited enumerable properties. This iteration statement can be used with arrays strings or plain objects, but not with `Map` or `Set` objects.

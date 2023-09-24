@@ -5,7 +5,7 @@ language: javascript
 tags: [math]
 author: chalarangelo
 cover: people-on-beach
-dateModified: 2022-01-30T13:10:13+02:00
+dateModified: 2022-01-30
 ---
 
 Creates an array of partial sums.

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: touch-flower
-dateModified: 2020-11-01T20:50:57+02:00
+dateModified: 2020-11-01
 ---
 
 Creates a counter with the specified range, step and duration for the specified selector.

@@ -4,7 +4,7 @@ type: snippet
 language: react
 tags: [components,input]
 cover: digital-nomad-15
-dateModified: 2020-11-03T21:08:39+02:00
+dateModified: 2020-11-03
 ---
 
 Renders an uncontrolled `<input>` element that uses a callback function to inform its parent about value updates.

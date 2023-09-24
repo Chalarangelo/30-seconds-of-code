@@ -5,7 +5,7 @@ language: javascript
 tags: [node]
 unlisted: true
 cover: succulent-5
-dateModified: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20
 ---
 
 Checks if the current environment is [Travis CI](https://travis-ci.org/).

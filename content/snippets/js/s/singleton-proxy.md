@@ -7,7 +7,7 @@ tags: [object,proxy,pattern]
 author: chalarangelo
 cover: obelisk
 excerpt: Learn how to implement the singleton design pattern in JavaScript, using the Proxy object.
-dateModified: 2021-09-28T20:11:55+03:00
+dateModified: 2021-09-28
 ---
 
 A singleton is an **object-oriented software design pattern** which ensures a given class is only ever instantiated once. It can be useful in many different situations, such as creating global objects shared across an application. While JavaScript supports object-oriented programming, it doesn't provide many simple options to implement this pattern.

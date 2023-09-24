@@ -5,7 +5,7 @@ language: javascript
 tags: [array,object]
 author: chalarangelo
 cover: digital-nomad-6
-dateModified: 2020-10-08T02:22:39+03:00
+dateModified: 2020-10-08
 ---
 
 Combines two arrays of objects, using the specified key to match objects.

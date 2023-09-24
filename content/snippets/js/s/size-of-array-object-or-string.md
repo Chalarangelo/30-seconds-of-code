@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [object,array,string]
 cover: digital-nomad-13
-dateModified: 2023-01-20T13:25:47+03:00
+dateModified: 2023-01-20
 ---
 
 Gets the size of an array, object or string.

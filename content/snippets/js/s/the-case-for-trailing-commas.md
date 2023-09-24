@@ -7,7 +7,7 @@ tags: [webdev]
 author: chalarangelo
 cover: contemporary-desk
 excerpt: Trailing commas are not without controversy. Here's why I think you should use them.
-dateModified: 2023-03-12T05:00:00-04:00
+dateModified: 2023-03-12
 ---
 
 JavaScript's syntactic features are notorious for sparking debates among developers, with semicolons and tabs vs. spaces being the most common examples. However, trailing commas are a feature that isn't discussed as much, even though I believe there's merit to using them.

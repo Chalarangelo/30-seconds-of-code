@@ -5,7 +5,7 @@ language: git
 tags: [repository,stash]
 author: chalarangelo
 cover: zen-indoors
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Deletes a specific stash.

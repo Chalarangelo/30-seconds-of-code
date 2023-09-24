@@ -7,7 +7,7 @@ tags: [string,regexp]
 author: chalarangelo
 cover: taking-photos
 excerpt: Learn how to effectively use JavaScript regular expressions with these 6 powerful features.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 Regular expressions, while very powerful, are notoriously hard to master. Here are 6 useful features that can help you start using them in your JavaScript projects:

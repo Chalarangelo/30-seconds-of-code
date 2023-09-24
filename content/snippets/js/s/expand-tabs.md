@@ -5,7 +5,7 @@ language: javascript
 tags: [string,regexp]
 author: chalarangelo
 cover: naming-conventions
-dateModified: 2020-09-15T16:28:04+03:00
+dateModified: 2020-09-15
 ---
 
 Convert tabs to spaces, where each tab corresponds to `count` spaces.

@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: cobbled-street
-dateModified: 2020-11-02T19:27:53+02:00
+dateModified: 2020-11-02
 ---
 
 Creates a list with the non-unique values filtered out.

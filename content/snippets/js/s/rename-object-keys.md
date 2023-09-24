@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [object]
 cover: symmetry-cloudy-mountain
-dateModified: 2020-10-22T20:24:30+03:00
+dateModified: 2020-10-22
 ---
 
 Replaces the names of multiple object keys with the values provided.

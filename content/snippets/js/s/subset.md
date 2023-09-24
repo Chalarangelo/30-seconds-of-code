@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: citrus-drink
-dateModified: 2020-10-22T20:24:30+03:00
+dateModified: 2020-10-22
 ---
 
 Checks if the first iterable is a subset of the second one, excluding duplicate values.

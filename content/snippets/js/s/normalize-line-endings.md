@@ -5,7 +5,7 @@ language: javascript
 tags: [string,regexp]
 author: chalarangelo
 cover: red-light
-dateModified: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21
 ---
 
 Normalizes line endings in a string.

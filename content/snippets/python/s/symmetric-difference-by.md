@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: succulent-1
-dateModified: 2020-11-02T19:28:35+02:00
+dateModified: 2020-11-02
 ---
 
 Returns the symmetric difference between two lists, after applying the provided function to each list element of both.

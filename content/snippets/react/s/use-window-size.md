@@ -5,7 +5,7 @@ language: react
 tags: [hooks,state,effect]
 author: chalarangelo
 cover: polar-bear
-dateModified: 2021-10-18T05:00:00-04:00
+dateModified: 2021-10-18
 ---
 
 Tracks the dimensions of the browser window.

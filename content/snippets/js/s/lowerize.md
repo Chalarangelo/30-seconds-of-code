@@ -5,7 +5,7 @@ language: javascript
 tags: [object]
 author: chalarangelo
 cover: building-facade
-dateModified: 2023-02-12T05:00:00-04:00
+dateModified: 2023-02-12
 ---
 
 Converts all the keys of an object to lower case.

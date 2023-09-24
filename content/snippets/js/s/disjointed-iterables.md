@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: interior-9
-dateModified: 2020-10-11T11:53:01+03:00
+dateModified: 2020-10-11
 ---
 
 Checks if the two iterables are disjointed (have no common values).

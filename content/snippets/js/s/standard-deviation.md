@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math]
 cover: interior-16
-dateModified: 2020-10-22T20:24:30+03:00
+dateModified: 2020-10-22
 ---
 
 Calculates the standard deviation of an array of numbers.

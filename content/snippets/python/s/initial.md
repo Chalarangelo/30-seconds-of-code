@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: pop-of-green
-dateModified: 2020-11-02T19:28:05+02:00
+dateModified: 2020-11-02
 ---
 
 Returns all the elements of a list except the last one.

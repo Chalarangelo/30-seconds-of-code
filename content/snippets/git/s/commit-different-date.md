@@ -7,7 +7,7 @@ tags: [commit]
 author: chalarangelo
 cover: ice
 excerpt: Ever needed to create a git commit with a different date? Here's a quick and easy way to do it.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 Sometimes, you might run into a situation where you need to create a commit with a different date than the current one. Luckily, you can handle this using `GIT_AUTHOR_DATE` and `GIT_COMMITTER_DATE`:

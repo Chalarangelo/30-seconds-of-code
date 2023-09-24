@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string,regexp]
 cover: chubby-squirrel
-dateModified: 2020-12-16T13:42:27+02:00
+dateModified: 2020-12-16
 ---
 
 Converts a string to kebab case.

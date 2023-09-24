@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: sunrise-over-mountains
-dateModified: 2020-11-01T20:50:57+02:00
+dateModified: 2020-11-01
 ---
 
 Splits values into two groups, based on the result of the given `filter` array.

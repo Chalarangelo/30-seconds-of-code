@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: highlands
-dateModified: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22
 ---
 
 Finds all indexes of `val` in an array.

@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [math]
 cover: digital-nomad-12
-dateModified: 2020-09-15T16:13:06+03:00
+dateModified: 2020-09-15
 ---
 
 Calculates the greatest common divisor of a list of numbers.

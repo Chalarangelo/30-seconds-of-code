@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [function]
 cover: beach-overview
-dateModified: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13
 ---
 
 Creates a throttled function that only invokes the provided function at most once per every `wait` milliseconds

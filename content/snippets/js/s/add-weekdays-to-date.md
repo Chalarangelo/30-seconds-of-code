@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [date]
 cover: digital-nomad-9
-dateModified: 2021-01-08T00:23:44+02:00
+dateModified: 2021-01-08
 ---
 
 Calculates the date after adding the given number of business days.

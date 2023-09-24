@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [date]
 cover: succulent-red-light
-dateModified: 2021-01-07T23:30:28+02:00
+dateModified: 2021-01-07
 ---
 
 Converts a date to its ISO-8601 representation.

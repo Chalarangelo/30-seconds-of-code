@@ -7,7 +7,7 @@ tags: [function]
 author: chalarangelo
 cover: rabbit-call
 excerpt: JavaScript callbacks are especially tricky when you're not careful. Take a deeper dive into potential issues and how to avoid them.
-dateModified: 2021-07-01T05:00:00-04:00
+dateModified: 2021-07-01
 ---
 
 A piece of advice I've found myself repeating often as of late is this:

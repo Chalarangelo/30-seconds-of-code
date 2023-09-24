@@ -7,7 +7,7 @@ tags: [function,promise]
 author: chalarangelo
 cover: pineapple-on-green
 excerpt: Understanding the differences between synchronous and asynchronous code is a crucial piece of knowledge for every web developer.
-dateModified: 2021-11-14T05:00:00-04:00
+dateModified: 2021-11-14
 ---
 
 Synchronous code runs in sequence. This means that each operation must wait for the previous one to complete before executing.

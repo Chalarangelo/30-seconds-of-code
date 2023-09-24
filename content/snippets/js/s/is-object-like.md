@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [type,object]
 cover: messy-computer
-dateModified: 2020-09-15T16:28:04+03:00
+dateModified: 2020-09-15
 ---
 
 Checks if a value is object-like.

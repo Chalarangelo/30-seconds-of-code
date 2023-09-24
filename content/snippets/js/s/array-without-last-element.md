@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: red-light
-dateModified: 2020-11-03T21:46:13+02:00
+dateModified: 2020-11-03
 ---
 
 Returns all the elements of an array except the last one.

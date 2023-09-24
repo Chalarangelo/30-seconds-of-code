@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: orange-coffee
-dateModified: 2020-11-03T22:11:18+02:00
+dateModified: 2020-11-03
 ---
 
 Returns the minimum/maximum value of an array, after applying the provided function to set the comparing rule.

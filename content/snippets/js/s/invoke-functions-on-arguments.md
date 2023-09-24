@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [function]
 cover: armchair-in-yellow
-dateModified: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21
 ---
 
 Creates a function that invokes each provided function with the arguments it receives and returns the results.

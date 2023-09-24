@@ -5,7 +5,7 @@ language: javascript
 tags: [array,math]
 cover: digital-nomad-15
 excerpt: Finds the lowest insertion index to maintain array sorting order based on the provided iterator function.
-dateModified: 2020-10-22T20:24:30+03:00
+dateModified: 2020-10-22
 ---
 
 Finds the lowest index at which a value should be inserted into an array in order to maintain its sorting order, based on the provided iterator function.

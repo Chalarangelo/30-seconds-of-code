@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math]
 cover: digital-nomad-8
-dateModified: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21
 ---
 
 Returns the `n` minimum elements from the provided array.

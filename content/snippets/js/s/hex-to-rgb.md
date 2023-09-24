@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string,math]
 cover: orange-coffee-3
-dateModified: 2020-10-19T22:49:51+03:00
+dateModified: 2020-10-19
 ---
 
 Converts a color code to an `rgb()` or `rgba()` string if alpha value is provided.

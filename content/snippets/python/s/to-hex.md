@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [math]
 cover: beach-overview
-dateModified: 2020-10-09T09:45:47+03:00
+dateModified: 2020-10-09
 ---
 
 Returns the hexadecimal representation of the given number.

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math]
 cover: red-lake
-dateModified: 2020-10-21T21:17:45+03:00
+dateModified: 2020-10-21
 ---
 
 Calculates the average of an array, after mapping each element to a value using the provided function.

@@ -5,7 +5,7 @@ language: javascript
 tags: [algorithm,array]
 author: chalarangelo
 cover: building-blocks
-dateModified: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13
 ---
 
 Classifies a data point relative to a labelled data set, using the [k-nearest neighbors](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm) algorithm.

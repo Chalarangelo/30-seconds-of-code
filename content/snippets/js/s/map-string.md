@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string]
 cover: budapest-palace
-dateModified: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21
 ---
 
 Creates a new string with the results of calling a provided function on every character in the given string.

@@ -5,7 +5,7 @@ language: javascript
 tags: [function,generator]
 author: chalarangelo
 cover: yellow-sofa
-dateModified: 2022-01-21T05:00:00-04:00
+dateModified: 2022-01-21
 ---
 
 Creates a generator, that keeps producing new values as long as the given condition is met.

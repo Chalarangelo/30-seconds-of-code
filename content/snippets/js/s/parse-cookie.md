@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser,string]
 cover: purple-sunset-beach
-dateModified: 2020-10-22T20:24:04+03:00
+dateModified: 2020-10-22
 ---
 
 Parses an HTTP Cookie header string, returning an object of all cookie name-value pairs.

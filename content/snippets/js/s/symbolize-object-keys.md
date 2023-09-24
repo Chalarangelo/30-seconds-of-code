@@ -5,7 +5,7 @@ language: javascript
 tags: [object]
 author: chalarangelo
 cover: computer-screens
-dateModified: 2021-08-01T05:00:00-04:00
+dateModified: 2021-08-01
 ---
 
 Creates a new object, converting each key to a `Symbol`.

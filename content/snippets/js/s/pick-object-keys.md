@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [object]
 cover: compass-1
-dateModified: 2020-10-18T14:58:09+03:00
+dateModified: 2020-10-18
 ---
 
 Picks the key-value pairs corresponding to the given keys from an object.

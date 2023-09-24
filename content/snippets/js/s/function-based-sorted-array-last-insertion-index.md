@@ -5,7 +5,7 @@ language: javascript
 tags: [array]
 cover: snowy-mountains
 excerpt: Finds the highest insertion index to maintain array sorting order based on the provided iterator function.
-dateModified: 2020-10-22T20:24:30+03:00
+dateModified: 2020-10-22
 ---
 
 Finds the highest index at which a value should be inserted into an array in order to maintain its sort order, based on a provided iterator function.

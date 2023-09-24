@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: dying-flowers
-dateModified: 2020-10-22T20:24:44+03:00
+dateModified: 2020-10-22
 ---
 
 Filters out the elements of an array that have one of the specified values.

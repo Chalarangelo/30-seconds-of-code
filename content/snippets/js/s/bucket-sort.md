@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [algorithm,array]
 cover: canoe
-dateModified: 2020-12-29T12:22:44+02:00
+dateModified: 2020-12-29
 ---
 
 Sorts an array of numbers, using the bucket sort algorithm.

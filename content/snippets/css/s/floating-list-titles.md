@@ -5,7 +5,7 @@ language: css
 tags: [visual]
 author: chalarangelo
 cover: pop-of-green
-dateModified: 2021-10-11T18:44:51+03:00
+dateModified: 2021-10-11
 ---
 
 Creates a list with floating headings for each section.

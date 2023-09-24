@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [function]
 cover: tram-car-2
-dateModified: 2020-11-02T19:27:07+02:00
+dateModified: 2020-11-02
 ---
 
 Performs right-to-left function composition.

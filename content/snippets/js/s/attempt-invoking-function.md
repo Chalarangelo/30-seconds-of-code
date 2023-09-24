@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [function]
 cover: spanish-resort
-dateModified: 2020-10-18T20:24:28+03:00
+dateModified: 2020-10-18
 ---
 
 Attempts to invoke a function with the provided arguments, returning either the result or the caught error object.

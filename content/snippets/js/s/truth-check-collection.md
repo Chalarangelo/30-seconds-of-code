@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [object,logic,array]
 cover: digital-nomad-8
-dateModified: 2020-10-22T20:24:44+03:00
+dateModified: 2020-10-22
 ---
 
 Checks if the predicate function is truthy for all elements of a collection.

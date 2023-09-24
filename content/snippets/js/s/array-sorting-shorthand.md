@@ -6,7 +6,7 @@ language: javascript
 tags: [array]
 cover: apples
 excerpt: Learn how to quickly write code to sort JavaScript arrays with this handy one-liner.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 When sorting an array of primitive values (e.g. strings or numbers), you'll often see a lot of code that looks like this:

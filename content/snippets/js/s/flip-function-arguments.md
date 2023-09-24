@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [function]
 cover: interior-11
-dateModified: 2021-06-13T13:50:25+03:00
+dateModified: 2021-06-13
 ---
 
 Takes a function as an argument, then makes the first argument the last.

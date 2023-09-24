@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [dictionary]
 cover: goat-wooden-cottage
-dateModified: 2021-01-07T23:15:48+02:00
+dateModified: 2021-01-07
 ---
 
 Finds the key of the minimum value in a dictionary.

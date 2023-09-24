@@ -7,7 +7,7 @@ tags: [object]
 author: chalarangelo
 cover: pineapple-laptop
 excerpt: Adding a key-value pair to a JavaScript object is straightforward, yet there are multiple ways available to do so.
-dateModified: 2022-07-21T05:00:00-04:00
+dateModified: 2022-07-21
 ---
 
 Adding a key-value pair to a JavaScript object is straightforward, yet there are multiple ways available to do so. While mostly similar, these approaches have some differences that you should be aware of.

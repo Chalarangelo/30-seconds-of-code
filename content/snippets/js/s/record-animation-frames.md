@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser,recursion]
 cover: mac-and-coffee
-dateModified: 2020-10-22T20:24:04+03:00
+dateModified: 2020-10-22
 ---
 
 Invokes the provided callback on each animation frame.

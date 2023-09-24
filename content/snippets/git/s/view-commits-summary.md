@@ -7,7 +7,7 @@ tags: [repository,commit]
 author: chalarangelo
 cover: dark-city
 excerpt: Learn how to view a short summary of your Git commits using git log.
-dateModified: 2023-05-23T21:10:59+03:00
+dateModified: 2023-05-23
 ---
 
 One of the most common things you might need to do when working with Git is to view a short summary of your commits. While `git log` is the go-to command for this, it can be a bit verbose at times. Luckily, it provides a plethora of options to help you customize its output.

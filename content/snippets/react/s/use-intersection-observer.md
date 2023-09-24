@@ -5,7 +5,7 @@ language: react
 tags: [hooks,state,effect]
 author: chalarangelo
 cover: light-leaves
-dateModified: 2021-09-10T05:00:00-04:00
+dateModified: 2021-09-10
 ---
 
 Observes visibility changes for a given element.

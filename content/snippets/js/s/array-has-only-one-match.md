@@ -5,7 +5,7 @@ language: javascript
 tags: [array]
 author: chalarangelo
 cover: interior-10
-dateModified: 2021-07-04T05:00:00-04:00
+dateModified: 2021-07-04
 ---
 
 Checks if an array has only one value matching the given function.

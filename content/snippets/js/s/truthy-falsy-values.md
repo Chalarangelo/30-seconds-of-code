@@ -7,7 +7,7 @@ tags: [type,comparison]
 author: chalarangelo
 cover: little-bird
 excerpt: JavaScript uses type coercion in Boolean contexts, resulting in truthy or falsy values. Get a hang of how it all works in this quick guide.
-dateModified: 2021-09-12T05:00:00-04:00
+dateModified: 2021-09-12
 ---
 
 JavaScript uses **type coercion** (implicit conversion of values from one data type to another) in Boolean contexts, such as conditionals. This means that values are considered either truthy (evaluate to `true`) or falsy (evaluate to `false`) depending on how they are evaluated in a Boolean context.

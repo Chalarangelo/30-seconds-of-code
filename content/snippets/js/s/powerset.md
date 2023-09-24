@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math,algorithm]
 cover: new-plant
-dateModified: 2021-09-27T15:27:07+02:00
+dateModified: 2021-09-27
 ---
 
 Returns the powerset of a given array of numbers.

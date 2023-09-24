@@ -5,7 +5,7 @@ language: javascript
 tags: [string,algorithm]
 author: chalarangelo
 cover: obelisk
-dateModified: 2021-01-08T00:23:44+02:00
+dateModified: 2021-01-08
 ---
 
 Counts the occurrences of a substring in a given string.

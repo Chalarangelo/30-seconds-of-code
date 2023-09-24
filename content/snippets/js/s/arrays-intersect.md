@@ -5,7 +5,7 @@ language: javascript
 tags: [array]
 author: chalarangelo
 cover: interior-5
-dateModified: 2023-02-17T05:00:00-04:00
+dateModified: 2023-02-17
 ---
 
 Determines if two arrays have a common item.

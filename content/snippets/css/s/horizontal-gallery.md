@@ -4,7 +4,7 @@ type: snippet
 language: css
 tags: [visual,interactivity]
 cover: flower-portrait-5
-dateModified: 2022-05-01T05:00:00-04:00
+dateModified: 2022-05-01
 ---
 
 Creates a horizontally scrollable image gallery.

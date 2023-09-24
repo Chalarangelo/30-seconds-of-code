@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math]
 cover: tram-car-2
-dateModified: 2020-11-13T19:49:57+02:00
+dateModified: 2020-11-13
 ---
 
 Takes a number and returns it as a string with the correct ordinal indicator suffix.

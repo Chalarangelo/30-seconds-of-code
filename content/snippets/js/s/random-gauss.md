@@ -5,7 +5,7 @@ language: javascript
 tags: [math,random]
 cover: chess-pawns
 author: chalarangelo
-dateModified: 2023-04-03T05:00:00-04:00
+dateModified: 2023-04-03
 ---
 
 Generates Gaussian (normally distributed) random numbers.

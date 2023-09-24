@@ -7,7 +7,7 @@ tags: [metadata,head]
 author: chalarangelo
 cover: boutique-home-office-2
 excerpt: Ensure your HTML documents can be shared on social media by including these lines in your `<head>` element.
-dateModified: 2023-01-22T05:00:00-04:00
+dateModified: 2023-01-22
 ---
 
 Social media play an important role to any content's success. To ensure your content is properly shared on social media, you should include some essential tags in your `<head>` element:

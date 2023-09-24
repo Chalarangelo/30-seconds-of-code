@@ -5,7 +5,7 @@ language: git
 tags: [configuration]
 author: chalarangelo
 cover: purple-flower-bunch
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Configures git to autocorrect mistyped commands.

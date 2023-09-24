@@ -6,7 +6,7 @@ tags: [metadata]
 author: chalarangelo
 cover: folded-map
 excerpt: Preloading content is one of many ways to improve your website's performance.
-dateModified: 2022-10-12T05:00:00-04:00
+dateModified: 2022-10-12
 ---
 
 Preloading content is one of many ways to improve web performance. The `rel` attribute of the `link` element can be used to instruct the browser how to handle different resources. Here's a handy cheatsheet to help you remember the different values and their effects.

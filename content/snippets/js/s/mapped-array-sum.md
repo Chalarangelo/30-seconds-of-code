@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math,array]
 cover: avocado-slices
-dateModified: 2020-11-03T22:11:18+02:00
+dateModified: 2020-11-03
 ---
 
 Calculates the sum of an array, after mapping each element to a value using the provided function.

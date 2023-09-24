@@ -5,7 +5,7 @@ language: git
 tags: [commit,branch]
 author: chalarangelo
 cover: sunflowers
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Applies the changes introduced by one or more commits.

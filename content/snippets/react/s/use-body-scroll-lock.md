@@ -5,7 +5,7 @@ language: react
 tags: [hooks,effect]
 author: chalarangelo
 cover: folded-map
-dateModified: 2021-09-02T05:00:00-04:00
+dateModified: 2021-09-02
 ---
 
 Enables body scroll locking.

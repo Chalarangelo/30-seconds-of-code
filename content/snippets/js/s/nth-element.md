@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: rocky-mountains-2
-dateModified: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21
 ---
 
 Returns the nth element of an array.

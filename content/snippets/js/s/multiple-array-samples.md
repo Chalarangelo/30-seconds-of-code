@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array,random]
 cover: peaches
-dateModified: 2020-10-22T20:24:30+03:00
+dateModified: 2020-10-22
 ---
 
 Gets `n` random elements at unique keys from an array up to the size of the array.

@@ -7,7 +7,7 @@ tags: [math]
 author: chalarangelo
 cover: island-corridor
 excerpt: When formatting decimal values in JavaScript, trailing zeros can be undesired. Here's how to deal with them.
-dateModified: 2022-05-08T05:00:00-04:00
+dateModified: 2022-05-08
 ---
 
 JavaScript provides a couple of ways to format numeric values to a given precision. Namely, you can use `Number.prototype.toFixed()` and `Number.prototype.toPrecision()` to similar effect. However, neither of them deals with trailing zeros in the decimal part. Here's a few ways you can remove them:

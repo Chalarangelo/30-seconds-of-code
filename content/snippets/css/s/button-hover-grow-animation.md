@@ -5,7 +5,7 @@ language: css
 tags: [animation]
 author: chalarangelo
 cover: white-laptop
-dateModified: 2021-05-24T15:28:52+03:00
+dateModified: 2021-05-24
 ---
 
 Creates a grow animation on hover.

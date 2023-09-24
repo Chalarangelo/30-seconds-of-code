@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: sunrise-over-mountains
-dateModified: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13
 ---
 
 Finds all unique values of an array, based on a provided comparator function.

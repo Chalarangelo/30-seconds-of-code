@@ -5,7 +5,7 @@ language: javascript
 tags: [browser,event]
 cover: city-view
 excerpt: Creates a pub/sub event hub with emit, on, and off methods.
-dateModified: 2020-09-15T16:28:04+03:00
+dateModified: 2020-09-15
 ---
 
 Creates a pub/sub ([publish–subscribe](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern)) event hub with `emit`, `on`, and `off` methods.

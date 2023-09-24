@@ -5,7 +5,7 @@ language: javascript
 tags: [object]
 author: chalarangelo
 cover: plant-corner
-dateModified: 2023-04-10T05:00:00-04:00
+dateModified: 2023-04-10
 ---
 
 Checks if the target value exists in a JSON object.

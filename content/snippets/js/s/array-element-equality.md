@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: shelf-plant
-dateModified: 2020-10-18T20:24:28+03:00
+dateModified: 2020-10-18
 ---
 
 Checks if all elements in an array are equal.

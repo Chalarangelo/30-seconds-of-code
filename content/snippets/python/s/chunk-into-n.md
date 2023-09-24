@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: succulent-10
-dateModified: 2020-10-23T05:35:06+03:00
+dateModified: 2020-10-23
 ---
 
 Chunks a list into `n` smaller lists.

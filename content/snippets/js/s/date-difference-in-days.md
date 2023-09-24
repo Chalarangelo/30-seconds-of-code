@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [date]
 cover: spanish-resort
-dateModified: 2021-04-24T12:42:47+03:00
+dateModified: 2021-04-24
 ---
 
 Calculates the difference (in days) between two dates.

@@ -7,7 +7,7 @@ tags: [recursion,performance]
 author: chalarangelo
 cover: case-study
 excerpt: Recursive code tends to be inefficient or in need of optimization. Learn a couple of tricks we use to speed up our recursive functions.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 ### Recursive functions

@@ -7,7 +7,7 @@ tags: [string]
 author: chalarangelo
 cover: reflection-on-lake
 excerpt: Locale-sensitive string splitting and truncation are finally possible in JavaScript.
-dateModified: 2022-12-04T05:00:00-04:00
+dateModified: 2022-12-04
 ---
 
 Breaking a string into words is not the easiest, neither is finding a good place to add an ellipsis. Part of the problem is recognizing word boundaries and words themselves. Luckily `Intl.Segmenter` is a relatively new object that enables **locale-sensitive text segmentation**.

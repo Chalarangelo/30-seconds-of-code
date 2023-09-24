@@ -5,7 +5,7 @@ language: javascript
 tags: [function,generator]
 author: chalarangelo
 cover: laptop-journey
-dateModified: 2020-10-11T17:05:48+03:00
+dateModified: 2020-10-11
 ---
 
 Creates a generator, repeating the given value indefinitely.

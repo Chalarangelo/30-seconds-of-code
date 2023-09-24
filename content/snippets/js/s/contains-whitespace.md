@@ -5,7 +5,7 @@ language: javascript
 tags: [string,regexp]
 author: chalarangelo
 cover: bag-waiting
-dateModified: 2020-10-18T23:04:45+03:00
+dateModified: 2020-10-18
 ---
 
 Checks if the given string contains any whitespace characters.

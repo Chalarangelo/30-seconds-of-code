@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser,event]
 cover: red-light
-dateModified: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21
 ---
 
 Runs the callback whenever the user input type changes (`mouse` or `touch`).

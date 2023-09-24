@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: yellow-white-mug-2
-dateModified: 2020-10-22T20:24:44+03:00
+dateModified: 2020-10-22
 ---
 
 Returns every element that exists in any of the two arrays at least once.

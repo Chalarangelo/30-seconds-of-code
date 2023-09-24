@@ -7,7 +7,7 @@ tags: [commit,branch]
 author: chalarangelo
 cover: night-tram
 excerpt: Learn the simple way to undo a commit in Git without rewriting history.
-dateModified: 2023-05-27T08:23:17+03:00
+dateModified: 2023-05-27
 ---
 
 It's not uncommon to make a mistake when committing changes to a repository. When you realize something went wrong, you might not be able to [rewind the changes](/git/s/rewind-to-commit) you made, especially if you've already pushed them to a remote repository. In that case, you'll want to **undo the commit**, without rewriting history.

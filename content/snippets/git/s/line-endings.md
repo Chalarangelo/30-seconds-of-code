@@ -5,7 +5,7 @@ language: git
 tags: [repository,configuration]
 author: chalarangelo
 cover: leaves-read
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Configures the line endings for a repository.

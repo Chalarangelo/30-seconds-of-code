@@ -5,7 +5,7 @@ language: css
 tags: [visual]
 author: chalarangelo
 cover: metro-tunnel
-dateModified: 2022-11-11T05:00:00-04:00
+dateModified: 2022-11-11
 ---
 
 Displays the link URL for links with no text.

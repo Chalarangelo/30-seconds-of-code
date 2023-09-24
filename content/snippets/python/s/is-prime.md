@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [math]
 cover: carrots
-dateModified: 2020-11-02T19:28:05+02:00
+dateModified: 2020-11-02
 ---
 
 Checks if the provided integer is a prime number.

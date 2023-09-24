@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [function,list]
 cover: painters-desk
-dateModified: 2020-11-02T19:28:35+02:00
+dateModified: 2020-11-02
 ---
 
 Builds a list, using an iterator function and an initial seed value.

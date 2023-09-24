@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: digital-nomad-10
-dateModified: 2020-11-02T19:28:27+02:00
+dateModified: 2020-11-02
 ---
 
 Moves the specified amount of elements to the end of the list.

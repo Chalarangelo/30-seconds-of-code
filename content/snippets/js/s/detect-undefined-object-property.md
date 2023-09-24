@@ -7,7 +7,7 @@ tags: [object]
 author: chalarangelo
 cover: pink-flower
 excerpt: Learn how to detect `undefined` object properties in JavaScript the correct way.
-dateModified: 2022-08-07T05:00:00-04:00
+dateModified: 2022-08-07
 ---
 
 It’s not uncommon to want to detect object properties with a value of `undefined`. While this seems straightforward on the surface, `undefined` is a rather elusive value to check for.

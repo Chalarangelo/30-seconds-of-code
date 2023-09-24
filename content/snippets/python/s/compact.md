@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: new-plant
-dateModified: 2020-11-02T19:27:07+02:00
+dateModified: 2020-11-02
 ---
 
 Removes falsy values from a list.

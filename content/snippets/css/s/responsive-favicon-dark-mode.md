@@ -7,7 +7,7 @@ tags: [visual]
 author: chalarangelo
 cover: dark-mode
 excerpt: Learn how to create a custom responsive favicon that can adapt its color palette for dark mode with this quick guide.
-dateModified: 2021-09-28T19:40:01+03:00
+dateModified: 2021-09-28
 ---
 
 The rise of dark mode in recent years has made many website favicons feel awkward or even impossible to see in some cases. Provided you have the appropriate assets, it's relatively easy to create a responsive favicon that can **adapt to the user's color scheme preferences**.

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: couch-laptop
-dateModified: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22
 ---
 
 Joins all elements of an array into a string and returns this string.

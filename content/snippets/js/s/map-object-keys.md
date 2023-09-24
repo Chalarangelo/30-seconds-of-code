@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [object]
 cover: rocky-mountains-2
-dateModified: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21
 ---
 
 Maps the keys of an object using the provided function, generating a new object.

@@ -7,7 +7,7 @@ tags: [array,object,iterator]
 author: chalarangelo
 cover: balloons
 excerpt: Learn how JavaScript's iterators work and how you can use them to level up your projects by understanding these short code examples.
-dateModified: 2021-09-26T13:20:57+03:00
+dateModified: 2021-09-26
 ---
 
 JavaScript iterators were introduced in ES6 and they are used to loop over a sequence of values, usually some sort of collection. By definition, an iterator must implement a `next()` function, that returns an object in the form of `{ value, done }` where `value` is the next value in the iteration sequence and `done` is a boolean determining if the sequence has already been consumed.

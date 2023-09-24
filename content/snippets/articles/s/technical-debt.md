@@ -5,7 +5,7 @@ tags: [webdev,career,programming,management]
 author: chalarangelo
 cover: new-york
 excerpt: Learn what technical debt is, its causes and symptoms, and how to deal with it.
-dateModified: 2022-10-09T05:00:00-04:00
+dateModified: 2022-10-09
 ---
 
 Technical debt is a jargon term that gets thrown around a lot in the software development industry. It's worth understanding what it means, how to spot it and how to deal with it, once it inevitably rears its ugly head.

@@ -5,7 +5,7 @@ language: javascript
 tags: [function,logic]
 unlisted: true
 cover: blue-bench
-dateModified: 2021-01-04T13:04:15+02:00
+dateModified: 2021-01-04
 ---
 
 Checks if both of the given functions return `true` for a given set of arguments.

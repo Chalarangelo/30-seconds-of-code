@@ -5,7 +5,7 @@ language: react
 tags: [hooks,state]
 author: chalarangelo
 cover: houses-rock-sea
-dateModified: 2021-09-13T05:00:00-04:00
+dateModified: 2021-09-13
 ---
 
 Creates a stateful value that is persisted to `localStorage`, and a function to update it.

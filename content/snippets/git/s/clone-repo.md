@@ -4,7 +4,7 @@ type: snippet
 language: git
 tags: [repository,remote]
 cover: fruit-feast
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Clones an existing repository, creating a local copy of it.

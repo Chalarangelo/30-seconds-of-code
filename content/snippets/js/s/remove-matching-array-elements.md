@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: highlands
-dateModified: 2020-10-22T20:24:04+03:00
+dateModified: 2020-10-22
 ---
 
 Mutates an array by removing elements for which the given function returns `false`.

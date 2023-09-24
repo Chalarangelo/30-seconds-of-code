@@ -5,7 +5,7 @@ language: javascript
 tags: [array]
 author: chalarangelo
 cover: digital-nomad-7
-dateModified: 2022-04-15T05:00:00-04:00
+dateModified: 2022-04-15
 ---
 
 Removes an element from an array if it's included in the array, or pushes it to the array if it isn't.

@@ -6,7 +6,7 @@ tags: [visual]
 author: chalarangelo
 cover: picking-berries
 excerpt: The `currentColor` CSS keyword is a nifty alternative to custom properties for simple use cases.
-dateModified: 2022-11-30T05:00:00-04:00
+dateModified: 2022-11-30
 ---
 
 Modern CSS supports custom properties, yet the `currentColor` keyword precedes them by a few years. Thus, you might still find it in the wild and it is worth knowing what it does and how it works.

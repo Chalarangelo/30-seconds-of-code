@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [object,function]
 cover: metro-arrival
-dateModified: 2020-10-20T11:21:07+03:00
+dateModified: 2020-10-20
 ---
 
 Gets an array of function property names from own (and optionally inherited) enumerable properties of an object.

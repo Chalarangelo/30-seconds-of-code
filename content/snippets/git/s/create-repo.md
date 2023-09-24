@@ -4,7 +4,7 @@ type: snippet
 language: git
 tags: [repository]
 cover: do-more-computer
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Initializes a new git repository, setting up all the configuration files needed by git.

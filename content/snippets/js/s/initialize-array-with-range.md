@@ -5,7 +5,7 @@ language: javascript
 tags: [array]
 cover: spanish-resort
 excerpt: Initializes an inclusive array with numbers in a range, using a common `step` difference.
-dateModified: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22
 ---
 
 Initializes an array containing the numbers in the specified range where `start` and `end` are inclusive with their common difference `step`.

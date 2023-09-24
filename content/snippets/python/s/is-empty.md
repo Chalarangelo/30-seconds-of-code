@@ -5,7 +5,7 @@ language: python
 tags: [list,dictionary,string]
 author: chalarangelo
 cover: salad-1
-dateModified: 2023-01-12T05:00:00-04:00
+dateModified: 2023-01-12
 ---
 
 Checks if the a value is an empty sequence or collection.

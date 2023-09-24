@@ -5,7 +5,7 @@ language: react
 tags: [hooks,state,callback]
 author: chalarangelo
 cover: camper-school-bus
-dateModified: 2021-10-05T05:00:00-04:00
+dateModified: 2021-10-05
 ---
 
 Handles the event of hovering over the wrapped component.

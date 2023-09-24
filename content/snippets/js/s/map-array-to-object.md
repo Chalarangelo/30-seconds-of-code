@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array,object]
 cover: two-lighthouses
-dateModified: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21
 ---
 
 Maps the values of an array to an object using a function.

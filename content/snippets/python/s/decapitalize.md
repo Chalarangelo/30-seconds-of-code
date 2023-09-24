@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [string]
 cover: succulent-crowd
-dateModified: 2020-11-02T19:27:53+02:00
+dateModified: 2020-11-02
 ---
 
 Decapitalizes the first letter of a string.

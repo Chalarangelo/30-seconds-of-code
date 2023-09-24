@@ -7,7 +7,7 @@ tags: [array,iterator]
 author: chalarangelo
 cover: cave-view
 excerpt: Did you know you can get the index of an array item in a JavaScript for...of loop? Learn how with this bite-sized tip.
-dateModified: 2021-07-25T05:00:00-04:00
+dateModified: 2021-07-25
 ---
 
 JavaScript's `for...of` loops provide an easy way to iterate over all kinds of iterables from arrays and stings to `Map` and `Set` objects. One supposed limitation over other options (e.g. `Array.prototype.forEach()`) is that you only get the value of each item in the iterable. But that is not necessarily the case, as you can easily leverage `Array.prototype.entries()` to get both the index and value of each array item:

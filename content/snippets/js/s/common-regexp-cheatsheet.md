@@ -6,7 +6,7 @@ tags: [string,regexp]
 author: chalarangelo
 cover: rocky-beach
 excerpt: A collection of regular expressions that can be used to solve common problems.
-dateModified: 2022-11-09T05:00:00-04:00
+dateModified: 2022-11-09
 ---
 
 ### Exact string match

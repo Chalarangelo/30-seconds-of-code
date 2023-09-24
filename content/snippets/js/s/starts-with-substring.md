@@ -6,7 +6,7 @@ language: javascript
 tags: [string]
 cover: boutique-home-office-3
 author: chalarangelo
-dateModified: 2022-07-31T05:00:00-04:00
+dateModified: 2022-07-31
 ---
 
 Checks if a given string starts with a substring of another string.

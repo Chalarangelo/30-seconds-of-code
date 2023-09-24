@@ -5,7 +5,7 @@ language: javascript
 tags: [algorithm,array,recursion]
 author: chalarangelo
 cover: building-blocks
-dateModified: 2020-12-28T22:48:09+02:00
+dateModified: 2020-12-28
 ---
 
 Sorts an array of numbers, using the heapsort algorithm.

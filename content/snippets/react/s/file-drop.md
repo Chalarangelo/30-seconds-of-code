@@ -5,7 +5,7 @@ language: react
 tags: [components,input,state,effect,event]
 author: chalarangelo
 cover: man-red-sunset
-dateModified: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13
 ---
 
 Renders a file drag and drop component for a single file.

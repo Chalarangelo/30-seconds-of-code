@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [type,array]
 cover: man-red-sunset
-dateModified: 2020-09-15T16:28:04+03:00
+dateModified: 2020-09-15
 ---
 
 Casts the provided value as an array if it's not one.

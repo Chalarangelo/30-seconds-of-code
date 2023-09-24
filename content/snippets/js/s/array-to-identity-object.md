@@ -5,7 +5,7 @@ language: javascript
 tags: [array]
 author: chalarangelo
 cover: rain-shopping
-dateModified: 2023-04-16T05:00:00-04:00
+dateModified: 2023-04-16
 ---
 
 Converts an array of values into an object with the same values as keys and values.

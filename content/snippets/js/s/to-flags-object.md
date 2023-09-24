@@ -5,7 +5,7 @@ language: javascript
 tags: [array,object]
 author: chalarangelo
 cover: glass-blowing
-dateModified: 2022-04-12T05:00:00-04:00
+dateModified: 2022-04-12
 ---
 
 Converts an array of strings into an object mapping to true.

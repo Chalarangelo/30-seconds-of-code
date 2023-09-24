@@ -5,7 +5,7 @@ language: javascript
 tags: [function]
 unlisted: true
 cover: stairs-from-below
-dateModified: 2021-01-04T13:04:15+02:00
+dateModified: 2021-01-04
 ---
 
 Measures the number of times a function is executed per second (hz/hertz).

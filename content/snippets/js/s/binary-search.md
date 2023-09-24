@@ -5,7 +5,7 @@ language: javascript
 tags: [algorithm,array]
 author: chalarangelo
 cover: zen-indoors
-dateModified: 2020-12-29T13:06:47+02:00
+dateModified: 2020-12-29
 ---
 
 Finds the index of a given element in a sorted array using the binary search algorithm.

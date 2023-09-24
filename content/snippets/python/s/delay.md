@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [function]
 cover: succulent-10
-dateModified: 2020-11-02T19:27:53+02:00
+dateModified: 2020-11-02
 ---
 
 Invokes the provided function after `ms` milliseconds.

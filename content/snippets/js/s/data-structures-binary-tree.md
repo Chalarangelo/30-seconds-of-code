@@ -7,7 +7,7 @@ tags: [class]
 author: chalarangelo
 cover: purple-flower-macro-3
 excerpt: A binary tree is a hierarchical data structure of linked nodes with at most two children each.
-dateModified: 2021-08-26T05:00:00-04:00
+dateModified: 2021-08-26
 ---
 
 ### Definition

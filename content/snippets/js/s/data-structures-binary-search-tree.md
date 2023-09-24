@@ -7,7 +7,7 @@ tags: [class]
 author: chalarangelo
 cover: purple-flower-macro-4
 excerpt: A binary search tree is a hierarchical data structure of ordered nodes with at most two children each.
-dateModified: 2021-08-31T05:00:00-04:00
+dateModified: 2021-08-31
 ---
 
 ### Definition

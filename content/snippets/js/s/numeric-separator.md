@@ -7,7 +7,7 @@ tags: [math,type]
 author: chalarangelo
 cover: coffee-drip
 excerpt: Numeric separators are a somewhat lesser-known JavaScript syntactic sugar that can make working with large constants a lot easier.
-dateModified: 2021-06-27T05:00:00-04:00
+dateModified: 2021-06-27
 ---
 
 Numeric separators are a lesser-known JavaScript syntactic sugar that can make working with numeric constants a lot easier. The long and short of it is that you can add underscores (`_`) to numeric values to make them more readable.

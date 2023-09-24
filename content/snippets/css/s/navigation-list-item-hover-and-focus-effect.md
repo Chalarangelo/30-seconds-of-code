@@ -4,7 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: cloudy-rock-formation
-dateModified: 2021-10-11T18:44:51+03:00
+dateModified: 2021-10-11
 ---
 
 Creates a custom hover and focus effect for navigation items, using CSS transformations.

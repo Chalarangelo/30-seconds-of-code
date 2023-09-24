@@ -5,7 +5,7 @@ language: javascript
 tags: [string,algorithm]
 author: chalarangelo
 cover: purple-sunset-waves
-dateModified: 2020-12-29T16:27:50+02:00
+dateModified: 2020-12-29
 ---
 
 Calculates the difference between two strings, using the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) algorithm.

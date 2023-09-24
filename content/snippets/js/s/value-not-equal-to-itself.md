@@ -7,7 +7,7 @@ tags: [type,comparison]
 author: chalarangelo
 cover: eagle
 excerpt: Did you know there's a JavaScript value that's not equal to itself?
-dateModified: 2021-12-12T05:00:00-04:00
+dateModified: 2021-12-12
 ---
 
 `NaN` (Not-a-Number) is the only JavaScript value not equal to itself when comparing with any of the comparison operators. `NaN` is often the result of meaningless or invalid math computations, so it doesn't make sense for two `NaN` values to be considered equal.

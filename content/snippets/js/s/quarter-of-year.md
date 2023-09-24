@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [date]
 cover: flower-shape-sunset
-dateModified: 2020-10-22T20:24:04+03:00
+dateModified: 2020-10-22
 ---
 
 Returns the quarter and year to which the supplied date belongs to.

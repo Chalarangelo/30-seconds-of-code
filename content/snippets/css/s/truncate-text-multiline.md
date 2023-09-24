@@ -4,7 +4,7 @@ type: snippet
 language: css
 tags: [layout]
 cover: blue-computer
-dateModified: 2021-01-07T23:52:15+02:00
+dateModified: 2021-01-07
 ---
 
 Truncates text that is longer than one line.

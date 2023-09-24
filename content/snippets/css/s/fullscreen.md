@@ -4,7 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: flower-portrait-3
-dateModified: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13
 ---
 
 Applies styles to an element when in fullscreen mode.

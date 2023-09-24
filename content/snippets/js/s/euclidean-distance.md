@@ -5,7 +5,7 @@ language: javascript
 tags: [math,algorithm]
 author: chalarangelo
 cover: ancient-greek-building
-dateModified: 2020-12-28T13:41:19+02:00
+dateModified: 2020-12-28
 ---
 
 Calculates the distance between two points in any number of dimensions.

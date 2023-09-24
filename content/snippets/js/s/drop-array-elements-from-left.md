@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: salad-2
-dateModified: 2020-11-01T20:50:57+02:00
+dateModified: 2020-11-01
 ---
 
 Creates a new array with `n` elements removed from the left.

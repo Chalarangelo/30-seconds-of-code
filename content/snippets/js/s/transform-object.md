@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [object]
 cover: green-plant
-dateModified: 2020-10-22T20:24:44+03:00
+dateModified: 2020-10-22
 ---
 
 Applies a function against an accumulator and each key in the object (from left to right).

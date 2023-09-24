@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string]
 cover: metropolitan-window
-dateModified: 2020-11-01T20:50:57+02:00
+dateModified: 2020-11-01
 ---
 
 Indents each line in the provided string.

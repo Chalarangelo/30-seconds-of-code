@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [list,recursion]
 cover: standing-stones
-dateModified: 2020-12-29T19:53:45+02:00
+dateModified: 2020-12-29
 ---
 
 Deep flattens a list.

@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [math,list]
 cover: purple-flower-field
-dateModified: 2020-11-02T19:28:27+02:00
+dateModified: 2020-11-02
 ---
 
 Returns the minimum value of a list, after mapping each element to a value using the provided function.

@@ -4,7 +4,7 @@ type: snippet
 language: react
 tags: [components,array,object]
 cover: waves-from-above-2
-dateModified: 2020-09-06T14:20:45+03:00
+dateModified: 2020-09-06
 ---
 
 Renders a table with rows dynamically created from an array of objects and a list of property names.

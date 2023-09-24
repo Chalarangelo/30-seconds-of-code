@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math]
 cover: purple-pier
-dateModified: 2021-01-08T00:23:44+02:00
+dateModified: 2021-01-08
 ---
 
 Calculates the angle (theta) between two vectors.

@@ -4,7 +4,7 @@ type: snippet
 language: css
 tags: [interactivity,visual]
 cover: flower-portrait-4
-dateModified: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13
 ---
 
 Creates an input with a visual, non-editable prefix.

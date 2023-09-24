@@ -5,7 +5,7 @@ language: css
 tags: [layout]
 author: chalarangelo
 cover: beach-riders
-dateModified: 2020-12-30T15:37:37+02:00
+dateModified: 2020-12-30
 ---
 
 Creates a responsive image mosaic.

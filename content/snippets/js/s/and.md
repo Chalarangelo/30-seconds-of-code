@@ -5,7 +5,7 @@ language: javascript
 tags: [math,logic]
 unlisted: true
 cover: succulent-1
-dateModified: 2021-01-04T13:04:15+02:00
+dateModified: 2021-01-04
 ---
 
 Checks if both arguments are `true`.

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [algorithm,string]
 cover: waves-from-above
-dateModified: 2020-12-29T12:29:21+02:00
+dateModified: 2020-12-29
 ---
 
 Encrypts or decrypts a given string using the Caesar cipher.

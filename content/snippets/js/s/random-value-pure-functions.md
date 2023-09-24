@@ -7,7 +7,7 @@ tags: [function,random,testing]
 author: chalarangelo
 cover: do-more-computer
 excerpt: Randomness and pure functions don't seem to go hand in hand. But where there's a will, there's a way.
-dateModified: 2022-06-19T05:00:00-04:00
+dateModified: 2022-06-19
 ---
 
 Working with random values can create code that's hard to test. Usually, the remedy to such issues is to use [pure functions](/articles/javascript-pure-functions). A pure function is a function that always returns the same value given the same input. As they do not have side effects and their return value is predictable, testing pure functions is much easier.

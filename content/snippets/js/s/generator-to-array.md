@@ -5,7 +5,7 @@ language: javascript
 tags: [function,array,generator]
 author: chalarangelo
 cover: messy-papers
-dateModified: 2020-12-31T13:22:18+02:00
+dateModified: 2020-12-31
 ---
 
 Converts the output of a generator function to an array.

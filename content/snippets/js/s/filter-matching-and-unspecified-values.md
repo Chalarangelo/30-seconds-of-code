@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: baloons-field
-dateModified: 2020-10-22T20:24:04+03:00
+dateModified: 2020-10-22
 ---
 
 Filters an array of objects based on a condition while also filtering out unspecified keys.

@@ -5,7 +5,7 @@ language: git
 tags: [repository,submodule]
 author: chalarangelo
 cover: rocky-mountains
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Adds a new submodule to the repository.

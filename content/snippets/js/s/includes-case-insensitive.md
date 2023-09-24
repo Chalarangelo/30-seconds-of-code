@@ -5,7 +5,7 @@ language: javascript
 tags: [string]
 author: chalarangelo
 cover: cup-of-orange
-dateModified: 2022-07-28T05:00:00-04:00
+dateModified: 2022-07-28
 ---
 
 Checks if a string contains a substring, case-insensitive.

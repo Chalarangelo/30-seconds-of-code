@@ -5,7 +5,7 @@ language: javascript
 tags: [browser]
 author: chalarangelo
 cover: guitar-living-room
-dateModified: 2020-12-31T13:13:47+02:00
+dateModified: 2020-12-31
 ---
 
 Checks if `localStorage` is enabled.

@@ -5,7 +5,7 @@ language: javascript
 tags: [array]
 author: chalarangelo
 cover: camera-zoom
-dateModified: 2022-04-20T05:00:00-04:00
+dateModified: 2022-04-20
 ---
 
 Transposes a two-dimensional array.

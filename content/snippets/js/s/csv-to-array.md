@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string,array]
 cover: watermelon-bike
-dateModified: 2022-01-30T12:14:39+02:00
+dateModified: 2022-01-30
 ---
 
 Converts a comma-separated values (CSV) string to a 2D array.

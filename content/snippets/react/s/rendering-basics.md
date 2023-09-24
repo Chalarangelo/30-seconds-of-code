@@ -6,7 +6,7 @@ tags: [render]
 author: chalarangelo
 cover: comic-glasses
 excerpt: Take a deeper dive into React's rendering process and understand the basics behind the popular JavaScript framework.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 #### React rendering

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math]
 cover: clay-pot-horizon
-dateModified: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22
 ---
 
 Clamps `num` within the inclusive range specified by the boundary values `a` and `b`.

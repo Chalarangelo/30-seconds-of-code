@@ -4,7 +4,7 @@ type: snippet
 language: react
 tags: [components,state]
 cover: cows
-dateModified: 2020-11-16T16:50:57+02:00
+dateModified: 2020-11-16
 ---
 
 Renders a toggle component.

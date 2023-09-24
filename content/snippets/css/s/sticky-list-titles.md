@@ -5,7 +5,7 @@ language: css
 tags: [visual]
 author: chalarangelo
 cover: interior-7
-dateModified: 2020-12-30T15:37:37+02:00
+dateModified: 2020-12-30
 ---
 
 Creates a list with sticky headings for each section.

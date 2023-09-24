@@ -7,7 +7,7 @@ tags: [array]
 author: chalarangelo
 cover: coconuts
 excerpt: You can use a lot of different techniques to empty an array in JavaScript. See which ones best suits your needs with this quick guide.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 When working with JavaScript arrays, a pretty common question is how does one empty an array and remove all its elements. As it turns out, there are a few ways you can go about this, each one with its pros and cons.

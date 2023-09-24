@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [function]
 cover: shelf-plant
-dateModified: 2020-10-22T20:24:30+03:00
+dateModified: 2020-10-22
 ---
 
 Measures the time it takes for a function to execute.

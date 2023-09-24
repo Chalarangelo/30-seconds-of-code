@@ -5,7 +5,7 @@ language: javascript
 tags: [browser,event]
 author: chalarangelo
 cover: interior-13
-dateModified: 2021-01-06T13:57:56+02:00
+dateModified: 2021-01-06
 ---
 
 Runs the callback whenever the user clicks outside of the specified element.

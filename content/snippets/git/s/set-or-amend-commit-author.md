@@ -7,7 +7,7 @@ tags: [commit]
 author: chalarangelo
 cover: new-plant
 excerpt: Ever wanted to commit as someone else? Maybe change the author of an existing commit? Here's how.
-dateModified: 2023-05-24T21:10:59+03:00
+dateModified: 2023-05-24
 ---
 
 Every Git commit is associated with an author, usually configured globally on your machine. But what if you want to commit as someone else? What can you do in case your Git configuration is wrong or you want to use a different email for a specific commit? And what can you do if you've already made a commit and want to change its author?

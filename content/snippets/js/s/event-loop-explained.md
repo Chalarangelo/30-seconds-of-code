@@ -7,7 +7,7 @@ tags: [browser,event]
 author: chalarangelo
 cover: tranquility
 excerpt: The Event Loop is a source of confusion for many developers, but it's a fundamental piece of the JavaScript engine.
-dateModified: 2022-08-21T05:00:00-04:00
+dateModified: 2022-08-21
 ---
 
 The Event Loop is a source of confusion for many developers, but it's a fundamental piece of the JavaScript engine. It's what allows JavaScript to be single-threaded, yet able to execute in a non-blocking fashion. To understand the Event Loop, we first need to explain a few things about the JavaScript engine, such as the Call Stack, Tasks, Microtasks and their respective Queues. Let's break them down one by one.

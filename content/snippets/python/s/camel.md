@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [string,regexp]
 cover: digital-nomad-9
-dateModified: 2020-11-02T19:27:07+02:00
+dateModified: 2020-11-02
 ---
 
 Converts a string to camelcase.

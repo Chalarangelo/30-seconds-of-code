@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [function,type]
 cover: coffee-phone-tray
-dateModified: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22
 ---
 
 Customizes a coalesce function that returns the first argument which is `true` based on the given validator.

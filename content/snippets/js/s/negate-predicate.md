@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [function]
 cover: blue-bird
-dateModified: 2020-09-15T16:28:04+03:00
+dateModified: 2020-09-15
 ---
 
 Negates a predicate function.

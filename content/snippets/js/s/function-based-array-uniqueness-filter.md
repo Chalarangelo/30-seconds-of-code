@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: washed-ashore
-dateModified: 2020-11-02T19:41:07+02:00
+dateModified: 2020-11-02
 ---
 
 Creates an array with the unique values filtered out, based on a provided comparator function.

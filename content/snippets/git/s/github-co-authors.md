@@ -7,7 +7,7 @@ tags: [github,programming,webdev]
 author: chalarangelo
 cover: book-chair
 excerpt: Learn how to add multiple authors to a git commit with this quick and easy tip.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 You can add multiple authors to a git commit, by adding one or more `Co-authored-by` trailers to the commit's message:

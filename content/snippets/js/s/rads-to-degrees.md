@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math]
 cover: flower-portrait-6
-dateModified: 2020-09-15T16:28:04+03:00
+dateModified: 2020-09-15
 ---
 
 Converts an angle from radians to degrees.

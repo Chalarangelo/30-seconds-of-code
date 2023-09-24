@@ -5,7 +5,7 @@ language: javascript
 tags: [browser]
 author: chalarangelo
 cover: bag-waiting
-dateModified: 2020-12-30T19:21:15+02:00
+dateModified: 2020-12-30
 ---
 
 Removes a class from an HTML element.

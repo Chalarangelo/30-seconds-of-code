@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: case-study
-dateModified: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22
 ---
 
 Returns an array of HTML elements whose width is larger than that of the viewport's.

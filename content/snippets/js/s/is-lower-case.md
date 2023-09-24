@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string]
 cover: flower-portrait-7
-dateModified: 2020-10-20T11:21:07+03:00
+dateModified: 2020-10-20
 ---
 
 Checks if a string is lower case.

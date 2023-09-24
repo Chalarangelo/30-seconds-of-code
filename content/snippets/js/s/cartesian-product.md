@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math]
 cover: sail-away
-dateModified: 2020-12-29T12:31:43+02:00
+dateModified: 2020-12-29
 ---
 
 Calculates the cartesian product of two arrays.

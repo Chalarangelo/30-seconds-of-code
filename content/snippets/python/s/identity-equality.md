@@ -6,7 +6,7 @@ language: python
 tags: [type,comparison]
 cover: umbrellas
 excerpt: Python provides two distinct comparison operators for different task. Stop mixing them up using this quick guide.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 Python provides two very similar equality operators used for comparisons:

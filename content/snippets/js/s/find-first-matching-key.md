@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [object]
 cover: succulent-crowd
-dateModified: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22
 ---
 
 Finds the first key that satisfies the provided testing function.

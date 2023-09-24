@@ -7,7 +7,7 @@ tags: [metadata,head]
 author: chalarangelo
 cover: boutique-home-office-1
 excerpt: Ensure your HTML documents are properly structured by including these lines in your `<head>` element.
-dateModified: 2023-01-18T05:00:00-04:00
+dateModified: 2023-01-18
 ---
 
 An essential part of an HTML document is the `<head>` element, which contains metadata about the document. Some vital information, such as the document's title and character encoding are stored in the `<head>` element. It's also where you can include links to external resources such as CSS stylesheets and JavaScript files.

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: fruit-feast
-dateModified: 2020-11-29T12:04:53+02:00
+dateModified: 2020-11-29
 ---
 
 Removes elements from the end of an array until the passed function returns `true`.

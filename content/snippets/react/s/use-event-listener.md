@@ -5,7 +5,7 @@ language: react
 tags: [hooks,effect,event]
 author: chalarangelo
 cover: beach-riders
-dateModified: 2021-09-01T05:00:00-04:00
+dateModified: 2021-09-01
 ---
 
 Adds an event listener for the specified event type on the given element.

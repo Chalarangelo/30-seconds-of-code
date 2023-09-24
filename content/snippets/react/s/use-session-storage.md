@@ -5,7 +5,7 @@ language: react
 tags: [hooks,state]
 author: chalarangelo
 cover: white-laptop
-dateModified: 2021-09-15T05:00:00-04:00
+dateModified: 2021-09-15
 ---
 
 Creates a stateful value that is persisted to `sessionStorage`, and a function to update it.

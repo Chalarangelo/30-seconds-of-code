@@ -7,7 +7,7 @@ tags: [class]
 author: chalarangelo
 cover: purple-flower-macro-1
 excerpt: A stack is a linear data structure which follows a last in, first out (LIFO) order of operations.
-dateModified: 2021-08-03T05:00:00-04:00
+dateModified: 2021-08-03
 ---
 
 ### Definition

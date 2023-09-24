@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string]
 cover: mountain-lake-cottage-2
-dateModified: 2020-10-18T23:04:45+03:00
+dateModified: 2020-10-18
 ---
 
 Returns the length of a string in bytes.

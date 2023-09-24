@@ -7,7 +7,7 @@ tags: [object,class]
 author: chalarangelo
 cover: last-light
 excerpt: Understanding the difference between these two object-oriented programming paradigms is key to taking your skills to the next level.
-dateModified: 2021-11-21T05:00:00-04:00
+dateModified: 2021-11-21
 ---
 
 ### Object-oriented programming

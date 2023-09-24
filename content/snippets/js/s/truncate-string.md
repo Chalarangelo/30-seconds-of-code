@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string]
 cover: bamboo-lamp
-dateModified: 2020-10-21T21:17:45+03:00
+dateModified: 2020-10-21
 ---
 
 Truncates a string up to a specified length.

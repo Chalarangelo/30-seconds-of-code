@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [type]
 cover: italian-horizon
-dateModified: 2020-10-18T13:49:49+03:00
+dateModified: 2020-10-18
 ---
 
 Checks if the provided string is a valid JSON.

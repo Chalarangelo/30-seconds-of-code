@@ -6,7 +6,7 @@ tags: [debugging]
 author: chalarangelo
 cover: broken-screen
 excerpt: As powerful as React is, it is also quite fragile at places. Did you know that a few lines can easily break your entire React application?
-dateModified: 2021-11-06T20:51:47+03:00
+dateModified: 2021-11-06
 ---
 
 I am by no means an expert React engineer, but I have a couple years of experience under my belt. React is a powerful library for building user interfaces, but it's also quite fragile at places. A common bug I have encountered is caused by **direct DOM manipulation in combination with React**. This is sort of an anti-pattern, as it can break your entire React application under the right circumstances and it's hard to debug.

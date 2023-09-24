@@ -5,7 +5,7 @@ language: javascript
 tags: [browser]
 author: chalarangelo
 cover: interior-8
-dateModified: 2021-01-05T22:45:34+02:00
+dateModified: 2021-01-05
 ---
 
 Returns all the ancestors of an element from the document root to the given element.

@@ -4,7 +4,7 @@ type: snippet
 language: git
 tags: [repository]
 cover: city-view
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Prints a visual graph of all commits and branches in the repository.

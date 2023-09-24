@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: accessibility
-dateModified: 2020-10-06T18:47:16+03:00
+dateModified: 2020-10-06
 ---
 
 Detects the preferred language of the current user.

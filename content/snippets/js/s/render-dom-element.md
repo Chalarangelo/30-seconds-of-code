@@ -5,7 +5,7 @@ language: javascript
 tags: [browser,recursion]
 author: chalarangelo
 cover: standing-stones
-dateModified: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13
 ---
 
 Renders the given DOM tree in the specified DOM element.

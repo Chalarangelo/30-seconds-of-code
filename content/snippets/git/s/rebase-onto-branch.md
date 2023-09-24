@@ -4,7 +4,7 @@ type: snippet
 language: git
 tags: [branch]
 cover: sliced-fruits
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Rebases the current branch onto another branch.

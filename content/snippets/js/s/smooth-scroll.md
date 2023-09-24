@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser,css]
 cover: carrots
-dateModified: 2020-10-22T20:24:30+03:00
+dateModified: 2020-10-22
 ---
 
 Smoothly scrolls the element on which it's called into the visible area of the browser window.

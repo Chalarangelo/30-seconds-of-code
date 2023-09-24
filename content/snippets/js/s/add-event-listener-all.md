@@ -5,7 +5,7 @@ language: javascript
 tags: [browser,event]
 author: chalarangelo
 cover: duck-plants
-dateModified: 2021-04-22T08:53:29+03:00
+dateModified: 2021-04-22
 ---
 
 Attaches an event listener to all the provided targets.

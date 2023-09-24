@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math]
 cover: engine
-dateModified: 2020-11-01T20:50:57+02:00
+dateModified: 2020-11-01
 ---
 
 Checks if two numbers are approximately equal to each other.

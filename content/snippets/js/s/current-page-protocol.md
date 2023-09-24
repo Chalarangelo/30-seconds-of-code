@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: bamboo-lamp
-dateModified: 2020-10-20T11:46:23+03:00
+dateModified: 2020-10-20
 ---
 
 Gets the protocol being used on the current page.

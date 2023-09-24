@@ -4,7 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state,reducer]
 cover: oven-paddle
-dateModified: 2021-01-07T23:57:13+02:00
+dateModified: 2021-01-07
 ---
 
 Handles asynchronous calls.

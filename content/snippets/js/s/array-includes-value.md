@@ -7,7 +7,7 @@ tags: [array]
 author: chalarangelo
 cover: bridge-drop
 excerpt: Checking if an array includes a specific value is pretty straightforward, except when it comes to objects.
-dateModified: 2022-09-18T05:00:00-04:00
+dateModified: 2022-09-18
 ---
 
 ### Primitive values

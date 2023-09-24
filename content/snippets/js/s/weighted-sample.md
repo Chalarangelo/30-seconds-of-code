@@ -5,7 +5,7 @@ language: javascript
 tags: [array,random]
 author: chalarangelo
 cover: digital-nomad-14
-dateModified: 2020-10-22T20:24:44+03:00
+dateModified: 2020-10-22
 ---
 
 Gets a random element from an array, using the provided `weights` as the probabilities for each element.

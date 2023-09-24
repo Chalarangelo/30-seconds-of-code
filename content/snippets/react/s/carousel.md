@@ -4,7 +4,7 @@ type: snippet
 language: react
 tags: [components,children,state,effect]
 cover: shell-focus
-dateModified: 2020-11-03T20:42:15+02:00
+dateModified: 2020-11-03
 ---
 
 Renders a carousel component.

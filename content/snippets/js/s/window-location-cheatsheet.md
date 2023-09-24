@@ -6,7 +6,7 @@ tags: [browser]
 author: chalarangelo
 cover: yellow-sofa
 excerpt: A quick reference for the `window.location` object.
-dateModified: 2022-12-21T05:00:00-04:00
+dateModified: 2022-12-21
 ---
 
 The `window.location` object is particularly useful when working with a page's URL information. Let's take a look at an example of a URL and what each property of the `window.location` object represents.

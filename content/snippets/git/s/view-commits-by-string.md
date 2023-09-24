@@ -4,7 +4,7 @@ type: snippet
 language: git
 tags: [commit]
 cover: bunny-poster
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Prints a list of all commits that manipulated a given string.

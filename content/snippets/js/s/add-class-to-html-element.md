@@ -5,7 +5,7 @@ language: javascript
 tags: [browser]
 author: chalarangelo
 cover: shiny-mountains
-dateModified: 2020-12-30T19:21:15+02:00
+dateModified: 2020-12-30
 ---
 
 Adds a class to an HTML element.

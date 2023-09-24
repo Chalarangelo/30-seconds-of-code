@@ -7,7 +7,7 @@ tags: [array,proxy]
 author: chalarangelo
 cover: budapest-palace
 excerpt: Ever wanted to use negative indices in JavaScript arrays? Here's a simple way to do it using a Proxy.
-dateModified: 2022-10-02T05:00:00-04:00
+dateModified: 2022-10-02
 ---
 
 `Array.prototype.slice()` provides an easy way to access elements from the end of an array, using a negative `start` value. While this sounds convenient, the resulting value is an array, so it's necessary to use an index to get an individual element.

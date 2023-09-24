@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [object]
 cover: watermelon-bike
-dateModified: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21
 ---
 
 Compares two objects to determine if the first one contains equivalent property values to the second one, based on a provided function.

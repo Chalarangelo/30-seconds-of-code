@@ -4,7 +4,7 @@ type: snippet
 language: git
 tags: [branch]
 cover: cold-mountains
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Discards all untracked changes to the current branch.

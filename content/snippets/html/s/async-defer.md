@@ -7,7 +7,7 @@ tags: [script,javascript]
 author: chalarangelo
 cover: coworking-space
 excerpt: Understanding how to correctly load your JavaScript files can significantly improve your web application's performance.
-dateModified: 2022-09-04T05:00:00-04:00
+dateModified: 2022-09-04
 ---
 
 When it comes to loading JavaScript files, there are a few different options available. Understanding exactly how scripts are loaded and executed is crucial for website performance, as well as for the overall quality of the user experience. Let's take a look at how the `<script>` tag works and how certain attributes affect its behavior.

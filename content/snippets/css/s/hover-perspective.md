@@ -5,7 +5,7 @@ language: css
 tags: [animation]
 author: chalarangelo
 cover: shiny-mountains
-dateModified: 2021-05-17T13:58:04+03:00
+dateModified: 2021-05-17
 ---
 
 Applies a perspective transform with a hover animation to an element.

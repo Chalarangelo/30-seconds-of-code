@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math]
 cover: industrial-tokyo
-dateModified: 2020-10-18T14:58:09+03:00
+dateModified: 2020-10-18
 ---
 
 Converts a number to an array of digits, removing its sign if necessary.

@@ -7,7 +7,7 @@ tags: [browser]
 author: chalarangelo
 cover: armchair
 excerpt: Increase your JavaScript code's performance when working with the DOM by leveraging this simple trick.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 DOM operations, including accessing the DOM, are generally slow. This is usually not a problem until you have to perform many DOM operations and your JavaScript application's performance starts to suffer. A very quick trick to increase performance is to store DOM elements or their values in local variables if you plan to access them multiple times.

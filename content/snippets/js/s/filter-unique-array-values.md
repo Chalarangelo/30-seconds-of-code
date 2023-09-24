@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: tulips-and-reeds
-dateModified: 2020-11-02T19:41:00+02:00
+dateModified: 2020-11-02
 ---
 
 Creates an array with the unique values filtered out.

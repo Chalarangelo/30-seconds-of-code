@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string]
 cover: type-stamps
-dateModified: 2020-10-18T14:58:09+03:00
+dateModified: 2020-10-18
 ---
 
 Reverses a string.

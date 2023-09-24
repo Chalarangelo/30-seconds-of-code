@@ -7,7 +7,7 @@ tags: [string]
 author: chalarangelo
 cover: sofia-tram
 excerpt: Avoid the naive approach and use a more robust method to edit URL parameters in JavaScript.
-dateModified: 2022-12-07T05:00:00-04:00
+dateModified: 2022-12-07
 ---
 
 Editing the query string of a URL in JavaScript is pretty common. While the naive approach of directly editing the URL as a string often works, it's a fragile solution that can break easily. This is especially true when working with encoding, hash fragments and other such intricacies.

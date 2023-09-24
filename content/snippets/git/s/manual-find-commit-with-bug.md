@@ -5,7 +5,7 @@ language: git
 tags: [commit,branch]
 author: chalarangelo
 cover: blue-computer
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Uses a binary search algorithm to manually find which commit in history introduced a bug.

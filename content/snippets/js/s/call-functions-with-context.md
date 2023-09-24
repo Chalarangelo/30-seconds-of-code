@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [function]
 cover: rabbit-call
-dateModified: 2021-06-13T13:50:25+03:00
+dateModified: 2021-06-13
 ---
 
 Given a key and a set of arguments, call them when given a context.

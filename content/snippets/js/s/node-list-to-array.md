@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser,array]
 cover: compass-2
-dateModified: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21
 ---
 
 Converts a `NodeList` to an array.

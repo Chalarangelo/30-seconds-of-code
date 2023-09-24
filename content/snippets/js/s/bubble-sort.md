@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [algorithm,array]
 cover: sail-away-2
-dateModified: 2020-12-29T12:18:58+02:00
+dateModified: 2020-12-29
 ---
 
 Sorts an array of numbers, using the bubble sort algorithm.

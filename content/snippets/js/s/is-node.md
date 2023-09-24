@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [node]
 cover: cloudy-rock-formation
-dateModified: 2021-04-02T11:45:13+03:00
+dateModified: 2021-04-02
 ---
 
 Determines if the current runtime environment is Node.js.
