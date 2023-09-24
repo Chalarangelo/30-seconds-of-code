@@ -7,7 +7,7 @@ tags: [link,security]
 author: chalarangelo
 cover: laptop-with-code
 excerpt: Opening a link in a new tab comes with a security vulnerability that you may not be aware of. Protect your users with this simple trick.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 Oftentimes, when linking to an external resource from our websites, we use `target="_blank"` to open the linked page in a new tab or window. But there is a **security risk** we should be aware of. The new tab gains limited access to the linking page (i.e. our website) via `Window.opener`, which it can then use to alter the linking page's URL via `Window.opener.location` (this is known as **tabnabbing**).

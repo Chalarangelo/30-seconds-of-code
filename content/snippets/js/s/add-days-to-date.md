@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [date]
 cover: orange-coffee-4
-dateModified: 2020-11-28T19:18:29+02:00
+dateModified: 2020-11-28
 ---
 
 Calculates the date of `n` days from the given date, returning its string representation.

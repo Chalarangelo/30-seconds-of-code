@@ -7,7 +7,7 @@ tags: [array]
 author: chalarangelo
 cover: rocky-beach-waves
 excerpt: A few tips and tricks to help you filter arrays in JavaScript more efficiently.
-dateModified: 2022-09-28T05:00:00-04:00
+dateModified: 2022-09-28
 ---
 
 While `Array.prototype.filter()` is a very convenient method, its performance often leaves something to be desired. This is exaggerated due to the fact that it has become the go-to method for many operations that can be performed using different alternatives. Let's look at a couple of common scenarios and see how we can improve their performance.

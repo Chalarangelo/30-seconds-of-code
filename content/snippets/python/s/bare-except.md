@@ -6,7 +6,7 @@ language: python
 tags: [error]
 cover: dark-cloud
 excerpt: It's generally not a good idea to use bare `except` clause in Python, but do you know why?
-dateModified: 2022-02-20T05:00:00-04:00
+dateModified: 2022-02-20
 ---
 
 In Python, keyboard interrupts and system exits are propagated using exceptions (i.e. `KeyboardInterrupt` and `SystemExit`). As a result, a bare `except` clause is going to catch something like the user hitting <kbd>Ctrl</kbd> + <kbd>C</kbd>.

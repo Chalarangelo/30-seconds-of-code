@@ -5,7 +5,7 @@ language: javascript
 tags: [browser]
 author: chalarangelo
 cover: flowering-hills
-dateModified: 2021-04-22T08:45:39+03:00
+dateModified: 2021-04-22
 ---
 
 Finds the closest matching node starting at the given `node`.

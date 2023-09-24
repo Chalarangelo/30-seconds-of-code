@@ -5,7 +5,7 @@ language: react
 tags: [hooks,state,effect]
 author: chalarangelo
 cover: couch-laptop
-dateModified: 2020-11-16T14:17:53+02:00
+dateModified: 2020-11-16
 ---
 
 Stores the previous state or props.

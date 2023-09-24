@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [function]
 cover: shiny-mountains
-dateModified: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22
 ---
 
 Defers invoking a function until the current call stack has cleared.

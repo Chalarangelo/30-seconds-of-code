@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: blue-lake
-dateModified: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22
 ---
 
 Redirects the page to HTTPS if it's currently in HTTP.

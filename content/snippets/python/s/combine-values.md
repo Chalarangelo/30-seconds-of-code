@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [dictionary]
 cover: dim-mountains
-dateModified: 2021-04-04T14:32:35+03:00
+dateModified: 2021-04-04
 ---
 
 Combines two or more dictionaries, creating a list of values for each key.

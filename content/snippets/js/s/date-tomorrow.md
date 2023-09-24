@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [date]
 cover: travel-mug-2
-dateModified: 2020-10-22T20:24:30+03:00
+dateModified: 2020-10-22
 ---
 
 Results in a string representation of tomorrow's date.

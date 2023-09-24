@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: cloudy-mountaintop-2
-dateModified: 2020-10-19T22:49:51+03:00
+dateModified: 2020-10-19
 ---
 
 Opens or closes an element in fullscreen mode.

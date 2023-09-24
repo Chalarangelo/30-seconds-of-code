@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array,math]
 cover: rocky-mountains-2
-dateModified: 2020-10-22T20:24:30+03:00
+dateModified: 2020-10-22
 ---
 
 Returns the symmetric difference between two arrays, without filtering out duplicate values.

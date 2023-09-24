@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math,algorithm,recursion]
 cover: migrating-birds
-dateModified: 2020-12-29T12:36:50+02:00
+dateModified: 2020-12-29
 ---
 
 Calculates the greatest common divisor between two or more numbers/arrays.

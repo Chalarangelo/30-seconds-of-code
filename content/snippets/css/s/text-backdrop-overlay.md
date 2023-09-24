@@ -5,7 +5,7 @@ language: css
 tags: [visual]
 author: chalarangelo
 cover: mountain-lake-cottage
-dateModified: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13
 ---
 
 Displays a text on top of an image using an overlay.

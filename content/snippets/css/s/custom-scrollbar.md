@@ -4,7 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: sea-view
-dateModified: 2021-05-16T13:09:15+03:00
+dateModified: 2021-05-16
 ---
 
 Customizes the scrollbar style for elements with scrollable overflow.

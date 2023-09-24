@@ -5,7 +5,7 @@ language: git
 tags: [repository,stash]
 author: chalarangelo
 cover: golden-gate-bridge
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Displays a list of all stashes.

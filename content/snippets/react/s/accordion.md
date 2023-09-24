@@ -4,7 +4,7 @@ type: snippet
 language: react
 tags: [components,children,state]
 cover: orange-wedges
-dateModified: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13
 ---
 
 Renders an accordion menu with multiple collapsible content elements.

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [algorithm,array,recursion]
 cover: eagle
-dateModified: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13
 ---
 
 Sorts an array of numbers, using the quicksort algorithm.

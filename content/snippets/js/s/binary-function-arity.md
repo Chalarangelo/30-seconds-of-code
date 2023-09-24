@@ -5,7 +5,7 @@ language: javascript
 tags: [function]
 author: chalarangelo
 cover: blue-bird
-dateModified: 2020-10-18T23:04:45+03:00
+dateModified: 2020-10-18
 ---
 
 Creates a function that accepts up to two arguments, ignoring any additional arguments.

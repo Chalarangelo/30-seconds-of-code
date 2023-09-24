@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [algorithm,array]
 cover: tranquil-desktop
-dateModified: 2020-12-28T12:07:53+02:00
+dateModified: 2020-12-28
 ---
 
 Finds the first index of a given element in an array using the linear search algorithm.

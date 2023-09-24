@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [date]
 cover: number-2
-dateModified: 2020-10-15T21:57:17+03:00
+dateModified: 2020-10-15
 ---
 
 Creates a `Date` object from a Unix timestamp.

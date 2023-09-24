@@ -4,7 +4,7 @@ type: snippet
 language: react
 tags: [components,state,children]
 cover: dark-leaves-6
-dateModified: 2020-11-16T15:17:26+02:00
+dateModified: 2020-11-16
 ---
 
 Renders a tooltip component.

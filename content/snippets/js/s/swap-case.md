@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string]
 cover: mountain-lake-2
-dateModified: 2020-11-15T13:09:03+02:00
+dateModified: 2020-11-15
 ---
 
 Creates a string with uppercase characters converted to lowercase and vice versa.

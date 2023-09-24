@@ -5,7 +5,7 @@ language: git
 tags: [configuration,branch]
 author: chalarangelo
 cover: pink-flower
-dateModified: 2021-06-30T05:00:00-04:00
+dateModified: 2021-06-30
 ---
 
 Use the name of the current branch when pushing by default as the name of the remote branch.

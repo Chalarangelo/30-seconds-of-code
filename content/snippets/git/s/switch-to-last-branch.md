@@ -4,7 +4,7 @@ type: snippet
 language: git
 tags: [branch]
 cover: beach-riders
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Switches back to the last branch.

@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: walking
-dateModified: 2020-11-02T19:27:53+02:00
+dateModified: 2020-11-02
 ---
 
 Checks if the provided function returns `True` for every element in the list.

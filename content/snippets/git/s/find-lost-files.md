@@ -5,7 +5,7 @@ language: git
 tags: [repository]
 author: chalarangelo
 cover: hard-disk
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Prints a list of lost files and commits.

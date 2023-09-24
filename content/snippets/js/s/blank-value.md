@@ -7,7 +7,7 @@ tags: [type]
 author: chalarangelo
 cover: workspace-with-speaker
 excerpt: JavaScript doesn't have a built-in way to check if a value is blank, but it's easy to create one.
-dateModified: 2022-09-25T05:00:00-04:00
+dateModified: 2022-09-25
 ---
 
 JavaScript doesn't have a built-in way to check if a value is blank, but it's easy to create one. Before we do, however, we should define the behavior of such a method. The inspiration for this comes from Rails' `blank?` method, but modified to fit JavaScript's needs.

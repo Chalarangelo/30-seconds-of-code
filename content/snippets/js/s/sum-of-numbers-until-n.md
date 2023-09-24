@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math]
 cover: blue-flower
-dateModified: 2020-10-22T20:24:30+03:00
+dateModified: 2020-10-22
 ---
 
 Sums all the numbers between `1` and `n`.

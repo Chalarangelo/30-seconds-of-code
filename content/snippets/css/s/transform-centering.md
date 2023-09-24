@@ -4,7 +4,7 @@ type: snippet
 language: css
 tags: [layout]
 cover: flower-camera
-dateModified: 2020-12-30T15:37:37+02:00
+dateModified: 2020-12-30
 ---
 
 Vertically and horizontally centers a child element within its parent element using CSS transforms.

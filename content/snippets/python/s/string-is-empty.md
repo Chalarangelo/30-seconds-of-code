@@ -7,7 +7,7 @@ tags: [string]
 author: chalarangelo
 cover: tea-laptop-table
 excerpt: Here are two quick and elegant ways to check if a string is empty in Python.
-dateModified: 2022-08-05T05:00:00-04:00
+dateModified: 2022-08-05
 ---
 
 When working with Python strings, a pretty common question is how does one check if a string is empty. There's a straightforward answer to this that takes advantage of the truth value of strings.

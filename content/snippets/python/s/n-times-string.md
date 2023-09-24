@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [string]
 cover: playing-fetch
-dateModified: 2020-11-02T19:28:27+02:00
+dateModified: 2020-11-02
 ---
 
 Generates a string with the given string value repeated `n` number of times.

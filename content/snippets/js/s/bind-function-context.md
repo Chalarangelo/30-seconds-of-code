@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [function,object]
 cover: tranquility
-dateModified: 2020-10-18T23:04:45+03:00
+dateModified: 2020-10-18
 ---
 
 Creates a function that invokes `fn` with a given context, optionally prepending any additional supplied parameters to the arguments.

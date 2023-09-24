@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: shelf-plant
-dateModified: 2020-10-22T20:24:44+03:00
+dateModified: 2020-10-22
 ---
 
 Finds all unique values in an array.

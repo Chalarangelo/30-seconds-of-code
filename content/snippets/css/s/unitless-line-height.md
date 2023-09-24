@@ -7,7 +7,7 @@ tags: [layout,visual]
 author: chalarangelo
 cover: gold-typewriter
 excerpt: You might have heard that `line-height` should be unitless, but do you know why?
-dateModified: 2022-11-27T05:00:00-04:00
+dateModified: 2022-11-27
 ---
 
 I've often heard that `line-height` should always be **unitless**. In my earlier coding years, I didn't question it much, but lately I've come to wonder why that is. In my mind `1.5` and `1.5em` should produce the same result, right? Turns out, they don't.

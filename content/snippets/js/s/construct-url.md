@@ -7,7 +7,7 @@ tags: [string,browser]
 author: chalarangelo
 cover: alfama
 excerpt: A short guide on how to correctly construct a URL in JavaScript.
-dateModified: 2023-02-26T05:00:00-04:00
+dateModified: 2023-02-26
 ---
 
 Oftentimes, we need to **create a URL in JavaScript**, to request a resource or redirect the user. A seemingly simple task, yet URLs can be quite nuanced and complex, requiring a lot of attention to get right. This rings especially true if you've ever worked with different encodings and multiple **query parameters**.

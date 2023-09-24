@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [string,math]
 cover: sleepy-cat
-dateModified: 2020-09-15T16:13:06+03:00
+dateModified: 2020-09-15
 ---
 
 Converts a hexadecimal color code to a tuple of integers corresponding to its RGB components.

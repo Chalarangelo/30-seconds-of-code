@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array,random,algorithm]
 cover: interior-11
-dateModified: 2021-02-20T21:17:38+02:00
+dateModified: 2021-02-20
 ---
 
 Randomizes the order of the values of an array, returning a new array.

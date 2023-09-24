@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [date]
 cover: orange-flower
-dateModified: 2020-10-28T16:19:04+02:00
+dateModified: 2020-10-28
 ---
 
 Calculates the date of `n` days from the given date.

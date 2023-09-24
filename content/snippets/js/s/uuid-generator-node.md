@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [node,random]
 cover: digital-nomad-7
-dateModified: 2022-03-14T17:41:43+03:00
+dateModified: 2022-03-14
 ---
 
 Generates a UUID in Node.JS.

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser,array]
 cover: rocky-beach-waves
-dateModified: 2020-10-20T11:46:23+03:00
+dateModified: 2020-10-20
 ---
 
 Converts the given array elements into `<li>` tags and appends them to the list of the given id.

@@ -7,7 +7,7 @@ tags: [content]
 author: chalarangelo
 cover: ancient-greek-building
 excerpt: Did you know there's an easy way to create a descending list of numbered items with pure HTML? Learn how with this handy tip.
-dateModified: 2021-06-22T05:00:00-04:00
+dateModified: 2021-06-22
 ---
 
 Did you know there's an easy way to create a descending list of numbered items with pure HTML? The only thing you'll need is the `reversed` attribute. This boolean attribute is specific to `ol` elements and specifies that the list's elements are in reverse order (i.e. numbered from high to low).

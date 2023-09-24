@@ -7,7 +7,7 @@ tags: [logic]
 author: chalarangelo
 cover: beach-from-above
 excerpt: When working with stateful code, you can run into issues realted to complexity and readability. Oftentimes, they are easily fixable.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 _This article's examples are based on Redux, where the issues described are more common. As these issues are not limited to Redux, you might still find some value in the tips and solutions presented if you are struggling with maintaining complexity and readability in your code._

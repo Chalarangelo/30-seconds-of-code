@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [function]
 cover: flower-shape-sunset
-dateModified: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21
 ---
 
 Creates a function that invokes the provided function with its arguments transformed.

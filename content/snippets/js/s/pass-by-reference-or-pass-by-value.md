@@ -7,7 +7,7 @@ tags: [function,object]
 author: chalarangelo
 cover: baloons-field
 excerpt: How JavaScript handles passing data is a source of confusion and bugs for many developers, especially when it comes to object types.
-dateModified: 2021-12-05T05:00:00-04:00
+dateModified: 2021-12-05
 ---
 
 JavaScript is always **pass-by-value**. This means everything in JavaScript is a value type and function arguments are always passed by value. That being said, object types are a bit more confusing.

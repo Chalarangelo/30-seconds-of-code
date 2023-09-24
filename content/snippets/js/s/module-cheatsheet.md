@@ -6,7 +6,7 @@ tags: [cheatsheet]
 author: chalarangelo
 cover: mountain-lake-2
 excerpt: Learn everything you need to know about JavaScript modules with this handy cheatsheet.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 ### Named exports

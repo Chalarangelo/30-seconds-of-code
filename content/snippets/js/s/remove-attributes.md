@@ -5,7 +5,7 @@ language: javascript
 tags: [browser]
 cover: new-york
 author: chalarangelo
-dateModified: 2022-07-20T05:00:00-04:00
+dateModified: 2022-07-20
 ---
 
 Removes all attributes from an HTML element.

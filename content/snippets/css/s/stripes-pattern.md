@@ -4,7 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: jars-on-shelf
-dateModified: 2021-01-11T09:51:43+02:00
+dateModified: 2021-01-11
 ---
 
 Creates a stripes background pattern.

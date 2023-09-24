@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: basket-paper
-dateModified: 2020-10-18T20:24:28+03:00
+dateModified: 2020-10-18
 ---
 
 Checks if the provided predicate function returns `true` for at least one element in a collection.

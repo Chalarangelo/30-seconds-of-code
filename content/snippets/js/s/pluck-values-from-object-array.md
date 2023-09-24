@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array,object]
 cover: birds
-dateModified: 2020-10-22T20:24:04+03:00
+dateModified: 2020-10-22
 ---
 
 Converts an array of objects into an array of values corresponding to the specified `key`.

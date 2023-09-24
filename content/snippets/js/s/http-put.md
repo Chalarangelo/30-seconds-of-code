@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: mountain-lake
-dateModified: 2020-10-19T22:49:51+03:00
+dateModified: 2020-10-19
 ---
 
 Makes a `PUT` request to the passed URL.

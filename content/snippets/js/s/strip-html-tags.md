@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string,regexp]
 cover: coffee-phone-tray-3
-dateModified: 2020-09-15T16:28:04+03:00
+dateModified: 2020-09-15
 ---
 
 Removes HTML/XML tags from string.

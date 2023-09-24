@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string,regexp]
 cover: collab-desk-2
-dateModified: 2020-10-04T10:36:38+03:00
+dateModified: 2020-10-04
 ---
 
 Converts a string to a URL-friendly slug.

@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: green-plant
-dateModified: 2020-09-15T16:13:06+03:00
+dateModified: 2020-09-15
 ---
 
 Executes the provided function once for each list element.

@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: meteora
-dateModified: 2020-11-02T19:28:35+02:00
+dateModified: 2020-11-02
 ---
 
 Returns all elements in a list except for the first one.

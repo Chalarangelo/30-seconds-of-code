@@ -4,7 +4,7 @@ type: snippet
 language: react
 tags: [components,input]
 cover: down-the-stream
-dateModified: 2020-11-25T20:46:35+02:00
+dateModified: 2020-11-25
 ---
 
 Renders an uncontrolled `<select>` element that uses a callback function to pass its value to the parent component.

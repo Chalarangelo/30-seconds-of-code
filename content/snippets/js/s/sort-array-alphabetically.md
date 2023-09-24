@@ -5,7 +5,7 @@ language: javascript
 tags: [array]
 author: chalarangelo
 cover: boutique-home-office-1
-dateModified: 2023-02-15T05:00:00-04:00
+dateModified: 2023-02-15
 ---
 
 Sorts an array of objects alphabetically based on a given property.

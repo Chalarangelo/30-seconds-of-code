@@ -5,7 +5,7 @@ language: javascript
 tags: [string,regexp]
 author: chalarangelo
 cover: waves
-dateModified: 2021-04-22T09:01:22+03:00
+dateModified: 2021-04-22
 ---
 
 Replaces the last occurrence of a pattern in a string.

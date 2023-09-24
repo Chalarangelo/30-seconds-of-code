@@ -5,7 +5,7 @@ language: javascript
 tags: [browser]
 author: chalarangelo
 cover: dark-mode
-dateModified: 2020-10-22T20:24:04+03:00
+dateModified: 2020-10-22
 ---
 
 Checks if the user color scheme preference is `light`.

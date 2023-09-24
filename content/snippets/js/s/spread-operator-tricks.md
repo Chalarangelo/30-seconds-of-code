@@ -7,7 +7,7 @@ tags: [array]
 author: chalarangelo
 cover: succulent-crowd
 excerpt: JavaScript’s spread operator is a very versatile tool. Here are some simple ways to use it.
-dateModified: 2022-04-17T05:00:00-04:00
+dateModified: 2022-04-17
 ---
 
 ### Clone an array

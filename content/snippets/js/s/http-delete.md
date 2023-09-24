@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: beach-from-above
-dateModified: 2020-10-19T22:49:51+03:00
+dateModified: 2020-10-19
 ---
 
 Makes a `DELETE` request to the passed URL.

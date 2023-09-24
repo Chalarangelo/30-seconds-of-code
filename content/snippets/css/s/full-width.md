@@ -5,7 +5,7 @@ language: css
 tags: [layout]
 author: chalarangelo
 cover: yellow-white-mug-2
-dateModified: 2021-01-07T10:14:46+02:00
+dateModified: 2021-01-07
 ---
 
 Creates a full-width image.

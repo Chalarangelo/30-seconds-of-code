@@ -7,7 +7,7 @@ tags: [object,json]
 author: chalarangelo
 cover: coffee-drip
 excerpt: Have you ever wanted to serialize an object but only include certain keys? Turns out JavaScript provides an easy way to do this!
-dateModified: 2021-07-06T05:00:00-04:00
+dateModified: 2021-07-06
 ---
 
 The default behavior for `JSON.stringify()` is to pull all serializable properties from the given object. However, there are many scenarios where you might want to pick a specific subset of keys from an object. This problem is handled by the second argument of `JSON.stringify()` by passing it either an array of keys or a replacer function.

@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [dictionary,list]
 cover: new-york
-dateModified: 2020-11-02T19:27:53+02:00
+dateModified: 2020-11-02
 ---
 
 Converts a dictionary to a list of tuples.

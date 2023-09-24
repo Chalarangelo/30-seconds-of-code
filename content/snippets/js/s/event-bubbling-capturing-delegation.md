@@ -7,7 +7,7 @@ tags: [browser,event]
 author: chalarangelo
 cover: fishermen
 excerpt: Understand how events work in JavaScript and learn when to use event bubbling, event capturing and event delegation with this short guide.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 ### Event bubbling

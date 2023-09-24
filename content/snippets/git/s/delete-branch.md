@@ -4,7 +4,7 @@ type: snippet
 language: git
 tags: [repository,branch]
 cover: volcano-sunset
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Deletes a local branch.

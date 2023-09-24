@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string]
 cover: pink-flowers
-dateModified: 2020-10-22T20:24:04+03:00
+dateModified: 2020-10-22
 ---
 
 Removes accents from strings.

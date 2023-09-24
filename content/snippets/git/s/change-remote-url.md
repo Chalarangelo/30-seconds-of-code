@@ -5,7 +5,7 @@ language: git
 tags: [repository]
 author: chalarangelo
 cover: rocky-lake
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Changes the URL of the remote repository.

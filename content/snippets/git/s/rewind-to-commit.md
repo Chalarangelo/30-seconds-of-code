@@ -7,7 +7,7 @@ tags: [branch,commit]
 author: chalarangelo
 cover: walking
 excerpt: Did you make a mistake but haven't pushed your changes yet? Learn how to rewind back to a specific commit in Git.
-dateModified: 2023-05-26T21:10:59+03:00
+dateModified: 2023-05-26
 ---
 
 One of Git's greatest strengths is its ability to **rewind back to a specific commit**. This is especially useful when you've made a mistake but haven't pushed your changes yet. In that case, you can simply rewind back to a previous commit, fix your mistake and commit again.

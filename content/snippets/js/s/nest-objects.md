@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [object,recursion]
 cover: birds
-dateModified: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21
 ---
 
 Nests recursively objects linked to one another in a flat array.

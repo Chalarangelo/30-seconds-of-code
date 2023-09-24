@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: fallen-leaves
-dateModified: 2020-10-11T13:40:42+03:00
+dateModified: 2020-10-11
 ---
 
 Checks if all elements in a list are equal.

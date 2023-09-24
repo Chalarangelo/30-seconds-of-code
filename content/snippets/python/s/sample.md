@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [list,random]
 cover: walking-on-top
-dateModified: 2020-10-28T11:45:34+02:00
+dateModified: 2020-10-28
 ---
 
 Returns a random element from a list.

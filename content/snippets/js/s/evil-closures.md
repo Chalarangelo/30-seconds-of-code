@@ -7,7 +7,7 @@ tags: [function,closure]
 author: chalarangelo
 cover: silver-flat-screen
 excerpt: Closures are used frequently, yet often misunderstood. Understanding them in depth is crucial to be able to write clean, maintainable code.
-dateModified: 2022-05-18T05:00:00-04:00
+dateModified: 2022-05-18
 ---
 
 JavaScript closures are used frequently, yet often misunderstood. Understanding them in depth is crucial to be able to write clean, maintainable and bug-free code. We previously discussed what they are and how they work.

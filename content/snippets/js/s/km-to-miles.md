@@ -5,7 +5,7 @@ language: javascript
 tags: [math]
 unlisted: true
 cover: succulent-3
-dateModified: 2021-01-04T13:04:15+02:00
+dateModified: 2021-01-04
 ---
 
 Converts kilometers to miles.

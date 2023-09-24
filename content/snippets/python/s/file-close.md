@@ -6,7 +6,7 @@ language: python
 tags: [file]
 cover: flower-pond
 excerpt: When working with files in Python, it's important to ensure that the file is closed correctly. Here are a couple of ways to do that.
-dateModified: 2022-02-03T05:00:00-04:00
+dateModified: 2022-02-03
 ---
 
 When working with files in Python, it's quite common to explicitly invoke the `close()` method after processing the file. This might work fine in a lot of cases, however it's a common pitfall for beginners and developers coming from other languages.

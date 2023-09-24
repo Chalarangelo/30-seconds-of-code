@@ -5,7 +5,7 @@ language: javascript
 tags: [array,math]
 author: chalarangelo
 cover: eagle
-dateModified: 2022-04-13T05:00:00-04:00
+dateModified: 2022-04-13
 ---
 
 Calculates the ranking of an array based on a comparator function.

@@ -4,7 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: flower-portrait-6
-dateModified: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13
 ---
 
 Provides a nicer alternative to `text-decoration: underline` where descenders do not clip the underline.

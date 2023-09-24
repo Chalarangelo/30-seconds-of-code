@@ -7,7 +7,7 @@ tags: [class]
 author: chalarangelo
 cover: purple-flower-macro-3
 excerpt: A linked list is a linear data structure where each element points to the next.
-dateModified: 2021-08-08T05:00:00-04:00
+dateModified: 2021-08-08
 ---
 
 ### Definition

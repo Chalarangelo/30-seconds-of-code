@@ -4,7 +4,7 @@ type: snippet
 language: git
 tags: [commit]
 cover: cave-explorer
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Creates a new commit containing the staged changes.

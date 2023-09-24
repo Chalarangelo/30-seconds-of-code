@@ -7,7 +7,7 @@ tags: [string,regexp]
 author: chalarangelo
 cover: blue-computer
 excerpt: If you need to replace all occurrences of a string in JavaScript, you have a couple of options.
-dateModified: 2022-07-03T05:00:00-04:00
+dateModified: 2022-07-03
 ---
 
 ### String.prototype.replaceAll()

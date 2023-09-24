@@ -5,7 +5,7 @@ language: react
 tags: [hooks,effect]
 author: chalarangelo
 cover: flower-portrait-10
-dateModified: 2021-11-09T05:00:00-04:00
+dateModified: 2021-11-09
 ---
 
 Executes a callback immediately after a component is updated.

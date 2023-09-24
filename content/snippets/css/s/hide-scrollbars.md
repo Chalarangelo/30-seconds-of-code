@@ -5,7 +5,7 @@ language: css
 tags: [visual]
 author: chalarangelo
 cover: by-the-lighthouse
-dateModified: 2022-05-13T05:00:00-04:00
+dateModified: 2022-05-13
 ---
 
 Hides scrollbars on an element, while still allowing it to be scrollable.

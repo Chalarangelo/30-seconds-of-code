@@ -4,7 +4,7 @@ type: snippet
 language: react
 tags: [components,input,state,callback,effect,event]
 cover: painters-desk
-dateModified: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13
 ---
 
 Renders a textarea component with a word limit.

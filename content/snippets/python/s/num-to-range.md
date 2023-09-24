@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [math]
 cover: round-leaves
-dateModified: 2021-04-05T18:25:46+03:00
+dateModified: 2021-04-05
 ---
 
 Maps a number from one range to another range.

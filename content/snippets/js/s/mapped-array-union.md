@@ -5,7 +5,7 @@ language: javascript
 tags: [array]
 cover: lake-church
 excerpt: Returns every element from both arrays that exists at least once after applying the provided function.
-dateModified: 2020-10-22T20:24:44+03:00
+dateModified: 2020-10-22
 ---
 
 Returns every element that exists in any of the two arrays at least once, after applying the provided function to each array element of both.

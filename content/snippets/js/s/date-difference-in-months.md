@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [date]
 cover: two-flower-vases
-dateModified: 2020-10-19T22:49:51+03:00
+dateModified: 2020-10-19
 ---
 
 Calculates the difference (in months) between two dates.

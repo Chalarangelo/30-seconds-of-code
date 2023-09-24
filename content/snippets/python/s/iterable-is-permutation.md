@@ -5,7 +5,7 @@ type: snippet
 language: python
 tags: [list,string]
 cover: apples
-dateModified: 2023-05-23T10:48:03+03:00
+dateModified: 2023-05-23
 ---
 
 Check if two iterables are permutations of each other.

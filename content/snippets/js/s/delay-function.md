@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [function]
 cover: interior-13
-dateModified: 2020-10-19T18:51:03+03:00
+dateModified: 2020-10-19
 ---
 
 Invokes the provided function after `ms` milliseconds.

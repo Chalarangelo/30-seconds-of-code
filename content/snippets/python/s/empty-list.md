@@ -7,7 +7,7 @@ tags: [list]
 author: chalarangelo
 cover: salad-2
 excerpt: There's a good way to test the emptiness of a Python list and a better one. Which one are you using?
-dateModified: 2023-01-15T05:00:00-04:00
+dateModified: 2023-01-15
 ---
 
 Checking the emptiness of a Python list is rather easy using the `len()` function. Yet, there's another technique that works on all types of sequences and collections. This is based on the **truth value testing** of the sequence or collection itself.

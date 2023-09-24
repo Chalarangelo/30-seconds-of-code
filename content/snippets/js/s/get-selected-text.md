@@ -5,7 +5,7 @@ language: javascript
 tags: [browser]
 author: chalarangelo
 cover: white-tablet-2
-dateModified: 2020-10-19T22:49:51+03:00
+dateModified: 2020-10-19
 ---
 
 Gets the currently selected text.

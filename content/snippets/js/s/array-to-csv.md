@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array,string]
 cover: tropical-bike
-dateModified: 2020-11-03T21:55:08+02:00
+dateModified: 2020-11-03
 ---
 
 Converts a 2D array to a comma-separated values (CSV) string.

@@ -7,7 +7,7 @@ tags: [string,comparison]
 author: chalarangelo
 cover: memories-of-pineapple-1
 excerpt: Here's a quick tip on how to compare and sort arrays of strings, ignoring case and accents.
-dateModified: 2022-07-17T05:00:00-04:00
+dateModified: 2022-07-17
 ---
 
 Comparing and sorting JavaScript strings is rather common. Usually, the use of `String.prototype.localeCompare()` is sufficient for sorting arrays of strings in most scenarios. Dealing with accents and cases can get tricky, however, and lead to unexpected results. This is where `Intl.Collator` comes into play, an object used for language-sensitive string comparison. Using `Intl.Collator.prototype.compare()`, you can sort strings regardless of their case or accent and it can even accept a locale argument.

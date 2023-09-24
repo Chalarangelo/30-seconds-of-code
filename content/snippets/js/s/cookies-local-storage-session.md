@@ -7,7 +7,7 @@ tags: [browser,webdev]
 author: chalarangelo
 cover: three-vases
 excerpt: Learn the difference between cookies, local storage and session storage and start using the correct option for your needs.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 ### Cookies

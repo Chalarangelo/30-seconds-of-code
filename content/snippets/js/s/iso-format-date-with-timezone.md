@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [date]
 cover: pop-of-green
-dateModified: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13
 ---
 
 Converts a date to extended ISO format (ISO 8601), including timezone offset.

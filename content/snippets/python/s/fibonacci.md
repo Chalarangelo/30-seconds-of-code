@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [math,list]
 cover: san-francisco-skyline
-dateModified: 2020-11-02T19:27:53+02:00
+dateModified: 2020-11-02
 ---
 
 Generates a list, containing the Fibonacci sequence, up until the nth term.

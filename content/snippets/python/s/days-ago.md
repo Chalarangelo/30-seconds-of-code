@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [date]
 cover: cup-of-orange
-dateModified: 2020-10-28T16:19:30+02:00
+dateModified: 2020-10-28
 ---
 
 Calculates the date of `n` days ago from today.

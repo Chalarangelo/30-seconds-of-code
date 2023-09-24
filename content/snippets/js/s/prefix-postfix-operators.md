@@ -7,7 +7,7 @@ tags: [math]
 author: chalarangelo
 cover: plant-candle
 excerpt: While both the prefix and postfix operators increment a value, the resulting value of the expression is very different.
-dateModified: 2021-10-31T05:00:00-04:00
+dateModified: 2021-10-31
 ---
 
 The increment operator (`++`) adds `1` to its operand and returns a value. Similarly, the decrement operator (`--`) subtracts `1` from its operand and returns a value. Both of these operators can be used either prefix (`++i`, `--i`) or postfix (`i++`, `i--`).

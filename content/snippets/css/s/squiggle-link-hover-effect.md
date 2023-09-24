@@ -5,7 +5,7 @@ language: css
 tags: [animation,visual]
 author: chalarangelo
 cover: dreamy-flowers
-dateModified: 2023-01-10T05:00:00-04:00
+dateModified: 2023-01-10
 ---
 
 Creates a squiggle effect when hovering over a link.

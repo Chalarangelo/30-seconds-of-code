@@ -5,7 +5,7 @@ language: css
 tags: [layout,visual]
 author: chalarangelo
 cover: typewriter
-dateModified: 2021-05-16T20:19:13+03:00
+dateModified: 2021-05-16
 ---
 
 Limit multiline text to a given number of lines.

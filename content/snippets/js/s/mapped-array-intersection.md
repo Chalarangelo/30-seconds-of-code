@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: cobbled-street
-dateModified: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20
 ---
 
 Returns the elements that exist in both arrays, after applying the provided function to each array element of both.

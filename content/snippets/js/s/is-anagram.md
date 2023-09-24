@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string,regexp]
 cover: new-york
-dateModified: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20
 ---
 
 Checks if a string is an anagram of another string (case-insensitive, ignores spaces, punctuation and special characters).

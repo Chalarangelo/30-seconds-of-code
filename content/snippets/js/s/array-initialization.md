@@ -7,7 +7,7 @@ tags: [array]
 author: chalarangelo
 cover: red-mountain-range
 excerpt: Discover the inner workings of JavaScript arrays and learn about the different ways to initialize them.
-dateModified: 2023-06-18T05:00:00-04:00
+dateModified: 2023-06-18
 ---
 
 Initializing arrays in JavaScript is a crucial task, with many techniques to choose from and performance considerations to keep in mind. While there might not be a one-size-fits-all solution, there are a few options you might want to consider.

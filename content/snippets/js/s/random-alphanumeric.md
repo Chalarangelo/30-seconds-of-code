@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string,random]
 cover: gold-typewriter
-dateModified: 2020-10-22T20:24:04+03:00
+dateModified: 2020-10-22
 ---
 
 Generates a random string with the specified length.

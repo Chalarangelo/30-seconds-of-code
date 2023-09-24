@@ -7,7 +7,7 @@ tags: [array,function,promise]
 author: chalarangelo
 cover: sunflowers
 excerpt: Asynchronously looping over arrays in JavaScript comes with a few caveats you should watch out for.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 Asynchronous operations seem to trip up a lot of developers. This is especially true when combined with looping over arrays, as there are some caveats that come with each option available.

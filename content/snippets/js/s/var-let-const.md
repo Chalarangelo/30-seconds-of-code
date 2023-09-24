@@ -7,7 +7,7 @@ tags: [type,variable]
 author: chalarangelo
 cover: green-css
 excerpt: JavaScript variables can be declared a handful of ways. However, understanding their differences can drastically change the way you code.
-dateModified: 2021-12-02T09:50:42-04:00
+dateModified: 2021-12-02
 ---
 
 JavaScript has three variable declaration statements: `var`, `let` and `const`. The latter two were added in ES6, whereas `var` existed since previous versions. One of the first things to notice is that `const` defines constants (i.e. values that will not be reassigned), whereas `var` and `let` define variables. Yet, `var` behaves differently from both `let` and `const` in various other ways.

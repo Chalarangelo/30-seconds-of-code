@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: little-white-flowers
-dateModified: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21
 ---
 
 Checks if the provided predicate function returns `false` for all elements in a collection.

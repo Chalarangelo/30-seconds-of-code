@@ -7,7 +7,7 @@ tags: [metadata,head]
 author: chalarangelo
 cover: boutique-home-office-4
 excerpt: Make your HTML documents more SEO-friendly by including these lines in your `<head>` element.
-dateModified: 2023-01-26T05:00:00-04:00
+dateModified: 2023-01-26
 ---
 
 The `<head>` element of an HTML document is where you can include links to external resources such as CSS stylesheets and JavaScript files. Some `<link>` elements, however, are important for SEO and metadata purposes. Here's a list of a few really important ones I like to include:

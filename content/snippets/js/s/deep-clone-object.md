@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [object,recursion]
 cover: neon-desk-2
-dateModified: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22
 ---
 
 Creates a deep clone of an object.

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math]
 cover: planning
-dateModified: 2020-10-04T11:25:12+03:00
+dateModified: 2020-10-04
 ---
 
 Converts a RGB color tuple to HSL format.

@@ -4,7 +4,7 @@ type: snippet
 language: css
 tags: [visual,interactivity]
 cover: tram-car
-dateModified: 2021-01-07T23:52:15+02:00
+dateModified: 2021-01-07
 ---
 
 A hover effect where the gradient follows the mouse cursor.

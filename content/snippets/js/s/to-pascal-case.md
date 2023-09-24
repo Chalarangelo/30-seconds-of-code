@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string,regexp]
 cover: camera-zoom
-dateModified: 2021-09-08T19:21:13+00:00
+dateModified: 2021-09-08
 ---
 
 Converts a string to pascal case.

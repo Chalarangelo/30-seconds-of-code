@@ -5,7 +5,7 @@ language: git
 tags: [commit,branch]
 author: chalarangelo
 cover: plant-candle
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Displays differences between staged or unstaged changes and the last commit.

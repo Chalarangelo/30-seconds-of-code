@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser,event]
 cover: wooden-bowl
-dateModified: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21
 ---
 
 Adds an event listener to an element with the ability to use event delegation.

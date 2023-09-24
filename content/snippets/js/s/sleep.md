@@ -7,7 +7,7 @@ tags: [date,promise]
 author: chalarangelo
 cover: sleepy-cat
 excerpt: Learn all the different ways you can implement a `sleep()` function in JavaScript.
-dateModified: 2021-11-06T20:51:47+03:00
+dateModified: 2021-11-06
 ---
 
 JavaScript does not come with a `sleep()` function out of the box. That's probably a good idea considering the environments where it runs and the trouble it could cause if used incorrectly. The closest equivalent is the `setTimeout()` function, but there are other, less common ways to implement a function that will pause execution for a specified amount of time.

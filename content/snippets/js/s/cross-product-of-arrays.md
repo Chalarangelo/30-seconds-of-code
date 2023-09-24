@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math,array]
 cover: cup-of-orange
-dateModified: 2020-10-22T20:24:44+03:00
+dateModified: 2020-10-22
 ---
 
 Creates a new array out of the two supplied by creating each possible pair from the arrays.

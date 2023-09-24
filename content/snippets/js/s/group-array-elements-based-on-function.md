@@ -5,7 +5,7 @@ language: javascript
 tags: [array]
 cover: switzerland-night
 excerpt: Groups elements based on position in the original arrays and combines them using a function.
-dateModified: 2020-11-03T21:46:13+02:00
+dateModified: 2020-11-03
 ---
 
 Creates an array of elements, grouped based on the position in the original arrays and using a function to specify how grouped values should be combined.

@@ -7,7 +7,7 @@ tags: [browser]
 author: chalarangelo
 cover: compass
 excerpt: Learn all of the options JavaScript provides for modifying the URL of the current page in the browser without reloading the page.
-dateModified: 2021-09-27T16:47:49+03:00
+dateModified: 2021-09-27
 ---
 
 ### Using the History API

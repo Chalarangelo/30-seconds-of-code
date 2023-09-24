@@ -5,7 +5,7 @@ language: git
 tags: [configuration,repository]
 author: chalarangelo
 cover: people-on-beach
-dateModified: 2021-07-03T05:00:00-04:00
+dateModified: 2021-07-03
 ---
 
 Disables the default fast forwarding on merge commits.

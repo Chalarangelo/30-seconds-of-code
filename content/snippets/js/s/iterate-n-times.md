@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [function]
 cover: purple-laptop
-dateModified: 2020-10-20T11:21:07+03:00
+dateModified: 2020-10-20
 ---
 
 Iterates over a callback `n` times.

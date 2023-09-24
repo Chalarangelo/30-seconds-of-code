@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math,algorithm]
 cover: thread
-dateModified: 2021-01-12T19:36:36+02:00
+dateModified: 2021-01-12
 ---
 
 Checks if the provided integer is a prime number.

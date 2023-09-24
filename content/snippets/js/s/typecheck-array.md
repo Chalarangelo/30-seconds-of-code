@@ -7,7 +7,7 @@ tags: [type,array]
 author: chalarangelo
 cover: purple-flower-field
 excerpt: Make sure to use the correct method when checking if a JavaScript object is an array.
-dateModified: 2022-11-06T05:00:00-04:00
+dateModified: 2022-11-06
 ---
 
 To determine if a JavaScript object is an array, you can either use `Array.isArray()` or the `instanceof` operator. While both methods work for arrays created either using the array literal syntax or the `Array` constructor, there's a key difference. `Array.isArray()` is more reliable, as it works with cross-realm-objects, such as those created in an `iframe`.

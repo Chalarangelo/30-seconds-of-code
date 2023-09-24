@@ -5,7 +5,7 @@ language: python
 tags: [math]
 unlisted: true
 cover: customs
-dateModified: 2021-01-04T12:47:04+02:00
+dateModified: 2021-01-04
 ---
 
 Converts Fahrenheit to Celsius.

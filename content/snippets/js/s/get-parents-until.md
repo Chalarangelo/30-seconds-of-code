@@ -5,7 +5,7 @@ language: javascript
 tags: [browser]
 author: chalarangelo
 cover: orange-coffee-4
-dateModified: 2021-01-06T13:04:18+02:00
+dateModified: 2021-01-06
 ---
 
 Finds all the ancestors of an element up until the element matched by the specified selector.

@@ -5,7 +5,7 @@ language: css
 tags: [visual]
 author: chalarangelo
 cover: icebreaker
-dateModified: 2023-01-29T05:00:00-04:00
+dateModified: 2023-01-29
 ---
 
 Displays an image with a text overlay.

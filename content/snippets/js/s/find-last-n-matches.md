@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: interior-16
-dateModified: 2021-05-09T13:31:36+03:00
+dateModified: 2021-05-09
 ---
 
 Finds the last `n` elements for which the provided function returns a truthy value.

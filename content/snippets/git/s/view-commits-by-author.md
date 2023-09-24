@@ -4,7 +4,7 @@ type: snippet
 language: git
 tags: [repository,commit]
 cover: comic-glasses
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Prints all commits by the specified author.

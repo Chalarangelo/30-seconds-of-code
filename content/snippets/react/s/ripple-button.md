@@ -5,7 +5,7 @@ language: react
 tags: [components,state,effect]
 author: chalarangelo
 cover: mountain-lake-cottage
-dateModified: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13
 ---
 
 Renders a button that animates a ripple effect when clicked.

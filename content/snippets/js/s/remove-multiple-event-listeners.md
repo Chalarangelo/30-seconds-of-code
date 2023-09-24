@@ -5,7 +5,7 @@ language: javascript
 tags: [browser,event]
 author: chalarangelo
 cover: snowy-mountains
-dateModified: 2021-04-22T08:53:29+03:00
+dateModified: 2021-04-22
 ---
 
 Detaches an event listener from all the provided targets.

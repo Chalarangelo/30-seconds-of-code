@@ -5,7 +5,7 @@ language: javascript
 tags: [object]
 author: chalarangelo
 cover: river-flow
-dateModified: 2021-07-18T05:00:00-04:00
+dateModified: 2021-07-18
 ---
 
 Validates all keys in an object match the given `keys`.

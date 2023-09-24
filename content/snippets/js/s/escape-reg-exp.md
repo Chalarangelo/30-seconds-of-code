@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string,regexp]
 cover: frog-blue-flower
-dateModified: 2020-09-15T16:28:04+03:00
+dateModified: 2020-09-15
 ---
 
 Escapes a string to use in a regular expression.

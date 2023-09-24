@@ -5,7 +5,7 @@ language: javascript
 tags: [array]
 author: chalarangelo
 cover: colorful-pots
-dateModified: 2022-04-06T05:00:00-04:00
+dateModified: 2022-04-06
 ---
 
 Finds all arrays of consecutive elements.

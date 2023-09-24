@@ -6,7 +6,7 @@ language: javascript
 tags: [condition]
 cover: red-succulent
 excerpt: Learn everything you need to know about the conditional (ternary) operator and how to use it in JavaScript.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 JavaScript's ternary operator (`?:`), also called the conditional operator, is used to replace a conditional statement, most commonly an assignment. For example:

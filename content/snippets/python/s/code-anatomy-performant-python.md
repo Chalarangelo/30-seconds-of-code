@@ -6,7 +6,7 @@ language: python
 tags: [list,performance]
 cover: walking-on-top
 excerpt: Writing efficient Python code can be tricky. Read how we optimize our list snippets to increase performance using a couple of simple tricks.
-dateModified: 2021-11-07T16:34:37+03:00
+dateModified: 2021-11-07
 ---
 
 Writing short and efficient Python code is not always easy or straightforward. However, it's often that we see a piece of code and we don't realize the thought process behind the way it was written. We will be taking a look at the [difference](/python/s/difference) snippet, which returns the difference between two iterables, in order to understand its structure.

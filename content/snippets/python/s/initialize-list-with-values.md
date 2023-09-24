@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: dog-waiting
-dateModified: 2020-11-02T19:28:05+02:00
+dateModified: 2020-11-02
 ---
 
 Initializes and fills a list with the specified value.

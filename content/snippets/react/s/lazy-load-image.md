@@ -5,7 +5,7 @@ language: react
 tags: [components,effect,state]
 cover: strawberries
 author: chalarangelo
-dateModified: 2022-07-29T05:00:00-04:00
+dateModified: 2022-07-29
 ---
 
 Renders an image that supports lazy loading.

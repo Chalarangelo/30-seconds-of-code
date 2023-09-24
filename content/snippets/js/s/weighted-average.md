@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math]
 cover: interior-12
-dateModified: 2020-11-03T21:46:13+02:00
+dateModified: 2020-11-03
 ---
 
 Calculates the weighted average of two or more numbers.

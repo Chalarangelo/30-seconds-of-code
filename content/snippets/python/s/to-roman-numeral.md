@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [math,string]
 cover: tram-car
-dateModified: 2020-11-02T19:28:35+02:00
+dateModified: 2020-11-02
 ---
 
 Converts an integer to its roman numeral representation.

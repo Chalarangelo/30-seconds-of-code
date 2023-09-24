@@ -7,7 +7,7 @@ tags: [commit]
 author: chalarangelo
 cover: greek-coffee
 excerpt: Learn how to effortlesly amend the last commit's message or contents using Git and fix any mistakes you might have made.
-dateModified: 2023-05-23T21:10:59+03:00
+dateModified: 2023-05-23
 ---
 
 Have you ever wanted to change the last commit's message or contents? Maybe you forgot to add a file, or you misspelled something in the commit message. Whatever the reason, Git has you covered with the `--amend` option for the `git commit` command.

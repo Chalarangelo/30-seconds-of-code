@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [function]
 cover: mug-flower-book
-dateModified: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21
 ---
 
 Creates a function that gets the argument at index `n`.

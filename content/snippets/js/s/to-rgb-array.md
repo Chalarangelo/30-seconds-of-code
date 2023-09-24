@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string,regexp]
 cover: greek-coffee
-dateModified: 2021-06-13T13:50:25+03:00
+dateModified: 2021-06-13
 ---
 
 Converts an `rgb()` color string to an array of values.

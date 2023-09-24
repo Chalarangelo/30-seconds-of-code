@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string]
 cover: nature-screen
-dateModified: 2020-11-01T20:50:57+02:00
+dateModified: 2020-11-01
 ---
 
 Decapitalizes the first letter of a string.

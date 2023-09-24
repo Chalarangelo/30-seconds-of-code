@@ -7,7 +7,7 @@ tags: [array]
 author: chalarangelo
 cover: purple-laptop
 excerpt: Array destructuring can be leveraged in many different ways. Here's one of them.
-dateModified: 2022-08-28T05:00:00-04:00
+dateModified: 2022-08-28
 ---
 
 If you have worked with JavaScript arrays before, you might know that they can be destructured much like objects. This is most commonly used to extract the first value of an array or the values of an array with a known length.

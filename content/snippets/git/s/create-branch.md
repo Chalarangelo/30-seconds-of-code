@@ -4,7 +4,7 @@ type: snippet
 language: git
 tags: [branch,remote]
 cover: flower-pond
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Creates and switches to a new branch, optionally setting up a remote tracking branch.

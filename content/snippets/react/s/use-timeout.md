@@ -5,7 +5,7 @@ language: react
 tags: [hooks,effect]
 author: chalarangelo
 cover: interior-10
-dateModified: 2020-11-16T14:17:53+02:00
+dateModified: 2020-11-16
 ---
 
 Implements `setTimeout()` in a declarative manner.

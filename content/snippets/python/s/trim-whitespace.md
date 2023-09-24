@@ -6,7 +6,7 @@ language: python
 tags: [string]
 cover: organizer
 excerpt: Oftentimes you might need to trim whitespace from a string in Python. Learn of three different way to do this in this short guide.
-dateModified: 2021-12-13T05:00:00-04:00
+dateModified: 2021-12-13
 ---
 
 When working with Python strings, a pretty common question is how to trim whitespace from a string. Whitespace characters are the space (` `), tab (`\t`), newline (`\n`), and carriage return characters (`\r`). Here are 3 different methods to trim whitespace from a string in Python.

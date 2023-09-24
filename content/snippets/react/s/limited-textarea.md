@@ -4,7 +4,7 @@ type: snippet
 language: react
 tags: [components,state,callback,event]
 cover: flower-portrait-2
-dateModified: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13
 ---
 
 Renders a textarea component with a character limit.

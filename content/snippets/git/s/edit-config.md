@@ -4,7 +4,7 @@ type: snippet
 language: git
 tags: [configuration]
 cover: terminal
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Opens the git configuration file in the git text editor.

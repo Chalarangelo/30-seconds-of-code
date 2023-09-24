@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [math]
 cover: number-2
-dateModified: 2020-11-02T19:27:07+02:00
+dateModified: 2020-11-02
 ---
 
 Generates a list of numbers in the arithmetic progression starting with the given positive integer and up to the specified limit.

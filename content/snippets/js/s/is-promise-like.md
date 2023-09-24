@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [type,function,promise]
 cover: digital-nomad-13
-dateModified: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20
 ---
 
 Checks if an object looks like a [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).

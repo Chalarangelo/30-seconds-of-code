@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [object,recursion]
 cover: campfire
-dateModified: 2020-10-19T18:51:03+03:00
+dateModified: 2020-10-19
 ---
 
 Gets the target value in a nested JSON object, based on the given key.

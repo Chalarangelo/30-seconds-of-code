@@ -7,7 +7,7 @@ tags: [object,proxy]
 author: chalarangelo
 cover: frozen-globe
 excerpt: Freezing objects is not the only way to prevent mutations. Learn how you can leverage the Proxy object to your advantage.
-dateModified: 2022-04-10T05:00:00-04:00
+dateModified: 2022-04-10
 ---
 
 Object mutability and its relation to the `const` keyword is a very common headache for developers. More often than not, when looking for ways to make an object immutable, `Object.freeze()` will pop up as a solution. We’ve explored this approach previously, elaborating on deep freezing solutions. You can read more about it in [this article](/js/s/deep-freeze-object).

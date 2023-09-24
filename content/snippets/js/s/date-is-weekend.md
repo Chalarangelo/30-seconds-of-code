@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [date]
 cover: tropical-bike
-dateModified: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20
 ---
 
 Checks if the given date is a weekend.

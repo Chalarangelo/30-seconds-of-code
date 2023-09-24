@@ -5,7 +5,7 @@ language: react
 tags: [components,input,state]
 author: chalarangelo
 cover: thread
-dateModified: 2020-11-25T20:46:35+02:00
+dateModified: 2020-11-25
 ---
 
 Renders a password input field with a reveal button.

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: white-laptop
-dateModified: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20
 ---
 
 Returns the last element in an array.

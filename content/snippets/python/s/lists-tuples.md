@@ -7,7 +7,7 @@ tags: [list]
 author: chalarangelo
 cover: red-mountain
 excerpt: Learn how Python's lists and tuples are different and level up your code today.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 Python's lists and tuples may seem pretty similar in syntax and function, however they have some major differences the most important of which is the fact that lists are mutable and tuples aren't. Here's a quick breakdown:

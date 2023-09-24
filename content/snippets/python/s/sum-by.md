@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [math,list]
 cover: horse-sunset
-dateModified: 2020-11-02T19:28:35+02:00
+dateModified: 2020-11-02
 ---
 
 Calculates the sum of a list, after mapping each element to a value using the provided function.

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [object,recursion]
 cover: camper-school-bus
-dateModified: 2020-10-19T18:51:03+03:00
+dateModified: 2020-10-19
 ---
 
 Deep freezes an object.

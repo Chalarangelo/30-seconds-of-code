@@ -6,7 +6,7 @@ language: javascript
 tags: [object]
 author: chalarangelo
 cover: succulent-1
-dateModified: 2022-06-16T05:00:00-04:00
+dateModified: 2022-06-16
 ---
 
 Converts a `Map` to an object.

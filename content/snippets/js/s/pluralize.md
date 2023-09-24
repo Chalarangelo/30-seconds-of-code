@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string]
 cover: shell-focus
-dateModified: 2020-10-22T20:24:04+03:00
+dateModified: 2020-10-22
 ---
 
 Returns the singular or plural form of the word based on the input number, using an optional dictionary if supplied.

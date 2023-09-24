@@ -4,7 +4,7 @@ type: snippet
 language: git
 tags: [branch]
 cover: arrays
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Discards all uncommitted changes to the current branch.

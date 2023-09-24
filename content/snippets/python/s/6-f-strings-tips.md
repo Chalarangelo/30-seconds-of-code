@@ -6,7 +6,7 @@ tags: [string]
 author: chalarangelo
 cover: sea-view
 excerpt: Python's f-strings can do a lot more than you might expect. Learn a few useful tips and tricks in this quick guide.
-dateModified: 2021-07-20T05:00:00-04:00
+dateModified: 2021-07-20
 ---
 
 Python's f-strings provide a more readable, concise and less error-prone way to format strings than traditional string formatting. They are packed with useful features that are sure to come in handy in day-to-day use. Let's take a look at some of them.

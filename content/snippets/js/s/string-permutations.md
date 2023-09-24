@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string,recursion]
 cover: mac-and-coffee
-dateModified: 2020-11-15T17:13:42+02:00
+dateModified: 2020-11-15
 ---
 
 Generates all permutations of a string (contains duplicates).

@@ -5,7 +5,7 @@ language: css
 tags: [visual]
 author: chalarangelo
 cover: guitar-living-room
-dateModified: 2021-05-17T14:04:52+03:00
+dateModified: 2021-05-17
 ---
 
 Creates an isometric card.

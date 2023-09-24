@@ -4,7 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: greek-coffee
-dateModified: 2021-01-07T23:52:15+02:00
+dateModified: 2021-01-07
 ---
 
 Creates a content container with a triangle at the top.

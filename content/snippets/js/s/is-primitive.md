@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [type]
 cover: flower-camera
-dateModified: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22
 ---
 
 Checks if the passed value is primitive or not.

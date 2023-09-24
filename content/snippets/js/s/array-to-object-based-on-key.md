@@ -5,7 +5,7 @@ language: javascript
 tags: [array,object]
 author: chalarangelo
 cover: lavender-shelf
-dateModified: 2021-06-27T05:00:00-04:00
+dateModified: 2021-06-27
 ---
 
 Creates an object from an array, using the specified key and excluding it from each value.

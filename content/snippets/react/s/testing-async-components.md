@@ -6,7 +6,7 @@ language: react
 tags: [testing,event]
 cover: colorful-lounge
 excerpt: Testing React components that update asynchronously is pretty common. Learn how to deal with common issues and speed up your testing.
-dateModified: 2021-11-07T16:34:37+03:00
+dateModified: 2021-11-07
 ---
 
 ### Components that update asynchronously

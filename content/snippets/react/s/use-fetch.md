@@ -5,7 +5,7 @@ language: react
 tags: [hooks,effect,state]
 author: chalarangelo
 cover: coworking-space
-dateModified: 2022-05-01T12:50:38+02:00
+dateModified: 2022-05-01
 ---
 
 Implements `fetch()` in a declarative manner.

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: engine
-dateModified: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20
 ---
 
 Inserts an HTML string before the start of the specified element.

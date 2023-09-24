@@ -5,7 +5,7 @@ language: javascript
 tags: [array,object]
 author: chalarangelo
 cover: metro-tunnel
-dateModified: 2023-02-04T05:00:00-04:00
+dateModified: 2023-02-04
 ---
 
 Maps an object array to an object, using the provided mapping functions.

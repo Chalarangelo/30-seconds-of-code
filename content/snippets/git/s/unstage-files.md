@@ -5,7 +5,7 @@ language: git
 tags: [commit]
 author: chalarangelo
 cover: coconuts
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Removes files from the staging area.

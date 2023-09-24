@@ -5,7 +5,7 @@ language: javascript
 tags: [node]
 author: chalarangelo
 cover: hiking-balance
-dateModified: 2022-04-26T05:00:00-04:00
+dateModified: 2022-04-26
 ---
 
 Gets the command-line arguments passed to a Node.js script.

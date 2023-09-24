@@ -7,7 +7,7 @@ tags: [accessibility,form,link,metadata]
 author: chalarangelo
 cover: accessibility
 excerpt: Accessibility (a11y) can improve your website and attract new users. Learn how to get started with these 8 quick tips.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 ### Use semantic HTML

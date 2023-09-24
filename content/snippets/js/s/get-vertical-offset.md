@@ -5,7 +5,7 @@ language: javascript
 tags: [browser]
 author: chalarangelo
 cover: waves-from-above-2
-dateModified: 2021-01-05T22:41:09+02:00
+dateModified: 2021-01-05
 ---
 
 Finds the distance from a given element to the top of the document.

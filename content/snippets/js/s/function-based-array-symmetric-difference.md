@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: digital-nomad
-dateModified: 2020-10-18T14:58:09+03:00
+dateModified: 2020-10-18
 ---
 
 Returns the symmetric difference between two arrays, using a provided function as a comparator.

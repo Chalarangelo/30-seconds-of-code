@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string]
 cover: purple-flower-field
-dateModified: 2020-10-22T20:24:30+03:00
+dateModified: 2020-10-22
 ---
 
 Alphabetically sorts the characters in a string.

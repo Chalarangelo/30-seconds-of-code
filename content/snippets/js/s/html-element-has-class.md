@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser,css]
 cover: interior
-dateModified: 2020-10-19T22:49:51+03:00
+dateModified: 2020-10-19
 ---
 
 Checks if the given element has the specified class.

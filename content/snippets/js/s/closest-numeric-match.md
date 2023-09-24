@@ -5,7 +5,7 @@ language: javascript
 tags: [math]
 author: chalarangelo
 cover: green-cabin-cow
-dateModified: 2022-03-30T05:00:00-04:00
+dateModified: 2022-03-30
 ---
 
 Finds the closest number from an array.

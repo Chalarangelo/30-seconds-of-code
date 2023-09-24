@@ -4,7 +4,7 @@ type: snippet
 language: css
 tags: [visual,interactivity]
 cover: lake-loop
-dateModified: 2022-05-05T05:00:00-04:00
+dateModified: 2022-05-05
 ---
 
 Creates a horizontally scrollable image gallery.

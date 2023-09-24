@@ -7,7 +7,7 @@ tags: [type,variable]
 author: chalarangelo
 cover: boat-port
 excerpt: Hoisting comes up a lot during JavaScript interviews. It's a concept that may require some getting used to, so read our guide to learn more.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 Before your JavaScript code is executed, it is first parsed and compiled. During the _compile_ phase, variable and function declarations are put into memory, which is called **hoisting**.

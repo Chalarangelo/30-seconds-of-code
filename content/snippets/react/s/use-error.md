@@ -5,7 +5,7 @@ language: react
 tags: [hooks,state,effect]
 author: chalarangelo
 cover: cloudy-mountaintop
-dateModified: 2021-09-30T05:00:00-04:00
+dateModified: 2021-09-30
 ---
 
 Creates an error dispatcher.

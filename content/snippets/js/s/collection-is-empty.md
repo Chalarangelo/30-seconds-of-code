@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [type,array,object,string]
 cover: mountain-lake
-dateModified: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20
 ---
 
 Checks if the a value is an empty object/collection, has no enumerable properties or is any type that is not considered a collection.

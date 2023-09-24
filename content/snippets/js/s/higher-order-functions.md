@@ -7,7 +7,7 @@ tags: [function]
 author: chalarangelo
 cover: rock-climbing
 excerpt: Learn everything you need to know about higher-order functions with this short guide and level up your programming skills.
-dateModified: 2021-11-07T16:34:37+03:00
+dateModified: 2021-11-07
 ---
 
 Higher-order functions are **functions that operate on other functions**, either by accepting them as arguments or by returning them as their results. This allows us to create an abstraction layer over actions, not just values.

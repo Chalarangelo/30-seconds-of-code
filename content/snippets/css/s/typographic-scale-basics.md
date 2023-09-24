@@ -6,7 +6,7 @@ tags: [webdev,typography]
 author: chalarangelo
 cover: typography
 excerpt: Typography might seem intimidating, but you can quickly and easily create a simple typographic scale with this basic technique.
-dateModified: 2021-11-07T16:34:37+03:00
+dateModified: 2021-11-07
 ---
 
 Building a typographic scale might seem hard. Yet it's not all that difficult, as long as you learn some basic techniques and principles.

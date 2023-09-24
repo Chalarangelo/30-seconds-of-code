@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math,algorithm]
 cover: blue-red-mountain
-dateModified: 2020-12-28T13:49:24+02:00
+dateModified: 2020-12-28
 ---
 
 Calculates the number of ways to choose `k` items from `n` items without repetition and without order.

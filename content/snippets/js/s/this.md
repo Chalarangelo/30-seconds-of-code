@@ -7,7 +7,7 @@ tags: [function,object]
 author: chalarangelo
 cover: u-got-this
 excerpt: JavaScript's `this` keyword can confuse beginners and veterans alike. Learn how it works in different scenarios and start using it correctly.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 ### What is `this`?

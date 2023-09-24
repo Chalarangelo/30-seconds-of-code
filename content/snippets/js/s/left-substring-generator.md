@@ -5,7 +5,7 @@ language: javascript
 tags: [string,generator]
 cover: boutique-home-office-1
 author: chalarangelo
-dateModified: 2022-07-24T05:00:00-04:00
+dateModified: 2022-07-24
 ---
 
 Generates all left substrings of a given string.

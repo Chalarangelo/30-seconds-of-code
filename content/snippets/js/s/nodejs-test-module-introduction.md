@@ -7,7 +7,7 @@ tags: [node,testing]
 author: chalarangelo
 cover: contemporary-desk
 excerpt: The Node.js test module is a new testing tool that's still in its early stages. Learn more about it in this short introduction.
-dateModified: 2023-04-30T05:00:00-04:00
+dateModified: 2023-04-30
 ---
 
 A little while back, I stumbled upon the [Node.js test module](https://nodejs.org/docs/latest-v18.x/api/test.html). Having tried various JavaScript testing tools in recent years, I decided to set some time aside to test it and see how it works.

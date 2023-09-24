@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [object]
 cover: contemporary-desk
-dateModified: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22
 ---
 
 Finds the last key that satisfies the provided testing function.

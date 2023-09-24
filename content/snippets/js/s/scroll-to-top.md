@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: tranquil-lake
-dateModified: 2020-10-22T20:24:30+03:00
+dateModified: 2020-10-22
 ---
 
 Smooth-scrolls to the top of the page.

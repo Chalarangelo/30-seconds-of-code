@@ -7,7 +7,7 @@ tags: [image]
 author: chalarangelo
 cover: bridge
 excerpt: Discover how to improve your website's performance by implementing lazy loading for images using a native HTML attribute.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 In today's digital landscape, images play a pivotal role in capturing users' attention and conveying information. However, their impact on a webpage's **load time** can be significant, leading to suboptimal user experiences and lower search engine rankings. This makes **image optimization** a crucial part of any website's performance optimization strategy.

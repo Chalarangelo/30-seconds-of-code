@@ -4,7 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: yellow-white-mug-1
-dateModified: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13
 ---
 
 Creates a triangular shape with pure CSS.

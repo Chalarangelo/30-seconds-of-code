@@ -4,7 +4,7 @@ type: snippet
 language: css
 tags: [interactivity]
 cover: messy-papers
-dateModified: 2020-12-30T15:37:37+02:00
+dateModified: 2020-12-30
 ---
 
 Fades out the siblings of a hovered item.

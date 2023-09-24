@@ -5,7 +5,7 @@ language: react
 tags: [hooks,state]
 author: chalarangelo
 cover: flower-portrait-8
-dateModified: 2021-10-23T05:00:00-04:00
+dateModified: 2021-10-23
 ---
 
 Creates a stateful value with a default fallback if it's `null` or `undefined`, and a function to update it.

@@ -5,7 +5,7 @@ language: javascript
 tags: [browser]
 author: chalarangelo
 cover: digital-nomad-14
-dateModified: 2021-01-07T00:37:43+02:00
+dateModified: 2021-01-07
 ---
 
 Adds the provided styles to the given HTML element.

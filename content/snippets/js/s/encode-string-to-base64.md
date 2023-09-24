@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [node,string]
 cover: laptop-journey
-dateModified: 2020-09-15T16:28:04+03:00
+dateModified: 2020-09-15
 ---
 
 Creates a base-64 encoded ASCII string from a String object in which each character in the string is treated as a byte of binary data.

@@ -5,7 +5,7 @@ language: react
 tags: [components,fragment,regexp]
 author: chalarangelo
 cover: red-petals
-dateModified: 2020-11-03T20:42:15+02:00
+dateModified: 2020-11-03
 ---
 
 Renders a string as plaintext, with URLs converted to appropriate link elements.

@@ -5,7 +5,7 @@ language: javascript
 tags: [object,array]
 author: chalarangelo
 cover: dreamy-flowers
-dateModified: 2020-09-15T16:28:04+03:00
+dateModified: 2020-09-15
 ---
 
 Creates an array of key-value pair arrays from an object.

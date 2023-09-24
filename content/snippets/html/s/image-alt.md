@@ -7,7 +7,7 @@ tags: [image,accessibility]
 author: chalarangelo
 cover: sailing-alone
 excerpt: Learn how to correctly use the `alt` attribute on images in HTML.
-dateModified: 2023-06-25T05:00:00-04:00
+dateModified: 2023-06-25
 ---
 
 The `alt` attribute provides **alternative information** for an image if a user cannot view it. This can be due to connectivity issues, browser limitations, HTTP errors, or if the user is using a screen reader. Not providing an `alt` attribute will result in a poor user experience for those who cannot view the image.

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [object]
 cover: building-facade
-dateModified: 2020-10-19T22:49:51+03:00
+dateModified: 2020-10-19
 ---
 
 Iterates over all own properties of an object in reverse, running a callback for each one.

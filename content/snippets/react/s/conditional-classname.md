@@ -6,7 +6,7 @@ language: react
 tags: [components]
 cover: succulent-red-light
 excerpt: In React components, you might need to conditionally apply a `className`. Learn how to handle empty values correctly using this handy tip.
-dateModified: 2021-11-07T16:34:37+03:00
+dateModified: 2021-11-07
 ---
 
 When developing React components, you often need to conditionally apply a `className` attribute to one or more elements. Sometimes, you will have two or more possible values depending on a condition. But there are also times that you might apply a `className` based on a condition or leave it completely empty otherwise.

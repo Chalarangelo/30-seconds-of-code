@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array,object]
 cover: man-cup-laptop
-dateModified: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22
 ---
 
 Groups the elements of an array based on the given function.

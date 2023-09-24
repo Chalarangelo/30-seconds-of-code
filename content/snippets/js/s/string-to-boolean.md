@@ -7,7 +7,7 @@ tags: [string,boolean,type]
 author: chalarangelo
 cover: two-cities
 excerpt: Have you ever tried to convert the string representation of a boolean to an actual boolean value? Here's a simple way to do it.
-dateModified: 2022-09-14T05:00:00-04:00
+dateModified: 2022-09-14
 ---
 
 Sometimes, one might run into the problem of converting the string representation of a value into the value itself. This is often straightforward, such as with numeric values. However, string representations of boolean values can be a bit trickier.

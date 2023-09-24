@@ -7,7 +7,7 @@ tags: [object]
 author: chalarangelo
 cover: pagodas
 excerpt: Learn how JavaScript handles mutable data, such as objects and arrays, and understand how shallow cloning and deep cloning work.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 JavaScript's primitive data types, such as numbers, strings, null, undefined and booleans are immutable, meaning their value cannot change once created. However, **objects and arrays are mutable**, allowing their value to be altered after creation. What this means in practice is that primitives are passed by value, whereas objects and arrays are **passed by reference**. Consider the following example:

@@ -6,7 +6,7 @@ language: javascript
 tags: [browser,event]
 cover: dog-waiting
 excerpt: Learn how to attach an event handler to events that is executed at most once in this JavaScript article.
-dateModified: 2021-06-12T19:30:41+03:00
+dateModified: 2021-06-12
 ---
 
 ### jQuery

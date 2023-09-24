@@ -5,7 +5,7 @@ language: javascript
 tags: [math]
 author: chalarangelo
 cover: tree-roots
-dateModified: 2021-01-06T22:47:48+02:00
+dateModified: 2021-01-06
 ---
 
 Calculates the nth root of a given number.

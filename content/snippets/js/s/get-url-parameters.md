@@ -5,7 +5,7 @@ language: javascript
 tags: [browser,string,regexp]
 author: chalarangelo
 cover: metro-tunnel
-dateModified: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22
 ---
 
 Creates an object containing the parameters of the current URL.

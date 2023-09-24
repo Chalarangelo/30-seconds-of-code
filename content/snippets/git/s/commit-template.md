@@ -5,7 +5,7 @@ language: git
 tags: [repository,configuration]
 author: chalarangelo
 cover: river-house-lights
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Sets up a commit message template for the current repository.

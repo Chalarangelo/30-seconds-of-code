@@ -5,7 +5,7 @@ language: javascript
 tags: [object]
 author: chalarangelo
 cover: symmetry-cloudy-mountain
-dateModified: 2022-04-23T05:00:00-04:00
+dateModified: 2022-04-23
 ---
 
 Finds the common keys between two objects.

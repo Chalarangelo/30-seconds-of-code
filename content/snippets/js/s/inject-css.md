@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser,css]
 cover: dark-leaves-5
-dateModified: 2020-10-22T20:23:47+03:00
+dateModified: 2020-10-22
 ---
 
 Injects the given CSS code into the current document

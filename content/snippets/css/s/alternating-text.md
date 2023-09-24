@@ -4,7 +4,7 @@ type: snippet
 language: css
 tags: [animation]
 cover: italian-horizon
-dateModified: 2023-05-25T15:04:40+03:00
+dateModified: 2023-05-25
 ---
 
 Creates an alternating text animation.

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [object,recursion]
 cover: godray-computer-mug
-dateModified: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20
 ---
 
 Checks if an object is deeply frozen.

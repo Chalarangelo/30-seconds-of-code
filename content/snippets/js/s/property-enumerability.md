@@ -7,7 +7,7 @@ tags: [object]
 author: chalarangelo
 cover: old-consoles
 excerpt: Property enumerability dictates how JavaScript object properties behave in different scenarios.
-dateModified: 2022-09-11T05:00:00-04:00
+dateModified: 2022-09-11
 ---
 
 In most cases, object properties are enumerable by default, unless they are Symbols. This means that you can use the `for...in` loop to iterate over the properties of an object. Similarly, enumerable properties appear in object methods that enumerate the properties of an object. An example of this is the `Object.keys()` method, which will omit properties that are not enumerable. Finally, when using the object spread operator (`...`), only enumerable properties are copied to the new object.

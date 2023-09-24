@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [function]
 cover: workspace-with-speaker
-dateModified: 2020-10-21T21:54:53+03:00
+dateModified: 2020-10-21
 ---
 
 Returns the index of the function in an array of functions which executed the fastest.

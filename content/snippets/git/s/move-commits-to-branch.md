@@ -5,7 +5,7 @@ language: git
 tags: [branch,repository]
 author: chalarangelo
 cover: red-succulent
-dateModified: 2021-04-13T21:10:59+03:00
+dateModified: 2021-04-13
 ---
 
 Moves local commits from the `master` branch to a new branch.

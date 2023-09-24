@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [string,math]
 cover: flower-portrait-2
-dateModified: 2020-10-03T23:31:08+03:00
+dateModified: 2020-10-03
 ---
 
 Pads a given number to the specified length.

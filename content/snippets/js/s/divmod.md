@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math]
 cover: italian-horizon
-dateModified: 2020-10-07T23:59:13+03:00
+dateModified: 2020-10-07
 ---
 
 Returns an array consisting of the quotient and remainder of the given numbers.

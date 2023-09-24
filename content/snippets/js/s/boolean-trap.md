@@ -7,7 +7,7 @@ tags: [function,type,boolean]
 author: chalarangelo
 cover: lighthouse
 excerpt: Boolean traps can cause readability and maintainability issues in your code. Learn what they are, how to spot and fix them in this article.
-dateModified: 2021-07-11T05:00:00-04:00
+dateModified: 2021-07-11
 ---
 
 I recently came across the concept of **Boolean traps** and it instantly resonated with me due to the volume of Google searches I've performed because of it. In this article, I'll try to explain what it is, why it's somewhat of an anti-pattern, how to spot it in your code and ways to refactor around it.

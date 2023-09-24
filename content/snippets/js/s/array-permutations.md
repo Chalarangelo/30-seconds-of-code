@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array,algorithm,recursion]
 cover: body-of-water
-dateModified: 2020-12-28T13:49:24+02:00
+dateModified: 2020-12-28
 ---
 
 Generates all permutations of an array's elements (contains duplicates).

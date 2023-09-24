@@ -4,7 +4,7 @@ type: snippet
 language: python
 tags: [date]
 cover: succulent-9
-dateModified: 2020-10-28T16:19:39+02:00
+dateModified: 2020-10-28
 ---
 
 Calculates the day difference between two dates.

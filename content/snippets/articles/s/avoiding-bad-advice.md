@@ -6,7 +6,7 @@ tags: [webdev,career,programming]
 author: chalarangelo
 cover: inside-weather
 excerpt: Don't fall victim to bad advice! Learn to identify "senior juniorism", and develop critical thinking to make better coding decisions.
-dateModified: 2023-06-04T05:00:00-04:00
+dateModified: 2023-06-04
 ---
 
 Aspiring programmers are always looking for advice, especially from experienced developers who have walked the same path. However, not all advice is created equal. In fact, some advice can be downright dangerous, leading to poor coding practices and bad habits. This is where the phenomenon of **"senior juniorism"** comes in – where juniors write too much about the few things they know, completely oblivious to their own blind spots.

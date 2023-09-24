@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [math,random]
 cover: collab-desk-1
-dateModified: 2020-10-22T20:24:04+03:00
+dateModified: 2020-10-22
 ---
 
 Generates a random integer in the specified range.

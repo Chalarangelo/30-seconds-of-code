@@ -5,7 +5,7 @@ language: javascript
 tags: [function,promise]
 author: chalarangelo
 cover: filter-coffee-pot
-dateModified: 2022-01-08T05:00:00-04:00
+dateModified: 2022-01-08
 ---
 
 Creates a promise that resolves after a given amount of time to the provided value.

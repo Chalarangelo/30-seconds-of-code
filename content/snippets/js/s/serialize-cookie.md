@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [browser,string]
 cover: three-vases
-dateModified: 2020-10-22T20:24:30+03:00
+dateModified: 2020-10-22
 ---
 
 Serializes a cookie name-value pair into a Set-Cookie header string.

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [function,array]
 cover: clutter-2
-dateModified: 2020-09-15T16:28:04+03:00
+dateModified: 2020-09-15
 ---
 
 Builds an array, using an iterator function and an initial seed value.

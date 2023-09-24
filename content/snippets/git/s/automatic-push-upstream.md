@@ -7,7 +7,7 @@ tags: [configuration,repository]
 author: chalarangelo
 cover: messy-computer
 excerpt: Effortlessly create upstream branches on push by enabling a simple git config setting.
-dateModified: 2023-05-21T05:00:00-04:00
+dateModified: 2023-05-21
 ---
 
 Manually creating upstream branches on push can be a tedious task. Luckily, Git provides a way to automate this process. You can use `git config` to enable **automatic upstream branch creation on push**:

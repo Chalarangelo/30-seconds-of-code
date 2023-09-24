@@ -5,7 +5,7 @@ language: javascript
 tags: [algorithm,array]
 author: chalarangelo
 cover: yellow-sofa
-dateModified: 2021-10-13T19:29:39+02:00
+dateModified: 2021-10-13
 ---
 
 Sorts an array of numbers, using the selection sort algorithm.

@@ -4,7 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: cloudy-rock-formation
-dateModified: 2020-10-20T23:02:01+03:00
+dateModified: 2020-10-20
 ---
 
 Initializes a 2D array of given width and height and value.
