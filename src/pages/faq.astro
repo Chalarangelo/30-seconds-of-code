@@ -1,0 +1,95 @@
+---
+import prefabs from 'prefabs/index.js';
+
+import Layout from 'layouts/Layout.astro';
+
+const title = 'FAQ';
+const subtitle = 'Frequently asked questions and answers.';
+const pageDescription =
+  'Frequently asked questions and answers about 30 seconds of code.';
+---
+
+<Layout title={title} description={pageDescription} isFaq>
+  <div class='g-c2'>
+    <h2 class={prefabs.staticPageTitle}>{title}</h2>
+    <p class='my-0 mx-3.5 txt-100'>{subtitle}</p>
+    <div
+      class={prefabs.simpleCard}
+      itemscope='true'
+      itemprop='mainEntity'
+      itemtype='https://schema.org/Question'
+    >
+      <h3 class={prefabs.secondaryCardTitle} itemprop='name'>
+        I found a bug, typo or omission. Where can I report it?
+      </h3>
+      <div
+        class='card-description'
+        itemscope='true'
+        itemprop='acceptedAnswer'
+        itemtype='https://schema.org/Answer'
+      >
+        <p itemprop='text'>
+          Any content issues should be reported using the GitHub Issue Tracker.
+          Use the GitHub lin on the snippet page to find the matching file and
+          then open an issue describing the problem.
+        </p>
+      </div>
+    </div>
+    <div
+      class={prefabs.simpleCard}
+      itemscope='true'
+      itemprop='mainEntity'
+      itemtype='https://schema.org/Question'
+    >
+      <h3 class={prefabs.secondaryCardTitle} itemprop='name'>
+        Who can contribute to 30 seconds of code?
+      </h3>
+      <div
+        class='card-description'
+        itemscope='true'
+        itemprop='acceptedAnswer'
+        itemtype='https://schema.org/Answer'
+      >
+        <p itemprop='text'>
+          There are no specific requirements for contributing to 30 seconds of
+          code, except for reading and understanding our contribution
+          guidelines. Some more general guidelines can be found <a
+            href='https://github.com/30-seconds/30-seconds-of-code/blob/master/design/writing-guidelines.md'
+            target='_blank'
+            rel='noopener noreferrer'>here</a
+          >.<br /><br /> Note, however, that contributions to 30 seconds of code
+          might be locked temporarily due to scheduled maintenance or heavy load
+          of content curation. This ensures that all contributions are processed
+          in time and that no significant disruptions occur.
+        </p>
+      </div>
+    </div>
+    <div
+      class={prefabs.simpleCard}
+      itemscope='true'
+      itemprop='mainEntity'
+      itemtype='https://schema.org/Question'
+    >
+      <h3 class={prefabs.secondaryCardTitle} itemprop='name'>
+        I have a snippet idea. Where can I contribute?
+      </h3>
+      <div
+        class='card-description'
+        itemscope='true'
+        itemprop='acceptedAnswer'
+        itemtype='https://schema.org/Answer'
+      >
+        <p itemprop='text'>
+          You can go to the <a
+            href='https://github.com/30-seconds'
+            target='_blank'
+            rel='noopener noreferrer'
+            >30 seconds of code organization on GitHub</a
+          > and find the appropriate repository. After reading the contribution guidelines,
+          you can use the relevant template to create your snippet and submit a Pull
+          Request for review.
+        </p>
+      </div>
+    </div>
+  </div>
+</Layout>

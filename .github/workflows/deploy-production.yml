@@ -1,0 +1,17 @@
+name: Deploy production
+on:
+  schedule:
+    - cron: "20 18 * * *"
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Add deployable commit to 'production' branch
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        DEPLOY_TRIGGER: ${{ github.event_name }}
+      run: |
+        chmod +x ./src/scripts/deploy.sh
+        ./src/scripts/deploy.sh production

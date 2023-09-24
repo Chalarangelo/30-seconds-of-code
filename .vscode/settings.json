@@ -1,0 +1,40 @@
+{
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "git.detectSubmodules": false,
+  "editor.rulers": [
+    80
+  ],
+  "files.insertFinalNewline": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "files.trimTrailingWhitespace": true,
+  "[javascript]": {
+    "editor.formatOnSaveMode": "file",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[scss]": {
+    "editor.formatOnSaveMode": "file",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[astro]": {
+    "editor.formatOnSaveMode": "file",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.editor.labelFormat": "short",
+  "prettier.documentSelectors": ["**/*.astro"],
+  "search.exclude": {
+    "src/styles/_fonts.scss": true,
+    "src/styles/_icons.scss": true,
+    "src/icons": true,
+    "assets": true,
+    "package-lock.json": true,
+    "**/CODE_OF_CONDUCT.md": true,
+    "**/CONTRIBUTING.md": true,
+    "**/LICENSE": true,
+    "**/README.md": true,
+  }
+}

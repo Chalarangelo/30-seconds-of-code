@@ -1,22 +1,60 @@
 js:
-  - snippets/js/s/*.md
-  - collections/js/*.yaml
+  - content/snippets/js/s/*.md
+  - content/collections/js/*.yaml
 css:
-  - snippets/css/s/*.md
-  - collections/css/*.yaml
+  - content/snippets/css/s/*.md
+  - content/collections/css/*.yaml
 html:
-  - snippets/html/s/*.md
-  - collections/html/*.yaml
+  - content/snippets/html/s/*.md
+  - content/collections/html/*.yaml
 git:
-  - snippets/git/s/*.md
-  - collections/git/*.yaml
+  - content/snippets/git/s/*.md
+  - content/collections/git/*.yaml
 python:
-  - snippets/python/s/*.md
-  - collections/python/*.yaml
+  - content/snippets/python/s/*.md
+  - content/collections/python/*.yaml
 react:
-  - snippets/react/s/*.md
-  - collections/react/*.yaml
+  - content/snippets/react/s/*.md
+  - content/collections/react/*.yaml
 snippet:
-  - snippets/**/*.md
+  - content/snippets/**/*.md
 collection:
-  - collections/**/*.yaml
+  - content/collections/**/*.yaml
+content:
+  - content/**
+design:
+  - design/**
+web:
+  - src/**
+  - .babelrc
+  - astro.config.mjs
+  - netlify.toml
+  - package-lock.json
+  - package.json
+development:
+  - .github/**
+  - .vscode/**
+  - .eslintrc.json
+  - .gitattributes
+  - .gitignore
+  - .prettierignore
+  - .prettierrc
+  - jsconfig.json
+backend:
+  - src/blocks/**
+  - src/scripts/**
+ci/cd:
+  - .github/**
+  - netlify.toml
+dependencies:
+  - package-lock.json
+ui/ux:
+  - src/components/**
+  - src/icons/**
+  - src/layouts/**
+  - src/pages/**
+  - src/styles/**
+tests:
+  - src/test/**
+
+

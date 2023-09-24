@@ -16,7 +16,7 @@
 * If you want to help us improve, take a minute to read the [Contribution Guidelines](/CONTRIBUTING.md) first.
 * Use the relevant `template.md` to add new snippets to each collection.
 * If you find a problem with a specific snippet, please [open an issue](https://github.com/30-seconds/30-seconds-of-code/issues/new).
-* If you find a problem with the website, please [report it in the web repository](https://github.com/30-seconds/30-seconds-web/issues/new).
+* If you find a problem with the website, please [open an issue](https://github.com/30-seconds/30-seconds-of-code/issues/new).
 
 ## Credits
 

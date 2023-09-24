@@ -1,0 +1,60 @@
+---
+const { snippet } = Astro.props;
+
+const snippetCodeData = JSON.stringify(snippet.code);
+---
+
+<script is:inline>
+  const copyCodeBlock = e => {
+    if (!e.target.matches('.action-btn.icon-clipboard')) return;
+    const code = e.target.parentNode.querySelector('pre').innerText;
+    try {
+      navigator.clipboard.writeText(code);
+      setTimeout(() => {
+        e.target.classList.remove('icon-clipboard');
+        e.target.classList.add('active');
+        e.target.classList.add('icon-check');
+      }, 100);
+      setTimeout(() => {
+        e.target.classList.remove('icon-check');
+        e.target.classList.remove('active');
+        e.target.classList.add('icon-clipboard');
+      }, 750);
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+  };
+
+  const openCodepen = e => {
+    if (!e.target.matches('.action-btn.icon-codepen')) return;
+    try {
+      const form = document.createElement('form');
+      form.setAttribute('action', 'https://codepen.io/pen/define');
+      form.setAttribute('method', 'POST');
+      form.setAttribute('target', '_blank');
+
+      const input = document.createElement('input');
+      input.setAttribute('type', 'hidden');
+      input.setAttribute('name', 'data');
+      input.setAttribute(
+        'value',
+        document.getElementById('snippet-events').dataset.code
+      );
+
+      form.appendChild(input);
+      document.body.appendChild(form);
+      form.submit();
+      document.body.removeChild(form);
+    } catch (err) {
+      console.error('Failed to open Codepen: ', err);
+    }
+  };
+
+  document.addEventListener('click', copyCodeBlock);
+  document.addEventListener('click', openCodepen);
+</script>
+{
+  snippetCodeData && snippetCodeData.length ? (
+    <script id='snippet-events' data-code={snippetCodeData} is:inline />
+  ) : null
+}
