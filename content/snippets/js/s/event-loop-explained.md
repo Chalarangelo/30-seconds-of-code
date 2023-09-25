@@ -93,7 +93,7 @@ Does the output look like what you expected? Let's break down what's happening, 
 7. The Event Loops has finished its current Task, evaluating the script. It then begins running the first Microtask in the Microtask Queue, which is the callback of `Promise.prototype.then()` that was queued in step 5.
 8. `console.log()` is pushed to the Call Stack and executed, logging `'Promise.then() #1'`.
 9. `Promise.prototype.then()` is pushed to the Call Stack and executed. This creates a new entry for its callback function in the Microtask Queue.
-10. The Event Loop checks the Microtask Queue. As it’s not empty, it executes the first Microtask, which is the callback of `Promise.prototype.then()` that was queued in step 10.
+10. The Event Loop checks the Microtask Queue. As it’s not empty, it executes the first Microtask, which is the callback of `Promise.prototype.then()` that was queued in step 9.
 11. `console.log()` is pushed to the Call Stack and executed, logging `'Promise.then() #2'`.
 12. Re-rendering would occur here, if there was any.
 13. The Microtask Queue is empty, so the Event Loop moves to the Task Queue and executes the first Task, which is the callback of `setTimeout()` that was queued in step 3.
