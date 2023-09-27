@@ -10,7 +10,7 @@ excerpt: Scroll listeners can easily become a performance bottleneck for your we
 dateModified: 2023-03-07
 ---
 
-When working with scroll listeners in JavaScript, one can often run into performance issues. This is because scroll listeners are triggered on **every single scroll event**, which can be quite frequent. Most of the time, such listeners are used for infinite scrolling and lazy loading, meaning that the scroll event won't be intercepted. As such, `Event.preventDefault()` will not be called, guving us an optimization opportunity.
+When working with scroll listeners in JavaScript, one can often run into performance issues. This is because scroll listeners are triggered on **every single scroll event**, which can be quite frequent. Most of the time, such listeners are used for infinite scrolling and lazy loading, meaning that the scroll event won't be intercepted. As such, `Event.preventDefault()` will not be called, giving us an optimization opportunity.
 
 ```js
 window.addEventListener('scroll', () => {
