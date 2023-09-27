@@ -10,7 +10,7 @@ excerpt: Hoisting comes up a lot during JavaScript interviews. It's a concept th
 dateModified: 2021-06-12
 ---
 
-Before your JavaScript code is executed, it is first parsed and compiled. During the _compile_ phase, variable and function declarations are put into memory, which is called **hoisting**.
+Hoisting is a JavaScript mechanism in which variables and function declarations are moved to the top of their scope during the parsing phase, before any execution takes place. It occurs exclusively in non-strict mode and can be prevented by using [`'use strict'`](https://www.30secondsofcode.org/js/s/use-strict/) at the beginning of your files.
 
 It's essential to note that only declarations are hoisted, while initializations are not. This means that if you declare and initialize a variable after using it, its value will not be initialized. However, this is a simplified explanation, so let's take a look at the various scenarios:
 
@@ -69,3 +69,4 @@ Generally, `const` and `let` provide more of a headache-free experience for a va
 - Always define variables, functions, objects and classes before using them. ESLint can probably help you with that.
 - If your environment/team allows it, prefer `const` and `let`over `var` to minimize headaches.
 - If possible, use only arrow functions or `function` declarations. Consistency can help reduce confusion.
+- Use `'use strict'` at the beginning of your files to prevent hoisting and enforce stricter code rules.
