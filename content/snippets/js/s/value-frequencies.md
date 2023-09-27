@@ -5,7 +5,7 @@ language: javascript
 tags: [array,object]
 author: chalarangelo
 cover: tropical-waterfall
-dateModified: 2020-10-19
+dateModified: 2023-09-27
 ---
 
 Creates an object with the unique values of an array as keys and their frequencies as the values.
@@ -15,7 +15,7 @@ Creates an object with the unique values of an array as keys and their frequenci
 ```js
 const frequencies = arr =>
   arr.reduce((a, v) => {
-    a[v] = a[v] ? a[v] + 1 : 1;
+    a[v] = (a[v] ?? 0) + 1;
     return a;
   }, {});
 ```
