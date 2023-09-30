@@ -1,10 +1,10 @@
 {
-  "name": "30-seconds-web",
+  "name": "30-seconds-of-code",
   "private": true,
-  "version": "1.0.0",
-  "description": "Website for 30-seconds projects.",
+  "version": "9.0.0",
+  "description": "30 seconds of code website.",
   "main": "index.js",
-  "author": "30-seconds",
+  "author": "chalarangelo",
   "devDependencies": {
     "@babel/core": "^7.20.2",
     "@babel/eslint-parser": "^7.20.2",
@@ -36,10 +36,6 @@
     "unist-util-visit-parents": "^3.1.1",
     "webfonts-generator": "^0.4.0"
   },
-  "keywords": [
-    "30-seconds",
-    "snippets"
-  ],
   "license": "MIT",
   "scripts": {
     "predev": "NODE_PATH=src NODE_ENV=development node -r esm ./src/scripts/develop.js",
@@ -59,10 +55,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/30-seconds/30-seconds-web"
+    "url": "https://github.com/30-seconds/30-seconds-of-code"
   },
   "bugs": {
-    "url": "https://github.com/30-seconds/30-seconds-web/issues"
+    "url": "https://github.com/30-seconds/30-seconds-of-code/issues"
   },
   "browserslist": [
     "> 0.5% and last 4 versions and not dead and not ie>0 and not op_mini all and not and_uc>0 and not edge<79"

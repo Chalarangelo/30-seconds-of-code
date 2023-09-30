@@ -4,8 +4,9 @@ import prefabs from 'prefabs/index.js';
 import Layout from 'layouts/Layout.astro';
 
 const title = 'About';
-const subtitle = 'A few word about us, our goals and our projects.';
-const pageDescription = 'Learn more about the team behind 30 seconds of code.';
+const subtitle = 'A few word about the projects and its goals.';
+const pageDescription =
+  'Learn more about the development and maintanance of 30 seconds of code.';
 ---
 
 <Layout title={title} description={pageDescription}>
@@ -13,7 +14,7 @@ const pageDescription = 'Learn more about the team behind 30 seconds of code.';
     <h2 class={prefabs.staticPageTitle}>{title}</h2>
     <p class='my-0 mx-3.5 txt-100'>{subtitle}</p>
     <div class={prefabs.simpleCard}>
-      <h3 class={prefabs.secondaryCardTitle}>About us</h3>
+      <h3 class={prefabs.secondaryCardTitle}>Project</h3>
       <div class='card-description'>
         <p>
           30 seconds of code is an accessible high-quality knowledge base for
@@ -26,7 +27,7 @@ const pageDescription = 'Learn more about the team behind 30 seconds of code.';
       </div>
     </div>
     <div class={prefabs.simpleCard}>
-      <h3 class={prefabs.secondaryCardTitle}>Who we are</h3>
+      <h3 class={prefabs.secondaryCardTitle}>Maintainers</h3>
       <div class='card-description'>
         <p>
           30 seconds of code is developed, maintained and curated by <a
@@ -61,15 +62,7 @@ const pageDescription = 'Learn more about the team behind 30 seconds of code.';
         <br />
         <p>
           Logos, names and trademarks are not to be used without the explicit
-          consent of the owner of the <a
-            href='https://github.com/30-seconds?type=source'
-            target='_blank'>30 seconds of code GitHub organization</a
-          >. The only partial exception is the usage of the <em
-            >30-seconds-of-</em
-          > prefix in open source projects on GitHub, licensed under an appropriate
-          license. In that case, however, additional clarification must be provided
-          in the project's README and any websites related to the project, stating
-          that the project is in no way affiliated with 30 seconds of code.
+          consent of the owner of this website.
         </p>
       </div>
     </div>
