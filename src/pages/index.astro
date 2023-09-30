@@ -1,13 +1,13 @@
 ---
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 
-import prefabs from 'prefabs/index.js';
+import prefabs from '#prefabs';
 
-import Layout from 'layouts/Layout.astro';
-import PreviewCardList from 'components/PreviewCardList.astro';
-import ListingChips from 'components/ListingChips.astro';
-import Image from 'components/Image.astro';
+import Layout from '#layouts/Layout';
+import PreviewCardList from '#components/PreviewCardList';
+import ListingChips from '#components/ListingChips';
+import Image from '#components/Image';
 
 const pagePath = path.join(process.cwd(), '.content', 'pages', 'index.json');
 const pageData = JSON.parse(fs.readFileSync(pagePath, 'utf8'));
