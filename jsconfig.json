@@ -1,15 +1,17 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
-    "target": "es6",
-    "moduleResolution": "node"
+    "module": "es6",
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "#blocks/*": ["./src/blocks/*.js"],
+      "#components/*" : ["./src/components/*.astro"],
+      "#layouts/*": ["./src/layouts/*.astro"],
+      "#settings/*": ["./src/settings/*.js"],
+      "#prefabs": ["./src/prefabs/index.js"],
+      "#utils": ["./src/utils/index.js"],
+      "#utils/search": ["./src/utils/search.js"]
+    }
   },
-  "exclude": [
-    "node_modules"
-  ],
-  "typeAcquisition": {
-    "include": [
-      "jest"
-    ]
-  }
+  "exclude": ["node_modules"]
 }
