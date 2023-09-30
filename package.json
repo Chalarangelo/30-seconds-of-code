@@ -6,11 +6,7 @@
   "main": "index.js",
   "author": "chalarangelo",
   "devDependencies": {
-    "@babel/core": "^7.20.2",
-    "@babel/eslint-parser": "^7.20.2",
-    "@babel/preset-env": "^7.20.2",
-    "@jsiqle/core": "^2.0.0",
-    "@types/jest": "^27.0.1",
+    "@jsiqle/core": "^3.0.0",
     "astro": "^3.1.0",
     "chalk": "^4.1.0",
     "eslint": "^7.32.0",
