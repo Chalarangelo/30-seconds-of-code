@@ -1,4 +1,4 @@
-import { Application } from 'blocks/application';
+import { Application } from '#blocks/application';
 
 export const makeManifest = async () => {
   Application.Logger.log('Manifest creation process is starting up...\n');
