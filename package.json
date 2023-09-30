@@ -3,8 +3,9 @@
   "private": true,
   "version": "9.0.0",
   "description": "30 seconds of code website.",
-  "main": "index.js",
+  "exports": "./index.js",
   "author": "chalarangelo",
+  "type": "module",
   "devDependencies": {
     "@jsiqle/core": "^3.0.0",
     "astro": "^3.1.0",
