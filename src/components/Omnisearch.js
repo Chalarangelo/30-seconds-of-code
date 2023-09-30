@@ -1,4 +1,4 @@
-import { quickParseTokens as tokenize } from 'utils/search';
+import { quickParseTokens as tokenize } from '#utils/search';
 
 class Omnisearch extends HTMLElement {
   searchIndex = {};

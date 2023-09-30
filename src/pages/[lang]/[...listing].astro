@@ -2,13 +2,13 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 
-import prefabs from 'prefabs/index.js';
+import prefabs from '#prefabs';
 
-import Layout from 'layouts/Layout.astro';
-import Paginator from 'components/Paginator.astro';
-import Image from 'components/Image.astro';
-import PreviewCardList from 'components/PreviewCardList.astro';
-import ListingChips from 'components/ListingChips.astro';
+import Layout from '#layouts/Layout';
+import Paginator from '#components/Paginator';
+import Image from '#components/Image';
+import PreviewCardList from '#components/PreviewCardList';
+import ListingChips from '#components/ListingChips';
 
 export async function getStaticPaths() {
   const pagePath = path.join(
