@@ -32,7 +32,15 @@
     "unist-util-visit-parents": "^3.1.1",
     "webfonts-generator": "^0.4.0"
   },
-  "license": "MIT",
+  "imports": {
+    "#blocks/*": "./src/blocks/*.js",
+    "#components/*": "./src/components/*.astro",
+    "#layouts/*": "./src/layouts/*.astro",
+    "#settings/*": "./src/settings/*.js",
+    "#prefabs": "./src/prefabs/index.js",
+    "#utils": "./src/utils/index.js",
+    "#utils/search": "./src/utils/search.js"
+  },
   "scripts": {
     "predev": "NODE_PATH=src NODE_ENV=development node -r esm ./src/scripts/develop.js",
     "dev": "NODE_PATH=src astro dev --port 8000",
