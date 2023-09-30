@@ -42,21 +42,18 @@
     "#utils/search": "./src/utils/search.js"
   },
   "scripts": {
-    "predev": "NODE_PATH=src NODE_ENV=development node -r esm ./src/scripts/develop.js",
-    "dev": "NODE_PATH=src astro dev --port 8000",
-    "start": "NODE_PATH=src astro dev --port 8000",
-    "prebuild": "NODE_PATH=src NODE_ENV=production node -r esm ./src/scripts/build.js",
-    "build": "NODE_PATH=src astro build",
-    "preview": "NODE_PATH=src astro preview --port 9000",
-    "console": "NODE_PATH=src NODE_ENV=development node -r esm ./src/scripts/console.js",
-    "create": "NODE_PATH=src NODE_ENV=production node -r esm ./src/scripts/create.js",
-    "lint": "eslint './src/**/*.js' './src/**/*.jsx'",
-    "icons": "NODE_PATH=src NODE_ENV=production node -r esm ./src/scripts/icons.js",
-    "manifest": "NODE_PATH=src NODE_ENV=production node -r esm ./src/scripts/manifest.js",
-    "format": "prettier --config .prettierrc --write './**/*.{js,jsx}'",
-    "test": "NODE_PATH=src NODE_ENV=test jest --config src/test/jest-config.json",
-    "test:watch": "NODE_PATH=src NODE_ENV=test jest --config src/test/jest-config.json --watch"
+    "predev": "node ./src/scripts/develop.js",
+    "dev": "astro dev --port 8000",
+    "start": "astro dev --port 8000",
+    "prebuild": "node ./src/scripts/build.js",
+    "build": "astro build",
+    "preview": "astro preview --port 9000",
+    "console": "node ./src/scripts/console.js",
+    "create": "node ./src/scripts/create.js",
+    "icons": "node ./src/scripts/icons.js",
+    "manifest": "node ./src/scripts/manifest.js"
   },
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/30-seconds/30-seconds-of-code"
