@@ -1,0 +1,24 @@
+.cookie-consent-popup {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  max-height: 60vh;
+  overflow-y: auto;
+  transform: translateY(0%);
+  transition: transform 0.3s ease 0s;
+
+  &.hidden {
+    transform: translateY(100%);
+  }
+
+  > p,
+  .cookie-consent-buttons {
+    max-width: 680px;
+  }
+
+  .btn {
+    flex: 0 1 27.5%;
+  }
+}

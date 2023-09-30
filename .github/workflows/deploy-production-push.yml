@@ -1,0 +1,29 @@
+name: Deploy production (push)
+on:
+  push:
+    branches: [ master ]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v2
+      id: filter
+      with:
+        filters: |
+          web:
+            - 'src/**'
+            - '.babelrc'
+            - 'astro.config.mjs'
+            - 'netlify.toml'
+            - 'package-lock.json'
+            - 'package.json'
+    # run only if 'web' files were changed
+    - name: Add deployable commit to 'production' branch
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        DEPLOY_TRIGGER: ${{ github.event_name }}
+      if: steps.filter.outputs.web == 'true'
+      run: |
+        chmod +x ./src/scripts/deploy.sh
+        ./src/scripts/deploy.sh production
