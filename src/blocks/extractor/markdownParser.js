@@ -1,3 +1,4 @@
+import { createRequire } from 'module';
 import remark from 'remark';
 import remarkGfm from 'remark-gfm';
 import toHAST from 'mdast-util-to-hast';
@@ -6,16 +7,27 @@ import visit from 'unist-util-visit';
 import visitParents from 'unist-util-visit-parents';
 import { selectAll } from 'unist-util-select';
 import Prism from 'prismjs';
-import getLoader from 'prismjs/dependencies';
-import prismComponents from 'prismjs/components';
-import { escapeHTML, convertToValidId } from 'utils';
-import prefabs from 'prefabs';
-import pathSettings from 'settings/paths';
+import getLoader from 'prismjs/dependencies.js';
+import prismComponents from 'prismjs/components.js';
+import { escapeHTML, convertToValidId } from '#utils';
+import prefabs from '#prefabs';
+import pathSettings from '#settings/paths';
+
+const require = createRequire(import.meta.url);
 
 const assetPath = `/${pathSettings.staticAssetPath}`;
 const loader = getLoader(
   prismComponents,
-  ['markup', 'javascript', 'js-extras', 'jsx', 'python', 'css', 'css-extras'],
+  [
+    'markup',
+    'javascript',
+    'js-extras',
+    'jsx',
+    'python',
+    'css',
+    'css-extras',
+    'shell',
+  ],
   []
 );
 loader.load(id => {
