@@ -1,4 +1,4 @@
-import glob from 'glob';
+import { Glob } from 'glob';
 import chalk from 'chalk';
 import repl from 'node:repl';
 import util from 'node:util';
@@ -468,7 +468,7 @@ export class Application {
     const context = Application._replServer.context;
     context.Application = Application;
     context.settings = Application.settings;
-    context.glob = glob;
+    context.glob = Glob;
     context.chalk = chalk;
     // NOTE: We are not exactly clearing existing context, so there
     // might be leftovers from a previous context. This is fine, as

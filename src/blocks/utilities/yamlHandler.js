@@ -1,5 +1,5 @@
 import path from 'node:path';
-import glob from 'glob';
+import { globSync } from 'glob';
 import fs from 'fs-extra/esm';
 import yaml from 'js-yaml';
 import { readFileSync } from 'node:fs';
@@ -58,7 +58,7 @@ export class YAMLHandler {
       );
     }
 
-    const matchingFiles = glob.sync(globPattern);
+    const matchingFiles = globSync(globPattern);
 
     // NOTE: The `reducer` should implement the `yaml.load` part in order for the
     // resulting value to make some sort of sense if it reduces to an object.

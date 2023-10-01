@@ -1,6 +1,6 @@
 import fs from 'fs-extra/esm';
 import path from 'node:path';
-import glob from 'glob';
+import { globSync } from 'glob';
 import webfontsGenerator from 'webfonts-generator';
 import pathSettings from '#settings/paths';
 import { Logger } from '#blocks/utilities/logger';
@@ -33,7 +33,7 @@ export class IconWriter {
    * files have been written to disk.
    */
   static write = () => {
-    const fileList = glob.sync(inPath);
+    const fileList = globSync(inPath);
 
     const logger = new Logger('IconWriter.write');
     logger.log(

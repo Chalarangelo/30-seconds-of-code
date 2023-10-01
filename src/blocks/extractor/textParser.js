@@ -1,6 +1,6 @@
 import { readFile, readdir } from 'node:fs/promises';
 import frontmatter from 'front-matter';
-import glob from 'glob';
+import { globSync } from 'glob';
 
 /**
  * Parses text files, using frontmatter, returning text objects.
@@ -44,9 +44,9 @@ export class TextParser {
   };
 
   static fromGlob = async globPattern => {
-    const fileNames = glob
-      .sync(globPattern)
-      .sort((a, b) => (a.toLowerCase() < b.toLowerCase() ? -1 : 1));
+    const fileNames = globSync(globPattern).sort((a, b) =>
+      a.toLowerCase() < b.toLowerCase() ? -1 : 1
+    );
 
     return Promise.all(fileNames.map(f => TextParser.fromPath(f)));
   };
