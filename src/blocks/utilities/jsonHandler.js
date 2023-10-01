@@ -1,7 +1,6 @@
-import path from 'path';
-import glob from 'glob';
+import path from 'node:path';
 import fs from 'fs-extra';
-import { writeFile } from 'fs/promises';
+import { writeFile } from 'node:fs/promises';
 
 /**
  * Handles reading/writing JSON objects from/to files.
@@ -25,6 +24,6 @@ export class JSONHandler {
    * @returns {object} An object containing the data from the given JSON file.
    */
   static fromFile = filePath => {
-    return { ...require(path.resolve(filePath)) };
+    return JSON.parse(fs.readFileSync(filePath));
   };
 }

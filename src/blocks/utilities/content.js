@@ -1,7 +1,7 @@
-import path from 'path';
-import fs from 'fs';
-import pathSettings from 'settings/paths';
-import { Logger } from 'blocks/utilities/logger';
+import path from 'node:path';
+import fs from 'node:fs';
+import pathSettings from '#settings/paths';
+import { Logger } from '#blocks/utilities/logger';
 
 export class Content {
   /**

@@ -1,5 +1,5 @@
-import tagDictionary from 'settings/tags';
-import { capitalize } from 'utils';
+import tagDictionary from '#settings/tags';
+import { capitalize } from '#utils';
 
 /**
  * Formats a tag for display.

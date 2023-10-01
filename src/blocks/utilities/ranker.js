@@ -1,4 +1,4 @@
-import { YAMLHandler } from 'blocks/utilities/yamlHandler';
+import { YAMLHandler } from '#blocks/utilities/yamlHandler';
 // NOTE: Be very careful not to import Application in this file, as this is
 // used in raw model definitions and can end up creating major issues.
 
