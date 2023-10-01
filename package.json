@@ -40,16 +40,16 @@
     "#utils/search": "./src/utils/search.js"
   },
   "scripts": {
-    "predev": "node ./src/scripts/develop.js",
+    "predev": "NODE_ENV=development node ./src/scripts/develop.js",
     "dev": "astro dev --port 8000",
     "start": "astro dev --port 8000",
-    "prebuild": "node ./src/scripts/build.js",
+    "prebuild": "NODE_ENV=production node ./src/scripts/build.js",
     "build": "astro build",
     "preview": "astro preview --port 9000",
-    "console": "node ./src/scripts/console.js",
-    "create": "node ./src/scripts/create.js",
-    "icons": "node ./src/scripts/icons.js",
-    "manifest": "node ./src/scripts/manifest.js"
+    "console": "NODE_ENV=production node ./src/scripts/console.js",
+    "create": "NODE_ENV=production node ./src/scripts/create.js",
+    "icons": "NODE_ENV=production node ./src/scripts/icons.js",
+    "manifest": "NODE_ENV=production node ./src/scripts/manifest.js"
   },
   "license": "MIT",
   "repository": {
