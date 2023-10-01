@@ -1,4 +1,4 @@
-import pathSettings from 'settings/paths';
+import pathSettings from '#settings/paths';
 
 export const previewSerializer = {
   name: 'PreviewSerializer',
