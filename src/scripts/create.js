@@ -1,5 +1,5 @@
-import { Logger } from 'blocks/utilities/logger';
-import { Content } from 'blocks/utilities/content';
+import { Logger } from '#blocks/utilities/logger';
+import { Content } from '#blocks/utilities/content';
 
 export const build = async () => {
   Logger.log('Creation process is starting up...\n');
