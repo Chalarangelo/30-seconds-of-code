@@ -1,4 +1,4 @@
-import { Schemer } from 'blocks/utilities/schemer';
+import { Schemer } from '#blocks/utilities/schemer';
 
 export const snippetPage = {
   name: 'SnippetPage',
