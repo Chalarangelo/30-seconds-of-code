@@ -1,16 +1,16 @@
 import fs from 'fs-extra';
-import path from 'path';
+import path from 'node:path';
 import sharp from 'sharp';
 import glob from 'glob';
-import { Application } from 'blocks/application';
+import pathSettings from '#settings/paths';
+import { Logger } from '#blocks/utilities/logger';
 
-const { Logger } = Application;
 const {
   publicPath,
   staticAssetPath,
   rawAssetPath: inPath,
   assetPath: outPath,
-} = Application.settings.paths;
+} = pathSettings;
 const inContentPath = 'content/assets';
 
 // Image asset constants

@@ -1,8 +1,8 @@
-import { Application } from 'blocks/application';
+import pathSettings from '#settings/paths';
+import { Logger } from '#blocks/utilities/logger';
+import { JSONHandler } from '#blocks/utilities/jsonHandler';
 
-const { Logger, JSONHandler } = Application;
-
-const outPath = `${Application.settings.paths.publicPath}/search-data.json`;
+const outPath = `${pathSettings.publicPath}/search-data.json`;
 
 /**
  * Writes the search index file (search-data.json).
@@ -10,25 +10,26 @@ const outPath = `${Application.settings.paths.publicPath}/search-data.json`;
 export class SearchIndexWriter {
   /**
    * Writes the search index file (search-data.json).
+   * @param {Application} application The application instance.
    * @returns {Promise} A promise that will resolve when the search index file
    * has been written to disk.
    */
-  static async write() {
+  static async write(application) {
     const logger = new Logger('SearchIndexWriter.write');
+    const { dataset } = application;
 
-    let SearchResultSerializer = Application.dataset.getSerializer(
+    let SearchResultSerializer = dataset.getSerializer(
       'SearchResultSerializer'
     );
 
-    const snippets = Application.dataset.getModel('Snippet').records.listed;
+    const snippets = dataset.getModel('Snippet').records.listed;
 
     const snippetsData = SearchResultSerializer.serializeArray(
       snippets.toArray(),
       { type: 'snippet' }
     );
 
-    const collections =
-      Application.dataset.getModel('Collection').records.listed;
+    const collections = dataset.getModel('Collection').records.listed;
 
     const collectionsData = SearchResultSerializer.serializeArray(
       collections.toArray(),

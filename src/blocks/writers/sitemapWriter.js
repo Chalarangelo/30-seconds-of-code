@@ -1,12 +1,12 @@
 import fs from 'fs-extra';
-import { writeFile } from 'fs/promises';
+import { writeFile } from 'node:fs/promises';
 import handlebars from 'handlebars';
-import { Application } from 'blocks/application';
+import pathSettings from '#settings/paths';
+import globalSettings from '#settings/global';
+import { Logger } from '#blocks/utilities/logger';
 
-const { Logger } = Application;
-
-const { websiteUrl } = Application.settings;
-const outPath = `${Application.settings.paths.publicPath}/sitemap.xml`;
+const { websiteUrl } = globalSettings;
+const outPath = `${pathSettings.publicPath}/sitemap.xml`;
 const templatePath = 'src/templates/sitemapTemplate.hbs';
 
 /**
@@ -15,21 +15,23 @@ const templatePath = 'src/templates/sitemapTemplate.hbs';
 export class SitemapWriter {
   /**
    * Generates the website's sitemap from the JSON files of the pages.
+   * @param {Application} application The application instance.
    * @returns {Promise} A promise that will resolve when the sitemap has been
    * written to disk.
    */
-  static write = async () => {
+  static write = async application => {
     const logger = new Logger('SitemapWriter.write');
     const template = handlebars.compile(fs.readFileSync(templatePath, 'utf-8'));
-    const snippetPages = Application.dataset
+    const { dataset } = application;
+    const snippetPages = dataset
       .getModel('SnippetPage')
       .records.published.map(page => `${websiteUrl}${page.slug}`, {
         flat: true,
       });
-    const collectionPages = Application.dataset
+    const collectionPages = dataset
       .getModel('CollectionPage')
       .records.map(page => `${websiteUrl}${page.slug}`, { flat: true });
-    const collectionsPages = Application.dataset
+    const collectionsPages = dataset
       .getModel('CollectionsPage')
       .records.map(page => `${websiteUrl}${page.slug}`, { flat: true });
     const homePage = [`${websiteUrl}/`];
