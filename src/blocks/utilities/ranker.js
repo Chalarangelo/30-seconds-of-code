@@ -16,8 +16,6 @@ export class Ranker {
    * Dynamically load keyword scores from the content configuration.
    */
   static get keywordScores() {
-    // Skip loading for test environment
-    if (process.env.NODE_ENV === `test`) return {};
     if (!Object.keys(Ranker.keywordScoreData).length) {
       Ranker.keywordScoreData = YAMLHandler.fromFile(
         'content/rankingEngine.yaml'

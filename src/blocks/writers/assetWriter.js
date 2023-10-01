@@ -1,7 +1,7 @@
 import fs from 'fs-extra/esm';
 import path from 'node:path';
 import sharp from 'sharp';
-import glob from 'glob';
+import { globSync } from 'glob';
 import pathSettings from '#settings/paths';
 import { Logger } from '#blocks/utilities/logger';
 
@@ -27,9 +27,9 @@ const iconOutName = 'icon';
  */
 export class AssetWriter {
   static getGeneratedAssets = () =>
-    glob
-      .sync(`${outPath}/@(${supportedDirectories.join('|')})/*.webp`)
-      .map(asset => asset.replace(`${outPath}/`, '').split('.')[0]);
+    globSync(`${outPath}/@(${supportedDirectories.join('|')})/*.webp`).map(
+      asset => asset.replace(`${outPath}/`, '').split('.')[0]
+    );
 
   /**
    * Prepares the assets directory.
@@ -94,15 +94,15 @@ export class AssetWriter {
     const logger = new Logger('AssetWriter.processCoverAssets');
     logger.log(`Processing cover images...`);
 
-    let coverAssets = glob
-      .sync(`${inContentPath}/cover/*.@(${supportedExtensions.join('|')})`)
-      .map(fileName => ({
-        filePath: path.resolve(fileName),
-        fileName: fileName.slice(
-          fileName.lastIndexOf('/'),
-          fileName.lastIndexOf('.')
-        ),
-      }));
+    let coverAssets = globSync(
+      `${inContentPath}/cover/*.@(${supportedExtensions.join('|')})`
+    ).map(fileName => ({
+      filePath: path.resolve(fileName),
+      fileName: fileName.slice(
+        fileName.lastIndexOf('/'),
+        fileName.lastIndexOf('.')
+      ),
+    }));
 
     if (existingAssets && existingAssets.length > 0) {
       const originalLength = coverAssets.length;
@@ -152,21 +152,17 @@ export class AssetWriter {
 
     let staticAssets = ['splash', 'illustrations'].reduce(
       (allAssets, assetType) => {
-        const assets = glob
-          .sync(
-            `${inContentPath}/${assetType}/*.@(${supportedExtensions.join(
-              '|'
-            )})`
-          )
-          .map(fileName => ({
-            filePath: path.resolve(fileName),
-            fullFileName: fileName.slice(fileName.lastIndexOf('/')),
-            fileName: fileName.slice(
-              fileName.lastIndexOf('/'),
-              fileName.lastIndexOf('.')
-            ),
-            directory: assetType,
-          }));
+        const assets = globSync(
+          `${inContentPath}/${assetType}/*.@(${supportedExtensions.join('|')})`
+        ).map(fileName => ({
+          filePath: path.resolve(fileName),
+          fullFileName: fileName.slice(fileName.lastIndexOf('/')),
+          fileName: fileName.slice(
+            fileName.lastIndexOf('/'),
+            fileName.lastIndexOf('.')
+          ),
+          directory: assetType,
+        }));
         return allAssets.concat(assets);
       },
       []
