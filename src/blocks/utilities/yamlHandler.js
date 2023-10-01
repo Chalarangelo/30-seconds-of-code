@@ -1,8 +1,9 @@
-import path from 'path';
-import glob from 'glob';
-import fs from 'fs-extra';
+import path from 'node:path';
+import { globSync } from 'glob';
+import fs from 'fs-extra/esm';
 import yaml from 'js-yaml';
-import { writeFile } from 'fs/promises';
+import { readFileSync } from 'node:fs';
+import { writeFile } from 'node:fs/promises';
 
 /**
  * Handles reading/writing YAML objects from/to files.
@@ -41,7 +42,7 @@ export class YAMLHandler {
     {
       withNames = false,
       reduced = false,
-      reducer = (a, v) => ({ ...a, ...yaml.load(fs.readFileSync(v)) }),
+      reducer = (a, v) => ({ ...a, ...yaml.load(readFileSync(v)) }),
       initialValue = {},
     } = {}
   ) => {
@@ -57,7 +58,7 @@ export class YAMLHandler {
       );
     }
 
-    const matchingFiles = glob.sync(globPattern);
+    const matchingFiles = globSync(globPattern);
 
     // NOTE: The `reducer` should implement the `yaml.load` part in order for the
     // resulting value to make some sort of sense if it reduces to an object.
@@ -66,13 +67,10 @@ export class YAMLHandler {
     }
 
     if (withNames) {
-      return matchingFiles.map(file => [
-        file,
-        yaml.load(fs.readFileSync(file)),
-      ]);
+      return matchingFiles.map(file => [file, yaml.load(readFileSync(file))]);
     }
 
-    return matchingFiles.map(file => yaml.load(fs.readFileSync(file)));
+    return matchingFiles.map(file => yaml.load(readFileSync(file)));
   };
 
   /**
@@ -81,6 +79,6 @@ export class YAMLHandler {
    * @returns {object} An object containing the data from the given YAML file.
    */
   static fromFile = filePath => {
-    return yaml.load(fs.readFileSync(path.resolve(filePath)));
+    return yaml.load(readFileSync(path.resolve(filePath)));
   };
 }

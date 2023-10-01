@@ -1,5 +1,5 @@
-import { Schemer } from 'blocks/utilities/schemer';
-import pathSettings from 'settings/paths';
+import { Schemer } from '#blocks/utilities/schemer';
+import pathSettings from '#settings/paths';
 
 export const collectionPage = {
   name: 'CollectionPage',

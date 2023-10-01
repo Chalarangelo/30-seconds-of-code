@@ -1,3 +1,3 @@
-import { Application } from 'blocks/application';
+import { Application } from '#blocks/application';
 
 Application.startRepl();

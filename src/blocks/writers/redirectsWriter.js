@@ -1,11 +1,7 @@
-import { writeFile } from 'fs/promises';
-import pathSettings from 'settings/paths';
-
-import { YAMLHandler } from 'blocks/utilities/yamlHandler';
-
-import { Application } from 'blocks/application';
-
-const { Logger } = Application;
+import { writeFile } from 'node:fs/promises';
+import pathSettings from '#settings/paths';
+import { Logger } from '#blocks/utilities/logger';
+import { YAMLHandler } from '#blocks/utilities/yamlHandler';
 
 const inPath = `${pathSettings.rawContentPath}/redirects.yaml`;
 const outPath = `${pathSettings.publicPath}/_redirects`;

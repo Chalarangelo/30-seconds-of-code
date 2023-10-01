@@ -36,5 +36,6 @@
     "**/CONTRIBUTING.md": true,
     "**/LICENSE": true,
     "**/README.md": true,
-  }
+  },
+  "eslint.experimental.useFlatConfig": true
 }

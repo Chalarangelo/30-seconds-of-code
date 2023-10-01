@@ -13,7 +13,6 @@ jobs:
         filters: |
           web:
             - 'src/**'
-            - '.babelrc'
             - 'astro.config.mjs'
             - 'netlify.toml'
             - 'package-lock.json'

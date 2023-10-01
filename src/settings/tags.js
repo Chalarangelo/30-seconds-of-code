@@ -1,0 +1,10 @@
+export default {
+  css: 'CSS',
+  javascript: 'JavaScript',
+  php: 'PHP',
+  seo: 'SEO',
+  vscode: 'Visual Studio Code',
+  html: 'HTML',
+  webdev: 'Web development',
+  http: 'HTTP',
+};

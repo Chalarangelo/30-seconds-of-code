@@ -1,6 +1,6 @@
-import { Schemer } from 'blocks/utilities/schemer';
-import settings from 'settings/global';
-import presentationSettings from 'settings/presentation';
+import { Schemer } from '#blocks/utilities/schemer';
+import settings from '#settings/global';
+import presentationSettings from '#settings/presentation';
 
 export const homePage = {
   name: 'HomePage',

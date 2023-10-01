@@ -1,15 +1,14 @@
-import fs from 'fs-extra';
-import path from 'path';
-import glob from 'glob';
+import fs from 'fs-extra/esm';
+import path from 'node:path';
+import { globSync } from 'glob';
 import webfontsGenerator from 'webfonts-generator';
-import { Application } from 'blocks/application';
-
-const { Logger } = Application;
+import pathSettings from '#settings/paths';
+import { Logger } from '#blocks/utilities/logger';
 
 const inPath = 'src/icons/*.svg';
 
 const defaultConfig = {
-  dest: Application.settings.paths.rawAssetPath,
+  dest: pathSettings.rawAssetPath,
   types: ['woff2'],
   fontName: 'icons',
   html: false,
@@ -34,7 +33,7 @@ export class IconWriter {
    * files have been written to disk.
    */
   static write = () => {
-    const fileList = glob.sync(inPath);
+    const fileList = globSync(inPath);
 
     const logger = new Logger('IconWriter.write');
     logger.log(

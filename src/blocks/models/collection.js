@@ -1,7 +1,7 @@
-import { uniqueElements } from 'utils';
-import tokenizeCollection from 'utils/search';
-import { Ranker } from 'blocks/utilities/ranker';
-import presentationSettings from 'settings/presentation';
+import { uniqueElements } from '#utils';
+import tokenizeCollection from '#utils/search';
+import { Ranker } from '#blocks/utilities/ranker';
+import presentationSettings from '#settings/presentation';
 
 export const collection = {
   name: 'Collection',

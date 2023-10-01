@@ -1,4 +1,4 @@
-import { Application } from 'blocks/application';
+import { Application } from '#blocks/application';
 
 export const build = async () => {
   Application.Logger.log('Build process is starting up...\n');
