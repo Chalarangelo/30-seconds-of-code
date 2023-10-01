@@ -1,10 +1,10 @@
 import { createRequire } from 'module';
 import remark from 'remark';
 import remarkGfm from 'remark-gfm';
-import toHAST from 'mdast-util-to-hast';
-import hastToHTML from 'hast-util-to-html';
-import visit from 'unist-util-visit';
-import visitParents from 'unist-util-visit-parents';
+import { toHast } from 'mdast-util-to-hast';
+import { toHtml } from 'hast-util-to-html';
+import { visit } from 'unist-util-visit';
+import { visitParents } from 'unist-util-visit-parents';
 import { selectAll } from 'unist-util-select';
 import Prism from 'prismjs';
 import getLoader from 'prismjs/dependencies.js';
@@ -282,8 +282,8 @@ export class MarkdownParser {
       node.value = newValue;
     });
 
-    const htmlAst = toHAST(ast, { allowDangerousHtml: true });
-    return hastToHTML(htmlAst, { allowDangerousHtml: true });
+    const htmlAst = toHast(ast, { allowDangerousHtml: true });
+    return toHtml(htmlAst, { allowDangerousHtml: true });
   };
 
   static parseSegments = (texts, languageKeys) =>
