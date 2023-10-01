@@ -1,4 +1,4 @@
-import searchEngineSettings from 'settings/searchEngine';
+import searchEngineSettings from '#settings/searchEngine';
 const { serverStopWords, clientStopWords } = searchEngineSettings;
 
 // Standard suffix manipulations.
