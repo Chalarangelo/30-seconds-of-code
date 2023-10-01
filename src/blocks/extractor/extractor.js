@@ -1,12 +1,12 @@
 /* eslint-disable no-unused-vars */
-import pathSettings from 'settings/paths';
-import JSX_SNIPPET_PRESETS from 'settings/jsxSnippetPresets';
-import { Logger } from 'blocks/utilities/logger';
-import { TextParser } from 'blocks/extractor/textParser';
-import { MarkdownParser } from 'blocks/extractor/markdownParser';
-import { JSONHandler } from 'blocks/utilities/jsonHandler';
-import { YAMLHandler } from 'blocks/utilities/yamlHandler';
-import { stripMarkdownFormat } from 'utils';
+import pathSettings from '#settings/paths';
+import JSX_SNIPPET_PRESETS from '#settings/jsxSnippetPresets';
+import { Logger } from '#blocks/utilities/logger';
+import { TextParser } from '#blocks/extractor/textParser';
+import { MarkdownParser } from '#blocks/extractor/markdownParser';
+import { JSONHandler } from '#blocks/utilities/jsonHandler';
+import { YAMLHandler } from '#blocks/utilities/yamlHandler';
+import { stripMarkdownFormat } from '#utils';
 
 const mdCodeFence = '```';
 const codeMatcher = new RegExp(
