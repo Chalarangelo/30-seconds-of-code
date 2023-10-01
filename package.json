@@ -23,7 +23,7 @@
     "prismjs": "^1.29.0",
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.0",
-    "sass": "^1.58.3",
+    "sass": "^1.68.0",
     "sharp": "^0.32.1",
     "unist-util-select": "^5.0.0",
     "unist-util-visit": "^5.0.0",
