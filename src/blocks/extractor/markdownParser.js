@@ -1,5 +1,5 @@
 import { createRequire } from 'module';
-import remark from 'remark';
+import { remark } from 'remark';
 import remarkGfm from 'remark-gfm';
 import { toHast } from 'mdast-util-to-hast';
 import { toHtml } from 'hast-util-to-html';
