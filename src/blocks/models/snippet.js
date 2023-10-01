@@ -1,8 +1,8 @@
-import { convertToSeoSlug, uniqueElements, stripMarkdownFormat } from 'utils';
-import { Ranker } from 'blocks/utilities/ranker';
-import { Recommender } from 'blocks/utilities/recommender';
-import { TagFormatter } from 'blocks/utilities/tagFormatter';
-import tokenizeSnippet from 'utils/search';
+import { convertToSeoSlug, uniqueElements, stripMarkdownFormat } from '#utils';
+import { Ranker } from '#blocks/utilities/ranker';
+import { Recommender } from '#blocks/utilities/recommender';
+import { TagFormatter } from '#blocks/utilities/tagFormatter';
+import tokenizeSnippet from '#utils/search';
 
 export const snippet = {
   name: 'Snippet',
