@@ -7,11 +7,11 @@ import {
   stripHTMLTags,
   stripMarkdownFormat,
   getURLParameters,
-} from './string';
+} from './string.js';
 
-import { uniqueElements, chunk, shuffle } from './array';
+import { uniqueElements, chunk, shuffle } from './array.js';
 
-import { throttle } from './function';
+import { throttle } from './function.js';
 
 export {
   capitalize,
