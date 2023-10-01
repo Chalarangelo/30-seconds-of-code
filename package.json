@@ -1,7 +1,7 @@
 {
   "name": "30-seconds-of-code",
   "private": true,
-  "version": "9.0.0",
+  "version": "10.0.0",
   "description": "30 seconds of code website.",
   "exports": "./index.js",
   "author": "chalarangelo",
