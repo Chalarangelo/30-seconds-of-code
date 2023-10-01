@@ -1,4 +1,4 @@
-import settings from 'settings/global';
+import settings from '#settings/global';
 
 const { websiteUrl, orgName } = settings;
 const orgLogoSrc = '/assets/30s-icon.png';

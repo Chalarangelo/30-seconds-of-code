@@ -1,5 +1,5 @@
 import chalk from 'chalk';
-import process from 'process';
+import process from 'node:process';
 const { bold, blue, green, red, yellow, gray, magenta } = chalk;
 
 export class Logger {

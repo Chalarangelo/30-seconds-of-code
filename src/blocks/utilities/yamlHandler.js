@@ -1,8 +1,8 @@
-import path from 'path';
+import path from 'node:path';
 import glob from 'glob';
 import fs from 'fs-extra';
 import yaml from 'js-yaml';
-import { writeFile } from 'fs/promises';
+import { writeFile } from 'node:fs/promises';
 
 /**
  * Handles reading/writing YAML objects from/to files.
