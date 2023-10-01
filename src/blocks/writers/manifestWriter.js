@@ -1,9 +1,10 @@
-import { Application } from 'blocks/application';
+import pathSettings from '#settings/paths';
+import globalSettings from '#settings/global';
+import { Logger } from '#blocks/utilities/logger';
+import { JSONHandler } from '#blocks/utilities/jsonHandler';
 
-const { Logger, JSONHandler } = Application;
-
-const { manifestCacheKey, websiteName, shortName } = Application.settings;
-const outPath = `${Application.settings.paths.publicPath}/manifest.webmanifest`;
+const { manifestCacheKey, websiteName, shortName } = globalSettings;
+const outPath = `${pathSettings.publicPath}/manifest.webmanifest`;
 const backgroundColor = '#0b0a12';
 const themeColor = '#0b0a12';
 const display = 'standalone';

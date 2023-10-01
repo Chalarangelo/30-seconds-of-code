@@ -1,15 +1,14 @@
 import fs from 'fs-extra';
-import path from 'path';
+import path from 'node:path';
 import glob from 'glob';
 import webfontsGenerator from 'webfonts-generator';
-import { Application } from 'blocks/application';
-
-const { Logger } = Application;
+import pathSettings from '#settings/paths';
+import { Logger } from '#blocks/utilities/logger';
 
 const inPath = 'src/icons/*.svg';
 
 const defaultConfig = {
-  dest: Application.settings.paths.rawAssetPath,
+  dest: pathSettings.rawAssetPath,
   types: ['woff2'],
   fontName: 'icons',
   html: false,

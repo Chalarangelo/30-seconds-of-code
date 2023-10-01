@@ -1,8 +1,8 @@
-import { Application } from 'blocks/application';
+import pathSettings from '#settings/paths';
+import { Logger } from '#blocks/utilities/logger';
+import { JSONHandler } from '#blocks/utilities/jsonHandler';
 
-const { Logger, JSONHandler } = Application;
-
-const outPath = `${Application.settings.paths.contentPath}/pages`;
+const outPath = `${pathSettings.contentPath}/pages`;
 
 /**
  * Writes the JSON files for the pages.
@@ -10,15 +10,18 @@ const outPath = `${Application.settings.paths.contentPath}/pages`;
 export class PageWriter {
   /**
    * Generates the JSON files for the pages.
+   * @param {Application} application The application instance.
    * @returns {Promise} A promise that will resolve when all JSON files have
    * been written to disk.
    */
-  static write() {
+  static write(application) {
     const logger = new Logger('PageWriter.write');
 
-    let PageSerializer = Application.dataset.getSerializer('PageSerializer');
+    const { dataset } = application;
 
-    let snippetPages = Application.dataset.getModel('SnippetPage').records;
+    let PageSerializer = dataset.getSerializer('PageSerializer');
+
+    let snippetPages = dataset.getModel('SnippetPage').records;
     if (process.env.NODE_ENV === 'production')
       snippetPages = snippetPages.published;
     const snippetData = PageSerializer.serializeRecordSet(
@@ -27,16 +30,14 @@ export class PageWriter {
       key => `${key.split('$')[1]}`
     );
 
-    let collectionPages =
-      Application.dataset.getModel('CollectionPage').records;
+    let collectionPages = dataset.getModel('CollectionPage').records;
     const collectionData = PageSerializer.serializeRecordSet(
       collectionPages,
       { withParams: true },
       key => `${key.split('$')[1]}`
     );
 
-    let collectionsPages =
-      Application.dataset.getModel('CollectionsPage').records;
+    let collectionsPages = dataset.getModel('CollectionsPage').records;
 
     const collectionsData = PageSerializer.serializeRecordSet(
       collectionsPages,
@@ -44,7 +45,7 @@ export class PageWriter {
       key => `${key.split('$')[1]}`
     );
 
-    const homePage = Application.dataset.getModel('HomePage').records.first;
+    const homePage = dataset.getModel('HomePage').records.first;
     const homeData = PageSerializer.serialize(homePage);
 
     const totalPages =
