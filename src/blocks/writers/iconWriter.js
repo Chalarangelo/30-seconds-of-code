@@ -1,4 +1,4 @@
-import fs from 'fs-extra';
+import fs from 'fs-extra/esm';
 import path from 'node:path';
 import glob from 'glob';
 import webfontsGenerator from 'webfonts-generator';
