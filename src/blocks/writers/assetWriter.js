@@ -1,4 +1,4 @@
-import fs from 'fs-extra';
+import fs from 'fs-extra/esm';
 import path from 'node:path';
 import sharp from 'sharp';
 import glob from 'glob';

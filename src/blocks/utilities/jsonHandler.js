@@ -1,5 +1,6 @@
 import path from 'node:path';
-import fs from 'fs-extra';
+import fs from 'fs-extra/esm';
+import { readFileSync } from 'node:fs';
 import { writeFile } from 'node:fs/promises';
 
 /**
@@ -24,6 +25,6 @@ export class JSONHandler {
    * @returns {object} An object containing the data from the given JSON file.
    */
   static fromFile = filePath => {
-    return JSON.parse(fs.readFileSync(filePath));
+    return JSON.parse(readFileSync(filePath));
   };
 }

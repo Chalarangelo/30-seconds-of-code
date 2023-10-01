@@ -1,4 +1,4 @@
-import fs from 'fs-extra';
+import fs from 'node:fs';
 import { writeFile } from 'node:fs/promises';
 import handlebars from 'handlebars';
 import pathSettings from '#settings/paths';
