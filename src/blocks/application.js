@@ -1,15 +1,17 @@
-import path from 'path';
 import glob from 'glob';
 import chalk from 'chalk';
-import repl from 'repl';
-import util from 'util';
+import repl from 'node:repl';
+import util from 'node:util';
 import jsiqle from '@jsiqle/core';
-import { Logger } from 'blocks/utilities/logger';
-import { JSONHandler } from 'blocks/utilities/jsonHandler';
-import { YAMLHandler } from 'blocks/utilities/yamlHandler';
-import { Extractor } from 'blocks/extractor';
-import { Content } from 'blocks/utilities/content';
-import { shuffle } from 'utils';
+import { Logger } from '#blocks/utilities/logger';
+import { JSONHandler } from '#blocks/utilities/jsonHandler';
+import { YAMLHandler } from '#blocks/utilities/yamlHandler';
+import { Extractor } from '#blocks/extractor/extractor';
+import { Content } from '#blocks/utilities/content';
+import schema from '#blocks/schema';
+import settings from '#settings/settings';
+import writers from '#blocks/writers/writers';
+import { shuffle } from '#utils';
 
 /**
  * The application class acts much like a monolith for all the shared logic and
@@ -58,169 +60,39 @@ export class Application {
     return Content;
   }
 
-  // Writers are also not expected to change during the lifetime of the
-  // application. However, they are easier to load in bulk dynamically.
-  static _writers = {};
+  static _writers = Object.keys(writers).reduce((modules, module) => {
+    const write = () => writers[module].write(Application);
+    modules[module] = { write };
+    return modules;
+  }, {});
 
   /**
-   * Dynamically loads/reloads writers from the src/blocks/writers directory.
-   */
-  static loadWriters() {
-    // Muted logger by design to avoid spamming the console.
-    const logger = new Logger('Application.loadWriters', { muted: true });
-    logger.log('Loading writers from src/blocks/writers/*.js...');
-    const maxTries = 5;
-    Application._writers = glob
-      .sync(`src/blocks/writers/*.js`)
-      .map(file => {
-        // FIXME: There's an issue when loading the 'webfonts-generator'
-        // dependency that seems to stem from the 'ttf2woff2' dependency.
-        // Currently, we retry loading the writers that depend on it up to
-        // 5 times before giving up. This is not exactly ideal, but it seems
-        // to work for now. We should find a better solution, such as
-        // incorporating the 'webfonts-generator' dependency into the writer
-        // and giving it a facelift to work with a newer version of 'ttf2woff2'.
-        let module;
-        let tries = 0;
-        while (tries <= maxTries && !module) {
-          try {
-            module = require(path.resolve(file));
-          } catch (e) {
-            tries++;
-            if (tries < maxTries)
-              logger.warn(
-                `Error loading writer ${file}: ${e.message}. Retrying...`
-              );
-            if (tries === maxTries) {
-              logger.error(
-                `Error loading writer ${file}: ${e.message}. Max tries reached, terminating...`
-              );
-              process.exit(1);
-            }
-          }
-        }
-        return module;
-      })
-      .reduce((modules, module) => {
-        const [moduleName, moduleValue] = Object.entries(module)[0];
-        // Note this only supports one export and will cause trouble otherwise
-        // Supporting default exports could be an interesting option, too.
-        modules[moduleName] = moduleValue;
-        return modules;
-      }, {});
-    logger.success(
-      `Found and loaded ${
-        Object.keys(Application._writers).length
-      } writers in src/blocks/writers/*.js.`
-    );
-  }
-
-  /**
-   * Returns the names of the writers in the application.
+   * Returns the application's writers, with their `write()` method bound to the
+   * application instance.
    */
   static get writers() {
-    if (!Object.keys(Application._writers).length) Application.loadWriters();
     return Application._writers;
-  }
-
-  // -------------------------------------------------------------
-  // Settings dynamic loading methods and getters
-  // -------------------------------------------------------------
-  static _settings = {};
-
-  /**
-   * Dynamically loads/reloads settings from the src/settings directory.
-   */
-  static loadSettings() {
-    const logger = new Logger('Application.loadSettings');
-    logger.log('Loading settings from src/settings/*.json...');
-    Application._settings = glob
-      .sync(`src/settings/*.json`)
-      .map(file => {
-        const name = file.split('/').slice(-1)[0].split('.')[0];
-        return { name, settings: require(path.resolve(file)) };
-      })
-      .reduce((modules, { name, settings }) => {
-        if (name.includes('global')) modules = { ...modules, ...settings };
-        modules[name] = settings;
-        return modules;
-      }, {});
-    logger.success('Settings loading complete.');
   }
 
   /**
    * Returns the settings object.
    */
   static get settings() {
-    if (!Object.keys(Application._settings).length) Application.loadSettings();
-    return Application._settings;
-  }
-
-  // -------------------------------------------------------------
-  // Schema, model, serializer dynamic loading methods and getters
-  // -------------------------------------------------------------
-  static _rawModels = [];
-  static _rawSerializers = [];
-  static _rawSchema = [];
-
-  /**
-   * Dynamically loads/reloads the schema from the src/blocks/schema.js file.
-   */
-  static loadSchema() {
-    const logger = new Logger('Application.loadSchema');
-    logger.log('Loading schema from src/blocks/schema.js...');
-    Application._rawSchema = {
-      ...Object.values(require(path.resolve('src/blocks/schema.js')))[0],
-      models: Application.modelsArray,
-      serializers: Application.serializersArray,
-    };
-    logger.success('Schema loading complete.');
+    return settings;
   }
 
   /**
    * Returns the raw schema object.
    */
   static get schemaObject() {
-    if (!Object.keys(Application._rawSchema).length) Application.loadSchema();
-    return Application._rawSchema;
-  }
-
-  /**
-   * Dynamically loads/reloads models from the src/blocks/models directory.
-   */
-  static loadModels() {
-    const logger = new Logger('Application.loadModels');
-    logger.log('Loading models from src/blocks/models/**/*.js...');
-    Application._rawModels = glob
-      .sync(`src/blocks/models/**/*.js`)
-      .map(file => require(path.resolve(file)))
-      .reduce((modules, module) => {
-        // Note this only supports one export and will cause trouble otherwise
-        // Supporting default exports could be an interesting option, too.
-        modules.push(Object.values(module)[0]);
-        return modules;
-      }, []);
-    logger.success(
-      `Found and loaded ${Application._rawModels.length} models in src/blocks/models/**/*.js.`
-    );
+    return schema;
   }
 
   /**
    * Returns an array of raw model objects.
    */
   static get modelsArray() {
-    if (Application._rawModels.length === 0) Application.loadModels();
-    return Application._rawModels;
-  }
-
-  /**
-   * Returns an object of model objects keyed by model name.
-   */
-  static get modelsObject() {
-    return Application.modelsArray.reduce((m, model) => {
-      m[model.name] = model;
-      return m;
-    }, {});
+    return schema.models;
   }
 
   /**
@@ -231,44 +103,11 @@ export class Application {
   }
 
   /**
-   * Dynamically loads/reloads serializers from the src/blocks/serializers
-   * directory.
-   */
-  static loadSerializers() {
-    const logger = new Logger('Application.loadSerializers');
-    logger.log('Loading serializers from src/blocks/serializers/*.js...');
-    Application._rawSerializers = glob
-      .sync(`src/blocks/serializers/*.js`)
-      .map(file => require(path.resolve(file)))
-      .reduce((modules, module) => {
-        // Note this only supports one export and will cause trouble otherwise
-        // Supporting default exports could be an interesting option, too.
-        modules.push(Object.values(module)[0]);
-        return modules;
-      }, []);
-    logger.success(
-      `Found and loaded ${Application._rawSerializers.length} serializers in src/blocks/serializers/*.js.`
-    );
-  }
-
-  /**
    * Returns an array of raw serializer objects.
    */
   static get serializersArray() {
-    if (Application._rawSerializers.length === 0) Application.loadSerializers();
-    return Application._rawSerializers;
+    return schema.serializers;
   }
-
-  /**
-   * Returns an object of serializer objects keyed by serializer name.
-   */
-  static get serializersObject() {
-    return Application.serializersArray.reduce((m, serializer) => {
-      m[serializer.name] = serializer;
-      return m;
-    }, {});
-  }
-
   /**
    * Returns the names of the serializers in the application.
    */
@@ -555,7 +394,6 @@ export class Application {
   static initialize(data) {
     const logger = new Logger('Application.initialize');
     logger.log(`Starting application in "${process.env.NODE_ENV}" mode.`);
-    Application.loadSettings();
     Application.setupSchema();
     if (data) {
       logger.log('Using provided dataset.');
