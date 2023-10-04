@@ -1,10 +1,19 @@
+currentSnippet\.js
+*.md.temp.js
+.idea
+test.sh
+/*.log
+dist/flavor\.min\.css
+dist/flavor\.css
+test_old/
+coverage/
+
 # Logs
 logs
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-lerna-debug.log*
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
@@ -25,7 +34,7 @@ coverage
 # nyc test coverage
 .nyc_output
 
-# Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
+# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
 
 # Bower dependency directory (https://bower.io/)
@@ -97,6 +106,10 @@ yarn.lock
 # Next.js files
 .next
 out/
+
+# gatsby files
+.cache/
+public
 
 # Mac files
 .DS_Store
