@@ -1,3 +1,218 @@
 short: shell
 long: git
 name: Git
+references:
+  git add <pathspec>: >-
+    https://git-scm.com/docs/git-add
+  git branch: >-
+    https://git-scm.com/docs/git-branch
+  git branch --merged <branch>: >-
+    https://git-scm.com/docs/git-branch#Documentation/git-branch.txt---mergedltcommitgt
+  git branch --show-current: >-
+    https://git-scm.com/docs/git-branch#Documentation/git-branch.txt---show-current
+  git branch --sort=-committerdate: >-
+    https://git-scm.com/docs/git-branch#Documentation/git-branch.txt---sortltkeygt
+  git branch -a --merged: >-
+    https://git-scm.com/docs/git-branch#Documentation/git-branch.txt--a
+  git branch -d <branch>: >-
+    https://git-scm.com/docs/git-branch#Documentation/git-branch.txt--d
+  git branch -m <old-name> <new-name>: >-
+    https://git-scm.com/docs/git-branch#Documentation/git-branch.txt--m
+  git branch <branch>: >-
+    https://git-scm.com/docs/git-branch
+  git branch <branch> [-t <remote>/<branch>]: >-
+    https://git-scm.com/docs/git-branch#Documentation/git-branch.txt--t
+  git bisect (bad | good): >-
+    https://git-scm.com/docs/git-bisect#_basic_bisect_commands_start_bad_good
+  git bisect bad <commit>: >-
+    https://git-scm.com/docs/git-bisect#_basic_bisect_commands_start_bad_good
+  git bisect good <commit>: >-
+    https://git-scm.com/docs/git-bisect#_basic_bisect_commands_start_bad_good
+  git bisect reset: >-
+    https://git-scm.com/docs/git-bisect#_bisect_reset
+  git bisect run <command>: >-
+    https://git-scm.com/docs/git-bisect#_bisect_run
+  git bisect start: >-
+    https://git-scm.com/docs/git-bisect#_basic_bisect_commands_start_bad_good
+  git checkout: >-
+    https://git-scm.com/docs/git-checkout
+  git checkout -: >-
+    https://git-scm.com/docs/git-checkout
+  git checkout -b <branch>: >-
+    https://git-scm.com/docs/git-checkout#Documentation/git-checkout.txt--bltnew-branchgt
+  git checkout <branch>: >-
+    https://git-scm.com/docs/git-checkout#Documentation/git-checkout.txt-ltbranchgt
+  git checkout <branch> <file>: >-
+    https://git-scm.com/docs/git-checkout#Documentation/git-checkout.txt-ltpathspecgt82308203
+  git checkout <commit>^ -- <file>: >-
+    https://git-scm.com/docs/git-checkout
+  git checkout <new-name>: >-
+    https://git-scm.com/docs/git-checkout#Documentation/git-checkout.txt-ltnew-branchgt
+  git checkout master: >-
+    https://git-scm.com/docs/git-checkout#Documentation/git-checkout.txt-ltbranchgt
+  git cherry-pick <commit-1> <commit-2>...: >-
+    https://git-scm.com/docs/git-cherry-pick
+  git cherry-pick <commit>: >-
+    https://git-scm.com/docs/git-cherry-pick
+  git cherry-pick <first-commit>..<last-commit>: >-
+    https://git-scm.com/docs/git-cherry-pick
+  git clean -f -d: >-
+    https://git-scm.com/docs/git-clean
+  git clone <url>: >-
+    https://git-scm.com/docs/git-clone
+  git clone <url> [<directory>]: >-
+    https://git-scm.com/docs/git-clone#Documentation/git-clone.txt-ltdirectorygt
+  git commit: >-
+    https://git-scm.com/docs/git-commit
+  git commit --allow-empty -m <message>: >-
+    https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---allow-empty
+  git commit --fixup <commit>: >-
+    https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---fixupamendrewordltcommitgt
+  --fixup: >-
+    https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---fixupamendrewordltcommitgt
+  git commit --no-verify -m <message>: >-
+    https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---no-verify
+  git commit -m <message>: >-
+    https://git-scm.com/docs/git-commit#Documentation/git-commit.txt--mltmsggt
+  git commit --amend: >-
+    https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---amend
+  git config: >-
+    https://git-scm.com/docs/git-config
+  git config --add merge.ff false: >-
+    https://git-scm.com/docs/git-config#Documentation/git-config.txt---add
+  git config --get remote.origin.url: >-
+    https://git-scm.com/docs/git-config#Documentation/git-config.txt---get
+  git config --global -e: >-
+    https://git-scm.com/docs/git-config#Documentation/git-config.txt--e
+  git config --global core.editor <editor-command>: >-
+    https://git-scm.com/docs/git-config#Documentation/git-config.txt-coreeditor
+  git config --global help.autocorrect 1: >-
+    https://git-scm.com/docs/git-config#Documentation/git-config.txt-helpautoCorrect
+  git config -l: >-
+    https://git-scm.com/docs/git-config#Documentation/git-config.txt--l
+  git config commit.template <file>: >-
+    https://git-scm.com/docs/git-config#Documentation/git-config.txt-committemplate
+  git config core.eol [lf | crlf]: >-
+    https://git-scm.com/docs/git-config#Documentation/git-config.txt-coreeol
+  git config push.default current: >-
+    https://git-scm.com/docs/git-config#Documentation/git-config.txt-pushdefault
+  git config user.email <email>: >-
+    https://git-scm.com/docs/git-config#Documentation/git-config.txt-useremail
+  git config user.name <name>: >-
+    https://git-scm.com/docs/git-config#Documentation/git-config.txt-username
+  git diff: >-
+    https://git-scm.com/docs/git-diff
+  git diff <branch>..<other-branch>: >-
+    https://git-scm.com/docs/git-diff
+  git fetch: >-
+    https://git-scm.com/docs/git-fetch
+  git fetch --all --prune: >-
+    https://git-scm.com/docs/git-fetch#Documentation/git-fetch.txt---prune
+  git fetch origin: >-
+    https://git-scm.com/docs/git-fetch
+  git filter-branch --force --index-filter <command> --prune-empty --tag-name-filter cat -- --all: >-
+    https://git-scm.com/docs/git-filter-branch
+  git fsck --lost-found: >-
+    https://git-scm.com/docs/git-fsck
+  git gc --prune=now --aggressive: >-
+    https://git-scm.com/docs/git-gc
+  git init: >-
+    https://git-scm.com/docs/git-init
+  git init [<directory>]: >-
+    https://git-scm.com/docs/git-init
+  git log: >-
+    https://git-scm.com/docs/git-log
+  git log --author=<author>: >-
+    https://git-scm.com/docs/git-log#Documentation/git-log.txt---authorltpatterngt
+  git log --pretty=oneline --graph --decorate --all: >-
+    https://git-scm.com/docs/git-log#Documentation/git-log.txt---prettyltformatgt
+  git log --since=<date-from> --until=<date-to>: >-
+    https://git-scm.com/docs/git-log#Documentation/git-log.txt---sinceltdategt
+  git log -1: >-
+    https://git-scm.com/docs/git-log
+  git log -S<string>: >-
+    https://git-scm.com/docs/git-log#Documentation/git-log.txt--Sltstringgt
+  git merge: >-
+    https://git-scm.com/docs/git-merge
+  --no-ff: >-
+    https://git-scm.com/docs/git-merge#Documentation/git-merge.txt---no-ff
+  git pull: >-
+    https://git-scm.com/docs/git-pull
+  git push: >-
+    https://git-scm.com/docs/git-push
+  git push -d <remote> <branch>: >-
+    https://git-scm.com/docs/git-push#Documentation/git-push.txt--d
+  git push -f: >-
+    https://git-scm.com/docs/git-push#Documentation/git-push.txt--f
+  git push <remote> --force -all: >-
+    https://git-scm.com/docs/git-push#Documentation/git-push.txt---force
+  git push origin --delete <old-name>: >-
+    https://git-scm.com/docs/git-push#Documentation/git-push.txt---delete
+  git push origin -u <new-name>: >-
+    https://git-scm.com/docs/git-push#Documentation/git-push.txt--u
+  git rebase: >-
+    https://git-scm.com/docs/git-rebase
+  git rebase --abort: >-
+    https://git-scm.com/docs/git-rebase#Documentation/git-rebase.txt---abort
+  git rebase --autosquash: >-
+    https://git-scm.com/docs/git-rebase#Documentation/git-rebase.txt---autosquash
+  --autosquash: >-
+    https://git-scm.com/docs/git-rebase#Documentation/git-rebase.txt---autosquash
+  git rebase --continue: >-
+    https://git-scm.com/docs/git-rebase#Documentation/git-rebase.txt---continue
+  git rebase -i <commit>: >-
+    https://git-scm.com/docs/git-rebase#Documentation/git-rebase.txt--i
+  git rebase <base-branch>: >-
+    https://git-scm.com/docs/git-rebase#Documentation/git-rebase.txt-ltbranchgt
+  git reflog: >-
+    https://git-scm.com/docs/git-reflog
+  git remote set-url origin <url>: >-
+    https://git-scm.com/docs/git-remote
+  git reset: >-
+    https://git-scm.com/docs/git-reset
+  git reset --hard HEAD: >-
+    https://git-scm.com/docs/git-reset#Documentation/git-reset.txt---hard
+  git reset --hard origin/master: >-
+    https://git-scm.com/docs/git-reset#Documentation/git-reset.txt---hard
+  git reset HEAD~<n> --hard: >-
+    https://git-scm.com/docs/git-reset#Documentation/git-reset.txt---hard
+  git restore --staged <pathspec>: >-
+    https://git-scm.com/docs/git-restore
+  git rev-parse --abbrev-ref HEAD: >-
+    https://git-scm.com/docs/git-rev-parse
+  git revert: >-
+    https://git-scm.com/docs/git-revert
+  git revert HEAD: >-
+    https://git-scm.com/docs/git-revert
+  git rm --cached --ignore-unmatch <path>: >-
+    https://git-scm.com/docs/git-rm#Documentation/git-rm.txt---cached
+  git rm -f <submodule>: >-
+    https://git-scm.com/docs/git-rm#Documentation/git-rm.txt--f
+  git rm --cached <file>: >-
+    https://git-scm.com/docs/git-rm#Documentation/git-rm.txt---cached
+  git shortlog <commit>..<other-commit>: >-
+    https://git-scm.com/docs/git-shortlog
+  git stash apply: >-
+    https://git-scm.com/docs/git-stash#Documentation/git-stash.txt-apply--index-q--quietltstashgt
+  git stash apply <stash>: >-
+    https://git-scm.com/docs/git-stash#Documentation/git-stash.txt-apply--index-q--quietltstashgt
+  git stash clear: >-
+    https://git-scm.com/docs/git-stash#Documentation/git-stash.txt-clear
+  git stash drop <stash>: >-
+    https://git-scm.com/docs/git-stash#Documentation/git-stash.txt-drop-q--quietltstashgt
+  git stash list: >-
+    https://git-scm.com/docs/git-stash#Documentation/git-stash.txt-listltlog-optionsgt
+  git stash save: >-
+    https://git-scm.com/docs/git-stash#Documentation/git-stash.txt-save-p--patch-S--staged-k--no-keep-index-u--include-untracked-a--all-q--quietltmessagegt
+  git status: >-
+    https://git-scm.com/docs/git-status
+  git submodule add <upstream-path> <local-path>: >-
+    https://git-scm.com/docs/git-submodule#Documentation/git-submodule.txt-add-bltbranchgt-f--force--nameltnamegt--referenceltrepositorygt--depthltdepthgt--ltrepositorygtltpathgt
+  git submodule deinit -f -- <submodule>: >-
+    https://git-scm.com/docs/git-submodule#Documentation/git-submodule.txt-deinit-f--force--all--ltpathgt82308203
+  git submodule update --init --recursive: >-
+    https://git-scm.com/docs/git-submodule#Documentation/git-submodule.txt-update--init--remote-N--no-fetch--no-recommend-shallow-f--force--checkout--rebase--merge--referenceltrepositorygt--depthltdepthgt--recursive--jobsltngt--no-single-branch--filterltfilterspecgt--ltpathgt82308203
+  git submodule update --recursive --remote: >-
+    https://git-scm.com/docs/git-submodule#Documentation/git-submodule.txt-update--init--remote-N--no-fetch--no-recommend-shallow-f--force--checkout--rebase--merge--referenceltrepositorygt--depthltdepthgt--recursive--jobsltngt--no-single-branch--filterltfilterspecgt--ltpathgt82308203
+  git switch <branch>: >-
+    https://git-scm.com/docs/git-switch
