@@ -1,5 +1,6 @@
 ---
 import prefabs from '#prefabs';
+import settings from '#settings/global';
 
 import Layout from '#layouts/Layout';
 
@@ -31,9 +32,9 @@ const pageDescription =
       <div class='card-description'>
         <p>
           30 seconds of code is developed, maintained and curated by <a
-            href='https://github.com/Chalarangelo'
+            href={settings.ownerUrl}
             target='_blank'
-            rel='noopener noreferrer'>Angelos Chalaris</a
+            rel='noopener noreferrer'>{settings.ownerName}</a
           >. I'm a professional software engineer, based in Greece, and 30
           seconds of code is a side project I work on in my free time. My love
           for development and learning is what sparkled this idea and I've put a
