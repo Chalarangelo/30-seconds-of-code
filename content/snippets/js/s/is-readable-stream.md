@@ -23,7 +23,7 @@ const isReadableStream = val =>
 ```
 
 ```js
-const fs = require('fs');
+import { createReadStream } from 'fs';
 
-isReadableStream(fs.createReadStream('test.txt')); // true
+isReadableStream(createReadStream('test.txt')); // true
 ```

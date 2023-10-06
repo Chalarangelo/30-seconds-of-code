@@ -18,7 +18,7 @@ const isStream = val =>
 ```
 
 ```js
-const fs = require('fs');
+import { createReadStream } from 'fs';
 
-isStream(fs.createReadStream('test.txt')); // true
+isStream(createReadStream('test.txt')); // true
 ```
