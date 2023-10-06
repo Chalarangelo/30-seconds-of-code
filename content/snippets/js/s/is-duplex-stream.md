@@ -25,7 +25,7 @@ const isDuplexStream = val =>
 ```
 
 ```js
-const Stream = require('stream');
+import Stream from 'stream';
 
 isDuplexStream(new Stream.Duplex()); // true
 ```

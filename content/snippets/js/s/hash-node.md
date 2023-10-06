@@ -15,12 +15,12 @@ Returns a promise.
 - Use `setTimeout()` to prevent blocking on a long operation. Return a `Promise` to give it a familiar interface.
 
 ```js
-const crypto = require('crypto');
+import { createHash } from 'crypto';
 
 const hashNode = val =>
   new Promise(resolve =>
     setTimeout(
-      () => resolve(crypto.createHash('sha256').update(val).digest('hex')),
+      () => resolve(createHash('sha256').update(val).digest('hex')),
       0
     )
   );

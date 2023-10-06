@@ -14,13 +14,10 @@ Returns an array of lines from the specified file.
 - Use `String.prototype.split()` to create an array of lines from the contents of the file.
 
 ```js
-const fs = require('fs');
+import { readFileSync } from 'fs';
 
 const readFileLines = filename =>
-  fs
-    .readFileSync(filename)
-    .toString('UTF8')
-    .split('\n');
+  readFileSync(filename).toString('UTF8').split('\n');
 ```
 
 ```js
