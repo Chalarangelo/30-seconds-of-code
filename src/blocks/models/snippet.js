@@ -26,8 +26,12 @@ export const snippet = {
     seoTitle: {
       body: snippet => {
         if (!snippet.language) return snippet.title;
-        if (snippet.title.includes(snippet.language.name)) return snippet.title;
-        return `${snippet.language.name} - ${snippet.title}`;
+        const titleLanguage =
+          snippet.language.short === 'js' && snippet.primaryTag === 'node'
+            ? snippet.formattedPrimaryTag
+            : snippet.language.name;
+        if (snippet.title.includes(titleLanguage)) return snippet.title;
+        return `${titleLanguage} - ${snippet.title}`;
       },
       cache: true,
     },
