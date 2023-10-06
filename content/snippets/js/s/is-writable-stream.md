@@ -23,7 +23,7 @@ const isWritableStream = val =>
 ```
 
 ```js
-const fs = require('fs');
+import { createWriteStream } from 'fs';
 
-isWritableStream(fs.createWriteStream('test.txt')); // true
+isWritableStream(createWriteStream('test.txt')); // true
 ```

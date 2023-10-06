@@ -15,11 +15,11 @@ dateModified: 2022-06-05
 One of the simplest beginner backend projects you can create is a static file server. In its simplest form, a static file server will listen for requests and try to match the requested URL to a file on the local filesystem. Here's a minimal example of that in action:
 
 ```js
-const fs = require('fs');
-const http = require('http');
+import { readFile } from 'fs';
+import { createServer } from 'http';
 
-http.createServer((req, res) => {
-  fs.readFile(__dirname + req.url, (err, data) => {
+createServer((req, res) => {
+  readFile(__dirname + req.url, (err, data) => {
     if (err) {
       res.writeHead(404, { 'Content-Type': 'text/html' });
       res.end('404: File not found');
@@ -42,15 +42,15 @@ First and foremost, we don't necessarily want to serve files from the same direc
 Here's a short snippet on how to resolve a file path using the `path` module:
 
 ```js
-const fs = require('fs');
-const path = require('path');
+import { readFile } from 'fs';
+import { join } from 'path';
 
 const directoryName = './public';
 const requestUrl = 'index.html';
 
-const filePath = path.join(directoryName, requestUrl);
+const filePath = join(directoryName, requestUrl);
 
-fs.readFile(filePath, (err, data) => {
+readFile(filePath, (err, data) => {
   // ...
 });
 ```
@@ -60,28 +60,26 @@ fs.readFile(filePath, (err, data) => {
 Our next concern is security. Obviously, we don't want users prying around our machine unauthorized. Currently, it's not impossible to get access to files outside of the specified root directory (e.g. `GET /../../../`). To address this, we can use the `path` module again to check if the requested file is inside the root directory.
 
 ```js
-const path = require('path');
+import { join, normalize, resolve } from 'path';
 
 const directoryName = './public';
-const root = path.normalize(path.resolve(directoryName));
+const root = normalize(resolve(directoryName));
 
 const requestUrl = 'index.html';
 
-const filePath = path.join(root, fileName);
-const isPathUnderRoot = path
-  .normalize(path.resolve(filePath))
-  .startsWith(root);
+const filePath = join(root, fileName);
+const isPathUnderRoot = normalize(resolve(filePath)).startsWith(root);
 ```
 
 Similarly, we can ensure that users don't get access to sensitive files by checking the file type. For this to work, we can specify an array or object of supported file types and check the file's extension using the `path` module once again.
 
 ```js
-const path = require('path');
+import { extname } from 'path';
 
 const types = ['html', 'css', 'js', 'json'];
 
 const requestUrl = 'index.html';
-const extension = path.extname(requestUrl).slice(1);
+const extension = extname(requestUrl).slice(1);
 
 const isTypeSupported = types.includes(extension);
 ```
@@ -95,22 +93,22 @@ This is where things get a little tricky. To provide this functionality, we need
 To implement this, we can use the `fs` module to check if one of them exists and handle things appropriately. A special case would also need to be added for the root url (`/`) to match it to the `index.html` file.
 
 ```js
-const fs = require('fs');
-const path = require('path');
+import { accessSync, constants } from 'fs';
+import { join, normalize, resolve, extname } from 'path';
 
 const directoryName = './public';
-const root = path.normalize(path.resolve(directoryName));
+const root = normalize(resolve(directoryName));
 
-const extension = path.extname(req.url).slice(1);
+const extension = extname(req.url).slice(1);
 let fileName = requestUrl;
 
 if (requestUrl === '/') fileName = 'index.html';
 else if (!extension) {
   try {
-    fs.accessSync(path.join(root, requestUrl + '.html'), fs.constants.F_OK);
+    accessSync(join(root, requestUrl + '.html'), constants.F_OK);
     fileName = requestUrl + '.html';
   } catch (e) {
-    fileName = path.join(requestUrl, 'index.html');
+    fileName = join(requestUrl, 'index.html');
   }
 }
 ```
@@ -120,9 +118,9 @@ else if (!extension) {
 After implementing all of the above, we can put everything together to create a static file server with all the functionality we need. I'll throw in a couple of finishing touches, such as logging requests to the console and handling a few more file types, and here's the final product:
 
 ```js
-const fs = require('fs');
-const http = require('http');
-const path = require('path');
+import { readFile, accessSync, constants } from 'fs';
+import { createServer } from 'http';
+import { join, normalize, resolve, extname } from 'path';
 
 const port = 8000;
 const directoryName = './public';
@@ -139,12 +137,12 @@ const types = {
   xml: 'application/xml',
 };
 
-const root = path.normalize(path.resolve(directoryName));
+const root = normalize(resolve(directoryName));
 
-const server = http.createServer((req, res) => {
+const server = createServer((req, res) => {
   console.log(`${req.method} ${req.url}`);
 
-  const extension = path.extname(req.url).slice(1);
+  const extension = extname(req.url).slice(1);
   const type = extension ? types[extension] : types.html;
   const supportedExtension = Boolean(type);
 
@@ -158,17 +156,15 @@ const server = http.createServer((req, res) => {
   if (req.url === '/') fileName = 'index.html';
   else if (!extension) {
     try {
-      fs.accessSync(path.join(root, req.url + '.html'), fs.constants.F_OK);
+      accessSync(join(root, req.url + '.html'), constants.F_OK);
       fileName = req.url + '.html';
     } catch (e) {
-      fileName = path.join(req.url, 'index.html');
+      fileName = join(req.url, 'index.html');
     }
   }
 
-  const filePath = path.join(root, fileName);
-  const isPathUnderRoot = path
-    .normalize(path.resolve(filePath))
-    .startsWith(root);
+  const filePath = join(root, fileName);
+  const isPathUnderRoot = normalize(resolve(filePath)).startsWith(root);
 
   if (!isPathUnderRoot) {
     res.writeHead(404, { 'Content-Type': 'text/html' });
@@ -176,7 +172,7 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  fs.readFile(filePath, (err, data) => {
+  readFile(filePath, (err, data) => {
     if (err) {
       res.writeHead(404, { 'Content-Type': 'text/html' });
       res.end('404: File not found');
