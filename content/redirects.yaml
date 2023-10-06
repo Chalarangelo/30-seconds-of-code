@@ -1906,4 +1906,9 @@
 - from: /js/s/take-array-elements
   to: /js/s/take-n-elements-from-array-start-or-end
   status: 301!
-
+- from: /js/s/is-even
+  to: /js/s/number-is-even-odd
+  status: 301!
+- from: /js/s/is-odd
+  to: /js/s/number-is-even-odd
+  status: 301!
