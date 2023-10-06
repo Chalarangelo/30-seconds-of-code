@@ -38,6 +38,8 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError
   Boolean: >-
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+  Boolean(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean/Boolean
   Blob: https://developer.mozilla.org/en-US/docs/Web/API/Blob
   console.assert(): https://developer.mozilla.org/en-US/docs/Web/API/console/assert
   console.clear(): https://developer.mozilla.org/en-US/docs/Web/API/console/clear
