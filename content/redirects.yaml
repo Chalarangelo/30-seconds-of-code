@@ -1624,12 +1624,6 @@
 - from: /js/s/every-nth
   to: /js/s/every-nth-element
   status: 301!
-- from: /js/s/first-n
-  to: /js/s/first-n-elements
-  status: 301!
-- from: /js/s/last-n
-  to: /js/s/last-n-elements
-  status: 301!
 - from: /js/s/find-first-n
   to: /js/s/find-first-n-matches
   status: 301!
@@ -1923,4 +1917,16 @@
   status: 301!
 - from: /js/s/n-min-elements
   to: /js/s/n-min-max-elements-in-array
+  status: 301!
+- from: /js/s/first-n
+  to: /js/s/first-last-n-elements
+  status: 301!
+- from: /js/s/last-n
+  to: /js/s/first-last-n-elements
+  status: 301!
+- from: /js/s/first-n-elements
+  to: /js/s/first-last-n-elements
+  status: 301!
+- from: /js/s/last-n-elements
+  to: /js/s/first-last-n-elements
   status: 301!
