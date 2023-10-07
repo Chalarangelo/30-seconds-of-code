@@ -12,7 +12,7 @@ dateModified: 2023-10-06
 
 ### Using the modulo operator
 
-The modulo operator (`%`) returns the remainder of a division operation. Given that, we can check if a number is even or odd by dividing it by `2` and checking the remainder. If the remainder is `0`, the number is even, otherwise it's odd.
+The **modulo operator** (`%`) returns the **remainder of a division operation**. Given that, we can check if a number is even or odd by dividing it by `2` and checking the remainder. If the remainder is `0`, the number is even, otherwise it's odd.
 
 ```js
 const isEven = num => num % 2 === 0;
@@ -24,7 +24,7 @@ isOdd(3); // true
 
 ### Using the bitwise AND operator
 
-The bitwise AND operator (`&`) returns `1` if both bits are `1`, otherwise it returns `0`. The binary representation of an even number always ends with `0`, while the binary representation of an odd number always ends with `1`. As such, applying the bitwise AND operator to a number and `1` will return `0` for even numbers and `1` for odd numbers. In order to convert this result to a boolean, we can use the `Boolean()` function.
+The **bitwise AND operator** (`&`) returns `1` if both bits are `1`, otherwise it returns `0`. The binary representation of an even number always ends with `0`, while the binary representation of an odd number always ends with `1`. As such, applying the bitwise AND operator to a number and `1` will return `0` for even numbers and `1` for odd numbers. In order to convert this result to a boolean, we can use the `Boolean()` function.
 
 ```js
 const isEven = num => !Boolean(num & 1);
