@@ -1642,12 +1642,6 @@
 - from: /js/s/min-by
   to: /js/s/function-based-array-min
   status: 301!
-- from: /js/s/max-n
-  to: /js/s/n-max-elements
-  status: 301!
-- from: /js/s/min-n
-  to: /js/s/n-min-elements
-  status: 301!
 - from: /js/s/index-of-all
   to: /js/s/index-of-all-matches
   status: 301!
@@ -1917,4 +1911,16 @@
   status: 301!
 - from: /js/s/hash-browser
   to: /js/s/hash-sha-256
+  status: 301!
+- from: /js/s/max-n
+  to: /js/s/n-min-max-elements-in-array
+  status: 301!
+- from: /js/s/min-n
+  to: /js/s/n-min-max-elements-in-array
+  status: 301!
+- from: /js/s/n-max-elements
+  to: /js/s/n-min-max-elements-in-array
+  status: 301!
+- from: /js/s/n-min-elements
+  to: /js/s/n-min-max-elements-in-array
   status: 301!
