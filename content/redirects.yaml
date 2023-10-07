@@ -1912,3 +1912,9 @@
 - from: /js/s/is-odd
   to: /js/s/number-is-even-odd
   status: 301!
+- from: /js/s/hash-node
+  to: /js/s/hash-sha-256
+  status: 301!
+- from: /js/s/hash-browser
+  to: /js/s/hash-sha-256
+  status: 301!
