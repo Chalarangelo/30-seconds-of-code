@@ -1,4 +1,10 @@
+import { globSync } from 'glob';
+
 const preparedQueriesCache = new Map();
+
+// Image asset constants
+const supportedExtensions = ['jpeg', 'jpg', 'png', 'webp', 'tif', 'tiff'];
+const coverAssetPath = 'content/assets/cover';
 
 export class PreparedQueries {
   /**
@@ -8,13 +14,21 @@ export class PreparedQueries {
     if (!preparedQueriesCache.has('coverImageUsage')) {
       const Snippet = application.dataset.getModel('Snippet');
 
+      const allCovers = globSync(
+        `${coverAssetPath}/*.@(${supportedExtensions.join('|')})`
+      ).map(coverName =>
+        coverName.slice(
+          coverName.lastIndexOf('/') + 1,
+          coverName.lastIndexOf('.')
+        )
+      );
+
       const groupedRecords = Snippet.records.groupBy('cover');
-      const result = Object.keys(groupedRecords)
-        .map(cover => ({
-          cover,
-          count: groupedRecords[cover].length,
-        }))
-        .sort((a, b) => b.count - a.count);
+      const result = new Map(
+        allCovers
+          .map(cover => [cover, groupedRecords[cover]?.length || 0])
+          .sort((a, b) => b[1] - a[1])
+      );
 
       preparedQueriesCache.set('coverImageUsage', result);
     }
