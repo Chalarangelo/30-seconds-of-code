@@ -36,6 +36,26 @@ export class PreparedQueries {
   };
 
   /**
+   * Returns an array of (type, count) tuples, sorted by count.
+   */
+  static snippetCountByType = application => () => {
+    if (!preparedQueriesCache.has('snippetCountByType')) {
+      const Snippet = application.dataset.getModel('Snippet');
+
+      const groupedRecords = Snippet.records.groupBy('type');
+      const result = Object.fromEntries(
+        Object.keys(groupedRecords).map(type => [
+          type,
+          groupedRecords[type].length,
+        ])
+      );
+
+      preparedQueriesCache.set('snippetCountByType', result);
+    }
+    return preparedQueriesCache.get('snippetCountByType');
+  };
+
+  /**
    * Returns an array of matching snippets based on the given options.
    * @param {string} options.language - Language id
    * @param {string} options.tag - Tag string
