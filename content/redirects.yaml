@@ -1144,12 +1144,6 @@
 - from: /js/s/has-duplicates
   to: /js/s/array-has-duplicates
   status: 301!
-- from: /js/s/head
-  to: /js/s/array-head
-  status: 301!
-- from: /js/s/tail
-  to: /js/s/array-tail
-  status: 301!
 - from: /js/s/jso-nto-csv
   to: /js/s/json-to-csv
   status: 301!
@@ -1929,4 +1923,16 @@
   status: 301!
 - from: /js/s/last-n-elements
   to: /js/s/first-last-n-elements
+  status: 301!
+- from: /js/s/head
+  to: /js/s/array-head-tail
+  status: 301!
+- from: /js/s/tail
+  to: /js/s/array-head-tail
+  status: 301!
+- from: /js/s/array-head
+  to: /js/s/array-head-tail
+  status: 301!
+- from: /js/s/array-tail
+  to: /js/s/array-head-tail
   status: 301!
