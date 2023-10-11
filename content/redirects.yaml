@@ -1687,12 +1687,6 @@
 - from: /js/s/deep-flatten
   to: /js/s/deep-flatten-array
   status: 301!
-- from: /js/s/bifurcate-by
-  to: /js/s/bifurcate-array-based-on-function
-  status: 301!
-- from: /js/s/bifurcate
-  to: /js/s/bifurcate-array-based-on-values
-  status: 301!
 - from: /js/s/map-object
   to: /js/s/map-array-to-object
   status: 301!
@@ -1935,4 +1929,16 @@
   status: 301!
 - from: /js/s/array-tail
   to: /js/s/array-head-tail
+  status: 301!
+- from: /js/s/bifurcate-by
+  to: /js/s/bifurcate-array
+  status: 301!
+- from: /js/s/bifurcate
+  to: /js/s/bifurcate-array
+  status: 301!
+- from: /js/s/bifurcate-array-based-on-function
+  to: /js/s/bifurcate-array
+  status: 301!
+- from: /js/s/bifurcate-array-based-on-values
+  to: /js/s/bifurcate-array
   status: 301!
