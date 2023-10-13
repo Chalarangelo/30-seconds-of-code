@@ -8,6 +8,7 @@ import { JSONHandler } from '#blocks/utilities/jsonHandler';
 import { YAMLHandler } from '#blocks/utilities/yamlHandler';
 import { Extractor } from '#blocks/extractor/extractor';
 import { Content } from '#blocks/utilities/content';
+import { PreparedQueries } from '#blocks/utilities/preparedQueries';
 import schema from '#blocks/schema';
 import settings from '#settings/settings';
 import writers from '#blocks/writers/writers';
@@ -480,6 +481,14 @@ export class Application {
     Application.serializerNames.forEach(serializer => {
       context[serializer] = Application.dataset.getSerializer(serializer);
     });
+    context.Query = Object.getOwnPropertyNames(PreparedQueries).reduce(
+      (queries, queryName) => {
+        if (!['name', 'length', 'prototype'].includes(queryName))
+          queries[queryName] = PreparedQueries[queryName](Application);
+        return queries;
+      },
+      {}
+    );
     context.rawDataset = Application.datasetObject;
     logger.success('Setting up REPL context complete.');
   }
