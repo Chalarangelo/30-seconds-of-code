@@ -30,4 +30,4 @@ Before submitting your pull request for review, always take the time to review i
 
 ### Respond to reviews
 
-Set some time aside to respond to reviews after submitting your pull request. Handle anything you can as soon as possible and start discussion whenever necessary to arrive to a solution. Use `--fixup` for changes suggested in review comments or add new commits to help reviewers parse new changes more easily. Finally, assume good intentions, be polite and thank your peers.
+Set some time aside to respond to reviews after submitting your pull request. Handle anything you can as soon as possible and start discussion whenever necessary to arrive at a solution. Use `--fixup` for changes suggested in review comments or add new commits to help reviewers parse new changes more easily. Finally, assume good intentions, be polite and thank your peers.
