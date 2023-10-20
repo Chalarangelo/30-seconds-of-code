@@ -18,4 +18,10 @@ git config --global core.editor <editor-command>
 ```shell
 git config --global core.editor "code --wait"
 # Sets VS Code as the git text editor
+
+git config --global core.editor "vim"
+# Sets Vim as the git text editor
+
+git config --global core.editor "subl --wait"
+# Sets Sublime Text as the git text editor
 ```
