@@ -1,5 +1,5 @@
 ---
-title: "Tip: Optimize dynamically added object properties"
+title: Optimize dynamically added object properties
 shortTitle: Dynamically added property optimization
 type: tip
 language: javascript

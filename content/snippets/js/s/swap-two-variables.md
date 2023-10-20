@@ -1,5 +1,5 @@
 ---
-title: "Tip: How to swap two variables in JavaScript"
+title: How to swap two variables in JavaScript
 shortTitle: Swap two variables
 type: tip
 language: javascript

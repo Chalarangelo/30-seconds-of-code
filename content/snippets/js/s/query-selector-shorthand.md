@@ -1,5 +1,5 @@
 ---
-title: "Tip: Create your own query selector shorthand"
+title: Create your own query selector shorthand in vanilla JavaScript
 shortTitle: Query selector shorthand
 type: tip
 language: javascript

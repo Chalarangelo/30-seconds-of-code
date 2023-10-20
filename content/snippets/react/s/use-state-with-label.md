@@ -1,5 +1,5 @@
 ---
-title: "Tip: Label your useState values in React developer tools"
+title: Label your useState values in React developer tools
 shortTitle: Labelling useState values
 type: tip
 language: react

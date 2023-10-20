@@ -1,5 +1,5 @@
 ---
-title: "Tip: The perfect duration for CSS transitions"
+title: The perfect duration for CSS transitions
 shortTitle: CSS transition duration
 type: tip
 language: css

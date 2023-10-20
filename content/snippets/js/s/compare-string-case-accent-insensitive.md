@@ -1,5 +1,5 @@
 ---
-title: "Tip: Compare strings regardless of case and accent"
+title: Compare strings regardless of case and accent
 shortTitle: Case and accent-insensitive string comparison
 type: tip
 language: javascript

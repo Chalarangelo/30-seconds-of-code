@@ -1,6 +1,5 @@
 ---
-title: "Tip: Create a commit with a different date"
-shortTitle: Create a commit with a different date
+title: Create a commit with a different date
 type: tip
 language: git
 tags: [commit]

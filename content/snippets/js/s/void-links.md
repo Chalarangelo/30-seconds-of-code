@@ -1,6 +1,5 @@
 ---
-title: "Tip: Avoid \"javascript:void(0)\" for empty links"
-shortTitle: Avoid "javascript:void(0)" for empty links
+title: Avoid "javascript:void(0)" for empty links
 type: tip
 language: javascript
 tags: [browser,accessibility]

@@ -1,5 +1,5 @@
 ---
-title: "Tip: Serialize specific properties from a JSON object"
+title: Serialize specific properties from a JSON object
 shortTitle: Selective property serialization
 type: tip
 language: javascript

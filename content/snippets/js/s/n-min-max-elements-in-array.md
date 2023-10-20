@@ -1,5 +1,5 @@
 ---
-title: "Tip: Find the n min or max elements in a JavaScript array"
+title: Find the n min or max elements in a JavaScript array
 shortTitle: N min or max elements of an array
 type: tip
 language: javascript

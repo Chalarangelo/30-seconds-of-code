@@ -1,5 +1,5 @@
 ---
-title: "Tip: Convert decimal number to hexadecimal"
+title: Convert decimal number to hexadecimal
 shortTitle: Decimal to hexadecimal
 type: tip
 language: javascript

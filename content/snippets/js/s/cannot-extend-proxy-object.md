@@ -1,5 +1,5 @@
 ---
-title: "Tip: You can't extend the Proxy object"
+title: You can't extend JavaScript's Proxy object
 shortTitle: Extending the Proxy object
 type: tip
 language: javascript

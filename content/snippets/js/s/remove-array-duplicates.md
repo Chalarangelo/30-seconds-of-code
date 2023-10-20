@@ -1,5 +1,5 @@
 ---
-title: "Tip: Remove duplicates from a JavaScript array"
+title: Remove duplicates from a JavaScript array
 shortTitle: Remove duplicates from an array
 type: tip
 language: javascript
