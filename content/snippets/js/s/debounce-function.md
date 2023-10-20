@@ -1,18 +1,18 @@
 ---
-title: Debounce function
-type: snippet
+title: Debounce a JavaScript function
+shortTitle: Debounce function
+type: tip
 language: javascript
 tags: [function]
+author: chalarangelo
 cover: solitude-beach
-excerpt: Creates a debounced function that waits `ms` milliseconds before invoking the provided function again.
-dateModified: 2021-10-13
+excerpt: Create a debounced function that waits a certain amount of time before invoking the provided function again.
+dateModified: 2023-10-12
 ---
 
-Creates a debounced function that delays invoking the provided function until at least `ms` milliseconds have elapsed since its last invocation.
+**Debouncing** is a technique used to **limit the number of times** a function is called. The function will only be called once, after a **specific amount of time** has elapsed since its last invocation.
 
-- Each time the debounced function is invoked, clear the current pending timeout with `clearTimeout()`. Use `setTimeout()` to create a new timeout that delays invoking the function until at least `ms` milliseconds have elapsed.
-- Use `Function.prototype.apply()` to apply the `this` context to the function and provide the necessary arguments.
-- Omit the second argument, `ms`, to set the timeout at a default of `0` ms.
+To accomplish this, we can use **timeouts** to artificially create the necessary delay. Each time the debounced function is invoked, we need to **clear the current pending timeout** with `clearTimeout()`. Then, we must use `setTimeout()` to **create a new timeout** that delays invoking the function until at least `ms` milliseconds have elapsed. Finally, using `Function.prototype.apply()` we can apply the `this` context to the function and provide the necessary arguments.
 
 ```js
 const debounce = (fn, ms = 0) => {
