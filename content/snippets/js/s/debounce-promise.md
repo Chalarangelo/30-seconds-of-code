@@ -1,22 +1,24 @@
 ---
-title: Debounce promise
-type: snippet
+title: Debounce a JavaScript function and return a promise
+shortTitle: Debounce promise
+type: tip
 language: javascript
 tags: [function,promise]
-excerpt: Creates a debounced function that returns a promise.
+author: chalarangelo
+excerpt: Easily create a debounced function that returns a promise.
 cover: chess-pawns
-dateModified: 2020-10-19
+dateModified: 2023-10-13
 ---
 
-Creates a debounced function that returns a promise, but delays invoking the provided function until at least `ms` milliseconds have elapsed since the last time it was invoked.
-All promises returned during this time will return the same data.
+**Debouncing** is a technique used to **limit the number of times** a function is called. We've previously seen how to [debounce a function](/js/s/debounce-function), but what if we want to **return a promise** instead?
 
-- Each time the debounced function is invoked, clear the current pending timeout with `clearTimeout()` and use `setTimeout()` to create a new timeout that delays invoking the function until at least `ms` milliseconds has elapsed.
-- Use `Function.prototype.apply()` to apply the `this` context to the function and provide the necessary arguments.
-- Create a new `Promise` and add its `resolve` and `reject` callbacks to the `pending` promises stack.
-- When `setTimeout()` is called, copy the current stack (as it can change between the provided function call and its resolution), clear it and call the provided function.
-- When the provided function resolves/rejects, resolve/reject all promises in the stack (copied when the function was called) with the returned data.
-- Omit the second argument, `ms`, to set the timeout at a default of `0` ms.
+Same as before, we can use **timeouts** to create a delay as needed. We need to **clear the current pending timeout**, using `clearTimeout()`, and **create a new timeout** with `setTimeout()` each time the debounced function is invoked. Similarly, we can use `Function.prototype.apply()` to apply the `this` context to the function and provide the necessary arguments.
+
+However, we also need to **keep track of all pending promises** and resolve/reject them when the function is invoked. To do that, we can create a `pending` array and add the `resolve` and `reject` callbacks of each promise to it.
+
+When **the function is invoked**, the current `pending` array will have to be copied, as it can change between the function call and its resolution. Then, we can clear the `pending` array and call the provided function.
+
+Finally, when **the function resolves/rejects**, we can resolve/reject all promises in the copied array with the returned data. This means that **all promises created in the meantime will resolve/reject with the same data**.
 
 ```js
 const debouncePromise = (fn, ms = 0) => {
