@@ -37,7 +37,6 @@ export const snippetPage = {
         description: snippet.shortText,
         cover: context.snippet.cover,
         dateModified: snippet.dateModified,
-        author: snippet.author,
       });
 
       return context;

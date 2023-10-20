@@ -1,4 +1,3 @@
-import { author } from '#blocks/models/author';
 import { collection } from '#blocks/models/collection';
 import { language } from '#blocks/models/language';
 import { snippet } from '#blocks/models/snippet';
@@ -16,7 +15,6 @@ import { snippetContextSerializer } from '#blocks/serializers/snippetContextSeri
 export default {
   models: [
     // Main models
-    author,
     collection,
     language,
     snippet,
@@ -34,11 +32,6 @@ export default {
   ],
   relationships: [
     // Main models
-    {
-      from: { model: 'Snippet', name: 'author' },
-      to: { model: 'Author', name: 'articles' },
-      type: 'manyToOne',
-    },
     {
       from: { model: 'Snippet', name: 'language' },
       to: { model: 'Language', name: 'snippets' },

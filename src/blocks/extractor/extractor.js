@@ -19,7 +19,6 @@ export class Extractor {
     const { rawContentPath: contentDir } = pathSettings;
     const languageData = Extractor.extractLanguageData(contentDir);
     const collectionConfigs = Extractor.extractCollectionConfigs(contentDir);
-    const authors = Extractor.extractAuthors(contentDir);
     const snippets = await Extractor.extractSnippets(contentDir, languageData);
     const collectionsHubConfig =
       Extractor.extractCollectionsHubConfig(contentDir);
@@ -27,7 +26,6 @@ export class Extractor {
     const data = {
       collections: collectionConfigs,
       snippets,
-      authors,
       languages: [...languageData].map(([id, data]) => {
         const { references, ...restData } = data;
         return { ...restData };
@@ -79,21 +77,6 @@ export class Extractor {
     return configs;
   };
 
-  static extractAuthors = contentDir => {
-    const logger = new Logger('Extractor.extractAuthors');
-    logger.log('Extracting authors');
-    const authors = Object.entries(
-      YAMLHandler.fromFile(`${contentDir}/authors.yaml`)
-    ).map(([id, author]) => {
-      return {
-        ...author,
-        id,
-      };
-    });
-    logger.success('Finished extracting authors');
-    return authors;
-  };
-
   static extractLanguageData = contentDir => {
     const logger = new Logger('Extractor.extractLanguageData');
     logger.log('Extracting language data');
@@ -135,7 +118,6 @@ export class Extractor {
           language: languageKey,
           excerpt,
           cover,
-          author,
           dateModified,
           body,
           unlisted,
@@ -232,7 +214,6 @@ export class Extractor {
           ...html,
           code,
           cover,
-          author,
           seoDescription,
           language: languageKey,
         };
