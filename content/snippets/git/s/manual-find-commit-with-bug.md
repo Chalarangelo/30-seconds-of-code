@@ -3,7 +3,6 @@ title: Manually find the commit that introduced a bug
 type: snippet
 language: git
 tags: [commit,branch]
-author: chalarangelo
 cover: blue-computer
 dateModified: 2021-04-13
 ---

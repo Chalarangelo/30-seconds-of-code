@@ -3,7 +3,6 @@ title: Convert array to identity object
 type: snippet
 language: javascript
 tags: [array]
-author: chalarangelo
 cover: rain-shopping
 dateModified: 2023-04-16
 ---

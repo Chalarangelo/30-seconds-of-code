@@ -3,7 +3,6 @@ title: Find closest anchor
 type: snippet
 language: javascript
 tags: [browser]
-author: chalarangelo
 cover: clouds-n-mountains
 dateModified: 2021-04-22
 ---

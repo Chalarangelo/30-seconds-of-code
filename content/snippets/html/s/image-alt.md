@@ -4,7 +4,6 @@ shortTitle: Image alt attribute
 type: question
 language: html
 tags: [image,accessibility]
-author: chalarangelo
 cover: sailing-alone
 excerpt: Learn how to correctly use the `alt` attribute on images in HTML.
 dateModified: 2023-06-25

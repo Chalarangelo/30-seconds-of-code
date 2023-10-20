@@ -3,7 +3,6 @@ title: View the remote URL
 type: snippet
 language: git
 tags: [repository]
-author: chalarangelo
 cover: red-mountain
 dateModified: 2021-04-13
 ---

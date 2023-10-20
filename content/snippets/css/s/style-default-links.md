@@ -4,7 +4,6 @@ shortTitle: Style default links
 type: tip
 language: css
 tags: [visual,interactivity]
-author: chalarangelo
 cover: citrus-drink
 excerpt: A short summary of your story up to 180 characters long.
 dateModified: 2022-11-23

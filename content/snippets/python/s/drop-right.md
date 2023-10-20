@@ -3,7 +3,6 @@ title: Drop list elements from the right
 type: snippet
 language: python
 tags: [list]
-author: chalarangelo
 cover: digital-nomad-7
 dateModified: 2020-11-02
 ---

@@ -4,7 +4,6 @@ shortTitle: Constructor return value
 type: question
 language: javascript
 tags: [function,class,object]
-author: chalarangelo
 cover: architectural
 excerpt: The constructor is a crucial part of any JavaScript class, which is why you might want to take a closer look at what they return.
 dateModified: 2021-06-12

@@ -3,7 +3,6 @@ title: Scroll progress bar
 type: snippet
 language: css
 tags: [animation,visual]
-author: chalarangelo
 cover: coworking-space
 dateModified: 2021-10-13
 ---

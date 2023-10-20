@@ -4,7 +4,6 @@ shortTitle: Rewind to commit
 type: story
 language: git
 tags: [branch,commit]
-author: chalarangelo
 cover: walking
 excerpt: Did you make a mistake but haven't pushed your changes yet? Learn how to rewind back to a specific commit in Git.
 dateModified: 2023-05-26

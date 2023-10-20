@@ -4,7 +4,6 @@ shortTitle: Queue
 type: story
 language: javascript
 tags: [class]
-author: chalarangelo
 cover: purple-flower-macro-2
 excerpt: A queue is a linear data structure which follows a first in, first out (FIFO) order of operations.
 dateModified: 2021-07-29

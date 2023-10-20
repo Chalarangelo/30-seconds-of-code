@@ -3,7 +3,6 @@ title: Optimize the local repository
 type: snippet
 language: git
 tags: [repository]
-author: chalarangelo
 cover: automaton
 dateModified: 2021-04-13
 ---

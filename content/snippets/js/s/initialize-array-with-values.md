@@ -3,7 +3,6 @@ title: Initialize array with values
 type: snippet
 language: javascript
 tags: [array]
-author: chalarangelo
 cover: flower-portrait-1
 dateModified: 2020-10-20
 ---

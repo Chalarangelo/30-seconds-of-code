@@ -4,7 +4,6 @@ shortTitle: Fast-forward merge
 type: question
 language: git
 tags: [branch]
-author: chalarangelo
 cover: boats
 excerpt: Learn about Git's fast-forward mode and its benefits when merging branches, so you can decide if it's a good fit for you and your team.
 dateModified: 2021-07-15

@@ -3,7 +3,6 @@ title: Add class to HTML element
 type: snippet
 language: javascript
 tags: [browser]
-author: chalarangelo
 cover: shiny-mountains
 dateModified: 2020-12-30
 ---

@@ -4,7 +4,6 @@ shortTitle: Switch with object literals
 type: story
 language: javascript
 tags: [object]
-author: chalarangelo
 cover: rocky-lake
 excerpt: JavaScript's `switch` statement often feels hard to remember and a little bit out of place. Maybe it's time to use object literals, instead.
 dateModified: 2021-11-07

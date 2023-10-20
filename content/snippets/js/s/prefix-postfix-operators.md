@@ -4,7 +4,6 @@ shortTitle: Prefix and postfix operators
 type: question
 language: javascript
 tags: [math]
-author: chalarangelo
 cover: plant-candle
 excerpt: While both the prefix and postfix operators increment a value, the resulting value of the expression is very different.
 dateModified: 2021-10-31

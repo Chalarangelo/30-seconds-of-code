@@ -3,7 +3,6 @@ title: CSS Print Stylesheet
 type: story
 language: css
 tags: [visual]
-author: chalarangelo
 cover: cozy-desk-setup
 excerpt: A short opinionated print stylesheet to make your websites look great on paper.
 dateModified: 2023-06-11

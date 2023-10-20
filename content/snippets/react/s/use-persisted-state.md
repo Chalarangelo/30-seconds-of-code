@@ -3,7 +3,6 @@ title: React usePersistedState hook
 type: snippet
 language: react
 tags: [hooks,state,effect]
-author: chalarangelo
 cover: red-berries
 dateModified: 2021-10-13
 ---

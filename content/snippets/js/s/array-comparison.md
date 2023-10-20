@@ -4,7 +4,6 @@ shortTitle: JavaScript array comparison
 type: question
 language: javascript
 tags: [array,comparison]
-author: chalarangelo
 cover: coconuts
 excerpt: Learn how you can compare two arrays in JavaScript using various different techniques.
 dateModified: 2021-09-27

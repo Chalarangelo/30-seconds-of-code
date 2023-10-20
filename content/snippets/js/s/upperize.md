@@ -3,7 +3,6 @@ title: Uppercase object keys
 type: snippet
 language: javascript
 tags: [object]
-author: chalarangelo
 cover: sofia-tram
 dateModified: 2023-02-11
 ---

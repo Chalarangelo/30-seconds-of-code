@@ -3,7 +3,6 @@ title: Add a commit message template
 type: snippet
 language: git
 tags: [repository,configuration]
-author: chalarangelo
 cover: river-house-lights
 dateModified: 2021-04-13
 ---

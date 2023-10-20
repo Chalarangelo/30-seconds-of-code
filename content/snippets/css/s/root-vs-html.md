@@ -4,7 +4,6 @@ shortTitle: :root vs html
 type: story
 language: css
 tags: [layout,selector]
-author: chalarangelo
 cover: tree-roots
 excerpt: The CSS selectors used to target the root element of an HTML share some similarities, but they also have some differences.
 dateModified: 2022-05-22

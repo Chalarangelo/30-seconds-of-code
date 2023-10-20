@@ -4,7 +4,6 @@ shortTitle: Refactoring for...in loops to avoid ESLint warnings
 type: tip
 language: javascript
 tags: [array,iterator,eslint]
-author: chalarangelo
 cover: typing
 excerpt: ESLint is a really useful tool, but sometimes it gets in the way. Learn how to refactor code to get rid of a common warning.
 dateModified: 2021-06-12

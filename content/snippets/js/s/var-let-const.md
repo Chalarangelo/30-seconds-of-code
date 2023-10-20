@@ -4,7 +4,6 @@ shortTitle: Var, let and const
 type: question
 language: javascript
 tags: [type,variable]
-author: chalarangelo
 cover: green-css
 excerpt: JavaScript variables can be declared a handful of ways. However, understanding their differences can drastically change the way you code.
 dateModified: 2021-12-02

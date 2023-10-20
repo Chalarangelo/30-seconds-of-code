@@ -3,7 +3,6 @@ title: Window.location Cheat Sheet
 type: cheatsheet
 language: javascript
 tags: [browser]
-author: chalarangelo
 cover: yellow-sofa
 excerpt: A quick reference for the `window.location` object.
 dateModified: 2022-12-21

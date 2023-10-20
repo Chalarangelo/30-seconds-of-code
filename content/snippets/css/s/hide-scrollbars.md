@@ -3,7 +3,6 @@ title: Hide scroll bars
 type: snippet
 language: css
 tags: [visual]
-author: chalarangelo
 cover: by-the-lighthouse
 dateModified: 2022-05-13
 ---

@@ -4,7 +4,6 @@ shortTitle: Dynamic getters and setters
 type: question
 language: javascript
 tags: [object,proxy]
-author: chalarangelo
 cover: green-cabin-cow
 excerpt: Using the Proxy object, we can create dynamic getters and setters for objects in JavaScript.
 dateModified: 2023-04-09

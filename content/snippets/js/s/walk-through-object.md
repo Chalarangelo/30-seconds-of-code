@@ -3,7 +3,6 @@ title: Walk through object
 type: snippet
 language: javascript
 tags: [object,recursion,generator]
-author: chalarangelo
 cover: bridge
 dateModified: 2021-11-15
 ---

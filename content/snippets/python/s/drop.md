@@ -3,7 +3,6 @@ title: Drop list elements from the left
 type: snippet
 language: python
 tags: [list]
-author: chalarangelo
 cover: pink-flower
 dateModified: 2020-11-02
 ---

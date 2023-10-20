@@ -4,7 +4,6 @@ shortTitle: First or last n elements of an array
 type: tip
 language: javascript
 tags: [array]
-author: chalarangelo
 cover: fort-lamp
 excerpt: Learn how to retrieve the first or last `n` elements in a JavaScript array with a single line of code.
 dateModified: 2023-10-04

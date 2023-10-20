@@ -3,7 +3,6 @@ title: Remove list elements from the end
 type: snippet
 language: python
 tags: [list]
-author: chalarangelo
 cover: three-vases
 dateModified: 2020-09-15
 ---

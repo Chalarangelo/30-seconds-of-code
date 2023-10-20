@@ -3,7 +3,6 @@ title: Remove event listeners from target
 type: snippet
 language: javascript
 tags: [browser,event]
-author: chalarangelo
 cover: snowy-mountains
 dateModified: 2021-04-22
 ---

@@ -3,7 +3,6 @@ title: CSS units Cheat Sheet
 type: cheatsheet
 language: css
 tags: [layout,cheatsheet]
-author: chalarangelo
 cover: measuring
 excerpt: Learn everything you need to know about CSS units with this handy cheatsheet.
 dateModified: 2021-06-12

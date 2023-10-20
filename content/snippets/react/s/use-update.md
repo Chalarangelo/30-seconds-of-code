@@ -3,7 +3,6 @@ title: React useUpdate hook
 type: snippet
 language: react
 tags: [components,reducer]
-author: chalarangelo
 cover: lavender-shelf
 dateModified: 2021-09-24
 ---

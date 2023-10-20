@@ -4,7 +4,6 @@ shortTitle: Array Initialization
 type: story
 language: javascript
 tags: [array]
-author: chalarangelo
 cover: red-mountain-range
 excerpt: Discover the inner workings of JavaScript arrays and learn about the different ways to initialize them.
 dateModified: 2023-06-18

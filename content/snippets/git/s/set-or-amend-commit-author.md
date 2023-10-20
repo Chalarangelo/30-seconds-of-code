@@ -4,7 +4,6 @@ shortTitle: Set or amend commit author
 type: story
 language: git
 tags: [commit]
-author: chalarangelo
 cover: new-plant
 excerpt: Ever wanted to commit as someone else? Maybe change the author of an existing commit? Here's how.
 dateModified: 2023-05-24

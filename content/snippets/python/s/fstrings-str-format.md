@@ -4,7 +4,6 @@ shortTitle: String formatting
 type: tip
 language: python
 tags: [string]
-author: chalarangelo
 cover: feathers
 excerpt: Learn two ways to format a string in Python with this quick tip.
 dateModified: 2021-06-12

@@ -3,7 +3,6 @@ title: Check if array has only one match
 type: snippet
 language: javascript
 tags: [array]
-author: chalarangelo
 cover: interior-10
 dateModified: 2021-07-04
 ---

@@ -4,7 +4,6 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: new-york
-author: chalarangelo
 dateModified: 2022-07-20
 ---
 

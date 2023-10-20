@@ -3,7 +3,6 @@ title: Number has decimal digits
 type: snippet
 language: javascript
 tags: [math]
-author: chalarangelo
 cover: man-cup-laptop
 dateModified: 2022-05-13
 ---

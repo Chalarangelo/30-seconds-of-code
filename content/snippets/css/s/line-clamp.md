@@ -3,7 +3,6 @@ title: Trim multiline text
 type: snippet
 language: css
 tags: [layout,visual]
-author: chalarangelo
 cover: typewriter
 dateModified: 2021-05-16
 ---

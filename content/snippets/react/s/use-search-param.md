@@ -3,7 +3,6 @@ title: React useSearchParam hook
 type: snippet
 language: react
 tags: [hooks,state,effect]
-author: chalarangelo
 cover: coffee-phone-tray-3
 dateModified: 2021-10-13
 ---

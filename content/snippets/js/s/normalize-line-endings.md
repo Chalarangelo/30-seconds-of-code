@@ -3,7 +3,6 @@ title: Normalize line endings
 type: snippet
 language: javascript
 tags: [string,regexp]
-author: chalarangelo
 cover: red-light
 dateModified: 2020-10-21
 ---

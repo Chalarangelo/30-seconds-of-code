@@ -3,7 +3,6 @@ title: Move commits from master to a new branch
 type: snippet
 language: git
 tags: [branch,repository]
-author: chalarangelo
 cover: red-succulent
 dateModified: 2021-04-13
 ---

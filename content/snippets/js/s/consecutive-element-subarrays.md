@@ -3,7 +3,6 @@ title: Consecutive element subarrays
 type: snippet
 language: javascript
 tags: [array]
-author: chalarangelo
 cover: camera-zoom
 dateModified: 2020-10-18
 ---

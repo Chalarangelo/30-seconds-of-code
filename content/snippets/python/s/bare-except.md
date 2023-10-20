@@ -4,7 +4,6 @@ shortTitle: Bare except best practices
 type: tip
 language: python
 tags: [error]
-author: chalarangelo
 cover: dark-cloud
 excerpt: It's generally not a good idea to use bare `except` clause in Python, but do you know why?
 dateModified: 2022-02-20

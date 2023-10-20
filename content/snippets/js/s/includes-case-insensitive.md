@@ -3,7 +3,6 @@ title: Case-insensitive substring search
 type: snippet
 language: javascript
 tags: [string]
-author: chalarangelo
 cover: cup-of-orange
 dateModified: 2022-07-28
 ---

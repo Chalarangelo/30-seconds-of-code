@@ -3,7 +3,6 @@ title: Uncached module require
 type: snippet
 language: javascript
 tags: [node]
-author: chalarangelo
 cover: tea-laptop-table
 dateModified: 2020-09-15
 ---

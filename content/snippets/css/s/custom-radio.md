@@ -3,7 +3,6 @@ title: Custom radio button
 type: snippet
 language: css
 tags: [visual,animation]
-author: chalarangelo
 cover: messy-computer
 dateModified: 2022-11-16
 ---

@@ -3,7 +3,6 @@ title: Pad string
 type: snippet
 language: python
 tags: [string]
-author: chalarangelo
 cover: digital-nomad-11
 dateModified: 2020-10-04
 ---

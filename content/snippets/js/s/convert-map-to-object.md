@@ -4,7 +4,6 @@ type: snippet
 shortTitle: Map to object
 language: javascript
 tags: [object]
-author: chalarangelo
 cover: succulent-1
 dateModified: 2022-06-16
 ---

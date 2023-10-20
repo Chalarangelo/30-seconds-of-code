@@ -4,7 +4,6 @@ shortTitle: Tree
 type: story
 language: javascript
 tags: [class]
-author: chalarangelo
 cover: purple-flower-macro-2
 excerpt: A tree is a data structure consisting of a set of linked nodes representing a hierarchical tree structure.
 dateModified: 2021-08-22

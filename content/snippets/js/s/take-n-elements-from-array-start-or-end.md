@@ -4,7 +4,6 @@ shortTitle: Get N array elements from start or end
 type: story
 language: javascript
 tags: [array]
-author: chalarangelo
 cover: interior-7
 excerpt: Learn how to get the first or last N elements of a JavaScript array, using `Array.prototype.slice()`.
 dateModified: 2023-07-09

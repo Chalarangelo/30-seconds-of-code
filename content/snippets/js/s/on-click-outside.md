@@ -3,7 +3,6 @@ title: Handle click outside
 type: snippet
 language: javascript
 tags: [browser,event]
-author: chalarangelo
 cover: interior-13
 dateModified: 2021-01-06
 ---

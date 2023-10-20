@@ -4,7 +4,6 @@ shortTitle: Array.prototype.map() vs Array.prototype.forEach()
 type: question
 language: javascript
 tags: [array]
-author: chalarangelo
 cover: fort-lamp
 excerpt: Which method do you reach for first? What are the differences between them? Let's find out!
 dateModified: 2023-03-26

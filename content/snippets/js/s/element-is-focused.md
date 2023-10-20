@@ -3,7 +3,6 @@ title: Element is focused
 type: snippet
 language: javascript
 tags: [browser]
-author: chalarangelo
 cover: female-hiker
 dateModified: 2020-10-19
 ---

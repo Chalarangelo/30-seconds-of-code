@@ -4,7 +4,6 @@ shortTitle: Inherited properties
 type: cheatsheet
 language: css
 tags: [layout]
-author: chalarangelo
 cover: half-trees
 excerpt: A quick reference for inherited CSS properties.
 dateModified: 2022-11-20

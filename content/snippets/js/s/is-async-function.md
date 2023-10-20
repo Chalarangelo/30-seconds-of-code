@@ -3,7 +3,6 @@ title: Value is async function
 type: snippet
 language: javascript
 tags: [type,function]
-author: chalarangelo
 cover: interior-12
 dateModified: 2020-10-20
 ---

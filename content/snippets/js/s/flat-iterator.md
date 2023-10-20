@@ -3,7 +3,6 @@ title: Flat iterator
 type: snippet
 language: javascript
 tags: [array,iterator,generator]
-author: chalarangelo
 cover: sail-away-2
 dateModified: 2022-03-09
 ---

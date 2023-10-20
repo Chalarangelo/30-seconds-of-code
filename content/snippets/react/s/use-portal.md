@@ -3,7 +3,6 @@ title: React usePortal hook
 type: snippet
 language: react
 tags: [hooks,state,effect]
-author: chalarangelo
 cover: interior-3
 dateModified: 2022-01-05
 ---

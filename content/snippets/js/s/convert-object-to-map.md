@@ -4,7 +4,6 @@ type: snippet
 shortTitle: Object to Map
 language: javascript
 tags: [object]
-author: chalarangelo
 cover: yellow-shoes
 dateModified: 2022-06-16
 ---

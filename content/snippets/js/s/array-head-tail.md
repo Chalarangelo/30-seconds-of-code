@@ -4,7 +4,6 @@ shortTitle: Head and tail of array
 type: story
 language: javascript
 tags: [array]
-author: chalarangelo
 cover: clay-pot-horizon
 excerpt: Find the head or tail of a JavaScript array without mutating it.
 dateModified: 2023-10-08

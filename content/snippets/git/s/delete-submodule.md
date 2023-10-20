@@ -3,7 +3,6 @@ title: Delete a submodule
 type: snippet
 language: git
 tags: [repository,submodule]
-author: chalarangelo
 cover: silver-flat-screen
 dateModified: 2021-04-13
 ---

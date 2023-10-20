@@ -3,7 +3,6 @@ title: Restore a deleted file
 type: snippet
 language: git
 tags: [branch]
-author: chalarangelo
 cover: succulent-red-light
 dateModified: 2021-04-13
 ---

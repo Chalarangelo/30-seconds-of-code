@@ -3,7 +3,6 @@ title: Perspective transform on hover
 type: snippet
 language: css
 tags: [animation]
-author: chalarangelo
 cover: shiny-mountains
 dateModified: 2021-05-17
 ---

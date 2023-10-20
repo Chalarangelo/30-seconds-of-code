@@ -3,7 +3,6 @@ title: Initialize mapped array
 type: snippet
 language: javascript
 tags: [array]
-author: chalarangelo
 cover: yellow-shoes
 dateModified: 2023-06-13
 ---

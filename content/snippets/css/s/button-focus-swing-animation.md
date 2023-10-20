@@ -3,7 +3,6 @@ title: Button swing animation
 type: snippet
 language: css
 tags: [animation]
-author: chalarangelo
 cover: painters-desk
 dateModified: 2021-05-24
 ---

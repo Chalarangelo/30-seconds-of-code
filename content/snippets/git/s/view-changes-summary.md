@@ -3,7 +3,6 @@ title: View a summary of changes between two commits
 type: snippet
 language: git
 tags: [repository,branch]
-author: chalarangelo
 cover: taking-photos
 dateModified: 2021-04-13
 ---

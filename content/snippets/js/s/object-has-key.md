@@ -3,7 +3,6 @@ title: Check if object has key
 type: snippet
 language: javascript
 tags: [object]
-author: chalarangelo
 cover: cloudy-mountaintop
 dateModified: 2020-10-19
 ---

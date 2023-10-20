@@ -3,7 +3,6 @@ title: React usePrevious hook
 type: snippet
 language: react
 tags: [hooks,state,effect]
-author: chalarangelo
 cover: couch-laptop
 dateModified: 2020-11-16
 ---

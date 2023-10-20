@@ -3,7 +3,6 @@ title: Remove class from HTML element
 type: snippet
 language: javascript
 tags: [browser]
-author: chalarangelo
 cover: bag-waiting
 dateModified: 2020-12-30
 ---

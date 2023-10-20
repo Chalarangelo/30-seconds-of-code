@@ -3,7 +3,6 @@ title: Remove list elements
 type: snippet
 language: python
 tags: [list]
-author: chalarangelo
 cover: sea-view-2
 dateModified: 2020-09-15
 ---

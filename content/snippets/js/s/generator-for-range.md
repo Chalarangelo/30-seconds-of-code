@@ -4,7 +4,6 @@ shortTitle: Generator functions for ranges
 type: story
 language: javascript
 tags: [function,array]
-author: chalarangelo
 cover: generator
 excerpt: Learn how to use JavaScript ES6 generators and iterators to iterate over ranges of numbers.
 dateModified: 2021-06-12

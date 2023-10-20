@@ -3,7 +3,6 @@ title: Update remote branch after rewriting history
 type: snippet
 language: git
 tags: [branch]
-author: chalarangelo
 cover: compass
 dateModified: 2021-04-13
 ---

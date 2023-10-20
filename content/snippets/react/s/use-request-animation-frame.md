@@ -3,7 +3,6 @@ title: React useRequestAnimationFrame hook
 type: snippet
 language: react
 tags: [hooks,effect]
-author: chalarangelo
 cover: aerial-view-port
 dateModified: 2021-12-29
 ---

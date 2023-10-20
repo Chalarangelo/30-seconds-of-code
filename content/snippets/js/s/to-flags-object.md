@@ -3,7 +3,6 @@ title: Array to flags object
 type: snippet
 language: javascript
 tags: [array,object]
-author: chalarangelo
 cover: glass-blowing
 dateModified: 2022-04-12
 ---

@@ -3,7 +3,6 @@ title: Assert object keys are valid
 type: snippet
 language: javascript
 tags: [object]
-author: chalarangelo
 cover: river-flow
 dateModified: 2021-07-18
 ---

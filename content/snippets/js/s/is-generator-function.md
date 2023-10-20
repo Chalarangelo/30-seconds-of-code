@@ -3,7 +3,6 @@ title: Value is generator function
 type: snippet
 language: javascript
 tags: [type,function]
-author: chalarangelo
 cover: interior-4
 dateModified: 2020-10-20
 ---

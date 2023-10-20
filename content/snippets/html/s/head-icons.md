@@ -4,7 +4,6 @@ shortTitle: HTML favicons template
 type: story
 language: html
 tags: [metadata,head]
-author: chalarangelo
 cover: boutique-home-office-3
 excerpt: Ensure your HTML documents have a proper favicon by including these lines in your `<head>` element.
 dateModified: 2023-01-24

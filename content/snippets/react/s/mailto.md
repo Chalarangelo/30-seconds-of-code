@@ -3,7 +3,6 @@ title: Email link
 type: snippet
 language: react
 tags: [components]
-author: chalarangelo
 cover: digital-nomad-4
 dateModified: 2020-11-16
 ---

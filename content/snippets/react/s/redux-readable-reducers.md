@@ -4,7 +4,6 @@ shortTitle: Readable reducer tips
 type: story
 language: react
 tags: [logic]
-author: chalarangelo
 cover: beach-from-above
 excerpt: When working with stateful code, you can run into issues realted to complexity and readability. Oftentimes, they are easily fixable.
 dateModified: 2021-06-12

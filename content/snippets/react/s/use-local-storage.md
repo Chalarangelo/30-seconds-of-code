@@ -3,7 +3,6 @@ title: React useLocalStorage hook
 type: snippet
 language: react
 tags: [hooks,state]
-author: chalarangelo
 cover: houses-rock-sea
 dateModified: 2021-09-13
 ---

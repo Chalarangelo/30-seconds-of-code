@@ -3,7 +3,6 @@ title: Button grow animation
 type: snippet
 language: css
 tags: [animation]
-author: chalarangelo
 cover: white-laptop
 dateModified: 2021-05-24
 ---

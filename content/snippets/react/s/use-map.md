@@ -3,7 +3,6 @@ title: React useMap hook
 type: snippet
 language: react
 tags: [hooks,state]
-author: chalarangelo
 cover: work-hard-computer
 dateModified: 2021-11-06
 ---

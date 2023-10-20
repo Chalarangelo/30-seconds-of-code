@@ -3,7 +3,6 @@ title: React useMediaQuery hook
 type: snippet
 language: react
 tags: [hooks,state,effect]
-author: chalarangelo
 cover: clay-pot-horizon
 dateModified: 2021-10-13
 ---

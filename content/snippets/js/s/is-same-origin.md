@@ -3,7 +3,6 @@ title: Same-origin URLs
 type: snippet
 language: javascript
 tags: [browser]
-author: chalarangelo
 cover: leafy-screens
 dateModified: 2021-04-22
 ---

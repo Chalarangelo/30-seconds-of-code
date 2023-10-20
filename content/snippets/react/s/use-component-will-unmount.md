@@ -3,7 +3,6 @@ title: React useComponentWillUnmount hook
 type: snippet
 language: react
 tags: [hooks,effect]
-author: chalarangelo
 cover: rocky-beach-3
 dateModified: 2021-10-13
 ---

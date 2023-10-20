@@ -4,7 +4,6 @@ type: snippet
 shortTitle: Broken image fallback
 language: css
 tags: [visual]
-author: chalarangelo
 cover: building-facade
 dateModified: 2022-11-04
 ---

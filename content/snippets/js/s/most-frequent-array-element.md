@@ -3,7 +3,6 @@ title: Most frequent element in array
 type: snippet
 language: javascript
 tags: [array]
-author: chalarangelo
 cover: clock
 dateModified: 2020-09-15
 ---
