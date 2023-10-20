@@ -1,5 +1,5 @@
 ---
-title: "Tip: Style links without a class"
+title: Style links without a class
 shortTitle: Style default links
 type: tip
 language: css

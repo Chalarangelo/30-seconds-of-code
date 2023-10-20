@@ -1,5 +1,5 @@
 ---
-title: "Tip: Use clamp() in CSS for responsive typography"
+title: Use clamp() in CSS for responsive typography
 shortTitle: CSS clamp()
 type: tip
 language: css

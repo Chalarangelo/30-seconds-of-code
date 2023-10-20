@@ -1,9 +1,10 @@
 ---
-title: "Tip: JavaScript array sorting shorthand"
+title: JavaScript array sorting shorthand
 shortTitle: Array sorting shorthand
 type: tip
 language: javascript
 tags: [array]
+author: chalarangelo
 cover: apples
 excerpt: Learn how to quickly write code to sort JavaScript arrays with this handy one-liner.
 dateModified: 2021-06-12

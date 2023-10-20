@@ -1,5 +1,5 @@
 ---
-title: "Tip: Select any link with CSS"
+title: Select any link with CSS
 shortTitle: "CSS :any-link pseudo-class"
 type: tip
 language: css

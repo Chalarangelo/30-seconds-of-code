@@ -1,5 +1,5 @@
 ---
-title: "Tip: Pretty-print a JSON object with JavaScript"
+title: Pretty-print a JSON object with JavaScript
 shortTitle: Pretty-print JSON
 type: tip
 language: javascript

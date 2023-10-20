@@ -1,5 +1,5 @@
 ---
-title: "Tip: Make any JavaScript value iterable"
+title: Make any JavaScript value iterable
 shortTitle: Make any value iterable
 type: tip
 language: javascript

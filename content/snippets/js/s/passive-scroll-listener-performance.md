@@ -1,5 +1,5 @@
 ---
-title: "Tip: Improve scroll listener performance"
+title: Improve JavaScript scroll listener performance
 shortTitle: Improve scroll listener performance
 type: tip
 language: javascript

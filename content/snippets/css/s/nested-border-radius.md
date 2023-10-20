@@ -1,6 +1,5 @@
 ---
-title: "Tip: Perfect nested border radius in CSS"
-shortTitle: Perfect nested border radius in CSS
+title: Perfect nested border radius in CSS
 type: tip
 language: css
 tags: [visual]

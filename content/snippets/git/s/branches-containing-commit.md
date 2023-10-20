@@ -1,5 +1,5 @@
 ---
-title: "Tip: Find branches containing a specific Git commit"
+title: Find branches containing a specific Git commit
 shortTitle: Find branches containing commit
 type: tip
 language: git

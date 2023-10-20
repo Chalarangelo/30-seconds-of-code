@@ -1,5 +1,5 @@
 ---
-title: "Tip: Refactoring your for...in loops to avoid ESLint warnings"
+title: Refactoring your for...in loops to avoid ESLint warnings
 shortTitle: Refactoring for...in loops to avoid ESLint warnings
 type: tip
 language: javascript

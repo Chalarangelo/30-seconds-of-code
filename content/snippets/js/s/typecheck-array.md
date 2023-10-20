@@ -1,5 +1,5 @@
 ---
-title: "Tip: Typechecking arrays with Array.isArray()"
+title: Typechecking arrays with Array.isArray()
 shortTitle: Array typechecking
 type: tip
 language: javascript

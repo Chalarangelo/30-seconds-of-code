@@ -1,5 +1,5 @@
 ---
-title: "Tip: Prevent a string from being escaped in JavaScript"
+title: Prevent a string from being escaped in JavaScript
 shortTitle: Prevent string escaping
 type: tip
 language: javascript
