@@ -3,7 +3,6 @@ title: Delete a stash
 type: snippet
 language: git
 tags: [repository,stash]
-author: chalarangelo
 cover: zen-indoors
 dateModified: 2021-04-13
 ---

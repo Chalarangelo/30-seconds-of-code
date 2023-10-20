@@ -3,7 +3,6 @@ title: Array to object based on key
 type: snippet
 language: javascript
 tags: [array,object]
-author: chalarangelo
 cover: lavender-shelf
 dateModified: 2021-06-27
 ---

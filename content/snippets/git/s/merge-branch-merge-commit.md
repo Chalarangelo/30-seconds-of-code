@@ -4,7 +4,6 @@ shortTitle: Merge branch
 type: story
 language: git
 tags: [repository,branch]
-author: chalarangelo
 cover: meteora
 excerpt: Learn how to merge a branch in Git with or without creating a merge commit, depending on your team's workflow.
 dateModified: 2023-05-26

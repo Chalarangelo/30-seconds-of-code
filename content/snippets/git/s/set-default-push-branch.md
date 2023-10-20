@@ -3,7 +3,6 @@ title: Set default push branch name
 type: snippet
 language: git
 tags: [configuration,branch]
-author: chalarangelo
 cover: pink-flower
 dateModified: 2021-06-30
 ---

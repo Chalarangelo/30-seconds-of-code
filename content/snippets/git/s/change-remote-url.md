@@ -3,7 +3,6 @@ title: Change the remote URL
 type: snippet
 language: git
 tags: [repository]
-author: chalarangelo
 cover: rocky-lake
 dateModified: 2021-04-13
 ---

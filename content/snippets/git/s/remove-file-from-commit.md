@@ -3,7 +3,6 @@ title: Remove a file from the last commit
 type: snippet
 language: git
 tags: [commit]
-author: chalarangelo
 cover: cancel-typographer
 dateModified: 2021-04-13
 ---

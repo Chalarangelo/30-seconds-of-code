@@ -3,7 +3,6 @@ title: Isometric card
 type: snippet
 language: css
 tags: [visual]
-author: chalarangelo
 cover: guitar-living-room
 dateModified: 2021-05-17
 ---

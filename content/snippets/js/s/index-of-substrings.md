@@ -3,7 +3,6 @@ title: Index of substrings
 type: snippet
 language: javascript
 tags: [string,algorithm,generator]
-author: chalarangelo
 cover: armchair-in-yellow
 dateModified: 2020-12-31
 ---

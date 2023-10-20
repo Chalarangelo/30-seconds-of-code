@@ -3,7 +3,6 @@ title: Binary search
 type: snippet
 language: javascript
 tags: [algorithm,array]
-author: chalarangelo
 cover: zen-indoors
 dateModified: 2020-12-29
 ---

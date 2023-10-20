@@ -4,7 +4,6 @@ shortTitle: Delays in JavaScript timing functions
 type: story
 language: javascript
 tags: [browser,timeout]
-author: chalarangelo
 cover: river-house-lights
 excerpt: Did you know that the delay of `setTimeout()` and `setInterval()` is merely a suggestion?
 dateModified: 2022-10-26

@@ -5,7 +5,6 @@ shortTitle: Starts with substring
 language: javascript
 tags: [string]
 cover: boutique-home-office-3
-author: chalarangelo
 dateModified: 2022-07-31
 ---
 

@@ -3,7 +3,6 @@ title: Compact and join array
 type: snippet
 language: javascript
 tags: [array]
-author: chalarangelo
 cover: racoon
 dateModified: 2022-04-08
 ---

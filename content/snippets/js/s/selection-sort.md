@@ -3,7 +3,6 @@ title: Selection sort
 type: snippet
 language: javascript
 tags: [algorithm,array]
-author: chalarangelo
 cover: yellow-sofa
 dateModified: 2021-10-13
 ---

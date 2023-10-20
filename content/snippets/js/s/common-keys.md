@@ -3,7 +3,6 @@ title: Common keys
 type: snippet
 language: javascript
 tags: [object]
-author: chalarangelo
 cover: symmetry-cloudy-mountain
 dateModified: 2022-04-23
 ---

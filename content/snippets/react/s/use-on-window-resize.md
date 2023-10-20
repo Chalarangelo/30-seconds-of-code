@@ -3,7 +3,6 @@ title: React useOnWindowResize hook
 type: snippet
 language: react
 tags: [hooks,effect,event]
-author: chalarangelo
 cover: flower-camera
 dateModified: 2021-12-01
 ---

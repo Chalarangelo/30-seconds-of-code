@@ -3,7 +3,6 @@ title: Heap sort
 type: snippet
 language: javascript
 tags: [algorithm,array,recursion]
-author: chalarangelo
 cover: building-blocks
 dateModified: 2020-12-28
 ---

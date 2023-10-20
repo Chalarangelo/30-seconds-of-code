@@ -3,7 +3,6 @@ title: Autocorrect git commands
 type: snippet
 language: git
 tags: [configuration]
-author: chalarangelo
 cover: purple-flower-bunch
 dateModified: 2021-04-13
 ---

@@ -3,7 +3,6 @@ title: Lowercase object keys
 type: snippet
 language: javascript
 tags: [object]
-author: chalarangelo
 cover: building-facade
 dateModified: 2023-02-12
 ---

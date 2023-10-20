@@ -3,7 +3,6 @@ title: List with floating section headings
 type: snippet
 language: css
 tags: [visual]
-author: chalarangelo
 cover: pop-of-green
 dateModified: 2021-10-11
 ---

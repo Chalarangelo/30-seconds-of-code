@@ -4,7 +4,6 @@ shortTitle: Closures introduction
 type: question
 language: javascript
 tags: [function,closure]
-author: chalarangelo
 cover: cherry-trees
 excerpt: Learn and understand closures, a core concept in JavaScript programming, and level up your code.
 dateModified: 2021-06-12

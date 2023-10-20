@@ -3,7 +3,6 @@ title: Initialize array while
 type: snippet
 language: javascript
 tags: [array]
-author: chalarangelo
 cover: neon-desk-1
 dateModified: 2023-06-20
 ---

@@ -4,7 +4,6 @@ shortTitle: Unitless line height
 type: tip
 language: css
 tags: [layout,visual]
-author: chalarangelo
 cover: gold-typewriter
 excerpt: You might have heard that `line-height` should be unitless, but do you know why?
 dateModified: 2022-11-27

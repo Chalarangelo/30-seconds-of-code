@@ -3,7 +3,6 @@ title: Perform an interactive rebase
 type: snippet
 language: git
 tags: [branch]
-author: chalarangelo
 cover: tea-laptop-table
 dateModified: 2021-04-13
 ---

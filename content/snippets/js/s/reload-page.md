@@ -4,7 +4,6 @@ shortTitle: Reload page
 type: story
 language: javascript
 tags: [browser]
-author: chalarangelo
 cover: night-tram
 excerpt: Need to reload the current page using JavaScript? Here's the best way to do it, as well as some alternatives.
 dateModified: 2023-05-14

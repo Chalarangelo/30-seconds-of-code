@@ -3,7 +3,6 @@ title: React useInterval hook
 type: snippet
 language: react
 tags: [hooks,effect]
-author: chalarangelo
 cover: digital-nomad-13
 dateModified: 2020-11-16
 ---

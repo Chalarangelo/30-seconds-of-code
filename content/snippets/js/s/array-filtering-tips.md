@@ -4,7 +4,6 @@ shortTitle: Array filtering tips
 type: story
 language: javascript
 tags: [array]
-author: chalarangelo
 cover: rocky-beach-waves
 excerpt: A few tips and tricks to help you filter arrays in JavaScript more efficiently.
 dateModified: 2022-09-28

@@ -3,7 +3,6 @@ title: Callable telephone link
 type: snippet
 language: react
 tags: [components]
-author: chalarangelo
 unlisted: true
 cover: rabbit-call
 dateModified: 2021-01-04

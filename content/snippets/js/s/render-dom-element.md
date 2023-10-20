@@ -3,7 +3,6 @@ title: Render DOM element
 type: snippet
 language: javascript
 tags: [browser,recursion]
-author: chalarangelo
 cover: standing-stones
 dateModified: 2021-10-13
 ---

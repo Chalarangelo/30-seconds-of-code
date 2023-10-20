@@ -4,7 +4,6 @@ shortTitle: Bifurcate array
 type: question
 language: javascript
 tags: [array]
-author: chalarangelo
 cover: canoe
 excerpt: Learn how to split a JavaScript array into two groups based on a function or an array of values.
 dateModified: 2023-10-09

@@ -3,7 +3,6 @@ title: Replace last occurrence in string
 type: snippet
 language: javascript
 tags: [string,regexp]
-author: chalarangelo
 cover: waves
 dateModified: 2021-04-22
 ---

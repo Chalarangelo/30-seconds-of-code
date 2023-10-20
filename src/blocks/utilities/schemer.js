@@ -1,40 +1,21 @@
 import settings from '#settings/global';
 
-const { websiteUrl, orgName } = settings;
+const { websiteUrl, ownerName, ownerUrl } = settings;
 const orgLogoSrc = '/assets/30s-icon.png';
 
 /**
  * Utility for generating structured data for pages.
  */
 export class Schemer {
-  static logo = {
-    '@type': 'ImageObject',
-    url: `${websiteUrl}${orgLogoSrc}`,
-  };
-
-  static organization = {
-    '@type': 'Organization',
-    name: orgName,
-    logo: Schemer.logo,
-  };
-
   static generateSnippetData = ({
     title,
     slug,
     description,
     cover,
     dateModified,
-    author,
   }) => {
     const url = `${websiteUrl}${slug}`;
     const coverSrc = cover ? cover : orgLogoSrc;
-    const _author = author
-      ? {
-          '@type': 'Person',
-          name: author.name,
-          url: author.profile,
-        }
-      : Schemer.organization;
 
     return {
       '@context': 'https://schema.org',
@@ -47,8 +28,7 @@ export class Schemer {
       image: `${websiteUrl}${coverSrc}`,
       datePublished: dateModified,
       dateModified,
-      author: _author,
-      publisher: Schemer.organization,
+      publisher: { '@type': 'Person', name: ownerName, url: ownerUrl },
     };
   };
 

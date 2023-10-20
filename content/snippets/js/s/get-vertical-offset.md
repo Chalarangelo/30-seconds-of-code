@@ -3,7 +3,6 @@ title: Vertical offset of element
 type: snippet
 language: javascript
 tags: [browser]
-author: chalarangelo
 cover: waves-from-above-2
 dateModified: 2021-01-05
 ---

@@ -4,7 +4,6 @@ type: snippet
 language: javascript
 tags: [string,regexp]
 cover: sofia-tram
-author: chalarangelo
 dateModified: 2023-03-27
 ---
 

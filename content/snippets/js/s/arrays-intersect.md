@@ -3,7 +3,6 @@ title: Check if two arrays intersect
 type: snippet
 language: javascript
 tags: [array]
-author: chalarangelo
 cover: interior-5
 dateModified: 2023-02-17
 ---

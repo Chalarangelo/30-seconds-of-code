@@ -3,7 +3,6 @@ title: Add a submodule
 type: snippet
 language: git
 tags: [repository,submodule]
-author: chalarangelo
 cover: rocky-mountains
 dateModified: 2021-04-13
 ---

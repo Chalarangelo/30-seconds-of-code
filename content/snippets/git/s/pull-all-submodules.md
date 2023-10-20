@@ -3,7 +3,6 @@ title: Pull all submodules from remote
 type: snippet
 language: git
 tags: [repository,submodule]
-author: chalarangelo
 cover: workspace-with-speaker
 dateModified: 2021-04-13
 ---

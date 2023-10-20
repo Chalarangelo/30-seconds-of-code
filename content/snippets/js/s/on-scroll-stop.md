@@ -3,7 +3,6 @@ title: Handle scroll stop
 type: snippet
 language: javascript
 tags: [browser,event]
-author: chalarangelo
 cover: half-trees
 dateModified: 2021-01-07
 ---

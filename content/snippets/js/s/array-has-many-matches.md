@@ -3,7 +3,6 @@ title: Check if array has many matches
 type: snippet
 language: javascript
 tags: [array]
-author: chalarangelo
 cover: interior-2
 dateModified: 2021-07-11
 ---

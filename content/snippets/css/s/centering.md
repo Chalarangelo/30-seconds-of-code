@@ -4,7 +4,6 @@ shortTitle: Centering content with CSS
 type: story
 language: css
 tags: [layout]
-author: chalarangelo
 cover: mountain-lake
 excerpt: Centering content with CSS might often feel tricky. Here are 4 easy tricks you can use in your code today.
 dateModified: 2021-09-28

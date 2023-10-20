@@ -3,7 +3,6 @@ title: React useSSR hook
 type: snippet
 language: react
 tags: [hooks,effect,state,memo]
-author: chalarangelo
 cover: interior-6
 dateModified: 2021-03-10
 ---

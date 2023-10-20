@@ -4,7 +4,6 @@ shortTitle: Deep freeze object
 type: question
 language: javascript
 tags: [object]
-author: chalarangelo
 cover: frozen-globe
 excerpt: Learn how mutability works in JavaScript, its applications to objects and how you can properly freeze them to make them constant.
 dateModified: 2021-06-12

@@ -4,7 +4,6 @@ shortTitle: HTML social tags template
 type: story
 language: html
 tags: [metadata,head]
-author: chalarangelo
 cover: boutique-home-office-2
 excerpt: Ensure your HTML documents can be shared on social media by including these lines in your `<head>` element.
 dateModified: 2023-01-22

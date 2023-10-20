@@ -4,7 +4,6 @@ shortTitle: Empty list
 type: question
 language: python
 tags: [list]
-author: chalarangelo
 cover: salad-2
 excerpt: There's a good way to test the emptiness of a Python list and a better one. Which one are you using?
 dateModified: 2023-01-15

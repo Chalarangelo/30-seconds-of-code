@@ -3,7 +3,6 @@ title: Split array into n chunks
 type: snippet
 language: javascript
 tags: [array]
-author: chalarangelo
 cover: dark-leaves-2
 dateModified: 2020-11-03
 ---

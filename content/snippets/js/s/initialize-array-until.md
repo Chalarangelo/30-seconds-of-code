@@ -3,7 +3,6 @@ title: Initialize array until
 type: snippet
 language: javascript
 tags: [array]
-author: chalarangelo
 cover: neon-desk-2
 dateModified: 2023-06-22
 ---

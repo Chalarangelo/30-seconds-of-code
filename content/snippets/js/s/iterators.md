@@ -4,7 +4,6 @@ shortTitle: JavaScript iterators introduction
 type: question
 language: javascript
 tags: [array,object,iterator]
-author: chalarangelo
 cover: balloons
 excerpt: Learn how JavaScript's iterators work and how you can use them to level up your projects by understanding these short code examples.
 dateModified: 2021-09-26

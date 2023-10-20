@@ -3,7 +3,6 @@ title: Create a stash
 type: snippet
 language: git
 tags: [repository,stash]
-author: chalarangelo
 cover: purple-leaves
 dateModified: 2021-04-13
 ---

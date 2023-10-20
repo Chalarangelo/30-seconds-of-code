@@ -3,7 +3,6 @@ title: Configure line endings
 type: snippet
 language: git
 tags: [repository,configuration]
-author: chalarangelo
 cover: leaves-read
 dateModified: 2021-04-13
 ---

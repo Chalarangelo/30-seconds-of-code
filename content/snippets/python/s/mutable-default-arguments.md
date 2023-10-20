@@ -4,7 +4,6 @@ shortTitle: Mutable default arguments
 type: tip
 language: python
 tags: [function]
-author: chalarangelo
 cover: goat-wooden-cottage
 excerpt: Mutable default arguments can trip up Python beginners and veterans alike. Here's a quick workaround to deal with them.
 dateModified: 2022-02-27

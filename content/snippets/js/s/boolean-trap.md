@@ -4,7 +4,6 @@ shortTitle: Boolean traps
 type: story
 language: javascript
 tags: [function,type,boolean]
-author: chalarangelo
 cover: lighthouse
 excerpt: Boolean traps can cause readability and maintainability issues in your code. Learn what they are, how to spot and fix them in this article.
 dateModified: 2021-07-11

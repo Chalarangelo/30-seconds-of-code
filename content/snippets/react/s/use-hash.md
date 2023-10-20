@@ -3,7 +3,6 @@ title: React useHash hook
 type: snippet
 language: react
 tags: [hooks,state,effect]
-author: chalarangelo
 cover: capsule-coffee
 dateModified: 2021-10-02
 ---

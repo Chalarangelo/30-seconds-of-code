@@ -3,7 +3,6 @@ title: React useHover hook
 type: snippet
 language: react
 tags: [hooks,state,callback]
-author: chalarangelo
 cover: camper-school-bus
 dateModified: 2021-10-05
 ---

@@ -4,7 +4,6 @@ shortTitle: SHA-256 hash
 type: story
 language: javascript
 tags: [browser,node,promise]
-author: chalarangelo
 cover: padlocks
 excerpt: Calculate a SHA-256 hash in JavaScript using native APIs in both the browser and Node.js.
 dateModified: 2023-10-07

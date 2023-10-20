@@ -3,7 +3,6 @@ title: Find lost files
 type: snippet
 language: git
 tags: [repository]
-author: chalarangelo
 cover: hard-disk
 dateModified: 2021-04-13
 ---

@@ -3,7 +3,6 @@ title: Show/hide password toggle
 type: snippet
 language: react
 tags: [components,input,state]
-author: chalarangelo
 cover: thread
 dateModified: 2020-11-25
 ---

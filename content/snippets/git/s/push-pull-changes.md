@@ -4,7 +4,6 @@ shortTitle: Push and pull changes
 type: story
 language: git
 tags: [repository,branch]
-author: chalarangelo
 cover: orange-coffee-2
 excerpt: Learn how to push and pull changes between local and remote repositories.
 dateModified: 2023-06-01

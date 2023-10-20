@@ -3,7 +3,6 @@ title: URL parameters as object
 type: snippet
 language: javascript
 tags: [browser,string,regexp]
-author: chalarangelo
 cover: metro-tunnel
 dateModified: 2020-10-22
 ---

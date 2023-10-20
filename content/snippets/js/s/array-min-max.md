@@ -4,7 +4,6 @@ shortTitle: Min and max value of an array
 type: tip
 language: javascript
 tags: [array,math]
-author: chalarangelo
 cover: little-tree
 excerpt: When working with numeric arrays in JavaScript, you might need to find the minimum or maximum value. Here's a quick and easy way to do it.
 dateModified: 2021-11-06

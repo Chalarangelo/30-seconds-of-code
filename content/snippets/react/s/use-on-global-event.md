@@ -3,7 +3,6 @@ title: React useOnGlobalEvent hook
 type: snippet
 language: react
 tags: [hooks,effect,event]
-author: chalarangelo
 cover: plant-corner
 dateModified: 2021-12-22
 ---

@@ -3,7 +3,6 @@ title: Fluid typography
 type: snippet
 language: css
 tags: [visual]
-author: chalarangelo
 cover: shell-focus
 dateModified: 2021-05-16
 ---

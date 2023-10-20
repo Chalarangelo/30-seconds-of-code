@@ -4,7 +4,6 @@ shortTitle: Amend last commit
 type: story
 language: git
 tags: [commit]
-author: chalarangelo
 cover: greek-coffee
 excerpt: Learn how to effortlesly amend the last commit's message or contents using Git and fix any mistakes you might have made.
 dateModified: 2023-05-23

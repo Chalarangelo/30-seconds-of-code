@@ -3,7 +3,6 @@ title: Find closest matching node
 type: snippet
 language: javascript
 tags: [browser]
-author: chalarangelo
 cover: flowering-hills
 dateModified: 2021-04-22
 ---

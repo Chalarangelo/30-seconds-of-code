@@ -3,7 +3,6 @@ title: Responsive image mosaic
 type: snippet
 language: css
 tags: [layout]
-author: chalarangelo
 cover: beach-riders
 dateModified: 2020-12-30
 ---

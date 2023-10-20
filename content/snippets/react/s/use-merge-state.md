@@ -3,7 +3,6 @@ title: React useMergeState hook
 type: snippet
 language: react
 tags: [hooks,state]
-author: chalarangelo
 cover: digital-nomad-6
 dateModified: 2021-09-23
 ---

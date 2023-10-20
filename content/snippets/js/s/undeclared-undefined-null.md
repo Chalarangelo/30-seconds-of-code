@@ -4,7 +4,6 @@ shortTitle: Undeclared, undefined and null
 type: question
 language: javascript
 tags: [type]
-author: chalarangelo
 cover: river-houses
 excerpt: JavaScript has three different empty states for variables. Learn their differences and how you can check for each one.
 dateModified: 2021-06-12

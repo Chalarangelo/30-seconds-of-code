@@ -3,7 +3,6 @@ title: Check if string contains whitespace
 type: snippet
 language: javascript
 tags: [string,regexp]
-author: chalarangelo
 cover: bag-waiting
 dateModified: 2020-10-18
 ---

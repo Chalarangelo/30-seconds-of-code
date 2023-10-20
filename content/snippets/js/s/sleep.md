@@ -4,7 +4,6 @@ shortTitle: Sleep function
 type: question
 language: javascript
 tags: [date,promise]
-author: chalarangelo
 cover: sleepy-cat
 excerpt: Learn all the different ways you can implement a `sleep()` function in JavaScript.
 dateModified: 2021-11-06

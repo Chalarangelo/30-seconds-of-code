@@ -4,7 +4,6 @@ shortTitle: Singleton implementation
 type: question
 language: javascript
 tags: [object,proxy,pattern]
-author: chalarangelo
 cover: obelisk
 excerpt: Learn how to implement the singleton design pattern in JavaScript, using the Proxy object.
 dateModified: 2021-09-28

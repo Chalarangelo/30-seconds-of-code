@@ -4,7 +4,6 @@ shortTitle: Synchronous vs asynchronous code
 type: question
 language: javascript
 tags: [function,promise]
-author: chalarangelo
 cover: pineapple-on-green
 excerpt: Understanding the differences between synchronous and asynchronous code is a crucial piece of knowledge for every web developer.
 dateModified: 2021-11-14

@@ -4,7 +4,6 @@ shortTitle: JavaScript array includes value
 type: question
 language: javascript
 tags: [array]
-author: chalarangelo
 cover: bridge-drop
 excerpt: Checking if an array includes a specific value is pretty straightforward, except when it comes to objects.
 dateModified: 2022-09-18

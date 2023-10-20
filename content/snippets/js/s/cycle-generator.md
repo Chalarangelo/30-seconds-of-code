@@ -3,7 +3,6 @@ title: Cycle generator
 type: snippet
 language: javascript
 tags: [function,generator]
-author: chalarangelo
 cover: secret-tree
 dateModified: 2020-10-11
 ---

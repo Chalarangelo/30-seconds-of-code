@@ -3,7 +3,6 @@ title: Button shrink animation
 type: snippet
 language: css
 tags: [animation]
-author: chalarangelo
 cover: clay-pot-horizon
 dateModified: 2021-05-24
 ---

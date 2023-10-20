@@ -3,7 +3,6 @@ title: React useTitle hook
 type: snippet
 language: react
 tags: [hooks,effect]
-author: chalarangelo
 cover: chubby-squirrel
 dateModified: 2021-09-27
 ---

@@ -4,7 +4,6 @@ shortTitle: Numeric separators explained
 type: story
 language: javascript
 tags: [math,type]
-author: chalarangelo
 cover: coffee-drip
 excerpt: Numeric separators are a somewhat lesser-known JavaScript syntactic sugar that can make working with large constants a lot easier.
 dateModified: 2021-06-27

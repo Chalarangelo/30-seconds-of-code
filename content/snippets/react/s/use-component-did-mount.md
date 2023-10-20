@@ -3,7 +3,6 @@ title: React useComponentDidMount hook
 type: snippet
 language: react
 tags: [hooks,effect]
-author: chalarangelo
 cover: green-cabin-cow
 dateModified: 2021-10-13
 ---
