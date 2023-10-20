@@ -4,7 +4,7 @@
 
 > Short code snippets for all your development needs
 
-* Visit [our website](https://30secondsofcode.org) to view our snippet collection.
+* Visit [the website](https://30secondsofcode.org) to view our snippet collection.
 * Search for snippets that suit your needs. You can search by name, tag, language or using a snippet's description. Just start typing a term and see what comes up.
 * Browse all [snippets](https://30secondsofcode.org/snippets/p/1) or individual [snippet collections](https://30secondsofcode.org/collections/p/1) for each topic.
 * Click on each snippet card to view the whole snippet, including code, explanation and examples.
@@ -20,7 +20,7 @@
 
 ## Credits
 
-* This repository is maintained by the [30 seconds of code organization on GitHub](https://github.com/30-seconds).
+* This repository is maintained by [Angelos Chalaris]([https://github.com/30-seconds](https://github.com/Chalarangelo)).
 * All snippets are licensed under the CC-BY-4.0 License, unless explicitly stated otherwise.
-* Logos, names and trademarks are not to be used without the explicit consent of the owners of the 30 seconds of code GitHub organization.
-* Our website is powered by [Netlify](https://www.netlify.com/), [Astro](https://astro.build/) & [GitHub](https://github.com/).
+* Logos, names and trademarks are not to be used without the explicit consent of the owner.
+* The website is powered by [Netlify](https://www.netlify.com/), [Astro](https://astro.build/) & [GitHub](https://github.com/).
