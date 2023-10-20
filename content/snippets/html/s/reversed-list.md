@@ -1,5 +1,5 @@
 ---
-title: "Tip: Create a descending list of numbered items"
+title: Create a descending list of numbered items in HTML
 shortTitle: Descending list
 type: tip
 language: html

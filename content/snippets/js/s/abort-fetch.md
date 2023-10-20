@@ -1,5 +1,5 @@
 ---
-title: "Tip: Abort a fetch request in JavaScript"
+title: Abort a fetch request in JavaScript
 shortTitle: Abort a fetch request
 type: story
 language: javascript

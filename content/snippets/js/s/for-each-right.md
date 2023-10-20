@@ -1,5 +1,5 @@
 ---
-title: "Tip: Iterate over a JavaScript array from right to left"
+title: Iterate over a JavaScript array from right to left
 shortTitle: Iterate over array in reverse
 type: tip
 language: javascript

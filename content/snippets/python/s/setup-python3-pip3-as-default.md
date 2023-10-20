@@ -1,5 +1,5 @@
 ---
-title: "Tip: Set up Python 3 and pip 3 as default"
+title: Set up Python 3 and pip 3 as default
 shortTitle: Python 3 and pip 3 setup
 type: tip
 language: python

@@ -1,5 +1,5 @@
 ---
-title: "Tip: Convert a string to a boolean"
+title: Convert a string to a boolean
 shortTitle: String to boolean
 type: tip
 language: javascript

@@ -1,5 +1,5 @@
 ---
-title: "Tip: Select the focused DOM element"
+title: Select the focused DOM element with JavaScript
 shortTitle: Focused DOM element
 type: tip
 language: javascript

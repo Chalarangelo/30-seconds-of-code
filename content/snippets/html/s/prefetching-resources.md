@@ -1,5 +1,5 @@
 ---
-title: "Tip: Prefetching resources in the browser"
+title: Prefetching resources in the browser
 shortTitle: Resource prefetching
 type: tip
 language: html

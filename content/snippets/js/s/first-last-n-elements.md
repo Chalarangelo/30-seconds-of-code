@@ -1,5 +1,5 @@
 ---
-title: "Tip: Get the first or last n elements in a JavaScript array"
+title: Get the first or last n elements in a JavaScript array
 shortTitle: First or last n elements of an array
 type: tip
 language: javascript

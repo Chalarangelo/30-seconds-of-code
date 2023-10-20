@@ -1,5 +1,5 @@
 ---
-title: "Tip: A bash alias for copying commands from the web"
+title: A bash alias for copying commands from the web
 shortTitle: Bash alias for copying from the web
 type: tip
 language: git

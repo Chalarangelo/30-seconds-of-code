@@ -1,5 +1,5 @@
 ---
-title: "Tip: Debugging Node.js using Chrome Developer Tools"
+title: Debugging Node.js using Chrome Developer Tools
 shortTitle: Debug Node.js with Chrome Developer Tools
 type: tip
 language: javascript

@@ -1,5 +1,5 @@
 ---
-title: "Tip: Min and max value in a JavaScript array"
+title: Min and max value in a JavaScript array
 shortTitle: Min and max value of an array
 type: tip
 language: javascript

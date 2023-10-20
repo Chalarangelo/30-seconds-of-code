@@ -1,5 +1,5 @@
 ---
-title: "Tip: Use JavaScript for loops if you need to break out early"
+title: Use JavaScript for loops if you need to break out early
 shortTitle: For loops for early breaking
 type: tip
 language: javascript

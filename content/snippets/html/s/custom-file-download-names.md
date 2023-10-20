@@ -1,6 +1,5 @@
 ---
-title: "Tip: Customize the names of downloadable files"
-shortTitle: Customize the names of downloadable files
+title: Customize the names of downloadable files
 type: tip
 language: html
 tags: [link]

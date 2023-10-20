@@ -1,5 +1,5 @@
 ---
-title: "Tip: Get the last element of a JavaScript array"
+title: Get the last element of a JavaScript array
 shortTitle: Last element of array
 type: tip
 language: javascript

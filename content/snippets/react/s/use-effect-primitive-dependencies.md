@@ -1,5 +1,5 @@
 ---
-title: "Tip: Prefer primitives in useEffect dependencies"
+title: Prefer primitives in useEffect dependencies
 shortTitle: Primitive useEffect dependencies
 type: tip
 language: react

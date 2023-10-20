@@ -1,6 +1,5 @@
 ---
-title: "Tip: CSS easing variables"
-shortTitle: CSS easing variables
+title: CSS easing variables
 type: tip
 language: css
 tags: [animation]
