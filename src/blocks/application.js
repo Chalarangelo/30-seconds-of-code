@@ -216,13 +216,12 @@ export class Application {
       Snippet,
       Collection,
       Language,
-      Author,
       SnippetPage,
       CollectionPage,
       CollectionsPage,
       HomePage,
     } = Application.models;
-    const { snippets, collections, languages, authors, collectionsHub } =
+    const { snippets, collections, languages, collectionsHub } =
       Application.datasetObject;
     const { featuredListings } = collectionsHub;
     const {
@@ -232,9 +231,8 @@ export class Application {
       topCollectionChips,
     } = Application.settings.presentation;
 
-    // Populate languages, authors, snippets
+    // Populate languages, snippets
     languages.forEach(language => Language.createRecord(language));
-    authors.forEach(author => Author.createRecord(author));
     snippets.forEach(snippet => Snippet.createRecord(snippet));
 
     // Populate collections
