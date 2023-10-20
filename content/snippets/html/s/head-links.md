@@ -4,7 +4,6 @@ shortTitle: HTML head links template
 type: story
 language: html
 tags: [metadata,head]
-author: chalarangelo
 cover: boutique-home-office-4
 excerpt: Make your HTML documents more SEO-friendly by including these lines in your `<head>` element.
 dateModified: 2023-01-26

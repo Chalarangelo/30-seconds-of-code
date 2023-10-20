@@ -3,7 +3,6 @@ title: Apply the latest stash
 type: snippet
 language: git
 tags: [repository,stash]
-author: chalarangelo
 cover: palm-tree-house
 dateModified: 2021-04-13
 ---

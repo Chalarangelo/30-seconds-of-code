@@ -3,7 +3,6 @@ title: Value frequencies
 type: snippet
 language: javascript
 tags: [array,object]
-author: chalarangelo
 cover: tropical-waterfall
 dateModified: 2023-09-27
 ---

@@ -3,7 +3,6 @@ title: Shifting Card
 type: snippet
 language: css
 tags: [animation]
-author: chalarangelo
 cover: clouds-n-mountains
 dateModified: 2022-12-14
 ---

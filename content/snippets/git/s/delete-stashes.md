@@ -3,7 +3,6 @@ title: Delete all stashes
 type: snippet
 language: git
 tags: [repository,stash]
-author: chalarangelo
 cover: little-tree
 dateModified: 2021-04-13
 ---

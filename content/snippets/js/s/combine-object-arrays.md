@@ -3,7 +3,6 @@ title: Combine object arrays
 type: snippet
 language: javascript
 tags: [array,object]
-author: chalarangelo
 cover: digital-nomad-6
 dateModified: 2020-10-08
 ---

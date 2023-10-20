@@ -3,7 +3,6 @@ title: Nth root of number
 type: snippet
 language: javascript
 tags: [math]
-author: chalarangelo
 cover: tree-roots
 dateModified: 2021-01-06
 ---

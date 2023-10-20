@@ -3,7 +3,6 @@ title: Listen for an event only once
 type: snippet
 language: javascript
 tags: [browser,event]
-author: chalarangelo
 cover: fruit-feast
 dateModified: 2020-10-22
 ---

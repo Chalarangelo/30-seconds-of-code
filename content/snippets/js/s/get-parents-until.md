@@ -3,7 +3,6 @@ title: Get parents until element matches selector
 type: snippet
 language: javascript
 tags: [browser]
-author: chalarangelo
 cover: orange-coffee-4
 dateModified: 2021-01-06
 ---

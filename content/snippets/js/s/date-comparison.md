@@ -4,7 +4,6 @@ shortTitle: Date comparison
 type: question
 language: javascript
 tags: [date,comparison]
-author: chalarangelo
 cover: pineapple-at-work
 excerpt: Learn how you can compare two dates in JavaScript using various different techniques.
 dateModified: 2022-01-16

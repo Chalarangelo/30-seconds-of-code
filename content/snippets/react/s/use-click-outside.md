@@ -3,7 +3,6 @@ title: React useClickOutside hook
 type: snippet
 language: react
 tags: [hooks,effect,event]
-author: chalarangelo
 cover: clutter
 dateModified: 2020-11-16
 ---

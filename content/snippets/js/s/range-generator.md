@@ -3,7 +3,6 @@ title: Range generator
 type: snippet
 language: javascript
 tags: [function,generator]
-author: chalarangelo
 cover: dark-leaves-6
 dateModified: 2020-10-11
 ---

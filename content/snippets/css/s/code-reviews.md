@@ -4,7 +4,6 @@ shortTitle: CSS code reviews
 type: story
 language: css
 tags: [webdev]
-author: chalarangelo
 cover: green-css
 excerpt: Reviewing CSS code is a skill that takes time to master. Here are some tips from my personal experience to help you get started.
 dateModified: 2023-05-21

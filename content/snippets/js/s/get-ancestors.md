@@ -3,7 +3,6 @@ title: Get element ancestors
 type: snippet
 language: javascript
 tags: [browser]
-author: chalarangelo
 cover: interior-8
 dateModified: 2021-01-05
 ---

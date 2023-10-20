@@ -3,7 +3,6 @@ title: Image text overlay
 type: snippet
 language: css
 tags: [visual]
-author: chalarangelo
 cover: mountain-lake-cottage
 dateModified: 2021-10-13
 ---

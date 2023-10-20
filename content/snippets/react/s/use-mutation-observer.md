@@ -3,7 +3,6 @@ title: React useMutationObserver hook
 type: snippet
 language: react
 tags: [hooks,effect]
-author: chalarangelo
 cover: lemon-tea
 dateModified: 2021-11-23
 ---

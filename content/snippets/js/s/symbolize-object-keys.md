@@ -3,7 +3,6 @@ title: Symbolize object keys
 type: snippet
 language: javascript
 tags: [object]
-author: chalarangelo
 cover: computer-screens
 dateModified: 2021-08-01
 ---

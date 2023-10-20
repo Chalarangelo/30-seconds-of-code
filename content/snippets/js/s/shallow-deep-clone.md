@@ -4,7 +4,6 @@ shortTitle: Object cloning
 type: question
 language: javascript
 tags: [object]
-author: chalarangelo
 cover: pagodas
 excerpt: Learn how JavaScript handles mutable data, such as objects and arrays, and understand how shallow cloning and deep cloning work.
 dateModified: 2021-06-12

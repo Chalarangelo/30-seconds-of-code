@@ -3,7 +3,6 @@ title: Insert value at array index
 type: snippet
 language: javascript
 tags: [array]
-author: chalarangelo
 cover: messy-papers
 dateModified: 2020-10-20
 ---

@@ -3,7 +3,6 @@ title: K-nearest neighbors
 type: snippet
 language: javascript
 tags: [algorithm,array]
-author: chalarangelo
 cover: building-blocks
 dateModified: 2021-10-13
 ---

@@ -4,7 +4,6 @@ shortTitle: For loops for early breaking
 type: tip
 language: javascript
 tags: [array,loop]
-author: chalarangelo
 cover: armchair
 excerpt: Iteration in JavaScript can be done a handfuld of ways, most often using array methods, but sometimes a `for` loop is the best option.
 dateModified: 2021-06-12

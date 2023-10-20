@@ -4,7 +4,6 @@ shortTitle: Debounce function
 type: tip
 language: javascript
 tags: [function]
-author: chalarangelo
 cover: solitude-beach
 excerpt: Create a debounced function that waits a certain amount of time before invoking the provided function again.
 dateModified: 2023-10-12

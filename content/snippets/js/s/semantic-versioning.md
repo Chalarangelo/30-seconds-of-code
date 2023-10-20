@@ -4,7 +4,6 @@ shortTitle: Semantic Versioning (SemVer) explained
 type: story
 language: javascript
 tags: [node]
-author: chalarangelo
 cover: wet-lowland-golden-hour
 excerpt: Learn how semantic versioning works and how to use it to correctly version your software.
 dateModified: 2023-07-16

@@ -4,7 +4,6 @@ shortTitle: Conditional className
 type: tip
 language: react
 tags: [components]
-author: chalarangelo
 cover: succulent-red-light
 excerpt: In React components, you might need to conditionally apply a `className`. Learn how to handle empty values correctly using this handy tip.
 dateModified: 2021-11-07

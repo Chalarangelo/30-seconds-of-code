@@ -4,7 +4,6 @@ shortTitle: Remove property from object
 type: question
 language: javascript
 tags: [object]
-author: chalarangelo
 cover: brown-bird
 excerpt: Ever wanted to delete a property from a JavaScript object? Here are a few way you can accomplish that.
 dateModified: 2021-06-12

@@ -3,7 +3,6 @@ title: K-means clustering
 type: snippet
 language: javascript
 tags: [algorithm,array]
-author: chalarangelo
 cover: antelope
 dateModified: 2020-12-29
 ---

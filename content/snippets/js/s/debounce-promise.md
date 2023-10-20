@@ -4,7 +4,6 @@ shortTitle: Debounce promise
 type: tip
 language: javascript
 tags: [function,promise]
-author: chalarangelo
 excerpt: Easily create a debounced function that returns a promise.
 cover: chess-pawns
 dateModified: 2023-10-13

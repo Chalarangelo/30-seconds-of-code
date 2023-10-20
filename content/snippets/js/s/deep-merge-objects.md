@@ -3,7 +3,6 @@ title: Deep merge objects
 type: snippet
 language: javascript
 tags: [object,function]
-author: chalarangelo
 cover: coffee-drip
 dateModified: 2021-07-25
 ---

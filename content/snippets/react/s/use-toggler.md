@@ -3,7 +3,6 @@ title: React useToggler hook
 type: snippet
 language: react
 tags: [hooks,state,callback]
-author: chalarangelo
 cover: tram-car-2
 dateModified: 2020-11-27
 ---

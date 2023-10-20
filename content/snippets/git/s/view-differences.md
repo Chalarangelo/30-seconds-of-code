@@ -3,7 +3,6 @@ title: View differences in changes
 type: snippet
 language: git
 tags: [commit,branch]
-author: chalarangelo
 cover: plant-candle
 dateModified: 2021-04-13
 ---

@@ -3,7 +3,6 @@ title: Collection is empty
 type: snippet
 language: python
 tags: [list,dictionary,string]
-author: chalarangelo
 cover: salad-1
 dateModified: 2023-01-12
 ---

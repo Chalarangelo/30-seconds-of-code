@@ -3,7 +3,6 @@ title: Array is contained in other array
 type: snippet
 language: javascript
 tags: [array]
-author: chalarangelo
 cover: island-corridor
 dateModified: 2020-10-22
 ---

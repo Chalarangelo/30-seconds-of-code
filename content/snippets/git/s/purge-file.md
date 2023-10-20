@@ -3,7 +3,6 @@ title: Purge a file from history
 type: snippet
 language: git
 tags: [repository,remote]
-author: chalarangelo
 cover: white-flower
 dateModified: 2021-04-13
 ---

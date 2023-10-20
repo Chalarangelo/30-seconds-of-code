@@ -3,7 +3,6 @@ title: Week of year
 type: snippet
 language: javascript
 tags: [date]
-author: chalarangelo
 cover: godray-computer-mug
 dateModified: 2021-08-15
 ---

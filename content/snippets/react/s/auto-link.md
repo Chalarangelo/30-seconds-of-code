@@ -3,7 +3,6 @@ title: Automatic text linking
 type: snippet
 language: react
 tags: [components,fragment,regexp]
-author: chalarangelo
 cover: red-petals
 dateModified: 2020-11-03
 ---

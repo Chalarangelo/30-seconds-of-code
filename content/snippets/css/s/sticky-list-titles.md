@@ -3,7 +3,6 @@ title: List with sticky section headings
 type: snippet
 language: css
 tags: [visual]
-author: chalarangelo
 cover: interior-7
 dateModified: 2020-12-30
 ---

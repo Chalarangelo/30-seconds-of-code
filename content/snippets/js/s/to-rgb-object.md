@@ -3,7 +3,6 @@ title: RGB to object
 type: snippet
 language: javascript
 tags: [string,regexp]
-author: chalarangelo
 cover: blue-bench
 dateModified: 2020-10-22
 ---

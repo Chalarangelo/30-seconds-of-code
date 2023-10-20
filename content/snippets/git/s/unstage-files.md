@@ -3,7 +3,6 @@ title: Remove files from the staging area
 type: snippet
 language: git
 tags: [commit]
-author: chalarangelo
 cover: coconuts
 dateModified: 2021-04-13
 ---

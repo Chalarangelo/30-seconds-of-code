@@ -4,7 +4,6 @@ shortTitle: Object type checking with Proxy
 type: story
 language: javascript
 tags: [object,type,proxy]
-author: chalarangelo
 cover: customs
 excerpt: Learn how to type check objects at runtime using the powerful Proxy object in JavaScript.
 dateModified: 2023-04-23

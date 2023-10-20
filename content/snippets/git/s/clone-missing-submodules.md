@@ -3,7 +3,6 @@ title: Clone missing submodules
 type: snippet
 language: git
 tags: [repository,submodule]
-author: chalarangelo
 cover: forest-balcony
 dateModified: 2021-04-13
 ---

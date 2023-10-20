@@ -3,7 +3,6 @@ title: Powerset
 type: snippet
 language: python
 tags: [math,list]
-author: chalarangelo
 cover: rock-climbing
 dateModified: 2020-11-02
 ---

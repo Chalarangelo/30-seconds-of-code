@@ -3,7 +3,6 @@ title: View branches sorted by date
 type: snippet
 language: git
 tags: [repository,branch]
-author: chalarangelo
 cover: sea-view
 dateModified: 2021-04-13
 ---

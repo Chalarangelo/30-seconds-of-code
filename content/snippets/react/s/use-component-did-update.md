@@ -3,7 +3,6 @@ title: React useComponentDidUpdate hook
 type: snippet
 language: react
 tags: [hooks,effect]
-author: chalarangelo
 cover: flower-portrait-10
 dateModified: 2021-11-09
 ---

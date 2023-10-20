@@ -4,7 +4,6 @@ shortTitle: Input element value as number
 type: tip
 language: javascript
 tags: [browser,input]
-author: chalarangelo
 cover: mac-and-coffee
 excerpt: Ever wanted to get the value of an HTML input element as a number? Learn an easy way to do it with this handy trick.
 dateModified: 2021-06-12

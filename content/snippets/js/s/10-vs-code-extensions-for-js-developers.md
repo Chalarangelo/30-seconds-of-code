@@ -4,7 +4,6 @@ shortTitle: Essential VS Code extensions
 type: story
 language: javascript
 tags: [devtools,vscode]
-author: chalarangelo
 cover: computer-screens
 excerpt: Boost your productivity with these 10 essential VS Code extensions for JavaScript developers.
 unlisted: true

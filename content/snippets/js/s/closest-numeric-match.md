@@ -3,7 +3,6 @@ title: Closest numeric match
 type: snippet
 language: javascript
 tags: [math]
-author: chalarangelo
 cover: green-cabin-cow
 dateModified: 2022-03-30
 ---

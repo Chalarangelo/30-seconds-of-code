@@ -3,7 +3,6 @@ title: File drag and drop area
 type: snippet
 language: react
 tags: [components,input,state,effect,event]
-author: chalarangelo
 cover: man-red-sunset
 dateModified: 2021-10-13
 ---

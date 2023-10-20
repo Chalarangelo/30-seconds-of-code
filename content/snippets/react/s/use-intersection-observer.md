@@ -3,7 +3,6 @@ title: React useIntersectionObserver hook
 type: snippet
 language: react
 tags: [hooks,state,effect]
-author: chalarangelo
 cover: light-leaves
 dateModified: 2021-09-10
 ---

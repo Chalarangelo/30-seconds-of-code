@@ -4,7 +4,6 @@ shortTitle: Pass-by-value or pass-by-reference
 type: question
 language: javascript
 tags: [function,object]
-author: chalarangelo
 cover: baloons-field
 excerpt: How JavaScript handles passing data is a source of confusion and bugs for many developers, especially when it comes to object types.
 dateModified: 2021-12-05

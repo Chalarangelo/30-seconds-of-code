@@ -3,7 +3,6 @@ title: Expandable object tree view
 type: snippet
 language: react
 tags: [components,object,state,recursion]
-author: chalarangelo
 cover: digital-nomad-9
 dateModified: 2020-11-16
 ---

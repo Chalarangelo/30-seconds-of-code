@@ -4,7 +4,6 @@ shortTitle: CSS variables
 type: question
 language: css
 tags: [visual,layout]
-author: chalarangelo
 cover: css-variables
 excerpt: Learn how CSS custom properties (CSS variables) work and what you can use them for in your code and designs.
 dateModified: 2021-09-28

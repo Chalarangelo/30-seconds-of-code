@@ -3,7 +3,6 @@ title: React useKeyPress hook
 type: snippet
 language: react
 tags: [hooks,state,effect,event]
-author: chalarangelo
 cover: yellow-white-mug-1
 dateModified: 2021-09-07
 ---

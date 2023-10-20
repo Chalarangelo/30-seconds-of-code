@@ -3,7 +3,6 @@ title: React useIsomporphicEffect hook
 type: snippet
 language: react
 tags: [hooks,effect]
-author: chalarangelo
 cover: jars-on-shelf-2
 dateModified: 2021-10-13
 ---

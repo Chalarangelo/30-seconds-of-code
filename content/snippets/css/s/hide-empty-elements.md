@@ -3,7 +3,6 @@ title: Hide empty elements
 type: snippet
 language: css
 tags: [visual]
-author: chalarangelo
 cover: metro-arrival
 dateModified: 2022-11-18
 ---

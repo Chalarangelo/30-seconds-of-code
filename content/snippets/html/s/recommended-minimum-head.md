@@ -4,7 +4,6 @@ shortTitle: HTML head template
 type: story
 language: html
 tags: [metadata,head]
-author: chalarangelo
 cover: boutique-home-office-1
 excerpt: Ensure your HTML documents are properly structured by including these lines in your `<head>` element.
 dateModified: 2023-01-18

@@ -3,7 +3,6 @@ title: Get base URL
 type: snippet
 language: javascript
 tags: [string,browser,regexp]
-author: chalarangelo
 cover: blue-lake
 dateModified: 2021-01-03
 ---

@@ -3,7 +3,6 @@ title: Random boolean value
 type: snippet
 language: javascript
 tags: [math,random]
-author: chalarangelo
 cover: malibu
 dateModified: 2021-01-20
 ---

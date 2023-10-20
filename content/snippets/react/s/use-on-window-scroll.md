@@ -3,7 +3,6 @@ title: React useOnWindowScroll hook
 type: snippet
 language: react
 tags: [hooks,effect,event]
-author: chalarangelo
 cover: planning
 dateModified: 2021-12-08
 ---

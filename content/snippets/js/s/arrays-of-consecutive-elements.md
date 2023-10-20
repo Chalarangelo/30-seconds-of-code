@@ -3,7 +3,6 @@ title: Arrays of consecutive elements
 type: snippet
 language: javascript
 tags: [array]
-author: chalarangelo
 cover: colorful-pots
 dateModified: 2022-04-06
 ---

@@ -3,7 +3,6 @@ title: Full-width image
 type: snippet
 language: css
 tags: [layout]
-author: chalarangelo
 cover: yellow-white-mug-2
 dateModified: 2021-01-07
 ---

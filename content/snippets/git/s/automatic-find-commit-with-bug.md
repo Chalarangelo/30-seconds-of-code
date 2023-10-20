@@ -3,7 +3,6 @@ title: Automatically find the commit that introduced a bug
 type: snippet
 language: git
 tags: [commit,branch]
-author: chalarangelo
 cover: pink-flower-tree
 dateModified: 2021-04-13
 ---

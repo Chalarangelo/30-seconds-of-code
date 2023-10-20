@@ -4,7 +4,6 @@ shortTitle: Short commits summary
 type: story
 language: git
 tags: [repository,commit]
-author: chalarangelo
 cover: dark-city
 excerpt: Learn how to view a short summary of your Git commits using git log.
 dateModified: 2023-05-23

@@ -4,7 +4,6 @@ shortTitle: Array tricks using the spread operator
 type: story
 language: javascript
 tags: [array]
-author: chalarangelo
 cover: succulent-crowd
 excerpt: JavaScript’s spread operator is a very versatile tool. Here are some simple ways to use it.
 dateModified: 2022-04-17

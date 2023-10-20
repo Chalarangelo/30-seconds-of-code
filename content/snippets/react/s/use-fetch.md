@@ -3,7 +3,6 @@ title: React useFetch hook
 type: snippet
 language: react
 tags: [hooks,effect,state]
-author: chalarangelo
 cover: coworking-space
 dateModified: 2022-05-01
 ---

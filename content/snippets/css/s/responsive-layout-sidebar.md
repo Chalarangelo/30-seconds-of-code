@@ -3,7 +3,6 @@ title: Responsive layout with sidebar
 type: snippet
 language: css
 tags: [layout]
-author: chalarangelo
 cover: red-petals
 dateModified: 2020-09-16
 ---

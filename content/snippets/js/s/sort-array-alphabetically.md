@@ -3,7 +3,6 @@ title: Sort array alphabetically
 type: snippet
 language: javascript
 tags: [array]
-author: chalarangelo
 cover: boutique-home-office-1
 dateModified: 2023-02-15
 ---

@@ -3,7 +3,6 @@ title: Custom checkbox
 type: snippet
 language: css
 tags: [visual,animation]
-author: chalarangelo
 cover: interior-8
 dateModified: 2021-10-11
 ---

@@ -3,7 +3,6 @@ title: Toggle element in array
 type: snippet
 language: javascript
 tags: [array]
-author: chalarangelo
 cover: digital-nomad-7
 dateModified: 2022-04-15
 ---

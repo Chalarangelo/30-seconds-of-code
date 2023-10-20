@@ -3,7 +3,6 @@ title: Add event listener to all targets
 type: snippet
 language: javascript
 tags: [browser,event]
-author: chalarangelo
 cover: duck-plants
 dateModified: 2021-04-22
 ---

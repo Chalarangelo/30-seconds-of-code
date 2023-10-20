@@ -3,7 +3,6 @@ title: View difference between two branches
 type: snippet
 language: git
 tags: [branch]
-author: chalarangelo
 cover: two-doors
 dateModified: 2021-04-13
 ---

@@ -4,7 +4,6 @@ shortTitle: The "this" keyword in JavaScript
 type: story
 language: javascript
 tags: [function,object]
-author: chalarangelo
 cover: u-got-this
 excerpt: JavaScript's `this` keyword can confuse beginners and veterans alike. Learn how it works in different scenarios and start using it correctly.
 dateModified: 2021-06-12

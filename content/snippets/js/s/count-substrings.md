@@ -3,7 +3,6 @@ title: Count substrings of string
 type: snippet
 language: javascript
 tags: [string,algorithm]
-author: chalarangelo
 cover: obelisk
 dateModified: 2021-01-08
 ---

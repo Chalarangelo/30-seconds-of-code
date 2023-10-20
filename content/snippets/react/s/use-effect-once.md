@@ -3,7 +3,6 @@ title: React useEffectOnce hook
 type: snippet
 language: react
 tags: [hooks,effect]
-author: chalarangelo
 cover: pop-of-green
 dateModified: 2021-11-16
 ---
