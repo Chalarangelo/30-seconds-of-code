@@ -25,7 +25,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[markdown]": {
-    "editor.wordWrapColumn": 100,
+    "editor.wordWrapColumn": 80,
     "editor.wordWrap": "wordWrapColumn"
   },
   "workbench.editor.labelFormat": "short",
