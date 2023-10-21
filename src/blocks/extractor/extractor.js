@@ -126,6 +126,23 @@ export class Extractor {
     Extractor.data.snippets = snippets;
   };
 
+  static updateSnippetData = (id, snippetData) => {
+    const logger = new Logger('Extractor.updateSnippetData');
+    logger.log(`Updating data for snippet ${id}`);
+
+    const index = Extractor.data.snippets.findIndex(
+      snippet => snippet.id === id
+    );
+
+    if (index === -1) {
+      Extractor.data.snippets.push(snippetData);
+      logger.success(`Finished creating snippet ${id}`);
+    } else {
+      Extractor.data.snippets[index] = snippetData;
+      logger.success(`Finished updating snippet ${id}`);
+    }
+  };
+
   static parseSnippet = snippet => {
     const logger = new Logger('Extractor.parseSnippet');
 
