@@ -1,15 +1,15 @@
 ---
-title: Run promises in series
-type: snippet
+title: Run JavaScript promises in series
+shortTitle: Run promises in series
+type: tip
 language: javascript
 tags: [function,promise]
 cover: sail-away
-dateModified: 2020-10-22
+excerpt: Learn how to resolve promises one after another (sequentially) in JavaScript.
+dateModified: 2023-10-15
 ---
 
-Runs an array of promises in series.
-
-- Use `Array.prototype.reduce()` to create a promise chain, where each promise returns the next promise when resolved.
+JavaScript **promises are asynchronous**, meaning that they are executed in parallel. This is great for performance, but sometimes you need to execute promises one after another (**sequentially**). This can be easily accomplished by **chaining promises** together, using `Array.prototype.reduce()`. Each promise in the chain returns the next promise when resolved, using `Promise.prototype.then()`.
 
 ```js
 const runPromisesInSeries = ps =>
