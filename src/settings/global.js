@@ -5,7 +5,6 @@ export default {
   shortName: '30s',
   ownerName: 'Angelos Chalaris',
   ownerUrl: 'https://github.com/Chalarangelo',
-  orgName: '30 seconds of code',
   websiteUrl: 'https://www.30secondsofcode.org',
   githubRepoUrl: 'https://github.com/30-seconds/30-seconds-of-code',
   licenseUrl: 'https://creativecommons.org/licenses/by/4.0/',

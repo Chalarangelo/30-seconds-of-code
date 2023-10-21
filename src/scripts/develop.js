@@ -1,7 +1,7 @@
 import { Application } from '#blocks/application';
 
 export const build = async () => {
-  Application.Logger.log('Build process is starting up...\n');
+  Application.Logger.log('Development process is starting up...\n');
   Application.Logger.logProcessInfo();
 
   await Application.extractAndInitialize();
