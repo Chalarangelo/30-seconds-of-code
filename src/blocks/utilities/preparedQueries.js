@@ -1,10 +1,12 @@
 import { globSync } from 'glob';
+import { YAMLHandler } from '#blocks/utilities/yamlHandler';
 
 const preparedQueriesCache = new Map();
 
 // Image asset constants
 const supportedExtensions = ['jpeg', 'jpg', 'png', 'webp', 'tif', 'tiff'];
 const coverAssetPath = 'content/assets/cover';
+const redirectsPath = 'content/redirects.yaml';
 
 export class PreparedQueries {
   /**
@@ -94,4 +96,33 @@ export class PreparedQueries {
       return preparedQueriesCache.get(cacheKey);
     };
 
+  /**
+   * Returns an array of matching slugs for which the given slug is an alternative.
+   * @param {string} slug - The slug to match (e.g. '/js/s/bifurcate-by')
+   */
+  static pageAlternativeUrls = () => slug => {
+    const cacheKey = `pageAlternativeUrls#${slug}`;
+
+    if (!preparedQueriesCache.has(cacheKey)) {
+      const redirects = YAMLHandler.fromFile(redirectsPath);
+
+      const lookupPaths = [slug];
+      const redirectedPaths = new Set();
+
+      while (lookupPaths.length) {
+        redirectedPaths.add(lookupPaths[0]);
+
+        const fromPaths = redirects.filter(r => r.to === lookupPaths[0]);
+        for (const fromPath of fromPaths) {
+          if (!redirectedPaths.has(fromPath.from)) {
+            lookupPaths.push(fromPath.from);
+            redirectedPaths.add(fromPath.from);
+          }
+        }
+        lookupPaths.shift();
+      }
+      preparedQueriesCache.set(cacheKey, [...redirectedPaths]);
+    }
+    return preparedQueriesCache.get(cacheKey);
+  };
 }
