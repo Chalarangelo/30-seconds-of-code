@@ -15,25 +15,30 @@ const codeMatcher = new RegExp(
 );
 
 export class Extractor {
-  static extract = async () => {
+  static data = {
+    collections: [],
+    snippets: [],
+    languages: [],
+    collectionsHub: {},
+  };
+  static languageData = new Map();
+
+  static prepared = false;
+
+  static prepare = async () => {
     const { rawContentPath: contentDir } = pathSettings;
-    const languageData = Extractor.extractLanguageData(contentDir);
-    const collectionConfigs = Extractor.extractCollectionConfigs(contentDir);
-    const snippets = await Extractor.extractSnippets(contentDir, languageData);
-    const collectionsHubConfig =
-      Extractor.extractCollectionsHubConfig(contentDir);
-    // Language data not passed here by design, pass only if needed
-    const data = {
-      collections: collectionConfigs,
-      snippets,
-      languages: [...languageData].map(([id, data]) => {
-        const { references, ...restData } = data;
-        return { ...restData };
-      }),
-      collectionsHub: collectionsHubConfig,
-    };
-    await Extractor.writeData(data);
-    return data;
+    Extractor.extractLanguageData(contentDir);
+    Extractor.extractCollectionConfigs(contentDir);
+    await Extractor.extractSnippets(contentDir, Extractor.languageData);
+    Extractor.extractCollectionsHubConfig(contentDir);
+    Extractor.prepared = true;
+  };
+
+  static extract = async () => {
+    if (!Extractor.prepared) await Extractor.prepare();
+
+    await Extractor.writeData();
+    return Extractor.data;
   };
 
   static extractCollectionConfigs = contentDir => {
@@ -74,7 +79,7 @@ export class Extractor {
       };
     });
     logger.success('Finished extracting collection configurations');
-    return configs;
+    Extractor.data.collections = configs;
   };
 
   static extractLanguageData = contentDir => {
@@ -94,7 +99,11 @@ export class Extractor {
       return acc;
     }, new Map());
     logger.success('Finished extracting language data');
-    return languageData;
+    Extractor.languageData = languageData;
+    Extractor.data.languages = [...languageData].map(([id, data]) => {
+      const { references, ...restData } = data;
+      return { ...restData };
+    });
   };
 
   static extractSnippets = async (contentDir, languageData) => {
@@ -222,7 +231,7 @@ export class Extractor {
       snippets = parsedData;
     });
     logger.success('Finished extracting snippets');
-    return snippets;
+    Extractor.data.snippets = snippets;
   };
 
   static extractCollectionsHubConfig = contentDir => {
@@ -230,15 +239,15 @@ export class Extractor {
     logger.log('Extracting hub pages configuration');
     const hubConfig = YAMLHandler.fromFile(`${contentDir}/hub.yaml`);
     logger.log('Finished extracting hub pages configuration');
-    return hubConfig;
+    Extractor.data.collectionsHub = hubConfig;
   };
 
-  static writeData = data => {
+  static writeData = () => {
     const logger = new Logger('Extractor.writeData');
     logger.log('Writing data to disk');
     return JSONHandler.toFile(
       `${pathSettings.contentPath}/content.json`,
-      data
+      Extractor.data
     ).then(() => logger.success('Finished writing data'));
   };
 }
