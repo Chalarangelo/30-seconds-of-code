@@ -159,6 +159,22 @@ export class Extractor {
     }
   };
 
+  static unlinkSnippetData = id => {
+    const logger = new Logger('Extractor.unlinkSnippetData');
+    logger.log(`Unlinking data for snippet ${id}`);
+
+    const index = Extractor.data.snippets.findIndex(
+      snippet => snippet.id === id
+    );
+
+    if (index === -1) {
+      logger.warn(`Snippet ${id} not found in data`);
+    } else {
+      Extractor.data.snippets.splice(index, 1);
+      logger.success(`Finished unlinking snippet ${id}`);
+    }
+  };
+
   static parseSnippet = snippet => {
     const logger = new Logger('Extractor.parseSnippet');
 
