@@ -126,6 +126,22 @@ export class Extractor {
     Extractor.data.snippets = snippets;
   };
 
+  static extractSnippet = async snippetPath => {
+    const logger = new Logger('Extractor.extractSnippet');
+    logger.log(`Extracting snippet ${snippetPath}`);
+
+    let snippet = {};
+
+    await TextParser.fromPath(snippetPath).then(snippetData => {
+      snippet = Extractor.parseSnippet(snippetData);
+    });
+
+    Extractor.updateSnippetData(snippet.id, snippet);
+    logger.success(`Finished extracting snippet ${snippetPath}`);
+
+    return [snippet.id, snippet];
+  };
+
   static updateSnippetData = (id, snippetData) => {
     const logger = new Logger('Extractor.updateSnippetData');
     logger.log(`Updating data for snippet ${id}`);
