@@ -84,10 +84,14 @@ export class PreparedQueries {
             queryMatchers.push(snippet => snippet.primaryTag === tag);
           else queryMatchers.push(snippet => snippet.tags.includes(tag));
 
-        return Snippet.records.where(snippet =>
-          queryMatchers.every(matcher => matcher(snippet))
+        preparedQueriesCache.set(
+          cacheKey,
+          Snippet.records.where(snippet =>
+            queryMatchers.every(matcher => matcher(snippet))
+          )
         );
       }
       return preparedQueriesCache.get(cacheKey);
     };
+
 }
