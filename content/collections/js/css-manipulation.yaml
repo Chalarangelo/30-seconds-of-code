@@ -10,8 +10,7 @@ snippetIds:
   - js/s/set-style-for-html-element
   - js/s/add-styles-to-html-element
   - js/s/inject-css
-  - js/s/hide-html-elements
-  - js/s/show-html-elements
+  - js/s/show-hide-html-elements
   - js/s/remove-attributes
   - js/s/prefix-css-property
 splash: planning.png
