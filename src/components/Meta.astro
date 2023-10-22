@@ -19,15 +19,6 @@ const titleString = title
 // Load scripts
 const scripts = [];
 
-// Adsense
-if (process.env.NODE_ENV !== 'development') {
-  scripts.push({
-    async: true,
-    src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9823478685429367',
-    crossOrigin: 'anonymous',
-  });
-}
-
 if (structuredData) {
   scripts.push({
     type: 'application/ld+json',
