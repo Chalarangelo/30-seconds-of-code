@@ -3,7 +3,6 @@ import '../styles/index.scss';
 
 import Meta from '#components/Meta';
 import Footer from '#components/Footer';
-import CookieConsentPopup from '#components/CookieConsentPopup';
 import Omnisearch from '#components/Omnisearch';
 
 import settings from '#settings/global';
@@ -18,8 +17,6 @@ const {
   canonical,
   isFaq = false,
 } = Astro.props;
-
-const isDevelopment = process.env.NODE_ENV === 'development';
 ---
 
 <html lang='en'>
@@ -98,7 +95,6 @@ const isDevelopment = process.env.NODE_ENV === 'development';
         <slot />
         <Footer />
       </div>
-      {!isDevelopment ? <CookieConsentPopup /> : null}
       <Omnisearch />
     </div>
   </body>
