@@ -973,12 +973,6 @@
 - from: /js/s/remove-event-listener-all
   to: /js/s/remove-multiple-event-listeners
   status: 301!
-- from: /js/s/hide
-  to: /js/s/hide-html-elements
-  status: 301!
-- from: /js/s/show
-  to: /js/s/show-html-elements
-  status: 301!
 - from: /js/s/atob
   to: /js/s/decode-base64-encoded-string
   status: 301!
@@ -1941,4 +1935,16 @@
   status: 301!
 - from: /js/s/bifurcate-array-based-on-values
   to: /js/s/bifurcate-array
+  status: 301!
+- from: /js/s/hide
+  to: /js/s/show-hide-html-elements
+  status: 301!
+- from: /js/s/show
+  to: /js/s/show-hide-html-elements
+  status: 301!
+- from: /js/s/hide-html-elements
+  to: /js/s/show-hide-html-elements
+  status: 301!
+- from: /js/s/show-html-elements
+  to: /js/s/show-hide-html-elements
   status: 301!
