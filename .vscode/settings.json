@@ -40,6 +40,7 @@
     "**/CONTRIBUTING.md": true,
     "**/LICENSE": true,
     "**/README.md": true,
+    "globals.js": true
   },
   "eslint.experimental.useFlatConfig": true
 }
