@@ -52,32 +52,6 @@ if (breadcrumbsData) {
     }),
   });
 }
-
-scripts.push({
-  async: true,
-  src: `https://www.googletagmanager.com/gtag/js?id=${settings.googleAnalytics.id}`,
-});
-// GTAG
-scripts.push({
-  innerHTML: `
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag(
-    'consent',
-    'default',
-    ${JSON.stringify(settings.googleAnalytics.consent)}
-  );
-  gtag(
-    'config',
-    '${settings.googleAnalytics.id}',
-    ${JSON.stringify(settings.googleAnalytics.config)}
-  );
-  `,
-});
-
-// NOTE: The pageview was set to true in settings, no programmatic
-// pageviews any more and we'll see how it goes.
 ---
 
 <title>{titleString}</title>
@@ -93,7 +67,6 @@ scripts.push({
     <script {...rest} set:html={innerHTML} />
   ))
 }
-<link rel='preconnect dns-prefetch' href='https://www.google-analytics.com' />
 <link rel='sitemap' href='/sitemap.xml' type='application/xml' />
 <link
   rel='alternate'
