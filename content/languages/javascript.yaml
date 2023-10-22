@@ -746,3 +746,5 @@ references:
   Element.attributes: https://developer.mozilla.org/en-US/docs/Web/API/Element/attributes
   Element.removeAttribute(): >-
     https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute
+  CSSStyleDeclaration: >-
+    https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration
