@@ -3,7 +3,6 @@ title: Unwind object
 type: snippet
 language: javascript
 tags: [object]
-author: chalarangelo
 cover: orange-coffee
 dateModified: 2022-04-18
 ---

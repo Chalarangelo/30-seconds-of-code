@@ -1,10 +1,9 @@
 ---
-title: "Tip: Compare strings regardless of case and accent"
+title: Compare strings regardless of case and accent
 shortTitle: Case and accent-insensitive string comparison
 type: tip
 language: javascript
 tags: [string,comparison]
-author: chalarangelo
 cover: memories-of-pineapple-1
 excerpt: Here's a quick tip on how to compare and sort arrays of strings, ignoring case and accents.
 dateModified: 2022-07-17

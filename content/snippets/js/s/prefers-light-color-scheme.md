@@ -3,7 +3,6 @@ title: User prefers light color scheme
 type: snippet
 language: javascript
 tags: [browser]
-author: chalarangelo
 cover: dark-mode
 dateModified: 2020-10-22
 ---

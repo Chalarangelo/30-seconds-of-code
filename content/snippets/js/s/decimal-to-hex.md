@@ -1,10 +1,9 @@
 ---
-title: "Tip: Convert decimal number to hexadecimal"
+title: Convert decimal number to hexadecimal
 shortTitle: Decimal to hexadecimal
 type: tip
 language: javascript
 tags: [math]
-author: chalarangelo
 cover: waves-from-above
 excerpt: Ever needed to convert a decimal number to hexadecimal? Here's a quick and easy way to do it.
 dateModified: 2022-09-21

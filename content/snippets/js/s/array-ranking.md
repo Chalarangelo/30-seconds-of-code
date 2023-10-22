@@ -3,7 +3,6 @@ title: Array ranking
 type: snippet
 language: javascript
 tags: [array,math]
-author: chalarangelo
 cover: eagle
 dateModified: 2022-04-13
 ---

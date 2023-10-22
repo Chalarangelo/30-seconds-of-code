@@ -3,7 +3,6 @@ title: Levenshtein distance
 type: snippet
 language: javascript
 tags: [string,algorithm]
-author: chalarangelo
 cover: purple-sunset-waves
 dateModified: 2020-12-29
 ---

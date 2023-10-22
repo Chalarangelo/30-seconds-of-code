@@ -3,7 +3,6 @@ title: Array of element's siblings
 type: snippet
 language: javascript
 tags: [browser]
-author: chalarangelo
 cover: little-white-flowers
 dateModified: 2020-10-19
 ---

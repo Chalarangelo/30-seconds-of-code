@@ -2,7 +2,6 @@
 title: Bash Shortcuts Cheat Sheet
 type: cheatsheet
 tags: [webdev,bash,cheatsheet]
-author: chalarangelo
 cover: terminal
 excerpt: Maximize your productivity when working with a bash or other shell terminal by using these keyboard shortcuts.
 dateModified: 2021-06-12

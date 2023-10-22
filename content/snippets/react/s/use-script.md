@@ -3,7 +3,6 @@ title: React useScript hook
 type: snippet
 language: react
 tags: [hooks,effect,state,event]
-author: chalarangelo
 cover: travel-mug-3
 dateModified: 2021-10-08
 ---

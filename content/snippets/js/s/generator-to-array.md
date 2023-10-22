@@ -3,7 +3,6 @@ title: Generator to array
 type: snippet
 language: javascript
 tags: [function,array,generator]
-author: chalarangelo
 cover: messy-papers
 dateModified: 2020-12-31
 ---

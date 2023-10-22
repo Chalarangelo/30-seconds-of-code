@@ -3,7 +3,6 @@ title: React useCopyToClipboard hook
 type: snippet
 language: react
 tags: [hooks,effect,state,callback]
-author: chalarangelo
 cover: antelope
 dateModified: 2020-11-16
 ---

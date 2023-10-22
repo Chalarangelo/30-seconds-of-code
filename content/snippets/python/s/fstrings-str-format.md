@@ -1,5 +1,5 @@
 ---
-title: "Tip: 2 ways to format a string in Python"
+title: 2 ways to format a string in Python
 shortTitle: String formatting
 type: tip
 language: python

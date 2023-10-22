@@ -3,7 +3,6 @@ title: React useBodyScrollLock hook
 type: snippet
 language: react
 tags: [hooks,effect]
-author: chalarangelo
 cover: folded-map
 dateModified: 2021-09-02
 ---

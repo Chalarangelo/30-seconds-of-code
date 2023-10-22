@@ -3,7 +3,6 @@ title: Replace or append array value
 type: snippet
 language: javascript
 tags: [array]
-author: chalarangelo
 cover: boutique-home-office-2
 dateModified: 2023-02-19
 ---

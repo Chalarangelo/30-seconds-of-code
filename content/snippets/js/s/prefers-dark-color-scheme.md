@@ -3,7 +3,6 @@ title: User prefers dark color scheme
 type: snippet
 language: javascript
 tags: [browser]
-author: chalarangelo
 cover: hiking-walking
 dateModified: 2020-10-22
 ---

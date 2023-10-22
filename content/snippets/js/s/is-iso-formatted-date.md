@@ -3,7 +3,6 @@ title: String is ISO formatted date
 type: snippet
 language: javascript
 tags: [date]
-author: chalarangelo
 cover: icebreaker
 dateModified: 2020-11-29
 ---

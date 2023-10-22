@@ -1,10 +1,9 @@
 ---
-title: "Tip: Find the n min or max elements in a JavaScript array"
+title: Find the n min or max elements in a JavaScript array
 shortTitle: N min or max elements of an array
 type: tip
 language: javascript
 tags: [math,array]
-author: chalarangelo
 cover: digital-nomad-15
 excerpt: Find the `n` minimum or maximum elements in a JavaScript array quickly and easily.
 dateModified: 2023-10-05

@@ -3,7 +3,6 @@ title: Check if sessionStorage is enabled
 type: snippet
 language: javascript
 tags: [browser]
-author: chalarangelo
 cover: flower-camera
 dateModified: 2020-12-31
 ---

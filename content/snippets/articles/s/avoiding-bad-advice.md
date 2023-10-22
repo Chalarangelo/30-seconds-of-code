@@ -3,7 +3,6 @@ title: Beware of Bad Programming Advice - Spotting Senior Juniorism
 shortTitle: Avoiding Bad Programming Advice
 type: story
 tags: [webdev,career,programming]
-author: chalarangelo
 cover: inside-weather
 excerpt: Don't fall victim to bad advice! Learn to identify "senior juniorism", and develop critical thinking to make better coding decisions.
 dateModified: 2023-06-04

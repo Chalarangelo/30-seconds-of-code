@@ -3,7 +3,6 @@ title: Check if localStorage is enabled
 type: snippet
 language: javascript
 tags: [browser]
-author: chalarangelo
 cover: guitar-living-room
 dateModified: 2020-12-31
 ---

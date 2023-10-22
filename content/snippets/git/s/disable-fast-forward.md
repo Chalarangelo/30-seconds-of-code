@@ -3,7 +3,6 @@ title: Disable fast forward merging by default
 type: snippet
 language: git
 tags: [configuration,repository]
-author: chalarangelo
 cover: people-on-beach
 dateModified: 2021-07-03
 ---

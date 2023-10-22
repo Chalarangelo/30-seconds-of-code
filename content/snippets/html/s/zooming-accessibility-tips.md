@@ -4,7 +4,6 @@ shortTitle: Accessibility and maximum-scale
 type: story
 language: html
 tags: [accessibility,metadata,head]
-author: chalarangelo
 cover: camera-zoom
 excerpt: Using the viewport meta tag incorrectly can harm your website's accessibility. Learn how to prevent problems with this handy guide.
 unlisted: true

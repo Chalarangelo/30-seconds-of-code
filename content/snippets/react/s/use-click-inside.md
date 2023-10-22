@@ -3,7 +3,6 @@ title: React useClickInside hook
 type: snippet
 language: react
 tags: [hooks,effect,event]
-author: chalarangelo
 cover: digital-nomad-10
 dateModified: 2020-11-16
 ---

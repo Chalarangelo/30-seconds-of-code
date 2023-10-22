@@ -3,7 +3,6 @@ title: Add styles to HTML element
 type: snippet
 language: javascript
 tags: [browser]
-author: chalarangelo
 cover: digital-nomad-14
 dateModified: 2021-01-07
 ---

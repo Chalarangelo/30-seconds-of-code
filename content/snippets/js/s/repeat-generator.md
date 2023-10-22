@@ -3,7 +3,6 @@ title: Repeat generator
 type: snippet
 language: javascript
 tags: [function,generator]
-author: chalarangelo
 cover: laptop-journey
 dateModified: 2020-10-11
 ---

@@ -3,7 +3,6 @@ title: Remove DOM element
 type: snippet
 language: javascript
 tags: [browser]
-author: chalarangelo
 cover: by-the-lighthouse
 dateModified: 2021-01-07
 ---

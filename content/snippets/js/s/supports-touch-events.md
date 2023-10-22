@@ -3,7 +3,6 @@ title: Device supports touch events
 type: snippet
 language: javascript
 tags: [browser]
-author: chalarangelo
 cover: man-red-sunset
 dateModified: 2020-10-22
 ---

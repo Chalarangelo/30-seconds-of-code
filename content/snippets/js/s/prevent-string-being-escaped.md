@@ -1,10 +1,9 @@
 ---
-title: "Tip: Prevent a string from being escaped in JavaScript"
+title: Prevent a string from being escaped in JavaScript
 shortTitle: Prevent string escaping
 type: tip
 language: javascript
 tags: [string]
-author: chalarangelo
 cover: glass-blowing
 excerpt: Strings in JavaScript can be escaped in various ways. But how do you prevent a string from being escaped? Here's a handy trick for that.
 dateModified: 2021-06-17

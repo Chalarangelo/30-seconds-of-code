@@ -4,7 +4,6 @@ type: snippet
 language: javascript
 tags: [math,random]
 cover: chess-pawns
-author: chalarangelo
 dateModified: 2023-04-03
 ---
 

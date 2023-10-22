@@ -3,7 +3,6 @@ title: Check if object has value
 type: snippet
 language: javascript
 tags: [object]
-author: chalarangelo
 cover: plant-corner
 dateModified: 2023-04-10
 ---

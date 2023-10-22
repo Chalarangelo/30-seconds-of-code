@@ -4,7 +4,6 @@ shortTitle: Redux-connected components testing
 type: story
 language: react
 tags: [testing]
-author: chalarangelo
 cover: sparkles
 excerpt: Testing Redux-connected components is pretty common. Learn how to use this simple utility function to speed up your testing.
 dateModified: 2021-11-07

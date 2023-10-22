@@ -5,7 +5,6 @@ shortTitle: Ends with substring
 language: javascript
 tags: [string]
 cover: boutique-home-office-4
-author: chalarangelo
 dateModified: 2022-08-01
 ---
 

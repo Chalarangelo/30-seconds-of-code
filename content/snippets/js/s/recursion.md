@@ -4,7 +4,6 @@ shortTitle: Recursion introduction
 type: question
 language: javascript
 tags: [function,recursion]
-author: chalarangelo
 cover: curve
 excerpt: Recursion is a very important programming concept all developers should be familiar with.
 dateModified: 2022-01-23

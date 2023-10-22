@@ -3,7 +3,6 @@ title: View current status
 type: snippet
 language: git
 tags: [branch]
-author: chalarangelo
 cover: periscope
 dateModified: 2021-04-13
 ---

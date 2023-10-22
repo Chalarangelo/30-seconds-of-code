@@ -4,7 +4,6 @@ shortTitle: Node.js test module introduction
 type: story
 language: javascript
 tags: [node,testing]
-author: chalarangelo
 cover: contemporary-desk
 excerpt: The Node.js test module is a new testing tool that's still in its early stages. Learn more about it in this short introduction.
 dateModified: 2023-04-30

@@ -3,7 +3,6 @@ title: React useDefault hook
 type: snippet
 language: react
 tags: [hooks,state]
-author: chalarangelo
 cover: flower-portrait-8
 dateModified: 2021-10-23
 ---

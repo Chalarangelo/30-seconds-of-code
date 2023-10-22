@@ -4,7 +4,6 @@ shortTitle: Doubly Linked List
 type: story
 language: javascript
 tags: [class]
-author: chalarangelo
 cover: purple-flower-macro-4
 excerpt: A doubly linked list is a linear data structure where each element points both to the next and the previous one.
 dateModified: 2021-08-12

@@ -3,7 +3,6 @@ title: Squiggle link hover effect
 type: snippet
 language: css
 tags: [animation,visual]
-author: chalarangelo
 cover: dreamy-flowers
 dateModified: 2023-01-10
 ---

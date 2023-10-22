@@ -3,7 +3,6 @@ title: Object to pairs
 type: snippet
 language: javascript
 tags: [object,array]
-author: chalarangelo
 cover: beach-overview
 dateModified: 2020-10-22
 ---

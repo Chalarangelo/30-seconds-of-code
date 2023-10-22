@@ -3,7 +3,6 @@ title: Chunk iterable
 type: snippet
 language: javascript
 tags: [function,generator,array]
-author: chalarangelo
 cover: two-doors
 dateModified: 2021-03-16
 ---

@@ -3,7 +3,6 @@ title: Binary function arity
 type: snippet
 language: javascript
 tags: [function]
-author: chalarangelo
 cover: blue-bird
 dateModified: 2020-10-18
 ---

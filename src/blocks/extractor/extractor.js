@@ -14,31 +14,35 @@ const codeMatcher = new RegExp(
   'g'
 );
 
+const { rawContentPath: contentDir } = pathSettings;
+
 export class Extractor {
-  static extract = async () => {
-    const { rawContentPath: contentDir } = pathSettings;
-    const languageData = Extractor.extractLanguageData(contentDir);
-    const collectionConfigs = Extractor.extractCollectionConfigs(contentDir);
-    const authors = Extractor.extractAuthors(contentDir);
-    const snippets = await Extractor.extractSnippets(contentDir, languageData);
-    const collectionsHubConfig =
-      Extractor.extractCollectionsHubConfig(contentDir);
-    // Language data not passed here by design, pass only if needed
-    const data = {
-      collections: collectionConfigs,
-      snippets,
-      authors,
-      languages: [...languageData].map(([id, data]) => {
-        const { references, ...restData } = data;
-        return { ...restData };
-      }),
-      collectionsHub: collectionsHubConfig,
-    };
-    await Extractor.writeData(data);
-    return data;
+  static data = {
+    collections: [],
+    snippets: [],
+    languages: [],
+    collectionsHub: {},
+  };
+  static languageData = new Map();
+
+  static prepared = false;
+
+  static prepare = async () => {
+    Extractor.extractLanguageData();
+    Extractor.extractCollectionConfigs();
+    await Extractor.extractSnippets();
+    Extractor.extractCollectionsHubConfig();
+    Extractor.prepared = true;
   };
 
-  static extractCollectionConfigs = contentDir => {
+  static extract = async () => {
+    if (!Extractor.prepared) await Extractor.prepare();
+
+    await Extractor.writeData();
+    return Extractor.data;
+  };
+
+  static extractCollectionConfigs = () => {
     const logger = new Logger('Extractor.extractCollectionConfigs');
     logger.log('Extracting collection configurations');
     const configs = YAMLHandler.fromGlob(
@@ -76,25 +80,10 @@ export class Extractor {
       };
     });
     logger.success('Finished extracting collection configurations');
-    return configs;
+    Extractor.data.collections = configs;
   };
 
-  static extractAuthors = contentDir => {
-    const logger = new Logger('Extractor.extractAuthors');
-    logger.log('Extracting authors');
-    const authors = Object.entries(
-      YAMLHandler.fromFile(`${contentDir}/authors.yaml`)
-    ).map(([id, author]) => {
-      return {
-        ...author,
-        id,
-      };
-    });
-    logger.success('Finished extracting authors');
-    return authors;
-  };
-
-  static extractLanguageData = contentDir => {
+  static extractLanguageData = () => {
     const logger = new Logger('Extractor.extractLanguageData');
     logger.log('Extracting language data');
     const languageData = YAMLHandler.fromGlob(
@@ -111,153 +100,209 @@ export class Extractor {
       return acc;
     }, new Map());
     logger.success('Finished extracting language data');
-    return languageData;
+    Extractor.languageData = languageData;
+    Extractor.data.languages = [...languageData].map(([id, data]) => {
+      const { references, ...restData } = data;
+      return { ...restData };
+    });
+    MarkdownParser.loadLanguageData([...Extractor.languageData.values()]);
   };
 
-  static extractSnippets = async (contentDir, languageData) => {
+  static extractSnippets = async () => {
     const logger = new Logger('Extractor.extractSnippets');
     logger.log('Extracting snippets');
 
     const snippetsGlob = `${contentDir}/snippets/**/s/*.md`;
-
-    MarkdownParser.loadLanguageData([...languageData.values()]);
     let snippets = [];
 
     await TextParser.fromGlob(snippetsGlob).then(snippetData => {
-      const parsedData = snippetData.map(snippet => {
-        const {
-          filePath,
-          fileName,
-          title,
-          shortTitle = title,
-          tags: rawTags,
-          type = 'snippet',
-          language: languageKey,
-          excerpt,
-          cover,
-          author,
-          dateModified,
-          body,
-          unlisted,
-        } = snippet;
-
-        // This check might be overkill, but better safe than sorry
-        const isBlog = type !== 'snippet' && filePath.includes('/articles/');
-        const isCSS = filePath.includes('/css/') && type === 'snippet';
-        const isReact = filePath.includes('/react/') && type === 'snippet';
-
-        const language = languageData.get(languageKey) || undefined;
-        const languageKeys = isBlog
-          ? []
-          : isCSS
-          ? ['js', 'html', 'css']
-          : isReact
-          ? ['js', 'jsx']
-          : [language];
-
-        const id = filePath.replace(`${contentDir}/snippets/`, '').slice(0, -3);
-        const tags = rawTags.map(tag => tag.toLowerCase());
-
-        const bodyText = body
-          .slice(0, body.indexOf(mdCodeFence))
-          .replace(/\r\n/g, '\n');
-        const shortText =
-          excerpt && excerpt.trim()
-            ? excerpt
-            : bodyText.slice(0, bodyText.indexOf('\n\n'));
-
-        const fullText = body;
-        const seoDescription = stripMarkdownFormat(shortText);
-
-        if (seoDescription.length > 140) {
-          logger.warn(`Snippet ${id} has a long SEO description.`);
-        }
-
-        let code = null;
-
-        if (isCSS || isReact) {
-          const codeBlocks = [...body.matchAll(codeMatcher)].map(v =>
-            v.groups.code.trim()
-          );
-
-          if (isCSS) {
-            code = {
-              html: codeBlocks[0],
-              css: codeBlocks[1],
-              js: codeBlocks[2] || '',
-            };
-          }
-
-          if (isReact) {
-            code =
-              codeBlocks.length > 2
-                ? {
-                    js: `${codeBlocks[1]}\n\n${codeBlocks[2]}`,
-                    css: codeBlocks[0],
-                  }
-                : {
-                    js: `${codeBlocks[0]}\n\n${codeBlocks[1]}`,
-                    css: '',
-                  };
-            /* eslint-disable camelcase */
-            code = {
-              ...code,
-              html: JSX_SNIPPET_PRESETS.envHtml,
-              js_pre_processor: JSX_SNIPPET_PRESETS.jsPreProcessor,
-              js_external: JSX_SNIPPET_PRESETS.jsImports.join(';'),
-            };
-            /* eslint-enable camelcase */
-          }
-        }
-
-        const html = MarkdownParser.parseSegments(
-          {
-            fullDescription: fullText,
-            description: shortText,
-          },
-          languageKeys
-        );
-
-        return {
-          id,
-          fileName,
-          title,
-          shortTitle,
-          tags,
-          dateModified,
-          listed: unlisted === true ? false : true,
-          type,
-          shortText,
-          fullText,
-          ...html,
-          code,
-          cover,
-          author,
-          seoDescription,
-          language: languageKey,
-        };
-      });
+      const parsedData = snippetData.map(snippet =>
+        Extractor.parseSnippet(snippet)
+      );
 
       snippets = parsedData;
     });
     logger.success('Finished extracting snippets');
-    return snippets;
+    Extractor.data.snippets = snippets;
   };
 
-  static extractCollectionsHubConfig = contentDir => {
+  static extractSnippet = async snippetPath => {
+    const logger = new Logger('Extractor.extractSnippet');
+    logger.log(`Extracting snippet ${snippetPath}`);
+
+    let snippet = {};
+
+    await TextParser.fromPath(snippetPath).then(snippetData => {
+      snippet = Extractor.parseSnippet(snippetData);
+    });
+
+    Extractor.updateSnippetData(snippet.id, snippet);
+    logger.success(`Finished extracting snippet ${snippetPath}`);
+
+    return [snippet.id, snippet];
+  };
+
+  static updateSnippetData = (id, snippetData) => {
+    const logger = new Logger('Extractor.updateSnippetData');
+    logger.log(`Updating data for snippet ${id}`);
+
+    const index = Extractor.data.snippets.findIndex(
+      snippet => snippet.id === id
+    );
+
+    if (index === -1) {
+      Extractor.data.snippets.push(snippetData);
+      logger.success(`Finished creating snippet ${id}`);
+    } else {
+      Extractor.data.snippets[index] = snippetData;
+      logger.success(`Finished updating snippet ${id}`);
+    }
+  };
+
+  static unlinkSnippetData = id => {
+    const logger = new Logger('Extractor.unlinkSnippetData');
+    logger.log(`Unlinking data for snippet ${id}`);
+
+    const index = Extractor.data.snippets.findIndex(
+      snippet => snippet.id === id
+    );
+
+    if (index === -1) {
+      logger.warn(`Snippet ${id} not found in data`);
+    } else {
+      Extractor.data.snippets.splice(index, 1);
+      logger.success(`Finished unlinking snippet ${id}`);
+    }
+  };
+
+  static parseSnippet = snippet => {
+    const logger = new Logger('Extractor.parseSnippet');
+
+    const {
+      filePath,
+      fileName,
+      title,
+      shortTitle = title,
+      tags: rawTags,
+      type = 'snippet',
+      language: languageKey,
+      excerpt,
+      cover,
+      dateModified,
+      body,
+      unlisted,
+    } = snippet;
+
+    // This check might be overkill, but better safe than sorry
+    const isBlog = type !== 'snippet' && filePath.includes('/articles/');
+    const isCSS = filePath.includes('/css/') && type === 'snippet';
+    const isReact = filePath.includes('/react/') && type === 'snippet';
+
+    const language = Extractor.languageData.get(languageKey) || undefined;
+    const languageKeys = isBlog
+      ? []
+      : isCSS
+      ? ['js', 'html', 'css']
+      : isReact
+      ? ['js', 'jsx']
+      : [language];
+
+    const id = filePath.replace(`${contentDir}/snippets/`, '').slice(0, -3);
+    const tags = rawTags.map(tag => tag.toLowerCase());
+
+    const bodyText = body
+      .slice(0, body.indexOf(mdCodeFence))
+      .replace(/\r\n/g, '\n');
+    const shortText =
+      excerpt && excerpt.trim()
+        ? excerpt
+        : bodyText.slice(0, bodyText.indexOf('\n\n'));
+
+    const fullText = body;
+    const seoDescription = stripMarkdownFormat(shortText);
+
+    if (seoDescription.length > 140) {
+      logger.warn(`Snippet ${id} has a long SEO description.`);
+    }
+
+    let code = null;
+
+    if (isCSS || isReact) {
+      const codeBlocks = [...body.matchAll(codeMatcher)].map(v =>
+        v.groups.code.trim()
+      );
+
+      if (isCSS) {
+        code = {
+          html: codeBlocks[0],
+          css: codeBlocks[1],
+          js: codeBlocks[2] || '',
+        };
+      }
+
+      if (isReact) {
+        code =
+          codeBlocks.length > 2
+            ? {
+                js: `${codeBlocks[1]}\n\n${codeBlocks[2]}`,
+                css: codeBlocks[0],
+              }
+            : {
+                js: `${codeBlocks[0]}\n\n${codeBlocks[1]}`,
+                css: '',
+              };
+        /* eslint-disable camelcase */
+        code = {
+          ...code,
+          html: JSX_SNIPPET_PRESETS.envHtml,
+          js_pre_processor: JSX_SNIPPET_PRESETS.jsPreProcessor,
+          js_external: JSX_SNIPPET_PRESETS.jsImports.join(';'),
+        };
+        /* eslint-enable camelcase */
+      }
+    }
+
+    const html = MarkdownParser.parseSegments(
+      {
+        fullDescription: fullText,
+        description: shortText,
+      },
+      languageKeys
+    );
+
+    return {
+      id,
+      fileName,
+      title,
+      shortTitle,
+      tags,
+      dateModified,
+      listed: unlisted === true ? false : true,
+      type,
+      shortText,
+      fullText,
+      ...html,
+      code,
+      cover,
+      seoDescription,
+      language: languageKey,
+    };
+  };
+
+  static extractCollectionsHubConfig = () => {
     const logger = new Logger('Extractor.extractCollectionsHubConfig');
     logger.log('Extracting hub pages configuration');
     const hubConfig = YAMLHandler.fromFile(`${contentDir}/hub.yaml`);
     logger.log('Finished extracting hub pages configuration');
-    return hubConfig;
+    Extractor.data.collectionsHub = hubConfig;
   };
 
-  static writeData = data => {
+  static writeData = () => {
     const logger = new Logger('Extractor.writeData');
     logger.log('Writing data to disk');
     return JSONHandler.toFile(
       `${pathSettings.contentPath}/content.json`,
-      data
+      Extractor.data
     ).then(() => logger.success('Finished writing data'));
   };
 }

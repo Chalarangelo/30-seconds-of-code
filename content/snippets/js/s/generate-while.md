@@ -3,7 +3,6 @@ title: Generate while condition is met
 type: snippet
 language: javascript
 tags: [function,generator]
-author: chalarangelo
 cover: yellow-sofa
 dateModified: 2022-01-21
 ---

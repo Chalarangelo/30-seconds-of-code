@@ -3,7 +3,6 @@ title: Maximum subarray
 type: snippet
 language: javascript
 tags: [algorithm,math,array]
-author: chalarangelo
 cover: work-hard-computer
 dateModified: 2022-09-07
 ---

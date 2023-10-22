@@ -4,7 +4,6 @@ shortTitle: JavaScript Proxy Introduction
 type: story
 language: javascript
 tags: [object,proxy,pattern]
-author: chalarangelo
 cover: red-mountain-range
 excerpt: A quick introduction to the JavaScript Proxy object and where it can be used.
 dateModified: 2023-04-02

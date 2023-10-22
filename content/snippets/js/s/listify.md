@@ -3,7 +3,6 @@ title: Map an object to an array
 type: snippet
 language: javascript
 tags: [object,array]
-author: chalarangelo
 cover: metro-arrival
 dateModified: 2023-02-05
 ---

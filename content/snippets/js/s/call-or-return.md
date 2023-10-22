@@ -3,7 +3,6 @@ title: Call or return
 type: snippet
 language: javascript
 tags: [function]
-author: chalarangelo
 cover: cows
 dateModified: 2022-04-04
 ---

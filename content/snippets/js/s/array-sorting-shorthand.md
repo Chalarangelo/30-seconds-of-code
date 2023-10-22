@@ -1,5 +1,5 @@
 ---
-title: "Tip: JavaScript array sorting shorthand"
+title: JavaScript array sorting shorthand
 shortTitle: Array sorting shorthand
 type: tip
 language: javascript

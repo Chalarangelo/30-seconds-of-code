@@ -1,10 +1,9 @@
 ---
-title: "Tip: Get the last element of a JavaScript array"
+title: Get the last element of a JavaScript array
 shortTitle: Last element of array
 type: tip
 language: javascript
 tags: [array]
-author: chalarangelo
 cover: purple-laptop
 excerpt: Array destructuring can be leveraged in many different ways. Here's one of them.
 dateModified: 2022-08-28

@@ -3,7 +3,6 @@ title: Button with ripple effect
 type: snippet
 language: react
 tags: [components,state,effect]
-author: chalarangelo
 cover: mountain-lake-cottage
 dateModified: 2021-10-13
 ---

@@ -3,7 +3,6 @@ title: Number is power of ten
 type: snippet
 language: javascript
 tags: [math]
-author: chalarangelo
 cover: boulder-beach
 dateModified: 2021-01-06
 ---

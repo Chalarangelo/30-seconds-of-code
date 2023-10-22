@@ -3,7 +3,6 @@ title: Weighted sample
 type: snippet
 language: javascript
 tags: [array,random]
-author: chalarangelo
 cover: digital-nomad-14
 dateModified: 2020-10-22
 ---

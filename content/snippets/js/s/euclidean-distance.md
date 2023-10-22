@@ -3,7 +3,6 @@ title: Euclidean distance
 type: snippet
 language: javascript
 tags: [math,algorithm]
-author: chalarangelo
 cover: ancient-greek-building
 dateModified: 2020-12-28
 ---

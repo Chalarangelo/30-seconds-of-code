@@ -3,7 +3,6 @@ title: React useGetSet hook
 type: snippet
 language: react
 tags: [hooks,state]
-author: chalarangelo
 cover: interior-12
 dateModified: 2021-10-27
 ---

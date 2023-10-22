@@ -3,7 +3,6 @@ title: Index array based on function
 type: snippet
 language: javascript
 tags: [array,object]
-author: chalarangelo
 cover: guitar-living-room
 dateModified: 2021-06-20
 ---

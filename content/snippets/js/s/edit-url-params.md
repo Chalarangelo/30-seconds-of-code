@@ -1,10 +1,9 @@
 ---
-title: "Tip: Edit URL Parameters in JavaScript"
+title: Edit URL Parameters in JavaScript
 shortTitle: Edit URL Parameters
 type: tip
 language: javascript
 tags: [string]
-author: chalarangelo
 cover: sofia-tram
 excerpt: Avoid the naive approach and use a more robust method to edit URL parameters in JavaScript.
 dateModified: 2022-12-07

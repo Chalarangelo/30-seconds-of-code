@@ -3,7 +3,6 @@ title: Insertion sort
 type: snippet
 language: javascript
 tags: [algorithm,array]
-author: chalarangelo
 cover: white-tablet-2
 dateModified: 2020-12-28
 ---

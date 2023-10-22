@@ -3,7 +3,6 @@ title: Pick changes from one or more commits
 type: snippet
 language: git
 tags: [commit,branch]
-author: chalarangelo
 cover: sunflowers
 dateModified: 2021-04-13
 ---

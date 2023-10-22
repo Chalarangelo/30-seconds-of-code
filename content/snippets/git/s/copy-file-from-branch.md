@@ -3,7 +3,6 @@ title: Copy a file from another branch
 type: snippet
 language: git
 tags: [branch]
-author: chalarangelo
 cover: sea-view-2
 dateModified: 2021-04-13
 ---

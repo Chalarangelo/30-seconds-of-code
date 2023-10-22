@@ -3,7 +3,6 @@ title: Check if arrays have same contents
 type: snippet
 language: javascript
 tags: [array]
-author: chalarangelo
 cover: interior-15
 dateModified: 2020-10-19
 ---

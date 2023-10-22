@@ -3,7 +3,6 @@ title: Stylized quotation marks
 type: snippet
 language: css
 tags: [visual]
-author: chalarangelo
 cover: coffee-phone-tray
 dateModified: 2021-05-16
 ---

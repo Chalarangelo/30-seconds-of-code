@@ -8,6 +8,8 @@ import { JSONHandler } from '#blocks/utilities/jsonHandler';
 import { YAMLHandler } from '#blocks/utilities/yamlHandler';
 import { Extractor } from '#blocks/extractor/extractor';
 import { Content } from '#blocks/utilities/content';
+import { PreparedQueries } from '#blocks/utilities/preparedQueries';
+import { FileWatcher } from '#blocks/utilities/fileWatcher';
 import schema from '#blocks/schema';
 import settings from '#settings/settings';
 import writers from '#blocks/writers/writers';
@@ -215,13 +217,12 @@ export class Application {
       Snippet,
       Collection,
       Language,
-      Author,
       SnippetPage,
       CollectionPage,
       CollectionsPage,
       HomePage,
     } = Application.models;
-    const { snippets, collections, languages, authors, collectionsHub } =
+    const { snippets, collections, languages, collectionsHub } =
       Application.datasetObject;
     const { featuredListings } = collectionsHub;
     const {
@@ -231,9 +232,8 @@ export class Application {
       topCollectionChips,
     } = Application.settings.presentation;
 
-    // Populate languages, authors, snippets
+    // Populate languages, snippets
     languages.forEach(language => Language.createRecord(language));
-    authors.forEach(author => Author.createRecord(author));
     snippets.forEach(snippet => Snippet.createRecord(snippet));
 
     // Populate collections
@@ -425,6 +425,57 @@ export class Application {
     return Extractor.extract();
   }
 
+  /**
+   * Watches the content files for changes and updates the dataset accordingly.
+   * Pages are regenerated as well, via the use of the PageWriter.
+   * Currently only supports snippets.
+   */
+  static watch() {
+    const logger = new Logger('Application.watch');
+    logger.log('Watching content files...');
+
+    const snippetDirectoryPath = `${Application.settings.paths.rawContentPath}/snippets`;
+    const { Snippet } = Application.models;
+
+    FileWatcher.watch(
+      snippetDirectoryPath,
+      /\/s\/.*\.md/,
+      (eventType, fileName) => {
+        try {
+          if (eventType === 'update') {
+            Extractor.extractSnippet(
+              `${snippetDirectoryPath}/${fileName}`
+            ).then(([id, snippetData]) => {
+              if (!Snippet.records.get(id)) Snippet.createRecord(snippetData);
+              else Snippet.updateRecord(id, snippetData);
+
+              writers.PageWriter.writeSnippetPages(Application);
+            });
+          }
+          if (eventType === 'create') {
+            Extractor.extractSnippet(
+              `${snippetDirectoryPath}/${fileName}`
+            ).then(
+              // eslint-disable-next-line no-unused-vars
+              ([id, snippetData]) => {
+                Snippet.createRecord(snippetData);
+                writers.PageWriter.writeSnippetPages(Application);
+              }
+            );
+          }
+          if (eventType === 'delete') {
+            const id = fileName.split('.')[0];
+            Extractor.unlinkSnippetData(id);
+            Snippet.removeRecord(id);
+            writers.PageWriter.writeSnippetPages(Application);
+          }
+        } catch (err) {
+          logger.error(err);
+        }
+      }
+    );
+  }
+
   // -------------------------------------------------------------
   // REPL setup and methods
   // -------------------------------------------------------------
@@ -480,6 +531,14 @@ export class Application {
     Application.serializerNames.forEach(serializer => {
       context[serializer] = Application.dataset.getSerializer(serializer);
     });
+    context.Query = Object.getOwnPropertyNames(PreparedQueries).reduce(
+      (queries, queryName) => {
+        if (!['name', 'length', 'prototype'].includes(queryName))
+          queries[queryName] = PreparedQueries[queryName](Application);
+        return queries;
+      },
+      {}
+    );
     context.rawDataset = Application.datasetObject;
     logger.success('Setting up REPL context complete.');
   }

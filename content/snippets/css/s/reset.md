@@ -3,7 +3,6 @@ title: CSS Reset
 type: story
 language: css
 tags: [visual]
-author: chalarangelo
 cover: bridge-over-road
 excerpt: A short, opinionated CSS reset to make your websites look great everywhere.
 dateModified: 2022-10-16

@@ -3,7 +3,6 @@ title: Image with text overlay
 type: snippet
 language: css
 tags: [visual]
-author: chalarangelo
 cover: icebreaker
 dateModified: 2023-01-29
 ---

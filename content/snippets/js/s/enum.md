@@ -4,7 +4,6 @@ shortTitle: Enum implementation
 type: question
 language: javascript
 tags: [object,class,symbol,generator]
-author: chalarangelo
 cover: book-chair
 excerpt: Enums are part of TypeScript, but what about defining enums in plain old JavaScript? Here are a few way you can do that.
 dateModified: 2021-06-12

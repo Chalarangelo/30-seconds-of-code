@@ -3,7 +3,6 @@ title: Map consecutive elements
 type: snippet
 language: javascript
 tags: [array]
-author: chalarangelo
 cover: cold-mountains
 dateModified: 2021-08-08
 ---

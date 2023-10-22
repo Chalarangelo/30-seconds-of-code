@@ -3,7 +3,6 @@ title: Resolve promise after given amount of time
 type: snippet
 language: javascript
 tags: [function,promise]
-author: chalarangelo
 cover: filter-coffee-pot
 dateModified: 2022-01-08
 ---

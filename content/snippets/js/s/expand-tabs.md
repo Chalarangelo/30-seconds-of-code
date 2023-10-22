@@ -3,7 +3,6 @@ title: Expand tabs into spaces
 type: snippet
 language: javascript
 tags: [string,regexp]
-author: chalarangelo
 cover: naming-conventions
 dateModified: 2020-09-15
 ---

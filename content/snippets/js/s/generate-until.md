@@ -3,7 +3,6 @@ title: Generate until condition is met
 type: snippet
 language: javascript
 tags: [function,generator]
-author: chalarangelo
 cover: type-stamps
 dateModified: 2022-01-21
 ---

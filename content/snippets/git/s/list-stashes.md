@@ -3,7 +3,6 @@ title: Lists all stashes
 type: snippet
 language: git
 tags: [repository,stash]
-author: chalarangelo
 cover: golden-gate-bridge
 dateModified: 2021-04-13
 ---

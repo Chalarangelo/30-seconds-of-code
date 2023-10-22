@@ -1,5 +1,5 @@
 ---
-title: "Tip: React conditional className, empty strings and null"
+title: React conditional className, empty strings and null
 shortTitle: Conditional className
 type: tip
 language: react

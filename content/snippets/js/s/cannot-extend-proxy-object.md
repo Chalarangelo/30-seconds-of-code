@@ -1,10 +1,9 @@
 ---
-title: "Tip: You can't extend the Proxy object"
+title: You can't extend JavaScript's Proxy object
 shortTitle: Extending the Proxy object
 type: tip
 language: javascript
 tags: [object,proxy]
-author: chalarangelo
 cover: icebreaker
 excerpt: Turns out the Proxy object is not extensible, but there's a way around its limitations.
 dateModified: 2023-04-17

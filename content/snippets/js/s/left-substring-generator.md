@@ -4,7 +4,6 @@ type: snippet
 language: javascript
 tags: [string,generator]
 cover: boutique-home-office-1
-author: chalarangelo
 dateModified: 2022-07-24
 ---
 

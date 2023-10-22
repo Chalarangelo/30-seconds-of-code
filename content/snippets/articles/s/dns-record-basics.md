@@ -3,7 +3,6 @@ title: A beginner's guide to DNS records
 shortTitle: DNS Record Basics
 type: cheatsheet
 tags: [webdev,dns,server,cheatsheet]
-author: chalarangelo
 cover: sparkles
 excerpt: DNS records may not be something you work with frequently, but having a basic understanding can be highly beneficial.
 dateModified: 2022-01-09

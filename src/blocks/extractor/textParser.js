@@ -17,7 +17,6 @@ export class TextParser {
       const { body, attributes } = frontmatter(content);
       const {
         dateModified = '2021-06-13',
-        author = null,
         language = null,
         ...restAttributes
       } = attributes;
@@ -25,7 +24,6 @@ export class TextParser {
         body,
         ...restAttributes,
         dateModified: new Date(dateModified),
-        author,
         language,
         fileName,
         filePath,

@@ -3,7 +3,6 @@ title: Number to fixed-point notation without trailing zeros
 type: snippet
 language: javascript
 tags: [math,string]
-author: chalarangelo
 cover: white-chapel
 dateModified: 2022-05-10
 ---

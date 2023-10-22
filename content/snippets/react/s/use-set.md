@@ -3,7 +3,6 @@ title: React useSet hook
 type: snippet
 language: react
 tags: [hooks,state]
-author: chalarangelo
 cover: engine
 dateModified: 2021-11-01
 ---

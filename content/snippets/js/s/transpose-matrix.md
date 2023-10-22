@@ -3,7 +3,6 @@ title: Transpose matrix
 type: snippet
 language: javascript
 tags: [array]
-author: chalarangelo
 cover: camera-zoom
 dateModified: 2022-04-20
 ---

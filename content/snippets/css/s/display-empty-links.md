@@ -3,7 +3,6 @@ title: Style links with no text
 type: snippet
 language: css
 tags: [visual]
-author: chalarangelo
 cover: metro-tunnel
 dateModified: 2022-11-11
 ---

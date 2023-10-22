@@ -3,7 +3,6 @@ title: React useTimeout hook
 type: snippet
 language: react
 tags: [hooks,effect]
-author: chalarangelo
 cover: interior-10
 dateModified: 2020-11-16
 ---

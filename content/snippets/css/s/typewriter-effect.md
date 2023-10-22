@@ -3,7 +3,6 @@ title: Typewriter effect
 type: snippet
 language: css
 tags: [animation]
-author: chalarangelo
 cover: italian-horizon
 dateModified: 2021-05-24
 ---

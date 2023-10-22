@@ -3,7 +3,6 @@ title: Git aliases
 type: cheatsheet
 language: git
 tags: [configuration,cheatsheet]
-author: chalarangelo
 cover: compass-1
 excerpt: Increase your productivity by creating aliases for many common git operations.
 dateModified: 2021-06-12

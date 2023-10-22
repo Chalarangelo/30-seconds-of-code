@@ -3,7 +3,6 @@ title: 5 tips for better Pull Requests
 type: story
 language: git
 tags: [github,programming,webdev]
-author: chalarangelo
 cover: keyboard-tea
 excerpt: Writing good code is only part of the job. Here are 5 tips to improve your pull requests and help people review them.
 unlisted: true
@@ -30,4 +29,4 @@ Before submitting your pull request for review, always take the time to review i
 
 ### Respond to reviews
 
-Set some time aside to respond to reviews after submitting your pull request. Handle anything you can as soon as possible and start discussion whenever necessary to arrive to a solution. Use `--fixup` for changes suggested in review comments or add new commits to help reviewers parse new changes more easily. Finally, assume good intentions, be polite and thank your peers.
+Set some time aside to respond to reviews after submitting your pull request. Handle anything you can as soon as possible and start discussion whenever necessary to arrive at a solution. Use `--fixup` for changes suggested in review comments or add new commits to help reviewers parse new changes more easily. Finally, assume good intentions, be polite and thank your peers.

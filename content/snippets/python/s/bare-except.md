@@ -1,5 +1,5 @@
 ---
-title: "Tip: Avoid using bare except in Python"
+title: Avoid using bare except in Python
 shortTitle: Bare except best practices
 type: tip
 language: python

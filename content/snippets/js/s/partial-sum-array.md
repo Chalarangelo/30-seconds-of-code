@@ -3,7 +3,6 @@ title: Partial sum array
 type: snippet
 language: javascript
 tags: [math]
-author: chalarangelo
 cover: people-on-beach
 dateModified: 2022-01-30
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Tip: Watch out for mutable default arguments in Python"
+title: Watch out for mutable default arguments in Python
 shortTitle: Mutable default arguments
 type: tip
 language: python

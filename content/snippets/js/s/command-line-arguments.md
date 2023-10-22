@@ -3,7 +3,6 @@ title: Command-line arguments
 type: snippet
 language: javascript
 tags: [node]
-author: chalarangelo
 cover: hiking-balance
 dateModified: 2022-04-26
 ---

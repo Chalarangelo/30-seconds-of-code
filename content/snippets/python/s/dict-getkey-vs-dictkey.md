@@ -1,5 +1,5 @@
 ---
-title: "Tip: You should use dict.get(key) instead of dict[key]"
+title: You should use dict.get(key) instead of dict[key]
 shortTitle: dict.get(key) vs dict[key]
 type: tip
 language: python

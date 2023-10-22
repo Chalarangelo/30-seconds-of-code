@@ -3,7 +3,6 @@ title: React useEventListener hook
 type: snippet
 language: react
 tags: [hooks,effect,event]
-author: chalarangelo
 cover: beach-riders
 dateModified: 2021-09-01
 ---

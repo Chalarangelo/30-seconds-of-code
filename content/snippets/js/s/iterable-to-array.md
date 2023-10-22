@@ -4,7 +4,6 @@ shortTitle: Iterable to array
 type: question
 language: javascript
 tags: [object,array,string]
-author: chalarangelo
 cover: waves
 excerpt: Learn how to use the JavaScript ES6 spread syntax to converting iterables to arrays and level up your code today.
 dateModified: 2021-06-12

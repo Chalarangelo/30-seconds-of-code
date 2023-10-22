@@ -3,7 +3,6 @@ title: Number is power of two
 type: snippet
 language: javascript
 tags: [math]
-author: chalarangelo
 cover: flower-portrait-10
 dateModified: 2020-10-20
 ---

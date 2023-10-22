@@ -23,27 +23,6 @@ const { snippet } = Astro.props;
     class='card-description flex flex-col'
     set:html={snippet.fullDescription}
   />
-  {
-    snippet.author ? (
-      <div class='flex flex-col m-0'>
-        <h3 class='mt-4 mb-0 mx-0 txt-150 fs-md md:fs-lg lh-tight'>
-          Written by {snippet.author.name}
-        </h3>
-        <p class='lh-loose mx-0 mt-2 mb-0 txt-100 fs-sm md:fs-md'>
-          {snippet.author.intro}
-        </p>
-        <p class='lh-loose m-0 txt-100 fs-sm md:fs-md'>
-          {'If you want to keep in touch, follow me on '}
-          <a
-            href={snippet.author.github}
-            target='_blank'
-            rel='nofollow noopener noreferrer'
-          >
-            GitHub<!-- --></a><!-- -->.
-        </p>
-      </div>
-    ) : null
-  }
   <div class='card-actions flex j-space-evenly mt-4 mx-0 mb-0'>
     {
       snippet.actionType === 'codepen' && (

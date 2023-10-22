@@ -4,7 +4,6 @@ type: snippet
 language: react
 tags: [components,effect,state]
 cover: strawberries
-author: chalarangelo
 dateModified: 2022-07-29
 ---
 

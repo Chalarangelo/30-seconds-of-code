@@ -3,7 +3,6 @@ title: React useError hook
 type: snippet
 language: react
 tags: [hooks,state,effect]
-author: chalarangelo
 cover: cloudy-mountaintop
 dateModified: 2021-09-30
 ---

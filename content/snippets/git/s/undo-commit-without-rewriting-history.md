@@ -4,7 +4,6 @@ shortTitle: Undo commit
 type: story
 language: git
 tags: [commit,branch]
-author: chalarangelo
 cover: night-tram
 excerpt: Learn the simple way to undo a commit in Git without rewriting history.
 dateModified: 2023-05-27

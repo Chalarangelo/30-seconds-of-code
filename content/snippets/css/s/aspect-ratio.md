@@ -3,7 +3,6 @@ title: Aspect ratio
 type: snippet
 language: css
 tags: [layout]
-author: chalarangelo
 cover: digital-nomad-12
 dateModified: 2022-08-14
 ---

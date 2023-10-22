@@ -1,10 +1,9 @@
 ---
-title: "Tip: Lazy load images in HTML"
+title: Lazy load images in HTML
 shortTitle: Image lazy loading
 type: tip
 language: html
 tags: [image]
-author: chalarangelo
 cover: bridge
 excerpt: Discover how to improve your website's performance by implementing lazy loading for images using a native HTML attribute.
 dateModified: 2021-06-12

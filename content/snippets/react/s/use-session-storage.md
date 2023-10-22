@@ -3,7 +3,6 @@ title: React useSessionStorage hook
 type: snippet
 language: react
 tags: [hooks,state]
-author: chalarangelo
 cover: white-laptop
 dateModified: 2021-09-15
 ---

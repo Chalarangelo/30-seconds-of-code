@@ -3,7 +3,6 @@ title: Card with image cutout
 type: snippet
 language: css
 tags: [visual]
-author: chalarangelo
 cover: radio-monstera
 dateModified: 2022-12-11
 ---

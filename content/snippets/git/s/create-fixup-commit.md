@@ -3,7 +3,6 @@ title: Create a fixup commit
 type: snippet
 language: git
 tags: [commit]
-author: chalarangelo
 cover: tools
 dateModified: 2021-04-13
 ---

@@ -69,4 +69,30 @@ export class PageWriter {
       logger.success('Finished generating page JSON files');
     });
   }
+
+  // DEVELOPMENT ONLY!!!
+  // This only works when manually bound to the application instance.
+  // This is also unavailable unless the writer is explicitly imported.
+  static writeSnippetPages(application) {
+    const logger = new Logger('PageWriter.writeSnippetPages');
+
+    const { dataset } = application;
+
+    let PageSerializer = dataset.getSerializer('PageSerializer');
+
+    let snippetPages = dataset.getModel('SnippetPage').records;
+    const snippetData = PageSerializer.serializeRecordSet(
+      snippetPages,
+      { withParams: true },
+      key => `${key.split('$')[1]}`
+    );
+
+    logger.log(`Generating page JSON file for snippets`);
+
+    return Promise.all([
+      JSONHandler.toFile(`${outPath}/[lang]/s/[snippet].json`, snippetData),
+    ]).then(() => {
+      logger.success(`Finished generating page JSON file for snippets`);
+    });
+  }
 }

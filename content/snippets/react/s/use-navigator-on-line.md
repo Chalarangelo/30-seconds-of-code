@@ -3,7 +3,6 @@ title: React useNavigatorOnLine hook
 type: snippet
 language: react
 tags: [hooks,state,effect]
-author: chalarangelo
 cover: digital-nomad-7
 dateModified: 2020-11-16
 ---

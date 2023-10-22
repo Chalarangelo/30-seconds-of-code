@@ -1,10 +1,9 @@
 ---
-title: "Tip: Automate Git upstream branch creation"
+title: Automate Git upstream branch creation
 shortTitle: Automate upstream branch creation
 type: tip
 language: git
 tags: [configuration,repository]
-author: chalarangelo
 cover: messy-computer
 excerpt: Effortlessly create upstream branches on push by enabling a simple git config setting.
 dateModified: 2023-05-21

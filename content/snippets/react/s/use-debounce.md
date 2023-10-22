@@ -3,7 +3,6 @@ title: React useDebounce hook
 type: snippet
 language: react
 tags: [hooks,state,effect]
-author: chalarangelo
 cover: blue-bird
 dateModified: 2021-01-04
 ---
