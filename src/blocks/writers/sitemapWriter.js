@@ -35,9 +35,7 @@ export class SitemapWriter {
       .getModel('CollectionsPage')
       .records.map(page => `${websiteUrl}${page.slug}`, { flat: true });
     const homePage = [`${websiteUrl}/`];
-    const staticPages = ['/about', '/faq', '/cookies'].map(
-      page => `${websiteUrl}${page}`
-    );
+    const staticPages = ['/about', '/faq'].map(page => `${websiteUrl}${page}`);
 
     const pages = [
       homePage,
