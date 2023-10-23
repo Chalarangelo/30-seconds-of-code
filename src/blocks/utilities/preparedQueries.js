@@ -145,10 +145,10 @@ export class PreparedQueries {
   /**
    * Returns an array of slugs for all snippet pages with alternative urls included.
    */
-  static snippetPagesWithAlternativeUrls = application => () =>
+  static snippetPagesWithAlternativeUrls = (application, queries) => () =>
     withCache('snippetPagesWithAlternativeUrls', () => {
-      const snippetSlugs = PreparedQueries.snippetPageSlugs(application)();
-      return snippetSlugs.map(PreparedQueries.pageAlternativeUrls(application));
+      const snippetSlugs = queries.snippetPageSlugs();
+      return snippetSlugs.map(queries.pageAlternativeUrls);
     });
 
   /**
@@ -192,7 +192,7 @@ export class PreparedQueries {
    * @param {string} collectionId - The collection id to get slugs for.
    */
   static collectionSnippetSlugs =
-    application =>
+    (application, queries) =>
     (collectionId, { includeRedirects = false } = {}) =>
       withCache(
         `collectionSnippetSlugs#${collectionId}-${includeRedirects}`,
@@ -204,9 +204,7 @@ export class PreparedQueries {
             .snippets.map(snippet => snippet.slug, { flat: true });
 
           if (includeRedirects)
-            return snippetSlugs.map(
-              PreparedQueries.pageAlternativeUrls(application)
-            );
+            return snippetSlugs.map(queries.pageAlternativeUrls);
 
           return snippetSlugs;
         }
@@ -221,22 +219,20 @@ export class PreparedQueries {
    *   the returned data (default: true).
    */
   static collectionPagesPerformance =
-    application =>
+    (application, queries) =>
     (collectionId, { includeRedirects = true } = {}) =>
       withCache(
         `collectionPagesPerformance#${collectionId}-${includeRedirects}`,
         () => {
-          const snippetSlugs = PreparedQueries.collectionSnippetSlugs(
-            application
-          )(collectionId, { includeRedirects });
+          const snippetSlugs = queries.collectionSnippetSlugs(collectionId, {
+            includeRedirects,
+          });
 
           return snippetSlugs.reduce((acc, snippetSlugs) => {
             const [allSlugs, snippetSlug] = Array.isArray(snippetSlugs)
               ? [snippetSlugs, snippetSlugs[0]]
               : [[snippetSlugs], snippetSlugs];
-            const pagesPerformance = PreparedQueries.pagePerformance(
-              application
-            )(...allSlugs);
+            const pagesPerformance = queries.pagePerformance(...allSlugs);
 
             const total = Object.values(pagesPerformance).reduce(
               (acc, pagePerformance) => {
@@ -258,13 +254,10 @@ export class PreparedQueries {
    * @param {string} snippetSlug - The snippet slug to get performance data for
    *    (e.g. '/js/s/bifurcate-by').
    */
-  static snippetPagePerformance = application => snippetSlug =>
+  static snippetPagePerformance = (application, queries) => snippetSlug =>
     withCache(`snippetPagePerformance#${snippetSlug}`, () => {
-      const snippetSlugs =
-        PreparedQueries.pageAlternativeUrls(application)(snippetSlug);
-      const pagesPerformance = PreparedQueries.pagePerformance(application)(
-        ...snippetSlugs
-      );
+      const snippetSlugs = queries.pageAlternativeUrls(snippetSlug);
+      const pagesPerformance = queries.pagePerformance(...snippetSlugs);
 
       const total = Object.values(pagesPerformance).reduce(
         (acc, pagePerformance) => {
@@ -281,11 +274,11 @@ export class PreparedQueries {
   /**
    * Returns an array of slugs for all snippet pages with zero impressions.
    */
-  static zeroImpressionSnippets = application => () =>
+  static zeroImpressionSnippets = (application, queries) => () =>
     withCache('zeroImpressionSnippets', () => {
-      const snippetSlugs = PreparedQueries.snippetPageSlugs(application)();
+      const snippetSlugs = queries.snippetPageSlugs();
       const performanceData = snippetSlugs.map(snippetSlug =>
-        PreparedQueries.snippetPagePerformance(application)(snippetSlug)
+        queries.snippetPagePerformance(snippetSlug)
       );
       return Object.values(performanceData).reduce(
         (acc, pagePerformance, index) => {
