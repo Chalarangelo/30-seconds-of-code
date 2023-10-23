@@ -137,3 +137,6 @@ public/chirp.json
 public/search-data.json
 public/_redirects
 snippet.png
+
+# Imported files for development
+imported/
