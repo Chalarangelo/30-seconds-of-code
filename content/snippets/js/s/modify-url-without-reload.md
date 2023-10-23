@@ -26,11 +26,11 @@ window.history.pushState(nextState, nextTitle, nextURL);
 window.history.replaceState(nextState, nextTitle, nextURL);
 ```
 
-The arguments for both methods are the same, allowing you to pass a customized serializable `state` object as the first argument, a customized `title` (although most browsers will ignore this parameter) and the `URL` you want to add/replace in the browser's history. Bear in mind that the History API only allows same-origin URLs, so you cannot navigate to an entirely different website.
+The arguments for both methods are the same, allowing you to pass a customized serializable `state` object as the first argument, a customized `title` (although most browsers will ignore this parameter) and the `URL` you want to add/replace in the browser's history. Bear in mind that **the History API only allows same-origin URLs**, so you cannot navigate to an entirely different website.
 
 ### Using the Location API
 
-The older [Location API](https://developer.mozilla.org/en-US/docs/Web/API/Location) is not the best tool for the job. It reloads the page, but still allows you to modify the current URL and might be useful when working with legacy browsers. You can modify the URL, using either `Window.location.href`, `location.assign()` or `location.replace()`:
+The older [Location API](https://developer.mozilla.org/en-US/docs/Web/API/Location) is not the best tool for the job. It **reloads the page**, but still allows you to modify the current URL and might be useful when working with **legacy browsers**. You can modify the URL, using either `Window.location.href`, `location.assign()` or `location.replace()`:
 
 ```js
 // Current URL: https://my-website.com/page_a
@@ -46,4 +46,4 @@ window.location.assign(nextURL);
 window.location.replace(nextURL);
 ```
 
-As you can see, all three options will cause a page reload, which can be undesirable. Unlike the History API, you can only set the URL, without any additional arguments. Finally, the Location API doesn't restrict you to same-origin URLs, which can cause security issues if you are not careful.
+As you can see, all three options will cause a page reload, which can be undesirable. Unlike the History API, you can only set the URL, without any additional arguments. Finally, the Location API **doesn't restrict you to same-origin URLs**, which can cause **security issues** if you are not careful.
