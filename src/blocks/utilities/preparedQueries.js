@@ -1,5 +1,6 @@
 import { globSync } from 'glob';
 import { YAMLHandler } from '#blocks/utilities/yamlHandler';
+import { CSVHandler } from '#blocks/utilities/csvHandler';
 
 const preparedQueriesCache = new Map();
 
@@ -10,10 +11,25 @@ const withCache = (cacheKey, fn) => {
   return preparedQueriesCache.get(cacheKey);
 };
 
+const loadedFilesCache = new Map();
+
+const loadFileOnce = (fileName, handler, options = null) => {
+  const cacheKey = `${fileName}#${handler.name}@${JSON.stringify(options)}`;
+  if (!loadedFilesCache.has(cacheKey)) {
+    loadedFilesCache.set(cacheKey, handler.fromFile(fileName, options));
+  }
+  return loadedFilesCache.get(cacheKey);
+};
+
 // Image asset constants
 const supportedExtensions = ['jpeg', 'jpg', 'png', 'webp', 'tif', 'tiff'];
 const coverAssetPath = 'content/assets/cover';
+
+// Redirects constants
 const redirectsPath = 'content/redirects.yaml';
+
+// Performance constants (manually import Pages.csv from Google Search Console)
+const performancePath = 'imported/Pages.csv';
 
 export class PreparedQueries {
   /**
@@ -94,7 +110,7 @@ export class PreparedQueries {
    */
   static pageAlternativeUrls = () => slug =>
     withCache(`pageAlternativeUrls#${slug}`, () => {
-      const redirects = YAMLHandler.fromFile(redirectsPath);
+      const redirects = loadFileOnce(redirectsPath, YAMLHandler);
 
       const lookupPaths = [slug];
       const redirectedPaths = new Set();
@@ -113,4 +129,35 @@ export class PreparedQueries {
       }
       return [...redirectedPaths];
     });
+
+  /**
+   * Returns an object with the performance data for each of the given page slugs.
+   * Requires manual import of a `Pages.csv` exported from Google Search Console.
+   * @param {...string} pageIds - The page slugs to get performance data for
+   *    (e.g. '/js/s/bifurcate-by').
+   */
+  static pagePerformance =
+    () =>
+    (...pageIds) =>
+      withCache(`pagePerformance#${pageIds.join(',')}`, () => {
+        const performanceData = loadFileOnce(performancePath, CSVHandler, {
+          withHeaders: true,
+          keyProperty: 'Top pages',
+          excludeProperties: ['CTR', 'Position'],
+        });
+
+        return pageIds.reduce((acc, pageId) => {
+          const pagePerformance = performanceData[pageId];
+          acc[pageId] = pagePerformance
+            ? {
+                clicks: pagePerformance['Clicks'],
+                impressions: pagePerformance['Impressions'],
+              }
+            : {
+                clicks: 0,
+                impressions: 0,
+              };
+          return acc;
+        }, {});
+      });
 }
