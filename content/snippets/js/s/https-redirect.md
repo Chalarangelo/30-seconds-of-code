@@ -1,18 +1,17 @@
 ---
-title: Redirect to HTTPS
-type: snippet
+title: How can I redirect the page to HTTPS in JavaScript?
+shortTitle: Redirect to HTTPS
+type: question
 language: javascript
 tags: [browser]
 cover: blue-lake
-dateModified: 2020-10-22
+excerpt: Learn how to redirect the page to HTTPS if it's currently in HTTP.
+dateModified: 2023-10-18
 ---
 
-Redirects the page to HTTPS if it's currently in HTTP.
+HTTP is a highly **insecure and legacy protocol**, and it's recommended to use HTTPS instead. For a few years now, browsers have been marking HTTP sites as insecure and even blocking certain features on them. If you have a website that's still using HTTP, it's a good idea to **redirect it to HTTPS**.
 
-- Use `location.protocol` to get the protocol currently being used.
-- If it's not HTTPS, use `location.replace()` to replace the existing page with the HTTPS version of the page.
-- Use `location.href` to get the full address, split it with `String.prototype.split()` and remove the protocol part of the URL.
-- Note that pressing the back button doesn't take it back to the HTTP page as its replaced in the history.
+But how exactly can you do that using JavaScript? You can easily get the current protocol via the use of `location.protocol`. If it's not HTTPS, you can use `location.replace()` to replace the existing page with the HTTPS version of the page. In order to get the full address, you can use `location.href`, split it with `String.prototype.split()` and replace the protocol part of the URL.
 
 ```js
 const httpsRedirect = () => {
@@ -23,5 +22,8 @@ const httpsRedirect = () => {
 
 ```js
 httpsRedirect();
-// If you are on http://mydomain.com, you are redirected to https://mydomain.com
+// If you are on http://mydomain.com,
+//   you are redirected to https://mydomain.com
 ```
+
+Note that, when using this method, pressing the **back button** doesn't take it back to the HTTP page as it's replaced in the history.
