@@ -134,6 +134,18 @@ export class PreparedQueries {
     });
 
   /**
+   * Returns an array of slugs for all snippet pages with alternative urls included.
+   */
+  static snippetPagesWithAlternativeUrls = application => () =>
+    withCache('snippetPagesWithAlternativeUrls', () => {
+      const Snippet = application.dataset.getModel('Snippet');
+      const snippetSlugs = Snippet.records.map(snippet => snippet.slug, {
+        flat: true,
+      });
+      return snippetSlugs.map(PreparedQueries.pageAlternativeUrls(application));
+    });
+
+  /**
    * Returns an object with the performance data for each of the given page slugs.
    * Requires manual import of a `Pages.csv` exported from Google Search Console.
    * @param {...string} pageIds - The page slugs to get performance data for
