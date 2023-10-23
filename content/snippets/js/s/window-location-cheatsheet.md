@@ -8,13 +8,13 @@ excerpt: A quick reference for the `window.location` object.
 dateModified: 2022-12-21
 ---
 
-The `window.location` object is particularly useful when working with a page's URL information. Let's take a look at an example of a URL and what each property of the `window.location` object represents.
+The `window.location` object is particularly useful when **working with a page's URL information**. Let's take a look at an example of a URL and what each property of the `window.location` object represents.
 
 ```js
 const url = 'https://dev.30secondsofcode.org:8000/c/js?page=2&sort=asc#search';
 ```
 
-Provide the above URL, here's a quick reference for the properties `window.location` object:
+Provided the above URL, here's a quick reference for the properties `window.location` object:
 
 ### window.location.protocol
 

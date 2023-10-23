@@ -531,14 +531,12 @@ export class Application {
     Application.serializerNames.forEach(serializer => {
       context[serializer] = Application.dataset.getSerializer(serializer);
     });
-    context.Query = Object.getOwnPropertyNames(PreparedQueries).reduce(
-      (queries, queryName) => {
-        if (!['name', 'length', 'prototype'].includes(queryName))
-          queries[queryName] = PreparedQueries[queryName](Application);
-        return queries;
-      },
-      {}
-    );
+    const $ = {};
+    Object.getOwnPropertyNames(PreparedQueries).forEach(queryName => {
+      if (!['name', 'length', 'prototype'].includes(queryName))
+        $[queryName] = PreparedQueries[queryName](Application, $);
+    });
+    context['$'] = $;
     context.rawDataset = Application.datasetObject;
     logger.success('Setting up REPL context complete.');
   }

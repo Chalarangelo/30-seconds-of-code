@@ -1,6 +1,9 @@
+import settings from '#settings/global';
 import { globSync } from 'glob';
 import { YAMLHandler } from '#blocks/utilities/yamlHandler';
 import { CSVHandler } from '#blocks/utilities/csvHandler';
+
+const { websiteUrl } = settings;
 
 const preparedQueriesCache = new Map();
 
@@ -20,6 +23,10 @@ const loadFileOnce = (fileName, handler, options = null) => {
   }
   return loadedFilesCache.get(cacheKey);
 };
+
+// Format matchers
+const boldMatcher = /(\*\*)(.*?)\1/gm;
+const headingMatcher = /^##+ (.*)$/gm;
 
 // Image asset constants
 const supportedExtensions = ['jpeg', 'jpg', 'png', 'webp', 'tif', 'tiff'];
@@ -81,7 +88,7 @@ export class PreparedQueries {
    */
   static matchSnippets =
     application =>
-    ({ language = null, tag = null, type = null, primary = false }) =>
+    ({ language = null, tag = null, type = null, primary = false } = {}) =>
       withCache(`matchSnippets#${language}-${tag}-${type}-${primary}`, () => {
         const Snippet = application.dataset.getModel('Snippet');
         const queryMatchers = [];
@@ -131,6 +138,24 @@ export class PreparedQueries {
     });
 
   /**
+   * Returns an array of slugs for all snippet pages.
+   */
+  static snippetPageSlugs = application => () =>
+    withCache('snippetPageSlugs', () => {
+      const Snippet = application.dataset.getModel('Snippet');
+      return Snippet.records.map(snippet => snippet.slug, { flat: true });
+    });
+
+  /**
+   * Returns an array of slugs for all snippet pages with alternative urls included.
+   */
+  static snippetPagesWithAlternativeUrls = (application, queries) => () =>
+    withCache('snippetPagesWithAlternativeUrls', () => {
+      const snippetSlugs = queries.snippetPageSlugs();
+      return snippetSlugs.map(queries.pageAlternativeUrls);
+    });
+
+  /**
    * Returns an object with the performance data for each of the given page slugs.
    * Requires manual import of a `Pages.csv` exported from Google Search Console.
    * @param {...string} pageIds - The page slugs to get performance data for
@@ -144,6 +169,11 @@ export class PreparedQueries {
           withHeaders: true,
           keyProperty: 'Top pages',
           excludeProperties: ['CTR', 'Position'],
+          transformProperties: {
+            'Top pages': value => value.replace(websiteUrl, ''),
+            Clicks: Number.parseInt,
+            Impressions: Number.parseInt,
+          },
         });
 
         return pageIds.reduce((acc, pageId) => {
@@ -160,4 +190,121 @@ export class PreparedQueries {
           return acc;
         }, {});
       });
+
+  /**
+   * Returns an array of slugs for the given collection.
+   * @param {string} collectionId - The collection id to get slugs for.
+   */
+  static collectionSnippetSlugs =
+    (application, queries) =>
+    (collectionId, { includeRedirects = false } = {}) =>
+      withCache(
+        `collectionSnippetSlugs#${collectionId}-${includeRedirects}`,
+        () => {
+          const Collection = application.dataset.getModel('Collection');
+
+          const snippetSlugs = Collection.records
+            .get(collectionId)
+            .snippets.map(snippet => snippet.slug, { flat: true });
+
+          if (includeRedirects)
+            return snippetSlugs.map(queries.pageAlternativeUrls);
+
+          return snippetSlugs;
+        }
+      );
+
+  /**
+   * Returns an object with the performance data for each of the snippet pages in
+   *  the given collection.
+   * @param {string} collectionId - The collection id to get performance data for.
+   * @param {object} options - Options object.
+   * @param {boolean} options.includeRedirects - Whether to include redirects in
+   *   the returned data (default: true).
+   */
+  static collectionPagesPerformance =
+    (application, queries) =>
+    (collectionId, { includeRedirects = true } = {}) =>
+      withCache(
+        `collectionPagesPerformance#${collectionId}-${includeRedirects}`,
+        () => {
+          const snippetSlugs = queries.collectionSnippetSlugs(collectionId, {
+            includeRedirects,
+          });
+
+          return snippetSlugs.reduce((acc, snippetSlugs) => {
+            const [allSlugs, snippetSlug] = Array.isArray(snippetSlugs)
+              ? [snippetSlugs, snippetSlugs[0]]
+              : [[snippetSlugs], snippetSlugs];
+            const pagesPerformance = queries.pagePerformance(...allSlugs);
+
+            const total = Object.values(pagesPerformance).reduce(
+              (acc, pagePerformance) => {
+                acc.clicks += pagePerformance.clicks;
+                acc.impressions += pagePerformance.impressions;
+                return acc;
+              },
+              { clicks: 0, impressions: 0 }
+            );
+
+            acc[snippetSlug] = total;
+            return acc;
+          }, {});
+        }
+      );
+
+  /**
+   * Returns an object with the performance data for the given snippet page.
+   * @param {string} snippetSlug - The snippet slug to get performance data for
+   *    (e.g. '/js/s/bifurcate-by').
+   */
+  static snippetPagePerformance = (application, queries) => snippetSlug =>
+    withCache(`snippetPagePerformance#${snippetSlug}`, () => {
+      const snippetSlugs = queries.pageAlternativeUrls(snippetSlug);
+      const pagesPerformance = queries.pagePerformance(...snippetSlugs);
+
+      const total = Object.values(pagesPerformance).reduce(
+        (acc, pagePerformance) => {
+          acc.clicks += pagePerformance.clicks;
+          acc.impressions += pagePerformance.impressions;
+          return acc;
+        },
+        { clicks: 0, impressions: 0 }
+      );
+
+      return total;
+    });
+
+  /**
+   * Returns an array of slugs for all snippet pages with zero impressions.
+   */
+  static zeroImpressionSnippets = (application, queries) => () =>
+    withCache('zeroImpressionSnippets', () => {
+      const snippetSlugs = queries.snippetPageSlugs();
+      const performanceData = snippetSlugs.map(snippetSlug =>
+        queries.snippetPagePerformance(snippetSlug)
+      );
+      return Object.values(performanceData).reduce(
+        (acc, pagePerformance, index) => {
+          if (pagePerformance.impressions === 0) acc.push(snippetSlugs[index]);
+          return acc;
+        },
+        []
+      );
+    });
+
+  /**
+   * Returns an object with information about specific formatting in the given
+   *   snippet's full Markdown text.
+   * @param {string} snippetId - The snippet id to get the cover image for.
+   */
+  static snippetHasFormatting = application => snippetId =>
+    withCache(`snippetHasFormatting#${snippetId}`, () => {
+      const Snippet = application.dataset.getModel('Snippet');
+      const fullText = Snippet.records.get(snippetId).fullText;
+      return {
+        bold: boldMatcher.test(fullText),
+        heading: headingMatcher.test(fullText),
+      };
+    });
 }

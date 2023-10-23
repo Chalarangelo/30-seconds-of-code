@@ -18,6 +18,8 @@ export class CSVHandler {
    * @param {string} options.keyProperty - The property to use as the key for the
    *    returned object (if withHeaders is true, this should be a header name,
    *    otherwise it should be an index)
+   * @param {object} options.transformProperties - An object mapping property names
+   *    to functions that transform the value of the property.
    * @return {object[]} An array of objects representing the data from the given
    *    CSV file.
    * @returns {object} An object containing the data from the given CSV file, if
@@ -30,6 +32,7 @@ export class CSVHandler {
       delimiter = ',',
       excludeProperties = [],
       keyProperty = null,
+      transformProperties = {},
     }
   ) => {
     const data = readFileSync(filePath, 'utf8');
@@ -44,6 +47,8 @@ export class CSVHandler {
           const obj = {};
           headers.forEach((header, index) => {
             if (!excludeProperties.includes(header)) obj[header] = item[index];
+            if (transformProperties[header])
+              obj[header] = transformProperties[header](obj[header]);
           });
           return obj;
         }
@@ -51,6 +56,8 @@ export class CSVHandler {
           const obj = {};
           item.forEach((value, index) => {
             if (!excludeProperties.includes(index)) obj[index] = value;
+            if (transformProperties[index])
+              obj[index] = transformProperties[index](obj[index]);
           });
           return obj;
         };
