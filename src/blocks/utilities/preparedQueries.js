@@ -84,7 +84,7 @@ export class PreparedQueries {
    */
   static matchSnippets =
     application =>
-    ({ language = null, tag = null, type = null, primary = false }) =>
+    ({ language = null, tag = null, type = null, primary = false } = {}) =>
       withCache(`matchSnippets#${language}-${tag}-${type}-${primary}`, () => {
         const Snippet = application.dataset.getModel('Snippet');
         const queryMatchers = [];
