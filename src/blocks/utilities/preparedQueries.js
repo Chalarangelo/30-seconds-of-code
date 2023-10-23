@@ -168,4 +168,29 @@ export class PreparedQueries {
           return acc;
         }, {});
       });
+
+  /**
+   * Returns an array of slugs for the given collection.
+   * @param {string} collectionId - The collection id to get slugs for.
+   */
+  static collectionSnippetSlugs =
+    application =>
+    (collectionId, { includeRedirects = false } = {}) =>
+      withCache(
+        `collectionSnippetSlugs#${collectionId}-${includeRedirects}`,
+        () => {
+          const Collection = application.dataset.getModel('Collection');
+
+          const snippetSlugs = Collection.records
+            .get(collectionId)
+            .snippets.map(snippet => snippet.slug, { flat: true });
+
+          if (includeRedirects)
+            return snippetSlugs.map(
+              PreparedQueries.pageAlternativeUrls(application)
+            );
+
+          return snippetSlugs;
+        }
+      );
 }
