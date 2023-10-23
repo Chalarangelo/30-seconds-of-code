@@ -24,6 +24,10 @@ const loadFileOnce = (fileName, handler, options = null) => {
   return loadedFilesCache.get(cacheKey);
 };
 
+// Format matchers
+const boldMatcher = /(\*\*)(.*?)\1/gm;
+const headingMatcher = /^##+ (.*)$/gm;
+
 // Image asset constants
 const supportedExtensions = ['jpeg', 'jpg', 'png', 'webp', 'tif', 'tiff'];
 const coverAssetPath = 'content/assets/cover';
@@ -287,5 +291,20 @@ export class PreparedQueries {
         },
         []
       );
+    });
+
+  /**
+   * Returns an object with information about specific formatting in the given
+   *   snippet's full Markdown text.
+   * @param {string} snippetId - The snippet id to get the cover image for.
+   */
+  static snippetHasFormatting = application => snippetId =>
+    withCache(`snippetHasFormatting#${snippetId}`, () => {
+      const Snippet = application.dataset.getModel('Snippet');
+      const fullText = Snippet.records.get(snippetId).fullText;
+      return {
+        bold: boldMatcher.test(fullText),
+        heading: headingMatcher.test(fullText),
+      };
     });
 }
