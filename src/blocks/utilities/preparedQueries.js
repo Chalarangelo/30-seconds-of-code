@@ -246,4 +246,29 @@ export class PreparedQueries {
           }, {});
         }
       );
+
+  /**
+   * Returns an object with the performance data for the given snippet page.
+   * @param {string} snippetSlug - The snippet slug to get performance data for
+   *    (e.g. '/js/s/bifurcate-by').
+   */
+  static snippetPagePerformance = application => snippetSlug =>
+    withCache(`snippetPagePerformance#${snippetSlug}`, () => {
+      const snippetSlugs =
+        PreparedQueries.pageAlternativeUrls(application)(snippetSlug);
+      const pagesPerformance = PreparedQueries.pagePerformance(application)(
+        ...snippetSlugs
+      );
+
+      const total = Object.values(pagesPerformance).reduce(
+        (acc, pagePerformance) => {
+          acc.clicks += pagePerformance.clicks;
+          acc.impressions += pagePerformance.impressions;
+          return acc;
+        },
+        { clicks: 0, impressions: 0 }
+      );
+
+      return total;
+    });
 }
