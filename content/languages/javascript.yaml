@@ -748,3 +748,4 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute
   CSSStyleDeclaration: >-
     https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration
+  URL: https://developer.mozilla.org/en-US/docs/Web/API/URL
