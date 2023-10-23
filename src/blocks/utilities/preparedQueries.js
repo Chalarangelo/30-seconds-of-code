@@ -277,4 +277,22 @@ export class PreparedQueries {
 
       return total;
     });
+
+  /**
+   * Returns an array of slugs for all snippet pages with zero impressions.
+   */
+  static zeroImpressionSnippets = application => () =>
+    withCache('zeroImpressionSnippets', () => {
+      const snippetSlugs = PreparedQueries.snippetPageSlugs(application)();
+      const performanceData = snippetSlugs.map(snippetSlug =>
+        PreparedQueries.snippetPagePerformance(application)(snippetSlug)
+      );
+      return Object.values(performanceData).reduce(
+        (acc, pagePerformance, index) => {
+          if (pagePerformance.impressions === 0) acc.push(snippetSlugs[index]);
+          return acc;
+        },
+        []
+      );
+    });
 }
