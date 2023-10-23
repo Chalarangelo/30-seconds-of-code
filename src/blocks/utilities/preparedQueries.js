@@ -10,9 +10,21 @@ const withCache = (cacheKey, fn) => {
   return preparedQueriesCache.get(cacheKey);
 };
 
+const loadedFilesCache = new Map();
+
+const loadFileOnce = (fileName, handler, options = null) => {
+  const cacheKey = `${fileName}#${handler.name}@${JSON.stringify(options)}`;
+  if (!loadedFilesCache.has(cacheKey)) {
+    loadedFilesCache.set(cacheKey, handler.fromFile(fileName, options));
+  }
+  return loadedFilesCache.get(cacheKey);
+};
+
 // Image asset constants
 const supportedExtensions = ['jpeg', 'jpg', 'png', 'webp', 'tif', 'tiff'];
 const coverAssetPath = 'content/assets/cover';
+
+// Redirects constants
 const redirectsPath = 'content/redirects.yaml';
 
 export class PreparedQueries {
@@ -94,7 +106,7 @@ export class PreparedQueries {
    */
   static pageAlternativeUrls = () => slug =>
     withCache(`pageAlternativeUrls#${slug}`, () => {
-      const redirects = YAMLHandler.fromFile(redirectsPath);
+      const redirects = loadFileOnce(redirectsPath, YAMLHandler);
 
       const lookupPaths = [slug];
       const redirectedPaths = new Set();
