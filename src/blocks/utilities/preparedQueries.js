@@ -193,4 +193,45 @@ export class PreparedQueries {
           return snippetSlugs;
         }
       );
+
+  /**
+   * Returns an object with the performance data for each of the snippet pages in
+   *  the given collection.
+   * @param {string} collectionId - The collection id to get performance data for.
+   * @param {object} options - Options object.
+   * @param {boolean} options.includeRedirects - Whether to include redirects in
+   *   the returned data (default: true).
+   */
+  static collectionPagesPerformance =
+    application =>
+    (collectionId, { includeRedirects = true } = {}) =>
+      withCache(
+        `collectionPagesPerformance#${collectionId}-${includeRedirects}`,
+        () => {
+          const snippetSlugs = PreparedQueries.collectionSnippetSlugs(
+            application
+          )(collectionId, { includeRedirects });
+
+          return snippetSlugs.reduce((acc, snippetSlugs) => {
+            const [allSlugs, snippetSlug] = Array.isArray(snippetSlugs)
+              ? [snippetSlugs, snippetSlugs[0]]
+              : [[snippetSlugs], snippetSlugs];
+            const pagesPerformance = PreparedQueries.pagePerformance(
+              application
+            )(...allSlugs);
+
+            const total = Object.values(pagesPerformance).reduce(
+              (acc, pagePerformance) => {
+                acc.clicks += pagePerformance.clicks;
+                acc.impressions += pagePerformance.impressions;
+                return acc;
+              },
+              { clicks: 0, impressions: 0 }
+            );
+
+            acc[snippetSlug] = total;
+            return acc;
+          }, {});
+        }
+      );
 }
