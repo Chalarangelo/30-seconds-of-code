@@ -1,6 +1,9 @@
+import settings from '#settings/global';
 import { globSync } from 'glob';
 import { YAMLHandler } from '#blocks/utilities/yamlHandler';
 import { CSVHandler } from '#blocks/utilities/csvHandler';
+
+const { websiteUrl } = settings;
 
 const preparedQueriesCache = new Map();
 
@@ -144,6 +147,11 @@ export class PreparedQueries {
           withHeaders: true,
           keyProperty: 'Top pages',
           excludeProperties: ['CTR', 'Position'],
+          transformProperties: {
+            'Top pages': value => value.replace(websiteUrl, ''),
+            Clicks: Number.parseInt,
+            Impressions: Number.parseInt,
+          },
         });
 
         return pageIds.reduce((acc, pageId) => {
