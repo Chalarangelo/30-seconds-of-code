@@ -74,7 +74,7 @@ export const snippet = {
       cache: true,
     },
     url: snippet =>
-      `https://github.com/30-seconds/30-seconds-of-code/blob/master/content/snippets${snippet.slug}.md`,
+      `https://github.com/Chalarangelo/30-seconds-of-code/blob/master/content/snippets${snippet.slug}.md`,
     actionType: snippet => (snippet.code ? 'codepen' : undefined),
     isScheduled: {
       body: snippet => snippet.dateModified > new Date(),
