@@ -55,10 +55,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/30-seconds/30-seconds-of-code"
+    "url": "https://github.com/Chalarangelo/30-seconds-of-code"
   },
   "bugs": {
-    "url": "https://github.com/30-seconds/30-seconds-of-code/issues"
+    "url": "https://github.com/Chalarangelo/30-seconds-of-code/issues"
   },
   "browserslist": [
     "> 0.5% and last 4 versions and not dead and not ie>0 and not op_mini all and not and_uc>0 and not edge<79"
