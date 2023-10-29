@@ -1,4 +1,4 @@
 {
-  "recommendations": ["astro-build.astro-vscode"],
+  "recommendations": ["astro-build.astro-vscode", "ban.spellright"],
   "unwantedRecommendations": []
 }

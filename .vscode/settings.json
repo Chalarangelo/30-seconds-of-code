@@ -42,5 +42,14 @@
     "**/README.md": true,
     "globals.js": true
   },
-  "eslint.experimental.useFlatConfig": true
+  "eslint.experimental.useFlatConfig": true,
+  "spellright.language": [
+    "en"
+  ],
+  "spellright.documentTypes": [
+    "yaml",
+    "plaintext",
+    "markdown"
+  ],
+  "spellright.configurationScope": "workspace",
 }
