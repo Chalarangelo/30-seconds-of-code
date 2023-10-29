@@ -7,7 +7,6 @@ import prefabs from '#prefabs';
 import Layout from '#layouts/Layout';
 import Breadcrumbs from '#components/Breadcrumbs';
 import SnippetCard from '#components/SnippetCard';
-import SnippetScripts from '#components/SnippetScripts';
 import PreviewCardList from '#components/PreviewCardList';
 
 export async function getStaticPaths() {
@@ -47,5 +46,27 @@ const {
     <h2 class={prefabs.recommendationsTitle}>More like this</h2>
     <PreviewCardList contentItems={recommendations} />
   </div>
-  <SnippetScripts snippet={snippet} />
+  <script is:inline>
+    const copyCodeBlock = e => {
+      if (!e.target.matches('.action-btn.icon-clipboard')) return;
+      const code = e.target.parentNode.querySelector('pre').innerText;
+      try {
+        navigator.clipboard.writeText(code);
+        setTimeout(() => {
+          e.target.classList.remove('icon-clipboard');
+          e.target.classList.add('active');
+          e.target.classList.add('icon-check');
+        }, 100);
+        setTimeout(() => {
+          e.target.classList.remove('icon-check');
+          e.target.classList.remove('active');
+          e.target.classList.add('icon-clipboard');
+        }, 750);
+      } catch (err) {
+        console.error('Failed to copy: ', err);
+      }
+    };
+
+    document.addEventListener('click', copyCodeBlock);
+  </script>
 </Layout>
