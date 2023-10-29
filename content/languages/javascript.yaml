@@ -1,6 +1,7 @@
 short: js
 long: javascript
 name: JavaScript
+additionalReferences: [css, html]
 references:
   ...: >-
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
