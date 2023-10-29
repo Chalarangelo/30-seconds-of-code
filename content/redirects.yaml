@@ -1633,12 +1633,6 @@
 - from: /js/s/flip
   to: /js/s/flip-function-arguments
   status: 301!
-- from: /js/s/left-substr-generator
-  to: /js/s/left-substring-generator
-  status: 301!
-- from: /js/s/right-substr-generator
-  to: /js/s/right-substring-generator
-  status: 301!
 - from: /js/s/intersects
   to: /js/s/arrays-intersect
   status: 301!
@@ -1947,4 +1941,16 @@
   status: 301!
 - from: /js/s/show-html-elements
   to: /js/s/show-hide-html-elements
+  status: 301!
+- from: /js/s/left-substr-generator
+  to: /js/s/substring-generator
+  status: 301!
+- from: /js/s/left-substring-generator
+  to: /js/s/substring-generator
+  status: 301!
+- from: /js/s/right-substr-generator
+  to: /js/s/substring-generator
+  status: 301!
+- from: /js/s/right-substring-generator
+  to: /js/s/substring-generator
   status: 301!

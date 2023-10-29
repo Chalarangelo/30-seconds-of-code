@@ -14,8 +14,7 @@ snippetIds:
   - js/s/walk-through-object
   - js/s/generate-while
   - js/s/generate-until
-  - js/s/left-substring-generator
-  - js/s/right-substring-generator
+  - js/s/substring-generator
   - js/s/make-iterable
   - js/s/enum
   - js/s/object-array-proxy
