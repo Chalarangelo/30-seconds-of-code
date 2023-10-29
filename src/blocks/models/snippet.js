@@ -18,7 +18,6 @@ export const snippet = {
     fullText: 'string',
     descriptionHtml: 'string',
     fullDescriptionHtml: 'string',
-    code: 'object',
     cover: 'string',
     seoDescription: 'string',
   },
