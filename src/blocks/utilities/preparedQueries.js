@@ -142,12 +142,19 @@ export class PreparedQueries {
 
   /**
    * Returns an array of slugs for all snippet pages.
+   * @param {boolean} options.includeUnlisted - Whether to include unlisted
+   *  snippets (default: false).
    */
-  static snippetPageSlugs = application => () =>
-    withCache('snippetPageSlugs', () => {
-      const Snippet = application.dataset.getModel('Snippet');
-      return Snippet.records.map(snippet => snippet.slug, { flat: true });
-    });
+  static snippetPageSlugs =
+    application =>
+    ({ includeUnlisted = false } = {}) =>
+      withCache(`snippetPageSlugs#${includeUnlisted}`, () => {
+        const Snippet = application.dataset.getModel('Snippet');
+        const snippets = includeUnlisted
+          ? Snippet.records
+          : Snippet.records.listed;
+        return snippets.published.map(snippet => snippet.slug, { flat: true });
+      });
 
   /**
    * Returns an array of slugs for all snippet pages with alternative urls included.
