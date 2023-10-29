@@ -84,20 +84,27 @@ export class Extractor {
     const languageData = YAMLHandler.fromGlob(
       `${contentDir}/languages/*.yaml`
     ).reduce((acc, language) => {
-      const { short, long, name, references = {} } = language;
+      const {
+        short,
+        long,
+        name,
+        references = {},
+        additionalReferences = [],
+      } = language;
       acc.set(long, {
         id: long,
         long,
         short,
         name,
         references: new Map(Object.entries(references)),
+        allLanguageReferences: [short, ...additionalReferences],
       });
       return acc;
     }, new Map());
     logger.success('Finished extracting language data');
     Extractor.languageData = languageData;
     Extractor.data.languages = [...languageData].map(([id, data]) => {
-      const { references, ...restData } = data;
+      const { references, allLanguageReferences, ...restData } = data;
       return { ...restData };
     });
     MarkdownParser.loadLanguageData([...Extractor.languageData.values()]);
@@ -188,20 +195,7 @@ export class Extractor {
       unlisted,
     } = snippet;
 
-    // This check might be overkill, but better safe than sorry
-    const isBlog = type !== 'snippet' && filePath.includes('/articles/');
-    const isCSS = filePath.includes('/css/') && type === 'snippet';
-    const isReact = filePath.includes('/react/') && type === 'snippet';
-
     const language = Extractor.languageData.get(languageKey) || undefined;
-    const languageKeys = isBlog
-      ? []
-      : isCSS
-      ? ['js', 'html', 'css']
-      : isReact
-      ? ['js', 'jsx']
-      : [language];
-
     const id = filePath.replace(`${contentDir}/snippets/`, '').slice(0, -3);
     const tags = rawTags.map(tag => tag.toLowerCase());
 
@@ -225,7 +219,7 @@ export class Extractor {
         fullDescription: fullText,
         description: shortText,
       },
-      languageKeys
+      language ? language.allLanguageReferences : []
     );
 
     return {
@@ -240,7 +234,6 @@ export class Extractor {
       shortText,
       fullText,
       ...html,
-      code,
       cover,
       seoDescription,
       language: languageKey,
