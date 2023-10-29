@@ -35,6 +35,9 @@ const coverAssetPath = 'content/assets/cover';
 // Redirects constants
 const redirectsPath = 'content/redirects.yaml';
 
+// Collection config constants
+const contentConfigsGlob = 'content/collections/**/*.yaml';
+
 // Performance constants (manually import Pages.csv from Google Search Console)
 const performancePath = 'imported/Pages.csv';
 
@@ -307,4 +310,32 @@ export class PreparedQueries {
         heading: headingMatcher.test(fullText),
       };
     });
+
+  /**
+   * Returns an object with information about references with the same code
+   * identifier in multiple languages.
+   * @param {string[]} languageKeys - The language keys to get references for.
+   */
+  static duplicateReferences =
+    () =>
+    (languageKeys = ['js', 'css', 'html', 'jsx']) =>
+      withCache(`duplicateReferences#${languageKeys.join(',')}`, () => {
+        const referenceMap = new Map();
+        YAMLHandler.fromGlob(contentConfigsGlob).forEach(config => {
+          const { short, references } = config;
+          if (!references || !references.length) return;
+          references.forEach(reference => {
+            const referenceLanguages = referenceMap.get(reference) || [];
+            referenceLanguages.push(short);
+            referenceMap.set(reference, referenceLanguages);
+          });
+        });
+        return [...referenceMap.entries()].reduce(
+          (acc, [reference, languages]) => {
+            if (languages.length > 1) acc[reference] = languages;
+            return acc;
+          },
+          {}
+        );
+      });
 }
