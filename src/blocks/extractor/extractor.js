@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import pathSettings from '#settings/paths';
-import JSX_SNIPPET_PRESETS from '#settings/jsxSnippetPresets';
 import { Logger } from '#blocks/utilities/logger';
 import { TextParser } from '#blocks/extractor/textParser';
 import { MarkdownParser } from '#blocks/extractor/markdownParser';
@@ -9,10 +8,6 @@ import { YAMLHandler } from '#blocks/utilities/yamlHandler';
 import { stripMarkdownFormat } from '#utils';
 
 const mdCodeFence = '```';
-const codeMatcher = new RegExp(
-  `${mdCodeFence}.*\r?\n(?<code>[\\S\\s]*?)${mdCodeFence}`,
-  'g'
-);
 
 const { rawContentPath: contentDir } = pathSettings;
 
@@ -223,43 +218,6 @@ export class Extractor {
 
     if (seoDescription.length > 140) {
       logger.warn(`Snippet ${id} has a long SEO description.`);
-    }
-
-    let code = null;
-
-    if (isCSS || isReact) {
-      const codeBlocks = [...body.matchAll(codeMatcher)].map(v =>
-        v.groups.code.trim()
-      );
-
-      if (isCSS) {
-        code = {
-          html: codeBlocks[0],
-          css: codeBlocks[1],
-          js: codeBlocks[2] || '',
-        };
-      }
-
-      if (isReact) {
-        code =
-          codeBlocks.length > 2
-            ? {
-                js: `${codeBlocks[1]}\n\n${codeBlocks[2]}`,
-                css: codeBlocks[0],
-              }
-            : {
-                js: `${codeBlocks[0]}\n\n${codeBlocks[1]}`,
-                css: '',
-              };
-        /* eslint-disable camelcase */
-        code = {
-          ...code,
-          html: JSX_SNIPPET_PRESETS.envHtml,
-          js_pre_processor: JSX_SNIPPET_PRESETS.jsPreProcessor,
-          js_external: JSX_SNIPPET_PRESETS.jsImports.join(';'),
-        };
-        /* eslint-enable camelcase */
-      }
     }
 
     const html = MarkdownParser.parseSegments(
