@@ -11,12 +11,9 @@ export const snippetContextSerializer = {
   attributes: [
     'title',
     'fullDescription',
-    'url',
     'slug',
     ['dateFormatted', 'date'],
     ['formattedTags', 'tags'],
-    'actionType',
-    'code',
     ['coverUrl', 'cover'],
   ],
 };
