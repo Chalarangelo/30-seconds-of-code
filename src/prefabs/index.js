@@ -13,7 +13,7 @@ const cardBase = 'card mt-7 mx-1 mb-4 md:mx-3.5 srfc-01db txt-100 br-lg';
 const cardTitleBase = 'txt-200 fs-lg md:fs-xl f-alt f-ellipsis lh-tight';
 
 const cards = {
-  snippetCard: `${cardBase} snippet-card g-c2 px-4 pt-6 pb-4 md:px-6 md:pb-6`,
+  snippetCard: `${cardBase} snippet-card g-c2 px-4 py-6 pb-4 md:p-6`,
   previewCard: `${cardBase} list-card grid a-center py-5 px-4 md:p-6 relative no-overflow`,
   simpleCard: `${cardBase} px-4 py-6 md:px-6 md:py-8`,
   cardTitle: `${cardTitleBase} mt-0 mx-0 mb-1`,

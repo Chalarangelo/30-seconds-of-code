@@ -31,10 +31,6 @@
       }
     }
 
-    &:last-child {
-      margin-block-end: 1.5rem;
-    }
-
     > pre {
       padding-block-end: 1.5rem;
     }
@@ -49,10 +45,6 @@
           top: 0;
         }
       }
-    }
-
-    &:last-of-type > pre {
-      padding-block-end: 1.5rem;
     }
   }
 }
