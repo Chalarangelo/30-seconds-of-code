@@ -1,3 +1,4 @@
 short: css
 long: css
 name: CSS
+additionalReferences: [js, html]
