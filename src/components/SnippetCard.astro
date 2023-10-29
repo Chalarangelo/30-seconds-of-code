@@ -23,20 +23,5 @@ const { snippet } = Astro.props;
     class='card-description flex flex-col'
     set:html={snippet.fullDescription}
   />
-  <div class='card-actions flex j-space-evenly mt-4 mx-0 mb-0'>
-    {
-      snippet.actionType === 'codepen' && (
-        <button
-          class={`${prefabs.button} ${prefabs.actionButton} ${prefabs.iconButton} flex-none before:fs-md icon-codepen my-0 mx-2 p-3`}
-          title='View CodePen'
-        />
-      )
-    }
-    <a
-      class={`${prefabs.button} ${prefabs.actionButton} ${prefabs.iconButton} flex-none before:fs-md icon-github my-0 mx-2 p-3`}
-      href={snippet.url}
-      rel='nofollow noopener noreferrer'
-      target='_blank'
-      title='View on GitHub'></a>
   </div>
 </article>
