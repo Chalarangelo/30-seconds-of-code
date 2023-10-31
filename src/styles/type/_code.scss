@@ -99,7 +99,12 @@ pre {
 }
 
 pre[class*='language-'] {
-  padding: 1rem 0.875rem;
+  padding: 1rem 0.875rem 1.5rem;
+  margin: 1rem 0 0;
+
+  + pre[class*='language-'] {
+    margin-block-start: -0.5rem;
+  }
 }
 
 pre.language-text {
