@@ -3,7 +3,10 @@
   -webkit-font-smoothing: antialiased;
   cursor: pointer;
   border: 0;
-  transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border 0.3s ease;
 
   &:hover,
   &:focus {
@@ -44,10 +47,6 @@
   &.icon-btn {
     display: inline-flex;
     align-items: center;
-
-    &:before {
-      vertical-align: bottom;
-    }
 
     &.icon-btn-reverse {
       flex-direction: row-reverse;

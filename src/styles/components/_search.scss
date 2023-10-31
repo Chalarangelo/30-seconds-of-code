@@ -24,13 +24,6 @@
   @media screen and (min-width: $layout-large-breakpoint) {
     margin-inline-start: 0.25rem;
   }
-
-  &::before {
-    box-sizing: border-box;
-    padding: 0.75rem 0;
-    margin-inline-start: 0.5rem;
-    color: inherit;
-  }
 }
 
 [type='search'].search-box,
@@ -105,8 +98,4 @@
 
 .btn.omnisearch-close {
   margin-inline-end: -4px;
-
-  &::before {
-    font-size: 32px;
-  }
 }
