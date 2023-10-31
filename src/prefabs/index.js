@@ -33,8 +33,6 @@ const buttons = {
   actionButton: 'action-btn',
   actionLinkButton: 'action-btn action-btn-link',
   chipButton: `${buttonBase} m-0 py-3 px-4 br-md lnk-hover-strong`,
-  copyCodeButton:
-    'btn action-btn icon-btn icon icon-clipboard absolute br-lg my-0 mx-2 p-2.5 lh-tight flex-none before:fs-sm',
 };
 
 export default {
