@@ -4,7 +4,6 @@ import { SearchIndexWriter } from './searchIndexWriter.js';
 import { FeedWriter } from './feedWriter.js';
 import { PageWriter } from './pageWriter.js';
 import { SitemapWriter } from './sitemapWriter.js';
-import { IconWriter } from './iconWriter.js';
 import { RedirectsWriter } from './redirectsWriter.js';
 
 export default {
@@ -14,6 +13,5 @@ export default {
   FeedWriter,
   PageWriter,
   SitemapWriter,
-  IconWriter,
   RedirectsWriter,
 };

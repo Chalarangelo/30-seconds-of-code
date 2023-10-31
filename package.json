@@ -49,7 +49,6 @@
     "watch": "NODE_ENV=development node ./src/scripts/watch.js",
     "console": "NODE_ENV=production node ./src/scripts/console.js",
     "create": "NODE_ENV=production node ./src/scripts/create.js",
-    "icons": "NODE_ENV=production node ./src/scripts/icons.js",
     "manifest": "NODE_ENV=production node ./src/scripts/manifest.js"
   },
   "license": "MIT",
