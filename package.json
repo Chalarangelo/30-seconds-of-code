@@ -27,8 +27,7 @@
     "sharp": "^0.32.6",
     "unist-util-select": "^5.0.0",
     "unist-util-visit": "^5.0.0",
-    "unist-util-visit-parents": "^6.0.1",
-    "webfonts-generator": "^0.4.0"
+    "unist-util-visit-parents": "^6.0.1"
   },
   "imports": {
     "#blocks/*": "./src/blocks/*.js",
