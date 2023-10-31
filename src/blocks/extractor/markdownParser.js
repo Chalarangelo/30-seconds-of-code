@@ -10,7 +10,6 @@ import Prism from 'prismjs';
 import getLoader from 'prismjs/dependencies.js';
 import prismComponents from 'prismjs/components.js';
 import { escapeHTML, convertToValidId } from '#utils';
-import prefabs from '#prefabs';
 import pathSettings from '#settings/paths';
 
 const require = createRequire(import.meta.url);
@@ -70,11 +69,6 @@ const textTransformers = [
       /<pre class="language-([^"]+)" data-code-language="([^"]*)">([\s\S]*?)<\/pre>/g,
     replacer:
       '<pre class="language-$1 notranslate m-0" data-code-language="$2" translate="no">$3</pre>',
-  },
-  // Add a copy to clipboard button after each code block
-  {
-    matcher: /<\/pre>/g,
-    replacer: `</pre><button class="${prefabs.copyCodeButton}" title="Copy code" />`,
   },
   // Convert blockquotes to the appropriate elements
   {
