@@ -63,13 +63,6 @@ const textTransformers = [
       </h${lvl}>`;
     },
   },
-  // Convert description code to the appropriate elements (mainly blogs)
-  {
-    matcher:
-      /<pre class="language-([^"]+)" data-code-language="([^"]*)">([\s\S]*?)<\/pre>/g,
-    replacer:
-      '<pre class="language-$1 notranslate m-0" data-code-language="$2" translate="no">$3</pre>',
-  },
   // Convert blockquotes to the appropriate elements
   {
     matcher: /<blockquote>\s*\n*\s*<p>([\s\S]*?)<\/p>\s*\n*\s<\/blockquote>/g,
@@ -213,11 +206,9 @@ export class MarkdownParser {
 
       node.value = isText
         ? [
-            `<div class="code-highlight relative mt-4" data-language="${languageName}">`,
-            `<pre class="language-${languageName}" data-code-language="${languageStringLiteral}">`,
+            `<pre class="language-${languageName} notranslate" data-code-language="${languageStringLiteral}" translate="no">`,
             `${highlightedCode.trim()}`,
             `</pre>`,
-            `</div>`,
           ].join('')
         : `${highlightedCode}`;
 
