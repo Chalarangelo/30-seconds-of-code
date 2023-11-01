@@ -1,5 +1,5 @@
 ---
-title: Add or remove an event listener from element
+title: Add or remove an event listener in JavaScript
 shortTitle: Add or remove event listener
 type: story
 language: javascript
