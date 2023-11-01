@@ -4,13 +4,12 @@ featured: true
 snippetIds:
   - js/s/add-event-listener
   - js/s/remove-event-listener
-  - js/s/listen-once
+  - js/s/event-listener-once
   - js/s/on-click-outside
   - js/s/event-bubbling-capturing-delegation
   - js/s/add-event-listener-all
   - js/s/remove-multiple-event-listeners
   - js/s/add-multiple-event-listeners
-  - js/s/execute-event-handler-once
   - js/s/passive-scroll-listener-performance
   - js/s/on-scroll-stop
   - js/s/arrow-function-event-listeners

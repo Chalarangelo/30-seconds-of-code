@@ -361,9 +361,6 @@
 - from: /articles/s/javascript-evil-closures
   to: /js/s/evil-closures
   status: 301!
-- from: /articles/s/javascript-execute-event-handler-once
-  to: /js/s/execute-event-handler-once
-  status: 301!
 - from: /articles/s/javascript-expression-statement
   to: /js/s/expression-statement
   status: 301!
@@ -1953,4 +1950,13 @@
   status: 301!
 - from: /js/s/right-substring-generator
   to: /js/s/substring-generator
+  status: 301!
+- from: /articles/s/javascript-execute-event-handler-once
+  to: /js/s/event-listener-once
+  status: 301!
+- from: /js/s/execute-event-handler-once
+  to: /js/s/event-listener-once
+  status: 301!
+- from: /js/s/listen-once
+  to: /js/s/event-listener-once
   status: 301!
