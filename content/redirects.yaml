@@ -958,14 +958,8 @@
 - from: /js/s/set-style
   to: /js/s/set-style-for-html-element
   status: 301!
-- from: /js/s/on
-  to: /js/s/add-event-listener
-  status: 301!
 - from: /js/s/add-multiple-events
   to: /js/s/add-multiple-event-listeners
-  status: 301!
-- from: /js/s/off
-  to: /js/s/remove-event-listener
   status: 301!
 - from: /js/s/remove-event-listener-all
   to: /js/s/remove-multiple-event-listeners
@@ -1959,4 +1953,16 @@
   status: 301!
 - from: /js/s/listen-once
   to: /js/s/event-listener-once
+  status: 301!
+- from: /js/s/on
+  to: /js/s/add-remove-event-listener
+  status: 301!
+- from: /js/s/add-event-listener
+  to: /js/s/add-remove-event-listener
+  status: 301!
+- from: /js/s/off
+  to: /js/s/add-remove-event-listener
+  status: 301!
+- from: /js/s/remove-event-listener
+  to: /js/s/add-remove-event-listener
   status: 301!
