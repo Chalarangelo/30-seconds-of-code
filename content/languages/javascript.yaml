@@ -756,3 +756,5 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener
   Event.target: https://developer.mozilla.org/en-US/docs/Web/API/Event/target
   Node.contains(): https://developer.mozilla.org/en-US/docs/Web/API/Node/contains
+  EventTarget.dispatchEvent(): >-
+    https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent

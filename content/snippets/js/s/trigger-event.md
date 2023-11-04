@@ -1,17 +1,19 @@
 ---
-title: Trigger event on HTML element
-type: snippet
+title: Programmatically trigger event on HTML element using JavaScript
+shortTitle: Trigger event on HTML element
+type: story
 language: javascript
 tags: [browser,event]
 cover: cloudy-mountaintop-2
-dateModified: 2020-10-22
+excerpt: Learn how to trigger an event on an HTML element using JavaScript.
+dateModified: 2023-11-03
 ---
 
-Triggers a specific event on a given element, optionally passing custom data.
+JavaScript's `EventTarget.dispatchEvent()` method allows you to **trigger an event programmatically**. This method accepts an `Event` object as its only argument, which can be created using either the regular [`Event`](https://developer.mozilla.org/en-US/docs/Web/API/Event) constructor or the [`CustomEvent`](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent) constructor.
 
-- Use the `CustomEvent` constructor to create an event from the specified `eventType` and details.
-- Use `EventTarget.dispatchEvent()` to trigger the newly created event on the given element.
-- Omit the third argument, `detail`, if you do not want to pass custom data to the triggered event.
+Usually, you'd want to use the [`CustomEvent` constructor](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent), as it allows you to **pass custom data to the event listener**. The constructor accepts two arguments: `eventType` and `detail`. The `eventType` argument is a string that specifies the **type of event** to be created (e.g. `'click'`). The `detail` argument is an object that contains the custom data you want to pass to the event listener.
+
+Putting it all together, you can create a function that programmatically triggers an event on an HTML element:
 
 ```js
 const triggerEvent = (el, eventType, detail) =>
@@ -19,6 +21,12 @@ const triggerEvent = (el, eventType, detail) =>
 ```
 
 ```js
-triggerEvent(document.getElementById('myId'), 'click');
-triggerEvent(document.getElementById('myId'), 'click', { username: 'bob' });
+const myElement = document.getElementById('my-element');
+myElement.addEventListener('click', e => console.log(e.detail));
+
+triggerEvent(myElement, 'click');
+// The event listener will log: null
+
+triggerEvent(myElement, 'click', { username: 'bob' });
+// The event listener will log: { username: 'bob' }
 ```
