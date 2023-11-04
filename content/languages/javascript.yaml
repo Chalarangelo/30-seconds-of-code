@@ -754,3 +754,5 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
   EventTarget.removeEventListener(): >-
     https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener
+  Event.target: https://developer.mozilla.org/en-US/docs/Web/API/Event/target
+  Node.contains(): https://developer.mozilla.org/en-US/docs/Web/API/Node/contains

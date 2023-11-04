@@ -4,7 +4,7 @@ featured: true
 snippetIds:
   - js/s/add-remove-event-listener
   - js/s/event-listener-once
-  - js/s/on-click-outside
+  - js/s/listen-click-outside-event
   - js/s/event-bubbling-capturing-delegation
   - js/s/add-event-listener-all
   - js/s/remove-multiple-event-listeners

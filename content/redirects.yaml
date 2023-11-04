@@ -1966,3 +1966,6 @@
 - from: /js/s/remove-event-listener
   to: /js/s/add-remove-event-listener
   status: 301!
+- from: /js/s/on-click-outside
+  to: /js/s/listen-click-outside-event
+  status: 301!
