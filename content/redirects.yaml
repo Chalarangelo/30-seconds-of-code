@@ -1981,3 +1981,9 @@
 - from: /js/s/fahrenheit-to-celsius
   to: /js/s/convert-celsius-fahrenheit
   status: 301!
+- from: /js/s/miles-to-km
+  to: /js/s/convert-miles-km
+  status: 301!
+- from: /js/s/km-to-miles
+  to: /js/s/convert-miles-km
+  status: 301!

@@ -5,8 +5,7 @@ allowUnlisted: true
 snippetIds:
   - js/s/convert-degrees-radians
   - js/s/convert-celsius-fahrenheit
-  - js/s/km-to-miles
-  - js/s/miles-to-km
+  - js/s/convert-miles-km
 splash: basics.png
 description: >-
   Simple unit conversions come up in a lot of JavaScript applications. This
