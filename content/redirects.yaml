@@ -1975,3 +1975,9 @@
 - from: /js/s/rads-to-degrees
   to: /js/s/convert-degrees-radians
   status: 301!
+- from: /js/s/celsius-to-fahrenheit
+  to: /js/s/convert-celsius-fahrenheit
+  status: 301!
+- from: /js/s/fahrenheit-to-celsius
+  to: /js/s/convert-celsius-fahrenheit
+  status: 301!
