@@ -1,6 +1,7 @@
 slug: js/logical-operations
 name: JavaScript Logical Operations
 featured: true
+allowUnlisted: true
 snippetIds:
   - js/s/and
   - js/s/or
