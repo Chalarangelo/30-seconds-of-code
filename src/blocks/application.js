@@ -10,6 +10,7 @@ import { Extractor } from '#blocks/extractor/extractor';
 import { Content } from '#blocks/utilities/content';
 import { PreparedQueries } from '#blocks/utilities/preparedQueries';
 import { FileWatcher } from '#blocks/utilities/fileWatcher';
+import { TextOutputter } from '#blocks/utilities/textOutputter';
 import schema from '#blocks/schema';
 import settings from '#settings/settings';
 import writers from '#blocks/writers/writers';
@@ -537,6 +538,7 @@ export class Application {
         $[queryName] = PreparedQueries[queryName](Application, $);
     });
     context['$'] = $;
+    context.toLogFile = TextOutputter.makeLog;
     context.rawDataset = Application.datasetObject;
     logger.success('Setting up REPL context complete.');
   }
