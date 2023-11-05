@@ -17,6 +17,7 @@ export const collection = {
     shortDescription: 'string',
     seoDescription: 'string',
     topLevel: 'boolean',
+    allowUnlisted: 'boolean',
   },
   properties: {
     hasParent: {
@@ -77,7 +78,10 @@ export const collection = {
       cache: true,
     },
     listedSnippets: {
-      body: collection => collection.snippets.listed.published,
+      body: collection =>
+        collection.allowUnlisted
+          ? collection.snippets.published
+          : collection.snippets.listed.published,
       cache: true,
     },
     formattedSnippetCount: {

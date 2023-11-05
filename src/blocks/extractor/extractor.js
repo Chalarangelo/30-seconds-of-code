@@ -52,6 +52,7 @@ export class Extractor {
         miniName = shortName,
         shortDescription,
         topLevel = false,
+        allowUnlisted = false,
         ...rest
       } = config;
       const slug = `/${id}`;
@@ -70,6 +71,7 @@ export class Extractor {
         topLevel,
         shortDescription,
         seoDescription,
+        allowUnlisted,
         ...rest,
         snippetIds,
       };
