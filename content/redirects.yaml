@@ -1969,3 +1969,9 @@
 - from: /js/s/on-click-outside
   to: /js/s/listen-click-outside-event
   status: 301!
+- from: /js/s/degrees-to-rads
+  to: /js/s/convert-degrees-radians
+  status: 301!
+- from: /js/s/rads-to-degrees
+  to: /js/s/convert-degrees-radians
+  status: 301!
