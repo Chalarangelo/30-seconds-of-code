@@ -1,7 +1,7 @@
 ---
 title: Convert between Celsius and Fahrenheit in JavaScript
 shortTitle: Convert between Celsius and Fahrenheit
-type: story
+type: tip
 language: javascript
 tags: [math]
 unlisted: true

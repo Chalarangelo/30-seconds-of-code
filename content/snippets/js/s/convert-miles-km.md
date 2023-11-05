@@ -1,7 +1,7 @@
 ---
 title: Convert between miles and kilometers in JavaScript
 shortTitle: Convert between miles and kilometers
-type: story
+type: tip
 language: javascript
 tags: [math]
 unlisted: true

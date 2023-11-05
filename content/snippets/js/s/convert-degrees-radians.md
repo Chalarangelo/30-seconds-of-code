@@ -1,7 +1,7 @@
 ---
 title: Convert between degrees and radians in JavaScript
 shortTitle: Convert between degrees and radians
-type: story
+type: tip
 language: javascript
 tags: [math]
 cover: blue-flower
