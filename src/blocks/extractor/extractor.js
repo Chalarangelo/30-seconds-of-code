@@ -21,6 +21,7 @@ export class Extractor {
   static languageData = new Map();
 
   static prepared = false;
+  static quiet = false;
 
   static prepare = async () => {
     Extractor.extractLanguageData();
@@ -30,15 +31,18 @@ export class Extractor {
     Extractor.prepared = true;
   };
 
-  static extract = async () => {
-    if (!Extractor.prepared) await Extractor.prepare();
+  static extract = async ({ force = false, quiet = false } = {}) => {
+    Extractor.quiet = quiet;
+    if (!Extractor.prepared || force) await Extractor.prepare();
 
     await Extractor.writeData();
     return Extractor.data;
   };
 
   static extractCollectionConfigs = () => {
-    const logger = new Logger('Extractor.extractCollectionConfigs');
+    const logger = new Logger('Extractor.extractCollectionConfigs', {
+      muted: Extractor.quiet,
+    });
     logger.log('Extracting collection configurations');
     const configs = YAMLHandler.fromGlob(
       `${contentDir}/collections/**/*.yaml`,
@@ -81,7 +85,9 @@ export class Extractor {
   };
 
   static extractLanguageData = () => {
-    const logger = new Logger('Extractor.extractLanguageData');
+    const logger = new Logger('Extractor.extractLanguageData', {
+      muted: Extractor.quiet,
+    });
     logger.log('Extracting language data');
     const languageData = YAMLHandler.fromGlob(
       `${contentDir}/languages/*.yaml`
@@ -113,7 +119,9 @@ export class Extractor {
   };
 
   static extractSnippets = async () => {
-    const logger = new Logger('Extractor.extractSnippets');
+    const logger = new Logger('Extractor.extractSnippets', {
+      muted: Extractor.quiet,
+    });
     logger.log('Extracting snippets');
 
     const snippetsGlob = `${contentDir}/snippets/**/s/*.md`;
@@ -131,7 +139,9 @@ export class Extractor {
   };
 
   static extractSnippet = async snippetPath => {
-    const logger = new Logger('Extractor.extractSnippet');
+    const logger = new Logger('Extractor.extractSnippet', {
+      muted: Extractor.quiet,
+    });
     logger.log(`Extracting snippet ${snippetPath}`);
 
     let snippet = {};
@@ -147,7 +157,9 @@ export class Extractor {
   };
 
   static updateSnippetData = (id, snippetData) => {
-    const logger = new Logger('Extractor.updateSnippetData');
+    const logger = new Logger('Extractor.updateSnippetData', {
+      muted: Extractor.quiet,
+    });
     logger.log(`Updating data for snippet ${id}`);
 
     const index = Extractor.data.snippets.findIndex(
@@ -180,7 +192,9 @@ export class Extractor {
   };
 
   static parseSnippet = snippet => {
-    const logger = new Logger('Extractor.parseSnippet');
+    const logger = new Logger('Extractor.parseSnippet', {
+      muted: Extractor.quiet,
+    });
 
     const {
       filePath,
@@ -243,7 +257,9 @@ export class Extractor {
   };
 
   static extractCollectionsHubConfig = () => {
-    const logger = new Logger('Extractor.extractCollectionsHubConfig');
+    const logger = new Logger('Extractor.extractCollectionsHubConfig', {
+      muted: Extractor.quiet,
+    });
     logger.log('Extracting hub pages configuration');
     const hubConfig = YAMLHandler.fromFile(`${contentDir}/hub.yaml`);
     logger.log('Finished extracting hub pages configuration');
@@ -251,7 +267,9 @@ export class Extractor {
   };
 
   static writeData = () => {
-    const logger = new Logger('Extractor.writeData');
+    const logger = new Logger('Extractor.writeData', {
+      muted: Extractor.quiet,
+    });
     logger.log('Writing data to disk');
     return JSONHandler.toFile(
       `${pathSettings.contentPath}/content.json`,
