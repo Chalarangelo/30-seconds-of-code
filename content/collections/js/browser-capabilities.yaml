@@ -5,8 +5,7 @@ snippetIds:
   - js/s/supports-touch-events
   - js/s/detect-device-type
   - js/s/detect-language
-  - js/s/prefers-dark-color-scheme
-  - js/s/prefers-light-color-scheme
+  - js/s/prefers-color-scheme
   - js/s/is-local-storage-enabled
   - js/s/is-session-storage-enabled
 splash: compass-1.png

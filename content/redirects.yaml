@@ -1999,3 +1999,9 @@
 - from: /js/s/truth-check-collection
   to: /js/s/check-array-values-are-truthy
   status: 301!
+- from: /js/s/prefers-dark-color-schem
+  to: /js/s/prefers-color-scheme
+  status: 301!
+- from: /js/s/prefers-light-color-scheme
+  to: /js/s/prefers-color-scheme
+  status: 301!

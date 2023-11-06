@@ -758,3 +758,5 @@ references:
   Node.contains(): https://developer.mozilla.org/en-US/docs/Web/API/Node/contains
   EventTarget.dispatchEvent(): >-
     https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent
+  Window.matchMedia(): >-
+    https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia
