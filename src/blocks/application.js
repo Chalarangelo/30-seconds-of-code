@@ -440,46 +440,19 @@ export class Application {
     const logger = new Logger('Application.watch');
     logger.log('Watching content files...');
 
-    const snippetDirectoryPath = `${Application.settings.paths.rawContentPath}/snippets`;
-    const { Snippet } = Application.models;
+    const contentDirectoryPath = `${Application.settings.paths.rawContentPath}`;
 
-    FileWatcher.watch(
-      snippetDirectoryPath,
-      /\/s\/.*\.md/,
-      (eventType, fileName) => {
-        try {
-          if (eventType === 'update') {
-            Extractor.extractSnippet(
-              `${snippetDirectoryPath}/${fileName}`
-            ).then(([id, snippetData]) => {
-              if (!Snippet.records.get(id)) Snippet.createRecord(snippetData);
-              else Snippet.updateRecord(id, snippetData);
-
-              writers.PageWriter.writeSnippetPages(Application);
-            });
-          }
-          if (eventType === 'create') {
-            Extractor.extractSnippet(
-              `${snippetDirectoryPath}/${fileName}`
-            ).then(
-              // eslint-disable-next-line no-unused-vars
-              ([id, snippetData]) => {
-                Snippet.createRecord(snippetData);
-                writers.PageWriter.writeSnippetPages(Application);
-              }
-            );
-          }
-          if (eventType === 'delete') {
-            const id = fileName.split('.')[0];
-            Extractor.unlinkSnippetData(id);
-            Snippet.removeRecord(id);
-            writers.PageWriter.writeSnippetPages(Application);
-          }
-        } catch (err) {
-          logger.error(err);
-        }
+    FileWatcher.watch(contentDirectoryPath, /.*\.(md|yaml)$/, () => {
+      try {
+        Extractor.extract({ quiet: true, force: true }).then(parsed => {
+          Application.resetDataset(parsed, { quiet: true });
+          writers.PageWriter.write(Application, { quiet: true });
+          logger.success('Content files updated.');
+        });
+      } catch (err) {
+        logger.error(err);
       }
-    );
+    });
   }
 
   // -------------------------------------------------------------

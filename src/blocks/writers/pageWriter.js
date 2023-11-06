@@ -14,8 +14,8 @@ export class PageWriter {
    * @returns {Promise} A promise that will resolve when all JSON files have
    * been written to disk.
    */
-  static write(application) {
-    const logger = new Logger('PageWriter.write');
+  static write(application, { quiet = false } = {}) {
+    const logger = new Logger('PageWriter.write', { muted: quiet });
 
     const { dataset } = application;
 
