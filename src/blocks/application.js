@@ -364,8 +364,9 @@ export class Application {
     logger.log('Clearing dataset...');
     const dataset = Application.dataset;
     if (dataset && dataset.name) {
-      Application.modelNames.forEach(model => {
-        dataset.removeModel(model);
+      Application.modelNames.forEach(modelName => {
+        const model = Application.getModel(modelName);
+        model.records.forEach(record => model.removeRecord(record.id));
       });
     } else logger.warn('Dataset not found!');
     logger.success('Clearing dataset complete.');
