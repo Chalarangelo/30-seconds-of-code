@@ -127,12 +127,14 @@ export class Application {
   /**
    * Creates/recreates the schema object.
    */
-  static setupSchema() {
-    const logger = new Logger('Application.setupSchema');
+  static setupSchema({ quiet = false } = {}) {
+    const logger = new Logger('Application.setupSchema', { muted: quiet });
     const schemaObject = Application.schemaObject;
-    logger.log('Setting up schema...');
-    Application._schema = jsiqle.create(schemaObject);
-    logger.success('Schema setup complete.');
+    if (!Application._schema) {
+      logger.log('Setting up schema...');
+      Application._schema = jsiqle.create(schemaObject);
+      logger.success('Schema setup complete.');
+    } else logger.log('Schema already exists!');
   }
 
   /**
@@ -211,8 +213,8 @@ export class Application {
   /**
    * Populates the dataset with the raw dataset object.
    */
-  static populateDataset() {
-    const logger = new Logger('Application.populateDataset');
+  static populateDataset({ quiet = false } = {}) {
+    const logger = new Logger('Application.populateDataset', { muted: quiet });
     logger.log('Populating dataset...');
     const {
       Snippet,
@@ -359,8 +361,8 @@ export class Application {
   /**
    * Empties the current jsiqle dataset, removing all models from it.
    */
-  static clearDataset() {
-    const logger = new Logger('Application.clearDataset');
+  static clearDataset({ quiet = false } = {}) {
+    const logger = new Logger('Application.clearDataset', { muted: quiet });
     logger.log('Clearing dataset...');
     const dataset = Application.dataset;
     if (dataset && dataset.name) {
@@ -377,11 +379,11 @@ export class Application {
    * repopulating it with new data.
    * @param {Object} data The data to populate the dataset with.
    */
-  static resetDataset(data) {
-    const logger = new Logger('Application.resetDataset');
+  static resetDataset(data, { quiet = false } = {}) {
+    const logger = new Logger('Application.resetDataset', { muted: quiet });
     logger.log('Resetting dataset...');
-    Application.clearDataset();
-    Application.initialize(data);
+    Application.clearDataset({ quiet });
+    Application.initialize(data, { quiet });
     logger.success('Resetting dataset complete.');
   }
 
@@ -393,15 +395,15 @@ export class Application {
    * Initializes the application environment.
    * @param {Object} data The data to populate the dataset with.
    */
-  static initialize(data) {
-    const logger = new Logger('Application.initialize');
+  static initialize(data, { quiet = false } = {}) {
+    const logger = new Logger('Application.initialize', { muted: quiet });
     logger.log(`Starting application in "${process.env.NODE_ENV}" mode.`);
-    Application.setupSchema();
+    Application.setupSchema({ quiet });
     if (data) {
       logger.log('Using provided dataset.');
       Application._rawDataset = data;
-    } else Application.fetchDataset();
-    Application.populateDataset();
+    } else Application.fetchDataset({ quiet });
+    Application.populateDataset({ quiet });
     logger.success('Application initialization complete.');
   }
 
@@ -410,10 +412,12 @@ export class Application {
    * @returns {Promise} A promise that resolves as soon as the extraction is
    * complete and the application has been initialized.
    */
-  static extractAndInitialize() {
+  static extractAndInitialize({ quiet = false, force = false } = {}) {
     // By design, we do not have a logger here. The extractor and the initalize
     // methods should suffice for the time being.
-    return Extractor.extract().then(parsed => Application.initialize(parsed));
+    return Extractor.extract({ quiet, force }).then(parsed =>
+      Application.initialize(parsed)
+    );
   }
 
   /**
@@ -421,10 +425,10 @@ export class Application {
    * @returns {Promise} A promise that resolves as soon as the extraction is
    * complete.
    */
-  static extract() {
+  static extract({ quiet = false, force = false } = {}) {
     // NOTE: The Extractor is strictly only accessible via the Application
     // module, so this is the only way to access its extraction method.
-    return Extractor.extract();
+    return Extractor.extract({ quiet, force });
   }
 
   /**
