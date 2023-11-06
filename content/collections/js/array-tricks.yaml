@@ -4,9 +4,7 @@ featured: true
 snippetIds:
   - js/s/unique-elements-in-array
   - js/s/compact-array
-  - js/s/any-array-element-is-truthy
-  - js/s/all-array-elements-are-truthy
-  - js/s/all-array-elements-are-falsy
+  - js/s/check-array-values-are-truthy
   - js/s/array-difference
   - js/s/array-union
   - js/s/array-intersection

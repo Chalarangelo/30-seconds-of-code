@@ -982,15 +982,6 @@
 - from: /js/s/chain-async
   to: /js/s/chain-async-functions
   status: 301!
-- from: /js/s/all
-  to: /js/s/all-array-elements-are-truthy
-  status: 301!
-- from: /js/s/any
-  to: /js/s/any-array-element-is-truthy
-  status: 301!
-- from: /js/s/none
-  to: /js/s/all-array-elements-are-falsy
-  status: 301!
 - from: /js/s/flatten
   to: /js/s/flatten-array
   status: 301!
@@ -1986,4 +1977,25 @@
   status: 301!
 - from: /js/s/km-to-miles
   to: /js/s/convert-miles-km
+  status: 301!
+- from: /js/s/all
+  to: /js/s/check-array-values-are-truthy
+  status: 301!
+- from: /js/s/none
+  to: /js/s/check-array-values-are-truthy
+  status: 301!
+- from: /js/s/any
+  to: /js/s/check-array-values-are-truthy
+  status: 301!
+- from: /js/s/all-array-elements-are-truthy
+  to: /js/s/check-array-values-are-truthy
+  status: 301!
+- from: /js/s/all-array-elements-are-falsy
+  to: /js/s/check-array-values-are-truthy
+  status: 301!
+- from: /js/s/any-array-element-is-truthy
+  to: /js/s/check-array-values-are-truthy
+  status: 301!
+- from: /js/s/truth-check-collection
+  to: /js/s/check-array-values-are-truthy
   status: 301!
