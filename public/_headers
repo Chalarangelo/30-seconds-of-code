@@ -3,3 +3,23 @@
   X-XSS-Protection: 1; mode=block
   X-Content-Type-Options: nosniff
   Referrer-Policy: same-origin
+/assets/Inter.var.woff2
+  cache-control: public
+  cache-control: immutable
+  cache-control: max-age=31536000
+/assets/Raleway-Medium.woff2
+  cache-control: public
+  cache-control: immutable
+  cache-control: max-age=31536000
+/assets/RobotoMono-Regular.woff2
+  cache-control: public
+  cache-control: immutable
+  cache-control: max-age=31536000
+/assets/RobotoMono-Italic.woff2
+  cache-control: public
+  cache-control: immutable
+  cache-control: max-age=31536000
+/assets/RobotoMono-Medium.woff2
+  cache-control: public
+  cache-control: immutable
+  cache-control: max-age=31536000
