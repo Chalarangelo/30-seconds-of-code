@@ -1078,15 +1078,6 @@
 - from: /js/s/call
   to: /js/s/call-functions-with-context
   status: 301!
-- from: /js/s/chunk-into-n
-  to: /js/s/split-array-into-n-chunks
-  status: 301!
-- from: /js/s/chunk
-  to: /js/s/split-into-chunks
-  status: 301!
-- from: /js/s/chunkify
-  to: /js/s/chunk-iterable
-  status: 301!
 - from: /js/s/initialize-array-with-range-right
   to: /js/s/initialize-array-with-reversed-range
   status: 301!
@@ -2004,4 +1995,22 @@
   status: 301!
 - from: /js/s/prefers-light-color-scheme
   to: /js/s/prefers-color-scheme
+  status: 301!
+- from: /js/s/chunk-into-n
+  to: /js/s/split-array-into-chunks
+  status: 301!
+- from: /js/s/chunk
+  to: /js/s/split-array-into-chunks
+  status: 301!
+- from: /js/s/chunkify
+  to: /js/s/split-array-into-chunks
+  status: 301!
+- from: /js/s/split-into-chunks
+  to: /js/s/split-array-into-chunks
+  status: 301!
+- from: /js/s/split-array-into-n-chunks
+  to: /js/s/split-array-into-chunks
+  status: 301!
+- from: /js/s/chunk-iterable
+  to: /js/s/split-array-into-chunks
   status: 301!
