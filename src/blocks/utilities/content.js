@@ -66,7 +66,7 @@ export class Content {
         const date = new Date();
         const dateString = `${date.getFullYear()}-${pad(
           date.getMonth() + 1
-        )}-${pad(date.getDate())}T05:00:00-04:00`;
+        )}-${pad(date.getDate())}`;
 
         const fileData = template
           .replace(/title:\s*.*\n/, `title: ${name}\n`)
