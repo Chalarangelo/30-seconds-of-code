@@ -555,11 +555,11 @@ export class Application {
       help: [
         'Creates a new snippet or collection with the given arguments.',
         'Usage: createContent <directoryName> <type> <name>',
-        'Example: createSnippet 30css my-new-snippet',
+        'Example: createContent css snippet my-new-snippet',
       ].join('\n                   '),
       action(input) {
         const [directoryName, type, snippetName] = input.trim().split(' ');
-        Content.createSnippet(directoryName, type, snippetName);
+        Content.create(directoryName, type, snippetName);
         replServer.displayPrompt();
       },
     });
