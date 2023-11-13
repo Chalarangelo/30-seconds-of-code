@@ -127,14 +127,8 @@ export class AssetWriter {
             const preview = sharp(filePath).resize(coverPreviewDimensions);
             return Promise.all([
               cover
-                .jpeg({ quality: 80 })
-                .toFile(`${outPath}/cover/${fileName}.jpg`),
-              cover
                 .webp({ quality: 85 })
                 .toFile(`${outPath}/cover/${fileName}.webp`),
-              preview
-                .jpeg({ quality: 85 })
-                .toFile(`${outPath}/preview/${fileName}.jpg`),
               preview
                 .webp({ quality: 90 })
                 .toFile(`${outPath}/preview/${fileName}.webp`),
