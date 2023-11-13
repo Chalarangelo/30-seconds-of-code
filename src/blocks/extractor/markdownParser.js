@@ -92,10 +92,7 @@ const textTransformers = [
       if (imgSrc.endsWith('.png') || imgSrc.endsWith('.svg')) {
         return `<img src="${assetPath}/${imgSrc}"${imgRest}>`;
       }
-      return `<picture>
-          <source type="image/webp" srcset="${assetPath}/${imgName}.webp">
-          <img src="${assetPath}/${imgSrc}"${imgRest}>
-        </picture>`;
+      return `<img src="${assetPath}/${imgName}.webp">`;
     },
   },
 ];
