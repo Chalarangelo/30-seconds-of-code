@@ -4,7 +4,4 @@ const { src, ...rest } = Astro.props;
 const webpSrc = `${src.slice(0, src.lastIndexOf('.'))}.webp`;
 ---
 
-<picture>
-  <source type='image/webp' srcset={webpSrc} />
-  <img src={src} {...rest} />
-</picture>
+<img src={webpSrc} {...rest} />
