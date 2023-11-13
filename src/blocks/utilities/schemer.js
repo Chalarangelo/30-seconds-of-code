@@ -15,7 +15,7 @@ export class Schemer {
     dateModified,
   }) => {
     const url = `${websiteUrl}${slug}`;
-    const coverSrc = cover ? cover : orgLogoSrc;
+    const coverSrc = cover ? cover.replace('.jpg', '.webp') : orgLogoSrc;
 
     return {
       '@context': 'https://schema.org',
