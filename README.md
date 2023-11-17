@@ -13,13 +13,12 @@
 
 ## Want to contribute?
 
-* If you want to help, take a minute to read the [Contribution Guidelines](/CONTRIBUTING.md) first.
-* If you want to discuss a new snippet idea, first you should [create a discussion](https://github.com/Chalarangelo/30-seconds-of-code/discussions/new?category=ideas).
-* If you find a problem with a specific snippet or the website, please [open an issue](https://github.com/30-seconds/30-seconds-of-code/issues/new).
+* Community contributions are not accepted at this time. Check back later for updates.
 
 ## Credits
 
 * This repository is maintained by [Angelos Chalaris]([https://github.com/30-seconds](https://github.com/Chalarangelo)).
-* All snippets are licensed under the [CC-BY-4.0 License](https://creativecommons.org/licenses/by/4.0/), unless explicitly stated otherwise.
-* Logos, names and trademarks are not to be used without the explicit consent of the owner.
+* All code snippets are licensed under the [CC-BY-4.0 License](https://creativecommons.org/licenses/by/4.0/), unless explicitly stated otherwise.
+* Any other material (including text content, images, the website source code, logos, names and trademarks) are not to be used without the explicit consent of the owner.
 * The website is powered by [Netlify](https://www.netlify.com/), [Astro](https://astro.build/) & [GitHub](https://github.com/).
+* All of the photography is provided by [Unsplash](https://unsplash.com/collections/9387655/30-seconds-of-code-images).
