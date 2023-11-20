@@ -6,17 +6,17 @@
 
 | Regular | Monochrome |
 | --- | --- |
-| ![logo](/logo-resources/logo.png) | ![monochrome](/logo-resources/logo-monochrome.png) |
+| ![logo](/logo/logo-resources/logo.png) | ![monochrome](/logo/logo-resources/logo-monochrome.png) |
 
 | Grayscale | With Background |
 | --- | --- |
-| ![grayscale](/logo-resources/logo-grayscale.png) | ![bg](/logo-resources/logo-bg.png) |
+| ![grayscale](/logo/logo-resources/logo-grayscale.png) | ![bg](/logo/logo-resources/logo-bg.png) |
 
 ## Placement guide
 
-![placement-guide](/logo-resources/placement-guide.png)
+![placement-guide](/logo/logo-resources/placement-guide.png)
 
-The free space around our logo is calculated using the top inner circle of the letter "3" in the logo. The minimum free space around the logo is a full circle on either side on the horizontal axis and half a circle on either side on the vertical axis. 
+The free space around our logo is calculated using the top inner circle of the letter "3" in the logo. The minimum free space around the logo is a full circle on either side on the horizontal axis and half a circle on either side on the vertical axis.
 
 ## Small use guidance
 
