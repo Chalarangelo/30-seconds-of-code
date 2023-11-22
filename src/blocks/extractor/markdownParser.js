@@ -214,21 +214,6 @@ export class MarkdownParser {
       languageStringLiteralList.push(languageStringLiteral);
     });
 
-    // Revisit code blocks, find the last if necessary and change the language
-    // to 'Examples'. Should only match 2 consecutive code blocks of the same
-    // language and only once for the very last block on the page.
-    selectAll('html + html', ast).forEach(node => {
-      if (
-        node.cni === codeNodeIndex &&
-        languageStringLiteralList.slice(-2)[0] === node.lsl
-      ) {
-        node.value = node.value.replace(
-          `data-code-language="${node.lsl}"`,
-          'data-code-language="Examples"'
-        );
-      }
-    });
-
     const references = new Map(
       Object.values(languageObjects)
         .map(obj => obj.references)
