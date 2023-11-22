@@ -15,13 +15,13 @@ dateModified: 2021-06-12
 .gradient-box {
   width: 100%;
   height: 64px;
-  border-radius: 8px 8px 0 0;
+  border-radius: 4px 4px 0 0;
   margin-bottom: -16px;
   margin-top: 32px;
 }
 
 .gradient-box + .gatsby-highlight > pre.blog-code {
-  border-radius: 0 0 8px 8px;
+  border-radius: 0 0 4px 4px;
 }
 
 .stripe {
