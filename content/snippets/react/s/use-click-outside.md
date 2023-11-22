@@ -27,9 +27,7 @@ const useClickOutside = (ref, callback) => {
     };
   });
 };
-```
 
-```jsx
 const ClickBox = ({ onClickOutside }) => {
   const clickRef = React.useRef();
   useClickOutside(clickRef, onClickOutside);

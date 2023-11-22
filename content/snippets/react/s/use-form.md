@@ -26,9 +26,7 @@ const useForm = initialValues => {
     }
   ];
 };
-```
 
-```jsx
 const Form = () => {
   const initialState = { email: '', password: '' };
   const [values, setValues] = useForm(initialState);

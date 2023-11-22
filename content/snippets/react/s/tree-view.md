@@ -110,9 +110,7 @@ const TreeView = ({
     </div>
   );
 };
-```
 
-```jsx
 const data = {
   lorem: {
     ipsum: 'dolor sit',

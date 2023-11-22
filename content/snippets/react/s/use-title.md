@@ -28,9 +28,7 @@ const useTitle = title => {
     };
   }, []);
 };
-```
 
-```jsx
 const Alert = () => {
   useTitle('Alert');
   return <p>Alert! Title has changed</p>;

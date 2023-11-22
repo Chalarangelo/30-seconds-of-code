@@ -67,9 +67,7 @@ const LazyLoadImage = ({
     />
   );
 };
-```
 
-```jsx
 ReactDOM.createRoot(document.getElementById('root')).render(
   <LazyLoadImage
     src="https://picsum.photos/id/1080/600/600"

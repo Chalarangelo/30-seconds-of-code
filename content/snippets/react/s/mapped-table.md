@@ -43,9 +43,7 @@ const MappedTable = ({ data, propertyNames }) => {
     </table>
   );
 };
-```
 
-```jsx
 const people = [
   { name: 'John', surname: 'Smith', age: 42 },
   { name: 'Adam', surname: 'Smith', gender: 'male' }

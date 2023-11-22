@@ -42,9 +42,7 @@ const useHover = () => {
 
   return [callbackRef, isHovering];
 };
-```
 
-```jsx
 const MyApp = () => {
   const [hoverRef, isHovering] = useHover();
 

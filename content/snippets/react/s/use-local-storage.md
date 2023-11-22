@@ -39,9 +39,7 @@ const useLocalStorage = (keyName, defaultValue) => {
 
   return [storedValue, setValue];
 };
-```
 
-```jsx
 const MyApp = () => {
   const [name, setName] = useLocalStorage('name', 'John');
 

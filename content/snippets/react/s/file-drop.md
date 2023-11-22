@@ -98,9 +98,7 @@ const FileDrop = ({ onDrop }) => {
     </div>
   );
 };
-```
 
-```jsx
 ReactDOM.createRoot(document.getElementById('root')).render(
   <FileDrop onDrop={console.log} />
 );

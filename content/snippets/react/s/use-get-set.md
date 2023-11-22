@@ -29,9 +29,7 @@ const useGetSet = initialState => {
     []
   );
 };
-```
 
-```jsx
 const Counter = () => {
   const [getCount, setCount] = useGetSet(0);
   const onClick = () => {

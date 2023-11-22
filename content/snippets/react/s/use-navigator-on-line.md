@@ -38,9 +38,7 @@ const useNavigatorOnLine = () => {
 
   return status;
 };
-```
 
-```jsx
 const StatusIndicator = () => {
   const isOnline = useNavigatorOnLine();
 

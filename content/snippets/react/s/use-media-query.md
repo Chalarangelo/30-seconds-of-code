@@ -30,9 +30,7 @@ const useMediaQuery = (query, whenTrue, whenFalse) => {
 
   return match ? whenTrue : whenFalse;
 };
-```
 
-```jsx
 const ResponsiveText = () => {
   const text = useMediaQuery(
     '(max-width: 400px)',

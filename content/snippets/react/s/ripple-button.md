@@ -101,9 +101,7 @@ const RippleButton = ({ children, onClick }) => {
     </button>
   );
 };
-```
 
-```jsx
 ReactDOM.createRoot(document.getElementById('root')).render(
   <RippleButton onClick={e => console.log(e)}>Click me</RippleButton>
 );

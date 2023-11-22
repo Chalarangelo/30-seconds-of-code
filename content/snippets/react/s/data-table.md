@@ -33,9 +33,7 @@ const DataTable = ({ data }) => {
     </table>
   );
 };
-```
 
-```jsx
 const people = ['John', 'Jesse'];
 ReactDOM.createRoot(document.getElementById('root')).render(
   <DataTable data={people} />

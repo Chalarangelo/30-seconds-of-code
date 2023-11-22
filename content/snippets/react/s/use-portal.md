@@ -36,9 +36,7 @@ const usePortal = el => {
 
   return portal.render;
 };
-```
 
-```jsx
 const App = () => {
   const Portal = usePortal(document.querySelector('title'));
 

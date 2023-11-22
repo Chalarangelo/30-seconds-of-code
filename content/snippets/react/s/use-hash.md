@@ -38,9 +38,7 @@ const useHash = () => {
 
   return [hash, updateHash];
 };
-```
 
-```jsx
 const MyApp = () => {
   const [hash, setHash] = useHash();
 

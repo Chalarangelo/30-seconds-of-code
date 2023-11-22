@@ -42,9 +42,6 @@ const Toggle = ({ defaultToggled = false }) => {
   );
 };
 
-```
-
-```jsx
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Toggle />
 );

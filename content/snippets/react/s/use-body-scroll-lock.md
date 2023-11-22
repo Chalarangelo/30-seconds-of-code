@@ -21,9 +21,7 @@ const useBodyScrollLock = () => {
     return () => (document.body.style.overflow = originalStyle);
   }, []);
 };
-```
 
-```jsx
 const Modal = ({ onClose }) => {
   useBodyScrollLock();
 

@@ -62,9 +62,7 @@ const Tooltip = ({ children, text, ...rest }) => {
     </div>
   );
 };
-```
 
-```jsx
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Tooltip text="Simple tooltip">
     <button>Hover me!</button>

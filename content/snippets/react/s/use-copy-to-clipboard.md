@@ -47,9 +47,7 @@ const useCopyToClipboard = text => {
 
   return [copied, copy];
 };
-```
 
-```jsx
 const TextCopy = props => {
   const [copied, copy] = useCopyToClipboard('Lorem ipsum');
   return (

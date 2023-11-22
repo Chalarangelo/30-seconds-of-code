@@ -53,9 +53,7 @@ const Carousel = ({ carouselItems, ...rest }) => {
     </div>
   );
 };
-```
 
-```jsx
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Carousel
     carouselItems={[

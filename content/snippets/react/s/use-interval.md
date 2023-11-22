@@ -32,9 +32,7 @@ const useInterval = (callback, delay) => {
     }
   }, [delay]);
 };
-```
 
-```jsx
 const Timer = props => {
   const [seconds, setSeconds] = React.useState(0);
   useInterval(() => {

@@ -33,9 +33,7 @@ const useMutationObserver = (
     }
   }, [callback, options]);
 };
-```
 
-```jsx
 const App = () => {
   const mutationRef = React.useRef();
   const [mutationCount, setMutationCount] = React.useState(0);

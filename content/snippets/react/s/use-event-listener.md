@@ -32,9 +32,7 @@ const useEventListener = (type, handler, el = window) => {
     };
   }, [type, el]);
 };
-```
 
-```jsx
 const MyApp = () => {
   const [coords, setCoords] = React.useState({ x: 0, y: 0 });
 

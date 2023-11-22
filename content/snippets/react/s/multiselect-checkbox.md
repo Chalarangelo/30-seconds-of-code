@@ -43,9 +43,7 @@ const MultiselectCheckbox = ({ options, onChange }) => {
     </>
   );
 };
-```
 
-```jsx
 const options = [{ label: 'Item One' }, { label: 'Item Two' }];
 
 ReactDOM.createRoot(document.getElementById('root')).render(

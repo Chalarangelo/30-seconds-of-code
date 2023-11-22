@@ -42,9 +42,7 @@ const useFetch = (url, options) => {
 
   return { response, error, abort };
 };
-```
 
-```jsx
 const ImageFetch = props => {
   const res = useFetch('https://dog.ceo/api/breeds/image/random', {});
   if (!res.response) {

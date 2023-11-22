@@ -23,9 +23,7 @@ const ControlledInput = ({ value, onValueChange, ...rest }) => {
     />
   );
 };
-```
 
-```jsx
 const Form = () => {
   const [value, setValue] = React.useState('');
 

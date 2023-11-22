@@ -24,9 +24,7 @@ const useMergeState = (initialState = {}) => {
 
   return [value, mergeState];
 };
-```
 
-```jsx
 const MyApp = () => {
   const [data, setData] = useMergeState({ name: 'John', age: 20 });
 

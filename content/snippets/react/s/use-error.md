@@ -27,9 +27,7 @@ const useError = err => {
 
   return dispatchError;
 };
-```
 
-```jsx
 const ErrorButton = () => {
   const dispatchError = useError();
 

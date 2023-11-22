@@ -29,9 +29,7 @@ const useRequestAnimationFrame = callback => {
     return () => cancelAnimationFrame(requestRef.current);
   }, []);
 };
-```
 
-```jsx
 const Counter = () => {
   const [count, setCount] = React.useState(0);
 

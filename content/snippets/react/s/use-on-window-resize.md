@@ -26,9 +26,7 @@ const useOnWindowResize = callback => {
     };
   }, [callback]);
 };
-```
 
-```jsx
 const App = () => {
   useOnWindowResize(() =>
     console.log(`window size: (${window.innerWidth}, ${window.innerHeight})`)

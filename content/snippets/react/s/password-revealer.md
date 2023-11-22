@@ -22,9 +22,7 @@ const PasswordRevealer = ({ value }) => {
     </>
   );
 };
-```
 
-```jsx
 ReactDOM.createRoot(document.getElementById('root')).render(
   <PasswordRevealer />
 );

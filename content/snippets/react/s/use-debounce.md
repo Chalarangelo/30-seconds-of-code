@@ -32,9 +32,7 @@ const useDebounce = (value, delay) => {
 
   return debouncedValue;
 };
-```
 
-```jsx
 const Counter = () => {
   const [value, setValue] = React.useState(0);
   const lastValue = useDebounce(value, 500);

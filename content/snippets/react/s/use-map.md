@@ -38,9 +38,7 @@ const useMap = initialValue => {
 
   return [map, actions];
 };
-```
 
-```jsx
 const MyApp = () => {
   const [map, { set, remove, clear }] = useMap([['apples', 10]]);
 

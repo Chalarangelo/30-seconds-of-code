@@ -21,9 +21,7 @@ const Mailto = ({ email, subject = '', body = '', children }) => {
 
   return <a href={`mailto:${email}${params}`}>{children}</a>;
 };
-```
 
-```jsx
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Mailto email="foo@bar.baz" subject="Hello & Welcome" body="Hello world!">
     Mail me!

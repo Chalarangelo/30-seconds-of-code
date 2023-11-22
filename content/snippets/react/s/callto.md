@@ -17,9 +17,7 @@ Renders a link formatted to call a phone number (`tel:` link).
 const Callto = ({ phone, children }) => {
   return <a href={`tel:${phone}`}>{children}</a>;
 };
-```
 
-```jsx
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Callto phone="+302101234567">Call me!</Callto>
 );

@@ -38,9 +38,7 @@ const useKeyPress = targetKey => {
 
   return keyPressed;
 };
-```
 
-```jsx
 const MyApp = () => {
   const wPressed = useKeyPress('w');
 

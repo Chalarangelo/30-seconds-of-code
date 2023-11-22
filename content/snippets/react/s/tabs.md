@@ -80,9 +80,7 @@ const Tabs = ({ defaultIndex = 0, onTabClick, children }) => {
     </div>
   );
 };
-```
 
-```jsx
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Tabs defaultIndex="1" onTabClick={console.log}>
     <TabItem label="A" index="1">

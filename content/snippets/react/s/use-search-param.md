@@ -40,9 +40,7 @@ const useSearchParam = param => {
 
   return value;
 };
-```
 
-```jsx
 const MyApp = () => {
   const post = useSearchParam('post');
 

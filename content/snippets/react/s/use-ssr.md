@@ -48,9 +48,7 @@ const useSSR = () => {
     [inBrowser]
   );
 };
-```
 
-```jsx
 const SSRChecker = props => {
   let { isBrowser, isServer } = useSSR();
 

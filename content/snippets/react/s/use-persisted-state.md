@@ -51,9 +51,7 @@ const usePersistedState = (name, defaultValue) => {
 
   return [value, setValue];
 };
-```
 
-```jsx
 const MyComponent = ({ name }) => {
   const [val, setVal] = usePersistedState(name, 10);
   return (

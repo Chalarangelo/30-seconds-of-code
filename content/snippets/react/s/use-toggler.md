@@ -21,9 +21,7 @@ const useToggler = initialState => {
 
   return [value, toggleValue];
 };
-```
 
-```jsx
 const Switch = () => {
   const [val, toggleVal] = useToggler(false);
   return <button onClick={toggleVal}>{val ? 'ON' : 'OFF'}</button>;

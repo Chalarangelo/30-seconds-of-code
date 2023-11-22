@@ -30,9 +30,7 @@ const TextArea = ({
     />
   );
 };
-```
 
-```jsx
 ReactDOM.createRoot(document.getElementById('root')).render(
   <TextArea
     placeholder="Insert some text here..."

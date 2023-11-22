@@ -38,9 +38,7 @@ const useOnGlobalEvent = (type, callback, options) => {
     };
   }, [callback, type, options]);
 };
-```
 
-```jsx
 const App = () => {
   useOnGlobalEvent('mousemove', e => {
     console.log(`(${e.x}, ${e.y})`);

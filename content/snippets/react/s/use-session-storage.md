@@ -39,9 +39,7 @@ const useSessionStorage = (keyName, defaultValue) => {
 
   return [storedValue, setValue];
 };
-```
 
-```jsx
 const MyApp = () => {
   const [name, setName] = useSessionStorage('name', 'John');
 

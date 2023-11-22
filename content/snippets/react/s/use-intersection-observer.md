@@ -33,9 +33,7 @@ const useIntersectionObserver = (ref, options) => {
 
   return isIntersecting;
 };
-```
 
-```jsx
 const MyApp = () => {
   const ref = React.useRef();
   const onScreen = useIntersectionObserver(ref, { threshold: 0.5 });

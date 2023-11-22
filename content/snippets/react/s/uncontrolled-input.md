@@ -22,9 +22,7 @@ const UncontrolledInput = ({ defaultValue, onValueChange, ...rest }) => {
     />
   );
 };
-```
 
-```jsx
 ReactDOM.createRoot(document.getElementById('root')).render(
   <UncontrolledInput
     type="text"

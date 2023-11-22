@@ -21,9 +21,7 @@ const ComponentName = props => {
   });
   return <div>{props}</div>;
 }
-```
 
-```jsx
 ReactDOM.createRoot(document.getElementById('root')).render(
   <ComponentName />
 );

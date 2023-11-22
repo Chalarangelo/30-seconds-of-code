@@ -19,9 +19,7 @@ const useDefault = (defaultState, initialState) => {
   const isValueEmpty = value === undefined || value === null;
   return [isValueEmpty ? defaultState : value, setValue];
 };
-```
 
-```jsx
 const UserCard = () => {
   const [user, setUser] = useDefault({ name: 'Adam' }, { name: 'John' });
 

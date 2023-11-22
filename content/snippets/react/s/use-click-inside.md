@@ -27,9 +27,7 @@ const useClickInside = (ref, callback) => {
     };
   });
 };
-```
 
-```jsx
 const ClickBox = ({ onClickInside }) => {
   const clickRef = React.useRef();
   useClickInside(clickRef, onClickInside);

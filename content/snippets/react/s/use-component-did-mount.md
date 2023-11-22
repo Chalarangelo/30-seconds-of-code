@@ -18,9 +18,7 @@ const useComponentDidMount = onMountHandler => {
     onMountHandler();
   }, []);
 };
-```
 
-```jsx
 const Mounter = () => {
   useComponentDidMount(() => console.log('Component did mount'));
 

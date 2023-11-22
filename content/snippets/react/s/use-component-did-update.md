@@ -23,9 +23,7 @@ const useComponentDidUpdate = (callback, condition) => {
     else mounted.current = true;
   }, condition);
 };
-```
 
-```jsx
 const App = () => {
   const [value, setValue] = React.useState(0);
   const [otherValue, setOtherValue] = React.useState(1);

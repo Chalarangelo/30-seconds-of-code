@@ -31,9 +31,7 @@ const useDelayedState = (initialState, condition) => {
 
   return [state, updateState];
 };
-```
 
-```jsx
 const App = () => {
   const [branches, setBranches] = React.useState([]);
   const [selectedBranch, setSelectedBranch] = useDelayedState(

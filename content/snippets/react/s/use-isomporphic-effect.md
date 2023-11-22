@@ -14,9 +14,7 @@ Resolves to `useEffect()` on the server and `useLayoutEffect()` on the client.
 ```jsx
 const useIsomorphicEffect =
   typeof window !== 'undefined' ? React.useLayoutEffect : React.useEffect;
-```
 
-```jsx
 const MyApp = () => {
   useIsomorphicEffect(() => {
     window.console.log('Hello');

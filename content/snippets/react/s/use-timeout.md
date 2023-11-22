@@ -32,9 +32,7 @@ const useTimeout = (callback, delay) => {
     }
   }, [delay]);
 };
-```
 
-```jsx
 const OneSecondTimer = props => {
   const [seconds, setSeconds] = React.useState(0);
   useTimeout(() => {

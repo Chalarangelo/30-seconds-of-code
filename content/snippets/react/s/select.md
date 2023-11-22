@@ -30,9 +30,7 @@ const Select = ({ values, onValueChange, selectedValue, ...rest }) => {
     </select>
   );
 };
-```
 
-```jsx
 const choices = [
   ['grapefruit', 'Grapefruit'],
   ['lime', 'Lime'],

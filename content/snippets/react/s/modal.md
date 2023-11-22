@@ -133,9 +133,7 @@ const Modal = ({ isVisible = false, title, content, footer, onClose }) => {
     </div>
   );
 };
-```
 
-```jsx
 const App = () => {
   const [isModal, setModal] = React.useState(false);
   return (

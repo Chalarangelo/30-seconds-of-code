@@ -35,9 +35,7 @@ const useWindowSize = () => {
 
   return windowSize;
 };
-```
 
-```jsx
 const MyApp = () => {
   const { width, height } = useWindowSize();
 

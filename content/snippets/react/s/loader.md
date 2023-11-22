@@ -62,9 +62,7 @@ const Loader = ({ size }) => {
     </svg>
   );
 };
-```
 
-```jsx
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Loader size={24} />
 );

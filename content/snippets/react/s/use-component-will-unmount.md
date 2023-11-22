@@ -21,9 +21,7 @@ const useComponentWillUnmount = onUnmountHandler => {
     []
   );
 };
-```
 
-```jsx
 const Unmounter = () => {
   useComponentWillUnmount(() => console.log('Component will unmount'));
 

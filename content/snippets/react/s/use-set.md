@@ -29,9 +29,7 @@ const useSet = initialValue => {
 
   return [set, actions];
 };
-```
 
-```jsx
 const MyApp = () => {
   const [set, { add, remove, clear }] = useSet(new Set(['apples']));
 

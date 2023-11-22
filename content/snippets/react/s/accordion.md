@@ -71,9 +71,7 @@ const Accordion = ({ defaultIndex, onItemClick, children }) => {
     </>
   );
 };
-```
 
-```jsx
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Accordion defaultIndex="1" onItemClick={console.log}>
     <AccordionItem label="A" index="1">

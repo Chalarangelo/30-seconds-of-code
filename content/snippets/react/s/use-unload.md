@@ -25,9 +25,7 @@ const useUnload = fn => {
     };
   }, [cb]);
 };
-```
 
-```jsx
 const App = () => {
   useUnload(e => {
     e.preventDefault();

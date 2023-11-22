@@ -114,9 +114,7 @@ const TagInput = ({ tags }) => {
     </div>
   );
 };
-```
 
-```jsx
 ReactDOM.createRoot(document.getElementById('root')).render(
   <TagInput tags={['Nodejs', 'MongoDB']} />
 );

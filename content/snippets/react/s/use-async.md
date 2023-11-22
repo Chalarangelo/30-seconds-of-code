@@ -43,9 +43,7 @@ const useAsync = fn => {
 
   return { ...state, run };
 };
-```
 
-```jsx
 const RandomImage = props => {
   const imgFetch = useAsync(url =>
     fetch(url).then(response => response.json())

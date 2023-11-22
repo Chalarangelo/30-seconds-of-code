@@ -21,9 +21,7 @@ const usePrevious = value => {
   });
   return ref.current;
 };
-```
 
-```jsx
 const Counter = () => {
   const [value, setValue] = React.useState(0);
   const lastValue = usePrevious(value);

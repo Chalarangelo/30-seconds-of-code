@@ -23,9 +23,7 @@ const useEffectOnce = (callback, when) => {
     }
   }, [when]);
 };
-```
 
-```jsx
 const App = () => {
   const [clicked, setClicked] = React.useState(false);
   useEffectOnce(() => {

@@ -16,9 +16,7 @@ const useUpdate = () => {
   const [, update] = React.useReducer(() => ({}));
   return update;
 };
-```
 
-```jsx
 const MyApp = () => {
   const update = useUpdate();
 
