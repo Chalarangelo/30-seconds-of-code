@@ -13,11 +13,6 @@ Explain briefly what the snippet does.
 - Use bullet points for your snippet's explanation.
 - Try to explain everything briefly but clearly.
 
-```shell
-git command <variable> [--option]
-```
-
-```shell
-git command some-branch --quiet
-# Output of running command on `some-branch`
+```html
+<span>Some HTML</span>
 ```
