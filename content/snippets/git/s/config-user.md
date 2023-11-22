@@ -16,9 +16,8 @@ Configures user information for git.
 ```shell
 git config [--global] user.email <email>
 git config [--global] user.name <name>
-```
 
-```shell
+# Examples
 git config user.email "cool.duck@qua.ck"
 git config user.name "Duck Quackers"
 # Configures user for current repository

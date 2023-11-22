@@ -14,9 +14,8 @@ Removes files from the staging area.
 
 ```shell
 git restore --staged <pathspec>
-```
 
-```shell
+# Examples
 git restore --staged "30seconds.txt"
 # Remove the file `30seconds.txt` from the staging area
 

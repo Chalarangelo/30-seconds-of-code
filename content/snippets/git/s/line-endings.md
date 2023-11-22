@@ -14,8 +14,7 @@ Configures the line endings for a repository.
 
 ```shell
 git config core.eol [lf | crlf]
-```
 
-```shell
+# Examples
 git config core.eol lf # Configured to use UNIX line endings
 ```

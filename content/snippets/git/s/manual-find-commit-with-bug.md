@@ -21,9 +21,8 @@ git bisect good <commit>
 git bisect bad <commit>
 git bisect (bad | good)
 git bisect reset [<commit>]
-```
 
-```shell
+# Examples
 git bisect start
 git bisect good 3050fc0de
 git bisect bad c191f90c7

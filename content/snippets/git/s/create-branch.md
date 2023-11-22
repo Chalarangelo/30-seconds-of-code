@@ -15,9 +15,8 @@ Creates and switches to a new branch, optionally setting up a remote tracking br
 
 ```shell
 git checkout -b <branch> [-t <remote>/<branch>]
-```
 
-```shell
+# Examples
 git checkout -b patch-1
 # Local branch, without a remote tracking branch
 

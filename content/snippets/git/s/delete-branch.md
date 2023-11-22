@@ -13,9 +13,8 @@ Deletes a local branch.
 
 ```shell
 git branch -d <branch>
-```
 
-```shell
+# Examples
 git checkout master
 git branch -d patch-1 # Deletes the `patch-1` local branch
 ```

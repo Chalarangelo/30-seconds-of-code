@@ -14,8 +14,7 @@ Switches to an existing branch.
 
 ```shell
 git checkout <branch>
-```
 
-```shell
+# Examples
 git checkout patch-1 # Switches to the branch named `patch-1`
 ```

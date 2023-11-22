@@ -19,9 +19,8 @@ git filter-branch --force --index-filter \
   "git rm --cached --ignore-unmatch <path>" \
   --prune-empty --tag-name-filter cat -- --all
 git push <remote> --force --all
-```
 
-```shell
+# Examples
 git filter-branch --force --index-filter \
   "git rm --cached --ignore-unmatch config/apiKeys.json" \
   --prune-empty --tag-name-filter cat -- --all

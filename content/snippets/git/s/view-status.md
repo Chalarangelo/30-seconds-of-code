@@ -14,9 +14,8 @@ Prints the current status of the working tree.
 
 ```shell
 git status [-sb]
-```
 
-```shell
+# Examples
 git status
 # On branch patch-1
 # Your branch is up to date with 'origin/patch-1'.

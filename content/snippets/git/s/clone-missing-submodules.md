@@ -13,9 +13,8 @@ Clones missing submodules and checks out commits.
 
 ```shell
 git submodule update --init --recursive
-```
 
-```shell
+# Examples
 git submodule update --init --recursive
 # Clones missing submodules and checks out commits
 ```

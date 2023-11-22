@@ -15,9 +15,8 @@ Applies the changes introduced by one or more commits.
 
 ```shell
 git cherry-pick (<commit>... | <first-commit>..<last-commit>)
-```
 
-```shell
+# Examples
 git cherry-pick 3050fc0de # Picks changes from the commit `3050fc0de`
 
 git cherry-pick 3050fc0de c191f90c7

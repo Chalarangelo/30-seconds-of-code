@@ -13,9 +13,8 @@ Sets up a commit message template for the current repository.
 
 ```shell
 git config commit.template <file>
-```
 
-```shell
+# Examples
 git config commit.template "commit-template"
 # Sets "commit-template" as the commit message template
 ```

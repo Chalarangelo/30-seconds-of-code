@@ -14,9 +14,8 @@ Prints a list of all merged local branches.
 
 ```shell
 git branch -a --merged
-```
 
-```shell
+# Examples
 git checkout master
 git branch -a --merged
 # patch-1

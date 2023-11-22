@@ -13,9 +13,8 @@ Displays the difference between two branches.
 
 ```shell
 git diff <branch>..<other-branch>
-```
 
-```shell
+# Examples
 git diff patch-1..patch-2
 # Displays the difference between branches `patch-1` and `patch-2`
 ```

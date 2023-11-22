@@ -14,9 +14,8 @@ Prints the last commit.
 
 ```shell
 git log -1
-```
 
-```shell
+# Examples
 git log -1
 # commit c191f90c7766ee6d5f24e90b552a6d446f0d02e4
 # Author: 30 seconds of code

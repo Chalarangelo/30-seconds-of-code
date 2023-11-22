@@ -13,8 +13,7 @@ Optimizes the local repository.
 
 ```shell
 git gc --prune=now --aggressive
-```
 
-```shell
+# Examples
 git gc --prune=now --aggressive # Optimizes the local repository
 ```

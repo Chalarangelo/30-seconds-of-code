@@ -13,9 +13,8 @@ Configures the text editor used by git.
 
 ```shell
 git config --global core.editor <editor-command>
-```
 
-```shell
+# Examples
 git config --global core.editor "code --wait"
 # Sets VS Code as the git text editor
 

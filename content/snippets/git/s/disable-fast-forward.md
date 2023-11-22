@@ -14,9 +14,8 @@ Disables the default fast forwarding on merge commits.
 
 ```shell
 git config [--global] --add merge.ff false
-```
 
-```shell
+# Examples
 git config --global --add merge.ff false
 
 git checkout master

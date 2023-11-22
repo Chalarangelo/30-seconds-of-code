@@ -14,9 +14,8 @@ Use the name of the current branch when pushing by default as the name of the re
 
 ```shell
 git config [--global] push.default current
-```
 
-```shell
+# Examples
 git config --global push.default current
 
 git checkout -b my-branch

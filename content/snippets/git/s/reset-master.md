@@ -17,9 +17,8 @@ Resets the local `master` branch to match the one on the remote.
 git fetch origin
 git checkout master
 git reset --hard origin/master
-```
 
-```shell
+# Examples
 git fetch origin
 git checkout master
 git reset --hard origin/master

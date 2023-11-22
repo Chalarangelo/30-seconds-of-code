@@ -13,9 +13,8 @@ Displays the URL of the remote repository.
 
 ```shell
 git config --get remote.origin.url
-```
 
-```shell
+# Examples
 git config --get remote.origin.url
 # https://github.com/30-seconds/30-seconds-of-code
 ```

@@ -14,9 +14,8 @@ Forces an update of the remote branch after rewriting the history locally.
 
 ```shell
 git push -f
-```
 
-```shell
+# Examples
 git checkout patch-1
 git pull
 git rebase master

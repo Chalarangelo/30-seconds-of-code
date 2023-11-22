@@ -14,9 +14,8 @@ Creates a fixup commit that can be autosquashed in the next rebase.
 
 ```shell
 git commit --fixup <commit>
-```
 
-```shell
+# Examples
 git add .
 git commit --fixup 3050fc0de
 # Created a fixup commit for `3050fc0de`

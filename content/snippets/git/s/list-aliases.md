@@ -15,9 +15,8 @@ Prints a list of all git aliases.
 
 ```shell
 git config -l | grep alias | sed 's/^alias\.//g'
-```
 
-```shell
+# Examples
 git config -l | grep alias | sed 's/^alias\.//g'
 # st=status
 # co=checkout

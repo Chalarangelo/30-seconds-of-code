@@ -13,9 +13,8 @@ Opens the git configuration file in the git text editor.
 
 ```shell
 git config --global -e
-```
 
-```shell
+# Examples
 git config --global -e
 # Opens the git configuration file in the default git text editor
 ```

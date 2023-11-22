@@ -14,9 +14,8 @@ Prints all commits by the specified author.
 
 ```shell
 git log --author=<author>
-```
 
-```shell
+# Examples
 git log --author="Duck Quacking"
 # commit c191f90c7766ee6d5f24e90b552a6d446f0d02e4
 # Author: 30 seconds of code

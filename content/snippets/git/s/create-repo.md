@@ -16,9 +16,8 @@ Initializes a new git repository, setting up all the configuration files needed 
 
 ```shell
 git init [<directory>]
-```
 
-```shell
+# Examples
 cd ~/my_project
 git init # Initializes a repo in ~/my_project
 

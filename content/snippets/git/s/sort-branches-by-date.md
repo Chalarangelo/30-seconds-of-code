@@ -14,9 +14,8 @@ Prints a list of all local branches sorted by date.
 
 ```shell
 git branch --sort=-committerdate
-```
 
-```shell
+# Examples
 git branch --sort=-committerdate
 # master
 # patch-1

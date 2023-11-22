@@ -16,9 +16,8 @@ Performs an interactive rebase.
 
 ```shell
 git rebase -i [--autosquash] <commit>
-```
 
-```shell
+# Examples
 git rebase -i 3050fc0de
 # Performs an interactive rebase starting from `3050fc0de`
 

@@ -14,9 +14,8 @@ Adds files to the staging area.
 
 ```shell
 git add <pathspec>
-```
 
-```shell
+# Examples
 git add "30seconds.txt"
 # Add the file `30seconds.txt` to the staging area
 

@@ -15,9 +15,8 @@ Saves the current state of the working directory and index into a new stash.
 
 ```shell
 git stash save [-u] [<message>]
-```
 
-```shell
+# Examples
 git stash save
 # Creates a new stash
 

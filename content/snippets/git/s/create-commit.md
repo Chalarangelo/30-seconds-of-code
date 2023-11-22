@@ -13,9 +13,8 @@ Creates a new commit containing the staged changes.
 
 ```shell
 git commit -m <message>
-```
 
-```shell
+# Examples
 # Make some changes to files
 git add .
 git commit -m "Fix the network bug"

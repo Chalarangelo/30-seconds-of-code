@@ -13,9 +13,8 @@ Switches back to the last branch.
 
 ```shell
 git checkout -
-```
 
-```shell
+# Examples
 git checkout patch-1
 git checkout master
 git checkout - # Switches to `patch-1`

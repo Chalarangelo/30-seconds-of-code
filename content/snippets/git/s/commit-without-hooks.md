@@ -13,9 +13,8 @@ Creates a new commit skipping the pre-commit and commit-msg hooks.
 
 ```shell
 git commit --no-verify -m <message>
-```
 
-```shell
+# Examples
 # Make some changes to files, ones that your precommit hook might not allow
 git add .
 git commit --no-verify -m "Unsafe commit"

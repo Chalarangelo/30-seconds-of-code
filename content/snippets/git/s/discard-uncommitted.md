@@ -13,9 +13,8 @@ Discards all uncommitted changes to the current branch.
 
 ```shell
 git reset --hard HEAD
-```
 
-```shell
+# Examples
 git reset --hard HEAD
 # Discards all unstaged changes
 ```

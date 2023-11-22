@@ -15,9 +15,8 @@ Rebases the current branch onto another branch.
 ```shell
 git checkout <branch>
 git rebase <base-branch>
-```
 
-```shell
+# Examples
 git checkout patch-1
 git rebase master
 # `patch-1` is rebased onto `master`

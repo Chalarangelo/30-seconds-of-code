@@ -14,9 +14,8 @@ Prints a list of lost files and commits.
 
 ```shell
 git fsck --lost-found
-```
 
-```shell
+# Examples
 git fsck --lost-found
 # dangling commit 3050fc0de
 # dangling blob 807e3fa41

@@ -13,9 +13,8 @@ Discards all untracked changes to the current branch.
 
 ```shell
 git clean -f -d
-```
 
-```shell
+# Examples
 git clean -f -d
 # Discards all untracked changes
 ```

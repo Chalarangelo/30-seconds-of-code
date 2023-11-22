@@ -13,9 +13,8 @@ Deletes all stashes.
 
 ```shell
 git stash clear
-```
 
-```shell
+# Examples
 git stash clear
 # Deletes all stashes
 ```

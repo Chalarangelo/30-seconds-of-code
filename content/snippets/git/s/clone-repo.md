@@ -14,9 +14,8 @@ Clones an existing repository, creating a local copy of it.
 
 ```shell
 git clone <url> [<directory>]
-```
 
-```shell
+# Examples
 git clone https://github.com/30-seconds/30-seconds-of-code.git
 # Clones the repository in a new directory named '30-seconds-of-code'
 cd 30-seconds-of-code

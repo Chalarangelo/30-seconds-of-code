@@ -13,8 +13,7 @@ Fetches the latest changes from the remote.
 
 ```shell
 git fetch
-```
 
-```shell
+# Examples
 git fetch # Fetches the latest updates from the remote
 ```

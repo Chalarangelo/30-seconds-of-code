@@ -14,9 +14,8 @@ Displays differences between staged or unstaged changes and the last commit.
 
 ```shell
 git diff [--staged]
-```
 
-```shell
+# Examples
 git diff
 # Displays the differences between unstaged changes and the last commit
 

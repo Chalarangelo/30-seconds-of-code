@@ -15,9 +15,8 @@ Removes a file from the last commit without changing its message.
 ```shell
 git rm --cached <file>
 git commit --amend
-```
 
-```shell
+# Examples
 git rm --cached "30-seconds.txt"
 git commit --amend
 # Removes `30-seconds.txt` from the last commit

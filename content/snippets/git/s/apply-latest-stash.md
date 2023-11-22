@@ -13,8 +13,7 @@ Applies the latest stash.
 
 ```shell
 git stash apply <stash>
-```
 
-```shell
+# Examples
 git stash apply # Applies the latest stash
 ```

@@ -13,9 +13,8 @@ Copies a file from another branch to the current branch.
 
 ```shell
 git checkout <branch> <file>
-```
 
-```shell
+# Examples
 git checkout patch-2
 git checkout patch-1 "30seconds.txt"
 # `patch-2` branch now contains the 30seconds.txt file from `patch-1`

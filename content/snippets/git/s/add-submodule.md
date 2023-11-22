@@ -13,9 +13,8 @@ Adds a new submodule to the repository.
 
 ```shell
 git submodule add <upstream-path> <local-path>
-```
 
-```shell
+# Examples
 git submodule add https://github.com/30-seconds/30-seconds-of-code ./30code
 # Creates the directory `30code` containing the submodule from
 # "https://github.com/30-seconds/30-seconds-of-code"

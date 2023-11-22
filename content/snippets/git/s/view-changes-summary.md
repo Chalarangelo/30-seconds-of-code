@@ -14,9 +14,8 @@ Prints a summary of changes between two given commits.
 
 ```shell
 git shortlog <commit>..<other-commit>
-```
 
-```shell
+# Examples
 git shortlog 3050fc0de..HEAD
 # Duck Quacking (2):
 #      Fix network bug

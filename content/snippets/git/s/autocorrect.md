@@ -13,9 +13,8 @@ Configures git to autocorrect mistyped commands.
 
 ```shell
 git config --global help.autocorrect 1
-```
 
-```shell
+# Examples
 git config --global help.autocorrect 1
 git sttaus # Runs `git status` instead
 ```

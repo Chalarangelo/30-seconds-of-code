@@ -13,9 +13,8 @@ Pulls all submodules from their respective remotes.
 
 ```shell
 git submodule update --recursive --remote
-```
 
-```shell
+# Examples
 git submodule update --recursive --remote
 # Pulls all submodules from their respective remotes
 ```

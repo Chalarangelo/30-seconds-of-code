@@ -14,9 +14,8 @@ Deletes all detached branches.
 
 ```shell
 git fetch --all --prune
-```
 
-```shell
+# Examples
 git checkout master
 git branch
 # master

@@ -15,9 +15,8 @@ Deletes all local merged branches.
 
 ```shell
 git branch --merged <branch> | grep -v "(^\*|<branch>)" | xargs git branch -d
-```
 
-```shell
+# Examples
 git checkout master
 git branch
 # master

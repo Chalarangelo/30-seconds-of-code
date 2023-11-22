@@ -13,9 +13,8 @@ Displays a list of all stashes.
 
 ```shell
 git stash list
-```
 
-```shell
+# Examples
 git stash list
 # stash@{0}: WIP on patch-1: ee52eda Fix network bug
 ```

@@ -14,9 +14,8 @@ Prints a list of all local branches.
 
 ```shell
 git branch
-```
 
-```shell
+# Examples
 git branch
 # master
 # patch-1

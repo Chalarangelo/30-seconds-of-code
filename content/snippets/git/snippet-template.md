@@ -15,9 +15,8 @@ Explain briefly what the snippet does.
 
 ```shell
 git command <variable> [--option]
-```
 
-```shell
+# Examples
 git command some-branch --quiet
 # Output of running command on `some-branch`
 ```
