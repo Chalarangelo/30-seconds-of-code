@@ -14,14 +14,14 @@ Checks if the given argument is a writable stream.
 - Additionally check if the `typeof` the `_write` and `_writableState` properties are `function` and `object` respectively.
 
 ```js
+import { createWriteStream } from 'fs';
+
 const isWritableStream = val =>
   val !== null &&
   typeof val === 'object' &&
   typeof val.pipe === 'function' &&
   typeof val._write === 'function' &&
   typeof val._writableState === 'object';
-
-import { createWriteStream } from 'fs';
 
 isWritableStream(createWriteStream('test.txt')); // true
 ```

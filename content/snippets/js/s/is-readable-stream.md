@@ -14,14 +14,14 @@ Checks if the given argument is a readable stream.
 - Additionally check if the `typeof` the `_read` and `_readableState` properties are `function` and `object` respectively.
 
 ```js
+import { createReadStream } from 'fs';
+
 const isReadableStream = val =>
   val !== null &&
   typeof val === 'object' &&
   typeof val.pipe === 'function' &&
   typeof val._read === 'function' &&
   typeof val._readableState === 'object';
-
-import { createReadStream } from 'fs';
 
 isReadableStream(createReadStream('test.txt')); // true
 ```

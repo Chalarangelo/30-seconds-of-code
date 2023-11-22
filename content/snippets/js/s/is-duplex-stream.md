@@ -14,6 +14,8 @@ Checks if the given argument is a duplex (readable and writable) stream.
 - Additionally check if the `typeof` the `_read`, `_write` and `_readableState`, `_writableState` properties are `function` and `object` respectively.
 
 ```js
+import Stream from 'stream';
+
 const isDuplexStream = val =>
   val !== null &&
   typeof val === 'object' &&
@@ -22,8 +24,6 @@ const isDuplexStream = val =>
   typeof val._readableState === 'object' &&
   typeof val._write === 'function' &&
   typeof val._writableState === 'object';
-
-import Stream from 'stream';
 
 isDuplexStream(new Stream.Duplex()); // true
 ```
