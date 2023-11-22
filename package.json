@@ -25,7 +25,6 @@
     "remark-gfm": "^4.0.0",
     "sass": "^1.68.0",
     "sharp": "^0.32.6",
-    "unist-util-select": "^5.0.0",
     "unist-util-visit": "^5.0.0",
     "unist-util-visit-parents": "^6.0.1"
   },

@@ -5,7 +5,6 @@ import { toHast } from 'mdast-util-to-hast';
 import { toHtml } from 'hast-util-to-html';
 import { visit } from 'unist-util-visit';
 import { visitParents } from 'unist-util-visit-parents';
-import { selectAll } from 'unist-util-select';
 import Prism from 'prismjs';
 import getLoader from 'prismjs/dependencies.js';
 import prismComponents from 'prismjs/components.js';
