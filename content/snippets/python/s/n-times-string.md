@@ -14,8 +14,6 @@ Generates a string with the given string value repeated `n` number of times.
 ```py
 def n_times_string(s, n):
   return (s * n)
-```
 
-```py
 n_times_string('py', 4) #'pypypypy'
 ```

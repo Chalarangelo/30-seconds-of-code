@@ -15,9 +15,7 @@ Returns a flat list of all the values in a flat dictionary.
 ```py
 def values_only(flat_dict):
   return list(flat_dict.values())
-```
 
-```py
 ages = {
   'Peter': 10,
   'Isabel': 11,

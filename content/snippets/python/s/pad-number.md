@@ -14,8 +14,6 @@ Pads a given number to the specified length.
 ```py
 def pad_number(n, l):
   return str(n).zfill(l)
-```
 
-```py
 pad_number(1234, 6); # '001234'
 ```

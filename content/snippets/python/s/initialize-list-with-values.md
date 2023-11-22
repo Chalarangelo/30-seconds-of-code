@@ -15,8 +15,6 @@ Initializes and fills a list with the specified value.
 ```py
 def initialize_list_with_values(n, val = 0):
   return [val for x in range(n)]
-```
 
-```py
 initialize_list_with_values(5, 2) # [2, 2, 2, 2, 2]
 ```

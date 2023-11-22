@@ -14,9 +14,7 @@ Finds all keys in the provided dictionary that have the given value.
 ```py
 def find_keys(dict, val):
   return list(key for key, value in dict.items() if value == val)
-```
 
-```py
 ages = {
   'Peter': 10,
   'Isabel': 11,

@@ -23,8 +23,6 @@ def chunk_into_n(lst, n):
     map(lambda x: lst[x * size:x * size + size],
     list(range(n)))
   )
-```
 
-```py
 chunk_into_n([1, 2, 3, 4, 5, 6, 7], 4) # [[1, 2], [3, 4], [5, 6], [7]]
 ```

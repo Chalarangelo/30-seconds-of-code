@@ -14,14 +14,10 @@ Checks if the given date is a weekend.
 - Omit the second argument, `d`, to use a default value of `datetime.today()`.
 
 ```py
-from datetime import datetime
+from datetime import datetime, date
 
 def is_weekend(d = datetime.today()):
   return d.weekday() > 4
-```
-
-```py
-from datetime import date
 
 is_weekend(date(2020, 10, 25)) # True
 is_weekend(date(2020, 10, 28)) # False

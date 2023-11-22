@@ -14,13 +14,10 @@ Calculates the month difference between two dates.
 
 ```py
 from math import ceil
+from datetime import date
 
 def months_diff(start, end):
   return ceil((end - start).days / 30)
-```
-
-```py
-from datetime import date
 
 months_diff(date(2020, 10, 28), date(2020, 11, 25)) # 1
 ```

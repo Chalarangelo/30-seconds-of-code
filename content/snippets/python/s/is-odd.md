@@ -16,8 +16,6 @@ Checks if the given number is odd.
 ```py
 def is_odd(num):
   return num % 2 != 0
-```
 
-```py
 is_odd(3) # True
 ```

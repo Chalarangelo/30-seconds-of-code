@@ -18,9 +18,7 @@ def bifurcate(lst, filter):
     [x for x, flag in zip(lst, filter) if flag],
     [x for x, flag in zip(lst, filter) if not flag]
   ]
-```
 
-```py
 bifurcate(['beep', 'boop', 'foo', 'bar'], [True, True, False, True])
 # [ ['beep', 'boop', 'bar'], ['foo'] ]
 ```

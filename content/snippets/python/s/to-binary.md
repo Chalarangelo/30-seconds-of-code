@@ -14,8 +14,6 @@ Returns the binary representation of the given number.
 ```py
 def to_binary(n):
   return bin(n)
-```
 
-```py
 to_binary(100) # 0b1100100
 ```

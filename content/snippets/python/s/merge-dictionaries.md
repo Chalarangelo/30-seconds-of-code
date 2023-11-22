@@ -17,9 +17,7 @@ def merge_dictionaries(*dicts):
   for d in dicts:
     res.update(d)
   return res
-```
 
-```py
 ages_one = {
   'Peter': 10,
   'Isabel': 11,

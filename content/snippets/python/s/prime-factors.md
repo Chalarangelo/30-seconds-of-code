@@ -23,9 +23,7 @@ def prime_factors(num):
     else:
       factor += 1
   return factors
-```
 
-```py
 prime_factors(12) # [2,2,3]
 prime_factors(42) # [2,3,7]
 ```

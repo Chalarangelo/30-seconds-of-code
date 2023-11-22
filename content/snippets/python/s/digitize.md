@@ -14,8 +14,6 @@ Converts a number to a list of digits.
 ```py
 def digitize(n):
   return list(map(int, str(n)))
-```
 
-```py
 digitize(123) # [1, 2, 3]
 ```

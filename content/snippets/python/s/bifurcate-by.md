@@ -18,9 +18,7 @@ def bifurcate_by(lst, fn):
     [x for x in lst if fn(x)],
     [x for x in lst if not fn(x)]
   ]
-```
 
-```py
 bifurcate_by(['beep', 'boop', 'foo', 'bar'], lambda x: x[0] == 'b')
 # [ ['beep', 'boop', 'bar'], ['foo'] ]
 ```

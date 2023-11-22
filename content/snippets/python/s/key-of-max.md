@@ -14,8 +14,6 @@ Finds the key of the maximum value in a dictionary.
 ```py
 def key_of_max(d):
   return max(d, key = d.get)
-```
 
-```py
 key_of_max({'a':4, 'b':0, 'c':13}) # c
 ```

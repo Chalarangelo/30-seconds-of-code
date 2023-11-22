@@ -16,8 +16,6 @@ from random import choice
 
 def sample(lst):
   return choice(lst)
-```
 
-```py
 sample([3, 7, 9, 11]) # 9
 ```

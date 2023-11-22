@@ -14,8 +14,6 @@ Returns every element that exists in any of the two lists once.
 ```py
 def union(a, b):
   return list(set(a + b))
-```
 
-```py
 union([1, 2, 3], [4, 3, 2]) # [1, 2, 3, 4]
 ```

@@ -15,9 +15,7 @@ Checks if the given number falls within the given range.
 ```py
 def in_range(n, start, end = 0):
   return start <= n <= end if end >= start else end <= n <= start
-```
 
-```py
 in_range(3, 2, 5) # True
 in_range(3, 4) # True
 in_range(2, 3, 5) # False

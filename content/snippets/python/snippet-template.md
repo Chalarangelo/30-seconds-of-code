@@ -17,8 +17,6 @@ Explain briefly what the snippet does.
 def function_name(args):
   # code
   return 0
-```
 
-```py
 function_name(val) # result
 ```

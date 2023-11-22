@@ -15,8 +15,6 @@ Executes the provided function once for each list element.
 def for_each(itr, fn):
   for el in itr:
     fn(el)
-```
 
-```py
 for_each([1, 2, 3], print) # 1 2 3
 ```

@@ -16,9 +16,7 @@ Calculates the average of a list, after mapping each element to a value using th
 ```py
 def average_by(lst, fn = lambda x: x):
   return sum(map(fn, lst), 0.0) / len(lst)
-```
 
-```py
 average_by([{ 'n': 4 }, { 'n': 2 }, { 'n': 8 }, { 'n': 6 }], lambda x: x['n'])
 # 5.0
 ```

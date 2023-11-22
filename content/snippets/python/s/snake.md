@@ -21,9 +21,7 @@ def snake(s):
     sub('([A-Z][a-z]+)', r' \1',
     sub('([A-Z]+)', r' \1',
     s.replace('-', ' '))).split()).lower()
-```
 
-```py
 snake('camelCase') # 'camel_case'
 snake('some text') # 'some_text'
 snake('some-mixed_string With spaces_underscores-and-hyphens')

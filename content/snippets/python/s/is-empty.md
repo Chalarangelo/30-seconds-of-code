@@ -14,9 +14,7 @@ Checks if the a value is an empty sequence or collection.
 ```py
 def is_empty(val):
   return not val
-```
 
-```py
 is_empty([]) # True
 is_empty({}) # True
 is_empty('') # True

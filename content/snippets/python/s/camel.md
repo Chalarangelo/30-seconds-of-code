@@ -19,9 +19,7 @@ from re import sub
 def camel(s):
   s = sub(r"(_|-)+", " ", s).title().replace(" ", "")
   return ''.join([s[0].lower(), s[1:]])
-```
 
-```py
 camel('some_database_field_name') # 'someDatabaseFieldName'
 camel('Some label that needs to be camelized')
 # 'someLabelThatNeedsToBeCamelized'

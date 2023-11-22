@@ -14,8 +14,6 @@ Returns the index of the element with the maximum value in a list.
 ```py
 def max_element_index(arr):
   return arr.index(max(arr))
-```
 
-```py
 max_element_index([5, 8, 9, 7, 10, 3, 0]) # 4
 ```

@@ -16,8 +16,6 @@ Calculates the Hamming distance between two values.
 ```py
 def hamming_distance(a, b):
   return bin(a ^ b).count('1')
-```
 
-```py
 hamming_distance(2, 3) # 1
 ```

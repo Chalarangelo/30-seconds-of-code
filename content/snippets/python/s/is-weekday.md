@@ -14,14 +14,10 @@ Checks if the given date is a weekday.
 - Omit the second argument, `d`, to use a default value of `datetime.today()`.
 
 ```py
-from datetime import datetime
+from datetime import datetime, date
 
 def is_weekday(d = datetime.today()):
   return d.weekday() <= 4
-```
-
-```py
-from datetime import date
 
 is_weekday(date(2020, 10, 25)) # False
 is_weekday(date(2020, 10, 28)) # True

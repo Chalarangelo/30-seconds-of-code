@@ -14,8 +14,6 @@ Counts the occurrences of a value in a list.
 ```py
 def count_occurrences(lst, val):
   return lst.count(val)
-```
 
-```py
 count_occurrences([1, 1, 2, 1, 2, 3], 1) # 3
 ```

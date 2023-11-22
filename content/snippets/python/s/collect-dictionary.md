@@ -21,9 +21,7 @@ def collect_dictionary(obj):
   for key, value in obj.items():
     inv_obj[value].append(key)
   return dict(inv_obj)
-```
 
-```py
 ages = {
   'Peter': 10,
   'Isabel': 10,

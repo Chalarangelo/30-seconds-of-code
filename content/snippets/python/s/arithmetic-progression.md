@@ -14,8 +14,6 @@ Generates a list of numbers in the arithmetic progression starting with the give
 ```py
 def arithmetic_progression(n, lim):
   return list(range(n, lim + 1, n))
-```
 
-```py
 arithmetic_progression(5, 25) # [5, 10, 15, 20, 25]
 ```

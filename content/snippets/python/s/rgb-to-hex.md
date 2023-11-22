@@ -15,8 +15,6 @@ Converts the values of RGB components to a hexadecimal color code.
 ```py
 def rgb_to_hex(r, g, b):
   return ('{:02X}' * 3).format(r, g, b)
-```
 
-```py
 rgb_to_hex(255, 165, 1) # 'FFA501'
 ```

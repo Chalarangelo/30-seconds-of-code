@@ -14,8 +14,6 @@ Returns the unique elements in a given list.
 ```py
 def unique_elements(li):
   return list(set(li))
-```
 
-```py
 unique_elements([1, 2, 2, 3, 4, 3]) # [1, 2, 3, 4]
 ```

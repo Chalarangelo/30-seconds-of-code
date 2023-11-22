@@ -17,9 +17,7 @@ Returns the `n` minimum elements from the provided list.
 ```py
 def min_n(lst, n = 1):
   return sorted(lst, reverse = False)[:n]
-```
 
-```py
 min_n([1, 2, 3]) # [1]
 min_n([1, 2, 3], 2) # [1, 2]
 ```

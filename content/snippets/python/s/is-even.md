@@ -16,8 +16,6 @@ Checks if the given number is even.
 ```py
 def is_even(num):
   return num % 2 == 0
-```
 
-```py
 is_even(3) # False
 ```

@@ -15,9 +15,7 @@ Returns all elements in a list except for the first one.
 ```py
 def tail(lst):
   return lst[1:] if len(lst) > 1 else lst
-```
 
-```py
 tail([1, 2, 3]) # [2, 3]
 tail([1]) # [1]
 ```

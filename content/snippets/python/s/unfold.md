@@ -21,9 +21,7 @@ def unfold(fn, seed):
       if val == False: break
       yield val[0]
   return [i for i in fn_generator([None, seed])]
-```
 
-```py
 f = lambda n: False if n > 50 else [-n, n + 10]
 unfold(f, 10) # [-10, -20, -30, -40, -50]
 ```

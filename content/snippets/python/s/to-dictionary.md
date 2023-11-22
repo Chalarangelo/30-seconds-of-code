@@ -16,8 +16,6 @@ The values of the first list need to be unique and hashable.
 ```py
 def to_dictionary(keys, values):
   return dict(zip(keys, values))
-```
 
-```py
 to_dictionary(['a', 'b'], [1, 2]) # { a: 1, b: 2 }
 ```

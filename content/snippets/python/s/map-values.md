@@ -14,9 +14,7 @@ Creates a dictionary with the same keys as the provided dictionary and values ge
 ```py
 def map_values(obj, fn):
   return dict((k, fn(v)) for k, v in obj.items())
-```
 
-```py
 users = {
   'fred': { 'user': 'fred', 'age': 40 },
   'pebbles': { 'user': 'pebbles', 'age': 1 }

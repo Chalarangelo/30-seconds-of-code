@@ -21,8 +21,6 @@ def is_anagram(s1, s2):
   ) == Counter(
     c.lower() for c in s2 if c.isalnum()
   )
-```
 
-```py
 is_anagram('#anagram', 'Nag a ram!')  # True
 ```

@@ -16,8 +16,6 @@ Returns a list of elements that exist in both lists.
 def intersection(a, b):
   _a, _b = set(a), set(b)
   return list(_a & _b)
-```
 
-```py
 intersection([1, 2, 3], [4, 3, 2]) # [2, 3]
 ```

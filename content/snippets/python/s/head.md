@@ -14,8 +14,6 @@ Returns the head of a list.
 ```py
 def head(lst):
   return lst[0]
-```
 
-```py
 head([1, 2, 3]) # 1
 ```

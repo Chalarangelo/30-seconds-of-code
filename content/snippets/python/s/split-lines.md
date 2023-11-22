@@ -15,9 +15,7 @@ Splits a multiline string into a list of lines.
 ```py
 def split_lines(s):
   return s.split('\n')
-```
 
-```py
 split_lines('This\nis a\nmultiline\nstring.\n')
 # ['This', 'is a', 'multiline', 'string.' , '']
 ```

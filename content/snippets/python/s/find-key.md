@@ -14,9 +14,7 @@ Finds the first key in the provided dictionary that has the given value.
 ```py
 def find_key(dict, val):
   return next(key for key, value in dict.items() if value == val)
-```
 
-```py
 ages = {
   'Peter': 10,
   'Isabel': 11,

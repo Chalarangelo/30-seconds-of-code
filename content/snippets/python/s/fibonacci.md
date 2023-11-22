@@ -21,8 +21,6 @@ def fibonacci(n):
     next_value = sequence[len(sequence) - 1] + sequence[len(sequence) - 2]
     sequence.append(next_value)
   return sequence
-```
 
-```py
 fibonacci(7) # [0, 1, 1, 2, 3, 5, 8, 13]
 ```

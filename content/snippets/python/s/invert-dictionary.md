@@ -14,9 +14,7 @@ Inverts a dictionary with unique hashable values.
 ```py
 def invert_dictionary(obj):
   return { value: key for key, value in obj.items() }
-```
 
-```py
 ages = {
   'Peter': 10,
   'Isabel': 11,

@@ -23,9 +23,7 @@ def merge(*args, fill_value = None):
       args[k][i] if i < len(args[k]) else fill_value for k in range(len(args))
     ])
   return result
-```
 
-```py
 merge(['a', 'b'], [1, 2], [True, False]) # [['a', 1, True], ['b', 2, False]]
 merge(['a'], [1, 2], [True, False]) # [['a', 1, True], [None, 2, False]]
 merge(['a'], [1, 2], [True, False], fill_value = '_')

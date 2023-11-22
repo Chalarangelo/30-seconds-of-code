@@ -14,9 +14,7 @@ Converts a list of dictionaries into a list of values corresponding to the speci
 ```py
 def pluck(lst, key):
   return [x.get(key) for x in lst]
-```
 
-```py
 simpsons = [
   { 'name': 'lisa', 'age': 8 },
   { 'name': 'homer', 'age': 36 },

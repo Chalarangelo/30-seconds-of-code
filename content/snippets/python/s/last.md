@@ -14,8 +14,6 @@ Returns the last element in a list.
 ```py
 def last(lst):
   return lst[-1]
-```
 
-```py
 last([1, 2, 3]) # 3
 ```

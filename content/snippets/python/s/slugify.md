@@ -21,8 +21,6 @@ def slugify(s):
   s = re.sub(r'[\s_-]+', '-', s)
   s = re.sub(r'^-+|-+$', '', s)
   return s
-```
 
-```py
 slugify('Hello World!') # 'hello-world'
 ```

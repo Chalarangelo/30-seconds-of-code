@@ -36,9 +36,7 @@ def to_roman_numeral(num):
     (d, num) = divmod(num, n)
     res += roman * d
   return res
-```
 
-```py
 to_roman_numeral(3) # 'III'
 to_roman_numeral(11) # 'XI'
 to_roman_numeral(1998) # 'MCMXCVIII'

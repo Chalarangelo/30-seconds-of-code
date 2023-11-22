@@ -14,9 +14,7 @@ Returns a list with `n` elements removed from the end.
 ```py
 def take_right(itr, n = 1):
   return itr[-n:]
-```
 
-```py
 take_right([1, 2, 3], 2) # [2, 3]
 take_right([1, 2, 3]) # [3]
 ```

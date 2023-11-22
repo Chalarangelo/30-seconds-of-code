@@ -14,8 +14,6 @@ Returns all the elements of a list except the last one.
 ```py
 def initial(lst):
   return lst[:-1]
-```
 
-```py
 initial([1, 2, 3]) # [1, 2]
 ```

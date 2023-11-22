@@ -15,9 +15,7 @@ Creates a flat list of all the keys in a flat dictionary.
 ```py
 def keys_only(flat_dict):
   return list(flat_dict.keys())
-```
 
-```py
 ages = {
   'Peter': 10,
   'Isabel': 11,
