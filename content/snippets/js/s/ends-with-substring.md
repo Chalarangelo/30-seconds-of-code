@@ -22,8 +22,6 @@ const endsWithSubstring = (text, word) => {
   }
   return undefined;
 };
-```
 
-```js
 endsWithSubstring('Lorem ipsum dolor sit amet<br /', '<br />'); // '<br /'
 ```

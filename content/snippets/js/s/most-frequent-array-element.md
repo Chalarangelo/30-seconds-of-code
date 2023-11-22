@@ -20,8 +20,6 @@ const mostFrequent = arr =>
       return a;
     }, {})
   ).reduce((a, v) => (v[1] >= a[1] ? v : a), [null, 0])[0];
-```
 
-```js
 mostFrequent(['a', 'b', 'a', 'c', 'a', 'a', 'b']); // 'a'
 ```

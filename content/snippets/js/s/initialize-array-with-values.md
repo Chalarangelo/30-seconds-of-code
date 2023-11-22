@@ -15,8 +15,6 @@ Initializes and fills an array with the specified values.
 
 ```js
 const initializeArrayWithValues = (n, val = 0) => Array(n).fill(val);
-```
 
-```js
 initializeArrayWithValues(5, 2); // [2, 2, 2, 2, 2]
 ```

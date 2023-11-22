@@ -15,8 +15,6 @@ Alphabetically sorts the characters in a string.
 ```js
 const sortCharactersInString = str =>
   [...str].sort((a, b) => a.localeCompare(b)).join('');
-```
 
-```js
 sortCharactersInString('cabbage'); // 'aabbceg'
 ```

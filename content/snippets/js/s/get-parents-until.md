@@ -24,9 +24,7 @@ const getParentsUntil = (el, selector) => {
   }
   return [];
 };
-```
 
-```js
 getParentsUntil(document.querySelector('#home-link'), 'header');
 // [header, nav, ul, li]
 ```

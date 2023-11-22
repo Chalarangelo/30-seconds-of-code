@@ -13,9 +13,7 @@ Checks if the passed value is primitive or not.
 
 ```js
 const isPrimitive = val => Object(val) !== val;
-```
 
-```js
 isPrimitive(null); // true
 isPrimitive(undefined); // true
 isPrimitive(50); // true

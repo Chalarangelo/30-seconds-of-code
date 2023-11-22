@@ -14,9 +14,7 @@ Removes an element from the DOM.
 
 ```js
 const removeElement = el => el.parentNode.removeChild(el);
-```
 
-```js
 removeElement(document.querySelector('#my-element'));
 // Removes #my-element from the DOM
 ```

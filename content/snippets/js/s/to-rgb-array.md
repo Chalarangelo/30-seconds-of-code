@@ -14,8 +14,6 @@ Converts an `rgb()` color string to an array of values.
 
 ```js
 const toRGBArray = rgbStr => rgbStr.match(/\d+/g).map(Number);
-```
 
-```js
 toRGBArray('rgb(255, 12, 0)'); // [255, 12, 0]
 ```

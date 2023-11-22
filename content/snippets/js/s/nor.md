@@ -14,9 +14,7 @@ Checks if none of the arguments are `true`.
 
 ```js
 const nor = (a, b) => !(a||b);
-```
 
-```js
 nor(true, true); // false
 nor(true, false); // false
 nor(false, false); // true

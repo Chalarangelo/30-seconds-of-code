@@ -18,8 +18,6 @@ const detectDeviceType = () =>
   )
     ? 'Mobile'
     : 'Desktop';
-```
 
-```js
 detectDeviceType(); // 'Mobile' or 'Desktop'
 ```

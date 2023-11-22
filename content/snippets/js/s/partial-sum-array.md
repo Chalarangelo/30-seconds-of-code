@@ -16,9 +16,7 @@ Creates an array of partial sums.
 ```js
 const accumulate = (...nums) =>
   nums.reduce((acc, n) => [...acc, n + (acc.slice(-1)[0] || 0)], []);
-```
 
-```js
 accumulate(1, 2, 3, 4); // [1, 3, 6, 10]
 accumulate(...[1, 2, 3, 4]); // [1, 3, 6, 10]
 ```

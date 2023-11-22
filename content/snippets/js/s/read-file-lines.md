@@ -18,9 +18,7 @@ import { readFileSync } from 'fs';
 
 const readFileLines = filename =>
   readFileSync(filename).toString('UTF8').split('\n');
-```
 
-```js
 /*
 contents of test.txt :
   line1

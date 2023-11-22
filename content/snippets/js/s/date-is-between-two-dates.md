@@ -14,9 +14,7 @@ Checks if a date is between two other dates.
 ```js
 const isBetweenDates = (dateStart, dateEnd, date) =>
   date > dateStart && date < dateEnd;
-```
 
-```js
 isBetweenDates(
   new Date(2010, 11, 20),
   new Date(2010, 11, 30),

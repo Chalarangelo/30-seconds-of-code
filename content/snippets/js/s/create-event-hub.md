@@ -32,9 +32,7 @@ const createEventHub = () => ({
     if (this.hub[event].length === 0) delete this.hub[event];
   }
 });
-```
 
-```js
 const handler = data => console.log(data);
 const hub = createEventHub();
 let increment = 0;

@@ -19,9 +19,7 @@ const uniqueSymmetricDifference = (a, b) => [
     ...b.filter(v => !a.includes(v)),
   ]),
 ];
-```
 
-```js
 uniqueSymmetricDifference([1, 2, 3], [1, 2, 4]); // [3, 4]
 uniqueSymmetricDifference([1, 2, 2], [1, 3, 1]); // [2, 3]
 ```

@@ -20,9 +20,7 @@ const isValidJSON = str => {
     return false;
   }
 };
-```
 
-```js
 isValidJSON('{"name":"Adam","age":20}'); // true
 isValidJSON('{"name":"Adam",age:"20"}'); // false
 isValidJSON(null); // true

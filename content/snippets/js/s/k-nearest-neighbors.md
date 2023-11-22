@@ -42,9 +42,7 @@ const kNearestNeighbors = (data, labels, point, k = 3) => {
     }
   ).topClass;
 };
-```
 
-```js
 const data = [[0, 0], [0, 1], [1, 3], [2, 0]];
 const labels = [0, 1, 1, 0];
 

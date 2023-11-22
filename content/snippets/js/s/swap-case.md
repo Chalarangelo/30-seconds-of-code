@@ -19,8 +19,6 @@ const swapCase = str =>
   [...str]
     .map(c => (c === c.toLowerCase() ? c.toUpperCase() : c.toLowerCase()))
     .join('');
-```
 
-```js
 swapCase('Hello world!'); // 'hELLO WORLD!'
 ```

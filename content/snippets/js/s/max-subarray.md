@@ -41,8 +41,6 @@ const maxSubarray = (...arr) => {
   return arr.slice(sMax, eMax + 1);
 };
 
-```
 
-```js
 maxSubarray(-2, 1, -3, 4, -1, 2, 1, -5, 4); // [4, -1, 2, 1]
 ```

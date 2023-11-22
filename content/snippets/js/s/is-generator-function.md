@@ -14,9 +14,7 @@ Checks if the given argument is a generator function.
 ```js
 const isGeneratorFunction = val =>
   Object.prototype.toString.call(val) === '[object GeneratorFunction]';
-```
 
-```js
 isGeneratorFunction(function() {}); // false
 isGeneratorFunction(function*() {}); // true
 ```

@@ -23,8 +23,6 @@ const isSessionStorageEnabled = () => {
     return false;
   }
 };
-```
 
-```js
 isSessionStorageEnabled(); // true, if sessionStorage is accessible
 ```

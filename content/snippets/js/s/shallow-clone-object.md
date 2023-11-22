@@ -13,9 +13,7 @@ Creates a shallow clone of an object.
 
 ```js
 const shallowClone = obj => Object.assign({}, obj);
-```
 
-```js
 const a = { x: true, y: 1 };
 const b = shallowClone(a); // a !== b
 ```

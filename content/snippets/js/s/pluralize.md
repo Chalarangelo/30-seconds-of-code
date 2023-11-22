@@ -23,9 +23,7 @@ const pluralize = (val, word, plural = word + 's') => {
     return (num, word) => _pluralize(num, word, val[word]);
   return _pluralize(val, word, plural);
 };
-```
 
-```js
 pluralize(0, 'apple'); // 'apples'
 pluralize(1, 'apple'); // 'apple'
 pluralize(2, 'apple'); // 'apples'

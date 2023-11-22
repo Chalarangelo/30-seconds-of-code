@@ -14,8 +14,6 @@ Only works for string primitives.
 
 ```js
 const isString = val => typeof val === 'string';
-```
 
-```js
 isString('10'); // true
 ```

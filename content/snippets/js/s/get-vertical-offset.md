@@ -22,8 +22,6 @@ const getVerticalOffset = el => {
   }
   return offset;
 };
-```
 
-```js
 getVerticalOffset('.my-element'); // 120
 ```

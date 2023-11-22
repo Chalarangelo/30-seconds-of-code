@@ -25,8 +25,6 @@ const randomAlphaNumeric = length => {
   });
   return s.slice(0, length);
 };
-```
 
-```js
 randomAlphaNumeric(5); // '0afad'
 ```

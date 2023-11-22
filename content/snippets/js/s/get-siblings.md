@@ -15,8 +15,6 @@ Returns an array containing all the siblings of the given element.
 ```js
 const getSiblings = el =>
   [...el.parentNode.childNodes].filter(node => node !== el);
-```
 
-```js
 getSiblings(document.querySelector('head')); // ['body']
 ```

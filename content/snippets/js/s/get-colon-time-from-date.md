@@ -13,8 +13,6 @@ Returns a string of the form `HH:MM:SS` from a `Date` object.
 
 ```js
 const getColonTimeFromDate = date => date.toTimeString().slice(0, 8);
-```
 
-```js
 getColonTimeFromDate(new Date()); // '08:38:00'
 ```

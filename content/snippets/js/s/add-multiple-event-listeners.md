@@ -17,9 +17,7 @@ const addMultipleListeners = (el, types, listener, options, useCapture) => {
     el.addEventListener(type, listener, options, useCapture)
   );
 };
-```
 
-```js
 addMultipleListeners(
   document.querySelector('.my-element'),
   ['click', 'mousedown'],

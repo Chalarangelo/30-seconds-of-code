@@ -24,9 +24,7 @@ const stringifyCircularJSON = obj => {
     return v;
   });
 };
-```
 
-```js
 const obj = { n: 42 };
 obj.obj = obj;
 stringifyCircularJSON(obj); // '{"n": 42}'

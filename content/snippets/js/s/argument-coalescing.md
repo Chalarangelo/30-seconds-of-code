@@ -13,8 +13,6 @@ Returns the first defined, non-null argument.
 
 ```js
 const coalesce = (...args) => args.find(v => ![undefined, null].includes(v));
-```
 
-```js
 coalesce(null, undefined, '', NaN, 'Waldo'); // ''
 ```

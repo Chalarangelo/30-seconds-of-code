@@ -21,9 +21,7 @@ const getImages = (el, includeDuplicates = false) => {
   );
   return includeDuplicates ? images : [...new Set(images)];
 };
-```
 
-```js
 getImages(document, true); // ['image1.jpg', 'image2.png', 'image1.png', '...']
 getImages(document, false); // ['image1.jpg', 'image2.png', '...']
 ```

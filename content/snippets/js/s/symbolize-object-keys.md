@@ -18,9 +18,7 @@ const symbolizeKeys = obj =>
     (acc, key) => ({ ...acc, [Symbol(key)]: obj[key] }),
     {}
   );
-```
 
-```js
 symbolizeKeys({ id: 10, name: 'apple' });
 // { [Symbol(id)]: 10, [Symbol(name)]: 'apple' }
 ```

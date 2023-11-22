@@ -19,9 +19,7 @@ const indexOn = (arr, key) =>
     obj[id] = data;
     return obj;
   }, {});
-```
 
-```js
 indexOn([
   { id: 10, name: 'apple' },
   { id: 20, name: 'orange' }

@@ -13,9 +13,7 @@ Removes a class from an HTML element.
 
 ```js
 const removeClass = (el, className) => el.classList.remove(className);
-```
 
-```js
 removeClass(document.querySelector('p.special'), 'special');
 // The paragraph will not have the 'special' class anymore
 ```

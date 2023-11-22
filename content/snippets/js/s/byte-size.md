@@ -14,9 +14,7 @@ Returns the length of a string in bytes.
 
 ```js
 const byteSize = str => new Blob([str]).size;
-```
 
-```js
 byteSize('😀'); // 4
 byteSize('Hello World'); // 11
 ```

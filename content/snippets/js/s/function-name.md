@@ -14,9 +14,7 @@ Logs the name of a function.
 
 ```js
 const functionName = fn => (console.debug(fn.name), fn);
-```
 
-```js
 let m = functionName(Math.max)(5, 6);
 // max (logged in debug channel of console)
 // m = 6

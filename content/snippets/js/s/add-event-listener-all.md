@@ -17,9 +17,7 @@ const addEventListenerAll = (targets, type, listener, options, useCapture) => {
     target.addEventListener(type, listener, options, useCapture)
   );
 };
-```
 
-```js
 addEventListenerAll(document.querySelectorAll('a'), 'click', () =>
   console.log('Clicked a link')
 );

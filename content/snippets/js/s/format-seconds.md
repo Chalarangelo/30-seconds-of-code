@@ -28,9 +28,7 @@ const formatSeconds = s => {
       .join(':')
   );
 };
-```
 
-```js
 formatSeconds(200); // '00:03:20'
 formatSeconds(-200); // '-00:03:20'
 formatSeconds(99999); // '27:46:39'

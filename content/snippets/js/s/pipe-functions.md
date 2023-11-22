@@ -15,9 +15,7 @@ Performs left-to-right function composition.
 ```js
 const pipeFunctions = (...fns) =>
   fns.reduce((f, g) => (...args) => g(f(...args)));
-```
 
-```js
 const add5 = x => x + 5;
 const multiply = (x, y) => x * y;
 const multiplyAndAdd5 = pipeFunctions(multiply, add5);

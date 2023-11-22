@@ -13,9 +13,7 @@ Calculates the product of two or more numbers/arrays.
 
 ```js
 const prod = (...arr) => [...arr].reduce((acc, val) => acc * val, 1);
-```
 
-```js
 prod(1, 2, 3, 4); // 24
 prod(...[1, 2, 3, 4]); // 24
 ```

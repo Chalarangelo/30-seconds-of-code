@@ -15,9 +15,7 @@ Converts a number to an array of digits, removing its sign if necessary.
 
 ```js
 const digitize = n => [...`${Math.abs(n)}`].map(i => parseInt(i));
-```
 
-```js
 digitize(123); // [1, 2, 3]
 digitize(-123); // [1, 2, 3]
 ```

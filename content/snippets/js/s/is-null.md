@@ -13,8 +13,6 @@ Checks if the specified value is `null`.
 
 ```js
 const isNull = val => val === null;
-```
 
-```js
 isNull(null); // true
 ```

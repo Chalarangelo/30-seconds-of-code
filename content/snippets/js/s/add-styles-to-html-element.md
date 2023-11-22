@@ -13,9 +13,7 @@ Adds the provided styles to the given HTML element.
 
 ```js
 const addStyles = (el, styles) => Object.assign(el.style, styles);
-```
 
-```js
 addStyles(document.getElementById('my-element'), {
   background: 'red',
   color: '#ffff00',

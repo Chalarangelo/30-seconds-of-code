@@ -13,9 +13,7 @@ Compacts whitespaces in a string.
 
 ```js
 const compactWhitespace = str => str.replace(/\s{2,}/g, ' ');
-```
 
-```js
 compactWhitespace('Lorem    Ipsum'); // 'Lorem Ipsum'
 compactWhitespace('Lorem \n Ipsum'); // 'Lorem Ipsum'
 ```

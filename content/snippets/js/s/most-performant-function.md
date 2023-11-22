@@ -24,9 +24,7 @@ const mostPerformant = (fns, iterations = 10000) => {
   });
   return times.indexOf(Math.min(...times));
 };
-```
 
-```js
 mostPerformant([
   () => {
     // Loops through the entire array before returning `false`

@@ -23,8 +23,6 @@ const isLocalStorageEnabled = () => {
     return false;
   }
 };
-```
 
-```js
 isLocalStorageEnabled(); // true, if localStorage is accessible
 ```

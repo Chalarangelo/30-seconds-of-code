@@ -18,9 +18,7 @@ const symmetricDifferenceBy = (a, b, fn) => {
     sB = new Set(b.map(v => fn(v)));
   return [...a.filter(x => !sB.has(fn(x))), ...b.filter(x => !sA.has(fn(x)))];
 };
-```
 
-```js
 symmetricDifferenceBy([2.1, 1.2], [2.3, 3.4], Math.floor); // [ 1.2, 3.4 ]
 symmetricDifferenceBy(
   [{ id: 1 }, { id: 2 }, { id: 3 }],

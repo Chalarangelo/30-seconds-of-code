@@ -38,9 +38,7 @@ const renderElement = ({ type, props = {} }, container) => {
 
   container.appendChild(element);
 };
-```
 
-```js
 const myElement = {
   type: 'button',
   props: {

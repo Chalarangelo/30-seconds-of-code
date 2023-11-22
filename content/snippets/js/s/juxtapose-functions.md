@@ -14,9 +14,7 @@ Takes several functions as argument and returns a function that is the juxtaposi
 
 ```js
 const juxt = (...fns) => (...args) => [...fns].map(fn => [...args].map(fn));
-```
 
-```js
 juxt(
   x => x + 1,
   x => x - 1,

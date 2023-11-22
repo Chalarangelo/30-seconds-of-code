@@ -20,9 +20,7 @@ const isReadableStream = val =>
   typeof val.pipe === 'function' &&
   typeof val._read === 'function' &&
   typeof val._readableState === 'object';
-```
 
-```js
 import { createReadStream } from 'fs';
 
 isReadableStream(createReadStream('test.txt')); // true

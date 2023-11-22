@@ -37,8 +37,6 @@ const copyToClipboard = str => {
     document.getSelection().addRange(selected);
   }
 };
-```
 
-```js
 copyToClipboard('Lorem ipsum'); // 'Lorem ipsum' copied to clipboard.
 ```

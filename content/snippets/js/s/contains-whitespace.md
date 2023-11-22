@@ -13,9 +13,7 @@ Checks if the given string contains any whitespace characters.
 
 ```js
 const containsWhitespace = str => /\s/.test(str);
-```
 
-```js
 containsWhitespace('lorem'); // false
 containsWhitespace('lorem ipsum'); // true
 ```

@@ -22,8 +22,6 @@ const sortedIndexBy = (arr, n, fn) => {
   );
   return index === -1 ? arr.length : index;
 };
-```
 
-```js
 sortedIndexBy([{ x: 4 }, { x: 5 }], { x: 4 }, o => o.x); // 0
 ```

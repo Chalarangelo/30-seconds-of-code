@@ -22,9 +22,7 @@ const once = fn => {
     return fn.apply(this, args);
   };
 };
-```
 
-```js
 const startApp = function(event) {
   console.log(this, event); // document.body, MouseEvent
 };

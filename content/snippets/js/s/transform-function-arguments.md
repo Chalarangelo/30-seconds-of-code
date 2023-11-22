@@ -14,9 +14,7 @@ Creates a function that invokes the provided function with its arguments transfo
 ```js
 const overArgs = (fn, transforms) =>
   (...args) => fn(...args.map((val, i) => transforms[i](val)));
-```
 
-```js
 const square = n => n * n;
 const double = n => n * 2;
 const fn = overArgs((x, y) => [x, y], [square, double]);

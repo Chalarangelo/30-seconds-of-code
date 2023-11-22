@@ -16,9 +16,7 @@ Finds all the keys in the provided object that match the given value.
 ```js
 const findKeys = (obj, val) =>
   Object.keys(obj).filter(key => obj[key] === val);
-```
 
-```js
 const ages = {
   Leo: 20,
   Zoey: 21,

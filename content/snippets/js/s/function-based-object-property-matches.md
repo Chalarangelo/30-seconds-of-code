@@ -20,9 +20,7 @@ const matchesWith = (obj, source, fn) =>
       ? fn(obj[key], source[key], key, obj, source)
       : obj[key] == source[key]
   );
-```
 
-```js
 const isGreeting = val => /^h(?:i|ello)$/.test(val);
 matchesWith(
   { greeting: 'hello' },

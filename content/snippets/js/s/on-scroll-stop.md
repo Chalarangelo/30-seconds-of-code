@@ -27,9 +27,7 @@ const onScrollStop = callback => {
     false
   );
 };
-```
 
-```js
 onScrollStop(() => {
   console.log('The user has stopped scrolling');
 });

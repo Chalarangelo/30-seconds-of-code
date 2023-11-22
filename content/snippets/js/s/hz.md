@@ -20,9 +20,7 @@ const hz = (fn, iterations = 100) => {
   for (let i = 0; i < iterations; i++) fn();
   return (1000 * iterations) / (performance.now() - before);
 };
-```
 
-```js
 const numbers = Array(10000).fill().map((_, i) => i);
 
 const sumReduce = () => numbers.reduce((acc, n) => acc + n, 0);

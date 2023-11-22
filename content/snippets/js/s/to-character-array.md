@@ -13,8 +13,6 @@ Converts a string to an array of characters.
 
 ```js
 const toCharArray = s => [...s];
-```
 
-```js
 toCharArray('hello'); // ['h', 'e', 'l', 'l', 'o']
 ```

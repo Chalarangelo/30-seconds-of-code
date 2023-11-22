@@ -18,9 +18,7 @@ const toHash = (object, key) =>
     acc[!key ? index : data[key]] = data;
     return acc;
   }, {});
-```
 
-```js
 toHash([4, 3, 2, 1]); // { 0: 4, 1: 3, 2: 2, 3: 1 }
 toHash([{ a: 'label' }], 'a'); // { label: { a: 'label' } }
 ```

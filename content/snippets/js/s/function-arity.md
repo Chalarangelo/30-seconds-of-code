@@ -13,9 +13,7 @@ Creates a function that accepts up to `n` arguments, ignoring any additional arg
 
 ```js
 const ary = (fn, n) => (...args) => fn(...args.slice(0, n));
-```
 
-```js
 const firstTwoMax = ary(Math.max, 2);
 [[2, 6, 'a'], [6, 4, 8], [10]].map(x => firstTwoMax(...x)); // [6, 6, 10]
 ```

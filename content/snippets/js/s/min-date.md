@@ -14,9 +14,7 @@ Returns the minimum of the given dates.
 
 ```js
 const minDate = (...dates) => new Date(Math.min(...dates));
-```
 
-```js
 const dates = [
   new Date(2017, 4, 13),
   new Date(2018, 2, 12),

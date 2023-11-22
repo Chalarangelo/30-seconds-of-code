@@ -13,8 +13,6 @@ Checks if the given argument is a symbol.
 
 ```js
 const isSymbol = val => typeof val === 'symbol';
-```
 
-```js
 isSymbol(Symbol('x')); // true
 ```

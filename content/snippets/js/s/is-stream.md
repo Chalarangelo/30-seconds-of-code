@@ -15,9 +15,7 @@ Checks if the given argument is a stream.
 ```js
 const isStream = val =>
   val !== null && typeof val === 'object' && typeof val.pipe === 'function';
-```
 
-```js
 import { createReadStream } from 'fs';
 
 isStream(createReadStream('test.txt')); // true

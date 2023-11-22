@@ -26,9 +26,7 @@ const shank = (arr, index = 0, delCount = 0, ...elements) =>
     .slice(0, index)
     .concat(elements)
     .concat(arr.slice(index + delCount));
-```
 
-```js
 const names = ['alpha', 'bravo', 'charlie'];
 const namesAndDelta = shank(names, 1, 0, 'delta');
 // [ 'alpha', 'delta', 'bravo', 'charlie' ]

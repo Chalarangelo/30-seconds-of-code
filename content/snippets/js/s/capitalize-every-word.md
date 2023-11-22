@@ -14,8 +14,6 @@ Capitalizes the first letter of every word in a string.
 ```js
 const capitalizeEveryWord = str =>
   str.replace(/\b[a-z]/g, char => char.toUpperCase());
-```
 
-```js
 capitalizeEveryWord('hello world!'); // 'Hello World!'
 ```

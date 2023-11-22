@@ -22,9 +22,7 @@ const replaceOrAppend = (arr, val, compFn) => {
   else res.splice(i, 1, val);
   return res;
 };
-```
 
-```js
 const people = [ { name: 'John', age: 30 }, { name: 'Jane', age: 28 } ];
 const jane = { name: 'Jane', age: 29 };
 const jack = { name: 'Jack', age: 28 };

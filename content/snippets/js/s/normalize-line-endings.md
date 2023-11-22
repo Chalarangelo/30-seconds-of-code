@@ -15,9 +15,7 @@ Normalizes line endings in a string.
 ```js
 const normalizeLineEndings = (str, normalized = '\r\n') =>
   str.replace(/\r?\n/g, normalized);
-```
 
-```js
 normalizeLineEndings('This\r\nis a\nmultiline\nstring.\r\n');
 // 'This\r\nis a\r\nmultiline\r\nstring.\r\n'
 normalizeLineEndings('This\r\nis a\nmultiline\nstring.\r\n', '\n');

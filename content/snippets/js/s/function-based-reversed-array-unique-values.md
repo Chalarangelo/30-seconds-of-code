@@ -18,9 +18,7 @@ const uniqueElementsByRight = (arr, fn) =>
     if (!acc.some(x => fn(v, x))) acc.push(v);
     return acc;
   }, []);
-```
 
-```js
 uniqueElementsByRight(
   [
     { id: 0, value: 'a' },

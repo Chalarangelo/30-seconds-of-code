@@ -13,9 +13,7 @@ Clones a regular expression.
 
 ```js
 const cloneRegExp = regExp => new RegExp(regExp.source, regExp.flags);
-```
 
-```js
 const regExp = /lorem ipsum/gi;
 const regExp2 = cloneRegExp(regExp); // regExp !== regExp2
 ```

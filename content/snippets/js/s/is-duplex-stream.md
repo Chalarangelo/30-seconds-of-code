@@ -22,9 +22,7 @@ const isDuplexStream = val =>
   typeof val._readableState === 'object' &&
   typeof val._write === 'function' &&
   typeof val._writableState === 'object';
-```
 
-```js
 import Stream from 'stream';
 
 isDuplexStream(new Stream.Duplex()); // true

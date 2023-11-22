@@ -24,8 +24,6 @@ const weightedAverage = (nums, weights) => {
   );
   return sum / weightSum;
 };
-```
 
-```js
 weightedAverage([1, 2, 3], [0.6, 0.2, 0.3]); // 1.72727
 ```

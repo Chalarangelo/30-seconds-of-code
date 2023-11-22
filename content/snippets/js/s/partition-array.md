@@ -23,9 +23,7 @@ const partitionBy = (arr, fn) =>
     },
     { res: [] }
   ).res;
-```
 
-```js
 const numbers = [1, 1, 3, 3, 4, 5, 5, 5];
 partitionBy(numbers, n => n % 2 === 0); // [[1, 1, 3, 3], [4], [5, 5, 5]]
 partitionBy(numbers, n => n); // [[1, 1], [3, 3], [4], [5, 5, 5]]

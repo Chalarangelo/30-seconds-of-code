@@ -14,9 +14,7 @@ Returns the maximum of the given dates.
 
 ```js
 const maxDate = (...dates) => new Date(Math.max(...dates));
-```
 
-```js
 const dates = [
   new Date(2017, 4, 13),
   new Date(2018, 2, 12),

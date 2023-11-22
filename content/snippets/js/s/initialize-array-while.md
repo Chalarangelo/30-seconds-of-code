@@ -26,9 +26,7 @@ const initializeArrayWhile = (conditionFn, mapFn) => {
   }
   return arr;
 };
-```
 
-```js
 initializeArrayWhile(
   (i, val) => val < 10,
   (i, val, arr) => (i <= 1 ? 1 : val + arr[i - 2])

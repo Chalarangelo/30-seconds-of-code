@@ -21,8 +21,6 @@ const takeRightWhile = (arr, fn) => {
     if (!fn(val)) return i === 0 ? [] : arr.slice(-i);
   return arr;
 };
-```
 
-```js
 takeRightWhile([1, 2, 3, 4], n => n >= 3); // [3, 4]
 ```

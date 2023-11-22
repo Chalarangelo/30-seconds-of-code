@@ -15,8 +15,6 @@ Creates an array with the unique values filtered out.
 ```js
 const filterUnique = arr =>
   [...new Set(arr)].filter(i => arr.indexOf(i) !== arr.lastIndexOf(i));
-```
 
-```js
 filterUnique([1, 2, 2, 3, 4, 4, 5]); // [2, 4]
 ```

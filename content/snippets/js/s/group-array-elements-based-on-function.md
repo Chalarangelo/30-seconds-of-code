@@ -24,9 +24,7 @@ const zipWith = (...array) => {
     fn ? fn(...array.map(a => a[i])) : array.map(a => a[i])
   );
 };
-```
 
-```js
 zipWith([1, 2], [10, 20], [100, 200], (a, b, c) => a + b + c); // [111, 222]
 zipWith(
   [1, 2, 3],

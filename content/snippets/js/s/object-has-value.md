@@ -14,9 +14,7 @@ Checks if the target value exists in a JSON object.
 
 ```js
 const hasValue = (obj, value) => Object.values(obj).includes(value);
-```
 
-```js
 const obj = { a: 100, b: 200 };
 hasValue(obj, 100); // true
 hasValue(obj, 999); // false

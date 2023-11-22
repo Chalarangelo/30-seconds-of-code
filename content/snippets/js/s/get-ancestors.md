@@ -21,9 +21,7 @@ const getAncestors = el => {
   }
   return ancestors;
 };
-```
 
-```js
 getAncestors(document.querySelector('nav'));
 // [document, html, body, header, nav]
 ```

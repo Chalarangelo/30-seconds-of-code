@@ -22,9 +22,7 @@ const isSorted = arr => {
   }
   return Math.sign(direction);
 };
-```
 
-```js
 isSorted([0, 1, 2, 2]); // 1
 isSorted([4, 3, 2]); // -1
 isSorted([4, 3, 5]); // 0

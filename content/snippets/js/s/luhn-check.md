@@ -29,9 +29,7 @@ const luhnCheck = num => {
   sum += lastDigit;
   return sum % 10 === 0;
 };
-```
 
-```js
 luhnCheck('4485275742308327'); // true
 luhnCheck(6011329933655299); //  true
 luhnCheck(123456789); // false

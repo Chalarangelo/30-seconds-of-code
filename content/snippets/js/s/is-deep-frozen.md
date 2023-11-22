@@ -19,9 +19,7 @@ const isDeepFrozen = obj =>
   Object.keys(obj).every(
     prop => typeof obj[prop] !== 'object' || isDeepFrozen(obj[prop])
   );
-```
 
-```js
 const x = Object.freeze({ a: 1 });
 const y = Object.freeze({ b: { c: 2 } });
 isDeepFrozen(x); // true

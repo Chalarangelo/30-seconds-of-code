@@ -18,9 +18,7 @@ const indexBy = (arr, fn) =>
     obj[fn(v, i, arr)] = v;
     return obj;
   }, {});
-```
 
-```js
 indexBy([
   { id: 10, name: 'apple' },
   { id: 20, name: 'orange' }

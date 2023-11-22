@@ -24,9 +24,7 @@ const orderWith = (arr, prop, order) => {
     return orderValues[a[prop]] - orderValues[b[prop]];
   });
 };
-```
 
-```js
 const users = [
   { name: 'fred', language: 'Javascript' },
   { name: 'barney', language: 'TypeScript' },

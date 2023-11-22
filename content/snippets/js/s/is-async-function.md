@@ -14,9 +14,7 @@ Checks if the given argument is an `async` function.
 ```js
 const isAsyncFunction = val =>
   Object.prototype.toString.call(val) === '[object AsyncFunction]';
-```
 
-```js
 isAsyncFunction(function() {}); // false
 isAsyncFunction(async function() {}); // true
 ```

@@ -13,8 +13,6 @@ Convert tabs to spaces, where each tab corresponds to `count` spaces.
 
 ```js
 const expandTabs = (str, count) => str.replace(/\t/g, ' '.repeat(count));
-```
 
-```js
 expandTabs('\t\tlorem', 3); // '      lorem'
 ```

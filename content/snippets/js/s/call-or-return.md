@@ -15,9 +15,7 @@ Calls the argument if it's a function, otherwise returns it.
 ```js
 const callOrReturn = (fn, ...args) =>
   typeof fn === 'function' ? fn(...args) : fn;
-```
 
-```js
 callOrReturn(x => x + 1, 1); // 2
 callOrReturn(1, 1); // 1
 ```

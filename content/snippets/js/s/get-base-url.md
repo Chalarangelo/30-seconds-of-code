@@ -13,9 +13,7 @@ Gets the current URL without any parameters or fragment identifiers.
 
 ```js
 const getBaseURL = url => url.replace(/[?#].*$/, '');
-```
 
-```js
 getBaseURL('http://url.com/page?name=Adam&surname=Smith');
 // 'http://url.com/page'
 ```

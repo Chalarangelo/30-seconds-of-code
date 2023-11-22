@@ -23,9 +23,7 @@ const findLastN = (arr, matcher, n = 1) => {
   }
   return res;
 };
-```
 
-```js
 findLastN([1, 2, 4, 6], n => n % 2 === 0, 2); // [4, 6]
 findLastN([1, 2, 4, 6], n => n % 2 === 0, 5); // [2, 4, 6]
 ```

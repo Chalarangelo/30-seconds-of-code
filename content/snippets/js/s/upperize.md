@@ -18,8 +18,6 @@ const upperize = obj =>
     acc[k.toUpperCase()] = obj[k];
     return acc;
   }, {});
-```
 
-```js
 upperize({ Name: 'John', Age: 22 }); // { NAME: 'John', AGE: 22 }
 ```

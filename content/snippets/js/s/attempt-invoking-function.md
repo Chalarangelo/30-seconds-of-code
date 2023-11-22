@@ -20,9 +20,7 @@ const attempt = (fn, ...args) => {
     return e instanceof Error ? e : new Error(e);
   }
 };
-```
 
-```js
 var elements = attempt(function(selector) {
   return document.querySelectorAll(selector);
 }, '>_>');

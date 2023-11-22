@@ -21,9 +21,7 @@ const reducedFilter = (data, keys, fn) =>
       return acc;
     }, {})
   );
-```
 
-```js
 const data = [
   {
     id: 1,

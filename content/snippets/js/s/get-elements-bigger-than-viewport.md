@@ -19,8 +19,6 @@ const getElementsBiggerThanViewport = () => {
     el => el.offsetWidth > docWidth
   );
 };
-```
 
-```js
 getElementsBiggerThanViewport(); // <div id="ultra-wide-item" />
 ```

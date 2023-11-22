@@ -55,8 +55,6 @@ const kMeans = (data, k = 1) => {
 
   return classes;
 };
-```
 
-```js
 kMeans([[0, 0], [0, 1], [1, 3], [2, 0]], 2); // [0, 1, 1, 0]
 ```

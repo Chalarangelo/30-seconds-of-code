@@ -14,8 +14,6 @@ Reverses a string.
 
 ```js
 const reverseString = str => [...str].reverse().join('');
-```
 
-```js
 reverseString('foobar'); // 'raboof'
 ```

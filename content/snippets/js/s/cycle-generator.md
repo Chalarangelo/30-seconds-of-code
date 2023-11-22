@@ -20,9 +20,7 @@ const cycleGenerator = function* (arr) {
     i++;
   }
 };
-```
 
-```js
 const binaryCycle = cycleGenerator([0, 1]);
 binaryCycle.next(); // { value: 0, done: false }
 binaryCycle.next(); // { value: 1, done: false }

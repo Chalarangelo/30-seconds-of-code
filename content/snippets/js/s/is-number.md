@@ -14,9 +14,7 @@ Checks if the given argument is a number.
 
 ```js
 const isNumber = val => typeof val === 'number' && val === val;
-```
 
-```js
 isNumber(1); // true
 isNumber('1'); // false
 isNumber(NaN); // false

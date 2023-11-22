@@ -15,9 +15,7 @@ Creates an array with the non-unique values filtered out, based on a provided co
 ```js
 const filterNonUniqueBy = (arr, fn) =>
   arr.filter((v, i) => arr.every((x, j) => (i === j) === fn(v, x, i, j)));
-```
 
-```js
 filterNonUniqueBy(
   [
     { id: 0, value: 'a' },

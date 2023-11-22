@@ -22,9 +22,7 @@ const injectCSS = css => {
   document.head.appendChild(el);
   return el;
 };
-```
 
-```js
 injectCSS('body { background-color: #000 }');
 // '<style type="text/css">body { background-color: #000 }</style>'
 ```

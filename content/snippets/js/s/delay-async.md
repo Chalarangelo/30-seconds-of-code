@@ -13,9 +13,7 @@ Delays the execution of an asynchronous function.
 
 ```js
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-```
 
-```js
 async function sleepyWork() {
   console.log("I'm going to sleep for 1 second.");
   await sleep(1000);

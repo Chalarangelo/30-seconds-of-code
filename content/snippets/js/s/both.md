@@ -14,9 +14,7 @@ Checks if both of the given functions return `true` for a given set of arguments
 
 ```js
 const both = (f, g) => (...args) => f(...args) && g(...args);
-```
 
-```js
 const isEven = num => num % 2 === 0;
 const isPositive = num => num > 0;
 const isPositiveEven = both(isEven, isPositive);

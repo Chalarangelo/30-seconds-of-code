@@ -20,9 +20,7 @@ const pull = (arr, ...args) => {
   arr.length = 0;
   pulled.forEach(v => arr.push(v));
 };
-```
 
-```js
 let myArray = ['a', 'b', 'c', 'a', 'b', 'c'];
 pull(myArray, 'a', 'c'); // myArray = [ 'b', 'b' ]
 ```

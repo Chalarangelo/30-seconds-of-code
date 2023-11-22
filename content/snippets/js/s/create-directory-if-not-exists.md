@@ -16,9 +16,7 @@ import { existsSync, mkdirSync } from 'fs';
 
 const createDirIfNotExists = dir =>
   !existsSync(dir) ? mkdirSync(dir) : undefined;
-```
 
-```js
 createDirIfNotExists('test');
 // creates the directory 'test', if it doesn't exist
 ```

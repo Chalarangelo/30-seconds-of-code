@@ -19,8 +19,6 @@ const mapString = (str, fn) =>
     .split('')
     .map((c, i) => fn(c, i, str))
     .join('');
-```
 
-```js
 mapString('lorem ipsum', c => c.toUpperCase()); // 'LOREM IPSUM'
 ```

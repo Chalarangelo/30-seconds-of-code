@@ -37,9 +37,7 @@ const toRomanNumeral = num => {
     return acc;
   }, '');
 };
-```
 
-```js
 toRomanNumeral(3); // 'III'
 toRomanNumeral(11); // 'XI'
 toRomanNumeral(1998); // 'MCMXCVIII'

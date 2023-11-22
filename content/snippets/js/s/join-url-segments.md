@@ -22,9 +22,7 @@ const URLJoin = (...args) =>
     .replace(/\/(\?|&|#[^!])/g, '$1')
     .replace(/\?/g, '&')
     .replace('&', '?');
-```
 
-```js
 URLJoin('http://www.google.com', 'a', '/b/cd', '?foo=123', '?bar=foo');
 // 'http://www.google.com/a/b/cd?foo=123&bar=foo'
 ```

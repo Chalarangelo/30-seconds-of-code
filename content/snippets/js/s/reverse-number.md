@@ -16,9 +16,7 @@ Reverses a number.
 ```js
 const reverseNumber = n =>
   parseFloat(`${n}`.split('').reverse().join('')) * Math.sign(n);
-```
 
-```js
 reverseNumber(981); // 189
 reverseNumber(-500); // -5
 reverseNumber(73.6); // 6.37

@@ -17,8 +17,6 @@ Calculates the width of the window's vertical scrollbar.
 ```js
 const getScrollbarWidth = () =>
   window.innerWidth - document.documentElement.clientWidth;
-```
 
-```js
 getScrollbarWidth(); // 15
 ```

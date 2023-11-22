@@ -13,9 +13,7 @@ Changes a function that accepts an array into a variadic function.
 
 ```js
 const collectInto = fn => (...args) => fn(args);
-```
 
-```js
 const Pall = collectInto(Promise.all.bind(Promise));
 let p1 = Promise.resolve(1);
 let p2 = Promise.resolve(2);

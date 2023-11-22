@@ -18,8 +18,6 @@ const lowerize = obj =>
     acc[k.toLowerCase()] = obj[k];
     return acc;
   }, {});
-```
 
-```js
 lowerize({ Name: 'John', Age: 22 }); // { name: 'John', age: 22 }
 ```

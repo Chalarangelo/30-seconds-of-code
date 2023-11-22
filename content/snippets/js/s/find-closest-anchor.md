@@ -19,8 +19,6 @@ const findClosestAnchor = node => {
     if (n.nodeName.toLowerCase() === 'a') return n;
   return null;
 };
-```
 
-```js
 findClosestAnchor(document.querySelector('a > span')); // a
 ```

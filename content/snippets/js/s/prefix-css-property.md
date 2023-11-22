@@ -60,9 +60,7 @@ const prefix = prop => {
   );
   return i !== -1 ? (i === 0 ? prop : prefixes[i] + capitalizedProp) : null;
 };
-```
 
-```js
 prefix('appearance');
 // 'appearance' on a supported browser, otherwise 'webkitAppearance',
 //   'mozAppearance', 'msAppearance' or 'oAppearance'

@@ -14,9 +14,7 @@ Creates a function that invokes the provided function with its arguments arrange
 
 ```js
 const rearg = (fn, indexes) => (...args) => fn(...indexes.map(i => args[i]));
-```
 
-```js
 var rearged = rearg(
   function(a, b, c) {
     return [a, b, c];

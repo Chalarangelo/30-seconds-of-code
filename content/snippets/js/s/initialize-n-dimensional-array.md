@@ -19,9 +19,7 @@ const initializeNDArray = (val, ...args) =>
     : Array.from({ length: args[0] }).map(() =>
         initializeNDArray(val, ...args.slice(1))
       );
-```
 
-```js
 initializeNDArray(1, 3); // [1, 1, 1]
 initializeNDArray(5, 2, 2, 2); // [[[5, 5], [5, 5]], [[5, 5], [5, 5]]]
 ```

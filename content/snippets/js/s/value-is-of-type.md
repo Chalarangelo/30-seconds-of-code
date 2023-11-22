@@ -14,9 +14,7 @@ Checks if the provided value is of the specified type.
 
 ```js
 const is = (type, val) => ![, null].includes(val) && val.constructor === type;
-```
 
-```js
 is(Array, [1]); // true
 is(ArrayBuffer, new ArrayBuffer()); // true
 is(Map, new Map()); // true

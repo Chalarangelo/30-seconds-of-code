@@ -13,9 +13,7 @@ Checks if the given argument is a function.
 
 ```js
 const isFunction = val => typeof val === 'function';
-```
 
-```js
 isFunction('x'); // false
 isFunction(x => x); // true
 ```

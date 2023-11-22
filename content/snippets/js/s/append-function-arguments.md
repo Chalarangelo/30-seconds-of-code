@@ -13,9 +13,7 @@ Creates a function that invokes `fn` with `partials` appended to the arguments i
 
 ```js
 const partialRight = (fn, ...partials) => (...args) => fn(...args, ...partials);
-```
 
-```js
 const greet = (greeting, name) => greeting + ' ' + name + '!';
 const greetJohn = partialRight(greet, 'John');
 greetJohn('Hello'); // 'Hello John!'

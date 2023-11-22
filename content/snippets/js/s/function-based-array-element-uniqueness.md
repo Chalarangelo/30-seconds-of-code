@@ -15,9 +15,7 @@ Checks if all elements in an array are unique, based on the provided mapping fun
 
 ```js
 const allUniqueBy = (arr, fn) => arr.length === new Set(arr.map(fn)).size;
-```
 
-```js
 allUniqueBy([1.2, 2.4, 2.9], Math.round); // true
 allUniqueBy([1.2, 2.3, 2.4], Math.round); // false
 ```

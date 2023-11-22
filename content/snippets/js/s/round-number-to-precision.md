@@ -15,8 +15,6 @@ Rounds a number to a specified amount of digits.
 ```js
 const round = (n, decimals = 0) =>
   Number(`${Math.round(`${n}e${decimals}`)}e-${decimals}`);
-```
 
-```js
 round(1.005, 2); // 1.01
 ```

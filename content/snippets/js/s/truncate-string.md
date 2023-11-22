@@ -15,8 +15,6 @@ Truncates a string up to a specified length.
 ```js
 const truncateString = (str, num) =>
   str.length > num ? str.slice(0, num > 3 ? num - 3 : num) + '...' : str;
-```
 
-```js
 truncateString('boomerang', 7); // 'boom...'
 ```

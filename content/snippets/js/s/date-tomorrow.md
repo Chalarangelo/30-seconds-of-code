@@ -19,8 +19,6 @@ const tomorrow = () => {
   d.setDate(d.getDate() + 1);
   return d.toISOString().split('T')[0];
 };
-```
 
-```js
 tomorrow(); // 2018-10-19 (if current date is 2018-10-18)
 ```

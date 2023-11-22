@@ -21,9 +21,7 @@ const partition = (arr, fn) =>
     },
     [[], []]
   );
-```
 
-```js
 const users = [
   { user: 'barney', age: 36, active: false },
   { user: 'fred', age: 40, active: true },

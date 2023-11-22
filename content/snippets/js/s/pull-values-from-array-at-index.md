@@ -25,9 +25,7 @@ const pullAtIndex = (arr, pullArr) => {
   pulled.forEach(v => arr.push(v));
   return removed;
 };
-```
 
-```js
 let myArray = ['a', 'b', 'c', 'd'];
 let pulled = pullAtIndex(myArray, [1, 3]);
 // myArray = [ 'a', 'c' ] , pulled = [ 'b', 'd' ]

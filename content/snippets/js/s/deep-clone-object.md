@@ -31,9 +31,7 @@ const deepClone = obj => {
   }
   return clone;
 };
-```
 
-```js
 const a = { foo: 'bar', obj: { a: 1, b: 2 } };
 const b = deepClone(a); // a !== b, a.obj !== b.obj
 ```

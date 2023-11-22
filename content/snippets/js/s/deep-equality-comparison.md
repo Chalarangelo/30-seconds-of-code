@@ -33,9 +33,7 @@ const equals = (a, b) => {
 
   return keys.every(k => equals(a[k], b[k]));
 };
-```
 
-```js
 equals(
   { a: [2, { e: 3 }], b: [4], c: 'foo' },
   { a: [2, { e: 3 }], b: [4], c: 'foo' }

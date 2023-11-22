@@ -15,8 +15,6 @@ Checks if two numbers are approximately equal to each other.
 ```js
 const approximatelyEqual = (v1, v2, epsilon = 0.001) =>
   Math.abs(v1 - v2) < epsilon;
-```
 
-```js
 approximatelyEqual(Math.PI / 2.0, 1.5708); // true
 ```

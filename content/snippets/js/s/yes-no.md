@@ -16,9 +16,7 @@ Returns `true` if the string is `'y'`/`'yes'` or `false` if the string is `'n'`/
 ```js
 const yesNo = (val, def = false) =>
   /^(y|yes)$/i.test(val) ? true : /^(n|no)$/i.test(val) ? false : def;
-```
 
-```js
 yesNo('Y'); // true
 yesNo('yes'); // true
 yesNo('No'); // false

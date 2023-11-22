@@ -13,9 +13,7 @@ Casts the provided value as an array if it's not one.
 
 ```js
 const castArray = val => (Array.isArray(val) ? val : [val]);
-```
 
-```js
 castArray('foo'); // ['foo']
 castArray([1]); // [1]
 ```

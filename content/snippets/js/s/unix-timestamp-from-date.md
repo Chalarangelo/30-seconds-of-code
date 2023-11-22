@@ -15,8 +15,6 @@ Gets the Unix timestamp from a `Date` object.
 
 ```js
 const getTimestamp = (date = new Date()) => Math.floor(date.getTime() / 1000);
-```
 
-```js
 getTimestamp(); // 1602162242
 ```

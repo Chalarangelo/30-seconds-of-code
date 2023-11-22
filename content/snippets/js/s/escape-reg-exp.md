@@ -13,8 +13,6 @@ Escapes a string to use in a regular expression.
 
 ```js
 const escapeRegExp = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-```
 
-```js
 escapeRegExp('(test)'); // \\(test\\)
 ```

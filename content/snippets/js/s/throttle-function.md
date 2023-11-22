@@ -36,9 +36,7 @@ const throttle = (fn, wait) => {
     }
   };
 };
-```
 
-```js
 window.addEventListener(
   'resize',
   throttle(function(evt) {

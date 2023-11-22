@@ -16,9 +16,7 @@ Creates a function that invokes the method at a given key of an object, optional
 ```js
 const bindKey = (context, fn, ...boundArgs) => (...args) =>
   context[fn].apply(context, [...boundArgs, ...args]);
-```
 
-```js
 const freddy = {
   user: 'fred',
   greet: function(greeting, punctuation) {

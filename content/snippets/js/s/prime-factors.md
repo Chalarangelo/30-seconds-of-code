@@ -26,8 +26,6 @@ const primeFactors = n => {
   }
   return a;
 };
-```
 
-```js
 primeFactors(147); // [3, 7, 7]
 ```

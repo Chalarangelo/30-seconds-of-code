@@ -21,9 +21,7 @@ const createElement = str => {
   el.innerHTML = str;
   return el.firstElementChild;
 };
-```
 
-```js
 const el = createElement(
   `<div class="container">
     <p>Hello!</p>

@@ -28,9 +28,7 @@ const replaceLast = (str, pattern, replacement) => {
     ? `${str.slice(0, last)}${replacement}${str.slice(last + match.length)}`
     : str;
 };
-```
 
-```js
 replaceLast('abcabdef', 'ab', 'gg'); // 'abcggdef'
 replaceLast('abcabdef', /ab/, 'gg'); // 'abcggdef'
 replaceLast('abcabdef', 'ad', 'gg'); // 'abcabdef'

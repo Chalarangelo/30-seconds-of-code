@@ -23,9 +23,7 @@ const toSentenceCase = str => {
       .join(' ');
   return s.slice(0, 1).toUpperCase() + s.slice(1);
 };
-```
 
-```js
 toSentenceCase('some_database_field_name'); // 'Some database field name'
 toSentenceCase('Some label that needs to be title-cased');
 // 'Some label that needs to be title cased'

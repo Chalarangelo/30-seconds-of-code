@@ -34,9 +34,7 @@ const observeMutations = (element, callback, options) => {
   );
   return observer;
 };
-```
 
-```js
 const obs = observeMutations(document, console.log);
 // Logs all mutations that happen on the page
 obs.disconnect();

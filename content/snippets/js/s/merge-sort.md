@@ -27,8 +27,6 @@ const mergeSort = arr => {
     else return l[0] > r[0] ? r.shift() : l.shift();
   });
 };
-```
 
-```js
 mergeSort([5, 1, 4, 2, 3]); // [1, 2, 3, 4, 5]
 ```

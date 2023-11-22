@@ -23,8 +23,6 @@ const mergeSortedArrays = (a, b) => {
     else return _a[0] > _b[0] ? _b.shift() : _a.shift();
   });
 };
-```
 
-```js
 mergeSortedArrays([1, 4, 5], [2, 3, 6]); // [1, 2, 3, 4, 5, 6]
 ```

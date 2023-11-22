@@ -13,9 +13,7 @@ Checks if the given argument is a native boolean element.
 
 ```js
 const isBoolean = val => typeof val === 'boolean';
-```
 
-```js
 isBoolean(null); // false
 isBoolean(false); // true
 ```

@@ -19,9 +19,7 @@ const deepGet = (obj, keys) =>
     (xs, x) => (xs && xs[x] !== null && xs[x] !== undefined ? xs[x] : null),
     obj
   );
-```
 
-```js
 let index = 2;
 const data = {
   foo: {

@@ -14,8 +14,6 @@ Creates an array of key-value pair arrays from an object.
 
 ```js
 const objectToEntries = obj => Object.keys(obj).map(k => [k, obj[k]]);
-```
 
-```js
 objectToEntries({ a: 1, b: 2 }); // [ ['a', 1], ['b', 2] ]
 ```

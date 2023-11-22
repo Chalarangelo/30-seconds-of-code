@@ -22,9 +22,7 @@ const sampleSize = ([...arr], n = 1) => {
   }
   return arr.slice(0, n);
 };
-```
 
-```js
 sampleSize([1, 2, 3], 2); // [3, 1]
 sampleSize([1, 2, 3], 4); // [2, 3, 1]
 ```

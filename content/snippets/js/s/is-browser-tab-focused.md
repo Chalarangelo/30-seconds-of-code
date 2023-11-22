@@ -13,8 +13,6 @@ Checks if the browser tab of the page is focused.
 
 ```js
 const isBrowserTabFocused = () => !document.hidden;
-```
 
-```js
 isBrowserTabFocused(); // true
 ```

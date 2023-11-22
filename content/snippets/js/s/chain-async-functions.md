@@ -21,9 +21,7 @@ const chainAsync = fns => {
   };
   next();
 };
-```
 
-```js
 chainAsync([
   next => {
     console.log('0 seconds');

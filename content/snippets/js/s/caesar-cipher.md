@@ -30,9 +30,7 @@ const caesarCipher = (str, shift, decrypt = false) => {
     })
     .join('');
 };
-```
 
-```js
 caesarCipher('Hello World!', -3); // 'Ebiil Tloia!'
 caesarCipher('Ebiil Tloia!', 23, true); // 'Hello World!'
 ```

@@ -16,8 +16,6 @@ Explain briefly what the snippet does.
 ```js
 const functionName = arguments =>
   {functionBody}
-```
 
-```js
 functionName('sampleInput'); // 'sampleOutput'
 ```

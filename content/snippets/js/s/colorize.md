@@ -31,9 +31,7 @@ const colorize = (...args) => ({
   bgCyan: `\x1b[46m${args.join(' ')}\x1b[0m`,
   bgWhite: `\x1b[47m${args.join(' ')}\x1b[0m`
 });
-```
 
-```js
 console.log(colorize('foo').red); // 'foo' (red letters)
 console.log(colorize('foo', 'bar').bgBlue); // 'foo bar' (blue background)
 console.log(colorize(colorize('foo').yellow, colorize('foo').green).bgWhite);

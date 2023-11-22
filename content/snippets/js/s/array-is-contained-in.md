@@ -25,8 +25,6 @@ const isContainedIn = (a, b) => {
   }
   return true;
 };
-```
 
-```js
 isContainedIn([1, 4], [2, 4, 1]); // true
 ```

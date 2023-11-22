@@ -15,9 +15,7 @@ Checks if the `parent` element contains the `child` element.
 ```js
 const elementContains = (parent, child) =>
   parent !== child && parent.contains(child);
-```
 
-```js
 elementContains(
   document.querySelector('head'),
   document.querySelector('title')

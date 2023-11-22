@@ -22,8 +22,6 @@ const startsWithSubstring = (text, word) => {
   }
   return undefined;
 };
-```
 
-```js
 startsWithSubstring('/>Lorem ipsum dolor sit amet', '<br />'); // '/>'
 ```

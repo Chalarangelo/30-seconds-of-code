@@ -14,8 +14,6 @@ Checks if the given date is a weekday.
 
 ```js
 const isWeekday = (d = new Date()) => d.getDay() % 6 !== 0;
-```
 
-```js
 isWeekday(); // true (if current date is 2019-07-19)
 ```

@@ -14,8 +14,6 @@ Creates a base-64 encoded ASCII string from a String object in which each charac
 
 ```js
 const btoa = str => Buffer.from(str, 'binary').toString('base64');
-```
 
-```js
 btoa('foobar'); // 'Zm9vYmFy'
 ```

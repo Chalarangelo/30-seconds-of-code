@@ -27,8 +27,6 @@ const toISOStringWithTimezone = date => {
     diff + pad(tzOffset / 60) +
     ':' + pad(tzOffset % 60);
 };
-```
 
-```js
 toISOStringWithTimezone(new Date()); // '2020-10-06T20:43:33-04:00'
 ```

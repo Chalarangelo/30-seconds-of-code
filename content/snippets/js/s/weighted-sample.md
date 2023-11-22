@@ -25,8 +25,6 @@ const weightedSample = (arr, weights) => {
       .findIndex((v, i, s) => roll >= (i === 0 ? 0 : s[i - 1]) && roll < v)
   ];
 };
-```
 
-```js
 weightedSample([3, 7, 9, 11], [0.1, 0.2, 0.6, 0.1]); // 9
 ```

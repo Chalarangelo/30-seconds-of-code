@@ -14,9 +14,7 @@ Returns the last element in an array.
 
 ```js
 const last = arr => (arr && arr.length ? arr[arr.length - 1] : undefined);
-```
 
-```js
 last([1, 2, 3]); // 3
 last([]); // undefined
 last(null); // undefined

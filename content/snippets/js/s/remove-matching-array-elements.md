@@ -21,8 +21,6 @@ const remove = (arr, func) =>
       return acc.concat(val);
     }, [])
     : [];
-```
 
-```js
 remove([1, 2, 3, 4], n => n % 2 === 0); // [2, 4]
 ```

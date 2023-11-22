@@ -15,9 +15,7 @@ Returns the minimum/maximum value of an array, after applying the provided funct
 ```js
 const reduceWhich = (arr, comparator = (a, b) => a - b) =>
   arr.reduce((a, b) => (comparator(a, b) >= 0 ? b : a));
-```
 
-```js
 reduceWhich([1, 3, 2]); // 1
 reduceWhich([1, 3, 2], (a, b) => b - a); // 3
 reduceWhich(

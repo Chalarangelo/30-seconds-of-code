@@ -22,9 +22,7 @@ const get = (from, ...selectors) =>
       .filter(t => t !== '')
       .reduce((prev, cur) => prev && prev[cur], from)
   );
-```
 
-```js
 const obj = {
   selector: { to: { val: 'val to select' } },
   target: [1, 2, { a: 'test' }],

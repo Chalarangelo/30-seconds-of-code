@@ -20,9 +20,7 @@ const getMeridiemSuffixOfInteger = num =>
     : num < 12
     ? (num % 12) + 'am'
     : (num % 12) + 'pm';
-```
 
-```js
 getMeridiemSuffixOfInteger(0); // '12am'
 getMeridiemSuffixOfInteger(11); // '11am'
 getMeridiemSuffixOfInteger(13); // '1pm'

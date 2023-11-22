@@ -24,9 +24,7 @@ const httpPost = (url, data, callback, err = console.error) => {
   request.onerror = () => err(request);
   request.send(data);
 };
-```
 
-```js
 const newPost = {
   userId: 1,
   id: 1337,

@@ -16,8 +16,6 @@ Gets the day of the year (number in the range 1-366) from a `Date` object.
 ```js
 const dayOfYear = date =>
   Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
-```
 
-```js
 dayOfYear(new Date()); // 272
 ```

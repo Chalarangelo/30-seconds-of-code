@@ -28,9 +28,7 @@ const objectToQueryString = queryParameters => {
       )
     : '';
 };
-```
 
-```js
 objectToQueryString({ page: '1', size: '2kg', key: undefined });
 // '?page=1&size=2kg'
 ```

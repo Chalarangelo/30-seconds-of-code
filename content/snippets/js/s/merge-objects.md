@@ -24,9 +24,7 @@ const merge = (...objs) =>
       }, {}),
     {}
   );
-```
 
-```js
 const object = {
   a: [{ x: 2 }, { y: 4 }],
   b: 1

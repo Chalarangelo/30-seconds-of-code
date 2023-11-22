@@ -35,8 +35,6 @@ const quickSort = arr => {
   );
   return [...quickSort(lo), pivot, ...quickSort(hi)];
 };
-```
 
-```js
 quickSort([1, 6, 1, 5, 3, 2, 1, 4]); // [1, 1, 1, 2, 3, 4, 5, 6]
 ```

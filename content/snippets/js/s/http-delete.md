@@ -22,9 +22,7 @@ const httpDelete = (url, callback, err = console.error) => {
   request.onerror = () => err(request);
   request.send();
 };
-```
 
-```js
 httpDelete('https://jsonplaceholder.typicode.com/posts/1', request => {
   console.log(request.responseText);
 }); // Logs: {}

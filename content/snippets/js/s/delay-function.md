@@ -14,9 +14,7 @@ Invokes the provided function after `ms` milliseconds.
 
 ```js
 const delay = (fn, ms, ...args) => setTimeout(fn, ms, ...args);
-```
 
-```js
 delay(
   function(text) {
     console.log(text);

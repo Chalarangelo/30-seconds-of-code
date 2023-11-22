@@ -14,8 +14,6 @@ Creates a `Date` object from a Unix timestamp.
 
 ```js
 const fromTimestamp = timestamp => new Date(timestamp * 1000);
-```
 
-```js
 fromTimestamp(1602162242); // 2020-10-08T13:04:02.000Z
 ```

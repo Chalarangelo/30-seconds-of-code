@@ -20,9 +20,7 @@ const frozenSet = iterable => {
   s.clear = undefined;
   return s;
 };
-```
 
-```js
 frozenSet([1, 2, 3, 1, 2]);
 // Set { 1, 2, 3, add: undefined, delete: undefined, clear: undefined }
 ```

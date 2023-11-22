@@ -13,9 +13,7 @@ Checks if a string is upper case.
 
 ```js
 const isUpperCase = str => str === str.toUpperCase();
-```
 
-```js
 isUpperCase('ABC'); // true
 isUpperCase('A3@$'); // true
 isUpperCase('aB4'); // false

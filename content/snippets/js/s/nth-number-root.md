@@ -13,8 +13,6 @@ Calculates the nth root of a given number.
 
 ```js
 const nthRoot = (x, n) => Math.pow(x, 1 / n);
-```
 
-```js
 nthRoot(32, 5); // 2
 ```

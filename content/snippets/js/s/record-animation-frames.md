@@ -37,9 +37,7 @@ const recordAnimationFrames = (callback, autoStart = true) => {
   if (autoStart) start();
   return { start, stop };
 };
-```
 
-```js
 const cb = () => console.log('Animation frame fired');
 const recorder = recordAnimationFrames(cb);
 // logs 'Animation frame fired' on each animation frame

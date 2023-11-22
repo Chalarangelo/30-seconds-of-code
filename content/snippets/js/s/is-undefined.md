@@ -13,8 +13,6 @@ Checks if the specified value is `undefined`.
 
 ```js
 const isUndefined = val => val === undefined;
-```
 
-```js
 isUndefined(undefined); // true
 ```

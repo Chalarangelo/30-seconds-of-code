@@ -21,9 +21,7 @@ const getURLParameters = url =>
     ),
     {}
   );
-```
 
-```js
 getURLParameters('google.com'); // {}
 getURLParameters('http://url.com/page?name=Adam&surname=Smith');
 // {name: 'Adam', surname: 'Smith'}

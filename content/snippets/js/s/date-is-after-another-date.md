@@ -13,8 +13,6 @@ Checks if a date is after another date.
 
 ```js
 const isAfterDate = (dateA, dateB) => dateA > dateB;
-```
 
-```js
 isAfterDate(new Date(2010, 10, 21), new Date(2010, 10, 20)); // true
 ```

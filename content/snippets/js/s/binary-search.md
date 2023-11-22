@@ -27,9 +27,7 @@ const binarySearch = (arr, item) => {
   }
   return -1;
 };
-```
 
-```js
 binarySearch([1, 2, 3, 4, 5], 1); // 0
 binarySearch([1, 2, 3, 4, 5], 5); // 4
 binarySearch([1, 2, 3, 4, 5], 6); // -1

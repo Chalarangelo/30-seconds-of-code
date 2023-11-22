@@ -13,8 +13,6 @@ Pads a given number to the specified length.
 
 ```js
 const padNumber = (n, l) => `${n}`.padStart(l, '0');
-```
 
-```js
 padNumber(1234, 6); // '001234'
 ```

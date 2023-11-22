@@ -18,9 +18,7 @@ const mapValues = (obj, fn) =>
     acc[k] = fn(obj[k], k, obj);
     return acc;
   }, {});
-```
 
-```js
 const users = {
   fred: { user: 'fred', age: 40 },
   pebbles: { user: 'pebbles', age: 1 }

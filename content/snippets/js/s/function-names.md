@@ -20,9 +20,7 @@ const functions = (obj, inherited = false) =>
     ? [...Object.keys(obj), ...Object.keys(Object.getPrototypeOf(obj))]
     : Object.keys(obj)
   ).filter(key => typeof obj[key] === 'function');
-```
 
-```js
 function Foo() {
   this.a = () => 1;
   this.b = () => 2;

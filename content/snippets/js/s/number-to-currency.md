@@ -17,9 +17,7 @@ const toCurrency = (n, curr, LanguageFormat = undefined) =>
     style: 'currency',
     currency: curr,
   }).format(n);
-```
 
-```js
 toCurrency(123456.789, 'EUR');
 // €123,456.79  | currency: Euro | currencyLangFormat: Local
 toCurrency(123456.789, 'USD', 'en-us');

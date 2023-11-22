@@ -13,9 +13,7 @@ Checks if a number has any decimals digits
 
 ```js
 const hasDecimals = num => num % 1 !== 0;
-```
 
-```js
 hasDecimals(1); // false
 hasDecimals(1.001); // true
 ```

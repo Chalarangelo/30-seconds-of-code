@@ -13,8 +13,6 @@ Creates an array of key-value pair arrays from an object.
 
 ```js
 const objectToPairs = obj => Object.entries(obj);
-```
 
-```js
 objectToPairs({ a: 1, b: 2 }); // [ ['a', 1], ['b', 2] ]
 ```

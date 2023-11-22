@@ -15,8 +15,6 @@ Converts a tilde path to an absolute path.
 import { homedir } from 'os';
 
 const untildify = str => str.replace(/^~($|\/|\\)/, `${homedir()}$1`);
-```
 
-```js
 untildify('~/node'); // '/Users/aUser/node'
 ```

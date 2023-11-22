@@ -20,9 +20,7 @@ const extendHex = shortHex =>
     .split('')
     .map(x => x + x)
     .join('');
-```
 
-```js
 extendHex('#03f'); // '#0033ff'
 extendHex('05a'); // '#0055aa'
 ```

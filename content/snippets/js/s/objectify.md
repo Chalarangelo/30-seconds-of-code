@@ -18,9 +18,7 @@ const objectify = (arr, mapKey, mapValue = i => i) =>
     acc[mapKey(item)] = mapValue(item);
     return acc;
   }, {});
-```
 
-```js
 const people = [ { name: 'John', age: 42 }, { name: 'Adam', age: 39 } ];
 objectify(people, p => p.name.toLowerCase());
 // { john: { name: 'John', age: 42 }, adam: { name: 'Adam', age: 39 } }

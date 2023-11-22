@@ -14,9 +14,7 @@ Defers invoking a function until the current call stack has cleared.
 
 ```js
 const defer = (fn, ...args) => setTimeout(fn, 1, ...args);
-```
 
-```js
 // Example A:
 defer(console.log, 'a'), console.log('b'); // logs 'b' then 'a'
 

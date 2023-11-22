@@ -29,9 +29,7 @@ const formatDuration = ms => {
     .map(([key, val]) => `${val} ${key}${val !== 1 ? 's' : ''}`)
     .join(', ');
 };
-```
 
-```js
 formatDuration(1001); // '1 second, 1 millisecond'
 formatDuration(34325055574);
 // '397 days, 6 hours, 44 minutes, 15 seconds, 574 milliseconds'

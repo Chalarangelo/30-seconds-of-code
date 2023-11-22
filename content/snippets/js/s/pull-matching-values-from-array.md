@@ -26,9 +26,7 @@ const pullAtValue = (arr, pullArr) => {
   mutateTo.forEach(v => arr.push(v));
   return removed;
 };
-```
 
-```js
 let myArray = ['a', 'b', 'c', 'd'];
 let pulled = pullAtValue(myArray, ['b', 'd']);
 // myArray = [ 'a', 'c' ] , pulled = [ 'b', 'd' ]

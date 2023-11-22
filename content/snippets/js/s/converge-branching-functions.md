@@ -16,9 +16,7 @@ Accepts a converging function and a list of branching functions and returns a fu
 ```js
 const converge = (converger, fns) => (...args) =>
   converger(...fns.map(fn => fn.apply(null, args)));
-```
 
-```js
 const average = converge((a, b) => a / b, [
   arr => arr.reduce((a, v) => a + v, 0),
   arr => arr.length

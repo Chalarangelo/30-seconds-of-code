@@ -26,9 +26,7 @@ const walkThrough = function* (obj) {
   };
   yield* walk(obj);
 };
-```
 
-```js
 const obj = {
   a: 10,
   b: 20,

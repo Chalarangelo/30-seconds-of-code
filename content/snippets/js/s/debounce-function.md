@@ -21,9 +21,7 @@ const debounce = (fn, ms = 0) => {
     timeoutId = setTimeout(() => fn.apply(this, args), ms);
   };
 };
-```
 
-```js
 window.addEventListener(
   'resize',
   debounce(() => {

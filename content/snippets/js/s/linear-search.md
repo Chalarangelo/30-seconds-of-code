@@ -21,9 +21,7 @@ const linearSearch = (arr, item) => {
   }
   return -1;
 };
-```
 
-```js
 linearSearch([2, 9, 9], 9); // 1
 linearSearch([2, 9, 9], 7); // -1
 ```

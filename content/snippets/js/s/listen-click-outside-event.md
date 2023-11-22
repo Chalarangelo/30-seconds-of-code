@@ -21,9 +21,7 @@ const onClickOutside = (element, callback) => {
     if (!element.contains(e.target)) callback();
   });
 };
-```
 
-```js
 onClickOutside('#my-element', () => console.log('Hello'));
 // Will log 'Hello' whenever the user clicks outside of #my-element
 ```

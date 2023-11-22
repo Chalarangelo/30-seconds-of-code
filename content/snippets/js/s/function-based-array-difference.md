@@ -15,9 +15,7 @@ Filters out all values from an array for which the comparator function does not 
 ```js
 const differenceWith = (arr, val, comp = (a, b) => a === b) =>
   arr.filter(a => val.findIndex(b => comp(a, b)) === -1);
-```
 
-```js
 differenceWith(
   [1, 1.2, 1.5, 3, 0],
   [1.9, 3, 0],

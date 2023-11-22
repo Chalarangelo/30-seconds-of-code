@@ -25,9 +25,7 @@ const pullBy = (arr, ...args) => {
   arr.length = 0;
   pulled.forEach(v => arr.push(v));
 };
-```
 
-```js
 var myArray = [{ x: 1 }, { x: 2 }, { x: 3 }, { x: 1 }];
 pullBy(myArray, [{ x: 1 }, { x: 3 }], o => o.x); // myArray = [{ x: 2 }]
 ```

@@ -21,9 +21,7 @@ const formToObject = form =>
     }),
     {}
   );
-```
 
-```js
 formToObject(document.querySelector('#form'));
 // { email: 'test@email.com', name: 'Test Name' }
 ```

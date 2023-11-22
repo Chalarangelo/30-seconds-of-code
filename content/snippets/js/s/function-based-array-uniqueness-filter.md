@@ -15,9 +15,7 @@ Creates an array with the unique values filtered out, based on a provided compar
 ```js
 const filterUniqueBy = (arr, fn) =>
   arr.filter((v, i) => arr.some((x, j) => (i !== j) === fn(v, x, i, j)));
-```
 
-```js
 filterUniqueBy(
   [
     { id: 0, value: 'a' },

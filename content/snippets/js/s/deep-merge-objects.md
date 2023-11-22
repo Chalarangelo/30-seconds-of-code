@@ -18,9 +18,7 @@ const deepMerge = (a, b, fn) =>
     (acc, key) => ({ ...acc, [key]: fn(key, a[key], b[key]) }),
     {}
   );
-```
 
-```js
 deepMerge(
   { a: true, b: { c: [1, 2, 3] } },
   { a: false, b: { d: [1, 2, 3] } },

@@ -20,8 +20,6 @@ const slugify = str =>
     .replace(/[^\w\s-]/g, '')
     .replace(/[\s_-]+/g, '-')
     .replace(/^-+|-+$/g, '');
-```
 
-```js
 slugify('Hello World!'); // 'hello-world'
 ```

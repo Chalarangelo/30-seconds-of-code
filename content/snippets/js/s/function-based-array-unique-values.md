@@ -18,9 +18,7 @@ const uniqueElementsBy = (arr, fn) =>
     if (!acc.some(x => fn(v, x))) acc.push(v);
     return acc;
   }, []);
-```
 
-```js
 uniqueElementsBy(
   [
     { id: 0, value: 'a' },

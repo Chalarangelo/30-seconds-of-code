@@ -16,9 +16,7 @@ Formats a number using fixed-point notation, if it has decimals.
 ```js
 const toOptionalFixed = (num, digits) =>
   `${Number.parseFloat(num.toFixed(digits))}`;
-```
 
-```js
 toOptionalFixed(1, 2); // '1'
 toOptionalFixed(1.001, 2); // '1'
 toOptionalFixed(1.500, 2); // '1.5'

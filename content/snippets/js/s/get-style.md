@@ -13,8 +13,6 @@ Retrieves the value of a CSS rule for the specified element.
 
 ```js
 const getStyle = (el, ruleName) => getComputedStyle(el)[ruleName];
-```
 
-```js
 getStyle(document.querySelector('p'), 'font-size'); // '16px'
 ```

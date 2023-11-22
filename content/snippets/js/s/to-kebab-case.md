@@ -19,9 +19,7 @@ const toKebabCase = str =>
     .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
     .map(x => x.toLowerCase())
     .join('-');
-```
 
-```js
 toKebabCase('camelCase'); // 'camel-case'
 toKebabCase('some text'); // 'some-text'
 toKebabCase('some-mixed_string With spaces_underscores-and-hyphens');

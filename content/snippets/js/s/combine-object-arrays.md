@@ -23,9 +23,7 @@ const combine = (a, b, prop) =>
       return acc;
     }, {})
   );
-```
 
-```js
 const x = [
   { id: 1, name: 'John' },
   { id: 2, name: 'Maria' }

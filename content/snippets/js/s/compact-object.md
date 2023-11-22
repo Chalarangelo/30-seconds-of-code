@@ -28,9 +28,7 @@ const compactObject = val => {
     Array.isArray(val) ? [] : {}
   );
 };
-```
 
-```js
 const obj = {
   a: null,
   b: false,

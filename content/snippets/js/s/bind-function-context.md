@@ -15,9 +15,7 @@ Creates a function that invokes `fn` with a given context, optionally prepending
 ```js
 const bind = (fn, context, ...boundArgs) => (...args) =>
   fn.apply(context, [...boundArgs, ...args]);
-```
 
-```js
 function greet(greeting, punctuation) {
   return greeting + ' ' + this.user + punctuation;
 }

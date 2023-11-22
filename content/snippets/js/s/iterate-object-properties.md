@@ -16,8 +16,6 @@ Iterates over all own properties of an object, running a callback for each one.
 ```js
 const forOwn = (obj, fn) =>
   Object.keys(obj).forEach(key => fn(obj[key], key, obj));
-```
 
-```js
 forOwn({ foo: 'bar', a: 1 }, v => console.log(v)); // 'bar', 1
 ```

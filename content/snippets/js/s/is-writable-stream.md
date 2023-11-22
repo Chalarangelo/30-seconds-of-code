@@ -20,9 +20,7 @@ const isWritableStream = val =>
   typeof val.pipe === 'function' &&
   typeof val._write === 'function' &&
   typeof val._writableState === 'object';
-```
 
-```js
 import { createWriteStream } from 'fs';
 
 isWritableStream(createWriteStream('test.txt')); // true

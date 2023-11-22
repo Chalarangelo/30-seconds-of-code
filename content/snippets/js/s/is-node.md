@@ -17,9 +17,7 @@ const isNode = () =>
   typeof process !== 'undefined' &&
   !!process.versions &&
   !!process.versions.node;
-```
 
-```js
 isNode(); // true (Node)
 isNode(); // false (browser)
 ```

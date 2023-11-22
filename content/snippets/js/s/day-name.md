@@ -15,9 +15,7 @@ Gets the name of the weekday from a `Date` object.
 ```js
 const dayName = (date, locale) =>
   date.toLocaleDateString(locale, { weekday: 'long' });
-```
 
-```js
 dayName(new Date()); // 'Saturday'
 dayName(new Date('09/23/2020'), 'de-DE'); // 'Samstag'
 ```

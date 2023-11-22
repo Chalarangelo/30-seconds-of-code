@@ -13,8 +13,6 @@ Generates a random boolean value.
 
 ```js
 const randomBoolean = () => Math.random() >= 0.5;
-```
 
-```js
 randomBoolean(); // true
 ```

@@ -27,9 +27,7 @@ const orderBy = (arr, props, orders) =>
       return acc;
     }, 0)
   );
-```
 
-```js
 const users = [
   { name: 'fred', age: 48 },
   { name: 'barney', age: 36 },

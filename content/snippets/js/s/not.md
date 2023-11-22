@@ -14,9 +14,7 @@ Returns the logical inverse of the given value.
 
 ```js
 const not = a => !a;
-```
 
-```js
 not(true); // false
 not(false); // true
 ```

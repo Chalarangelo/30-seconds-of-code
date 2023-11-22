@@ -20,9 +20,7 @@ const deepFreeze = obj => {
   });
   return Object.freeze(obj);
 };
-```
 
-```js
 'use strict';
 
 const val = deepFreeze([1, [2, 3]]);

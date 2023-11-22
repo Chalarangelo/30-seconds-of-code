@@ -25,9 +25,7 @@ const escapeHTML = str =>
         '"': '&quot;'
       }[tag] || tag)
   );
-```
 
-```js
 escapeHTML('<a href="#">Me & you</a>');
 // '&lt;a href=&quot;#&quot;&gt;Me &amp; you&lt;/a&gt;'
 ```

@@ -14,9 +14,7 @@ Inserts an HTML string before the start of the specified element.
 ```js
 const insertBefore = (el, htmlString) =>
   el.insertAdjacentHTML('beforebegin', htmlString);
-```
 
-```js
 insertBefore(document.getElementById('myId'), '<p>before</p>');
 // <p>before</p> <div id="myId">...</div>
 ```

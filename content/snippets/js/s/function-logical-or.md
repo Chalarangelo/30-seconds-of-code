@@ -13,9 +13,7 @@ Checks if at least one function returns `true` for a given set of arguments.
 
 ```js
 const either = (f, g) => (...args) => f(...args) || g(...args);
-```
 
-```js
 const isEven = num => num % 2 === 0;
 const isPositive = num => num > 0;
 const isPositiveOrEven = either(isPositive, isEven);

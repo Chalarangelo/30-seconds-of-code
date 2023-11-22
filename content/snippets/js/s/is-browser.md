@@ -15,9 +15,7 @@ Determines if the current runtime environment is a browser so that front-end mod
 
 ```js
 const isBrowser = () => ![typeof window, typeof document].includes('undefined');
-```
 
-```js
 isBrowser(); // true (browser)
 isBrowser(); // false (Node)
 ```

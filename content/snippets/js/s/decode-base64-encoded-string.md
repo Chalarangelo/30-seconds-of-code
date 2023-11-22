@@ -14,8 +14,6 @@ Decodes a string of data which has been encoded using base-64 encoding.
 
 ```js
 const atob = str => Buffer.from(str, 'base64').toString('binary');
-```
 
-```js
 atob('Zm9vYmFy'); // 'foobar'
 ```

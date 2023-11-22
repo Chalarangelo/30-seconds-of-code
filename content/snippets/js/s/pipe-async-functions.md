@@ -16,9 +16,7 @@ Performs left-to-right function composition for asynchronous functions.
 ```js
 const pipeAsyncFunctions = (...fns) =>
   arg => fns.reduce((p, f) => p.then(f), Promise.resolve(arg));
-```
 
-```js
 const sum = pipeAsyncFunctions(
   x => x + 1,
   x => new Promise(resolve => setTimeout(() => resolve(x + 2), 1000)),

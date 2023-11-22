@@ -20,8 +20,6 @@ const UUIDGeneratorBrowser = () =>
       (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
     ).toString(16)
   );
-```
 
-```js
 UUIDGeneratorBrowser(); // '7982fcfe-5721-4632-bede-6000885be57d'
 ```

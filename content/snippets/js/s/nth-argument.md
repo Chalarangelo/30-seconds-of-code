@@ -14,9 +14,7 @@ Creates a function that gets the argument at index `n`.
 
 ```js
 const nthArg = n => (...args) => args.slice(n)[0];
-```
 
-```js
 const third = nthArg(2);
 third(1, 2, 3); // 3
 third(1, 2); // undefined

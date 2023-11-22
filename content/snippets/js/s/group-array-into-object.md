@@ -16,9 +16,7 @@ Associates properties to values, given array of valid property identifiers and a
 ```js
 const zipObject = (props, values) =>
   props.reduce((obj, prop, index) => ((obj[prop] = values[index]), obj), {});
-```
 
-```js
 zipObject(['a', 'b', 'c'], [1, 2]); // {a: 1, b: 2, c: undefined}
 zipObject(['a', 'b'], [1, 2, 3]); // {a: 1, b: 2}
 ```

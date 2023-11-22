@@ -27,8 +27,6 @@ const bucketSort = (arr, size = 5) => {
   });
   return buckets.reduce((acc, b) => [...acc, ...b.sort((a, b) => a - b)], []);
 };
-```
 
-```js
 bucketSort([6, 3, 4, 1]); // [1, 3, 4, 6]
 ```

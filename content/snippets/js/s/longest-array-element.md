@@ -16,9 +16,7 @@ Takes any number of iterable objects or objects with a `length` property and ret
 ```js
 const longestItem = (...vals) =>
   vals.reduce((a, x) => (x.length > a.length ? x : a));
-```
 
-```js
 longestItem('this', 'is', 'a', 'testcase'); // 'testcase'
 longestItem(...['a', 'ab', 'abc']); // 'abc'
 longestItem(...['a', 'ab', 'abc'], 'abcd'); // 'abcd'

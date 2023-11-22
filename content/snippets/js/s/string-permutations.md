@@ -31,8 +31,6 @@ const stringPermutations = str => {
       []
     );
 };
-```
 
-```js
 stringPermutations('abc'); // ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']
 ```

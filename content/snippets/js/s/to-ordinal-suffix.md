@@ -24,8 +24,6 @@ const toOrdinalSuffix = num => {
     ? int + ordinals[digits[0] - 1]
     : int + ordinals[3];
 };
-```
 
-```js
 toOrdinalSuffix('123'); // '123rd'
 ```

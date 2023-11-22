@@ -13,8 +13,6 @@ Returns all the elements of an array except the last one.
 
 ```js
 const initial = arr => arr.slice(0, -1);
-```
 
-```js
 initial([1, 2, 3]); // [1, 2]
 ```

@@ -13,8 +13,6 @@ Gets the currently selected text.
 
 ```js
 const getSelectedText = () => window.getSelection().toString();
-```
 
-```js
 getSelectedText(); // 'Lorem ipsum'
 ```

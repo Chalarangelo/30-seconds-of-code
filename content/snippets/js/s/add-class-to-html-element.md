@@ -13,9 +13,7 @@ Adds a class to an HTML element.
 
 ```js
 const addClass = (el, className) => el.classList.add(className);
-```
 
-```js
 addClass(document.querySelector('p'), 'special');
 // The paragraph will now have the 'special' class
 ```

@@ -25,9 +25,7 @@ const changeLightness = (delta, hslStr) => {
 
   return `hsl(${hue}, ${saturation}%, ${newLightness}%)`;
 };
-```
 
-```js
 changeLightness(10, 'hsl(330, 50%, 50%)'); // 'hsl(330, 50%, 60%)'
 changeLightness(-10, 'hsl(330, 50%, 50%)'); // 'hsl(330, 50%, 40%)'
 ```

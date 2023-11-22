@@ -21,9 +21,7 @@ const dateRangeGenerator = function* (start, end, step = 1) {
     d.setDate(d.getDate() + step);
   }
 };
-```
 
-```js
 [...dateRangeGenerator(new Date('2021-06-01'), new Date('2021-06-04'))];
 // [ 2021-06-01, 2021-06-02, 2021-06-03 ]
 ```

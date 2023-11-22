@@ -16,9 +16,7 @@ Otherwise `undefined` is returned.
 ```js
 const findKey = (obj, fn) =>
   Object.keys(obj).find(key => fn(obj[key], key, obj));
-```
 
-```js
 findKey(
   {
     barney: { age: 36, active: true },

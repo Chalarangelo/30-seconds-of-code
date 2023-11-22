@@ -22,9 +22,7 @@ const httpGet = (url, callback, err = console.error) => {
   request.onerror = () => err(request);
   request.send();
 };
-```
 
-```js
 httpGet(
   'https://jsonplaceholder.typicode.com/posts/1',
   console.log

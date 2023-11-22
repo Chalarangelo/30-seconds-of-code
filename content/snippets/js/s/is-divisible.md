@@ -13,8 +13,6 @@ Checks if the first numeric argument is divisible by the second one.
 
 ```js
 const isDivisible = (dividend, divisor) => dividend % divisor === 0;
-```
 
-```js
 isDivisible(6, 3); // true
 ```

@@ -25,9 +25,7 @@ const memoize = fn => {
   cached.cache = cache;
   return cached;
 };
-```
 
-```js
 // See the `anagrams` snippet.
 const anagramsCached = memoize(anagrams);
 anagramsCached('javascript'); // takes a long time

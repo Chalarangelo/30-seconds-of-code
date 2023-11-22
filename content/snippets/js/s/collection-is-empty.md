@@ -13,9 +13,7 @@ Checks if the a value is an empty object/collection, has no enumerable propertie
 
 ```js
 const isEmpty = val => val == null || !(Object.keys(val) || val).length;
-```
 
-```js
 isEmpty([]); // true
 isEmpty({}); // true
 isEmpty(''); // true

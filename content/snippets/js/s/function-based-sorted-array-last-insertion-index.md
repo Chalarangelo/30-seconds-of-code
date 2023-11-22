@@ -24,8 +24,6 @@ const sortedLastIndexBy = (arr, n, fn) => {
     .findIndex(el => (isDescending ? val <= el : val >= el));
   return index === -1 ? 0 : arr.length - index;
 };
-```
 
-```js
 sortedLastIndexBy([{ x: 4 }, { x: 5 }], { x: 4 }, o => o.x); // 1
 ```

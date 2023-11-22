@@ -18,9 +18,7 @@ Putting it all together, you can create a function that programmatically trigger
 ```js
 const triggerEvent = (el, eventType, detail) =>
   el.dispatchEvent(new CustomEvent(eventType, { detail }));
-```
 
-```js
 const myElement = document.getElementById('my-element');
 myElement.addEventListener('click', e => console.log(e.detail));
 

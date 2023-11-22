@@ -14,9 +14,7 @@ Takes a function as an argument, then makes the first argument the last.
 
 ```js
 const flip = fn => (first, ...rest) => fn(...rest, first);
-```
 
-```js
 let a = { name: 'John Smith' };
 let b = {};
 const mergeFrom = flip(Object.assign);

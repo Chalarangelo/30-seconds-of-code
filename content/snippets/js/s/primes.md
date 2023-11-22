@@ -20,8 +20,6 @@ const primes = num => {
   numsTillSqroot.forEach(x => (arr = arr.filter(y => y % x !== 0 || y === x)));
   return arr;
 };
-```
 
-```js
 primes(10); // [2, 3, 5, 7]
 ```

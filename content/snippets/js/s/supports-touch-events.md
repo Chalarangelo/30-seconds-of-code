@@ -14,8 +14,6 @@ Checks if touch events are supported.
 ```js
 const supportsTouchEvents = () =>
   window && 'ontouchstart' in window;
-```
 
-```js
 supportsTouchEvents(); // true
 ```

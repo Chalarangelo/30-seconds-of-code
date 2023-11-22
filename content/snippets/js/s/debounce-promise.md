@@ -41,9 +41,7 @@ const debouncePromise = (fn, ms = 0) => {
       pending.push({ resolve: res, reject: rej });
     });
 };
-```
 
-```js
 const fn = arg => new Promise(resolve => {
   setTimeout(resolve, 1000, ['resolved', arg]);
 });

@@ -35,8 +35,6 @@ const levenshteinDistance = (s, t) => {
   }
   return arr[t.length][s.length];
 };
-```
 
-```js
 levenshteinDistance('duck', 'dark'); // 2
 ```

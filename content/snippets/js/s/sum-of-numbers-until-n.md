@@ -13,8 +13,6 @@ Sums all the numbers between `1` and `n`.
 
 ```js
 const sumN = n => (n * (n + 1)) / 2;
-```
 
-```js
 sumN(100); // 5050
 ```

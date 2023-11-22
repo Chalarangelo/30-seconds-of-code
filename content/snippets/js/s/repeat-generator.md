@@ -20,9 +20,7 @@ const repeatGenerator = function* (val) {
     if (newV !== undefined) v = newV;
   }
 };
-```
 
-```js
 const repeater = repeatGenerator(5);
 repeater.next(); // { value: 5, done: false }
 repeater.next(); // { value: 5, done: false }

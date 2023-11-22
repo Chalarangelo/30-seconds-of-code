@@ -26,9 +26,7 @@ const deepMapKeys = (obj, fn) =>
         return acc;
       }, {})
     : obj;
-```
 
-```js
 const obj = {
   foo: '1',
   nested: {

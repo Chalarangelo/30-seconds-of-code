@@ -40,8 +40,6 @@ const heapsort = arr => {
   }
   return a;
 };
-```
 
-```js
 heapsort([6, 3, 4, 1]); // [1, 3, 4, 6]
 ```

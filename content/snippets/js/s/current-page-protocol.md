@@ -13,8 +13,6 @@ Gets the protocol being used on the current page.
 
 ```js
 const getProtocol = () => window.location.protocol;
-```
 
-```js
 getProtocol(); // 'https:'
 ```

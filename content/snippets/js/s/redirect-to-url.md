@@ -15,8 +15,6 @@ Redirects to a specified URL.
 ```js
 const redirect = (url, asLink = true) =>
   asLink ? (window.location.href = url) : window.location.replace(url);
-```
 
-```js
 redirect('https://google.com');
 ```

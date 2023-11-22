@@ -19,9 +19,7 @@ const addDaysToDate = (date, n) => {
   d.setDate(d.getDate() + n);
   return d.toISOString().split('T')[0];
 };
-```
 
-```js
 addDaysToDate('2020-10-15', 10); // '2020-10-25'
 addDaysToDate('2020-10-15', -10); // '2020-10-05'
 ```

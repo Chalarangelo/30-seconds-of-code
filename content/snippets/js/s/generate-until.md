@@ -24,8 +24,6 @@ const generateUntil = function* (seed, condition, next) {
   }
   return val;
 };
-```
 
-```js
 [...generateUntil(1, v => v > 5, v => ++v)]; // [1, 2, 3, 4, 5]
 ```

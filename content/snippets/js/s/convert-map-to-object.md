@@ -15,8 +15,6 @@ Converts a `Map` to an object.
 
 ```js
 const mapToObject = map => Object.fromEntries(map.entries());
-```
 
-```js
 mapToObject(new Map([['a', 1], ['b', 2]])); // {a: 1, b: 2}
 ```

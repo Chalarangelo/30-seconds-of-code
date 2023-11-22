@@ -13,9 +13,7 @@ Returns a string with whitespaces removed.
 
 ```js
 const removeWhitespace = str => str.replace(/\s+/g, '');
-```
 
-```js
 removeWhitespace('Lorem ipsum.\n Dolor sit amet. ');
 // 'Loremipsum.Dolorsitamet.'
 ```

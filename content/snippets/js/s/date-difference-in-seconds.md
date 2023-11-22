@@ -14,9 +14,7 @@ Calculates the difference (in seconds) between two dates.
 ```js
 const getSecondsDiffBetweenDates = (dateInitial, dateFinal) =>
   (dateFinal - dateInitial) / 1000;
-```
 
-```js
 getSecondsDiffBetweenDates(
   new Date('2020-12-24 00:00:15'),
   new Date('2020-12-24 00:00:17')

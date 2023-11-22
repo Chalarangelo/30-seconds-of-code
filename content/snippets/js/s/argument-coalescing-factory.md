@@ -13,9 +13,7 @@ Customizes a coalesce function that returns the first argument which is `true` b
 
 ```js
 const coalesceFactory = valid => (...args) => args.find(valid);
-```
 
-```js
 const customCoalesce = coalesceFactory(
   v => ![null, undefined, '', NaN].includes(v)
 );

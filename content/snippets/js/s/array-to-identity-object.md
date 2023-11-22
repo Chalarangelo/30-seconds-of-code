@@ -14,8 +14,6 @@ Converts an array of values into an object with the same values as keys and valu
 
 ```js
 const toIdentityObject = arr => Object.fromEntries(arr.map(v => [v, v]));
-```
 
-```js
 toIdentityObject(['a', 'b']); // { a: 'a', b: 'b' }
 ```

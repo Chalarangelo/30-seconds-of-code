@@ -23,9 +23,7 @@ const unzipWith = (arr, fn) =>
       }).map(x => [])
     )
     .map(val => fn(...val));
-```
 
-```js
 unzipWith(
   [
     [1, 10, 100],

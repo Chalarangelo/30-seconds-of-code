@@ -14,8 +14,6 @@ Serializes a cookie name-value pair into a Set-Cookie header string.
 ```js
 const serializeCookie = (name, val) =>
   `${encodeURIComponent(name)}=${encodeURIComponent(val)}`;
-```
 
-```js
 serializeCookie('foo', 'bar'); // 'foo=bar'
 ```

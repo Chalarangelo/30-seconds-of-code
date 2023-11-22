@@ -13,8 +13,6 @@ As mentioned in the [Window.location Cheat Sheet](/js/s/window-location-cheatshe
 
 ```js
 const currentURL = () => window.location.href;
-```
 
-```js
 currentURL(); // 'https://www.google.com/'
 ```

@@ -14,9 +14,7 @@ Checks if two URLs are on the same origin.
 ```js
 const isSameOrigin = (origin, destination) =>
   origin.protocol === destination.protocol && origin.host === destination.host;
-```
 
-```js
 const origin = new URL('https://www.30secondsofcode.org/about');
 const destination = new URL('https://www.30secondsofcode.org/contact');
 isSameOrigin(origin, destination); // true

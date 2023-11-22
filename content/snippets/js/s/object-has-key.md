@@ -25,9 +25,7 @@ const hasKey = (obj, keys) => {
     })
   );
 };
-```
 
-```js
 let obj = {
   a: 1,
   b: { c: 4 },

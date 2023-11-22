@@ -20,8 +20,6 @@ const haveSameContents = (a, b) => {
       return false;
   return true;
 };
-```
 
-```js
 haveSameContents([1, 2, 4], [2, 4, 1]); // true
 ```

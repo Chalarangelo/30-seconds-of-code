@@ -28,8 +28,6 @@ const flattenObject = (obj, prefix = '') =>
     else acc[pre + k] = obj[k];
     return acc;
   }, {});
-```
 
-```js
 flattenObject({ a: { b: { c: 1 } }, d: 1 }); // { 'a.b.c': 1, d: 1 }
 ```

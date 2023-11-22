@@ -13,9 +13,7 @@ Converts an array of objects into an array of values corresponding to the specif
 
 ```js
 const pluck = (arr, key) => arr.map(i => i[key]);
-```
 
-```js
 const simpsons = [
   { name: 'lisa', age: 8 },
   { name: 'homer', age: 36 },

@@ -26,9 +26,7 @@ const initializeArrayUntil = (conditionFn, mapFn) => {
   } while (!conditionFn(i, el, arr));
   return arr;
 };
-```
 
-```js
 initializeArrayUntil(
   (i, val) => val > 10,
   (i, val, arr) => (i <= 1 ? 1 : val + arr[i - 2])

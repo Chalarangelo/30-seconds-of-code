@@ -21,8 +21,6 @@ const scrollToTop = () => {
     window.scrollTo(0, c - c / 8);
   }
 };
-```
 
-```js
 scrollToTop(); // Smooth-scrolls to the top of the page
 ```

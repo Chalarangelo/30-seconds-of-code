@@ -19,9 +19,7 @@ const listify = (obj, mapFn) =>
     acc.push(mapFn(key, value));
     return acc;
   }, []);
-```
 
-```js
 const people = { John: { age: 42 }, Adam: { age: 39 } };
 listify(people, (key, value) => ({ name: key, ...value }));
 // [ { name: 'John', age: 42 }, { name: 'Adam', age: 39 } ]

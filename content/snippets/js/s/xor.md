@@ -14,9 +14,7 @@ Checks if only one of the arguments is `true`.
 
 ```js
 const xor = (a, b) => (( a || b ) && !( a && b ));
-```
 
-```js
 xor(true, true); // false
 xor(true, false); // true
 xor(false, true); // true

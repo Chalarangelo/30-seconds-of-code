@@ -14,9 +14,7 @@ Gets the command-line arguments passed to a Node.js script.
 
 ```js
 const getCmdArgs = () => process.argv.slice(2);
-```
 
-```js
 // node my-script.js --name=John --age=30
 getCmdArgs(); // ['--name=John', '--age=30']
 ```

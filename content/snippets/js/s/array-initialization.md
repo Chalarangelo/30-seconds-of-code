@@ -64,9 +64,7 @@ Performance might be a concern if this sort of operation is very common in your 
 const initializeArrayWithValues = (n, val = 0) => Array(n).fill(val);
 const initializeMappedArray = (n, mapFn = (_, i) => i) =>
   Array(n).fill(null).map(mapFn);
-```
 
-```js
 initializeArrayWithValues(4, 2); // [2, 2, 2, 2]
 initializeMappedArray(4, (_, i) => i * 2); // [0, 2, 4, 6]
 ```

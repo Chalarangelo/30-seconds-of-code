@@ -15,8 +15,6 @@ Returns the native type of a value.
 ```js
 const getType = v =>
   (v === undefined ? 'undefined' : v === null ? 'null' : v.constructor.name);
-```
 
-```js
 getType(new Set([1, 2, 3])); // 'Set'
 ```

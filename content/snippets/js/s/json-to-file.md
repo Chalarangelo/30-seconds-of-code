@@ -16,9 +16,7 @@ import { writeFileSync } from 'fs';
 
 const JSONToFile = (obj, filename) =>
   writeFileSync(`${filename}.json`, JSON.stringify(obj, null, 2));
-```
 
-```js
 JSONToFile({ test: 'is passed' }, 'testJsonFile');
 // writes the object to 'testJsonFile.json'
 ```
