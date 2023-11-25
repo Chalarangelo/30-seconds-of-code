@@ -47,10 +47,10 @@ Session storage stores a larger amount of data on the client's computer only for
 
 |    | Cookies | Local storage | Session storage |
 | -- | -- | -- | -- |
-| Capacity | 4KB | 10MB | 5MB |
-| Accessible from | Any window | Any window | Same tab |
-| Expiration | Manually set | Never | On tab close |
-| Storage location | Browser and server | Browser only | Browser only |
-| Sent with requests | Yes | No | No |
-| Blockable by users | Yes | Yes | Yes |
-| Editable by users | Yes | Yes | Yes |
+| **Capacity** | 4KB | 10MB | 5MB |
+| **Accessible from** | Any window | Any window | Same tab |
+| **Expiration** | Manually set | Never | On tab close |
+| **Storage location** | Browser and server | Browser only | Browser only |
+| **Sent with requests** | Yes | No | No |
+| **Blockable by users** | Yes | Yes | Yes |
+| **Editable by users** | Yes | Yes | Yes |
