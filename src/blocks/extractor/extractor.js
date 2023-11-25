@@ -2,7 +2,7 @@
 import pathSettings from '#settings/paths';
 import { Logger } from '#blocks/utilities/logger';
 import { TextParser } from '#blocks/extractor/textParser';
-import { MarkdownParser } from '#blocks/extractor/markdownParser';
+import { MarkdownParser } from '#blocks/extractor/markdownParser/markdownParser';
 import { JSONHandler } from '#blocks/utilities/jsonHandler';
 import { YAMLHandler } from '#blocks/utilities/yamlHandler';
 import { stripMarkdownFormat } from '#utils';
@@ -26,6 +26,11 @@ export class Extractor {
 
   static prepare = async () => {
     Extractor.extractLanguageData();
+    Extractor.extractGrammars();
+    MarkdownParser.setupProcessors({
+      languageData: Extractor.languageData,
+      grammars: Extractor.grammars,
+    });
     Extractor.extractCollectionConfigs();
     await Extractor.extractSnippets();
     Extractor.extractCollectionsHubConfig();
@@ -105,8 +110,8 @@ export class Extractor {
         long,
         short,
         name,
-        references: new Map(Object.entries(references)),
-        allLanguageReferences: [short, ...additionalReferences],
+        references,
+        allLanguageReferences: [long, ...additionalReferences],
       });
       return acc;
     }, new Map());
@@ -116,7 +121,6 @@ export class Extractor {
       const { references, allLanguageReferences, ...restData } = data;
       return { ...restData };
     });
-    MarkdownParser.loadLanguageData([...Extractor.languageData.values()]);
   };
 
   static extractSnippets = async () => {
@@ -236,7 +240,7 @@ export class Extractor {
         fullDescription: fullText,
         description: shortText,
       },
-      language ? language.allLanguageReferences : []
+      language ? language.short : null
     );
 
     return {
