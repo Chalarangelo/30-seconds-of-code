@@ -1,4 +1,4 @@
 short: html
 long: html
 name: HTML
-additionalReferences: [css, js]
+additionalReferences: [css, javascript]

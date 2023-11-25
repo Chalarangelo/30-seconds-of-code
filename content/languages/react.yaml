@@ -1,7 +1,7 @@
 short: jsx
 long: react
 name: React
-additionalReferences: [css, html, js]
+additionalReferences: [css, html, javascript]
 references:
   useCallback(): https://react.dev/reference/react/useCallback
   useContext(): https://react.dev/reference/react/useContext
