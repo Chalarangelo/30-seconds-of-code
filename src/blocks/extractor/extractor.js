@@ -19,6 +19,7 @@ export class Extractor {
     collectionsHub: {},
   };
   static languageData = new Map();
+  static grammars = {};
 
   static prepared = false;
   static quiet = false;
@@ -264,6 +265,16 @@ export class Extractor {
     const hubConfig = YAMLHandler.fromFile(`${contentDir}/hub.yaml`);
     logger.log('Finished extracting hub pages configuration');
     Extractor.data.collectionsHub = hubConfig;
+  };
+
+  static extractGrammars = () => {
+    const logger = new Logger('Extractor.extractGrammars', {
+      muted: Extractor.quiet,
+    });
+    logger.log('Extracting grammars');
+    const grammars = YAMLHandler.fromFile(`${contentDir}/grammars.yaml`);
+    logger.log('Finished extracting grammars');
+    Extractor.grammars = grammars;
   };
 
   static writeData = () => {
