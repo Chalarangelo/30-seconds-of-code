@@ -1,0 +1,11 @@
+html: HTML
+js: JavaScript
+js-extras: JavaScript
+css: CSS
+css-extras: CSS
+jsx: React
+py: Python
+shell: Shell
+editorconfig: ""
+shellsession: Shell
+json: JSON
