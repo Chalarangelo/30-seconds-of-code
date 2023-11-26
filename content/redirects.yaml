@@ -280,9 +280,6 @@
 - from: /css/s/hover-pespective
   to: /css/s/hover-perspective
   status: 301!
-- from: /css/s/easing-variables
-  to: /articles/s/css-easing-variables
-  status: 301!
 - from: /python/s/count-occurences
   to: /python/s/count-occurrences
   status: 301!
@@ -783,9 +780,6 @@
   status: 301!
 - from: /articles/s/css-current-color
   to: /css/s/current-color
-  status: 301!
-- from: /articles/s/css-easing-variables
-  to: /css/s/easing-variables
   status: 301!
 - from: /articles/s/css-footer-at-the-bottom
   to: /css/s/footer-at-the-bottom
@@ -2013,4 +2007,7 @@
   status: 301!
 - from: /js/s/chunk-iterable
   to: /js/s/split-array-into-chunks
+  status: 301!
+- from: /articles/s/css-easing-variables
+  to: /css/s/easing-variables
   status: 301!
