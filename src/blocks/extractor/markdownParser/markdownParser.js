@@ -6,7 +6,7 @@ import rehypeStringify from 'rehype-stringify';
 import remarkUnwrapImages from 'remark-unwrap-images';
 import {
   safeguardExternalLinks,
-  convertHeadings,
+  transformHeadings,
   highlightCode,
   linkInlineCode,
   transfomImagePaths,
@@ -55,7 +55,8 @@ export class MarkdownParser {
       //   Note: this must come before `safeguardExternalLinks`
       // * Safeguard external links (`safeguardExternalLinks`)
       //   Note: this transform links added in `linkInlineCode`
-      // * Convert headings (`convertHeadings`) inside the allowed range
+      // * Convert headings (`transformHeadings`) inside the allowed range
+      //   Note: This also adds linkable IDs to heading elements
       // * Transform image paths (`transfomImagePaths`) to include the asset path
       // * Wrap tables in a div (`wrapTables`)
       // * Stringify to HTML (`rehypeStringify`)
@@ -68,7 +69,7 @@ export class MarkdownParser {
         .use(remarkRehype, { allowDangerousHtml: true })
         .use(linkInlineCode, { references })
         .use(safeguardExternalLinks)
-        .use(convertHeadings, { minLevel: 2, maxLevel: 4 })
+        .use(transformHeadings, { minLevel: 2, maxLevel: 4 })
         .use(transfomImagePaths, { assetPath })
         .use(wrapTables, { className: 'table-wrapper' })
         .use(rehypeStringify, { allowDangerousHtml: true });

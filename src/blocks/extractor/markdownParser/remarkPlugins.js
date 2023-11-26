@@ -1,7 +1,9 @@
 import { visit } from 'unist-util-visit';
 import { visitParents } from 'unist-util-visit-parents';
+import { toString } from 'hast-util-to-string';
 import Prism from 'prismjs';
 import loadLanguages from 'prismjs/components/index.js';
+import { convertToValidId } from '#utils';
 
 // Highlight code blocks
 export const highlightCode = ({ grammars }) => {
@@ -94,7 +96,8 @@ export const safeguardExternalLinks = () => {
 };
 
 // Convert headings to the appropriate elements (h1 -> h2, (h5, h6) -> h4)
-export const convertHeadings = ({ minLevel, maxLevel }) => {
+// Also, add hash links to headings
+export const transformHeadings = ({ minLevel, maxLevel }) => {
   return tree => {
     visit(tree, `element`, node => {
       if (!node.tagName) return;
@@ -105,6 +108,16 @@ export const convertHeadings = ({ minLevel, maxLevel }) => {
 
       if (level < minLevel) node.tagName = `h${minLevel}`;
       else if (level > maxLevel) node.tagName = `h${maxLevel}`;
+
+      const id = convertToValidId(toString(node));
+      node.children = [
+        {
+          type: `element`,
+          tagName: `a`,
+          properties: { href: `#${id}`, id },
+          children: [...node.children],
+        },
+      ];
     });
     return tree;
   };
