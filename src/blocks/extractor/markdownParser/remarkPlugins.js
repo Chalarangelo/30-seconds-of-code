@@ -70,7 +70,11 @@ export const linkInlineCode = ({ references }) => {
         // Convert this element to a link and wrap the current element in it
         const innerNode = { ...node, children: [...node.children] };
         node.tagName = `a`;
-        node.properties = { href: reference };
+        node.properties = {
+          href: reference,
+          // Add a border radius to match the style of inline code elements
+          className: 'br-sm',
+        };
         node.children = [innerNode];
       }
     );
