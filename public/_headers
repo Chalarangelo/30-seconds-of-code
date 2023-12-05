@@ -7,10 +7,6 @@
   cache-control: public
   cache-control: immutable
   cache-control: max-age=31536000
-/assets/Raleway-Medium.woff2
-  cache-control: public
-  cache-control: immutable
-  cache-control: max-age=31536000
 /assets/RobotoMono-Regular.woff2
   cache-control: public
   cache-control: immutable
