@@ -72,8 +72,7 @@ export const linkInlineCode = ({ references }) => {
         node.tagName = `a`;
         node.properties = {
           href: reference,
-          // Add a border radius to match the style of inline code elements
-          className: 'br-sm',
+          dataCodeReference: 'true',
         };
         node.children = [innerNode];
       }
