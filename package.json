@@ -36,7 +36,6 @@
     "#components/*": "./src/components/*.astro",
     "#layouts/*": "./src/layouts/*.astro",
     "#settings/*": "./src/settings/*.js",
-    "#prefabs": "./src/prefabs/index.js",
     "#utils": "./src/utils/index.js",
     "#utils/search": "./src/utils/search.js"
   },
