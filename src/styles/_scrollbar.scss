@@ -1,0 +1,52 @@
+// Scrollbar styles are variable-based. If the element doesn't define the
+// correct variables, the scrollbar will default to the defaults.
+// This is useful for component-based scrollbar styling.
+::-webkit-scrollbar {
+  // Make scrollbars float in space.
+  background-color: transparent;
+  width: var(--scrollbar_size, 8px);
+  height: var(--scrollbar_size, 8px);
+}
+
+::-webkit-scrollbar-track {
+  // Add a margin to the scrollbar track, if defined.
+  margin: var(--scrollbar_margin, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  // Color the scrollbar knob.
+  background-color: var(--scrollbar_color-knob, var(--color-scrollbar-knob));
+  // Make the scrollbar knob round.
+  border-radius: var(--scrollbar_size);
+  // Add a border to the scrollbar knob, if defined.
+  border: var(--scrollbar_border, none);
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(
+        -scrollbar_color-knob-active,
+        var(--color-scrollbar-knob-active)
+      );
+    }
+  }
+}
+
+body {
+  // Reserve symmetrical space for the scrollbar on both sides.
+  scrollbar-gutter: stable both-edges;
+  // Style the scrollbar.
+  --scrollbar_size: 12px;
+  --scrollbar_border: 2px solid var(--color-background);
+}
+
+body[data-scroll-lock='true'] {
+  // Lock body scroll, allowing modal dialogs to lock page scroll.
+  overflow-y: hidden;
+  // To avoid the page jumping when locking the scroll, add padding to the
+  // right side of the page to compensate for the scrollbar.
+  // Oddly enough, on some mobile devices, the scrollbar is not respected,
+  // causing the very issue this is supposed to fix. This is ok for the time
+  // being, but might need to be revisited if proper scrollbar supports lands
+  // in stable Chrome later down the line.
+  padding-inline-end: var(--scrollbar_size);
+}
