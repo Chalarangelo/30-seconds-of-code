@@ -1,0 +1,54 @@
+table {
+  // Remove gaps between table borders by default.
+  border-spacing: 0;
+  border-collapse: collapse;
+  // Fill the entire parent container.
+  width: 100%;
+}
+
+th {
+  // Correct the font weight for table headers.
+  font-weight: var(--font-weight-strong);
+}
+
+td,
+th {
+  // Center text in table cells.
+  text-align: center;
+  // Add a border around table cells.
+  border-width: var(--border-width-thin);
+  border-color: var(--color-border-light);
+  // Add padding to table cells (add a default in case the table isn't wrapped).
+  padding: var(--table_spacing, var(--spacing-2));
+}
+
+.table-wrapper {
+  // Span the entire width of the container.
+  width: 100%;
+  // Overflow tables only horizontally.
+  overflow-x: auto;
+  overflow-y: hidden;
+  // Style the scrollbar, in case the contents overflow.
+  --scrollbar_size: 8px;
+
+  // Define a variable for the `clip-path`. This needs to be wider than the
+  // border itself for some reason, and it should never be greater than the
+  // inside padding of the cells. In turn, this means that it should be used
+  // for the `padding` of elements inside the table.
+  --table_spacing: var(--spacing-2);
+
+  table {
+    // Clip the outer border of the table, allowing for a rounded border to be
+    // added  by the wrapper and also a tiny empty space between the outer
+    // border and the borders between the cells.
+    clip-path: polygon(
+      var(--table_spacing) var(--table_spacing),
+      calc(100% - var(--table_spacing)) var(--table_spacing),
+      calc(100% - var(--table_spacing)) calc(100% - var(--table_spacing)),
+      var(--table_spacing) calc(100% - var(--table_spacing))
+    );
+  }
+  // Add a thicker border around the entire table.
+  border-width: var(--border-width-medium);
+  border-color: var(--color-border-light);
+}
