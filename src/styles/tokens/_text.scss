@@ -1,0 +1,20 @@
+:root {
+  // Font sizes (calculated with a base size of 16px).
+  --font-xs: 0.8125rem;
+  --font-sm: 1rem;
+  --font-md: 1.125rem;
+  --font-lg: 1.3125rem;
+  --font-xl: 1.625rem;
+  --font-x2: 2rem;
+  --font-x3: 2.25rem;
+
+  // Font weights.
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-strong: 600;
+
+  // Line heights.
+  --line-height-loose: 1.75;
+  --line-height-normal: 1.5;
+  --line-height-tight: 1.25;
+}
