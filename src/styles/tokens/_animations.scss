@@ -1,0 +1,16 @@
+:root {
+  // Animation and transition durations.
+  --animation-duration-short: 200ms;
+  --animation-duration-medium: 300ms;
+  --animation-duration-long: 450ms;
+
+  @media (prefers-reduced-motion: reduce) {
+    // If the user prefers reduced motion, all animation duration variables
+    // will be reduced to `150ms`. This minimizes the motion without necessarily
+    // removing the transition or animation altogether. It's the responsibility
+    // of individual components to further reduce the motion if needed.
+    --animation-duration-short: 150ms;
+    --animation-duration-medium: 150ms;
+    --animation-duration-long: 150ms;
+  }
+}
