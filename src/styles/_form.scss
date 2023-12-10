@@ -1,0 +1,65 @@
+button,
+input,
+select,
+textarea {
+  // Reset default styles.
+  font-family: inherit;
+  font-variation-settings: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  padding: 0;
+}
+
+button {
+  // Correct the inability to style clickable types in iOS and Safari.
+  -webkit-appearance: button;
+  // Remove default button styles.
+  background-color: transparent;
+  background-image: none;
+  // Change the cursor appearance.
+  cursor: pointer;
+}
+
+:disabled {
+  // Make sure disabled buttons don't get the pointer cursor.
+  cursor: default;
+}
+
+[type='search'] {
+  // Correct the odd appearance in Chrome and Safari.
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type='search']::-webkit-search-cancel-button,
+[type='search']::-webkit-search-decoration {
+  // Correct style in Chrome and Safari.
+  -webkit-appearance: none;
+}
+
+[type='search']::-webkit-input-placeholder {
+  font-family: 'Inter', Helvetica, sans-serif;
+}
+
+[type='search']::-moz-placeholder {
+  font-family: 'Inter', Helvetica, sans-serif;
+}
+
+input,
+input::placeholder,
+textarea::placeholder {
+  // Use the default font family and a user-defined color.
+  color: inherit;
+}
+
+textarea {
+  // Prevent resizing textareas horizontally by default.
+  resize: vertical;
+}
+
+label {
+  // Use pointer cursor for label.
+  cursor: pointer;
+}
