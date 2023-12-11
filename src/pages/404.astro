@@ -1,32 +1,25 @@
 ---
-import prefabs from '#prefabs';
+import '../styles/pages/404.scss';
 
 import Layout from '#layouts/Layout';
 import Image from '#components/Image';
+import Icon from '#components/Icon';
 ---
 
 <Layout title='Page not found'>
-  <div class='g-c2'>
-    <h2 class={prefabs.staticPageTitle}>404</h2>
-    <div class='box-border f-center txt-050 my-8 py-8 px-3.5'>
+  <main>
+    <section class='page-not-found'>
       <Image
         src='/assets/splash/plane.png'
-        class='br-lg'
         height='360'
         width='360'
       />
-      <p class='f-center mx-auto mb-3 mt-8 fs-xl'>
-        <span class='txt-150'>Page not found</span>
-      </p>
-      <p class='my-2 mx-auto f-center px-8 mb-5'>
-        Seems like you have reached a page that does not exist.
-      </p>
-      <a
-        class={`${prefabs.simpleButton} ${prefabs.outlineButton} fs-md`}
-        href='/'
-      >
+      <h1>Page not found</h1>
+      <p>Seems like you have reached a page that does not exist.</p>
+      <a href='/' >
+        <Icon name='home' size='1em' aria-hidden='true' />
         Go back home
       </a>
-    </div>
-  </div>
+    </section>
+  </main>
 </Layout>
