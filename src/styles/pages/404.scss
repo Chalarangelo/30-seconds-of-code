@@ -1,0 +1,53 @@
+// Styles for the 404 page. As these are only used in that specific page, it's
+// better to keep them in a separate file and import them only in the page.
+.page-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: var(--spacing-8);
+  // Account for the layout's bleed width.
+  padding: var(--spacing-8) var(--layout-bleed-width);
+
+  img {
+    border-radius: var(--border-radius-large);
+  }
+
+  h1 {
+    margin-block-start: var(--spacing-8);
+  }
+
+  p {
+    font-size: var(--font-sm);
+    color: var(--color-text-light);
+    margin-block-end: var(--spacing-8);
+    // Apply a better wrapping algorithm, if available.
+    text-wrap: balance;
+    text-align: center;
+  }
+
+  a {
+    // Remove link underline.
+    --link_color-underline: transparent;
+    // Use flex to align the icon and the button.
+
+    display: flex;
+    padding: var(--spacing-6) var(--spacing-10);
+    column-gap: var(--spacing-6);
+
+    // Apply basic styles (spacing, radius, colors, font weight).
+    border-radius: var(--border-radius-medium);
+    background: var(--color-background-light);
+    font-size: var(--font-md);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-tight);
+
+    // Apply a transition on hover.
+    transition: color var(--animation-duration-medium) ease;
+    @media (hover: hover) {
+      &:is(:hover, :focus) {
+        // Only apply hover styles on devices that support hover.
+        color: var(--color-primary);
+      }
+    }
+  }
+}
