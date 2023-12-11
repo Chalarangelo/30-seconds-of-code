@@ -1,0 +1,20 @@
+// Applies styles to an element to visually hide it, but keep it accessible.
+@mixin visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+// Applies a grid layout with standard bleed on either side.
+@mixin layout-grid-with-bleed {
+  display: grid;
+  grid-template-columns:
+    var(--layout-bleed-width)
+    1fr
+    var(--layout-bleed-width);
+}
