@@ -1,0 +1,27 @@
+---
+import Icon from '#components/Icon';
+
+const { breadcrumbs } = Astro.props;
+
+const lastBreadcrumb = breadcrumbs[breadcrumbs.length - 1];
+const secondToLastBreadcrumb = breadcrumbs[breadcrumbs.length - 2];
+
+lastBreadcrumb.isCurrentPage = true;
+lastBreadcrumb.showIcon = false;
+secondToLastBreadcrumb.showIcon = false;
+---
+
+<nav aria-label='Breadcrumb'>
+  <ol>
+    {breadcrumbs.map(({ name, url, isCurrentPage = false, showIcon = true }) => (
+      <li>
+        <a href={url} aria-current={isCurrentPage ? 'page' : null}>
+          {name}
+        </a>
+        {showIcon && (
+          <Icon name='chevron-right' size='1em' aria-hidden='true' />
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>
