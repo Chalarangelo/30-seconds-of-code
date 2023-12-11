@@ -1,73 +1,89 @@
-// Display, flex, grid, position, box-sizing
-.inline-block {
-  display: inline-block;
-}
-.flex {
-  display: flex;
-}
-.grid {
+body {
+  // Layout center column width.
+  --layout-main-column-width: 800px;
+  // Layout bleed width (either side).
+  --layout-bleed-width: 24px;
+
+  // Set up main layout (left area, center area, right area).
   display: grid;
-}
-.flex-col {
-  flex-direction: column;
-}
-.j-center {
-  justify-content: center;
-}
-.a-center {
-  align-items: center;
-}
-.flex-none {
-  flex: none;
-}
-.relative {
-  position: relative;
-}
-.box-border {
-  box-sizing: border-box;
-}
-.ar-wide {
-  width: 100%;
-  aspect-ratio: 2;
-  object-fit: cover;
-}
-.no-overflow {
-  overflow: hidden;
-}
-.overflow-x {
-  overflow-x: auto;
-}
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(auto, var(--layout-main-column-width))
+    minmax(0, 1fr);
+  // Note: Adding new areas (top, bottom rows) will create additional gaps
+  // even if they are empty. Using `:empty` and `display: none` might be
+  // worth trying, but it's not necessarily the best idea (accessibility).
+  // One of these areas (right) might be used for a ToC sidebar.
+  // It's also possible that some cross links will be added to the bottom
+  // or side of the page, but then again, these could go inside the main area.
+  grid-template-areas:
+    'header header header'
+    // 'left top right' -> Add this if it's ever needed
+    'left center right'
+    // 'left bottom right' -> Add this if it's ever needed
+    'footer footer footer';
 
-// Content container
-.content {
-  grid-template-columns: 0 100% 0;
-  grid-template-rows: auto auto auto auto;
-  grid-template-areas: 'l1 c1 r1' 'l2 c2 r2' 'l3 c3 r3' 'l4 c4 r4';
+  // Define a row gap variable that will be inherited throughout the layout.
+  // This allows children to override it, using negative `margin` values, for
+  // example, or use it to create proportional spacing. Mainly used in the
+  // snippet page for the `article` children to be spaced as needed.
+  --layout-row-spacing: var(--spacing-12);
+  // Add spacing between header, main area and footer, using a variable, so
+  // that it can be altered as necessary. It's set to be twice the size of the
+  // row gap, to keep it proportional to any changes.
+  --layout-area-spacing: calc(2 * var(--layout-row-spacing));
 
-  @media screen and (min-width: $layout-medium-breakpoint) {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 874px) minmax(0, 1fr);
-  }
-}
-// Grid areas
-@mixin generate-grid-areas($areas, $rows) {
-  @for $row from 1 through $rows {
-    @each $area in $areas {
-      .g-#{$area}#{$row} {
-        grid-area: #{$area}#{$row};
-      }
-    }
+  // Add spacing between header, main area and footer.
+  row-gap: var(--layout-area-spacing);
+
+  // Viewport-based border radius. This variable is inherited and reused in
+  // a few places, so that full-bleed elements can have rounded corners on
+  // larger viewports and square corners on smaller viewports.
+  --layout-border-radius: var(--border-radius-medium);
+
+  // Note: This is dependent on the user's font size and might look a bit odd
+  // in some configurations, but it's a progressive enhancement and should
+  // not be a problem either way.
+  @media (max-width: 50rem) {
+    // Square corners on smaller viewports.
+    --layout-border-radius: 0;
+    // Reduce the row gap and area gap to make the layout more compact.
+    --layout-row-spacing: var(--spacing-8);
   }
 }
 
-// Specific styles used in some components, that were overkill to have as component-specific classes
-@media screen and (min-width: $layout-medium-breakpoint) {
-  .md\:order-2 {
-    order: 2;
-  }
-
-  .md\:flex-wrap {
-    flex-wrap: wrap;
-  }
+main {
+  // Use the correct grid area (spans 1 column).
+  grid-area: center;
 }
 
-@include generate-grid-areas(('l', 'c', 'r'), 4);
+// This only applies for the snippet page, as it's the only place where
+// `article` is a direct child of `main`.
+main > article {
+  // Set up a grid layout with standard bleed on either side.
+  @include layout-grid-with-bleed;
+
+  // Add spacing between children.
+  row-gap: var(--layout-row-spacing);
+
+  // Note: This selector is not too specific, yet it needs to be overriden
+  // intentionally. This doesn't pose a problem overall, but it's worth
+  // keeping in mind for a potential future refactor.
+  > * {
+    // Place the content in the middle column (no bleed).
+    grid-column: 2;
+  }
+
+  // Note: Do not use a selector with `:is()`, as it will apply the highest
+  // specificity, which, in this case, is the one for the class selector,
+  // causing multiple issues in irrelevant styles.
+  > pre,
+  > blockquote,
+  > img,
+  > .table-wrapper {
+    // Add bleed to elements that should span the full width of the container.
+    grid-column: 1 / -1;
+    // Use the layout border radius to round the corners, when needed.
+    border-radius: var(--layout-border-radius);
+  }
+}
