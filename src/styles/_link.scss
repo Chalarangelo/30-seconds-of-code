@@ -1,0 +1,103 @@
+a {
+  &:any-link {
+    // Remove default text-decoration.
+    text-decoration: none;
+    // Optimize for opt-in styling instead of opt-out.
+    color: inherit;
+  }
+
+  // Link underline color, can be overriden by special link types.
+  --link_color-underline: var(--color-primary);
+
+  // Add a subtle underline.
+  box-shadow: 0 1px 0 var(--link_color-underline);
+  // Apply a transition on hover.
+  transition: box-shadow var(--animation-duration-medium) ease;
+
+  @media (hover: hover) {
+    &:is(:hover, :focus) {
+      // Only apply hover styles on devices that support hover.
+      box-shadow: 0 2px 0 var(--link_color-underline);
+    }
+  }
+}
+
+// Note: Instead of using a selector like `a:has(>code)` which would fail for
+// mixed content (e.g. "modulo operator (`%`)") inside the link, we opt to add
+// a special class from the markdown parser to counteract the border-radius.
+// However, the border-radius doesn't play that nice with line breaks, so we add
+// the box-decoration-break property to make sure the border-radius is applied.
+a:has(> code) {
+  // Render box fragments independently.
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+a[data-code-reference='true'] {
+  // Add a border radius to match code reference links.
+  border-radius: var(--border-radius-small);
+}
+
+// Note: It is expected that only titles inside the main body of a snippet are
+// linkable and we can target the link using the fact that it has and `id`.
+:is(h2, h3, h4) > a[id] {
+  // Remove underline from linkable titles.
+  --link_color-underline: transparent;
+  // Opacity of the hash link.
+  --link_hash_opacity: 0;
+
+  // Make the link position relative to allow for absolute positioning of the
+  // hash link indicator to the left.
+  position: relative;
+
+  &::before {
+    position: absolute;
+    // Display a hash according to the heading size (roughly 1 size smaller).
+    content: '#';
+    font-size: 0.8em;
+    text-align: center;
+    font-weight: var(--font-weight-medium);
+    // Position the hash link indicator to the left of the link, inside the
+    // layout bleed area.
+    left: calc(-1 * var(--layout-bleed-width));
+    width: var(--layout-bleed-width);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-primary-light);
+    // Opacity of the hash link.
+    opacity: var(--link_hash_opacity);
+    // Apply a transition on hover.
+    transition: opacity var(--animation-duration-short) ease-out;
+  }
+
+  @media (hover: hover) {
+    &:is(:hover, :focus) {
+      // Only apply hover styles on devices that support hover.
+      --link_hash_opacity: 1;
+    }
+  }
+
+  &:target {
+    // Apply a style for the target hash link.
+    --link_hash_opacity: 1;
+  }
+}
+
+a[data-skip-link] {
+  // Remove underline from the skip link.
+  --link_color-underline: transparent;
+  // Make the skip link accessible to screen readers only.
+  @include visually-hidden;
+
+  // Make the skip link visible on focus.
+  &:focus {
+    clip-path: none;
+    padding: var(--spacing-6) var(--spacing-8);
+    font-size: var(--font-md);
+    z-index: 1000;
+    width: auto;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
