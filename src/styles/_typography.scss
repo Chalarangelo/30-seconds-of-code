@@ -1,0 +1,188 @@
+html {
+  // Setup Inter as the default font.
+  font-family: 'Inter', Helvetica, sans-serif;
+}
+
+body {
+  // Set a default line height.
+  line-height: var(--line-height-loose);
+  // Set up a default font weight.
+  font-weight: var(--font-weight-normal);
+}
+
+strong {
+  // Make strong text semi-bold.
+  font-weight: var(--font-weight-strong);
+}
+
+em {
+  // Make emphasized text italic.
+  font-variation-settings: 'slnt' -10;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  // Make headings semi-bold.
+  font-weight: var(--font-weight-strong);
+  // Break long words if they would overflow.
+  overflow-wrap: break-word;
+  hyphens: auto;
+  // Apply a better text balancing algorithm, when supported.
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3 {
+  // Reduce line-height for headings.
+  line-height: var(--line-height-tight);
+}
+
+h4,
+h5,
+h6 {
+  // Reduce line-height for headings.
+  line-height: var(--line-height-normal);
+}
+
+h1 {
+  // Viewport-based fluctiation between 2rem and 2.25rem.
+  font-size: clamp(var(--font-x2), 3vw + 1rem, var(--font-x3));
+}
+
+h2 {
+  // Viewport-based fluctiation between 1.625rem and 2rem.
+  font-size: clamp(var(--font-xl), 2vw + 1rem, var(--font-x2));
+}
+
+h3 {
+  // Viewport-based fluctiation between 1.3125rem and 1.625rem.
+  font-size: clamp(var(--font-lg), 1vw + 1rem, var(--font-xl));
+}
+
+h4 {
+  // Increase font size for headings.
+  font-size: var(--font-lg);
+}
+
+h5,
+h6 {
+  // Increase font size for headings.
+  font-size: var(--font-md);
+}
+
+// Add standardized spacing for headings inside snippet content.
+main > article > :is(h2, h3, h4) {
+  // Proportionally add spacing to headings, depending on the value of the
+  // `--layout-row-spacing` variable, which responds to the user's font size.
+  margin-block: calc(1.5 * var(--layout-row-spacing));
+  margin-block-end: calc(0.5 * var(--layout-row-spacing));
+}
+
+small {
+  // Reduce font size for small text (about 15px on a 18px font size).
+  font-size: 80%;
+}
+
+sub {
+  // Give subscripts a slight offset.
+  bottom: -0.25em;
+}
+
+sup {
+  // Give superscripts a slight offset.
+  top: -0.5em;
+}
+
+sup,
+sub,
+code,
+kbd {
+  // Align inline elements and ensure they don't affect line height.
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+p,
+ul,
+ol,
+table,
+blockquote {
+  // Increase default font size for known text elements.
+  font-size: var(--font-md);
+}
+
+p,
+li {
+  // Apply a better text balancing algorithm, when supported.
+  text-wrap: pretty;
+}
+
+ol,
+ul {
+  // Make lists opt-in, instead of opt-out.
+  list-style: none;
+  padding: 0;
+}
+
+// Only apply to list types inside `main > article` (i.e. snippet content).
+main > article :is(ol, ul) {
+  // Use `revert` to reset the list style to the browser default. This ensures
+  // nested lists will be styled correctly.
+  list-style: revert;
+  // Add some inline padding to the start of list items.
+  padding-inline-start: var(--spacing-10);
+
+  li {
+    // Add some space at the end of each item. This allows nested items to
+    // appear closer to their parent item and list items with nested children
+    // to appear a little further apart.
+    padding-block: 0 var(--spacing-2);
+    // Take advantage of margin collapsing to create space between list items.
+    // Combining this with the padding, a nice vertical rhythm is created.
+    margin-block: var(--spacing-2);
+  }
+}
+
+blockquote {
+  background: var(--color-background-light);
+
+  // Apply padding based on the layout bleed width, subtracting the border width
+  // on the left side to align with the rest of the contents.
+  padding-inline-start: calc(
+    var(--layout-bleed-width) - var(--border-width-thick)
+  );
+  padding-inline-end: var(--layout-bleed-width);
+  padding-block: var(--spacing-6);
+
+  // Add a border on the left side of the blockquotes.
+  border-inline-start: var(--border-width-thick) solid var(--color-primary);
+
+  // Make blockquotes slightly italic.
+  font-variation-settings: 'slnt' -5;
+
+  // Treat as a flex column container to create uniform spacing, based on the
+  // `--layout-row-spacing` variable, which responds to the user's font size.
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(var(--layout-row-spacing) / 3);
+}
+
+:not(:is(code, kbd, pre)) {
+  // Apply font features to non-monospace elements.
+  font-feature-settings: 'frac', 'cv05', 'cv11', 'calt', 'kern';
+}
+
+// Note: This doesn't fit 100% in this file, but it's a good place for now.
+hr {
+  // Remove the default `hr` styling.
+  height: 0;
+  // Apply the website's text color
+  color: var(--color-border-light);
+  // Ensure horizontal rules are visible by default.
+  border-block-start-width: var(--border-width-thin);
+}
