@@ -42,11 +42,4 @@ body {
 body[data-scroll-lock='true'] {
   // Lock body scroll, allowing modal dialogs to lock page scroll.
   overflow-y: hidden;
-  // To avoid the page jumping when locking the scroll, add padding to the
-  // right side of the page to compensate for the scrollbar.
-  // Oddly enough, on some mobile devices, the scrollbar is not respected,
-  // causing the very issue this is supposed to fix. This is ok for the time
-  // being, but might need to be revisited if proper scrollbar supports lands
-  // in stable Chrome later down the line.
-  padding-inline-end: var(--scrollbar_size);
 }
