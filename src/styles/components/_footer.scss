@@ -1,0 +1,117 @@
+footer {
+  // Use the correct grid area (spans 3 columns).
+  grid-area: footer;
+  display: grid;
+
+  // Add a column on either side to align with the main area's bleed spacing.
+  // These side columns will not shrink below the bleed size, but will expand
+  // as needed on mobile devices, allowing the footer to be centered.
+  // The content column will be either the rest of the space on smaller
+  // viewports or the width of the main area (including bleed) on desktop,
+  // whichever is smaller.
+  grid-template-columns:
+    minmax(var(--layout-bleed-width), 1fr)
+    min(
+      calc(var(--layout-main-column-width)),
+      calc(100% - 2 * var(--layout-bleed-width))
+    )
+    minmax(var(--layout-bleed-width), 1fr);
+
+  // Add some space above and beyond.
+  padding-block: var(--spacing-8) var(--spacing-20);
+
+  // This `div` element is a necessary wrapper to allow for a flex layout
+  // to be applied to the footer's content.
+  div {
+    // Place the content in the content column (skip left spacing column).
+    grid-column: 2;
+    // Allow wrapping, align correctly and add some spacing between items.
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--spacing-16) var(--spacing-24);
+
+    // Add some space above and a very thin border to separate the footer.
+    padding-block-start: var(--spacing-12);
+    border-block-start: var(--border-width-hairline) solid var(--color-border);
+  }
+
+  p {
+    // Size based on the user's font size.
+    flex-basis: 20rem;
+    flex-grow: 1;
+    max-width: 25rem;
+    // Use a better wrapping algorithm, if available.
+    text-wrap: pretty;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--spacing-6);
+    justify-content: space-between;
+    // This is a bit of an odd statement, but `flex-grow: 1` expands far too
+    // much. This seems like it works correctly on all browsers and technically
+    // means "if there's space, take 1/4 of it".
+    flex-grow: 0.25;
+
+    // Define the column count of the sitemap list here, so that it can be
+    // overridden in the media query below.
+    --footer_sitemap-column-count: 2;
+
+    @media (max-width: 40rem) {
+      // Respond to the user's font size, changing the layout only as needed.
+      // Display 3 columns on narrow viewports.
+      --footer_sitemap-column-count: 3;
+      // Prevent the nav from expanding horizontally.
+      flex-grow: 0;
+    }
+  }
+
+  p,
+  ul {
+    font-size: var(--font-sm);
+  }
+
+  ul {
+    // Use columns to display links in 2/3 columns, depending on viewport.
+    columns: var(--footer_sitemap-column-count);
+    column-gap: var(--spacing-12);
+  }
+
+  a {
+    // Remove underline from links.
+    --link_color-underline: transparent;
+    // Use variables and take advantage of the cascade to set the correct color.
+    // This can and will be overriden by more specific selectors like `small a`.
+    --link_color-hover: var(--color-primary);
+    // Set the transition duration to the correct duration.
+    --link_animation-duration: var(--animation-duration-medium);
+
+    // Apply a transition on hover.
+    transition: color var(--link_animation-duration) ease;
+
+    @media (hover: hover) {
+      // Only apply hover styles on devices that support hover.
+      &:is(:hover, :focus) {
+        color: var(--link_color-hover);
+      }
+    }
+  }
+
+  small {
+    // Span the entire width of the footer.
+    flex-basis: 100%;
+    // Make more discreet than the rest of the content.
+    font-size: var(--font-xs);
+    color: var(--color-text-lighter);
+    text-align: center;
+
+    a {
+      // Override link-related variables for `small` links.
+      --link_color-hover: var(--color-text);
+      --link_animation-duration: var(--animation-duration-short);
+    }
+  }
+}
