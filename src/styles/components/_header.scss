@@ -1,0 +1,93 @@
+header {
+  // Use the correct grid area (spans 3 columns).
+  grid-area: header;
+  display: grid;
+
+  // Add a column on either side to align with the main area's bleed spacing.
+  // These side columns will not shrink below the bleed size, but will expand
+  // as needed on mobile devices, allowing the header to be centered.
+  // The 2 content columns will be either the rest of the space divided by 2
+  // on smaller viewports or half the main area's width (including bleed) on
+  // desktop, whichever is smaller.
+  grid-template-columns:
+    minmax(var(--layout-bleed-width), 1fr)
+    repeat(
+      2,
+      min(
+        calc(var(--layout-main-column-width) / 2),
+        calc(50% - var(--layout-bleed-width))
+      )
+    )
+    minmax(var(--layout-bleed-width), 1fr);
+
+  // Add some vertical padding to avoid sticking to the edge of the screen.
+  padding-block: var(--spacing-10);
+
+  h1 {
+    // Place the logo in the first content column (skip left spacing column).
+    grid-column: 2;
+    // Align to start of the grid row to avoid stretching the clickable area.
+    justify-self: start;
+
+    img {
+      // Make the logo respond to the user's font size.
+      width: 8.75rem;
+    }
+  }
+
+  nav {
+    // Place the nav in the second content column.
+    grid-column: 3;
+    // Display as flex and align items correctly.
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    // Set the color for all links inside the nav.
+    color: var(--color-text-lighter);
+
+    :is(a, button) {
+      // Remove underline from links.
+      --link_color-underline: transparent;
+      // Ensure elements display correctly and don't shrink below their content.
+      display: inline-block;
+      flex-shrink: 0;
+      // Make clickable area large enough for coarse pointers (44x44).
+      padding: var(--spacing-6);
+      border-radius: var(--border-radius-small);
+      // Apply a transition on hover.
+      transition: color var(--animation-duration-medium) ease;
+
+      svg {
+        // Apply a transition on hover.
+        transition: scale var(--animation-duration-short) ease;
+        // Add a slight delay for the scale animation, on exit only.
+        transition-delay: 100ms;
+      }
+
+      @media (hover: hover) {
+        &:is(:hover, :focus) {
+          // Only apply hover styles on devices that support hover.
+          color: var(--color-text);
+
+          @media (prefers-reduced-motion: no-preference) {
+            // Only scale up if the user prefers motion.
+            svg {
+              // Scale up (to the next font-size) on hover.
+              scale: 1.2;
+              // Override the delay on hover.
+              transition-delay: 0ms;
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 25rem) {
+      // Respond to user's font size, changing the layout only when needed.
+      a {
+        // Visually hide links on small viewports, only show the search button.
+        @include visually-hidden;
+      }
+    }
+  }
+}
