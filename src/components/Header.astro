@@ -1,0 +1,63 @@
+---
+import settings from '#settings/global';
+
+import Icon from '#components/Icon';
+
+const iconSize = '1.25rem';
+---
+
+<header role='navigation' aria-label='Main'>
+  <h1>
+    <a
+      title={settings.websiteName}
+      aria-label={settings.websiteName}
+      href='/'
+    >
+      <img
+        fetchpriority='high'
+        src='/assets/30s-logo.png'
+        alt='Home'
+        width='140'
+        height='48'
+      />
+    </a>
+  </h1>
+  <nav >
+    <a href='/'>
+      <Icon
+        name='home'
+        size={iconSize}
+        title='Home'
+        aria-label='Home'
+      />
+    </a>
+    <a href='/collections/p/1'>
+      <Icon
+        name='list'
+        size={iconSize}
+        title='Collections'
+        aria-label='Collections'
+      />
+    </a>
+    <button data-open-modal='omnisearch'>
+      <Icon
+        name='search'
+        size={iconSize}
+        title='Search'
+        aria-label='Search'
+      />
+    </button>
+    <a
+      href={settings.githubRepoUrl}
+      target='_blank'
+      rel='noopener noreferrer'
+    >
+      <Icon
+        name='github'
+        size={iconSize}
+        title='GitHub'
+        aria-label='GitHub'
+      />
+    </a>
+  </nav>
+</header>
