@@ -1,0 +1,34 @@
+// Note: iframe, embed, audio, object can be added to this later.
+img,
+picture,
+video,
+canvas,
+svg {
+  // Make media responsive by default.
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// This selector is needed to select the cover image, as we know it to always
+// appear right after the main title of the `article`, which is only directly
+// inside `main` for snippet pages.
+main > article > h1 + img {
+  // Apply aspect ratio to cover images.
+  width: 100%;
+  aspect-ratio: 2;
+  object-fit: cover;
+
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    // Apply this effect only when hover is supported and the user has not
+    // requested reduced motion. It's just for show, so it's not important.
+    // The duration etc. here are entirely custom to this effect.
+    transition: filter 1.5s ease;
+    transition-delay: 1.5s;
+
+    &:hover {
+      // Add a little easter egg to the cover images.
+      filter: saturate(200%);
+    }
+  }
+}
