@@ -1,0 +1,188 @@
+dialog {
+  // Reset the default dialog styles and apply own styles.
+  padding: 0;
+  background: var(--color-background-light);
+  color: var(--color-text);
+
+  // Fill the available width, but limit it to `600px`.
+  width: 100%;
+  max-width: 600px;
+
+  // Use variables for block margins. These can then be used to dynamically
+  // adjust the size of the dialog and its contents.
+  --search_margin-block-start: 200px;
+  --search_margin-block-end: 200px;
+  margin: var(--search_margin-block-start) auto var(--search_margin-block-end);
+
+  // Adjust the border radius individually. This doesn't follow the layout, as
+  // it adjusts itself based on a different media query.
+  border-radius: var(--border-radius-medium);
+
+  @media (max-width: 37.5rem) {
+    // Adjust the margins for smaller viewports. This is not 100% accurate, but
+    // something like `orientation: portrait` yields false positives on desktop,
+    // especially split screen setups. This is a good enough approximation and
+    // matches the `max-width` value on the default font size.
+    --search_margin-block-start: 100px;
+    --search_margin-block-end: 0px;
+    // Adjust the border radius.
+    border-radius: 0;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    // Only apply the animation if the user prefers motion.
+    animation: dialog-in var(--animation-duration-medium) ease-out;
+  }
+
+  // Use a variable to define the input and buttons row height, allowing all
+  // calculations to be based on this value. While this is not `rem`-based,
+  // it still allows for enough flexibility for user adjustments.
+  --search_input-height: 60px;
+
+  search {
+    display: grid;
+    // Use a grid with two bleed columns for spacing on the sides, two
+    // fixed size columns for the two icons and a flexible column for the
+    // input field. Similarly, set up two rows, one for the input and one
+    // for the results.
+    grid-template-columns: var(--spacing-8) 1.25rem auto 2rem var(--spacing-8);
+    grid-template-rows: var(--search_input-height) auto;
+    align-items: center;
+  }
+
+  svg.icon:first-of-type {
+    // Place the decorative search icon in the second column.
+    grid-column: 2;
+  }
+
+  [type='search'] {
+    // Override some of the default styles.
+    background: transparent;
+    outline: 0;
+    font-size: var(--font-md);
+    line-height: var(--line-height-normal);
+    margin: var(--spacing-6) var(--spacing-4);
+
+    &:focus {
+      // When focuses, change the results border color.
+      ~ output {
+        border-color: var(--color-primary-light);
+      }
+    }
+  }
+
+  button {
+    // Apply a transition on hover of the close button.
+    transition: color var(--animation-duration-short) ease;
+
+    @media (hover: hover) {
+      // Only apply hover styles on devices that support hover.
+      &:is(:hover, :focus) {
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  output {
+    // Span the entire width of the dialog, overriding the spacing internally.
+    grid-column: 1 / -1;
+    // The right side spacing needs to be adjusted to account for the scrollbar.
+    padding: var(--spacing-8) calc(var(--spacing-8) - var(--scrollbar_size, 0))
+      var(--spacing-8) var(--spacing-8);
+    // Calculate the max height of the results, based on the viewport height,
+    // the margins and the search input height.
+    max-height: calc(
+      100vh - var(--search_margin-block-start) - var(--search_margin-block-end) - var(
+          --search_input-height
+        )
+    );
+    // Add a border on top to separate the results from the input. The color is
+    // adjusted when the input is focused.
+    border-top: var(--border-width-thin) solid var(--color-border);
+    transition: border-color var(--animation-duration-medium) ease;
+    overflow-x: auto;
+    // Display results in a flex column to control the spacing between them.
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--spacing-4);
+
+    // Style the scrollbar.
+    --scrollbar_size: 8px;
+    --scrollbar_border: 2px solid var(--color-background-light);
+    --scrollbar_color-knob: var(--color-scrollbar-knob-active);
+
+    &::-webkit-scrollbar-track {
+      // Visually align the scrollbar with the first result title.
+      margin: var(--spacing-4) 0;
+    }
+
+    h2 {
+      // Make titles less prominent.
+      font-weight: var(--font-weight-medium);
+      font-size: var(--font-sm);
+      color: var(--color-text-light);
+    }
+
+    ul {
+      // Display results in a flex column to control the spacing between them.
+      display: flex;
+      flex-direction: column;
+      row-gap: var(--spacing-4);
+
+      // Add a margin after the first list's end (after the last collection).
+      &:not(:last-child) {
+        margin-block-end: var(--spacing-8);
+      }
+    }
+
+    a {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      line-height: var(--line-height-normal);
+      column-gap: var(--spacing-8);
+      padding: var(--spacing-2) 0;
+
+      // Remove underline from result links.
+      --link_color-underline: transparent;
+
+      // Apply a transition on hover.
+      transition: color var(--animation-duration-medium) ease;
+
+      small {
+        font-size: var(--font-sm);
+        color: var(--color-text-light);
+      }
+
+      @media (hover: hover) {
+        &:is(:hover, :focus) {
+          // Only apply hover styles on devices that support hover.
+          color: var(--color-primary-light);
+
+          > small {
+            color: var(--color-primary-light);
+          }
+        }
+      }
+    }
+
+    // Style the no results message/empty prompt.
+    p {
+      padding-block: var(--spacing-4);
+      // Use a better text balancing algorithm, when available.
+      text-wrap: pretty;
+    }
+  }
+}
+
+// Define the animation for the dialog entering the viewport.
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
