@@ -1,0 +1,22 @@
+---
+import Image from '#components/Image';
+
+const { title, description, cover, secondary } = Astro.props;
+
+const Heading = secondary ? 'h2' : 'h1';
+---
+
+<section class='hero'>
+  <div>
+    <Heading>{title}</Heading>
+    <p>{description}</p>
+  </div>
+  {cover ?
+    <Image
+      src={cover}
+      alt=''
+      height='240'
+      width='240'
+      fetchpriority='high'
+    /> : null}
+</section>
