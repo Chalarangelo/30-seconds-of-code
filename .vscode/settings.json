@@ -8,7 +8,7 @@
   ],
   "files.insertFinalNewline": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "diffEditor.ignoreTrimWhitespace": false,
   "files.trimTrailingWhitespace": true,
