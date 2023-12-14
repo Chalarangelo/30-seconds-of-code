@@ -24,7 +24,7 @@ export class Recommender {
     // Total without language and primary tag
     // searchTokenScoreLimit / totalScoreLimit
     scoreLimitWithoutLanguageAndPrimaryTag: 0.4,
-    recommendationCount: 3,
+    recommendationCount: 4,
   };
 
   static recommendSnippets = (snippet, snippets) => {
@@ -124,7 +124,7 @@ export class Recommender {
         // snippet's recommendation ranking.
         if (recommendationRanking > 0) {
           if (minRankings.length < recommendationCount) {
-            // First 3 snippets are always added
+            // First 4 snippets are always added
             minRankings.push(recommendationRanking);
             minRankings.sort((a, b) => a - b);
           } else {
