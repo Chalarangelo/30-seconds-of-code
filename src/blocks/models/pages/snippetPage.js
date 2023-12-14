@@ -26,8 +26,10 @@ export const snippetPage = {
         { flat: true }
       );
 
-      if (snippet.recommendedCollection)
+      if (snippet.recommendedCollection) {
         recommendedItems.unshift(snippet.recommendedCollection.preview);
+        recommendedItems.pop();
+      }
 
       context.recommendations = recommendedItems;
 
