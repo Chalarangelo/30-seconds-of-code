@@ -16,8 +16,8 @@ const inContentPath = 'content/assets';
 // Image asset constants
 const supportedExtensions = ['jpeg', 'jpg', 'png', 'webp', 'tif', 'tiff'];
 const supportedDirectories = ['splash', 'cover', 'illustrations'];
-const coverImageDimensions = { width: 798, height: 399 };
-const coverPreviewDimensions = { width: 144, height: 144 };
+const coverImageDimensions = { width: 800, height: 400 };
+const coverPreviewDimensions = { width: 400, height: 200 };
 // Icon asset constants
 const dimensions = [32, 180, 192, 512];
 const iconOutName = 'icon';
