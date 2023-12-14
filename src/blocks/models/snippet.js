@@ -55,7 +55,7 @@ export const snippet = {
     formattedPreviewTags: {
       body: snippet =>
         snippet.language
-          ? `${snippet.language.name}, ${snippet.formattedPrimaryTag}`
+          ? `${snippet.language.name}`
           : snippet.formattedPrimaryTag,
       cache: true,
     },
@@ -89,7 +89,7 @@ export const snippet = {
       body: snippet =>
         snippet.dateModified.toLocaleDateString('en-US', {
           day: 'numeric',
-          month: 'short',
+          month: 'long',
           year: 'numeric',
         }),
       cache: true,
