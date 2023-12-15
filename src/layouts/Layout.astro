@@ -3,9 +3,8 @@ import '../styles/index.scss';
 
 import Meta from '#components/Meta';
 import Footer from '#components/Footer';
+import Header from '#components/Header';
 import Omnisearch from '#components/Omnisearch';
-
-import settings from '#settings/global';
 
 const {
   title,
@@ -15,7 +14,6 @@ const {
   structuredData,
   breadcrumbsData,
   canonical,
-  isFaq = false,
 } = Astro.props;
 ---
 
@@ -31,73 +29,12 @@ const {
       canonical={canonical}
     />
   </head>
-
   <body>
-    <div class='page-container'>
-      <header
-        class='nav-bar px-1 flex j-center a-center box-border'
-        role='navigation'
-        aria-label='Main'
-      >
-        <a
-          href='#skip-link-target'
-          class='skip-link fs-lg f-center flex flex-col j-center'
-        >
-          Skip to main content
-        </a>
-        <h1 class='m-0 fs-sm'>
-          <a
-            title={settings.websiteName}
-            aria-label={settings.websiteName}
-            href='/'
-          >
-            <img
-              fetchpriority='high'
-              src='/assets/30s-logo.png'
-              alt='Home'
-              class='nav-website-logo'
-              width='124'
-              height='42'
-            />
-          </a>
-        </h1>
-        <div class='nav-control-wrapper grid gap-2 txt-150 a-center'>
-          <a class='px-2 lnk-no-animation' href='/snippets/p/1'>
-            <span class='txt-150'>Snippets</span>
-          </a>
-          <a class='px-2 lnk-no-animation' href='/collections/p/1'>
-            <span class='txt-150'>Collections</span>
-          </a>
-          <div class='search-wrapper relative mb-2 flex br-md txt-100 icon'>
-            <svg width="20" height="20" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" class="py-3 ml-2">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M53.3333 18.6667C34.1875 18.6667 18.6667 34.1875 18.6667 53.3333C18.6667 72.4792 34.1875 88 53.3333 88C72.4792 88 88 72.4792 88 53.3333C88 34.1875 72.4792 18.6667 53.3333 18.6667ZM8 53.3333C8 28.2964 28.2964 8 53.3333 8C78.3702 8 98.6667 28.2964 98.6667 53.3333C98.6667 78.3702 78.3702 98.6667 53.3333 98.6667C28.2964 98.6667 8 78.3702 8 53.3333Z" fill="currentColor"/>
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M84.2288 82.3621C86.3116 80.2793 89.6884 80.2793 91.7712 82.3621L115.771 106.362C117.854 108.445 117.854 111.822 115.771 113.905C113.688 115.987 110.312 115.987 108.229 113.905L84.2288 89.9046C82.146 87.8218 82.146 84.4449 84.2288 82.3621Z" fill="currentColor"/>
-            </svg>
-            <input
-              class='search-box srfc-inset py-1 px-2 box-border'
-              type='search'
-              placeholder='Search'
-              aria-label='Search snippets and collections'
-            />
-          </div>
-        </div>
-      </header>
-      <div
-        class='content my-0 grid'
-        itemscope={isFaq ? true : undefined}
-        itemtype={isFaq ? 'https://schema.org/FAQPage' : undefined}
-      >
-        <a
-          href='#skip-link-target'
-          class='skip-link fs-lg f-center lnk-no-animation flex flex-col j-center'
-          id='skip-link-target'
-        >
-          Start of main content
-        </a>
-        <slot />
-        <Footer />
-      </div>
-      <Omnisearch />
-    </div>
+    <a href='#skip-link-target' data-skip-link>Skip to content</a>
+    <Header />
+    <div id='skip-link-target'/>
+    <slot />
+    <Footer />
+    <Omnisearch />
   </body>
 </html>
