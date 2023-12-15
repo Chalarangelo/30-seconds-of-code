@@ -87,3 +87,11 @@ main > article {
     border-radius: var(--layout-border-radius);
   }
 }
+
+// This element is mainly used for listing pages without chips. Its purpose is
+// to provide adequate, scalable spacing between the items.
+[data-area-gap] {
+  // Use `padding` with the appropriate layout variable to add spacing that
+  // will not be affected by margin collapse.
+  padding-block-end: var(--layout-area-spacing);
+}
