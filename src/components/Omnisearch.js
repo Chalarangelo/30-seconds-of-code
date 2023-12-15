@@ -4,6 +4,7 @@ const omnisearch = {
   openTrigger: document.querySelector('[data-open-modal="omnisearch"]'),
   dialog: document.querySelector('[data-modal="omnisearch"]'),
   closeTrigger: document.querySelector('[data-close-modal="omnisearch"]'),
+  searchIcon: document.querySelector('search > svg.icon'),
   searchBox: document.querySelector('#omnisearch'),
   resultsSection: document.querySelector('output[for="omnisearch"]'),
   searchIndex: {},
@@ -20,6 +21,7 @@ const omnisearch = {
   },
   open() {
     this.prepare();
+    this.initializeSearchIconAnimation();
     this.dialog.showModal();
     this.isOpen = true;
     // Apply a padding in the place of the scrollbar to avoid content jumping.
@@ -36,6 +38,7 @@ const omnisearch = {
   },
   search(query) {
     if (!this.searchIndexInitialized || !this.isOpen) return;
+    this.playSearchIconAnimation();
     const results = this.searchByKeyphrase(query);
     if (results.length > 0) this.displayResults(results);
     else if (query.length <= 1) this.displayEmptyState();
@@ -125,6 +128,26 @@ const omnisearch = {
   },
   calculateScrollbarWidth() {
     return window.innerWidth - document.documentElement.clientWidth;
+  },
+  initializeSearchIconAnimation() {
+    this.searchIconAnimation = this.searchIcon.animate(
+      [
+        { transform: 'scale(1)' },
+        { transform: 'scale(1.1)' },
+        { transform: 'scale(1)' },
+      ],
+      {
+        duration: 750,
+        delay: 250,
+        easing: 'ease',
+      }
+    );
+    this.searchIconAnimation.pause();
+  },
+  playSearchIconAnimation() {
+    if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+      this.searchIconAnimation.play();
+    }
   },
 };
 

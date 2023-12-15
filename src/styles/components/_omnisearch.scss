@@ -48,11 +48,13 @@ dialog {
     grid-template-columns: var(--spacing-8) 1.25rem auto 2rem var(--spacing-8);
     grid-template-rows: var(--search_input-height) auto;
     align-items: center;
-  }
 
-  svg.icon:first-of-type {
-    // Place the decorative search icon in the second column.
-    grid-column: 2;
+    // This selector needs to be this specific to prevent it from affecting the
+    // icon in the close button.
+    > svg.icon:first-of-type {
+      // Place the decorative search icon in the second column.
+      grid-column: 2;
+    }
   }
 
   [type='search'] {
