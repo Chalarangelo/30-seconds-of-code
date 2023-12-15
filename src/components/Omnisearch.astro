@@ -1,5 +1,23 @@
 ---
+import Icon from '#components/Icon';
 ---
 
-<omni-search></omni-search>
+<dialog data-modal='omnisearch'>
+  <search>
+    <Icon name='search' size='1.25rem' aria-hidden='true' />
+    <input
+      type='search'
+      placeholder='Search...'
+      id='omnisearch'
+      aria-label='Search snippets and collections'
+    />
+    <button data-close-modal='omnisearch'>
+      <Icon name='close' size='2rem' aria-label='Close'/>
+    </button>
+    <output aria-label='Search results' for='omnisearch'>
+      <p>Start typing a keyphrase to see matching snippets.</p>
+    </output>
+  </search>
+</dialog>
+
 <script src='./Omnisearch.js'></script>
