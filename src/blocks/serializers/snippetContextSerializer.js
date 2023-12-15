@@ -16,5 +16,6 @@ export const snippetContextSerializer = {
     ['dateMachineFormatted', 'dateTime'],
     ['formattedTags', 'tags'],
     ['coverUrl', 'cover'],
+    'githubUrl',
   ],
 };

@@ -72,6 +72,8 @@ export const snippet = {
       body: snippet => convertToSeoSlug(snippet.fileName.slice(0, -3)),
       cache: true,
     },
+    githubUrl: snippet =>
+      `https://github.com/Chalarangelo/30-seconds-of-code/blob/master/content/snippets${snippet.slug}.md`,
     isScheduled: {
       body: snippet => snippet.dateModified > new Date(),
       cache: true,
