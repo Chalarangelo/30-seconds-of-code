@@ -1,0 +1,142 @@
+.preview-list {
+  // Set up a grid layout with standard bleed on either side.
+  @include layout-grid-with-bleed;
+
+  // Adjust bottom margin according to layout rhythm.
+  margin-block-start: var(--layout-row-spacing);
+
+  // Note: This selector is not too specific, and allows for a sensible default
+  // without lacking in flexibility, when it needs to be overriden.
+  > * {
+    grid-column: 2;
+  }
+
+  h2 {
+    // Add some spacing between the heading and the list (if a heading is
+    // present). This solves any potential grid gap issues when there's no
+    // header.
+    margin-block-end: var(--spacing-16);
+  }
+
+  ul {
+    // Use a grid layout with a minimum column width of 15rem (240px) and a
+    // maximum of 1fr (100% of the available space). This will result in a
+    // minimum of 1 column and a maximum of 2 columns, depending on the
+    // available space.
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    align-items: start;
+    column-gap: var(--spacing-16);
+    row-gap: var(--spacing-24);
+  }
+
+  li {
+    position: relative;
+    // Define a container for the list item, which can then be queried in order
+    // to change its layout depending on its own size.
+    container: preview / inline-size;
+    // Display as a flex row container with wrap, allowing the altered "line"
+    // layout to wrap as needed, while the vertical "card" layout will display
+    // the same way as a flex column would.
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: var(--spacing-8);
+    column-gap: var(--spacing-12);
+    align-items: center;
+
+    // This selector needs to be this specific, in order to prevent it from
+    // styling any links that may be present in the list's heading element.
+    a {
+      // Stretch to cover the entire parent element.
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+      }
+    }
+
+    @media (hover: hover) {
+      // Only apply hover styles when hover is supported.
+      // Select list items whose links are hovered or focused.
+      &:has(a:is(:hover, :focus)) {
+        h3 {
+          // Change the focused link's color to the primary color.
+          color: var(--color-primary-light);
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+          // Only apply animations when the user prefers motion.
+          img {
+            // Slightly increase the brightness and saturation of the image.
+            filter: brightness(110%) saturate(125%);
+            // Slightly scale the image up to give it a bit of a pop.
+            transform: scale(1.01);
+          }
+        }
+      }
+    }
+  }
+
+  article {
+    // Use a flex column to display the content.
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--spacing-4);
+  }
+
+  img {
+    border-radius: var(--border-radius-medium);
+    // Apply aspect ratio to preview images.
+    aspect-ratio: 2;
+    object-fit: cover;
+    transition:
+      filter var(--animation-duration-long) ease,
+      transform var(--animation-duration-medium) ease;
+  }
+
+  a {
+    // Remove underline from all links inside the preview list.
+    --link_color-underline: transparent;
+  }
+
+  // Note that the font-size for this element is 80% of the base font size,
+  // resulting in a font size of 14.4px for a base font size of 16px. This looks
+  // pretty good, so we're not overriding it intentionally.
+  small {
+    color: var(--color-text-lighter);
+  }
+
+  h3 {
+    font-weight: var(--font-weight-medium);
+    transition: color var(--animation-duration-medium) ease;
+  }
+
+  // Use a container query to change the layout of the preview list items
+  // depending on their own size, from a "card" layout to a "line" layout.
+  // This means that if the item has too much space available, it will use it
+  // to display the image and the content side by side, instead of stacking
+  // them on top of each other.
+  @container preview (min-width: 25rem) {
+    img {
+      // Sclae the image proportionally to the container's inline size.
+      width: 30cqi;
+      height: 30cqi;
+      // Change the aspect ratio to 1:1, so that the image is always square.
+      aspect-ratio: 1;
+    }
+
+    article {
+      // Change flex behavior to fill the remaining space.
+      flex: 1 1 0;
+    }
+
+    p {
+      // Apply a line clamp to the preview text, so that it doesn't exceed 3
+      // lines of text.
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+    }
+  }
+}
