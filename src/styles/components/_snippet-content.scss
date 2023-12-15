@@ -1,0 +1,33 @@
+main > article > footer {
+  // Override generic `footer` styles here.
+  grid-row: auto;
+  display: block;
+  padding: 0;
+  color: var(--color-text-lighter);
+
+  // Add some spacing below, based on the layout area spacing.
+  margin-bottom: var(--layout-area-spacing);
+
+  p {
+    // Make the text smaller and align it to the right.
+    font-size: var(--font-sm);
+    text-align: right;
+    max-width: unset;
+  }
+
+  a {
+    // Remove underline from links.
+    --link_color-underline: transparent;
+    // Ensure that the links are displayed as inline blocks.
+    display: inline-block;
+
+    transition: color var(--animation-duration-short) ease;
+
+    @media (hover: hover) {
+      // Only apply hover styles on devices that support hover.
+      &:is(:hover, :focus) {
+        color: var(--color-text);
+      }
+    }
+  }
+}
