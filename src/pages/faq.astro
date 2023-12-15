@@ -1,7 +1,6 @@
 ---
-import prefabs from '#prefabs';
-
 import Layout from '#layouts/Layout';
+import Hero from '#components/Hero';
 
 const title = 'FAQ';
 const subtitle = 'Frequently asked questions and answers.';
@@ -9,54 +8,45 @@ const pageDescription =
   'Frequently asked questions and answers about 30 seconds of code.';
 ---
 
-<Layout title={title} description={pageDescription} isFaq>
-  <div class='g-c2'>
-    <h2 class={prefabs.staticPageTitle}>{title}</h2>
-    <p class='my-0 mx-3.5 txt-100'>{subtitle}</p>
-    <div
-      class={prefabs.simpleCard}
+<Layout title={title} description={pageDescription}>
+  <main
+    itemscope
+    itemtype'https://schema.org/FAQPage'
+  >
+    <Hero
+      title={title}
+      description={subtitle}
+    />
+
+    <article
       itemscope='true'
       itemprop='mainEntity'
       itemtype='https://schema.org/Question'
     >
-      <h3 class={prefabs.secondaryCardTitle} itemprop='name'>
+      <h2 itemprop='name'>
         I found a bug, typo or omission. Where can I report it?
-      </h3>
-      <div
-        class='card-description'
-        itemscope='true'
-        itemprop='acceptedAnswer'
-        itemtype='https://schema.org/Answer'
-      >
-        <p itemprop='text'>
-          Any content issues should be reported using the GitHub Issue Tracker.
-          Use the GitHub link on the snippet page to find the matching file and
-          then open an issue describing the problem.
-        </p>
-      </div>
-    </div>
-    <div
-      class={prefabs.simpleCard}
+      </h2>
+      <p itemprop='text'>
+        Any content issues should be reported using the GitHub Issue Tracker.
+        Use the GitHub link on the snippet page to find the matching file and
+        then open an issue describing the problem.
+      </p>
+    </article>
+
+    <article
       itemscope='true'
       itemprop='mainEntity'
       itemtype='https://schema.org/Question'
     >
-      <h3 class={prefabs.secondaryCardTitle} itemprop='name'>
+      <h2 itemprop='name'>
         Who can contribute to 30 seconds of code?
-      </h3>
-      <div
-        class='card-description'
-        itemscope='true'
-        itemprop='acceptedAnswer'
-        itemtype='https://schema.org/Answer'
-      >
-        <p itemprop='text'>
-          There are no specific requirements for contributing to 30 seconds of
-          code, except for reading and understanding our contribution
-          guidelines. Note, however, that contributions are
-          currently locked indefinitely due to a lack of time to review them.
-        </p>
-      </div>
-    </div>
-  </div>
+      </h2>
+      <p itemprop='text'>
+        There are no specific requirements for contributing to 30 seconds of
+        code, except for reading and understanding our contribution
+        guidelines. Note, however, that contributions are
+        currently locked indefinitely due to a lack of time to review them.
+      </p>
+    </article>
+  </main>
 </Layout>

@@ -1,37 +1,38 @@
 ---
-import prefabs from '#prefabs';
 import settings from '#settings/global';
 
 import Layout from '#layouts/Layout';
+import Hero from '#components/Hero';
 
 const title = 'About';
-const subtitle = 'A few word about the projects and its goals.';
+const subtitle = 'A few word about the project and its goals.';
 const pageDescription =
   'Learn more about the development and maintanance of 30 seconds of code.';
 ---
 
 <Layout title={title} description={pageDescription}>
-  <div class='g-c2'>
-    <h2 class={prefabs.staticPageTitle}>{title}</h2>
-    <p class='my-0 mx-3.5 txt-100'>{subtitle}</p>
-    <div class={prefabs.simpleCard}>
-      <h3 class={prefabs.secondaryCardTitle}>Project</h3>
-      <div class='card-description'>
-        <p>
-          30 seconds of code is an accessible high-quality knowledge base for
-          developers of all skill levels, established in 2017. Since then,
-          hundreds of short code snippets and programming articles have been
-          created with the help of a large community of contributors. The goal
-          is to make software development more accessible and help the open
-          source community thrive by helping people learn to code.
-        </p>
-      </div>
-    </div>
-    <div class={prefabs.simpleCard}>
-      <h3 class={prefabs.secondaryCardTitle}>Maintainers</h3>
-      <div class='card-description'>
-        <p>
-          30 seconds of code is developed, maintained and curated by <a
+  <main>
+    <Hero
+      title={title}
+      description={subtitle}
+    />
+
+    <article>
+      <h2>Project</h2>
+      <p>
+        30 seconds of code is an accessible high-quality knowledge base for
+        developers of all skill levels, established in 2017. Since then,
+        hundreds of short code snippets and programming articles have been
+        created with the help of a large community of contributors. The goal
+        is to make software development more accessible and help the open
+        source community thrive by helping people learn to code.
+      </p>
+    </article>
+
+    <article>
+      <h2>Maintainers</h2>
+      <p>
+        30 seconds of code is developed, maintained and curated by <a
             href={settings.ownerUrl}
             target='_blank'
             rel='noopener noreferrer'>{settings.ownerName}</a
@@ -40,52 +41,47 @@ const pageDescription =
           for development and learning is what sparkled this idea and I've put a
           lot of effort into making it the best resource I've never had when I
           started out as a developer.
-        </p>
-      </div>
-    </div>
-    <div class={prefabs.simpleCard}>
-      <h3 class={prefabs.secondaryCardTitle}>License</h3>
-      <div class='card-description'>
-        <p>
-          In order for the code provided via 30 seconds of code to be accessible
-          and useful to as many developers as possible, code snippets are
-          licensed under the CC-BY-4.0 License. This means they are free to
-          use in any project you like as long as you give appropriate credit to
-          this website.
-        </p>
-        <br />
-        <p>
-          Any other material on this website and on the GitHub repository,
-          including but not limited to text content, images, logos, names,
-          trademarks and the website source code are not to be used without
-          the explicit consent of the owner of this website.
-        </p>
-        <br />
-        <p>
-          This is especially important for content shared on the internet or as
-          part of any educational material to ensure readers can always trace
-          the content back to its original source and find updated versions that
-          might have been published.
-        </p>
-      </div>
-    </div>
-    <div class={prefabs.simpleCard}>
-      <h3 class={prefabs.secondaryCardTitle}>Acknowledgments</h3>
-      <div class='card-description'>
-        <p>
-          All of the photography on the 30 seconds of code website as well as
-          other media used is provided by <a
-            href='https://unsplash.com/'
-            target='_blank'
-            rel='noopener noreferrer'>Unsplash</a
-          >. Instead of adding credits to individual images, I have opted to
-          create an <a
-            href='https://unsplash.com/collections/9387655/30-seconds-of-code-images'
-            target='_blank'
-            rel='noopener noreferrer'>image collection</a
-          > to better showcase all of the images used and connect users with photographers.
-        </p>
-      </div>
-    </div>
-  </div>
+      </p>
+    </article>
+
+    <article>
+      <h2>License</h2>
+      <p>
+        In order for the code provided via 30 seconds of code to be accessible
+        and useful to as many developers as possible, code snippets are
+        licensed under the CC-BY-4.0 License. This means they are free to
+        use in any project you like as long as you give appropriate credit to
+        this website.
+      </p>
+      <p>
+        Any other material on this website and on the GitHub repository,
+        including but not limited to text content, images, logos, names,
+        trademarks and the website source code are not to be used without
+        the explicit consent of the owner of this website.
+      </p>
+      <p>
+        This is especially important for content shared on the internet or as
+        part of any educational material to ensure readers can always trace
+        the content back to its original source and find updated versions that
+        might have been published.
+      </p>
+    </article>
+
+    <article>
+      <h2>Acknowledgments</h2>
+      <p>
+        All of the photography on the 30 seconds of code website as well as
+        other media used is provided by <a
+          href='https://unsplash.com/'
+          target='_blank'
+          rel='noopener noreferrer'>Unsplash</a
+        >. Instead of adding credits to individual images, I have opted to
+        create an <a
+          href='https://unsplash.com/collections/9387655/30-seconds-of-code-images'
+          target='_blank'
+          rel='noopener noreferrer'>image collection</a
+        > to better showcase all of the images used and connect users with photographers.
+      </p>
+    </article>
+  </main>
 </Layout>
