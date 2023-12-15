@@ -2,12 +2,10 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 
-import prefabs from '#prefabs';
-
 import Layout from '#layouts/Layout';
-import Breadcrumbs from '#components/Breadcrumbs';
-import SnippetCard from '#components/SnippetCard';
-import PreviewCardList from '#components/PreviewCardList';
+import Breadcrumb from '#components/Breadcrumb';
+import SnippetContent from '#components/SnippetContent';
+import PreviewList from '#components/PreviewList';
 
 export async function getStaticPaths() {
   const pagePath = path.join(
@@ -40,10 +38,11 @@ const {
   canonical={snippet.slug}
   pageType='article'
 >
-  <Breadcrumbs breadcrumbs={breadcrumbs} />
-  <SnippetCard snippet={snippet} />
-  <div class='g-c3'>
-    <h2 class={prefabs.recommendationsTitle}>More like this</h2>
-    <PreviewCardList contentItems={recommendations} />
-  </div>
+  <main>
+    <Breadcrumb breadcrumbs={breadcrumbs} />
+    <SnippetContent snippet={snippet} />
+    <PreviewList contentItems={recommendations}>
+      <h2 slot='title'>More like this</h2>
+    </PreviewList>
+</main>
 </Layout>
