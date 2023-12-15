@@ -1,0 +1,81 @@
+nav[aria-label='Collections'] {
+  // Set up a grid layout with standard bleed on either side.
+  @include layout-grid-with-bleed;
+
+  // Adjust bottom margin according to layout rhythm.
+  margin-block-end: var(--layout-area-spacing);
+
+  ul {
+    // Place the content in the middle column (no bleed).
+    grid-column: 2;
+    gap: var(--spacing-8);
+    display: flex;
+    flex-wrap: wrap;
+
+    // Apply changes for smaller viewports. Note that this is used instead of
+    // `pointer: coarse` as it seems to handle better and combines well with
+    // other media queries that affect layout. As it's a progressive
+    // enhancement, it's not a problem if some users default to the desktop
+    // setup with multiline chips.
+    @media (max-width: 35rem) {
+      // Add horizontal scroll on mobile devices.
+      overflow-x: auto;
+      flex-wrap: nowrap;
+
+      // Make the element span the entire width of the grid.
+      grid-column: 1 / -1;
+      // Add inline padding to counteract the grid padding.
+      padding-inline: var(--layout-bleed-width);
+
+      padding-block-end: var(--spacing-4);
+
+      // Style scrollbar on mobile devices.
+      --scrollbar_size: 2.5px;
+      --scrollbar_border: none;
+      --scrollbar_margin: 0 var(--spacing-24);
+    }
+  }
+
+  li {
+    // Ensure that the items don't stretch or shrink.
+    flex: none;
+  }
+
+  a {
+    // Remove underline from chip links.
+    --link_color-underline: transparent;
+    // Apply basic styles (spacing, radius, colors, font weight).
+    display: inline-block;
+    padding: var(--spacing-6) var(--spacing-8);
+    border-radius: var(--border-radius-medium);
+    background: var(--color-background-light);
+    line-height: var(--line-height-tight);
+    font-weight: var(--font-weight-medium);
+
+    // Apply a transition on hover.
+    transition:
+      color var(--animation-duration-medium) ease,
+      transform var(--animation-duration-medium) ease;
+
+    // Selected state uses primary color for text.
+    &:is([data-selected], [data-selected='true']) {
+      color: var(--color-primary);
+    }
+
+    @media (hover: hover) {
+      // Do not apply hover styles on selected chips.
+      &:not(:is([data-selected], [data-selected='true'])):is(:hover, :focus) {
+        // Only apply hover styles on devices that support hover.
+        color: var(--color-primary);
+
+        @media (prefers-reduced-motion: no-preference) {
+          // Apply a move up transform only if the user prefers motion.
+          transform: translateY(-2px);
+          // Add a transparent box shadow to avoid a dead zone on the botoom,
+          // causing annoying flicker if the cursor is caught in there.
+          box-shadow: 0 2px 0 transparent;
+        }
+      }
+    }
+  }
+}
