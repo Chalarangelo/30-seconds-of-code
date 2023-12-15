@@ -118,8 +118,9 @@ export const collection = {
               { flat: true }
             ),
           {
-            title: 'More collections',
+            title: 'More',
             url: '/collections/p/1',
+            icon: 'arrow-right',
             selected: false,
           },
         ];

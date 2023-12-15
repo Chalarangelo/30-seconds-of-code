@@ -18,8 +18,9 @@ export const homePage = {
         { type: 'collection' }
       );
       context.featuredCollections.push({
-        title: 'More collections',
+        title: 'Explore collections',
         url: '/collections/p/1',
+        icon: 'arrow-right',
         selected: false,
       });
 
