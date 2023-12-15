@@ -1,0 +1,20 @@
+---
+import Image from '#components/Image';
+
+const { snippet } = Astro.props;
+---
+<article>
+  <h1>{snippet.title}</h1>
+  <Image
+    src={snippet.cover}
+    alt=''
+    height='180'
+    width='360'
+    fetchpriority='high'
+  />
+  <Fragment set:html={snippet.fullDescription}/>
+  <footer>
+    <p>Last updated: <time datetime={snippet.dateTime}>{snippet.date}</time> &middot; <a href={snippet.githubUrl} target='_blank' rel='noopener noreferrer'>View On GitHub</a></p>
+    </footer>
+  </div>
+</article>
