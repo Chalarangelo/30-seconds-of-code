@@ -1,0 +1,17 @@
+// Note: The spacing scale uses pixels, as `rem` values make little sense in
+// a lot of contexts. If the user has a different font size, the spacing will
+// not scale proportionally, but that is intended to avoid problems in small
+// viewports with large fonts, making the page unusable.
+:root {
+  // Spacing scale (proportional, base: 2px).
+  --spacing-1: 2px;
+  --spacing-2: 4px;
+  --spacing-4: 8px;
+  --spacing-6: 12px;
+  --spacing-8: 16px;
+  --spacing-10: 20px;
+  --spacing-12: 24px;
+  --spacing-16: 32px;
+  --spacing-20: 40px;
+  --spacing-24: 48px;
+}
