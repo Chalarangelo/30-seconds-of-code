@@ -1,0 +1,32 @@
+---
+import Image from '#components/Image';
+
+const { contentItems, title } = Astro.props;
+---
+
+<section class='preview-list'>
+  <slot name='title' />
+  {title && <h2>{title}</h2>}
+  <ul>
+    {contentItems.map((contentItem) => (
+      <li>
+        <Image
+          src={contentItem.cover}
+          alt=''
+          height='200'
+          width='400'
+          loading='lazy'
+        />
+        <article>
+          <small>{contentItem.tags} &middot; {contentItem.dateTime ? (
+            <time datetime={contentItem.dateTime}>{contentItem.extraContext}</time>
+          ) : contentItem.extraContext}</small>
+          <h3>
+            <a href={contentItem.url}>{contentItem.title}</a>
+          </h3>
+          <p set:html={`${contentItem.description}`}/>
+        </article>
+      </li>
+    ))}
+  </ul>
+</section>
