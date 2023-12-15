@@ -1,0 +1,95 @@
+:root {
+  // Page background.
+  --color-background: hsl(240, 61%, 7%);
+  // Light background (chips, omnisearch).
+  --color-background-light: hsl(240, 39%, 14%);
+
+  // Text base.
+  --color-text: hsl(240, 10%, 90%);
+  // Light text (breadcrumbs, pagination).
+  --color-text-light: hsl(240, 10%, 80%);
+  // Lighter text(header icons, footer).
+  --color-text-lighter: hsl(240, 10%, 70%);
+
+  // Primary (link underline, selected chip, hovered links, pagination).
+  --color-primary: hsl(217, 98%, 66%);
+  // Light primary (hash, omnisearch focus, omnisearch results hover).
+  --color-primary-light: hsl(217, 98%, 77%);
+
+  // Code background (inline code, code blocks, kbd).
+  --color-code-background: hsl(225, 42%, 16%);
+
+  // Border (omnisearch separator).
+  --color-border: hsl(235, 25%, 27%);
+  // Light border (table borders, hr).
+  --color-border-light: hsl(235, 15%, 41%);
+
+  // Scrollbar knob (body, chips on mobile).
+  --color-scrollbar-knob: hsl(240, 35%, 17%);
+  // Scrollbar knob on hover (body on desktop).
+  --color-scrollbar-knob-active: hsl(240, 30%, 23%);
+
+  // Selection background.
+  --color-selection-background: hsl(230, 98%, 58%);
+
+  // Font sizes (calculated with a base size of 16px).
+  --font-xs: 0.8125rem;
+  --font-sm: 1rem;
+  --font-md: 1.125rem;
+  --font-lg: 1.3125rem;
+  --font-xl: 1.625rem;
+  --font-x2: 2rem;
+  --font-x3: 2.25rem;
+
+  // Font weights.
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-strong: 600;
+
+  // Line heights.
+  --line-height-loose: 1.75;
+  --line-height-normal: 1.5;
+  --line-height-tight: 1.25;
+
+  // Note: The spacing scale uses pixels, as `rem` values make little sense in
+  // a lot of contexts. If the user has a different font size, the spacing will
+  // not scale proportionally, but that is intended to avoid problems in small
+  // viewports with large fonts, making the page unusable.
+  // Spacing scale (proportional, base: 2px).
+  --spacing-1: 2px;
+  --spacing-2: 4px;
+  --spacing-4: 8px;
+  --spacing-6: 12px;
+  --spacing-8: 16px;
+  --spacing-10: 20px;
+  --spacing-12: 24px;
+  --spacing-16: 32px;
+  --spacing-20: 40px;
+  --spacing-24: 48px;
+
+  // Border radius values.
+  --border-radius-small: 2px;
+  --border-radius-medium: 4px;
+  --border-radius-large: 8px;
+
+  // Border width values.
+  --border-width-hairline: 0.5px;
+  --border-width-thin: 1px;
+  --border-width-medium: 2px;
+  --border-width-thick: 4px;
+
+  // Animation and transition durations.
+  --animation-duration-short: 200ms;
+  --animation-duration-medium: 300ms;
+  --animation-duration-long: 450ms;
+
+  @media (prefers-reduced-motion: reduce) {
+    // If the user prefers reduced motion, all animation duration variables
+    // will be reduced to `150ms`. This minimizes the motion without necessarily
+    // removing the transition or animation altogether. It's the responsibility
+    // of individual components to further reduce the motion if needed.
+    --animation-duration-short: 150ms;
+    --animation-duration-medium: 150ms;
+    --animation-duration-long: 150ms;
+  }
+}
