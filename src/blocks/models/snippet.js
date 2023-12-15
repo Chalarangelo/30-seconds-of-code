@@ -94,6 +94,10 @@ export const snippet = {
         }),
       cache: true,
     },
+    dateMachineFormatted: {
+      body: snippet => snippet.dateModified.toISOString().slice(0, 10),
+      cache: true,
+    },
     searchTokensArray: {
       body: snippet => {
         const tokenizableElements = [

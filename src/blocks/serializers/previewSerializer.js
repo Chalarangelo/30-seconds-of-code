@@ -19,6 +19,16 @@ export const previewSerializer = {
       type === 'snippet' ? item.formattedPreviewTags : 'Collection',
     extraContext: (item, { type }) =>
       type === 'snippet' ? item.dateFormatted : item.formattedSnippetCount,
+    dateTime: (item, { type }) =>
+      type === 'snippet' ? item.dateMachineFormatted : undefined,
   },
-  attributes: ['title', 'description', 'url', 'cover', 'tags', 'extraContext'],
+  attributes: [
+    'title',
+    'description',
+    'url',
+    'cover',
+    'tags',
+    'extraContext',
+    'dateTime',
+  ],
 };

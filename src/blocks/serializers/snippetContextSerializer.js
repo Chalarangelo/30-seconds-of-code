@@ -13,6 +13,7 @@ export const snippetContextSerializer = {
     'fullDescription',
     'slug',
     ['dateFormatted', 'date'],
+    ['dateMachineFormatted', 'dateTime'],
     ['formattedTags', 'tags'],
     ['coverUrl', 'cover'],
   ],
