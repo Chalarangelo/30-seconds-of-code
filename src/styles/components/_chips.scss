@@ -44,8 +44,11 @@ nav[aria-label='Collections'] {
   a {
     // Remove underline from chip links.
     --link_color-underline: transparent;
+    // Use an inline flex container to allow for SVG icons to be placed next to
+    // the text of the chip.
+    display: inline-flex;
+    column-gap: var(--spacing-2);
     // Apply basic styles (spacing, radius, colors, font weight).
-    display: inline-block;
     padding: var(--spacing-6) var(--spacing-8);
     border-radius: var(--border-radius-medium);
     background: var(--color-background-light);
@@ -74,8 +77,33 @@ nav[aria-label='Collections'] {
           // Add a transparent box shadow to avoid a dead zone on the botoom,
           // causing annoying flicker if the cursor is caught in there.
           box-shadow: 0 2px 0 transparent;
+
+          // Note: An assumption is made here that the only svg to ever be used
+          // as a child of a chip is a right arrow. If that ever changes, this
+          // selector will need to be updated, along with the animations.
+          svg {
+            // Animate the arrow, pulling to the right. The timing is custom to
+            // make it feel snappy. It's repeated twice as to make sure the user
+            // sees it, but also to make sure it's not too distracting.
+            animation: arrow-pull 0.75s ease 2;
+          }
         }
       }
     }
+  }
+}
+
+// Define the animation for the arrow pulling to the right.
+@keyframes arrow-pull {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(2px);
+  }
+
+  100% {
+    transform: translateX(0);
   }
 }

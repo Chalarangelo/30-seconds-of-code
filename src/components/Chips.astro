@@ -1,4 +1,6 @@
 ---
+import Icon from '#components/Icon';
+
 const { items = [] } = Astro.props;
 ---
 
@@ -6,7 +8,9 @@ const { items = [] } = Astro.props;
   <ul>
     {items.map(item => (
       <li>
-        <a href={item.url} data-selected={item.selected}>{item.title}</a>
+        <a href={item.url} data-selected={item.selected}>
+          {item.title}{item.icon ? <Icon name={item.icon} size='1.25em' /> : null}
+        </a>
       </li>
     ))}
   </ul>
