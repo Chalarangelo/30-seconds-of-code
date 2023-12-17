@@ -1,0 +1,126 @@
+nav[aria-label='Pagination'] {
+  // Use a variable to dynamically set the width of the middle column.
+  // This allows for a responsive layout, where the middle column can be
+  // removed on smaller screens.
+  --pagination_middle-column-width: 1fr;
+
+  // Apply a grid layout with three columns, where the middle column is
+  // flexible and the other two are fixed.
+  display: grid;
+  grid-template-columns: 1fr var(--pagination_middle-column-width) 1fr;
+  gap: var(--spacing-8);
+
+  a {
+    // Remove underline from pagination links.
+    --link_color-underline: transparent;
+
+    // Set a minimum width for better alignment and larger click area.
+    min-width: 120px;
+
+    // Apply basic styles (font size, color, etc.).
+    border-radius: var(--border-radius-medium);
+    font-weight: var(--font-weight-medium);
+    padding: var(--spacing-6);
+    line-height: 1;
+    background: var(--color-background-light);
+
+    // Display as inline flex to accommodate the icon.
+    display: inline-flex;
+    align-items: center;
+    column-gap: var(--spacing-2);
+    justify-content: center;
+    // Change alignment inside the grid row to center the link.
+    justify-self: center;
+
+    // Apply a transition on hover.
+    transition: color var(--animation-duration-medium) ease;
+
+    @media (hover: hover) {
+      // Only apply hover styles on devices that support hover.
+      &:is(:hover, :focus) {
+        color: var(--color-primary);
+
+        @media (prefers-reduced-motion: no-preference) {
+          // Apply a transform only if the user prefers motion.
+          // Move the icon slightly to the left or right on hover.
+          &[rel='next'] svg {
+            transform: translateX(2px);
+          }
+
+          &[rel='prev'] svg {
+            transform: translateX(-2px);
+          }
+        }
+      }
+    }
+
+    // Disabled state (i.e. "previous" on first page, "next" on last page).
+    &[aria-disabled='true'] {
+      color: var(--color-text-lighter);
+      // Disable all pointer events, which also disables the hover styles.
+      pointer-events: none;
+
+      svg {
+        // Hide the icon on disabled links.
+        display: none;
+      }
+    }
+
+    &[rel='prev'] {
+      // Explicitly set the link column to avoid issues with the middle column.
+      grid-column: 1;
+
+      &:not([aria-disabled='true']) {
+        // Optical fix to make it look truly centered.
+        padding-inline-end: var(--spacing-10);
+      }
+    }
+
+    &[rel='next'] {
+      // Explicitly set the link column to avoid issues with the middle column.
+      grid-column: -2;
+    }
+  }
+
+  svg.icon {
+    // Display the icon inline with the text.
+    display: inline;
+    flex-shrink: 0;
+    // Apply a transition on hover.
+    transition: transform var(--animation-duration-medium) ease;
+  }
+
+  p {
+    // Make the pagination text smaller and less prominent.
+    font-size: var(--font-xs);
+    color: var(--color-text-light);
+    // Explicitly set the position of the pagination text.
+    grid-column: 2;
+    grid-row: 1;
+    // Center the pagination text inside the grid row.
+    text-align: center;
+    align-self: center;
+  }
+
+  @media (max-width: 30rem) {
+    // Remove the middle column on smaller screens.
+    --pagination_middle-column-width: 0;
+
+    a[rel='prev'] {
+      // Change alignment to bring it closer to the center.
+      justify-self: end;
+    }
+
+    a[rel='next'] {
+      // Change alignment to bring it closer to the center.
+      justify-self: start;
+    }
+
+    p {
+      // Explicitly set the position of the pagination text, moving it to the
+      // second row and spanning the entire width.
+      grid-column: 1 / -1;
+      grid-row: 2;
+    }
+  }
+}
