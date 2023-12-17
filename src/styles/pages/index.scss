@@ -1,0 +1,51 @@
+// Styles for the home page. As these are only used in that specific page, it's
+// better to keep them in a separate file and import them only in the page.
+nav[aria-label='Snippets'] {
+  // Use flex to center the content.
+  display: flex;
+  justify-content: center;
+
+  a {
+    // Remove underline from the explore links.
+    --link_color-underline: transparent;
+
+    // Use an inline flex container to allow for SVG icons to be placed next to
+    // the text of the chip.
+    display: inline-flex;
+    column-gap: var(--spacing-2);
+    // Apply basic styles (spacing, radius, colors, font weight).
+    padding: var(--spacing-6) var(--spacing-8);
+    border-radius: var(--border-radius-medium);
+    background: var(--color-background-light);
+    line-height: var(--line-height-tight);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-md);
+
+    // Apply a transition on hover.
+    transition: color var(--animation-duration-medium) ease;
+
+    @media (hover: hover) {
+      // Do not apply hover styles on selected chips.
+      &:is(:hover, :focus) {
+        // Only apply hover styles on devices that support hover.
+        color: var(--color-primary);
+
+        @media (prefers-reduced-motion: no-preference) {
+          // Apply a transform only if the user prefers motion.
+
+          // Note: An assumption is made here that the only svg to ever be used
+          // as a child of a chip is a right arrow. If that ever changes, this
+          // selector will need to be updated, along with the animations.
+          svg {
+            // Animate the arrow, pulling to the right. The timing is custom to
+            // make it feel snappy. It's repeated twice as to make sure the user
+            // sees it, but also to make sure it's not too distracting.
+            // Note: The animation is defined as part of the chips component,
+            // elsewhere and is assumed to exist.
+            animation: arrow-pull 0.75s ease 2;
+          }
+        }
+      }
+    }
+  }
+}
