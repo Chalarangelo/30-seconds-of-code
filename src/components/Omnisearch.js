@@ -31,10 +31,17 @@ const omnisearch = {
     document.body.dataset.scrollLock = 'true';
   },
   close() {
-    this.dialog.close();
-    this.isOpen = false;
-    document.body.style.paddingInlineEnd = '';
-    document.body.dataset.scrollLock = 'false';
+    this.initializeCloseAnimation();
+    this.playCloseAnimation();
+    // Note that the animation duration is 185ms, so we wait 190ms before
+    // closing the dialog to avoid the user seeing the dialog flashing before
+    // it's closed.
+    window.setTimeout(() => {
+      this.dialog.close();
+      this.isOpen = false;
+      document.body.style.paddingInlineEnd = '';
+      document.body.dataset.scrollLock = 'false';
+    }, 185);
   },
   search(query) {
     if (!this.searchIndexInitialized || !this.isOpen) return;
@@ -147,6 +154,24 @@ const omnisearch = {
   playSearchIconAnimation() {
     if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
       this.searchIconAnimation.play();
+    }
+  },
+  initializeCloseAnimation() {
+    this.closeAnimation = this.dialog.animate(
+      [
+        { opacity: '1', transform: 'translateY(0)' },
+        { opacity: '0', transform: 'translateY(-20px)' },
+      ],
+      {
+        duration: 200,
+        easing: 'ease-in',
+      }
+    );
+    this.closeAnimation.pause();
+  },
+  playCloseAnimation() {
+    if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+      this.closeAnimation.play();
     }
   },
 };
