@@ -126,7 +126,8 @@ footer {
       // Only apply the wave animation on devices that support hover and
       // for users that have not requested reduced motion.
       &:is(:hover, :focus) {
-        animation: wave 0.5s infinite alternate ease-in-out;
+        animation: wave var(--animation-duration-long) infinite alternate
+          ease-in-out;
       }
     }
   }
