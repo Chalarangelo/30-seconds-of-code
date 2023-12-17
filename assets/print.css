@@ -6,6 +6,8 @@
   --color-text-lighter: hsla(0, 0%, 0%, 76%);
   --color-primary: hsl(217, 98%, 66%);
   --color-primary-light: hsl(217, 98%, 77%);
+  --color-warning: hsla(0, 0%, 0%, 76%);
+    --color-caution: hsla(0, 0%, 0%, 87%);
   --color-code-background: hsl(225, 15%, 94%);
   --color-border: hsl(235, 25%, 63%);
   --color-border-light: hsl(235, 15%, 82%);

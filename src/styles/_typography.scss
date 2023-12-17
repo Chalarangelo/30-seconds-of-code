@@ -172,6 +172,56 @@ blockquote {
   row-gap: calc(var(--layout-row-spacing) / 3);
 }
 
+figure.admonition {
+  background: var(--color-background-light);
+
+  // Apply padding based on the layout bleed width, subtracting the border width
+  // on the left side to align with the rest of the contents.
+  padding-inline-start: calc(
+    var(--layout-bleed-width) - var(--border-width-thick)
+  );
+  padding-inline-end: var(--layout-bleed-width);
+  padding-block: var(--spacing-6);
+
+  // Add a border on the left side of the admonitions. Use a variable, that can
+  // be customized per type.
+  border-inline-start: var(--border-width-thick) solid
+    var(--admonition_-accent-color);
+
+  &[data-admonition-type='note'],
+  &[data-admonition-type='tip'] {
+    --admonition_-accent-color: var(--color-primary-light);
+  }
+
+  &[data-admonition-type='important'] {
+    --admonition_-accent-color: var(--color-primary);
+  }
+
+  &[data-admonition-type='warning'] {
+    --admonition_-accent-color: var(--color-warning);
+  }
+
+  &[data-admonition-type='caution'] {
+    --admonition_-accent-color: var(--color-caution);
+  }
+
+  figcaption {
+    // Customize the font color based on the admonition type.
+    color: var(--admonition_-accent-color);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-md);
+    // Use `pre-wrap`, as the plugin adds multiple spaces between the emoji and
+    // the text, which would otherwise be collapsed.
+    white-space: pre-wrap;
+  }
+
+  // Treat as a flex column container to create uniform spacing, based on the
+  // `--layout-row-spacing` variable, which responds to the user's font size.
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(var(--layout-row-spacing) / 3);
+}
+
 :not(:is(code, kbd, pre)) {
   // Apply font features to non-monospace elements.
   font-feature-settings: 'frac', 'cv05', 'cv11', 'calt', 'kern';
