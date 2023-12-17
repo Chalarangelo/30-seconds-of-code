@@ -3,6 +3,7 @@ import path from 'node:path';
 import sharp from 'sharp';
 import { globSync } from 'glob';
 import pathSettings from '#settings/paths';
+import presentationSettings from '#settings/presentation';
 import { Logger } from '#blocks/utilities/logger';
 
 const {
@@ -16,8 +17,12 @@ const inContentPath = 'content/assets';
 // Image asset constants
 const supportedExtensions = ['jpeg', 'jpg', 'png', 'webp', 'tif', 'tiff'];
 const supportedDirectories = ['splash', 'cover', 'illustrations'];
-const coverImageDimensions = { width: 800, height: 400 };
-const coverPreviewDimensions = { width: 400, height: 200 };
+const {
+  coverImageDimensions,
+  coverImageStandardSuffix,
+  splashImageDimensions,
+  splashImageStandardSuffix,
+} = presentationSettings;
 // Icon asset constants
 const dimensions = [32, 180, 192, 512];
 const iconOutName = 'icon';
@@ -47,10 +52,9 @@ export class AssetWriter {
     fs.ensureDirSync(outPath);
     await Promise.all(
       [
+        path.join(outPath, 'cover'),
         path.join(outPath, 'splash'),
         path.join(outPath, 'illustrations'),
-        path.join(outPath, 'cover'),
-        path.join(outPath, 'preview'),
       ].map(dir => fs.ensureDir(dir))
     );
 
@@ -64,6 +68,7 @@ export class AssetWriter {
       fs.copy(inPath, outPath),
       AssetWriter.processStaticAssets(generatedAssets),
       AssetWriter.processCoverAssets(generatedAssets),
+      AssetWriter.processSplashAssets(generatedAssets),
       AssetWriter.processIcons(),
     ]);
 
@@ -109,7 +114,10 @@ export class AssetWriter {
       logger.log(`Found ${originalLength} cover images.`);
 
       coverAssets = coverAssets.filter(
-        ({ fileName }) => !existingAssets.includes(`cover${fileName}`)
+        ({ fileName }) =>
+          !existingAssets.includes(
+            `cover${fileName}${coverImageStandardSuffix}`
+          )
       );
 
       logger.log(
@@ -120,22 +128,62 @@ export class AssetWriter {
     }
 
     return Promise.all(
-      coverAssets.map(
-        ({ filePath, fileName }) =>
-          new Promise((resolve, reject) => {
-            const cover = sharp(filePath).resize(coverImageDimensions);
-            const preview = sharp(filePath).resize(coverPreviewDimensions);
-            return Promise.all([
-              cover
-                .webp({ quality: 85 })
-                .toFile(`${outPath}/cover/${fileName}.webp`),
-              preview
-                .webp({ quality: 90 })
-                .toFile(`${outPath}/preview/${fileName}.webp`),
-            ])
-              .then(() => resolve())
-              .catch(() => reject());
+      coverAssets.map(({ filePath, fileName }) =>
+        Promise.all(
+          coverImageDimensions.map(({ width, height }) => {
+            return sharp(filePath)
+              .resize(width, height)
+              .webp({ quality: 85 })
+              .toFile(`${outPath}/cover/${fileName}-${width}.webp`);
           })
+        )
+      )
+    ).then(() => logger.success(`Processing cover images complete`));
+  };
+
+  static processSplashAssets = (existingAssets = null) => {
+    const logger = new Logger('AssetWriter.processSplashAssets');
+    logger.log(`Processing splash images...`);
+
+    let splashAssets = globSync(
+      `${inContentPath}/splash/*.@(${supportedExtensions.join('|')})`
+    ).map(fileName => ({
+      filePath: path.resolve(fileName),
+      fileName: fileName.slice(
+        fileName.lastIndexOf('/'),
+        fileName.lastIndexOf('.')
+      ),
+    }));
+
+    if (existingAssets && existingAssets.length > 0) {
+      const originalLength = splashAssets.length;
+      logger.log(`Found ${originalLength} splash images.`);
+
+      splashAssets = splashAssets.filter(
+        ({ fileName }) =>
+          !existingAssets.includes(
+            `splash${fileName}${splashImageStandardSuffix}`
+          )
+      );
+
+      logger.log(
+        `Filtered out ${
+          originalLength - splashAssets.length
+        } splash images that were already generated.`
+      );
+    }
+    logger.log(`Found ${splashAssets.length} splash images.`);
+
+    return Promise.all(
+      splashAssets.map(({ filePath, fileName }) =>
+        Promise.all(
+          splashImageDimensions.map(({ width, height }) => {
+            return sharp(filePath)
+              .resize(width, height)
+              .webp({ quality: 90 })
+              .toFile(`${outPath}/splash/${fileName}-${width}.webp`);
+          })
+        )
       )
     ).then(() => logger.success(`Processing cover images complete`));
   };
@@ -144,23 +192,20 @@ export class AssetWriter {
     const logger = new Logger('AssetWriter.processStaticAssets');
     logger.log('Processing static assets...');
 
-    let staticAssets = ['splash', 'illustrations'].reduce(
-      (allAssets, assetType) => {
-        const assets = globSync(
-          `${inContentPath}/${assetType}/*.@(${supportedExtensions.join('|')})`
-        ).map(fileName => ({
-          filePath: path.resolve(fileName),
-          fullFileName: fileName.slice(fileName.lastIndexOf('/')),
-          fileName: fileName.slice(
-            fileName.lastIndexOf('/'),
-            fileName.lastIndexOf('.')
-          ),
-          directory: assetType,
-        }));
-        return allAssets.concat(assets);
-      },
-      []
-    );
+    let staticAssets = ['illustrations'].reduce((allAssets, assetType) => {
+      const assets = globSync(
+        `${inContentPath}/${assetType}/*.@(${supportedExtensions.join('|')})`
+      ).map(fileName => ({
+        filePath: path.resolve(fileName),
+        fullFileName: fileName.slice(fileName.lastIndexOf('/')),
+        fileName: fileName.slice(
+          fileName.lastIndexOf('/'),
+          fileName.lastIndexOf('.')
+        ),
+        directory: assetType,
+      }));
+      return allAssets.concat(assets);
+    }, []);
 
     if (existingAssets && existingAssets.length > 0) {
       const originalLength = staticAssets.length;
