@@ -28,33 +28,16 @@ export const collectionPage = {
 
       const pageNumber = page.pageNumber;
       const totalPages = collection.pageCount;
-      const baseUrl = collection.slug;
-      let buttons =
-        totalPages === 2
-          ? [1, 2]
-          : [1, Math.min(Math.max(pageNumber, 2), totalPages - 1), totalPages];
-      context.paginator =
+      context.pagination =
         totalPages > 1
           ? {
-              previous:
-                pageNumber > 1
-                  ? {
-                      url: `${baseUrl}/p/${pageNumber - 1}`,
-                      label: 'Previous',
-                    }
-                  : null,
-              pages: buttons.map(buttonNumber => ({
-                label: buttonNumber,
-                url: `${baseUrl}/p/${buttonNumber}`,
-                current: buttonNumber === pageNumber,
-              })),
-              next:
-                pageNumber < totalPages
-                  ? {
-                      url: `${baseUrl}/p/${pageNumber + 1}`,
-                      label: 'Next',
-                    }
-                  : null,
+              pageNumber,
+              totalPages,
+              baseUrl: collection.slug,
+              hasPrevious: pageNumber > 1,
+              hasNext: pageNumber < totalPages,
+              totalItems: collection.listedSnippets.length,
+              itemType: 'snippets',
             }
           : null;
 
