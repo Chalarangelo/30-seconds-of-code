@@ -75,12 +75,12 @@ main > article {
   }
 
   // Note: Do not use a selector with `:is()`, as it will apply the highest
-  // specificity, which, in this case, is the one for the class selector,
-  // causing multiple issues in irrelevant styles.
+  // specificity, which, in this case, may be a class selector, causing
+  // multiple issues in irrelevant styles.
   > pre,
   > blockquote,
   > img,
-  > .table-wrapper {
+  > figure {
     // Add bleed to elements that should span the full width of the container.
     grid-column: 1 / -1;
     // Use the layout border radius to round the corners, when needed.

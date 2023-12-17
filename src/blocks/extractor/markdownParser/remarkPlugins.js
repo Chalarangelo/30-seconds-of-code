@@ -164,12 +164,12 @@ export const wrapTables = ({ className }) => {
       (node, ancestors) => {
         // Skip wrapping when already wrapped to prevent infinite recursion
         const parentNode = ancestors[ancestors.length - 1];
-        const isParentDiv = parentNode.tagName === `div`;
-        if (isParentDiv) return;
+        const isParentFigure = parentNode.tagName === `figure`;
+        if (isParentFigure) return;
 
-        // Wrap the table in a div
+        // Wrap the table in a figure
         const innerNode = { ...node, children: [...node.children] };
-        node.tagName = `div`;
+        node.tagName = `figure`;
         node.properties = { className };
         node.children = [innerNode];
       }
