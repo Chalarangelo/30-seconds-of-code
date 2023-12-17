@@ -1,0 +1,113 @@
+:is(pre, code, kbd) {
+  // Setup Roboto Mono as the default font.
+  font-family: 'Roboto Mono', Menlo, Consolas, monospace;
+
+  // Set a default font size (customized to code elements).
+  font-size: var(--font-sm);
+
+  * {
+    // Inherit the font family for nested elements.
+    font-family: inherit;
+  }
+
+  // Give code elements a background color.
+  background: var(--color-code-background);
+  // Squeeze the code blocks a bit to fit neatly inside the layout.
+  // Note: This value is a little odd, but it makse sure that the code blocks
+  // fit just right.
+  letter-spacing: -0.205px;
+}
+
+code,
+kbd {
+  // Render box fragments independently.
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--border-radius-small);
+}
+
+// Do not apply inside of headings, in order to preserve regular styling.
+:not(:is(h1, h2, h3, h4)) > a > code {
+  // Remove bottom border radius and padding when code inside a link.
+  padding-block-end: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+:is(h1, h2, h3, h4) code {
+  // Dynamically size code elements inside headings.
+  // The ratio roughly corresponds to the 18px/16px ratio inside regular text.
+  font-size: 0.875em;
+  // Apply the correct bold font weight.
+  font-weight: var(--font-weight-medium);
+  // Increase inline padding to make code elements more visible.
+  padding-inline: var(--spacing-4);
+}
+
+pre {
+  // Relative position pre elements to allow for absolute positioning of the
+  // language label.
+  position: relative;
+  // Use the layout bleed for the inline padding.
+  padding: var(--spacing-12) var(--layout-bleed-width);
+  // Ensure long lines that can't wrap are responsive on mobile.
+  overflow: auto;
+  // Make sure long lines wrap, if opporrunities exist.
+  white-space: pre-wrap;
+  // Make sure no hypens are added to the code blocks.
+  -webkit-hyphens: none;
+  hyphens: none;
+  // Set the tab-size to 2 spaces.
+  tab-size: 2;
+  // Set a tighter line height for code blocks.
+  line-height: var(--line-height-normal);
+
+  // Hide the horizontal scrollbar for code blocks. Note: This is not the best
+  // or most accessible solution, but is the only one that looks right. Besides,
+  // users can usually figure out that there is more content to the side.
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+pre[data-code-language] {
+  // Add some space above the code to fit the language label.
+  padding-block-start: var(--spacing-24);
+
+  &::before {
+    // Place the label in the top left corner and account for the bleed width.
+    position: absolute;
+    display: block;
+    top: var(--spacing-8);
+    left: var(--layout-bleed-width);
+
+    // Use the content font for the label, and make it bold.
+    font-family: 'Inter', Helvetica, sans-serif;
+    font-size: var(--font-sm);
+    font-weight: var(--font-weight-strong);
+
+    // Display the label as serialized in the `data-code-language` attribute.
+    content: attr(data-code-language);
+  }
+}
+
+// This selector is needed to override specificity of `main > article > pre`,
+// which manipulates the `border-radius`.
+main > article > pre {
+  // Style consencutive code blocks by removing space and radius between them.
+  &:has(+ pre) {
+    // Remove bottom border radius from the first code block.
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  + pre {
+    // Remove block-margin-start to counteract parent's `--layout-row-spacing`.
+    margin-block-start: calc(-1 * var(--layout-row-spacing, 0));
+    // Remove top border radius from the second code block.
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
