@@ -9,7 +9,7 @@ excerpt: Testing React components that update asynchronously is pretty common. L
 dateModified: 2021-11-07
 ---
 
-### Components that update asynchronously
+## Components that update asynchronously
 
 Recently, while working on a side-project, we started using the [React DnD library](https://react-dnd.github.io/react-dnd), as we wanted to implement a multi-container drag and drop system with cards.
 
@@ -77,7 +77,7 @@ describe('<Card/>', () => {
 });
 ```
 
-### The dreaded `act(...)` warning
+## The dreaded `act(...)` warning
 
 While the test was obviously not working, the console was constantly nagging about wrapping the test in `act()`:
 
@@ -96,7 +96,7 @@ This message wasn't very helpful in identifying the underlying issue. The only t
 
 As a side note, the `Card` component is connected to Redux, which might relate to the issue, but it would most likely happen even without Redux. That's probably due to the fact that `collect` takes some amount of time to run and send an update to the component.
 
-### Solving the issue
+## Solving the issue
 
 Digging deeper, we found that apart from `act()`, there are also other options, such as `waitFor()` and `waitForDomChange()`. These seem more intuitive simply because of the name and way they're written (using either `async await` or promises). However, `waitForDomChange()` didn't work properly for our case and our version of `react-testing-library` (which shipped with `react-scripts`) was outdated and did not export `waitFor()`, which took us a good half an hour to figure out.
 
@@ -153,7 +153,7 @@ describe('<Card/>', () => {
 });
 ```
 
-### Summary
+## Summary
 
 - A message about code that causes React state updates not being wrapped in `act(...)` might indicate that a component updated after the test ended.
 - Using `waitFor()` can solve the issue by making tests asynchronous, but you might need to bump your `react-testing-library` version if you are using older versions of `react-scripts`.

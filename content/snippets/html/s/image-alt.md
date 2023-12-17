@@ -15,7 +15,7 @@ The `alt` attribute provides **alternative information** for an image if a user 
 <img src="image.jpg" alt="Alternative text">
 ```
 
-### How to write good alt text
+## How to write good alt text
 
 The `alt` attribute should be used to describe the image in a way that makes sense to **someone who cannot see it**. Descriptions must be accurate and concise. Some screen readers are known to cut off descriptions after **125 characters**, so it is best to keep descriptions short.
 
@@ -27,7 +27,7 @@ Let's look at an example. Imagine that you want to describe an image of a boat s
 
 In this example, we've tried to describe the image as if we were describing to someone over the phone. Notice how we didn't use the word "picture" or "image" in the description. Additionally, we didn't simply say "boat" because that doesn't provide enough context.
 
-### What if the image is purely decorative?
+## What if the image is purely decorative?
 
 If an image is **purely decorative**, then it is best to leave the `alt` attribute **empty**. This will tell screen readers to skip over the image.
 

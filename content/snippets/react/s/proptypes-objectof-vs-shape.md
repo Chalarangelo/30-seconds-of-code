@@ -11,7 +11,7 @@ dateModified: 2021-06-12
 
 The `prop-types` package is used by millions of React developers every day in order to type check the props passed to their components. Most of us are probably familiar with a variety of its built-in validators, but many a developer seems to fall short when dealing with object props. Luckily, the `PropTypes.objectOf()` and `PropTypes.shape()` validators are here to help.
 
-### PropTypes.shape()
+## PropTypes.shape()
 
 The `PropTypes.shape()` validator can be used when describing an object whose keys are known ahead of time, and may represent different types. For example:
 
@@ -33,7 +33,7 @@ MyComponent.propTypes = {
 };
 ```
 
-### PropTypes.objectOf()
+## PropTypes.objectOf()
 
 The `PropTypes.objectOf()` validator is used when describing an object whose keys might not be known ahead of time, and often represent the same type. For example:
 

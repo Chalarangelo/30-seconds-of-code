@@ -10,11 +10,11 @@ dateModified: 2022-01-09
 
 Most web developers go about their day-to-day without having to deal with DNS records most of the time. Regardless, knowing what DNS stands for and the types of DNS records are pretty useful.
 
-### DNS Definition
+## DNS Definition
 
 The Domain Name System (abbreviated to DNS), translates human-readable domain names (e.g www.google.com to machine-readable IP addresses (e.g. 142.250.186.46).
 
-### DNS Records
+## DNS Records
 
 A DNS is made up of multiple records of different types, each one with its own purpose. Here's a breakdown of the most commonly-used ones:
 

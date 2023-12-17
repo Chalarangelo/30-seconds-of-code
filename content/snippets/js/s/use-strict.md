@@ -25,7 +25,7 @@ function strict() {
 
 This enforces more strict parsing and error handling of JavaScript code, as described below.
 
-### No accidental global variables
+## No accidental global variables
 
 Strict mode makes it impossible to accidentally create global variables due to mistyped variable names. Assignments, which would accidentally create global variables, instead throw an error in strict mode:
 
@@ -36,7 +36,7 @@ myVariable = 42;
 // variable named myVariable has been declared previously
 ```
 
-### Elimination of silent errors
+## Elimination of silent errors
 
 Strict mode changes some previously-accepted mistakes into errors. These include:
 
@@ -66,7 +66,7 @@ const x = 012; // SyntaxError (0-prefixed octal literal)
 false.true = 10; // TypeError (property on primitive)
 ```
 
-### Simplified `eval`
+## Simplified `eval`
 
 Strict mode makes `eval` more transparent by preventing the introduction of new variables in the surrounding scope. In strict mode, `eval` creates variables only for the code being evaluated.
 
@@ -77,7 +77,7 @@ eval('let x = 3; console.log(x);'); // LOGS: 3
 console.log(x); // LOGS: 1
 ```
 
-### Simplified `arguments`
+## Simplified `arguments`
 
 Strict mode simplifies `arguments`, by removing some of their side effects. `arguments` aren't aliased, thus they always refer to the original arguments when the function was invoked. Moreover, `arguments.callee` and `arguments.caller` are no longer supported.
 
@@ -91,7 +91,7 @@ function f(x) {
 f(10); // false
 ```
 
-### No `this` boxing
+## No `this` boxing
 
 Strict mode makes JavaScript more secure, by restricting access the global object via `this`. In strict mode, `this` is not boxed (forced into being an object), meaning that if unspecified it will be `undefined` instead of the global object.
 
@@ -104,7 +104,7 @@ function f() {
 f(); // undefined
 ```
 
-### Other changes
+## Other changes
 
 Strict mode implements a few more, less commonly-mentioned changes. These include:
 

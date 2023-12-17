@@ -11,7 +11,7 @@ dateModified: 2023-05-26
 
 Branches are Git's way to organize separate lines of development, allowing a team to work multiple features in parallel. But at some point, you'll want to **merge a branch into another branch**, usually `master` or `main`. Depending on your team's workflow, merging a branch might create a merge commit or not.
 
-### Merging a branch
+## Merging a branch
 
 In order to merge a branch, you want to **switch to the target branch** first, using `git checkout`. Then, you can use `git merge` to **merge the source branch into the target branch**.
 
@@ -26,7 +26,7 @@ git merge patch-1 # Merges the `patch-1` branch into `master`
 
 By default, Git will use [fast-forward merge](/git/s/fast-forward-merge) to merge the branch. This means that it will create a **linear history**, by placing the commits from the source branch at the tip of the target branch.
 
-### Creating a merge commit
+## Creating a merge commit
 
 If, instead, you want to **create a merge commit**, you can use the `--no-ff` flag when merging. This will create a merge commit at the tip of the target branch, optionally referencing the source branch in the commit message. The rest of the process remains the same.
 

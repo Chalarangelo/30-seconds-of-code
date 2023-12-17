@@ -9,7 +9,7 @@ excerpt: Learn how to use data attributes to represent UI state and level up you
 dateModified: 2023-11-13
 ---
 
-### The problems with HTML classes
+## The problems with HTML classes
 
 More often than not, when representing **UI state in HTML**, we use classes. This often translates into React components or JavaScript code that check a handful of conditions and **add or remove classes** accordingly. Let's look at an example:
 
@@ -70,7 +70,7 @@ So, to summarize, when representing UI state with classes, we're faced with thes
 - Checking class name presence on an element to determine its state.
 - Potentially conflicting styles when multiple states are present.
 
-### A better approach using data attributes
+## A better approach using data attributes
 
 What if I told you there's a better way? And it has been there all along, for many years. I'm talking about **data attributes**. Let's take a look at how we can use them to represent the state of our order summary:
 
@@ -123,6 +123,6 @@ Instead of a class, we're now using a **data attribute selector**. This allows u
 
 But what's even more interesting is we can't run into the previous issue of having two states on the same element. This is because **the data attribute selector needs to match exactly**, otherwise it won't work. So, if we have an element with something like `data-state="loading completed"`, it won't match any of our CSS selectors and won't be styled. It will also be pretty easy to spot from the DOM and figure out that's something is wrong.
 
-### Conclusion
+## Conclusion
 
 As you can see, using data attributes to represent state in HTML is more **flexible** and **scalable** than using classes. It forces us to be more **explicit** and more **debuggable**. I think it's a great alternative to using classes, and I hope you'll consider using it in your next project.

@@ -8,7 +8,7 @@ excerpt: Increase your productivity by creating aliases for many common git oper
 dateModified: 2021-06-12
 ---
 
-### Creating aliases
+## Creating aliases
 
 Use the command below to create aliases, replacing `<alias>` with the name of the alias and `<command>` with the command to be aliased:
 
@@ -18,7 +18,7 @@ git config --global alias.<alias> <command>
 
 Additionally, you can use [edit the configuration file](/git/s/edit-config) and add many aliases all at once.
 
-### Useful aliases
+## Useful aliases
 
 ```editorconfig
 [alias]

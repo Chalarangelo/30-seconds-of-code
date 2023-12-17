@@ -11,7 +11,7 @@ dateModified: 2021-10-03
 
 A callback function is a function passed as an argument to another function, which is then invoked inside the outer function. Callback functions are often executed once an event has occurred or a task has completed.
 
-### Synchronous callbacks
+## Synchronous callbacks
 
 A synchronous callback is a callback function that is executed immediately. The function passed as the first argument to `Array.prototype.map()` is a great example of a synchronous callback:
 
@@ -22,7 +22,7 @@ const printDoublePlusOne = n => console.log(2 * n + 1);
 nums.map(printDoublePlusOne); // LOGS: 3, 5, 7
 ```
 
-### Asynchronous callbacks
+## Asynchronous callbacks
 
 An asynchronous callback is a callback function that is used to execute code after an asynchronous operation has completed. The function executed inside `Promise.prototype.then()` is a great example of an asynchronous callback:
 

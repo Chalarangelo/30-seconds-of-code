@@ -15,7 +15,7 @@ These are only some use-cases where **dynamic setters and getters** could be use
 
 Note that, in contrast to these examples, a `Proxy` object can define multiple traps to intercept many different operations on the target object.
 
-### Dynamic getters
+## Dynamic getters
 
 A **dynamic getter** is a getter that is not explicitly defined for a property, but is instead created on the fly when the property is accessed. This is particularly useful when the shape of the data is not known in advance, or when the value of a property needs to be manipulated before it is returned.
 
@@ -40,7 +40,7 @@ proxiedObj.quuz; // undefined
 
 While this is a simple example, it highlights the power of the `Proxy` object. In this case, we are able to manipulate the behavior of the object without having to define a getter for each property. This will also apply to any new properties that are added to the object, as the proxy will be able to intercept the access and return the appropriate value.
 
-### Dynamic setters
+## Dynamic setters
 
 A **dynamic setter** is a setter that is not explicitly defined for a property, but is instead created on the fly when the property is set. This can be very useful if the object's keys follow a certain pattern or certain conditions apply to all values that are set.
 
@@ -70,6 +70,6 @@ As shown in this example, the `Proxy` object can be used to validate keys as wel
 
 As a side note, remember that the regular expression used here is not a full date validation, but only checks for a simple pattern to demonstrate the concept. If you need to validate dates in a production environment, this is not the way to go.
 
-### Conclusion
+## Conclusion
 
 As shown in this post, the `Proxy` object provides a particularly powerful way to manipulate the behavior of objects. That being said, you might want to consider your specific use-case before reaching for this tool. Dynamic getters and setters can be very useful, but they can also cause a lot of headaches if used incorrectly.

@@ -9,12 +9,12 @@ excerpt: Learn everything you need to know about Python's slice assignment with 
 dateModified: 2021-06-12
 ---
 
-#### Python slice notation
+### Python slice notation
 
 - [Understanding Python's slice notation](/blog/s/python-slice-notation)
 - Understanding Python's slice assignment (this blog post)
 
-### Basic syntax
+## Basic syntax
 
 In order to understand Python's slice assignment, you should at least have a decent grasp of how slicing works. Here's a quick recap:
 
@@ -34,7 +34,7 @@ nums[1:3] = [7, 8]    # [6, 7, 8, 4, 5]   (replace elements 1 through 3)
 nums[-2:] = [9, 0]    # [6, 7, 8, 9, 0]   (replace the last 2 elements)
 ```
 
-### Changing length
+## Changing length
 
 The part of the list returned by the slice on the left-hand side of the expression is the part of the list that's going to be changed by slice assignment. This means that you can use slice assignment to replace part of the list with a different list whose length is also different from the returned slice. For example:
 
@@ -57,7 +57,7 @@ nums[:0] = [0]        # [0, 1, 2, 6, 7, 3, 4, 5, 8, 9] (prepend 1 element)
 nums[:] = [ 4, 2]     # [4, 2]         (replace whole list with a new one)
 ```
 
-### Using steps
+## Using steps
 
 Last but not least, `step` is also applicable in slice assignment and you can use it to replace elements that match the iteration after each stride. The only difference is that if `step` is not `1`, the inserted list must have the exact same length as that of the returned list slice. For example:
 

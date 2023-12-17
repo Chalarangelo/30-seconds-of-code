@@ -9,7 +9,7 @@ excerpt: JavaScript provides a handful of native data structures that you can st
 dateModified: 2021-09-05
 ---
 
-### Arrays
+## Arrays
 
 An array is a linear data structure that represents a collection of elements. In JavaScript, arrays don't have a fixed size, while their contents can be of any valid type, even arrays themselves. Arrays are probably the most commonly used data structure and come with a plethora of methods that allow easy manipulation and transformation of their contents.
 
@@ -35,7 +35,7 @@ strs.reverse();                  // ['t', 's', 'e', 't']
 strs.join('');                   // 'test'
 ```
 
-### Sets
+## Sets
 
 A set is a linear data structure that represents an ordered collection of unique values. Sets in JavaScript can store any valid type of value, however each value can only occur once based on value equality checking.
 
@@ -59,7 +59,7 @@ nums.clear();
 nums.size;                       // 0
 ```
 
-### Maps
+## Maps
 
 A map is an associative data structure that represents a keyed collection of elements. Each key in a JavaScript Map has to be unique and either a primitive value or an object, whereas the values of the map can be of any valid type.
 

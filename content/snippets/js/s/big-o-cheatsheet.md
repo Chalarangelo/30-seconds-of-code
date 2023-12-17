@@ -8,7 +8,7 @@ excerpt: Learn everything you need to know about Big-O notation with this handy 
 dateModified: 2023-01-08
 ---
 
-### Definition
+## Definition
 
 Big-O notation, represents an algorithm's **worst-case complexity**. It uses algebraic terms to describe the complexity of an algorithm, allowing you to measure its efficiency and performance. Below you can find a chart that illustrates Big-O complexity:
 
@@ -18,11 +18,11 @@ Simply put, `O(1)` stands for **constant time complexity**, which is the most ef
 
 Apart from Big-O notation, there are other notations that are used to describe the complexity of an algorithm, such as `Ω` (Omega) and `Θ` (Theta). `Ω` describes the **best-case complexity** of an algorithm, while `Θ` describes the **average-case complexity** of an algorithm.
 
-### Common Data Structure operations
+## Common Data Structure operations
 
 Different data structures have different time complexities for the same operations. For example, a linked list has `O(1)` time complexity for `insert` and `delete` operations, while an array has `O(n)` time complexity for the same operations. Below you can find average and worst time complexities for data structures used commonly in web development.
 
-#### Average time complexity
+### Average time complexity
 
 | Data Structure | Access | Search | Insertion | Deletion |
 | --- | --- | --- | --- | --- |
@@ -35,7 +35,7 @@ Different data structures have different time complexities for the same operatio
 | **Hash Table** | N/A | Θ(1) | Θ(1) | Θ(1) |
 | [**Binary Search Tree**](/js/s/data-structures-binary-search-tree) | Θ(log n) | Θ(log n) | Θ(log n) | Θ(log n) |
 
-#### Worst time complexity
+### Worst time complexity
 
 | Data Structure | Access | Search | Insertion | Deletion |
 | --- | --- | --- | --- | --- |
@@ -48,7 +48,7 @@ Different data structures have different time complexities for the same operatio
 | **Hash Table** | N/A | O(n) | O(n) | O(n) |
 | [**Binary Search Tree**](/js/s/data-structures-binary-search-tree) | O(n) | O(n) | O(n) | O(n) |
 
-### Array sorting algorithms
+## Array sorting algorithms
 
 Similar to data structures, different array sorting algorithms have different time complexities. Below you can find the best, average and worst time complexities for the most common array sorting algorithms.
 

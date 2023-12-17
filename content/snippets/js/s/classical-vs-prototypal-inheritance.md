@@ -9,7 +9,7 @@ excerpt: Understanding the difference between these two object-oriented programm
 dateModified: 2021-11-21
 ---
 
-### Object-oriented programming
+## Object-oriented programming
 
 Both classical and prototypal inheritance are **object-oriented programming paradigms**. Objects in object-oriented programming are abstractions that encapsulate the properties of an entity. This is known as abstraction.
 
@@ -24,7 +24,7 @@ Consider an example:
 - The same applies for cats, allowing us to create an abstraction, `Cat`. Similarly, `claire` will inherit characteristics from `Cat`.
 - Cats and dogs share some common characteristics. We can create a generalization, `Animal`, to encapsulate those characteristics. `Dog` and `Cat` inherit these common characteristics from `Animal`.
 
-### Classical inheritance
+## Classical inheritance
 
 In classical object-oriented programming, there are two types of abstractions: objects and classes. An object is an abstractions of an entity, while a class is either an abstraction of an object or another class.
 
@@ -43,7 +43,7 @@ const claire = new Cat();
 claire.name = 'Claire';
 ```
 
-### Prototypal inheritance
+## Prototypal inheritance
 
 In prototypal object-oriented programming, there's only one type of abstraction: objects. Objects are either abstractions of entities or other objects, in which case they're called prototypes. Hence a prototype is a generalization.
 

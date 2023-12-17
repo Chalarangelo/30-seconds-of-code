@@ -17,7 +17,7 @@ JavaScript's arrow functions might seem the same as regular functions on the sur
 - Usage as constructors
 - `arguments` binding
 
-### Syntax
+## Syntax
 
 The first and most obvious difference between arrow functions and regular functions is their syntax. Not only do they look different, but arrow functions also provide an implicit return shorthand and allow parenthesis around a single argument to be omitted.
 
@@ -30,7 +30,7 @@ function square(a) {
 }
 ```
 
-### Execution context
+## Execution context
 
 Inside a regular function, execution context (i.e. the value of `this`) is dynamic. This means that the value of `this` depends on how the function was invoked (simple invocation, method invocation, indirect invocation or constructor invocation). On the other hand, an arrow function does not define its own execution context. This results in an arrow function's `this` being resolved lexically (i.e. the scope in which the arrow function was defined).
 
@@ -62,7 +62,7 @@ const logThisArrow = () => {
 logThisArrow.call(42);  // Logs the global object
 ```
 
-### Methods
+## Methods
 
 Due to arrow functions not defining their own execution context, they're not well-suited for usage as methods. However, thanks to the [Class fields proposal](https://github.com/tc39/proposal-class-fields), arrow functions can be used as methods inside classes, if your environment supports it.
 
@@ -81,7 +81,7 @@ obj.logThisX();       // Logs: 42, Object {...}
 obj.logThisXArrow();  // Logs: undefined, the global object
 ```
 
-### Constructors
+## Constructors
 
 Regular functions can be used as constructors, using the `new` keyword. Yet another consequence of the lexical resolution of `this` inside arrow functions is that they cannot be used as constructors. Using `new` with an arrow function results in a `TypeError`.
 
@@ -97,7 +97,7 @@ const Bar = foo => {
 const b = new Bar(42);  // TypeError: Bar is not a constructor
 ```
 
-### Arguments
+## Arguments
 
 Another difference is the binding of the `arguments` object. Unlike regular functions, arrow functions don't have their own `arguments` object. A modern alternative that circumvents this limitation is the usage of rest parameters.
 
@@ -119,6 +119,6 @@ const sumRest = (...arguments) => {
 sumRest(4, 6);    // 10
 ```
 
-### Other differences
+## Other differences
 
 Finally, there are a couple of other differences that are not as important, but worth mentioning. These include the lack of a `prototype` property in arrow functions, as well as the fact that the `yield` keyword may not be used in an arrow function's body. A consequence of the latter is that arrow functions cannot be used as generators.

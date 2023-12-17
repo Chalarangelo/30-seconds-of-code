@@ -8,13 +8,13 @@ excerpt: Learn everything you need to know about promises and asynchronous JavaS
 dateModified: 2021-06-12
 ---
 
-### Promise basics
+## Promise basics
 
 - **Promises** start in a **pending state**, neither fulfilled or rejected.
 - When the operation is completed, a promise will become **fulfilled with a value**.
 - If the operation fails, a promise will get **rejected with an error**.
 
-### Creating promises
+## Creating promises
 
 - The function passed to the `Promise` constructor will execute synchronously.
 - Use `resolve()` or `reject()` to create promises from values.
@@ -35,7 +35,7 @@ new Promise((resolve, reject) => {
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 ```
 
-### Handling promises
+## Handling promises
 
 - `Promise.prototype.then()` accepts two optional arguments (`onFulfilled`, `onRejected`).
 - `Promise.prototype.then()` will call `onFulfilled` once the promise is fulfilled.
@@ -69,7 +69,7 @@ promisedOperation()
 
 - All three of the above methods will not be executed at least until the next tick, even for promises that already have an outcome.
 
-### Combining promises
+## Combining promises
 
 - `Promise.all()` turns an array of promises into a promise of an array.
 - If any promise is rejected, the error will pass through.
@@ -90,7 +90,7 @@ Promise
   });
 ```
 
-### async/await
+## async/await
 
 - Calling an `async` function always results in a promise.
 - `(async () => value)()` will resolve to `value`.

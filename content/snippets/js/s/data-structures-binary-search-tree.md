@@ -9,7 +9,7 @@ excerpt: A binary search tree is a hierarchical data structure of ordered nodes 
 dateModified: 2021-08-31
 ---
 
-### Definition
+## Definition
 
 A binary search tree is a data structure consisting of a set of ordered linked nodes that represent a hierarchical tree structure. Each node is linked to others via parent-children relationship. Any given node can have at most two children (left and right). The first node in the binary search tree is the root, whereas nodes without any children are the leaves. The binary search tree is organized in such a way that for any given node, all nodes in its left subtree have a key less than itself and all nodes in its right subtree have a key greater than itself.
 
@@ -33,7 +33,7 @@ The main operations of a binary search tree data structure are:
 - `postOrderTraversal`: Traverses the binary search tree by recursively traversing each node's children followed by the node
 - `inOrderTraversal`: Traverses the binary search tree by recursively traversing each node's left child, followed by the node, followed by its right child
 
-### Implementation
+## Implementation
 
 ```js
 class BinarySearchTreeNode {

@@ -9,7 +9,7 @@ excerpt: A graph is a data structure consisting of a set of vertices connected b
 dateModified: 2021-08-17
 ---
 
-### Definition
+## Definition
 
 A graph is a data structure consisting of a set of nodes or vertices and a set of edges that represent connections between those nodes. Graphs can be directed or undirected, while their edges can be assigned numeric weights.
 
@@ -40,7 +40,7 @@ The main operations of a graph data structure are:
 - `indegree`: Calculates the total number of edges to a given node
 - `outdegree`: Calculates the total number of edges from a given node
 
-### Implementation
+## Implementation
 
 ```js
 class Graph {

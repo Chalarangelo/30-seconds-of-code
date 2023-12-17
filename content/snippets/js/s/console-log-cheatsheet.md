@@ -10,7 +10,7 @@ dateModified: 2021-06-12
 
 Everyone uses the JavaScript console for logging or debugging every once in a while. But there is a lot more to the [console](https://developer.mozilla.org/en-US/docs/Web/API/Console) object than `console.log()`.
 
-### Computed property names
+## Computed property names
 
 ES6 computed property names are particularly useful, as they can help you identify logged variables by adding a pair of curly braces around them.
 
@@ -20,7 +20,7 @@ const x = 1, y = 2, z = 3;
 console.log({x, y, z}); // {x: 1, y: 2, z: 3}
 ```
 
-### console.trace()
+## console.trace()
 
 [`console.trace()`](https://developer.mozilla.org/en-US/docs/Web/API/Console/trace) works the exact same as `console.log()`, but it also outputs the entire stack trace so you know exactly what's going on.
 
@@ -39,7 +39,7 @@ outer();
 */
 ```
 
-### console.group()
+## console.group()
 
 [`console.group()`](https://developer.mozilla.org/en-US/docs/Web/API/Console/group) allows you to group logs into collapsable structures and is particularly useful when you have multiple logs.
 
@@ -53,7 +53,7 @@ console.groupEnd();               // End of current group, 'Outer'
 console.log('Hi');                // Log outside of any groups
 ```
 
-### Logging levels
+## Logging levels
 
 There are a few more logging levels apart from `console.log()`, such as [`console.debug()`](https://developer.mozilla.org/en-US/docs/Web/API/Console/debug), [`console.info()`](https://developer.mozilla.org/en-US/docs/Web/API/Console/info), [`console.warn()`](https://developer.mozilla.org/en-US/docs/Web/API/Console/warn) and [`console.error()`](https://developer.mozilla.org/en-US/docs/Web/API/Console/error).
 
@@ -64,7 +64,7 @@ console.warn('This is a warning');
 console.error('Something went wrong!');
 ```
 
-### console.assert()
+## console.assert()
 
 [`console.assert()`](https://developer.mozilla.org/en-US/docs/Web/API/console/assert) provides a handy way to only log something as an error when an assertion fails (i.e. when the first argument is `false`), otherwise skip the log entirely.
 
@@ -75,7 +75,7 @@ console.assert(value === 10, 'Value is not 10!'); // Nothing is logged
 console.assert(value === 20, 'Value is not 20!'); // Logs "Value is not 20!"
 ```
 
-### console.count()
+## console.count()
 
 You can use [`console.count()`](https://developer.mozilla.org/en-US/docs/Web/API/Console/count) to count how many times a piece of code has executed.
 
@@ -92,7 +92,7 @@ Array.from({ length: 4 }).forEach(
 console.countReset('items');  // Reset the counter labelled 'items'
 ```
 
-### console.time()
+## console.time()
 
 [`console.time()`](https://developer.mozilla.org/en-US/docs/Web/API/Console/time) gives you a quick way to check the performance of your code, but should not be used for real benchmarking due to its low accuracy.
 
@@ -102,7 +102,7 @@ console.timeLog('slow comp'); // Log the value of the 'slow comp' timer
 console.timeEnd('slow comp'); // Stop and log the 'slow comp' timer
 ```
 
-### CSS
+## CSS
 
 Last but not least, you can use the `%c` string substitution expression in `console.log()` to apply CSS to parts of a log.
 

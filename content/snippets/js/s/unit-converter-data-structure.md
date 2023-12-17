@@ -9,7 +9,7 @@ excerpt: Learn how to create a unit converter data structure in JavaScript that 
 dateModified: 2023-11-08
 ---
 
-### Class-based unit converter data structure
+## Class-based unit converter data structure
 
 In its simplest form, any unit-based value is a **numeric value with a unit of measurement** attached to it. Converting from one unit to another is rather simple, so long as the **units are compatible** and you know the **conversion factor** between them.
 
@@ -58,7 +58,7 @@ distance.feet; // 32.808398950131235
 distance.centimeters; // 1000
 ```
 
-### Unit converter data structure factory function
+## Unit converter data structure factory function
 
 While this works perfectly fine for a specific type of measurement, we have to repeat the whole process for a different type of measurement. This is not ideal, as we can end up with a lot of **code duplication**.
 

@@ -9,7 +9,7 @@ excerpt: If you need to replace all occurrences of a string in JavaScript, you h
 dateModified: 2022-07-03
 ---
 
-### String.prototype.replaceAll()
+## String.prototype.replaceAll()
 
 Modern JavaScript engines have a built-in method called `String.prototype.replaceAll()`. This method can be used to replace all occurrences of a string in another string with relative ease.
 
@@ -21,7 +21,7 @@ str.replaceAll('o', 'x'); // 'Hellx Wxrld'
 
 Using `String.prototype.replaceAll()` is the recommended approach, as it's straightforward. If, however, you need to support older browsers, consider the option below.
 
-### String.prototype.replace()
+## String.prototype.replace()
 
 Before the introduction of `String.prototype.replaceAll()`, `String.prototype.replace()` was the method of choice for this sort of task. It's supported by all JavaScript engines, old and new and is very similar to `String.prototype.replaceAll()`.
 

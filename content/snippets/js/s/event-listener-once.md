@@ -9,7 +9,7 @@ excerpt: Learn how to add an event listener that is executed at most once.
 dateModified: 2023-11-01
 ---
 
-### Event listener options
+## Event listener options
 
 `EventTarget.addEventListener()` expects an `options` object parameter, which allows you to pass a few different flags, one of which is `once`. Setting `once` to `true` results in the event handler being executed **at most once** for a given event per element.
 
@@ -30,7 +30,7 @@ listenOnce(
 
 Be advised that some older browsers, such as Internet Explorer, do not support this feature. If you need to support older browsers, you can use the flag-based implementation that follows.
 
-### Using a flag
+## Using a flag
 
 If you are targeting **older browsers**, you can use a **flag-based implementation**. This relies on the event listener changing the status of the `fired` flag, thus resulting in subsequent calls to the event handler being ignored.
 
@@ -52,7 +52,7 @@ listenOnce(
 
 As this implementation is targeted at older browsers, bear in mind that you might want to transpile certain features, such as arrow functions, to **ensure compatibility**.
 
-### jQuery
+## jQuery
 
 Back in the day, **jQuery** was all the rage due in no small part to it easy to use event handling API. We would usually use [`$.one()`](https://api.jquery.com/one/) to create an event handler that would execute at most once for a given event per element.
 

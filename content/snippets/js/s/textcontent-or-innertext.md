@@ -11,7 +11,7 @@ dateModified: 2023-03-19
 
 JavaScript provides two properties you can use to **access the text content of an element**: `Node.textContent` and `HTMLElement.innerText`. For the most part, these two appear to be interchangeable. In fact, many developers use them interchangeably, not knowing that there are important differences between the two.
 
-### Similarities
+## Similarities
 
 I think it's helpful to identify the similarities of these two properties before diving into the differences. This will also clarify how they're used in most cases.
 
@@ -33,7 +33,7 @@ greeting.innerText = 'Hello!'; // <p id="greeting">Hello!</p>
 greeting.textContent = 'Hi!'; // <p id="greeting">Hi!</p>
 ```
 
-### Differences
+## Differences
 
 So far, these two properties appear to do the exact same thing. In fact, they both offer some convenient features that make them very useful. However, they start to exhibit some differences when the element's content is a little more complex.
 
@@ -86,12 +86,12 @@ The final point I want to make is that `HTMLElement.innerText` applies **text tr
 
 On the other hand, `Node.textContent` returns the **exact text content** of the element, including any whitespace and line breaks. Yet, `<br>` tags are stripped without any sort of replacement. It also includes the text content of any hidden elements, such as `<style>` and `<script>` and no text transformations are applied.
 
-### Performance
+## Performance
 
 But, wait! There's more! While `HTMLElement.innerText` seems like the sensible choice, it comes with a performance caveat. In order to figure out what the browser renders, CSS has to be considered, triggering a [reflow](https://developer.mozilla.org/en-US/docs/Glossary/Reflow). This can be **computationally expensive**, and can create inadvertent performance bottlenecks.
 
 In my opinion, a good rule of thumb is to prefer `Node.textContent` for plain text elements, if possible. For more complex elements, try identifying how they're affected by layout and user interactions. For example, a complex element that's rendered only once and never altered, would be a use case for `HTMLElement.innerText`, but you can store the output in a variable and reuse it.
 
-### Conclusion
+## Conclusion
 
 `HTMLElement.innerText` and `Node.textContent` are two very similar properties that can be used to access and manipulate the text content of an element. However, they differ in some important ways, and you should be aware of these differences to choose the one that best suits your needs. Always examine your use case and consider the performance implications of your choice.

@@ -10,7 +10,7 @@ excerpt: Easily apply the Celsius to Fahrenheit and Fahrenheit to Celsius formul
 dateModified: 2023-09-14
 ---
 
-### Celsius to Fahrenheit
+## Celsius to Fahrenheit
 
 In order to convert from Celsius to Fahrenheit, you can use the conversion formula `F = 1.8 * C + 32`.
 
@@ -20,7 +20,7 @@ const celsiusToFahrenheit = degrees => 1.8 * degrees + 32;
 celsiusToFahrenheit(33); // 91.4
 ```
 
-### Fahrenheit to Celsius
+## Fahrenheit to Celsius
 
 Conversely, the conversion formula from Fahrenheit to Celsius is `C = (F - 32) * 5 / 9`.
 

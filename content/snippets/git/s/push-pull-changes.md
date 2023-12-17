@@ -11,7 +11,7 @@ dateModified: 2023-06-01
 
 One of the main benefits of using Git is the ability to collaborate with others on the same project. This is done by setting up a remote repository that can be accessed by all collaborators. But, in order to collaborate, you'll have to synchronize your local repository with the remote one. This is where the push and pull operations come in.
 
-### Push changes to remote
+## Push changes to remote
 
 In order to push changes to the remote repository, you'll first have to set up a remote tracking branch. This is often done by using `git branch` with the `-u` flag. Then, you can use `git push` to push the latest changes from the local branch to the remote.
 
@@ -34,7 +34,7 @@ git push --set-upstream origin patch-1
 # The remote `patch-1` branch is now up to date with the local branch
 ```
 
-### Pull changes from remote
+## Pull changes from remote
 
 Similar to pushing changes to a remote repository, you'll have to set up a remote tracking branch before you can pull changes from it. Luckily, `git checkout` is smart enough to do this for you, provided there is no local branch with the same name as the remote one. Then, you can use `git pull` to fetch and apply the latest changes from the remote.
 

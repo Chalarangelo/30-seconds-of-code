@@ -9,7 +9,7 @@ excerpt: Need to reload the current page using JavaScript? Here's the best way t
 dateModified: 2023-05-14
 ---
 
-### The short answer
+## The short answer
 
 Most often than not, `window.location.reload()` is all you need to reload the current page. This method behaves exactly like the **browser's reload button**, using the same cache rules and everything.
 
@@ -18,7 +18,7 @@ Most often than not, `window.location.reload()` is all you need to reload the cu
 window.location.reload();
 ```
 
-### The slightly longer answer
+## The slightly longer answer
 
 While `window.location.reload()` is the most common way to reload a page, there are some nuances that you might need to be aware of.
 

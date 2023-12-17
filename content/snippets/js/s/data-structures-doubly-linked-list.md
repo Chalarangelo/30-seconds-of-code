@@ -9,7 +9,7 @@ excerpt: A doubly linked list is a linear data structure where each element poin
 dateModified: 2021-08-12
 ---
 
-### Definition
+## Definition
 
 A doubly linked list is a linear data structure that represents a collection of elements, where each element points both to the next and the previous one. The first element in the doubly linked list is the head and the last element is the tail.
 
@@ -35,7 +35,7 @@ The main operations of a doubly linked list data structure are:
 - `clear`: Empties the doubly linked list
 - `reverse`: Reverses the order of elements in the doubly linked list
 
-### Implementation
+## Implementation
 
 ```js
 class DoublyLinkedList {

@@ -9,7 +9,7 @@ excerpt: Checking if an array includes a specific value is pretty straightforwar
 dateModified: 2022-09-18
 ---
 
-### Primitive values
+## Primitive values
 
 You can use `Array.prototype.includes()` to check if an array contains a primitive value. This is the most convenient option when working with strings, numbers, booleans, symbols, `null` or `undefined`. You can even specify an index as a secondary parameter to start searching from.
 
@@ -21,7 +21,7 @@ array.includes(6); // false
 array.includes(3, 3); // false
 ```
 
-### Objects
+## Objects
 
 Unlike primitive values, you can't use `Array.prototype.includes()` to check if an array includes an object. This comes down to how JavaScript compares values and the fact that [objects are reference types](/js/s/pass-by-reference-or-pass-by-value). I highly recommend reading the previous article about [object comparison](/js/s/object-comparison), as I won't be going into detail on how to compare objects here.
 

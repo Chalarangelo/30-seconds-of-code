@@ -9,7 +9,7 @@ excerpt: Chunk an array or iterable into arrays of a specified size or a given n
 dateModified: 2023-11-07
 ---
 
-### Split array into chunks of a given size
+## Split array into chunks of a given size
 
 In order to split an array into chunks of a given size, you need to know the **amount of chunks that will be produced**. This can be calculated by dividing the length of the array by the size of each chunk and rounding up to the nearest integer, using `Math.ceil()`.
 
@@ -24,7 +24,7 @@ const chunk = (arr, size) =>
 chunk([1, 2, 3, 4, 5], 2); // [[1, 2], [3, 4], [5]]
 ```
 
-### Split array into a given number of chunks
+## Split array into a given number of chunks
 
 Similarly, in order to split an array into a given number of chunks, you need to **know the size of each chunk**. This can be calculated by dividing the length of the array by the number of chunks and rounding up to the nearest integer, using `Math.ceil()`. The rest of the process is the same as above.
 
@@ -39,7 +39,7 @@ const chunkIntoN = (arr, n) => {
 chunkIntoN([1, 2, 3, 4, 5, 6, 7], 4); // [[1, 2], [3, 4], [5, 6], [7]]
 ```
 
-### Split array into chunks, without dangling elements
+## Split array into chunks, without dangling elements
 
 As mentioned previously, **the final chunk can contain fewer elements** than the specified size, if the original array can't be split evenly. In order to alter this behavior, you can modify the code snippet to accommodate an additional parameter for the **minimum chunk size**.
 
@@ -68,7 +68,7 @@ chunkWithMinSize(x, 5, 3); // [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10, 11]]
 chunkWithMinSize(x, 4, 2); // [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11]]
 ```
 
-### Split iterable into chunks of a given size
+## Split iterable into chunks of a given size
 
 Any iterable can be chunked in a similar fashion, using a **generator function**. The only difference is that the iterable needs to be iterated over using a `for...of` loop, instead of `Array.prototype.slice()`. This is due to the fact that the **number of chunks cannot be determined in advance**.
 

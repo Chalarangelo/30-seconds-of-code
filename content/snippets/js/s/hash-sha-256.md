@@ -13,7 +13,7 @@ The [SHA-256](https://en.wikipedia.org/wiki/SHA-2) algorithm is a widely used ha
 
 Calculating a SHA-256 hash in JavaScript is easy using **native APIs**, but there are some differences between the browser and Node.js. As the browser implementation is asynchronous, both of the examples provided will return a `Promise` for consistency.
 
-### Browser
+## Browser
 
 In the browser, you can use the [SubtleCrypto](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto) API to create a hash for the given value. You first need to create a new `TextEncoder` and use it to encode the given value. Then, pass its value to `SubtleCrypto.digest()` to generate a digest of the given data, resulting in a `Promise`.
 
@@ -37,7 +37,7 @@ hashValue(
 // '04aa106279f5977f59f9067fa9712afc4aedc6f5862a8defc34552d8c7206393'
 ```
 
-### Node.js
+## Node.js
 
 In Node.js, you can use the `crypto` module to create a hash for the given value. You first need to create a `Hash` object with the appropriate algorithm using `crypto.createHash()`. Then, use `hash.update()` to add the data from `val` to the `Hash` and `hash.digest()` to calculate the digest of the data.
 
@@ -60,7 +60,7 @@ hashValue(JSON.stringify({ a: 'a', b: [1, 2, 3, 4], foo: { c: 'bar' } })).then(
 // '04aa106279f5977f59f9067fa9712afc4aedc6f5862a8defc34552d8c7206393'
 ```
 
-### Notes
+## Notes
 
 - The two implementations are **not compatible** with each other. You cannot use the browser implementation in Node.js and vice versa.
 - Both implementations should produce the same result for the same input.

@@ -11,7 +11,7 @@ dateModified: 2021-06-12
 
 The destructuring assignment syntax, first introduced in JavaScript ES6, allows the **unpacking of values** from arrays and objects into distinct variables. While it might seem intimidating at first, it's actually quite easy to learn and use. Let's break it down into easier to understand cases.
 
-### Array destructuring
+## Array destructuring
 
 Destructuring an array is very straightforward. All you have to do is declare a variable for each value in the sequence. You can define fewer variables than there are indexes in the array (i.e. if you only want to unpack the first few values), skip some indexes or even use the rest pattern to unpack any remaining values into a new array.
 
@@ -25,7 +25,7 @@ const [
 ] = nums;
 ```
 
-### Object destructuring
+## Object destructuring
 
 Object destructuring is pretty similar to array destructuring, the main difference being that you can reference each key in the object by name, creating a variable with the same name. Additionally, you can also unpack a key to a new variable name, unpack only the keys you need and use the rest pattern to unpack remaining keys into a new object.
 
@@ -38,7 +38,7 @@ const {
 } = obj;
 ```
 
-### Nested destructuring
+## Nested destructuring
 
 Nested objects and arrays can be unpacked by following the same rules. The difference here is that you can unpack nested keys or values directly to variables without having to store the parent object in a variable itself.
 
@@ -53,7 +53,7 @@ const {
 } = nested;
 ```
 
-### Advanced destructuring
+## Advanced destructuring
 
 As arrays act much like objects, it's possible to use the destructuring assignment syntax to get specific values from an array by using the index as a key in an object destructuring assignment. Additionally, using this method, you can get other properties of the array (e.g. its `length`). Finally, you can also define default values for variables in a destructuring assignment, in case the unpacked value is `undefined`.
 

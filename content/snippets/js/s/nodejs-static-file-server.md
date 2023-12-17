@@ -9,7 +9,7 @@ excerpt: Create your own static file server with Node.js in just 70 lines of cod
 dateModified: 2022-06-05
 ---
 
-### A simple static file server
+## A simple static file server
 
 One of the simplest beginner backend projects you can create is a static file server. In its simplest form, a static file server will listen for requests and try to match the requested URL to a file on the local filesystem. Here's a minimal example of that in action:
 
@@ -34,7 +34,7 @@ In this code example, we're using the `fs` module to read the file at `__dirname
 
 In theory, one could stop here and have a very basic static file server. However, there are a few considerations that could be taken into account. Let's explore them one by one, and see how we can address them.
 
-### Modularity
+## Modularity
 
 First and foremost, we don't necessarily want to serve files from the same directory as our Node.js server. To address this problem, we would have to change the directory `fs.readFile()` looks for the file in. To accomplish this, we can specify a directory to serve files from and use the `path` module to resolve files from that directory. This way, we can also better handle different operating systems and environments.
 
@@ -54,7 +54,7 @@ readFile(filePath, (err, data) => {
 });
 ```
 
-### Security
+## Security
 
 Our next concern is security. Obviously, we don't want users prying around our machine unauthorized. Currently, it's not impossible to get access to files outside of the specified root directory (e.g. `GET /../../../`). To address this, we can use the `path` module again to check if the requested file is inside the root directory.
 
@@ -83,7 +83,7 @@ const extension = extname(requestUrl).slice(1);
 const isTypeSupported = types.includes(extension);
 ```
 
-### Omitting the HTML extension
+## Omitting the HTML extension
 
 A staple of most websites is the ability to omit the file extension from the URL when requesting an HTML page. It's a small quality of life improvement that users expect and it would be really nice to add to our static file server.
 
@@ -112,7 +112,7 @@ else if (!extension) {
 }
 ```
 
-### Final touches
+## Final touches
 
 After implementing all of the above, we can put everything together to create a static file server with all the functionality we need. I'll throw in a couple of finishing touches, such as logging requests to the console and handling a few more file types, and here's the final product:
 

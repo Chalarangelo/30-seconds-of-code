@@ -58,7 +58,7 @@ const reducer = (state = initialState, action) => {
 };
 ```
 
-### Identifying the problems
+## Identifying the problems
 
 While the code in the example is not that complicated right now, complexity can increase very fast as more action types need to be handled by our application. This is due to the fact that each `action.type`'s logic is nested inside the `reducer` function, thus adding more code and complexity with each new action.
 
@@ -66,7 +66,7 @@ Another issue we can identify is that each `action` has a different structure, w
 
 Finally, our `action.type` values are hardcoded inside the `reducer` function, making it hard to remember and sync across other files and components. This might seem like the least of our problems, but it's probably the easiest one to fix, so let's start there.
 
-### Define action types
+## Define action types
 
 Starting with removing the hardcoded strings for each of the `action.type` values, we can make the code more maintainable and easier to read by extracting them to an object:
 
@@ -79,7 +79,7 @@ const ACTION_TYPES = {
 };
 ```
 
-### Create a common action structure
+## Create a common action structure
 
 Our `action` objects aren't consistent in terms of structure with the exception of sharing a `type` key which we use to identify each action. If we hope to reduce mental strain and minimize headaches, we should make these more consistent. The easiest way to do so would be to put the whole action `payload` under a top-level key and nest any values passed to the action inside it:
 
@@ -95,7 +95,7 @@ const action = {
 
 If you plug it into the previous code right away, it might seem counter-intuitive at first, but bear with me for a minute. It will all come together soon.
 
-### Extract nested logic
+## Extract nested logic
 
 Finally, we are ready to implement the most drastic fix which the previous two changes will help us facilitate - extracting nested logic. The first issue we identified was that each `action.type`'s logic was nested inside the `reducer` function. We can fix that by moving each `case` into its own function:
 
@@ -126,7 +126,7 @@ const removeProperty = (state, { propertyName }) => {
 
 Each function has a single responsibility. Any complexity associated with each `action.type` is now part of a function responsible for that specific action type. Testing these smaller functions is a lot easier now, as they are focused on a single task, instead of being nested into a larger, more complex `reducer`.
 
-### Putting it all together
+## Putting it all together
 
 Having implemented the above changes, let's take a look at what our final code looks like:
 

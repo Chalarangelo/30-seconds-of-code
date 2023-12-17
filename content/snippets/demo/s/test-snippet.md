@@ -11,20 +11,20 @@ dateModified: 2100-12-31
 
 This is a **test** snippet. It is intended to provide a centralized place to _test_ all sorts of markdown content that one could produce in a post. It is not intended to be published. Always make sure the `dateModified` is in the far, far future.
 
-## Headings
+# Headings
 
 Supported heading levels are between `2` and `4` (inclusive). Level `1` is reserved for the post title.
 
-## This is a level 2 heading with `some code`
+# This is a level 2 heading with `some code`
 
 In order to better test headings, we need to make sure that we have a lot of text here. The spacing between headings and paragraphs is imperative to get right.
 
-### This is a level 3 heading with `some code`
+## This is a level 3 heading with `some code`
 
 - Lists might end up appearing right after a heading.
 - We want to make sure they look correct, too.
 
-#### This is a level 4 heading with `some code`
+### This is a level 4 heading with `some code`
 
 ```html
 <h4>Didn't see this one coming, huh?</h4>
@@ -32,7 +32,7 @@ In order to better test headings, we need to make sure that we have a lot of tex
 
 This was a good opportunity to test what a code block would look like right after a heading. Hope it looks good!
 
-## Links
+# Links
 
 Links come in all shapes and sizes. They are often in the form of an automatically generated reference, such as `Array.from()`.
 
@@ -42,11 +42,11 @@ And some other times, you might get a mixed content link, such as a link for the
 
 However unlikely, it doesn't hurt to test for [`inline code block links that might break to a new line`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-decoration-break) to make sure they render nicely.
 
-## Code
+# Code
 
 **Code** is a key element in a website called _30 seconds of code_. Sometimes, it's `inline`, other times it's not. You might also have a key like <kbd>Cmd</kbd> in the text.
 
-### Single code block, with a language
+## Single code block, with a language
 
 ```js
 // First we need to make sure lines that are 80 characters long fit snugly here.
@@ -59,7 +59,7 @@ const aFunction = (a, b = 2) => {
 };
 ```
 
-### Three consecutive code blocks, in different languages
+## Three consecutive code blocks, in different languages
 
 ```html
 <div class="something">
@@ -82,7 +82,7 @@ if (element.innerText.match(/some text/gi)) {
 }
 ```
 
-### Single code block, without a language
+## Single code block, without a language
 
 ```
 This is a code block without a language. It doesn't appear very often, yet it's important to make sure it looks good.
@@ -90,15 +90,15 @@ This is a code block without a language. It doesn't appear very often, yet it's 
 Let's also ensure lines wrap on their, as needed. Might come in handy!
 ```
 
-## Other elements
+# Other elements
 
 There's a few more elements and some cases we should cover just to be safe.
 
-### Image illustrations
+## Image illustrations
 
 ![Diagram of Flexbox properties](./illustrations/flexbox-diagram.png)
 
-### Blockquotes
+## Blockquotes
 
 > This is a blockquote by some not-so-famous person. It's important to make sure it looks good, too. Let's also throw in a tiny bit of `code` for good measure.
 
@@ -106,7 +106,7 @@ There's a few more elements and some cases we should cover just to be safe.
 >
 > Notice how it's a little different.
 
-### Horizontal rules
+## Horizontal rules
 
 Apart from text, there are also horizontal rules.
 
@@ -114,11 +114,11 @@ Apart from text, there are also horizontal rules.
 
 We don't use them all that often, but you can see one above.
 
-### Special inline elements
+## Special inline elements
 
 Some other elements appear less frequently. Namely there's <small>small text</small>, which is relatively uncommon, exponents that look like <sup>this</sup> and this weird <sub>sub thing</sub> that we don't really use anywhere.
 
-### Tables
+## Tables
 
 Tables are quite special and they may be used in a few places. Let's make sure they look great.
 
@@ -132,7 +132,7 @@ Tables are quite special and they may be used in a few places. Let's make sure t
 | **Blockable by users** | Yes | Yes | Yes |
 | **Editable by users** | Yes | Yes | Yes |
 
-### Lists
+## Lists
 
 Somehow, we forgot about lists, but they are something we use a ton.
 
@@ -150,7 +150,7 @@ Somehow, we forgot about lists, but they are something we use a ton.
    2. That are also ordered
 4. And we can go back to the main list
 
-### Admonitions
+## Admonitions
 
 > [!NOTE]
 >

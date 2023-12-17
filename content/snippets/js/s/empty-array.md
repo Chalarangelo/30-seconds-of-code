@@ -11,7 +11,7 @@ dateModified: 2021-06-12
 
 When working with JavaScript arrays, a pretty common question is how does one empty an array and remove all its elements. As it turns out, there are a few ways you can go about this, each one with its pros and cons.
 
-### Assign it to an empty array
+## Assign it to an empty array
 
 You can assign your variable to an empty array (`[]`) in order to clear it. While this option is rather fast, you should be mindful of references to the original array, as they will remain unchanged. Moreover, it doesn't work for arrays declared as `const`.
 
@@ -20,7 +20,7 @@ let a = [1, 2, 3, 4];
 a = [];
 ```
 
-### Set its length to 0
+## Set its length to 0
 
 A better option is to set the `length` of the array to `0`. This option is also pretty fast and has the additional benefit of working for `const` variables.
 
@@ -29,7 +29,7 @@ let a = [1, 2, 3, 4];
 a.length = 0;
 ```
 
-### Use Array.prototype.splice()
+## Use Array.prototype.splice()
 
 `Array.prototype.splice()` can also be a useful alternative when trying to empty an array. While it has no other downsides compared to the previous method, it doesn't seem to perform as well, so that might be something to consider.
 
@@ -38,7 +38,7 @@ let a = [1, 2, 3, 4];
 a.splice(0, a.length);
 ```
 
-### Use Array.prototype.pop()
+## Use Array.prototype.pop()
 
 Last but not least, using `Array.prototype.pop()` is another, more old-fashioned option. It's generally more verbose and less performant, so I'd rather use one of the previous methods instead.
 

@@ -9,7 +9,7 @@ excerpt: A tree is a data structure consisting of a set of linked nodes represen
 dateModified: 2021-08-22
 ---
 
-### Definition
+## Definition
 
 A tree is a data structure consisting of a set of linked nodes that represent a hierarchical tree structure. Each node is linked to others via parent-children relationship. The first node in the tree is the root, whereas nodes without any children are the leaves.
 
@@ -30,7 +30,7 @@ The main operations of a tree data structure are:
 - `preOrderTraversal`: Traverses the tree by recursively traversing each node followed by its children
 - `postOrderTraversal`: Traverses the tree by recursively traversing each node's children followed by the node
 
-### Implementation
+## Implementation
 
 ```js
 class TreeNode {

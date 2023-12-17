@@ -11,7 +11,7 @@ dateModified: 2021-07-11
 
 I recently came across the concept of **Boolean traps** and it instantly resonated with me due to the volume of Google searches I've performed because of it. In this article, I'll try to explain what it is, why it's somewhat of an anti-pattern, how to spot it in your code and ways to refactor around it.
 
-### Boolean trap - What's in a name?
+## Boolean trap - What's in a name?
 
 While the name **Boolean trap** might be unfamiliar to some, I'm pretty certain the concept it represents isn't. The simplest form of a boolean trap is a function that takes a boolean argument.
 
@@ -29,7 +29,7 @@ The first example suffers in terms of readability due to an obvious contradictio
 
 The second example is also hard to decipher without looking at some documentation. Here, the constructor expects a boolean argument that might mean literally anything. Would you have guessed that it's a flag indicating if the user should have administrative privileges? Probably not. The point is there is no way to tell what this argument means without looking at the documentation.
 
-### Red flag or red herring?
+## Red flag or red herring?
 
 At this point, you might be asking yourself why this is actually bad. Reading through the documentation is expected. After all, that's what it's there for. Except this starts to become a waste of time on return visits. If you're working with a library and look up a boolean argument over and over because it's not obvious, it becomes a bit of a hassle.
 
@@ -42,7 +42,7 @@ A bonus point here is the potential of further reducing readability by increasin
 input.setInvalid(false);
 ```
 
-### Not all booleans will trap you
+## Not all booleans will trap you
 
 As with most things, there is no universal best practice here. Even though I often find boolean arguments hard to read, I understand there are cases where you might want to use them.
 
@@ -54,7 +54,7 @@ element.setProperty('disabled', true);
 
 In this example, it's pretty straightforward what `true` does. Notice that the double negative from before might still make this slightly hard to read, but it makes sense to use a boolean in this context. Why? Well, it's essentially a setter function and passing the actual value of the property isn't such a bad idea.
 
-### Mitigating the problem
+## Mitigating the problem
 
 We've already established what a boolean trap is and why it's bad. But how do we fix it? Even if we can spot the anti-pattern, it might be hard to change it before it affects a lot of code and developers. Some languages support named arguments and that usually solves the problem quite easily. JavaScript on the other hand doesn't, but there's always the option to pass an options object.
 
@@ -72,6 +72,6 @@ Without huge changes to the API, we could have avoided the boolean trap altogeth
 
 On a side note, while comments seem an appropriate solution, they will inevitably become stale and out of touch with the API. It's best to leave this kind of information to the official documentation or source code, instead.
 
-### Conclusion
+## Conclusion
 
 To summarize, boolean arguments in functions can be the source of a lot of wasted time and the cause for low code readability if used incorrectly. They're sometimes considered an anti-pattern as they increase cognitive load and reduce maintainability of shared code. Luckily, they're very easy to spot and fix using plain JavaScript option objects.

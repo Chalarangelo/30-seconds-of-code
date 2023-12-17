@@ -9,7 +9,7 @@ excerpt: A queue is a linear data structure which follows a first in, first out 
 dateModified: 2021-07-29
 ---
 
-### Definition
+## Definition
 
 A queue is a linear data structure that behaves like a real-world queue. It follows a first in, first out (FIFO) order of operations, similar to its real-world counterpart. This means that new items are added to the end of the queue, whereas items are removed from the start of the queue.
 
@@ -22,7 +22,7 @@ The main operations of a queue data structure are:
 - `peek`: Retrieves the element at the start of the queue, without removing it
 - `isEmpty`: Checks if the queue is empty
 
-### Implementation
+## Implementation
 
 ```js
 class Queue {

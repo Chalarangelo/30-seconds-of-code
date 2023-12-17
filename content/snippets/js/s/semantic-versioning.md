@@ -18,7 +18,7 @@ dateModified: 2023-07-16
 }
 ```
 
-### SemVer versions
+## SemVer versions
 
 SemVer versions are formatted in **three numeric components**, as follows:
 
@@ -40,13 +40,13 @@ The following table summarizes the different types of changes represented by eac
 | Minor     | Compatible     | New features, functionalities, enhancements |
 | Patch     | Compatible     | Bug fixes, patches, maintenance releases |
 
-### Releases and pre-releases
+## Releases and pre-releases
 
 The **first version** of a software package is typically denoted as `1.0.0`. This is because the initial release of a software package is considered to be a major version, and the first version of a major version is always `1.0.0`. Versions starting with `0.x.x` are considered to be pre-release versions and are not intended for production use.
 
 Additionally, SemVer allows for **pre-release versions** to be appended to the version number. These are denoted by a hyphen followed by a series of alphanumeric identifiers, such as `1.0.0-alpha.1` or `1.0.0-beta.2`. Pre-release versions are typically used to indicate that the software is still under active development and may not be ready for production use.
 
-### Specifying which version to use
+## Specifying which version to use
 
 When installing a package, you can specify which version to use by appending the version number to the package name, as follows:
 

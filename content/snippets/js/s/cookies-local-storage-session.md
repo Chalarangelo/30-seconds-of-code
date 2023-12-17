@@ -9,7 +9,7 @@ excerpt: Learn the difference between cookies, local storage and session storage
 dateModified: 2021-06-12
 ---
 
-### Cookies
+## Cookies
 
 Cookies store small amounts of data that has to be sent back to the server with subsequent requests and their expiration can be set from either server or client. They are primarily used for server-side reading.
 
@@ -21,7 +21,7 @@ Cookies store small amounts of data that has to be sent back to the server with 
 - Blockable by users: Yes
 - Editable by users: Yes
 
-### Local storage
+## Local storage
 
 Local storage stores a larger amount of data on the client's computer in a key-value pair format and has no expiration date. Data is never transferred to the server and is accessible via JavaScript and HTML5.
 
@@ -33,7 +33,7 @@ Local storage stores a larger amount of data on the client's computer in a key-v
 - Blockable by users: Yes
 - Editable by users: Yes
 
-### Session storage
+## Session storage
 
 Session storage stores a larger amount of data on the client's computer only for the current session, expiring the data on tab close. Data is never transferred to the server and is accessible client-side from the same tab.
 

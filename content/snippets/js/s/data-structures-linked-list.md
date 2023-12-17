@@ -9,7 +9,7 @@ excerpt: A linked list is a linear data structure where each element points to t
 dateModified: 2021-08-08
 ---
 
-### Definition
+## Definition
 
 A linked list is a linear data structure that represents a collection of elements, where each element points to the next one. The first element in the linked list is the head and the last element is the tail.
 
@@ -34,7 +34,7 @@ The main operations of a linked list data structure are:
 - `clear`: Empties the linked list
 - `reverse`: Reverses the order of elements in the linked list
 
-### Implementation
+## Implementation
 
 ```js
 class LinkedList {

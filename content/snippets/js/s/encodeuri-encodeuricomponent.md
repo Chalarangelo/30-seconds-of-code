@@ -9,7 +9,7 @@ excerpt: JavaScript provides two methods for encoding characters to URL-safe str
 dateModified: 2021-06-12
 ---
 
-### encodeURIComponent()
+## encodeURIComponent()
 
 The [`encodeURIComponent()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent) function encodes everything in the given string, except `A-Z a-z 0-9 - _ . ! ~ * ' ( )`. You should use this function if the string you are encoding is only part of a URL.
 
@@ -24,7 +24,7 @@ encodeURIComponent(fullURL);  // Bad, encoded URL is not valid
 // 'https%3A%2F%2Fmy-website.com%2Fmy-page%3Fquery%3D%22a%25b%22%26user%3D1'
 ```
 
-### encodeURI()
+## encodeURI()
 
 The [`encodeURI()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI) function encodes everything in the given string, except `A-Z a-z 0-9 ; , / ? : @ & = + $ - _ . ! ~ * ' ( ) #`. You should use this function if the string you are encoding is a full URL.
 

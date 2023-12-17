@@ -9,12 +9,12 @@ excerpt: Learn everything you need to know about Python's slice notation with th
 dateModified: 2021-06-12
 ---
 
-#### Python slice notation
+### Python slice notation
 
 - Understanding Python's slice notation (this blog post)
 - [Understanding Python's slice assignment](/blog/s/python-slice-assignment)
 
-### Basic syntax
+## Basic syntax
 
 Python's slice notation is used to return a list or a portion of a list. The basic syntax is as follows:
 
@@ -43,7 +43,7 @@ As you can probably tell from the examples above, the default values are `start_
 
 > An idiomatic way to shallow clone a list would be using `[:]` (e.g. `nums_clone = nums[:]`).
 
-### Negative values
+## Negative values
 
 All three of the arguments also accept negative values. For `start_at` and `stop_before`, a negative value means counting from the end of the list instead of counting from the start. For example `-1` would represent the last element, `-2` the second last element etc. For example:
 
@@ -64,7 +64,7 @@ nums[4:1:-1]  # [5, 4, 3]   (reversed, start at 4, stop after 1)
 nums[-1:1:-2] # [5, 3]      (reversed, start at last, stop after 1, every 2nd)
 ```
 
-### Empty slices
+## Empty slices
 
 Bear in mind that slice notation is very forgiving, so you'll get an empty list if the arguments' values are out of the list's range. For example:
 

@@ -9,7 +9,7 @@ excerpt: Learn how you can compare two dates in JavaScript using various differe
 dateModified: 2022-01-16
 ---
 
-### Equality comparison
+## Equality comparison
 
 Comparing two dates in JavaScript using the loose or strict equality operators (`==` or `===`) is not recommended for most cases. Equality operators compare the `Date` object references, resulting in `false`, even if the date values are the same:
 
@@ -20,7 +20,7 @@ const b = new Date(2022, 01, 10);
 a === b; // false
 ```
 
-### Date.prototype.getTime()
+## Date.prototype.getTime()
 
 One way to compare two `Date` values is using the `Date.prototype.getTime()` method. This method returns a number indicating the number of milliseconds elapsed since the Unix Epoch:
 
@@ -31,7 +31,7 @@ const b = new Date(2022, 01, 10);
 a.getTime() === b.getTime(); // true
 ```
 
-### Other methods
+## Other methods
 
 As mentioned before, `Date.prototype.getTime()` is one way to compare two `Date` values. It's not the only one way to compare them. Other options are the following:
 

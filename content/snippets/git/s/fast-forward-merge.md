@@ -13,11 +13,11 @@ Merging a branch is one of the most common operations when working with Git. Dep
 
 ![Git fast forward explained](./illustrations/git-fast-forward.png)
 
-### Fast-forward merge
+## Fast-forward merge
 
 As stated above, Git's default is to use fast-forward merge. It will take the commits from the branch being merged and place them at the tip of the branch you're merging into. This creates a **linear history**, which is also the main advantage of using fast-forward merge. If you want to emulate fast-forward merge on GitHub, you can use the "Rebase and merge" option.
 
-### Non fast-forward merge
+## Non fast-forward merge
 
 GitHub, on the other hand, uses non fast-forward merge by default. It will create a merge commit at the tip of the branch you're merging into, optionally referencing the branch being merged in the commit message. This has the advantage of **keeping track of branches** more explicitly than fast-forward merge. If you want to get the same behavior in a Git terminal, you can use the `--no-ff` flag.
 

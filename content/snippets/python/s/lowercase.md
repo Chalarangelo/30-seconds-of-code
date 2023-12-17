@@ -9,7 +9,7 @@ excerpt: Learn of the two different ways to convert strings to lowercase in Pyth
 dateModified: 2021-06-12
 ---
 
-### str.lower()
+## str.lower()
 
 Python's standard method for converting a string to lowercase is `str.lower()` and is compatible with both Python 2 and Python 3. While this is the standard way for most cases, there are certain cases where this method might not be the most appropriate, especially if you are working with Unicode strings.
 
@@ -21,7 +21,7 @@ Python's standard method for converting a string to lowercase is `str.lower()` a
 'Straße'.upper().lower() == 'Straße'.lower() # False ('strasse' != 'straße')
 ```
 
-### str.casefold()
+## str.casefold()
 
 Python 3 introduced `str.casefold()`, which is very similar to `str.lower()`, but more aggressive as it is intended to remove all case distinctions in Unicode strings. It implements the casefolding algorithm as described in [section 3.13 of the Unicode Standard](https://www.unicode.org/versions/Unicode9.0.0/ch03.pdf).
 

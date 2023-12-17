@@ -9,7 +9,7 @@ excerpt: Learn how you can compare two objects in JavaScript using various diffe
 dateModified: 2021-09-26
 ---
 
-### Equality comparison
+## Equality comparison
 
 Even though two different objects can have the same properties with equal values, they are not considered equal when compared using either the loose or strict equality operators (`==` or `===`). This is because arrays and objects in JavaScript are compared by reference. This is unlike primitive values which are compared by value.
 
@@ -20,7 +20,7 @@ const b = { name: 'John', age: 26 };
 a === b; // false
 ```
 
-### JSON.stringify
+## JSON.stringify
 
 `JSON.stringify()` often comes up as the solution to this problem. While it can be useful in some situations, comparing the serialized strings can have its own pitfalls. The most common of these has to do with similar, but not equal, values that result in the same serialized string.
 
@@ -38,7 +38,7 @@ const d = { name: 'John', age: undefined };
 equals(c, d); // true, should be false
 ```
 
-### Deep equality comparison
+## Deep equality comparison
 
 As it turns out, comparing two objects is not trivial. This is the reason why shallow or deep equality comparison helper functions are so common. These usually use recursion to deeply compare two objects, accounting for most scenarios such as empty values, special types and nesting.
 

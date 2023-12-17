@@ -11,7 +11,7 @@ dateModified: 2022-02-13
 
 Most JavaScript developers are familiar with objects and probably use them every day. Maps, on the other hand, are not as common but are still very useful. While very similar to objects on the surface, they have some very important differences. Let's take a look at them.
 
-### Key types
+## Key types
 
 Object keys are limited to using only strings and symbols. Maps, on the other hand, can use values of any type as their keys, including functions and objects. This can come in handy in many different scenarios, such as memoization and data association.
 
@@ -40,7 +40,7 @@ const peopleIndexMap = new Map(
 // }
 ```
 
-### Iteration
+## Iteration
 
 Object iteration is usually accomplished using `Object.keys()`, `Object.values()` or `Object.entries()`. All of these methods are available on Maps as part of their prototype, but they are significantly more efficient. The reason for this is that these Map methods return iterators, which are lazy and only iterate over the keys or values when they are needed. Additionally, Maps expose an iterator, which can be used with `for...of` loops.
 
@@ -58,7 +58,7 @@ for (const [key, value] of map)
   console.log(`${key} => ${value}`);
 ```
 
-### Other differences
+## Other differences
 
 Apart from the two main differences mentioned already, there are some other, less noticeable, ones. These include the following:
 

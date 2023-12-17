@@ -18,7 +18,7 @@ Preventing the footer from floating up the page is important when trying to crea
 </body>
 ```
 
-### Using Flexbox
+## Using Flexbox
 
 You can use flexbox to ensure that the footer is always at the bottom of the page. This is done by setting the giving the `body` element `min-height: 100vh`, `display: flex` and `flex-direction: column`. Then, give the `footer` element a `margin-top: auto` to make its margin fill the remaining space between it and its previous sibling. Note that this technique will not stretch the previous sibling, but rather **push the footer to the bottom of the page**.
 
@@ -35,7 +35,7 @@ footer {
 }
 ```
 
-### Using Grid
+## Using Grid
 
 You can also use grid in a very similar fashion. Simply swap `display: flex` for `display: grid` and `flex-direction: column` for `grid-template-rows: 1fr auto` in the `body` element. No additional attributes are needed for the `footer` element. In this case, the `fr` unit is leveraged to stretch the `main` element to **fill the remaining space**.
 
@@ -47,6 +47,6 @@ body {
 }
 ```
 
-### Notes
+## Notes
 
 As you can see, both techniques are straightforward to implement. Depending on your needs one might be more suitable than the other. Generally speaking, grid is more flexible in most cases and can help if you have more complex layouts, which can include a header or sidebar.

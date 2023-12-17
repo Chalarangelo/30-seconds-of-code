@@ -11,7 +11,7 @@ dateModified: 2022-05-22
 
 CSS has two ways to target the root element of an HTML document - the `:root` pseudo-class and the `html` selector. While these are very similar to each other, they have a couple of differences you should know.
 
-### Selector specificity
+## Selector specificity
 
 The `:root` selector has a higher specificity than the `html` selector. This is because `:root` is a pseudo-class selector, while `html` is a type selector.
 
@@ -27,6 +27,6 @@ html {
 /* The HTML document's root element will have a red background-color.  */
 ```
 
-### Targeting the root element
+## Targeting the root element
 
 CSS can be used to style other types of documents, apart from HTML. This is where the `:root` element comes in to play, allowing you to style the root element of a document. This can be especially important when styling SVG documents, where the `html` selector will not work.

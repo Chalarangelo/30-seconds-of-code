@@ -9,7 +9,7 @@ excerpt: Learn how to programmatically copy text to clipboard with a few lines o
 dateModified: 2022-01-11
 ---
 
-### Asynchronous Clipboard API
+## Asynchronous Clipboard API
 
 A very common need when building websites is the ability to copy text to clipboard with a single button click. If you only need to support modern browsers, it's highly recommended to use the asynchronous [Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API). It's supported in all modern browsers and provides an easy and secure way to update the clipboard's contents.
 
@@ -25,7 +25,7 @@ const copyToClipboard = str => {
 
 This is pretty much how the [copyToClipboardAsync snippet](/js/s/copy-to-clipboard-async) is implemented and should work across all modern browsers.
 
-### Document.execCommand('copy')
+## Document.execCommand('copy')
 
 While support for the Clipboard API is pretty high across the board, you might need a fallback if you have to support older browsers. If that's the case, you can use `Document.execCommand('copy')` to do so. Here's a quick step-by-step guide:
 

@@ -9,7 +9,7 @@ excerpt: JavaScript ES6 introduced us to powerful new features, such as the spre
 dateModified: 2021-06-12
 ---
 
-### Spread syntax
+## Spread syntax
 
 The spread operator (`...`) allows you to expand a single array into its values. Some common use-cases for the spread operator include:
 
@@ -39,7 +39,7 @@ const f = [...e[0], ...e[1]]; // f = [1, 2, 3, 4]
 const g = [...'hello']; // g = ['h', 'e', 'l', 'l', 'o']
 ```
 
-### Rest syntax
+## Rest syntax
 
 The rest parameter syntax allows you to collapse any remaining arguments into an array. While it looks very similar to the spread operator, the rest parameter syntax is only used in function declarations (arrow or otherwise).
 

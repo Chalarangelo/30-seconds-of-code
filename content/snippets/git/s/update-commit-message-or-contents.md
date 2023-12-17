@@ -11,7 +11,7 @@ dateModified: 2023-05-23
 
 Have you ever wanted to change the last commit's message or contents? Maybe you forgot to add a file, or you misspelled something in the commit message. Whatever the reason, Git has you covered with the `--amend` option for the `git commit` command.
 
-### Change the last commit's message
+## Change the last commit's message
 
 If you only want to change the last commit's message, you can use `--amend` and simply add the `-m` option followed by the new message. This will replace the last commit's message with the new one.
 
@@ -27,7 +27,7 @@ git commit --amend -m "Fix the network bug"
 # This also changes its SHA-1 checksum
 ```
 
-### Change the last commit's contents
+## Change the last commit's contents
 
 If you want to change the last commit's contents, you can use `--amend` after staging the changes you want to add to the last commit. This will add any staged changes to the last commit, without changing its message.
 

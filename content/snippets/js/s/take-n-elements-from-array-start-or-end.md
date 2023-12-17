@@ -11,7 +11,7 @@ dateModified: 2023-07-09
 
 A very common scenario when working with arrays is to **get a subset of elements** from the start or end of the array. Depending on the use-case and the desired result, there are a few variants of this operation that might fit your needs.
 
-### Get the first N elements of an array
+## Get the first N elements of an array
 
 Starting simple, you might want to get the **first N elements** of an array. Using `Array.prototype.slice()` you can easily achieve this by passing `0` as the starting index and `n` as the ending index.
 
@@ -27,7 +27,7 @@ As you can see from these examples, `Array.prototype.slice()` is versatile enoug
 
 **Negative values** are a little odd, as you will end up getting all values between `0` and the `n`th to last element. If you want to avoid that behavior, you could simply add some code to validate that `n` is greater than or equal to `0` and throw an error otherwise.
 
-### Get the last N elements of an array
+## Get the last N elements of an array
 
 Getting the **last N elements** of an array is pretty similar. Passing a negative index to `Array.prototype.slice()` is all that's necessary to make this work.
 

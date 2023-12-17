@@ -8,7 +8,7 @@ excerpt: Regular expressions are a very useful tool. Save this cheatsheet for wh
 dateModified: 2021-06-12
 ---
 
-### Anchors
+## Anchors
 
 - `^`: start of the string or the start of a line in a multiline pattern
 - `$`: end of the string or the end of a line in a multiline pattern
@@ -19,7 +19,7 @@ dateModified: 2021-06-12
 >
 >Anchors are non-quantifiable (i.e. cannot be followed by a quantifier).
 
-### Character sequences
+## Character sequences
 
 - `.`: any character except line breaks
 - `\w`: any word character
@@ -38,7 +38,7 @@ dateModified: 2021-06-12
 >
 > Use `\` to escape special characters (e.g. `\`, `/`, `[`, `]`, `(`, `)`, `{`, `}` etc.).
 
-### Quantifiers
+## Quantifiers
 
 - `a?`: zero or one of `a` (equal to `a{0,1}`)
 - `a*`: zero or more of `a` (equal to `a{0,}`)
@@ -51,13 +51,13 @@ dateModified: 2021-06-12
 >
 > `a` is any valid quantifiable expression.
 
-### Groups
+## Groups
 
 - `(ab)`: match and capture everything enclosed (here exactly `ab`)
 - `(a|b)`: match and capture either one character (here `a` or `b`)
 - `(?:ab)`: match everything enclosed, without capturing
 
-### Flags
+## Flags
 
 - `g`: Global
 - `m`: Multiline

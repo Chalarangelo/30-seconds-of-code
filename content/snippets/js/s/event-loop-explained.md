@@ -11,7 +11,7 @@ dateModified: 2022-08-21
 
 The Event Loop is a source of confusion for many developers, but it's a fundamental piece of the JavaScript engine. It's what allows JavaScript to be single-threaded, yet able to execute in a non-blocking fashion. To understand the Event Loop, we first need to explain a few things about the JavaScript engine, such as the Call Stack, Tasks, Microtasks and their respective Queues. Let's break them down one by one.
 
-### The Call Stack
+## The Call Stack
 
 The **Call Stack** is a data structure that keeps track of the execution of JavaScript code. As the name suggests, it's a stack, thus a LIFO (Last In, First Out) data structure in memory. Each function that's executed is represented as a frame in the Call Stack and placed on top of the previous function.
 
@@ -39,17 +39,17 @@ function bar() {
 9. The function `console.log('bar')` is executed and popped off the Call Stack.
 10. The Call Stack is now empty.
 
-### Tasks and the Task Queue
+## Tasks and the Task Queue
 
 **Tasks** are scheduled, synchronous blocks of code. While executing, they have exclusive access to the Call Stack and can also enqueue other tasks. Between Tasks, the browser can perform rendering updates. Tasks are stored in the **Task Queue**, waiting to be executed by their associated functions. The Task Queue, in turn, is a FIFO (First In, First Out) data structure. Examples of Tasks include the callback function of an event listener associated with an event and the callback of `setTimeout()`.
 
-### Microtasks and the Microtask Queue
+## Microtasks and the Microtask Queue
 
 **Microtasks** are similar to Tasks in that they're scheduled, synchronous blocks of code with exclusive access to the Call Stack while executing. Additionally, they are stored in their own FIFO (First In, First Out) data structure, the **Microtask Queue**. Microtasks differ from Tasks, however, in that the Microtask Queue must be emptied out after a Task completes and before re-rendering. Examples of Microtasks include `Promise` callbacks and `MutationObserver` callbacks.
 
 Microtasks and the Microtask Queue are also referred to as Jobs and the Job Queue.
 
-### The Event Loop
+## The Event Loop
 
 Finally, the **Event Loop** is a loop that keeps running and checks if the Call Stack is empty. It processes Tasks and Microtasks, by placing them in the Call Stack one at a time and also controls the rendering process. It's made up of four key steps:
 
@@ -58,7 +58,7 @@ Finally, the **Event Loop** is a loop that keeps running and checks if the Call 
 3. **Microtask processing:** Select the first Microtask in the Microtask Queue and run it until the Call Stack is empty, repeating until the Microtask Queue is empty.
 4. **Rendering:** Re-render the UI and loop back to step 2.
 
-### A practical example
+## A practical example
 
 To better understand the Event Loop, let's look at a practical example, incorporating all of the above concepts:
 
@@ -100,7 +100,7 @@ Does the output look like what you expected? Let's break down what's happening, 
 15. Re-rendering would occur here, if there was any.
 16. The Call Stack is now empty.
 
-### Summary
+## Summary
 
 - The **Event Loop** is responsible for executing the JavaScript code. It first evaluates and executes the script, then processes **Tasks** and **Microtasks**.
 - **Tasks** and **Microtasks** are scheduled, synchronous blocks of code. They are executed one at a time, and are placed in the **Task Queue** and **Microtask Queue**, respectively.
@@ -108,7 +108,7 @@ Does the output look like what you expected? Let's break down what's happening, 
 - Whenever **Microtasks** are executed, the **Microtask Queue** must be emptied out before the next **Task** can be executed.
 - **Rendering** occurs between **Tasks**, but not between **Microtasks**.
 
-### Notes
+## Notes
 
 - The script evaluation step of the Event Loop is in itself treated similarly to a Task.
 - The second argument of `setTimeout()` indicates a minimum time until execution, not a guaranteed time. This is due to the fact that Tasks execute in order and that Microtasks may be executed in-between.

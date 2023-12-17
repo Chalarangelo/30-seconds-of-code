@@ -9,7 +9,7 @@ excerpt: Learn how to add or remove event listeners from elements with ease.
 dateModified: 2023-10-28
 ---
 
-### Add event listener
+## Add event listener
 
 In order to **add an event listener** to an element, you can use the `EventTarget.addEventListener()` method. Yet, in some cases, adding a listener for every single element can be a bit of a **performance** hit. In these cases, you can use [event delegation](/js/s/event-bubbling-capturing-delegation#event-delegation) to add a single event listener to a **parent element** and then check if the event target matches the target you're looking for.
 
@@ -48,7 +48,7 @@ on(document.body, 'click', fn, { target: 'p', options: { once: true} });
 //   but only once
 ```
 
-### Remove event listener
+## Remove event listener
 
 Removing an event listener from an element is as easy as adding one, maybe even easier. You can use the `EventTarget.removeEventListener()` method to **remove an event listener** from an element.
 
@@ -78,6 +78,6 @@ off(document.body, 'click', delegatorFnCapturing, { options: true });
 //   (capturing instead of bubbling example)
 ```
 
-#### Notes
+### Notes
 
 These functions are written in a way that somewhat mimics jQuery's [`on`](https://api.jquery.com/on/) and [`off`](https://api.jquery.com/off/) methods. They are not meant as a replacement, but rather as a way to use a similar syntax without having to include jQuery in your project.

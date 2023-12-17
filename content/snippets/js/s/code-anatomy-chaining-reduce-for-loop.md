@@ -9,7 +9,7 @@ excerpt: There are many ways to iterate and transform array data in JavaScript. 
 dateModified: 2021-06-12
 ---
 
-### For loops
+## For loops
 
 ```js
 const files = [ 'foo.txt ', '.bar', '   ', 'baz.foo' ];
@@ -33,7 +33,7 @@ for (let file of files) {
 - Uses `Array.prototype.push()` or the spread (`...`) operator to add elements.
 - `O(N)` complexity, each element will be iterated over only once.
 
-### Array reduce
+## Array reduce
 
 ```js
 const files = [ 'foo.txt ', '.bar', '   ', 'baz.foo' ];
@@ -56,7 +56,7 @@ const filePaths = files.reduce((acc, file) => {
 - Uses `Array.prototype.push()` or the spread (`...`) operator to add elements.
 - `O(N)` complexity, each element will be iterated over only once.
 
-### Method chaining
+## Method chaining
 
 ```js
 const files = [ 'foo.txt ', '.bar', '   ', 'baz.foo' ];

@@ -13,7 +13,7 @@ JavaScript allows you to **change the CSS properties of an element** by accessin
 
 Combining this technique with the spread operator (`...`) and `Array.prototype.forEach()` allows you to **show or hide multiple elements at once**.
 
-### Hide HTML elements
+## Hide HTML elements
 
 In order to hide an HTML element, you can use the `display: none` CSS property. This will remove the element from the page layout, but it will still be present in the DOM.
 
@@ -24,7 +24,7 @@ hide(...document.querySelectorAll('img'));
 // Hides all <img> elements on the page
 ```
 
-### Show HTML elements
+## Show HTML elements
 
 Most HTML elements have a default `display` property value. For example, the default value for `<div>` elements is `block`, while the default value for `<span>` elements is `inline`. In order to show an element, you can set its `display` property to its default value, or to an empty string (`''`).
 

@@ -13,7 +13,7 @@ JavaScript closures are used frequently, yet often misunderstood. Understanding 
 
 I strongly recommend you read the [previous article on closures](/js/s/closures) if you haven't already. Instead of rehashing the same information, I would like to discuss the dangers of using closures and present my view on the topic.
 
-### Hidden state
+## Hidden state
 
 The main argument against closures is that of hidden state. Hidden state refers to obscuring the state of an object or, in this case, a function. The argument is that **internal mutable state** can create unpredictable behavior and unexpected results. Due to this, it's often said that hidden state is the root of all evil when it comes to programming.
 
@@ -44,7 +44,7 @@ In this scenario, the `initCounter` function returns an object that contains hid
 
 While this is not uncommon, it can get more complicated when shared state comes into play or many pieces of code are interacting with one another. The common remedy to this issue is to use **functional programming** and refactor the hidden mutable state into an argument or a shared global variable.
 
-### Access to context
+## Access to context
 
 Not all closures are created equal. In fact, there are perfectly valid use-cases of closures that can make life a lot easier. For example, **accessing shared constants** should be considered pretty safe. After all, if you want truly pure functions you shouldn't even access globals and web APIs. This would be pretty impractical, as you would have to pass each global and API as an argument to the function.
 
@@ -61,7 +61,7 @@ randomNumber(10, () => 0.2); // 2.0
 
 Another benefit of these practices is that writing tests is a lot easier, as there's no confusion as to what needs to be mocked at any given time. In this example, we can easily replace `Math.random()` with any function that we want and know the resulting value.
 
-### Conclusion
+## Conclusion
 
 Closures in themselves are just another language feature that you have to wrap your head around. As a rule of thumb, use them sparingly, clarify your code's intent and provide escape hatches to reduce potential error surface.
 

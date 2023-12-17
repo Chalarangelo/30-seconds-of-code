@@ -9,7 +9,7 @@ excerpt: JavaScript arrow functions are a very useful tool to learn and master. 
 dateModified: 2021-06-12
 ---
 
-### Syntax
+## Syntax
 
 In order to understand arrow function syntax, we should start by refactoring a regular function step by step:
 
@@ -49,7 +49,7 @@ If the function is a single expression, you can omit the curly braces and `retur
 const square = a => a * a;
 ```
 
-### Execution context
+## Execution context
 
 The main difference between arrow functions and regular functions is execution context (i.e. the value of `this`). Technically speaking, most other differences often mentioned either stem from this one or are side effects of it.
 
