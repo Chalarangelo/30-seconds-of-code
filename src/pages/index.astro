@@ -1,16 +1,21 @@
 ---
+import '../styles/pages/index.scss';
+
 import fs from 'node:fs';
 import path from 'node:path';
 
-import prefabs from '#prefabs';
-
 import Layout from '#layouts/Layout';
-import PreviewCardList from '#components/PreviewCardList';
-import ListingChips from '#components/ListingChips';
-import Image from '#components/Image';
+import Hero from '#components/Hero';
+import PreviewList from '#components/PreviewList';
+import Chips from '#components/Chips';
+import Icon from '#components/Icon';
 
 const pagePath = path.join(process.cwd(), '.content', 'pages', 'index.json');
 const pageData = JSON.parse(fs.readFileSync(pagePath, 'utf8'));
+
+const title = 'Discover short code snippets for all your development needs.';
+const description =
+  'Browse snippets by collection or check out our top picks and latest articles below.';
 
 const {
   featuredCollections,
@@ -28,35 +33,22 @@ const {
   canonical={'/'}
   structuredData={structuredData}
 >
-  <div class='snippet-list-header g-c1 a-center'>
-    <div class='md:order-2 md:f-right my-2 mx-3.5 f-center'>
-      <Image
-        src={splashImage}
-        alt=''
-        height='240'
-        width='240'
-        fetchpriority='high'
-        class='br-md'
-      />
-    </div>
-    <div>
-      <h2 class={prefabs.listingTitle}>
-        Discover short code snippets for all your development needs.
-      </h2>
-      <p class='lh-loose mt-4 mx-3.5 mb-2 txt-100 fs-sm md:fs-md'>
-        Browse snippets by collection or check out our top picks and latest
-        articles below.
-      </p>
-    </div>
-  </div>
-  <ListingChips items={featuredCollections} />
-  <div class='g-c3 mb-8'>
-    <a
-      href={snippetListUrl}
-      class='inline-block lnk-no-animation relative mt-8'
-    >
-      <h2 class={prefabs.pageTitle}>New & Popular Snippets</h2>
-    </a>
-    <PreviewCardList contentItems={featuredSnippets} />
-  </div>
+  <main>
+  <Hero
+    title={title}
+    description={description}
+    cover={splashImage}
+    secondary
+  />
+  <Chips items={featuredCollections} />
+    <PreviewList contentItems={featuredSnippets}>
+      <h2 slot='title'>New & Popular Snippets</h2>
+      <nav slot='bottom-nav' aria-label='Snippets'>
+        <a href={snippetListUrl}>
+          Explore all snippets
+          <Icon name='arrow-right' size='1.25em' />
+        </a>
+      </nav>
+    </PreviewList>
+  </main>
 </Layout>
