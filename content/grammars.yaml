@@ -1,3 +1,5 @@
+# Note: Remember to check Prism for language grammars and update code highlight
+#      styles accordingly, when adding new languages.
 html: HTML
 js: JavaScript
 js-extras: JavaScript
