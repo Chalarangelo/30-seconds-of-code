@@ -1,0 +1,46 @@
+:root {
+  --color-background: none;
+  --color-background-light: hsl(240, 20%, 96%);
+  --color-text: hsla(0, 0%, 0%, 95%);
+  --color-text-light: hsla(0, 0%, 0%, 87%);
+  --color-text-lighter: hsla(0, 0%, 0%, 76%);
+  --color-primary: hsl(217, 98%, 66%);
+  --color-primary-light: hsl(217, 98%, 77%);
+  --color-code-background: hsl(225, 15%, 94%);
+  --color-border: hsl(235, 25%, 63%);
+  --color-border-light: hsl(235, 15%, 82%);
+}
+
+pre {
+  white-space: break-spaces;
+}
+
+pre,
+pre .token {
+  color: black !important;
+}
+
+nav,
+dialog,
+body>footer,
+main>article+section {
+  display: none !important;
+}
+
+body>header {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+body>header h1 img {
+  filter: drop-shadow(1px 1px 1px black);
+}
+
+a:any-link {
+  color: var(--color-text) !important;
+  border-radius: 0 !important;
+}
+
+a:not([id])::after {
+  content: ' [' attr(href) '] ';
+}
