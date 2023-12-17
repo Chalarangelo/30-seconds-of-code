@@ -2,7 +2,9 @@
   // Set up a grid layout with standard bleed on either side.
   @include layout-grid-with-bleed;
 
-  // Adjust bottom margin according to layout rhythm.
+  // Adjust top margin according to layout rhythm. This is necessary for lists
+  // without chips above them to add some extra space. In all other cases, this
+  // margin will collapse with the margin of the previous element.
   margin-block-start: var(--layout-row-spacing);
 
   // Note: This selector is not too specific, and allows for a sensible default
@@ -28,6 +30,15 @@
     align-items: start;
     column-gap: var(--spacing-16);
     row-gap: var(--spacing-24);
+  }
+
+  // Use a has selector, instead of applying directly to the `nav` element (e.g.
+  // pagination). This allows for the bottom slot of the list to be populated
+  // with different elements, such as the explore button on the homepage.
+  &:has(nav) {
+    > ul {
+      margin-block-end: var(--layout-area-spacing);
+    }
   }
 
   li {
