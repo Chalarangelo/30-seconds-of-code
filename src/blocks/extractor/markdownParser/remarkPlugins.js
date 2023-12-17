@@ -23,6 +23,10 @@ export const highlightCode = ({ grammars }) => {
 
       const languageStringLiteral = languages[languageName] || '';
 
+      // Note: While something classless, such as
+      // `[data-code-grammar=languageName]` whould be nicer to look at, Prism
+      // uses the same language-X classes to target nested styles. By using
+      // a class for this plugin, consistence and compliance are ensured.
       const attributes = {
         class: `language-${languageName} notranslate`,
         translate: `no`,
