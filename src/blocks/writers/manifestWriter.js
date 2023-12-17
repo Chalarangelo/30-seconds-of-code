@@ -5,8 +5,8 @@ import { JSONHandler } from '#blocks/utilities/jsonHandler';
 
 const { manifestCacheKey, websiteName, shortName } = globalSettings;
 const outPath = `${pathSettings.publicPath}/manifest.webmanifest`;
-const backgroundColor = '#0b0a12';
-const themeColor = '#0b0a12';
+const backgroundColor = '#07071c';
+const themeColor = '#07071c';
 const display = 'standalone';
 const iconDimensions = [48, 72, 96, 144, 192, 256, 384, 512];
 const iconPrefix = 'icon';
