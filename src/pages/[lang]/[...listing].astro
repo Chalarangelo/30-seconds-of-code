@@ -2,13 +2,11 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 
-import prefabs from '#prefabs';
-
 import Layout from '#layouts/Layout';
-import Paginator from '#components/Paginator';
-import Image from '#components/Image';
-import PreviewCardList from '#components/PreviewCardList';
-import ListingChips from '#components/ListingChips';
+import Hero from '#components/Hero';
+import Pagination from '#components/Pagination';
+import PreviewList from '#components/PreviewList';
+import Chips from '#components/Chips';
 
 export async function getStaticPaths() {
   const pagePath = path.join(
@@ -32,7 +30,7 @@ export async function getStaticPaths() {
 
 const {
   slug,
-  paginator = null,
+  pagination = null,
   collection,
   collectionItems,
   pageDescription,
@@ -47,31 +45,19 @@ const {
   structuredData={structuredData}
   canonical={slug}
 >
-  <div class='snippet-list-header g-c1 a-center'>
-    <div class='md:order-2 md:f-right my-2 mx-3.5 f-center'>
-      <Image
-        src={collection.cover}
-        alt=''
-        height='240'
-        width='240'
-        fetchpriority='high'
-        class='br-md'
-      />
-    </div>
-    <div>
-      <h1 class={prefabs.listingTitle}>{collection.name}</h1>
-      <p class='lh-loose mt-4 mx-3.5 mb-2 txt-100 fs-sm md:fs-md'>
-        {collection.description}
-      </p>
-    </div>
-  </div>
-  {
-    collection.sublinks.length ? (
-      <ListingChips items={collection.sublinks} />
-    ) : null
-  }
-  <div class='g-c3'>
-    <PreviewCardList contentItems={collectionItems} />
-    {paginator ? <Paginator paginator={paginator} /> : null}
-  </div>
+  <main>
+    <Hero
+      title={collection.name}
+      description={collection.description}
+      cover={collection.cover}
+    />
+    {
+      collection.sublinks.length ? (
+        <Chips items={collection.sublinks} />
+      ) : <div aria-hidden='true' data-area-gap />
+    }
+    <PreviewList contentItems={collectionItems}>
+      {pagination ? <Pagination pagination={pagination} slot='bottom-nav' /> : null}
+    </PreviewList>
+  </main>
 </Layout>
