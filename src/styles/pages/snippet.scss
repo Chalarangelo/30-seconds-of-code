@@ -1,0 +1,261 @@
+// Styles for code blocks in the snippet page. As these styles are only ever
+// used as part of the snipepet page for code highlighting, it's better to keep
+// them in a separate file and import them only in the page to reduce the
+// overall bundle size.
+:root {
+  --color-code-highlight-white: hsl(210, 17%, 82%);
+  --color-code-highlight-red: hsl(4, 87%, 68%);
+  --color-code-highlight-gray: hsl(212, 9%, 58%);
+  --color-code-highlight-green: hsl(125, 69%, 70%);
+  --color-code-highlight-blue: hsl(208, 100%, 74%);
+  --color-code-highlight-indigo: hsl(207, 100%, 82%);
+  --color-code-highlight-purple: hsl(269, 100%, 83%);
+  --color-code-highlight-brown: hsl(28, 100%, 67%);
+  // Note: In a future iteration, a media query for high contrast could be used
+  // to define an even higher contrast palette for code blocks.
+}
+
+// General-purpose code highlighting styles.
+.token {
+  &:is(.comment, .prolog, .cdata) {
+    color: var(--color-code-highlight-gray);
+  }
+
+  &:is(.doctype, .punctuation, .entity) {
+    color: var(--color-code-highlight-white);
+  }
+
+  &:is(.attr-name, .class-name, .boolean, .constant, .number, .atrule) {
+    color: var(--color-code-highlight-blue);
+  }
+
+  &:is(.keyword) {
+    color: var(--color-code-highlight-indigo);
+  }
+
+  &:is(.property, .tag, .symbol, .deleted, .important) {
+    color: var(--color-code-highlight-green);
+  }
+
+  &:is(.selector, .string, .char, .builtin, .inserted, .regex, .attr-value),
+  &.attr-value > .token.punctuation {
+    color: var(--color-code-highlight-blue);
+  }
+
+  &:is(.variable, .operator, .function) {
+    color: var(--color-code-highlight-indigo);
+  }
+
+  &.url {
+    color: var(--color-code-highlight-green);
+  }
+
+  // Note: Styles for .token.bold and .token.italic are not stylized to be bold or
+  // italic respectively. This is a deliberate choice to avoid some uncontrollable
+  // defaults applied by the highlighter (PrismJS).
+}
+
+[data-code-language] {
+  // Apply the white color for highlighted blocks.
+  color: var(--color-code-highlight-white);
+}
+
+// HTML overrides.
+.language-html {
+  .token.doctype > .token.doctype-tag {
+    color: var(--color-code-highlight-green);
+  }
+
+  .token.doctype > .token.name {
+    color: var(--color-code-highlight-purple);
+  }
+
+  .token.tag > .token.attr-name {
+    color: var(--color-code-highlight-purple);
+  }
+
+  .token.attr-value > .token.punctuation.attr-equals,
+  .token.special-attr > .token.attr-value > .token.value.css {
+    color: var(--color-code-highlight-white);
+  }
+
+  .token.entity {
+    color: var(--color-code-highlight-blue);
+  }
+}
+
+// CSS overrides.
+.language-css {
+  .token.atrule > .token.rule {
+    color: var(--color-code-highlight-red);
+  }
+
+  .token:is(.unit, .important) {
+    color: var(--color-code-highlight-red);
+  }
+
+  .token.selector {
+    color: var(--color-code-highlight-green);
+
+    & > .token:is(.class, .pseudo-class, .pseudo-element) {
+      color: var(--color-code-highlight-purple);
+    }
+
+    & > .token.id {
+      color: var(--color-code-highlight-indigo);
+    }
+
+    & > .token.attribute > .token.operator {
+      color: var(--color-code-highlight-red);
+    }
+  }
+
+  .token.property {
+    color: var(--color-code-highlight-blue);
+  }
+
+  .token.variable {
+    color: var(--color-code-highlight-brown);
+  }
+}
+
+// JS and JSX overrides.
+:is(.language-js, .language-jsx) {
+  .token.keyword {
+    color: var(--color-code-highlight-red);
+  }
+
+  .token:is(.operator, .constant, .boolean, .number, .atrule) {
+    color: var(--color-code-highlight-blue);
+  }
+
+  .token:is(.function, .function-variable) {
+    color: var(--color-code-highlight-purple);
+  }
+
+  .token:is(.attr-name, .class-name, .parameter) {
+    color: var(--color-code-highlight-brown);
+  }
+
+  .token.regex > .token.regex-delimiter {
+    color: var(--color-code-highlight-indigo);
+  }
+
+  .token.regex > .token.regex-flags {
+    color: var(--color-code-highlight-red);
+  }
+
+  .token.template-string {
+    color: var(--color-code-highlight-indigo);
+  }
+
+  .token.interpolation > .token.interpolation-punctuation {
+    color: var(--color-code-highlight-red);
+  }
+
+  .token.keyword.nil {
+    color: var(--color-code-highlight-blue);
+  }
+}
+
+// JSX overrides.
+.language-jsx {
+  .token.punctuation {
+    color: var(--color-code-highlight-blue);
+  }
+
+  .token.attr-name {
+    color: var(--color-code-highlight-purple);
+  }
+
+  .token.class-name {
+    color: var(--color-code-highlight-green);
+  }
+
+  .token.string {
+    color: var(--color-code-highlight-indigo);
+  }
+
+  .token.attr-value > .token.punctuation.attr-equals {
+    color: var(--color-code-highlight-red);
+  }
+
+  .token.script > .token.script-punctuation {
+    color: var(--color-code-highlight-red);
+  }
+}
+
+// JSON overrides.
+.language-json {
+  .token.operator {
+    color: var(--color-code-highlight-white);
+  }
+
+  .token.null.keyword {
+    color: var(--color-code-highlight-blue);
+  }
+}
+
+// Python overrides.
+.language-py {
+  .token.keyword {
+    color: var(--color-code-highlight-red);
+  }
+
+  .token:is(.function, .decorator) {
+    color: var(--color-code-highlight-purple);
+  }
+
+  .token.class-name {
+    color: var(--color-code-highlight-white);
+  }
+}
+
+// Bash overrides.
+.language-shell {
+  .token.keyword {
+    color: var(--color-code-highlight-red);
+  }
+
+  .token.variable {
+    color: var(--color-code-highlight-white);
+  }
+
+  .token:is(.function, .parameter) {
+    color: var(--color-code-highlight-purple);
+  }
+}
+
+// EditorConfig overrides.
+.language-editorconfig {
+  .token.section {
+    color: var(--color-code-highlight-green);
+  }
+
+  .token.attr-name {
+    color: var(--color-code-highlight-red);
+  }
+
+  .token.attr-value > .token.punctuation {
+    color: var(--color-code-highlight-white);
+  }
+}
+
+.language-diff {
+  .token.coord {
+    color: var(--color-code-highlight-purple);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .token.diff {
+    color: var(--color-code-highlight-brown);
+  }
+
+  .token.deleted {
+    color: var(--color-code-highlight-red);
+  }
+
+  .token.inserted {
+    color: var(--color-code-highlight-green);
+  }
+}
