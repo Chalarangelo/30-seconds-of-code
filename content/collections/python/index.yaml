@@ -11,4 +11,4 @@ description: >-
 shortDescription: >-
   Browse helper functions for Python 3.6, including utilities for primitives,
   lists, dictionaries and date objects.
-splash: terrarium.png
+splash: terrarium

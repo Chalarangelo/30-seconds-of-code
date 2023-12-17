@@ -7,7 +7,7 @@ snippetIds:
   - js/s/bottom-visible
   - js/s/get-scroll-position
   - js/s/get-scrollbar-width
-splash: travel-mug-1.png
+splash: travel-mug-1
 description: >-
   Getting the scroll position and manipulating with JavaScript can help you
   drive your users' attention to specific parts of your website. Learn some

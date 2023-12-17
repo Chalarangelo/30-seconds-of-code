@@ -4,7 +4,7 @@ shortName: HTML
 topLevel: true
 languageMatcher: html
 featured: true
-splash: tram-car-2.png
+splash: tram-car-2
 description: >-
   The HTML snippet collection contains tips, tricks and practical code examples
   to help you master web development. This collection covers elements, tags,

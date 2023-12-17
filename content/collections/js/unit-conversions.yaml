@@ -7,7 +7,7 @@ snippetIds:
   - js/s/convert-celsius-fahrenheit
   - js/s/convert-miles-km
   - js/s/unit-converter-data-structure
-splash: basics.png
+splash: basics
 description: >-
   Simple unit conversions come up in a lot of JavaScript applications. This
   snippet collection covers some of the most common conversions you might need

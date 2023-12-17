@@ -6,7 +6,7 @@ snippetIds:
   - js/s/arrow-regular-function-differences
   - js/s/arrow-function-event-listeners
   - js/s/this
-splash: coffee-float.png
+splash: coffee-float
 description: >-
   Arrow functions are one of the most useful tools in a JavaScript developer's
   arsenal. This collection of introductory articles can help you get started,

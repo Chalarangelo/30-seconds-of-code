@@ -15,7 +15,7 @@ snippetIds:
   - js/s/is-absolute-url
   - js/s/is-same-origin
   - js/s/join-url-segments
-splash: pots-and-plants.png
+splash: pots-and-plants
 description: >-
   URLs are an integral part of the web, which makes working with them an
   essential skill to have. This snippet collection contains the necessary

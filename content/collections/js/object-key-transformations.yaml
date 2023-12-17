@@ -8,7 +8,7 @@ snippetIds:
   - js/s/rename-object-keys
   - js/s/deep-map-object-keys
   - js/s/symbolize-object-keys
-splash: plant-window.png
+splash: plant-window
 description: >-
   Sometimes, object keys aren't exactly what you want them to be. Luckily, this
   snippet collection has you covered with a variety of functions that can help

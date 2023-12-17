@@ -11,7 +11,7 @@ snippetIds:
   - js/s/array-head-tail
   - js/s/last-array-element
   - js/s/flatten-array
-splash: terrarium.png
+splash: terrarium
 description: >-
   Arrays are one of the most common data types in JavaScript. While there are
   many libraries that deal with them, here are some awesome tips and tricks you

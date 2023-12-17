@@ -11,7 +11,7 @@ snippetIds:
   - js/s/code-anatomy-chaining-reduce-for-loop
   - js/s/async-array-loops
   - js/s/typecheck-array
-splash: laptop-lamp.png
+splash: laptop-lamp
 description: >-
   JavaScript arrays offer a lot of data manipulation and transformation methods.
   This collection will help you learn more about some of the most common ones,

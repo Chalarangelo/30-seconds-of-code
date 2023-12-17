@@ -8,7 +8,7 @@ snippetIds:
   - js/s/http-delete
   - articles/s/http-status-codes-cheatsheet
   - js/s/cors-explained
-splash: laptop-plants-1.png
+splash: laptop-plants-1
 description: >-
   Making network requests is a crucial part of most web applications. This
   snippet collection introduces core concepts related to HTTP requests, as well

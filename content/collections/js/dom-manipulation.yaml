@@ -8,7 +8,7 @@ snippetIds:
   - js/s/insert-html-string-after-element
   - js/s/insert-html-string-before-element
   - js/s/render-dom-element
-splash: hiking-balance.png
+splash: hiking-balance
 description: >-
   DOM manipulation is a core skill for any web developer. Learn how to
   manipulate DOM elements with JavaScript with this collection of tips and

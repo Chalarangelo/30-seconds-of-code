@@ -17,7 +17,7 @@ snippetIds:
   - js/s/element-is-focused
   - js/s/get-vertical-offset
   - js/s/store-dom-items
-splash: laptop-plants-1.png
+splash: laptop-plants-1
 description: >-
   Querying the DOM is an essential skill every web developer should have. Learn
   how to query the DOM quickly and efficiently with this collection of

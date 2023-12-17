@@ -15,7 +15,7 @@ snippetIds:
   - js/s/change-lightness
   - js/s/to-hsl-array
   - js/s/to-hsl-object
-splash: colorful-rocks.png
+splash: colorful-rocks
 description: >-
   Working with color in JavaScript requires some understanding of color formats
   and conversions. This snippet collection covers a lot of those needs from

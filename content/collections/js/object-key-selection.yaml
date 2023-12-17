@@ -6,7 +6,7 @@ snippetIds:
   - js/s/omit-object-keys
   - js/s/pick-matching-object-keys
   - js/s/omit-matching-object-keys
-splash: succulent-cluster.png
+splash: succulent-cluster
 description: >-
   Sometimes, JavaScript objects come with a lot of keys and you only need a few
   of them. Other times, you might want to remove certain keys, instead. Whatever

@@ -11,7 +11,7 @@ snippetIds:
   - js/s/initialize-array-until
   - js/s/initialize-2d-array
   - js/s/initialize-n-dimensional-array
-splash: laptop-lamp.png
+splash: laptop-lamp
 description: >-
   When it comes to array initialization in JavaScript, there are as many options
   available as there are use cases to consider. This collection will help you

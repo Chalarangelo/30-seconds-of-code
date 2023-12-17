@@ -6,7 +6,7 @@ snippetIds:
   - js/s/shallow-clone-object
   - js/s/deep-clone-object
   - js/s/copy-array
-splash: coffee-phone-tray.png
+splash: coffee-phone-tray
 description: >-
   JavaScript objects and arrays are a little tricky to clone. Luckily, this
   collection teaches you all you need to know about different cloning types and

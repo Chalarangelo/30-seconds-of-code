@@ -37,7 +37,7 @@ snippetIds:
   - js/s/event-loop-explained
   - js/s/prefix-postfix-operators
   - js/s/cors-explained
-splash: interview.png
+splash: interview
 description: >-
   Preparing for a job interview requires studying to refresh your knowledge and
   skills. This collection of JavaScript interview questions is designed to cover

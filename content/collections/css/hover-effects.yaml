@@ -12,7 +12,7 @@ snippetIds:
   - css/s/popout-menu
   - css/s/navigation-list-item-hover-and-focus-effect
   - css/s/mouse-cursor-gradient-tracking
-splash: hand-screen.png
+splash: hand-screen
 description: >-
   You can use CSS to create some pretty cool hover effects. In this collection,
   we'll look at some popular techniques for creating hover effects to spice up

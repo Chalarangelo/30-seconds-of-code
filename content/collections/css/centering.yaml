@@ -7,7 +7,7 @@ snippetIds:
   - css/s/grid-centering
   - css/s/transform-centering
   - css/s/display-table-centering
-splash: keyboard-coffee.png
+splash: keyboard-coffee
 description: >-
   Centering content with CSS is not always straighforward. This snippet
   collection contains a few handy tips and tricks to help you center anything

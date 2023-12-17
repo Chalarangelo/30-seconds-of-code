@@ -7,7 +7,7 @@ snippetIds:
   - js/s/serialize-cookie
   - js/s/is-local-storage-enabled
   - js/s/is-session-storage-enabled
-splash: basics.png
+splash: basics
 description: >-
   Modern browsers offer a handful of options when it comes to storing data on
   the client-side. This collection contains the necessary resources to master

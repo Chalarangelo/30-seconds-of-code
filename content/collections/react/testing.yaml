@@ -8,7 +8,7 @@ snippetIds:
   - react/s/testing-async-components
   - react/s/testing-portals
   - react/s/testing-redux-connected-components
-splash: headphones.png
+splash: headphones
 description: >-
   Testing React can be challenging, both in terms of figuring out the correct
   mentality as well as understanding the mechanics of the tools you're working

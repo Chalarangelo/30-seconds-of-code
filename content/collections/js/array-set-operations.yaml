@@ -14,7 +14,7 @@ snippetIds:
   - js/s/function-based-array-intersection
   - js/s/function-based-array-difference
   - js/s/function-based-array-symmetric-difference
-splash: touch-flower.png
+splash: touch-flower
 description: >-
   Mathematical set operations can be easily applied to JavaScript arrays. Learn
   how to use the union, intersection, difference, and symmetric difference

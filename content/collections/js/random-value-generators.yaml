@@ -9,7 +9,7 @@ snippetIds:
   - js/s/random-boolean
   - js/s/random-hex-color-code
   - js/s/random-gauss
-splash: matcha.png
+splash: matcha
 description: >-
   Random value generators come up in a lot of different situations. This snippet
   collection consists of a variety of JavaScript solutions, from generating

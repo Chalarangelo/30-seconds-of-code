@@ -12,7 +12,7 @@ snippetIds:
   - js/s/switch-object
   - js/s/dynamic-properties-are-slow
   - js/s/big-o-cheatsheet
-splash: do-more-computer.png
+splash: do-more-computer
 description: >-
   Enhance your website's performance with our collection of tips and tricks on
   JavaScript optimization. Learn essential techniques for faster load times and

@@ -11,7 +11,7 @@ snippetIds:
   - js/s/proxy-array-negative-index
   - js/s/cannot-extend-proxy-object
   - js/s/typecheck-proxy
-splash: laptop-coffee.png
+splash: laptop-coffee
 description: >-
   The JavaScript Proxy object can be a very powerful tool to extend the
   functionality of objects. In this collection, we will explore the basics of

@@ -6,7 +6,7 @@ snippetIds:
   - js/s/midpoint
   - js/s/vector-distance
   - js/s/vector-angle
-splash: tea-pour.png
+splash: tea-pour
 description: >-
   JavaScript can be used for many different tasks, including geometric
   operations. This collection explains some fundamentals, such as calculating

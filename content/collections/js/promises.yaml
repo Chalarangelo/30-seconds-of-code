@@ -10,7 +10,7 @@ snippetIds:
   - js/s/await-timeout
   - js/s/debounce-promise
   - js/s/run-promises-in-series
-splash: blue-computer.png
+splash: blue-computer
 description: >-
   Working with promises in JavaScript is a great way to handle asynchronous
   operations, yet it can be confusing for many developers. This snippet

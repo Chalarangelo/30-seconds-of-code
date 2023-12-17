@@ -13,7 +13,7 @@ snippetIds:
   - js/s/show-hide-html-elements
   - js/s/remove-attributes
   - js/s/prefix-css-property
-splash: planning.png
+splash: planning
 description: >-
   Unlock the power of manipulating CSS in the browser, using JavaScript. From
   toggling classes to injecting styles, this collection contains everything you

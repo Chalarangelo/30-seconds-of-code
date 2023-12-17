@@ -8,7 +8,7 @@ snippetIds:
   - js/s/prefers-color-scheme
   - js/s/is-local-storage-enabled
   - js/s/is-session-storage-enabled
-splash: compass-1.png
+splash: compass-1
 description: >-
   Using modern JavaScript APIs, you can detect a wide variety of browser
   capabilities and adapt the user experience accordingly. Start creating

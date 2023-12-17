@@ -6,7 +6,7 @@ snippetIds:
   - css/s/zig-zag-pattern
   - css/s/polka-dot-pattern
   - css/s/checkerboard-pattern
-splash: tea-pour.png
+splash: tea-pour
 description: >-
   CSS can be used to create a variety of background patterns. In this
   collection, you'll learn how to create a few simple background patterns, such

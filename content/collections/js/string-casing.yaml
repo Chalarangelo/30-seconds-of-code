@@ -9,7 +9,7 @@ snippetIds:
   - js/s/to-sentence-case
   - js/s/to-pascal-case
   - js/s/from-camel-case
-splash: tablet.png
+splash: tablet
 description: >-
   Converting between string casing formats is common, yet tiresome to do by
   hand. This collection of snippets will help you convert between the most

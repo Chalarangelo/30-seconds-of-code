@@ -18,7 +18,7 @@ snippetIds:
   - js/s/enum
   - js/s/chunk-iterable
   - js/s/object-array-proxy
-splash: generator.png
+splash: generator
 description: >-
   JavaScript generator functions introduce a way to define an iterative
   algorithm by writing a function with non-continuous execution. This

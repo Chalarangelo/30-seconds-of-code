@@ -12,7 +12,7 @@ snippetIds:
   - js/s/both
   - js/s/function-logical-or
   - js/s/logical-complement
-splash: chess-pawns.png
+splash: chess-pawns
 description: >-
   Boolean logic and logical operations might not come up that often in
   JavaScript development, but when they do, you'll be glad you know how to use

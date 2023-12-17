@@ -7,7 +7,7 @@ snippetIds:
   - react/s/rendering-basics
   - react/s/rendering-optimization
   - react/s/rendering-state
-splash: glasses-comic.png
+splash: glasses-comic
 description: >-
   Understanding of the rendering process is a crucial piece of knowledge when
   creating web applications with React. Take a deep dive into the fundamentals

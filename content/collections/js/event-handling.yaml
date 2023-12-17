@@ -14,7 +14,7 @@ snippetIds:
   - js/s/arrow-function-event-listeners
   - js/s/detect-caps-lock-is-on
   - js/s/trigger-event
-splash: monsterra.png
+splash: monsterra
 description: >-
   Handling events in the browser is a pretty common task with many nuances.
   Getting it right can save you a lot of frustration and make the user
