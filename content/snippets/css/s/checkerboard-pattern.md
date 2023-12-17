@@ -12,7 +12,10 @@ Creates a checkerboard background pattern.
 - Use `background-color` to set a white background.
 - Use `background-image` with two `linear-gradient()` values. Give each one a different angle to create the checkerboard pattern.
 - Use `background-size` to specify the pattern's size.
-- **Note:** The fixed `height` and `width` of the element is for demonstration purposes only.
+
+> [!NOTE]
+>
+> The fixed `height` and `width` of the element is for demonstration purposes only.
 
 ```html
 <div class="checkerboard"></div>

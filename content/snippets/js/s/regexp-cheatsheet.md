@@ -15,7 +15,9 @@ dateModified: 2021-06-12
 - `\b`: word boundary
 - `\B`: not word boundary (opposite of `\b`)
 
-Note: Anchors are non-quantifiable (i.e. cannot be followed by a quantifier).
+> [!NOTE]
+>
+>Anchors are non-quantifiable (i.e. cannot be followed by a quantifier).
 
 ### Character sequences
 
@@ -32,7 +34,9 @@ Note: Anchors are non-quantifiable (i.e. cannot be followed by a quantifier).
 - `[^a-z]`: a single character not in the given range (opposite of `[a-z]`)
 - `[a-zA-Z]`: a single character in either of the given ranges
 
-Note: Use `\` to escape special characters (e.g. `\`, `/`, `[`, `]`, `(`, `)`, `{`, `}` etc.).
+> [!TIP]
+>
+> Use `\` to escape special characters (e.g. `\`, `/`, `[`, `]`, `(`, `)`, `{`, `}` etc.).
 
 ### Quantifiers
 
@@ -43,7 +47,9 @@ Note: Use `\` to escape special characters (e.g. `\`, `/`, `[`, `]`, `(`, `)`, `
 - `a{3,}`: 3 or more of `a`
 - `a{3,5}`: between 3 and 5 of `a` (inclusive)
 
-Note: `a` is any valid quantifiable expression.
+> [!NOTE]
+>
+> `a` is any valid quantifiable expression.
 
 ### Groups
 

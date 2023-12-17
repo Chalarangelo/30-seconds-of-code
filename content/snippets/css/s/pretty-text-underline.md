@@ -13,7 +13,10 @@ Provides a nicer alternative to `text-decoration: underline` where descenders do
 - Use `background-image` with `linear-gradient()` and `currentColor` to create a gradient that will act as the actual underline.
 - Set `background-position`, `background-repeat` and `background-size` to place the gradient in the correct position.
 - Use the `::selection` pseudo-class selector to ensure the text shadow does not interfere with text selection.
-- **Note:** This is natively implemented as `text-decoration-skip-ink: auto` but it has less control over the underline.
+
+> [!TIP]
+>
+> This is natively implemented as `text-decoration-skip-ink: auto` but it has less control over the underline.
 
 ```html
 <div class="container">

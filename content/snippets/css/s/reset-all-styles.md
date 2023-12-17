@@ -10,7 +10,10 @@ dateModified: 2020-12-30
 Resets all styles to default values using only one property.
 
 - Use the `all` property to reset all styles (inherited or not) to their default values.
-- **Note:** This will not affect `direction` and `unicode-bidi` properties.
+
+> [!NOTE]
+>
+> This will not affect `direction` and `unicode-bidi` properties.
 
 ```html
 <div class="reset-all-styles">

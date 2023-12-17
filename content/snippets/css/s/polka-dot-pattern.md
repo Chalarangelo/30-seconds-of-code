@@ -12,7 +12,10 @@ Creates a polka dot background pattern.
 - Use `background-color` to set a black background.
 - Use `background-image` with two `radial-gradient()` values to create two dots.
 - Use `background-size` to specify the pattern's size. Use `background-position` to appropriately place the two gradients.
-- **Note:** The fixed `height` and `width` of the element is for demonstration purposes only.
+
+> [!NOTE]
+>
+> The fixed `height` and `width` of the element is for demonstration purposes only.
 
 ```html
 <div class="polka-dot"></div>

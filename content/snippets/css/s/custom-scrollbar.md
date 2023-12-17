@@ -12,7 +12,10 @@ Customizes the scrollbar style for elements with scrollable overflow.
 - Use `::-webkit-scrollbar` to style the scrollbar element.
 - Use `::-webkit-scrollbar-track` to style the scrollbar track (the background of the scrollbar).
 - Use `::-webkit-scrollbar-thumb` to style the scrollbar thumb (the draggable element).
-- **Note:** Scrollbar styling doesn't appear to be on any standards track. This technique only works on WebKit-based browsers.
+
+> [!NOTE]
+>
+> Scrollbar styling doesn't appear to be on any standards track. This technique only works on WebKit-based browsers.
 
 ```html
 <div class="custom-scrollbar">

@@ -14,7 +14,10 @@ Transitions an element's height from `0` to `auto` when its height is unknown.
 - Use `max-height` to specify an initial height of `0`.
 - Use the `:hover` pseudo-class to change the `max-height` to the value of the `--max-height` variable set by JavaScript.
 - Use `Element.scrollHeight` and `CSSStyleDeclaration.setProperty()` to set the value of `--max-height` to the current height of the element.
-- **Note:** Causes reflow on each animation frame, which will be laggy if there are a large number of elements beneath the element that is transitioning in height.
+
+> [!NOTE]
+>
+> Causes reflow on each animation frame, which will be laggy if there are a large number of elements beneath the element that is transitioning in height.
 
 ```html
 <div class="trigger">

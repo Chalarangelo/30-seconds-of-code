@@ -12,7 +12,10 @@ Creates a zig zag background pattern.
 - Use `background-color` to set a white background.
 - Use `background-image` with four `linear-gradient()` values to create the parts of a zig zag pattern.
 - Use `background-size` to specify the pattern's size. Use `background-position` to place the parts of the pattern in the correct locations.
-- **Note:** The fixed `height` and `width` of the element is for demonstration purposes only.
+
+> [!NOTE]
+>
+> The fixed `height` and `width` of the element is for demonstration purposes only.
 
 ```html
 <div class="zig-zag"></div>

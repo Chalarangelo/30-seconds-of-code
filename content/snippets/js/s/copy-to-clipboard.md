@@ -15,7 +15,10 @@ Only works as a result of user action (i.e. inside a `click` event listener).
 - Use `Document.execCommand()` to copy to the clipboard.
 - Remove the `<textarea>` element from the HTML document.
 - Finally, use `Selection.addRange()` to recover the original selected range (if any).
-- **Note:** You can use the asynchronous [Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API) in most current browsers. You can find out more about it in the [copyToClipboardAsync snippet](/js/s/copy-to-clipboard-async).
+
+> [!NOTE]
+>
+> You can use the asynchronous [Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API) in most current browsers. You can find out more about it in the [copyToClipboardAsync snippet](/js/s/copy-to-clipboard-async).
 
 ```js
 const copyToClipboard = str => {

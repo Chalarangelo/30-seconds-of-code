@@ -15,7 +15,10 @@ Returns a stateful value, persisted in `localStorage`, and a function to update 
 - When the component is first mounted, use `Storage.getItem()` to update `value` if there's a stored value or `Storage.setItem()` to persist the current value.
 - When `value` is updated, use `Storage.setItem()` to store the new value.
 - When `name` is updated, use `Storage.setItem()` to create the new key, update the `nameRef` and use `Storage.removeItem()` to remove the previous key from `Window.localStorage`.
-- **Note:** The hook is meant for use with primitive values (i.e. not objects) and doesn't account for changes to `Window.localStorage` due to other code. Both of these issues can be easily handled (e.g. JSON serialization and handling the `'storage'` event).
+
+> [!NOTE]
+>
+> The hook is meant for use with primitive values (i.e. not objects) and doesn't account for changes to `Window.localStorage` due to other code. Both of these issues can be easily handled (e.g. JSON serialization and handling the `'storage'` event).
 
 ```jsx
 const usePersistedState = (name, defaultValue) => {
