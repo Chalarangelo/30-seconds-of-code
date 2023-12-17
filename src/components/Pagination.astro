@@ -1,0 +1,33 @@
+---
+import Icon from '#components/Icon';
+
+const { pagination } = Astro.props;
+
+if (!pagination) return null;
+
+const {
+  pageNumber,
+  totalPages,
+  baseUrl,
+  hasPrevious,
+  hasNext,
+  totalItems,
+  itemType
+} = pagination;
+
+const previousUrl = `${baseUrl}/p/${hasPrevious ? pageNumber - 1 : 1}`;
+const nextUrl = `${baseUrl}/p/${hasNext ? pageNumber + 1 : totalPages}`;
+---
+<nav aria-label='Pagination'>
+  <a href={previousUrl} rel='prev' aria-disabled={!hasPrevious}>
+    <Icon name='chevron-left' size='1.25em' />
+    Previous
+  </a>
+  <a href={nextUrl} rel='next' aria-disabled={!hasNext}>
+    Next
+    <Icon name='chevron-right' size='1.25em' />
+  </a>
+  <p>
+    {`Page ${pageNumber} of ${totalPages} (${totalItems} ${itemType})`}
+  </p>
+</nav>
