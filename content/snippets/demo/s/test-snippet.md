@@ -149,3 +149,32 @@ Somehow, we forgot about lists, but they are something we use a ton.
    1. Sometimes we have sub-items
    2. That are also ordered
 4. And we can go back to the main list
+
+### Admonitions
+
+> [!NOTE]
+>
+> Useful information that users should know, even when skimming content.
+
+> [!TIP]
+>
+> Helpful advice for doing things better or more easily.
+
+> [!IMPORTANT]
+>
+> Key information users need to know to achieve their goal.
+
+> [!WARNING]
+>
+> Urgent info that needs immediate user attention to avoid problems.
+
+> [!CAUTION]
+>
+> Advises about risks or negative outcomes of certain actions.
+
+> [!NOTE]
+>
+> A more complex admonition.
+>
+> This one has a few paragraphs.
+> It also has some **strong** text.

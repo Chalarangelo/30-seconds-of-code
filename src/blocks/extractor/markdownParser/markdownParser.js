@@ -8,6 +8,7 @@ import {
   safeguardExternalLinks,
   transformHeadings,
   highlightCode,
+  transformAdmonitions,
   linkInlineCode,
   transfomImagePaths,
   wrapTables,
@@ -55,6 +56,7 @@ export class MarkdownParser {
       //   Note: this must come before `safeguardExternalLinks`
       // * Safeguard external links (`safeguardExternalLinks`)
       //   Note: this transform links added in `linkInlineCode`
+      // * Transform admonitions (`transformAdmonitions`)
       // * Convert headings (`transformHeadings`) inside the allowed range
       //   Note: This also adds linkable IDs to heading elements
       // * Transform image paths (`transfomImagePaths`) to include the asset path
@@ -69,6 +71,7 @@ export class MarkdownParser {
         .use(remarkRehype, { allowDangerousHtml: true })
         .use(linkInlineCode, { references })
         .use(safeguardExternalLinks)
+        .use(transformAdmonitions)
         .use(transformHeadings, { minLevel: 2, maxLevel: 4 })
         .use(transfomImagePaths, { assetPath })
         .use(wrapTables, { className: 'table-wrapper' })
