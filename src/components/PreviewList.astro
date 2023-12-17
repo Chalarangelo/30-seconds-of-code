@@ -1,6 +1,4 @@
 ---
-import Image from '#components/Image';
-
 const { contentItems, title } = Astro.props;
 ---
 
@@ -10,8 +8,9 @@ const { contentItems, title } = Astro.props;
   <ul>
     {contentItems.map((contentItem) => (
       <li>
-        <Image
+        <img
           src={contentItem.cover}
+          srcset={contentItem.coverSrcset}
           alt=''
           height='200'
           width='400'

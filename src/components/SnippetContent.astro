@@ -1,12 +1,11 @@
 ---
-import Image from '#components/Image';
-
 const { snippet } = Astro.props;
 ---
 <article>
   <h1>{snippet.title}</h1>
-  <Image
+  <img
     src={snippet.cover}
+    srcset={snippet.coverSrcset}
     alt=''
     height='180'
     width='360'

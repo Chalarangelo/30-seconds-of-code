@@ -1,7 +1,5 @@
 ---
-import Image from '#components/Image';
-
-const { title, description, cover, secondary } = Astro.props;
+const { title, description, cover, coverSrcset, secondary } = Astro.props;
 
 const Heading = secondary ? 'h2' : 'h1';
 ---
@@ -12,8 +10,9 @@ const Heading = secondary ? 'h2' : 'h1';
     <p>{description}</p>
   </div>
   {cover ?
-    <Image
+    <img
       src={cover}
+      srcset={coverSrcset}
       alt=''
       height='240'
       width='240'
