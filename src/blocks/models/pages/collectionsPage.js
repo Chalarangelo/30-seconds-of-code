@@ -1,5 +1,9 @@
 import { Schemer } from '#blocks/utilities/schemer';
 import pathSettings from '#settings/paths';
+import presentationSettings from '#settings/presentation';
+
+const { splashImageStandardSuffix, splashImageDimensions } =
+  presentationSettings;
 
 export const collectionsPage = {
   name: 'CollectionsPage',
@@ -30,7 +34,11 @@ export const collectionsPage = {
       context.collection = {
         name: page.name,
         description: page.description,
-        cover: `/${pathSettings.staticAssetPath}/splash/${page.splash}`,
+        cover: `/${pathSettings.staticAssetPath}/splash/${page.splash}${splashImageStandardSuffix}.webp`,
+        coverSrcset: splashImageDimensions.map(
+          ({ width }) =>
+            `/${pathSettings.staticAssetPath}/splash/${page.splash}-${width}.webp ${width}w`
+        ),
         sublinks: [],
       };
 

@@ -38,6 +38,7 @@ export const snippetPage = {
         slug: snippet.slug,
         description: snippet.shortText,
         cover: context.snippet.cover,
+        coverSrcset: context.snippet.coverSrcset,
         dateModified: snippet.dateModified,
       });
 
