@@ -100,6 +100,11 @@
     // Apply aspect ratio to preview images.
     aspect-ratio: 2;
     object-fit: cover;
+
+    // Performance optimization - hint to use the GPU.
+    will-change: transform;
+
+    // Apply a transition on hover.
     transition:
       filter var(--animation-duration-long) ease,
       transform var(--animation-duration-medium) ease;

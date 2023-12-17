@@ -55,6 +55,9 @@ nav[aria-label='Collections'] {
     line-height: var(--line-height-tight);
     font-weight: var(--font-weight-medium);
 
+    // Performance optimization - hint to use the GPU.
+    will-change: transform;
+
     // Apply a transition on hover.
     transition:
       color var(--animation-duration-medium) ease,

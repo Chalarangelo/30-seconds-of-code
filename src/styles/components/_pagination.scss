@@ -32,6 +32,9 @@ nav[aria-label='Pagination'] {
     // Change alignment inside the grid row to center the link.
     justify-self: center;
 
+    // Performance optimization - hint to use the GPU.
+    will-change: transform;
+
     // Apply a transition on hover.
     transition: color var(--animation-duration-medium) ease;
 

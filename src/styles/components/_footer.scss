@@ -122,6 +122,9 @@ footer {
     // Set the correct `transform-origin` for the wave animation.
     transform-origin: 75% 80%;
 
+    // Performance optimization - hint to use the GPU.
+    will-change: transform;
+
     @media (hover: hover) and (prefers-reduced-motion: no-preference) {
       // Only apply the wave animation on devices that support hover and
       // for users that have not requested reduced motion.
