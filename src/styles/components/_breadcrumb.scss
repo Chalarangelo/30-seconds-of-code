@@ -46,14 +46,14 @@ nav[aria-label='Breadcrumb'] {
 
   svg {
     // Apply a transition on another item's hover.
-    transition: color var(--animation-duration-medium) ease-out;
+    transition: color var(--animation-duration-medium) ease;
   }
 
   a {
     // Remove underlines from links.
     --link_color-underline: transparent;
     // Apply a transition on hover.
-    transition: color var(--animation-duration-medium) ease-out;
+    transition: color var(--animation-duration-medium) ease;
 
     @media (hover: hover) {
       &:is(:hover, :focus) {

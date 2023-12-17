@@ -100,7 +100,7 @@ dialog {
     );
     // Add a border on top to separate the results from the input. The color is
     // adjusted when the input is focused.
-    border-top: var(--border-width-thin) solid var(--color-border);
+    border-block-start: var(--border-width-thin) solid var(--color-border);
     transition: border-color var(--animation-duration-medium) ease;
     overflow-x: auto;
     // Display results in a flex column to control the spacing between them.

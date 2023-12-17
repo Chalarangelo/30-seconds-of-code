@@ -6,7 +6,7 @@ main > article > footer {
   color: var(--color-text-lighter);
 
   // Add some spacing below, based on the layout area spacing.
-  margin-bottom: var(--layout-area-spacing);
+  margin-block-end: var(--layout-area-spacing);
 
   p {
     // Make the text smaller and align it to the right.
