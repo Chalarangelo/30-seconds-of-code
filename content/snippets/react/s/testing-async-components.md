@@ -108,7 +108,7 @@ TypeError: MutationObserver is not a constructor
 
 This required some searching, which eventually led us to [this issue](https://github.com/testing-library/react-testing-library/issues/662) which helped us figure out that a solution was to replace the `test` script in our `package.json` with this line:
 
-```json
+```json [package.json]
 {
   // ...
   "scripts": {

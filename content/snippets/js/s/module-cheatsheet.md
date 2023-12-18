@@ -10,11 +10,11 @@ dateModified: 2021-06-12
 
 ## Named exports
 
-```js
-/* environment.js */
+```js [environment.js]
 export const key = 'this-is-a-secret';
+```
 
-/* index.js */
+```js [index.js]
 import { key } from 'environment';
 ```
 
@@ -25,15 +25,16 @@ import { key } from 'environment';
 
 ## Default exports
 
-```js
-/* environment.js */
+```js [environment.js]
 const environment = {
   key: 'this-is-a-secret',
   port: 8000
 };
 
 export default environment;
-/* index.js */
+```
+
+```js [index.js]
 import environment from 'environment';
 
 const { key, port } = environment;
@@ -46,8 +47,7 @@ const { key, port } = environment;
 
 ## Default + named
 
-```js
-/* environment.js */
+```js [environment.js]
 export const envType = 'DEV';
 
 const environment = {
@@ -56,8 +56,9 @@ const environment = {
 };
 
 export default environment;
+```
 
-/* index.js */
+```js [index.js]
 import { envType }, environment from 'environment';
 
 const { key, port } = environment;
@@ -69,8 +70,7 @@ const { key, port } = environment;
 
 ## Export list
 
-```js
-/* environment.js */
+```js [environment.js]
 const key = 'this-is-a-secret';
 const port = 8000;
 
@@ -78,8 +78,9 @@ export {
   key,
   port
 };
+```
 
-/* index.js */
+```js [index.js]
 import { key, port } from 'environment';
 ```
 
@@ -89,13 +90,13 @@ import { key, port } from 'environment';
 
 ## Rename export
 
-```js
-/* environment.js */
+```js [environment.js]
 const key = 'this-is-a-secret';
 
 export { key as authKey };
+```
 
-/* index.js */
+```js [index.js]
 import { authKey } from 'environment';
 ```
 
@@ -104,11 +105,11 @@ import { authKey } from 'environment';
 
 ## Rename import
 
-```js
-/* environment.js */
+```js [environment.js]
 export const key = 'this-is-a-secret';
+```
 
-/* index.js */
+```js [index.js]
 import { key as authKey } from 'environment';
 ```
 
@@ -117,8 +118,7 @@ import { key as authKey } from 'environment';
 
 ## Import all
 
-```js
-/* environment.js */
+```js [environment.js]
 export const envType = 'DEV';
 
 const environment = {
@@ -127,8 +127,9 @@ const environment = {
 };
 
 export default environment;
+```
 
-/* index.js */
+```js [index.js]
 import * as env from 'environment';
 
 const { default: { key, port}, envType } = environment;

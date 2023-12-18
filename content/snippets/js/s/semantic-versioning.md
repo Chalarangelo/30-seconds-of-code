@@ -11,7 +11,7 @@ dateModified: 2023-07-16
 
 **SemVer** (short for **Semantic Versioning**) is a versioning scheme commonly used in software development to communicate the changes and **compatibility** of a software package. The JavaScript ecosystem, embodied mainly in the **npm package manager**, has adopted SemVer as the standard versioning scheme for JavaScript packages. The version of a package can be found in its `package.json` file, and it is also displayed in the npm registry.
 
-```json
+```json [package.json]
 {
   "name": "my-package",
   "version": "1.0.0"

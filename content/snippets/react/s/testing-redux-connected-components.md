@@ -13,8 +13,7 @@ Testing Redux-connected components with React Testing Library is a very common s
 
 Here's a simple utility function adapted from [React Testing Library's docs on the subject](https://testing-library.com/docs/example-react-redux) to help you speed up your testing:
 
-```jsx
-// src/test/utils/renderConnected.js
+```jsx [test/utils/renderConnected.js]
 import React from 'react';
 import { render } from '@testing-library/react';
 import { createStore } from 'redux';
@@ -42,8 +41,7 @@ This utility uses the `createStore` function and the `<Provider>` component to w
 
 Remember to replace `import` statements with the appropriate files and exports to set up the utility as necessary. After creating the utility function and saving it in an appropriate file, you can use it like this:
 
-```jsx
-// src/test/SomeComponent.test.jsx
+```jsx [test/SomeComponent.test.jsx]
 import React from 'react';
 // Replace this with the appropriate location of your component
 import SomeComponent from 'src/components/SomeComponent';
