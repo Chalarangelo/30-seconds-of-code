@@ -13,15 +13,16 @@ dateModified: 2021-06-12
 
 <style>
 .gradient-box {
+  grid-column: 1 / -1;
   width: 100%;
-  height: 64px;
-  border-radius: 4px 4px 0 0;
-  margin-bottom: -16px;
-  margin-top: 32px;
+  height: 96px;
+  border-radius: var(--layout-border-radius) var(--layout-border-radius) 0 0;
+  margin-top: var(--layout-row-spacing);
 }
 
-.gradient-box + .gatsby-highlight > pre.blog-code {
-  border-radius: 0 0 4px 4px;
+.gradient-box + pre {
+  margin-block-start: calc(-1 * var(--layout-row-spacing, 0));
+  border-radius: 0 0 var(--layout-border-radius) var(--layout-border-radius);
 }
 
 .stripe {
