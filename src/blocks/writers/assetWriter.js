@@ -66,9 +66,9 @@ export class AssetWriter {
 
     await Promise.all([
       fs.copy(inPath, outPath),
-      AssetWriter.processStaticAssets(generatedAssets),
       AssetWriter.processCoverAssets(generatedAssets),
       AssetWriter.processSplashAssets(generatedAssets),
+      AssetWriter.processSvgAssets(),
       AssetWriter.processIcons(),
     ]);
 
@@ -172,7 +172,6 @@ export class AssetWriter {
         } splash images that were already generated.`
       );
     }
-    logger.log(`Found ${splashAssets.length} splash images.`);
 
     return Promise.all(
       splashAssets.map(({ filePath, fileName }) =>
@@ -185,7 +184,7 @@ export class AssetWriter {
           })
         )
       )
-    ).then(() => logger.success(`Processing cover images complete`));
+    ).then(() => logger.success(`Processing splash images complete`));
   };
 
   static processStaticAssets = (existingAssets = null) => {
@@ -239,6 +238,28 @@ export class AssetWriter {
           })
       )
     ).then(() => logger.success(`Processing static assets complete`));
+  };
+
+  static processSvgAssets = () => {
+    const logger = new Logger('AssetWriter.processSvgAssets');
+    logger.log('Processing SVG assets...');
+
+    let svgAssets = globSync(`${inContentPath}/illustrations/*.svg`).map(
+      fileName => ({
+        filePath: path.resolve(fileName),
+        fileName: fileName.slice(
+          fileName.lastIndexOf('/'),
+          fileName.lastIndexOf('.')
+        ),
+      })
+    );
+    logger.log(`Found ${svgAssets.length} SVG images.`);
+
+    return Promise.all(
+      svgAssets.map(({ filePath, fileName }) =>
+        fs.copy(filePath, `${outPath}/illustrations/${fileName}.svg`)
+      )
+    ).then(() => logger.success(`Processing SVG assets complete`));
   };
 
   /**
