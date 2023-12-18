@@ -53,7 +53,7 @@ dateModified: 2021-06-12
   - `space-evenly`: distribute items evenly, ensuring equal space between any two items
   - `stretch`: distribute items evenly, stretching auto-sized items to fit the container
 
-![Diagram of Flexbox properties](./illustrations/flexbox-diagram.png)
+![Diagram of Flexbox properties](./illustrations/flexbox-diagram.svg)
 
 ## Items
 

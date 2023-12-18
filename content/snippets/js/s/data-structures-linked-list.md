@@ -13,7 +13,7 @@ dateModified: 2021-08-08
 
 A linked list is a linear data structure that represents a collection of elements, where each element points to the next one. The first element in the linked list is the head and the last element is the tail.
 
-![JavaScript Linked List visualization](./illustrations/ds-linked-list.png)
+![JavaScript Linked List visualization](./illustrations/ds-linked-list.svg)
 
 Each element of a linked list data structure must have the following properties:
 

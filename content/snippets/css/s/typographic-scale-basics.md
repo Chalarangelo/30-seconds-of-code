@@ -20,7 +20,7 @@ While this gives us a pretty solid setup, some elements might not look properly 
 
 Putting it all together, we should end up with a typographic scale that looks similar to this:
 
-![Typographic scale example](./illustrations/typography-example.png)
+![Typographic scale example](./illustrations/typography-example.svg)
 
 ```css
 :root {

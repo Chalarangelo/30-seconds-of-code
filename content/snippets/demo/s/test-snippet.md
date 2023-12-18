@@ -96,7 +96,7 @@ There's a few more elements and some cases we should cover just to be safe.
 
 ## Image illustrations
 
-![Diagram of Flexbox properties](./illustrations/flexbox-diagram.png)
+![Diagram of Flexbox properties](./illustrations/flexbox-diagram.svg)
 
 ## Blockquotes
 
