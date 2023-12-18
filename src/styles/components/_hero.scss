@@ -22,6 +22,11 @@
   img {
     border-radius: var(--border-radius-medium);
 
+    // Optimize image for LCP, by defining a height and aspect ratio.
+    height: 240px;
+    aspect-ratio: 1;
+    object-fit: cover;
+
     @media (hover: hover) and (prefers-reduced-motion: no-preference) {
       // Apply this effect only when hover is supported and the user has not
       // requested reduced motion. It's just for show, so it's not important.
