@@ -8,5 +8,5 @@ export default {
   websiteUrl: 'https://www.30secondsofcode.org',
   githubRepoUrl: 'https://github.com/Chalarangelo/30-seconds-of-code',
   licenseUrl: 'https://creativecommons.org/licenses/by/4.0/',
-  manifestCacheKey: '305c210420234555',
+  manifestCacheKey: '30swp20231218115417',
 };
