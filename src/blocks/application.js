@@ -230,6 +230,7 @@ export class Application {
     const { featuredListings } = collectionsHub;
     const {
       cardsPerPage,
+      collectionCardsPerPage,
       newSnippetCards,
       topSnippetCards,
       topCollectionChips,
@@ -312,8 +313,10 @@ export class Application {
       const collectionId = 'collections';
       let pageCounter = 1;
       const collections = Collection.records.featured;
-      const totalPages = Math.ceil(collections.length / cardsPerPage);
-      const collectionIterator = collections.batchIterator(cardsPerPage);
+      const totalPages = Math.ceil(collections.length / collectionCardsPerPage);
+      const collectionIterator = collections.batchIterator(
+        collectionCardsPerPage
+      );
       for (let pageCollections of collectionIterator) {
         const id = `${collectionId}/p/${pageCounter}`;
         CollectionsPage.createRecord({
@@ -325,6 +328,7 @@ export class Application {
           splash: collectionsHub.splash,
           collections: pageCollections.pluck('id'),
           pageCount: totalPages,
+          collectionCount: collections.length,
           pageNumber: pageCounter,
         });
         pageCounter++;

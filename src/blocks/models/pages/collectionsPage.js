@@ -15,6 +15,7 @@ export const collectionsPage = {
     splash: 'string',
     pageNumber: 'number',
     pageCount: 'number',
+    collectionCount: 'number',
   },
   properties: {
     params: page => {
@@ -52,7 +53,7 @@ export const collectionsPage = {
               baseUrl: page.baseSlug,
               hasPrevious: pageNumber > 1,
               hasNext: pageNumber < totalPages,
-              totalItems: page.collections.length,
+              totalItems: page.collectionCount,
               itemType: 'collections',
             }
           : null;
@@ -67,6 +68,8 @@ export const collectionsPage = {
         slug: page.slug,
         items: context.collectionItems,
       });
+
+      context.largeImages = true;
 
       return context;
     },

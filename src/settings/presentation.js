@@ -1,5 +1,6 @@
 export default {
   cardsPerPage: 24,
+  collectionCardsPerPage: 12,
   newSnippetCards: 6,
   topSnippetCards: 6,
   topCollectionChips: 8,
