@@ -91,6 +91,15 @@ pre[data-code-language] {
     // Display the label as serialized in the `data-code-language` attribute.
     content: attr(data-code-language);
   }
+
+  &[data-code-title] {
+    // If a title is present, it's assumed that the language label is already
+    // present, so we can replace it.
+    &::before {
+      // Display both the language and the title.
+      content: attr(data-code-title) ' (' attr(data-code-language) ')';
+    }
+  }
 }
 
 // This selector is needed to override specificity of `main > article > pre`,

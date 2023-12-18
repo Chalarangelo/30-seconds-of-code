@@ -10,9 +10,33 @@ export const highlightCode = ({ grammars }) => {
   const languages = { ...grammars };
   // Load Prism grammars
   loadLanguages(Object.keys(languages));
+
+  // Parses the language and title from the language string. Only supports
+  // space separated language and title, e.g. `language [title]`.
+  // The title must be wrapped in square brackets.
+  const parseLanguageAndTitle = (lang, meta) => {
+    if (lang && meta)
+      return {
+        languageName: lang,
+        title: meta.replace('[', '').replace(']', ''),
+      };
+    if (lang)
+      return {
+        languageName: lang,
+        title: null,
+      };
+    return {
+      languageName: 'text',
+      title: null,
+    };
+  };
+
   return tree => {
     visit(tree, `code`, node => {
-      const languageName = node.lang ? node.lang : `text`;
+      const { languageName, title } = parseLanguageAndTitle(
+        node.lang,
+        node.meta
+      );
       node.type = `html`;
 
       const highlightedCode = Prism.highlight(
@@ -34,6 +58,8 @@ export const highlightCode = ({ grammars }) => {
 
       if (languageStringLiteral)
         attributes[`data-code-language`] = languageStringLiteral;
+
+      if (title) attributes[`data-code-title`] = title;
 
       node.value = `<pre
         ${Object.entries(attributes).reduce(
