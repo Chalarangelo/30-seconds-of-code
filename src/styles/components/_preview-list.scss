@@ -110,6 +110,15 @@
       transform var(--animation-duration-medium) ease;
   }
 
+  &[data-large-images='true'] {
+    // If the list has large images, use a 1.5 aspect ratio for the images,
+    // instead of the default 2. This also affects the "line" layout of the
+    // preview list items.
+    img {
+      aspect-ratio: 1.5;
+    }
+  }
+
   a {
     // Remove underline from all links inside the preview list.
     --link_color-underline: transparent;

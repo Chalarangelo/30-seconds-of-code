@@ -1,10 +1,9 @@
 ---
-const { contentItems, title } = Astro.props;
+const { contentItems, largeImages = false } = Astro.props;
 ---
 
-<section class='preview-list'>
+<section class='preview-list' data-large-images={largeImages ? 'true' : null}>
   <slot name='title' />
-  {title && <h2>{title}</h2>}
   <ul>
     {contentItems.map((contentItem) => (
       <li>
@@ -12,7 +11,7 @@ const { contentItems, title } = Astro.props;
           src={contentItem.cover}
           srcset={contentItem.coverSrcset}
           alt=''
-          height='200'
+          height={largeImages ? '300' : '200'}
           width='400'
           loading='lazy'
         />
