@@ -7,7 +7,7 @@ snippetIds:
   - js/s/initialize-array-with-values
   - js/s/initialize-array-with-range
   - js/s/initialize-2d-array
-splash: plant-screen.png
+splash: plant-screen
 description: >-
   Explain the collection's topic in a few sentences.
 shortDescription: >-
