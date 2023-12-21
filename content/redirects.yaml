@@ -2011,3 +2011,15 @@
 - from: /articles/s/css-easing-variables
   to: /css/s/easing-variables
   status: 301!
+- from: /js/s/is-stream
+  to: /js/s/typecheck-nodejs-streams
+  status: 301!
+- from: /js/s/is-readable-stream
+  to: /js/s/typecheck-nodejs-streams
+  status: 301!
+- from: /js/s/is-writable-stream
+  to: /js/s/typecheck-nodejs-streams
+  status: 301!
+- from: /js/s/is-duplex-stream
+  to: /js/s/typecheck-nodejs-streams
+  status: 301!
