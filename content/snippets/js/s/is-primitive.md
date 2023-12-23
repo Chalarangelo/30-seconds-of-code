@@ -1,5 +1,5 @@
 ---
-title: Number is primitive
+title: Value is primitive
 type: snippet
 language: javascript
 tags: [type]
