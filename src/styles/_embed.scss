@@ -1,0 +1,31 @@
+.codepen-wrapper {
+  // Span the entire width of the container.
+  width: 100%;
+
+  // Styles for the fallback text, in case the embed fails to load.
+  > p {
+    // Give the fallback text a background color.
+    background: var(--color-background-light);
+
+    // Apply padding based on the layout bleed width.
+    padding-inline: var(--layout-bleed-width);
+    padding-block: var(--spacing-6);
+    border-radius: var(--layout-border-radius);
+
+    // Make the fallback text slightly italic.
+    font-variation-settings: 'slnt' -5;
+  }
+
+  // Styles for the embed wrapping element.
+  > div {
+    // Clamp the height of the embed between 300px and 600px.
+    height: clamp(300px, 50vh, 600px);
+
+    &,
+    & > iframe {
+      // Round the corners of the embed. This needs to apply to both the wrapper
+      // `div` and the `iframe` itself to have the desired effect.
+      border-radius: var(--layout-border-radius);
+    }
+  }
+}
