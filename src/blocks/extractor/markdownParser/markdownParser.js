@@ -12,6 +12,7 @@ import {
   linkInlineCode,
   transfomImagePaths,
   wrapTables,
+  embedCodepensFromLinks,
 } from '#blocks/extractor/markdownParser/remarkPlugins';
 import pathSettings from '#settings/paths';
 const assetPath = `/${pathSettings.staticAssetPath}`;
@@ -47,6 +48,8 @@ export class MarkdownParser {
       //   Note: this must come before `remarkRehype`, as it transforms AST nodes
       // * Unwrap images (`remarkUnwrapImages`)
       //   Note: this must come before `remarkRehype`, as it transforms AST nodes
+      // * Embed Codepens from links (`embedCodepensFromLinks`)
+      //   Note: this must come before `remarkRehype`, as it transforms AST nodes
       // ---------------------------------------------
       // * Parse to HTML (`remarkRehype`)
       //   Note: From this point onwards, the AST is a HAST
@@ -68,6 +71,7 @@ export class MarkdownParser {
         .use(remarkGfm)
         .use(highlightCode, { grammars })
         .use(remarkUnwrapImages)
+        .use(embedCodepensFromLinks, { className: 'codepen-wrapper' })
         .use(remarkRehype, { allowDangerousHtml: true })
         .use(linkInlineCode, { references })
         .use(safeguardExternalLinks)
