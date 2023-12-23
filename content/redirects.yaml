@@ -2023,3 +2023,33 @@
 - from: /js/s/is-duplex-stream
   to: /js/s/typecheck-nodejs-streams
   status: 301!
+- from: /js/s/is-undefined
+  to: /js/s/complete-guide-to-js-type-checking
+  status: 301!
+- from: /js/s/is-null
+  to: /js/s/complete-guide-to-js-type-checking
+  status: 301!
+- from: /js/s/is-nil
+  to: /js/s/complete-guide-to-js-type-checking
+  status: 301!
+- from: /js/s/is-boolean
+  to: /js/s/complete-guide-to-js-type-checking
+  status: 301!
+- from: /js/s/is-number
+  to: /js/s/complete-guide-to-js-type-checking
+  status: 301!
+- from: /js/s/is-string
+  to: /js/s/complete-guide-to-js-type-checking
+  status: 301!
+- from: /js/s/is-symbol
+  to: /js/s/complete-guide-to-js-type-checking
+  status: 301!
+- from: /js/s/is-function
+  to: /js/s/complete-guide-to-js-type-checking
+  status: 301!
+- from: /js/s/is-object
+  to: /js/s/complete-guide-to-js-type-checking
+  status: 301!
+- from: /js/s/is-primitive
+  to: /js/s/complete-guide-to-js-type-checking
+  status: 301!

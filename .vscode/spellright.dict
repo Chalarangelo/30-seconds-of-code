@@ -7,3 +7,7 @@ transpile
 transpilation
 falsy
 truthy
+typechecking
+typecheck
+typechecked
+bigint
