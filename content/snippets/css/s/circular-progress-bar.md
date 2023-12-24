@@ -78,7 +78,7 @@ Supposing we want to fill 50% of the circle, the SVG code would look like this:
 
 ## Making the progress bar dynamic
 
-Hardcoding the `stroke-dasharray` value is not very useful. We want to be able to **set the progress percentage dynamically**. This is where [CSS variables](content/snippets/css/s/variables.md) and the math from before come into play.
+Hardcoding the `stroke-dasharray` value is not very useful. We want to be able to **set the progress percentage dynamically**. This is where [CSS variables](/css/s/variables) and the math from before come into play.
 
 Given a `--progress` variable, we can calculate the `stroke-dasharray` relatively easily. Knowing we will need most of the values from before, we can set them as CSS variables, too. Even better, most of the SVG attributes we want to set can be manipulated using CSS.
 
