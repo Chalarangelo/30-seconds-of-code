@@ -192,7 +192,7 @@ We've covered a lot of ground in this article. We've gone from a simple SVG elem
   --radius: calc((var(--size) - var(--stroke-width)) / 2);
   --circumference: calc(var(--radius) * pi * 2);
   --dash: calc((var(--progress) * var(--circumference)) / 100);
-  animation: progress-animation 5s linear 0s 1 forwards reverse;
+  animation: progress-animation 5s linear 0s 1 forwards;
 }
 
 .circular-progress circle {
