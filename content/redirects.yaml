@@ -1357,18 +1357,6 @@
 - from: /js/s/super-set
   to: /js/s/superset
   status: 301!
-- from: /js/s/drop-right-while
-  to: /js/s/drop-array-elements-from-right-while
-  status: 301!
-- from: /js/s/drop-right
-  to: /js/s/drop-array-elements-from-right
-  status: 301!
-- from: /js/s/drop-while
-  to: /js/s/drop-array-elements-from-left-while
-  status: 301!
-- from: /js/s/drop
-  to: /js/s/drop-array-elements-from-left
-  status: 301!
 - from: /js/s/take-right-until
   to: /js/s/take-array-elements-from-end-until
   status: 301!
@@ -2052,4 +2040,28 @@
   status: 301!
 - from: /js/s/is-primitive
   to: /js/s/complete-guide-to-js-type-checking
+  status: 301!
+- from: /js/s/drop-right-while
+  to: /js/s/remove-first-last-n-array-elements
+  status: 301!
+- from: /js/s/drop-right
+  to: /js/s/remove-first-last-n-array-elements
+  status: 301!
+- from: /js/s/drop-while
+  to: /js/s/remove-first-last-n-array-elements
+  status: 301!
+- from: /js/s/drop
+  to: /js/s/remove-first-last-n-array-elements
+  status: 301!
+- from: /js/s/drop-array-elements-from-right-while
+  to: /js/s/remove-first-last-n-array-elements
+  status: 301!
+- from: /js/s/drop-array-elements-from-right
+  to: /js/s/remove-first-last-n-array-elements
+  status: 301!
+- from: /js/s/drop-array-elements-from-left-while
+  to: /js/s/remove-first-last-n-array-elements
+  status: 301!
+- from: /js/s/drop-array-elements-from-left
+  to: /js/s/remove-first-last-n-array-elements
   status: 301!
