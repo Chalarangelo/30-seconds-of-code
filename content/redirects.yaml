@@ -1066,9 +1066,6 @@
 - from: /js/s/call
   to: /js/s/call-functions-with-context
   status: 301!
-- from: /js/s/initialize-array-with-range-right
-  to: /js/s/initialize-array-with-reversed-range
-  status: 301!
 - from: /js/s/initialize-nd-array
   to: /js/s/initialize-n-dimensional-array
   status: 301!
@@ -2076,4 +2073,10 @@
   status: 301!
 - from: /js/s/is-upper-case
   to: /js/s/string-is-uppercase-or-lowercase
+  status: 301!
+- from: /js/s/initialize-array-with-range-right
+  to: /js/s/initialize-array-with-range
+  status: 301!
+- from: /js/s/initialize-array-with-reversed-range
+  to: /js/s/initialize-array-with-range
   status: 301!

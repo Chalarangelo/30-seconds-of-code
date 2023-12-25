@@ -5,7 +5,6 @@ snippetIds:
   - js/s/array-initialization
   - js/s/initialize-array-with-values
   - js/s/initialize-array-with-range
-  - js/s/initialize-array-with-reversed-range
   - js/s/initialize-mapped-array
   - js/s/initialize-array-while
   - js/s/initialize-array-until
