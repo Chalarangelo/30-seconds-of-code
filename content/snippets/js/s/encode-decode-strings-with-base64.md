@@ -9,7 +9,7 @@ cover: thread
 dateModified: 2023-12-25
 ---
 
-Converting strings to and from Base64 is a simple operation that might come in handy every once in a while. Luckily, modern JavaScript provides some easy-to-use global helper functions for just this purpose.
+Converting strings to and from [Base64](https://en.wikipedia.org/wiki/Base64) is a simple operation that might come in handy every once in a while. Luckily, modern JavaScript provides some easy-to-use global helper functions for just this purpose.
 
 ## Encode a string with Base64
 
@@ -33,7 +33,7 @@ const decodedString = atob(stringToDecode); // 'foobar'
 
 ## Compatibility & older Node.js versions
 
-Luckily, both `btoa()` and `atob()` are supported in all modern browsers and Node.js since version 16.0.0.
+Luckily, both `btoa()` and `atob()` are supported in all modern browsers and **Node.js since version 16.0.0**.
 
 If, however, you need to support older Node.js versions, you will need to use the `Buffer` class to define your own `btoa()` and `atob()` functions.
 

@@ -762,3 +762,5 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia
   Window.requestAnimationFrame(): >-
     https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
+  atob(): https://developer.mozilla.org/en-US/docs/Web/API/atob
+  btoa(): https://developer.mozilla.org/en-US/docs/Web/API/btoa
