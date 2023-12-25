@@ -958,12 +958,6 @@
 - from: /js/s/remove-event-listener-all
   to: /js/s/remove-multiple-event-listeners
   status: 301!
-- from: /js/s/atob
-  to: /js/s/decode-base64-encoded-string
-  status: 301!
-- from: /js/s/btoa
-  to: /js/s/encode-string-to-base64
-  status: 301!
 - from: /js/s/aperture
   to: /js/s/consecutive-element-subarrays
   status: 301!
@@ -2064,4 +2058,16 @@
   status: 301!
 - from: /js/s/drop-array-elements-from-left
   to: /js/s/remove-first-last-n-array-elements
+  status: 301!
+- from: /js/s/atob
+  to: /js/s/encode-decode-strings-with-base64
+  status: 301!
+- from: /js/s/btoa
+  to: /js/s/encode-decode-strings-with-base64
+  status: 301!
+- from: /js/s/decode-base64-encoded-string
+  to: /js/s/encode-decode-strings-with-base64
+  status: 301!
+- from: /js/s/encode-string-to-base64
+  to: /js/s/encode-decode-strings-with-base64
   status: 301!
