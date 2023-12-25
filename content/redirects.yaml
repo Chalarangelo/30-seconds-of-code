@@ -2071,3 +2071,9 @@
 - from: /js/s/encode-string-to-base64
   to: /js/s/encode-decode-strings-with-base64
   status: 301!
+- from: /js/s/is-lower-case
+  to: /js/s/string-is-uppercase-or-lowercase
+  status: 301!
+- from: /js/s/is-upper-case
+  to: /js/s/string-is-uppercase-or-lowercase
+  status: 301!
