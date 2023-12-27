@@ -1066,9 +1066,6 @@
 - from: /js/s/call
   to: /js/s/call-functions-with-context
   status: 301!
-- from: /js/s/initialize-nd-array
-  to: /js/s/initialize-n-dimensional-array
-  status: 301!
 - from: /js/s/initialize2-d-array
   to: /js/s/initialize-2d-array
   status: 301!
@@ -2091,4 +2088,10 @@
   status: 301!
 - from: /js/s/initialize-array-until
   to: /js/s/initialize-array-with-generated-sequence
+  status: 301!
+- from: /js/s/initialize-nd-array
+  to: /js/s/initialize-2d-array
+  status: 301!
+- from: /js/s/initialize-n-dimensional-array
+  to: /js/s/initialize-2d-array
   status: 301!

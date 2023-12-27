@@ -7,7 +7,6 @@ snippetIds:
   - js/s/initialize-array-with-range
   - js/s/initialize-array-with-generated-sequence
   - js/s/initialize-2d-array
-  - js/s/initialize-n-dimensional-array
 splash: laptop-lamp
 description: >-
   When it comes to array initialization in JavaScript, there are as many options

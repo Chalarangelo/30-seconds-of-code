@@ -3,7 +3,7 @@ title: How can I initialize 2D array in JavaScript?
 shortTitle: Initialize 2D array
 type: question
 language: javascript
-tags: [array]
+tags: [array,recursion]
 cover: cloudy-rock-formation
 excerpt: Learn how to initialize a 2D array in JavaScript in a handful of different ways.
 dateModified: 2023-12-27
@@ -22,6 +22,22 @@ const initialize2DArray = (width, height, val = null) =>
   );
 
 initialize2DArray(2, 2, 0); // [[0, 0], [0, 0]]
+```
+
+### Initialize n-dimensional array with a specific value
+
+A more generic version of the above snippet can be used to initialize an **n-dimensional array** with a specific value. The technique at its core is the same, except for the use of rest arguments and recursion to handle the arbitrary number of dimensions.
+
+```js
+const initializeNDArray = (val, ...args) =>
+  args.length === 0
+    ? val
+    : Array.from({ length: args[0] }).map(() =>
+        initializeNDArray(val, ...args.slice(1))
+      );
+
+initializeNDArray(1, 3); // [1, 1, 1]
+initializeNDArray(5, 2, 2, 2); // [[[5, 5], [5, 5]], [[5, 5], [5, 5]]]
 ```
 
 ## Initialize a 2D array using a map function
