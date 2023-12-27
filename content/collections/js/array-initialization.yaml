@@ -5,9 +5,7 @@ snippetIds:
   - js/s/array-initialization
   - js/s/initialize-array-with-values
   - js/s/initialize-array-with-range
-  - js/s/initialize-mapped-array
-  - js/s/initialize-array-while
-  - js/s/initialize-array-until
+  - js/s/initialize-array-with-generated-sequence
   - js/s/initialize-2d-array
   - js/s/initialize-n-dimensional-array
 splash: laptop-lamp

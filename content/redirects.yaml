@@ -1711,9 +1711,6 @@
 - from: /js/s/sum-by
   to: /js/s/mapped-array-sum
   status: 301!
-- from: /js/s/unfold
-  to: /js/s/unfold-array
-  status: 301!
 - from: /js/s/unique-elements
   to: /js/s/unique-elements-in-array
   status: 301!
@@ -2079,4 +2076,19 @@
   status: 301!
 - from: /js/s/initialize-array-with-reversed-range
   to: /js/s/initialize-array-with-range
+  status: 301!
+- from: /js/s/unfold
+  to: /js/s/initialize-array-with-generated-sequence
+  status: 301!
+- from: /js/s/unfold-array
+  to: /js/s/initialize-array-with-generated-sequence
+  status: 301!
+- from: /js/s/initialize-mapped-array
+  to: /js/s/initialize-array-with-generated-sequence
+  status: 301!
+- from: /js/s/initialize-array-while
+  to: /js/s/initialize-array-with-generated-sequence
+  status: 301!
+- from: /js/s/initialize-array-until
+  to: /js/s/initialize-array-with-generated-sequence
   status: 301!
