@@ -1,21 +1,60 @@
 ---
-title: Initialize 2D array
-type: snippet
+title: How can I initialize 2D array in JavaScript?
+shortTitle: Initialize 2D array
+type: question
 language: javascript
 tags: [array]
 cover: cloudy-rock-formation
-dateModified: 2020-10-20
+dateModified: 2023-12-27
 ---
 
-Initializes a 2D array of given width and height and value.
+**2D arrays**, also known as **matrices**, are pretty common in many areas of programming. While some languages provide a built-in way to initialize a 2D array, JavaScript does not.
 
-- Use `Array.from()` and `Array.prototype.map()` to generate `h` rows where each is a new array of size `w`.
-- Use `Array.prototype.fill()` to initialize all items with value `val`.
-- Omit the last argument, `val`, to use a default value of `null`.
+## Initialize a 2D array with a specific value
+
+Given a **width** and **height**, you can create a 2D array and fill it with a specific value. Use `Array.from()` and `Array.prototype.map()` to generate rows equal to `height` where each row is an array of size `width`. Use `Array.prototype.fill()` to initialize all items with the desired value.
 
 ```js
-const initialize2DArray = (w, h, val = null) =>
-  Array.from({ length: h }).map(() => Array.from({ length: w }).fill(val));
+const initialize2DArray = (width, height, val = null) =>
+  Array.from({ length: height }).map(() =>
+    Array.from({ length: width }).fill(val)
+  );
 
 initialize2DArray(2, 2, 0); // [[0, 0], [0, 0]]
+```
+
+## Initialize a 2D array using a map function
+
+A more complex scenario might involve initializing a 2D array with a **sequence of generated values**. For example, you might want to generate a 2D array of coordinates for a grid. Replacing `Array.prototype.fill()` with `Array.prototype.map()` allows us to use a map function to generate the values.
+
+```js
+const initializeMapped2DArray = (width, height, mapFn = () => null) =>
+  Array.from({ length: height }).map((_, i) =>
+    Array.from({ length: width }).map((_, j) => mapFn(i, j))
+  );
+
+initializeMapped2DArray(2, 2, (x, y) => `(${x}, ${y})`);
+// [['(0, 0)', '(0, 1)'], ['(1, 0)', '(1, 1)']]
+```
+
+## Initialize a skewed 2D array
+
+**Skewed 2D arrays** are arrays where the length of each row is not the same. A simple example would be a triangle where the length of each row is equal to its index. In this case, we can replace the numeric width argument with a **function that calculates the length of each row**.
+
+```js
+const initializeSkewed2DArray = (
+  heigh,
+  widthFn = () => h,
+  mapFn = () => null
+) =>
+  Array.from({ length: heigh }, (_, i) =>
+    Array.from({ length: widthFn(i) }).map((_, j) => mapFn(i, j))
+  );
+
+initializeSkewed2DArray(
+  5,
+  i => i + 1,
+  (x, y) => x * y
+);
+// [[0], [0, 1], [0, 2, 4], [0, 3, 6, 9], [0, 4, 8, 12, 16]]
 ```
