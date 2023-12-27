@@ -5,6 +5,7 @@ type: question
 language: javascript
 tags: [array]
 cover: cloudy-rock-formation
+excerpt: Learn how to initialize a 2D array in JavaScript in a handful of different ways.
 dateModified: 2023-12-27
 ---
 
