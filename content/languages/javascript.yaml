@@ -764,3 +764,7 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
   atob(): https://developer.mozilla.org/en-US/docs/Web/API/atob
   btoa(): https://developer.mozilla.org/en-US/docs/Web/API/btoa
+  crypto.randomUUID(): >-
+    https://developer.mozilla.org/en-US/docs/Web/API/Crypto/randomUUID
+  crypto.getRandomValues(): >-
+    https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues

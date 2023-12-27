@@ -2095,3 +2095,9 @@
 - from: /js/s/initialize-n-dimensional-array
   to: /js/s/initialize-2d-array
   status: 301!
+- from: /js/s/uuid-generator-node
+  to: /js/s/uuid-generator
+  status: 301!
+- from: /js/s/uuid-generator-browser
+  to: /js/s/uuid-generator
+  status: 301!
