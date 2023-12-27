@@ -21,7 +21,7 @@ const attempt = (fn, ...args) => {
   }
 };
 
-var elements = attempt(function(selector) {
+let elements = attempt(function(selector) {
   return document.querySelectorAll(selector);
 }, '>_>');
 if (elements instanceof Error) elements = []; // elements = []

@@ -18,7 +18,7 @@ const times = (n, fn, context = undefined) => {
   while (fn.call(context, i) !== false && ++i < n) {}
 };
 
-var output = '';
+let output = '';
 times(5, i => (output += i));
 console.log(output); // 01234
 ```

@@ -127,7 +127,7 @@ function f() {
   return this.foo;
 }
 
-var x = f.bind({foo: 'hello'});
+const x = f.bind({foo: 'hello'});
 console.log(x()); // 'hello'
 ```
 
