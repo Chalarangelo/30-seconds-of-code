@@ -207,15 +207,20 @@ export class PreparedQueries {
    */
   static collectionSnippetSlugs =
     (application, queries) =>
-    (collectionId, { includeRedirects = false } = {}) =>
+    (collectionId, { includeRedirects = false, type = null } = {}) =>
       withCache(
-        `collectionSnippetSlugs#${collectionId}-${includeRedirects}`,
+        `collectionSnippetSlugs#${collectionId}-${includeRedirects}-${type}`,
         () => {
           const Collection = application.dataset.getModel('Collection');
 
-          const snippetSlugs = Collection.records
-            .get(collectionId)
-            .snippets.map(snippet => snippet.slug, { flat: true });
+          let snippets = Collection.records.get(collectionId).snippets;
+
+          if (type)
+            snippets = snippets.filter(snippet => snippet.type === type);
+
+          const snippetSlugs = snippets.map(snippet => snippet.slug, {
+            flat: true,
+          });
 
           if (includeRedirects)
             return snippetSlugs.map(queries.pageAlternativeUrls);
@@ -231,15 +236,17 @@ export class PreparedQueries {
    * @param {object} options - Options object.
    * @param {boolean} options.includeRedirects - Whether to include redirects in
    *   the returned data (default: true).
+   * @param {string} options.type - Snippet type to filter by.
    */
   static collectionPagesPerformance =
     (application, queries) =>
-    (collectionId, { includeRedirects = true } = {}) =>
+    (collectionId, { includeRedirects = true, type = null } = {}) =>
       withCache(
-        `collectionPagesPerformance#${collectionId}-${includeRedirects}`,
+        `collectionPagesPerformance#${collectionId}-${includeRedirects}-${type}`,
         () => {
           const snippetSlugs = queries.collectionSnippetSlugs(collectionId, {
             includeRedirects,
+            type,
           });
 
           return snippetSlugs.reduce((acc, snippetSlugs) => {
