@@ -1,16 +1,17 @@
 ---
-title: Quotient and module of division
-type: snippet
+title: Calculate the quotient and remainder of a division in JavaScript
+shortTitle: Quotient and remainder of division
+type: tip
 language: javascript
 tags: [math]
 cover: italian-horizon
-dateModified: 2020-10-07
+excerpt: Implement Python's `divmod()` built-in function in one line of JavaScript.
+dateModified: 2023-12-28
 ---
 
-Returns an array consisting of the quotient and remainder of the given numbers.
+Python's [`divmod()`](https://docs.python.org/3/library/functions.html#divmod) comes in handy quite often. Its purpose is to return a **2-tuple** consisting of the **quotient** and **remainder** of a division. For example, `divmod(8, 3)` returns `(2, 2)` because `8 / 3 = 2` with a remainder of `2`.
 
-- Use `Math.floor()` to get the quotient of the division `x / y`.
-- Use the modulo operator (`%`) to get the remainder of the division `x / y`.
+In order to implement `divmod()` in JavaScript, we can use the built-in `Math.floor()` function to get the quotient and the modulo operator (`%`) to get the remainder of the division `x / y`.
 
 ```js
 const divmod = (x, y) => [Math.floor(x / y), x % y];
