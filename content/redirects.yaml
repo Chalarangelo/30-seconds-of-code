@@ -1633,14 +1633,8 @@
 - from: /js/s/find-keys
   to: /js/s/find-matching-keys
   status: 301!
-- from: /js/s/find-last-index
-  to: /js/s/find-last-matching-index
-  status: 301!
 - from: /js/s/find-last-key
   to: /js/s/find-last-matching-key
-  status: 301!
-- from: /js/s/find-last
-  to: /js/s/find-last-matching-value
   status: 301!
 - from: /js/s/insert-at
   to: /js/s/insert-value-at-array-index
