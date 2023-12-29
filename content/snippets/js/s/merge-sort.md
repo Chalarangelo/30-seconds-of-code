@@ -1,13 +1,18 @@
 ---
 title: Merge sort
-type: snippet
+type: story
 language: javascript
 tags: [algorithm,array,recursion]
-cover: baloons-field
-dateModified: 2020-12-27
+cover: balloons-field
+excerpt: Sort an array of numbers, using the merge sort algorithm.
+dateModified: 2023-12-16
 ---
 
-Sorts an array of numbers, using the merge sort algorithm.
+## Definition
+
+[Merge sort](https://en.wikipedia.org/wiki/Merge_sort) is an **efficient, general-purpose, comparison-based sorting algorithm**. Merge sort is a **divide and conquer algorithm**, based on the idea of breaking down a array into several subarrays until each one consists of a single element and **merging those subarrays** in a manner that results into a **sorted array**.
+
+## Implementation
 
 - Use recursion.
 - If the `length` of the array is less than `2`, return the array.
@@ -30,3 +35,7 @@ const mergeSort = arr => {
 
 mergeSort([5, 1, 4, 2, 3]); // [1, 2, 3, 4, 5]
 ```
+
+## Complexity
+
+The algorithm has an [average time complexity](/js/s/big-o-cheatsheet#array-sorting-algorithms) of `O(n log n)`, where `n` is the size of the input array.

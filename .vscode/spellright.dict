@@ -11,3 +11,5 @@ typechecking
 typecheck
 typechecked
 bigint
+quicksort
+heapsort

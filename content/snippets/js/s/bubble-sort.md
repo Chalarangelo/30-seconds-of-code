@@ -1,13 +1,18 @@
 ---
 title: Bubble sort
-type: snippet
+type: story
 language: javascript
 tags: [algorithm,array]
 cover: sail-away-2
-dateModified: 2020-12-29
+excerpt: Sort an array of numbers, using the bubble sort algorithm.
+dateModified: 2023-12-16
 ---
 
-Sorts an array of numbers, using the bubble sort algorithm.
+## Definition
+
+[Bubble sort](https://en.wikipedia.org/wiki/Bubble_sort) is a simple **sorting algorithm** that repeatedly **steps through** the array, **compares** adjacent elements and **swaps** them if they are in the wrong order. The pass through the array is **repeated** until the array is sorted.
+
+## Implementation
 
 - Declare a variable, `swapped`, that indicates if any values were swapped during the current iteration.
 - Use the spread operator (`...`) to clone the original array, `arr`.
@@ -34,3 +39,7 @@ const bubbleSort = arr => {
 
 bubbleSort([2, 1, 4, 3]); // [1, 2, 3, 4]
 ```
+
+## Complexity
+
+The algorithm has an [average time complexity](/js/s/big-o-cheatsheet#array-sorting-algorithms) of `O(n^2)`, where `n` is the size of the input array.

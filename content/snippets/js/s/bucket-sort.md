@@ -1,13 +1,15 @@
 ---
 title: Bucket sort
-type: snippet
+type: story
 language: javascript
 tags: [algorithm,array]
 cover: canoe
-dateModified: 2020-12-29
+excerpt: Sort an array of numbers, using the bucket sort algorithm.
+dateModified: 2023-12-16
 ---
 
-Sorts an array of numbers, using the bucket sort algorithm.
+
+## Implementation
 
 - Use `Math.min()`, `Math.max()` and the spread operator (`...`) to find the minimum and maximum values of the given array.
 - Use `Array.from()` and `Math.floor()` to create the appropriate number of `buckets` (empty arrays).
@@ -30,3 +32,7 @@ const bucketSort = (arr, size = 5) => {
 
 bucketSort([6, 3, 4, 1]); // [1, 3, 4, 6]
 ```
+
+## Complexity
+
+The algorithm has an [average time complexity](/js/s/big-o-cheatsheet#array-sorting-algorithms) of `O(n + k)`, where `n` is the size of the input array and `k` is the number of buckets.

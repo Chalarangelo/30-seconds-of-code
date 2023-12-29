@@ -1,13 +1,18 @@
 ---
 title: Heap sort
-type: snippet
+type: story
 language: javascript
 tags: [algorithm,array,recursion]
 cover: building-blocks
-dateModified: 2020-12-28
+excerpt: Sort an array of numbers, using the heapsort algorithm.
+dateModified: 2023-12-16
 ---
 
-Sorts an array of numbers, using the heapsort algorithm.
+## Definition
+
+[Heapsort](https://en.wikipedia.org/wiki/Heapsort) is a **comparison-based sorting algorithm**. Heapsort can be thought of as an improved [selection sort](/js/s/selection-sort). The improvement consists of the use of a **heap data structure** instead of a linear-time search to find the maximum or minimum element.
+
+## Implementation
 
 - Use recursion.
 - Use the spread operator (`...`) to clone the original array, `arr`.
@@ -43,3 +48,7 @@ const heapsort = arr => {
 
 heapsort([6, 3, 4, 1]); // [1, 3, 4, 6]
 ```
+
+## Complexity
+
+The algorithm has an [average time complexity](/js/s/big-o-cheatsheet#array-sorting-algorithms) of `O(n log n)`, where `n` is the size of the input array.

@@ -1,13 +1,18 @@
 ---
 title: Insertion sort
-type: snippet
+type: story
 language: javascript
 tags: [algorithm,array]
 cover: white-tablet-2
-dateModified: 2020-12-28
+excerpt: Sort an array of numbers, using the insertion sort algorithm.
+dateModified: 2023-12-16
 ---
 
-Sorts an array of numbers, using the insertion sort algorithm.
+## Definition
+
+[Insertion sort](https://en.wikipedia.org/wiki/Insertion_sort) is a **simple sorting algorithm** that builds the final sorted array **one element at a time**. It uses **comparison** to find the correct position to insert the current element at, in order to maintain the sorted subarray.
+
+## Implementation
 
 - Use `Array.prototype.reduce()` to iterate over all the elements in the given array.
 - If the `length` of the accumulator is `0`, add the current element to it.
@@ -34,3 +39,7 @@ const insertionSort = arr =>
 
 insertionSort([6, 3, 4, 1]); // [1, 3, 4, 6]
 ```
+
+## Complexity
+
+The algorithm has an [average time complexity](/js/s/big-o-cheatsheet#array-sorting-algorithms) of `O(n^2)`, where `n` is the size of the input array.
