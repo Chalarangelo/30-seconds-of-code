@@ -988,12 +988,6 @@
 - from: /js/s/complement
   to: /js/s/logical-complement
   status: 301!
-- from: /js/s/compose
-  to: /js/s/compose-functions
-  status: 301!
-- from: /js/s/compose-right
-  to: /js/s/reverse-compose-functions
-  status: 301!
 - from: /js/s/create-dir-if-not-exists
   to: /js/s/create-directory-if-not-exists
   status: 301!
@@ -2112,4 +2106,19 @@
   status: 301!
 - from: /js/s/juxtapose-functions
   to: /js/s/invoke-functions-on-arguments
+  status: 301!
+- from: /js/s/compose
+  to: /js/s/function-composition
+  status: 301!
+- from: /js/s/compose-functions
+  to: /js/s/function-composition
+  status: 301!
+- from: /js/s/compose-right
+  to: /js/s/function-composition
+  status: 301!
+- from: /js/s/reverse-compose-functions
+  to: /js/s/function-composition
+  status: 301!
+- from: /js/s/pipe-functions
+  to: /js/s/function-composition
   status: 301!

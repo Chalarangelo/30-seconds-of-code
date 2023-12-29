@@ -14,3 +14,4 @@ bigint
 quicksort
 heapsort
 regexp
+arity
