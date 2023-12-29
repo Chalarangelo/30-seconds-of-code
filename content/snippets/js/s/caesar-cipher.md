@@ -1,19 +1,29 @@
 ---
-title: Caesar cipher
-type: snippet
+title: Implement the Caesar cipher in JavaScript
+shortTitle: Caesar cipher
+type: story
 language: javascript
 tags: [algorithm,string]
 cover: waves-from-above
-dateModified: 2020-12-29
+excerpt: The Caesar cipher is a simple substitution cipher, which can be easily implemented with a few lines of JavaScript code.
+dateModified: 2023-12-17
 ---
 
-Encrypts or decrypts a given string using the Caesar cipher.
+## Definition
 
-- Use the modulo (`%`) operator and the ternary operator (`?`) to calculate the correct encryption/decryption key.
-- Use the spread operator (`...`) and `Array.prototype.map()` to iterate over the letters of the given string.
-- Use `String.prototype.charCodeAt()` and `String.fromCharCode()` to convert each letter appropriately, ignoring special characters, spaces etc.
-- Use `Array.prototype.join()` to combine all the letters into a string.
-- Pass `true` to the last parameter, `decrypt`, to decrypt an encrypted string.
+The [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher) is a simple **substitution cipher**, in which each letter is replaced by another letter a fixed number of positions down the alphabet. For example, with a left shift of `3`, `D` would be replaced by `A`, `E` would become `B`, and so on.
+
+## Implementation
+
+> [!NOTE]
+>
+> The following implementation only works for **Latin letters** (`A` to `Z` and `a` to `z`), ignoring all other characters.
+
+Depending on the **mode** (decided by the `decrypt` parameter), the cipher either adds or subtracts the `shift` from the character code of each letter, wrapping around the alphabet as needed. This is achieved by using the modulo operator (`%`) and the ternary operator (`?`).
+
+Then, using the spread operator (`...`) and `Array.prototype.map()`, the algorithm **iterates over the letters** of the given string. For each letter, it **converts it to its character code** using `String.prototype.charCodeAt()`, **applies the shift** and **converts it back to a letter** using `String.fromCharCode()`. If the character code is not in the range `65` (`A`) to `90` (`Z`) or `97` (`a`) to `122` (`z`), it is left as is.
+
+Finally, the letters are **combined into a string** using `Array.prototype.join()`.
 
 ```js
 const caesarCipher = (str, shift, decrypt = false) => {
@@ -31,6 +41,12 @@ const caesarCipher = (str, shift, decrypt = false) => {
     .join('');
 };
 
+caesarCipher('Hello World!', 23); // 'Ebiil Tloia!'
 caesarCipher('Hello World!', -3); // 'Ebiil Tloia!'
 caesarCipher('Ebiil Tloia!', 23, true); // 'Hello World!'
+caesarCipher('Ebiil Tloia!', -3, true); // 'Hello World!'
 ```
+
+> [!CAUTION]
+>
+> The Caesar cipher is one of the easiest ciphers to break. **Do not use it for sensitive data.**
