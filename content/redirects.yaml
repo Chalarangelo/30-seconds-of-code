@@ -1000,9 +1000,6 @@
 - from: /js/s/digitize
   to: /js/s/digitize-number
   status: 301!
-- from: /js/s/distance
-  to: /js/s/distance-between-two-points
-  status: 301!
 - from: /js/s/includes-all
   to: /js/s/array-includes-all-values
   status: 301!
@@ -2106,4 +2103,10 @@
   status: 301!
 - from: /js/s/lcm
   to: /js/s/gcd-lcm
+  status: 301!
+- from: /js/s/distance
+  to: /js/s/euclidean-distance
+  status: 301!
+- from: /js/s/distance-between-two-points
+  to: /js/s/euclidean-distance
   status: 301!
