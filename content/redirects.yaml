@@ -2101,3 +2101,9 @@
 - from: /js/s/uuid-generator-browser
   to: /js/s/uuid-generator
   status: 301!
+- from: /js/s/gcd
+  to: /js/s/gcd-lcm
+  status: 301!
+- from: /js/s/lcm
+  to: /js/s/gcd-lcm
+  status: 301!
