@@ -237,10 +237,12 @@ export class PreparedQueries {
    * @param {boolean} options.includeRedirects - Whether to include redirects in
    *   the returned data (default: true).
    * @param {string} options.type - Snippet type to filter by.
+   * @param {number} options.sorted - Whether to sort the returned data by clicks
+   *  (1 = descending, -1 = ascending, 0 = no sorting).
    */
   static collectionPagesPerformance =
     (application, queries) =>
-    (collectionId, { includeRedirects = true, type = null } = {}) =>
+    (collectionId, { includeRedirects = true, type = null, sorted = 0 } = {}) =>
       withCache(
         `collectionPagesPerformance#${collectionId}-${includeRedirects}-${type}`,
         () => {
@@ -249,7 +251,7 @@ export class PreparedQueries {
             type,
           });
 
-          return snippetSlugs.reduce((acc, snippetSlugs) => {
+          const dataPairs = snippetSlugs.reduce((acc, snippetSlugs) => {
             const [allSlugs, snippetSlug] = Array.isArray(snippetSlugs)
               ? [snippetSlugs, snippetSlugs[0]]
               : [[snippetSlugs], snippetSlugs];
@@ -264,9 +266,18 @@ export class PreparedQueries {
               { clicks: 0, impressions: 0 }
             );
 
-            acc[snippetSlug] = total;
+            acc.push([snippetSlug, total]);
             return acc;
-          }, {});
+          }, []);
+
+          if (sorted !== 0)
+            dataPairs.sort((a, b) => {
+              const aClicks = a[1].clicks;
+              const bClicks = b[1].clicks;
+              return sorted === 1 ? bClicks - aClicks : aClicks - bClicks;
+            });
+
+          return Object.fromEntries(dataPairs);
         }
       );
 
