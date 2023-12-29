@@ -13,3 +13,4 @@ typechecked
 bigint
 quicksort
 heapsort
+regexp

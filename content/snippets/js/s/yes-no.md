@@ -1,17 +1,29 @@
 ---
-title: Check yes/no string
-type: snippet
+title: Check if a string is a yes/no answer with JavaScript
+shortTitle: Yes/no answer
+type: tip
 language: javascript
 tags: [string,regexp]
-unlisted: true
 cover: fort-lamp
-dateModified: 2021-01-04
+excerpt: Quickly and easily check if a string is a yes/no answer to a boolean question in your CLI programs.
+dateModified: 2023-12-15
 ---
 
-Returns `true` if the string is `'y'`/`'yes'` or `false` if the string is `'n'`/`'no'`.
+If you've spent any amount of time using your computer's terminal, chances are you've been asked to confirm an action by typing `y` or `n` and pressing `Enter`.
 
-- Use `RegExp.prototype.test()` to check if the string evaluates to `'y'`/`'yes'` or `'n'`/`'no'`.
-- Omit the second argument, `def` to set the default answer as `'no'`.
+```text [Terminal]
+Are you sure you want to continue? [y/n]
+```
+
+Implementing this functionality takes some careful consideration in order to get it right.
+
+For starters, your boolean question must understand both `y`/`n` and `yes`/`no` answers. The easiest way to handle this would be a **regular expression** for each answer, such as `(y|yes)` and `(n|no)`.
+
+Additionally, you want to **invalidate user input that doesn't match** the expected answers. For example, if the user types `yess` or `nope`, that is not a valid answer and the result should use the **default value** specified. Adding **positional anchors** to the regular expressions, such as `^(y|yes)$` and `^(n|no)$`, will ensure that the entire string is matched.
+
+Finally, you want the check to be **case-insensitive**, so that `Y` and `y` are treated the same. You can do this by adding the `i` flag to your regular expressions, such as `/^(y|yes)$/i` and `/^(n|no)$/i`.
+
+Putting it all together, you can use `RegExp.prototype.test()` and the ternary operator (`?`) to check if the string matches the expected answers and return the appropriate boolean value.
 
 ```js
 const yesNo = (val, def = false) =>
