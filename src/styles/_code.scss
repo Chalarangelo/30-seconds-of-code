@@ -72,7 +72,8 @@ pre {
   }
 }
 
-pre[data-code-language] {
+pre[data-code-language],
+pre[data-code-title] {
   // Add some space above the code to fit the language label.
   padding-block-start: var(--spacing-24);
 
@@ -91,14 +92,23 @@ pre[data-code-language] {
     // Display the label as serialized in the `data-code-language` attribute.
     content: attr(data-code-language);
   }
+}
 
-  &[data-code-title] {
-    // If a title is present, it's assumed that the language label is already
-    // present, so we can replace it.
-    &::before {
-      // Display both the language and the title.
-      content: attr(data-code-title) ' (' attr(data-code-language) ')';
-    }
+pre[data-code-language][data-code-title] {
+  // If a title is present, and the language label is already present,
+  // we can replace it.
+  &::before {
+    // Display both the language and the title.
+    content: attr(data-code-title) ' (' attr(data-code-language) ')';
+  }
+}
+
+pre:not(data-code-language)[data-code-title] {
+  // If a title is present, but no language label is present, we can just
+  // display the title.
+  &::before {
+    // Display the title.
+    content: attr(data-code-title);
   }
 }
 
