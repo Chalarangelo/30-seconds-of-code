@@ -973,15 +973,6 @@
 - from: /js/s/flatten
   to: /js/s/flatten-array
   status: 301!
-- from: /js/s/ary
-  to: /js/s/function-arity
-  status: 301!
-- from: /js/s/unary
-  to: /js/s/unary-function-arity
-  status: 301!
-- from: /js/s/binary
-  to: /js/s/binary-function-arity
-  status: 301!
 - from: /js/s/compact
   to: /js/s/compact-array
   status: 301!
@@ -2127,4 +2118,19 @@
   status: 301!
 - from: /js/s/uncurry-function
   to: /js/s/currying
+  status: 301!
+- from: /js/s/ary
+  to: /js/s/function-arity
+  status: 301!
+- from: /js/s/unary
+  to: /js/s/function-arity
+  status: 301!
+- from: /js/s/unary-function-arity
+  to: /js/s/function-arity
+  status: 301!
+- from: /js/s/binary
+  to: /js/s/function-arity
+  status: 301!
+- from: /js/s/binary-function-arity
+  to: /js/s/function-arity
   status: 301!
