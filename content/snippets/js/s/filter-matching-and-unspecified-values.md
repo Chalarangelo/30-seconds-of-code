@@ -3,7 +3,7 @@ title: Filter matching and unspecified values
 type: snippet
 language: javascript
 tags: [array]
-cover: baloons-field
+cover: balloons-field
 dateModified: 2020-10-22
 ---
 
