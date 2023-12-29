@@ -1063,12 +1063,6 @@
 - from: /js/s/untildify
   to: /js/s/convert-to-absolute-path
   status: 301!
-- from: /js/s/curry
-  to: /js/s/curry-function
-  status: 301!
-- from: /js/s/uncurry
-  to: /js/s/uncurry-function
-  status: 301!
 - from: /js/s/functions
   to: /js/s/function-names
   status: 301!
@@ -2121,4 +2115,16 @@
   status: 301!
 - from: /js/s/pipe-functions
   to: /js/s/function-composition
+  status: 301!
+- from: /js/s/curry
+  to: /js/s/currying
+  status: 301!
+- from: /js/s/curry-function
+  to: /js/s/currying
+  status: 301!
+- from: /js/s/uncurry
+  to: /js/s/currying
+  status: 301!
+- from: /js/s/uncurry-function
+  to: /js/s/currying
   status: 301!
