@@ -1108,9 +1108,6 @@
 - from: /js/s/nest
   to: /js/s/nest-objects
   status: 301!
-- from: /js/s/juxt
-  to: /js/s/juxtapose-functions
-  status: 301!
 - from: /js/s/nth-root
   to: /js/s/nth-number-root
   status: 301!
@@ -2109,4 +2106,10 @@
   status: 301!
 - from: /js/s/find-last-matching-key
   to: /js/s/find-matching-keys
+  status: 301!
+- from: /js/s/juxt
+  to: /js/s/invoke-functions-on-arguments
+  status: 301!
+- from: /js/s/juxtapose-functions
+  to: /js/s/invoke-functions-on-arguments
   status: 301!
