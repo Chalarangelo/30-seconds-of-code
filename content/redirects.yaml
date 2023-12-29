@@ -1627,15 +1627,6 @@
 - from: /js/s/matches-with
   to: /js/s/function-based-object-property-matches
   status: 301!
-- from: /js/s/find-key
-  to: /js/s/find-first-matching-key
-  status: 301!
-- from: /js/s/find-keys
-  to: /js/s/find-matching-keys
-  status: 301!
-- from: /js/s/find-last-key
-  to: /js/s/find-last-matching-key
-  status: 301!
 - from: /js/s/insert-at
   to: /js/s/insert-value-at-array-index
   status: 301!
@@ -2103,4 +2094,19 @@
   status: 301!
 - from: /js/s/distance-between-two-points
   to: /js/s/euclidean-distance
+  status: 301!
+- from: /js/s/find-key
+  to: /js/s/find-matching-keys
+  status: 301!
+- from: /js/s/find-first-matching-key
+  to: /js/s/find-matching-keys
+  status: 301!
+- from: /js/s/find-keys
+  to: /js/s/find-matching-keys
+  status: 301!
+- from: /js/s/find-last-key
+  to: /js/s/find-matching-keys
+  status: 301!
+- from: /js/s/find-last-matching-key
+  to: /js/s/find-matching-keys
   status: 301!
