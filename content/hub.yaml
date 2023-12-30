@@ -19,6 +19,7 @@ featuredListings:
 - js/node
 - js/data-structures
 - js/promises
+- js/functional-programming
 - js/comparison
 - html/head-basics
 - css/centering
