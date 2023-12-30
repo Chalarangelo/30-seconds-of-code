@@ -205,9 +205,6 @@
 - from: /c/js-interviews/*
   to: /js/interviews/:splat
   status: 301!
-- from: /c/js-logical-operations/*
-  to: /js/logical-operations/:splat
-  status: 301!
 - from: /c/js-object-cloning/*
   to: /js/object-cloning/:splat
   status: 301!
@@ -976,9 +973,6 @@
 - from: /js/s/compact
   to: /js/s/compact-array
   status: 301!
-- from: /js/s/complement
-  to: /js/s/logical-complement
-  status: 301!
 - from: /js/s/create-dir-if-not-exists
   to: /js/s/create-directory-if-not-exists
   status: 301!
@@ -1273,9 +1267,6 @@
 - from: /js/s/url-join
   to: /js/s/join-url-segments
   status: 301!
-- from: /js/s/either
-  to: /js/s/function-logical-or
-  status: 301!
 - from: /js/s/in-range
   to: /js/s/number-in-range
   status: 301!
@@ -1422,9 +1413,6 @@
   status: 301!
 - from: /js/s/dig
   to: /js/s/get-nested-value-in-object
-  status: 301!
-- from: /js/s/when
-  to: /js/s/conditionally-apply-function
   status: 301!
 - from: /js/s/rearg
   to: /js/s/rearrange-function-arguments
@@ -2133,4 +2121,40 @@
   status: 301!
 - from: /js/s/binary-function-arity
   to: /js/s/function-arity
+  status: 301!
+- from: /js/s/and
+  to: /js/s/logical-operations
+  status: 301!
+- from: /js/s/or
+  to: /js/s/logical-operations
+  status: 301!
+- from: /js/s/not
+  to: /js/s/logical-operations
+  status: 301!
+- from: /js/s/xor
+  to: /js/s/logical-operations
+  status: 301!
+- from: /js/s/nor
+  to: /js/s/logical-operations
+  status: 301!
+- from: /js/s/both
+  to: /js/s/logical-operations
+  status: 301!
+- from: /js/s/either
+  to: /js/s/logical-operations
+  status: 301!
+- from: /js/s/function-logical-or
+  to: /js/s/logical-operations
+  status: 301!
+- from: /js/s/complement
+  to: /js/s/logical-operations
+  status: 301!
+- from: /js/s/logical-complement
+  to: /js/s/logical-operations
+  status: 301!
+- from: /c/js-logical-operations/*
+  to: /js/s/logical-operations
+  status: 301!
+- from: /js/logical-operations/*
+  to: /js/s/logical-operations
   status: 301!
