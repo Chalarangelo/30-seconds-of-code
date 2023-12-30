@@ -1501,9 +1501,6 @@
 - from: /js/s/reduced-filter
   to: /js/s/filter-matching-and-unspecified-values
   status: 301!
-- from: /js/s/reduce-which
-  to: /js/s/function-based-array-min-max
-  status: 301!
 - from: /js/s/sum-power
   to: /js/s/sum-powers-in-range
   status: 301!
@@ -1521,12 +1518,6 @@
   status: 301!
 - from: /js/s/find-last-n
   to: /js/s/find-last-n-matches
-  status: 301!
-- from: /js/s/max-by
-  to: /js/s/function-based-array-max
-  status: 301!
-- from: /js/s/min-by
-  to: /js/s/function-based-array-min
   status: 301!
 - from: /js/s/index-of-all
   to: /js/s/index-of-all-matches
@@ -1767,18 +1758,6 @@
   status: 301!
 - from: /js/s/hash-browser
   to: /js/s/hash-sha-256
-  status: 301!
-- from: /js/s/max-n
-  to: /js/s/n-min-max-elements-in-array
-  status: 301!
-- from: /js/s/min-n
-  to: /js/s/n-min-max-elements-in-array
-  status: 301!
-- from: /js/s/n-max-elements
-  to: /js/s/n-min-max-elements-in-array
-  status: 301!
-- from: /js/s/n-min-elements
-  to: /js/s/n-min-max-elements-in-array
   status: 301!
 - from: /js/s/first-n
   to: /js/s/first-last-n-elements
@@ -2157,4 +2136,37 @@
   status: 301!
 - from: /js/logical-operations/*
   to: /js/s/logical-operations
+  status: 301!
+- from: /js/s/reduce-which
+  to: /js/s/array-min-max
+  status: 301!
+- from: /js/s/function-based-array-min-max
+  to: /js/s/array-min-max
+  status: 301!
+- from: /js/s/max-by
+  to: /js/s/array-min-max
+  status: 301!
+- from: /js/s/function-based-array-max
+  to: /js/s/array-min-max
+  status: 301!
+- from: /js/s/min-by
+  to: /js/s/array-min-max
+  status: 301!
+- from: /js/s/function-based-array-min
+  to: /js/s/array-min-max
+  status: 301!
+- from: /js/s/max-n
+  to: /js/s/array-min-max
+  status: 301!
+- from: /js/s/min-n
+  to: /js/s/array-min-max
+  status: 301!
+- from: /js/s/n-max-elements
+  to: /js/s/array-min-max
+  status: 301!
+- from: /js/s/n-min-elements
+  to: /js/s/array-min-max
+  status: 301!
+- from: /js/s/n-min-max-elements-in-array
+  to: /js/s/array-min-max
   status: 301!
