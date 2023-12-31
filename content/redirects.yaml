@@ -2200,6 +2200,9 @@
 - from: /js/s/to-sentence-case
   to: /js/s/string-case-conversion
   status: 301!
+- from: /js/s/from-camel-case
+  to: /js/s/string-case-conversion
+  status: 301!
 - from: /js/s/starts-with-substring
   to: /js/s/string-starts-or-ends-with-substring
   status: 301!
