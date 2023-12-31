@@ -2176,3 +2176,9 @@
 - from: /js/s/truncate-string-at-whitespace
   to: /js/s/truncate-string
   status: 301!
+- from: /js/s/capitalize
+  to: /js/s/capitalize-first-letter-of-string
+  status: 301!
+- from: /js/s/decapitalize
+  to: /js/s/capitalize-first-letter-of-string
+  status: 301!
