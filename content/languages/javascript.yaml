@@ -768,3 +768,7 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/API/Crypto/randomUUID
   crypto.getRandomValues(): >-
     https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues
+  Intl.Segmenter: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter
+  Intl.Segmenter.prototype.segment(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter/segment

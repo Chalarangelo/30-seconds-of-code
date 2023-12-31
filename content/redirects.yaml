@@ -634,9 +634,6 @@
 - from: /articles/s/js-last-element-of-array
   to: /js/s/last-element-of-array
   status: 301!
-- from: /articles/s/js-locale-sensitive-string-truncation
-  to: /js/s/locale-sensitive-string-truncation
-  status: 301!
 - from: /articles/s/js-map-vs-object
   to: /js/s/map-vs-object
   status: 301!
@@ -2169,4 +2166,13 @@
   status: 301!
 - from: /js/s/n-min-max-elements-in-array
   to: /js/s/array-min-max
+  status: 301!
+- from: /articles/s/js-locale-sensitive-string-truncation
+  to: /js/s/truncate-string
+  status: 301!
+- from: /js/s/locale-sensitive-string-truncation
+  to: /js/s/truncate-string
+  status: 301!
+- from: /js/s/truncate-string-at-whitespace
+  to: /js/s/truncate-string
   status: 301!
