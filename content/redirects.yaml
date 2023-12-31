@@ -2182,3 +2182,21 @@
 - from: /js/s/decapitalize
   to: /js/s/capitalize-first-letter-of-string
   status: 301!
+- from: /js/s/to-camel-case
+  to: /js/s/string-case-conversion
+  status: 301!
+- from: /js/s/to-kebab-case
+  to: /js/s/string-case-conversion
+  status: 301!
+- from: /js/s/to-snake-case
+  to: /js/s/string-case-conversion
+  status: 301!
+- from: /js/s/to-pascal-case
+  to: /js/s/string-case-conversion
+  status: 301!
+- from: /js/s/to-title-case
+  to: /js/s/string-case-conversion
+  status: 301!
+- from: /js/s/to-sentence-case
+  to: /js/s/string-case-conversion
+  status: 301!
