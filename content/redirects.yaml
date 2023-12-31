@@ -964,9 +964,6 @@
 - from: /js/s/chain-async
   to: /js/s/chain-async-functions
   status: 301!
-- from: /js/s/flatten
-  to: /js/s/flatten-array
-  status: 301!
 - from: /js/s/compact
   to: /js/s/compact-array
   status: 301!
@@ -1563,9 +1560,6 @@
   status: 301!
 - from: /js/s/initial
   to: /js/s/array-without-last-element
-  status: 301!
-- from: /js/s/deep-flatten
-  to: /js/s/deep-flatten-array
   status: 301!
 - from: /js/s/map-object
   to: /js/s/map-array-to-object
