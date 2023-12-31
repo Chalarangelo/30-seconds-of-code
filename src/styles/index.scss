@@ -1,14 +1,28 @@
-@import './fonts';
-@import './mixins';
-@import './tokens';
-@import './base';
-@import './typography';
-@import './link';
-@import './code';
-@import './form';
-@import './table';
-@import './scrollbar';
-@import './media';
-@import './layout';
-@import './embed';
-@import './components';
+// Define a layer around the entirety of the framework's styles. This allows
+// custom styles in various pages (e.g. `<style> `declarations in snippet files)
+// to easily override framework styles.
+// Note that page-specific styles, defined as part of the `pages` directory are
+// not included in the framework layer.
+// Note that multiple layers end up in a problematic cascade situation when a
+// page-specific layer exists, as Astro will load the page layer first, then
+// this file, throwing off cascade declarations. One potential solution involves
+// adding a declaration like `@layer framework, page, content` above everything
+// else, possibly as part of `Layout` or every single page file. As this is an
+// experimental setup to explore the usefulness of cascade layers, this is not
+// implemented as of this iteration.
+@layer framework {
+  @import './fonts';
+  @import './mixins';
+  @import './tokens';
+  @import './base';
+  @import './typography';
+  @import './link';
+  @import './code';
+  @import './form';
+  @import './table';
+  @import './scrollbar';
+  @import './media';
+  @import './layout';
+  @import './embed';
+  @import './components';
+}
