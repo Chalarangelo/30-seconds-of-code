@@ -772,3 +772,7 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter
   Intl.Segmenter.prototype.segment(): >-
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter/segment
+  Set.prototype.isSupersetOf(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/isSupersetOf
+  Set.prototype.isSubsetOf(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/isSubsetOf
