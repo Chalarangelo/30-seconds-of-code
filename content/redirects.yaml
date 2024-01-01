@@ -406,9 +406,6 @@
 - from: /articles/s/javascript-naming-conventions
   to: /js/s/naming-conventions
   status: 301!
-- from: /articles/s/javascript-nullish-coalescing-optional-chaining
-  to: /js/s/nullish-coalescing-optional-chaining
-  status: 301!
 - from: /articles/s/javascript-numeric-separator
   to: /js/s/numeric-separator
   status: 301!
@@ -1077,12 +1074,6 @@
   status: 301!
 - from: /js/s/nth-root
   to: /js/s/nth-number-root
-  status: 301!
-- from: /js/s/coalesce-factory
-  to: /js/s/argument-coalescing-factory
-  status: 301!
-- from: /js/s/coalesce
-  to: /js/s/argument-coalescing
   status: 301!
 - from: /js/s/words
   to: /js/s/string-to-words
@@ -2205,4 +2196,19 @@
   status: 301!
 - from: /js/s/superset
   to: /js/s/superset-subset-of-array
+  status: 301!
+- from: /articles/s/javascript-nullish-coalescing-optional-chaining
+  to: /js/s/nullish-coalescing-optional-chaining
+  status: 301!
+- from: /js/s/coalesce-factory
+  to: /js/s/nullish-coalescing-optional-chaining
+  status: 301!
+- from: /js/s/argument-coalescing-factory
+  to: /js/s/nullish-coalescing-optional-chaining
+  status: 301!
+- from: /js/s/coalesce-factory
+  to: /js/s/nullish-coalescing-optional-chaining
+  status: 301!
+- from: /js/s/argument-coalescing
+  to: /js/s/nullish-coalescing-optional-chaining
   status: 301!

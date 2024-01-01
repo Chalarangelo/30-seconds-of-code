@@ -13,7 +13,7 @@ JavaScript ES2020 introduced some new features that help us write cleaner code. 
 
 ## Optional chaining
 
-The [optional chaining operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) (`?.`) allows us to access deeply nested object properties without having to validate each reference in the nesting chain. In case of a reference being nullish (`null` or `undefined`) the optional chaining operator will short-circuit, returning `undefined`. The optional chaining operator can also be used with function calls, returning `undefined` if the given function does not exist.
+The [optional chaining operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) (`?.`) allows us to **access deeply nested object properties** without having to validate each reference in the nesting chain. In case of a reference being nullish (`null` or `undefined`) the optional chaining operator will **short-circuit**, returning `undefined`. The optional chaining operator can also be used with function calls, returning `undefined` if the given function does not exist.
 
 The resulting code is shorter and simpler, as you can see below:
 
@@ -33,7 +33,7 @@ data.showNotifications?.();
 
 ## Nullish coalescing
 
-In the same spirit, the [nullish coalescing operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator) (`??`) is a logical operator that allows us to check for nullish (`null` or `undefined`) values, returning the right-hand side operand when the value is non-nullish, otherwise returning the left-hand side operand.
+In the same spirit, the [nullish coalescing operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator) (`??`) is a **logical operator** that allows us to check for **nullish** (`null` or `undefined`) values, returning the right-hand side operand when the value is non-nullish, otherwise returning the left-hand side operand.
 
 Apart from cleaner code, this operator might spare us some headaches related to falsy values:
 
@@ -57,4 +57,4 @@ const keepAlive = config.server.keepAlive ?? true;
 
 > [!NOTE]
 >
-> Keep in mind that both features are quite new, so their support might not be great just yet (around 80% at the time of writing [[1]](https://caniuse.com/#feat=mdn-javascript_operators_optional_chaining)[[2]](https://caniuse.com/#feat=mdn-javascript_operators_nullish_coalescing)).
+> Keep in mind that both features are **relatively new**, so you might need **polyfills** to support older browsers. Be sure to check their compatibility before using in your projects.
