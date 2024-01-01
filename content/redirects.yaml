@@ -1066,9 +1066,6 @@
 - from: /js/s/memoize
   to: /js/s/memoize-function
   status: 301!
-- from: /js/s/negate
-  to: /js/s/negate-predicate
-  status: 301!
 - from: /js/s/nest
   to: /js/s/nest-objects
   status: 301!
@@ -2102,6 +2099,12 @@
   to: /js/s/logical-operations
   status: 301!
 - from: /js/s/logical-complement
+  to: /js/s/logical-operations
+  status: 301!
+- from: /js/s/negate
+  to: /js/s/logical-operations
+  status: 301!
+- from: /js/s/negate-predicate
   to: /js/s/logical-operations
   status: 301!
 - from: /c/js-logical-operations/*
