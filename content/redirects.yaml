@@ -160,9 +160,6 @@
 - from: /c/js-array-methods/*
   to: /js/array-methods/:splat
   status: 301!
-- from: /c/js-array-set-operations/*
-  to: /js/array-set-operations/:splat
-  status: 301!
 - from: /c/js-array-tricks/*
   to: /js/array-tricks/:splat
   status: 301!
@@ -1339,48 +1336,6 @@
 - from: /js/s/percentile
   to: /js/s/percentile-of-matches
   status: 301!
-- from: /js/s/similarity
-  to: /js/s/array-similarity
-  status: 301!
-- from: /js/s/difference
-  to: /js/s/array-difference
-  status: 301!
-- from: /js/s/union
-  to: /js/s/array-union
-  status: 301!
-- from: /js/s/intersection
-  to: /js/s/array-intersection
-  status: 301!
-- from: /js/s/symmetric-difference
-  to: /js/s/array-symmetric-difference
-  status: 301!
-- from: /js/s/union-by
-  to: /js/s/mapped-array-union
-  status: 301!
-- from: /js/s/difference-by
-  to: /js/s/mapped-array-difference
-  status: 301!
-- from: /js/s/intersection-by
-  to: /js/s/mapped-array-intersection
-  status: 301!
-- from: /js/s/symmetric-difference-by
-  to: /js/s/mapped-array-symmetric-difference
-  status: 301!
-- from: /js/s/union-with
-  to: /js/s/function-based-array-union
-  status: 301!
-- from: /js/s/difference-with
-  to: /js/s/function-based-array-difference
-  status: 301!
-- from: /js/s/intersection-with
-  to: /js/s/function-based-array-intersection
-  status: 301!
-- from: /js/s/symmetric-difference-with
-  to: /js/s/function-based-array-symmetric-difference
-  status: 301!
-- from: /js/s/unique-symmetric-difference
-  to: /js/s/array-unique-symmetric-difference
-  status: 301!
 - from: /js/s/remove
   to: /js/s/remove-matching-array-elements
   status: 301!
@@ -1494,9 +1449,6 @@
   status: 301!
 - from: /js/s/flip
   to: /js/s/flip-function-arguments
-  status: 301!
-- from: /js/s/intersects
-  to: /js/s/arrays-intersect
   status: 301!
 - from: /js/s/replace-or-append
   to: /js/s/replace-or-append-array-value
@@ -2220,4 +2172,100 @@
   status: 301!
 - from: /js/s/argument-coalescing
   to: /js/s/nullish-coalescing-optional-chaining
+  status: 301!
+- from: /js/s/similarity
+  to: /js/s/array-set-operations
+  status: 301!
+- from: /js/s/array-similarity
+  to: /js/s/array-set-operations
+  status: 301!
+- from: /js/s/union
+  to: /js/s/array-set-operations
+  status: 301!
+- from: /js/s/array-union
+  to: /js/s/array-set-operations
+  status: 301!
+- from: /js/s/intersection
+  to: /js/s/array-set-operations
+  status: 301!
+- from: /js/s/array-intersection
+  to: /js/s/array-set-operations
+  status: 301!
+- from: /js/s/difference
+  to: /js/s/array-set-operations
+  status: 301!
+- from: /js/s/array-difference
+  to: /js/s/array-set-operations
+  status: 301!
+- from: /js/s/difference
+  to: /js/s/array-set-operations
+  status: 301!
+- from: /js/s/array-symmetric-difference
+  to: /js/s/array-set-operations
+  status: 301!
+- from: /js/s/union-by
+  to: /js/s/array-set-operations
+  status: 301!
+- from: /js/s/mapped-array-union
+  to: /js/s/array-set-operations
+  status: 301!
+- from: /js/s/intersection-by
+  to: /js/s/array-set-operations
+  status: 301!
+- from: /js/s/mapped-array-intersection
+  to: /js/s/array-set-operations
+  status: 301!
+- from: /js/s/difference-by
+  to: /js/s/array-set-operations
+  status: 301!
+- from: /js/s/mapped-array-difference
+  to: /js/s/array-set-operations
+  status: 301!
+- from: /js/s/symmetric-difference-by
+  to: /js/s/array-set-operations
+  status: 301!
+- from: /js/s/mapped-array-symmetric-difference
+  to: /js/s/array-set-operations
+  status: 301!
+- from: /js/s/union-with
+  to: /js/s/array-set-operations
+  status: 301!
+- from: /js/s/function-based-array-union
+  to: /js/s/array-set-operations
+  status: 301!
+- from: /js/s/intersection-with
+  to: /js/s/array-set-operations
+  status: 301!
+- from: /js/s/function-based-array-intersection
+  to: /js/s/array-set-operations
+  status: 301!
+- from: /js/s/difference-with
+  to: /js/s/array-set-operations
+  status: 301!
+- from: /js/s/function-based-array-difference
+  to: /js/s/array-set-operations
+  status: 301!
+- from: /js/s/symmetric-difference-with
+  to: /js/s/array-set-operations
+  status: 301!
+- from: /js/s/function-based-array-symmetric-difference
+  to: /js/s/array-set-operations
+  status: 301!
+- from: /js/s/unique-symmetric-difference
+  to: /js/s/array-set-operations
+  status: 301!
+- from: /js/s/array-unique-symmetric-difference
+  to: /js/s/array-set-operations
+  status: 301!
+- from: /js/s/intersects
+  to: /js/s/array-set-operations
+  status: 301!
+- from: /js/s/arrays-intersect
+  to: /js/s/array-set-operations
+  status: 301!
+- from: /js/array-set-operations/*
+  to: /js/s/array-set-operations
+  status: 301!
+- from: /c/js-array-set-operations/*
+  to: /js/s/array-set-operations
   status: 301!
