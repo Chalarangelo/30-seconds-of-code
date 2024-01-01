@@ -1402,9 +1402,6 @@
 - from: /js/s/remove
   to: /js/s/remove-matching-array-elements
   status: 301!
-- from: /js/s/reject
-  to: /js/s/reject-non-matching-values
-  status: 301!
 - from: /js/s/dig
   to: /js/s/get-nested-value-in-object
   status: 301!
