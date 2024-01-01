@@ -1297,12 +1297,6 @@
 - from: /js/s/toggle-element
   to: /js/s/toggle-array-element
   status: 301!
-- from: /js/s/sub-set
-  to: /js/s/subset
-  status: 301!
-- from: /js/s/super-set
-  to: /js/s/superset
-  status: 301!
 - from: /js/s/take-right-until
   to: /js/s/take-array-elements-from-end-until
   status: 301!
@@ -2199,4 +2193,16 @@
   status: 301!
 - from: /js/s/ends-with-substring
   to: /js/s/string-starts-or-ends-with-substring
+  status: 301!
+- from: /js/s/sub-set
+  to: /js/s/superset-subset-of-array
+  status: 301!
+- from: /js/s/subset
+  to: /js/s/superset-subset-of-array
+  status: 301!
+- from: /js/s/super-set
+  to: /js/s/superset-subset-of-array
+  status: 301!
+- from: /js/s/superset
+  to: /js/s/superset-subset-of-array
   status: 301!
