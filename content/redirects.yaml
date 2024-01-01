@@ -1462,12 +1462,6 @@
 - from: /js/s/is-contained-in
   to: /js/s/array-is-contained-in
   status: 301!
-- from: /js/s/collect-into
-  to: /js/s/convert-function-to-variadic
-  status: 301!
-- from: /js/s/spread-over
-  to: /js/s/convert-function-from-variadic
-  status: 301!
 - from: /js/s/count-by
   to: /js/s/count-grouped-elements
   status: 301!
@@ -2069,6 +2063,18 @@
   to: /js/s/function-arity
   status: 301!
 - from: /js/s/binary-function-arity
+  to: /js/s/function-arity
+  status: 301!
+- from: /js/s/collect-into
+  to: /js/s/function-arity
+  status: 301!
+- from: /js/s/convert-function-to-variadic
+  to: /js/s/function-arity
+  status: 301!
+- from: /js/s/spread-over
+  to: /js/s/function-arity
+  status: 301!
+- from: /js/s/convert-function-from-variadic
   to: /js/s/function-arity
   status: 301!
 - from: /js/s/and

@@ -70,3 +70,20 @@ const nAry = (fn, n) => (...args) => fn(...args.slice(0, n));
 const firstTwoMax = nAry(Math.max, 2);
 [[2, 6, 'a'], [6, 4, 8], [10]].map(x => firstTwoMax(...x)); // [6, 6, 10]
 ```
+
+## Converting array-accepting functions to variadic functions
+
+In some cases, it might be easier to convert a function that accepts an array of arguments into a variadic function. Or, perhaps, we might want to do the opposite. Using the spread operator (`...`), and rest arguments, this is quite straightforward.
+
+```js
+const toVariadic = fn => (...args) => fn(args);
+const fromVariadic = fn => args => fn(...args);
+
+const allPromises = toVariadic(Promise.all.bind(Promise));
+let p1 = Promise.resolve(1);
+let p2 = Promise.resolve(2);
+allPromises(p1, p2).then(console.log); // LOGS: [1, 2]
+
+const arrayMax = fromVariadic(Math.max);
+arrayMax([1, 2, 3]); // 3
+```
