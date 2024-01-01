@@ -1505,7 +1505,7 @@
   to: /js/s/resolve-promise-after-amount-of-time
   status: 301!
 - from: /js/s/run-async
-  to: /js/s/run-function-asyc
+  to: /js/s/run-function-async
   status: 301!
 - from: /js/s/sorted-index-by
   to: /js/s/function-based-sorted-array-insertion-index
