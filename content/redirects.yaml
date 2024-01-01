@@ -1435,12 +1435,6 @@
 - from: /js/s/every-nth
   to: /js/s/every-nth-element
   status: 301!
-- from: /js/s/find-first-n
-  to: /js/s/find-first-n-matches
-  status: 301!
-- from: /js/s/find-last-n
-  to: /js/s/find-last-n-matches
-  status: 301!
 - from: /js/s/index-of-all
   to: /js/s/index-of-all-matches
   status: 301!
