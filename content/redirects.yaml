@@ -1444,18 +1444,6 @@
 - from: /js/s/run-async
   to: /js/s/run-function-async
   status: 301!
-- from: /js/s/sorted-index-by
-  to: /js/s/function-based-sorted-array-insertion-index
-  status: 301!
-- from: /js/s/sorted-index
-  to: /js/s/insertion-index-in-sorted-array
-  status: 301!
-- from: /js/s/sorted-last-index-by
-  to: /js/s/function-based-sorted-array-last-insertion-index
-  status: 301!
-- from: /js/s/sorted-last-index
-  to: /js/s/last-insertion-index-in-sorted-array
-  status: 301!
 - from: /js/s/map-consecutive
   to: /js/s/map-consecutive-elements
   status: 301!
@@ -2274,4 +2262,25 @@
   status: 301!
 - from: /js/array-tricks/*
   to: /js/array/p/1
+  status: 301!
+- from: /js/s/sorted-index-by
+  to: /js/s/insertion-index-in-sorted-array
+  status: 301!
+- from: /js/s/function-based-sorted-array-insertion-index
+  to: /js/s/insertion-index-in-sorted-array
+  status: 301!
+- from: /js/s/sorted-index
+  to: /js/s/insertion-index-in-sorted-array
+  status: 301!
+- from: /js/s/sorted-last-index-by
+  to: /js/s/insertion-index-in-sorted-array
+  status: 301!
+- from: /js/s/function-based-sorted-array-last-insertion-index
+  to: /js/s/insertion-index-in-sorted-array
+  status: 301!
+- from: /js/s/sorted-last-index
+  to: /js/s/insertion-index-in-sorted-array
+  status: 301!
+- from: /js/s/last-insertion-index-in-sorted-array
+  to: /js/s/insertion-index-in-sorted-array
   status: 301!
