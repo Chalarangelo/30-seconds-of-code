@@ -160,9 +160,6 @@
 - from: /c/js-array-methods/*
   to: /js/array-methods/:splat
   status: 301!
-- from: /c/js-array-tricks/*
-  to: /js/array-tricks/:splat
-  status: 301!
 - from: /c/js-arrow-functions/*
   to: /js/arrow-functions/:splat
   status: 301!
@@ -2271,4 +2268,10 @@
   status: 301!
 - from: /js/s/compact-object
   to: /js/s/compact-object-or-array
+  status: 301!
+- from: /c/js-array-tricks/*
+  to: /js/array/p/1
+  status: 301!
+- from: /js/array-tricks/*
+  to: /js/array/p/1
   status: 301!
