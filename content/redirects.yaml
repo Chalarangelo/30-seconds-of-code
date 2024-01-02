@@ -958,9 +958,6 @@
 - from: /js/s/chain-async
   to: /js/s/chain-async-functions
   status: 301!
-- from: /js/s/compact
-  to: /js/s/compact-array
-  status: 301!
 - from: /js/s/create-dir-if-not-exists
   to: /js/s/create-directory-if-not-exists
   status: 301!
@@ -1305,9 +1302,6 @@
   status: 301!
 - from: /js/s/combine
   to: /js/s/combine-object-arrays
-  status: 301!
-- from: /js/s/compact-join
-  to: /js/s/compact-join-array
   status: 301!
 - from: /js/s/group-by
   to: /js/s/function-based-array-element-grouping
@@ -2262,4 +2256,19 @@
   status: 301!
 - from: /c/js-array-set-operations/*
   to: /js/s/array-set-operations
+  status: 301!
+- from: /js/s/compact
+  to: /js/s/compact-object-or-array
+  status: 301!
+- from: /js/s/compact-array
+  to: /js/s/compact-object-or-array
+  status: 301!
+- from: /js/s/compact-join
+  to: /js/s/compact-object-or-array
+  status: 301!
+- from: /js/s/compact-join-array
+  to: /js/s/compact-object-or-array
+  status: 301!
+- from: /js/s/compact-object
+  to: /js/s/compact-object-or-array
   status: 301!
