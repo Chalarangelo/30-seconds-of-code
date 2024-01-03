@@ -1171,9 +1171,6 @@
 - from: /js/s/round
   to: /js/s/round-number-to-precision
   status: 301!
-- from: /js/s/check-prop
-  to: /js/s/check-property
-  status: 301!
 - from: /js/s/pretty-bytes
   to: /js/s/pretty-print-number-of-bytes
   status: 301!
