@@ -1156,9 +1156,6 @@
 - from: /js/s/is
   to: /js/s/value-is-of-type
   status: 301!
-- from: /js/s/log-base
-  to: /js/s/logarithm-in-base
-  status: 301!
 - from: /js/s/is-disjoint
   to: /js/s/disjointed-iterables
   status: 301!
@@ -2283,4 +2280,16 @@
   status: 301!
 - from: /js/s/last-insertion-index-in-sorted-array
   to: /js/s/insertion-index-in-sorted-array
+  status: 301!
+- from: /js/s/log-base
+  to: /js/s/specify-base-for-math-log
+  status: 301!
+- from: /js/s/logarithm-in-base
+  to: /js/s/specify-base-for-math-log
+  status: 301!
+- from: /js/s/is-power-of-two
+  to: /js/s/specify-base-for-math-log
+  status: 301!
+- from: /js/s/is-power-of-ten
+  to: /js/s/specify-base-for-math-log
   status: 301!
