@@ -199,9 +199,6 @@
 - from: /c/js-interviews/*
   to: /js/interviews/:splat
   status: 301!
-- from: /c/js-object-cloning/*
-  to: /js/object-cloning/:splat
-  status: 301!
 - from: /c/js-object-key-selection/*
   to: /js/object-key-selection/:splat
   status: 301!
@@ -459,9 +456,6 @@
   status: 301!
 - from: /articles/s/javascript-return-constructor
   to: /js/s/return-constructor
-  status: 301!
-- from: /articles/s/javascript-shallow-deep-clone
-  to: /js/s/shallow-deep-clone
   status: 301!
 - from: /articles/s/javascript-singleton-proxy
   to: /js/s/singleton-proxy
@@ -1086,12 +1080,6 @@
   status: 301!
 - from: /js/s/copy-sign
   to: /js/s/copy-sign-to-number
-  status: 301!
-- from: /js/s/deep-clone
-  to: /js/s/deep-clone-object
-  status: 301!
-- from: /js/s/shallow-clone
-  to: /js/s/shallow-clone-object
   status: 301!
 - from: /js/s/tomorrow
   to: /js/s/date-tomorrow
@@ -2295,4 +2283,28 @@
   status: 301!
 - from: /js/s/unflatten-object
   to: /js/s/flatten-unflatten-object
+  status: 301!
+- from: /js/s/deep-clone
+  to: /js/s/shallow-deep-clone-object
+  status: 301!
+- from: /js/s/deep-clone-object
+  to: /js/s/shallow-deep-clone-object
+  status: 301!
+- from: /js/s/shallow-clone
+  to: /js/s/shallow-deep-clone-object
+  status: 301!
+- from: /js/s/shallow-clone-object
+  to: /js/s/shallow-deep-clone-object
+  status: 301!
+- from: /articles/s/javascript-shallow-deep-clone
+  to: /js/s/shallow-deep-clone-object
+  status: 301!
+- from: /articles/s/shallow-deep-clone
+  to: /js/s/shallow-deep-clone-object
+  status: 301!
+- from: /c/js-object-cloning/*
+  to: /js/s/shallow-deep-clone-object
+  status: 301!
+- from: /js/object-cloning/*
+  to: /js/s/shallow-deep-clone-object
   status: 301!

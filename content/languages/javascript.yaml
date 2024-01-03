@@ -776,3 +776,5 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/isSupersetOf
   Set.prototype.isSubsetOf(): >-
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/isSubsetOf
+  structuredClone(): >-
+    https://developer.mozilla.org/en-US/docs/Web/API/structuredClone
