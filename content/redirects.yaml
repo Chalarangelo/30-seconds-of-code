@@ -2293,3 +2293,9 @@
 - from: /js/s/is-power-of-ten
   to: /js/s/specify-base-for-math-log
   status: 301!
+- from: /js/s/flatten-object
+  to: /js/s/flatten-unflatten-object
+  status: 301!
+- from: /js/s/unflatten-object
+  to: /js/s/flatten-unflatten-object
+  status: 301!

@@ -1,7 +1,7 @@
 ---
 title: How can I specify the base for a logarithm in JavaScript?
 shortTitle: Specify base for logarithm
-type: story
+type: question
 language: javascript
 tags: [math]
 cover: yellow-white-mug-2
