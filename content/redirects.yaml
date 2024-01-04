@@ -634,9 +634,6 @@
 - from: /articles/s/js-proxy-introduction
   to: /js/s/proxy-introduction
   status: 301!
-- from: /articles/s/js-remove-array-duplicates
-  to: /js/s/remove-array-duplicates
-  status: 301!
 - from: /articles/s/js-remove-element-from-array
   to: /js/s/remove-element-from-array
   status: 301!
@@ -1035,9 +1032,6 @@
   status: 301!
 - from: /js/s/frequencies
   to: /js/s/value-frequencies
-  status: 301!
-- from: /js/s/has-duplicates
-  to: /js/s/array-has-duplicates
   status: 301!
 - from: /js/s/jso-nto-csv
   to: /js/s/json-to-csv
@@ -1462,35 +1456,11 @@
 - from: /js/s/all-equal-by
   to: /js/s/function-based-array-element-equality
   status: 301!
-- from: /js/s/all-unique
-  to: /js/s/array-element-uniqueness
-  status: 301!
-- from: /js/s/all-unique-by
-  to: /js/s/function-based-array-element-uniqueness
-  status: 301!
-- from: /js/s/filter-non-unique-by
-  to: /js/s/function-based-array-non-uniqueness-filter
-  status: 301!
-- from: /js/s/filter-unique-by
-  to: /js/s/function-based-array-uniqueness-filter
-  status: 301!
 - from: /js/s/index-by
   to: /js/s/function-based-array-indexing
   status: 301!
-- from: /js/s/unique-elements-by-right
-  to: /js/s/function-based-reversed-array-unique-values
-  status: 301!
-- from: /js/s/unique-elements-by
-  to: /js/s/function-based-array-unique-values
-  status: 301!
 - from: /js/s/average-by
   to: /js/s/mapped-array-average
-  status: 301!
-- from: /js/s/filter-non-unique
-  to: /js/s/filter-non-unique-array-values
-  status: 301!
-- from: /js/s/filter-unique
-  to: /js/s/filter-unique-array-values
   status: 301!
 - from: /js/s/find-consecutive
   to: /js/s/arrays-of-consecutive-elements
@@ -1515,9 +1485,6 @@
   status: 301!
 - from: /js/s/sum-by
   to: /js/s/mapped-array-sum
-  status: 301!
-- from: /js/s/unique-elements
-  to: /js/s/unique-elements-in-array
   status: 301!
 - from: /js/s/without
   to: /js/s/filter-out-matching-array-elements
@@ -2307,4 +2274,70 @@
   status: 301!
 - from: /js/object-cloning/*
   to: /js/s/shallow-deep-clone-object
+  status: 301!
+- from: /articles/s/js-remove-array-duplicates
+  to: /js/s/unique-values-in-array-remove-duplicates
+  status: 301!
+- from: /js/s/remove-array-duplicates
+  to: /js/s/unique-values-in-array-remove-duplicates
+  status: 301!
+- from: /js/s/unique-elements
+  to: /js/s/unique-values-in-array-remove-duplicates
+  status: 301!
+- from: /js/s/unique-elements-in-array
+  to: /js/s/unique-values-in-array-remove-duplicates
+  status: 301!
+- from: /js/s/all-unique
+  to: /js/s/unique-values-in-array-remove-duplicates
+  status: 301!
+- from: /js/s/array-element-uniqueness
+  to: /js/s/unique-values-in-array-remove-duplicates
+  status: 301!
+- from: /js/s/has-duplicates
+  to: /js/s/unique-values-in-array-remove-duplicates
+  status: 301!
+- from: /js/s/array-has-duplicates
+  to: /js/s/unique-values-in-array-remove-duplicates
+  status: 301!
+- from: /js/s/all-unique-by
+  to: /js/s/unique-values-in-array-remove-duplicates
+  status: 301!
+- from: /js/s/function-based-array-element-uniqueness
+  to: /js/s/unique-values-in-array-remove-duplicates
+  status: 301!
+- from: /js/s/filter-non-unique-by
+  to: /js/s/unique-values-in-array-remove-duplicates
+  status: 301!
+- from: /js/s/function-based-array-non-uniqueness-filter
+  to: /js/s/unique-values-in-array-remove-duplicates
+  status: 301!
+- from: /js/s/filter-unique-by
+  to: /js/s/unique-values-in-array-remove-duplicates
+  status: 301!
+- from: /js/s/function-based-array-uniqueness-filter
+  to: /js/s/unique-values-in-array-remove-duplicates
+  status: 301!
+- from: /js/s/unique-elements-by-right
+  to: /js/s/unique-values-in-array-remove-duplicates
+  status: 301!
+- from: /js/s/function-based-reversed-array-unique-values
+  to: /js/s/unique-values-in-array-remove-duplicates
+  status: 301!
+- from: /js/s/unique-elements-by
+  to: /js/s/unique-values-in-array-remove-duplicates
+  status: 301!
+- from: /js/s/function-based-array-unique-values
+  to: /js/s/unique-values-in-array-remove-duplicates
+  status: 301!
+- from: /js/s/filter-non-unique
+  to: /js/s/unique-values-in-array-remove-duplicates
+  status: 301!
+- from: /js/s/filter-non-unique-array-values
+  to: /js/s/unique-values-in-array-remove-duplicates
+  status: 301!
+- from: /js/s/filter-unique
+  to: /js/s/unique-values-in-array-remove-duplicates
+  status: 301!
+- from: /js/s/filter-unique-array-values
+  to: /js/s/unique-values-in-array-remove-duplicates
   status: 301!

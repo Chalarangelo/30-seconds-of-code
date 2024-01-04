@@ -32,7 +32,9 @@ const values = new Set(data);
 const uniqueValues = [...values]; // [1, 2, 3, 4]
 ```
 
-Note that the above example is the basis for the [uniqueElements snippet](/js/s/unique-elements).
+> [!NOTE]
+>
+> The above example is the basic premise for [getting the unique elements in an array](/js/s/unique-values-in-array-remove-duplicates).
 
 ## NodeList
 
