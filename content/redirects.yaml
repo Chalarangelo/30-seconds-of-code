@@ -1378,9 +1378,6 @@
 - from: /js/s/order-with
   to: /js/s/order-object-array-based-on-property
   status: 301!
-- from: /js/s/is-contained-in
-  to: /js/s/array-is-contained-in
-  status: 301!
 - from: /js/s/count-by
   to: /js/s/count-grouped-elements
   status: 301!
@@ -2076,6 +2073,12 @@
   status: 301!
 - from: /js/s/ends-with-substring
   to: /js/s/string-starts-or-ends-with-substring
+  status: 301!
+- from: /js/s/is-contained-in
+  to: /js/s/superset-subset-of-array
+  status: 301!
+- from: /js/s/array-is-contained-in
+  to: /js/s/superset-subset-of-array
   status: 301!
 - from: /js/s/sub-set
   to: /js/s/superset-subset-of-array
