@@ -1222,9 +1222,6 @@
 - from: /js/s/partial
   to: /js/s/prepend-function-arguments
   status: 301!
-- from: /js/s/times
-  to: /js/s/iterate-n-times
-  status: 301!
 - from: /js/s/to-char-array
   to: /js/s/to-character-array
   status: 301!
@@ -1458,18 +1455,6 @@
   status: 301!
 - from: /js/s/find-consecutive
   to: /js/s/arrays-of-consecutive-elements
-  status: 301!
-- from: /js/s/pull-at-index
-  to: /js/s/pull-values-from-array-at-index
-  status: 301!
-- from: /js/s/pull-at-value
-  to: /js/s/pull-matching-values-from-array
-  status: 301!
-- from: /js/s/pull-by
-  to: /js/s/pull-values-from-array-based-on-function
-  status: 301!
-- from: /js/s/pull
-  to: /js/s/pull-values-from-array
   status: 301!
 - from: /js/s/reduce-successive
   to: /js/s/successive-values-array
