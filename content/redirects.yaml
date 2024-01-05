@@ -1783,6 +1783,12 @@
 - from: /js/s/is-function
   to: /js/s/complete-guide-to-js-type-checking
   status: 301!
+- from: /js/s/is-async-function
+  to: /js/s/complete-guide-to-js-type-checking
+  status: 301!
+- from: /js/s/is-generator-function
+  to: /js/s/complete-guide-to-js-type-checking
+  status: 301!
 - from: /js/s/is-object
   to: /js/s/complete-guide-to-js-type-checking
   status: 301!

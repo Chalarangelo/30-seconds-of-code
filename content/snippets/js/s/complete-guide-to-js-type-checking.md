@@ -184,3 +184,27 @@ isFunction('x'); // false
 > [!NOTE]
 >
 > **Classes** are also considered functions in JavaScript. You might want to use the `instanceof` operator to check if a value is an instance of a class.
+
+#### Value is async function
+
+A function declared with the `async` keyword is considered asynchronous. Typechecking for async functions requires the use of `Object.prototype.toString()` and `Function.prototype.call()` to check if the result is `'[object AsyncFunction]'`.
+
+```js
+const isAsyncFunction = val =>
+  Object.prototype.toString.call(val) === '[object AsyncFunction]';
+
+isAsyncFunction(function() {}); // false
+isAsyncFunction(async function() {}); // true
+```
+
+#### Value is generator function
+
+Generator functions can be typechecked in the same manner as async functions. The expected value for them is `'[object GeneratorFunction]'`.
+
+```js
+const isGeneratorFunction = val =>
+  Object.prototype.toString.call(val) === '[object GeneratorFunction]';
+
+isGeneratorFunction(function() {}); // false
+isGeneratorFunction(function*() {}); // true
+```
