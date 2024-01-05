@@ -208,3 +208,24 @@ const isGeneratorFunction = val =>
 isGeneratorFunction(function() {}); // false
 isGeneratorFunction(function*() {}); // true
 ```
+
+### Type of value
+
+If all else fails, or if you are working with classes and other custom types, you might want to get a string representation of the type of a value. This can be done using `Object.prototype.constructor` and `Function.prototype.name`.
+
+```js
+const getType = v =>
+  v === undefined ? 'undefined' : v === null ? 'null' : v.constructor.name;
+
+getType(undefined); // 'undefined'
+getType(null); // 'null'
+getType(true); // 'Boolean'
+getType(1); // 'Number'
+getType(1n); // 'BigInt'
+getType('Hello!'); // 'String'
+getType(Symbol()); // 'Symbol'
+getType([]); // 'Array'
+getType({}); // 'Object'
+getType(() => {}); // 'Function'
+getType(new Set([1, 2, 3])); // 'Set'
+```

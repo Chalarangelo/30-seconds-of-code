@@ -1039,9 +1039,6 @@
 - from: /js/s/get-protocol
   to: /js/s/current-page-protocol
   status: 301!
-- from: /js/s/get-type
-  to: /js/s/type-of-value
-  status: 301!
 - from: /js/s/memoize
   to: /js/s/memoize-function
   status: 301!
@@ -1758,6 +1755,12 @@
   status: 301!
 - from: /js/s/is-duplex-stream
   to: /js/s/typecheck-nodejs-streams
+  status: 301!
+- from: /js/s/get-type
+  to: /js/s/complete-guide-to-js-type-checking
+  status: 301!
+- from: /js/s/type-of-value
+  to: /js/s/complete-guide-to-js-type-checking
   status: 301!
 - from: /js/s/is-undefined
   to: /js/s/complete-guide-to-js-type-checking
