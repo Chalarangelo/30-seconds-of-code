@@ -1,9 +1,41 @@
-body {
+html {
   // Layout center column width.
   --layout-main-column-width: 800px;
   // Layout bleed width (either side).
   --layout-bleed-width: 24px;
 
+  // Define a row gap variable that will be inherited throughout the layout.
+  // This allows children to override it, using negative `margin` values, for
+  // example, or use it to create proportional spacing. Mainly used in the
+  // snippet page for the `article` children to be spaced as needed.
+  --layout-row-spacing: var(--spacing-12);
+
+  // Add spacing between header, main area and footer, using a variable, so
+  // that it can be altered as necessary. It's set to be twice the size of the
+  // row gap, to keep it proportional to any changes.
+  --layout-area-spacing: calc(2 * var(--layout-row-spacing));
+
+  // Viewport-based border radius. This variable is inherited and reused in
+  // a few places, so that full-bleed elements can have rounded corners on
+  // larger viewports and square corners on smaller viewports.
+  --layout-border-radius: var(--border-radius-medium);
+
+  // Use the layout row spacing to add padding to the top of the target element,
+  // when the user navigates via a hash link.
+  scroll-padding-top: var(--layout-row-spacing);
+
+  // Note: This is dependent on the user's font size and might look a bit odd
+  // in some configurations, but it's a progressive enhancement and should
+  // not be a problem either way.
+  @media (max-width: 50rem) {
+    // Square corners on smaller viewports.
+    --layout-border-radius: 0;
+    // Reduce the row gap and area gap to make the layout more compact.
+    --layout-row-spacing: var(--spacing-8);
+  }
+}
+
+body {
   // Set up main layout (left area, center area, right area).
   display: grid;
   grid-template-columns:
@@ -23,33 +55,8 @@ body {
     // 'left bottom right' -> Add this if it's ever needed
     'footer footer footer';
 
-  // Define a row gap variable that will be inherited throughout the layout.
-  // This allows children to override it, using negative `margin` values, for
-  // example, or use it to create proportional spacing. Mainly used in the
-  // snippet page for the `article` children to be spaced as needed.
-  --layout-row-spacing: var(--spacing-12);
-  // Add spacing between header, main area and footer, using a variable, so
-  // that it can be altered as necessary. It's set to be twice the size of the
-  // row gap, to keep it proportional to any changes.
-  --layout-area-spacing: calc(2 * var(--layout-row-spacing));
-
   // Add spacing between header, main area and footer.
   row-gap: var(--layout-area-spacing);
-
-  // Viewport-based border radius. This variable is inherited and reused in
-  // a few places, so that full-bleed elements can have rounded corners on
-  // larger viewports and square corners on smaller viewports.
-  --layout-border-radius: var(--border-radius-medium);
-
-  // Note: This is dependent on the user's font size and might look a bit odd
-  // in some configurations, but it's a progressive enhancement and should
-  // not be a problem either way.
-  @media (max-width: 50rem) {
-    // Square corners on smaller viewports.
-    --layout-border-radius: 0;
-    // Reduce the row gap and area gap to make the layout more compact.
-    --layout-row-spacing: var(--spacing-8);
-  }
 }
 
 main {
