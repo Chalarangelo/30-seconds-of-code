@@ -460,9 +460,6 @@
 - from: /articles/s/javascript-singleton-proxy
   to: /js/s/singleton-proxy
   status: 301!
-- from: /articles/s/javascript-sleep
-  to: /js/s/sleep
-  status: 301!
 - from: /articles/s/javascript-spread-rest-syntax
   to: /js/s/spread-rest-syntax
   status: 301!
@@ -1059,9 +1056,6 @@
   status: 301!
 - from: /js/s/defer
   to: /js/s/defer-function
-  status: 301!
-- from: /js/s/delay
-  to: /js/s/delay-function
   status: 301!
 - from: /js/s/debounce
   to: /js/s/debounce-function
@@ -2337,4 +2331,16 @@
   status: 301!
 - from: /js/s/filter-unique-array-values
   to: /js/s/unique-values-in-array-remove-duplicates
+  status: 301!
+- from: /js/s/delay
+  to: /js/s/sleep
+  status: 301!
+- from: /js/s/delay-function
+  to: /js/s/sleep
+  status: 301!
+- from: /js/s/delay-async
+  to: /js/s/sleep
+  status: 301!
+- from: /articles/s/javascript-sleep
+  to: /js/s/sleep
   status: 301!

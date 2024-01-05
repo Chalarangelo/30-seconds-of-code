@@ -5,60 +5,42 @@ type: question
 language: javascript
 tags: [date,promise]
 cover: sleepy-cat
-excerpt: Learn all the different ways you can implement a `sleep()` function in JavaScript.
-dateModified: 2021-11-06
+excerpt: Learn how you can implement a delay function using `setTimeout()`, promises and `async`/`await`.
+dateModified: 2024-01-05
 ---
 
-JavaScript does not come with a `sleep()` function out of the box. That's probably a good idea considering the environments where it runs and the trouble it could cause if used incorrectly. The closest equivalent is the `setTimeout()` function, but there are other, less common ways to implement a function that will pause execution for a specified amount of time.
+JavaScript **doesn't have a built-in sleep function**, which is probably a good idea considering how much trouble it could cause if used incorrectly. The closest equivalent is the `setTimeout()` function, but there are other, less common ways to implement a function that will pause execution for a specified amount of time.
 
-## setTimeout
+## Using `setTimeout()`
 
-JavaScript's `setTimeout()` sets a timer which executes some code once the timer expires. Only the code inside the `setTimeout()` callback will execute after the timer expires. This can lead to nesting issues, as well as code executing out of order if you are not careful.
-
-```js
-const printNums = () => {
-  console.log(1);
-  setTimeout(() => console.log(2), 500);
-  console.log(3);
-};
-
-printNums(); // Logs: 1, 3, 2 (2 logs after 500ms)
-```
-
-## Synchronous version
-
-While strongly discouraged, `Date.prototype.getTime()` can be used inside a `while` loop to pause execution for a set amount of time. You can easily define a synchronous `sleep()` function like this:
+JavaScript's `setTimeout()` sets a timer which **executes some code once the timer expires**. Only the code inside the `setTimeout()` callback will execute after the timer expires. This can lead to nesting issues, as well as code executing out of order if you are not careful.
 
 ```js
-const sleepSync = (ms) => {
-  const end = new Date().getTime() + ms;
-  while (new Date().getTime() < end) { /* do nothing */ }
-}
+const delay = (fn, ms, ...args) => setTimeout(fn, ms, ...args);
 
-const printNums = () => {
-  console.log(1);
-  sleepSync(500);
-  console.log(2);
-  console.log(3);
-};
-
-printNums(); // Logs: 1, 2, 3 (2 and 3 log after 500ms)
+const greet = (name) => console.log(`Hello ${name}!`);
+delay(greet, 300, 'world');
+// Logs: Hello world! (after 300ms)
 ```
 
-## Asynchronous version
+## Asynchronous version, using promises
 
-A less intrusive way to go about implementing a `sleep()` function is to utilize the `async` and `await` keywords added in JavaScript ES6, a `Promise` and `setTimeout()`. Note that the resulting function must be executed in an `async` function and has to be called with `await`:
+Another way to go about implementing a `sleep()` function is to utilize the `async` and `await` keywords, a `Promise` and `setTimeout()`. Note that the resulting function is itself asynchronous.
 
 ```js
 const sleep = (ms) =>
   new Promise(resolve => setTimeout(resolve, ms));
 
-const printNums = async() => {
-  console.log(1);
-  await sleep(500);
-  console.log(2);
-  console.log(3);
+const greet = async () => {
+  console.log('I will be with you in just a moment.');
+  await sleep(300);
+  console.log('Hello there!');
 };
-
-printNums(); // Logs: 1, 2, 3 (2 and 3 log after 500ms)
+greet();
+// Logs: I will be with you in just a moment.
+// Logs: Hello there! (after 300ms)
 ```
+
+> [!NOTE]
+>
+> The original version of this article demonstrated a synchronous version of this function, using `Date.prototype.getTime()`. As this is strongly discouraged and can lead to various issues, it has since been removed.
