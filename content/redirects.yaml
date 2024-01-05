@@ -1018,9 +1018,6 @@
 - from: /js/s/untildify
   to: /js/s/convert-to-absolute-path
   status: 301!
-- from: /js/s/functions
-  to: /js/s/function-names
-  status: 301!
 - from: /js/s/get-cmd-args
   to: /js/s/command-line-arguments
   status: 301!
@@ -1128,9 +1125,6 @@
   status: 301!
 - from: /js/s/is
   to: /js/s/value-is-of-type
-  status: 301!
-- from: /js/s/is-disjoint
-  to: /js/s/disjointed-iterables
   status: 301!
 - from: /js/s/is-empty
   to: /js/s/collection-is-empty
