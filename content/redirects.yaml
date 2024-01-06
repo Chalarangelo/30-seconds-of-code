@@ -1060,12 +1060,6 @@
 - from: /js/s/copy-sign
   to: /js/s/copy-sign-to-number
   status: 301!
-- from: /js/s/from-timestamp
-  to: /js/s/date-from-unix-timestamp
-  status: 301!
-- from: /js/s/get-timestamp
-  to: /js/s/unix-timestamp-from-date
-  status: 301!
 - from: /js/s/defaults
   to: /js/s/default-values-for-object-properties
   status: 301!
@@ -2407,4 +2401,15 @@
 - from: /js/s/to-iso-string-with-timezone
   to: /js/s/iso-format-date-with-timezone
   status: 301!
-
+- from: /js/s/from-timestamp
+  to: /js/s/date-to-unix-timestamp
+  status: 301!
+- from: /js/s/date-from-unix-timestamp
+  to: /js/s/date-to-unix-timestamp
+  status: 301!
+- from: /js/s/get-timestamp
+  to: /js/s/date-to-unix-timestamp
+  status: 301!
+- from: /js/s/unix-timestamp-from-date
+  to: /js/s/date-to-unix-timestamp
+  status: 301!
