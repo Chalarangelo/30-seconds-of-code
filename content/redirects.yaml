@@ -316,9 +316,6 @@
 - from: /articles/s/javascript-copy-array
   to: /js/s/copy-array
   status: 301!
-- from: /articles/s/javascript-date-comparison
-  to: /js/s/date-comparison
-  status: 301!
 - from: /articles/s/javascript-deep-freeze-object
   to: /js/s/deep-freeze-object
   status: 301!
@@ -2385,5 +2382,32 @@
   status: 301!
 - from: /js/s/quarter-of-year
   to: /js/s/day-week-month-quarter-of-year
+  status: 301!
+- from: /js/s/is-after-date
+  to: /js/s/date-comparison
+  status: 301!
+- from: /js/s/date-is-after-another-date
+  to: /js/s/date-comparison
+  status: 301!
+- from: /js/s/is-before-date
+  to: /js/s/date-comparison
+  status: 301!
+- from: /js/s/date-is-before-another-date
+  to: /js/s/date-comparison
+  status: 301!
+- from: /js/s/is-between-dates
+  to: /js/s/date-comparison
+  status: 301!
+- from: /js/s/date-is-between-two-dates
+  to: /js/s/date-comparison
+  status: 301!
+- from: /js/s/is-same-date
+  to: /js/s/date-comparison
+  status: 301!
+- from: /js/s/date-is-same-as-another-date
+  to: /js/s/date-comparison
+  status: 301!
+- from: /articles/s/javascript-date-comparison
+  to: /js/s/date-comparison
   status: 301!
 

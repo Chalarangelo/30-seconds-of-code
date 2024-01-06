@@ -5,38 +5,59 @@ type: question
 language: javascript
 tags: [date,comparison]
 cover: pineapple-at-work
-excerpt: Learn how you can compare two dates in JavaScript using various different techniques.
-dateModified: 2022-01-16
+excerpt: Learn how you can compare two dates in JavaScript, determining which one comes before or after the other.
+dateModified: 2024-01-06
 ---
 
-## Equality comparison
+Comparing `Date` objects in JavaScript is often confusing. Equality is not as easy as you might think, you may have to consider timezones, and dates also act like numbers. That's a lot to wrap your head around, so let's take a look at each of these use-cases in detail.
 
-Comparing two dates in JavaScript using the loose or strict equality operators (`==` or `===`) is not recommended for most cases. Equality operators compare the `Date` object references, resulting in `false`, even if the date values are the same:
+## Date equality comparison
 
-```js
-const a = new Date(2022, 01, 10);
-const b = new Date(2022, 01, 10);
-
-a === b; // false
-```
-
-## Date.prototype.getTime()
-
-One way to compare two `Date` values is using the `Date.prototype.getTime()` method. This method returns a number indicating the number of milliseconds elapsed since the Unix Epoch:
+Comparing two dates using the [equality operators (`==` or `===`)](/js/s/equality) is ineffective, as it compares the objects **by reference**. Luckily, `Date.prototype.toISOString()` returns a string representation of the date in a **standardized format**, which can be used to compare two dates.
 
 ```js
-const a = new Date(2022, 01, 10);
-const b = new Date(2022, 01, 10);
+const isSameDate = (dateA, dateB) =>
+  dateA.toISOString() === dateB.toISOString();
 
-a.getTime() === b.getTime(); // true
+isSameDate(new Date('2020-10-20'), new Date('2020-10-20')); // true
 ```
 
-## Other methods
+## Date is before another date
 
-As mentioned before, `Date.prototype.getTime()` is one way to compare two `Date` values. It's not the only one way to compare them. Other options are the following:
+As mentioned previously, `Date` objects act like numbers. This means that you can use the less than operator (`<`) to check if a date comes before another date.
 
-- `Date.prototype.toISOString()`
-- `Date.prototype.toUTCString()`
-- `Date.prototype.toLocaleDateString()` provided you use the same locale
+```js
+const isBeforeDate = (dateA, dateB) => dateA < dateB;
 
-All of these methods produce consistent results, but we still recommend `Date.prototype.getTime()` due to its simplicity.
+isBeforeDate(new Date('2020-10-20'), new Date('2020-10-21')); // true
+```
+
+## Date is after another date
+
+Similarly, you can use the greater than operator (`>`) to check if a date comes after another date.
+
+```js
+const isAfterDate = (dateA, dateB) => dateA > dateB;
+
+isAfterDate(new Date('2020-10-21'), new Date('2020-10-20')); // true
+```
+
+## Date is between two dates
+
+Combining the previous two snippets, you can check if a date is between two other dates.
+
+```js
+const isBetweenDates = (dateStart, dateEnd, date) =>
+  date > dateStart && date < dateEnd;
+
+isBetweenDates(
+  new Date('2020-10-20'),
+  new Date('2020-10-30'),
+  new Date('2020-10-19')
+); // false
+isBetweenDates(
+  new Date('2020-10-20'),
+  new Date('2020-10-30'),
+  new Date('2020-10-25')
+); // true
+```

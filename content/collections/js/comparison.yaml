@@ -12,7 +12,6 @@ snippetIds:
   - js/s/match-object-properties
   - js/s/function-based-object-property-matches
   - js/s/arrays-have-same-contents
-  - js/s/date-is-same-as-another-date
 splash: succulent
 description: >-
   Comparing values in JavaScript is one of the most common tasks. Yet, there are
