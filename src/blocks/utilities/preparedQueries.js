@@ -244,7 +244,7 @@ export class PreparedQueries {
     (application, queries) =>
     (collectionId, { includeRedirects = true, type = null, sorted = 0 } = {}) =>
       withCache(
-        `collectionPagesPerformance#${collectionId}-${includeRedirects}-${type}`,
+        `collectionPagesPerformance#${collectionId}-${includeRedirects}-${type}-${sorted}`,
         () => {
           const snippetSlugs = queries.collectionSnippetSlugs(collectionId, {
             includeRedirects,
