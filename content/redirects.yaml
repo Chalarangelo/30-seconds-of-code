@@ -1069,30 +1069,6 @@
 - from: /js/s/yesterday
   to: /js/s/date-yesterday
   status: 301!
-- from: /js/s/get-months-diff-between-dates
-  to: /js/s/date-difference-in-months
-  status: 301!
-- from: /js/s/get-days-diff-between-dates
-  to: /js/s/date-difference-in-days
-  status: 301!
-- from: /js/s/count-week-days-between
-  to: /js/s/date-difference-in-weekdays
-  status: 301!
-- from: /js/s/get-hours-diff-between-dates
-  to: /js/s/date-difference-in-hours
-  status: 301!
-- from: /js/s/get-minutes-diff-between-dates
-  to: /js/s/date-difference-in-minutes
-  status: 301!
-- from: /js/s/get-seconds-diff-between-dates
-  to: /js/s/date-difference-in-seconds
-  status: 301!
-- from: /js/s/is-weekday
-  to: /js/s/date-is-weekday
-  status: 301!
-- from: /js/s/is-weekend
-  to: /js/s/date-is-weekend
-  status: 301!
 - from: /js/s/from-timestamp
   to: /js/s/date-from-unix-timestamp
   status: 301!
@@ -1116,9 +1092,6 @@
   status: 301!
 - from: /js/s/to-iso-string-with-timezone
   to: /js/s/iso-format-date-with-timezone
-  status: 301!
-- from: /js/s/add-week-days
-  to: /js/s/add-weekdays-to-date
   status: 301!
 - from: /js/s/defaults
   to: /js/s/default-values-for-object-properties
@@ -2337,4 +2310,64 @@
   status: 301!
 - from: /articles/s/javascript-sleep
   to: /js/s/sleep
+  status: 301!
+- from: /js/s/get-months-diff-between-dates
+  to: /js/s/date-difference
+  status: 301!
+- from: /js/s/date-difference-in-months
+  to: /js/s/date-difference
+  status: 301!
+- from: /js/s/get-days-diff-between-dates
+  to: /js/s/date-difference
+  status: 301!
+- from: /js/s/date-difference-in-days
+  to: /js/s/date-difference
+  status: 301!
+- from: /js/s/count-week-days-between
+  to: /js/s/date-difference
+  status: 301!
+- from: /js/s/date-difference-in-weekdays
+  to: /js/s/date-difference
+  status: 301!
+- from: /js/s/get-hours-diff-between-dates
+  to: /js/s/date-difference
+  status: 301!
+- from: /js/s/date-difference-in-hours
+  to: /js/s/date-difference
+  status: 301!
+- from: /js/s/get-minutes-diff-between-dates
+  to: /js/s/date-difference
+  status: 301!
+- from: /js/s/date-difference-in-minutes
+  to: /js/s/date-difference
+  status: 301!
+- from: /js/s/get-seconds-diff-between-dates
+  to: /js/s/date-difference
+  status: 301!
+- from: /js/s/date-difference-in-seconds
+  to: /js/s/date-difference
+  status: 301!
+- from: /js/s/is-weekday
+  to: /js/s/date-is-weekday-or-weekend
+  status: 301!
+- from: /js/s/date-is-weekday
+  to: /js/s/date-is-weekday-or-weekend
+  status: 301!
+- from: /js/s/is-weekend
+  to: /js/s/date-is-weekday-or-weekend
+  status: 301!
+- from: /js/s/date-is-weekend
+  to: /js/s/date-is-weekday-or-weekend
+  status: 301!
+- from: /js/s/add-week-days
+  to: /js/s/add-minutes-hours-days-to-date
+  status: 301!
+- from: /js/s/add-weekdays-to-date
+  to: /js/s/add-minutes-hours-days-to-date
+  status: 301!
+- from: /js/s/add-minutes-to-date
+  to: /js/s/add-minutes-hours-days-to-date
+  status: 301!
+- from: /js/s/add-days-to-date
+  to: /js/s/add-minutes-hours-days-to-date
   status: 301!
