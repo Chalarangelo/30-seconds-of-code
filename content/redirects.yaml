@@ -2371,3 +2371,9 @@
 - from: /js/s/add-days-to-date
   to: /js/s/add-minutes-hours-days-to-date
   status: 301!
+- from: /js/s/min-date
+  to: /js/s/min-max-date
+  status: 301!
+- from: /js/s/max-date
+  to: /js/s/min-max-date
+  status: 301!
