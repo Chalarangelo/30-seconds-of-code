@@ -6,7 +6,7 @@ language: javascript
 tags: [date]
 cover: orange-coffee-4
 excerpt: Learn how to manipulate `Date` objects to add minutes, hours, days and more.
-dateModified: 2024-01-06
+dateModified: 2024-01-05
 ---
 
 You can't get too far in web development without stumbling upon a situation where you have to **manipulate dates**. Perhaps you need to display a delivery date or a deadline. As easy as this sounds, JavaScript doesn't provide a particularly friendly API for such tasks. But that's nothing that you can't solve with a little ingenuity.

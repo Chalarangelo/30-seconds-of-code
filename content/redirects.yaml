@@ -1060,12 +1060,6 @@
 - from: /js/s/copy-sign
   to: /js/s/copy-sign-to-number
   status: 301!
-- from: /js/s/tomorrow
-  to: /js/s/date-tomorrow
-  status: 301!
-- from: /js/s/yesterday
-  to: /js/s/date-yesterday
-  status: 301!
 - from: /js/s/from-timestamp
   to: /js/s/date-from-unix-timestamp
   status: 301!
@@ -2409,5 +2403,17 @@
   status: 301!
 - from: /articles/s/javascript-date-comparison
   to: /js/s/date-comparison
+  status: 301!
+- from: /js/s/tomorrow
+  to: /js/s/date-yesterday-today-tomorrow
+  status: 301!
+- from: /js/s/date-tomorrow
+  to: /js/s/date-yesterday-today-tomorrow
+  status: 301!
+- from: /js/s/yesterday
+  to: /js/s/date-yesterday-today-tomorrow
+  status: 301!
+- from: /js/s/date-yesterday
+  to: /js/s/date-yesterday-today-tomorrow
   status: 301!
 
