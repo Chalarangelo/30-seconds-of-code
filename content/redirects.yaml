@@ -1066,12 +1066,6 @@
 - from: /js/s/get-timestamp
   to: /js/s/unix-timestamp-from-date
   status: 301!
-- from: /js/s/is-iso-string
-  to: /js/s/is-iso-formatted-date
-  status: 301!
-- from: /js/s/to-iso-string-with-timezone
-  to: /js/s/iso-format-date-with-timezone
-  status: 301!
 - from: /js/s/defaults
   to: /js/s/default-values-for-object-properties
   status: 301!
@@ -2403,5 +2397,14 @@
   status: 301!
 - from: /js/s/date-yesterday
   to: /js/s/date-yesterday-today-tomorrow
+  status: 301!
+- from: /js/s/is-iso-string
+  to: /js/s/iso-format-date-with-timezone
+  status: 301!
+- from: /js/s/is-iso-formatted-date
+  to: /js/s/iso-format-date-with-timezone
+  status: 301!
+- from: /js/s/to-iso-string-with-timezone
+  to: /js/s/iso-format-date-with-timezone
   status: 301!
 
