@@ -2377,3 +2377,13 @@
 - from: /js/s/max-date
   to: /js/s/min-max-date
   status: 301!
+- from: /js/s/day-of-year
+  to: /js/s/day-week-month-quarter-of-year
+  status: 301!
+- from: /js/s/week-of-year
+  to: /js/s/day-week-month-quarter-of-year
+  status: 301!
+- from: /js/s/quarter-of-year
+  to: /js/s/day-week-month-quarter-of-year
+  status: 301!
+
