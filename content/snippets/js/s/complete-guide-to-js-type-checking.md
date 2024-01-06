@@ -229,3 +229,25 @@ getType({}); // 'Object'
 getType(() => {}); // 'Function'
 getType(new Set([1, 2, 3])); // 'Set'
 ```
+
+#### Check if value is of type
+
+Flipping the previous snippet around, we can also check if a value is of a specific type. Same as before, special care needs to be taken for `undefined` and `null`, as the do not have a `constructor` property.
+
+```js
+const isOfType = (type, val) =>
+  ([undefined, null].includes(val) && val === type) ||
+  v.constructor.name === type;
+
+isOfType(undefined, undefined); // true
+isOfType(null, null); // true
+isOfType('Boolean', true); // true
+isOfType('Number', 1); // true
+isOfType('BigInt', 1n); // true
+isOfType('String', 'Hello!'); // true
+isOfType('Symbol', Symbol()); // true
+isOfType('Array', []); // true
+isOfType('Object', {}); // true
+isOfType('Function', () => {}); // true
+isOfType('Set', new Set([1, 2, 3])); // true
+```

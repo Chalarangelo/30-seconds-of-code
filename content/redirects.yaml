@@ -1063,9 +1063,6 @@
 - from: /js/s/defaults
   to: /js/s/default-values-for-object-properties
   status: 301!
-- from: /js/s/is
-  to: /js/s/value-is-of-type
-  status: 301!
 - from: /js/s/is-empty
   to: /js/s/collection-is-empty
   status: 301!
@@ -1706,6 +1703,12 @@
   to: /js/s/complete-guide-to-js-type-checking
   status: 301!
 - from: /js/s/is-primitive
+  to: /js/s/complete-guide-to-js-type-checking
+  status: 301!
+- from: /js/s/is
+  to: /js/s/complete-guide-to-js-type-checking
+  status: 301!
+- from: /js/s/value-is-of-type
   to: /js/s/complete-guide-to-js-type-checking
   status: 301!
 - from: /js/s/drop-right-while
