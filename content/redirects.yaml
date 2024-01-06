@@ -1066,18 +1066,6 @@
 - from: /js/s/get-timestamp
   to: /js/s/unix-timestamp-from-date
   status: 301!
-- from: /js/s/is-after-date
-  to: /js/s/date-is-after-another-date
-  status: 301!
-- from: /js/s/is-before-date
-  to: /js/s/date-is-before-another-date
-  status: 301!
-- from: /js/s/is-between-dates
-  to: /js/s/date-is-between-two-dates
-  status: 301!
-- from: /js/s/is-same-date
-  to: /js/s/date-is-same-as-another-date
-  status: 301!
 - from: /js/s/is-iso-string
   to: /js/s/is-iso-formatted-date
   status: 301!
