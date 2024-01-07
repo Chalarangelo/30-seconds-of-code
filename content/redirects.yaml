@@ -1198,9 +1198,6 @@
 - from: /js/s/group-by
   to: /js/s/function-based-array-element-grouping
   status: 301!
-- from: /js/s/join
-  to: /js/s/join-array-into-string
-  status: 301!
 - from: /js/s/longest-item
   to: /js/s/longest-array-element
   status: 301!
