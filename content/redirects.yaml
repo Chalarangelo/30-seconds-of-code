@@ -1171,18 +1171,6 @@
 - from: /js/s/toggle-element
   to: /js/s/toggle-array-element
   status: 301!
-- from: /js/s/take-right-until
-  to: /js/s/take-array-elements-from-end-until
-  status: 301!
-- from: /js/s/take-right-while
-  to: /js/s/take-array-elements-from-end-while
-  status: 301!
-- from: /js/s/take-until
-  to: /js/s/take-array-elements-until
-  status: 301!
-- from: /js/s/take-while
-  to: /js/s/take-array-elements-while
-  status: 301!
 - from: /js/s/pluck
   to: /js/s/pluck-values-from-object-array
   status: 301!
@@ -1482,6 +1470,30 @@
   status: 301!
 - from: /js/s/take-array-elements
   to: /js/s/take-n-elements-from-array-start-or-end
+  status: 301!
+- from: /js/s/take-right-until
+  to: /js/s/take-elements-by-condition-from-array-start-or-end
+  status: 301!
+- from: /js/s/take-array-elements-from-end-until
+  to: /js/s/take-elements-by-condition-from-array-start-or-end
+  status: 301!
+- from: /js/s/take-right-while
+  to: /js/s/take-elements-by-condition-from-array-start-or-end
+  status: 301!
+- from: /js/s/take-array-elements-from-end-while
+  to: /js/s/take-elements-by-condition-from-array-start-or-end
+  status: 301!
+- from: /js/s/take-until
+  to: /js/s/take-elements-by-condition-from-array-start-or-end
+  status: 301!
+- from: /js/s/take-array-elements-until
+  to: /js/s/take-elements-by-condition-from-array-start-or-end
+  status: 301!
+- from: /js/s/take-while
+  to: /js/s/take-elements-by-condition-from-array-start-or-end
+  status: 301!
+- from: /js/s/take-array-elements-while
+  to: /js/s/take-elements-by-condition-from-array-start-or-end
   status: 301!
 - from: /js/s/is-even
   to: /js/s/number-is-even-odd
