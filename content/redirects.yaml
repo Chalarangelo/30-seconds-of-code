@@ -1318,9 +1318,6 @@
 - from: /js/s/index-of-all
   to: /js/s/index-of-all-matches
   status: 301!
-- from: /js/s/last
-  to: /js/s/last-array-element
-  status: 301!
 - from: /js/s/flip
   to: /js/s/flip-function-arguments
   status: 301!
