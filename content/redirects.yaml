@@ -1129,12 +1129,6 @@
 - from: /js/s/sample
   to: /js/s/array-sample
   status: 301!
-- from: /js/s/partition-by
-  to: /js/s/partition-array
-  status: 301!
-- from: /js/s/partition
-  to: /js/s/partition-array-in-two
-  status: 301!
 - from: /js/s/url-join
   to: /js/s/join-url-segments
   status: 301!
@@ -2421,4 +2415,13 @@
   status: 301!
 - from: /js/s/unix-timestamp-from-date
   to: /js/s/date-to-unix-timestamp
+  status: 301!
+- from: /js/s/partition-by
+  to: /js/s/partition-array
+  status: 301!
+- from: /js/s/partition
+  to: /js/s/partition-array
+  status: 301!
+- from: /js/s/partition-array-in-two
+  to: /js/s/partition-array
   status: 301!
