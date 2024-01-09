@@ -1,5 +1,5 @@
 ---
-title: Typechecking arrays with Array.isArray()
+title: Typechecking JavaScript arrays with Array.isArray()
 shortTitle: Array typechecking
 type: tip
 language: javascript
@@ -9,7 +9,7 @@ excerpt: Make sure to use the correct method when checking if a JavaScript objec
 dateModified: 2022-11-06
 ---
 
-To determine if a JavaScript object is an array, you can either use `Array.isArray()` or the `instanceof` operator. While both methods work for arrays created either using the array literal syntax or the `Array` constructor, there's a key difference. `Array.isArray()` is more reliable, as it works with cross-realm-objects, such as those created in an `iframe`.
+To determine if an object is an array, you can either use `Array.isArray()` or the `instanceof` operator. While both methods work for arrays created either using the array literal syntax or the `Array` constructor, there's a key difference. `Array.isArray()` is **more reliable**, as it works with cross-realm-objects, such as those created in an `iframe`.
 
 ```js
 let iframeEl = document.createElement('iframe');
@@ -26,6 +26,6 @@ console.log(array2 instanceof Array);   // false
 console.log(Array.isArray(array2));     // true
 ```
 
-As illustrated in the previous example, `instanceof` breaks when working with an `iframe`. However, `Array.isArray()` produces the correct result regardless of the way the array was instantiated.
+As illustrated in the previous example, `instanceof` breaks when working with an `iframe`. However, `Array.isArray()` produces the correct result **regardless of the way the array was instantiated**.
 
 If you are interested in knowing why `instanceof Array` doesn't work across different globals (i.e. `iframe` or `window`), you can read more about it [here](http://web.mit.edu/jwalden/www/isArray.html).
