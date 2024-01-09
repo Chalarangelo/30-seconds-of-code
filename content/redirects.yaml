@@ -262,9 +262,6 @@
 - from: /js/s/elo/
   to: /js/p/1
   status: 301!
-- from: /js/s/lowercase-keys
-  to: /js/s/lowerize
-  status: 301!
 - from: /css/s/hover-pespective
   to: /css/s/hover-perspective
   status: 301!
@@ -2433,4 +2430,13 @@
   status: 301!
 - from: /js/s/partition-array-in-two
   to: /js/s/partition-array
+  status: 301!
+- from: /js/s/lowercase-keys
+  to: /js/s/upperize-lowerize-object-keys
+  status: 301!
+- from: /js/s/lowerize
+  to: /js/s/upperize-lowerize-object-keys
+  status: 301!
+- from: /js/s/upperize
+  to: /js/s/upperize-lowerize-object-keys
   status: 301!
