@@ -1663,6 +1663,15 @@
 - from: /js/s/is-duplex-stream
   to: /js/s/typecheck-nodejs-streams
   status: 301!
+- from: /js/s/is-array-like
+  to: /js/s/complete-guide-to-js-type-checking
+  status: 301!
+- from: /js/s/is-object-like
+  to: /js/s/complete-guide-to-js-type-checking
+  status: 301!
+- from: /js/s/is-promise-like
+  to: /js/s/complete-guide-to-js-type-checking
+  status: 301!
 - from: /js/s/get-type
   to: /js/s/complete-guide-to-js-type-checking
   status: 301!
