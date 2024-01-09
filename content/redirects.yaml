@@ -2440,3 +2440,9 @@
 - from: /js/s/upperize
   to: /js/s/upperize-lowerize-object-keys
   status: 301!
+- from: /js/s/is-browser
+  to: /js/s/is-node-or-browser
+  status: 301!
+- from: /js/s/is-node
+  to: /js/s/is-node-or-browser
+  status: 301!
