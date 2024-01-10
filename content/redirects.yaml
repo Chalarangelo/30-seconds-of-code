@@ -955,21 +955,6 @@
 - from: /js/s/has-one
   to: /js/s/array-has-only-one-match
   status: 301!
-- from: /js/s/zip
-  to: /js/s/group-array-elements
-  status: 301!
-- from: /js/s/unzip
-  to: /js/s/ungroup-array-elements
-  status: 301!
-- from: /js/s/zip-with
-  to: /js/s/group-array-elements-based-on-function
-  status: 301!
-- from: /js/s/unzip-with
-  to: /js/s/ungroup-array-elements-based-on-function
-  status: 301!
-- from: /js/s/zip-object
-  to: /js/s/group-array-into-object
-  status: 301!
 - from: /js/s/once
   to: /js/s/call-function-once
   status: 301!
@@ -2445,4 +2430,34 @@
   status: 301!
 - from: /js/s/is-node
   to: /js/s/is-node-or-browser
+  status: 301!
+- from: /js/s/zip
+  to: /js/s/zip-unzip-array
+  status: 301!
+- from: /js/s/group-array-elements
+  to: /js/s/zip-unzip-array
+  status: 301!
+- from: /js/s/unzip
+  to: /js/s/zip-unzip-array
+  status: 301!
+- from: /js/s/ungroup-array-elements
+  to: /js/s/zip-unzip-array
+  status: 301!
+- from: /js/s/zip-with
+  to: /js/s/zip-unzip-array
+  status: 301!
+- from: /js/s/group-array-elements-based-on-function
+  to: /js/s/zip-unzip-array
+  status: 301!
+- from: /js/s/unzip-with
+  to: /js/s/zip-unzip-array
+  status: 301!
+- from: /js/s/ungroup-array-elements-based-on-function
+  to: /js/s/zip-unzip-array
+  status: 301!
+- from: /js/s/zip-object
+  to: /js/s/zip-unzip-array
+  status: 301!
+- from: /js/s/group-array-into-object
+  to: /js/s/zip-unzip-array
   status: 301!
