@@ -86,9 +86,10 @@ const data = [
   { id: 0, value: 'e' }
 ];
 const idComparator = (a, b) => a.id == b.id;
+const idMap = a => a.id;
 
 uniqueElementsBy(data, idComparator);
 // [ { id: 0, value: 'a' }, { id: 1, value: 'b' }, { id: 2, value: 'c' } ]
-hasDuplicatesBy(data, idComparator); // true
+hasDuplicatesBy(data, idMap); // true
 removeNonUniqueBy(data, idComparator);  // [ { id: 2, value: 'c' } ]
 ```
