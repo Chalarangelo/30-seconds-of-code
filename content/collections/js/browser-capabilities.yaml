@@ -6,8 +6,7 @@ snippetIds:
   - js/s/detect-device-type
   - js/s/detect-language
   - js/s/prefers-color-scheme
-  - js/s/is-local-storage-enabled
-  - js/s/is-session-storage-enabled
+  - js/s/is-local-storage-session-storage-enabled
 splash: compass-1
 description: >-
   Using modern JavaScript APIs, you can detect a wide variety of browser

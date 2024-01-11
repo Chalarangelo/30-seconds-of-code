@@ -3,10 +3,8 @@ name: Web Storage Essentials
 featured: true
 snippetIds:
   - js/s/cookies-local-storage-session
-  - js/s/parse-cookie
-  - js/s/serialize-cookie
-  - js/s/is-local-storage-enabled
-  - js/s/is-session-storage-enabled
+  - js/s/parse-or-serialize-cookie
+  - js/s/is-local-storage-session-storage-enabled
 splash: basics
 description: >-
   Modern browsers offer a handful of options when it comes to storing data on

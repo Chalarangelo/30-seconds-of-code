@@ -2461,3 +2461,15 @@
 - from: /js/s/group-array-into-object
   to: /js/s/zip-unzip-array
   status: 301!
+- from: /js/s/is-local-storage-enabled
+  to: /js/s/is-local-storage-session-storage-enabled
+  status: 301!
+- from: /js/s/is-session-storage-enabled
+  to: /js/s/is-local-storage-session-storage-enabled
+  status: 301!
+- from: /js/s/parse-cookie
+  to: /js/s/parse-or-serialize-cookie
+  status: 301!
+- from: /js/s/serialize-cookie
+  to: /js/s/parse-or-serialize-cookie
+  status: 301!
