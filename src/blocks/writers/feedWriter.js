@@ -1,6 +1,7 @@
 import { writeFile } from 'node:fs/promises';
 import pathSettings from '#settings/paths';
 import globalSettings from '#settings/global';
+import { escapeHTML } from '#utils';
 import { Logger } from '#blocks/utilities/logger';
 
 const { websiteUrl, websiteDescription, websiteName } = globalSettings;
@@ -26,9 +27,9 @@ ${nodes
   .map(
     node =>
       `    <item>
-      <title>${node.title}</title>
+      <title>${escapeHTML(node.title)}</title>
       <link>${node.fullRoute}</link>
-      <description>${node.description}</description>
+      <description>${escapeHTML(node.description)}</description>
       <pubDate>${node.pubDate}</pubDate>
     </item>`
   )
