@@ -943,12 +943,6 @@
 - from: /js/s/digitize
   to: /js/s/digitize-number
   status: 301!
-- from: /js/s/includes-all
-  to: /js/s/array-includes-all-values
-  status: 301!
-- from: /js/s/includes-any
-  to: /js/s/array-includes-any-values
-  status: 301!
 - from: /js/s/has-many
   to: /js/s/array-has-many-matches
   status: 301!
@@ -2472,4 +2466,16 @@
   status: 301!
 - from: /js/s/serialize-cookie
   to: /js/s/parse-or-serialize-cookie
+  status: 301!
+- from: /js/s/includes-all
+  to: /js/s/array-includes-any-or-all-values
+  status: 301!
+- from: /js/s/array-includes-all-values
+  to: /js/s/array-includes-any-or-all-values
+  status: 301!
+- from: /js/s/includes-any
+  to: /js/s/array-includes-any-or-all-values
+  status: 301!
+- from: /js/s/array-includes-any-values
+  to: /js/s/array-includes-any-or-all-values
   status: 301!
