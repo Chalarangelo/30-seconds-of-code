@@ -31,3 +31,4 @@ const decapitalize = ([first, ...rest], lowerRest = false) =>
 
 decapitalize('FooBar'); // 'fooBar'
 decapitalize('FooBar', true); // 'foobar'
+```
