@@ -826,9 +826,6 @@
 - from: /articles/s/cookies-local-storage-session
   to: /js/s/cookies-local-storage-session
   status: 301!
-- from: /articles/s/copy-text-to-clipboard-with-javascript
-  to: /js/s/copy-text-to-clipboard
-  status: 301!
 - from: /articles/s/cors-explained
   to: /js/s/cors-explained
   status: 301!
@@ -2478,4 +2475,13 @@
   status: 301!
 - from: /js/s/array-includes-any-values
   to: /js/s/array-includes-any-or-all-values
+  status: 301!
+- from: /articles/s/copy-text-to-clipboard-with-javascript
+  to: /js/s/copy-text-to-clipboard
+  status: 301!
+- from: /js/s/copy-to-clipboard
+  to: /js/s/copy-text-to-clipboard
+  status: 301!
+- from: /js/s/copy-to-clipboard-async
+  to: /js/s/copy-text-to-clipboard
   status: 301!

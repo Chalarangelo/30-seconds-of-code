@@ -778,3 +778,11 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/isSubsetOf
   structuredClone(): >-
     https://developer.mozilla.org/en-US/docs/Web/API/structuredClone
+  Navigator: https://developer.mozilla.org/en-US/docs/Web/API/Navigator
+  Navigator.clipboard: https://developer.mozilla.org/en-US/docs/Web/API/Navigator/clipboard
+  Clipboard.writeText(): >-
+    https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText
+  Selection.getRangeAt(): >-
+    https://developer.mozilla.org/en-US/docs/Web/API/Selection/getRangeAt
+  HTMLInputElement.select(): >-
+    https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/select

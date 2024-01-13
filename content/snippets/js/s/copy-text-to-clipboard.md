@@ -6,12 +6,14 @@ language: javascript
 tags: [browser]
 cover: typing
 excerpt: Learn how to programmatically copy text to clipboard with a few lines of JavaScript and level up your web development skills.
-dateModified: 2022-01-11
+dateModified: 2024-01-13
 ---
 
-## Asynchronous Clipboard API
+A very common need when building websites is the ability to **copy text to clipboard** with a single button click. Doing this programmatically with JavaScript is quite easy in modern browsers, using the asynchronous [Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API). If, however, you need to support older browsers, there is an alternative option, but it's a little more complicated.
 
-A very common need when building websites is the ability to copy text to clipboard with a single button click. If you only need to support modern browsers, it's highly recommended to use the asynchronous [Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API). It's supported in all modern browsers and provides an easy and secure way to update the clipboard's contents.
+## The Asynchronous Clipboard API
+
+Full support for the Clipboard API still isn't here at the time of writing (January, 2024), but you can at least use it to write to the clipboard. Thankfully, that's all you really need. Despite support caveats, this is the **recommended** way to copy text to clipboard, as it provides an **easy and secure** solution.
 
 All you have to do is ensure `Navigator`, `Navigator.clipboard` and `Navigator.clipboard.writeText` are truthy and then call `Clipboard.writeText()` to copy the value to clipboard. In case anything goes wrong, you can use `Promise.reject()` to return a promise that rejects immediately and keep the return type consistent.
 
@@ -23,17 +25,18 @@ const copyToClipboard = str => {
 };
 ```
 
-This is pretty much how the [copyToClipboardAsync snippet](/js/s/copy-to-clipboard-async) is implemented and should work across all modern browsers.
+If you're concerned about browser support, you can use `Promise.prototype.catch()` to handle the error and **provide a fallback**. The fallback could even be using the legacy method, which we'll cover next.
 
-## Document.execCommand('copy')
+## Using `Document.execCommand('copy')`
 
-While support for the Clipboard API is pretty high across the board, you might need a fallback if you have to support older browsers. If that's the case, you can use `Document.execCommand('copy')` to do so. Here's a quick step-by-step guide:
+While support for the Clipboard API is pretty high across the board, you might need a fallback if you have to **support older browsers**. If that's the case, you can use [`Document.execCommand('copy')`](https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand) to do so. Here's a quick step-by-step guide:
 
-1. Create a` <textarea>` element to be appended to the document. Set its value to the string you want to copy to the clipboard.
+1. Create a `<textarea>` element to be appended to the document. Set its value to the string you want to copy to the clipboard.
 2. Append the `<textarea>` element to the current HTML document and use CSS to hide it to prevent flashing.
-3. Use `HTMLInputElement.select()` to select the contents of the `<textarea>` element.
-4. Use `Document.execCommand('copy')` to copy the contents of the `<textarea>` to the clipboard.
-5. Remove the `<textarea>` element from the document.
+3. Use `Selection.getRangeAt()`to store the selected range (if any).
+4. Use `HTMLInputElement.select()` to select the contents of the `<textarea>` element.
+5. Use `Document.execCommand('copy')` to copy the contents of the `<textarea>` to the clipboard.
+6. Remove the `<textarea>` element from the document and restore the user's previous selection, if any.
 
 ```js
 const copyToClipboard = str => {
@@ -43,12 +46,20 @@ const copyToClipboard = str => {
   el.style.position = 'absolute';
   el.style.left = '-9999px';
   document.body.appendChild(el);
+  const selected =
+    document.getSelection().rangeCount > 0
+      ? document.getSelection().getRangeAt(0)
+      : false;
   el.select();
   document.execCommand('copy');
   document.body.removeChild(el);
+  if (selected) {
+    document.getSelection().removeAllRanges();
+    document.getSelection().addRange(selected);
+  }
 };
 ```
 
-Bear in mind that this method will not work everywhere, but only as a result of a user action (e.g. inside a `click` event listener), due to the way `Document.execCommand()` works.
-
-There are a couple of other considerations, such as restoring the user's previous selection on the document, which can be easily handled with modern JavaScript. You can find the final code with these improvements implemented in the [copyToClipboard snippet](/js/s/copy-to-clipboard/).
+> [!CAUTION]
+>
+> This method will not work everywhere, but only as a **result of a user action** (e.g. inside a `click` event listener). This is a security measure to prevent malicious websites from copying sensitive data to the clipboard without the user's consent.
