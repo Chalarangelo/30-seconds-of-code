@@ -199,9 +199,6 @@
 - from: /c/js-interviews/*
   to: /js/interviews/:splat
   status: 301!
-- from: /c/js-object-key-selection/*
-  to: /js/object-key-selection/:splat
-  status: 301!
 - from: /c/js-object-key-transformations/*
   to: /js/object-key-transformations/:splat
   status: 301!
@@ -1182,18 +1179,6 @@
   status: 301!
 - from: /js/s/rearg
   to: /js/s/rearrange-function-arguments
-  status: 301!
-- from: /js/s/omit-by
-  to: /js/s/omit-matching-object-keys
-  status: 301!
-- from: /js/s/pick-by
-  to: /js/s/pick-matching-object-keys
-  status: 301!
-- from: /js/s/omit
-  to: /js/s/omit-object-keys
-  status: 301!
-- from: /js/s/pick
-  to: /js/s/pick-object-keys
   status: 301!
 - from: /js/s/deep-map-keys
   to: /js/s/deep-map-object-keys
@@ -2484,4 +2469,31 @@
   status: 301!
 - from: /js/s/copy-to-clipboard-async
   to: /js/s/copy-text-to-clipboard
+  status: 301!
+- from: /c/js-object-key-selection/*
+  to: /js/s/filter-object-keys
+  status: 301!
+- from: /js/s/omit-by
+  to: /js/s/filter-object-keys
+  status: 301!
+- from: /js/s/omit-matching-object-keys
+  to: /js/s/filter-object-keys
+  status: 301!
+- from: /js/s/pick-by
+  to: /js/s/filter-object-keys
+  status: 301!
+- from: /js/s/pick-matching-object-keys
+  to: /js/s/filter-object-keys
+  status: 301!
+- from: /js/s/omit
+  to: /js/s/filter-object-keys
+  status: 301!
+- from: /js/s/omit-object-keys
+  to: /js/s/filter-object-keys
+  status: 301!
+- from: /js/s/pick
+  to: /js/s/filter-object-keys
+  status: 301!
+- from: /js/s/pick-object-keys
+  to: /js/s/filter-object-keys
   status: 301!
