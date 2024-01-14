@@ -217,9 +217,6 @@
 - from: /c/js-scroll/*
   to: /js/scroll/:splat
   status: 301!
-- from: /c/js-string-casing/*
-  to: /js/string-casing/:splat
-  status: 301!
 - from: /c/js-unit-conversions/*
   to: /js/unit-conversions/:splat
   status: 301!
@@ -1930,6 +1927,12 @@
 - from: /js/s/decapitalize
   to: /js/s/capitalize-first-letter-of-string
   status: 301!
+- from: /c/js-string-casing/*
+  to: /js/s/string-case-conversion
+  status: 301!
+- from: /js/string-casing/*
+  to: /js/s/string-case-conversion
+  status: 301!
 - from: /js/s/to-camel-case
   to: /js/s/string-case-conversion
   status: 301!
@@ -2471,6 +2474,9 @@
   to: /js/s/copy-text-to-clipboard
   status: 301!
 - from: /c/js-object-key-selection/*
+  to: /js/s/filter-object-keys
+  status: 301!
+- from: /js/object-key-selection/*
   to: /js/s/filter-object-keys
   status: 301!
 - from: /js/s/omit-by
