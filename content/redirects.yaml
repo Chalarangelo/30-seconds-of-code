@@ -1228,12 +1228,6 @@
 - from: /js/s/size
   to: /js/s/size-of-array-object-or-string
   status: 301!
-- from: /js/s/order-by
-  to: /js/s/order-object-array
-  status: 301!
-- from: /js/s/order-with
-  to: /js/s/order-object-array-based-on-property
-  status: 301!
 - from: /js/s/count-by
   to: /js/s/count-grouped-elements
   status: 301!
@@ -2505,4 +2499,16 @@
   status: 301!
 - from: /js/s/objectify
   to: /js/s/map-array-to-object
+  status: 301!
+- from: /js/s/order-by
+  to: js/s/sort-array-of-objects
+  status: 301!
+- from: /js/s/order-object-array
+  to: js/s/sort-array-of-objects
+  status: 301!
+- from: /js/s/order-with
+  to: js/s/sort-array-of-objects
+  status: 301!
+- from: /js/s/order-object-array-based-on-property
+  to: js/s/sort-array-of-objects
   status: 301!
