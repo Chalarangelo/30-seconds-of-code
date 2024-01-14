@@ -1282,9 +1282,6 @@
 - from: /js/s/initial
   to: /js/s/array-without-last-element
   status: 301!
-- from: /js/s/map-object
-  to: /js/s/map-array-to-object
-  status: 301!
 - from: /js/s/map-to-object
   to: /js/s/convert-map-to-object
   status: 301!
@@ -2502,4 +2499,10 @@
   status: 301!
 - from: /js/s/pick-object-keys
   to: /js/s/filter-object-keys
+  status: 301!
+- from: /js/s/map-object
+  to: /js/s/map-array-to-object
+  status: 301!
+- from: /js/s/objectify
+  to: /js/s/map-array-to-object
   status: 301!
