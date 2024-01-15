@@ -49,7 +49,7 @@ const flattenedFileSizes = {
 
 > [!NOTE]
 >
-> The **order of the resulting keys** may not match the order of the original keys, as JavaScript **objects are unordered**. All examples in this article assume preserve the original order for easier understanding.
+> The **order of the resulting keys** may not match the order of the original keys, as JavaScript **objects are unordered**. All examples in this article preserve the original order for easier understanding.
 
 In order to build a **recursive solution**, we need to define the **base case**. In this situation, that would be **keys whose values are not objects**. In that case, we can simply **add the key-value pair to the result**.
 

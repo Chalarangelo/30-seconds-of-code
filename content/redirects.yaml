@@ -1045,12 +1045,6 @@
 - from: /js/s/pretty-bytes
   to: /js/s/pretty-print-number-of-bytes
   status: 301!
-- from: /js/s/for-own-right
-  to: /js/s/reverse-iterate-object-properties
-  status: 301!
-- from: /js/s/for-own
-  to: /js/s/iterate-object-properties
-  status: 301!
 - from: /js/s/has-flags
   to: /js/s/process-arguments-have-flags
   status: 301!
@@ -2511,4 +2505,13 @@
   status: 301!
 - from: /js/s/order-object-array-based-on-property
   to: js/s/sort-array-of-objects
+  status: 301!
+- from: /js/s/for-own
+  to: /js/s/iterate-object-properties
+  status: 301!
+- from: /js/s/for-own-right
+  to: /js/s/iterate-object-properties
+  status: 301!
+- from: /js/s/reverse-iterate-object-properties
+  to: /js/s/iterate-object-properties
   status: 301!
