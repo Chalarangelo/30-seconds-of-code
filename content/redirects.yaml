@@ -2516,8 +2516,11 @@
   to: /js/s/nth-array-element
   status: 301!
 - from: /js/s/every-nth-element
-  to: /js/s//nth-array-element
+  to: /js/s/nth-array-element
   status: 301!
 - from: /js/s/nth-element
-  to: /js/s//nth-array-element
+  to: /js/s/nth-array-element
+  status: 301!
+- from: /js/s/object-to-query-string
+  to: /js/s/query-string-to-object
   status: 301!

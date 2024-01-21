@@ -739,6 +739,8 @@ references:
   Storage.removeItem(): https://developer.mozilla.org/en-US/docs/Web/API/Storage/removeItem
   Storage.setItem(): https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem
   URLSearchParams: https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
+  URLSearchParams(): >-
+    https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/URLSearchParams
   XMLHttpRequest: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
   encodeURIComponent(): >-
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
