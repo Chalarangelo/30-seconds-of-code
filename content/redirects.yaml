@@ -892,18 +892,6 @@
 - from: /articles/s/responsive-favicon-dark-mode
   to: /css/s/responsive-favicon-dark-mode
   status: 301!
-- from: /js/s/remove-class
-  to: /js/s/remove-class-from-html-element
-  status: 301!
-- from: /js/s/add-class
-  to: /js/s/add-class-to-html-element
-  status: 301!
-- from: /js/s/has-class
-  to: /js/s/html-element-has-class
-  status: 301!
-- from: /js/s/toggle-class
-  to: /js/s/toggle-html-element-class
-  status: 301!
 - from: /js/s/add-styles
   to: /js/s/add-styles-to-html-element
   status: 301!
@@ -2523,4 +2511,28 @@
   status: 301!
 - from: /js/s/object-to-query-string
   to: /js/s/query-string-to-object
+  status: 301!
+- from: /js/s/remove-class
+  to: /js/s/html-element-test-add-remove-toggle-class
+  status: 301!
+- from: /js/s/remove-class-from-html-element
+  to: /js/s/html-element-test-add-remove-toggle-class
+  status: 301!
+- from: /js/s/add-class
+  to: /js/s/html-element-test-add-remove-toggle-class
+  status: 301!
+- from: /js/s/add-class-to-html-element
+  to: /js/s/html-element-test-add-remove-toggle-class
+  status: 301!
+- from: /js/s/has-class
+  to: /js/s/html-element-test-add-remove-toggle-class
+  status: 301!
+- from: /js/s/html-element-has-class
+  to: /js/s/html-element-test-add-remove-toggle-class
+  status: 301!
+- from: /js/s/toggle-class
+  to: /js/s/html-element-test-add-remove-toggle-class
+  status: 301!
+- from: /js/s/toggle-html-element-class
+  to: /js/s/html-element-test-add-remove-toggle-class
   status: 301!
