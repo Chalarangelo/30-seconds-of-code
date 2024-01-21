@@ -1237,9 +1237,6 @@
 - from: /js/s/split-lines
   to: /js/s/split-into-lines
   status: 301!
-- from: /js/s/every-nth
-  to: /js/s/every-nth-element
-  status: 301!
 - from: /js/s/index-of-all
   to: /js/s/index-of-all-matches
   status: 301!
@@ -2514,4 +2511,13 @@
   status: 301!
 - from: /js/s/reverse-iterate-object-properties
   to: /js/s/iterate-object-properties
+  status: 301!
+- from: /js/s/every-nth
+  to: /js/s/nth-array-element
+  status: 301!
+- from: /js/s/every-nth-element
+  to: /js/s//nth-array-element
+  status: 301!
+- from: /js/s/nth-element
+  to: /js/s//nth-array-element
   status: 301!
