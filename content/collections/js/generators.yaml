@@ -12,7 +12,6 @@ snippetIds:
   - js/s/index-of-substrings
   - js/s/walk-through-object
   - js/s/generate-while
-  - js/s/generate-until
   - js/s/substring-generator
   - js/s/make-iterable
   - js/s/enum

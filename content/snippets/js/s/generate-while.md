@@ -1,24 +1,25 @@
 ---
-title: Generate while condition is met
-type: snippet
+title: Create a JavaScript generator function based on a condition
+shortTitle: Generate while condition is met
+type: tip
 language: javascript
 tags: [function,generator]
 cover: yellow-sofa
-dateModified: 2022-01-21
+excerpt: Learn how to create a JavaScript generator function that keeps producing new values as long as the given condition is met.
+dateModified: 2024-01-22
 ---
 
-Creates a generator, that keeps producing new values as long as the given condition is met.
+Almost every generator function needs a **termination condition**. Instead of writing the same code over and over again, we can easily create a generator function that takes a **predicate function** as an argument and keeps producing new values as long as the condition is met.
 
-- Initialize the current `val` using the `seed` value.
-- Use a `while` loop to iterate while the `condition` function called with the current `val` returns `true`.
-- Use `yield` to return the current `val` and optionally receive a new seed value, `nextSeed`.
-- Use the `next` function to calculate the next value from the current `val` and the `nextSeed`.
+Given a condition, we can **initialize the current value** using a provided `seed` value. Then, using a `while` loop we can iterate as long as the `predicate` function called with the current `val` returns `true`.
+
+Inside the loop, we can use `yield` to return the current `val` and optionally receive a **new seed value**, `nextSeed`. Finally, we can use the `next` function to **calculate the next value** from the current `val` and the `nextSeed`.
 
 ```js
-const generateWhile = function* (seed, condition, next) {
+const generateWhile = function* (seed, predicate, next) {
   let val = seed;
   let nextSeed = null;
-  while (condition(val)) {
+  while (predicate(val)) {
     nextSeed = yield val;
     val = next(val, nextSeed);
   }
@@ -27,3 +28,7 @@ const generateWhile = function* (seed, condition, next) {
 
 [...generateWhile(1, v => v <= 5, v => ++v)]; // [1, 2, 3, 4, 5]
 ```
+
+> [!TIP]
+>
+> You can switch this code to work **until a condition is met** by simply changing the `while` loop condition to `!predicate(val)`.

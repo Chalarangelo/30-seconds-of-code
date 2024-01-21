@@ -2494,3 +2494,6 @@
 - from: /js/s/toggle-html-element-class
   to: /js/s/html-element-test-add-remove-toggle-class
   status: 301!
+- from: /js/s/generate-until
+  to: /js/s/generate-while
+  status: 301!
