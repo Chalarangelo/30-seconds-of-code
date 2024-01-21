@@ -3,7 +3,6 @@ name: Browser Scrolling with JavaScript
 featured: true
 snippetIds:
   - js/s/scroll-to-top
-  - js/s/smooth-scroll
   - js/s/bottom-visible
   - js/s/get-scroll-position
   - js/s/get-scrollbar-width

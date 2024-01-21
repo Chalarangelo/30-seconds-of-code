@@ -163,9 +163,6 @@
 - from: /c/js-arrow-functions/*
   to: /js/arrow-functions/:splat
   status: 301!
-- from: /c/js-browser-capabilities/*
-  to: /js/browser-capabilities/:splat
-  status: 301!
 - from: /c/js-colors/*
   to: /js/colors/:splat
   status: 301!
@@ -913,9 +910,6 @@
 - from: /js/s/alphabetical
   to: /js/s/sort-array-alphabetically
   status: 301!
-- from: /js/s/chain-async
-  to: /js/s/chain-async-functions
-  status: 301!
 - from: /js/s/create-dir-if-not-exists
   to: /js/s/create-directory-if-not-exists
   status: 301!
@@ -973,17 +967,11 @@
 - from: /js/s/get-cmd-args
   to: /js/s/command-line-arguments
   status: 301!
-- from: /js/s/flags
-  to: /js/s/to-flags-object
-  status: 301!
 - from: /js/s/frequencies
   to: /js/s/value-frequencies
   status: 301!
 - from: /js/s/jso-nto-csv
   to: /js/s/json-to-csv
-  status: 301!
-- from: /js/s/get-protocol
-  to: /js/s/current-page-protocol
   status: 301!
 - from: /js/s/memoize
   to: /js/s/memoize-function
@@ -1024,9 +1012,6 @@
 - from: /js/s/most-frequent
   to: /js/s/most-frequent-array-element
   status: 301!
-- from: /js/s/most-performant
-  to: /js/s/most-performant-function
-  status: 301!
 - from: /js/s/round
   to: /js/s/round-number-to-precision
   status: 301!
@@ -1056,9 +1041,6 @@
   status: 301!
 - from: /js/s/transpose
   to: /js/s/transpose-matrix
-  status: 301!
-- from: /js/s/nth-arg
-  to: /js/s/nth-argument
   status: 301!
 - from: /js/s/random-alpha-numeric
   to: /js/s/random-alphanumeric
@@ -1090,20 +1072,11 @@
 - from: /js/s/partial
   to: /js/s/prepend-function-arguments
   status: 301!
-- from: /js/s/to-char-array
-  to: /js/s/to-character-array
-  status: 301!
 - from: /js/s/to-currency
   to: /js/s/number-to-currency
   status: 301!
 - from: /js/s/to-decimal-mark
   to: /js/s/number-to-decimal-mark
-  status: 301!
-- from: /js/s/to-hash
-  to: /js/s/iterable-to-hash
-  status: 301!
-- from: /js/s/to-identity-object
-  to: /js/s/array-to-identity-object
   status: 301!
 - from: /js/s/to-optional-fixed
   to: /js/s/number-to-optional-fixed
@@ -1143,9 +1116,6 @@
   status: 301!
 - from: /js/s/converge
   to: /js/s/converge-branching-functions
-  status: 301!
-- from: /js/s/over
-  to: /js/s/invoke-functions-on-arguments
   status: 301!
 - from: /js/s/percentile
   to: /js/s/percentile-of-matches
@@ -1204,9 +1174,6 @@
 - from: /js/s/matches
   to: /js/s/match-object-properties
   status: 301!
-- from: /js/s/over-args
-  to: /js/s/transform-function-arguments
-  status: 301!
 - from: /js/s/size
   to: /js/s/size-of-array-object-or-string
   status: 301!
@@ -1218,9 +1185,6 @@
   status: 301!
 - from: /js/s/sum-power
   to: /js/s/sum-powers-in-range
-  status: 301!
-- from: /js/s/sum-n
-  to: /js/s/sum-of-numbers-until-n
   status: 301!
 - from: /js/s/split-lines
   to: /js/s/split-into-lines
@@ -1236,9 +1200,6 @@
   status: 301!
 - from: /js/s/resolve-after
   to: /js/s/resolve-promise-after-amount-of-time
-  status: 301!
-- from: /js/s/run-async
-  to: /js/s/run-function-async
   status: 301!
 - from: /js/s/map-consecutive
   to: /js/s/map-consecutive-elements
@@ -1747,12 +1708,6 @@
 - from: /js/s/find-last-matching-key
   to: /js/s/find-matching-keys
   status: 301!
-- from: /js/s/juxt
-  to: /js/s/invoke-functions-on-arguments
-  status: 301!
-- from: /js/s/juxtapose-functions
-  to: /js/s/invoke-functions-on-arguments
-  status: 301!
 - from: /js/s/compose
   to: /js/s/function-composition
   status: 301!
@@ -1898,6 +1853,9 @@
   to: /js/s/capitalize-first-letter-of-string
   status: 301!
 - from: /c/js-string-casing/*
+  to: /js/s/string-case-conversion
+  status: 301!
+- from: /js/s/capitalize-every-words
   to: /js/s/string-case-conversion
   status: 301!
 - from: /js/string-casing/*

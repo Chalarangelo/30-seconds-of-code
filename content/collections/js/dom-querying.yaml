@@ -14,7 +14,6 @@ snippetIds:
   - js/s/select-focused-dom-element
   - js/s/get-elements-bigger-than-viewport
   - js/s/element-from-point
-  - js/s/element-is-focused
   - js/s/get-vertical-offset
   - js/s/store-dom-items
 splash: laptop-plants-1
