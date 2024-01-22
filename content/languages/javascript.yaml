@@ -804,3 +804,6 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/remove
   DOMTokenList.toggle(): >-
     https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/toggle
+  FormData:  https://developer.mozilla.org/en-US/docs/Web/API/FormData
+  FormData(): >-
+    https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData

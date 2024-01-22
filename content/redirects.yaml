@@ -2497,3 +2497,6 @@
 - from: /js/s/generate-until
   to: /js/s/generate-while
   status: 301!
+- from: /js/s/serialize-form
+  to: /js/s/form-to-object
+  status: 301!
