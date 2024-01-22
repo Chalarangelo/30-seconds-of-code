@@ -5,7 +5,7 @@ type: tip
 language: javascript
 tags: [function,generator]
 cover: yellow-sofa
-excerpt: Learn how to create a JavaScript generator function that keeps producing new values as long as the given condition is met.
+excerpt: Learn how to create a generator function that keeps producing new values as long as the given condition is met.
 dateModified: 2024-01-22
 ---
 
