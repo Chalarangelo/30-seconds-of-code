@@ -5,8 +5,7 @@ snippetIds:
   - js/s/create-html-elements
   - js/s/create-element
   - js/s/remove-dom-element
-  - js/s/insert-html-string-after-element
-  - js/s/insert-html-string-before-element
+  - js/s/insert-html-string-before-or-after-element
   - js/s/render-dom-element
 splash: hiking-balance
 description: >-
