@@ -967,9 +967,6 @@
 - from: /js/s/get-cmd-args
   to: /js/s/command-line-arguments
   status: 301!
-- from: /js/s/frequencies
-  to: /js/s/value-frequencies
-  status: 301!
 - from: /js/s/jso-nto-csv
   to: /js/s/json-to-csv
   status: 301!
@@ -1173,9 +1170,6 @@
   status: 301!
 - from: /js/s/size
   to: /js/s/size-of-array-object-or-string
-  status: 301!
-- from: /js/s/count-by
-  to: /js/s/count-grouped-elements
   status: 301!
 - from: /js/s/reduced-filter
   to: /js/s/filter-matching-and-unspecified-values
@@ -2514,4 +2508,13 @@
   status: 301!
 - from: /js/s/compact-whitespace
   to: /js/s/find-remove-compact-whitespace
+  status: 301!
+- from: /js/s/frequencies
+  to: /js/s/count-grouped-elements
+  status: 301!
+- from: /js/s/value-frequencies
+  to: /js/s/count-grouped-elements
+  status: 301!
+- from: /js/s/count-by
+  to: /js/s/count-grouped-elements
   status: 301!
