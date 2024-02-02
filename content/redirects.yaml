@@ -2500,3 +2500,6 @@
 - from: /js/s/serialize-form
   to: /js/s/form-to-object
   status: 301!
+- from: /js/s/primes
+  to: /js/s/is-prime
+  status: 301!
