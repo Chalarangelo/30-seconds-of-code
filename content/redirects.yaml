@@ -2506,3 +2506,12 @@
 - from: /js/s/memoize-function
   to: /js/s/memoization
   status: 301!
+- from: /js/s/contains-whitespace
+  to: /js/s/find-remove-compact-whitespace
+  status: 301!
+- from: /js/s/remove-whitespace
+  to: /js/s/find-remove-compact-whitespace
+  status: 301!
+- from: /js/s/compact-whitespace
+  to: /js/s/find-remove-compact-whitespace
+  status: 301!
