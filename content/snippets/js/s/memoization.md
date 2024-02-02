@@ -6,46 +6,64 @@ language: javascript
 tags: [function,memoization]
 cover: cherry-trees
 excerpt: Learn different ways to memoize function calls in JavaScript as well as when to use memoization to get the best performance results.
-dateModified: 2021-11-07
+dateModified: 2024-01-26
 ---
 
-Memoization is a commonly used technique that can help speed up your code significantly. This technique relies on a **cache** to store results for previously completed units of work. The purpose of the cache is to **avoid performing the same work more than once**, speeding up subsequent calls of time-consuming functions. Based on this definition, we can easily extract some criteria that can help us decide when to use memoization in our code:
+## What is memoization?
 
-- Memoization is useful mainly in speeding up slow-performing, costly or time-consuming function calls
-- Memoization speeds up subsequent calls, so it's best used when you anticipate multiple calls of the same function under the same circumstances
-- Memoization stores results in memory, so it should be avoided when the same function is called multiple times under very different circumstances
+Memoization is a commonly used technique that can help speed up your code significantly. It relies on a **cache** to store results for previously completed units of work. The purpose of the cache is to **avoid performing the same work more than once**, speeding up subsequent calls of time-consuming functions.
 
-A simple, object-oriented example of implementing memoization could be as follows:
+## Criteria for using memoization
+
+Based on its definition, we can easily deduce some criteria to help us discover good candidates for memoization:
+
+- **Slow-performing, costly or time-consuming** function calls can benefit from memoization
+- Memoization speeds up **subsequent calls**, so it's best used when you anticipate multiple calls of the same function under the same circumstances
+- Results are **stored in memory**, so memoization should be avoided when the same function is called multiple times under very different circumstances
+
+## Memoize a function
+
+It's fairly easy to roll up your own memoization function in JavaScript. For this implementation, we'll use a `Map` to store the results. The `Map` object holds **key-value pairs** and remembers the original insertion order of the keys. This makes it suitable for memoization, as we can use the function's arguments as keys and the results as values.
 
 ```js
-class MyObject {
-  constructor(data) {
-    this.data = data;
-    this.data[this.data.length - 2] = { value: 'Non-empty' };
-  }
+const memoize = fn => {
+  const cache = new Map();
+  const cached = function (val) {
+    return cache.has(val)
+      ? cache.get(val)
+      : cache.set(val, fn.call(this, val)) && cache.get(val);
+  };
+  cached.cache = cache;
+  return cached;
+};
 
-  firstNonEmptyItem() {
-    return this.data.find(v => !!v.value);
-  }
+// This function is slow and will benefit from memoization
+const anagrams = str => {
+  if (str.length <= 2) return str.length === 2 ? [str, str[1] + str[0]] : [str];
+  return str
+    .split('')
+    .reduce(
+      (acc, letter, i) =>
+        acc.concat(
+          anagrams(str.slice(0, i) + str.slice(i + 1)).map(val => letter + val)
+        ),
+      []
+    );
+};
 
-  firstNonEmptyItemMemo() {
-    if (!this.firstNonEmpty)
-      this.firstNonEmpty = this.data.find(v => !!v.value);
-    return this.firstNonEmpty;
-  }
-}
+const anagramsCached = memoize(anagrams);
 
-const myObject = new MyObject(Array(2000).fill({ value: null }));
-
-for (let i = 0; i < 100; i ++)
-  myObject.firstNonEmptyItem();       // ~4000ms
-for (let i = 0; i < 100; i ++)
-  myObject.firstNonEmptyItemMemo();   // ~70ms
+anagramsCached('javascript');
+// takes a long time
+anagramsCached('javascript');
+// returns virtually instantly since it's cached
 ```
 
-This example showcases a way to implement memoization inside a class. However, it makes a couple of assumptions. First, it's assumed that the `data` structure will not be altered over the lifecycle of the object. Seconds, it's assumed that this is the only expensive function call we will make, so the code is not reusable. The example also doesn't account for arguments being passed to the function, which would alter the result. A functional approach would work with any given function and also account for arguments. Such an approach can be seen in the form of the [memoize snippet](/js/s/memoize/), which uses a `Map` to store different values.
+## Using a Proxy object for memoization
 
-We still recommend using that snippet as the primary way to memoize a function, however JavaScript's [Proxy object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) provides an interesting alternative via the use of the `handler.apply()` trap, which can be used for this purpose as follows:
+While the previous example is a good way to implement memoization, JavaScript's [Proxy object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) provides an interesting **alternative** via the use of the `handler.apply()` trap.
+
+Using the trap, we can **intercept the function call** and check if the result is already cached. If it is, we return the cached result. If it's not, we call the original function and **cache the result** before returning it.
 
 ```js
 const memoize = fn => new Proxy(fn, {

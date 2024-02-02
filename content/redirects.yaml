@@ -973,9 +973,6 @@
 - from: /js/s/jso-nto-csv
   to: /js/s/json-to-csv
   status: 301!
-- from: /js/s/memoize
-  to: /js/s/memoize-function
-  status: 301!
 - from: /js/s/nest
   to: /js/s/nest-objects
   status: 301!
@@ -2502,4 +2499,10 @@
   status: 301!
 - from: /js/s/primes
   to: /js/s/is-prime
+  status: 301!
+- from: /js/s/memoize
+  to: /js/s/memoization
+  status: 301!
+- from: /js/s/memoize-function
+  to: /js/s/memoization
   status: 301!
