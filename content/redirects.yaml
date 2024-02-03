@@ -1054,12 +1054,6 @@
 - from: /js/s/in-range
   to: /js/s/number-in-range
   status: 301!
-- from: /js/s/partial-right
-  to: /js/s/append-function-arguments
-  status: 301!
-- from: /js/s/partial
-  to: /js/s/prepend-function-arguments
-  status: 301!
 - from: /js/s/to-currency
   to: /js/s/number-to-currency
   status: 301!
@@ -2533,4 +2527,15 @@
 - from: /js/s/index-of-all-matches
   to: /js/s/array-has-only-one-match-or-many
   status: 301!
-
+- from: /js/s/partial-right
+  to: /js/s/partially-apply-function
+  status: 301!
+- from: /js/s/append-function-arguments
+  to: /js/s/partially-apply-function
+  status: 301!
+- from: /js/s/partial
+  to: /js/s/partially-apply-function
+  status: 301!
+- from: /js/s/prepend-function-arguments
+  to: /js/s/partially-apply-function
+  status: 301!
