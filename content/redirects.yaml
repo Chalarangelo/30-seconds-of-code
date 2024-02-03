@@ -916,12 +916,6 @@
 - from: /js/s/digitize
   to: /js/s/digitize-number
   status: 301!
-- from: /js/s/has-many
-  to: /js/s/array-has-many-matches
-  status: 301!
-- from: /js/s/has-one
-  to: /js/s/array-has-only-one-match
-  status: 301!
 - from: /js/s/once
   to: /js/s/call-function-once
   status: 301!
@@ -1179,9 +1173,6 @@
   status: 301!
 - from: /js/s/split-lines
   to: /js/s/split-into-lines
-  status: 301!
-- from: /js/s/index-of-all
-  to: /js/s/index-of-all-matches
   status: 301!
 - from: /js/s/flip
   to: /js/s/flip-function-arguments
@@ -2524,3 +2515,22 @@
 - from: /js/s/insert-html-string-before-element
   to: /js/s/insert-html-string-before-or-after-element
   status: 301!
+- from: /js/s/has-many
+  to: /js/s/array-has-only-one-match-or-many
+  status: 301!
+- from: /js/s/array-has-many-matches
+  to: /js/s/array-has-only-one-match-or-many
+  status: 301!
+- from: /js/s/has-one
+  to: /js/s/array-has-only-one-match-or-many
+  status: 301!
+- from: /js/s/array-has-only-one-match
+  to: /js/s/array-has-only-one-match-or-many
+  status: 301!
+- from: /js/s/index-of-all
+  to: /js/s/array-has-only-one-match-or-many
+  status: 301!
+- from: /js/s/index-of-all-matches
+  to: /js/s/array-has-only-one-match-or-many
+  status: 301!
+
