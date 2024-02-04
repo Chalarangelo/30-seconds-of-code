@@ -1,16 +1,19 @@
 ---
-title: Random hex color code
-type: snippet
+title: Generate a random hex color code in JavaScript
+shortTitle: Random hex color code
+type: tip
 language: javascript
 tags: [math,random]
 cover: industrial-tokyo
-dateModified: 2021-01-08
+excerpt: Learn how to generate a random hexadecimal color code with a few lines of JavaScript.
+dateModified: 2024-02-02
 ---
 
-Generates a random hexadecimal color code.
+Hex color codes are used everywhere in web development and, oftentimes, you might need to generate a random one on the fly. This can be useful for a variety of purposes, such as generating random colors for a UI, or for testing purposes.
 
-- Use `Math.random()` to generate a random 24-bit (6 * 4bits) hexadecimal number.
-- Use bit shifting and then convert it to an hexadecimal string using `Number.prototype.toString()`.
+Generating a random hex color code is fairly simple, but requires some math. You can use the `Math.random()` method to generate a random **24-bit** (6 * 4bits) hexadecimal number, then use **bit shifting** and convert it to an **hexadecimal string** using `Number.prototype.toString()` with a base of `16`.
+
+As the resulting number might be longer than 6 characters, you can use `String.prototype.slice()` to extract the first **6 characters**. Finally, you can prepend a `#` to the string to make it a valid hex color code.
 
 ```js
 const randomHexColorCode = () => {

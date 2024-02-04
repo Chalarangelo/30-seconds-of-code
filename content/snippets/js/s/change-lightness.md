@@ -1,18 +1,21 @@
 ---
-title: Change color lightness
-type: snippet
+title: Change color lightness using JavaScript
+shortTitle: Change color lightness
+type: tip
 language: javascript
-tags: [string,browser,regexp]
+tags: [string,regexp]
 cover: aerial-view-port
-dateModified: 2020-10-31
+excerpt: Learn how to change the lightness component of an `hsl()` color string using JavaScript.
+dateModified: 2024-02-04
 ---
 
-Changes the lightness value of an `hsl()` color string.
+One of the most common operations I've found myself performing when working with colors is changing their lightness component. This is particularly useful when you want to create a **hover effect** for a UI element, or when you want to **animate** a color change.
 
-- Use `String.prototype.match()` to get an array of 3 strings with the numeric values.
-- Use `Array.prototype.map()` in combination with `Number` to convert them into an array of numeric values.
-- Make sure the lightness is within the valid range (between `0` and `100`), using `Math.max()` and `Math.min()`.
-- Use a template literal to create a new `hsl()` string with the updated value.
+In order to accomplish this, we have to first parse the `hsl()` color string and separate its components. This can be easily done using a **regular expression** and the `String.prototype.match()` method.
+
+Once we have the components, we can modify the lightness value and create a new `hsl()` string. In order to safeguard against **invalid lightness values**, we can use `Math.max()` and `Math.min()` to ensure the value is within the valid range (between `0` and `100`).
+
+Finally, we can use a **template literal** to create a new `hsl()` string with the updated value.
 
 ```js
 const changeLightness = (delta, hslStr) => {
@@ -20,7 +23,7 @@ const changeLightness = (delta, hslStr) => {
 
   const newLightness = Math.max(
     0,
-    Math.min(100, lightness + parseFloat(delta))
+    Math.min(100, lightness + Number.parseFloat(delta))
   );
 
   return `hsl(${hue}, ${saturation}%, ${newLightness}%)`;
@@ -28,4 +31,6 @@ const changeLightness = (delta, hslStr) => {
 
 changeLightness(10, 'hsl(330, 50%, 50%)'); // 'hsl(330, 50%, 60%)'
 changeLightness(-10, 'hsl(330, 50%, 50%)'); // 'hsl(330, 50%, 40%)'
+changeLightness(-100, 'hsl(330, 50%, 50%)'); // 'hsl(330, 50%, 0%)'
+changeLightness(100, 'hsl(330, 50%, 50%)'); // 'hsl(330, 50%, 100%)'
 ```

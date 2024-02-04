@@ -1,16 +1,21 @@
 ---
-title: Extend hex value
-type: snippet
+title: How can I extend a 3-digit color code to a 6-digit color code in JavaScript?
+shortTitle: Extend 3-digit color code
+type: tip
 language: javascript
 tags: [string]
 cover: laptop-plants
-dateModified: 2020-09-15
+excerpt: Learn how to convert a 3-digit RGB notated hexadecimal color-code to the 6-digit form.
+dateModified: 2024-02-03
 ---
 
-Extends a 3-digit color code to a 6-digit color code.
+A 3-digit color code is a **shorthand** for a 6-digit color code, where each digit is repeated to form the full 6-digit code. For example, `#03f` is equivalent to `#0033ff`.
 
-- Use `Array.prototype.map()`, `String.prototype.split()` and `Array.prototype.join()` to join the mapped array for converting a 3-digit RGB notated hexadecimal color-code to the 6-digit form.
-- `Array.prototype.slice()` is used to remove `#` from string start since it's added once.
+These shorthand codes are quite common, but they pose some challenges when working with them programmatically. Thus, it's often necessary to convert them to the full **6-digit form**.
+
+All you have to do is to **repeat each digit** of the 3-digit code to form the 6-digit code. This can be done using a combination of `Array.prototype.map()`, `String.prototype.split()` and `Array.prototype.join()` to join the mapped array.
+
+In order to account for the possibility of the input string starting with `#`, you can use `Array.prototype.slice()` to remove the `#` from the start of the string, if it's present.
 
 ```js
 const extendHex = shortHex =>
