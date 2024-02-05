@@ -1,16 +1,23 @@
 ---
-title: String to slug
-type: snippet
+title: Convert a string to a URL-friendly slug using JavaScript
+shortTitle: String to slug
+type: tip
 language: javascript
 tags: [string,regexp]
 cover: collab-desk-2
-dateModified: 2020-10-04
+excerpt: Learn how to easily convert any string to a URL-friendly slug, using regular expressions.
+dateModified: 2024-02-05
 ---
 
-Converts a string to a URL-friendly slug.
+**SEO** is important, and one of the things that can help improve your website's SEO is having a URL that is easy to read and understand. This is where slugs come in.
 
-- Use `String.prototype.toLowerCase()` and `String.prototype.trim()` to normalize the string.
-- Use `String.prototype.replace()` to replace spaces, dashes and underscores with `-` and remove special characters.
+A **slug** is a **URL-friendly version of a string**, typically used to identify a resource on a website. Conventionally, slugs are created by converting a string to **lowercase**, **removing special characters** and **replacing spaces with dashes**.
+
+The first part is straightforward, using `String.prototype.toLowerCase()` and `String.prototype.trim()` to **lowercase** and tidy up the string. Then, you can use a regular expression to find any characters that are **not alphanumeric** (`\w`), **spaces** (`\s`) **or dashes** (`-`) and remove them, using `String.prototype.replace()`.
+
+After that, you can **replace word separators**, such as spaces (`\s`) and underscores (`_`) and dashes (`-`), with a single dash (`-`), using `String.prototype.replace()` again.
+
+Finally, we can use a regular expression to match one or more consecutive dashes (`-+`) at the **beginning and end of the string** and remove them, using `String.prototype.replace()` one more time.
 
 ```js
 const slugify = str =>
