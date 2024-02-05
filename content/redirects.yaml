@@ -2539,3 +2539,9 @@
 - from: /js/s/prepend-function-arguments
   to: /js/s/partially-apply-function
   status: 301!
+- from: /js/s/cycle-generator
+  to: /js/s/generate-values-repeatedly
+  status: 301!
+- from: /js/s/repeat-generator
+  to: /js/s/generate-values-repeatedly
+  status: 301!

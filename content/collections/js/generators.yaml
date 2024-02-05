@@ -4,8 +4,7 @@ featured: true
 snippetIds:
   - js/s/generator-for-range
   - js/s/range-generator
-  - js/s/repeat-generator
-  - js/s/cycle-generator
+  - js/s/generate-values-repeatedly
   - js/s/generator-to-array
   - js/s/is-generator-function
   - js/s/date-range-generator
