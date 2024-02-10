@@ -925,9 +925,6 @@
 - from: /js/s/frozen-set
   to: /js/s/freeze-set-object
   status: 301!
-- from: /js/s/permutations
-  to: /js/s/array-permutations
-  status: 301!
 - from: /js/s/prefix
   to: /js/s/prefix-css-property
   status: 301!
@@ -2544,4 +2541,13 @@
   status: 301!
 - from: /js/s/repeat-generator
   to: /js/s/generate-values-repeatedly
+  status: 301!
+- from: /js/s/permutations
+  to: /js/s/array-or-string-permutations
+  status: 301!
+- from: /js/s/array-permutations
+  to: /js/s/array-or-string-permutations
+  status: 301!
+- from: /js/s/string-permutations
+  to: /js/s/array-or-string-permutations
   status: 301!
