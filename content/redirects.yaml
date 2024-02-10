@@ -1060,17 +1060,11 @@
 - from: /js/s/to-optional-fixed
   to: /js/s/number-to-optional-fixed
   status: 301!
-- from: /js/s/prod
-  to: /js/s/product-of-numeric-values
-  status: 301!
 - from: /js/s/toggle-element
   to: /js/s/toggle-array-element
   status: 301!
 - from: /js/s/pluck
   to: /js/s/pluck-values-from-object-array
-  status: 301!
-- from: /js/s/sum
-  to: /js/s/sum-array
   status: 301!
 - from: /js/s/is-sorted
   to: /js/s/array-is-sorted
@@ -1086,9 +1080,6 @@
   status: 301!
 - from: /js/s/offset
   to: /js/s/offset-array-elements
-  status: 301!
-- from: /js/s/average
-  to: /js/s/average-of-numbers
   status: 301!
 - from: /js/s/closest
   to: /js/s/closest-numeric-match
@@ -1204,9 +1195,6 @@
 - from: /js/s/index-by
   to: /js/s/function-based-array-indexing
   status: 301!
-- from: /js/s/average-by
-  to: /js/s/mapped-array-average
-  status: 301!
 - from: /js/s/find-consecutive
   to: /js/s/arrays-of-consecutive-elements
   status: 301!
@@ -1215,9 +1203,6 @@
   status: 301!
 - from: /js/s/replace-last
   to: /js/s/replace-last-occurrence
-  status: 301!
-- from: /js/s/sum-by
-  to: /js/s/mapped-array-sum
   status: 301!
 - from: /js/s/without
   to: /js/s/filter-out-matching-array-elements
@@ -2550,4 +2535,43 @@
   status: 301!
 - from: /js/s/string-permutations
   to: /js/s/array-or-string-permutations
+  status: 301!
+- from: /js/s/average
+  to: /js/s/numeric-array-math-operations
+  status: 301!
+- from: /js/s/average-of-numbers
+  to: /js/s/numeric-array-math-operations
+  status: 301!
+- from: /js/s/average-by
+  to: /js/s/numeric-array-math-operations
+  status: 301!
+- from: /js/s/mapped-array-average
+  to: /js/s/numeric-array-math-operations
+  status: 301!
+- from: /js/s/sum-by
+  to: /js/s/numeric-array-math-operations
+  status: 301!
+- from: /js/s/mapped-array-sum
+  to: /js/s/numeric-array-math-operations
+  status: 301!
+- from: /js/s/prod
+  to: /js/s/numeric-array-math-operations
+  status: 301!
+- from: /js/s/product-of-numeric-values
+  to: /js/s/numeric-array-math-operations
+  status: 301!
+- from: /js/s/sum
+  to: /js/s/numeric-array-math-operations
+  status: 301!
+- from: /js/s/sum-array
+  to: /js/s/numeric-array-math-operations
+  status: 301!
+- from: /js/s/standard-deviation
+  to: /js/s/numeric-array-math-operations
+  status: 301!
+- from: /js/s/weighted-average
+  to: /js/s/numeric-array-math-operations
+  status: 301!
+- from: /js/s/median
+  to: /js/s/numeric-array-math-operations
   status: 301!
