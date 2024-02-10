@@ -1,20 +1,23 @@
 ---
-title: Replace last occurrence in string
-type: snippet
+title: Replace the last occurrence of a pattern in a JavaScript string
+shortTitle: Replace last occurrence
+type: tip
 language: javascript
 tags: [string,regexp]
 cover: waves
-dateModified: 2021-04-22
+excerpt: Learn how to use regular expressions to replace the last occurrence of a pattern in a JavaScript string.
+dateModified: 2024-02-08
 ---
 
-Replaces the last occurrence of a pattern in a string.
+Replacing the first occurrence of a pattern in a string is easy, but what if you want to replace the **last occurrence**? This, admittedly, is a little trickier, especially if you want to match the functionality of `String.prototype.replace()`.
 
-- Use `typeof` to determine if `pattern` is a string or a regular expression.
-- If the `pattern` is a string, use it as the `match`.
-- Otherwise, use the `RegExp` constructor to create a new regular expression using the `RegExp.prototype.source` of the `pattern` and adding the `'g'` flag to it. Use `String.prototype.match()` and `Array.prototype.slice()` to get the last match, if any.
-- Use `String.prototype.lastIndexOf()` to find the last occurrence of the match in the string.
-- If a match is found, use `String.prototype.slice()` and a template literal to replace the matching substring with the given `replacement`.
-- If no match is found, return the original string.
+First and foremost, we need to determine if the `pattern` is a **string or a regular expression**. If it's a string, we can use it as the `match`.
+
+If it's a regular expression, we need to create a new regular expression using the `RegExp()` constructor and the `RegExp.prototype.source` of the `pattern`, adding the `'g'` flag to it. Using `String.prototype.match()` and `Array.prototype.slice()`, we can then get the last match, if any.
+
+We can then use `String.prototype.lastIndexOf()` to find the last occurrence of the match in the string. If **a match is found**, we can use `String.prototype.slice()` and a template literal to **replace the matching substring** with the given `replacement`. If **no match is found**, we can simply return the original string.
+
+Putting everything together results in a versatile implementation that can handle both strings and regular expressions, and that matches the functionality of `String.prototype.replace()`:
 
 ```js
 const replaceLast = (str, pattern, replacement) => {
