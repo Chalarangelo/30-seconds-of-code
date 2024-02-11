@@ -1174,12 +1174,6 @@
 - from: /js/s/initial
   to: /js/s/array-without-last-element
   status: 301!
-- from: /js/s/map-to-object
-  to: /js/s/convert-map-to-object
-  status: 301!
-- from: /js/s/object-to-map
-  to: /js/s/convert-object-to-map
-  status: 301!
 - from: /js/s/matches-with
   to: /js/s/function-based-object-property-matches
   status: 301!
@@ -2574,4 +2568,13 @@
   status: 301!
 - from: /js/s/median
   to: /js/s/numeric-array-math-operations
+  status: 301!
+- from: /js/s/map-to-object
+  to: /js/s/convert-map-to-object
+  status: 301!
+- from: /js/s/object-to-map
+  to: /js/s/convert-map-to-object
+  status: 301!
+- from: /js/s/convert-object-to-map
+  to: /js/s/convert-map-to-object
   status: 301!

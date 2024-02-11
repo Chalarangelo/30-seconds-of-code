@@ -585,6 +585,8 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/values
   Map: >-
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
+  Map(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/Map
   Map.prototype.size: >-
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/size
   Map.prototype.clear(): >-
