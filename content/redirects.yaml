@@ -1006,12 +1006,6 @@
 - from: /js/s/has-flags
   to: /js/s/process-arguments-have-flags
   status: 301!
-- from: /js/s/has-key
-  to: /js/s/object-has-key
-  status: 301!
-- from: /js/s/has-value
-  to: /js/s/object-has-value
-  status: 301!
 - from: /js/s/have-same-contents
   to: /js/s/arrays-have-same-contents
   status: 301!
@@ -2577,4 +2571,16 @@
   status: 301!
 - from: /js/s/convert-object-to-map
   to: /js/s/convert-map-to-object
+  status: 301!
+- from: /js/s/has-key
+  to: /js/s/object-has-value-or-key
+  status: 301!
+- from: /js/s/object-has-key
+  to: /js/s/object-has-value-or-key
+  status: 301!
+- from: /js/s/has-value
+  to: /js/s/object-has-value-or-key
+  status: 301!
+- from: /js/s/object-has-value
+  to: /js/s/object-has-value-or-key
   status: 301!
