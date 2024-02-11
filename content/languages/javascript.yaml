@@ -751,6 +751,7 @@ references:
   decodeURIComponent(): >-
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent
   Element.attributes: https://developer.mozilla.org/en-US/docs/Web/API/Element/attributes
+  Element.style: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
   Element.removeAttribute(): >-
     https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute
   CSSStyleDeclaration: >-
@@ -762,6 +763,8 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener
   Event.target: https://developer.mozilla.org/en-US/docs/Web/API/Event/target
   Node.contains(): https://developer.mozilla.org/en-US/docs/Web/API/Node/contains
+  Node.appendChild(): >-
+    https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
   EventTarget.dispatchEvent(): >-
     https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent
   Window.matchMedia(): >-
