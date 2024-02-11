@@ -6,8 +6,10 @@ language: javascript
 tags: [browser]
 cover: compass
 excerpt: Learn all of the options JavaScript provides for modifying the URL of the current page in the browser without reloading the page.
-dateModified: 2021-09-27
+dateModified: 2024-02-10
 ---
+
+A pretty common task in web development is to **modify the URL of the current page without reloading it**. This can be useful when you want to update the URL to reflect the current state of the application, without causing a full page reload. In this article, we will explore the different options JavaScript provides for this task and the pros and cons of each.
 
 ## Using the History API
 
