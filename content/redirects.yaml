@@ -2584,3 +2584,6 @@
 - from: /js/s/object-has-value
   to: /js/s/object-has-value-or-key
   status: 301!
+- from: /js/s/mask
+  to: /js/s/mask-string
+  status: 301!
