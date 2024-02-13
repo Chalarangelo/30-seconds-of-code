@@ -2587,3 +2587,15 @@
 - from: /js/s/mask
   to: /js/s/mask-string
   status: 301!
+- from: /js/s/http-get
+  to: /js/s/http-get-post-put-delete
+  status: 301!
+- from: /js/s/http-post
+  to: /js/s/http-get-post-put-delete
+  status: 301!
+- from: /js/s/http-put
+  to: /js/s/http-get-post-put-delete
+  status: 301!
+- from: /js/s/http-delete
+  to: /js/s/http-get-post-put-delete
+  status: 301!

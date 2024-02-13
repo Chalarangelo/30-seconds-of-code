@@ -816,3 +816,4 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData
   Element.insertAdjacentHTML(): >-
     https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML
+  fetch(): https://developer.mozilla.org/en-US/docs/Web/API/fetch
