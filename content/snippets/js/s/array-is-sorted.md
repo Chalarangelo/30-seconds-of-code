@@ -1,17 +1,19 @@
 ---
-title: Array is sorted
-type: snippet
+title: Check if a numeric array is sorted in JavaScript
+shortTitle: Array is sorted
+type: tip
 language: javascript
 tags: [array]
 cover: italian-horizon
-dateModified: 2020-10-20
+excerpt: Efficiently check if a numeric array is sorted in ascending or descending order in JavaScript.
+dateModified: 2024-02-15
 ---
 
-Checks if a numeric array is sorted.
+Sometimes, it's useful to know if an array is sorted in **ascending or descending order**. This can be especially useful in combination with other algorithms, such as **binary search** or **sorting algorithms**.
 
-- Calculate the ordering `direction` for the first pair of adjacent array elements.
-- Return `0` if the given array is empty, only has one element or the `direction` changes for any pair of adjacent array elements.
-- Use `Math.sign()` to covert the final value of `direction` to `-1` (descending order) or `1` (ascending order).
+Sorting the whole array and comparing it to itself is the **naive method**, yet it's wildly **inefficient**. The more efficient way is the traditional `for` loop and some **early returns**.
+
+Starting with the first two elements, calculate the `direction` of the array. If the `direction` changes at any point, return `0`. If the array is **empty or has only one element**, return `0`. If the `direction` remains the same for the whole array, return the `Math.sign()` of the `direction` to get `-1` for descending order and `1` for ascending order.
 
 ```js
 const isSorted = arr => {
