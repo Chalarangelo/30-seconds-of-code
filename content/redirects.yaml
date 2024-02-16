@@ -1174,12 +1174,6 @@
 - from: /js/s/insert-at
   to: /js/s/insert-value-at-array-index
   status: 301!
-- from: /js/s/all-equal
-  to: /js/s/array-element-equality
-  status: 301!
-- from: /js/s/all-equal-by
-  to: /js/s/function-based-array-element-equality
-  status: 301!
 - from: /js/s/index-by
   to: /js/s/function-based-array-indexing
   status: 301!
