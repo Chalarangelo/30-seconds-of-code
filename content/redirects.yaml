@@ -2596,3 +2596,15 @@
 - from: /js/s/to-ordinal-suffix
   to: /js/s/number-to-ordinal-suffix
   status: 301!
+- from: /js/s/all-equal
+  to: /js/s/all-values-of-array-are-equal
+  status: 301!
+- from: /js/s/array-element-equality
+  to: /js/s/all-values-of-array-are-equal
+  status: 301!
+- from: /js/s/all-equal-by
+  to: /js/s/all-values-of-array-are-equal
+  status: 301!
+- from: /js/s/function-based-array-element-equality
+  to: /js/s/all-values-of-array-are-equal
+  status: 301!
