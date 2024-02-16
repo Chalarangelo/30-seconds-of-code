@@ -18,7 +18,7 @@ Luckily, as they're objects after all, you can easily **override these methods**
 In order to freeze a `Set` object, you can simply set the `Set.prototype.add()`, `Set.prototype.delete()` and `Set.prototype.clear()` methods to `undefined`. This will effectively prevent them from being used, practically freezing the object. In addition to that, you can use `Object.freeze()` to freeze the `Set` object itself.
 
 ```js
-const freezeSet = iterable => {
+const frozenSet = iterable => {
   const s = new Set(iterable);
   s.add = undefined;
   s.delete = undefined;
@@ -26,7 +26,7 @@ const freezeSet = iterable => {
   return Object.freeze(s);
 };
 
-freezeSet([1, 2, 3, 1, 2]);
+frozenSet([1, 2, 3, 1, 2]);
 /* Set {
   1, 2, 3,
   add: undefined, delete: undefined, clear: undefined
@@ -38,7 +38,7 @@ freezeSet([1, 2, 3, 1, 2]);
 Freezing a `Map` object is very similar to freezing a `Set` object. You can set the `Map.prototype.set()`, `Map.prototype.delete()` and `Map.prototype.clear()` methods to `undefined` and then use `Object.freeze()` to freeze the `Map` object itself.
 
 ```js
-const freezeMap = iterable => {
+const frozenMap = iterable => {
   const m = new Map(iterable);
   m.set = undefined;
   m.delete = undefined;
@@ -46,7 +46,7 @@ const freezeMap = iterable => {
   return Object.freeze(m);
 };
 
-freezeMap([['a', 1], ['b', 2]]);
+frozenMap([['a', 1], ['b', 2]]);
 /* Map {
   'a' => 1, 'b' => 2,
   set: undefined, delete: undefined, clear: undefined
