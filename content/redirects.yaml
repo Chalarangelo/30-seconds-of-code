@@ -2599,3 +2599,6 @@
 - from: /js/s/http-delete
   to: /js/s/http-get-post-put-delete
   status: 301!
+- from: /js/s/to-ordinal-suffix
+  to: /js/s/number-to-ordinal-suffix
+  status: 301!
