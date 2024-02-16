@@ -1,6 +1,7 @@
 slug: react/testing
 name: React Testing
-shortName: Testing
+shortName: React Testing
+miniName: Testing
 parent: react
 featured: true
 snippetIds:
