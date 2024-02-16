@@ -1,15 +1,17 @@
 ---
-title: Array ranking
-type: snippet
+title: Calculate the ranking of a JavaScript array
+shortTitle: Array ranking
+type: tip
 language: javascript
 tags: [array,math]
 cover: eagle
-dateModified: 2022-04-13
+excerpt: Calculate the ranking of an array based on a comparator function in JavaScript.
+dateModified: 2024-02-16
 ---
 
-Calculates the ranking of an array based on a comparator function.
+The **ranking** of an array is a list of the **positions** of its elements, based on a **comparator function**. This can be useful for sorting algorithms or ranking items in a list for display purposes.
 
-- Use `Array.prototype.map()` and `Array.prototype.filter()` to map each element to a rank using the provided comparator function.
+In order to implement this, you can use `Array.prototype.map()` to iterate over each element and map it to its ranking. In order to calculate the ranking, you can use `Array.prototype.filter()` to count the number of elements that are smaller than the current element, based on the provided comparator function, `compFn`.
 
 ```js
 const ranking = (arr, compFn) =>

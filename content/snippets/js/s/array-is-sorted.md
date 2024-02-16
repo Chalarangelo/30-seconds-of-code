@@ -30,3 +30,7 @@ isSorted([4, 3, 2]); // -1
 isSorted([4, 3, 5]); // 0
 isSorted([4]); // 0
 ```
+
+> [!NOTE]
+>
+> It's relatively easy to modify the function to work with **non-numeric arrays**. You can use the `localeCompare` method for strings or a custom comparator function for more complex objects.
