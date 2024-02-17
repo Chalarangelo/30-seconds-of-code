@@ -1059,14 +1059,7 @@
   status: 301!
 - from: /js/s/offset
   to: /js/s/offset-array-elements
-  status: 301!
-- from: /js/s/closest
-  to: /js/s/closest-numeric-match
-  status: 301!
-- from: /js/s/converge
-  to: /js/s/converge-branching-functions
-  status: 301!
-- from: /js/s/percentile
+  status: 301!ercentile
   to: /js/s/percentile-of-matches
   status: 301!
 - from: /js/s/remove
@@ -1126,9 +1119,6 @@
 - from: /js/s/size
   to: /js/s/size-of-array-object-or-string
   status: 301!
-- from: /js/s/reduced-filter
-  to: /js/s/filter-matching-and-unspecified-values
-  status: 301!
 - from: /js/s/sum-power
   to: /js/s/sum-powers-in-range
   status: 301!
@@ -1153,9 +1143,6 @@
 - from: /js/s/matches-with
   to: /js/s/function-based-object-property-matches
   status: 301!
-- from: /js/s/insert-at
-  to: /js/s/insert-value-at-array-index
-  status: 301!
 - from: /js/s/index-by
   to: /js/s/function-based-array-indexing
   status: 301!
@@ -1167,9 +1154,6 @@
   status: 301!
 - from: /js/s/replace-last
   to: /js/s/replace-last-occurrence
-  status: 301!
-- from: /js/s/without
-  to: /js/s/filter-out-matching-array-elements
   status: 301!
 - from: /articles/s/8-tips-for-accessible-websites
   to: /html/s/8-tips-for-accessible-websites
