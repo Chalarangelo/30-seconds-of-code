@@ -2611,3 +2611,6 @@
 - from: /js/s/freeze-set-object
   to: /js/s/freeze-set-or-map
   status: 301!
+- from: /js/s/last-date-of-month
+  to: /js/s/first-last-date-of-month
+  status: 301!
