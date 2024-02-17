@@ -1059,7 +1059,8 @@
   status: 301!
 - from: /js/s/offset
   to: /js/s/offset-array-elements
-  status: 301!ercentile
+  status: 301!
+- from: /js/s/percentile
   to: /js/s/percentile-of-matches
   status: 301!
 - from: /js/s/remove
