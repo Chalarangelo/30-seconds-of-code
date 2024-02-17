@@ -1147,9 +1147,6 @@
 - from: /js/s/map-consecutive
   to: /js/s/map-consecutive-elements
   status: 301!
-- from: /js/s/map-num-range
-  to: /js/s/map-number-to-range
-  status: 301!
 - from: /js/s/initial
   to: /js/s/array-without-last-element
   status: 301!
@@ -2643,4 +2640,16 @@
   status: 301!
 - from: /js/s/geometric-progression
   to: /js/s/arithmetic-and-geometric-progression
+  status: 301!
+- from: /js/s/map-num-range
+  to: /js/s/clamp-or-map-number-to-range
+  status: 301!
+- from: /js/s/map-number-to-range
+  to: /js/s/clamp-or-map-number-to-range
+  status: 301!
+- from: /js/s/clamp-number
+  to: /js/s/clamp-or-map-number-to-range
+  status: 301!
+- from: /js/s/to-safe-integer
+  to: /js/s/clamp-or-map-number-to-range
   status: 301!
