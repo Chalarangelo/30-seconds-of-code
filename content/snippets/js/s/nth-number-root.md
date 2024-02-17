@@ -1,15 +1,17 @@
 ---
-title: Nth root of number
-type: snippet
+title: Calculate the nth root of a number in JavaScript
+shortTitle: Nth root of number
+type: tip
 language: javascript
 tags: [math]
 cover: tree-roots
-dateModified: 2021-01-06
+excerpt: Use `Math.pow()` to calculate the nth root of a given number in JavaScript.
+dateModified: 2024-02-17
 ---
 
-Calculates the nth root of a given number.
+The **nth root** of a number `x` is a value that, when multiplied by itself `n` times, gives `x`. The nth root can also be expressed as a **power** of `x`, where `x ^ (1/n)` is equal to the nth root of `x`.
 
-- Use `Math.pow()` to calculate `x` to the power of `1 / n` which is equal to the nth root of `x`.
+Given this, we can use `Math.pow()` to calculate the nth root of a given number. Simply pass it the number `x` and a power of `1 / n`, and you'll get the nth root of `x`.
 
 ```js
 const nthRoot = (x, n) => Math.pow(x, 1 / n);
