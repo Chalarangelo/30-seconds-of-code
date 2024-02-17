@@ -2638,3 +2638,9 @@
 - from: /js/s/pad-number
   to: /js/s/number-formatting
   status: 301!
+- from: /js/s/arithmetic-progression
+  to: /js/s/arithmetic-and-geometric-progression
+  status: 301!
+- from: /js/s/geometric-progression
+  to: /js/s/arithmetic-and-geometric-progression
+  status: 301!
