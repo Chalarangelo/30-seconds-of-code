@@ -994,9 +994,6 @@
 - from: /js/s/most-frequent
   to: /js/s/most-frequent-array-element
   status: 301!
-- from: /js/s/round
-  to: /js/s/round-number-to-precision
-  status: 301!
 - from: /js/s/pretty-bytes
   to: /js/s/pretty-print-number-of-bytes
   status: 301!
@@ -1041,15 +1038,6 @@
   status: 301!
 - from: /js/s/in-range
   to: /js/s/number-in-range
-  status: 301!
-- from: /js/s/to-currency
-  to: /js/s/number-to-currency
-  status: 301!
-- from: /js/s/to-decimal-mark
-  to: /js/s/number-to-decimal-mark
-  status: 301!
-- from: /js/s/to-optional-fixed
-  to: /js/s/number-to-optional-fixed
   status: 301!
 - from: /js/s/toggle-element
   to: /js/s/toggle-array-element
@@ -2590,9 +2578,6 @@
 - from: /js/s/http-delete
   to: /js/s/http-get-post-put-delete
   status: 301!
-- from: /js/s/to-ordinal-suffix
-  to: /js/s/number-to-ordinal-suffix
-  status: 301!
 - from: /js/s/all-equal
   to: /js/s/all-values-of-array-are-equal
   status: 301!
@@ -2613,4 +2598,43 @@
   status: 301!
 - from: /js/s/last-date-of-month
   to: /js/s/first-last-date-of-month
+  status: 301!
+- from: /js/s/to-ordinal-suffix
+  to: /js/s/number-formatting
+  status: 301!
+- from: /js/s/format-duration
+  to: /js/s/number-formatting
+  status: 301!
+- from: /js/s/format-number
+  to: /js/s/number-formatting
+  status: 301!
+- from: /js/s/format-seconds
+  to: /js/s/number-formatting
+  status: 301!
+- from: /js/s/to-currency
+  to: /js/s/number-formatting
+  status: 301!
+- from: /js/s/number-to-currency
+  to: /js/s/number-formatting
+  status: 301!
+- from: /js/s/to-decimal-mark
+  to: /js/s/number-formatting
+  status: 301!
+- from: /js/s/number-to-decimal-mark
+  to: /js/s/number-formatting
+  status: 301!
+- from: /js/s/to-optional-fixed
+  to: /js/s/number-formatting
+  status: 301!
+- from: /js/s/number-to-optional-fixed
+  to: /js/s/number-formatting
+  status: 301!
+- from: /js/s/round
+  to: /js/s/number-formatting
+  status: 301!
+- from: /js/s/round-number-to-precision
+  to: /js/s/number-formatting
+  status: 301!
+- from: /js/s/pad-number
+  to: /js/s/number-formatting
   status: 301!
