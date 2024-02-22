@@ -196,9 +196,6 @@
 - from: /c/js-interviews/*
   to: /js/interviews/:splat
   status: 301!
-- from: /c/js-object-key-transformations/*
-  to: /js/object-key-transformations/:splat
-  status: 301!
 - from: /c/js-performance/*
   to: /js/performance/:splat
   status: 301!
@@ -1072,18 +1069,6 @@
 - from: /js/s/rearg
   to: /js/s/rearrange-function-arguments
   status: 301!
-- from: /js/s/deep-map-keys
-  to: /js/s/deep-map-object-keys
-  status: 301!
-- from: /js/s/map-keys
-  to: /js/s/map-object-keys
-  status: 301!
-- from: /js/s/rename-keys
-  to: /js/s/rename-object-keys
-  status: 301!
-- from: /js/s/symbolize-keys
-  to: /js/s/symbolize-object-keys
-  status: 301!
 - from: /js/s/assert-valid-keys
   to: /js/s/assert-object-key-validity
   status: 301!
@@ -1092,9 +1077,6 @@
   status: 301!
 - from: /js/s/merge
   to: /js/s/merge-objects
-  status: 301!
-- from: /js/s/transform
-  to: /js/s/transform-object
   status: 301!
 - from: /js/s/unwind
   to: /js/s/unwind-object
@@ -2643,4 +2625,43 @@
   status: 301!
 - from: /js/s/unescape-html
   to: /js/s/escape-unescape-html
+  status: 301!
+- from: /c/js-object-key-transformations/*
+  to: /js/s/transform-object-keys
+  status: 301!
+- from: /js/object-key-transformations/*
+  to: /js/s/transform-object-keys
+  status: 301!
+- from: /js/s/deep-map-keys
+  to: /js/s/transform-object-keys
+  status: 301!
+- from: /js/s/deep-map-object-keys
+  to: /js/s/transform-object-keys
+  status: 301!
+- from: /js/s/map-values
+  to: /js/s/transform-object-keys
+  status: 301!
+- from: /js/s/map-keys
+  to: /js/s/transform-object-keys
+  status: 301!
+- from: /js/s/map-object-keys
+  to: /js/s/transform-object-keys
+  status: 301!
+- from: /js/s/rename-keys
+  to: /js/s/transform-object-keys
+  status: 301!
+- from: /js/s/rename-object-keys
+  to: /js/s/transform-object-keys
+  status: 301!
+- from: /js/s/symbolize-keys
+  to: /js/s/transform-object-keys
+  status: 301!
+- from: /js/s/symbolize-object-keys
+  to: /js/s/transform-object-keys
+  status: 301!
+- from: /js/s/transform
+  to: /js/s/transform-object-keys
+  status: 301!
+- from: /js/s/transform-object
+  to: /js/s/transform-object-keys
   status: 301!
