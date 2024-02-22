@@ -2638,3 +2638,9 @@
 - from: /js/s/to-safe-integer
   to: /js/s/clamp-or-map-number-to-range
   status: 301!
+- from: /js/s/escape-html
+  to: /js/s/escape-unescape-html
+  status: 301!
+- from: /js/s/unescape-html
+  to: /js/s/escape-unescape-html
+  status: 301!
