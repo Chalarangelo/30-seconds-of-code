@@ -337,9 +337,6 @@
 - from: /articles/s/javascript-for-loop-early-break
   to: /js/s/for-loop-early-break
   status: 301!
-- from: /articles/s/javascript-function-call-apply-bind
-  to: /js/s/function-call-apply-bind
-  status: 301!
 - from: /articles/s/javascript-generator-for-range
   to: /js/s/generator-for-range
   status: 301!
@@ -934,15 +931,6 @@
 - from: /js/s/attempt
   to: /js/s/attempt-invoking-function
   status: 301!
-- from: /js/s/bind
-  to: /js/s/bind-function-context
-  status: 301!
-- from: /js/s/bind-key
-  to: /js/s/bind-object-method
-  status: 301!
-- from: /js/s/call
-  to: /js/s/call-functions-with-context
-  status: 301!
 - from: /js/s/initialize2-d-array
   to: /js/s/initialize-2d-array
   status: 301!
@@ -975,9 +963,6 @@
   status: 301!
 - from: /js/s/debounce
   to: /js/s/debounce-function
-  status: 301!
-- from: /js/s/bind-all
-  to: /js/s/bind-object-methods
   status: 301!
 - from: /js/s/copy-sign
   to: /js/s/copy-sign-to-number
@@ -2664,4 +2649,31 @@
   status: 301!
 - from: /js/s/transform-object
   to: /js/s/transform-object-keys
+  status: 301!
+- from: /js/s/bind
+  to: /js/s/function-call-apply-bind
+  status: 301!
+- from: /js/s/bind-function-context
+  to: /js/s/function-call-apply-bind
+  status: 301!
+- from: /js/s/bind-key
+  to: /js/s/function-call-apply-bind
+  status: 301!
+- from: /js/s/bind-object-method
+  to: /js/s/function-call-apply-bind
+  status: 301!
+- from: /js/s/bind-all
+  to: /js/s/function-call-apply-bind
+  status: 301!
+- from: /js/s/bind-object-methods
+  to: /js/s/function-call-apply-bind
+  status: 301!
+- from: /js/s/call
+  to: /js/s/function-call-apply-bind
+  status: 301!
+- from: /js/s/call-functions-with-context
+  to: /js/s/function-call-apply-bind
+  status: 301!
+- from: /articles/s/javascript-function-call-apply-bind
+  to: /js/s/function-call-apply-bind
   status: 301!
