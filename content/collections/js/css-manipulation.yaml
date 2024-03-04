@@ -3,9 +3,7 @@ name: CSS Manipulation with JavaScript
 featured: true
 snippetIds:
   - js/s/html-element-test-add-remove-toggle-class
-  - js/s/get-style
-  - js/s/set-style-for-html-element
-  - js/s/add-styles-to-html-element
+  - js/s/get-set-add-styles-to-html-element
   - js/s/inject-css
   - js/s/show-hide-html-elements
   - js/s/remove-attributes

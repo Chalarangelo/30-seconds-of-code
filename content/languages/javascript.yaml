@@ -823,3 +823,6 @@ references:
   Element.insertAdjacentHTML(): >-
     https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML
   fetch(): https://developer.mozilla.org/en-US/docs/Web/API/fetch
+  Window.getComputedStyle(): >-
+    https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
+  HTMLElement.style: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style

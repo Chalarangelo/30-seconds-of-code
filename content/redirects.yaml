@@ -883,12 +883,6 @@
 - from: /articles/s/responsive-favicon-dark-mode
   to: /css/s/responsive-favicon-dark-mode
   status: 301!
-- from: /js/s/add-styles
-  to: /js/s/add-styles-to-html-element
-  status: 301!
-- from: /js/s/set-style
-  to: /js/s/set-style-for-html-element
-  status: 301!
 - from: /js/s/add-multiple-events
   to: /js/s/add-multiple-event-listeners
   status: 301!
@@ -2676,4 +2670,19 @@
   status: 301!
 - from: /articles/s/javascript-function-call-apply-bind
   to: /js/s/function-call-apply-bind
+  status: 301!
+- from: /js/s/add-styles
+  to: /js/s/get-set-add-styles-to-html-element
+  status: 301!
+- from: /js/s/add-styles-to-html-element
+  to: /js/s/get-set-add-styles-to-html-element
+  status: 301!
+- from: /js/s/set-style
+  to: /js/s/get-set-add-styles-to-html-element
+  status: 301!
+- from: /js/s/set-style-for-html-element
+  to: /js/s/get-set-add-styles-to-html-element
+  status: 301!
+- from: /js/s/get-style
+  to: /js/s/get-set-add-styles-to-html-element
   status: 301!
