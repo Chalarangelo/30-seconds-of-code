@@ -832,3 +832,5 @@ references:
   Element.clientWidth: https://developer.mozilla.org/en-US/docs/Web/API/Element/clientWidth
   Element.scrollLeft: https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollLeft
   Element.scrollTop: https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTop
+  Date(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date

@@ -1,21 +1,23 @@
 ---
-title: Number of days in month
-type: snippet
+title: Find the number of days in a month using JavaScript
+shortTitle: Number of days in month
+type: tip
 language: javascript
 tags: [date]
 cover: laptop-plants-2
-dateModified: 2021-06-13
+excerpt: Calculate the number of days in a month for a given year using JavaScript.
+dateModified: 2024-02-26
 ---
 
-Gets the number of days in the given `month` of the specified `year`.
+Working with dates is admittedly hard, especially in JavaScript where the `Date` object is not the most intuitive. However, calculating the number of days in a month for a given year is a common task, and can be done with a single line of code.
 
-- Use the `Date` constructor to create a date from the given `year` and `month`.
-- Set the days parameter to `0` to get the last day of the previous month, as months are zero-indexed.
-- Use `Date.prototype.getDate()` to return the number of days in the given `month`.
+`Date.prototype.getDate()` returns the **numeric representation of the day of the month**, which can be used to calculate the number of days in a month. By setting the days parameter to `0`, we can get the **last day of the previous month**. This effectively allows us to get the number of days in the given `month`, as **months are zero-indexed**.
+
+Putting everything together, we can use the `Date()` constructor to create a date from the given `year` and `month`, and then use `Date.prototype.getDate()` to return the number of days in the given `month`.
 
 ```js
 const daysInMonth = (year, month) => new Date(year, month, 0).getDate();
 
-daysInMonth(2020, 12)); // 31
-daysInMonth(2024, 2)); // 29
+daysInMonth(2020, 12); // 31
+daysInMonth(2024, 2); // 29
 ```
