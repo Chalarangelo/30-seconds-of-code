@@ -1,22 +1,35 @@
 ---
-title: Scroll position
-type: snippet
+title: Get the scroll position of the current page using JavaScript
+shortTitle: Get scroll position
+type: tip
 language: javascript
 tags: [browser]
 cover: tranquil-lake
-dateModified: 2020-10-19
+excerpt: Calculate the coordinates of the current scroll position in the browser window using JavaScript.
+dateModified: 2024-02-25
 ---
 
-Returns the scroll position of the current page.
+JavaScript's `Window` and `Element` objects provide a ton of useful properties, which can be leveraged for various different things. One such case is calculating the **scroll position** of the current page or a specific element.
 
-- Use `Window.pageXOffset` and `Window.pageYOffset` if they are defined, otherwise `Element.scrollLeft` and `Element.scrollTop`.
-- Omit the single argument, `el`, to use the global `Window` object.
+Starting with the global `Window` object, we can use the `Window.scrollX` and `Window.scrollY` properties to get the scroll position of the **current page**.
 
 ```js
-const getScrollPosition = (el = window) => ({
-  x: el.pageXOffset !== undefined ? el.pageXOffset : el.scrollLeft,
-  y: el.pageYOffset !== undefined ? el.pageYOffset : el.scrollTop
+const getWindowScrollPosition = () => ({
+  x: window.scrollX,
+  y: window.scrollY
+});
+
+getWindowScrollPosition(); // {x: 0, y: 200}
+```
+
+Subsequently, all **other elements** define the `Element.scrollLeft` and `Element.scrollTop` properties, which can be used to calculate the scroll position. This, for example, can be used to get the scroll position of the `Document` element, or scrollable elements like a `div` or `aside`.
+
+```js
+const getScrollPosition = (el = document.documentElement) => ({
+  x: el.scrollLeft,
+  y: el.scrollTop
 });
 
 getScrollPosition(); // {x: 0, y: 200}
+getScrollPosition(document.querySelector('aside')); // {x: 0, y: 120}
 ```

@@ -826,3 +826,9 @@ references:
   Window.getComputedStyle(): >-
     https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
   HTMLElement.style: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
+  Window.innerWidth: https://developer.mozilla.org/en-US/docs/Web/API/Window/innerWidth
+  Window.scrollX: https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollX
+  Window.scrollY: https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY
+  Element.clientWidth: https://developer.mozilla.org/en-US/docs/Web/API/Element/clientWidth
+  Element.scrollLeft: https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollLeft
+  Element.scrollTop: https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTop
