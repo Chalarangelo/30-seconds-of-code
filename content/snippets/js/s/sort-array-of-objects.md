@@ -11,9 +11,30 @@ dateModified: 2024-01-15
 
 Ever wanted to sort an array of objects, but felt like it was too complex? After all, `Array.prototype.sort()` can be customized to your needs, but comparing multiple properties and orders can be a bit of a hassle. Let's tackle this problem and create a robust, reusable solution.
 
+## Sort an array of objects alphabetically based on a property
+
+The simplest use-case is to sort an array of objects **alphabetically** based on a given property. This is a common requirement, and it's a good starting point for our solution.
+
+Using `Array.prototype.sort()`, we can sort the array based on the given property. We use `String.prototype.localeCompare()` to compare the values for the given property. The `order` parameter is optional and defaults to `'asc'`.
+
+```js
+const alphabetical = (arr, getter, order = 'asc') =>
+  arr.sort(
+    order === 'desc'
+      ? (a, b) => getter(b).localeCompare(getter(a))
+      : (a, b) => getter(a).localeCompare(getter(b))
+  );
+
+const people = [ { name: 'John' }, { name: 'Adam' }, { name: 'Mary' } ];
+alphabetical(people, g => g.name);
+// [ { name: 'Adam' }, { name: 'John' }, { name: 'Mary' } ]
+alphabetical(people, g => g.name, 'desc');
+// [ { name: 'Mary' }, { name: 'John' }, { name: 'Adam' } ]
+```
+
 ## Sort an array of objects, ordered by properties and orders
 
-The classic scenario hints back at SQL queries, where you can order by multiple columns and specify the order for each column. This requirement defines the function signature for us.
+Another classic scenario hints back at SQL queries, where you can order by multiple columns and specify the order for each column. This requirement defines the function signature for us.
 
 The function should accept an array of objects, an array of properties and an array of orders. The latter two should match in length and order of elements. The **orders array** should be an optional **array of integers** (positive for ascending order, negative for descending order). If no orders array is supplied, the **default order** should be ascending.
 

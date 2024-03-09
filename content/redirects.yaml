@@ -895,9 +895,6 @@
 - from: /js/s/accumulate
   to: /js/s/partial-sum-array
   status: 301!
-- from: /js/s/alphabetical
-  to: /js/s/sort-array-alphabetically
-  status: 301!
 - from: /js/s/create-dir-if-not-exists
   to: /js/s/create-directory-if-not-exists
   status: 301!
@@ -2298,6 +2295,12 @@
   status: 301!
 - from: /js/s/objectify
   to: /js/s/map-array-to-object
+  status: 301!
+- from: /js/s/alphabetical
+  to: /js/s/sort-array-of-objects
+  status: 301!
+- from: /js/s/sort-array-alphabetically
+  to: /js/s/sort-array-of-objects
   status: 301!
 - from: /js/s/order-by
   to: js/s/sort-array-of-objects
