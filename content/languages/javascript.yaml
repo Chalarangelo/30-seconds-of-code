@@ -42,6 +42,7 @@ references:
   Boolean(): >-
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean/Boolean
   Blob: https://developer.mozilla.org/en-US/docs/Web/API/Blob
+  Blob.size: https://developer.mozilla.org/en-US/docs/Web/API/Blob/size
   console.assert(): https://developer.mozilla.org/en-US/docs/Web/API/console/assert
   console.clear(): https://developer.mozilla.org/en-US/docs/Web/API/console/clear
   console.count(): https://developer.mozilla.org/en-US/docs/Web/API/console/count
