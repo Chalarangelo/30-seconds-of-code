@@ -2303,16 +2303,16 @@
   to: /js/s/sort-array-of-objects
   status: 301!
 - from: /js/s/order-by
-  to: js/s/sort-array-of-objects
+  to: /js/s/sort-array-of-objects
   status: 301!
 - from: /js/s/order-object-array
-  to: js/s/sort-array-of-objects
+  to: /js/s/sort-array-of-objects
   status: 301!
 - from: /js/s/order-with
-  to: js/s/sort-array-of-objects
+  to: /js/s/sort-array-of-objects
   status: 301!
 - from: /js/s/order-object-array-based-on-property
-  to: js/s/sort-array-of-objects
+  to: /js/s/sort-array-of-objects
   status: 301!
 - from: /js/s/for-own
   to: /js/s/iterate-object-properties
