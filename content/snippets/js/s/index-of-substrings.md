@@ -1,17 +1,21 @@
 ---
-title: Index of substrings
-type: snippet
+title: Find all indexes of a substring in a JavaScript string
+shortTitle: All indexes of substring
+type: tip
 language: javascript
-tags: [string,algorithm,generator]
+tags: [string,generator]
 cover: armchair-in-yellow
+excerpt: Create a generator function that finds all the indexes of a substring in a given string.
 dateModified: 2020-12-31
 ---
 
-Finds all the indexes of a substring in a given string.
+Finding the index of a substring in a string can be easily accomplished using `String.prototype.indexOf()`. However, if you want to check for **all occurrences of a substring**, there's no built-in method to do so. Yet, it's fairly easy to do so yourself.
 
-- Use `Array.prototype.indexOf()` to look for `searchValue` in `str`.
-- Use `yield` to return the index if the value is found and update the index, `i`.
-- Use a `while` loop that will terminate the generator as soon as the value returned from `Array.prototype.indexOf()` is `-1`.
+In order to find all indexes of a substring, I find it useful to create a **generator function**. This provides a little more flexibility and might be more efficient in some cases.
+
+As mentioned already, `String.prototype.indexOf()` only returns the **first occurrence** of a substring, but it can be passed a second argument, `fromIndex`, which specifies the **index at which to start the search**. Combining this with a `while` loop, we can find occurrences of a substring in a string as long as there are any (the method returns `-1` when **no occurrence** is found).
+
+As long as an occurrence is found, we can use `yield` to return the index and update the `fromIndex` to continue the search. If no occurrence is found, we can use `return` to terminate the generator.
 
 ```js
 const indexOfSubstrings = function* (str, searchValue) {
