@@ -5,11 +5,9 @@ snippetIds:
   - js/s/random-hex-color-code
   - js/s/rgb-hex-hsl-hsb-color-format-conversion
   - js/s/extend-hex
-  - js/s/to-rgb-array
-  - js/s/to-rgb-object
   - js/s/change-lightness
-  - js/s/to-hsl-array
-  - js/s/to-hsl-object
+  - js/s/rgb-to-array-or-object
+  - js/s/hsl-to-array-or-object
 splash: colorful-rocks
 description: >-
   Working with color in JavaScript requires some understanding of color formats

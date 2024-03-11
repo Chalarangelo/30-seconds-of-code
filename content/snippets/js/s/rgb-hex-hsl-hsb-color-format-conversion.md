@@ -65,7 +65,7 @@ hexToRgb('#fff'); // 'rgb(255, 255, 255)'
 
 > [!TIP]
 >
-> You can read more about 3-digit color codes and how to convert them to 6-digit color codes [here](/js/s/extend-hex.md).
+> You can read more about 3-digit color codes and how to convert them to 6-digit color codes [here](/js/s/extend-hex).
 
 ## RGB to HSL
 

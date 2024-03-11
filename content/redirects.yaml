@@ -2707,3 +2707,15 @@
 - from: /js/s/hsb-to-hsl
   to: /js/s/rgb-hex-hsl-hsb-color-format-conversion
   status: 301!
+- from: /js/s/to-rgb-array
+  to: /js/s/rgb-to-array-or-object
+  status: 301!
+- from: /js/s/to-rgb-object
+  to: /js/s/rgb-to-array-or-object
+  status: 301!
+- from: /js/s/to-hsl-array
+  to: /js/s/hsl-to-array-or-object
+  status: 301!
+- from: /js/s/to-hsl-object
+  to: /js/s/hsl-to-array-or-object
+  status: 301!
