@@ -6,7 +6,7 @@ language: javascript
 tags: [string,generator]
 cover: armchair-in-yellow
 excerpt: Create a generator function that finds all the indexes of a substring in a given string.
-dateModified: 2020-12-31
+dateModified: 2024-03-10
 ---
 
 Finding the index of a substring in a string can be easily accomplished using `String.prototype.indexOf()`. However, if you want to check for **all occurrences of a substring**, there's no built-in method to do so. Yet, it's fairly easy to do so yourself.
