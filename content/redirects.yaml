@@ -2689,3 +2689,21 @@
 - from: /js/s/get-style
   to: /js/s/get-set-add-styles-to-html-element
   status: 301!
+- from: /js/s/hex-to-rgb
+  to: /js/s/rgb-hex-hsl-hsb-color-format-conversion
+  status: 301!
+- from: /js/s/rgb-to-hex
+  to: /js/s/rgb-hex-hsl-hsb-color-format-conversion
+  status: 301!
+- from: /js/s/hsl-to-rgb
+  to: /js/s/rgb-hex-hsl-hsb-color-format-conversion
+  status: 301!
+- from: /js/s/rgb-to-hsl
+  to: /js/s/rgb-hex-hsl-hsb-color-format-conversion
+  status: 301!
+- from: /js/s/hsl-to-hsb
+  to: /js/s/rgb-hex-hsl-hsb-color-format-conversion
+  status: 301!
+- from: /js/s/hsb-to-hsl
+  to: /js/s/rgb-hex-hsl-hsb-color-format-conversion
+  status: 301!

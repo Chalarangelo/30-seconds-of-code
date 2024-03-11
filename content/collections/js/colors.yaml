@@ -3,15 +3,10 @@ name: Colors in JavaScript
 featured: true
 snippetIds:
   - js/s/random-hex-color-code
-  - js/s/rgb-to-hex
+  - js/s/rgb-hex-hsl-hsb-color-format-conversion
   - js/s/extend-hex
-  - js/s/hex-to-rgb
   - js/s/to-rgb-array
   - js/s/to-rgb-object
-  - js/s/rgb-to-hsb
-  - js/s/hsb-to-rgb
-  - js/s/rgb-to-hsl
-  - js/s/hsl-to-rgb
   - js/s/change-lightness
   - js/s/to-hsl-array
   - js/s/to-hsl-object
