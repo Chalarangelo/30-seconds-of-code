@@ -837,3 +837,9 @@ references:
   Element.scrollTop: https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTop
   Date(): >-
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date
+  Intl.DateTimeFormat: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat
+  Intl.DateTimeFormat():
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat
+  Intl.DateTimeFormat.prototype.formatToParts(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/formatToParts
