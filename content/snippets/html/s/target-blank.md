@@ -1,5 +1,5 @@
 ---
-title: 'Tip: Protect your users from malicious websites when using target="_blank"'
+title: 'Protect your users from malicious websites when using target="_blank"'
 shortTitle: 'Safeguarding target="_blank"'
 type: tip
 language: html
