@@ -4,9 +4,10 @@ featured: true
 snippetIds:
   - js/s/random-number-or-integer-in-range
   - js/s/random-integer-array-in-range
-  - js/s/random-alphanumeric
   - js/s/random-boolean
+  - js/s/random-alphanumeric
   - js/s/random-hex-color-code
+  - js/s/uuid-generator
 splash: matcha
 description: >-
   Random value generators come up in a lot of different situations. This snippet

@@ -6,7 +6,7 @@ language: javascript
 tags: [math,random]
 cover: white-laptop
 excerpt: Enhance JavaScript's `Math.random()` to generate a random number or integer in a specified range.
-dateModified: 2024-03-14
+dateModified: 2024-03-12
 ---
 
 JavaScript's `Math.random()` is handy for generating **random numbers between 0 and 1**. If you need a random number in a different range, you'll need to use some simple math to map the random number to the desired range.

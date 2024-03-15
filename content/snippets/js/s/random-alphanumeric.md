@@ -1,20 +1,21 @@
 ---
-title: Random alphanumeric string
-type: snippet
+title: Generate a random alphanumeric JavaScript string
+shortTitle: Random alphanumeric
+type: tip
 language: javascript
 tags: [string,random]
 cover: gold-typewriter
-dateModified: 2020-10-22
+excerpt: Use JavaScript to generate a random alphanumeric string of a specified length.
+dateModified: 2024-03-15
 ---
 
-Generates a random string with the specified length.
+While generating a [random arithmetic](/js/s/random-number-or-integer-in-range) or [boolean value](/js/s/random-boolean) is fairly easy in JavaScript, generating a random alphanumeric string is a bit more involved.
 
-- Use `Array.from()` to create a new array with the specified `length`.
-- Use `Math.random()` generate a random floating-point number.
-- Use `Number.prototype.toString()` with a `radix` value of `36` to convert it to an alphanumeric string.
-- Use `String.prototype.slice()` to remove the integral part and decimal point from each generated number.
-- Use `Array.prototype.some()` to repeat this process as many times as required, up to `length`, as it produces a variable-length string each time.
-- Finally, use `String.prototype.slice()` to trim down the generated string if it's longer than the given `length`.
+In order to generate a random alphanumeric string, you can use `Math.random()` to generate a random floating-point number and then convert it to a string using `Number.prototype.toString()` with a `radix` value of `36`. This will convert the number to an **alphanumeric string**.
+
+As this string will be of **variable length**, you need to **repeat the process** as many times as required, up to the specified length. This is where `Array.from()` and `Array.prototype.some()` come in handy. Generating an array of `length` and repeating until the desired `length` is reached allows us to only run as many steps as necessary.
+
+Finally, you can use `String.prototype.slice()` to **trim** down the generated string if it's longer than the given `length`.
 
 ```js
 const randomAlphaNumeric = length => {

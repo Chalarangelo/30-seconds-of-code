@@ -1,16 +1,17 @@
 ---
-title: Random integer array in range
-type: snippet
+title: Generate a JavaScript array of random integers in a given range
+shortTitle: Random integer array in range
+type: tip
 language: javascript
 tags: [math,random]
 cover: digital-nomad-11
-dateModified: 2020-10-22
+excerpt: Combining `Math.random()` and a few simple math operations, you can generate an array of random integers in a specified range.
+dateModified: 2024-03-15
 ---
 
-Generates an array of `n` random integers in the specified range.
+We've previously covered how to [generate a random integer or number in a given range](/js/s/random-number-or-integer-in-range). But how about generating an entire array of integers in a specified range?
 
-- Use `Array.from()` to create an empty array of the specific length.
-- Use `Math.random()` to generate random numbers and map them to the desired range, using `Math.floor()` to make them integers.
+As you might expect, this is just a matter of **repeating the process** for generating an integer in the given range. You can use `Array.from()` to create an **empty array of the specific length** and then use `Math.random()` to generate **random numbers** and map them to the desired range, using `Math.floor()` to make them integers.
 
 ```js
 const randomIntArrayInRange = (min, max, n = 1) =>
