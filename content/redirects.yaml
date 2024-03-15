@@ -2719,3 +2719,6 @@
 - from: /js/s/to-hsl-object
   to: /js/s/hsl-to-array-or-object
   status: 301!
+- from: /js/s/colorize
+  to: /js/s/color-console-output
+  status: 301!
