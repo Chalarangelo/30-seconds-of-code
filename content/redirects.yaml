@@ -2734,3 +2734,12 @@
 - from: /js/s/shuffle
   to: /js/s/array-sample-shuffle-weighted-selection
   status: 301!
+- from: /js/s/random-gauss
+  to: /js/s/random-number-or-integer-in-range
+  status: 301!
+- from: /js/s/random-integer-in-range
+  to: /js/s/random-number-or-integer-in-range
+  status: 301!
+- from: /js/s/random-number-in-range
+  to: /js/s/random-number-or-integer-in-range
+  status: 301!
