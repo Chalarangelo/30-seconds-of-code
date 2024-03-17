@@ -2743,3 +2743,6 @@
 - from: /js/s/random-number-in-range
   to: /js/s/random-number-or-integer-in-range
   status: 301!
+- from: /js/s/is-valid-json
+  to: /js/s/string-is-valid-json
+  status: 301!
