@@ -1,24 +1,21 @@
 ---
-title: Map an object to an array
-type: snippet
+title: Map a JavaScript object to an array
+shortTitle: Map object to array
+type: tip
 language: javascript
 tags: [object,array]
 cover: metro-arrival
-dateModified: 2023-02-05
+excerpt: Map an object to an object array, using the provided mapping function.
+dateModified: 2024-03-22
 ---
 
-Maps an object to an object array, using the provided mapping function.
+Ever wanted to **map an object to an array of objects** using a custom mapping function? This can be useful when you need to separate a dictionary-like object into individual objects, including the keys as properties.
 
-- Use `Object.entries()` to get an array of the object's key-value pairs.
-- Use `Array.prototype.reduce()` to map the array to an object.
-- Use `mapFn` to map the keys and values of the object and `Array.prototype.push()` to add the mapped values to the array.
+The simplest way to get the **key-value pairs** of an object is to use `Object.entries()`. Then, using `Array.prototype.map()` and a **mapping function**, you can map the key-value pairs to an array of objects.
 
 ```js
 const listify = (obj, mapFn) =>
-  Object.entries(obj).reduce((acc, [key, value]) => {
-    acc.push(mapFn(key, value));
-    return acc;
-  }, []);
+  Object.entries(obj).map(([key, value]) => mapFn(key, value));
 
 const people = { John: { age: 42 }, Adam: { age: 39 } };
 listify(people, (key, value) => ({ name: key, ...value }));
