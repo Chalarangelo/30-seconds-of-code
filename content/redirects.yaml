@@ -2752,3 +2752,6 @@
 - from: /js/s/map-consecutive-elements
   to: /js/s/arrays-of-consecutive-elements
   status: 301!
+- from: /js/s/stable-sort
+  to: /js/s/array-stable-sort
+  status: 301!
