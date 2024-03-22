@@ -889,9 +889,6 @@
 - from: /js/s/remove-event-listener-all
   to: /js/s/remove-multiple-event-listeners
   status: 301!
-- from: /js/s/aperture
-  to: /js/s/consecutive-element-subarrays
-  status: 301!
 - from: /js/s/accumulate
   to: /js/s/partial-sum-array
   status: 301!
@@ -1087,9 +1084,6 @@
 - from: /js/s/resolve-after
   to: /js/s/resolve-promise-after-amount-of-time
   status: 301!
-- from: /js/s/map-consecutive
-  to: /js/s/map-consecutive-elements
-  status: 301!
 - from: /js/s/initial
   to: /js/s/array-without-last-element
   status: 301!
@@ -1098,9 +1092,6 @@
   status: 301!
 - from: /js/s/index-by
   to: /js/s/function-based-array-indexing
-  status: 301!
-- from: /js/s/find-consecutive
-  to: /js/s/arrays-of-consecutive-elements
   status: 301!
 - from: /js/s/reduce-successive
   to: /js/s/successive-values-array
@@ -2745,4 +2736,19 @@
   status: 301!
 - from: /js/s/is-valid-json
   to: /js/s/string-is-valid-json
+  status: 301!
+- from: /js/s/find-consecutive
+  to: /js/s/arrays-of-consecutive-elements
+  status: 301!
+- from: /js/s/aperture
+  to: /js/s/arrays-of-consecutive-elements
+  status: 301!
+- from: /js/s/consecutive-element-subarrays
+  to: /js/s/arrays-of-consecutive-elements
+  status: 301!
+- from: /js/s/map-consecutive
+  to: /js/s/arrays-of-consecutive-elements
+  status: 301!
+- from: /js/s/map-consecutive-elements
+  to: /js/s/arrays-of-consecutive-elements
   status: 301!
