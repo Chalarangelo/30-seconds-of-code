@@ -765,6 +765,7 @@ references:
   EventTarget.removeEventListener(): >-
     https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener
   Event.target: https://developer.mozilla.org/en-US/docs/Web/API/Event/target
+  NodeList: https://developer.mozilla.org/en-US/docs/Web/API/NodeList
   Node.contains(): https://developer.mozilla.org/en-US/docs/Web/API/Node/contains
   Node.appendChild(): >-
     https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
