@@ -1060,9 +1060,6 @@
 - from: /js/s/get
   to: /js/s/get-nested-object-value
   status: 301!
-- from: /js/s/index-on
-  to: /js/s/array-to-object-based-on-key
-  status: 301!
 - from: /js/s/matches
   to: /js/s/match-object-properties
   status: 301!
@@ -2754,4 +2751,10 @@
   status: 301!
 - from: /js/s/stable-sort
   to: /js/s/array-stable-sort
+  status: 301!
+- from: /js/s/index-on
+  to: /js/s/listify
+  status: 301!
+- from: /js/s/array-to-object-based-on-key
+  to: /js/s/listify
   status: 301!
