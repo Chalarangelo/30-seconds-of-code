@@ -1036,12 +1036,6 @@
 - from: /js/s/assert-valid-keys
   to: /js/s/assert-object-key-validity
   status: 301!
-- from: /js/s/deep-merge
-  to: /js/s/deep-merge-objects
-  status: 301!
-- from: /js/s/merge
-  to: /js/s/merge-objects
-  status: 301!
 - from: /js/s/unwind
   to: /js/s/unwind-object
   status: 301!
@@ -2763,4 +2757,13 @@
   status: 301!
 - from: /js/s/get-nested-value-in-object
   to: /js/s/get-nested-object-value
+  status: 301!
+- from: /js/s/deep-merge
+  to: /js/s/merge-objects
+  status: 301!
+- from: /js/s/deep-merge-objects
+  to: /js/s/merge-objects
+  status: 301!
+- from: /js/s/merge
+  to: /js/s/merge-objects
   status: 301!
