@@ -1030,9 +1030,6 @@
 - from: /js/s/remove
   to: /js/s/remove-matching-array-elements
   status: 301!
-- from: /js/s/dig
-  to: /js/s/get-nested-value-in-object
-  status: 301!
 - from: /js/s/rearg
   to: /js/s/rearrange-function-arguments
   status: 301!
@@ -1053,12 +1050,6 @@
   status: 301!
 - from: /js/s/equals
   to: /js/s/deep-equality-comparison
-  status: 301!
-- from: /js/s/deep-get
-  to: /js/s/deep-get-object-value
-  status: 301!
-- from: /js/s/get
-  to: /js/s/get-nested-object-value
   status: 301!
 - from: /js/s/matches
   to: /js/s/match-object-properties
@@ -2757,4 +2748,19 @@
   status: 301!
 - from: /js/s/array-to-object-based-on-key
   to: /js/s/listify
+  status: 301!
+- from: /js/s/get
+  to: /js/s/get-nested-object-value
+  status: 301!
+- from: /js/s/deep-get
+  to: /js/s/get-nested-object-value
+  status: 301!
+- from: /js/s/deep-get-object-value
+  to: /js/s/get-nested-object-value
+  status: 301!
+- from: /js/s/dig
+  to: /js/s/get-nested-object-value
+  status: 301!
+- from: /js/s/get-nested-value-in-object
+  to: /js/s/get-nested-object-value
   status: 301!
