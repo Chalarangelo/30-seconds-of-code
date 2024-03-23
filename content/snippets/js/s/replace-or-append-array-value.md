@@ -1,18 +1,19 @@
 ---
-title: Replace or append array value
-type: snippet
+title: Replace or append a value in a JavaScript array
+shortTitle: Replace or append array value
+type: tip
 language: javascript
 tags: [array]
 cover: boutique-home-office-2
-dateModified: 2023-02-19
+excerpt: Quickly and easily replace or append a value in a JavaScript array.
+dateModified: 2024-03-23
 ---
 
-Replaces an item in an array or appends it, if it doesn't exist.
+When working with arrays in JavaScript, especially when dealing with objects, you might need to replace an item in the array if it already exists or append it if it doesn't. While this sounds fairly simple, it can be a bit tricky to implement.
 
-- Use the spread operator (`...`) to create a shallow copy of the array.
-- Use `Array.prototype.findIndex()` to find the index of the first element that satisfies the provided comparison function, `compFn`.
-- If no such element is found, use `Array.prototype.push()` to append the new value to the array.
-- Otherwise, use `Array.prototype.splice()` to replace the value at the found index with the new value.
+Given a comparison function, `compFn`, you have to first **determine if the item already exists** in the array. This can be done using `Array.prototype.findIndex()`. If the item exists, you can **replace** it using `Array.prototype.splice()`. If it doesn't exist, you can **append** it using `Array.prototype.push()`.
+
+Finally, instead of mutating the original array, you should return a **new array** with the updated item. This can be done by creating a **shallow copy** of the original array using the spread operator (`...`) at the beginning of the function.
 
 ```js
 const replaceOrAppend = (arr, val, compFn) => {
@@ -23,11 +24,16 @@ const replaceOrAppend = (arr, val, compFn) => {
   return res;
 };
 
-const people = [ { name: 'John', age: 30 }, { name: 'Jane', age: 28 } ];
+const people = [
+  { name: 'John', age: 30 },
+  { name: 'Jane', age: 28 },
+];
 const jane = { name: 'Jane', age: 29 };
 const jack = { name: 'Jack', age: 28 };
+
 replaceOrAppend(people, jane, (a, b) => a.name === b.name);
 // [ { name: 'John', age: 30 }, { name: 'Jane', age: 29 } ]
+
 replaceOrAppend(people, jack, (a, b) => a.name === b.name);
 // [
 //   { name: 'John', age: 30 },
