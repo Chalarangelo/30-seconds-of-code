@@ -1042,9 +1042,6 @@
 - from: /js/s/equals
   to: /js/s/deep-equality-comparison
   status: 301!
-- from: /js/s/matches
-  to: /js/s/match-object-properties
-  status: 301!
 - from: /js/s/size
   to: /js/s/size-of-array-object-or-string
   status: 301!
@@ -1065,9 +1062,6 @@
   status: 301!
 - from: /js/s/initial
   to: /js/s/array-without-last-element
-  status: 301!
-- from: /js/s/matches-with
-  to: /js/s/function-based-object-property-matches
   status: 301!
 - from: /js/s/index-by
   to: /js/s/function-based-array-indexing
@@ -2772,4 +2766,13 @@
   status: 301!
 - from: /js/s/successive-values-array
   to: /js/s/partial-sum-array
+  status: 301!
+- from: /js/s/matches
+  to: /js/s/match-object-properties
+  status: 301!
+- from: /js/s/matches-with
+  to: /js/s/match-object-properties
+  status: 301!
+- from: /js/s/function-based-object-property-matches
+  to: /js/s/match-object-properties
   status: 301!
