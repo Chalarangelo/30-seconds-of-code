@@ -2767,3 +2767,6 @@
 - from: /js/s/merge
   to: /js/s/merge-objects
   status: 301!
+- from: /js/s/is-alpha
+  to: /js/s/is-alpha-numeric
+  status: 301!
