@@ -937,9 +937,6 @@
 - from: /js/s/words
   to: /js/s/string-to-words
   status: 301!
-- from: /js/s/x-prod
-  to: /js/s/cross-product-of-arrays
-  status: 301!
 - from: /js/s/throttle
   to: /js/s/throttle-function
   status: 301!
@@ -2775,4 +2772,13 @@
   status: 301!
 - from: /js/s/function-based-object-property-matches
   to: /js/s/match-object-properties
+  status: 301!
+- from: /js/s/x-prod
+  to: /js/s/cartesian-product-of-arrays
+  status: 301!
+- from: /js/s/cross-product-of-arrays
+  to: /js/s/cartesian-product-of-arrays
+  status: 301!
+- from: /js/s/cartesian-product
+  to: /js/s/cartesian-product-of-arrays
   status: 301!
