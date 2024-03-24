@@ -889,9 +889,6 @@
 - from: /js/s/remove-event-listener-all
   to: /js/s/remove-multiple-event-listeners
   status: 301!
-- from: /js/s/accumulate
-  to: /js/s/partial-sum-array
-  status: 301!
 - from: /js/s/create-dir-if-not-exists
   to: /js/s/create-directory-if-not-exists
   status: 301!
@@ -1074,9 +1071,6 @@
   status: 301!
 - from: /js/s/index-by
   to: /js/s/function-based-array-indexing
-  status: 301!
-- from: /js/s/reduce-successive
-  to: /js/s/successive-values-array
   status: 301!
 - from: /js/s/replace-last
   to: /js/s/replace-last-occurrence
@@ -2769,4 +2763,13 @@
   status: 301!
 - from: /js/s/is-alpha
   to: /js/s/is-alpha-numeric
+  status: 301!
+- from: /js/s/accumulate
+  to: /js/s/partial-sum-array
+  status: 301!
+- from: /js/s/reduce-successive
+  to: /js/s/partial-sum-array
+  status: 301!
+- from: /js/s/successive-values-array
+  to: /js/s/partial-sum-array
   status: 301!
