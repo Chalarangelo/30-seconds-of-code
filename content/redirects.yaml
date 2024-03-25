@@ -1027,9 +1027,6 @@
 - from: /js/s/rearg
   to: /js/s/rearrange-function-arguments
   status: 301!
-- from: /js/s/assert-valid-keys
-  to: /js/s/assert-object-key-validity
-  status: 301!
 - from: /js/s/unwind
   to: /js/s/unwind-object
   status: 301!
@@ -2781,4 +2778,13 @@
   status: 301!
 - from: /js/s/cartesian-product
   to: /js/s/cartesian-product-of-arrays
+  status: 301!
+- from: /js/s/assert-valid-keys
+  to: /js/s/validate-object-properties
+  status: 301!
+- from: /js/s/assert-object-key-validity
+  to: /js/s/validate-object-properties
+  status: 301!
+- from: /js/s/common-keys
+  to: /js/s/validate-object-properties
   status: 301!
