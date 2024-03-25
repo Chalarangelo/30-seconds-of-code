@@ -1,16 +1,19 @@
 ---
-title: Combine object arrays
-type: snippet
+title: Combine 2 JavaScript object arrays based on a key
+shortTitle: Combine object arrays
+type: tip
 language: javascript
 tags: [array,object]
 cover: digital-nomad-6
-dateModified: 2020-10-08
+excerpt: Learn how to merge two arrays of objects, while combining objects based on a specified key.
+dateModified: 2024-03-26
 ---
 
-Combines two arrays of objects, using the specified key to match objects.
+Have you ever needed to combine two arrays of objects? Maybe each one contains partial information about the same objects, and you want to merge them into a single array. So how would you go about doing that?
 
-- Use `Array.prototype.reduce()` with an object accumulator to combine all objects in both arrays based on the given `prop`.
-- Use `Object.values()` to convert the resulting object to an array and return it.
+Supposing you know the **key that uniquely identifies each object**, you can use `Object.values()` and the spread operator (`...`) to get all the objects in both arrays. Then, you can use `Array.prototype.reduce()` to **combine** them based on the specified key.
+
+For each value in the arrays, you can check if the object has the specified key. If it does, you can add it to the accumulator object, combining it with any existing object that has the same key. This will result in a single object for each unique value of the key property.
 
 ```js
 const combine = (a, b, prop) =>
