@@ -2788,3 +2788,9 @@
 - from: /js/s/common-keys
   to: /js/s/validate-object-properties
   status: 301!
+- from: /git/s/manual-find-commit-with-bug
+  to: /git/s/find-commit-with-bug
+  status: 301!
+- from: /git/s/automatic-find-commit-with-bug
+  to: /git/s/find-commit-with-bug
+  status: 301!
