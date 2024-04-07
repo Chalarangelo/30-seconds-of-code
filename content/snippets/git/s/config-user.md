@@ -1,28 +1,30 @@
 ---
-title: Configure git user information
-type: snippet
+title: Configure Git user information
+shortTitle: Configure user
+type: tip
 language: git
 tags: [configuration,repository]
 cover: pineapple-at-work
-dateModified: 2021-04-13
+excerpt: Configure user information for Git to associate commits with a user.
+dateModified: 2024-04-04
 ---
 
-Configures user information for git.
+Configuring Git **user information** is essential to associate commits with a user. This information is used to identify the author of a commit and is displayed in the commit history.
 
-- Use `git config user.email <email>` to set the user's email for the current repository.
-- Use `git config user.name <name>` to set the user's name for the current repository.
-- You can use the `--global` flag to configure global user information.
+You can either set this information **globally** (for all repositories) or **locally** (for the current repository). In both cases, you need to use `git config` to specify the user information.
+
+More specifically, you can use `git config user.email <email>` to set the user's **email** and `git config user.name <name>` to set the user's **name**. You can also use the `--global` flag to configure global user information.
 
 ```shell
-git config [--global] user.email <email>
-git config [--global] user.name <name>
+# Syntax:
+#  git config [--global] user.email <email>
+#  git config [--global] user.name <name>
 
-# Examples
+# Configure user for current repository
 git config user.email "cool.duck@qua.ck"
 git config user.name "Duck Quackers"
-# Configures user for current repository
 
+# Configure global Git user
 git config --global user.email "cool.duck@qua.ck"
 git config --global user.name "Duck Quackers"
-# Configures global git user
 ```
