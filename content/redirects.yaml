@@ -2827,3 +2827,6 @@
 - from: /git/s/unstage-files
   to: /git/s/stage-unstage-files
   status: 301!
+- from: /git/s/rename-remote-branch
+  to: /git/s/rename-branch
+  status: 301!
