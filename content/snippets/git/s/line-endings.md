@@ -1,20 +1,26 @@
 ---
-title: Configure line endings
-type: snippet
+title: Configure Git's line endings
+shortTitle: Configure line endings
+type: tip
 language: git
 tags: [repository,configuration]
 cover: leaves-read
-dateModified: 2021-04-13
+excerpt: If you're working with a team using different operating systems, configuring line endings can help maintain consistency.
+dateModified: 2024-04-13
 ---
 
-Configures the line endings for a repository.
+If you're working with a team that uses **different operating systems**, you might run into issues with **line endings**. Windows uses a different line ending (`\r\n`) compared to UNIX systems (`\n`). This can cause problems when sharing files between different systems.
 
-- Use `git config core.eol [lf | crlf]` to configure the line endings.
-- `lf` is the UNIX line ending (`\n`), whereas `crlf` is the DOS line ending (`\r\n`).
+Luckily, Git provides a way to configure line endings for a repository. By setting the `core.eol` configuration, you can specify whether to use UNIX (`\n`) or DOS (`\r\n`) line endings in your repository.
+
+You can simply run `git config core.eol [lf | crlf]` to configure the line endings for your repository. `lf` stands for **UNIX line endings**, while `crlf` stands for **DOS line endings**.
 
 ```shell
-git config core.eol [lf | crlf]
+# Usage: git config core.eol [lf | crlf]
 
-# Examples
-git config core.eol lf # Configured to use UNIX line endings
+git config core.eol lf
+# Configures to use UNIX line endings
+
+git config core.eol crlf
+# Configures to use DOS line endings
 ```
