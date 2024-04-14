@@ -2812,3 +2812,12 @@
 - from: /git/s/save-stash
   to: /git/s/stashing
   status: 301!
+- from: /git/s/delete-detached-branches
+  to: /git/s/delete-branch
+  status: 301!
+- from: /git/s/delete-merged-branches
+  to: /git/s/delete-branch
+  status: 301!
+- from: /git/s/delete-remote-branch
+  to: /git/s/delete-branch
+  status: 301!
