@@ -2794,3 +2794,21 @@
 - from: /git/s/automatic-find-commit-with-bug
   to: /git/s/find-commit-with-bug
   status: 301!
+- from: /git/s/apply-latest-stash
+  to: /git/s/stashing
+  status: 301!
+- from: /git/s/apply-stash
+  to: /git/s/stashing
+  status: 301!
+- from: /git/s/delete-stash
+  to: /git/s/stashing
+  status: 301!
+- from: /git/s/delete-stashes
+  to: /git/s/stashing
+  status: 301!
+- from: /git/s/list-stashes
+  to: /git/s/stashing
+  status: 301!
+- from: /git/s/save-stash
+  to: /git/s/stashing
+  status: 301!
