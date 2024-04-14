@@ -2830,3 +2830,7 @@
 - from: /git/s/rename-remote-branch
   to: /git/s/rename-branch
   status: 301!
+- from: /git/s/set-text-editor
+  to: /git/s/configure-default-text-editor
+  status: 301!
+

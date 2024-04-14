@@ -1,5 +1,5 @@
 ---
-title: Configure the Git text editor
+title: Configure Git's default text editor
 shortTitle: Configure text editor
 type: tip
 language: git
