@@ -118,7 +118,7 @@ references:
     https://git-scm.com/docs/git-gc
   git init: >-
     https://git-scm.com/docs/git-init
-  git init [<directory>]: >-
+  git init <directory>: >-
     https://git-scm.com/docs/git-init
   git log: >-
     https://git-scm.com/docs/git-log
