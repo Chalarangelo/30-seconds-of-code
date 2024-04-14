@@ -2821,3 +2821,9 @@
 - from: /git/s/delete-remote-branch
   to: /git/s/delete-branch
   status: 301!
+- from: /git/s/stage-files
+  to: /git/s/stage-unstage-files
+  status: 301!
+- from: /git/s/unstage-files
+  to: /git/s/stage-unstage-files
+  status: 301!
