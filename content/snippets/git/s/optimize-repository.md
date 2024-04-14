@@ -1,19 +1,25 @@
 ---
-title: Optimize the local repository
-type: snippet
+title: Optimize the local Git repository
+shortTitle: Optimize local repository
+type: tip
 language: git
 tags: [repository]
 cover: automaton
-dateModified: 2021-04-13
+excerpt: Is your Git repository getting bloated? Optimize it by garbage collecting loose objects.
+dateModified: 2024-04-13
 ---
 
-Optimizes the local repository.
+Is your Git repository getting bloated? Maybe you've seen a significant increase in the repository size, or you're experiencing performance issues. One way to address this is by **optimizing the local repository**.
 
-- Use `git gc --prune=now --aggressive` to garbage collect loose objects.
+Using `git gc --prune=now --aggressive`, you can **garbage collect loose objects** in the repository. This command will optimize the repository by removing unnecessary objects and compressing the repository data.
 
 ```shell
-git gc --prune=now --aggressive
+# Usage: git gc --prune=now --aggressive
 
-# Examples
-git gc --prune=now --aggressive # Optimizes the local repository
+git gc --prune=now --aggressive
+# Optimizes the local repository
 ```
+
+> [!NOTE]
+>
+> The command might take a minute to run, so hang back and let Git do its magic. Once it's done, you should see an optimized repository with improved performance.

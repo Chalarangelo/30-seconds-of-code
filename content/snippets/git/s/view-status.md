@@ -9,9 +9,9 @@ excerpt: Learn how to view the current status of the working tree in Git.
 dateModified: 2024-04-12
 ---
 
-Git provides a command to view the current status of the working tree. The `git status` command shows you which files are staged, unstaged, and untracked, as well as the current branch you're on.
+Git provides a command to view the **current status of the working tree**. The `git status` command shows you which files are staged, unstaged, and untracked, as well as the current branch you're on.
 
-If you want a more concise output, you can use the `-sb` flag to view the short form of the status. This is useful when you want to quickly check the status of the working tree without the additional details.
+If you want a more concise output, you can use the `-sb` flag to view the **short form of the status**. This is useful when you want to quickly check the status of the working tree without the additional details.
 
 ```shell
 # Usage: git status [-sb]
