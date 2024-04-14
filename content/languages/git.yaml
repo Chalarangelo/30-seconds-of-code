@@ -82,7 +82,7 @@ references:
     https://git-scm.com/docs/git-config#Documentation/git-config.txt---add
   git config --get remote.origin.url: >-
     https://git-scm.com/docs/git-config#Documentation/git-config.txt---get
-  git config --global -e: >-
+  git config -e: >-
     https://git-scm.com/docs/git-config#Documentation/git-config.txt--e
   git config --global core.editor <editor-command>: >-
     https://git-scm.com/docs/git-config#Documentation/git-config.txt-coreeditor
