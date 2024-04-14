@@ -2833,4 +2833,10 @@
 - from: /git/s/set-text-editor
   to: /git/s/configure-default-text-editor
   status: 301!
+- from: /git/s/discard-untracked
+  to: /git/s/discard-changes
+  status: 301!
+- from: /git/s/discard-uncommitted
+  to: /git/s/discard-changes
+  status: 301!
 
