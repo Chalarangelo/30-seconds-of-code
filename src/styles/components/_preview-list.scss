@@ -141,7 +141,11 @@
   // This means that if the item has too much space available, it will use it
   // to display the image and the content side by side, instead of stacking
   // them on top of each other.
-  @container preview (min-width: 25rem) {
+  // Note that the `23rem` is a little weird (was `25rem` originally), but it's
+  // adjusted to accommodate iPhone 15 Plus and Pro Max devices, which have a
+  // width of `430px` in portrait mode, thus rendering the layout with a little
+  // bit of extra horizontal spacing which looks a little off.
+  @container preview (min-width: 23rem) {
     img {
       // Sclae the image proportionally to the container's inline size.
       width: 30cqi;
