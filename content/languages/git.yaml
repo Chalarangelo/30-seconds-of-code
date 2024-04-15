@@ -42,7 +42,7 @@ references:
     https://git-scm.com/docs/git-checkout#Documentation/git-checkout.txt--bltnew-branchgt
   git checkout <branch>: >-
     https://git-scm.com/docs/git-checkout#Documentation/git-checkout.txt-ltbranchgt
-  git checkout <branch> <file>: >-
+  git checkout <branch> <pathspec>: >-
     https://git-scm.com/docs/git-checkout#Documentation/git-checkout.txt-ltpathspecgt82308203
   git checkout <commit>^ -- <file>: >-
     https://git-scm.com/docs/git-checkout
