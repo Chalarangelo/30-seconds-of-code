@@ -2,6 +2,7 @@ import { convertToSeoSlug, uniqueElements, stripMarkdownFormat } from '#utils';
 import { Ranker } from '#blocks/utilities/ranker';
 import { Recommender } from '#blocks/utilities/recommender';
 import { TagFormatter } from '#blocks/utilities/tagFormatter';
+import { TocReader } from '#blocks/utilities/tocReader';
 import tokenizeSnippet from '#utils/search';
 
 export const snippet = {
@@ -127,6 +128,10 @@ export const snippet = {
     },
     searchTokens: {
       body: snippet => snippet.searchTokensArray.join(' '),
+      cache: true,
+    },
+    tableOfContentsHtml: {
+      body: snippet => TocReader.readToC(snippet.fullDescriptionHtml),
       cache: true,
     },
     orderedCollections: {
