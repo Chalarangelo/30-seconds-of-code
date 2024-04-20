@@ -7,6 +7,7 @@ import path from 'path';
 import Layout from '#layouts/Layout';
 import Breadcrumb from '#components/Breadcrumb';
 import SnippetContent from '#components/SnippetContent';
+import TableOfContents from '#components/TableOfContents';
 import PreviewList from '#components/PreviewList';
 
 export async function getStaticPaths() {
@@ -47,4 +48,5 @@ const {
       <h2 slot='title'>More like this</h2>
     </PreviewList>
 </main>
+<TableOfContents tableOfContents={snippet.tableOfContents} slot='side-bar' />
 </Layout>
