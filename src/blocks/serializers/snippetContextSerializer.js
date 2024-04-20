@@ -26,5 +26,6 @@ export const snippetContextSerializer = {
     ['coverUrl', 'cover'],
     'coverSrcset',
     'githubUrl',
+    ['tableOfContentsHtml', 'tableOfContents'],
   ],
 };
