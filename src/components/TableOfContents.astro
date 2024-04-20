@@ -1,0 +1,14 @@
+---
+const { tableOfContents } = Astro.props;
+
+// Instead of returning `null`, an empty string is returned to prevent issues
+// with the named slot. This is a workaround for a bug in Astro.
+if (!tableOfContents) return '';
+---
+
+<nav aria-label='Table of contents'>
+  <div>
+    <h2>Contents</h2>
+    <Fragment set:html={tableOfContents}/>
+  </div>
+</nav>
