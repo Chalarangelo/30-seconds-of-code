@@ -1,0 +1,79 @@
+nav[aria-label='Table of contents'] {
+  // Use the correct grid area (right sidebar).
+  grid-area: left;
+  display: block;
+  // Add some padding to align with the rest of the elements on the page.
+  padding: 112px var(--spacing-24) var(--spacing-20) var(--spacing-12);
+
+  @media (max-width: 83rem) {
+    // Hide in viewports under 1328px wide.
+    display: none;
+  }
+
+  div {
+    // Make the table of contents stick to the top of the page.
+    position: sticky;
+    top: var(--spacing-24);
+    // Display as a grid to define a max width for the contents and consume
+    // leftover space on the left side, as needed.
+    display: grid;
+    grid-template-columns:
+      // Consume leftover space on the left side.
+
+      minmax(0, 1fr)
+      // Limit the width of the contents to 17.5rem.
+      minmax(auto, 17.5rem);
+    grid-template-rows: auto;
+    // Add spacing between heading and list.
+    row-gap: var(--spacing-10);
+
+    > * {
+      // Place all contents in the second column.
+      grid-column: 2;
+    }
+  }
+
+  h2 {
+    font-size: var(--font-xl);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text);
+  }
+
+  ol {
+    // Use a flex column to display the content.
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+
+    ol {
+      // Add some space for nested items.
+      padding-inline-start: var(--spacing-6);
+      padding-block: var(--spacing-2);
+    }
+  }
+
+  li {
+    // Make list items smaller and tighten spacing to increase readability.
+    font-size: var(--font-sm);
+    line-height: var(--line-height-normal);
+    // Apply a lighter color to all list items.
+    color: var(--color-text-light);
+    // Wrapping the content to minimize orphans makes items look very short,
+    // so revert to the default behavior as it looks better here.
+    text-wrap: wrap;
+  }
+
+  a {
+    // Remove underlines from links.
+    --link_color-underline: transparent;
+    // Apply a transition on hover.
+    transition: color var(--animation-duration-medium) ease;
+
+    @media (hover: hover) {
+      &:is(:hover, :focus) {
+        // Only apply hover styles on devices that support hover.
+        color: var(--color-primary-light);
+      }
+    }
+  }
+}
