@@ -52,9 +52,9 @@ a[data-code-reference='true'] {
 
   &::before {
     position: absolute;
-    // Display a hash according to the heading size (roughly 1 size smaller).
-    content: '#';
-    font-size: 0.8em;
+    // Display a symbol according to the heading size (roughly 1 size smaller).
+    content: '📎';
+    font-size: 0.5em;
     text-align: center;
     font-weight: var(--font-weight-medium);
     // Position the hash link indicator to the left of the link, inside the
