@@ -61,8 +61,7 @@ a[data-code-reference='true'] {
     // layout bleed area.
     left: calc(-1 * var(--layout-bleed-width));
     width: var(--layout-bleed-width);
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0.5em;
     color: var(--color-primary-light);
     // Opacity of the hash link.
     opacity: var(--link_hash_opacity);
