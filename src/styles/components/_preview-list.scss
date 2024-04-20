@@ -147,7 +147,7 @@
   // bit of extra horizontal spacing which looks a little off.
   @container preview (min-width: 23rem) {
     img {
-      // Sclae the image proportionally to the container's inline size.
+      // Scale the image proportionally to the container's inline size.
       width: 30cqi;
       height: 30cqi;
       // Change the aspect ratio to 1:1, so that the image is always square.
