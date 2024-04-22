@@ -1,21 +1,21 @@
 ---
-title: View differences in changes
-type: snippet
+title: View differences in Git changes
+shortTitle: View differences in changes
+type: tip
 language: git
 tags: [commit,branch]
 cover: plant-candle
-dateModified: 2021-04-13
+excerpt: View differences between staged or unstaged changes and the last commit in Git.
+dateModified: 2024-04-21
 ---
 
-Displays differences between staged or unstaged changes and the last commit.
+When working with Git, you'll often need to view the **differences between your changes and the last commit**. This can help you understand what you've modified, what you're about to commit, and what changes you've made since the last commit.
 
-- Use `git diff` to view differences between your unstaged changes and the last commit.
-- You can use the `--staged` option to view differences between your staged changes and the last commit instead.
+Git provides the `git diff` command to help you with this, allowing you to compare your changes with the last commit. The result will show you the differences between your **unstaged** changes, by default, but you can view the differences between your **staged** changes and the last commit instead, using the `--staged` option.
 
 ```shell
-git diff [--staged]
+# Syntax: git diff [--staged]
 
-# Examples
 git diff
 # Displays the differences between unstaged changes and the last commit
 
