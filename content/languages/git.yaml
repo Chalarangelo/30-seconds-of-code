@@ -44,7 +44,7 @@ references:
     https://git-scm.com/docs/git-checkout#Documentation/git-checkout.txt-ltbranchgt
   git checkout <branch> <pathspec>: >-
     https://git-scm.com/docs/git-checkout#Documentation/git-checkout.txt-ltpathspecgt82308203
-  git checkout <commit>^ -- <file>: >-
+  git checkout <commit>^ -- <pathspec>: >-
     https://git-scm.com/docs/git-checkout
   git checkout <new-name>: >-
     https://git-scm.com/docs/git-checkout#Documentation/git-checkout.txt-ltnew-branchgt

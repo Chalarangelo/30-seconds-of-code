@@ -1,21 +1,27 @@
 ---
-title: Restore a deleted file
-type: snippet
+title: Restore deleted files in a Git commit
+shortTitle: Restore deleted file
+type: tip
 language: git
 tags: [branch]
 cover: succulent-red-light
-dateModified: 2021-04-13
+excerpt: Have you accidentally deleted a file? Or maybe you need to restore a file that was deleted? Here's how Git can help you.
+dateModified: 2024-04-22
 ---
 
-Restores a file deleted in a specific commit.
+Have you accidentally deleted a file? Or maybe you need to restore a file that was deleted? Luckily, Git provides a way to **restore files** that were deleted in a **specific commit**.
 
-- Use `git checkout <commit>^ -- <file>` to restore the specified `<file>` deleted in the specified `<commit>`.
+All you need is `git checkout <commit>^ -- <pathspec>`. This command will restore the specified `<file>` that was deleted in the specified `<commit>`. As the latter part of the command accepts a **filename or fileglob**, you can even restore multiple files.
+
 
 ```shell
-git checkout <commit>^ -- <file>
+# Syntax: git checkout <commit>^ -- <pathspec>
 
-# Examples
 # "30seconds.txt" was deleted in the commit `3050fc0de`
 git checkout 3050fc0de^ -- "30seconds.txt"
 # Restores the 30seconds.txt file
+
+# "src/*.json" was deleted in the commit `3050fc0de`
+git checkout 3050fc0de^ -- "src/*.json"
+# Restores all JSON files in the src/ directory
 ```
