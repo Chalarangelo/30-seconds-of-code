@@ -2839,4 +2839,9 @@
 - from: /git/s/discard-uncommitted
   to: /git/s/discard-changes
   status: 301!
-
+- from: /git/s/view-remote-url
+  to: /git/s/view-change-remote-url
+  status: 301!
+- from: /git/s/change-remote-url
+  to: /git/s/view-change-remote-url
+  status: 301!
