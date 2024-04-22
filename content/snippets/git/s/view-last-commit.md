@@ -1,21 +1,21 @@
 ---
-title: View last commit
-type: snippet
+title: View the last Git commit
+shortTitle: View last commit
+type: tip
 language: git
 tags: [commit]
 cover: clouds-n-mountains
-dateModified: 2021-04-13
+excerpt: Learn how to view the last commit in Git using the `git log` command.
+dateModified: 2024-04-23
 ---
 
-Prints the last commit.
+Checking the contents of the last Git commit can sometimes be useful to orient yourself in the repository's history. The `git log` command can help you with this by displaying the last commit in the repository.
 
-- Use `git log -1` to view the last commit.
-- Use arrow keys to navigate, press <kbd>Q</kbd> to exit.
+Using `git log -1`, you can view the last commit in the repository. This command will show you the **commit hash**, **author**, **date**, and **commit message** of the last commit. You can navigate through the commit history using the arrow keys and exit by pressing <kbd>Q</kbd>.
 
 ```shell
-git log -1
+# Syntax: git log -1
 
-# Examples
 git log -1
 # commit c191f90c7766ee6d5f24e90b552a6d446f0d02e4
 # Author: 30 seconds of code
