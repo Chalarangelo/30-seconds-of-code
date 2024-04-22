@@ -1,21 +1,25 @@
 ---
-title: View merged branches
-type: snippet
+title: View all merged Git branches
+shortTitle: View merged branches
+type: tip
 language: git
 tags: [repository,branch]
 cover: cobbled-street
-dateModified: 2021-04-13
+excerpt: Looking for a way to list all merged branches in your Git repository? Look no further.
+dateModified: 2024-04-17
 ---
 
-Prints a list of all merged local branches.
+Looking for a way to list all **merged branches** in your Git repository? This can be useful in a variety of scenarios, including cleaning up your repository or identifying branches that are ready to be deleted.
 
-- Use `git branch -a --merged` to display a list of all merged local branches.
-- Use arrow keys to navigate, press <kbd>Q</kbd> to exit.
+> [!TIP]
+>
+> You can easily [delete merged branches](/git/s/delete-branch#delete-merged-branches), using a single command. Check out the linked article for more information.
+
+Using `git branch -a --merged` allows you to view a list of all merged local branches. This command displays branches that have been **merged into the current branch**, making it easy to identify branches that are no longer needed. Use the arrow keys to navigate the list and press <kbd>Q</kbd> to exit.
 
 ```shell
-git branch -a --merged
+# Syntax: git branch -a --merged
 
-# Examples
 git checkout master
 git branch -a --merged
 # patch-1
