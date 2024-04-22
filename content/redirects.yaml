@@ -2845,3 +2845,9 @@
 - from: /git/s/change-remote-url
   to: /git/s/view-change-remote-url
   status: 301!
+- from: /git/s/create-empty-commit
+  to: /git/s/create-commit
+  status: 301!
+- from: /git/s/commit-without-hooks
+  to: /git/s/create-commit
+  status: 301!
