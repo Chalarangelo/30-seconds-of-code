@@ -1,22 +1,24 @@
 ---
-title: View commits that manipulated a specific string
-type: snippet
+title: View Git commits that manipulated a specific string
+shortTitle: View commits that manipulated a string
+type: tip
 language: git
 tags: [commit]
 cover: bunny-poster
-dateModified: 2021-04-13
+excerpt: Learn how to view all commits that manipulated a specific string in a Git repository.
+dateModified: 2023-04-26
 ---
 
-Prints a list of all commits that manipulated a given string.
+Finding all commits that **manipulated a specific string** in a Git repository sounds like a pretty tricky task, if you don't know how to do it. Fortunately, Git provides a straightforward way to search for commits that manipulated a given string.
 
-- Use `git log -S<string>` to find all commits that manipulated the specified `<string>`.
-- Use arrow keys to navigate, press <kbd>Q</kbd> to exit.
+Using `git log -S<string>`, you can find all commits that manipulated the specified `<string>`. The `-S` flag is used to look for differences that change the **number of occurrences** of the specified string.
+
+You can additionally apply any other valid filters to the `git log` command to further narrow down the search results (e.g. by date range).
 
 ```shell
-git log -S<string>
+# Syntax: git log -S<string>
 
-# Examples
-git log -S"30-seconds"
+git log -S<string>
 # commit c191f90c7766ee6d5f24e90b552a6d446f0d02e4
 # Author: 30 seconds of code
 # Date: Tue Apr 6 11:11:08 2021 +0300
