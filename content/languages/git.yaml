@@ -126,6 +126,8 @@ references:
     https://git-scm.com/docs/git-log
   git log --author=<author>: >-
     https://git-scm.com/docs/git-log#Documentation/git-log.txt---authorltpatterngt
+  git log --committer=<committer>: >-
+    https://git-scm.com/docs/git-log#Documentation/git-log.txt---committerltpatterngt
   git log --pretty=oneline --graph --decorate --all: >-
     https://git-scm.com/docs/git-log#Documentation/git-log.txt---prettyltformatgt
   git log --since=<date-from> --until=<date-to>: >-

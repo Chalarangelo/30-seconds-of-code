@@ -2851,3 +2851,6 @@
 - from: /git/s/commit-without-hooks
   to: /git/s/create-commit
   status: 301!
+- from: /git/s/view-commits-by-author
+  to: /git/s/view-commits-by-author-or-committer
+  status: 301!
