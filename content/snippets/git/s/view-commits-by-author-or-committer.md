@@ -6,7 +6,7 @@ language: git
 tags: [repository,commit]
 cover: comic-glasses
 excerpt: If you're looking for a way to find commits by a specific author or committer in a Git repository, look no further.
-dateModified: 2021-04-25
+dateModified: 2024-04-25
 ---
 
 When viewing the commit history of a Git repository, you might want to **filter** the commits by author or committer. As is often the case, Git has you covered.

@@ -6,7 +6,7 @@ language: git
 tags: [commit]
 cover: bunny-poster
 excerpt: Learn how to view all commits that manipulated a specific string in a Git repository.
-dateModified: 2023-04-26
+dateModified: 2024-04-26
 ---
 
 Finding all commits that **manipulated a specific string** in a Git repository sounds like a pretty tricky task, if you don't know how to do it. Fortunately, Git provides a straightforward way to search for commits that manipulated a given string.
