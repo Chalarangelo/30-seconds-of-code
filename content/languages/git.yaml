@@ -150,7 +150,7 @@ references:
     https://git-scm.com/docs/git-push#Documentation/git-push.txt--d
   git push -f: >-
     https://git-scm.com/docs/git-push#Documentation/git-push.txt--f
-  git push <remote> --force -all: >-
+  git push <remote> --force --all: >-
     https://git-scm.com/docs/git-push#Documentation/git-push.txt---force
   git push origin --delete <old-name>: >-
     https://git-scm.com/docs/git-push#Documentation/git-push.txt---delete
