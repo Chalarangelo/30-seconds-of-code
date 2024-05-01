@@ -1,21 +1,23 @@
 ---
-title: Set default push branch name
-type: snippet
+title: Set the default push branch name in Git
+shortTitle: Set default push branch
+type: tip
 language: git
 tags: [configuration,branch]
 cover: pink-flower
-dateModified: 2021-06-30
+excerpt: Tired of manually specifying the remote branch name when pushing? Configure Git to use the current branch name as the default.
+dateModified: 2024-05-02
 ---
 
-Use the name of the current branch when pushing by default as the name of the remote branch.
+Manually specifying the **remote branch name** when pushing can be a hassle. Git provides a way to automate this process by setting the default push branch name to the **current branch name**.
 
-- Use `git config push.default current` to set the name of the remote branch to the one of the current local branch as the default.
-- You can use the `--global` flag to configure this option globally.
+Using `git config push.default current` will configure Git to use the name of the current branch as the **default** remote branch name. This setting is particularly useful when local branches are expected to have the same name as their remote counterparts.
+
+Using the `--global` flag will set this configuration globally on your machine.
 
 ```shell
-git config [--global] push.default current
+# Syntax: git config [--global] push.default current
 
-# Examples
 git config --global push.default current
 
 git checkout -b my-branch
