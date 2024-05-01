@@ -1,21 +1,21 @@
 ---
-title: View a visual graph of the repository
-type: snippet
+title: View a visual graph of the Git repository
+shortTitle: View commit graph
+type: tip
 language: git
 tags: [repository]
 cover: city-view
-dateModified: 2021-04-13
+excerpt: If you're more of a visual person, you can view a graph of all commits and branches in the repository using a single Git command.
+dateModified: 2024-04-25
 ---
 
-Prints a visual graph of all commits and branches in the repository.
+If you're more of a visual person, you can view a **graph of all commits and branches** in the repository using a single Git command.
 
-- Use `git log --pretty=oneline --graph --decorate --all` to view a visual graph of the whole repository's history.
-- Use arrow keys to navigate, press <kbd>Q</kbd> to exit.
+Running `git log --pretty=oneline --graph --decorate --all` prints a visual graph of the whole repository's history. This command displays a **visual representation** of all commits and branches in the repository. You can then use the arrow keys to navigate, or press <kbd>Q</kbd> to exit.
 
 ```shell
-git log --pretty=oneline --graph --decorate --all
+# Syntax: git log --pretty=oneline --graph --decorate --all
 
-# Examples
 git log --pretty=oneline --graph --decorate --all
 # * 3050fc0de Fix network bug
 # * c191f90c7 Initial commit
