@@ -114,6 +114,8 @@ references:
     https://git-scm.com/docs/git-fetch
   git filter-branch --force --index-filter <command> --prune-empty --tag-name-filter cat -- --all: >-
     https://git-scm.com/docs/git-filter-branch
+  git fsck: >-
+    https://git-scm.com/docs/git-fsck
   git fsck --lost-found: >-
     https://git-scm.com/docs/git-fsck
   git gc --prune=now --aggressive: >-

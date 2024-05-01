@@ -1,21 +1,21 @@
 ---
-title: Find lost files
-type: snippet
+title: Find lost files using Git
+shortTitle: Find lost files
+type: tip
 language: git
 tags: [repository]
 cover: hard-disk
-dateModified: 2021-04-13
+excerpt: Learn how to find lost files and commits in a Git repository.
+dateModified: 2024-05-01
 ---
 
-Prints a list of lost files and commits.
+If you've **lost files or commits** in your Git repository, you can use the `git fsck` command to find them. This command is useful for recovering lost data or understanding the state of your repository.
 
-- Use `git fsck --lost-found` to print a list of all dangling objects.
-- All appropriate files will be extracted into the `.git/lost-found` directory.
+Simply running `git fsck --lost-found` will print a list of all **dangling objects** (lost files and commits) in your repository. These objects will be extracted into the `.git/lost-found` directory for further inspection.
 
 ```shell
-git fsck --lost-found
+# Syntax: git fsck --lost-found
 
-# Examples
 git fsck --lost-found
 # dangling commit 3050fc0de
 # dangling blob 807e3fa41
