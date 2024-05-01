@@ -2854,3 +2854,15 @@
 - from: /git/s/view-commits-by-author
   to: /git/s/view-commits-by-author-or-committer
   status: 301!
+- from: /git/s/add-submodule
+  to: /git/s/submodules
+  status: 301!
+- from: /git/s/delete-submodule
+  to: /git/s/submodules
+  status: 301!
+- from: /git/s/clone-missing-submodules
+  to: /git/s/submodules
+  status: 301!
+- from: /git/s/pull-all-submodules
+  to: /git/s/submodules
+  status: 301!

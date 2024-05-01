@@ -224,3 +224,5 @@ references:
     https://git-scm.com/docs/git-submodule#Documentation/git-submodule.txt-update--init--remote-N--no-fetch--no-recommend-shallow-f--force--checkout--rebase--merge--referenceltrepositorygt--depthltdepthgt--recursive--jobsltngt--no-single-branch--filterltfilterspecgt--ltpathgt82308203
   git switch <branch>: >-
     https://git-scm.com/docs/git-switch
+  git mv <old-submodule> <new-submodule>: >-
+    https://git-scm.com/docs/git-mv
