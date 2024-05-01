@@ -1,20 +1,24 @@
 ---
-title: View difference between two branches
-type: snippet
+title: View difference between two Git branches
+shortTitle: Difference between branches
+type: tip
 language: git
 tags: [branch]
 cover: two-doors
-dateModified: 2021-04-13
+excerpt: Want to compare the changes between two branches in Git? Here's how you can do it.
+dateModified: 2024-04-23
 ---
 
-Displays the difference between two branches.
+Comparing **changes between different revisions** is a pretty frequent task when working with Git. As branches are nothing more than **pointers to specific commits**, you can easily compare the changes between two branches using the `git diff` command.
 
-- Use `git diff <branch>..<other-branch> ` to view the difference between `<branch>` and `<other-branch>`.
+Using `git diff <branch>..<other-branch>` will display the difference between the two branches. This can be useful to see what changes have been made in one branch compared to another. You can then easily **export or apply** these changes as needed.
 
 ```shell
-git diff <branch>..<other-branch>
+# Syntax: git diff <branch>..<other-branch>
 
-# Examples
 git diff patch-1..patch-2
 # Displays the difference between branches `patch-1` and `patch-2`
+
+git diff master..feature > changes.patch
+# Exports the changes between `master` and `feature` to a patch file
 ```
