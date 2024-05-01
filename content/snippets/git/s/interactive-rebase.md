@@ -11,6 +11,8 @@ dateModified: 2024-05-02
 
 If you want to **rewrite the commit history of a branch**, Git provides an **interactive rebase** feature that allows you to reorder, squash, and edit commits interactively. This can be useful for cleaning up your commit history before merging a branch or for combining multiple commits into a single one.
 
+## Perform an interactive rebase
+
 Simply using `git rebase -i <commit>` will **open an editor** with a list of commits and actions to perform for each one. You can reorder the commits, squash them together, edit commit messages, and more.
 
 > [!TIP]
@@ -36,6 +38,8 @@ git rebase -i --autosquash HEAD~5
 # automatically squashing fixup commits
 ```
 
+## Interactive rebase actions
+
 The options that are available to you during an interactive rebase are multiple, but the ones that are **most often used** are the following:
 
 - `p`, `pick`: Use the commit as is.
@@ -49,7 +53,7 @@ The options that are available to you during an interactive rebase are multiple,
 
 You can either use the **full command** or the **shorthand** version when specifying the action for each commit. Below is an example of a commit list in an interactive rebase:
 
-```shell
+```shell [git-rebase-todo]
 p c191f90c7 Initial commit        # Keep this commit
 pick 3050fc0de Fix network bug    # Keep this commit
 r 7b1e3f2a2 Update README         # Edit the commit message
