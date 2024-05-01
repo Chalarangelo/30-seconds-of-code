@@ -1,23 +1,50 @@
 ---
-title: Switch to a branch
-type: snippet
+title: Switch to a Git branch
+shortTitle: Switch branch
+type: story
 language: git
 tags: [branch]
 cover: bridge
-dateModified: 2021-04-13
+excerpt: Learn how to easily switch between branches in Git.
+dateModified: 2024-04-29
 ---
 
-Switches to an existing branch.
+Git branches are used to develop features, fix bugs, and experiment with new ideas. You can easily **switch between branches** using the `git checkout` command.
 
-- Use `git checkout <branch>` to switch to the specified branch.
-
-> [!NOTE]
+> [!TIP]
 >
-> In newer versions of git, you can also use `git switch <branch>`.
+> You can learn all about using `git checkout` to create a new branch in the [previous article about branch creation](/git/s/create-branch).
+
+## Switch to an existing branch
+
+In order to switch to an **existing branch**, you can use `git checkout <branch>`. If you're using a newer version of Git, you can also use `git switch <branch>`.
 
 ```shell
-git checkout <branch>
+# Syntax: git checkout <branch>
+#     or: git switch <branch>
 
-# Examples
-git checkout patch-1 # Switches to the branch named `patch-1`
+git checkout patch-1
+# Switches to the branch named `patch-1`
+
+git switch patch-1
+# Switches to the branch named `patch-1`
+```
+
+## Switch to the previous branch
+
+Subsequently, you can switch back to the **previous branch** using `git checkout -` or `git switch -`. Here, `-` is a **shorthand** for the previous branch.
+
+```shell
+# Syntax: git checkout -
+#     or: git switch -
+
+git checkout patch-1
+git checkout master
+git checkout -
+# Switches to `patch-1`
+
+git switch patch-1
+git switch master
+git switch -
+# Switches to `patch-1`
 ```
