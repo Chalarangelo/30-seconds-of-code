@@ -1,20 +1,22 @@
 ---
-title: Get the current branch name
-type: snippet
+title: Get the current branch name in Git
+shortTitle: Current branch name
+type: tip
 language: git
 tags: [branch]
 cover: cherry-trees
-dateModified: 2021-04-13
+excerpt: Get the name of the current branch in Git.
+dateModified: 2024-04-22
 ---
 
-Prints the current branch name.
+The name of the current branch in Git can be useful for various purposes, such as **scripting**, debugging, or simply keeping track of your work.
 
-- Use `git rev-parse --abbrev-ref HEAD` to print the name of the current branch.
+Simply using `git rev-parse --abbrev-ref HEAD` will **print** the name of the current branch. You can then **pipe this output** to other commands or scripts as needed.
 
 ```shell
-git rev-parse --abbrev-ref HEAD
+# Syntax: git rev-parse --abbrev-ref HEAD
 
-# Examples
 git checkout patch-1
-git rev-parse --abbrev-ref HEAD # Prints `patch-1`
+git rev-parse --abbrev-ref HEAD
+# Prints `patch-1`
 ```
