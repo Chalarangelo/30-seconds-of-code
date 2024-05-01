@@ -5,7 +5,7 @@ type: tip
 language: git
 tags: [configuration,repository]
 cover: messy-computer
-excerpt: Effortlessly create upstream branches on push by enabling a simple git config setting.
+excerpt: Effortlessly create upstream branches on push by enabling a simple Git config setting.
 dateModified: 2023-05-21
 ---
 
