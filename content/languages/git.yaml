@@ -184,6 +184,8 @@ references:
     https://git-scm.com/docs/git-reset#Documentation/git-reset.txt---hard
   git reset HEAD~<n> --hard: >-
     https://git-scm.com/docs/git-reset#Documentation/git-reset.txt---hard
+  git reset HEAD^: >-
+    https://git-scm.com/docs/git-reset#Documentation/git-reset.txt-Undoacommitandredo
   git restore --staged <pathspec>: >-
     https://git-scm.com/docs/git-restore
   git rev-parse --abbrev-ref HEAD: >-
