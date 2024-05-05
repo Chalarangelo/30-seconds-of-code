@@ -3,7 +3,7 @@ title: Split a Git commit into multiple commits
 shortTitle: Split commit
 type: story
 language: git
-tags: [commit]
+tags: [commit,branch]
 cover: interior-16
 excerpt: Altering Git history to split a commit sounds intimidating, but it's not that hard. Let's walk through the process step by step.
 dateModified: 2024-05-05
