@@ -1,10 +1,11 @@
 ---
-title: Git aliases
+title: Customize Git using aliases for common operations
+shortTitle: Git aliases
 type: cheatsheet
 language: git
 tags: [configuration,cheatsheet]
 cover: compass-1
-excerpt: Increase your productivity by creating aliases for many common git operations.
+excerpt: Increase your productivity and reduce your cognitive load by creating aliases for many common git operations.
 dateModified: 2024-05-03
 ---
 
@@ -37,7 +38,7 @@ git config --global -e
 
 Below you can find a list of aliases I've found personally useful for increasing productivity when working with Git. Feel free to use them as they are or modify them to suit your needs.
 
-```editorconfig
+```editorconfig [~/.gitconfig]
 [alias]
   co = checkout
   cob = checkout -b
