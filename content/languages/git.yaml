@@ -102,6 +102,8 @@ references:
     https://git-scm.com/docs/git-config#Documentation/git-config.txt-useremail
   git config user.name <name>: >-
     https://git-scm.com/docs/git-config#Documentation/git-config.txt-username
+  git config --global alias.<alias> <command>: >-
+    https://git-scm.com/docs/git-config#Documentation/git-config.txt-alias
   git diff: >-
     https://git-scm.com/docs/git-diff
   git diff <branch>..<other-branch>: >-

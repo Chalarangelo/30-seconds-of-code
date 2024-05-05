@@ -5,20 +5,37 @@ language: git
 tags: [configuration,cheatsheet]
 cover: compass-1
 excerpt: Increase your productivity by creating aliases for many common git operations.
-dateModified: 2021-06-12
+dateModified: 2024-05-03
 ---
+
+Git allows you to create aliases for many common operations, making it easier to remember and execute them. As far as **customization** goes, this is one of the most powerful features Git offers, allowing you to create **shortcuts for complex commands** or to make your workflow more efficient.
 
 ## Creating aliases
 
-Use the command below to create aliases, replacing `<alias>` with the name of the alias and `<command>` with the command to be aliased:
+Simply running `git config --global alias.<alias> <command>` will create an **alias for the specified command**. The alias can then be used in place of the command when running Git commands. If your command contains spaces, you can wrap it in quotes.
 
 ```shell
-git config --global alias.<alias> <command>
+# Syntax: git config --global alias.<alias> <command>
+
+git config --global alias.co checkout
+# Creates an alias `co` for the `checkout` command
+
+git config --global alias.cm "commit -m"
+# Creates an alias `cm` for the `commit -m` command
 ```
 
-Additionally, you can use [edit the configuration file](/git/s/edit-config) and add many aliases all at once.
+Alternatively, you can use [edit the configuration file](/git/s/edit-config) and **add multiple aliases** all at once. This can be the more practical solution for adding more **complex commands**, as you don't have to worry about escaping special characters.
+
+```shell
+# Syntax: git config --global -e
+
+git config --global -e
+# Opens the global git configuration file in the default git text editor
+```
 
 ## Useful aliases
+
+Below you can find a list of aliases I've found personally useful for increasing productivity when working with Git. Feel free to use them as they are or modify them to suit your needs.
 
 ```editorconfig
 [alias]
