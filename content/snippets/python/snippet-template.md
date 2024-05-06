@@ -1,22 +1,12 @@
 ---
-title: Function name
-type: snippet
+title: My amazing story
+shortTitle: Amazing story
+type: story
 language: python
-tags: [utility]
+tags: [list]
 cover: image
+excerpt: A short summary of your story up to 140 characters long.
 dateModified: 2021-06-13
 ---
 
-Explain briefly what the snippet does.
-
-- Explain briefly how the snippet works.
-- Use bullet points for your snippet's explanation.
-- Try to explain everything briefly but clearly.
-
-```py
-def function_name(args):
-  # code
-  return 0
-
-function_name(val) # result
-```
+Write your story here.
