@@ -1,8 +1,10 @@
 import settings from '#settings/global';
+import searchEngineSettings from '#settings/searchEngine';
 import { globSync } from 'glob';
 import { YAMLHandler } from '#blocks/utilities/yamlHandler';
 import { CSVHandler } from '#blocks/utilities/csvHandler';
 
+const { serverStopWords } = searchEngineSettings;
 const { websiteUrl } = settings;
 
 const preparedQueriesCache = new Map();
@@ -40,6 +42,9 @@ const contentConfigsGlob = 'content/collections/**/*.yaml';
 
 // Performance constants (manually import Pages.csv from Google Search Console)
 const performancePath = 'imported/Pages.csv';
+
+// Ranking engine constants
+const rankingEnginePath = 'content/rankingEngine.yaml';
 
 export class PreparedQueries {
   /**
@@ -363,4 +368,51 @@ export class PreparedQueries {
           {}
         );
       });
+
+  /**
+   * Returns a frquency map of search tokens for the given collection.
+   * @param {string} collectionId - The collection id to get search tokens for.
+   * @param {object} options - Options object.
+   * @param {number} options.minLength - Minimum length of search tokens (default: 3).
+   * @param {boolean} options.excludeRanked - Whether to exclude ranked tags (default: true).
+   * @returns {Map} A map of search tokens and their frequency.
+   */
+  static searchTokensFrequency =
+    application =>
+    (collectionId, { minLength = 3, excludeRanked = true } = {}) =>
+      withCache(
+        `searchTokensFrequency#${collectionId}-${minLength}-${excludeRanked}`,
+        () => {
+          const tagRankings = loadFileOnce(rankingEnginePath, YAMLHandler);
+          const Collection = application.dataset.getModel('Collection');
+
+          const tagFilter = excludeRanked
+            ? tag => !tagRankings[tag]
+            : () => true;
+
+          const snippets = Collection.records.get(collectionId).snippets;
+          const tokens = snippets
+            .map(snippet => snippet.searchTokensArray, {
+              flat: true,
+            })
+            .flat()
+            .filter(token => {
+              return (
+                token.length >= minLength &&
+                !serverStopWords.includes(token) &&
+                tagFilter(token)
+              );
+            });
+          const frequency = new Map(
+            Object.entries(
+              tokens.reduce((acc, token) => {
+                acc[token] = (acc[token] || 0) + 1;
+                return acc;
+              }, {})
+            ).sort((a, b) => b[1] - a[1])
+          );
+
+          return frequency;
+        }
+      );
 }
