@@ -53,7 +53,7 @@ export class Content {
         'snippets',
         directoryName
       );
-      const templatePath = path.join(directoryPath, `${type}-template.md`);
+      const templatePath = path.join(directoryPath, `snippet-template.md`);
       const snippetPath = path.join(directoryPath, 's');
       try {
         if (!fs.existsSync(snippetPath)) {
