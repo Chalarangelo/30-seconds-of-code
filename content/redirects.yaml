@@ -2884,3 +2884,9 @@
 - from: /articles/s/css-centering
   to: /css/s/display-table-centering
   status: 301!
+- from: /python/s/key-of-min
+  to: /python/s/key-of-min-max
+  status: 301!
+- from: /python/s/key-of-max
+  to: /python/s/key-of-min-max
+  status: 301!
