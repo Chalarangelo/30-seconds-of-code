@@ -122,6 +122,14 @@ references:
     https://git-scm.com/docs/git-fsck
   git gc --prune=now --aggressive: >-
     https://git-scm.com/docs/git-gc
+  git grep: >-
+    https://git-scm.com/docs/git-grep
+  git grep <pattern>: >-
+    https://git-scm.com/docs/git-grep
+  git grep <pattern> -- <pathspec>: >-
+    https://git-scm.com/docs/git-grep#Documentation/git-grep.txt-ltpathspecgt82308203
+  git grep <pattern> <commit>: >-
+    https://git-scm.com/docs/git-grep
   git init: >-
     https://git-scm.com/docs/git-init
   git init <directory>: >-
