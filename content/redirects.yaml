@@ -142,9 +142,6 @@
 - from: /c/web-development/*
   to: /web-development/:splat
   status: 301!
-- from: /c/css-centering/*
-  to: /css/centering/:splat
-  status: 301!
 - from: /c/css-hover-effects/*
   to: /css/hover-effects/:splat
   status: 301!
@@ -720,9 +717,6 @@
   status: 301!
 - from: /articles/s/react-use-state-with-label
   to: /react/s/use-state-with-label
-  status: 301!
-- from: /articles/s/css-centering
-  to: /css/s/centering
   status: 301!
 - from: /articles/s/css-clamp
   to: /css/s/clamp
@@ -2868,4 +2862,25 @@
   status: 301!
 - from: /git/s/switch-to-last-branch
   to: /git/s/switch-to-branch
+  status: 301!
+- from: /c/css-centering/*
+  to: /css/s/centering
+  status: 301!
+- from: /c/css-centering/*
+  to: /css/s/centering
+  status: 301!
+- from: /articles/s/css-centering
+  to: /css/s/centering
+  status: 301!
+- from: /articles/s/css-centering
+  to: /css/s/flexbox-centering
+  status: 301!
+- from: /articles/s/css-centering
+  to: /css/s/grid-centering
+  status: 301!
+- from: /articles/s/css-centering
+  to: /css/s/transform-centering
+  status: 301!
+- from: /articles/s/css-centering
+  to: /css/s/display-table-centering
   status: 301!
