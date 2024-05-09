@@ -15,7 +15,7 @@ dateModified: 2024-01-12
 .gradient-box {
   grid-column: 1 / -1;
   width: 100%;
-  height: 96px;
+  height: 144px;
   border-radius: var(--layout-border-radius) var(--layout-border-radius) 0 0;
   margin-top: var(--layout-row-spacing);
 }

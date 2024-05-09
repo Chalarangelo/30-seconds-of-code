@@ -148,9 +148,6 @@
 - from: /c/css-button-transitions/*
   to: /css/button-transitions/:splat
   status: 301!
-- from: /c/css-background-patterns/*
-  to: /css/background-patterns/:splat
-  status: 301!
 - from: /c/js-array-initialization/*
   to: /js/array-initialization/:splat
   status: 301!
@@ -2889,4 +2886,22 @@
   status: 301!
 - from: /python/s/key-of-max
   to: /python/s/key-of-min-max
+  status: 301!
+- from: /c/css-background-patterns/*
+  to: /css/s/10-css-background-patterns
+  status: 301!
+- from: /css/background-patterns/*
+  to: /css/s/10-css-background-patterns
+  status: 301!
+- from: /css/s/stripes-pattern
+  to: /css/s/10-css-background-patterns
+  status: 301!
+- from: /css/s/polka-dot-pattern
+  to: /css/s/10-css-background-patterns
+  status: 301!
+- from: /css/s/zig-zag-pattern
+  to: /css/s/10-css-background-patterns
+  status: 301!
+- from: /css/s/checkerboard-pattern
+  to: /css/s/10-css-background-patterns
   status: 301!
