@@ -2905,3 +2905,9 @@
 - from: /css/s/checkerboard-pattern
   to: /css/s/10-css-background-patterns
   status: 301!
+- from: /css/s/circle
+  to: /css/s/shapes
+  status: 301!
+- from: /css/s/triangle
+  to: /css/s/shapes
+  status: 301!
