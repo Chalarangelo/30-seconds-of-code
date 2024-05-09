@@ -17,12 +17,30 @@ dateModified: 2024-05-09
   width: 100%;
   height: 144px;
   border-radius: var(--layout-border-radius) var(--layout-border-radius) 0 0;
-  margin-top: var(--layout-row-spacing);
 }
 
 .pattern-box + pre {
   margin-block-start: calc(-1 * var(--layout-row-spacing, 0));
   border-radius: 0 0 var(--layout-border-radius) var(--layout-border-radius);
+}
+
+.pattern-box + pre::before {
+  opacity: 0;
+}
+
+main > article > h2 {
+  margin: 0;
+  font-size: var(--font-sm);
+  transform: translateY(186px);
+  z-index: 1;
+  height: 0;
+}
+
+main > article > h2::after {
+  display: inline-block;
+  font-size: var(--font-sm);
+  content: "(CSS)";
+  margin-inline-start: var(--spacing-2);
 }
 
 .lines-2 {
@@ -91,6 +109,8 @@ dateModified: 2024-05-09
 }
 </style>
 
+## Stripes pattern
+
 <div class="pattern-box lines-2"></div>
 
 ```css
@@ -106,6 +126,8 @@ dateModified: 2024-05-09
   background-size: 24px 100%;
 }
 ```
+
+## Zig zag pattern
 
 <div class="pattern-box zigzag"></div>
 
@@ -126,6 +148,8 @@ dateModified: 2024-05-09
 }
 ```
 
+## Polka dot pattern
+
 <div class="pattern-box polka"></div>
 
 ```css
@@ -135,6 +159,8 @@ dateModified: 2024-05-09
   background-size: 24px 24px;
 }
 ```
+
+## Checkerboard pattern
 
 <div class="pattern-box rectangles"></div>
 
@@ -164,6 +190,8 @@ dateModified: 2024-05-09
 }
 ```
 
+## Rhombus pattern
+
 <div class="pattern-box rhombus"></div>
 
 ```css
@@ -182,6 +210,8 @@ dateModified: 2024-05-09
   background-repeat: repeat;
 }
 ```
+
+## Paper pattern
 
 <div class="pattern-box paper"></div>
 
@@ -205,6 +235,8 @@ dateModified: 2024-05-09
 }
 ```
 
+## Diagonal pattern
+
 <div class="pattern-box diagonal"></div>
 
 ```css
@@ -220,6 +252,8 @@ dateModified: 2024-05-09
 }
 ```
 
+## Triangles pattern
+
 <div class="pattern-box triangle"></div>
 
 ```css
@@ -229,6 +263,8 @@ dateModified: 2024-05-09
   background-size: 24px 24px;
 }
 ```
+
+## Waves pattern
 
 <div class="pattern-box wavy"></div>
 
@@ -243,6 +279,8 @@ dateModified: 2024-05-09
     repeating-linear-gradient(#5394fd55, #5394fd);
 }
 ```
+
+## Isometric pattern
 
 <div class="pattern-box isometric"></div>
 
