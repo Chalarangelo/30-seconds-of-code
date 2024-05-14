@@ -1,10 +1,11 @@
 ---
-title: K-means clustering
+title: Group data using the K-means clustering algorithm in JavaScript
+shortTitle: K-means clustering
 type: story
 language: javascript
 tags: [algorithm,array]
 cover: antelope
-excerpt: Group a set of data into clusters using the k-means clustering algorithm.
+excerpt: Implement the K-means clustering algorithm in JavaScript to group data into clusters.
 dateModified: 2024-05-11
 ---
 
