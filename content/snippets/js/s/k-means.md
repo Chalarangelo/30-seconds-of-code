@@ -1,19 +1,29 @@
 ---
 title: K-means clustering
-type: snippet
+type: story
 language: javascript
 tags: [algorithm,array]
 cover: antelope
-dateModified: 2020-12-29
+excerpt: Group a set of data into clusters using the k-means clustering algorithm.
+dateModified: 2024-05-11
 ---
 
-Groups the given data into `k` clusters, using the [k-means clustering](https://en.wikipedia.org/wiki/K-means_clustering) algorithm.
+## Definition
 
-- Use `Array.from()` and `Array.prototype.slice()` to initialize appropriate variables for the cluster `centroids`, `distances` and `classes`.
-- Use a `while` loop to repeat the assignment and update steps as long as there are changes in the previous iteration, as indicated by `itr`.
-- Calculate the euclidean distance between each data point and centroid using `Math.hypot()`, `Object.keys()` and `Array.prototype.map()`.
-- Use `Array.prototype.indexOf()` and `Math.min()` to find the closest centroid.
-- Use `Array.from()` and `Array.prototype.reduce()`, as well as `parseFloat()` and `Number.prototype.toFixed()` to calculate the new centroids.
+The [K-means clustering]((https://en.wikipedia.org/wiki/K-means_clustering)) algorithm is a popular **unsupervised machine learning algorithm** used to group a set of data into clusters. It works by **iteratively** assigning data points to the nearest cluster centroid and then recalculating the centroids based on the new assignments. This process is repeated until the centroids no longer change significantly or a maximum number of iterations is reached.
+
+## Implementation
+
+This implementation of the K-means clustering algorithm groups the given data into `k` clusters. **No maximum number of iterations** is set, so the algorithm will run until convergence is reached.
+
+1. As no **initial centroids** are provided, start by using the first `k` data points as the initial `centroids`, using `Array.prototype.slice()`.
+2. Initialize the `distances` array to store the **distances** between each data point and each centroid, as well as the `classes` array to store the **cluster assignments** for each data point.
+3. Use a `while` loop to repeat the **assignment and update steps** as long as there are changes in the previous iteration, as indicated by the `itr` variable.
+4. Calculate the [**Euclidean distance**](/js/s/euclidean-distance) between each data point and centroid using `Math.hypot()`, `Object.keys()`, and `Array.prototype.map()`.
+5. Use `Array.prototype.indexOf()` and `Math.min()` to find the **closest centroid** for each data point.
+6. Update the cluster assignments in the `classes` array and **check if any changes were made**.
+7. **Recalculate the centroids** by summing the data points assigned to each cluster and dividing by the number of data points in each cluster, using `Array.from()`, `Array.prototype.reduce()`, `Number.parseFloat()`, and `Number.prototype.toFixed()`.
+8. Repeat the process until **convergence** is reached.
 
 ```js
 const kMeans = (data, k = 1) => {
@@ -48,7 +58,9 @@ const kMeans = (data, k = 1) => {
         return acc;
       }, 0);
       for (let i in data[0]) {
-        centroids[c][i] = parseFloat(Number(centroids[c][i] / size).toFixed(2));
+        centroids[c][i] = Number.parseFloat(
+          Number(centroids[c][i] / size).toFixed(2)
+        );
       }
     }
   }
@@ -58,3 +70,7 @@ const kMeans = (data, k = 1) => {
 
 kMeans([[0, 0], [0, 1], [1, 3], [2, 0]], 2); // [0, 1, 1, 0]
 ```
+
+## Complexity
+
+The **time complexity** of the K-means clustering algorithm is `O(n * k * d * i)`, where `n` is the number of data points, `k` is the number of clusters, `d` is the number of dimensions in the data, and `i` is the number of iterations until convergence. The **space complexity** is `O(n * k + n * d)`, where the first term represents the space used by the centroids and classes arrays, and the second term represents the space used by the distances array.
