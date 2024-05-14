@@ -2914,3 +2914,6 @@
 - from: /js/s/uncached-module-require
   to: /js/s/reload-module
   status: 301!
+- from: /js/s/count-substrings
+  to: /js/s/count-occurences
+  status: 301!
