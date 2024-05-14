@@ -901,9 +901,6 @@
 - from: /js/s/redirect
   to: /js/s/redirect-to-url
   status: 301!
-- from: /js/s/require-uncached
-  to: /js/s/uncached-module-require
-  status: 301!
 - from: /js/s/attempt
   to: /js/s/attempt-invoking-function
   status: 301!
@@ -2910,4 +2907,10 @@
   status: 301!
 - from: /css/s/triangle
   to: /css/s/shapes
+  status: 301!
+- from: /js/s/require-uncached
+  to: /js/s/reload-module
+  status: 301!
+- from: /js/s/uncached-module-require
+  to: /js/s/reload-module
   status: 301!
