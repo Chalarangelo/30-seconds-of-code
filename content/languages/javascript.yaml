@@ -364,6 +364,8 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/trunc
   Number: >-
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+  Number(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/Number
   Number.EPSILON: >-
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/EPSILON
   Number.MAX_SAFE_INTEGER: >-
