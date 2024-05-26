@@ -1042,9 +1042,6 @@
 - from: /js/s/resolve-after
   to: /js/s/resolve-promise-after-amount-of-time
   status: 301!
-- from: /js/s/initial
-  to: /js/s/array-without-last-element
-  status: 301!
 - from: /js/s/index-by
   to: /js/s/function-based-array-indexing
   status: 301!
@@ -1424,6 +1421,12 @@
   to: /js/s/remove-first-last-n-array-elements
   status: 301!
 - from: /js/s/drop-array-elements-from-left
+  to: /js/s/remove-first-last-n-array-elements
+  status: 301!
+- from: /js/s/initial
+  to: /js/s/remove-first-last-n-array-elements
+  status: 301!
+- from: /js/s/array-without-last-element
   to: /js/s/remove-first-last-n-array-elements
   status: 301!
 - from: /js/s/atob
