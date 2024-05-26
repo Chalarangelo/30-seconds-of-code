@@ -6,6 +6,7 @@ snippetIds:
   - js/s/dynamic-getter-setter-proxy
   - js/s/immutable-object-proxy
   - js/s/singleton-proxy
+  - js/s/observable-proxy
   - js/s/dynamic-getter-chain-proxy
   - js/s/object-array-proxy
   - js/s/proxy-array-negative-index
