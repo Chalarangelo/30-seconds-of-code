@@ -1,16 +1,19 @@
 ---
-title: Indent string
-type: snippet
+title: Indent a JavaScript string
+shortTitle: Indent string
+type: tip
 language: javascript
 tags: [string]
 cover: metropolitan-window
-dateModified: 2020-11-01
+excerpt: Indent each line in a string by a specified number of spaces or a custom indentation character.
+dateModified: 2024-05-19
 ---
 
-Indents each line in the provided string.
+A problem I've stumbled upon a few times is indenting a **multiline string** in JavaScript. This can be useful in a handful of scenarios, but I've found it to be most useful when working with templates or code generation.
 
-- Use `String.prototype.replace()` and a regular expression to add the character specified by `indent` `count` times at the start of each line.
-- Omit the third argument, `indent`, to use a default indentation character of `' '`.
+Turns out it's a pretty simple operation! All you need is `String.prototype.replace()` and a **regular expression**. Then you'll need the `^` anchor and the `m` flag to match the **start of each line** in a multiline string. By replacing the start of each line with a specified number of spaces or a custom indentation character, you can easily indent the string.
+
+Customization via an optional `indent` parameter allows you to specify the **indentation character**. If you omit this parameter, the default indentation character will be a space (`' '`). Additionally, you can specify the **number of spaces** to indent each line by using the `count` parameter, and use `String.prototype.repeat()` to repeat the indentation character.
 
 ```js
 const indentString = (str, count, indent = ' ') =>
