@@ -45,7 +45,7 @@ fileContents.split('\n');
 
 ### Read file lines asynchronously
 
-Putting the pieces together, you can read a file **asynchronously** and return an array of lines. Make sure to handle the resulting `Promise` accordingly, using `Promise.prototype.then()` or `await`.
+Putting the pieces together, you can read a file **asynchronously** and return an array of lines. Make sure to handle the resulting `Promise` accordingly, using `await` or `Promise.prototype.then()`.
 
 ```js
 import { readFile } from 'fs/promises';
