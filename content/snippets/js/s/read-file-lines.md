@@ -1,31 +1,73 @@
 ---
-title: Read file lines
-type: snippet
+title: Read a file and return an array of lines
+shortTitle: Read file lines
+type: story
 language: javascript
 tags: [node]
 cover: solitude-beach
-dateModified: 2020-10-22
+excerpt: Parse a text file and return an array of lines, synchronously or asynchronously, using Node.js.
+dateModified: 2024-05-20
 ---
 
-Returns an array of lines from the specified file.
+Parsing **text files** is one of the most common tasks in programming. Luckily, Node.js provides simple ways to read files synchronously or asynchronously. Connecting the dots to convert the result into an array of lines is straightforward.
 
-- Use `fs.readFileSync()` to create a `Buffer` from a file.
-- Use `Buffer.prototype.toString()` to covert the buffer to a string.
-- Use `String.prototype.split()` to create an array of lines from the contents of the file.
+## Read a text file
+
+**Reading** text files can be accomplished either using `fs.readFileSync()` or `fs.readFile()`. The former is **synchronous** and blocks the event loop, while the latter is **asynchronous** and non-blocking, returning a `Promise`.
+
+Both methods return a `Buffer` object, which can be converted to a string using `Buffer.prototype.toString()`. Alternatively, you can specify the **encoding as the second argument** to return a string directly.
+
+```js
+import { readFileSync } from 'fs';
+import { readFile } from 'fs/promises';
+
+readFileSync('test.txt').toString('UTF8');
+// 'line1\nline2\nline3\n'
+readFile('test.txt', 'UTF8');
+// 'line1\nline2\nline3\n'
+
+readFile('test.txt').then(data => data.toString());
+// Promise {'line1\nline2\nline3\n'}
+readFile('test.txt', 'UTF8');
+// Promise {'line1\nline2\nline3\n'}
+```
+
+## Read file and convert to an array of lines
+
+To convert the contents of a file to an array of lines, you can use `String.prototype.split()` to **split the string by the newline character** (`\n`).
+
+```js
+const fileContents = 'line1\nline2\nline3\n';
+
+fileContents.split('\n');
+// ['line1', 'line2', 'line3']
+```
+
+### Read file lines asynchronously
+
+Putting the pieces together, you can read a file **asynchronously** and return an array of lines. Make sure to handle the resulting `Promise` accordingly, using `Promise.prototype.then()` or `await`.
+
+```js
+import { readFile } from 'fs/promises';
+
+const readFileLines = path =>
+  readFile(path, 'UTF8').then(data => data.split('\n'));
+
+readFileLines('test.txt').then(lines => console.log(lines));
+// ['line1', 'line2', 'line3']
+```
+
+### Read file lines synchronously
+
+If you prefer synchronous code, you can read the file **synchronously** and convert it to an array of lines. The resulting array can be used directly.
 
 ```js
 import { readFileSync } from 'fs';
 
-const readFileLines = filename =>
-  readFileSync(filename).toString('UTF8').split('\n');
+const readFileLinesSync = path =>
+  readFileSync(path, 'UTF8').toString().split('\n');
 
-/*
-contents of test.txt :
-  line1
-  line2
-  line3
-  ___________________________
-*/
-let arr = readFileLines('test.txt');
-console.log(arr); // ['line1', 'line2', 'line3']
+const lines = readFileLinesSync('test.txt');
+console.log(lines);
+// ['line1', 'line2', 'line3']
 ```
