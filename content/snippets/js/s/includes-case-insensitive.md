@@ -1,16 +1,19 @@
 ---
-title: Case-insensitive substring search
-type: snippet
+title: Can I check if a JavaScript string contains a substring, regardless of case?
+shortTitle: Case-insensitive substring search
+type: question
 language: javascript
-tags: [string]
+tags: [string,regexp]
 cover: cup-of-orange
-dateModified: 2022-07-28
+excerpt: Search for substrings in JavaScript strings without worrying about case sensitivity.
+dateModified: 2024-05-25
 ---
 
-Checks if a string contains a substring, case-insensitive.
+As with most languages, JavaScript's **substring matching is case-sensitive by default**. If you need to check if a string contains a substring, but you don't care about the case, you'll need to roll up your own solution.
 
-- Use the `RegExp` constructor with the `'i'` flag to create a regular expression, that matches the given `searchString`, ignoring the case.
-- Use `RegExp.prototype.test()` to check if the string contains the substring.
+Converting both strings to **lowercase** before comparing them is the naive approach, but it's generally discouraged for performance reasons. Instead, you can use a **regular expression** with the `'i'` flag to perform a case-insensitive search.
+
+In order to do so, you'll have to use the `RegExp()` constructor to create a regular expression that matches the given `searchString`, ignoring the case. Then, you can use the `RegExp.prototype.test()` method to check if the string contains the substring.
 
 ```js
 const includesCaseInsensitive = (str, searchString) =>
