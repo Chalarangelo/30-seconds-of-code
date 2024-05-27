@@ -1,16 +1,19 @@
 ---
-title: Check for leap year
-type: snippet
+title: Check if a year is a leap year in JavaScript
+shortTitle: Leap year check
+type: tip
 language: javascript
 tags: [date]
 cover: flowering-hills
-dateModified: 2020-10-20
+excerpt: Having a hard time wrapping your head around the math involved in checking for leap years? You might not need to!
+dateModified: 2024-05-26
 ---
 
-Checks if the given `year` is a leap year.
+A [leap year](https://en.wikipedia.org/wiki/Leap_year) is a year that is evenly divisible by 4, except for end-of-century years, which must be divisible by 400.
 
-- Use the `Date` constructor, setting the date to February 29th of the given `year`.
-- Use `Date.prototype.getMonth()` to check if the month is equal to `1`.
+While detecting a leap year via code sounds like a lot of work, there's a method that **doesn't really involve any math** whatsoever. Using the `Date` object, you can easily check if a given year is a leap year.
+
+All you have to do is use the `Date()` constructor to create an object for **February 29th of the given year**. If the month is February, then `Date.prototye.getMonth()` will return `1` (since months are zero-based in JavaScript), meaning it's a **leap year**. If the month is not February, the date will be set to March 1st, which means it's **not a leap year**.
 
 ```js
 const isLeapYear = year => new Date(year, 1, 29).getMonth() === 1;
