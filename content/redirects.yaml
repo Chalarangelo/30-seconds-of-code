@@ -2926,3 +2926,6 @@
 - from: /js/s/validate-number
   to: /js/s/number-validation
   status: 301!
+- from: /js/s/day-name
+  to: /js/s/weekday-name
+  status: 301!
