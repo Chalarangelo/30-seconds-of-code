@@ -1,15 +1,19 @@
 ---
-title: Escape RegExp
-type: snippet
+title: Escape a regular expression in JavaScript
+shortTitle: Escape RegExp
+type: tip
 language: javascript
 tags: [string,regexp]
 cover: frog-blue-flower
-dateModified: 2020-09-15
+excerpt: Learn how to escape a string to use in a regular expression.
+dateModified: 2024-05-29
 ---
 
-Escapes a string to use in a regular expression.
+Regular expressions are a powerful tool for pattern matching and string manipulation. However, when you need to use a string as a regular expression, you need to **escape special characters** to avoid syntax errors.
 
-- Use `String.prototype.replace()` to escape special characters.
+Luckily, escaping a string for use in a regular expression is not hard, but it requires, you guessed it, a regular expression! By using the `String.prototype.replace()` method, you can escape special characters in a string.
+
+The **regular expression** that you can then use to escape special characters is `/[.*+?^${}()|[\]\\]/g`. This regular expression matches all the special characters used in regular expressions. Then, each match is replaced with the **escaped version of the character** using `\\$&`.
 
 ```js
 const escapeRegExp = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
