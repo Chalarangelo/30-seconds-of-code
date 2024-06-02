@@ -1,15 +1,17 @@
 ---
-title: Get colon time from date
-type: snippet
+title: Get colon time from a JavaScript date
+shortTitle: Colon time from date
+type: tip
 language: javascript
 tags: [date,string]
 cover: digital-nomad-5
-dateModified: 2020-10-19
+excerpt: Get the time part of a Date object in the format HH:MM:SS.
+dateModified: 2024-05-30
 ---
 
-Returns a string of the form `HH:MM:SS` from a `Date` object.
+JavaScript's `Date` objects contain a lot of information, including the time. They also include a lot of useful methods for extracting specific parts of the date and time. However, if you want to get the **time part** of a `Date` object in the format `HH:MM:SS`, you might need to do a bit of **string manipulation**.
 
-- Use `Date.prototype.toTimeString()` and `String.prototype.slice()` to get the `HH:MM:SS` part of a given `Date` object.
+`Date.prototype.toTimeString()` returns a string representation of the time part of a `Date` object. However, this string also includes the **timezone information**, which you might not need. To get only the time part in the format `HH:MM:SS`, you can use `String.prototype.slice()` to extract the **first 8 characters** of the string.
 
 ```js
 const getColonTimeFromDate = date => date.toTimeString().slice(0, 8);
