@@ -913,6 +913,12 @@
 - from: /js/s/get-cmd-args
   to: /js/s/command-line-arguments
   status: 301!
+- from: /js/s/has-flags
+  to: /js/s/command-line-arguments
+  status: 301!
+- from: /js/s/process-arguments-have-flags
+  to: /js/s/command-line-arguments
+  status: 301!
 - from: /js/s/nest
   to: /js/s/nest-objects
   status: 301!
@@ -945,9 +951,6 @@
   status: 301!
 - from: /js/s/pretty-bytes
   to: /js/s/pretty-print-number-of-bytes
-  status: 301!
-- from: /js/s/has-flags
-  to: /js/s/process-arguments-have-flags
   status: 301!
 - from: /js/s/have-same-contents
   to: /js/s/arrays-have-same-contents
