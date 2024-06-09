@@ -1,20 +1,19 @@
 ---
-title: Walk through object
-type: snippet
+title: Walk through a JavaScript object depth-first
+shortTitle: Depth-first walk through object
+type: tip
 language: javascript
 tags: [object,recursion,generator]
 cover: bridge
-dateModified: 2021-11-15
+excerpt: Create a generator that walks through all the keys of a given object.
+dateModified: 2024-06-05
 ---
 
-Creates a generator, that walks through all the keys of a given object.
+Given an **object with deeply nested keys**, walking through its **leaf nodes** is a non-trivial task. Supposing that we want to visit each key in a **depth-first manner**, we can code a **generator function** to achieve this, by recursively visiting each key and its children.
 
-- Use recursion.
-- Define a generator function, `walk`, that takes an object and an array of keys.
-- Use a `for...of` loop and `Object.keys()` to iterate over the keys of the object.
-- Use `typeof` to check if each value in the given object is itself an object.
-- If so, use the `yield*` expression to recursively delegate to the same generator function, `walk`, appending the current `key` to the array of keys. Otherwise, `yield` an array of keys representing the current path and the value of the given `key`.
-- Use the `yield*` expression to delegate to the `walk` generator function.
+To walk through a JavaScript object depth-first, you need to use a `for...of` loop and `Object.keys()` to iterate over the keys of the object. You can then use `typeof` to check if each value in the given object is itself an object.
+
+If so, you can use the `yield*` expression to **recursively delegate to the same generator function**, appending the current key to the array of keys. Otherwise, you can `yield` an array of keys representing the current path and the value of the given key.
 
 ```js
 const walkThrough = function* (obj) {
