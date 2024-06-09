@@ -3,7 +3,7 @@
  */
 export class TocReader {
   static matcher =
-    /<h(?<level>[2-4])><a.*id="(?<href>.*?)".*>(?<content>.*?)<\/a><\/h\1>/g;
+    /<h(?<level>[2-4])><a.*id="(?<href>.*?)"[^<]*>(?<content>.*?)<\/a><\/h\1>/g;
 
   static readToC = html => {
     if (!html) return undefined;
@@ -11,7 +11,7 @@ export class TocReader {
       return {
         level: Number.parseInt(groups.level, 10),
         href: groups.href,
-        content: groups.content.trim(),
+        content: groups.content.replace(/<[^>]*>/g, '').trim(),
       };
     });
     if (headings.length === 0) return undefined;
