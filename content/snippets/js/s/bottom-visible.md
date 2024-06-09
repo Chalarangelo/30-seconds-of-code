@@ -1,15 +1,19 @@
 ---
-title: Check if bottom of page is visible
-type: snippet
+title: Check if the bottom of the page is visible using JavaScript
+description: Check if bottom of page is visible
+type: tip
 language: javascript
 tags: [browser]
 cover: hiking-walking
-dateModified: 2020-10-22
+excerpt: If you've ever needed to check if the bottom of the page is visible, this snippet will help you do just that.
+dateModified: 2024-06-01
 ---
 
-Checks if the bottom of the page is visible.
+A very common need in web development is to check if the bottom of the page is visible. This can be useful for lazy loading content, infinite scrolling, or other similar features. While JavaScript does't provide a built-in check method or property for this, all you need to implement it yourself is a little math.
 
-- Use `Window.scrollY`, `Element.scrollHeight` and `Element.clientHeight` to determine if the bottom of the page is visible.
+Given an HTML element, you can use `Element.scrollHeight` to get the **total height** of the element, and `Element.clientHeight` to get the **height of the visible part** of the element. Applying that to the `Document.documentElement` will give you the height of the entire page and the height of the visible part of the page.
+
+Then, using `Window.scrollY`, you can get the **current scroll position** of the window. Finally, by adding the client height and scroll position, you can determine if the bottom of the page is visible.
 
 ```js
 const bottomVisible = () =>
