@@ -1,25 +1,30 @@
 ---
-title: Collection is empty
-type: snippet
+title: Check if a JavaScript collection is empty
+shortTitle: Value is empty
+type: tip
 language: javascript
 tags: [type,array,object,string]
 cover: mountain-lake
-dateModified: 2020-10-20
+excerpt: Quickly determine if a collection of values is empty in JavaScript.
+dateModified: 2024-06-10
 ---
 
-Checks if the a value is an empty object/collection, has no enumerable properties or is any type that is not considered a collection.
+When we say a collection of values is _empty_, we mean that it has no elements with meaningful values. In JavaScript, we can consider an array, object, or string as empty if it has no elements, properties, or characters, respectively.
 
-- Check if the provided value is `null` or if its `length` is equal to `0`.
+While arrays and strings share a `length` property, objects don't have a direct way to determine their size. In order to do so, we can use `Object.keys()` to get an **array of the object's keys** and then check its length. Luckily, `Object.keys()` also works on arrays and string, returning their **indices** as strings.
+
+Given this information, we can use `Array.prototype.length` to check if the resulting **keys are empty**. If the value is `null` or `undefined`, we can consider it empty as well.
 
 ```js
-const isEmpty = val => val == null || !(Object.keys(val) || val).length;
+const isEmpty = val =>
+  val === null || val === undefined || !Object.keys(val).length;
 
-isEmpty([]); // true
-isEmpty({}); // true
-isEmpty(''); // true
-isEmpty([1, 2]); // false
-isEmpty({ a: 1, b: 2 }); // false
-isEmpty('text'); // false
-isEmpty(123); // true - type is not considered a collection
-isEmpty(true); // true - type is not considered a collection
+isEmpty([]);              // true
+isEmpty([1, 2]);          // false
+isEmpty({});              // true
+isEmpty({ a: 1, b: 2 });  // false
+isEmpty('');              // true
+isEmpty('text');          // false
+isEmpty(null);            // true
+isEmpty(undefined);       // true
 ```
