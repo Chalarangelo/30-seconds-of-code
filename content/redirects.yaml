@@ -1390,6 +1390,9 @@
 - from: /js/s/is-object
   to: /js/s/complete-guide-to-js-type-checking
   status: 301!
+- from: /js/s/is-plain-object
+  to: /js/s/complete-guide-to-js-type-checking
+  status: 301!
 - from: /js/s/is-primitive
   to: /js/s/complete-guide-to-js-type-checking
   status: 301!

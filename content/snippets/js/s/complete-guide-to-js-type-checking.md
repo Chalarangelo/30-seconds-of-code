@@ -185,6 +185,20 @@ isFunction('x'); // false
 >
 > **Classes** are also considered functions in JavaScript. You might want to use the `instanceof` operator to check if a value is an instance of a class.
 
+### Value is plain object
+
+An object is considered **plain** when it is created by the `Object` constructor. This is in comparison to other objects like arrays, functions, or instances of classes, such as `Map`.
+
+In order to check if a value is a plain object, we need to make sure that the value is truthy (not `null` or `undefined`), that it is an object, and that its **constructor** is equal to `Object`, using `Object.prototype.constructor`.
+
+```js
+const isPlainObject = val =>
+  !!val && typeof val === 'object' && val.constructor === Object;
+
+isPlainObject({ a: 1 }); // true
+isPlainObject(new Map()); // false
+```
+
 #### Value is async function
 
 A function declared with the `async` keyword is considered asynchronous. Typechecking for async functions requires the use of `Object.prototype.toString()` and `Function.prototype.call()` to check if the result is `'[object AsyncFunction]'`.
