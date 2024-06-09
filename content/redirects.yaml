@@ -1018,9 +1018,6 @@
 - from: /js/s/equals
   to: /js/s/deep-equality-comparison
   status: 301!
-- from: /js/s/size
-  to: /js/s/size-of-array-object-or-string
-  status: 301!
 - from: /js/s/sum-power
   to: /js/s/sum-powers-in-range
   status: 301!
