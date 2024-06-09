@@ -306,9 +306,8 @@ CSVToJSON('col1;col2\na;b\nc;d', ';');
 
 This guide covered **most of the groundwork** necessary to convert between CSV data and JavaScript arrays, objects, or JSON. The provided functions can be **customized or extended**, depending on your specific needs. Remember that CSV is **not a standardized format**, so you may need to adjust the code to fit your specific use-case.
 
-> [!NOTE]
->
-> Below you can find a complete implementation of the functions discussed in this guide. Feel free to copy and paste them into your project.
+<details>
+<summary>View the complete implementation</summary>
 
 ```js [serializeCSV.js]
 const isEmptyValue = value =>
@@ -412,3 +411,5 @@ const CSVtoObject = (data, delimiter = ',') => {
 const CSVToJSON = (data, delimiter = ',') =>
   JSON.stringify(CSVtoObject(data, delimiter));
 ```
+
+</details>
