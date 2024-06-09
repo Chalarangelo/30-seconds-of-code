@@ -913,9 +913,6 @@
 - from: /js/s/get-cmd-args
   to: /js/s/command-line-arguments
   status: 301!
-- from: /js/s/jso-nto-csv
-  to: /js/s/json-to-csv
-  status: 301!
 - from: /js/s/nest
   to: /js/s/nest-objects
   status: 301!
@@ -2928,4 +2925,19 @@
   status: 301!
 - from: /js/s/day-name
   to: /js/s/weekday-name
+  status: 301!
+- from: /js/s/jso-nto-csv
+  to: /js/s/convert-csv-to-array-object-or-json
+  status: 301!
+- from: /js/s/json-to-csv
+  to: /js/s/convert-csv-to-array-object-or-json
+  status: 301!
+- from: /js/s/array-to-csv
+  to: /js/s/convert-csv-to-array-object-or-json
+  status: 301!
+- from: /js/s/csv-to-json
+  to: /js/s/convert-csv-to-array-object-or-json
+  status: 301!
+- from: /js/s/csv-to-array
+  to: /js/s/convert-csv-to-array-object-or-json
   status: 301!
