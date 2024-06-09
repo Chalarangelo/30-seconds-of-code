@@ -87,7 +87,8 @@ main > article {
   > pre,
   > blockquote,
   > img,
-  > figure {
+  > figure,
+  > details {
     // Add bleed to elements that should span the full width of the container.
     grid-column: 1 / -1;
     // Use the layout border radius to round the corners, when needed.

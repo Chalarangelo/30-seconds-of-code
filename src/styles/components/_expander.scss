@@ -1,0 +1,86 @@
+details {
+  summary {
+    // Use flex to align the content vertically.
+    display: flex;
+    align-items: center;
+    // Add appropriate spacing to align the text with the content below.
+    gap: var(--spacing-6);
+    // Match the font size of the main content.
+    font-size: var(--font-md);
+    font-weight: var(--font-weight-medium);
+    // Display the cursor as a pointer to indicate interactivity.
+    cursor: pointer;
+    // Apply a transition on hover.
+    transition: color var(--animation-duration-medium) ease;
+
+    @media (hover: hover) {
+      &:is(:hover, :focus) {
+        // Only apply hover styles on devices that support hover.
+        color: var(--color-primary-light);
+      }
+    }
+
+    &::before {
+      // Allow transformations (rotate) to tak effect.
+      display: inline-block;
+      // Display a symbol according to the size of the element.
+      content: '▶';
+      font-size: 0.75em;
+      // Apply a transition on the transform property.
+      transition: transform var(--animation-duration-medium) ease;
+    }
+
+    @media (max-width: 52rem) {
+      // Adjust the gap on smaller viewports, bringing the text closer to the symbol.
+      gap: var(--spacing-4);
+
+      &::before {
+        // Adjust the margin on smaller viewports, so that the symbol is not too
+        // close to the edge of the screen.
+        margin-left: var(--spacing-6);
+      }
+    }
+
+    // Hide the marker for the summary element.
+    &::marker {
+      display: none;
+      content: '';
+    }
+
+    // Hide the marker for the summary element in WebKit browsers.
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  > :not(summary) {
+    // Counteract the bleed effect of the `details` element, allowing only the
+    // `summary` to bleed into the layout, while all other elements align with
+    // the main content.
+    margin-inline: var(--layout-bleed-width);
+
+    @media (max-width: 52rem) {
+      margin-inline: 0;
+    }
+  }
+
+  > pre,
+  > blockquote,
+  > img,
+  > figure {
+    // Add a border radius to child elements.
+    border-radius: var(--layout-border-radius);
+  }
+
+  &[open] {
+    summary {
+      // Add some spacing to the bottom of the open details element.
+      margin-block-end: var(--spacing-4);
+
+      &::before {
+        // Rotate the symbol to indicate the open state.
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
