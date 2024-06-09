@@ -2941,3 +2941,6 @@
 - from: /js/s/csv-to-array
   to: /js/s/convert-csv-to-array-object-or-json
   status: 301!
+- from: /js/s/pluralize
+  to: /js/s/pluralize-string
+  status: 301!
