@@ -1,33 +1,64 @@
 ---
-title: Nest objects
-type: snippet
+title: Nest linked JavaScript objects
+shortTitle: Nest objects
+type: tip
 language: javascript
 tags: [object,recursion]
 cover: birds
-dateModified: 2020-10-21
+excerpt: Learn how to recursively nest objects linked to one another in a flat array.
+dateModified: 2024-06-06
 ---
 
-Nests recursively objects linked to one another in a flat array.
+More than once in my coding career, I've come across impractical data structures that need transformation. One particularly annoying one was a **flat array of objects** that needed to be linked to one another. To make it easier to work with, I needed to nest them in a **tree-like structure**.
 
-- Use recursion.
-- Use `Array.prototype.filter()` to filter the items where the `id` matches the `link`.
-- Use `Array.prototype.map()` to map each item to a new object that has a `children` property which recursively nests the items based on which ones are children of the current item.
-- Omit the second argument, `id`, to default to `null` which indicates the object is not linked to another one (i.e. it is a top level object).
-- Omit the third argument, `link`, to use `'parent_id'` as the default property which links the object to another one by its `id`.
+From the get-go, I knew that **recursion** was the way to go. Using `Array.prototype.filter()` and `Array.prototype.map()`, I was able to filter the items based on their `id` and map them to a new object that had a `children` property. This property recursively nested the items based on which ones were children of the current item.
+
+In order to customize my solution, I added two **optional arguments**: `id` and `link`. The former defaults to `null`, indicating that the object is not linked to another one. The latter defaults to `'parentId'`, which is the property that links the object to another one by its `id`.
 
 ```js
-const nest = (items, id = null, link = 'parent_id') =>
+const nest = (items, id = null, link = 'parentId') =>
   items
     .filter(item => item[link] === id)
     .map(item => ({ ...item, children: nest(items, item.id, link) }));
 
 const comments = [
-  { id: 1, parent_id: null },
-  { id: 2, parent_id: 1 },
-  { id: 3, parent_id: 1 },
-  { id: 4, parent_id: 2 },
-  { id: 5, parent_id: 4 }
+  { id: 1, parentId: null },
+  { id: 2, parentId: 1 },
+  { id: 3, parentId: 1 },
+  { id: 4, parentId: 2 },
+  { id: 5, parentId: 4 }
 ];
 const nestedComments = nest(comments);
-// [{ id: 1, parent_id: null, children: [...] }]
+/*
+[
+  {
+    id: 1,
+    parentId: null,
+    children: [
+      {
+        id: 2,
+        parentId: 1,
+        children: [
+          {
+            id: 4,
+            parentId: 2,
+            children: [
+              {
+                id: 5,
+                parentId: 4,
+                children: []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: 3,
+        parentId: 1,
+        children: []
+      }
+    ]
+  }
+]
+*/
 ```
