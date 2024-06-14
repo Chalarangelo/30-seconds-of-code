@@ -5,8 +5,8 @@
     "baseUrl": ".",
     "paths": {
       "#blocks/*": ["./src/blocks/*.js"],
-      "#components/*" : ["./src/components/*.astro"],
-      "#layouts/*": ["./src/layouts/*.astro"],
+      "#components/*" : ["./astro/components/*.astro"],
+      "#layouts/*": ["./astro/layouts/*.astro"],
       "#settings/*": ["./src/settings/*.js"],
       "#utils": ["./src/utils/index.js"],
       "#utils/search": ["./src/utils/search.js"]
