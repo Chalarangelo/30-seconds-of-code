@@ -8,4 +8,5 @@ export default defineConfig({
     inlineStylesheets: 'always',
   },
   compressHTML: true,
+  srcDir: 'astro',
 });
