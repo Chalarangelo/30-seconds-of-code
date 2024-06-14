@@ -9,11 +9,15 @@ test_old/
 coverage/
 
 # Logs
+/log/*
 logs
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Tempfiles
+/tmp/*
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
@@ -77,6 +81,8 @@ yarn-error.log
 .yarn-integrity
 
 # dotenv environment variables file
+/.env*
+!/.env*.erb
 .env
 
 # parcel-bundler cache (https://parceljs.org/)
@@ -140,3 +146,9 @@ snippet.png
 
 # Imported files for development
 imported/
+
+# Storage (SQLite databases)
+# /storage/*
+
+# Master key for decrypting credentials
+/config/master.key
