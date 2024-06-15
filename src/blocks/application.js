@@ -242,14 +242,8 @@ export class Application {
 
     // Populate collections
     collections.forEach(collection => {
-      const {
-        snippetIds,
-        typeMatcher,
-        languageMatcher,
-        tagMatcher,
-        parent,
-        ...rest
-      } = collection;
+      const { snippetIds, languageMatcher, tagMatcher, parent, ...rest } =
+        collection;
       const collectionRec = Collection.createRecord({
         parent,
         featuredIndex: featuredListings.indexOf(collection.id),
@@ -264,11 +258,6 @@ export class Application {
         // Use publishedBy in other listings to include unlisted snippets in order
         // to allow for proper breadcrumbs to form for them
         let queryScope = 'publishedByPopularity';
-        if (typeMatcher)
-          if (typeMatcher === 'article') {
-            queryScope = 'publishedByNew';
-            queryMatchers.push(snippet => snippet.type !== 'snippet');
-          } else queryMatchers.push(snippet => snippet.type === typeMatcher);
         if (languageMatcher)
           queryMatchers.push(
             snippet =>
