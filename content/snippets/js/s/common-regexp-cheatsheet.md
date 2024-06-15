@@ -2,7 +2,7 @@
 title: Common regular expressions
 type: cheatsheet
 language: javascript
-tags: [string,regexp]
+tags: [string,regexp,cheatsheet]
 cover: rocky-beach
 excerpt: A collection of regular expressions that can be used to solve common problems.
 dateModified: 2022-11-09

@@ -3,7 +3,7 @@ title: Create shapes using CSS
 shortTitle: Shapes
 type: cheatsheet
 language: css
-tags: [visual]
+tags: [visual,cheatsheet]
 cover: oven-paddle
 excerpt: Use CSS to create various shapes like circles, triangles, and squares.
 dateModified: 2024-05-08

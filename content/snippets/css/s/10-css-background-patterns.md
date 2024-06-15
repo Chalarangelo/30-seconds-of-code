@@ -3,7 +3,7 @@ title: 10 beautiful CSS background patterns
 shortTitle: CSS background patterns
 type: cheatsheet
 language: css
-tags: [visual]
+tags: [visual,cheatsheet]
 cover: armchair-design
 excerpt: I hand picked 10 of my favorite CSS background patterns from MagicPattern for your next project. Get them now!
 dateModified: 2024-05-09
