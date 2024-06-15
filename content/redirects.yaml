@@ -136,9 +136,6 @@
 - from: /c/cheatsheets/*
   to: /cheatsheets/:splat
   status: 301!
-- from: /c/tips/*
-  to: /tips/:splat
-  status: 301!
 - from: /c/web-development/*
   to: /web-development/:splat
   status: 301!
