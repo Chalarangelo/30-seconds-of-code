@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+import { Parsley } from '#parsley';
+
+Parsley.exportContent();

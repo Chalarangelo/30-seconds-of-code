@@ -32,6 +32,7 @@
     "unist-util-visit-parents": "^6.0.1"
   },
   "imports": {
+    "#parsley": ["./parsley/parsley.js"],
     "#blocks/*": "./src/blocks/*.js",
     "#components/*": "./astro/components/*.astro",
     "#layouts/*": "./astro/layouts/*.astro",
