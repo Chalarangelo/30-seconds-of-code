@@ -13,21 +13,20 @@ import {
   transfomImagePaths,
   wrapTables,
   embedCodepensFromLinks,
-} from '#blocks/extractor/markdownParser/remarkPlugins';
-import pathSettings from '#settings/paths';
-const assetPath = `/${pathSettings.staticAssetPath}`;
+} from './remarkPlugins.js';
+import { assetPath } from '../config.js';
 
 export class MarkdownParser {
   static _languageData = new Map();
   static _processors = new Map();
 
-  static setupProcessors = ({ languageData, grammars }) => {
+  static setupProcessors = ({ languages, grammars }) => {
     // Language data is a Map of language objects:
     // (key => {id, long, short, name, allLanguageReferences, references})
-    MarkdownParser._languageData = [...languageData.values()].reduce(
+    MarkdownParser._languageData = [...languages.values()].reduce(
       (languageDataMap, { short, allLanguageReferences }) => {
         const allReferences = allLanguageReferences.reduce((acc, ref) => {
-          const references = languageData.get(ref).references;
+          const references = languages.get(ref).references;
           return references ? { ...acc, ...references } : acc;
         }, {});
 

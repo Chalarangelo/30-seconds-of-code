@@ -11,32 +11,13 @@ export const highlightCode = ({ grammars }) => {
   // Load Prism grammars
   loadLanguages(Object.keys(languages));
 
-  // Parses the language and title from the language string. Only supports
-  // space separated language and title, e.g. `language [title]`.
-  // The title must be wrapped in square brackets.
-  const parseLanguageAndTitle = (lang, meta) => {
-    if (lang && meta)
-      return {
-        languageName: lang,
-        title: meta.replace('[', '').replace(']', ''),
-      };
-    if (lang)
-      return {
-        languageName: lang,
-        title: null,
-      };
-    return {
-      languageName: 'text',
-      title: null,
-    };
-  };
-
   return tree => {
     visit(tree, `code`, node => {
-      const { languageName, title } = parseLanguageAndTitle(
-        node.lang,
-        node.meta
-      );
+      // Parse the language and title from the language string. Only supports
+      // space separated language and title, e.g. `language [title]`.
+      // The title must be wrapped in square brackets.
+      const languageName = node.lang || 'text';
+      const title = node.meta?.replace('[', '').replace(']', '') || null;
       node.type = `html`;
 
       const highlightedCode = Prism.highlight(
@@ -65,8 +46,7 @@ export const highlightCode = ({ grammars }) => {
         ${Object.entries(attributes).reduce(
           (acc, [key, value]) => `${acc} ${key}="${value}"`,
           ``
-        )}
-      >${highlightedCode.trim()}</pre>`;
+        )}>${highlightedCode.trim()}</pre>`;
     });
   };
 };
@@ -115,7 +95,6 @@ export const linkInlineCode = ({ references }) => {
 export const safeguardExternalLinks = () => {
   return tree => {
     visit(tree, { type: `element`, tagName: `a` }, node => {
-      // if (node.tagName !== `a`) return;
       const { properties } = node;
       if (!properties || !properties.href) return;
 
