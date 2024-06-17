@@ -33,12 +33,12 @@
   },
   "imports": {
     "#parsley": ["./parsley/parsley.js"],
+    "#search": ["./search/search.js"],
     "#blocks/*": "./src/blocks/*.js",
     "#components/*": "./astro/components/*.astro",
     "#layouts/*": "./astro/layouts/*.astro",
     "#settings/*": "./src/settings/*.js",
-    "#utils": "./src/utils/index.js",
-    "#utils/search": "./src/utils/search.js"
+    "#utils": "./src/utils/index.js"
   },
   "scripts": {
     "predev": "NODE_ENV=development node ./src/scripts/develop.js",
