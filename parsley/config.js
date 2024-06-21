@@ -7,5 +7,4 @@ export const languageGlob = `${contentDir}/languages/*.yaml`;
 export const grammarPath = `${contentDir}/grammars.yaml`;
 export const rankingEnginePath = `${contentDir}/rankingEngine.yaml`;
 export const hubPath = `${contentDir}/hub.yaml`;
-export const mdCodeFence = '```';
 export const snippetPrefix = `${contentDir}/snippets/`;
