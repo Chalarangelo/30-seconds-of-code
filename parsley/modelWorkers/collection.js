@@ -69,7 +69,7 @@ export const exportCollectionData = collectionData => {
       mini_name: collection.miniName,
       featured: collection.featured,
       featured_index: collection.featuredIndex,
-      splash: collection.splash,
+      cover: collection.splash,
       description: collection.description,
       short_description: collection.shortDescription,
       top_level: collection.topLevel,
