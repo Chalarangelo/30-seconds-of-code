@@ -14,16 +14,19 @@ export const extractCollectionSnippetData = (collections, snippets) => {
           collectionId,
           snippetId: snippet.id,
           position: snippet.listed ? index : -1,
+          dateModified: snippet.dateModified,
         }));
       }
 
       if (snippetIds && snippetIds.length) {
-        // TODO: Note that this doesn't account for unlisted snippets
-        return snippetIds.map((snippetId, index) => ({
-          collectionId,
-          snippetId,
-          position: index,
-        }));
+        return rankedSnippets
+          .filter(snippet => snippetIds.includes(snippet.id))
+          .map((snippet, index) => ({
+            collectionId,
+            snippetId: snippet.id,
+            position: snippet.listed ? index : -1,
+            dateModified: snippet.dateModified,
+          }));
       }
 
       let collectionSnippets = [...rankedSnippets];
@@ -44,6 +47,7 @@ export const extractCollectionSnippetData = (collections, snippets) => {
           collectionId,
           snippetId: snippet.id,
           position: index,
+          dateModified: snippet.dateModified,
         }));
       }
 
@@ -51,6 +55,7 @@ export const extractCollectionSnippetData = (collections, snippets) => {
         collectionId,
         snippetId: snippet.id,
         position: snippet.listed ? index : -1,
+        dateModified: snippet.dateModified,
       }));
     })
     .flat();
@@ -65,6 +70,8 @@ export const exportCollectionSnippetData = collectionSnippetData => {
       collection_cid: collectionSnippet.collectionId,
       snippet_cid: collectionSnippet.snippetId,
       position: collectionSnippet.position,
+      // This is a denormalized field, but helps us avoid N+1 queries.
+      date_modified: collectionSnippet.dateModified,
     };
   });
   /* eslint-enable camelcase */
