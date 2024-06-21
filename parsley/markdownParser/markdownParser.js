@@ -84,20 +84,18 @@ export class MarkdownParser {
     }, new Map());
   };
 
-  static parseMarkdown = (markdown, languageShort = null) => {
+  static processMarkdown = (markdown, languageShort = null) => {
     const processor = MarkdownParser._processors.get(
       languageShort || 'default'
     );
-    return String(processor.processSync(markdown));
+    return processor.process(markdown);
   };
 
-  static parseSegments = (texts, languageShort) =>
-    Object.entries(texts).reduce((result, [key, value]) => {
-      if (!value.trim()) return result;
+  static parse = (text, languageShort) => {
+    if (!text.trim()) return null;
 
-      const htmlKey = `${key}Html`;
-      result[htmlKey] = MarkdownParser.parseMarkdown(value, languageShort);
-
-      return result;
-    }, {});
+    return MarkdownParser.processMarkdown(text, languageShort).then(html =>
+      String(html)
+    );
+  };
 }
