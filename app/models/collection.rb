@@ -33,8 +33,11 @@ class Collection < ApplicationRecord
   scope :listed, -> { where(featured: true) }
   scope :featured, -> { listed.order('featured_index asc') }
 
+  # Cache the main collection on the class level to avoid repeated queries.
+  @@main_collection = nil
+
   def self.main
-    find(MAIN_COLLECTION_CID)
+    @@main_collection ||= find(MAIN_COLLECTION_CID)
   end
 
   def has_parent?
