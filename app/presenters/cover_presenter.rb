@@ -26,6 +26,10 @@ class CoverPresenter
     "#{cover_prefix}#{cover_name}#{cover_suffix}#{COVER_EXTENSION}"
   end
 
+  def cover_full_url
+    "#{Orbit::settings[:website][:url]}#{cover_url}"
+  end
+
   def cover_srcset
     cover_sizes.map do |size|
       suffix = size.delete('w')
