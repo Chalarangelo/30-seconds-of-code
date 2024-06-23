@@ -24,6 +24,10 @@ module CommonApi
       @url ||= is_snippet? ? slug : first_page_slug
     end
 
+    def full_url
+      @full_url ||= "#{Orbit::settings[:website][:url]}#{url}"
+    end
+
     def seo_description
       @seo_description ||= short_description.strip_markdown
     end
@@ -39,6 +43,10 @@ module CommonApi
 
     def type
       self.class.name.downcase
+    end
+
+    def preview
+      @preview ||= serialize_as(:preview)
     end
   end
 end
