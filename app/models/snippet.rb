@@ -79,6 +79,11 @@ class Snippet < ApplicationRecord
     title.include?(title_language) ? title : "#{title_language} - #{title}"
   end
 
+  # TODO: Align naming between this and the collection and move bakc to common api
+  def seo_description
+    @seo_description ||= short_text.strip_markdown
+  end
+
   def primary_tag
     tags.first
   end
@@ -157,14 +162,23 @@ class Snippet < ApplicationRecord
     breadcrumbs_presenter.recommended_collection
   end
 
-  # recommended_snippets
+  def recommended_snippets
+    recommendation_presenter.recommend_snippets
+  end
 
-  # preview
+  def page
+    Page.from(self)
+  end
 
   private
 
   # TODO: This will most likely cause N+1, needs a preload on a higher level.
   def breadcrumbs_presenter
     @breadcrumbs_presenter ||= BreadcrumbPresenter.new(self)
+  end
+
+  # TODO: Most likely another N+1 here...
+  def recommendation_presenter
+    @recommendation_presenter ||= RecommendationPresenter.new(self)
   end
 end
