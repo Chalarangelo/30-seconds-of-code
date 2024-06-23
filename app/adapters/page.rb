@@ -21,7 +21,6 @@ class Page
       raise NotImplementedError
     end
 
-    # TODO: This has to be merged into the props, probably at a serializer level!?
     def schema_data
       return @schema_data if defined?(@schema_data)
 
