@@ -38,7 +38,7 @@ class Collection < ApplicationRecord
   end
 
   def has_parent?
-    parent.present?
+    parent_cid.present?
   end
 
   def is_main?
@@ -54,7 +54,8 @@ class Collection < ApplicationRecord
   end
 
   def root_url
-    has_parent? ? parent.slug : slug
+    # To avoid an extra query, we recreate the parent's slug here.
+    has_parent? ? parent_cid.to_seo_slug : slug
   end
 
   def siblings
