@@ -25,24 +25,27 @@ class BreadcrumbPresenter
   end
 
   def recommended_collection
-    collections.
-      where.not(id: collections_for_breadcrumbs.pluck(:id)).
-      ranked.
-      first
+    all_collections.select do |collection|
+      !collections_for_breadcrumbs.include?(collection)
+    end.sort_by(&:ranking).last
   end
 
   private
 
+  def all_collections
+    @all_collections ||= collections.to_a - [Collection.main]
+  end
+
   def ordered_collections
     return @ordered_collections if defined?(@ordered_collections)
 
-    primary_collection = collections.primary.first
-    all_secondary_collections = collections.secondary
+    primary_collection = all_collections.find(&:is_primary?)
+    all_secondary_collections = all_collections.select(&:is_secondary?)
 
     main_secondary_collection =
       if all_secondary_collections.present?
-        all_secondary_collections.find do |c|
-          c.matches_tag(primary_tag)
+        all_secondary_collections.find do |collection|
+          collection.matches_tag(primary_tag)
         end
       end
 
