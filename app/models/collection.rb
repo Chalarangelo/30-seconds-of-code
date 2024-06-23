@@ -112,37 +112,30 @@ class Collection < ApplicationRecord
 
   # TODO: Extract into a presenter ideally
   def sublinks
-    if is_main?
-      return Collection.
-              primary.
-              ranked.
-              map(&:to_sublink).
-              flatten.
-              append(MORE_COLLECTIONS_SUBLINK)
-    end
-
-    return [] if !is_primary? && !has_parent?
-    return [] if is_primary? && children.empty?
-
-    (has_parent? ? siblings : children).map do |link|
-      link.to_sublink(cid)
-    end.prepend({
-      title: 'All',
-      url: "#{root_url}/p/1",
-      selected: is_primary?
-    })
-  end
-
-  def to_sublink(collection_cid = nil)
-    {
-      title: mini_name,
-      url: first_page_slug,
-      selected: collection_cid == cid
-    }
+    sublink_presenter.sublinks
   end
 
   # TODO: A little fiddly
   def matches_tag(tag)
     cid.end_with?("/#{tag}")
+  end
+
+  def pages
+    @pages ||= (1..page_count).map do |page_number|
+      Page.from(
+        self,
+        page_number: page_number,
+        snippets: listed_snippets.slice(
+          (page_number - 1) * Orbit::settings[:cards_per_page],
+          Orbit::settings[:cards_per_page]
+        )
+      )
+    end
+  end
+
+  private
+
+  def sublink_presenter
+    @sublink_presenter ||= SublinkPresenter.new(self)
   end
 end
