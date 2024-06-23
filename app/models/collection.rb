@@ -82,9 +82,7 @@ class Collection < ApplicationRecord
   end
 
   def page_count
-    # TODO:  cardsPerPage setting
-    # TODO: Extract the listed snippets count from below
-    (snippets.count / 24.0).ceil
+    (listed_snippet_count / Orbit::settings[:cards_per_page]).ceil
   end
 
   def listed_snippets
@@ -100,9 +98,12 @@ class Collection < ApplicationRecord
       map(&:snippet)
   end
 
+  def listed_snippet_count
+    @listed_snippet_count ||= collection_snippets.published.listed.count
+  end
+
   def formatted_snippet_count
-    count = collection_snippets.published.listed.count
-    "#{count} snippets"
+    "#{listed_snippet_count} snippets"
   end
 
   def formatted_description
