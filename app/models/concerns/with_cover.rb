@@ -2,7 +2,7 @@ module WithCover
   extend ActiveSupport::Concern
 
   included do
-    delegate :cover_url, :cover_srcset, to: :cover_presenter
+    delegate :cover_url, :cover_full_url, :cover_srcset, to: :cover_presenter
 
     private
 
