@@ -15,3 +15,5 @@ Orbit::settings repository_url: 'https://github.com/Chalarangelo/30-seconds-of-c
 Orbit::settings license_url: 'https://creativecommons.org/licenses/by/4.0/'
 
 Orbit::settings manifest_cache_key: '30swp20231218115417'
+
+Orbit::settings cards_per_page: 24.0
