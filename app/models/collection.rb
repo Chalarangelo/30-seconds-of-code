@@ -2,6 +2,7 @@ class Collection < ApplicationRecord
   include CommonApi
 
   MAIN_COLLECTION_CID = 'snippets'.freeze
+  COLLECTIONS_COLLECTION_CID = 'collections'.freeze
   MORE_COLLECTIONS_SUBLINK = {
     title: 'More',
     url: '/collections/p/1',
@@ -28,16 +29,25 @@ class Collection < ApplicationRecord
     through: :collection_snippets
 
   scope :with_parent, -> { where.not(parent_cid: nil) }
+  scope :snippet_collections, -> { where.not(cid: COLLECTIONS_COLLECTION_CID) }
   scope :primary, -> { where(top_level: true) }
   scope :secondary, -> { with_parent }
   scope :listed, -> { where(featured: true) }
-  scope :featured, -> { listed.order('featured_index asc') }
+  scope :featured, -> do
+    where.not(featured_index: nil).order(featured_index: :asc)
+  end
 
   # Cache the main collection on the class level to avoid repeated queries.
   @@main_collection = nil
+  # Cache the collections collection on the class level to avoid repeated queries.
+  @@collections_collection = nil
 
   def self.main
     @@main_collection ||= find(MAIN_COLLECTION_CID)
+  end
+
+  def self.collections
+    @@collections_collection ||= find(COLLECTIONS_COLLECTION_CID)
   end
 
   def has_parent?
@@ -46,6 +56,10 @@ class Collection < ApplicationRecord
 
   def is_main?
     cid == MAIN_COLLECTION_CID
+  end
+
+  def is_collections?
+    cid == COLLECTIONS_COLLECTION_CID
   end
 
   def is_primary?
@@ -121,19 +135,49 @@ class Collection < ApplicationRecord
   end
 
   def pages
+    return @pages = collections_pages if cid == COLLECTIONS_COLLECTION_CID
+
     @pages ||= (1..page_count).map do |page_number|
       Page.from(
         self,
         page_number: page_number,
-        snippets: listed_snippets.slice(
+        page_count: page_count,
+        items: listed_snippets.slice(
           (page_number - 1) * Orbit::settings[:cards_per_page],
           Orbit::settings[:cards_per_page]
-        )
+        ),
+        item_count: listed_snippet_count,
+        item_type: 'snippets',
+        large_images: false
       )
     end
   end
 
   private
+
+  def collections_pages
+    return @collections_pages if defined?(@collections_pages)
+
+    featured_collections = Collection.featured
+    featured_collections_count = featured_collections.count
+    page_count = (featured_collections_count / Orbit::settings[:collection_cards_per_page]).ceil
+
+    @collections_pages ||= (1..page_count).map do |page_number|
+      Page.from(
+        self,
+        page_number: page_number,
+        page_count: page_count,
+        collections_count: featured_collections_count,
+        items: featured_collections.slice(
+          (page_number - 1) * Orbit::settings[:collection_cards_per_page],
+          Orbit::settings[:collection_cards_per_page]
+        ),
+        item_count: featured_collections_count,
+        item_type: 'collections',
+        large_images: true
+      )
+    end
+  end
 
   def sublink_presenter
     @sublink_presenter ||= SublinkPresenter.new(self)

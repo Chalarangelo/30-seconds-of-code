@@ -33,7 +33,7 @@ class BreadcrumbPresenter
   private
 
   def all_collections
-    @all_collections ||= collections.to_a - [Collection.main]
+    @all_collections ||= collections.snippet_collections.to_a - [Collection.main]
   end
 
   def ordered_collections
