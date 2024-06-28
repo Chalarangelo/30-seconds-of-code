@@ -7,7 +7,7 @@ export const extractCollectionData = async (collectionGlob, hub) => {
   const { featuredListings } = hub;
   const collections = await FileHandler.read(collectionGlob);
 
-  return collections.map(config => {
+  return [...collections, hub].map(config => {
     const {
       snippetIds = [],
       slug: id,

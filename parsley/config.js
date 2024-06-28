@@ -1,5 +1,5 @@
 export const contentDir = 'content';
-export const outputPath = '.content/content_new.json';
+export const outputPath = '.content/content.json';
 export const assetPath = `/assets`;
 export const collectionGlob = `${contentDir}/collections/**/*.yaml`;
 export const snippetGlob = `${contentDir}/snippets/**/s/*.md`;
