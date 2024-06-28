@@ -1,15 +1,22 @@
 class Page::Snippet < Page::Base
   def key
-    "#{slug_segments.first}/s/#{slug_segments.last}"
+    @key ||= "#{slug_segments.first}/s/#{slug_segments.last}"
   end
 
   def params
-    { lang: slug_segments.first, snippet: slug_segments.last }
+    return @params if defined?(@params)
+
+    @params = {
+      lang: slug_segments.first,
+      snippet: slug_segments.last
+    }
   end
 
   # Snippet.preload(:language, :collection_snippets, :collections).published.map(&:page)
   def props
-    context = {
+    return @context if defined?(@context)
+
+    @context = {
       breadcrumbs: object.breadcrumbs,
       page_description: object.seo_description,
       snippet: object.serialize_as(:snippet_context),

@@ -40,30 +40,32 @@ class Snippet < ApplicationRecord
     where.not(snippets: { date_modified: ..Date.today })
   end
 
-  scope :with_language, ->(language) { where(language_cid: language) }
-  scope :with_tag, ->(tag) do
-    where(
-      '_tags like ? or _tags like ? or _tags like ? or _tags like ?',
-      "#{tag};%",
-      "%;#{tag};%",
-      "%;#{tag}",
-      "#{tag}"
-    )
+  # Nasty business with previews
+  @previews = {}
+
+  def self.prepare_previews
+    @previews = all.preload(:language).map do |record|
+      [record.cid, record.serialize_as(:preview)]
+    end.to_h
   end
 
-  # memo :tags, :seo_description, :seo_title, :primary_tag, :formatted_primary_tag,
-  #       :formatted_mini_preview_tag, :formatted_tags, :formatted_preview_tags,
-  #       :formatted_description, :slug, :is_scheduled?, :is_published?, :is_listed?,
-  #       :date_formatted, :date_machine_formatted, :search_tokens_array,
-  #       :search_tokens, :has_collection? #, :preview
+  def self.get_preview(cid)
+    @previews[cid]
+  end
 
+  def preview
+    return @preview if defined?(@preview)
+
+    @preview ||= Snippet.get_preview(cid) || serialize_as(:preview)
+  end
+  # End of nasty business
 
   def tags
-    _tags.split(';')
+    @tags ||= _tags.split(';')
   end
 
   def has_language?
-    language.present?
+    @has_language ||= language_cid.present?
   end
 
   def seo_title
@@ -85,7 +87,7 @@ class Snippet < ApplicationRecord
   end
 
   def primary_tag
-    tags.first
+    @primary_tag ||= tags.first
   end
 
   def formatted_primary_tag
@@ -94,41 +96,49 @@ class Snippet < ApplicationRecord
 
   # Used for snippet previews in search autocomplete
   def formatted_mini_preview_tag
-    return language.name if has_language?
-
-    ARTICLE_MINI_PREVIEW_TAG
+    @formatted_mini_preview_tag ||=
+      if has_language?
+        language.name
+      else
+        ARTICLE_MINI_PREVIEW_TAG
+      end
   end
 
   def formatted_tags
+    return @formatted_tags if defined?(@formatted_tags)
+
     tags.map { |tag| TagFormatter.format(tag) }
     tags.prepend(language.name) if has_language?
-    tags.join(', ')
+    @formatted_tags = tags.join(', ')
   end
 
   def formatted_preview_tags
-    return language.name if has_language?
-
-    formatted_primary_tag
+    @formatted_preview_tags ||=
+      if has_language?
+        language.name
+      else
+        formatted_primary_tag
+      end
   end
 
   def formatted_description
-    description_html.strip_html_paragraphs_and_links
+    @formatted_description ||= description_html.strip_html_paragraphs_and_links
   end
 
   def github_url
-    "#{GITHUB_URL_PREFIX}/#{file_name}"
+    @github_url ||= "#{GITHUB_URL_PREFIX}/#{file_name}"
   end
 
   def is_scheduled?
-    date_modified > Date.today
+    @is_scheduled ||= date_modified > Date.today
   end
 
   def is_published?
-    !is_scheduled?
+    @is_published ||= !is_scheduled?
   end
 
   def is_listed?
-    listed && is_published?
+    @is_listed ||= listed && is_published?
   end
 
   def date_formatted
@@ -140,7 +150,7 @@ class Snippet < ApplicationRecord
   end
 
   def search_tokens_array
-    tokenizable_elements = [
+    @search_tokens_array ||= [
       file_name.slice(0..-4),
       *tags,
       *_tokens.split(';'),
@@ -155,29 +165,27 @@ class Snippet < ApplicationRecord
   end
 
   def breadcrumbs
-    breadcrumbs_presenter.breadcrumbs
+    @breadcrumbs ||= breadcrumbs_presenter.breadcrumbs
   end
 
   def recommended_collection
-    breadcrumbs_presenter.recommended_collection
+    @recommended_collection ||= breadcrumbs_presenter.recommended_collection
   end
 
   def recommended_snippets
-    recommendation_presenter.recommend_snippets
+    @recommended_snippets ||= recommendation_presenter.recommend_snippets
   end
 
   def page
-    Page.from(self)
+    @page ||= Page.from(self)
   end
 
   private
 
-  # TODO: This will most likely cause N+1, needs a preload on a higher level.
   def breadcrumbs_presenter
     @breadcrumbs_presenter ||= BreadcrumbPresenter.new(self)
   end
 
-  # TODO: Most likely another N+1 here...
   def recommendation_presenter
     @recommendation_presenter ||= RecommendationPresenter.new(self)
   end

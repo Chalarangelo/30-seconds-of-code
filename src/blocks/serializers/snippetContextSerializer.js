@@ -6,7 +6,6 @@ const { coverImageDimensions, coverImageStandardSuffix } = presentationSettings;
 export const snippetContextSerializer = {
   name: 'SnippetContextSerializer',
   methods: {
-    code: snippet => snippet.code || undefined,
     coverUrl: snippet =>
       `/${pathSettings.staticAssetPath}/cover/${snippet.cover}${coverImageStandardSuffix}.webp`,
     coverSrcset: snippet =>

@@ -25,7 +25,7 @@ class BreadcrumbPresenter
   end
 
   def recommended_collection
-    all_collections.select do |collection|
+    @recommended_collection ||= all_collections.select do |collection|
       !collections_for_breadcrumbs.include?(collection)
     end.sort_by(&:ranking).last
   end
@@ -33,7 +33,7 @@ class BreadcrumbPresenter
   private
 
   def all_collections
-    @all_collections ||= collections.snippet_collections.to_a - [Collection.main]
+    @all_collections ||= collections.to_a - [Collection.main, Collection.collections]
   end
 
   def ordered_collections

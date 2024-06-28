@@ -2,6 +2,7 @@ module CommonApi
   extend ActiveSupport::Concern
 
   include Serializable
+  # include Previewable
   include WithCover
 
   included do
@@ -9,6 +10,7 @@ module CommonApi
     self.primary_key = :cid
 
     # Search by cid or slug and return the first result.
+    # TODO: Also trim trailing slashes from the key.
     def self.[](key)
       where(cid: key.sub(/^\//,'')).first
     end
@@ -46,6 +48,7 @@ module CommonApi
     end
 
     def preview
+      return @preview if defined?(@preview)
       @preview ||= serialize_as(:preview)
     end
   end

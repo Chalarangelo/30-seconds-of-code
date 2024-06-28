@@ -3,7 +3,7 @@ import { Ranker } from '#blocks/utilities/ranker';
 import { Recommender } from '#blocks/utilities/recommender';
 import { TagFormatter } from '#blocks/utilities/tagFormatter';
 import { TocReader } from '#blocks/utilities/tocReader';
-import tokenizeSnippet from '#utils/search';
+import tokenizeSnippet from '#search';
 
 export const snippet = {
   name: 'Snippet',

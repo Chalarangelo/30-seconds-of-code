@@ -1,5 +1,5 @@
 import { uniqueElements } from '#utils';
-import tokenizeCollection from '#utils/search';
+import tokenizeCollection from '#search';
 import { Ranker } from '#blocks/utilities/ranker';
 import presentationSettings from '#settings/presentation';
 

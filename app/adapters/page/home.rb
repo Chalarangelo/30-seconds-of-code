@@ -4,7 +4,9 @@ class Page::Home < Page::Base
   end
 
   def props
-    context = {
+    return @context if defined?(@context)
+
+    @context = {
       featured_collections: featured_collections,
       featured_snippets: featured_snippets,
       splash_image: cover_url,

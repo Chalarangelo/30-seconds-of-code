@@ -1,5 +1,5 @@
 class JsonImporter
-  CONTENT_JSON_PATH = './.content/content_new.json'
+  CONTENT_JSON_PATH = './.content/content.json'
 
   # bin/parsley; rake db:migrate:reset; rake import:content
   def self.import

@@ -17,6 +17,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_13_061902) do
     t.integer "position"
     t.date "date_modified"
     t.index ["collection_cid"], name: "index_collection_snippets_on_collection_cid"
+    t.index ["position"], name: "index_collection_snippets_on_position"
     t.index ["snippet_cid"], name: "index_collection_snippets_on_snippet_cid"
   end
 
