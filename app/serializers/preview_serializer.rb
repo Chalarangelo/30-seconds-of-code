@@ -8,7 +8,7 @@ class PreviewSerializer < BaseSerializer
   COLLECTION_TAG_LITERAL = 'Collection'.freeze
 
   def title
-    object.is_snippet? ? object.title : object.name
+    object.is_snippet? ? object.title : object.short_name
   end
 
   def tags
