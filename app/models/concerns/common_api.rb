@@ -38,11 +38,11 @@ module CommonApi
     end
 
     def is_snippet?
-      is_a?(Snippet)
+      @is_snippet ||= is_a?(Snippet)
     end
 
     def type
-      self.class.name.downcase
+      @type ||= self.class.name.downcase
     end
 
     def preview
