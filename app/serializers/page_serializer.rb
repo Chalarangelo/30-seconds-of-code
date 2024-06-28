@@ -1,7 +1,7 @@
 class PageSerializer < BaseSerializer
-  attributes :params, :props
+  attributes :props, :params
 
   def props
-    object.props.merge(schema_data: object.schema_data)
+    object.props.merge(structured_data: object.schema_data)
   end
 end

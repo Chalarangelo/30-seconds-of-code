@@ -67,7 +67,7 @@ class Snippet < ApplicationRecord
   end
 
   def seo_title
-    reutrn title unless has_language?
+    return title unless has_language?
 
     title_language =
       if language_cid == 'javascript' && primary_tag === 'node'
@@ -94,7 +94,7 @@ class Snippet < ApplicationRecord
 
   # Used for snippet previews in search autocomplete
   def formatted_mini_preview_tag
-    language.name if has_language?
+    return language.name if has_language?
 
     ARTICLE_MINI_PREVIEW_TAG
   end
@@ -106,7 +106,7 @@ class Snippet < ApplicationRecord
   end
 
   def formatted_preview_tags
-    language.name if has_language?
+    return language.name if has_language?
 
     formatted_primary_tag
   end
@@ -132,11 +132,11 @@ class Snippet < ApplicationRecord
   end
 
   def date_formatted
-    date_modified.strftime('%B %d, %Y')
+    @date_formatted ||= date_modified.strftime('%B %-d, %Y')
   end
 
   def date_machine_formatted
-    date_modified.strftime('%Y-%m-%d')
+    @date_machine_formatted ||= date_modified.strftime('%Y-%m-%d')
   end
 
   def search_tokens_array
@@ -151,7 +151,7 @@ class Snippet < ApplicationRecord
   end
 
   def has_collection?
-    collections.present?
+    collection_snippets.present?
   end
 
   def breadcrumbs
