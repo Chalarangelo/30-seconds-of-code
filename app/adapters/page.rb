@@ -2,7 +2,10 @@ class Page
   def self.from(object, options = {})
     "Page::#{object.class.name}".constantize.new(object, options)
   end
-  # TODO: Make me serializable, please!
+
+  def self.home
+    Page::Home.new(nil)
+  end
 
   # TODO: Create a concern that exports pages: [] from a model
   class Base
@@ -11,6 +14,14 @@ class Page
     def initialize(object, options = {})
       @object = object
       @options = options
+    end
+
+    def serialize
+      PageSerializer.serialize(self)
+    end
+
+    def key
+      params.values.flatten.join('/')
     end
 
     def params
