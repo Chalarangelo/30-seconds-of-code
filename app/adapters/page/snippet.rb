@@ -1,6 +1,10 @@
 class Page::Snippet < Page::Base
+  def key
+    "#{slug_segments.first}/s/#{slug_segments.last}"
+  end
+
   def params
-    { lang: slug_segments.first, slug: slug_segments.last }
+    { lang: slug_segments.first, snippet: slug_segments.last }
   end
 
   # Snippet.preload(:language, :collection_snippets, :collections).published.map(&:page)
@@ -12,7 +16,7 @@ class Page::Snippet < Page::Base
       recommendations: [
         object.recommended_collection,
         *object.recommended_snippets
-      ].compact.map(&:preview)
+      ].compact.first(4).map(&:preview)
     }
   end
 
