@@ -10,7 +10,7 @@ module CommonApi
 
     # Search by cid or slug and return the first result.
     def self.[](key)
-      where(cid: key.sub(/^\//,'')).first
+      where(cid: key.sub(/^\//,'').sub(/\/$/,'')).first
     end
 
     scope :ranked, -> { order(ranking: :desc) }
