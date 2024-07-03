@@ -20,26 +20,28 @@ class RecommendationPresenter
   SCORE_LIMIT_WITHOUT_LANGUAGE_AND_PRIMARY_TAG = 0.4
   RECOMMENDATION_COUNT = 4
 
-  attr_reader :object, :options, :id, :file_name, :language_cid, :primary_tag, :search_tokens, :is_listed, :search_tokens_size, :recommendation_rankings, :min_rankings
+  attr_reader :object, :options, :cid, :file_name, :language_cid, :primary_tag,
+              :search_tokens_array, :is_listed, :search_tokens_size,
+              :recommendation_rankings, :min_rankings
 
   # Cache the recommendable snippets on the class to avoid multiple queries.
   @@recommendable_snippets = nil
 
   def self.recommendable_snippets
-    @@recommendable_snippets ||= Snippet.preload(:language).published
+    @@recommendable_snippets ||= Snippet.preload(:language).published.ranked
   end
 
   def initialize(object, options: {})
     @object = object
     @options = options
 
-    @id = object.id
+    @cid = object.cid
     @file_name = object.file_name
     @language_cid = object.language_cid
     @primary_tag = object.primary_tag
-    @search_tokens = object.search_tokens_array
+    @search_tokens_array = object.search_tokens_array
     @is_listed = object.is_listed?
-    @search_tokens_size = @search_tokens.size
+    @search_tokens_size = @search_tokens_array.size
     @recommendation_rankings = {}
     @min_rankings = []
   end
@@ -47,7 +49,7 @@ class RecommendationPresenter
   def recommend_snippets
     RecommendationPresenter.recommendable_snippets.each do |snippet|
       # Skip if the snippet is the same as the current snippet
-      next if snippet.id == id
+      next if snippet.cid == cid
       # Skip if the snippet is the same in another language
       next if snippet.file_name == file_name
       # Skip unless this snippet is listed or the object is unlisted
@@ -91,10 +93,9 @@ class RecommendationPresenter
 
       # Determine search token score:
       #  * Count found tokens and divide by total number of tokens
+      matched_tokens_count = (search_tokens_array & snippet.search_tokens_array).size
       search_token_score =
-        (search_tokens.sum do |token|
-          snippet.search_tokens.include?(token) ? 1 : 0
-        end.to_f / search_tokens_size) * SEARCH_TOKEN_SCORE_LIMIT
+        (matched_tokens_count.to_f / search_tokens_size) * SEARCH_TOKEN_SCORE_LIMIT
 
       # Divide by the limit to get a value between 0 and 1
       recommendation_ranking =
