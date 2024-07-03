@@ -1,10 +1,34 @@
 class SnippetContextSerializer < BaseSerializer
-  attributes :title, :slug, :cover_srcset, :github_url
+  attributes :title, :full_description, :slug, :date, :date_time, :tags,
+              :cover, :cover_srcset, :github_url, :table_of_contents
 
-  attribute :full_description_html, as: :full_description
-  attribute :date_formatted, as: :date
-  attribute :date_machine_formatted, as: :date_time
-  attribute :formatted_tags, as: :tags
-  attribute :cover_url, as: :cover
-  attribute :table_of_contents_html, as: :table_of_contents
+  delegate :title, :slug, :cover_srcset, :github_url, to: :object
+
+  def cover_srcset
+    object.cover_srcset(full: true)
+  end
+
+  def full_description
+    object.full_description_html
+  end
+
+  def date
+    object.date_formatted
+  end
+
+  def date_time
+    object.date_machine_formatted
+  end
+
+  def tags
+    object.formatted_tags
+  end
+
+  def cover
+    object.cover_url
+  end
+
+  def table_of_contents
+    object.table_of_contents_html
+  end
 end

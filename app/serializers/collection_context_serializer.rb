@@ -1,5 +1,9 @@
 class CollectionContextSerializer < BaseSerializer
-  attributes :name, :description, :cover_srcset, :sublinks
+  attributes :name, :description, :cover_srcset, :sublinks, :cover
 
-  attribute :cover_url, as: :cover
+  delegate :name, :description, :cover_srcset, :sublinks, to: :object
+
+  def cover
+    object.cover_url
+  end
 end

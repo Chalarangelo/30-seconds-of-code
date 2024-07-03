@@ -16,19 +16,6 @@
 class BaseSerializer
   include ActiveModel::Serializers::JSON
 
-  # Define a list of attributes to be serialized.
-  def self.attributes(*fields)
-    fields.each do |field|
-      attribute(field, as: field)
-    end
-  end
-
-  # Define a single attribute to be serialized, with an alias (optional).
-  def self.attribute(field, as: nil)
-    add_serializable_attribute(field, as: as)
-    create_serializable_field(field, as: as)
-  end
-
   # Make the object available to the serializer.
   attr_accessor :object, :options
 
@@ -48,26 +35,6 @@ class BaseSerializer
     collection.map { |object| serialize(object, options) }
   end
 
-  # Serialize the object into a hash (needs to return string keys).
-  def attributes(*args)
-    self.
-      class.
-      instance_variable_get(:@serializable_attributes).
-      each_with_object({}) do |field_data, hash|
-        as, field = field_data
-        # The inclusion check needs to happen here in order to prevent overriden
-        # methods from skipping it.
-        include_method = "include_#{field}?"
-        hash[as.to_s] =
-          if self.respond_to?(include_method) && !send(include_method)
-            nil
-          else
-            send(as)
-          end
-      end.
-      compact
-  end
-
   # Serialize the object into a hash with indifferent access.
   def to_h
     as_json.with_indifferent_access
@@ -82,41 +49,21 @@ class BaseSerializer
     json.deep_transform_keys! { |key| key.to_s.camelize(:lower) }
   end
 
-  private
+  # Define behavior for inherited classes.
+  def self.inherited(subclass)
+    # Initialize the serializable attributes.
+    subclass.instance_variable_set(:@serializable_attributes, {})
 
-  # Create a new field that can be serialized.
-  def self.create_serializable_field(field, as: nil)
-    as ||= field
-
-    attr_accessor as
-
-    # Define a method that will be used to serialize the field.
-    define_method as do
-      # Try to call the field but only if you're not calling yourself.
-      if self.respond_to?(field) && method(field) != method(as)
-        send(field)
-      # Try to call the field on the object.
-      elsif object.respond_to?(field)
-        object.send(field)
-      # Try to call the field with the object.
-      elsif field.respond_to?(:call)
-        field.call(object)
-      # Try to call the field on the object as a hash.
-      elsif object.respond_to?(:key?) && object.key?(field)
-        object[field]
+    # Define a class method to add attributes to the list.
+    subclass.define_singleton_method(:attributes) do |*fields|
+      fields.each do |field|
+        subclass.instance_variable_get(:@serializable_attributes)[field.to_s] = nil
       end
     end
-  end
 
-  # Add a new field to the list of serializable attributes.
-  def self.add_serializable_attribute(field, as: nil)
-    as ||= field
-
-    if !self.instance_variable_defined?(:@serializable_attributes) ||
-        self.instance_variable_get(:@serializable_attributes).blank?
-      self.instance_variable_set(:@serializable_attributes, {})
+    # Define an instance method for attribute serialization.
+    subclass.define_method(:attributes) do
+      subclass.instance_variable_get(:@serializable_attributes)
     end
-
-    self.instance_variable_get(:@serializable_attributes)[as] = field
   end
 end
