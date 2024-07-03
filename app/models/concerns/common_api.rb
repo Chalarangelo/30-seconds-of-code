@@ -2,6 +2,7 @@ module CommonApi
   extend ActiveSupport::Concern
 
   include Serializable
+  include Previewable
   include WithCover
 
   included do
@@ -43,10 +44,6 @@ module CommonApi
 
     def type
       @type ||= self.class.name.downcase
-    end
-
-    def preview
-      @preview ||= serialize_as(:preview)
     end
   end
 end
