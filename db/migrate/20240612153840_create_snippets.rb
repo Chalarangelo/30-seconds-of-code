@@ -20,5 +20,7 @@ class CreateSnippets < ActiveRecord::Migration[7.1]
     end
     add_index :snippets, :cid, unique: true
     add_index :snippets, :language_cid
+    add_index :snippets, :date_modified
+    add_index :snippets, :ranking, order: { ranking: :desc }
   end
 end

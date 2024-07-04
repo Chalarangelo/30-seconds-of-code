@@ -64,7 +64,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_13_061902) do
     t.text "_tokens"
     t.float "ranking"
     t.index ["cid"], name: "index_snippets_on_cid", unique: true
+    t.index ["date_modified"], name: "index_snippets_on_date_modified"
     t.index ["language_cid"], name: "index_snippets_on_language_cid"
+    t.index ["ranking"], name: "index_snippets_on_ranking", order: :desc
   end
 
 end
