@@ -9,6 +9,8 @@ export const extractCollectionSnippetData = (collections, snippets) => {
         matchers,
         allowUnlisted,
       } = collection;
+      if (collectionId === 'collections') return [];
+
       if (collectionId === 'snippets') {
         return [...rankedSnippets].map((snippet, index) => ({
           collectionId,
