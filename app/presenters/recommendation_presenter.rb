@@ -26,9 +26,40 @@ class RecommendationPresenter
 
   # Cache the recommendable snippets on the class to avoid multiple queries.
   @@recommendable_snippets = nil
+  @@recommendable_snippets_by_language = {}
+  @@recommendable_snippets_by_language_and_primary_tag = {}
 
-  def self.recommendable_snippets
-    @@recommendable_snippets ||= Snippet.preload(:language).published.ranked
+  # Ugly but efficient optimization strategy to first check the most relevant snippets.
+  def self.prepare_recommendable_snippets
+    @@recommendable_snippets = Snippet.preload(:language).published.ranked.group_by(&:language_cid)
+
+    @@recommendable_snippets.each do |language_cid, snippets|
+      @@recommendable_snippets_by_language[language_cid] =
+        snippets + @@recommendable_snippets.except(language_cid).values.flatten
+
+      @@recommendable_snippets_by_language_and_primary_tag[language_cid] = {}
+
+      tag_grouped_snippets = snippets.group_by{ |s| s.primary_tag }
+      tag_grouped_snippets.each do |primary_tag, primary_tag_snippets|
+        @@recommendable_snippets_by_language_and_primary_tag[language_cid][primary_tag] =
+          primary_tag_snippets +
+          tag_grouped_snippets.except(primary_tag).values.flatten +
+          @@recommendable_snippets.except(language_cid).values.flatten
+      end
+    end
+
+    @@recommendable_snippets = @@recommendable_snippets.values.flatten
+  end
+
+  def self.recommendable_snippets(language = nil, tag = nil)
+    self.prepare_recommendable_snippets unless @@recommendable_snippets.present?
+
+    return @@recommendable_snippets unless language.present?
+
+    return @@recommendable_snippets_by_language[language] unless tag.present? &&
+      @@recommendable_snippets_by_language_and_primary_tag[language].key?(tag)
+
+    @@recommendable_snippets_by_language_and_primary_tag[language][tag]
   end
 
   def initialize(object, options: {})
@@ -47,7 +78,10 @@ class RecommendationPresenter
   end
 
   def recommend_snippets
-    RecommendationPresenter.recommendable_snippets.each do |snippet|
+    recommendable_snippets = RecommendationPresenter.recommendable_snippets(language_cid, primary_tag)
+
+    recommendable_snippets.each do |snippet|
+      binding.irb if snippet.is_a?(Array)
       # Skip if the snippet is the same as the current snippet
       next if snippet.cid == cid
       # Skip if the snippet is the same in another language
