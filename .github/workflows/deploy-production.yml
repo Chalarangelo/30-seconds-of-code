@@ -13,5 +13,5 @@ jobs:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
         DEPLOY_TRIGGER: ${{ github.event_name }}
       run: |
-        chmod +x ./src/scripts/deploy.sh
-        ./src/scripts/deploy.sh production
+        chmod +x ./bin/deploy
+        ./bin/deploy production
