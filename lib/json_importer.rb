@@ -1,5 +1,4 @@
 class JsonImporter
-  # bin/parsley; rake db:migrate:reset; rake import:content
   def self.import
     data = JSON.load_file(Orbit::settings[:content_import_path]).deep_symbolize_keys
     data.each do |key, value|
