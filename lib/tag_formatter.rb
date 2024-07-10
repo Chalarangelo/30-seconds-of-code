@@ -11,9 +11,12 @@ class TagFormatter
     http: 'HTTP',
   }.freeze
 
+  @formatted_tags = {}
+
   def self.format(tag)
     return '' if tag.blank?
+    return @formatted_tags[tag] if @formatted_tags.key?(tag)
 
-    TAG_DICTIONARY[tag.to_sym] || tag.capitalize
+    @formatted_tags[tag] = TAG_DICTIONARY[tag.to_sym] || tag.capitalize
   end
 end
