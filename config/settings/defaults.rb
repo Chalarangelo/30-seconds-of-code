@@ -2,7 +2,8 @@ Orbit::settings website: {
   name: '30 seconds of code',
   short_name: '30s',
   url: 'https://www.30secondsofcode.org',
-  description: 'Short code snippets for all your development needs'
+  description: 'Short code snippets for all your development needs',
+  seo_description: "Browse %{snippet_count} short code snippets for all your development needs on %{website_name}."
 }
 
 Orbit::settings owner: {
@@ -23,3 +24,7 @@ Orbit::settings top_snippet_cards: 6.0
 Orbit::settings top_collection_chips: 8.0
 
 Orbit::settings home_cover: 'work-sunrise'
+
+Orbit::settings content_import_path: './.content/content.json'
+Orbit::settings redirects_import_path: 'content/redirects.yaml'
+Orbit::settings redirects_export_path: 'public/_redirects'
