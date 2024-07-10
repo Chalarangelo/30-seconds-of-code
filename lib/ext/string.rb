@@ -25,4 +25,8 @@ class String
       split(/[^a-z0-9\-']+/i).
       select { |token| token.length >= 2 }
   end
+
+  def escape_html
+    CGI.escapeHTML(self)
+  end
 end
