@@ -28,3 +28,7 @@ Orbit::settings home_cover: 'work-sunrise'
 Orbit::settings content_import_path: './.content/content.json'
 Orbit::settings redirects_import_path: 'content/redirects.yaml'
 Orbit::settings redirects_export_path: 'public/_redirects'
+
+Orbit::settings home_page_output_path: '.content/pages/index.json'
+Orbit::settings collection_pages_output_path: '.content/pages/[lang]/[...listing].json'
+Orbit::settings snippet_pages_output_path: '.content/pages/[lang]/s/[snippet].json'
