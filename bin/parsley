@@ -1,4 +1,22 @@
 #!/usr/bin/env node
 import { Parsley } from '#parsley';
 
-Parsley.exportContent();
+const args = process.argv.slice(2);
+
+if (args.length === 0 || args[0] === 'help') {
+  console.log('Usage: parsley [command]\n');
+  console.log('Commands:');
+  console.log('  content - Prepare content');
+  console.log('  assets  - Prepare assets');
+  console.log('    --force, -f - Force assets preparation');
+  console.log('  help    - Show this help');
+  process.exit(0);
+} else if (args[0] === 'content') {
+  Parsley.prepareContent();
+} else if (args[0] === 'assets') {
+  const force = args[1] === '--force' || args[1] === '-f';
+  Parsley.prepareAssets({ force });
+} else {
+  console.log('Invalid command');
+  process.exit(1);
+}
