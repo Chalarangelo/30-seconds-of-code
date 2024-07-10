@@ -5,10 +5,11 @@ import { exportCollectionData } from './modelWorkers/collection.js';
 import { exportCollectionSnippetData } from './modelWorkers/collectionSnippet.js';
 import { extractData } from './extractor.js';
 import { FileHandler } from './fileHandler.js';
+import { AssetHandler } from './assetHandler.js';
 import { outputPath } from './config.js';
 
 export class Parsley {
-  static async exportContent() {
+  static async prepareContent() {
     const { collections, snippets, languages, collectionSnippets } =
       await extractData();
 
@@ -20,5 +21,9 @@ export class Parsley {
     };
 
     return FileHandler.write(outputPath, data);
+  }
+
+  static async prepareAssets({ force = false } = {}) {
+    return await AssetHandler.processAssets({ force });
   }
 }

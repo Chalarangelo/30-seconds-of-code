@@ -1,6 +1,7 @@
 export const contentDir = 'content';
 export const outputPath = '.content/content.json';
-export const assetPath = `/assets`;
+export const assetPath = `assets`;
+export const publicPath = `public`;
 export const collectionGlob = `${contentDir}/collections/**/*.yaml`;
 export const snippetGlob = `${contentDir}/snippets/**/s/*.md`;
 export const languageGlob = `${contentDir}/languages/*.yaml`;

@@ -76,7 +76,7 @@ export class MarkdownParser {
         .use(safeguardExternalLinks)
         .use(transformAdmonitions)
         .use(transformHeadings, { minLevel: 2, maxLevel: 4 })
-        .use(transfomImagePaths, { assetPath })
+        .use(transfomImagePaths, { assetPath: `/${assetPath}` })
         .use(wrapTables, { className: 'table-wrapper' })
         .use(rehypeStringify, { allowDangerousHtml: true });
       processors.set(short, processor);
