@@ -42,6 +42,25 @@ class Collection < ApplicationRecord
   # Cache the collections collection on the class level to avoid repeated queries.
   @@collections_collection = nil
 
+  # Nasty business with counts
+  @counts = {}
+
+  def self.prepare_counts
+    @counts = CollectionSnippet.published.listed.group(:collection_cid).count
+  end
+
+  def self.get_count(cid)
+    @counts[cid]
+  end
+
+  def listed_snippet_count
+    return @listed_snippet_count if defined?(@listed_snippet_count)
+
+    @listed_snippet_count ||=
+      Collection.get_count(cid) || collection_snippets.published.listed.count
+  end
+  # End of nasty business
+
   def self.main
     @@main_collection ||= find(MAIN_COLLECTION_CID)
   end
