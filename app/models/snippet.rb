@@ -40,23 +40,7 @@ class Snippet < ApplicationRecord
     where.not(snippets: { date_modified: ..Date.today })
   end
 
-  scope :with_language, ->(language) { where(language_cid: language) }
-  scope :with_tag, ->(tag) do
-    where(
-      '_tags like ? or _tags like ? or _tags like ? or _tags like ?',
-      "#{tag};%",
-      "%;#{tag};%",
-      "%;#{tag}",
-      "#{tag}"
-    )
-  end
-
-  # memo :tags, :seo_description, :seo_title, :primary_tag, :formatted_primary_tag,
-  #       :formatted_mini_preview_tag, :formatted_tags, :formatted_preview_tags,
-  #       :formatted_description, :slug, :is_scheduled?, :is_published?, :is_listed?,
-  #       :date_formatted, :date_machine_formatted, :search_tokens_array,
-  #       :search_tokens, :has_collection? #, :preview
-
+  scope :previewable, -> { all.preload(:language) }
 
   def tags
     _tags.split(';')

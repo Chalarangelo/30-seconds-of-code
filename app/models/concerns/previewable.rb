@@ -2,12 +2,15 @@ module Previewable
   extend ActiveSupport::Concern
 
   included do
+    # Define a default previewable scope.
+    scope :previewable, -> { all }
+
     # Define a class method to store previews.
     self.instance_variable_set(:@previews, {})
 
     # Define a class method to prepare previews.
     def self.prepare_previews
-      self.instance_variable_set(:@previews, all.map do |record|
+      self.instance_variable_set(:@previews, previewable.map do |record|
         [record.cid, record.serialize_as(:preview)]
       end.to_h)
     end
