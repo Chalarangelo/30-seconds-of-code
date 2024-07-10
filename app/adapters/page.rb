@@ -17,11 +17,11 @@ class Page
     end
 
     def serialize
-      PageSerializer.serialize(self)
+      @serialize ||= PageSerializer.serialize(self)
     end
 
     def key
-      params.values.flatten.join('/')
+      @key ||= params.values.flatten.join('/')
     end
 
     def params

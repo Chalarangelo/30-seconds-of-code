@@ -4,7 +4,9 @@ class Page::Home < Page::Base
   end
 
   def props
-    context = {
+    return @context if defined?(@context)
+
+    @context = {
       featured_collections: featured_collections,
       featured_snippets: featured_snippets,
       splash_image: cover_url,
@@ -59,7 +61,10 @@ class Page::Home < Page::Base
   end
 
   def seo_description
-    "Browse #{Snippet.published.count} short code snippets for all your development needs on #{Orbit::settings[:website][:name]}."
+    Orbit::settings[:website][:seo_description] % {
+      snippet_count: Snippet.published.count,
+      website_name: Orbit::settings[:website][:name]
+    }
   end
 
   def main_listing_url
