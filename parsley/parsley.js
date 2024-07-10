@@ -6,6 +6,7 @@ import { exportCollectionSnippetData } from './modelWorkers/collectionSnippet.js
 import { extractData } from './extractor.js';
 import { FileHandler } from './fileHandler.js';
 import { AssetHandler } from './assetHandler.js';
+import { ContentCreator } from './contentCreator.js';
 import { outputPath } from './config.js';
 
 export class Parsley {
@@ -25,5 +26,9 @@ export class Parsley {
 
   static async prepareAssets({ force = false } = {}) {
     return await AssetHandler.processAssets({ force });
+  }
+
+  static createContent(...args) {
+    return ContentCreator.create(...args);
   }
 }
