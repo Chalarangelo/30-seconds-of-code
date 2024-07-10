@@ -1,10 +1,12 @@
 class Page::Collection < Page::Base
   def key
-    "#{slug_segments.join('/')}/p/#{options[:page_number]}"
+    @key ||= "#{slug_segments.join('/')}/p/#{options[:page_number]}"
   end
 
   def params
-    {
+    return @params if defined?(@params)
+
+    @params = {
       lang: slug_segments.first,
       listing: [*slug_segments.drop(1), 'p', "#{options[:page_number]}"]
     }
@@ -12,10 +14,12 @@ class Page::Collection < Page::Base
 
   # Collection.preload(:collection_snippets, :parent, :children, snippets: [:language]).map(&:pages).flatten
   def props
-    {
+    return @context if defined?(@context)
+
+    @context = {
       slug: page_slug,
       description: object.seo_description,
-      collection: object.serialize_as(:collection_context),
+      collection: object.context,
       pagination: pagination,
       collection_items: options[:items].map(&:preview),
       large_images: options[:large_images]
