@@ -70,28 +70,28 @@ class Collection < ApplicationRecord
   end
 
   def has_parent?
-    parent_cid.present?
+    @has_parent ||= parent_cid.present?
   end
 
   def is_main?
-    cid == MAIN_COLLECTION_CID
+    @is_main ||= cid == MAIN_COLLECTION_CID
   end
 
   def is_collections?
-    cid == COLLECTIONS_COLLECTION_CID
+    @is_collections ||= cid == COLLECTIONS_COLLECTION_CID
   end
 
   def is_primary?
-    top_level?
+    @is_primary ||= top_level?
   end
 
   def is_secondary?
-    has_parent?
+    @is_secondary ||= has_parent?
   end
 
   def root_url
     # To avoid an extra query, we recreate the parent's slug here.
-    has_parent? ? parent_cid.to_seo_slug : slug
+    @root_url ||= has_parent? ? parent_cid.to_seo_slug : slug
   end
 
   def siblings
@@ -111,32 +111,33 @@ class Collection < ApplicationRecord
   end
 
   def first_page_slug
-    "#{slug}/p/1"
+    @first_page_slug ||= "#{slug}/p/1"
+  end
+
+  def all_page_full_urls
+    @all_page_full_urls ||= (1..page_count).map do |page_number|
+      "#{Orbit::settings[:website][:url]}#{slug}/p/#{page_number}"
+    end
   end
 
   def page_count
-    (listed_snippet_count / Orbit::settings[:cards_per_page]).ceil
+    @page_count ||=
+      (listed_snippet_count / Orbit::settings[:cards_per_page]).ceil
   end
 
   def listed_snippets
-    collection_snippets.
-      published.
-      listed.
-      by_position.
-      joins(:snippet).
-      # merge(Snippet.published).
-      # where.not(collection_snippets: { position: -1 }).
-      # order('collection_snippets.position asc').
-      preload(:snippet).
-      map(&:snippet)
-  end
-
-  def listed_snippet_count
-    @listed_snippet_count ||= collection_snippets.published.listed.count
+    @listed_snippets ||=
+      collection_snippets.
+        published.
+        listed.
+        by_position.
+        joins(:snippet).
+        preload(:snippet).
+        map(&:snippet)
   end
 
   def formatted_snippet_count
-    "#{listed_snippet_count} snippets"
+    @formatted_snippet_count ||= "#{listed_snippet_count} snippets"
   end
 
   def formatted_description
@@ -145,7 +146,7 @@ class Collection < ApplicationRecord
 
   # TODO: Extract into a presenter ideally
   def sublinks
-    sublink_presenter.sublinks
+    @sublinks ||= sublink_presenter.sublinks
   end
 
   # TODO: A little fiddly
@@ -156,20 +157,28 @@ class Collection < ApplicationRecord
   def pages
     return @pages = collections_pages if cid == COLLECTIONS_COLLECTION_CID
 
+    pagination = {
+      page_count: page_count,
+      item_count: listed_snippet_count,
+      item_type: 'snippets'
+    }
+
     @pages ||= (1..page_count).map do |page_number|
       Page.from(
         self,
         page_number: page_number,
-        page_count: page_count,
         items: listed_snippets.slice(
           (page_number - 1) * Orbit::settings[:cards_per_page],
           Orbit::settings[:cards_per_page]
         ),
-        item_count: listed_snippet_count,
-        item_type: 'snippets',
+        **pagination,
         large_images: false
       )
     end
+  end
+
+  def context
+    @context ||= serialize_as(:collection_context)
   end
 
   private
@@ -181,18 +190,21 @@ class Collection < ApplicationRecord
     featured_collections_count = featured_collections.count
     page_count = (featured_collections_count / Orbit::settings[:collection_cards_per_page]).ceil
 
+    pagination = {
+      page_count: page_count,
+      item_count: featured_collections_count,
+      item_type: 'collections'
+    }
+
     @collections_pages ||= (1..page_count).map do |page_number|
       Page.from(
         self,
         page_number: page_number,
-        page_count: page_count,
-        collections_count: featured_collections_count,
         items: featured_collections.slice(
           (page_number - 1) * Orbit::settings[:collection_cards_per_page],
           Orbit::settings[:collection_cards_per_page]
         ),
-        item_count: featured_collections_count,
-        item_type: 'collections',
+        **pagination,
         large_images: true
       )
     end
