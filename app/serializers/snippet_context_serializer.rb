@@ -25,7 +25,7 @@ class SnippetContextSerializer < BaseSerializer
   end
 
   def cover
-    object.cover_url
+    object.cover_url(full: true)
   end
 
   def table_of_contents
