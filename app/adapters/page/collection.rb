@@ -18,7 +18,7 @@ class Page::Collection < Page::Base
 
     @context = {
       slug: page_slug,
-      description: object.seo_description,
+      page_description: object.seo_description,
       collection: object.context,
       pagination: pagination,
       collection_items: options[:items].map(&:preview),
