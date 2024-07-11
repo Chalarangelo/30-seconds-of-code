@@ -15,11 +15,42 @@ namespace :content do
     Rake::Task['db:schema:load'].invoke
   end
 
-  desc "Full run of the content processing pipeline"
-  task prepare: :environment do
-    threads = []
-    # A. Run the content generation process
-    threads << Thread.new do
+  namespace :prepare do
+    desc "Full run of the content processing pipeline"
+    task full: :environment do
+      threads = []
+      # A. Run the content generation process
+      threads << Thread.new do
+        # 1. Run parsley content to export content as JSON data
+        `bin/parsley content`
+        # 2. Reset the database
+        Rake::Task['content:clear'].invoke
+        # 3. Import the content
+        Rake::Task['content:import'].invoke
+        # 4. Export the content to the .content directory
+        Rake::Task['content:export'].invoke
+        # 5. Index the content for search
+        Rake::Task['search:index'].invoke
+        # 6. Process redirects
+        Rake::Task['redirect:process'].invoke
+        # 7. Generate the feed
+        Rake::Task['feed:generate'].invoke
+        # 8. Generate the sitemap
+        Rake::Task['sitemap:generate'].invoke
+      end
+
+      # B. Run the asset generation process
+      threads << Thread.new do
+        # 1. Run parsley assets to generate assets
+        `bin/parsley assets`
+      end
+
+      # Wait for all threads to finish
+      threads.each(&:join)
+    end
+
+    desc "Dev run of the content processing pipeline"
+    task dev: :environment do
       # 1. Run parsley content to export content as JSON data
       `bin/parsley content`
       # 2. Reset the database
@@ -30,21 +61,6 @@ namespace :content do
       Rake::Task['content:export'].invoke
       # 5. Index the content for search
       Rake::Task['search:index'].invoke
-      # 6. Process redirects
-      Rake::Task['redirect:process'].invoke
-      # 7. Generate the feed
-      Rake::Task['feed:generate'].invoke
-      # 8. Generate the sitemap
-      Rake::Task['sitemap:generate'].invoke
     end
-
-    # B. Run the asset generation process
-    threads << Thread.new do
-      # 1. Run parsley assets to generate assets
-      `bin/parsley assets`
-    end
-
-    # Wait for all threads to finish
-    threads.each(&:join)
   end
 end
