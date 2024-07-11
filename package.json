@@ -34,10 +34,9 @@
   "imports": {
     "#parsley": ["./parsley/parsley.js"],
     "#search": ["./search/search.js"],
-    "#blocks/*": "./src/blocks/*.js",
     "#components/*": "./astro/components/*.astro",
     "#layouts/*": "./astro/layouts/*.astro",
-    "#settings/*": "./src/settings/*.js",
+    "#settings": ["./astro/settings.js"],
     "#utils": "./src/utils/index.js"
   },
   "scripts": {

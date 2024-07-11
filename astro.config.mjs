@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
-import settings from '#settings/global';
+import settings from '#settings';
 
 // https://astro.build/config
 export default defineConfig({
