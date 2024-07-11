@@ -16,7 +16,7 @@ snippetIds:
   - js/s/sync-async
   - js/s/classical-vs-prototypal-inheritance
   - js/s/this
-  - js/s/shallow-deep-clone
+  - js/s/shallow-deep-clone-object
   - js/s/copy-array
   - js/s/object-comparison
   - js/s/array-comparison

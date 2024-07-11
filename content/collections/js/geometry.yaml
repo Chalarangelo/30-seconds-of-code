@@ -4,7 +4,7 @@ featured: true
 snippetIds:
   - js/s/euclidean-distance
   - js/s/midpoint
-  - js/s/vector-distance
+  - js/s/euclidean-distance
   - js/s/vector-angle
 splash: tea-pour
 description: >-
