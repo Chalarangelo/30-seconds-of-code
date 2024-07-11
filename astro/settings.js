@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 export default {
   websiteName: '30 seconds of code',
   websiteDescription: 'Short code snippets for all your development needs',
