@@ -21,14 +21,24 @@ export const extractCollectionSnippetData = (collections, snippets) => {
       }
 
       if (snippetIds && snippetIds.length) {
-        return rankedSnippets
-          .filter(snippet => snippetIds.includes(snippet.id))
-          .map((snippet, index) => ({
-            collectionId,
-            snippetId: snippet.id,
-            position: snippet.listed ? index : -1,
-            dateModified: snippet.dateModified,
-          }));
+        return snippetIds
+          .map((snippetId, index) => {
+            const snippet = snippets.find(s => s.id === snippetId);
+            if (!snippet) {
+              console.warn(
+                `Snippet ${snippetId} not found in collection ${collectionId}`
+              );
+              return null;
+            }
+
+            return {
+              collectionId,
+              snippetId,
+              position: index,
+              dateModified: snippet.dateModified,
+            };
+          })
+          .filter(Boolean);
       }
 
       let collectionSnippets = [...rankedSnippets];
