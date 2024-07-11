@@ -36,8 +36,7 @@
     "#search": ["./search/search.js"],
     "#components/*": "./astro/components/*.astro",
     "#layouts/*": "./astro/layouts/*.astro",
-    "#settings": ["./astro/settings.js"],
-    "#utils": "./src/utils/index.js"
+    "#settings": ["./astro/settings.js"]
   },
   "scripts": {
     "predev": "bin/rake content:prepare:dev",

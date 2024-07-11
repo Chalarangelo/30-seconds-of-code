@@ -1,7 +1,7 @@
 import { snippetPrefix } from '../config.js';
 import { FileHandler } from '../fileHandler.js';
 import { MarkdownParser } from '../markdownParser/markdownParser.js';
-import { stripMarkdownFormat } from '#utils';
+import { stripMarkdownFormat } from '../utils.js';
 import tokenize from '#search';
 import { Ranker } from '../ranker.js';
 import { TocReader } from '../tocReader.js';

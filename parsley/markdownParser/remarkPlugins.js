@@ -3,7 +3,7 @@ import { visitParents } from 'unist-util-visit-parents';
 import { toString } from 'hast-util-to-string';
 import Prism from 'prismjs';
 import loadLanguages from 'prismjs/components/index.js';
-import { convertToValidId, capitalize } from '#utils';
+import { convertToValidId, capitalize } from '../utils.js';
 
 // Highlight code blocks
 export const highlightCode = ({ grammars }) => {
