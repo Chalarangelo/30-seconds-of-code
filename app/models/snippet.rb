@@ -89,9 +89,9 @@ class Snippet < ApplicationRecord
   def formatted_tags
     return @formatted_tags if defined?(@formatted_tags)
 
-    tags.map { |tag| TagFormatter.format(tag) }
-    tags.prepend(language.name) if has_language?
-    @formatted_tags = tags.join(', ')
+    @formatted_tags = tags.map { |tag| TagFormatter.format(tag) }
+    @formatted_tags.prepend(language.name) if has_language?
+    @formatted_tags = @formatted_tags.join(', ')
   end
 
   def formatted_preview_tags
@@ -108,7 +108,7 @@ class Snippet < ApplicationRecord
   end
 
   def github_url
-    @github_url ||= "#{GITHUB_URL_PREFIX}/#{file_name}"
+    @github_url ||= "#{GITHUB_URL_PREFIX}#{slug}.md"
   end
 
   def is_scheduled?
