@@ -41,16 +41,12 @@
     "#utils": "./src/utils/index.js"
   },
   "scripts": {
-    "predev": "NODE_ENV=development bin/rake prepare:content",
+    "predev": "bin/rake content:prepare:dev",
     "dev": "astro dev --port 8000",
     "start": "astro dev --port 8000",
-    "prebuild": "NODE_ENV=production node ./src/scripts/build.js",
+    "prebuild": "bin/rake content:prepare:full",
     "build": "astro build",
-    "preview": "astro preview --port 9000",
-    "watch": "NODE_ENV=development node ./src/scripts/watch.js",
-    "console": "NODE_ENV=production node ./src/scripts/console.js",
-    "create": "NODE_ENV=production node ./src/scripts/create.js",
-    "manifest": "NODE_ENV=production node ./src/scripts/manifest.js"
+    "preview": "astro preview --port 9000"
   },
   "license": "MIT",
   "repository": {
