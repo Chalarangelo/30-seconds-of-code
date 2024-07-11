@@ -8,13 +8,16 @@ class CoverPresenter
   }.freeze
 
   COVER_SUFFIX = {
+    home: '-400',
     snippet: '-400',
+    snippet_full: '-800',
     collection: '-600'
   }.freeze
 
   COVER_SIZES = {
     snippet: %w(400w 800w),
-    collection: %w(400w 600w)
+    snippet_full: %w(800w 400w 1200w),
+    collection: %w(600w 400w)
   }.freeze
 
   def initialize(object, options: {})
@@ -22,16 +25,16 @@ class CoverPresenter
     @options = options
   end
 
-  def cover_url
-    "#{cover_prefix}#{cover_name}#{cover_suffix}#{COVER_EXTENSION}"
+  def cover_url(full: false)
+    "#{cover_prefix}#{cover_name}#{cover_suffix(full: full)}#{COVER_EXTENSION}"
   end
 
   def cover_full_url
     "#{Orbit::settings[:website][:url]}#{cover_url}"
   end
 
-  def cover_srcset
-    cover_sizes.map do |size|
+  def cover_srcset(full: false)
+    cover_sizes(full: full).map do |size|
       suffix = size.delete('w')
       "#{cover_prefix}#{cover_name}-#{suffix}#{COVER_EXTENSION} #{size}"
     end
@@ -44,18 +47,31 @@ class CoverPresenter
   end
 
   def cover_name
-    object.cover
+    # Use a symbol to support hashes, too (for home)
+    @cover_name ||= object[:cover]
   end
 
   def cover_prefix
-    is_snippet? ? COVER_PREFIXES[:snippet] : COVER_PREFIXES[:collection]
+    @cover_prefix ||=
+      is_snippet? ? COVER_PREFIXES[:snippet] : COVER_PREFIXES[:collection]
   end
 
-  def cover_sizes
-    is_snippet? ? COVER_SIZES[:snippet] : COVER_SIZES[:collection]
+  def cover_sizes(full: false)
+    return COVER_SIZES[:collection] unless is_snippet?
+
+    if full
+      COVER_SIZES[:snippet_full]
+    else
+      COVER_SIZES[:snippet]
+    end
   end
 
-  def cover_suffix
-    is_snippet? ? COVER_SUFFIX[:snippet] : COVER_SUFFIX[:collection]
+  def cover_suffix(full: false)
+    # Special case for home (expects a hash)
+    return COVER_SUFFIX[:home] if object.is_a?(Hash)
+
+    return COVER_SUFFIX[:collection] unless is_snippet?
+
+    full ? COVER_SUFFIX[:snippet_full] : COVER_SUFFIX[:snippet]
   end
 end
