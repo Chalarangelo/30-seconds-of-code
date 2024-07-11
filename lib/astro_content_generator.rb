@@ -11,6 +11,8 @@ class AstroContentGenerator
     Collection.prepare_counts
     Snippet.prepare_previews
     Collection.prepare_previews
+
+    FileUtils.mkdir_p(Orbit::settings[:page_output_path])
   end
 
   def self.generate_home_page
