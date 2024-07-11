@@ -32,13 +32,14 @@ class SublinkPresenter
     return [] if is_primary? && children.empty?
 
     links = has_parent? ? siblings : children
-    links.map do |link|
-      to_sublink(link, link.cid === cid)
-    end.prepend({
-      title: PARENT_TITLE,
-      url: "#{root_url}/p/1",
-      selected: is_primary?
-    })
+    links.
+      map { |link| to_sublink(link, link.cid === cid) }.
+      sort_by { |link| link[:title] }.
+      prepend({
+        title: PARENT_TITLE,
+        url: "#{root_url}/p/1",
+        selected: is_primary?
+      })
   end
 
   private
