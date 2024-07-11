@@ -141,10 +141,9 @@ class Collection < ApplicationRecord
   end
 
   def formatted_description
-    description.strip_html_paragraphs_and_links
+    short_description.strip_html_paragraphs_and_links
   end
 
-  # TODO: Extract into a presenter ideally
   def sublinks
     @sublinks ||= sublink_presenter.sublinks
   end
