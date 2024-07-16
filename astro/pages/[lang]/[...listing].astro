@@ -40,7 +40,7 @@ const {
 ---
 
 <Layout
-  title={structuredData ? structuredData.name : collection.name}
+  title={structuredData ? structuredData.name : collection.title}
   description={pageDescription}
   logoSrc={collection.cover ? collection.cover : undefined}
   structuredData={structuredData}
@@ -48,7 +48,7 @@ const {
 >
   <main slot='main-content'>
     <Hero
-      title={collection.name}
+      title={collection.title}
       description={collection.description}
       cover={collection.cover}
       coverSrcset={collection.coverSrcset}
