@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [array,object]
 cover: guitar-living-room
+listed: true
 dateModified: 2021-06-20
 ---
 

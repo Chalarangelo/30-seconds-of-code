@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list,string]
 cover: industrial-tokyo
+listed: true
 dateModified: 2020-11-02
 ---
 

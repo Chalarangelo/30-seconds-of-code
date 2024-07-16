@@ -6,6 +6,7 @@ language: javascript
 tags: [array]
 cover: red-mountain-range
 excerpt: Discover the inner workings of JavaScript arrays and learn about the different ways to initialize them.
+listed: true
 dateModified: 2023-06-18
 ---
 

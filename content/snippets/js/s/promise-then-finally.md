@@ -6,6 +6,7 @@ language: javascript
 tags: [function,promise]
 cover: blue-sunrise
 excerpt: A JavaScript promise's `then` and `finally` methods seem very similar. But there are a few important differences you need to keep in mind.
+listed: true
 dateModified: 2021-06-12
 ---
 

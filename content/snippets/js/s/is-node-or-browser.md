@@ -6,6 +6,7 @@ language: javascript
 tags: [browser,node]
 cover: cloudy-rock-formation
 excerpt: Determine if the current JavaScript environment is Node.js or a browser.
+listed: true
 dateModified: 2024-01-10
 ---
 

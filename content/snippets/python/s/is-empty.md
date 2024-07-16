@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list,dictionary,string]
 cover: salad-1
+listed: true
 dateModified: 2023-01-12
 ---
 

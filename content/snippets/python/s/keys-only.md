@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [dictionary,list]
 cover: succulent-5
+listed: true
 dateModified: 2020-11-02
 ---
 

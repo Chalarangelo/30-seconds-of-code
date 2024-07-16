@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [function]
 cover: beach-overview
+listed: true
 dateModified: 2021-10-13
 ---
 

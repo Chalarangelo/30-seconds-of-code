@@ -6,6 +6,7 @@ language: git
 tags: [configuration]
 cover: coffee-float
 excerpt: Did you set up a lot of Git aliases and forgot what they are? List them all with this command.
+listed: true
 dateModified: 2024-03-30
 ---
 

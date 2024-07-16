@@ -6,6 +6,7 @@ language: javascript
 tags: [browser,regexp]
 cover: clutter-2
 excerpt: Learn how to detect whether a page is being viewed on a mobile device or a desktop.
+listed: true
 dateModified: 2024-06-03
 ---
 

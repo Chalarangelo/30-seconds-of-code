@@ -6,6 +6,7 @@ language: javascript
 tags: [type,comparison]
 cover: eagle
 excerpt: Did you know there's a JavaScript value that's not equal to itself?
+listed: true
 dateModified: 2021-12-12
 ---
 

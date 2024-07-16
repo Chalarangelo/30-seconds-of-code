@@ -6,6 +6,7 @@ language: python
 tags: [string]
 cover: feathers
 excerpt: Learn two ways to format a string in Python with this quick tip.
+listed: true
 dateModified: 2021-06-12
 ---
 

@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [browser,event]
 cover: duck-plants
+listed: true
 dateModified: 2021-04-22
 ---
 

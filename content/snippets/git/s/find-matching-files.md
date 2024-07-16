@@ -6,6 +6,7 @@ language: git
 tags: [repository,branch,commit]
 cover: boulder-beach
 excerpt: Learn how to leverage the power of `git grep` to find matching files in your repository.
+listed: true
 dateModified: 2024-05-06
 ---
 

@@ -6,6 +6,7 @@ language: javascript
 tags: [class]
 cover: purple-flower-macro-3
 excerpt: A linked list is a linear data structure where each element points to the next.
+listed: true
 dateModified: 2021-08-08
 ---
 

@@ -6,6 +6,7 @@ language: javascript
 tags: [array]
 cover: switzerland-night
 excerpt: Have you ever tried appending elements to an array in JavaScript? Here's a primer on all the available options.
+listed: true
 dateModified: 2022-07-10
 ---
 

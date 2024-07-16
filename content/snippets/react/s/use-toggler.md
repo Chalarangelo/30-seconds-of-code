@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state,callback]
 cover: tram-car-2
+listed: true
 dateModified: 2020-11-27
 ---
 

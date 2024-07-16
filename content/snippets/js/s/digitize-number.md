@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [math]
 cover: industrial-tokyo
+listed: true
 dateModified: 2020-10-18
 ---
 

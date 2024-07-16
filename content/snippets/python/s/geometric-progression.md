@@ -5,6 +5,7 @@ language: python
 tags: [math,list]
 cover: kettle-laptop
 excerpt: Initializes a list containing the numbers in the specified geometric progression range.
+listed: true
 dateModified: 2020-11-02
 ---
 

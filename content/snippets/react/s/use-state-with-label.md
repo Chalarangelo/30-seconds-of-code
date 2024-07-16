@@ -6,6 +6,7 @@ language: react
 tags: [hooks]
 cover: bunny-poster
 excerpt: Multiple `useState` hooks in React can complicate things while debugging. Luckily, there's an easy way to label these values.
+listed: true
 dateModified: 2021-11-07
 ---
 

@@ -6,6 +6,7 @@ language: git
 tags: [configuration]
 cover: terminal
 excerpt: Learn how to open the Git configuration file in the Git text editor, for editing.
+listed: true
 dateModified: 2024-04-11
 ---
 

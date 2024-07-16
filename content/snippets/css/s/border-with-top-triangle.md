@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: greek-coffee
+listed: true
 dateModified: 2021-01-07
 ---
 

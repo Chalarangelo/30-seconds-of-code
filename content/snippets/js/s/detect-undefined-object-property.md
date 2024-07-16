@@ -6,6 +6,7 @@ language: javascript
 tags: [object]
 cover: pink-flower
 excerpt: Learn how to detect `undefined` object properties in JavaScript the correct way.
+listed: true
 dateModified: 2022-08-07
 ---
 

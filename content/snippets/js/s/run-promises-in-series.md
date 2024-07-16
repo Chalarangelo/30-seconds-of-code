@@ -6,6 +6,7 @@ language: javascript
 tags: [function,promise]
 cover: sail-away
 excerpt: Learn how to resolve promises one after another (sequentially) in JavaScript.
+listed: true
 dateModified: 2023-10-15
 ---
 

@@ -6,6 +6,7 @@ language: css
 tags: [visual]
 cover: strawberries
 excerpt: Implement responsive typography with the CSS clamp() function.
+listed: true
 dateModified: 2022-12-28
 ---
 

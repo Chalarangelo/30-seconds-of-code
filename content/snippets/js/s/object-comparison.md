@@ -6,6 +6,7 @@ language: javascript
 tags: [object,comparison]
 cover: blue-lake
 excerpt: Learn how you can compare two objects in JavaScript using various different techniques.
+listed: true
 dateModified: 2021-09-26
 ---
 

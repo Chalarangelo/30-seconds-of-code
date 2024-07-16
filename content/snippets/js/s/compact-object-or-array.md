@@ -6,6 +6,7 @@ language: javascript
 tags: [array,object,recursion]
 cover: basket-paper
 excerpt: Learn how to compact an array or object in JavaScript using the `Boolean` function and recursion.
+listed: true
 dateModified: 2024-01-02
 ---
 

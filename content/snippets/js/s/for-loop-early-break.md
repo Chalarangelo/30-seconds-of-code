@@ -6,6 +6,7 @@ language: javascript
 tags: [array,loop]
 cover: armchair
 excerpt: Iteration in JavaScript can be done a handfuld of ways, most often using array methods, but sometimes a `for` loop is the best option.
+listed: true
 dateModified: 2021-06-12
 ---
 

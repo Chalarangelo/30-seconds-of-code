@@ -6,6 +6,7 @@ language: javascript
 tags: [browser]
 cover: purple-sunset-waves
 excerpt: Learn a simple way to get the browser's current URL in JavaScript.
+listed: true
 dateModified: 2023-10-19
 ---
 

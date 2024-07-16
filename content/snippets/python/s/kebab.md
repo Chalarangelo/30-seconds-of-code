@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [string,regexp]
 cover: peaches
+listed: true
 dateModified: 2020-11-02
 ---
 

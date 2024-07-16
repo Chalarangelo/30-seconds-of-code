@@ -6,6 +6,7 @@ language: javascript
 tags: [array,object]
 cover: tropical-waterfall
 excerpt: Learn how to group and count the values of a JavaScript array using simple array methods.
+listed: true
 dateModified: 2024-01-28
 ---
 

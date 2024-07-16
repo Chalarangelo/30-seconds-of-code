@@ -6,6 +6,7 @@ language: git
 tags: [branch]
 cover: two-doors
 excerpt: Want to compare the changes between two branches in Git? Here's how you can do it.
+listed: true
 dateModified: 2024-04-23
 ---
 

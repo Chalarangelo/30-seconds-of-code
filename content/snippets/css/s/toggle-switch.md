@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual,interactivity]
 cover: interior-5
+listed: true
 dateModified: 2020-12-30
 ---
 

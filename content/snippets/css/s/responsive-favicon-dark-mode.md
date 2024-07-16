@@ -6,6 +6,7 @@ language: css
 tags: [visual]
 cover: dark-mode
 excerpt: Learn how to create a custom responsive favicon that can adapt its color palette for dark mode with this quick guide.
+listed: true
 dateModified: 2021-09-28
 ---
 

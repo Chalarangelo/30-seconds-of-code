@@ -6,6 +6,7 @@ language: python
 tags: [list]
 cover: sliced-fruits
 excerpt: Learn everything you need to know about Python's slice assignment with this handy guide.
+listed: true
 dateModified: 2021-06-12
 ---
 

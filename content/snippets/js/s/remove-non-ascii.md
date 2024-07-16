@@ -6,6 +6,7 @@ language: javascript
 tags: [string,regexp]
 cover: blue-red-mountain
 excerpt: Remove non-printable ASCII characters from a string in JavaScript.
+listed: true
 dateModified: 2024-05-18
 ---
 

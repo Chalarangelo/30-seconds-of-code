@@ -6,6 +6,7 @@ language: javascript
 tags: [object]
 cover: symmetry-cloudy-mountain
 excerpt: Check the properties of an object against an array of keys or another object to ensure they match.
+listed: true
 dateModified: 2024-03-25
 ---
 

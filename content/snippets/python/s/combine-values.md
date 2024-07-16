@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [dictionary]
 cover: dim-mountains
+listed: true
 dateModified: 2021-04-04
 ---
 

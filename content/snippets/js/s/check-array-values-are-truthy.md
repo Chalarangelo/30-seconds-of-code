@@ -6,6 +6,7 @@ language: javascript
 tags: [object,logic,array]
 cover: digital-nomad-8
 excerpt: Learn how to check if all values in an array are true or false.
+listed: true
 dateModified: 2023-11-06
 ---
 

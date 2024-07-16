@@ -6,6 +6,7 @@ language: javascript
 tags: [browser]
 cover: new-york
 excerpt: A simple trick to remove one or more attributes from an HTML element.
+listed: true
 dateModified: 2023-10-21
 ---
 

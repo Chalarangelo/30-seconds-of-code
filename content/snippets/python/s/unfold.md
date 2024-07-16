@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [function,list]
 cover: painters-desk
+listed: true
 dateModified: 2020-11-02
 ---
 

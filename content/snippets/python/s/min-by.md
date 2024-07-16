@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [math,list]
 cover: purple-flower-field
+listed: true
 dateModified: 2020-11-02
 ---
 

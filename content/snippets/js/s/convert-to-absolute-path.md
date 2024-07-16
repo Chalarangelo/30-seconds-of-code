@@ -6,6 +6,7 @@ language: javascript
 tags: [node,string,regexp]
 cover: lighthouse
 excerpt: Ever wanted to convert a tilde path to an absolute path? Here's how you can do it in JavaScript.
+listed: true
 dateModified: 2024-03-19
 ---
 

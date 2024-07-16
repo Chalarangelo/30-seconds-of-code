@@ -6,6 +6,7 @@ language: git
 tags: [repository,commit]
 cover: dark-city
 excerpt: Learn how to view a short summary of your Git commits using git log.
+listed: true
 dateModified: 2023-05-23
 ---
 

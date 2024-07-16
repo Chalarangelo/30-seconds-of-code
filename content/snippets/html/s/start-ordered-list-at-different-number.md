@@ -6,6 +6,7 @@ language: html
 tags: [content]
 cover: neon-desk-1
 excerpt: Did you know you can customize the starting number of your ordered lists? Learn how with this quick tip.
+listed: true
 dateModified: 2024-05-10
 ---
 

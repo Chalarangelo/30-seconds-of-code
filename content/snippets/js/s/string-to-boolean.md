@@ -6,6 +6,7 @@ language: javascript
 tags: [string,boolean,type]
 cover: two-cities
 excerpt: Have you ever tried to convert the string representation of a boolean to an actual boolean value? Here's a simple way to do it.
+listed: true
 dateModified: 2022-09-14
 ---
 

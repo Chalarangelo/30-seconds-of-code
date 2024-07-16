@@ -5,6 +5,7 @@ language: javascript
 tags: [browser]
 cover: dark-mode
 excerpt: Use a media query to check if the user prefers a light or dark color scheme.
+listed: true
 dateModified: 2023-11-05
 ---
 

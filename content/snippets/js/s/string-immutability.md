@@ -6,6 +6,7 @@ language: javascript
 tags: [string,type]
 cover: purple-sunset
 excerpt: When it comes to immutability, JavaScript strings are often a source of confusion. Yet they're not as complicated as you might expect.
+listed: true
 dateModified: 2021-10-10
 ---
 

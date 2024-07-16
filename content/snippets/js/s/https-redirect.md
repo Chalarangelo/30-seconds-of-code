@@ -6,6 +6,7 @@ language: javascript
 tags: [browser]
 cover: blue-lake
 excerpt: Learn how to redirect the page to HTTPS if it's currently in HTTP.
+listed: true
 dateModified: 2023-10-18
 ---
 

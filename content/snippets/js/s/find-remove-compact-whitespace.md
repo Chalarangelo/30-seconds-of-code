@@ -6,6 +6,7 @@ language: javascript
 tags: [string,regexp]
 cover: tropical-bike
 excerpt: Learn how to work with whitespaces in JavaScript strings, using these simple yet powerful regular expression techniques.
+listed: true
 dateModified: 2024-01-27
 ---
 

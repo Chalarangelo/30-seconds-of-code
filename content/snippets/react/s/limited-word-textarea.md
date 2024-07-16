@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [components,input,state,callback,effect,event]
 cover: painters-desk
+listed: true
 dateModified: 2021-10-13
 ---
 

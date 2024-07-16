@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: coffee-phone-tray
+listed: true
 dateModified: 2021-05-16
 ---
 

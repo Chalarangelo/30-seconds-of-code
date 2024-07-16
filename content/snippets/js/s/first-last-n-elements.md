@@ -6,6 +6,7 @@ language: javascript
 tags: [array]
 cover: fort-lamp
 excerpt: Learn how to retrieve the first or last `n` elements in a JavaScript array with a single line of code.
+listed: true
 dateModified: 2023-10-04
 ---
 

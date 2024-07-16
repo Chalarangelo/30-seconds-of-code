@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: interior-8
+listed: true
 dateModified: 2021-01-05
 ---
 

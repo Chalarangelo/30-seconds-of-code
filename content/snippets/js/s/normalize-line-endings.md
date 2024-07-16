@@ -6,6 +6,7 @@ language: javascript
 tags: [string,regexp]
 cover: red-light
 excerpt: Having trouble with inconsistent line endings in your strings? Normalize them with this handy JavaScript function!
+listed: true
 dateModified: 2024-05-24
 ---
 

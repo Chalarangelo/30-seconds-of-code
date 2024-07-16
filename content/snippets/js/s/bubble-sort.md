@@ -5,6 +5,7 @@ language: javascript
 tags: [algorithm,array]
 cover: sail-away-2
 excerpt: Sort an array of numbers, using the bubble sort algorithm.
+listed: true
 dateModified: 2023-12-16
 ---
 

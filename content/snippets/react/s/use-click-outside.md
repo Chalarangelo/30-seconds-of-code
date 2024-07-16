@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,effect,event]
 cover: clutter
+listed: true
 dateModified: 2020-11-16
 ---
 

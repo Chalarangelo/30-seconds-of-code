@@ -4,7 +4,7 @@ type: story
 tags: [webdev,career,programming,jobs]
 cover: kettle-laptop
 excerpt: Working from home seems great compared to going to the office, but there are challenges that come with it that you need to overcome.
-unlisted: true
+listed: false
 dateModified: 2021-06-12
 ---
 

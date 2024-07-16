@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [function]
 cover: lake-trees
+listed: true
 dateModified: 2020-11-02
 ---
 

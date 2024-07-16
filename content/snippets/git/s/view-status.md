@@ -6,6 +6,7 @@ language: git
 tags: [branch]
 cover: periscope
 excerpt: Learn how to view the current status of the working tree in Git.
+listed: true
 dateModified: 2024-04-12
 ---
 

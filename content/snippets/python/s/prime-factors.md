@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [math,algorithm]
 cover: river-flow
+listed: true
 dateModified: 2023-05-24
 ---
 

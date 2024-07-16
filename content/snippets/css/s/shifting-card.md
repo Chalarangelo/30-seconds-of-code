@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation]
 cover: clouds-n-mountains
+listed: true
 dateModified: 2022-12-14
 ---
 

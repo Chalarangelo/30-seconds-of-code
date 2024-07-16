@@ -6,6 +6,7 @@ language: javascript
 tags: [math]
 cover: clay-pot-horizon
 excerpt: Clamping and mapping a number to a range are two common and easily confused operations. Learn how to perform each in JavaScript.
+listed: true
 dateModified: 2024-02-14
 ---
 

@@ -6,6 +6,7 @@ language: javascript
 tags: [string,regexp]
 cover: cup-of-orange
 excerpt: Search for substrings in JavaScript strings without worrying about case sensitivity.
+listed: true
 dateModified: 2024-05-25
 ---
 

@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [math,string]
 cover: tram-car
+listed: true
 dateModified: 2020-11-02
 ---
 

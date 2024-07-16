@@ -6,6 +6,7 @@ language: html
 tags: [form]
 cover: palm-sun
 excerpt: Number-only inputs aren't as straightforward as you might expect. Here's a user-friendly way to set them up.
+listed: true
 dateModified: 2024-01-04
 ---
 

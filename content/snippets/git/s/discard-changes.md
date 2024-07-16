@@ -6,6 +6,7 @@ language: git
 tags: [branch]
 cover: cold-mountains
 excerpt: Made some changes you don't want to keep? Learn how to discard uncommitted or untracked changes in Git.
+listed: true
 dateModified: 2024-04-12
 ---
 

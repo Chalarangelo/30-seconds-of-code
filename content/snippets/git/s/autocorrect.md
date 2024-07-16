@@ -6,6 +6,7 @@ language: git
 tags: [configuration]
 cover: purple-flower-bunch
 excerpt: Mistyping commands often? Enable Git's autocorrect feature to automatically fix them.
+listed: true
 dateModified: 2024-03-28
 ---
 

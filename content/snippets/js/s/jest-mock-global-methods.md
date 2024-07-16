@@ -5,6 +5,7 @@ language: javascript
 tags: [testing]
 cover: trippy-chemicals
 excerpt: Testing your code is important, but mocking can be tricky at times. Here's a quick guide on how to mock global object methods in Jest.
+listed: true
 dateModified: 2022-03-27
 ---
 

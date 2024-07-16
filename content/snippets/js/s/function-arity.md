@@ -6,6 +6,7 @@ language: javascript
 tags: [function]
 cover: radio-monstera
 excerpt: Function arity is a simple, yet useful concept in functional programming, especially when combined with currying.
+listed: true
 dateModified: 2023-12-29
 ---
 

@@ -6,6 +6,7 @@ language: javascript
 tags: [browser,node,random]
 cover: digital-nomad-7
 excerpt: Generate a UUID in JavaScript using native APIs in both the browser and Node.js.
+listed: true
 dateModified: 2023-12-27
 ---
 

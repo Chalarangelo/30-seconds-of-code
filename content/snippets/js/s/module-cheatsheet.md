@@ -5,6 +5,7 @@ language: javascript
 tags: [cheatsheet]
 cover: mountain-lake-2
 excerpt: Learn everything you need to know about JavaScript modules with this handy cheatsheet.
+listed: true
 dateModified: 2021-06-12
 ---
 

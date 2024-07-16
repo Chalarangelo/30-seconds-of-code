@@ -6,6 +6,7 @@ language: javascript
 tags: [array, generator]
 cover: neon-desk-2
 excerpt: Ever wanted to initialize an array with a sequence of generated values? Here's a few ways to do it.
+listed: true
 dateModified: 2023-12-27
 ---
 

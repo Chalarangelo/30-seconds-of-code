@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [array,object]
 cover: man-cup-laptop
+listed: true
 dateModified: 2020-10-22
 ---
 

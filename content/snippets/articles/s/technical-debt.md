@@ -4,6 +4,7 @@ type: story
 tags: [webdev,career,programming,management]
 cover: new-york
 excerpt: Learn what technical debt is, its causes and symptoms, and how to deal with it.
+listed: true
 dateModified: 2022-10-09
 ---
 

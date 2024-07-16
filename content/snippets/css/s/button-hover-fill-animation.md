@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation]
 cover: beach-pineapple
+listed: true
 dateModified: 2021-04-02
 ---
 

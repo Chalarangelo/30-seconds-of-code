@@ -5,6 +5,7 @@ language: css
 tags: [layout]
 cover: malibu
 excerpt: Centering content with CSS might often feel difficult. Here are 4 easy ways you can do it.
+listed: true
 dateModified: 2024-05-07
 ---
 

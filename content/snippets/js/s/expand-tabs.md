@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [string,regexp]
 cover: naming-conventions
+listed: true
 dateModified: 2020-09-15
 ---
 

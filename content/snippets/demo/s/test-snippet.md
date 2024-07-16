@@ -4,8 +4,8 @@ type: story
 language: javascript
 tags: [link]
 cover: do-more-computer
-unlisted: true
 excerpt: This is a test snippet, do not publish it!
+listed: false
 dateModified: 2100-12-31
 ---
 

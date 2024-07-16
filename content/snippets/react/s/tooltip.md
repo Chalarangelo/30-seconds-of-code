@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [components,state,children]
 cover: dark-leaves-6
+listed: true
 dateModified: 2020-11-16
 ---
 

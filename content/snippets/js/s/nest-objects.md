@@ -6,6 +6,7 @@ language: javascript
 tags: [object,recursion]
 cover: birds
 excerpt: Learn how to recursively nest objects linked to one another in a flat array.
+listed: true
 dateModified: 2024-06-06
 ---
 

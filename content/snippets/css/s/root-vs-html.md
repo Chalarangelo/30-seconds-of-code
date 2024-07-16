@@ -6,6 +6,7 @@ language: css
 tags: [layout,selector]
 cover: tree-roots
 excerpt: The CSS selectors used to target the root element of an HTML share some similarities, but they also have some differences.
+listed: true
 dateModified: 2022-05-22
 ---
 

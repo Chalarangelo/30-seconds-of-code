@@ -6,6 +6,7 @@ language: javascript
 tags: [array]
 cover: succulent-crowd
 excerpt: JavaScript’s spread operator is a very versatile tool. Here are some simple ways to use it.
+listed: true
 dateModified: 2022-04-17
 ---
 

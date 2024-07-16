@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual,animation]
 cover: interior-8
+listed: true
 dateModified: 2021-10-11
 ---
 

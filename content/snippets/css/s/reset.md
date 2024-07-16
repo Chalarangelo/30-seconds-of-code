@@ -5,6 +5,7 @@ language: css
 tags: [visual]
 cover: bridge-over-road
 excerpt: A short, opinionated CSS reset to make your websites look great everywhere.
+listed: true
 dateModified: 2022-10-16
 ---
 

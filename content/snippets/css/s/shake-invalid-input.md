@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation]
 cover: perfect-timing
+listed: true
 dateModified: 2022-07-31
 ---
 

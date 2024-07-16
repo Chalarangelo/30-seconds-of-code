@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [components,state,children]
 cover: by-the-lighthouse
+listed: true
 dateModified: 2021-10-13
 ---
 

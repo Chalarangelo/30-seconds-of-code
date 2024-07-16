@@ -6,6 +6,7 @@ language: javascript
 tags: [array]
 cover: digital-nomad-7
 excerpt: Remove an element from an array if it's included in the array, or push it to the array if it isn't.
+listed: true
 dateModified: 2024-03-23
 ---
 

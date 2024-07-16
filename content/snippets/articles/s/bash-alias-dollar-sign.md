@@ -6,6 +6,7 @@ language: git
 tags: [configuration]
 cover: capsule-coffee
 excerpt: Learn how to eliminate the annoyance of copying dollar signs ($) along with terminal commands from the web with a simple bash alias.
+listed: true
 dateModified: 2023-03-05
 ---
 

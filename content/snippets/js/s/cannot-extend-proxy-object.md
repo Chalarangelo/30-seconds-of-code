@@ -6,6 +6,7 @@ language: javascript
 tags: [object,proxy]
 cover: icebreaker
 excerpt: Turns out the Proxy object is not extensible, but there's a way around its limitations.
+listed: true
 dateModified: 2023-04-17
 ---
 

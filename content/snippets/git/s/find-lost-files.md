@@ -6,6 +6,7 @@ language: git
 tags: [repository]
 cover: hard-disk
 excerpt: Learn how to find lost files and commits in a Git repository.
+listed: true
 dateModified: 2024-05-01
 ---
 

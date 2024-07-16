@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation]
 cover: clay-pot-horizon
+listed: true
 dateModified: 2021-05-24
 ---
 

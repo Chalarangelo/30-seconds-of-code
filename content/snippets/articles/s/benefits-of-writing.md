@@ -4,6 +4,7 @@ type: story
 tags: [webdev,career,programming,jobs]
 cover: laptop-view
 excerpt: Writing about a topic can often sound boring or worthless. But there are significant benefits to doing it from time to time.
+listed: true
 dateModified: 2022-11-05
 ---
 

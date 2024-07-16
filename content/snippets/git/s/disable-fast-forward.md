@@ -6,6 +6,7 @@ language: git
 tags: [configuration,repository]
 cover: people-on-beach
 excerpt: Git defaults to fast-forward merging when possible. But, what if you want to disable it by default? Let's see how you can do that.
+listed: true
 dateModified: 2024-04-15
 ---
 

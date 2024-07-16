@@ -6,6 +6,7 @@ language: javascript
 tags: [string,regexp]
 cover: greek-coffee
 excerpt: Easily convert an `rgb()` color string to an array of values or an object with the values of each color.
+listed: true
 dateModified: 2024-03-06
 ---
 

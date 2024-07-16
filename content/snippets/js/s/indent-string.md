@@ -6,6 +6,7 @@ language: javascript
 tags: [string]
 cover: metropolitan-window
 excerpt: Indent each line in a string by a specified number of spaces or a custom indentation character.
+listed: true
 dateModified: 2024-05-19
 ---
 

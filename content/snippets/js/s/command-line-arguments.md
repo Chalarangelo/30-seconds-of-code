@@ -6,6 +6,7 @@ language: javascript
 tags: [node]
 cover: hiking-balance
 excerpt: Learn how to extract command-line arguments passed to a Node.js script.
+listed: true
 dateModified: 2024-05-22
 ---
 

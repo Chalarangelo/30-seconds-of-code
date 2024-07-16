@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [string,math]
 cover: sleepy-cat
+listed: true
 dateModified: 2020-09-15
 ---
 

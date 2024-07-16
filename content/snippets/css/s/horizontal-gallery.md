@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual,interactivity]
 cover: flower-portrait-5
+listed: true
 dateModified: 2022-05-01
 ---
 

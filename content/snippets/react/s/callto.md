@@ -3,8 +3,8 @@ title: Callable telephone link
 type: snippet
 language: react
 tags: [components]
-unlisted: true
 cover: rabbit-call
+listed: false
 dateModified: 2021-01-04
 ---
 

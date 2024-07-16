@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [components,state]
 cover: sea-view-2
+listed: true
 dateModified: 2021-10-13
 ---
 

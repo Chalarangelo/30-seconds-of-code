@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [string,regexp]
 cover: lemon-tea
+listed: true
 dateModified: 2020-11-02
 ---
 

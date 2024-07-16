@@ -6,6 +6,7 @@ language: javascript
 tags: [string,regexp]
 cover: collab-desk-2
 excerpt: Learn how to easily convert any string to a URL-friendly slug, using regular expressions.
+listed: true
 dateModified: 2024-02-05
 ---
 

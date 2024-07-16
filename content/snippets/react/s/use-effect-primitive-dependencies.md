@@ -6,6 +6,7 @@ language: react
 tags: [hooks,effect,object,comparison]
 cover: automaton
 excerpt: Avoid unnecessary re-runs by using primitive dependencies in your React effect.
+listed: true
 dateModified: 2022-06-12
 ---
 

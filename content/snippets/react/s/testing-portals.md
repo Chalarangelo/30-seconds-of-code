@@ -6,6 +6,7 @@ language: react
 tags: [testing]
 cover: portal-timelapse
 excerpt: Testing React components that use portals can be difficult until you understand what you really need to be testing.
+listed: true
 dateModified: 2022-03-13
 ---
 

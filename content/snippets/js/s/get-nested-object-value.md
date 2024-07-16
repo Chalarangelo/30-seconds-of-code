@@ -6,6 +6,7 @@ language: javascript
 tags: [object,regexp,recursion]
 cover: campfire
 excerpt: Learn how to get a nested object property by key or a path string in JavaScript, and how to search for nested values in an object.
+listed: true
 dateModified: 2024-03-22
 ---
 

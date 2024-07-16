@@ -6,6 +6,7 @@ language: css
 tags: [visual,layout]
 cover: css-variables
 excerpt: Learn how CSS custom properties (CSS variables) work and what you can use them for in your code and designs.
+listed: true
 dateModified: 2021-09-28
 ---
 

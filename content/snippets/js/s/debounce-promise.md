@@ -6,6 +6,7 @@ language: javascript
 tags: [function,promise]
 excerpt: Easily create a debounced function that returns a promise.
 cover: chess-pawns
+listed: true
 dateModified: 2023-10-13
 ---
 

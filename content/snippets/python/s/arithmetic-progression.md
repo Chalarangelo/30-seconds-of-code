@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [math]
 cover: number-2
+listed: true
 dateModified: 2020-11-02
 ---
 

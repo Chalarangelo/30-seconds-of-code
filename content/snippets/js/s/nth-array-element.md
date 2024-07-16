@@ -6,6 +6,7 @@ language: javascript
 tags: [array]
 cover: dark-leaves-6
 excerpt: Find the `nth` or every `nth` element of a JavaScript array.
+listed: true
 dateModified: 2024-01-19
 ---
 

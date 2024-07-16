@@ -6,6 +6,7 @@ language: javascript
 tags: [array,function]
 cover: antelope
 excerpt: JavaScript ES6 introduced us to powerful new features, such as the spread and rest syntax. Learn all you need to know in this quick guide.
+listed: true
 dateModified: 2021-06-12
 ---
 

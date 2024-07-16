@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [math,list]
 cover: horse-sunset
+listed: true
 dateModified: 2020-11-02
 ---
 

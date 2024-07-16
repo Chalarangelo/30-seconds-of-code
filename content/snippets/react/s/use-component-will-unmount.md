@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,effect]
 cover: rocky-beach-3
+listed: true
 dateModified: 2021-10-13
 ---
 

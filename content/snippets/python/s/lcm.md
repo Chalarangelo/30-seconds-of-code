@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [math,list]
 cover: chess-pawns
+listed: true
 dateModified: 2020-11-02
 ---
 

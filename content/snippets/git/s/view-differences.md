@@ -6,6 +6,7 @@ language: git
 tags: [commit,branch]
 cover: plant-candle
 excerpt: View differences between staged or unstaged changes and the last commit in Git.
+listed: true
 dateModified: 2024-04-21
 ---
 

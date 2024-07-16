@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [function]
 cover: island-corridor
+listed: true
 dateModified: 2020-10-22
 ---
 

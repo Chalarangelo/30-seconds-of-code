@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [components,children,state]
 cover: orange-wedges
+listed: true
 dateModified: 2021-10-13
 ---
 

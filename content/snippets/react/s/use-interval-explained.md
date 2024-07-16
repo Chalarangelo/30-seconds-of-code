@@ -6,6 +6,7 @@ language: react
 tags: [hooks,effect]
 cover: clock
 excerpt: Wrapping your mind around React hooks and how they interact with `setInterval()` can be difficult. Here's a guide to get you started.
+listed: true
 dateModified: 2021-09-28
 ---
 

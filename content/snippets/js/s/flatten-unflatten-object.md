@@ -6,6 +6,7 @@ language: javascript
 tags: [object,recursion]
 cover: lighthouse
 excerpt: Learn how to manipulate JavaScript objects by flattening or unflattening them.
+listed: true
 dateModified: 2024-01-03
 ---
 

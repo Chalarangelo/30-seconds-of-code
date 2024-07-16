@@ -6,6 +6,7 @@ language: git
 tags: [branch]
 cover: succulent-red-light
 excerpt: Have you accidentally deleted a file? Or maybe you need to restore a file that was deleted? Here's how Git can help you.
+listed: true
 dateModified: 2024-04-22
 ---
 

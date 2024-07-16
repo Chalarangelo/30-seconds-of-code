@@ -6,6 +6,7 @@ language: javascript
 tags: [array]
 cover: interior-10
 excerpt: Learn how to check if an array has one or more values matching the given function, and how to find the matching elements.
+listed: true
 dateModified: 2024-01-30
 ---
 

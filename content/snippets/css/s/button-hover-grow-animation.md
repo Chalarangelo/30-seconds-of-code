@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation]
 cover: white-laptop
+listed: true
 dateModified: 2021-05-24
 ---
 

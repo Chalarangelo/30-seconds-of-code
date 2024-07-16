@@ -6,6 +6,7 @@ language: javascript
 tags: [object]
 cover: pineapple-on-green
 excerpt: Learn how to invert the key-value pairs of an object in JavaScript.
+listed: true
 dateModified: 2024-06-09
 ---
 

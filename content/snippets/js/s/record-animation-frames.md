@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [browser,recursion]
 cover: mac-and-coffee
+listed: true
 dateModified: 2020-10-22
 ---
 

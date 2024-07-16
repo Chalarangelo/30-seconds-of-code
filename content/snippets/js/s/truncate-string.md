@@ -6,6 +6,7 @@ language: javascript
 tags: [string]
 cover: reflection-on-lake
 excerpt: String splitting and truncation, both simple and locale-sensitive are possible in JavaScript. Learn how in this guide.
+listed: true
 dateModified: 2023-12-31
 ---
 

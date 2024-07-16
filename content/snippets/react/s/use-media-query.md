@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state,effect]
 cover: clay-pot-horizon
+listed: true
 dateModified: 2021-10-13
 ---
 

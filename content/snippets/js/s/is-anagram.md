@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [string,regexp]
 cover: new-york
+listed: true
 dateModified: 2020-10-20
 ---
 

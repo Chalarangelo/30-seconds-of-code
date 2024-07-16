@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state,effect]
 cover: light-leaves
+listed: true
 dateModified: 2021-09-10
 ---
 

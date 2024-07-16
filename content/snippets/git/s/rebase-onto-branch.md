@@ -6,6 +6,7 @@ language: git
 tags: [branch]
 cover: sliced-fruits
 excerpt: Rebase the current branch onto another branch in Git.
+listed: true
 dateModified: 2024-04-13
 ---
 

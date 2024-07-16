@@ -6,6 +6,7 @@ language: javascript
 tags: [date]
 cover: tropical-bike
 excerpt: Quickly and easily determine if a given JavaScript `Date` object is a weekday or weekend.
+listed: true
 dateModified: 2024-01-06
 ---
 

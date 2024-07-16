@@ -6,6 +6,7 @@ language: git
 tags: [repository,branch]
 cover: volcano-sunset
 excerpt: Having trouble deleting branches in Git? Here's a guide to help you delete local, remote, detached, and merged branches.
+listed: true
 dateModified: 2024-04-06
 ---
 

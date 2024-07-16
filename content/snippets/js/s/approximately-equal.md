@@ -6,6 +6,7 @@ language: javascript
 tags: [math]
 cover: female-hiker
 excerpt: Learn how to check if two numbers are approximately equal to each other in JavaScript.
+listed: true
 dateModified: 2024-02-04
 ---
 

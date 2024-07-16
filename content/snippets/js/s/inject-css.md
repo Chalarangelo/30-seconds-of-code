@@ -6,6 +6,7 @@ language: javascript
 tags: [browser,css]
 cover: dark-leaves-5
 excerpt: Injecting CSS into a page via JavaScript is pretty easy, if you know how to leverage the DOM.
+listed: true
 dateModified: 2024-02-09
 ---
 

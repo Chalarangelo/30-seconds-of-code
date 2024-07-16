@@ -5,6 +5,7 @@ language: css
 tags: [animation]
 cover: curve
 excerpt: Learn how to use the `cubic-bezier()` class of easing functions and create beautiful animations that stand out.
+listed: true
 dateModified: 2021-06-12
 ---
 

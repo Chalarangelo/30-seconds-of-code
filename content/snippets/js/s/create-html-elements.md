@@ -6,6 +6,7 @@ language: javascript
 tags: [browser]
 cover: body-of-water
 excerpt: Learn how to create HTML elements in JavaScript, by abstracting the creation logic into a function.
+listed: true
 dateModified: 2022-05-29
 ---
 

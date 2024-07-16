@@ -6,6 +6,7 @@ language: javascript
 tags: [array]
 cover: camera-zoom
 excerpt: Create an array of `n`-tuples of consecutive elements from a given array.
+listed: true
 dateModified: 2024-03-20
 ---
 

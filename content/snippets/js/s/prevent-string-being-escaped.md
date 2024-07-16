@@ -6,6 +6,7 @@ language: javascript
 tags: [string]
 cover: glass-blowing
 excerpt: Strings in JavaScript can be escaped in various ways. But how do you prevent a string from being escaped? Here's a handy trick for that.
+listed: true
 dateModified: 2021-06-17
 ---
 

@@ -6,6 +6,7 @@ language: git
 tags: [repository]
 cover: automaton
 excerpt: Is your Git repository getting bloated? Optimize it by garbage collecting loose objects.
+listed: true
 dateModified: 2024-04-13
 ---
 

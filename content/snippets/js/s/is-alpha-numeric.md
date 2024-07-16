@@ -5,6 +5,7 @@ language: javascript
 tags: [string,regexp]
 cover: mountain-lake-cottage-2
 excerpt: Use a regular expression to check if a string contains only alpha or alphanumeric characters in JavaScript.
+listed: true
 dateModified: 2024-03-24
 ---
 

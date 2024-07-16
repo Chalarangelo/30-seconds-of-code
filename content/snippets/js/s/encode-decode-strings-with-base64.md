@@ -6,6 +6,7 @@ language: javascript
 tags: [string]
 excerpt: Encode and decode strings with Base64 in JavaScript easily with these code snippets.
 cover: thread
+listed: true
 dateModified: 2023-12-25
 ---
 

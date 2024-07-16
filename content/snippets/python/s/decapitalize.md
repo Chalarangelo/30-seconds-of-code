@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [string]
 cover: succulent-crowd
+listed: true
 dateModified: 2020-11-02
 ---
 

@@ -6,6 +6,7 @@ language: git
 tags: [repository]
 cover: do-more-computer
 excerpt: The first step is often the hardest, yet creating a Git repository is as simple as running a single command.
+listed: true
 dateModified: 2024-04-14
 ---
 

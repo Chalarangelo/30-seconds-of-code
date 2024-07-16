@@ -6,6 +6,7 @@ language: javascript
 tags: [browser,webdev]
 cover: chill-surfing
 excerpt: CORS (Cross-Origin Resource Sharing) trips up many developers, but it's pretty easy to wrap your head around.
+listed: true
 dateModified: 2023-05-07
 ---
 

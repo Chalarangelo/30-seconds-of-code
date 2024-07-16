@@ -6,6 +6,7 @@ language: javascript
 tags: [object,recursion,generator]
 cover: bridge
 excerpt: Create a generator that walks through all the keys of a given object.
+listed: true
 dateModified: 2024-06-05
 ---
 

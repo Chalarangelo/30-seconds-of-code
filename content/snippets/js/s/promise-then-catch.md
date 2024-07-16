@@ -5,6 +5,7 @@ language: javascript
 tags: [function,promise]
 cover: blue-sunrise
 excerpt: Messing up the order of chained `then` and `catch` methods in JavaScript promises can cause problems. Here's a short primer on the subject.
+listed: true
 dateModified: 2021-06-12
 ---
 

@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [string,math]
 cover: umbrellas
+listed: true
 dateModified: 2020-11-02
 ---
 

@@ -6,6 +6,7 @@ language: javascript
 tags: [math]
 cover: purple-pier
 excerpt: Learn how to calculate the angle (theta) between two vectors in JavaScript.
+listed: true
 dateModified: 2024-05-16
 ---
 

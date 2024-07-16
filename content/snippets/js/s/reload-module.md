@@ -6,6 +6,7 @@ language: javascript
 tags: [node]
 cover: tea-laptop-table
 excerpt: Ever wanted to reload a module in Node.js? Here's how you can do it.
+listed: true
 dateModified: 2024-05-13
 ---
 

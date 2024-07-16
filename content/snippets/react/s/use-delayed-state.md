@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state,effect]
 cover: city-view
+listed: true
 dateModified: 2021-12-15
 ---
 

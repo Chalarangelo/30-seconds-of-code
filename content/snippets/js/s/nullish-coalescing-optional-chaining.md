@@ -6,6 +6,7 @@ language: javascript
 tags: [type]
 cover: purple-leaves
 excerpt: JavaScript ES2020 introduced optional chaining and nullish coalescing. Learn everything you need to know with this quick guide.
+listed: true
 dateModified: 2021-06-12
 ---
 

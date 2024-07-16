@@ -6,6 +6,7 @@ language: css
 tags: [visual,cheatsheet]
 cover: armchair-design
 excerpt: I hand picked 10 of my favorite CSS background patterns from MagicPattern for your next project. Get them now!
+listed: true
 dateModified: 2024-05-09
 ---
 

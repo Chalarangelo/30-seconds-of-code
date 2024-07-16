@@ -6,6 +6,7 @@ language: javascript
 tags: [object,json]
 cover: coffee-drip
 excerpt: Have you ever wanted to serialize an object but only include certain keys? Turns out JavaScript provides an easy way to do this!
+listed: true
 dateModified: 2021-07-06
 ---
 

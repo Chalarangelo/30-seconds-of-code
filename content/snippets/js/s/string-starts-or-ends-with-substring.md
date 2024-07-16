@@ -6,6 +6,7 @@ language: javascript
 tags: [string]
 cover: boutique-home-office-4
 excerpt: Test if a string's start or end partially matches another string.
+listed: true
 dateModified: 2023-12-31
 ---
 

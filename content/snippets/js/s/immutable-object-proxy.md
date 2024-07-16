@@ -6,6 +6,7 @@ language: javascript
 tags: [object,proxy]
 cover: frozen-globe
 excerpt: Freezing objects is not the only way to prevent mutations. Learn how you can leverage the Proxy object to your advantage.
+listed: true
 dateModified: 2022-04-10
 ---
 

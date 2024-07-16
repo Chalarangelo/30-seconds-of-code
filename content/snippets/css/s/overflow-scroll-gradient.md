@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: memories-of-pineapple-1
+listed: true
 dateModified: 2021-10-13
 ---
 

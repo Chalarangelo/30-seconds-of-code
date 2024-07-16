@@ -6,6 +6,7 @@ language: git
 tags: [repository,branch]
 cover: taking-photos
 excerpt: Learn how to view a summary of changes between two Git commits, using a single command.
+listed: true
 dateModified: 2024-04-24
 ---
 

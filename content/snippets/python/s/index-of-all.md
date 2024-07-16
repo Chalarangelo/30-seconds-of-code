@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: purple-flower-bunch
+listed: true
 dateModified: 2020-10-11
 ---
 

@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state,effect]
 cover: couch-laptop
+listed: true
 dateModified: 2020-11-16
 ---
 

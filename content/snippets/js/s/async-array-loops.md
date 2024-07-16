@@ -6,6 +6,7 @@ language: javascript
 tags: [array,function,promise]
 cover: sunflowers
 excerpt: Asynchronously looping over arrays in JavaScript comes with a few caveats you should watch out for.
+listed: true
 dateModified: 2021-06-12
 ---
 

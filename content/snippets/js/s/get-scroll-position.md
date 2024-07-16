@@ -6,6 +6,7 @@ language: javascript
 tags: [browser]
 cover: tranquil-lake
 excerpt: Calculate the coordinates of the current scroll position in the browser window using JavaScript.
+listed: true
 dateModified: 2024-02-25
 ---
 

@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [date,function,generator]
 cover: portal-timelapse
+listed: true
 dateModified: 2021-06-21
 ---
 

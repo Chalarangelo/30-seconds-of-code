@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation]
 cover: painters-desk
+listed: true
 dateModified: 2021-05-24
 ---
 

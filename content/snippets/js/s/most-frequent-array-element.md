@@ -6,6 +6,7 @@ language: javascript
 tags: [array]
 cover: collab-desk-1
 excerpt: Find the most frequently occurring element in a JavaScript array of primitives or objects.
+listed: true
 dateModified: 2024-03-23
 ---
 

@@ -6,6 +6,7 @@ language: git
 tags: [configuration,cheatsheet]
 cover: compass-1
 excerpt: Increase your productivity and reduce your cognitive load by creating aliases for many common git operations.
+listed: true
 dateModified: 2024-05-03
 ---
 

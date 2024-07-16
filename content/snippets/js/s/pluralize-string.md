@@ -6,6 +6,7 @@ language: javascript
 tags: [string]
 cover: shell-focus
 excerpt: Learn how to pluralize a string in JavaScript based on a number.
+listed: true
 dateModified: 2024-06-02
 ---
 

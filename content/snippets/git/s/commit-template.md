@@ -6,6 +6,7 @@ language: git
 tags: [repository,configuration]
 cover: river-house-lights
 excerpt: If you want your team to follow a common format for commit messages, you can set up a commit message template to make it easier.
+listed: true
 dateModified: 2024-04-10
 ---
 

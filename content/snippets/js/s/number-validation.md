@@ -6,6 +6,7 @@ language: javascript
 tags: [math]
 cover: flower-portrait-9
 excerpt: Check if a value can be safely converted to a number in JavaScript.
+listed: true
 dateModified: 2024-05-17
 ---
 

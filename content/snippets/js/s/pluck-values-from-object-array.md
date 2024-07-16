@@ -6,6 +6,7 @@ language: javascript
 tags: [array,object]
 cover: birds
 excerpt: Learn how to extract values from an array of objects based on a specified key.
+listed: true
 dateModified: 2024-03-22
 ---
 

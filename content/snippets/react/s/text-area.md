@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [components,input]
 cover: volcano-sunset
+listed: true
 dateModified: 2020-11-25
 ---
 

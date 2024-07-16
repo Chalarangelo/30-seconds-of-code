@@ -6,6 +6,7 @@ language: javascript
 tags: [array,object]
 cover: building-blocks
 excerpt: Learn the basics of the destructuring assignment syntax in JavaScript ES6 and improve your code with this easy guide.
+listed: true
 dateModified: 2021-06-12
 ---
 

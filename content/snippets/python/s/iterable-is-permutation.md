@@ -5,6 +5,7 @@ type: snippet
 language: python
 tags: [list,string]
 cover: apples
+listed: true
 dateModified: 2023-05-23
 ---
 

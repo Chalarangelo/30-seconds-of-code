@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,effect]
 cover: aerial-view-port
+listed: true
 dateModified: 2021-12-29
 ---
 

@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [browser,string,regexp]
 cover: metro-tunnel
+listed: true
 dateModified: 2020-10-22
 ---
 

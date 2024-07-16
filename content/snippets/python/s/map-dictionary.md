@@ -5,6 +5,7 @@ language: python
 tags: [list,dictionary]
 excerpt: Maps the values of a list to a dictionary using a function.
 cover: colors-mural
+listed: true
 dateModified: 2020-11-02
 ---
 

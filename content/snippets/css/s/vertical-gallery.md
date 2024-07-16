@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual,interactivity]
 cover: lake-loop
+listed: true
 dateModified: 2022-05-05
 ---
 

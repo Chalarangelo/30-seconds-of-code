@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [dictionary]
 cover: plant-candle
+listed: true
 dateModified: 2020-11-02
 ---
 

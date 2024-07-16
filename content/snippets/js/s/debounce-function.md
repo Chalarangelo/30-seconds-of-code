@@ -6,6 +6,7 @@ language: javascript
 tags: [function]
 cover: solitude-beach
 excerpt: Create a debounced function that waits a certain amount of time before invoking the provided function again.
+listed: true
 dateModified: 2023-10-12
 ---
 

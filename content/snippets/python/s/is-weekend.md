@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [date]
 cover: two-lighthouses
+listed: true
 dateModified: 2020-11-02
 ---
 

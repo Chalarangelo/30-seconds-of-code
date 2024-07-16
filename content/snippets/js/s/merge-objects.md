@@ -6,6 +6,7 @@ language: javascript
 tags: [object,array,function]
 cover: guitar-living-room
 excerpt: Learn how to combine two or more objects into a single object in JavaScript.
+listed: true
 dateModified: 2024-03-20
 ---
 

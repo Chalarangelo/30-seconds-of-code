@@ -6,6 +6,7 @@ language: javascript
 tags: [browser]
 cover: guitar-living-room
 excerpt: Check if `localStorage` or `sessionStorage` is enabled in the browser, using a simple JavaScript function.
+listed: true
 dateModified: 2024-01-12
 ---
 

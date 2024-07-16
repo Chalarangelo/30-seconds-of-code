@@ -6,6 +6,7 @@ language: javascript
 tags: [math,algorithm,recursion]
 cover: migrating-birds
 excerpt: Use JavaScript to calculate the greatest common divisor and least common multiple of two or more numbers.
+listed: true
 dateModified: 2023-12-19
 ---
 

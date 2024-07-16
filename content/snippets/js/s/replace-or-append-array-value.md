@@ -6,6 +6,7 @@ language: javascript
 tags: [array]
 cover: boutique-home-office-2
 excerpt: Quickly and easily replace or append a value in a JavaScript array.
+listed: true
 dateModified: 2024-03-23
 ---
 

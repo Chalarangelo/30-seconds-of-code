@@ -6,6 +6,7 @@ language: javascript
 tags: [node,debugging]
 cover: bug
 excerpt: Did you know you can use Chrome Developer Tools to debug your Node.js code? Find out how in this short guide.
+listed: true
 dateModified: 2021-06-12
 ---
 

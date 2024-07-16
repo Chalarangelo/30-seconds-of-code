@@ -6,6 +6,7 @@ language: javascript
 tags: [object,proxy]
 cover: green-cabin-cow
 excerpt: Using the Proxy object, we can create dynamic getters and setters for objects in JavaScript.
+listed: true
 dateModified: 2023-04-09
 ---
 

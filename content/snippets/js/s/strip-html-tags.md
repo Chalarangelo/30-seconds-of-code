@@ -6,6 +6,7 @@ language: javascript
 tags: [string,regexp]
 cover: coffee-phone-tray-3
 excerpt: Use a regular expression to remove HTML/XML tags from a string.
+listed: true
 dateModified: 2024-03-15
 ---
 

@@ -6,6 +6,7 @@ language: javascript
 tags: [array]
 cover: chill-surfing
 excerpt: Did you know that implementing a non-mutating version of `Array.prototype.splice()` is only a few lines of code?
+listed: true
 dateModified: 2023-10-24
 ---
 

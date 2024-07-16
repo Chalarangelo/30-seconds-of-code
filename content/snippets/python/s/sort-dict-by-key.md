@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [dictionary]
 cover: laptop-plants
+listed: true
 dateModified: 2020-11-02
 ---
 

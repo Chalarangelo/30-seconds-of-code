@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state]
 cover: houses-rock-sea
+listed: true
 dateModified: 2021-09-13
 ---
 

@@ -6,6 +6,7 @@ language: git
 tags: [repository,commit]
 cover: comic-glasses
 excerpt: If you're looking for a way to find commits by a specific author or committer in a Git repository, look no further.
+listed: true
 dateModified: 2024-04-25
 ---
 

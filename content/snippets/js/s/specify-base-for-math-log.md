@@ -6,6 +6,7 @@ language: javascript
 tags: [math]
 cover: yellow-white-mug-2
 excerpt: Calculate the logarithm of a number or check if a number is a power of a specific base.
+listed: true
 dateModified: 2024-01-03
 ---
 

@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [components,state]
 cover: cows
+listed: true
 dateModified: 2020-11-16
 ---
 

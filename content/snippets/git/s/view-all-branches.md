@@ -6,6 +6,7 @@ language: git
 tags: [repository,branch]
 cover: aerial-view-port
 excerpt: Learn how to view a list of all local or remote branches in a Git repository.
+listed: true
 dateModified: 2024-04-30
 ---
 

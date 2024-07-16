@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,effect]
 cover: lemon-tea
+listed: true
 dateModified: 2021-11-23
 ---
 

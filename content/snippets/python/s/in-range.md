@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [math]
 cover: pineapple-on-green
+listed: true
 dateModified: 2020-09-15
 ---
 

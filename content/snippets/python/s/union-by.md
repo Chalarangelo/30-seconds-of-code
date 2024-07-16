@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: sunrise-over-city
+listed: true
 dateModified: 2020-11-02
 ---
 

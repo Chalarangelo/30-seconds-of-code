@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [components,input]
 cover: digital-nomad-15
+listed: true
 dateModified: 2020-11-03
 ---
 

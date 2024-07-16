@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [components,reducer]
 cover: lavender-shelf
+listed: true
 dateModified: 2021-09-24
 ---
 

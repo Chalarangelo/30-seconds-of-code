@@ -6,6 +6,7 @@ language: html
 tags: [image]
 cover: stars-n-snow
 excerpt: Learn the difference between the `alt` and `title` attributes on images in HTML.
+listed: true
 dateModified: 2023-07-02
 ---
 

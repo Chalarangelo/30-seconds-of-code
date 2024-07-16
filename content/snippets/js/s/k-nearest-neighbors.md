@@ -6,6 +6,7 @@ language: javascript
 tags: [algorithm,array]
 cover: building-blocks
 excerpt: Implement the K-nearest neighbors algorithm in JavaScript to classify a data point relative to a labelled data set.
+listed: true
 dateModified: 2024-05-12
 ---
 

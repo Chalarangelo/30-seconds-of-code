@@ -6,6 +6,7 @@ language: javascript
 tags: [browser]
 cover: boat-port
 excerpt: Learn how to perform HTTP GET, POST, PUT, and DELETE requests in JavaScript.
+listed: true
 dateModified: 2024-02-13
 ---
 

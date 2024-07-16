@@ -6,6 +6,7 @@ language: html
 tags: [metadata,head]
 cover: boutique-home-office-3
 excerpt: Ensure your HTML documents have a proper favicon by including these lines in your `<head>` element.
+listed: true
 dateModified: 2023-01-24
 ---
 

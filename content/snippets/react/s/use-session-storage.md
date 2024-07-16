@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state]
 cover: white-laptop
+listed: true
 dateModified: 2021-09-15
 ---
 

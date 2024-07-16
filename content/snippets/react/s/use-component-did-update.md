@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,effect]
 cover: flower-portrait-10
+listed: true
 dateModified: 2021-11-09
 ---
 

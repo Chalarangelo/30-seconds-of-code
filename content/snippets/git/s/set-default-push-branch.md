@@ -6,6 +6,7 @@ language: git
 tags: [configuration,branch]
 cover: pink-flower
 excerpt: Tired of manually specifying the remote branch name when pushing? Configure Git to use the current branch name as the default.
+listed: true
 dateModified: 2024-05-02
 ---
 

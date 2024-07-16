@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [date]
 cover: orange-flower
+listed: true
 dateModified: 2020-10-28
 ---
 

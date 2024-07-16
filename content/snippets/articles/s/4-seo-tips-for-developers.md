@@ -5,6 +5,7 @@ type: story
 tags: [webdev,seo]
 cover: sunrise-over-city
 excerpt: SEO is a very relevant topics that most developers are inexperienced in. Here are 4 actionable SEO tips you can implement today.
+listed: true
 dateModified: 2021-06-12
 ---
 

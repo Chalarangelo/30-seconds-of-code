@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list,math]
 cover: red-succulent
+listed: true
 dateModified: 2020-11-02
 ---
 

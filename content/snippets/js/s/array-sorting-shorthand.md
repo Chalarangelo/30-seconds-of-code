@@ -6,6 +6,7 @@ language: javascript
 tags: [array]
 cover: apples
 excerpt: Learn how to quickly write code to sort JavaScript arrays with this handy one-liner.
+listed: true
 dateModified: 2021-06-12
 ---
 

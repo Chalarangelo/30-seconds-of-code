@@ -6,6 +6,7 @@ language: html
 tags: [metadata,head]
 cover: boutique-home-office-2
 excerpt: Ensure your HTML documents can be shared on social media by including these lines in your `<head>` element.
+listed: true
 dateModified: 2023-01-22
 ---
 

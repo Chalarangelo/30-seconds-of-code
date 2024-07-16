@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [components]
 cover: armchair
+listed: true
 dateModified: 2020-11-03
 ---
 

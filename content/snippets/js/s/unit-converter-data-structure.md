@@ -6,6 +6,7 @@ language: javascript
 tags: [math,function]
 cover: tropical-waterfall-2
 excerpt: Learn how to create a unit converter data structure in JavaScript that can convert between any compatible units.
+listed: true
 dateModified: 2023-11-08
 ---
 

@@ -6,6 +6,7 @@ language: git
 tags: [commit]
 cover: travel-mug-1
 excerpt: Looking for the merge commit where the changes from a given commit were merged into a branch? Here's how you can find it.
+listed: true
 dateModified: 2024-05-04
 ---
 

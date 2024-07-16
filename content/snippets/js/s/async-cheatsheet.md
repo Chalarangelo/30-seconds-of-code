@@ -5,6 +5,7 @@ language: javascript
 tags: [function,promise,cheatsheet]
 cover: green-plant
 excerpt: Learn everything you need to know about promises and asynchronous JavaScript with this handy cheatsheet.
+listed: true
 dateModified: 2021-06-12
 ---
 

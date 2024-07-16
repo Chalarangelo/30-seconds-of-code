@@ -6,6 +6,7 @@ language: git
 tags: [branch]
 cover: cherry-trees
 excerpt: Get the name of the current branch in Git.
+listed: true
 dateModified: 2024-04-22
 ---
 

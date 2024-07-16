@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [dictionary]
 cover: rocky-mountains
+listed: true
 dateModified: 2020-10-16
 ---
 

@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [interactivity]
 cover: city-view
+listed: true
 dateModified: 2020-12-30
 ---
 

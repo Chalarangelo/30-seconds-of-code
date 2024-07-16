@@ -6,6 +6,7 @@ language: javascript
 tags: [function,promise]
 cover: pineapple-on-green
 excerpt: Understanding the differences between synchronous and asynchronous code is a crucial piece of knowledge for every web developer.
+listed: true
 dateModified: 2021-11-14
 ---
 

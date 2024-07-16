@@ -6,6 +6,7 @@ language: javascript
 tags: [promise,timeout,class]
 cover: walking
 excerpt: Oftentimes you might need to add a timeout to a promise in JavaScript. Learn how to do this and more in this short guide.
+listed: true
 dateModified: 2021-06-12
 ---
 

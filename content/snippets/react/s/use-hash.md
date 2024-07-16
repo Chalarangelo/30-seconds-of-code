@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state,effect]
 cover: capsule-coffee
+listed: true
 dateModified: 2021-10-02
 ---
 

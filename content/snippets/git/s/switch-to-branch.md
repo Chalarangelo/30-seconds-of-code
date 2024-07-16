@@ -6,6 +6,7 @@ language: git
 tags: [branch]
 cover: bridge
 excerpt: Learn how to easily switch between branches in Git.
+listed: true
 dateModified: 2024-04-29
 ---
 

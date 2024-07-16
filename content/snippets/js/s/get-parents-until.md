@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: orange-coffee-4
+listed: true
 dateModified: 2021-01-06
 ---
 

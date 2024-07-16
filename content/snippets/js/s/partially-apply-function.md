@@ -6,6 +6,7 @@ language: javascript
 tags: [function]
 cover: rocky-beach
 excerpt: Learn how to leverage partial application to improve the reusability of your JavaScript functions.
+listed: true
 dateModified: 2024-01-31
 ---
 

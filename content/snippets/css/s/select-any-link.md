@@ -6,6 +6,7 @@ language: css
 tags: [visual,interactivity]
 cover: round-leaves
 excerpt: You can use a CSS pseudo-class selector to style all links in a page, without worrying if they have been visited or not.
+listed: true
 dateModified: 2022-03-06
 ---
 

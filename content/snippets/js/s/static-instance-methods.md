@@ -6,6 +6,7 @@ language: javascript
 tags: [object,function,class]
 cover: lake-runner
 excerpt: Static and instance methods are pretty easy to distinguish and serve different purposes. Learn all about them in this article.
+listed: true
 dateModified: 2022-01-30
 ---
 

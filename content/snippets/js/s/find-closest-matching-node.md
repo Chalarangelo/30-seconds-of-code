@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: flowering-hills
+listed: true
 dateModified: 2021-04-22
 ---
 

@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual,animation]
 cover: architectural
+listed: true
 dateModified: 2021-10-11
 ---
 

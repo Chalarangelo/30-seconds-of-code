@@ -6,6 +6,7 @@ language: javascript
 tags: [string,regexp]
 cover: taking-photos
 excerpt: Learn how to effectively use JavaScript regular expressions with these 6 powerful features.
+listed: true
 dateModified: 2021-06-12
 ---
 

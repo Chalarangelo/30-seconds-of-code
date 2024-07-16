@@ -6,6 +6,7 @@ language: css
 tags: [visual,cheatsheet]
 cover: oven-paddle
 excerpt: Use CSS to create various shapes like circles, triangles, and squares.
+listed: true
 dateModified: 2024-05-08
 ---
 

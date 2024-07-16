@@ -5,6 +5,7 @@ type: cheatsheet
 tags: [webdev,http,cheatsheet]
 cover: hiking-walking
 excerpt: Familiarize yourself with the most common HTTP status codes with this handy cheatsheet.
+listed: true
 dateModified: 2021-06-12
 ---
 

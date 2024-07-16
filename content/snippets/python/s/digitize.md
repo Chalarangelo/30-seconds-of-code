@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [math,list]
 cover: laptop-with-code
+listed: true
 dateModified: 2020-09-15
 ---
 

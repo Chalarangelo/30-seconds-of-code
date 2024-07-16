@@ -3,8 +3,8 @@ title: Number is divisible
 type: snippet
 language: python
 tags: [math]
-unlisted: true
 cover: interior-9
+listed: false
 dateModified: 2021-01-04
 ---
 

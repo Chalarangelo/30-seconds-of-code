@@ -6,6 +6,7 @@ language: javascript
 tags: [type]
 cover: italian-horizon
 excerpt: Use a simple JavaScript trick to validate a serialized JSON object.
+listed: true
 dateModified: 2024-03-17
 ---
 

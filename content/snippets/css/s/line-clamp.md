@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [layout,visual]
 cover: typewriter
+listed: true
 dateModified: 2021-05-16
 ---
 

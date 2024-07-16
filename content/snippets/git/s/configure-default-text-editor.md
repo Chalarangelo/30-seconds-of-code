@@ -6,6 +6,7 @@ language: git
 tags: [configuration]
 cover: purple-sunset-beach
 excerpt: Learn how to configure the text editor used by Git for commit messages and other text editing tasks.
+listed: true
 dateModified: 2024-04-09
 ---
 

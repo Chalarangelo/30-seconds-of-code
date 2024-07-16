@@ -6,6 +6,7 @@ language: javascript
 tags: [date]
 cover: interior
 excerpt: Get the name of the weekday from a JavaScript `Date` object.
+listed: true
 dateModified: 2024-05-21
 ---
 

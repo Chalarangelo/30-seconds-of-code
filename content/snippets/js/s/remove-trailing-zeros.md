@@ -6,6 +6,7 @@ language: javascript
 tags: [math]
 cover: island-corridor
 excerpt: When formatting decimal values in JavaScript, trailing zeros can be undesired. Here's how to deal with them.
+listed: true
 dateModified: 2024-02-01
 ---
 

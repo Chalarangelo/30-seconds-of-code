@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [date]
 cover: maple-leaf-palette
+listed: true
 dateModified: 2021-01-07
 ---
 

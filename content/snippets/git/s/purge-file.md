@@ -6,6 +6,7 @@ language: git
 tags: [repository,remote]
 cover: white-flower
 excerpt: Did you accidentally commit sensitive information? Learn how to completely purge a file from Git history.
+listed: true
 dateModified: 2024-05-01
 ---
 

@@ -5,6 +5,7 @@ language: javascript
 tags: [browser,cheatsheet]
 cover: yellow-sofa
 excerpt: A quick reference for the `window.location` object.
+listed: true
 dateModified: 2022-12-21
 ---
 

@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list,function]
 cover: camper-school-bus
+listed: true
 dateModified: 2020-11-02
 ---
 

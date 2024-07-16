@@ -6,6 +6,7 @@ language: javascript
 tags: [object,proxy]
 cover: city-view
 excerpt: Use the Proxy object to implement the Observable pattern in JavaScript.
+listed: true
 dateModified: 2024-05-27
 ---
 

@@ -6,6 +6,7 @@ language: javascript
 tags: [type]
 cover: overgrown
 excerpt: Learn all you need to know to effectively and efficiently typecheck values in JavaScript.
+listed: true
 dateModified: 2023-12-22
 ---
 

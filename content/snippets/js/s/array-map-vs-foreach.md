@@ -6,6 +6,7 @@ language: javascript
 tags: [array]
 cover: fort-lamp
 excerpt: Which method do you reach for first? What are the differences between them? Let's find out!
+listed: true
 dateModified: 2023-03-26
 ---
 

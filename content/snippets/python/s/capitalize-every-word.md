@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [string]
 cover: trippy-chemicals
+listed: true
 dateModified: 2020-11-02
 ---
 

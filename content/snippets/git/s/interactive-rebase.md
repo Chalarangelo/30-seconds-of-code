@@ -6,6 +6,7 @@ language: git
 tags: [branch]
 cover: tea-laptop-table
 excerpt: Reorder, squash, and edit commits interactively using Git's interactive rebase feature.
+listed: true
 dateModified: 2024-05-02
 ---
 

@@ -6,6 +6,7 @@ language: javascript
 tags: [array,math]
 cover: eagle
 excerpt: Calculate the ranking of an array based on a comparator function in JavaScript.
+listed: true
 dateModified: 2024-02-16
 ---
 

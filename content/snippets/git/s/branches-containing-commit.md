@@ -6,6 +6,7 @@ language: git
 tags: [branch,commit]
 cover: dark-leaves
 excerpt: Learn how to filter branches based on whether they contain a specific commit or not.
+listed: true
 dateModified: 2023-05-25
 ---
 

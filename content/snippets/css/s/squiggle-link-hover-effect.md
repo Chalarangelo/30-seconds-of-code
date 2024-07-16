@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation,visual]
 cover: dreamy-flowers
+listed: true
 dateModified: 2023-01-10
 ---
 

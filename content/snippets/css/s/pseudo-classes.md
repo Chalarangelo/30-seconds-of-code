@@ -6,6 +6,7 @@ language: css
 tags: [webdev]
 cover: orange-flower
 excerpt: Learn how to use CSS pseudo-classes to style an element based on changes to its state.
+listed: true
 dateModified: 2021-11-07
 ---
 

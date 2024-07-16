@@ -3,8 +3,8 @@ title: Shape separator
 type: snippet
 language: css
 tags: [visual]
-unlisted: true
 cover: shapes
+listed: false
 dateModified: 2021-01-04
 ---
 

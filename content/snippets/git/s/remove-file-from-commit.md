@@ -6,6 +6,7 @@ language: git
 tags: [commit]
 cover: cancel-typographer
 excerpt: Have you ever made a commit only to realize that a file should not have been included? Let's see how you can fix this!
+listed: true
 dateModified: 2024-04-02
 ---
 

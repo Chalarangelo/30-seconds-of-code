@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [date]
 cover: cup-of-orange
+listed: true
 dateModified: 2020-10-28
 ---
 

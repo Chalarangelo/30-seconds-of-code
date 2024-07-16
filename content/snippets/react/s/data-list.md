@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [components]
 cover: interior-14
+listed: true
 dateModified: 2020-11-03
 ---
 

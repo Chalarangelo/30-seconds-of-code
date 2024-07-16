@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: little-white-flowers
+listed: true
 dateModified: 2020-10-19
 ---
 

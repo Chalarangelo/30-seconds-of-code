@@ -5,6 +5,7 @@ language: javascript
 tags: [browser,accessibility]
 cover: white-flower
 excerpt: There are many ways to create empty links, some more appropriate than others. Learn how to best handle empty links with this quick tip.
+listed: true
 dateModified: 2021-06-12
 ---
 

@@ -6,6 +6,7 @@ language: javascript
 tags: [webdev]
 cover: contemporary-desk
 excerpt: Trailing commas are not without controversy. Here's why I think you should use them.
+listed: true
 dateModified: 2023-03-12
 ---
 
