@@ -26,5 +26,10 @@ module Previewable
 
       @preview ||= self.class.get_preview(cid) || serialize_as(:preview)
     end
+
+    # Define an instance method to retrieve the preview title.
+    def preview_title
+      @preview_title ||= is_snippet? ? title : short_title
+    end
   end
 end

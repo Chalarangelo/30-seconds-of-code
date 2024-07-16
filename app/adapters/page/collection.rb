@@ -35,7 +35,7 @@ class Page::Collection < Page::Base
           '@type': 'ListItem',
           position: i + 1,
           url: item.full_url,
-          name: item.is_snippet? ? item.title : item.short_title
+          name: item.preview_title
         }
       end
     }
