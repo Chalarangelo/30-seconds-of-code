@@ -13,31 +13,30 @@ export const extractSnippetData = async (snippetGlob, languageData) => {
     snipppetData.map(async snippet => {
       const {
         filePath,
-        fileName,
         title,
         shortTitle = title,
         tags,
         language: languageKey,
         body: fullText,
-        // TODO: Add an excerpt everywhere and get rid of this.
-        excerpt = fullText.replace(/\r\n/g, '\n').split('\n\n')[0],
+        excerpt: shortDescription,
         cover,
         dateModified,
-        unlisted,
+        listed,
       } = snippet;
 
       const language = languageData.get(languageKey);
       const id = filePath.replace(snippetPrefix, '').slice(0, -3);
-      const shortText = excerpt.trim();
 
       const [descriptionHtml, fullDescriptionHtml] = await Promise.all([
-        MarkdownParser.parse(shortText, language?.short),
+        MarkdownParser.parse(shortDescription, language?.short),
         MarkdownParser.parse(fullText, language?.short),
       ]);
 
-      const tokens = tokenize(stripMarkdownFormat(`${shortText} ${title}`));
+      const tokens = tokenize(
+        stripMarkdownFormat(`${shortDescription} ${title}`)
+      );
       const ranking = Ranker.rankIndexableContent(
-        [title, ...tags, language?.long, fullText, shortText]
+        [title, ...tags, language?.long, fullText, shortDescription]
           .filter(Boolean)
           .join(' ')
           .toLowerCase()
@@ -46,14 +45,11 @@ export const extractSnippetData = async (snippetGlob, languageData) => {
 
       return {
         id,
-        fileName,
         title,
         tags: tags.join(';').toLowerCase(),
         shortTitle,
         dateModified,
-        listed: unlisted === true ? false : true,
-        shortText,
-        fullText,
+        listed,
         descriptionHtml,
         fullDescriptionHtml,
         tableOfContentsHtml,
@@ -71,17 +67,14 @@ export const exportSnippetData = snippetData => {
   return snippetData.map(snippet => {
     return {
       cid: snippet.id,
-      file_name: snippet.fileName,
       title: snippet.title,
       _tags: snippet.tags,
       short_title: snippet.shortTitle,
       date_modified: snippet.dateModified,
       listed: snippet.listed,
-      short_text: snippet.shortText,
-      full_text: snippet.fullText,
-      description_html: snippet.descriptionHtml,
-      full_description_html: snippet.fullDescriptionHtml,
-      table_of_contents_html: snippet.tableOfContentsHtml,
+      short_description: snippet.descriptionHtml,
+      description: snippet.fullDescriptionHtml,
+      table_of_contents: snippet.tableOfContentsHtml,
       cover: snippet.cover,
       language_cid: snippet.languageKey,
       _tokens: snippet.tokens,

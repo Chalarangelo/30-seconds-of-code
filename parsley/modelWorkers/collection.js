@@ -11,22 +11,22 @@ export const extractCollectionData = async (collectionGlob, hub) => {
     const {
       snippetIds = [],
       slug: id,
-      name,
-      shortName = name,
-      miniName = shortName,
+      title,
+      shortTitle = title,
+      miniTitle = shortTitle,
       description,
       shortDescription,
       topLevel = false,
       allowUnlisted = false,
       splash,
-      featured = false,
+      listed = false,
       parent = null,
       languageMatcher,
       tagMatcher,
     } = config;
 
-    const tokens = tokenize(`${shortDescription || ''} ${name}`).join(';');
-    const indexableContent = [name, description, shortDescription]
+    const tokens = tokenize(`${shortDescription || ''} ${title}`).join(';');
+    const indexableContent = [title, description, shortDescription]
       .filter(Boolean)
       .join(' ')
       .toLowerCase();
@@ -37,10 +37,10 @@ export const extractCollectionData = async (collectionGlob, hub) => {
 
     return {
       id,
-      name,
-      shortName,
-      miniName,
-      featured,
+      title,
+      shortTitle,
+      miniTitle,
+      listed,
       featuredIndex,
       splash,
       description,
@@ -64,10 +64,10 @@ export const exportCollectionData = collectionData => {
   return collectionData.map(collection => {
     return {
       cid: collection.id,
-      name: collection.name,
-      short_name: collection.shortName,
-      mini_name: collection.miniName,
-      featured: collection.featured,
+      title: collection.title,
+      short_title: collection.shortTitle,
+      mini_title: collection.miniTitle,
+      listed: collection.listed,
       featured_index: collection.featuredIndex,
       cover: collection.splash,
       description: collection.description,
