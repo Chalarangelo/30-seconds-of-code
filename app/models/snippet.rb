@@ -17,10 +17,9 @@ class Snippet < ApplicationRecord
 
   # Prevent certain attributes from getting printed in the console
   self.filter_attributes += [
-    :description_html,
-    :full_description_html,
-    :full_text,
-    :table_of_contents_html
+    :short_description,
+    :description,
+    :table_of_contents
   ]
 
   # TODO: Rails 7.2 will introduce this, check later
@@ -122,9 +121,13 @@ class Snippet < ApplicationRecord
     @date_machine_formatted ||= date_modified.strftime('%Y-%m-%d')
   end
 
+  def slug_id
+    @slug_id ||= slug.split('/').last
+  end
+
   def search_tokens_array
     @search_tokens_array ||= [
-      file_name.slice(0..-4),
+      slug_id,
       *tags,
       *_tokens.split(';'),
       *title.normalized_tokens,
