@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation]
 cover: highlands
+excerpt: Creates a border animation on hover.
 listed: true
 dateModified: 2021-05-24
 ---

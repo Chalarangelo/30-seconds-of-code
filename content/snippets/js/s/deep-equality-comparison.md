@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [object,array,type,recursion]
 cover: dying-flowers
+excerpt: Performs a deep comparison between two values to determine if they are equivalent.
 listed: true
 dateModified: 2021-10-13
 ---

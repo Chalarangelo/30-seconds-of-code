@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: rocky-beach-2
+excerpt: Resets all styles to default values using only one property.
 listed: true
 dateModified: 2020-12-30
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [function,list]
 cover: painters-desk
+excerpt: Builds a list, using an iterator function and an initial seed value.
 listed: true
 dateModified: 2020-11-02
 ---

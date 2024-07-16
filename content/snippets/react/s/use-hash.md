@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state,effect]
 cover: capsule-coffee
+excerpt: Tracks the browser's location hash value, and allows changing it.
 listed: true
 dateModified: 2021-10-02
 ---

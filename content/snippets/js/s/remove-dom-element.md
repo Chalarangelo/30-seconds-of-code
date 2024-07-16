@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: by-the-lighthouse
+excerpt: Removes an element from the DOM.
 listed: true
 dateModified: 2021-01-07
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [date]
 cover: maple-leaf-palette
+excerpt: Creates a list of dates between `start` (inclusive) and `end` (not inclusive).
 listed: true
 dateModified: 2021-01-07
 ---

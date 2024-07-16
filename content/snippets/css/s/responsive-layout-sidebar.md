@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [layout]
 cover: red-petals
+excerpt: Creates a responsive layout with a content area and a sidebar.
 listed: true
 dateModified: 2020-09-16
 ---

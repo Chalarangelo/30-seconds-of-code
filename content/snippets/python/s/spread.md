@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: digital-nomad-14
+excerpt: Flattens a list, by spreading its elements into a new list.
 listed: true
 dateModified: 2020-09-15
 ---

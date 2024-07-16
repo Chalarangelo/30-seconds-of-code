@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation]
 cover: shiny-mountains
+excerpt: Applies a perspective transform with a hover animation to an element.
 listed: true
 dateModified: 2021-05-17
 ---

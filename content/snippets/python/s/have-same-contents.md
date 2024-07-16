@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: racoon
+excerpt: Checks if two lists contain the same elements regardless of order.
 listed: true
 dateModified: 2020-11-02
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [math]
 cover: digital-nomad-13
+excerpt: Returns the binary representation of the given number.
 listed: true
 dateModified: 2020-10-07
 ---

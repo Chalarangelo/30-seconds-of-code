@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: three-vases
+excerpt: Returns a list with `n` elements removed from the end.
 listed: true
 dateModified: 2020-09-15
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: shell-focus
+excerpt: Creates text that scales according to the viewport width.
 listed: true
 dateModified: 2021-05-16
 ---

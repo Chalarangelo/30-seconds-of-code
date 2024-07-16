@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [components,input,state,array]
 cover: violin
+excerpt: Renders a checkbox list that uses a callback function to pass its selected value/values to the parent component.
 listed: true
 dateModified: 2021-10-13
 ---

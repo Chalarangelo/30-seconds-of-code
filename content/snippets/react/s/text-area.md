@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [components,input]
 cover: volcano-sunset
+excerpt: Renders an uncontrolled `<textarea>` element that uses a callback function to pass its value to the parent component.
 listed: true
 dateModified: 2020-11-25
 ---

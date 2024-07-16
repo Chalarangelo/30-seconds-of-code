@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [function]
 cover: island-corridor
+excerpt: Creates a function that invokes the provided function with its arguments arranged according to the specified indexes.
 listed: true
 dateModified: 2020-10-22
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [string]
 cover: succulent-6
+excerpt: Checks if the given string is a palindrome.
 listed: true
 dateModified: 2020-11-02
 ---

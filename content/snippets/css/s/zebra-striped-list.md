@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: forest-balcony
+excerpt: Creates a striped list with alternating background colors.
 listed: true
 dateModified: 2020-12-30
 ---

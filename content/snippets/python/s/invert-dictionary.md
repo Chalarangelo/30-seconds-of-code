@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [dictionary]
 cover: rustic-cup
+excerpt: Inverts a dictionary with unique hashable values.
 listed: true
 dateModified: 2020-11-02
 ---

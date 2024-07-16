@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: two-flower-vases
+excerpt: Splits values into two groups, based on the result of the given filtering function.
 listed: true
 dateModified: 2020-11-02
 ---

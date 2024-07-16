@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: cold-mountains
+excerpt: Returns the unique elements in a given list.
 listed: true
 dateModified: 2020-09-15
 ---

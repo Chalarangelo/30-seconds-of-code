@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,effect,state,callback]
 cover: antelope
+excerpt: Copies the given text to the clipboard.
 listed: true
 dateModified: 2020-11-16
 ---

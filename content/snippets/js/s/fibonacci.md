@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [math,algorithm]
 cover: matrix-flow
+excerpt: Generates an array, containing the Fibonacci sequence, up until the nth term.
 listed: true
 dateModified: 2020-12-28
 ---

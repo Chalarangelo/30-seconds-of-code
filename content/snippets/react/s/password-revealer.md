@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [components,input,state]
 cover: thread
+excerpt: Renders a password input field with a reveal button.
 listed: true
 dateModified: 2020-11-25
 ---

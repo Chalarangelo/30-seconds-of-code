@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: radio-monstera
+excerpt: Creates a card with an image cutout.
 listed: true
 dateModified: 2022-12-11
 ---

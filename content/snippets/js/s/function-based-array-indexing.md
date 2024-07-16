@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [array,object]
 cover: guitar-living-room
+excerpt: Creates an object from an array, using a function to map each value to a key.
 listed: true
 dateModified: 2021-06-20
 ---

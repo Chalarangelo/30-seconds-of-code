@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [layout]
 cover: beach-riders
+excerpt: Creates a responsive image mosaic.
 listed: true
 dateModified: 2020-12-30
 ---

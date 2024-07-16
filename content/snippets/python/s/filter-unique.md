@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: feathers
+excerpt: Creates a list with the unique values filtered out.
 listed: true
 dateModified: 2020-11-02
 ---

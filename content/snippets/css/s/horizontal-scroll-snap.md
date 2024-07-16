@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [interactivity]
 cover: waves-from-above
+excerpt: Creates a horizontally scrollable container that will snap on elements when scrolling.
 listed: true
 dateModified: 2021-10-11
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,effect,event]
 cover: planning
+excerpt: Executes a callback whenever the window is scrolled.
 listed: true
 dateModified: 2021-12-08
 ---

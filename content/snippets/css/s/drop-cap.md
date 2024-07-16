@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: bamboo-lamp
+excerpt: Makes the first letter of the first paragraph bigger than the rest of the text.
 listed: true
 dateModified: 2020-12-30
 ---

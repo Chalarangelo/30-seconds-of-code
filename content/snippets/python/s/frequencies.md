@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: succulent-6
+excerpt: Creates a dictionary with the unique values of a list as keys and their frequencies as the values.
 listed: true
 dateModified: 2020-11-02
 ---

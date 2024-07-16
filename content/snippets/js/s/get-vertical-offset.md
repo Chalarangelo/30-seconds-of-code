@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: waves-from-above-2
+excerpt: Finds the distance from a given element to the top of the document.
 listed: true
 dateModified: 2021-01-05
 ---

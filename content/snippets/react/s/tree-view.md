@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [components,object,state,recursion]
 cover: digital-nomad-9
+excerpt: Renders a tree view of a JSON object or array with collapsible content.
 listed: true
 dateModified: 2020-11-16
 ---

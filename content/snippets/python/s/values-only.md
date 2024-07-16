@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [dictionary,list]
 cover: colorful-lounge
+excerpt: Returns a flat list of all the values in a flat dictionary.
 listed: true
 dateModified: 2020-11-02
 ---

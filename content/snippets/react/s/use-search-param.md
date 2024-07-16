@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state,effect]
 cover: coffee-phone-tray-3
+excerpt: Tracks the browser's location search param.
 listed: true
 dateModified: 2021-10-13
 ---

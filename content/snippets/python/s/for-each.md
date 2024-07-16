@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: green-plant
+excerpt: Executes the provided function once for each list element.
 listed: true
 dateModified: 2020-09-15
 ---

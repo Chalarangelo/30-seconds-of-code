@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [layout]
 cover: interior
+excerpt: Resets the box-model so that `width` and `height` are not affected by `border` or `padding`.
 listed: true
 dateModified: 2020-12-30
 ---

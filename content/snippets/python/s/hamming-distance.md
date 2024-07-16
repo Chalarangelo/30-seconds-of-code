@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [math]
 cover: tulips-and-reeds
+excerpt: Calculates the Hamming distance between two values.
 listed: true
 dateModified: 2021-02-18
 ---

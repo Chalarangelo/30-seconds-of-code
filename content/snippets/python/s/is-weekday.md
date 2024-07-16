@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [date]
 cover: succulent-4
+excerpt: Checks if the given date is a weekday.
 listed: true
 dateModified: 2020-11-02
 ---

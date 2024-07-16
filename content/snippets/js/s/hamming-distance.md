@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [math,algorithm]
 cover: colorful-lounge
+excerpt: Calculates the Hamming distance between two values.
 listed: true
 dateModified: 2020-12-28
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state,effect]
 cover: red-berries
+excerpt: Returns a stateful value, persisted in `localStorage`, and a function to update it.
 listed: true
 dateModified: 2021-10-13
 ---

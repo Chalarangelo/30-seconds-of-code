@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: tree-roots
+excerpt: Finds the indexes of all elements in the given list that satisfy the provided testing function.
 listed: true
 dateModified: 2020-11-02
 ---

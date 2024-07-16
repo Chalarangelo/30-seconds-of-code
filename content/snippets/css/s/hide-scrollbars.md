@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: by-the-lighthouse
+excerpt: Hides scrollbars on an element, while still allowing it to be scrollable.
 listed: true
 dateModified: 2022-05-13
 ---

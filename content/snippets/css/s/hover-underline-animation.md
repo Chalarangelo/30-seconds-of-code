@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation]
 cover: coffee-phone-tray-2
+excerpt: Creates an animated underline effect when the user hovers over the text.
 listed: true
 dateModified: 2021-10-11
 ---

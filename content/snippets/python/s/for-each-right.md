@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: bridge-drop
+excerpt: Executes the provided function once for each list element, starting from the list's last element.
 listed: true
 dateModified: 2020-09-15
 ---

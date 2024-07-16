@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,effect,state,memo]
 cover: interior-6
+excerpt: Checks if the code is running on the browser or the server.
 listed: true
 dateModified: 2021-03-10
 ---

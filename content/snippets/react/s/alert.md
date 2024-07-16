@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [components,state,effect]
 cover: flower-portrait-1
+excerpt: Renders an alert component with `type` prop.
 listed: true
 dateModified: 2021-01-07
 ---

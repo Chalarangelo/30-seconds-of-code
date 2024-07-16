@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [string]
 cover: trippy-chemicals
+excerpt: Capitalizes the first letter of every word in a string.
 listed: true
 dateModified: 2020-11-02
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [components,fragment,regexp]
 cover: red-petals
+excerpt: Renders a string as plaintext, with URLs converted to appropriate link elements.
 listed: true
 dateModified: 2020-11-03
 ---

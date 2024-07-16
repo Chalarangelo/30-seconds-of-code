@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [layout]
 cover: clutter
+excerpt: Ensures that an element with variable `width` will retain a proportionate `height` value.
 listed: true
 dateModified: 2020-12-30
 ---

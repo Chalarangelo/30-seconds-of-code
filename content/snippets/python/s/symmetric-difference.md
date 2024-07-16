@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: ice
+excerpt: Returns the symmetric difference between two iterables, without filtering out duplicate values.
 listed: true
 dateModified: 2020-11-02
 ---

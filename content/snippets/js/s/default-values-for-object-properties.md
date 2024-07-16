@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [object]
 cover: filter-coffee-pot
+excerpt: Assigns default values for all properties in an object that are `undefined`.
 listed: true
 dateModified: 2020-10-22
 ---

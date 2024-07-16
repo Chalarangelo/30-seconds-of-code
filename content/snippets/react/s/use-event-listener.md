@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,effect,event]
 cover: beach-riders
+excerpt: Adds an event listener for the specified event type on the given element.
 listed: true
 dateModified: 2021-09-01
 ---

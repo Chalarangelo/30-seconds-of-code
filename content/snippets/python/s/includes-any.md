@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: forest-balcony
+excerpt: Checks if any element in `values` is included in `lst`.
 listed: true
 dateModified: 2020-11-02
 ---

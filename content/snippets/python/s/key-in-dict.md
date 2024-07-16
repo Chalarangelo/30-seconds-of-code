@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [dictionary]
 cover: rocky-mountains
+excerpt: Checks if the given key exists in a dictionary.
 listed: true
 dateModified: 2020-10-16
 ---

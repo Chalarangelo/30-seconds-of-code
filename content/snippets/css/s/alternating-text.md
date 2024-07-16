@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation]
 cover: italian-horizon
+excerpt: Creates an alternating text animation.
 listed: true
 dateModified: 2023-05-25
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [string]
 cover: digital-nomad-8
+excerpt: Checks if a string is an anagram of another string (case-insensitive, ignores spaces, punctuation and special characters).
 listed: true
 dateModified: 2020-11-02
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state,effect]
 cover: light-leaves
+excerpt: Observes visibility changes for a given element.
 listed: true
 dateModified: 2021-09-10
 ---

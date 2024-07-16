@@ -5,6 +5,7 @@ shortTitle: Broken image fallback
 language: css
 tags: [visual]
 cover: building-facade
+excerpt: Displays an error message when an image fails to load.
 listed: true
 dateModified: 2022-11-04
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: purple-laptop
+excerpt: Returns the head of a list.
 listed: true
 dateModified: 2020-09-15
 ---

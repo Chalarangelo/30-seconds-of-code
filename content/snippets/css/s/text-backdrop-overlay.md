@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: mountain-lake-cottage
+excerpt: Displays a text on top of an image using an overlay.
 listed: true
 dateModified: 2021-10-13
 ---

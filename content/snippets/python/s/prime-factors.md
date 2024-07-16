@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [math,algorithm]
 cover: river-flow
+excerpt: Finds and returns the list of prime factors of a number.
 listed: true
 dateModified: 2023-05-24
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [math]
 cover: boat-port
+excerpt: Calculates the sum of the powers of all the numbers from `start` to `end` (both inclusive).
 listed: true
 dateModified: 2020-10-22
 ---

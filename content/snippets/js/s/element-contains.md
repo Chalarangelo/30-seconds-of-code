@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: red-petals
+excerpt: Checks if the `parent` element contains the `child` element.
 listed: true
 dateModified: 2020-11-03
 ---

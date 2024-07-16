@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: secret-tree
+excerpt: Returns the most frequent element in a list.
 listed: true
 dateModified: 2020-11-02
 ---

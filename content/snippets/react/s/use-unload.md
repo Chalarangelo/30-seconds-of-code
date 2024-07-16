@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,effect,event]
 cover: digital-nomad-14
+excerpt: Handles the `beforeunload` window event.
 listed: true
 dateModified: 2020-11-29
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [date]
 cover: succulent-11
+excerpt: Calculates the month difference between two dates.
 listed: true
 dateModified: 2020-10-28
 ---

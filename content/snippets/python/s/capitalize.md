@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [string]
 cover: palm-tree-house
+excerpt: Capitalizes the first letter of a string.
 listed: true
 dateModified: 2020-11-02
 ---

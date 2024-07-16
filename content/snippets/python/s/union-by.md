@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: sunrise-over-city
+excerpt: Returns every element that exists in any of the two lists once, after applying the provided function to each element of both.
 listed: true
 dateModified: 2020-11-02
 ---

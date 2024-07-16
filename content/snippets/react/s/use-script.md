@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,effect,state,event]
 cover: travel-mug-3
+excerpt: Dynamically loads an external script.
 listed: true
 dateModified: 2021-10-08
 ---

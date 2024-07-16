@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: white-tablet-2
+excerpt: Gets the currently selected text.
 listed: true
 dateModified: 2020-10-19
 ---

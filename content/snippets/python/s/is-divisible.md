@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [math]
 cover: interior-9
+excerpt: Checks if the first numeric argument is divisible by the second one.
 listed: false
 dateModified: 2021-01-04
 ---

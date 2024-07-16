@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state,callback]
 cover: tram-car-2
+excerpt: Provides a boolean state variable that can be toggled between its two states.
 listed: true
 dateModified: 2020-11-27
 ---

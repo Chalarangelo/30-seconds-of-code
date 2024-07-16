@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [string,regexp]
 cover: lemon-tea
+excerpt: Converts a string to snake case.
 listed: true
 dateModified: 2020-11-02
 ---

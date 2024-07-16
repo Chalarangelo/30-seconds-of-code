@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,effect,event]
 cover: clutter
+excerpt: Handles the event of clicking outside of the wrapped component.
 listed: true
 dateModified: 2020-11-16
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation]
 cover: perfect-timing
+excerpt: Creates a shake animation on invalid input.
 listed: true
 dateModified: 2022-07-31
 ---

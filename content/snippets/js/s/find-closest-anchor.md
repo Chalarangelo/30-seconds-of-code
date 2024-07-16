@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: clouds-n-mountains
+excerpt: Finds the anchor node closest to the given `node`, if any.
 listed: true
 dateModified: 2021-04-22
 ---

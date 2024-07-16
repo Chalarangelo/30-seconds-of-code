@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,effect]
 cover: green-cabin-cow
+excerpt: Executes a callback immediately after a component is mounted.
 listed: true
 dateModified: 2021-10-13
 ---

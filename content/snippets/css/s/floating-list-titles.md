@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: pop-of-green
+excerpt: Creates a list with floating headings for each section.
 listed: true
 dateModified: 2021-10-11
 ---

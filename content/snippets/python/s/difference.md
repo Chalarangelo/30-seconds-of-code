@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: frog-blue-flower
+excerpt: Calculates the difference between two iterables, without filtering duplicate values.
 listed: true
 dateModified: 2020-11-02
 ---

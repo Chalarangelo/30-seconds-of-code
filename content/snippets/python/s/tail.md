@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: meteora
+excerpt: Returns all elements in a list except for the first one.
 listed: true
 dateModified: 2020-11-02
 ---

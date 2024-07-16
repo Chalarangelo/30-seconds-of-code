@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [layout,visual]
 cover: succulent-3
+excerpt: Fits an positions an image appropriately inside its container while preserving its aspect ratio.
 listed: true
 dateModified: 2020-12-30
 ---

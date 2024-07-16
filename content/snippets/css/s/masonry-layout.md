@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [layout]
 cover: interior-2
+excerpt: Creates a masonry-style layout that is especially useful when working with images.
 listed: true
 dateModified: 2021-10-13
 ---

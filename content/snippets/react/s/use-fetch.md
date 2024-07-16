@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,effect,state]
 cover: coworking-space
+excerpt: Implements `fetch()` in a declarative manner.
 listed: true
 dateModified: 2022-05-01
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [browser,recursion]
 cover: standing-stones
+excerpt: Renders the given DOM tree in the specified DOM element.
 listed: true
 dateModified: 2021-10-13
 ---

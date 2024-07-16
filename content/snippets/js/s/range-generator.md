@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [function,generator]
 cover: dark-leaves-6
+excerpt: Creates a generator, that generates all values in the given range using the given step.
 listed: true
 dateModified: 2020-10-11
 ---

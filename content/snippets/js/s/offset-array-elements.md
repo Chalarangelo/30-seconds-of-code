@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: interior-10
+excerpt: Moves the specified amount of elements to the end of the array.
 listed: true
 dateModified: 2020-10-21
 ---

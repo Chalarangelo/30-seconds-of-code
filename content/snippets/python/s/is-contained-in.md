@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: sunrise-over-mountains
+excerpt: Checks if the elements of the first list are contained in the second one regardless of order.
 listed: true
 dateModified: 2021-01-07
 ---

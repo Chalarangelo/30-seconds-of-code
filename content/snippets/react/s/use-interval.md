@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,effect]
 cover: digital-nomad-13
+excerpt: Implements `setInterval()` in a declarative manner.
 listed: true
 dateModified: 2020-11-16
 ---

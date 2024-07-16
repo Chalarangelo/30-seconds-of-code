@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation]
 cover: beach-pineapple
+excerpt: Creates a fill animation on hover.
 listed: true
 dateModified: 2021-04-02
 ---

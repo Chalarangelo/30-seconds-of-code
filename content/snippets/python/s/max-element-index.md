@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [math,list]
 cover: dark-cloud
+excerpt: Returns the index of the element with the maximum value in a list.
 listed: true
 dateModified: 2020-11-02
 ---

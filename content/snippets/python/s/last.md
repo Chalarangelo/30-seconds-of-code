@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: lake-runner
+excerpt: Returns the last element in a list.
 listed: true
 dateModified: 2020-11-02
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: little-white-flowers
+excerpt: Sorts one list based on another list containing the desired indexes.
 listed: true
 dateModified: 2020-11-02
 ---

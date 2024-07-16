@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation]
 cover: digital-nomad-11
+excerpt: Creates a two sided card which rotates on hover.
 listed: true
 dateModified: 2021-03-30
 ---

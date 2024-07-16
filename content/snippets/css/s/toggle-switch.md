@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual,interactivity]
 cover: interior-5
+excerpt: Creates a toggle switch with CSS only.
 listed: true
 dateModified: 2020-12-30
 ---

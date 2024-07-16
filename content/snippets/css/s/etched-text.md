@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: memories-of-pineapple-2
+excerpt: Creates an effect where text appears to be "etched" or engraved into the background.
 listed: true
 dateModified: 2020-12-30
 ---

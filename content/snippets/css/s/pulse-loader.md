@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation]
 cover: digital-nomad-8
+excerpt: Creates a pulse effect loader animation using the `animation-delay` property.
 listed: true
 dateModified: 2021-10-13
 ---

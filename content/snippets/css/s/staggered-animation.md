@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation]
 cover: aerial-view-port
+excerpt: Creates a staggered animation for the elements of a list.
 listed: true
 dateModified: 2021-10-11
 ---

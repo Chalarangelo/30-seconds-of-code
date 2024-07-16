@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [math,string]
 cover: tram-car
+excerpt: Converts an integer to its roman numeral representation. Accepts value between `1` and `3999` (both inclusive).
 listed: true
 dateModified: 2020-11-02
 ---

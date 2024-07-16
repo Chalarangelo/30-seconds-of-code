@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [function]
 cover: lake-trees
+excerpt: Creates a function that will invoke a predicate function for the specified property on a given dictionary.
 listed: true
 dateModified: 2020-11-02
 ---

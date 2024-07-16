@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list,random]
 cover: walking-on-top
+excerpt: Returns a random element from a list.
 listed: true
 dateModified: 2020-10-28
 ---

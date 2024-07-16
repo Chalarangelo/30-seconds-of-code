@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation,visual]
 cover: succulent-1
+excerpt: Creates a rotate effect for the image on hover.
 listed: true
 dateModified: 2021-10-11
 ---

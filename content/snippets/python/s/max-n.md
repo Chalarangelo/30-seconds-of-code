@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list,math]
 cover: red-succulent
+excerpt: Returns the `n` maximum elements from the provided list.
 listed: true
 dateModified: 2020-11-02
 ---

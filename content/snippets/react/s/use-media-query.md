@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state,effect]
 cover: clay-pot-horizon
+excerpt: Checks if the current environment matches a given media query and returns the appropriate value.
 listed: true
 dateModified: 2021-10-13
 ---

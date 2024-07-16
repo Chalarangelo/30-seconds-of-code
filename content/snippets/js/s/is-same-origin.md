@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: leafy-screens
+excerpt: Checks if two URLs are on the same origin.
 listed: true
 dateModified: 2021-04-22
 ---

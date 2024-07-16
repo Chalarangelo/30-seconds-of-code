@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: interior-8
+excerpt: Returns all the ancestors of an element from the document root to the given element.
 listed: true
 dateModified: 2021-01-05
 ---

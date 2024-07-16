@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [math,list]
 cover: rock-climbing
+excerpt: Returns the powerset of a given iterable.
 listed: true
 dateModified: 2020-11-02
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [layout]
 cover: little-bird
+excerpt: Evenly distributes child elements within a parent element.
 listed: true
 dateModified: 2021-10-13
 ---

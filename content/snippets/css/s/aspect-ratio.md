@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [layout]
 cover: digital-nomad-12
+excerpt: Creates a responsive container with a specified aspect ratio.
 listed: true
 dateModified: 2022-08-14
 ---

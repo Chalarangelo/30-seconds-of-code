@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: digital-nomad
+excerpt: Changes the styling of text selection.
 listed: true
 dateModified: 2020-12-30
 ---

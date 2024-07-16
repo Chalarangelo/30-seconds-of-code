@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [interactivity]
 cover: purple-sunset-waves
+excerpt: Creates a scrollable container that will snap on elements when scrolling.
 listed: true
 dateModified: 2020-08-18
 ---

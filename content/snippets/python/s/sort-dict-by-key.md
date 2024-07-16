@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [dictionary]
 cover: laptop-plants
+excerpt: Sorts the given dictionary by key.
 listed: true
 dateModified: 2020-11-02
 ---

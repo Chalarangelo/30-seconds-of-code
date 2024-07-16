@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: succulent-10
+excerpt: Chunks a list into `n` smaller lists.
 listed: true
 dateModified: 2020-10-23
 ---

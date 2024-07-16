@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [string,math]
 cover: campfire
+excerpt: Converts the values of RGB components to a hexadecimal color code.
 listed: true
 dateModified: 2020-11-02
 ---

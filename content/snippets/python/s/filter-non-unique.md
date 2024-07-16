@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: cobbled-street
+excerpt: Creates a list with the non-unique values filtered out.
 listed: true
 dateModified: 2020-11-02
 ---
