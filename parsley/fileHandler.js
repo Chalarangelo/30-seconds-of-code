@@ -6,14 +6,12 @@ import frontmatter from 'front-matter';
 import { readFile, writeFile } from 'node:fs/promises';
 
 const frontmatterReader = (data, filePath) => {
-  const fileName = filePath.match(/.*\/([^/]*)$/)[1];
   const { body, attributes } = frontmatter(data);
   const { language = null, ...restAttributes } = attributes;
   return {
     body,
     ...restAttributes,
     language,
-    fileName,
     filePath,
   };
 };
