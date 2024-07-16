@@ -32,7 +32,7 @@ class Collection < ApplicationRecord
   scope :snippet_collections, -> { where.not(cid: COLLECTIONS_COLLECTION_CID) }
   scope :primary, -> { where(top_level: true) }
   scope :secondary, -> { with_parent }
-  scope :listed, -> { where(featured: true) }
+  scope :listed, -> { where(listed: true) }
   scope :featured, -> do
     where.not(featured_index: nil).order(featured_index: :asc)
   end
@@ -100,10 +100,6 @@ class Collection < ApplicationRecord
 
   def siblings_except_self
     siblings - [self]
-  end
-
-  def is_searchable
-    featured?
   end
 
   def search_tokens_array
