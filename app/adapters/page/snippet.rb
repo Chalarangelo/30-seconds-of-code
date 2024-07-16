@@ -31,7 +31,7 @@ class Page::Snippet < Page::Base
     {
       name: object.seo_title,
       headline: object.seo_title,
-      description: object.seo_description, # TODO: Was short_text, why?
+      description: object.seo_description,
       image: object.cover_full_url,
       date_published: object.date_modified,
       date_modified: object.date_modified,
