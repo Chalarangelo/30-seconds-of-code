@@ -1,8 +1,8 @@
 slug: python/math
-name: Python Math Snippets
-shortName: Python Math
-miniName: Math
-featured: true
+title: Python Math Snippets
+shortTitle: Python Math
+miniTitle: Math
+listed: true
 parent: python
 languageMatcher: python
 tagMatcher: math

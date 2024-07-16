@@ -1,7 +1,7 @@
 slug: js/interviews
-name: JavaScript Interview Questions
-miniName: Interview Questions
-featured: true
+title: JavaScript Interview Questions
+miniTitle: Interview Questions
+listed: true
 parent: js
 snippetIds:
   - js/s/equality

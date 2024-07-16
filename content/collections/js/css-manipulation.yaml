@@ -1,6 +1,6 @@
 slug: js/css-manipulation
-name: CSS Manipulation with JavaScript
-featured: true
+title: CSS Manipulation with JavaScript
+listed: true
 snippetIds:
   - js/s/html-element-test-add-remove-toggle-class
   - js/s/get-set-add-styles-to-html-element

@@ -1,7 +1,7 @@
 slug: js/functional-programming
-name: JavaScript Functional Programming
-shortName: Functional Programming
-featured: true
+title: JavaScript Functional Programming
+shortTitle: Functional Programming
+listed: true
 snippetIds:
   - js/s/functional-programming-introduction
   - js/s/pure-functions

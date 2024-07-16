@@ -1,6 +1,6 @@
 slug: js/promises
-name: JavaScript Promises
-featured: true
+title: JavaScript Promises
+listed: true
 snippetIds:
   - js/s/promises
   - js/s/async-cheatsheet

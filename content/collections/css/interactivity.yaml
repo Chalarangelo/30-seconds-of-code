@@ -1,8 +1,8 @@
 slug: css/interactivity
-name: CSS Interactivity Snippets
-shortName: CSS Interactivity
-miniName: Interactivity
-featured: true
+title: CSS Interactivity Snippets
+shortTitle: CSS Interactivity
+miniTitle: Interactivity
+listed: true
 parent: css
 languageMatcher: css
 tagMatcher: interactivity

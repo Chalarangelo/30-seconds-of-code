@@ -1,6 +1,6 @@
 slug: js/colors
-name: Colors in JavaScript
-featured: true
+title: Colors in JavaScript
+listed: true
 snippetIds:
   - js/s/random-hex-color-code
   - js/s/rgb-hex-hsl-hsb-color-format-conversion

@@ -1,8 +1,8 @@
 slug: python/function
-name: Python Function Snippets
-shortName: Python Functions
-miniName: Function
-featured: true
+title: Python Function Snippets
+shortTitle: Python Functions
+miniTitle: Function
+listed: true
 parent: python
 languageMatcher: python
 tagMatcher: function

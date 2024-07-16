@@ -1,6 +1,6 @@
 slug: css/hover-effects
-name: CSS Hover Effects
-featured: true
+title: CSS Hover Effects
+listed: true
 snippetIds:
   - css/s/image-overlay-hover
   - css/s/image-hover-menu

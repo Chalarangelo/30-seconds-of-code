@@ -1,7 +1,7 @@
 slug: js/function
-name: JavaScript Function Snippets
-miniName: Function
-featured: true
+title: JavaScript Function Snippets
+miniTitle: Function
+listed: true
 parent: js
 languageMatcher: javascript
 tagMatcher: function

@@ -1,8 +1,8 @@
 slug: css/visual
-name: CSS Visual Snippets
-shortName: CSS Visual
-miniName: Visual
-featured: true
+title: CSS Visual Snippets
+shortTitle: CSS Visual
+miniTitle: Visual
+listed: true
 parent: css
 languageMatcher: css
 tagMatcher: visual

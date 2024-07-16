@@ -1,8 +1,8 @@
 slug: react/rendering
-name: React Rendering
-miniName: Rendering
+title: React Rendering
+miniTitle: Rendering
 parent: react
-featured: true
+listed: true
 snippetIds:
   - react/s/rendering-basics
   - react/s/rendering-optimization

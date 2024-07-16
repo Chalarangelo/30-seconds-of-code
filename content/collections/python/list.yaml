@@ -1,8 +1,8 @@
 slug: python/list
-name: Python List Snippets
-shortName: Python Lists
-miniName: List
-featured: true
+title: Python List Snippets
+shortTitle: Python Lists
+miniTitle: List
+listed: true
 parent: python
 languageMatcher: python
 tagMatcher: list

@@ -1,6 +1,6 @@
 slug: js/dom-manipulation
-name: JavaScript DOM Manipulation
-featured: true
+title: JavaScript DOM Manipulation
+listed: true
 snippetIds:
   - js/s/create-html-elements
   - js/s/create-element

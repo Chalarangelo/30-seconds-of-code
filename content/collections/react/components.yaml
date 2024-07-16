@@ -1,7 +1,7 @@
 slug: react/components
-name: React Components
-miniName: Components
-featured: true
+title: React Components
+miniTitle: Components
+listed: true
 parent: react
 languageMatcher: react
 tagMatcher: components

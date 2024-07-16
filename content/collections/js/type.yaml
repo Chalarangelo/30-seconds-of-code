@@ -1,8 +1,8 @@
 slug: js/type
-name: JavaScript Type Snippets
-shortName: JavaScript Types
-miniName: Type
-featured: true
+title: JavaScript Type Snippets
+shortTitle: JavaScript Types
+miniTitle: Type
+listed: true
 parent: js
 languageMatcher: javascript
 tagMatcher: type

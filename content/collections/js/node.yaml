@@ -1,8 +1,8 @@
 slug: js/node
-name: Node.js Snippets
-shortName: Node.js
-miniName: Node
-featured: true
+title: Node.js Snippets
+shortTitle: Node.js
+miniTitle: Node
+listed: true
 parent: js
 languageMatcher: javascript
 tagMatcher: node

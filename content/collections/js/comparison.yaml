@@ -1,6 +1,6 @@
 slug: js/comparison
-name: JavaScript Comparison
-featured: true
+title: JavaScript Comparison
+listed: true
 snippetIds:
   - js/s/equality
   - js/s/value-not-equal-to-itself

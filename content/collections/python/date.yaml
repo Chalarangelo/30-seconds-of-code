@@ -1,8 +1,8 @@
 slug: python/date
-name: Python Date Snippets
-shortName: Python Dates
-miniName: Date
-featured: true
+title: Python Date Snippets
+shortTitle: Python Dates
+miniTitle: Date
+listed: true
 parent: python
 languageMatcher: python
 tagMatcher: date

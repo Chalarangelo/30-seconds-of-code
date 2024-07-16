@@ -1,6 +1,6 @@
 slug: js/http-requests
-name: HTTP Requests in JavaScript
-featured: true
+title: HTTP Requests in JavaScript
+listed: true
 snippetIds:
   - js/s/http-get-post-put-delete
   - articles/s/http-status-codes-cheatsheet

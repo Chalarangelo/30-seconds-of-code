@@ -1,8 +1,8 @@
 slug: git/branch
-name: Git Branch Snippets
-shortName: Git Branches
-miniName: Branch
-featured: true
+title: Git Branch Snippets
+shortTitle: Git Branches
+miniTitle: Branch
+listed: true
 parent: git
 languageMatcher: git
 tagMatcher: branch

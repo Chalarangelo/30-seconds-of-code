@@ -1,8 +1,8 @@
 slug: js/object
-name: JavaScript Object Snippets
-shortName: JavaScript Objects
-miniName: Object
-featured: true
+title: JavaScript Object Snippets
+shortTitle: JavaScript Objects
+miniTitle: Object
+listed: true
 parent: js
 languageMatcher: javascript
 tagMatcher: object

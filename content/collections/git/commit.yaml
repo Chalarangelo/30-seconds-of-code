@@ -1,8 +1,8 @@
 slug: git/commit
-name: Git Commit Snippets
-shortName: Git Commits
-miniName: Commit
-featured: true
+title: Git Commit Snippets
+shortTitle: Git Commits
+miniTitle: Commit
+listed: true
 parent: git
 languageMatcher: git
 tagMatcher: commit

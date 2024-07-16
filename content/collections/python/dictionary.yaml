@@ -1,8 +1,8 @@
 slug: python/dictionary
-name: Python Dictionary Snippets
-shortName: Python Dictionaries
-miniName: Dictionary
-featured: true
+title: Python Dictionary Snippets
+shortTitle: Python Dictionaries
+miniTitle: Dictionary
+listed: true
 parent: python
 languageMatcher: python
 tagMatcher: dictionary

@@ -1,7 +1,7 @@
 slug: react/hooks
-name: React Hooks
-miniName: Hooks
-featured: true
+title: React Hooks
+miniTitle: Hooks
+listed: true
 parent: react
 languageMatcher: react
 tagMatcher: hooks

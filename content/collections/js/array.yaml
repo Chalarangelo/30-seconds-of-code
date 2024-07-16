@@ -1,8 +1,8 @@
 slug: js/array
-name: JavaScript Array Snippets
-shortName: JavaScript Arrays
-miniName: Array
-featured: true
+title: JavaScript Array Snippets
+shortTitle: JavaScript Arrays
+miniTitle: Array
+listed: true
 parent: js
 languageMatcher: javascript
 tagMatcher: array

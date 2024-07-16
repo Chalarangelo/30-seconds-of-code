@@ -1,8 +1,8 @@
 slug: js/date
-name: JavaScript Date Snippets
-shortName: JavaScript Dates
-miniName: Date
-featured: true
+title: JavaScript Date Snippets
+shortTitle: JavaScript Dates
+miniTitle: Date
+listed: true
 parent: js
 languageMatcher: javascript
 tagMatcher: date

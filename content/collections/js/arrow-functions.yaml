@@ -1,6 +1,6 @@
 slug: js/arrow-functions
-name: JavaScript Arrow Functions
-featured: true
+title: JavaScript Arrow Functions
+listed: true
 snippetIds:
   - js/s/arrow-functions
   - js/s/arrow-regular-function-differences
