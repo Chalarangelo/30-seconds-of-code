@@ -88,7 +88,7 @@ class BreadcrumbPresenter
     @collection_breadcrumbs ||= collections_for_breadcrumbs.map do |collection|
       {
         url: collection.first_page_slug,
-        name: collection.mini_name
+        name: collection.mini_title
       }
     end
   end

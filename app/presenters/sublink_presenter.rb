@@ -46,7 +46,7 @@ class SublinkPresenter
 
   def to_sublink(collection, selected = false)
     {
-      title: collection.mini_name,
+      title: collection.mini_title,
       url: collection.first_page_slug,
       selected: selected
     }
