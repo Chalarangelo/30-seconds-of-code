@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: fallen-leaves
+excerpt: Checks if all elements in a list are equal.
 listed: true
 dateModified: 2020-10-11
 ---

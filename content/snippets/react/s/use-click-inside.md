@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,effect,event]
 cover: digital-nomad-10
+excerpt: Handles the event of clicking inside the wrapped component.
 listed: true
 dateModified: 2020-11-16
 ---

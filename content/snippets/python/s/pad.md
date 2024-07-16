@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [string]
 cover: digital-nomad-11
+excerpt: Pads a string on both sides with the specified character, if it's shorter than the specified length.
 listed: true
 dateModified: 2020-10-04
 ---

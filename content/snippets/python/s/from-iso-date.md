@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [date]
 cover: purple-leaves
+excerpt: Converts a date from its ISO-8601 representation.
 listed: true
 dateModified: 2021-01-07
 ---

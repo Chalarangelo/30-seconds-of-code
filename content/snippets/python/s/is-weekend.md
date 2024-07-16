@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [date]
 cover: two-lighthouses
+excerpt: Checks if the given date is a weekend.
 listed: true
 dateModified: 2020-11-02
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: colorful-pots
+excerpt: Casts the provided value as a list if it's not one.
 listed: true
 dateModified: 2020-11-02
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [layout]
 cover: godray-computer-mug
+excerpt: "Aligns items horizontally using `display: inline-block` to create a 3-tile layout."
 listed: true
 dateModified: 2020-12-30
 ---

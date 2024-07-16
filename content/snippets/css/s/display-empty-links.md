@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: metro-tunnel
+excerpt: Displays the link URL for links with no text.
 listed: true
 dateModified: 2022-11-11
 ---

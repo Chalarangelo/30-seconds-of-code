@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [components,input,state,effect,event]
 cover: man-red-sunset
+excerpt: Renders a file drag and drop component for a single file.
 listed: true
 dateModified: 2021-10-13
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: camera-zoom
+excerpt: Transposes a two-dimensional array.
 listed: true
 dateModified: 2022-04-20
 ---

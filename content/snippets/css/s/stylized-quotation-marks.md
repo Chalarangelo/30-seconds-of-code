@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: coffee-phone-tray
+excerpt: Customizes the style of inline quotation marks.
 listed: true
 dateModified: 2021-05-16
 ---

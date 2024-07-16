@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation]
 cover: clouds-n-mountains
+excerpt: Creates a card that shifts on hover.
 listed: true
 dateModified: 2022-12-14
 ---

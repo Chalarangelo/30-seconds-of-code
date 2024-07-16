@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [function]
 cover: interior-10
+excerpt: Tests a value, `x`, against a testing function, conditionally applying a function.
 listed: true
 dateModified: 2020-11-09
 ---

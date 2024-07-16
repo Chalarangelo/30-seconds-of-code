@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [components]
 cover: rabbit-call
+excerpt: Renders a link formatted to call a phone number (`tel:` link).
 listed: false
 dateModified: 2021-01-04
 ---

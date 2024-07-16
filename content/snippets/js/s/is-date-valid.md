@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [date]
 cover: cave-explorer
+excerpt: Checks if a valid date object can be created from the given values.
 listed: true
 dateModified: 2020-10-20
 ---

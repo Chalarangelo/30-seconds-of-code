@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation]
 cover: painters-desk
+excerpt: Creates a swing animation on focus.
 listed: true
 dateModified: 2021-05-24
 ---

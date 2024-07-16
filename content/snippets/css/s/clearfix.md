@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [layout]
 cover: memories-of-pineapple-3
+excerpt: Ensures that an element self-clears its children.
 listed: true
 dateModified: 2020-12-30
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: river-houses
+excerpt: Returns every element that exists in any of the two lists once.
 listed: true
 dateModified: 2020-11-02
 ---

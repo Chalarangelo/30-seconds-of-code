@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: tranquil-lake
+excerpt: Smooth-scrolls to the top of the page.
 listed: true
 dateModified: 2020-10-22
 ---

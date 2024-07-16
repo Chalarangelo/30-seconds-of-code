@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation,visual]
 cover: dreamy-flowers
+excerpt: Creates a squiggle effect when hovering over a link.
 listed: true
 dateModified: 2023-01-10
 ---

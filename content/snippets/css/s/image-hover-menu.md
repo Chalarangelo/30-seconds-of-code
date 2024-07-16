@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [layout,animation]
 cover: compass
+excerpt: Displays a menu overlay when the user hovers over the image.
 listed: true
 dateModified: 2021-10-11
 ---

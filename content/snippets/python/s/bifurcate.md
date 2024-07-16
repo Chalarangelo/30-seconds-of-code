@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: mug-flower-book
+excerpt: Splits values into two groups, based on the result of the given `filter` list.
 listed: true
 dateModified: 2020-11-02
 ---

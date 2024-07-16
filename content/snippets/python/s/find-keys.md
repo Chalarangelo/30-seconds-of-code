@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [dictionary]
 cover: laptop-plants-2
+excerpt: Finds all keys in the provided dictionary that have the given value.
 listed: true
 dateModified: 2020-11-02
 ---

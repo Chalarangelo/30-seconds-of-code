@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: flowering-hills
+excerpt: Finds the closest matching node starting at the given `node`.
 listed: true
 dateModified: 2021-04-22
 ---

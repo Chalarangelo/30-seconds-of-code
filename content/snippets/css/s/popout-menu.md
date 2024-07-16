@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [interactivity]
 cover: city-view
+excerpt: Reveals an interactive popout menu on hover/focus.
 listed: true
 dateModified: 2020-12-30
 ---

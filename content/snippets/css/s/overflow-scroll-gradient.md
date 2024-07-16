@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: memories-of-pineapple-1
+excerpt: Adds a fading gradient to an overflowing element to better indicate there is more content to be scrolled.
 listed: true
 dateModified: 2021-10-13
 ---

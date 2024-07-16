@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [string]
 cover: bridge-over-road
+excerpt: Pads a string on both sides with the specified character, if it's shorter than the specified `length`.
 listed: true
 dateModified: 2020-10-22
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [function,promise]
 cover: new-york-skyline
+excerpt: Performs left-to-right function composition for asynchronous functions.
 listed: true
 dateModified: 2020-10-22
 ---

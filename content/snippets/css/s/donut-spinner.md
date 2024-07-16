@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation]
 cover: digital-nomad-3
+excerpt: Creates a donut spinner that can be used to indicate the loading of content.
 listed: true
 dateModified: 2021-10-13
 ---

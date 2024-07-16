@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: light-ring
+excerpt: Finds the index of the first element in the given list that satisfies the provided testing function.
 listed: true
 dateModified: 2020-11-02
 ---

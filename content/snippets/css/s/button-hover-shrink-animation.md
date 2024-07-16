@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation]
 cover: clay-pot-horizon
+excerpt: Creates a shrink animation on hover.
 listed: true
 dateModified: 2021-05-24
 ---

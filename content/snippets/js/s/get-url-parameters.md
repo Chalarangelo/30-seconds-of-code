@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [browser,string,regexp]
 cover: metro-tunnel
+excerpt: Creates an object containing the parameters of the current URL.
 listed: true
 dateModified: 2020-10-22
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: pineapple-at-work
+excerpt: Counts the occurrences of a value in a list.
 listed: true
 dateModified: 2021-01-10
 ---

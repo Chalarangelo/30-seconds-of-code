@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: jars-on-shelf-2
+excerpt: Checks if there are duplicate values in a flat list.
 listed: true
 dateModified: 2020-11-02
 ---

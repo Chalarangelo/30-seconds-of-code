@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state]
 cover: digital-nomad-6
+excerpt: Creates a stateful value, and a function to update it by merging the new state provided.
 listed: true
 dateModified: 2021-09-23
 ---

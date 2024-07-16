@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list,string]
 cover: industrial-tokyo
+excerpt: Reverses a list or a string.
 listed: true
 dateModified: 2020-11-02
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [dictionary]
 cover: blue-red-mountain
+excerpt: Finds the first key in the provided dictionary that has the given value.
 listed: true
 dateModified: 2020-11-02
 ---

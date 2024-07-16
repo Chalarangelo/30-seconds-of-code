@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state,effect]
 cover: digital-nomad-7
+excerpt: Checks if the client is online or offline.
 listed: true
 dateModified: 2020-11-16
 ---

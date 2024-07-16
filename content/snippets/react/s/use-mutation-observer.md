@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,effect]
 cover: lemon-tea
+excerpt: Watches for changes made to the DOM tree, using a `MutationObserver`
 listed: true
 dateModified: 2021-11-23
 ---

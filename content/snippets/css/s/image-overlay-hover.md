@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual,animation]
 cover: architectural
+excerpt: Displays an image overlay effect on hover.
 listed: true
 dateModified: 2021-10-11
 ---

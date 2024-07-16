@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation]
 cover: dark-cloud
+excerpt: Creates a shadow box around the text when it is hovered.
 listed: false
 dateModified: 2021-01-04
 ---

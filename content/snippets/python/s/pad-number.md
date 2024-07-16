@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [string,math]
 cover: umbrellas
+excerpt: Pads a given number to the specified length.
 listed: true
 dateModified: 2020-11-02
 ---

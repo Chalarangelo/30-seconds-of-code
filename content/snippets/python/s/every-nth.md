@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: cherry-trees
+excerpt: Returns every `nth` element in a list.
 listed: true
 dateModified: 2020-11-02
 ---

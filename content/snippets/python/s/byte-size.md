@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [string]
 cover: river-house-lights
+excerpt: Returns the length of a string in bytes.
 listed: true
 dateModified: 2020-11-02
 ---

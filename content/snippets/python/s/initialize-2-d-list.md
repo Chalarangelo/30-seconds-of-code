@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: succulent-7
+excerpt: Initializes a 2D list of given width and height and value.
 listed: true
 dateModified: 2020-11-02
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state]
 cover: flower-portrait-8
+excerpt: Creates a stateful value with a default fallback if it's `null` or `undefined`, and a function to update it.
 listed: true
 dateModified: 2021-10-23
 ---

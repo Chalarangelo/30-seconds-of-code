@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [algorithm,array]
 cover: zen-indoors
+excerpt: Finds the index of a given element in a sorted array using the binary search algorithm.
 listed: true
 dateModified: 2020-12-29
 ---

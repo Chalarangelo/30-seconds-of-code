@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [interactivity]
 cover: interior-9
+excerpt: Makes the content unselectable.
 listed: true
 dateModified: 2020-12-30
 ---

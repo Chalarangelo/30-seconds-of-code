@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: digital-nomad-16
+excerpt: Creates a list of partial sums.
 listed: true
 dateModified: 2021-01-13
 ---

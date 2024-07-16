@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [string,math]
 cover: digital-nomad
+excerpt: Converts a number in bytes to a human-readable string.
 listed: true
 dateModified: 2020-10-22
 ---

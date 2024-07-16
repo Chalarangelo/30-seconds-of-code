@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [math]
 cover: little-bird
+excerpt: Finds the median of a list of numbers.
 listed: true
 dateModified: 2020-11-02
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [dictionary,list]
 cover: succulent-5
+excerpt: Creates a flat list of all the keys in a flat dictionary.
 listed: true
 dateModified: 2020-11-02
 ---

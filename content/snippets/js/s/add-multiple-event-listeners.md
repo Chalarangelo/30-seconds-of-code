@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [browser,event]
 cover: compass-1
+excerpt: Adds multiple event listeners with the same handler to an element.
 listed: true
 dateModified: 2020-10-22
 ---

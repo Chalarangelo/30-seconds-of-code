@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state]
 cover: white-laptop
+excerpt: Creates a stateful value that is persisted to `sessionStorage`, and a function to update it.
 listed: true
 dateModified: 2021-09-15
 ---

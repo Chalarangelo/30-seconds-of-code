@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [layout]
 cover: houses-rock-sea
+excerpt: Truncates text that is longer than one line, adding an ellipsis at the end (`…`).
 listed: true
 dateModified: 2020-12-30
 ---

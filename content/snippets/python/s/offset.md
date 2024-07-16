@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: digital-nomad-10
+excerpt: Moves the specified amount of elements to the end of the list.
 listed: true
 dateModified: 2020-11-02
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state]
 cover: interior-12
+excerpt: Creates a stateful value, returning a getter and a setter function.
 listed: true
 dateModified: 2021-10-27
 ---

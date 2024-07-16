@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [algorithm,array]
 cover: tranquil-desktop
+excerpt: Finds the first index of a given element in an array using the linear search algorithm.
 listed: true
 dateModified: 2020-12-28
 ---

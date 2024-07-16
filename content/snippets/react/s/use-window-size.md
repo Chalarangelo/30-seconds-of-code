@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state,effect]
 cover: polar-bear
+excerpt: Tracks the dimensions of the browser window.
 listed: true
 dateModified: 2021-10-18
 ---

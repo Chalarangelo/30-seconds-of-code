@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [math,list]
 cover: digital-nomad-15
+excerpt: Calculates the average of two or more numbers.
 listed: true
 dateModified: 2020-11-02
 ---

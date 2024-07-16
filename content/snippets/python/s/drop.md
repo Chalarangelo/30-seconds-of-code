@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: pink-flower
+excerpt: Returns a list with `n` elements removed from the left.
 listed: true
 dateModified: 2020-11-02
 ---

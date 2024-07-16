@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state,effect]
 cover: couch-laptop
+excerpt: Stores the previous state or props.
 listed: true
 dateModified: 2020-11-16
 ---

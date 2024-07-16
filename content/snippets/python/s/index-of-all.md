@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: purple-flower-bunch
+excerpt: Returns a list of indexes of all the occurrences of an element in a list.
 listed: true
 dateModified: 2020-10-11
 ---

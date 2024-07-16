@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: new-plant
+excerpt: Removes falsy values from a list.
 listed: true
 dateModified: 2020-11-02
 ---

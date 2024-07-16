@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [string,regexp]
 cover: sliced-fruits
+excerpt: Converts a string to a URL-friendly slug.
 listed: true
 dateModified: 2020-10-25
 ---

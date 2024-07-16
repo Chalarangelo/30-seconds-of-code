@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: interior-7
+excerpt: Creates a list with sticky headings for each section.
 listed: true
 dateModified: 2020-12-30
 ---

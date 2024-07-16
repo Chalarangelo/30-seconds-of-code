@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [dictionary,list]
 cover: digital-nomad-2
+excerpt: Retrieves the value of the nested key indicated by the given selector list from a dictionary or list.
 listed: true
 dateModified: 2020-10-28
 ---

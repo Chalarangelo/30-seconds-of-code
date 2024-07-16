@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: touch-flower
+excerpt: Checks if all the values in a list are unique.
 listed: true
 dateModified: 2021-01-07
 ---

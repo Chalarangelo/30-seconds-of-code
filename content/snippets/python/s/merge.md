@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: succulent-2
+excerpt: Merges two or more lists into a list of lists, combining elements from each of the input lists based on their positions.
 listed: true
 dateModified: 2020-11-02
 ---

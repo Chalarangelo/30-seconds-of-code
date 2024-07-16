@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,effect]
 cover: chubby-squirrel
+excerpt: Sets the title of the page
 listed: true
 dateModified: 2021-09-27
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list,dictionary]
 cover: body-of-water
+excerpt: Groups the elements of a list based on the given function.
 listed: true
 dateModified: 2020-11-02
 ---

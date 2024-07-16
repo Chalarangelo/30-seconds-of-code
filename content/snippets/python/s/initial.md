@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: pop-of-green
+excerpt: Returns all the elements of a list except the last one.
 listed: true
 dateModified: 2020-11-02
 ---

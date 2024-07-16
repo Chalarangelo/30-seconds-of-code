@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: sunflowers
+excerpt: Returns a list of elements that exist in both lists.
 listed: true
 dateModified: 2020-11-02
 ---

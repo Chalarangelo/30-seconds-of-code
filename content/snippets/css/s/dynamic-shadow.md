@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: couch-laptop
+excerpt: Creates a shadow similar to `box-shadow` but based on the colors of the element itself.
 listed: true
 dateModified: 2020-12-30
 ---

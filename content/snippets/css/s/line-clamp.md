@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [layout,visual]
 cover: typewriter
+excerpt: Limit multiline text to a given number of lines.
 listed: true
 dateModified: 2021-05-16
 ---

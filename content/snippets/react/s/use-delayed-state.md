@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state,effect]
 cover: city-view
+excerpt: Delays creating a stateful value until some condition is met.
 listed: true
 dateModified: 2021-12-15
 ---

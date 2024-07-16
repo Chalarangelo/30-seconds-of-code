@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [components,array,object]
 cover: waves-from-above-2
+excerpt: Renders a table with rows dynamically created from an array of objects and a list of property names.
 listed: true
 dateModified: 2020-09-06
 ---

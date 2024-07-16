@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: case-study
+excerpt: Returns an array of HTML elements whose width is larger than that of the viewport's.
 listed: true
 dateModified: 2020-10-22
 ---

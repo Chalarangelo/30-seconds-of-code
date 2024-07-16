@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [string,browser,regexp]
 cover: coffee-phone-tray-2
+excerpt: Checks if the given string is an absolute URL.
 listed: true
 dateModified: 2020-10-20
 ---

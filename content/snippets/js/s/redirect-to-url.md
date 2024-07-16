@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: coffee-phone-tray-2
+excerpt: Redirects to a specified URL.
 listed: true
 dateModified: 2020-10-20
 ---

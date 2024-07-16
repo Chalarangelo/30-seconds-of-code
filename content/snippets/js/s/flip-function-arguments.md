@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [function]
 cover: interior-11
+excerpt: Takes a function as an argument, then makes the first argument the last.
 listed: true
 dateModified: 2021-06-13
 ---

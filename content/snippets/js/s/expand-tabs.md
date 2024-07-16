@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [string,regexp]
 cover: naming-conventions
+excerpt: Convert tabs to spaces, where each tab corresponds to `count` spaces.
 listed: true
 dateModified: 2020-09-15
 ---

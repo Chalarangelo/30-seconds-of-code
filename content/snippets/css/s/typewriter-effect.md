@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation]
 cover: italian-horizon
+excerpt: Creates a typewriter effect animation.
 listed: true
 dateModified: 2021-05-24
 ---

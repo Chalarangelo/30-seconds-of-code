@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [components]
 cover: godray-computer-mug
+excerpt: Renders a spinning loader component.
 listed: true
 dateModified: 2020-11-16
 ---

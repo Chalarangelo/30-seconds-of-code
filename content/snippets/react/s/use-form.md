@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state]
 cover: cave-view
+excerpt: Creates a stateful value from the fields in a form.
 listed: true
 dateModified: 2021-09-17
 ---

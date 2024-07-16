@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: little-white-flowers
+excerpt: Returns an array containing all the siblings of the given element.
 listed: true
 dateModified: 2020-10-19
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [math,list]
 cover: chess-pawns
+excerpt: Returns the least common multiple of a list of numbers.
 listed: true
 dateModified: 2020-11-02
 ---

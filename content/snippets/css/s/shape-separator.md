@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: shapes
+excerpt: Uses an SVG shape to create a separator between two different blocks.
 listed: false
 dateModified: 2021-01-04
 ---

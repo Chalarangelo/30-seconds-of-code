@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list,dictionary]
 cover: succulent-9
+excerpt: Converts a list of dictionaries into a list of values corresponding to the specified `key`.
 listed: true
 dateModified: 2020-10-22
 ---

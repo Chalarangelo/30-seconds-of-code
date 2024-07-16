@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: digital-nomad-7
+excerpt: Returns a list with `n` elements removed from the right.
 listed: true
 dateModified: 2020-11-02
 ---

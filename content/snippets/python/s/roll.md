@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: colorful-pots
+excerpt: Moves the specified amount of elements to the start of the list.
 listed: true
 dateModified: 2020-11-02
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [math]
 cover: taking-photos
+excerpt: Reverses a number.
 listed: true
 dateModified: 2020-11-02
 ---

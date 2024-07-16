@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,effect]
 cover: aerial-view-port
+excerpt: Runs an animating function, calling it before every repaint.
 listed: true
 dateModified: 2021-12-29
 ---

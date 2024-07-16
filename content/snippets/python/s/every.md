@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: walking
+excerpt: Checks if the provided function returns `True` for every element in the list.
 listed: true
 dateModified: 2020-11-02
 ---

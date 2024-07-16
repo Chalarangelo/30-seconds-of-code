@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,effect,event]
 cover: plant-corner
+excerpt: Executes a callback whenever an event occurs on the global object.
 listed: true
 dateModified: 2021-12-22
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: dark-leaves-5
+excerpt: Creates a card that displays additional content on hover.
 listed: true
 dateModified: 2021-10-11
 ---

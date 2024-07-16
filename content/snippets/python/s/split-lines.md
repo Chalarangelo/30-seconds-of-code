@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [string]
 cover: succulent-4
+excerpt: Splits a multiline string into a list of lines.
 listed: true
 dateModified: 2020-11-02
 ---

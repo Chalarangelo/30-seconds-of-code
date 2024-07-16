@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,effect,event]
 cover: flower-camera
+excerpt: Executes a callback whenever the window is resized.
 listed: true
 dateModified: 2021-12-01
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [components,effect,state]
 cover: strawberries
+excerpt: Renders an image that supports lazy loading.
 listed: true
 dateModified: 2022-07-29
 ---

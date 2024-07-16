@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual,animation]
 cover: messy-computer
+excerpt: Creates a styled radio button with animation on state change.
 listed: true
 dateModified: 2022-11-16
 ---

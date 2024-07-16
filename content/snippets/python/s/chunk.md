@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: red-berries
+excerpt: Chunks a list into smaller lists of a specified size.
 listed: true
 dateModified: 2020-11-02
 ---

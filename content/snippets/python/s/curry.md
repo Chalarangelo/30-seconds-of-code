@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [function]
 cover: leaves-read
+excerpt: Curries a function.
 listed: true
 dateModified: 2020-11-02
 ---

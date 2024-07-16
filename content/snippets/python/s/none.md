@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: jars-on-shelf-2
+excerpt: Checks if the provided function returns `True` for at least one element in the list.
 listed: true
 dateModified: 2020-11-02
 ---

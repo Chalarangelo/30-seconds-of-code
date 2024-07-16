@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation,visual]
 cover: coworking-space
+excerpt: Creates a progress bar indicating the scroll percentage of the page.
 listed: true
 dateModified: 2021-10-13
 ---

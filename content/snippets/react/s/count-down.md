@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [components,state]
 cover: sea-view-2
+excerpt: Renders a countdown timer that prints a message when it reaches zero.
 listed: true
 dateModified: 2021-10-13
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [math,algorithm,recursion]
 cover: flower-vase
+excerpt: Calculates the factorial of a number.
 listed: true
 dateModified: 2020-12-28
 ---

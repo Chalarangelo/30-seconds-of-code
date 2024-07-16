@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [math,list]
 cover: laptop-with-code
+excerpt: Converts a number to a list of digits.
 listed: true
 dateModified: 2020-09-15
 ---

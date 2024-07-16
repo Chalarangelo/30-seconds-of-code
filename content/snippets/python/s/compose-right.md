@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [function]
 cover: lavender-shelf
+excerpt: Performs left-to-right function composition.
 listed: true
 dateModified: 2020-11-02
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [dictionary]
 cover: jars-on-shelf
+excerpt: Sorts the given dictionary by value.
 listed: true
 dateModified: 2021-01-08
 ---

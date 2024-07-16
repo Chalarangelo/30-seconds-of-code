@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [algorithm,math,array]
 cover: work-hard-computer
+excerpt: Finds a contiguous subarray with the largest sum within an array of numbers.
 listed: true
 dateModified: 2022-09-07
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [dictionary]
 cover: plant-candle
+excerpt: Merges two or more dictionaries.
 listed: true
 dateModified: 2020-11-02
 ---

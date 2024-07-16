@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [components]
 cover: armchair
+excerpt: Renders a table with rows dynamically created from an array of primitives.
 listed: true
 dateModified: 2020-11-03
 ---

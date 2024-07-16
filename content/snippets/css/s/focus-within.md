@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual,interactivity]
 cover: boats
+excerpt: Changes the appearance of a form if any of its children are focused.
 listed: true
 dateModified: 2020-12-30
 ---

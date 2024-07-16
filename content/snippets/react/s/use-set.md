@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state]
 cover: engine
+excerpt: Creates a stateful `Set` object, and a set of functions to manipulate it.
 listed: true
 dateModified: 2021-11-01
 ---

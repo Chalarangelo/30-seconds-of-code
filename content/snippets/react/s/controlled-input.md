@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [components,input]
 cover: digital-nomad-5
+excerpt: Renders a controlled `<input>` element that uses a callback function to inform its parent about value updates.
 listed: true
 dateModified: 2020-11-03
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: orange-coffee-4
+excerpt: Finds all the ancestors of an element up until the element matched by the specified selector.
 listed: true
 dateModified: 2021-01-06
 ---

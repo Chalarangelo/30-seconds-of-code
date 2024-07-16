@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: metro-arrival
+excerpt: Hides elements with no content.
 listed: true
 dateModified: 2022-11-18
 ---

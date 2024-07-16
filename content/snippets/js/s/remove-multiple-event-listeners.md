@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [browser,event]
 cover: snowy-mountains
+excerpt: Detaches an event listener from all the provided targets.
 listed: true
 dateModified: 2021-04-22
 ---

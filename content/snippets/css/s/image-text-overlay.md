@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: icebreaker
+excerpt: Displays an image with a text overlay.
 listed: true
 dateModified: 2023-01-29
 ---

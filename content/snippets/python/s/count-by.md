@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: rabbit-call
+excerpt: Groups the elements of a list based on the given function and returns the count of elements in each group.
 listed: true
 dateModified: 2020-11-02
 ---

@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation]
 cover: washed-ashore
+excerpt: Transitions an element's height from `0` to `auto` when its height is unknown.
 listed: true
 dateModified: 2020-12-30
 ---

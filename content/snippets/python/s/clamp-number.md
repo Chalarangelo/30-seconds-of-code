@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [math]
 cover: colorful-rocks
+excerpt: Clamps `num` within the inclusive range specified by the boundary values.
 listed: true
 dateModified: 2020-11-02
 ---
