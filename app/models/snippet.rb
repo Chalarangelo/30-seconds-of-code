@@ -63,11 +63,6 @@ class Snippet < ApplicationRecord
     title.include?(title_language) ? title : "#{title_language} - #{title}"
   end
 
-  # TODO: Align naming between this and the collection and move bakc to common api
-  def seo_description
-    @seo_description ||= short_text.strip_markdown
-  end
-
   def primary_tag
     @primary_tag ||= tags.first
   end
@@ -101,10 +96,6 @@ class Snippet < ApplicationRecord
       else
         formatted_primary_tag
       end
-  end
-
-  def formatted_description
-    @formatted_description ||= description_html.strip_html_paragraphs_and_links
   end
 
   def github_url

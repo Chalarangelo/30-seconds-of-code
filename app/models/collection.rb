@@ -140,10 +140,6 @@ class Collection < ApplicationRecord
     @formatted_snippet_count ||= "#{listed_snippet_count} snippets"
   end
 
-  def formatted_description
-    short_description.strip_html_paragraphs_and_links
-  end
-
   def sublinks
     @sublinks ||= sublink_presenter.sublinks
   end

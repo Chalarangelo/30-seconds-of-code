@@ -29,6 +29,10 @@ module CommonApi
       @full_url ||= "#{Orbit::settings[:website][:url]}#{url}"
     end
 
+    def formatted_description
+      @formatted_description ||= short_description.strip_html_paragraphs_and_links
+    end
+
     def seo_description
       @seo_description ||= short_description.strip_markdown
     end
