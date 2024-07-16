@@ -1,9 +1,9 @@
 slug: css
-name: CSS Snippets
-shortName: CSS
+title: CSS Snippets
+shortTitle: CSS
 topLevel: true
 languageMatcher: css
-featured: true
+listed: true
 description: >-
   The CSS snippet collection contains utilities and interactive examples for
   CSS3. It includes modern techniques for creating commonly-used layouts,

@@ -1,6 +1,6 @@
 slug: js/performance
-name: JavaScript Performance Optimization
-featured: true
+title: JavaScript Performance Optimization
+listed: true
 snippetIds:
   - js/s/store-dom-items
   - js/s/passive-scroll-listener-performance

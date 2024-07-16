@@ -1,9 +1,9 @@
 slug: git
-name: Git Snippets
-shortName: Git
+title: Git Snippets
+shortTitle: Git
 topLevel: true
 languageMatcher: git
-featured: true
+listed: true
 description: >-
   The Git snippet collection contains a variety of short tips and tricks for all
   currently maintained versions of git. It includes most commonly-used commands

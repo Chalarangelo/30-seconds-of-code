@@ -1,7 +1,7 @@
 slug: my-collection
-name: My awesome collection
-shortName: My collection
-featured: true
+title: My awesome collection
+shortTitle: My collection
+listed: true
 snippetIds:
   - js/s/array-initialization
   - js/s/initialize-array-with-values

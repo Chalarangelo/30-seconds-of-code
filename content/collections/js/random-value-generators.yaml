@@ -1,6 +1,6 @@
 slug: js/random-value-generators
-name: JavaScript Random Value Generators
-featured: true
+title: JavaScript Random Value Generators
+listed: true
 snippetIds:
   - js/s/random-number-or-integer-in-range
   - js/s/random-integer-array-in-range

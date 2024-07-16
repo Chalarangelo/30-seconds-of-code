@@ -1,7 +1,7 @@
 slug: css/animation
-name: CSS Animations
-featured: true
-miniName: Animation
+title: CSS Animations
+listed: true
+miniTitle: Animation
 parent: css
 languageMatcher: css
 tagMatcher: animation

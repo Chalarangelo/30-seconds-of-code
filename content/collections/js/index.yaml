@@ -1,9 +1,9 @@
 slug: js
-name: JavaScript Snippets
-shortName: JavaScript
+title: JavaScript Snippets
+shortTitle: JavaScript
 topLevel: true
 languageMatcher: javascript
-featured: true
+listed: true
 description: >-
   The JavaScript snippet collection contains a wide variety of ES6 helper
   functions. It includes helpers for dealing with primitives, arrays and

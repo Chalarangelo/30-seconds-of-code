@@ -1,9 +1,9 @@
 slug: react
-name: React Snippets
-shortName: React
+title: React Snippets
+shortTitle: React
 topLevel: true
 languageMatcher: react
-featured: true
+listed: true
 description: >-
   The React snippet collection contains function components and reusable hooks
   for React 18.

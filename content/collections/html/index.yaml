@@ -1,9 +1,9 @@
 slug: html
-name: HTML Snippets
-shortName: HTML
+title: HTML Snippets
+shortTitle: HTML
 topLevel: true
 languageMatcher: html
-featured: true
+listed: true
 splash: tram-car-2
 description: >-
   The HTML snippet collection contains tips, tricks and practical code examples

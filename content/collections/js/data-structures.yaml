@@ -1,8 +1,8 @@
 slug: js/data-structures
-name: JavaScript Data Structures
-miniName: Data Structures
+title: JavaScript Data Structures
+miniTitle: Data Structures
 parent: js
-featured: true
+listed: true
 snippetIds:
   - js/s/native-data-structures
   - js/s/data-structures-queue

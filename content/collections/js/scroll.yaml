@@ -1,6 +1,6 @@
 slug: js/scroll
-name: Browser Scrolling with JavaScript
-featured: true
+title: Browser Scrolling with JavaScript
+listed: true
 snippetIds:
   - js/s/scroll-to-top
   - js/s/bottom-visible

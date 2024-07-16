@@ -1,8 +1,8 @@
 slug: git/repository
-name: Git Repository Snippets
-shortName: Git Repositories
-miniName: Repository
-featured: true
+title: Git Repository Snippets
+shortTitle: Git Repositories
+miniTitle: Repository
+listed: true
 parent: git
 languageMatcher: git
 tagMatcher: repository

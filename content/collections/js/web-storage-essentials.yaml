@@ -1,6 +1,6 @@
 slug: js/web-storage-essentials
-name: Web Storage Essentials
-featured: true
+title: Web Storage Essentials
+listed: true
 snippetIds:
   - js/s/cookies-local-storage-session
   - js/s/parse-or-serialize-cookie

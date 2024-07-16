@@ -1,8 +1,8 @@
 slug: python/string
-name: Python String Snippets
-shortName: Python Strings
-miniName: String
-featured: true
+title: Python String Snippets
+shortTitle: Python Strings
+miniTitle: String
+listed: true
 parent: python
 languageMatcher: python
 tagMatcher: string

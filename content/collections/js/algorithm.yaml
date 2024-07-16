@@ -1,7 +1,7 @@
 slug: js/algorithm
-name: JavaScript Algorithms
-miniName: Algorithms
-featured: true
+title: JavaScript Algorithms
+miniTitle: Algorithms
+listed: true
 parent: js
 languageMatcher: javascript
 tagMatcher: algorithm

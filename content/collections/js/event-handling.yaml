@@ -1,6 +1,6 @@
 slug: js/event-handling
-name: JavaScript Event Handling
-featured: true
+title: JavaScript Event Handling
+listed: true
 snippetIds:
   - js/s/add-remove-event-listener
   - js/s/event-listener-once

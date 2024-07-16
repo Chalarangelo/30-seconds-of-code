@@ -1,6 +1,6 @@
 slug: js/unit-conversions
-name: JavaScript Unit Conversions
-featured: true
+title: JavaScript Unit Conversions
+listed: true
 allowUnlisted: true
 snippetIds:
   - js/s/convert-degrees-radians

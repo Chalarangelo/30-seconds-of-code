@@ -1,9 +1,9 @@
 slug: react/testing
-name: React Testing
-shortName: React Testing
-miniName: Testing
+title: React Testing
+shortTitle: React Testing
+miniTitle: Testing
 parent: react
-featured: true
+listed: true
 snippetIds:
   - react/s/testing-stateful-ui-components
   - react/s/testing-async-components

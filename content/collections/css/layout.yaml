@@ -1,7 +1,7 @@
 slug: css/layout
-name: CSS Layouts
-miniName: Layout
-featured: true
+title: CSS Layouts
+miniTitle: Layout
+listed: true
 parent: css
 languageMatcher: css
 tagMatcher: layout

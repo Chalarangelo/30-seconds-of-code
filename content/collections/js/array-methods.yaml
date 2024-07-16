@@ -1,6 +1,6 @@
 slug: js/array-methods
-name: JavaScript Array Methods
-featured: true
+title: JavaScript Array Methods
+listed: true
 snippetIds:
   - js/s/array-map-vs-foreach
   - js/s/4-array-methods

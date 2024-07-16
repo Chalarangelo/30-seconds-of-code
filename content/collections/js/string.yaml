@@ -1,7 +1,7 @@
 slug: js/string
-name: JavaScript String Snippets
-miniName: String
-featured: true
+title: JavaScript String Snippets
+miniTitle: String
+listed: true
 parent: js
 languageMatcher: javascript
 tagMatcher: string

@@ -1,6 +1,6 @@
 slug: js/generators
-name: JavaScript Generator Functions
-featured: true
+title: JavaScript Generator Functions
+listed: true
 snippetIds:
   - js/s/generator-for-range
   - js/s/range-generator

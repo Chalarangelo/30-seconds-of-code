@@ -1,6 +1,6 @@
 slug: js/geometry
-name: JavaScript Geometric Operations
-featured: true
+title: JavaScript Geometric Operations
+listed: true
 snippetIds:
   - js/s/euclidean-distance
   - js/s/midpoint

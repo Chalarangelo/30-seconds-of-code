@@ -1,8 +1,8 @@
 slug: js/math
-name: JavaScript Math Snippets
-shortName: JavaScript Math
-miniName: Math
-featured: true
+title: JavaScript Math Snippets
+shortTitle: JavaScript Math
+miniTitle: Math
+listed: true
 parent: js
 languageMatcher: javascript
 tagMatcher: math

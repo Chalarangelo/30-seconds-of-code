@@ -1,6 +1,6 @@
 slug: js/proxy
-name: JavaScript Proxy
-featured: true
+title: JavaScript Proxy
+listed: true
 snippetIds:
   - js/s/proxy-introduction
   - js/s/dynamic-getter-setter-proxy

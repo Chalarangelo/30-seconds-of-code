@@ -1,6 +1,6 @@
 slug: js/array-initialization
-name: JavaScript Array Initialization
-featured: true
+title: JavaScript Array Initialization
+listed: true
 snippetIds:
   - js/s/array-initialization
   - js/s/initialize-array-with-values

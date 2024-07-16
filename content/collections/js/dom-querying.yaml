@@ -1,6 +1,6 @@
 slug: js/dom-querying
-name: JavaScript DOM Querying
-featured: true
+title: JavaScript DOM Querying
+listed: true
 snippetIds:
   - js/s/get-siblings
   - js/s/get-ancestors

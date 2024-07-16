@@ -1,7 +1,7 @@
 slug: html/head-basics
-name: HTML Head Basics
-miniName: Head Basics
-featured: true
+title: HTML Head Basics
+miniTitle: Head Basics
+listed: true
 snippetIds:
   - html/s/recommended-minimum-head
   - html/s/head-social-tags

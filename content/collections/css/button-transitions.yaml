@@ -1,6 +1,6 @@
 slug: css/button-transitions
-name: CSS Button Transitions
-featured: true
+title: CSS Button Transitions
+listed: true
 snippetIds:
   - css/s/button-hover-grow-animation
   - css/s/button-hover-shrink-animation
