@@ -28,14 +28,14 @@ class Page::Collection < Page::Base
 
   def additional_schema_data
     {
-      name: object.name,
+      name: object.title,
       number_of_items: options[:items].count,
       item_list_element: options[:items].each_with_index.map do |item, i|
         {
           '@type': 'ListItem',
           position: i + 1,
           url: item.full_url,
-          name: item.is_snippet? ? item.title : item.short_name
+          name: item.is_snippet? ? item.title : item.short_title
         }
       end
     }

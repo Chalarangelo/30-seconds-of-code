@@ -4,7 +4,7 @@ class SearchResultSerializer < BaseSerializer
   delegate :url, :search_tokens, :type, to: :object
 
   def title
-    object.is_snippet? ? object.short_title : object.short_name
+    object.short_title
   end
 
   def tag
