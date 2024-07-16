@@ -6,6 +6,7 @@ language: react
 tags: [components,input]
 cover: two-doors
 excerpt: Learn of all the different ways to set the value of a selected input in React with this quick guide.
+listed: true
 dateModified: 2021-06-12
 ---
 

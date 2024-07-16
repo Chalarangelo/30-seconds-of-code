@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,effect]
 cover: pop-of-green
+listed: true
 dateModified: 2021-11-16
 ---
 

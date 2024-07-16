@@ -6,6 +6,7 @@ language: git
 tags: [commit]
 cover: bunny-poster
 excerpt: Learn how to view all commits that manipulated a specific string in a Git repository.
+listed: true
 dateModified: 2024-04-26
 ---
 

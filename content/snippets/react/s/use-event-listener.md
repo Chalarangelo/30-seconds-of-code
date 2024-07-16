@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,effect,event]
 cover: beach-riders
+listed: true
 dateModified: 2021-09-01
 ---
 

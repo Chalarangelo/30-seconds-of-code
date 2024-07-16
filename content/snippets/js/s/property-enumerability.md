@@ -6,6 +6,7 @@ language: javascript
 tags: [object]
 cover: old-consoles
 excerpt: Property enumerability dictates how JavaScript object properties behave in different scenarios.
+listed: true
 dateModified: 2022-09-11
 ---
 

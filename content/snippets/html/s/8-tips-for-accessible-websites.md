@@ -6,6 +6,7 @@ language: html
 tags: [accessibility,form,link,metadata]
 cover: accessibility
 excerpt: Accessibility (a11y) can improve your website and attract new users. Learn how to get started with these 8 quick tips.
+listed: true
 dateModified: 2021-06-12
 ---
 

@@ -6,6 +6,7 @@ language: javascript
 tags: [browser,object]
 cover: down-the-stream
 excerpt: Convert the data from an HTML form into a JavaScript object or serialize it into a query string.
+listed: true
 dateModified: 2024-01-21
 ---
 

@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [components,input]
 cover: solitude-beach
+listed: true
 dateModified: 2020-11-25
 ---
 

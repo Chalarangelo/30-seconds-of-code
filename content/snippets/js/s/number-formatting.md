@@ -6,6 +6,7 @@ language: javascript
 tags: [math,string,date]
 cover: white-chapel
 excerpt: Learn common number formatting operations, such as rounding, padding, optional decimal marks, currency, seconds, bytes, and more.
+listed: true
 dateModified: 2024-02-14
 ---
 

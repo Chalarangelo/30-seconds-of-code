@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation,visual]
 cover: coworking-space
+listed: true
 dateModified: 2021-10-13
 ---
 

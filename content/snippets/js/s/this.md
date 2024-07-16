@@ -6,6 +6,7 @@ language: javascript
 tags: [function,object]
 cover: u-got-this
 excerpt: JavaScript's `this` keyword can confuse beginners and veterans alike. Learn how it works in different scenarios and start using it correctly.
+listed: true
 dateModified: 2021-06-12
 ---
 

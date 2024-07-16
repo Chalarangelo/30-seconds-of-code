@@ -6,6 +6,7 @@ language: git
 tags: [repository,stash]
 cover: purple-leaves
 excerpt: Learn all you need to know about Git stashing, including how to stash changes, apply, list, and delete stashes.
+listed: true
 dateModified: 2024-04-05
 ---
 

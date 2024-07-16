@@ -6,6 +6,7 @@ language: javascript
 tags: [array,proxy]
 cover: budapest-palace
 excerpt: Ever wanted to use negative indices in JavaScript arrays? Here's a simple way to do it using a Proxy.
+listed: true
 dateModified: 2022-10-02
 ---
 

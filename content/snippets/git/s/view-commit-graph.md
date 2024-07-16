@@ -6,6 +6,7 @@ language: git
 tags: [repository]
 cover: city-view
 excerpt: If you're more of a visual person, you can view a graph of all commits and branches in the repository using a single Git command.
+listed: true
 dateModified: 2024-04-25
 ---
 

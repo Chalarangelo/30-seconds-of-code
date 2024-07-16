@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: waves-from-above-2
+listed: true
 dateModified: 2021-01-05
 ---
 

@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation]
 cover: travel-mug-2
+listed: true
 dateModified: 2021-10-13
 ---
 

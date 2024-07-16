@@ -6,6 +6,7 @@ language: git
 tags: [commit,branch]
 cover: sunflowers
 excerpt: Learn how to apply changes introduced by one or more commits to your current branch (cherry-picking).
+listed: true
 dateModified: 2024-04-16
 ---
 

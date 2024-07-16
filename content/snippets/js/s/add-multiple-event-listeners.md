@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [browser,event]
 cover: compass-1
+listed: true
 dateModified: 2020-10-22
 ---
 

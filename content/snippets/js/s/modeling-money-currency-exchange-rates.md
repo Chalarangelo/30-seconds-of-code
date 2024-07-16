@@ -6,6 +6,7 @@ language: javascript
 tags: [math,class]
 cover: money
 excerpt: A deep dive into modeling money, currencies, and exchange rates using JavaScript.
+listed: true
 dateModified: 2024-04-24
 ---
 

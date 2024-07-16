@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [string,regexp]
 cover: sliced-fruits
+listed: true
 dateModified: 2020-10-25
 ---
 

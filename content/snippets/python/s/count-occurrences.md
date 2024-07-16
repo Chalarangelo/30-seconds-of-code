@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: pineapple-at-work
+listed: true
 dateModified: 2021-01-10
 ---
 

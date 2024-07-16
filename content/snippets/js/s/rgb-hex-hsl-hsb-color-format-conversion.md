@@ -6,6 +6,7 @@ language: javascript
 tags: [math,string]
 cover: lemon-tea
 excerpt: Learn how to easily convert between the various color formats, using JavaScript and a few simple formulas.
+listed: true
 dateModified: 2024-03-05
 ---
 

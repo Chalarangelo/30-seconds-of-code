@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: mountain-lake-cottage
+listed: true
 dateModified: 2021-10-13
 ---
 

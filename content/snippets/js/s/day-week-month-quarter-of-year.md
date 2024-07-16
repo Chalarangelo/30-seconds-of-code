@@ -6,6 +6,7 @@ language: javascript
 tags: [date]
 cover: godray-computer-mug
 excerpt: Determine the day, week, month, or quarter of the year that a date corresponds to, using vanilla JavaScript.
+listed: true
 dateModified: 2024-01-05
 ---
 

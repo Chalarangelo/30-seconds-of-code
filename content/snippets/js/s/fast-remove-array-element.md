@@ -6,6 +6,7 @@ language: javascript
 tags: [array]
 cover: purple-flower-bunch
 excerpt: Are you performing a lot of array operations? Maybe element removal is a performance bottleneck you can avoid.
+listed: true
 dateModified: 2022-03-20
 ---
 

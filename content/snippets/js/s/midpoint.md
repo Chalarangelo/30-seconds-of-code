@@ -6,6 +6,7 @@ language: javascript
 tags: [math]
 cover: blue-flower
 excerpt: Calculate the midpoint between two pairs of points in a 2D plane, and beyond.
+listed: true
 dateModified: 2024-05-15
 ---
 

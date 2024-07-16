@@ -6,6 +6,7 @@ language: javascript
 tags: [object,array]
 cover: volcano-sunset
 excerpt: Ever wanted to sort an array of objects, but felt like it was too complex? Here's a robust solution for just that.
+listed: true
 dateModified: 2024-01-15
 ---
 

@@ -6,6 +6,7 @@ language: javascript
 tags: [string,regexp]
 cover: blank-card
 excerpt: Email address validation can be much trickier than it sounds. Here's why and my advice on how to approach this problem.
+listed: true
 dateModified: 2022-10-05
 ---
 

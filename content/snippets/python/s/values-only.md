@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [dictionary,list]
 cover: colorful-lounge
+listed: true
 dateModified: 2020-11-02
 ---
 

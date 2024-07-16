@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [dictionary]
 cover: pineapple-laptop
+listed: true
 dateModified: 2020-11-02
 ---
 

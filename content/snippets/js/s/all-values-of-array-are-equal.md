@@ -6,6 +6,7 @@ language: javascript
 tags: [array]
 cover: book-stopper
 excerpt: Use the `Array.prototype.every()` method to check if all values of an array are equal in JavaScript.
+listed: true
 dateModified: 2024-02-16
 ---
 

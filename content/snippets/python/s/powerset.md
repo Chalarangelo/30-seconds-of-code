@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [math,list]
 cover: rock-climbing
+listed: true
 dateModified: 2020-11-02
 ---
 

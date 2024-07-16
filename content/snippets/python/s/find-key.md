@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [dictionary]
 cover: blue-red-mountain
+listed: true
 dateModified: 2020-11-02
 ---
 

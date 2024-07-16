@@ -6,6 +6,7 @@ language: javascript
 tags: [function,promise]
 cover: filter-coffee-pot
 excerpt: Learn how to create a promise that resolves after a given amount of time in JavaScript.
+listed: true
 dateModified: 2024-02-28
 ---
 

@@ -6,6 +6,7 @@ language: javascript
 tags: [node,testing]
 cover: contemporary-desk
 excerpt: The Node.js test module is a new testing tool that's still in its early stages. Learn more about it in this short introduction.
+listed: true
 dateModified: 2023-04-30
 ---
 

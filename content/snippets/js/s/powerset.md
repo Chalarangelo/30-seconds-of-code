@@ -6,6 +6,7 @@ language: javascript
 tags: [math]
 cover: new-plant
 excerpt: Generate the powerset of a given array of numbers or other primitive values.
+listed: true
 dateModified: 2024-03-11
 ---
 

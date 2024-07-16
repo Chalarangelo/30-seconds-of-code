@@ -6,6 +6,7 @@ language: python
 tags: [list,dictionary]
 cover: mask-quiet
 excerpt: Understand Python's named tuples and start using them in your projects today.
+listed: true
 dateModified: 2021-06-12
 ---
 

@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation]
 cover: aerial-view-port
+listed: true
 dateModified: 2021-10-11
 ---
 

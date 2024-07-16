@@ -6,6 +6,7 @@ language: git
 tags: [configuration,repository]
 cover: pineapple-at-work
 excerpt: Configure user information for Git to associate commits with a user.
+listed: true
 dateModified: 2024-04-04
 ---
 

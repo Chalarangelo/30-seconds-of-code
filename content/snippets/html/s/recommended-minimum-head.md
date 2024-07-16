@@ -6,6 +6,7 @@ language: html
 tags: [metadata,head]
 cover: boutique-home-office-1
 excerpt: Ensure your HTML documents are properly structured by including these lines in your `<head>` element.
+listed: true
 dateModified: 2023-01-18
 ---
 

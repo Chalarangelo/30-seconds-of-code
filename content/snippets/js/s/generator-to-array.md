@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [function,array,generator]
 cover: messy-papers
+listed: true
 dateModified: 2020-12-31
 ---
 

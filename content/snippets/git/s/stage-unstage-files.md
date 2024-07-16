@@ -6,6 +6,7 @@ language: git
 tags: [commit]
 cover: coconuts
 excerpt: Learn how to effectively use Git's staging area, by adding or removing files from it.
+listed: true
 dateModified: 2024-04-07
 ---
 

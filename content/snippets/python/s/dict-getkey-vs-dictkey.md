@@ -6,6 +6,7 @@ language: python
 tags: [dictionary]
 cover: compass-2
 excerpt: Learn the difference between two common ways to access values in Python dictionaries and level up your code today.
+listed: true
 dateModified: 2021-06-12
 ---
 

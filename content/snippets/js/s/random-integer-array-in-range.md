@@ -6,6 +6,7 @@ language: javascript
 tags: [math,random]
 cover: digital-nomad-11
 excerpt: Combining `Math.random()` and a few simple math operations, you can generate an array of random integers in a specified range.
+listed: true
 dateModified: 2024-03-15
 ---
 

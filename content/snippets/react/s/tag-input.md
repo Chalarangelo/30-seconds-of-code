@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [components,input,state]
 cover: interior-4
+listed: true
 dateModified: 2020-11-25
 ---
 

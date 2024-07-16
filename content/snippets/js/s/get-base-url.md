@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [string,browser,regexp]
 cover: blue-lake
+listed: true
 dateModified: 2021-01-03
 ---
 

@@ -6,6 +6,7 @@ language: javascript
 tags: [string]
 cover: laptop-plants
 excerpt: Learn how to convert a 3-digit RGB notated hexadecimal color-code to the 6-digit form.
+listed: true
 dateModified: 2024-02-03
 ---
 

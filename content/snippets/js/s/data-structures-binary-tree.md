@@ -6,6 +6,7 @@ language: javascript
 tags: [class]
 cover: purple-flower-macro-3
 excerpt: A binary tree is a hierarchical data structure of linked nodes with at most two children each.
+listed: true
 dateModified: 2021-08-26
 ---
 

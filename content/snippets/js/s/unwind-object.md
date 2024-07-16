@@ -6,6 +6,7 @@ language: javascript
 tags: [object]
 cover: orange-coffee
 excerpt: Create an array of objects from an object and one of its array-valued properties.
+listed: true
 dateModified: 2024-06-07
 ---
 

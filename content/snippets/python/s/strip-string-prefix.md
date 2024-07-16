@@ -6,6 +6,7 @@ language: python
 tags: [string]
 cover: cave-exploration
 excerpt: Using `str.lstrip()` to strip a prefix from a string might not be exactly what you're looking for. Here's what you should use instead.
+listed: true
 dateModified: 2024-01-18
 ---
 

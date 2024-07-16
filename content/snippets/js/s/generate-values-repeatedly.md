@@ -6,6 +6,7 @@ language: javascript
 tags: [function,generator]
 cover: secret-tree
 excerpt: Learn how to create a generator function that repeats a given value or an array of values indefinitely.
+listed: true
 dateModified: 2024-02-06
 ---
 

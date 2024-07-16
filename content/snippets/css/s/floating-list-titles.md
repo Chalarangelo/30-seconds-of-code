@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: pop-of-green
+listed: true
 dateModified: 2021-10-11
 ---
 

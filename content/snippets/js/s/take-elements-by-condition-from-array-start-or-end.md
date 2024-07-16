@@ -6,6 +6,7 @@ language: javascript
 tags: [array]
 cover: sunset-textured-beach
 excerpt: Learn how to get elements from the start or end of a JavaScript array by condition, using `Array.prototype.slice()`.
+listed: true
 dateModified: 2024-01-08
 ---
 

@@ -6,6 +6,7 @@ language: javascript
 tags: [array]
 cover: bridge-drop
 excerpt: Checking if an array includes a specific value is pretty straightforward, except when it comes to objects.
+listed: true
 dateModified: 2022-09-18
 ---
 

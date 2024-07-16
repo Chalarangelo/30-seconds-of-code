@@ -6,6 +6,7 @@ language: javascript
 tags: [array]
 cover: purple-laptop
 excerpt: Array destructuring can be leveraged in many different ways. Here's one of them.
+listed: true
 dateModified: 2022-08-28
 ---
 

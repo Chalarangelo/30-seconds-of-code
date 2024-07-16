@@ -6,6 +6,7 @@ language: css
 tags: [layout]
 cover: flower-shape-sunset
 excerpt: Make sure the footer stays at the bottom of the page, instead of floating up when the content is too short.
+listed: true
 dateModified: 2022-10-30
 ---
 

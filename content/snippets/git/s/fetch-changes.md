@@ -6,6 +6,7 @@ language: git
 tags: [repository]
 cover: playing-fetch
 excerpt: Learn how to fetch the latest changes from the remote repository in Git and keep your local repository up to date.
+listed: true
 dateModified: 2024-04-19
 ---
 

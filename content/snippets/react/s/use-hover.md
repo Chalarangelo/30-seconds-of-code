@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state,callback]
 cover: camper-school-bus
+listed: true
 dateModified: 2021-10-05
 ---
 

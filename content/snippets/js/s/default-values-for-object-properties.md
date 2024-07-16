@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [object]
 cover: filter-coffee-pot
+listed: true
 dateModified: 2020-10-22
 ---
 

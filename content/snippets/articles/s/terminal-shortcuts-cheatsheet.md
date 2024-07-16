@@ -4,6 +4,7 @@ type: cheatsheet
 tags: [webdev,bash,cheatsheet]
 cover: terminal
 excerpt: Maximize your productivity when working with a bash or other shell terminal by using these keyboard shortcuts.
+listed: true
 dateModified: 2021-06-12
 ---
 

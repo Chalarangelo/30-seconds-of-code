@@ -6,6 +6,7 @@ language: javascript
 tags: [array,math]
 cover: little-tree
 excerpt: When working with JavaScript arrays, you might need the minimum or maximum value. Here are a few quick and easy ways to do it.
+listed: true
 dateModified: 2023-12-30
 ---
 

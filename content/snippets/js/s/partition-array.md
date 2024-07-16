@@ -6,6 +6,7 @@ language: javascript
 tags: [array,object]
 cover: camping-trip
 excerpt: Group array elements into two or more arrays arrays, depending on the provided function's return value.
+listed: true
 dateModified: 2024-01-09
 ---
 

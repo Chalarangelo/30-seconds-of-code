@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state,effect]
 cover: red-berries
+listed: true
 dateModified: 2021-10-13
 ---
 

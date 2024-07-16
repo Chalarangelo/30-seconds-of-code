@@ -6,6 +6,7 @@ language: python
 tags: [string]
 cover: tea-laptop-table
 excerpt: Here are two quick and elegant ways to check if a string is empty in Python.
+listed: true
 dateModified: 2022-08-05
 ---
 

@@ -6,6 +6,7 @@ language: javascript
 tags: [math,random]
 cover: industrial-tokyo
 excerpt: Learn how to generate a random hexadecimal color code with a few lines of JavaScript.
+listed: true
 dateModified: 2024-02-02
 ---
 

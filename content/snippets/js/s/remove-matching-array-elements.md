@@ -6,6 +6,7 @@ language: javascript
 tags: [array]
 cover: highlands
 excerpt: Given a predicate function, remove elements from an array that match the given condition.
+listed: true
 dateModified: 2024-03-23
 ---
 

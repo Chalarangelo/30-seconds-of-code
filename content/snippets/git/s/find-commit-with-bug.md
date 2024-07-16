@@ -6,6 +6,7 @@ language: git
 tags: [commit,branch]
 cover: pink-flower-tree
 excerpt: Manually or automatically find which commit in history introduced a bug using.
+listed: true
 dateModified: 2024-03-27
 ---
 

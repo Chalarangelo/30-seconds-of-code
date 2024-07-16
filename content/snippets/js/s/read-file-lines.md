@@ -6,6 +6,7 @@ language: javascript
 tags: [node]
 cover: solitude-beach
 excerpt: Parse a text file and return an array of lines, synchronously or asynchronously, using Node.js.
+listed: true
 dateModified: 2024-05-20
 ---
 

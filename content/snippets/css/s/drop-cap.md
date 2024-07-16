@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: bamboo-lamp
+listed: true
 dateModified: 2020-12-30
 ---
 

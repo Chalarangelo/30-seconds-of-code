@@ -6,6 +6,7 @@ language: javascript
 tags: [browser,event]
 cover: half-trees
 excerpt: Use some clever JavaScript tricks to listen for and handle scroll stop events in the browser.
+listed: true
 dateModified: 2024-03-02
 ---
 

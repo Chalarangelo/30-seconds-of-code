@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state]
 cover: work-hard-computer
+listed: true
 dateModified: 2021-11-06
 ---
 

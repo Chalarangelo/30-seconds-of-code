@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [layout]
 cover: blue-computer
+listed: true
 dateModified: 2021-01-07
 ---
 

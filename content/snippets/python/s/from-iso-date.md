@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [date]
 cover: purple-leaves
+listed: true
 dateModified: 2021-01-07
 ---
 

@@ -6,6 +6,7 @@ language: javascript
 tags: [date]
 cover: flowering-hills
 excerpt: Having a hard time wrapping your head around the math involved in checking for leap years? You might not need to!
+listed: true
 dateModified: 2024-05-26
 ---
 

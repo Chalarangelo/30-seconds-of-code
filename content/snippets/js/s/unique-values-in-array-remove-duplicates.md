@@ -6,6 +6,7 @@ language: javascript
 tags: [array]
 cover: architectural
 excerpt: Easily remove duplicates from a JavaScript array using the built-in `Set` object, and learn a few other tricks along the way.
+listed: true
 dateModified: 2024-01-05
 ---
 

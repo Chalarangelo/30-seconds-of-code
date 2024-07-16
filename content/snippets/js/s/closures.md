@@ -6,6 +6,7 @@ language: javascript
 tags: [function,closure]
 cover: cherry-trees
 excerpt: Learn and understand closures, a core concept in JavaScript programming, and level up your code.
+listed: true
 dateModified: 2021-06-12
 ---
 

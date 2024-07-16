@@ -6,6 +6,7 @@ language: javascript
 tags: [type]
 cover: forest-balcony
 excerpt: JavaScript distinguishes expressions and statements. Learn their differences in this short article.
+listed: true
 dateModified: 2021-11-07
 ---
 

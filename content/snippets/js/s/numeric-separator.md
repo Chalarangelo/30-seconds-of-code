@@ -6,6 +6,7 @@ language: javascript
 tags: [math,type]
 cover: coffee-drip
 excerpt: Numeric separators are a somewhat lesser-known JavaScript syntactic sugar that can make working with large constants a lot easier.
+listed: true
 dateModified: 2021-06-27
 ---
 

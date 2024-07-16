@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: sea-view-2
+listed: true
 dateModified: 2020-09-15
 ---
 

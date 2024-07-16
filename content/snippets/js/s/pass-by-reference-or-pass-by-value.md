@@ -6,6 +6,7 @@ language: javascript
 tags: [function,object]
 cover: balloons-field
 excerpt: How JavaScript handles passing data is a source of confusion and bugs for many developers, especially when it comes to object types.
+listed: true
 dateModified: 2021-12-05
 ---
 

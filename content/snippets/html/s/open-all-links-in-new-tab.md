@@ -6,6 +6,7 @@ language: html
 tags: [link]
 cover: paper-card
 excerpt: Using an HTML element, you can easily make all links in your document open in a new tab. Learn how with this quick tip.
+listed: true
 dateModified: 2024-03-16
 ---
 

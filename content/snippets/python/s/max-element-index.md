@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [math,list]
 cover: dark-cloud
+listed: true
 dateModified: 2020-11-02
 ---
 

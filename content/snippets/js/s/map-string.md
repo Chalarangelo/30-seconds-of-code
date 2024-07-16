@@ -6,6 +6,7 @@ language: javascript
 tags: [string]
 cover: budapest-palace
 excerpt: Learn how to replicate the behavior of `Array.prototype.map()` for strings.
+listed: true
 dateModified: 2024-02-27
 ---
 

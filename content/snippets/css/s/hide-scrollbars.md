@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: by-the-lighthouse
+listed: true
 dateModified: 2022-05-13
 ---
 

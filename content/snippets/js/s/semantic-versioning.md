@@ -6,6 +6,7 @@ language: javascript
 tags: [node]
 cover: wet-lowland-golden-hour
 excerpt: Learn how semantic versioning works and how to use it to correctly version your software.
+listed: true
 dateModified: 2023-07-16
 ---
 

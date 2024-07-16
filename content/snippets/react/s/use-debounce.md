@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state,effect]
 cover: blue-bird
+listed: true
 dateModified: 2021-01-04
 ---
 

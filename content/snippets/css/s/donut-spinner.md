@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation]
 cover: digital-nomad-3
+listed: true
 dateModified: 2021-10-13
 ---
 

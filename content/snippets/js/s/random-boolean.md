@@ -6,6 +6,7 @@ language: javascript
 tags: [math,random]
 cover: malibu
 excerpt: A quick, one-liner to generate a random boolean value in JavaScript.
+listed: true
 dateModified: 2024-03-14
 ---
 

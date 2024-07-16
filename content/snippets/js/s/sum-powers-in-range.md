@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [math]
 cover: boat-port
+listed: true
 dateModified: 2020-10-22
 ---
 

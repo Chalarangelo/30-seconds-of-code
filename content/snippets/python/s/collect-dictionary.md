@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [dictionary]
 cover: working-bee
+listed: true
 dateModified: 2020-11-02
 ---
 

@@ -5,6 +5,7 @@ language: javascript
 tags: [browser,cheatsheet]
 cover: terminal
 excerpt: Level up your JavaScript logging with these `console.log()` tips and tricks.
+listed: true
 dateModified: 2021-06-12
 ---
 

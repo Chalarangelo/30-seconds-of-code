@@ -6,6 +6,7 @@ language: javascript
 tags: [array]
 cover: colorful-plastic
 excerpt: Pick up a few new tricks which you can use to clone arrays in JavaScript.
+listed: true
 dateModified: 2021-06-12
 ---
 

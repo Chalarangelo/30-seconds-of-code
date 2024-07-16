@@ -6,6 +6,7 @@ language: javascript
 tags: [math,algorithm]
 cover: half-trees
 excerpt: Create arrays of numbers in arithmetic and geometric progression.
+listed: true
 dateModified: 2024-02-16
 ---
 

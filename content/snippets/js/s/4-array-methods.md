@@ -6,6 +6,7 @@ language: javascript
 tags: [array,cheatsheet]
 cover: arrays
 excerpt: JavaScript arrays have a very robust API offering some amazing tools. Learn the 4 must-know JavaScript array methods in this quick guide.
+listed: true
 dateModified: 2021-06-12
 ---
 

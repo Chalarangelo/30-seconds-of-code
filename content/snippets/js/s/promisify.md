@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [function,promise]
 cover: nature-screen
+listed: true
 dateModified: 2020-10-22
 ---
 

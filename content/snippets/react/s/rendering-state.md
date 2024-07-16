@@ -5,6 +5,7 @@ language: react
 tags: [render]
 cover: comic-glasses
 excerpt: Take a deeper dive into React's rendering process and understand the role of the Context API and Redux in it.
+listed: true
 dateModified: 2021-06-12
 ---
 

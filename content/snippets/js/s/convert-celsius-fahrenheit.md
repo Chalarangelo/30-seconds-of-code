@@ -4,9 +4,9 @@ shortTitle: Convert between Celsius and Fahrenheit
 type: tip
 language: javascript
 tags: [math]
-unlisted: true
 cover: golden-gate-bridge
 excerpt: Easily apply the Celsius to Fahrenheit and Fahrenheit to Celsius formulas.
+listed: false
 dateModified: 2023-09-14
 ---
 

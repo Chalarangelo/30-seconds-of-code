@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state,effect]
 cover: polar-bear
+listed: true
 dateModified: 2021-10-18
 ---
 

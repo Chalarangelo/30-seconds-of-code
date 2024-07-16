@@ -6,6 +6,7 @@ language: javascript
 tags: [type,variable]
 cover: periscope
 excerpt: JavaScript developers often get confused by JavaScript's variables and scope. Here's a quick guide to understanding these concepts.
+listed: true
 dateModified: 2021-06-12
 ---
 

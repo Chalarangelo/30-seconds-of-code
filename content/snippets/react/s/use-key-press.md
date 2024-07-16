@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state,effect,event]
 cover: yellow-white-mug-1
+listed: true
 dateModified: 2021-09-07
 ---
 

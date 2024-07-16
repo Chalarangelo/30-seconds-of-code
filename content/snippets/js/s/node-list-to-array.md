@@ -6,6 +6,7 @@ language: javascript
 tags: [browser,array]
 cover: compass-2
 excerpt: Ever needed to convert a `NodeList` to an array in JavaScript? Here's the fastest way to do so.
+listed: true
 dateModified: 2024-03-21
 ---
 

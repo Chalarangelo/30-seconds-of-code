@@ -6,6 +6,7 @@ language: python
 tags: [function]
 cover: stairs-from-below
 excerpt: Understand what one of the most commonly used Python constructs does and when you should use it.
+listed: true
 dateModified: 2024-01-17
 ---
 

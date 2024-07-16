@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state]
 cover: digital-nomad-6
+listed: true
 dateModified: 2021-09-23
 ---
 

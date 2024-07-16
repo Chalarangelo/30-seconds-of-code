@@ -6,6 +6,7 @@ language: javascript
 tags: [string]
 cover: rocky-beach-3
 excerpt: Replace all characters in a string, except for the ending characters, with a mask character.
+listed: true
 dateModified: 2024-02-12
 ---
 

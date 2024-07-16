@@ -6,6 +6,7 @@ language: html
 tags: [link,security]
 cover: laptop-with-code
 excerpt: Opening a link in a new tab comes with a security vulnerability that you may not be aware of. Protect your users with this simple trick.
+listed: true
 dateModified: 2021-06-12
 ---
 

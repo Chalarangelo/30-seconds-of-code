@@ -6,6 +6,7 @@ language: git
 tags: [repository,submodule]
 cover: rocky-mountains-2
 excerpt: Git submodules are a powerful feature that often trips up developers. Fret not, this guide will help you understand the basics.
+listed: true
 dateModified: 2024-04-27
 ---
 

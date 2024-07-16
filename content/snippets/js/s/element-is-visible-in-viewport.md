@@ -6,6 +6,7 @@ language: javascript
 tags: [browser]
 cover: flower-portrait-1
 excerpt: Learn how to check if an element is visible in the browser's viewport, using this simple technique.
+listed: true
 dateModified: 2024-02-11
 ---
 

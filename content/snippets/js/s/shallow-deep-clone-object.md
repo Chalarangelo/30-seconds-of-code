@@ -6,6 +6,7 @@ language: javascript
 tags: [object,recursion]
 cover: pagodas
 excerpt: Learn how JavaScript handles mutable data, such as objects and arrays, and understand how shallow cloning and deep cloning work.
+listed: true
 dateModified: 2024-01-04
 ---
 

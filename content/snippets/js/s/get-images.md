@@ -6,6 +6,7 @@ language: javascript
 tags: [browser]
 cover: portal-timelapse
 excerpt: Use simple DOM queries to find all the images contained within an element.
+listed: true
 dateModified: 2024-05-31
 ---
 

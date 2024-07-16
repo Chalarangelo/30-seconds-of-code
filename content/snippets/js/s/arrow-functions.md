@@ -6,6 +6,7 @@ language: javascript
 tags: [function]
 cover: arrow-functions
 excerpt: JavaScript arrow functions are a very useful tool to learn and master. Here's a complete introduction to everything you need to know.
+listed: true
 dateModified: 2021-06-12
 ---
 

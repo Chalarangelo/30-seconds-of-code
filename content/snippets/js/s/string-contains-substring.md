@@ -6,6 +6,7 @@ language: javascript
 tags: [string]
 cover: cave-explorer
 excerpt: Let's have a look at how to check if a string contains a substring in JavaScript.
+listed: true
 dateModified: 2022-07-27
 ---
 

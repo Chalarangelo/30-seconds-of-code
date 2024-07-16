@@ -6,6 +6,7 @@ language: javascript
 tags: [string,comparison]
 cover: memories-of-pineapple-1
 excerpt: Here's a quick tip on how to compare and sort arrays of strings, ignoring case and accents.
+listed: true
 dateModified: 2022-07-17
 ---
 

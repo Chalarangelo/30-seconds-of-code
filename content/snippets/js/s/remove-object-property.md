@@ -6,6 +6,7 @@ language: javascript
 tags: [object]
 cover: brown-bird
 excerpt: Ever wanted to delete a property from a JavaScript object? Here are a few way you can accomplish that.
+listed: true
 dateModified: 2021-06-12
 ---
 

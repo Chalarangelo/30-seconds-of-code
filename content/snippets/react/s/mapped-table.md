@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [components,array,object]
 cover: waves-from-above-2
+listed: true
 dateModified: 2020-09-06
 ---
 

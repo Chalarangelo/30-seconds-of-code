@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,effect]
 cover: chubby-squirrel
+listed: true
 dateModified: 2021-09-27
 ---
 

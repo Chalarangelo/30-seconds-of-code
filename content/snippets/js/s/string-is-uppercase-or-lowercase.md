@@ -6,6 +6,7 @@ language: javascript
 tags: [string]
 cover: flower-portrait-7
 excerpt: Use these simple tricks to check if a string is uppercase or lowercase in JavaScript.
+listed: true
 dateModified: 2023-12-20
 ---
 

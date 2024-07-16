@@ -6,6 +6,7 @@ language: javascript
 tags: [object,performance]
 cover: hiking-balance
 excerpt: Dynamically adding object properties can be pretty slow in some cases. Here's how to optimize it.
+listed: true
 dateModified: 2022-11-02
 ---
 

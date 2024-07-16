@@ -6,6 +6,7 @@ language: javascript
 tags: [object, recursion]
 cover: symmetry-cloudy-mountain
 excerpt: Learn how to perform various transformations on the keys of a JavaScript object.
+listed: true
 dateModified: 2024-02-19
 ---
 

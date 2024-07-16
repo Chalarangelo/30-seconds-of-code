@@ -6,6 +6,7 @@ language: javascript
 tags: [type]
 cover: river-houses
 excerpt: JavaScript has three different empty states for variables. Learn their differences and how you can check for each one.
+listed: true
 dateModified: 2021-06-12
 ---
 

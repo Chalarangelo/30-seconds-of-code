@@ -6,6 +6,7 @@ language: git
 tags: [repository,commit]
 cover: organizer
 excerpt: View all commits in a specific date range using `git log`.
+listed: true
 dateModified: 2024-03-29
 ---
 

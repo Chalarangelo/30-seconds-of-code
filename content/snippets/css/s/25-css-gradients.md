@@ -6,6 +6,7 @@ language: css
 tags: [visual,cheatsheet]
 cover: colors-mural
 excerpt: I hand picked 25 of my favorite CSS gradients from uiGradients for your next design. Get them now!
+listed: true
 dateModified: 2024-01-12
 ---
 

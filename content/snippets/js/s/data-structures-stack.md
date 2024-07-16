@@ -6,6 +6,7 @@ language: javascript
 tags: [class]
 cover: purple-flower-macro-1
 excerpt: A stack is a linear data structure which follows a last in, first out (LIFO) order of operations.
+listed: true
 dateModified: 2021-08-03
 ---
 

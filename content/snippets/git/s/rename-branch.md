@@ -6,6 +6,7 @@ language: git
 tags: [branch]
 cover: horse-sunset
 excerpt: Made a mistake with your branch name? Learn how to rename a local or remote Git branch.
+listed: true
 dateModified: 2024-04-08
 ---
 

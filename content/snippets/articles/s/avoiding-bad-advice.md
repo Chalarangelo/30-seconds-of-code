@@ -5,6 +5,7 @@ type: story
 tags: [webdev,career,programming]
 cover: inside-weather
 excerpt: Don't fall victim to bad advice! Learn to identify "senior juniorism", and develop critical thinking to make better coding decisions.
+listed: true
 dateModified: 2023-06-04
 ---
 

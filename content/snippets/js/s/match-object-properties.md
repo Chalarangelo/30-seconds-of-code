@@ -6,6 +6,7 @@ language: javascript
 tags: [object]
 cover: two-flower-vases
 excerpt: Compare two objects to determine if the first one contains equivalent property values to the second one.
+listed: true
 dateModified: 2024-03-24
 ---
 

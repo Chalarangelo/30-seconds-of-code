@@ -6,6 +6,7 @@ language: javascript
 tags: [string]
 cover: sofia-tram
 excerpt: Avoid the naive approach and use a more robust method to edit URL parameters in JavaScript.
+listed: true
 dateModified: 2022-12-07
 ---
 

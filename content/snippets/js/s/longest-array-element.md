@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [array]
 cover: interior-14
+listed: true
 dateModified: 2020-10-22
 ---
 

@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [string,regexp]
 cover: digital-nomad-9
+listed: true
 dateModified: 2020-11-02
 ---
 

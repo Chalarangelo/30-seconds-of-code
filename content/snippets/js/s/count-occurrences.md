@@ -6,6 +6,7 @@ language: javascript
 tags: [array,string]
 cover: dark-leaves-4
 excerpt: Given a value, find out how many times it appears in an array or string.
+listed: true
 dateModified: 2024-05-14
 ---
 

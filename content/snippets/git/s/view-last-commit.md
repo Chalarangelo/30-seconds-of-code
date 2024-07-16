@@ -6,6 +6,7 @@ language: git
 tags: [commit]
 cover: clouds-n-mountains
 excerpt: Learn how to view the last commit in Git using the `git log` command.
+listed: true
 dateModified: 2024-04-23
 ---
 

@@ -6,6 +6,7 @@ language: git
 tags: [repository,branch]
 cover: old-consoles
 excerpt: Learn how to quickly and easily reset your local `master` branch to match the one on the remote.
+listed: true
 dateModified: 2024-03-31
 ---
 

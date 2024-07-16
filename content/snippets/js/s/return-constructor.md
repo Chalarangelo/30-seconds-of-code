@@ -6,6 +6,7 @@ language: javascript
 tags: [function,class,object]
 cover: architectural
 excerpt: The constructor is a crucial part of any JavaScript class, which is why you might want to take a closer look at what they return.
+listed: true
 dateModified: 2021-06-12
 ---
 

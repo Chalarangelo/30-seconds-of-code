@@ -6,6 +6,7 @@ language: react
 tags: [components,proptypes]
 cover: shapes
 excerpt: Learn the differences between `PropTypes.objectOf()` and `PropTypes.shape()` and where to use each one with this quick guide.
+listed: true
 dateModified: 2021-06-12
 ---
 

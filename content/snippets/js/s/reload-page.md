@@ -6,6 +6,7 @@ language: javascript
 tags: [browser]
 cover: night-tram
 excerpt: Need to reload the current page using JavaScript? Here's the best way to do it, as well as some alternatives.
+listed: true
 dateModified: 2023-05-14
 ---
 

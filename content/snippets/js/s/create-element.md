@@ -5,6 +5,7 @@ language: javascript
 tags: [browser]
 cover: flower-portrait-4
 excerpt: Creates an element from a string without appending it to the document.
+listed: true
 dateModified: 2020-10-19
 ---
 

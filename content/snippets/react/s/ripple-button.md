@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [components,state,effect]
 cover: mountain-lake-cottage
+listed: true
 dateModified: 2021-10-13
 ---
 

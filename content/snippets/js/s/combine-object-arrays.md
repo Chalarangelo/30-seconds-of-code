@@ -6,6 +6,7 @@ language: javascript
 tags: [array,object]
 cover: digital-nomad-6
 excerpt: Learn how to merge two arrays of objects, while combining objects based on a specified key.
+listed: true
 dateModified: 2024-03-26
 ---
 

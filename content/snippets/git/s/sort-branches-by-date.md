@@ -6,6 +6,7 @@ language: git
 tags: [repository,branch]
 cover: sea-view
 excerpt: Do you want to see a list of all local branches sorted by date? Here's a simple command to help you with that.
+listed: true
 dateModified: 2024-04-01
 ---
 

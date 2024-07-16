@@ -6,6 +6,7 @@ language: git
 tags: [repository,branch]
 cover: cobbled-street
 excerpt: Looking for a way to list all merged branches in your Git repository? Look no further.
+listed: true
 dateModified: 2024-04-17
 ---
 

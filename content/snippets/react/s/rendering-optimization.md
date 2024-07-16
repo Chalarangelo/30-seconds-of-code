@@ -5,6 +5,7 @@ language: react
 tags: [render]
 cover: comic-glasses
 excerpt: Take a deeper dive into React's rendering process and understand how to make small yet powerful tweaks to optimize performance.
+listed: true
 dateModified: 2021-06-12
 ---
 

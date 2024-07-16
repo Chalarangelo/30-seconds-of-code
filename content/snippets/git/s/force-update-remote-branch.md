@@ -6,6 +6,7 @@ language: git
 tags: [branch]
 cover: compass
 excerpt: Learn how to force update a remote branch after rewriting the Git history locally.
+listed: true
 dateModified: 2024-04-15
 ---
 

@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,effect]
 cover: jars-on-shelf-2
+listed: true
 dateModified: 2021-10-13
 ---
 

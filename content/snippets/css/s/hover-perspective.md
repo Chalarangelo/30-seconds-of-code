@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation]
 cover: shiny-mountains
+listed: true
 dateModified: 2021-05-17
 ---
 

@@ -6,6 +6,7 @@ language: javascript
 tags: [function,array]
 cover: generator
 excerpt: Learn how to use JavaScript ES6 generators and iterators to iterate over ranges of numbers.
+listed: true
 dateModified: 2021-06-12
 ---
 

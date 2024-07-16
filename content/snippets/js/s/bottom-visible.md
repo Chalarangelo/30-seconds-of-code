@@ -6,6 +6,7 @@ language: javascript
 tags: [browser]
 cover: hiking-walking
 excerpt: If you've ever needed to check if the bottom of the page is visible, this snippet will help you do just that.
+listed: true
 dateModified: 2024-06-01
 ---
 

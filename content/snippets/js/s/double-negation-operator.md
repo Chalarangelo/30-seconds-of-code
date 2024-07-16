@@ -6,6 +6,7 @@ language: javascript
 tags: [type]
 cover: memories-of-pineapple-2
 excerpt: You've probably come across the double negation operator (`!!`) before, but do you know what it does?
+listed: true
 dateModified: 2022-07-26
 ---
 

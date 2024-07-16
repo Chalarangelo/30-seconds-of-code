@@ -6,6 +6,7 @@ language: git
 tags: [repository,configuration]
 cover: leaves-read
 excerpt: If you're working with a team using different operating systems, configuring line endings can help maintain consistency.
+listed: true
 dateModified: 2024-04-13
 ---
 

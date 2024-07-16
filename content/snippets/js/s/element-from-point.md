@@ -6,6 +6,7 @@ language: javascript
 tags: [browser]
 cover: armchair-in-yellow
 excerpt: Using `Document.elementFromPoint()` to easily get the element at a specific point on the page.
+listed: true
 dateModified: 2022-12-18
 ---
 

@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [interactivity]
 cover: purple-sunset-waves
+listed: true
 dateModified: 2020-08-18
 ---
 

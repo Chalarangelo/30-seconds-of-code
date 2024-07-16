@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [date]
 cover: cave-explorer
+listed: true
 dateModified: 2020-10-20
 ---
 

@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list,random]
 cover: walking-on-top
+listed: true
 dateModified: 2020-10-28
 ---
 

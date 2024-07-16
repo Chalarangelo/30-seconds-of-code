@@ -6,6 +6,7 @@ language: html
 tags: [script,javascript]
 cover: coworking-space
 excerpt: Understanding how to correctly load your JavaScript files can significantly improve your web application's performance.
+listed: true
 dateModified: 2022-09-04
 ---
 

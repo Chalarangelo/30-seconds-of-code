@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [object,array,type,recursion]
 cover: dying-flowers
+listed: true
 dateModified: 2021-10-13
 ---
 

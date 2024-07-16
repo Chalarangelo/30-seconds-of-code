@@ -6,6 +6,7 @@ language: python
 tags: [type,comparison]
 cover: umbrellas
 excerpt: Python provides two distinct comparison operators for different task. Stop mixing them up using this quick guide.
+listed: true
 dateModified: 2021-06-12
 ---
 

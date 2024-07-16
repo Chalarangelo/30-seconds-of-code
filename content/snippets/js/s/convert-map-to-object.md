@@ -6,6 +6,7 @@ language: javascript
 tags: [object]
 cover: yellow-shoes
 excerpt: Learn how to convert between `Map`s and objects in JavaScript.
+listed: true
 dateModified: 2024-02-11
 ---
 

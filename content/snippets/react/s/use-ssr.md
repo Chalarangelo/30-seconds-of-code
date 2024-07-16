@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,effect,state,memo]
 cover: interior-6
+listed: true
 dateModified: 2021-03-10
 ---
 

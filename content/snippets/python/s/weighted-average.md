@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [math,list]
 cover: digital-nomad-4
+listed: true
 dateModified: 2020-12-24
 ---
 

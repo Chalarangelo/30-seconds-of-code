@@ -6,6 +6,7 @@ language: javascript
 tags: [browser,timeout]
 cover: river-house-lights
 excerpt: Did you know that the delay of `setTimeout()` and `setInterval()` is merely a suggestion?
+listed: true
 dateModified: 2022-10-26
 ---
 

@@ -6,6 +6,7 @@ language: javascript
 tags: [algorithm,string]
 cover: waves-from-above
 excerpt: The Caesar cipher is a simple substitution cipher, which can be easily implemented with a few lines of JavaScript code.
+listed: true
 dateModified: 2023-12-17
 ---
 

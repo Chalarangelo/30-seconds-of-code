@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [layout,visual]
 cover: succulent-3
+listed: true
 dateModified: 2020-12-30
 ---
 

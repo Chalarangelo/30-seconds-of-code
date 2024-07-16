@@ -6,6 +6,7 @@ language: javascript
 tags: [browser]
 cover: dark-city
 excerpt: While these two properties are very similar, there are some key differences that you should be aware of.
+listed: true
 dateModified: 2023-03-19
 ---
 

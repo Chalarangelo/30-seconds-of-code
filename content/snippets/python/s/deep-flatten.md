@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list,recursion]
 cover: standing-stones
+listed: true
 dateModified: 2020-12-29
 ---
 

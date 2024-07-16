@@ -6,6 +6,7 @@ language: javascript
 tags: [function,object]
 cover: palm-tree-house
 excerpt: JavaScript's strict mode can make your code faster, cleaner and more secure.
+listed: true
 dateModified: 2021-11-28
 ---
 

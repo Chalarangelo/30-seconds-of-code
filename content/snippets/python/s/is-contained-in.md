@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: sunrise-over-mountains
+listed: true
 dateModified: 2021-01-07
 ---
 

@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list,string]
 cover: keyboard-tea
+listed: true
 dateModified: 2021-10-17
 ---
 

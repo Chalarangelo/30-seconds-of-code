@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list,random]
 cover: tent-stars
+listed: true
 dateModified: 2020-11-02
 ---
 

@@ -6,6 +6,7 @@ language: javascript
 tags: [string,regexp]
 cover: white-tablet
 excerpt: Wrap a string to a given number of characters using a string break character in JavaScript.
+listed: true
 dateModified: 2024-02-29
 ---
 

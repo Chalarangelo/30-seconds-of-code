@@ -6,6 +6,7 @@ language: javascript
 tags: [date]
 cover: shelf-plant
 excerpt: Leverage the `Date` object to check if a given date is inside business hours.
+listed: true
 dateModified: 2024-03-13
 ---
 

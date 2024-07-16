@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [components,state,effect]
 cover: flower-portrait-1
+listed: true
 dateModified: 2021-01-07
 ---
 

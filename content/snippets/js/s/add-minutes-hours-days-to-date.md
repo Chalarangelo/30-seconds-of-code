@@ -6,6 +6,7 @@ language: javascript
 tags: [date]
 cover: orange-coffee-4
 excerpt: Learn how to manipulate `Date` objects to add minutes, hours, days and more.
+listed: true
 dateModified: 2024-01-05
 ---
 

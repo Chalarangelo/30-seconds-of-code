@@ -6,6 +6,7 @@ language: react
 tags: [components]
 cover: succulent-red-light
 excerpt: In React components, you might need to conditionally apply a `className`. Learn how to handle empty values correctly using this handy tip.
+listed: true
 dateModified: 2021-11-07
 ---
 

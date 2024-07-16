@@ -6,6 +6,7 @@ language: git
 tags: [branch,repository]
 cover: red-succulent
 excerpt: Did you accidentally commit to `master` instead of a feature branch? Here's how you can move those commits to a new branch.
+listed: true
 dateModified: 2024-04-03
 ---
 

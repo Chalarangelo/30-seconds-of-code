@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual,animation]
 cover: messy-computer
+listed: true
 dateModified: 2022-11-16
 ---
 

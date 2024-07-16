@@ -6,6 +6,7 @@ language: javascript
 tags: [math]
 cover: by-the-lighthouse
 excerpt: Check if a number is even or odd using JavaScript using the modulo operator or bitwise AND operator.
+listed: true
 dateModified: 2023-10-06
 ---
 

@@ -6,6 +6,7 @@ language: javascript
 tags: [string,regexp]
 cover: frog-blue-flower
 excerpt: Learn how to escape a string to use in a regular expression.
+listed: true
 dateModified: 2024-05-29
 ---
 

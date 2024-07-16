@@ -6,6 +6,7 @@ language: javascript
 tags: [array,random]
 cover: blue-bench
 excerpt: Learn how to shuffle, sample and perform weighted selection on JavaScript arrays.
+listed: true
 dateModified: 2024-03-15
 ---
 

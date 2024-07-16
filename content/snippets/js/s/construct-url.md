@@ -6,6 +6,7 @@ language: javascript
 tags: [string,browser]
 cover: alfama
 excerpt: A short guide on how to correctly construct a URL in JavaScript.
+listed: true
 dateModified: 2023-02-26
 ---
 

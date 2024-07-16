@@ -6,6 +6,7 @@ language: javascript
 tags: [function,promise]
 cover: sail-away
 excerpt: JavaScript's promises represent the eventual completion (or failure) of asynchronous operations and their resulting value.
+listed: true
 dateModified: 2021-10-24
 ---
 

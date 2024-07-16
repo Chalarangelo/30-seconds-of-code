@@ -6,6 +6,7 @@ language: git
 tags: [commit]
 cover: cave-explorer
 excerpt: Learn how to create a new commit in Git, along with tricks to skip Git hooks and create empty commits.
+listed: true
 dateModified: 2024-04-20
 ---
 

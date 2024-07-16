@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [string,regexp]
 cover: digital-nomad-2
+listed: true
 dateModified: 2020-10-22
 ---
 

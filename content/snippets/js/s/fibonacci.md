@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [math,algorithm]
 cover: matrix-flow
+listed: true
 dateModified: 2020-12-28
 ---
 

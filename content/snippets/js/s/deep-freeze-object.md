@@ -6,6 +6,7 @@ language: javascript
 tags: [object,recursion]
 cover: frozen-globe
 excerpt: Learn how mutability works in JavaScript, its applications to objects and how you can properly freeze them to make them constant.
+listed: true
 dateModified: 2024-06-04
 ---
 

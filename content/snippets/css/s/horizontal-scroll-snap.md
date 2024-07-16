@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [interactivity]
 cover: waves-from-above
+listed: true
 dateModified: 2021-10-11
 ---
 

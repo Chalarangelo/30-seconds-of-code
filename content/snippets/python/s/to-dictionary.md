@@ -5,6 +5,7 @@ language: python
 tags: [list,dictionary]
 excerpt: Combines two lists into a dictionary, using the first one as the keys and the second one as the values.
 cover: purple-sunset
+listed: true
 dateModified: 2020-11-02
 ---
 

@@ -6,6 +6,7 @@ language: javascript
 tags: [array]
 cover: interior-7
 excerpt: Learn how to get the first or last N elements of a JavaScript array, using `Array.prototype.slice()`.
+listed: true
 dateModified: 2023-07-09
 ---
 

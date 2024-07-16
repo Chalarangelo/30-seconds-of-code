@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [layout]
 cover: yellow-white-mug-2
+listed: true
 dateModified: 2021-01-07
 ---
 

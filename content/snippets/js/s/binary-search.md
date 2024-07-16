@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [algorithm,array]
 cover: zen-indoors
+listed: true
 dateModified: 2020-12-29
 ---
 

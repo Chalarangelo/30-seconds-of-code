@@ -6,6 +6,7 @@ language: javascript
 tags: [browser,event]
 cover: interior-13
 excerpt: Detect and handle click events outside of a specific element in just a few lines of JavaScript.
+listed: true
 dateModified: 2023-11-04
 ---
 

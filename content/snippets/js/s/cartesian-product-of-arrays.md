@@ -6,6 +6,7 @@ language: javascript
 tags: [math,array]
 cover: cup-of-orange
 excerpt: Create a new array out of the two supplied by creating each possible pair from the arrays.
+listed: true
 dateModified: 2024-03-20
 ---
 

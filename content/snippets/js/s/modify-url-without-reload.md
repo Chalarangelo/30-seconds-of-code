@@ -6,6 +6,7 @@ language: javascript
 tags: [browser]
 cover: compass
 excerpt: Learn all of the options JavaScript provides for modifying the URL of the current page in the browser without reloading the page.
+listed: true
 dateModified: 2024-02-10
 ---
 

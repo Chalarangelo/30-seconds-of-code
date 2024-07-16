@@ -6,6 +6,7 @@ language: javascript
 tags: [math,logic,function]
 cover: chess-pawns
 excerpt: Get started with logical operations in JavaScript with this collection of helper functions.
+listed: true
 dateModified: 2023-05-07
 ---
 

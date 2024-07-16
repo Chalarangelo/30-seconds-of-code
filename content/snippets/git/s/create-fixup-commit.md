@@ -6,6 +6,7 @@ language: git
 tags: [commit]
 cover: tools
 excerpt: If you find yourself needing to fix a previous commit, you can create a fixup commit that can be autosquashed in the next rebase.
+listed: true
 dateModified: 2024-05-02
 ---
 

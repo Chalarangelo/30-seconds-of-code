@@ -3,8 +3,8 @@ title: Hover shadow box animation
 type: snippet
 language: css
 tags: [animation]
-unlisted: true
 cover: dark-cloud
+listed: false
 dateModified: 2021-01-04
 ---
 

@@ -6,6 +6,7 @@ language: javascript
 tags: [array,object,iterator]
 cover: lake-loop
 excerpt: Learn the differences between the three most commonly used iteration methods in JavaScript, that often confuse beginners and veterans alike.
+listed: true
 dateModified: 2021-06-12
 ---
 

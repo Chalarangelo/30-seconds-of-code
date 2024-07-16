@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [layout]
 cover: red-petals
+listed: true
 dateModified: 2020-09-16
 ---
 

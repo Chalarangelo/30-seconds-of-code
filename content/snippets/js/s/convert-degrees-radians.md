@@ -6,6 +6,7 @@ language: javascript
 tags: [math]
 cover: blue-flower
 excerpt: Easily apply the degree to radian and radian to degree formulas.
+listed: true
 dateModified: 2023-09-15
 ---
 

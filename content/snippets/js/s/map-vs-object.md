@@ -6,6 +6,7 @@ language: javascript
 tags: [object]
 cover: tent-stars
 excerpt: Maps and objects are very similar, but they have some differences that can help you decide which one better fits your use-case.
+listed: true
 dateModified: 2022-02-13
 ---
 

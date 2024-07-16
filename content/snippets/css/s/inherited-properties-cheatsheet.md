@@ -6,6 +6,7 @@ language: css
 tags: [layout,cheatsheet]
 cover: half-trees
 excerpt: A quick reference for inherited CSS properties.
+listed: true
 dateModified: 2022-11-20
 ---
 

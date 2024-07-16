@@ -6,6 +6,7 @@ language: git
 tags: [branch]
 cover: sea-view-2
 excerpt: If you need to copy a file from another branch to the current branch, here's an easy way to do it.
+listed: true
 dateModified: 2024-04-16
 ---
 

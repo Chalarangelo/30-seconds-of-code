@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation,visual]
 cover: succulent-1
+listed: true
 dateModified: 2021-10-11
 ---
 

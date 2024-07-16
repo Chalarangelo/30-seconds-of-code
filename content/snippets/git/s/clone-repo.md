@@ -6,6 +6,7 @@ language: git
 tags: [repository,remote]
 cover: fruit-feast
 excerpt: The first step to working with a Git repository is often to clone it to your local machine.
+listed: true
 dateModified: 2024-04-24
 ---
 

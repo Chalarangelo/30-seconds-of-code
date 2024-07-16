@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,state,reducer]
 cover: oven-paddle
+listed: true
 dateModified: 2021-01-07
 ---
 

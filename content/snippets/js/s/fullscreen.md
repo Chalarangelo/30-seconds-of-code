@@ -6,6 +6,7 @@ language: javascript
 tags: [browser]
 cover: cloudy-mountaintop-2
 excerpt: Did you know you can use JavaScript to toggle fullscreen mode for an element on a webpage? Let's learn how!
+listed: true
 dateModified: 2024-05-23
 ---
 

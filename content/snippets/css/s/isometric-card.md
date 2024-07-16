@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: guitar-living-room
+listed: true
 dateModified: 2021-05-17
 ---
 

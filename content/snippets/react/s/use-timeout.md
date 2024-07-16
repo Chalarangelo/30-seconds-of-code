@@ -4,6 +4,7 @@ type: snippet
 language: react
 tags: [hooks,effect]
 cover: interior-10
+listed: true
 dateModified: 2020-11-16
 ---
 

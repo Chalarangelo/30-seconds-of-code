@@ -6,6 +6,7 @@ language: git
 tags: [repository]
 cover: red-mountain
 excerpt: Learn how to view or change the URL of the remote repository in Git.
+listed: true
 dateModified: 2024-04-18
 ---
 

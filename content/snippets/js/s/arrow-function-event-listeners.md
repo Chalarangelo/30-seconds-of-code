@@ -6,6 +6,7 @@ language: javascript
 tags: [browser,event,function]
 cover: coffee-float
 excerpt: Learn the differences between JavaScript ES6 arrow functions and regular functions and how they affect event listener callbacks.
+listed: true
 dateModified: 2021-06-12
 ---
 

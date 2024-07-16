@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [array,iterator,generator]
 cover: sail-away-2
+listed: true
 dateModified: 2022-03-09
 ---
 

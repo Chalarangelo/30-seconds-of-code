@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [list]
 cover: red-berries
+listed: true
 dateModified: 2020-11-02
 ---
 

@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [math]
 cover: tulips-and-reeds
+listed: true
 dateModified: 2021-02-18
 ---
 

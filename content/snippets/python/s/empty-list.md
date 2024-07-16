@@ -6,6 +6,7 @@ language: python
 tags: [list]
 cover: salad-2
 excerpt: There's a good way to test the emptiness of a Python list and a better one. Which one are you using?
+listed: true
 dateModified: 2023-01-15
 ---
 

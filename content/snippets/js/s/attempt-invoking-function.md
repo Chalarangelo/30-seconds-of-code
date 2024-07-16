@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [function]
 cover: spanish-resort
+listed: true
 dateModified: 2020-10-18
 ---
 

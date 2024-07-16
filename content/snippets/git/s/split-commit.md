@@ -6,6 +6,7 @@ language: git
 tags: [commit,branch]
 cover: interior-16
 excerpt: Altering Git history to split a commit sounds intimidating, but it's not that hard. Let's walk through the process step by step.
+listed: true
 dateModified: 2024-05-05
 ---
 

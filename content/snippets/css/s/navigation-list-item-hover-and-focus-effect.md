@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [visual]
 cover: cloudy-rock-formation
+listed: true
 dateModified: 2021-10-11
 ---
 

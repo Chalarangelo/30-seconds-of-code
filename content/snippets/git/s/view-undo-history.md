@@ -6,6 +6,7 @@ language: git
 tags: [repository,branch]
 cover: rock-climbing
 excerpt: Learn how to view your "undo" history using git reflog and reset your repository to a previous state.
+listed: true
 dateModified: 2023-05-21
 ---
 

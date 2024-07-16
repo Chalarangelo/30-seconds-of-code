@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [algorithm,math,array]
 cover: work-hard-computer
+listed: true
 dateModified: 2022-09-07
 ---
 

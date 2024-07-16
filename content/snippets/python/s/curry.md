@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [function]
 cover: leaves-read
+listed: true
 dateModified: 2020-11-02
 ---
 

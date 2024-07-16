@@ -4,6 +4,7 @@ type: snippet
 language: css
 tags: [animation]
 cover: washed-ashore
+listed: true
 dateModified: 2020-12-30
 ---
 

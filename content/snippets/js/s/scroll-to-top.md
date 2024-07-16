@@ -4,6 +4,7 @@ type: snippet
 language: javascript
 tags: [browser]
 cover: tranquil-lake
+listed: true
 dateModified: 2020-10-22
 ---
 

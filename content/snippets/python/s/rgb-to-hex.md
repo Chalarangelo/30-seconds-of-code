@@ -4,6 +4,7 @@ type: snippet
 language: python
 tags: [string,math]
 cover: campfire
+listed: true
 dateModified: 2020-11-02
 ---
 

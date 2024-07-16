@@ -6,6 +6,7 @@ language: javascript
 tags: [array,math]
 cover: people-on-beach
 excerpt: Create an array of partial sums, using `Array.prototype.reduce()` and `Array.prototype.slice()`.
+listed: true
 dateModified: 2024-03-24
 ---
 
