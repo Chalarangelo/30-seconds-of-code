@@ -10,8 +10,7 @@ class SublinkPresenter
   }.freeze
 
   delegate :cid, :is_main?, :is_primary?, :has_parent?, :siblings, :children,
-            :root_url,
-            to: :object
+           :root_url, to: :object
 
   def initialize(object, options: {})
     @object = object
