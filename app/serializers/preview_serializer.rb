@@ -2,21 +2,14 @@ class PreviewSerializer < BaseSerializer
   attributes :title, :description, :url, :cover, :cover_srcset, :tags,
              :extra_context, :date_time
 
-  delegate :url, :cover_srcset, to: :object
+  alias_attribute :title, :preview_title
+  alias_attribute :description, :formatted_description
+  alias_attribute :cover, :cover_url
+
+  delegate :url, :cover_srcset, :preview_title, :formatted_description,
+           to: :object
 
   COLLECTION_TAG_LITERAL = 'Collection'.freeze
-
-  def title
-    object.preview_title
-  end
-
-  def description
-    object.formatted_description
-  end
-
-  def cover
-    object.cover_url
-  end
 
   def tags
     object.is_snippet? ? object.formatted_preview_tags : COLLECTION_TAG_LITERAL
