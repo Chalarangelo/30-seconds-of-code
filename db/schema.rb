@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_13_061902) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_12_153832) do
   create_table "collection_snippets", force: :cascade do |t|
     t.string "collection_cid"
     t.string "snippet_cid"
@@ -22,16 +22,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_13_061902) do
 
   create_table "collections", force: :cascade do |t|
     t.string "cid"
-    t.string "name"
-    t.string "short_name"
-    t.string "mini_name"
-    t.boolean "featured"
-    t.integer "featured_index"
-    t.string "cover"
+    t.string "title"
+    t.string "short_title"
+    t.string "mini_title"
     t.text "description"
     t.text "short_description"
+    t.boolean "listed"
+    t.integer "featured_index"
     t.boolean "top_level"
     t.string "parent_cid"
+    t.string "cover"
     t.text "_tokens"
     t.float "ranking"
     t.index ["cid"], name: "index_collections_on_cid", unique: true
@@ -48,19 +48,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_13_061902) do
 
   create_table "snippets", force: :cascade do |t|
     t.string "cid"
-    t.string "file_name"
     t.string "title"
-    t.string "_tags"
     t.string "short_title"
-    t.date "date_modified"
+    t.text "description"
+    t.text "short_description"
     t.boolean "listed"
-    t.text "short_text"
-    t.text "full_text"
-    t.text "description_html"
-    t.text "full_description_html"
-    t.text "table_of_contents_html"
-    t.string "cover"
+    t.string "file_name"
+    t.string "_tags"
+    t.date "date_modified"
+    t.text "table_of_contents"
     t.string "language_cid"
+    t.string "cover"
     t.text "_tokens"
     t.float "ranking"
     t.index ["cid"], name: "index_snippets_on_cid", unique: true
