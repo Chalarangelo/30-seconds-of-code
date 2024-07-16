@@ -20,7 +20,7 @@ class RecommendationPresenter
   SCORE_LIMIT_WITHOUT_LANGUAGE_AND_PRIMARY_TAG = 0.4
   RECOMMENDATION_COUNT = 4
 
-  attr_reader :object, :options, :cid, :file_name, :language_cid, :primary_tag,
+  attr_reader :object, :options, :cid, :slug_id, :language_cid, :primary_tag,
               :search_tokens_array, :is_listed, :search_tokens_size,
               :recommendation_rankings, :min_rankings
 
@@ -67,7 +67,7 @@ class RecommendationPresenter
     @options = options
 
     @cid = object.cid
-    @file_name = object.file_name
+    @slug_id = object.slug_id
     @language_cid = object.language_cid
     @primary_tag = object.primary_tag
     @search_tokens_array = object.search_tokens_array
@@ -85,7 +85,7 @@ class RecommendationPresenter
       # Skip if the snippet is the same as the current snippet
       next if snippet.cid == cid
       # Skip if the snippet is the same in another language
-      next if snippet.file_name == file_name
+      next if snippet.slug_id == slug_id
       # Skip unless this snippet is listed or the object is unlisted
       next unless !is_listed || snippet.is_listed?
 
