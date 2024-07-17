@@ -40,6 +40,17 @@ class CoverPresenter
     end
   end
 
+  @@all_snippet_covers = []
+
+  def self.all_snippet_covers
+    return @@all_snippet_covers if @@all_snippet_covers.any?
+
+    @@all_snippet_covers =
+      Dir.entries('content/assets/cover/').slice(2..).map do |cover|
+        File.basename(cover, '.*')
+      end
+  end
+
   private
 
   def is_snippet?
