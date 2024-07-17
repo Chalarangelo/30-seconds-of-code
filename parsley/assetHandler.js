@@ -17,7 +17,7 @@ export const supportedExtensions = [
 const inputPath = `${contentDir}/${assetPath}`;
 const publicOutputPath = `${publicPath}/${assetPath}`;
 
-const convertedAssetGlobPattern = `${assetPath}/@(${supportedDirectories})/*.webp`;
+const convertedAssetGlobPattern = `${publicOutputPath}/@(${supportedDirectories})/*.webp`;
 const unconvertedAssetGlobPattern = `${inputPath}/@(${supportedDirectories})/*.@(${supportedExtensions})`;
 
 const quality = {
@@ -43,7 +43,10 @@ export class AssetHandler {
     const convertedAssets = [
       ...new Set(
         globSync(convertedAssetGlobPattern).map(asset =>
-          asset.replace(`${assetPath}/`, '').split('.')[0].replace(/-\d+$/, '')
+          asset
+            .replace(`${publicOutputPath}/`, '')
+            .split('.')[0]
+            .replace(/-\d+$/, '')
         )
       ),
     ];
@@ -73,27 +76,13 @@ export class AssetHandler {
             sharp(filePath)
               .resize({ width, height })
               .webp({ quality })
-              .toFile(`${assetPath}/${fileName}-${width}.webp`)
+              .toFile(`${publicOutputPath}/${fileName}-${width}.webp`)
           )
         )
       ),
       ...staticDirectories.map(dir =>
-        fs.copy(`${inputPath}/${dir}`, `${assetPath}/${dir}`)
+        fs.copy(`${inputPath}/${dir}`, `${publicOutputPath}/${dir}`)
       ),
     ]);
-
-    const publicAssets = globSync(`${publicOutputPath}/**/*`).map(asset =>
-      asset.replace(`${publicPath}/`, '')
-    );
-
-    const allAssets = globSync(`${assetPath}/**/*`).reduce((assets, asset) => {
-      if (!force && !publicAssets.includes(asset))
-        assets.push({ from: asset, to: `${publicPath}/${asset}` });
-      return assets;
-    }, []);
-
-    await Promise.all(
-      allAssets.map(({ from, to }) => fs.copy(from, to, { overwrite: true }))
-    );
   }
 }
