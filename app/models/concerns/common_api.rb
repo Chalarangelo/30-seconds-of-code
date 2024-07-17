@@ -20,6 +20,10 @@ module CommonApi
       @slug ||= cid.to_seo_slug
     end
 
+    def all_slugs
+      @all_slugs ||= Redirects.for(url).flatten
+    end
+
     # Used for serialization purposes.
     def url
       @url ||= is_snippet? ? slug : first_page_slug
