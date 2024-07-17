@@ -115,7 +115,6 @@ out/
 
 # gatsby files
 .cache/
-public
 
 # Mac files
 .DS_Store
@@ -136,7 +135,6 @@ dist/
 .assets
 .content
 content/data
-public/assets
 public/sitemap.xml
 public/feed.xml
 public/chirp.json
