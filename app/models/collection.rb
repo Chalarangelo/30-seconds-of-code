@@ -110,9 +110,15 @@ class Collection < ApplicationRecord
     @first_page_slug ||= "#{slug}/p/1"
   end
 
+  def all_page_slugs
+    @all_page_slugs ||= (1..page_count).map do |page_number|
+      "#{slug}/p/#{page_number}"
+    end
+  end
+
   def all_page_full_urls
-    @all_page_full_urls ||= (1..page_count).map do |page_number|
-      "#{Orbit::settings[:website][:url]}#{slug}/p/#{page_number}"
+    @all_page_full_urls ||= all_page_slugs.map do |page_slug|
+      "#{Orbit::settings[:website][:url]}#{page_slug}"
     end
   end
 
