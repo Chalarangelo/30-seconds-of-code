@@ -7,7 +7,6 @@ class Page
     Page::Home.new(nil)
   end
 
-  # TODO: Create a concern that exports pages: [] from a model
   class Base
     attr_reader :object, :options
 

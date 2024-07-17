@@ -1,5 +1,4 @@
 class Snippet < ApplicationRecord
-  # TODO: Might want to index the ranking column
   include CommonApi
 
   ARTICLE_MINI_PREVIEW_TAG = 'Article'
