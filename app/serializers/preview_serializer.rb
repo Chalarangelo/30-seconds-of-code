@@ -7,6 +7,7 @@ class PreviewSerializer < BaseSerializer
   alias_attribute :cover, :cover_url
 
   delegate :url, :cover_srcset, :preview_title, :formatted_description,
+           :cover_url,
            to: :object
 
   COLLECTION_TAG_LITERAL = 'Collection'.freeze
