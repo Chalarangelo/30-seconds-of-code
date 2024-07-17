@@ -29,6 +29,8 @@ Orbit::settings content_import_path: './.content/content.json'
 Orbit::settings redirects_import_path: 'content/redirects.yaml'
 Orbit::settings redirects_export_path: 'public/_redirects'
 
+Orbit::settings page_performance_data_path: 'imported/Pages.csv'
+
 # This has to be the deepest nested path (snippet), so all other paths are included
 Orbit::settings page_output_path: '.content/pages/[lang]/s'
 Orbit::settings home_page_output_path: '.content/pages/index.json'
