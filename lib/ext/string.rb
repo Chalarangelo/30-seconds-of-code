@@ -7,6 +7,15 @@ class String
       gsub(/_(.*?)_/, '\1')
   end
 
+  def strip_html
+    self.
+      gsub(/<.*?>/, '').
+      gsub(/&nbsp;/, ' ').
+      gsub(/&amp;/, '&').
+      gsub(/&gt;/, '>').
+      gsub(/&lt;/, '<')
+  end
+
   def strip_html_paragraphs_and_links
     self.
       gsub(/<p>/, '').

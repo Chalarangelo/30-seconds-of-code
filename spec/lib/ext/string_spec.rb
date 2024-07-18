@@ -8,6 +8,12 @@ describe String do
     end
   end
 
+  context '#strip_html' do
+    it 'strips HTML' do
+      expect('<p>Hello</p>'.strip_html).to eq 'Hello'
+    end
+  end
+
   context '#strip_html_paragraphs_and_links' do
     it 'strips HTML paragraphs and links' do
       expect('<p><a href="http://example.com">Hello</a></p>'.strip_html_paragraphs_and_links).to eq 'Hello'
