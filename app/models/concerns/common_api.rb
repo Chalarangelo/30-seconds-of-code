@@ -20,6 +20,10 @@ module CommonApi
       @slug ||= cid.to_seo_slug
     end
 
+    def slug_id
+      @slug_id ||= slug.split('/').last
+    end
+
     def all_slugs
       @all_slugs ||= Redirects.for(url).flatten
     end

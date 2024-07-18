@@ -120,10 +120,6 @@ class Snippet < ApplicationRecord
     @date_machine_formatted ||= date_modified.strftime('%Y-%m-%d')
   end
 
-  def slug_id
-    @slug_id ||= slug.split('/').last
-  end
-
   def search_tokens_array
     @search_tokens_array ||= [
       slug_id,
