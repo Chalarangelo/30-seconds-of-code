@@ -95,7 +95,7 @@ class Collection < ApplicationRecord
   end
 
   def siblings
-    has_parent? ? parent.children : []
+    @siblings ||= has_parent? ? parent.children : []
   end
 
   def siblings_except_self
