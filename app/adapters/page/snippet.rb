@@ -19,7 +19,7 @@ class Page::Snippet < Page::Base
     @context = {
       breadcrumbs: object.breadcrumbs,
       page_description: object.seo_description,
-      snippet: object.serialize_as(:snippet_context),
+      snippet: object.context,
       recommendations: [
         object.recommended_collection,
         *object.recommended_snippets
