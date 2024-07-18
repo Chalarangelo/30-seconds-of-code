@@ -7,3 +7,22 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+Language.where(
+  cid: 'javascript', long: 'JavaScript', short: 'JS', name: 'JavaScript'
+).first_or_create
+Language.where(
+  cid: 'css', long: 'CSS', short: 'CSS', name: 'CSS'
+).first_or_create
+Language.where(
+  cid: 'html', long: 'HTML', short: 'HTML', name: 'HTML'
+).first_or_create
+Language.where(
+  cid: 'react', long: 'React', short: 'JSX', name: 'React'
+).first_or_create
+Language.where(
+  cid: 'python', long: 'Python', short: 'PY', name: 'Python'
+).first_or_create
+Language.where(
+  cid: 'git', long: 'Git', short: 'Shell', name: 'Git'
+).first_or_create
