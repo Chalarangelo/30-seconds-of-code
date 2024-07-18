@@ -174,10 +174,6 @@ class Collection < ApplicationRecord
     end
   end
 
-  def context
-    @context ||= serialize_as(:collection_context)
-  end
-
   private
 
   def collections_pages
