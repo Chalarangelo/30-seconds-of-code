@@ -42,7 +42,7 @@ module CommonApi
     end
 
     def seo_description
-      @seo_description ||= short_description.strip_markdown
+      @seo_description ||= short_description.strip_html
     end
 
     # The model needs to define a `search_tokens_array` method.
