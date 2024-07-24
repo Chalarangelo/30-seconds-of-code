@@ -27,7 +27,8 @@
     "sharp": "^0.33.0",
     "unified": "^11.0.4",
     "unist-util-visit": "^5.0.0",
-    "unist-util-visit-parents": "^6.0.1"
+    "unist-util-visit-parents": "^6.0.1",
+    "vitest": "^2.0.4"
   },
   "imports": {
     "#parsley": ["./parsley/parsley.js"],
@@ -42,7 +43,8 @@
     "start": "astro dev --port 8000",
     "prebuild": "bin/rake content:prepare:full",
     "build": "astro build",
-    "preview": "astro preview --port 9000"
+    "preview": "astro preview --port 9000",
+    "test": "vitest"
   },
   "license": "MIT",
   "repository": {
