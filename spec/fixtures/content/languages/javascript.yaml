@@ -1,0 +1,15 @@
+short: js
+long: javascript
+name: JavaScript
+additionalReferences: [css, html]
+references:
+  Array.prototype.fill(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill
+  Array.prototype.forEach(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+  Array.from(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from
+  Array.prototype.map(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+  Array.prototype.reduce(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce

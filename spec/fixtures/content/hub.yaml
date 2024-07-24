@@ -1,0 +1,13 @@
+slug: collections
+title: Snippet Collections
+splash: widescreen
+description: >-
+  30 seconds of code is full of article collections for developers.
+shortDescription: >-
+  Browse through collections of snippets and articles about programming.
+featuredListings:
+- js
+- css
+- js/array-methods
+- js/array
+- web-development

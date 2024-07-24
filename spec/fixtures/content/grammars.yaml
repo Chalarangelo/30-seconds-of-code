@@ -1,0 +1,9 @@
+# Note: Remember to check Prism for language grammars and update code highlight
+# styles accordingly, when adding new languages.
+# Go to https://github.com/PrismJS/prism/tree/master/components and find the
+# syntax rules for your grammar.
+# Check https://github.com/PrismJS/prism/tree/master/tests/languages to find
+# examples of each rule in action and customize the styles accordingly.
+html: HTML
+js: JavaScript
+css: CSS
