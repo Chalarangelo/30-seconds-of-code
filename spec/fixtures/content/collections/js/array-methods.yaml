@@ -1,0 +1,13 @@
+slug: js/array-methods
+title: JavaScript Array Methods
+listed: true
+parent: js
+snippetIds:
+  - js/s/array-map-foreach
+  - js/s/array-compare
+  - js/s/array-initialize
+splash: interview
+description: >-
+  Material to master JavaScript array methods.
+shortDescription: >-
+  Material to master JS array methods.

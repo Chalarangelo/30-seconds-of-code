@@ -1,0 +1,4 @@
+short: html
+long: html
+name: HTML
+additionalReferences: [css, javascript]
