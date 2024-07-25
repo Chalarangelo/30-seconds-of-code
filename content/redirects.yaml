@@ -211,9 +211,6 @@
 - from: /c/js-web-storage-essentials/*
   to: /js/web-storage-essentials/:splat
   status: 301!
-- from: /c/react-rendering/*
-  to: /react/rendering/:splat
-  status: 301!
 - from: /c/react-testing/*
   to: /react/testing/:splat
   status: 301!
@@ -684,15 +681,6 @@
   status: 301!
 - from: /articles/s/react-redux-readable-reducers
   to: /react/s/redux-readable-reducers
-  status: 301!
-- from: /articles/s/react-rendering-basics
-  to: /react/s/rendering-basics
-  status: 301!
-- from: /articles/s/react-rendering-optimization
-  to: /react/s/rendering-optimization
-  status: 301!
-- from: /articles/s/react-rendering-state
-  to: /react/s/rendering-state
   status: 301!
 - from: /articles/s/react-selected-option
   to: /react/s/selected-option
@@ -2952,4 +2940,28 @@
   status: 301!
 - from: /js/s/freeze-set-or-map
   to: /js/s/deep-freeze-object
+  status: 301!
+- from: /c/react-rendering/*
+  to: /react/s/rendering
+  status: 301!
+- from: /react/rendering/*
+  to: /react/s/rendering
+  status: 301!
+- from: /articles/s/react-rendering-basics
+  to: /react/s/rendering
+  status: 301!
+- from: /react/s/rendering-basics
+  to: /react/s/rendering
+  status: 301!
+- from: /articles/s/react-rendering-optimization
+  to: /react/s/rendering
+  status: 301!
+- from: /react/s/rendering-optimization
+  to: /react/s/rendering
+  status: 301!
+- from: /articles/s/react-rendering-state
+  to: /react/s/rendering
+  status: 301!
+- from: /react/s/rendering-state
+  to: /react/s/rendering
   status: 301!
