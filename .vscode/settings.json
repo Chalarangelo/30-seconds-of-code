@@ -52,4 +52,8 @@
     "markdown"
   ],
   "spellright.configurationScope": "workspace",
+  "spellright.ignoreFiles": [
+    "**/.gitignore",
+    ".rubocop.yml"
+  ]
 }
