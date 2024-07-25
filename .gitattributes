@@ -1,7 +1,8 @@
 # Mark files as having been generated.
-package-lock.json linguist-generated
 Gemfile.lock linguist-generated
 db/schema.rb linguist-generated
+db/puma.rb linguist-generated
+config/boot.rb linguist-generated
 
 # Mark any vendored files as having been vendored.
 vendor/* linguist-vendored
