@@ -59,6 +59,13 @@ group :development do
   # Test suite
   gem "rspec"
   gem "rspec-rails"
+
+  # Linting
+  gem "rubocop"
+  gem "rubocop-performance"
+  gem "rubocop-rails"
+  gem "rubocop-rake"
+  gem "rubocop-rspec"
 end
 
 group :test do
