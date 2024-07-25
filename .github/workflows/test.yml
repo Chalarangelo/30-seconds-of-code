@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby-version: [3.3.4]
+        ruby-version: [3.3.3]
     env:
       RAILS_ENV: test
     steps:

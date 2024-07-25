@@ -1,4 +1,4 @@
 [build]
   publish = "dist"
   command = "npm run build"
-  environment = { NODE_VERSION = "20.11.1", RUBY_VERSION="3.3.4" }
+  environment = { NODE_VERSION = "20.11.1", RUBY_VERSION="3.3.3" }
