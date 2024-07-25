@@ -7,3 +7,10 @@ db/schema.rb linguist-generated
 vendor/* linguist-vendored
 config/credentials/*.yml.enc diff=rails_credentials
 config/credentials.yml.enc diff=rails_credentials
+
+# Mark RSpec-related files as being test data.
+spec/factories/* linguist-generated
+spec/fixtures/* linguist-generated
+spec/support/* linguist-generated
+spec/rails_helper.rb linguist-generated
+spec/spec_helper.rb linguist-generated
