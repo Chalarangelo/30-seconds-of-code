@@ -3,7 +3,7 @@ FactoryBot.define do
     cid { 'snippet' }
     title { 'My Snippet' }
     short_title { 'My Snippet' }
-    description { '<p>My snippet <code>description</code>.</p>' }
+    content { '<p>My snippet <code>description</code>.</p>' }
     short_description { 'My snippet short description.' }
     listed { true }
     _tags { 'array;object' }

@@ -237,10 +237,10 @@ describe('Parsley.prepareContent', async () => {
       expect(unlistedSnippets[0].cid).toBe('articles/s/web-development-tips');
     });
 
-    it('should produce an HTML description and short_description', () => {
-      snippetData.forEach(({ short_description, description }) => {
+    it('should produce an HTML content and short_description', () => {
+      snippetData.forEach(({ short_description, content }) => {
         expect(short_description).toContain('<p>');
-        expect(description).toContain('<p>');
+        expect(content).toContain('<p>');
       });
     });
 
@@ -252,10 +252,10 @@ describe('Parsley.prepareContent', async () => {
         const snippetWithTitle = snippetData.find(
           ({ cid }) => cid === 'articles/s/web-development-tips'
         );
-        expect(snippetWithoutTitle.description).toContain(
+        expect(snippetWithoutTitle.content).toContain(
           'class="language-js notranslate" translate="no" data-code-language="JavaScript">'
         );
-        expect(snippetWithTitle.description).toContain(
+        expect(snippetWithTitle.content).toContain(
           'class="language-js notranslate" translate="no" data-code-language="JavaScript" data-code-title="aFunction.js">'
         );
       });
@@ -269,8 +269,8 @@ describe('Parsley.prepareContent', async () => {
         const noJsSnippet = snippetData.find(
           ({ cid }) => cid === 'articles/s/web-development-tips'
         );
-        expect(jsSnippet.description).toContain(arrayFromReference);
-        expect(noJsSnippet.description).not.toContain(arrayFromReference);
+        expect(jsSnippet.content).toContain(arrayFromReference);
+        expect(noJsSnippet.content).not.toContain(arrayFromReference);
       });
 
       it('should safeguard only external links', () => {
@@ -280,10 +280,10 @@ describe('Parsley.prepareContent', async () => {
         const internalLinkSnippet = snippetData.find(
           ({ cid }) => cid === 'js/s/array-map-foreach'
         );
-        expect(externalLinkSnippet.description).toContain(
+        expect(externalLinkSnippet.content).toContain(
           '<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder" rel="noopener noreferrer" target="_blank">modulo operator(<code class="notranslate" translate="no">%</code>)</a>'
         );
-        expect(internalLinkSnippet.description).toContain(
+        expect(internalLinkSnippet.content).toContain(
           '<a href="/js/s/array-compare">here</a>'
         );
       });
@@ -292,7 +292,7 @@ describe('Parsley.prepareContent', async () => {
         const snippetWithHeadings = snippetData.find(
           ({ cid }) => cid === 'articles/s/web-development-tips'
         );
-        expect(snippetWithHeadings.description).toContain(
+        expect(snippetWithHeadings.content).toContain(
           '<h2><a href="#this-is-a-level-2-heading-with-some-code" id="this-is-a-level-2-heading-with-some-code">This is a level 2 heading with <code class="notranslate" translate="no">some code</code></a></h2>'
         );
       });
@@ -301,7 +301,7 @@ describe('Parsley.prepareContent', async () => {
         const snippetWithImages = snippetData.find(
           ({ cid }) => cid === 'articles/s/web-development-tips'
         );
-        expect(snippetWithImages.description).toContain(
+        expect(snippetWithImages.content).toContain(
           '<img src="/assets/illustrations/flexbox-diagram.svg" alt="Diagram of Flexbox properties">'
         );
       });
@@ -310,7 +310,7 @@ describe('Parsley.prepareContent', async () => {
         const snippetWithTables = snippetData.find(
           ({ cid }) => cid === 'articles/s/web-development-tips'
         );
-        expect(snippetWithTables.description).toContain(
+        expect(snippetWithTables.content).toContain(
           '<figure class="table-wrapper"><table>'
         );
       });
@@ -319,11 +319,11 @@ describe('Parsley.prepareContent', async () => {
         const snippetWithTables = snippetData.find(
           ({ cid }) => cid === 'css/s/content-centering'
         );
-        expect(snippetWithTables.description).toContain('<p class="codepen"');
-        expect(snippetWithTables.description).toContain(
+        expect(snippetWithTables.content).toContain('<p class="codepen"');
+        expect(snippetWithTables.content).toContain(
           '<span>See the <a href="https://codepen.io/chalarangelo/pen/wvbwQKg" target="_blank" rel="noopener noreferrer">embedded CodePen</a></span>'
         );
-        expect(snippetWithTables.description).toContain(
+        expect(snippetWithTables.content).toContain(
           '<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>'
         );
       });
@@ -332,10 +332,10 @@ describe('Parsley.prepareContent', async () => {
         const snippetWithAdmonitions = snippetData.find(
           ({ cid }) => cid === 'articles/s/web-development-tips'
         );
-        expect(snippetWithAdmonitions.description).toContain(
+        expect(snippetWithAdmonitions.content).toContain(
           '<figcaption>💡  Tip</figcaption>'
         );
-        expect(snippetWithAdmonitions.description).toContain(
+        expect(snippetWithAdmonitions.content).toContain(
           '<figcaption>⚠️  Warning</figcaption>'
         );
       });
