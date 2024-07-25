@@ -1,0 +1,40 @@
+name: Run tests
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+jobs:
+  js_tests:
+    name: 'Node.js ${{ matrix.node-version }} tests'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.11.1]
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - run: npm test
+
+  rspec_tests:
+    name: 'Ruby ${{ matrix.ruby-version }} tests'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby-version: [3.3.3]
+    env:
+      RAILS_ENV: test
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Ruby ${{ matrix.ruby-version }}
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: ${{ matrix.ruby-version }}
+    - run: gem install bundler
+    - run: bundle install
+    - run: rake db:test:prepare
+    - run: bundle exec rspec
