@@ -188,7 +188,7 @@ GEM
     puma (6.4.2)
       nio4r (~> 2.0)
     racc (1.8.0)
-    rack (3.1.3)
+    rack (3.1.5)
     rack-session (2.0.0)
       rack (>= 3.0.0)
     rack-test (2.1.0)
