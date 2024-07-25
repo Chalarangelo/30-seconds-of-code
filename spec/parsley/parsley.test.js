@@ -237,9 +237,9 @@ describe('Parsley.prepareContent', async () => {
       expect(unlistedSnippets[0].cid).toBe('articles/s/web-development-tips');
     });
 
-    it('should produce an HTML content and short_description', () => {
-      snippetData.forEach(({ short_description, content }) => {
-        expect(short_description).toContain('<p>');
+    it('should produce an HTML content and description', () => {
+      snippetData.forEach(({ description, content }) => {
+        expect(description).toContain('<p>');
         expect(content).toContain('<p>');
       });
     });

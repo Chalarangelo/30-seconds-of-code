@@ -16,8 +16,8 @@ class Snippet < ApplicationRecord
 
   # Prevent certain attributes from getting printed in the console
   self.filter_attributes += [
-    :short_description,
     :description,
+    :content,
     :table_of_contents
   ]
 

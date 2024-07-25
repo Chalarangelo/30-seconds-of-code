@@ -16,7 +16,7 @@ class InitializeDatabase < ActiveRecord::Migration[7.1]
       t.string :title
       t.string :short_title
       t.text :content
-      t.text :short_description
+      t.text :description
       t.boolean :listed, default: true, null: false
       t.string :cover
       t.text :_tokens
@@ -39,7 +39,7 @@ class InitializeDatabase < ActiveRecord::Migration[7.1]
       t.string :short_title
       t.string :mini_title
       t.text :content
-      t.text :short_description
+      t.text :description
       t.boolean :listed, default: true, null: false
       t.string :cover
       t.text :_tokens

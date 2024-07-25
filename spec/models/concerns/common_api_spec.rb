@@ -5,7 +5,7 @@ describe CommonApi do
     FactoryBot.create(
       :snippet,
       cid: 'js/my-snippet',
-      short_description: '<p>A <a href="https://example.com">description</a></p>.'
+      description: '<p>A <a href="https://example.com">description</a></p>.'
     )
   end
 

@@ -72,7 +72,7 @@ export const exportSnippetData = snippetData => {
       short_title: snippet.shortTitle,
       date_modified: snippet.dateModified,
       listed: snippet.listed,
-      short_description: snippet.descriptionHtml,
+      description: snippet.descriptionHtml,
       content: snippet.fullDescriptionHtml,
       table_of_contents: snippet.tableOfContentsHtml,
       cover: snippet.cover,
