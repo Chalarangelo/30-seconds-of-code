@@ -4,6 +4,11 @@ config/environments/**/* linguist-generated
 db/schema.rb linguist-generated
 db/puma.rb linguist-generated
 config/boot.rb linguist-generated
+bin/rails linguist-generated
+bin/rake linguist-generated
+bin/setup linguist-generated
+
+# Trick linguist into recognizing the following files as JS.
 package.json linguist-language=JavaScript
 package-lock.json linguist-language=JavaScript
 
