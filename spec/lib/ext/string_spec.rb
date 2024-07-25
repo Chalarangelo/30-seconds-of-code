@@ -1,5 +1,4 @@
 require 'active_support/inflector'
-require 'ext/string'
 
 describe String do
   context '#strip_markdown' do
