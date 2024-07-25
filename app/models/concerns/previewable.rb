@@ -6,18 +6,18 @@ module Previewable
     scope :previewable, -> { all }
 
     # Define a class method to store previews.
-    self.instance_variable_set(:@previews, {})
+    instance_variable_set(:@previews, {})
 
     # Define a class method to prepare previews.
     def self.prepare_previews
-      self.instance_variable_set(:@previews, previewable.map do |record|
+      instance_variable_set(:@previews, previewable.map do |record|
         [record.cid, record.serialize_as(:preview)]
       end.to_h)
     end
 
     # Define a class method to get a preview by cid.
     def self.get_preview(cid)
-      self.instance_variable_get(:@previews)[cid]
+      instance_variable_get(:@previews)[cid]
     end
 
     # Define an instance method to get a preview.

@@ -3,7 +3,7 @@ Orbit::settings website: {
   short_name: '30s',
   url: 'https://www.30secondsofcode.org',
   description: 'Short code snippets for all your development needs',
-  seo_description: "Browse %{snippet_count} short code snippets for all your development needs on %{website_name}."
+  seo_description: 'Browse %{snippet_count} short code snippets for all your development needs on %{website_name}.'
 }
 
 Orbit::settings owner: {

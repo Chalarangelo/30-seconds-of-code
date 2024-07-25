@@ -47,6 +47,7 @@ describe CommonApi do
         [snippet.slug, '/js/old-slug']
       )
     end
+
     it 'returns the redirects for the url' do
       expect(snippet.all_slugs).to eq([snippet.slug, '/js/old-slug'])
     end

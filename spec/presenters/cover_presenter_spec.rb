@@ -4,14 +4,14 @@ describe CoverPresenter do
   let(:snippet) do
     FactoryBot.create(
       :snippet,
-      cover: 'snippet-cover',
+      cover: 'snippet-cover'
     )
   end
 
   let(:collection) do
     FactoryBot.create(
       :collection,
-      cover: 'collection-cover',
+      cover: 'collection-cover'
     )
   end
 
@@ -37,8 +37,8 @@ describe CoverPresenter do
       expect(snippet_presenter.cover_srcset).to eq(
         [
           '/assets/cover/snippet-cover-400.webp 400w',
-          '/assets/cover/snippet-cover-800.webp 800w',
-        ],
+          '/assets/cover/snippet-cover-800.webp 800w'
+        ]
       )
     end
 
@@ -47,8 +47,8 @@ describe CoverPresenter do
         [
           '/assets/cover/snippet-cover-800.webp 800w',
           '/assets/cover/snippet-cover-400.webp 400w',
-          '/assets/cover/snippet-cover-1200.webp 1200w',
-        ],
+          '/assets/cover/snippet-cover-1200.webp 1200w'
+        ]
       )
     end
 
@@ -56,8 +56,8 @@ describe CoverPresenter do
       expect(collection_presenter.cover_srcset).to eq(
         [
           '/assets/splash/collection-cover-600.webp 600w',
-          '/assets/splash/collection-cover-400.webp 400w',
-        ],
+          '/assets/splash/collection-cover-400.webp 400w'
+        ]
       )
     end
   end

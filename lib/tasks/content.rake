@@ -1,22 +1,22 @@
 namespace :content do
-  desc "Export content to the .content directory"
+  desc 'Export content to the .content directory'
   task export: :environment do
     AstroContentGenerator.generate
   end
 
-  desc "Import content from the .content/content.json file"
+  desc 'Import content from the .content/content.json file'
   task import: :environment do
     JsonImporter.import
   end
 
-  desc "Clear all content in the database"
+  desc 'Clear all content in the database'
   task clear: :environment do
     # Similar to db:migrate:reset, but faster
     Rake::Task['db:schema:load'].invoke
   end
 
   namespace :prepare do
-    desc "Full run of the content processing pipeline"
+    desc 'Full run of the content processing pipeline'
     task full: :environment do
       threads = []
       # A. Run the content generation process
@@ -49,7 +49,7 @@ namespace :content do
       threads.each(&:join)
     end
 
-    desc "Dev run of the content processing pipeline"
+    desc 'Dev run of the content processing pipeline'
     task dev: :environment do
       # 1. Run parsley content to export content as JSON data
       `bin/parsley content`

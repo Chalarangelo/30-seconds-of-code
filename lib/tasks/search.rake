@@ -1,5 +1,5 @@
 namespace :search do
-  desc "Generate the search index"
+  desc 'Generate the search index'
   task index: :environment do
     SearchIndex.generate
   end

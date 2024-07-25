@@ -41,7 +41,7 @@ class Page
         main_entity_of_page: {
           '@type': 'WebPage',
           '@id': object.full_url
-        },
+        }
       }
 
       if defined?(additional_schema_data)

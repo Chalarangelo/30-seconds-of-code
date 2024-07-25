@@ -12,7 +12,7 @@ class Page::Home < Page::Base
       splash_image: cover_url,
       splash_image_srcset: cover_srcset,
       snippet_list_url: main_listing_url,
-      page_description: seo_description,
+      page_description: seo_description
     }
   end
 
@@ -20,7 +20,7 @@ class Page::Home < Page::Base
     {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
-      url: Orbit::settings[:website][:url],
+      url: Orbit::settings[:website][:url]
     }
   end
 
@@ -82,7 +82,7 @@ class Page::Home < Page::Base
 
   def cover_presenter
     @cover_presenter ||= CoverPresenter.new({
-      cover: Orbit::settings[:home_cover],
+      cover: Orbit::settings[:home_cover]
     })
   end
 

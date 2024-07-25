@@ -2,10 +2,8 @@ class SitemapController < ApplicationController
   HOME_PAGE_URL = "#{Orbit::settings[:website][:url]}/".freeze
   STATIC_PAGE_URLS = [
     "#{Orbit::settings[:website][:url]}/about",
-    "#{Orbit::settings[:website][:url]}/faw",
+    "#{Orbit::settings[:website][:url]}/faw"
   ].freeze
-
-  attr_accessor :urls
 
   def index
     @urls = urls

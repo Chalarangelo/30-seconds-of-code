@@ -8,7 +8,7 @@ class Page::Collection < Page::Base
 
     @params = {
       lang: slug_segments.first,
-      listing: [*slug_segments.drop(1), 'p', "#{options[:page_number]}"]
+      listing: [*slug_segments.drop(1), 'p', options[:page_number].to_s]
     }
   end
 

@@ -8,7 +8,7 @@ describe SublinkPresenter do
       :collection,
       :primary,
       cid: 'js',
-      mini_title: 'JavaScript',
+      mini_title: 'JavaScript'
     )
   end
 
@@ -17,7 +17,7 @@ describe SublinkPresenter do
       :collection,
       cid: 'js/c/array',
       parent_cid: primary_collection.cid,
-      mini_title: 'Array',
+      mini_title: 'Array'
     )
   end
 
@@ -26,7 +26,7 @@ describe SublinkPresenter do
       :collection,
       cid: 'js/c/object',
       parent_cid: primary_collection.cid,
-      mini_title: 'Object',
+      mini_title: 'Object'
     )
   end
 
@@ -34,7 +34,7 @@ describe SublinkPresenter do
     FactoryBot.create(
       :collection,
       cid: 'js/c/number',
-      mini_title: 'Number',
+      mini_title: 'Number'
     )
   end
 

@@ -1,18 +1,18 @@
 class Snippet < ApplicationRecord
   include CommonApi
 
-  ARTICLE_MINI_PREVIEW_TAG = 'Article'
-  GITHUB_URL_PREFIX = 'https://github.com/Chalarangelo/30-seconds-of-code/blob/master/content/snippets'
+  ARTICLE_MINI_PREVIEW_TAG = 'Article'.freeze
+  GITHUB_URL_PREFIX = 'https://github.com/Chalarangelo/30-seconds-of-code/blob/master/content/snippets'.freeze
 
   # Relationships
   has_one :language, primary_key: 'language_cid', foreign_key: 'cid'
 
   has_many :collection_snippets,
-    class_name: 'CollectionSnippet',
-    foreign_key: 'snippet_cid'
+           class_name: 'CollectionSnippet',
+           foreign_key: 'snippet_cid'
 
   has_many :collections,
-    through: :collection_snippets
+           through: :collection_snippets
 
   # Prevent certain attributes from getting printed in the console
   self.filter_attributes += [
@@ -32,13 +32,13 @@ class Snippet < ApplicationRecord
   # We explicitly name the model here to avoid conflicts with the
   # `CollectionSnippet` model having a column of the same name.
   scope :published, -> do
-     where(snippets: { date_modified: ..Date.today })
+    where(snippets: { date_modified: ..Date.today })
   end
   scope :scheduled, -> do
     where.not(snippets: { date_modified: ..Date.today })
   end
 
-  scope :previewable, -> { all.preload(:language) }
+  scope :previewable, -> { preload(:language) }
 
   def tags
     @tags ||= _tags.split(';')
@@ -52,7 +52,7 @@ class Snippet < ApplicationRecord
     return title unless has_language?
 
     title_language =
-      if language_cid == 'javascript' && primary_tag === 'node'
+      if language_cid == 'javascript' && primary_tag == 'node'
         formatted_primary_tag
       else
         language.name
@@ -127,7 +127,7 @@ class Snippet < ApplicationRecord
       *_tokens.split(';'),
       *title.normalized_tokens,
       language&.short&.downcase,
-      language&.long&.downcase,
+      language&.long&.downcase
     ].compact.uniq
   end
 
