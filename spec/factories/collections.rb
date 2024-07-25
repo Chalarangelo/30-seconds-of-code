@@ -4,7 +4,7 @@ FactoryBot.define do
     title { 'My Collection' }
     short_title { 'My Collection' }
     mini_title { 'My Collection' }
-    description { '<p>My collection <code>description</code>.</p>' }
+    content { '<p>My collection <code>description</code>.</p>' }
     short_description { 'My collection short description.' }
     listed { true }
     featured_index { 1 }

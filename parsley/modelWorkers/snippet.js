@@ -73,7 +73,7 @@ export const exportSnippetData = snippetData => {
       date_modified: snippet.dateModified,
       listed: snippet.listed,
       short_description: snippet.descriptionHtml,
-      description: snippet.fullDescriptionHtml,
+      content: snippet.fullDescriptionHtml,
       table_of_contents: snippet.tableOfContentsHtml,
       cover: snippet.cover,
       language_cid: snippet.languageKey,

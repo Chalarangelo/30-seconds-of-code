@@ -25,7 +25,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_12_153832) do
     t.string "title"
     t.string "short_title"
     t.string "mini_title"
-    t.text "description"
+    t.text "content"
     t.text "short_description"
     t.boolean "listed", default: true, null: false
     t.string "cover"
@@ -50,7 +50,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_12_153832) do
     t.string "cid"
     t.string "title"
     t.string "short_title"
-    t.text "description"
+    t.text "content"
     t.text "short_description"
     t.boolean "listed", default: true, null: false
     t.string "cover"

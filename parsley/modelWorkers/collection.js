@@ -70,7 +70,7 @@ export const exportCollectionData = collectionData => {
       listed: collection.listed,
       featured_index: collection.featuredIndex,
       cover: collection.splash,
-      description: collection.description,
+      content: collection.description,
       short_description: collection.shortDescription,
       top_level: collection.topLevel,
       parent_cid: collection.parent,

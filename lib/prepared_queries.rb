@@ -36,8 +36,8 @@ module PreparedQueries
     snippet = Snippet[slug]
 
     {
-      bold: snippet.description.include?('<strong'),
-      heading: snippet.description.include?('<h')
+      bold: snippet.content.include?('<strong'),
+      heading: snippet.content.include?('<h')
     }
   end
 
