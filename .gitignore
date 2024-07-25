@@ -146,7 +146,7 @@ snippet.png
 imported/
 
 # Storage (SQLite databases)
-# /storage/*
+/storage/*
 
 # Master key for decrypting credentials
 /config/master.key
