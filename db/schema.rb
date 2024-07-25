@@ -27,13 +27,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_12_153832) do
     t.string "mini_title"
     t.text "description"
     t.text "short_description"
-    t.boolean "listed"
-    t.integer "featured_index"
-    t.boolean "top_level"
-    t.string "parent_cid"
+    t.boolean "listed", default: true, null: false
     t.string "cover"
     t.text "_tokens"
     t.float "ranking"
+    t.integer "featured_index"
+    t.boolean "top_level", default: false, null: false
+    t.string "parent_cid"
     t.index ["cid"], name: "index_collections_on_cid", unique: true
     t.index ["parent_cid"], name: "index_collections_on_parent_cid"
   end
@@ -52,15 +52,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_12_153832) do
     t.string "short_title"
     t.text "description"
     t.text "short_description"
-    t.boolean "listed"
-    t.string "file_name"
+    t.boolean "listed", default: true, null: false
+    t.string "cover"
+    t.text "_tokens"
+    t.float "ranking"
     t.string "_tags"
     t.date "date_modified"
     t.text "table_of_contents"
     t.string "language_cid"
-    t.string "cover"
-    t.text "_tokens"
-    t.float "ranking"
     t.index ["cid"], name: "index_snippets_on_cid", unique: true
     t.index ["date_modified"], name: "index_snippets_on_date_modified"
     t.index ["language_cid"], name: "index_snippets_on_language_cid"

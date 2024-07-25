@@ -6,7 +6,6 @@ FactoryBot.define do
     description { '<p>My snippet <code>description</code>.</p>' }
     short_description { 'My snippet short description.' }
     listed { true }
-    file_name { 'my-snippet.md' }
     _tags { 'array;object' }
     date_modified { Date.today }
     table_of_contents { nil }

@@ -8,7 +8,7 @@ class TagFormatter
     vscode: 'Visual Studio Code',
     html: 'HTML',
     webdev: 'Web development',
-    http: 'HTTP',
+    http: 'HTTP'
   }.freeze
 
   @formatted_tags = {}

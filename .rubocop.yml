@@ -20,6 +20,7 @@ AllCops:
     - '.astro/**/*'
     - '.github/**/*'
     - '.vscode/**/*'
+    - 'db/schema.rb'
 
 Metrics:
   Enabled: false
@@ -100,10 +101,13 @@ Lint/DuplicateBranch:
 
 Lint/EmptyBlock:
   Enabled: false
-###
 
 Lint/EmptyClass:
   AllowComments: true
+
+Lint/EmptyFile:
+  Exclude:
+    - 'config/settings/**/*'
 
 Lint/FloatComparison:
   Enabled: false
@@ -353,6 +357,9 @@ Rails/CompactBlank:
   Enabled: false
 
 Rails/ContentTag:
+  Enabled: false
+
+Rails/CreateTableWithTimestamps:
   Enabled: false
 
 Rails/Date:
@@ -675,6 +682,3 @@ Style/SymbolArray:
 
 Style/TernaryParentheses:
   Enabled: false
-
-Style/TrailingCommaInArguments:
-  EnforcedStyleForMultiline: comma

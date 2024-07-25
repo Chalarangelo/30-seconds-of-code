@@ -12,21 +12,21 @@ class Collection < ApplicationRecord
 
   # https://guides.rubyonrails.org/v5.0/association_basics.html
   has_one :parent,
-    class_name: 'Collection',
-    foreign_key: 'cid',
-    primary_key: 'parent_cid',
-    inverse_of: :children
+          class_name: 'Collection',
+          foreign_key: 'cid',
+          primary_key: 'parent_cid',
+          inverse_of: :children
   has_many :children,
-    class_name: 'Collection',
-    foreign_key: 'parent_cid',
-    primary_key: 'cid',
-    inverse_of: :parent
+           class_name: 'Collection',
+           foreign_key: 'parent_cid',
+           primary_key: 'cid',
+           inverse_of: :parent
 
   has_many :collection_snippets,
-    foreign_key: 'collection_cid'
+           foreign_key: 'collection_cid'
 
   has_many :snippets,
-    through: :collection_snippets
+           through: :collection_snippets
 
   scope :with_parent, -> { where.not(parent_cid: nil) }
   scope :snippet_collections, -> { where.not(cid: COLLECTIONS_COLLECTION_CID) }

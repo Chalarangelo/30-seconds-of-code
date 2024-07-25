@@ -12,8 +12,8 @@ class RecommendationPresenter
   # Total
   # Language + Primary Tag + Search Tokens
   TOTAL_SCORE_LIMIT = 100.0
- # Total without language
- # Primary Tag + Search Tokens / Total
+  # Total without language
+  # Primary Tag + Search Tokens / Total
   SCORE_LIMIT_WITHOUT_LANGUAGE = 0.55
   # Total without language and primary tag
   # Search Tokens / Total
@@ -39,7 +39,7 @@ class RecommendationPresenter
 
       @@recommendable_snippets_by_language_and_primary_tag[language_cid] = {}
 
-      tag_grouped_snippets = snippets.group_by{ |s| s.primary_tag }
+      tag_grouped_snippets = snippets.group_by { |s| s.primary_tag }
       tag_grouped_snippets.each do |primary_tag, primary_tag_snippets|
         @@recommendable_snippets_by_language_and_primary_tag[language_cid][primary_tag] =
           primary_tag_snippets +
@@ -52,9 +52,9 @@ class RecommendationPresenter
   end
 
   def self.recommendable_snippets(language = nil, tag = nil)
-    self.prepare_recommendable_snippets unless @@recommendable_snippets.present?
+    prepare_recommendable_snippets if @@recommendable_snippets.blank?
 
-    return @@recommendable_snippets unless language.present?
+    return @@recommendable_snippets if language.blank?
 
     return @@recommendable_snippets_by_language[language] unless tag.present? &&
       @@recommendable_snippets_by_language_and_primary_tag[language].key?(tag)
@@ -81,7 +81,6 @@ class RecommendationPresenter
     recommendable_snippets = RecommendationPresenter.recommendable_snippets(language_cid, primary_tag)
 
     recommendable_snippets.each do |snippet|
-      binding.irb if snippet.is_a?(Array)
       # Skip if the snippet is the same as the current snippet
       next if snippet.cid == cid
       # Skip if the snippet is the same in another language
@@ -121,9 +120,12 @@ class RecommendationPresenter
       #  * Contains primary tag, but not primary = 50% of tag score
       #  * Doesn't contain tag = 0% of language score
       primary_tag_score =
-        primary_tag_index.blank? ? 0 :
+        if primary_tag_index.blank?
+          0
+        else
           primary_tag_index == 0 ? FULL_PRIMARY_TAG_SCORE :
-            HALF_PRIMARY_TAG_SCORE
+                      HALF_PRIMARY_TAG_SCORE
+        end
 
       # Determine search token score:
       #  * Count found tokens and divide by total number of tokens
@@ -144,15 +146,14 @@ class RecommendationPresenter
         if min_rankings.size < RECOMMENDATION_COUNT
           # First 4 snippets are always added
           min_rankings << recommendation_ranking
-          min_rankings.sort!
         else
           # If the new ranking is lower than the lowest ranking, ignore it
           next if recommendation_ranking < min_rankings.first
 
           # Otherwise, replace the lowest ranking with the new ranking
           min_rankings[0] = recommendation_ranking
-          min_rankings.sort!
         end
+        min_rankings.sort!
 
         recommendation_rankings[snippet.id] = [
           recommendation_ranking, snippet.ranking, snippet

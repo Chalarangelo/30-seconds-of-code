@@ -1,6 +1,4 @@
 class FeedController < ApplicationController
-  attr_accessor :nodes
-
   def index
     @nodes = nodes
   end

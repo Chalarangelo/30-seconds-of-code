@@ -20,18 +20,18 @@ class BaseSerializer
   attr_accessor :object, :options
 
   # Initialize the serializer with an object to be serialized.
-  def initialize(object, options={})
+  def initialize(object, options = {})
     @object = object
     @options = options
   end
 
   # Convenience method to serialize an object.
-  def self.serialize(object, options={})
+  def self.serialize(object, options = {})
     new(object, options).as_json
   end
 
   # Convenience method to serialize an array of objects.
-  def self.serialize_array(collection, options={})
+  def self.serialize_array(collection, options = {})
     collection.map { |object| serialize(object, options) }
   end
 

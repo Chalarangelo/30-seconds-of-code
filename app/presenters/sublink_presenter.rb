@@ -22,7 +22,7 @@ class SublinkPresenter
       return Collection.
               primary.
               ranked.
-              map{ |collection| to_sublink(collection) }.
+              map { |collection| to_sublink(collection) }.
               flatten.
               append(MORE_COLLECTIONS_SUBLINK)
     end
@@ -32,7 +32,7 @@ class SublinkPresenter
 
     links = has_parent? ? siblings : children
     links.
-      map { |link| to_sublink(link, link.cid === cid) }.
+      map { |link| to_sublink(link, link.cid == cid) }.
       sort_by { |link| link[:title] }.
       prepend({
         title: PARENT_TITLE,

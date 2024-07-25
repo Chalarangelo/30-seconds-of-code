@@ -37,17 +37,19 @@ module PreparedQueries
 
     {
       bold: snippet.description.include?('<strong'),
-      heading: snippet.description.include?('<h'),
+      heading: snippet.description.include?('<h')
     }
   end
 
   def non_story_snippets
     @non_story_snippets ||=
       Dir.glob('content/snippets/**/*.md').
-        map { |file| [
-          file.gsub('content/snippets/', '').gsub('.md', ''),
-          File.read(file)
-        ] }.
+        map do |file|
+          [
+            file.gsub('content/snippets/', '').gsub('.md', ''),
+            File.read(file)
+          ]
+        end.
         select { |name, content| content.include?('type: snippet') }.
         map(&:first)
   end

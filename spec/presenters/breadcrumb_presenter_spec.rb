@@ -9,7 +9,7 @@ describe BreadcrumbPresenter do
       :collection,
       :primary,
       mini_title: 'JavaScript',
-      cid: 'js',
+      cid: 'js'
     )
   end
 

@@ -38,7 +38,7 @@ class Page::Snippet < Page::Base
       publisher: {
         '@type': 'Person',
         name: Orbit::settings[:owner_name],
-        url: Orbit::settings[:owner_url],
+        url: Orbit::settings[:owner_url]
       }
     }
   end

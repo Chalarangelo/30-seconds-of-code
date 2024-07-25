@@ -17,7 +17,7 @@ class InitializeDatabase < ActiveRecord::Migration[7.1]
       t.string :short_title
       t.text :description
       t.text :short_description
-      t.boolean :listed
+      t.boolean :listed, default: true, null: false
       t.string :cover
       t.text :_tokens
       t.float :ranking
@@ -40,12 +40,12 @@ class InitializeDatabase < ActiveRecord::Migration[7.1]
       t.string :mini_title
       t.text :description
       t.text :short_description
-      t.boolean :listed
+      t.boolean :listed, default: true, null: false
       t.string :cover
       t.text :_tokens
       t.float :ranking
       t.integer :featured_index
-      t.boolean :top_level
+      t.boolean :top_level, default: false, null: false
       t.string :parent_cid
     end
 

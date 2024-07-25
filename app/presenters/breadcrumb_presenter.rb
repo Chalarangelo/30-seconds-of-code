@@ -25,9 +25,9 @@ class BreadcrumbPresenter
   end
 
   def recommended_collection
-    @recommended_collection ||= all_collections.select do |collection|
-      !collections_for_breadcrumbs.include?(collection)
-    end.sort_by(&:ranking).last
+    @recommended_collection ||= all_collections.reject do |collection|
+      collections_for_breadcrumbs.include?(collection)
+    end.max_by(&:ranking)
   end
 
   private
@@ -69,6 +69,7 @@ class BreadcrumbPresenter
   # TODO: There's some fiddly logic with this here, second pass please!
   def collections_for_breadcrumbs
     return @collections_for_breadcrumbs if defined?(@collections_for_breadcrumbs)
+
     @collections_for_breadcrumbs = []
 
     return @collections_for_breadcrumbs unless has_collection?
