@@ -13,6 +13,7 @@ export default [
         ...globals,
       },
     },
+    ignores: ['app/assets/config/manifest.js'],
     rules: {
       indent: 'off',
       'comma-dangle': [
