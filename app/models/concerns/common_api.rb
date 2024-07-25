@@ -38,11 +38,11 @@ module CommonApi
     end
 
     def formatted_description
-      @formatted_description ||= short_description.strip_html_paragraphs_and_links
+      @formatted_description ||= description.strip_html_paragraphs_and_links
     end
 
     def seo_description
-      @seo_description ||= short_description.strip_html
+      @seo_description ||= description.strip_html
     end
 
     # The model needs to define a `search_tokens_array` method.

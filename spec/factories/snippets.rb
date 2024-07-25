@@ -4,7 +4,7 @@ FactoryBot.define do
     title { 'My Snippet' }
     short_title { 'My Snippet' }
     content { '<p>My snippet <code>description</code>.</p>' }
-    short_description { 'My snippet short description.' }
+    description { 'My snippet short description.' }
     listed { true }
     _tags { 'array;object' }
     date_modified { Date.today }

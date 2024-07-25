@@ -71,7 +71,7 @@ export const exportCollectionData = collectionData => {
       featured_index: collection.featuredIndex,
       cover: collection.splash,
       content: collection.description,
-      short_description: collection.shortDescription,
+      description: collection.shortDescription,
       top_level: collection.topLevel,
       parent_cid: collection.parent,
       _tokens: collection.tokens,
