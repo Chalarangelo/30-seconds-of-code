@@ -1,5 +1,6 @@
 # Mark files as having been generated.
 Gemfile.lock linguist-generated
+config/environments/**/* linguist-generated
 db/schema.rb linguist-generated
 db/puma.rb linguist-generated
 config/boot.rb linguist-generated
