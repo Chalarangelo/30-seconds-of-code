@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+import repl from 'node:repl';
+import Loader from '../lib/loader.js';
+
+const modules = Loader.loadModules();
+const data = Loader.importData();
+
+const replServer = repl.start();
+replServer.setupHistory('console.log', () => {});
+
+replServer.context.data = data;
+
+const { models, serializers, pages, PreparedQueries, ...rest } = modules;
+
+[models, serializers, pages, rest].forEach(module => {
+  Object.keys(module).forEach(key => {
+    replServer.context[key] = module[key];
+  });
+});
+
+Object.entries(Object.getOwnPropertyDescriptors(PreparedQueries)).forEach(
+  ([key, { value }]) => {
+    if (typeof value === 'function') replServer.context[key] = value;
+  }
+);

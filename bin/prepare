@@ -1,0 +1,49 @@
+#!/usr/bin/env node
+import { Parsley } from '#parsley';
+import Loader from '../lib/loader.js';
+
+const args = process.argv.slice(2);
+
+if (args.length === 0 || args[0] === 'help') {
+  console.log('Usage: prepare [options]');
+  console.log('Options:');
+  console.log(
+    '  --full, -f  Prepare all assets, content, and generate all files'
+  );
+  console.log(
+    '  --dev, -d   Prepare content and generate Astro content and search index'
+  );
+  console.log('coming soon');
+} else if (args[0] === '--full' || args[0] === '-f') {
+  // 0. Run Parsley to prepare the assets
+  await Parsley.prepareAssets({ force: false });
+  // 1. Run Parsley to prepare the .content/content.json file
+  await Parsley.prepareContent();
+  // 2. Load modules
+  const modules = Loader.loadModules();
+  const { AstroContent, SearchIndex, Redirects, Feed, Sitemap } = modules;
+  // 3. Import the content
+  const data = Loader.importData();
+  // 4. Generate Astro content
+  AstroContent.generate();
+  // 5. Generate search index
+  SearchIndex.generate();
+  // 6. Generate redirects
+  Redirects.generate();
+  // 7. Generate feed
+  Feed.generate();
+  // 8. Generate sitemap
+  Sitemap.generate();
+} else if (args[0] === '--dev' || args[0] === '-d') {
+  // 1. Run Parsley to prepare the .content/content.json file
+  await Parsley.prepareContent();
+  // 2. Load modules
+  const modules = Loader.loadModules();
+  const { AstroContent, SearchIndex } = modules;
+  // 3. Import the content
+  const data = Loader.importData();
+  // 4. Generate Astro content
+  AstroContent.generate();
+  // 5. Generate search index
+  SearchIndex.generate();
+}
