@@ -63,18 +63,19 @@ export const exportCollectionData = collectionData => {
   /* eslint-disable camelcase */
   return collectionData.map(collection => {
     return {
-      cid: collection.id,
+      model: 'Collection',
+      id: collection.id,
       title: collection.title,
-      short_title: collection.shortTitle,
-      mini_title: collection.miniTitle,
+      shortTitle: collection.shortTitle,
+      miniTitle: collection.miniTitle,
       listed: collection.listed,
-      featured_index: collection.featuredIndex,
+      featuredIndex: collection.featuredIndex,
       cover: collection.splash,
       content: collection.description,
       description: collection.shortDescription,
-      top_level: collection.topLevel,
-      parent_cid: collection.parent,
-      _tokens: collection.tokens,
+      topLevel: collection.topLevel,
+      parentId: collection.parent,
+      tokens: collection.tokens,
       ranking: collection.ranking,
     };
   });

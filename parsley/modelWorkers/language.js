@@ -12,7 +12,7 @@ export const extractLanguageData = async languageGlob => {
       additionalReferences = [],
     } = language;
     acc.set(long, {
-      cid: long,
+      id: long,
       long,
       short,
       name,
@@ -26,7 +26,8 @@ export const extractLanguageData = async languageGlob => {
 export const exportLanguageData = languageData => {
   return [...languageData.values()].map(lang => {
     return {
-      cid: lang.long,
+      model: 'Language',
+      id: lang.long,
       long: lang.long,
       short: lang.short,
       name: lang.name,

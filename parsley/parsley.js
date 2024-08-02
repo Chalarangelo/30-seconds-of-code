@@ -18,7 +18,7 @@ export class Parsley {
       collections: exportCollectionData(collections),
       snippets: exportSnippetData(snippets),
       languages: exportLanguageData(languages),
-      collection_snippets: exportCollectionSnippetData(collectionSnippets),
+      collectionSnippets: exportCollectionSnippetData(collectionSnippets),
     };
 
     return FileHandler.write(outputPath, data);

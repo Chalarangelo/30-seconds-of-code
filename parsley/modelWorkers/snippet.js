@@ -66,18 +66,19 @@ export const exportSnippetData = snippetData => {
   /* eslint-disable camelcase */
   return snippetData.map(snippet => {
     return {
-      cid: snippet.id,
+      model: 'Snippet',
+      id: snippet.id,
       title: snippet.title,
-      _tags: snippet.tags,
-      short_title: snippet.shortTitle,
-      date_modified: snippet.dateModified,
+      tags: snippet.tags,
+      shortTitle: snippet.shortTitle,
+      dateModified: snippet.dateModified,
       listed: snippet.listed,
       description: snippet.descriptionHtml,
       content: snippet.fullDescriptionHtml,
-      table_of_contents: snippet.tableOfContentsHtml,
+      tableOfContents: snippet.tableOfContentsHtml,
       cover: snippet.cover,
-      language_cid: snippet.languageKey,
-      _tokens: snippet.tokens,
+      languageId: snippet.languageKey,
+      tokens: snippet.tokens,
       ranking: snippet.ranking,
     };
   });

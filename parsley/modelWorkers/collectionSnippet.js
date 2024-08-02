@@ -79,11 +79,12 @@ export const exportCollectionSnippetData = collectionSnippetData => {
   /* eslint-disable camelcase */
   return collectionSnippetData.map(collectionSnippet => {
     return {
-      collection_cid: collectionSnippet.collectionId,
-      snippet_cid: collectionSnippet.snippetId,
+      model: 'CollectionSnippet',
+      collectionId: collectionSnippet.collectionId,
+      snippetId: collectionSnippet.snippetId,
       position: collectionSnippet.position,
       // This is a denormalized field, but helps us avoid N+1 queries.
-      date_modified: collectionSnippet.dateModified,
+      dateModified: collectionSnippet.dateModified,
     };
   });
   /* eslint-enable camelcase */
