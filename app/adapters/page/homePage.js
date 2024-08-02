@@ -1,0 +1,87 @@
+import Page from '../page.js';
+import Collection from '../../models/collection.js';
+import Snippet from '../../models/snippet.js';
+import CoverPresenter from '../../presenters/coverPresenter.js';
+import settings from '../../../config/settings.js';
+
+export default class HomePage extends Page {
+  static {
+    Page.register(this);
+  }
+
+  get params() {
+    return null;
+  }
+
+  get props() {
+    return {
+      featuredCollections: this.featuredCollections,
+      featuredSnippets: this.featuredSnippets,
+      splashImage: this.coverUrl,
+      splashImageSrcSet: this.coverSrcset,
+      snippetListUrl: this.mainListingUrl,
+      pageDescription: this.seoDescription,
+    };
+  }
+
+  get schemaData() {
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      url: settings.website.url,
+    };
+  }
+
+  get featuredCollections() {
+    return Collection.scope('featured')
+      .slice(0, settings.home.topCollectionChips)
+      .map(collection => collection.preview)
+      .concat([this.exploreCollections]);
+  }
+
+  get featuredSnippets() {
+    const newSnippets = Snippet.scope('listed', 'byNew').slice(
+      0,
+      settings.home.newSnippetCards
+    );
+
+    const topSnippets = Snippet.scope('listed', 'byRanking')
+      .slice(0, settings.home.topSnippetCards * 5)
+      .shuffle();
+
+    return [...new Set(newSnippets.concat(topSnippets))]
+      .slice(0, settings.home.topSnippetCards + settings.home.newSnippetCards)
+      .map(snippet => snippet.preview);
+  }
+
+  get seoDescription() {
+    const snippetCount = Snippet.scope('published').length;
+    const websiteName = settings.website.name;
+    return settings.website.seoDescription({ snippetCount, websiteName });
+  }
+
+  get mainListingUrl() {
+    return Collection.main.firstPageSlug;
+  }
+
+  get exploreCollections() {
+    return {
+      title: 'Explore collections',
+      url: Collection.collections.firstPageSlug,
+      icon: 'arrow-right',
+      selected: false,
+    };
+  }
+
+  get coverPresenter() {
+    return new CoverPresenter({ cover: settings.home.cover });
+  }
+
+  get coverUrl() {
+    return this.coverPresenter.coverUrl();
+  }
+
+  get coverSrcset() {
+    return this.coverPresenter.coverSrcset();
+  }
+}
