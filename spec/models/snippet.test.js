@@ -31,8 +31,6 @@ describe('Snippet', () => {
     tokens: 'lorem;ipsum',
   });
 
-  console.log(jsSnippet.languageId);
-
   const nodeJsSnippet = SnippetFactory.create('taggedNodeJs', {
     languageId: 'javascript',
   });
