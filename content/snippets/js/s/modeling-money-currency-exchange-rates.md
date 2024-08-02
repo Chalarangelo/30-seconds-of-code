@@ -272,7 +272,7 @@ class Bank {
 
   exchange(money, to) {
     if (!(money instanceof Money))
-      throw new TypeError(`#{money} is not an instance of Money`);
+      throw new TypeError(`${money} is not an instance of Money`);
 
     const toCurrency = Currency.wrap(to);
     if (toCurrency === money.currency) return money;
@@ -306,7 +306,7 @@ class Money {
     this.value = Number.parseFloat(value);
     this.currency = Currency.wrap(currency);
     if (!(bank instanceof Bank))
-      throw new TypeError(`#{bank} is not an instance of Bank`);
+      throw new TypeError(`${bank} is not an instance of Bank`);
     this.bank = bank;
   }
 
@@ -339,7 +339,7 @@ class Money {
     this.value = Number.parseFloat(value);
     this.currency = Currency.wrap(currency);
     if (!(bank instanceof Bank))
-      throw new TypeError(`#{bank} is not an instance of Bank`);
+      throw new TypeError(`${bank} is not an instance of Bank`);
     this.bank = bank;
   }
 
@@ -498,7 +498,7 @@ class Bank {
 
   exchange(money, to) {
     if (!(money instanceof Money))
-      throw new TypeError(`#{money} is not an instance of Money`);
+      throw new TypeError(`${money} is not an instance of Money`);
 
     const toCurrency = Currency.wrap(to);
     if (toCurrency === money.currency) return money;
@@ -523,7 +523,7 @@ class Money {
     this.value = Number.parseFloat(value);
     this.currency = Currency.wrap(currency);
     if (!(bank instanceof Bank))
-      throw new TypeError(`#{bank} is not an instance of Bank`);
+      throw new TypeError(`${bank} is not an instance of Bank`);
     this.bank = bank;
   }
 
