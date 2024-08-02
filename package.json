@@ -38,10 +38,10 @@
     "#settings": ["./astro/settings.js"]
   },
   "scripts": {
-    "predev": "bin/rake content:prepare:dev",
+    "predev": "bin/prepare --dev",
     "dev": "astro dev --port 8000",
     "start": "astro dev --port 8000",
-    "prebuild": "bin/rake content:prepare:full",
+    "prebuild": "bin/prepare --full",
     "build": "astro build",
     "preview": "astro preview --port 9000",
     "test": "vitest"
