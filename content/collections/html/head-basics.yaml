@@ -9,7 +9,7 @@ snippetIds:
   - html/s/head-links
 splash: basics
 description: >-
-  Learn how to use the HTML head element to improve your site's SEO, social
+  Learn how to use the HTML `<head>` element to improve your site's SEO, social
   sharing, and user experience. This collection includes up to date
   recommendations for a standard setup, including basic metadata, social tags,
   icons, and links.

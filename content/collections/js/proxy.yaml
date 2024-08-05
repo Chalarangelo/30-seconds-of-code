@@ -14,9 +14,9 @@ snippetIds:
   - js/s/typecheck-proxy
 splash: laptop-coffee
 description: >-
-  The JavaScript Proxy object can be a very powerful tool to extend the
+  The JavaScript `Proxy` object can be a very powerful tool to extend the
   functionality of objects. In this collection, we will explore the basics of
-  the Proxy object and how to use it in your code. We will also look at a
+  the `Proxy` object and how to use it in your code. We will also look at a
   handful of practical examples that show how you can think about using proxies
   in your code.
 shortDescription: >-
