@@ -54,6 +54,7 @@
   "spellright.configurationScope": "workspace",
   "spellright.ignoreFiles": [
     "**/.gitignore",
-    ".rubocop.yml"
+    "netlify.toml",
+    ".github/*"
   ]
 }
