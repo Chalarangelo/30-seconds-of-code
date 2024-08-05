@@ -2,11 +2,11 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 
-import Layout from '#layouts/Layout';
-import Hero from '#components/Hero';
-import Pagination from '#components/Pagination';
-import PreviewList from '#components/PreviewList';
-import Chips from '#components/Chips';
+import Layout from '#astro/layouts/Layout.astro';
+import Hero from '#astro/components/Hero.astro';
+import Pagination from '#astro/components/Pagination.astro';
+import PreviewList from '#astro/components/PreviewList.astro';
+import Chips from '#astro/components/Chips.astro';
 
 export async function getStaticPaths() {
   const pagePath = path.join(

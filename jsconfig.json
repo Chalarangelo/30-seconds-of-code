@@ -6,9 +6,7 @@
     "paths": {
       "#parsley": ["./parsley/parsley.js"],
       "#search": ["./src/lib/search/search.js"],
-      "#components/*" : ["./astro/components/*.astro"],
-      "#layouts/*": ["./astro/layouts/*.astro"],
-      "#settings": ["./astro/settings.js"]
+      "#astro/*": ["./astro/*"]
     }
   },
   "exclude": ["node_modules"]
