@@ -7,7 +7,7 @@
   "author": "chalarangelo",
   "type": "module",
   "devDependencies": {
-    "astro": "^4.0.0",
+    "astro": "^4.13.1",
     "eslint": "^8.50.0",
     "eslint-config-prettier": "^9.0.0",
     "front-matter": "^4.0.2",
@@ -31,8 +31,12 @@
     "vitest": "^2.0.4"
   },
   "imports": {
-    "#src/*": ["./src/*"],
-    "#spec/*": ["./spec/*"]
+    "#src/*": [
+      "./src/*"
+    ],
+    "#spec/*": [
+      "./spec/*"
+    ]
   },
   "scripts": {
     "predev": "bin/prepare dev",
