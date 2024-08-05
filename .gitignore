@@ -150,3 +150,6 @@ imported/
 
 # Master key for decrypting credentials
 /config/master.key
+
+# Generated file to force HMR
+src/astro/timestamp.js
