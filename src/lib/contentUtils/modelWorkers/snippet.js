@@ -22,6 +22,7 @@ export const extractSnippetData = async (snippetGlob, languageData) => {
         cover,
         dateModified,
         listed,
+        tocEnabled = true,
       } = snippet;
 
       const language = languageData.get(languageKey);
@@ -41,7 +42,9 @@ export const extractSnippetData = async (snippetGlob, languageData) => {
           .join(' ')
           .toLowerCase()
       );
-      const tableOfContentsHtml = TocReader.readToC(fullDescriptionHtml) || '';
+      const tableOfContentsHtml = tocEnabled
+        ? TocReader.readToC(fullDescriptionHtml) || ''
+        : '';
 
       return {
         id,
