@@ -26,7 +26,7 @@ git config --global alias.cm "commit -m"
 # Creates an alias `cm` for the `commit -m` command
 ```
 
-Alternatively, you can use [edit the configuration file](/git/s/edit-config) and **add multiple aliases** all at once. This can be the more practical solution for adding more **complex commands**, as you don't have to worry about escaping special characters.
+Alternatively, you can [edit the configuration file](/git/s/edit-config) and **add multiple aliases** all at once. This can be the more practical solution for adding more **complex commands**, as you don't have to worry about escaping special characters.
 
 ```shell
 # Syntax: git config --global -e
