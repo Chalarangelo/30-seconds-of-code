@@ -6,6 +6,9 @@ import Footer from '#src/astro/components/Footer.astro';
 import Header from '#src/astro/components/Header.astro';
 import Omnisearch from '#src/astro/components/Omnisearch.astro';
 
+// This is used to create an empty script to force HRM when content regenerates.
+import timestamp from '#src/astro/timestamp.js';
+
 const {
   title,
   description,
@@ -28,6 +31,7 @@ const {
       breadcrumbsData={breadcrumbsData}
       canonical={canonical}
     />
+    <script define:vars={{timestamp}} />
   </head>
   <body>
     <a href='#skip-link-target' data-skip-link>Skip to content</a>
