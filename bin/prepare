@@ -71,7 +71,7 @@ if (args.length === 0 || args[0] === 'help') {
   ContentUtils.prepareAssets({ force });
 } else if (args[0] === 'create') {
   if (process.argv.length < 4) {
-    console.log('Usage: prepare create [directory] [type] [name]');
+    console.log('Usage: prepare create [type] [directory] [name]');
     console.error('Not enough arguments');
     process.exit(1);
   }
