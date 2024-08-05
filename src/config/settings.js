@@ -53,6 +53,7 @@ const settings = {
       redirects: 'public/_redirects',
       sitemap: 'public/sitemap.xml',
       feed: 'public/feed.xml',
+      timestamp: 'src/astro/timestamp.js',
     },
     snippetsGlob: 'content/snippets/**/*.md',
     snippetsPrefix: 'content/snippets/',

@@ -12,6 +12,7 @@ import Sitemap from '#src/lib/sitemap.js';
 import Redirects from '#src/lib/redirects.js';
 import PerformanceTracking from '#src/lib/performanceTracking.js';
 import PreparedQueries from '#src/lib/preparedQueries.js';
+import TimestampDump from '#src/lib/timestampDump.js';
 
 import factories from '#spec/factories/factories.js';
 
@@ -33,6 +34,7 @@ export default class Loader {
       Redirects,
       PerformanceTracking,
       PreparedQueries,
+      TimestampDump,
     };
   }
 

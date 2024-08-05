@@ -32,7 +32,8 @@ if (args.length === 0 || args[0] === 'help') {
   await ContentUtils.prepareContent();
   // 2. Load modules
   const modules = Loader.loadModules();
-  const { AstroContent, SearchIndex, Redirects, Feed, Sitemap } = modules;
+  const { AstroContent, SearchIndex, Redirects, Feed, Sitemap, TimestampDump } =
+    modules;
   // 3. Import the content
   const data = Loader.importData();
   // 4. Generate Astro content
@@ -45,18 +46,22 @@ if (args.length === 0 || args[0] === 'help') {
   Feed.generate();
   // 8. Generate sitemap
   Sitemap.generate();
+  // 9. Generate timestamp dump
+  TimestampDump.generate();
 } else if (args[0] === 'dev') {
   // 1. Run ContentUtils to prepare the .content/content.json file
   await ContentUtils.prepareContent();
   // 2. Load modules
   const modules = Loader.loadModules();
-  const { AstroContent, SearchIndex } = modules;
+  const { AstroContent, SearchIndex, TimestampDump } = modules;
   // 3. Import the content
   const data = Loader.importData();
   // 4. Generate Astro content
   AstroContent.generate();
   // 5. Generate search index
   SearchIndex.generate();
+  // 6. Generate timestamp dump
+  TimestampDump.generate();
 } else if (args[0] === 'watch') {
   ContentUtils.watchContent(() => exec('bin/prepare dev'));
 } else if (args[0] === 'content') {
