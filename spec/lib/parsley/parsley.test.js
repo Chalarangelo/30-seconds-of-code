@@ -3,7 +3,7 @@ import { describe, it, expect, vi } from 'vitest';
 import { config } from 'spec/mocks/parsley/config.js';
 import { Parsley } from '#parsley';
 
-vi.mock('../../parsley/config.js', async importOriginal => {
+vi.mock('../../../src/lib/parsley/config.js', async importOriginal => {
   const original = await importOriginal();
   return {
     ...original,
@@ -11,7 +11,7 @@ vi.mock('../../parsley/config.js', async importOriginal => {
   };
 });
 
-vi.mock('../../parsley/fileHandler.js', async importOriginal => {
+vi.mock('../../../src/lib/parsley/fileHandler.js', async importOriginal => {
   const original = await importOriginal();
   return {
     ...original,

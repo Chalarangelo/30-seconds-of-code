@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { TocReader } from '../../parsley/tocReader.js';
+import { TocReader } from '../../../src/lib/parsley/tocReader.js';
 
 describe('TocReader.readToC', () => {
   it('should read and build a table of contents from HTML', () => {

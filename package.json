@@ -31,7 +31,7 @@
     "vitest": "^2.0.4"
   },
   "imports": {
-    "#parsley": ["./parsley/parsley.js"],
+    "#parsley": ["./src/lib/parsley/parsley.js"],
     "#search": ["./src/lib/search/search.js"],
     "#astro/*": ["./src/astro/*"]
   },
