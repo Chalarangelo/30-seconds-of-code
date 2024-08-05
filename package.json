@@ -45,7 +45,10 @@
     "prebuild": "bin/prepare full",
     "build": "astro build",
     "preview": "astro preview --port 9000",
-    "test": "vitest"
+    "test": "vitest",
+    "create": "bin/prepare create",
+    "console": "bin/console",
+    "watch": "npm run dev & bin/prepare watch"
   },
   "license": "MIT",
   "repository": {
