@@ -1,6 +1,13 @@
 import settings from '../config/settings.js';
 
 export default class StringUtils {
+  static capitalize([first, ...rest], lowerRest = false) {
+    return (
+      first.toUpperCase() +
+      (lowerRest ? rest.join('').toLowerCase() : rest.join(''))
+    );
+  }
+
   static toKebabCase(str) {
     return (
       str &&
@@ -13,12 +20,28 @@ export default class StringUtils {
     );
   }
 
+  static convertToValidId(str) {
+    return StringUtils.toKebabCase(StringUtils.stripHtmlTags(str));
+  }
+
   static convertToSeoSlug(str) {
     return `/${StringUtils.toKebabCase(str)}`;
   }
 
+  static stripMarkdown(str) {
+    return str
+      .replace(/[`*]/g, '')
+      .replace(/\n/g, '')
+      .replace(/\[(.*)\]\(.*\)/g, '$1')
+      .replace(/_(.*?)_/g, '$1');
+  }
+
   static stripHtmlParagraphsAndLinks(str) {
     return str.replace(/<\/?p>/g, '').replace(/<a.*?>(.*?)<\/a>/g, '$1');
+  }
+
+  static stripHtmlTags(str) {
+    return str.replace(/<[^>]*>/g, '');
   }
 
   static stripHtml(str) {

@@ -3,7 +3,7 @@ import { visitParents } from 'unist-util-visit-parents';
 import { toString } from 'hast-util-to-string';
 import Prism from 'prismjs';
 import loadLanguages from 'prismjs/components/index.js';
-import { convertToValidId, capitalize } from '../utils.js';
+import StringUtils from '../../stringUtils.js';
 
 // Highlight code blocks
 export const highlightCode = ({ grammars }) => {
@@ -121,7 +121,7 @@ export const transformHeadings = ({ minLevel, maxLevel }) => {
       if (level < minLevel) node.tagName = `h${minLevel}`;
       else if (level > maxLevel) node.tagName = `h${maxLevel}`;
 
-      const id = convertToValidId(toString(node));
+      const id = StringUtils.convertToValidId(toString(node));
       node.children = [
         {
           type: `element`,
@@ -278,7 +278,7 @@ export const transformAdmonitions = (
       firstChild.children = [
         {
           type: 'text',
-          value: `${typeIcon}  ${capitalize(type.toLowerCase())}`,
+          value: `${typeIcon}  ${StringUtils.capitalize(type.toLowerCase())}`,
         },
       ];
     });
