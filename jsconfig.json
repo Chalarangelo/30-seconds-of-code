@@ -5,7 +5,7 @@
     "baseUrl": ".",
     "paths": {
       "#parsley": ["./parsley/parsley.js"],
-      "#search": ["./search/search.js"],
+      "#search": ["./src/lib/search/search.js"],
       "#components/*" : ["./astro/components/*.astro"],
       "#layouts/*": ["./astro/layouts/*.astro"],
       "#settings": ["./astro/settings.js"]
