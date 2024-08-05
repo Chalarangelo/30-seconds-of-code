@@ -1,5 +1,5 @@
-import Collection from '../models/collection.js';
-import settings from '../config/settings.js';
+import Collection from '#src/models/collection.js';
+import settings from '#src/config/settings.js';
 
 export default class SublinkPresenter {
   constructor(object, options = {}) {

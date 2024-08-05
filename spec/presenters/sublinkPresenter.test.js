@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 import { describe, it, expect } from 'vitest';
-import Loader from '../../src/lib/loader.js';
-import SublinkPresenter from '../../src/presenters/sublinkPresenter.js';
-import settings from '../../src/config/settings.js';
+import Loader from '#src/lib/loader.js';
+import SublinkPresenter from '#src/presenters/sublinkPresenter.js';
+import settings from '#src/config/settings.js';
 
 describe('SublinkPresenter', () => {
   Loader.loadModules();

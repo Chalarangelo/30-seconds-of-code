@@ -1,4 +1,4 @@
-import RecordSet from './recordSet.js';
+import RecordSet from '#src/core/recordSet.js';
 
 export default class Model {
   static instances = {};

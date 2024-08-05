@@ -1,8 +1,8 @@
 import fs from 'fs-extra/esm';
-import Page from '../adapters/page.js';
-import Collection from '../models/collection.js';
-import Snippet from '../models/snippet.js';
-import settings from '../config/settings.js';
+import Page from '#src/adapters/page.js';
+import Collection from '#src/models/collection.js';
+import Snippet from '#src/models/snippet.js';
+import settings from '#src/config/settings.js';
 
 export default class AstroContent {
   static get outputParams() {

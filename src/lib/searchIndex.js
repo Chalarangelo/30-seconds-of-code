@@ -1,7 +1,7 @@
 import fs from 'fs-extra/esm';
-import Collection from '../models/collection.js';
-import Snippet from '../models/snippet.js';
-import SearchResultSerializer from '../serializers/searchResultSerializer.js';
+import Collection from '#src/models/collection.js';
+import Snippet from '#src/models/snippet.js';
+import SearchResultSerializer from '#src/serializers/searchResultSerializer.js';
 
 export default class SearchIndex {
   static generate() {

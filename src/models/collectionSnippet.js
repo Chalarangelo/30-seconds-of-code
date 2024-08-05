@@ -1,6 +1,6 @@
-import Model from '../core/model.js';
-import Snippet from './snippet.js';
-import Collection from './collection.js';
+import Model from '#src/core/model.js';
+import Snippet from '#src/models/snippet.js';
+import Collection from '#src/models/collection.js';
 
 export default class CollectionSnippet extends Model {
   static {

@@ -1,6 +1,6 @@
 import fs from 'fs';
-import Redirects from './redirects.js';
-import settings from '../config/settings.js';
+import Redirects from '#src/lib/redirects.js';
+import settings from '#src/config/settings.js';
 
 export default class PerforanceTracking {
   static {

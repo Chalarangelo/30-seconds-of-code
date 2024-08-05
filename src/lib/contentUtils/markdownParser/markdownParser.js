@@ -13,10 +13,10 @@ import {
   transfomImagePaths,
   wrapTables,
   embedCodepensFromLinks,
-} from './remarkPlugins.js';
-import { assetPath } from '../config.js';
+} from '#src/lib/contentUtils/markdownParser/remarkPlugins.js';
+import { assetPath } from '#src/lib/contentUtils/config.js';
 
-export class MarkdownParser {
+export default class MarkdownParser {
   static _languageData = new Map();
   static _processors = new Map();
 

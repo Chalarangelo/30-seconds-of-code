@@ -1,7 +1,7 @@
-import Collection from './collection.js';
-import CollectionSnippet from './collectionSnippet.js';
-import Language from './language.js';
-import Snippet from './snippet.js';
+import Collection from '#src/models/collection.js';
+import CollectionSnippet from '#src/models/collectionSnippet.js';
+import Language from '#src/models/language.js';
+import Snippet from '#src/models/snippet.js';
 
 export default {
   Collection,

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import repl from 'node:repl';
-import Loader from '../lib/loader.js';
+import Loader from '#src/lib/loader.js';
 
 const modules = Loader.loadModules();
 const data = Loader.importData();

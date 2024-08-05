@@ -1,4 +1,4 @@
-import { FileHandler } from '../fileHandler.js';
+import FileHandler from '#src/lib/contentUtils/fileHandler.js';
 
 export const extractLanguageData = async languageGlob => {
   const languageData = await FileHandler.read(languageGlob);

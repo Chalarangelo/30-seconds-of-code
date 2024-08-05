@@ -4,11 +4,11 @@ import '../styles/pages/index.scss';
 import fs from 'node:fs';
 import path from 'node:path';
 
-import Layout from '#astro/layouts/Layout.astro';
-import Hero from '#astro/components/Hero.astro';
-import PreviewList from '#astro/components/PreviewList.astro';
-import Chips from '#astro/components/Chips.astro';
-import Icon from '#astro/components/Icon.astro';
+import Layout from '#src/astro/layouts/Layout.astro';
+import Hero from '#src/astro/components/Hero.astro';
+import PreviewList from '#src/astro/components/PreviewList.astro';
+import Chips from '#src/astro/components/Chips.astro';
+import Icon from '#src/astro/components/Icon.astro';
 
 const pagePath = path.join(process.cwd(), '.content', 'pages', 'index.json');
 const pageData = JSON.parse(fs.readFileSync(pagePath, 'utf8'));

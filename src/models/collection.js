@@ -1,10 +1,10 @@
-import Model from '../core/model.js';
-import ContentModel from './contentModel.js';
-import CollectionSnippet from './collectionSnippet.js';
-import Snippet from './snippet.js';
-import Page from '../adapters/page.js';
-import SublinkPresenter from '../presenters/sublinkPresenter.js';
-import settings from '../config/settings.js';
+import Model from '#src/core/model.js';
+import ContentModel from '#src/models/contentModel.js';
+import CollectionSnippet from '#src/models/collectionSnippet.js';
+import Snippet from '#src/models/snippet.js';
+import Page from '#src/adapters/page.js';
+import SublinkPresenter from '#src/presenters/sublinkPresenter.js';
+import settings from '#src/config/settings.js';
 
 export default class Collection extends ContentModel {
   static {

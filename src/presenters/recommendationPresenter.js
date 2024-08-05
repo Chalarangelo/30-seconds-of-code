@@ -1,5 +1,5 @@
-import Snippet from '../models/snippet.js';
-import settings from '../config/settings.js';
+import Snippet from '#src/models/snippet.js';
+import settings from '#src/config/settings.js';
 
 export default class RecommendationPresenter {
   static candidates = null;

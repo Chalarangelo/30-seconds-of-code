@@ -1,5 +1,5 @@
-import Page from '../page.js';
-import settings from '../../config/settings.js';
+import Page from '#src/adapters/page.js';
+import settings from '#src/config/settings.js';
 
 export default class SnippetPage extends Page {
   static {

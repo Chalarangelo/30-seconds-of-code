@@ -36,7 +36,7 @@ const getMode = (filePath, mode) => {
   return ext === 'yml' ? 'yaml' : ext;
 };
 
-export class FileHandler {
+export default class FileHandler {
   static read = (globPattern, mode) => {
     mode = getMode(globPattern, mode);
     const files = globSync(globPattern);

@@ -1,8 +1,8 @@
-import Page from '../page.js';
-import Collection from '../../models/collection.js';
-import Snippet from '../../models/snippet.js';
-import CoverPresenter from '../../presenters/coverPresenter.js';
-import settings from '../../config/settings.js';
+import Page from '#src/adapters/page.js';
+import Collection from '#src/models/collection.js';
+import Snippet from '#src/models/snippet.js';
+import CoverPresenter from '#src/presenters/coverPresenter.js';
+import settings from '#src/config/settings.js';
 
 export default class HomePage extends Page {
   static {

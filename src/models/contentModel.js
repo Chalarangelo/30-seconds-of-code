@@ -1,9 +1,9 @@
-import Model from '../core/model.js';
-import CoverPresenter from '../presenters/coverPresenter.js';
-import serializers from '../serializers/serializers.js';
-import StringUtils from '../lib/stringUtils.js';
-import Redirects from '../lib/redirects.js';
-import settings from '../config/settings.js';
+import Model from '#src/core/model.js';
+import CoverPresenter from '#src/presenters/coverPresenter.js';
+import serializers from '#src/serializers/serializers.js';
+import StringUtils from '#src/lib/stringUtils.js';
+import Redirects from '#src/lib/redirects.js';
+import settings from '#src/config/settings.js';
 
 export default class ContentModel extends Model {
   static {

@@ -1,6 +1,6 @@
 import path from 'node:path';
 import fs from 'node:fs';
-import { contentDir } from './config.js';
+import { contentDir } from '#src/lib/contentUtils/config.js';
 
 const collectionTemplate = path.join(contentDir, 'collection-template.yaml');
 const snippetTemplateFile = 'snippet-template.md';
@@ -24,7 +24,7 @@ const templateProcessors = {
   },
 };
 
-export class ContentCreator {
+export default class ContentCreator {
   static create = (type, directoryName, name) => {
     const isCollection = type === 'collection';
 

@@ -4,11 +4,11 @@ import '../../../styles/pages/snippet.scss';
 import { promises as fs } from 'fs';
 import path from 'path';
 
-import Layout from '#astro/layouts/Layout.astro';
-import Breadcrumb from '#astro/components/Breadcrumb.astro';
-import SnippetContent from '#astro/components/SnippetContent.astro';
-import TableOfContents from '#astro/components/TableOfContents.astro';
-import PreviewList from '#astro/components/PreviewList.astro';
+import Layout from '#src/astro/layouts/Layout.astro';
+import Breadcrumb from '#src/astro/components/Breadcrumb.astro';
+import SnippetContent from '#src/astro/components/SnippetContent.astro';
+import TableOfContents from '#src/astro/components/TableOfContents.astro';
+import PreviewList from '#src/astro/components/PreviewList.astro';
 
 export async function getStaticPaths() {
   const pagePath = path.join(

@@ -1,4 +1,4 @@
-import settings from '../config/settings.js';
+import settings from '#src/config/settings.js';
 
 export default class BreadcrumbPresenter {
   constructor(object, options = {}) {

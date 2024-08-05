@@ -1,4 +1,4 @@
-import { quickParseTokens as tokenize } from '#search';
+import { quickParseTokens as tokenize } from '#src/lib/search/search.js';
 
 const omnisearch = {
   openTrigger: document.querySelector('[data-open-modal="omnisearch"]'),

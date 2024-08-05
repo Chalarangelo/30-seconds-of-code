@@ -4,8 +4,8 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "#search": ["./src/lib/search/search.js"],
-      "#astro/*": ["./src/astro/*"]
+      "#src/*": ["./src/*"],
+      "#spec/*": ["./spec/*"]
     }
   },
   "exclude": ["node_modules"]

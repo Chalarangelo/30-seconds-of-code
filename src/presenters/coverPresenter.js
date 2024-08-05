@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import settings from '../config/settings.js';
+import settings from '#src/config/settings.js';
 
 export default class CoverPresenter {
   constructor(object, options = {}) {

@@ -1,4 +1,4 @@
-import PageSerializer from '../serializers/pageSerializer.js';
+import PageSerializer from '#src/serializers/pageSerializer.js';
 
 export default class Page {
   static pageTypes = {};

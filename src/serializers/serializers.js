@@ -1,8 +1,8 @@
-import CollectionContextSerializer from './collectionContextSerializer.js';
-import PageSerializer from './pageSerializer.js';
-import PreviewSerializer from './previewSerializer.js';
-import SearchResultSerializer from './searchResultSerializer.js';
-import SnippetContextSerializer from './snippetContextSerializer.js';
+import CollectionContextSerializer from '#src/serializers/collectionContextSerializer.js';
+import PageSerializer from '#src/serializers/pageSerializer.js';
+import PreviewSerializer from '#src/serializers/previewSerializer.js';
+import SearchResultSerializer from '#src/serializers/searchResultSerializer.js';
+import SnippetContextSerializer from '#src/serializers/snippetContextSerializer.js';
 
 export default {
   CollectionContextSerializer,

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import ContentUtils from '../src/lib/contentUtils/contentUtils.js';
-import Loader from '../src/lib/loader.js';
+import ContentUtils from '#src/lib/contentUtils/contentUtils.js';
+import Loader from '#src/lib/loader.js';
 
 const args = process.argv.slice(2);
 

@@ -1,6 +1,6 @@
 import fs from 'fs';
 import yaml from 'js-yaml';
-import settings from '../config/settings.js';
+import settings from '#src/config/settings.js';
 
 export default class Redirects {
   static {

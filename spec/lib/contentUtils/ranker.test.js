@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { Ranker } from '../../../src/lib/contentUtils/ranker.js';
+import Ranker from '#src/lib/contentUtils/ranker.js';
 
 describe('Ranker.rankIndexableContent', () => {
   Ranker.keywordScores = {

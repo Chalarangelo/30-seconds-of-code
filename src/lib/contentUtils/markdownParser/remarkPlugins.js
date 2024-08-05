@@ -3,7 +3,7 @@ import { visitParents } from 'unist-util-visit-parents';
 import { toString } from 'hast-util-to-string';
 import Prism from 'prismjs';
 import loadLanguages from 'prismjs/components/index.js';
-import StringUtils from '../../stringUtils.js';
+import StringUtils from '#src/lib/stringUtils.js';
 
 // Highlight code blocks
 export const highlightCode = ({ grammars }) => {

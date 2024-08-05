@@ -1,6 +1,6 @@
-import { MarkdownParser } from './markdownParser/markdownParser.js';
-import { Ranker } from './ranker.js';
-import { FileHandler } from './fileHandler.js';
+import MarkdownParser from '#src/lib/contentUtils/markdownParser/markdownParser.js';
+import Ranker from '#src/lib/contentUtils/ranker.js';
+import FileHandler from '#src/lib/contentUtils/fileHandler.js';
 import {
   grammarPath,
   rankingEnginePath,
@@ -8,11 +8,11 @@ import {
   languageGlob,
   snippetGlob,
   collectionGlob,
-} from './config.js';
-import { extractLanguageData } from './modelWorkers/language.js';
-import { extractSnippetData } from './modelWorkers/snippet.js';
-import { extractCollectionData } from './modelWorkers/collection.js';
-import { extractCollectionSnippetData } from './modelWorkers/collectionSnippet.js';
+} from '#src/lib/contentUtils/config.js';
+import { extractLanguageData } from '#src/lib/contentUtils/modelWorkers/language.js';
+import { extractSnippetData } from '#src/lib/contentUtils/modelWorkers/snippet.js';
+import { extractCollectionData } from '#src/lib/contentUtils/modelWorkers/collection.js';
+import { extractCollectionSnippetData } from '#src/lib/contentUtils/modelWorkers/collectionSnippet.js';
 
 export const extractData = async () => {
   const languages = await extractLanguageData(languageGlob);

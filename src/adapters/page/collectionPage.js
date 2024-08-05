@@ -1,4 +1,4 @@
-import Page from '../page.js';
+import Page from '#src/adapters/page.js';
 
 export default class CollectionPage extends Page {
   static {

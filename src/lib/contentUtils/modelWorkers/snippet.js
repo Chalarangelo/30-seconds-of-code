@@ -1,10 +1,10 @@
-import { snippetPrefix } from '../config.js';
-import { FileHandler } from '../fileHandler.js';
-import { MarkdownParser } from '../markdownParser/markdownParser.js';
-import tokenize from '#search';
-import { Ranker } from '../ranker.js';
-import { TocReader } from '../tocReader.js';
-import StringUtils from '../../stringUtils.js';
+import { snippetPrefix } from '#src/lib/contentUtils/config.js';
+import FileHandler from '#src/lib/contentUtils/fileHandler.js';
+import MarkdownParser from '#src/lib/contentUtils/markdownParser/markdownParser.js';
+import tokenize from '#src/lib/search/search.js';
+import Ranker from '#src/lib/contentUtils/ranker.js';
+import TocReader from '#src/lib/contentUtils/tocReader.js';
+import StringUtils from '#src/lib/stringUtils.js';
 
 export const extractSnippetData = async (snippetGlob, languageData) => {
   const snipppetData = await FileHandler.read(snippetGlob);

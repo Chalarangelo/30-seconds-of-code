@@ -1,5 +1,5 @@
-import Model from '../core/model.js';
-import Snippet from './snippet.js';
+import Model from '#src/core/model.js';
+import Snippet from '#src/models/snippet.js';
 
 export default class Language extends Model {
   static {

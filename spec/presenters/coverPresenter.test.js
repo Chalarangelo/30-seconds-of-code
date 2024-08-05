@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import Loader from '../../src/lib/loader.js';
-import CoverPresenter from '../../src/presenters/coverPresenter.js';
+import Loader from '#src/lib/loader.js';
+import CoverPresenter from '#src/presenters/coverPresenter.js';
 
 describe('CoverPresenter', () => {
   Loader.loadModules();

@@ -1,7 +1,7 @@
 /**
  * Utility for ranking snippets.
  */
-export class Ranker {
+export default class Ranker {
   static rankerSettings = {
     keywordScoreLimit: 100,
     keywordCountLimit: 20,

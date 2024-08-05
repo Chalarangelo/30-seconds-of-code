@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { describe, it, expect } from 'vitest';
-import Serializer from '../../src/core/serializer.js';
+import Serializer from '#src/core/serializer.js';
 
 describe('Serializer', () => {
   class User {

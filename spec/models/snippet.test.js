@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { describe, it, expect } from 'vitest';
-import Loader from '../../src/lib/loader.js';
+import Loader from '#src/lib/loader.js';
 
 describe('Snippet', () => {
   Loader.loadModules();

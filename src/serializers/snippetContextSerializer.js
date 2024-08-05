@@ -1,4 +1,4 @@
-import Serializer from '../core/serializer.js';
+import Serializer from '#src/core/serializer.js';
 
 export default class SnippetContextSerializer extends Serializer {
   static {

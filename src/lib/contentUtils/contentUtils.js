@@ -1,13 +1,13 @@
 /* eslint-disable camelcase */
-import { exportLanguageData } from './modelWorkers/language.js';
-import { exportSnippetData } from './modelWorkers/snippet.js';
-import { exportCollectionData } from './modelWorkers/collection.js';
-import { exportCollectionSnippetData } from './modelWorkers/collectionSnippet.js';
-import { extractData } from './extractor.js';
-import { FileHandler } from './fileHandler.js';
-import { AssetHandler } from './assetHandler.js';
-import { ContentCreator } from './contentCreator.js';
-import { outputPath } from './config.js';
+import { exportLanguageData } from '#src/lib/contentUtils/modelWorkers/language.js';
+import { exportSnippetData } from '#src/lib/contentUtils/modelWorkers/snippet.js';
+import { exportCollectionData } from '#src/lib/contentUtils/modelWorkers/collection.js';
+import { exportCollectionSnippetData } from '#src/lib/contentUtils/modelWorkers/collectionSnippet.js';
+import { extractData } from '#src/lib/contentUtils/extractor.js';
+import FileHandler from '#src/lib/contentUtils/fileHandler.js';
+import AssetHandler from '#src/lib/contentUtils/assetHandler.js';
+import ContentCreator from '#src/lib/contentUtils/contentCreator.js';
+import { outputPath } from '#src/lib/contentUtils/config.js';
 
 export default class ContentUtils {
   static async prepareContent() {

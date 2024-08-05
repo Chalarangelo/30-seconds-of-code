@@ -1,7 +1,7 @@
 /**
  * Reads and builds a table of contents from HTML.
  */
-export class TocReader {
+export default class TocReader {
   static matcher =
     /<h(?<level>[2-4])><a.*id="(?<href>.*?)"[^<]*>(?<content>.*?)<\/a><\/h\1>/g;
 

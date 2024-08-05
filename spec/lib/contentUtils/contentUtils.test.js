@@ -1,9 +1,9 @@
 /* eslint-disable camelcase */
 import { describe, it, expect, vi } from 'vitest';
-import { config } from 'spec/mocks/lib/contentUtils/config.js';
-import ContentUtils from '../../../src/lib/contentUtils/contentUtils.js';
+import { config } from '#spec/mocks/lib/contentUtils/config.js';
+import ContentUtils from '#src/lib/contentUtils/contentUtils.js';
 
-vi.mock('../../../src/lib/contentUtils/config.js', async importOriginal => {
+vi.mock('#src/lib/contentUtils/config.js', async importOriginal => {
   const original = await importOriginal();
   return {
     ...original,
@@ -11,19 +11,16 @@ vi.mock('../../../src/lib/contentUtils/config.js', async importOriginal => {
   };
 });
 
-vi.mock(
-  '../../../src/lib/contentUtils/fileHandler.js',
-  async importOriginal => {
-    const original = await importOriginal();
-    return {
-      ...original,
-      FileHandler: {
-        ...original.FileHandler,
-        write: (filePath, data, mode) => ({ filePath, data, mode }),
-      },
-    };
-  }
-);
+vi.mock('#src/lib/contentUtils/fileHandler.js', async importOriginal => {
+  const original = await importOriginal();
+
+  return {
+    default: {
+      ...original.default,
+      write: (filePath, data, mode) => ({ filePath, data, mode }),
+    },
+  };
+});
 
 describe('ContentUtils.prepareContent', async () => {
   const result = await ContentUtils.prepareContent();

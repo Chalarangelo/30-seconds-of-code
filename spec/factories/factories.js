@@ -1,7 +1,7 @@
-import CollectionFactory from './collectionFactory.js';
-import CollectionSnippetFactory from './collectionSnippetFactory.js';
-import LanguageFactory from './languageFactory.js';
-import SnippetFactory from './snippetFactory.js';
+import CollectionFactory from '#spec/factories/collectionFactory.js';
+import CollectionSnippetFactory from '#spec/factories/collectionSnippetFactory.js';
+import LanguageFactory from '#spec/factories/languageFactory.js';
+import SnippetFactory from '#spec/factories/snippetFactory.js';
 
 export default {
   CollectionFactory,

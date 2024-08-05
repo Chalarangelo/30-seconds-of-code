@@ -31,8 +31,8 @@
     "vitest": "^2.0.4"
   },
   "imports": {
-    "#search": ["./src/lib/search/search.js"],
-    "#astro/*": ["./src/astro/*"]
+    "#src/*": ["./src/*"],
+    "#spec/*": ["./spec/*"]
   },
   "scripts": {
     "predev": "bin/prepare dev",

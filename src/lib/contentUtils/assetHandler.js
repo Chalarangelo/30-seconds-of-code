@@ -3,7 +3,11 @@ import path from 'node:path';
 import sharp from 'sharp';
 import { globSync } from 'glob';
 
-import { contentDir, assetPath, publicPath } from './config.js';
+import {
+  contentDir,
+  assetPath,
+  publicPath,
+} from '#src/lib/contentUtils/config.js';
 
 const supportedDirectories = ['splash', 'cover'].join('|');
 export const supportedExtensions = [
@@ -38,7 +42,7 @@ const dimensions = {
 
 const staticDirectories = ['icons', 'illustrations'];
 
-export class AssetHandler {
+export default class AssetHandler {
   static async processAssets({ force = false }) {
     const convertedAssets = [
       ...new Set(

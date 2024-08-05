@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { describe, it, expect } from 'vitest';
-import Loader from '../../src/lib/loader.js';
-import RecommendationPresenter from '../../src/presenters/recommendationPresenter.js';
+import Loader from '#src/lib/loader.js';
+import RecommendationPresenter from '#src/presenters/recommendationPresenter.js';
 
 describe('RecommendationPresenter', () => {
   Loader.loadModules();

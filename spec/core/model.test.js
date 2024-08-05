@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { describe, it, expect } from 'vitest';
-import Model from '../../src/core/model.js';
+import Model from '#src/core/model.js';
 
 describe('Serializer', () => {
   class User extends Model {

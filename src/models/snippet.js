@@ -1,13 +1,13 @@
-import Model from '../core/model.js';
-import ContentModel from './contentModel.js';
-import Language from './language.js';
-import CollectionSnippet from './collectionSnippet.js';
-import Collection from './collection.js';
-import BreadcrumbPresenter from '../presenters/breadcrumbPresenter.js';
-import RecommendationPresenter from '../presenters/recommendationPresenter.js';
-import Page from '../adapters/page.js';
-import StringUtils from '../lib/stringUtils.js';
-import settings from '../config/settings.js';
+import Model from '#src/core/model.js';
+import ContentModel from '#src/models/contentModel.js';
+import Language from '#src/models/language.js';
+import CollectionSnippet from '#src/models/collectionSnippet.js';
+import Collection from '#src/models/collection.js';
+import BreadcrumbPresenter from '#src/presenters/breadcrumbPresenter.js';
+import RecommendationPresenter from '#src/presenters/recommendationPresenter.js';
+import Page from '#src/adapters/page.js';
+import StringUtils from '#src/lib/stringUtils.js';
+import settings from '#src/config/settings.js';
 
 export default class Snippet extends ContentModel {
   static {

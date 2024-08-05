@@ -1,21 +1,21 @@
 import fs from 'fs';
 
-import models from '../models/models.js';
-import serializers from '../serializers/serializers.js';
-import pages from '../adapters/page/page.js';
-import Model from '../core/model.js';
-import SearchIndex from './searchIndex.js';
-import Page from '../adapters/page.js';
-import AstroContent from './astroContent.js';
-import Feed from './feed.js';
-import Sitemap from './sitemap.js';
-import Redirects from './redirects.js';
-import PerformanceTracking from './performanceTracking.js';
-import PreparedQueries from './preparedQueries.js';
+import models from '#src/models/models.js';
+import serializers from '#src/serializers/serializers.js';
+import pages from '#src/adapters/page/page.js';
+import Model from '#src/core/model.js';
+import SearchIndex from '#src/lib/searchIndex.js';
+import Page from '#src/adapters/page.js';
+import AstroContent from '#src/lib/astroContent.js';
+import Feed from '#src/lib/feed.js';
+import Sitemap from '#src/lib/sitemap.js';
+import Redirects from '#src/lib/redirects.js';
+import PerformanceTracking from '#src/lib/performanceTracking.js';
+import PreparedQueries from '#src/lib/preparedQueries.js';
 
-import factories from '../../spec/factories/factories.js';
+import factories from '#spec/factories/factories.js';
 
-import settings from '../config/settings.js';
+import settings from '#src/config/settings.js';
 
 export default class Loader {
   static loadModules() {

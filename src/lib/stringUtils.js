@@ -1,4 +1,4 @@
-import settings from '../config/settings.js';
+import settings from '#src/config/settings.js';
 
 export default class StringUtils {
   static capitalize([first, ...rest], lowerRest = false) {

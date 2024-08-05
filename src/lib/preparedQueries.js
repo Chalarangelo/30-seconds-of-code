@@ -1,11 +1,11 @@
 import { globSync } from 'glob';
 import yaml from 'js-yaml';
 import fs from 'fs';
-import CoverPresenter from '../presenters/coverPresenter.js';
-import Collection from '../models/collection.js';
-import Snippet from '../models/snippet.js';
-import PerforanceTracking from './performanceTracking.js';
-import settings from '../config/settings.js';
+import CoverPresenter from '#src/presenters/coverPresenter.js';
+import Collection from '#src/models/collection.js';
+import Snippet from '#src/models/snippet.js';
+import PerforanceTracking from '#src/lib/performanceTracking.js';
+import settings from '#src/config/settings.js';
 
 export default class PreparedQueries {
   static snippetPerformance(slug) {
