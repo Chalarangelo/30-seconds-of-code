@@ -33,7 +33,7 @@
   "imports": {
     "#parsley": ["./parsley/parsley.js"],
     "#search": ["./src/lib/search/search.js"],
-    "#astro/*": ["./astro/*"]
+    "#astro/*": ["./src/astro/*"]
   },
   "scripts": {
     "predev": "bin/prepare --dev",

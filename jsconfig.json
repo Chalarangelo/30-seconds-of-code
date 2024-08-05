@@ -6,7 +6,7 @@
     "paths": {
       "#parsley": ["./parsley/parsley.js"],
       "#search": ["./src/lib/search/search.js"],
-      "#astro/*": ["./astro/*"]
+      "#astro/*": ["./src/astro/*"]
     }
   },
   "exclude": ["node_modules"]
