@@ -6,8 +6,8 @@ import Collection from './collection.js';
 import BreadcrumbPresenter from '../presenters/breadcrumbPresenter.js';
 import RecommendationPresenter from '../presenters/recommendationPresenter.js';
 import Page from '../adapters/page.js';
-import StringUtils from '../../lib/stringUtils.js';
-import settings from '../../config/settings.js';
+import StringUtils from '../lib/stringUtils.js';
+import settings from '../config/settings.js';
 
 export default class Snippet extends ContentModel {
   static {

@@ -2,7 +2,7 @@ import Page from '../page.js';
 import Collection from '../../models/collection.js';
 import Snippet from '../../models/snippet.js';
 import CoverPresenter from '../../presenters/coverPresenter.js';
-import settings from '../../../config/settings.js';
+import settings from '../../config/settings.js';
 
 export default class HomePage extends Page {
   static {

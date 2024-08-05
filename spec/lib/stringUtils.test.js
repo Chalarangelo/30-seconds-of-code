@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import StringUtils from '../../lib/stringUtils.js';
+import StringUtils from '../../src/lib/stringUtils.js';
 
 describe('StringUtils', () => {
   describe('toKebabCase', () => {

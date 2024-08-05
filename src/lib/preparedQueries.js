@@ -1,9 +1,9 @@
 import { globSync } from 'glob';
 import yaml from 'js-yaml';
 import fs from 'fs';
-import CoverPresenter from '../app/presenters/coverPresenter.js';
-import Collection from '../app/models/collection.js';
-import Snippet from '../app/models/snippet.js';
+import CoverPresenter from '../presenters/coverPresenter.js';
+import Collection from '../models/collection.js';
+import Snippet from '../models/snippet.js';
 import PerforanceTracking from './performanceTracking.js';
 import settings from '../config/settings.js';
 

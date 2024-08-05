@@ -1,6 +1,6 @@
 import fs from 'fs';
-import Snippet from '../app/models/snippet.js';
-import Collection from '../app/models/collection.js';
+import Snippet from '../models/snippet.js';
+import Collection from '../models/collection.js';
 import settings from '../config/settings.js';
 
 export default class Sitemap {

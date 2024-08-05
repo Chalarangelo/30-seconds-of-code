@@ -1,5 +1,5 @@
 import Serializer from '../core/serializer.js';
-import settings from '../../config/settings.js';
+import settings from '../config/settings.js';
 
 export default class PreviewSerializer extends Serializer {
   static {

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { Parsley } from '#parsley';
-import Loader from '../lib/loader.js';
+import Loader from '../src/lib/loader.js';
 
 const args = process.argv.slice(2);
 

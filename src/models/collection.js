@@ -4,7 +4,7 @@ import CollectionSnippet from './collectionSnippet.js';
 import Snippet from './snippet.js';
 import Page from '../adapters/page.js';
 import SublinkPresenter from '../presenters/sublinkPresenter.js';
-import settings from '../../config/settings.js';
+import settings from '../config/settings.js';
 
 export default class Collection extends ContentModel {
   static {

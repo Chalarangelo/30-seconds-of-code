@@ -1,5 +1,5 @@
 import fs from 'fs';
-import Snippet from '../app/models/snippet.js';
+import Snippet from '../models/snippet.js';
 import StringUtils from './stringUtils.js';
 import settings from '../config/settings.js';
 
