@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { exec } from 'child_process';
 import ContentUtils from '#src/lib/contentUtils/contentUtils.js';
 import Loader from '#src/lib/loader.js';
 
@@ -14,6 +15,7 @@ if (args.length === 0 || args[0] === 'help') {
     '  dev     - Prepare content and generate Astro content and search index'
   );
   console.log('  content - Prepare content');
+  console.log('  watch   - Watch content and prepare content on change');
   console.log('  assets  - Prepare assets');
   console.log('    --force, -f - Force assets preparation');
   console.log('  create [type] [directory] [name]  - Create new content');
@@ -55,6 +57,8 @@ if (args.length === 0 || args[0] === 'help') {
   AstroContent.generate();
   // 5. Generate search index
   SearchIndex.generate();
+} else if (args[0] === 'watch') {
+  ContentUtils.watchContent(() => exec('bin/prepare dev'));
 } else if (args[0] === 'content') {
   ContentUtils.prepareContent();
 } else if (args[0] === 'assets') {
