@@ -7,6 +7,7 @@ tags: [github,programming,webdev]
 cover: book-chair
 excerpt: Learn how to add multiple authors to a git commit with this quick and easy tip.
 listed: true
+tocEnabled: false
 dateModified: 2021-06-12
 ---
 
