@@ -9,7 +9,7 @@ import { AssetHandler } from './assetHandler.js';
 import { ContentCreator } from './contentCreator.js';
 import { outputPath } from './config.js';
 
-export class Parsley {
+export default class ContentUtils {
   static async prepareContent() {
     const { collections, snippets, languages, collectionSnippets } =
       await extractData();

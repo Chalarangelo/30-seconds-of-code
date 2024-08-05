@@ -1,9 +1,9 @@
 /* eslint-disable camelcase */
 import { describe, it, expect, vi } from 'vitest';
-import { config } from 'spec/mocks/parsley/config.js';
-import { Parsley } from '#parsley';
+import { config } from 'spec/mocks/lib/contentUtils/config.js';
+import ContentUtils from '../../../src/lib/contentUtils/contentUtils.js';
 
-vi.mock('../../../src/lib/parsley/config.js', async importOriginal => {
+vi.mock('../../../src/lib/contentUtils/config.js', async importOriginal => {
   const original = await importOriginal();
   return {
     ...original,
@@ -11,19 +11,22 @@ vi.mock('../../../src/lib/parsley/config.js', async importOriginal => {
   };
 });
 
-vi.mock('../../../src/lib/parsley/fileHandler.js', async importOriginal => {
-  const original = await importOriginal();
-  return {
-    ...original,
-    FileHandler: {
-      ...original.FileHandler,
-      write: (filePath, data, mode) => ({ filePath, data, mode }),
-    },
-  };
-});
+vi.mock(
+  '../../../src/lib/contentUtils/fileHandler.js',
+  async importOriginal => {
+    const original = await importOriginal();
+    return {
+      ...original,
+      FileHandler: {
+        ...original.FileHandler,
+        write: (filePath, data, mode) => ({ filePath, data, mode }),
+      },
+    };
+  }
+);
 
-describe('Parsley.prepareContent', async () => {
-  const result = await Parsley.prepareContent();
+describe('ContentUtils.prepareContent', async () => {
+  const result = await ContentUtils.prepareContent();
 
   it('should output content to the correct path', () => {
     expect(result.filePath).toEqual(config.outputPath);

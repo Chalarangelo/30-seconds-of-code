@@ -4,7 +4,6 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "#parsley": ["./src/lib/parsley/parsley.js"],
       "#search": ["./src/lib/search/search.js"],
       "#astro/*": ["./src/astro/*"]
     }

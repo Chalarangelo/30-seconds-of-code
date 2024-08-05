@@ -1,24 +1,33 @@
 #!/usr/bin/env node
-import { Parsley } from '#parsley';
+import ContentUtils from '../src/lib/contentUtils/contentUtils.js';
 import Loader from '../src/lib/loader.js';
 
 const args = process.argv.slice(2);
 
 if (args.length === 0 || args[0] === 'help') {
-  console.log('Usage: prepare [options]');
-  console.log('Options:');
+  console.log('Usage: prepare [command] [options]\n');
+  console.log('Commands:');
   console.log(
-    '  --full, -f  Prepare all assets, content, and generate all files'
+    '  full    - Prepare all assets, content, and generate all files'
   );
   console.log(
-    '  --dev, -d   Prepare content and generate Astro content and search index'
+    '  dev     - Prepare content and generate Astro content and search index'
   );
-  console.log('coming soon');
-} else if (args[0] === '--full' || args[0] === '-f') {
-  // 0. Run Parsley to prepare the assets
-  await Parsley.prepareAssets({ force: false });
-  // 1. Run Parsley to prepare the .content/content.json file
-  await Parsley.prepareContent();
+  console.log('  content - Prepare content');
+  console.log('  assets  - Prepare assets');
+  console.log('    --force, -f - Force assets preparation');
+  console.log('  create [type] [directory] [name]  - Create new content');
+  console.log(
+    '    [type]      - Type of content to create (snippet or collection)'
+  );
+  console.log('    [directory] - Directory to create content in');
+  console.log('    [name]      - Name of content to create');
+  console.log('  help    - Show this help');
+} else if (args[0] === 'full') {
+  // 0. Run ContentUtils to prepare the assets
+  await ContentUtils.prepareAssets({ force: false });
+  // 1. Run ContentUtils to prepare the .content/content.json file
+  await ContentUtils.prepareContent();
   // 2. Load modules
   const modules = Loader.loadModules();
   const { AstroContent, SearchIndex, Redirects, Feed, Sitemap } = modules;
@@ -34,9 +43,9 @@ if (args.length === 0 || args[0] === 'help') {
   Feed.generate();
   // 8. Generate sitemap
   Sitemap.generate();
-} else if (args[0] === '--dev' || args[0] === '-d') {
-  // 1. Run Parsley to prepare the .content/content.json file
-  await Parsley.prepareContent();
+} else if (args[0] === 'dev') {
+  // 1. Run ContentUtils to prepare the .content/content.json file
+  await ContentUtils.prepareContent();
   // 2. Load modules
   const modules = Loader.loadModules();
   const { AstroContent, SearchIndex } = modules;
@@ -46,4 +55,20 @@ if (args.length === 0 || args[0] === 'help') {
   AstroContent.generate();
   // 5. Generate search index
   SearchIndex.generate();
+} else if (args[0] === 'content') {
+  ContentUtils.prepareContent();
+} else if (args[0] === 'assets') {
+  const force = args[1] === '--force' || args[1] === '-f';
+  ContentUtils.prepareAssets({ force });
+} else if (args[0] === 'create') {
+  if (process.argv.length < 4) {
+    console.log('Usage: prepare create [directory] [type] [name]');
+    console.error('Not enough arguments');
+    process.exit(1);
+  }
+
+  ContentUtils.createContent(args[1], args[2], args[3]);
+} else {
+  console.log('Invalid command');
+  process.exit(1);
 }

@@ -5,7 +5,7 @@ import {
   stripHTMLTags,
   toKebabCase,
   convertToValidId,
-} from '../../../src/lib/parsley/utils.js';
+} from '../../../src/lib/contentUtils/utils.js';
 
 describe('capitalize', () => {
   it('should capitalize the first letter of a string', () => {
