@@ -35,10 +35,10 @@
     "#astro/*": ["./src/astro/*"]
   },
   "scripts": {
-    "predev": "bin/prepare --dev",
+    "predev": "bin/prepare dev",
     "dev": "astro dev --port 8000",
     "start": "astro dev --port 8000",
-    "prebuild": "bin/prepare --full",
+    "prebuild": "bin/prepare full",
     "build": "astro build",
     "preview": "astro preview --port 9000",
     "test": "vitest"
