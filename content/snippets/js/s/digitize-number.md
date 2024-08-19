@@ -1,22 +1,22 @@
 ---
 title: Digitize number
-type: snippet
+type: tip
 language: javascript
 tags: [math]
 cover: industrial-tokyo
-excerpt: Converts a number to an array of digits, removing its sign if necessary.
+excerpt: Learn how to convert a number to an array of digits, removing its sign if necessary.
 listed: true
-dateModified: 2020-10-18
+dateModified: 2024-08-15
 ---
 
-Converts a number to an array of digits, removing its sign if necessary.
+Converting a number to an **array of digits** is fairly easy in JavaScript. All it requires is some string manipulation and array methods.
 
-- Use `Math.abs()` to strip the number's sign.
-- Convert the number to a string, using the spread operator (`...`) to build an array.
-- Use `Array.prototype.map()` and `parseInt()` to transform each value to an integer.
+For starters, any number can be converted to a string using the **template literal syntax**. Converting a string to an **array of characters** is as simple as using the spread operator (`...`). Then, to convert a character into a number, you can use `Number.parseInt()`. Finally, to combine these two steps, you can use `Array.prototype.map()` to transform each character into a number.
+
+As an additional step, we can use `Math.abs()` to **remove the sign of the number** before converting it to a string. This way, we can handle both positive and negative numbers.
 
 ```js
-const digitize = n => [...`${Math.abs(n)}`].map(i => parseInt(i));
+const digitize = n => [...`${Math.abs(n)}`].map(i => Number.parseInt(i, 10));
 
 digitize(123); // [1, 2, 3]
 digitize(-123); // [1, 2, 3]
