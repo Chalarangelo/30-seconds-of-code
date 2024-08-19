@@ -26,7 +26,7 @@ take([1, 2, 3], 5); // [1, 2, 3]
 
 As you can see from these examples, `Array.prototype.slice()` is versatile enough to handle values of `n` that would be well outside the array. This means that if the value of `Array.prototype.length` is less than or equal to `n`, all elements in the array will be retrieved.
 
-**Negative values** are a little odd, as you will end up getting all values between `0` and the `n`th to last element. If you want to avoid that behavior, you could simply add some code to validate that `n` is greater than or equal to `0` and throw an error otherwise.
+**Negative values** are a little odd, as you will end up getting all values between `0` and the nth to last element. If you want to avoid that behavior, you could simply add some code to validate that `n` is greater than or equal to `0` and throw an error otherwise.
 
 ## Get the last N elements of an array
 
