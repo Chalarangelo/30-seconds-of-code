@@ -10,7 +10,7 @@ listed: true
 dateModified: 2024-08-18
 ---
 
-The factorial of a number `n` is the **product of all positive integers** less than or equal to `n`. In mathematics, it is denoted by `n!`. Calculating it using code can be approached in various ways, such as using **recursion** or **iteration**.
+The [factorial of a number](https://en.wikipedia.org/wiki/Factorial) `n` is the **product of all positive integers** less than or equal to `n`. In mathematics, it is denoted by `n!`. Calculating it using code can be approached in various ways, such as using **recursion** or **iteration**.
 
 ## Iterative approach
 
