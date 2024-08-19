@@ -13,7 +13,6 @@ snippetIds:
   - js/s/data-structures-tree
   - js/s/data-structures-binary-tree
   - js/s/data-structures-binary-search-tree
-  - js/s/frequency-map-data-structure
   - js/s/modeling-money-currency-exchange-rates
   - js/s/big-o-cheatsheet
 splash: purple-flower

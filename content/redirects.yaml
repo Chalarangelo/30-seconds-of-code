@@ -571,9 +571,6 @@
 - from: /articles/s/js-fast-remove-array-element
   to: /js/s/fast-remove-array-element
   status: 301!
-- from: /articles/s/js-frequency-map-data-structure
-  to: /js/s/frequency-map-data-structure
-  status: 301!
 - from: /articles/s/js-immutable-object-proxy
   to: /js/s/immutable-object-proxy
   status: 301!
@@ -2964,4 +2961,10 @@
   status: 301!
 - from: /react/s/rendering-state
   to: /react/s/rendering
+  status: 301!
+- from: /articles/s/js-frequency-map-data-structure
+  to: /js/s/count-grouped-elements
+  status: 301!
+- from: /js/s/frequency-map-data-structure
+  to: /js/s/count-grouped-elements
   status: 301!
