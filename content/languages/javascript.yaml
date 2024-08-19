@@ -5,6 +5,8 @@ additionalReferences: [css, html]
 references:
   ...: >-
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+  "**": >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Exponentiation
   try...catch: >-
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
   typeof: >-
