@@ -1,5 +1,6 @@
 ---
-title: Digitize number
+title: Digitize a number in JavaScript
+shortTitle: Digitize number
 type: tip
 language: javascript
 tags: [math]

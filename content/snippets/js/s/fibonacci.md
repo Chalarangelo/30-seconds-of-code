@@ -1,5 +1,5 @@
 ---
-title: Generate the Fibonacci sequence
+title: Generate the Fibonacci sequence in JavaScript
 shortTitle: Fibonacci sequence
 type: story
 language: javascript

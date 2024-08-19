@@ -1,5 +1,5 @@
 ---
-title: Check if a string is an anagram of another string
+title: Check if a JavaScript string is an anagram of another string
 shortTitle: String anagram
 type: tip
 language: javascript

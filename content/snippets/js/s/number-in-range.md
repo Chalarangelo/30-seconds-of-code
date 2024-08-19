@@ -1,5 +1,5 @@
 ---
-title: Check if a number is inside a given range
+title: Check if a number is inside a given range with JavaScript
 shortTitle: Number in range
 type: tip
 language: javascript
