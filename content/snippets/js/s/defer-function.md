@@ -1,18 +1,18 @@
 ---
-title: Defer function invocation
-type: snippet
+title: Defer a JavaScript function
+shortTitle: Defer function
+type: tip
 language: javascript
 tags: [function]
 cover: shiny-mountains
-excerpt: Defers invoking a function until the current call stack has cleared.
+excerpt: Defer the invocation of a function until the current call stack has been cleared.
 listed: true
-dateModified: 2020-10-22
+dateModified: 2024-07-24
 ---
 
-Defers invoking a function until the current call stack has cleared.
+Oftentimes, non-critical tasks can be deferred to improve the responsiveness of a web application. This can be achieved by **deferring the invocation of a function** until the current call stack has been cleared. This is particularly useful when you want to update the UI before running a long-running function.
 
-- Use `setTimeout()` with a timeout of `1` ms to add a new event to the event queue and allow the rendering engine to complete its work.
-- Use the spread (`...`) operator to supply the function with an arbitrary number of arguments.
+Using `setTimeout()` with a **timeout** of `1` ms, we can defer the invocation of a function until the current **call stack has been cleared**. As a result, the browser will update the UI before running the function. We can also use the spread (`...`) operator to supply the function with an arbitrary number of arguments.
 
 ```js
 const defer = (fn, ...args) => setTimeout(fn, 1, ...args);
@@ -27,3 +27,7 @@ longRunningFunction();
 defer(longRunningFunction);
 // Browser will update the HTML then run the function
 ```
+
+> [!IMPORTANT]
+>
+> This technique relies on the use of `setTimeout()` and the fact that it is executed in the **Task Queue**. By setting a timeout of `1` ms, we allow the rendering engine to complete its work before the function is invoked. It is highly recommended that you read up on [the event loop](/js/s/event-loop-explained), if you haven't already.
