@@ -352,9 +352,6 @@
 - from: /articles/s/javascript-merge-arrays
   to: /js/s/merge-arrays
   status: 301!
-- from: /articles/s/javascript-modify-url-without-reload
-  to: /js/s/modify-url-without-reload
-  status: 301!
 - from: /articles/s/javascript-module-cheatsheet
   to: /js/s/module-cheatsheet
   status: 301!
@@ -873,9 +870,6 @@
   status: 301!
 - from: /js/s/ranking
   to: /js/s/array-ranking
-  status: 301!
-- from: /js/s/redirect
-  to: /js/s/redirect-to-url
   status: 301!
 - from: /js/s/attempt
   to: /js/s/attempt-invoking-function
@@ -2967,4 +2961,13 @@
   status: 301!
 - from: /js/s/frequency-map-data-structure
   to: /js/s/count-grouped-elements
+  status: 301!
+- from: /articles/s/javascript-modify-url-without-reload
+  to: /js/s/modify-url-without-reload
+  status: 301!
+- from: /js/s/redirect
+  to: /js/s/modify-url-without-reload
+  status: 301!
+- from: /js/s/redirect-to-url
+  to: /js/s/modify-url-without-reload
   status: 301!

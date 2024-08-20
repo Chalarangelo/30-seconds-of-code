@@ -11,7 +11,6 @@ snippetIds:
   - js/s/https-redirect
   - js/s/get-url-parameters
   - js/s/get-base-url
-  - js/s/redirect-to-url
   - js/s/is-absolute-url
   - js/s/is-same-origin
   - js/s/join-url-segments
