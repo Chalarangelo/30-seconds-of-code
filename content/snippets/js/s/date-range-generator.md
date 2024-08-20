@@ -1,29 +1,35 @@
 ---
-title: Date range generator
-type: snippet
+title: Date range generator in JavaScript
+shortTitle: Date range generator
+type: tip
 language: javascript
 tags: [date,function,generator]
 cover: portal-timelapse
-excerpt: Creates a generator, that generates all dates in the given range using the given step.
+excerpt: Create a generator that generates all dates in a given range.
 listed: true
-dateModified: 2021-06-21
+dateModified: 2024-07-31
 ---
 
-Creates a generator, that generates all dates in the given range using the given step.
+Generating a range of `Date` values is very common when working with any type of data that involves dates. Luckily, ES6 introduced **generators**, which can be used to create a generator function that yields all dates in a given range, allowing us to save memory and time.
 
-- Use a `while` loop to iterate from `start` to `end`, using `yield` to return each date in the range, using the `Date` constructor.
-- Use `Date.prototype.getDate()` and `Date.prototype.setDate()` to increment by `step` days after returning each subsequent value.
-- Omit the third argument, `step`, to use a default value of `1`.
+> [!NOTE]
+>
+> If you're **not familiar with generator functions**, be sure to read the [range generator snippet](/js/s/range-generator) first.
+
+As mentioned in [a previous post](/js/s/date-yesterday-today-tomorrow), we can manipulate `Date` objects using `Date.prototype.getDate()` and `Date.prototype.setDate()`. This allows us to easily **increment or decrement dates**.
+
+Knowing that, we can construct a generator function that uses a `for` **loop** to iterate over the dates in the given range, incrementing by a specified step, allowing us to `yield` each date in the range.
 
 ```js
-const dateRangeGenerator = function* (start, end, step = 1) {
-  let d = start;
-  while (d < end) {
+const dateRange = function* (start, end, step = 1) {
+  for (
+    let d = new Date(start);
+    d < new Date(end);
+    d.setDate(d.getDate() + step)
+  )
     yield new Date(d);
-    d.setDate(d.getDate() + step);
-  }
 };
 
-[...dateRangeGenerator(new Date('2021-06-01'), new Date('2021-06-04'))];
+[...dateRange('2021-06-01','2021-06-04')];
 // [ 2021-06-01, 2021-06-02, 2021-06-03 ]
 ```
