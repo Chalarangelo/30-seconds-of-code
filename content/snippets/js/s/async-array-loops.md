@@ -14,7 +14,7 @@ Asynchronous operations seem to trip up a lot of developers. This is especially 
 
 ## For loops
 
-Combining `async` with a `for` (or a `for...of`) loop is possibly the most straightforward option when performing asynchronous operations over array elements. Using `await` inside a `for` loop will cause the code to stop and wait for the asynchronous operation to complete before continuing. This means that all promises will be run sequentially.
+Combining `async` with a `for` (or a `for...of`) loop is possibly the most straightforward option when performing asynchronous operations over array elements. Using `await` inside a `for` loop will cause the code to **stop and wait** for the asynchronous operation to complete before continuing. This means that **all promises will be run sequentially**.
 
 ```js
 const asyncUppercase = item =>
@@ -36,12 +36,12 @@ const uppercaseItems = async () => {
 };
 
 uppercaseItems();
-// LOGS: 'A', 'B', 'C', 'Items processed'
+// Logs: 'A', 'B', 'C', 'Items processed'
 ```
 
 ## Promises
 
-`Promise.all()` provides another option for asynchronous loops over arrays. The main difference with the previous one is that `Promise.all()` executes all asynchronous operations in parallel. This means that promises will execute out of order, which might be an issue in some cases. Most often than not, this is my preferred solution as it's quite uncommon to want promises to execute sequentially.
+`Promise.all()` provides another option for asynchronous loops over arrays. The main difference with the previous one is that `Promise.all()` executes **all asynchronous operations in parallel**. This means that promises will execute out of order, which might be an issue in some cases. Most often than not, this is my preferred solution as it's quite uncommon to want promises to execute sequentially.
 
 ```js
 const asyncUppercase = item =>
@@ -63,12 +63,12 @@ const uppercaseItems = () => {
     console.log('Items processed');
   });
 };
-// LOGS: 'A', 'C', 'B', 'Items processed'
+// Logs: 'A', 'C', 'B', 'Items processed'
 ```
 
 ## Array methods
 
-Unfortunately, array methods such as `Array.prototype.forEach()` do not work well with `async`/`await`. The only viable solution is to use `Promise.all()` as shown in the previous example. Using an `async` callback with `Array.prototype.forEach()` will result in the rest of the code executing and the asynchronous operations not being awaited for.
+Unfortunately, array methods such as `Array.prototype.forEach()` **do not work** well with `async`/`await`. The only viable solution is to use `Promise.all()` as shown in the previous example. Using an `async` callback with `Array.prototype.forEach()` will result in the rest of the code executing and the **asynchronous operations not being awaited for**.
 
 ```js
 const asyncUppercase = item =>
@@ -90,5 +90,5 @@ const uppercaseItems = async () => {
 };
 
 uppercaseItems();
-// LOGS: ''Items processed', 'B', 'A', 'C'
+// Logs: ''Items processed', 'B', 'A', 'C'
 ```
