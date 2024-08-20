@@ -1,30 +1,25 @@
 ---
-title: Maximum subarray
-type: snippet
+title: Find the maximum subarray of a JavaScript array
+shortTitle: Maximum subarray
+type: tip
 language: javascript
 tags: [algorithm,math,array]
 cover: work-hard-computer
-excerpt: Finds a contiguous subarray with the largest sum within an array of numbers.
+excerpt: Learn how to find the contiguous subarray with the largest sum within an array of numbers in JavaScript.
 listed: true
-dateModified: 2022-09-07
+dateModified: 2024-08-03
 ---
 
-Finds a contiguous subarray with the largest sum within an array of numbers.
+Finding the **maximum contiguous subarray** within an array of numbers is a common problem in computer science. It's often used to solve coding challenges and interview questions. The problem can be solved using a **greedy approach** that keeps track of the current sum and the maximum sum found so far.
 
-- Use a greedy approach to keep track of the current `sum` and the current maximum, `maxSum`. Set `maxSum` to `-Infinity` to make sure that the highest negative value is returned, if all values are negative.
-- Define variables to keep track of the maximum start index, `sMax`, maximum end index, `eMax` and current start index, `s`.
-- Use `Array.prototype.forEach()` to iterate over the values and add the current value to the `sum`.
-- If the current `sum` is greater than `maxSum`, update the index values and the `maxSum`.
-- If the `sum` is below `0`, reset it to `0` and update the value of `s` to the next index.
-- Use `Array.prototype.slice()` to return the subarray indicated by the index variables.
+Define variables to keep track of the **maximum start index**, `sMax`, **maximum end index**, `eMax` and **current start index**, `s`. Starting with a `maxSum` of `-Infinity` and a `sum` of `0`, use `Array.prototype.forEach()` to **iterate over the array** and add elements to the sum.
+
+If the sum becomes **negative**, reset it to `0` and update the value of `s` to the next index. If the sum is **greater than the maximum** sum found so far, update the maximum sum and the start and end indices of the subarray. Finally, return the subarray using `Array.prototype.slice()`.
 
 ```js
 const maxSubarray = (...arr) => {
-  let maxSum = -Infinity,
-    sum = 0;
-  let sMax = 0,
-    eMax = arr.length - 1,
-    s = 0;
+  let maxSum = -Infinity, sum = 0;
+  let sMax = 0, eMax = arr.length - 1, s = 0;
 
   arr.forEach((n, i) => {
     sum += n;
