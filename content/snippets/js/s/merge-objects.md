@@ -3,7 +3,7 @@ title: Merge two or more JavaScript objects
 shortTitle: Merge objects
 type: story
 language: javascript
-tags: [object,array,function]
+tags: [object,array]
 cover: guitar-living-room
 excerpt: Learn how to combine two or more objects into a single object in JavaScript.
 listed: true
