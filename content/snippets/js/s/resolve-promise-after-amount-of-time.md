@@ -3,7 +3,7 @@ title: Create a JavaScript promise that resolves after a given amount of time
 shortTitle: Resolve promise after given amount of time
 type: tip
 language: javascript
-tags: [function,promise]
+tags: [promises,function]
 cover: filter-coffee-pot
 excerpt: Learn how to create a promise that resolves after a given amount of time in JavaScript.
 listed: true

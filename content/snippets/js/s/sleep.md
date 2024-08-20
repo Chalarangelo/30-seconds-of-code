@@ -3,7 +3,7 @@ title: How can I implement a sleep function in JavaScript?
 shortTitle: Sleep function
 type: question
 language: javascript
-tags: [date,promise]
+tags: [date,promises]
 cover: sleepy-cat
 excerpt: Learn how you can implement a delay function using `setTimeout()`, promises and `async`/`await`.
 listed: true

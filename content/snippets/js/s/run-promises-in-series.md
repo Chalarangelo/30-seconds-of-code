@@ -3,7 +3,7 @@ title: Run JavaScript promises in series
 shortTitle: Run promises in series
 type: tip
 language: javascript
-tags: [function,promise]
+tags: [promises,function]
 cover: sail-away
 excerpt: Learn how to resolve promises one after another (sequentially) in JavaScript.
 listed: true

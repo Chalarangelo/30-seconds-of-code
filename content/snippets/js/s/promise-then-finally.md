@@ -3,7 +3,7 @@ title: What is the difference between then and finally in a JavaScript promise?
 shortTitle: Promise then vs finally
 type: question
 language: javascript
-tags: [function,promise]
+tags: [promises,function]
 cover: blue-sunrise
 excerpt: A JavaScript promise's `then` and `finally` methods seem very similar. But there are a few important differences you need to keep in mind.
 listed: true

@@ -3,7 +3,7 @@ title: What are promises in JavaScript? In which states can a promise be?
 shortTitle: Promises introduction
 type: question
 language: javascript
-tags: [function,promise]
+tags: [promises,function]
 cover: sail-away
 excerpt: JavaScript's promises represent the eventual completion (or failure) of asynchronous operations and their resulting value.
 listed: true

@@ -3,7 +3,7 @@ title: Asynchronous array loops in JavaScript
 shortTitle: Asynchronous array loops
 type: story
 language: javascript
-tags: [array,function,promise]
+tags: [array,function,promises]
 cover: sunflowers
 excerpt: Asynchronously looping over arrays in JavaScript comes with a few caveats you should watch out for.
 listed: true
