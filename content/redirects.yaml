@@ -2986,3 +2986,6 @@
 - from: /js/s/generator-for-range
   to: /js/s/range-generator
   status: 301!
+- from: /js/s/pipe-async-functions
+  to: /js/s/async-function-composition
+  status: 301!
