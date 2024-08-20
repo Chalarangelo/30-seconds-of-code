@@ -1,7 +1,7 @@
 ---
 title: Asynchronous function composition in JavaScript
 shortTitle: Async function composition
-type: tip
+type: story
 language: javascript
 tags: [promises,function]
 cover: new-york-skyline
