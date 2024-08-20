@@ -17,6 +17,7 @@ To accomplish this, we can use **timeouts** to artificially create the necessary
 ```js
 const debounce = (fn, ms = 0) => {
   let timeoutId;
+
   return function(...args) {
     clearTimeout(timeoutId);
     timeoutId = setTimeout(() => fn.apply(this, args), ms);
