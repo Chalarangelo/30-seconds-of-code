@@ -1,23 +1,27 @@
 ---
-title: Call function once
-type: snippet
+title: Call a JavaScript function once
+shortTitle: Call function once
+type: tip
 language: javascript
 tags: [function]
 cover: pink-flower-tree
-excerpt: Ensures a function is called only once.
+excerpt: Create a function that ensures another function is called only once.
 listed: true
-dateModified: 2020-10-21
+dateModified: 2024-07-26
 ---
 
-Ensures a function is called only once.
+Sometimes, you need to ensure that a function is **called only once**, regardless of how many times it is invoked. This can be useful in various scenarios, especially when dealing with side effects or event listeners.
 
-- Utilizing a closure, use a flag, `called`, and set it to `true` once the function is called for the first time, preventing it from being called again.
-- In order to allow the function to have its `this` context changed (such as in an event listener), the `function` keyword must be used, and the supplied function must have the context applied.
-- Allow the function to be supplied with an arbitrary number of arguments using the rest/spread (`...`) operator.
+Using a [**closure**](/js/s/closures) and a flag, you can create a function that ensures another function is called only once. The flag will be initially set to `false`, and once the function is called, it will be set to `true`, preventing the function from being called again.
+
+In order to allow the function to have its [`this` context](/js/s/this) changed (such as in an event listener), the `function` keyword must be used, and the supplied function must have the **context applied** via `Function.prototype.apply()` or `Function.prototype.call()`.
+
+Moreover, the function should be able to accept an **arbitrary number of arguments**, which can be achieved using the **rest operator**.
 
 ```js
 const once = fn => {
   let called = false;
+
   return function(...args) {
     if (called) return;
     called = true;
