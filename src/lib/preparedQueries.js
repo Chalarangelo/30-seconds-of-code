@@ -8,23 +8,29 @@ import PerforanceTracking from '#src/lib/performanceTracking.js';
 import settings from '#src/config/settings.js';
 
 export default class PreparedQueries {
-  static snippetPerformance(slug) {
-    const snippet = Snippet.search(slug);
+  static snippetPerformance(...slugs) {
+    if (slugs.length === 1) {
+      const snippet = Snippet.search(slugs[0]);
 
-    return PerforanceTracking.for(snippet.slug);
+      return PerforanceTracking.for(snippet.slug);
+    } else {
+      const snippets = Snippet.searchAll(...slugs)
+        .map(snippet => [
+          snippet.slug,
+          PreparedQueries.snippetPerformance(snippet.slug),
+        ])
+        .sort((a, b) => b[1].clicks - a[1].clicks);
+
+      return Object.fromEntries(snippets);
+    }
   }
 
   static collectionSnippetsPerformance(slug) {
     const collection = Collection.search(slug);
 
-    const collectionSnippets = collection.snippets
-      .map(snippet => [
-        snippet.slug,
-        PreparedQueries.snippetPerformance(snippet.slug),
-      ])
-      .sort((a, b) => b[1].clicks - a[1].clicks);
-
-    return Object.fromEntries(collectionSnippets);
+    return PreparedQueries.snippetPerformance(
+      ...collection.snippets.pluck('slug')
+    );
   }
 
   static snippetCoverUsage() {
