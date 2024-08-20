@@ -1,25 +1,27 @@
 ---
-title: Throttle function
-type: snippet
+title: Throttle a JavaScript function
+shortTitle: Throttle function
+type: tip
 language: javascript
 tags: [function]
 cover: beach-overview
-excerpt: Creates a throttled function that only invokes the provided function at most once per every `wait` milliseconds
+excerpt: Create a throttled function that only invokes the provided function at most once per the specified interval.
 listed: true
-dateModified: 2021-10-13
+dateModified: 2024-07-23
 ---
 
-Creates a throttled function that only invokes the provided function at most once per every `wait` milliseconds
+**Throttling** is a technique used to **limit the number of times** a function is called. The function will only be called once, after a **specific amount of time** has elapsed since its last invocation.
 
-- Use `setTimeout()` and `clearTimeout()` to throttle the given method, `fn`.
-- Use `Function.prototype.apply()` to apply the `this` context to the function and provide the necessary `arguments`.
-- Use `Date.now()` to keep track of the last time the throttled function was invoked.
-- Use a variable, `inThrottle`, to prevent a race condition between the first execution of `fn` and the next loop.
-- Omit the second argument, `wait`, to set the timeout at a default of `0` ms.
+To accomplish this, we can use **timeouts** to artificially create the necessary delay. Using `setTimeout()` and `clearTimeout()`, we can ensure that the function is only called once every `wait` milliseconds.
+
+Using `Date.now()` to **keep track of the last time the throttled function was invoked**, we can compare the current time with the last time the function was called to determine if it should be invoked again. We also need to **prevent race conditions** between the first execution of the function and the next loop, so we use a variable, `inThrottle`, to handle this.
+
+Finally, using `Function.prototype.apply()` we can apply the `this` context to the function and provide the necessary arguments.
 
 ```js
 const throttle = (fn, wait) => {
   let inThrottle, lastFn, lastTime;
+
   return function() {
     const context = this,
       args = arguments;
