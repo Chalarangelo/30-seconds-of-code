@@ -89,4 +89,10 @@ describe('Serializer', () => {
       expect(User.search('/JOHN-DoE/')).toEqual(user1);
     });
   });
+
+  describe('searchAll', () => {
+    it('returns the correct records', () => {
+      expect(User.searchAll('john-doe', 'jane-doe')).toEqual([user1, user2]);
+    });
+  });
 });

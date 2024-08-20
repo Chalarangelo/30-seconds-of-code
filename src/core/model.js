@@ -89,4 +89,8 @@ export default class Model {
       .toLowerCase();
     return this.find(searchTerm);
   }
+
+  static searchAll(...idsOrSlugs) {
+    return idsOrSlugs.map(idOrSlug => this.search(idOrSlug));
+  }
 }
