@@ -1,17 +1,18 @@
 ---
-title: Percentile of matches
-type: snippet
+title: Percentile of matches in a JavaScript array
+shortTitle: Percentile of matches
+type: tip
 language: javascript
 tags: [math]
 cover: collab-desk-2
-excerpt: Calculates the percentage of numbers in the given array that are less or equal to the given value.
+excerpt: Calculate the percentage of numbers in the given array that are less or equal to the given value.
 listed: true
-dateModified: 2020-10-22
+dateModified: 2024-08-02
 ---
 
-Calculates the percentage of numbers in the given array that are less or equal to the given value.
+Given an array of numbers, you might want to calculate the **percentage of numbers** that are **less or equal to a given value**. This is known as the **percentile** of the matches. You can achieve this by counting the numbers that are less than the given value and those that are equal to it, and then applying the percentile formula.
 
-- Use `Array.prototype.reduce()` to calculate how many numbers are below the value and how many are the same value and apply the percentile formula.
+In order to do so, you can use `Array.prototype.reduce()` to calculate how many numbers are below the value and how many are the same value. Then, you can apply the percentile formula to get the final result.
 
 ```js
 const percentile = (arr, val) =>
