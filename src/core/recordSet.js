@@ -40,4 +40,12 @@ export default class RecordSet extends Array {
 
     return RecordSet.from(arr);
   }
+
+  get first() {
+    return this[0];
+  }
+
+  get last() {
+    return this[this.length - 1];
+  }
 }

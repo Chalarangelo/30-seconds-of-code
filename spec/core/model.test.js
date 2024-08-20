@@ -54,6 +54,18 @@ describe('Serializer', () => {
     it('returns multiple condition matches correctly', () => {
       expect(User.where({ id: 'john-doe', name: 'John Doe' })).toEqual([user1]);
     });
+
+    describe('get first', () => {
+      it('returns the first record', () => {
+        expect(User.where({ name: 'John Doe' }).first).toEqual(user1);
+      });
+    });
+
+    describe('get last', () => {
+      it('returns the last record', () => {
+        expect(User.where({ name: 'John Doe' }).last).toEqual(user1);
+      });
+    });
   });
 
   describe('order', () => {
