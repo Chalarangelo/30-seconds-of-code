@@ -12,6 +12,7 @@ snippetIds:
   - js/s/function-composition
   - js/s/function-arity
   - js/s/partially-apply-function
+  - js/s/reorder-function-arguments
 description: >-
   Functional programming treats computation as the evaluation of mathematical
   functions and avoids changing-state and mutable data. Get started with this

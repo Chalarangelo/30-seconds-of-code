@@ -982,9 +982,6 @@
 - from: /js/s/remove
   to: /js/s/remove-matching-array-elements
   status: 301!
-- from: /js/s/rearg
-  to: /js/s/rearrange-function-arguments
-  status: 301!
 - from: /js/s/unwind
   to: /js/s/unwind-object
   status: 301!
@@ -999,9 +996,6 @@
   status: 301!
 - from: /js/s/split-lines
   to: /js/s/split-into-lines
-  status: 301!
-- from: /js/s/flip
-  to: /js/s/flip-function-arguments
   status: 301!
 - from: /js/s/replace-or-append
   to: /js/s/replace-or-append-array-value
@@ -2976,4 +2970,16 @@
   status: 301!
 - from: /js/s/get-url-parameters
   to: /js/s/get-base-url-or-url-params
+  status: 301!
+- from: /js/s/rearg
+  to: /js/s/reorder-function-arguments
+  status: 301!
+- from: /js/s/rearrange-function-arguments
+  to: /js/s/reorder-function-arguments
+  status: 301!
+- from: /js/s/flip
+  to: /js/s/reorder-function-arguments
+  status: 301!
+- from: /js/s/flip-function-arguments
+  to: /js/s/reorder-function-arguments
   status: 301!
