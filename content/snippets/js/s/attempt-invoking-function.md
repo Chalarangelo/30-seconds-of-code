@@ -1,18 +1,17 @@
 ---
-title: Attempt invoking a function
-type: snippet
+title: Attempt invoking a JavaScript function
+type: tip
 language: javascript
 tags: [function]
 cover: spanish-resort
-excerpt: Attempts to invoke a function with the provided arguments, returning either the result or the caught error object.
+excerpt: Wrap a function call in a `try...catch` block to handle errors and return the result or the caught error object.
 listed: true
-dateModified: 2020-10-18
+dateModified: 2024-07-27
 ---
 
-Attempts to invoke a function with the provided arguments, returning either the result or the caught error object.
+While `try...catch` blocks are commonly used to handle errors, they're not particularly friendly to the **functional programming** style. Luckily, we can roll up our own utility function to make it easier to handle errors when invoking functions.
 
-- Use a `try...catch` block to return either the result of the function or an appropriate error.
-- If the caught object is not an `Error`, use it to create a new `Error`.
+All that we need is a [higher-order function](/js/s/higher-order-functions) that takes a function and its arguments. It then uses a `try...catch` block to return either the **result** of the function or an appropriate **error** object. If the caught object is not an `Error`, it creates a new `Error` object.
 
 ```js
 const attempt = (fn, ...args) => {
