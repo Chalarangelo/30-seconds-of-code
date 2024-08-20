@@ -35,3 +35,4 @@ stringify
 blockable
 toc
 github
+promisify
