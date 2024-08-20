@@ -1,6 +1,8 @@
 slug: js/promises
 title: JavaScript Promises
+miniTitle: Promises
 listed: true
+parent: js
 snippetIds:
   - js/s/promises
   - js/s/async-cheatsheet
@@ -12,8 +14,8 @@ snippetIds:
   - js/s/run-promises-in-series
 splash: blue-computer
 description: >-
-  Working with promises in JavaScript is a great way to handle asynchronous
-  operations, yet it can be confusing for many developers. This snippet
+  Working with promises in JavaScript is a great way to handle **asynchronous
+  operations**, yet it can be confusing for many developers. This snippet
   collection covers the basics of promises and how to use them to handle
   everyday operations, as well as some more advanced topics.
 shortDescription: >-
