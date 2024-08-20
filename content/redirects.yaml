@@ -2971,3 +2971,9 @@
 - from: /js/s/redirect-to-url
   to: /js/s/modify-url-without-reload
   status: 301!
+- from: /js/s/get-base-url
+  to: /js/s/get-base-url-or-url-params
+  status: 301!
+- from: /js/s/get-url-parameters
+  to: /js/s/get-base-url-or-url-params
+  status: 301!
