@@ -141,7 +141,7 @@ export default class Collection extends ContentModel {
     return this.sublinkPresenter.sublinks;
   }
 
-  // TODO: A little fiddly
+  // TODO: Fiddly, but some collections (e.g. promises) rely heavily on this
   matchesTag(tag) {
     return this.id.endsWith(`/${tag}`);
   }
