@@ -2984,5 +2984,5 @@
   to: /js/s/reorder-function-arguments
   status: 301!
 - from: /js/s/generator-for-range
-- to: /js/s/range-generator
+  to: /js/s/range-generator
   status: 301!
