@@ -10,8 +10,12 @@ snippetIds:
   - js/s/promise-then-catch
   - js/s/promise-then-finally
   - js/s/await-timeout
+  - js/s/promisify
   - js/s/debounce-promise
   - js/s/run-promises-in-series
+  - js/s/async-array-loops
+  - js/s/async-function-composition
+  - js/s/sleep
 splash: blue-computer
 description: >-
   Working with promises in JavaScript is a great way to handle **asynchronous
