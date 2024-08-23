@@ -1,18 +1,20 @@
 ---
-title: Check if date is valid
-type: snippet
+title: Check if a value is a valid JavaScript date
+shortTitle: Check if date is valid
+type: tip
 language: javascript
 tags: [date]
 cover: cave-explorer
-excerpt: Checks if a valid date object can be created from the given values.
+excerpt: Learn how you can check if a valid date object can be created from the given values.
 listed: true
-dateModified: 2020-10-20
+dateModified: 2024-07-22
 ---
 
-Checks if a valid date object can be created from the given values.
+JavaScript provides a `Date` object that represents a single moment in time. It can be created using **various formats**, such as a string, an array of values, or individual values for the year, month, day, etc. However, not all values can be used to create a valid `Date` object.
 
-- Use the spread operator (`...`) to pass the array of arguments to the `Date` constructor.
-- Use `Date.prototype.valueOf()` and `Number.isNaN()` to check if a valid `Date` object can be created from the given values.
+So, how can you check if a **value or set of values** can be used to create a valid `Date` object? The simplest way is to use the `Date()` constructor with any value we want to check. Then, using `Date.prototype.valueOf()` and `Number.isNaN()`, we can determine if a valid `Date` object can be created.
+
+In order to create a robust method, we can use the spread operator (`...`) to pass the values to the `Date()` constructor. This way, we can check if a valid `Date` object can be created from **any number of values** (e.g. a single string, a set of numeric values etc.).
 
 ```js
 const isDateValid = (...val) => !Number.isNaN(new Date(...val).valueOf());
