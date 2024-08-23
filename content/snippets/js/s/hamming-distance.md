@@ -1,19 +1,18 @@
 ---
-title: Hamming distance
-type: snippet
+title: Hamming distance implementation in JavaScript
+shortTitle: Hamming distance
+type: tip
 language: javascript
 tags: [math,algorithm]
 cover: colorful-lounge
-excerpt: Calculates the Hamming distance between two values.
+excerpt: Learn how to calculate the Hamming distance between two values.
 listed: true
-dateModified: 2020-12-28
+dateModified: 2024-07-18
 ---
 
-Calculates the Hamming distance between two values.
+The [Hamming distance](https://en.wikipedia.org/wiki/Hamming_distance) is a measure of the **difference between two strings of equal length**. It is calculated by counting the number of positions at which the corresponding characters differ.
 
-- Use the XOR operator (`^`) to find the bit difference between the two numbers.
-- Convert to a binary string using `Number.prototype.toString()`.
-- Count and return the number of `1`s in the string, using `String.prototype.match()`.
+Implementing it in JavaScript is pretty straightforward, using the XOR operator (`^`) to find the **bit difference** between two numbers. We then convert the result to a **binary string**, using `Number.prototype.toString()`, and count the number of `1`s in it, using `String.prototype.match()`.
 
 ```js
 const hammingDistance = (num1, num2) =>
