@@ -1,21 +1,20 @@
 ---
-title: Binomial coefficient
-type: snippet
+title: How can I calculate the binomial coefficient in JavaScript?
+shortTitle: Binomial coefficient
+type: question
 language: javascript
 tags: [math,algorithm]
 cover: blue-red-mountain
-excerpt: Calculates the number of ways to choose `k` items from `n` items without repetition and without order.
+excerpt: Calculate the number of ways to choose k items from n items without repetition and without order.
 listed: true
-dateModified: 2020-12-28
+dateModified: 2024-07-17
 ---
 
-Calculates the number of ways to choose `k` items from `n` items without repetition and without order.
+The [binomial coefficient](https://en.wikipedia.org/wiki/Binomial_coefficient) is a mathematical concept that represents the number of ways to choose `k` items from `n` items without repetition and without order. In JavaScript, you can calculate the binomial coefficient using a simple function that loops through the values and calculates the result.
 
-- Use `Number.isNaN()` to check if any of the two values is `NaN`.
-- Check if `k` is less than `0`, greater than or equal to `n`, equal to `1` or `n - 1` and return the appropriate result.
-- Check if `n - k` is less than `k` and switch their values accordingly.
-- Loop from `2` through `k` and calculate the binomial coefficient.
-- Use `Math.round()` to account for rounding errors in the calculation.
+Before we loop through the values, we need to handle some **edge cases**, such as when `k` is less than `0`, greater than `n`, equal to `1` or `n - 1`, or when `n` or `k` is `NaN`. We also need to switch the values of `k` and `n - k` if `n - k` is less than `k` to optimize the calculation.
+
+After we do that, we can use a simple `for` **loop** to calculate the binomial coefficient by multiplying the values and dividing them by the loop index. Finally, we round the result to account for any **rounding errors** in the calculation, using `Math.round()`.
 
 ```js
 const binomialCoefficient = (n, k) => {
@@ -24,8 +23,9 @@ const binomialCoefficient = (n, k) => {
   if (k === 0 || k === n) return 1;
   if (k === 1 || k === n - 1) return n;
   if (n - k < k) k = n - k;
+
   let res = n;
-  for (let j = 2; j <= k; j++) res *= (n - j + 1) / j;
+  for (let i = 2; i <= k; i++) res *= (n - i + 1) / i;
   return Math.round(res);
 };
 
