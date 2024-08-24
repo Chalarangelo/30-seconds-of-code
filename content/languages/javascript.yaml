@@ -775,6 +775,8 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
   EventTarget.dispatchEvent(): >-
     https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent
+  Window.getSelection(): >-
+    https://developer.mozilla.org/en-US/docs/Web/API/Window/getSelection
   Window.matchMedia(): >-
     https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia
   Window.requestAnimationFrame(): >-
@@ -853,3 +855,7 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat
   Intl.DateTimeFormat.prototype.formatToParts(): >-
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/formatToParts
+  Selection: >-
+    https://developer.mozilla.org/en-US/docs/Web/API/Selection
+  Selection.toString(): >-
+    https://developer.mozilla.org/en-US/docs/Web/API/Selection/toString
