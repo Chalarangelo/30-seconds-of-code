@@ -9,7 +9,7 @@ snippetIds:
   - js/s/window-location-cheatsheet
   - js/s/current-url
   - js/s/https-redirect
-  - js/s/get-base-url-or-url-parems
+  - js/s/get-base-url-or-url-params
   - js/s/is-absolute-url
   - js/s/is-same-origin
   - js/s/join-url-segments
