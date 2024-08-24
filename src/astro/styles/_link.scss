@@ -57,11 +57,15 @@ a[data-code-reference='true'] {
     font-size: 0.5em;
     text-align: center;
     font-weight: var(--font-weight-medium);
+    // Vertically center the hash link indicator and also make it match the
+    // height of the link for a better outline.
+    top: 0.25px;
+    height: 100%;
+    line-height: 2.5em;
     // Position the hash link indicator to the left of the link, inside the
     // layout bleed area.
     left: calc(-1 * var(--layout-bleed-width));
     width: var(--layout-bleed-width);
-    top: 0.5em;
     color: var(--color-primary-light);
     // Opacity of the hash link.
     opacity: var(--link_hash_opacity);
