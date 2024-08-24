@@ -43,7 +43,11 @@ export default class AstroContent {
   }
 
   static generateSnippetPages() {
-    const pages = Snippet.scope('published').reduce((acc, snippet) => {
+    const snippets =
+      process.env.NODE_ENV === 'development'
+        ? Snippet.all
+        : Snippet.scope('published');
+    const pages = snippets.reduce((acc, snippet) => {
       const page = snippet.page;
       acc[page.key] = page.serialize;
       return acc;
