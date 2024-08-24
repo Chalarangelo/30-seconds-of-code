@@ -49,6 +49,8 @@ if (args.length === 0 || args[0] === 'help') {
   // 9. Generate timestamp dump
   TimestampDump.generate();
 } else if (args[0] === 'dev') {
+  // 0. Set NODE_ENV to development
+  process.env.NODE_ENV = 'development';
   // 1. Run ContentUtils to prepare the .content/content.json file
   await ContentUtils.prepareContent();
   // 2. Load modules
