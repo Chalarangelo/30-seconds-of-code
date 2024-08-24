@@ -967,9 +967,6 @@
 - from: /js/s/combine
   to: /js/s/combine-object-arrays
   status: 301!
-- from: /js/s/group-by
-  to: /js/s/function-based-array-element-grouping
-  status: 301!
 - from: /js/s/longest-item
   to: /js/s/longest-array-element
   status: 301!
@@ -1002,9 +999,6 @@
   status: 301!
 - from: /js/s/resolve-after
   to: /js/s/resolve-promise-after-amount-of-time
-  status: 301!
-- from: /js/s/index-by
-  to: /js/s/function-based-array-indexing
   status: 301!
 - from: /js/s/replace-last
   to: /js/s/replace-last-occurrence
@@ -2988,4 +2982,16 @@
   status: 301!
 - from: /js/s/pipe-async-functions
   to: /js/s/async-function-composition
+  status: 301!
+- from: /js/s/index-by
+  to: /js/s/group-array-elements
+  status: 301!
+- from: /js/s/function-based-array-indexing
+  to: /js/s/group-array-elements
+  status: 301!
+- from: /js/s/group-by
+  to: /js/s/group-array-elements
+  status: 301!
+- from: /js/s/function-based-array-element-grouping
+  to: /js/s/group-array-elements
   status: 301!
