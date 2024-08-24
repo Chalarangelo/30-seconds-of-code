@@ -44,6 +44,8 @@ kbd {
   font-weight: var(--font-weight-medium);
   // Increase inline padding to make code elements more visible.
   padding-inline: var(--spacing-4);
+  // Reduce block padding to make code elements align perfectly with outlines.
+  padding-block: 0;
 }
 
 pre {
