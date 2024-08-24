@@ -843,6 +843,8 @@ references:
   HTMLElement.style: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
   HTMLElement.offsetTop: >-
     https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+  HTMLElement.offsetWidth: >-
+    https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetWidth
   HTMLElement.offsetParent: >-
     https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetParent
   Window.innerWidth: https://developer.mozilla.org/en-US/docs/Web/API/Window/innerWidth
