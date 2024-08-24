@@ -841,6 +841,10 @@ references:
   Window.getComputedStyle(): >-
     https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
   HTMLElement.style: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
+  HTMLElement.offsetTop: >-
+    https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+  HTMLElement.offsetParent: >-
+    https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetParent
   Window.innerWidth: https://developer.mozilla.org/en-US/docs/Web/API/Window/innerWidth
   Window.scrollX: https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollX
   Window.scrollY: https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY
