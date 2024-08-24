@@ -12,7 +12,7 @@ snippetIds:
   - js/s/query-selector-shorthand
   - js/s/element-is-visible-in-viewport
   - js/s/select-focused-dom-element
-  - js/s/get-elements-bigger-than-viewport
+  - js/s/get-elements-wider-than-viewport
   - js/s/element-from-point
   - js/s/get-vertical-offset
   - js/s/store-dom-items

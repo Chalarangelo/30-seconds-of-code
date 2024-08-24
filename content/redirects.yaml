@@ -2995,3 +2995,6 @@
 - from: /js/s/function-based-array-element-grouping
   to: /js/s/group-array-elements
   status: 301!
+- from: /js/s/get-elements-bigger-than-viewport
+  to: /js/s/get-elements-wider-than-viewport
+  status: 301!
