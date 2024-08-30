@@ -3010,3 +3010,21 @@
 - from: /js/s/deep-equality-comparison
   to: /js/s/object-comparison
   status: 301!
+- from: /js/s/get-ancestors
+  to: /js/s/get-ancestors-parents-siblings-children
+  status: 301!
+- from: /js/s/get-parents-until
+  to: /js/s/get-ancestors-parents-siblings-children
+  status: 301!
+- from: /js/s/get-siblings
+  to: /js/s/get-ancestors-parents-siblings-children
+  status: 301!
+- from: /js/s/find-closest-matching-node
+  to: /js/s/get-ancestors-parents-siblings-children
+  status: 301!
+- from: /js/s/element-contains
+  to: /js/s/get-ancestors-parents-siblings-children
+  status: 301!
+- from: /js/s/find-closest-anchor
+  to: /js/s/get-ancestors-parents-siblings-children
+  status: 301!
