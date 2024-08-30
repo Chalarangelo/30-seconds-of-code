@@ -1,20 +1,22 @@
 ---
-title: Create HTML element
-type: snippet
+title: Create an HTML element with JavaScript
+shortTitle: Create HTML element
+type: tip
 language: javascript
 tags: [browser]
 cover: flower-portrait-4
-excerpt: Creates an element from a string without appending it to the document.
+excerpt: If you want to create an element from a string without appending it to the document, you can use a few lines of JavaScript.
 listed: true
-dateModified: 2020-10-19
+dateModified: 2024-07-05
 ---
 
-Creates an element from a string (without appending it to the document).
-If the given string contains multiple elements, only the first one will be returned.
+DOM manipulation via JavaScript is one of the very reasons the language was created. Oftentimes, you'll want to **create an element from a string** without appending it to the document. This can be useful when you need to create an element in memory before adding it to the DOM.
 
-- Use `Document.createElement()` to create a new element.
-- Use `Element.innerHTML` to set its inner HTML to the string supplied as the argument.
-- Use `Element.firstElementChild` to return the element version of the string.
+Luckily, all you need is `Document.createElement()` and `Element.innerHTML` to achieve is. The first method creates a new element, while the second sets its inner HTML to the string you provide. Finally, you can use `Element.firstElementChild` to return the element version of the string.
+
+> [!WARNING]
+>
+> If the string contains **multiple elements**, only the first one will be returned.
 
 ```js
 const createElement = str => {
@@ -28,5 +30,12 @@ const el = createElement(
     <p>Hello!</p>
   </div>`
 );
-console.log(el.className); // 'container'
+console.log(el.className);
+// 'container'
+
+const other = createElement(
+  `<p>Hi!</p> <div>Bye!</div>`
+);
+console.log(other.tagName);
+// 'P' (only the first element is returned)
 ```
