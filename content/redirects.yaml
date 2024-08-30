@@ -847,12 +847,6 @@
 - from: /articles/s/responsive-favicon-dark-mode
   to: /css/s/responsive-favicon-dark-mode
   status: 301!
-- from: /js/s/add-multiple-events
-  to: /js/s/add-multiple-event-listeners
-  status: 301!
-- from: /js/s/remove-event-listener-all
-  to: /js/s/remove-multiple-event-listeners
-  status: 301!
 - from: /js/s/create-dir-if-not-exists
   to: /js/s/create-directory-if-not-exists
   status: 301!
@@ -2997,4 +2991,19 @@
   status: 301!
 - from: /js/s/get-elements-bigger-than-viewport
   to: /js/s/get-elements-wider-than-viewport
+  status: 301!
+- from: /js/s/add-event-listener-all
+  to: /js/s/add-remove-multiple-event-listeners-single-element
+  status: 301!
+- from: /js/s/add-multiple-events
+  to: /js/s/add-remove-event-listener-multiple-elements
+  status: 301!
+- from: /js/s/add-multiple-event-listeners
+  to: /js/s/add-remove-event-listener-multiple-elements
+  status: 301!
+- from: /js/s/remove-event-listener-all
+  to: /js/s/add-remove-event-listener-multiple-elements
+  status: 301!
+- from: /js/s/remove-multiple-event-listeners
+  to: /js/s/add-remove-event-listener-multiple-elements
   status: 301!

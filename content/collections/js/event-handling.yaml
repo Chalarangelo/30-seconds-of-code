@@ -6,9 +6,8 @@ snippetIds:
   - js/s/event-listener-once
   - js/s/listen-click-outside-event
   - js/s/event-bubbling-capturing-delegation
-  - js/s/add-event-listener-all
-  - js/s/remove-multiple-event-listeners
-  - js/s/add-multiple-event-listeners
+  - js/s/add-remove-multiple-event-listeners-single-element
+  - js/s/add-remove-event-listener-multiple-elements
   - js/s/passive-scroll-listener-performance
   - js/s/on-scroll-stop
   - js/s/arrow-function-event-listeners
