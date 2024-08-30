@@ -4,8 +4,9 @@ listed: true
 snippetIds:
   - js/s/create-html-elements
   - js/s/create-element
-  - js/s/render-remove-dom-element
+  - js/s/remove-dom-element
   - js/s/insert-html-string-before-or-after-element
+  - js/s/render-dom-element
 splash: hiking-balance
 description: >-
   DOM manipulation is a core skill for any web developer. Learn how to
