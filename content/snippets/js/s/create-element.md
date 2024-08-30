@@ -39,3 +39,7 @@ const other = createElement(
 console.log(other.tagName);
 // 'P' (only the first element is returned)
 ```
+
+> [!NOTE]
+>
+> If you want to render entire DOM trees, you might want to look into a more robust solution, such as [rendering DOM elements with JavaScript](/js/s/render-dom-element).
