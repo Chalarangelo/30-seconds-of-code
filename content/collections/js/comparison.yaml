@@ -8,7 +8,6 @@ snippetIds:
   - js/s/array-comparison
   - js/s/date-comparison
   - js/s/object-is-triple-equals
-  - js/s/deep-equality-comparison
   - js/s/match-object-properties
   - js/s/arrays-have-same-contents
 splash: succulent

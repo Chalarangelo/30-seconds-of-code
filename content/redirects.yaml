@@ -364,9 +364,6 @@
 - from: /articles/s/javascript-object-array-proxy
   to: /js/s/object-array-proxy
   status: 301!
-- from: /articles/s/javascript-object-comparison
-  to: /js/s/object-comparison
-  status: 301!
 - from: /articles/s/javascript-object-is-triple-equals
   to: /js/s/object-is-triple-equals
   status: 301!
@@ -978,9 +975,6 @@
   status: 301!
 - from: /js/s/walk-through
   to: /js/s/walk-through-object
-  status: 301!
-- from: /js/s/equals
-  to: /js/s/deep-equality-comparison
   status: 301!
 - from: /js/s/sum-power
   to: /js/s/sum-powers-in-range
@@ -3006,4 +3000,13 @@
   status: 301!
 - from: /js/s/remove-multiple-event-listeners
   to: /js/s/add-remove-event-listener-multiple-elements
+  status: 301!
+- from: /articles/s/javascript-object-comparison
+  to: /js/s/object-comparison
+  status: 301!
+- from: /js/s/equals
+  to: /js/s/object-comparison
+  status: 301!
+- from: /js/s/deep-equality-comparison
+  to: /js/s/object-comparison
   status: 301!
