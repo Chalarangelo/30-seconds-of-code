@@ -1,6 +1,6 @@
 ---
 title: Group array elements
-type: snippet
+type: tip
 test: true
 language: javascript
 tags: [array,object]
