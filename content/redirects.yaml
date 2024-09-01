@@ -679,9 +679,6 @@
 - from: /articles/s/react-use-effect-primitive-dependencies
   to: /react/s/use-effect-primitive-dependencies
   status: 301!
-- from: /articles/s/react-use-interval-explained
-  to: /react/s/use-interval-explained
-  status: 301!
 - from: /articles/s/react-use-state-with-label
   to: /react/s/use-state-with-label
   status: 301!
@@ -3033,4 +3030,10 @@
   status: 301!
 - from: /react/s/use-click-inside
   to: /react/s/use-click-outside-inside
+  status: 301!
+- from: /articles/s/react-use-interval-explained
+  to: /react/s/use-interval
+  status: 301!
+- from: /react/s/use-interval-explained
+  to: /react/s/use-interval
   status: 301!
