@@ -12,6 +12,10 @@ dateModified: 2024-07-05
 
 Handling **click events** in React is usually as simple as adding an `onClick` handler to a component. However, there are cases where you need to handle clicks outside or inside a component. This takes some extra effort and, most often than not, requires the use of custom hooks.
 
+> [!NOTE]
+>
+> It's highly recommended that you learn more about [detection of click events outside an element with JavaScript](/js/s/listen-click-outside-event).
+
 ## `useClickOutside` hook
 
 In order to handle clicks **outside of a component**, you'll first need to have a **reference** to the component. This is where the `useRef()` hook comes in handy. You can then use the `useEffect()` hook to add an **event listener** to the `document` and check if the click event occurred outside the component.
