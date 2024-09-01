@@ -7,7 +7,7 @@ tags: [hooks,state,effect]
 cover: capsule-coffee
 excerpt: Track the browser's location hash value and search params with this pair of custom hooks.
 listed: true
-dateModified: 2024-07-06-30
+dateModified: 2024-06-30
 ---
 
 If you want to track the browser's location hash value or search params in React, you can create a couple of custom hooks to handle this. While seemingly simple, listening for changes in these values can be a little tricky, but also quite useful.
