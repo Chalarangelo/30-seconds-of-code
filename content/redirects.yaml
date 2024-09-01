@@ -3037,3 +3037,30 @@
 - from: /react/s/use-interval-explained
   to: /react/s/use-interval
   status: 301!
+- from: /react/s/use-toggler
+  to: /react/s/advanced-react-state-hooks
+  state: 301!
+- from: /react/s/use-map
+  to: /react/s/advanced-react-state-hooks
+  state: 301!
+- from: /react/s/use-set
+  to: /react/s/advanced-react-state-hooks
+  state: 301!
+- from: /react/s/use-default
+  to: /react/s/advanced-react-state-hooks
+  state: 301!
+- from: /react/s/use-get-set
+  to: /react/s/advanced-react-state-hooks
+  state: 301!
+- from: /react/s/use-merge-state
+  to: /react/s/advanced-react-state-hooks
+  state: 301!
+- from: /react/s/use-previous
+  to: /react/s/advanced-react-state-hooks
+  state: 301!
+- from: /react/s/use-delayed-state
+  to: /react/s/advanced-react-state-hooks
+  state: 301!
+- from: /react/s/use-form
+  to: /react/s/advanced-react-state-hooks
+  state: 301!
