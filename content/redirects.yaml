@@ -3076,3 +3076,12 @@
 - from: /react/s/use-component-will-unmount
   to: /react/s/lifecycle-hooks
   status: 301!
+- from: /react/s/use-local-storage
+  to: /react/s/persist-state-to-storage
+  status: 301!
+- from: /react/s/use-session-storage
+  to: /react/s/persist-state-to-storage
+  status: 301!
+- from: /react/s/use-persisted-state
+  to: /react/s/persist-state-to-storage
+  status: 301!
