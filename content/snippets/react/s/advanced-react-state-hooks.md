@@ -286,6 +286,48 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 );
 ```
 
+## `useDebounce` hook
+
+Similar to the `usePrevious` hook, the `useDebounce` hook is a custom hook that **debounces the given value**. It takes a `value` and a `delay` and returns the debounced value. It uses the `useState()` hook to store the debounced value and the `useEffect()` hook to update the debounced value every time the `value` is updated.
+
+Using `setTimeout()`, it creates a timeout that delays invoking the setter of the previous state variable by `delay` milliseconds. Then, it uses `clearTimeout()` to clean up when dismounting the component. This is particularly useful when dealing with user input.
+
+```jsx
+const useDebounce = (value, delay) => {
+  const [debouncedValue, setDebouncedValue] = React.useState(value);
+
+  React.useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [value]);
+
+  return debouncedValue;
+};
+
+const Counter = () => {
+  const [value, setValue] = React.useState(0);
+  const lastValue = useDebounce(value, 500);
+
+  return (
+    <div>
+      <p>
+        Current: {value} - Debounced: {lastValue}
+      </p>
+      <button onClick={() => setValue(value + 1)}>Increment</button>
+    </div>
+  );
+};
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <Counter />
+);
+```
+
 ## `useDelayedState` hook
 
 Instead of creating a stateful value immediately, you might want to **delay its creation** until some condition is met. This is where the `useDelayedState` hook comes in. It creates a stateful value that is only updated if the `condition` is met.

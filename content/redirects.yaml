@@ -3058,6 +3058,9 @@
 - from: /react/s/use-previous
   to: /react/s/advanced-react-state-hooks
   state: 301!
+- from: /react/s/use-debounce
+  to: /react/s/advanced-react-state-hooks
+  state: 301!
 - from: /react/s/use-delayed-state
   to: /react/s/advanced-react-state-hooks
   state: 301!
