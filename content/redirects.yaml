@@ -3064,3 +3064,12 @@
 - from: /react/s/use-form
   to: /react/s/advanced-react-state-hooks
   state: 301!
+- from: /react/s/use-component-did-mount
+  to: /react/s/lifecycle-hooks
+  status: 301!
+- from: /react/s/use-component-did-update
+  to: /react/s/lifecycle-hooks
+  status: 301!
+- from: /react/s/use-component-will-unmount
+  to: /react/s/lifecycle-hooks
+  status: 301!
