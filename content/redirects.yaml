@@ -3028,3 +3028,9 @@
 - from: /js/s/find-closest-anchor
   to: /js/s/get-ancestors-parents-siblings-children
   status: 301!
+- from: /react/s/use-click-outside
+  to: /react/s/use-click-outside-inside
+  status: 301!
+- from: /react/s/use-click-inside
+  to: /react/s/use-click-outside-inside
+  status: 301!
