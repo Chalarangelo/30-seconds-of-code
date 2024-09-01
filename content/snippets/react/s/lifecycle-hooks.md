@@ -4,7 +4,7 @@ shortTitle: Lifecycle hooks
 type: question
 language: react
 tags: [hooks,effect]
-cover: image
+cover: green-cabin-cow
 excerpt: If you're transitioning from class components to functional components, you can replicate the behavior of lifecycle methods using hooks.
 listed: true
 dateModified: 2024-07-02
