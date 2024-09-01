@@ -2,7 +2,7 @@
 title: Advanced React state hooks
 type: story
 language: react
-tags: [hooks]
+tags: [hooks,state,effect,callback]
 cover: engine
 excerpt: Is `useState()` too limited for you? Perhaps `useReducer()` doesn't quite cut it either? Let's explore some advanced state management hooks.
 listed: true
