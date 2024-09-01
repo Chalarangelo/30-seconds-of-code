@@ -3085,3 +3085,9 @@
 - from: /react/s/use-persisted-state
   to: /react/s/persist-state-to-storage
   status: 301!
+- from: /react/s/use-hash
+  to: /react/s/use-hash-search-param
+  status: 301!
+- from: /react/s/use-search-param
+  to: /react/s/use-hash-search-param
+  status: 301!
