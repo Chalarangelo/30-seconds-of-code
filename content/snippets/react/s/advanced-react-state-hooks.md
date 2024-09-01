@@ -13,7 +13,7 @@ React's toolbox is intentionally quite limited, providing you some very versatil
 
 ## `useToggler` hook
 
-Starting off with a simple one, the `useToggler` hook provides a boolean state variable that can be toggled between its two states. Instead of managing the state manually, you can simply call the `toggleValue` function to toggle the state.
+Starting off with a simple one, the `useToggler` hook provides a **boolean state variable** that can be toggled between its two states. Instead of managing the state manually, you can simply call the `toggleValue` function to toggle the state.
 
 The implementation is rather simple, as well. You use the `useState()` hook to create the `value` state variable and its setter. Then, you create a function that toggles the value of the state variable and memoize it, using the `useCallback()` hook. Finally, you return the `value` state variable and the memoized function.
 
@@ -37,7 +37,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
 ## `useMap` hook
 
-The `Map` object is a very versatile data structure in JavaScript, but it's not directly supported by React's state management hooks. The `useMap` hook creates a stateful `Map` object and a set of functions to manipulate it.
+The `Map` object is a very versatile **data structure** in JavaScript, but it's not directly supported by React's state management hooks. The `useMap` hook creates a stateful `Map` object and a set of functions to manipulate it.
 
 Using the `useState()` hook and the `Map()` constructor, you create a new `Map` from the `initialValue`. Then, you use the `useMemo()` hook to create a set of non-mutating actions that manipulate the state variable, using the state setter to create a new `Map` every time. Finally, you return the `map` state variable and the created `actions`.
 
@@ -139,7 +139,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
 ## `useDefault` hook
 
-Similar to the previous hook, we might also need a hook that provides a default value if the state is `null` or `undefined`. The `useDefault` hook does exactly that. It creates a stateful value with a default fallback if it's `null` or `undefined`, and a function to update it.
+Similar to the previous hook, we might also need a hook that provides a **default value** if the state is `null` or `undefined`. The `useDefault` hook does exactly that. It creates a stateful value with a default fallback if it's `null` or `undefined`, and a function to update it.
 
 The approach is very similar to the previous hook. You use the `useState()` hook to create the stateful value. Then, you check if the value is either `null` or `undefined`. If it is, you return the `defaultState`, otherwise you return the actual `value` state, alongside the `setValue` function.
 
@@ -170,7 +170,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
 ## `useGetSet` hook
 
-Instead of returning a single state variable and its setter, you might want to return a getter and a setter function. This is the job of the `useGetSet` hook. It creates a stateful value, returning a getter and a setter function.
+Instead of returning a single state variable and its setter, you might want to return **a getter and a setter** function. This is the job of the `useGetSet` hook. It creates a stateful value, returning a getter and a setter function.
 
 In order to implement this hook, you use the `useRef()` hook to create a ref that holds the stateful value, initializing it with `initialState`. Then, you use the `useReducer()` hook that creates a new object every time it's updated and return its dispatch.
 
@@ -211,9 +211,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
 ## `useMergeState` hook
 
-Similar to the `useReducer()` hook, the `useMergeState` hook allows you to update the state by merging the new state provided with the existing one. It creates a stateful value and a function to update it by merging the new state provided.
+Similar to the `useReducer()` hook, the `useMergeState` hook allows you to update the state by **merging the new state** provided with the existing one. It creates a stateful value and a function to update it by merging the new state provided.
 
-All you need to do to implement it is use the `useState()` hook to create a state variable, initializing it to `initialState`. Then, create a function that will update the state variable by merging the new state provided with the existing one. If the new state is a function, call it with the previous state as the argument and use the result.
+All you need to do to implement it is use the `useState()` hook to create a state variable, initializing it to `initialState`. Then, create a function that will update the state variable by merging the new state provided with the existing one. If the new state is a **function**, call it with the previous state as the argument and use the result.
 
 Omit the argument to initialize the state variable with an empty object (`{}`).
 
@@ -256,7 +256,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
 ## `usePrevious` hook
 
-The `usePrevious` hook is a very useful hook that stores the previous state or props. It's a custom hook that takes a `value` and returns the previous value. It uses the `useRef()` hook to create a ref for the `value` and the `useEffect()` hook to remember the latest `value`.
+The `usePrevious` hook is a very useful hook that stores the **previous state** or props. It's a custom hook that takes a `value` and returns the previous value. It uses the `useRef()` hook to create a ref for the `value` and the `useEffect()` hook to remember the latest `value`.
 
 ```jsx
 const usePrevious = value => {
@@ -288,7 +288,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
 ## `useDelayedState` hook
 
-Instead of creating a stateful value immediately, you might want to delay its creation until some condition is met. This is where the `useDelayedState` hook comes in. It creates a stateful value that is only updated if the `condition` is met.
+Instead of creating a stateful value immediately, you might want to **delay its creation** until some condition is met. This is where the `useDelayedState` hook comes in. It creates a stateful value that is only updated if the `condition` is met.
 
 Implementing this hook requires the use of the `useState()` and `useEffect()` hooks. You create a stateful value containing the actual `state` and a boolean, `loaded`. Then, you update the stateful value if the `condition` or `loaded` changes. Finally, you create a function, `updateState`, that only updates the `state` value if `loaded` is truthy.
 
@@ -348,7 +348,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
 ## `useForm` hook
 
-Last but not least, the `useForm` hook can be used to create a stateful value from the fields in a form. It uses the `useState()` hook to create a state variable for the values in the form and a function that will be called with an appropriate event by a form field to update the state variable accordingly.
+Last but not least, the `useForm` hook can be used to create a stateful value from the **fields in a form**. It uses the `useState()` hook to create a state variable for the values in the form and a function that will be called with an appropriate event by a form field to update the state variable accordingly.
 
 ```jsx
 const useForm = initialValues => {
