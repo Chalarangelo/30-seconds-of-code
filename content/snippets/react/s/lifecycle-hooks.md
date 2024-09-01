@@ -3,7 +3,7 @@ title: How can I implement React's lifecycle methods using hooks?
 shortTitle: Lifecycle hooks
 type: question
 language: react
-tags: [hooks]
+tags: [hooks,effect]
 cover: image
 excerpt: If you're transitioning from class components to functional components, you can replicate the behavior of lifecycle methods using hooks.
 listed: true
