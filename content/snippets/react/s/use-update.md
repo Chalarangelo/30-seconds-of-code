@@ -2,7 +2,7 @@
 title: React useUpdate hook
 type: snippet
 language: react
-tags: [components,reducer]
+tags: [hooks,reducer]
 cover: lavender-shelf
 excerpt: Forces the component to re-render when called.
 listed: true
