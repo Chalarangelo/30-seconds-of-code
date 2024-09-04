@@ -1,21 +1,22 @@
 ---
 title: React useFetch hook
-type: snippet
+shortTitle: useFetch hook
+type: tip
 language: react
 tags: [hooks,effect,state]
 cover: coworking-space
-excerpt: Implements `fetch()` in a declarative manner.
+excerpt: Implements `fetch()` in a declarative manner using React hooks.
 listed: true
-dateModified: 2022-05-01
+dateModified: 2024-06-28
 ---
 
-Implements `fetch()` in a declarative manner.
+JavaScript's `fetch()` API is a modern way to make **network requests**. However, its promise-based nature can make it difficult to use in a declarative manner. You can create a custom hook to make it easier to use `fetch()` in React components.
 
-- Create a custom hook that takes a `url` and `options`.
-- Use the `useState()` hook to initialize the `response`, `error` and `abort` state variables.
-- Use the `useEffect()` hook to asynchronously call `fetch()` and update the state variables accordingly.
-- Create and use an `AbortController` to allow aborting the request. Use it to cancel the request when the component unmounts.
-- Return an object containing the `response`, `error` and `abort` state variables.
+For starters, we need to account for for the **state of the request**. Using the `useState()` hook, we can initialize the `response`, `error`, and `abort` state variables. We can then use the `useEffect()` hook to asynchronously call `fetch()` and update the state variables accordingly.
+
+In order to allow the user to **abort the request**, we can create and use an `AbortController`. We can use it to cancel the request when the component unmounts. Finally, we can return an object containing the `response`, `error`, and `abort` state variables.
+
+Depending on the state of the object returned by the `useFetch` hook, we can render different components. If there is no `response` and no `error`, we can render a loading message. If there is a `response`, we can render the image. If there is an `error`, we can render an error message. If an abort is requested, we can cancel the request.
 
 ```jsx
 const useFetch = (url, options) => {
