@@ -3091,3 +3091,27 @@
 - from: /react/s/use-search-param
   to: /react/s/use-hash-search-param
   status: 301!
+- from: /react/s/use-unload
+  to: /react/s/window-global-environment-ssr-hooks
+  status: 301!
+- from: /react/s/use-navigator-on-line
+  to: /react/s/window-global-environment-ssr-hooks
+  status: 301!
+- from: /react/s/use-window-size
+  to: /react/s/window-global-environment-ssr-hooks
+  status: 301!
+- from: /react/s/use-on-window-resize
+  to: /react/s/window-global-environment-ssr-hooks
+  status: 301!
+- from: /react/s/use-on-window-scroll
+  to: /react/s/window-global-environment-ssr-hooks
+  status: 301!
+- from: /react/s/use-media-query
+  to: /react/s/window-global-environment-ssr-hooks
+  status: 301!
+- from: /react/s/use-ssr
+  to: /react/s/window-global-environment-ssr-hooks
+  status: 301!
+- from: /react/s/use-isomporphic-effect
+  to: /react/s/window-global-environment-ssr-hooks
+  status: 301!
