@@ -3115,3 +3115,12 @@
 - from: /react/s/use-isomporphic-effect
   to: /react/s/window-global-environment-ssr-hooks
   status: 301!
+- from: /react/s/use-on-global-event
+  to: /react/s/event-listener-hooks
+  status: 301!
+- from: /react/s/use-event-listener
+  to: /react/s/event-listener-hooks
+  status: 301!
+- from: /react/s/use-key-press
+  to: /react/s/event-listener-hooks
+  status: 301!
