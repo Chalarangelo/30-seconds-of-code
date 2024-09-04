@@ -1,17 +1,20 @@
 ---
-title: React useUpdate hook
-type: snippet
+title: Force a React component to re-render
+shortTitle: useUpdate hook
+type: tip
 language: react
 tags: [hooks,reducer]
 cover: lavender-shelf
-excerpt: Forces the component to re-render when called.
+excerpt: Ever wanted to force update a React component? Here's a custom hook that does just that.
 listed: true
-dateModified: 2021-09-24
+dateModified: 2024-06-27
 ---
 
-Forces the component to re-render when called.
+React's rendering loop is based on the state and props of a component. If you want to **force a component to re-render**, there is no built-in way to do it. However, you can create a custom hook that forces a component to re-render when called.
 
-- Use the `useReducer()` hook that creates a new object every time it's updated and return its dispatch.
+Leveraging the way `useReducer()` works, every time it's updated, it creates a **new object** and returns its dispatch. This can be used to force a component to re-render.
+
+Thus, creating a custom `useUpdate` hook is as simple as using the `useReducer()` hook and returning its **dispatch**. Then, you can call the `update` function to force the component to re-render.
 
 ```jsx
 const useUpdate = () => {
