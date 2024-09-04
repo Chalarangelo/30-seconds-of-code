@@ -3124,3 +3124,6 @@
 - from: /react/s/use-key-press
   to: /react/s/event-listener-hooks
   status: 301!
+- from: /react/s/use-hover
+  to: /react/s/event-listener-hooks
+  status: 301!

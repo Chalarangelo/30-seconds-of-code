@@ -103,6 +103,52 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 );
 ```
 
+## `useHover` hook
+
+A variation of the `useEventListener` hook is the `useHover` hook, which listens for the `'mouseover'` and `'mouseout'` events on a given element. As these mouse events are common, this hook can be useful for handling hover states.
+
+The implementation is similar to the `useEventListener` hook, but it uses two separate handlers for `'mouseover'` and `'mouseout'` events. It also uses a ref to keep track of the last node passed to the `callbackRef` function, allowing it to remove the listeners when the component unmounts.
+
+```jsx
+const useHover = () => {
+  const [isHovering, setIsHovering] = React.useState(false);
+
+  const handleMouseOver = React.useCallback(() => setIsHovering(true), []);
+  const handleMouseOut = React.useCallback(() => setIsHovering(false), []);
+
+  const nodeRef = React.useRef();
+
+  const callbackRef = React.useCallback(
+    node => {
+      if (nodeRef.current) {
+        nodeRef.current.removeEventListener('mouseover', handleMouseOver);
+        nodeRef.current.removeEventListener('mouseout', handleMouseOut);
+      }
+
+      nodeRef.current = node;
+
+      if (nodeRef.current) {
+        nodeRef.current.addEventListener('mouseover', handleMouseOver);
+        nodeRef.current.addEventListener('mouseout', handleMouseOut);
+      }
+    },
+    [handleMouseOver, handleMouseOut]
+  );
+
+  return [callbackRef, isHovering];
+};
+
+const MyApp = () => {
+  const [hoverRef, isHovering] = useHover();
+
+  return <div ref={hoverRef}>{isHovering ? 'Hovering' : 'Not hovering'}</div>;
+};
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <MyApp />
+);
+```
+
 ## `useOnGlobalEvent` hook
 
 Listening for events on the **global object** can be useful in some cases. The `useOnGlobalEvent` hook listens for events on the global object and executes a callback whenever an event occurs.
