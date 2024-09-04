@@ -5,7 +5,7 @@ type: tip
 language: react
 tags: [hooks,effect,state]
 cover: coworking-space
-excerpt: Implements `fetch()` in a declarative manner using React hooks.
+excerpt: Implement `fetch()` in a declarative manner using React hooks.
 listed: true
 dateModified: 2024-06-28
 ---
