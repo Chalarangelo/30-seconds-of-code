@@ -1,20 +1,22 @@
 ---
 title: React usePortal hook
-type: snippet
+shortTitle: usePortal hook
+type: tip
 language: react
 tags: [hooks,state,effect]
 cover: interior-3
-excerpt: Creates a portal, allowing rendering of children outside the parent component.
+excerpt: Create a portal, allowing rendering of children outside the parent component, with this custom hook.
 listed: true
-dateModified: 2022-01-05
+dateModified: 2024-06-27
 ---
 
-Creates a portal, allowing rendering of children outside the parent component.
+React's portals allow you to **render children outside the parent component**. Sometimes, however, you may want to create a portal programmatically. You can create a custom hook to achieve this.
 
-- Use the `useState()` hook to create a state variable that holds the `render()` and `remove()` functions for the portal.
-- Use `ReactDOM.createPortal()` and `ReactDOM.unmountComponentAtNode()` to create a portal and a function to remove it. Use the `useCallback()` hook to wrap and memoize these functions as `createPortal()`.
-- Use the `useEffect()` hook to call `createPortal()` and update the state variable any time `el`'s value changes.
-- Finally, return the `render()` function of the state variable.
+First off, we will start by creating a **state variable**, using the `useState()` hook. This state variable will hold the `render()` and `remove()` functions for the portal.
+
+Then, using `ReactDOM.createPortal()` and `ReactDOM.unmountComponentAtNode()`, we will **create a portal** and a function to **remove it**. We will wrap and **memoize** these functions as `createPortal()` using the `useCallback()` hook.
+
+Finally, we will use the `useEffect()` hook to call `createPortal()` and update the state variable any time the `el` value changes. We will return the `render()` function of the state variable.
 
 ```jsx
 const usePortal = el => {
