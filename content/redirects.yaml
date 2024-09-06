@@ -3127,3 +3127,6 @@
 - from: /react/s/use-hover
   to: /react/s/event-listener-hooks
   status: 301!
+- from: /react/s/select
+  to: /react/s/selected-option
+  status: 301!
