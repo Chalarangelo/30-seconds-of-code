@@ -1,20 +1,24 @@
 ---
 title: React useTimeout hook
-type: snippet
+shortTitle: useTimeout hook
+type: tip
 language: react
 tags: [hooks,effect]
 cover: interior-10
-excerpt: Implements `setTimeout()` in a declarative manner.
+excerpt: Implement `setTimeout()` in a declarative manner, using a custom hook.
 listed: true
-dateModified: 2020-11-16
+dateModified: 2024-06-23
 ---
 
-Implements `setTimeout()` in a declarative manner.
+Have you ever wanted to use `setTimeout()` in a declarative manner in React but found it difficult to manage? You can create a custom hook to make it easier to use `setTimeout()` in React components.
 
-- Create a custom hook that takes a `callback` and a `delay`.
-- Use the `useRef()` hook to create a `ref` for the callback function.
-- Use the `useEffect()` hook to remember the latest callback.
-- Use the `useEffect()` hook to set up the timeout and clean up.
+> [!NOTE]
+>
+> It's highly suggested that you start by reading [how to implement a `useInterval` hook](/snippets/react/s/use-interval), as this implementation is very similar.
+
+In order to create a custom hook for `setTimeout()`, you'll first need to use `useRef()` to create a `ref` for the **callback function**. You'll then use `useEffect()` to remember the latest callback and set up the timeout, as well as clean up when the component unmounts.
+
+A second `useEffect()` hook will be used to **set up the timeout** and clean up. The `useEffect()` hook will call the `setTimeout()` function with the given `delay` and `callback`. If the `delay` is `null`, the timeout will be cleared.
 
 ```jsx
 const useTimeout = (callback, delay) => {
