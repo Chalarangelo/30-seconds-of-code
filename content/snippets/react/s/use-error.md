@@ -1,19 +1,20 @@
 ---
 title: React useError hook
-type: snippet
+shortTitle: useError hook
+type: tip
 language: react
 tags: [hooks,state,effect]
 cover: cloudy-mountaintop
-excerpt: Creates an error dispatcher.
+excerpt: Use this little trick to create an error dispatcher in React.
 listed: true
-dateModified: 2021-09-30
+dateModified: 2024-06-25
 ---
 
-Creates an error dispatcher.
+Throwing errors is more or less unavoidable in any application. React provides some built-in error boundaries to catch these errors, but sometimes you might want to **throw an error from a component**. This is where a custom hook can come in handy.
 
-- Use the `useState()` hook to create a state variable that holds the error.
-- Use the `useEffect()` hook to `throw` the error whenever it's  truthy.
-- Use the `useCallback()` hook to update the state and return the cached function.
+Creating an error dispatcher hook is fairly straightforward. All you need is a state variable to hold the error and a function to update it.
+
+That being said, you'll need to use the `useState()`, `useEffect()`, and `useCallback()` hooks to create the state variable, throw the error, and update the state, respectively.
 
 ```jsx
 const useError = err => {
