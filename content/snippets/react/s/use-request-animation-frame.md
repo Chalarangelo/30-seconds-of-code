@@ -1,19 +1,20 @@
 ---
 title: React useRequestAnimationFrame hook
-type: snippet
+shortTitle: useRequestAnimationFrame hook
+type: tip
 language: react
 tags: [hooks,effect]
 cover: aerial-view-port
-excerpt: Runs an animating function, calling it before every repaint.
+excerpt: Turn `requestAnimationFrame()` into a custom hook to animate your React components.
 listed: true
-dateModified: 2021-12-29
+dateModified: 2024-06-24
 ---
 
-Runs an animating function, calling it before every repaint.
+The `requestAnimationFrame()` method tells the browser that you wish to perform an animation and requests that the browser calls a specified function to update an animation before the next repaint. This method provides a more efficient way to perform animations in JavaScript. But what about using it in React?
 
-- Use the `useRef()` hook to create two variables. `requestRef` will hold the last request id and `previousTimeRef` will hold the last timestamp.
-- Define a function, `animate`, which handles updating these variables, runs the `callback` and calls `Window.requestAnimationFrame()` perpetually.
-- Use the `useEffect()` hook with an empty array to initialize the value of `requestRef` using `Window.requestAnimationFrame()`. Use the returned value and `Window.cancelAnimationFrame()` to clean up when the component unmounts.
+As usual, a custom hook is the answer. Using the `useRef()` hook, you can create two variables to hold the **last request id** and the **last timestamp**. You can then define a function, `animate`, which updates these variables, runs the `callback`, and calls `Window.requestAnimationFrame()` perpetually.
+
+Finally, you can use the `useEffect()` hook to initialize the value of `requestRef` using `Window.requestAnimationFrame()` and clean up when the component unmounts.
 
 ```jsx
 const useRequestAnimationFrame = callback => {
