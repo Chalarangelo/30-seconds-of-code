@@ -1,19 +1,20 @@
 ---
 title: React useBodyScrollLock hook
-type: snippet
+shortTitle: useBodyScrollLock hook
+type: tip
 language: react
 tags: [hooks,effect]
 cover: folded-map
-excerpt: Enables body scroll locking.
+excerpt: Do you need to lock the body scroll when a modal is open? Perhaps this custom hook can help.
 listed: true
-dateModified: 2021-09-02
+dateModified: 2024-06-22
 ---
 
-Enables body scroll locking.
+Modals are tricky to implement, but they pose a significant challenge when it comes to scrolling. When a modal is open, you might want to prevent the user from scrolling the body content. This is especially important on mobile devices, where the modal might be taller than the viewport. This technique is often referred to as **body scroll locking**.
 
-- Use the `useLayoutEffect()` with an empty array as the second argument to execute the provided callback only once when the component is mounted.
-- Use `Window.getComputedStyle()` to get the `overflow` value of the `body` element and store it in a variable.
-- Replace the `overflow` value of the `body` element with `'hidden'` and restore it to its original value when unmounting.
+To implement this feature in React, you can create a custom hook that locks the body scroll when a modal is open. This hook will set the `overflow` property of the `body` element to `'hidden'` when the modal is open and restore it to its original value when the modal is closed.
+
+Implementation-wise, you'll need to reach for the `useLayoutEffect()` hook to ensure that the scroll lock is applied immediately when the component mounts. You can use `Window.getComputedStyle()` to get the current `overflow` value of the `body` element and store it in a variable. Then, you can replace the `overflow` value with `'hidden'` to lock the scroll. When the component unmounts, you can restore the original `overflow` value.
 
 ```jsx
 const useBodyScrollLock = () => {
