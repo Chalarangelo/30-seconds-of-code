@@ -1,19 +1,22 @@
 ---
-title: React useTitle hook
-type: snippet
+title: How can I use a React hook to change the title of a page?
+shortTitle: useTitle hook
+type: question
 language: react
 tags: [hooks,effect]
 cover: chubby-squirrel
-excerpt: Sets the title of the page
+excerpt: Ever wanted to change the title of a page in a React app? You can create a custom hook to do just that.
 listed: true
-dateModified: 2021-09-27
+dateModified: 2024-06-25
 ---
 
-Sets the title of the page
+React doesn't provide a built-in way to **change the title of a page**. However, you can create a custom hook to do just that. This hook will set the title of the page when the component mounts and clean up when the component unmounts.
 
-- Use `typeof` to determine if the `Document` is defined or not.
-- Use the `useRef()` hook to store the original title of the `Document`, if defined.
-- Use the `useEffect()` hook to set `Document.title` to the passed value when the component mounts and clean up when unmounting.
+Before you implement the logic, however, you'll need to **check if you're in a browser environment**. This is because the `document` object is only available in the browser. You can do this by using `typeof` to determine if the `Document` is defined or not.
+
+Then, using the `useRef()` hook, you can **store the original title** of the `Document`, if defined. This will allow you to reset the title when the component unmounts.
+
+Finally, you can use the `useEffect()` hook to set `Document.title` to the passed value when the component mounts and clean up when unmounting.
 
 ```jsx
 const useTitle = title => {
