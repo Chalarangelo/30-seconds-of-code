@@ -1,20 +1,24 @@
 ---
 title: React useMutationObserver hook
-type: snippet
+shortTitle: useMutationObserver hook
+type: tip
 language: react
 tags: [hooks,effect]
 cover: lemon-tea
-excerpt: Watches for changes made to the DOM tree, using a `MutationObserver`
+excerpt: Use the `MutationObserver` API to watch for changes made to the DOM tree.
 listed: true
-dateModified: 2021-11-23
+dateModified: 2024-06-27
 ---
 
-Watches for changes made to the DOM tree, using a `MutationObserver`
+JavaScript's `MutationObserver` API is a modern way to **watch for changes** made to the DOM tree. However, its imperative nature can make it difficult to use in a declarative manner. You can create a custom hook to make it easier to use `MutationObserver` in React components.
 
-- Use a `useEffect()` hook that depends on the values of `callback` and `options`.
-- Check if the given `ref` is initialized. If it is, create a new `MutationObserver` and pass it the `callback`.
-- Call `MutationObserver.observe()` with the given `options` to watch the given `ref` for changes.
-- Use `MutationObserver.disconnect()` to remove the observer from the `ref` when the component unmounts.
+All you really need is a `ref` to the **element** you want to watch, a `callback` function to be called when changes are detected, and an `options` object to specify what changes to watch for.
+
+To create your custom hook, you'll use the `useEffect()` hook to set up the `MutationObserver` and the `ref` to watch. The **effect** will depend on the `callback` and `options` values.
+
+Then, inside the effect **callback**, you'll check if the `ref` is initialized. If it is, you'll create a new `MutationObserver` and pass it the `callback`. You'll then call `MutationObserver.observe()` with the given `options` to watch the `ref` for changes.
+
+Finally, **when the component unmounts**, you'll use the `MutationObserver.disconnect()` method to remove the observer.
 
 ```jsx
 const useMutationObserver = (
