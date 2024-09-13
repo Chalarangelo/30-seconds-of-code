@@ -3130,3 +3130,9 @@
 - from: /react/s/select
   to: /react/s/selected-option
   status: 301!
+- from: /react/s/mailto
+  to: /react/s/mailto-callto
+  status: 301!
+- from: /react/s/callto
+  to: /react/s/mailto-callto
+  status: 301!
