@@ -3142,3 +3142,15 @@
 - from: /react/s/limited-word-textarea
   to: /react/s/limited-textarea
   status: 301!
+- from: /react/s/data-table
+  to: /react/s/data-mapping-components
+  status: 301!
+- from: /react/s/mapped-table
+  to: /react/s/data-mapping-components
+  status: 301!
+- from: /react/s/data-list
+  to: /react/s/data-mapping-components
+  status: 301!
+- from: /react/s/tree-view
+  to: /react/s/data-mapping-components
+  status: 301!
