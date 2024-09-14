@@ -3166,3 +3166,12 @@
 - from: /react/s/carousel
   to: /react/s/collapsable-content-components
   status: 301!
+- from: /react/s/alert
+  to: /react/s/tooltip-alert-modal
+  status: 301!
+- from: /react/s/modal
+  to: /react/s/tooltip-alert-modal
+  status: 301!
+- from: /react/s/tooltip
+  to: /react/s/tooltip-alert-modal
+  status: 301!
