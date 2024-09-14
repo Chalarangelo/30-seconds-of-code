@@ -3154,3 +3154,15 @@
 - from: /react/s/tree-view
   to: /react/s/data-mapping-components
   status: 301!
+- from: /react/s/collapse
+  to: /react/s/collapsable-content-components
+  status: 301!
+- from: /react/s/accordion
+  to: /react/s/collapsable-content-components
+  status: 301!
+- from: /react/s/tabs
+  to: /react/s/collapsable-content-components
+  status: 301!
+- from: /react/s/carousel
+  to: /react/s/collapsable-content-components
+  status: 301!
