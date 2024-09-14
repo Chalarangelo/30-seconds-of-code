@@ -3136,3 +3136,9 @@
 - from: /react/s/callto
   to: /react/s/mailto-callto
   status: 301!
+- from: /react/s/text-area
+  to: /react/s/limited-textarea
+  status: 301!
+- from: /react/s/limited-word-textarea
+  to: /react/s/limited-textarea
+  status: 301!
