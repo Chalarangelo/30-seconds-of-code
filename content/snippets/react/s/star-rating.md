@@ -1,21 +1,21 @@
 ---
-title: Star rating
-type: snippet
+title: Star rating component
+type: tip
 language: react
 tags: [components,children,input,state]
 cover: lake-church
-excerpt: Renders a star rating component.
+excerpt: Create your very own star rating component in React.
 listed: true
-dateModified: 2021-10-13
+dateModified: 2024-06-12
 ---
 
-Renders a star rating component.
+Star rating components are the de facto way of **rating items** on the web. They are simple to use and provide a visual representation of the rating. Yet, implementing them sounds tricky. However, with React, you can create a star rating component with ease.
 
-- Define a `Star` component. It renders each individual star with the appropriate appearance, based on the parent component's state.
-- Define a `StarRating` component. Use the `useState()` hook to define the `rating` and `selection` state variables with the appropriate initial values.
-- Create a method, `hoverOver`, that updates `selected` according to the provided `event`, using the .`data-star-id` attribute of the event's target or resets it to `0` if called with a `null` argument.
-- Use `Array.from()` to create an array of `5` elements and `Array.prototype.map()` to create individual `<Star>` components.
-- Handle the `onMouseOver` and `onMouseLeave` events of the wrapping element using `hoverOver`. Handle the `onClick` event using `setRating`.
+First, you'll need to separate the **individual star component** from the parent component. The `Star` component will render each individual star with the appropriate appearance based on the parent component's state.
+
+The `StarRating` component, in turn, will use the `useState()` hook to define the `rating` and `selection` state variables with the appropriate initial values. Then, you can define a method, `hoverOver`, that updates `selected` according to the provided `event`, using the `.data-star-id` attribute of the event's target or resets it to `0` if called with a `null` argument.
+
+Finally, using `Array.from()` to create an array of `5` elements and `Array.prototype.map()`, you can create individual `<Star>` components and handle the `onMouseOver` and `onMouseLeave` events of the wrapping element using `hoverOver`. Handle the `onClick` event using `setRating`.
 
 ```css
 .star {
