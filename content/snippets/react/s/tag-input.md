@@ -1,22 +1,17 @@
 ---
 title: Tag input field
-type: snippet
+type: tip
 language: react
 tags: [components,input,state]
 cover: interior-4
-excerpt: Renders a tag input field.
+excerpt: Create a custom input field with selectable tags, using React.
 listed: true
-dateModified: 2020-11-25
+dateModified: 2024-06-15
 ---
 
-Renders a tag input field.
+Tag input fields have become a common feature in modern web applications. They allow users to add multiple tags to a form or search field. While this all might sound complicated, it's actually fairly simple to implement with React.
 
-- Define a `TagInput` component and use the `useState()` hook to initialize an array from `tags`.
-- Use `Array.prototype.map()` on the collected nodes to render the list of tags.
-- Define the `addTagData` method, which will be executed when pressing the `Enter` key.
-- The `addTagData` method calls `setTagData` to add the new tag using the spread (`...`) operator to prepend the existing tags and add the new tag at the end of the `tagData` array.
-- Define the `removeTagData` method, which will be executed on clicking the delete icon in the tag.
-- Use `Array.prototype.filter()` in the `removeTagData` method to remove the tag using its `index` to filter it out from the `tagData` array.
+Starting with the component's props, we'll only need to store the initial `tags` array in a state variable. Then, using `Array.prototype.map()`, we'll render the list of tags. The `addTagData` method will be called when the user presses the `Enter` key, and the `removeTagData` method will be called when the user clicks the delete icon in the tag.
 
 ```css
 .tag-input {
@@ -84,15 +79,18 @@ Renders a tag input field.
 ```jsx
 const TagInput = ({ tags }) => {
   const [tagData, setTagData] = React.useState(tags);
+
   const removeTagData = indexToRemove => {
     setTagData([...tagData.filter((_, index) => index !== indexToRemove)]);
   };
+
   const addTagData = event => {
     if (event.target.value !== '') {
       setTagData([...tagData, event.target.value]);
       event.target.value = '';
     }
   };
+
   return (
     <div className="tag-input">
       <ul className="tags">
