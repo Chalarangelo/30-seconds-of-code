@@ -1,18 +1,20 @@
 ---
-title: Show/hide password toggle
-type: snippet
+title: Show/hide password toggle component
+shortTitle: Password revealer
+type: tip
 language: react
 tags: [components,input,state]
 cover: thread
-excerpt: Renders a password input field with a reveal button.
+excerpt: Ever wanted to show the password the user is typing? Here's how you can create a password input field with a reveal button in React.
 listed: true
-dateModified: 2020-11-25
+dateModified: 2024-06-14
 ---
 
-Renders a password input field with a reveal button.
+Have you ever wondered how **password reveal** buttons work? Perhaps you've tried to build one yourself by storing the password in a state variable and toggling its visibility. Luckily, there's a much simpler way, leveraging HTML's built-in password input field.
 
-- Use the `useState()` hook to create the `shown` state variable and set its value to `false`.
-- When the `<button>` is clicked, execute `setShown`, toggling the `type` of the `<input>` between `'text'` and `'password'`.
+All you really need to understand for this trick to work is that changing the `type` attribute of the `<input>` element from `'password'` to `'text'` will reveal the password. This is a simple and relatively secure way to show the password the user is typing.
+
+In order to leverage this knowledge, you will need to use the `useState()` hook to create a state variable that toggles the `type` attribute of the `<input>` element. When the user clicks the reveal button, you can update the state variable to toggle the password's visibility.
 
 ```jsx
 const PasswordRevealer = ({ value }) => {
