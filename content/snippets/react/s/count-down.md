@@ -1,22 +1,27 @@
 ---
 title: Countdown timer
-type: snippet
+type: tip
 language: react
 tags: [components,state]
 cover: sea-view-2
-excerpt: Renders a countdown timer that prints a message when it reaches zero.
+excerpt: Create a countdown timer that prints a message when it reaches zero, using React.
 listed: true
-dateModified: 2021-10-13
+dateModified: 2024-06-13
 ---
 
-Renders a countdown timer that prints a message when it reaches zero.
+One of the benefits of React is that you can create complex components, encapsulating their logic and state. A great use case for this is a **countdown timer** that prints a message when it reaches zero.
 
-- Use the `useState()` hook to create a state variable to hold the time value. Initialize it from the props and destructure it into its components.
-- Use the `useState()` hook to create the `paused` and `over` state variables, used to prevent the timer from ticking if it's paused or the time has run out.
-- Create a method `tick`, that updates the time values based on the current value (i.e. decreasing the time by one second).
-- Create a method `reset`, that resets all state variables to their initial states.
-- Use the the `useEffect()` hook to call the `tick` method every second via the use of `setInterval()` and use `clearInterval()` to clean up when the component is unmounted.
-- Use `String.prototype.padStart()` to pad each part of the time array to two characters to create the visual representation of the timer.
+The component relies heavily on the use of the `useState()` hook. It creates **state variables** to hold the time value, the `paused` state, and the `over` state.
+
+The `tick` method **updates the time values** based on the current value. This method performs simple mathematical operations that decrease the time by one second, handling edge cases as needed. Similarly, the `reset` method resets all state variables to their initial states.
+
+Then, using the `useEffect()` hook to call the `tick` method **every second** via the use of `setInterval()`, the component updates the time value. The hook also uses `clearInterval()` to clean up when the component is unmounted.
+
+Finally, the component **renders** the countdown timer, displaying the time value and a message when the time **reaches zero**. It also includes buttons to pause, resume, and restart the timer.
+
+> [!NOTE]
+>
+> This implementation only supports hours, minutes, and seconds. You can easily extend it to support days, weeks, or even months.
 
 ```jsx
 const CountDown = ({ hours = 0, minutes = 0, seconds = 0 }) => {
