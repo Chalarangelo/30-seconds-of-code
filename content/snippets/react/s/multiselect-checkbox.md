@@ -1,19 +1,19 @@
 ---
 title: Stateful checkbox with multiple selection
-type: snippet
+type: tip
 language: react
 tags: [components,input,state,array]
 cover: violin
-excerpt: Renders a checkbox list that uses a callback function to pass its selected value/values to the parent component.
+excerpt: Render a checkbox list that uses a callback function to pass its selected value/values to the parent component.
 listed: true
-dateModified: 2021-10-13
+dateModified: 2024-06-13
 ---
 
-Renders a checkbox list that uses a callback function to pass its selected value/values to the parent component.
+A **group of checkboxes** can be used to allow users to select multiple options from a list. However, managing individual inputs is usually a hassle, so you may want to roll up a React component that handles this for you.
 
-- Use the `useState()` hook to create the `data` state variable and use the `options` prop to initialize its value.
-- Create a `toggle` function that uses the spread operator (`...`) and `Array.prototype.splice()` to update the `data` state variable and call the `onChange` callback with any `checked` options.
-- Use `Array.prototype.map()` to map the `data` state variable to individual `<input type="checkbox">` elements. Wrap each one in a `<label>`, binding the `onClick` handler to the `toggle` function.
+To create a **stateful** checkbox list that supports multiple selections, you can use the `useState()` hook to manage the state of the checkboxes. Using `Array.prototype.splice()` and the spread operator (`...`), you can update the state variable with the new value of the checkbox, when it changes. Finally, you can call a **callback function** with the selected values.
+
+For the **rendering** of the component, you'll have to use `Array.prototype.map()` to map the state variable to individual `<input type="checkbox">` elements. Wrap each one in a `<label>`, binding the `onClick` handler to the `toggle` function.
 
 ```jsx
 const MultiselectCheckbox = ({ options, onChange }) => {

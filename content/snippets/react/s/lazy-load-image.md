@@ -7,7 +7,7 @@ tags: [components,effect,state]
 cover: strawberries
 excerpt: Learn how to create your own lazy loading image component in React.
 listed: true
-dateModified: 2023-06-14
+dateModified: 2024-06-14
 ---
 
 Lazy loading images is a great way to **improve the performance** of your web application. By only loading images when they are in the viewport, you can reduce the initial load time and save bandwidth. In React, you can create a custom component that supports lazy loading using the `IntersectionObserver` API.
