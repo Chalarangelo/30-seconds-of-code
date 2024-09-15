@@ -1,19 +1,25 @@
 ---
-title: Automatic text linking
-type: snippet
+title: Automatic text linking in React
+type: tip
 language: react
 tags: [components,fragment,regexp]
 cover: red-petals
-excerpt: Renders a string as plaintext, with URLs converted to appropriate link elements.
+excerpt: Ever wondered how to detect links in plaintext strings and make them clickable? A little ingenuity combined with React can get you there.
 listed: true
-dateModified: 2020-11-03
+dateModified: 2024-06-12
 ---
 
-Renders a string as plaintext, with URLs converted to appropriate link elements.
+Have you ever wondered how to **detect links in plaintext strings** and make them clickable? A little ingenuity combined with React can get you there.
 
-- Use `String.prototype.split()` and `String.prototype.match()` with a regular expression to find URLs in a string.
-- Return matched URLs rendered as `<a>` elements, dealing with missing protocol prefixes if necessary.
-- Render the rest of the string as plaintext.
+All you need to use is a very thorough **regular expression** to match URLs in the string. Then, you can render the string as plaintext, converting the URLs to clickable links.
+
+To check the expression for matches, you'll need to use `String.prototype.split()` and `String.prototype.match()`. The regular expression should be able to match URLs **with or without a protocol prefix**. If the URL doesn't have a protocol prefix, you can add it before rendering the link.
+
+Matched URLs can then be rendered as `<a>` elements, while the rest of the string can be rendered as plaintext.
+
+> [!CAUTION]
+>
+> Beware of potential **security vulnerabilities** presented by generating links on the fly, especially if you are rendering **user-generated content**.
 
 ```jsx
 const AutoLink = ({ text }) => {
