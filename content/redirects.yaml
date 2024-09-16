@@ -3175,3 +3175,10 @@
 - from: /react/s/tooltip
   to: /react/s/tooltip-alert-modal
   status: 301!
+- from: /css/s/truncate-text-multiline
+  to: /css/s/truncate-text
+  status: 301!
+- from: /css/s/line-clamp
+  to: /css/s/truncate-text
+  status: 301!
+
