@@ -1,5 +1,6 @@
 ---
-title: Truncate text with CSS
+title: Text truncation, using CSS
+shortTitle: Text truncation
 type: story
 language: css
 tags: [layout]
