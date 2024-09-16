@@ -5,7 +5,7 @@ type: story
 language: css
 tags: [layout]
 cover: houses-rock-sea
-excerpt: Truncate both single and multiline text with CSS, adding an ellipsis at the end (`…`).
+excerpt: Truncate both single and multiline text with CSS, adding an ellipsis at the end.
 listed: true
 dateModified: 2024-08-22
 ---
