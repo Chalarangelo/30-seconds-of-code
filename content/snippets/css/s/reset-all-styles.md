@@ -1,35 +1,25 @@
 ---
-title: Reset all styles
-type: snippet
+title: How can I reset all styles on an element?
+shortTitle: Reset all styles
+type: question
 language: css
 tags: [visual]
 cover: rocky-beach-2
-excerpt: Resets all styles to default values using only one property.
+excerpt: Have you ever needed to reset all styles previously applied to a selector to their default values? CSS has the tool just for you!
 listed: true
-dateModified: 2020-12-30
+dateModified: 2024-08-15
 ---
 
-Resets all styles to default values using only one property.
+Have you ever needed to **reset all styles** previously applied to a selector to their default values? CSS has the tool just for you!
 
-- Use the `all` property to reset all styles (inherited or not) to their default values.
+One of the lesser-known properties in CSS is the `all` property. This property is used to set properties to their initial or inherited values, or to the values specified in another cascade layer or stylesheet origin.
 
-> [!NOTE]
->
-> This will not affect `direction` and `unicode-bidi` properties.
-
-```html
-<div class="reset-all-styles">
-  <h5>Title</h5>
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id
-    exercitationem nulla qui repellat laborum vitae, molestias tempora velit
-    natus. Quas, assumenda nisi. Quisquam enim qui iure, consequatur velit sit?
-  </p>
-</div>
-```
+Using it in conjunction with the `initial` value, you can reset all styles to their **default values**. However, this will not affect the `direction` and `unicode-bidi` properties, as well as any custom properties you may have defined.
 
 ```css
 .reset-all-styles {
   all: initial;
 }
 ```
+
+After resetting all styles, you can then apply new styles to the element as needed. Remember that this property should come **first in the CSS rule** to ensure that it takes precedence over any other styles applied to the element.
