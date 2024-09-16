@@ -48,5 +48,4 @@ const listener = e => {
 
 element.innerHTML = texts[0];
 element.addEventListener('animationiteration', listener, false);
-
 ```
