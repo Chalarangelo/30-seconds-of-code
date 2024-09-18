@@ -20,11 +20,20 @@ export const highlightCode = ({ grammars }) => {
       const title = node.meta?.replace('[', '').replace(']', '') || null;
       node.type = `html`;
 
-      const highlightedCode = Prism.highlight(
+      let highlightedCode = Prism.highlight(
         node.value,
         Prism.languages[languageName],
         languageName
       );
+
+      // Inject a `--hex-color` style into nodes with the `.hexcode.color` class.
+      // This is then used by CSS to display a color swatch next to the hex code.
+      if (languageName === 'css') {
+        highlightedCode = highlightedCode.replace(
+          /hexcode color">(#[0-9a-f]+)/g,
+          `hexcode color" style="--hex-color:$1">$1`
+        );
+      }
 
       const languageStringLiteral = languages[languageName] || '';
 
