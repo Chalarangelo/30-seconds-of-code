@@ -7,3 +7,17 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme
   '@property': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/@property
+  '::before': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/::before
+  '::after': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/::after
+  'position: relative': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/position#relative
+  'position: absolute': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/position#absolute
+  'position: fixed': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/position#fixed
+  'position: sticky': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/position#sticky
+  'position: static': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/position#static
