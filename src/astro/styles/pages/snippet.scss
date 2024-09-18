@@ -117,6 +117,25 @@
   .token.variable {
     color: var(--color-code-highlight-brown);
   }
+
+  .token.hexcode.color[style*='--hex-color'] {
+    // Select hex color tokens and display a color swatch before them.
+    &:before {
+      display: inline-block;
+      content: '';
+      // Set the size of the swatch.
+      height: var(--font-xs);
+      width: var(--font-xs);
+      // Create a hairline border around the swatch.
+      border-radius: var(--border-radius-medium);
+      border: var(--border-width-hairline) solid var(--color-border-light);
+      // Use the color value from the token to fill the swatch.
+      background-color: var(--hex-color);
+      // Position the swatch to the left of the token and align it vertically.
+      line-height: 0;
+      transform: translate(-2px, 1px);
+    }
+  }
 }
 
 // JS and JSX overrides.
