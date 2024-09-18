@@ -763,6 +763,8 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute
   CSSStyleDeclaration: >-
     https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration
+  CSSStyleDeclaration.setProperty(): >-
+    https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/setProperty
   URL: https://developer.mozilla.org/en-US/docs/Web/API/URL
   EventTarget.addEventListener(): >-
     https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
@@ -853,6 +855,8 @@ references:
   Element.clientWidth: https://developer.mozilla.org/en-US/docs/Web/API/Element/clientWidth
   Element.scrollLeft: https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollLeft
   Element.scrollTop: https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTop
+  Element.getBoundingClientRect(): >-
+    https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect
   Date(): >-
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date
   Intl.DateTimeFormat: >-

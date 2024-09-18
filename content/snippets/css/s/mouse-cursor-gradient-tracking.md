@@ -1,21 +1,19 @@
 ---
 title: Mouse cursor gradient tracking
-type: snippet
+type: story
 language: css
 tags: [visual,interactivity]
 cover: tram-car
-excerpt: A hover effect where the gradient follows the mouse cursor.
+excerpt: Create a hover effect where the gradient follows the mouse cursor, with CSS and a little bit of JavaScript.
 listed: true
-dateModified: 2021-01-07
+dateModified: 2024-08-23
 ---
 
-A hover effect where the gradient follows the mouse cursor.
+Cursor tracking effects are cool, but they're generally tricky to implement. Luckily, [CSS custom properties](content/snippets/css/s/variables.md) make implementation much easier, especially when combined with some simple JavaScript for DOM manipulation.
 
-- Declare two CSS variables, `--x` and `--y`, used to track the position of the mouse on the button.
-- Declare a CSS variable, `--size`, used to modify the gradient's dimensions.
-- Use `background: radial-gradient(circle closest-side, pink, transparent)` to create the gradient at the correct position.
-- Use `Document.querySelector()` and `EventTarget.addEventListener()` to register a handler for the `'mousemove'` event.
-- Use `Element.getBoundingClientRect()` and `CSSStyleDeclaration.setProperty()` to update the values of the `--x` and `--y` CSS variables.
+## HTML structure
+
+For this example, we'll use a `<button>` element with a `<span>` child. The `<span>` will contain the **text** that will be hovered over. The `<span>` is necessary, as we will be applying the gradient to the button's `::before` **pseudo-element**. Without the `<span>`, the gradient would be applied on top of the button's text, making it hard to read.
 
 ```html
 <button class="mouse-cursor-gradient-tracking">
@@ -23,21 +21,24 @@ A hover effect where the gradient follows the mouse cursor.
 </button>
 ```
 
+## The gradient's CSS
+
+As mentioned previously, we'll use the `::before` pseudo-element to create the gradient. For this to work, we'll have to use `position: absolute` on the pseudo-element, which means the `<button>` itself needs to have `position: relative`.
+
+We'll also need to declare two **CSS variables**, `--x` and `--y`, to track the position of the mouse on the button. We'll make sure to update these with JavaScript a little bit later.
+
+Finally, we'll use a third CSS variable, `--size`, to modify the gradient's dimensions. This variable, will start at `0`, and will be updated to `200px` when the button is hovered over.
+
 ```css
 .mouse-cursor-gradient-tracking {
   position: relative;
   background: #7983ff;
-  padding: 0.5rem 1rem;
-  font-size: 1.2rem;
-  border: none;
-  color: white;
-  cursor: pointer;
-  outline: none;
   overflow: hidden;
 }
 
 .mouse-cursor-gradient-tracking span {
   position: relative;
+  pointer-events: none;
 }
 
 .mouse-cursor-gradient-tracking::before {
@@ -58,13 +59,27 @@ A hover effect where the gradient follows the mouse cursor.
 }
 ```
 
+## Tracking the mouse with JavaScript
+
+Tracking the mouse is relatively simple. We'll first use `Document.querySelector()` to select the button, and then use `EventTarget.addEventListener()` to register a handler for the `'mousemove'` event.
+
+Every time the **listener is triggered**, we'll use `Element.getBoundingClientRect()` to get the button's position on the screen, and then use `CSSStyleDeclaration.setProperty()` to update the values of the `--x` and `--y` CSS variables.
+
+When these two values change, **the gradient will update its position**, making it look like it's following the mouse cursor.
+
 ```js
-let btn = document.querySelector('.mouse-cursor-gradient-tracking');
+const btn = document.querySelector('.mouse-cursor-gradient-tracking');
+
 btn.addEventListener('mousemove', e => {
-  let rect = e.target.getBoundingClientRect();
-  let x = e.clientX - rect.left;
-  let y = e.clientY - rect.top;
+  const rect = e.target.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
   btn.style.setProperty('--x', x + 'px');
   btn.style.setProperty('--y', y + 'px');
 });
 ```
+
+Putting everything together gives us a nice hover effect where the gradient follows the mouse cursor. You can see the final result in the CodePen below:
+
+https://codepen.io/chalarangelo/pen/MWMdMaX
