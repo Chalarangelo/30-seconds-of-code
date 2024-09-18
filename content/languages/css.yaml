@@ -11,6 +11,10 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/::before
   '::after': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/::after
+  '::first-letter': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/::first-letter
+  ':first-child': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/:first-child
   'position: relative': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/position#relative
   'position: absolute': >-

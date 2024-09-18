@@ -3184,4 +3184,6 @@
 - from: /css/s/line-clamp
   to: /css/s/text-truncation
   status: 301!
-
+- from: /css/s/drop-cap
+  to: /css/s/drop-caps
+  status: 301!
