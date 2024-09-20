@@ -9,7 +9,7 @@ listed: true
 dateModified: 2024-08-23
 ---
 
-Cursor tracking effects are cool, but they're generally tricky to implement. Luckily, [CSS custom properties](content/snippets/css/s/variables.md) make implementation much easier, especially when combined with some simple JavaScript for DOM manipulation.
+Cursor tracking effects are cool, but they're generally tricky to implement. Luckily, [CSS custom properties](content/snippets/css/s/variables) make implementation much easier, especially when combined with some simple JavaScript for DOM manipulation.
 
 ## HTML structure
 
