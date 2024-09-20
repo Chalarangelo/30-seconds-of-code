@@ -3187,3 +3187,6 @@
 - from: /css/s/drop-cap
   to: /css/s/drop-caps
   status: 301!
+- from: /css/s/height-transition
+  to: /css/s/content-aware-height-transition
+  status: 301!
