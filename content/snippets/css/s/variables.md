@@ -7,10 +7,28 @@ tags: [visual,layout]
 cover: css-variables
 excerpt: Learn how CSS custom properties (CSS variables) work and what you can use them for in your code and designs.
 listed: true
-dateModified: 2021-09-28
+dateModified: 2024-08-24
 ---
 
-CSS variables (officially called CSS **custom properties**) behave much like variables in other programming languages. They allow you to define named variables that contain specific values that can be reused within the CSS document. As specified in the custom property notation, CSS variables are prefixed with two dashes (e.g. `--my-color: black`). To access them, you can use the `var()` function (e.g. `color: var(--my-color)`). CSS variables are exceptionally useful for **sharing styles** between different elements and components. Examples include but are not limited to vertical rhythm, typography variables and color palettes.
+CSS variables (officially called CSS **custom properties**) behave much like variables in other programming languages. They allow you to define named variables that contain specific values that can be reused within the CSS document.
+
+## Syntax
+
+As specified in the custom property notation, CSS variables are **prefixed with two dashes** (e.g. `--my-color`). To access them, you can use the `var()` function (e.g. `var(--my-color)`). CSS variables are exceptionally useful for **sharing styles** between different elements and components. Examples include but are not limited to vertical rhythm, typography variables and color palettes.
+
+```css
+/* Define a variable */
+:root {
+  --my-color: #f0c1a8;
+}
+
+/* Use the variable */
+body {
+  color: var(--my-color);
+}
+```
+
+## Theming and dark mode
 
 One of their most common use-cases is **theming and dark mode**. CSS variables can be used to create a shared palette across the whole website and easily swap it for a different one. This is often accomplished by applying a class to a common ancestor (e.g. the `<body>` element). This example demonstrates global variables defined in the `:root` element and cascading, as elements inherit values from their parents:
 
@@ -37,6 +55,8 @@ body.dark {
 }
 ```
 
+## Shared styles
+
 Another useful example is **defining shared customized styles** for certain variants of an element. This allows the customization of whole trees of components without having to repeat any styles. The following example demonstrates cascading even better than the previous one. It also introduces the idea of sharing styles between different elements:
 
 ```css
@@ -59,6 +79,8 @@ Another useful example is **defining shared customized styles** for certain vari
   --highlight-color: #990055;
 }
 ```
+
+## Tips and tricks
 
 Finally, keep in mind the following useful tips for working with CSS variables:
 
