@@ -3,6 +3,8 @@ long: css
 name: CSS
 additionalReferences: [javascript, html]
 references:
+  ':root': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/:root
   prefers-color-scheme: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme
   '@property': >-
@@ -27,3 +29,4 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/position#sticky
   'position: static': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/position#static
+  var(): https://developer.mozilla.org/en-US/docs/Web/CSS/var
