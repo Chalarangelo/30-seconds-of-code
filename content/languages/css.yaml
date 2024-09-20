@@ -11,6 +11,8 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/::before
   '::after': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/::after
+  ':hover': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/:hover
   '::first-letter': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/::first-letter
   ':first-child': >-
