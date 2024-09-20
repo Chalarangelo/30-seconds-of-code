@@ -11,7 +11,7 @@ dateModified: 2024-08-24
 
 As you may be aware, the `height` property cannot be transitioned from `0` to `auto` directly. Instead, we usually rely on `max-height` to transition an element's height from `0` to a known value. However, when **the height of the element is unknown**, we can use a combination of JavaScript and CSS variables to transition the height from `0` to `auto`.
 
-The trick here is to leverage [CSS custom properties](content/snippets/css/s/variables) to alter the `max-height`. Then, using JavaScript, we can change the value of the custom property to the actual **height of the element's content**.
+The trick here is to leverage [CSS custom properties](/css/s/variables) to alter the `max-height`. Then, using JavaScript, we can change the value of the custom property to the actual **height of the element's content**.
 
 So, how do we do that, exactly? Provided we've defined a `--max-height` CSS variable with, we can use `Element.scrollHeight` and `CSSStyleDeclaration.setProperty()` to set the value of the custom property to the **current height of the element**. This way, we can essentially transition the height of the element from `0` to `auto`.
 
