@@ -3193,3 +3193,15 @@
 - from: /python/s/index-of-all
   to: /python/s/find-index-of-all
   status: 301!
+- from: /python/s/initial
+  to: /python/s/first-last-initial-head-tail
+  status: 301!
+- from: /python/s/last
+  to: /python/s/first-last-initial-head-tail
+  status: 301!
+- from: /python/s/head
+  to: /python/s/first-last-initial-head-tail
+  status: 301!
+- from: /python/s/tail
+  to: /python/s/first-last-initial-head-tail
+  status: 301!
