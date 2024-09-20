@@ -855,6 +855,7 @@ references:
   Element.clientWidth: https://developer.mozilla.org/en-US/docs/Web/API/Element/clientWidth
   Element.scrollLeft: https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollLeft
   Element.scrollTop: https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTop
+  Element.scrollHeight: https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollHeight
   Element.getBoundingClientRect(): >-
     https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect
   Date(): >-
