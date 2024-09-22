@@ -3226,3 +3226,21 @@
 - from: /python/s/tail
   to: /python/s/first-last-initial-head-tail
   status: 301!
+- from: /python/s/decapitalize
+  to: /python/s/string-capitalize-camel-snake-kebab
+  status: 301!
+- from: /python/s/capitalize
+  to: /python/s/string-capitalize-camel-snake-kebab
+  status: 301!
+- from: /python/s/capitalize-every-word
+  to: /python/s/string-capitalize-camel-snake-kebab
+  status: 301!
+- from: /python/s/camel
+  to: /python/s/string-capitalize-camel-snake-kebab
+  status: 301!
+- from: /python/s/snake
+  to: /python/s/string-capitalize-camel-snake-kebab
+  status: 301!
+- from: /python/s/kebab
+  to: /python/s/string-capitalize-camel-snake-kebab
+  status: 301!
