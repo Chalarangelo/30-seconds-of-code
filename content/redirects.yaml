@@ -3191,7 +3191,28 @@
   to: /css/s/content-aware-height-transition
   status: 301!
 - from: /python/s/index-of-all
-  to: /python/s/find-index-of-all
+  to: /python/s/find-matches-list-dictionary
+  status: 301!
+- from: /python/s/find-index
+  to: /python/s/find-matches-list-dictionary
+  status: 301!
+- from: /python/s/find-last-index
+  to: /python/s/find-matches-list-dictionary
+  status: 301!
+- from: /python/s/find-index-of-all
+  to: /python/s/find-matches-list-dictionary
+  status: 301!
+- from: /python/s/find
+  to: /python/s/find-matches-list-dictionary
+  status: 301!
+- from: /python/s/find-last
+  to: /python/s/find-matches-list-dictionary
+  status: 301!
+- from: /python/s/find-key
+  to: /python/s/find-matches-list-dictionary
+  status: 301!
+- from: /python/s/find-keys
+  to: /python/s/find-matches-list-dictionary
   status: 301!
 - from: /python/s/initial
   to: /python/s/first-last-initial-head-tail
