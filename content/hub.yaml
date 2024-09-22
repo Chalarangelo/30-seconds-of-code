@@ -12,12 +12,12 @@ shortDescription: >-
 featuredListings:
 - js
 - css
-- react/hooks
 - js/algorithm
-- python
+- react/hooks
+- js/node
 - git
 - js/interviews
-- js/node
+- python
 - js/data-structures
 - js/promises
 - js/functional-programming
