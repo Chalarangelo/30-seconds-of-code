@@ -33,7 +33,7 @@ const settings = {
     cover: 'work-sunrise',
     newSnippetCards: 6,
     topSnippetCards: 6,
-    topCollectionChips: 8,
+    topCollectionChips: 7,
   },
   collections: {
     mainCollectionId: 'snippets',
