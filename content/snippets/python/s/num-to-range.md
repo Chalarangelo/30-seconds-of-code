@@ -1,17 +1,22 @@
 ---
-title: Map number to range
-type: snippet
+title: Map a number to a different range
+shortTitle: Map number to range
+type: tip
 language: python
 tags: [math]
 cover: round-leaves
-excerpt: Maps a number from one range to another range.
+excerpt: Map a number from one range to another range.
 listed: true
-dateModified: 2021-04-05
+dateModified: 2024-07-02
 ---
 
-Maps a number from one range to another range.
+When working with numbers, you may need to map a number from one range to another range. This is particularly useful when you need to normalize values or convert between different units of measurement.
 
-- Return `num` mapped between `outMin`-`outMax` from `inMin`-`inMax`.
+Luckily, all you really need is to use a simple mathematical formula to map a number from one range to another range.
+
+You need to know the minimum and maximum values of both ranges, as well as the number you want to map. Then, calculate the difference from the minimum value of the input range, divide it by the difference between the maximum and minimum values of the input range, and multiply it by the difference between the maximum and minimum values of the output range.
+
+Finally, add the minimum value of the output range to get the mapped value. In order to make sure the result is a floating-point number, you can use the `float()` function.
 
 ```py
 def num_to_range(num, inMin, inMax, outMin, outMax):
