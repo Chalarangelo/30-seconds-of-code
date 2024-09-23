@@ -6,7 +6,7 @@ language: python
 tags: [list,dictionary]
 cover: matrix-flow
 excerpt: Learn how to sort a Python dictionary list using a tuple key.
-listed: true
+listed: false
 dateModified: 2023-01-04
 ---
 

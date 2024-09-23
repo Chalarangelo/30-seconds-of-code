@@ -6,7 +6,7 @@ language: python
 tags: [list]
 cover: succulent-10
 excerpt: Chunks a list into a set amount of smaller lists or into lists of a specified size.
-listed: true
+listed: false
 dateModified: 2024-07-17
 ---
 

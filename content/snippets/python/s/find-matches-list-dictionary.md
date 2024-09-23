@@ -6,7 +6,7 @@ language: python
 tags: [list,dictionary]
 cover: tree-roots
 excerpt: Learn how to find the matching values, indexes or keys in a list or dictionary.
-listed: true
+listed: false
 dateModified: 2024-08-20
 ---
 

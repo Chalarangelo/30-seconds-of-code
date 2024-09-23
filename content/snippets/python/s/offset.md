@@ -6,7 +6,7 @@ language: python
 tags: [list]
 cover: digital-nomad-10
 excerpt: Move a specified amount of elements to the end of a list.
-listed: true
+listed: false
 dateModified: 2024-05-24
 ---
 

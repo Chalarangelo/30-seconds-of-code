@@ -6,7 +6,7 @@ language: python
 tags: [list]
 cover: little-white-flowers
 excerpt: Sort a Python list based on another list containing the desired indexes.
-listed: true
+listed: false
 dateModified: 2024-08-06
 ---
 

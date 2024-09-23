@@ -6,7 +6,7 @@ language: python
 tags: [string,regexp]
 cover: sliced-fruits
 excerpt: Convert a string to a URL-friendly slug, using Python and regular expressions.
-listed: true
+listed: false
 dateModified: 2024-07-13
 ---
 

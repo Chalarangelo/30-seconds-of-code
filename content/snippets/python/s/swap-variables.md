@@ -6,7 +6,7 @@ language: python
 tags: [variables]
 cover: leaves-read
 excerpt: Learn 3 easy ways to swap the values of two variables in Python.
-listed: true
+listed: false
 dateModified: 2021-11-07
 ---
 

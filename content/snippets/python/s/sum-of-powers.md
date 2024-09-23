@@ -5,7 +5,7 @@ language: python
 tags: [math]
 cover: river-flow
 excerpt: Find the sum of the powers of all the numbers from `start` to `end` (both inclusive).
-listed: true
+listed: false
 dateModified: 2024-05-10
 ---
 

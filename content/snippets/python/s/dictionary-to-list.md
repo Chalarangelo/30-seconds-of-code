@@ -6,7 +6,7 @@ language: python
 tags: [dictionary,list]
 cover: new-york
 excerpt: Convert a dictionary to a list of tuples and vice versa.
-listed: true
+listed: false
 dateModified: 2024-07-04
 ---
 

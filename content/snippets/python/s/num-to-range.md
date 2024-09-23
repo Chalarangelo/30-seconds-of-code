@@ -6,7 +6,7 @@ language: python
 tags: [math]
 cover: round-leaves
 excerpt: Map a number from one range to another range.
-listed: true
+listed: false
 dateModified: 2024-07-02
 ---
 

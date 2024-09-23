@@ -5,7 +5,7 @@ language: python
 tags: [date]
 cover: two-lighthouses
 excerpt: Checks if the given date is a weekend or a weekday.
-listed: true
+listed: false
 dateModified: 2024-05-23
 ---
 

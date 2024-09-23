@@ -6,7 +6,7 @@ language: python
 tags: [setup]
 cover: avocado-slices
 excerpt: A very common problem when working with Python is having to remember the correct version. Luckily, there's an easy fix for that.
-listed: true
+listed: false
 dateModified: 2021-06-12
 ---
 

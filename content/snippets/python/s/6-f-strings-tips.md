@@ -5,7 +5,7 @@ language: python
 tags: [string]
 cover: sea-view
 excerpt: Python's f-strings can do a lot more than you might expect. Learn a few useful tips and tricks in this quick guide.
-listed: true
+listed: false
 dateModified: 2021-07-20
 ---
 

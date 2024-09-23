@@ -5,7 +5,7 @@ language: python
 tags: [math,algorithm]
 cover: river-flow
 excerpt: Find the list of prime factors of a number, using a simple Python function.
-listed: true
+listed: false
 dateModified: 2024-05-12
 ---
 

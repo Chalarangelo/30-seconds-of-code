@@ -6,7 +6,7 @@ language: python
 tags: [file]
 cover: flower-pond
 excerpt: When working with files in Python, it's important to ensure that the file is closed correctly. Here are a couple of ways to do that.
-listed: true
+listed: false
 dateModified: 2022-02-03
 ---
 

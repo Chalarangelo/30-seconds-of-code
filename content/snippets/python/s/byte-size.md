@@ -6,7 +6,7 @@ language: python
 tags: [string]
 cover: river-house-lights
 excerpt: Find the byte size of a Python string, containing special characters or not.
-listed: true
+listed: false
 dateModified: 2024-08-16
 ---
 

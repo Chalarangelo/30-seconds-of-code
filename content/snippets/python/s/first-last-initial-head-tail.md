@@ -6,7 +6,7 @@ language: python
 tags: [list]
 cover: pop-of-green
 excerpt: Learn how to perform some very common operations on Python lists, such as getting the first, last, initial, head, and tail elements.
-listed: true
+listed: false
 dateModified: 2024-05-15
 ---
 

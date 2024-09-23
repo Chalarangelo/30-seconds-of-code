@@ -5,7 +5,7 @@ language: python
 tags: [dictionary]
 cover: working-bee
 excerpt: Invert a dictionary with non-unique hashable values.
-listed: true
+listed: false
 dateModified: 2024-05-08
 ---
 

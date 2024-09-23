@@ -6,7 +6,7 @@ language: python
 tags: [string]
 cover: organizer
 excerpt: Oftentimes you might need to trim whitespace from a string in Python. Learn of three different way to do this in this short guide.
-listed: true
+listed: false
 dateModified: 2021-12-13
 ---
 

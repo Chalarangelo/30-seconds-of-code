@@ -6,7 +6,7 @@ language: python
 tags: [list,performance]
 cover: walking-on-top
 excerpt: Writing efficient Python code can be tricky. Read how we optimize our list snippets to increase performance using a couple of simple tricks.
-listed: true
+listed: false
 dateModified: 2021-11-07
 ---
 

@@ -6,7 +6,7 @@ language: python
 tags: [dictionary]
 cover: goat-wooden-cottage
 excerpt: Find the key of the minimum or maximum value in a Python dictionary.
-listed: true
+listed: false
 dateModified: 2024-05-08
 ---
 

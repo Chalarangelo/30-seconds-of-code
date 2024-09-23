@@ -6,7 +6,7 @@ language: python
 tags: [list]
 cover: duck-plants
 excerpt: Learn the difference between Python's built-in list sorting methods and when one is preferred over the other.
-listed: true
+listed: false
 dateModified: 2021-06-12
 ---
 

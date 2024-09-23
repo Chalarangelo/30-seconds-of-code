@@ -6,7 +6,7 @@ language: python
 tags: [list]
 cover: red-mountain
 excerpt: Learn how Python's lists and tuples are different and level up your code today.
-listed: true
+listed: false
 dateModified: 2021-06-12
 ---
 

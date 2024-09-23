@@ -6,7 +6,7 @@ language: python
 tags: [string,regexp]
 cover: digital-nomad-9
 excerpt: Learn how to capitalize, camelcase, snake case, and kebab case strings in Python.
-listed: true
+listed: false
 dateModified: 2024-08-25
 ---
 

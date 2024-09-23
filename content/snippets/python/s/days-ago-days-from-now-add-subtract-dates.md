@@ -6,7 +6,7 @@ language: python
 tags: [date]
 cover: cup-of-orange
 excerpt: Calculate dates relative to today or a given date by adding or subtracting days.
-listed: true
+listed: false
 dateModified: 2024-05-19
 ---
 

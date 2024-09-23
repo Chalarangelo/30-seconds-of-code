@@ -5,7 +5,7 @@ language: python
 tags: [math]
 cover: tulips-and-reeds
 excerpt: Learn how to calculate the Hamming distance between two values.
-listed: true
+listed: false
 dateModified: 2024-05-11
 ---
 

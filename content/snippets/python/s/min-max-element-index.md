@@ -5,7 +5,7 @@ language: python
 tags: [math,list]
 cover: two-cities
 excerpt: Find the index of the element with the minimum or maximum value in a list.
-listed: true
+listed: false
 dateModified: 2024-07-18
 ---
 

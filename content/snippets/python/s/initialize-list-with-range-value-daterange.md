@@ -6,7 +6,7 @@ language: python
 tags: [list,date]
 cover: succulent-3
 excerpt: Master list initialization, using simple techniques and level up your Python skills.
-listed: true
+listed: false
 dateModified: 2024-05-30
 ---
 
