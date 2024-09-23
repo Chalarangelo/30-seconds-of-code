@@ -3277,3 +3277,6 @@
 - from: /python/s/is-weekday
   to: /python/s/is-weekend-or-weekday
   status: 301!
+- from: /python/s/rgb-to-hex
+  to: /python/s/hex-to-rgb
+  status: 301!
