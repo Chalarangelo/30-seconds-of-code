@@ -3265,3 +3265,9 @@
 - from: /python/s/filter-unique
   to: /python/s/filter-unique-list-elements
   status: 301!
+- from: /python/s/chunk-into-n
+  to: /python/s/chunk-list
+  status: 301!
+- from: /python/s/chunk
+  to: /python/s/chunk-list
+  status: 301!
