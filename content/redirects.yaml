@@ -3280,3 +3280,9 @@
 - from: /python/s/rgb-to-hex
   to: /python/s/hex-to-rgb
   status: 301!
+- from: /python/s/days-diff
+  to: python/s/date-difference
+  status: 301!
+- from: /python/s/months-diff
+  to: python/s/date-difference
+  status: 301!
