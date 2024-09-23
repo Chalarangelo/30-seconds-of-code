@@ -3286,3 +3286,9 @@
 - from: /python/s/months-diff
   to: python/s/date-difference
   status: 301!
+- from: /python/s/min-element-index
+  to: /python/s/min-max-element-index
+  status: 301!
+- from: /python/s/max-element-index
+  to: /python/s/min-max-element-index
+  status: 301!
