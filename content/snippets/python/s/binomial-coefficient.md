@@ -1,17 +1,15 @@
 ---
 title: Binomial coefficient
-type: snippet
+type: tip
 language: python
 tags: [math]
 cover: digital-nomad-5
-excerpt: Calculates the number of ways to choose `k` items from `n` items without repetition and without order.
+excerpt: Calculate the number of ways to choose `k` items from `n` items without repetition and without order.
 listed: true
-dateModified: 2020-11-02
+dateModified: 2024-05-09
 ---
 
-Calculates the number of ways to choose `k` items from `n` items without repetition and without order.
-
-- Use `math.comb()` to calculate the binomial coefficient.
+The binomial coefficient is the number of ways to choose `k` items from `n` items without repetition and without order. In Python, you can calculate the binomial coefficient using the `math.comb()` function.s
 
 ```py
 from math import comb
