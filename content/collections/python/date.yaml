@@ -2,7 +2,7 @@ slug: python/date
 title: Python Date Snippets
 shortTitle: Python Dates
 miniTitle: Date
-listed: true
+listed: false
 parent: python
 languageMatcher: python
 tagMatcher: date

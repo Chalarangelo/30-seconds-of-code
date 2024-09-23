@@ -2,7 +2,7 @@ slug: python/math
 title: Python Math Snippets
 shortTitle: Python Math
 miniTitle: Math
-listed: true
+listed: false
 parent: python
 languageMatcher: python
 tagMatcher: math
