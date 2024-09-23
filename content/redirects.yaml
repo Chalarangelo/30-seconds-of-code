@@ -3292,3 +3292,12 @@
 - from: /python/s/max-element-index
   to: /python/s/min-max-element-index
   status: 301!
+- from: /python/s/days-ago
+  to: /python/s/days-ago-days-from-now-add-subtract-dates
+  status: 301!
+- from: /python/s/days-from-now
+  to: /python/s/days-ago-days-from-now-add-subtract-dates
+  status: 301!
+- from: /python/s/add-days
+  to: /python/s/days-ago-days-from-now-add-subtract-dates
+  status: 301!
