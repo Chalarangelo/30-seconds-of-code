@@ -3301,3 +3301,12 @@
 - from: /python/s/add-days
   to: /python/s/days-ago-days-from-now-add-subtract-dates
   status: 301!
+- from: /python/s/to-dictionary
+  to: /python/s/dictionary-to-list
+  status: 301!
+- from: /python/s/map-dictionary
+  to: /python/s/dictionary-to-list
+  status: 301!
+- from: /python/s/dict-to-list
+  to: /python/s/dictionary-to-list
+  status: 301!
