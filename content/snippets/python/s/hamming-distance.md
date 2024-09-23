@@ -1,19 +1,19 @@
 ---
 title: Hamming distance
-type: snippet
+type: tip
 language: python
 tags: [math]
 cover: tulips-and-reeds
-excerpt: Calculates the Hamming distance between two values.
+excerpt: Learn how to calculate the Hamming distance between two values.
 listed: true
-dateModified: 2021-02-18
+dateModified: 2024-05-11
 ---
 
-Calculates the Hamming distance between two values.
+The Hamming distance between two integers is the number of positions at which the corresponding bits are different.
 
-- Use the XOR operator (`^`) to find the bit difference between the two numbers.
-- Use `bin()` to convert the result to a binary string.
-- Convert the string to a list and use `count()` of `str` class to count and return the number of `1`s in it.
+To calculate the Hamming distance between two integers, you can use the XOR operator (`^`) to find the bit difference between the two numbers. Then, you can convert the result to a binary string using the `bin()` function.
+
+Finally, you can convert the string to a list and use the `count()` method of the `str` class to count and return the number of `1`s in it.
 
 ```py
 def hamming_distance(a, b):
