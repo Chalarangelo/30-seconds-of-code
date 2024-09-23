@@ -3256,3 +3256,12 @@
 - from: /python/s/daterange
   to: /python/s/initialize-list-with-range-value-daterange
   status: 301!
+- from: /python/s/unique-elements
+  to: /python/s/filter-unique-list-elements
+  status: 301!
+- from: /python/s/filter-non-unique
+  to: /python/s/filter-unique-list-elements
+  status: 301!
+- from: /python/s/filter-unique
+  to: /python/s/filter-unique-list-elements
+  status: 301!
