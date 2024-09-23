@@ -3244,3 +3244,15 @@
 - from: /python/s/kebab
   to: /python/s/string-capitalize-camel-snake-kebab
   status: 301!
+- from: /python/s/initialize-list-with-range
+  to: /python/s/initialize-list-with-range-value-daterange
+  status: 301!
+- from: /python/s/initialize-list-with-values
+  to: /python/s/initialize-list-with-range-value-daterange
+  status: 301!
+- from: /python/s/initialize-2-d-list
+  to: /python/s/initialize-list-with-range-value-daterange
+  status: 301!
+- from: /python/s/daterange
+  to: /python/s/initialize-list-with-range-value-daterange
+  status: 301!
