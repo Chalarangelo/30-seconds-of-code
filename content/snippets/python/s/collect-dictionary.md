@@ -1,19 +1,17 @@
 ---
-title: Invert dictionary
-type: snippet
+title: Invert a dictionary
+type: tip
 language: python
 tags: [dictionary]
 cover: working-bee
-excerpt: Inverts a dictionary with non-unique hashable values.
+excerpt: Invert a dictionary with non-unique hashable values.
 listed: true
-dateModified: 2020-11-02
+dateModified: 2024-05-08
 ---
 
-Inverts a dictionary with non-unique hashable values.
+You can invert a dictionary with non-unique hashable values, using some simple Python code. First, you need to use a `collections.defaultdict` with `list` as the default value for each key.
 
-- Create a `collections.defaultdict` with `list` as the default value for each key.
-- Use `dictionary.items()` in combination with a loop to map the values of the dictionary to keys using `dict.append()`.
-- Use `dict()` to convert the `collections.defaultdict` to a regular dictionary.
+Then, you can map the values of the dictionary to keys using `dict.append()`. Finally, you can convert the `collections.defaultdict` to a regular dictionary using `dict()`.
 
 ```py
 from collections import defaultdict
