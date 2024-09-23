@@ -55,7 +55,7 @@ export default class HomePage extends Page {
   }
 
   get seoDescription() {
-    const snippetCount = Snippet.scope('published').length;
+    const snippetCount = Snippet.scope('published', 'listed').length;
     const websiteName = settings.website.name;
     return settings.website.seoDescription({ snippetCount, websiteName });
   }
