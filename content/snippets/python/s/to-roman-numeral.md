@@ -1,20 +1,18 @@
 ---
-title: Integer to roman numeral
-type: snippet
+title: Convert an integer to a roman numeral
+shortTitle: Integer to roman numeral
+type: tip
 language: python
 tags: [math,string]
 cover: tram-car
-excerpt: Converts an integer to its roman numeral representation. Accepts value between `1` and `3999` (both inclusive).
+excerpt: Convert an integer to its roman numeral representation.
 listed: true
-dateModified: 2020-11-02
+dateModified: 2024-05-13
 ---
 
-Converts an integer to its roman numeral representation.
-Accepts value between `1` and `3999` (both inclusive).
+Roman numerals can only represent numbers between `1` and `3999`. However, they're often used in various contexts, such as movie titles, book chapters, and outlines.
 
-- Create a lookup list containing tuples in the form of (roman value, integer).
-- Use a `for` loop to iterate over the values in `lookup`.
-- Use `divmod()` to update `num` with the remainder, adding the roman numeral representation to the result.
+To convert an integer to its roman numeral representation, you can use a lookup list containing tuples of roman values and integers. Then, you can iterate over the values in the lookup list and use `divmod()` to update the number with the remainder, adding the roman numeral representation to the result.
 
 ```py
 def to_roman_numeral(num):
