@@ -3271,3 +3271,9 @@
 - from: /python/s/chunk
   to: /python/s/chunk-list
   status: 301!
+- from: /python/s/is-weekend
+  to: /python/s/is-weekend-or-weekday
+  status: 301!
+- from: /python/s/is-weekday
+  to: /python/s/is-weekend-or-weekday
+  status: 301!
