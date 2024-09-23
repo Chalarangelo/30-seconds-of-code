@@ -1,7 +1,7 @@
 slug: python
 title: Python Snippets
 shortTitle: Python
-topLevel: true
+topLevel: false
 languageMatcher: python
 listed: true
 allowUnlisted: true
