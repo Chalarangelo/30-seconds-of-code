@@ -1,5 +1,6 @@
 ---
 title: How can I fit an image in a container with CSS?
+shortTitle: Fit image in container
 type: question
 language: css
 tags: [layout,visual]
