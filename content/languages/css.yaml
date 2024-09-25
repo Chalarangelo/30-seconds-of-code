@@ -43,3 +43,11 @@ references:
   'clear: both': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/clear
   float: https://developer.mozilla.org/en-US/docs/Web/CSS/float
+  'object-fit': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit
+  'object-fit: contain': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit#contain
+  'object-fit: cover': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit#cover
+  'object-position': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/object-position
