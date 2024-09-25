@@ -40,3 +40,6 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior-x
   overscroll-behavior-y: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior-y
+  'clear: both': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/clear
+  float: https://developer.mozilla.org/en-US/docs/Web/CSS/float
