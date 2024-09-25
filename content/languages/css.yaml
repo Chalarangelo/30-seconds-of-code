@@ -51,3 +51,4 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit#cover
   'object-position': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/object-position
+  clamp(): https://developer.mozilla.org/en-US/docs/Web/CSS/clamp
