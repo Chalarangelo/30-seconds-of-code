@@ -30,3 +30,13 @@ references:
   'position: static': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/position#static
   var(): https://developer.mozilla.org/en-US/docs/Web/CSS/var
+  scroll-snap-type: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-type
+  scroll-snap-align: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-align
+  overscroll-behavior: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior
+  overscroll-behavior-x: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior-x
+  overscroll-behavior-y: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior-y
