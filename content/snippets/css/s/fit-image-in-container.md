@@ -1,33 +1,21 @@
 ---
-title: Fit image in container
-type: snippet
+title: How can I fit an image in a container with CSS?
+type: question
 language: css
 tags: [layout,visual]
 cover: succulent-3
-excerpt: Fits an positions an image appropriately inside its container while preserving its aspect ratio.
+excerpt: Fit and position an image appropriately inside its container while preserving its aspect ratio with this handy technique.
 listed: true
-dateModified: 2020-12-30
+dateModified: 2024-08-26
 ---
 
-Fits an positions an image appropriately inside its container while preserving its aspect ratio.
+Have you ever wanted to **fit an image** inside a container while **preserving its aspect ratio**? This is a common requirement when working with images, and it can be achieved using the `object-fit` and `object-position` properties in CSS.
 
-- Use `object-fit: contain` to fit the entire image within the container while preserving its aspect ratio.
-- Use `object-fit: cover` to fill the container with the image while preserving its aspect ratio.
-- Use `object-position: center` to position the image at the center of the container.
+Generally, you can use `object-fit: contain` to fit the **entire image** within the container while preserving its aspect ratio. On the other hand, `object-fit: cover` will **fill the container** with the image while preserving its aspect ratio.
 
-```html
-<img class="image image-contain" src="https://picsum.photos/600/200" />
-<img class="image image-cover" src="https://picsum.photos/600/200" />
-```
+You can also use `object-position` to position the image within the container. For example, `object-position: center` will center the image, while `object-position: right top` will position it at the top right corner.
 
 ```css
-.image {
-  background: #34495e;
-  border: 1px solid #34495e;
-  width: 200px;
-  height: 200px;
-}
-
 .image-contain {
   object-fit: contain;
   object-position: center;
@@ -38,3 +26,5 @@ Fits an positions an image appropriately inside its container while preserving i
   object-position: right top;
 }
 ```
+
+https://codepen.io/chalarangelo/pen/KKOwRRZ
