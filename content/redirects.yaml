@@ -3310,3 +3310,9 @@
 - from: /python/s/dict-to-list
   to: /python/s/dictionary-to-list
   status: 301!
+- from: /css/s/horizontal-scroll-snap
+  to: /css/s/scroll-snap
+  status: 301!
+- from: /css/s/vertical-scroll-snap
+  to: /css/s/scroll-snap
+  status: 301!
