@@ -74,11 +74,15 @@ references:
   font-weight: https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight
   line-height: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height
   text-align: https://developer.mozilla.org/en-US/docs/Web/CSS/text-align
+  'text-align: center': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/text-align#center
   color: https://developer.mozilla.org/en-US/docs/Web/CSS/color
   background-color: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/background-color
   vertical-align: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align
+  'vertical-align: middle': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align#middle
   top: https://developer.mozilla.org/en-US/docs/Web/CSS/top
   right: https://developer.mozilla.org/en-US/docs/Web/CSS/right
   bottom: https://developer.mozilla.org/en-US/docs/Web/CSS/bottom
@@ -103,3 +107,11 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/display#table
   'display: table-cell': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/display#table-cell
+  align-items: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/align-items
+  'align-items: center': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/align-items#center
+  justify-content: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
+  'justify-content: center': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content#center
