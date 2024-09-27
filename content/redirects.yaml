@@ -3316,3 +3316,6 @@
 - from: /css/s/vertical-scroll-snap
   to: /css/s/scroll-snap
   status: 301!
+- from: /css/s/clamp
+  to: /css/s/fluid-typography
+  status: 301!
