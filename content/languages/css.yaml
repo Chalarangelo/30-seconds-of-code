@@ -120,3 +120,7 @@ references:
   'flex-direction: column': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction#column
   flex-wrap: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap
+  system-ui: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#system-ui
+  sans-serif: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#generic-font-families
