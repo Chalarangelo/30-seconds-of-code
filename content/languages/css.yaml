@@ -15,10 +15,14 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/::after
   ':hover': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/:hover
+  ':focus': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/:focus
   '::first-letter': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/::first-letter
   ':first-child': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/:first-child
+  ':last-child': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/:last-child
   position: https://developer.mozilla.org/en-US/docs/Web/CSS/position
   'position: relative': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/position#relative
@@ -125,6 +129,10 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
   'justify-content: center': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content#center
+  'justify-content: space-between': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content#space-between
+  'justify-content: space-around': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content#space-around
   flex-direction: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction
   'flex-direction: column': >-
@@ -149,3 +157,8 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
   'box-sizing: border-box': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing#border-box
+  currentColor: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#currentColor
+  '@keyframes': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes
+  animation: https://developer.mozilla.org/en-US/docs/Web/CSS/animation
