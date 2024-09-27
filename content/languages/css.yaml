@@ -76,6 +76,8 @@ references:
   text-align: https://developer.mozilla.org/en-US/docs/Web/CSS/text-align
   'text-align: center': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/text-align#center
+  text-decoration: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration
   color: https://developer.mozilla.org/en-US/docs/Web/CSS/color
   background-color: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/background-color
@@ -87,6 +89,7 @@ references:
   right: https://developer.mozilla.org/en-US/docs/Web/CSS/right
   bottom: https://developer.mozilla.org/en-US/docs/Web/CSS/bottom
   left: https://developer.mozilla.org/en-US/docs/Web/CSS/left
+  display: https://developer.mozilla.org/en-US/docs/Web/CSS/display
   'display: flex': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/display#flex
   'display: grid': >-
