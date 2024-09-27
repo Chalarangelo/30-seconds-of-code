@@ -108,6 +108,8 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/display#table-cell
   align-items: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/align-items
+  align-content: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/align-content
   'align-items: center': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/align-items#center
   justify-content: >-
@@ -119,6 +121,7 @@ references:
   'flex-direction: column': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction#column
   flex-wrap: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap
+  flex-flow: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-flow
   system-ui: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#system-ui
   sans-serif: >-
