@@ -2,3 +2,5 @@ short: html
 long: html
 name: HTML
 additionalReferences: [css, javascript]
+references:
+  '<svg>': https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg
