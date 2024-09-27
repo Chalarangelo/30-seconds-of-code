@@ -56,3 +56,9 @@ references:
   ':has()': https://developer.mozilla.org/en-US/docs/Web/CSS/:has
   transition: https://developer.mozilla.org/en-US/docs/Web/CSS/transition
   opacity: https://developer.mozilla.org/en-US/docs/Web/CSS/opacity
+  transform: https://developer.mozilla.org/en-US/docs/Web/CSS/transform
+  transform-origin: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin
+  height: https://developer.mozilla.org/en-US/docs/Web/CSS/height
+  width: https://developer.mozilla.org/en-US/docs/Web/CSS/width
+  calc(): https://developer.mozilla.org/en-US/docs/Web/CSS/calc
