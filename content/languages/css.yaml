@@ -83,3 +83,23 @@ references:
   right: https://developer.mozilla.org/en-US/docs/Web/CSS/right
   bottom: https://developer.mozilla.org/en-US/docs/Web/CSS/bottom
   left: https://developer.mozilla.org/en-US/docs/Web/CSS/left
+  'display: flex': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/display#flex
+  'display: grid': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/display#grid
+  'display: inline-block': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/display#inline-block
+  'display: inline-flex': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/display#inline-flex
+  'display: inline-grid': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/display#inline-grid
+  'display: inline': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/display#inline
+  'display: none': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/display#none
+  'display: block': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/display#block
+  'display: table': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/display#table
+  'display: table-cell': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/display#table-cell
