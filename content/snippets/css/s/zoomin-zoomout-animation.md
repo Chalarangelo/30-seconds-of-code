@@ -1,42 +1,41 @@
 ---
-title: Zoom in zoom out animation
-type: snippet
+title: Simple Zoom in zoom out animation in CSS
+shortTitle: Zoom in zoom out animation
+type: tip
 language: css
 tags: [animation]
 cover: travel-mug-2
-excerpt: Creates a zoom in zoom out animation.
+excerpt: Create a simple zoom in zoom out animation in CSS and elevate your designs.
 listed: true
-dateModified: 2021-10-13
+dateModified: 2024-08-28
 ---
 
-Creates a zoom in zoom out animation.
+A simple zoom in zoom out animation can add a touch of elegance to your designs. Luckily, it's very simple to create one, using CSS.
 
-- Use `@keyframes` to define a three-step animation. At the start (`0%`) and end (`100%`), the element is its original size (`scale(1 ,1)`). Halfway through (`50%`) it's scaled up to 1.5 times its original size (`scale(1.5, 1.5)`).
-- Use `width` and `height` to give the element a specific size.
-- Use `animation` to set the appropriate values for the element to make it animated.
+At its core, a zoom in zoom out animation is a **three-step animation** and can be defined using `@keyframes`. At the **start** (`0%`) and **end** (`100%`), the element is its **original size** (`scale: 100%`). **Halfway through** (`50%`), it's **scaled up to a larger size** (e.g. `scale: 150%`). This creates the illusion of zooming in and out.
 
-```html
-<div class="zoom-in-out-box"></div>
-```
+After defining your animation, you'll use the `animation` property to apply it to an element. In this example, we'll be applying it with a timing of `1s` and an easing of `ease`, and we'll make it loop infinitely, but feel free to adjust these values to your liking.
+
+https://codepen.io/chalarangelo/pen/vYoOrNL
 
 ```css
-.zoom-in-out-box {
-  margin: 24px;
-  width: 50px;
-  height: 50px;
-  background: #f50057;
+.zoom-in-out-element {
   animation: zoom-in-zoom-out 1s ease infinite;
 }
 
 @keyframes zoom-in-zoom-out {
   0% {
-    transform: scale(1, 1);
+    scale: 100%;
   }
   50% {
-    transform: scale(1.5, 1.5);
+    scale: 150%;
   }
   100% {
-    transform: scale(1, 1);
+    scale: 100%;
   }
 }
 ```
+
+> [!NOTE]
+>
+> This article uses the relatively new `scale` CSS property. If you're concerned about **compatibility**, you can replace `scale: 100%` with `transform: scale(1, 1)` and `scale: 150%` with `transform: scale(1.5, 1.5)`.

@@ -171,3 +171,4 @@ references:
   animation: https://developer.mozilla.org/en-US/docs/Web/CSS/animation
   animation-duration: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/animation-duration
+  scale: https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale
