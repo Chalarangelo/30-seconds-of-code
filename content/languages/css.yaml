@@ -115,3 +115,8 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
   'justify-content: center': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content#center
+  flex-direction: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction
+  'flex-direction: column': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction#column
+  flex-wrap: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap
