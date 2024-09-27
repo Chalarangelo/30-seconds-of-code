@@ -127,3 +127,13 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#system-ui
   sans-serif: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#generic-font-families
+  'white-space: nowrap': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/white-space#nowrap
+  'text-overflow: ellipsis': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow#ellipsis
+  overflow: https://developer.mozilla.org/en-US/docs/Web/CSS/overflow
+  'overflow: hidden': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/overflow#hidden
+  '@media print': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/@media/print
+  '@page': https://developer.mozilla.org/en-US/docs/Web/CSS/@page
