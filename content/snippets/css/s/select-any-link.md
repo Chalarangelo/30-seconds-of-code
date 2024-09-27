@@ -10,7 +10,7 @@ listed: true
 dateModified: 2022-03-06
 ---
 
-Styling links with CSS is considered straightforward, with most developers using the `:link` and `:visited` pseudo-classes. While this solution is very common, there's a less verbose alternative in the form of the [`:any-link`](https://developer.mozilla.org/en-US/docs/Web/CSS/:any-link) pseudo-class. This pseudo-class selects all links, regardless of whether they have been visited or not. Thus, it acts as a catch-all for all links on the page.
+Styling links with CSS is considered straightforward, with most developers using the `:link` and `:visited` pseudo-classes. While this solution is very common, there's a less verbose alternative in the form of the `:any-link` pseudo-class. This pseudo-class selects all links, regardless of whether they have been visited or not. Thus, it acts as a catch-all for all links on the page.
 
 ```css
 :any-link {

@@ -23,6 +23,11 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/:first-child
   ':last-child': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/:last-child
+  ':link': https://developer.mozilla.org/en-US/docs/Web/CSS/:link
+  ':visited': https://developer.mozilla.org/en-US/docs/Web/CSS/:visited
+  ':active': https://developer.mozilla.org/en-US/docs/Web/CSS/:active
+  ':any-link': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/:any-link
   position: https://developer.mozilla.org/en-US/docs/Web/CSS/position
   'position: relative': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/position#relative
