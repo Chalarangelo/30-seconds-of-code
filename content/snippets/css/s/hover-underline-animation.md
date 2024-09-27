@@ -1,32 +1,30 @@
 ---
 title: Hover underline animation
-type: snippet
+type: tip
 language: css
 tags: [animation]
 cover: coffee-phone-tray-2
-excerpt: Creates an animated underline effect when the user hovers over the text.
+excerpt: Create an animated underline effect when the user hovers over some text.
 listed: true
-dateModified: 2021-10-11
+dateModified: 2024-08-27
 ---
 
-Creates an animated underline effect when the user hovers over the text.
+One of the fanciest text effects I've seen is an **animated underline**, where the underline appears to grow from the left side of the text when the user hovers over it. This effect can be achieved using CSS and the `::after` pseudo-element. But first, let me show you what it looks like:
 
-- Use `display: inline-block` to make the underline span just the width of the text content.
-- Use the `::after` pseudo-element with `width: 100%` and `position: absolute` to place it below the content.
-- Use `transform: scaleX(0)` to initially hide the pseudo-element.
-- Use the `:hover` pseudo-class selector to apply `transform: scaleX(1)` and display the pseudo-element on hover.
-- Animate `transform` using `transform-origin: left` and an appropriate `transition`.
-- Remove the `transform-origin` property to make the transform originate from the center of the element.
+https://codepen.io/chalarangelo/pen/KKOpeae
 
-```html
-<p class="hover-underline-animation">Hover this text to see the effect!</p>
-```
+So, how does one implement this effect? Like I said, we'll make use of the `::after` pseudo-element to create the underline. It will need to have a `width` spanning the entire parent element and `position: absolute` to place it below the text content.
+
+Naturally, the parent must then use `display: inline-block` to make the underline span just the width of the text content and `position: relative` to position the pseudo-element correctly.
+
+Initially, we'll **hide the pseudo-element** using [`transform: scaleX(0)`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scaleX) and **show it on hover** using [`transform: scaleX(1)`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scaleX). To complete the effect, we'll add a `transition` to the `transform` property and adjust the `transform-origin` to make the underline appear to grow from the left side of the text.
+
+You can adjust the color, size, and other properties to fit your design. The most notable change you can make is the `transform-origin`. Reversing the values will make the underline appear to grow from the right side of the text instead. Removing the `transform-origin` property will make the underline grow from the center of the text.
 
 ```css
 .hover-underline-animation {
   display: inline-block;
   position: relative;
-  color: #0087ca;
 }
 
 .hover-underline-animation::after {
