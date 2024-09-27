@@ -85,10 +85,6 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align
   'vertical-align: middle': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align#middle
-  top: https://developer.mozilla.org/en-US/docs/Web/CSS/top
-  right: https://developer.mozilla.org/en-US/docs/Web/CSS/right
-  bottom: https://developer.mozilla.org/en-US/docs/Web/CSS/bottom
-  left: https://developer.mozilla.org/en-US/docs/Web/CSS/left
   display: https://developer.mozilla.org/en-US/docs/Web/CSS/display
   'display: flex': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/display#flex
