@@ -3319,3 +3319,21 @@
 - from: /css/s/clamp
   to: /css/s/fluid-typography
   status: 301!
+- from: /css/button-transitions/p/1
+  to: /css/s/button-hover-transitions
+  status: 301!
+- from: /css/s/button-hover-grow-animation
+  to: /css/s/button-hover-transitions
+  status: 301!
+- from: /css/s/button-hover-shrink-animation
+  to: /css/s/button-hover-transitions
+  status: 301!
+- from: /css/s/button-hover-fill-animation
+  to: /css/s/button-hover-transitions
+  status: 301!
+- from: /css/s/button-focus-swing-animation
+  to: /css/s/button-hover-transitions
+  status: 301!
+- from: /css/s/button-border-animation
+  to: /css/s/button-hover-transitions
+  status: 301!
