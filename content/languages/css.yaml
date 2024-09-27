@@ -62,6 +62,15 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin
   height: https://developer.mozilla.org/en-US/docs/Web/CSS/height
   width: https://developer.mozilla.org/en-US/docs/Web/CSS/width
+  border-radius: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
+  border-width: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/border-width
+  border-style: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/border-style
+  border-color: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/border-color
+  border: https://developer.mozilla.org/en-US/docs/Web/CSS/border
   calc(): https://developer.mozilla.org/en-US/docs/Web/CSS/calc
   max-width: https://developer.mozilla.org/en-US/docs/Web/CSS/max-width
   min-width: https://developer.mozilla.org/en-US/docs/Web/CSS/min-width
@@ -136,3 +145,7 @@ references:
   '@media print': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/@media/print
   '@page': https://developer.mozilla.org/en-US/docs/Web/CSS/@page
+  box-sizing: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
+  'box-sizing: border-box': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing#border-box
