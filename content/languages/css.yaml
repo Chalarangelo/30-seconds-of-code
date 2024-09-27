@@ -63,3 +63,14 @@ references:
   height: https://developer.mozilla.org/en-US/docs/Web/CSS/height
   width: https://developer.mozilla.org/en-US/docs/Web/CSS/width
   calc(): https://developer.mozilla.org/en-US/docs/Web/CSS/calc
+  max-width: https://developer.mozilla.org/en-US/docs/Web/CSS/max-width
+  min-width: https://developer.mozilla.org/en-US/docs/Web/CSS/min-width
+  max-height: https://developer.mozilla.org/en-US/docs/Web/CSS/max-height
+  min-height: https://developer.mozilla.org/en-US/docs/Web/CSS/min-height
+  margin: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+  padding: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+  font-family: https://developer.mozilla.org/en-US/docs/Web/CSS/font-family
+  font-size: https://developer.mozilla.org/en-US/docs/Web/CSS/font-size
+  font-weight: https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight
+  line-height: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height
+  text-align: https://developer.mozilla.org/en-US/docs/Web/CSS/text-align
