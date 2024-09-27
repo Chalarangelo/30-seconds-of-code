@@ -52,3 +52,7 @@ references:
   'object-position': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/object-position
   clamp(): https://developer.mozilla.org/en-US/docs/Web/CSS/clamp
+  ':not()': https://developer.mozilla.org/en-US/docs/Web/CSS/:not
+  ':has()': https://developer.mozilla.org/en-US/docs/Web/CSS/:has
+  transition: https://developer.mozilla.org/en-US/docs/Web/CSS/transition
+  opacity: https://developer.mozilla.org/en-US/docs/Web/CSS/opacity

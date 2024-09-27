@@ -1,33 +1,37 @@
 ---
-title: Sibling fade
-type: snippet
+title: Fade out siblings on hover
+shortTitle: Sibling fade
+type: tip
 language: css
 tags: [interactivity]
 cover: messy-papers
-excerpt: Fades out the siblings of a hovered item.
+excerpt: Create a cool effect that fades out the siblings of a hovered item with a few lines of CSS.
 listed: true
-dateModified: 2020-12-30
+dateModified: 2024-08-28
 ---
 
-Fades out the siblings of a hovered item.
+A classic hove effect is to fade out the siblings of an item when it is hovered. This can be achieved with a few lines of CSS by using the `:hover` and `:not()` pseudo-class selectors.
 
-- Use a `transition` to animate changes to `opacity`.
-- Use the `:hover` and `:not` pseudo-class selectors to change the `opacity` of all elements except for the one the mouse is over to `0.5`.
+Simply put, when the mouse is over an element, all its siblings will have their `opacity` set to `0.5`, while the hovered element will remain at `1`. Adding a `transition` to the `opacity` property will create a smooth animation effect.
 
-```html
-<div class="sibling-fade">
-  <span>Item 1</span> <span>Item 2</span> <span>Item 3</span>
-  <span>Item 4</span> <span>Item 5</span> <span>Item 6</span>
-</div>
-```
+Using the `:hover` selector, we can target the **parent of the hovered element** and change the `opacity` of all its children except the one being hovered. This technique works because the `:hover` selector is applied to the parent element, as well as the child element.
+
+Alternatively, we can use the new `:has()` pseudo-class in combination with `:hover` to achieve the same effect. The `:has()` pseudo-class allows us to select an element based on whether it has a **descendant that matches** a specific selector.
 
 ```css
-span {
-  padding: 0 16px;
+.element {
   transition: opacity 0.3s;
 }
 
-.sibling-fade:hover span:not(:hover) {
+/* Using the :hover and :not() pseudo-class selectors */
+.container:hover .element:not(:hover) {
+  opacity: 0.5;
+}
+
+/* Or using the :has() pseudo-class */
+.container:has(.element:hover) .element:not(:hover) {
   opacity: 0.5;
 }
 ```
+
+https://codepen.io/chalarangelo/pen/wvVamWR
