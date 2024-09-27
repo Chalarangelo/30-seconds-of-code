@@ -65,6 +65,8 @@ references:
   ':not()': https://developer.mozilla.org/en-US/docs/Web/CSS/:not
   ':has()': https://developer.mozilla.org/en-US/docs/Web/CSS/:has
   transition: https://developer.mozilla.org/en-US/docs/Web/CSS/transition
+  transition-duration: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/transition-duration
   opacity: https://developer.mozilla.org/en-US/docs/Web/CSS/opacity
   transform: https://developer.mozilla.org/en-US/docs/Web/CSS/transform
   transform-origin: >-
@@ -167,3 +169,5 @@ references:
   '@keyframes': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes
   animation: https://developer.mozilla.org/en-US/docs/Web/CSS/animation
+  animation-duration: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/animation-duration
