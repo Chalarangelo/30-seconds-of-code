@@ -74,3 +74,12 @@ references:
   font-weight: https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight
   line-height: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height
   text-align: https://developer.mozilla.org/en-US/docs/Web/CSS/text-align
+  color: https://developer.mozilla.org/en-US/docs/Web/CSS/color
+  background-color: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/background-color
+  vertical-align: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align
+  top: https://developer.mozilla.org/en-US/docs/Web/CSS/top
+  right: https://developer.mozilla.org/en-US/docs/Web/CSS/right
+  bottom: https://developer.mozilla.org/en-US/docs/Web/CSS/bottom
+  left: https://developer.mozilla.org/en-US/docs/Web/CSS/left
