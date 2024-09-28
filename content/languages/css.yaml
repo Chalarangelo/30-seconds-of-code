@@ -221,6 +221,8 @@ references:
   visibility: https://developer.mozilla.org/en-US/docs/Web/CSS/visibility
   'visibility: hidden': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/visibility#hidden
+  'visibility: visible': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/visibility#visible
   ':nth-child()': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child
   ':nth-last-child()': >-
@@ -253,3 +255,7 @@ references:
   list-style: https://developer.mozilla.org/en-US/docs/Web/CSS/list-style
   ':fullscreen': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen
+  'pointer-events': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events
+  'pointer-events: none': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events#none
