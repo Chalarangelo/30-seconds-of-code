@@ -1,18 +1,19 @@
 ---
 title: Box-sizing reset
-type: snippet
+type: tip
 language: css
 tags: [layout]
 cover: interior
-excerpt: Resets the box-model so that `width` and `height` are not affected by `border` or `padding`.
+excerpt: Reset the box-model so that `width` and `height` are not affected by `border` or `padding`.
 listed: true
-dateModified: 2020-12-30
+dateModified: 2024-09-01
 ---
 
-Resets the box-model so that `width` and `height` are not affected by `border` or `padding`.
+If you're not familiar with the **box-model**, it's a way to calculate the size of an element. The box-model consists of the `content`, `padding`, `border`, and `margin` properties.
 
-- Use `box-sizing: border-box` to include the width and height of `padding` and `border` when calculating the element's `width` and `height`.
-- Use `box-sizing: inherit` to pass down the `box-sizing` property from parent to child elements.
+By default, the `width` and `height` of an element are calculated based on the `content` property only. This means that if you add `padding` or `border` to an element, its `width` and `height` will increase.
+
+But what if you want to include the `padding` and `border` in the `width` and `height` calculations? That's where `box-sizing` comes in. Using `box-sizing: border-box`, you can include the `padding` and `border` in the `width` and `height` calculations. You can also use `box-sizing: inherit` to pass down the `box-sizing` property from parent to child elements.
 
 ```html
 <div class="box">border-box</div>
@@ -20,16 +21,19 @@ Resets the box-model so that `width` and `height` are not affected by `border` o
 ```
 
 ```css
+/* Reset the box-model */
 div {
   box-sizing: border-box;
 }
 
+/* Pass down the box-sizing property */
 *,
 *::before,
 *::after {
   box-sizing: inherit;
 }
 
+/* Example usage */
 .box {
   display: inline-block;
   width: 120px;
@@ -42,6 +46,7 @@ div {
   border-radius: 4px;
 }
 
+/* Override the box-sizing property */
 .content-box {
   box-sizing: content-box;
 }

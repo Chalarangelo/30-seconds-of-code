@@ -170,6 +170,8 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
   'box-sizing: border-box': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing#border-box
+  'box-sizing: inherit': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing#inherit
   currentColor: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#currentColor
   '@keyframes': >-
