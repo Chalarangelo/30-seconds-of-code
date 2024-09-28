@@ -94,7 +94,9 @@ references:
   caption-side: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/caption-side
   border: https://developer.mozilla.org/en-US/docs/Web/CSS/border
+  attr(): https://developer.mozilla.org/en-US/docs/Web/CSS/attr
   calc(): https://developer.mozilla.org/en-US/docs/Web/CSS/calc
+  minmax(): https://developer.mozilla.org/en-US/docs/Web/CSS/minmax
   max-width: https://developer.mozilla.org/en-US/docs/Web/CSS/max-width
   min-width: https://developer.mozilla.org/en-US/docs/Web/CSS/min-width
   max-height: https://developer.mozilla.org/en-US/docs/Web/CSS/max-height
@@ -259,3 +261,6 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events
   'pointer-events: none': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events#none
+  backdrop-filter: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter
+  :empty: https://developer.mozilla.org/en-US/docs/Web/CSS/:empty
