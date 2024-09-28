@@ -242,7 +242,7 @@ references:
   background: https://developer.mozilla.org/en-US/docs/Web/CSS/background
   background-image: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/background-image
-  linear-gradient: >-
+  linear-gradient(): >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient
   backface-visibility: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/backface-visibility
