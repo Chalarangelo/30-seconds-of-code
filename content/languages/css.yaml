@@ -30,6 +30,8 @@ references:
   ':active': https://developer.mozilla.org/en-US/docs/Web/CSS/:active
   ':any-link': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/:any-link
+  '::invalid': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/::invalid
   position: https://developer.mozilla.org/en-US/docs/Web/CSS/position
   'position: relative': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/position#relative

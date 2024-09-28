@@ -1,25 +1,30 @@
 ---
-title: Shake on invalid input
-type: snippet
+title: Shake input field when invalid, using CSS
+shortTitle: Shake on invalid input
+type: tip
 language: css
 tags: [animation]
 cover: perfect-timing
-excerpt: Creates a shake animation on invalid input.
+excerpt: Inform your users of invalid input by shaking the input field.
 listed: true
-dateModified: 2022-07-31
+dateModified: 2024-08-31
 ---
 
-Creates a shake animation on invalid input.
+One of the most common **feedback** animations is shaking an input field when the user enters invalid data. Luckily, HTML and CSS have just the right tools to help you create this effect.
 
-- Use the `pattern` attribute to define the regular expression which the input's value must match.
-- Use `@keyframes` to define a shake animation, using the `margin-left` property.
-- Use the `:invalid` pseudo-class to apply an `animation` to make the element shake.
+Starting with the HTML, we'll need to use the [`pattern`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern) attribute to define the **regular expression** which the input's value must match. This will trigger the `:invalid` pseudo-class when the input is invalid.
+
+Then, using `@keyframes`, we can define a **shake animation** that uses the `margin-left` property to move the element back and forth. Finally, we can use the `:invalid` pseudo-class to apply the `animation` to the element, making it shake when the user enters invalid data.
 
 ```html
  <input type="text" placeholder="Letters only" pattern="[A-Za-z]*" />
 ```
 
 ```css
+input:invalid {
+  animation: shake 0.2s ease-in-out 0s 2;
+}
+
 @keyframes shake {
   0% {
     margin-left: 0rem;
@@ -34,9 +39,6 @@ Creates a shake animation on invalid input.
     margin-left: 0rem;
   }
 }
-
-input:invalid {
-  animation: shake 0.2s ease-in-out 0s 2;
-  box-shadow: 0 0 0.6rem #ff0000;
-}
 ```
+
+https://codepen.io/chalarangelo/pen/dyxorLK
