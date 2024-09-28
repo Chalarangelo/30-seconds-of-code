@@ -20,6 +20,6 @@ Below is a list of the top 5 most commonly used pseudo-classes and their usage. 
 
 - `:hover`, `:focus` and `:active` are used to provide feedback for user interaction (e.g. changing a button's color on hover)
 - `:link` and `:visited` are useful for styling links based on navigation history (e.g. changing the color of visited links)
-- `:first-child`, `:last-child`, `:nth-child()` and `nth-last-child()` are useful when working with collections of elements
+- `:first-child`, `:last-child`, `:nth-child()` and `:nth-last-child()` are useful when working with collections of elements
 - `:not()` is used to match everything except the given selector and can be useful in styling hard to select elements
 - `:lang()` allows you to apply special styles based on the language of the document and is useful for multilingual websites
