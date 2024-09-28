@@ -3343,3 +3343,12 @@
 - from: /css/s/floating-list-titles
   to: /css/s/floating-or-sticky-list-titles
   status: 301!
+- from: /css/s/bouncing-loader
+  to: /css/s/loaders
+  status: 301!
+- from: /css/s/pulse-loader
+  to: /css/s/loaders
+  status: 301!
+- from: /css/s/donut-spinner
+  to: /css/s/loaders
+  status: 301!
