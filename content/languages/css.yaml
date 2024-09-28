@@ -186,3 +186,5 @@ references:
   'animation-direction: alternate': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/animation-direction#alternate
   scale: https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale
+  'visibility: hidden': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/visibility#hidden
