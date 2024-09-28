@@ -87,6 +87,12 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/border-style
   border-color: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/border-color
+  border-collapse: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/border-collapse
+  border-spacing: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/border-spacing
+  caption-side: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/caption-side
   border: https://developer.mozilla.org/en-US/docs/Web/CSS/border
   calc(): https://developer.mozilla.org/en-US/docs/Web/CSS/calc
   max-width: https://developer.mozilla.org/en-US/docs/Web/CSS/max-width
