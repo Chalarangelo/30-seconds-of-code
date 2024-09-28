@@ -104,6 +104,13 @@ references:
   font-family: https://developer.mozilla.org/en-US/docs/Web/CSS/font-family
   font-size: https://developer.mozilla.org/en-US/docs/Web/CSS/font-size
   font-weight: https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight
+  font-style: https://developer.mozilla.org/en-US/docs/Web/CSS/font-style
+  font-variant: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant
+  font-size-adjust: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/font-size-adjust
+  font-stretch: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch
   line-height: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height
   text-align: https://developer.mozilla.org/en-US/docs/Web/CSS/text-align
   'text-align: center': >-
