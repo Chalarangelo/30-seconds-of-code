@@ -196,3 +196,8 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dasharray
   stroke-dashoffset: >-
     https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dashoffset
+  z-index: https://developer.mozilla.org/en-US/docs/Web/CSS/z-index
+  background-image: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/background-image
+  linear-gradient: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient
