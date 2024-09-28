@@ -194,6 +194,8 @@ references:
   'text-overflow: ellipsis': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow#ellipsis
   overflow: https://developer.mozilla.org/en-US/docs/Web/CSS/overflow
+  'overflow: auto': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/overflow#auto
   'overflow: hidden': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/overflow#hidden
   'overflow-y: auto': >-
@@ -264,3 +266,7 @@ references:
   backdrop-filter: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter
   :empty: https://developer.mozilla.org/en-US/docs/Web/CSS/:empty
+  ::selection: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/::selection
+  ::placeholder: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/::placeholder
