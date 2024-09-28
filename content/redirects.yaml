@@ -3337,3 +3337,9 @@
 - from: /css/s/button-border-animation
   to: /css/s/button-hover-transitions
   status: 301!
+- from: /css/s/sticky-list-titles
+  to: /css/s/floating-or-sticky-list-titles
+  status: 301!
+- from: /css/s/floating-list-titles
+  to: /css/s/floating-or-sticky-list-titles
+  status: 301!

@@ -157,6 +157,8 @@ references:
   overflow: https://developer.mozilla.org/en-US/docs/Web/CSS/overflow
   'overflow: hidden': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/overflow#hidden
+  'overflow-y: auto': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-y#auto
   '@media print': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/@media/print
   '@page': https://developer.mozilla.org/en-US/docs/Web/CSS/@page
