@@ -199,6 +199,7 @@ references:
   '@media print': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/@media/print
   '@page': https://developer.mozilla.org/en-US/docs/Web/CSS/@page
+  box-shadow: https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow
   box-sizing: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
   'box-sizing: border-box': >-
@@ -250,4 +251,5 @@ references:
   list-style-image: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-image
   list-style: https://developer.mozilla.org/en-US/docs/Web/CSS/list-style
-
+  ':fullscreen': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen
