@@ -1,20 +1,26 @@
 ---
-title: Staggered animation
-type: snippet
+title: Staggered list animation
+shortTitle: Staggered animation
+type: tip
 language: css
 tags: [animation]
 cover: aerial-view-port
-excerpt: Creates a staggered animation for the elements of a list.
+excerpt: Staggered animations can be used to create a more dynamic user experience. Get creative with your lists!
 listed: true
-dateModified: 2021-10-11
+dateModified: 2024-09-01
 ---
 
-Creates a staggered animation for the elements of a list.
+The term **staggered animation** refers to an animation effect where elements are animated one after the other, with a slight delay between each element. This can be used to create a more dynamic user experience, especially when dealing with lists.
 
-- Set `opacity: 0` and `transform: translateX(100%)` to make list elements transparent and move them all the way to the right.
-- Specify the same `transition` properties for list elements, except `transition-delay`.
-- Use inline styles to specify a value for `--i` for each list element. This will in turn be used for `transition-delay` to create the stagger effect.
-- Use the `:checked` pseudo-class selector for the checkbox to style list elements. Set `opacity` to `1` and `transform` to `translateX(0)` to make them appear and slide into view.
+For this effect to work, we can leverage [CSS variables](/css/s/variables). Each child element will define a value for a custom property (e.g. `--i`), which will be used to calculate the **delay for the animation**. By setting the `transition-delay` property to a **multiple of this custom property**, we can create a staggered effect.
+
+The rest of the process is pretty standard. We'll use a `transition` to animate the `opacity` and `transform` properties of the list elements. When the animation is toggled (e.g. by opening a menu), the list elements will transition from being transparent (`opacity: 0`) and off-screen (`transform: translateX(100%)`) to being visible (`opacity: 1`) and in their final position (`transform: translateX(0)`).
+
+> [!NOTE]
+>
+> For this example, we'll use a **checkbox** to toggle the animation. You can use JavaScript or any other method to toggle the animation, based on your needs.
+
+https://codepen.io/chalarangelo/pen/ExqjMBw
 
 ```html
 <div class="container">
@@ -40,21 +46,7 @@ Creates a staggered animation for the elements of a list.
   display: none;
 }
 
-.menu-toggler-label {
-  cursor: pointer;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.stagger-menu {
-  list-style-type: none;
-  margin: 16px 0;
-  padding: 0;
-}
-
 .stagger-menu li {
-  margin-bottom: 8px;
-  font-size: 18px;
   opacity: 0;
   transform: translateX(100%);
   transition-property: opacity, transform;

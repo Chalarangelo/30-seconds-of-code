@@ -69,6 +69,8 @@ references:
   ':not()': https://developer.mozilla.org/en-US/docs/Web/CSS/:not
   ':has()': https://developer.mozilla.org/en-US/docs/Web/CSS/:has
   transition: https://developer.mozilla.org/en-US/docs/Web/CSS/transition
+  transition-delay: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/transition-delay
   transition-duration: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/transition-duration
   opacity: https://developer.mozilla.org/en-US/docs/Web/CSS/opacity
