@@ -192,3 +192,7 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child#odd
   ':nth-child(even)': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child#even
+  stroke-dasharray: >-
+    https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dasharray
+  stroke-dashoffset: >-
+    https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dashoffset
