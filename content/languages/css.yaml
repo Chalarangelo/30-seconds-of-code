@@ -188,3 +188,7 @@ references:
   scale: https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale
   'visibility: hidden': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/visibility#hidden
+  ':nth-child(odd)': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child#odd
+  ':nth-child(even)': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child#even
