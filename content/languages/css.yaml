@@ -113,10 +113,20 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch
   line-height: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height
   text-align: https://developer.mozilla.org/en-US/docs/Web/CSS/text-align
+  text-align-last: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/text-align-last
   'text-align: center': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/text-align#center
   text-decoration: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration
+  text-decoration-color: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color
+  text-indent: https://developer.mozilla.org/en-US/docs/Web/CSS/text-indent
+  text-justify: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/text-justify
+  text-shadow: https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow
+  text-transform: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform
   color: https://developer.mozilla.org/en-US/docs/Web/CSS/color
   background-color: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/background-color
@@ -207,6 +217,7 @@ references:
   'animation-direction: alternate': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/animation-direction#alternate
   scale: https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale
+  visibility: https://developer.mozilla.org/en-US/docs/Web/CSS/visibility
   'visibility: hidden': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/visibility#hidden
   ':nth-child()': >-
