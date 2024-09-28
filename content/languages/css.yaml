@@ -169,6 +169,12 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#system-ui
   sans-serif: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#generic-font-families
+  word-wrap: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/word-wrap
+  word-spacing: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/word-spacing
+  word-break: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/word-break
   white-space: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/white-space
   'white-space: nowrap': >-
