@@ -17,6 +17,8 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/:hover
   ':focus': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/:focus
+  ':focus-within': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-within
   '::first-letter': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/::first-letter
   ':first-child': >-
