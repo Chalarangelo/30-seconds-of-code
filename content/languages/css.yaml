@@ -169,6 +169,8 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#system-ui
   sans-serif: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#generic-font-families
+  white-space: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/white-space
   'white-space: nowrap': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/white-space#nowrap
   'text-overflow: ellipsis': >-
@@ -224,3 +226,11 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient
   backface-visibility: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/backface-visibility
+  list-style-type: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type
+  list-style-position: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-position
+  list-style-image: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-image
+  list-style: https://developer.mozilla.org/en-US/docs/Web/CSS/list-style
+
