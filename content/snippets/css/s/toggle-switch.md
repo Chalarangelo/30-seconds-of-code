@@ -1,20 +1,22 @@
 ---
-title: Toggle switch
-type: snippet
+title: Create a toggle switch using HTML & CSS
+shortTitle: Toggle switch
+type: tip
 language: css
 tags: [visual,interactivity]
 cover: interior-5
-excerpt: Creates a toggle switch with CSS only.
+excerpt: A toggle switch is little more than a checkbox with a custom appearance. This snippet shows you how to create one without using JavaScript.
 listed: true
-dateModified: 2020-12-30
+dateModified: 2024-09-04
 ---
 
-Creates a toggle switch with CSS only.
+A toggle switch is little more than a checkbox with a custom appearance. Given that, some HTML and CSS should be enough to create and style one.
 
-- Use the `for` attribute to associate the `<label>` with the checkbox `<input>` element.
-- Use the `::after` pseudo-element of the `<label>` to create a circular knob for the switch.
-- Use the `:checked` pseudo-class selector to change the position of the knob, using `transform: translateX(20px)` and the `background-color` of the switch.
-- Use `position: absolute` and `left: -9999px` to visually hide the `<input>` element.
+Structurally, you can create a toggle switch the same way as you would a checkbox. The only difference is that you'll need to **visually hide the checkbox** `<input>` and style the `<label>` element to look like a switch.
+
+After hiding the `<input>` element offscreen, you can style the `<label>` element to look like a switch. The `::after` pseudo-element is used to create a circular knob for the switch. The `:checked` pseudo-class selector is used to change the position of the knob and the background color of the switch when the checkbox is checked.
+
+https://codepen.io/chalarangelo/pen/wvVKoyP
 
 ```html
 <input type="checkbox" id="toggle" class="offscreen" />
@@ -25,19 +27,19 @@ Creates a toggle switch with CSS only.
 .switch {
   position: relative;
   display: inline-block;
-  width: 40px;
-  height: 20px;
+  width: 46px;
+  height: 24px;
   background-color: rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
+  border-radius: 22px;
   transition: all 0.3s;
 }
 
 .switch::after {
   content: '';
   position: absolute;
-  width: 18px;
-  height: 18px;
-  border-radius: 18px;
+  width: 22px;
+  height: 22px;
+  border-radius: 22px;
   background-color: white;
   top: 1px;
   left: 1px;
@@ -45,7 +47,7 @@ Creates a toggle switch with CSS only.
 }
 
 input[type='checkbox']:checked + .switch::after {
-  transform: translateX(20px);
+  transform: translateX(22px);
 }
 
 input[type='checkbox']:checked + .switch {
@@ -57,3 +59,7 @@ input[type='checkbox']:checked + .switch {
   left: -9999px;
 }
 ```
+
+> [!TIP]
+>
+> For **accessibility** reasons, it's important to keep the `<input>` element in the DOM. This way, screen readers can still interact with it, even if it's visually hidden. You might also want to add some `aria-*` attributes to the `<input>` and `<label>` elements to improve accessibility further.
