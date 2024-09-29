@@ -3355,3 +3355,6 @@
 - from: /css/s/zebra-striped-list
   to: /css/s/zebra-striped-list-or-table
   status: 301!
+- from: /css/s/border-with-top-triangle
+  to: /css/s/speech-bubble
+  status: 301!
