@@ -1,6 +1,6 @@
 ---
-title: Speech bubble with CSS
-shortTitle: Speech bubble
+title: Speech bubbles with CSS
+shortTitle: Speech bubbles
 type: tip
 language: css
 tags: [visual]
