@@ -270,3 +270,4 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/::selection
   ::placeholder: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/::placeholder
+  blur(): https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/blur

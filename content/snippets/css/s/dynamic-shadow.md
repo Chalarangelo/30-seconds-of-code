@@ -1,32 +1,31 @@
 ---
 title: Dynamic shadow
-type: snippet
+type: tip
 language: css
 tags: [visual]
 cover: couch-laptop
-excerpt: Creates a shadow similar to `box-shadow` but based on the colors of the element itself.
+excerpt: Learn how to create a shadow similar to `box-shadow`, but based on the colors of the element itself.
 listed: true
-dateModified: 2020-12-30
+dateModified: 2024-09-04
 ---
 
-Creates a shadow similar to `box-shadow` but based on the colors of the element itself.
+Ever wanted to create a shadow that matches the colors of the element itself? Unfortunately, `box-shadow` is quite limited in that regard. However, you can create a similar effect using a pseudo-element and some clever CSS.
 
-- Use the `::after` pseudo-element with `position: absolute` and `width` and `height` equal to `100%` to fill the available space in the parent element.
-- Use `background: inherit` to inherit the `background` of the parent element.
-- Use `top` to slightly offset the pseudo-element, `filter: blur()` to create a shadow and `opacity` to make it semi-transparent.
-- Use `z-index: 1` on the parent and `z-index: -1` on the pseudo-element to position it behind its parent.
+Given an element with `position: relative`, you can set `position: absolute` on its `::after` pseudo-element to **fill the available space**. By setting `background: inherit`, the pseudo-element will inherit the `background` of the parent element.
 
-```html
-<div class="dynamic-shadow"></div>
-```
+In order to create the shadow, you can then slightly **offset the pseudo-element** using `top` and apply a `blur()` filter to create a shadow, and make it semi-transparent using `opacity`.
+
+Finally, you can position the pseudo-element behind its parent by setting `z-index: -1` on the pseudo-element. Due to the way the **stacking context** works, the parent itself should not define a value for `z-index` but rather its parent needs to have a `z-index` value for the element itself to display above the `::after` pseudo-element.
+
 
 ```css
+.container {
+  z-index: 1;
+}
+
 .dynamic-shadow {
   position: relative;
-  width: 10rem;
-  height: 10rem;
   background: linear-gradient(75deg, #6d78ff, #00ffb8);
-  z-index: 1;
 }
 
 .dynamic-shadow::after {
@@ -41,3 +40,7 @@ Creates a shadow similar to `box-shadow` but based on the colors of the element 
   z-index: -1;
 }
 ```
+
+This effect can work well with images, gradients or any other sort of background that you want to create a shadow for. You can also adjust the `blur()` value to create a more or less pronounced shadow effect.
+
+https://codepen.io/chalarangelo/pen/XWvmNEQ
