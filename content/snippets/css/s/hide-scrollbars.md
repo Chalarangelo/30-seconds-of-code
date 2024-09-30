@@ -1,32 +1,20 @@
 ---
-title: Hide scroll bars
-type: snippet
+title: Hide scroll bars on an element
+shortTitle: Hide scrollbars
+type: tip
 language: css
 tags: [visual]
 cover: by-the-lighthouse
-excerpt: Hides scrollbars on an element, while still allowing it to be scrollable.
+excerpt: Learn how to hide scrollbars on an element, while still allowing it to be scrollable.
 listed: true
-dateModified: 2022-05-13
+dateModified: 2024-09-07
 ---
 
-Hides scrollbars on an element, while still allowing it to be scrollable.
+Scrollbars are a common pain point when styling pages, mainly due to a lack of customization options and inconsistencies between browsers. You can **hide scrollbars** on an element while still allowing it to be **scrollable** by using the `overflow` property and some vendor-specific properties.
 
-- Use `overflow: auto` to allow the element to be scrollable.
-- Use `scrollbar-width: none` to hide scrollbars on Firefox.
-- Use `display: none` on the `::-webkit-scrollbar` pseudo-element to hide scrollbars on WebKit browsers (Chrome, Edge, Safari).
-
-```html
-<div class="no-scrollbars">
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean interdum id leo a consectetur. Integer justo magna, ultricies vel enim vitae, egestas efficitur leo. Ut nulla orci, rutrum eu augue sed, tempus pellentesque quam.</p>
-</div>
-```
+First off, you need to ensure your content remains scrollable, by setting `overflow: auto` on the element. Then, you can hide the scrollbars using `scrollbar-width: none` on Firefox and `display: none` on the `::-webkit-scrollbar` pseudo-element on WebKit browsers (Chrome, Edge, Safari).
 
 ```css
-div {
-  width: 200px;
-  height: 100px;
-}
-
 .no-scrollbars {
   overflow: auto;
   scrollbar-width: none;
