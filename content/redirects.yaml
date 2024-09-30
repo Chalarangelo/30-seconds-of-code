@@ -3358,3 +3358,9 @@
 - from: /css/s/border-with-top-triangle
   to: /css/s/speech-bubble
   status: 301!
+- from: /css/s/horizontal-gallery
+  to: /css/s/horizontal-vertical-gallery
+  status: 301!
+- from: /css/s/vertical-gallery
+  to: /css/s/horizontal-vertical-gallery
+  status: 301!
