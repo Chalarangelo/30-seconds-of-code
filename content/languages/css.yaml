@@ -173,6 +173,8 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content#space-around
   flex-direction: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction
+  'flex-direction: row': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction#row
   'flex-direction: column': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction#column
   flex-wrap: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap
