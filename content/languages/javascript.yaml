@@ -858,6 +858,8 @@ references:
   Element.scrollHeight: https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollHeight
   Element.getBoundingClientRect(): >-
     https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect
+  Element.requestFullscreen(): >-
+    https://developer.mozilla.org/en-US/docs/Web/API/Element/requestFullscreen
   Date(): >-
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date
   Intl.DateTimeFormat: >-
