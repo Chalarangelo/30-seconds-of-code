@@ -13,12 +13,13 @@ I remember a time when gradients were tricky to use for backgrounds, let alone f
 
 Styling text with gradients starts the same as creating a **gradient for the background**. You use the `linear-gradient()` function to define the gradient colors and direction.
 
-Then, you have to **apply it to the text** using the `-webkit-text-fill-color` property with a value of `transparent`. Finally, **clip the background with the text** using the `-webkit-background-clip` property with a value of `text` and you're done!
+Then, you have to **apply it to the text** using the `-webkit-text-fill-color` property with a value of `transparent`. Finally, **clip the background with the text** using the `background-clip` property with a value of `text` and you're done!
 
 ```css
 .gradient-text {
   background: linear-gradient(to right, #009FFF, #ec2F4B);
   -webkit-text-fill-color: transparent;
+  background-clip: text;
   -webkit-background-clip: text;
 }
 ```
