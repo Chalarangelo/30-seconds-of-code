@@ -3367,3 +3367,12 @@
 - from: /css/s/text-backdrop-overlay
   to: /css/s/image-text-overlay
   status: 301!
+- from: /css/s/rotating-card
+  to: /css/s/card-hover-effects
+  status: 301!
+- from: /css/s/shifting-card
+  to: /css/s/card-hover-effects
+  status: 301!
+- from: /css/s/hover-perspective
+  to: /css/s/card-hover-effects
+  status: 301!

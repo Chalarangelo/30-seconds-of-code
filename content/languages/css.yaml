@@ -277,6 +277,8 @@ references:
   ::placeholder: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/::placeholder
   blur(): https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/blur
+  perspective(): >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/perspective
   brightness(): >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/brightness
   rotateX(): >-

@@ -3,12 +3,11 @@ title: CSS Hover Effects
 listed: true
 snippetIds:
   - css/s/button-hover-transitions
+  - css/s/card-hover-effects
   - css/s/image-overlay-hover
   - css/s/image-hover-menu
   - css/s/hover-additional-content
   - css/s/image-hover-rotate
-  - css/s/rotating-card
-  - css/s/hover-perspective
   - css/s/hover-underline-animation
   - css/s/navigation-list-item-hover-and-focus-effect
   - css/s/mouse-cursor-gradient-tracking
