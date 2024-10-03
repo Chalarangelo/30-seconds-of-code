@@ -1,57 +1,31 @@
 ---
-title: Fullscreen
-type: snippet
+title: Style elements when in fullscreen mode
+shortTitle: Fullscreen element styling
+type: tip
 language: css
 tags: [visual]
 cover: flower-portrait-3
-excerpt: Applies styles to an element when in fullscreen mode.
+excerpt: Did you know you can differentiate an element's styles when it's in fullscreen mode? Learn how to do it with this snippet!
 listed: true
-dateModified: 2021-10-13
+dateModified: 2024-09-08
 ---
 
-Applies styles to an element when in fullscreen mode.
+Did you know you can differentiate an element's styles when it's in fullscreen mode? It doesn't even require special classes or JavaScript, as you can use the `:fullscreen` *pseudo-class* to style an element when it's displayed in fullscreen mode.
 
-- Use the `:fullscreen` CSS pseudo-element selector to select and style an element that is displayed in fullscreen mode.
-- Use a `<button>` and `Element.requestFullscreen()` to create a button that makes the element fullscreen for the purposes of previewing the style.
+This pseudo-class is particularly useful in adjusting an element's appearance when it's in fullscreen mode. Perhaps, you want to adjust the text size, background color, or even the layout of the element to better fit the screen. This can be especially useful for media players, slideshows, or any other content that benefits from a fullscreen view.
 
-```html
-<div class="container">
-  <p><em>Click the button below to enter the element into fullscreen mode. </em></p>
-  <div class="element" id="element"><p>I change color in fullscreen mode!</p></div>
-  <br />
-  <button onclick="var el = document.getElementById('element'); el.requestFullscreen();">
-    Go Full Screen!
-  </button>
-</div>
-```
+https://codepen.io/chalarangelo/pen/bGXpEoP
 
 ```css
-.container {
-  margin: 40px auto;
-  max-width: 700px;
-}
-
 .element {
-  padding: 20px;
-  height: 300px;
-  width: 100%;
-  background-color: skyblue;
-  box-sizing: border-box;
-}
-
-.element p {
-  text-align: center;
-  color: white;
-  font-size: 3em;
-}
-
-.element:-ms-fullscreen p {
-  visibility: visible;
+  /* Default styles */
 }
 
 .element:fullscreen {
-  background-color: #e4708a;
-  width: 100vw;
-  height: 100vh;
+  /* Styles when in fullscreen mode */
 }
 ```
+
+> [!NOTE]
+>
+> You can learn more about **requesting fullscreen access** in the [related JavaScript snippet](/js/s/fullscreen). The gist of it is that you can use `Element.requestFullscreen()` to make an element fullscreen and `Document.exitFullscreen()` to exit fullscreen mode.
