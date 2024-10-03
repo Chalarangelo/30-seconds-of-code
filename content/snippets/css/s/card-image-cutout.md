@@ -1,48 +1,38 @@
 ---
 title: Card with image cutout
-type: snippet
+type: tip
 language: css
 tags: [visual]
 cover: radio-monstera
-excerpt: Creates a card with an image cutout.
+excerpt: Cutout effects seem tricky to implement, but they really aren't. CSS has you covered!
 listed: true
-dateModified: 2022-12-11
+dateModified: 2024-09-13
 ---
 
-Creates a card with an image cutout.
+Cutout effects are a great way to add visual interest to your website. They can be used to create unique layouts, highlight important content, or simply make your website more visually appealing. One common way to create a cutout effect is to use an image cutout, where an image is displayed inside a container with a cutout shape.
 
-- Use `background` to add a colored background to a `.container` element.
-- Create a `.card` containing a `figure` with the appropriate image for the cutout and any other content you want.
-- Use the `::before` pseudo-element to add a `border` around the `figure` element, matching the `.container` element's `background` and creating the illusion of a cutout in the `.card`.
+To create this effect, you'll need a **container element** with a colored `background` and a **card element** containing the image you want to display. You can then use the `::before` pseudo-element to add a `border` around the image, matching the container element's `background` and creating the illusion of a cutout in the card.
+
+https://codepen.io/chalarangelo/pen/ZEgWBRo
 
 ```html
 <div class="container">
   <div class="card">
     <figure>
-      <img alt="" src="https://picsum.photos/id/447/400/400"/>
+      <img src="/path/to/img.jpg"/>
     </figure>
-    <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p class="content">Card content</p>
   </div>
 </div>
 ```
 
 ```css
 .container {
-  display: flex;
-  padding: 96px 24px 48px;
-  justify-content: center;
-  align-items: center;
   background: #f3f1fe;
 }
 
 .card {
-  width: 350px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background: #fff;
-  border-radius: 10px;
-  margin: 8px;
   box-shadow: 0 0 5px -2px rgba(0, 0, 0, 0.1);
 }
 
@@ -72,12 +62,5 @@ Creates a card with an image cutout.
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.card .content {
-  text-align: center;
-  margin: 2rem;
-  line-height: 1.5;
-  color: #101010;
 }
 ```
