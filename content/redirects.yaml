@@ -3376,3 +3376,9 @@
 - from: /css/s/hover-perspective
   to: /css/s/card-hover-effects
   status: 301!
+- from: /css/s/custom-checkbox
+  to: /css/s/custom-checkbox-radio
+  status: 301!
+- from: /css/s/custom-radio
+  to: /css/s/custom-checkbox-radio
+  status: 301!
