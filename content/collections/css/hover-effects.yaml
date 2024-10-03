@@ -2,6 +2,7 @@ slug: css/hover-effects
 title: CSS Hover Effects
 listed: true
 snippetIds:
+  - css/s/button-hover-transitions
   - css/s/image-overlay-hover
   - css/s/image-hover-menu
   - css/s/hover-additional-content
