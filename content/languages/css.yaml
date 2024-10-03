@@ -292,5 +292,5 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotateY
   -webkit-text-fill-color: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-text-fill-color
-  -webkit-background-clip: >-
-    https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-background-clip
+  background-clip: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip

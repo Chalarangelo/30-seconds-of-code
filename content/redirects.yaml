@@ -3382,3 +3382,6 @@
 - from: /css/s/custom-radio
   to: /css/s/custom-checkbox-radio
   status: 301!
+- from: /css/s/etched-text
+  to: /css/s/engraved-embossed-text
+  status: 301!
