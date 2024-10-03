@@ -136,6 +136,11 @@ references:
   color: https://developer.mozilla.org/en-US/docs/Web/CSS/color
   background-color: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/background-color
+  background-position: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/background-position
+  background-size: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/background-size
+  url(): https://developer.mozilla.org/en-US/docs/Web/CSS/url_function
   vertical-align: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align
   'vertical-align: middle': >-
