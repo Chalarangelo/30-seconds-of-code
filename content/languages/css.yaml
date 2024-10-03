@@ -77,6 +77,10 @@ references:
   transform: https://developer.mozilla.org/en-US/docs/Web/CSS/transform
   transform-origin: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin
+  'transform-style: preserve-3d': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/transform-style#preserve-3d
+  'will-change: transform': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/will-change#transform
   height: https://developer.mozilla.org/en-US/docs/Web/CSS/height
   width: https://developer.mozilla.org/en-US/docs/Web/CSS/width
   border-radius: >-
@@ -275,3 +279,7 @@ references:
   blur(): https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/blur
   brightness(): >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/brightness
+  rotateX(): >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotateX
+  rotateY(): >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotateY
