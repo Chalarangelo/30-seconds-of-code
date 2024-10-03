@@ -273,3 +273,5 @@ references:
   ::placeholder: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/::placeholder
   blur(): https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/blur
+  brightness(): >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/brightness

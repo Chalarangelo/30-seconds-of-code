@@ -1,58 +1,64 @@
 ---
 title: Image with text overlay
-type: snippet
+type: tip
 language: css
 tags: [visual]
 cover: icebreaker
-excerpt: Displays an image with a text overlay.
+excerpt: Learn how to create an image with a text overlay using CSS.
 listed: true
-dateModified: 2023-01-29
+dateModified: 2024-09-08
 ---
 
-Displays an image with a text overlay.
+Displaying text on top of images, while very common, is fairly tricky to get right. This is mainly because the text needs to be readable regardless of the background image and color. Luckily, creating **text overlays** is easy with CSS.
 
-- Use the `<figure>` and `<figcaption>` elements to display the image and the text overlay respectively.
-- Use a `linear-gradient` to create the overlay effect over the image.
+https://codepen.io/chalarangelo/pen/WNVwQgY
+
+## Using `backdrop-filter`
+
+The most modern technique to create a text overlay is by using the `backdrop-filter` property. This property applies a filter to the backdrop of an element, which is the area behind the element itself.
+
+For an overlay effect, you can use the `blur()` and `brightness()` functions, which apply a blur and adjust the brightness of the backdrop respectively.
 
 ```html
-<figure class="text-overlay-image">
-  <img src="https://picsum.photos/id/971/400/400.jpg" />
-  <figcaption>
-    <h3>Business <br/>Pricing</h3>
-  </figcaption>
+<figure>
+  <figcaption>Text</figcaption>
+  <img src="/path/to/img.jpg">
 </figure>
 ```
 
 ```css
-.text-overlay-image {
-  box-sizing: border-box;
+figure {
   position: relative;
-  margin: 8px;
-  max-width: 400px;
-  max-height: 400px;
-  width: 100%;
 }
 
-.text-overlay-image figcaption {
-  box-sizing: border-box;
+figcaption {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  background: linear-gradient(0deg, #00000088 30%, #ffffff44 100%);
   color: #fff;
-  padding: 16px;
-  font-family: sans-serif;
-  font-weight: 700;
-  line-height: 1.2;
-  font-size: 28px;
+  backdrop-filter: blur(14px) brightness(75%);
+}
+```
+
+## Using `linear-gradient`
+
+A more traditional way to achieve a similar effect is by using a `linear-gradient()` background. This method is less flexible than `backdrop-filter`, but it works well in most cases.
+
+Depending on your needs, you can adjust the gradient's colors, direction, and opacity to create different overlay effects.
+
+```html
+<figure>
+  <img src="/path/to/img.jpg">
+  <figcaption>Text</figcaption>
+</figure>
+```
+
+```css
+figure {
+  position: relative;
 }
 
-.text-overlay-image figcaption h3 {
-  margin: 0;
+figcaption {
+  position: absolute;
+  color: #fff;
+  background: linear-gradient(0deg, #00000088 30%, #ffffff44 100%);
 }
 ```

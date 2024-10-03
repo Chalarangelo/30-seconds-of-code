@@ -3364,3 +3364,6 @@
 - from: /css/s/vertical-gallery
   to: /css/s/horizontal-vertical-gallery
   status: 301!
+- from: /css/s/text-backdrop-overlay
+  to: /css/s/image-text-overlay
+  status: 301!
