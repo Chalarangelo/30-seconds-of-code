@@ -59,18 +59,6 @@ export default class PreparedQueries {
     };
   }
 
-  static nonStorySnippets() {
-    return globSync(settings.paths.snippetsGlob)
-      .map(file => [
-        file
-          .replace(settings.paths.snippetsPrefix, '')
-          .replace(settings.paths.snippetsSuffix, ''),
-        fs.readFileSync(file, 'utf8'),
-      ])
-      .filter(([, content]) => content.includes('type: snippet'))
-      .map(([slug]) => slug);
-  }
-
   static duplicateReferences() {
     const references = globSync(settings.paths.languagesGlob)
       .map(file => yaml.load(fs.readFileSync(file, 'utf8')))
