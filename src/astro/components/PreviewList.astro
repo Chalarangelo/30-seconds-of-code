@@ -26,6 +26,9 @@ const { contentItems, largeImages = false } = Astro.props;
         </article>
       </li>
     ))}
+    {contentItems.length === 1 && (
+      <li />
+    )}
   </ul>
   <slot name='bottom-nav' />
 </section>
