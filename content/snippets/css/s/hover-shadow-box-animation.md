@@ -1,32 +1,26 @@
 ---
-title: Hover shadow box animation
-type: snippet
+title: Animate box shadow on hover
+type: tip
 language: css
 tags: [animation]
 cover: dark-cloud
-excerpt: Creates a shadow box around the text when it is hovered.
-listed: false
-dateModified: 2021-01-04
+excerpt: Create an animated shadow box around the text when it is hovered.
+listed: true
+dateModified: 2024-09-18
 ---
 
-Creates a shadow box around the text when it is hovered.
+One of material design's coolest tricks is the illusion of depth created by shadows. As part of hover interactions, elements are often attracted to your finger, as if they were **floating above the surface**. Luckily, it's a pretty easy effect to achieve with CSS.
 
-- Set `transform: perspective(1px)` to give element a 3D space by affecting the distance between the Z plane and the user and `translate(0)` to reposition the `p` element along z-axis in 3D space.
-- Use `box-shadow` to make the box transparent.
-- Use `transition-property` to enable transitions for both `box-shadow` and `transform`.
-- Use the `:hover`, `:active` and `:focus` pseudo-class selectors to apply a new `box-shadow` and `transform: scale(1.2)` to change the scale of the text.
+The key to this effect is using `transform` with the `perspective()` function to create a **3D space** for the element, by affecting the distance between the Z plane and the user. Then, using the `translate()` function, you can reposition the element along z-axis in 3D space.
 
-```html
-<p class="hover-shadow-box-animation">Box it!</p>
-```
+The leftover work is using `box-shadow` to create a shadow around the element and then, using `:hover`, `:active`, and `:focus` pseudo-class selectors, to apply a new `box-shadow` and `transform` to the element.
+
+https://codepen.io/chalarangelo/pen/xxvVyoB
 
 ```css
 .hover-shadow-box-animation {
-  display: inline-block;
-  vertical-align: middle;
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px transparent;
-  margin: 10px;
   transition-duration: 0.3s;
   transition-property: box-shadow, transform;
 }
