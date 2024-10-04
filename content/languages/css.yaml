@@ -284,6 +284,8 @@ references:
   blur(): https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/blur
   perspective(): >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/perspective
+  translate(): >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate
   brightness(): >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/brightness
   rotateX(): >-
