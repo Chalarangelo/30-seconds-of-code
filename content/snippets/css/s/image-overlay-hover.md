@@ -1,19 +1,23 @@
 ---
 title: Image overlay on hover
-type: snippet
+type: tip
 language: css
 tags: [visual,animation]
 cover: architectural
-excerpt: Displays an image overlay effect on hover.
+excerpt: Learn how to display an image overlay effect on hover using CSS.
 listed: true
-dateModified: 2021-10-11
+dateModified: 2024-09-20
 ---
 
-Displays an image overlay effect on hover.
+Creating an image overlay effect on hover is a great way to add a touch of interactivity to your website. This effect can be achieved using pseudo-elements and pseudo-selectors. For the **structure**, you'll use a `<figure>` element containing an `<img>` and a `<figcaption>`.
 
-- Use the `::before` and `::after` pseudo-elements for the top and bottom bars of the overlay respectively. Set their `opacity`, `transform` and `transition` to produce the desired effect.
-- Use the `<figcaption>` for the text of the overlay. Set `display: flex`, `flex-direction: column` and `justify-content: center` to center the text into the image.
-- Use the `:hover` pseudo-selector to update the `opacity` and `transform` of all the elements and display the overlay.
+Using the `::before` and `::after` pseudo-elements, you can create the top and bottom **bars of your overlay**. Set their `opacity`, `transform`, and `transition` to produce the desired effect.
+
+The `<figcaption>` element can be used for the **text of the overlay**. By setting `display: flex`, `flex-direction: column`, and `justify-content: center`, you can center the text into the image.
+
+Finally, by using the `:hover` pseudo-selector, you can update the `opacity` and `transform` of all the elements and display the overlay.
+
+https://codepen.io/chalarangelo/pen/bGXpmJq
 
 ```html
 <figure class="hover-img">
