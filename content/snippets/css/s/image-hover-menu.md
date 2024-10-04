@@ -1,29 +1,30 @@
 ---
-title: Menu on image hover
-type: snippet
+title: Show menu on image hover
+type: tip
 language: css
 tags: [layout,animation]
 cover: compass
-excerpt: Displays a menu overlay when the user hovers over the image.
+excerpt: Display a menu overlay when the user hovers over an image.
 listed: true
-dateModified: 2021-10-11
+dateModified: 2024-09-24
 ---
 
-Displays a menu overlay when the user hovers over the image.
+To display a menu overlay when the user hovers over an image, you can use a combination of HTML and CSS techniques. Start by using a `<figure>` element to wrap both the `<img>` element and a `<nav>` element that will contain the menu links. This structure allows you to control the layout and positioning of the image and the menu.
 
-- Use a `<figure>` to wrap the `<img>` element and a `<div>` element that will contain the menu links.
-- Use the `opacity` and `right` attributes to animate the image on hover, creating a sliding effect.
-- Set the `left` attribute of the `<div>` to the negative of the element's `width`. Reset it to `0` when hovering over the parent element to slide in the menu.
-- Use `display: flex`, `flex-direction: column` and `justify-content: center` on the `<div>` to vertically center the menu items.
+To create a **sliding effect**, use the `opacity` and `right` attributes to animate the image on hover. By adjusting these properties, you can make the image appear to slide to the side, revealing the menu. Additionally, set the `left` attribute of the `<nav>` to the negative of the element's width. When hovering over the parent element, reset the `left` attribute to slide the menu into view.
+
+For the menu items, use `display: flex`, `flex-direction: column`, and `justify-content: center` on the `<nav>` to vertically center them. This ensures that the menu items are evenly spaced and aligned in the center of the menu overlay.
+
+https://codepen.io/chalarangelo/pen/zYgqmQM
 
 ```html
 <figure class="hover-menu">
 	<img src="https://picsum.photos/id/1060/800/480.jpg"/>
-	<div>
+	<nav>
 		<a href="#">Home</a>
 		<a href="#">Pricing</a>
 		<a href="#">About</a>
-	</div>
+	</nav>
 </figure>
 ```
 
@@ -54,13 +55,12 @@ Displays a menu overlay when the user hovers over the image.
   transition: 0.3s ease-in-out;
 }
 
-.hover-menu div {
+.hover-menu nav {
   position: absolute;
   top: 0;
   left: -120px;
   width: 120px;
   height: 100%;
-  padding: 8px 4px;
   background: #000;
   transition: 0.3s ease-in-out;
   display: flex;
@@ -68,19 +68,12 @@ Displays a menu overlay when the user hovers over the image.
   justify-content: center;
 }
 
-.hover-menu div a {
+.hover-menu nav a {
   display: block;
-  line-height: 2;
   color: #fff;
-  text-decoration: none;
   opacity: 0.8;
-  padding: 5px 15px;
   position: relative;
   transition: 0.3s ease-in-out;
-}
-
-.hover-menu div a:hover {
-  text-decoration: underline;
 }
 
 .hover-menu:hover img {
@@ -88,7 +81,7 @@ Displays a menu overlay when the user hovers over the image.
   right: -120px;
 }
 
-.hover-menu:hover div {
+.hover-menu:hover nav {
   left: 0;
   opacity: 1;
 }
