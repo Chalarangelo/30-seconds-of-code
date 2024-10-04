@@ -1,29 +1,32 @@
 ---
 title: Image rotate on hover
-type: snippet
+type: tip
 language: css
 tags: [animation,visual]
 cover: succulent-1
-excerpt: Creates a rotate effect for the image on hover.
+excerpt: Zoom in and rotate your images on hover and make them stand out.
 listed: true
-dateModified: 2021-10-11
+dateModified: 2024-09-21
 ---
 
-Creates a rotate effect for the image on hover.
+An extremely cool and modern effect is to rotate and zoom in on an image when hovering over it. All it takes is a container (e.g. a `<figure>`) with an image inside and a few lines of CSS.
 
-- Use the `scale()`, `rotate()` and `transition` properties when hovering over the parent element (a `<figure>`) to animate the image.
-- Use `overflow: hidden` on the parent element to hide the excess from the image transformation.
+To achieve the desired effect, simply use the `scale()` and `rotate()` functions in the `transform` property of the image. Then, use the `transition` property to animate the transformation when hovering over the parent element.
+
+Add `overflow: hidden` to the parent element to hide the excess from the image transformation. You can also set a `min-width`, `max-width`, and `width` to control the size of the container.
+
+https://codepen.io/chalarangelo/pen/BaXKqep
+
 
 ```html
 <figure class="hover-rotate">
-  <img src="https://picsum.photos/id/669/600/800.jpg"/>
+  <img src="/path/to/your/img.jpg"/>
 </figure>
 ```
 
 ```css
 .hover-rotate {
   overflow: hidden;
-  margin: 8px;
   min-width: 240px;
   max-width: 320px;
   width: 100%;
