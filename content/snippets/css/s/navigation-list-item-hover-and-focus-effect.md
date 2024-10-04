@@ -1,49 +1,24 @@
 ---
-title: Navigation list item hover and focus effect
-type: snippet
+title: Navigation list item hover & focus effect
+type: tip
 language: css
 tags: [visual]
 cover: cloudy-rock-formation
-excerpt: Creates a custom hover and focus effect for navigation items, using CSS transformations.
+excerpt: Create a custom hover and focus effect for navigation items, using CSS transformations.
 listed: true
-dateModified: 2021-10-11
+dateModified: 2024-09-19
 ---
 
-Creates a custom hover and focus effect for navigation items, using CSS transformations.
+Creating a custom hover and focus effect for navigation items is a fairly straightforward task, leveraging the power of **CSS transformations**.
 
-- Use the `::before` pseudo-element at the list item anchor to create a hover effect. Hide it using `transform: scale(0)`.
-- Use the `:hover` and `:focus` pseudo-class selectors to transition the pseudo-element to `transform: scale(1)` and show its colored background.
-- Prevent the pseudo-element from covering the anchor element by using `z-index`.
+For each element in your navigation list, you can use the `::before` pseudo-element to create a hover effect. By default, you can hide it using `transform: scale(0)`. Then, using the `:hover` and `:focus` pseudo-class selectors, you can transition the pseudo-element to `transform: scale(1)` and show its colored background.
 
-```html
-<nav class="hover-nav">
-  <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-</nav>
-```
+Finally, prevent the pseudo-element from covering the anchor element using `z-index`.
 
 ```css
-.hover-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-.hover-nav li {
-  float: left;
-}
-
-.hover-nav li a {
+li a {
   position: relative;
   display: block;
-  color: #fff;
-  text-align: center;
-  padding: 8px 12px;
-  text-decoration: none;
   z-index: 0;
 }
 
