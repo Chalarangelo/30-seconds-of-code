@@ -1,6 +1,5 @@
 ---
 title: Centering content with CSS
-type: story
 test: true
 language: css
 tags: [layout]

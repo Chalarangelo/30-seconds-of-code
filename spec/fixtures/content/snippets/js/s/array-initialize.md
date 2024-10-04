@@ -1,7 +1,6 @@
 ---
 title: The many ways to initialize a JavaScript Array
 shortTitle: Array Initialization
-type: story
 test: true
 language: javascript
 tags: [array]

@@ -1,6 +1,5 @@
 ---
 title: CSS Reset
-type: story
 test: true
 language: css
 tags: [visual]

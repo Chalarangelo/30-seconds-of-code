@@ -1,6 +1,5 @@
 ---
 title: Web development tips
-type: story
 test: true
 tags: [webdev]
 cover: do-more-computer
