@@ -1,19 +1,21 @@
 ---
-title: Show additional content on hover
-type: snippet
+title: Reveal additional content on hover
+type: tip
 language: css
 tags: [visual]
 cover: dark-leaves-5
-excerpt: Creates a card that displays additional content on hover.
+excerpt: Learn how you can create a card that displays additional content on hover.
 listed: true
-dateModified: 2021-10-11
+dateModified: 2024-09-23
 ---
 
-Creates a card that displays additional content on hover.
+Fairly often, I've found myself needing to display additional content on hover. A while ago, I stumbled upon a pretty cool effect, where you can **push the image and title of a card upwards** to reveal more content. Achieving this effect is pretty simple, too.
 
-- Use `overflow: hidden` on the card to hide elements that overflow vertically.
-- Use the `:hover` and `:focus-within` pseudo-class selectors to change the card's styling if the element is hovered, focused or any of its descendants are focused.
-- Set `transition: 0.3s ease all` to create a transition effect on hover/focus.
+The trick is using `overflow: hidden` on the card to hide elements that overflow vertically. Then, you can use the `:hover` and `:focus-within` pseudo-class selectors to change the card's styling if the element is hovered, focused, or any of its descendants are focused.
+
+Then, use a `transition` to create a transition effect. Using the `margin` and `padding` properties, you can push the image and title upwards to **reveal additional content**.
+
+https://codepen.io/chalarangelo/pen/NWQNOmj
 
 
 ```html
