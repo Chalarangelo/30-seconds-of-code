@@ -1,7 +1,6 @@
 ---
 title: How can I reset all styles on an element?
 shortTitle: Reset all styles
-type: question
 language: css
 tags: [visual]
 cover: rocky-beach-2

@@ -1,7 +1,6 @@
 ---
 title: Unwind a JavaScript object
 shortTitle: Unwind object
-type: tip
 language: javascript
 tags: [object]
 cover: orange-coffee

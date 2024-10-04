@@ -1,7 +1,6 @@
 ---
 title: Create a JavaScript generator function based on a condition
 shortTitle: Generate while condition is met
-type: tip
 language: javascript
 tags: [function,generator]
 cover: yellow-sofa

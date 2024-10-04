@@ -1,7 +1,6 @@
 ---
 title: Introduction to arrow functions in JavaScript
 shortTitle: Arrow functions introduction
-type: story
 language: javascript
 tags: [function]
 cover: arrow-functions

@@ -1,7 +1,6 @@
 ---
 title: An Introduction to JavaScript Proxy
 shortTitle: JavaScript Proxy Introduction
-type: story
 language: javascript
 tags: [object,proxy,pattern]
 cover: red-mountain-range

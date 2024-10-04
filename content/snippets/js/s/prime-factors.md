@@ -1,7 +1,6 @@
 ---
 title: Find the prime factors of a number in JavaScript
 shortTitle: Prime factors
-type: tip
 language: javascript
 tags: [math,algorithm]
 cover: dark-leaves-3

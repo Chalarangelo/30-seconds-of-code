@@ -1,7 +1,6 @@
 ---
 title: Check if an element is visible in the viewport using JavaScript
 shortTitle: Element is visible in viewport
-type: tip
 language: javascript
 tags: [browser]
 cover: flower-portrait-1

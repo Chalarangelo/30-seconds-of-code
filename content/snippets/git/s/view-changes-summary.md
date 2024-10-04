@@ -1,7 +1,6 @@
 ---
 title: View a summary of changes between two Git commits
 shortTitle: View changes summary
-type: tip
 language: git
 tags: [repository,branch]
 cover: taking-photos

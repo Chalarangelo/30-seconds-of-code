@@ -1,7 +1,6 @@
 ---
 title: Is JavaScript's array sorting stable?
 shortTitle: Stable array sorting
-type: question
 language: javascript
 tags: [array]
 cover: horse-sunset

@@ -1,7 +1,6 @@
 ---
 title: How can I create a JavaScript generator function that repeats one or more values indefinitely?
 short: Generate values repeatedly
-type: question
 language: javascript
 tags: [function,generator]
 cover: secret-tree

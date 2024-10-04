@@ -1,7 +1,6 @@
 ---
 title: React useRequestAnimationFrame hook
 shortTitle: useRequestAnimationFrame hook
-type: tip
 language: react
 tags: [hooks,effect]
 cover: aerial-view-port

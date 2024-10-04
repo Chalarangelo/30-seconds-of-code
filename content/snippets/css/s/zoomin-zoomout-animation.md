@@ -1,7 +1,6 @@
 ---
 title: Simple Zoom in zoom out animation in CSS
 shortTitle: Zoom in zoom out animation
-type: tip
 language: css
 tags: [animation]
 cover: travel-mug-2

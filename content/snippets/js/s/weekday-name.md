@@ -1,7 +1,6 @@
 ---
 title: Weekday name from a JavaScript Date object
 shortTitle: Weekday name
-type: story
 language: javascript
 tags: [date]
 cover: interior

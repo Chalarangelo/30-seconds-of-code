@@ -1,7 +1,6 @@
 ---
 title: Add or remove multiple event listeners from a single element
 shortTitle: Add or remove multiple event listeners
-type: story
 language: javascript
 tags: [browser,event]
 cover: compass-1

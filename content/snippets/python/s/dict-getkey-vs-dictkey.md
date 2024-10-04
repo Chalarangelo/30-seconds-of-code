@@ -1,7 +1,6 @@
 ---
 title: You should use dict.get(key) instead of dict[key]
 shortTitle: dict.get(key) vs dict[key]
-type: tip
 language: python
 tags: [dictionary]
 cover: compass-2

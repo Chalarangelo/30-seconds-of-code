@@ -1,7 +1,6 @@
 ---
 title: Creating HTML elements in JavaScript
 shortTitle: Creating HTML elements
-type: story
 language: javascript
 tags: [browser]
 cover: body-of-water

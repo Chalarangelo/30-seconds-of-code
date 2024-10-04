@@ -1,7 +1,6 @@
 ---
 title: Remove an element from the DOM using JavaScript
 shortTitle: Remove DOM element
-type: tip
 language: javascript
 tags: [browser]
 cover: by-the-lighthouse

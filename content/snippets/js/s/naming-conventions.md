@@ -1,7 +1,6 @@
 ---
 title: JavaScript naming conventions
 shortTitle: Naming conventions
-type: story
 language: javascript
 tags: [variable,cheatsheet]
 cover: naming-conventions

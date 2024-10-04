@@ -1,6 +1,5 @@
 ---
 title: Calculate the Euclidean distance in JavaScript
-type: story
 language: javascript
 tags: [math,algorithm]
 cover: ancient-greek-building

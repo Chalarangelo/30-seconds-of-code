@@ -1,6 +1,5 @@
 ---
 title: Isometric card
-type: tip
 language: css
 tags: [visual]
 cover: guitar-living-room

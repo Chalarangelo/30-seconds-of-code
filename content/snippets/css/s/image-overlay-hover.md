@@ -1,6 +1,5 @@
 ---
 title: Image overlay on hover
-type: tip
 language: css
 tags: [visual,animation]
 cover: architectural

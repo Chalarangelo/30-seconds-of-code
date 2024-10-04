@@ -1,7 +1,6 @@
 ---
 title: Group array elements based on a function
 shortTitle: Group array elements
-type: tip
 language: javascript
 tags: [array,object]
 cover: man-cup-laptop

@@ -1,7 +1,6 @@
 ---
 title: Run JavaScript promises in series
 shortTitle: Run promises in series
-type: tip
 language: javascript
 tags: [promises,function]
 cover: sail-away

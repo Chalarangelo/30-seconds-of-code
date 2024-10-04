@@ -1,7 +1,6 @@
 ---
 title: Understanding event bubbling, capturing and delegation in JavaScript
 shortTitle: Event bubbling, capturing and delegation
-type: story
 language: javascript
 tags: [browser,event]
 cover: fishermen

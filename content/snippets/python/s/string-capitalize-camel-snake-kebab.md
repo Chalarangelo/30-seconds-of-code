@@ -1,7 +1,6 @@
 ---
 title: Case conversion Python functions
 shortTitle: Case conversion
-type: story
 language: python
 tags: [string,regexp]
 cover: digital-nomad-9

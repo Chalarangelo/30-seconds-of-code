@@ -1,6 +1,5 @@
 ---
 title: Reveal additional content on hover
-type: tip
 language: css
 tags: [visual]
 cover: dark-leaves-5

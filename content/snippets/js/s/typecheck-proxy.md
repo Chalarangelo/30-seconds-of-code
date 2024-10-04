@@ -1,7 +1,6 @@
 ---
 title: Typechecking objects with Proxy in JavaScript
 shortTitle: Object type checking with Proxy
-type: story
 language: javascript
 tags: [object,type,proxy]
 cover: customs

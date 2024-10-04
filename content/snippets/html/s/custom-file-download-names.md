@@ -1,6 +1,5 @@
 ---
 title: Customize the names of downloadable files
-type: tip
 language: html
 tags: [link]
 cover: hard-disk

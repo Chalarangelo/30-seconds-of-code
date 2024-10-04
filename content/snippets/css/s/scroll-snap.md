@@ -1,7 +1,6 @@
 ---
 title: Horizontal or vertical scroll snap in CSS
 shortTitle: Horizontal or vertical scroll snap
-type: story
 language: css
 tags: [interactivity]
 cover: purple-sunset-waves

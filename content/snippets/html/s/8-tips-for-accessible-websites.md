@@ -1,7 +1,6 @@
 ---
 title: 8 tips for accessible websites
 shortTitle: Accessibility tips
-type: story
 language: html
 tags: [accessibility,form,link,metadata]
 cover: accessibility

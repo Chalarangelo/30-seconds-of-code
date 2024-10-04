@@ -1,6 +1,5 @@
 ---
 title: Dynamic shadow
-type: tip
 language: css
 tags: [visual]
 cover: couch-laptop

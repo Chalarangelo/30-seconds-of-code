@@ -1,7 +1,6 @@
 ---
 title: Get N elements from the start or end of a JavaScript array
 shortTitle: Get N array elements from start or end
-type: story
 language: javascript
 tags: [array]
 cover: interior-7

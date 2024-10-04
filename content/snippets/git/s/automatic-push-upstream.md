@@ -1,7 +1,6 @@
 ---
 title: Automate Git upstream branch creation
 shortTitle: Automate upstream branch creation
-type: tip
 language: git
 tags: [configuration,repository]
 cover: messy-computer

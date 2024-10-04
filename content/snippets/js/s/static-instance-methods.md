@@ -1,7 +1,6 @@
 ---
 title: What is the difference between static and instance methods?
 shortTitle: Static  Instance Methods
-type: question
 language: javascript
 tags: [object,function,class]
 cover: lake-runner

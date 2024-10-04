@@ -1,7 +1,6 @@
 ---
 title: Attempt invoking a JavaScript function
 shortTitle: Attempt invoking function
-type: tip
 language: javascript
 tags: [function]
 cover: spanish-resort

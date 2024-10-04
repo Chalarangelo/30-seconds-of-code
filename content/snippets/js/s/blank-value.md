@@ -1,7 +1,6 @@
 ---
 title: How can I check for a blank value in JavaScript?
 shortTitle: Value is blank
-type: question
 language: javascript
 tags: [type]
 cover: workspace-with-speaker

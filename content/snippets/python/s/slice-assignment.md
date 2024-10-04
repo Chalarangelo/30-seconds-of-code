@@ -1,7 +1,6 @@
 ---
 title: Understanding Python's slice assignment
 shortTitle: Python slice assignment
-type: story
 language: python
 tags: [list]
 cover: sliced-fruits

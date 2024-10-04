@@ -1,7 +1,6 @@
 ---
 title: My amazing story
 shortTitle: Amazing story
-type: story
 language: react
 tags: [hooks]
 cover: image

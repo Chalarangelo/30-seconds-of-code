@@ -1,7 +1,6 @@
 ---
 title: Split a JavaScript string into words
 shortTitle: Split string into words
-type: story
 language: javascript
 tags: [string]
 cover: sea-view-2

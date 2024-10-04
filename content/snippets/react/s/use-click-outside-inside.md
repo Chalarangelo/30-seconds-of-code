@@ -1,7 +1,6 @@
 ---
 title: React useClickOutside and useClickInside hooks
 shortTitle: useClickOutside and useClickInside hooks
-type: story
 language: react
 tags: [hooks,effect,event]
 cover: clutter

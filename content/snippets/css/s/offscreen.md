@@ -1,7 +1,6 @@
 ---
 title: Hide element offscreen
 shortTitle: Offscreen
-type: tip
 language: css
 tags: [layout,visual]
 cover: succulent-2

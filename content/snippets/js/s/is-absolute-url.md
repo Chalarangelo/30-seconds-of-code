@@ -1,7 +1,6 @@
 ---
 title: Check if a URL is an absolute URL with JavaScript
 shortTitle: Absolute URL check
-type: tip
 language: javascript
 tags: [string,browser,regexp]
 cover: coffee-phone-tray-2

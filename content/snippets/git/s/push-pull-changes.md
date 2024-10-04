@@ -1,7 +1,6 @@
 ---
 title: Git Basics - Push and pull changes between local and remote
 shortTitle: Push and pull changes
-type: story
 language: git
 tags: [repository,branch]
 cover: orange-coffee-2

@@ -1,7 +1,6 @@
 ---
 title: Undo a commit in Git
 shortTitle: Undo commit
-type: story
 language: git
 tags: [commit,branch]
 cover: night-tram

@@ -1,7 +1,6 @@
 ---
 title: Create a unit converter data structure in JavaScript
 shortTitle: Convert between any compatible units
-type: story
 language: javascript
 tags: [math,function]
 cover: tropical-waterfall-2

@@ -1,7 +1,6 @@
 ---
 title: Remove accents from a JavaScript string
 shortTitle: Remove accents
-type: tip
 language: javascript
 tags: [string,regexp]
 cover: pink-flowers

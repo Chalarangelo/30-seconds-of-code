@@ -1,7 +1,6 @@
 ---
 title: Sort a Python list by indexes
 shortTitle: Sort by indexes
-type: tip
 language: python
 tags: [list]
 cover: little-white-flowers

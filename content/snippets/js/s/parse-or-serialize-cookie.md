@@ -1,7 +1,6 @@
 ---
 title: Parse or serialize a cookie with JavaScript
 shortTitle: Parse or serialize cookie
-type: story
 language: javascript
 tags: [browser,string]
 cover: purple-sunset-beach

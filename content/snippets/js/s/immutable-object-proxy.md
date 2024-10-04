@@ -1,7 +1,6 @@
 ---
 title: Immutable JavaScript objects using the Proxy object
 shortTitle: Immutable objects using Proxy
-type: story
 language: javascript
 tags: [object,proxy]
 cover: frozen-globe

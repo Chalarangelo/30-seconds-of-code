@@ -1,7 +1,6 @@
 ---
 title: Can I use an object as an array without modifying it in JavaScript?
 shortTitle: Object as array
-type: question
 language: javascript
 tags: [object,array,proxy,iterator,pattern]
 cover: birds

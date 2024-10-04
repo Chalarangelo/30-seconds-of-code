@@ -1,7 +1,6 @@
 ---
 title: Implement the SDBM hash function in JavaScript
 shortTitle: Hash string into number
-type: tip
 language: javascript
 tags: [math]
 cover: cloudy-lake-reflection

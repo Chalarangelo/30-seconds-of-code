@@ -1,7 +1,6 @@
 ---
 title: Create an HTML element with JavaScript
 shortTitle: Create HTML element
-type: tip
 language: javascript
 tags: [browser]
 cover: flower-portrait-4

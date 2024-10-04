@@ -1,7 +1,6 @@
 ---
 title: Edit the Git configuration file
 shortTitle: Edit config
-type: tip
 language: git
 tags: [configuration]
 cover: terminal

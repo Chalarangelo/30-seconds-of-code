@@ -1,7 +1,6 @@
 ---
 title: Remove attributes from an HTML element with JavaScript
 shortTitle: Remove attributes
-type: tip
 language: javascript
 tags: [browser]
 cover: new-york

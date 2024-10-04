@@ -1,7 +1,6 @@
 ---
 title: How can I detect an undefined object property in JavaScript?
 shortTitle: Detect undefined object property
-type: story
 language: javascript
 tags: [object]
 cover: pink-flower

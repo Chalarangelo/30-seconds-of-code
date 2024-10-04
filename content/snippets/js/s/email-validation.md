@@ -1,7 +1,6 @@
 ---
 title: Can I validate an email address in JavaScript?
 shortTitle: Email address validation
-type: question
 language: javascript
 tags: [string,regexp]
 cover: blank-card

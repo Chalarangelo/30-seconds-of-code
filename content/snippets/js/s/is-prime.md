@@ -1,7 +1,6 @@
 ---
 title: Check if a number is prime in JavaScript
 shortTitle: Number is prime
-type: story
 language: javascript
 tags: [math,algorithm]
 cover: thread

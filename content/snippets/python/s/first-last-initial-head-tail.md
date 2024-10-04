@@ -1,7 +1,6 @@
 ---
 title: First, last, initial, head, tail of a Python list
 shortTitle: First, last, initial, head, tail
-type: story
 language: python
 tags: [list]
 cover: pop-of-green

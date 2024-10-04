@@ -1,7 +1,6 @@
 ---
 title: Convert the output of a JavaScript generator to an array
 shortTitle: Generator to array
-type: tip
 language: javascript
 tags: [function,array,generator]
 cover: messy-papers

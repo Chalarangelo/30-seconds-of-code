@@ -1,7 +1,6 @@
 ---
 title: Delete a Git branch
 shortTitle: Delete branch
-type: story
 language: git
 tags: [repository,branch]
 cover: volcano-sunset

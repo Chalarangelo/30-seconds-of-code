@@ -1,7 +1,6 @@
 ---
 title: Add or remove an event listener in JavaScript
 shortTitle: Add or remove event listener
-type: story
 language: javascript
 tags: [browser,event]
 cover: wooden-bowl

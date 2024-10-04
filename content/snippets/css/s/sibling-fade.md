@@ -1,7 +1,6 @@
 ---
 title: Fade out siblings on hover
 shortTitle: Sibling fade
-type: tip
 language: css
 tags: [interactivity]
 cover: messy-papers

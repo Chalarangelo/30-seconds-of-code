@@ -1,6 +1,5 @@
 ---
 title: Bash Shortcuts Cheat Sheet
-type: cheatsheet
 tags: [webdev,bash,cheatsheet]
 cover: terminal
 excerpt: Maximize your productivity when working with a bash or other shell terminal by using these keyboard shortcuts.

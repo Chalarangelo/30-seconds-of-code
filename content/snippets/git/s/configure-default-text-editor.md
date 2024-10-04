@@ -1,7 +1,6 @@
 ---
 title: Configure Git's default text editor
 shortTitle: Configure text editor
-type: tip
 language: git
 tags: [configuration]
 cover: purple-sunset-beach

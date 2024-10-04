@@ -1,7 +1,6 @@
 ---
 title: React useInterval hook
 shortTitle: useInterval hook
-type: story
 language: react
 tags: [hooks,effect]
 cover: clock

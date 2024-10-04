@@ -1,7 +1,6 @@
 ---
 title: Set the default push branch name in Git
 shortTitle: Set default push branch
-type: tip
 language: git
 tags: [configuration,branch]
 cover: pink-flower

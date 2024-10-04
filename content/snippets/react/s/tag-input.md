@@ -1,6 +1,5 @@
 ---
 title: Tag input field
-type: tip
 language: react
 tags: [components,input,state]
 cover: interior-4

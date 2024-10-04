@@ -1,7 +1,6 @@
 ---
 title: React hooks to handle window and environment events
 shortTitle: Window and environment hooks
-type: story
 language: react
 tags: [hooks,state,effect,event,memo]
 cover: jars-on-shelf-2

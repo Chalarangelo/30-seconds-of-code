@@ -1,7 +1,6 @@
 ---
 title: How can I check if an array is a superset of another array in JavaScript?
 shortTitle: Superset
-type: tip
 language: javascript
 tags: [array]
 cover: waves-from-above-2

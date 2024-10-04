@@ -1,6 +1,5 @@
 ---
 title: Binomial coefficient
-type: tip
 language: python
 tags: [math]
 cover: digital-nomad-5

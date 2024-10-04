@@ -1,6 +1,5 @@
 ---
 title: Date is weekend or weekday
-type: story
 language: python
 tags: [date]
 cover: two-lighthouses

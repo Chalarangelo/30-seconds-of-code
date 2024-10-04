@@ -1,7 +1,6 @@
 ---
 title: Check if a year is a leap year in JavaScript
 shortTitle: Leap year check
-type: tip
 language: javascript
 tags: [date]
 cover: flowering-hills

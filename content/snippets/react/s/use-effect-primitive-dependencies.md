@@ -1,7 +1,6 @@
 ---
 title: Prefer primitives in useEffect dependencies
 shortTitle: Primitive useEffect dependencies
-type: tip
 language: react
 tags: [hooks,effect,object,comparison]
 cover: automaton

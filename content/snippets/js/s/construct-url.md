@@ -1,7 +1,6 @@
 ---
 title: How to construct a URL in JavaScript
 shortTitle: Construct a URL in JavaScript
-type: story
 language: javascript
 tags: [string,browser]
 cover: alfama

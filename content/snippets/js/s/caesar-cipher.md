@@ -1,7 +1,6 @@
 ---
 title: Implement the Caesar cipher in JavaScript
 shortTitle: Caesar cipher
-type: story
 language: javascript
 tags: [algorithm,string]
 cover: waves-from-above

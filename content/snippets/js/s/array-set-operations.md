@@ -1,7 +1,6 @@
 ---
 title: Set operations in JavaScript
 shortTitle: Set operations
-type: story
 language: javascript
 tags: [array]
 cover: dim-mountains

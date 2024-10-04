@@ -1,7 +1,6 @@
 ---
 title: Staggered list animation
 shortTitle: Staggered animation
-type: tip
 language: css
 tags: [animation]
 cover: aerial-view-port

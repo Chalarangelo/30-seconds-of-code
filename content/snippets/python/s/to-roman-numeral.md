@@ -1,7 +1,6 @@
 ---
 title: Convert an integer to a roman numeral
 shortTitle: Integer to roman numeral
-type: tip
 language: python
 tags: [math,string]
 cover: tram-car

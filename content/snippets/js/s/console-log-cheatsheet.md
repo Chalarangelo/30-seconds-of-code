@@ -1,6 +1,5 @@
 ---
 title: JavaScript console.log() tips & tricks
-type: story
 language: javascript
 tags: [browser,cheatsheet]
 cover: terminal

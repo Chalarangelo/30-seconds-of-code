@@ -1,7 +1,6 @@
 ---
 title: View Git branches sorted by date
 shortTitle: Sort branches by date
-type: story
 language: git
 tags: [repository,branch]
 cover: sea-view

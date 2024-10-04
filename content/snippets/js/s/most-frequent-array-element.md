@@ -1,7 +1,6 @@
 ---
 title: Find the most frequent element in a JavaScript array
 shortTitle: Most frequent array element
-type: story
 language: javascript
 tags: [array]
 cover: collab-desk-1

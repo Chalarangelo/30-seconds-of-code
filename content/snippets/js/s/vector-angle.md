@@ -1,7 +1,6 @@
 ---
 title: Calculate the angle between two vectors in JavaScript
 shortTitle: Vector angle
-type: tip
 language: javascript
 tags: [math]
 cover: purple-pier

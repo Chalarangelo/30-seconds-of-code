@@ -1,7 +1,6 @@
 ---
 title: Remove the first or last n elements from a JavaScript array
 shortTitle: Remove first or last n array elements
-type: story
 language: javascript
 tags: [array]
 cover: metropolitan-window

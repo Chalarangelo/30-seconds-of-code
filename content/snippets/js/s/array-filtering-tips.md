@@ -1,7 +1,6 @@
 ---
 title: JavaScript array filtering tips
 shortTitle: Array filtering tips
-type: story
 language: javascript
 tags: [array]
 cover: rocky-beach-waves

@@ -1,7 +1,6 @@
 ---
 title: Count the occurrences of a value in a JavaScript array or string
 shortTitle: Count occurrences
-type: story
 language: javascript
 tags: [array,string]
 cover: dark-leaves-4

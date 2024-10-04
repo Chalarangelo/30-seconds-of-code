@@ -1,7 +1,6 @@
 ---
 title: Calculate the quotient and remainder of a division in JavaScript
 shortTitle: Quotient and remainder of division
-type: tip
 language: javascript
 tags: [math]
 cover: italian-horizon

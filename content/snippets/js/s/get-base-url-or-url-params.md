@@ -1,7 +1,6 @@
 ---
 title: How do I use JavaScript to get the base URL or the URL parameters?
 shortTitle: Get base URL or URL parameters
-type: question
 language: javascript
 tags: [string,browser,regexp]
 cover: blue-lake

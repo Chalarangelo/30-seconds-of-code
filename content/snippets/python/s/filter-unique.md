@@ -1,6 +1,5 @@
 ---
 title: Filter unique list values
-type: story
 language: python
 tags: [list]
 cover: feathers

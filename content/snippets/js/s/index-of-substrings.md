@@ -1,7 +1,6 @@
 ---
 title: Find all indexes of a substring in a JavaScript string
 shortTitle: All indexes of substring
-type: tip
 language: javascript
 tags: [string,generator]
 cover: armchair-in-yellow

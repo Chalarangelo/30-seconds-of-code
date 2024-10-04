@@ -1,6 +1,5 @@
 ---
 title: Create a custom scrollbar with CSS
-type: tip
 language: css
 tags: [visual]
 cover: sea-view

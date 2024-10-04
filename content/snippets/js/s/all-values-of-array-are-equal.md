@@ -1,7 +1,6 @@
 ---
 title: Check if all values of a JavaScript array are equal
 shortTitle: All array values are equal
-type: story
 language: javascript
 tags: [array]
 cover: book-stopper

@@ -1,6 +1,5 @@
 ---
 title: Create a commit with a different date
-type: tip
 language: git
 tags: [commit]
 cover: ice

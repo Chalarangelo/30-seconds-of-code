@@ -1,6 +1,5 @@
 ---
 title: Regular Expressions Cheat Sheet
-type: cheatsheet
 language: javascript
 tags: [string,regexp,cheatsheet]
 cover: tools

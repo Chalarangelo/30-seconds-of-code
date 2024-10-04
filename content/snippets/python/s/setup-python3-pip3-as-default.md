@@ -1,7 +1,6 @@
 ---
 title: Set up Python 3 and pip 3 as default
 shortTitle: Python 3 and pip 3 setup
-type: tip
 language: python
 tags: [setup]
 cover: avocado-slices

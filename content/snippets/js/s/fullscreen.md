@@ -1,7 +1,6 @@
 ---
 title: Toggle fullscreen mode for an element using JavaScript
 shortTitle: Fullscreen mode
-type: story
 language: javascript
 tags: [browser]
 cover: cloudy-mountaintop-2

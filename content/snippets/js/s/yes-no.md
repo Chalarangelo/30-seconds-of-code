@@ -1,7 +1,6 @@
 ---
 title: Check if a string is a yes/no answer with JavaScript
 shortTitle: Yes/no answer
-type: tip
 language: javascript
 tags: [string,regexp]
 cover: fort-lamp

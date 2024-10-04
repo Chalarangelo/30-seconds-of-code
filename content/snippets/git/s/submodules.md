@@ -1,7 +1,6 @@
 ---
 title: An introductory guide to Git submodules
 shortTitle: Submodules
-type: story
 language: git
 tags: [repository,submodule]
 cover: rocky-mountains-2

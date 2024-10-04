@@ -1,7 +1,6 @@
 ---
 title: Remove a file from the last Git commit
 shortTitle: Remove file from commit
-type: tip
 language: git
 tags: [commit]
 cover: cancel-typographer

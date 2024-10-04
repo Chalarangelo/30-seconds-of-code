@@ -1,7 +1,6 @@
 ---
 title: 3 ways to swap two variables in Python
 shortTitle: Variable swapping
-type: story
 language: python
 tags: [variables]
 cover: leaves-read

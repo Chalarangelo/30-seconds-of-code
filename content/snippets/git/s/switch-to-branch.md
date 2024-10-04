@@ -1,7 +1,6 @@
 ---
 title: Switch to a Git branch
 shortTitle: Switch branch
-type: story
 language: git
 tags: [branch]
 cover: bridge

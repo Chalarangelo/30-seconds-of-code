@@ -1,7 +1,6 @@
 ---
 title: Prevent a string from being escaped in JavaScript
 shortTitle: Prevent string escaping
-type: tip
 language: javascript
 tags: [string]
 cover: glass-blowing

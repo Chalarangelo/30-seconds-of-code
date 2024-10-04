@@ -1,7 +1,6 @@
 ---
 title: Where and how can I use memoization in JavaScript?
 shortTitle: Memoization introduction
-type: question
 language: javascript
 tags: [function,memoization]
 cover: cherry-trees

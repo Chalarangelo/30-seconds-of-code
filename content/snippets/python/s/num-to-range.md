@@ -1,7 +1,6 @@
 ---
 title: Map a number to a different range
 shortTitle: Map number to range
-type: tip
 language: python
 tags: [math]
 cover: round-leaves

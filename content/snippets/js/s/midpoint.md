@@ -1,7 +1,6 @@
 ---
 title: Midpoint of two points
 shortTitle: Midpoint
-type: story
 language: javascript
 tags: [math]
 cover: blue-flower

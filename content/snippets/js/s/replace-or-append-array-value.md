@@ -1,7 +1,6 @@
 ---
 title: Replace or append a value in a JavaScript array
 shortTitle: Replace or append array value
-type: tip
 language: javascript
 tags: [array]
 cover: boutique-home-office-2

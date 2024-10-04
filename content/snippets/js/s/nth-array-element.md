@@ -1,7 +1,6 @@
 ---
 title: Get the nth element of a JavaScript array
 shortTitle: Nth array element
-type: story
 language: javascript
 tags: [array]
 cover: dark-leaves-6

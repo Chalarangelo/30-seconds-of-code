@@ -1,7 +1,6 @@
 ---
 title: Convert between a JavaScript Date object and a Unix timestamp
 shortTitle: Date to Unix timestamp
-type: tip
 language: javascript
 tags: [date]
 cover: number-2

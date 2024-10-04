@@ -1,7 +1,6 @@
 ---
 title: Append elements to a JavaScript array
 shortTitle: Append elements to array
-type: story
 language: javascript
 tags: [array]
 cover: switzerland-night

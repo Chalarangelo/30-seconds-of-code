@@ -1,7 +1,6 @@
 ---
 title: Calculate the powerset of a JavaScript array
 shortTitle: Powerset of array
-type: tip
 language: javascript
 tags: [math]
 cover: new-plant

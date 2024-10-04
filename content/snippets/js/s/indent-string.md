@@ -1,7 +1,6 @@
 ---
 title: Indent a JavaScript string
 shortTitle: Indent string
-type: tip
 language: javascript
 tags: [string]
 cover: metropolitan-window

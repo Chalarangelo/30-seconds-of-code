@@ -1,7 +1,6 @@
 ---
 title: Fluid typography with CSS clamp
 shortTitle: Fluid typography
-type: tip
 language: css
 tags: [visual]
 cover: shell-focus

@@ -1,7 +1,6 @@
 ---
 title: Check if a JavaScript object has a given value or key
 shortTitle: Object has value or key
-type: story
 language: javascript
 tags: [object]
 cover: plant-corner

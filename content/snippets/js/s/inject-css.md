@@ -1,7 +1,6 @@
 ---
 title: How can I inject CSS into a web page using JavaScript?
 shortTitle: Inject CSS
-type: tip
 language: javascript
 tags: [browser,css]
 cover: dark-leaves-5

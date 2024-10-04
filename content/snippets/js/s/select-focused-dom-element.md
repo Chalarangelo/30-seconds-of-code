@@ -1,7 +1,6 @@
 ---
 title: Select the focused DOM element with JavaScript
 shortTitle: Focused DOM element
-type: tip
 language: javascript
 tags: [browser]
 cover: horse-sunset

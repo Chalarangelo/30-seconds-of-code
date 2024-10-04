@@ -1,7 +1,6 @@
 ---
 title: How can I find the date of n days ago from today using JavaScript?
 shortTitle: Days ago from today
-type: tip
 language: javascript
 tags: [date]
 cover: orange-wedges

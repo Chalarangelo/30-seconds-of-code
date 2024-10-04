@@ -1,7 +1,6 @@
 ---
 title: Uppercase or lowercase object keys in JavaScript
 shortTitle: Uppercase or lowercase object keys
-type: story
 language: javascript
 tags: [object]
 excerpt: Convert all the keys of an object to upper or lower case.

@@ -1,7 +1,6 @@
 ---
 title: Tooltips, alerts and modals in React
 shortTitle: Tooltip, alert & modal
-type: story
 language: react
 tags: [components,state,effect,children]
 cover: yellow-white-mug-2

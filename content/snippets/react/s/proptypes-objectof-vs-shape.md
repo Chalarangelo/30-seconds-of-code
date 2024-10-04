@@ -1,7 +1,6 @@
 ---
 title: React PropTypes - objectOf vs shape
 shortTitle: PropTypes - objectOf vs shape
-type: story
 language: react
 tags: [components,proptypes]
 cover: shapes

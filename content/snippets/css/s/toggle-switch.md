@@ -1,7 +1,6 @@
 ---
 title: Create a toggle switch using HTML & CSS
 shortTitle: Toggle switch
-type: tip
 language: css
 tags: [visual,interactivity]
 cover: interior-5

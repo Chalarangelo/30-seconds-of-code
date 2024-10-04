@@ -1,7 +1,6 @@
 ---
 title: React useIntersectionObserver hook
 shortTitle: useIntersectionObserver hook
-type: tip
 language: react
 tags: [hooks,state,effect]
 cover: light-leaves

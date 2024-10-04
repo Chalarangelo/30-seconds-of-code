@@ -1,6 +1,5 @@
 ---
 title: Invert a dictionary
-type: tip
 language: python
 tags: [dictionary]
 cover: working-bee

@@ -1,7 +1,6 @@
 ---
 title: Create a fixup commit in Git
 shortTitle: Create fixup commit
-type: story
 language: git
 tags: [commit]
 cover: tools

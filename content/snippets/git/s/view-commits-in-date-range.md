@@ -1,7 +1,6 @@
 ---
 title: View Git commits in a specific date range
 shortTitle: View commits in date range
-type: story
 language: git
 tags: [repository,commit]
 cover: organizer

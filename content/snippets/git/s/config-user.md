@@ -1,7 +1,6 @@
 ---
 title: Configure Git user information
 shortTitle: Configure user
-type: tip
 language: git
 tags: [configuration,repository]
 cover: pineapple-at-work

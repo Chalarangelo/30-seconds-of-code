@@ -1,7 +1,6 @@
 ---
 title: You can't extend JavaScript's Proxy object
 shortTitle: Extending the Proxy object
-type: tip
 language: javascript
 tags: [object,proxy]
 cover: icebreaker

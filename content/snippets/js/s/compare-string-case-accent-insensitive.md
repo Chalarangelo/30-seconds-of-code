@@ -1,7 +1,6 @@
 ---
 title: Compare strings regardless of case and accent
 shortTitle: Case and accent-insensitive string comparison
-type: tip
 language: javascript
 tags: [string,comparison]
 cover: memories-of-pineapple-1

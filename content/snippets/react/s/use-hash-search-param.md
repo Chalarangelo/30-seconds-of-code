@@ -1,7 +1,6 @@
 ---
 title: React useHash and useSearchParam hooks
 shortTitle: useHash and useSearchParam hooks
-type: story
 language: react
 tags: [hooks,state,effect]
 cover: capsule-coffee

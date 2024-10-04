@@ -1,7 +1,6 @@
 ---
 title: Use JavaScript to listen and handle scroll stop events
 shortTitle: Handle scroll stop
-type: story
 language: javascript
 tags: [browser,event]
 cover: half-trees

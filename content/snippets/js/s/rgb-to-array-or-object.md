@@ -1,7 +1,6 @@
 ---
 title: Convert an RGB color string to a JavaScript array or object
 shortTitle: RGB to array or object
-type: story
 language: javascript
 tags: [string,regexp]
 cover: greek-coffee

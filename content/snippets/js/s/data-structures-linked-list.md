@@ -1,7 +1,6 @@
 ---
 title: JavaScript Data Structures - Linked List
 shortTitle: Linked List
-type: story
 language: javascript
 tags: [class]
 cover: purple-flower-macro-3

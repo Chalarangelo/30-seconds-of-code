@@ -1,7 +1,6 @@
 ---
 title: Check if two JavaScript arrays have same contents
 shortTitle: Arrays have same contents
-type: story
 language: javascript
 tags: [array]
 cover: interior-15

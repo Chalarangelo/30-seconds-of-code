@@ -1,7 +1,6 @@
 ---
 title: Flatten or unflatten a JavaScript object
 shortTitle: Flatten or unflatten object
-type: story
 language: javascript
 tags: [object,recursion]
 cover: lighthouse

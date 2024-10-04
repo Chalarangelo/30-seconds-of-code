@@ -1,7 +1,6 @@
 ---
 title: React useError hook
 shortTitle: useError hook
-type: tip
 language: react
 tags: [hooks,state,effect]
 cover: cloudy-mountaintop

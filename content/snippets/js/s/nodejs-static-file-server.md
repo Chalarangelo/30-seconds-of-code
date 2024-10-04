@@ -1,7 +1,6 @@
 ---
 title: Create a static file server with Node.js
 shortTitle: Node.js static file server
-type: story
 language: javascript
 tags: [node,server]
 cover: man-cup-laptop

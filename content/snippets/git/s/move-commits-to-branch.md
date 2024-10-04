@@ -1,7 +1,6 @@
 ---
 title: Move Git commits from master to a new branch
 shortTitle: Move commits from master to branch
-type: tip
 language: git
 tags: [branch,repository]
 cover: red-succulent

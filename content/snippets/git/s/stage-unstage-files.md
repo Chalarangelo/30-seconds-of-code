@@ -1,7 +1,6 @@
 ---
 title: Add or remove files from the Git staging area
 shortTitle: Stage or unstage files
-type: story
 language: git
 tags: [commit]
 cover: coconuts

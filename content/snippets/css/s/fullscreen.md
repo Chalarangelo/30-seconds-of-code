@@ -1,7 +1,6 @@
 ---
 title: Style elements when in fullscreen mode
 shortTitle: Fullscreen element styling
-type: tip
 language: css
 tags: [visual]
 cover: flower-portrait-3

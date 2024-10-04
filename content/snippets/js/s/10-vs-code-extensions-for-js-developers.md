@@ -1,7 +1,6 @@
 ---
 title: 10 must-have VS Code extensions for JavaScript developers
 shortTitle: Essential VS Code extensions
-type: story
 language: javascript
 tags: [devtools,vscode]
 cover: computer-screens

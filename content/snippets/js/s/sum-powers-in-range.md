@@ -1,6 +1,5 @@
 ---
 title: Sum of powers in range
-type: tip
 language: javascript
 tags: [math]
 cover: boat-port

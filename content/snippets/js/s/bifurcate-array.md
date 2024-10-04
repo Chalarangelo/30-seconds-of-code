@@ -1,7 +1,6 @@
 ---
 title: How can I split a JavaScript array into two groups?
 shortTitle: Bifurcate array
-type: question
 language: javascript
 tags: [array]
 cover: canoe

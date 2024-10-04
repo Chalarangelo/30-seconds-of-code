@@ -1,7 +1,6 @@
 ---
 title: Check if localStorage or sessionStorage is enabled
 shortTitle: LocalStorage or sessionStorage enabled
-type: story
 language: javascript
 tags: [browser]
 cover: guitar-living-room

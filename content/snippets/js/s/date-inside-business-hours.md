@@ -1,7 +1,6 @@
 ---
 title: Check if a JavaScript date is inside business hours
 shortTitle: Date inside business hours
-type: story
 language: javascript
 tags: [date]
 cover: shelf-plant

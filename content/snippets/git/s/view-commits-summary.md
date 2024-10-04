@@ -1,7 +1,6 @@
 ---
 title: View a short summary of Git commits
 shortTitle: Short commits summary
-type: story
 language: git
 tags: [repository,commit]
 cover: dark-city

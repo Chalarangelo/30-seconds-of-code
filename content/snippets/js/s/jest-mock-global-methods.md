@@ -1,6 +1,5 @@
 ---
 title: Mocking global object methods in Jest
-type: story
 language: javascript
 tags: [testing]
 cover: trippy-chemicals

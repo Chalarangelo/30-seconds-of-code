@@ -1,7 +1,6 @@
 ---
 title: Convert between a query string and an object in JavaScript
 shortTitle: Query string to object
-type: story
 language: javascript
 tags: [object]
 cover: standing-stones

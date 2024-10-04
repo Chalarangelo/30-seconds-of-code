@@ -1,7 +1,6 @@
 ---
 title: Get colon time from a JavaScript date
 shortTitle: Colon time from date
-type: tip
 language: javascript
 tags: [date,string]
 cover: digital-nomad-5

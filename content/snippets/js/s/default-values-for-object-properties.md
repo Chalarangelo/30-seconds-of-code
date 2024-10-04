@@ -1,7 +1,6 @@
 ---
 title: Assign default values for a JavaScript object's properties
 shortTitle: Default values for object properties
-type: tip
 language: javascript
 tags: [object]
 cover: filter-coffee-pot

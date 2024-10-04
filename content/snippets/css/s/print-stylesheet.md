@@ -1,6 +1,5 @@
 ---
 title: CSS Print Stylesheet
-type: story
 language: css
 tags: [visual]
 cover: cozy-desk-setup

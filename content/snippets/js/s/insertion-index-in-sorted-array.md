@@ -1,7 +1,6 @@
 ---
 title: How can I find the insertion index of an element in a sorted JavaScript array?
 shortTitle: Insertion index in sorted array
-type: question
 language: javascript
 tags: [array,math]
 cover: apples

@@ -1,7 +1,6 @@
 ---
 title: View Git commits by a certain author or committer
 shortTitle: View commits by author or committer
-type: story
 language: git
 tags: [repository,commit]
 cover: comic-glasses

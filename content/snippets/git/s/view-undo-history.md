@@ -1,7 +1,6 @@
 ---
 title: View Git "undo" history
 shortTitle: Undo history
-type: story
 language: git
 tags: [repository,branch]
 cover: rock-climbing

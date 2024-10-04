@@ -1,7 +1,6 @@
 ---
 title: A common mistake to avoid when stripping a prefix from a string in Python
 shortTitle: Strip prefix from string
-type: tip
 language: python
 tags: [string]
 cover: cave-exploration

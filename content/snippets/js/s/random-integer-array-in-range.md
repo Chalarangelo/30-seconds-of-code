@@ -1,7 +1,6 @@
 ---
 title: Generate a JavaScript array of random integers in a given range
 shortTitle: Random integer array in range
-type: tip
 language: javascript
 tags: [math,random]
 cover: digital-nomad-11

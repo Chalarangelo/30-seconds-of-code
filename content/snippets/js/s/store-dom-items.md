@@ -1,7 +1,6 @@
 ---
 title: Minimize DOM access in JavaScript
 shortTitle: Minimize DOM access
-type: tip
 language: javascript
 tags: [browser]
 cover: armchair

@@ -1,6 +1,5 @@
 ---
 title: Heap sort
-type: story
 language: javascript
 tags: [algorithm,array,recursion]
 cover: building-blocks

@@ -1,7 +1,6 @@
 ---
 title: Use Git to find matching files
 shortTitle: Find matching files
-type: story
 language: git
 tags: [repository,branch,commit]
 cover: boulder-beach

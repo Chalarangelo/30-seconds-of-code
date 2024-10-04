@@ -1,7 +1,6 @@
 ---
 title: Pretty-print a JSON object with JavaScript
 shortTitle: Pretty-print JSON
-type: tip
 language: javascript
 tags: [object,json]
 cover: memories-of-pineapple-3

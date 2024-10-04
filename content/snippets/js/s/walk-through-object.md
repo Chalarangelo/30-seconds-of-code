@@ -1,7 +1,6 @@
 ---
 title: Walk through a JavaScript object depth-first
 shortTitle: Depth-first walk through object
-type: tip
 language: javascript
 tags: [object,recursion,generator]
 cover: bridge

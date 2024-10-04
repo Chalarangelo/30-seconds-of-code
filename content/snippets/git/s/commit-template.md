@@ -1,7 +1,6 @@
 ---
 title: Add a Git commit message template
 shortTitle: Add commit template
-type: story
 language: git
 tags: [repository,configuration]
 cover: river-house-lights

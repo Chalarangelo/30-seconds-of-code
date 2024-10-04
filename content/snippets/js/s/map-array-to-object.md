@@ -1,7 +1,6 @@
 ---
 title: Map a JavaScript array to an object
 shortTitle: Map array to object
-type: story
 language: javascript
 tags: [array,object]
 cover: two-lighthouses

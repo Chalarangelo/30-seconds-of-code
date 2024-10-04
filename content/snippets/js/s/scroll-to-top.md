@@ -1,7 +1,6 @@
 ---
 title: Smooth scroll to the top of the page using JavaScript
 shortTitle: Scroll to page top
-type: tip
 language: javascript
 tags: [browser]
 cover: tranquil-lake

@@ -1,6 +1,5 @@
 ---
 title: React rendering
-type: story
 language: react
 tags: [render]
 cover: comic-glasses

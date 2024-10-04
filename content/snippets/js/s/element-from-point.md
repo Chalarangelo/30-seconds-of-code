@@ -1,7 +1,6 @@
 ---
 title: Element at a specific point on the page
 shortTitle: Element at specific coordinates
-type: tip
 language: javascript
 tags: [browser]
 cover: armchair-in-yellow

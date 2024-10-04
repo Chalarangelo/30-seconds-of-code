@@ -1,6 +1,5 @@
 ---
 title: Expand tabs into spaces
-type: tip
 language: javascript
 tags: [string,regexp]
 cover: naming-conventions

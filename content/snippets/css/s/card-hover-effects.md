@@ -1,6 +1,5 @@
 ---
 title: Card hover effects
-type: story
 language: css
 tags: [animation]
 cover: clouds-n-mountains

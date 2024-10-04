@@ -1,7 +1,6 @@
 ---
 title: Testing Redux-connected components with React Testing Library
 shortTitle: Redux-connected components testing
-type: story
 language: react
 tags: [testing]
 cover: sparkles

@@ -1,7 +1,6 @@
 ---
 title: Style links without a class
 shortTitle: Style default links
-type: tip
 language: css
 tags: [visual,interactivity]
 cover: citrus-drink

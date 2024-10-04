@@ -1,7 +1,6 @@
 ---
 title: Convert between CSV and JavaScript arrays, objects or JSON
 shortTitle: Convert between CSV and array, object or JSON
-type: story
 language: javascript
 tags: [array,object,string]
 cover: tropical-bike

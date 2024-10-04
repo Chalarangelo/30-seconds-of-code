@@ -1,6 +1,5 @@
 ---
 title: Mouse cursor gradient tracking
-type: story
 language: css
 tags: [visual,interactivity]
 cover: tram-car

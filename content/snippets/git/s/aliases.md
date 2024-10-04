@@ -1,7 +1,6 @@
 ---
 title: Customize Git using aliases for common operations
 shortTitle: Git aliases
-type: cheatsheet
 language: git
 tags: [configuration,cheatsheet]
 cover: compass-1

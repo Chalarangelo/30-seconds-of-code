@@ -1,7 +1,6 @@
 ---
 title: Numeric range generator in JavaScript
 shortTitle: Range generator
-type: story
 language: javascript
 tags: [function,array]
 cover: generator

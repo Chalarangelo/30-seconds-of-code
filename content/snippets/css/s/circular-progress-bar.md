@@ -1,7 +1,6 @@
 ---
 title: How can I create a circular progress bar using only CSS?
 shortTitle: Circular progress bar
-type: story
 language: css
 tags: [visual,animation]
 cover: clouds-over-mountains

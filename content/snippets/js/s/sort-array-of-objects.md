@@ -1,7 +1,6 @@
 ---
 title: Sort an array of objects in JavaScript
 shortTitle: Sort array of objects
-type: story
 language: javascript
 tags: [object,array]
 cover: volcano-sunset

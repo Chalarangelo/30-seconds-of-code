@@ -1,7 +1,6 @@
 ---
 title: How can I set the value of a select input in React?
 shortTitle: Select input value
-type: question
 language: react
 tags: [components,input]
 cover: two-doors

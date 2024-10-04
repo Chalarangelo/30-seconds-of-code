@@ -1,6 +1,5 @@
 ---
 title: Card with image cutout
-type: tip
 language: css
 tags: [visual]
 cover: radio-monstera

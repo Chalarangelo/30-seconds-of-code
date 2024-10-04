@@ -1,7 +1,6 @@
 ---
 title: Find the head and tail of an array in JavaScript
 shortTitle: Head and tail of array
-type: story
 language: javascript
 tags: [array]
 cover: clay-pot-horizon

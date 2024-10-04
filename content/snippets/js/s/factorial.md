@@ -1,7 +1,6 @@
 ---
 title: Calculate the factorial of a number using JavaScript
 shortTitle: Factorial of number
-type: story
 language: javascript
 tags: [math,algorithm,recursion]
 cover: flower-vase

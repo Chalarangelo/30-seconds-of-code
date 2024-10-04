@@ -1,7 +1,6 @@
 ---
 title: Colorize text in the Node.js terminal
 shortTitle: Colorize text
-type: tip
 language: javascript
 tags: [node,string]
 cover: plant-corner

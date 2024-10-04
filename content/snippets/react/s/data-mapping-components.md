@@ -1,7 +1,6 @@
 ---
 title: Mapping data structures to React components
 shortTitle: Data mapping components
-type: story
 language: react
 tags: [components,array,object,state,recursion]
 cover: interior-14

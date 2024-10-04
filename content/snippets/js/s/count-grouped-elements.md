@@ -1,7 +1,6 @@
 ---
 title: How can I group and count values in a JavaScript array?
 shortTitle: Group and count values
-type: story
 language: javascript
 tags: [array,object]
 cover: tropical-waterfall

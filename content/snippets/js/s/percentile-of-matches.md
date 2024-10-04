@@ -1,7 +1,6 @@
 ---
 title: Percentile of matches in a JavaScript array
 shortTitle: Percentile of matches
-type: tip
 language: javascript
 tags: [math]
 cover: collab-desk-2

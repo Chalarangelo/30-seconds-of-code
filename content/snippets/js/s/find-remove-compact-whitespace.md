@@ -1,7 +1,6 @@
 ---
 title: Check, compact or remove whitespaces in a JavaScript string
 shortTitle: Check, compact or remove whitespaces
-type: story
 language: javascript
 tags: [string,regexp]
 cover: tropical-bike

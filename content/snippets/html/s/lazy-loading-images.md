@@ -1,7 +1,6 @@
 ---
 title: Lazy load images in HTML
 shortTitle: Image lazy loading
-type: tip
 language: html
 tags: [image]
 cover: bridge

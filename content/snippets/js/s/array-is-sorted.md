@@ -1,7 +1,6 @@
 ---
 title: Check if a numeric array is sorted in JavaScript
 shortTitle: Array is sorted
-type: tip
 language: javascript
 tags: [array]
 cover: italian-horizon

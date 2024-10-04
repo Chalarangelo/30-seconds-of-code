@@ -1,7 +1,6 @@
 ---
 title: Generate the Fibonacci sequence in JavaScript
 shortTitle: Fibonacci sequence
-type: story
 language: javascript
 tags: [math,algorithm,recursion]
 cover: matrix-flow

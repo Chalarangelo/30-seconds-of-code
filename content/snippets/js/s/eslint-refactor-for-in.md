@@ -1,7 +1,6 @@
 ---
 title: Refactoring your for...in loops to avoid ESLint warnings
 shortTitle: Refactoring for...in loops to avoid ESLint warnings
-type: tip
 language: javascript
 tags: [array,iterator,eslint]
 cover: typing

@@ -1,7 +1,6 @@
 ---
 title: View the last Git commit
 shortTitle: View last commit
-type: tip
 language: git
 tags: [commit]
 cover: clouds-n-mountains

@@ -1,7 +1,6 @@
 ---
 title: Run a callback on each animation frame with JavaScript
 shortTitle: Record animation frames
-type: story
 language: javascript
 tags: [browser,recursion]
 cover: mac-and-coffee

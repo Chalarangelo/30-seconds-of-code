@@ -1,7 +1,6 @@
 ---
 title: Generate a UUID in JavaScript
 shortTitle: Generate UUID
-type: story
 language: javascript
 tags: [browser,node,random]
 cover: digital-nomad-7

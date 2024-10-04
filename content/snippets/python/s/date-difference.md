@@ -1,7 +1,6 @@
 ---
 title: Calculate date difference
 shortTitle: Date difference
-type: tip
 language: python
 tags: [date]
 cover: succulent-9

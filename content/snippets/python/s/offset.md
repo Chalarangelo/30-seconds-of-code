@@ -1,7 +1,6 @@
 ---
 title: Offset the elements of a Python list
 shortTitle: Offset
-type: tip
 language: python
 tags: [list]
 cover: digital-nomad-10

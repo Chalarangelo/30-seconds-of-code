@@ -1,6 +1,5 @@
 ---
 title: Big-O Cheat Sheet
-type: cheatsheet
 language: javascript
 tags: [algorithm,cheatsheet]
 cover: light-ring

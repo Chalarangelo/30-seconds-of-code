@@ -1,7 +1,6 @@
 ---
 title: How can I update a remote branch after rewriting Git history?
 shortTitle: Update remote branch after rewriting history
-type: question
 language: git
 tags: [branch]
 cover: compass

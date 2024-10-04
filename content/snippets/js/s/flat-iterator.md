@@ -1,7 +1,6 @@
 ---
 title: How can I iterate over nested iterables in JavaScript?
 shortTitle: Flat iterator
-type: question
 language: javascript
 tags: [array,iterator,generator,recursion]
 cover: sail-away-2

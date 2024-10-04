@@ -1,7 +1,6 @@
 ---
 title: Make any JavaScript value iterable
 shortTitle: Make any value iterable
-type: tip
 language: javascript
 tags: [array,iterator,generator]
 cover: rain-shopping

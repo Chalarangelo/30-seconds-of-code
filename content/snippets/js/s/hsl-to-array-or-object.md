@@ -1,7 +1,6 @@
 ---
 title: Convert an HSL color string to a JavaScript array or object
 shortTitle: HSL to array or object
-type: story
 language: javascript
 tags: [string,regexp]
 cover: number-2

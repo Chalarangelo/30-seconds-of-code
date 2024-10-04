@@ -1,7 +1,6 @@
 ---
 title: Shake input field when invalid, using CSS
 shortTitle: Shake on invalid input
-type: tip
 language: css
 tags: [animation]
 cover: perfect-timing

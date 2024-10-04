@@ -1,7 +1,6 @@
 ---
 title: How can I zip and unzip arrays in JavaScript?
 shortTitle: Zip or unzip arrays
-type: question
 language: javascript
 tags: [array]
 cover: new-york-skyline

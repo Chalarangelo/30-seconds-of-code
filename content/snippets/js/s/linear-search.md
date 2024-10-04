@@ -1,7 +1,6 @@
 ---
 title: Linear search in a JavaScript array
 shortTitle: Linear search
-type: tip
 language: javascript
 tags: [algorithm,array]
 cover: tranquil-desktop

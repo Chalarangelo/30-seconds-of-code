@@ -1,7 +1,6 @@
 ---
 title: JavaScript array sorting shorthand
 shortTitle: Array sorting shorthand
-type: tip
 language: javascript
 tags: [array]
 cover: apples

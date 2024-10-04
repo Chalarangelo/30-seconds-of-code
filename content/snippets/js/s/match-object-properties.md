@@ -1,7 +1,6 @@
 ---
 title: Check if two JavaScript objects have the same properties
 shortTitle: Match object properties
-type: story
 language: javascript
 tags: [object]
 cover: two-flower-vases

@@ -1,7 +1,6 @@
 ---
 title: Create a commit by a different author in Git
 shortTitle: Set or amend commit author
-type: story
 language: git
 tags: [commit]
 cover: new-plant

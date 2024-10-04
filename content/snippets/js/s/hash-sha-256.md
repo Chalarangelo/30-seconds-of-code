@@ -1,7 +1,6 @@
 ---
 title: Calculate SHA-256 hash in JavaScript
 shortTitle: SHA-256 hash
-type: story
 language: javascript
 tags: [browser,node,promises]
 cover: padlocks

@@ -1,7 +1,6 @@
 ---
 title: How can I get all ancestors, parents, siblings, and children of an element?
 shortTitle: Get element ancestors, parents, siblings, and children
-type: story
 language: javascript
 tags: [browser]
 cover: flowering-hills

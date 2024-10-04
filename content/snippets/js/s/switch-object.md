@@ -1,7 +1,6 @@
 ---
 title: Replacing JavaScript switch statement with object literals
 shortTitle: Switch with object literals
-type: story
 language: javascript
 tags: [object]
 cover: rocky-lake

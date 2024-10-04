@@ -1,7 +1,6 @@
 ---
 title: Hide scroll bars on an element
 shortTitle: Hide scrollbars
-type: tip
 language: css
 tags: [visual]
 cover: by-the-lighthouse

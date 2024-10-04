@@ -1,7 +1,6 @@
 ---
 title: Calculate the Levenshtein distance between two strings in JavaScript
 shortTitle: Levenshtein distance
-type: story
 language: javascript
 tags: [string,algorithm]
 cover: purple-sunset-waves

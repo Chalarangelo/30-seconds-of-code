@@ -1,7 +1,6 @@
 ---
 title: Change the last commit's message or contents in Git
 shortTitle: Amend last commit
-type: story
 language: git
 tags: [commit]
 cover: greek-coffee

@@ -1,7 +1,6 @@
 ---
 title: View the current Git status
 shortTitle: View status
-type: tip
 language: git
 tags: [branch]
 cover: periscope

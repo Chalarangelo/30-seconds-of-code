@@ -1,7 +1,6 @@
 ---
 title: Partition a JavaScript array into two or more arrays based on a condition
 shortTitle: Partition array
-type: story
 language: javascript
 tags: [array,object]
 cover: camping-trip

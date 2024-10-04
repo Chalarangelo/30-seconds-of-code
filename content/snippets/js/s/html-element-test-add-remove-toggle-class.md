@@ -1,7 +1,6 @@
 ---
 title: HTML element class manipulation with JavaScript
 shortTitle: Check or toggle HTML element class
-type: story
 language: javascript
 tags: [browser]
 cover:  bag-waiting

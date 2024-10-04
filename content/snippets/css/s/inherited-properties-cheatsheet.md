@@ -1,7 +1,6 @@
 ---
 title: CSS inherited properties cheatsheet
 shortTitle: Inherited properties
-type: cheatsheet
 language: css
 tags: [layout,cheatsheet]
 cover: half-trees

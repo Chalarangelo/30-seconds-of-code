@@ -1,7 +1,6 @@
 ---
 title: What are JavaScript closures?
 shortTitle: Closures introduction
-type: question
 language: javascript
 tags: [function,closure]
 cover: cherry-trees

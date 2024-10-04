@@ -1,7 +1,6 @@
 ---
 title: Change the order of arguments in a JavaScript function
 shortTitle: Reorder function arguments
-type: story
 language: javascript
 tags: [function]
 cover: interior-11

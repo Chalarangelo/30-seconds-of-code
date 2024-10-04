@@ -1,6 +1,5 @@
 ---
 title: Star rating component
-type: tip
 language: react
 tags: [components,children,input,state]
 cover: lake-church

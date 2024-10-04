@@ -1,7 +1,6 @@
 ---
 title: How to add multiple authors to a commit
 shortTitle: Add multiple authors to a commit
-type: tip
 language: git
 tags: [github,programming,webdev]
 cover: book-chair

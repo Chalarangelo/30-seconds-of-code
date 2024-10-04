@@ -1,6 +1,5 @@
 ---
 title: Sum of powers
-type: tip
 language: python
 tags: [math]
 cover: river-flow

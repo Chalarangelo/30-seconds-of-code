@@ -1,7 +1,6 @@
 ---
 title: Get all unique values in a JavaScript array & remove duplicates
 shortTitle: Unique array values
-type: story
 language: javascript
 tags: [array]
 cover: architectural

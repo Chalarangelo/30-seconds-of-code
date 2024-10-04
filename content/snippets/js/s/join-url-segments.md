@@ -1,7 +1,6 @@
 ---
 title: Join the segments of a URL using JavaScript
 shortTitle: Join URL segments
-type: tip
 language: javascript
 tags: [string,regexp]
 cover: digital-nomad-2

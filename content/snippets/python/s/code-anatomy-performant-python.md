@@ -1,7 +1,6 @@
 ---
 title: Code Anatomy - Writing high performance Python code
 shortTitle: Performant Python code
-type: story
 language: python
 tags: [list,performance]
 cover: walking-on-top

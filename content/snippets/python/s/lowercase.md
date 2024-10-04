@@ -1,7 +1,6 @@
 ---
 title: How do I convert a string to lowercase in Python?
 shortTitle: Lowercase string
-type: question
 language: python
 tags: [string]
 cover: type-stamps

@@ -1,7 +1,6 @@
 ---
 title: Validate a number in JavaScript
 shortTitle: Validate number
-type: tip
 language: javascript
 tags: [math]
 cover: flower-portrait-9

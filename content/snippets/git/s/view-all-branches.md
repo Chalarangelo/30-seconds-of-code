@@ -1,7 +1,6 @@
 ---
 title: View all Git branches
 shortTitle: View branches
-type: story
 language: git
 tags: [repository,branch]
 cover: aerial-view-port

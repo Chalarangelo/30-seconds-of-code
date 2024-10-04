@@ -1,6 +1,5 @@
 ---
 title: Image with text overlay
-type: story
 language: css
 tags: [visual]
 cover: icebreaker

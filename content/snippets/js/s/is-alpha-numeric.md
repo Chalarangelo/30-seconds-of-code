@@ -1,6 +1,5 @@
 ---
 title: Check if a JavaScript string contains only alpha or alphanumeric characters
-type: story
 language: javascript
 tags: [string,regexp]
 cover: mountain-lake-cottage-2

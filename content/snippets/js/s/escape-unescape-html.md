@@ -1,7 +1,6 @@
 ---
 title: Escape or unescape HTML using JavaScript
 shortTitle: Escape or unescape HTML
-type: story
 language: javascript
 tags: [string,regexp]
 cover: above-the-rocks

@@ -1,7 +1,6 @@
 ---
 title: Convert a JSON object with circular references to a JavaScript string
 shortTitle: Convert circular JSON to string
-type: tip
 language: javascript
 tags: [object]
 cover: waving-over-lake

@@ -1,6 +1,5 @@
 ---
 title: Common regular expressions
-type: cheatsheet
 language: javascript
 tags: [string,regexp,cheatsheet]
 cover: rocky-beach

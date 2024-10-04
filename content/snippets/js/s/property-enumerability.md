@@ -1,7 +1,6 @@
 ---
 title: JavaScript property enumerability
 shortTitle: Property enumerability
-type: story
 language: javascript
 tags: [object]
 cover: old-consoles

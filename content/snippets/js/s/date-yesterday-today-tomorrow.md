@@ -1,7 +1,6 @@
 ---
 title: Date of yesterday, today or tomorrow in JavaScript
 shortTitle: Date of yesterday, today or tomorrow
-type: story
 language: javascript
 tags: [date]
 cover: travel-mug-2

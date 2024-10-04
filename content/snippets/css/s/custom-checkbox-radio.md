@@ -1,6 +1,5 @@
 ---
 title: Styling checkboxes and radio buttons
-type: story
 language: css
 tags: [visual,animation]
 cover: interior-8

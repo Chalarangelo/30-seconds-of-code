@@ -1,7 +1,6 @@
 ---
 title: Perform an interactive rebase in Git
 shortTitle: Interactive rebase
-type: story
 language: git
 tags: [branch]
 cover: tea-laptop-table

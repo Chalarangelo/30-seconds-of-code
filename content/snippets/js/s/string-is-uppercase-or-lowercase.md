@@ -1,7 +1,6 @@
 ---
 title: Check if a string is uppercase or lowercase in JavaScript
 short: String is uppercase or lowercase
-type: story
 language: javascript
 tags: [string]
 cover: flower-portrait-7

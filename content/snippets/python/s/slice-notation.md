@@ -1,7 +1,6 @@
 ---
 title: Understanding Python's slice notation
 shortTitle: Python slice notation
-type: story
 language: python
 tags: [list]
 cover: sliced-fruits

@@ -1,7 +1,6 @@
 ---
 title: How delays work in JavaScript timing functions
 shortTitle: Delays in JavaScript timing functions
-type: story
 language: javascript
 tags: [browser,timeout]
 cover: river-house-lights

@@ -1,7 +1,6 @@
 ---
 title: Group data using the K-means clustering algorithm in JavaScript
 shortTitle: K-means clustering
-type: story
 language: javascript
 tags: [algorithm,array]
 cover: antelope

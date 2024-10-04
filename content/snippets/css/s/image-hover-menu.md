@@ -1,6 +1,5 @@
 ---
 title: Show menu on image hover
-type: tip
 language: css
 tags: [layout,animation]
 cover: compass

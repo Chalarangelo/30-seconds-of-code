@@ -1,7 +1,6 @@
 ---
 title: React conditional className, empty strings and null
 shortTitle: Conditional className
-type: tip
 language: react
 tags: [components]
 cover: succulent-red-light

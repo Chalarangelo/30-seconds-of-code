@@ -1,7 +1,6 @@
 ---
 title: Check if the current JavaScript environment is Node.js or a browser
 shortTitle: Check if Node.js or browser
-type: story
 language: javascript
 tags: [browser,node]
 cover: cloudy-rock-formation

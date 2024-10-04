@@ -1,7 +1,6 @@
 ---
 title: Binary search in a sorted JavaScript array
 shortTitle: Binary search
-type: tip
 language: javascript
 tags: [algorithm,array]
 cover: zen-indoors

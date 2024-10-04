@@ -1,6 +1,5 @@
 ---
 title: Window.location Cheat Sheet
-type: cheatsheet
 language: javascript
 tags: [browser,cheatsheet]
 cover: yellow-sofa

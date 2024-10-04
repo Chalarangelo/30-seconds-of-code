@@ -1,7 +1,6 @@
 ---
 title: How can I perform an HTTP request in JavaScript?
 shortTitle: HTTP request
-type: question
 language: javascript
 tags: [browser]
 cover: boat-port

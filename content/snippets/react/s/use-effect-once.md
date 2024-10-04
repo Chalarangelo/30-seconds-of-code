@@ -1,7 +1,6 @@
 ---
 title: React useEffectOnce hook
 shortTitle: useEffectOnce hook
-type: tip
 language: react
 tags: [hooks,effect]
 cover: pop-of-green

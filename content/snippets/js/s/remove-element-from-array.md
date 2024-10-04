@@ -1,7 +1,6 @@
 ---
 title: Remove an element from a JavaScript array
 shortTitle: Remove element from array
-type: story
 language: javascript
 tags: [array]
 cover: maple-leaf-palette

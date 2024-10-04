@@ -1,7 +1,6 @@
 ---
 title: Rewind back to a specific commit in Git
 shortTitle: Rewind to commit
-type: story
 language: git
 tags: [branch,commit]
 cover: walking

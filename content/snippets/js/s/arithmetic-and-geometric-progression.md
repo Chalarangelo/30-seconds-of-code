@@ -1,7 +1,6 @@
 ---
 title: Arithmetic and geometric progression in JavaScript
 shortTitle: Arithmetic and geometric progression
-type: story
 language: javascript
 tags: [math,algorithm]
 cover: half-trees

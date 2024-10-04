@@ -1,6 +1,5 @@
 ---
 title: Centering content with CSS
-type: story
 language: css
 tags: [layout]
 cover: malibu

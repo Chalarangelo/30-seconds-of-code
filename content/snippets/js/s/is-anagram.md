@@ -1,7 +1,6 @@
 ---
 title: Check if a JavaScript string is an anagram of another string
 shortTitle: String anagram
-type: tip
 language: javascript
 tags: [string,regexp]
 cover: new-york

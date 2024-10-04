@@ -1,7 +1,6 @@
 ---
 title: What are promises in JavaScript? In which states can a promise be?
 shortTitle: Promises introduction
-type: question
 language: javascript
 tags: [promises,function]
 cover: sail-away

@@ -1,6 +1,5 @@
 ---
 title: The order of then and catch matters
-type: tip
 language: javascript
 tags: [promises,function]
 cover: blue-sunrise

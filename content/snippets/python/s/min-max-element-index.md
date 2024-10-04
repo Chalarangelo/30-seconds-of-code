@@ -1,6 +1,5 @@
 ---
 title: Index of min or max element
-type: tip
 language: python
 tags: [math,list]
 cover: two-cities

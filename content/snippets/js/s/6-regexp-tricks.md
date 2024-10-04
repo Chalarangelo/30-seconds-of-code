@@ -1,7 +1,6 @@
 ---
 title: 6 JavaScript Regular Expression features you can use today
 shortTitle: JavaScript Regular Expression tips
-type: story
 language: javascript
 tags: [string,regexp]
 cover: taking-photos

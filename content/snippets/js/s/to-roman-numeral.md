@@ -1,7 +1,6 @@
 ---
 title: Convert an integer to a roman numeral in JavaScript
 shortTitle: Integer to roman numeral
-type: tip
 language: javascript
 tags: [math,string]
 cover: ancient-greek-building

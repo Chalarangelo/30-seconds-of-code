@@ -1,7 +1,6 @@
 ---
 title: List all Git aliases
 shortTitle: List aliases
-type: tip
 language: git
 tags: [configuration]
 cover: coffee-float

@@ -1,7 +1,6 @@
 ---
 title: React useBodyScrollLock hook
 shortTitle: useBodyScrollLock hook
-type: tip
 language: react
 tags: [hooks,effect]
 cover: folded-map

@@ -1,7 +1,6 @@
 ---
 title: Days ago, days from now, add and subtract dates
 shortTitle: Days ago, days from now
-type: story
 language: python
 tags: [date]
 cover: cup-of-orange

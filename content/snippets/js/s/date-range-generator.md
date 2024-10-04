@@ -1,7 +1,6 @@
 ---
 title: Date range generator in JavaScript
 shortTitle: Date range generator
-type: tip
 language: javascript
 tags: [date,function,generator]
 cover: portal-timelapse

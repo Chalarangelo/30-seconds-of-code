@@ -1,7 +1,6 @@
 ---
 title: Split a Python list into chunks
 shortTitle: Split list into chunks
-type: story
 language: python
 tags: [list]
 cover: succulent-10

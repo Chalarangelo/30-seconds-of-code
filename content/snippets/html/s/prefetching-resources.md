@@ -1,7 +1,6 @@
 ---
 title: Prefetching resources in the browser
 shortTitle: Resource prefetching
-type: tip
 language: html
 tags: [metadata]
 cover: playing-fetch

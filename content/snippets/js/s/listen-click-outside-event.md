@@ -1,7 +1,6 @@
 ---
 title: How can I listen for a click outside of an element in JavaScript?
 shortTitle: Listen for click outside element
-type: question
 language: javascript
 tags: [browser,event]
 cover: interior-13

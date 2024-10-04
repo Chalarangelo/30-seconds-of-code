@@ -1,7 +1,6 @@
 ---
 title: What is a callback function?
 shortTitle: Callback functions
-type: question
 language: javascript
 tags: [function]
 cover: rabbit-call

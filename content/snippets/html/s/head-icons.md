@@ -1,7 +1,6 @@
 ---
 title: Recommended HTML head icon tags
 shortTitle: HTML favicons template
-type: story
 language: html
 tags: [metadata,head]
 cover: boutique-home-office-3

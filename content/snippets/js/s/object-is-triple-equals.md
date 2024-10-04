@@ -1,7 +1,6 @@
 ---
 title: What's the difference between Object.is() and the triple equals operator in JavaScript?
 shortTitle: Object.is() vs triple equals operator
-type: question
 language: javascript
 tags: [object,type]
 cover: rocky-mountains

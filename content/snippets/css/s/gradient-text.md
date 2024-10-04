@@ -1,6 +1,5 @@
 ---
 title: Gradient text
-type: tip
 language: css
 tags: [visual]
 cover: red-berries

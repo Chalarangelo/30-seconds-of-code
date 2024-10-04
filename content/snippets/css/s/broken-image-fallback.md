@@ -1,7 +1,6 @@
 ---
 title: Display a fallback for images that fail to load
 shortTitle: Broken image fallback
-type: tip
 language: css
 tags: [visual]
 cover: building-facade

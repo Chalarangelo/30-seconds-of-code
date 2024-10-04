@@ -1,7 +1,6 @@
 ---
 title: Remove non ASCII characters from a JavaScript string
 shortTitle: Remove non ASCII characters
-type: tip
 language: javascript
 tags: [string,regexp]
 cover: blue-red-mountain

@@ -1,7 +1,6 @@
 ---
 title: React useTimeout hook
 shortTitle: useTimeout hook
-type: tip
 language: react
 tags: [hooks,effect]
 cover: interior-10

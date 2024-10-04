@@ -1,6 +1,5 @@
 ---
 title: Engraved and embossed text
-type: tip
 language: css
 tags: [visual]
 cover: memories-of-pineapple-2

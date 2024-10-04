@@ -1,7 +1,6 @@
 ---
 title: CSS Button Transitions
 shortTitle: Button Transitions
-type: story
 language: css
 tags: [animation]
 cover: painters-desk

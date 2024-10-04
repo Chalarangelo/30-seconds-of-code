@@ -1,7 +1,6 @@
 ---
 title: Drop caps with pure CSS
 shortTitle: Drop caps
-type: tip
 language: css
 tags: [visual]
 cover: bamboo-lamp

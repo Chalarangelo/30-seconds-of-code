@@ -1,7 +1,6 @@
 ---
 title: Code Anatomy - Optimizing recursive functions
 shortTitle: Optimizing recursive functions
-type: story
 language: javascript
 tags: [recursion,performance]
 cover: case-study

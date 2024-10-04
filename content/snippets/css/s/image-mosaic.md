@@ -1,6 +1,5 @@
 ---
 title: Responsive image mosaic
-type: tip
 language: css
 tags: [layout]
 cover: beach-riders

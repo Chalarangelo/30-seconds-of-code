@@ -1,7 +1,6 @@
 ---
 title: Find matching keys in a JavaScript object
 shortTitle: Find matching keys
-type: story
 language: javascript
 tags: [object]
 cover: beach-riders

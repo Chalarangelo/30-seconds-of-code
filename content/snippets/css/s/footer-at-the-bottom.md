@@ -1,7 +1,6 @@
 ---
 title: How can I ensure the footer is always at the bottom of the page?
 shortTitle: Footer at the bottom
-type: question
 language: css
 tags: [layout]
 cover: flower-shape-sunset

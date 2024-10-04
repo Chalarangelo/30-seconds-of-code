@@ -1,7 +1,6 @@
 ---
 title: What does the double negation operator do in JavaScript?
 shortTitle: Double negation operator
-type: question
 language: javascript
 tags: [type]
 cover: memories-of-pineapple-2

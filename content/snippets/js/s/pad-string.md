@@ -1,7 +1,6 @@
 ---
 title: Pad a string with a character
 shortTitle: Pad string
-type: tip
 language: javascript
 tags: [string]
 cover: bridge-over-road

@@ -1,7 +1,6 @@
 ---
 title: Replace the last occurrence of a pattern in a JavaScript string
 shortTitle: Replace last occurrence
-type: tip
 language: javascript
 tags: [string,regexp]
 cover: waves

@@ -1,7 +1,6 @@
 ---
 title: 10 beautiful CSS background patterns
 shortTitle: CSS background patterns
-type: cheatsheet
 language: css
 tags: [visual,cheatsheet]
 cover: armchair-design

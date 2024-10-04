@@ -1,6 +1,5 @@
 ---
 title: Automatic text linking in React
-type: tip
 language: react
 tags: [components,fragment,regexp]
 cover: red-petals

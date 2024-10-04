@@ -1,7 +1,6 @@
 ---
 title: Copy sign from one number to another in JavaScript
 shortTitle: Copy sign to number
-type: tip
 language: javascript
 tags: [math]
 cover: cloudy-mountaintop

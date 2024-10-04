@@ -1,7 +1,6 @@
 ---
 title: Find the longest element in a JavaScript array
 shortTitle: Longest array element
-type: tip
 language: javascript
 tags: [array]
 cover: interior-14

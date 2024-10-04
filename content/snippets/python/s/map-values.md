@@ -1,6 +1,5 @@
 ---
 title: Map dictionary values
-type: tip
 language: python
 tags: [dictionary]
 cover: pineapple-laptop

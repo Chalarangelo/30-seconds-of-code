@@ -1,7 +1,6 @@
 ---
 title: Debugging Node.js using Chrome Developer Tools
 shortTitle: Debug Node.js with Chrome Developer Tools
-type: tip
 language: javascript
 tags: [node,debugging]
 cover: bug

@@ -1,6 +1,5 @@
 ---
 title: Email and callable telephone links
-type: story
 language: react
 tags: [components]
 cover: rabbit-call

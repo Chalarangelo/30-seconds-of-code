@@ -1,7 +1,6 @@
 ---
 title: Collapsible content React components
 shortTitle: Collapsible content components
-type: story
 language: react
 tags: [components,children,state,effect]
 cover: orange-wedges

@@ -1,7 +1,6 @@
 ---
 title: Reset your local master branch to match remote
 shortTitle: Reset master to match remote
-type: tip
 language: git
 tags: [repository,branch]
 cover: old-consoles

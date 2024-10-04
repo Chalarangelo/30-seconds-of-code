@@ -1,7 +1,6 @@
 ---
 title: How to swap two variables in JavaScript
 shortTitle: Swap two variables
-type: tip
 language: javascript
 tags: [variables]
 cover: mountain-lake-2

@@ -1,7 +1,6 @@
 ---
 title: Rename a local or remote Git branch
 shortTitle: Rename branch
-type: story
 language: git
 tags: [branch]
 cover: horse-sunset

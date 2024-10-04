@@ -1,7 +1,6 @@
 ---
 title: View a visual graph of the Git repository
 shortTitle: View commit graph
-type: tip
 language: git
 tags: [repository]
 cover: city-view

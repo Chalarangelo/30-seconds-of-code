@@ -1,6 +1,5 @@
 ---
 title: CSS units Cheat Sheet
-type: cheatsheet
 language: css
 tags: [layout,cheatsheet]
 cover: measuring

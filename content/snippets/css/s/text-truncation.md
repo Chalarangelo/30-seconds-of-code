@@ -1,7 +1,6 @@
 ---
 title: Text truncation, using CSS
 shortTitle: Text truncation
-type: story
 language: css
 tags: [layout]
 cover: houses-rock-sea

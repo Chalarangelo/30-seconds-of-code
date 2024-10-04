@@ -1,7 +1,6 @@
 ---
 title: What is CORS?
 shortTitle: CORS explained
-type: question
 language: javascript
 tags: [browser,webdev]
 cover: chill-surfing

@@ -1,7 +1,6 @@
 ---
 title: Implementing the Luhn Algorithm in JavaScript
 shortTitle: Luhn algorithm
-type: tip
 language: javascript
 tags: [math,algorithm]
 cover: blank-card

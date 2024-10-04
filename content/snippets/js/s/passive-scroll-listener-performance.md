@@ -1,7 +1,6 @@
 ---
 title: Improve JavaScript scroll listener performance
 shortTitle: Improve scroll listener performance
-type: tip
 language: javascript
 tags: [browser,event]
 cover: chill-surfing

@@ -1,7 +1,6 @@
 ---
 title: How can I use a React hook to change the title of a page?
 shortTitle: useTitle hook
-type: question
 language: react
 tags: [hooks,effect]
 cover: chubby-squirrel

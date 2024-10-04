@@ -1,7 +1,6 @@
 ---
 title: Truth check all values in a JavaScript array
 shortTitle: Truth check array
-type: story
 language: javascript
 tags: [object,logic,array]
 cover: digital-nomad-8

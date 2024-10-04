@@ -1,6 +1,5 @@
 ---
 title: Pretty print number of bytes
-type: tip
 language: javascript
 tags: [string,math]
 cover: digital-nomad

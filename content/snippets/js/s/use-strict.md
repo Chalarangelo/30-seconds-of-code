@@ -1,7 +1,6 @@
 ---
 title: What does 'use strict' do and what are some of the key benefits to using it?
 shortTitle: Strict mode introduction
-type: question
 language: javascript
 tags: [function,object]
 cover: palm-tree-house

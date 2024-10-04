@@ -1,7 +1,6 @@
 ---
 title: Show/hide password toggle component
 shortTitle: Password revealer
-type: tip
 language: react
 tags: [components,input,state]
 cover: thread

@@ -1,7 +1,6 @@
 ---
 title: How can I find the merge commit given a Git commit?
 shortTitle: Merge commit for a commit
-type: question
 language: git
 tags: [commit]
 cover: travel-mug-1

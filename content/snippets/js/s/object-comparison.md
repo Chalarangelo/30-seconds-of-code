@@ -1,7 +1,6 @@
 ---
 title: How do I compare two objects in JavaScript?
 shortTitle: Object comparison
-type: question
 language: javascript
 tags: [object,comparison,recursion]
 cover: blue-lake

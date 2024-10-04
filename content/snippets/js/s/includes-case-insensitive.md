@@ -1,7 +1,6 @@
 ---
 title: Can I check if a JavaScript string contains a substring, regardless of case?
 shortTitle: Case-insensitive substring search
-type: question
 language: javascript
 tags: [string,regexp]
 cover: cup-of-orange

@@ -1,7 +1,6 @@
 ---
 title: Programmatically trigger event on HTML element using JavaScript
 shortTitle: Trigger event on HTML element
-type: story
 language: javascript
 tags: [browser,event]
 cover: cloudy-mountaintop-2

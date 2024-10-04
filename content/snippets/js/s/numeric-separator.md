@@ -1,7 +1,6 @@
 ---
 title: JavaScript's numeric separators explained
 shortTitle: Numeric separators explained
-type: tip
 language: javascript
 tags: [math,type]
 cover: coffee-drip

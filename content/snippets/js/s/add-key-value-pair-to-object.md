@@ -1,7 +1,6 @@
 ---
 title: How can I add a key-value pair to a JavaScript object?
 shortTitle: Add key-value pair to object
-type: question
 language: javascript
 tags: [object]
 cover: pineapple-laptop

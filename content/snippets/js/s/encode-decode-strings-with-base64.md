@@ -1,7 +1,6 @@
 ---
 title: How to encode and decode strings with Base64 in JavaScript
 shortTitle: Encode & decode strings with base64
-type: story
 language: javascript
 tags: [string]
 excerpt: Encode and decode strings with Base64 in JavaScript easily with these code snippets.

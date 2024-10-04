@@ -1,7 +1,6 @@
 ---
 title: How do I merge two arrays in JavaScript?
 shortTitle: Merge arrays
-type: question
 language: javascript
 tags: [array]
 cover: arrays

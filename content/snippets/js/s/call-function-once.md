@@ -1,7 +1,6 @@
 ---
 title: Call a JavaScript function once
 shortTitle: Call function once
-type: tip
 language: javascript
 tags: [function]
 cover: pink-flower-tree

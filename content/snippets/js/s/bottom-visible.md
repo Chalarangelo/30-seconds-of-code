@@ -1,7 +1,6 @@
 ---
 title: Check if the bottom of the page is visible using JavaScript
 description: Check if bottom of page is visible
-type: tip
 language: javascript
 tags: [browser]
 cover: hiking-walking

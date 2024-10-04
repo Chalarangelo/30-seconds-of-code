@@ -1,7 +1,6 @@
 ---
 title: 25 CSS gradients for your next project
 shortTitle: CSS gradients
-type: cheatsheet
 language: css
 tags: [visual,cheatsheet]
 cover: colors-mural

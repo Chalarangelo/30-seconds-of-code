@@ -1,7 +1,6 @@
 ---
 title: Get the first or last date of a month using JavaScript
 shortTitle: First or last date of a month
-type: story
 language: javascript
 tags: [date]
 cover: polar-bear

@@ -1,7 +1,6 @@
 ---
 title: What is an IIFE in JavaScript?
 shortTitle: IIFE introduction
-type: question
 language: javascript
 tags: [function]
 cover: tropical-waterfall

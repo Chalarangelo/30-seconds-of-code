@@ -1,7 +1,6 @@
 ---
 title: What is the difference between prefix and postfix operators?
 shortTitle: Prefix and postfix operators
-type: question
 language: javascript
 tags: [math]
 cover: plant-candle

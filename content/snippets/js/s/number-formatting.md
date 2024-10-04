@@ -1,7 +1,6 @@
 ---
 title: Formatting numeric values in JavaScript
 shortTitle: Number formatting
-type: story
 language: javascript
 tags: [math,string,date]
 cover: white-chapel

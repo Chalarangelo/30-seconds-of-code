@@ -1,7 +1,6 @@
 ---
 title: Enable autocorrect for mistyped Git commands
 shortTitle: Enable Git autocorrect
-type: story
 language: git
 tags: [configuration]
 cover: purple-flower-bunch

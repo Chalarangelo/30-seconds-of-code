@@ -1,6 +1,5 @@
 ---
 title: Box-sizing reset
-type: tip
 language: css
 tags: [layout]
 cover: interior

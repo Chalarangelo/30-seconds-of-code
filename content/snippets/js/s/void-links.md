@@ -1,6 +1,5 @@
 ---
 title: Avoid "javascript:void(0)" for empty links
-type: tip
 language: javascript
 tags: [browser,accessibility]
 cover: white-flower

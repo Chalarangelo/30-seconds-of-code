@@ -1,7 +1,6 @@
 ---
 title: A complete guide to JavaScript typechecking
 shortTitle: Typechecking guide
-type: story
 language: javascript
 tags: [type]
 cover: overgrown

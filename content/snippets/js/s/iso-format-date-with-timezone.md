@@ -1,7 +1,6 @@
 ---
 title: Format a date to ISO string with timezone using JavaScript
 shortTitle: Date to ISO format with timezone
-type: story
 language: javascript
 tags: [date]
 cover: pop-of-green

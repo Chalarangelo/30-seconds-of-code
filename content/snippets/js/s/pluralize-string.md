@@ -1,7 +1,6 @@
 ---
 title: Pluralize a JavaScript string
 description: Pluralize string
-type: story
 language: javascript
 tags: [string]
 cover: shell-focus

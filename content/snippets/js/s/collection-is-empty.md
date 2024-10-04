@@ -1,7 +1,6 @@
 ---
 title: Check if a JavaScript collection is empty
 shortTitle: Value is empty
-type: tip
 language: javascript
 tags: [type,array,object,string]
 cover: mountain-lake

@@ -1,7 +1,6 @@
 ---
 title: Clone a Git repository
 shortTitle: Clone repository
-type: tip
 language: git
 tags: [repository,remote]
 cover: fruit-feast

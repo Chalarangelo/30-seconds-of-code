@@ -1,7 +1,6 @@
 ---
 title: Restore deleted files in a Git commit
 shortTitle: Restore deleted file
-type: tip
 language: git
 tags: [branch]
 cover: succulent-red-light

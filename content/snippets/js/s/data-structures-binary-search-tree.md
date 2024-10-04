@@ -1,7 +1,6 @@
 ---
 title: JavaScript Data Structures - Binary Search Tree
 shortTitle: Binary Search Tree
-type: story
 language: javascript
 tags: [class]
 cover: purple-flower-macro-4

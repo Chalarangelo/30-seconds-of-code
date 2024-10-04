@@ -1,6 +1,5 @@
 ---
 title: Detect user color scheme preference in JavaScript
-type: story
 language: javascript
 tags: [browser]
 cover: dark-mode

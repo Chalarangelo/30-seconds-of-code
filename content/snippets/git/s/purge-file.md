@@ -1,7 +1,6 @@
 ---
 title: Purge a file from Git history
 shortTitle: Purge file
-type: story
 language: git
 tags: [repository,remote]
 cover: white-flower

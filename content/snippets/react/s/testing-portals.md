@@ -1,7 +1,6 @@
 ---
 title: Testing React portals
 shortTitle: Portal testing
-type: story
 language: react
 tags: [testing]
 cover: portal-timelapse

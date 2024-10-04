@@ -1,7 +1,6 @@
 ---
 title: Writing readable reducers in Redux
 shortTitle: Readable reducer tips
-type: story
 language: react
 tags: [logic]
 cover: beach-from-above

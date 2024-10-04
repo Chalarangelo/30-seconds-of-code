@@ -1,6 +1,5 @@
 ---
 title: Evenly distributed children
-type: tip
 language: css
 tags: [layout]
 cover: little-bird

@@ -1,7 +1,6 @@
 ---
 title: Typechecking JavaScript arrays with Array.isArray()
 shortTitle: Array typechecking
-type: tip
 language: javascript
 tags: [type,array]
 cover: purple-flower-field

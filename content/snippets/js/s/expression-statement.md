@@ -1,7 +1,6 @@
 ---
 title: What is the difference between an expression and a statement in JavaScript?
 shortTitle: Expressions and statements
-type: question
 language: javascript
 tags: [type]
 cover: forest-balcony

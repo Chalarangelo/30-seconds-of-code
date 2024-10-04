@@ -1,7 +1,6 @@
 ---
 title: Lazy-loading images in React
 shortTitle: Lazy load image
-type: tip
 language: react
 tags: [components,effect,state]
 cover: strawberries

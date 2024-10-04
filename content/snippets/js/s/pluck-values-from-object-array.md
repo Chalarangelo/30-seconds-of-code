@@ -1,7 +1,6 @@
 ---
 title: Pluck values from and array of objects in JavaScript
 shortTitle: Pluck values from object array
-type: story
 language: javascript
 tags: [array,object]
 cover: birds

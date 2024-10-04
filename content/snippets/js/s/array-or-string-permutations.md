@@ -1,7 +1,6 @@
 ---
 title: Calculate all permutations of a JavaScript array or string
 shortTitle: Array or string permutations
-type: story
 language: javascript
 tags: [array,string,recursion]
 cover: body-of-water

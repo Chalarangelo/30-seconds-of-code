@@ -1,7 +1,6 @@
 ---
 title: How can I use JavaScript to reload the page?
 shortTitle: Reload page
-type: story
 language: javascript
 tags: [browser]
 cover: night-tram

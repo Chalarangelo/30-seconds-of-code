@@ -1,7 +1,6 @@
 ---
 title: Initialize a JavaScript array with the specified values
 shortTitle: Initialize array with values
-type: story
 language: javascript
 tags: [array]
 cover: flower-portrait-1

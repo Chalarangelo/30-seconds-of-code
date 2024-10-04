@@ -1,7 +1,6 @@
 ---
 title: Serialize specific properties from a JSON object
 shortTitle: Selective property serialization
-type: tip
 language: javascript
 tags: [object,json]
 cover: coffee-drip

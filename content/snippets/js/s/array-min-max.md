@@ -1,7 +1,6 @@
 ---
 title: Min and max value of a JavaScript array
 shortTitle: Min and max value of an array
-type: story
 language: javascript
 tags: [array,math]
 cover: little-tree

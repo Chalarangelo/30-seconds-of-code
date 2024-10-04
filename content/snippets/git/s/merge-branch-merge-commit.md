@@ -1,7 +1,6 @@
 ---
 title: Merge a branch in Git
 shortTitle: Merge branch
-type: story
 language: git
 tags: [repository,branch]
 cover: meteora

@@ -1,6 +1,5 @@
 ---
 title: Technical debt
-type: story
 tags: [webdev,career,programming,management]
 cover: new-york
 excerpt: Learn what technical debt is, its causes and symptoms, and how to deal with it.

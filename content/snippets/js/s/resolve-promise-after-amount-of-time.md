@@ -1,7 +1,6 @@
 ---
 title: Create a JavaScript promise that resolves after a given amount of time
 shortTitle: Resolve promise after given amount of time
-type: tip
 language: javascript
 tags: [promises,function]
 cover: filter-coffee-pot

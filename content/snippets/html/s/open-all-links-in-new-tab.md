@@ -1,7 +1,6 @@
 ---
 title: Open all links in an HTML document in a new tab
 shortTitle: Open all links in a new tab
-type: tip
 language: html
 tags: [link]
 cover: paper-card

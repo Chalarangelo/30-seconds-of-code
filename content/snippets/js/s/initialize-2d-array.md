@@ -1,7 +1,6 @@
 ---
 title: How can I initialize 2D array in JavaScript?
 shortTitle: Initialize 2D array
-type: question
 language: javascript
 tags: [array,recursion]
 cover: cloudy-rock-formation

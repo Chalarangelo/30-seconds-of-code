@@ -1,7 +1,6 @@
 ---
 title: Find matches in a list or dictionary
 shortTitle: Find matches
-type: story
 language: python
 tags: [list,dictionary]
 cover: tree-roots

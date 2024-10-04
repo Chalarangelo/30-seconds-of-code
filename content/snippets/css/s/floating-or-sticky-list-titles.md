@@ -1,6 +1,5 @@
 ---
 title: List with floating or sticky section headings
-type: story
 language: css
 tags: [visual]
 cover: pop-of-green

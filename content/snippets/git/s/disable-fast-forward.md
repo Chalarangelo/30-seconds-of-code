@@ -1,7 +1,6 @@
 ---
 title: How can I disable Git's fast forward merging by default?
 shortTitle: Disable fast forward merging by default
-type: question
 language: git
 tags: [configuration,repository]
 cover: people-on-beach

@@ -1,7 +1,6 @@
 ---
 title: React usePortal hook
 shortTitle: usePortal hook
-type: tip
 language: react
 tags: [hooks,state,effect]
 cover: interior-3

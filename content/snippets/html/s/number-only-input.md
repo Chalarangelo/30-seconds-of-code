@@ -1,7 +1,6 @@
 ---
 title: A user-friendly setup for number-only inputs with plain HTML
 shortTitle: Number-only input
-type: tip
 language: html
 tags: [form]
 cover: palm-sun

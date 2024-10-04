@@ -1,7 +1,6 @@
 ---
 title: What are the differences between Maps and objects in JavaScript?
 shortTitle: Maps vs objects
-type: question
 language: javascript
 tags: [object]
 cover: tent-stars

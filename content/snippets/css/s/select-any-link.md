@@ -1,7 +1,6 @@
 ---
 title: Select any link with CSS
 shortTitle: "CSS :any-link pseudo-class"
-type: tip
 language: css
 tags: [visual,interactivity]
 cover: round-leaves

@@ -1,7 +1,6 @@
 ---
 title: How to correctly close files in Python
 shortTitle: Closing files
-type: story
 language: python
 tags: [file]
 cover: flower-pond

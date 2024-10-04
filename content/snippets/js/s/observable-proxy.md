@@ -1,7 +1,6 @@
 ---
 title: Using a Proxy to implement the Observable pattern
 shortTitle: Observable Proxy
-type: story
 language: javascript
 tags: [object,proxy]
 cover: city-view

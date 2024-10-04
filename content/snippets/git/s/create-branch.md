@@ -1,7 +1,6 @@
 ---
 title: Create a new Git branch
 shortTitle: Create branch
-type: story
 language: git
 tags: [branch,remote]
 cover: flower-pond

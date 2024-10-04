@@ -1,6 +1,5 @@
 ---
 title: Asynchronous JavaScript Cheat Sheet
-type: cheatsheet
 language: javascript
 tags: [promises,function,cheatsheet]
 cover: green-plant

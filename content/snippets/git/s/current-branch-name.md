@@ -1,7 +1,6 @@
 ---
 title: Get the current branch name in Git
 shortTitle: Current branch name
-type: tip
 language: git
 tags: [branch]
 cover: cherry-trees

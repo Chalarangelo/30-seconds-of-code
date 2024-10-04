@@ -1,7 +1,6 @@
 ---
 title: Animated CSS loaders
 shortTitle: Animated loaders
-type: story
 language: css
 tags: [animation]
 cover: digital-nomad-12

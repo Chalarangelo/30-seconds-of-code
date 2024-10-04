@@ -1,7 +1,6 @@
 ---
 title: Convert a string to a boolean
 shortTitle: String to boolean
-type: tip
 language: javascript
 tags: [string,boolean,type]
 cover: two-cities

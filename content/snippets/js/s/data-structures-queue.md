@@ -1,7 +1,6 @@
 ---
 title: JavaScript Data Structures - Queue
 shortTitle: Queue
-type: story
 language: javascript
 tags: [class]
 cover: purple-flower-macro-2

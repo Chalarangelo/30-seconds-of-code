@@ -1,6 +1,5 @@
 ---
 title: Flexbox Cheat Sheet
-type: cheatsheet
 language: css
 tags: [layout,flexbox,cheatsheet]
 cover: frames

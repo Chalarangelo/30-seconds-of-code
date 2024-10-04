@@ -1,7 +1,6 @@
 ---
 title: Mask a JavaScript value
 shortTitle: Mask value
-type: tip
 language: javascript
 tags: [string]
 cover: rocky-beach-3

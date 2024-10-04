@@ -1,7 +1,6 @@
 ---
 title: How can I save a JSON object to a file using JavaScript?
 shortTitle: JSON to file
-type: question
 language: javascript
 tags: [node, browser]
 cover: travel-mug-3

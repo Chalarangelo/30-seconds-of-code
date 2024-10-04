@@ -1,7 +1,6 @@
 ---
 title: How do I empty an array in JavaScript?
 shortTitle: Empty an array
-type: question
 language: javascript
 tags: [array]
 cover: coconuts

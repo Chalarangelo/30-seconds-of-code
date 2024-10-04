@@ -1,7 +1,6 @@
 ---
 title: How can I convert the data from an HTML form to a JavaScript object?
 shortTitle: Form to object
-type: question
 language: javascript
 tags: [browser,object]
 cover: down-the-stream

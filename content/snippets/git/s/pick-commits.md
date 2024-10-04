@@ -1,7 +1,6 @@
 ---
 title: Pick changes from one or more Git commits
 shortTitle: Pick commits
-type: tip
 language: git
 tags: [commit,branch]
 cover: sunflowers

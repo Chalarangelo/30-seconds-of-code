@@ -1,7 +1,6 @@
 ---
 title: Avoid using bare except in Python
 shortTitle: Bare except best practices
-type: tip
 language: python
 tags: [error]
 cover: dark-cloud

@@ -1,6 +1,5 @@
 ---
 title: Resource Preloading Cheat Sheet
-type: cheatsheet
 language: html
 tags: [metadata,cheatsheet]
 cover: folded-map

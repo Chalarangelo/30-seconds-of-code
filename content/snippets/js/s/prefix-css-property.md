@@ -1,7 +1,6 @@
 ---
 title: Use JavaScript to prefix a CSS property based on the browser
 shortTitle: Prefix CSS property
-type: story
 language: javascript
 tags: [browser,css]
 cover: cancel-typographer

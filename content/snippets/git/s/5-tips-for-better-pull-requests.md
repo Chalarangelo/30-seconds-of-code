@@ -1,6 +1,5 @@
 ---
 title: 5 tips for better Pull Requests
-type: story
 language: git
 tags: [github,programming,webdev]
 cover: keyboard-tea

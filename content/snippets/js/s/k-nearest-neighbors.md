@@ -1,7 +1,6 @@
 ---
 title: Classify data using the K-nearest neighbors algorithm in JavaScript
 shortTitle: K-nearest neighbors
-type: story
 language: javascript
 tags: [algorithm,array]
 cover: building-blocks

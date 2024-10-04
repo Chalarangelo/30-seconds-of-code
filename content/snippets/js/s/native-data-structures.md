@@ -1,7 +1,6 @@
 ---
 title: Native JavaScript Data Structures
 shortTitle: Native Data Structures
-type: story
 language: javascript
 tags: [array]
 cover: purple-flower-macro-2

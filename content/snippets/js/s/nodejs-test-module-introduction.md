@@ -1,7 +1,6 @@
 ---
 title: Introduction to the Node.js test module
 shortTitle: Node.js test module introduction
-type: story
 language: javascript
 tags: [node,testing]
 cover: contemporary-desk

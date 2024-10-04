@@ -1,7 +1,6 @@
 ---
 title: How does Git's fast-forward mode work?
 shortTitle: Fast-forward merge
-type: question
 language: git
 tags: [branch]
 cover: boats

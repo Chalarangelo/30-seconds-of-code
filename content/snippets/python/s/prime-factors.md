@@ -1,6 +1,5 @@
 ---
 title: Prime factors of number
-type: tip
 language: python
 tags: [math,algorithm]
 cover: river-flow

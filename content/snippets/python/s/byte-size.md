@@ -1,7 +1,6 @@
 ---
 title: Byte size of a Python string
 shortTitle: Byte size
-type: tip
 language: python
 tags: [string]
 cover: river-house-lights

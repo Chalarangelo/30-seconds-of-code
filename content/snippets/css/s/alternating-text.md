@@ -1,6 +1,5 @@
 ---
 title: Alternating text animations
-type: tip
 language: css
 tags: [animation]
 cover: italian-horizon

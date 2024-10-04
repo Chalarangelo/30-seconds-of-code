@@ -1,6 +1,5 @@
 ---
 title: Perfect nested border radius in CSS
-type: tip
 language: css
 tags: [visual]
 cover: rocky-beach-waves

@@ -1,7 +1,6 @@
 ---
 title: Remove elements from a JavaScript array without mutating it
 shortTitle: Remove elements from array
-type: story
 language: javascript
 tags: [array]
 cover: chill-surfing

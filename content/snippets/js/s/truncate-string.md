@@ -1,7 +1,6 @@
 ---
 title: How can I truncate a string to a specified length using JavaScript?
 shortTitle: Truncate string
-type: question
 language: javascript
 tags: [string]
 cover: reflection-on-lake

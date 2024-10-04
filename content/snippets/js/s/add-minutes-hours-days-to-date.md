@@ -1,7 +1,6 @@
 ---
 title: How can I add minutes, hours or days to a JavaScript date?
 shortTitle: Add minutes, hours or days to date
-type: story
 language: javascript
 tags: [date]
 cover: orange-coffee-4

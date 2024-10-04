@@ -1,7 +1,6 @@
 ---
 title: Get a nested object property by key or path in JavaScript
 shortTitle: Get nested object property
-type: story
 language: javascript
 tags: [object,regexp,recursion]
 cover: campfire

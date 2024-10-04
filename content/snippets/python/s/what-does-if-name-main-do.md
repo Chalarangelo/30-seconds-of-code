@@ -1,7 +1,6 @@
 ---
 title: What does if __name__ == "__main__" do in Python?
 shortTitle: Name equals main
-type: story
 language: python
 tags: [function]
 cover: stairs-from-below

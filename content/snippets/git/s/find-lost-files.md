@@ -1,7 +1,6 @@
 ---
 title: Find lost files using Git
 shortTitle: Find lost files
-type: tip
 language: git
 tags: [repository]
 cover: hard-disk

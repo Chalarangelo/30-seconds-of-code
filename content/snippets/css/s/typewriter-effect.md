@@ -1,6 +1,5 @@
 ---
 title: Typewriter effect
-type: tip
 language: css
 tags: [animation]
 cover: italian-horizon

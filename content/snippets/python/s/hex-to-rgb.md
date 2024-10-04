@@ -1,6 +1,5 @@
 ---
 title: Convert between hex and RGB
-type: story
 language: python
 tags: [string,math]
 cover: sleepy-cat

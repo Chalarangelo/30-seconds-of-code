@@ -1,7 +1,6 @@
 ---
 title: Force a React component to re-render
 shortTitle: useUpdate hook
-type: tip
 language: react
 tags: [hooks,reducer]
 cover: lavender-shelf

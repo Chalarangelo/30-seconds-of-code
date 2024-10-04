@@ -1,7 +1,6 @@
 ---
 title: Function composition in JavaScript
 shortTitle: Function composition
-type: story
 language: javascript
 tags: [function]
 cover: digital-nomad-16

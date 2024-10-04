@@ -1,7 +1,6 @@
 ---
 title: Create a new Git repository
 shortTitle: Create repository
-type: tip
 language: git
 tags: [repository]
 cover: do-more-computer

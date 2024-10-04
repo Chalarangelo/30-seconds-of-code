@@ -1,7 +1,6 @@
 ---
 title: How can I implement React's lifecycle methods using hooks?
 shortTitle: Lifecycle hooks
-type: question
 language: react
 tags: [hooks,effect]
 cover: green-cabin-cow

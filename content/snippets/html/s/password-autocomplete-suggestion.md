@@ -1,7 +1,6 @@
 ---
 title: Add autocomplete to an HTML password field
 shortTitle: Password field autocomplete
-type: tip
 language: html
 tags: [form]
 cover: padlocks

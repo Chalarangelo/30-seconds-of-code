@@ -1,7 +1,6 @@
 ---
 title: Combine 2 JavaScript object arrays based on a key
 shortTitle: Combine object arrays
-type: tip
 language: javascript
 tags: [array,object]
 cover: digital-nomad-6

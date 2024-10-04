@@ -1,7 +1,6 @@
 ---
 title: JavaScript Logical Operations
 shortTitle: Logical Operations
-type: story
 language: javascript
 tags: [math,logic,function]
 cover: chess-pawns

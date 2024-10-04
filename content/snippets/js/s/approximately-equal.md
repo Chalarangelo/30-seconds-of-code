@@ -1,7 +1,6 @@
 ---
 title: Check if two numbers are approximately equal in JavaScript
 shortTitle: Approximate number equality
-type: tip
 language: javascript
 tags: [math]
 cover: female-hiker

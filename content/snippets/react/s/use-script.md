@@ -1,7 +1,6 @@
 ---
 title: React useScript hook
 shortTitle: useScript hook
-type: tip
 language: react
 tags: [hooks,effect,state,event]
 cover: travel-mug-3

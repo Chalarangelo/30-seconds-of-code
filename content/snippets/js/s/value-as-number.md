@@ -1,7 +1,6 @@
 ---
 title: You can get the value of an input element as a number
 shortTitle: Input element value as number
-type: tip
 language: javascript
 tags: [browser,input]
 cover: mac-and-coffee

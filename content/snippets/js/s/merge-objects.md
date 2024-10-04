@@ -1,7 +1,6 @@
 ---
 title: Merge two or more JavaScript objects
 shortTitle: Merge objects
-type: story
 language: javascript
 tags: [object,array]
 cover: guitar-living-room

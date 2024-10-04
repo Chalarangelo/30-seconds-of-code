@@ -1,7 +1,6 @@
 ---
 title: Swapcase a JavaScript string
 shortTitle: Swapcase string
-type: tip
 language: javascript
 tags: [string]
 cover: mountain-lake-2

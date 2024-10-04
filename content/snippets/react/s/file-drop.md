@@ -1,6 +1,5 @@
 ---
 title: File drag and drop area
-type: tip
 language: react
 tags: [components,input,state,effect,event]
 cover: man-red-sunset

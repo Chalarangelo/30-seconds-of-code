@@ -1,7 +1,6 @@
 ---
 title: How do I compare two dates in JavaScript?
 shortTitle: Date comparison
-type: question
 language: javascript
 tags: [date,comparison]
 cover: pineapple-at-work

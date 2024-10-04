@@ -1,7 +1,6 @@
 ---
 title: Normalize line endings in a JavaScript string
 shortTitle: Normalize line endings
-type: tip
 language: javascript
 tags: [string,regexp]
 cover: red-light

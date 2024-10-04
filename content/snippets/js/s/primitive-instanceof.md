@@ -1,7 +1,6 @@
 ---
 title: Is there a way to use instanceof for primitive JavaScript values?
 shortTitle: Using instanceof for primitive values
-type: question
 language: javascript
 tags: [type]
 cover: wooden-bowl

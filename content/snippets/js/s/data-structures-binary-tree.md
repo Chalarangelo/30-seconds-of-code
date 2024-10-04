@@ -1,7 +1,6 @@
 ---
 title: JavaScript Data Structures - Binary Tree
 shortTitle: Binary Tree
-type: story
 language: javascript
 tags: [class]
 cover: purple-flower-macro-3

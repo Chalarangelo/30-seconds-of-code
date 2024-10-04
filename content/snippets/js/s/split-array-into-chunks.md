@@ -1,7 +1,6 @@
 ---
 title: Split a JavaScript array into chunks
 shortTitle: Split array into chunks
-type: story
 language: javascript
 tags: [array,function,generator]
 cover: filter-coffee-pot

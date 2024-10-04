@@ -1,7 +1,6 @@
 ---
 title: Generate a random hex color code in JavaScript
 shortTitle: Random hex color code
-type: tip
 language: javascript
 tags: [math,random]
 cover: industrial-tokyo

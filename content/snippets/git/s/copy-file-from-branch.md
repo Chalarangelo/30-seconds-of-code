@@ -1,7 +1,6 @@
 ---
 title: How can I copy a file from another Git branch?
 shortTitle: Copy file from another branch
-type: question
 language: git
 tags: [branch]
 cover: sea-view-2

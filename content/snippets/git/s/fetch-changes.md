@@ -1,7 +1,6 @@
 ---
 title: Fetch latest Git changes from the remote repository
 shortTitle: Fetch latest changes
-type: tip
 language: git
 tags: [repository]
 cover: playing-fetch

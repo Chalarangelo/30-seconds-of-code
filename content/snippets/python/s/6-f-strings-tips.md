@@ -1,6 +1,5 @@
 ---
 title: 6 Python f-strings tips and tricks
-type: story
 language: python
 tags: [string]
 cover: sea-view

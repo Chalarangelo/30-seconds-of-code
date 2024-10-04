@@ -1,7 +1,6 @@
 ---
 title: How can I create a custom responsive favicon for dark mode?
 shortTitle: Responsive dark mode favicon
-type: question
 language: css
 tags: [visual]
 cover: dark-mode

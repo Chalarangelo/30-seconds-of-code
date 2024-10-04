@@ -1,7 +1,6 @@
 ---
 title: Create shapes using CSS
 shortTitle: Shapes
-type: cheatsheet
 language: css
 tags: [visual,cheatsheet]
 cover: oven-paddle

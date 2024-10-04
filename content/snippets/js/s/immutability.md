@@ -1,7 +1,6 @@
 ---
 title: Immutability in functional programming
 shortTitle: Immutability
-type: tip
 language: javascript
 tags: [webdev]
 cover: stars-n-snow

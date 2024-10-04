@@ -1,7 +1,6 @@
 ---
 title: Show or hide HTML elements with JavaScript
 shortTitle: Show or hide HTML elements
-type: story
 language: javascript
 tags: [browser,css]
 cover: picking-berries

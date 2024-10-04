@@ -1,7 +1,6 @@
 ---
 title: How can I implement a singleton in JavaScript?
 shortTitle: Singleton implementation
-type: question
 language: javascript
 tags: [object,proxy,pattern]
 cover: obelisk

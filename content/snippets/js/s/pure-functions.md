@@ -1,7 +1,6 @@
 ---
 title: What is a pure function?
 shortTitle: Pure function introduction
-type: question
 language: javascript
 tags: [function]
 cover: dark-leaves

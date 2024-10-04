@@ -1,7 +1,6 @@
 ---
 title: How can I check if a string is empty in Python?
 shortTitle: String is empty
-type: question
 language: python
 tags: [string]
 cover: tea-laptop-table

@@ -1,7 +1,6 @@
 ---
 title: Create a textarea React component with word or character limit
 shortTitle: Limited word or character textarea
-type: story
 language: react
 tags: [components,input,state,callback,event]
 cover: flower-portrait-2

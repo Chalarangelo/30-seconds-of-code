@@ -1,7 +1,6 @@
 ---
 title: Discard uncommitted or untracked changes in Git
 shortTitle: Discard changes
-type: story
 language: git
 tags: [branch]
 cover: cold-mountains

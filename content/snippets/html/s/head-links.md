@@ -1,7 +1,6 @@
 ---
 title: Recommended HTML head links
 shortTitle: HTML head links template
-type: story
 language: html
 tags: [metadata,head]
 cover: boutique-home-office-4

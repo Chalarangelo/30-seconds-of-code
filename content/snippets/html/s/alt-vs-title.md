@@ -1,7 +1,6 @@
 ---
 title: What is the difference between alt and title?
 shortTitle: Difference between alt and title
-type: question
 language: html
 tags: [image]
 cover: stars-n-snow

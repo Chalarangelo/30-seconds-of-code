@@ -1,7 +1,6 @@
 ---
 title: Are JavaScript closures inherently evil?
 shortTitle: Closures and hidden state
-type: story
 language: javascript
 tags: [function,closure]
 cover: silver-flat-screen

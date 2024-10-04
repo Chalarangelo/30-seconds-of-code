@@ -1,6 +1,5 @@
 ---
 title: CSS Reset
-type: story
 language: css
 tags: [visual]
 cover: bridge-over-road

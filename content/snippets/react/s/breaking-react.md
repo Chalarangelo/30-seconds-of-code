@@ -1,6 +1,5 @@
 ---
 title: Breaking React - a common pattern to avoid
-type: story
 language: react
 tags: [debugging]
 cover: broken-screen

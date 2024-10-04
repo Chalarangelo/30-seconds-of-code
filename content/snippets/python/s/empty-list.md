@@ -1,7 +1,6 @@
 ---
 title: How can I check if a Python list is empty?
 shortTitle: Empty list
-type: question
 language: python
 tags: [list]
 cover: salad-2

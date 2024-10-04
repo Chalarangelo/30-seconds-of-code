@@ -1,7 +1,6 @@
 ---
 title: How can I get the currently selected text in the browser?
 shortTitle: Get selected text
-type: question
 language: javascript
 tags: [browser]
 cover: white-tablet-2

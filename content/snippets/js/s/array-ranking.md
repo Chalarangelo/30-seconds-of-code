@@ -1,7 +1,6 @@
 ---
 title: Calculate the ranking of a JavaScript array
 shortTitle: Array ranking
-type: tip
 language: javascript
 tags: [array,math]
 cover: eagle

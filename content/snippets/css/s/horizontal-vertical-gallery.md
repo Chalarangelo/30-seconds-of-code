@@ -1,7 +1,6 @@
 ---
 title: Image gallery with horizontal or vertical scroll
 shortTitle: Image gallery
-type: story
 language: css
 tags: [visual,interactivity]
 cover: flower-portrait-5

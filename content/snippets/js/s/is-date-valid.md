@@ -1,7 +1,6 @@
 ---
 title: Check if a value is a valid JavaScript date
 shortTitle: Check if date is valid
-type: tip
 language: javascript
 tags: [date]
 cover: cave-explorer

@@ -1,7 +1,6 @@
 ---
 title: What is the difference between JavaScript's for...in, for...of and forEach?
 shortTitle: JavaScript iteration methods comparison
-type: question
 language: javascript
 tags: [array,object,iterator]
 cover: lake-loop

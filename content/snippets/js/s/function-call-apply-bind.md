@@ -1,7 +1,6 @@
 ---
 title: JavaScript function methods - call(), apply() and bind()
 shortTitle: Function methods - call, apply, bind
-type: story
 language: javascript
 tags: [function]
 cover: canoe

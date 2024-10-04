@@ -1,6 +1,5 @@
 ---
 title: Toggle component
-type: tip
 language: react
 tags: [components,state]
 cover: cows

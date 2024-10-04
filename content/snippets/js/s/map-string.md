@@ -1,7 +1,6 @@
 ---
 title: Apply a mapping function to each character in a JavaScript string
 shortTitle: Map string
-type: tip
 language: javascript
 tags: [string]
 cover: budapest-palace

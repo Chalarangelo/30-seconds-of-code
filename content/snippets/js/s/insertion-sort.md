@@ -1,6 +1,5 @@
 ---
 title: Insertion sort
-type: story
 language: javascript
 tags: [algorithm,array]
 cover: white-tablet-2

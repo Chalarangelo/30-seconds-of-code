@@ -1,7 +1,6 @@
 ---
 title: What is the difference between encodeURI() and encodeURIComponent() in JavaScript?
 shortTitle: encodeURI() vs encodeURIComponent()
-type: question
 language: javascript
 tags: [browser]
 cover: laptop-view

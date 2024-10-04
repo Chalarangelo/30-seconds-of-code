@@ -1,7 +1,6 @@
 ---
 title: Check if a JavaScript array has only one or many matches
 shortTitle: Array has only one or many matches
-type: story
 language: javascript
 tags: [array]
 cover: interior-10

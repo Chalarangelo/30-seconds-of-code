@@ -1,7 +1,6 @@
 ---
 title: How can I convert a Map to a JavaScript object and vice versa?
 shortTitle: Map to object
-type: question
 language: javascript
 tags: [object]
 cover: yellow-shoes

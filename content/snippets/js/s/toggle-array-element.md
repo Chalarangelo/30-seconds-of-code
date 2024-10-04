@@ -1,7 +1,6 @@
 ---
 title: Toggle element in a JavaScript array
 shortTitle: Toggle array element
-type: story
 language: javascript
 tags: [array]
 cover: digital-nomad-7

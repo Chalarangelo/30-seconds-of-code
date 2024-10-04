@@ -1,7 +1,6 @@
 ---
 title: How can I clone an object in JavaScript?
 shortTitle: Deep clone object
-type: question
 language: javascript
 tags: [object,recursion]
 cover: pagodas

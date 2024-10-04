@@ -1,7 +1,6 @@
 ---
 title: Convert a NodeList to a JavaScript array
 shortTitle: NodeList to array
-type: tip
 language: javascript
 tags: [browser,array]
 cover: compass-2

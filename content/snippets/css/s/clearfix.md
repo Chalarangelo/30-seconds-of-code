@@ -1,7 +1,6 @@
 ---
 title: How to clear floats with a clearfix
 shortTitle: Clearfix
-type: tip
 language: css
 tags: [layout]
 cover: memories-of-pineapple-3

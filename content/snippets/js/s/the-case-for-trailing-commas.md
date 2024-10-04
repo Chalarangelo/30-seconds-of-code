@@ -1,7 +1,6 @@
 ---
 title: The case for trailing commas in JavaScript
 shortTitle: Trailing commas in JavaScript
-type: story
 language: javascript
 tags: [webdev]
 cover: contemporary-desk

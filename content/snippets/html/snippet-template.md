@@ -1,7 +1,6 @@
 ---
 title: My amazing story
 shortTitle: Amazing story
-type: story
 language: html
 tags: [link]
 cover: image

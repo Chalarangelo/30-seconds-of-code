@@ -1,7 +1,6 @@
 ---
 title: Convert decimal number to hexadecimal
 shortTitle: Decimal to hexadecimal
-type: tip
 language: javascript
 tags: [math]
 cover: waves-from-above

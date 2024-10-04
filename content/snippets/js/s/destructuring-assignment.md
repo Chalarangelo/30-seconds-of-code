@@ -1,7 +1,6 @@
 ---
 title: Where and how can I use the destructuring assignment syntax in JavaScript?
 shortTitle: Destructuring assignment introduction
-type: question
 language: javascript
 tags: [array,object]
 cover: building-blocks

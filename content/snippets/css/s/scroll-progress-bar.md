@@ -1,6 +1,5 @@
 ---
 title: Scroll progress bar
-type: tip
 language: css
 tags: [animation,visual]
 cover: coworking-space

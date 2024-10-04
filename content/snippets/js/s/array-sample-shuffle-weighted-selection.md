@@ -1,7 +1,6 @@
 ---
 title: Sampling, shuffling and weighted selection in JavaScript arrays
 shortTitle: Sample, shuffle and weighted selection
-type: story
 language: javascript
 tags: [array,random]
 cover: blue-bench

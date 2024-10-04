@@ -1,7 +1,6 @@
 ---
 title: Filter a JavaScript object's properties by keys or values
 shortTitle: Filter object keys or values
-type: story
 language: javascript
 tags: [object]
 cover: leafy-screens

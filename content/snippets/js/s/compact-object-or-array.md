@@ -1,7 +1,6 @@
 ---
 title: Compact an array or object in JavaScript
 shortTitle: Compact array or object
-type: story
 language: javascript
 tags: [array,object,recursion]
 cover: basket-paper

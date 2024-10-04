@@ -1,7 +1,6 @@
 ---
 title: How do I use JavaScript to modify the URL without reloading the page?
 shortTitle: Modify URL without reloading
-type: question
 language: javascript
 tags: [browser]
 cover: compass

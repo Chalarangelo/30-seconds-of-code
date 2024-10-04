@@ -1,7 +1,6 @@
 ---
 title: How can I check if a number is even or odd using JavaScript?
 shortTitle: Check if a number is even or odd
-type: question
 language: javascript
 tags: [math]
 cover: by-the-lighthouse

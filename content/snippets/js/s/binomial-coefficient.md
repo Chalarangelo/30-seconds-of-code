@@ -1,7 +1,6 @@
 ---
 title: How can I calculate the binomial coefficient in JavaScript?
 shortTitle: Binomial coefficient
-type: question
 language: javascript
 tags: [math,algorithm]
 cover: blue-red-mountain

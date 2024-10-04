@@ -1,7 +1,6 @@
 ---
 title: How are HTMLElement.innerText and Node.textContent different?
 shortTitle: Differences between innerText and textContent
-type: question
 language: javascript
 tags: [browser]
 cover: dark-city

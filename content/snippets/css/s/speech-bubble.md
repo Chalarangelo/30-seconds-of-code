@@ -1,7 +1,6 @@
 ---
 title: Speech bubbles with CSS
 shortTitle: Speech bubbles
-type: tip
 language: css
 tags: [visual]
 cover: greek-coffee

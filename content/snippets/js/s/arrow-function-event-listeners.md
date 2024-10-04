@@ -1,7 +1,6 @@
 ---
 title: Can I use an arrow function as the callback for an event listener in JavaScript?
 shortTitle: Arrow function as callback for event listener
-type: question
 language: javascript
 tags: [browser,event,function]
 cover: coffee-float

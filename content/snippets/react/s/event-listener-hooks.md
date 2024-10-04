@@ -1,7 +1,6 @@
 ---
 title: Listening for events with React hooks
 shortTitle: Event listener hooks
-type: story
 language: react
 tags: [hooks,state,effect,event]
 cover: beach-riders

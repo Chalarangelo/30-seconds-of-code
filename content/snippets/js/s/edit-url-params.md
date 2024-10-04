@@ -1,7 +1,6 @@
 ---
 title: Edit URL Parameters in JavaScript
 shortTitle: Edit URL Parameters
-type: tip
 language: javascript
 tags: [string]
 cover: sofia-tram

@@ -1,7 +1,6 @@
 ---
 title: How can I extend a 3-digit color code to a 6-digit color code in JavaScript?
 shortTitle: Extend 3-digit color code
-type: tip
 language: javascript
 tags: [string]
 cover: laptop-plants

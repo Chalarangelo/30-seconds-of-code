@@ -1,7 +1,6 @@
 ---
 title: Negative index in JavaScript array
 shortTitle: Negative index array proxy
-type: story
 language: javascript
 tags: [array,proxy]
 cover: budapest-palace

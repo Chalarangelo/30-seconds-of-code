@@ -1,7 +1,6 @@
 ---
 title: Rebase onto another Git branch
 shortTitle: Rebase onto another branch
-type: tip
 language: git
 tags: [branch]
 cover: sliced-fruits

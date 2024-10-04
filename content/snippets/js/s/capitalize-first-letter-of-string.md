@@ -1,7 +1,6 @@
 ---
 title: Capitalize the first letter of a JavaScript string
 shortTitle: Capitalize string
-type: tip
 language: javascript
 tags: [string]
 cover: digital-nomad-3

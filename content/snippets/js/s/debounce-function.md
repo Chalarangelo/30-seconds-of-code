@@ -1,7 +1,6 @@
 ---
 title: Debounce a JavaScript function
 shortTitle: Debounce function
-type: tip
 language: javascript
 tags: [function]
 cover: solitude-beach

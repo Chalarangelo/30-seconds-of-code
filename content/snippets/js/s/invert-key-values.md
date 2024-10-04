@@ -1,7 +1,6 @@
 ---
 title: Invert the key-value pairs of a JavaScript object
 shortTitle: Invert key-values
-type: story
 language: javascript
 tags: [object]
 cover: pineapple-on-green

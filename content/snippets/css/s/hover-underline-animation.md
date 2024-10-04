@@ -1,6 +1,5 @@
 ---
 title: Hover underline animation
-type: tip
 language: css
 tags: [animation]
 cover: coffee-phone-tray-2

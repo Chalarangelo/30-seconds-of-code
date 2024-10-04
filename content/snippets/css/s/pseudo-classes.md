@@ -1,7 +1,6 @@
 ---
 title: What are CSS pseudo-classes?
 shortTitle: CSS pseudo-classes
-type: question
 language: css
 tags: [webdev]
 cover: orange-flower

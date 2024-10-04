@@ -1,7 +1,6 @@
 ---
 title: Check if a JavaScript array includes any or all values in another array
 shortTitle: Array includes any or all values
-type: story
 language: javascript
 tags: [array]
 cover: tomatoes

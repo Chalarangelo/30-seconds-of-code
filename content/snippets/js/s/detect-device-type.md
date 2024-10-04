@@ -1,7 +1,6 @@
 ---
 title: How can I detect the device type with JavaScript?
 shortTitle: Detect device type
-type: question
 language: javascript
 tags: [browser,regexp]
 cover: clutter-2

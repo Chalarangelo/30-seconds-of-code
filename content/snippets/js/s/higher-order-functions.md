@@ -1,7 +1,6 @@
 ---
 title: Understanding higher-order functions in JavaScript
 shortTitle: Higher-order functions
-type: story
 language: javascript
 tags: [function]
 cover: rock-climbing

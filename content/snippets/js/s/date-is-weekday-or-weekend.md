@@ -1,7 +1,6 @@
 ---
 title: Determine if a JavaScript date is a weekday or weekend
 shortTitle: Date is weekday or weekend
-type: tip
 language: javascript
 tags: [date]
 cover: tropical-bike

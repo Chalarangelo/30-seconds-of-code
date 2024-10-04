@@ -1,7 +1,6 @@
 ---
 title: Define a system font stack in CSS
 shortTitle: System font stack
-type: story
 language: css
 tags: [visual]
 cover: lavender-shelf

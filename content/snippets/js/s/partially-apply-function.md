@@ -1,7 +1,6 @@
 ---
 title: How can I partially apply a function in JavaScript?
 shortTitle: Partial function application
-type: question
 language: javascript
 tags: [function]
 cover: rocky-beach

@@ -1,7 +1,6 @@
 ---
 title: What is the difference between Array.prototype.map() and Array.prototype.forEach()?
 shortTitle: Array.prototype.map() vs Array.prototype.forEach()
-type: question
 language: javascript
 tags: [array]
 cover: fort-lamp

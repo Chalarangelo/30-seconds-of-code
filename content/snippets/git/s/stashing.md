@@ -1,7 +1,6 @@
 ---
 title: A guide to Git stashing
 shortTitle: Git stashing
-type: story
 language: git
 tags: [repository,stash]
 cover: purple-leaves

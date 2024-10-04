@@ -1,7 +1,6 @@
 ---
 title: Read a file and return an array of lines
 shortTitle: Read file lines
-type: story
 language: javascript
 tags: [node]
 cover: solitude-beach

@@ -1,7 +1,6 @@
 ---
 title: The perfect duration for CSS transitions
 shortTitle: CSS transition duration
-type: tip
 language: css
 tags: [interactivity,visual,animation]
 cover: perfect-timing

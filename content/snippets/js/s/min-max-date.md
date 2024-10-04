@@ -1,7 +1,6 @@
 ---
 title: Find the minimum or maximum date using JavaScript
 shortTitle: Min or max date
-type: tip
 language: javascript
 tags: [date]
 cover: interior-2

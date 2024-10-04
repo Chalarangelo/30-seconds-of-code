@@ -1,7 +1,6 @@
 ---
 title: Cartesian product of two JavaScript arrays
 shortTitle: Array cross product
-type: tip
 language: javascript
 tags: [math,array]
 cover: cup-of-orange

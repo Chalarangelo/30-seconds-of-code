@@ -1,7 +1,6 @@
 ---
 title: Start your ordered HTML lists at a different number
 shortTitle: Ordered lists starting number
-type: tip
 language: html
 tags: [content]
 cover: neon-desk-1

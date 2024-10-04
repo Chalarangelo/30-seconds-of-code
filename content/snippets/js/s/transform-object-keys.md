@@ -1,7 +1,6 @@
 ---
 title: Transform the keys of a JavaScript object
 shortTitle: Transform object keys
-type: story
 language: javascript
 tags: [object, recursion]
 cover: symmetry-cloudy-mountain

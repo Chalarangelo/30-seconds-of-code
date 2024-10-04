@@ -1,6 +1,5 @@
 ---
 title: Hamming distance
-type: tip
 language: python
 tags: [math]
 cover: tulips-and-reeds

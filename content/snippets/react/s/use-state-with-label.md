@@ -1,7 +1,6 @@
 ---
 title: Label your useState values in React developer tools
 shortTitle: Labelling useState values
-type: tip
 language: react
 tags: [hooks]
 cover: bunny-poster

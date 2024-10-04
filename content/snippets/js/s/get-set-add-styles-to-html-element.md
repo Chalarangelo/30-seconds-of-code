@@ -1,7 +1,6 @@
 ---
 title: Get, set or add styles to an HTML element with JavaScript
 shortTitle: Get, set or add styles to an HTML element
-type: story
 language: javascript
 tags: [browser,css]
 cover: frog-blue-flower

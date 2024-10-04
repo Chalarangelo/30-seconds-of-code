@@ -1,7 +1,6 @@
 ---
 title: Calculate the nth root of a number in JavaScript
 shortTitle: Nth root of number
-type: tip
 language: javascript
 tags: [math]
 cover: tree-roots

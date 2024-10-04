@@ -1,7 +1,6 @@
 ---
 title: Remove matching elements from a JavaScript array
 shortTitle: Remove matching elements from array
-type: story
 language: javascript
 tags: [array]
 cover: highlands

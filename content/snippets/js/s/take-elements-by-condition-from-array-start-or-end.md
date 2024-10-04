@@ -1,7 +1,6 @@
 ---
 title: Get elements from the start or end of a JavaScript array by condition
 shortTitle: Conditionally get array elements from start or end
-type: story
 language: javascript
 tags: [array]
 cover: sunset-textured-beach

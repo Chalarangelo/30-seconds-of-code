@@ -1,7 +1,6 @@
 ---
 title: How can I calculate the greatest common divisor & least common multiple in JavaScript?
 shortTitle: Greatest common divisor & least common multiple
-type: question
 language: javascript
 tags: [math,algorithm,recursion]
 cover: migrating-birds

@@ -1,7 +1,6 @@
 ---
 title: Escape a regular expression in JavaScript
 shortTitle: Escape RegExp
-type: tip
 language: javascript
 tags: [string,regexp]
 cover: frog-blue-flower

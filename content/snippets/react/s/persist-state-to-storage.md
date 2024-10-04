@@ -1,7 +1,6 @@
 ---
 title: Persisting state in React
 shortTitle: State persistence hooks
-type: story
 language: react
 tags: [hooks,state,effect]
 cover: red-berries

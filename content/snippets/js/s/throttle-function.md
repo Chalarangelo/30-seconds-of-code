@@ -1,7 +1,6 @@
 ---
 title: Throttle a JavaScript function
 shortTitle: Throttle function
-type: tip
 language: javascript
 tags: [function]
 cover: beach-overview

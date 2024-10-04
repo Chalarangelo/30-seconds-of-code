@@ -1,7 +1,6 @@
 ---
 title: View differences in Git changes
 shortTitle: View differences in changes
-type: tip
 language: git
 tags: [commit,branch]
 cover: plant-candle

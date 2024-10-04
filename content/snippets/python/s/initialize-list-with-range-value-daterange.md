@@ -1,7 +1,6 @@
 ---
 title: Initialize lists with values, ranges & dates
 shortTitle: Initialize list
-type: story
 language: python
 tags: [list,date]
 cover: succulent-3

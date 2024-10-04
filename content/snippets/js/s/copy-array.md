@@ -1,7 +1,6 @@
 ---
 title: How can I clone an array in JavaScript?
 shortTitle: Clone an array
-type: question
 language: javascript
 tags: [array]
 cover: colorful-plastic

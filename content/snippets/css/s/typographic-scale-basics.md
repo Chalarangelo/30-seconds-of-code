@@ -1,6 +1,5 @@
 ---
 title: Typographic scale basics
-type: story
 language: css
 tags: [webdev,typography]
 cover: typography

@@ -1,6 +1,5 @@
 ---
 title: Countdown timer
-type: tip
 language: react
 tags: [components,state]
 cover: sea-view-2

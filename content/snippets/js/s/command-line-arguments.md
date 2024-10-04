@@ -1,7 +1,6 @@
 ---
 title: Command-line arguments in Node.js
 shortTitle: Command-line arguments
-type: story
 language: javascript
 tags: [node]
 cover: hiking-balance

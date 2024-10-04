@@ -1,6 +1,5 @@
 ---
 title: Stateful checkbox with multiple selection
-type: tip
 language: react
 tags: [components,input,state,array]
 cover: violin

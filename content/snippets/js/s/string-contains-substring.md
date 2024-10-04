@@ -1,7 +1,6 @@
 ---
 title: Check if a string contains a substring in JavaScript
 shortTitle: String contains substring
-type: story
 language: javascript
 tags: [string]
 cover: cave-explorer

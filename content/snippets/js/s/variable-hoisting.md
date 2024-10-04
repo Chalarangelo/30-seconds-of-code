@@ -1,7 +1,6 @@
 ---
 title: What is hoisting in JavaScript?
 shortTitle: Hoisting introduction
-type: question
 language: javascript
 tags: [type,variable]
 cover: boat-port

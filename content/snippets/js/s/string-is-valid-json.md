@@ -1,7 +1,6 @@
 ---
 title: Check if a JavaScript string is a valid JSON
 shortTitle: Check if string is valid JSON
-type: tip
 language: javascript
 tags: [type]
 cover: italian-horizon

@@ -1,7 +1,6 @@
 ---
 title: View difference between two Git branches
 shortTitle: Difference between branches
-type: tip
 language: git
 tags: [branch]
 cover: two-doors

@@ -1,7 +1,6 @@
 ---
 title: Find the key of the min or max value in a Python dictionary
 shortTitle: Key of min or max value in a dictionary
-type: story
 language: python
 tags: [dictionary]
 cover: goat-wooden-cottage

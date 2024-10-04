@@ -1,7 +1,6 @@
 ---
 title: Convert a Python string to a slug
 shortTitle: String to slug
-type: tip
 language: python
 tags: [string,regexp]
 cover: sliced-fruits

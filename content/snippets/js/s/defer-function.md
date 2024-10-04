@@ -1,7 +1,6 @@
 ---
 title: Defer a JavaScript function
 shortTitle: Defer function
-type: tip
 language: javascript
 tags: [function]
 cover: shiny-mountains

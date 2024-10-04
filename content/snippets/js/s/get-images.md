@@ -1,7 +1,6 @@
 ---
 title: Use JavaScript to find all the images in an element
 shortTitle: Get all images in element
-type: story
 language: javascript
 tags: [browser]
 cover: portal-timelapse

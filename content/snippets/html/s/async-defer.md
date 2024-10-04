@@ -1,7 +1,6 @@
 ---
 title: What is the difference between async and defer in script loading?
 shortTitle: Async and defer
-type: question
 language: html
 tags: [script,javascript]
 cover: coworking-space

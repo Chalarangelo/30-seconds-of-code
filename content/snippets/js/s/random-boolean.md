@@ -1,7 +1,6 @@
 ---
 title: Generate a random boolean value in JavaScript
 shortTitle: Random boolean
-type: tip
 language: javascript
 tags: [math,random]
 cover: malibu

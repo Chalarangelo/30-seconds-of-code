@@ -1,7 +1,6 @@
 ---
 title: View Git commits that manipulated a specific string
 shortTitle: View commits that manipulated a string
-type: tip
 language: git
 tags: [commit]
 cover: bunny-poster

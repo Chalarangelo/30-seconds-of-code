@@ -1,7 +1,6 @@
 ---
 title: How can I listen for an event only once in JavaScript?
 shortTitle: Execute event handler only once
-type: question
 language: javascript
 tags: [browser,event]
 cover: fruit-feast

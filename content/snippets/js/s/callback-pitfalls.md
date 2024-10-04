@@ -1,7 +1,6 @@
 ---
 title: A cautionary tale about JavaScript callbacks
 shortTitle: Callback pitfalls
-type: story
 language: javascript
 tags: [function]
 cover: rabbit-call

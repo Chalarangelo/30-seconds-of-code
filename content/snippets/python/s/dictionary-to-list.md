@@ -1,7 +1,6 @@
 ---
 title: Convert between lists and dictionaries
 shortTitle: List to dictionary
-type: story
 language: python
 tags: [dictionary,list]
 cover: new-york

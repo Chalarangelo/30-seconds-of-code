@@ -1,7 +1,6 @@
 ---
 title: Using random values with pure functions
 shortTitle: Pure functions & randomness
-type: story
 language: javascript
 tags: [function,random,testing]
 cover: do-more-computer

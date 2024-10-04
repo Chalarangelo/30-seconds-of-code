@@ -1,7 +1,6 @@
 ---
 title: Optimize the local Git repository
 shortTitle: Optimize local repository
-type: tip
 language: git
 tags: [repository]
 cover: automaton

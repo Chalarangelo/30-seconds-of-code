@@ -1,6 +1,5 @@
 ---
 title: Merge sort
-type: story
 language: javascript
 tags: [algorithm,array,recursion]
 cover: balloons-field

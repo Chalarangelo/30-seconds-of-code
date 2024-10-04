@@ -1,7 +1,6 @@
 ---
 title: Make a JavaScript function return a promise
 shortTitle: Promisify function
-type: tip
 language: javascript
 tags: [function,promises]
 cover: nature-screen

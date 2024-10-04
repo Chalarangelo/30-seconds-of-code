@@ -1,7 +1,6 @@
 ---
 title: Word wrap a JavaScrip string
 shortTitle: Word wrap
-type: story
 language: javascript
 tags: [string,regexp]
 cover: white-tablet

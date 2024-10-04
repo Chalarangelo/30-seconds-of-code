@@ -1,7 +1,6 @@
 ---
 title: Case conversion in JavaScript
 shortTitle: Case conversion
-type: story
 language: javascript
 tags: [string,regexp]
 cover: chubby-squirrel

@@ -1,7 +1,6 @@
 ---
 title: What does a JavaScript constructor return?
 shortTitle: Constructor return value
-type: question
 language: javascript
 tags: [function,class,object]
 cover: architectural

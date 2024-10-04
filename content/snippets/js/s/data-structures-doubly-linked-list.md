@@ -1,7 +1,6 @@
 ---
 title: JavaScript Data Structures - Doubly Linked List
 shortTitle: Doubly Linked List
-type: story
 language: javascript
 tags: [class]
 cover: purple-flower-macro-4

@@ -1,7 +1,6 @@
 ---
 title: Can I reload a module in Node.js?
 shortTitle: Reload a module
-type: question
 language: javascript
 tags: [node]
 cover: tea-laptop-table

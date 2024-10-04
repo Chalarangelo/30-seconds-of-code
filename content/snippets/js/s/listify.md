@@ -1,7 +1,6 @@
 ---
 title: Map a JavaScript object to an array
 shortTitle: Map object to array
-type: story
 language: javascript
 tags: [object,array]
 cover: metro-arrival

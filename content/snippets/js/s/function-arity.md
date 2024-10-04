@@ -1,7 +1,6 @@
 ---
 title: JavaScript function arity
 shortTitle: Function arity
-type: story
 language: javascript
 tags: [function]
 cover: radio-monstera

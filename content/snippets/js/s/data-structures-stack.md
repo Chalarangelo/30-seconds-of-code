@@ -1,7 +1,6 @@
 ---
 title: JavaScript Data Structures - Stack
 shortTitle: Stack
-type: story
 language: javascript
 tags: [class]
 cover: purple-flower-macro-1

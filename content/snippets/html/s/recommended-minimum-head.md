@@ -1,7 +1,6 @@
 ---
 title: Recommended minimum HTML head
 shortTitle: HTML head template
-type: story
 language: html
 tags: [metadata,head]
 cover: boutique-home-office-1

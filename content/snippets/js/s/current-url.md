@@ -1,7 +1,6 @@
 ---
 title: How can I get the current URL in JavaScript?
 shortTitle: Current URL
-type: question
 language: javascript
 tags: [browser]
 cover: purple-sunset-waves

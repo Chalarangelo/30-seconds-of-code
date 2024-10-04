@@ -1,7 +1,6 @@
 ---
 title: An approach to testing stateful React components
 shortTitle: Stateful component testing
-type: story
 language: react
 tags: [testing]
 cover: lake-trees

@@ -1,6 +1,5 @@
 ---
 title: The currentColor CSS keyword
-type: tip
 language: css
 tags: [visual]
 cover: picking-berries

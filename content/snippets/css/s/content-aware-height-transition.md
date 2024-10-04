@@ -1,6 +1,5 @@
 ---
 title: Content-aware height transition
-type: tip
 language: css
 tags: [animation]
 cover: washed-ashore

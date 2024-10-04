@@ -1,7 +1,6 @@
 ---
 title: JavaScript Data Structures - Graph
 shortTitle: Graph
-type: story
 language: javascript
 tags: [class]
 cover: purple-flower-macro-1

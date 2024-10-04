@@ -1,7 +1,6 @@
 ---
 title: Optimize dynamically added object properties
 shortTitle: Dynamically added property optimization
-type: tip
 language: javascript
 tags: [object,performance]
 cover: hiking-balance

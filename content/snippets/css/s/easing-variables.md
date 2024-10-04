@@ -1,6 +1,5 @@
 ---
 title: CSS easing variables
-type: tip
 language: css
 tags: [animation]
 cover: curve

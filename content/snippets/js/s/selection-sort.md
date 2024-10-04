@@ -1,6 +1,5 @@
 ---
 title: Selection sort
-type: story
 language: javascript
 tags: [algorithm,array]
 cover: yellow-sofa

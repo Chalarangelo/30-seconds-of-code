@@ -1,7 +1,6 @@
 ---
 title: Transpose a matrix in JavaScript
 shortTitle: Transpose matrix
-type: tip
 language: javascript
 tags: [array]
 cover: camera-zoom

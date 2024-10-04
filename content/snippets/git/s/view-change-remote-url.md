@@ -1,7 +1,6 @@
 ---
 title: View or change the remote URL of a Git repository
 shortTitle: View or change remote URL
-type: story
 language: git
 tags: [repository]
 cover: red-mountain

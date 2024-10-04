@@ -1,7 +1,6 @@
 ---
 title: Introduction to Semantic Versioning (SemVer)
 shortTitle: Semantic Versioning (SemVer) explained
-type: story
 language: javascript
 tags: [node]
 cover: wet-lowland-golden-hour

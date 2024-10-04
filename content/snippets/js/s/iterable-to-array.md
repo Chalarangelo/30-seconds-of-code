@@ -1,7 +1,6 @@
 ---
 title: How do I convert an iterable to an array in JavaScript?
 shortTitle: Iterable to array
-type: question
 language: javascript
 tags: [object,array,string]
 cover: waves

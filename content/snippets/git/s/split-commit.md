@@ -1,7 +1,6 @@
 ---
 title: Split a Git commit into multiple commits
 shortTitle: Split commit
-type: story
 language: git
 tags: [commit,branch]
 cover: interior-16

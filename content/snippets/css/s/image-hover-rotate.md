@@ -1,6 +1,5 @@
 ---
 title: Image rotate on hover
-type: tip
 language: css
 tags: [animation,visual]
 cover: succulent-1

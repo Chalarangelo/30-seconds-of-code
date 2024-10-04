@@ -1,7 +1,6 @@
 ---
 title: 4 JavaScript Array methods you must know
 shortTitle: Useful array methods
-type: story
 language: javascript
 tags: [array,cheatsheet]
 cover: arrays

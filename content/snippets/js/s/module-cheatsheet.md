@@ -1,6 +1,5 @@
 ---
 title: JavaScript modules Cheat Sheet
-type: cheatsheet
 language: javascript
 tags: [cheatsheet]
 cover: mountain-lake-2

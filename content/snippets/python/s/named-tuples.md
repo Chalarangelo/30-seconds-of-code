@@ -1,7 +1,6 @@
 ---
 title: What are named tuples in Python?
 shortTitle: Named Tuples
-type: question
 language: python
 tags: [list,dictionary]
 cover: mask-quiet

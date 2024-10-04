@@ -1,7 +1,6 @@
 ---
 title: How to calculate date difference in JavaScript
 shortTitle: Date difference
-type: story
 language: javascript
 tags: [date]
 cover: laptop-journey

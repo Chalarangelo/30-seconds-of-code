@@ -1,7 +1,6 @@
 ---
 title: 3 ways to use the JavaScript spread operator with arrays
 shortTitle: Array tricks using the spread operator
-type: story
 language: javascript
 tags: [array]
 cover: succulent-crowd

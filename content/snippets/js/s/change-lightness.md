@@ -1,7 +1,6 @@
 ---
 title: Change color lightness using JavaScript
 shortTitle: Change color lightness
-type: tip
 language: javascript
 tags: [string,regexp]
 cover: aerial-view-port

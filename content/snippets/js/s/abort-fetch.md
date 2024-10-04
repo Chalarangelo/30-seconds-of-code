@@ -1,7 +1,6 @@
 ---
 title: Abort a fetch request in JavaScript
 shortTitle: Abort a fetch request
-type: story
 language: javascript
 tags: [function]
 cover: cancel-typographer

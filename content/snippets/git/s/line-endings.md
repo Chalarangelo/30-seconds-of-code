@@ -1,7 +1,6 @@
 ---
 title: Configure Git's line endings
 shortTitle: Configure line endings
-type: tip
 language: git
 tags: [repository,configuration]
 cover: leaves-read

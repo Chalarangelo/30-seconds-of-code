@@ -1,7 +1,6 @@
 ---
 title: Modeling money, currencies & exchange rates using JavaScript
 shortTitle: Money, currencies & exchange rates
-type: story
 language: javascript
 tags: [math,class]
 cover: money

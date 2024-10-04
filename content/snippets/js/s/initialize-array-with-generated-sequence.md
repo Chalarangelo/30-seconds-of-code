@@ -1,7 +1,6 @@
 ---
 title: Initialize a JavaScript array with a sequence of generated values
 shortTitle: Initialize array with generated sequence
-type: story
 language: javascript
 tags: [array, generator]
 cover: neon-desk-2

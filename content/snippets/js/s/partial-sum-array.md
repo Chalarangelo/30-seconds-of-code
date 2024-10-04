@@ -1,7 +1,6 @@
 ---
 title: Create an array of partial sums in JavaScript
 shortTitle: Partial sum array
-type: tip
 language: javascript
 tags: [array,math]
 cover: people-on-beach

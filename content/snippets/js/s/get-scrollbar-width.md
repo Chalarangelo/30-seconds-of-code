@@ -1,7 +1,6 @@
 ---
 title: Get the width of the scrollbar using JavaScript
 shortTitle: Get scrollbar width
-type: tip
 language: javascript
 tags: [browser]
 cover: violin

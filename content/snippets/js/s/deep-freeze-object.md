@@ -1,7 +1,6 @@
 ---
 title: How can I deep freeze an object in JavaScript?
 shortTitle: Deep freeze object
-type: question
 language: javascript
 tags: [object,recursion]
 cover: frozen-globe

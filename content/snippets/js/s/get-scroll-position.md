@@ -1,7 +1,6 @@
 ---
 title: Get the scroll position of the current page using JavaScript
 shortTitle: Get scroll position
-type: tip
 language: javascript
 tags: [browser]
 cover: tranquil-lake

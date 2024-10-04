@@ -1,7 +1,6 @@
 ---
 title: Vertical offset of an element in the document
 shortTitle: Vertical offset of an element
-type: tip
 language: javascript
 tags: [browser]
 cover: waves-from-above-2

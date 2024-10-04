@@ -1,6 +1,5 @@
 ---
 title: This is a test snippet, in JavaScript
-type: story
 language: javascript
 tags: [link]
 cover: do-more-computer

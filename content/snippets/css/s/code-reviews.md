@@ -1,7 +1,6 @@
 ---
 title: How do you review CSS code in Pull Requests?
 shortTitle: CSS code reviews
-type: story
 language: css
 tags: [webdev]
 cover: green-css

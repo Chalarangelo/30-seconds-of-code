@@ -1,7 +1,6 @@
 ---
 title: Nest linked JavaScript objects
 shortTitle: Nest objects
-type: tip
 language: javascript
 tags: [object,recursion]
 cover: birds

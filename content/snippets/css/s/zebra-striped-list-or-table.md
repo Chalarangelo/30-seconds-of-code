@@ -1,6 +1,5 @@
 ---
 title: Zebra striped list or table
-type: tip
 language: css
 tags: [visual]
 cover: forest-balcony

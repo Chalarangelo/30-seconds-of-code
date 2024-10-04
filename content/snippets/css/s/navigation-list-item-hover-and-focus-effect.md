@@ -1,6 +1,5 @@
 ---
 title: Navigation list item hover & focus effect
-type: tip
 language: css
 tags: [visual]
 cover: cloudy-rock-formation

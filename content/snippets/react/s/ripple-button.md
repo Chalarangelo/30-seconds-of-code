@@ -1,6 +1,5 @@
 ---
 title: Button with ripple effect
-type: story
 language: react
 tags: [components,state,effect]
 cover: mountain-lake-cottage

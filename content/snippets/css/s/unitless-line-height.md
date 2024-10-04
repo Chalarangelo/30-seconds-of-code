@@ -1,7 +1,6 @@
 ---
 title: Why should line-height be unitless in CSS?
 shortTitle: Unitless line height
-type: tip
 language: css
 tags: [layout,visual]
 cover: gold-typewriter

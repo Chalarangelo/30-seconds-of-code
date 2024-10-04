@@ -1,7 +1,6 @@
 ---
 title: How can I add or remove an event listener from multiple elements?
 shortTitle: Add or remove event listener from multiple elements
-type: question
 language: javascript
 tags: [browser,event]
 cover: duck-plants

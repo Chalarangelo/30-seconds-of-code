@@ -1,7 +1,6 @@
 ---
 title: Understanding JavaScript currying
 shortTitle: Currying
-type: story
 language: javascript
 tags: [function,recursion]
 cover: tulips-and-reeds

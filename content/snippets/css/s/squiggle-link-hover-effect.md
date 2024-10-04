@@ -1,6 +1,5 @@
 ---
 title: Squiggle link hover effect
-type: story
 language: css
 tags: [animation,visual]
 cover: dreamy-flowers

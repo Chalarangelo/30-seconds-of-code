@@ -1,7 +1,6 @@
 ---
 title: Create a Git commit
 shortTitle: Create commit
-type: story
 language: git
 tags: [commit]
 cover: cave-explorer

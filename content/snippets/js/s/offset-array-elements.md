@@ -1,7 +1,6 @@
 ---
 title: Offset elements in a JavaScript array
 shortTitle: Offset array elements
-type: tip
 language: javascript
 tags: [array]
 cover: interior-10

@@ -1,6 +1,5 @@
 ---
 title: Input with prefix
-type: tip
 language: css
 tags: [interactivity,visual]
 cover: flower-portrait-4

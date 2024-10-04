@@ -1,7 +1,6 @@
 ---
 title: Validate the properties of a JavaScript object
 shortTitle: Validate object properties
-type: story
 language: javascript
 tags: [object]
 cover: symmetry-cloudy-mountain

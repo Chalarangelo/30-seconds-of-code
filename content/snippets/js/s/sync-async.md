@@ -1,7 +1,6 @@
 ---
 title: What is the difference between synchronous and asynchronous code in JavaScript?
 shortTitle: Synchronous vs asynchronous code
-type: question
 language: javascript
 tags: [function,promises]
 cover: pineapple-on-green

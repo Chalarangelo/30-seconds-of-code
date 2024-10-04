@@ -1,7 +1,6 @@
 ---
 title: Strip HTML tags using JavaScript
 shortTitle: Strip HTML tags
-type: tip
 language: javascript
 tags: [string,regexp]
 cover: coffee-phone-tray-3

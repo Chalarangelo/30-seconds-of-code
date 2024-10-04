@@ -1,7 +1,6 @@
 ---
 title: View all merged Git branches
 shortTitle: View merged branches
-type: tip
 language: git
 tags: [repository,branch]
 cover: cobbled-street

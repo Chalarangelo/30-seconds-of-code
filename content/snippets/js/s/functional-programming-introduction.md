@@ -1,7 +1,6 @@
 ---
 title: An introduction to functional programming
 shortTitle: Functional programming introduction
-type: story
 language: javascript
 tags: [function]
 cover: driftwood

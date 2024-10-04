@@ -1,7 +1,6 @@
 ---
 title: Find the day, week, month, or quarter of the year using JavaScript
 shortTitle: Day, week, month, or quarter of year
-type: story
 language: javascript
 tags: [date]
 cover: godray-computer-mug

@@ -1,7 +1,6 @@
 ---
 title: React useMutationObserver hook
 shortTitle: useMutationObserver hook
-type: tip
 language: react
 tags: [hooks,effect]
 cover: lemon-tea

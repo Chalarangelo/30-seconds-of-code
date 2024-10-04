@@ -1,7 +1,6 @@
 ---
 title: Create a descending list of numbered items in HTML
 shortTitle: Descending list
-type: tip
 language: html
 tags: [content]
 cover: ancient-greek-building

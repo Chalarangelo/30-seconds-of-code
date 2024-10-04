@@ -1,7 +1,6 @@
 ---
 title: Insert HTML string before or after element using JavaScript
 shortTitle: Insert HTML string before or after element
-type: story
 language: javascript
 tags: [browser]
 cover: malibu

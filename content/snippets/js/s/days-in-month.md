@@ -1,7 +1,6 @@
 ---
 title: Find the number of days in a month using JavaScript
 shortTitle: Number of days in month
-type: tip
 language: javascript
 tags: [date]
 cover: laptop-plants-2

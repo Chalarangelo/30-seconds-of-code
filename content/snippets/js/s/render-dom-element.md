@@ -1,7 +1,6 @@
 ---
 title: Render DOM elements with JavaScript
 shortTitle: Render DOM elements
-type: story
 language: javascript
 tags: [browser,recursion]
 cover: standing-stones

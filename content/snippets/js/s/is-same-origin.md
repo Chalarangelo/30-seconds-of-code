@@ -1,7 +1,6 @@
 ---
 title: Check if two URLs are on the same origin
 shortTitle: Same origin URL check
-type: tip
 language: javascript
 tags: [browser]
 cover: leafy-screens

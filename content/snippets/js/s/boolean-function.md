@@ -1,7 +1,6 @@
 ---
 title: Where and how can I use the Boolean function in JavaScript?
 shortTitle: Boolean function use-cases
-type: question
 language: javascript
 tags: [function,type]
 cover: rocky-lake

@@ -1,7 +1,6 @@
 ---
 title: Convert a tilde path to an absolute path in Node.js
 shortTitle: Convert to absolute path
-type: tip
 language: javascript
 tags: [node,string,regexp]
 cover: lighthouse

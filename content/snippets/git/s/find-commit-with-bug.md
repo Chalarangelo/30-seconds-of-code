@@ -1,7 +1,6 @@
 ---
 title: Find the Git commit that introduced a bug
 shortTitle: Find commit with bug
-type: story
 language: git
 tags: [commit,branch]
 cover: pink-flower-tree

@@ -1,7 +1,6 @@
 ---
 title: How can I define an enum in JavaScript?
 shortTitle: Enum implementation
-type: question
 language: javascript
 tags: [object,class,symbol,generator]
 cover: book-chair

@@ -1,7 +1,6 @@
 ---
 title: React useFetch hook
 shortTitle: useFetch hook
-type: tip
 language: react
 tags: [hooks,effect,state]
 cover: coworking-space

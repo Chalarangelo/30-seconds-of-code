@@ -1,6 +1,5 @@
 ---
 title: Animate box shadow on hover
-type: tip
 language: css
 tags: [animation]
 cover: dark-cloud

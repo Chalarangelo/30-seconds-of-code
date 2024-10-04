@@ -1,7 +1,6 @@
 ---
 title: Calculate the byte size of a JavaScript string
 shortTitle: Byte size of string
-type: tip
 language: javascript
 tags: [string]
 cover: mountain-lake-cottage-2

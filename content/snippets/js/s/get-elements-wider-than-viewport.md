@@ -1,7 +1,6 @@
 ---
 title: Get elements wider than the viewport with JavaScript
 shortTitle: Elements wider than viewport
-type: tip
 language: javascript
 tags: [browser]
 cover: case-study

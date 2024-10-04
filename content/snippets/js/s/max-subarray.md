@@ -1,7 +1,6 @@
 ---
 title: Find the maximum subarray of a JavaScript array
 shortTitle: Maximum subarray
-type: tip
 language: javascript
 tags: [algorithm,math,array]
 cover: work-hard-computer

@@ -1,7 +1,6 @@
 ---
 title: Clamp or map a number to a range in JavaScript
 shortTitle: Clamp or map to range
-type: story
 language: javascript
 tags: [math]
 cover: clay-pot-horizon

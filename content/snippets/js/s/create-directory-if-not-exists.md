@@ -1,7 +1,6 @@
 ---
 title: Create a directory if it doesn't exist using Node.js
 shortTitle: Create directory if not exists
-type: story
 language: javascript
 tags: [node]
 cover: misty-mountains

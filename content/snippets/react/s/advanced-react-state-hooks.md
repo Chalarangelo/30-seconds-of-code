@@ -1,6 +1,5 @@
 ---
 title: Advanced React state hooks
-type: story
 language: react
 tags: [hooks,state,effect,callback]
 cover: engine

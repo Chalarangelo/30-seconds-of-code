@@ -1,7 +1,6 @@
 ---
 title: Perform math operations on arrays of numbers in JavaScript
 shortTitle: Math operations on numeric arrays
-type: story
 language: javascript
 tags: [array,math]
 cover: red-lake

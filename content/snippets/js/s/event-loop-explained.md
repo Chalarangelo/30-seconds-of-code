@@ -1,7 +1,6 @@
 ---
 title: What is the Event Loop in JavaScript?
 shortTitle: Event loop explained
-type: question
 language: javascript
 tags: [browser,event]
 cover: tranquility

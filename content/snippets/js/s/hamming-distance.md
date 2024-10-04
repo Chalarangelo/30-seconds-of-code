@@ -1,7 +1,6 @@
 ---
 title: Hamming distance implementation in JavaScript
 shortTitle: Hamming distance
-type: tip
 language: javascript
 tags: [math,algorithm]
 cover: colorful-lounge

@@ -1,7 +1,6 @@
 ---
 title: Join a JavaScript array into a string, with locale-sensitive separators
 shortTitle: Join array into string
-type: tip
 language: javascript
 tags: [array]
 cover: couch-laptop

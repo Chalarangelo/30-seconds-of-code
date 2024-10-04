@@ -1,7 +1,6 @@
 ---
 title: Watch out for mutable default arguments in Python
 shortTitle: Mutable default arguments
-type: tip
 language: python
 tags: [function]
 cover: goat-wooden-cottage

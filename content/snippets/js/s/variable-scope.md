@@ -1,7 +1,6 @@
 ---
 title: Understanding JavaScript variables and scopes
 shortTitle: Variables and scopes
-type: story
 language: javascript
 tags: [type,variable]
 cover: periscope
