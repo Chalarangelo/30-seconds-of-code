@@ -1,0 +1,83 @@
+.sparkles {
+  // Add a little sparkle to the text.
+  display: inline-block;
+  position: relative;
+
+  @media (prefers-reduced-motion: no-preference) {
+    // Apply the animation only if the user prefers motion.
+
+    &::before,
+    &::after {
+      // Add the sparkle emoji to both ends of the text
+      content: '✨';
+      position: absolute;
+      // The starting top position, offset by the animated transform.
+      top: 0.5em;
+      // Make the sparks smaller and less visible.
+      font-size: 0.5em;
+      line-height: 1;
+      // Animate the sparkles for a flickering effect.
+      // This will only play for a moment, so it's not too distracting.
+      // If the element is below the fold, chances are the user may not see it.
+      // In that case, it may be better to add the class when the element is in
+      // view, using Intersection Observer or a similar technique.
+      // The duration of the `travel-vertical` animation is twice the length of
+      // the `flicker` animation, so the sparkles will travel up while in its
+      // hidden state, then flicker into view.
+      animation:
+        flicker 2.5s 3 forwards ease-in-out,
+        travel-vertical 5s 3 forwards ease-in-out;
+    }
+
+    &::before {
+      left: -0.5em;
+    }
+
+    &::after {
+      right: -0.5em;
+      // Delay the animation on the second sparkle and start hidden.
+      // The delay of the `travel-vertical` animation is set to 1.5x the duration
+      // of the `flicker` animation, so the sparkles will travel up while in its
+      // hidden state, then flicker into view.
+      animation-delay: 1s, 3.75s;
+      opacity: 0;
+    }
+  }
+}
+
+@keyframes flicker {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1);
+    opacity: 0.95;
+  }
+
+  100% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+}
+
+@keyframes travel-vertical {
+  0% {
+    transform: translateY(1.5em);
+  }
+
+  49% {
+    transform: translateY(1.5em);
+  }
+  50% {
+    transform: translateY(0);
+  }
+
+  99% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(1.5em);
+  }
+}
