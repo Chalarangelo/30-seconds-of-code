@@ -1,10 +1,10 @@
 ---
-title: Modeling complex JavaScript object relationships in memory
-shortTitle: Complex object relationships modeling
+title: Modeling complex JavaScript object collections in memory
+shortTitle: Complex object collections modeling
 language: javascript
 tags: [object]
 cover: digital-nomad-4
-excerpt: A deep dive into a fairly flexible implementation, inspired by Rails' ActiveRecord, for modeling JavaScript object relationships in memory.
+excerpt: A deep dive into a fairly flexible implementation, inspired by Rails' ActiveRecord, for modeling JavaScript object collections in memory.
 listed: true
 dateModified: 2024-12-05
 ---
