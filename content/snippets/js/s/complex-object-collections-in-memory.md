@@ -2,7 +2,7 @@
 title: Modeling complex JavaScript object collections in memory
 shortTitle: Complex object collections modeling
 language: javascript
-tags: [object]
+tags: [object,class]
 cover: digital-nomad-4
 excerpt: A deep dive into a fairly flexible implementation, inspired by Rails' ActiveRecord, for modeling JavaScript object collections in memory.
 listed: true
@@ -100,8 +100,8 @@ Having defined the `Model` class and its `prepare` method, we can now create a s
 import Model from '#src/core/model.js';
 
 export default class Post extends Model {
-  static prepare() {
-    // Prepare a storage for the Post model
+  static {
+    // Prepare storage for the Post model
     super.prepare(this);
   }
 }
@@ -165,7 +165,7 @@ We've defined the basics of the core classes, but we also need to **load some da
 ```js [src/core/model.js]
 export default class Model {
   // ...
-  constructor(data) {
+  constructor() {
     const modelName = this.constructor.name;
 
     // Store the instance in the instances array
@@ -181,7 +181,7 @@ import Model from '#src/core/model.js';
 
 export default class Post extends Model {
   // ...
-  constructor() {
+  constructor(data) {
     super();
     this.id = data.id;
     this.title = data.title;
@@ -207,6 +207,8 @@ Ok, that last bit was somewhat confusing. Let me explain. If we define a `static
 Given that a `RecordSet` is just an array on steroids, we can create a new `RecordSet` from it, using `Array.from()`, or rather, `RecordSet.from()`. Putting the pieces together, we can then define a **static getter method**, `all`, on the `Model` class, which will return a `RecordSet` of all its instances.
 
 ```js [src/core/model.js]
+import RecordSet from '#src/core/recordSet.js';
+
 export default class Model {
   // ...
   static get all() {
@@ -314,7 +316,7 @@ export default class RecordSet extends Array {
       attributes.reduce((acc, attribute) => {
         acc[attribute] = record[attribute];
         return acc;
-      }, {});
+      }, {})
     ));
   }
 }
@@ -329,3 +331,106 @@ One finer detail here is that we use `super` to call the `Array.prototype.map()`
 I hope you've enjoyed this deep dive into this particular implementation. While it may seem esoteric at first, it's a great opportunity to learn about more complex topics and modern JavaScript features. I've found the implementation to be quite capable, and I've already put it to good use. I'm sure you can find some use for it, too!
 
 Wow, that was a lot! And here I was thinking I'd explain the rest of the codebase in this article. I guess I'll have to save that for another time, so stay tuned for that!
+
+---
+
+## Addendum: Code summary
+
+If you're looking for the complete implementation, you can find it below. More code will be added in subsequent articles, so it may come in handy as a reference point.
+
+<details>
+<summary>View the complete implementation</summary>
+
+```js [src/core/model.js]
+import RecordSet from '#src/core/recordSet.js';
+
+class Model {
+  static instances = {};
+
+  static prepare(model) {
+    const name = model.name;
+
+    // Create an array for each model to store instances
+    if (!Model.instances[name]) Model.instances[name] = [];
+  }
+
+  constructor(data) {
+    const modelName = this.constructor.name;
+
+    // Store the instance in the instances array
+    Model.instances[modelName].push(this);
+  }
+
+  static get all() {
+    return RecordSet.from(Model.instances[this.name] || []);
+  }
+
+  static where(query) {
+    return this.all.where(query);
+  }
+}
+```
+
+```js [src/core/recordSet.js]
+class RecordSet extends Array {
+  where(query) {
+    return RecordSet.from(
+      this.filter(record => {
+        return Object.keys(query).every(key => {
+          // If function use it to determine matches
+          if (typeof query[key] === 'function')
+            return query[key](record[key]);
+
+          // If array, use it to determine matches
+          if (Array.isArray(query[key]))
+            return query[key].includes(record[key]);
+
+          // If single value, use strict equality
+          return record[key] === query[key];
+        });
+      })
+    );
+  }
+
+  pluck(attribute) {
+    return RecordSet.from(super.map(record => record[attribute]))
+  }
+
+  select(...attributes) {
+    return RecordSet.from(super.map(record =>
+      attributes.reduce((acc, attribute) => {
+        acc[attribute] = record[attribute];
+        return acc;
+      }, {})
+    ));
+  }
+
+  get first() {
+    return this[0];
+  }
+
+  get last() {
+    return this[this.length - 1];
+  }
+}
+```
+
+```js [src/models/post.js]
+import Model from '#src/core/model.js';
+
+export default class Post extends Model {
+  static {
+    // Prepare storage for the Post model
+    super.prepare(this);
+  }
+
+  constructor(data) {
+    super();
+    this.id = data.id;
+    this.title = data.title;
+    this.content = data.content;
+  }
+}
+```
+
+</details>
