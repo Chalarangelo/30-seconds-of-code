@@ -365,7 +365,7 @@ Yet again, here's the complete implementation up until this point in the series.
 ```js [src/core/model.js]
 import RecordSet from '#src/core/recordSet.js';
 
-class Model {
+export default class Model {
   static instances = {};
   static indexedInstances = {};
 
@@ -404,7 +404,7 @@ class Model {
 ```
 
 ```js [src/core/recordSet.js]
-class RecordSet extends Array {
+export default class RecordSet extends Array {
   where(query) {
     return RecordSet.from(
       this.filter(record => {
