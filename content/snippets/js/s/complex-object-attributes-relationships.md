@@ -55,7 +55,7 @@ export default class Author extends Model {
   }
 
   constructor(data) {
-    super();
+    super(data);
     this.id = data.id;
     this.name = data.name;
     this.surname = data.surname;
@@ -99,7 +99,7 @@ import Model from '#src/core/model.js';
 export default class Post extends Model {
   // ...
   constructor(data) {
-    super();
+    super(data);
     this.id = data.id;
     this.title = data.title;
     this.content = data.content;
@@ -154,7 +154,7 @@ import Model from '#src/core/model.js';
 export default class Post extends Model {
   // ...
   constructor(data) {
-    super();
+    super(data);
     this.id = data.id;
     this.title = data.title;
     this.content = data.content;
@@ -332,7 +332,7 @@ export default class Model {
     const modelName = this.constructor.name;
 
     Model.instances[modelName].push(this);
-    Model.indexedInstances[modelName].set(data[index], this);
+    Model.indexedInstances[modelName].set(data.id, this);
   }
 
   static find(id) {
@@ -386,7 +386,7 @@ export default class Model {
 
     // Store the instance in the instances and indexedInstances
     Model.instances[modelName].push(this);
-    Model.indexedInstances[modelName].set(data[index], this);
+    Model.indexedInstances[modelName].set(data.id, this);
   }
 
   static get all() {
@@ -458,7 +458,7 @@ export default class Post extends Model {
   }
 
   constructor(data) {
-    super();
+    super(data);
     this.id = data.id;
     this.title = data.title;
     this.content = data.content;
@@ -487,7 +487,7 @@ export default class Author extends Model {
   }
 
   constructor(data) {
-    super();
+    super(data);
     this.id = data.id;
     this.name = data.name;
     this.surname = data.surname;
