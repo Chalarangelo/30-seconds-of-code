@@ -180,6 +180,7 @@ export default class Collection extends ContentModel {
         ),
         ...pagination,
         largeImages: false,
+        singleColumn: this.isUpdateLogs,
       });
     });
   }
@@ -209,6 +210,7 @@ export default class Collection extends ContentModel {
         ),
         ...pagination,
         largeImages: true,
+        singleColumn: false,
       });
     });
   }

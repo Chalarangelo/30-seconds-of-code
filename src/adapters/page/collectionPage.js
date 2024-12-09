@@ -24,6 +24,7 @@ export default class CollectionPage extends Page {
       pagination: this.pagination,
       collectionItems: this.options.items.map(item => item.preview),
       largeImages: this.options.largeImages,
+      singleColumn: this.options.singleColumn,
     };
   }
 
