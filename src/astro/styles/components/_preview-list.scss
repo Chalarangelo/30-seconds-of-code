@@ -119,6 +119,13 @@
     }
   }
 
+  &[data-single-column='true'] {
+    // If the list has a single column, set the grid template columns to 1fr.
+    ul {
+      grid-template-columns: 1fr;
+    }
+  }
+
   a {
     // Remove underline from all links inside the preview list.
     --link_color-underline: transparent;
