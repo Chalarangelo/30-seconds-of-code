@@ -148,6 +148,9 @@ export default class Snippet extends ContentModel {
     ];
   }
 
+  // TODO: This returns true even if the snippet only belongs to the
+  // main collection. The `CollectionSnippet` model must be updated
+  // with a method that checks for the main collection (via id).
   get hasCollection() {
     return this.collectionSnippets.length > 0;
   }
