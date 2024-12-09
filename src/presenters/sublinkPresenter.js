@@ -10,6 +10,7 @@ export default class SublinkPresenter {
   get sublinks() {
     if (this.object.isMain) {
       return Collection.scope('primary', 'byRanking')
+        .filter(collection => !collection.isUpdateLogs)
         .map(collection => this.toSublink(collection))
         .flat()
         .concat([settings.sublinks.moreCollections]);
