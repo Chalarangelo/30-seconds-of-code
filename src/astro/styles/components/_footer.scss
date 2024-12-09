@@ -114,34 +114,4 @@ footer {
       --link_animation-duration: var(--animation-duration-short);
     }
   }
-
-  .wave {
-    // Change cursor and display as `inline-block` to allow for a transform.
-    cursor: default;
-    display: inline-block;
-    // Set the correct `transform-origin` for the wave animation.
-    transform-origin: 75% 80%;
-
-    // Performance optimization - hint to use the GPU.
-    will-change: transform;
-
-    @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-      // Only apply the wave animation on devices that support hover and
-      // for users that have not requested reduced motion.
-      &:is(:hover, :focus) {
-        animation: wave var(--animation-duration-long) infinite alternate
-          ease-in-out;
-      }
-    }
-  }
-}
-
-// Set up the wave animation for the footer's wave emoji.
-@keyframes wave {
-  from {
-    transform: rotate(-5deg);
-  }
-  to {
-    transform: rotate(15deg);
-  }
 }
