@@ -72,6 +72,10 @@ export default class Collection extends ContentModel {
     return Collection.find(settings.collections.mainCollectionId);
   }
 
+  static get updateLogs() {
+    return Collection.find(settings.collections.updateLogsCollectionId);
+  }
+
   static get collections() {
     return Collection.find(settings.collections.collectionsCollectionId);
   }
@@ -82,6 +86,10 @@ export default class Collection extends ContentModel {
 
   get isMain() {
     return this.id === settings.collections.mainCollectionId;
+  }
+
+  get isUpdateLogs() {
+    return this.id === settings.collections.updateLogsCollectionId;
   }
 
   get isCollections() {

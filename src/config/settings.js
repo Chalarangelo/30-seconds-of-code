@@ -37,6 +37,7 @@ const settings = {
   },
   collections: {
     mainCollectionId: 'snippets',
+    updateLogsCollectionId: 'update-logs',
     collectionsCollectionId: 'collections',
   },
   paths: {
@@ -78,6 +79,7 @@ const settings = {
     html: 'HTML',
     webdev: 'Web development',
     http: 'HTTP',
+    updatelog: 'Update Log',
   },
   breadcrumbs: {
     home: {
