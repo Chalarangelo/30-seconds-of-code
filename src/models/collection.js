@@ -65,6 +65,13 @@ export default class Collection extends ContentModel {
   }
 
   get listedSnippets() {
+    if (this.isUpdateLogs) {
+      return this.collectionSnippets
+        .map(cs => cs.snippet)
+        .sort((a, b) => {
+          return b.dateModified - a.dateModified;
+        });
+    }
     return this.collectionSnippets.map(cs => cs.snippet);
   }
 
