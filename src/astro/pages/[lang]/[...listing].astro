@@ -34,6 +34,7 @@ const {
   collection,
   collectionItems,
   largeImages = false,
+  singleColumn = false,
   pageDescription,
   structuredData,
 } = Astro.props;
@@ -58,7 +59,11 @@ const {
         <Chips items={collection.sublinks} />
       ) : <div aria-hidden='true' data-area-gap />
     }
-    <PreviewList contentItems={collectionItems} largeImages={largeImages}>
+    <PreviewList
+      contentItems={collectionItems}
+      largeImages={largeImages}
+      singleColumn={singleColumn}
+    >
       {pagination ? <Pagination pagination={pagination} slot='bottom-nav' /> : null}
     </PreviewList>
   </main>
