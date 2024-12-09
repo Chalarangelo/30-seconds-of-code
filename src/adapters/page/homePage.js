@@ -40,12 +40,12 @@ export default class HomePage extends Page {
   }
 
   get featuredSnippets() {
-    const newSnippets = Snippet.scope('listed', 'byNew').slice(
+    const newSnippets = Snippet.scope('listed', 'published', 'byNew').slice(
       0,
       settings.home.newSnippetCards
     );
 
-    const topSnippets = Snippet.scope('listed', 'byRanking')
+    const topSnippets = Snippet.scope('listed', 'published', 'byRanking')
       .slice(0, settings.home.topSnippetCards * 5)
       .shuffle();
 
