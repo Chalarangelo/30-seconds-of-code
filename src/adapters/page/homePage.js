@@ -21,6 +21,7 @@ export default class HomePage extends Page {
       splashImageSrcSet: this.coverSrcset,
       snippetListUrl: this.mainListingUrl,
       pageDescription: this.seoDescription,
+      announcement: this.announcement,
     };
   }
 
@@ -70,6 +71,19 @@ export default class HomePage extends Page {
       url: Collection.collections.firstPageSlug,
       icon: 'arrow-right',
       selected: false,
+    };
+  }
+
+  get announcement() {
+    const latestUpdateLog = Snippet.scope(
+      'updateLogs',
+      'published',
+      'byNew'
+    ).first;
+    return {
+      text: 'Read the latest update log:',
+      linkText: latestUpdateLog.previewTitle,
+      linkUrl: latestUpdateLog.url,
     };
   }
 
