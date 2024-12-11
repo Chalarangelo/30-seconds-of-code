@@ -45,6 +45,12 @@ export default class Snippet extends ContentModel {
     return records.where({ dateModified: d => d > now });
   }
 
+  static updateLogs(records) {
+    return records.where({
+      tags: t => t.includes(settings.collections.updateLogTag),
+    });
+  }
+
   get language() {
     return Language.find(this.languageId);
   }
@@ -115,6 +121,10 @@ export default class Snippet extends ContentModel {
 
   get isListed() {
     return this.listed && this.isPublished;
+  }
+
+  get isUpdateLog() {
+    return this.tags.includes(settings.collections.updateLogTag);
   }
 
   get dateFormatted() {
