@@ -35,6 +35,12 @@ export default class Snippet extends ContentModel {
     return records.order((a, b) => b.dateModified - a.dateModified);
   }
 
+  static last30Days(records) {
+    let date = new Date();
+    date.setDate(date.getDate() - 30);
+    return records.where({ dateModified: d => d > date });
+  }
+
   static published(records) {
     const now = new Date();
     return records.where({ dateModified: d => d < now });

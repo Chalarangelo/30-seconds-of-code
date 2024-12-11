@@ -78,8 +78,12 @@ export default class HomePage extends Page {
     const latestUpdateLog = Snippet.scope(
       'updateLogs',
       'published',
-      'byNew'
-    ).first;
+      'byNew',
+      'last30Days'
+    )?.first;
+
+    if (!latestUpdateLog) return null;
+
     return {
       text: 'Read the latest update log:',
       linkText: latestUpdateLog.previewTitle,
