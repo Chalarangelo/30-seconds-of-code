@@ -282,26 +282,26 @@ export default class Model {
     // Cache getters, using a WeakMap for each model/key pair
     if (!Model.getterCache[name]) Model.getterCache[name] = {};
 
-    Object.entries(Object.getOwnPropertyDescriptors(model.prototype)).forEach(
-      ([key, descriptor]) => {
-        // Find getter functions, create the WeakMap, redefine the getter
-        if (typeof descriptor.get === 'function') {
-          Model.getterCache[name][key] = new WeakMap();
-          Object.defineProperty(model.prototype, key, {
-            get() {
-              if (!Model.getterCache[name][key].has(this)) {
-                // This calls the getter function and caches the result
-                Model.getterCache[name][key].set(
-                  this,
-                  descriptor.get.call(this)
-                );
-              }
-              return Model.getterCache[name][key].get(this);
-            },
-          });
-        }
+    Object.entries(
+      Object.getOwnPropertyDescriptors(model.prototype),
+    ).forEach(([key, descriptor]) => {
+      // Find getter functions, create the WeakMap, redefine the getter
+      if (typeof descriptor.get === 'function') {
+        Model.getterCache[name][key] = new WeakMap();
+        Object.defineProperty(model.prototype, key, {
+          get() {
+            if (!Model.getterCache[name][key].has(this)) {
+              // This calls the getter function and caches the result
+              Model.getterCache[name][key].set(
+                this,
+                descriptor.get.call(this)
+              );
+            }
+            return Model.getterCache[name][key].get(this);
+          },
+        });
       }
-    );
+    });
   }
 
   constructor(data) {
