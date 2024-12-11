@@ -6,6 +6,7 @@ import path from 'node:path';
 
 import Layout from '#src/astro/layouts/Layout.astro';
 import Hero from '#src/astro/components/Hero.astro';
+import Announcement from '#src/astro/components/Announcement.astro';
 import PreviewList from '#src/astro/components/PreviewList.astro';
 import Chips from '#src/astro/components/Chips.astro';
 import Icon from '#src/astro/components/Icon.astro';
@@ -25,6 +26,7 @@ const {
   splashImageSrcset,
   pageDescription,
   structuredData,
+  announcement,
 } = pageData.props;
 ---
 
@@ -42,6 +44,7 @@ const {
     coverSrcset={splashImageSrcset}
     secondary
   />
+  {Boolean(announcement) && <Announcement {...announcement} />}
   <Chips items={featuredCollections} />
     <PreviewList contentItems={featuredSnippets}>
       <h2 slot='title'>New & Popular Snippets</h2>
