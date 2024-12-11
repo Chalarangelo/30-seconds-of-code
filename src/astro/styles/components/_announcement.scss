@@ -1,0 +1,26 @@
+.announcement {
+  display: flex;
+  column-gap: var(--spacing-20);
+  row-gap: var(--spacing-12);
+  align-items: center;
+  // Align any content in the middle.
+  justify-content: center;
+
+  // Add inline padding to the hero, to match the layout bleed.
+  padding-inline: var(--layout-bleed-width);
+  // Adjust bottom margin according to layout rhythm.
+  margin-block-end: var(--layout-row-spacing);
+  // Counter the height of the element to minimize layout effect.
+  margin-block-start: calc(-1 * (var(--layout-row-spacing) + var(--spacing-2)));
+
+  p {
+    font-size: var(--font-sm);
+    // Align any text in the middle.
+    text-align: center;
+  }
+
+  a {
+    // Ensure the link breaks into a new line on small viewport witdths.
+    display: inline-block;
+  }
+}
