@@ -39,6 +39,7 @@ const settings = {
     mainCollectionId: 'snippets',
     updateLogsCollectionId: 'update-logs',
     collectionsCollectionId: 'collections',
+    updateLogTag: 'updatelog',
   },
   paths: {
     coverDirectory: 'content/assets/cover/',
