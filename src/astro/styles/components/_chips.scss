@@ -64,13 +64,13 @@ nav[aria-label='Collections'] {
       transform var(--animation-duration-medium) ease;
 
     // Selected state uses primary color for text.
-    &:is([data-selected], [data-selected='true']) {
+    &:is([data-selected='true']) {
       color: var(--color-primary);
     }
 
     @media (hover: hover) {
       // Do not apply hover styles on selected chips.
-      &:not(:is([data-selected], [data-selected='true'])):is(:hover, :focus) {
+      &:not(:is([data-selected='true'])):is(:hover, :focus) {
         // Only apply hover styles on devices that support hover.
         color: var(--color-primary);
 
