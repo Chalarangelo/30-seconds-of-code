@@ -21,6 +21,8 @@ Simply using `git rebase -i <commit>` will **open an editor** with a list of com
 
 If you encounter **merge conflicts** or need to stop the rebase to make changes, you can continue the rebase when ready using `git rebase --continue` or abort it using `git rebase --abort`.
 
+Similarly, if you want to **edit the list of commits** after stopping the rebase, you can use `git rebase -i --edit-todo` to open the list in the editor again. This can be particularly useful, if the rebase stops due to some error or conflict.
+
 Additionally, you can use the `--autosquash` option to **automatically squash fixup commits** into the commits they are fixing.
 
 > [!NOTE]
