@@ -214,7 +214,7 @@ export default class Serializer {
 
 There are a few things to unpack here. The `prepare` method can accept a **mix of strings and arrays**. If an array is detected, the first element is used as the serialized attribute name, while the second element is used as the attribute getter name. If no second element is provided, the serialized attribute name is used as the getter name.
 
-But the fun part comes later in the function, where `Object.defineProperty` is used to **define a getter** for the attribute. If an alias is detected, the getter will return the value of the alias attribute, otherwise it will return the value of the attribute itself.
+But the fun part comes later in the function, where `Object.defineProperty()` is used to **define a getter** for the attribute. If an alias is detected, the getter will return the value of the alias attribute, otherwise it will return the value of the attribute itself.
 
 As you may have noticed, this change doesn't really affect the `seralize` method just yet. We'll have to make an adjustment there, too. Instead of relying on the `subject`, we now have each of the `serializableAttributes` as a getter on the serializer instance.
 
