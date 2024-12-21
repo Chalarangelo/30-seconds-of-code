@@ -9,6 +9,13 @@ listed: true
 dateModified: 2024-12-05
 ---
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (location.hash === '#addendum-code-summary')
+      document.querySelector('main > article > details').open = true;
+  });
+</script>
+
 I've been working with [Ruby on Rails](https://rubyonrails.org/) quite a lot lately. What I've come to like about it the most may be its [ActiveRecord](https://guides.rubyonrails.org/active_record_basics.html#what-is-active-record-questionmark) ORM (Object-Relational Mapping). I won't go into detail about here, but I wanted to share a similar sort of concept I put together for this very website using JavaScript.
 
 > [!IMPORTANT]

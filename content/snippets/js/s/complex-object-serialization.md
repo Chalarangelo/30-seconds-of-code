@@ -9,6 +9,13 @@ listed: true
 dateModified: 2024-12-26
 ---
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (location.hash === '#addendum-code-summary')
+      document.querySelector('main > article > details').open = true;
+  });
+</script>
+
 > [!IMPORTANT]
 >
 > This article is part of a series, picking up where [Modeling complex JavaScript object scopes](/js/s/complex-object-scopes) left off. Make sure to read previous articles in the series before continuing. The entire series is more of a **show & tell**, aiming to <strong class="sparkles">inspire</strong> you to use more advanced JavaScript features and patterns in your projects.

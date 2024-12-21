@@ -9,6 +9,13 @@ listed: true
 dateModified: 2024-12-12
 ---
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (location.hash === '#addendum-code-summary')
+      document.querySelector('main > article > details').open = true;
+  });
+</script>
+
 > [!IMPORTANT]
 >
 > This is the second article in a series about a recent project I implemented, inspired by Ruby on Rails' ActiveRecord pattern. It's more of an advanced **show & tell**, aiming to <strong class="sparkles">inspire</strong> readers to use more advanced JavaScript features and patterns. If you haven't read the first article, I recommend you start there: [Modeling complex JavaScript object collections in memory](/js/s/complex-object-collections-in-memory).

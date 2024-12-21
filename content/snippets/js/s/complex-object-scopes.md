@@ -9,6 +9,13 @@ listed: true
 dateModified: 2024-12-19
 ---
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (location.hash === '#addendum-code-summary')
+      document.querySelector('main > article > details').open = true;
+  });
+</script>
+
 > [!IMPORTANT]
 >
 > This article is part of a series and picks up where the previous article, [Modeling complex JavaScript object attributes & relationships](/js/s/complex-object-attributes-relationships), left off. If you haven't read it yet, I recommend you do so before continuing. The entire series is more of a **show & tell**, aiming to <strong class="sparkles">inspire</strong> you to use more advanced JavaScript features and patterns.
