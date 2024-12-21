@@ -127,10 +127,13 @@ export default class Serializer {
   // ...
 
   serialize() {
-    return this.constructor.serializableAttributes.reduce((acc, attribute) => {
-      acc[attribute] = this.subject[attribute];
-      return acc;
-    }, {});
+    return this.constructor.serializableAttributes.reduce(
+      (acc, attribute) => {
+        acc[attribute] = this.subject[attribute];
+        return acc;
+      },
+      {},
+    );
   }
 }
 ```
@@ -213,10 +216,13 @@ export default class Serializer {
   // ...
 
   serialize() {
-    return this.constructor.serializableAttributes.reduce((acc, attribute) => {
-      acc[attribute] = this[attribute];
-      return acc;
-    }, {});
+    return this.constructor.serializableAttributes.reduce(
+      (acc, attribute) => {
+        acc[attribute] = this[attribute];
+        return acc;
+      },
+      {},
+    );
   }
 }
 ```
@@ -592,7 +598,7 @@ export default class Serializer {
   static prepare(serializer, serializableAttributes) {
     serializer.serializableAttributes = [];
 
-    serializableAttributes.forEach(attribute => {
+    serializableAttributes.forEach((attribute) => {
       const isAlias = Array.isArray(attribute);
       const attributeName = isAlias ? attribute[0] : attribute;
 
@@ -604,11 +610,9 @@ export default class Serializer {
 
       Object.defineProperty(serializer.prototype, attributeName, {
         get() {
-          if (!isAlias)
-            return this.subject[attributeName];
-          if (typeof alias === 'string')
-            return this.subject[alias];
-          if (typeof alias === 'function')
+          if (!isAlias) return this.subject[attributeName];
+          if (typeof alias === "string") return this.subject[alias];
+          if (typeof alias === "function")
             return alias(this.subject, this.options);
           return undefined;
         },
@@ -626,14 +630,17 @@ export default class Serializer {
   }
 
   static serializeArray(subjects, options) {
-    return subjects.map(subject => this.serialize(subject, options));
+    return subjects.map((subject) => this.serialize(subject, options));
   }
 
   serialize() {
-    return this.constructor.serializableAttributes.reduce((acc, attribute) => {
-      acc[attribute] = this[attribute];
-      return acc;
-    }, {});
+    return this.constructor.serializableAttributes.reduce(
+      (acc, attribute) => {
+        acc[attribute] = this[attribute];
+        return acc;
+      },
+      {},
+    );
   }
 }
 ```
