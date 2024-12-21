@@ -706,7 +706,7 @@ export default class Author extends Model {
 ```js [src/serializers/postSerializer.js]
 import Serializer from '#src/core/serializer.js';
 
-class PostSerializer extends Serializer {
+export default class PostSerializer extends Serializer {
   static {
     Serializer.prepare(this, [
       'title',
@@ -732,7 +732,9 @@ class PostSerializer extends Serializer {
 ```
 
 ```js [src/serializers/postPreviewSerializer.js]
-class PostPreviewSerializer extends Serializer {
+import Serializer from '#src/core/serializer.js';
+
+export default class PostPreviewSerializer extends Serializer {
   static {
     Serializer.prepare(this, [
       'title',
