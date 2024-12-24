@@ -323,7 +323,7 @@ export default class Model {
   static instances = {};
   static indexedInstances = {};
 
-  static prepare(model, indexes) {
+  static prepare(model) {
     const name = model.name;
 
     // Create an array for each model to store instances
@@ -376,7 +376,7 @@ export default class Model {
   static instances = {};
   static indexedInstances = {};
 
-  static prepare(model, indexes) {
+  static prepare(model) {
     const name = model.name;
 
     // Create an array for each model to store instances
