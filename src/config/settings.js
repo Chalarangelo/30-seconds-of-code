@@ -10,7 +10,7 @@ const settings = {
   },
   owner: {
     name: 'Angelos Chalaris',
-    url: 'https://github.com/Chalarangelo',
+    url: 'https://chalarangelo.me',
   },
   repository: {
     url: 'https://github.com/Chalarangelo/30-seconds-of-code',

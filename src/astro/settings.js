@@ -3,7 +3,7 @@ export default {
   websiteDescription: 'Short code snippets for all your development needs',
   shortName: '30s',
   ownerName: 'Angelos Chalaris',
-  ownerUrl: 'https://github.com/Chalarangelo',
+  ownerUrl: 'https://chalarangelo.me',
   websiteUrl: 'https://www.30secondsofcode.org',
   githubRepoUrl: 'https://github.com/Chalarangelo/30-seconds-of-code',
   licenseUrl: 'https://creativecommons.org/licenses/by/4.0/',
