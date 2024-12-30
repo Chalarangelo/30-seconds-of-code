@@ -49,17 +49,17 @@ h6 {
 }
 
 h1 {
-  // Viewport-based fluctiation between 2rem and 2.25rem.
+  // Viewport-based fluctuation between 2rem and 2.25rem.
   font-size: clamp(var(--font-x2), 3vw + 1rem, var(--font-x3));
 }
 
 h2 {
-  // Viewport-based fluctiation between 1.625rem and 2rem.
+  // Viewport-based fluctuation between 1.625rem and 2rem.
   font-size: clamp(var(--font-xl), 2vw + 1rem, var(--font-x2));
 }
 
 h3 {
-  // Viewport-based fluctiation between 1.3125rem and 1.625rem.
+  // Viewport-based fluctuation between 1.3125rem and 1.625rem.
   font-size: clamp(var(--font-lg), 1vw + 1rem, var(--font-xl));
 }
 
