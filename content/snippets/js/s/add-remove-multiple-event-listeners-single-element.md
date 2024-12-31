@@ -13,7 +13,7 @@ Have you ever wanted to listen for **multiple event types** on a **single elemen
 
 > [!NOTE]
 >
-> If you're looking to add or remove the **same handler for a single event** to **multiple elements**, take a look at the snippet on [adding or removing event listeners from multiple elements](/js/s/add-remove-event-listener-multiple-elements).
+> If you're looking to add or remove the **same handler for a single event** to **multiple elements**, take a look at the article on [adding or removing event listeners from multiple elements](/js/s/add-remove-event-listener-multiple-elements).
 
 ## Add multiple event listeners to an element
 

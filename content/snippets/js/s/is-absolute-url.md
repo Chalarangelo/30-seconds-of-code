@@ -4,7 +4,7 @@ shortTitle: Absolute URL check
 language: javascript
 tags: [string,browser,regexp]
 cover: coffee-phone-tray-2
-excerpt: Want to know if a string is an absolute URL? This snippet will help you out.
+excerpt: Want to know if a string is an absolute URL? This article will help you out.
 listed: true
 dateModified: 2024-07-09
 ---

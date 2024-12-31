@@ -24,7 +24,7 @@ firstDateOfMonth(new Date('2015-08-11')); // '2015-08-01'
 
 ## Get the last date of a month
 
-In order to get the last date of a month, we can use a clever trick on top of the previous snippet. Instead of setting the day to `1`, we can set it to `0`. This will give us the **last day of the previous month**. In order for this to work, we'll need to **advance the month** by `1` as well.
+In order to get the last date of a month, we can use a clever trick on top of the previous code snippet. Instead of setting the day to `1`, we can set it to `0`. This will give us the **last day of the previous month**. In order for this to work, we'll need to **advance the month** by `1` as well.
 
 ```js
 const lastDateOfMonth = (date = new Date()) =>

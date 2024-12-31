@@ -48,4 +48,4 @@ Changing the author of a commit will also change its **SHA-1 checksum**. If you'
 
 Additionally, if your remote repository is configured to only accept **signed commits**, you might be unable to sign the commit unless you have the original author's GPG key.
 
-Finally, you can't use `--author` to add **multiple authors** to a commit. If you want to do so, you can find more information in [the relevant snippet](/git/s/github-co-authors).
+Finally, you can't use `--author` to add **multiple authors** to a commit. If you want to do so, you can find more information in [the relevant article](/git/s/github-co-authors).

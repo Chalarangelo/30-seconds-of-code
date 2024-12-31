@@ -35,4 +35,4 @@ includesAll([1, 2, 3, 4], [1, 5]); // false
 
 > [!TIP]
 >
-> These snippets might perform poorly for rather large arrays. If you're working with large arrays, you might want to consider using a `Set` for improved performance.
+> These code snippets might perform poorly for rather large arrays. If you're working with large arrays, you might want to consider using a `Set` for improved performance.

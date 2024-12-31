@@ -21,4 +21,4 @@ getSelectedText(); // 'Lorem ipsum'
 
 > [!NOTE]
 >
-> A more **advanced use case** of this functionality can be found in [the copy text to clipboard snippet](/js/s/copy-text-to-clipboard#using-document-exec-command-copy), used to select and copy text to the clipboard.
+> A more **advanced use case** of this functionality can be found in [the copy text to clipboard article](/js/s/copy-text-to-clipboard#using-document-exec-command-copy), used to select and copy text to the clipboard.

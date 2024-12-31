@@ -13,7 +13,7 @@ Adding or removing the **same event listener** from **multiple elements** can ge
 
 > [!NOTE]
 >
-> If you're looking to add or remove the **same handler for multiple event listeners** to a **single element**, take a look at the snippet on [adding multiple listeners to a single element](/js/s/add-remove-multiple-event-listeners-single-element).
+> If you're looking to add or remove the **same handler for multiple event listeners** to a **single element**, take a look at the article on [adding multiple listeners to a single element](/js/s/add-remove-multiple-event-listeners-single-element).
 
 ## Add event listener to multiple elements
 

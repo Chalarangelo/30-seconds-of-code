@@ -45,4 +45,4 @@ getURLParameters('google.com');
 
 > [!TIP]
 >
-> If you want to learn how to **edit URL parameters** in JavaScript, check out the snippet on [editing URL parameters](/js/s/edit-url-params).
+> If you want to learn how to **edit URL parameters** in JavaScript, check out the article on [editing URL parameters](/js/s/edit-url-params).

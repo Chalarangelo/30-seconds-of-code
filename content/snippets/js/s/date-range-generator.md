@@ -13,7 +13,7 @@ Generating a range of `Date` values is very common when working with any type of
 
 > [!NOTE]
 >
-> If you're **not familiar with generator functions**, be sure to read the [range generator snippet](/js/s/range-generator) first.
+> If you're **not familiar with generator functions**, be sure to read the [range generator article](/js/s/range-generator) first.
 
 As mentioned in [a previous post](/js/s/date-yesterday-today-tomorrow), we can manipulate `Date` objects using `Date.prototype.getDate()` and `Date.prototype.setDate()`. This allows us to easily **increment or decrement dates**.
 

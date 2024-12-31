@@ -101,7 +101,7 @@ dateDifferenceInWeekdays(
 
 > [!WARNING]
 >
-> The above snippet may be ill-suited for real-life scenarios, as it **doesn't take official holidays into account**. It's recommended to tweak the weekday check to include a list of known holidays, too, if you plan on using it in production.
+> The above code snippet may be ill-suited for real-life scenarios, as it **doesn't take official holidays into account**. It's recommended to tweak the weekday check to include a list of known holidays, too, if you plan on using it in production.
 
 ## Date difference in weeks
 

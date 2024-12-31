@@ -13,7 +13,7 @@ Have you ever wanted to use `setTimeout()` in a declarative manner in React but 
 
 > [!NOTE]
 >
-> It's highly suggested that you start by reading [how to implement a `useInterval` hook](/snippets/react/s/use-interval), as this implementation is very similar.
+> It's highly suggested that you start by reading [how to implement a `useInterval` hook](/react/s/use-interval), as this implementation is very similar.
 
 In order to create a custom hook for `setTimeout()`, you'll first need to use `useRef()` to create a `ref` for the **callback function**. You'll then use `useEffect()` to remember the latest callback and set up the timeout, as well as clean up when the component unmounts.
 

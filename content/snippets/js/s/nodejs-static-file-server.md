@@ -38,7 +38,7 @@ In theory, one could stop here and have a very basic static file server. However
 
 First and foremost, we don't necessarily want to serve files from the same directory as our Node.js server. To address this problem, we would have to change the directory `fs.readFile()` looks for the file in. To accomplish this, we can specify a directory to serve files from and use the `path` module to resolve files from that directory. This way, we can also better handle different operating systems and environments.
 
-Here's a short snippet on how to resolve a file path using the `path` module:
+Here's a short code snippet on how to resolve a file path using the `path` module:
 
 ```js
 import { readFile } from 'fs';

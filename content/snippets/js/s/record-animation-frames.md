@@ -4,7 +4,7 @@ shortTitle: Record animation frames
 language: javascript
 tags: [browser,recursion]
 cover: mac-and-coffee
-excerpt: Ever wanted to run a function on each animation frame? This snippet shows you how to do it using `Window.requestAnimationFrame()`.
+excerpt: Ever wanted to run a function on each animation frame? This article shows you how to do it using `Window.requestAnimationFrame()`.
 listed: true
 dateModified: 2024-07-21
 ---

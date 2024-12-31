@@ -26,7 +26,7 @@ formToObject(document.querySelector('#form'));
 
 ## Serialize form data to a query string
 
-If, instead of an object, you need to **serialize the data** from a form into a query string, you need to make a few adjustments to the previous snippet.
+If, instead of an object, you need to **serialize the data** from a form into a query string, you need to make a few adjustments to the previous code snippet.
 
 After creating a `FormData` object, you can use `Array.from()` to create an **array of the entries**. Using the second argument of the function, you can specify how each entry should be mapped. In this case, we want to map each entry to a string, where the key and value are joined by an `=` sign and apply `encodeURIComponent()` to each part.
 

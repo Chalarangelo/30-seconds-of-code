@@ -4,7 +4,7 @@ shortTitle: Fullscreen element styling
 language: css
 tags: [visual]
 cover: flower-portrait-3
-excerpt: Did you know you can differentiate an element's styles when it's in fullscreen mode? Learn how to do it with this snippet!
+excerpt: Did you know you can differentiate an element's styles when it's in fullscreen mode? Learn how to do it with this code snippet!
 listed: true
 dateModified: 2024-09-08
 ---
@@ -27,4 +27,4 @@ https://codepen.io/chalarangelo/pen/bGXpEoP
 
 > [!NOTE]
 >
-> You can learn more about **requesting fullscreen access** in the [related JavaScript snippet](/js/s/fullscreen). The gist of it is that you can use `Element.requestFullscreen()` to make an element fullscreen and `Document.exitFullscreen()` to exit fullscreen mode.
+> You can learn more about **requesting fullscreen access** in the [related JavaScript article](/js/s/fullscreen). The gist of it is that you can use `Element.requestFullscreen()` to make an element fullscreen and `Document.exitFullscreen()` to exit fullscreen mode.

@@ -4,7 +4,7 @@ shortTitle: Toggle switch
 language: css
 tags: [visual,interactivity]
 cover: interior-5
-excerpt: A toggle switch is little more than a checkbox with a custom appearance. This snippet shows you how to create one without using JavaScript.
+excerpt: A toggle switch is little more than a checkbox with a custom appearance. This article shows you how to create one without using JavaScript.
 listed: true
 dateModified: 2024-09-04
 ---

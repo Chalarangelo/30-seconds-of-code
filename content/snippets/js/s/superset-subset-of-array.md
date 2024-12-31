@@ -32,4 +32,4 @@ subset(new Set([1, 5]), new Set([1, 2, 3, 4])); // false
 
 > [!NOTE]
 >
-> Future versions of ECMAScript may include a `Set.prototype.isSupersetOf()` and `Set.prototype.isSubsetOf()`, which will make this snippet obsolete.
+> Future versions of ECMAScript may include a `Set.prototype.isSupersetOf()` and `Set.prototype.isSubsetOf()`, which will make this code snippet obsolete.

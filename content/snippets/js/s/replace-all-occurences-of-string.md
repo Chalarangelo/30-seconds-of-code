@@ -25,7 +25,7 @@ Using `String.prototype.replaceAll()` is the recommended approach, as it's strai
 
 Before the introduction of `String.prototype.replaceAll()`, `String.prototype.replace()` was the method of choice for this sort of task. It's supported by all JavaScript engines, old and new and is very similar to `String.prototype.replaceAll()`.
 
-While this method doesn't replace all occurrences of a string, it supports regular expressions. Knowing the string to be replaced, a regular expression can be created with the global (`'g'`) flag. Then, it can be passed to `String.prototype.replace()` to replace all occurrences of the string. The only issue here is that special characters need to be escaped, so that they are matched correctly. The [escapeRegExp snippet](/js/s/escape-reg-exp) comes in handy for this task.
+While this method doesn't replace all occurrences of a string, it supports regular expressions. Knowing the string to be replaced, a regular expression can be created with the global (`'g'`) flag. Then, it can be passed to `String.prototype.replace()` to replace all occurrences of the string. The only issue here is that special characters need to be escaped, so that they are matched correctly. The [`escapeRegExp` code snippet](/js/s/escape-reg-exp) comes in handy for this task.
 
 ```js
 const escapeRegExp = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');

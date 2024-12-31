@@ -55,4 +55,4 @@ createElement(
 );
 ```
 
-That's pretty useful, but what happens if we have an HTML string we want to create an element from, instead? We have a [createElement snippet](/js/s/create-element) that does something along those lines. The only part that's missing is appending it to the parent element.
+That's pretty useful, but what happens if we have an HTML string we want to create an element from, instead? This [article on how to create and HTML element with JavaScript](/js/s/create-element) does something along those lines. The only part that's missing is appending it to the parent element.

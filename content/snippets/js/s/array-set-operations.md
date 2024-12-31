@@ -9,11 +9,11 @@ listed: true
 dateModified: 2024-01-01
 ---
 
-Mathematical **set operations** can be easily applied to JavaScript `Set` objects and arrays. This collection of snippets will introduce you to the most common set operations, such as union, intersection and difference.
+Mathematical **set operations** can be easily applied to JavaScript `Set` objects and arrays. This collection of articles will introduce you to the most common set operations, such as union, intersection and difference.
 
 > [!NOTE]
 >
-> At the time of writing, native support for this operation is coming to the `Set` object, yet it's still in the early stages. Make sure to check environment compatibility if you're planning to use the native methods.
+> At the time of writing, **native support** for this operation is coming to the `Set` object, yet it's still in the early stages. Make sure to check environment compatibility if you're planning to use the native methods.
 
 ## Union
 

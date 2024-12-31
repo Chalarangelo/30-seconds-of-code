@@ -66,7 +66,7 @@ equals([str], [strObj]); // false
 equals([null], [undefined]); // false
 ```
 
-This approach safeguards against the serialization issue described above. However it does not take into account nested arrays or objects, which need to be checked recursively. For a robust solution that handles this and other issues, you should use the [equals snippet](/js/s/equals).
+This approach safeguards against the serialization issue described above. However it does not take into account nested arrays or objects, which need to be checked recursively. For a robust solution that handles this and other issues, you should check the [relevant article](/js/s/object-comparison).
 
 ## Comparing out of order
 
@@ -85,4 +85,4 @@ const equalsIgnoreOrder = (a, b) => {
 }
 ```
 
-For a more detailed explanation, you should check out the [haveSameContents snippet](/js/s/have-same-contents).
+For a more detailed explanation, you should check out the [relevant article](/js/s/arrays-have-same-contents).

@@ -246,7 +246,7 @@ getType(new Set([1, 2, 3])); // 'Set'
 
 #### Check if value is of type
 
-Flipping the previous snippet around, we can also check if a value is of a specific type. Same as before, special care needs to be taken for `undefined` and `null`, as the do not have a `constructor` property.
+Flipping the previous code snippet around, we can also check if a value is of a specific type. Same as before, special care needs to be taken for `undefined` and `null`, as the do not have a `constructor` property.
 
 ```js
 const isOfType = (type, val) =>

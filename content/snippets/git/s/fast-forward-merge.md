@@ -21,4 +21,4 @@ As stated above, Git's default is to use fast-forward merge. It will take the co
 
 GitHub, on the other hand, uses non fast-forward merge by default. It will create a merge commit at the tip of the branch you're merging into, optionally referencing the branch being merged in the commit message. This has the advantage of **keeping track of branches** more explicitly than fast-forward merge. If you want to get the same behavior in a Git terminal, you can use the `--no-ff` flag.
 
-As a side note, you can configure the default Git merge behavior, using `git config`. To learn how to do so, you can take a look at the [relevant snippet](/git/s/disable-fast-forward).
+As a side note, you can configure the default Git merge behavior, using `git config`. To learn how to do so, you can take a look at the [relevant article](/git/s/disable-fast-forward).

@@ -207,7 +207,7 @@ Ok, that last bit was somewhat confusing. Let me explain. If we define a `static
 
 > [!TIP]
 >
-> Confused? Don't worry, the `this` keyword is a tricky thing to master. I suggest reading [this article](/snippets/js/this) to get a better understanding of it.
+> Confused? Don't worry, the `this` keyword is a tricky thing to master. I suggest reading [this article](/js/s/this) to get a better understanding of it.
 
 ### Querying all records
 
