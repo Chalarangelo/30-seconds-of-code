@@ -1,63 +1,88 @@
 ---
+import '../styles/pages/about.scss';
+
 import settings from '#src/astro/settings.js';
 
 import Layout from '#src/astro/layouts/Layout.astro';
 import Hero from '#src/astro/components/Hero.astro';
+import TableOfContents from '#src/astro/components/TableOfContents.astro';
 
 const title = 'About';
 const subtitle = '<p>A few word about the project and its goals.</p>';
 const pageDescription =
   'Learn more about the development and maintanance of 30 seconds of code.';
+const hero = {
+  title: 'Hi there! <span class="wave">👋</span> I’m Angelos.',
+  description: `<p>I’m a professional software engineer, based in Greece. I work on <strong>30 seconds of code</strong> in my free time to create the best resource I never had when I started out as a developer.</p><p>You can <a href=${settings.ownerUrl} rel='noopener noreferrer nofollow' target='_blank'>learn more about me</a>, if you want.</p>`,
+  cover: 'https://avatars2.githubusercontent.com/u/8281875?v=4'
+}
 ---
 
 <Layout title={title} description={pageDescription}>
   <main slot='main-content'>
     <Hero
-      title={title}
-      description={subtitle}
+      secondary
+      title={hero.title}
+      description={hero.description}
+      cover={hero.cover}
     />
 
     <article>
-      <h2>Project</h2>
+      <h2 id="about-the-project">About the project</h2>
       <p>
-        30 seconds of code is an accessible high-quality knowledge base for
-        developers of all skill levels, established in 2017. Since then,
-        hundreds of short code snippets and programming articles have been
-        created with the help of a large community of contributors. The goal
-        is to make software development more accessible and help the open
-        source community thrive by helping people learn to code.
+        I started 30 seconds of code in <strong>2017</strong> as a side project
+        to help me and others learn new things and improve their coding skills,
+        by providing <strong>free access</strong> to curated content.
+      </p>
+      <p>
+        Since then, a <strong>large community of contributors</strong>
+        has formed around it, creating hundreds of short code snippets and
+        programming articles, as well as helping me maintain and curate the
+        content on the website.
+      </p>
+      <p>
+        In recent years, the community aspect has simmered down a bit, but I'm
+        still commited to creating and maintaining a <strong>high-quality
+        resource</strong> to help developers learn and grow. Nowadays, I treat
+        the project more as a <strong>personal blog</strong>, where I share my
+        thoughts and ideas on software development and dive into interesting
+        programming topics.
       </p>
     </article>
 
     <article>
-      <h2>Maintainers</h2>
+      <h2 id="community-contributions">Community Contributions</h2>
       <p>
-        30 seconds of code is developed, maintained and curated by <a
-            href={settings.ownerUrl}
-            target='_blank'
-            rel='noopener noreferrer'>{settings.ownerName}</a
-          >. I'm a professional software engineer, based in Greece, and 30
-          seconds of code is a side project I work on in my free time. My love
-          for development and learning is what sparkled this idea and I've put a
-          lot of effort into making it the best resource I never had when I
-          started out as a developer.
+        If you find a <strong>bug, typo, omission, or any other content issue</strong>,
+        you can use the <strong>GitHub link on the article page</strong>
+        to find the matching file and then <strong>open an issue</strong> describing
+        the problem. This is the best way to help me keep the content up-to-date
+        and accurate.
+      </p>
+      <p>
+        Any <strong>other content contributions</strong> (e.g. new articles) are
+        currently not accepted and will most likely be closed without review.
+        This is due to a <strong>lack of time</strong> and not because I don't
+        appreciate your effort. I'm always happy to see people interested in
+        contributing and hope to be able to discuss new topic ideas with you in
+        the future.
       </p>
     </article>
 
     <article>
-      <h2>License</h2>
+      <h2 id="license">License</h2>
       <p>
         In order for the code provided via 30 seconds of code to be accessible
-        and useful to as many developers as possible, code snippets are
-        licensed under the CC-BY-4.0 License. This means they are free to
-        use in any project you like as long as you give appropriate credit to
-        this website.
+        and useful to as many developers as possible, <strong>code snippets</strong>
+        are licensed under the <strong>CC-BY-4.0 License</strong>. This means they
+        are <strong>free to use</strong> in any project you like as long as you
+        <strong>give appropriate credit</strong> to this website.
       </p>
       <p>
-        Any other material on this website and on the GitHub repository,
-        including but not limited to text content, images, logos, names,
-        trademarks and the website source code are not to be used without
-        the explicit consent of the owner of this website.
+        Any <strong>other material</strong> on this website and on the GitHub
+        repository, including but not limited to text content, images, logos,
+        names, trademarks and the website source code are <strong>not to be used
+        without the explicit consent</strong> of the owner of this website.
       </p>
       <p>
         This is especially important for content shared on the internet or as
@@ -68,10 +93,10 @@ const pageDescription =
     </article>
 
     <article>
-      <h2>Acknowledgments</h2>
+      <h2 id="acknowledgments">Acknowledgments</h2>
       <p>
-        All of the photography on the 30 seconds of code website as well as
-        other media used is provided by <a
+        All of the <strong>photography</strong> on the 30 seconds of code
+        website as well as other media used is provided by <a
           href='https://unsplash.com/'
           target='_blank'
           rel='noopener noreferrer'>Unsplash</a
@@ -84,4 +109,20 @@ const pageDescription =
       </p>
     </article>
   </main>
+  <TableOfContents slot='side-bar'>
+    <ol>
+      <li>
+        <a href="#about-the-project">About the project</a>
+      </li>
+      <li>
+        <a href="#community-contributions">Community Contributions</a>
+      </li>
+      <li>
+        <a href="#license">License</a>
+      </li>
+      <li>
+        <a href="#acknowledgments">Acknowledgments</a>
+      </li>
+    </ol>
+  </TableOfContents>
 </Layout>
