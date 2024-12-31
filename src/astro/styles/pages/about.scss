@@ -1,0 +1,10 @@
+.hero {
+  img {
+    @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+      &:hover {
+        // Remove the hover effect on images in the hero of the About page.
+        filter: initial;
+      }
+    }
+  }
+}
