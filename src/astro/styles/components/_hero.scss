@@ -17,6 +17,11 @@
   p {
     // Apply a better text balancing algorithm, when available.
     text-wrap: balance;
+
+    + p {
+      // Add a little extra space between paragraphs (for the About page).
+      margin-block-start: var(--spacing-4);
+    }
   }
 
   img {
