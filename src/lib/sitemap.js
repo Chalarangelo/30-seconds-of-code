@@ -26,14 +26,12 @@ ${Sitemap.urls.join('\n')}
   static get urls() {
     const homePageUrl = `${settings.website.url}${settings.pages.urls.home}`;
     const aboutPageUrl = `${settings.website.url}${settings.pages.urls.about}`;
-    const faqPageUrl = `${settings.website.url}${settings.pages.urls.faq}`;
 
     return [
       homePageUrl,
       ...Snippet.scope('published').map(snippet => snippet.fullUrl),
       ...Collection.all.map(collection => collection.allPageFullUrls).flat(),
       aboutPageUrl,
-      faqPageUrl,
     ].map(
       url => `\
     <url>

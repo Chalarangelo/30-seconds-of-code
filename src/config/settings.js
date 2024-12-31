@@ -66,7 +66,6 @@ const settings = {
     urls: {
       home: '/',
       about: '/about',
-      faq: '/faq',
     },
   },
   // Tag formatting
