@@ -159,7 +159,7 @@ describe('Collection', () => {
 
   describe('formattedSnippetCount', () => {
     it('returns formatted snippet count', () => {
-      expect(primaryCollection.formattedSnippetCount).toEqual('1 snippets');
+      expect(primaryCollection.formattedSnippetCount).toEqual('1 articles');
     });
   });
 

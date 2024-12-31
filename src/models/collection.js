@@ -149,7 +149,7 @@ export default class Collection extends ContentModel {
   }
 
   get formattedSnippetCount() {
-    return `${this.listedSnippets.length} snippets`;
+    return `${this.listedSnippets.length} articles`;
   }
 
   get sublinks() {
@@ -167,7 +167,7 @@ export default class Collection extends ContentModel {
     const pagination = {
       pageCount: this.pageCount,
       itemCount: this.listedSnippets.length,
-      itemType: 'snippets',
+      itemType: 'articles',
     };
 
     return Array.from({ length: this.pageCount }, (_, i) => {

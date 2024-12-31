@@ -94,7 +94,7 @@ const omnisearch = {
           ? this.createResultsHTML('Collections', collections)
           : ''
       }
-      ${snippets.length ? this.createResultsHTML('Snippets', snippets) : ''}
+      ${snippets.length ? this.createResultsHTML('Articles', snippets) : ''}
     `;
   },
   displayEmptyState() {
@@ -120,7 +120,7 @@ const omnisearch = {
       `;
   },
   createEmptyStateHTML() {
-    return `<p>Start typing a keyphrase to see matching snippets.</p>`;
+    return `<p>Start typing a keyphrase to see matching articles.</p>`;
   },
   createNotFoundStateHTML(query) {
     const escapedQuery = query
