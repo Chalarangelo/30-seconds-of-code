@@ -1,5 +1,5 @@
 slug: python/date
-title: Python Date Snippets
+title: Python Date Articles
 shortTitle: Python Dates
 miniTitle: Date
 listed: false
@@ -8,9 +8,9 @@ languageMatcher: python
 tagMatcher: date
 allowUnlisted: true
 description: >-
-  The Python snippet collection contains helper functions for Python 3.6. It
+  The Python article collection contains helper functions for Python 3.6. It
   includes utilities for most common data types, such as primitivies, lists,
   dictionaries and date objects.
 shortDescription: >-
-  Easily manipulate dates in Python 3.6 with this snippet collection.
+  Easily manipulate dates in Python 3.6 with this article collection.
 splash: terrarium

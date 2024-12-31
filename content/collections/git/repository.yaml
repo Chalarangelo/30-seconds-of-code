@@ -1,5 +1,5 @@
 slug: git/repository
-title: Git Repository Snippets
+title: Git Repository Articles
 shortTitle: Git Repositories
 miniTitle: Repository
 listed: true
@@ -7,11 +7,11 @@ parent: git
 languageMatcher: git
 tagMatcher: repository
 description: >-
-  The Git snippet collection contains a variety of short tips and tricks for all
+  The Git article collection contains a variety of short tips and tricks for all
   currently maintained versions of git. It includes most commonly-used commands
   and covers various use-cases in the form of simplified documentation, complete
   with multiple examples.
 shortDescription: >-
-  Organize your git repositories with this snippet collection of simplified git
+  Organize your git repositories with this article collection of simplified git
   documentation and tips.
 splash: keyboard-coffee

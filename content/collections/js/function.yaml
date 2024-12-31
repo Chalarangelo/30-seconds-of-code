@@ -1,15 +1,15 @@
 slug: js/function
-title: JavaScript Function Snippets
+title: JavaScript Function Articles
 miniTitle: Function
 listed: true
 parent: js
 languageMatcher: javascript
 tagMatcher: function
 description: >-
-  The JavaScript snippet collection contains a wide variety of ES6 helper
+  The JavaScript article collection contains a wide variety of ES6 helper
   functions. It includes helpers for dealing with primitives, arrays and
   objects, as well as algorithms, DOM manipulation functions and Node.js
   utilities.
 shortDescription: >-
-  Learn everything about JavaScript functions with this ES6 snippet collection.
+  Learn everything about JavaScript functions with this ES6 article collection.
 splash: tablet

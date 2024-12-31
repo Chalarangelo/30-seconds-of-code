@@ -1,5 +1,5 @@
 slug: js/browser
-title: JavaScript Browser Snippets
+title: JavaScript Browser Articles
 shortTitle: JavaScript Browser
 miniTitle: Browser
 listed: true
@@ -7,11 +7,11 @@ parent: js
 languageMatcher: javascript
 tagMatcher: browser
 description: >-
-  The JavaScript snippet collection contains a wide variety of ES6 helper
-  functions. Browser snippets include helper functions for selecting,
+  The JavaScript article collection contains a wide variety of ES6 helper
+  functions. Browser articles include helper functions for selecting,
   traversing, and manipulating DOM elements, while general-purpose helpers
-  can be found in the JavaScript snippet collection.
+  can be found in the JavaScript articles collection.
 shortDescription: >-
   Select, traverse and manipulate DOM elements with this collection of
-  JavaScript ES6 snippets.
+  JavaScript ES6 articles.
 splash: laptop-plant

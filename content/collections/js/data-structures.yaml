@@ -18,8 +18,8 @@ snippetIds:
 splash: purple-flower
 description: >-
   The JavaScript data structures collection includes implementations and
-  examples of some of the most commonly-used data structures. Data structure
-  snippets are **best used as a learning resource**, as they might require
+  examples of some of the most commonly-used data structures. Code presented in
+  these articls is **best used as a learning resource**, as it might require
   optimizations to run in production.
 shortDescription: >-
   A guide to some of the most commonly-used data structures, along with

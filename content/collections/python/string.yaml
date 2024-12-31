@@ -1,5 +1,5 @@
 slug: python/string
-title: Python String Snippets
+title: Python String Articles
 shortTitle: Python Strings
 miniTitle: String
 listed: false
@@ -8,10 +8,10 @@ languageMatcher: python
 tagMatcher: string
 allowUnlisted: true
 description: >-
-  The Python snippet collection contains helper functions for Python 3.6. It
+  The Python article collection contains helper functions for Python 3.6. It
   includes utilities for most common data types, such as primitivies, lists,
   dictionaries and date objects.
 shortDescription: >-
-  Learn how to format and manipulate strings in Python 3.6 with this snippet
+  Learn how to format and manipulate strings in Python 3.6 with this article
   collection.
 splash: terrarium

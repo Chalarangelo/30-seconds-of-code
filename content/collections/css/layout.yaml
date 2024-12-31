@@ -6,9 +6,9 @@ parent: css
 languageMatcher: css
 tagMatcher: layout
 description: >-
-  The CSS snippet collection contains utilities and interactive examples for
+  The CSS article collection contains utilities and interactive examples for
   CSS3. It includes modern techniques for creating commonly-used layouts,
-  styling and animating elements, as well as snippets for handling user
+  styling and animating elements, as well as articles for handling user
   interactions.
 shortDescription: >-
   Learn how to create common layouts with CSS3, using modern techniques such as

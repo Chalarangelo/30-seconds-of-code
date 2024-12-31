@@ -10,7 +10,7 @@ snippetIds:
   - js/s/uuid-generator
 splash: matcha
 description: >-
-  Random value generators come up in a lot of different situations. This snippet
+  Random value generators come up in a lot of different situations. This article
   collection consists of a variety of JavaScript solutions, from generating
   random numbers in a range to strings, booleans and hex color codes.
 shortDescription: >-

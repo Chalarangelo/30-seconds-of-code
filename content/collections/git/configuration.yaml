@@ -1,5 +1,5 @@
 slug: git/configuration
-title: Git Configuration Snippets
+title: Git Configuration Articles
 shortTitle: Git Configuration
 miniTitle: Configuration
 listed: true
@@ -7,11 +7,11 @@ parent: git
 languageMatcher: git
 tagMatcher: configuration
 description: >-
-  The Git snippet collection contains a variety of short tips and tricks for all
+  The Git article collection contains a variety of short tips and tricks for all
   currently maintained versions of git. It includes most commonly-used commands
   and covers various use-cases in the form of simplified documentation, complete
   with multiple examples.
 shortDescription: >-
-  Create and manage git configurations with this snippet collection of
+  Create and manage git configurations with this article collection of
   simplified git documentation and tips.
 splash: keyboard-coffee

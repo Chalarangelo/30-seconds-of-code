@@ -1,5 +1,5 @@
 slug: python/math
-title: Python Math Snippets
+title: Python Math Articles
 shortTitle: Python Math
 miniTitle: Math
 listed: false
@@ -8,10 +8,10 @@ languageMatcher: python
 tagMatcher: math
 allowUnlisted: true
 description: >-
-  The Python snippet collection contains helper functions for Python 3.6. It
+  The Python article collection contains helper functions for Python 3.6. It
   includes utilities for most common data types, such as primitivies, lists,
   dictionaries and date objects.
 shortDescription: >-
   Learn how to perform common mathematical operations in Python 3.6 with this
-  snippet collection.
+  article collection.
 splash: plant-window

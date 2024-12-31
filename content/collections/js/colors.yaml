@@ -11,10 +11,10 @@ snippetIds:
 splash: colorful-rocks
 description: >-
   Working with color in JavaScript requires some understanding of color formats
-  and conversions. This snippet collection covers a lot of those needs from
+  and conversions. This article collection covers a lot of those needs from
   generating random color hex codes to converting between hex and RGB values and
   even some more advanced tricks like using the HSL format to alter the
   lightness of a color.
 shortDescription: >-
   Working with color requires understanding of color formats and conversions.
-  Luckily, this JavaScript snippet collection's got you covered.
+  Luckily, this JavaScript article collection's got you covered.

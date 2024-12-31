@@ -19,9 +19,9 @@ snippetIds:
 splash: blue-computer
 description: >-
   Working with promises in JavaScript is a great way to handle **asynchronous
-  operations**, yet it can be confusing for many developers. This snippet
+  operations**, yet it can be confusing for many developers. This article
   collection covers the basics of promises and how to use them to handle
   everyday operations, as well as some more advanced topics.
 shortDescription: >-
-  This snippet collection covers the basics of JavaScript promises and how to
+  This article collection covers the basics of JavaScript promises and how to
   use them to handle asynchronous operations in your code.

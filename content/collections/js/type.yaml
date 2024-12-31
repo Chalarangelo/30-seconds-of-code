@@ -1,5 +1,5 @@
 slug: js/type
-title: JavaScript Type Snippets
+title: JavaScript Type Articles
 shortTitle: JavaScript Types
 miniTitle: Type
 listed: true
@@ -7,10 +7,10 @@ parent: js
 languageMatcher: javascript
 tagMatcher: type
 description: >-
-  The JavaScript snippet collection contains a wide variety of ES6 helper
+  The JavaScript article collection contains a wide variety of ES6 helper
   functions. It includes helpers for dealing with primitives, arrays and
   objects, as well as algorithms, DOM manipulation functions and Node.js
   utilities.
 shortDescription: >-
-  A snippet collection of type helpers and explanations of JavaScript types.
+  An article collection of type helpers and explanations of JavaScript types.
 splash: laptop-plant

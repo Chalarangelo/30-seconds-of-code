@@ -1,5 +1,5 @@
 slug: js/date
-title: JavaScript Date Snippets
+title: JavaScript Date Articles
 shortTitle: JavaScript Dates
 miniTitle: Date
 listed: true
@@ -7,11 +7,11 @@ parent: js
 languageMatcher: javascript
 tagMatcher: date
 description: >-
-  The JavaScript snippet collection contains a wide variety of ES6 helper
+  The JavaScript article collection contains a wide variety of ES6 helper
   functions. It includes helpers for dealing with primitives, arrays and
   objects, as well as algorithms, DOM manipulation functions and Node.js
   utilities.
 shortDescription: >-
-  An ES6 snippet collection for formatting and manipulating dates with native
+  An ES6 article collection for formatting and manipulating dates with native
   JavaScript.
 splash: succulent

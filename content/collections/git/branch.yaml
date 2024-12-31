@@ -1,5 +1,5 @@
 slug: git/branch
-title: Git Branch Snippets
+title: Git Branch Articles
 shortTitle: Git Branches
 miniTitle: Branch
 listed: true
@@ -7,11 +7,11 @@ parent: git
 languageMatcher: git
 tagMatcher: branch
 description: >-
-  The Git snippet collection contains a variety of short tips and tricks for all
+  The Git article collection contains a variety of short tips and tricks for all
   currently maintained versions of git. It includes most commonly-used commands
   and covers various use-cases in the form of simplified documentation, complete
   with multiple examples.
 shortDescription: >-
-  Master git branch commands with this snippet collection of simplified git
+  Master git branch commands with this article collection of simplified git
   documentation and tips.
 splash: keyboard-coffee

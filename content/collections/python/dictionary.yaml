@@ -1,5 +1,5 @@
 slug: python/dictionary
-title: Python Dictionary Snippets
+title: Python Dictionary Articles
 shortTitle: Python Dictionaries
 miniTitle: Dictionary
 listed: false
@@ -8,9 +8,9 @@ languageMatcher: python
 tagMatcher: dictionary
 allowUnlisted: true
 description: >-
-  The Python snippet collection contains helper functions for Python 3.6. It
+  The Python article collection contains helper functions for Python 3.6. It
   includes utilities for most common data types, such as primitivies, lists,
   dictionaries and date objects.
 shortDescription: >-
-  A snippet collection of dictionary helpers and tips for Python 3.6.
+  An article collection of dictionary helpers and tips for Python 3.6.
 splash: tea-pour

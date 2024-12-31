@@ -1,12 +1,12 @@
 slug: python
-title: Python Snippets
+title: Python Articles
 shortTitle: Python
 topLevel: false
 languageMatcher: python
 listed: true
 allowUnlisted: true
 description: >-
-  The Python snippet collection contains helper functions for Python 3.6. It
+  The Python article collection contains helper functions for Python 3.6. It
   includes utilities for most common data types, such as primitivies, lists,
   dictionaries and date objects.
 shortDescription: >-

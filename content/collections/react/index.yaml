@@ -1,11 +1,11 @@
 slug: react
-title: React Snippets
+title: React Articles
 shortTitle: React
 topLevel: true
 languageMatcher: react
 listed: true
 description: >-
-  The React snippet collection contains function components and reusable hooks
+  The React article collection contains function components and reusable hooks
   for React 18.
 shortDescription: >-
   Discover function components and reusable hooks for React 18.

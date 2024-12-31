@@ -10,6 +10,6 @@ snippetIds:
 splash: basics
 description: >-
   Simple unit conversions come up in a lot of JavaScript applications. This
-  snippet collection covers some of the most common conversions you might need
+  article collection covers some of the most common conversions you might need
   to perform in your JavaScript code.
 shortDescription: Learn how to convert between different units of measurement in JavaScript.

@@ -1,14 +1,12 @@
 slug: collections
-title: Snippet Collections
+title: Article Collections
 splash: widescreen
 description: >-
-  30 seconds of code provides a wide variety of snippet and article
-  collections for all your development needs. Explore individual language
-  collections or browse through collections about specific topics and
-  programming concepts.
+  30 seconds of code contains a variety of article collections, covering a wide
+  range of development needs. Explore individual language collections or browse
+  through collections about specific topics and programming concepts.
 shortDescription: >-
-  Browse through collections of snippets and articles about specific topics
-  and programming concepts.
+  Browse through collections of articles about specific topics and programming concepts.
 featuredListings:
 - js
 - css

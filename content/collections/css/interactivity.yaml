@@ -1,5 +1,5 @@
 slug: css/interactivity
-title: CSS Interactivity Snippets
+title: CSS Interactivity Articles
 shortTitle: CSS Interactivity
 miniTitle: Interactivity
 listed: true
@@ -7,11 +7,11 @@ parent: css
 languageMatcher: css
 tagMatcher: interactivity
 description: >-
-  The CSS snippet collection contains utilities and interactive examples for
+  The CSS article collection contains utilities and interactive examples for
   CSS3. It includes modern techniques for creating commonly-used layouts,
-  styling and animating elements, as well as snippets for handling user
+  styling and animating elements, as well as articles for handling user
   interactions.
 shortDescription: >-
-  A snippet collection of CSS3 code snippets and examples covering common user
+  An article collection of CSS3 code articles and examples covering common user
   interactions.
 splash: camera

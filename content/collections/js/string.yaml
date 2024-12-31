@@ -1,15 +1,15 @@
 slug: js/string
-title: JavaScript String Snippets
+title: JavaScript String Articles
 miniTitle: String
 listed: true
 parent: js
 languageMatcher: javascript
 tagMatcher: string
 description: >-
-  The JavaScript snippet collection contains a wide variety of ES6 helper
+  The JavaScript article collection contains a wide variety of ES6 helper
   functions. It includes helpers for dealing with primitives, arrays and
   objects, as well as algorithms, DOM manipulation functions and Node.js
   utilities.
 shortDescription: >-
-  Master string manipulation in JavaScript with this ES6 snippet collection.
+  Master string manipulation in JavaScript with this ES6 article collection.
 splash: laptop-plant
