@@ -1,6 +1,6 @@
 // Styles for the home page. As these are only used in that specific page, it's
 // better to keep them in a separate file and import them only in the page.
-nav[aria-label='Snippets'] {
+nav[aria-label='Articles'] {
   // Use flex to center the content.
   display: flex;
   justify-content: center;
