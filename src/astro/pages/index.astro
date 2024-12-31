@@ -14,9 +14,9 @@ import Icon from '#src/astro/components/Icon.astro';
 const pagePath = path.join(process.cwd(), '.content', 'pages', 'index.json');
 const pageData = JSON.parse(fs.readFileSync(pagePath, 'utf8'));
 
-const title = 'Discover short code snippets for all your development needs.';
+const title = 'Discover hundreds<br/> of coding articles to<br/> level up your skills.';
 const description =
-  '<p>Browse snippets by collection or check out our top picks and latest articles below.</p>';
+  '<p>Browse articles by collection or check out the top picks and latest content below.</p>';
 
 const {
   featuredCollections,
@@ -47,10 +47,10 @@ const {
   {Boolean(announcement) && <Announcement {...announcement} />}
   <Chips items={featuredCollections} />
     <PreviewList contentItems={featuredSnippets}>
-      <h2 slot='title'>New & Popular Snippets</h2>
+      <h2 slot='title'>New & Popular Articles</h2>
       <nav slot='bottom-nav' aria-label='Snippets'>
         <a href={snippetListUrl}>
-          Explore all snippets
+          Explore all articles
           <Icon name='arrow-right' size='1.25em' />
         </a>
       </nav>
