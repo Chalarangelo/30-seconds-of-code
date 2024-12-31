@@ -1,6 +1,6 @@
 export default {
   websiteName: '30 seconds of code',
-  websiteDescription: 'Short code snippets for all your development needs',
+  websiteDescription: 'Coding articles to level up your development skills',
   shortName: '30s',
   ownerName: 'Angelos Chalaris',
   ownerUrl: 'https://chalarangelo.me',

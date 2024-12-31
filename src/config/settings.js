@@ -3,9 +3,9 @@ const settings = {
     name: '30 seconds of code',
     shortName: '30s',
     url: 'https://www.30secondsofcode.org',
-    description: 'Short code snippets for all your development needs',
+    description: 'Coding articles to level up your development skills',
     seoDescription({ snippetCount, websiteName }) {
-      return `Browse ${snippetCount} short code snippets for all your development needs on ${websiteName}.`;
+      return `Browse ${snippetCount} coding articles to level up your coding skills on ${websiteName}.`;
     },
   },
   owner: {
