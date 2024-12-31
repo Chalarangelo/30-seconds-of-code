@@ -1,14 +1,20 @@
 ---
 const { tableOfContents } = Astro.props;
 
+// Check if the default slot has content to prevent rendering the component
+// when there is no content to display.
+const hasSlotContent = Astro.slots.has('default');
+
 // Instead of returning `null`, an empty string is returned to prevent issues
 // with the named slot. This is a workaround for a bug in Astro.
-if (!tableOfContents) return '';
+if (!tableOfContents && !hasSlotContent) return '';
 ---
 
 <nav aria-label='Table of contents'>
   <div>
     <h2>Contents</h2>
-    <Fragment set:html={tableOfContents}/>
+    <slot>
+      <Fragment set:html={tableOfContents}/>
+    </slot>
   </div>
 </nav>
