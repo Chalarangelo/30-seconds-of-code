@@ -6,7 +6,7 @@ const Heading = secondary ? 'h2' : 'h1';
 
 <section class='hero'>
   <div>
-    <Heading>{title}</Heading>
+    <Heading set:html={title} />
     <Fragment set:html={description} />
   </div>
   {cover ?
