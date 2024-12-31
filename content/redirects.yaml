@@ -1,6 +1,9 @@
 - from: /feed
   to: /feed.xml
   status: 200
+- from: /faq
+  to: /about
+  status: 301!
 - from: /collections
   to: /collections/p/1
   status: 301!
