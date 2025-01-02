@@ -7,6 +7,7 @@ cover: digital-nomad-13
 excerpt: In the third installment of implementing an ActiveRecord-like pattern in JavaScript, we'll model and optimize object scoping.
 listed: true
 dateModified: 2024-12-19
+discussion: 2094
 ---
 
 <script>

@@ -7,6 +7,7 @@ cover: digital-nomad-4
 excerpt: A deep dive into a fairly flexible implementation, inspired by Rails' ActiveRecord, for modeling JavaScript object collections in memory.
 listed: true
 dateModified: 2024-12-05
+discussion: 2094
 ---
 
 <script>

@@ -7,6 +7,7 @@ cover: digital-nomad-15
 excerpt: Continuing on the journey to implement an ActiveRecord-like pattern in JavaScript with object attributes and relationships.
 listed: true
 dateModified: 2024-12-12
+discussion: 2094
 ---
 
 <script>

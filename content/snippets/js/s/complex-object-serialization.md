@@ -7,6 +7,7 @@ cover: coffee-phone-tray
 excerpt: In the fourth part of the series, we will look at how to serialize complex JavaScript objects.
 listed: true
 dateModified: 2024-12-26
+discussion: 2094
 ---
 
 <script>
