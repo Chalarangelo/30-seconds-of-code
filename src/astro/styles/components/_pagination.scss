@@ -10,7 +10,7 @@ nav[aria-label='Pagination'] {
   grid-template-columns: 1fr var(--pagination_middle-column-width) 1fr;
   gap: var(--spacing-8);
 
-  a {
+  > a {
     // Remove underline from pagination links.
     --link_color-underline: transparent;
 
@@ -103,6 +103,30 @@ nav[aria-label='Pagination'] {
     // Center the pagination text inside the grid row.
     text-align: center;
     align-self: center;
+    // Make sure that 2 lines of text can fit without stretching the container
+    // vertically and breking the visual alignment.
+    line-height: var(--line-height-normal);
+
+    a {
+      // Remove underline from snippet journey pagination link.
+      --link_color-underline: transparent;
+
+      transition: color var(--animation-duration-short) ease;
+
+      @media (hover: hover) {
+        // Only apply hover styles on devices that support hover.
+        &:is(:hover, :focus) {
+          color: var(--color-text);
+        }
+      }
+    }
+
+    a,
+    span {
+      // Ensure that the journey pagination elements are displayed as inline blocks.
+      // This allows for better alignment and spacing.
+      display: inline-block;
+    }
   }
 
   @media (max-width: 30rem) {
@@ -126,4 +150,10 @@ nav[aria-label='Pagination'] {
       grid-row: 2;
     }
   }
+}
+
+// Style the link for snippet journey pagination.
+main > article + nav {
+  // Add some spacing below, based on the layout area spacing.
+  margin-block-end: var(--layout-area-spacing);
 }
