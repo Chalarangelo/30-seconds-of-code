@@ -13,6 +13,11 @@ main > article > footer {
     font-size: var(--font-sm);
     text-align: right;
     max-width: unset;
+
+    time {
+      // Make sure date is displayed in one line on small viewports.
+      display: inline-block;
+    }
   }
 
   a {
