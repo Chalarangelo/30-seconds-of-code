@@ -1,33 +1,36 @@
 ---
 import Icon from '#src/astro/components/Icon.astro';
 
-const { pagination } = Astro.props;
+const { pagination, journey } = Astro.props;
 
-if (!pagination) return null;
+if (!pagination && !journey) return null;
 
-const {
-  pageNumber,
-  totalPages,
-  baseUrl,
-  hasPrevious,
-  hasNext,
-  totalItems,
-  itemType
-} = pagination;
+const isJourney = Boolean(journey);
 
-const previousUrl = `${baseUrl}/p/${hasPrevious ? pageNumber - 1 : 1}`;
-const nextUrl = `${baseUrl}/p/${hasNext ? pageNumber + 1 : totalPages}`;
+const hasPrevious = isJourney ? Boolean(journey.previousUrl) : pagination.hasPrevious;
+const previousText = 'Previous';
+const previousUrl = isJourney ?
+  journey.previousUrl :
+  `${pagination.baseUrl}/p/${hasPrevious ? pagination.pageNumber - 1 : 1}`;
+
+const hasNext = isJourney ? Boolean(journey.nextUrl) : pagination.hasNext;
+const nextText ='Next';
+const nextUrl = isJourney ?
+  journey.nextUrl :
+  `${pagination.baseUrl}/p/${hasNext ? pagination.pageNumber + 1 : pagination.totalPages}`;
+
+const detail = isJourney ?
+  `<a href="${journey.url}">${journey.title}</a> collection <span>(${journey.itemNumber} of ${journey.totalItems} articles)</span>` :
+  `Page ${pagination.pageNumber} of ${pagination.totalPages} (${pagination.totalItems} ${pagination.itemType})`;
 ---
 <nav aria-label='Pagination'>
   <a href={previousUrl} rel='prev' aria-disabled={!hasPrevious}>
     <Icon name='chevron-left' size='1.25em' />
-    Previous
+    {previousText}
   </a>
   <a href={nextUrl} rel='next' aria-disabled={!hasNext}>
-    Next
+    {nextText}
     <Icon name='chevron-right' size='1.25em' />
   </a>
-  <p>
-    {`Page ${pageNumber} of ${totalPages} (${totalItems} ${itemType})`}
-  </p>
+  <p set:html={detail} />
 </nav>
