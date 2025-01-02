@@ -8,6 +8,7 @@ import Layout from '#src/astro/layouts/Layout.astro';
 import Breadcrumb from '#src/astro/components/Breadcrumb.astro';
 import SnippetContent from '#src/astro/components/SnippetContent.astro';
 import TableOfContents from '#src/astro/components/TableOfContents.astro';
+import Pagination from '#src/astro/components/Pagination.astro';
 import PreviewList from '#src/astro/components/PreviewList.astro';
 
 export async function getStaticPaths() {
@@ -27,6 +28,7 @@ const {
   snippet,
   recommendations,
   breadcrumbs,
+  journey,
   pageDescription,
   structuredData,
 } = Astro.props;
@@ -44,6 +46,7 @@ const {
   <main slot='main-content'>
     <Breadcrumb breadcrumbs={breadcrumbs} />
     <SnippetContent snippet={snippet} />
+    {journey && <Pagination journey={journey} />}
     <PreviewList contentItems={recommendations}>
       <h2 slot='title'>More like this</h2>
     </PreviewList>
