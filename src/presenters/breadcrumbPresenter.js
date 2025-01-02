@@ -17,7 +17,9 @@ export default class BreadcrumbPresenter {
   get recommendedCollection() {
     return this.allCollections
       .filter(
-        collection => !this.collectionsForBreadcrumbs.includes(collection)
+        collection =>
+          !this.collectionsForBreadcrumbs.includes(collection) &&
+          !this.object.journeyId === collection.journeyId
       )
       .sort((a, b) => b.ranking - a.ranking)[0];
   }
