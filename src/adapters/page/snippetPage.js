@@ -22,6 +22,7 @@ export default class SnippetPage extends Page {
       breadcrumbs: this.object.breadcrumbs,
       pageDescription: this.object.seoDescription,
       snippet: this.object.context,
+      journey: this.object.journeyPagination,
       recommendations: [
         this.object.recommendedCollection,
         ...this.object.recommendedSnippets,

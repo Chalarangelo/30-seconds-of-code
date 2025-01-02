@@ -78,6 +78,36 @@ export default class Snippet extends ContentModel {
     return Collection.find(this.journeyId);
   }
 
+  get previousJourneySnippet() {
+    if (!this.journey) return null;
+
+    const snippets = this.journey.listedSnippets;
+    const index = snippets.findIndex(s => s.id === this.id);
+    return snippets[index - 1] || null;
+  }
+
+  get nextJourneySnippet() {
+    if (!this.journey) return null;
+
+    const snippets = this.journey.listedSnippets;
+    const index = snippets.findIndex(s => s.id === this.id);
+    return snippets[index + 1] || null;
+  }
+
+  get journeyPagination() {
+    if (!this.journey) return null;
+
+    return {
+      previousUrl: this.previousJourneySnippet?.url,
+      nextUrl: this.nextJourneySnippet?.url,
+      url: this.journey.url,
+      title: this.journey.miniTitle,
+      totalItems: this.journey.listedSnippets.length,
+      itemNumber:
+        this.journey.listedSnippets.findIndex(s => s.id === this.id) + 1,
+    };
+  }
+
   get hasLanguage() {
     return Boolean(this.language);
   }
