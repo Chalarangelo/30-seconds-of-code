@@ -30,6 +30,7 @@ export default class Snippet extends ContentModel {
     this.tableOfContents = data.tableOfContents;
     this.languageId = data.languageId;
     this.discussion = data.discussion;
+    this.journeyId = data.journeyId;
   }
 
   static byNew(records) {
@@ -70,6 +71,11 @@ export default class Snippet extends ContentModel {
     return Collection.where({
       id: this.collectionSnippets.pluck('collectionId'),
     });
+  }
+
+  get journey() {
+    if (!this.journeyId) return null;
+    return Collection.find(this.journeyId);
   }
 
   get hasLanguage() {

@@ -24,6 +24,7 @@ export const extractSnippetData = async (snippetGlob, languageData) => {
         listed,
         tocEnabled = true,
         discussion = null,
+        journeyId = null,
       } = snippet;
 
       const language = languageData.get(languageKey);
@@ -62,6 +63,7 @@ export const extractSnippetData = async (snippetGlob, languageData) => {
         tokens: tokens.join(';'),
         ranking,
         discussion,
+        journeyId,
       };
     })
   );
@@ -86,6 +88,7 @@ export const exportSnippetData = snippetData => {
       tokens: snippet.tokens,
       ranking: snippet.ranking,
       discussion: snippet.discussion,
+      journeyId: snippet.journeyId,
     };
   });
   /* eslint-enable camelcase */
