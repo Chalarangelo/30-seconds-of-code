@@ -8,6 +8,7 @@ excerpt: In the third installment of implementing an ActiveRecord-like pattern i
 listed: true
 dateModified: 2024-12-19
 discussion: 2094
+journeyId: js/complex-objects
 ---
 
 <script>

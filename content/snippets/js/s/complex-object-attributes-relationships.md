@@ -8,6 +8,7 @@ excerpt: Continuing on the journey to implement an ActiveRecord-like pattern in 
 listed: true
 dateModified: 2024-12-12
 discussion: 2094
+journeyId: js/complex-objects
 ---
 
 <script>

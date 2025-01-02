@@ -8,6 +8,7 @@ excerpt: A deep dive into a fairly flexible implementation, inspired by Rails' A
 listed: true
 dateModified: 2024-12-05
 discussion: 2094
+journeyId: js/complex-objects
 ---
 
 <script>

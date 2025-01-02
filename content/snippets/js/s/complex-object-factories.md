@@ -8,6 +8,7 @@ excerpt: Expanding even further upon our ActiveRecord-inspired project, we'll fi
 listed: true
 dateModified: 2025-01-02
 discussion: 2094
+journeyId: js/complex-objects
 ---
 
 <script>
