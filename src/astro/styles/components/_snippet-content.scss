@@ -18,6 +18,43 @@ main > article > footer {
       // Make sure date is displayed in one line on small viewports.
       display: inline-block;
     }
+
+    // Select the direct child of the footer, as it can be either a single link
+    // or a `span` element containing two links.
+    > *:is(a, span) {
+      // Make sure actions are displayed in one line on small viewports.
+      display: block;
+    }
+
+    // Query depending on how many characters can fit in a line, assuming that
+    // the user may change the default font size.
+    @media (min-width: 28rem) {
+      > a {
+        // Display the actions in one line on larger viewports.
+        display: inline;
+
+        &::before {
+          // Add a separator on larger viewports.
+          content: '\00B7';
+          // Add spacing after the separator (only needed for single link).
+          padding-inline-end: var(--spacing-2);
+        }
+      }
+    }
+
+    // Query depending on how many characters can fit in a line, assuming that
+    // the user may change the default font size.
+    @media (min-width: 38rem) {
+      > span {
+        // Display the actions in one line on larger viewports.
+        display: inline;
+
+        &::before {
+          // Add a separator on larger viewports.
+          content: '\00B7';
+        }
+      }
+    }
   }
 
   a {
