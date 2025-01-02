@@ -23,6 +23,7 @@ export const extractSnippetData = async (snippetGlob, languageData) => {
         dateModified,
         listed,
         tocEnabled = true,
+        discussion = null,
       } = snippet;
 
       const language = languageData.get(languageKey);
@@ -60,6 +61,7 @@ export const extractSnippetData = async (snippetGlob, languageData) => {
         languageKey,
         tokens: tokens.join(';'),
         ranking,
+        discussion,
       };
     })
   );
@@ -83,6 +85,7 @@ export const exportSnippetData = snippetData => {
       languageId: snippet.languageKey,
       tokens: snippet.tokens,
       ranking: snippet.ranking,
+      discussion: snippet.discussion,
     };
   });
   /* eslint-enable camelcase */
