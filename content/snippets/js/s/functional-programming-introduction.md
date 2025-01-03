@@ -7,6 +7,7 @@ cover: driftwood
 excerpt: A short introduction to the functional programming paradigm.
 listed: true
 dateModified: 2023-12-30
+journeyId: js/functional-programming
 ---
 
 Functional programming is a **programming paradigm** that treats computation as the evaluation of mathematical functions and avoids changing state and mutable data. It emphasizes the application of **functions**, in contrast to the imperative programming style, which emphasizes changes in state.

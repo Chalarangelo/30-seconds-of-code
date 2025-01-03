@@ -7,6 +7,7 @@ cover: tulips-and-reeds
 excerpt: Currying is a process that transforms a function that takes multiple arguments into a series of functions that each take a single argument.
 listed: true
 dateModified: 2023-12-29
+journeyId: js/functional-programming
 ---
 
 Functional programming often makes use of **currying**, which is a process that transforms a **function that takes multiple arguments** into a **series of functions that each take a single argument**. This makes code more flexible and reusable.

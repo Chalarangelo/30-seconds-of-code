@@ -7,6 +7,7 @@ cover: radio-monstera
 excerpt: Function arity is a simple, yet useful concept in functional programming, especially when combined with currying.
 listed: true
 dateModified: 2023-12-29
+journeyId: js/functional-programming
 ---
 
 Function arity is the **number of arguments a function expects**. While it sounds very theoretical, it's actually quite useful in practice, especially in functional programming.

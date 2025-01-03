@@ -7,6 +7,7 @@ cover: rocky-beach
 excerpt: Learn how to leverage partial application to improve the reusability of your JavaScript functions.
 listed: true
 dateModified: 2024-01-31
+journeyId: js/functional-programming
 ---
 
 Partial application is a technique used to **fix a number of arguments** to a function, producing another function of **smaller arity**. This is particularly useful in situations where you want to create a new function by pre-filling some of the arguments of an existing function.

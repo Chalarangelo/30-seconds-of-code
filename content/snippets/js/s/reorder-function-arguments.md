@@ -7,6 +7,7 @@ cover: interior-11
 excerpt: Learn how to reorder the arguments of a JavaScript function to fit your needs.
 listed: true
 dateModified: 2024-08-05
+journeyId: js/functional-programming
 ---
 
 While JavaScript's APIs have come a long way, they're often not as flexible as we'd like. Sometimes, you need to **change the order of arguments** in a function to fit your needs. This is also a fairly common problem when working with libraries or APIs that don't provide the exact signature you need. Luckily, rearranging function arguments is easy with a few lines of code.

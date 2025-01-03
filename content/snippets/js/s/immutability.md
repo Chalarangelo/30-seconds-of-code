@@ -7,6 +7,7 @@ cover: stars-n-snow
 excerpt: Immutability is a fundamental concept you should be familiar with when learning functional programming.
 listed: true
 dateModified: 2023-12-14
+journeyId: js/functional-programming
 ---
 
 In **traditional programming**, **data is often mutable**, meaning that it can be manipulated and altered at will after it is created. Let's look at an example:

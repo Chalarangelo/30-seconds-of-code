@@ -7,6 +7,7 @@ cover: digital-nomad-16
 excerpt: Understand the basics of function composition, a fundamental concept in functional programming.
 listed: true
 dateModified: 2023-12-29
+journeyId: js/functional-programming
 ---
 
 In functional programming, **function composition** is the process of combining multiple functions to produce a new function. This technique is used heavily in functional programming, but it can also be used in imperative programming. Its main benefits are **readability**, **reusability** and **modularity**.

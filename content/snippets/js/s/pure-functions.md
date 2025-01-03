@@ -7,6 +7,7 @@ cover: dark-leaves
 excerpt: Pure functions are a very important concept to know, especially if you're interested in functional programming.
 listed: true
 dateModified: 2021-12-19
+journeyId: js/functional-programming
 ---
 
 Pure functions are one of the most important concepts to learn and understand, especially if you're interested in functional programming.

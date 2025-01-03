@@ -7,6 +7,7 @@ cover: curve
 excerpt: Recursion is a very important programming concept all developers should be familiar with.
 listed: true
 dateModified: 2022-01-23
+journeyId: js/functional-programming
 ---
 
 Recursion is the **repeated application of a process**. In JavaScript, recursion involves functions that call themselves repeatedly until they reach a base case. The base case breaks out of the recursion loop, thus allowing previous calls to the function to return a result. If no such case exists, the function will call itself indefinitely resulting in a stack overflow.
