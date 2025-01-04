@@ -240,6 +240,41 @@ const author = AuthorFactory.build(
 >
 > Some of you might be wondering why I didn't choose to make the customized object contain functions, so that `email` can be specified as a function, instead of passing two parameters. This is a **design choice** I stand by, as the cost of calling a function for each property can easily pile up. Instead, most of the time, we can get away with passing a function that generates multiple properties at once. At most, we'll end up with an object and a function for each factory call.
 
+### Clearing objects
+
+In some cases, we might want to **clear out objects**, to make sure they don't interfere with our tests. This is especially useful when we're counting records or checking relationships, for example.
+
+We can add two new methods, `clear` and `clearAll`, to our `Factory` class to handle this. These methods will simply access the **static variables** (`instances`, `indexedInstances` and `getterCache`) of the `Model` class and reset them.
+
+```js [src/core/factory.js]
+import Model from '#src/core/model.js';
+
+export default class Factory {
+  // ...
+
+  static clear(model) {
+    Model.instances[model] = [];
+    Model.indexedInstances[model] = new Map();
+    Model.getterCache[model] = {};
+  }
+
+  static clearAll() {
+    Model.instances = {};
+    Model.indexedInstances = {};
+    Model.getterCache = {};
+  }
+}
+```
+
+And here they are in action, clearing instances created by the `PostFactory`.
+
+```js
+PostFactory.build();
+Post.all.length; // 1
+Factory.clear('Post');
+Post.all.length; // 0
+```
+
 ### Convenience methods
 
 As you're well aware by this point, convenience methods are a staple of my coding style. I definitely dislike having to find the appropriate factory to call every time I need to create an object. I'd much rather call a method on the `Factory` class itself, specifying the model I want to create.
@@ -671,6 +706,8 @@ export default class Serializer {
 ```
 
 ```js [src/core/factory.js]
+import Model from '#src/core/model.js';
+
 const sequenceSymbol = Symbol('sequence');
 
 const isSequence = value =>
@@ -727,6 +764,18 @@ export default class Factory {
     return Array.from({ length: count }, () =>
       Factory.build(model, ...desiredTraits)
     );
+  }
+
+  static clear(model) {
+    Model.instances[model] = [];
+    Model.indexedInstances[model] = new Map();
+    Model.getterCache[model] = {};
+  }
+
+  static clearAll() {
+    Model.instances = {};
+    Model.indexedInstances = {};
+    Model.getterCache = {};
   }
 }
 ```
