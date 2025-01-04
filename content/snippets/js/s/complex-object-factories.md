@@ -739,8 +739,10 @@ export default class Factory {
         const data = { ...factoryBase };
 
         desiredTraits.forEach(trait => {
-          if (typeof trait === 'string') Object.assign(data, traits[trait]);
-          else if (typeof trait === 'object') Object.assign(data, trait);
+          if (typeof trait === 'string')
+            Object.assign(data, traits[trait]);
+          else if (typeof trait === 'object')
+            Object.assign(data, trait);
           else if (typeof trait === 'function')
             Object.assign(data, trait(data));
         });
