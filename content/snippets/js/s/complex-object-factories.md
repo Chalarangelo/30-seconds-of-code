@@ -713,7 +713,6 @@ export default class Factory {
     });
   }
 
-  // V3
   static sequence = (fn = n => n) => {
     let i = 0;
     const sequence = () => fn(i++);
