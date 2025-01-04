@@ -34,7 +34,7 @@ src/
 │   ├── model.js
 │   ├── recordSet.js
 │   └── serializer.js
-└── models/
+├── models/
 │   ├── author.js
 │   └── post.js
 └── serializers/
