@@ -484,7 +484,7 @@ Notice how all of our posts have unique identifiers and titles, as they use the 
 
 We've come a long way in this series. We've built **models**, **queries**, **scopes**, **serialization**, and now **factories**. This latest system allows us to easily create complex objects for our tests, and we've even added sequences to generate unique values for our objects. Oh, and customization is a breeze, too!
 
-There are a few bits and pieces that I've implemented or have left out in previous implementation, as well as some problems you may face in the real world using such a setup. Stay tuned for future installments, where I'll cover thee topics in more detail!
+There are a few bits and pieces that I've implemented or have left out in previous implementation, as well as some problems you may face in the real world using such a setup. Stay tuned for future installments, where I'll cover these topics in more detail!
 
 ---
 
