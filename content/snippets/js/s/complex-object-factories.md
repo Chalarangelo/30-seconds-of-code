@@ -502,7 +502,7 @@ export default class AuthorFactory extends Factory {
 With these changes in place, we can now create objects with unique attribute values.
 
 ```js
-const author = AuthorFactory.build();
+const author = Factory.build('Author');
 const posts = Factory.buildArray(
   'Post', 3, 'unpublished', { authorId: author.id }
 );
