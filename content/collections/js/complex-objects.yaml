@@ -8,6 +8,7 @@ snippetIds:
   - js/s/complex-object-scopes
   - js/s/complex-object-serialization
   - js/s/complex-object-factories
+  - js/s/complex-object-field-validation
 splash: laptop-view
 description: >-
   Inspired by ActiveRecord, this collection will guide you through the process of
