@@ -16,7 +16,7 @@ All you have to do is create a new promise using the `Promise()` constructor, an
 ```js
 const resolveAfter = (value, delay) =>
   new Promise(resolve => {
-    setTimeout(() => resolve(value, delay));
+    setTimeout(() => resolve(value), delay);
   });
 
 resolveAfter('Hello', 1000);
