@@ -936,7 +936,6 @@ As the project grows towards its final form, I want to address a couple more top
 
 The complete implementation is summarized below, as is traditional by now. This includes all the changes we've made to the `Model` class, as well as the changes to the `Author` and `Post` models, and all previous implementations.
 
-
 <details>
 <summary>View the complete implementation</summary>
 
@@ -1457,5 +1456,3 @@ export default class PostFactory extends Factory {
 ```
 
 </details>
-
-
