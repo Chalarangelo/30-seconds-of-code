@@ -12,9 +12,14 @@ snippetIds:
   - js/s/complex-object-autoloading-console
   - js/s/complex-object-advanced-relationships
 splash: laptop-view
-description: >-
+description: |+
   Inspired by ActiveRecord, this collection will guide you through the process of
   modeling complex objects in JavaScript, from in-memory collections to queries,
   relationships, serialization, and more.
+
+  <footer>
+  <a href="https://github.com/Chalarangelo/mini-active-record" target="_blank" rel="noopener noreferrer">Code reference</a> &middot;
+  <a href="https://github.com/Chalarangelo/30-seconds-of-code/discussions/2094" target="_blank" rel="noopener noreferrer">Join the discussion</a>
+  </footer>
 shortDescription: >-
   Join me in this journey of implementing an ActiveRecord-like pattern in JavaScript.
