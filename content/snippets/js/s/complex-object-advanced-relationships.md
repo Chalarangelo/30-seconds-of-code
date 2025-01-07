@@ -164,7 +164,7 @@ const base = {
 
 export default class CategoryFactory extends Factory {
   static {
-    Factory.prepare(this, Category, base);
+    super.prepare(this, Category, base);
   }
 }
 ```
@@ -1363,7 +1363,7 @@ import Serializer from '#src/core/serializer.js';
 
 export default class PostSerializer extends Serializer {
   static {
-    Serializer.prepare(this, [
+    super.prepare(this, [
       'title',
       ['content', post => `<p>${post.content}</p>`],
       ['date', post => {
@@ -1391,7 +1391,7 @@ import Serializer from '#src/core/serializer.js';
 
 export default class PostPreviewSerializer extends Serializer {
   static {
-    Serializer.prepare(this, [
+    super.prepare(this, [
       'title',
       ['date', post => {
         const date = new Date(post.publishedAt);
@@ -1423,7 +1423,7 @@ const base = {
 
 export default class AuthorFactory extends Factory {
   static {
-    Factory.prepare(this, Author, base);
+    super.prepare(this, Author, base);
   }
 }
 ```
@@ -1452,7 +1452,7 @@ const traits = {
 
 export default class PostFactory extends Factory {
   static {
-    Factory.prepare(this, Post, base, traits);
+    super.prepare(this, Post, base, traits);
   }
 }
 ```
@@ -1472,7 +1472,7 @@ const base = {
 
 export default class CategoryFactory extends Factory {
   static {
-    Factory.prepare(this, Category, base);
+    super.prepare(this, Category, base);
   }
 }
 ```

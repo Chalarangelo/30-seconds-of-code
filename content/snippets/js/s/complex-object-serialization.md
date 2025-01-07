@@ -160,7 +160,7 @@ import Serializer from '#src/core/serializer.js';
 
 export default class PostSerializer extends Serializer {
   static {
-    Serializer.prepare(this, ['title', 'content', 'publishedAt']);
+    super.prepare(this, ['title', 'content', 'publishedAt']);
   }
 }
 ```
@@ -243,7 +243,7 @@ import Serializer from '#src/core/serializer.js';
 
 export default class PostSerializer extends Serializer {
   static {
-    Serializer.prepare(this, [
+    super.prepare(this, [
       'title',
       'content',
       ['date', 'publishedAt']
@@ -309,7 +309,7 @@ import Serializer from '#src/core/serializer.js';
 
 export default class PostSerializer extends Serializer {
   static {
-    Serializer.prepare(this, [
+    super.prepare(this, [
       'title',
       ['content', post => `<p>${post.content}</p>`],
       ['date', post => {
@@ -346,7 +346,7 @@ import Serializer from '#src/core/serializer.js';
 
 export default class PostSerializer extends Serializer {
   static {
-    Serializer.prepare(this, [
+    super.prepare(this, [
       'title',
       ['content', post => `<p>${post.content}</p>`],
       ['date', post => {
@@ -409,7 +409,7 @@ import Serializer from '#src/core/serializer.js';
 
 export default class PostPreviewSerializer extends Serializer {
   static {
-    Serializer.prepare(this, [
+    super.prepare(this, [
       'title',
       ['date', post => {
         const date = new Date(post.publishedAt);
@@ -724,7 +724,7 @@ import Serializer from '#src/core/serializer.js';
 
 export default class PostSerializer extends Serializer {
   static {
-    Serializer.prepare(this, [
+    super.prepare(this, [
       'title',
       ['content', post => `<p>${post.content}</p>`],
       ['date', post => {
@@ -752,7 +752,7 @@ import Serializer from '#src/core/serializer.js';
 
 export default class PostPreviewSerializer extends Serializer {
   static {
-    Serializer.prepare(this, [
+    super.prepare(this, [
       'title',
       ['date', post => {
         const date = new Date(post.publishedAt);
