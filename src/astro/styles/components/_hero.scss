@@ -46,6 +46,32 @@
     }
   }
 
+  footer {
+    // Override generic `footer` styles here.
+    display: block;
+    padding-block: var(--spacing-8) 0;
+    color: var(--color-text-lighter);
+
+    // Make the text smaller and align it to the right.
+    font-size: var(--font-sm);
+
+    > a {
+      // Remove underline from links.
+      --link_color-underline: transparent;
+      // Ensure that the links are displayed as inline blocks.
+      display: inline-block;
+
+      transition: color var(--animation-duration-short) ease;
+
+      @media (hover: hover) {
+        // Only apply hover styles on devices that support hover.
+        &:is(:hover, :focus) {
+          color: var(--color-text);
+        }
+      }
+    }
+  }
+
   // Adjust the layout based on user font size choice.
   @media (max-width: 40rem) {
     // If the viewport isn't wide enough, switch to a column layout.
