@@ -20,7 +20,7 @@ journeyId: js/complex-objects
 
 > [!IMPORTANT]
 >
-> This article is part of a series, picking up where [Modeling complex JavaScript object scopes](/js/s/complex-object-scopes) left off. Make sure to read previous articles in the series before continuing. The entire series is more of a **show & tell**, aiming to <strong class="sparkles">inspire</strong> you to use more advanced JavaScript features and patterns in your projects.
+> This article is part of a [series](/js/complex-objects/p/1), picking up where [Modeling complex JavaScript object scopes](/js/s/complex-object-scopes) left off. Make sure to read previous articles in the series before continuing. The entire series is more of a **show & tell**, aiming to <strong class="sparkles">inspire</strong> you to use more advanced JavaScript features and patterns in your projects.
 
 In the last installment, we covered a lot of ground towards making our **model queries reusable**. Our `Model` and `RecordSet` classes are now capable of handling complex queries, and we can even compose them in a way. Our two models, `Post` and `Author` are now fully functional and our code is **well-optimized**. However, we still have one problem to solve - **serialization**.
 

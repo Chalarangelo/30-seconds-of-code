@@ -20,7 +20,7 @@ journeyId: js/complex-objects
 
 > [!IMPORTANT]
 >
-> This is the second article in a series about a recent project I implemented, inspired by Ruby on Rails' ActiveRecord pattern. It's more of an advanced **show & tell**, aiming to <strong class="sparkles">inspire</strong> readers to use more advanced JavaScript features and patterns. If you haven't read the first article, I recommend you start there: [Modeling complex JavaScript object collections in memory](/js/s/complex-object-collections-in-memory).
+> This is the second article in a [series](/js/complex-objects/p/1) about a recent project I implemented, inspired by Ruby on Rails' ActiveRecord pattern. It's more of an advanced **show & tell**, aiming to <strong class="sparkles">inspire</strong> readers to use more advanced JavaScript features and patterns. If you haven't read the first article, I recommend you start there: [Modeling complex JavaScript object collections in memory](/js/s/complex-object-collections-in-memory).
 
 In the previous article, we explored the core of modeling complex object collections in memory, by setting up the basis for a `Model` and `RecordSet`, which can help us **manage and interact** with our data. In this article, we'll continue our journey, focusing on **attributes and relationships** between models. We'll also make some optimizations to our implementation to improve performance towards the end.
 

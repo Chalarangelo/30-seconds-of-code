@@ -22,7 +22,7 @@ I've been working with [Ruby on Rails](https://rubyonrails.org/) quite a lot lat
 
 > [!IMPORTANT]
 >
-> This is more of a **show & tell**, rather than a tutorial. It's fairly complex and quite advanced, so I won't be explaining every single detail. The hope is to <strong class="sparkles">inspire</strong> you to think about using more advanced JavaScript features and building some interesting things with them.
+> This article is part of a [series](/js/complex-objects/p/1). It is more of a **show & tell**, rather than a tutorial. It's fairly complex and quite advanced, so I won't be explaining every single detail. The hope is to <strong class="sparkles">inspire</strong> you to think about using more advanced JavaScript features and building some interesting things with them.
 
 ## The idea
 

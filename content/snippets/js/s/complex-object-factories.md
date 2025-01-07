@@ -20,7 +20,7 @@ journeyId: js/complex-objects
 
 > [!IMPORTANT]
 >
-> This article is part of a series, following [Modeling complex JavaScript object serialization](/js/s/complex-object-serialization). It may still make sense on its own, but it's highly recommended to read the previous articles first. This series is more of a **show & tell** with the aim to <strong class="sparkles">inspire</strong> you to build more advanced JavaScript projects.
+> This article is part of a [series](/js/complex-objects/p/1), following [Modeling complex JavaScript object serialization](/js/s/complex-object-serialization). It may still make sense on its own, but it's highly recommended to read the previous articles first. This series is more of a **show & tell** with the aim to <strong class="sparkles">inspire</strong> you to build more advanced JavaScript projects.
 
 In the past four installments, we've created **models**, **queries**, **scopes** and **serialization** for our ActiveRecord-inspired project. As the project grows larger, we might find a need to **test our code**. However, mocking things is hard, especially the more complex our objects get. This is where **factories** come in.
 

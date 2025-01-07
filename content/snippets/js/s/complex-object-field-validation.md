@@ -20,7 +20,7 @@ journeyId: js/complex-objects
 
 > [!IMPORTANT]
 >
-> This article is part of a series, picking up where [Modeling complex JavaScript object factories](/js/s/complex-object-factories) left off. If you haven't read the previous installments yet, I recommend taking a look at them first. This series is more of a **show & tell** hoping to <strong class="sparkles">inspire</strong> you to build your own JavaScript projects.
+> This article is part of a [series](/js/complex-objects/p/1), picking up where [Modeling complex JavaScript object factories](/js/s/complex-object-factories) left off. If you haven't read the previous installments yet, I recommend taking a look at them first. This series is more of a **show & tell** hoping to <strong class="sparkles">inspire</strong> you to build your own JavaScript projects.
 
 We previously explored how create robust object **models**, **records** and **collections**, however, we've not yet touched on how to validate the fields of these objects. This time around, we'll be focusing on **adding constraints to individual fields**, including type checking, empty and default values, and more.
 

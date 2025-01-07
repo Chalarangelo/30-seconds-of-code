@@ -20,7 +20,7 @@ journeyId: js/complex-objects
 
 > [!IMPORTANT]
 >
-> This article is part of a series, picking up where [Modeling complex JavaScript object autoloading and console](/js/s/complex-object-autoloading-console) left off. If you haven't read the previous installments yet, I strongly advise you to do so to get the full context. This series is more of a **show & tell** hoping to <strong class="sparkles">inspire</strong> you to build your own advanced JavaScript projects.
+> This article is part of a [series](/js/complex-objects/p/1), picking up where [Modeling complex JavaScript object autoloading and console](/js/s/complex-object-autoloading-console) left off. If you haven't read the previous installments yet, I strongly advise you to do so to get the full context. This series is more of a **show & tell** hoping to <strong class="sparkles">inspire</strong> you to build your own advanced JavaScript projects.
 
 We've already come a long way implementing an ActiveRecord-like JavaScript object system. While we've already covered **models**, **records** and **queries** extensively, I want to revisit the **relationships** between objects. The current implementation is fairly basic and I believe we can do plenty more to make it more powerful.
 

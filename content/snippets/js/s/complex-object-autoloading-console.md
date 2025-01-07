@@ -20,7 +20,7 @@ journeyId: js/complex-objects
 
 > [!IMPORTANT]
 >
-> This article is part of a series, following [Modeling complex JavaScript object field validation](/js/s/complex-object-field-validation). It's highly recommended to read the previous articles to get the full context. The whole series is more of a **show & tell** hoping to <strong class="sparkles">inspire</strong> you to start that advanced JavaScript project you've been thinking about.
+> This article is part of a [series](/js/complex-objects/p/1), following [Modeling complex JavaScript object field validation](/js/s/complex-object-field-validation). It's highly recommended to read the previous articles to get the full context. The whole series is more of a **show & tell** hoping to <strong class="sparkles">inspire</strong> you to start that advanced JavaScript project you've been thinking about.
 
 So far in this series, we've developed **models**, **queries**, **scopes**, **serialization**, and **factories** for our ActiveRecord-inspired project. As the project grows larger, I want to address **autoloading** and a **console** environment to interact with our objects. In this installment, we'll create an inspect utility to help us work with objects in the console.
 

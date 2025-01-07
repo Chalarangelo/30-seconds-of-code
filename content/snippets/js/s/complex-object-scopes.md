@@ -20,7 +20,7 @@ journeyId: js/complex-objects
 
 > [!IMPORTANT]
 >
-> This article is part of a series and picks up where the previous article, [Modeling complex JavaScript object attributes & relationships](/js/s/complex-object-attributes-relationships), left off. If you haven't read it yet, I recommend you do so before continuing. The entire series is more of a **show & tell**, aiming to <strong class="sparkles">inspire</strong> you to use more advanced JavaScript features and patterns.
+> This article is part of a [series](/js/complex-objects/p/1) and picks up where the previous article, [Modeling complex JavaScript object attributes & relationships](/js/s/complex-object-attributes-relationships), left off. If you haven't read it yet, I recommend you do so before continuing. The entire series is more of a **show & tell**, aiming to <strong class="sparkles">inspire</strong> you to use more advanced JavaScript features and patterns.
 
 In the previous two installments, we've covered the core of our implementation, with a `Model` and `RecordSet` class, as well as two models, `Author` and `Post`. We've also implemented **basic querying, attributes and relationships**. This time around, we'll focus on **object scoping**, a way to quickly retrieve a subset of objects from a collection.
 
