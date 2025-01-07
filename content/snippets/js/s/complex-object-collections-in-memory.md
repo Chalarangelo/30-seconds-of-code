@@ -347,6 +347,8 @@ Wow, that was a lot! And here I was thinking I'd explain the rest of the codebas
 
 If you're looking for the complete implementation, you can find it below. More code will be added in subsequent articles, so it may come in handy as a reference point.
 
+You can also [browse through the Code Reference on GitHub](https://github.com/Chalarangelo/mini-active-record/tree/8d3a5b7171111ceb63fb2e849860858eba2880a8).
+
 <details>
 <summary>View the complete implementation</summary>
 

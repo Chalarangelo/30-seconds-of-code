@@ -759,6 +759,8 @@ I hope you found this deep dive interesting and that you've discovered a new way
 
 Before I leave you, here's the entire implementation of this series. You can use this as a reference or as a starting point for your own projects. Enjoy!
 
+You can also [browse through the Code Reference on GitHub](https://github.com/Chalarangelo/mini-active-record/tree/c5f23659fc06baea671c834609be4546cfc6c980).
+
 <details>
 <summary>View the complete implementation</summary>
 

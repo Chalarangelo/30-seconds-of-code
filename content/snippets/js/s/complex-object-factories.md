@@ -527,6 +527,8 @@ There are a few bits and pieces that I've implemented or have left out in previo
 
 Last but not least, here's a summary of the complete implementation. This includes all new classes, as well as previous one, so you can pick up where you left off next time.
 
+You can also [browse through the Code Reference on GitHub](https://github.com/Chalarangelo/mini-active-record/tree/6d1d139e2dd0592d6b2e3d1333616e6d5a005c03).
+
 <details>
 <summary>View the complete implementation</summary>
 

@@ -368,6 +368,8 @@ There's a ton more to explore in this project, so stay tuned for the next instal
 
 Yet again, here's the complete implementation up until this point in the series. You may want to use it as a reference point or to test the code yourself.
 
+You can also [browse through the Code Reference on GitHub](https://github.com/Chalarangelo/mini-active-record/tree/8011287839c3dba71140514f01a4f9c7ae4a36ad).
+
 <details>
 <summary>View the complete implementation</summary>
 

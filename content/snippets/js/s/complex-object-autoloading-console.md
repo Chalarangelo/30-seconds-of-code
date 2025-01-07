@@ -409,6 +409,8 @@ I may have a couple of things to address before we wrap the series, but this art
 
 The customary code summary of the entire implementation up until this point can be found below. Make sure to bookmark it, if you need a quick reference in the future.
 
+You can also [browse through the Code Reference on GitHub](https://github.com/Chalarangelo/mini-active-record/tree/c5f23659fc06baea671c834609be4546cfc6c980).
+
 <details>
 <summary>View the complete implementation</summary>
 

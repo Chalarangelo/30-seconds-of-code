@@ -265,6 +265,7 @@ While the core of the project is starting to take shape, we've yet to address so
 
 As per tradition, the complete implementation up until this point can be found below. This is a good place to pick up from in future installments.
 
+You can also [browse through the Code Reference on GitHub](https://github.com/Chalarangelo/mini-active-record/tree/1b8b3a2193da88801ed9aa8c87879d851e2e14b3).
 
 <details>
 <summary>View the complete implementation</summary>

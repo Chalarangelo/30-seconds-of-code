@@ -936,6 +936,8 @@ As the project grows towards its final form, I want to address a couple more top
 
 The complete implementation is summarized below, as is traditional by now. This includes all the changes we've made to the `Model` class, as well as the changes to the `Author` and `Post` models, and all previous implementations.
 
+You can also [browse through the Code Reference on GitHub](https://github.com/Chalarangelo/mini-active-record/tree/b0870fd4674a183a40353088db686bc0ea3536c5).
+
 <details>
 <summary>View the complete implementation</summary>
 

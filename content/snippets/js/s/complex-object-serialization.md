@@ -476,6 +476,8 @@ As the codebase of this series is starting to get larger and more complex, we mi
 
 You didn't think I'd leave you without a code reference for this article, did you? Make sure to bookmark this for future reference, as we'll need it in the next installment.
 
+You can also [browse through the Code Reference on GitHub](https://github.com/Chalarangelo/mini-active-record/tree/dcde0efb5e973de4b05af6ad9c36a2693292ef43).
+
 
 <details>
 <summary>View the complete implementation</summary>
