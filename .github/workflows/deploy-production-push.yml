@@ -18,9 +18,9 @@ jobs:
             - 'package-lock.json'
             - 'package.json'
     # run only if 'web' files were changed
-    - name: Add deployable commit to 'production' branch
+    - name: Run the Netlify build hook
       env:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        DEPLOY_URL: ${{ secrets.NETLIFY_BUILD_HOOK_URL }}
         DEPLOY_TRIGGER: ${{ github.event_name }}
       if: steps.filter.outputs.web == 'true'
       run: |
