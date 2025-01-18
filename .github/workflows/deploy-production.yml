@@ -8,9 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Add deployable commit to 'production' branch
+    - name: Run the Netlify build hook
       env:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        DEPLOY_URL: ${{ secrets.NETLIFY_BUILD_HOOK_URL }}
         DEPLOY_TRIGGER: ${{ github.event_name }}
       run: |
         chmod +x ./bin/deploy
