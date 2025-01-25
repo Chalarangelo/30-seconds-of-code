@@ -222,6 +222,15 @@ figure.admonition {
   row-gap: calc(var(--layout-row-spacing) / 3);
 }
 
+dfn {
+  // Make definitions non-italic.
+  font-style: normal;
+  // Add a subtle dotted underline to definitions.
+  text-decoration: underline var(--color-border-light) dotted;
+  // Exactly match the underline of links.
+  text-underline-offset: 4.5px;
+}
+
 :not(:is(code, kbd, pre)) {
   // Apply font features to non-monospace elements.
   font-feature-settings: 'frac', 'cv05', 'cv11', 'calt', 'kern';
