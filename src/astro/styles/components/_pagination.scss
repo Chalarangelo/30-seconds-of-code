@@ -1,4 +1,5 @@
-nav[aria-label='Pagination'] {
+nav[aria-label='Pagination'],
+figcaption[aria-label='Replay steps'] {
   // Use a variable to dynamically set the width of the middle column.
   // This allows for a responsive layout, where the middle column can be
   // removed on smaller screens.
@@ -10,7 +11,8 @@ nav[aria-label='Pagination'] {
   grid-template-columns: 1fr var(--pagination_middle-column-width) 1fr;
   gap: var(--spacing-8);
 
-  > a {
+  > a,
+  > button {
     // Remove underline from pagination links.
     --link_color-underline: transparent;
 
@@ -156,4 +158,26 @@ nav[aria-label='Pagination'] {
 main > article + nav {
   // Add some spacing below, based on the layout area spacing.
   margin-block-end: var(--layout-area-spacing);
+}
+
+// Style the replay steps pagination.
+figcaption[aria-label='Replay steps'] {
+  // Add some spacing above the steps replay controls.
+  margin-block-start: var(--spacing-8);
+
+  p {
+    // Make the steps text a little more prominent.
+    font-size: var(--font-sm);
+  }
+
+  @media (max-width: 30rem) {
+    // Restore the middle column on smaller screens.
+    --pagination_middle-column-width: 1fr;
+
+    p {
+      // Explicitly restore the position of the steps text.
+      grid-column: 2;
+      grid-row: 1;
+    }
+  }
 }
