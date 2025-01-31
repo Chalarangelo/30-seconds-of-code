@@ -158,7 +158,7 @@ Cool visualization, huh? _But how does it work?_ I'll first present the short ve
 
 ### Short explanation
 
-Here are the algorithm's steps, given two sequences, `a` and `b`, with lengths `m` and `n` respectively.
+Here are the algorithm's steps, given two sequences, `a` and `b`, with lengths `m` and `n`:
 
 1. Create an `(m + 1) x (n + 1)` 2D array, `dp`. Each column represents a character of `a`, and each row represents a character of `b`.
 2. Fill the first row and column with zeros (`0`), representing the number of matching characters between an empty string and the corresponding prefix.
