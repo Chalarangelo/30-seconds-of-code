@@ -72,7 +72,7 @@ const tokenize = expression => {
 
     tokens.push({ type: TOKEN_TYPES.NUMBER, value: bufferValue });
     buffer = '';
-  }
+  };
 
   [...expression].forEach(char => {
     // Skip whitespace
@@ -143,7 +143,7 @@ const tokenize = expression => {
 
     tokens.push({ type: TOKEN_TYPES.NUMBER, value: bufferValue });
     buffer = '';
-  }
+  };
 
   [...expression].forEach(char => {
     // Skip whitespace
@@ -232,7 +232,7 @@ const tokenize = expression => {
 
     tokens.push({ type: TOKEN_TYPES.NUMBER, value: bufferValue });
     buffer = '';
-  }
+  };
 
   [...expression].forEach(char => {
     // Skip whitespace
@@ -347,7 +347,7 @@ const tokenize = expression => {
 
     tokens.push({ type: TOKEN_TYPES.NUMBER, value: bufferValue });
     buffer = '';
-  }
+  };
 
   [...expression].forEach((char) => {
     // Skip whitespace
