@@ -1,7 +1,7 @@
 [![Logo](/logo.png)](https://30secondsofcode.org/js/p/1)
 
 # 30 seconds of code
-
+## Mahmood
 > Coding articles to level up your development skills
 
 * Visit [the website](https://30secondsofcode.org) to view all articles.
