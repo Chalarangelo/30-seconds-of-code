@@ -14,7 +14,6 @@
 
 * New content contributions are not accepted at this time.
 * You can, however, report problems with the website or suggest improvements by [opening an issue](https://github.com/Chalarangelo/30-seconds-of-code/issues/new).
-* You can also join the [community discussions](https://github.com/Chalarangelo/30-seconds-of-code/discussions).
 
 ## Credits
 
