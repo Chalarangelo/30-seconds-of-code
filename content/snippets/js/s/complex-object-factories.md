@@ -7,7 +7,6 @@ cover: tranquil-desktop
 excerpt: Expanding even further upon our ActiveRecord-inspired project, we'll figure out how to create factories that produce complex objects.
 listed: true
 dateModified: 2025-01-02
-discussion: 2094
 journeyId: js/complex-objects
 ---
 

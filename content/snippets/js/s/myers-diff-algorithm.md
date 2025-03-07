@@ -7,7 +7,6 @@ cover: peaches
 excerpt: Delve deep into the Myers diff algorithm and learn how to calculate the difference between two strings in JavaScript, the way Git does.
 listed: true
 dateModified: 2025-02-12
-discussion: 2098
 ---
 
 Have you ever wondered how Git's diff algorithm works? From what I've read, it's based on the **Myers diff algorithm**, which itself is based on solving the [longest common subsequence problem](/js/s/longest-common-subsequence), which I've covered in a previous article. So, let's take a look at how we can implement this algorithm in JavaScript!
@@ -184,4 +183,4 @@ Looks a lot like a Git diff, doesn't it? You can definitely make it even better 
 
 ## Conclusion
 
-And there you have it! You can now find the differences between two sequences using the Myers diff algorithm and visualize them in a readable format. If you want to join the community discussion on this article, as well as the LCS one, use the link below to jump into the GitHub discussion!
+And there you have it! You can now find the differences between two sequences using the Myers diff algorithm and visualize them in a readable format.

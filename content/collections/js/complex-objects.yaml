@@ -18,8 +18,7 @@ description: |+
   relationships, serialization, and more.
 
   <footer>
-  <a href="https://github.com/Chalarangelo/mini-active-record" target="_blank" rel="noopener noreferrer">Code reference</a> &middot;
-  <a href="https://github.com/Chalarangelo/30-seconds-of-code/discussions/2094" target="_blank" rel="noopener noreferrer">Join the discussion</a>
+  <a href="https://github.com/Chalarangelo/mini-active-record" target="_blank" rel="noopener noreferrer">Code reference</a>
   </footer>
 shortDescription: >-
   Join me in this journey of implementing an ActiveRecord-like pattern in JavaScript.

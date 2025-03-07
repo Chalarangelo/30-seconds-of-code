@@ -7,7 +7,6 @@ cover: digital-nomad-14
 excerpt: In this installment, we'll create a custom object inspect utility to help us debug our complex objects in the console.
 listed: true
 dateModified: 2025-01-16
-discussion: 2094
 journeyId: js/complex-objects
 ---
 
@@ -401,7 +400,7 @@ Factory.build('Author');
 
 Our ActiveRecord-inspired project is starting to address the pains of scaling. We can finally easily **load all the modules** and interact with them in the **console**. We've also created a custom **object inspect utility** to help us debug our complex objects and hide sensitive data from the console.
 
-I may have a couple of things to address before we wrap the series, but this article is already long enough. Don't forget to join the discussion on GitHub, using the link down below, or just drop a reaction to let me know if you're enjoying the series!
+I may have a couple of things to address before we wrap the series, but this article is already long enough. Let's regroup and see what's left to do in the next installment.
 
 ---
 

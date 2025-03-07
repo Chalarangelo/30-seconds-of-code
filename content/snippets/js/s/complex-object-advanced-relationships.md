@@ -7,7 +7,6 @@ cover: digital-nomad
 excerpt: In this installment of the ActiveRecord-like JavaScript implementation, we will revisit modeling relationships between objects.
 listed: true
 dateModified: 2025-01-23
-discussion: 2094
 journeyId: js/complex-objects
 ---
 
@@ -753,7 +752,7 @@ And there you have it! We've successfully implemented self-referential relations
 
 After a long and winding road, we've finally implemented a very powerful **relationship system** for our models. We can now **define** relationships quickly and easily, **customize** them and even **implement self-referential relationships**. This is a very powerful setup and can help us scale our project to new heights.
 
-I hope you found this deep dive interesting and that you've discovered a new way to think about complexity. This is going to be the last article of the series, at least for now. If you've made it this far, thank you for sticking with me. Join the GitHub discussion via the link below, and let me know if you liked the series or if you have any questions.
+I hope you found this deep dive interesting and that you've discovered a new way to think about complexity. This is going to be the last article of the series, at least for now. If you've made it this far, thank you for sticking with me. See you next time! 🚀
 
 ## Addendum: Code summary
 

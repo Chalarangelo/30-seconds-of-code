@@ -7,7 +7,6 @@ cover: planning
 excerpt: Returning to the models and records part of the implementation, this time around we'll explore how to add constraints to individual fields.
 listed: true
 dateModified: 2025-01-09
-discussion: 2094
 journeyId: js/complex-objects
 ---
 
@@ -928,7 +927,7 @@ export default class Author extends Model {
 
 That's a wrap! Our models can finally be used to store structured data. We've covered **type** constraints, **emptiness** constraints, **default values**, field **uniqueness**, and **custom validators**. This is a great starting point for a more complex system, which can be extended in many ways, or used to interface with a relational database.
 
-As the project grows towards its final form, I want to address a couple more topics before the series is over. Stay tuned for the next installment and, if you feel like it, drop a reaction or a comment in the GitHub discussion, linked below. Until next time!
+As the project grows towards its final form, I want to address a couple more topics before the series is over. Stay tuned for the next installment. Until next time!
 
 ---
 

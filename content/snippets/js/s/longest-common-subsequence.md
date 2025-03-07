@@ -7,7 +7,6 @@ cover: carrots
 excerpt: The longest common subsequence is the longest subsequence common to all given sequences and can be easily found using dynamic programming.
 listed: true
 dateModified: 2025-02-03
-discussion: 2098
 ---
 
 The **longest common subsequence** (LCS) is the longest subsequence common to all given sequences. It is not the same as the longest common substring, which must occupy consecutive positions within the original sequences. The LCS problem can be easily solved using <dfn title='A problem-solving method that breaks down a complex problem into smaller, manageable parts, solves each part, and then optimizes those solutions to find the best overall answer.'>**dynamic programming**</dfn>.
@@ -241,4 +240,4 @@ Our function takes two sequences, `a` and `b`, as arguments. It creates a 2D arr
 
 ## Conclusion
 
-That's all there is to it! You now know how to find the longest common subsequence of two strings or arrays using dynamic programming in JavaScript. If you have any questions or need further clarification, feel free to join the GitHub discussion, using the link below! I'd love to hear your feedback on the visualization as well, as I'm interested in creating more of these for future articles.
+That's all there is to it! You now know how to find the longest common subsequence of two strings or arrays using dynamic programming in JavaScript.
