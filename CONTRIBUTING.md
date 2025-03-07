@@ -4,7 +4,6 @@
 
 ## How you can help
 
-- Participate in community Discussions.
 - Submit Issues or Pull Requests related to bugs, improvements, typos etc.
 
 ## Ground rules
@@ -13,7 +12,6 @@ Breaking any of these rules will result in your pull request being closed. Pleas
 
 - **Always be polite and respectful to others** and try to follow the advice of the maintainer.
 - **Only modify files under the `content/snippets` or `content/collections` directories**, when making changes to the website content (i.e. bug fixes or improvements).
-- **Use discussions for q&a, ideas, suggestions, etc.**, and issues for bugs, improvements, feature requests, etc. If you're unsure, use discussions.
 
 ## Writing guidelines
 
