@@ -16,8 +16,6 @@ const settings = {
     url: 'https://github.com/Chalarangelo/30-seconds-of-code',
     snippetPrefix:
       'https://github.com/Chalarangelo/30-seconds-of-code/blob/master/content/snippets',
-    discussionPrefix:
-      'https://github.com/Chalarangelo/30-seconds-of-code/discussions/',
   },
   license: {
     url: 'https://creativecommons.org/licenses/by/4.0/',

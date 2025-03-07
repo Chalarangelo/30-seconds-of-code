@@ -29,7 +29,6 @@ export default class Snippet extends ContentModel {
     this.dateModified = new Date(data.dateModified);
     this.tableOfContents = data.tableOfContents;
     this.languageId = data.languageId;
-    this.discussion = data.discussion;
     this.journeyId = data.journeyId;
   }
 
@@ -152,12 +151,6 @@ export default class Snippet extends ContentModel {
 
   get githubUrl() {
     return `${settings.repository.snippetPrefix}${this.slug}.md`;
-  }
-
-  get discussionUrl() {
-    if (!this.discussion) return null;
-
-    return `${settings.repository.discussionPrefix}${this.discussion}`;
   }
 
   get isScheduled() {

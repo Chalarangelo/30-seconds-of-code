@@ -23,7 +23,6 @@ export const extractSnippetData = async (snippetGlob, languageData) => {
         dateModified,
         listed,
         tocEnabled = true,
-        discussion = null,
         journeyId = null,
       } = snippet;
 
@@ -62,7 +61,6 @@ export const extractSnippetData = async (snippetGlob, languageData) => {
         languageKey,
         tokens: tokens.join(';'),
         ranking,
-        discussion,
         journeyId,
       };
     })
@@ -87,7 +85,6 @@ export const exportSnippetData = snippetData => {
       languageId: snippet.languageKey,
       tokens: snippet.tokens,
       ranking: snippet.ranking,
-      discussion: snippet.discussion,
       journeyId: snippet.journeyId,
     };
   });

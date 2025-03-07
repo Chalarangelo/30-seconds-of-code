@@ -12,7 +12,6 @@ export default class SnippetContextSerializer extends Serializer {
       ['cover', object => object.coverUrlFullSize],
       ['coverSrcset', object => object.coverSrcsetFullSize],
       'githubUrl',
-      'discussionUrl',
       'tableOfContents',
     ]);
   }

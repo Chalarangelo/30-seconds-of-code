@@ -29,7 +29,6 @@ describe('Snippet', () => {
     id: 'js/s/my-snippet',
     tags: 'array;object',
     tokens: 'lorem;ipsum',
-    discussion: 2020,
   });
 
   const nodeJsSnippet = SnippetFactory.create('taggedNodeJs', {
@@ -127,18 +126,6 @@ describe('Snippet', () => {
       expect(jsSnippet.githubUrl).toEqual(
         `https://github.com/Chalarangelo/30-seconds-of-code/blob/master/content/snippets/${jsSnippet.id}.md`
       );
-    });
-  });
-
-  describe('discussionUrl', () => {
-    it('returns discussion URL if discussion exists', () => {
-      expect(jsSnippet.discussionUrl).toEqual(
-        `https://github.com/Chalarangelo/30-seconds-of-code/discussions/${jsSnippet.discussion}`
-      );
-    });
-
-    it('returns null if no discussion', () => {
-      expect(snippetWithoutLanguage.discussionUrl).toEqual(null);
     });
   });
 
