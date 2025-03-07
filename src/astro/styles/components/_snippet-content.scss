@@ -21,6 +21,8 @@ main > article > footer {
 
     // Select the direct child of the footer, as it can be either a single link
     // or a `span` element containing two links.
+    // NOTE: Currently the two links case is not in use, but is left as a way
+    // to support further customization in the future (Discussions leftover).
     > *:is(a, span) {
       // Make sure actions are displayed in one line on small viewports.
       display: block;
