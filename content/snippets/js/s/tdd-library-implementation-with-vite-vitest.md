@@ -382,7 +382,7 @@ Lookaheads and lookbehinds followed a very similar pattern. I wrote some tests, 
 import { Segment, toSegments } from './segment.js';
 import { concat } from './group.js';
 
-const toLookAround = (expressions, { lookbehind, negative }) => {
+const toLookAround = (expressions, { lookbehind, negative } = {}) => {
   const expression = concat(...toSegments(...expressions)).source;
   const prefix = `?${lookbehind ? '<' : ''}${negative ? '!' : '='}`;
   return new Segment(`(${prefix}${expression})`);
