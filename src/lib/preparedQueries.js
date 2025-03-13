@@ -132,4 +132,8 @@ export default class PreparedQueries {
 
     return DocumentIndex;
   }
+
+  static searchForTerm(term, limit) {
+    return PreparedQueries.prepareDocumentIndex().search(term, limit);
+  }
 }
