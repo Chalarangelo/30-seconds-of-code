@@ -4,7 +4,8 @@ import fs from 'fs';
 import CoverPresenter from '#src/presenters/coverPresenter.js';
 import Collection from '#src/models/collection.js';
 import Snippet from '#src/models/snippet.js';
-import PerforanceTracking from '#src/lib/performanceTracking.js';
+import PerformanceTracking from '#src/lib/performanceTracking.js';
+import DocumentIndex from '#src/lib/search/documentIndex.js';
 import settings from '#src/config/settings.js';
 
 export default class PreparedQueries {
@@ -12,7 +13,7 @@ export default class PreparedQueries {
     if (slugs.length === 1) {
       const snippet = Snippet.search(slugs[0]);
 
-      return PerforanceTracking.for(snippet.slug);
+      return PerformanceTracking.for(snippet.slug);
     } else {
       const snippets = Snippet.searchAll(...slugs)
         .map(snippet => [
@@ -91,5 +92,44 @@ export default class PreparedQueries {
     return Object.fromEntries(
       Object.entries(frequencies).sort((a, b) => b[1] - a[1])
     );
+  }
+
+  static prepareDocumentIndex() {
+    if (DocumentIndex.documents.size === 0) {
+      Snippet.scope('listed').forEach(s => {
+        const contents = {
+          html: [s.content, s.description].join(' '),
+          text: [s.title, s.shortTitle, s.slugId].join(' '),
+          tokens: [s.title, s.shortTitle].join(' '),
+          copy: [
+            s.slugId,
+            ...s.tags,
+            s.language?.short?.toLowerCase(),
+            s.language?.long?.toLowerCase(),
+          ]
+            .filter(Boolean)
+            .join(' '),
+        };
+        DocumentIndex.addDocument(s.id, contents);
+      });
+
+      Collection.scope('listed').forEach(c => {
+        const contents = {
+          html: c.content,
+          text: [
+            c.title,
+            c.shortTitle,
+            c.miniTitle,
+            c.slugId,
+            c.description,
+          ].join(' '),
+          tokens: [c.title, c.shortTitle, c.miniTitle].join(' '),
+          copy: c.slugId,
+        };
+        DocumentIndex.addDocument(c.id, contents);
+      });
+    }
+
+    return DocumentIndex;
   }
 }
