@@ -208,4 +208,18 @@ export const quickParseTokens = str =>
       !/^[()[\]$^.;:|\\/%&*#@!%,"'~`\-+=]+$/i.test(tkn)
   );
 
+/**
+ * Given a string, produce a list of tokens (with duplicates).
+ */
+export const parseTokensWithDuplicates = str =>
+  cleanServerStopWords(tokenize(str))
+    .map(tkn => stem(tkn))
+    .filter(
+      tkn =>
+        !!tkn &&
+        tkn.length > 1 &&
+        !/^-?\d+$/i.test(tkn) &&
+        !/^[()[\]$^.;:|\\/%&*#@!%,"'~`\-+=]+$/i.test(tkn)
+    );
+
 export default parseTokens;
