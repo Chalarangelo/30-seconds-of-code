@@ -1,4 +1,4 @@
-import DocumentTokenizer from '#src/lib/search/documentTokenizer.js';
+import DocumentTokenizer from '#src/lib/documentIndexing/documentTokenizer.js';
 
 export default class DocumentIndex {
   static documents = new Map();
