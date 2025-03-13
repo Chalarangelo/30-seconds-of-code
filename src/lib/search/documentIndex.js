@@ -1,80 +1,69 @@
-import tokenize from '#src/lib/search/search.js';
+import DocumentFrequencies from '#src/lib/search/documentFrequencies.js';
 
 export default class DocumentIndex {
-  static snippets = new Map();
-  static vocabulary = new Map();
-  static idfValues = new Map();
+  static documents = new Map();
+  static invertedIndex = new Map();
+  static documentCount = 0;
 
-  // Add a snippet to the corpus
-  static addSnippet(snippet) {
-    const terms = this.tokenize(snippet.content);
-    this.snippets.set(snippet.id, terms);
+  static addDocument(content, docId) {
+    const terms = DocumentFrequencies.tokenize(content);
 
-    // Update vocabulary counts
-    terms.forEach(term => {
-      this.vocabulary.set(term, (this.vocabulary.get(term) || 0) + 1);
+    // Store original document
+    this.documents.set(docId, {
+      content,
+      terms,
+      length: terms.length,
     });
 
-    return this;
+    // Update inverted index
+    terms.forEach(term => {
+      if (!this.invertedIndex.has(term)) {
+        this.invertedIndex.set(term, new Map());
+      }
+      const docMap = this.invertedIndex.get(term);
+
+      // Store term frequency
+      docMap.set(docId, terms.filter(t => t === term).length);
+    });
+
+    return docId;
   }
 
-  // Tokenize text into individual terms
-  static tokenize(text) {
-    return tokenize(this.stripHtml(text)).filter(term => term);
-  }
-
-  // Strip HTML tags from a string
-  static stripHtml(str) {
-    return str
-      .replace(/<.*?>/gms, '')
-      .replace(/&nbsp;/g, ' ')
-      .replace(/&amp;/g, '&')
-      .replace(/&gt;/g, '>')
-      .replace(/&lt;/g, '<');
-  }
-
-  // Calculate Term Frequency for a term in a snippet
-  static calculateTF(term, snippetId) {
-    const docTerms = this.snippets.get(snippetId);
-    const termCount = docTerms.filter(t => t === term).length;
-    return termCount / docTerms.length;
-  }
-
-  // Calculate Inverse Document Frequency for a term
-  static calculateIDF(term) {
-    const totalDocs = this.snippets.size;
-    const docsWithTerm = this.vocabulary.get(term) || 0;
-
-    // Use standard IDF formula with smoothing
-    return Math.log((totalDocs + 1) / (docsWithTerm + 1)) + 1;
-  }
-
-  // Calculate TF-IDF score for a term in a snippet
-  static calculateTFIDF(term, snippetId) {
-    const tf = this.calculateTF(term, snippetId);
-    const idf = this.calculateIDF(term);
-    return tf * idf;
-  }
-
-  // Get TF-IDF scores for all terms in a snippet
-  static getDocumentScores(snippetId) {
+  static search(query) {
+    const terms = DocumentFrequencies.tokenize(query);
     const scores = new Map();
 
-    this.snippets.get(snippetId).forEach(term => {
-      scores.set(term, this.calculateTFIDF(term, snippetId));
+    // Calculate scores for each document
+    this.documents.forEach((doc, docId) => {
+      let score = 0;
+
+      terms.forEach(term => {
+        if (this.invertedIndex.has(term)) {
+          const indexEntry = this.invertedIndex.get(term).get(docId);
+          if (indexEntry) {
+            // Calculate TF-IDF score for this term in document
+            const tf = indexEntry / doc.length;
+            const idf = Math.log(
+              this.documents.size / this.invertedIndex.get(term).size
+            );
+            score += tf * idf;
+          }
+        }
+      });
+
+      if (score > 0) scores.set(docId, score);
     });
 
-    return Object.fromEntries(
-      [...scores.entries()].sort((a, b) => b[1] - a[1])
-    );
+    // Sort documents by score
+    return Array.from(scores.entries())
+      .sort((a, b) => b[1] - a[1])
+      .map(([docId, score]) => ({
+        id: docId,
+        score,
+      }));
   }
 
-  // Get TF-IDF scores for multiple terms across all snippets
-  static getTermScores(term) {
-    return [...this.snippets].reduce((acc, [snippetId]) => {
-      const score = this.calculateTFIDF(term, snippetId);
-      if (score) acc[snippetId] = score;
-      return acc;
-    }, {});
+  static getDocument(id) {
+    return this.documents.get(id);
   }
 }
