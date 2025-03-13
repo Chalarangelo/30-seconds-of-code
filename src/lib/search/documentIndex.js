@@ -1,25 +1,21 @@
-import DocumentFrequencies from '#src/lib/search/documentFrequencies.js';
+import DocumentTokenizer from '#src/lib/search/documentTokenizer.js';
 
 export default class DocumentIndex {
   static documents = new Map();
   static invertedIndex = new Map();
   static documentCount = 0;
 
-  static addDocument(content, docId) {
-    const terms = DocumentFrequencies.tokenize(content);
+  static addDocument(docId, content) {
+    const terms = DocumentTokenizer.tokenize(content);
 
     // Store original document
-    this.documents.set(docId, {
-      content,
-      terms,
-      length: terms.length,
-    });
+    this.documents.set(docId, { terms, length: terms.length });
 
     // Update inverted index
     terms.forEach(term => {
-      if (!this.invertedIndex.has(term)) {
+      if (!this.invertedIndex.has(term))
         this.invertedIndex.set(term, new Map());
-      }
+
       const docMap = this.invertedIndex.get(term);
 
       // Store term frequency
@@ -29,8 +25,8 @@ export default class DocumentIndex {
     return docId;
   }
 
-  static search(query) {
-    const terms = DocumentFrequencies.tokenize(query);
+  static search(query, limit = null) {
+    const terms = DocumentTokenizer.progressiveTokenize(query);
     const scores = new Map();
 
     // Calculate scores for each document
@@ -55,12 +51,16 @@ export default class DocumentIndex {
     });
 
     // Sort documents by score
-    return Array.from(scores.entries())
+    const results = Array.from(scores.entries())
       .sort((a, b) => b[1] - a[1])
       .map(([docId, score]) => ({
         id: docId,
-        score,
+        score: parseFloat(score.toFixed(5)),
       }));
+
+    // Limit results if requested
+    if (limit) return results.slice(0, limit);
+    return results;
   }
 
   static getDocument(id) {
