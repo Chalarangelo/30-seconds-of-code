@@ -107,13 +107,14 @@ export default class PreparedQueries {
       Snippet.scope('listed').forEach(s => {
         const contents = {
           html: [s.content, s.description].join(' '),
-          text: [s.title, s.shortTitle, s.slugId].join(' '),
-          tokens: [s.title, s.shortTitle].join(' '),
-          copy: [
-            s.slugId,
+          text: [s.title, s.shortTitle].join(' '),
+          tokens: [
+            ...s.slugId.split('-'),
             ...s.tags,
             s.language?.short?.toLowerCase(),
             s.language?.long?.toLowerCase(),
+            s.title,
+            s.shortTitle,
           ]
             .filter(Boolean)
             .join(' '),
@@ -131,8 +132,12 @@ export default class PreparedQueries {
             c.slugId,
             c.description,
           ].join(' '),
-          tokens: [c.title, c.shortTitle, c.miniTitle].join(' '),
-          copy: c.slugId,
+          tokens: [
+            ...c.slugId.split('-'),
+            c.title,
+            c.shortTitle,
+            c.miniTitle,
+          ].join(' '),
         };
         DocumentIndex.addDocument(c.id, contents);
       });
