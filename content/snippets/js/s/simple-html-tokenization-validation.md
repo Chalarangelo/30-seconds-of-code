@@ -7,6 +7,7 @@ cover: jars-on-shelf
 excerpt: Expanding upon previous articles on bracket matching and tokenization, it's time to try a basic HTML tokenization and validation algorithm.
 listed: true
 dateModified: 2025-02-21
+journeyId: js/tokenizers-interpreters
 ---
 
 I've been down the **tokenization** rabbit hole for a little while now, if it wasn't obvious from the previous articles on [bracket pair matching](/js/s/find-matching-bracket-pairs) and [math expression tokenization](/js/s/math-expression-tokenizer). This time, I wanted to try something a little more complex, but still simple enough to be done in a single article. So, I decided to try my hand at **tokenizing an HTML string** and **validating that its tags are balanced** correctly.

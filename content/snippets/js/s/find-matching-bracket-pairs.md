@@ -7,6 +7,7 @@ cover: invention-shack
 excerpt: A common problem when building parsers is finding matching bracket pairs in a string. Here's how you can solve it with JavaScript.
 listed: true
 dateModified: 2025-02-07
+journeyId: js/tokenizers-interpreters
 ---
 
 I was recently honing my skills over at [CodeWars](https://www.codewars.com) and I came across an <dfn title="Short for esoteric programming language; a computer programming language designed to experiment with unconventional ideas, be difficult to program in, or serve as a joke, rather than for practical use.">Esolang</dfn> interpreter kata, that, ultimately, required me to find **matching bracket pairs** in a string. I'll spare you the details of the problem for now (maybe I'll write about it in the future), but I thought I'd share the bracket matching solution with you, as I've found it to be a recurring problem when building parsers or solving similar problems.

@@ -7,6 +7,7 @@ cover: camper-school-bus
 excerpt: Learn how to tokenize math expressions, using a simple JavaScript algorithm, forming the basis for more complex interpreters and compilers.
 listed: true
 dateModified: 2025-02-18
+journeyId: js/tokenizers-interpreters
 ---
 
 In the [previous article on Reverse Polish Notation](/js/s/parse-reverse-polish-notation), I skimmed over a pretty important detail, that of **math expression tokenization**. I thought I'd tackle this problem on its own, as it may help you understand the fundamental logic of building more complex interpreters and compilers.

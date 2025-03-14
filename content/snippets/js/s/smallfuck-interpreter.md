@@ -7,6 +7,7 @@ cover: rustic-cup
 excerpt: Yet another interpreter article, this time around we'll be building a full-fledged interpreter for the esolang Smallfuck.
 listed: true
 dateModified: 2025-02-24
+journeyId: js/tokenizers-interpreters
 ---
 
 As I've mentioned before, I've been training on [CodeWars](https://www.codewars.com) quite a bit lately. I've been solving some fairly involved katas, especially ones related to <dfn title="Short for esoteric programming language; a computer programming language designed to experiment with unconventional ideas, be difficult to program in, or serve as a joke, rather than for practical use.">Esolang</dfn> interpreters. One of the most interesting ones I've come across is the [Smallfuck interpreter Kata](https://www.codewars.com/kata/esolang-interpreters-number-2-custom-smallfuck-interpreter).

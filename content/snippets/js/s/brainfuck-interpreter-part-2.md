@@ -7,6 +7,7 @@ cover: mug-flower-book
 excerpt: Picking up where I left off last time, I'm wrapping up the Brainfuck interpreter, by making a simple VM for code execution and debugging.
 listed: true
 dateModified: 2025-03-08
+journeyId: js/tokenizers-interpreters
 ---
 
 In the [last article](/js/s/brainfuck-interpreter-part-1), I explored the basics of Brainfuck tokenization and interpretation, using **Abstract Syntax Trees** (AST) to represent the program. In this article, I will continue to build on that foundation by implementing a **VM-like interpreter** that can execute the AST. I'll also wrap the whole thing up, by adding some **command-line scripts** to parse and run Brainfuck programs.

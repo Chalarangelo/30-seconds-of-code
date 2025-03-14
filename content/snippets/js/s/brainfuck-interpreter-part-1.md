@@ -7,6 +7,7 @@ cover: lake-bench
 excerpt: Continuing on the code interpretation path, I'm attempting to build a Brainfuck interpreter, using an AST to represent and execute the code.
 listed: true
 dateModified: 2025-03-01
+journeyId: js/tokenizers-interpreters
 ---
 
 Remember how I tried my hand at making a [Smallfuck interpreter](/js/s/smallfuck-interpreter) the other day? Well, this time around, I'm going to do the same for **Brainfuck**, but with a couple of twists:

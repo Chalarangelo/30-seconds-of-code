@@ -7,6 +7,7 @@ cover: colorful-pots
 excerpt: Building on top of everything we've tried in past articles, we'll use the Earley parsing algorithm to parse and evaluate math expressions.
 listed: true
 dateModified: 2025-03-12
+journeyId: js/tokenizers-interpreters
 ---
 
 In previous articles, we've explored [how to tokenize math expressions](/js/s/math-expression-tokenizer) and [parsing using Abstract Syntax Trees](/js/s/brainfuck-interpreter-part-1). This time around, we're revisiting **math expressions**, to build a robust parsing and evaluation system combining the two techniques, and more.

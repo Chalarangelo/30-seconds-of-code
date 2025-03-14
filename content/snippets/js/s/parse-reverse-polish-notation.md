@@ -7,6 +7,7 @@ cover: flower-camera
 excerpt: Parsing Reverse Polish Notation, also known as postfix notation, is a simple algorithm that can be implemented in JavaScript using a stack.
 listed: true
 dateModified: 2025-02-15
+journeyId: js/tokenizers-interpreters
 ---
 
 **Reverse Polish Notation** (RPN), also known as **postfix notation**, is a mathematical notation in which **every operator follows all of its operands**. This is in contrast to the more common **infix notation**, where **operators are placed between operands**.
