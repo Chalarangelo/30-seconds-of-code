@@ -58,6 +58,10 @@ export default class Snippet extends ContentModel {
     });
   }
 
+  static inJourney(records) {
+    return records.where({ journeyId: j => j !== null });
+  }
+
   get language() {
     return Language.find(this.languageId);
   }
