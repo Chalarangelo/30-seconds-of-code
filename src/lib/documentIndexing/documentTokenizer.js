@@ -7,20 +7,39 @@ export default class DocumentTokenizer {
   static idfValues = new Map();
 
   static tokenize(contents) {
-    return Object.entries(contents)
-      .reduce((acc, [contentType, content]) => {
-        if (contentType === 'html') {
-          return acc.concat(this.tokenizeHtml(content));
-        } else if (contentType === 'text') {
-          return acc.concat(this.tokenizePlainText(content));
-        } else if (contentType === 'tokens') {
-          return acc.concat(this.tokenizeTokens(content));
-        } else if (contentType === 'copy') {
-          return acc.concat(this.tokenizeCopy(content));
-        }
-        return acc;
-      }, [])
-      .filter(term => term);
+    return (
+      Object.entries(contents)
+        .reduce((acc, [contentType, content]) => {
+          if (contentType === 'html') {
+            return acc.concat(this.tokenizeHtml(content));
+          } else if (contentType === 'text') {
+            return acc.concat(this.tokenizePlainText(content));
+          } else if (contentType === 'tokens') {
+            return acc.concat(this.tokenizeTokens(content));
+          }
+          return acc;
+        }, [])
+        .map(term => term.replace(/^['-]+|['-]+$/g, '').replace("'", ''))
+        // Filter out terms that are likely not useful
+        // 1. Single characters
+        // 2. Numeric values and hexadecimal strings
+        // 3. Dates and datetimes, or `number x number`
+        // 4. Values with units (e.g. `100px` or `30s`)
+        // 5. Very long strings (likely to be a hash or UUID)
+        // 6. Single character followed by a number, except `h` (e.g. `h1`)
+        // 7. Potental plural terms that already exist in singular form
+        .filter(
+          (term, i, terms) =>
+            term &&
+            term.length > 1 &&
+            !/^(0x)?[\da-f]+$/.test(term) &&
+            !/^\d([\dt-]+|(\d*x\d+))$/.test(term) &&
+            !/^\d+\-?[a-z]{1,4}$/.test(term) &&
+            !/^[\da-z-]{25,}$/.test(term) &&
+            !/^[^h]\d+$/.test(term) &&
+            (!term.endsWith('s') || !terms.includes(term.replace(/s$/, '')))
+        )
+    );
   }
 
   // Tokenize content progressively (used for search queries)
@@ -49,11 +68,6 @@ export default class DocumentTokenizer {
   // Normalize tokens for storage and comparison
   static tokenizeTokens(tokens) {
     return StringUtils.normalizedTokens(tokens);
-  }
-
-  // Copy tokens directly
-  static tokenizeCopy(copy) {
-    return copy;
   }
 
   // Calculate Term Frequency for a term in a document
