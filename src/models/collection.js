@@ -42,6 +42,13 @@ export default class Collection extends ContentModel {
       .order((a, b) => a.featuredIndex - b.featuredIndex);
   }
 
+  static journeys(records) {
+    const journeyIds = [
+      ...new Set(Snippet.scope('inJourney').pluck('journeyId')),
+    ];
+    return records.where({ id: journeyIds });
+  }
+
   get parent() {
     return Collection.find(this.parentId);
   }
