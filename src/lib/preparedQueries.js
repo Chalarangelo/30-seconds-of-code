@@ -42,6 +42,14 @@ export default class PreparedQueries {
     return Object.fromEntries(coverUsage);
   }
 
+  static collectionCoverUsage() {
+    const coverUsage = CoverPresenter.allCollectionCovers
+      .map(cover => [cover, Collection.where({ cover }).length])
+      .sort((a, b) => b[1] - a[1]);
+
+    return Object.fromEntries(coverUsage);
+  }
+
   static zeroImpressionSnippets() {
     return Snippet.all
       .filter(
