@@ -25,6 +25,8 @@ featuredListings:
 - js/css-manipulation
 - js/url
 - js/proxy
+- js/tokenizers-interpreters
+- js/complex-objects
 - js/dom-querying
 - js/dom-manipulation
 - js/event-handling
