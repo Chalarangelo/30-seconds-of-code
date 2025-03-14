@@ -5,6 +5,10 @@ export default class DocumentIndex {
   static invertedIndex = new Map();
   static documentCount = 0;
 
+  static get terms() {
+    return Array.from(this.invertedIndex.keys());
+  }
+
   static addDocument(docId, content) {
     const terms = DocumentTokenizer.tokenize(content);
 
