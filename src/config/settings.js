@@ -42,7 +42,8 @@ const settings = {
     updateLogTag: 'updatelog',
   },
   paths: {
-    coverDirectory: 'content/assets/cover/',
+    snippetCoverDirectory: 'content/assets/cover/',
+    collectionCoverDirectory: 'content/assets/splash/',
     contentJSON: './.content/content.json',
     redirectsYAML: 'content/redirects.yaml',
     pagePerformanceCSV: 'imported/Pages.csv',
@@ -97,7 +98,10 @@ const settings = {
     parentTitle: 'All',
   },
   covers: {
-    originalExtension: '.jpg',
+    originalExtension: {
+      snippet: '.jpg',
+      collection: '.png',
+    },
     extension: '.webp',
     prefix: {
       snippet: '/assets/cover/',
