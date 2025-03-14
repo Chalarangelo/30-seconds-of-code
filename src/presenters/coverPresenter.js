@@ -28,13 +28,31 @@ export default class CoverPresenter {
   static get allSnippetCovers() {
     if (!this.snippetCovers)
       this.snippetCovers = fs
-        .readdirSync(settings.paths.coverDirectory)
+        .readdirSync(settings.paths.snippetCoverDirectory)
         .slice(2)
         .map(cover => {
-          return path.basename(cover, settings.covers.originalExtension);
+          return path.basename(
+            cover,
+            settings.covers.originalExtension.snippet
+          );
         });
 
     return this.snippetCovers;
+  }
+
+  static get allCollectionCovers() {
+    if (!this.collectionCovers)
+      this.collectionCovers = fs
+        .readdirSync(settings.paths.collectionCoverDirectory)
+        .slice(2)
+        .map(cover => {
+          return path.basename(
+            cover,
+            settings.covers.originalExtension.collection
+          );
+        });
+
+    return this.collectionCovers;
   }
 
   get coverName() {
