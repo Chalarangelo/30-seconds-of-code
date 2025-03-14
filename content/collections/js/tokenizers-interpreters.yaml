@@ -1,0 +1,21 @@
+slug: js/tokenizers-interpreters
+title: JavaScript Tokenizers & Interpreters
+shortTitle: Tokenizers & Interpreters
+listed: true
+snippetIds:
+  - js/s/find-matching-bracket-pairs
+  - js/s/parse-reverse-polish-notation
+  - js/s/math-expression-tokenizer
+  - js/s/simple-html-tokenization-validation
+  - js/s/smallfuck-interpreter
+  - js/s/brainfuck-interpreter-part-1
+  - js/s/brainfuck-interpreter-part-2
+  - js/s/math-expression-parser
+splash: hello-world
+description: >-
+  Tokenizers and interpreters are essential tools for various programming tasks.
+  This collection of JavaScript algorithms and mini projects will help you get
+  started with code tokenization and interpretation.
+shortDescription: >-
+  A collection of algorithms and data structures for tokenizing and interpreting
+  code in JavaScript.
