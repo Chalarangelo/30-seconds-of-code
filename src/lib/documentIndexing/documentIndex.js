@@ -3,7 +3,6 @@ import DocumentTokenizer from '#src/lib/documentIndexing/documentTokenizer.js';
 export default class DocumentIndex {
   static documents = new Map();
   static invertedIndex = new Map();
-  static documentCount = 0;
 
   static get terms() {
     return Array.from(this.invertedIndex.keys());
