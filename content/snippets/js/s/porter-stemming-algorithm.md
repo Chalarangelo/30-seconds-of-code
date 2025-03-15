@@ -2,7 +2,7 @@
 title: Implementing the Porter stemming algorithm in JavaScript
 shortTitle: Porter stemming algorithm
 language: javascript
-tags: [algorithm,string]
+tags: [algorithm,string,regexp]
 cover: touch-flower
 excerpt: Learn how to implement the Porter stemming algorithm in JavaScript, a simple algorithm for stripping English words of common suffixes.
 listed: true
