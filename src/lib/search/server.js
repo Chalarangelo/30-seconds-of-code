@@ -21,17 +21,17 @@ const stopWordFilter = cleanStopWords(stopWords);
  * 9. Single character followed by a number, except `h` (e.g. `h1`)
  * 10. Potental plural terms that already exist in singular form
  */
-export const tokenFilter = tkn =>
+const tokenFilter = (tkn, i, tokens) =>
   !!tkn &&
   tkn.length > 1 &&
   !/^-?\d+$/i.test(tkn) &&
   !/^[()[\]$^.;:|\\/%&*#@!%,"'~`\-+=]+$/i.test(tkn) &&
-  !/^(0x)?[\da-f]+$/.test(term) &&
-  !/^\d([\dt-]+|(\d*x\d+))$/.test(term) &&
-  !/^\d+\-?[a-z]{1,4}$/.test(term) &&
-  !/^[\da-z-]{25,}$/.test(term) &&
-  !/^[^h]\d+$/.test(term) &&
-  (!term.endsWith('s') || !terms.includes(term.replace(/s$/, '')));
+  !/^(0x)?[\da-f]+$/.test(tkn) &&
+  !/^\d([\dt-]+|(\d*x\d+))$/.test(tkn) &&
+  !/^\d+\-?[a-z]{1,4}$/.test(tkn) &&
+  !/^[\da-z-]{25,}$/.test(tkn) &&
+  !/^[^h]\d+$/.test(tkn) &&
+  (!tkn.endsWith('s') || !tokens.includes(tkn.replace(/s$/, '')));
 
 const stripHtmlMultiline = str =>
   str
@@ -44,25 +44,37 @@ const stripHtmlMultiline = str =>
 /**
  * Tokenizes tokens (copies after cleaning).
  */
-export const tokenizeTokens = str =>
-  splitTokens(str).map(cleanTokenPunctuation).filter(tokenFilter);
+const tokenizeTokens = str => splitTokens(str).map(cleanTokenPunctuation);
 
 /**
  * Tokenizes plaintext.
  */
-export const tokenizePlainText = str =>
-  splitTokens(str)
-    .filter(stopWordFilter)
-    .map(stem)
-    .map(cleanTokenPunctuation)
-    .filter(tokenFilter);
+const tokenizePlainText = str =>
+  splitTokens(str).filter(stopWordFilter).map(stem).map(cleanTokenPunctuation);
 
 /**
  * Tokenizes HTML content.
  */
-export const tokenizeHtml = str =>
+const tokenizeHtml = str =>
   splitTokens(stripHtmlMultiline(str))
     .filter(stopWordFilter)
     .map(stem)
-    .map(cleanTokenPunctuation)
+    .map(cleanTokenPunctuation);
+
+const tokenizerByContentType = {
+  html: tokenizeHtml,
+  text: tokenizePlainText,
+  tokens: tokenizeTokens,
+};
+
+const tokenizeByContentType = (contentType, content) =>
+  tokenizerByContentType[contentType](content);
+
+export const tokenize = contents =>
+  Object.entries(contents)
+    .reduce(
+      (acc, [contentType, content]) =>
+        acc.concat(tokenizeByContentType(contentType, content)),
+      []
+    )
     .filter(tokenFilter);
