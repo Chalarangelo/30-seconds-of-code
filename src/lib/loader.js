@@ -13,7 +13,7 @@ import Redirects from '#src/lib/redirects.js';
 import PerformanceTracking from '#src/lib/performanceTracking.js';
 import PreparedQueries from '#src/lib/preparedQueries.js';
 import TimestampDump from '#src/lib/timestampDump.js';
-import DocumentIndex from '#src/lib/documentIndexing/documentIndex.js';
+import DocumentIndex from '#src/lib/search/documentIndex.js';
 
 import factories from '#spec/factories/factories.js';
 

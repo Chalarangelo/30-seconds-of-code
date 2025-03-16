@@ -5,7 +5,7 @@ import CoverPresenter from '#src/presenters/coverPresenter.js';
 import Collection from '#src/models/collection.js';
 import Snippet from '#src/models/snippet.js';
 import PerformanceTracking from '#src/lib/performanceTracking.js';
-import DocumentIndex from '#src/lib/documentIndexing/documentIndex.js';
+import DocumentIndex from '#src/lib/search/documentIndex.js';
 import settings from '#src/config/settings.js';
 
 export default class PreparedQueries {
