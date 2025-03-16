@@ -53,15 +53,6 @@ export default class StringUtils {
       .replace(/&lt;/g, '<');
   }
 
-  static stripHtmlMultiline(str) {
-    return str
-      .replace(/<.*?>/gms, '')
-      .replace(/&nbsp;/g, ' ')
-      .replace(/&amp;/g, '&')
-      .replace(/&gt;/g, '>')
-      .replace(/&lt;/g, '<');
-  }
-
   static normalizedTokens(str) {
     return str
       .toLowerCase()
