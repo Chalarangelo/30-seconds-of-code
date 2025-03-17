@@ -24,6 +24,7 @@ export default class Snippet extends ContentModel {
     this.listed = data.listed || false;
     this.cover = data.cover;
     this.tokens = data.tokens.split(';');
+    this.docTokens = data.docTokens.split(';');
     this.ranking = data.ranking;
     this.tags = data.tags.split(';');
     this.dateModified = new Date(data.dateModified);

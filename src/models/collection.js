@@ -22,6 +22,7 @@ export default class Collection extends ContentModel {
     this.listed = data.listed || false;
     this.cover = data.cover;
     this.tokens = data.tokens.split(';');
+    this.docTokens = data.docTokens.split(';');
     this.ranking = data.ranking;
     this.featuredIndex = data.featuredIndex;
     this.topLevel = data.topLevel || false;
