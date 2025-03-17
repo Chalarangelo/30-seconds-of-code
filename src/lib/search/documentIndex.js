@@ -1,15 +1,21 @@
 import { tokenize } from '#src/lib/search/server.js';
 
 export default class DocumentIndex {
-  static documents = new Map();
-  static invertedIndex = new Map();
+  constructor(documents) {
+    this.documents = new Map();
+    this.invertedIndex = new Map();
 
-  static get terms() {
+    if (documents) {
+      documents.forEach(({ id, content }) => this.addDocument(id, content));
+    }
+  }
+
+  get terms() {
     return Array.from(this.invertedIndex.keys());
   }
 
-  static addDocument(docId, content) {
-    const terms = tokenize(content);
+  addDocument(docId, terms) {
+    // const terms = tokenize(content);
 
     // Store original document
     this.documents.set(docId, { terms, length: terms.length });
@@ -28,7 +34,7 @@ export default class DocumentIndex {
     return docId;
   }
 
-  static search(query, limit = null) {
+  search(query, limit = null) {
     let scores = this.searchForTerms(tokenize({ text: query }));
     if (!scores.size) this.searchForTerms(tokenize({ tokens: query }));
 
@@ -45,7 +51,7 @@ export default class DocumentIndex {
     return results;
   }
 
-  static searchForTerms(terms) {
+  searchForTerms(terms) {
     const scores = new Map();
 
     // Calculate scores for each document
