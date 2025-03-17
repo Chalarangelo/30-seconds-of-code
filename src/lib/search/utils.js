@@ -1,14 +1,11 @@
 /**
- * Tokenizes a string:
- * - Split into words using a regular expression.
- * - Filter words that are under 2 characters long
+ * Normalizes and tokenizs a string.
  */
 export const splitTokens = str =>
   str
     .toLowerCase()
     .trim()
-    .split(/[^a-z0-9\-']+/i)
-    .filter(x => x.length >= 2);
+    .split(/[^a-z0-9\-']+/i);
 
 /**
  * Remove leading and trailing punctuation (' and -) and leftover single quotes.

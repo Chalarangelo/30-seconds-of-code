@@ -7,6 +7,8 @@ import {
 import { stem } from '#src/lib/search/porterStemmer.js';
 
 const stopWordFilter = cleanStopWords(stopWords);
+const lengthFilter = tkn => tkn.length >= 2;
+const earlyFilter = tkn => lengthFilter(tkn) && stopWordFilter(tkn);
 
 /**
  * Filters out tokens that are likely not useful:
@@ -44,20 +46,21 @@ const stripHtmlMultiline = str =>
 /**
  * Tokenizes tokens (copies after cleaning).
  */
-const tokenizeTokens = str => splitTokens(str).map(cleanTokenPunctuation);
+const tokenizeTokens = str =>
+  splitTokens(str).filter(lengthFilter).map(cleanTokenPunctuation);
 
 /**
  * Tokenizes plaintext.
  */
 const tokenizePlainText = str =>
-  splitTokens(str).filter(stopWordFilter).map(stem).map(cleanTokenPunctuation);
+  splitTokens(str).filter(earlyFilter).map(stem).map(cleanTokenPunctuation);
 
 /**
  * Tokenizes HTML content.
  */
 const tokenizeHtml = str =>
   splitTokens(stripHtmlMultiline(str))
-    .filter(stopWordFilter)
+    .filter(earlyFilter)
     .map(stem)
     .map(cleanTokenPunctuation);
 
