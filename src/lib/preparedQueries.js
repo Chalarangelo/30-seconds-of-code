@@ -6,6 +6,7 @@ import Collection from '#src/models/collection.js';
 import Snippet from '#src/models/snippet.js';
 import PerformanceTracking from '#src/lib/performanceTracking.js';
 import DocumentIndex from '#src/lib/search/documentIndex.js';
+import search from '#src/lib/search/documentSearch.js';
 import settings from '#src/config/settings.js';
 
 export default class PreparedQueries {
@@ -120,6 +121,7 @@ export default class PreparedQueries {
 
   static searchForTerm(term, limit) {
     if (!PreparedQueries.documentIndex) PreparedQueries.prepareDocumentIndex();
-    return PreparedQueries.documentIndex.search(term, limit);
+    return search(PreparedQueries.documentIndex)(term, limit);
+    // return PreparedQueries.documentIndex.search(term, limit);
   }
 }
