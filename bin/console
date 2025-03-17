@@ -18,10 +18,11 @@ const { models, serializers, pages, PreparedQueries, ...rest } = modules;
   });
 });
 
-PreparedQueries.prepareDocumentIndex();
-
 Object.entries(Object.getOwnPropertyDescriptors(PreparedQueries)).forEach(
   ([key, { value }]) => {
     if (typeof value === 'function') replServer.context[key] = value;
   }
 );
+
+PreparedQueries.prepareDocumentIndex();
+replServer.context.DocumentIndex = PreparedQueries.documentIndex;

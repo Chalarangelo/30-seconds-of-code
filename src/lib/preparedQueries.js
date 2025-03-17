@@ -9,6 +9,8 @@ import DocumentIndex from '#src/lib/search/documentIndex.js';
 import settings from '#src/config/settings.js';
 
 export default class PreparedQueries {
+  static documentIndex;
+
   static snippetPerformance(...slugs) {
     if (slugs.length === 1) {
       const snippet = Snippet.search(slugs[0]);
@@ -103,50 +105,21 @@ export default class PreparedQueries {
   }
 
   static prepareDocumentIndex() {
-    if (DocumentIndex.documents.size === 0) {
-      Snippet.scope('listed').forEach(s => {
-        const contents = {
-          html: [s.content, s.description].join(' '),
-          text: [s.title, s.shortTitle].join(' '),
-          tokens: [
-            ...s.slugId.split('-'),
-            ...s.tags,
-            s.language?.short?.toLowerCase(),
-            s.language?.long?.toLowerCase(),
-            s.title,
-            s.shortTitle,
-          ]
-            .filter(Boolean)
-            .join(' '),
-        };
-        DocumentIndex.addDocument(s.id, contents);
-      });
-
-      Collection.scope('listed').forEach(c => {
-        const contents = {
-          html: c.content,
-          text: [
-            c.title,
-            c.shortTitle,
-            c.miniTitle,
-            c.slugId,
-            c.description,
-          ].join(' '),
-          tokens: [
-            ...c.slugId.split('-'),
-            c.title,
-            c.shortTitle,
-            c.miniTitle,
-          ].join(' '),
-        };
-        DocumentIndex.addDocument(c.id, contents);
-      });
-    }
-
-    return DocumentIndex;
+    const documents = [
+      ...Snippet.scope('listed').map(snippet => ({
+        id: snippet.id,
+        content: snippet.docTokens,
+      })),
+      ...Collection.scope('listed').map(collection => ({
+        id: collection.id,
+        content: collection.docTokens,
+      })),
+    ];
+    PreparedQueries.documentIndex = new DocumentIndex(documents);
   }
 
   static searchForTerm(term, limit) {
-    return PreparedQueries.prepareDocumentIndex().search(term, limit);
+    if (!PreparedQueries.documentIndex) PreparedQueries.prepareDocumentIndex();
+    return PreparedQueries.documentIndex.search(term, limit);
   }
 }
