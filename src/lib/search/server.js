@@ -1,14 +1,8 @@
-import stopWords from '#src/lib/search/settings/server.js';
-import {
-  cleanStopWords,
-  cleanTokenPunctuation,
-  splitTokens,
-} from '#src/lib/search/utils.js';
+import stopWords from '#src/lib/search/settings.js';
+import { cleanTokenPunctuation, splitTokens } from '#src/lib/search/utils.js';
 import { stem } from '#src/lib/search/porterStemmer.js';
 
-const stopWordFilter = cleanStopWords(stopWords);
-const lengthFilter = tkn => tkn.length >= 2;
-const earlyFilter = tkn => lengthFilter(tkn) && stopWordFilter(tkn);
+const stopWordFilter = tkn => !stopWords.has(tkn);
 
 /**
  * Filters out tokens that are likely not useful:
@@ -46,23 +40,20 @@ const stripHtmlMultiline = str =>
 /**
  * Tokenizes tokens (copies after cleaning).
  */
-const tokenizeTokens = str =>
-  splitTokens(str).filter(lengthFilter).map(cleanTokenPunctuation);
+const tokenizeTokens = str => splitTokens(str).map(cleanTokenPunctuation);
 
 /**
- * Tokenizes plaintext.
+ * Tokenizes plaintext (stemming and cleaning).
  */
 const tokenizePlainText = str =>
-  splitTokens(str).filter(earlyFilter).map(stem).map(cleanTokenPunctuation);
+  splitTokens(str)
+    .filter(stopWordFilter)
+    .map(tkn => cleanTokenPunctuation(stem(tkn)));
 
 /**
- * Tokenizes HTML content.
+ * Tokenizes HTML content (strips tags and tokenizes plaintext).
  */
-const tokenizeHtml = str =>
-  splitTokens(stripHtmlMultiline(str))
-    .filter(earlyFilter)
-    .map(stem)
-    .map(cleanTokenPunctuation);
+const tokenizeHtml = str => tokenizePlainText(stripHtmlMultiline(str));
 
 const tokenizerByContentType = {
   html: tokenizeHtml,
