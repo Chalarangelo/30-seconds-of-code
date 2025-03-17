@@ -1,5 +1,6 @@
-import searchEngineSettings from '#src/lib/search/settings.js';
-const { serverStopWords, clientStopWords } = searchEngineSettings;
+import stopWords from '#src/lib/search/settings.js';
+const serverStopWords = [...stopWords];
+const clientStopWords = [...stopWords];
 
 // Standard suffix manipulations.
 const step2list = {
