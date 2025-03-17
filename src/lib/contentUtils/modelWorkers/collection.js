@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
 import FileHandler from '#src/lib/contentUtils/fileHandler.js';
 import MarkdownParser from '#src/lib/contentUtils/markdownParser/markdownParser.js';
-import tokenize from '#src/lib/search/search.js';
+import tokenizeOld from '#src/lib/search/search.js';
 import Ranker from '#src/lib/contentUtils/ranker.js';
 import StringUtils from '#src/lib/stringUtils.js';
+import { tokenize } from '#src/lib/search/server.js';
 
 export const extractCollectionData = async (collectionGlob, hub) => {
   const { featuredListings } = hub;
@@ -29,9 +30,23 @@ export const extractCollectionData = async (collectionGlob, hub) => {
       } = config;
 
       const descriptionHtml = await MarkdownParser.parse(description);
-      const tokens = tokenize(
+      const tokens = tokenizeOld(
         StringUtils.stripMarkdown(`${shortDescription} ${title}`)
       ).join(';');
+      const docContent = listed
+        ? {
+            html: descriptionHtml,
+            text: [title, shortTitle, miniTitle, description].join(' '),
+            tokens: [
+              ...id.toLowerCase().split('/').slice(-1)[0].split('-'),
+              title,
+              shortTitle,
+              miniTitle,
+            ].join(' '),
+          }
+        : {};
+      const docTokens = tokenize(docContent);
+
       const indexableContent = [title, description, shortDescription]
         .filter(Boolean)
         .join(' ')
@@ -56,6 +71,7 @@ export const extractCollectionData = async (collectionGlob, hub) => {
         allowUnlisted,
         parent,
         tokens,
+        docTokens: docTokens.join(';'),
         matchers: {
           language: languageMatcher,
           tag: tagMatcher,
@@ -84,6 +100,7 @@ export const exportCollectionData = collectionData => {
       topLevel: collection.topLevel,
       parentId: collection.parent,
       tokens: collection.tokens,
+      docTokens: collection.docTokens,
       ranking: collection.ranking,
     };
   });
