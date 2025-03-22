@@ -4,7 +4,9 @@ export default class DocumentIndex {
     this.invertedIndex = new Map();
 
     if (documents)
-      documents.forEach(({ id, content }) => this.addDocument(id, content));
+      documents.forEach(({ id, content, ...data }) =>
+        this.addDocument(id, content, data)
+      );
   }
 
   get terms() {
@@ -17,11 +19,12 @@ export default class DocumentIndex {
       .map(([term, docs]) => [term, docs.size]);
   }
 
-  addDocument(docId, terms) {
+  addDocument(docId, terms, data) {
     // Store original document
     this.documents.set(docId, {
       terms,
       length: [...terms.values()].reduce((a, b) => a + b),
+      ...data,
     });
 
     // Update inverted index
