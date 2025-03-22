@@ -4,6 +4,7 @@ import serializers from '#src/serializers/serializers.js';
 import StringUtils from '#src/lib/stringUtils.js';
 import Redirects from '#src/lib/redirects.js';
 import settings from '#src/config/settings.js';
+import { deserializeTokens } from '#src/lib/search/utils.js';
 
 export default class ContentModel extends Model {
   static {
@@ -55,8 +56,8 @@ export default class ContentModel extends Model {
     return StringUtils.stripHtml(this.description);
   }
 
-  get searchTokens() {
-    return this.searchTokensArray.join(' ');
+  get docTokensMap() {
+    return deserializeTokens(this.docTokens);
   }
 
   get isSnippet() {

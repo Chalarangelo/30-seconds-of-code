@@ -23,8 +23,8 @@ export default class Snippet extends ContentModel {
     this.description = data.description;
     this.listed = data.listed || false;
     this.cover = data.cover;
-    this.tokens = data.tokens.split(';');
-    this.docTokens = data.docTokens.split(';');
+    this.docTokens = data.docTokens;
+    this.recTokens = new Set(data.recTokens.split(' '));
     this.ranking = data.ranking;
     this.tags = data.tags.split(';');
     this.dateModified = new Date(data.dateModified);
@@ -188,21 +188,6 @@ export default class Snippet extends ContentModel {
 
   get dateShortString() {
     return this.dateModified.toISOString().split('T')[0];
-  }
-
-  get searchTokensArray() {
-    return [
-      ...new Set(
-        [
-          this.slugId,
-          ...this.tags,
-          ...this.tokens,
-          ...StringUtils.normalizedTokens(this.title),
-          this.language?.short?.toLowerCase(),
-          this.language?.long?.toLowerCase(),
-        ].filter(Boolean)
-      ),
-    ];
   }
 
   // TODO: This returns true even if the snippet only belongs to the

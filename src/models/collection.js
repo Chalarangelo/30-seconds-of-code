@@ -21,8 +21,8 @@ export default class Collection extends ContentModel {
     this.description = data.description;
     this.listed = data.listed || false;
     this.cover = data.cover;
-    this.tokens = data.tokens.split(';');
-    this.docTokens = data.docTokens.split(';');
+    this.docTokens = data.docTokens;
+    this.recTokens = new Set(data.recTokens.split(' '));
     this.ranking = data.ranking;
     this.featuredIndex = data.featuredIndex;
     this.topLevel = data.topLevel || false;
@@ -129,10 +129,6 @@ export default class Collection extends ContentModel {
 
   get siblingsExceptSelf() {
     return this.siblings.filter(sibling => sibling.id !== this.id);
-  }
-
-  get searchTokensArray() {
-    return this.tokens;
   }
 
   get firstPageSlug() {
