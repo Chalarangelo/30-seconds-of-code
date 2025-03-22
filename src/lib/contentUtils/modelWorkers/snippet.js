@@ -1,10 +1,8 @@
 import { snippetPrefix } from '#src/lib/contentUtils/config.js';
 import FileHandler from '#src/lib/contentUtils/fileHandler.js';
 import MarkdownParser from '#src/lib/contentUtils/markdownParser/markdownParser.js';
-import tokenizeOld from '#src/lib/search/search.js';
 import Ranker from '#src/lib/contentUtils/ranker.js';
 import TocReader from '#src/lib/contentUtils/tocReader.js';
-import StringUtils from '#src/lib/stringUtils.js';
 import { tokenize } from '#src/lib/search/server.js';
 
 export const extractSnippetData = async (snippetGlob, languageData) => {
@@ -35,9 +33,19 @@ export const extractSnippetData = async (snippetGlob, languageData) => {
         MarkdownParser.parse(fullText, language?.short),
       ]);
 
-      const tokens = tokenizeOld(
-        StringUtils.stripMarkdown(`${shortDescription} ${title}`)
-      );
+      const recTokens = tokenize({
+        text: `${shortDescription} ${title}`,
+        tokens: [
+          ...tags,
+          ...id.toLowerCase().split('/').slice(-1)[0].split('-'),
+          language?.short?.toLowerCase(),
+          language?.long?.toLowerCase(),
+          title,
+        ]
+          .filter(Boolean)
+          .join(' '),
+      }).replace(/:\d+/g, '');
+
       const docContent = listed
         ? {
             html: [fullDescriptionHtml, descriptionHtml].join(' '),
@@ -78,8 +86,8 @@ export const extractSnippetData = async (snippetGlob, languageData) => {
         tableOfContentsHtml,
         cover,
         languageKey,
-        tokens: tokens.join(';'),
-        docTokens: docTokens.join(';'),
+        recTokens,
+        docTokens,
         ranking,
         journeyId,
       };
@@ -103,7 +111,7 @@ export const exportSnippetData = snippetData => {
       tableOfContents: snippet.tableOfContentsHtml,
       cover: snippet.cover,
       languageId: snippet.languageKey,
-      tokens: snippet.tokens,
+      recTokens: snippet.recTokens,
       docTokens: snippet.docTokens,
       ranking: snippet.ranking,
       journeyId: snippet.journeyId,

@@ -1,9 +1,7 @@
 /* eslint-disable no-unused-vars */
 import FileHandler from '#src/lib/contentUtils/fileHandler.js';
 import MarkdownParser from '#src/lib/contentUtils/markdownParser/markdownParser.js';
-import tokenizeOld from '#src/lib/search/search.js';
 import Ranker from '#src/lib/contentUtils/ranker.js';
-import StringUtils from '#src/lib/stringUtils.js';
 import { tokenize } from '#src/lib/search/server.js';
 
 export const extractCollectionData = async (collectionGlob, hub) => {
@@ -30,9 +28,11 @@ export const extractCollectionData = async (collectionGlob, hub) => {
       } = config;
 
       const descriptionHtml = await MarkdownParser.parse(description);
-      const tokens = tokenizeOld(
-        StringUtils.stripMarkdown(`${shortDescription} ${title}`)
-      ).join(';');
+
+      const recTokens = tokenize({
+        text: `${shortDescription} ${title}`,
+      }).replace(/:\d+/g, '');
+
       const docContent = listed
         ? {
             html: descriptionHtml,
@@ -70,8 +70,8 @@ export const extractCollectionData = async (collectionGlob, hub) => {
         topLevel,
         allowUnlisted,
         parent,
-        tokens,
-        docTokens: docTokens.join(';'),
+        recTokens,
+        docTokens,
         matchers: {
           language: languageMatcher,
           tag: tagMatcher,
@@ -99,7 +99,7 @@ export const exportCollectionData = collectionData => {
       description: collection.shortDescription,
       topLevel: collection.topLevel,
       parentId: collection.parent,
-      tokens: collection.tokens,
+      recTokens: collection.recTokens,
       docTokens: collection.docTokens,
       ranking: collection.ranking,
     };
