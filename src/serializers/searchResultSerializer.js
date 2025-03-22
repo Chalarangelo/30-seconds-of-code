@@ -13,7 +13,7 @@ export default class SearchResultSerializer extends Serializer {
             : object.formattedSnippetCount;
         },
       ],
-      'searchTokens',
+      ['searchTokens', 'docTokens'],
       'type',
     ]);
   }
