@@ -1,5 +1,6 @@
 ---
 title: Check if a JavaScript string contains only alpha or alphanumeric characters
+shortTitle: String is alpha or alphanumeric
 language: javascript
 tags: [string,regexp]
 cover: mountain-lake-cottage-2
