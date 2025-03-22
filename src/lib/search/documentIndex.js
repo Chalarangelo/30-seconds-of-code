@@ -11,6 +11,12 @@ export default class DocumentIndex {
     return Array.from(this.invertedIndex.keys());
   }
 
+  get termsByFrequency() {
+    return Array.from(this.invertedIndex.entries())
+      .sort((a, b) => b[1].size - a[1].size)
+      .map(([term, docs]) => [term, docs.size]);
+  }
+
   addDocument(docId, terms) {
     // Store original document
     this.documents.set(docId, {
