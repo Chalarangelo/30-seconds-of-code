@@ -18,7 +18,7 @@ export default class SearchIndex {
     fs.writeJson(
       'public/search-data.json',
       searchIndex,
-      { spaces: 2 },
+      { spaces: 0 },
       () => {}
     );
   }
