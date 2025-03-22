@@ -107,13 +107,13 @@ export default class PreparedQueries {
 
   static prepareDocumentIndex() {
     const documents = [
-      ...Snippet.scope('listed').map(snippet => ({
+      ...Snippet.scope('published', 'listed').map(snippet => ({
         id: snippet.id,
-        content: snippet.docTokens,
+        content: snippet.docTokensMap,
       })),
       ...Collection.scope('listed').map(collection => ({
         id: collection.id,
-        content: collection.docTokens,
+        content: collection.docTokensMap,
       })),
     ];
     PreparedQueries.documentIndex = new DocumentIndex(documents);
@@ -122,6 +122,5 @@ export default class PreparedQueries {
   static searchForTerm(term, limit) {
     if (!PreparedQueries.documentIndex) PreparedQueries.prepareDocumentIndex();
     return search(PreparedQueries.documentIndex)(term, limit);
-    // return PreparedQueries.documentIndex.search(term, limit);
   }
 }
