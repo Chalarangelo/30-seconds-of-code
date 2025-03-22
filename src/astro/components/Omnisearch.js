@@ -1,4 +1,6 @@
-import { quickParseTokens as tokenize } from '#src/lib/search/search.js';
+import DocumentIndex from '#src/lib/search/documentIndex.js';
+import search from '#src/lib/search/documentSearch.js';
+import { deserializeTokens } from '#src/lib/search/utils.js';
 
 const omnisearch = {
   openTrigger: document.querySelector('[data-open-modal="omnisearch"]'),
@@ -15,7 +17,16 @@ const omnisearch = {
       fetch('/search-data.json')
         .then(data => data.json())
         .then(json => {
-          this.searchIndex = json.searchIndex;
+          const documents = json.searchIndex.map(
+            ({ url, searchTokens, ...data }) => ({
+              id: url,
+              content: deserializeTokens(searchTokens),
+              url,
+              ...data,
+            })
+          );
+          this.searchIndex = new DocumentIndex(documents);
+          this.searchDocuments = search(this.searchIndex);
           this.searchIndexInitialized = true;
         });
   },
@@ -54,47 +65,11 @@ const omnisearch = {
   searchByKeyphrase(keyphrase) {
     let q = keyphrase.toLowerCase().trim();
     if (q.length <= 1) return [];
-    let results = [];
-    if (q.length) {
-      let t = tokenize(q);
-      if (t.length && this.searchIndex && this.searchIndex.length) {
-        results = this.searchIndex
-          .map(snippet => {
-            snippet.score =
-              t.reduce(
-                (acc, tkn) =>
-                  snippet.searchTokens.indexOf(tkn) !== -1 ? acc + 1 : acc,
-                0
-              ) / t.length;
-            return snippet;
-          })
-          .filter(snippet => snippet.score > 0.3)
-          .sort((a, b) => b.score - a.score);
-      }
-    }
-    results = results.reduce(
-      (acc, result) => {
-        if (result.type === 'collection') acc.collections.push(result);
-        else acc.snippets.push(result);
-        return acc;
-      },
-      { collections: [], snippets: [], length: results.length }
-    );
-    // Limit to 5 collections and 100 snippets
-    results.collections = results.collections.slice(0, 5);
-    results.snippets = results.snippets.slice(0, 100);
-    return results;
+    return this.searchDocuments(q, 100);
   },
   displayResults(results) {
-    const { snippets, collections } = results;
-
     this.resultsSection.innerHTML = `
-      ${
-        collections.length
-          ? this.createResultsHTML('Collections', collections)
-          : ''
-      }
-      ${snippets.length ? this.createResultsHTML('Articles', snippets) : ''}
+      ${results.length ? this.createResultsHTML('Results', results) : ''}
     `;
   },
   displayEmptyState() {
