@@ -89,19 +89,9 @@ export default class PreparedQueries {
   }
 
   static searchTokensFrequency(minLength = 3) {
-    const frequencies = Snippet.all
-      .map(snippet =>
-        snippet.searchTokensArray.filter(token => token.length >= minLength)
-      )
-      .flat()
-      .reduce((acc, token) => {
-        if (!acc[token]) acc[token] = 0;
-        acc[token]++;
-        return acc;
-      }, {});
-
-    return Object.fromEntries(
-      Object.entries(frequencies).sort((a, b) => b[1] - a[1])
+    if (!PreparedQueries.documentIndex) PreparedQueries.prepareDocumentIndex();
+    return PreparedQueries.documentIndex.termsByFrequency.filter(
+      x => x[0].length >= minLength
     );
   }
 
