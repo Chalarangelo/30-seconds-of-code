@@ -5,16 +5,8 @@ export default class SearchResultSerializer extends Serializer {
     Serializer.prepare(this, [
       ['title', 'shortTitle'],
       'url',
-      [
-        'tag',
-        object => {
-          return object.isSnippet
-            ? object.formattedMiniPreviewTag
-            : object.formattedSnippetCount;
-        },
-      ],
+      ['tag', 'formattedMiniPreviewTag'],
       ['searchTokens', 'docTokens'],
-      'type',
     ]);
   }
 }
