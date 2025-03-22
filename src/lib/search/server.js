@@ -22,7 +22,7 @@ const stopWordFilter = tkn => !stopWords.has(tkn);
  * 14. 3-letter stop words (e.g. `the`)
  * 15. Potental plural terms that already exist in singular form
  */
-const tokenFilter = (tkn, i, tokens) =>
+const tokenFilter = (tkn, tokenSet) =>
   !!tkn &&
   (tkn === 'js' || tkn.length > 2) &&
   !/^-?\d+/i.test(tkn) &&
@@ -37,7 +37,7 @@ const tokenFilter = (tkn, i, tokens) =>
   !/^(?:str|obj|arr|num|var|let|col)\d{0,}$/.test(tkn) &&
   !/^(?:string|array|pattern|commit-|patch-|image)\d{1,}$/.test(tkn) &&
   (tkn.length > 3 || !stopWords.has(tkn)) &&
-  (!tkn.endsWith('s') || !tokens.includes(tkn.replace(/s$/, '')));
+  (!tkn.endsWith('s') || !tokenSet.has(tkn.replace(/s$/, '')));
 
 const stripHtmlMultiline = str =>
   str
@@ -74,11 +74,27 @@ const tokenizerByContentType = {
 const tokenizeByContentType = (contentType, content) =>
   tokenizerByContentType[contentType](content);
 
-export const tokenize = contents =>
-  Object.entries(contents)
-    .reduce(
-      (acc, [contentType, content]) =>
-        acc.concat(tokenizeByContentType(contentType, content)),
-      []
-    )
-    .filter(tokenFilter);
+export const tokenize = contents => {
+  const tokenized = Object.entries(contents).reduce(
+    (acc, [contentType, content]) =>
+      acc.concat(tokenizeByContentType(contentType, content)),
+    []
+  );
+
+  const tokenSet = new Set(tokenized);
+
+  const tokenizedMapped = tokenized.reduce((acc, tkn) => {
+    if (tokenFilter(tkn, tokenSet)) {
+      if (!acc.has(tkn)) acc.set(tkn, 0);
+      acc.set(tkn, acc.get(tkn) + 1);
+    }
+    return acc;
+  }, new Map());
+
+  return [...tokenizedMapped.entries()]
+    .map(([token, count]) => {
+      if (count === 1) return token;
+      else return `${token}:${count}`;
+    })
+    .join(' ');
+};
