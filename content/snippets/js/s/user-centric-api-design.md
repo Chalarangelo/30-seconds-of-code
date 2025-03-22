@@ -7,6 +7,7 @@ cover: succulent-6
 excerpt: Building atop the TDD foundation from last time, let's explore how to design a user-centric API for our JavaScript library.
 listed: true
 dateModified: 2025-03-20
+journeyId: js/tdd-library-design
 ---
 
 In the [previous article](/js/s/test-driven-development-intro), I briefly touched upon how <dfn title="Test-driven development (TDD) is a software development methodology where developers write automated tests before writing the actual code. It follows a cyclic process of writing a failing test, implementing minimal code to pass it, then refactoring the code to improve its structure while maintaining functionality.">TDD</dfn> helped me design a better **developer experience** for a small library I was working on. This time around, I want to focus on the **API design** side of things.

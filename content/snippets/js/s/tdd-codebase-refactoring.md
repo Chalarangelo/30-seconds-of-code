@@ -7,6 +7,7 @@ cover: succulent-11
 excerpt: In the last installment of the series, we'll refactor our codebase to reduce bundle size and complexity, while making it more maintainable.
 listed: true
 dateModified: 2025-03-28
+journeyId: js/tdd-library-design
 ---
 
 In the past three articles, I've covered [kickstarting a project with TDD](/js/s/test-driven-development-intro), [designing a user-centric API](/js/s/user-centric-api-design), and [implementing the library with Vite](/js/s/tdd-library-implementation-with-vite-vitest). In this article, I'll **refactor** the library to make it more maintainable and reduce its bundle size, down from 6.04 kB (1.63 kB gzipped). Let's dive right in!

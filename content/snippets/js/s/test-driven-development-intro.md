@@ -7,6 +7,7 @@ cover: succulent-5
 excerpt: I recently built a project using Test-Driven Development (TDD) and it was a great experience. Here's why I think you should try it, too.
 listed: true
 dateModified: 2025-03-17
+journeyId: js/tdd-library-design
 ---
 
 I recently decided to try out [Test-Driven Development (TDD)](https://en.wikipedia.org/wiki/Test-driven_development) for a small project. While I've had some experience with the methodology before, I've never tried bootstrapping a project with it from the start.

@@ -7,6 +7,7 @@ cover: succulent-7
 excerpt: Having set up our environment and designed the API, it's time to implement the RegExp library we've been planning, using Vite and Vitest.
 listed: true
 dateModified: 2025-03-24
+journeyId: js/tdd-library-design
 ---
 
 In the last two articles, I've touched upon [using TDD to kickstart a small project](/js/s/test-driven-development-intro) and [designing a user-centric API](/js/s/user-centric-api-design). Now, it's time to implement the API we've designed!
