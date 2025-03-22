@@ -22,7 +22,8 @@ const base = {
   tableOfContents: null,
   languageCid: 'javascript',
   cover: 'cover',
-  tokens: 'my;snippet;short;description',
+  recTokens: 'my snippet short description',
+  docTokens: 'my snippet short description',
   ranking: 0.65,
 };
 

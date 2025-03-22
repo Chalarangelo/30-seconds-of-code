@@ -14,7 +14,8 @@ describe('Collection', () => {
 
   const primaryCollection = CollectionFactory.create('primary', {
     id: 'js',
-    tokens: 'primary;collection;short;description',
+    recTokens: 'primary collection short description',
+    docTokens: 'primary collection short description',
   });
 
   const secondaryCollection = CollectionFactory.create({
@@ -129,17 +130,6 @@ describe('Collection', () => {
 
     it('returns an empty array if it has no parent', () => {
       expect(primaryCollection.siblingsExceptSelf).toEqual([]);
-    });
-  });
-
-  describe('searchTokensArray', () => {
-    it('returns tokens', () => {
-      expect(primaryCollection.searchTokensArray).toEqual([
-        'primary',
-        'collection',
-        'short',
-        'description',
-      ]);
     });
   });
 

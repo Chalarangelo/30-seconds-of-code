@@ -61,14 +61,6 @@ describe('ContentModel', () => {
     });
   });
 
-  describe('searchTokens', () => {
-    it('returns the search tokens as a string', () => {
-      expect(snippet.searchTokens).toEqual(
-        'my-snippet array object my snippet short description'
-      );
-    });
-  });
-
   describe('isSnippet', () => {
     it('returns true if the record is a snippet', () => {
       expect(snippet.isSnippet).toEqual(true);

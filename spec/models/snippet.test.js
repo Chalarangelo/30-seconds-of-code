@@ -28,7 +28,8 @@ describe('Snippet', () => {
     languageId: 'javascript',
     id: 'js/s/my-snippet',
     tags: 'array;object',
-    tokens: 'lorem;ipsum',
+    recTokens: 'lorem ipsum',
+    docTokens: 'lorem ipsum',
   });
 
   const nodeJsSnippet = SnippetFactory.create('taggedNodeJs', {
@@ -168,22 +169,6 @@ describe('Snippet', () => {
   describe('dateMachineFormatted', () => {
     it('returns machine formatted date', () => {
       expect(snippetWithDate.dateMachineFormatted).toEqual('2024-06-12');
-    });
-  });
-
-  describe('searchTokensArray', () => {
-    it('returns search tokens array with language', () => {
-      expect(jsSnippet.searchTokensArray).toEqual([
-        'my-snippet',
-        'array',
-        'object',
-        'lorem',
-        'ipsum',
-        'my',
-        'snippet',
-        'js',
-        'javascript',
-      ]);
     });
   });
 

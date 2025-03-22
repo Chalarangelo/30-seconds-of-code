@@ -10,7 +10,8 @@ const base = {
   topLevel: false,
   parentCid: null,
   cover: 'cover',
-  tokens: 'my;collection;short;description',
+  recTokens: 'my collection short description',
+  docTokens: 'my collection short description',
   ranking: 0.65,
 };
 
