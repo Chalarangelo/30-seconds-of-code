@@ -156,6 +156,10 @@ export default class Collection extends ContentModel {
     return `${this.listedSnippets.length} articles`;
   }
 
+  get formattedMiniPreviewTag() {
+    return this.formattedSnippetCount;
+  }
+
   get sublinks() {
     return this.sublinkPresenter.sublinks;
   }
