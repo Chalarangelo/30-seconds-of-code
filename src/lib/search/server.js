@@ -7,26 +7,36 @@ const stopWordFilter = tkn => !stopWords.has(tkn);
 /**
  * Filters out tokens that are likely not useful:
  * 1. Empty tokens
- * 2. Single characters
- * 3. Remove numeric values
+ * 2. Tokens with only one or two characters
+ * 3. Remove numeric values or values starting with a number
  * 4. Tokens consisting of only special characters
  * 5. Hexadecimal strings
  * 6. Dates and datetimes, or `number x number`
  * 7. Values with units (e.g. `100px` or `30s`)
  * 8. Very long strings (likely to be a hash or UUID)
  * 9. Single character followed by a number, except `h` (e.g. `h1`)
- * 10. Potental plural terms that already exist in singular form
+ * 10. Regexp-like matchers (e.g. `a-z` or `a-z0-9`)
+ * 11. Encoded HTML entities (e.g. `x3c`)
+ * 12. Variable names (e.g. `str`, `str1`)
+ * 13. Common variable names with a number (e.g. `string1`, `array2`)
+ * 14. 3-letter stop words (e.g. `the`)
+ * 15. Potental plural terms that already exist in singular form
  */
 const tokenFilter = (tkn, i, tokens) =>
   !!tkn &&
-  tkn.length > 1 &&
-  !/^-?\d+$/i.test(tkn) &&
+  (tkn === 'js' || tkn.length > 2) &&
+  !/^-?\d+/i.test(tkn) &&
   !/^[()[\]$^.;:|\\/%&*#@!%,"'~`\-+=]+$/i.test(tkn) &&
   !/^(0x)?[\da-f]+$/.test(tkn) &&
   !/^\d([\dt-]+|(\d*x\d+))$/.test(tkn) &&
   !/^\d+\-?[a-z]{1,4}$/.test(tkn) &&
   !/^[\da-z-]{25,}$/.test(tkn) &&
   !/^[^h]\d+$/.test(tkn) &&
+  !/^(?:.-.){1,}$/.test(tkn) &&
+  !/^x\d.$/.test(tkn) &&
+  !/^(?:str|obj|arr|num|var|let|col)\d{0,}$/.test(tkn) &&
+  !/^(?:string|array|pattern|commit-|patch-|image)\d{1,}$/.test(tkn) &&
+  (tkn.length > 3 || !stopWords.has(tkn)) &&
   (!tkn.endsWith('s') || !tokens.includes(tkn.replace(/s$/, '')));
 
 const stripHtmlMultiline = str =>
