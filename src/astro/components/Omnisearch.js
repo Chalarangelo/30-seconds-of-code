@@ -11,6 +11,8 @@ const omnisearch = {
   resultsSection: document.querySelector('output[for="omnisearch"]'),
   searchIndex: {},
   searchIndexInitialized: false,
+  eventListener: null,
+  focusedResult: -1,
   isOpen: false,
   prepare() {
     if (!this.searchIndexInitialized)
@@ -34,6 +36,7 @@ const omnisearch = {
     this.prepare();
     this.initializeSearchIconAnimation();
     this.dialog.showModal();
+    this.bindArrowEvents();
     this.isOpen = true;
     // Apply a padding in the place of the scrollbar to avoid content jumping.
     // Note that this must come before the scroll lock, otherwise the scrollbar
@@ -48,6 +51,7 @@ const omnisearch = {
     // closing the dialog to avoid the user seeing the dialog flashing before
     // it's closed.
     window.setTimeout(() => {
+      this.unbindArrowEvents();
       this.dialog.close();
       this.isOpen = false;
       document.body.style.paddingInlineEnd = '';
@@ -61,6 +65,7 @@ const omnisearch = {
     if (results.length > 0) this.displayResults(results);
     else if (query.length <= 1) this.displayEmptyState();
     else this.displayNotFoundState(query);
+    this.focusedResult = -1;
   },
   searchByKeyphrase(keyphrase) {
     let q = keyphrase.toLowerCase().trim();
@@ -148,6 +153,35 @@ const omnisearch = {
     if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
       this.closeAnimation.play();
     }
+  },
+  bindArrowEvents() {
+    this.eventListener = e => {
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        this.focusNextResult();
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        this.focusPreviousResult();
+      }
+    };
+    this.dialog.addEventListener('keydown', this.eventListener);
+  },
+  unbindArrowEvents() {
+    this.dialog.removeEventListener('keydown', this.eventListener);
+  },
+  focusNextResult() {
+    const results = this.resultsSection.querySelectorAll('a');
+    if (results.length === 0) return;
+    this.focusedResult += 1;
+    if (this.focusedResult >= results.length) this.focusedResult = 0;
+    results[this.focusedResult].focus();
+  },
+  focusPreviousResult() {
+    const results = this.resultsSection.querySelectorAll('a');
+    if (results.length === 0) return;
+    this.focusedResult -= 1;
+    if (this.focusedResult < 0) this.focusedResult = results.length - 1;
+    results[this.focusedResult].focus();
   },
 };
 
