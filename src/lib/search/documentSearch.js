@@ -12,11 +12,6 @@ const tokenizeTokens = str => splitTokens(str).map(cleanTokenPunctuation);
 const tokenizePlainText = str =>
   splitTokens(str).map(tkn => cleanTokenPunctuation(stem(tkn)));
 
-export const tokenize = content =>
-  content.tokens
-    ? tokenizeTokens(content.tokens)
-    : tokenizePlainText(content.text);
-
 const searchForTerms = (documentIndex, terms) => {
   const scores = [];
 
@@ -49,8 +44,8 @@ const search =
   documentIndex =>
   (query, limit = null) => {
     const scores = [
-      ...searchForTerms(documentIndex, tokenize({ text: query })),
-      ...searchForTerms(documentIndex, tokenize({ tokens: query })),
+      ...searchForTerms(documentIndex, tokenizePlainText(query)),
+      ...searchForTerms(documentIndex, tokenizeTokens(query)),
     ].reduce((acc, [docId, score]) => {
       if (!acc.has(docId)) acc.set(docId, 0);
       acc.set(docId, Math.max(acc.get(docId), score));
