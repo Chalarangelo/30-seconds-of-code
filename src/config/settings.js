@@ -128,8 +128,8 @@ const settings = {
     fullPrimaryTagScore: 15.0,
     // Rounded up to 8 instead of 7.5
     halfPrimaryTagScore: 8.0,
-    // Search tokens
-    searchTokenScoreLimit: 40.0,
+    // Recommendation tokens
+    recTokenScoreLimit: 40.0,
     // Total
     // Language + Primary Tag + Search Tokens
     totalScoreLimit: 100.0,

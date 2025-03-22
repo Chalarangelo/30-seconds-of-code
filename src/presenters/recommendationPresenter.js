@@ -68,9 +68,9 @@ export default class RecommendationPresenter {
     this.slugId = this.object.slugId;
     this.languageId = this.object.languageId;
     this.primaryTag = this.object.primaryTag;
-    this.searchTokensArray = this.object.searchTokensArray;
+    this.recTokens = this.object.recTokens;
     this.isListed = this.object.isListed;
-    this.searchTokensLength = this.object.searchTokensArray.length;
+    this.recTokensLength = this.object.recTokens.size;
     this.recommendationRankings = new Map();
     this.minRankings = [];
   }
@@ -137,19 +137,19 @@ export default class RecommendationPresenter {
             ? settings.recommendations.fullPrimaryTagScore
             : settings.recommendations.halfPrimaryTagScore;
 
-      // Determine search token score:
+      // Determine recommendation token score:
       //  * Count found tokens and divide by total number of tokens
-      const searchTokenScore =
-        (this.searchTokensArray.reduce(
-          (a, t) => (snippet.searchTokensArray.includes(t) ? a + 1 : a),
+      const recTokenScore =
+        ([...this.recTokens].reduce(
+          (a, t) => (snippet.recTokens.has(t) ? a + 1 : a),
           0
         ) /
-          this.searchTokensLength) *
-        settings.recommendations.searchTokenScoreLimit;
+          this.recTokensLength) *
+        settings.recommendations.recTokenScoreLimit;
 
       // Divide by the limit to get a value between 0 and 1
       const recommendationRanking =
-        (languageScore + primaryTagScore + searchTokenScore) /
+        (languageScore + primaryTagScore + recTokenScore) /
         settings.recommendations.totalScoreLimit;
 
       // Performance optimization to minimize the number of times we have to
