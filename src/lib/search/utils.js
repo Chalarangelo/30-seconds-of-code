@@ -12,3 +12,14 @@ export const splitTokens = str =>
  */
 export const cleanTokenPunctuation = tkn =>
   tkn.replace(/^['-]+|['-]+$/g, '').replace("'", '');
+
+/**
+ * Deserializes a string of tokens into a Map.
+ * e.g. "a:2 b c:3" => Map { "a" => 2, "b" => 1, "c" => 3 }
+ */
+export const deserializeTokens = str =>
+  str.split(' ').reduce((acc, words) => {
+    const [word, count = 1] = words.split(':');
+    acc.set(word, Number.parseInt(count));
+    return acc;
+  }, new Map());
