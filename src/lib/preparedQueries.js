@@ -111,6 +111,9 @@ export default class PreparedQueries {
 
   static searchForTerm(term, limit) {
     if (!PreparedQueries.documentIndex) PreparedQueries.prepareDocumentIndex();
-    return search(PreparedQueries.documentIndex)(term, limit);
+    return search(PreparedQueries.documentIndex)(term, limit).map(x => ({
+      id: x.id,
+      score: x.score,
+    }));
   }
 }
