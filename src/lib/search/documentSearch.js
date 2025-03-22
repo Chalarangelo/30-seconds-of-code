@@ -58,6 +58,7 @@ const search =
       .map(([docId, score]) => ({
         id: docId,
         score: parseFloat(score.toFixed(5)),
+        ...documentIndex.documents.get(docId),
       }));
 
     // Limit results if requested
