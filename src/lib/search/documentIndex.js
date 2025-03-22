@@ -13,17 +13,20 @@ export default class DocumentIndex {
 
   addDocument(docId, terms) {
     // Store original document
-    this.documents.set(docId, { terms, length: terms.length });
+    this.documents.set(docId, {
+      terms,
+      length: [...terms.values()].reduce((a, b) => a + b),
+    });
 
     // Update inverted index
-    terms.forEach(term => {
+    terms.forEach((freq, term) => {
       if (!this.invertedIndex.has(term))
         this.invertedIndex.set(term, new Map());
 
       const docMap = this.invertedIndex.get(term);
 
       // Store term frequency
-      docMap.set(docId, terms.filter(t => t === term).length);
+      docMap.set(docId, freq);
     });
 
     return docId;
