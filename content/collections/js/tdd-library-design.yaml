@@ -1,0 +1,16 @@
+slug: js/tdd-library-design
+title: Test-Driven Development JavaScript Library Design
+shortTitle: Test-Driven Development Library Design
+listed: true
+snippetIds:
+  - js/s/test-driven-development-intro
+  - js/s/user-centric-api-design
+  - js/s/tdd-library-implementation-with-vite-vitest
+  - js/s/tdd-codebase-refactoring
+splash: compass-1
+description: >-
+  Test-Driven Development (TDD) is a software development process that relies on
+  writing tests before writing the actual code. This collection of JavaScript
+  snippets will guide you through designing a simple JavaScript library using TDD.
+shortDescription: >-
+  A short series on designing a JavaScript library using test-driven development.
