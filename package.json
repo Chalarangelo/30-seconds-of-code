@@ -28,7 +28,7 @@
     "unified": "^11.0.4",
     "unist-util-visit": "^5.0.0",
     "unist-util-visit-parents": "^6.0.1",
-    "vitest": "^2.0.4"
+    "vitest": "^2.1.9"
   },
   "imports": {
     "#src/*": [
