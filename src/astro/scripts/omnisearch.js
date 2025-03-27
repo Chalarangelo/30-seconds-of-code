@@ -37,6 +37,7 @@ const omnisearch = {
     this.initializeSearchIconAnimation();
     this.dialog.showModal();
     this.bindArrowEvents();
+    this.focusedResult = -1;
     this.isOpen = true;
     // Apply a padding in the place of the scrollbar to avoid content jumping.
     // Note that this must come before the scroll lock, otherwise the scrollbar
