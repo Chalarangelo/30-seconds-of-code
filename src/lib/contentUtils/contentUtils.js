@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { exportLanguageData } from '#src/lib/contentUtils/modelWorkers/language.js';
 import { exportSnippetData } from '#src/lib/contentUtils/modelWorkers/snippet.js';
 import { exportCollectionData } from '#src/lib/contentUtils/modelWorkers/collection.js';

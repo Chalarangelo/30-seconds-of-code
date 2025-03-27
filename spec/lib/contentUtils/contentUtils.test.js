@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { describe, it, expect, vi } from 'vitest';
 import { config } from '#spec/mocks/lib/contentUtils/config.js';
 import ContentUtils from '#src/lib/contentUtils/contentUtils.js';

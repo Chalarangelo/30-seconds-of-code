@@ -96,7 +96,6 @@ export const extractSnippetData = async (snippetGlob, languageData) => {
 };
 
 export const exportSnippetData = snippetData => {
-  /* eslint-disable camelcase */
   return snippetData.map(snippet => {
     return {
       model: 'Snippet',
@@ -117,5 +116,4 @@ export const exportSnippetData = snippetData => {
       journeyId: snippet.journeyId,
     };
   });
-  /* eslint-enable camelcase */
 };

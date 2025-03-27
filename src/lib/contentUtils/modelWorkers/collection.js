@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import FileHandler from '#src/lib/contentUtils/fileHandler.js';
 import MarkdownParser from '#src/lib/contentUtils/markdownParser/markdownParser.js';
 import Ranker from '#src/lib/contentUtils/ranker.js';
@@ -81,7 +80,6 @@ export const extractCollectionData = async (collectionGlob, hub) => {
 };
 
 export const exportCollectionData = collectionData => {
-  /* eslint-disable camelcase */
   return collectionData.map(collection => {
     return {
       model: 'Collection',
@@ -101,5 +99,4 @@ export const exportCollectionData = collectionData => {
       ranking: collection.ranking,
     };
   });
-  /* eslint-enable camelcase */
 };

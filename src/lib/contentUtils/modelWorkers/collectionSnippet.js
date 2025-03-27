@@ -76,7 +76,6 @@ export const extractCollectionSnippetData = (collections, snippets) => {
 };
 
 export const exportCollectionSnippetData = collectionSnippetData => {
-  /* eslint-disable camelcase */
   return collectionSnippetData.map(collectionSnippet => {
     return {
       model: 'CollectionSnippet',
@@ -87,5 +86,4 @@ export const exportCollectionSnippetData = collectionSnippetData => {
       dateModified: collectionSnippet.dateModified,
     };
   });
-  /* eslint-enable camelcase */
 };
