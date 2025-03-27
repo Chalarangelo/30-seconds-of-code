@@ -9,9 +9,7 @@ export default [
     languageOptions: {
       ecmaVersion: 2023,
       sourceType: 'module',
-      globals: {
-        ...globals,
-      },
+      globals: { ...globals },
     },
     ignores: ['app/assets/config/manifest.js'],
     rules: {
@@ -29,59 +27,29 @@ export default [
       quotes: [
         'error',
         'single',
-        {
-          avoidEscape: true,
-          allowTemplateLiterals: true,
-        },
+        { avoidEscape: true, allowTemplateLiterals: true },
       ],
       semi: ['error', 'always'],
-      'semi-spacing': [
-        'error',
-        {
-          before: false,
-          after: false,
-        },
-      ],
+      'semi-spacing': ['error', { before: false, after: false }],
       'no-trailing-spaces': 'error',
       'no-duplicate-imports': 'error',
       'no-useless-computed-key': 'error',
       'rest-spread-spacing': ['error', 'never'],
       'no-console': 'off',
       eqeqeq: ['error', 'smart'],
-      'brace-style': [
-        'error',
-        '1tbs',
-        {
-          allowSingleLine: true,
-        },
-      ],
+      'brace-style': ['error', '1tbs', { allowSingleLine: true }],
       curly: 'off',
       'object-shorthand': ['warn', 'always'],
       'key-spacing': [
         'error',
-        {
-          beforeColon: false,
-          afterColon: true,
-          mode: 'strict',
-        },
+        { beforeColon: false, afterColon: true, mode: 'strict' },
       ],
-      camelcase: [
-        'warn',
-        {
-          properties: 'always',
-        },
-      ],
+      camelcase: ['warn', { properties: 'always' }],
       'dot-location': ['error', 'property'],
       'generator-star-spacing': ['off'],
       'block-spacing': ['error', 'always'],
       'comma-style': ['error', 'last'],
-      'comma-spacing': [
-        'error',
-        {
-          before: false,
-          after: true,
-        },
-      ],
+      'comma-spacing': ['error', { before: false, after: true }],
       'no-extend-native': 'error',
       'no-loop-func': 'error',
       'no-implied-eval': 'error',
@@ -95,19 +63,8 @@ export default [
       'no-fallthrough': 'warn',
       'no-caller': 'error',
       'no-eval': 'error',
-      'no-multiple-empty-lines': [
-        'error',
-        {
-          max: 2,
-          maxEOF: 1,
-        },
-      ],
-      'no-multi-spaces': [
-        'error',
-        {
-          ignoreEOLComments: true,
-        },
-      ],
+      'no-multiple-empty-lines': ['error', { max: 2, maxEOF: 1 }],
+      'no-multi-spaces': ['error', { ignoreEOLComments: true }],
       'no-negated-in-lhs': 'error',
       'no-new': 'error',
       'no-new-require': 'error',
@@ -126,6 +83,7 @@ export default [
       yoda: ['error', 'never'],
       'space-before-function-paren': 'off',
       'spaced-comment': ['error', 'always'],
+      'no-useless-assignment': 'error',
     },
   },
 ];
