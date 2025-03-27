@@ -18,11 +18,11 @@ const iconSize = '1.25rem';
       />
     </a>
   </h1>
-  <nav>
-    <a href="/">
+  <nav data-nav-action-container>
+    <a href="/" data-nav-action="home">
       <Icon name="home" size={iconSize} title="Home" aria-label="Home" />
     </a>
-    <a href="/collections/p/1">
+    <a href="/collections/p/1" data-nav-action="collections">
       <Icon
         name="list"
         size={iconSize}
@@ -30,7 +30,7 @@ const iconSize = '1.25rem';
         aria-label="Collections"
       />
     </a>
-    <button data-open-modal="omnisearch">
+    <button data-open-modal="omnisearch" data-nav-action="search">
       <Icon name="search" size={iconSize} title="Search" aria-label="Search" />
     </button>
     <a href={settings.githubRepoUrl} target="_blank" rel="noopener noreferrer">
