@@ -89,5 +89,73 @@ header {
         @include visually-hidden;
       }
     }
+
+    &[data-nav-action-container] {
+      // Set default values for the navigation action hotkeys.
+      --nav-action-opacity: 0;
+      --nav-action-transform-y: 70%;
+    }
+
+    [data-nav-action] {
+      &::before {
+        // Show the navigation action hotkey as a small kbd-like block.
+        display: block;
+        position: absolute;
+        content: var(--nav-action-hotkey);
+        opacity: var(--nav-action-opacity);
+
+        // Setup Roboto Mono as the font and give it a tiny size.
+        font-family: 'Roboto Mono', Menlo, Consolas, monospace;
+        font-size: var(--font-xs);
+
+        // Give the element styles similar to kbd.
+        background: var(--color-code-background);
+        border-radius: var(--border-radius-small);
+
+        // Size the element and position it correctly, adjust alignment.
+        width: 1rem;
+        height: 1rem;
+        line-height: 1rem;
+        text-align: center;
+
+        // Add a custom border to make the hotkey more visible.
+        border: var(--border-width-hairline) solid var(--color-border-light);
+        border-bottom-width: var(--border-width-thin);
+
+        // Position at the bottom middle (10% corresponds to the left padding).
+        transform: translate(10%, var(--nav-action-transform-y));
+
+        // Add a transition to make the hotkey appear smoothly.
+        transition:
+          opacity var(--animation-duration-short) ease,
+          transform var(--animation-duration-short) ease;
+      }
+
+      &:hover::before {
+        // Hide the hotkey on hover, as it's not needed.
+        --nav-action-opacity: 0;
+        --nav-action-transform-y: 150%;
+      }
+    }
+
+    // Set up icons for the navigation actions.
+    [data-nav-action='home'] {
+      --nav-action-hotkey: 'H';
+    }
+    [data-nav-action='collections'] {
+      --nav-action-hotkey: 'J';
+    }
+    [data-nav-action='search'] {
+      --nav-action-hotkey: 'K';
+    }
+
+    @media (pointer: fine) and (scripting: enabled) and (hover: hover) {
+      // Only enable navigation action hotkeys if available (desktop with JS).
+      &[data-nav-action-container][data-nav-actions-shown] {
+        // Show the navigation action hotkeys.
+        --nav-action-opacity: 1;
+        --nav-action-transform-y: 85%;
+      }
+    }
   }
 }
