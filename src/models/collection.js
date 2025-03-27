@@ -55,9 +55,7 @@ export default class Collection extends ContentModel {
   }
 
   get children() {
-    return Collection.where({
-      parentId: this.id,
-    });
+    return Collection.where({ parentId: this.id });
   }
 
   get collectionSnippets() {
@@ -67,9 +65,7 @@ export default class Collection extends ContentModel {
   }
 
   get snippets() {
-    return Snippet.where({
-      id: this.collectionSnippets.pluck('snippetId'),
-    });
+    return Snippet.where({ id: this.collectionSnippets.pluck('snippetId') });
   }
 
   get listedSnippets() {

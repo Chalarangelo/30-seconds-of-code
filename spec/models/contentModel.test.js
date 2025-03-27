@@ -12,9 +12,7 @@ describe('ContentModel', () => {
     description: '<p>A <a href="https://example.com">description</a></p>.',
   });
 
-  const collection = CollectionFactory.create({
-    id: 'js/s/array',
-  });
+  const collection = CollectionFactory.create({ id: 'js/s/array' });
 
   describe('slug', () => {
     it('returns the slugified id', () => {

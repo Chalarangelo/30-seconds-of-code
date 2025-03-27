@@ -42,10 +42,7 @@ export default class Page {
       '@context': 'https://schema.org',
       '@type': this.object.isSnippet ? 'TechArticle' : 'ItemList',
       url: this.object.fullUrl,
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': this.object.fullUrl,
-      },
+      mainEntityOfPage: { '@type': 'WebPage', '@id': this.object.fullUrl },
     };
 
     if (this.additionalSchemaData) {

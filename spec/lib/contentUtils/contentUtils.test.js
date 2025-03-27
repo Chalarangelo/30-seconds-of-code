@@ -5,10 +5,7 @@ import ContentUtils from '#src/lib/contentUtils/contentUtils.js';
 
 vi.mock('#src/lib/contentUtils/config.js', async importOriginal => {
   const original = await importOriginal();
-  return {
-    ...original,
-    ...config,
-  };
+  return { ...original, ...config };
 });
 
 vi.mock('#src/lib/contentUtils/fileHandler.js', async importOriginal => {

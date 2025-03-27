@@ -2,10 +2,7 @@
  * Utility for ranking snippets.
  */
 export default class Ranker {
-  static rankerSettings = {
-    keywordScoreLimit: 100,
-    keywordCountLimit: 20,
-  };
+  static rankerSettings = { keywordScoreLimit: 100, keywordCountLimit: 20 };
   static keywordScoreData = {};
 
   static set keywordScores(data) {

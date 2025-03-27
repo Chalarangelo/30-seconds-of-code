@@ -72,10 +72,7 @@ export const extractCollectionData = async (collectionGlob, hub) => {
         parent,
         recTokens,
         docTokens,
-        matchers: {
-          language: languageMatcher,
-          tag: tagMatcher,
-        },
+        matchers: { language: languageMatcher, tag: tagMatcher },
         snippetIds,
         ranking,
       };

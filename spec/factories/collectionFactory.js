@@ -16,24 +16,12 @@ const base = {
 };
 
 const traits = {
-  main: {
-    id: 'snippets',
-  },
-  collections: {
-    id: 'collections',
-  },
-  listed: {
-    listed: true,
-  },
-  unlisted: {
-    listed: false,
-  },
-  featured: {
-    featuredIndex: 1,
-  },
-  notFeatured: {
-    featuredIndex: null,
-  },
+  main: { id: 'snippets' },
+  collections: { id: 'collections' },
+  listed: { listed: true },
+  unlisted: { listed: false },
+  featured: { featuredIndex: 1 },
+  notFeatured: { featuredIndex: null },
   primary: { topLevel: true },
   secondary: { parentId: 'parent-collection', topLevel: false },
 };

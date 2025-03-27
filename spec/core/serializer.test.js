@@ -39,11 +39,7 @@ describe('Serializer', () => {
       const users = [user];
       const serialized = UserSerializer.serializeArray(users);
       expect(serialized).toEqual([
-        {
-          id: 1,
-          fullName: 'John Doe',
-          email: 'X@Y.Z',
-        },
+        { id: 1, fullName: 'John Doe', email: 'X@Y.Z' },
       ]);
     });
   });

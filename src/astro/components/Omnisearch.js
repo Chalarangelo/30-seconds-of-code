@@ -123,11 +123,7 @@ const omnisearch = {
         { transform: 'scale(1.1)' },
         { transform: 'scale(1)' },
       ],
-      {
-        duration: 750,
-        delay: 250,
-        easing: 'ease',
-      }
+      { duration: 750, delay: 250, easing: 'ease' }
     );
     this.searchIconAnimation.pause();
   },
@@ -142,10 +138,7 @@ const omnisearch = {
         { opacity: '1', transform: 'translateY(0)' },
         { opacity: '0', transform: 'translateY(-20px)' },
       ],
-      {
-        duration: 200,
-        easing: 'ease-in',
-      }
+      { duration: 200, easing: 'ease-in' }
     );
     this.closeAnimation.pause();
   },

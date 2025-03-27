@@ -88,9 +88,6 @@ export default class BreadcrumbPresenter {
   }
 
   get snippetBreadcrumb() {
-    return {
-      url: this.object.slug,
-      name: this.object.shortTitle,
-    };
+    return { url: this.object.slug, name: this.object.shortTitle };
   }
 }

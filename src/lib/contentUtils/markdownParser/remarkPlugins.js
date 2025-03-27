@@ -89,10 +89,7 @@ export const linkInlineCode = ({ references }) => {
         // Convert this element to a link and wrap the current element in it
         const innerNode = { ...node, children: [...node.children] };
         node.tagName = `a`;
-        node.properties = {
-          href: reference,
-          dataCodeReference: 'true',
-        };
+        node.properties = { href: reference, dataCodeReference: 'true' };
         node.children = [innerNode];
       }
     );

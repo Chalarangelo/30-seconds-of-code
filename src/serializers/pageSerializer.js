@@ -5,10 +5,7 @@ export default class PageSerializer extends Serializer {
     Serializer.prepare(this, [
       [
         'props',
-        object => ({
-          ...object.props,
-          structuredData: object.schemaData,
-        }),
+        object => ({ ...object.props, structuredData: object.schemaData }),
       ],
       'params',
     ]);

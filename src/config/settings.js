@@ -8,21 +8,14 @@ const settings = {
       return `Browse ${snippetCount} coding articles to level up your coding skills on ${websiteName}.`;
     },
   },
-  owner: {
-    name: 'Angelos Chalaris',
-    url: 'https://chalarangelo.me',
-  },
+  owner: { name: 'Angelos Chalaris', url: 'https://chalarangelo.me' },
   repository: {
     url: 'https://github.com/Chalarangelo/30-seconds-of-code',
     snippetPrefix:
       'https://github.com/Chalarangelo/30-seconds-of-code/blob/master/content/snippets',
   },
-  license: {
-    url: 'https://creativecommons.org/licenses/by/4.0/',
-  },
-  manifest: {
-    cacheKey: '30swp20231218115417',
-  },
+  license: { url: 'https://creativecommons.org/licenses/by/4.0/' },
+  manifest: { cacheKey: '30swp20231218115417' },
   presentation: {
     cardsPerPage: 24,
     collectionCardsPerPage: 12,
@@ -63,12 +56,7 @@ const settings = {
     snippetsSuffix: '.md',
     languagesGlob: 'content/languages/*.yaml',
   },
-  pages: {
-    urls: {
-      home: '/',
-      about: '/about',
-    },
-  },
+  pages: { urls: { home: '/', about: '/about' } },
   // Tag formatting
   tags: {
     css: 'CSS',
@@ -82,12 +70,7 @@ const settings = {
     http: 'HTTP',
     updatelog: 'Update Log',
   },
-  breadcrumbs: {
-    home: {
-      url: '/',
-      name: 'Home',
-    },
-  },
+  breadcrumbs: { home: { url: '/', name: 'Home' } },
   sublinks: {
     moreCollections: {
       title: 'More',
@@ -98,15 +81,9 @@ const settings = {
     parentTitle: 'All',
   },
   covers: {
-    originalExtension: {
-      snippet: '.jpg',
-      collection: '.png',
-    },
+    originalExtension: { snippet: '.jpg', collection: '.png' },
     extension: '.webp',
-    prefix: {
-      snippet: '/assets/cover/',
-      collection: '/assets/splash/',
-    },
+    prefix: { snippet: '/assets/cover/', collection: '/assets/splash/' },
     suffix: {
       home: '-400',
       snippet: '-400',

@@ -28,24 +28,12 @@ const base = {
 };
 
 const traits = {
-  listed: {
-    listed: true,
-  },
-  unlisted: {
-    listed: false,
-  },
-  published: {
-    dateModified: yesterday(),
-  },
-  scheduled: {
-    dateModified: tomorrow(),
-  },
-  withoutLanguage: {
-    languageCid: null,
-  },
-  taggedNodeJs: {
-    tags: 'node;array',
-  },
+  listed: { listed: true },
+  unlisted: { listed: false },
+  published: { dateModified: yesterday() },
+  scheduled: { dateModified: tomorrow() },
+  withoutLanguage: { languageCid: null },
+  taggedNodeJs: { tags: 'node;array' },
 };
 
 export default { model: 'Snippet', base, traits };

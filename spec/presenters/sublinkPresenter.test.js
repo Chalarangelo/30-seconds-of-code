@@ -38,11 +38,7 @@ describe('SublinkPresenter', () => {
   describe('sublinks', () => {
     it('returns all primary collections for the main collection', () => {
       expect(mainPresenter.sublinks).toEqual([
-        {
-          title: 'JavaScript',
-          url: '/js/p/1',
-          selected: false,
-        },
+        { title: 'JavaScript', url: '/js/p/1', selected: false },
         settings.sublinks.moreCollections,
       ]);
     });

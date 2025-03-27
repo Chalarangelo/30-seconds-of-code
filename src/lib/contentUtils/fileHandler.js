@@ -8,12 +8,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 const frontmatterReader = (data, filePath) => {
   const { body, attributes } = frontmatter(data);
   const { language = null, ...restAttributes } = attributes;
-  return {
-    body,
-    ...restAttributes,
-    language,
-    filePath,
-  };
+  return { body, ...restAttributes, language, filePath };
 };
 
 const readers = {

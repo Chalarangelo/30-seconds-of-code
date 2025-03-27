@@ -24,10 +24,7 @@ const publicOutputPath = `${publicPath}/${assetPath}`;
 const convertedAssetGlobPattern = `${publicOutputPath}/@(${supportedDirectories})/*.webp`;
 const unconvertedAssetGlobPattern = `${inputPath}/@(${supportedDirectories})/*.@(${supportedExtensions})`;
 
-const quality = {
-  splash: 90,
-  cover: 85,
-};
+const quality = { splash: 90, cover: 85 };
 const dimensions = {
   splash: [
     { width: 600, height: 600 },
