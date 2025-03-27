@@ -6,21 +6,33 @@ const hotkeys = {
     collections: document.querySelector('[data-nav-action="collections"]'),
     omnisearch: document.querySelector('[data-nav-action="search"]'),
   },
+  omnisearchDialog: document.querySelector('[data-modal="omnisearch"]'),
   navActionMap: { k: 'omnisearch', j: 'collections', h: 'home' },
   handleKeyDown(e) {
     const shouldHandle = this.isMac ? e.metaKey : e.ctrlKey;
-    if (shouldHandle && Object.keys(this.navActionMap).includes(e.key)) {
+    const isModalOpen = this.omnisearchDialog.open;
+    // Only handle the event if the user is pressing the correct modifier key
+    // and the modal is not open and the key pressed is a valid navigation key.
+    if (
+      !isModalOpen &&
+      shouldHandle &&
+      Object.keys(this.navActionMap).includes(e.key)
+    ) {
       this.hideHotkeys();
       e.preventDefault();
       this.triggerAction(this.navActionMap[e.key]);
-    } else if (shouldHandle) {
+    } else if (shouldHandle && !isModalOpen) {
+      // If the key pressed is a modifier key and the modal is not open, show
+      // the hotkeys.
       this.showHotkeys();
     } else {
+      // Hide the hotkeys in all other cases.
       this.hideHotkeys();
     }
   },
   handleKeyUp(e) {
-    if (e.key === 'Meta' || e.key === 'Control') {
+    // Hide the hotkeys when the user releases the modifier key.
+    if (this.isMac ? e.key === 'Meta' : e.key === 'Control') {
       this.hideHotkeys();
     }
   },
