@@ -8,7 +8,7 @@
   "type": "module",
   "devDependencies": {
     "astro": "^5.5.0",
-    "eslint": "^8.50.0",
+    "eslint": "^9.23.0",
     "eslint-config-prettier": "^9.0.0",
     "front-matter": "^4.0.2",
     "fs-extra": "^11.3.0",
