@@ -12,7 +12,7 @@
     "eslint-config-prettier": "^9.0.0",
     "front-matter": "^4.0.2",
     "fs-extra": "^11.3.0",
-    "glob": "^10.3.10",
+    "glob": "^11.0.1",
     "hast-util-to-string": "^3.0.0",
     "js-yaml": "^4.1.0",
     "prettier": "^3.0.3",
