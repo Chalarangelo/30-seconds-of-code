@@ -74,7 +74,7 @@ const omnisearch = {
   },
   displayResults(results) {
     this.resultsSection.innerHTML = `
-      ${results.length ? this.createResultsHTML('Results', results) : ''}
+      ${results.length ? this.createResultsHTML('Search results', results) : ''}
     `;
   },
   displayEmptyState() {
