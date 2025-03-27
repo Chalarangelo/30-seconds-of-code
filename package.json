@@ -15,7 +15,7 @@
     "glob": "^11.0.1",
     "hast-util-to-string": "^3.0.0",
     "js-yaml": "^4.1.0",
-    "prettier": "^3.0.3",
+    "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.12.0",
     "prismjs": "^1.29.0",
     "rehype-stringify": "^10.0.0",
