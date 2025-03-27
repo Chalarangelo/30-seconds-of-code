@@ -29,7 +29,7 @@ const tokenFilter = (tkn, tokenSet) =>
   !/^[()[\]$^.;:|\\/%&*#@!%,"'~`\-+=]+$/i.test(tkn) &&
   !/^(0x)?[\da-f]+$/.test(tkn) &&
   !/^\d([\dt-]+|(\d*x\d+))$/.test(tkn) &&
-  !/^\d+\-?[a-z]{1,4}$/.test(tkn) &&
+  !/^\d+-?[a-z]{1,4}$/.test(tkn) &&
   !/^[\da-z-]{25,}$/.test(tkn) &&
   !/^[^h]\d+$/.test(tkn) &&
   !/^(?:.-.){1,}$/.test(tkn) &&
