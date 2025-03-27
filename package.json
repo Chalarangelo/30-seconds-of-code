@@ -62,6 +62,6 @@
     "> 0.5% and last 4 versions and not dead and not ie>0 and not op_mini all and not and_uc>0 and not edge<79"
   ],
   "engines": {
-    "node": ">=20.11.1"
+    "node": ">=22.14.0"
   }
 }
