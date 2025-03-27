@@ -1,5 +1,5 @@
 import js from '@eslint/js';
-import eslintConfigPrettier from 'eslint-config-prettier';
+import eslintConfigPrettier from 'eslint-config-prettier/flat';
 import globals from './globals.js';
 
 export default [
