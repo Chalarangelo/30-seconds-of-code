@@ -3,7 +3,7 @@ import remarkGfm from 'remark-gfm';
 import { unified } from 'unified';
 import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
-import remarkUnwrapImages from 'remark-unwrap-images';
+import rehypeUnwrapImages from 'rehype-unwrap-images';
 import {
   safeguardExternalLinks,
   transformHeadings,
@@ -45,14 +45,13 @@ export default class MarkdownParser {
       // * Parse GitHub Flavored Markdown (`remarkGfm`)
       // * Highlight code (`highlightCode`)
       //   Note: this must come before `remarkRehype`, as it transforms AST nodes
-      // * Unwrap images (`remarkUnwrapImages`)
-      //   Note: this must come before `remarkRehype`, as it transforms AST nodes
       // * Embed Codepens from links (`embedCodepensFromLinks`)
       //   Note: this must come before `remarkRehype`, as it transforms AST nodes
       // ---------------------------------------------
       // * Parse to HTML (`remarkRehype`)
       //   Note: From this point onwards, the AST is a HAST
       //   Note: the plugins below this point transform HAST nodes
+      // * Unwrap images (`rehypeUnwrapImages`)
       // * Link inline code (`linkInlineCode`)
       //   Note: this uses the references passed from the extractor
       //   Note: this must come before `safeguardExternalLinks`
@@ -69,9 +68,9 @@ export default class MarkdownParser {
         .use(remarkParse)
         .use(remarkGfm)
         .use(highlightCode, { grammars })
-        .use(remarkUnwrapImages)
         .use(embedCodepensFromLinks, { className: 'codepen-wrapper' })
         .use(remarkRehype, { allowDangerousHtml: true })
+        .use(rehypeUnwrapImages)
         .use(linkInlineCode, { references })
         .use(safeguardExternalLinks)
         .use(transformAdmonitions)
