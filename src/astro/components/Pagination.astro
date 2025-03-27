@@ -7,30 +7,33 @@ if (!pagination && !journey) return null;
 
 const isJourney = Boolean(journey);
 
-const hasPrevious = isJourney ? Boolean(journey.previousUrl) : pagination.hasPrevious;
+const hasPrevious = isJourney
+  ? Boolean(journey.previousUrl)
+  : pagination.hasPrevious;
 const previousText = 'Previous';
-const previousUrl = isJourney ?
-  journey.previousUrl :
-  `${pagination.baseUrl}/p/${hasPrevious ? pagination.pageNumber - 1 : 1}`;
+const previousUrl = isJourney
+  ? journey.previousUrl
+  : `${pagination.baseUrl}/p/${hasPrevious ? pagination.pageNumber - 1 : 1}`;
 
 const hasNext = isJourney ? Boolean(journey.nextUrl) : pagination.hasNext;
-const nextText ='Next';
-const nextUrl = isJourney ?
-  journey.nextUrl :
-  `${pagination.baseUrl}/p/${hasNext ? pagination.pageNumber + 1 : pagination.totalPages}`;
+const nextText = 'Next';
+const nextUrl = isJourney
+  ? journey.nextUrl
+  : `${pagination.baseUrl}/p/${hasNext ? pagination.pageNumber + 1 : pagination.totalPages}`;
 
-const detail = isJourney ?
-  `<a href="${journey.url}">${journey.title}</a> collection <span>(${journey.itemNumber} of ${journey.totalItems} articles)</span>` :
-  `Page ${pagination.pageNumber} of ${pagination.totalPages} (${pagination.totalItems} ${pagination.itemType})`;
+const detail = isJourney
+  ? `<a href="${journey.url}">${journey.title}</a> collection <span>(${journey.itemNumber} of ${journey.totalItems} articles)</span>`
+  : `Page ${pagination.pageNumber} of ${pagination.totalPages} (${pagination.totalItems} ${pagination.itemType})`;
 ---
-<nav aria-label='Pagination'>
-  <a href={previousUrl} rel='prev' aria-disabled={!hasPrevious}>
-    <Icon name='chevron-left' size='1.25em' />
+
+<nav aria-label="Pagination">
+  <a href={previousUrl} rel="prev" aria-disabled={!hasPrevious}>
+    <Icon name="chevron-left" size="1.25em" />
     {previousText}
   </a>
-  <a href={nextUrl} rel='next' aria-disabled={!hasNext}>
+  <a href={nextUrl} rel="next" aria-disabled={!hasNext}>
     {nextText}
-    <Icon name='chevron-right' size='1.25em' />
+    <Icon name="chevron-right" size="1.25em" />
   </a>
   <p set:html={detail} />
 </nav>

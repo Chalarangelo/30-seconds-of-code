@@ -4,14 +4,17 @@ import Icon from '#src/astro/components/Icon.astro';
 const { items = [] } = Astro.props;
 ---
 
-<nav aria-label='Collections'>
+<nav aria-label="Collections">
   <ul>
-    {items.map(item => (
-      <li>
-        <a href={item.url} data-selected={item.selected}>
-          {item.title}{item.icon ? <Icon name={item.icon} size='1.25em' /> : null}
-        </a>
-      </li>
-    ))}
+    {
+      items.map(item => (
+        <li>
+          <a href={item.url} data-selected={item.selected}>
+            {item.title}
+            {item.icon ? <Icon name={item.icon} size="1.25em" /> : null}
+          </a>
+        </li>
+      ))
+    }
   </ul>
 </nav>

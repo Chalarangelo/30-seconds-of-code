@@ -41,15 +41,15 @@ const {
   structuredData={structuredData}
   breadcrumbsData={breadcrumbs}
   canonical={snippet.slug}
-  pageType='article'
+  pageType="article"
 >
-  <main slot='main-content'>
+  <main slot="main-content">
     <Breadcrumb breadcrumbs={breadcrumbs} />
     <SnippetContent snippet={snippet} />
     {journey && <Pagination journey={journey} />}
     <PreviewList contentItems={recommendations}>
-      <h2 slot='title'>More like this</h2>
+      <h2 slot="title">More like this</h2>
     </PreviewList>
-</main>
-<TableOfContents tableOfContents={snippet.tableOfContents} slot='side-bar' />
+  </main>
+  <TableOfContents tableOfContents={snippet.tableOfContents} slot="side-bar" />
 </Layout>

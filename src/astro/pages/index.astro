@@ -14,7 +14,8 @@ import Icon from '#src/astro/components/Icon.astro';
 const pagePath = path.join(process.cwd(), '.content', 'pages', 'index.json');
 const pageData = JSON.parse(fs.readFileSync(pagePath, 'utf8'));
 
-const title = 'Discover hundreds<br/> of coding articles to<br/> level up your skills.';
+const title =
+  'Discover hundreds<br/> of coding articles to<br/> level up your skills.';
 const description =
   '<p>Browse articles by collection or check out the top picks and latest content below.</p>';
 
@@ -31,27 +32,27 @@ const {
 ---
 
 <Layout
-  title=''
+  title=""
   description={pageDescription}
   canonical={'/'}
   structuredData={structuredData}
 >
-  <main slot='main-content'>
-  <Hero
-    title={title}
-    description={description}
-    cover={splashImage}
-    coverSrcset={splashImageSrcset}
-    secondary
-  />
-  {Boolean(announcement) && <Announcement {...announcement} />}
-  <Chips items={featuredCollections} />
+  <main slot="main-content">
+    <Hero
+      title={title}
+      description={description}
+      cover={splashImage}
+      coverSrcset={splashImageSrcset}
+      secondary
+    />
+    {Boolean(announcement) && <Announcement {...announcement} />}
+    <Chips items={featuredCollections} />
     <PreviewList contentItems={featuredSnippets}>
-      <h2 slot='title'>New & Popular Articles</h2>
-      <nav slot='bottom-nav' aria-label='Articles'>
+      <h2 slot="title">New & Popular Articles</h2>
+      <nav slot="bottom-nav" aria-label="Articles">
         <a href={snippetListUrl}>
           Explore all articles
-          <Icon name='arrow-right' size='1.25em' />
+          <Icon name="arrow-right" size="1.25em" />
         </a>
       </nav>
     </PreviewList>

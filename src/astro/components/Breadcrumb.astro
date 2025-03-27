@@ -11,17 +11,21 @@ lastBreadcrumb.showIcon = false;
 secondToLastBreadcrumb.showIcon = false;
 ---
 
-<nav aria-label='Breadcrumb'>
+<nav aria-label="Breadcrumb">
   <ol>
-    {breadcrumbs.map(({ name, url, isCurrentPage = false, showIcon = true }) => (
-      <li>
-        <a href={url} aria-current={isCurrentPage ? 'page' : null}>
-          {name}
-        </a>
-        {showIcon && (
-          <Icon name='chevron-right' size='1em' aria-hidden='true' />
-        )}
-      </li>
-    ))}
+    {
+      breadcrumbs.map(
+        ({ name, url, isCurrentPage = false, showIcon = true }) => (
+          <li>
+            <a href={url} aria-current={isCurrentPage ? 'page' : null}>
+              {name}
+            </a>
+            {showIcon && (
+              <Icon name="chevron-right" size="1em" aria-hidden="true" />
+            )}
+          </li>
+        )
+      )
+    }
   </ol>
 </nav>

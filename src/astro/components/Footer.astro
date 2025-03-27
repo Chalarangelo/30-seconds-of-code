@@ -7,9 +7,9 @@ const currentYear = new Date().getFullYear();
 <footer>
   <div>
     <p>
-      Hello! <span class='wave'>👋</span> I’m Angelos, a professional software engineer, based in Greece.
-      I work on <strong>30 seconds of code</strong> in my free time to create
-      the best resource I never had when I started out as a developer.
+      Hello! <span class="wave">👋</span> I’m Angelos, a professional software engineer,
+      based in Greece. I work on <strong>30 seconds of code</strong> in my free time
+      to create the best resource I never had when I started out as a developer.
     </p>
     <nav aria-label="Sitemap">
       <h5>Sitemap</h5>
@@ -17,33 +17,35 @@ const currentYear = new Date().getFullYear();
         <li><a href="/">Home</a></li>
         <li><a href="/snippets/p/1">Articles</a></li>
         <li><a href="/collections/p/1">Collections</a></li>
-        <li><a href='/about'>About</a></li>
-        <li><a href='/update-logs/p/1'>Updates</a></li>
-        <li><a href='/feed.xml'>RSS</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/update-logs/p/1">Updates</a></li>
+        <li><a href="/feed.xml">RSS</a></li>
+      </ul>
+      <small
+        >Powered by
+        <a
+          href="https://www.netlify.com/"
+          rel="noopener noreferrer nofollow"
+          target="_blank">Netlify</a
+        >{', '}
+        <a
+          href="https://astro.build/"
+          rel="noopener noreferrer nofollow"
+          target="_blank">Astro</a
+        >{' & '}
+        <a
+          href="https://github.com/"
+          rel="noopener noreferrer nofollow"
+          target="_blank">GitHub</a
+        >
+        <br />
+        &copy; 2017-{currentYear}{' '}
+        <a
+          href={settings.ownerUrl}
+          rel="noopener noreferrer nofollow"
+          target="_blank">{settings.ownerName}</a
+        >. All rights reserved.
+      </small>
     </nav>
-    <small>Powered by
-      <a
-        href='https://www.netlify.com/'
-        rel='noopener noreferrer nofollow'
-        target='_blank'>Netlify</a
-      >{', '}
-      <a
-        href='https://astro.build/'
-        rel='noopener noreferrer nofollow'
-        target='_blank'>Astro</a
-      >{' & '}
-      <a
-        href='https://github.com/'
-        rel='noopener noreferrer nofollow'
-        target='_blank'>GitHub</a
-      >
-      <br/>
-      &copy; 2017-{currentYear}{' '}
-      <a
-        href={settings.ownerUrl}
-        rel='noopener noreferrer nofollow'
-        target='_blank'>{settings.ownerName}</a
-      >. All rights reserved.
-    </small>
   </div>
 </footer>

@@ -20,7 +20,7 @@ const {
 } = Astro.props;
 ---
 
-<html lang='en'>
+<html lang="en">
   <head>
     <Meta
       title={title}
@@ -31,14 +31,14 @@ const {
       breadcrumbsData={breadcrumbsData}
       canonical={canonical}
     />
-    <script define:vars={{timestamp}} />
+    <script define:vars={{ timestamp }}></script>
   </head>
   <body>
-    <a href='#skip-link-target' data-skip-link>Skip to content</a>
+    <a href="#skip-link-target" data-skip-link>Skip to content</a>
     <Header />
-    <div id='skip-link-target'/>
-    <slot name='main-content' />
-    <slot name='side-bar' />
+    <div id="skip-link-target"></div>
+    <slot name="main-content" />
+    <slot name="side-bar" />
     <Footer />
     <Omnisearch />
   </body>

@@ -10,11 +10,11 @@ const hasSlotContent = Astro.slots.has('default');
 if (!tableOfContents && !hasSlotContent) return '';
 ---
 
-<nav aria-label='Table of contents'>
+<nav aria-label="Table of contents">
   <div>
     <h2>Contents</h2>
     <slot>
-      <Fragment set:html={tableOfContents}/>
+      <Fragment set:html={tableOfContents} />
     </slot>
   </div>
 </nav>

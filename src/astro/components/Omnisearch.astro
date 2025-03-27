@@ -2,22 +2,22 @@
 import Icon from '#src/astro/components/Icon.astro';
 ---
 
-<dialog data-modal='omnisearch'>
+<dialog data-modal="omnisearch">
   <search>
-    <Icon name='search' size='1.25rem' aria-hidden='true' />
+    <Icon name="search" size="1.25rem" aria-hidden="true" />
     <input
-      type='search'
-      placeholder='Search...'
-      id='omnisearch'
-      aria-label='Search articles and collections'
+      type="search"
+      placeholder="Search..."
+      id="omnisearch"
+      aria-label="Search articles and collections"
     />
-    <button data-close-modal='omnisearch'>
-      <Icon name='close' size='2rem' aria-label='Close'/>
+    <button data-close-modal="omnisearch">
+      <Icon name="close" size="2rem" aria-label="Close" />
     </button>
-    <output aria-label='Search results' for='omnisearch'>
+    <output aria-label="Search results" for="omnisearch">
       <p>Start typing a keyphrase to see matching articles.</p>
     </output>
   </search>
 </dialog>
 
-<script src='./Omnisearch.js'></script>
+<script src="./Omnisearch.js"></script>

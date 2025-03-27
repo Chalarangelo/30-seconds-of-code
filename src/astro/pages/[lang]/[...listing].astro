@@ -19,10 +19,7 @@ export async function getStaticPaths() {
   const pageData = await fs.readFile(pagePath, 'utf8').then(JSON.parse);
   return Object.values(pageData).map(({ params, props }) => {
     return {
-      params: {
-        lang: params.lang,
-        listing: params.listing.join('/'),
-      },
+      params: { lang: params.lang, listing: params.listing.join('/') },
       props,
     };
   });
@@ -47,7 +44,7 @@ const {
   structuredData={structuredData}
   canonical={slug}
 >
-  <main slot='main-content'>
+  <main slot="main-content">
     <Hero
       title={collection.title}
       description={collection.content}
@@ -57,14 +54,20 @@ const {
     {
       collection.sublinks.length ? (
         <Chips items={collection.sublinks} />
-      ) : <div aria-hidden='true' data-area-gap />
+      ) : (
+        <div aria-hidden="true" data-area-gap />
+      )
     }
     <PreviewList
       contentItems={collectionItems}
       largeImages={largeImages}
       singleColumn={singleColumn}
     >
-      {pagination ? <Pagination pagination={pagination} slot='bottom-nav' /> : null}
+      {
+        pagination ? (
+          <Pagination pagination={pagination} slot="bottom-nav" />
+        ) : null
+      }
     </PreviewList>
   </main>
 </Layout>

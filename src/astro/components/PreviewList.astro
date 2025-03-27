@@ -3,36 +3,42 @@ const { contentItems, largeImages = false, singleColumn = false } = Astro.props;
 ---
 
 <section
-  class='preview-list'
+  class="preview-list"
   data-large-images={largeImages ? 'true' : null}
   data-single-column={singleColumn ? 'true' : null}
 >
-  <slot name='title' />
+  <slot name="title" />
   <ul>
-    {contentItems.map((contentItem) => (
-      <li>
-        <img
-          src={contentItem.cover}
-          srcset={contentItem.coverSrcset}
-          alt=''
-          height={largeImages ? '240' : '180'}
-          width='360'
-          loading='lazy'
-        />
-        <article>
-          <small>{contentItem.tags} &middot; {contentItem.dateTime ? (
-            <time datetime={contentItem.dateTime}>{contentItem.extraContext}</time>
-          ) : contentItem.extraContext}</small>
-          <h3>
-            <a href={contentItem.url}>{contentItem.title}</a>
-          </h3>
-          <p set:html={`${contentItem.description}`}/>
-        </article>
-      </li>
-    ))}
-    {contentItems.length === 1 && !singleColumn && (
-      <li />
-    )}
+    {contentItems.map(contentItem => (
+        <li>
+          <img
+            src={contentItem.cover}
+            srcset={contentItem.coverSrcset}
+            alt=""
+            height={largeImages ? '240' : '180'}
+            width="360"
+            loading="lazy"
+          />
+          <article>
+            <small>
+              {contentItem.tags} &middot;{' '}
+              {contentItem.dateTime ? (
+                <time datetime={contentItem.dateTime}>
+                  {contentItem.extraContext}
+                </time>
+              ) : (
+                contentItem.extraContext
+              )}
+            </small>
+            <h3>
+              <a href={contentItem.url}>{contentItem.title}</a>
+            </h3>
+            <p set:html={`${contentItem.description}`} />
+          </article>
+        </li>
+      ))
+    }
+    {contentItems.length === 1 && !singleColumn && <li />}
   </ul>
-  <slot name='bottom-nav' />
+  <slot name="bottom-nav" />
 </section>

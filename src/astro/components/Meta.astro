@@ -46,63 +46,63 @@ if (breadcrumbsData) {
 ---
 
 <title>{titleString}</title>
-<meta name='description' content={metaDescription} />
-<meta name='viewport' content='width=device-width, initial-scale=1' />
+<meta name="description" content={metaDescription} />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta charset="utf-8" />
-<meta property='og:title' content={titleString} />
-<meta property='og:description' content={metaDescription} />
-<meta property='og:type' content={pageType} />
-<meta property='og:image' content={`${settings.websiteUrl}${logoSrc}`} />
-<meta name='twitter:card' content='summary_large_image' />
+<meta property="og:title" content={titleString} />
+<meta property="og:description" content={metaDescription} />
+<meta property="og:type" content={pageType} />
+<meta property="og:image" content={`${settings.websiteUrl}${logoSrc}`} />
+<meta name="twitter:card" content="summary_large_image" />
 {
   scripts.map(({ innerHTML, ...rest }) => (
     <script {...rest} set:html={innerHTML} />
   ))
 }
-<link rel='sitemap' href='/sitemap.xml' type='application/xml' />
+<link rel="sitemap" href="/sitemap.xml" type="application/xml" />
 <link
-  rel='alternate'
-  href='/feed'
-  type='application/rss+xml'
-  title='30secondsofcode.org'
+  rel="alternate"
+  href="/feed"
+  type="application/rss+xml"
+  title="30secondsofcode.org"
 />
 <link
-  rel='preload'
-  type='font/woff2'
-  href='/assets/Inter.var.woff2'
-  as='font'
+  rel="preload"
+  type="font/woff2"
+  href="/assets/Inter.var.woff2"
+  as="font"
   crossorigin
 />
 <link
-  rel='preload'
-  type='font/woff2'
-  href='/assets/RobotoMono-Regular.woff2'
-  as='font'
+  rel="preload"
+  type="font/woff2"
+  href="/assets/RobotoMono-Regular.woff2"
+  as="font"
   crossorigin
 />
 <link
-  rel='icon'
+  rel="icon"
   href={`/assets/icons/favicon-32x32.png?v=${settings.manifestCacheKey}`}
-  type='image/png'
+  type="image/png"
 />
 <link
-  rel='stylesheet'
+  rel="stylesheet"
   href={`/assets/print.css?v=${settings.manifestCacheKey}`}
-  media='print'
+  media="print"
 />
-<link rel='manifest' href='/manifest.webmanifest' crossorigin />
-<meta name='theme-color' content='#07071c' />
+<link rel="manifest" href="/manifest.webmanifest" crossorigin />
+<meta name="theme-color" content="#07071c" />
 <link
-  rel='icon'
-  sizes='192x192'
+  rel="icon"
+  sizes="192x192"
   href={`/assets/icons/icon-192x192.png?v=${settings.manifestCacheKey}`}
 />
 <link
-  rel='apple-touch-icon'
+  rel="apple-touch-icon"
   href={`/assets/icons/icon-180x180.png?v=${settings.manifestCacheKey}`}
 />
 {
   canonical ? (
-    <link rel='canonical' href={`${settings.websiteUrl}${canonical}`} />
+    <link rel="canonical" href={`${settings.websiteUrl}${canonical}`} />
   ) : null
 }
