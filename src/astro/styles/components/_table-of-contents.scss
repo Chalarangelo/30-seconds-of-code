@@ -69,6 +69,13 @@ nav[aria-label='Table of contents'] {
     // Apply a transition on hover.
     transition: color var(--animation-duration-medium) ease;
 
+    &[aria-current='true'] {
+      // Apply a different color to the current item.
+      color: var(--color-primary-light);
+      // Hijack the font smoothing to make the text look a little bolder.
+      -webkit-font-smoothing: subpixel-antialiased;
+    }
+
     @media (hover: hover) {
       &:is(:hover, :focus) {
         // Only apply hover styles on devices that support hover.
