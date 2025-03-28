@@ -12,7 +12,7 @@ describe('TocReader.readToC', () => {
     const toc = TocReader.readToC(html);
 
     expect(toc).toBe(
-      '<ol><li><a href="#foo">Foo</a><ol><li><a href="#bar">Bar</a><ol><li><a href="#baz">Baz</a></li></ol></li></ol></li></ol>'
+      '<table-of-contents><ol><li><a href="#foo">Foo</a><ol><li><a href="#bar">Bar</a><ol><li><a href="#baz">Baz</a></li></ol></li></ol></li></ol></table-of-contents>'
     );
   });
 
