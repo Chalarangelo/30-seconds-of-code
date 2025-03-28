@@ -16,10 +16,10 @@ export default class TocReader {
     });
     if (headings.length === 0) return undefined;
 
-    return `<ol>${TocReader.nestHeadings(headings).reduce(
+    return `<table-of-contents><ol>${TocReader.nestHeadings(headings).reduce(
       (html, heading) => html + TocReader.toNavItem(heading),
       ''
-    )}</ol>`;
+    )}</ol></table-of-contents>`;
   };
 
   static nestHeadings = (headings, level = 2) => {
