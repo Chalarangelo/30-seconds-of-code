@@ -12,14 +12,27 @@ const tokenizeTokens = str => splitTokens(str).map(cleanTokenPunctuation);
 const tokenizePlainText = str =>
   splitTokens(str).map(tkn => cleanTokenPunctuation(stem(tkn)));
 
-const searchForTerms = (documentIndex, terms) => {
+const searchForTerms = (documentIndex, terms, partialMatchLastTerm = false) => {
   const scores = [];
+
+  // Only calculate partial matches for the last term iff its length is >= 2.
+  const lastTerm = terms[terms.length - 1];
+  const lastTermIndex =
+    partialMatchLastTerm && lastTerm.length >= 2 ? terms.length - 1 : -1;
+  // Precalculate a simulated IDF score for the last term.
+  const lastTermIdf =
+    lastTermIndex !== -1
+      ? Math.log(
+          documentIndex.documents.size /
+            (documentIndex.documents.size - lastTerm.length ** 2)
+        )
+      : 1;
 
   // Calculate scores for each document
   documentIndex.documents.forEach((doc, docId) => {
     let score = 0;
 
-    terms.forEach(term => {
+    terms.forEach((term, i) => {
       if (documentIndex.invertedIndex.has(term)) {
         const indexEntry = documentIndex.invertedIndex.get(term).get(docId);
         if (indexEntry) {
@@ -29,8 +42,14 @@ const searchForTerms = (documentIndex, terms) => {
             documentIndex.documents.size /
               documentIndex.invertedIndex.get(term).size
           );
+
           score += tf * idf;
         }
+      } else if (i === lastTermIndex) {
+        // If the term is not in the inverted index, check for raw term match.
+        const tf =
+          doc?.rawContent?.match(new RegExp(`\\b${term}`, 'gi'))?.length ?? 0;
+        score += tf * lastTermIdf;
       }
     });
 
@@ -45,7 +64,7 @@ const search =
   (query, limit = null) => {
     const scores = [
       ...searchForTerms(documentIndex, tokenizePlainText(query)),
-      ...searchForTerms(documentIndex, tokenizeTokens(query)),
+      ...searchForTerms(documentIndex, tokenizeTokens(query), true),
     ].reduce((acc, [docId, score]) => {
       if (!acc.has(docId)) acc.set(docId, 0);
       acc.set(docId, Math.max(acc.get(docId), score));
