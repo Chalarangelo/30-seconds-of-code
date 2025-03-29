@@ -100,10 +100,12 @@ export default class PreparedQueries {
       ...Snippet.scope('published', 'listed').map(snippet => ({
         id: snippet.id,
         content: snippet.docTokensMap,
+        rawContent: snippet.docTokens,
       })),
       ...Collection.scope('listed').map(collection => ({
         id: collection.id,
         content: collection.docTokensMap,
+        rawContent: collection.docTokens,
       })),
     ];
     PreparedQueries.documentIndex = new DocumentIndex(documents);

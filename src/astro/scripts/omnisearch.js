@@ -23,6 +23,7 @@ const omnisearch = {
             ({ url, searchTokens, ...data }) => ({
               id: url,
               content: deserializeTokens(searchTokens),
+              rawContent: searchTokens,
               url,
               ...data,
             })
