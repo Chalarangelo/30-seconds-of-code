@@ -24,6 +24,8 @@ Object.entries(Object.getOwnPropertyDescriptors(PreparedQueries)).forEach(
   }
 );
 
+PreparedQueries.prepareDocumentIndex();
+
 Object.defineProperty(replServer.context, 'documentIndex', {
   get: () => PreparedQueries.documentIndex,
 });
