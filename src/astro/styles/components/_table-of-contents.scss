@@ -83,4 +83,49 @@ nav[aria-label='Table of contents'] {
       }
     }
   }
+
+  div > a {
+    // Display as flex to accommodate the icon.
+    display: flex;
+    align-items: center;
+    column-gap: var(--spacing-2);
+    width: fit-content;
+
+    // Apply a lighter color to the link.
+    color: var(--color-text-light);
+    border-radius: var(--border-radius-small);
+
+    // Move closer to the rest of the links.
+    margin-block-start: calc(0px - var(--spacing-2));
+
+    @media (hover: hover) {
+      // Only apply hover styles on devices that support hover.
+      &:is(:hover, :focus) {
+        @media (prefers-reduced-motion: no-preference) {
+          // Apply an animation only if the user prefers motion.
+          svg {
+            // Animate the arrow, pulling upwards. The timing is custom to
+            // make it feel snappy. It's repeated twice as to make sure the user
+            // sees it, but also to make sure it's not too distracting.
+            animation: arrow-rise 0.75s ease 2;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Define the animation for the arrow pulling upwards.
+@keyframes arrow-rise {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-2px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
