@@ -94,7 +94,7 @@ addDocument(
   'HTML is a markup language, used in web development.'
 );
 
-search('javascript'); // Returns the first document [1]
+search('javascript'); // Returns the first document [0]
 search('language'); // Returns all documents [0, 1, 2, 3]
 search('programming language'); // Returns nothing []
 search('web'); // Returns the first, third, and fourth document [0, 2, 3]
