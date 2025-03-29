@@ -16,17 +16,10 @@ const searchForTerms = (documentIndex, terms, partialMatchLastTerm = false) => {
   const scores = [];
 
   // Only calculate partial matches for the last term iff its length is >= 2.
-  const lastTerm = terms[terms.length - 1];
   const lastTermIndex =
-    partialMatchLastTerm && lastTerm.length >= 2 ? terms.length - 1 : -1;
-  // Precalculate a simulated IDF score for the last term.
-  const lastTermIdf =
-    lastTermIndex !== -1
-      ? Math.log(
-          documentIndex.documents.size /
-            (documentIndex.documents.size - lastTerm.length ** 2)
-        )
-      : 1;
+    partialMatchLastTerm && terms[terms.length - 1].length >= 2
+      ? terms.length - 1
+      : -1;
 
   // Calculate scores for each document
   documentIndex.documents.forEach((doc, docId) => {
@@ -47,9 +40,32 @@ const searchForTerms = (documentIndex, terms, partialMatchLastTerm = false) => {
         }
       } else if (i === lastTermIndex) {
         // If the term is not in the inverted index, check for raw term match.
-        const tf =
-          doc?.rawContent?.match(new RegExp(`\\b${term}`, 'gi'))?.length ?? 0;
-        score += tf * lastTermIdf;
+        const matchedTerms = doc?.rawContent?.match(
+          new RegExp(`\\b${term}.*?\\b`, 'gi')
+        );
+        if (matchedTerms) {
+          // Look up matched terms, calculate their individual scores.
+          const { termFrequency, totalTermFrequency } = matchedTerms.reduce(
+            (acc, match) => {
+              const term = match.toLowerCase();
+              const indexEntries = documentIndex.invertedIndex.get(term);
+              if (indexEntries) {
+                acc.termFrequency += indexEntries.get(docId) ?? 0;
+                acc.totalTermFrequency += indexEntries.size;
+              }
+              return acc;
+            },
+            { termFrequency: 0, totalTermFrequency: 0 }
+          );
+
+          // Calculate TF as the total term frequency of the matched terms.
+          const tf = termFrequency / doc.length;
+          // Calculate IDF using the sum of the total term frequencies.
+          const idf = Math.log(
+            documentIndex.documents.size / (totalTermFrequency || 1)
+          );
+          score += tf * idf;
+        }
       }
     });
 
