@@ -1,4 +1,6 @@
 ---
+import Icon from '#src/astro/components/Icon.astro';
+
 const { tableOfContents } = Astro.props;
 
 // Check if the default slot has content to prevent rendering the component
@@ -16,6 +18,9 @@ if (!tableOfContents && !hasSlotContent) return '';
     <slot>
       <Fragment set:html={tableOfContents} />
     </slot>
+    <a href="#start-of-content">
+      <Icon name="arrow-up" size="1.25em" aria-hidden="true" /> Top
+    </a>
   </div>
 </nav>
 
