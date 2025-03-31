@@ -799,6 +799,10 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter/Segmenter
   Intl.Segmenter.prototype.segment(): >-
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter/segment
+  Intl.RelativeTimeFormat: >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat
+  Intl.RelativeTimeFormat.prototype.format(): >-
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/format
   Intl.PluralRules: >-
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules
   Intl.PluralRules(): >-
