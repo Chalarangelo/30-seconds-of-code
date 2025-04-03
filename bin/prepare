@@ -32,8 +32,15 @@ if (args.length === 0 || args[0] === 'help') {
   await ContentUtils.prepareContent();
   // 2. Load modules
   const modules = Loader.loadModules();
-  const { AstroContent, SearchIndex, Redirects, Feed, Sitemap, TimestampDump } =
-    modules;
+  const {
+    AstroContent,
+    SearchIndex,
+    Redirects,
+    Feed,
+    Sitemap,
+    TimestampDump,
+    ContentComponents,
+  } = modules;
   // 3. Import the content
   const data = Loader.importData();
   // 4. Generate Astro content
@@ -48,6 +55,8 @@ if (args.length === 0 || args[0] === 'help') {
   Sitemap.generate();
   // 9. Generate timestamp dump
   TimestampDump.generate();
+  // 10. Copy scripts
+  ContentComponents.copy();
 } else if (args[0] === 'dev') {
   // 0. Set NODE_ENV to development
   process.env.NODE_ENV = 'development';
@@ -55,7 +64,8 @@ if (args.length === 0 || args[0] === 'help') {
   await ContentUtils.prepareContent();
   // 2. Load modules
   const modules = Loader.loadModules();
-  const { AstroContent, SearchIndex, TimestampDump } = modules;
+  const { AstroContent, SearchIndex, TimestampDump, ContentComponents } =
+    modules;
   // 3. Import the content
   const data = Loader.importData();
   // 4. Generate Astro content
@@ -64,6 +74,8 @@ if (args.length === 0 || args[0] === 'help') {
   SearchIndex.generate();
   // 6. Generate timestamp dump
   TimestampDump.generate();
+  // 7. Copy scripts
+  ContentComponents.copy();
 } else if (args[0] === 'watch') {
   ContentUtils.watchContent(() => exec('bin/prepare dev'));
 } else if (args[0] === 'content') {
