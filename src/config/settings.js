@@ -40,6 +40,7 @@ const settings = {
     contentJSON: './.content/content.json',
     redirectsYAML: 'content/redirects.yaml',
     pagePerformanceCSV: 'imported/Pages.csv',
+    contentComponentsDirectory: 'content/components',
     out: {
       // This has to be the deepest nested path (snippet), so all other paths are included
       pages: '.content/pages/[lang]/s',
@@ -50,6 +51,7 @@ const settings = {
       sitemap: 'public/sitemap.xml',
       feed: 'public/feed.xml',
       timestamp: 'src/astro/timestamp.js',
+      contentComponents: 'public/content/components',
     },
     snippetsGlob: 'content/snippets/**/*.md',
     snippetsPrefix: 'content/snippets/',
