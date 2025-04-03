@@ -301,3 +301,14 @@
     text-align: center;
   }
 }
+
+step-visualizer {
+  // Make the component full width, regardless of interactivity.
+  grid-column: 1 / -1;
+
+  &[interactive='false'] {
+    // Give some gap to the elements, if the component is not interactive.
+    display: grid;
+    grid-gap: var(--layout-row-spacing);
+  }
+}
