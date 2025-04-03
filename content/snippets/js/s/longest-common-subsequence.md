@@ -32,46 +32,7 @@ Instead of trying to solve the problem directly, we can break it down into **sma
 
 Here's a step-by-step guide to finding the LCS of these two strings using this approach. Use the buttons below the table to **replay each step** and move forward or backward.
 
-<style>
-  #replay > .table-wrapper:not(.selected) {
-    display: none;
-  }
-</style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const [prevButton, nextButton] = [
-      ...document.querySelectorAll('#replay button')
-    ];
-    const steps = [
-      ...document.querySelectorAll('#replay > .table-wrapper')
-    ];
-    const stepCounter = document.querySelector('#replay p');
-    const stepCount = steps.length;
-    let selectedStep = 0;
-    steps[0].classList.add('selected');
-
-    const updateSelectedStep = newSelectedPage => {
-      if (newSelectedPage < 0 || newSelectedPage >= stepCount) return;
-
-      steps[selectedStep].classList.remove('selected');
-      selectedStep = newSelectedPage;
-      steps[selectedStep].classList.add('selected');
-      prevButton.setAttribute('aria-disabled', selectedStep === 0);
-      nextButton.setAttribute('aria-disabled', selectedStep === stepCount - 1);
-      stepCounter.innerText = `Step ${selectedStep}`;
-    }
-
-    prevButton.addEventListener('click', () => {
-      updateSelectedStep(selectedStep - 1);
-    });
-    nextButton.addEventListener('click', () => {
-      updateSelectedStep(selectedStep + 1);
-    });
-  });
-</script>
-
-<figure id="replay">
+<step-visualizer>
 
 |       | ε | G | X | T | X | A | Y | B |
 | ----- | - | - | - | - | - | - | - | - |
@@ -143,13 +104,7 @@ Here's a step-by-step guide to finding the LCS of these two strings using this a
 | **A** | 0 | 1 | 1 | 2 | 2 | 3 | 3 | 3 |
 | **B** | 0 | 1 | 1 | 2 | 2 | 3 | 3 | 4 |
 
-<figcaption aria-label="Replay steps">
-  <button aria-disabled="true">Previous</button>
-  <button>Next</button>
-  <p>Step 0</p>
-</figcaption>
-
-</figure>
+</step-visualizer>
 
 ## Solution explanation
 
