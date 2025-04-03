@@ -13,8 +13,12 @@ import {
   transfomImagePaths,
   wrapTables,
   embedCodepensFromLinks,
+  loadWebComponents,
 } from '#src/lib/contentUtils/markdownParser/remarkPlugins.js';
-import { assetPath } from '#src/lib/contentUtils/config.js';
+import {
+  assetPath,
+  componentsPublicPath,
+} from '#src/lib/contentUtils/config.js';
 
 export default class MarkdownParser {
   static _languageData = new Map();
@@ -52,6 +56,8 @@ export default class MarkdownParser {
       //   Note: From this point onwards, the AST is a HAST
       //   Note: the plugins below this point transform HAST nodes
       // * Unwrap images (`rehypeUnwrapImages`)
+      // * Load web components (`loadWebComponents`)
+      //   Note: this dynamically loads web components scripts as modules
       // * Link inline code (`linkInlineCode`)
       //   Note: this uses the references passed from the extractor
       //   Note: this must come before `safeguardExternalLinks`
@@ -71,6 +77,7 @@ export default class MarkdownParser {
         .use(embedCodepensFromLinks, { className: 'codepen-wrapper' })
         .use(remarkRehype, { allowDangerousHtml: true })
         .use(rehypeUnwrapImages)
+        .use(loadWebComponents, { componentsPath: `/${componentsPublicPath}` })
         .use(linkInlineCode, { references })
         .use(safeguardExternalLinks)
         .use(transformAdmonitions)

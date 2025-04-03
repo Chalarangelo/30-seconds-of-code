@@ -9,3 +9,4 @@ export const grammarPath = `${contentDir}/grammars.yaml`;
 export const rankingEnginePath = `${contentDir}/rankingEngine.yaml`;
 export const hubPath = `${contentDir}/hub.yaml`;
 export const snippetPrefix = `${contentDir}/snippets/`;
+export const componentsPublicPath = `components/`;
