@@ -45,88 +45,31 @@ The steps of the algorithm are as follows:
 Instead of going over the specifics of each step in detail, which I'm sure you can find in many other resources ([Wikipedia](https://en.wikipedia.org/wiki/Earley_parser) has a terrific lemma on the topic, that I based the below example on), we'll take a look at the example of parsing the expression `2 + 3 * 4`. Note that `•` represents the current position in the parsing process. If it's at the end of a production, it means that the production is **complete**.
 
 <style>
-  #replay {
+  step-visualizer[interactive="true"] figure {
     min-height: 24.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
 
-  #replay > .table-wrapper:not(.selected) {
-    display: none;
-  }
-
-  #replay > .table-wrapper.selected {
-    display: grid;
-  }
-
-  #replay > .table-wrapper.selected > figcaption {
-    order: -1;
-    text-align: center;
-    font-size: var(--font-md);
-    font-weight: var(--font-weight-strong);
-    border-color: var(--color-border-light);
-    border-block-end-width: var(--border-width-thin);
-    margin: var(--spacing-4) var(--spacing-2) 0;
-    padding-block-end: var(--spacing-2);
-  }
-
   @media (min-width: 40rem) {
-    #replay > .table-wrapper.selected td:last-child {
+    step-visualizer[interactive="true"] .table-wrapper.selected td:last-child {
       width: 20rem;
     }
   }
 </style>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const labels = [
-      'S(0): • 2 + 3 * 4',
-      'S(1): 2 • + 3 * 4',
-      'S(2): 2 + • 3 * 4',
-      'S(3): 2 + 3 • * 4',
-      'S(4): 2 + 3 * • 4',
-      'S(5): 2 + 3 * 4 •',
-    ];
-
-    const [prevButton, nextButton] = [
-      ...document.querySelectorAll('#replay button')
-    ];
-    const steps = [
-      ...document.querySelectorAll('#replay > .table-wrapper')
-    ];
-    steps.forEach((step, index) => {
-      const caption = document.createElement('figcaption');
-      caption.innerText = labels[index];
-      step.appendChild(caption);
-    });
-
-    const stepCounter = document.querySelector('#replay p');
-    const stepCount = steps.length;
-    let selectedStep = 0;
-    steps[0].classList.add('selected');
-
-    const updateSelectedStep = newSelectedPage => {
-      if (newSelectedPage < 0 || newSelectedPage >= stepCount) return;
-
-      steps[selectedStep].classList.remove('selected');
-      selectedStep = newSelectedPage;
-      steps[selectedStep].classList.add('selected');
-      prevButton.setAttribute('aria-disabled', selectedStep === 0);
-      nextButton.setAttribute('aria-disabled', selectedStep === stepCount - 1);
-      stepCounter.innerText = `Step ${selectedStep}`;
-    }
-
-    prevButton.addEventListener('click', () => {
-      updateSelectedStep(selectedStep - 1);
-    });
-    nextButton.addEventListener('click', () => {
-      updateSelectedStep(selectedStep + 1);
-    });
-  });
-</script>
-
-<figure id="replay">
+<step-visualizer>
+  <script data-attribute-name="labels" type="application/json">
+    [
+      "S(0): • 2 + 3 * 4",
+      "S(1): 2 • + 3 * 4",
+      "S(2): 2 + • 3 * 4",
+      "S(3): 2 + 3 • * 4",
+      "S(4): 2 + 3 * • 4",
+      "S(5): 2 + 3 * 4 •"
+    ]
+  </script>
 
 | State No. | Production   | Origin | Comment                     |
 |-----------|--------------|--------|-----------------------------|
@@ -176,13 +119,7 @@ Instead of going over the specifics of each step in detail, which I'm sure you c
 | 5         | S → S • + M  | 0      | complete from (4) & S(0)(2) |
 | 6         | P → S •      | 0      | complete from (4) & S(0)(1) |
 
-<figcaption aria-label="Replay steps">
-  <button aria-disabled="true">Previous</button>
-  <button>Next</button>
-  <p>Step 0</p>
-</figcaption>
-
-</figure>
+</step-visualizer>
 
 ## Parsing mathematical expressions
 
