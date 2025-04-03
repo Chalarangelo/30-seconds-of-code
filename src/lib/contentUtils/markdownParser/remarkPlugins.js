@@ -125,7 +125,7 @@ export const loadWebComponents = ({ componentsPath }) => {
       const { component } = isWebComponent.groups;
       node.value = [
         `<script type="module" src="${componentsPath}scripts/${component}.mjs"></script>`,
-        value,
+        value.replace(component, `${component} interactive="false"`),
       ].join('\n');
     });
     return tree;
