@@ -1,0 +1,3 @@
+step-visualizer[interactive="true"] .table-wrapper:not(.selected) {
+  display: none;
+}
