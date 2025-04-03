@@ -51,7 +51,7 @@ const settings = {
       sitemap: 'public/sitemap.xml',
       feed: 'public/feed.xml',
       timestamp: 'src/astro/timestamp.js',
-      contentComponents: 'public/content/components',
+      contentComponents: 'public/components',
     },
     snippetsGlob: 'content/snippets/**/*.md',
     snippetsPrefix: 'content/snippets/',
