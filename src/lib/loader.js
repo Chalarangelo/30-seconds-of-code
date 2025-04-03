@@ -14,6 +14,7 @@ import PerformanceTracking from '#src/lib/performanceTracking.js';
 import PreparedQueries from '#src/lib/preparedQueries.js';
 import TimestampDump from '#src/lib/timestampDump.js';
 import DocumentIndex from '#src/lib/search/documentIndex.js';
+import ContentComponents from '#src/lib/contentComponents.js';
 
 import factories from '#spec/factories/factories.js';
 
@@ -37,6 +38,7 @@ export default class Loader {
       PreparedQueries,
       TimestampDump,
       DocumentIndex,
+      ContentComponents,
     };
   }
 
