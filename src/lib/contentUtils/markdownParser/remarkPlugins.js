@@ -113,6 +113,25 @@ export const safeguardExternalLinks = () => {
   };
 };
 
+// Load web components scripts as ES modules
+export const loadWebComponents = ({ componentsPath }) => {
+  return tree => {
+    visit(tree, { type: `raw` }, node => {
+      const { value } = node;
+      const isWebComponent = value.match(
+        /<(?<component>[a-zA-Z0-9]+-[a-zA-Z0-9]+).*>/
+      );
+      if (!isWebComponent) return;
+      const { component } = isWebComponent.groups;
+      node.value = [
+        `<script type="module" src="${componentsPath}scripts/${component}.mjs"></script>`,
+        value,
+      ].join('\n');
+    });
+    return tree;
+  };
+};
+
 // Convert headings to the appropriate elements (h1 -> h2, (h5, h6) -> h4)
 // Also, add hash links to headings
 export const transformHeadings = ({ minLevel, maxLevel }) => {
