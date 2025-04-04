@@ -12,6 +12,7 @@ import settings from '#src/config/settings.js';
 export default class Snippet extends ContentModel {
   static {
     Model.prepare(this, ['id']);
+    ContentModel.addContentModel(this);
   }
 
   constructor(data) {
