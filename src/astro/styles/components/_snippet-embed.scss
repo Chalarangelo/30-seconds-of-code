@@ -8,8 +8,9 @@
   // Display as a grid container, to create a line layout.
   display: grid;
   column-gap: var(--spacing-12);
+  row-gap: var(--spacing-2);
   grid-template-columns: var(--embed_image-width) 1fr;
-  grid-template-rows: auto auto;
+  grid-template-rows: 1.75rem auto;
   align-items: center;
 
   // Set a default font size to be inherited by the `small` element's scaling.
@@ -56,6 +57,8 @@
     display: flex;
     flex-direction: column;
     row-gap: var(--spacing-4);
+    // Align content to the start of the container.
+    align-self: self-start;
   }
 
   img {
@@ -110,9 +113,10 @@
   }
 
   @media (max-width: 28rem) {
+    // Make the grid rows more fleixible on small viewports.
+    grid-template-rows: auto;
     // Scale the image down a little on small viewports.
     --embed_image-width: 6rem;
-
     // Reduce the spacing at the end on small viewports.
     padding-inline-end: var(--spacing-8);
 
