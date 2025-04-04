@@ -7,8 +7,28 @@ import settings from '#src/config/settings.js';
 import { deserializeTokens } from '#src/lib/search/utils.js';
 
 export default class ContentModel extends Model {
+  static contentModels = new Map();
+
   static {
     Model.prepare(this, []);
+  }
+
+  static addContentModel(model) {
+    const name = model.name;
+    if (!this.contentModels.has(name)) this.contentModels.set(name, model);
+  }
+
+  static searchContentModels(idOrSlug) {
+    const searchTerm = idOrSlug
+      .replace(/^\//, '')
+      .replace(/\/$/, '')
+      .toLowerCase()
+      .replace(/\/p\/\d+$/, '');
+
+    for (const model of this.contentModels.values()) {
+      const found = model.find(searchTerm);
+      if (found) return found;
+    }
   }
 
   static listed(records) {
