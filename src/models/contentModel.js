@@ -148,7 +148,7 @@ export default class ContentModel extends Model {
     return this.isSnippet ? this.isPublished : true;
   }
 
-  asEmbedding(title) {
+  asEmbedding(title, hash) {
     return `
     <figure class="embedded-preview">
       <img
@@ -162,7 +162,7 @@ export default class ContentModel extends Model {
       <figcaption>${title}</figcaption>
       <article>
         <h4>
-          <a href=${this.url}>${this.shortTitle}</a>
+          <a href="${this.url}${hash ?? ''}">${this.shortTitle}</a>
         </h4>
         <p>${this.formattedDescription}</p>
       </article>
