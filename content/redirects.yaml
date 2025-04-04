@@ -757,9 +757,6 @@
 - from: /articles/s/code-anatomy-chaining-reduce-for-loop
   to: /js/s/code-anatomy-chaining-reduce-for-loop
   status: 301!
-- from: /articles/s/code-anatomy-optimizing-recursion
-  to: /js/s/code-anatomy-optimizing-recursion
-  status: 301!
 - from: /articles/s/code-anatomy-performant-python
   to: /python/s/code-anatomy-performant-python
   status: 301!
@@ -3387,4 +3384,10 @@
   status: 301!
 - from: /css/s/etched-text
   to: /css/s/engraved-embossed-text
+  status: 301!
+- from: /articles/s/code-anatomy-optimizing-recursion
+  to: /js/s/recursion-performance-optimization
+  status: 301!
+- from: /js/s/code-anatomy-optimizing-recursion
+  to: /js/s/recursion-performance-optimization
   status: 301!

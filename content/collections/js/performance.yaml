@@ -8,7 +8,7 @@ snippetIds:
   - js/s/memoization
   - js/s/array-filtering-tips
   - js/s/fast-remove-array-element
-  - js/s/code-anatomy-optimizing-recursion
+  - js/s/recursion-performance-optimization
   - js/s/switch-object
   - js/s/dynamic-properties-are-slow
   - js/s/big-o-cheatsheet

@@ -1,6 +1,6 @@
 ---
-title: Code Anatomy - Optimizing recursive functions
-shortTitle: Optimizing recursive functions
+title: Optimizing recursive functions in JavaScript
+shortTitle: Recursive functions optimization
 language: javascript
 tags: [recursion,performance]
 cover: case-study
@@ -11,7 +11,11 @@ dateModified: 2021-06-12
 
 ## Recursive functions
 
-Recursion is a programming technique where the final solution is computed by breaking down the problem into smaller instances of the same problem and computing the solution for each one. The most common implementation is a function that calls itself, reducing the problem every time until it reaches an instance of the problem whose solution is either trivial to compute or already known. Let's look at a very well-known example, calculating the nth term of the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number), implemented using recursion in JavaScript:
+Recursion is a programming technique where the final solution is computed by breaking down the problem into smaller instances of the same problem and computing the solution for each one. The most common implementation is a function that calls itself, reducing the problem every time until it reaches an instance of the problem whose solution is either trivial to compute or already known.
+
+@[Quick refresher](/js/s/recursion)
+
+Let's look at a very well-known example, calculating the nth term of the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number), implemented using recursion in JavaScript:
 
 ```js
 const fibonacciNumber = n =>
