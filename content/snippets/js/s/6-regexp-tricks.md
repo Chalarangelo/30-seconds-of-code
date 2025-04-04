@@ -4,7 +4,7 @@ shortTitle: JavaScript Regular Expression tips
 language: javascript
 tags: [string,regexp]
 cover: taking-photos
-excerpt: Learn how to effectively use JavaScript regular expressions with these 6 powerful features.
+excerpt: Learn how to level up your regular expressions game, with features such as backreferences, lookaheads and named groups.
 listed: true
 dateModified: 2021-06-12
 ---

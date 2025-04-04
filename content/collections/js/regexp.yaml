@@ -4,8 +4,8 @@ miniTitle: Regular Expressions
 listed: true
 snippetIds:
   - js/s/regexp-cheatsheet
-  - js/s/common-regexp-cheatsheet
   - js/s/6-regexp-tricks
+  - js/s/common-regexp-cheatsheet
   - js/s/escape-reg-exp
 description: |+
   Mastering regular expressions is no small feat. This introductory collection
