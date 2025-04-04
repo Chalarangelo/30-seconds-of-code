@@ -4,38 +4,12 @@ import fs from 'fs';
 import CoverPresenter from '#src/presenters/coverPresenter.js';
 import Collection from '#src/models/collection.js';
 import Snippet from '#src/models/snippet.js';
-import PerformanceTracking from '#src/lib/performanceTracking.js';
 import DocumentIndex from '#src/lib/search/documentIndex.js';
 import search from '#src/lib/search/documentSearch.js';
 import settings from '#src/config/settings.js';
 
 export default class PreparedQueries {
   static documentIndex;
-
-  static snippetPerformance(...slugs) {
-    if (slugs.length === 1) {
-      const snippet = Snippet.search(slugs[0]);
-
-      return PerformanceTracking.for(snippet.slug);
-    } else {
-      const snippets = Snippet.searchAll(...slugs)
-        .map(snippet => [
-          snippet.slug,
-          PreparedQueries.snippetPerformance(snippet.slug),
-        ])
-        .sort((a, b) => b[1].clicks - a[1].clicks);
-
-      return Object.fromEntries(snippets);
-    }
-  }
-
-  static collectionSnippetsPerformance(slug) {
-    const collection = Collection.search(slug);
-
-    return PreparedQueries.snippetPerformance(
-      ...collection.snippets.pluck('slug')
-    );
-  }
 
   static snippetCoverUsage() {
     const coverUsage = CoverPresenter.allSnippetCovers
@@ -51,15 +25,6 @@ export default class PreparedQueries {
       .sort((a, b) => b[1] - a[1]);
 
     return Object.fromEntries(coverUsage);
-  }
-
-  static zeroImpressionSnippets() {
-    return Snippet.all
-      .filter(
-        snippet =>
-          PreparedQueries.snippetPerformance(snippet.slug).impressions === 0
-      )
-      .map(snippet => snippet.slug);
   }
 
   static snippetHasFormatting(slug) {
