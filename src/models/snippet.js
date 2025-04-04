@@ -64,6 +64,22 @@ export default class Snippet extends ContentModel {
     return records.where({ journeyId: j => j !== null });
   }
 
+  get enrichedContent() {
+    if (this.content.includes('<article-embed')) {
+      return this.content.replace(
+        /<article-embed ref="(?<ref>[^"]+)" title="(?<title>[^"]+)"\/>/g,
+        (...match) => {
+          const { ref, title } = match.slice(-1)[0] ?? {};
+          if (!ref) return;
+          const embeddable = ContentModel.searchContentModels(ref);
+          return embeddable?.isEmeddable ? embeddable.asEmbedding(title) : '';
+        }
+      );
+    } else {
+      return this.content;
+    }
+  }
+
   get language() {
     return Language.find(this.languageId);
   }
