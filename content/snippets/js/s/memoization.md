@@ -63,6 +63,8 @@ anagramsCached('javascript');
 
 While the previous example is a good way to implement memoization, JavaScript's [Proxy object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) provides an interesting **alternative** via the use of the `handler.apply()` trap.
 
+@[Learn more](/js/proxy)
+
 Using the trap, we can **intercept the function call** and check if the result is already cached. If it is, we return the cached result. If it's not, we call the original function and **cache the result** before returning it.
 
 ```js

@@ -25,4 +25,6 @@ fibonacci(6); // 8
 
 The base case for this example is `n` being less than or equal to `1`, where the function returns the value of `n`. Any other value will call the `fibonacci` function twice to compute the values of `n - 1` and `n - 2`. These will in turn call the `fibonacci` function again until the base case is reached.
 
+@[Further reading](/js/s/fibonacci#iterative-approach)
+
 While the Fibonacci sequence can be solved with recursion, it can be more efficient to solve it using iteration. However, the inverse is true for a lot of other problems where identifying and indexing the sub-problems is difficult or costly.
