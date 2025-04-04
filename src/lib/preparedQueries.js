@@ -36,6 +36,19 @@ export default class PreparedQueries {
     };
   }
 
+  static snippetsWithoutFormatting() {
+    return Snippet.scope('listed').filter(
+      snippet =>
+        !snippet.content.includes('<strong') && !snippet.content.includes('<h')
+    );
+  }
+
+  static snippetsWithoutEmbed() {
+    return Snippet.scope('listed').filter(
+      snippet => !snippet.content.includes('<article-embed')
+    );
+  }
+
   static duplicateReferences() {
     const references = globSync(settings.paths.languagesGlob)
       .map(file => yaml.load(fs.readFileSync(file, 'utf8')))
