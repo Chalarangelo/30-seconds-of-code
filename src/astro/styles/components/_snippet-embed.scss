@@ -1,0 +1,129 @@
+.embedded-preview {
+  // Reset the bleed (bleed inherited from `figure`).
+  grid-column: 2;
+  // Set a custom image width for the image and its column.
+  --embed_image-width: 8rem;
+
+  position: relative;
+  // Display as a grid container, to create a line layout.
+  display: grid;
+  column-gap: var(--spacing-12);
+  grid-template-columns: var(--embed_image-width) 1fr;
+  grid-template-rows: auto auto;
+  align-items: center;
+
+  // Set a default font size to be inherited by the `small` element's scaling.
+  font-size: var(--font-md);
+
+  // Add some spacing at the end, as if this was a card.
+  padding-inline-end: var(--spacing-16);
+
+  a {
+    // Remove underline from the link.
+    --link_color-underline: transparent;
+
+    // Stretch to cover the entire parent element.
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+    }
+  }
+
+  @media (hover: hover) {
+    // Only apply hover styles when hover is supported.
+    // Select list items whose links are hovered or focused.
+    &:has(a:is(:hover, :focus)) {
+      h4 {
+        // Change the focused link's color to the primary color.
+        color: var(--color-primary-light);
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        // Only apply animations when the user prefers motion.
+        img {
+          // Slightly increase the brightness and saturation of the image.
+          filter: brightness(110%) saturate(125%);
+          // Slightly scale the image up to give it a bit of a pop.
+          transform: scale(1.01);
+        }
+      }
+    }
+  }
+
+  article {
+    // Use a flex column to display the content.
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--spacing-4);
+  }
+
+  img {
+    border-radius: var(--border-radius-medium);
+    // Scale the image proportionally to the container's inline size.
+    width: var(--embed_image-width);
+    height: 100%;
+    // Change the aspect ratio to 1:1, so that the image is always square.
+    aspect-ratio: 1;
+    object-fit: cover;
+    // Fill both rows of the grid.
+    grid-row: span 2;
+
+    // Performance optimization - hint to use the GPU.
+    will-change: transform;
+
+    // Apply a transition on hover.
+    transition:
+      filter var(--animation-duration-long) ease,
+      transform var(--animation-duration-medium) ease;
+  }
+
+  // Note that the font-size for this element is 80% of the base font size,
+  // similar to the `small` element. This results in a font size of 14.4px for a
+  // base font size of 16px. This looks pretty good, hence the choice.
+  figcaption {
+    font-size: 80%;
+    color: var(--color-text-lighter);
+  }
+
+  h4 {
+    font-weight: var(--font-weight-medium);
+    transition: color var(--animation-duration-medium) ease;
+
+    line-height: var(--line-height-tight);
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+
+  p {
+    // Apply a line clamp to the description text, so that it doesn't exceed 2
+    // lines of text.
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    // Scale the font down a little to fit correctly.
+    font-size: var(--font-sm);
+  }
+
+  @media (max-width: 28rem) {
+    // Scale the image down a little on small viewports.
+    --embed_image-width: 6rem;
+
+    // Reduce the spacing at the end on small viewports.
+    padding-inline-end: var(--spacing-8);
+
+    h4 {
+      // Make sure the heading is shown in full on small viewports.
+      -webkit-line-clamp: 2;
+    }
+
+    p {
+      // Hide the description on small viewports.
+      max-height: 0;
+    }
+  }
+}
