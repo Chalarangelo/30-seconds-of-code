@@ -4,7 +4,7 @@ export default class SnippetContextSerializer extends Serializer {
   static {
     Serializer.prepare(this, [
       'title',
-      'content',
+      ['content', 'enrichedContent'],
       'slug',
       ['date', 'dateFormatted'],
       ['dateTime', 'dateMachineFormatted'],
