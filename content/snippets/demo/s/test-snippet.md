@@ -35,7 +35,7 @@ This was a good opportunity to test what a code block would look like right afte
 
 Links come in all shapes and sizes. They are often in the form of an automatically generated reference, such as `Array.from()`.
 
-Other times, they might be plain text linking to an internal resource, such as [this link](/snippets/demo/s/test-snippet.md).
+Other times, they might be plain text linking to an internal resource, such as [this link](/demo/s/test-snippet).
 
 And some other times, you might get a mixed content link, such as a link for the [modulo operator(`%`)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder), which needs to be carefully styled to make sure it looks good.
 
@@ -180,4 +180,46 @@ Somehow, we forgot about lists, but they are something we use a ton.
 
 ### Embedded content
 
+#### CodePen embeds
+
 https://codepen.io/chalarangelo/pen/mdodgeL
+
+#### Article embeds
+
+@[Won't render](/demo/s/test-snippet)
+
+@[Suggested reading](/js/s/immutable-object-proxy)
+
+@[Further reading](/js/proxy/p/1)
+
+@[You may also like](/js/array)
+
+@[Quick refresher](/js/s/string-case-conversion#convert-any-case-to-kebab-case)
+
+### Custom components
+
+<step-visualizer>
+  <script data-attribute-name="labels" type="application/json">
+    [
+      "First step",
+      "Second step",
+      "Third & final step"
+    ]
+  </script>
+
+| State No. | Production   | Origin | Comment                     |
+|-----------|--------------|--------|-----------------------------|
+| 1         | P → • S      | 0      | start rule                  |
+| 2         | S → • S + M  | 0      | predict from (1)            |
+
+| State No. | Production   | Origin | Comment                     |
+|-----------|--------------|--------|-----------------------------|
+| 1         | T → number • | 0      | scan from S(0)(6)           |
+| 2         | M → T •      | 0      | complete from (1) & S(0)(5) |
+
+| State No. | Production   | Origin | Comment                     |
+|-----------|--------------|--------|-----------------------------|
+| 1         | S → S + • M  | 0      | scan from S(1)(5)           |
+| 2         | M → • M * T  | 2      | predict from (1)            |
+
+</step-visualizer>
