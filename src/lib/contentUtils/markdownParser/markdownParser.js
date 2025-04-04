@@ -13,6 +13,7 @@ import {
   transfomImagePaths,
   wrapTables,
   embedCodepensFromLinks,
+  transformArticleEmbeds,
   loadWebComponents,
 } from '#src/lib/contentUtils/markdownParser/remarkPlugins.js';
 import {
@@ -51,6 +52,8 @@ export default class MarkdownParser {
       //   Note: this must come before `remarkRehype`, as it transforms AST nodes
       // * Embed Codepens from links (`embedCodepensFromLinks`)
       //   Note: this must come before `remarkRehype`, as it transforms AST nodes
+      // * Transform article embeds (`transformArticleEmbeds`)
+      //   Note: this must come before `remarkRehype`, as it transforms AST nodes
       // ---------------------------------------------
       // * Parse to HTML (`remarkRehype`)
       //   Note: From this point onwards, the AST is a HAST
@@ -75,6 +78,7 @@ export default class MarkdownParser {
         .use(remarkGfm)
         .use(highlightCode, { grammars })
         .use(embedCodepensFromLinks, { className: 'codepen-wrapper' })
+        .use(transformArticleEmbeds)
         .use(remarkRehype, { allowDangerousHtml: true })
         .use(rehypeUnwrapImages)
         .use(loadWebComponents, { componentsPath: `/${componentsPublicPath}` })

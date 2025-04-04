@@ -123,6 +123,7 @@ export const loadWebComponents = ({ componentsPath }) => {
       );
       if (!isWebComponent) return;
       const { component } = isWebComponent.groups;
+      if (component === 'article-embed') return;
       node.value = [
         `<script type="module" src="${componentsPath}scripts/${component}.mjs"></script>`,
         value.replace(component, `${component} interactive="false"`),
@@ -254,6 +255,41 @@ export const embedCodepensFromLinks = ({
         <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
       </figure>`;
     });
+  };
+};
+
+// Transforms @-prefixed single line links to article embeds.
+// Note: This is a custom syntax that is not part of the GFM spec.
+export const transformArticleEmbeds = () => {
+  return tree => {
+    visitParents(tree, `link`, (node, ancestors) => {
+      // Check if the link is a relative path
+      const { url } = node;
+      const match = url.match(/^\//);
+      if (!match) return;
+
+      // Skip embedding the article unless the parent is a paragraph with 2 children
+      const parentNode = ancestors[ancestors.length - 1];
+      const isParentParagraph = parentNode.type === `paragraph`;
+      if (!isParentParagraph || parentNode.children.length !== 2) return;
+
+      const firstChild = parentNode.children[0];
+      const secondChild = parentNode.children[1];
+      // Check if the format is like `@[foo](/bar)`
+      if (
+        firstChild.type !== 'text' ||
+        firstChild.value !== '@' ||
+        secondChild.type !== 'link'
+      )
+        return;
+
+      const title = node.children[0].value;
+      // Use a pseudo-element to inject the article into the content for later
+      // processing in the snippet model.
+      parentNode.type = `html`;
+      parentNode.value = `<article-embed ref="${node.url}" title="${title}"/>`;
+    });
+    return tree;
   };
 };
 
