@@ -67,12 +67,14 @@ export default class Snippet extends ContentModel {
   get enrichedContent() {
     if (this.content.includes('<article-embed')) {
       return this.content.replace(
-        /<article-embed ref="(?<ref>[^"]+)" title="(?<title>[^"]+)"\/>/g,
+        /<article-embed ref="(?<ref>[^"#]+)(?<hash>#[^"]+)*" title="(?<title>[^"]+)"\/>/g,
         (...match) => {
-          const { ref, title } = match.slice(-1)[0] ?? {};
+          const { ref, hash, title } = match.slice(-1)[0] ?? {};
           if (!ref) return;
           const embeddable = ContentModel.searchContentModels(ref);
-          return embeddable?.isEmeddable ? embeddable.asEmbedding(title) : '';
+          return embeddable?.isEmeddable
+            ? embeddable.asEmbedding(title, hash)
+            : '';
         }
       );
     } else {
