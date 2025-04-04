@@ -21,9 +21,13 @@ const hotkeys = {
       this.hideHotkeys();
       e.preventDefault();
       this.triggerAction(this.navActionMap[e.key]);
-    } else if (shouldHandle && !isModalOpen) {
+    } else if (
+      shouldHandle &&
+      !isModalOpen &&
+      e.key === (this.isMac ? 'Meta' : 'Control')
+    ) {
       // If the key pressed is a modifier key and the modal is not open, show
-      // the hotkeys.
+      // the hotkeys, unless another key is pressed.
       this.showHotkeys();
     } else {
       // Hide the hotkeys in all other cases.
@@ -35,6 +39,12 @@ const hotkeys = {
     if (this.isMac ? e.key === 'Meta' : e.key === 'Control') {
       this.hideHotkeys();
     }
+  },
+  handleMouseMove(e) {
+    const shouldHide = this.isMac ? !e.metaKey : !e.ctrlKey;
+    // Hide the hotkeys if the modifier key is not pressed on mouse move.
+    // Handles when switching tabs and the modifier was pressed before.
+    if (shouldHide) this.hideHotkeys();
   },
   triggerAction(action) {
     this.navActionTriggers[action].click();
@@ -49,3 +59,4 @@ const hotkeys = {
 
 document.addEventListener('keydown', hotkeys.handleKeyDown.bind(hotkeys));
 document.addEventListener('keyup', hotkeys.handleKeyUp.bind(hotkeys));
+document.addEventListener('mousemove', hotkeys.handleMouseMove.bind(hotkeys));
