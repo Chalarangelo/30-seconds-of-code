@@ -1,5 +1,5 @@
 ---
-title: Pluck values from and array of objects in JavaScript
+title: Pluck values from an array of objects in JavaScript
 shortTitle: Pluck values from object array
 language: javascript
 tags: [array,object]
