@@ -49,6 +49,14 @@ export default class PreparedQueries {
     );
   }
 
+  static snippetIdsInCollection(collectionSlug, snippets) {
+    const collection = Collection.search(collectionSlug);
+
+    const snippetIdSet = new Set(snippets.map(snippet => snippet.id));
+    const collectionSnippetSet = new Set(collection.snippets.pluck('id'));
+    return [...collectionSnippetSet.intersection(snippetIdSet)];
+  }
+
   static duplicateReferences() {
     const references = globSync(settings.paths.languagesGlob)
       .map(file => yaml.load(fs.readFileSync(file, 'utf8')))
