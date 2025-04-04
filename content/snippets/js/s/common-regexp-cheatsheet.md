@@ -90,6 +90,8 @@ const regexp = /^((?!(abc|bcd)).)*$/;
 // Where 'abc' and 'bcd' are pattern you want to exclude
 ```
 
+@[Further reading](/js/s/6-regexp-tricks#lookaheads)
+
 ## Text inside brackets
 
 - Use the `\(` and `\)` characters to match the opening and closing brackets, respectively.
