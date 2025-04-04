@@ -155,8 +155,8 @@ export default class ContentModel extends Model {
         src=${this.coverUrl}
         srcset=${this.coverSrcset}
         alt=""
-        height="180"
-        width="360"
+        height="128"
+        width="128"
         loading="lazy"
       />
       <figcaption>${title}</figcaption>
