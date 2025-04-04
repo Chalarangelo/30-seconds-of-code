@@ -1,0 +1,21 @@
+slug: js/regexp
+title: JavaScript Regular Expressions
+miniTitle: Regular Expressions
+listed: true
+snippetIds:
+  - js/s/regexp-cheatsheet
+  - js/s/common-regexp-cheatsheet
+  - js/s/6-regexp-tricks
+  - js/s/escape-reg-exp
+description: |+
+  Mastering regular expressions is no small feat. This introductory collection
+  will help you get started with this powerful tool for string manipulation in
+  JavaScript.
+
+  <footer>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions" target="_blank" rel="noopener noreferrer">Suggested resource: MDN</a>
+  </footer>
+shortDescription: >-
+  Learn how to leverage the power of regular expressions in JavaScript to
+  validate, search, and manipulate strings.
+splash: magnifying-glass
