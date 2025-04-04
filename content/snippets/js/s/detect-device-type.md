@@ -13,6 +13,8 @@ Device detection is fairly useful in a multitude of tasks, such as **responsive 
 
 The `Navigator.userAgent` property contains a string representing the **user agent of the browser**. This string can be used to determine the type of device the user is using to view the page. Various devices have different user agent strings, which can be used to identify them.
 
+@[You might also like](/js/s/browser-os-detection)
+
 For the most part a simple **regular expression** can cover almost all modern devices nowadays. Something like `/Mobile|Android|iPhone|iPad/i` should be enough to cover most mobile devices. Then, all you have to do is use `RegExp.prototype.test()` to check if the user agent string matches the regular expression.
 
 ```js

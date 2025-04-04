@@ -48,6 +48,8 @@ levenshteinDistance('duck', 'dark'); // 2
 levenshteinDistance('foo', 'foobar'); // 3
 ```
 
+@[Further reading](/js/s/longest-common-subsequence)
+
 ## Complexity
 
 The **time complexity** of this algorithm is `O(mn)`, where `m` and `n` are the lengths of the two strings. The **space complexity** is `O(mn)` as well, since we are creating a 2D array of that size.

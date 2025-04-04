@@ -43,3 +43,5 @@ subject.name = 'Alice'; // Name changed to Alice
 ```
 
 While this code is pretty simple, it can be easily extend to handle more complex use cases, such as **nested objects** or **arrays**. It can be even used to create an observable store, similar to Redux. Give it a try and see how far you can take it!
+
+@[Further reading](/js/s/event-driven-vanilla-js-signals)
