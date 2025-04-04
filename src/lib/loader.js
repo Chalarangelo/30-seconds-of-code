@@ -10,7 +10,6 @@ import AstroContent from '#src/lib/astroContent.js';
 import Feed from '#src/lib/feed.js';
 import Sitemap from '#src/lib/sitemap.js';
 import Redirects from '#src/lib/redirects.js';
-import PerformanceTracking from '#src/lib/performanceTracking.js';
 import PreparedQueries from '#src/lib/preparedQueries.js';
 import TimestampDump from '#src/lib/timestampDump.js';
 import DocumentIndex from '#src/lib/search/documentIndex.js';
@@ -34,7 +33,6 @@ export default class Loader {
       Feed,
       Sitemap,
       Redirects,
-      PerformanceTracking,
       PreparedQueries,
       TimestampDump,
       DocumentIndex,
