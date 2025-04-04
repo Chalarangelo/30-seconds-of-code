@@ -39,7 +39,6 @@ const settings = {
     collectionCoverDirectory: 'content/assets/splash/',
     contentJSON: './.content/content.json',
     redirectsYAML: 'content/redirects.yaml',
-    pagePerformanceCSV: 'imported/Pages.csv',
     contentComponentsDirectory: 'content/components',
     out: {
       // This has to be the deepest nested path (snippet), so all other paths are included
