@@ -1,0 +1,19 @@
+slug: js/recursion
+title: JavaScript Recursion
+shortTitle: Recursion
+listed: true
+snippetIds:
+  - js/s/recursion
+  - js/s/recursion-performance-optimization
+  - js/s/fibonacci
+  - js/s/factorial
+  - js/s/gcd-lcm
+  - js/s/array-or-string-permutations
+description: >-
+  Recursion is a powerful programming technique based on the idea of functions
+  calling themselves. This collection of articles will help you understand
+  recursion in JavaScript, including its benefits and potential pitfalls.
+shortDescription: >-
+  Master the art of recursion in JavaScript with these articles, covering
+  everything from basic concepts to advanced techniques.
+splash: laptop-coffee
