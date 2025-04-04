@@ -244,6 +244,8 @@ Even with all of these systems in place, there will most likely be **special cas
 
 The first case I want to discuss are backreferences. They are a special kind of pattern that refers to a previously captured group. The difference with other patterns is that they are not patterns, but rather a reference to a pattern, either via name or index.
 
+@[Quick refresher](/js/s/6-regexp-tricks#capturing-group-backreferences)
+
 We could use the named argument approach here, but I feel like it creates friction for the user. After all, we need only pass the function **a single argument** and it's pretty clear what that argument is.
 
 ```js

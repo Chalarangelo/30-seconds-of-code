@@ -377,6 +377,8 @@ export const or = (...expressions) =>
 
 ### Lookarounds
 
+@[Quick refresher](/js/s/6-regexp-tricks#lookaheads)
+
 Lookaheads and lookbehinds followed a very similar pattern. I wrote some tests, implemented a reusable creation utility, and created the necessary building blocks. The only point of note here is the use of the `concat` utility from the group implementation.
 
 ```js [src/lookAround.js]
