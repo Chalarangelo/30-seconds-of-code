@@ -83,7 +83,9 @@ toPascalCase('some-mixed_string with spaces_underscores-and-hyphens');
 
 ## Convert any case to kebab case
 
-**Kebab case** is most often used in URL slugs. Kebab case strings are **all lowercase, with words separated by hyphens**. For example `some-name` is kebab case, but `some-Name` is not.
+**Kebab case** is most often used in URL slugs, as it's SEO-friendly. Kebab case strings are **all lowercase, with words separated by hyphens**. For example `some-name` is kebab case, but `some-Name` is not.
+
+@[You might also like](/js/s/string-to-slug)
 
 In order to convert a string to kebab case, we need only lowercase each word and join them with a hyphen.
 
