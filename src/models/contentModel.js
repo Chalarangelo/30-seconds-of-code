@@ -141,4 +141,32 @@ export default class ContentModel extends Model {
   get previewTitle() {
     return this.isSnippet ? this.title : this.shortTitle;
   }
+
+  // Embeddable
+
+  get isEmeddable() {
+    return this.isSnippet ? this.isPublished : true;
+  }
+
+  asEmbedding(title) {
+    return `
+    <figure class="embedded-preview">
+      <img
+        src=${this.coverUrl}
+        srcset=${this.coverSrcset}
+        alt=""
+        height="180"
+        width="360"
+        loading="lazy"
+      />
+      <figcaption>${title}</figcaption>
+      <article>
+        <h4>
+          <a href=${this.url}>${this.shortTitle}</a>
+        </h4>
+        <p>${this.formattedDescription}</p>
+      </article>
+    </figure>
+    `;
+  }
 }
