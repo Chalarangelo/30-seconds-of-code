@@ -17,7 +17,11 @@ Luckily, the complicated math for it has already been done for us. We can simply
 >
 > If you're unfamiliar with JavaScript's [numeric separators](/js/s/numeric-separator), used in the code below, they're just **syntactic sugar** to make large numeric values more readable.
 
-For the formula to work, we'll first have to **convert our coordinates to radians**. This is a matter of simply using `Math.PI` and multiplying by the latitude and longitude values, then dividing by `180` (essentially the [`toRadians` code snippet](/js/s/convert-degrees-radians)). We'll also need to find the **differences in latitude and longitude between the two points**. Then, we can apply the Haversine formula to calculate the distance.
+For the formula to work, we'll first have to **convert our coordinates to radians**. This is a matter of simply using `Math.PI`, multiplying by the two values, then dividing by `180`.
+
+@[Further reading](/js/s/convert-degrees-radians)
+
+We'll also need to find the **differences in latitude and longitude between the two points**. Then, we can apply the Haversine formula to calculate the distance.
 
 ```js
 const coordinateDistance = (lat1, lon1, lat2, lon2) => {
