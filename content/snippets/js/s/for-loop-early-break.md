@@ -9,7 +9,7 @@ listed: true
 dateModified: 2021-06-12
 ---
 
-The usefulness of the humble `for` loop in modern JavaScript is rarely talked about. Apart from it being particularly useful in [asynchronous operation scenarios](/blog/s/javascript-async-array-loops), it can also make your code a lot more performant shall you need to break out of a loop early. Consider the following example:
+The usefulness of the humble `for` loop in modern JavaScript is rarely talked about. Apart from it being particularly useful in [asynchronous operation scenarios](/js/s/async-array-loops), it can also make your code a lot more performant shall you need to break out of a loop early. Consider the following example:
 
 ```js
 const smallArray = [0, 2];

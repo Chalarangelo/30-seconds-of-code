@@ -26,7 +26,7 @@ for (let file of files) {
 // filePaths = [ '~/cool_app/foo.txt', '~/cool_app/.bar', '~/cool_app/baz.foo']
 ```
 
-- Any `for` loop can be used - [read more about the different JavaScript loops](/blog/s/javascript-for-in-for-of-foreach/).
+- Any `for` loop can be used - [read more about the different JavaScript loops](/js/s/for-in-for-of-foreach/).
 - Less common nowadays, due to functional programming being more popular.
 - Control over the iteration, such as skipping over elements or early `return`s.
 - Resulting array needs to be declared beforehand, outside the loop.

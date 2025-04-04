@@ -9,7 +9,7 @@ listed: true
 dateModified: 2021-06-12
 ---
 
-If you want to check equality in JavaScript, there are two comparison operators, which are explained in depth in a previous [article](/blog/s/javascript-equality).
+If you want to check equality in JavaScript, there are two comparison operators, which are explained in depth in a previous [article](/js/s/equality).
 
 Very briefly, the double equals operator (`==`) only compares value whereas the triple equals operator (`===`) compares both value and type. But there is also a third option, `Object.is()`, which behaves the same as the triple equals operator with the exception of `NaN` and `+0` and `-0`.
 

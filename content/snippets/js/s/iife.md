@@ -33,7 +33,7 @@ Remember the "roughly equivalent" part? The only difference is the use of a name
 - Opening and closing parentheses to wrap the anonymous function.
 - Parentheses to call the function and any arguments to invoke it with.
 
-Note that you can also use arrow functions for IIFEs, if you like. Just make sure to remember the differences between regular and arrow functions in that case. Our previous articles on [arrow functions](/blog/s/javascript-arrow-functions) and [the `this` keyword](/blog/s/javascript-this) should just about cover them.
+Note that you can also use arrow functions for IIFEs, if you like. Just make sure to remember the differences between regular and arrow functions in that case. Our previous articles on [arrow functions](/js/s/arrow-functions) and [the `this` keyword](/js/s/this) should just about cover them.
 
 ```js
 // All of these are equivalent, leading semicolon is optional

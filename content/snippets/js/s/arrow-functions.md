@@ -105,4 +105,4 @@ As you can see from these examples, there's a difference in how constructors wor
 
 Moreover, arrow functions and regular functions present some differences when used to define class methods. A regular function method will end up with a different execution context when passed as a callback. This can be handled using `Function.prototype.bind()` or by using an arrow function which doesn't have this issue.
 
-If you want to read more about the `this` keyword, you should check out our [previous article on the subject](/blog/s/javascript-this).
+If you want to read more about the `this` keyword, you should check out our [previous article on the subject](/js/s/this).

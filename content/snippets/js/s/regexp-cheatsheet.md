@@ -17,7 +17,7 @@ dateModified: 2021-06-12
 
 > [!NOTE]
 >
->Anchors are non-quantifiable (i.e. cannot be followed by a quantifier).
+> Anchors are non-quantifiable (i.e. cannot be followed by a quantifier).
 
 ## Character sequences
 
@@ -64,4 +64,6 @@ dateModified: 2021-06-12
 - `i`: Case insensitive
 - `u`: Unicode
 
-Note that this cheatsheet is meant only as a starting point and is by no means a complete guide to all the features and nuances of regular expressions. You can also read [6 JavaScript Regular Expression features you can use today](/blog/s/6-javascript-regexp-tricks) for a deeper dive into some more advanced features.
+Note that this cheatsheet is meant only as a starting point and is by no means a complete guide to all the features and nuances of regular expressions.
+
+@[Dive deeper](/js/s/6-regexp-tricks)
