@@ -9,11 +9,6 @@ listed: false
 dateModified: 2021-06-12
 ---
 
-### Python slice notation
-
-- Understanding Python's slice notation (this blog post)
-- [Understanding Python's slice assignment](/blog/s/python-slice-assignment)
-
 ## Basic syntax
 
 Python's slice notation is used to return a list or a portion of a list. The basic syntax is as follows:
@@ -75,4 +70,4 @@ nums[6:8]     # []
 nums[:-10]    # []
 ```
 
-[Continue on Understanding Python's slice assignment](/blog/s/python-slice-assignment)
+@[You might also like](/python/s/slice-assignment)

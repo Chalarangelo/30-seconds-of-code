@@ -9,11 +9,6 @@ listed: false
 dateModified: 2021-06-12
 ---
 
-### Python slice notation
-
-- [Understanding Python's slice notation](/blog/s/python-slice-notation)
-- Understanding Python's slice assignment (this blog post)
-
 ## Basic syntax
 
 In order to understand Python's slice assignment, you should at least have a decent grasp of how slicing works. Here's a quick recap:
@@ -68,3 +63,5 @@ nums[2:5:2] = [6, 7]  # [1, 2, 6, 4, 7] (replace every 2nd element, 2 through 5)
 nums[2:5:2] = [6, 7, 8] # Throws a ValueError (can't replace 2 elements with 3)
 nums[1::-1] = [9, 0]  # [0, 9, 6, 4, 7] (reverse replace, 1 through start)
 ```
+
+@[You might also like](/python/s/slice-notation)
