@@ -89,6 +89,6 @@ class StepVisualizer extends HTMLElement {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  customElements.define('step-visualizer', StepVisualizer);
   document.adoptedStyleSheets.push(styles);
+  customElements.define('step-visualizer', StepVisualizer);
 });
