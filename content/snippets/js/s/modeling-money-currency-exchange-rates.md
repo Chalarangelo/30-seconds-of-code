@@ -416,6 +416,7 @@ money1.lessThan(money2);          // false
 
 Implementing a **basic structure** for money, currencies and exchange rates is a lot of work, but it's fairly straightforward once you get the basics down. There's plenty of improvements that you can make to this implementation, such as adding more mathematical operations, or handling historical exchange rates. However, this should give you a **good starting point** for any project that requires handling money.
 
+<code-tabs>
 <details>
 <summary>View the complete implementation</summary>
 
@@ -587,3 +588,4 @@ class Money {
 ```
 
 </details>
+</code-tabs>
