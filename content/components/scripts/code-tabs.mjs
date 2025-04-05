@@ -26,11 +26,6 @@ class CodeTabs extends HTMLElement {
 
   prepareTabs() {
     const codeBlocks = [...this.querySelectorAll('details pre')];
-    const labels = codeBlocks.map(codeBlock => {
-      const language = codeBlock.dataset.codeLanguage;
-      const title = codeBlock.dataset.codeTitle;
-      return title || language;
-    });
 
     this.name = (
       this.querySelector('details > summary')?.innerText ?? crypto.randomUUID()
@@ -44,10 +39,13 @@ class CodeTabs extends HTMLElement {
 
     this.tabs = [];
 
-    codeBlocks.forEach((codeBlock, i) => {
+    codeBlocks.forEach(codeBlock => {
       const tab = document.createElement('details');
       const tabHandler = document.createElement('summary');
-      tabHandler.innerText = labels[i];
+      const label =
+        codeBlock.dataset.codeTitle || codeBlock.dataset.codeLanguage;
+
+      tabHandler.innerText = label;
       tab.setAttribute('name', this.name);
       tab.appendChild(tabHandler);
       tab.appendChild(codeBlock);
