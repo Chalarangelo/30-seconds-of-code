@@ -285,26 +285,6 @@
 // modules (these load via JS). Web components have an `interactive` attribute
 // that is set to "false" when the component is not interactive. This can be
 // used to select the non-interactive version of the component.
-[interactive='false'] {
-  &::after {
-    display: block;
-    // Add a warning message before the component's contents.
-    content: 'Some interactive features on this page may not work as expected. \00000a' +
-      'Please enable JavaScript and reload the page to use all features.';
-    // Add spacing, a background and a border to the message.
-    padding-inline: var(--layout-bleed-width);
-    padding-block: var(--spacing-6);
-    background: var(--color-background-light);
-    border: var(--border-width-thin) solid var(--color-caution);
-    border-radius: var(--layout-border-radius);
-    // Place the text in the center and make it two lines.
-    white-space: pre-wrap;
-    text-align: center;
-    // Add some spacing before the message.
-    margin-block-start: var(--layout-row-spacing);
-  }
-}
-
 step-visualizer {
   // Make the component full width, regardless of interactivity.
   grid-column: 1 / -1;

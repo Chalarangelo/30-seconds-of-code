@@ -10,6 +10,7 @@ import SnippetContent from '#src/astro/components/SnippetContent.astro';
 import TableOfContents from '#src/astro/components/TableOfContents.astro';
 import Pagination from '#src/astro/components/Pagination.astro';
 import PreviewList from '#src/astro/components/PreviewList.astro';
+import ContentComponentsFallback from '#src/astro/components/ContentComponentsFallback.astro';
 
 export async function getStaticPaths() {
   const pagePath = path.join(
@@ -50,6 +51,7 @@ const {
     <PreviewList contentItems={recommendations}>
       <h2 slot="title">More like this</h2>
     </PreviewList>
+    <ContentComponentsFallback />
   </main>
   <TableOfContents tableOfContents={snippet.tableOfContents} slot="side-bar" />
 </Layout>
