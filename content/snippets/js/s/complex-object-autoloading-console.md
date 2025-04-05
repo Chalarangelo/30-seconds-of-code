@@ -10,13 +10,6 @@ dateModified: 2025-01-16
 journeyId: js/complex-objects
 ---
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    if (location.hash === '#addendum-code-summary')
-      document.querySelector('main > article > details').open = true;
-  });
-</script>
-
 > [!IMPORTANT]
 >
 > This article is part of a [series](/js/complex-objects/p/1), following [Modeling complex JavaScript object field validation](/js/s/complex-object-field-validation). It's highly recommended to read the previous articles to get the full context. The whole series is more of a **show & tell** hoping to <strong class="sparkles">inspire</strong> you to start that advanced JavaScript project you've been thinking about.
@@ -410,6 +403,7 @@ The customary code summary of the entire implementation up until this point can 
 
 You can also [browse through the Code Reference on GitHub](https://github.com/Chalarangelo/mini-active-record/tree/c5f23659fc06baea671c834609be4546cfc6c980).
 
+<code-tabs>
 <details>
 <summary>View the complete implementation</summary>
 
@@ -1022,3 +1016,4 @@ export default class PostFactory extends Factory {
 ```
 
 </details>
+</code-tabs>

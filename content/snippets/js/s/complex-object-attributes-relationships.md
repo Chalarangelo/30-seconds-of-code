@@ -10,13 +10,6 @@ dateModified: 2024-12-12
 journeyId: js/complex-objects
 ---
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    if (location.hash === '#addendum-code-summary')
-      document.querySelector('main > article > details').open = true;
-  });
-</script>
-
 > [!IMPORTANT]
 >
 > This is the second article in a [series](/js/complex-objects/p/1) about a recent project I implemented, inspired by Ruby on Rails' ActiveRecord pattern. It's more of an advanced **show & tell**, aiming to <strong class="sparkles">inspire</strong> readers to use more advanced JavaScript features and patterns. If you haven't read the first article, I recommend you start there: [Modeling complex JavaScript object collections in memory](/js/s/complex-object-collections-in-memory).
@@ -369,6 +362,7 @@ Yet again, here's the complete implementation up until this point in the series.
 
 You can also [browse through the Code Reference on GitHub](https://github.com/Chalarangelo/mini-active-record/tree/8011287839c3dba71140514f01a4f9c7ae4a36ad).
 
+<code-tabs>
 <details>
 <summary>View the complete implementation</summary>
 
@@ -515,3 +509,4 @@ export default class Author extends Model {
 ```
 
 </details>
+</code-tabs>

@@ -10,13 +10,6 @@ dateModified: 2025-01-09
 journeyId: js/complex-objects
 ---
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    if (location.hash === '#addendum-code-summary')
-      document.querySelector('main > article > details').open = true;
-  });
-</script>
-
 > [!IMPORTANT]
 >
 > This article is part of a [series](/js/complex-objects/p/1), picking up where [Modeling complex JavaScript object factories](/js/s/complex-object-factories) left off. If you haven't read the previous installments yet, I recommend taking a look at them first. This series is more of a **show & tell** hoping to <strong class="sparkles">inspire</strong> you to build your own JavaScript projects.
@@ -937,6 +930,7 @@ The complete implementation is summarized below, as is traditional by now. This 
 
 You can also [browse through the Code Reference on GitHub](https://github.com/Chalarangelo/mini-active-record/tree/b0870fd4674a183a40353088db686bc0ea3536c5).
 
+<code-tabs>
 <details>
 <summary>View the complete implementation</summary>
 
@@ -1457,3 +1451,4 @@ export default class PostFactory extends Factory {
 ```
 
 </details>
+</code-tabs>

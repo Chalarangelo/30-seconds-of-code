@@ -10,13 +10,6 @@ dateModified: 2025-01-23
 journeyId: js/complex-objects
 ---
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    if (location.hash === '#addendum-code-summary')
-      document.querySelector('main > article > details').open = true;
-  });
-</script>
-
 > [!IMPORTANT]
 >
 > This article is part of a [series](/js/complex-objects/p/1), picking up where [Modeling complex JavaScript object autoloading and console](/js/s/complex-object-autoloading-console) left off. If you haven't read the previous installments yet, I strongly advise you to do so to get the full context. This series is more of a **show & tell** hoping to <strong class="sparkles">inspire</strong> you to build your own advanced JavaScript projects.
@@ -760,6 +753,7 @@ Before I leave you, here's the entire implementation of this series. You can use
 
 You can also [browse through the Code Reference on GitHub](https://github.com/Chalarangelo/mini-active-record/tree/c5f23659fc06baea671c834609be4546cfc6c980).
 
+<code-tabs>
 <details>
 <summary>View the complete implementation</summary>
 
@@ -1479,3 +1473,4 @@ export default class CategoryFactory extends Factory {
 ```
 
 </details>
+</code-tabs>

@@ -10,13 +10,6 @@ dateModified: 2024-12-05
 journeyId: js/complex-objects
 ---
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    if (location.hash === '#addendum-code-summary')
-      document.querySelector('main > article > details').open = true;
-  });
-</script>
-
 I've been working with [Ruby on Rails](https://rubyonrails.org/) quite a lot lately. What I've come to like about it the most may be its [ActiveRecord](https://guides.rubyonrails.org/active_record_basics.html#what-is-active-record-questionmark) ORM (Object-Relational Mapping). I won't go into detail about here, but I wanted to share a similar sort of concept I put together for this very website using JavaScript.
 
 > [!IMPORTANT]
@@ -348,6 +341,7 @@ If you're looking for the complete implementation, you can find it below. More c
 
 You can also [browse through the Code Reference on GitHub](https://github.com/Chalarangelo/mini-active-record/tree/8d3a5b7171111ceb63fb2e849860858eba2880a8).
 
+<code-tabs>
 <details>
 <summary>View the complete implementation</summary>
 
@@ -444,3 +438,4 @@ export default class Post extends Model {
 ```
 
 </details>
+</code-tabs>

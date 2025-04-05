@@ -10,13 +10,6 @@ dateModified: 2024-12-26
 journeyId: js/complex-objects
 ---
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    if (location.hash === '#addendum-code-summary')
-      document.querySelector('main > article > details').open = true;
-  });
-</script>
-
 > [!IMPORTANT]
 >
 > This article is part of a [series](/js/complex-objects/p/1), picking up where [Modeling complex JavaScript object scopes](/js/s/complex-object-scopes) left off. Make sure to read previous articles in the series before continuing. The entire series is more of a **show & tell**, aiming to <strong class="sparkles">inspire</strong> you to use more advanced JavaScript features and patterns in your projects.
@@ -477,7 +470,7 @@ You didn't think I'd leave you without a code reference for this article, did yo
 
 You can also [browse through the Code Reference on GitHub](https://github.com/Chalarangelo/mini-active-record/tree/dcde0efb5e973de4b05af6ad9c36a2693292ef43).
 
-
+<code-tabs>
 <details>
 <summary>View the complete implementation</summary>
 
@@ -771,3 +764,4 @@ export default class PostPreviewSerializer extends Serializer {
 ```
 
 </details>
+</code-tabs>

@@ -10,13 +10,6 @@ dateModified: 2025-01-02
 journeyId: js/complex-objects
 ---
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    if (location.hash === '#addendum-code-summary')
-      document.querySelector('main > article > details').open = true;
-  });
-</script>
-
 > [!IMPORTANT]
 >
 > This article is part of a [series](/js/complex-objects/p/1), following [Modeling complex JavaScript object serialization](/js/s/complex-object-serialization). It may still make sense on its own, but it's highly recommended to read the previous articles first. This series is more of a **show & tell** with the aim to <strong class="sparkles">inspire</strong> you to build more advanced JavaScript projects.
@@ -528,6 +521,7 @@ Last but not least, here's a summary of the complete implementation. This includ
 
 You can also [browse through the Code Reference on GitHub](https://github.com/Chalarangelo/mini-active-record/tree/6d1d139e2dd0592d6b2e3d1333616e6d5a005c03).
 
+<code-tabs>
 <details>
 <summary>View the complete implementation</summary>
 
@@ -948,3 +942,4 @@ export default class PostFactory extends Factory {
 ```
 
 </details>
+</code-tabs>
