@@ -56,7 +56,7 @@ if (args.length === 0 || args[0] === 'help') {
   // 9. Generate timestamp dump
   TimestampDump.generate();
   // 10. Copy scripts
-  ContentComponents.copy();
+  ContentComponents.prepare();
 } else if (args[0] === 'dev') {
   // 0. Set NODE_ENV to development
   process.env.NODE_ENV = 'development';
@@ -75,7 +75,7 @@ if (args.length === 0 || args[0] === 'help') {
   // 6. Generate timestamp dump
   TimestampDump.generate();
   // 7. Copy scripts
-  ContentComponents.copy();
+  ContentComponents.prepare();
 } else if (args[0] === 'watch') {
   ContentUtils.watchContent(() => exec('bin/prepare dev'));
 } else if (args[0] === 'content') {
