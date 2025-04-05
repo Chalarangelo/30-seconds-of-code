@@ -7,7 +7,7 @@
   "author": "chalarangelo",
   "type": "module",
   "devDependencies": {
-    "astro": "^5.5.0",
+    "astro": "^5.6.0",
     "eslint": "^9.23.0",
     "eslint-config-prettier": "^10.1.1",
     "front-matter": "^4.0.2",
