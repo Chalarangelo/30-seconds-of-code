@@ -286,7 +286,8 @@
 // that is set to "false" when the component is not interactive. This can be
 // used to select the non-interactive version of the component.
 [interactive='false'] {
-  &::before {
+  &::after {
+    display: block;
     // Add a warning message before the component's contents.
     content: 'Some interactive features on this page may not work as expected. \00000a' +
       'Please enable JavaScript and reload the page to use all features.';
@@ -299,6 +300,8 @@
     // Place the text in the center and make it two lines.
     white-space: pre-wrap;
     text-align: center;
+    // Add some spacing before the message.
+    margin-block-start: var(--layout-row-spacing);
   }
 }
 
