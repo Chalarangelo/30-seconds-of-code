@@ -1,0 +1,168 @@
+code-tabs[interactive='true'] {
+  // Define a custom property for the tab handle height.
+  // This is used to calculate the fade effect on the sides of the tabs.
+  --code-tabs_tab-handle-height: 44px;
+  position: relative;
+  // Creat a 2-row grid with adjustable number of columns, depending on the
+  // contents of the component. The count variable is set via JS.
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: repeat(var(--code-tabs_tab-count), auto);
+  // Make the tabs align to the start of the container and allow the to scroll
+  justify-content: start;
+  overflow-y: auto;
+  background: var(--color-background-light);
+  border-radius: var(--layout-border-radius);
+
+  // Hide the regular scrollbar, as we'll use a fade effect on the sides.
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &[scrollable-left='true']::before,
+  &[scrollable-right='true']::after {
+    // Create a fade effect on the sides of the tabs.
+    // This will only be shown based on the internal state of the component,
+    // communicated via JS-dependent attributes and variables.
+    content: '';
+    position: absolute;
+    top: 0;
+    // Give the fade enough width to avoid jittering when scrolling.
+    width: calc(3 * var(--code-tabs_tab-handle-height));
+    height: var(--code-tabs_tab-handle-height);
+    // Do not block the mouse events when the pointer is over the fade.
+    pointer-events: none;
+  }
+
+  &[scrollable-left='true']::before {
+    // Position to the left based on the JS-dependent offset to show 1/3 of the
+    // width over the tabs.
+    left: calc(
+      var(--code-tabs_scroll-left-offset) - 2 *
+        var(--code-tabs_tab-handle-height)
+    );
+    background: linear-gradient(
+      to left,
+      transparent 0%,
+      var(--color-background-light) 50%
+    );
+  }
+
+  &[scrollable-right='true']::after {
+    // Position to the right based on the JS-dependent offset to show 1/3 of the
+    // width over the tabs.
+    left: calc(
+      var(--code-tabs_scroll-right-offset) - var(--code-tabs_tab-handle-height)
+    );
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      var(--color-background-light) 50%
+    );
+  }
+
+  > details {
+    // Remove the box from the element, allowing its children to be part of the
+    // grid.
+    display: contents;
+
+    > :is(summary, pre)::before {
+      // Hide the summary's marker and the code blocks language/title.
+      display: none;
+    }
+
+    > summary {
+      // Use flex to align the contents in the middle of the tab.
+      display: flex;
+      // Place in the "tabs" row of the grid.
+      grid-row: 1;
+      cursor: pointer;
+      // Give the tab handle the correct height.
+      height: var(--code-tabs_tab-handle-height);
+      color: var(--color-text-light);
+      background: var(--color-background-light);
+      padding: var(--spacing-2) var(--spacing-4) var(--spacing-4);
+      font-size: var(--font-sm);
+      font-weight: var(--font-weight-medium);
+      // Create a border to allow the selected tab to be highlighted.
+      border-block-start: var(--border-width-thin) solid
+        var(--color-background-light);
+      // Transition when interacting with the tabs.
+      transition:
+        color var(--animation-duration-medium) ease,
+        background-color var(--animation-duration-medium) ease,
+        border-block-start-color var(--animation-duration-medium) ease;
+
+      @media (hover: hover) {
+        &:is(:hover, :focus) {
+          // Only apply hover styles on devices that support hover.
+          color: var(--color-primary-light);
+        }
+      }
+    }
+
+    > pre {
+      margin-inline: 0;
+      padding-block-start: var(--spacing-12);
+      border-radius: 0 0 var(--layout-border-radius) var(--layout-border-radius);
+      border-block-start: var(--border-width-thin) solid
+        var(--color-border-light);
+    }
+
+    &[open] {
+      &::details-content {
+        // Make the contents of the details element part of the grid.
+        display: contents;
+      }
+
+      > summary {
+        // Highlight the selected tab.
+        color: var(--color-text);
+        background: var(--color-code-background);
+        // Remove inherited margin from the summary element.
+        margin-block-end: 0;
+        border-block-start-color: var(--color-primary);
+      }
+
+      > pre {
+        // Span the entire width of the grid.
+        grid-column: 1 / -1;
+        // Use a dynamic JS-dependent property to set the width of the block.
+        width: var(--code-tabs_container-width);
+        // Use sticky to visually make the block span the entire width of the
+        // container, while in reality it's fixed to the left.
+        position: sticky;
+        left: 0;
+      }
+    }
+  }
+}
+
+// code-tabs[interactive="true"]
+
+// code-tabs[interactive="true"] {
+// }
+
+// code-tabs[interactive="true"]
+
+// code-tabs[interactive="true"],
+// code-tabs[interactive="true"] {
+// }
+
+// code-tabs[interactive="true"]
+
+// code-tabs[interactive="true"]
+
+// code-tabs[interactive="true"] >
+
+// code-tabs[interactive="true"] > details
+
+// code-tabs[interactive="true"] > details
+
+// code-tabs[interactive="true"] > details[open]
+
+// code-tabs[interactive="true"] > details[open]
+
+// code-tabs[interactive="true"] > details[open]::details-content {
+//   display: contents;
+// }

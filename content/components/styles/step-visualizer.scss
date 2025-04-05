@@ -1,0 +1,22 @@
+step-visualizer[interactive='true'] {
+  .table-wrapper {
+    // Restore the table's a border radius.
+    border-radius: var(--layout-border-radius);
+
+    &:not(.selected) {
+      // Hide not selected tables.
+      display: none;
+    }
+  }
+
+  h5 {
+    text-align: center;
+    font-size: var(--font-md);
+    font-weight: var(--font-weight-strong);
+    line-height: var(--line-height-loose);
+    border-color: var(--color-border-light);
+    border-block-end-width: var(--border-width-thin);
+    margin: var(--spacing-4) var(--spacing-2) 0;
+    padding-block-end: var(--spacing-2);
+  }
+}
