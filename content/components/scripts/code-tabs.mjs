@@ -21,6 +21,16 @@ class CodeTabs extends HTMLElement {
       this.setAttribute('scrollable-left', this.canScrollLeft);
       this.setAttribute('scrollable-right', this.canScrollRight);
     });
+
+    this.addEventListener('click', e => {
+      if (e.target.tagName === 'SUMMARY') {
+        const details = e.target.parentElement;
+        const isOpen = details.hasAttribute('open');
+
+        if (isOpen) e.preventDefault();
+      }
+    });
+
     this.setAttribute('interactive', 'true');
   }
 
