@@ -122,50 +122,7 @@ Using the value of the `isToggled` state variable, the component can **toggle** 
 
 For each key in the object, the component checks if the value is an object. If it is, it renders a nested `<TreeView>` component. Otherwise, it renders a `<p>` element with the key and value of the object.
 
-
-```css
-.tree-element {
-  margin: 0 0 0 4px;
-  position: relative;
-}
-
-.tree-element.is-child {
-  margin-left: 16px;
-}
-
-div.tree-element::before {
-  content: '';
-  position: absolute;
-  top: 24px;
-  left: 1px;
-  height: calc(100% - 48px);
-  border-left: 1px solid gray;
-}
-
-p.tree-element {
-  margin-left: 16px;
-}
-
-.toggler {
-  position: absolute;
-  top: 10px;
-  left: 0px;
-  width: 0;
-  height: 0;
-  border-top: 4px solid transparent;
-  border-bottom: 4px solid transparent;
-  border-left: 5px solid gray;
-  cursor: pointer;
-}
-
-.toggler.closed {
-  transform: rotate(90deg);
-}
-
-.collapsed {
-  display: none;
-}
-```
+<code-tabs>
 
 ```jsx
 const TreeView = ({
@@ -246,3 +203,49 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <TreeView data={data} name="data" />
 );
 ```
+
+```css
+.tree-element {
+  margin: 0 0 0 4px;
+  position: relative;
+}
+
+.tree-element.is-child {
+  margin-left: 16px;
+}
+
+div.tree-element::before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: 1px;
+  height: calc(100% - 48px);
+  border-left: 1px solid gray;
+}
+
+p.tree-element {
+  margin-left: 16px;
+}
+
+.toggler {
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  width: 0;
+  height: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 5px solid gray;
+  cursor: pointer;
+}
+
+.toggler.closed {
+  transform: rotate(90deg);
+}
+
+.collapsed {
+  display: none;
+}
+```
+
+</code-tabs>

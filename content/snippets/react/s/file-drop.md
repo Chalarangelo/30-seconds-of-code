@@ -16,24 +16,7 @@ Next, you'll create methods to handle the drag and drop **events**. The `handleD
 
 Finally, you'll use the `useEffect()` hook to handle each of the drag and drop events using the previously created methods. The component will **render** a `<div>` that changes its appearance based on the drag state and the presence of a dropped file. If a file is dropped, the component will display the filename; otherwise, it will display a message prompting the user to drop a file.
 
-```css
-.filedrop {
-  min-height: 120px;
-  border: 3px solid #d3d3d3;
-  text-align: center;
-  font-size: 24px;
-  padding: 32px;
-  border-radius: 4px;
-}
-
-.filedrop.drag {
-  border: 3px dashed #1e90ff;
-}
-
-.filedrop.ready {
-  border: 3px solid #32cd32;
-}
-```
+<code-tabs>
 
 ```jsx
 const FileDrop = ({ onDrop }) => {
@@ -103,3 +86,24 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <FileDrop onDrop={console.log} />
 );
 ```
+
+```css
+.filedrop {
+  min-height: 120px;
+  border: 3px solid #d3d3d3;
+  text-align: center;
+  font-size: 24px;
+  padding: 32px;
+  border-radius: 4px;
+}
+
+.filedrop.drag {
+  border: 3px dashed #1e90ff;
+}
+
+.filedrop.ready {
+  border: 3px solid #32cd32;
+}
+```
+
+</code-tabs>

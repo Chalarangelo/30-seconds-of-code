@@ -17,20 +17,7 @@ For a simple **collapsible content** component, you need the `useState()` hook t
 
 For **accessibility** purposes, it's a good idea to use the `aria-expanded` attribute to indicate the state of the collapsible content.
 
-```css
-.collapse-button {
-  display: block;
-  width: 100%;
-}
-
-.collapse-content.collapsed {
-  display: none;
-}
-
-.collapsed-content.expanded {
-  display: block;
-}
-```
+<code-tabs>
 
 ```jsx
 const Collapse = ({ collapsed, children }) => {
@@ -62,6 +49,23 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 );
 ```
 
+```css
+.collapse-button {
+  display: block;
+  width: 100%;
+}
+
+.collapse-content.collapsed {
+  display: none;
+}
+
+.collapsed-content.expanded {
+  display: block;
+}
+```
+
+</code-tabs>
+
 ## Collapsible accordion
 
 **Accordions** are very similar, but we need to manage the state a little differently, holding the index of the active accordion item. We can then toggle the visibility of the content based on the active index.
@@ -70,20 +74,7 @@ In order to make the component easier to read, we'll extract the `AccordionItem`
 
 As an additional feature, we can pass a callback function to the `Accordion` component to **handle the click event** on each accordion item. We may also want to filter out any non-`AccordionItem` children.
 
-```css
-.accordion-item.collapsed {
-  display: none;
-}
-
-.accordion-item.expanded {
-  display: block;
-}
-
-.accordion-button {
-  display: block;
-  width: 100%;
-}
-```
+<code-tabs>
 
 ```jsx
 const AccordionItem = ({ label, isCollapsed, handleClick, children }) => {
@@ -137,36 +128,28 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 );
 ```
 
+```css
+.accordion-item.collapsed {
+  display: none;
+}
+
+.accordion-item.expanded {
+  display: block;
+}
+
+.accordion-button {
+  display: block;
+  width: 100%;
+}
+```
+
+</code-tabs>
+
 ## Tabs
 
 **Tabs** are virtually identical to an accordion, but with a different visual representation. The `Tabs` component will manage the state and render the tab items. Again, we'll extract the `TabItem` component to handle each tab item.
 
-
-```css
-.tab-menu > button {
-  cursor: pointer;
-  padding: 8px 16px;
-  border: 0;
-  border-bottom: 2px solid transparent;
-  background: none;
-}
-
-.tab-menu > button.focus {
-  border-bottom: 2px solid #007bef;
-}
-
-.tab-menu > button:hover {
-  border-bottom: 2px solid #007bef;
-}
-
-.tab-content {
-  display: none;
-}
-
-.tab-content.selected {
-  display: block;
-}
-```
+<code-tabs>
 
 ```jsx
 const TabItem = props => <div {...props} />;
@@ -220,24 +203,40 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 );
 ```
 
+
+```css
+.tab-menu > button {
+  cursor: pointer;
+  padding: 8px 16px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: none;
+}
+
+.tab-menu > button.focus {
+  border-bottom: 2px solid #007bef;
+}
+
+.tab-menu > button:hover {
+  border-bottom: 2px solid #007bef;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.selected {
+  display: block;
+}
+```
+
+</code-tabs>
+
 ## Carousel
 
 Finally, a **carousel** is a type of collapsible content that automatically scrolls through items. We can use the `useEffect()` hook to update the active item index at regular **intervals**, with the help of `setTimeout()`.
 
-```css
-.carousel {
-  position: relative;
-}
-
-.carousel-item {
-  position: absolute;
-  visibility: hidden;
-}
-
-.carousel-item.visible {
-  visibility: visible;
-}
-```
+<code-tabs>
 
 ```jsx
 const Carousel = ({ carouselItems, ...rest }) => {
@@ -274,3 +273,20 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   />
 );
 ```
+
+```css
+.carousel {
+  position: relative;
+}
+
+.carousel-item {
+  position: absolute;
+  visibility: hidden;
+}
+
+.carousel-item.visible {
+  visibility: visible;
+}
+```
+
+</code-tabs>

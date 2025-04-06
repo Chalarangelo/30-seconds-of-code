@@ -12,6 +12,52 @@ Tag input fields have become a common feature in modern web applications. They a
 
 Starting with the component's props, we'll only need to store the initial `tags` array in a state variable. Then, using `Array.prototype.map()`, we'll render the list of tags. The `addTagData` method will be called when the user presses the `Enter` key, and the `removeTagData` method will be called when the user clicks the delete icon in the tag.
 
+<code-tabs>
+
+```jsx
+const TagInput = ({ tags }) => {
+  const [tagData, setTagData] = React.useState(tags);
+
+  const removeTagData = indexToRemove => {
+    setTagData([...tagData.filter((_, index) => index !== indexToRemove)]);
+  };
+
+  const addTagData = event => {
+    if (event.target.value !== '') {
+      setTagData([...tagData, event.target.value]);
+      event.target.value = '';
+    }
+  };
+
+  return (
+    <div className="tag-input">
+      <ul className="tags">
+        {tagData.map((tag, index) => (
+          <li key={index} className="tag">
+            <span className="tag-title">{tag}</span>
+            <span
+              className="tag-close-icon"
+              onClick={() => removeTagData(index)}
+            >
+              x
+            </span>
+          </li>
+        ))}
+      </ul>
+      <input
+        type="text"
+        onKeyUp={event => (event.key === 'Enter' ? addTagData(event) : null)}
+        placeholder="Press enter to add a tag"
+      />
+    </div>
+  );
+};
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <TagInput tags={['Nodejs', 'MongoDB']} />
+);
+```
+
 ```css
 .tag-input {
   display: flex;
@@ -75,46 +121,4 @@ Starting with the component's props, we'll only need to store the initial `tags`
 }
 ```
 
-```jsx
-const TagInput = ({ tags }) => {
-  const [tagData, setTagData] = React.useState(tags);
-
-  const removeTagData = indexToRemove => {
-    setTagData([...tagData.filter((_, index) => index !== indexToRemove)]);
-  };
-
-  const addTagData = event => {
-    if (event.target.value !== '') {
-      setTagData([...tagData, event.target.value]);
-      event.target.value = '';
-    }
-  };
-
-  return (
-    <div className="tag-input">
-      <ul className="tags">
-        {tagData.map((tag, index) => (
-          <li key={index} className="tag">
-            <span className="tag-title">{tag}</span>
-            <span
-              className="tag-close-icon"
-              onClick={() => removeTagData(index)}
-            >
-              x
-            </span>
-          </li>
-        ))}
-      </ul>
-      <input
-        type="text"
-        onKeyUp={event => (event.key === 'Enter' ? addTagData(event) : null)}
-        placeholder="Press enter to add a tag"
-      />
-    </div>
-  );
-};
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <TagInput tags={['Nodejs', 'MongoDB']} />
-);
-```
+</code-tabs>

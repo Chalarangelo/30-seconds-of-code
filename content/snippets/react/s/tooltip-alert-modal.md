@@ -15,34 +15,7 @@ Dialog components like tooltips, alerts and modals are essential for user intera
 
 For a simple **tooltip** component, you'll need to use the `useState()` hook to manage the state of the tooltip. The tooltip should be displayed when the user **hovers** over the element and hidden when the user moves the cursor away. For that purpose, you can use the `onMouseEnter` and `onMouseLeave` events.
 
-```css
-.tooltip-container {
-  position: relative;
-}
-
-.tooltip-box {
-  position: absolute;
-  background: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  padding: 5px;
-  border-radius: 5px;
-  top: calc(100% + 5px);
-  display: none;
-}
-
-.tooltip-box.visible {
-  display: block;
-}
-
-.tooltip-arrow {
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent transparent rgba(0, 0, 0, 0.7) transparent;
-}
-```
+<code-tabs>
 
 ```jsx
 const Tooltip = ({ children, text, ...rest }) => {
@@ -72,6 +45,37 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 );
 ```
 
+```css
+.tooltip-container {
+  position: relative;
+}
+
+.tooltip-box {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  top: calc(100% + 5px);
+  display: none;
+}
+
+.tooltip-box.visible {
+  display: block;
+}
+
+.tooltip-arrow {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent rgba(0, 0, 0, 0.7) transparent;
+}
+```
+
+</code-tabs>
+
 ## Alert
 
 In order to create an **alert** component, you'll need to manage the state of the alert. This state involves the `isShown` state to determine if the alert should be displayed and the `isLeaving` state to handle the closing animation.
@@ -79,6 +83,48 @@ In order to create an **alert** component, you'll need to manage the state of th
 The alert should be displayed when the component is rendered and hidden after a certain amount of time. You can use the `useState()` hook to manage the state and the `useEffect()` hook to handle the timeout with the help of `setTimeout()`.
 
 Additionally, we need to define a `closeAlert()` function to handle the closing of the alert. This function will set the `isLeaving` state to `true`, wait for the specified **timeout**, and then set the `isShown` state to `false`.
+
+<code-tabs>
+
+```jsx
+const Alert = ({ isDefaultShown = false, timeout = 250, type, message }) => {
+  const [isShown, setIsShown] = React.useState(isDefaultShown);
+  const [isLeaving, setIsLeaving] = React.useState(false);
+
+  let timeoutId = null;
+
+  React.useEffect(() => {
+    setIsShown(true);
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [isDefaultShown, timeout, timeoutId]);
+
+  const closeAlert = () => {
+    setIsLeaving(true);
+    timeoutId = setTimeout(() => {
+      setIsLeaving(false);
+      setIsShown(false);
+    }, timeout);
+  };
+
+  return (
+    isShown && (
+      <div
+        className={`alert ${type} ${isLeaving ? 'leaving' : ''}`}
+        role="alert"
+      >
+        <button className="close" onClick={closeAlert} />
+        {message}
+      </div>
+    )
+  );
+};
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <Alert type="info" message="This is info" />
+);
+```
 
 ```css
 @keyframes leave {
@@ -131,51 +177,70 @@ Additionally, we need to define a `closeAlert()` function to handle the closing 
 }
 ```
 
-```jsx
-const Alert = ({ isDefaultShown = false, timeout = 250, type, message }) => {
-  const [isShown, setIsShown] = React.useState(isDefaultShown);
-  const [isLeaving, setIsLeaving] = React.useState(false);
-
-  let timeoutId = null;
-
-  React.useEffect(() => {
-    setIsShown(true);
-    return () => {
-      clearTimeout(timeoutId);
-    };
-  }, [isDefaultShown, timeout, timeoutId]);
-
-  const closeAlert = () => {
-    setIsLeaving(true);
-    timeoutId = setTimeout(() => {
-      setIsLeaving(false);
-      setIsShown(false);
-    }, timeout);
-  };
-
-  return (
-    isShown && (
-      <div
-        className={`alert ${type} ${isLeaving ? 'leaving' : ''}`}
-        role="alert"
-      >
-        <button className="close" onClick={closeAlert} />
-        {message}
-      </div>
-    )
-  );
-};
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <Alert type="info" message="This is info" />
-);
-```
+</code-tabs>
 
 ## Modal dialog
 
 **Modal dialogs** essentially block the user from interacting with the rest of the application until they are closed. They are used for important messages, warnings, or additional information. For the modal dialog, CSS will do a lot of the heavy lifting.
 
 However, you'll also need to use the `useEffect()` hook to handle the `keydown` event. This event will close the modal when the user presses the `Escape` key. The modal should be displayed when the `isVisible` prop is `true` and hidden when it's `false`.
+
+<code-tabs>
+
+```jsx
+const Modal = ({ isVisible = false, title, content, footer, onClose }) => {
+  const keydownHandler = ({ key }) => {
+    switch (key) {
+      case 'Escape':
+        onClose();
+        break;
+      default:
+    }
+  };
+
+  React.useEffect(() => {
+    document.addEventListener('keydown', keydownHandler);
+    return () => document.removeEventListener('keydown', keydownHandler);
+  });
+
+  return !isVisible ? null : (
+    <div className="modal" onClick={onClose}>
+      <div className="modal-dialog" onClick={e => e.stopPropagation()}>
+        <div className="modal-header">
+          <h3 className="modal-title">{title}</h3>
+          <span className="modal-close" onClick={onClose}>
+            &times;
+          </span>
+        </div>
+        <div className="modal-body">
+          <div className="modal-content">{content}</div>
+        </div>
+        {footer && <div className="modal-footer">{footer}</div>}
+      </div>
+    </div>
+  );
+};
+
+const App = () => {
+  const [isModal, setModal] = React.useState(false);
+  return (
+    <>
+      <button onClick={() => setModal(true)}>Click Here</button>
+      <Modal
+        isVisible={isModal}
+        title="Modal Title"
+        content={<p>Add your content here</p>}
+        footer={<button>Cancel</button>}
+        onClose={() => setModal(false)}
+      />
+    </>
+  );
+};
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <App />
+);
+```
 
 ```css
 .modal {
@@ -262,57 +327,4 @@ However, you'll also need to use the `useEffect()` hook to handle the `keydown` 
 }
 ```
 
-```jsx
-const Modal = ({ isVisible = false, title, content, footer, onClose }) => {
-  const keydownHandler = ({ key }) => {
-    switch (key) {
-      case 'Escape':
-        onClose();
-        break;
-      default:
-    }
-  };
-
-  React.useEffect(() => {
-    document.addEventListener('keydown', keydownHandler);
-    return () => document.removeEventListener('keydown', keydownHandler);
-  });
-
-  return !isVisible ? null : (
-    <div className="modal" onClick={onClose}>
-      <div className="modal-dialog" onClick={e => e.stopPropagation()}>
-        <div className="modal-header">
-          <h3 className="modal-title">{title}</h3>
-          <span className="modal-close" onClick={onClose}>
-            &times;
-          </span>
-        </div>
-        <div className="modal-body">
-          <div className="modal-content">{content}</div>
-        </div>
-        {footer && <div className="modal-footer">{footer}</div>}
-      </div>
-    </div>
-  );
-};
-
-const App = () => {
-  const [isModal, setModal] = React.useState(false);
-  return (
-    <>
-      <button onClick={() => setModal(true)}>Click Here</button>
-      <Modal
-        isVisible={isModal}
-        title="Modal Title"
-        content={<p>Add your content here</p>}
-        footer={<button>Cancel</button>}
-        onClose={() => setModal(false)}
-      />
-    </>
-  );
-};
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <App />
-);
-```
+</code-tabs>
