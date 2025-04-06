@@ -25,6 +25,8 @@ isOdd(3); // true
 
 The **bitwise AND operator** (`&`) returns `1` if both bits are `1`, otherwise it returns `0`. The binary representation of an even number always ends with `0`, while the binary representation of an odd number always ends with `1`. As such, applying the bitwise AND operator to a number and `1` will return `0` for even numbers and `1` for odd numbers. In order to convert this result to a boolean, we can use the `Boolean()` function.
 
+@[Quick refresher](/js/s/boolean-function)
+
 ```js
 const isEven = num => !Boolean(num & 1);
 const isOdd = num => Boolean(num & 1);

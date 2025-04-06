@@ -11,7 +11,9 @@ dateModified: 2022-09-14
 
 Sometimes, one might run into the problem of converting the string representation of a value into the value itself. This is often straightforward, such as with numeric values. However, string representations of boolean values can be a bit trickier.
 
-This issue arises due to the fact that any non-empty string is considered truthy in JavaScript. On top of that, strings can have different capitalization or whitespace, making it harder to compare them directly to a constant.
+This issue arises due to the fact that **any non-empty string is considered truthy** in JavaScript. On top of that, strings can have different capitalization or whitespace, making it harder to compare them directly to a constant.
+
+@[You might also like](/js/s/truthy-falsy-values)
 
 To counteract this, it's often a good idea to use a couple of transformations, namely `String.prototype.toLowerCase()` and `String.prototype.trim()`, to make the string representation of the value more consistent. Additionally, an array of acceptable values might make it easier to perform the conversion in certain cases.
 

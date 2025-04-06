@@ -106,6 +106,8 @@ console.log(obj.bar() === window); // true
 
 Notice how in the second example, an arrow function's `this` refers to the global object unless wrapped inside a regular `function` call, whose `this` refers to the object it's called from and its lexical context is retained by the arrow function.
 
+@[Further reading](/js/s/arrow-functions#execution-context)
+
 ## Event handler context
 
 When used in an event handler, `this` refers to the element on which the listener is placed.
@@ -140,3 +142,5 @@ function f() {
 
 console.log(f.call({foo: 'hi'})); // 'hi'
 ```
+
+@[Further reading](/js/s/function-call-apply-bind#function-methods)
