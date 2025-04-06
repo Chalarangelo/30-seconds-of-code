@@ -1,6 +1,6 @@
 ---
 title: The many ways to initialize a JavaScript Array
-shortTitle: Array Initialization
+shortTitle: Array initialization
 language: javascript
 tags: [array]
 cover: red-mountain-range
