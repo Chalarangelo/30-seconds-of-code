@@ -11,6 +11,8 @@ dateModified: 2024-01-04
 
 JavaScript's primitive data types are immutable, meaning their value cannot change once created. However, **objects and arrays are mutable**, allowing their value to be altered after creation.
 
+@[Quick refresher](/js/s/immutability)
+
 What this means in practice is that primitives are passed by value, whereas objects and arrays are **passed by reference**. Consider the following example:
 
 ```js

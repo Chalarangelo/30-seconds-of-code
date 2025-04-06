@@ -27,6 +27,8 @@ const newArr = [...arr, 4];
 
 As you can see in the example above, the original array is not modified. Instead, a new array is created based on the old array. The original array is still available and can be used elsewhere in the program, if needed.
 
+@[Further reading](/js/s/shallow-deep-clone-object)
+
 > [!NOTE]
 >
 > In both examples, the array is technically mutable, regardless of the way it is created (using `let` or `const`). However, in the first example, the array is **mutated** via the use of `Array.prototype.push()`, while in the second example, the array is **not mutated**. This is because `Array.prototype.push()` mutates the array in-place, while the spread operator (`...`) creates a new array.
