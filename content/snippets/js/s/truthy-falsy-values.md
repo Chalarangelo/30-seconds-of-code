@@ -43,3 +43,5 @@ Boolean([1]);           // true
 Boolean({});            // true
 Boolean({ a: 1 });      // true
 ```
+
+@[Learn more](/js/s/boolean-function)

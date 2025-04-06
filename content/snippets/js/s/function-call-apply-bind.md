@@ -15,7 +15,9 @@ Developers often confuse `Function.prototype.call()`, `Function.prototype.apply(
 
 JavaScript functions are **first-class objects**, which means they can be passed around like any other object. They can also have properties and methods, and can be passed as arguments to other functions. The `Function` object has several methods, including `call()`, `apply()` and `bind()`, which are used to set the `this` value and pass arguments to a function.
 
-## Function.prototype.call()
+@[Quick refresher](/js/s/this)
+
+## `Function.prototype.call()`
 
 `Function.prototype.call()` is used to call a function with a given `this` context and any arguments provided **individually**. For example:
 
@@ -31,7 +33,7 @@ printThisAndData.call(obj, data);       // logs: 0 [1, 2, 3]
 printThisAndData.call(obj, ...data);    // logs: 0 1 2 3
 ```
 
-## Function.prototype.apply()
+## `Function.prototype.apply()`
 
 `Function.prototype.apply()` is almost identical to `Function.prototype.call()` in the sense that it calls a function with a given `this` context, however it requires arguments to be provided as an **array**. For example:
 
@@ -47,7 +49,7 @@ printThisAndData.apply(obj, data);      // logs: 0 1 2 3
 printThisAndData.apply(obj, ...data);   // Throws a TypeError
 ```
 
-## Function.prototype.bind()
+## `Function.prototype.bind()`
 
 `Function.prototype.bind()` is slightly different from the previous two methods. Instead of calling a function with the given `this` context and returning the result, it returns a function with its `this` context bound and any arguments provided individually **prepended** to the arguments at the time of calling the returned function. For example:
 
