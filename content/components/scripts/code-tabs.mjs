@@ -25,7 +25,7 @@ class CodeTabs extends HTMLElement {
   }
 
   prepareTabs() {
-    const codeBlocks = [...this.querySelectorAll('details pre')];
+    const codeBlocks = [...this.querySelectorAll('pre')];
 
     this.name = (
       this.querySelector('details > summary')?.innerText ?? crypto.randomUUID()
