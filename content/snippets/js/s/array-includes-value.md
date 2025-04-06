@@ -1,6 +1,6 @@
 ---
 title: How can I check if a JavaScript array includes a specific value?
-shortTitle: JavaScript array includes value
+shortTitle: Array includes value
 language: javascript
 tags: [array]
 cover: bridge-drop
