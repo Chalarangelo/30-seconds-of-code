@@ -74,6 +74,7 @@ code-tabs[interactive='true'] {
     > summary {
       // Use flex to align the contents in the middle of the tab.
       display: flex;
+      justify-content: center;
       // Place in the "tabs" row of the grid.
       grid-row: 1;
       cursor: pointer;
