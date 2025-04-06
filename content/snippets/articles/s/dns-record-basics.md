@@ -12,7 +12,7 @@ Most web developers go about their day-to-day without having to deal with DNS re
 
 ## DNS Definition
 
-The Domain Name System (abbreviated to DNS), translates human-readable domain names (e.g www.google.com to machine-readable IP addresses (e.g. 142.250.186.46).
+The Domain Name System (abbreviated to DNS), translates human-readable domain names (e.g www.google.com) to machine-readable IP addresses (e.g. 142.250.186.46).
 
 ## DNS Records
 
