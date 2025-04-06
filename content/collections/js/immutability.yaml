@@ -1,0 +1,21 @@
+slug: js/immutability
+title: JavaScript Immutability
+shortTitle: Immutability
+listed: true
+snippetIds:
+  - js/s/immutability
+  - js/s/copy-array
+  - js/s/shallow-deep-clone-object
+  - js/s/spread-operator-tricks
+  - js/s/deep-freeze-object
+  - js/s/immutable-object-proxy
+  - js/s/string-immutability
+  - js/s/pass-by-reference-or-pass-by-value
+splash: touch-flower
+description: >-
+  Immutability is a key concept in functional programming and JavaScript. This
+  collection of articles will help you understand immutability, its benefits,
+  and how to implement it in your code.
+shortDescription: >-
+  Discover the power of immutability in JavaScript with these articles,
+  covering everything from basic concepts to advanced techniques.
