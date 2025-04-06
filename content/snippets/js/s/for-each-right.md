@@ -11,6 +11,8 @@ dateModified: 2023-10-10
 
 `Array.prototype.forEach()` is pretty convenient, but what if you want to iterate over an array from right to left? Using a `for` loop is an option, but there are more elegant tools at our disposal.
 
+@[Quick refresher](/js/s/for-in-for-of-foreach#array-prototype-for-each)
+
 **Reversing an array** can be easily accomplished using `Array.prototype.reverse()`, but it mutates the original array. In order to avoid that, we have to create a **shallow clone**, using `Array.prototype.slice()`. This needs to be done prior to reversing to avoid the original array being mutated. Finally, we can use `Array.prototype.forEach()` to **iterate over the reversed array**.
 
 ```js
