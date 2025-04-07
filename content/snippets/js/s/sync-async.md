@@ -28,3 +28,5 @@ console.log('Three');
 ```
 
 Asynchronous code execution is often preferable in situations where execution can be **blocked indefinitely**. Some examples of this are network requests, long-running calculations, file system operations etc. Using asynchronous code in the browser ensures the page remains responsive and the **user experience** is mostly unaffected.
+
+@[Further reading](/js/s/async-cheatsheet)

@@ -31,3 +31,5 @@ window.addEventListener(
   }, 250)
 ); // Will log the window dimensions at most every 250ms
 ```
+
+@[You might also like](/js/s/debounce-promise)

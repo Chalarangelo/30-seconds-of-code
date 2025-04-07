@@ -47,3 +47,5 @@ const multiply = (x, y) => x * y;
 const composedFn = pipe(multiply, add5, digitize);
 composedFn(5, 2); // [1, 5]
 ```
+
+@[Further reading](/js/s/async-function-composition)

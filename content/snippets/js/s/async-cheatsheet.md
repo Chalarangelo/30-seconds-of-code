@@ -14,6 +14,8 @@ dateModified: 2021-06-12
 - When the operation is completed, a promise will become **fulfilled with a value**.
 - If the operation fails, a promise will get **rejected with an error**.
 
+@[Quick refresher](/js/promises)
+
 ## Creating promises
 
 - The function passed to the `Promise` constructor will execute synchronously.

@@ -27,6 +27,8 @@ delay(greet, 300, 'world');
 
 Another way to go about implementing a `sleep()` function is to utilize the `async` and `await` keywords, a `Promise` and `setTimeout()`. Note that the resulting function is itself asynchronous.
 
+@[You might also like](/js/s/await-timeout)
+
 ```js
 const sleep = (ms) =>
   new Promise(resolve => setTimeout(resolve, ms));
