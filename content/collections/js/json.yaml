@@ -1,0 +1,22 @@
+slug: js/json
+title: Working with JSON
+shortTitle: JSON
+listed: true
+snippetIds:
+  - js/s/pretty-print-json
+  - js/s/json-to-file
+  - js/s/string-is-valid-json
+  - js/s/stringify-circular-json
+  - js/s/json-stringify-pick-keys
+  - js/s/convert-csv-to-array-object-or-json
+splash: glasses-comic
+description: |+
+  JavaScript Object Notation (JSON) is a lightweight and human-readable
+  data interchange format. Get started with JSON in JavaScript with this
+  collection of articles.
+
+  <footer>
+  <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/JSON" target="_blank" rel="noopener noreferrer">Suggested resource: MDN</a>
+  </footer>
+shortDescription: >-
+  Learn how to work with JSON in JavaScript and level up with these tricks.

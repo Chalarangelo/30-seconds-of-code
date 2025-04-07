@@ -11,6 +11,8 @@ dateModified: 2024-02-01
 
 JSON objects are a common way to **store and exchange data**. It's often useful to save a JSON object to a file, either in a Node.js environment or in the browser. Luckily, neither one is particularly difficult.
 
+@[Quick refresher](/js/s/pretty-print-json)
+
 ## Save a JSON object to a file in Node.js
 
 Node.js provides a **built-in module** called `fs` that allows you to work with the file system. You can use the `fs.writeFileSync()` method to write a JSON object to a file. To convert the JSON object to a string, you can use `JSON.stringify()`. Finally, you should specify the **file extension** as `.json`.
