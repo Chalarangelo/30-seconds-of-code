@@ -2,5 +2,10 @@ latex-expression[interactive='true'] {
   .katex {
     // Increase font size
     font-size: var(--font-lg);
+
+    > .katex-html > .newline {
+      // Add spacing between lines for multiline expressions
+      height: var(--spacing-8);
+    }
   }
 }
