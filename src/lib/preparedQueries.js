@@ -97,9 +97,9 @@ export default class PreparedQueries {
     PreparedQueries.documentIndex = new DocumentIndex(documents);
   }
 
-  static searchForTerm(term, limit) {
+  static searchForTerm(term, { limit, fuzzy = 0.7 } = {}) {
     if (!PreparedQueries.documentIndex) PreparedQueries.prepareDocumentIndex();
-    return search(PreparedQueries.documentIndex)(term, limit).map(x => ({
+    return search(PreparedQueries.documentIndex)(term, limit, fuzzy).map(x => ({
       id: x.id,
       score: x.score,
     }));
