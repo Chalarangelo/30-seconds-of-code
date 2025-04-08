@@ -16,27 +16,26 @@ const tokenizeTokens = str => splitTokens(str).map(cleanTokenPunctuation);
 const tokenizePlainText = str =>
   splitTokens(str).map(tkn => cleanTokenPunctuation(stem(tkn)));
 
-const calculateNgramSimilarity = (queryNgrams, docNgrams) => {
-  let matches = 0;
-  const totalPossible = Math.min(queryNgrams.length, docNgrams.length);
-
-  for (const qGram of queryNgrams) {
-    if (docNgrams.includes(qGram)) matches++;
-  }
-
-  return matches / totalPossible;
-};
-
 const searchForNgrams = (documentIndex, terms) => {
   const ngramSimilarities = [];
-  const queryNgrams = generateNgrams(terms[0]);
+  const queryNgrams = terms.reduce((acc, term) => {
+    const ngrams = generateNgrams(term);
+    acc.push(...ngrams);
+    return acc;
+  }, []);
 
   // Calculate similarities for each document
   documentIndex.documents.forEach((doc, docId) => {
     const docNgrams = doc.ngrams;
+    let matches = 0;
+    const totalPossible = Math.min(queryNgrams.length, docNgrams.size);
 
-    // Calculate n-gram similarity
-    const ngramSimilarity = calculateNgramSimilarity(queryNgrams, docNgrams);
+    queryNgrams.forEach(ngram => {
+      if (documentIndex.ngramsInvertedIndex.has(ngram)) {
+        if (documentIndex.ngramsInvertedIndex.get(ngram).has(docId)) matches++;
+      }
+    });
+    const ngramSimilarity = matches / totalPossible;
 
     if (ngramSimilarity > 0) ngramSimilarities.push([docId, ngramSimilarity]);
   });
