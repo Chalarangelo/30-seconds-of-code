@@ -11,7 +11,24 @@ dateModified: 2024-12-02
 
 I've recently come across a problem where I needed to calculate the **distance between two sets of latitude and longitude coordinates**. This is a common task in many applications, such as mapping services, location-based services, and geocoding.
 
-Luckily, the complicated math for it has already been done for us. We can simply use the [**Haversine formula**](https://en.wikipedia.org/wiki/Haversine_formula) to calculate the distance between two points on the Earth's surface given their latitude and longitude coordinates. Apart from the two points, we'll also need the **radius of the Earth** to calculate the distance, which is approximately 6,371 kilometers or 3,959 miles.
+Luckily, the complicated math for it has already been done for us. We can simply use the [**Haversine formula**](https://en.wikipedia.org/wiki/Haversine_formula) to calculate the distance between two points on the Earth's surface given their latitude and longitude coordinates.
+
+<latex-expression>
+
+<figure>
+d = 2 \times r \times \arcsin\left(\sqrt{\sin^2\left(\frac{d\phi}{2}\right) + \cos(\phi_1) \cdot \cos(\phi_2) \cdot \sin^2\left(\frac{d\lambda}{2}\right)}\right)
+</figure>
+
+Where:
+- `d` is the distance between the two points
+- `r` is the radius of the Earth
+- `φ1` and `φ2` are the latitudes of the two points in radians
+- `dφ` is the difference in latitude between the two points
+- `dλ` is the difference in longitude between the two points
+
+</latex-expression>
+
+Apart from the two points, we'll also need the **radius of the Earth** to calculate the distance, which is approximately 6,371 kilometers or 3,959 miles.
 
 > [!NOTE]
 >

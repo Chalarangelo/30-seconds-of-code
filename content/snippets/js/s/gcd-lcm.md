@@ -17,6 +17,13 @@ The [greatest common divisor](https://en.wikipedia.org/wiki/Greatest_common_divi
 
 The **Euclidean algorithm** is an efficient method for computing the GCD of **two numbers**. This, in practice, means **recursively** applying the observation that `gcd(a, b) = gcd(b, a % b)` until `b` is **zero**. When `b` is zero, we have `gcd(a, 0) = a`.
 
+<latex-expression>
+gcd(a, b) = \begin{cases}
+\text{a} & \text{if } b = 0 \\
+gcd(b, a \mod b) & \text{otherwise}
+\end{cases}
+</latex-expression>
+
 ```js
 const gcd = (a, b) => (!b ? a : gcd(b, a % b));
 
@@ -42,6 +49,10 @@ The [least common multiple](https://en.wikipedia.org/wiki/Least_common_multiple)
 ### Least common multiple of two numbers
 
 The LCM of two numbers can be calculated by using the **greatest common divisor** (GCD) formula and the fact that `lcm(x, y) = x * y / gcd(x, y)`.
+
+<latex-expression>
+lcm(x, y) = \frac{x \cdot y}{gcd(x, y)}
+</latex-expression>
 
 ```js
 const gcd = (a, b) => (!b ? a : gcd(b, a % b));

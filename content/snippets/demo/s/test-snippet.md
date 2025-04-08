@@ -407,3 +407,33 @@ class Money {
 <latex-expression>
 r = \frac{d \times \pi}{180}
 </latex-expression>
+
+<latex-expression>
+
+<figure>
+d = 2 \times r \times \arcsin\left(\sqrt{\sin^2\left(\frac{d\phi}{2}\right) + \cos(\phi_1) \cdot \cos(\phi_2) \cdot \sin^2\left(\frac{d\lambda}{2}\right)}\right)
+</figure>
+
+Where:
+- `d` is the distance between the two points
+- `r` is the radius of the Earth
+- `φ1` and `φ2` are the latitudes of the two points in radians
+- `dφ` is the difference in latitude between the two points
+- `dλ` is the difference in longitude between the two points
+
+</latex-expression>
+
+<latex-expression>
+d^2 = x^2 + y^2 \\
+x = x_2 - x_1\\
+y = y_2 - y_1\\
+d^2 = (x_2 - x_1)^2 + (y_2 - y_1)^2 \\
+d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
+</latex-expression>
+
+<latex-expression>
+gcd(a, b) = \begin{cases}
+\text{a} & \text{if } b = 0 \\
+gcd(b, a \mod b) & \text{otherwise}
+\end{cases}
+</latex-expression>

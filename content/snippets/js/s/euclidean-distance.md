@@ -12,6 +12,14 @@ dateModified: 2023-12-18
 
 The [Euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance) between two points is the **length of the line segment connecting them**. The formula for calculating it in 2D is equal to the **hypotenuse** of a right triangle, given by the [Pythagorean theorem](https://en.wikipedia.org/wiki/Pythagorean_theorem).
 
+<latex-expression>
+d^2 = x^2 + y^2 \\
+x = x_2 - x_1\\
+y = y_2 - y_1\\
+d^2 = (x_2 - x_1)^2 + (y_2 - y_1)^2 \\
+d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
+</latex-expression>
+
 ## Implementation
 
 JavaScript's `Math.hypot()` method can be used to calculate the Euclidean distance between two points in **2 dimensions**.
