@@ -1,4 +1,8 @@
-import { cleanTokenPunctuation, splitTokens } from '#src/lib/search/utils.js';
+import {
+  cleanTokenPunctuation,
+  splitTokens,
+  generateNgrams,
+} from '#src/lib/search/utils.js';
 import { stem } from '#src/lib/search/porterStemmer.js';
 
 /**
@@ -11,6 +15,34 @@ const tokenizeTokens = str => splitTokens(str).map(cleanTokenPunctuation);
  */
 const tokenizePlainText = str =>
   splitTokens(str).map(tkn => cleanTokenPunctuation(stem(tkn)));
+
+const calculateNgramSimilarity = (queryNgrams, docNgrams) => {
+  let matches = 0;
+  const totalPossible = Math.min(queryNgrams.length, docNgrams.length);
+
+  for (const qGram of queryNgrams) {
+    if (docNgrams.includes(qGram)) matches++;
+  }
+
+  return matches / totalPossible;
+};
+
+const searchForNgrams = (documentIndex, terms) => {
+  const ngramSimilarities = [];
+  const queryNgrams = generateNgrams(terms[0]);
+
+  // Calculate similarities for each document
+  documentIndex.documents.forEach((doc, docId) => {
+    const docNgrams = doc.ngrams;
+
+    // Calculate n-gram similarity
+    const ngramSimilarity = calculateNgramSimilarity(queryNgrams, docNgrams);
+
+    if (ngramSimilarity > 0) ngramSimilarities.push([docId, ngramSimilarity]);
+  });
+
+  return ngramSimilarities;
+};
 
 const searchForTerms = (documentIndex, terms, partialMatchLastTerm = false) => {
   const scores = [];
@@ -77,7 +109,7 @@ const searchForTerms = (documentIndex, terms, partialMatchLastTerm = false) => {
 
 const search =
   documentIndex =>
-  (query, limit = null) => {
+  (query, limit = null, fuzzy = 0.7) => {
     const scores = [
       ...searchForTerms(documentIndex, tokenizePlainText(query)),
       ...searchForTerms(documentIndex, tokenizeTokens(query), true),
@@ -87,8 +119,24 @@ const search =
       return acc;
     }, new Map());
 
+    let results = Array.from(scores.entries());
+
+    if (fuzzy > 0.0) {
+      const ngramSimilarities = new Map(
+        searchForNgrams(documentIndex, tokenizeTokens(query))
+      );
+
+      results = results.length
+        ? results.map(([docId, score]) => {
+            const ngramSimilarity = ngramSimilarities.get(docId) || 0;
+            const finalScore = score * (1 - fuzzy) + ngramSimilarity * fuzzy;
+            return [docId, finalScore];
+          })
+        : Array.from(ngramSimilarities.entries());
+    }
+
     // Sort documents by score
-    const results = Array.from(scores.entries())
+    results = results
       .sort((a, b) => b[1] - a[1])
       .map(([docId, score]) => ({
         id: docId,
