@@ -23,3 +23,16 @@ export const deserializeTokens = str =>
     acc.set(word, Number.parseInt(count));
     return acc;
   }, new Map());
+
+/**
+ * Creates an array of n-grams from a string.
+ * e.g. "abcde" => ["abc", "bcd", "cde"]
+ */
+export const generateNgrams = (term, n = 3) => {
+  const ngrams = [];
+
+  for (let i = 0; i < term.length - n + 1; i++)
+    ngrams.push(term.slice(i, i + n));
+
+  return ngrams;
+};
