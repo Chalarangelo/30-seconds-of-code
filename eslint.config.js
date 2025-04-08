@@ -30,7 +30,6 @@ export default [
         { avoidEscape: true, allowTemplateLiterals: true },
       ],
       semi: ['error', 'always'],
-      'semi-spacing': ['error', { before: false, after: false }],
       'no-trailing-spaces': 'error',
       'no-duplicate-imports': 'error',
       'no-useless-computed-key': 'error',
