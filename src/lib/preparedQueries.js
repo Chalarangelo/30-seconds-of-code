@@ -99,9 +99,13 @@ export default class PreparedQueries {
 
   static searchForTerm(term, { limit, fuzzy = 0.7 } = {}) {
     if (!PreparedQueries.documentIndex) PreparedQueries.prepareDocumentIndex();
-    return search(PreparedQueries.documentIndex)(term, limit, fuzzy).map(x => ({
-      id: x.id,
-      score: x.score,
-    }));
+    console.time('Search query completed in');
+    const result = search(PreparedQueries.documentIndex)(
+      term,
+      limit,
+      fuzzy
+    ).map(x => ({ id: x.id, score: x.score }));
+    console.timeEnd('Search query completed in');
+    return result;
   }
 }
