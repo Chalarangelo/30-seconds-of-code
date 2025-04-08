@@ -296,7 +296,18 @@ step-visualizer {
   }
 }
 
-code-tabs[full-width='true'] {
-  // Make the component full width, regardless of interactivity.
-  grid-column: 1 / -1;
+code-tabs {
+  &[full-width='true'] {
+    // Make the component full width, regardless of interactivity.
+    grid-column: 1 / -1;
+  }
+}
+
+latex-expression {
+  &[interactive='false'],
+  &[interactive='error'],
+  &:has(.katex-error) {
+    // Hide the component if JS doesn't load or if there is a parsing error.
+    display: none;
+  }
 }
