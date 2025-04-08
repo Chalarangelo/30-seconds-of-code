@@ -16,18 +16,30 @@ export default class DocumentIndex {
     return Array.from(this.invertedIndex.keys());
   }
 
+  get ngrams() {
+    return Array.from(this.ngramsInvertedIndex.keys());
+  }
+
   get termsByFrequency() {
     return Array.from(this.invertedIndex.entries())
       .sort((a, b) => b[1].size - a[1].size)
       .map(([term, docs]) => [term, docs.size]);
   }
 
+  get ngramsByFrequency() {
+    return Array.from(this.ngramsInvertedIndex.entries())
+      .sort((a, b) => b[1].size - a[1].size)
+      .map(([term, docs]) => [term, docs.size]);
+  }
+
   addDocument(docId, terms, data) {
-    // Generate n-grams (n = 3)
-    const ngrams = [...terms.keys()].reduce((ngrams, term) => {
-      ngrams.push(...generateNgrams(term));
-      return ngrams;
-    }, []);
+    // Generate n-grams (n = 3) and update n-grams inverted index
+    const ngrams = new Set(
+      [...terms.keys()].reduce((ngrams, term) => {
+        ngrams.push(...generateNgrams(term));
+        return ngrams;
+      }, [])
+    );
 
     // Store original document
     this.documents.set(docId, {
@@ -51,12 +63,12 @@ export default class DocumentIndex {
     // Update n-grams inverted index
     ngrams.forEach(term => {
       if (!this.ngramsInvertedIndex.has(term))
-        this.ngramsInvertedIndex.set(term, new Map());
+        this.ngramsInvertedIndex.set(term, new Set());
 
-      const docMap = this.ngramsInvertedIndex.get(term);
+      const docSet = this.ngramsInvertedIndex.get(term);
 
       // Store term frequency
-      docMap.set(docId, 1);
+      docSet.add(docId);
     });
 
     return docId;
