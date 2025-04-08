@@ -401,3 +401,9 @@ class Money {
 
 </details>
 </code-tabs>
+
+#### LaTex expressions
+
+<latex-expression>
+r = \frac{d \times \pi}{180}
+</latex-expression>

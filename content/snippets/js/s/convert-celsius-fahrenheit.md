@@ -13,6 +13,10 @@ dateModified: 2023-09-14
 
 In order to convert from Celsius to Fahrenheit, you can use the conversion formula `F = 1.8 * C + 32`.
 
+<latex-expression>
+F = 1.8 \times C + 32
+</latex-expression>
+
 ```js
 const celsiusToFahrenheit = degrees => 1.8 * degrees + 32;
 
@@ -22,6 +26,10 @@ celsiusToFahrenheit(33); // 91.4
 ## Fahrenheit to Celsius
 
 Conversely, the conversion formula from Fahrenheit to Celsius is `C = (F - 32) * 5 / 9`.
+
+<latex-expression>
+C = (F - 32) \times \frac{5}{9}
+</latex-expression>
 
 ```js
 const fahrenheitToCelsius = degrees => (degrees - 32) * 5 / 9;
