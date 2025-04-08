@@ -295,3 +295,8 @@ step-visualizer {
     grid-gap: var(--layout-row-spacing);
   }
 }
+
+code-tabs[full-width='true'] {
+  // Make the component full width, regardless of interactivity.
+  grid-column: 1 / -1;
+}
