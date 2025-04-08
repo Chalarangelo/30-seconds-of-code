@@ -15,7 +15,7 @@ Dialog components like tooltips, alerts and modals are essential for user intera
 
 For a simple **tooltip** component, you'll need to use the `useState()` hook to manage the state of the tooltip. The tooltip should be displayed when the user **hovers** over the element and hidden when the user moves the cursor away. For that purpose, you can use the `onMouseEnter` and `onMouseLeave` events.
 
-<code-tabs>
+<code-tabs full-width="true">
 
 ```jsx
 const Tooltip = ({ children, text, ...rest }) => {
@@ -84,7 +84,7 @@ The alert should be displayed when the component is rendered and hidden after a 
 
 Additionally, we need to define a `closeAlert()` function to handle the closing of the alert. This function will set the `isLeaving` state to `true`, wait for the specified **timeout**, and then set the `isShown` state to `false`.
 
-<code-tabs>
+<code-tabs full-width="true">
 
 ```jsx
 const Alert = ({ isDefaultShown = false, timeout = 250, type, message }) => {
@@ -185,7 +185,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
 However, you'll also need to use the `useEffect()` hook to handle the `keydown` event. This event will close the modal when the user presses the `Escape` key. The modal should be displayed when the `isVisible` prop is `true` and hidden when it's `false`.
 
-<code-tabs>
+<code-tabs full-width="true">
 
 ```jsx
 const Modal = ({ isVisible = false, title, content, footer, onClose }) => {

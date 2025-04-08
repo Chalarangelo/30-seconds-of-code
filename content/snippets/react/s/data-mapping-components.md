@@ -122,7 +122,7 @@ Using the value of the `isToggled` state variable, the component can **toggle** 
 
 For each key in the object, the component checks if the value is an object. If it is, it renders a nested `<TreeView>` component. Otherwise, it renders a `<p>` element with the key and value of the object.
 
-<code-tabs>
+<code-tabs full-width="true">
 
 ```jsx
 const TreeView = ({

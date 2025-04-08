@@ -12,7 +12,7 @@ Tag input fields have become a common feature in modern web applications. They a
 
 Starting with the component's props, we'll only need to store the initial `tags` array in a state variable. Then, using `Array.prototype.map()`, we'll render the list of tags. The `addTagData` method will be called when the user presses the `Enter` key, and the `removeTagData` method will be called when the user clicks the delete icon in the tag.
 
-<code-tabs>
+<code-tabs full-width="true">
 
 ```jsx
 const TagInput = ({ tags }) => {

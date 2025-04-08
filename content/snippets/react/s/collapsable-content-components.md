@@ -17,7 +17,7 @@ For a simple **collapsible content** component, you need the `useState()` hook t
 
 For **accessibility** purposes, it's a good idea to use the `aria-expanded` attribute to indicate the state of the collapsible content.
 
-<code-tabs>
+<code-tabs full-width="true">
 
 ```jsx
 const Collapse = ({ collapsed, children }) => {
@@ -74,7 +74,7 @@ In order to make the component easier to read, we'll extract the `AccordionItem`
 
 As an additional feature, we can pass a callback function to the `Accordion` component to **handle the click event** on each accordion item. We may also want to filter out any non-`AccordionItem` children.
 
-<code-tabs>
+<code-tabs full-width="true">
 
 ```jsx
 const AccordionItem = ({ label, isCollapsed, handleClick, children }) => {
@@ -149,7 +149,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
 **Tabs** are virtually identical to an accordion, but with a different visual representation. The `Tabs` component will manage the state and render the tab items. Again, we'll extract the `TabItem` component to handle each tab item.
 
-<code-tabs>
+<code-tabs full-width="true">
 
 ```jsx
 const TabItem = props => <div {...props} />;
@@ -236,7 +236,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
 Finally, a **carousel** is a type of collapsible content that automatically scrolls through items. We can use the `useEffect()` hook to update the active item index at regular **intervals**, with the help of `setTimeout()`.
 
-<code-tabs>
+<code-tabs full-width="true">
 
 ```jsx
 const Carousel = ({ carouselItems, ...rest }) => {
