@@ -9,7 +9,11 @@ class LatexExpression extends HTMLElement {
 
   connectedCallback() {
     try {
-      const tex = this.innerText;
+      const innerFigure = this.querySelector('figure');
+      const otherChildren = [...this.children].filter(
+        child => child.tagName !== 'FIGURE'
+      );
+      const tex = innerFigure?.innerText || this.innerText;
       const rendered = katex.renderToString(tex, {
         displayMode: true,
         output: 'html',
@@ -18,8 +22,18 @@ class LatexExpression extends HTMLElement {
       const figure = document.createElement('figure');
       figure.innerHTML = rendered;
       figure.setAttribute('aria-hidden', 'true');
+
+      if (otherChildren.length) {
+        const figcaption = document.createElement('figcaption');
+        otherChildren.forEach(child => {
+          figcaption.appendChild(child);
+        });
+        figure.appendChild(figcaption);
+      }
+
       this.innerHTML = '';
       this.appendChild(figure);
+
       this.setAttribute('interactive', 'true');
     } catch {
       this.setAttribute('aria-hidden', 'true');
