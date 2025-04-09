@@ -2,6 +2,7 @@ import MarkdownParser from '#src/lib/contentUtils/markdownParser/markdownParser.
 import Ranker from '#src/lib/contentUtils/ranker.js';
 import FileHandler from '#src/lib/contentUtils/fileHandler.js';
 import PrismHighlighter from '#src/lib/contentUtils/markdownParser/codeHighlighters/prism.js';
+import ShikiHighlighter from '#src/lib/contentUtils/markdownParser/codeHighlighters/shiki.js';
 import {
   grammarPath,
   rankingEnginePath,
@@ -15,14 +16,15 @@ import { extractSnippetData } from '#src/lib/contentUtils/modelWorkers/snippet.j
 import { extractCollectionData } from '#src/lib/contentUtils/modelWorkers/collection.js';
 import { extractCollectionSnippetData } from '#src/lib/contentUtils/modelWorkers/collectionSnippet.js';
 
-export const extractData = async () => {
+export const extractData = async (highlighter = 'shiki') => {
   const languages = await extractLanguageData(languageGlob);
   const grammars = await FileHandler.read(grammarPath);
   const hub = await FileHandler.read(hubPath);
   const keywordData = await FileHandler.read(rankingEnginePath);
 
-  PrismHighlighter.setup(grammars);
-  const codeHighlighter = PrismHighlighter;
+  const codeHighlighter =
+    highlighter === 'shiki' ? ShikiHighlighter : PrismHighlighter;
+  codeHighlighter.setup(grammars);
 
   MarkdownParser.setupProcessors({ languages, grammars, codeHighlighter });
   Ranker.keywordScores = keywordData;
