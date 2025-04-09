@@ -1,6 +1,4 @@
 import { visit } from 'unist-util-visit';
-import Prism from 'prismjs';
-import loadLanguages from 'prismjs/components/index.js';
 
 // Parse the language and title from the language string. Only supports
 // space separated language and title, e.g. `language [title]`.
@@ -54,11 +52,9 @@ const createAttributes = metadata => {
  *
  * @param {Object} options.grammars - The grammars to load for Prism.js.
  */
-export const highlightCode = ({ grammars }) => {
+export const highlightCode = ({ grammars, codeHighlighter }) => {
   const languages = { ...grammars };
   const extractMetadata = createMetadataExtractor(languages);
-  // Load Prism grammars
-  loadLanguages(Object.keys(languages));
 
   return async tree => {
     let promises = [];
@@ -68,25 +64,25 @@ export const highlightCode = ({ grammars }) => {
       const attributes = createAttributes(metadata);
       const { languageName } = metadata;
 
-      const promise = Promise.resolve(
-        Prism.highlight(node.value, Prism.languages[languageName], languageName)
-      ).then(highlightedCode => {
-        // Inject a `--hex-color` style into nodes with the `.hexcode.color` class.
-        // This is then used by CSS to display a color swatch next to the hex code.
-        if (languageName === 'css') {
-          highlightedCode = highlightedCode.replace(
-            /hexcode color">(#[0-9a-f]+)/g,
-            `hexcode color" style="--hex-color:$1">$1`
-          );
-        }
+      const promise = codeHighlighter
+        .highlightCode(node.value, languageName)
+        .then(highlightedCode => {
+          // Inject a `--hex-color` style into nodes with the `.hexcode.color` class.
+          // This is then used by CSS to display a color swatch next to the hex code.
+          if (languageName === 'css') {
+            highlightedCode = highlightedCode.replace(
+              /hexcode color">(#[0-9a-f]+)/g,
+              `hexcode color" style="--hex-color:$1">$1`
+            );
+          }
 
-        node.type = `html`;
-        node.value = `<pre
+          node.type = `html`;
+          node.value = `<pre
           ${Object.entries(attributes).reduce(
             (acc, [key, value]) => `${acc} ${key}="${value}"`,
             ``
           )}>${highlightedCode.trim()}</pre>`;
-      });
+        });
       promises.push(promise);
     });
     await Promise.all(promises);

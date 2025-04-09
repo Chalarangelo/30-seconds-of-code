@@ -1,6 +1,7 @@
 import MarkdownParser from '#src/lib/contentUtils/markdownParser/markdownParser.js';
 import Ranker from '#src/lib/contentUtils/ranker.js';
 import FileHandler from '#src/lib/contentUtils/fileHandler.js';
+import PrismHighlighter from '#src/lib/contentUtils/markdownParser/codeHighlighters/prism.js';
 import {
   grammarPath,
   rankingEnginePath,
@@ -20,7 +21,10 @@ export const extractData = async () => {
   const hub = await FileHandler.read(hubPath);
   const keywordData = await FileHandler.read(rankingEnginePath);
 
-  MarkdownParser.setupProcessors({ languages, grammars });
+  PrismHighlighter.setup(grammars);
+  const codeHighlighter = PrismHighlighter;
+
+  MarkdownParser.setupProcessors({ languages, grammars, codeHighlighter });
   Ranker.keywordScores = keywordData;
 
   const snippets = await extractSnippetData(snippetGlob, languages);

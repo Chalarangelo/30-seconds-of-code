@@ -25,7 +25,7 @@ export default class MarkdownParser {
   static _languageData = new Map();
   static _processors = new Map();
 
-  static setupProcessors = ({ languages, grammars }) => {
+  static setupProcessors = ({ languages, grammars, codeHighlighter }) => {
     // Language data is a Map of language objects:
     // (key => {id, long, short, name, allLanguageReferences, references})
     MarkdownParser._languageData = [...languages.values()].reduce(
@@ -76,7 +76,7 @@ export default class MarkdownParser {
       const processor = unified()
         .use(remarkParse)
         .use(remarkGfm)
-        .use(highlightCode, { grammars })
+        .use(highlightCode, { grammars, codeHighlighter })
         .use(embedCodepensFromLinks, { className: 'codepen-wrapper' })
         .use(transformArticleEmbeds)
         .use(remarkRehype, { allowDangerousHtml: true })
