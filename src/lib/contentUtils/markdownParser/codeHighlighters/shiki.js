@@ -1,12 +1,21 @@
+import fs from 'fs-extra';
 import {
   createSingletonShorthands,
   createdBundledHighlighter,
 } from '@shikijs/core';
 import { createOnigurumaEngine } from '@shikijs/engine-oniguruma';
 
-// TODO: Make my own theme
-const bundledThemes = {
-  'github-dark': () => import('@shikijs/themes/github-dark'),
+const loadBundledThemes = () => {
+  return {
+    cosmos: () => {
+      return JSON.parse(
+        fs.readFileSync(
+          './src/lib/contentUtils/markdownParser/codeHighlighters/themes/cosmos.json',
+          'utf-8'
+        )
+      );
+    },
+  };
 };
 
 const loadBundledLanguages = grammars => {
@@ -20,6 +29,7 @@ const loadBundledLanguages = grammars => {
 export default class ShikiHighlighter {
   static setup(grammars) {
     const bundledLanguages = loadBundledLanguages(grammars);
+    const bundledThemes = loadBundledThemes();
     const createHighlighter = createdBundledHighlighter({
       langs: bundledLanguages,
       themes: bundledThemes,
@@ -48,13 +58,10 @@ export default class ShikiHighlighter {
     this.bundledThemes = bundledThemes;
   }
 
-  // TODO: Make theme standard
   static async highlightCode(code, language) {
     const highlightedCode = await this.codeToHtml(code, {
       lang: language,
-      theme: 'github-dark',
-      inline: false,
-      includeExplanation: false,
+      theme: 'cosmos',
     });
 
     return highlightedCode
