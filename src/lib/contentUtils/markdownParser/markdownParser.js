@@ -15,7 +15,7 @@ import {
   embedCodepensFromLinks,
   transformArticleEmbeds,
   loadWebComponents,
-} from '#src/lib/contentUtils/markdownParser/remarkPlugins.js';
+} from '#src/lib/contentUtils/markdownParser/plugins/index.js';
 import {
   assetPath,
   componentsPublicPath,
