@@ -1,5 +1,6 @@
 import { visit } from 'unist-util-visit';
 import StringUtils from '#src/lib/stringUtils.js';
+import { toString } from 'hast-util-to-string';
 
 // Convert headings to the appropriate elements (h1 -> h2, (h5, h6) -> h4)
 // Also, add hash links to headings
