@@ -61,13 +61,13 @@ export default class DocumentIndex {
     });
 
     // Update n-grams inverted index
-    ngrams.forEach(term => {
-      if (!this.ngramsInvertedIndex.has(term))
-        this.ngramsInvertedIndex.set(term, new Set());
+    ngrams.forEach(ngram => {
+      if (!this.ngramsInvertedIndex.has(ngram))
+        this.ngramsInvertedIndex.set(ngram, new Set());
 
-      const docSet = this.ngramsInvertedIndex.get(term);
+      const docSet = this.ngramsInvertedIndex.get(ngram);
 
-      // Store term frequency
+      // Store ngram appearance
       docSet.add(docId);
     });
 
