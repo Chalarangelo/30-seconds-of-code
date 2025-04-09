@@ -7,6 +7,7 @@
   "author": "chalarangelo",
   "type": "module",
   "devDependencies": {
+    "@shikijs/colorized-brackets": "^3.2.1",
     "astro": "^5.6.0",
     "eslint": "^9.24.0",
     "eslint-config-prettier": "^10.1.1",
