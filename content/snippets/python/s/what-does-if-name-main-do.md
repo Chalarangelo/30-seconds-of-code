@@ -33,7 +33,7 @@ do_stuff()
 
 What do you think happens when you run each of these scripts? Let's see.
 
-```sh
+```shell
 $ python script1.py
 # Logs: Doing stuff
 
@@ -56,7 +56,7 @@ if __name__ == "__main__":
 
 Now, when we run `script1.py` directly, the function `do_stuff` is called once. When we import `script1.py` in `script2.py`, the function `do_stuff` is not called. So, when we call `do_stuff` in `script2.py`, it's called only once.
 
-```sh
+```shell
 $ python script1.py
 # Logs: Doing stuff
 

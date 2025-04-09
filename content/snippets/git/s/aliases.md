@@ -38,7 +38,7 @@ git config --global -e
 
 Below you can find a list of aliases I've found personally useful for increasing productivity when working with Git. Feel free to use them as they are or modify them to suit your needs.
 
-```editorconfig [~/.gitconfig]
+```properties [~/.gitconfig]
 [alias]
   co = checkout
   cob = checkout -b

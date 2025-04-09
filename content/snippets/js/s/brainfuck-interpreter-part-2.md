@@ -365,7 +365,7 @@ const ast = Parser.parse(input);
 process.stdout.write(JSON.stringify(ast, null, 2));
 ```
 
-```sh
+```shell
 $ chmod +x parser.js
 $ ./parser.js '+++++++>[-]'
 # Produces the AST
@@ -488,7 +488,7 @@ We can pass a file pointing to an **AST as input** or use some of the **options*
 - `--parse` or `-p` to parse a string as input
 - `--bf` or `-b` to read a file as input
 
-```sh
+```shell
 $ chmod +x executer.js
 $ ./executer.js -b program.bf --input 'Hello, World!'
 # Executes the program in program.bf with the input 'Hello, World!'

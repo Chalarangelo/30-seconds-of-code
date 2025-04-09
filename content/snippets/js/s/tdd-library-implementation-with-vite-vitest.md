@@ -673,7 +673,7 @@ We'll also add a `build` **script** to our `package.json` before we can bundle o
 
 Then, we can finally run the `build` script:
 
-```sh
+```shell
 npm run build
 ```
 
@@ -712,13 +712,13 @@ Finally, we can **publish our package to npm**. We'll need to specify a few thin
 
 After that, if you haven't already, you'll need to **create an account** on the [npm website](https://www.npmjs.com/). Then, you can log in from the command line:
 
-```sh
+```shell
 npm login
 ```
 
 After logging in, you can publish your package:
 
-```sh
+```shell
 npm publish
 ```
 

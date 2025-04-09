@@ -15,7 +15,7 @@ This can be especially useful if your team uses GitHub and you want to find the 
 
 While there are a few different solutions that might work under different circumstances, after trial and error and a whole lot of Googling, I found a method that works pretty well. [Adding the following alias](/git/s/aliases) to your **Git configuration** will allow you to use `git find-merge <commit>` to find the merge commit for a given commit hash.
 
-```editorconfig [~/.gitconfig]
+```properties [~/.gitconfig]
 [alias]
   find-merge = "!sh -c 'commit=$0 && branch=${1:-HEAD} && (git rev-list $commit..$branch --ancestry-path | cat -n; git rev-list $commit..$branch --first-parent | cat -n) | sort -k2 -s | uniq -f1 -d | sort -n | tail -1 | cut -f2'"
 ```
