@@ -10,9 +10,9 @@ import FileWatcher from '#src/lib/contentUtils/fileWatcher.js';
 import { outputPath } from '#src/lib/contentUtils/config.js';
 
 export default class ContentUtils {
-  static async prepareContent() {
+  static async prepareContent({ fastHighlight = false } = {}) {
     const { collections, snippets, languages, collectionSnippets } =
-      await extractData();
+      await extractData(fastHighlight ? 'prism' : 'shiki');
 
     const data = {
       collections: exportCollectionData(collections),

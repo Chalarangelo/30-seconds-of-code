@@ -29,7 +29,9 @@ if (args.length === 0 || args[0] === 'help') {
   // 0. Run ContentUtils to prepare the assets
   await ContentUtils.prepareAssets({ force: false });
   // 1. Run ContentUtils to prepare the .content/content.json file
-  await ContentUtils.prepareContent();
+  //    Note: fastHighlight is set to false, as we want to use the full Shiki
+  //    highlighter for the full build.
+  await ContentUtils.prepareContent({ fastHighlight: false });
   // 2. Load modules
   const modules = Loader.loadModules();
   const {
@@ -60,8 +62,14 @@ if (args.length === 0 || args[0] === 'help') {
 } else if (args[0] === 'dev') {
   // 0. Set NODE_ENV to development
   process.env.NODE_ENV = 'development';
+  // Read the --fast-highlight flag from the command line arguments.
+  // Note: The --fast-highlight flag is used to speed up the preparation
+  // of the content by using the Prism highlighter instead of Shiki.
+  // This is useful for development, as it speeds up the preparation
+  // of the content significantly and allows for hot reloading.
+  const fastHighlight = args[1] === '--fast-highlight';
   // 1. Run ContentUtils to prepare the .content/content.json file
-  await ContentUtils.prepareContent();
+  await ContentUtils.prepareContent({ fastHighlight });
   // 2. Load modules
   const modules = Loader.loadModules();
   const { AstroContent, SearchIndex, TimestampDump, ContentComponents } =
@@ -77,7 +85,14 @@ if (args.length === 0 || args[0] === 'help') {
   // 7. Copy scripts
   ContentComponents.prepare();
 } else if (args[0] === 'watch') {
-  ContentUtils.watchContent(() => exec('bin/prepare dev'));
+  // Use the --fast-highlight flag to determine if we should use the fast
+  // highlighter or not. This is useful if you want to run watch mode
+  // with the fast higlighter disabled.
+  const fastHighlight = args[1] === '--fast-highlight';
+  if (!fastHighlight)
+    console.log('Watch mode started with fast highlighting disabled.');
+  const command = `bin/prepare dev${fastHighlight ? ' --fast-highlight' : ''}`;
+  ContentUtils.watchContent(() => exec(command));
 } else if (args[0] === 'content') {
   ContentUtils.prepareContent();
 } else if (args[0] === 'assets') {

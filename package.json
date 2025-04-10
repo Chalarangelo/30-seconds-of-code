@@ -41,16 +41,18 @@
     ]
   },
   "scripts": {
-    "predev": "bin/prepare dev",
+    "predev": "bin/prepare dev --fast-highlight",
     "dev": "astro dev --port 8000",
+    "watch": "npm run dev & bin/prepare watch --fast-highlight",
+    "prestart": "bin/prepare dev",
     "start": "astro dev --port 8000",
+    "observe": "npm run start & bin/prepare watch",
     "prebuild": "bin/prepare full",
     "build": "astro build",
     "preview": "astro preview --port 9000",
-    "test": "vitest",
     "create": "bin/prepare create",
     "console": "bin/console",
-    "watch": "npm run dev & bin/prepare watch"
+    "test": "vitest"
   },
   "license": "MIT",
   "repository": {
