@@ -89,6 +89,16 @@ This is a code block without a language. It doesn't appear very often, yet it's 
 Let's also ensure lines wrap on their, as needed. Might come in handy!
 ```
 
+### CSS code with swatches
+
+```css
+.my-element {
+  color: #ff0000;
+  boder: 1px solid #00ff00;
+  background-color: linear-gradient(to right, #0000ff 0%, #00ffff 50%);
+}
+```
+
 ## Other elements
 
 There's a few more elements and some cases we should cover just to be safe.
