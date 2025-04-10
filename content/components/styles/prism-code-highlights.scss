@@ -1,3 +1,16 @@
+pre {
+  &::after {
+    content: 'Preview';
+    position: absolute;
+    display: block;
+    top: var(--spacing-8);
+    right: var(--layout-bleed-width);
+    font-family: 'Inter', Helvetica, sans-serif;
+    font-size: var(--font-xs);
+    font-weight: var(--font-weight-strong);
+  }
+}
+
 // General-purpose code highlighting styles.
 .token {
   &:is(.comment, .prolog, .cdata) {
