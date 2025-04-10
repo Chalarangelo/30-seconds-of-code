@@ -3,8 +3,10 @@ import {
   createSingletonShorthands,
   createdBundledHighlighter,
 } from '@shikijs/core';
-import { transformerColorizedBrackets } from '@shikijs/colorized-brackets';
 import { createOnigurumaEngine } from '@shikijs/engine-oniguruma';
+
+import { transformerColorizedBrackets } from '@shikijs/colorized-brackets';
+import transformerHighlightColors from './transformers/highlightColors.js';
 
 const loadBundledThemes = () => {
   return {
@@ -64,6 +66,7 @@ export default class ShikiHighlighter {
       lang: language,
       theme: 'cosmos',
       transformers: [
+        transformerHighlightColors(),
         transformerColorizedBrackets({
           themes: {
             cosmos: [
