@@ -67,15 +67,6 @@ export const highlightCode = ({ grammars, codeHighlighter }) => {
       const promise = codeHighlighter
         .highlightCode(node.value, languageName)
         .then(highlightedCode => {
-          // Inject a `--hex-color` style into nodes with the `.hexcode.color` class.
-          // This is then used by CSS to display a color swatch next to the hex code.
-          if (languageName === 'css') {
-            highlightedCode = highlightedCode.replace(
-              /hexcode color">(#[0-9a-f]+)/g,
-              `hexcode color" style="--hex-color:$1">$1`
-            );
-          }
-
           node.type = `html`;
           node.value = `<pre
           ${Object.entries(attributes).reduce(
