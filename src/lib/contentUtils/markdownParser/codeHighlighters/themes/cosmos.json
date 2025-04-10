@@ -1,7 +1,7 @@
 {
   "colors": {
-    "editor.background": "#24292e",
-    "editor.foreground": "#e1e4e8"
+    "editor.background": "var(--color-code-background)",
+    "editor.foreground": "var(--color-code-highlight-white)"
   },
   "displayName": "Cosmos",
   "name": "cosmos",
@@ -14,7 +14,7 @@
         "string.comment"
       ],
       "settings": {
-        "foreground": "#6a737d"
+        "foreground": "var(--color-code-highlight-gray)"
       }
     },
     {
@@ -26,7 +26,7 @@
         "variable.language"
       ],
       "settings": {
-        "foreground": "#79b8ff"
+        "foreground": "var(--color-code-highlight-blue)"
       }
     },
     {
@@ -35,25 +35,25 @@
         "entity.name"
       ],
       "settings": {
-        "foreground": "#b392f0"
+        "foreground": "var(--color-code-highlight-purple)"
       }
     },
     {
       "scope": "variable.parameter.function",
       "settings": {
-        "foreground": "#e1e4e8"
+        "foreground": "var(--color-code-highlight-white)"
       }
     },
     {
       "scope": "entity.name.tag",
       "settings": {
-        "foreground": "#85e89d"
+        "foreground": "var(--color-code-highlight-green)"
       }
     },
     {
       "scope": "keyword",
       "settings": {
-        "foreground": "#f97583"
+        "foreground": "var(--color-code-highlight-red)"
       }
     },
     {
@@ -62,7 +62,7 @@
         "storage.type"
       ],
       "settings": {
-        "foreground": "#f97583"
+        "foreground": "var(--color-code-highlight-red)"
       }
     },
     {
@@ -72,7 +72,7 @@
         "storage.type.java"
       ],
       "settings": {
-        "foreground": "#e1e4e8"
+        "foreground": "var(--color-code-highlight-white)"
       }
     },
     {
@@ -82,80 +82,80 @@
         "string punctuation.section.embedded source"
       ],
       "settings": {
-        "foreground": "#9ecbff"
+        "foreground": "var(--color-code-highlight-indigo)"
       }
     },
     {
       "scope": "support",
       "settings": {
-        "foreground": "#79b8ff"
+        "foreground": "var(--color-code-highlight-blue)"
       }
     },
     {
       "scope": "meta.property-name",
       "settings": {
-        "foreground": "#79b8ff"
+        "foreground": "var(--color-code-highlight-blue)"
       }
     },
     {
       "scope": "variable",
       "settings": {
-        "foreground": "#ffab70"
+        "foreground": "var(--color-code-highlight-brown)"
       }
     },
     {
       "scope": "variable.other",
       "settings": {
-        "foreground": "#e1e4e8"
+        "foreground": "var(--color-code-highlight-white)"
       }
     },
     {
       "scope": "invalid.broken",
       "settings": {
         "fontStyle": "italic",
-        "foreground": "#fdaeb7"
+        "foreground": "var(--color-code-highlight-orange)"
       }
     },
     {
       "scope": "invalid.deprecated",
       "settings": {
         "fontStyle": "italic",
-        "foreground": "#fdaeb7"
+        "foreground": "var(--color-code-highlight-orange)"
       }
     },
     {
       "scope": "invalid.illegal",
       "settings": {
         "fontStyle": "italic",
-        "foreground": "#fdaeb7"
+        "foreground": "var(--color-code-highlight-orange)"
       }
     },
     {
       "scope": "invalid.unimplemented",
       "settings": {
         "fontStyle": "italic",
-        "foreground": "#fdaeb7"
+        "foreground": "var(--color-code-highlight-orange)"
       }
     },
     {
       "scope": "carriage-return",
       "settings": {
-        "background": "#f97583",
+        "background": "var(--color-code-highlight-red)",
         "content": "^M",
         "fontStyle": "italic underline",
-        "foreground": "#24292e"
+        "foreground": "var(--color-code-background)"
       }
     },
     {
       "scope": "message.error",
       "settings": {
-        "foreground": "#fdaeb7"
+        "foreground": "var(--color-code-highlight-orange)"
       }
     },
     {
       "scope": "string variable",
       "settings": {
-        "foreground": "#79b8ff"
+        "foreground": "var(--color-code-highlight-blue)"
       }
     },
     {
@@ -164,7 +164,7 @@
         "string.regexp"
       ],
       "settings": {
-        "foreground": "#dbedff"
+        "foreground": "var(--color-code-highlight-indigo)"
       }
     },
     {
@@ -175,38 +175,38 @@
         "string.regexp string.regexp.arbitrary-repitition"
       ],
       "settings": {
-        "foreground": "#dbedff"
+        "foreground": "var(--color-code-highlight-indigo)"
       }
     },
     {
       "scope": "string.regexp constant.character.escape",
       "settings": {
         "fontStyle": "bold",
-        "foreground": "#85e89d"
+        "foreground": "var(--color-code-highlight-green)"
       }
     },
     {
       "scope": "support.constant",
       "settings": {
-        "foreground": "#79b8ff"
+        "foreground": "var(--color-code-highlight-blue)"
       }
     },
     {
       "scope": "support.variable",
       "settings": {
-        "foreground": "#79b8ff"
+        "foreground": "var(--color-code-highlight-blue)"
       }
     },
     {
       "scope": "meta.module-reference",
       "settings": {
-        "foreground": "#79b8ff"
+        "foreground": "var(--color-code-highlight-blue)"
       }
     },
     {
       "scope": "punctuation.definition.list.begin.markdown",
       "settings": {
-        "foreground": "#ffab70"
+        "foreground": "var(--color-code-highlight-brown)"
       }
     },
     {
@@ -216,27 +216,27 @@
       ],
       "settings": {
         "fontStyle": "bold",
-        "foreground": "#79b8ff"
+        "foreground": "var(--color-code-highlight-blue)"
       }
     },
     {
       "scope": "markup.quote",
       "settings": {
-        "foreground": "#85e89d"
+        "foreground": "var(--color-code-highlight-green)"
       }
     },
     {
       "scope": "markup.italic",
       "settings": {
         "fontStyle": "italic",
-        "foreground": "#e1e4e8"
+        "foreground": "var(--color-code-highlight-white)"
       }
     },
     {
       "scope": "markup.bold",
       "settings": {
         "fontStyle": "bold",
-        "foreground": "#e1e4e8"
+        "foreground": "var(--color-code-highlight-white)"
       }
     },
     {
@@ -258,7 +258,7 @@
     {
       "scope": "markup.inline.raw",
       "settings": {
-        "foreground": "#79b8ff"
+        "foreground": "var(--color-code-highlight-blue)"
       }
     },
     {
@@ -268,8 +268,7 @@
         "punctuation.definition.deleted"
       ],
       "settings": {
-        "background": "#86181d",
-        "foreground": "#fdaeb7"
+        "foreground": "var(--color-code-highlight-orange)"
       }
     },
     {
@@ -279,8 +278,7 @@
         "punctuation.definition.inserted"
       ],
       "settings": {
-        "background": "#144620",
-        "foreground": "#85e89d"
+        "foreground": "var(--color-code-highlight-green)"
       }
     },
     {
@@ -289,8 +287,7 @@
         "punctuation.definition.changed"
       ],
       "settings": {
-        "background": "#c24e00",
-        "foreground": "#ffab70"
+        "foreground": "var(--color-code-highlight-brown)"
       }
     },
     {
@@ -299,34 +296,34 @@
         "markup.untracked"
       ],
       "settings": {
-        "background": "#79b8ff",
-        "foreground": "#2f363d"
+        "background": "var(--color-code-highlight-blue)",
+        "foreground": "var(--color-code-background-light)"
       }
     },
     {
       "scope": "meta.diff.range",
       "settings": {
         "fontStyle": "bold",
-        "foreground": "#b392f0"
+        "foreground": "var(--color-code-highlight-purple)"
       }
     },
     {
       "scope": "meta.diff.header",
       "settings": {
-        "foreground": "#79b8ff"
+        "foreground": "var(--color-code-highlight-blue)"
       }
     },
     {
       "scope": "meta.separator",
       "settings": {
         "fontStyle": "bold",
-        "foreground": "#79b8ff"
+        "foreground": "var(--color-code-highlight-blue)"
       }
     },
     {
       "scope": "meta.output",
       "settings": {
-        "foreground": "#79b8ff"
+        "foreground": "var(--color-code-highlight-blue)"
       }
     },
     {
@@ -339,13 +336,13 @@
         "brackethighlighter.quote"
       ],
       "settings": {
-        "foreground": "#d1d5da"
+        "foreground": "var(--color-code-highlight-white)"
       }
     },
     {
       "scope": "brackethighlighter.unmatched",
       "settings": {
-        "foreground": "#fdaeb7"
+        "foreground": "var(--color-code-highlight-orange)"
       }
     },
     {
@@ -355,7 +352,7 @@
       ],
       "settings": {
         "fontStyle": "underline",
-        "foreground": "#dbedff"
+        "foreground": "var(--color-code-highlight-indigo)"
       }
     }
   ],
