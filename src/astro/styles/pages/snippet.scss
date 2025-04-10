@@ -119,7 +119,7 @@
     color: var(--color-code-highlight-brown);
   }
 
-  .token.hexcode.color[style*='--hex-color'] {
+  [style*='--hex-color'] {
     // Select hex color tokens and display a color swatch before them.
     &:before {
       display: inline-block;
