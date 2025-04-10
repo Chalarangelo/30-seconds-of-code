@@ -24,8 +24,12 @@ import {
 export default class MarkdownParser {
   static _languageData = new Map();
   static _processors = new Map();
+  static _codeHighlighter = null;
 
   static setupProcessors = ({ languages, grammars, codeHighlighter }) => {
+    // Set the code highlighter
+    MarkdownParser._codeHighlighter = codeHighlighter.name;
+
     // Language data is a Map of language objects:
     // (key => {id, long, short, name, allLanguageReferences, references})
     MarkdownParser._languageData = [...languages.values()].reduce(
@@ -104,8 +108,13 @@ export default class MarkdownParser {
   static parse = (text, languageShort) => {
     if (!text.trim()) return null;
 
-    return MarkdownParser.processMarkdown(text, languageShort).then(html =>
-      String(html)
-    );
+    return MarkdownParser.processMarkdown(text, languageShort)
+      .then(html => String(html))
+      .then(html => {
+        if (MarkdownParser._codeHighlighter === 'prism') {
+          html += `<script type="module" src="/${componentsPublicPath}scripts/prism-code-highlights.mjs"></script>`;
+        }
+        return html;
+      });
   };
 }

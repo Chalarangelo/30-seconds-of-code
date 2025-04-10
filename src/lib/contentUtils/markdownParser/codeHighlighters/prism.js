@@ -6,6 +6,10 @@ export default class PrismHighlighter {
     loadLanguages(Object.keys(grammars));
   }
 
+  static get name() {
+    return 'prism';
+  }
+
   static highlightCode(code, language) {
     const grammar = Prism.languages[language];
     return Promise.resolve(Prism.highlight(code, grammar, language));

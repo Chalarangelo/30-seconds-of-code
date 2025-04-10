@@ -61,6 +61,10 @@ export default class ShikiHighlighter {
     this.bundledThemes = bundledThemes;
   }
 
+  static get name() {
+    return 'shiki';
+  }
+
   static async highlightCode(code, language) {
     const highlightedCode = await this.codeToHtml(code, {
       lang: language,
