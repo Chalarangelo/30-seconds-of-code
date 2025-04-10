@@ -16,6 +16,68 @@
   // to define an even higher contrast palette for code blocks.
 }
 
+[data-code-language] {
+  // Apply the white color for highlighted blocks.
+  color: var(--color-code-highlight-white);
+}
+
+// CSS overrides.
+.language-css {
+  [style*='--hex-color'] {
+    // Select hex color tokens and display a color swatch before them.
+    &:before {
+      display: inline-block;
+      content: '';
+      // Set the size of the swatch.
+      height: var(--font-xs);
+      width: var(--font-xs);
+      // Create a hairline border around the swatch.
+      border-radius: var(--border-radius-medium);
+      border: var(--border-width-hairline) solid var(--color-border-light);
+      // Use the color value from the token to fill the swatch.
+      background-color: var(--hex-color);
+      // Position the swatch to the left of the token and align it vertically.
+      line-height: 0;
+      transform: translate(-2px, 1px);
+    }
+  }
+}
+
+// Special styles for web components are loaded by the web components. However,
+// for non-interactive components (e.g. disabled JS), we need some fallback
+// styles, as the web components themselves can't import the necessary style
+// modules (these load via JS). Web components have an `interactive` attribute
+// that is set to "false" when the component is not interactive. This can be
+// used to select the non-interactive version of the component.
+step-visualizer {
+  // Make the component full width, regardless of interactivity.
+  grid-column: 1 / -1;
+
+  &[interactive='false'] {
+    // Give some gap to the elements, if the component is not interactive.
+    display: grid;
+    grid-gap: var(--layout-row-spacing);
+  }
+}
+
+code-tabs {
+  &[full-width='true'] {
+    // Make the component full width, regardless of interactivity.
+    grid-column: 1 / -1;
+  }
+}
+
+latex-expression {
+  &[interactive='false'],
+  &[interactive='error'],
+  &:has(.katex-error) {
+    // Hide the component if JS doesn't load or if there is a parsing error.
+    display: none;
+  }
+}
+
+// Start of PrismJS themes (only for development builds)!
+
 // General-purpose code highlighting styles.
 .token {
   &:is(.comment, .prolog, .cdata) {
@@ -54,11 +116,6 @@
   // Note: Styles for .token.bold and .token.italic are not stylized to be bold or
   // italic respectively. This is a deliberate choice to avoid some uncontrollable
   // defaults applied by the highlighter (PrismJS).
-}
-
-[data-code-language] {
-  // Apply the white color for highlighted blocks.
-  color: var(--color-code-highlight-white);
 }
 
 // HTML overrides.
@@ -117,25 +174,6 @@
 
   .token.variable {
     color: var(--color-code-highlight-brown);
-  }
-
-  [style*='--hex-color'] {
-    // Select hex color tokens and display a color swatch before them.
-    &:before {
-      display: inline-block;
-      content: '';
-      // Set the size of the swatch.
-      height: var(--font-xs);
-      width: var(--font-xs);
-      // Create a hairline border around the swatch.
-      border-radius: var(--border-radius-medium);
-      border: var(--border-width-hairline) solid var(--color-border-light);
-      // Use the color value from the token to fill the swatch.
-      background-color: var(--hex-color);
-      // Position the swatch to the left of the token and align it vertically.
-      line-height: 0;
-      transform: translate(-2px, 1px);
-    }
   }
 }
 
@@ -277,38 +315,5 @@
 
   .token.inserted {
     color: var(--color-code-highlight-green);
-  }
-}
-
-// Special styles for web components are loaded by the web components. However,
-// for non-interactive components (e.g. disabled JS), we need some fallback
-// styles, as the web components themselves can't import the necessary style
-// modules (these load via JS). Web components have an `interactive` attribute
-// that is set to "false" when the component is not interactive. This can be
-// used to select the non-interactive version of the component.
-step-visualizer {
-  // Make the component full width, regardless of interactivity.
-  grid-column: 1 / -1;
-
-  &[interactive='false'] {
-    // Give some gap to the elements, if the component is not interactive.
-    display: grid;
-    grid-gap: var(--layout-row-spacing);
-  }
-}
-
-code-tabs {
-  &[full-width='true'] {
-    // Make the component full width, regardless of interactivity.
-    grid-column: 1 / -1;
-  }
-}
-
-latex-expression {
-  &[interactive='false'],
-  &[interactive='error'],
-  &:has(.katex-error) {
-    // Hide the component if JS doesn't load or if there is a parsing error.
-    display: none;
   }
 }
