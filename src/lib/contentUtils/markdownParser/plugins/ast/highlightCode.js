@@ -48,9 +48,10 @@ const createAttributes = metadata => {
 };
 
 /**
- * Highlight code blocks using Prism.js.
+ * Highlight code blocks using Prism, or Shiki.
  *
- * @param {Object} options.grammars - The grammars to load for Prism.js.
+ * @param {Object} options.grammars - The grammars to load.
+ * @param {Object} options.codeHighlighter - The code highlighter to use.
  */
 export const highlightCode = ({ grammars, codeHighlighter }) => {
   const languages = { ...grammars };
