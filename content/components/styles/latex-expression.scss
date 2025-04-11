@@ -1,4 +1,12 @@
 latex-expression[interactive='true'] {
+  // Hide overflow.
+  overflow: hidden;
+
+  .katex-display {
+    // Make the component horizontally scrollable, as to not affect layout.
+    overflow: auto hidden;
+  }
+
   .katex {
     // Increase font size
     font-size: var(--font-lg);
