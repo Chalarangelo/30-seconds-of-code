@@ -16,8 +16,8 @@
   // to define an even higher contrast palette for code blocks.
 }
 
-[data-code-language] {
-  // Apply the white color for highlighted blocks.
+pre:has(> code) {
+  // Apply the white color for code blocks.
   color: var(--color-code-highlight-white);
 }
 

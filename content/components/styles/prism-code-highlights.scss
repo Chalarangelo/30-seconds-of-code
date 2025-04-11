@@ -1,4 +1,4 @@
-pre {
+pre[data-code-preview='true'] {
   &::after {
     content: 'Preview';
     position: absolute;

@@ -72,6 +72,15 @@ pre {
   &::-webkit-scrollbar {
     display: none;
   }
+
+  > code {
+    // Reset inherited styles.
+    padding: 0;
+    border-radius: 0;
+    line-height: inherit;
+    // Display as a block element to fill the parent element.
+    display: block;
+  }
 }
 
 pre[data-code-language],

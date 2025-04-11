@@ -25,26 +25,48 @@ const createMetadataExtractor = languages => node => {
  * Creates attributes for the code block.
  *
  * @param {Object} metadata - The metadata object.
+ * @param {Object} codeHighlighter - The code highlighter to use.
  * @returns {Object} - An object containing the HTML element's attributes.
  */
-const createAttributes = metadata => {
+const createAttributes = (metadata, codeHighlighter) => {
   const { languageName, title, languageStringLiteral } = metadata;
 
-  // Note: While something classless, such as
-  // `[data-code-grammar=languageName]` whould be nicer to look at, Prism
-  // uses the same language-X classes to target nested styles. By using
-  // a class for this plugin, consistence and compliance are ensured.
-  const attributes = {
+  // Note: While something classless, such as `[data-code-grammar=languageName]`
+  // would be nicer to look at, Prism uses the same language-X classes to target
+  // nested styles. This is also the HTML5 spec suggestion for higlighting code.
+  // By using a class for this plugin, consistence and compliance are ensured.
+  const codeAttributes = {
     class: `language-${languageName} notranslate`,
     translate: `no`,
   };
+  const preAttributes = {};
 
   if (languageStringLiteral)
-    attributes[`data-code-language`] = languageStringLiteral;
+    preAttributes[`data-code-language`] = languageStringLiteral;
 
-  if (title) attributes[`data-code-title`] = title;
+  if (title) preAttributes[`data-code-title`] = title;
 
-  return attributes;
+  if (codeHighlighter.name === 'prism')
+    preAttributes[`data-code-preview`] = true;
+
+  return { preAttributes, codeAttributes };
+};
+
+/**
+ * Wraps the highlighted code in a `pre` and `code` tag, which seems to be the
+ * semantically appropriate markup for this.
+ * @param {string} code - The highlighted code.
+ * @param {Object} attributes - Attributes produced by `createAttributes`.
+ * @returns {string} - The wrapped code (HTML).
+ */
+const wrapHighlightedCode = (code, { preAttributes, codeAttributes }) => {
+  const preAttributesString = Object.entries(preAttributes)
+    .map(([key, value]) => `${key}="${value}"`)
+    .join(' ');
+  const codeAttributesString = Object.entries(codeAttributes)
+    .map(([key, value]) => `${key}="${value}"`)
+    .join(' ');
+  return `<pre ${preAttributesString}><code ${codeAttributesString}>${code}</code></pre>`;
 };
 
 /**
@@ -62,18 +84,14 @@ export const highlightCode = ({ grammars, codeHighlighter }) => {
 
     visit(tree, `code`, node => {
       const metadata = extractMetadata(node);
-      const attributes = createAttributes(metadata);
+      const attributes = createAttributes(metadata, codeHighlighter);
       const { languageName } = metadata;
 
       const promise = codeHighlighter
         .highlightCode(node.value, languageName)
         .then(highlightedCode => {
           node.type = `html`;
-          node.value = `<pre
-          ${Object.entries(attributes).reduce(
-            (acc, [key, value]) => `${acc} ${key}="${value}"`,
-            ``
-          )}>${highlightedCode.trim()}</pre>`;
+          node.value = wrapHighlightedCode(highlightedCode, attributes);
         });
       promises.push(promise);
     });
