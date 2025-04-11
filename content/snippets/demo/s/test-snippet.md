@@ -81,12 +81,25 @@ if (element.innerText.match(/some text/gi)) {
 }
 ```
 
+### Very long token
+
+```js
+// This is some long code that can't wrap on mobile
+const thisIsAnExtremelyLongVariableNameJustForTestingIHopeINeverDoThisInRealLifeBecauseItIsTerrible = 'this is a test';
+```
+
 ### Single code block, without a language
 
 ```
 This is a code block without a language. It doesn't appear very often, yet it's important to make sure it looks good.
 
 Let's also ensure lines wrap on their, as needed. Might come in handy!
+```
+
+#### No language, yes title
+
+```text [No language]
+No languge here
 ```
 
 ### CSS code with swatches
