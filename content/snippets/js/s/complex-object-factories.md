@@ -63,7 +63,7 @@ _But what will the registry hold?_ I hear you asking. If we look to our models, 
 
 Finishing up the setup, we'll also need to pass the **model** to the factory, so it knows what kind of object it's supposed to create. Putting everything together, we arrive at our first draft of the `prepare` static method.
 
-```js [src/core/factory.js]
+```js title="src/core/factory.js"
 export default class Factory {
   static factoryMap = new Map();
 
@@ -89,7 +89,7 @@ export default class Factory {
 
 Given our setup, we can create factories for our models. They won't do much yet, but let's get them set up anyway.
 
-```js [spec/factories/authorFactory.js]
+```js title="spec/factories/authorFactory.js"
 import Factory from '#src/core/factory.js';
 import Author from '#src/models/author.js';
 
@@ -107,7 +107,7 @@ export default class AuthorFactory extends Factory {
 }
 ```
 
-```js [spec/factories/postFactory.js]
+```js title="spec/factories/postFactory.js"
 import Factory from '#src/core/factory.js';
 import Post from '#src/models/post.js';
 
@@ -139,7 +139,7 @@ Notice how we're using the `prepare` method to set up our factories. We're passi
 
 Now that we have our factories set up, we can start building objects with them. We'll add a static `build` method to our `Factory` class that will take any number of traits and apply them to the base data.
 
-```js [src/core/factory.js]
+```js title="src/core/factory.js"
 export default class Factory {
   // ...
 
@@ -180,7 +180,7 @@ Our traits are nice and all, but it's inefficient to have to define a trait for 
 
 To solve this, we can allow the `build` method to accept **objects and functions**. Given an object, the method will merge it with the base data. Given a function, it will call the function with the base data and return the result.
 
-```js [src/core/factory.js]
+```js title="src/core/factory.js"
 export default class Factory {
   // ...
 
@@ -238,7 +238,7 @@ In some cases, we might want to **clear out objects**, to make sure they don't i
 
 We can add two new methods, `clear` and `clearAll`, to our `Factory` class to handle this. These methods will simply access the **static variables** (`instances`, `indexedInstances` and `getterCache`) of the `Model` class and reset them.
 
-```js [src/core/factory.js]
+```js title="src/core/factory.js"
 import Model from '#src/core/model.js';
 
 export default class Factory {
@@ -273,7 +273,7 @@ As you're well aware by this point, convenience methods are a staple of my codin
 
 This requires a little bit of setup first. We'll have to add a `modelMap` to our `Factory` class, which will allow us to look up the factory for a given model. And, instead of having a static `build` method on the Factory class, we'll make sure to define it per factory subclass.
 
-```js [src/core/factory.js]
+```js title="src/core/factory.js"
 export default class Factory {
   static modelMap = new Map();
 
@@ -311,7 +311,7 @@ So far, we've ended up exactly where we were before. Only difference is that we'
 
 Let's go ahead and add our convenience methods now. We'll add a `build` method to the `Factory` class that will look up the appropriate factory for the model and call the `build` method on it. And, while we're at it, let's add a `buildArray` method that will allow us to create an array of objects.
 
-```js [src/core/factory.js]
+```js title="src/core/factory.js"
 export default class Factory {
   // ...
 
@@ -353,7 +353,7 @@ After trying a few different approaches, I've settled on hiding the complexity b
 
 _What sort of something should it return?_ is the million dollar question. I've landed yet again on using the `Symbol` built-in object. This is because `Symbol` is **unique and immutable**, and it can be used as a key in an object. This allows us to return an object with a unique characteristic that we can then easily look up in the `prepare` method.
 
-```js [src/core/factory.js]
+```js title="src/core/factory.js"
 const sequenceSymbol = Symbol('sequence');
 
 // ...
@@ -363,7 +363,7 @@ Notice how we keep the `Symbol` outside of the class and we **don't expose it** 
 
 Let's go ahead and define the `sequence` method on our factory subclass now.
 
-```js [src/core/factory.js]
+```js title="src/core/factory.js"
 // ...
 
 const isSequence = value =>
@@ -388,7 +388,7 @@ A simple **closure** does the trick here. We'll allow the caller to pass a funct
 
 Finally, we can update the `prepare` method to look for sequences in the base data and apply them to the object.
 
-```js [src/core/factory.js]
+```js title="src/core/factory.js"
 export default class Factory {
   // ...
 
@@ -442,7 +442,7 @@ In order to make this work, we'll have to build a new base from the `base`. Howe
 
 Finally, we can go ahead and use our sequences in our factories. Let's update our `PostFactory` to include a sequence for the `id`. While we're at it, we can also add a sequence for the `title` field, too. We'll also update `AuthorFactory` to include a sequence for the `id`, too.
 
-```js [spec/factories/postFactory.js]
+```js title="spec/factories/postFactory.js"
 import Factory from '#src/core/factory.js';
 import Post from '#src/models/post.js';
 
@@ -471,7 +471,7 @@ export default class PostFactory extends Factory {
 }
 ```
 
-```js [spec/factories/authorFactory.js]
+```js title="spec/factories/authorFactory.js"
 import Factory from '#src/core/factory.js';
 import Author from '#src/models/author.js';
 
@@ -526,7 +526,7 @@ You can also [browse through the Code Reference on GitHub](https://github.com/Ch
 <summary>View the complete implementation</summary>
 
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 import RecordSet from '#src/core/recordSet.js';
 
 export default class Model {
@@ -600,7 +600,7 @@ export default class Model {
 }
 ```
 
-```js [src/core/recordSet.js]
+```js title="src/core/recordSet.js"
 export default class RecordSet extends Array {
   where(query) {
     return RecordSet.from(
@@ -648,7 +648,7 @@ export default class RecordSet extends Array {
 }
 ```
 
-```js [src/core/serializer.js]
+```js title="src/core/serializer.js"
 export default class Serializer {
   static prepare(serializer, serializableAttributes) {
     serializer.serializableAttributes = [];
@@ -700,7 +700,7 @@ export default class Serializer {
 }
 ```
 
-```js [src/core/factory.js]
+```js title="src/core/factory.js"
 import Model from '#src/core/model.js';
 
 const sequenceSymbol = Symbol('sequence');
@@ -777,7 +777,7 @@ export default class Factory {
 }
 ```
 
-```js [src/models/post.js]
+```js title="src/models/post.js"
 import Model from '#src/core/model.js';
 import Author from '#src/models/author.js';
 
@@ -814,7 +814,7 @@ export default class Post extends Model {
 }
 ```
 
-```js [src/models/author.js]
+```js title="src/models/author.js"
 import Model from '#src/core/model.js';
 import Post from '#src/models/post.js';
 
@@ -842,7 +842,7 @@ export default class Author extends Model {
 }
 ```
 
-```js [src/serializers/postSerializer.js]
+```js title="src/serializers/postSerializer.js"
 import Serializer from '#src/core/serializer.js';
 
 export default class PostSerializer extends Serializer {
@@ -870,7 +870,7 @@ export default class PostSerializer extends Serializer {
 }
 ```
 
-```js [src/serializers/postPreviewSerializer.js]
+```js title="src/serializers/postPreviewSerializer.js"
 import Serializer from '#src/core/serializer.js';
 
 export default class PostPreviewSerializer extends Serializer {
@@ -892,7 +892,7 @@ export default class PostPreviewSerializer extends Serializer {
 }
 ```
 
-```js [spec/factories/authorFactory.js]
+```js title="spec/factories/authorFactory.js"
 import Factory from '#src/core/factory.js';
 import Author from '#src/models/author.js';
 
@@ -912,7 +912,7 @@ export default class AuthorFactory extends Factory {
 }
 ```
 
-```js [spec/factories/postFactory.js]
+```js title="spec/factories/postFactory.js"
 import Factory from '#src/core/factory.js';
 import Post from '#src/models/post.js';
 

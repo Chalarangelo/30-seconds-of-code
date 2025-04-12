@@ -30,7 +30,7 @@ For the API implementation, I'll once again focus on the **decision-making** par
 
 My initial approach hinged on creating a pattern class that could be used to build regular expressions. This approach assumed that any pattern should be possible to test on its own (thus making TDD more feasible). Therefore, I started with a `Segment` class (maybe the name wasn't perfect) that would represent **a single pattern segment**.
 
-```js [src/segment.js]
+```js title="src/segment.js"
 export class Segment {
   constructor(expression) {
     if (expression instanceof Segment) this.value = expression.value;
@@ -46,7 +46,7 @@ This class had a simple job: processing any valid value (`Segment`, `RegExp` or 
 
 After a little fiddling around, I came to realize that my `Segment` class should, in fact, subclass `RegExp` itself. This meant that its `value` was roughly equivalent to `RegExp.prototype.source`. This change made the class simpler and more intuitive.
 
-```js [src/segment.js]
+```js title="src/segment.js"
 export class Segment extends RegExp {
   constructor(expression) {
     super(expression instanceof RegExp ? expression.source : expression);
@@ -56,7 +56,7 @@ export class Segment extends RegExp {
 
 This would now allow me to tackle the problem of **testing individual patterns**, as every `Segment` could take the place of a regular expression. Therefore, the tests I had in place at the time would pass with flying colors:
 
-```js [spec/segment.test.js]
+```js title="spec/segment.test.js"
 import { describe, it, expect } from 'vitest';
 import './matchers.js';
 
@@ -81,7 +81,7 @@ describe('Segment', () => {
 
 One core thing I had to deal with early on was **string sanitization**. Luckily, it's a simple matter of finding and replacing special characters. However, I'd also need to create segments without some escapes (e.g. `+` or `*` when building quantifiers later on).
 
-```js [spec/segment.test.js]
+```js title="spec/segment.test.js"
 import { describe, it, expect } from 'vitest';
 import './matchers.js';
 
@@ -115,7 +115,7 @@ describe('toSegment', () => {
 
 After settling on the use cases and writing my tests, I decided to separate the sanitization and **conversion** into `Segment`s into their own functions.
 
-```js [src/sanitize.js]
+```js title="src/sanitize.js"
 export const sanitize = val => {
   if (typeof val !== 'string' && typeof val !== 'number')
     throw new TypeError('Value must be a string or a number');
@@ -127,7 +127,7 @@ export const sanitize = val => {
 >
 > I've covered [escaping special characters in regulars expressions](/js/s/escape-reg-exp/) in the past.
 
-```js [src/segment.js]
+```js title="src/segment.js"
 import { sanitize } from './sanitize.js';
 
 //...
@@ -143,7 +143,7 @@ export const toSegment = expression => {
 
 After building a `toSegment` function, I realized I needed a way to **join segments**, too. I also seemed to need a way to map an array of patterns to segments.
 
-```js [spec/segment.test.js]
+```js title="spec/segment.test.js"
 import { describe, it, expect } from 'vitest';
 import './matchers.js';
 
@@ -182,7 +182,7 @@ describe('joinSegments', () => {
 
 Having written some test cases that I could use to verify my implementation, I built the `toSegments` and `joinSegments` functions.
 
-```js [src/segment.js]
+```js title="src/segment.js"
 export const toSegments = (...expressions) => expressions.map(toSegment);
 
 export const joinSegments = (segments, separator = '') =>
@@ -191,7 +191,7 @@ export const joinSegments = (segments, separator = '') =>
 
 I spent a good amount of time trying to figure out why my tests wouldn't pass no matter what I did. Then, it hit me: `RegExp.prototype.toString()` didn't behave the way I wanted! Naturally, I had to override it.
 
-```js [src/segment.js]
+```js title="src/segment.js"
 export class Segment extends RegExp {
   //...
   toString() {
@@ -210,7 +210,7 @@ As mentioned in the previous article, I want to provide the basic building block
 
 The simplest building blocks are anchors, wildcards, and character classes. They're all just a matter of creating the right `Segment` objects.
 
-```js [src/anchors.js]
+```js title="src/anchors.js"
 import { Segment } from './segment.js';
 
 export const startOfLine = new Segment('^');
@@ -219,7 +219,7 @@ export const wordBoundary = new Segment(String.raw`\b`);
 export const nonWordBoundary = new Segment(String.raw`\B`);
 ```
 
-```js [src/wildcards.js]
+```js title="src/wildcards.js"
 import { Segment } from './segment.js';
 
 export const anyCharacter = new Segment('.');
@@ -227,7 +227,7 @@ export const anything = new Segment('.*');
 export const something = new Segment('.+');
 ```
 
-```js [src/characterClasses.js]
+```js title="src/characterClasses.js"
 import { Segment } from './segment.js';
 
 export const digit = new Segment(String.raw`\d`);
@@ -246,7 +246,7 @@ export const nonWhitespaceCharacter = new Segment(String.raw`\S`);
 
 Let's also get backreferences out of the way, as they're another trivial piece of code to write, even if using them feels like a more advanced technique.
 
-```js [spec/backReference.test.js]
+```js title="spec/backReference.test.js"
 import { describe, it, expect } from 'vitest';
 
 // Temporary test setup, until `readEx` is implemented
@@ -273,7 +273,7 @@ describe('backReference', () => {
 });
 ```
 
-```js [src/backReference.js]
+```js title="src/backReference.js"
 import { Segment } from './segment.js';
 
 export const backReference = reference =>
@@ -288,7 +288,7 @@ export const backReference = reference =>
 
 Groups are the next logical step, as they'll allow us to write more complex patterns (hint: we need the non-capturing group in several places).
 
-```js [spec/groups.test.js]
+```js title="spec/groups.test.js"
 import { describe, it, expect } from 'vitest';
 import './matchers.js';
 
@@ -349,7 +349,7 @@ describe('or', () => {
 
 Apart from passing all tests, I wanted to make sure there's a **shared group creation utility**, which I'll call `toGroup`. This made sure that I didn't repeat myself too much.
 
-```js [src/group.js]
+```js title="src/group.js"
 import { Segment, toSegments, joinSegments } from './segment.js';
 
 const toGroup = (expressions, { capture, name } = {}) => {
@@ -381,7 +381,7 @@ export const or = (...expressions) =>
 
 Lookaheads and lookbehinds followed a very similar pattern. I wrote some tests, implemented a reusable creation utility, and created the necessary building blocks. The only point of note here is the use of the `concat` utility from the group implementation.
 
-```js [src/lookAround.js]
+```js title="src/lookAround.js"
 import { Segment, toSegments } from './segment.js';
 import { concat } from './group.js';
 
@@ -412,7 +412,7 @@ export const negativeLookbehind = (...expressions) =>
 
 The meat of the implementation seemed to be quantifiers. After all, they're the most common building blocks. Tests were a blessing here, especially the ones for `repeat`, with its trickier API. I'll focus on just those, as the others are pretty straightforward.
 
-```js [spec/quantifiers.test.js]
+```js title="spec/quantifiers.test.js"
 import { describe, it, expect } from 'vitest';
 import './matchers.js';
 
@@ -451,7 +451,7 @@ describe('repeat', () => {
 
 Notice also that I decided to make **lazy variants** of each quantifier their own functions, as to minimize friction for the end user. Instead of having to specify options for, say `zeroOrOne`, one can just use `zeroOrOneLazy`.
 
-```js [src/quantifiers.js]
+```js title="src/quantifiers.js"
 import { Segment, toSegments } from './segment.js';
 import { nonCaptureGroup } from './group.js';
 
@@ -501,7 +501,7 @@ export const repeatLazy = (options, ...expressions) =>
 
 Ranges and character sets are the last building blocks I wanted to implement. As these functions can accept **range patterns**, we need to make sure, these work as expected, hence a few more test cases to be sure.
 
-```js [spec/characterSets.test.js]
+```js title="spec/characterSets.test.js"
 import { describe, it, expect } from 'vitest';
 import './matchers.js';
 
@@ -559,7 +559,7 @@ describe('anythingBut', () => {
 
 To make this happen, I settled on a `toCharacterSet` utility function, which would handle the conversion of range patterns to `Segment` objects. From that point onward, it was just a matter of building the `anythingFrom` and `anythingBut` functions.
 
-```js [src/characterSet.js]
+```js title="src/characterSet.js"
 import { Segment, toSegment, toSegments, joinSegments } from './segment.js';
 
 export const toCharacterSet = expression => {
@@ -583,7 +583,7 @@ export const anythingBut = (...expressions) =>
 
 Finally, we can build the main function, `readEx`, that will accept an array of patterns and a flags object, and return a `RegExp`. We've already written tests for a lot of the code, so our test scaffolding can pretty much be converted to the final implementation.
 
-```js [src/readex.js]
+```js title="src/readex.js"
 import { joinSegments, toSegments } from './utils.js';
 
 const DEFAULT_FLAGS = {
@@ -615,7 +615,7 @@ After implementing the main function, I went ahead and updated all the test case
 
 Finally, I exported all the building blocks and the main function from the `index.js` file. This way, I could bundle everything up in a nice neat package.
 
-```js [src/index.js]
+```js title="src/index.js"
 export * from './readEx.js';
 export * from './backReference.js';
 export * from './group.js';
@@ -635,7 +635,7 @@ We've already set up [Vitest](https://vitest.dev/) for testing, but we'll need a
 
 Vite's configuration is minimal, and it's very easy to set up. This is in stark contrast with tools like Webpack, which have always haunted me with their complexity (although, admittedly, this could be due to my own incompetence).
 
-```js [vite.config.js]
+```js title="vite.config.js"
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
@@ -663,7 +663,7 @@ Notice that I've also set `minify` to `false` for the time being. I'll revisit t
 
 We'll also add a `build` **script** to our `package.json` before we can bundle our code:
 
-```json [package.json]
+```json title="package.json"
 {
   "scripts": {
     "build": "vite build"
@@ -695,7 +695,7 @@ In it, we can see the **output path** (`dist/readex.js`), the **size of the bund
 
 Finally, we can **publish our package to npm**. We'll need to specify a few things in our `package.json` first to make sure the right files are included and the package is importable as an ES module:
 
-```json [package.json]
+```json title="package.json"
 {
   "name": "readex",
   "type": "module",

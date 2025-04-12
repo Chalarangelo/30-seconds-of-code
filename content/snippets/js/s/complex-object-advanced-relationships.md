@@ -58,7 +58,7 @@ Before we begin, I want to address a couple of things to make the rest of the im
 
 In the past, we've heavily relied on the `prepare` method of the `Model` class to set up our models. As we're going to add even more logic to it, the arguments will start becoming a little hard to manage. Let's **switch from a list of arguments to an object**.
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 // ...
 
 export default class Model {
@@ -74,7 +74,7 @@ export default class Model {
 
 This small change will break everything, so we need to **update the models** accordingly.
 
-```js [src/models/author.js]
+```js title="src/models/author.js"
 import Model from '#src/core/model.js';
 import Post from '#src/models/post.js';
 
@@ -95,7 +95,7 @@ export default class Author extends Model {
 }
 ```
 
-```js [src/models/post.js]
+```js title="src/models/post.js"
 import Model from '#src/core/model.js';
 import Author from '#src/models/author.js';
 
@@ -120,7 +120,7 @@ export default class Post extends Model {
 
 We'll now create a `Category` model and a relevant `CategoryFactory` to match the rest of the implementation. We'll use this model as the main example for some of our relationships later in the article.
 
-```js [src/models/category.js]
+```js title="src/models/category.js"
 import Model from '#src/core/model.js';
 import Post from '#src/models/post.js';
 
@@ -142,7 +142,7 @@ export default class Category extends Model {
 }
 ```
 
-```js [spec/factories/categoryFactory.js]
+```js title="spec/factories/categoryFactory.js"
 import Factory from '#src/core/factory.js';
 import Category from '#src/models/category.js';
 
@@ -163,7 +163,7 @@ export default class CategoryFactory extends Factory {
 
 But wait! _Posts don't have a `categoryId` field!_, I hear you say. Let's add it, then!
 
-```js [src/models/post.js]
+```js title="src/models/post.js"
 import Model from '#src/core/model.js';
 import Author from '#src/models/author.js';
 import Category from '#src/models/category.js';
@@ -207,7 +207,7 @@ In our case, this is the `Post` model, which belongs to an `Author` via the `aut
 Let's start by adding the logic for the `belongsTo` relationship in the `Model` class.
 
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 // ...
 
 const capitalize = str => str.charAt(0).toUpperCase() + str.slice(1);
@@ -278,7 +278,7 @@ Additionally, you may notice the `targetModel` declaration is inside the `get` m
 
 Having done all this, we can now update our `Post` model to include the `belongsTo` relationships. We'll have to **delete** the `authorId`, `categoryId`, `author` and `category` fields and methods, as they are no longer needed. And, this way, we can drop the imports for `Author` and `Category` as well.
 
-```js [src/models/post.js]
+```js title="src/models/post.js"
 import Model from '#src/core/model.js';
 // Delete the imports for Author and Category
 
@@ -309,7 +309,7 @@ export default class Post extends Model {
 
 The previous code looks a lot tidier now and we can easily add more relationships in the future without having to worry about the implementation details. While we do not have any `hasOne` relationships in our current setup, we'll go ahead an implement the logic regardless.
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 // ...
 
 export default class Model {
@@ -369,7 +369,7 @@ As the `hasOne` relationships expects the `foreignKey` to be on the other model,
 Similar to the `hasOne` relationship, we can implement a `hasMany` relationship. To be honest, this is almost the exact same piece of code, except we'll remove the `first` method call at the end of the getter.
 
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 // ...
 
 export default class Model {
@@ -436,7 +436,7 @@ Ok, apart from that little detail, you may have noticed that we also **ensure th
 
 Let's go ahead and add a `hasMany` relationship to the `Author` model. We'll also delete the `posts` method, as it is no longer needed, as well as the import for the `Post` model. While we're at it, let's do the exact same for the `Category` model.
 
-```js [src/models/author.js]
+```js title="src/models/author.js"
 import Model from '#src/core/model.js';
 // Delete the import for Post
 
@@ -460,7 +460,7 @@ export default class Author extends Model {
 }
 ```
 
-```js [src/models/category.js]
+```js title="src/models/category.js"
 import Model from '#src/core/model.js';
 // Delete the import for Post
 
@@ -491,7 +491,7 @@ So far so good, but **customization** is definitely going to be an issue in the 
 
 Up until this point, **foreign keys** have been dictated by the target model's name. This is a good **default**, but it's not always going to work. We may want to go down the field definition route and allow our second array element to be an **object**. If it is, we can let it define a `target` (the model name) and a `foreignKey` (the field name). This will allow us to effectively decouple the two.
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 // ...
 
 export default class Model {
@@ -554,7 +554,7 @@ export default class Model {
 
 Great! Let's apply this to create a parent category relationship in the `Category` model.
 
-```js [src/models/category.js]
+```js title="src/models/category.js"
 import Model from '#src/core/model.js';
 
 export default class Category extends Model {
@@ -595,7 +595,7 @@ Not quite what we were looking for. While the foreign key has the correct name a
 
 If you were guessing we're going to implement **aliases** via the `as` property, you're absolutely right! This will allow us to define a **custom name** for the relationship attribute. Let's go ahead and modify the `prepare` method one last time.
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 // ...
 
 export default class Model {
@@ -659,7 +659,7 @@ export default class Model {
 
 Now, we can make update the `Category` model to reflect the new `as` property.
 
-```js [src/models/category.js]
+```js title="src/models/category.js"
 import Model from '#src/core/model.js';
 
 export default class Category extends Model {
@@ -700,7 +700,7 @@ What we did with the `parent` relationship is what one would call a **self-refer
 
 Another way to use this, for example, is to create the inverse relationship, where a category can have many subcategories. There's nothing stopping us from defining it in the `Category` model, same as before.
 
-```js [src/models/category.js]
+```js title="src/models/category.js"
 import Model from '#src/core/model.js';
 
 export default class Category extends Model {
@@ -757,7 +757,7 @@ You can also [browse through the Code Reference on GitHub](https://github.com/Ch
 <details>
 <summary>View the complete implementation</summary>
 
-```js [src/config/settings.js]
+```js title="src/config/settings.js"
 const settings = {
   loader: {
     modules: [
@@ -770,7 +770,7 @@ const settings = {
 };
 ```
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 import RecordSet from '#src/core/recordSet.js';
 
 import util from 'util';
@@ -1029,7 +1029,7 @@ export default class Model {
 }
 ```
 
-```js [src/core/recordSet.js]
+```js title="src/core/recordSet.js"
 export default class RecordSet extends Array {
   where(query) {
     return RecordSet.from(
@@ -1077,7 +1077,7 @@ export default class RecordSet extends Array {
 }
 ```
 
-```js [src/core/serializer.js]
+```js title="src/core/serializer.js"
 export default class Serializer {
   static prepare(serializer, serializableAttributes) {
     serializer.serializableAttributes = [];
@@ -1129,7 +1129,7 @@ export default class Serializer {
 }
 ```
 
-```js [src/core/factory.js]
+```js title="src/core/factory.js"
 import Model from '#src/core/model.js';
 
 const sequenceSymbol = Symbol('sequence');
@@ -1206,7 +1206,7 @@ export default class Factory {
 }
 ```
 
-```js [src/scripts/autoload.js]
+```js title="src/scripts/autoload.js"
 import { readdir } from 'node:fs/promises';
 
 import settings from '#src/config/settings.js';
@@ -1241,7 +1241,7 @@ const modules = await autoload();
 export default { ...modules, settings };
 ```
 
-```js [src/scripts/console.js]
+```js title="src/scripts/console.js"
 import repl from 'node:repl';
 import modules from '#src/scripts/autoload.js';
 
@@ -1256,7 +1256,7 @@ Object.entries(modules).forEach(([moduleName, module]) => {
 });
 ```
 
-```js [src/models/post.js]
+```js title="src/models/post.js"
 import Model from '#src/core/model.js';
 
 export default class Post extends Model {
@@ -1293,7 +1293,7 @@ export default class Post extends Model {
 }
 ```
 
-```js [src/models/author.js]
+```js title="src/models/author.js"
 import Model from '#src/core/model.js';
 // Delete: import Post from '#src/models/post.js';
 
@@ -1321,7 +1321,7 @@ export default class Author extends Model {
 }
 ```
 
-```js [src/models/category.js]
+```js title="src/models/category.js"
 import Model from '#src/core/model.js';
 
 export default class Category extends Model {
@@ -1353,7 +1353,7 @@ export default class Category extends Model {
 }
 ```
 
-```js [src/serializers/postSerializer.js]
+```js title="src/serializers/postSerializer.js"
 import Serializer from '#src/core/serializer.js';
 
 export default class PostSerializer extends Serializer {
@@ -1381,7 +1381,7 @@ export default class PostSerializer extends Serializer {
 }
 ```
 
-```js [src/serializers/postPreviewSerializer.js]
+```js title="src/serializers/postPreviewSerializer.js"
 import Serializer from '#src/core/serializer.js';
 
 export default class PostPreviewSerializer extends Serializer {
@@ -1403,7 +1403,7 @@ export default class PostPreviewSerializer extends Serializer {
 }
 ```
 
-```js [spec/factories/authorFactory.js]
+```js title="spec/factories/authorFactory.js"
 import Factory from '#src/core/factory.js';
 import Author from '#src/models/author.js';
 
@@ -1423,7 +1423,7 @@ export default class AuthorFactory extends Factory {
 }
 ```
 
-```js [spec/factories/postFactory.js]
+```js title="spec/factories/postFactory.js"
 import Factory from '#src/core/factory.js';
 import Post from '#src/models/post.js';
 
@@ -1452,7 +1452,7 @@ export default class PostFactory extends Factory {
 }
 ```
 
-```js [spec/factories/categoryFactory.js]
+```js title="spec/factories/categoryFactory.js"
 import Factory from '#src/core/factory.js';
 import Category from '#src/models/category.js';
 

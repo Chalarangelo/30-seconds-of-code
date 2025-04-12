@@ -309,7 +309,7 @@ This guide covered **most of the groundwork** necessary to convert between CSV d
 <details>
 <summary>View the complete implementation</summary>
 
-```js [serializeCSV.js]
+```js title="serializeCSV.js"
 const isEmptyValue = value =>
   value === null || value === undefined || Number.isNaN(value);
 
@@ -359,7 +359,7 @@ const JSONToCSV = (json, headers, omitHeaders) =>
   objectToCSV(JSON.parse(json), headers, omitHeaders);
 ```
 
-```js [deserializeCSV.js]
+```js title="deserializeCSV.js"
 const deserializeRow = (row, delimiter = ',') => {
   const values = [];
   let index = 0, matchStart = 0, isInsideQuotations = false;

@@ -21,11 +21,11 @@ As browsers and Node.js have historically had some differences in their APIs, yo
 
 Generating a UUID in a modern browser or Node.js is very straightforward. As the **Crypto API** has been standardized you can use the `crypto.randomUUID()` method to generate a UUID.
 
-```js [Browser]
+```js title="Browser"
 crypto.randomUUID(); // '7982fcfe-5721-4632-bede-6000885be57d'
 ```
 
-```js [Node.js]
+```js title="Node.js"
 import { randomUUID } from 'crypto';
 
 randomUUID(); // '7982fcfe-5721-4632-bede-6000885be57d'

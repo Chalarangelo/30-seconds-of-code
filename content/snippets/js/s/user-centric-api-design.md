@@ -30,7 +30,7 @@ My primary goal is to create a more **natural way to express regular expressions
 
 As stated before, the main ask is a way to describe regular expressions in a more natural way. To that end, I want to be able to express in code what I would describe to a colleague somewhat familiar with the concept, in **natural language**. This means something like `/.*/` would be roughly described as _any character zero or more times_.
 
-```js [spec/myDraft.test.js]
+```js title="spec/myDraft.test.js"
 import { describe, it, expect } from 'vitest';
 import './matchers.js';
 
@@ -45,7 +45,7 @@ describe('Natural language', () => {
 });
 ```
 
-```js [src/myDraft.js]
+```js title="src/myDraft.js"
 // Pseudocode approximation of what I imagine under the hood
 const anyCharacter = '.';
 const zeroOrMore = pattern => `${pattern}*`;
@@ -57,7 +57,7 @@ Notice how I leaned into the fact that the end user has **some degree of familia
 
 The less ambitious goal for this project is to make it easier to **reuse RegExp patterns**. This means that I should be able to create a pattern once and use it in multiple places. This boils down to creating all the necessary **building blocks** to make this possible and making sure they can be combined in all the ways that make sense for the end user.
 
-```js [spec/myDraft.test.js]
+```js title="spec/myDraft.test.js"
 import { describe, it, expect } from 'vitest';
 import './matchers.js';
 
@@ -77,7 +77,7 @@ describe('Reusability', () => {
 });
 ```
 
-```js [src/myDraft.js]
+```js title="src/myDraft.js"
 // Pseudocode approximation of what I imagine under the hood
 const digit = '\\d';
 const range = (start, end) => `[${start}-${end}]`;
@@ -98,7 +98,7 @@ Our **health metrics**, if you will, are how easy it is to read and maintain the
 
 Naturally, we want to avoid this kind of situation. Therefore, it's imperative that the code produced is as **easy to understand** regardless if you wrote it or it's the first time you laid eyes on it. Moreover, it should be **easy to make changes** and reason about them, reducing the barrier to entry for everyone involved.
 
-```js [spec/myDraft.test.js]
+```js title="spec/myDraft.test.js"
 import { describe, it, expect } from 'vitest';
 import './matchers.js';
 
@@ -126,7 +126,7 @@ describe('Readability & maintainability', () => {
 });
 ```
 
-```js [src/myDraft.js]
+```js title="src/myDraft.js"
 // Pseudocode approximation of what I imagine under the hood
 const or = (...patterns) => `(${patterns.join('|')})`;
 const concat = (...patterns) => patterns.join('');

@@ -98,7 +98,7 @@ Let's also ensure lines wrap on their, as needed. Might come in handy!
 
 #### No language, yes title
 
-```text [No language]
+```text title="No language"
 No languge here
 ```
 
@@ -259,7 +259,7 @@ https://codepen.io/chalarangelo/pen/mdodgeL
 <details>
 <summary>View the complete implementation</summary>
 
-```js [Currency.js]
+```js title="Currency.js"
 const isoCodes = Intl.supportedValuesOf('currency');
 
 const currencyFields = ['symbol', 'narrowSymbol', 'name'];
@@ -303,7 +303,7 @@ class Currency {
 }
 ```
 
-```js [Bank.js]
+```js title="Bank.js"
 class Bank {
   static defaultBank;
 
@@ -352,7 +352,7 @@ class Bank {
 }
 ```
 
-```js [Money.js]
+```js title="Money.js"
 class Money {
   value;
   currency;

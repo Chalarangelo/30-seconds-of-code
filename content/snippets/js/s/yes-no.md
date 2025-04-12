@@ -11,7 +11,7 @@ dateModified: 2023-12-15
 
 If you've spent any amount of time using your computer's terminal, chances are you've been asked to confirm an action by typing `y` or `n` and pressing `Enter`.
 
-```text [Terminal]
+```text title="Terminal"
 Are you sure you want to continue? [y/n]
 ```
 

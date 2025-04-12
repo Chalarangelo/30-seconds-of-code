@@ -98,7 +98,7 @@ Each model has its own **attributes**, which, if you remember, are [getter funct
 
 To create our `Serializer` class, we'll start by defining a simple `constructor`. It will accept a `subject` to serialize and an `options` object. Via the options object, we can pass additional configuration, which can be used later down the line. For now, we'll just store the subject and options in the **class instance**.
 
-```js [src/core/serializer.js]
+```js title="src/core/serializer.js"
 export default class Serializer {
   constructor(subject, options = {}) {
     this.subject = subject;
@@ -111,7 +111,7 @@ Before we can do anything meaningful with this class, we'll need to define a way
 
 _But what will this function do?_ you may be asking. Simply put, it will accept the serializer subclass and an **array of attribute names**. Then, it will store these attributes in a static property of the subclass. This way, we can easily access them later on.
 
-```js [src/core/serializer.js]
+```js title="src/core/serializer.js"
 export default class Serializer {
   static prepare(serializer, attributes) {
     serializer.serializableAttributes = attributes;
@@ -123,7 +123,7 @@ export default class Serializer {
 
 Looks simple, right? Let's go ahead and define a `serialize` method, which will return an **object with the serialized attributes**. We'll use the `serializableAttributes` property to filter out the attributes we want to serialize.
 
-```js [src/core/serializer.js]
+```js title="src/core/serializer.js"
 export default class Serializer {
   // ...
 
@@ -147,7 +147,7 @@ Notice the use of `this.constructor` instead of `Serializer`. This is because we
 
 With all of this boilerplate out of the way, we can finally define our `PostSerializer`. For starters, we'll have it return the `title`, `content` and `publishedAt` attributes of a post.
 
-```js [src/serializers/postSerializer.js]
+```js title="src/serializers/postSerializer.js"
 import Serializer from '#src/core/serializer.js';
 
 export default class PostSerializer extends Serializer {
@@ -178,7 +178,7 @@ Instead, we can introduce the concept of **aliases**. Aliases will be provided a
 
 Let's modify the `Serializer`'s `prepare` method to account for that.
 
-```js [src/core/serializer.js]
+```js title="src/core/serializer.js"
 export default class Serializer {
   static prepare(serializer, attributes) {
     serializer.serializableAttributes = [];
@@ -212,7 +212,7 @@ But the fun part comes later in the function, where `Object.defineProperty()` is
 
 As you may have noticed, this change doesn't really affect the `seralize` method just yet. We'll have to make an adjustment there, too. Instead of relying on the `subject`, we now have each of the `serializableAttributes` as a getter on the serializer instance.
 
-```js [src/core/serializer.js]
+```js title="src/core/serializer.js"
 export default class Serializer {
   // ...
 
@@ -230,7 +230,7 @@ export default class Serializer {
 
 Finally, we can go ahead and update `PostSerializer` with the new alias feature. We'll rename the `publishedAt` attribute to `date`.
 
-```js [src/serializers/postSerializer.js]
+```js title="src/serializers/postSerializer.js"
 import Serializer from '#src/core/serializer.js';
 
 export default class PostSerializer extends Serializer {
@@ -261,7 +261,7 @@ Expanding upon the alias system, one could easily imagine a scenario where you'd
 
 Same as before, let's update our `prepare` method to handle a second argument that is a **function**. This function will be called with the serializer's subject and options, and should return the value to be serialized.
 
-```js [src/core/serializer.js]
+```js title="src/core/serializer.js"
 export default class Serializer {
   static prepare(serializer, attributes) {
     serializer.serializableAttributes = [];
@@ -296,7 +296,7 @@ export default class Serializer {
 
 Luckily, this time around, our `serialize` method doesn't need any changes. We can now define a custom attribute in our `PostSerializer`. Let's do that for our `date` attribute, which will format the `publishedAt` attribute into a human-readable date. While we're at it, let's wrap our `content` in a `<p>` tag, too.
 
-```js [src/serializers/postSerializer.js]
+```js title="src/serializers/postSerializer.js"
 import Serializer from '#src/core/serializer.js';
 
 export default class PostSerializer extends Serializer {
@@ -333,7 +333,7 @@ Alright, cool, but we also want to include the author's information in there, to
 
 Let's spice it up even more, by making sure that the email depends on the **options** passed to the serializer. If the `showEmail` option is set to `true`, we'll include the email in the serialized object, otherwise we'll just include the name.
 
-```js [src/serializers/postSerializer.js]
+```js title="src/serializers/postSerializer.js"
 import Serializer from '#src/core/serializer.js';
 
 export default class PostSerializer extends Serializer {
@@ -396,7 +396,7 @@ new PostSerializer(post, { showEmail: true }).serialize();
 
 As we've already seen, the serializer itself is not tied to the model. This means we can create another serializer with similar attributes, but different underlying implementations. Let's create a `PostPreviewSerializer` that will serialize a post preview, as shown in the example at the beginning of the article.
 
-```js [src/serializers/postPreviewSerializer.js]
+```js title="src/serializers/postPreviewSerializer.js"
 import Serializer from '#src/core/serializer.js';
 
 export default class PostPreviewSerializer extends Serializer {
@@ -440,7 +440,7 @@ Wow, that really was fast! All of this setup really paid off. Notice how we coul
 
 You're probably used to it by now, but I really love me some **convenience methods**. This time around, we'll keep it simple, adding two static methods to the `Serializer` class, `serialize` and `serializeArray`. The former will create a new instance of the serializer and call the `serialize` method, while the latter will do so for an array of subjects.
 
-```js [src/core/serializer.js]
+```js title="src/core/serializer.js"
 export default class Serializer {
   // ...
 
@@ -474,7 +474,7 @@ You can also [browse through the Code Reference on GitHub](https://github.com/Ch
 <details>
 <summary>View the complete implementation</summary>
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 import RecordSet from '#src/core/recordSet.js';
 
 export default class Model {
@@ -548,7 +548,7 @@ export default class Model {
 }
 ```
 
-```js [src/core/recordSet.js]
+```js title="src/core/recordSet.js"
 export default class RecordSet extends Array {
   where(query) {
     return RecordSet.from(
@@ -596,7 +596,7 @@ export default class RecordSet extends Array {
 }
 ```
 
-```js [src/core/serializer.js]
+```js title="src/core/serializer.js"
 export default class Serializer {
   static prepare(serializer, serializableAttributes) {
     serializer.serializableAttributes = [];
@@ -648,7 +648,7 @@ export default class Serializer {
 }
 ```
 
-```js [src/models/post.js]
+```js title="src/models/post.js"
 import Model from '#src/core/model.js';
 import Author from '#src/models/author.js';
 
@@ -685,7 +685,7 @@ export default class Post extends Model {
 }
 ```
 
-```js [src/models/author.js]
+```js title="src/models/author.js"
 import Model from '#src/core/model.js';
 import Post from '#src/models/post.js';
 
@@ -713,7 +713,7 @@ export default class Author extends Model {
 }
 ```
 
-```js [src/serializers/postSerializer.js]
+```js title="src/serializers/postSerializer.js"
 import Serializer from '#src/core/serializer.js';
 
 export default class PostSerializer extends Serializer {
@@ -741,7 +741,7 @@ export default class PostSerializer extends Serializer {
 }
 ```
 
-```js [src/serializers/postPreviewSerializer.js]
+```js title="src/serializers/postPreviewSerializer.js"
 import Serializer from '#src/core/serializer.js';
 
 export default class PostPreviewSerializer extends Serializer {

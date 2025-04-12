@@ -32,7 +32,7 @@ Like I said, I started by taking a long hard look at the code. Where could one s
 
 Some of my intermediate abstractions were using **options objects**. Upon closer inspection, those weren't really necessary. Let's look at the example of groups:
 
-```js [src/group.js]
+```js title="src/group.js"
 import { Segment, toSegments, joinSegments } from './segment.js';
 
 const toGroup = (expressions, { capture, name } = {}) => {
@@ -55,7 +55,7 @@ export const namedGroup = ({ name }, ...expressions) =>
 
 The `captrue` and `name` options are only ever used in the `toGroup` function to produce the group prefix. And, in all three use cases, we can **calculate the resulting value ahead of time** before calling `toGroup`. Let's refactor it to remove the options object:
 
-```js [src/group.js]
+```js title="src/group.js"
 import { Segment, toSegments, joinSegments } from './segment.js';
 
 const toGroup = (expressions, prefix) => {
@@ -75,7 +75,7 @@ export const namedGroup = ({ name }, ...expressions) =>
 
 The same logic can be applied for quantifiers and lookarounds, making all three of the intermediate creation functions pretty simple and similar.
 
-```js [src/quantifiers.js]
+```js title="src/quantifiers.js"
 import { Segment } from './segment.js';
 import { nonCaptureGroup } from './group.js';
 
@@ -98,7 +98,7 @@ export const zeroOrMoreLazy = (...expressions) =>
   toQuantifier(expressions, '*?');
 ```
 
-```js [src/lookArounds.js]
+```js title="src/lookArounds.js"
 import { Segment } from './segment.js';
 import { nonCaptureGroup } from './group.js';
 
@@ -124,7 +124,7 @@ Notice also how how we're spreading the raw expressions in both lookarounds and 
 
 At this point, `joinSegments` is only ever called in tandem with `toSegments`. It stands to reason that these two functions, simple as they are, could be **merged into a single function**. Let's do that:
 
-```js [src/segment.js]
+```js title="src/segment.js"
 export const joinSegments = (expressions, separator = '') =>
   new RegExp(
     expressions
@@ -136,7 +136,7 @@ export const joinSegments = (expressions, separator = '') =>
 
 On second look, it's now clear that the code could be optimized here, as we're **looping twice** over our expressions. We can merge the two `Array.prototype.map` calls into one:
 
-```js [src/segment.js]
+```js title="src/segment.js"
 export const joinSegments = (expressions, separator = '') =>
   new RegExp(
     expressions
@@ -147,7 +147,7 @@ export const joinSegments = (expressions, separator = '') =>
 
 Then, we can update our code to match this new signature:
 
-```js [src/group.js]
+```js title="src/group.js"
 import { Segment, joinSegments } from './segment.js';
 
 const toGroup = (expressions, prefix) =>
@@ -160,7 +160,7 @@ All three of the creation utilities we've focused on expect an array of expressi
 
 By refactoring the function signatures of the creation utilities, we could make this a lot more concise. We can use [**currying**](/js/s/currying) to make this happen. Remember, we can only change the signature of creation utilities, such as `toGroup`, to keep the API as-is.
 
-```js [src/group.js]
+```js title="src/group.js"
 import { Segment, joinSegments } from './segment.js';
 
 const toGroup = prefix => (...expressions) =>
@@ -171,7 +171,7 @@ export const nonCaptureGroup = toGroup('(?:');
 export const namedGroup = name => toGroup(`(?<${name}>`);
 ```
 
-```js [src/quantifiers.js]
+```js title="src/quantifiers.js"
 import { Segment } from './segment.js';
 import { nonCaptureGroup } from './group.js';
 
@@ -186,7 +186,7 @@ export const zeroOrMore = toQuantifier('*');
 export const zeroOrMoreLazy = toQuantifier('*?');
 ```
 
-```js [src/lookArounds.js]
+```js title="src/lookArounds.js"
 import { Segment } from './segment.js';
 import { nonCaptureGroup } from './group.js';
 
@@ -203,7 +203,7 @@ export const negativeLookbehind = toLookAround('<!');
 
 There's another **commonality** between the creation utilities: they all join a bunch of expressions together, then wrap them in a prefix and/or suffix. We can extract this pattern into a [**higher-order function**](/js/s/higher-order-functions):
 
-```js [src/segment.js]
+```js title="src/segment.js"
 export const wrapSegments =
   (prefix = '', suffix = '', separator = '') =>
   (...expressions) =>
@@ -216,21 +216,21 @@ export const wrapSegments =
 
 Then, we can use this function to simplify the creation utilities:
 
-```js [src/group.js]
+```js title="src/group.js"
 import { wrapSegments } from './segment.js';
 
 const toGroup = prefix =>
   wrapSegments(`(${prefix}`, ')');
 ```
 
-```js [src/quantifiers.js]
+```js title="src/quantifiers.js"
 import { wrapSegments } from './segment.js';
 
 const toQuantifier = suffix =>
   wrapSegments(`(?:`, `)${suffix}`);
 ```
 
-```js [src/lookArounds.js]
+```js title="src/lookArounds.js"
 import { wrapSegments } from './segment.js';
 
 const toLookAround = prefix =>
@@ -241,7 +241,7 @@ const toLookAround = prefix =>
 
 At this point, the creation utilities serve little to **no purpose**. We can **inline** them into the functions that call them and save a few more lines:
 
-```js [src/group.js]
+```js title="src/group.js"
 import { wrapSegments } from './segment.js';
 
 export const captureGroup = wrapSegments('(', ')');
@@ -249,7 +249,7 @@ export const nonCaptureGroup = wrapSegments('(?:', ')');
 export const namedGroup = name => wrapSegments(`(?<${name}>`, ')');
 ```
 
-```js [src/quantifiers.js]
+```js title="src/quantifiers.js"
 import { wrapSegments } from './segment.js';
 
 export const zeroOrOne = wrapSegments('(?:', ')?');
@@ -260,7 +260,7 @@ export const zeroOrMore = wrapSegments('(?:', ')*');
 export const zeroOrMoreLazy = wrapSegments('(?:', ')*?');
 ```
 
-```js [src/lookArounds.js]
+```js title="src/lookArounds.js"
 import { wrapSegments } from './segment.js';
 
 export const lookahead = wrapSegments('(?=', ')');
@@ -273,7 +273,7 @@ export const negativeLookbehind = wrapSegments('(?<!', ')');
 
 Having moved a lot of the logic into the `wrapSegments` function, it seems like the **outstanding case** for a standalone `joinSegments` is the `toCharacterSet` utility. By adding a way for `wrapSegments` to map values before joining them, we can remove `joinSegments` altogether. While we're at it, let's rename it to `toSegments`, too:
 
-```js [src/segment.js]
+```js title="src/segment.js"
 export const toSegments =
   (prefix = '', suffix = '', separator = '', mapFn = x => x) =>
   (...expressions) =>
@@ -286,7 +286,7 @@ export const toSegments =
 
 Then, we can refactor `toCharacterSet` to use this new utility:
 
-```js [src/characterSet.js]
+```js title="src/characterSet.js"
 import { toSegments } from './segment.js';
 
 export const toCharacterSet = expression => {
@@ -305,7 +305,7 @@ Under the hood, this change also improves the **performance** of the library, as
 
 The `Segment` class seems like another **good candidate for removal**. After all, all it really gives us is a convenience wrapper over `RegExp`. By making a few changes to the only method that directly interfaces with it, `toSegment`, we can get rid of it altogether.
 
-```js [src/segment.js]
+```js title="src/segment.js"
 import { sanitize } from './sanitize.js';
 
 export const toSegment = expression => {
@@ -317,7 +317,7 @@ export const toSegment = expression => {
 
 We'll also update all of the constants we created for anchors, wildcards, and character classes to be regular `RegExp` instances (pun intended):
 
-```js [src/sequences.js]
+```js title="src/sequences.js"
 export const startOfLine = /^/;
 export const endOfLine = /$/;
 export const wordBoundary = /\b/;
@@ -359,7 +359,7 @@ That's **a reduction of 32.5% in size**! Not bad for a few hours of work.
 
 As promised, I'd like to release the **minified code** of the library. Let's update our Vite configuration to produce two builds - one raw and one minified:
 
-```js [vite.config.js]
+```js title="vite.config.js"
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
@@ -391,7 +391,7 @@ export default defineConfig(({ mode }) => {
 
 And the changes to the `package.json` to match:
 
-```json [package.json]
+```json title="package.json"
 {
   "name": "readex",
   "type": "module",

@@ -34,7 +34,7 @@ Finally, we'll add the ability to pass **flags** before execution. For now, we'l
 
 Let's see what this core looks like:
 
-```js [runner.js]
+```js title="runner.js"
 import { Readable, Writable } from 'stream';
 import Memory from './memory.js';
 
@@ -126,7 +126,7 @@ You may have noticed I snuck in some changes to the `Memory` class, the most imp
 
 I also added a subtle change, in expecting `Memory` to respond with a nice output to the `toString()` method. This will make it easier to debug the memory state at any given time. Let's see what that looks like:
 
-```js [memory.js]
+```js title="memory.js"
 class Memory {
   constructor(initialMemory) {
     this.left = [];
@@ -200,7 +200,7 @@ The `Runner` class will be given **instructions** in the form of functions. Thes
 
 We'll also provide a way to run an entire `AST`, in a similar fashion. The only major change is that the `AST` will be given the `Runner` instance to pass down to its children, thus making the instance available to all subsequent instructions.
 
-```js [runner.js]
+```js title="runner.js"
 import { Readable, Writable } from 'stream';
 import Memory from './memory.js';
 
@@ -237,7 +237,7 @@ export default Runner;
 
 The changes to the `AST` class are, as I said, fairly minimal. We'll swap out the previously unnamed object argument for a `Runner` instance, which we'll pass down to the `ASTNode` objects. We'll also call `runner.runInstruction` on each node, which will then call the appropriate instruction.
 
-```js [ast.js]
+```js title="ast.js"
 class AST {
   // ...
 
@@ -255,7 +255,7 @@ export default AST;
 
 The `ASTNode` class will now be given expected to have an `instruction` property, instead of its previous `execute()` method. We can simply update the `nodeTypes` definitions and the `constructor` to make this happen:
 
-```js [astNode.js]
+```js title="astNode.js"
 const nodeTypes = {
   movePointer: {
     params: { offset: 0 },
@@ -349,7 +349,7 @@ Before we go, I want to tidy up the project, by providing a couple of **command-
 
 The parser script is a simple one-liner which reads a **brainfuck program string** and produces an **AST**. We'll use the `parse` function from the previous article to do this.
 
-```js [parser.js]
+```js title="parser.js"
 #!/usr/bin/env node
 import { argv } from 'node:process';
 
@@ -375,7 +375,7 @@ $ ./parser.js '+++++++>[-]'
 
 Before we move forwards, I want to point out that we can write our AST to a file (e.g. via piping the output to a file), but we have no way of recreating it from that file yet. We'll add a `fromJSON` method to both the `AST` and `ASTNode` classes to that end.
 
-```js [ast.js]
+```js title="ast.js"
 import ASTNode from './astNode.js';
 
 class AST {
@@ -391,7 +391,7 @@ class AST {
 export default AST;
 ```
 
-```js [astNode.js]
+```js title="astNode.js"
 import AST from './ast.js';
 
 class ASTNode {
@@ -414,7 +414,7 @@ export default ASTNode;
 
 The executer script is much more complex. We'll give it a few **flags** to allow it to configure the input, memory, debug mode and finally parse code, read from a file or accept an AST as input.
 
-```js [execute.js]
+```js title="execute.js"
 #!/usr/bin/env node
 import { argv } from 'node:process';
 import { readFileSync } from 'node:fs';

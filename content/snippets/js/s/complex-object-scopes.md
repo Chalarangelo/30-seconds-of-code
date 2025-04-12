@@ -46,7 +46,7 @@ Due to the way, we've implemented our querying system, scopes can be easily defi
 
 First things first, however, let's define a scope for our `Post` model. The obvious use case here is to find posts that are published. If you recall, this can be done by checking the `publishedAt` attribute.
 
-```js [src/models/post.js]
+```js title="src/models/post.js"
 import Model from '#src/core/model.js';
 import Author from '#src/models/author.js';
 
@@ -81,7 +81,7 @@ const publishedPosts = Post.published(Post.all);
 
 Apart from filtering records, we may also want to sort them. Before we do that, however, I'd like to add an `order` method to our `RecordSet` class. It's not much more than an alias for `Array.prototype.sort()`, but I prefer naming things explicitly. This way we can search for record set operations more easily in larger codebases, instead of deciphering the type of the caller.
 
-```js [src/core/recordSet.js]
+```js title="src/core/recordSet.js"
 export default class RecordSet extends Array {
   // ...
   order(comparator) {
@@ -92,7 +92,7 @@ export default class RecordSet extends Array {
 
 Notice that this `order` method can subtly handle **plain arrays** and `RecordSet`s. This subtlety may come in handy when combined with `pluck` or `Array.prototype.map()` and can save us from a few headaches. We can also expose this method in the `Model` class, same as we did with `where`.
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 export default class Model {
   // ...
   static order(comparator) {
@@ -103,7 +103,7 @@ export default class Model {
 
 Now that we have defined the `order` method, let's define a scope for our `Post` model that sorts posts by their `publishedAt` attribute, newest first.
 
-```js [src/models/post.js]
+```js title="src/models/post.js"
 export default class Post extends Model {
   // ...
   static byNew(records) {
@@ -142,7 +142,7 @@ Ok, this is all well and good, but it's not particularly sustainable. Suppose we
 
 If you noticed that the strange decisions to pass a `records` argument to the scopes, you're about to find out why. This decision allows us to create a simpler chaining system in the `Model` class itself. All we'll need is a `scope` method that takes a list of **scope names** and applies them in order.
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 export default class Model {
   // ...
   static scope(...scopes) {
@@ -173,7 +173,7 @@ Before we wrap this up, I'd like to make some minor adjustments around the codeb
 
 This might be prudent in some cases, as the current date may be slightly different for different records. However, in most cases, we'd use the calculated attribute, as it's less work and milliseconds rarely matter. Let's adjust the `published` scope accordingly:
 
-```js [src/models/post.js]
+```js title="src/models/post.js"
 export default class Post extends Model {
   // ...
   static published(records) {
@@ -188,7 +188,7 @@ This change is minor and seems like we're optimizing the code, but we're rather 
 
 We can **cache calculated attributes**, same as we've done for model instances before. The `Model` class can hold this cache, seamlessly populate and use it as needed. Remember that all of our data is considered **immutable**, so a cache will be safe to use.
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 export default class Model {
   static instances = {};
   static indexedInstances = {};
@@ -263,7 +263,7 @@ You can also [browse through the Code Reference on GitHub](https://github.com/Ch
 <details>
 <summary>View the complete implementation</summary>
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 import RecordSet from '#src/core/recordSet.js';
 
 export default class Model {
@@ -337,7 +337,7 @@ export default class Model {
 }
 ```
 
-```js [src/core/recordSet.js]
+```js title="src/core/recordSet.js"
 export default class RecordSet extends Array {
   where(query) {
     return RecordSet.from(
@@ -385,7 +385,7 @@ export default class RecordSet extends Array {
 }
 ```
 
-```js [src/models/post.js]
+```js title="src/models/post.js"
 import Model from '#src/core/model.js';
 import Author from '#src/models/author.js';
 
@@ -422,7 +422,7 @@ export default class Post extends Model {
 }
 ```
 
-```js [src/models/author.js]
+```js title="src/models/author.js"
 import Model from '#src/core/model.js';
 import Post from '#src/models/post.js';
 

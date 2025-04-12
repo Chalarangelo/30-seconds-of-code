@@ -46,7 +46,7 @@ Instead of modifying our `Post` model from before, let's create a brand new `Aut
 
 Here's what the `Author` model looks like:
 
-```js [src/models/author.js]
+```js title="src/models/author.js"
 import Model from '#src/core/model.js';
 
 export default class Author extends Model {
@@ -77,7 +77,7 @@ Now that we have a model with some data attributes, let's add a calculated attri
 
 To achieve this, we can use a getter function in the `Author` model:
 
-```js [src/models/author.js]
+```js title="src/models/author.js"
 import Model from '#src/core/model.js';
 
 export default class Author extends Model {
@@ -94,7 +94,7 @@ Data attributes are quite versatile and allow us to **hide complexity** behind s
 
 Other cases may require comparison with external data or data that is **time-sensitive**. Let's look at our `Post` model for an example of a calculated attribute that depends on the current date. We'll first update its constructor to accept a `publishedAt` attribute.
 
-```js [src/models/post.js]
+```js title="src/models/post.js"
 import Model from '#src/core/model.js';
 
 export default class Post extends Model {
@@ -111,7 +111,7 @@ export default class Post extends Model {
 
 Then, we can create a calculated attribute to check if the post is published. To do this, we'll compare the `publishedAt` attribute with the current date and return a boolean value.
 
-```js [src/models/post.js]
+```js title="src/models/post.js"
 import Model from '#src/core/model.js';
 
 export default class Post extends Model {
@@ -134,7 +134,7 @@ Single relationships are simple to implement. In our case, we'll add a single re
 
 To make single relationships easier, we'll use the `id` attribute we sneaked into our models earlier. We'll also update our `Model` class with a `static` `find` method, that can retrieve and return a model instance by its `id`.
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 export default class Model {
   // ...
   static find(id) {
@@ -149,7 +149,7 @@ export default class Model {
 
 Next, we can update our `Post` model to include an `authorId` attribute:
 
-```js [src/models/post.js]
+```js title="src/models/post.js"
 import Model from '#src/core/model.js';
 
 export default class Post extends Model {
@@ -169,7 +169,7 @@ export default class Post extends Model {
 
 Ok, now we have an `authorId` attribute in our `Post` model. But how do we get the actual `Author` model from this `authorId`? We can create a getter function in the `Post` model to do this, using our `find` method from before.
 
-```js [src/models/post.js]
+```js title="src/models/post.js"
 import Model from '#src/core/model.js';
 import Author from '#src/models/author.js';
 
@@ -212,7 +212,7 @@ This, however, is a case of a multiple relationship, where a model instance refe
 
 Thinking in a similar manner as before, a `posts` relationship would simply be a calculated attribute. Its job is to retrieve all posts by an author. But we know the author's `id`! And we also have a way to get all records that match specific criteria, via the `where` method in the `RecordSet` class!
 
-```js [src/models/author.js]
+```js title="src/models/author.js"
 import Model from '#src/core/model.js';
 import Post from '#src/models/post.js';
 
@@ -312,7 +312,7 @@ What I've done in my implementation is quite simple - I've added a second, **ind
 
 For this to work, we also need to update the `prepare` method, along with the `constructor` of the `Model` class. And don't forget `find`! By changing its underlying implementation, we essentially **optimize the performance of all queries** that rely on the `id` attribute.
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 export default class Model {
   static instances = {};
   static indexedInstances = {};
@@ -366,7 +366,7 @@ You can also [browse through the Code Reference on GitHub](https://github.com/Ch
 <details>
 <summary>View the complete implementation</summary>
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 import RecordSet from '#src/core/recordSet.js';
 
 export default class Model {
@@ -407,7 +407,7 @@ export default class Model {
 }
 ```
 
-```js [src/core/recordSet.js]
+```js title="src/core/recordSet.js"
 export default class RecordSet extends Array {
   where(query) {
     return RecordSet.from(
@@ -451,7 +451,7 @@ export default class RecordSet extends Array {
 }
 ```
 
-```js [src/models/post.js]
+```js title="src/models/post.js"
 import Model from '#src/core/model.js';
 import Author from '#src/models/author.js';
 
@@ -480,7 +480,7 @@ export default class Post extends Model {
 }
 ```
 
-```js [src/models/author.js]
+```js title="src/models/author.js"
 import Model from '#src/core/model.js';
 import Post from '#src/models/post.js';
 

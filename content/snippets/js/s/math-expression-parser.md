@@ -133,7 +133,7 @@ Now that we have a basic understanding of the Earley parsing algorithm, let's im
 
 Rules in a CFG are comprised of a **left-hand side** (LHS) and a **right-hand side** (RHS). The LHS is a **non-terminal symbol**, and the RHS is a **sequence of terminal and non-terminal symbols**. To facilitate this, we'll define a `Sym` class and a `Rule` class to represent symbols and rules, respectively.
 
-```js [sym.js]
+```js title="sym.js"
 class Sym {
   static knownSymbols = new Set();
 
@@ -153,7 +153,7 @@ class Sym {
 export default Sym;
 ```
 
-```js [rule.js]
+```js title="rule.js"
 class Rule {
   constructor(leftHandSide, rightHandSide) {
     this.leftHandSide = leftHandSide;
@@ -228,7 +228,7 @@ Notice how **literal tokens** like `+` and `*` need to be defined as their own s
 
 Given a set of rules, we can now define a context-free grammar (CFG) class to hold the rules and provide methods for working with them. We'll extract the rules, symbols and **token matchers** when creating the CFG to make them easily accessible.
 
-```js [cfg.js]
+```js title="cfg.js"
 class CFG {
   constructor(rules) {
     rules.forEach(rule => this.addRule(rule));
@@ -266,7 +266,7 @@ const cfg = new CFG(rules);
 
 Having extracted the **token matchers** from the CFG, we can feed them to a **tokenizer** that will take an **input string** and produce an **array of tokens**. We'll then feed these tokens to the Earley parser to build the AST.
 
-```js [tokenizer.js]
+```js title="tokenizer.js"
 import CFG from './cfg.js';
 
 class Tokenizer {
@@ -327,7 +327,7 @@ const tokens = tokenizer.tokenize('2 + 3 * 4');
 
 Before we can write our parser, we'll have to define an `ASTNode` class, similar to the previous article, so that we can store the **parsed tokens** in a **tree-like structure**.
 
-```js [astNode.js]
+```js title="astNode.js"
 class ASTNode {
   constructor({ item, children }) {
     this.type = item.leftHandSide;
@@ -353,7 +353,7 @@ We'll see in a minute how this ties into the Earley parsing algorithm's results.
 
 Finally, we can implement the **Earley parser**, which will take the **tokens** produced by the tokenizer and build the AST using the CFG rules. The parser will return the **AST root node**, which we'll  use later to evaluate the expression.
 
-```js [earleyParser.js]
+```js title="earleyParser.js"
 import ASTNode from './astNode.js';
 
 class EarleyParser {
@@ -518,7 +518,7 @@ const ast = parser.parse(tokens);
 
 With the AST in hand, we can now **evaluate the expression** by traversing the tree and performing the necessary operations. We'll add an `evaluator` to the `Rule` class, so that each rule can be evaluated, if an **evaluator function** is provided.
 
-```js [rule.js]
+```js title="rule.js"
 class Rule {
   constructor(leftHandSide, rightHandSide, evaluator) {
     this.leftHandSide = leftHandSide;
@@ -538,7 +538,7 @@ export default Rule;
 
 We'll then update the `ASTNode` class to include an `evaluate` method that will **traverse the tree** and evaluate the nodes using the evaluator functions provided by the rules.
 
-```js [astNode.js]
+```js title="astNode.js"
 class ASTNode {
   constructor({ item, children }) {
     this.type = item.leftHandSide;

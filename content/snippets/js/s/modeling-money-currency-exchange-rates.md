@@ -420,7 +420,7 @@ Implementing a **basic structure** for money, currencies and exchange rates is a
 <details>
 <summary>View the complete implementation</summary>
 
-```js [Currency.js]
+```js title="Currency.js"
 const isoCodes = Intl.supportedValuesOf('currency');
 
 const currencyFields = ['symbol', 'narrowSymbol', 'name'];
@@ -464,7 +464,7 @@ class Currency {
 }
 ```
 
-```js [Bank.js]
+```js title="Bank.js"
 class Bank {
   static defaultBank;
 
@@ -513,7 +513,7 @@ class Bank {
 }
 ```
 
-```js [Money.js]
+```js title="Money.js"
 class Money {
   value;
   currency;

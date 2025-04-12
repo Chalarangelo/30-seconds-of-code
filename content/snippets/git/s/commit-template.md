@@ -22,7 +22,7 @@ git config commit.template "commit-template"
 
 If, for example your team is following the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) format, you can create a template file, named `commit-template` at the root of your repository, and use it as the commit message template.
 
-```shell [commit-template]
+```shell title="commit-template"
 # <type>[optional scope]: <description>
 #  feat: add new feature
 #  fix: bug fix

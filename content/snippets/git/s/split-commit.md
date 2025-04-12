@@ -18,7 +18,7 @@ While it might sound a little intimidating, it's a fairly straightforward proces
 git rebase -i HEAD~2
 ```
 
-```shell [git-rebase-todo]
+```shell title="git-rebase-todo"
 # 2. Mark the commit you want to split with `edit`
 edit 3050fc0de Fix network bug
 pick 7b1e3f2a2 Update README

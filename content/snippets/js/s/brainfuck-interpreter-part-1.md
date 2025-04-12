@@ -141,7 +141,7 @@ AST:
 
 The `AST` class represents the AST of a Brainfuck program. It has a single property, `nodes`, which is an array of nodes. The class has a single method, `addNode`, which adds a new node to the AST.
 
-```js [ast.js]
+```js title="ast.js"
 class AST {
   constructor() {
     this.nodes = [];
@@ -159,7 +159,7 @@ export default AST;
 
 The `ASTNode` class represents a single node in the AST. For flexibility, I'll first define a set of `nodeTypes` as an object representing the various node types (its keys) and their parameters, such as `offset`, `diff`, and `nodes`.
 
-```js [astNode.js]
+```js title="astNode.js"
 const nodeTypes = {
   movePointer: { params: { offset: 0 } },
   updateCell: { params: { diff: 0 } },
@@ -176,7 +176,7 @@ As you can see, we've used **descriptive names** for the node types, such as `mo
 
 We can now define a simple `ASTNode` class that will take a `type` and `params` object as arguments. The `params` object will be validated against the `nodeTypes` object to ensure that the **node type** is valid and that the **parameters** are correct.
 
-```js [astNode.js]
+```js title="astNode.js"
 const nodeTypes = { /* ... */ };
 const typeNames = Object.keys(nodeTypes);
 
@@ -202,7 +202,7 @@ export default ASTNode;
 
 We'll use a **regular expression** to first clean up the code by removing any characters that are not part of the Brainfuck language. We'll then split the code into character tokens and then **merge consecutive tokens** of the same type.
 
-```js [parser.js]
+```js title="parser.js"
 class Parser {
 
   static splitTokens(code) {
@@ -258,7 +258,7 @@ Up until this point, everything should be similar to the Smallfuck interpreter. 
 
 Finally, we can add our `parse` function to tie it all up:
 
-```js [parser.js]
+```js title="parser.js"
 import AST from './ast.js';
 import ASTNode from './astNode.js';
 
@@ -332,7 +332,7 @@ I think the only point worth mentioning here is, as is often the case, the use o
 
 The AST itself is essentially a simple array of nodes. To execute it, we can use a simple **loop over the nodes**. Each node will then define what to do based on its type. Loop nodes will follow a similar pattern, implementing their own loop logic over their internal nodes. Let's see what that looks like for the `AST` class:
 
-```js [ast.js]
+```js title="ast.js"
 class AST {
   // ...
 
@@ -348,7 +348,7 @@ export default AST;
 
 Now, for the `ASTNode` class, we can simply extend the `nodeTypes` object to include a `createExecute` method for each node. This way we can prepare the `execute` function in the `constructor`, instead of having to write a `switch` statement:
 
-```js [astNode.js]
+```js title="astNode.js"
 const nodeTypes = {
   movePointer: {
     params: { offset: 0 },

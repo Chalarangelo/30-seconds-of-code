@@ -56,7 +56,7 @@ While developing the project up until this point, I've used Node.js and its [REP
 
 Before we dive into the autoloader, let's create a `settings.js` file in the `config` directory. This file will hold the **settings** for our project. For the time being, we'll simply define a setting for which modules to autoload.
 
-```js [src/config/settings.js]
+```js title="src/config/settings.js"
 const settings = {
   loader: {
     modules: [
@@ -83,7 +83,7 @@ After fiddling around with a few ideas, such as generating an index file for eac
 
 I'll first use the [`fs`](https://nodejs.org/api/fs.html) module to **read the directories** and **find all the files** in them. Then, I'll create a `Map` and use [`import()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) to **dynamically load each module**. Provided that naming conventions are followed, I'll be able to **deduce the module name from the file path**, much like Rails does. Then, I'll convert the `Map` to an object and export it.
 
-```js [src/scripts/autoload.js]
+```js title="src/scripts/autoload.js"
 import { readdir } from 'node:fs/promises';
 
 import settings from '#src/config/settings.js';
@@ -130,7 +130,7 @@ With the autoloader in place, we can now focus on creating a **console environme
 
 The `console.js` script will be the entry point for our console environment. It will **import the autoloaded modules** and **set up the REPL**. For that last part, we'll iterate over the modules and make them available in the REPL context.
 
-```js [src/scripts/console.js]
+```js title="src/scripts/console.js"
 import repl from 'node:repl';
 import modules from '#src/scripts/autoload.js';
 
@@ -147,7 +147,7 @@ Object.entries(modules).forEach(([moduleName, module]) => {
 
 We can now add a script to the `package.json` file to start the console environment.
 
-```json [package.json]
+```json title="package.json"
 {
   "scripts": {
     "console": "node src/scripts/console.js"
@@ -175,7 +175,7 @@ The previous output is alright, but when our models inevitably become huge, we m
 
 In order to **make our records stand out**, we'll start by adding a custom value to [`util.inspect.styles`](https://nodejs.org/api/util.html#customizing-utilinspect-colors), called `record` and set it to `blue` (as far as I can tell, nothing uses this style by default).
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 import RecordSet from '#src/core/recordSet.js';
 
 import util from 'util';
@@ -192,7 +192,7 @@ const customInspectSymbol = Symbol.for('nodejs.util.inspect.custom');
 
 Then, we'll add the new method to our `Model` class. For starters, let's just make sure that we **wrap the model name with square brackets and add the record id**. The rest is going to be the same, except we'll color the square bracket part, its contents and the opening and closing curly braces blue.
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 // ...
 
 export default class Model {
@@ -227,7 +227,7 @@ The output is already looking better, but we can still improve it. For instance,
 
 You might have noticed the `depth` parameter from the previous method. We can use it to **control the depth of the inspection**. We'll update our inspect utility to **compact nested records**, depending on the `depth` parameter.
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 // ...
 
 export default class Model {
@@ -261,7 +261,7 @@ One more thing we can do is **convert the id to a hexadecimal string**. This is 
 
 All this takes is the use of `Number.prototype.toString()` with a `16` radix and `String.prototype.padStart()` to ensure that the string is always `8` characters long.
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 // ...
 
 export default class Model {
@@ -300,7 +300,7 @@ So far, all of the fields in our models have been inspectable, which is the defa
 
 Luckily, our **field definition** implementation from last time can be easily tweaked to support an `inspectable` option. Let's update the `prepare` method in the `Model` class, as well as our inspect utility to respect this **new option**.
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 // ...
 
 export default class Model {
@@ -362,7 +362,7 @@ export default class Model {
 
 This simple change ensures that only fields marked as `inspectable` (defaults to `true` for all fields) are displayed in the console. We can then go ahead and mark the `Author` model's `email` field as not inspectable.
 
-```js [src/models/author.js]
+```js title="src/models/author.js"
 import Model from '#src/core/model.js';
 import Post from '#src/models/post.js';
 
@@ -407,7 +407,7 @@ You can also [browse through the Code Reference on GitHub](https://github.com/Ch
 <details>
 <summary>View the complete implementation</summary>
 
-```js [src/config/settings.js]
+```js title="src/config/settings.js"
 const settings = {
   loader: {
     modules: [
@@ -420,7 +420,7 @@ const settings = {
 };
 ```
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 import RecordSet from '#src/core/recordSet.js';
 
 import util from 'util';
@@ -620,7 +620,7 @@ export default class Model {
 }
 ```
 
-```js [src/core/recordSet.js]
+```js title="src/core/recordSet.js"
 export default class RecordSet extends Array {
   where(query) {
     return RecordSet.from(
@@ -668,7 +668,7 @@ export default class RecordSet extends Array {
 }
 ```
 
-```js [src/core/serializer.js]
+```js title="src/core/serializer.js"
 export default class Serializer {
   static prepare(serializer, serializableAttributes) {
     serializer.serializableAttributes = [];
@@ -720,7 +720,7 @@ export default class Serializer {
 }
 ```
 
-```js [src/core/factory.js]
+```js title="src/core/factory.js"
 import Model from '#src/core/model.js';
 
 const sequenceSymbol = Symbol('sequence');
@@ -797,7 +797,7 @@ export default class Factory {
 }
 ```
 
-```js [src/scripts/autoload.js]
+```js title="src/scripts/autoload.js"
 import { readdir } from 'node:fs/promises';
 
 import settings from '#src/config/settings.js';
@@ -832,7 +832,7 @@ const modules = await autoload();
 export default { ...modules, settings };
 ```
 
-```js [src/scripts/console.js]
+```js title="src/scripts/console.js"
 import repl from 'node:repl';
 import modules from '#src/scripts/autoload.js';
 
@@ -847,7 +847,7 @@ Object.entries(modules).forEach(([moduleName, module]) => {
 });
 ```
 
-```js [src/models/post.js]
+```js title="src/models/post.js"
 import Model from '#src/core/model.js';
 import Author from '#src/models/author.js';
 
@@ -884,7 +884,7 @@ export default class Post extends Model {
 }
 ```
 
-```js [src/models/author.js]
+```js title="src/models/author.js"
 import Model from '#src/core/model.js';
 import Post from '#src/models/post.js';
 
@@ -916,7 +916,7 @@ export default class Author extends Model {
 }
 ```
 
-```js [src/serializers/postSerializer.js]
+```js title="src/serializers/postSerializer.js"
 import Serializer from '#src/core/serializer.js';
 
 export default class PostSerializer extends Serializer {
@@ -944,7 +944,7 @@ export default class PostSerializer extends Serializer {
 }
 ```
 
-```js [src/serializers/postPreviewSerializer.js]
+```js title="src/serializers/postPreviewSerializer.js"
 import Serializer from '#src/core/serializer.js';
 
 export default class PostPreviewSerializer extends Serializer {
@@ -966,7 +966,7 @@ export default class PostPreviewSerializer extends Serializer {
 }
 ```
 
-```js [spec/factories/authorFactory.js]
+```js title="spec/factories/authorFactory.js"
 import Factory from '#src/core/factory.js';
 import Author from '#src/models/author.js';
 
@@ -986,7 +986,7 @@ export default class AuthorFactory extends Factory {
 }
 ```
 
-```js [spec/factories/postFactory.js]
+```js title="spec/factories/postFactory.js"
 import Factory from '#src/core/factory.js';
 import Post from '#src/models/post.js';
 

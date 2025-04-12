@@ -80,7 +80,7 @@ You may be thinking _but how does this help us?_ If we had a global storage for 
 
 But how and where will we create such a storage? Well, in the `Model` class, obviously! And, while we're at it, we can create a static method to prepare the storage for each model class. We'll later explore what other useful things we can bundle into this method in the future.
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 export default class Model {
   static instances = {};
 
@@ -97,7 +97,7 @@ export default class Model {
 
 Having defined the `Model` class and its `prepare` method, we can now create a subclass of `Model` and call the `prepare` method on it inside a static initialization block. This will create an array for the subclass to store its instances.
 
-```js [src/models/post.js]
+```js title="src/models/post.js"
 import Model from '#src/core/model.js';
 
 export default class Post extends Model {
@@ -128,7 +128,7 @@ Leveraging the power of array methods, we need only implement a handful of alias
 
 The single most useful piece of functionality we need to implement is the `where` method. This method will allow us to **query records based on their attributes**. Again, drawing inspiration from ActiveRecord, I chose to give it a great degree of flexibility, which is reflected in its arguments.
 
-```js [src/core/recordSet.js]
+```js title="src/core/recordSet.js"
 export default class RecordSet extends Array {
   where(query) {
     return RecordSet.from(
@@ -163,7 +163,7 @@ We'll come back to use this method in just a moment, but first we need to popula
 
 We've defined the basics of the core classes, but we also need to **load some data** into memory. The `Model` is the best place to do this, via the use of its `constructor`. This way, we can load the data into `instances` when a new model instance is created.
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 export default class Model {
   // ...
   constructor() {
@@ -177,7 +177,7 @@ export default class Model {
 
 Now, when we create a new instance of a model, it will be stored in the `instances` array. Each class can simply call the `super` constructor, then load its data into the instance.
 
-```js [src/models/post.js]
+```js title="src/models/post.js"
 import Model from '#src/core/model.js';
 
 export default class Post extends Model {
@@ -207,7 +207,7 @@ Ok, that last bit was somewhat confusing. Let me explain. If we define a `static
 
 Given that a `RecordSet` is just an array on steroids, we can create a new `RecordSet` from it, using `Array.from()`, or rather, `RecordSet.from()`. Putting the pieces together, we can then define a **static getter method**, `all`, on the `Model` class, which will return a `RecordSet` of all its instances.
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 import RecordSet from '#src/core/recordSet.js';
 
 export default class Model {
@@ -271,7 +271,7 @@ Before we wrap up, let's add some finishing touches, at least for the time being
 
 First off, I want to make `where` available to the models themselves. Calling `all` seems a little to verbose, after all.
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 export default class Model {
   // ...
   static where(query) {
@@ -286,7 +286,7 @@ See how we're using `this` in the `where` method again? Which will in turn call 
 
 Apart from ActiveRecord, Ruby and Rails provide an absolute treasure trove of convenience methods. I especially like `first` and `last` on enumerable objects, making **indexing** in other languages seem so cumbersome. Let's add these to our `RecordSet` as well.
 
-```js [src/core/recordSet.js]
+```js title="src/core/recordSet.js"
 export default class RecordSet extends Array {
   // ...
   get first() {
@@ -305,7 +305,7 @@ Finally, I'd like a way to quickly **pull some attributes** from the records or 
 
 A `pluck` method will allow us to pull a single attribute from each record, while a `select` method will allow us to pull multiple attributes from each record.
 
-```js [src/core/recordSet.js]
+```js title="src/core/recordSet.js"
 export default class RecordSet extends Array {
   // ...
   pluck(attribute) {
@@ -345,7 +345,7 @@ You can also [browse through the Code Reference on GitHub](https://github.com/Ch
 <details>
 <summary>View the complete implementation</summary>
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 import RecordSet from '#src/core/recordSet.js';
 
 export default class Model {
@@ -375,7 +375,7 @@ export default class Model {
 }
 ```
 
-```js [src/core/recordSet.js]
+```js title="src/core/recordSet.js"
 export default class RecordSet extends Array {
   where(query) {
     return RecordSet.from(
@@ -419,7 +419,7 @@ export default class RecordSet extends Array {
 }
 ```
 
-```js [src/models/post.js]
+```js title="src/models/post.js"
 import Model from '#src/core/model.js';
 
 export default class Post extends Model {

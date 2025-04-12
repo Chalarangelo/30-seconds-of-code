@@ -65,7 +65,7 @@ _What exactly is this field definition going to be?_ you may be asking. Simply p
 
 Let's start with the `prepare` method in the `Model` and make the necessary changes.
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 import RecordSet from '#src/core/recordSet.js';
 
 export default class Model {
@@ -146,7 +146,7 @@ This seems like a lot, but we've just added a loop to store the field definition
 
 _Yes, but these definitions don't do anything yet._ Right. Let's go ahead and update the `Model` class one more time. This time around, we'll make sure to use our new `fields` definition in the `constructor`. We'l loop over this definition, find the fields we want to add to the record and **validate them**.
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 import RecordSet from '#src/core/recordSet.js';
 
 export default class Model {
@@ -184,7 +184,7 @@ Notice how we use `this.constructor` to access the `fields` definition. Again, w
 
 Let's update our `Post` and `Author` models to include some field definitions. We'll also need to remove almost all logic from our `constructor`s, as it's now handled in the `Model` class.
 
-```js [src/models/author.js]
+```js title="src/models/author.js"
 import Model from '#src/core/model.js';
 import Post from '#src/models/post.js';
 
@@ -206,7 +206,7 @@ export default class Author extends Model {
 }
 ```
 
-```js [src/models/post.js]
+```js title="src/models/post.js"
 import Model from '#src/core/model.js';
 import Author from '#src/models/author.js';
 
@@ -239,7 +239,7 @@ To define said constraint, we'll make sure our field definition can handle **obj
 
 Let's update our `prepare` method to handle this.
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 import RecordSet from '#src/core/recordSet.js';
 
 export default class Model {
@@ -306,7 +306,7 @@ That's literally all we need to do. On top of type checking, we now have a check
 
 Let's make a couple of updates to our model field definitions.
 
-```js [src/models/author.js]
+```js title="src/models/author.js"
 import Model from '#src/core/model.js';
 import Post from '#src/models/post.js';
 
@@ -324,7 +324,7 @@ export default class Author extends Model {
 }
 ```
 
-```js [src/models/post.js]
+```js title="src/models/post.js"
 import Model from '#src/core/model.js';
 import Author from '#src/models/author.js';
 
@@ -349,7 +349,7 @@ Thus far, we've worked under the assumption of `null` being the empty value. How
 
 Same as before, we'll extend the definition to include a `defaultValue` key, allowing us to define a default value for each field, which will be used if the field is empty. This requires a small change in the `prepare` method and an update in the `constructor`.
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 import RecordSet from '#src/core/recordSet.js';
 
 export default class Model {
@@ -448,7 +448,7 @@ export default class Model {
 
 This time around, we'll update our `Post` with a default value for the `publishedAt` field.
 
-```js [src/models/post.js]
+```js title="src/models/post.js"
 import Model from '#src/core/model.js';
 import Author from '#src/models/author.js';
 
@@ -486,7 +486,7 @@ A more complex constraint that is often required is **field uniqueness**. This i
 
 We'll start by constraining the `id` field to ensure that it's **unique across all records of a model**. This needs yet another small change in the `prepare` method of our `Model`.
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 import RecordSet from '#src/core/recordSet.js';
 
 export default class Model {
@@ -576,7 +576,7 @@ Our current implementation only allows for a single index, which is the `id` fie
 
 While we're at it, let's add a `unique` constraint to the field definition, which will allow us to define fields that should be **unique across all records of a model**. Naturally, `id` will be unique by default, but we can now define other fields as unique as well.
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 import RecordSet from '#src/core/recordSet.js';
 
 export default class Model {
@@ -673,7 +673,7 @@ export default class Model {
 
 This change breaks our `Model` class, as `find` and the `constructor` need to account for the change in the underlying data structures. Let's make the necessary changes.
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 import RecordSet from '#src/core/recordSet.js';
 
 export default class Model {
@@ -711,7 +711,7 @@ export default class Model {
 
 That's it! Same performance and logic, more flexibility and we can add uniqueness constraints. Let's update our `Author` model to make sure the `email` field is unique.
 
-```js [src/models/author.js]
+```js title="src/models/author.js"
 import Model from '#src/core/model.js';
 
 export default class Author extends Model {
@@ -736,7 +736,7 @@ export default class Author extends Model {
 
 Our `find` method is perfect when querying records by their `id`. But, having multiple indices, we may as well add a `findBy` method to leverage these data structures. This will allow us to **query records by any field that has a unique constraint**.
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 import RecordSet from '#src/core/recordSet.js';
 
 export default class Model {
@@ -770,7 +770,7 @@ We've covered the basics of individual field validation, but what if we want to 
 
 After tinkering with different approaches, I settled on a third argument to the `prepare` method, which allows an **optional array of validator functions** to be passed. These, in turn, will be executed on the newly created record, in the `constructor`, to ensure it meets the custom validation criteria.
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 import RecordSet from '#src/core/recordSet.js';
 
 export default class Model {
@@ -894,7 +894,7 @@ export default class Model {
 
 We can then add a custom validation to our `Author` model, ensuring that the `email` field contains an `@` symbol as [proper email validation is hard](/js/s/email-validation).
 
-```js [src/models/author.js]
+```js title="src/models/author.js"
 import Model from '#src/core/model.js';
 import Post from '#src/models/post.js';
 
@@ -935,7 +935,7 @@ You can also [browse through the Code Reference on GitHub](https://github.com/Ch
 <summary>View the complete implementation</summary>
 
 
-```js [src/core/model.js]
+```js title="src/core/model.js"
 import RecordSet from '#src/core/recordSet.js';
 
 export default class Model {
@@ -1105,7 +1105,7 @@ export default class Model {
 }
 ```
 
-```js [src/core/recordSet.js]
+```js title="src/core/recordSet.js"
 export default class RecordSet extends Array {
   where(query) {
     return RecordSet.from(
@@ -1153,7 +1153,7 @@ export default class RecordSet extends Array {
 }
 ```
 
-```js [src/core/serializer.js]
+```js title="src/core/serializer.js"
 export default class Serializer {
   static prepare(serializer, serializableAttributes) {
     serializer.serializableAttributes = [];
@@ -1205,7 +1205,7 @@ export default class Serializer {
 }
 ```
 
-```js [src/core/factory.js]
+```js title="src/core/factory.js"
 import Model from '#src/core/model.js';
 
 const sequenceSymbol = Symbol('sequence');
@@ -1282,7 +1282,7 @@ export default class Factory {
 }
 ```
 
-```js [src/models/post.js]
+```js title="src/models/post.js"
 import Model from '#src/core/model.js';
 import Author from '#src/models/author.js';
 
@@ -1319,7 +1319,7 @@ export default class Post extends Model {
 }
 ```
 
-```js [src/models/author.js]
+```js title="src/models/author.js"
 import Model from '#src/core/model.js';
 import Post from '#src/models/post.js';
 
@@ -1351,7 +1351,7 @@ export default class Author extends Model {
 }
 ```
 
-```js [src/serializers/postSerializer.js]
+```js title="src/serializers/postSerializer.js"
 import Serializer from '#src/core/serializer.js';
 
 export default class PostSerializer extends Serializer {
@@ -1379,7 +1379,7 @@ export default class PostSerializer extends Serializer {
 }
 ```
 
-```js [src/serializers/postPreviewSerializer.js]
+```js title="src/serializers/postPreviewSerializer.js"
 import Serializer from '#src/core/serializer.js';
 
 export default class PostPreviewSerializer extends Serializer {
@@ -1401,7 +1401,7 @@ export default class PostPreviewSerializer extends Serializer {
 }
 ```
 
-```js [spec/factories/authorFactory.js]
+```js title="spec/factories/authorFactory.js"
 import Factory from '#src/core/factory.js';
 import Author from '#src/models/author.js';
 
@@ -1421,7 +1421,7 @@ export default class AuthorFactory extends Factory {
 }
 ```
 
-```js [spec/factories/postFactory.js]
+```js title="spec/factories/postFactory.js"
 import Factory from '#src/core/factory.js';
 import Post from '#src/models/post.js';
 

@@ -16,7 +16,7 @@ Links come in all shapes and sizes. They are often in the form of an automatical
 
 And some other times, you might get a mixed content link, such as a link for the [modulo operator(`%`)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder), which needs to be carefully styled to make sure it looks good.
 
-```js [aFunction.js]
+```js title="aFunction.js"
 // First we need to make sure lines that are 80 characters long fit snugly here.
 const aFunction = (a, b = 2) => {
   if (a === b) return b;

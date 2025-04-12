@@ -11,12 +11,12 @@ dateModified: 2021-11-28
 
 Strict mode can be applied to entire scripts or individual functions by including `'use strict'` before any other statements.
 
-```js [script.js]
+```js title="script.js"
 'use strict';
 const x = "Hello from a strict mode script";
 ```
 
-```js [other.js]
+```js title="other.js"
 function strict() {
   'use strict';
   const x = 'Hello from a strict mode function';

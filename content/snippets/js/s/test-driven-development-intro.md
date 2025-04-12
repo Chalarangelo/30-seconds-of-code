@@ -28,7 +28,7 @@ I decided to use [Vitest](https://vitest.dev/) for this project. It's the tool I
 
 As far as **syntax** is concerned, there's nothing particularly special about Vitest. In fact, it's practically the same as every other testing library, using the classic trinity of [`describe`](https://vitest.dev/api/#describe), [`test`](https://vitest.dev/api/#test) (aliased conveniently as `it`), and [`expect`](https://vitest.dev/api/expect.html) for **assertions**.
 
-```js [spec/myFunction.test.js]
+```js title="spec/myFunction.test.js"
 import { describe, it, expect } from 'vitest';
 import { myFunction } from '../src/myFunction.js';
 
@@ -41,7 +41,7 @@ describe('myFunction', () => {
 
 It also comes with a lot of very convenient [matchers](https://vitest.dev/api/expect.html), [mocking](https://vitest.dev/api/mock.html) and pretty much everything you'd expect from a modern testing library.
 
-```js [spec/fetchUser.test.js]
+```js title="spec/fetchUser.test.js"
 import { describe, it, expect } from 'vitest';
 import { fetchUser } from '../src/fetchUser.js';
 
@@ -58,7 +58,7 @@ describe('fetchUser', () => {
 
 I especially like the [`test.each()`](https://vitest.dev/api/#test-each) and [`describe.each()`](https://vitest.dev/api/#describe-each) functions, which allow you to **run the same test with different parameters**, sparing you the hassle of repeating the same assertions over and over again.
 
-```js [spec/isNil.test.js]
+```js title="spec/isNil.test.js"
 import { describe, it, expect } from 'vitest';
 import { isNil } from '../src/isNil.js';
 
@@ -83,7 +83,7 @@ One thing I want to mention is how easy it was to [roll up my own **custom match
 
 Surprisingly, this only took me about **10 lines of code**:
 
-```js [spec/matchers.js]
+```js title="spec/matchers.js"
 import { expect } from 'vitest';
 
 expect.extend({
@@ -101,7 +101,7 @@ expect.extend({
 
 The entire process is as simple as calling [`expect.extend()`](https://vitest.dev/api/expect.html#expect-extend) and defining the behavior. To use it in combination with `not`, I only had to check the `isNot` property of the context object. Now I can use it in my tests like this:
 
-```js [spec/hexDigit.test.js]
+```js title="spec/hexDigit.test.js"
 import { describe, it, expect } from 'vitest';
 import './matchers.js';
 
@@ -133,7 +133,7 @@ I'll dive deeper into this point in a future article, but one of the key concern
 
 By writing tests first, I was able to decide on how I want the library to behave, what methods to expose and what sorts of arguments they should take. I was also able to **focus on using the library before implementing it**. This naturally makes it easier to spot the rough edges early on and make the API easier to use.
 
-```js [spec/myFunction.test.js]
+```js title="spec/myFunction.test.js"
 import { describe, it, expect } from 'vitest';
 import { myFunction } from '../src/myFunction.js';
 
@@ -152,7 +152,7 @@ It also puts you in the shoes of the user, instead of the library author – a p
 
 One of the things I noticed as I went through the process was that I was pretty confident about my code. I knew that if I broke something, the tests would catch it. This is a great feeling to have, especially when you're working on a project that you're not entirely sure about or that hasn't materialized fully yet.
 
-```js [spec/myFunction.test.js]
+```js title="spec/myFunction.test.js"
 import { describe, it, expect } from 'vitest';
 import { myFunction } from '../src/myFunction.js';
 
@@ -178,7 +178,7 @@ The magic of TDD lies in exactly that. When a function, a module, anything is co
 
 As I'll also explore in a future piece, I refactored the library a handful of times, changing the API in some cases. By **refactoring the tests** to match the result I was looking for, I was always able to know when the refactor was complete and functional. Without tests to back me up, I would have been much more hesitant to make some of these changes.
 
-```js [spec/myFunction.test.js]
+```js title="spec/myFunction.test.js"
 import { describe, it, expect } from 'vitest';
 import { myFunction } from '../src/myFunction.js';
 

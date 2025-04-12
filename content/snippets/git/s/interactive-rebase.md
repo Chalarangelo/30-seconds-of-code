@@ -55,7 +55,7 @@ The options that are available to you during an interactive rebase are multiple,
 
 You can either use the **full command** or the **shorthand** version when specifying the action for each commit. Below is an example of a commit list in an interactive rebase:
 
-```shell [git-rebase-todo]
+```shell title="git-rebase-todo"
 p c191f90c7 Initial commit        # Keep this commit
 pick 3050fc0de Fix network bug    # Keep this commit
 r 7b1e3f2a2 Update README         # Edit the commit message

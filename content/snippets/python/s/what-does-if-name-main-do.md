@@ -18,14 +18,14 @@ if __name__ == "__main__":
 
 While you might have seen this before, even used it a few times, it might not be clear what it does and how it works. Let's consider the following setup - two scripts, `script1.py` and `script2.py`. `script2.py` imports `script1.py` and calls a function from it.
 
-```py [script1.py]
+```py title="script1.py"
 def do_stuff:
   print('Doing stuff')
 
 do_stuff()
 ```
 
-```py [script2.py]
+```py title="script2.py"
 from script1 import do_stuff
 
 do_stuff()
@@ -46,7 +46,7 @@ As you can see, the function `do_stuff` is called twice when we run `script2.py`
 
 How do we fix this? By adding the `if __name__ == "__main__"` check in `script1.py`. This directive checks if the script is being **run directly**, or if it's being **imported**. If it's being run directly, the code inside the `if` block is executed, otherwise it's not.
 
-```py [script1.py]
+```py title="script1.py"
 def do_stuff:
   print('Doing stuff')
 
