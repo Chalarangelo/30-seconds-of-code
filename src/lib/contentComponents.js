@@ -1,6 +1,6 @@
 import { globSync } from 'glob';
 import fs from 'fs-extra';
-import sass from 'sass';
+import * as sass from 'sass';
 import settings from '#src/config/settings.js';
 
 export default class ContentComponents {
