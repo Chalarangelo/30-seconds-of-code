@@ -96,7 +96,13 @@ This is a code block without a language. It doesn't appear very often, yet it's 
 Let's also ensure lines wrap on their, as needed. Might come in handy!
 ```
 
-#### No language, yes title
+### Titles
+
+```js title="This is a title"
+const x = 'this is a title';
+```
+
+#### Without language
 
 ```text title="No language"
 No languge here
@@ -110,6 +116,15 @@ No languge here
   boder: 1px solid #00ff00;
   background-color: linear-gradient(to right, #0000ff 0%, #00ffff 50%);
 }
+```
+
+### Highlighted lines
+
+```js {1} {3-4}
+const x = 10;
+x += 5;
+const y = 20;
+console.log(x + y);
 ```
 
 ## Other elements

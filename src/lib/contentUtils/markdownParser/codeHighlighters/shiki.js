@@ -7,6 +7,7 @@ import { createOnigurumaEngine } from '@shikijs/engine-oniguruma';
 
 import { transformerColorizedBrackets } from '@shikijs/colorized-brackets';
 import { transformerColorSwatches } from './transformers/colorSwatches.js';
+import { transformerLineHighlights } from './transformers/lineHighlights.js';
 
 const loadBundledThemes = () => {
   return {
@@ -65,12 +66,13 @@ export default class ShikiHighlighter {
     return 'shiki';
   }
 
-  static async highlightCode(code, language) {
+  static async highlightCode(code, language, metadata) {
     const highlightedCode = await this.codeToHtml(code, {
       lang: language,
       theme: 'cosmos',
       transformers: [
         transformerColorSwatches(),
+        transformerLineHighlights(metadata),
         transformerColorizedBrackets({
           themes: {
             cosmos: [

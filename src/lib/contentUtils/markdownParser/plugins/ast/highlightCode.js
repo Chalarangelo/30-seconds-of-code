@@ -1,7 +1,8 @@
 import { visit } from 'unist-util-visit';
 import {
   parseMeta,
-  getMetaByKey,
+  getMetaString,
+  getMetaRanges,
 } from '#src/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.js';
 
 // Parse the language and title from the language string. Only supports
@@ -20,10 +21,11 @@ import {
 const createMetadataExtractor = languages => node => {
   const languageName = node.lang || 'text';
   const meta = parseMeta(node.meta || '');
-  const title = getMetaByKey(meta, 'title')?.value || null;
+  const title = getMetaString(meta, 'title')?.value || null;
   const languageStringLiteral = languages[languageName] || '';
+  const highlightedLines = getMetaRanges(meta, null);
 
-  return { languageName, title, languageStringLiteral };
+  return { languageName, title, languageStringLiteral, highlightedLines };
 };
 
 /**
@@ -93,7 +95,7 @@ export const highlightCode = ({ grammars, codeHighlighter }) => {
       const { languageName } = metadata;
 
       const promise = codeHighlighter
-        .highlightCode(node.value, languageName)
+        .highlightCode(node.value, languageName, metadata)
         .then(highlightedCode => {
           node.type = `html`;
           node.value = wrapHighlightedCode(highlightedCode, attributes);

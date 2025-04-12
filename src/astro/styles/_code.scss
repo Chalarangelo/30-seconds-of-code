@@ -92,6 +92,10 @@ pre {
     min-height: calc(var(--line-height-normal) * 1em);
     // Apply the layout bleed for the inline padding.
     padding-inline: var(--layout-bleed-width);
+
+    &[data-line-highlight='true'] {
+      background-color: var(--color-code-background-light);
+    }
   }
 }
 

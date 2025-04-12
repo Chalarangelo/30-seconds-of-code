@@ -263,3 +263,18 @@ export const getMetaByKey = (meta, key) => {
   const result = meta.find(item => item.key === key);
   return result ?? null;
 };
+
+export const getMetaString = (meta, key) => {
+  const result = meta.find(item => item.key === key && item.type === 'string');
+  return result ?? null;
+};
+
+export const getMetaRanges = (meta, key) => {
+  const ranges = meta.filter(item => item.key === key && item.type === 'range');
+  const allRangeValues = ranges.reduce((acc, item) => {
+    acc.push(...item.value);
+    return acc;
+  }, []);
+
+  return new Set(allRangeValues);
+};
