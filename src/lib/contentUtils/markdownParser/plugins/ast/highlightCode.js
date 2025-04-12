@@ -1,4 +1,8 @@
 import { visit } from 'unist-util-visit';
+import {
+  parseMeta,
+  getMetaByKey,
+} from '#src/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.js';
 
 // Parse the language and title from the language string. Only supports
 // space separated language and title, e.g. `language [title]`.
@@ -15,7 +19,8 @@ import { visit } from 'unist-util-visit';
  */
 const createMetadataExtractor = languages => node => {
   const languageName = node.lang || 'text';
-  const title = node.meta?.replace('[', '').replace(']', '') || null;
+  const meta = parseMeta(node.meta || '');
+  const title = getMetaByKey(meta, 'title')?.value || null;
   const languageStringLiteral = languages[languageName] || '';
 
   return { languageName, title, languageStringLiteral };

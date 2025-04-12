@@ -1,4 +1,4 @@
-import parseMeta from '#src/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.js';
+import { parseMeta } from '#src/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.js';
 
 import { describe, it, expect } from 'vitest';
 

@@ -252,7 +252,8 @@ const toSegments = str => {
   return cleanUpSegments(segments);
 };
 
-const parseMeta = str => {
+// Meta parsing
+export const parseMeta = str => {
   // Split the string into segments.
   const segments = toSegments(str);
   // Process the segments into typed segments.
@@ -260,4 +261,8 @@ const parseMeta = str => {
   return typedSegments;
 };
 
-export default parseMeta;
+// Parsed meta retrieval
+export const getMetaByKey = (meta, key) => {
+  const result = meta.find(item => item.key === key);
+  return result ?? null;
+};
