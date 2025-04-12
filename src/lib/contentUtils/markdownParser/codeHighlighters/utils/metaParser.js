@@ -168,9 +168,9 @@ const cleanUpSegments = segments => {
 const toTypedSegments = segments => {
   let typedSegments = [];
 
-  for (let segment of segments) {
+  segments.forEach((segment, i) => {
     // If the segment is a potential key, skip it; it will be processed later.
-    if (isKeyLike(segment)) continue;
+    if (isKeyLike(segment)) return;
 
     // key: optional, value: required
     // type: string, regexp, range, boolean
@@ -180,10 +180,7 @@ const toTypedSegments = segments => {
     if (isDelimited(segment)) {
       // Delimited values may be part of a key-value pair, so we need to check
       // if the previous segment is a key. They may be ranges, regexps, or strings.
-      typedSegment = delimitedToTypedSegment(
-        segment,
-        segments[segments.indexOf(segment) - 1]
-      );
+      typedSegment = delimitedToTypedSegment(segment, segments[i - 1]);
     } else if (isKeyValuePair(segment)) {
       // Non-delimited values can be key-value pairs themselves, and we need to
       // handle them as such, if they are.
@@ -194,7 +191,7 @@ const toTypedSegments = segments => {
     }
 
     if (!isNil(typedSegment?.value)) typedSegments.push(typedSegment);
-  }
+  });
 
   return typedSegments;
 };
