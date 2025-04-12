@@ -52,8 +52,9 @@ pre {
   // Relative position pre elements to allow for absolute positioning of the
   // language label.
   position: relative;
-  // Use the layout bleed for the inline padding.
-  padding: var(--spacing-12) var(--layout-bleed-width);
+  // The layout bleed is not applied to the inline padding, as individual lines
+  // need to apply it themselves to work correctly with highlighting.
+  padding: var(--spacing-12) 0;
   // Ensure long lines that can't wrap are responsive on mobile.
   overflow: auto;
   // Make sure long lines wrap, if opporrunities exist.
@@ -78,8 +79,19 @@ pre {
     padding: 0;
     border-radius: 0;
     line-height: inherit;
-    // Display as a block element to fill the parent element.
+    // Display as a flex element to fill the parent element and create a column
+    // layout, so that children (lines) can span the entire width.
+    display: flex;
+    flex-direction: column;
+  }
+
+  .line {
+    // Fill the entire width of the parent element.
     display: block;
+    // Make sure empty lines are displayed correctly.
+    min-height: calc(var(--line-height-normal) * 1em);
+    // Apply the layout bleed for the inline padding.
+    padding-inline: var(--layout-bleed-width);
   }
 }
 
