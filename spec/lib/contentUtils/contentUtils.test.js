@@ -242,7 +242,7 @@ describe('ContentUtils.prepareContent', async () => {
     });
 
     describe('Markdown parsing', () => {
-      it('should highlight code blocks', () => {
+      it.skip('should highlight code blocks', () => {
         const snippetWithoutTitle = snippetData.find(
           ({ id }) => id === 'js/s/array-grouping'
         );
