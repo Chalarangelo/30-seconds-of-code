@@ -6,7 +6,7 @@ import {
 import { createOnigurumaEngine } from '@shikijs/engine-oniguruma';
 
 import { transformerColorizedBrackets } from '@shikijs/colorized-brackets';
-import transformerHighlightColors from './transformers/highlightColors.js';
+import { transformerColorSwatches } from './transformers/colorSwatches.js';
 
 const loadBundledThemes = () => {
   return {
@@ -70,7 +70,7 @@ export default class ShikiHighlighter {
       lang: language,
       theme: 'cosmos',
       transformers: [
-        transformerHighlightColors(),
+        transformerColorSwatches(),
         transformerColorizedBrackets({
           themes: {
             cosmos: [

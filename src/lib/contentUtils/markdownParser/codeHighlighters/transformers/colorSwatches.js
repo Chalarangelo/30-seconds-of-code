@@ -7,9 +7,9 @@ const hexRegexp =
  * `<span>` tag with the `--hex-color` property. This allows the CSS to pick up
  * the color and display it as a little swatch next to the hex code.
  */
-const transformerHighlightColors = () => {
+export const transformerColorSwatches = () => {
   return {
-    name: 'highlightColors',
+    name: 'color-swatches',
     span(span) {
       // Only single child spans are checked for hex colors.
       if (span.children?.length !== 1) return span;
@@ -48,5 +48,3 @@ const transformerHighlightColors = () => {
     },
   };
 };
-
-export default transformerHighlightColors;
