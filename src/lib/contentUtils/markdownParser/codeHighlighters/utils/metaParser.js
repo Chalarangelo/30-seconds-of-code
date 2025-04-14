@@ -114,36 +114,33 @@ const splitRangeKeyValuePair = str => {
   if (!str.includes(RANGE_KEY_VALUE_SEPARATOR)) return [null, str];
 
   // Use the last index of the separator, as it may be contained in the
-  // quoted description itself.
+  // quoted label itself.
   const lastSeparatorIndex = str.lastIndexOf(RANGE_KEY_VALUE_SEPARATOR);
 
-  let [description, value] = [
+  let [label, value] = [
     str.slice(0, lastSeparatorIndex).trim(),
     str.slice(lastSeparatorIndex + 1).trim(),
   ];
 
-  if (description[0] === description[description.length - 1]) {
-    if (QUOTE_DELIMITERS.includes(description[0])) {
-      // If the description is quoted, remove the quotes and remove any escaped
+  if (label[0] === label[label.length - 1]) {
+    if (QUOTE_DELIMITERS.includes(label[0])) {
+      // If the label is quoted, remove the quotes and remove any escaped
       // backslashes in it.
-      description = escapeBackslashes(
-        undelimitValue(description),
-        description[0]
-      );
+      label = escapeBackslashes(undelimitValue(label), label[0]);
     }
   }
 
-  return [description || null, value];
+  return [label || null, value];
 };
 
 // Typed segment creation
 const rangeToTypedSegment = str => {
-  const [description, range] = splitRangeKeyValuePair(str);
+  const [label, range] = splitRangeKeyValuePair(str);
   const value = parseRangeValues(range);
 
   const result = { type: 'range', value };
-  // If the range has a description, assign it.
-  if (description) result.description = description;
+  // If the range has a label, assign it.
+  if (label) result.label = label;
 
   return result;
 };
@@ -224,7 +221,7 @@ const toTypedSegments = segments => {
 
     // key: optional, value: required
     // type: string, regexp, range, boolean
-    // description: only for ranges
+    // label: only for ranges
     let typedSegment;
 
     if (isDelimited(segment)) {

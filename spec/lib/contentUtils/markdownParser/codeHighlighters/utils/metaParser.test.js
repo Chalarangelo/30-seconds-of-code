@@ -178,36 +178,36 @@ describe('parseMeta', () => {
       [
         `a b={c:1-4} c={d: 3}`,
         [
-          { key: 'b', value: [1, 2, 3, 4], type: 'range', description: 'c' },
-          { key: 'c', value: [3], type: 'range', description: 'd' },
+          { key: 'b', value: [1, 2, 3, 4], type: 'range', label: 'c' },
+          { key: 'c', value: [3], type: 'range', label: 'd' },
         ],
       ],
       [
         `a b={"c":1-4} c={'d': 3}`,
         [
-          { key: 'b', value: [1, 2, 3, 4], type: 'range', description: 'c' },
-          { key: 'c', value: [3], type: 'range', description: 'd' },
+          { key: 'b', value: [1, 2, 3, 4], type: 'range', label: 'c' },
+          { key: 'c', value: [3], type: 'range', label: 'd' },
         ],
       ],
       [
         `a b={"c:d":1-4} c={'d:e': 3}`,
         [
-          { key: 'b', value: [1, 2, 3, 4], type: 'range', description: 'c:d' },
-          { key: 'c', value: [3], type: 'range', description: 'd:e' },
+          { key: 'b', value: [1, 2, 3, 4], type: 'range', label: 'c:d' },
+          { key: 'c', value: [3], type: 'range', label: 'd:e' },
         ],
       ],
       [
         `a b={"\\"c":1-4} c={'d\\'': 3}`,
         [
-          { key: 'b', value: [1, 2, 3, 4], type: 'range', description: '"c' },
-          { key: 'c', value: [3], type: 'range', description: "d'" },
+          { key: 'b', value: [1, 2, 3, 4], type: 'range', label: '"c' },
+          { key: 'c', value: [3], type: 'range', label: "d'" },
         ],
       ],
       [
         `a b={"c{d}":1-4} c={'d{e}': 3}`,
         [
-          { key: 'b', value: [1, 2, 3, 4], type: 'range', description: 'c{d}' },
-          { key: 'c', value: [3], type: 'range', description: 'd{e}' },
+          { key: 'b', value: [1, 2, 3, 4], type: 'range', label: 'c{d}' },
+          { key: 'c', value: [3], type: 'range', label: 'd{e}' },
         ],
       ],
     ])('"%s" to %o', (input, expected) => {
