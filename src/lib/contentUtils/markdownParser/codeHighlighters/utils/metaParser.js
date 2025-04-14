@@ -4,12 +4,15 @@ const parseInteger = str => Number.parseInt(str.trim(), 10);
 
 // Constants: delimiters, pairs, separators
 const SINGLE_CHAR_DELIMITERS = [`'`, `"`, '/'];
+const QUOTE_DELIMITERS = SINGLE_CHAR_DELIMITERS.slice(0, 2);
 const PAIR_DELIMITERS = [{ start: `{`, end: `}` }];
+const RANGE_END_DELIMITER = PAIR_DELIMITERS[0].end;
 const DELIMITERS = [
   ...SINGLE_CHAR_DELIMITERS,
   ...PAIR_DELIMITERS.map(d => Object.values(d)).flat(),
 ];
 const KEY_VALUE_SEPARATOR = `=`;
+const RANGE_KEY_VALUE_SEPARATOR = `:`;
 
 // Delimiter handling (checks, matching, removal)
 const isDelimiter = char => DELIMITERS.includes(char);
@@ -49,6 +52,44 @@ const getKey = segment => {
   return segment.slice(0, -1).trim() || null;
 };
 
+// Raw segment handling (backslashes, cleanup)
+const escapeBackslashes = (str, openingBracket) => {
+  // Find groups of one or more backslashes.
+  return str.replace(
+    new RegExp(String.raw`(\\+)` + `${openingBracket}?`, 'g'),
+    match => {
+      const count = match.length;
+
+      // If the match ends with the opening bracket, we need to escape it,
+      // unrepeating the remaining backslashes.
+      if (match.endsWith(openingBracket))
+        return '\\'.repeat(Math.floor((count - 1) / 2)) + openingBracket;
+
+      // Otherwise, we need to escape the backslashes, unrepeating them.
+      // If the count is odd, we need to add the last character.
+      return '\\'.repeat(Math.floor(count / 2)) + (count % 2) !== 0
+        ? match.slice(-1)
+        : '';
+    }
+  );
+};
+
+const cleanUpSegments = segments => {
+  return (
+    segments
+      .map(segment => {
+        // Keep delimited segments as they are.
+        if (isDelimited(segment)) return segment;
+        // Split non-delimited segments by spaces.
+        return segment.split(' ').map(s => s.trim());
+      })
+      // Flatten the result.
+      .flat()
+      // Filter out empty segments.
+      .filter(Boolean)
+  );
+};
+
 // Range value handling (unpacking, parsing values)
 const unpackRange = (start, end) => {
   if (start === end || isNil(end)) return [start];
@@ -67,16 +108,38 @@ const parseRangeValues = str => {
     .flat();
 };
 
-// Typed segment creation
-const rangeToTypedSegment = str => {
-  let description, value;
+const splitRangeKeyValuePair = str => {
   // Ranges may contain an optional name, formatted like `{name:range}`.
   // If the range contains a colon, split it into a name and a range.
-  if (str.includes(':'))
-    [description, value] = str.split(':').map(v => v.trim());
-  else value = str;
+  if (!str.includes(RANGE_KEY_VALUE_SEPARATOR)) return [null, str];
 
-  value = parseRangeValues(value);
+  // Use the last index of the separator, as it may be contained in the
+  // quoted description itself.
+  const lastSeparatorIndex = str.lastIndexOf(RANGE_KEY_VALUE_SEPARATOR);
+
+  let [description, value] = [
+    str.slice(0, lastSeparatorIndex).trim(),
+    str.slice(lastSeparatorIndex + 1).trim(),
+  ];
+
+  if (description[0] === description[description.length - 1]) {
+    if (QUOTE_DELIMITERS.includes(description[0])) {
+      // If the description is quoted, remove the quotes and remove any escaped
+      // backslashes in it.
+      description = escapeBackslashes(
+        undelimitValue(description),
+        description[0]
+      );
+    }
+  }
+
+  return [description || null, value];
+};
+
+// Typed segment creation
+const rangeToTypedSegment = str => {
+  const [description, range] = splitRangeKeyValuePair(str);
+  const value = parseRangeValues(range);
 
   const result = { type: 'range', value };
   // If the range has a description, assign it.
@@ -126,42 +189,29 @@ const undelimitedKeyValuePairToTypedSegment = segment => {
   return { key, value, type: 'string' };
 };
 
-// Raw segment handling (backslashes, cleanup)
-const escapeBackslashes = (str, openingBracket) => {
-  // Find groups of one or more backslashes.
-  return str.replace(
-    new RegExp(String.raw`(\\+)` + `${openingBracket}?`, 'g'),
-    match => {
-      const count = match.length;
-
-      // If the match ends with the opening bracket, we need to escape it,
-      // unrepeating the remaining backslashes.
-      if (match.endsWith(openingBracket))
-        return '\\'.repeat(Math.floor((count - 1) / 2)) + openingBracket;
-
-      // Otherwise, we need to escape the backslashes, unrepeating them.
-      // If the count is odd, we need to add the last character.
-      return '\\'.repeat(Math.floor(count / 2)) + (count % 2) !== 0
-        ? match.slice(-1)
-        : '';
-    }
+// Segment termination checks (range labels, escape sequences)
+const isInsideRangeLabel = (buffer, char, openingBracket) => {
+  if (char !== RANGE_END_DELIMITER) return false;
+  // Check if there's an opening quote in the buffer.
+  const openingQuotation = buffer.match(
+    new RegExp(
+      '^' + openingBracket + '\\s*(' + QUOTE_DELIMITERS.join('|') + ')'
+    )
   );
+  if (!openingQuotation) return false;
+
+  // If there is, we need to check if the closing quote is also in the buffer.
+  const openingQuote = openingQuotation[1];
+  return buffer.indexOf(openingQuote) === buffer.lastIndexOf(openingQuote);
 };
 
-const cleanUpSegments = segments => {
-  return (
-    segments
-      .map(segment => {
-        // Keep delimited segments as they are.
-        if (isDelimited(segment)) return segment;
-        // Split non-delimited segments by spaces.
-        return segment.split(' ').map(s => s.trim());
-      })
-      // Flatten the result.
-      .flat()
-      // Filter out empty segments.
-      .filter(Boolean)
-  );
+const isDelimiterEscaped = buffer => {
+  // Calculate escape count at the end of the buffer. If it's even, then
+  // the delimiter is unescaped and we can flush the segment.
+  const matches = buffer.match(/\\+$/);
+  const escapeCount = matches ? matches[0].length : 0;
+
+  return escapeCount % 2 !== 0;
 };
 
 // Segmentation (produces raw segments) & processing (produces typed segments)
@@ -212,19 +262,19 @@ const toSegments = str => {
   for (let char of input) {
     if (isDelimiter(char)) {
       if (delimitersMatch(openingBracket, char)) {
-        // Calculate escape count at the end of the buffer. If it's even, then
-        // the delimiter is unescaped and we can flush the segment.
-        const matches = buffer.match(/\\+$/);
-        const escapeCount = matches ? matches[0].length : 0;
-
-        if (escapeCount % 2 === 0) {
-          // Delimiter is unescaped. Make sure to escape any escape sequences
-          // in the buffer, before flusing.
+        if (isInsideRangeLabel(buffer, char, openingBracket)) {
+          // If it's a range delimiter, we need to check if we're inside a label
+          // or not. If we are, we add the character and continue.
+          buffer += char;
+        } else if (isDelimiterEscaped(buffer)) {
+          // Check if the delimiter is escaped. If it is, add it to the buffer
+          // and continue.
+          buffer += char;
+        } else {
+          // Delimiter is unescaped and not inside a range label. Make sure to
+          // escape any escape sequences in the buffer, before flusing.
           segments.push(escapeBackslashes(buffer + char, openingBracket));
           clearBuffer();
-        } else {
-          // Delimiter is escaped, add to buffer.
-          buffer += char;
         }
       } else {
         // Delimiters do not match.

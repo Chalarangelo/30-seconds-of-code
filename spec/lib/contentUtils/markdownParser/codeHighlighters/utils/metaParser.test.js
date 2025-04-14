@@ -145,7 +145,7 @@ describe('parseMeta', () => {
     });
   });
 
-  describe('parses ranges', () => {
+  describe('parses simple ranges', () => {
     it.each([
       [
         `a b={1-4} c={3}`,
@@ -165,11 +165,49 @@ describe('parseMeta', () => {
           { key: null, value: [7, 8, 3, 10, 11], type: 'range' },
         ],
       ],
+    ])('"%s" to %o', (input, expected) => {
+      const result = parseMeta(input);
+      expected.forEach(item => {
+        expect(result).toContainEqual(item);
+      });
+    });
+  });
+
+  describe('parses labelled ranges', () => {
+    it.each([
       [
         `a b={c:1-4} c={d: 3}`,
         [
           { key: 'b', value: [1, 2, 3, 4], type: 'range', description: 'c' },
           { key: 'c', value: [3], type: 'range', description: 'd' },
+        ],
+      ],
+      [
+        `a b={"c":1-4} c={'d': 3}`,
+        [
+          { key: 'b', value: [1, 2, 3, 4], type: 'range', description: 'c' },
+          { key: 'c', value: [3], type: 'range', description: 'd' },
+        ],
+      ],
+      [
+        `a b={"c:d":1-4} c={'d:e': 3}`,
+        [
+          { key: 'b', value: [1, 2, 3, 4], type: 'range', description: 'c:d' },
+          { key: 'c', value: [3], type: 'range', description: 'd:e' },
+        ],
+      ],
+      [
+        `a b={"\\"c":1-4} c={'d\\'': 3}`,
+        [
+          { key: 'b', value: [1, 2, 3, 4], type: 'range', description: '"c' },
+          { key: 'c', value: [3], type: 'range', description: "d'" },
+        ],
+      ],
+      [
+        `a b={"c{d}":1-4} c={'d{e}': 3}`,
+        [
+          { key: 'b', value: [1, 2, 3, 4], type: 'range', description: 'c{d}' },
+          { key: 'c', value: [3], type: 'range', description: 'd{e}' },
         ],
       ],
     ])('"%s" to %o', (input, expected) => {
