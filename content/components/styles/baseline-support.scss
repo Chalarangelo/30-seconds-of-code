@@ -14,4 +14,7 @@ baseline-support[interactive='true'] {
   padding: var(--spacing-8) var(--spacing-12);
   border: var(--border-width-thin) solid var(--color-border-light);
   border-radius: var(--border-radius-medium);
+
+  // Span the entire width of the parent element.
+  grid-column: 1 / -1;
 }
