@@ -187,6 +187,15 @@ const undelimitedKeyValuePairToTypedSegment = segment => {
 };
 
 // Segment termination checks (range labels, escape sequences)
+const isDelimiterEscaped = buffer => {
+  // Calculate escape count at the end of the buffer. If it's even, then
+  // the delimiter is unescaped and we can flush the segment.
+  const matches = buffer.match(/\\+$/);
+  const escapeCount = matches ? matches[0].length : 0;
+
+  return escapeCount % 2 !== 0;
+};
+
 const isInsideRangeLabel = (buffer, char, openingBracket) => {
   if (char !== RANGE_END_DELIMITER) return false;
   // Check if there's an opening quote in the buffer.
@@ -199,16 +208,12 @@ const isInsideRangeLabel = (buffer, char, openingBracket) => {
 
   // If there is, we need to check if the closing quote is also in the buffer.
   const openingQuote = openingQuotation[1];
-  return buffer.indexOf(openingQuote) === buffer.lastIndexOf(openingQuote);
-};
+  const openingIndex = buffer.indexOf(openingQuote);
+  const closingIndex = buffer.lastIndexOf(openingQuote);
+  if (openingIndex === closingIndex) return true;
 
-const isDelimiterEscaped = buffer => {
-  // Calculate escape count at the end of the buffer. If it's even, then
-  // the delimiter is unescaped and we can flush the segment.
-  const matches = buffer.match(/\\+$/);
-  const escapeCount = matches ? matches[0].length : 0;
-
-  return escapeCount % 2 !== 0;
+  // If there is a closing quote, check it doesn't follow an escape sequence.
+  return isDelimiterEscaped(buffer.slice(openingIndex, closingIndex));
 };
 
 // Segmentation (produces raw segments) & processing (produces typed segments)

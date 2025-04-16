@@ -210,6 +210,13 @@ describe('parseMeta', () => {
           { key: 'c', value: [3], type: 'range', label: 'd{e}' },
         ],
       ],
+      [
+        `a b={"c\\"{d}":1-4} c={'d{e\\'}': 3}`,
+        [
+          { key: 'b', value: [1, 2, 3, 4], type: 'range', label: 'c"{d}' },
+          { key: 'c', value: [3], type: 'range', label: "d{e'}" },
+        ],
+      ],
     ])('"%s" to %o', (input, expected) => {
       const result = parseMeta(input);
       expected.forEach(item => {
