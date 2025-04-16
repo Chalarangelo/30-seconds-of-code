@@ -14,7 +14,11 @@ dateModified: 2023-09-15
 JavaScript's `Math.PI` constant can be used to convert an angle from degrees to radians. The conversion formula is `radians = degrees * Math.PI / 180.0`.
 
 <latex-expression>
+
+```math
 r = \frac{d \times \pi}{180}
+```
+
 </latex-expression>
 
 ```js
@@ -28,7 +32,11 @@ degreesToRads(90.0); // ~1.5708
 Conversely, the conversion formula from radians to degrees is `degrees = radians * 180.0 / Math.PI`.
 
 <latex-expression>
+
+```math
 d = \frac{r \times 180}{\pi}
+```
+
 </latex-expression>
 
 ```js

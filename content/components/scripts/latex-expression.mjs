@@ -11,7 +11,7 @@ class LatexExpression extends HTMLElement {
     try {
       const innerFigure = this.querySelector('figure');
       const otherChildren = [...this.children].filter(
-        child => child.tagName !== 'FIGURE'
+        child => child.tagName !== 'FIGURE' && child.tagName !== 'PRE'
       );
       const tex = innerFigure?.innerText || this.innerText;
       const rendered = katex.renderToString(tex, {

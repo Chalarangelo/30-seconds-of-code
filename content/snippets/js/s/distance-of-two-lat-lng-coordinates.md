@@ -16,7 +16,11 @@ Luckily, the complicated math for it has already been done for us. We can simply
 <latex-expression>
 
 <figure>
+
+```math
 d = 2 \times r \times \arcsin\left(\sqrt{\sin^2\left(\frac{d\phi}{2}\right) + \cos(\phi_1) \cdot \cos(\phi_2) \cdot \sin^2\left(\frac{d\lambda}{2}\right)}\right)
+```
+
 </figure>
 
 Where:

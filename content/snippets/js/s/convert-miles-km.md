@@ -14,7 +14,11 @@ dateModified: 2023-09-13
 In order to convert from miles to kilometers, you can use the conversion formula `km = mi * 1.609344`.
 
 <latex-expression>
+
+```math
 km = mi \times 1.609344
+```
+
 </latex-expression>
 
 ```js
@@ -28,7 +32,11 @@ milesToKm(5); // ~8.04672
 Conversely, the conversion formula from kilometers to miles is `mi = km * 0.621371`.
 
 <latex-expression>
+
+```math
 mi = km \times 0.621371
+```
+
 </latex-expression>
 
 ```js

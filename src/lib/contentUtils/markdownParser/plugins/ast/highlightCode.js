@@ -5,9 +5,18 @@ import {
   getMetaRanges,
 } from '#src/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.js';
 
-// Parse the language and title from the language string. Only supports
-// space separated language and title, e.g. `language [title]`.
-// The title must be wrapped in square brackets.
+/**
+ * Returns the language name for the given node.
+ * If the node's language is 'math', it returns 'text', too.
+ * Otherwise, it returns the node's language.
+ * @param {ASTNode} node - The AST node to get the language name from.
+ * @returns {string} - The language name.
+ */
+const getLanguageName = node => {
+  const languageName = node.lang || 'text';
+  return languageName === 'math' ? 'text' : languageName;
+};
+
 /**
  * Parses the language and title from the language string. Only supports
  * space separated language and title, e.g. `language [title]`.
@@ -19,7 +28,7 @@ import {
  * @returns {Object} - An object containing the extracted metadata.
  */
 const createMetadataExtractor = languages => node => {
-  const languageName = node.lang || 'text';
+  const languageName = getLanguageName(node);
   const meta = parseMeta(node.meta || '');
   const title = getMetaString(meta, 'title')?.value || null;
   const languageStringLiteral = languages[languageName] || '';
