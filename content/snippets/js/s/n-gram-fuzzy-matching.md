@@ -45,7 +45,7 @@ As you can see, all that's needed is our trusty `for` loop and `String.prototype
 
 Same as before, we'll employ an **inverted index** to store these values. After all, we want to be able to search for them same as regular terms and speed is paramount. Given the fact that we now need to store both terms and n-grams, we'll make some changes to our `addDocument` function to accommodate this.
 
-```js
+```js {3,6-12,21-27}
 const documents = [];
 const invertedIndex = new Map();
 const ngramsInvertedIndex = new Map();
@@ -78,7 +78,7 @@ const addDocument = document => {
 
 We'll also have to slightly adjust the `prefixMatches` function implementation to accommodate the **new data structure**.
 
-```js
+```js {3}
 const prefixMatches = (term, doc) => {
   const regex = new RegExp(`^${term}`, 'i');
   return doc.terms.filter(term => regex.test(term));
@@ -110,7 +110,7 @@ Now that we have everything in place, we can update the search function to use t
 
 We'll then divide the number of matched n-grams with the maximum total number of n-grams, which is the max number of n-grams between the query and the document. This will give us a score between `0` and `1`, which we can then combine with the TF-IDF score using the `fuzziness` parameter.
 
-```js
+```js {4-8,49-62}
 const search = (query, fuzziness = 0.7) => {
   const queryTerms = parseDocument(query);
   const lastTermIndex = queryTerms.length - 1;

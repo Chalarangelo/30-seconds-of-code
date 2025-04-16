@@ -93,33 +93,35 @@ That's a great start! The next step is to **format the grouped days** into human
 
 In the case of a **single day**, we'll simply output the day name and the working hours. For **multiple days**, we'll output the first and last day of the range, followed by the working hours. Additionally, I'd like to make sure that **special ranges of days** are formatted correctly, such as when the range spans the entire week, all weekdays, or just the weekend.
 
-```js
+```js {20-28}
 const workingDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
 const weekendDays = ['Saturday', 'Sunday'];
 const allDays = [...workingDays, ...weekendDays];
 
 const formatDayRanges = (data) =>
-  allDays.reduce((acc, day) => {
-    const dayData = data.find((d) => d.day === day);
+  allDays
+    .reduce((acc, day) => {
+      const dayData = data.find((d) => d.day === day);
 
-    const hours = dayData ? `${dayData.from} - ${dayData.to}` : 'Closed';
+      const hours = dayData ? `${dayData.from} - ${dayData.to}` : 'Closed';
 
-    if (acc.length && acc[acc.length - 1].hours === hours) {
-      acc[acc.length - 1].days.push(day);
-    } else {
-      acc.push({ days: [day], hours });
-    }
+      if (acc.length && acc[acc.length - 1].hours === hours) {
+        acc[acc.length - 1].days.push(day);
+      } else {
+        acc.push({ days: [day], hours });
+      }
 
-    return acc;
-  }, []).map(({ days, hours }) => {
-    if (days.length === 1) return `${days[0]}: ${hours}`;
-    if (days.length === 7) return `Everyday: ${hours}`;
-    if (workingDays.every((day) => days.includes(day)))
-      return 'Weekdays: ' + hours;
-    if (weekendDays.every((day) => days.includes(day)))
-      return 'Weekend: ' + hours;
-    return `${days[0]} - ${days[days.length - 1]}: ${hours}`;
-  });
+      return acc;
+    }, [])
+    .map(({ days, hours }) => {
+      if (days.length === 1) return `${days[0]}: ${hours}`;
+      if (days.length === 7) return `Everyday: ${hours}`;
+      if (workingDays.every((day) => days.includes(day)))
+        return 'Weekdays: ' + hours;
+      if (weekendDays.every((day) => days.includes(day)))
+        return 'Weekend: ' + hours;
+      return `${days[0]} - ${days[days.length - 1]}: ${hours}`;
+    });
 
 // Given the sample input from the problem definition
 const result = formatDayRanges(inputData);

@@ -47,7 +47,7 @@ Therefore, it stands to reason that the **default** result of the method should 
 
 If you think about it in terms of a `for` loop, it makes a little more sense:
 
-```js
+```js {4}
 const every = (arr, predicate) => {
   for (let val in arr)
     if (!predicate(val[i])) return false;
@@ -67,7 +67,7 @@ We can extend this logic to `Array.prototype.some()` as well. As soon as one ele
 
 Again, a `for` loop analogy can help clarify this:
 
-```js
+```js {4}
 const some = (arr, predicate) => {
   for (let val in arr)
     if (predicate(val[i])) return true;

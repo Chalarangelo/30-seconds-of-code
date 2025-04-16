@@ -44,7 +44,7 @@ We'll have to add some **conditions** to check for partial matches. The first on
 
 The second condition needs a little bit of thought and is aimed mainly at **preventing the false positives** we saw in the previous example. Realistically, if we find a **full match** in the inverted index, it's better to use that than to use a partial match. This is because it will most likely be more relevant to the search term, and it will also be faster to find. So, if we find a full match in the inverted index, we can **skip the partial match** altogether.
 
-```js
+```js {4,18-24}
 // Updating the search function from the previous article
 const search = query => {
   const queryTerms = parseDocument(query);
@@ -106,7 +106,7 @@ A partial match can result in **more than one term**. This means we can't simply
 
 Similarly, the inverse document frequency (**IDF**) can be calculated in the same way as before. The only difference is that we need to **divide the number of documents by the number of documents** that contain any of the terms that matched, matching the calculation we did for the term frequency.
 
-```js
+```js {21-40}
 const search = query => {
   const queryTerms = parseDocument(query);
   const lastTermIndex = queryTerms.length - 1;
