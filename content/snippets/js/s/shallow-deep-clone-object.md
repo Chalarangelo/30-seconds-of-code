@@ -86,6 +86,9 @@ This code snippet is designed specifically with plain objects and arrays in mind
 
 ## Deep cloning using `structuredClone()`
 
+<baseline-support featureId="structured-clone">
+</baseline-support>
+
 Apparently, cloning is a fairly common and important problem. So much so that JavaScript introduced the `structuredClone()` global function, which can be used to **deep clone objects**. Instead of implementing a complicated recursive function, we can simply use this function to clone the object.
 
 ```js

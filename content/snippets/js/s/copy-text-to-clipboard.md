@@ -13,6 +13,9 @@ A very common need when building websites is the ability to **copy text to clipb
 
 ## The Asynchronous Clipboard API
 
+<baseline-support featureId="async-clipboard">
+</baseline-support>
+
 Full support for the Clipboard API still isn't here at the time of writing (January, 2024), but you can at least use it to write to the clipboard. Thankfully, that's all you really need. Despite support caveats, this is the **recommended** way to copy text to clipboard, as it provides an **easy and secure** solution.
 
 All you have to do is ensure `Navigator`, `Navigator.clipboard` and `Navigator.clipboard.writeText` are truthy and then call `Clipboard.writeText()` to copy the value to clipboard. In case anything goes wrong, you can use `Promise.reject()` to return a promise that rejects immediately and keep the return type consistent.

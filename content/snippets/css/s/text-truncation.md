@@ -31,6 +31,9 @@ https://codepen.io/chalarangelo/pen/rNEggmY
 
 ## Truncate multi line text
 
+<baseline-support featureId="line-clamp">
+</baseline-support>
+
 For **multi-line text**, you'll still need to use `overflow: hidden` to **prevent the text from overflowing** its container. However, you can't use `text-overflow: ellipsis` to add an ellipsis at the end of the text.
 
 Instead, you can use the `-webkit-line-clamp` property to **limit the number of lines** displayed. This property accepts an **integer value** that specifies the maximum number of lines to be displayed. You'll also need to use `display: -webkit-box` and `-webkit-box-orient: vertical` to ensure that `-webkit-line-clamp` is applied correctly.

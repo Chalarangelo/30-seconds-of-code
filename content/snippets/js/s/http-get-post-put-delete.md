@@ -15,6 +15,9 @@ The most common HTTP methods are `GET`, `POST`, `PUT`, and `DELETE`. Sending a r
 
 ## Using the Fetch API
 
+<baseline-support featureId="fetch">
+</baseline-support>
+
 The [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) is a modern replacement for `XMLHttpRequest`. It is a **promise-based** API that allows you to make network requests similar to `XMLHttpRequest`, but with a simpler and more powerful interface.
 
 ### HTTP GET request
@@ -105,6 +108,9 @@ fetch('https://jsonplaceholder.typicode.com/posts/1', {
 ```
 
 ## Using XMLHttpRequest
+
+<baseline-support featureId="xhr">
+</baseline-support>
 
 The `XMLHttpRequest` web API is the **older way** of making HTTP requests in JavaScript. It is not as powerful as the `fetch` API, but it is still widely used and supported in all modern browsers.
 

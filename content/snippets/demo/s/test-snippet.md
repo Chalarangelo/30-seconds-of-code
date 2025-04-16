@@ -537,8 +537,9 @@ gcd(b, a \mod b) & \text{otherwise}
 
 #### Baseline status
 
-As the imported module defines its own `baseline-status` component, we will name ours `baseline-support`.
+As the imported module defines its own `baseline-status` component, we will name ours `baseline-support`. You can check [here](https://github.com/web-platform-dx/web-features) to find the `featureId` value you need.
 
-<baseline-support featureid="font-size-adjust"></baseline-support>
+<baseline-support featureId="font-size-adjust">
+</baseline-support>
 
 

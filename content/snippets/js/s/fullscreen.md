@@ -9,6 +9,9 @@ listed: true
 dateModified: 2024-05-23
 ---
 
+<baseline-support featureId="fullscreen">
+</baseline-support>
+
 Modern web APIs are powerful and allow you to interact with the browser in ways that were previously only possible with plugins or extensions. One such API is provided via the `Element.requestFullscreen()` method, which allows you to **display an element in fullscreen mode**.
 
 > [!CAUTION]

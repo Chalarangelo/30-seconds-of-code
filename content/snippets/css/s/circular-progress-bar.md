@@ -159,9 +159,8 @@ Luckily, CSS has come up with a solution for this. The `@property` rule allows u
 }
 ```
 
-> [!WARNING]
->
-> At the time of writing (December, 2023), the `@property` rule has [limited browser support](https://developer.mozilla.org/en-US/docs/Web/CSS/@property#browser_compatibility). Please check before using it in production.
+<baseline-support featureId="registered-custom-properties">
+</baseline-support>
 
 Now that the browser knows what to do with the `--progress` variable, we can hook it up to the animation.
 

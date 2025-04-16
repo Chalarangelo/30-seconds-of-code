@@ -67,6 +67,9 @@ let y = Object.assign([], x);
 
 ## structuredClone()
 
+<baseline-support featureId="structured-clone">
+</baseline-support>
+
 If you're looking to clone an array that contains objects, functions or class instances, you can use the `structuredClone()` global function, which can be used to deep clone objects.
 
 ```js

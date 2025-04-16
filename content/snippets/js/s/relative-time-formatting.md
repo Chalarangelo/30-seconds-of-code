@@ -9,6 +9,9 @@ listed: true
 dateModified: 2025-04-24
 ---
 
+<baseline-support featureId="intl-relative-time-format">
+</baseline-support>
+
 I've recently stumbled upon the `Intl.RelativeTimeFormat` API, and was surprised how simple it makes solving an age-old problem: **how to format relative time**. This is a common task in web development, and while there are many libraries that do this, it's nice to see that JavaScript has a built-in way to do it. The browser support is great, too, and has been for a while now. So, let's take a look at how to use it!
 
 ## Constructing a formatter

@@ -33,6 +33,9 @@ const decodedString = atob(stringToDecode); // 'foobar'
 
 ## Compatibility & older Node.js versions
 
+<baseline-support featureId="base64encodedecode">
+</baseline-support>
+
 Luckily, both `btoa()` and `atob()` are supported in all modern browsers and **Node.js since version 16.0.0**.
 
 If, however, you need to support older Node.js versions, you will need to use the `Buffer` class to define your own `btoa()` and `atob()` functions.

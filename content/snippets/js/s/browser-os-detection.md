@@ -27,7 +27,10 @@ Cool. Except, MDN says it's **deprecated and no longer recommended** for use. <b
 
 ## `Navigator.userAgentData`
 
-The consensus about the** bleeding edge solution** seems to revolve around `Navigator.userAgentData`, with some debate surrounding the need to use `NavigatorUAData.getHighEntropyValues()`. While the latter doesn't seem strictly necessary in most cases, the former seems relatively promising.
+<baseline-support featureId="ua-client-hints">
+</baseline-support>
+
+The consensus about the **bleeding edge solution** seems to revolve around `Navigator.userAgentData`, with some debate surrounding the need to use `NavigatorUAData.getHighEntropyValues()`. While the latter doesn't seem strictly necessary in most cases, the former seems relatively promising.
 
 ```js
 const isMac = navigator.userAgentData?.platform === 'macOS';

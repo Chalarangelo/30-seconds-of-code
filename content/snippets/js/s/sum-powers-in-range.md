@@ -25,6 +25,9 @@ sumPower(10, 3); // 3025
 sumPower(10, 3, 5); // 2925
 ```
 
+<baseline-support featureId="exponentiation">
+</baseline-support>
+
 > [!NOTE]
 >
 > If you're working with **older browsers** or environments that don't support the exponentiation operator (`**`), you can use `Math.pow()` instead.

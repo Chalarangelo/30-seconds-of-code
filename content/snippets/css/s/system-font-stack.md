@@ -15,6 +15,9 @@ A **system font stack** is a list of fonts that are used to get close to a nativ
 
 ## Using `system-ui`
 
+<baseline-support featureId="font-family-system">
+</baseline-support>
+
 `system-ui` is a recently introduced generic font family that uses the **system's default UI font**. It's a great way to get a native feel across all operating systems and its browser support is quite impressive. Using `system-ui` with a **fallback** to `sans-serif` is the recommended way to define a system font stack.
 
 ```css
