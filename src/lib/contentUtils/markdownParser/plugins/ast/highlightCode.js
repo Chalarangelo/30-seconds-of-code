@@ -24,8 +24,17 @@ const createMetadataExtractor = languages => node => {
   const title = getMetaString(meta, 'title')?.value || null;
   const languageStringLiteral = languages[languageName] || '';
   const highlightedLines = getMetaRanges(meta, null);
+  const insertedLines = getMetaRanges(meta, 'ins');
+  const deletedLines = getMetaRanges(meta, 'del');
 
-  return { languageName, title, languageStringLiteral, highlightedLines };
+  return {
+    languageName,
+    title,
+    languageStringLiteral,
+    highlightedLines,
+    insertedLines,
+    deletedLines,
+  };
 };
 
 /**
