@@ -7,6 +7,7 @@ cover: typewriter
 excerpt: Building on top of the Porter stemmer, we'll explore how to use TF-IDF and an inverted index to implement a search algorithm in JavaScript.
 listed: true
 dateModified: 2025-04-09
+journeyId: js/search
 ---
 
 In the [previous article](/js/s/porter-stemming-algorithm), I went into detail how one could implement the **Porter stemming algorithm** in JavaScript. While the algorithm can be used along with a simple tokenization strategy to search for keywords in a document, it's insufficient for complex searching tasks. In this article, we'll explore how we can use **TF-IDF** for more advanced search tasks and implement an **inverted index** to speed up the search process.

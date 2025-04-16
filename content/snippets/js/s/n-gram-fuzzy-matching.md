@@ -7,6 +7,7 @@ cover: raccoon
 excerpt: Having built a search engine with TF-IDF and inverted indexes, we will now implement fuzzy matching to make searching error-tolerant.
 listed: true
 dateModified: 2025-04-29
+journeyId: js/search
 ---
 
 Last time, we explored [prefix search](/js/s/partial-search-matching) to help match the start of words while the user types. While our search system is pretty robust, it still lacks error tolerance. For example, if a user types `javscript` instead of `javascript`, our search system won't return any results. This is the problem **fuzzy matching** aims to solve.

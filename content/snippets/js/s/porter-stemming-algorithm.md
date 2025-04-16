@@ -7,6 +7,7 @@ cover: touch-flower
 excerpt: Learn how to implement the Porter stemming algorithm in JavaScript, a simple algorithm for stripping English words of common suffixes.
 listed: true
 dateModified: 2025-04-06
+journeyId: js/search
 ---
 
 I recently started working on a new search prototype. After all, it was about time I revised this almost six year old relic that is the search powering my website. While I'm working on exciting things behind the scenes, let's have a look at the code I wrote one cloudy afternoon back on 2019 and talk about the Porter stemming algorithm.

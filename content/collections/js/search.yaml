@@ -1,0 +1,18 @@
+slug: js/search
+title: JavaScript Search Engine
+shortTitle: Search Engine
+listed: true
+snippetIds:
+  - js/s/porter-stemming-algorithm
+  - js/s/tf-idf-inverted-index
+  - js/s/partial-search-matching
+  - js/s/n-gram-fuzzy-matching
+splash: magnifying-glass
+description: >-
+  Ever wondered how search engines work? Maybe you always wanted to build one
+  of your own? This collection will teach you some fundamental techniques
+  involved in indexing and searching through collections of documents, using
+  plain JavaScript and natural language processing (NLP).
+shortDescription: >-
+  Build a simple search engine using JavaScript and learn the fundamentals of
+  natural language processing (NLP).

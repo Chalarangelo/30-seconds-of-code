@@ -7,6 +7,7 @@ cover: interior-9
 excerpt: Building on top of the TF-IDF and inverted index implementation, we will implement partial search matching to make searching more robust.
 listed: true
 dateModified: 2025-04-14
+journeyId: js/search
 ---
 
 In the [previous article](/js/s/tf-idf-inverted-index), we discussed how to implement **TF-IDF** and use an **inverted index** to optimize document searching. However, in most modern search systems, **partial matching** is also pretty common. Let's take a look at how to implement partial matching on top of the existing TF-IDF and inverted index implementation.
