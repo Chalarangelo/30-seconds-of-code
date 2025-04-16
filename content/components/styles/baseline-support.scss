@@ -1,0 +1,17 @@
+baseline-support[interactive='true'] {
+  // Force the dark palette for the component.
+  color-scheme: only dark;
+
+  // Switch the link color to the light primary color.
+  --baseline-status-color-link: var(--color-primary-light);
+
+  // Reset font-related styles.
+  font-family: 'Inter', Helvetica, sans-serif;
+  font-feature-settings: 'frac', 'cv05', 'cv11', 'calt', 'kern';
+  font-size: var(--font-sm);
+
+  // Reset padding and add a border.
+  padding: var(--spacing-8) var(--spacing-12);
+  border: var(--border-width-thin) solid var(--color-border-light);
+  border-radius: var(--border-radius-medium);
+}

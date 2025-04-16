@@ -534,3 +534,11 @@ gcd(b, a \mod b) & \text{otherwise}
 ```
 
 </latex-expression>
+
+#### Baseline status
+
+As the imported module defines its own `baseline-status` component, we will name ours `baseline-support`.
+
+<baseline-support featureid="font-size-adjust"></baseline-support>
+
+
