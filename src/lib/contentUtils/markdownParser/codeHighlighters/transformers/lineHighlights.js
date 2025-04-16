@@ -3,19 +3,30 @@
  * to their nodes, if they are highlighted.
  */
 export const transformerLineHighlights = ({
-  highlightedLines = new Set(),
+  highlightedLines = { labels: new Map(), lines: new Map() },
 } = {}) => {
   return {
     name: 'line-higlights',
     line(node, line) {
       // Skip if there are no highlighted lines.
-      if (!highlightedLines.size) return node;
+      if (!highlightedLines.lines.size) return node;
 
-      // If the line is highlighted, we need to add a data attribute to the
-      // node, so that we can style it with CSS.
-      if (highlightedLines.has(line)) {
-        node.properties['data-line-highlight'] = 'true';
+      const highlightedLine = highlightedLines.lines.get(line);
+      // Skip if the line is not highlighted.
+      if (!highlightedLine) return node;
+
+      const hasLabel = highlightedLine !== null;
+      let showLabel = hasLabel;
+      if (hasLabel) {
+        // Check if the previous line has the same label.
+        const label = highlightedLines.labels.get(highlightedLine);
+        showLabel = !label.includes(line - 1);
       }
+
+      // If the line is highlighted, we change the `span` element to a `mark`.
+      node.tagName = 'mark';
+      // If the label should be shown, add the `data-highlight-label` attribute.
+      if (showLabel) node.properties['data-highlight-label'] = highlightedLine;
     },
   };
 };

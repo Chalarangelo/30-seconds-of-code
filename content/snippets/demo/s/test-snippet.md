@@ -120,9 +120,30 @@ No languge here
 
 ### Highlighted lines
 
+Regular:
+
 ```js {1} {3-4}
 const x = 10;
 x += 5;
+const y = 20;
+console.log(x + y);
+```
+
+With labels:
+
+```js {"A":1} {"B":3-4}
+const x = 10;
+x += 5;
+const y = 20;
+console.log(x + y);
+```
+
+With longer labels:
+
+```js {"A":1} {"This is a fairly long label and it needs its own line":3-5}
+const x = 10;
+x += 5;
+
 const y = 20;
 console.log(x + y);
 ```

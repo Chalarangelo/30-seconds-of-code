@@ -323,10 +323,20 @@ export const getMetaString = (meta, key) => {
 
 export const getMetaRanges = (meta, key) => {
   const ranges = meta.filter(item => item.key === key && item.type === 'range');
-  const allRangeValues = ranges.reduce((acc, item) => {
-    acc.push(...item.value);
-    return acc;
-  }, []);
+  return ranges.reduce(
+    (acc, item) => {
+      const { label, value } = item;
+      const labelObject = label ?? null;
 
-  return new Set(allRangeValues);
+      if (!acc.labels.has(labelObject)) acc.labels.set(labelObject, []);
+      acc.labels.get(labelObject).push(...value);
+
+      value.forEach(v => {
+        acc.lines.set(v, labelObject);
+      });
+
+      return acc;
+    },
+    { lines: new Map(), labels: new Map() }
+  );
 };
