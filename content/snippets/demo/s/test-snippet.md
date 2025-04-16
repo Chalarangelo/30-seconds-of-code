@@ -140,11 +140,29 @@ console.log(x + y);
 
 With longer labels:
 
-```js {"A":1} {"This is a fairly long label and it needs its own line":3-5}
+```js {"A":1} {"B. This is a fairly long label and it needs its own line:":3-5}
 const x = 10;
 x += 5;
 
 const y = 20;
+console.log(x + y);
+```
+
+Inserted and deleted:
+
+```js ins={2} del={1}
+const x = 10;
+const x = 20;
+const y = 5;
+console.log(x + y);
+```
+
+Inserted and deleted with labels:
+
+```js ins={"A":2} del={"A":1}
+const x = 10;
+const x = 20;
+const y = 5;
 console.log(x + y);
 ```
 
