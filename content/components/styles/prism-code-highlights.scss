@@ -9,6 +9,12 @@ pre[data-code-preview='true'] {
     font-size: var(--font-xs);
     font-weight: var(--font-weight-strong);
   }
+
+  > code {
+    // Restore regular display and add the padding to the code element.
+    display: block;
+    padding-inline: var(--layout-bleed-width);
+  }
 }
 
 // General-purpose code highlighting styles.
