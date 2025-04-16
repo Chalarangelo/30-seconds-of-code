@@ -85,6 +85,11 @@ pre {
     flex-direction: column;
   }
 
+  &:has(> code) {
+    // Apply the white color for code blocks.
+    color: var(--color-code-highlight-white);
+  }
+
   .line {
     // Fill the entire width of the parent element.
     display: block;
@@ -97,26 +102,70 @@ pre {
   mark {
     // Reset inherited browser styles.
     color: inherit;
+    --code-highlight_background-color: hsl(225, 46%, 22%);
+    --code-highlight_label-background-color: hsl(225, 43%, 31%);
+  }
+
+  ins {
+    // Reset inherited browser styles.
+    text-decoration: none;
+    // Set color palette and label text if none is provided.
+    --code-highlight_background-color: hsl(163, 16%, 19%);
+    --code-highlight_label-background-color: hsl(141, 19%, 25%);
+    --code-highlight_label-text-color: hsl(140, 48%, 44%);
+    --code-highlight_label-text-content: '+';
+  }
+
+  del {
+    // Reset inherited browser styles.
+    text-decoration: none;
+    // Set color palette and label text if none is provided.
+    --code-highlight_background-color: hsl(337, 13%, 19%);
+    --code-highlight_label-background-color: hsl(348, 22%, 28%);
+    --code-highlight_label-text-color: hsl(351, 53%, 61%);
+    --code-highlight_label-text-content: '-';
+  }
+
+  mark,
+  ins,
+  del {
     // Highlighted lines are displayed with a different background color.
-    background-color: var(--color-code-background-light);
+    background-color: var(--code-highlight_background-color);
+
+    // Give the line a position to allow for absolute positioning of the label.
+    position: relative;
+
+    &::before {
+      // Place the label in the top left corner and account for the padding.
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      padding-inline: var(--spacing-2);
+    }
+
+    &:not([data-highlight-label]) {
+      &::before {
+        // Display the label as a plus or minus sign, depending on the type.
+        // `mark` elements lack the relevant variable, therefore they will not
+        // render anything in this case.
+        color: var(--code-highlight_label-text-color);
+        font-weight: var(--font-weight-medium);
+        content: var(--code-highlight_label-text-content);
+      }
+    }
 
     &[data-highlight-label] {
-      position: relative;
       &::before {
-        // Place the label in the top left corner and account for the padding.
-        position: absolute;
-        display: block;
-        top: 0;
-        left: 0;
-        background-color: var(--color-code-background-lighter);
-        padding-inline: var(--spacing-2);
+        // Add background to the label, depending on its type.
+        background-color: var(--code-highlight_label-background-color);
 
-        // Use the content font for the label, and make it bold.
+        // Use the content font for the label, and reset letter spacing.
         font-family: 'Inter', Helvetica, sans-serif;
         font-size: var(--font-sm);
         letter-spacing: normal;
 
-        // Display the label as serialized in the `data-highlight-label` attribute.
+        // Display the label from the `data-highlight-label` attribute.
         content: attr(data-highlight-label);
       }
     }

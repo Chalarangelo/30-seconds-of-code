@@ -16,11 +16,6 @@
   // to define an even higher contrast palette for code blocks.
 }
 
-pre:has(> code) {
-  // Apply the white color for code blocks.
-  color: var(--color-code-highlight-white);
-}
-
 // CSS overrides.
 .language-css {
   [style*='--hex-color'] {
