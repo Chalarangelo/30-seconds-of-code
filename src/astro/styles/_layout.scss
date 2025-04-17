@@ -97,7 +97,7 @@ main > article {
     border-radius: var(--layout-border-radius);
   }
 
-  > figure {
+  > figure:not(.embedded-preview) {
     > img + figcaption {
       // Adjust the styles for image-only figure captions (center, light, small
       // and slightly italic).
