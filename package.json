@@ -7,7 +7,7 @@
   "author": "chalarangelo",
   "type": "module",
   "devDependencies": {
-    "@shikijs/colorized-brackets": "^3.2.1",
+    "@shikijs/colorized-brackets": "^3.2.2",
     "astro": "^5.7.2",
     "eslint": "^9.24.0",
     "eslint-config-prettier": "^10.1.1",
@@ -26,7 +26,7 @@
     "remark-rehype": "^11.0.0",
     "sass": "^1.68.0",
     "sharp": "^0.33.0",
-    "shiki": "^3.2.1",
+    "shiki": "^3.2.2",
     "unified": "^11.0.4",
     "unist-util-visit": "^5.0.0",
     "unist-util-visit-parents": "^6.0.1",
