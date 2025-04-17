@@ -25,12 +25,12 @@ For a hobby project, which is what this website ultimately is, I had quite a lot
 
 First and foremost, I like the experience of **writing Markdown in VSCode**, so I didn't want any fancy tools or stacks of components to build something plain and simple. I wanted to sprinkle interactivity as part of my regular authoring process, where I could more or less wrap something in a few lines of markup and have it become interactive in the browser. For example:
 
-```md
+```md {3,11}
 This is some content I am writing.
 
 <InteractiveContent>
 
-I can write **regular** Markdown in here, and it will be rendered as such.
+I can write **regular** Markdown in here.
 
 | I can also write tables |
 | --- |
@@ -90,28 +90,29 @@ Much to my delight, [Web Components](https://developer.mozilla.org/en-US/docs/We
 
 <code-tabs>
 
-```md title="Markdown with HTML"
+```md title="Markdown with HTML" {3,13}
 This is some content I am writing.
 
 <interactive-component>
 
-I can write **regular** Markdown in here, and it will be rendered as such.
+I can write **regular** Markdown in here.
+
 
 | I can also write tables |
 | --- |
 | Which are a huge pain to write in HTML |
+
 
 </interactive-component>
 
 And I can keep writing my content here.
 ```
 
-```html title="GitHub Preview"
+```html title="GitHub Preview" {3,13}
 <p>This is some content I am writing.</p>
 
 <div>
-  <p>I can write <strong>regular</strong> Markdown in here, and it will be rendered as such.</p>
-
+  <p>I can write <strong>regular</strong> Markdown in here.</p>
   <table>
     <thead>
       <tr><th>I can also write tables</th></tr>
@@ -125,12 +126,11 @@ And I can keep writing my content here.
 <p>And I can keep writing my content here.</p>
 ```
 
-```html title="Browser"
+```html title="Browser" {3,13}
 <p>This is some content I am writing.</p>
 
 <interactive-component>
-  <p>I can write <strong>regular</strong> Markdown in here, and it will be rendered as such.</p>
-
+  <p>I can write <strong>regular</strong> Markdown in here.</p>
   <table>
     <thead>
       <tr><th>I can also write tables</th></tr>
