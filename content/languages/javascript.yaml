@@ -880,3 +880,5 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/API/Selection
   Selection.toString(): >-
     https://developer.mozilla.org/en-US/docs/Web/API/Selection/toString
+  CustomElementRegistry.define(): >-
+    https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define
