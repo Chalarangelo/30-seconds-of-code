@@ -17,7 +17,7 @@
 
 ## Credits
 
-* This repository is maintained by [Angelos Chalaris]([https://github.com/30-seconds](https://github.com/Chalarangelo)).
+* This repository is maintained by [Angelos Chalaris](https://github.com/Chalarangelo).
 * All code snippets are licensed under the [CC-BY-4.0 License](https://creativecommons.org/licenses/by/4.0/), unless explicitly stated otherwise.
 * Any other material (including text content, images, the website source code, logos, names and trademarks) are not to be used without the explicit consent of the owner.
 * The website is powered by [Netlify](https://www.netlify.com/), [Astro](https://astro.build/) & [GitHub](https://github.com/).
