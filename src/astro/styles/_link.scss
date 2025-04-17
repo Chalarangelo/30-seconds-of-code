@@ -1,3 +1,5 @@
+@use 'mixins';
+
 a {
   &:any-link {
     // Remove default text-decoration.
@@ -90,7 +92,7 @@ a[data-skip-link] {
   // Remove underline from the skip link.
   --link_color-underline: transparent;
   // Make the skip link accessible to screen readers only.
-  @include visually-hidden;
+  @include mixins.visually-hidden;
 
   // Make the skip link visible on focus.
   &:focus {

@@ -1,6 +1,8 @@
+@use '../mixins';
+
 nav[aria-label='Breadcrumb'] {
   // Set up a grid layout with standard bleed on either side.
-  @include layout-grid-with-bleed;
+  @include mixins.layout-grid-with-bleed;
   // Use a variable to control spacing between individual items and icons, too.
   --breadcrumb_column-gap: var(--spacing-2);
 
@@ -31,7 +33,7 @@ nav[aria-label='Breadcrumb'] {
 
     // Hide the current page breadcrumb, but keep it accessible.
     &:has([aria-current='page']) {
-      @include visually-hidden;
+      @include mixins.visually-hidden;
     }
 
     // Query depending on how many characters can fit in a line, assuming that
@@ -39,7 +41,7 @@ nav[aria-label='Breadcrumb'] {
     @media (max-width: 25rem) {
       &:first-child {
         // Visually hide the first breadcrumb (Home) on smaller viewports.
-        @include visually-hidden;
+        @include mixins.visually-hidden;
       }
     }
   }

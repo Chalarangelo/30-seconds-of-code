@@ -1,3 +1,5 @@
+@use 'mixins';
+
 html {
   // Layout center column width.
   --layout-main-column-width: 800px;
@@ -68,7 +70,7 @@ main {
 // `article` is a direct child of `main`.
 main > article {
   // Set up a grid layout with standard bleed on either side.
-  @include layout-grid-with-bleed;
+  @include mixins.layout-grid-with-bleed;
 
   // Add spacing between children.
   row-gap: var(--layout-row-spacing);

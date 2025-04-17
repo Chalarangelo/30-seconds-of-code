@@ -1,6 +1,8 @@
+@use '../mixins';
+
 nav[aria-label='Collections'] {
   // Set up a grid layout with standard bleed on either side.
-  @include layout-grid-with-bleed;
+  @include mixins.layout-grid-with-bleed;
 
   // Adjust bottom margin according to layout rhythm.
   margin-block-end: var(--layout-area-spacing);

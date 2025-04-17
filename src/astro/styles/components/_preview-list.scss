@@ -1,6 +1,8 @@
+@use '../mixins';
+
 .preview-list {
   // Set up a grid layout with standard bleed on either side.
-  @include layout-grid-with-bleed;
+  @include mixins.layout-grid-with-bleed;
 
   // Adjust top margin according to layout rhythm. This is necessary for lists
   // without chips above them to add some extra space. In all other cases, this

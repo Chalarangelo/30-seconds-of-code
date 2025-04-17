@@ -1,3 +1,5 @@
+@use '../mixins';
+
 header {
   // Use the correct grid area (spans 3 columns).
   grid-area: header;
@@ -86,7 +88,7 @@ header {
       // Respond to user's font size, changing the layout only when needed.
       a {
         // Visually hide links on small viewports, only show the search button.
-        @include visually-hidden;
+        @include mixins.visually-hidden;
       }
     }
 

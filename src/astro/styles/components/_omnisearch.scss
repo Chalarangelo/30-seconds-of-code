@@ -18,6 +18,11 @@ dialog {
   // it adjusts itself based on a different media query.
   border-radius: var(--border-radius-medium);
 
+  // Use a variable to define the input and buttons row height, allowing all
+  // calculations to be based on this value. While this is not `rem`-based,
+  // it still allows for enough flexibility for user adjustments.
+  --search_input-height: 60px;
+
   @media (max-width: 37.5rem) {
     // Adjust the margins for smaller viewports. This is not 100% accurate, but
     // something like `orientation: portrait` yields false positives on desktop,
@@ -33,11 +38,6 @@ dialog {
     // Only apply the animation if the user prefers motion.
     animation: dialog-in var(--animation-duration-medium) ease-out;
   }
-
-  // Use a variable to define the input and buttons row height, allowing all
-  // calculations to be based on this value. While this is not `rem`-based,
-  // it still allows for enough flexibility for user adjustments.
-  --search_input-height: 60px;
 
   search {
     display: grid;
@@ -94,9 +94,9 @@ dialog {
     // Calculate the max height of the results, based on the viewport height,
     // the margins and the search input height.
     max-height: calc(
-      100vh - var(--search_margin-block-start) - var(--search_margin-block-end) - var(
-          --search_input-height
-        )
+      100vh - var(--search_margin-block-start) - var(
+          --search_margin-block-end
+        ) - var(--search_input-height)
     );
     // Add a border on top to separate the results from the input. The color is
     // adjusted when the input is focused.
