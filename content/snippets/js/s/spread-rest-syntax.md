@@ -39,6 +39,8 @@ const f = [...e[0], ...e[1]]; // f = [1, 2, 3, 4]
 const g = [...'hello']; // g = ['h', 'e', 'l', 'l', 'o']
 ```
 
+@[Further reading](/js/s/spread-operator-tricks)
+
 ## Rest syntax
 
 The rest parameter syntax allows you to collapse any remaining arguments into an array. While it looks very similar to the spread operator, the rest parameter syntax is only used in function declarations (arrow or otherwise).
