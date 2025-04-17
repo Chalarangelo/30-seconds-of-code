@@ -23,7 +23,7 @@
     "rehype-unwrap-images": "^1.0.0",
     "remark-gfm": "^4.0.0",
     "remark-parse": "^11.0.0",
-    "remark-rehype": "^11.0.0",
+    "remark-rehype": "^11.1.2",
     "sass": "^1.68.0",
     "sharp": "^0.33.0",
     "shiki": "^3.2.2",
