@@ -10,7 +10,7 @@
     "@shikijs/colorized-brackets": "^3.2.2",
     "astro": "^5.7.2",
     "eslint": "^9.24.0",
-    "eslint-config-prettier": "^10.1.1",
+    "eslint-config-prettier": "^10.1.2",
     "front-matter": "^4.0.2",
     "fs-extra": "^11.3.0",
     "glob": "^11.0.1",
