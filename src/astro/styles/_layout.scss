@@ -96,6 +96,18 @@ main > article {
     // Use the layout border radius to round the corners, when needed.
     border-radius: var(--layout-border-radius);
   }
+
+  > figure {
+    > img + figcaption {
+      // Adjust the styles for image-only figure captions (center, light, small
+      // and slightly italic).
+      text-align: center;
+      color: var(--color-text-light);
+      font-size: var(--font-xs);
+      font-variation-settings: 'slnt' -5;
+      margin-block-start: var(--spacing-2);
+    }
+  }
 }
 
 // This element is mainly used for listing pages without chips. Its purpose is
