@@ -33,6 +33,9 @@ data.showNotifications?.();
 
 ## Nullish coalescing
 
+<baseline-support featureId="nullish-coalescing">
+</baseline-support>
+
 In the same spirit, the [nullish coalescing operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator) (`??`) is a **logical operator** that allows us to check for **nullish** (`null` or `undefined`) values, returning the right-hand side operand when the value is non-nullish, otherwise returning the left-hand side operand.
 
 Apart from cleaner code, this operator might spare us some headaches related to falsy values:
@@ -55,6 +58,21 @@ const port = config.server.port ?? 8888;
 const keepAlive = config.server.keepAlive ?? true;
 ```
 
+### Nullish coalescing assignment
+
+The [nullish coalescing assignment operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_assignment) (`??=`) is a **logical assignment operator** that allows us to assign a value to a variable only if the variable is nullish. This is similar to the nullish coalescing operator, but it also performs the assignment.
+
+```js
+const config = getServerConfig();
+
+// Without nullish coalescing assignment
+let port = config.server.port;
+port = port !== null && port !== undefined ? port : 8888;
+// With nullish coalescing assignment
+let port = config.server.port;
+port ??= 8888;
+```
+
 > [!NOTE]
 >
-> Keep in mind that both features are **relatively new**, so you might need **polyfills** to support older browsers. Be sure to check their compatibility before using in your projects.
+> Keep in mind that all of these features are **relatively new**, so you might need **polyfills** to support older browsers. Be sure to check their compatibility before using in your projects.
