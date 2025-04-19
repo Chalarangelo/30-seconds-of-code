@@ -166,6 +166,8 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/display#table
   'display: table-cell': >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/display#table-cell
+  'display: contents': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/display#contents
   align-items: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/align-items
   align-content: >-
@@ -358,3 +360,5 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/max-block-size
   inset: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/inset
+  '::details-content': >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/::details-content

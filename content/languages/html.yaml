@@ -4,3 +4,5 @@ name: HTML
 additionalReferences: [css, javascript]
 references:
   '<svg>': https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg
+  '<details>': https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details
+  '<summary>': https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary
