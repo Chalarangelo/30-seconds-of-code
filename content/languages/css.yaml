@@ -356,3 +356,5 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/max-inline-size
   max-block-size: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/max-block-size
+  inset: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/inset
