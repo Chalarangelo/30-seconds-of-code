@@ -24,6 +24,10 @@ if (args.length === 0 || args[0] === 'help') {
   );
   console.log('    [directory] - Directory to create content in');
   console.log('    [name]      - Name of content to create');
+  console.log('  create-component [name] - Create new component');
+  console.log(
+    '    [name]      - Name of component to create (e.g. my-component)'
+  );
   console.log('  help    - Show this help');
 } else if (args[0] === 'full') {
   // 0. Run ContentUtils to prepare the assets
@@ -106,6 +110,14 @@ if (args.length === 0 || args[0] === 'help') {
   }
 
   ContentUtils.createContent(args[1], args[2], args[3]);
+} else if (args[0] === 'create-component') {
+  if (process.argv.length < 3) {
+    console.log('Usage: prepare create-component [name]');
+    console.error('Not enough arguments');
+    process.exit(1);
+  }
+
+  ContentUtils.createComponent(args[1]);
 } else {
   console.log('Invalid command');
   process.exit(1);

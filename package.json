@@ -51,6 +51,7 @@
     "build": "astro build",
     "preview": "astro preview --port 9000",
     "create": "bin/prepare create",
+    "create-component": "bin/prepare create-component",
     "console": "bin/console",
     "test": "vitest"
   },

@@ -6,6 +6,7 @@ import { extractData } from '#src/lib/contentUtils/extractor.js';
 import FileHandler from '#src/lib/contentUtils/fileHandler.js';
 import AssetHandler from '#src/lib/contentUtils/assetHandler.js';
 import ContentCreator from '#src/lib/contentUtils/contentCreator.js';
+import ComponentCreator from '#src/lib/contentUtils/componentCreator.js';
 import FileWatcher from '#src/lib/contentUtils/fileWatcher.js';
 import { outputPath } from '#src/lib/contentUtils/config.js';
 
@@ -30,6 +31,10 @@ export default class ContentUtils {
 
   static createContent(...args) {
     return ContentCreator.create(...args);
+  }
+
+  static createComponent(...args) {
+    return ComponentCreator.create(...args);
   }
 
   static watchContent(callback) {
