@@ -4,7 +4,7 @@ shortTitle: Details accordion content
 language: html
 tags: [content,interactivity]
 cover: flower-portrait-10
-excerpt: Did you know you don't need JavaScript to create accordion-style content? Here's how to do it with the <details> element.
+excerpt: Did you know you don't need JavaScript to create accordion-style content? Here's how to do it with the details element.
 listed: true
 dateModified: 2025-05-22
 ---
