@@ -296,3 +296,63 @@ references:
     https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-text-fill-color
   background-clip: >-
     https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip
+  inset-inline: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/inset-inline
+  inset-block: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/inset-block
+  inset-block-start: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/inset-block-start
+  inset-block-end: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/inset-block-end
+  inset-inline-start: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/inset-inline-start
+  inset-inline-end: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/inset-inline-end
+  margin-inline: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/margin-inline
+  margin-block: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/margin-block
+  margin-block-start: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/margin-block-start
+  margin-block-end: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/margin-block-end
+  margin-inline-start: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/margin-inline-start
+  margin-inline-end: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/margin-inline-end
+  padding-inline: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/padding-inline
+  padding-block: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/padding-block
+  padding-block-start: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/padding-block-start
+  padding-block-end: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/padding-block-end
+  padding-inline-start: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/padding-inline-start
+  padding-inline-end: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/padding-inline-end
+  border-inline: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/border-inline
+  border-block: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/border-block
+  border-block-start: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/border-block-start
+  border-block-end: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/border-block-end
+  border-inline-start: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/border-inline-start
+  border-inline-end: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/border-inline-end
+  inline-size: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/inline-size
+  block-size: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/block-size
+  min-inline-size: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/min-inline-size
+  min-block-size: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/min-block-size
+  max-inline-size: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/max-inline-size
+  max-block-size: >-
+    https://developer.mozilla.org/en-US/docs/Web/CSS/max-block-size
