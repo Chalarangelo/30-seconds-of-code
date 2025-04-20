@@ -65,7 +65,7 @@ import { porterStemmer } from './porterStemmer.js';
 const documents = [];
 
 const parseDocument = document => {
-  const tokens = removeStopwords(commonStopWords, tokenize(document));
+  const tokens = tokenize(document);
   const filteredTokens = removeStopwords(commonStopWords, tokens);
   const stemmedTokens = filteredTokens.map(porterStemmer);
   return stemmedTokens;
