@@ -8,6 +8,7 @@ import { createOnigurumaEngine } from '@shikijs/engine-oniguruma';
 import { transformerColorizedBrackets } from '@shikijs/colorized-brackets';
 import { transformerColorSwatches } from './transformers/colorSwatches.js';
 import { transformerLineHighlights } from './transformers/lineHighlights.js';
+import { transformerSectionFolding } from './transformers/sectionFolding.js';
 
 const loadBundledThemes = () => {
   return {
@@ -73,6 +74,7 @@ export default class ShikiHighlighter {
       transformers: [
         transformerColorSwatches(),
         transformerLineHighlights(metadata),
+        transformerSectionFolding(metadata),
         transformerColorizedBrackets({
           themes: {
             cosmos: [
