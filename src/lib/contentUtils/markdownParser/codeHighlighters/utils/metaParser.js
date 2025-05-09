@@ -340,3 +340,26 @@ export const getMetaRanges = (meta, key) => {
     { lines: new Map(), labels: new Map() }
   );
 };
+
+export const getMetaRangeBoundaries = (meta, key) => {
+  const ranges = meta.filter(item => item.key === key && item.type === 'range');
+  return ranges.reduce((acc, item) => {
+    const { value } = item;
+
+    if (value.length === 0) return acc;
+    const sorted = value.sort((a, b) => a - b);
+
+    let currentStart = sorted[0];
+
+    for (let i = 0; i < sorted.length - 1; i++)
+      if (sorted[i] + 1 !== sorted[i + 1]) {
+        acc.push({ start: currentStart, end: sorted[i] });
+        currentStart = sorted[i + 1];
+      }
+
+    if (currentStart !== sorted[sorted.length - 1])
+      acc.push({ start: currentStart, end: sorted[sorted.length - 1] });
+
+    return acc;
+  }, []);
+};
