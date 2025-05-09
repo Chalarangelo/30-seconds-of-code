@@ -170,6 +170,58 @@ pre {
       }
     }
   }
+
+  details {
+    summary {
+      // Collapsed line lables are displayed with a different background color.
+      background-color: hsl(225, 43%, 26%);
+      // Make the content of the summary unselectable.
+      user-select: none;
+      // Restore default font styles.
+      font: inherit;
+      // Add padding to match the rest of the code block.
+      padding-block: var(--spacing-2);
+      padding-inline: var(--layout-bleed-width);
+      // Add some space between the icon and the text.
+      gap: var(--spacing-6);
+
+      &::before {
+        // Hide the default icon for the summary element.
+        display: none;
+      }
+
+      &:is(:hover, :focus) {
+        // Change the color on hover and focus.
+        color: hsl(210, 17%, 95%);
+      }
+    }
+
+    code {
+      // Add a tiny bit of padding.
+      padding-block: var(--spacing-2);
+      // Collapsed lines are displayed with a different background color.
+      background-color: hsl(225, 44%, 20%);
+      // Counteract the default margin applied by the `details` element.
+      margin-inline: 0;
+    }
+
+    &[open] summary {
+      // Counteract the default margin applied by the `details` element.
+      margin-block-end: 0;
+
+      [data-path-id='arrow-up'] {
+        // Rotate the arrow to point down.
+        transform: rotate(180deg) translateY(-44%);
+        transform-origin: 50% 0%;
+      }
+
+      [data-path-id='arrow-down'] {
+        // Rotate the arrow to point up.
+        transform: rotate(180deg) translateY(44%);
+        transform-origin: 50% 100%;
+      }
+    }
+  }
 }
 
 pre[data-code-language],
