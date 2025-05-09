@@ -3,6 +3,7 @@ import {
   parseMeta,
   getMetaString,
   getMetaRanges,
+  getMetaRangeBoundaries,
 } from '#src/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.js';
 
 /**
@@ -35,6 +36,7 @@ const createMetadataExtractor = languages => node => {
   const highlightedLines = getMetaRanges(meta, null);
   const insertedLines = getMetaRanges(meta, 'ins');
   const deletedLines = getMetaRanges(meta, 'del');
+  const foldedSections = getMetaRangeBoundaries(meta, 'collapse');
 
   return {
     languageName,
@@ -43,6 +45,7 @@ const createMetadataExtractor = languages => node => {
     highlightedLines,
     insertedLines,
     deletedLines,
+    foldedSections,
   };
 };
 
