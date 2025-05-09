@@ -166,6 +166,20 @@ const y = 5;
 console.log(x + y);
 ```
 
+### Collapsed lines
+
+```js collapse={0-2}
+const add = (a, b) => {
+  return a + b;
+};
+
+const add = (a, b) => {
+  return a + b;
+};
+
+add(1, 2);
+```
+
 ## Other elements
 
 There's a few more elements and some cases we should cover just to be safe.
