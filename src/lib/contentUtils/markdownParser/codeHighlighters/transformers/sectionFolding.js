@@ -111,7 +111,17 @@ export const transformerSectionFolding = ({ foldedSections = [] } = {}) => {
                 properties: {},
                 children: [
                   svgNode,
-                  { type: 'text', value: `${sectionLength} collapsed lines` },
+                  {
+                    type: 'element',
+                    tagName: 'span',
+                    properties: {},
+                    children: [
+                      {
+                        type: 'text',
+                        value: `${sectionLength} collapsed lines`,
+                      },
+                    ],
+                  },
                 ],
               },
               {

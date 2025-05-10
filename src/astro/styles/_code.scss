@@ -220,6 +220,11 @@ pre {
         transform: rotate(180deg) translateY(44%);
         transform-origin: 50% 100%;
       }
+
+      span {
+        // Hide the label when the details are open.
+        opacity: 0;
+      }
     }
   }
 }
