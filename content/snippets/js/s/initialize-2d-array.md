@@ -24,6 +24,8 @@ const initialize2DArray = (width, height, val = null) =>
 initialize2DArray(2, 2, 0); // [[0, 0], [0, 0]]
 ```
 
+@[Further reading](/js/s/matrix-data-structure#initialization)
+
 ### Initialize n-dimensional array with a specific value
 
 A more generic version of the above snippet can be used to initialize an **n-dimensional array** with a specific value. The technique at its core is the same, except for the use of rest arguments and recursion to handle the arbitrary number of dimensions.

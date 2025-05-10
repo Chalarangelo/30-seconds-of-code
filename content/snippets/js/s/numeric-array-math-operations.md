@@ -117,3 +117,5 @@ standardDeviation([10, 2, 38, 23, 38, 23, 21]); // 13.284434142114991 (sample)
 standardDeviation([10, 2, 38, 23, 38, 23, 21], true);
 // 12.29899614287479 (population)
 ```
+
+@[Further reading](/js/s/matrix-data-structure#additional-math-operations)
