@@ -81,8 +81,10 @@ export const transformerSectionFolding = ({ foldedSections = [] } = {}) => {
         // If the child is a line node, we can use its properties until the next
         // line node is reached (allowing newlines to be treated as part of the
         // previous line).
+        // NOTE: We use lineNumber + 1. Lines are 1-indexed, as this makes it
+        // easier to work with when authoring content (e.g. viewed in VSCode).
         if (isLine) {
-          const foldedSectionData = getFoldedSectionForLine(lineNumber);
+          const foldedSectionData = getFoldedSectionForLine(lineNumber + 1);
 
           isFolded = foldedSectionData[0];
           isStart = foldedSectionData[1];

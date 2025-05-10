@@ -168,7 +168,7 @@ console.log(x + y);
 
 ### Collapsed lines
 
-```js collapse={0-2}
+```js collapse={1-3}
 const add = (a, b) => {
   return a + b;
 };
