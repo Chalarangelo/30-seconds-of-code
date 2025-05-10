@@ -11,6 +11,8 @@ dateModified: 2021-06-12
 
 JavaScript's `Symbol.iterator` is a very powerful tool that every web developer should learn how to use. It allows you to define and customize the way a value is iterated, effectively allowing you to make any value iterable. You can easily apply this knowledge to plain JavaScript objects and even classes.
 
+@[Quick refresher](/js/s/iterators)
+
 All you need to correctly define an iterator is a generator function `yield`ing each of the iteration values. This could be used to retrieve key-value pairs in an object, call specific getter functions from a class or split a number into an array of digits:
 
 ```js

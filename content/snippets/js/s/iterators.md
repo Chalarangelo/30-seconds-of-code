@@ -93,3 +93,4 @@ for (let item of myList.values()) {
 
 In this example, we use the native array iterator of the `data` object to make our `SpecialList` iterable, returning the exact values of the `data` array. Meanwhile, we also define a `values` method, which is an iterator itself, using `Array.prototype.filter()` and `Array.prototype.map()` on the `data` array. Finally, we return the `Symbol.iterator` of the result, allowing iteration only over non-empty objects in the sequence and returning just the `value` for each one.
 
+@[Further reading](/js/s/make-iterable)
