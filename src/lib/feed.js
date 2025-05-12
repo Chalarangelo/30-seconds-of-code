@@ -48,7 +48,7 @@ ${Feed.nodes.join('\n')}
           snippet.seoDescription
         )}</description>
         <pubDate>${new Date(snippet.dateModified).toUTCString()}</pubDate>
-      <item>`
+      </item>`
       );
   }
 }
