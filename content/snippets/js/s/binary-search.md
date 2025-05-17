@@ -43,3 +43,5 @@ binarySearch([1, 2, 3, 4, 5], 6); // -1
 > [!NOTE]
 >
 > This implementation **does not account for duplicate values** in the array.
+
+@[Further reading](/js/s/binary-search-insert-index-sorted-number-array)
