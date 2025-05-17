@@ -32,3 +32,5 @@ linearSearch([2, 9, 9], 7); // -1
 > [!NOTE]
 >
 > This implementation is intended **mainly for demonstration purposes**. The built-in `Array.prototype.indexOf()` method should be used for practical applications, instead.
+
+@[Further reading](/js/s/binary-search)
