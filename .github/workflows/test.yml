@@ -1,4 +1,6 @@
 name: Run tests
+permissions:
+  contents: read
 on:
   push:
     branches: [ master ]
