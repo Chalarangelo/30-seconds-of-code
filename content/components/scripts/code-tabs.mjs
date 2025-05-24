@@ -36,6 +36,7 @@ class CodeTabs extends HTMLElement {
 
   prepareTabs() {
     const codeBlocks = [...this.querySelectorAll('pre')];
+    const selectedTab = Number.parseInt(this.dataset.selectedTab ?? '0', 10);
 
     this.name = (
       this.querySelector('details > summary')?.innerText ?? crypto.randomUUID()
@@ -65,7 +66,7 @@ class CodeTabs extends HTMLElement {
 
     this.maxScrollWidth = this.scrollWidth;
     this.style.cssText = this.cssAtributes;
-    this.tabs[0].setAttribute('open', 'true');
+    this.tabs[selectedTab].setAttribute('open', 'true');
     requestAnimationFrame(() => {
       this.maxScrollWidth = this.scrollWidth;
       this.setAttribute('scrollable-left', false);
