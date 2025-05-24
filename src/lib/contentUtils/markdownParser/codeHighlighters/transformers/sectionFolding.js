@@ -54,7 +54,8 @@ export const transformerSectionFolding = ({ foldedSections = [] } = {}) => {
   };
 
   const isLineNode = node =>
-    node.tagName === 'span' && node.properties.class?.includes('line');
+    ['span', 'mark', 'ins', 'del'].includes(node.tagName) &&
+    node.properties.class?.includes('line');
 
   return {
     name: 'section-folding',
