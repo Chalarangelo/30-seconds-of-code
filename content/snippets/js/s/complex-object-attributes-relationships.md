@@ -348,6 +348,8 @@ This is a simple optimization that can greatly improve the performance of your a
 >
 > In reality, in my project I didn't implement this _exactly_ like that. The main difference is that I made the `id` attribute a **configurable set of attributes** that each model can define for itself. This makes the code a little more complicated and doesn't depart a ton of value at this point, but you can easily figure it out for yourself.
 
+@[You may also like](/js/s/indexed-object-collections)
+
 ## Conclusion
 
 In this second installment of our journey to implement an ActiveRecord-like pattern in JavaScript, we've focused on modeling complex object attributes and relationships. While it may have sounded a little intimidating at first, it wasn't so bad, right? The power of JavaScript's object-oriented features and built-in methods can help you abstract complexity fairly easily.
