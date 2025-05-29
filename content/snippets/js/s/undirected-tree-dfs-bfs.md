@@ -2,7 +2,7 @@
 title: How can I traverse an undirected tree using DFS or BFS in JavaScript?
 shortTitle: DFS/BFS tree traversal
 language: javascript
-tags: [array]
+tags: [algorithm,array]
 cover: japanese-cityscape
 excerpt: Learn how to traverse an undirected tree using Depth-First Search (DFS) or Breadth-First Search (BFS) in JavaScript.
 listed: true
@@ -17,7 +17,7 @@ Note that we'll be using the same tree as in the last article:
 
 ![Undirected Tree visualization](./illustrations/undirected-tree.svg)
 
-This tree would corresponds to the following edges array and `Map` representation:
+This tree would correspond to the following edges array and `Map` representation:
 
 ```js
 const edges = [ [0, 1], [0, 2], [2, 3], [2, 4] ];
