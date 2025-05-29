@@ -14,6 +14,8 @@ snippetIds:
   - js/s/data-structures-binary-tree
   - js/s/data-structures-binary-search-tree
   - js/s/undirected-tree-from-edges
+  - js/s/undirected-tree-dfs-bfs
+  - js/s/undirected-tree-bipartite-coloring
   - js/s/modeling-money-currency-exchange-rates
   - js/s/matrix-data-structure
   - js/s/big-o-cheatsheet
