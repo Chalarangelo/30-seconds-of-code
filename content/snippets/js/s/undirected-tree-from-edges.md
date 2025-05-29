@@ -115,6 +115,8 @@ edgesToReachableGraph(edges);
 // )
 ```
 
+@[Further reading](/js/s/undirected-tree-dfs-bfs)
+
 ## Conclusion
 
-Building an undirected tree from an array of edges in JavaScript can be done in various ways, depending on your specific needs. Whether you need to traverse the tree downwards, upwards, or in both directions, you can choose the appropriate structure to represent the tree. Hope this helps you in your coding journey, and feel free to adapt the code to suit your needs!
+Building an undirected tree from an array of edges in JavaScript can be done in various ways, depending on your specific needs. Whether you need to traverse the tree downwards, upwards, or in both directions, you can choose the appropriate structure to represent the tree. Hope this helps you in your coding journey, and feel free to adapt the code to suit your needs! 🏊‍♂️
