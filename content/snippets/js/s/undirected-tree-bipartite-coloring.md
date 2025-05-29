@@ -39,7 +39,7 @@ const graphMap = new Map([
 
 ## Implementation
 
-To implement bipartite coloring, we can use a simple **DFS or BFS traversal algorithm**. We'll maintain a `colors` map to store the color of each node as we traverse the tree. I prefer using BFS task, as it allows us to color the nodes level by level.
+To implement bipartite coloring, we can use a simple **DFS or BFS traversal algorithm**. We'll maintain a `colors` map to store the color of each node as we traverse the tree. I prefer using BFS for this task, as it allows us to color the nodes level by level.
 
 @[Quick refresher](/js/s/undirected-tree-dfs-bfs#breadth-first-search-bfs)
 
