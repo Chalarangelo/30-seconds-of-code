@@ -103,7 +103,7 @@ class Tree {
 }
 ```
 
-@[You may also like](/js/s/build-undirected-tree-from-edges)
+@[You may also like](/js/s/undirected-tree-from-edges)
 
 - Create a `class` for the `TreeNode` with a `constructor` that initializes the appropriate `key`, `value`, `parent` and `children` properties.
 - Define an `isLeaf` getter, that uses `Array.prototype.length` to check if `children` is empty.

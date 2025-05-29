@@ -13,7 +13,7 @@ snippetIds:
   - js/s/data-structures-tree
   - js/s/data-structures-binary-tree
   - js/s/data-structures-binary-search-tree
-  - js/s/build-undirected-tree-from-edges
+  - js/s/undirected-tree-from-edges
   - js/s/modeling-money-currency-exchange-rates
   - js/s/matrix-data-structure
   - js/s/big-o-cheatsheet
