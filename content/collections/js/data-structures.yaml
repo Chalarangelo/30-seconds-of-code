@@ -16,6 +16,8 @@ snippetIds:
   - js/s/undirected-tree-from-edges
   - js/s/undirected-tree-dfs-bfs
   - js/s/undirected-tree-bipartite-coloring
+  - js/s/undirected-tree-diameter
+  - js/s/undirected-tree-degree-min-height-tree
   - js/s/modeling-money-currency-exchange-rates
   - js/s/matrix-data-structure
   - js/s/big-o-cheatsheet
