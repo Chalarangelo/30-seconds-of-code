@@ -11,6 +11,8 @@ dateModified: 2025-08-07
 
 Given the previous articles on [how to build an undirected tree from edges](/js/s/undirected-tree-from-edges) and [how to traverse it using DFS or BFS](/js/s/undirected-tree-dfs-bfs), we continue our exploration of undirected trees in JavaScript. This time, we will focus on how to find the **minimum height tree** using the degree of nodes.
 
+@[Quick refresher](/js/s/undirected-tree-from-edges)
+
 ## Node degrees
 
 The degree of a node in an undirected tree is the number of edges connected to it. Note that, as the tree is undirected, there is no indegree or outdegree; the degree is simply the count of edges connected to that node.
