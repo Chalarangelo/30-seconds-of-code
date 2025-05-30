@@ -15,7 +15,7 @@ Given the previous articles on [how to build an undirected tree from edges](/js/
 
 ## Diameter of an undirected tree
 
-The diameter of an undirected tree is defined as the **longest path between any two nodes** in the tree. Let's look at an example to visualize this:
+The diameter of an undirected tree is defined as the **longest path between any two nodes** in the tree. In other words, it's the **maximum number of edges** that need to be traversed to go from one node to another in the tree. Let's look at an example to visualize this:
 
 ![Undirected Tree Diameter visualization](./illustrations/undirected-tree-diameter.svg)
 This tree would correspond to the following edges array and `Map` representation:
