@@ -43,17 +43,18 @@ To implement bipartite coloring, we can use a simple **DFS or BFS traversal algo
 
 @[Quick refresher](/js/s/undirected-tree-dfs-bfs#breadth-first-search-bfs)
 
-```js
+```js {3-4,8,12-15}
 const bfsBipartiteColoring = (graph, root) => {
-  const colors = new Map();
   const queue = [root];
+  const colors = new Map();
   colors.set(root, 0);
 
-  while (queue.length > 0) {
+  while (queue.length) {
     const node = queue.shift();
     const currentColor = colors.get(node);
 
-    for (const neighbor of graph.get(node) || [])
+    const neighbors = graph.get(node) || [];
+    for (const neighbor of neighbors)
       if (!colors.has(neighbor)) {
         colors.set(neighbor, 1 - currentColor);
         queue.push(neighbor);

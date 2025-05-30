@@ -42,8 +42,8 @@ To find the diameter of an undirected tree, we can use a **two-pass DFS approach
 
 To do so, we'll **keep track of the maximum distance** and the corresponding node during our DFS traversal. We'll also push the **distance of the current node** incremented by `1` alongside the node itself onto a stack, allowing us to explore the tree iteratively.
 
-```js
-const dfs = (graph, startDistance = -1, startNode = 0) => {
+```js {4,7,11-14,18}
+const dfsDistance = (graph, startDistance = -1, startNode = 0) => {
   const stack = [[startNode, 0]];
   const visited = new Set();
   let [maxDistance, maxNode] = [startDistance, startNode];
@@ -68,10 +68,10 @@ const dfs = (graph, startDistance = -1, startNode = 0) => {
 
 const dfsDiameter = graph => {
   // First pass to find the farthest node from an arbitrary starting node (0)
-  const [maxDistance, farthestNode] = dfs(graph, -1, 0);
+  const [maxDistance, farthestNode] = dfsDistance(graph, -1, 0);
 
   // Second pass to find the diameter from the farthest node found
-  const [diameter] = dfs(graph, maxDistance, farthestNode);
+  const [diameter] = dfsDistance(graph, maxDistance, farthestNode);
 
   return diameter;
 };
