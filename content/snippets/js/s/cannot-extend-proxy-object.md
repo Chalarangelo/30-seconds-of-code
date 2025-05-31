@@ -11,6 +11,8 @@ dateModified: 2023-04-17
 
 While the [`Proxy`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) object seems like it can be extended by any other class in JavaScript, that's not the case. This is due to proxy objects having very atypical semantics and being considered **exotic objects**. Simply put, this means they do not have a prototype and are not extensible.
 
+@[Quick refresher](/js/s/proxy-introduction)
+
 So how do you extend a proxy object? You don't. You can, however, create a class that returns a proxy by returning it from the constructor. After all, this is probably the sort of behavior you're after.
 
 ```js

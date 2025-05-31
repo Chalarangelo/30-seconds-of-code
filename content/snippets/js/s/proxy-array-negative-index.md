@@ -9,9 +9,9 @@ listed: true
 dateModified: 2022-10-02
 ---
 
-`Array.prototype.slice()` provides an easy way to access elements from the end of an array, using a negative `start` value. While this sounds convenient, the resulting value is an array, so it's necessary to use an index to get an individual element.
+`Array.prototype.slice()` provides an easy way to **access elements from the end of an array**, using a negative `start` value. While this sounds convenient, the resulting value is an array, so it's necessary to use an index to get an individual element.
 
-This is usually not too bad, but it's interesting to explore other options to understand the language better. In this case, we can use a `Proxy` object to allow accessing data in an array using negative indexes. To do so, an appropriate handler needs to be defined for the `get` trap.
+This is usually not too bad, but it's interesting to explore other options to understand the language better. In this case, we can use a `Proxy` object to allow **accessing data in an array using negative indexes**. To do so, an appropriate handler needs to be defined for the `get` trap.
 
 The trap's second argument corresponds to the passed index, however it's a string, so it must first be converted to a number using `Number()`. Then, `Array.prototype.length` can be used to calculate the position of the actual element. Finally, `Reflect.get()` can be used to get the value at the specific index, but expects its second argument to be a string.
 
@@ -36,3 +36,10 @@ let arr = createArray('a', 'b', 'c');
 arr[-1]; // 'c'
 arr[-1]; // 'b'
 ```
+
+> [!IMPORTANT]
+>
+> <baseline-support featureId="array-at">
+> </baseline-support>
+>
+> As of May, 2025, `Array.prototype.at()` is **widely available in all modern browsers and Node.js**. You should probably consider using it, if possible, as it provides a more straightforward and performant interface for accessing elements in an array using negative indices without the need for a custom solution.

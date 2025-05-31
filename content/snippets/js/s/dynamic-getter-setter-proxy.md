@@ -70,6 +70,8 @@ As shown in this example, the `Proxy` object can be used to validate keys as wel
 
 As a side note, remember that the regular expression used here is not a full date validation, but only checks for a simple pattern to demonstrate the concept. If you need to validate dates in a production environment, this is not the way to go.
 
+@[Further reading](/js/s/dynamic-getter-chain-proxy)
+
 ## Conclusion
 
 As shown in this post, the `Proxy` object provides a particularly powerful way to manipulate the behavior of objects. That being said, you might want to consider your specific use-case before reaching for this tool. Dynamic getters and setters can be very useful, but they can also cause a lot of headaches if used incorrectly.
