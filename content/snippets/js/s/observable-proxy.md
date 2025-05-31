@@ -2,7 +2,7 @@
 title: Using a Proxy to implement the Observable pattern
 shortTitle: Observable Proxy
 language: javascript
-tags: [object,proxy]
+tags: [proxy]
 cover: city-view
 excerpt: Use the Proxy object to implement the Observable pattern in JavaScript.
 listed: true

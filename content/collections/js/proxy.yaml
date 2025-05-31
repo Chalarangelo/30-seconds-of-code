@@ -1,6 +1,9 @@
 slug: js/proxy
-title: JavaScript Proxy
+title: JavaScript Proxy Articles
+shortTitle: JavaScript Proxy
+miniTitle: Proxy
 listed: true
+parent: js
 snippetIds:
   - js/s/proxy-introduction
   - js/s/dynamic-getter-setter-proxy
