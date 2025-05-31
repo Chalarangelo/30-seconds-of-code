@@ -9,7 +9,7 @@ dateModified: 2025-05-07
 
 Hey there! <span class="wave">👋</span>
 
-You may be wondering what I've been up to lately, unless you've been following the repository on GitHub, in which case you already known. It's a lot of work, mostly under the hood, but I'm really excited to share it with you!
+You may be wondering what I've been up to lately, unless you've been following the repository on GitHub, in which case you already know. It's a lot of work, mostly under the hood, but I'm really excited to share it with you!
 
 ## Rich content authoring
 
