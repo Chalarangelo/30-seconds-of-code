@@ -2,7 +2,7 @@
 title: Formatting relative time in JavaScript
 shortTitle: Relative time formatting
 language: javascript
-tags: [date,string,math]
+tags: [number,date]
 cover: dog-waiting
 excerpt: Did you know JavaScript has a built-in way to format relative time? It's called `Intl.RelativeTimeFormat` and it's awesome!
 listed: true

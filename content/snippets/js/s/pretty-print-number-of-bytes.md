@@ -1,7 +1,7 @@
 ---
 title: Pretty print number of bytes
 language: javascript
-tags: [string,math]
+tags: [number]
 cover: digital-nomad
 excerpt: Convert a number in bytes to a human-readable string.
 listed: true

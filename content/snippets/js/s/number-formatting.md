@@ -2,7 +2,7 @@
 title: Formatting numeric values in JavaScript
 shortTitle: Number formatting
 language: javascript
-tags: [math,string,date]
+tags: [number,date]
 cover: white-chapel
 excerpt: Learn common number formatting operations, such as rounding, padding, optional decimal marks, currency, seconds, bytes, and more.
 listed: true

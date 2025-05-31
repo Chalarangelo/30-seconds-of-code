@@ -2,7 +2,7 @@
 title: Digitize a number in JavaScript
 shortTitle: Digitize number
 language: javascript
-tags: [math]
+tags: [number]
 cover: industrial-tokyo
 excerpt: Learn how to convert a number to an array of digits, removing its sign if necessary.
 listed: true

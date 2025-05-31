@@ -2,7 +2,7 @@
 title: Convert between binary and decimal numbers in JavaScript
 shortTitle: Binary number conversion
 language: javascript
-tags: [math]
+tags: [number]
 cover: interior-18
 excerpt: Binary numbers are a fundamental part of computer science. Learn how to convert between binary and decimal numbers in JavaScript.
 listed: true

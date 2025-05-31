@@ -1,0 +1,16 @@
+slug: js/number
+title: JavaScript Number Formatting & Conversion
+shortTitle: JavaScript Number
+miniTitle: Number
+listed: true
+parent: js
+languageMatcher: javascript
+tagMatcher: number
+description: >-
+  The JavaScript article collection contains a wide variety of ES6 helper
+  functions. It includes helpers for dealing with primitives, arrays and
+  objects, as well as algorithms, DOM manipulation functions and Node.js
+  utilities.
+shortDescription: >-
+  An article collection of number formatters and converters implemented in JavaScript.
+splash: hand-screen
