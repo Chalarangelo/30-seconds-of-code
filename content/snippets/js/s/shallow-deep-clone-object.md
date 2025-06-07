@@ -96,6 +96,8 @@ const a = { x: 1, y: { y1: 'a' }, z: new Set([1, 2]) };
 const b = structuredClone(a); // a !== b, a.y !== b.y, a.z !== b.z
 ```
 
+@[Further reading](/js/s/deep-clone-structured-clone)
+
 This technique can be used for both **arrays and objects**, requires minimal code and is the recommended way of cloning objects in JavaScript, as it's the most **performant and reliable**.
 
 > [!NOTE]
