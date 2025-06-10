@@ -39,3 +39,5 @@ const maxSubarray = (...arr) => {
 
 maxSubarray(-2, 1, -3, 4, -1, 2, 1, -5, 4); // [4, -1, 2, 1]
 ```
+
+@[Further reading](/js/s/best-time-to-buy-and-sell-stock)
