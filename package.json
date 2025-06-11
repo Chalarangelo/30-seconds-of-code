@@ -9,7 +9,7 @@
   "devDependencies": {
     "@shikijs/colorized-brackets": "^3.2.2",
     "astro": "^5.9.2",
-    "eslint": "^9.24.0",
+    "eslint": "^9.28.0",
     "eslint-config-prettier": "^10.1.2",
     "front-matter": "^4.0.2",
     "fs-extra": "^11.3.0",
