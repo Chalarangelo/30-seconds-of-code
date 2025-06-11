@@ -24,8 +24,8 @@ const settings = {
   },
   home: {
     cover: 'work-sunrise',
-    newSnippetCards: 6,
-    topSnippetCards: 6,
+    newSnippetCards: 12,
+    topSnippetCards: 0,
     topCollectionChips: 7,
   },
   collections: {
