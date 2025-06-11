@@ -26,7 +26,7 @@
     "remark-rehype": "^11.1.2",
     "sass": "^1.86.3",
     "sharp": "^0.33.5",
-    "shiki": "^3.2.2",
+    "shiki": "^3.6.0",
     "unified": "^11.0.4",
     "unist-util-visit": "^5.0.0",
     "unist-util-visit-parents": "^6.0.1",
