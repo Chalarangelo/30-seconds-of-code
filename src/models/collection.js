@@ -60,9 +60,12 @@ export default class Collection extends ContentModel {
   }
 
   get collectionSnippets() {
-    return CollectionSnippet.scope('published', 'listed', 'byPosition').where({
-      collectionId: this.id,
-    });
+    const scopes = [
+      'published',
+      'listed',
+      this.isUpdateLogs ? 'byNew' : 'byPosition',
+    ];
+    return CollectionSnippet.scope(...scopes).where({ collectionId: this.id });
   }
 
   get snippets() {
@@ -70,13 +73,6 @@ export default class Collection extends ContentModel {
   }
 
   get listedSnippets() {
-    if (this.isUpdateLogs) {
-      return this.collectionSnippets
-        .map(cs => cs.snippet)
-        .sort((a, b) => {
-          return b.dateModified - a.dateModified;
-        });
-    }
     return this.collectionSnippets.map(cs => cs.snippet);
   }
 
