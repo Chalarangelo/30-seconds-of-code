@@ -63,7 +63,7 @@ export default class Collection extends ContentModel {
     const scopes = [
       'published',
       'listed',
-      this.isUpdateLogs ? 'byNew' : 'byPosition',
+      this.isUpdateLogs || this.isMain ? 'byNew' : 'byPosition',
     ];
     return CollectionSnippet.scope(...scopes).where({ collectionId: this.id });
   }
