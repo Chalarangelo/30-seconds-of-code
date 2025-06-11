@@ -19,6 +19,10 @@ export default class CollectionSnippet extends Model {
     return records.sort((a, b) => a.position - b.position);
   }
 
+  static byNew(records) {
+    return records.order((a, b) => b.dateModified - a.dateModified);
+  }
+
   static listed(records) {
     return records.where({ position: p => p !== -1 });
   }
