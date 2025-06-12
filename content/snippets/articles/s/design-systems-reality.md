@@ -20,7 +20,7 @@ The promise of design systems is simple: create a **shared language** and toolki
 
 ## The reality of design systems
 
-Yet, the **real world** is full of use cases that are **messy, complex, and unpredictable**. The gap between theory and practice quickly becomes apparent. You simply **can’t design for every scenario**, and the importance of flexibility and adaptability is often underestimated. Design systems tend to be **rigid and verbose**, making them hard to use in practice. They’re **almost never complete**, especially in projects that evolve rapidly and dynamically.
+Yet, the **real world** is full of use cases that are **messy, complex, and unpredictable**. The gap between theory and practice quickly becomes apparent. You simply **can't design for every scenario**, and the importance of flexibility and adaptability is often underestimated. Design systems tend to be **rigid and verbose**, making them hard to use in practice. They're **almost never complete**, especially in projects that evolve rapidly and dynamically.
 
 ## Escaping isolation
 
@@ -34,7 +34,7 @@ Organization-wide **alignment** is also an uphill struggle. People resist change
 
 Nobody is surprised to hear that **software development is inherently complex**, and good, organized design is only one facet of the process. This leads to a situation where tools and solutions are often bent out of shape out of necessity, not incompetence or negligence.
 
-Cracks often first appear in convention **discrepancies** (e.g. component names) between design and development, then propagate into implementation details. Developers, faced with a tangled web of issues, will often **resort to hacks** that pile up over time. Designers aren’t immune either; they may abuse components to make their work easier or find **shortcuts**. The underlying code often doesn’t match the design system, and **external component libraries** can slow down development, requiring specialized changes to adapt to new constraints.
+Cracks often first appear in convention **discrepancies** (e.g. component names) between design and development, then propagate into implementation details. Developers, faced with a tangled web of issues, will often **resort to hacks** that pile up over time. Designers aren't immune either; they may abuse components to make their work easier or find **shortcuts**. The underlying code often doesn't match the design system, and **external component libraries** can slow down development, requiring specialized changes to adapt to new constraints.
 
 ## Time is the enemy
 
@@ -50,8 +50,8 @@ A similar situation arises for **hobby projects**, open source and small teams. 
 
 ## Conclusion
 
-Design systems are a **great idea in theory**, but they often fail to deliver the expected results in practice. It’s better to **focus on the principles** of good design and development, rather than enforcing a rigid system — especially in fast-paced environments with constantly evolving codebases.
+Design systems are a **great idea in theory**, but they often fail to deliver the expected results in practice. It's better to **focus on the principles** of good design and development, rather than enforcing a rigid system — especially in fast-paced environments with constantly evolving codebases.
 
 **Good communication is key to success** in larger teams, while for small teams or solo projects, a design system may end up being overkill. Many of these issues also apply to code architecture and design documents, and the solutions are often similar: **communication, flexibility, and adaptability**.
 
-Still, there’s always room for improvement: a design system **can be a valuable tool** if adopted slowly, iteratively, and with the **right mindset**. Ultimately, they require careful consideration and a willingness to adapt to the realities of software development, both from a design and a development perspective.
+Still, there's always room for improvement: a design system **can be a valuable tool** if adopted slowly, iteratively, and with the **right mindset**. Ultimately, they require careful consideration and a willingness to adapt to the realities of software development, both from a design and a development perspective.

@@ -9,7 +9,7 @@ listed: true
 dateModified: 2025-07-03
 ---
 
-Writing great code is both an art and a discipline. Over the years, I’ve learned that the best code isn’t just code that works, but **code that’s easy to read, maintain, and test**. In this article, I’ll share some practical tips and examples to help you write code that stands the test of time, focusing on testability, maintainability, and readability.
+Writing great code is both an art and a discipline. Over the years, I've learned that the best code isn't just code that works, but **code that's easy to read, maintain, and test**. In this article, I'll share some practical tips and examples to help you write code that stands the test of time, focusing on testability, maintainability, and readability.
 
 @[Suggested reading](/js/s/naming-conventions)
 
@@ -145,13 +145,13 @@ const saveUser = user => {
 
 ## Even tests need good code
 
-It’s **nearly impossible to write good tests for bad code**. If your code is a tangled mess of hidden state, mixed responsibilities and complicated logic, testing becomes an uphill battle. As a rule of thumb, write code as if you will need to test every single line. This mindset often leads to better design.
+It's **nearly impossible to write good tests for bad code**. If your code is a tangled mess of hidden state, mixed responsibilities and complicated logic, testing becomes an uphill battle. As a rule of thumb, write code as if you will need to test every single line. This mindset often leads to better design.
 
 > [!TIP]
 >
 > I'm not a fan of code coverage over everything, as it's a single metric and tests are only as good as your understanding of the code. Still, code coverage may help you identify blind spots. After all, no tests are worse than bad tests, so try to make testing seamless, before focusing on coverage.
 
-Testable code is code that’s predictable and has clear inputs and outputs. You should avoid hidden dependencies and side effects, as shown in previous examples, but let's take a look at yet one more example for clarity.
+Testable code is code that's predictable and has clear inputs and outputs. You should avoid hidden dependencies and side effects, as shown in previous examples, but let's take a look at yet one more example for clarity.
 
 ```js
 let config = { debug: false };
@@ -174,4 +174,4 @@ Now, you can easily test `log` by passing different values for `debug` and it's 
 
 ## Conclusion
 
-Writing great code is about more than making things work. It’s about making your code easy to read, maintain, and test. Manage state carefully, keep your functions small and focused, avoid hidden dependencies, and always strive for clarity. By following these simple principles, you’ll write code that you and others will enjoy working with and maintaining for years to come!
+Writing great code is about more than making things work. It's about making your code easy to read, maintain, and test. Manage state carefully, keep your functions small and focused, avoid hidden dependencies, and always strive for clarity. By following these simple principles, you'll write code that you and others will enjoy working with and maintaining for years to come!

@@ -4,7 +4,7 @@ shortTitle: Array tricks using the spread operator
 language: javascript
 tags: [array]
 cover: succulent-crowd
-excerpt: JavaScript’s spread operator is a very versatile tool. Here are some simple ways to use it.
+excerpt: JavaScript's spread operator is a very versatile tool. Here are some simple ways to use it.
 listed: true
 dateModified: 2022-04-17
 ---
@@ -21,7 +21,7 @@ const arr2 = [...arr];
 
 ## Merge multiple arrays
 
-Using the spread operator, it’s possible to combine two or more arrays into one. You should think of this trick as cloning two arrays into a new one. Due to that, the shallow cloning limitation mentioned previously applies here, too.
+Using the spread operator, it's possible to combine two or more arrays into one. You should think of this trick as cloning two arrays into a new one. Due to that, the shallow cloning limitation mentioned previously applies here, too.
 
 ```js
 const arr1 = [1, 2, 3];
@@ -32,7 +32,7 @@ const combined = [...arr1, ...arr2];
 
 ## Add items to an array
 
-Similarly to previous tricks, it’s possible to spread an array into a new one and add individual elements, too. This can also be combined with merging multiple arrays, if desired.
+Similarly to previous tricks, it's possible to spread an array into a new one and add individual elements, too. This can also be combined with merging multiple arrays, if desired.
 
 ```js
 const arr = [1, 2, 3];

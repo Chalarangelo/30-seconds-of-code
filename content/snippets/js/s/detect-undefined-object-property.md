@@ -9,7 +9,7 @@ listed: true
 dateModified: 2022-08-07
 ---
 
-It’s not uncommon to want to detect object properties with a value of `undefined`. While this seems straightforward on the surface, `undefined` is a rather elusive value to check for.
+It's not uncommon to want to detect object properties with a value of `undefined`. While this seems straightforward on the surface, `undefined` is a rather elusive value to check for.
 
 More often than not solutions point towards direct strict comparison with `undefined` or using `typeof`. Both of these methods have a hard time differentiating between present properties with a value of `undefined` and non-existent properties. This, in turn, makes them prone to silent errors, shall you misspell the property altogether.
 
