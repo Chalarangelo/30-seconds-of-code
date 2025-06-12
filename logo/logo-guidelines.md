@@ -27,4 +27,4 @@ The 30 seconds of code logo should have a minimum width of 30px in digital appli
 - Never crop, rotate, invert, or distort the logo.
 - Never add an outline, shadow, or glow to the logo.
 - Never use any other color for the logo, except for the ones provided in this guide.
-- Avoid using the logo in busy backgrounds or against backgrounds where it’s hard to distinguish.
+- Avoid using the logo in busy backgrounds or against backgrounds where it's hard to distinguish.
