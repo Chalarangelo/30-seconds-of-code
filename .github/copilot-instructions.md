@@ -30,6 +30,7 @@ When generating text in Markdown format, follow these additional guidelines:
 - Include code snippets to demonstrate concepts. Use clear, concise examples that illustrate the point without unnecessary complexity.
 - Headings should be between level 2 and level 4. Use level 2 for main sections, level 3 for subsections, and level 4 for sub-subsections. Avoid unnecessary nesting.
 - Use bold text to emphasize key points or important concepts. Use it sparingly to maintain impact.
+- Never use `’`, always use `'` for apostrophes. Use `"` for double quotes.
 - For multiline code blocks, use the following format, replacing "language" with the appropriate programming language:
   ```language
   // Your code here
