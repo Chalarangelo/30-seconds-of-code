@@ -12,7 +12,7 @@ Over the years, both as a professional and as a hobbyist, I've used, maintained 
 
 > [!IMPORTANT]
 >
-> **This is an opinion piece**. The view expressed here are my own and may not reflect those of the organizations I work for or with. As opinions often tend to be **subjective**, I encourage you to take them with a grain of salt.
+> **This is an opinion piece**. The views expressed here are my own and may not reflect those of the organizations I work for or with. As opinions often tend to be **subjective**, I encourage you to take them with a grain of salt.
 
 ## What design systems are for
 
