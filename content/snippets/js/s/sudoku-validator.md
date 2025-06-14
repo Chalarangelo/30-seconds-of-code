@@ -192,3 +192,5 @@ While the memory results aren't that impressive, the runtime is significantly re
 ### Conclusion
 
 Coding challenges have a lot to teach us, in terms of **approaching problems**, as well as **optimizing our solutions**. Even if you aren't familiar with advanced techniques and are only just starting out, you can still advance your way of thinking and your skills by tackling problems at your level. The more you practice, the better you'll get!
+
+@[Further reading](/js/s/sudoku-solver-wave-function-collapse)
