@@ -98,6 +98,11 @@ main > article {
   }
 
   > figure:not(.embedded-preview) {
+    > img {
+      // Use the layout border radius to round the corners, when needed.
+      border-radius: var(--layout-border-radius);
+    }
+
     > img + figcaption {
       // Adjust the styles for image-only figure captions (center, light, small
       // and slightly italic).
