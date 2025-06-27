@@ -3,7 +3,7 @@
  */
 export default class TocReader {
   static matcher =
-    /<h(?<level>[2-4])><a.*id="(?<href>.*?)"[^<]*>(?<content>.*?)<\/a><\/h\1>/g;
+    /<h(?<level>[2-4])>\s*<a.*id="(?<href>.*?)"[^<]*>(?<content>.*?)<\/a>\s*(<small>.*?<\/small>)?\s*<\/h\1>/g;
 
   static readToC = html => {
     if (!html) return undefined;
