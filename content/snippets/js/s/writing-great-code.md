@@ -6,7 +6,7 @@ tags: [webdev,career,programming,jobs]
 cover: coffee-drip-2
 excerpt: Writing great code is more than writing code that works, requiring discipline and a focus on testability, maintainability, and readability.
 listed: true
-dateModified: 2025-07-03
+dateModified: 2025-09-02
 ---
 
 Writing great code is both an art and a discipline. Over the years, I've learned that the best code isn't just code that works, but **code that's easy to read, maintain, and test**. In this article, I'll share some practical tips and examples to help you write code that stands the test of time, focusing on testability, maintainability, and readability.
