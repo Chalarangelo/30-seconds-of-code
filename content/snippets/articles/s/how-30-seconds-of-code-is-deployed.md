@@ -69,7 +69,7 @@ As far as automation went, it was completely non-existent, needing **manual scri
 
 As time went by, the [30 seconds of code bot account](https://github.com/30secondsofcode) (_not a real bot_) was introduced. The account was used for automation tasks, such as **automated builds** via the creation of a **GitHub Token** that was then used to push commits to the repository. The following `git push` command was what allowed the bot to push new code to the repository:
 
-```sh
+```shell
 git push --force --quiet "https://${GH_TOKEN}@github.com/Chalarangelo/30-seconds-of-code.git" master > /dev/null 2>&1
 ```
 
@@ -281,7 +281,7 @@ As [GitHub Actions](https://github.com/features/actions) were available at the t
 
 **Git submodules** were tricky to work with, but the main advantage was that updating them to the latest commit for each repository was trivial via a [script](https://github.com/30-seconds/30-seconds-web/blob/14d4655fe5aa6e9026ac7bf033a52029354a372a/src/jobs/fetch_content_sources.sh) that could run on Netlify.
 
-```sh
+```shell
 git submodule update --recursive --remote
 ```
 
@@ -435,7 +435,7 @@ As community contributions were way lower, maintaining a handful of content repo
 
 Merging all content repositories sounded exciting, yet I had no idea how to do so or if it was even possible. In fact, I thought it wasn't possible at all. Luckily, I found [an article](https://hacks.mozilla.org/2022/08/merging-two-github-repositories-without-losing-commit-history/) online outlining the process. What it all boils down is essentially adding the other repository as a remote locally and merging its `master` branch into the current `master` branch with the `--allow-unrelated-histories` flag.
 
-```sh
+```shell
 git merge swtest/gh-pages --allow-unrelated-histories
 ```
 
