@@ -7,6 +7,9 @@
 - from: /collections
   to: /collections/p/1
   status: 301
+- from: /c/*
+  to: /collections/p/1
+  status: 301
 - from: /list
   to: /snippets/p/1
   status: 301
@@ -50,7 +53,7 @@
   to: /web-development/p/1
   status: 301
 - from: /blog/*
-  to: /articles/:splat
+  to: /articles/p/1
   status: 301
 - from: /snippet/*
   to: /js/p/1
@@ -58,167 +61,20 @@
 - from: /tag/*
   to: /js/p/1
   status: 301
-- from: /css/t/animation/*
-  to: /css/animation/:splat
+- from: /css/t/*
+  to: /css/p/1
   status: 301
-- from: /css/t/interactivity/*
-  to: /css/interactivity/:splat
+- from: /git/t/*
+  to: /git/p/1
   status: 301
-- from: /css/t/layout/*
-  to: /css/layout/:splat
+- from: /python/t/*
+  to: /python/p/1
   status: 301
-- from: /css/t/visual/*
-  to: /css/visual/:splat
+- from: /react/t/*
+  to: /react/p/1
   status: 301
-- from: /git/t/branch/*
-  to: /git/branch/:splat
-  status: 301
-- from: /git/t/commit/*
-  to: /git/commit/:splat
-  status: 301
-- from: /git/t/configuration/*
-  to: /git/configuration/:splat
-  status: 301
-- from: /git/t/repository/*
-  to: /git/repository/:splat
-  status: 301
-- from: /js/t/algorithm/*
-  to: /js/algorithm/:splat
-  status: 301
-- from: /js/t/array/*
-  to: /js/array/:splat
-  status: 301
-- from: /js/t/browser/*
-  to: /js/browser/:splat
-  status: 301
-- from: /js/t/date/*
-  to: /js/date/:splat
-  status: 301
-- from: /js/t/function/*
-  to: /js/function/:splat
-  status: 301
-- from: /js/t/math/*
-  to: /js/math/:splat
-  status: 301
-- from: /js/t/node/*
-  to: /js/node/:splat
-  status: 301
-- from: /js/t/object/*
-  to: /js/object/:splat
-  status: 301
-- from: /js/t/string/*
-  to: /js/string/:splat
-  status: 301
-- from: /js/t/type/*
-  to: /js/type/:splat
-  status: 301
-- from: /python/t/date/*
-  to: /python/date/:splat
-  status: 301
-- from: /python/t/dictionary/*
-  to: /python/dictionary/:splat
-  status: 301
-- from: /python/t/function/*
-  to: /python/function/:splat
-  status: 301
-- from: /python/t/list/*
-  to: /python/list/:splat
-  status: 301
-- from: /python/t/math/*
-  to: /python/math/:splat
-  status: 301
-- from: /python/t/string/*
-  to: /python/string/:splat
-  status: 301
-- from: /react/t/components/*
-  to: /react/components/:splat
-  status: 301
-- from: /react/t/hooks/*
-  to: /react/hooks/:splat
-  status: 301
-- from: /c/cheatsheets/*
-  to: /cheatsheets/:splat
-  status: 301
-- from: /c/web-development/*
-  to: /web-development/:splat
-  status: 301
-- from: /c/css-hover-effects/*
-  to: /css/hover-effects/:splat
-  status: 301
-- from: /c/css-button-transitions/*
-  to: /css/button-transitions/:splat
-  status: 301
-- from: /c/js-array-initialization/*
-  to: /js/array-initialization/:splat
-  status: 301
-- from: /c/js-array-methods/*
-  to: /js/array-methods/:splat
-  status: 301
-- from: /c/js-arrow-functions/*
-  to: /js/arrow-functions/:splat
-  status: 301
-- from: /c/js-colors/*
-  to: /js/colors/:splat
-  status: 301
-- from: /c/js-comparison/*
-  to: /js/comparison/:splat
-  status: 301
-- from: /c/js-css-manipulation/*
-  to: /js/css-manipulation/:splat
-  status: 301
-- from: /c/js-data-structures/*
-  to: /js/data-structures/:splat
-  status: 301
-- from: /c/js-dom-manipulation/*
-  to: /js/dom-manipulation/:splat
-  status: 301
-- from: /c/js-dom-querying/*
-  to: /js/dom-querying/:splat
-  status: 301
-- from: /c/js-event-handling/*
-  to: /js/event-handling/:splat
-  status: 301
-- from: /c/js-generators/*
-  to: /js/generators/:splat
-  status: 301
-- from: /c/js-geometry/*
-  to: /js/geometry/:splat
-  status: 301
-- from: /c/js-http-requests/*
-  to: /js/http-requests/:splat
-  status: 301
-- from: /c/js-interviews/*
-  to: /js/interviews/:splat
-  status: 301
-- from: /c/js-performance/*
-  to: /js/performance/:splat
-  status: 301
-- from: /c/js-promises/*
-  to: /js/promises/:splat
-  status: 301
-- from: /c/js-proxy/*
-  to: /js/proxy/:splat
-  status: 301
-- from: /c/js-random-value-generators/*
-  to: /js/random-value-generators/:splat
-  status: 301
-- from: /c/js-scroll/*
-  to: /js/scroll/:splat
-  status: 301
-- from: /c/js-unit-conversions/*
-  to: /js/unit-conversions/:splat
-  status: 301
-- from: /c/js-url/*
-  to: /js/url/:splat
-  status: 301
-- from: /c/js-web-storage-essentials/*
-  to: /js/web-storage-essentials/:splat
-  status: 301
-- from: /c/react-testing/*
-  to: /react/testing/:splat
-  status: 301
-- from: /c/html-head-basics/*
-  to: /html/head-basics/:splat
+- from: /js/t/*
+  to: /js/p/1
   status: 301
 - from: /css/s/custom-variables/
   to: /articles/s/css-variables
@@ -1543,9 +1399,6 @@
 - from: /js/s/negate-predicate
   to: /js/s/logical-operations
   status: 301
-- from: /c/js-logical-operations/*
-  to: /js/s/logical-operations
-  status: 301
 - from: /js/logical-operations/*
   to: /js/s/logical-operations
   status: 301
@@ -1596,9 +1449,6 @@
   status: 301
 - from: /js/s/decapitalize
   to: /js/s/capitalize-first-letter-of-string
-  status: 301
-- from: /c/js-string-casing/*
-  to: /js/s/string-case-conversion
   status: 301
 - from: /js/s/capitalize-every-words
   to: /js/s/string-case-conversion
@@ -1759,9 +1609,6 @@
 - from: /js/array-set-operations/*
   to: /js/s/array-set-operations
   status: 301
-- from: /c/js-array-set-operations/*
-  to: /js/s/array-set-operations
-  status: 301
 - from: /js/s/compact
   to: /js/s/compact-object-or-array
   status: 301
@@ -1776,9 +1623,6 @@
   status: 301
 - from: /js/s/compact-object
   to: /js/s/compact-object-or-array
-  status: 301
-- from: /c/js-array-tricks/*
-  to: /js/array/p/1
   status: 301
 - from: /js/array-tricks/*
   to: /js/array/p/1
@@ -1838,9 +1682,6 @@
   to: /js/s/shallow-deep-clone-object
   status: 301
 - from: /articles/s/shallow-deep-clone
-  to: /js/s/shallow-deep-clone-object
-  status: 301
-- from: /c/js-object-cloning/*
   to: /js/s/shallow-deep-clone-object
   status: 301
 - from: /js/object-cloning/*
@@ -2145,9 +1986,6 @@
   status: 301
 - from: /js/s/copy-to-clipboard-async
   to: /js/s/copy-text-to-clipboard
-  status: 301
-- from: /c/js-object-key-selection/*
-  to: /js/s/filter-object-keys
   status: 301
 - from: /js/object-key-selection/*
   to: /js/s/filter-object-keys
@@ -2488,9 +2326,6 @@
 - from: /js/s/unescape-html
   to: /js/s/escape-unescape-html
   status: 301
-- from: /c/js-object-key-transformations/*
-  to: /js/s/transform-object-keys
-  status: 301
 - from: /js/object-key-transformations/*
   to: /js/s/transform-object-keys
   status: 301
@@ -2800,12 +2635,6 @@
 - from: /git/s/switch-to-last-branch
   to: /git/s/switch-to-branch
   status: 301
-- from: /c/css-centering/*
-  to: /css/s/centering
-  status: 301
-- from: /c/css-centering/*
-  to: /css/s/centering
-  status: 301
 - from: /articles/s/css-centering
   to: /css/s/centering
   status: 301
@@ -2826,9 +2655,6 @@
   status: 301
 - from: /python/s/key-of-max
   to: /python/s/key-of-min-max
-  status: 301
-- from: /c/css-background-patterns/*
-  to: /css/s/10-css-background-patterns
   status: 301
 - from: /css/background-patterns/*
   to: /css/s/10-css-background-patterns
@@ -2904,9 +2730,6 @@
   status: 301
 - from: /js/s/freeze-set-or-map
   to: /js/s/deep-freeze-object
-  status: 301
-- from: /c/react-rendering/*
-  to: /react/s/rendering
   status: 301
 - from: /react/rendering/*
   to: /react/s/rendering
