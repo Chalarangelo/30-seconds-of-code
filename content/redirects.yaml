@@ -3,3391 +3,3391 @@
   status: 200
 - from: /faq
   to: /about
-  status: 301!
+  status: 301
 - from: /collections
   to: /collections/p/1
-  status: 301!
+  status: 301
 - from: /list
   to: /snippets/p/1
-  status: 301!
+  status: 301
 - from: /js
   to: /js/p/1
-  status: 301!
+  status: 301
 - from: /javascript
   to: /js/p/1
-  status: 301!
+  status: 301
 - from: /python
   to: /python/p/1
-  status: 301!
+  status: 301
 - from: /py
   to: /python/p/1
-  status: 301!
+  status: 301
 - from: /css
   to: /css/p/1
-  status: 301!
+  status: 301
 - from: /react
   to: /react/p/1
-  status: 301!
+  status: 301
 - from: /list/p/*
   to: /snippets/p/:splat
-  status: 301!
+  status: 301
 - from: /articles/p/*
   to: /snippets/p/1
-  status: 301!
+  status: 301
 - from: /articles/css/*
   to: /css/p/1
-  status: 301!
+  status: 301
 - from: /articles/javascript/*
   to: /js/p/1
-  status: 301!
+  status: 301
 - from: /articles/python/*
   to: /python/p/1
-  status: 301!
+  status: 301
 - from: /articles/react/*
   to: /react/p/1
-  status: 301!
+  status: 301
 - from: /articles/webdev/*
   to: /web-development/p/1
-  status: 301!
+  status: 301
 - from: /blog/*
   to: /articles/:splat
-  status: 301!
+  status: 301
 - from: /snippet/*
   to: /js/p/1
-  status: 301!
+  status: 301
 - from: /tag/*
   to: /js/p/1
-  status: 301!
+  status: 301
 - from: /css/t/animation/*
   to: /css/animation/:splat
-  status: 301!
+  status: 301
 - from: /css/t/interactivity/*
   to: /css/interactivity/:splat
-  status: 301!
+  status: 301
 - from: /css/t/layout/*
   to: /css/layout/:splat
-  status: 301!
+  status: 301
 - from: /css/t/visual/*
   to: /css/visual/:splat
-  status: 301!
+  status: 301
 - from: /git/t/branch/*
   to: /git/branch/:splat
-  status: 301!
+  status: 301
 - from: /git/t/commit/*
   to: /git/commit/:splat
-  status: 301!
+  status: 301
 - from: /git/t/configuration/*
   to: /git/configuration/:splat
-  status: 301!
+  status: 301
 - from: /git/t/repository/*
   to: /git/repository/:splat
-  status: 301!
+  status: 301
 - from: /js/t/algorithm/*
   to: /js/algorithm/:splat
-  status: 301!
+  status: 301
 - from: /js/t/array/*
   to: /js/array/:splat
-  status: 301!
+  status: 301
 - from: /js/t/browser/*
   to: /js/browser/:splat
-  status: 301!
+  status: 301
 - from: /js/t/date/*
   to: /js/date/:splat
-  status: 301!
+  status: 301
 - from: /js/t/function/*
   to: /js/function/:splat
-  status: 301!
+  status: 301
 - from: /js/t/math/*
   to: /js/math/:splat
-  status: 301!
+  status: 301
 - from: /js/t/node/*
   to: /js/node/:splat
-  status: 301!
+  status: 301
 - from: /js/t/object/*
   to: /js/object/:splat
-  status: 301!
+  status: 301
 - from: /js/t/string/*
   to: /js/string/:splat
-  status: 301!
+  status: 301
 - from: /js/t/type/*
   to: /js/type/:splat
-  status: 301!
+  status: 301
 - from: /python/t/date/*
   to: /python/date/:splat
-  status: 301!
+  status: 301
 - from: /python/t/dictionary/*
   to: /python/dictionary/:splat
-  status: 301!
+  status: 301
 - from: /python/t/function/*
   to: /python/function/:splat
-  status: 301!
+  status: 301
 - from: /python/t/list/*
   to: /python/list/:splat
-  status: 301!
+  status: 301
 - from: /python/t/math/*
   to: /python/math/:splat
-  status: 301!
+  status: 301
 - from: /python/t/string/*
   to: /python/string/:splat
-  status: 301!
+  status: 301
 - from: /react/t/components/*
   to: /react/components/:splat
-  status: 301!
+  status: 301
 - from: /react/t/hooks/*
   to: /react/hooks/:splat
-  status: 301!
+  status: 301
 - from: /c/cheatsheets/*
   to: /cheatsheets/:splat
-  status: 301!
+  status: 301
 - from: /c/web-development/*
   to: /web-development/:splat
-  status: 301!
+  status: 301
 - from: /c/css-hover-effects/*
   to: /css/hover-effects/:splat
-  status: 301!
+  status: 301
 - from: /c/css-button-transitions/*
   to: /css/button-transitions/:splat
-  status: 301!
+  status: 301
 - from: /c/js-array-initialization/*
   to: /js/array-initialization/:splat
-  status: 301!
+  status: 301
 - from: /c/js-array-methods/*
   to: /js/array-methods/:splat
-  status: 301!
+  status: 301
 - from: /c/js-arrow-functions/*
   to: /js/arrow-functions/:splat
-  status: 301!
+  status: 301
 - from: /c/js-colors/*
   to: /js/colors/:splat
-  status: 301!
+  status: 301
 - from: /c/js-comparison/*
   to: /js/comparison/:splat
-  status: 301!
+  status: 301
 - from: /c/js-css-manipulation/*
   to: /js/css-manipulation/:splat
-  status: 301!
+  status: 301
 - from: /c/js-data-structures/*
   to: /js/data-structures/:splat
-  status: 301!
+  status: 301
 - from: /c/js-dom-manipulation/*
   to: /js/dom-manipulation/:splat
-  status: 301!
+  status: 301
 - from: /c/js-dom-querying/*
   to: /js/dom-querying/:splat
-  status: 301!
+  status: 301
 - from: /c/js-event-handling/*
   to: /js/event-handling/:splat
-  status: 301!
+  status: 301
 - from: /c/js-generators/*
   to: /js/generators/:splat
-  status: 301!
+  status: 301
 - from: /c/js-geometry/*
   to: /js/geometry/:splat
-  status: 301!
+  status: 301
 - from: /c/js-http-requests/*
   to: /js/http-requests/:splat
-  status: 301!
+  status: 301
 - from: /c/js-interviews/*
   to: /js/interviews/:splat
-  status: 301!
+  status: 301
 - from: /c/js-performance/*
   to: /js/performance/:splat
-  status: 301!
+  status: 301
 - from: /c/js-promises/*
   to: /js/promises/:splat
-  status: 301!
+  status: 301
 - from: /c/js-proxy/*
   to: /js/proxy/:splat
-  status: 301!
+  status: 301
 - from: /c/js-random-value-generators/*
   to: /js/random-value-generators/:splat
-  status: 301!
+  status: 301
 - from: /c/js-scroll/*
   to: /js/scroll/:splat
-  status: 301!
+  status: 301
 - from: /c/js-unit-conversions/*
   to: /js/unit-conversions/:splat
-  status: 301!
+  status: 301
 - from: /c/js-url/*
   to: /js/url/:splat
-  status: 301!
+  status: 301
 - from: /c/js-web-storage-essentials/*
   to: /js/web-storage-essentials/:splat
-  status: 301!
+  status: 301
 - from: /c/react-testing/*
   to: /react/testing/:splat
-  status: 301!
+  status: 301
 - from: /c/html-head-basics/*
   to: /html/head-basics/:splat
-  status: 301!
+  status: 301
 - from: /css/s/custom-variables/
   to: /articles/s/css-variables
-  status: 301!
+  status: 301
 - from: /css/s/calc/
   to: /css/p/1
-  status: 301!
+  status: 301
 - from: /js/s/filter-falsy/
   to: /js/s/compact
-  status: 301!
+  status: 301
 - from: /python/s/function-name/
   to: /python/s/check-prop
-  status: 301!
+  status: 301
 - from: /python/s/map-object/
   to: /python/s/map-dictionary
-  status: 301!
+  status: 301
 - from: /python/s/zip/
   to: /python/s/merge
-  status: 301!
+  status: 301
 - from: /js/s/elo/
   to: /js/p/1
-  status: 301!
+  status: 301
 - from: /css/s/hover-pespective
   to: /css/s/hover-perspective
-  status: 301!
+  status: 301
 - from: /python/s/count-occurences
   to: /python/s/count-occurrences
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-add-key-value-pair-to-object
   to: /js/s/add-key-value-pair-to-object
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-array-comparison
   to: /js/s/array-comparison
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-array-includes-value
   to: /js/s/array-includes-value
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-arrow-function-event-listeners
   to: /js/s/arrow-function-event-listeners
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-arrow-functions
   to: /js/s/arrow-functions
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-arrow-regular-function-differences
   to: /js/s/arrow-regular-function-differences
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-async-array-loops
   to: /js/s/async-array-loops
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-await-timeout
   to: /js/s/await-timeout
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-blank-value
   to: /js/s/blank-value
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-boolean-function
   to: /js/s/boolean-function
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-boolean-trap
   to: /js/s/boolean-trap
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-callbacks
   to: /js/s/callback-pitfalls
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-classical-vs-prototypal-inheritance
   to: /js/s/classical-vs-prototypal-inheritance
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-closures
   to: /js/s/closures
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-copy-array
   to: /js/s/copy-array
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-destructuring-assignment
   to: /js/s/destructuring-assignment
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-empty-array
   to: /js/s/empty-array
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-encodeuri-encodeuricomponent
   to: /js/s/encodeuri-encodeuricomponent
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-enum
   to: /js/s/enum
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-equality
   to: /js/s/equality
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-event-bubbling-capturing-delegation
   to: /js/s/event-bubbling-capturing-delegation
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-event-loop-explained
   to: /js/s/event-loop-explained
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-evil-closures
   to: /js/s/evil-closures
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-expression-statement
   to: /js/s/expression-statement
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-for-in-for-of-foreach
   to: /js/s/for-in-for-of-foreach
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-for-loop-early-break
   to: /js/s/for-loop-early-break
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-generator-for-range
   to: /js/s/generator-for-range
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-higher-order-functions
   to: /js/s/higher-order-functions
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-iife
   to: /js/s/iife
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-index-for-of-loop
   to: /js/s/index-for-of-loop
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-iterable-to-array
   to: /js/s/iterable-to-array
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-iterators
   to: /js/s/iterators
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-json-stringify-pick-keys
   to: /js/s/json-stringify-pick-keys
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-make-iterable
   to: /js/s/make-iterable
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-memoization
   to: /js/s/memoization
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-merge-arrays
   to: /js/s/merge-arrays
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-module-cheatsheet
   to: /js/s/module-cheatsheet
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-naming-conventions
   to: /js/s/naming-conventions
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-numeric-separator
   to: /js/s/numeric-separator
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-object-array-proxy
   to: /js/s/object-array-proxy
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-object-is-triple-equals
   to: /js/s/object-is-triple-equals
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-pass-by-reference-or-pass-by-value
   to: /js/s/pass-by-reference-or-pass-by-value
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-prefix-postfix-operators
   to: /js/s/prefix-postfix-operators
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-pretty-print-json
   to: /js/s/pretty-print-json
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-prevent-string-being-escaped
   to: /js/s/prevent-string-being-escaped
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-primitive-instanceof
   to: /js/s/primitive-instanceof
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-promise-then-catch
   to: /js/s/promise-then-catch
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-promise-then-finally
   to: /js/s/promise-then-finally
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-promises
   to: /js/s/promises
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-property-enumerability
   to: /js/s/property-enumerability
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-pure-functions
   to: /js/s/pure-functions
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-query-selector-shorthand
   to: /js/s/query-selector-shorthand
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-random-value-pure-functions
   to: /js/s/random-value-pure-functions
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-recursion
   to: /js/s/recursion
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-reload-page
   to: /js/s/reload-page
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-remove-object-property
   to: /js/s/remove-object-property
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-return-constructor
   to: /js/s/return-constructor
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-singleton-proxy
   to: /js/s/singleton-proxy
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-spread-rest-syntax
   to: /js/s/spread-rest-syntax
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-store-dom-items
   to: /js/s/store-dom-items
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-string-contains-substring
   to: /js/s/string-contains-substring
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-string-immutability
   to: /js/s/string-immutability
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-string-to-boolean
   to: /js/s/string-to-boolean
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-swap-two-variables
   to: /js/s/swap-two-variables
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-switch-object
   to: /js/s/switch-object
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-sync-async
   to: /js/s/sync-async
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-ternary-operator
   to: /js/s/ternary-operator
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-this
   to: /js/s/this
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-truthy-falsy-values
   to: /js/s/truthy-falsy-values
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-undeclared-undefined-null
   to: /js/s/undeclared-undefined-null
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-use-strict
   to: /js/s/use-strict
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-value-as-number
   to: /js/s/value-as-number
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-value-not-equal-to-itself
   to: /js/s/value-not-equal-to-itself
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-var-let-const
   to: /js/s/var-let-const
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-variable-hoisting
   to: /js/s/variable-hoisting
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-variable-scope
   to: /js/s/variable-scope
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-void-links
   to: /js/s/void-links
-  status: 301!
+  status: 301
 - from: /articles/s/js-abort-fetch
   to: /js/s/abort-fetch
-  status: 301!
+  status: 301
 - from: /articles/s/js-append-elements-to-array
   to: /js/s/append-elements-to-array
-  status: 301!
+  status: 301
 - from: /articles/s/js-array-filtering-tips
   to: /js/s/array-filtering-tips
-  status: 301!
+  status: 301
 - from: /articles/s/js-array-initialization
   to: /js/s/array-initialization
-  status: 301!
+  status: 301
 - from: /articles/s/js-array-map-vs-foreach
   to: /js/s/array-map-vs-foreach
-  status: 301!
+  status: 301
 - from: /articles/s/js-array-min-max
   to: /js/s/array-min-max
-  status: 301!
+  status: 301
 - from: /articles/s/js-array-sorting-shorthand
   to: /js/s/array-sorting-shorthand
-  status: 301!
+  status: 301
 - from: /articles/s/js-callbacks
   to: /js/s/callbacks
-  status: 301!
+  status: 301
 - from: /articles/s/js-cannot-extend-proxy-object
   to: /js/s/cannot-extend-proxy-object
-  status: 301!
+  status: 301
 - from: /articles/s/js-compare-string-case-accent-insensitive
   to: /js/s/compare-string-case-accent-insensitive
-  status: 301!
+  status: 301
 - from: /articles/s/js-construct-url
   to: /js/s/construct-url
-  status: 301!
+  status: 301
 - from: /articles/s/js-create-html-elements
   to: /js/s/create-html-elements
-  status: 301!
+  status: 301
 - from: /articles/s/js-data-structures-binary-search-tree
   to: /js/s/data-structures-binary-search-tree
-  status: 301!
+  status: 301
 - from: /articles/s/js-data-structures-binary-tree
   to: /js/s/data-structures-binary-tree
-  status: 301!
+  status: 301
 - from: /articles/s/js-data-structures-doubly-linked-list
   to: /js/s/data-structures-doubly-linked-list
-  status: 301!
+  status: 301
 - from: /articles/s/js-data-structures-graph
   to: /js/s/data-structures-graph
-  status: 301!
+  status: 301
 - from: /articles/s/js-data-structures-linked-list
   to: /js/s/data-structures-linked-list
-  status: 301!
+  status: 301
 - from: /articles/s/js-data-structures-queue
   to: /js/s/data-structures-queue
-  status: 301!
+  status: 301
 - from: /articles/s/js-data-structures-stack
   to: /js/s/data-structures-stack
-  status: 301!
+  status: 301
 - from: /articles/s/js-data-structures-tree
   to: /js/s/data-structures-tree
-  status: 301!
+  status: 301
 - from: /articles/s/js-decimal-to-hex
   to: /js/s/decimal-to-hex
-  status: 301!
+  status: 301
 - from: /articles/s/js-detect-undefined-object-property
   to: /js/s/detect-undefined-object-property
-  status: 301!
+  status: 301
 - from: /articles/s/js-double-negation-operator
   to: /js/s/double-negation-operator
-  status: 301!
+  status: 301
 - from: /articles/s/js-dynamic-getter-chain-proxy
   to: /js/s/dynamic-getter-chain-proxy
-  status: 301!
+  status: 301
 - from: /articles/s/js-dynamic-getter-setter-proxy
   to: /js/s/dynamic-getter-setter-proxy
-  status: 301!
+  status: 301
 - from: /articles/s/js-dynamic-properties-are-slow
   to: /js/s/dynamic-properties-are-slow
-  status: 301!
+  status: 301
 - from: /articles/s/js-edit-url-params
   to: /js/s/edit-url-params
-  status: 301!
+  status: 301
 - from: /articles/s/js-element-from-point
   to: /js/s/element-from-point
-  status: 301!
+  status: 301
 - from: /articles/s/js-email-validation
   to: /js/s/email-validation
-  status: 301!
+  status: 301
 - from: /articles/s/js-fast-remove-array-element
   to: /js/s/fast-remove-array-element
-  status: 301!
+  status: 301
 - from: /articles/s/js-immutable-object-proxy
   to: /js/s/immutable-object-proxy
-  status: 301!
+  status: 301
 - from: /articles/s/js-last-element-of-array
   to: /js/s/last-element-of-array
-  status: 301!
+  status: 301
 - from: /articles/s/js-map-vs-object
   to: /js/s/map-vs-object
-  status: 301!
+  status: 301
 - from: /articles/s/js-native-data-structures
   to: /js/s/native-data-structures
-  status: 301!
+  status: 301
 - from: /articles/s/js-proxy-array-negative-index
   to: /js/s/proxy-array-negative-index
-  status: 301!
+  status: 301
 - from: /articles/s/js-proxy-introduction
   to: /js/s/proxy-introduction
-  status: 301!
+  status: 301
 - from: /articles/s/js-remove-element-from-array
   to: /js/s/remove-element-from-array
-  status: 301!
+  status: 301
 - from: /articles/s/js-remove-trailing-zeros
   to: /js/s/remove-trailing-zeros
-  status: 301!
+  status: 301
 - from: /articles/s/js-replace-all-occurences-of-string
   to: /js/s/replace-all-occurences-of-string
-  status: 301!
+  status: 301
 - from: /articles/s/js-spread-operator-tricks
   to: /js/s/spread-operator-tricks
-  status: 301!
+  status: 301
 - from: /articles/s/js-static-instance-methods
   to: /js/s/static-instance-methods
-  status: 301!
+  status: 301
 - from: /articles/s/js-textcontent-or-innertext
   to: /js/s/textcontent-or-innertext
-  status: 301!
+  status: 301
 - from: /articles/s/js-timeout-interval-delay
   to: /js/s/timeout-interval-delay
-  status: 301!
+  status: 301
 - from: /articles/s/js-typecheck-array
   to: /js/s/typecheck-array
-  status: 301!
+  status: 301
 - from: /articles/s/js-typecheck-proxy
   to: /js/s/typecheck-proxy
-  status: 301!
+  status: 301
 - from: /articles/s/js-window-location-cheatsheet
   to: /js/s/window-location-cheatsheet
-  status: 301!
+  status: 301
 - from: /articles/s/python-bare-except
   to: /python/s/bare-except
-  status: 301!
+  status: 301
 - from: /articles/s/python-dict-getkey-vs-dictkey
   to: /python/s/dict-getkey-vs-dictkey
-  status: 301!
+  status: 301
 - from: /articles/s/python-empty-list
   to: /python/s/empty-list
-  status: 301!
+  status: 301
 - from: /articles/s/python-file-close
   to: /python/s/file-close
-  status: 301!
+  status: 301
 - from: /articles/s/python-fstrings-str-format
   to: /python/s/fstrings-str-format
-  status: 301!
+  status: 301
 - from: /articles/s/python-identity-equality
   to: /python/s/identity-equality
-  status: 301!
+  status: 301
 - from: /articles/s/python-lists-tuples
   to: /python/s/lists-tuples
-  status: 301!
+  status: 301
 - from: /articles/s/python-lowercase
   to: /python/s/lowercase
-  status: 301!
+  status: 301
 - from: /articles/s/python-mutable-default-arguments
   to: /python/s/mutable-default-arguments
-  status: 301!
+  status: 301
 - from: /articles/s/python-named-tuples
   to: /python/s/named-tuples
-  status: 301!
+  status: 301
 - from: /articles/s/python-slice-assignment
   to: /python/s/slice-assignment
-  status: 301!
+  status: 301
 - from: /articles/s/python-slice-notation
   to: /python/s/slice-notation
-  status: 301!
+  status: 301
 - from: /articles/s/python-sort-dictionary-tuple-key
   to: /python/s/sort-dictionary-tuple-key
-  status: 301!
+  status: 301
 - from: /articles/s/python-sortedlist-vs-list-sort
   to: /python/s/sortedlist-vs-list-sort
-  status: 301!
+  status: 301
 - from: /articles/s/python-string-is-empty
   to: /python/s/string-is-empty
-  status: 301!
+  status: 301
 - from: /articles/s/python-swap-variables
   to: /python/s/swap-variables
-  status: 301!
+  status: 301
 - from: /articles/s/python-trim-whitespace
   to: /python/s/trim-whitespace
-  status: 301!
+  status: 301
 - from: /articles/s/react-conditional-classname
   to: /react/s/conditional-classname
-  status: 301!
+  status: 301
 - from: /articles/s/react-proptypes-objectof-vs-shape
   to: /react/s/proptypes-objectof-vs-shape
-  status: 301!
+  status: 301
 - from: /articles/s/react-redux-readable-reducers
   to: /react/s/redux-readable-reducers
-  status: 301!
+  status: 301
 - from: /articles/s/react-selected-option
   to: /react/s/selected-option
-  status: 301!
+  status: 301
 - from: /articles/s/react-use-effect-primitive-dependencies
   to: /react/s/use-effect-primitive-dependencies
-  status: 301!
+  status: 301
 - from: /articles/s/react-use-state-with-label
   to: /react/s/use-state-with-label
-  status: 301!
+  status: 301
 - from: /articles/s/css-clamp
   to: /css/s/clamp
-  status: 301!
+  status: 301
 - from: /articles/s/css-code-reviews
   to: /css/s/code-reviews
-  status: 301!
+  status: 301
 - from: /articles/s/css-current-color
   to: /css/s/current-color
-  status: 301!
+  status: 301
 - from: /articles/s/css-footer-at-the-bottom
   to: /css/s/footer-at-the-bottom
-  status: 301!
+  status: 301
 - from: /articles/s/css-inherited-properties-cheatsheet
   to: /css/s/inherited-properties-cheatsheet
-  status: 301!
+  status: 301
 - from: /articles/s/css-nested-border-radius
   to: /css/s/nested-border-radius
-  status: 301!
+  status: 301
 - from: /articles/s/css-print-stylesheet
   to: /css/s/print-stylesheet
-  status: 301!
+  status: 301
 - from: /articles/s/css-pseudo-classes
   to: /css/s/pseudo-classes
-  status: 301!
+  status: 301
 - from: /articles/s/css-reset
   to: /css/s/reset
-  status: 301!
+  status: 301
 - from: /articles/s/css-root-vs-html
   to: /css/s/root-vs-html
-  status: 301!
+  status: 301
 - from: /articles/s/css-select-any-link
   to: /css/s/select-any-link
-  status: 301!
+  status: 301
 - from: /articles/s/css-style-default-links
   to: /css/s/style-default-links
-  status: 301!
+  status: 301
 - from: /articles/s/css-unitless-line-height
   to: /css/s/unitless-line-height
-  status: 301!
+  status: 301
 - from: /articles/s/css-units-cheatsheet
   to: /css/s/units-cheatsheet
-  status: 301!
+  status: 301
 - from: /articles/s/css-variables
   to: /css/s/variables
-  status: 301!
+  status: 301
 - from: /articles/s/10-vs-code-extensions-for-js-developers
   to: /js/s/10-vs-code-extensions-for-js-developers
-  status: 301!
+  status: 301
 - from: /articles/s/25-css-gradients
   to: /css/s/25-css-gradients
-  status: 301!
+  status: 301
 - from: /articles/s/4-javascript-array-methods
   to: /js/s/4-array-methods
-  status: 301!
+  status: 301
 - from: /articles/s/6-javascript-regexp-tricks
   to: /js/s/6-regexp-tricks
-  status: 301!
+  status: 301
 - from: /articles/s/6-python-f-strings-tips
   to: /python/s/6-f-strings-tips
-  status: 301!
+  status: 301
 - from: /articles/s/async-javascript-cheatsheet
   to: /js/s/async-cheatsheet
-  status: 301!
+  status: 301
 - from: /articles/s/big-o-cheatsheet
   to: /js/s/big-o-cheatsheet
-  status: 301!
+  status: 301
 - from: /articles/s/breaking-react
   to: /react/s/breaking-react
-  status: 301!
+  status: 301
 - from: /articles/s/code-anatomy-chaining-reduce-for-loop
   to: /js/s/code-anatomy-chaining-reduce-for-loop
-  status: 301!
+  status: 301
 - from: /articles/s/code-anatomy-performant-python
   to: /python/s/code-anatomy-performant-python
-  status: 301!
+  status: 301
 - from: /articles/s/common-regexp-cheatsheet
   to: /js/s/common-regexp-cheatsheet
-  status: 301!
+  status: 301
 - from: /articles/s/console-log-cheatsheet
   to: /js/s/console-log-cheatsheet
-  status: 301!
+  status: 301
 - from: /articles/s/cookies-local-storage-session
   to: /js/s/cookies-local-storage-session
-  status: 301!
+  status: 301
 - from: /articles/s/cors-explained
   to: /js/s/cors-explained
-  status: 301!
+  status: 301
 - from: /articles/s/detect-caps-lock-is-on
   to: /js/s/detect-caps-lock-is-on
-  status: 301!
+  status: 301
 - from: /articles/s/eslint-refactor-for-in
   to: /js/s/eslint-refactor-for-in
-  status: 301!
+  status: 301
 - from: /articles/s/flexbox-cheatsheet
   to: /css/s/flexbox-cheatsheet
-  status: 301!
+  status: 301
 - from: /articles/s/git-aliases
   to: /git/s/aliases
-  status: 301!
+  status: 301
 - from: /articles/s/git-commit-different-date
   to: /git/s/commit-different-date
-  status: 301!
+  status: 301
 - from: /articles/s/github-co-authors
   to: /git/s/github-co-authors
-  status: 301!
+  status: 301
 - from: /articles/s/jest-mock-global-methods
   to: /js/s/jest-mock-global-methods
-  status: 301!
+  status: 301
 - from: /articles/s/nodejs-chrome-debugging
   to: /js/s/nodejs-chrome-debugging
-  status: 301!
+  status: 301
 - from: /articles/s/nodejs-static-file-server
   to: /js/s/nodejs-static-file-server
-  status: 301!
+  status: 301
 - from: /articles/s/nodejs-test-module-introduction
   to: /js/s/nodejs-test-module-introduction
-  status: 301!
+  status: 301
 - from: /articles/s/passive-scroll-listener-performance
   to: /js/s/passive-scroll-listener-performance
-  status: 301!
+  status: 301
 - from: /articles/s/perfect-css-transition-duration
   to: /css/s/perfect-transition-duration
-  status: 301!
+  status: 301
 - from: /articles/s/regexp-cheatsheet
   to: /js/s/regexp-cheatsheet
-  status: 301!
+  status: 301
 - from: /articles/s/select-focused-dom-element
   to: /js/s/select-focused-dom-element
-  status: 301!
+  status: 301
 - from: /articles/s/setup-python3-pip3-as-default
   to: /python/s/setup-python3-pip3-as-default
-  status: 301!
+  status: 301
 - from: /articles/s/testing-async-react-components
   to: /react/s/testing-async-components
-  status: 301!
+  status: 301
 - from: /articles/s/testing-react-portals
   to: /react/s/testing-portals
-  status: 301!
+  status: 301
 - from: /articles/s/testing-redux-connected-components
   to: /react/s/testing-redux-connected-components
-  status: 301!
+  status: 301
 - from: /articles/s/testing-stateful-ui-components
   to: /react/s/testing-stateful-ui-components
-  status: 301!
+  status: 301
 - from: /articles/s/the-case-for-javascript-trailing-commas
   to: /js/s/the-case-for-trailing-commas
-  status: 301!
+  status: 301
 - from: /articles/s/typographic-scale-basics
   to: /css/s/typographic-scale-basics
-  status: 301!
+  status: 301
 - from: /articles/s/5-tips-for-better-pull-requests
   to: /git/s/5-tips-for-better-pull-requests
-  status: 301!
+  status: 301
 - from: /articles/s/responsive-favicon-dark-mode
   to: /css/s/responsive-favicon-dark-mode
-  status: 301!
+  status: 301
 - from: /js/s/create-dir-if-not-exists
   to: /js/s/create-directory-if-not-exists
-  status: 301!
+  status: 301
 - from: /js/s/digitize
   to: /js/s/digitize-number
-  status: 301!
+  status: 301
 - from: /js/s/once
   to: /js/s/call-function-once
-  status: 301!
+  status: 301
 - from: /js/s/pad
   to: /js/s/pad-string
-  status: 301!
+  status: 301
 - from: /js/s/prefix
   to: /js/s/prefix-css-property
-  status: 301!
+  status: 301
 - from: /js/s/ranking
   to: /js/s/array-ranking
-  status: 301!
+  status: 301
 - from: /js/s/attempt
   to: /js/s/attempt-invoking-function
-  status: 301!
+  status: 301
 - from: /js/s/initialize2-d-array
   to: /js/s/initialize-2d-array
-  status: 301!
+  status: 301
 - from: /js/s/untildify
   to: /js/s/convert-to-absolute-path
-  status: 301!
+  status: 301
 - from: /js/s/get-cmd-args
   to: /js/s/command-line-arguments
-  status: 301!
+  status: 301
 - from: /js/s/has-flags
   to: /js/s/command-line-arguments
-  status: 301!
+  status: 301
 - from: /js/s/process-arguments-have-flags
   to: /js/s/command-line-arguments
-  status: 301!
+  status: 301
 - from: /js/s/nest
   to: /js/s/nest-objects
-  status: 301!
+  status: 301
 - from: /js/s/nth-root
   to: /js/s/nth-number-root
-  status: 301!
+  status: 301
 - from: /js/s/words
   to: /js/s/string-to-words
-  status: 301!
+  status: 301
 - from: /js/s/throttle
   to: /js/s/throttle-function
-  status: 301!
+  status: 301
 - from: /js/s/defer
   to: /js/s/defer-function
-  status: 301!
+  status: 301
 - from: /js/s/debounce
   to: /js/s/debounce-function
-  status: 301!
+  status: 301
 - from: /js/s/copy-sign
   to: /js/s/copy-sign-to-number
-  status: 301!
+  status: 301
 - from: /js/s/defaults
   to: /js/s/default-values-for-object-properties
-  status: 301!
+  status: 301
 - from: /js/s/is-empty
   to: /js/s/collection-is-empty
-  status: 301!
+  status: 301
 - from: /js/s/most-frequent
   to: /js/s/most-frequent-array-element
-  status: 301!
+  status: 301
 - from: /js/s/pretty-bytes
   to: /js/s/pretty-print-number-of-bytes
-  status: 301!
+  status: 301
 - from: /js/s/have-same-contents
   to: /js/s/arrays-have-same-contents
-  status: 301!
+  status: 301
 - from: /js/s/shank
   to: /js/s/remove-elements-from-array
-  status: 301!
+  status: 301
 - from: /js/s/remove-element
   to: /js/s/remove-dom-element
-  status: 301!
+  status: 301
 - from: /js/s/render-element
   to: /js/s/render-dom-element
-  status: 301!
+  status: 301
 - from: /js/s/transpose
   to: /js/s/transpose-matrix
-  status: 301!
+  status: 301
 - from: /js/s/random-alpha-numeric
   to: /js/s/random-alphanumeric
-  status: 301!
+  status: 301
 - from: /js/s/random-int-array-in-range
   to: /js/s/random-integer-array-in-range
-  status: 301!
+  status: 301
 - from: /js/s/sdbm
   to: /js/s/hash-string-into-number
-  status: 301!
+  status: 301
 - from: /js/s/slugify
   to: /js/s/string-to-slug
-  status: 301!
+  status: 301
 - from: /js/s/url-join
   to: /js/s/join-url-segments
-  status: 301!
+  status: 301
 - from: /js/s/in-range
   to: /js/s/number-in-range
-  status: 301!
+  status: 301
 - from: /js/s/toggle-element
   to: /js/s/toggle-array-element
-  status: 301!
+  status: 301
 - from: /js/s/pluck
   to: /js/s/pluck-values-from-object-array
-  status: 301!
+  status: 301
 - from: /js/s/is-sorted
   to: /js/s/array-is-sorted
-  status: 301!
+  status: 301
 - from: /js/s/combine
   to: /js/s/combine-object-arrays
-  status: 301!
+  status: 301
 - from: /js/s/longest-item
   to: /js/s/longest-array-element
-  status: 301!
+  status: 301
 - from: /js/s/offset
   to: /js/s/offset-array-elements
-  status: 301!
+  status: 301
 - from: /js/s/percentile
   to: /js/s/percentile-of-matches
-  status: 301!
+  status: 301
 - from: /js/s/remove
   to: /js/s/remove-matching-array-elements
-  status: 301!
+  status: 301
 - from: /js/s/unwind
   to: /js/s/unwind-object
-  status: 301!
+  status: 301
 - from: /js/s/walk-through
   to: /js/s/walk-through-object
-  status: 301!
+  status: 301
 - from: /js/s/sum-power
   to: /js/s/sum-powers-in-range
-  status: 301!
+  status: 301
 - from: /js/s/split-lines
   to: /js/s/split-into-lines
-  status: 301!
+  status: 301
 - from: /js/s/replace-or-append
   to: /js/s/replace-or-append-array-value
-  status: 301!
+  status: 301
 - from: /js/s/resolve-after
   to: /js/s/resolve-promise-after-amount-of-time
-  status: 301!
+  status: 301
 - from: /js/s/replace-last
   to: /js/s/replace-last-occurrence
-  status: 301!
+  status: 301
 - from: /articles/s/8-tips-for-accessible-websites
   to: /html/s/8-tips-for-accessible-websites
-  status: 301!
+  status: 301
 - from: /articles/s/custom-file-download-names
   to: /html/s/custom-file-download-names
-  status: 301!
+  status: 301
 - from: /articles/s/html-head-icons
   to: /html/s/head-icons
-  status: 301!
+  status: 301
 - from: /articles/s/html-head-links
   to: /html/s/head-links
-  status: 301!
+  status: 301
 - from: /articles/s/html-head-social-tags
   to: /html/s/head-social-tags
-  status: 301!
+  status: 301
 - from: /articles/s/html-recommended-minimum-head
   to: /html/s/recommended-minimum-head
-  status: 301!
+  status: 301
 - from: /articles/s/lazy-loading-images
   to: /html/s/lazy-loading-images
-  status: 301!
+  status: 301
 - from: /articles/s/password-autocomplete-suggestion
   to: /html/s/password-autocomplete-suggestion
-  status: 301!
+  status: 301
 - from: /articles/s/prefetching-resources
   to: /html/s/prefetching-resources
-  status: 301!
+  status: 301
 - from: /articles/s/resource-preloading-cheatsheet
   to: /html/s/resource-preloading-cheatsheet
-  status: 301!
+  status: 301
 - from: /articles/s/reversed-list
   to: /html/s/reversed-list
-  status: 301!
+  status: 301
 - from: /articles/s/zooming-accessibility-tips
   to: /html/s/zooming-accessibility-tips
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-target-blank
   to: /html/s/target-blank
-  status: 301!
+  status: 301
 - from: /articles/s/js-async-defer
   to: /html/s/async-defer
-  status: 301!
+  status: 301
 - from: /git/s/view-commits-summary-no-merges
   to: /git/s/view-commits-summary
-  status: 301!
+  status: 301
 - from: /git/s/update-commit-message
   to: /git/s/update-commit-message-or-content
-  status: 301!
+  status: 301
 - from: /git/s/update-commit-contents
   to: /git/s/update-commit-message-or-content
-  status: 301!
+  status: 301
 - from: /git/s/branches-not-containing-commit
   to: /git/s/branches-containing-commit
-  status: 301!
+  status: 301
 - from: /git/s/commit-amend-author
   to: /git/s/set-or-amend-commit-author
-  status: 301!
+  status: 301
 - from: /git/s/commit-set-author
   to: /git/s/set-or-amend-commit-author
-  status: 301!
+  status: 301
 - from: /articles/s/git-fast-forward
   to: /git/s/fast-forward-merge
-  status: 301!
+  status: 301
 - from: /git/s/fast-forward
   to: /git/s/fast-forward-merge
-  status: 301!
+  status: 301
 - from: /git/s/merge-branch
   to: /git/s/merge-branch-merge-commit
-  status: 301!
+  status: 301
 - from: /git/s/rewind-n-commits
   to: /git/s/rewind-to-commit
-  status: 301!
+  status: 301
 - from: /git/s/undo-commit
   to: /git/s/undo-commit-without-rewriting-history
-  status: 301!
+  status: 301
 - from: /git/s/undo-last-commit
   to: /git/s/undo-commit-without-rewriting-history
-  status: 301!
+  status: 301
 - from: /git/s/pull-changes
   to: /git/s/push-pull-changes
-  status: 301!
+  status: 301
 - from: /git/s/push-changes
   to: /git/s/push-pull-changes
-  status: 301!
+  status: 301
 - from: /js/s/take-right
   to: /js/s/take-n-elements-from-array-start-or-end
-  status: 301!
+  status: 301
 - from: /js/s/take
   to: /js/s/take-n-elements-from-array-start-or-end
-  status: 301!
+  status: 301
 - from: /js/s/take-array-elements-from-end
   to: /js/s/take-n-elements-from-array-start-or-end
-  status: 301!
+  status: 301
 - from: /js/s/take-array-elements
   to: /js/s/take-n-elements-from-array-start-or-end
-  status: 301!
+  status: 301
 - from: /js/s/take-right-until
   to: /js/s/take-elements-by-condition-from-array-start-or-end
-  status: 301!
+  status: 301
 - from: /js/s/take-array-elements-from-end-until
   to: /js/s/take-elements-by-condition-from-array-start-or-end
-  status: 301!
+  status: 301
 - from: /js/s/take-right-while
   to: /js/s/take-elements-by-condition-from-array-start-or-end
-  status: 301!
+  status: 301
 - from: /js/s/take-array-elements-from-end-while
   to: /js/s/take-elements-by-condition-from-array-start-or-end
-  status: 301!
+  status: 301
 - from: /js/s/take-until
   to: /js/s/take-elements-by-condition-from-array-start-or-end
-  status: 301!
+  status: 301
 - from: /js/s/take-array-elements-until
   to: /js/s/take-elements-by-condition-from-array-start-or-end
-  status: 301!
+  status: 301
 - from: /js/s/take-while
   to: /js/s/take-elements-by-condition-from-array-start-or-end
-  status: 301!
+  status: 301
 - from: /js/s/take-array-elements-while
   to: /js/s/take-elements-by-condition-from-array-start-or-end
-  status: 301!
+  status: 301
 - from: /js/s/is-even
   to: /js/s/number-is-even-odd
-  status: 301!
+  status: 301
 - from: /js/s/is-odd
   to: /js/s/number-is-even-odd
-  status: 301!
+  status: 301
 - from: /js/s/hash-node
   to: /js/s/hash-sha-256
-  status: 301!
+  status: 301
 - from: /js/s/hash-browser
   to: /js/s/hash-sha-256
-  status: 301!
+  status: 301
 - from: /js/s/first-n
   to: /js/s/first-last-n-elements
-  status: 301!
+  status: 301
 - from: /js/s/last-n
   to: /js/s/first-last-n-elements
-  status: 301!
+  status: 301
 - from: /js/s/first-n-elements
   to: /js/s/first-last-n-elements
-  status: 301!
+  status: 301
 - from: /js/s/last-n-elements
   to: /js/s/first-last-n-elements
-  status: 301!
+  status: 301
 - from: /js/s/head
   to: /js/s/array-head-tail
-  status: 301!
+  status: 301
 - from: /js/s/tail
   to: /js/s/array-head-tail
-  status: 301!
+  status: 301
 - from: /js/s/array-head
   to: /js/s/array-head-tail
-  status: 301!
+  status: 301
 - from: /js/s/array-tail
   to: /js/s/array-head-tail
-  status: 301!
+  status: 301
 - from: /js/s/bifurcate-by
   to: /js/s/bifurcate-array
-  status: 301!
+  status: 301
 - from: /js/s/bifurcate
   to: /js/s/bifurcate-array
-  status: 301!
+  status: 301
 - from: /js/s/bifurcate-array-based-on-function
   to: /js/s/bifurcate-array
-  status: 301!
+  status: 301
 - from: /js/s/bifurcate-array-based-on-values
   to: /js/s/bifurcate-array
-  status: 301!
+  status: 301
 - from: /js/s/hide
   to: /js/s/show-hide-html-elements
-  status: 301!
+  status: 301
 - from: /js/s/show
   to: /js/s/show-hide-html-elements
-  status: 301!
+  status: 301
 - from: /js/s/hide-html-elements
   to: /js/s/show-hide-html-elements
-  status: 301!
+  status: 301
 - from: /js/s/show-html-elements
   to: /js/s/show-hide-html-elements
-  status: 301!
+  status: 301
 - from: /js/s/left-substr-generator
   to: /js/s/substring-generator
-  status: 301!
+  status: 301
 - from: /js/s/left-substring-generator
   to: /js/s/substring-generator
-  status: 301!
+  status: 301
 - from: /js/s/right-substr-generator
   to: /js/s/substring-generator
-  status: 301!
+  status: 301
 - from: /js/s/right-substring-generator
   to: /js/s/substring-generator
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-execute-event-handler-once
   to: /js/s/event-listener-once
-  status: 301!
+  status: 301
 - from: /js/s/execute-event-handler-once
   to: /js/s/event-listener-once
-  status: 301!
+  status: 301
 - from: /js/s/listen-once
   to: /js/s/event-listener-once
-  status: 301!
+  status: 301
 - from: /js/s/on
   to: /js/s/add-remove-event-listener
-  status: 301!
+  status: 301
 - from: /js/s/add-event-listener
   to: /js/s/add-remove-event-listener
-  status: 301!
+  status: 301
 - from: /js/s/off
   to: /js/s/add-remove-event-listener
-  status: 301!
+  status: 301
 - from: /js/s/remove-event-listener
   to: /js/s/add-remove-event-listener
-  status: 301!
+  status: 301
 - from: /js/s/on-click-outside
   to: /js/s/listen-click-outside-event
-  status: 301!
+  status: 301
 - from: /js/s/degrees-to-rads
   to: /js/s/convert-degrees-radians
-  status: 301!
+  status: 301
 - from: /js/s/rads-to-degrees
   to: /js/s/convert-degrees-radians
-  status: 301!
+  status: 301
 - from: /js/s/celsius-to-fahrenheit
   to: /js/s/convert-celsius-fahrenheit
-  status: 301!
+  status: 301
 - from: /js/s/fahrenheit-to-celsius
   to: /js/s/convert-celsius-fahrenheit
-  status: 301!
+  status: 301
 - from: /js/s/miles-to-km
   to: /js/s/convert-miles-km
-  status: 301!
+  status: 301
 - from: /js/s/km-to-miles
   to: /js/s/convert-miles-km
-  status: 301!
+  status: 301
 - from: /js/s/all
   to: /js/s/check-array-values-are-truthy
-  status: 301!
+  status: 301
 - from: /js/s/none
   to: /js/s/check-array-values-are-truthy
-  status: 301!
+  status: 301
 - from: /js/s/any
   to: /js/s/check-array-values-are-truthy
-  status: 301!
+  status: 301
 - from: /js/s/all-array-elements-are-truthy
   to: /js/s/check-array-values-are-truthy
-  status: 301!
+  status: 301
 - from: /js/s/all-array-elements-are-falsy
   to: /js/s/check-array-values-are-truthy
-  status: 301!
+  status: 301
 - from: /js/s/any-array-element-is-truthy
   to: /js/s/check-array-values-are-truthy
-  status: 301!
+  status: 301
 - from: /js/s/truth-check-collection
   to: /js/s/check-array-values-are-truthy
-  status: 301!
+  status: 301
 - from: /js/s/prefers-dark-color-schem
   to: /js/s/prefers-color-scheme
-  status: 301!
+  status: 301
 - from: /js/s/prefers-light-color-scheme
   to: /js/s/prefers-color-scheme
-  status: 301!
+  status: 301
 - from: /js/s/chunk-into-n
   to: /js/s/split-array-into-chunks
-  status: 301!
+  status: 301
 - from: /js/s/chunk
   to: /js/s/split-array-into-chunks
-  status: 301!
+  status: 301
 - from: /js/s/chunkify
   to: /js/s/split-array-into-chunks
-  status: 301!
+  status: 301
 - from: /js/s/split-into-chunks
   to: /js/s/split-array-into-chunks
-  status: 301!
+  status: 301
 - from: /js/s/split-array-into-n-chunks
   to: /js/s/split-array-into-chunks
-  status: 301!
+  status: 301
 - from: /js/s/chunk-iterable
   to: /js/s/split-array-into-chunks
-  status: 301!
+  status: 301
 - from: /articles/s/css-easing-variables
   to: /css/s/easing-variables
-  status: 301!
+  status: 301
 - from: /js/s/is-stream
   to: /js/s/typecheck-nodejs-streams
-  status: 301!
+  status: 301
 - from: /js/s/is-readable-stream
   to: /js/s/typecheck-nodejs-streams
-  status: 301!
+  status: 301
 - from: /js/s/is-writable-stream
   to: /js/s/typecheck-nodejs-streams
-  status: 301!
+  status: 301
 - from: /js/s/is-duplex-stream
   to: /js/s/typecheck-nodejs-streams
-  status: 301!
+  status: 301
 - from: /js/s/is-array-like
   to: /js/s/complete-guide-to-js-type-checking
-  status: 301!
+  status: 301
 - from: /js/s/is-object-like
   to: /js/s/complete-guide-to-js-type-checking
-  status: 301!
+  status: 301
 - from: /js/s/is-promise-like
   to: /js/s/complete-guide-to-js-type-checking
-  status: 301!
+  status: 301
 - from: /js/s/get-type
   to: /js/s/complete-guide-to-js-type-checking
-  status: 301!
+  status: 301
 - from: /js/s/type-of-value
   to: /js/s/complete-guide-to-js-type-checking
-  status: 301!
+  status: 301
 - from: /js/s/is-undefined
   to: /js/s/complete-guide-to-js-type-checking
-  status: 301!
+  status: 301
 - from: /js/s/is-null
   to: /js/s/complete-guide-to-js-type-checking
-  status: 301!
+  status: 301
 - from: /js/s/is-nil
   to: /js/s/complete-guide-to-js-type-checking
-  status: 301!
+  status: 301
 - from: /js/s/is-boolean
   to: /js/s/complete-guide-to-js-type-checking
-  status: 301!
+  status: 301
 - from: /js/s/is-number
   to: /js/s/complete-guide-to-js-type-checking
-  status: 301!
+  status: 301
 - from: /js/s/is-string
   to: /js/s/complete-guide-to-js-type-checking
-  status: 301!
+  status: 301
 - from: /js/s/is-symbol
   to: /js/s/complete-guide-to-js-type-checking
-  status: 301!
+  status: 301
 - from: /js/s/is-function
   to: /js/s/complete-guide-to-js-type-checking
-  status: 301!
+  status: 301
 - from: /js/s/is-async-function
   to: /js/s/complete-guide-to-js-type-checking
-  status: 301!
+  status: 301
 - from: /js/s/is-generator-function
   to: /js/s/complete-guide-to-js-type-checking
-  status: 301!
+  status: 301
 - from: /js/s/is-object
   to: /js/s/complete-guide-to-js-type-checking
-  status: 301!
+  status: 301
 - from: /js/s/is-plain-object
   to: /js/s/complete-guide-to-js-type-checking
-  status: 301!
+  status: 301
 - from: /js/s/is-primitive
   to: /js/s/complete-guide-to-js-type-checking
-  status: 301!
+  status: 301
 - from: /js/s/is
   to: /js/s/complete-guide-to-js-type-checking
-  status: 301!
+  status: 301
 - from: /js/s/value-is-of-type
   to: /js/s/complete-guide-to-js-type-checking
-  status: 301!
+  status: 301
 - from: /js/s/drop-right-while
   to: /js/s/remove-first-last-n-array-elements
-  status: 301!
+  status: 301
 - from: /js/s/drop-right
   to: /js/s/remove-first-last-n-array-elements
-  status: 301!
+  status: 301
 - from: /js/s/drop-while
   to: /js/s/remove-first-last-n-array-elements
-  status: 301!
+  status: 301
 - from: /js/s/drop
   to: /js/s/remove-first-last-n-array-elements
-  status: 301!
+  status: 301
 - from: /js/s/drop-array-elements-from-right-while
   to: /js/s/remove-first-last-n-array-elements
-  status: 301!
+  status: 301
 - from: /js/s/drop-array-elements-from-right
   to: /js/s/remove-first-last-n-array-elements
-  status: 301!
+  status: 301
 - from: /js/s/drop-array-elements-from-left-while
   to: /js/s/remove-first-last-n-array-elements
-  status: 301!
+  status: 301
 - from: /js/s/drop-array-elements-from-left
   to: /js/s/remove-first-last-n-array-elements
-  status: 301!
+  status: 301
 - from: /js/s/initial
   to: /js/s/remove-first-last-n-array-elements
-  status: 301!
+  status: 301
 - from: /js/s/array-without-last-element
   to: /js/s/remove-first-last-n-array-elements
-  status: 301!
+  status: 301
 - from: /js/s/atob
   to: /js/s/encode-decode-strings-with-base64
-  status: 301!
+  status: 301
 - from: /js/s/btoa
   to: /js/s/encode-decode-strings-with-base64
-  status: 301!
+  status: 301
 - from: /js/s/decode-base64-encoded-string
   to: /js/s/encode-decode-strings-with-base64
-  status: 301!
+  status: 301
 - from: /js/s/encode-string-to-base64
   to: /js/s/encode-decode-strings-with-base64
-  status: 301!
+  status: 301
 - from: /js/s/is-lower-case
   to: /js/s/string-is-uppercase-or-lowercase
-  status: 301!
+  status: 301
 - from: /js/s/is-upper-case
   to: /js/s/string-is-uppercase-or-lowercase
-  status: 301!
+  status: 301
 - from: /js/s/initialize-array-with-range-right
   to: /js/s/initialize-array-with-range
-  status: 301!
+  status: 301
 - from: /js/s/initialize-array-with-reversed-range
   to: /js/s/initialize-array-with-range
-  status: 301!
+  status: 301
 - from: /js/s/unfold
   to: /js/s/initialize-array-with-generated-sequence
-  status: 301!
+  status: 301
 - from: /js/s/unfold-array
   to: /js/s/initialize-array-with-generated-sequence
-  status: 301!
+  status: 301
 - from: /js/s/initialize-mapped-array
   to: /js/s/initialize-array-with-generated-sequence
-  status: 301!
+  status: 301
 - from: /js/s/initialize-array-while
   to: /js/s/initialize-array-with-generated-sequence
-  status: 301!
+  status: 301
 - from: /js/s/initialize-array-until
   to: /js/s/initialize-array-with-generated-sequence
-  status: 301!
+  status: 301
 - from: /js/s/initialize-nd-array
   to: /js/s/initialize-2d-array
-  status: 301!
+  status: 301
 - from: /js/s/initialize-n-dimensional-array
   to: /js/s/initialize-2d-array
-  status: 301!
+  status: 301
 - from: /js/s/uuid-generator-node
   to: /js/s/uuid-generator
-  status: 301!
+  status: 301
 - from: /js/s/uuid-generator-browser
   to: /js/s/uuid-generator
-  status: 301!
+  status: 301
 - from: /js/s/gcd
   to: /js/s/gcd-lcm
-  status: 301!
+  status: 301
 - from: /js/s/lcm
   to: /js/s/gcd-lcm
-  status: 301!
+  status: 301
 - from: /js/s/distance
   to: /js/s/euclidean-distance
-  status: 301!
+  status: 301
 - from: /js/s/distance-between-two-points
   to: /js/s/euclidean-distance
-  status: 301!
+  status: 301
 - from: /js/s/vector-distance
   to: /js/s/euclidean-distance
-  status: 301!
+  status: 301
 - from: /js/s/find-key
   to: /js/s/find-matching-keys
-  status: 301!
+  status: 301
 - from: /js/s/find-first-matching-key
   to: /js/s/find-matching-keys
-  status: 301!
+  status: 301
 - from: /js/s/find-keys
   to: /js/s/find-matching-keys
-  status: 301!
+  status: 301
 - from: /js/s/find-last-key
   to: /js/s/find-matching-keys
-  status: 301!
+  status: 301
 - from: /js/s/find-last-matching-key
   to: /js/s/find-matching-keys
-  status: 301!
+  status: 301
 - from: /js/s/compose
   to: /js/s/function-composition
-  status: 301!
+  status: 301
 - from: /js/s/compose-functions
   to: /js/s/function-composition
-  status: 301!
+  status: 301
 - from: /js/s/compose-right
   to: /js/s/function-composition
-  status: 301!
+  status: 301
 - from: /js/s/reverse-compose-functions
   to: /js/s/function-composition
-  status: 301!
+  status: 301
 - from: /js/s/pipe-functions
   to: /js/s/function-composition
-  status: 301!
+  status: 301
 - from: /js/s/curry
   to: /js/s/currying
-  status: 301!
+  status: 301
 - from: /js/s/curry-function
   to: /js/s/currying
-  status: 301!
+  status: 301
 - from: /js/s/uncurry
   to: /js/s/currying
-  status: 301!
+  status: 301
 - from: /js/s/uncurry-function
   to: /js/s/currying
-  status: 301!
+  status: 301
 - from: /js/s/ary
   to: /js/s/function-arity
-  status: 301!
+  status: 301
 - from: /js/s/unary
   to: /js/s/function-arity
-  status: 301!
+  status: 301
 - from: /js/s/unary-function-arity
   to: /js/s/function-arity
-  status: 301!
+  status: 301
 - from: /js/s/binary
   to: /js/s/function-arity
-  status: 301!
+  status: 301
 - from: /js/s/binary-function-arity
   to: /js/s/function-arity
-  status: 301!
+  status: 301
 - from: /js/s/collect-into
   to: /js/s/function-arity
-  status: 301!
+  status: 301
 - from: /js/s/convert-function-to-variadic
   to: /js/s/function-arity
-  status: 301!
+  status: 301
 - from: /js/s/spread-over
   to: /js/s/function-arity
-  status: 301!
+  status: 301
 - from: /js/s/convert-function-from-variadic
   to: /js/s/function-arity
-  status: 301!
+  status: 301
 - from: /js/s/and
   to: /js/s/logical-operations
-  status: 301!
+  status: 301
 - from: /js/s/or
   to: /js/s/logical-operations
-  status: 301!
+  status: 301
 - from: /js/s/not
   to: /js/s/logical-operations
-  status: 301!
+  status: 301
 - from: /js/s/xor
   to: /js/s/logical-operations
-  status: 301!
+  status: 301
 - from: /js/s/nor
   to: /js/s/logical-operations
-  status: 301!
+  status: 301
 - from: /js/s/both
   to: /js/s/logical-operations
-  status: 301!
+  status: 301
 - from: /js/s/either
   to: /js/s/logical-operations
-  status: 301!
+  status: 301
 - from: /js/s/function-logical-or
   to: /js/s/logical-operations
-  status: 301!
+  status: 301
 - from: /js/s/complement
   to: /js/s/logical-operations
-  status: 301!
+  status: 301
 - from: /js/s/logical-complement
   to: /js/s/logical-operations
-  status: 301!
+  status: 301
 - from: /js/s/negate
   to: /js/s/logical-operations
-  status: 301!
+  status: 301
 - from: /js/s/negate-predicate
   to: /js/s/logical-operations
-  status: 301!
+  status: 301
 - from: /c/js-logical-operations/*
   to: /js/s/logical-operations
-  status: 301!
+  status: 301
 - from: /js/logical-operations/*
   to: /js/s/logical-operations
-  status: 301!
+  status: 301
 - from: /js/s/reduce-which
   to: /js/s/array-min-max
-  status: 301!
+  status: 301
 - from: /js/s/function-based-array-min-max
   to: /js/s/array-min-max
-  status: 301!
+  status: 301
 - from: /js/s/max-by
   to: /js/s/array-min-max
-  status: 301!
+  status: 301
 - from: /js/s/function-based-array-max
   to: /js/s/array-min-max
-  status: 301!
+  status: 301
 - from: /js/s/min-by
   to: /js/s/array-min-max
-  status: 301!
+  status: 301
 - from: /js/s/function-based-array-min
   to: /js/s/array-min-max
-  status: 301!
+  status: 301
 - from: /js/s/max-n
   to: /js/s/array-min-max
-  status: 301!
+  status: 301
 - from: /js/s/min-n
   to: /js/s/array-min-max
-  status: 301!
+  status: 301
 - from: /js/s/n-max-elements
   to: /js/s/array-min-max
-  status: 301!
+  status: 301
 - from: /js/s/n-min-elements
   to: /js/s/array-min-max
-  status: 301!
+  status: 301
 - from: /js/s/n-min-max-elements-in-array
   to: /js/s/array-min-max
-  status: 301!
+  status: 301
 - from: /articles/s/js-locale-sensitive-string-truncation
   to: /js/s/truncate-string
-  status: 301!
+  status: 301
 - from: /js/s/locale-sensitive-string-truncation
   to: /js/s/truncate-string
-  status: 301!
+  status: 301
 - from: /js/s/truncate-string-at-whitespace
   to: /js/s/truncate-string
-  status: 301!
+  status: 301
 - from: /js/s/capitalize
   to: /js/s/capitalize-first-letter-of-string
-  status: 301!
+  status: 301
 - from: /js/s/decapitalize
   to: /js/s/capitalize-first-letter-of-string
-  status: 301!
+  status: 301
 - from: /c/js-string-casing/*
   to: /js/s/string-case-conversion
-  status: 301!
+  status: 301
 - from: /js/s/capitalize-every-words
   to: /js/s/string-case-conversion
-  status: 301!
+  status: 301
 - from: /js/string-casing/*
   to: /js/s/string-case-conversion
-  status: 301!
+  status: 301
 - from: /js/s/to-camel-case
   to: /js/s/string-case-conversion
-  status: 301!
+  status: 301
 - from: /js/s/to-kebab-case
   to: /js/s/string-case-conversion
-  status: 301!
+  status: 301
 - from: /js/s/to-snake-case
   to: /js/s/string-case-conversion
-  status: 301!
+  status: 301
 - from: /js/s/to-pascal-case
   to: /js/s/string-case-conversion
-  status: 301!
+  status: 301
 - from: /js/s/to-title-case
   to: /js/s/string-case-conversion
-  status: 301!
+  status: 301
 - from: /js/s/to-sentence-case
   to: /js/s/string-case-conversion
-  status: 301!
+  status: 301
 - from: /js/s/from-camel-case
   to: /js/s/string-case-conversion
-  status: 301!
+  status: 301
 - from: /js/s/starts-with-substring
   to: /js/s/string-starts-or-ends-with-substring
-  status: 301!
+  status: 301
 - from: /js/s/ends-with-substring
   to: /js/s/string-starts-or-ends-with-substring
-  status: 301!
+  status: 301
 - from: /js/s/is-contained-in
   to: /js/s/superset-subset-of-array
-  status: 301!
+  status: 301
 - from: /js/s/array-is-contained-in
   to: /js/s/superset-subset-of-array
-  status: 301!
+  status: 301
 - from: /js/s/sub-set
   to: /js/s/superset-subset-of-array
-  status: 301!
+  status: 301
 - from: /js/s/subset
   to: /js/s/superset-subset-of-array
-  status: 301!
+  status: 301
 - from: /js/s/super-set
   to: /js/s/superset-subset-of-array
-  status: 301!
+  status: 301
 - from: /js/s/superset
   to: /js/s/superset-subset-of-array
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-nullish-coalescing-optional-chaining
   to: /js/s/nullish-coalescing-optional-chaining
-  status: 301!
+  status: 301
 - from: /js/s/coalesce-factory
   to: /js/s/nullish-coalescing-optional-chaining
-  status: 301!
+  status: 301
 - from: /js/s/argument-coalescing-factory
   to: /js/s/nullish-coalescing-optional-chaining
-  status: 301!
+  status: 301
 - from: /js/s/coalesce-factory
   to: /js/s/nullish-coalescing-optional-chaining
-  status: 301!
+  status: 301
 - from: /js/s/argument-coalescing
   to: /js/s/nullish-coalescing-optional-chaining
-  status: 301!
+  status: 301
 - from: /js/s/similarity
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /js/s/array-similarity
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /js/s/union
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /js/s/array-union
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /js/s/intersection
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /js/s/array-intersection
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /js/s/difference
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /js/s/array-difference
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /js/s/difference
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /js/s/array-symmetric-difference
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /js/s/union-by
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /js/s/mapped-array-union
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /js/s/intersection-by
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /js/s/mapped-array-intersection
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /js/s/difference-by
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /js/s/mapped-array-difference
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /js/s/symmetric-difference-by
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /js/s/mapped-array-symmetric-difference
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /js/s/union-with
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /js/s/function-based-array-union
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /js/s/intersection-with
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /js/s/function-based-array-intersection
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /js/s/difference-with
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /js/s/function-based-array-difference
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /js/s/symmetric-difference-with
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /js/s/function-based-array-symmetric-difference
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /js/s/unique-symmetric-difference
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /js/s/array-unique-symmetric-difference
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /js/s/intersects
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /js/s/arrays-intersect
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /js/array-set-operations/*
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /c/js-array-set-operations/*
   to: /js/s/array-set-operations
-  status: 301!
+  status: 301
 - from: /js/s/compact
   to: /js/s/compact-object-or-array
-  status: 301!
+  status: 301
 - from: /js/s/compact-array
   to: /js/s/compact-object-or-array
-  status: 301!
+  status: 301
 - from: /js/s/compact-join
   to: /js/s/compact-object-or-array
-  status: 301!
+  status: 301
 - from: /js/s/compact-join-array
   to: /js/s/compact-object-or-array
-  status: 301!
+  status: 301
 - from: /js/s/compact-object
   to: /js/s/compact-object-or-array
-  status: 301!
+  status: 301
 - from: /c/js-array-tricks/*
   to: /js/array/p/1
-  status: 301!
+  status: 301
 - from: /js/array-tricks/*
   to: /js/array/p/1
-  status: 301!
+  status: 301
 - from: /js/s/sorted-index-by
   to: /js/s/insertion-index-in-sorted-array
-  status: 301!
+  status: 301
 - from: /js/s/function-based-sorted-array-insertion-index
   to: /js/s/insertion-index-in-sorted-array
-  status: 301!
+  status: 301
 - from: /js/s/sorted-index
   to: /js/s/insertion-index-in-sorted-array
-  status: 301!
+  status: 301
 - from: /js/s/sorted-last-index-by
   to: /js/s/insertion-index-in-sorted-array
-  status: 301!
+  status: 301
 - from: /js/s/function-based-sorted-array-last-insertion-index
   to: /js/s/insertion-index-in-sorted-array
-  status: 301!
+  status: 301
 - from: /js/s/sorted-last-index
   to: /js/s/insertion-index-in-sorted-array
-  status: 301!
+  status: 301
 - from: /js/s/last-insertion-index-in-sorted-array
   to: /js/s/insertion-index-in-sorted-array
-  status: 301!
+  status: 301
 - from: /js/s/log-base
   to: /js/s/specify-base-for-math-log
-  status: 301!
+  status: 301
 - from: /js/s/logarithm-in-base
   to: /js/s/specify-base-for-math-log
-  status: 301!
+  status: 301
 - from: /js/s/is-power-of-two
   to: /js/s/specify-base-for-math-log
-  status: 301!
+  status: 301
 - from: /js/s/is-power-of-ten
   to: /js/s/specify-base-for-math-log
-  status: 301!
+  status: 301
 - from: /js/s/flatten-object
   to: /js/s/flatten-unflatten-object
-  status: 301!
+  status: 301
 - from: /js/s/unflatten-object
   to: /js/s/flatten-unflatten-object
-  status: 301!
+  status: 301
 - from: /js/s/deep-clone
   to: /js/s/shallow-deep-clone-object
-  status: 301!
+  status: 301
 - from: /js/s/deep-clone-object
   to: /js/s/shallow-deep-clone-object
-  status: 301!
+  status: 301
 - from: /js/s/shallow-clone
   to: /js/s/shallow-deep-clone-object
-  status: 301!
+  status: 301
 - from: /js/s/shallow-clone-object
   to: /js/s/shallow-deep-clone-object
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-shallow-deep-clone
   to: /js/s/shallow-deep-clone-object
-  status: 301!
+  status: 301
 - from: /articles/s/shallow-deep-clone
   to: /js/s/shallow-deep-clone-object
-  status: 301!
+  status: 301
 - from: /c/js-object-cloning/*
   to: /js/s/shallow-deep-clone-object
-  status: 301!
+  status: 301
 - from: /js/object-cloning/*
   to: /js/s/shallow-deep-clone-object
-  status: 301!
+  status: 301
 - from: /articles/s/js-remove-array-duplicates
   to: /js/s/unique-values-in-array-remove-duplicates
-  status: 301!
+  status: 301
 - from: /js/s/remove-array-duplicates
   to: /js/s/unique-values-in-array-remove-duplicates
-  status: 301!
+  status: 301
 - from: /js/s/unique-elements
   to: /js/s/unique-values-in-array-remove-duplicates
-  status: 301!
+  status: 301
 - from: /js/s/unique-elements-in-array
   to: /js/s/unique-values-in-array-remove-duplicates
-  status: 301!
+  status: 301
 - from: /js/s/all-unique
   to: /js/s/unique-values-in-array-remove-duplicates
-  status: 301!
+  status: 301
 - from: /js/s/array-element-uniqueness
   to: /js/s/unique-values-in-array-remove-duplicates
-  status: 301!
+  status: 301
 - from: /js/s/has-duplicates
   to: /js/s/unique-values-in-array-remove-duplicates
-  status: 301!
+  status: 301
 - from: /js/s/array-has-duplicates
   to: /js/s/unique-values-in-array-remove-duplicates
-  status: 301!
+  status: 301
 - from: /js/s/all-unique-by
   to: /js/s/unique-values-in-array-remove-duplicates
-  status: 301!
+  status: 301
 - from: /js/s/function-based-array-element-uniqueness
   to: /js/s/unique-values-in-array-remove-duplicates
-  status: 301!
+  status: 301
 - from: /js/s/filter-non-unique-by
   to: /js/s/unique-values-in-array-remove-duplicates
-  status: 301!
+  status: 301
 - from: /js/s/function-based-array-non-uniqueness-filter
   to: /js/s/unique-values-in-array-remove-duplicates
-  status: 301!
+  status: 301
 - from: /js/s/filter-unique-by
   to: /js/s/unique-values-in-array-remove-duplicates
-  status: 301!
+  status: 301
 - from: /js/s/function-based-array-uniqueness-filter
   to: /js/s/unique-values-in-array-remove-duplicates
-  status: 301!
+  status: 301
 - from: /js/s/unique-elements-by-right
   to: /js/s/unique-values-in-array-remove-duplicates
-  status: 301!
+  status: 301
 - from: /js/s/function-based-reversed-array-unique-values
   to: /js/s/unique-values-in-array-remove-duplicates
-  status: 301!
+  status: 301
 - from: /js/s/unique-elements-by
   to: /js/s/unique-values-in-array-remove-duplicates
-  status: 301!
+  status: 301
 - from: /js/s/function-based-array-unique-values
   to: /js/s/unique-values-in-array-remove-duplicates
-  status: 301!
+  status: 301
 - from: /js/s/filter-non-unique
   to: /js/s/unique-values-in-array-remove-duplicates
-  status: 301!
+  status: 301
 - from: /js/s/filter-non-unique-array-values
   to: /js/s/unique-values-in-array-remove-duplicates
-  status: 301!
+  status: 301
 - from: /js/s/filter-unique
   to: /js/s/unique-values-in-array-remove-duplicates
-  status: 301!
+  status: 301
 - from: /js/s/filter-unique-array-values
   to: /js/s/unique-values-in-array-remove-duplicates
-  status: 301!
+  status: 301
 - from: /js/s/delay
   to: /js/s/sleep
-  status: 301!
+  status: 301
 - from: /js/s/delay-function
   to: /js/s/sleep
-  status: 301!
+  status: 301
 - from: /js/s/delay-async
   to: /js/s/sleep
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-sleep
   to: /js/s/sleep
-  status: 301!
+  status: 301
 - from: /js/s/get-months-diff-between-dates
   to: /js/s/date-difference
-  status: 301!
+  status: 301
 - from: /js/s/date-difference-in-months
   to: /js/s/date-difference
-  status: 301!
+  status: 301
 - from: /js/s/get-days-diff-between-dates
   to: /js/s/date-difference
-  status: 301!
+  status: 301
 - from: /js/s/date-difference-in-days
   to: /js/s/date-difference
-  status: 301!
+  status: 301
 - from: /js/s/count-week-days-between
   to: /js/s/date-difference
-  status: 301!
+  status: 301
 - from: /js/s/date-difference-in-weekdays
   to: /js/s/date-difference
-  status: 301!
+  status: 301
 - from: /js/s/get-hours-diff-between-dates
   to: /js/s/date-difference
-  status: 301!
+  status: 301
 - from: /js/s/date-difference-in-hours
   to: /js/s/date-difference
-  status: 301!
+  status: 301
 - from: /js/s/get-minutes-diff-between-dates
   to: /js/s/date-difference
-  status: 301!
+  status: 301
 - from: /js/s/date-difference-in-minutes
   to: /js/s/date-difference
-  status: 301!
+  status: 301
 - from: /js/s/get-seconds-diff-between-dates
   to: /js/s/date-difference
-  status: 301!
+  status: 301
 - from: /js/s/date-difference-in-seconds
   to: /js/s/date-difference
-  status: 301!
+  status: 301
 - from: /js/s/is-weekday
   to: /js/s/date-is-weekday-or-weekend
-  status: 301!
+  status: 301
 - from: /js/s/date-is-weekday
   to: /js/s/date-is-weekday-or-weekend
-  status: 301!
+  status: 301
 - from: /js/s/is-weekend
   to: /js/s/date-is-weekday-or-weekend
-  status: 301!
+  status: 301
 - from: /js/s/date-is-weekend
   to: /js/s/date-is-weekday-or-weekend
-  status: 301!
+  status: 301
 - from: /js/s/add-week-days
   to: /js/s/add-minutes-hours-days-to-date
-  status: 301!
+  status: 301
 - from: /js/s/add-weekdays-to-date
   to: /js/s/add-minutes-hours-days-to-date
-  status: 301!
+  status: 301
 - from: /js/s/add-minutes-to-date
   to: /js/s/add-minutes-hours-days-to-date
-  status: 301!
+  status: 301
 - from: /js/s/add-days-to-date
   to: /js/s/add-minutes-hours-days-to-date
-  status: 301!
+  status: 301
 - from: /js/s/min-date
   to: /js/s/min-max-date
-  status: 301!
+  status: 301
 - from: /js/s/max-date
   to: /js/s/min-max-date
-  status: 301!
+  status: 301
 - from: /js/s/day-of-year
   to: /js/s/day-week-month-quarter-of-year
-  status: 301!
+  status: 301
 - from: /js/s/week-of-year
   to: /js/s/day-week-month-quarter-of-year
-  status: 301!
+  status: 301
 - from: /js/s/quarter-of-year
   to: /js/s/day-week-month-quarter-of-year
-  status: 301!
+  status: 301
 - from: /js/s/is-after-date
   to: /js/s/date-comparison
-  status: 301!
+  status: 301
 - from: /js/s/date-is-after-another-date
   to: /js/s/date-comparison
-  status: 301!
+  status: 301
 - from: /js/s/is-before-date
   to: /js/s/date-comparison
-  status: 301!
+  status: 301
 - from: /js/s/date-is-before-another-date
   to: /js/s/date-comparison
-  status: 301!
+  status: 301
 - from: /js/s/is-between-dates
   to: /js/s/date-comparison
-  status: 301!
+  status: 301
 - from: /js/s/date-is-between-two-dates
   to: /js/s/date-comparison
-  status: 301!
+  status: 301
 - from: /js/s/is-same-date
   to: /js/s/date-comparison
-  status: 301!
+  status: 301
 - from: /js/s/date-is-same-as-another-date
   to: /js/s/date-comparison
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-date-comparison
   to: /js/s/date-comparison
-  status: 301!
+  status: 301
 - from: /js/s/tomorrow
   to: /js/s/date-yesterday-today-tomorrow
-  status: 301!
+  status: 301
 - from: /js/s/date-tomorrow
   to: /js/s/date-yesterday-today-tomorrow
-  status: 301!
+  status: 301
 - from: /js/s/yesterday
   to: /js/s/date-yesterday-today-tomorrow
-  status: 301!
+  status: 301
 - from: /js/s/date-yesterday
   to: /js/s/date-yesterday-today-tomorrow
-  status: 301!
+  status: 301
 - from: /js/s/is-iso-string
   to: /js/s/iso-format-date-with-timezone
-  status: 301!
+  status: 301
 - from: /js/s/is-iso-formatted-date
   to: /js/s/iso-format-date-with-timezone
-  status: 301!
+  status: 301
 - from: /js/s/to-iso-string-with-timezone
   to: /js/s/iso-format-date-with-timezone
-  status: 301!
+  status: 301
 - from: /js/s/from-timestamp
   to: /js/s/date-to-unix-timestamp
-  status: 301!
+  status: 301
 - from: /js/s/date-from-unix-timestamp
   to: /js/s/date-to-unix-timestamp
-  status: 301!
+  status: 301
 - from: /js/s/get-timestamp
   to: /js/s/date-to-unix-timestamp
-  status: 301!
+  status: 301
 - from: /js/s/unix-timestamp-from-date
   to: /js/s/date-to-unix-timestamp
-  status: 301!
+  status: 301
 - from: /js/s/partition-by
   to: /js/s/partition-array
-  status: 301!
+  status: 301
 - from: /js/s/partition
   to: /js/s/partition-array
-  status: 301!
+  status: 301
 - from: /js/s/partition-array-in-two
   to: /js/s/partition-array
-  status: 301!
+  status: 301
 - from: /js/s/lowercase-keys
   to: /js/s/upperize-lowerize-object-keys
-  status: 301!
+  status: 301
 - from: /js/s/lowerize
   to: /js/s/upperize-lowerize-object-keys
-  status: 301!
+  status: 301
 - from: /js/s/upperize
   to: /js/s/upperize-lowerize-object-keys
-  status: 301!
+  status: 301
 - from: /js/s/is-browser
   to: /js/s/is-node-or-browser
-  status: 301!
+  status: 301
 - from: /js/s/is-node
   to: /js/s/is-node-or-browser
-  status: 301!
+  status: 301
 - from: /js/s/zip
   to: /js/s/zip-unzip-array
-  status: 301!
+  status: 301
 - from: /js/s/group-array-elements
   to: /js/s/zip-unzip-array
-  status: 301!
+  status: 301
 - from: /js/s/unzip
   to: /js/s/zip-unzip-array
-  status: 301!
+  status: 301
 - from: /js/s/ungroup-array-elements
   to: /js/s/zip-unzip-array
-  status: 301!
+  status: 301
 - from: /js/s/zip-with
   to: /js/s/zip-unzip-array
-  status: 301!
+  status: 301
 - from: /js/s/group-array-elements-based-on-function
   to: /js/s/zip-unzip-array
-  status: 301!
+  status: 301
 - from: /js/s/unzip-with
   to: /js/s/zip-unzip-array
-  status: 301!
+  status: 301
 - from: /js/s/ungroup-array-elements-based-on-function
   to: /js/s/zip-unzip-array
-  status: 301!
+  status: 301
 - from: /js/s/zip-object
   to: /js/s/zip-unzip-array
-  status: 301!
+  status: 301
 - from: /js/s/group-array-into-object
   to: /js/s/zip-unzip-array
-  status: 301!
+  status: 301
 - from: /js/s/is-local-storage-enabled
   to: /js/s/is-local-storage-session-storage-enabled
-  status: 301!
+  status: 301
 - from: /js/s/is-session-storage-enabled
   to: /js/s/is-local-storage-session-storage-enabled
-  status: 301!
+  status: 301
 - from: /js/s/parse-cookie
   to: /js/s/parse-or-serialize-cookie
-  status: 301!
+  status: 301
 - from: /js/s/serialize-cookie
   to: /js/s/parse-or-serialize-cookie
-  status: 301!
+  status: 301
 - from: /js/s/includes-all
   to: /js/s/array-includes-any-or-all-values
-  status: 301!
+  status: 301
 - from: /js/s/array-includes-all-values
   to: /js/s/array-includes-any-or-all-values
-  status: 301!
+  status: 301
 - from: /js/s/includes-any
   to: /js/s/array-includes-any-or-all-values
-  status: 301!
+  status: 301
 - from: /js/s/array-includes-any-values
   to: /js/s/array-includes-any-or-all-values
-  status: 301!
+  status: 301
 - from: /articles/s/copy-text-to-clipboard-with-javascript
   to: /js/s/copy-text-to-clipboard
-  status: 301!
+  status: 301
 - from: /js/s/copy-to-clipboard
   to: /js/s/copy-text-to-clipboard
-  status: 301!
+  status: 301
 - from: /js/s/copy-to-clipboard-async
   to: /js/s/copy-text-to-clipboard
-  status: 301!
+  status: 301
 - from: /c/js-object-key-selection/*
   to: /js/s/filter-object-keys
-  status: 301!
+  status: 301
 - from: /js/object-key-selection/*
   to: /js/s/filter-object-keys
-  status: 301!
+  status: 301
 - from: /js/s/omit-by
   to: /js/s/filter-object-keys
-  status: 301!
+  status: 301
 - from: /js/s/omit-matching-object-keys
   to: /js/s/filter-object-keys
-  status: 301!
+  status: 301
 - from: /js/s/pick-by
   to: /js/s/filter-object-keys
-  status: 301!
+  status: 301
 - from: /js/s/pick-matching-object-keys
   to: /js/s/filter-object-keys
-  status: 301!
+  status: 301
 - from: /js/s/omit
   to: /js/s/filter-object-keys
-  status: 301!
+  status: 301
 - from: /js/s/omit-object-keys
   to: /js/s/filter-object-keys
-  status: 301!
+  status: 301
 - from: /js/s/pick
   to: /js/s/filter-object-keys
-  status: 301!
+  status: 301
 - from: /js/s/pick-object-keys
   to: /js/s/filter-object-keys
-  status: 301!
+  status: 301
 - from: /js/s/map-object
   to: /js/s/map-array-to-object
-  status: 301!
+  status: 301
 - from: /js/s/objectify
   to: /js/s/map-array-to-object
-  status: 301!
+  status: 301
 - from: /js/s/alphabetical
   to: /js/s/sort-array-of-objects
-  status: 301!
+  status: 301
 - from: /js/s/sort-array-alphabetically
   to: /js/s/sort-array-of-objects
-  status: 301!
+  status: 301
 - from: /js/s/order-by
   to: /js/s/sort-array-of-objects
-  status: 301!
+  status: 301
 - from: /js/s/order-object-array
   to: /js/s/sort-array-of-objects
-  status: 301!
+  status: 301
 - from: /js/s/order-with
   to: /js/s/sort-array-of-objects
-  status: 301!
+  status: 301
 - from: /js/s/order-object-array-based-on-property
   to: /js/s/sort-array-of-objects
-  status: 301!
+  status: 301
 - from: /js/s/for-own
   to: /js/s/iterate-object-properties
-  status: 301!
+  status: 301
 - from: /js/s/for-own-right
   to: /js/s/iterate-object-properties
-  status: 301!
+  status: 301
 - from: /js/s/reverse-iterate-object-properties
   to: /js/s/iterate-object-properties
-  status: 301!
+  status: 301
 - from: /js/s/every-nth
   to: /js/s/nth-array-element
-  status: 301!
+  status: 301
 - from: /js/s/every-nth-element
   to: /js/s/nth-array-element
-  status: 301!
+  status: 301
 - from: /js/s/nth-element
   to: /js/s/nth-array-element
-  status: 301!
+  status: 301
 - from: /js/s/object-to-query-string
   to: /js/s/query-string-to-object
-  status: 301!
+  status: 301
 - from: /js/s/remove-class
   to: /js/s/html-element-test-add-remove-toggle-class
-  status: 301!
+  status: 301
 - from: /js/s/remove-class-from-html-element
   to: /js/s/html-element-test-add-remove-toggle-class
-  status: 301!
+  status: 301
 - from: /js/s/add-class
   to: /js/s/html-element-test-add-remove-toggle-class
-  status: 301!
+  status: 301
 - from: /js/s/add-class-to-html-element
   to: /js/s/html-element-test-add-remove-toggle-class
-  status: 301!
+  status: 301
 - from: /js/s/has-class
   to: /js/s/html-element-test-add-remove-toggle-class
-  status: 301!
+  status: 301
 - from: /js/s/html-element-has-class
   to: /js/s/html-element-test-add-remove-toggle-class
-  status: 301!
+  status: 301
 - from: /js/s/toggle-class
   to: /js/s/html-element-test-add-remove-toggle-class
-  status: 301!
+  status: 301
 - from: /js/s/toggle-html-element-class
   to: /js/s/html-element-test-add-remove-toggle-class
-  status: 301!
+  status: 301
 - from: /js/s/generate-until
   to: /js/s/generate-while
-  status: 301!
+  status: 301
 - from: /js/s/serialize-form
   to: /js/s/form-to-object
-  status: 301!
+  status: 301
 - from: /js/s/primes
   to: /js/s/is-prime
-  status: 301!
+  status: 301
 - from: /js/s/memoize
   to: /js/s/memoization
-  status: 301!
+  status: 301
 - from: /js/s/memoize-function
   to: /js/s/memoization
-  status: 301!
+  status: 301
 - from: /js/s/contains-whitespace
   to: /js/s/find-remove-compact-whitespace
-  status: 301!
+  status: 301
 - from: /js/s/remove-whitespace
   to: /js/s/find-remove-compact-whitespace
-  status: 301!
+  status: 301
 - from: /js/s/compact-whitespace
   to: /js/s/find-remove-compact-whitespace
-  status: 301!
+  status: 301
 - from: /js/s/frequencies
   to: /js/s/count-grouped-elements
-  status: 301!
+  status: 301
 - from: /js/s/value-frequencies
   to: /js/s/count-grouped-elements
-  status: 301!
+  status: 301
 - from: /js/s/count-by
   to: /js/s/count-grouped-elements
-  status: 301!
+  status: 301
 - from: /js/s/insert-after
   to: /js/s/insert-html-string-before-or-after-element
-  status: 301!
+  status: 301
 - from: /js/s/insert-html-string-after-element
   to: /js/s/insert-html-string-before-or-after-element
-  status: 301!
+  status: 301
 - from: /js/s/insert-before
   to: /js/s/insert-html-string-before-or-after-element
-  status: 301!
+  status: 301
 - from: /js/s/insert-html-string-before-element
   to: /js/s/insert-html-string-before-or-after-element
-  status: 301!
+  status: 301
 - from: /js/s/has-many
   to: /js/s/array-has-only-one-match-or-many
-  status: 301!
+  status: 301
 - from: /js/s/array-has-many-matches
   to: /js/s/array-has-only-one-match-or-many
-  status: 301!
+  status: 301
 - from: /js/s/has-one
   to: /js/s/array-has-only-one-match-or-many
-  status: 301!
+  status: 301
 - from: /js/s/array-has-only-one-match
   to: /js/s/array-has-only-one-match-or-many
-  status: 301!
+  status: 301
 - from: /js/s/index-of-all
   to: /js/s/array-has-only-one-match-or-many
-  status: 301!
+  status: 301
 - from: /js/s/index-of-all-matches
   to: /js/s/array-has-only-one-match-or-many
-  status: 301!
+  status: 301
 - from: /js/s/partial-right
   to: /js/s/partially-apply-function
-  status: 301!
+  status: 301
 - from: /js/s/append-function-arguments
   to: /js/s/partially-apply-function
-  status: 301!
+  status: 301
 - from: /js/s/partial
   to: /js/s/partially-apply-function
-  status: 301!
+  status: 301
 - from: /js/s/prepend-function-arguments
   to: /js/s/partially-apply-function
-  status: 301!
+  status: 301
 - from: /js/s/cycle-generator
   to: /js/s/generate-values-repeatedly
-  status: 301!
+  status: 301
 - from: /js/s/repeat-generator
   to: /js/s/generate-values-repeatedly
-  status: 301!
+  status: 301
 - from: /js/s/permutations
   to: /js/s/array-or-string-permutations
-  status: 301!
+  status: 301
 - from: /js/s/array-permutations
   to: /js/s/array-or-string-permutations
-  status: 301!
+  status: 301
 - from: /js/s/string-permutations
   to: /js/s/array-or-string-permutations
-  status: 301!
+  status: 301
 - from: /js/s/average
   to: /js/s/numeric-array-math-operations
-  status: 301!
+  status: 301
 - from: /js/s/average-of-numbers
   to: /js/s/numeric-array-math-operations
-  status: 301!
+  status: 301
 - from: /js/s/average-by
   to: /js/s/numeric-array-math-operations
-  status: 301!
+  status: 301
 - from: /js/s/mapped-array-average
   to: /js/s/numeric-array-math-operations
-  status: 301!
+  status: 301
 - from: /js/s/sum-by
   to: /js/s/numeric-array-math-operations
-  status: 301!
+  status: 301
 - from: /js/s/mapped-array-sum
   to: /js/s/numeric-array-math-operations
-  status: 301!
+  status: 301
 - from: /js/s/prod
   to: /js/s/numeric-array-math-operations
-  status: 301!
+  status: 301
 - from: /js/s/product-of-numeric-values
   to: /js/s/numeric-array-math-operations
-  status: 301!
+  status: 301
 - from: /js/s/sum
   to: /js/s/numeric-array-math-operations
-  status: 301!
+  status: 301
 - from: /js/s/sum-array
   to: /js/s/numeric-array-math-operations
-  status: 301!
+  status: 301
 - from: /js/s/standard-deviation
   to: /js/s/numeric-array-math-operations
-  status: 301!
+  status: 301
 - from: /js/s/weighted-average
   to: /js/s/numeric-array-math-operations
-  status: 301!
+  status: 301
 - from: /js/s/median
   to: /js/s/numeric-array-math-operations
-  status: 301!
+  status: 301
 - from: /js/s/map-to-object
   to: /js/s/convert-map-to-object
-  status: 301!
+  status: 301
 - from: /js/s/object-to-map
   to: /js/s/convert-map-to-object
-  status: 301!
+  status: 301
 - from: /js/s/convert-object-to-map
   to: /js/s/convert-map-to-object
-  status: 301!
+  status: 301
 - from: /js/s/has-key
   to: /js/s/object-has-value-or-key
-  status: 301!
+  status: 301
 - from: /js/s/object-has-key
   to: /js/s/object-has-value-or-key
-  status: 301!
+  status: 301
 - from: /js/s/has-value
   to: /js/s/object-has-value-or-key
-  status: 301!
+  status: 301
 - from: /js/s/object-has-value
   to: /js/s/object-has-value-or-key
-  status: 301!
+  status: 301
 - from: /js/s/mask
   to: /js/s/mask-string
-  status: 301!
+  status: 301
 - from: /js/s/http-get
   to: /js/s/http-get-post-put-delete
-  status: 301!
+  status: 301
 - from: /js/s/http-post
   to: /js/s/http-get-post-put-delete
-  status: 301!
+  status: 301
 - from: /js/s/http-put
   to: /js/s/http-get-post-put-delete
-  status: 301!
+  status: 301
 - from: /js/s/http-delete
   to: /js/s/http-get-post-put-delete
-  status: 301!
+  status: 301
 - from: /js/s/all-equal
   to: /js/s/all-values-of-array-are-equal
-  status: 301!
+  status: 301
 - from: /js/s/array-element-equality
   to: /js/s/all-values-of-array-are-equal
-  status: 301!
+  status: 301
 - from: /js/s/all-equal-by
   to: /js/s/all-values-of-array-are-equal
-  status: 301!
+  status: 301
 - from: /js/s/function-based-array-element-equality
   to: /js/s/all-values-of-array-are-equal
-  status: 301!
+  status: 301
 - from: /js/s/last-date-of-month
   to: /js/s/first-last-date-of-month
-  status: 301!
+  status: 301
 - from: /js/s/to-ordinal-suffix
   to: /js/s/number-formatting
-  status: 301!
+  status: 301
 - from: /js/s/format-duration
   to: /js/s/number-formatting
-  status: 301!
+  status: 301
 - from: /js/s/format-number
   to: /js/s/number-formatting
-  status: 301!
+  status: 301
 - from: /js/s/format-seconds
   to: /js/s/number-formatting
-  status: 301!
+  status: 301
 - from: /js/s/to-currency
   to: /js/s/number-formatting
-  status: 301!
+  status: 301
 - from: /js/s/number-to-currency
   to: /js/s/number-formatting
-  status: 301!
+  status: 301
 - from: /js/s/to-decimal-mark
   to: /js/s/number-formatting
-  status: 301!
+  status: 301
 - from: /js/s/number-to-decimal-mark
   to: /js/s/number-formatting
-  status: 301!
+  status: 301
 - from: /js/s/to-optional-fixed
   to: /js/s/number-formatting
-  status: 301!
+  status: 301
 - from: /js/s/number-to-optional-fixed
   to: /js/s/number-formatting
-  status: 301!
+  status: 301
 - from: /js/s/round
   to: /js/s/number-formatting
-  status: 301!
+  status: 301
 - from: /js/s/round-number-to-precision
   to: /js/s/number-formatting
-  status: 301!
+  status: 301
 - from: /js/s/pad-number
   to: /js/s/number-formatting
-  status: 301!
+  status: 301
 - from: /js/s/arithmetic-progression
   to: /js/s/arithmetic-and-geometric-progression
-  status: 301!
+  status: 301
 - from: /js/s/geometric-progression
   to: /js/s/arithmetic-and-geometric-progression
-  status: 301!
+  status: 301
 - from: /js/s/map-num-range
   to: /js/s/clamp-or-map-number-to-range
-  status: 301!
+  status: 301
 - from: /js/s/map-number-to-range
   to: /js/s/clamp-or-map-number-to-range
-  status: 301!
+  status: 301
 - from: /js/s/clamp-number
   to: /js/s/clamp-or-map-number-to-range
-  status: 301!
+  status: 301
 - from: /js/s/to-safe-integer
   to: /js/s/clamp-or-map-number-to-range
-  status: 301!
+  status: 301
 - from: /js/s/escape-html
   to: /js/s/escape-unescape-html
-  status: 301!
+  status: 301
 - from: /js/s/unescape-html
   to: /js/s/escape-unescape-html
-  status: 301!
+  status: 301
 - from: /c/js-object-key-transformations/*
   to: /js/s/transform-object-keys
-  status: 301!
+  status: 301
 - from: /js/object-key-transformations/*
   to: /js/s/transform-object-keys
-  status: 301!
+  status: 301
 - from: /js/s/deep-map-keys
   to: /js/s/transform-object-keys
-  status: 301!
+  status: 301
 - from: /js/s/deep-map-object-keys
   to: /js/s/transform-object-keys
-  status: 301!
+  status: 301
 - from: /js/s/map-values
   to: /js/s/transform-object-keys
-  status: 301!
+  status: 301
 - from: /js/s/map-keys
   to: /js/s/transform-object-keys
-  status: 301!
+  status: 301
 - from: /js/s/map-object-keys
   to: /js/s/transform-object-keys
-  status: 301!
+  status: 301
 - from: /js/s/rename-keys
   to: /js/s/transform-object-keys
-  status: 301!
+  status: 301
 - from: /js/s/rename-object-keys
   to: /js/s/transform-object-keys
-  status: 301!
+  status: 301
 - from: /js/s/symbolize-keys
   to: /js/s/transform-object-keys
-  status: 301!
+  status: 301
 - from: /js/s/symbolize-object-keys
   to: /js/s/transform-object-keys
-  status: 301!
+  status: 301
 - from: /js/s/transform
   to: /js/s/transform-object-keys
-  status: 301!
+  status: 301
 - from: /js/s/transform-object
   to: /js/s/transform-object-keys
-  status: 301!
+  status: 301
 - from: /js/s/bind
   to: /js/s/function-call-apply-bind
-  status: 301!
+  status: 301
 - from: /js/s/bind-function-context
   to: /js/s/function-call-apply-bind
-  status: 301!
+  status: 301
 - from: /js/s/bind-key
   to: /js/s/function-call-apply-bind
-  status: 301!
+  status: 301
 - from: /js/s/bind-object-method
   to: /js/s/function-call-apply-bind
-  status: 301!
+  status: 301
 - from: /js/s/bind-all
   to: /js/s/function-call-apply-bind
-  status: 301!
+  status: 301
 - from: /js/s/bind-object-methods
   to: /js/s/function-call-apply-bind
-  status: 301!
+  status: 301
 - from: /js/s/call
   to: /js/s/function-call-apply-bind
-  status: 301!
+  status: 301
 - from: /js/s/call-functions-with-context
   to: /js/s/function-call-apply-bind
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-function-call-apply-bind
   to: /js/s/function-call-apply-bind
-  status: 301!
+  status: 301
 - from: /js/s/add-styles
   to: /js/s/get-set-add-styles-to-html-element
-  status: 301!
+  status: 301
 - from: /js/s/add-styles-to-html-element
   to: /js/s/get-set-add-styles-to-html-element
-  status: 301!
+  status: 301
 - from: /js/s/set-style
   to: /js/s/get-set-add-styles-to-html-element
-  status: 301!
+  status: 301
 - from: /js/s/set-style-for-html-element
   to: /js/s/get-set-add-styles-to-html-element
-  status: 301!
+  status: 301
 - from: /js/s/get-style
   to: /js/s/get-set-add-styles-to-html-element
-  status: 301!
+  status: 301
 - from: /js/s/hex-to-rgb
   to: /js/s/rgb-hex-hsl-hsb-color-format-conversion
-  status: 301!
+  status: 301
 - from: /js/s/rgb-to-hex
   to: /js/s/rgb-hex-hsl-hsb-color-format-conversion
-  status: 301!
+  status: 301
 - from: /js/s/hsl-to-rgb
   to: /js/s/rgb-hex-hsl-hsb-color-format-conversion
-  status: 301!
+  status: 301
 - from: /js/s/rgb-to-hsl
   to: /js/s/rgb-hex-hsl-hsb-color-format-conversion
-  status: 301!
+  status: 301
 - from: /js/s/hsl-to-hsb
   to: /js/s/rgb-hex-hsl-hsb-color-format-conversion
-  status: 301!
+  status: 301
 - from: /js/s/hsb-to-hsl
   to: /js/s/rgb-hex-hsl-hsb-color-format-conversion
-  status: 301!
+  status: 301
 - from: /js/s/to-rgb-array
   to: /js/s/rgb-to-array-or-object
-  status: 301!
+  status: 301
 - from: /js/s/to-rgb-object
   to: /js/s/rgb-to-array-or-object
-  status: 301!
+  status: 301
 - from: /js/s/to-hsl-array
   to: /js/s/hsl-to-array-or-object
-  status: 301!
+  status: 301
 - from: /js/s/to-hsl-object
   to: /js/s/hsl-to-array-or-object
-  status: 301!
+  status: 301
 - from: /js/s/colorize
   to: /js/s/color-console-output
-  status: 301!
+  status: 301
 - from: /js/s/sample-size
   to: /js/s/array-sample-shuffle-weighted-selection
-  status: 301!
+  status: 301
 - from: /js/s/multiple-array-samples
   to: /js/s/array-sample-shuffle-weighted-selection
-  status: 301!
+  status: 301
 - from: /js/s/sample
   to: /js/s/array-sample-shuffle-weighted-selection
-  status: 301!
+  status: 301
 - from: /js/s/array-sample
   to: /js/s/array-sample-shuffle-weighted-selection
-  status: 301!
+  status: 301
 - from: /js/s/weighted-sample
   to: /js/s/array-sample-shuffle-weighted-selection
-  status: 301!
+  status: 301
 - from: /js/s/shuffle
   to: /js/s/array-sample-shuffle-weighted-selection
-  status: 301!
+  status: 301
 - from: /js/s/random-gauss
   to: /js/s/random-number-or-integer-in-range
-  status: 301!
+  status: 301
 - from: /js/s/random-integer-in-range
   to: /js/s/random-number-or-integer-in-range
-  status: 301!
+  status: 301
 - from: /js/s/random-number-in-range
   to: /js/s/random-number-or-integer-in-range
-  status: 301!
+  status: 301
 - from: /js/s/is-valid-json
   to: /js/s/string-is-valid-json
-  status: 301!
+  status: 301
 - from: /js/s/find-consecutive
   to: /js/s/arrays-of-consecutive-elements
-  status: 301!
+  status: 301
 - from: /js/s/aperture
   to: /js/s/arrays-of-consecutive-elements
-  status: 301!
+  status: 301
 - from: /js/s/consecutive-element-subarrays
   to: /js/s/arrays-of-consecutive-elements
-  status: 301!
+  status: 301
 - from: /js/s/map-consecutive
   to: /js/s/arrays-of-consecutive-elements
-  status: 301!
+  status: 301
 - from: /js/s/map-consecutive-elements
   to: /js/s/arrays-of-consecutive-elements
-  status: 301!
+  status: 301
 - from: /js/s/stable-sort
   to: /js/s/array-stable-sort
-  status: 301!
+  status: 301
 - from: /js/s/index-on
   to: /js/s/listify
-  status: 301!
+  status: 301
 - from: /js/s/array-to-object-based-on-key
   to: /js/s/listify
-  status: 301!
+  status: 301
 - from: /js/s/get
   to: /js/s/get-nested-object-value
-  status: 301!
+  status: 301
 - from: /js/s/deep-get
   to: /js/s/get-nested-object-value
-  status: 301!
+  status: 301
 - from: /js/s/deep-get-object-value
   to: /js/s/get-nested-object-value
-  status: 301!
+  status: 301
 - from: /js/s/dig
   to: /js/s/get-nested-object-value
-  status: 301!
+  status: 301
 - from: /js/s/get-nested-value-in-object
   to: /js/s/get-nested-object-value
-  status: 301!
+  status: 301
 - from: /js/s/deep-merge
   to: /js/s/merge-objects
-  status: 301!
+  status: 301
 - from: /js/s/deep-merge-objects
   to: /js/s/merge-objects
-  status: 301!
+  status: 301
 - from: /js/s/merge
   to: /js/s/merge-objects
-  status: 301!
+  status: 301
 - from: /js/s/is-alpha
   to: /js/s/is-alpha-numeric
-  status: 301!
+  status: 301
 - from: /js/s/accumulate
   to: /js/s/partial-sum-array
-  status: 301!
+  status: 301
 - from: /js/s/reduce-successive
   to: /js/s/partial-sum-array
-  status: 301!
+  status: 301
 - from: /js/s/successive-values-array
   to: /js/s/partial-sum-array
-  status: 301!
+  status: 301
 - from: /js/s/matches
   to: /js/s/match-object-properties
-  status: 301!
+  status: 301
 - from: /js/s/matches-with
   to: /js/s/match-object-properties
-  status: 301!
+  status: 301
 - from: /js/s/function-based-object-property-matches
   to: /js/s/match-object-properties
-  status: 301!
+  status: 301
 - from: /js/s/x-prod
   to: /js/s/cartesian-product-of-arrays
-  status: 301!
+  status: 301
 - from: /js/s/cross-product-of-arrays
   to: /js/s/cartesian-product-of-arrays
-  status: 301!
+  status: 301
 - from: /js/s/cartesian-product
   to: /js/s/cartesian-product-of-arrays
-  status: 301!
+  status: 301
 - from: /js/s/assert-valid-keys
   to: /js/s/validate-object-properties
-  status: 301!
+  status: 301
 - from: /js/s/assert-object-key-validity
   to: /js/s/validate-object-properties
-  status: 301!
+  status: 301
 - from: /js/s/common-keys
   to: /js/s/validate-object-properties
-  status: 301!
+  status: 301
 - from: /git/s/manual-find-commit-with-bug
   to: /git/s/find-commit-with-bug
-  status: 301!
+  status: 301
 - from: /git/s/automatic-find-commit-with-bug
   to: /git/s/find-commit-with-bug
-  status: 301!
+  status: 301
 - from: /git/s/apply-latest-stash
   to: /git/s/stashing
-  status: 301!
+  status: 301
 - from: /git/s/apply-stash
   to: /git/s/stashing
-  status: 301!
+  status: 301
 - from: /git/s/delete-stash
   to: /git/s/stashing
-  status: 301!
+  status: 301
 - from: /git/s/delete-stashes
   to: /git/s/stashing
-  status: 301!
+  status: 301
 - from: /git/s/list-stashes
   to: /git/s/stashing
-  status: 301!
+  status: 301
 - from: /git/s/save-stash
   to: /git/s/stashing
-  status: 301!
+  status: 301
 - from: /git/s/delete-detached-branches
   to: /git/s/delete-branch
-  status: 301!
+  status: 301
 - from: /git/s/delete-merged-branches
   to: /git/s/delete-branch
-  status: 301!
+  status: 301
 - from: /git/s/delete-remote-branch
   to: /git/s/delete-branch
-  status: 301!
+  status: 301
 - from: /git/s/stage-files
   to: /git/s/stage-unstage-files
-  status: 301!
+  status: 301
 - from: /git/s/unstage-files
   to: /git/s/stage-unstage-files
-  status: 301!
+  status: 301
 - from: /git/s/rename-remote-branch
   to: /git/s/rename-branch
-  status: 301!
+  status: 301
 - from: /git/s/set-text-editor
   to: /git/s/configure-default-text-editor
-  status: 301!
+  status: 301
 - from: /git/s/discard-untracked
   to: /git/s/discard-changes
-  status: 301!
+  status: 301
 - from: /git/s/discard-uncommitted
   to: /git/s/discard-changes
-  status: 301!
+  status: 301
 - from: /git/s/view-remote-url
   to: /git/s/view-change-remote-url
-  status: 301!
+  status: 301
 - from: /git/s/change-remote-url
   to: /git/s/view-change-remote-url
-  status: 301!
+  status: 301
 - from: /git/s/create-empty-commit
   to: /git/s/create-commit
-  status: 301!
+  status: 301
 - from: /git/s/commit-without-hooks
   to: /git/s/create-commit
-  status: 301!
+  status: 301
 - from: /git/s/view-commits-by-author
   to: /git/s/view-commits-by-author-or-committer
-  status: 301!
+  status: 301
 - from: /git/s/add-submodule
   to: /git/s/submodules
-  status: 301!
+  status: 301
 - from: /git/s/delete-submodule
   to: /git/s/submodules
-  status: 301!
+  status: 301
 - from: /git/s/clone-missing-submodules
   to: /git/s/submodules
-  status: 301!
+  status: 301
 - from: /git/s/pull-all-submodules
   to: /git/s/submodules
-  status: 301!
+  status: 301
 - from: /git/s/switch-to-last-branch
   to: /git/s/switch-to-branch
-  status: 301!
+  status: 301
 - from: /c/css-centering/*
   to: /css/s/centering
-  status: 301!
+  status: 301
 - from: /c/css-centering/*
   to: /css/s/centering
-  status: 301!
+  status: 301
 - from: /articles/s/css-centering
   to: /css/s/centering
-  status: 301!
+  status: 301
 - from: /articles/s/css-centering
   to: /css/s/flexbox-centering
-  status: 301!
+  status: 301
 - from: /articles/s/css-centering
   to: /css/s/grid-centering
-  status: 301!
+  status: 301
 - from: /articles/s/css-centering
   to: /css/s/transform-centering
-  status: 301!
+  status: 301
 - from: /articles/s/css-centering
   to: /css/s/display-table-centering
-  status: 301!
+  status: 301
 - from: /python/s/key-of-min
   to: /python/s/key-of-min-max
-  status: 301!
+  status: 301
 - from: /python/s/key-of-max
   to: /python/s/key-of-min-max
-  status: 301!
+  status: 301
 - from: /c/css-background-patterns/*
   to: /css/s/10-css-background-patterns
-  status: 301!
+  status: 301
 - from: /css/background-patterns/*
   to: /css/s/10-css-background-patterns
-  status: 301!
+  status: 301
 - from: /css/s/stripes-pattern
   to: /css/s/10-css-background-patterns
-  status: 301!
+  status: 301
 - from: /css/s/polka-dot-pattern
   to: /css/s/10-css-background-patterns
-  status: 301!
+  status: 301
 - from: /css/s/zig-zag-pattern
   to: /css/s/10-css-background-patterns
-  status: 301!
+  status: 301
 - from: /css/s/checkerboard-pattern
   to: /css/s/10-css-background-patterns
-  status: 301!
+  status: 301
 - from: /css/s/circle
   to: /css/s/shapes
-  status: 301!
+  status: 301
 - from: /css/s/triangle
   to: /css/s/shapes
-  status: 301!
+  status: 301
 - from: /js/s/require-uncached
   to: /js/s/reload-module
-  status: 301!
+  status: 301
 - from: /js/s/uncached-module-require
   to: /js/s/reload-module
-  status: 301!
+  status: 301
 - from: /js/s/count-substrings
   to: /js/s/count-occurences
-  status: 301!
+  status: 301
 - from: /js/s/validate-number
   to: /js/s/number-validation
-  status: 301!
+  status: 301
 - from: /js/s/day-name
   to: /js/s/weekday-name
-  status: 301!
+  status: 301
 - from: /js/s/jso-nto-csv
   to: /js/s/convert-csv-to-array-object-or-json
-  status: 301!
+  status: 301
 - from: /js/s/json-to-csv
   to: /js/s/convert-csv-to-array-object-or-json
-  status: 301!
+  status: 301
 - from: /js/s/array-to-csv
   to: /js/s/convert-csv-to-array-object-or-json
-  status: 301!
+  status: 301
 - from: /js/s/csv-to-json
   to: /js/s/convert-csv-to-array-object-or-json
-  status: 301!
+  status: 301
 - from: /js/s/csv-to-array
   to: /js/s/convert-csv-to-array-object-or-json
-  status: 301!
+  status: 301
 - from: /js/s/pluralize
   to: /js/s/pluralize-string
-  status: 301!
+  status: 301
 - from: /articles/s/js-object-freeze-vs-seal
   to: /js/s/deep-freeze-object
-  status: 301!
+  status: 301
 - from: /js/s/object-freeze-vs-seal
   to: /js/s/deep-freeze-object
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-deep-freeze-object
   to: /js/s/deep-freeze-object
-  status: 301!
+  status: 301
 - from: /js/s/deep-freeze
   to: /js/s/deep-freeze-object
-  status: 301!
+  status: 301
 - from: /js/s/frozen-set
   to: /js/s/deep-freeze-object
-  status: 301!
+  status: 301
 - from: /js/s/freeze-set-object
   to: /js/s/deep-freeze-object
-  status: 301!
+  status: 301
 - from: /js/s/freeze-set-or-map
   to: /js/s/deep-freeze-object
-  status: 301!
+  status: 301
 - from: /c/react-rendering/*
   to: /react/s/rendering
-  status: 301!
+  status: 301
 - from: /react/rendering/*
   to: /react/s/rendering
-  status: 301!
+  status: 301
 - from: /articles/s/react-rendering-basics
   to: /react/s/rendering
-  status: 301!
+  status: 301
 - from: /react/s/rendering-basics
   to: /react/s/rendering
-  status: 301!
+  status: 301
 - from: /articles/s/react-rendering-optimization
   to: /react/s/rendering
-  status: 301!
+  status: 301
 - from: /react/s/rendering-optimization
   to: /react/s/rendering
-  status: 301!
+  status: 301
 - from: /articles/s/react-rendering-state
   to: /react/s/rendering
-  status: 301!
+  status: 301
 - from: /react/s/rendering-state
   to: /react/s/rendering
-  status: 301!
+  status: 301
 - from: /articles/s/js-frequency-map-data-structure
   to: /js/s/count-grouped-elements
-  status: 301!
+  status: 301
 - from: /js/s/frequency-map-data-structure
   to: /js/s/count-grouped-elements
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-modify-url-without-reload
   to: /js/s/modify-url-without-reload
-  status: 301!
+  status: 301
 - from: /js/s/redirect
   to: /js/s/modify-url-without-reload
-  status: 301!
+  status: 301
 - from: /js/s/redirect-to-url
   to: /js/s/modify-url-without-reload
-  status: 301!
+  status: 301
 - from: /js/s/get-base-url
   to: /js/s/get-base-url-or-url-params
-  status: 301!
+  status: 301
 - from: /js/s/get-url-parameters
   to: /js/s/get-base-url-or-url-params
-  status: 301!
+  status: 301
 - from: /js/s/rearg
   to: /js/s/reorder-function-arguments
-  status: 301!
+  status: 301
 - from: /js/s/rearrange-function-arguments
   to: /js/s/reorder-function-arguments
-  status: 301!
+  status: 301
 - from: /js/s/flip
   to: /js/s/reorder-function-arguments
-  status: 301!
+  status: 301
 - from: /js/s/flip-function-arguments
   to: /js/s/reorder-function-arguments
-  status: 301!
+  status: 301
 - from: /js/s/generator-for-range
   to: /js/s/range-generator
-  status: 301!
+  status: 301
 - from: /js/s/pipe-async-functions
   to: /js/s/async-function-composition
-  status: 301!
+  status: 301
 - from: /js/s/index-by
   to: /js/s/group-array-elements
-  status: 301!
+  status: 301
 - from: /js/s/function-based-array-indexing
   to: /js/s/group-array-elements
-  status: 301!
+  status: 301
 - from: /js/s/group-by
   to: /js/s/group-array-elements
-  status: 301!
+  status: 301
 - from: /js/s/function-based-array-element-grouping
   to: /js/s/group-array-elements
-  status: 301!
+  status: 301
 - from: /js/s/get-elements-bigger-than-viewport
   to: /js/s/get-elements-wider-than-viewport
-  status: 301!
+  status: 301
 - from: /js/s/add-event-listener-all
   to: /js/s/add-remove-multiple-event-listeners-single-element
-  status: 301!
+  status: 301
 - from: /js/s/add-multiple-events
   to: /js/s/add-remove-event-listener-multiple-elements
-  status: 301!
+  status: 301
 - from: /js/s/add-multiple-event-listeners
   to: /js/s/add-remove-event-listener-multiple-elements
-  status: 301!
+  status: 301
 - from: /js/s/remove-event-listener-all
   to: /js/s/add-remove-event-listener-multiple-elements
-  status: 301!
+  status: 301
 - from: /js/s/remove-multiple-event-listeners
   to: /js/s/add-remove-event-listener-multiple-elements
-  status: 301!
+  status: 301
 - from: /articles/s/javascript-object-comparison
   to: /js/s/object-comparison
-  status: 301!
+  status: 301
 - from: /js/s/equals
   to: /js/s/object-comparison
-  status: 301!
+  status: 301
 - from: /js/s/deep-equality-comparison
   to: /js/s/object-comparison
-  status: 301!
+  status: 301
 - from: /js/s/get-ancestors
   to: /js/s/get-ancestors-parents-siblings-children
-  status: 301!
+  status: 301
 - from: /js/s/get-parents-until
   to: /js/s/get-ancestors-parents-siblings-children
-  status: 301!
+  status: 301
 - from: /js/s/get-siblings
   to: /js/s/get-ancestors-parents-siblings-children
-  status: 301!
+  status: 301
 - from: /js/s/find-closest-matching-node
   to: /js/s/get-ancestors-parents-siblings-children
-  status: 301!
+  status: 301
 - from: /js/s/element-contains
   to: /js/s/get-ancestors-parents-siblings-children
-  status: 301!
+  status: 301
 - from: /js/s/find-closest-anchor
   to: /js/s/get-ancestors-parents-siblings-children
-  status: 301!
+  status: 301
 - from: /react/s/use-click-outside
   to: /react/s/use-click-outside-inside
-  status: 301!
+  status: 301
 - from: /react/s/use-click-inside
   to: /react/s/use-click-outside-inside
-  status: 301!
+  status: 301
 - from: /articles/s/react-use-interval-explained
   to: /react/s/use-interval
-  status: 301!
+  status: 301
 - from: /react/s/use-interval-explained
   to: /react/s/use-interval
-  status: 301!
+  status: 301
 - from: /react/s/use-toggler
   to: /react/s/advanced-react-state-hooks
-  status: 301!
+  status: 301
 - from: /react/s/use-map
   to: /react/s/advanced-react-state-hooks
-  status: 301!
+  status: 301
 - from: /react/s/use-set
   to: /react/s/advanced-react-state-hooks
-  status: 301!
+  status: 301
 - from: /react/s/use-default
   to: /react/s/advanced-react-state-hooks
-  status: 301!
+  status: 301
 - from: /react/s/use-get-set
   to: /react/s/advanced-react-state-hooks
-  status: 301!
+  status: 301
 - from: /react/s/use-merge-state
   to: /react/s/advanced-react-state-hooks
-  status: 301!
+  status: 301
 - from: /react/s/use-previous
   to: /react/s/advanced-react-state-hooks
-  status: 301!
+  status: 301
 - from: /react/s/use-debounce
   to: /react/s/advanced-react-state-hooks
-  status: 301!
+  status: 301
 - from: /react/s/use-delayed-state
   to: /react/s/advanced-react-state-hooks
-  status: 301!
+  status: 301
 - from: /react/s/use-form
   to: /react/s/advanced-react-state-hooks
-  status: 301!
+  status: 301
 - from: /react/s/use-component-did-mount
   to: /react/s/lifecycle-hooks
-  status: 301!
+  status: 301
 - from: /react/s/use-component-did-update
   to: /react/s/lifecycle-hooks
-  status: 301!
+  status: 301
 - from: /react/s/use-component-will-unmount
   to: /react/s/lifecycle-hooks
-  status: 301!
+  status: 301
 - from: /react/s/use-local-storage
   to: /react/s/persist-state-to-storage
-  status: 301!
+  status: 301
 - from: /react/s/use-session-storage
   to: /react/s/persist-state-to-storage
-  status: 301!
+  status: 301
 - from: /react/s/use-persisted-state
   to: /react/s/persist-state-to-storage
-  status: 301!
+  status: 301
 - from: /react/s/use-hash
   to: /react/s/use-hash-search-param
-  status: 301!
+  status: 301
 - from: /react/s/use-search-param
   to: /react/s/use-hash-search-param
-  status: 301!
+  status: 301
 - from: /react/s/use-unload
   to: /react/s/window-global-environment-ssr-hooks
-  status: 301!
+  status: 301
 - from: /react/s/use-navigator-on-line
   to: /react/s/window-global-environment-ssr-hooks
-  status: 301!
+  status: 301
 - from: /react/s/use-window-size
   to: /react/s/window-global-environment-ssr-hooks
-  status: 301!
+  status: 301
 - from: /react/s/use-on-window-resize
   to: /react/s/window-global-environment-ssr-hooks
-  status: 301!
+  status: 301
 - from: /react/s/use-on-window-scroll
   to: /react/s/window-global-environment-ssr-hooks
-  status: 301!
+  status: 301
 - from: /react/s/use-media-query
   to: /react/s/window-global-environment-ssr-hooks
-  status: 301!
+  status: 301
 - from: /react/s/use-ssr
   to: /react/s/window-global-environment-ssr-hooks
-  status: 301!
+  status: 301
 - from: /react/s/use-isomporphic-effect
   to: /react/s/window-global-environment-ssr-hooks
-  status: 301!
+  status: 301
 - from: /react/s/use-on-global-event
   to: /react/s/event-listener-hooks
-  status: 301!
+  status: 301
 - from: /react/s/use-event-listener
   to: /react/s/event-listener-hooks
-  status: 301!
+  status: 301
 - from: /react/s/use-key-press
   to: /react/s/event-listener-hooks
-  status: 301!
+  status: 301
 - from: /react/s/use-hover
   to: /react/s/event-listener-hooks
-  status: 301!
+  status: 301
 - from: /react/s/select
   to: /react/s/selected-option
-  status: 301!
+  status: 301
 - from: /react/s/mailto
   to: /react/s/mailto-callto
-  status: 301!
+  status: 301
 - from: /react/s/callto
   to: /react/s/mailto-callto
-  status: 301!
+  status: 301
 - from: /react/s/text-area
   to: /react/s/limited-textarea
-  status: 301!
+  status: 301
 - from: /react/s/limited-word-textarea
   to: /react/s/limited-textarea
-  status: 301!
+  status: 301
 - from: /react/s/data-table
   to: /react/s/data-mapping-components
-  status: 301!
+  status: 301
 - from: /react/s/mapped-table
   to: /react/s/data-mapping-components
-  status: 301!
+  status: 301
 - from: /react/s/data-list
   to: /react/s/data-mapping-components
-  status: 301!
+  status: 301
 - from: /react/s/tree-view
   to: /react/s/data-mapping-components
-  status: 301!
+  status: 301
 - from: /react/s/collapse
   to: /react/s/collapsable-content-components
-  status: 301!
+  status: 301
 - from: /react/s/accordion
   to: /react/s/collapsable-content-components
-  status: 301!
+  status: 301
 - from: /react/s/tabs
   to: /react/s/collapsable-content-components
-  status: 301!
+  status: 301
 - from: /react/s/carousel
   to: /react/s/collapsable-content-components
-  status: 301!
+  status: 301
 - from: /react/s/alert
   to: /react/s/tooltip-alert-modal
-  status: 301!
+  status: 301
 - from: /react/s/modal
   to: /react/s/tooltip-alert-modal
-  status: 301!
+  status: 301
 - from: /react/s/tooltip
   to: /react/s/tooltip-alert-modal
-  status: 301!
+  status: 301
 - from: /css/s/truncate-text
   to: /css/s/text-truncation
-  status: 301!
+  status: 301
 - from: /css/s/truncate-text-multiline
   to: /css/s/text-truncation
-  status: 301!
+  status: 301
 - from: /css/s/line-clamp
   to: /css/s/text-truncation
-  status: 301!
+  status: 301
 - from: /css/s/drop-cap
   to: /css/s/drop-caps
-  status: 301!
+  status: 301
 - from: /css/s/height-transition
   to: /css/s/content-aware-height-transition
-  status: 301!
+  status: 301
 - from: /python/s/index-of-all
   to: /python/s/find-matches-list-dictionary
-  status: 301!
+  status: 301
 - from: /python/s/find-index
   to: /python/s/find-matches-list-dictionary
-  status: 301!
+  status: 301
 - from: /python/s/find-last-index
   to: /python/s/find-matches-list-dictionary
-  status: 301!
+  status: 301
 - from: /python/s/find-index-of-all
   to: /python/s/find-matches-list-dictionary
-  status: 301!
+  status: 301
 - from: /python/s/find
   to: /python/s/find-matches-list-dictionary
-  status: 301!
+  status: 301
 - from: /python/s/find-last
   to: /python/s/find-matches-list-dictionary
-  status: 301!
+  status: 301
 - from: /python/s/find-key
   to: /python/s/find-matches-list-dictionary
-  status: 301!
+  status: 301
 - from: /python/s/find-keys
   to: /python/s/find-matches-list-dictionary
-  status: 301!
+  status: 301
 - from: /python/s/initial
   to: /python/s/first-last-initial-head-tail
-  status: 301!
+  status: 301
 - from: /python/s/last
   to: /python/s/first-last-initial-head-tail
-  status: 301!
+  status: 301
 - from: /python/s/head
   to: /python/s/first-last-initial-head-tail
-  status: 301!
+  status: 301
 - from: /python/s/tail
   to: /python/s/first-last-initial-head-tail
-  status: 301!
+  status: 301
 - from: /python/s/decapitalize
   to: /python/s/string-capitalize-camel-snake-kebab
-  status: 301!
+  status: 301
 - from: /python/s/capitalize
   to: /python/s/string-capitalize-camel-snake-kebab
-  status: 301!
+  status: 301
 - from: /python/s/capitalize-every-word
   to: /python/s/string-capitalize-camel-snake-kebab
-  status: 301!
+  status: 301
 - from: /python/s/camel
   to: /python/s/string-capitalize-camel-snake-kebab
-  status: 301!
+  status: 301
 - from: /python/s/snake
   to: /python/s/string-capitalize-camel-snake-kebab
-  status: 301!
+  status: 301
 - from: /python/s/kebab
   to: /python/s/string-capitalize-camel-snake-kebab
-  status: 301!
+  status: 301
 - from: /python/s/initialize-list-with-range
   to: /python/s/initialize-list-with-range-value-daterange
-  status: 301!
+  status: 301
 - from: /python/s/initialize-list-with-values
   to: /python/s/initialize-list-with-range-value-daterange
-  status: 301!
+  status: 301
 - from: /python/s/initialize-2-d-list
   to: /python/s/initialize-list-with-range-value-daterange
-  status: 301!
+  status: 301
 - from: /python/s/daterange
   to: /python/s/initialize-list-with-range-value-daterange
-  status: 301!
+  status: 301
 - from: /python/s/unique-elements
   to: /python/s/filter-unique-list-elements
-  status: 301!
+  status: 301
 - from: /python/s/filter-non-unique
   to: /python/s/filter-unique-list-elements
-  status: 301!
+  status: 301
 - from: /python/s/filter-unique
   to: /python/s/filter-unique-list-elements
-  status: 301!
+  status: 301
 - from: /python/s/chunk-into-n
   to: /python/s/chunk-list
-  status: 301!
+  status: 301
 - from: /python/s/chunk
   to: /python/s/chunk-list
-  status: 301!
+  status: 301
 - from: /python/s/is-weekend
   to: /python/s/is-weekend-or-weekday
-  status: 301!
+  status: 301
 - from: /python/s/is-weekday
   to: /python/s/is-weekend-or-weekday
-  status: 301!
+  status: 301
 - from: /python/s/rgb-to-hex
   to: /python/s/hex-to-rgb
-  status: 301!
+  status: 301
 - from: /python/s/days-diff
   to: /python/s/date-difference
-  status: 301!
+  status: 301
 - from: /python/s/months-diff
   to: /python/s/date-difference
-  status: 301!
+  status: 301
 - from: /python/s/min-element-index
   to: /python/s/min-max-element-index
-  status: 301!
+  status: 301
 - from: /python/s/max-element-index
   to: /python/s/min-max-element-index
-  status: 301!
+  status: 301
 - from: /python/s/days-ago
   to: /python/s/days-ago-days-from-now-add-subtract-dates
-  status: 301!
+  status: 301
 - from: /python/s/days-from-now
   to: /python/s/days-ago-days-from-now-add-subtract-dates
-  status: 301!
+  status: 301
 - from: /python/s/add-days
   to: /python/s/days-ago-days-from-now-add-subtract-dates
-  status: 301!
+  status: 301
 - from: /python/s/to-dictionary
   to: /python/s/dictionary-to-list
-  status: 301!
+  status: 301
 - from: /python/s/map-dictionary
   to: /python/s/dictionary-to-list
-  status: 301!
+  status: 301
 - from: /python/s/dict-to-list
   to: /python/s/dictionary-to-list
-  status: 301!
+  status: 301
 - from: /css/s/horizontal-scroll-snap
   to: /css/s/scroll-snap
-  status: 301!
+  status: 301
 - from: /css/s/vertical-scroll-snap
   to: /css/s/scroll-snap
-  status: 301!
+  status: 301
 - from: /css/s/clamp
   to: /css/s/fluid-typography
-  status: 301!
+  status: 301
 - from: /css/button-transitions/p/1
   to: /css/s/button-hover-transitions
-  status: 301!
+  status: 301
 - from: /css/s/button-hover-grow-animation
   to: /css/s/button-hover-transitions
-  status: 301!
+  status: 301
 - from: /css/s/button-hover-shrink-animation
   to: /css/s/button-hover-transitions
-  status: 301!
+  status: 301
 - from: /css/s/button-hover-fill-animation
   to: /css/s/button-hover-transitions
-  status: 301!
+  status: 301
 - from: /css/s/button-focus-swing-animation
   to: /css/s/button-hover-transitions
-  status: 301!
+  status: 301
 - from: /css/s/button-border-animation
   to: /css/s/button-hover-transitions
-  status: 301!
+  status: 301
 - from: /css/s/sticky-list-titles
   to: /css/s/floating-or-sticky-list-titles
-  status: 301!
+  status: 301
 - from: /css/s/floating-list-titles
   to: /css/s/floating-or-sticky-list-titles
-  status: 301!
+  status: 301
 - from: /css/s/bouncing-loader
   to: /css/s/loaders
-  status: 301!
+  status: 301
 - from: /css/s/pulse-loader
   to: /css/s/loaders
-  status: 301!
+  status: 301
 - from: /css/s/donut-spinner
   to: /css/s/loaders
-  status: 301!
+  status: 301
 - from: /css/s/zebra-striped-list
   to: /css/s/zebra-striped-list-or-table
-  status: 301!
+  status: 301
 - from: /css/s/border-with-top-triangle
   to: /css/s/speech-bubble
-  status: 301!
+  status: 301
 - from: /css/s/horizontal-gallery
   to: /css/s/horizontal-vertical-gallery
-  status: 301!
+  status: 301
 - from: /css/s/vertical-gallery
   to: /css/s/horizontal-vertical-gallery
-  status: 301!
+  status: 301
 - from: /css/s/text-backdrop-overlay
   to: /css/s/image-text-overlay
-  status: 301!
+  status: 301
 - from: /css/s/rotating-card
   to: /css/s/card-hover-effects
-  status: 301!
+  status: 301
 - from: /css/s/shifting-card
   to: /css/s/card-hover-effects
-  status: 301!
+  status: 301
 - from: /css/s/hover-perspective
   to: /css/s/card-hover-effects
-  status: 301!
+  status: 301
 - from: /css/s/custom-checkbox
   to: /css/s/custom-checkbox-radio
-  status: 301!
+  status: 301
 - from: /css/s/custom-radio
   to: /css/s/custom-checkbox-radio
-  status: 301!
+  status: 301
 - from: /css/s/etched-text
   to: /css/s/engraved-embossed-text
-  status: 301!
+  status: 301
 - from: /articles/s/code-anatomy-optimizing-recursion
   to: /js/s/recursion-performance-optimization
-  status: 301!
+  status: 301
 - from: /js/s/code-anatomy-optimizing-recursion
   to: /js/s/recursion-performance-optimization
-  status: 301!
+  status: 301
