@@ -8,9 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Run the Netlify build hook
+    - name: Run the Cloudflare build hook
       env:
-        DEPLOY_URL: ${{ secrets.NETLIFY_BUILD_HOOK_URL }}
+        DEPLOY_URL: ${{ secrets.CF_BUILD_HOOK_URL }}
         DEPLOY_TRIGGER: ${{ github.event_name }}
       run: |
         chmod +x ./bin/deploy
