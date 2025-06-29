@@ -7,9 +7,6 @@
 - from: /collections
   to: /collections/p/1
   status: 301
-- from: /c/*
-  to: /collections/p/1
-  status: 301
 - from: /list
   to: /snippets/p/1
   status: 301
@@ -30,51 +27,6 @@
   status: 301
 - from: /react
   to: /react/p/1
-  status: 301
-- from: /list/p/*
-  to: /snippets/p/1
-  status: 301
-- from: /articles/p/*
-  to: /snippets/p/1
-  status: 301
-- from: /articles/css/*
-  to: /css/p/1
-  status: 301
-- from: /articles/javascript/*
-  to: /js/p/1
-  status: 301
-- from: /articles/python/*
-  to: /python/p/1
-  status: 301
-- from: /articles/react/*
-  to: /react/p/1
-  status: 301
-- from: /articles/webdev/*
-  to: /web-development/p/1
-  status: 301
-- from: /blog/*
-  to: /articles/p/1
-  status: 301
-- from: /snippet/*
-  to: /js/p/1
-  status: 301
-- from: /tag/*
-  to: /js/p/1
-  status: 301
-- from: /css/t/*
-  to: /css/p/1
-  status: 301
-- from: /git/t/*
-  to: /git/p/1
-  status: 301
-- from: /python/t/*
-  to: /python/p/1
-  status: 301
-- from: /react/t/*
-  to: /react/p/1
-  status: 301
-- from: /js/t/*
-  to: /js/p/1
   status: 301
 - from: /css/s/custom-variables/
   to: /articles/s/css-variables
@@ -1397,9 +1349,6 @@
   to: /js/s/logical-operations
   status: 301
 - from: /js/s/negate-predicate
-  to: /js/s/logical-operations
-  status: 301
-- from: /js/logical-operations/*
   to: /js/s/logical-operations
   status: 301
 - from: /js/s/reduce-which
@@ -3213,4 +3162,55 @@
   status: 301
 - from: /js/s/code-anatomy-optimizing-recursion
   to: /js/s/recursion-performance-optimization
+  status: 301
+- from: /c/*
+  to: /collections/p/1
+  status: 301
+- from: /list/p/*
+  to: /snippets/p/1
+  status: 301
+- from: /articles/p/*
+  to: /snippets/p/1
+  status: 301
+- from: /articles/css/*
+  to: /css/p/1
+  status: 301
+- from: /articles/javascript/*
+  to: /js/p/1
+  status: 301
+- from: /articles/python/*
+  to: /python/p/1
+  status: 301
+- from: /articles/react/*
+  to: /react/p/1
+  status: 301
+- from: /articles/webdev/*
+  to: /web-development/p/1
+  status: 301
+- from: /blog/*
+  to: /articles/p/1
+  status: 301
+- from: /snippet/*
+  to: /js/p/1
+  status: 301
+- from: /tag/*
+  to: /js/p/1
+  status: 301
+- from: /css/t/*
+  to: /css/p/1
+  status: 301
+- from: /git/t/*
+  to: /git/p/1
+  status: 301
+- from: /python/t/*
+  to: /python/p/1
+  status: 301
+- from: /react/t/*
+  to: /react/p/1
+  status: 301
+- from: /js/t/*
+  to: /js/p/1
+  status: 301
+- from: /js/logical-operations/*
+  to: /js/s/logical-operations
   status: 301
