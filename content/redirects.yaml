@@ -32,7 +32,7 @@
   to: /react/p/1
   status: 301
 - from: /list/p/*
-  to: /snippets/p/:splat
+  to: /snippets/p/1
   status: 301
 - from: /articles/p/*
   to: /snippets/p/1
@@ -1453,7 +1453,7 @@
 - from: /js/s/capitalize-every-words
   to: /js/s/string-case-conversion
   status: 301
-- from: /js/string-casing/*
+- from: /js/string-casing/p/1
   to: /js/s/string-case-conversion
   status: 301
 - from: /js/s/to-camel-case
@@ -1606,7 +1606,7 @@
 - from: /js/s/arrays-intersect
   to: /js/s/array-set-operations
   status: 301
-- from: /js/array-set-operations/*
+- from: /js/array-set-operations/p/1
   to: /js/s/array-set-operations
   status: 301
 - from: /js/s/compact
@@ -1624,7 +1624,7 @@
 - from: /js/s/compact-object
   to: /js/s/compact-object-or-array
   status: 301
-- from: /js/array-tricks/*
+- from: /js/array-tricks/p/1
   to: /js/array/p/1
   status: 301
 - from: /js/s/sorted-index-by
@@ -1684,7 +1684,7 @@
 - from: /articles/s/shallow-deep-clone
   to: /js/s/shallow-deep-clone-object
   status: 301
-- from: /js/object-cloning/*
+- from: /js/object-cloning/p/1
   to: /js/s/shallow-deep-clone-object
   status: 301
 - from: /articles/s/js-remove-array-duplicates
@@ -1987,7 +1987,7 @@
 - from: /js/s/copy-to-clipboard-async
   to: /js/s/copy-text-to-clipboard
   status: 301
-- from: /js/object-key-selection/*
+- from: /js/object-key-selection/p/1
   to: /js/s/filter-object-keys
   status: 301
 - from: /js/s/omit-by
@@ -2326,7 +2326,7 @@
 - from: /js/s/unescape-html
   to: /js/s/escape-unescape-html
   status: 301
-- from: /js/object-key-transformations/*
+- from: /js/object-key-transformations/p/1
   to: /js/s/transform-object-keys
   status: 301
 - from: /js/s/deep-map-keys
@@ -2656,7 +2656,7 @@
 - from: /python/s/key-of-max
   to: /python/s/key-of-min-max
   status: 301
-- from: /css/background-patterns/*
+- from: /css/background-patterns/p/1
   to: /css/s/10-css-background-patterns
   status: 301
 - from: /css/s/stripes-pattern
@@ -2731,7 +2731,7 @@
 - from: /js/s/freeze-set-or-map
   to: /js/s/deep-freeze-object
   status: 301
-- from: /react/rendering/*
+- from: /react/rendering/p/1
   to: /react/s/rendering
   status: 301
 - from: /articles/s/react-rendering-basics
