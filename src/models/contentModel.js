@@ -144,7 +144,7 @@ export default class ContentModel extends Model {
 
   // Embeddable
 
-  get isEmeddable() {
+  get isEmbeddable() {
     return this.isSnippet ? this.isPublished : true;
   }
 
