@@ -72,7 +72,7 @@ export default class Snippet extends ContentModel {
           const { ref, hash, title } = match.slice(-1)[0] ?? {};
           if (!ref) return;
           const embeddable = ContentModel.searchContentModels(ref);
-          return embeddable?.isEmeddable
+          return embeddable?.isEmbeddable
             ? embeddable.asEmbedding(title, hash)
             : '';
         }
