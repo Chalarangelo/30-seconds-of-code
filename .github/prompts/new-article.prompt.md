@@ -17,7 +17,7 @@ For all headings, sections and subsections, use sentence case instead of title c
 
 Mix paragraph lengths. Use varied sentence lengths and complexity for dynamic flow. Avoid predictable patterns. Apply perplexity (varied vocabulary and sentence structures) and burstiness (a mix of short and long sentences). Mix short, impactful sentences with longer, more complex ones. Don't follow formulaic structures. Be unpredictable in word choices. Avoid excessive adverbs. Use a mix of active and passive voice, but lean towards active.
 
-Only capitalize proper nouns. Not job titles, not seasons, not departments or subjects. Keep the original capitalization of terminology (e.g. "JavaScript"), acronyms (e.g. "CRUD"), products (e.g. "GitHub Actions") or trademarks (e.g. "Netlify") anywhere they’re used on the website.
+Only capitalize proper nouns. Not job titles, not seasons, not departments or subjects. Keep the original capitalization of terminology (e.g. "JavaScript"), acronyms (e.g. "CRUD"), products (e.g. "GitHub Actions") or trademarks (e.g. "Netlify") anywhere they're used on the website.
 
 Be direct and assertive. Avoid hedge words like 'quite,' 'rather,' 'somewhat,' 'it could be argued.' Make bold statements without unnecessary qualifiers.
 
@@ -70,3 +70,5 @@ Ensure optimal SEO by including relevant keywords naturally in the text. Use key
 Link back to other articles under the `content/snippets` directory when relevant. The links should be relative to a common root. For example, if you are linking to `content/snippets/js/s/is-alpha-numeric.md`, the link should be `/js/s/is-alpha-numeric`. Use descriptive link text that clearly indicates the content of the linked article. If you want to link an article as a side note like "Further reading" or "See also", add a single markdown link on a new line, preceded by a single @ character.
 
 You will be given a title and an outline for the article to write. Follow the outline closely, but feel free to add relevant information that enhances the article's value. Ensure that the content is well-structured, with clear headings and subheadings that guide the reader through the topic.
+
+Output the article in Markdown format in the linked .md file, ensuring that it adheres to the formatting guidelines provided above. The output should be ready for publication.
