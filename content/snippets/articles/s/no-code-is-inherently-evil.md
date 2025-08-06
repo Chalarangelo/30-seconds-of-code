@@ -37,6 +37,8 @@ But here's the twist: even your _best_ code will eventually be stretched, twiste
 
 That's not evil; it's just entropy. The real evil is refusing to change, or worse, contorting your code into unrecognizable shapes to fit every edge case. Sometimes, the right move is to **write more code**, even if it means duplicating logic or starting over. **Refactor later**, when you know what actually matters.
 
+@[You may also like](/articles/s/tech-stack-refactoring-problems)
+
 Remember, code isn't sacred. It's a tool. Use it, break it, throw it away, and write more whenever you need to.
 
 ## Conclusion

@@ -25,6 +25,8 @@ In the latter case, the debt might have been incurred due to a change in the bus
 
 Interestingly enough, poor code and not following best practices only account for a portion of technical debt. This means that, while following best practices and writing clean code can help reduce the debt, they are usually not the main cause.
 
+@[You may also like](/articles/s/tech-stack-refactoring-problems)
+
 ## Symptoms
 
 So, how do you know if you have accumulated technical debt? It's not that hard to spot most of the time. **Lowered productivity** is usually one of the first signs. This translates to increased development time or effort estimates that are not met. This makes sense intuitively, as maintenance costs mount up and the codebase is not as easy to work with as it should be.
