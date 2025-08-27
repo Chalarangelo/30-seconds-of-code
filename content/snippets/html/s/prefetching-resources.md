@@ -28,3 +28,5 @@ Similarly, you can preload assets using the `rel="preload"` attribute, which are
 ```
 
 The only downside to preloading resources compared to prefetching is that [browser support](https://caniuse.com/#search=preload) might be low depending on when you are reading this.
+
+@[Further reading](/html/s/speculation-rules-api-first-look)
