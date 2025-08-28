@@ -6,7 +6,7 @@ tags: [algorithm,math,array]
 cover: workhard-laptop
 excerpt: Have you tried solving "Best Time to Buy and Sell Stock" on LeetCode? Let's take a couple of approaches to tackle it in JavaScript.
 listed: true
-dateModified: 2025-08-28
+dateModified: 2025-09-25
 ---
 
 As I was fooling around with LeetCode problems, I stumbled upon one that I found quite interesting. The problem in question is [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/). The task is to find the **maximum profit you can achieve by buying and selling a stock on different days**, given an array of prices where the index represents the day.
