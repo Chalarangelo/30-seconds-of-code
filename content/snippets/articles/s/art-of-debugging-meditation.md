@@ -1,6 +1,5 @@
 ---
 title: Meditation and the art of debugging
-language: javascript
 tags: [webdev,programming]
 cover: meditation-1
 excerpt: What's the connection between meditation and debugging? Let's find out.
