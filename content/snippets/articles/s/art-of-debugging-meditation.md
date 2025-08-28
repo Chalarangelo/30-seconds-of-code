@@ -44,7 +44,7 @@ Wu Wei encourages acting in harmony with the natural flow of the world. In debug
 
 ### Embrace pauses and stillness
 
-Sometimes, stepping away or taking a mindful pause leads to insight. Wu Wei emphasizes the power of stillness. Solutions often arise when you’re not actively searching for them. In debugging, this might mean **taking a break**, meditating, or simply sitting with the problem for a moment.
+Sometimes, stepping away or taking a mindful pause leads to insight. Wu Wei emphasizes the power of stillness. Solutions often arise when you're not actively searching for them. In debugging, this might mean **taking a break**, meditating, or simply sitting with the problem for a moment.
 
 ### Trust the process
 
@@ -54,21 +54,21 @@ Finally, Wu Wei is about trusting the process and having faith that insights wil
 
 If all of that sounds like hodgepodge to you, here are some **practical tips** that I find helpful and might be more actionable to you:
 
-1. **Create a calm environment**: Minimize distractions and create a workspace that promotes focus and tranquility.
-2. **Practice mindfulness**: Take a few moments to center yourself before diving into debugging. Focus on your breath and clear your mind.
-3. **Embrace curiosity**: Approach debugging with a sense of curiosity rather than frustration. Ask questions and explore different angles.
-4. **Take breaks**: Step away from the code when feeling stuck. A short break can provide new insights and perspectives.
-5. **Reflect on patterns**: After resolving an issue, take time to reflect on the process. What worked? What didn’t? This reflection can enhance future debugging efforts.
+- **Create a calm environment**: Minimize distractions and create a workspace that promotes focus and tranquility.
+- **Practice mindfulness**: Take a few moments to center yourself before diving into debugging. Focus on your breath and clear your mind.
+- **Embrace curiosity**: Approach debugging with a sense of curiosity rather than frustration. Ask questions and explore different angles.
+- **Take breaks**: Step away from the code when feeling stuck. A short break can provide new insights and perspectives.
+- **Reflect on patterns**: After resolving an issue, take time to reflect on the process. What worked? What didn't? This reflection can enhance future debugging efforts.
 
 ## Benefits of a Wu Wei-inspired approach
 
 Finally, you might be thinking *what's the value of trying such an approach?*. Sure, you can go your whole life without trying it, but there are some **compelling benefits** to consider:
 
-1. **Reduced frustration**: By allowing solutions to emerge naturally, developers can avoid the stress and frustration that often accompany debugging.
-2. **Greater insight**: Mindful observation and allowing intuition to guide you, you gain a deeper understanding of the problem space.
-3. **Enhanced focus**: The meditative approach cultivates deep concentration, helping you notice subtle clues and avoid tunnel vision.
-4. **Improved problem-solving**: Non-attachment frees you from preconceived notions, making you more open to unlikely solutions.
-5. **Personal growth**: The reflective nature of this approach fosters continuous learning and self-improvement.
+- **Reduced frustration**: By allowing solutions to emerge naturally, developers can avoid the stress and frustration that often accompany debugging.
+- **Greater insight**: Mindful observation and allowing intuition to guide you, you gain a deeper understanding of the problem space.
+- **Enhanced focus**: The meditative approach cultivates deep concentration, helping you notice subtle clues and avoid tunnel vision.
+- **Improved problem-solving**: Non-attachment frees you from preconceived notions, making you more open to unlikely solutions.
+- **Personal growth**: The reflective nature of this approach fosters continuous learning and self-improvement.
 
 ## Conclusion
 
