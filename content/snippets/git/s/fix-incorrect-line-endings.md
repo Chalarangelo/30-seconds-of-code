@@ -6,7 +6,7 @@ tags: [configuration,repository]
 cover: laptop-off
 excerpt: Have you ever encountered an issue with incorrect line endings in your git repository? Let's fix it!
 listed: true
-dateModified: 2025-09-07
+dateModified: 2025-09-08
 ---
 
 A little while back, while working on a Ruby repository, a colleague of mine encountered an issue where they **couldn't run a Ruby script**. The error was a little odd, leading us down a rabbit hole of trying to figure it out:
