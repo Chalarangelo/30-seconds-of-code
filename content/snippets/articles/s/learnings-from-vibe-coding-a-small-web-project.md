@@ -10,8 +10,6 @@ dateModified: 2025-10-14
 
 A few weeks ago, I decided to finally try **vibe coding**, mostly out of curiosity, but also due to necessity and a lack of time. The bet was to create a small web project using a coding assistant, without much manual coding.
 
-**GitHub Copilot** and **GPT-5 mini** as my main coding assistants, with minimal manual coding.
-
 ## Setup
 
 First things first, the tools I used for the job are what I'm most familiar with - **GitHub Copilot** and **VS Code's Agent Mode**. While I use GPT-4.1 as my daily driver (what a time to be alive, I'm calling an LLM my _daily driver_), I decided to give **GPT-5 mini** a go. Spoiler alert: both models seem to be on par, so we won't be focusing on that too much.
