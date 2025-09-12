@@ -6,7 +6,7 @@ tags: [webdev,career,programming]
 cover: laptop-hands
 excerpt: Infinite flexibility in your tech stack can lead to refactoring headaches and technical debt. Here's how to avoid the trap.
 listed: true
-dateModified: 2025-09-20
+dateModified: 2025-10-08
 ---
 
 Ever feel like your codebase is fighting you at every turn? **The tools you choose**, your programming language of choice, frameworks, and overall stack, shape how you build, refactor, and maintain software. Sometimes, the very flexibility that drew you in becomes the root of your biggest headaches. Let's dig into why your tech stack might be the silent culprit behind those endless refactoring sessions and mounting technical debt.

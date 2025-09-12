@@ -4,7 +4,7 @@ tags: [webdev,career,programming,jobs]
 cover: coffee-table-setup
 excerpt: Pair programming can be valuable for junior and senior developers alike, fostering collaboration and knowledge sharing.
 listed: true
-dateModified: 2025-09-14
+dateModified: 2025-09-20
 ---
 
 I've got to admit, we did not expect **pair programming** to reshape the way we work initially. But, after months of trying it with my team, the impact is obvious.
