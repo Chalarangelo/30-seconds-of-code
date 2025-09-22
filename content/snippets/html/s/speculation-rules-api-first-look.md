@@ -6,7 +6,7 @@ tags: [metadata,link,javascript]
 cover: orange-coffee-3
 excerpt: The new Speculation Rules API aims to deliver across the board performance optimizations with little developer effort. Let's see how!
 listed: true
-dateModified: 2025-09-26
+dateModified: 2025-09-29
 ---
 
 If **page performance** is important to you, you may already be familiar with **resource prefetching**, using a `<link>` tag and the `rel="prefetch"` attribute. In fact, we've covered this topic in the past, so, if you're not familiar, I'd suggest starting there.

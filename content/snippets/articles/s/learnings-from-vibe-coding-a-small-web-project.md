@@ -5,7 +5,7 @@ tags: [webdev,programming]
 cover: interior-19
 excerpt: A short summary of your story up to 140 characters long.
 listed: true
-dateModified: 2025-10-14
+dateModified: 2025-10-24
 ---
 
 A few weeks ago, I decided to finally try **vibe coding**, mostly out of curiosity, but also due to necessity and a lack of time. The bet was to create a small web project using a coding assistant, without much manual coding.
