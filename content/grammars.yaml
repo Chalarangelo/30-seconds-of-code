@@ -13,3 +13,4 @@ shellsession: Shell
 json: JSON
 diff: Diff
 md: Markdown
+ts: TypeScript
