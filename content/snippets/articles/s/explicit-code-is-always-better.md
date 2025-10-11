@@ -8,7 +8,7 @@ listed: true
 dateModified: 2025-11-04
 ---
 
-I recently had the misfortune of working with the a the JavaScript library Stimulus and boy do I hate it. From naming conventions that are hard to follow to abstractions that feel like black magic, in my mind it's exactly what's wrong with overengineered tools and a justification for a move back to explicit, albeit potentially verbose and boilerplate-heavy, code.
+I recently had the misfortune of working with a little-known JavaScript library and boy did I hate it! From naming conventions that are hard to follow to abstractions that feel like black magic, in my mind it's exactly what's wrong with overengineered tools and a justification for a move back to explicit, albeit potentially verbose and boilerplate-heavy, code.
 
 I know what you may be thinking but hear me out: explicit code _is_ always better. It beats magic. It makes intent obvious. It reduces time spent chasing down nasty bugs.
 
