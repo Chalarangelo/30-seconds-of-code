@@ -15,7 +15,7 @@
     "fs-extra": "^11.3.0",
     "glob": "^11.0.1",
     "hast-util-to-string": "^3.0.0",
-    "js-yaml": "^4.1.0",
+    "js-yaml": "^4.1.1",
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
     "prismjs": "^1.30.0",
