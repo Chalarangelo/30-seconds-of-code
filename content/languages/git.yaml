@@ -160,6 +160,10 @@ references:
     https://git-scm.com/docs/git-push#Documentation/git-push.txt--d
   git push -f: >-
     https://git-scm.com/docs/git-push#Documentation/git-push.txt--f
+  git push --force: >-
+    https://git-scm.com/docs/git-push#Documentation/git-push.txt---force
+  git push --force-with-lease: >-
+    https://git-scm.com/docs/git-push#Documentation/git-push.txt---force-with-lease
   git push <remote> --force --all: >-
     https://git-scm.com/docs/git-push#Documentation/git-push.txt---force
   git push origin --delete <old-name>: >-
