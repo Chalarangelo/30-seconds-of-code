@@ -6,7 +6,7 @@ tags: [configuration,cheatsheet]
 cover: compass-1
 excerpt: Increase your productivity and reduce your cognitive load by creating aliases for many common git operations.
 listed: true
-dateModified: 2024-05-03
+dateModified: 2025-12-20
 ---
 
 Git allows you to create aliases for many common operations, making it easier to remember and execute them. As far as **customization** goes, this is one of the most powerful features Git offers, allowing you to create **shortcuts for complex commands** or to make your workflow more efficient.
@@ -56,6 +56,7 @@ Below you can find a list of aliases I've found personally useful for increasing
   cp = cherry-pick
   pu = !git push origin `git branch --show-current`
   fush = push -f
+  flush = push --force-with-lease
   mg = merge --no-ff
   rb = rebase
   rbc = rebase --continue
