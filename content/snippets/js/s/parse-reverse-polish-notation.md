@@ -129,7 +129,7 @@ Instead of going over the details of the algorithm, which I'm sure you can easil
 
 > [!IMPORTANT]
 >
-> Some parts of the algorithm, such as functions and right-associative operators, are **omitted for simplicity**. This implementation is meant as a starting point, implementing just the **four basic arithmetic operators**, as well as single parentheses (e.g. `((3 + 4) * 5)` wont't work). Again, **tokenization and error handling** are not the focus here, but I may cover them in a future article.
+> Some parts of the algorithm, such as functions and right-associative operators, are **omitted for simplicity**. This implementation is meant as a starting point, implementing just the **four basic arithmetic operators**, as well as single parentheses (e.g. `((3 + 4) * 5)` won't work). Again, **tokenization and error handling** are not the focus here, but I may cover them in a future article.
 
 ```js
 // Define the operator precedence
