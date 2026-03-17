@@ -3,10 +3,12 @@ import PageSerializer from '#src/serializers/pageSerializer.js';
 export default class Page {
   static pageTypes = {};
 
+  // Registers different page types so they can be dynamically created later
   static register(pageType) {
     this.pageTypes[pageType.name] = pageType;
   }
 
+  // Creates a page instance dynamically based on the object type
   static from(object, options = {}) {
     const pageName = `${object.constructor.name}Page`;
     return new this.pageTypes[pageName](object, options);
